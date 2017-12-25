@@ -1,8 +1,8 @@
 <?php
-namespace content_c\home;
+namespace content_u\home;
 
 
-class view extends \content_c\main\view
+class view extends \content_u\main\view
 {
 	public function config()
 	{

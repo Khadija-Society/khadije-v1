@@ -62,13 +62,6 @@ class controller extends \mvc\controller
 		{
 			return;
 		}
-
-		// check url like this /ermile/khadije
-		if(preg_match("/^([a-zA-Z0-9]+)(|\/([a-zA-Z0-9]+))$/", $url, $split))
-		{
-			\lib\router::set_controller('content\\hours\\controller');
-			return;
-		}
 	}
 }
 ?>

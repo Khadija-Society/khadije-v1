@@ -1,8 +1,8 @@
 <?php
-namespace content_c\home;
+namespace content_u\home;
 
 
-class controller extends \content_c\main\controller
+class controller extends \content_u\main\controller
 {
 	/**
 	 * rout

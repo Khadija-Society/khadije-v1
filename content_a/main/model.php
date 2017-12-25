@@ -1,5 +1,5 @@
 <?php
-namespace content_c\main;
+namespace content_a\main;
 
 
 class model extends \mvc\model

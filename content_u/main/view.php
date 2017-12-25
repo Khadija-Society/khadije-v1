@@ -1,5 +1,5 @@
 <?php
-namespace content_c\main;
+namespace content_u\main;
 
 
 class view extends \mvc\view
@@ -9,7 +9,7 @@ class view extends \mvc\view
 		$this->data->bodyclass = 'fixed unselectable siftal';
 		$this->include->chart  = true;
 
-		$this->data->display['khadijeControlLayout'] = 'content_c/main/layout.html';
+		$this->data->display['khadijeControlLayout'] = 'content_u/main/layout.html';
 	}
 }
 ?>
