@@ -3,22 +3,16 @@
 
 {%block pageContent%}
 <div class="f">
- <div class="c4 s12">{{block ("addNewStore")}}</div>
- <div class="c4 s12">{{block ("storeCount")}}</div>
+ <div class="c4 s12">{{block ("addDonate")}}</div>
+ <div class="c4 s12">{{block ("addDonateProduct")}}</div>
+ <div class="c4 s12">{{block ("addTravel")}}</div>
+ <div class="c4 s12">{{block ("addProfile")}}</div>
+ <div class="c4 s12">{{block ("addChild")}}</div>
  <div class="c4 s12">{{block ("prDate")}}</div>
+
 </div>
 
-<h2 class="mT20">{%trans "List of your stores"%}</h2>
-<div class="f">
-{%for key, value in list_store%}
- <div class="c4 s12">
-  <a class="dcard" href='{{value.url}}/a'>
-   <div class="statistic">{{value.name}}
-   </div>
-  </a>
- </div>
-{%endfor%}
-</div>
+
 {%endblock%}
 
 
@@ -45,21 +39,53 @@
 {%endblock%}
 
 
-{%block addNewStore%}
-<a class="dcard x2" href='{{url.baseFull}}/store/add'>
+{%block addTravel%}
+<a class="dcard x2" href='{{url.baseFull}}/travel'>
  <div class="statistic">
-  <div class="value"><i class="sf-plus"></i></div>
-  <div class="label">{%trans "Add new Store"%}</div>
+  <div class="value"><i class="sf-bus"></i></div>
+  <div class="label">{%trans "Travel"%}</div>
  </div>
 </a>
 {%endblock%}
 
 
-{%block storeCount%}
-<a class="dcard x2" href='{{url.baseFull}}/store'>
- <div class="statistic gray">
-  <div class="value"><i class="sf-shopping-cart"></i><span>{{count_store_by_creator |number_format |fitNumber}}</span></div>
-  <div class="label">{%trans "Store"%}</div>
+
+{%block addChild%}
+<a class="dcard x2" href='{{url.baseFull}}/child'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-plus"></i></div>
+  <div class="label">{%trans "Manage Child"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block addProfile%}
+<a class="dcard x2" href='{{url.baseFull}}/profile'>
+ <div class="statistic">
+  <div class="value"><i class="sf-file-1"></i></div>
+  <div class="label">{%trans "Complete Profile"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block addDonate%}
+<a class="dcard x2" href='{{url.baseFull}}/donate'>
+ <div class="statistic">
+  <div class="value"><i class="sf-credit-card"></i></div>
+  <div class="label">{%trans "Pay Donate"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block addDonateProduct%}
+<a class="dcard x2" href='{{url.baseFull}}/donate/product'>
+ <div class="statistic">
+  <div class="value"><i class="sf-basket"></i></div>
+  <div class="label">{%trans "Donate product"%}</div>
  </div>
 </a>
 {%endblock%}
