@@ -1,8 +1,8 @@
 <?php
-namespace content_u\donate;
+namespace content_a\donate\product;
 
 
-class model extends \content_u\main\model
+class model extends \content_a\main\model
 {
 
 	public function post_donate()

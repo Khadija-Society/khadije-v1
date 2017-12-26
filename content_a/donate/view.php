@@ -1,8 +1,8 @@
 <?php
-namespace content_u\home;
+namespace content_a\donate;
 
 
-class view extends \content_u\main\view
+class view extends \content_a\main\view
 {
 	public function config()
 	{
@@ -10,7 +10,7 @@ class view extends \content_u\main\view
 		$this->data->page['desc']    = T_("Glance at your stores and quickly navigate to stores.");
 		$this->data->page['special'] = true;
 
-		$this->data->dateDetail      = \lib\utility\date::month_precent();
+		$this->data->way_list = \lib\app\donate::way_list();
 
 	}
 }

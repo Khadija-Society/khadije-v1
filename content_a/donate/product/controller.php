@@ -1,8 +1,8 @@
 <?php
-namespace content_u\donate\product;
+namespace content_a\donate\product;
 
 
-class controller extends \content_u\main\controller
+class controller extends \content_a\main\controller
 {
 	function ready()
 	{

@@ -1,5 +1,5 @@
 <?php
-namespace content_u\main;
+namespace content_a\main;
 
 
 class controller extends \mvc\controller

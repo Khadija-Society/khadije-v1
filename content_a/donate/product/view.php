@@ -1,8 +1,8 @@
 <?php
-namespace content_u\donate\product;
+namespace content_a\donate\product;
 
 
-class view extends \content_u\main\view
+class view extends \content_a\main\view
 {
 	public function config()
 	{
