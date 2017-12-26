@@ -3,6 +3,10 @@
 {%use 'content/main/header-social.html'%}
 
 {%block body%}
+<div class="bheader" data-xhr='bheader'>
+{%block beforeHeader%}{%endblock%}
+</div>
+
 {%include 'content/template/header.html'%}
  <div class="wrapper" data-xhr='wrapper'>
 {%block content%}

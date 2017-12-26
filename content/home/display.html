@@ -1,16 +1,19 @@
 {%extends display.main%}
 
 
+{%block beforeHeader%}
+ {{block('landPage')}}
+{%endblock%}
+
 {%block content%}
 
 
- {{block('landPage')}}
  {{block('keepSimple--')}}
  {{block('statistic--')}}
  {{block('enterprise--')}}
  {{block('history---')}}
  {{block('installation--')}}
- {{block('roadmap--')}}
+ {{block('roadmap')}}
  {{block('quote--')}}
  {{block('why--')}}
  {{block('support--')}}
@@ -21,7 +24,7 @@
 
 
 {%block landPage%}
-<section id='landing'>
+<section id='landing' data-scroll>
  <div class="title">
   <!-- <h2>{%trans "Integrated Sales and Online Accounting"%}</h2> -->
   <!-- <h3>{%trans ""%} {{site.desc}}</h3> -->
