@@ -84,6 +84,7 @@ CONSTRAINT `travelusers_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id
 ALTER TABLE `transactions` CHANGE `user_id` `user_id` INT(10) UNSIGNED NULL;
 ALTER TABLE `transactions` ADD `niyat` varchar(200) NULL DEFAULT NULL;
 ALTER TABLE `transactions` ADD `hazinekard` varchar(200) NULL DEFAULT NULL;
+ALTER TABLE `transactions` ADD `fullname` varchar(200) NULL DEFAULT NULL;
 
 
 ALTER TABLE `users` ADD `firstname` varchar(100) NULL DEFAULT NULL;
