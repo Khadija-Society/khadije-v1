@@ -3,6 +3,134 @@ namespace lib\app;
 
 class donate
 {
+	public static $way_key = 'hazinekard_list';
+
+	public static function remove_way($_way)
+	{
+		$old = self::way_list();
+		if(array_search($_way, $old) === false)
+		{
+			\lib\debug::error(T_("This way is not in your list!"));
+			return false;
+		}
+		unset($old[array_search($_way, $old)]);
+
+		self::set_way($old, true);
+		return true;
+
+	}
+
+	public static function way_list()
+	{
+		$list = \lib\db\options::get(['key' => self::$way_key, 'limit' => 1]);
+
+		$way_list = [];
+
+		if(isset($list['meta']))
+		{
+			if(is_array($list['meta']))
+			{
+				$way_list = $list['meta'];
+			}
+			else
+			{
+				$way_list = json_decode($list['meta']);
+			}
+		}
+
+		if(!is_array($way_list))
+		{
+			$way_list = [];
+		}
+		return $way_list;
+	}
+
+
+	public static function set_way($_way, $_set_all_way = false)
+	{
+		if(!$_set_all_way)
+		{
+			if(!$_way)
+			{
+				\lib\debug::error(T_("Please set way"), 'way');
+				return false;
+			}
+
+			if(mb_strlen($_way) > 150)
+			{
+				\lib\debug::error(T_("Please set way less than 150 character"), 'way');
+				return false;
+			}
+		}
+
+		$key = self::$way_key;
+
+		$list = \lib\db\options::get(['key' => $key, 'limit' => 1]);
+
+		$update = false;
+
+		if(isset($list['id']))
+		{
+			$update = true;
+		}
+
+		$way_list = [];
+
+		if($_set_all_way)
+		{
+			$way_list = $_way;
+		}
+		else
+		{
+			if(isset($list['meta']))
+			{
+				if(is_array($list['meta']))
+				{
+					$way_list = $list['meta'];
+				}
+				elseif(substr($list['meta'], 0,1) === '[')
+				{
+					$way_list = json_decode($list['meta']);
+				}
+				else
+				{
+					$way_list = [];
+				}
+			}
+
+			if(!is_array($way_list))
+			{
+				$way_list = [];
+			}
+
+			if(in_array($_way, $way_list))
+			{
+				\lib\debug::error(T_("Duplicate way"), 'way');
+				return false;
+			}
+
+			array_push($way_list, $_way);
+		}
+
+		$meta = json_encode($way_list, JSON_UNESCAPED_UNICODE);
+
+		if($update)
+		{
+			\lib\db\options::update(['meta' => $meta], $list['id']);
+		}
+		else
+		{
+			$insert_args =
+			[
+				'key'  => $key,
+				'meta' => $meta,
+			];
+			\lib\db\options::insert($insert_args);
+		}
+
+	}
+
+
 	/**
 	 * check args
 	 *
