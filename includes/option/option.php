@@ -32,7 +32,7 @@ self::$config['passphrase']                   = null;
 self::$config['passkey']                      = null;
 self::$config['passvalue']                    = null;
 self::$config['default']                      = null;
-self::$config['redirect']                     = 'a';
+self::$config['redirect']                     = 'u';
 self::$config['register']                     = true;
 self::$config['recovery']                     = true;
 self::$config['fake_sub']                     = null;
@@ -65,7 +65,7 @@ self::$config['enter']['call_template_en'] = 'ermile-en';
  * first signup url
  * main redirect url . signup redirect url
  */
-self::$config['enter']['singup_redirect']     = 'a';
+self::$config['enter']['singup_redirect']     = 'u';
 
 
 
