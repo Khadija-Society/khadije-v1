@@ -1,7 +1,34 @@
 {%extends display.khadijeControlLayout%}
 
 
+
 {%block pageContent%}
+<div class="cbox">
+  <div class="f">
+    {%for key, value in need%}
+       <div class="vcard green mA10 s12 c2">
+                {%if value.fileurl%}
+          <img src="{{value.fileurl}}">
+        {%else%}
+          <img src="{{url.static}}/siftal/images/default/image.png">
+        {%endif%}
+          <div class="content">
+            <a class="header">{{value.title}}</a>
+            <div class="meta"><span>{%trans "Requested"%}: {{value.request | number_format | fitNumber}}</span></div>
+            <div class="desc">{%trans "Amount"%}: {{value.amount | number_format | fitNumber}}</div>
+          </div>
+          <div class="footer">{{value.desc}}</div>
+          <div class="footer">
+            <div class="input">
+             <input type="number" name="" placeholder='{%trans "Your help"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid name"%}' id='fname'>
+            </div>
+
+          </div>
+        </div>
+    {%endfor%}
+
+  </div>
+</div>
 
 <div class="f justify-center">
   <div class="cbox c5">
