@@ -4,13 +4,14 @@
 /**
 * cofig of zarinpal payment
 */
-self::$config['zarinpal']['status']      = null;
-self::$config['zarinpal']['MerchantID']  = null;
-self::$config['zarinpal']['Description'] = null;
+self::$config['zarinpal']['status']      = true;
+self::$config['zarinpal']['MerchantID']  = "c2bf5bee-4d2a-11e7-93bb-000c295eb8fc";
+self::$config['zarinpal']['Description'] = "Tejarak";
 // set the call back is null to redirecto to default dash callback payment
 self::$config['zarinpal']['CallbackURL'] = null;
 // all amount of this payment * exchange of this payment to change all units to default units of dash
-self::$config['zarinpal']['exchange']    = null;
+self::$config['zarinpal']['exchange']    = 1;
+
 
 
 /**
