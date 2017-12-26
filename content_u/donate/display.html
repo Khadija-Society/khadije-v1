@@ -92,8 +92,11 @@
 <label for='fway'>{%trans "Way"%}</label>
 <div class="input">
  <select name="way" class="select">
-   <option>{%trans "Please select one item"%}</option>
-   <option>{%trans "Please select one item"%}</option>
+
+   <option value="">{%trans "Please select one item"%}</option>
+   {%for key, value in way_list%}
+    <option value="{{value}}">{{value}}</option>
+   {%endfor%}
  </select>
 </div>
 {%endblock%}

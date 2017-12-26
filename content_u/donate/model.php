@@ -21,9 +21,9 @@ class model extends \content_u\main\model
 		}
 
 		$way = \lib\utility::post('way');
-		if(mb_strlen($way) > 150)
+		if($way && !in_array($way, \lib\app\donate::way_list()))
 		{
-			\lib\debug::error(T_("Please set way less than 150 character"), 'way');
+			\lib\debug::error(T_("Please set a valid way"), 'way');
 			return false;
 		}
 

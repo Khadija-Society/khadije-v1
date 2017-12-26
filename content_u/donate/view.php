@@ -10,6 +10,8 @@ class view extends \content_u\main\view
 		$this->data->page['desc']    = T_("Glance at your stores and quickly navigate to stores.");
 		$this->data->page['special'] = true;
 
+		$this->data->way_list = \lib\app\donate::way_list();
+
 	}
 }
 ?>
