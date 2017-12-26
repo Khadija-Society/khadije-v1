@@ -8,7 +8,7 @@ class view extends \mvc\view
 		$this->data->bodyclass = 'unselectable vflex';
 		// $this->include->js     = false;
 
-		self::set_static_titles();
+		// self::set_static_titles();
 	}
 
 
