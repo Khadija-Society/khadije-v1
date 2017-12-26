@@ -37,6 +37,7 @@ class model extends \addons\content_cp\main\model
 		$post['count']  = \lib\utility::post('count');
 		$post['amount'] = \lib\utility::post('amount');
 		$post['desc']   = \lib\utility::post('desc');
+		$post['status'] = \lib\utility::post('status') ? 'enable' : 'disable' ;
 		$post['type']   = 'product';
 
 		$file = self::upload_thumb();

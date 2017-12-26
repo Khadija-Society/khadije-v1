@@ -92,7 +92,7 @@ class need
 		}
 
 		$status = \lib\app::request('status');
-		if($status && !in_array($status, ['enable','disable','expire','deleted','lock','awaiting']))
+		if($status && !in_array($status, ['enable','disable']))
 		{
 			\lib\debug::error(T_("Please set a valid status"), 'status');
 			return false;
@@ -233,6 +233,19 @@ class need
 		if(!\lib\user::id())
 		{
 			\lib\debug::error(T_("User not found"), 'user');
+			return false;
+		}
+
+		if(!$_id || !is_numeric($_id))
+		{
+			\lib\debug::error(T_("Id not found"), 'id');
+			return false;
+		}
+
+		$check_id = \lib\db\needs::get(['id' => $_id, 'limit' => 1]);
+		if(!isset($check_id['id']))
+		{
+			\lib\debug::error(T_("Id not found"), 'id');
 			return false;
 		}
 
