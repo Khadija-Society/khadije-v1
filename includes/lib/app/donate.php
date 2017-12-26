@@ -7,6 +7,8 @@ class donate
 
 	public static function remove_way($_way)
 	{
+		$_way = trim($_way);
+
 		$old = self::way_list();
 		if(array_search($_way, $old) === false)
 		{
@@ -50,6 +52,8 @@ class donate
 	{
 		if(!$_set_all_way)
 		{
+			$_way = trim($_way);
+
 			if(!$_way)
 			{
 				\lib\debug::error(T_("Please set way"), 'way');

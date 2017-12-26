@@ -10,6 +10,12 @@
       {{block ('iWay') }}
       {{block ('iadd')}}
     </form>
+  </div>
+</div>
+
+<div class="f justify-center">
+<div class="cbox c5">
+
 {%if way_list%}
     <br>
     <h2>{%trans "List of way"%}</h2>
@@ -24,7 +30,7 @@
         {%for key, value in way_list%}
           <tr>
             <td>{{value}}</td>
-            <td class="c1"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
+            <td class="collapsing"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
           </tr>
         {%endfor%}
       </tbody>
@@ -51,28 +57,5 @@
  <input type="text" name="way" placeholder='{%trans "Way"%}' autofocus  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid way"%}' id='fway'>
 </div>
 {%endblock%}
-
-
-
-
-{%block iWays%}
-<label for='fway'>{%trans "Way"%}</label>
-<div class="input">
- <select name="way" class="select">
-   <option>{%trans "Please select one item"%}</option>
-   <option>{%trans "Please select one item"%}</option>
- </select>
-</div>
-{%endblock%}
-
-
-
-
-
-
-
-
-
-
 
 
