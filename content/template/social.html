@@ -1,14 +1,24 @@
 <nav class="share1">
-  <a data-direct href="https://www.facebook.com/{{social.facebook}}" class="facebook">khadije facebook</a>
-  <a data-direct href="https://twitter.com/{{social.twitter}}" class="twitter">khadije twitter</a>
-  <a data-direct href="https://plus.google.com/{{social.googleplus}}" class="googleplus">khadije google+</a>
-  <a data-direct href="https://t.me/{{social.telegram}}" class="telegram">khadije telegram</a>
-  <a data-direct href="https://instagram.com/{{social.instagram}}" class="instagram">khadije instagram</a>
+{%if social.facebook%}
+  <a data-direct href="https://www.facebook.com/{{social.facebook}}" class="facebook">{{site.title}} facebook</a>
+{%endif%}
+{%if social.twitter%}
+  <a data-direct href="https://twitter.com/{{social.twitter}}" class="twitter">{{site.title}} twitter</a>
+{%endif%}
+{%if social.googleplus%}
+  <a data-direct href="https://plus.google.com/{{social.googleplus}}" class="googleplus">{{site.title}} google+</a>
+{%endif%}
+{%if social.telegram%}
+  <a data-direct href="https://t.me/{{social.telegram}}" class="telegram">{{site.title}} telegram</a>
+{%endif%}
+{%if social.instagram%}
+  <a data-direct href="https://instagram.com/{{social.instagram}}" class="instagram">{{site.title}} instagram</a>
+{%endif%}
 {%if social.linkedin%}
-  <a data-direct href="https://www.linkedin.com/{{social.linkedin}}" class="linkedin">khadije linkedin</a>
+  <a data-direct href="https://www.linkedin.com/{{social.linkedin}}" class="linkedin">{{site.title}} linkedin</a>
 {%endif%}
 {%if false%}
-  <a data-direct href="{{url.base}}/rss" class="rss">khadije rss</a>
+  <a data-direct href="{{url.base}}/rss" class="rss">{{site.title}} rss</a>
 {%endif%}
 
 </nav>
