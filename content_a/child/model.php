@@ -7,35 +7,57 @@ class model extends \content_a\main\model
 
 	public function post_child()
 	{
-		$post                    = [];
-		$post['firstname']       = \lib\utility::post('name');
-		$post['lastname']        = \lib\utility::post('lastName');
-		$post['father']          = \lib\utility::post('father');
-		$post['nationalcode']    = \lib\utility::post('nationalcode');
-		$post['birthday']        = \lib\utility::post('birthday');
-		$post['job']             = \lib\utility::post('job');
-		$post['gender']          = \lib\utility::post('gender') ? 'female' : 'male';
-		$post['married']         = \lib\utility::post('Married') ? 'married' : 'single';
-		$post['nesbat']          = \lib\utility::post('nesbat');
 
-
-		$upload_avatar = self::upload_avatar();
-		if($upload_avatar === false)
+		if(\lib\utility::post('remove') === \lib\utility::get('edit') && \lib\utility::get('edit') != '')
 		{
-			return false;
+			\lib\app\myuser::remove_child(\lib\utility::get('edit'));
+			if(\lib\debug::$status)
+			{
+				$this->redirector($this->url('baseFull'). '/child');
+			}
 		}
-
-		if($upload_avatar)
+		else
 		{
-			$post['avatar'] = $upload_avatar;
-		}
 
-		\lib\app\myuser::add_child($post);
+			$post                    = [];
+			$post['firstname']       = \lib\utility::post('name');
+			$post['lastname']        = \lib\utility::post('lastName');
+			$post['father']          = \lib\utility::post('father');
+			$post['nationalcode']    = \lib\utility::post('nationalcode');
+			$post['birthday']        = \lib\utility::post('birthday');
+			$post['job']             = \lib\utility::post('job');
+			$post['gender']          = \lib\utility::post('gender') ? 'female' : 'male';
+			$post['married']         = \lib\utility::post('Married') ? 'married' : 'single';
+			$post['nesbat']          = \lib\utility::post('nesbat');
 
-		if(\lib\debug::$status)
-		{
-			\lib\debug::true(T_("Your Child was saved"));
-			$this->redirector($this->url('full'));
+
+			$upload_avatar = self::upload_avatar();
+			if($upload_avatar === false)
+			{
+				return false;
+			}
+
+			if($upload_avatar)
+			{
+				$post['avatar'] = $upload_avatar;
+			}
+
+			if(\lib\utility::get('edit') && \lib\utility::get('edit') != '')
+			{
+
+				\lib\app\myuser::edit_child($post, \lib\utility::get('edit'));
+			}
+			else
+			{
+				\lib\app\myuser::add_child($post);
+			}
+
+			if(\lib\debug::$status)
+			{
+				\lib\debug::true(T_("Your Child was saved"));
+				$this->redirector($this->url('full'));
+			}
+
 		}
 
 	}

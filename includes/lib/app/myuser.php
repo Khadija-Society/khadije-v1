@@ -52,16 +52,29 @@ class myuser
 		}
 
 		$firstname = \lib\app::request('firstname');
+
+		if(!$firstname)
+		{
+			\lib\debug::error(T_("First name is required"), 'name');
+			return false;
+		}
+
 		if($firstname && mb_strlen($firstname) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments firstname"), 'firstname');
+			\lib\debug::error(T_("Invalid arguments firstname"), 'name');
 			return false;
 		}
 
 		$lastname = \lib\app::request('lastname');
 		if($lastname && mb_strlen($lastname) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments lastname"), 'lastname');
+			\lib\debug::error(T_("Invalid arguments lastname"), 'lastName');
+			return false;
+		}
+
+		if(!$lastname)
+		{
+			\lib\debug::error(T_("Last name is required"), 'lastName');
 			return false;
 		}
 
@@ -70,6 +83,19 @@ class myuser
 		{
 			\lib\debug::error(T_("Invalid arguments nationalcode"), 'nationalcode');
 			return false;
+		}
+
+		if($nationalcode)
+		{
+			if(\lib\utility\nationalcode::check($nationalcode))
+			{
+				\lib\db\nationalcodes::add($nationalcode);
+			}
+			else
+			{
+				\lib\debug::error(T_("Invalid nationalcode"), 'nationalcode');
+				return false;
+			}
 		}
 
 		$father = \lib\app::request('father');
@@ -328,6 +354,86 @@ class myuser
 		\lib\db\users::insert($args);
 
 		return true;
+	}
+
+		public static function edit_child($_args, $_id, $_option = [])
+	{
+		$default_option =
+		[
+			'debug' => true,
+		];
+
+		if(!is_array($_option))
+		{
+			$_option = [];
+		}
+
+		$_option = array_merge($default_option, $_option);
+
+		\lib\app::variable($_args);
+
+		if(!\lib\user::id())
+		{
+			\lib\debug::error(T_("User not found"), 'user');
+			return false;
+		}
+
+		if(!$_id || !is_numeric($_id))
+		{
+			return false;
+		}
+
+		$check = \lib\db\users::get(['id' => $_id, 'parent' => \lib\user::id(), 'limit' => 1]);
+
+		if(!isset($check['id']))
+		{
+			return false;
+		}
+
+		// check args
+		$args = self::check($_option);
+
+		if($args === false || !\lib\debug::$status)
+		{
+			return false;
+		}
+
+		if(!\lib\app::isset_request('avatar'))         unset($args['avatar']);
+
+		\lib\db\users::update($args, $_id);
+
+		return true;
+	}
+
+
+	public static function remove_child($_id)
+	{
+		if(!\lib\user::id())
+		{
+			\lib\debug::error(T_("User not found"), 'user');
+			return false;
+		}
+
+		if(!$_id || !is_numeric($_id))
+		{
+			return false;
+		}
+
+		$check = \lib\db\users::get(['id' => $_id, 'parent' => \lib\user::id(), 'limit' => 1]);
+
+		if(!isset($check['id']))
+		{
+			return false;
+		}
+
+		if(\lib\db\users::hard_delete($_id))
+		{
+			\lib\debug::true(T_("Your child removed"));
+		}
+		else
+		{
+			\lib\debug::error(T_("Can not remove this child"));
+		}
 	}
 
 	/**

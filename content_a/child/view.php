@@ -13,5 +13,25 @@ class view extends \content_a\main\view
 		$this->data->child_list = \lib\db\users::get(['parent' => \lib\user::id()]);
 
 	}
+
+
+	public function view_edit()
+	{
+		$this->data->edit_mode = true;
+
+		$id = \lib\utility::get('edit');
+
+		$this->data->child_detail = null;
+
+		if(is_numeric($id))
+		{
+			$this->data->child_detail = \lib\db\users::get(['id' => $id, 'parent' => \lib\user::id(), 'limit' => 1]);
+		}
+
+		if(!$this->data->child_detail)
+		{
+			\lib\error::page(T_("Id not found"));
+		}
+	}
 }
 ?>
