@@ -7,14 +7,18 @@
 
 {%block content%}
 
+ {{block('about')}}
+ {{block('donate')}}
 
- {{block('keepSimple--')}}
+ {{block('quote-')}}
+
+
+
  {{block('statistic--')}}
  {{block('enterprise--')}}
  {{block('history---')}}
  {{block('installation--')}}
  {{block('roadmap')}}
- {{block('quote--')}}
  {{block('why--')}}
  {{block('support--')}}
 
@@ -34,6 +38,43 @@
 {%endblock%}
 
 
+{%block about%}
+ <div class="tile fs14" id='aboutBox'>
+  <div class="cn">
+    <div class="f">
+      <div class="c s12 text">
+        <h2><a href="{{url.base}}/about">{%trans "About"%} {{site.title}}</a></h2>
+        <p>مؤسسه خیریه ای به نام حضرت خدیجه(س) راه اندازی شده است كه تاكنون هزار نفر را به زیارت حضرت فاطمه معصومه(س) آورده اند؛ این خیریه مردمی است و كسانی كه می توانند در این خیریه كمك كنند، در این مسیر ما را یاری كنند؛ شرط ثبت نام در این طرح آن است كه ثبت نام كنندگان باید زائر اولی باشند.</p>
+        <p>كسانی كه افرادی را به زیارت می فرستند، قطعا ثوابشان از آمدن خودشان بیشتر است؛ افرادی كه می توانند وسیله حمل و نقل به قم و یا محل سكونتی در قم در اختیار بگذارند، یا كار فرهنگی را برعهده بگیرند و یا طلاب و مداحانی كه می توانند در این مسیر یاری برسانند، دریغ نكنند و در این راه به خدمتگذاری بپردازند.</p>
+      </div>
+      <div class="cauto s12">
+        <div class="videoBox">
+          <div id="15143527106877784"><script type="text/JavaScript" src="https://www.aparat.com/embed/o4Kc8?data[rnddiv]=15143527106877784&data[w]=640"></script></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+{%endblock%}
+
+
+{%block donate%}
+<section class="tile bg-graylight">
+ <h2>Keep it simple</h2>
+</section>
+{%endblock%}
+
+
+{%block quote%}
+<section id='quote'>
+  <div class="title">
+  <h4>"{%trans "With Khadije we take less time of our customers and this means modern customer orientation"%}"</h4>
+  <h5>{%trans "Majid Sadeghi, Sales Supervisor at SuperSaeed"%}</h5>
+ </div>
+</section>
+{%endblock%}
+
+
 
 {%block readmap%}
 <section class="module parallax parallax-2">
@@ -44,11 +85,6 @@
 {%endblock%}
 
 
-{%block keepSimple%}
-<section>
- <h2>Keep it simple</h2>
-</section>
-{%endblock%}
 
 
 {%block statistic%}
@@ -89,14 +125,7 @@
 {%endblock%}
 
 
-{%block quote%}
-<section id='quote'>
-  <div class="title">
-  <h4>"{%trans "With Khadije we take less time of our customers and this means modern customer orientation"%}"</h4>
-  <h5>{%trans "Majid Sadeghi, Sales Supervisor at SuperSaeed"%}</h5>
- </div>
-</section>
-{%endblock%}
+
 
 
 {%block why%}
