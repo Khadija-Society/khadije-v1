@@ -265,6 +265,25 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 #certificateTile h3{color:#ccc;margin-top: 1.5em;}
 #certificateTile a img{height:100px;width:auto;}
 
+#addressTile{
+  background-image: url('/static/images/cert/khadije-map-wide.png');
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: block;
+  color:#fff;
+}
+#addressTile:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+}
 
 
 

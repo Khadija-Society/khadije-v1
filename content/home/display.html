@@ -16,17 +16,17 @@
  {{block('donate')}}
  {{block('empty')}}
 
- {{block('statistic')}}
  {{block('certificates')}}
-
+ {{block('statistic')}}
  {{block('empty')}}
+ {{block('address')}}
+
 
 
  {{block('quote-')}}
 
 
 
- {{block('history---')}}
  {{block('installation--')}}
  {{block('roadmap--')}}
  {{block('why--')}}
@@ -128,13 +128,17 @@
          <a href="#"><img src="{{url.static}}images/cert/senf.jpg" alt='{%trans "Certificate"%}'></a>
          <a href="#"><img src="{{url.static}}images/cert/enamad1.png" alt='{%trans "Certificate"%}'></a>
        </nav>
-
       </div>
     </div>
-
   </div>
 </section>
 {%endblock%}
+
+
+{%block address%}
+<a id='addressTile' href="{{url.base}}/contact"></a>
+{%endblock%}
+
 
 
 {%block donate%}
