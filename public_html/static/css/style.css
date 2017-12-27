@@ -12,7 +12,7 @@ body{
 
 
 /* header*/
-.site-header{height:60px;min-height:60px;font-size:1.2em;overflow:hidden;background-color:#107070;transition:0.3s;}
+.site-header{height:60px;min-height:60px;font-size:1.2em;overflow:hidden;background-color:#2fbfdf;transition:0.3s;}
 .site-header .logo{transition:0.3s;padding:0;margin:0;}
 .site-header .logo a{padding:0 1em;color:#fff;font-weight:700;display:inline-block;line-height:60px;}
 .site-header .logo h1{display:inline-block;margin:0;line-height:60px;}
@@ -31,9 +31,9 @@ body{
 body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 
 /* static pages design*/
-.page-title{padding:15em 0;text-align:center;overflow:hidden;background-color:#055454;}
-.page-title h1{font-weight:700;line-height:2em;font-size:3em;color:#fff;}
-.page-title h2{font-weight:100;line-height:2em;color:#aaa;padding:0 10%;}
+.page-title{padding:5em 0;text-align:center;overflow:hidden;background-color:#cff5ff;}
+.page-title h1{font-weight:700;line-height:2em;font-size:4em;color:#333;}
+.page-title h2{font-weight:100;line-height:2em;color:#777;padding:0 10%;}
 .pc{color:#333;background-color:#f2f2f2;font-size:1.4em;padding:4em 0;}
 .pc .em{font-weight:bold;text-align:center;padding:1em 5%;background-color:#ddd;}
 .pc h2{margin-top:1.5em;margin-bottom:0.5em;font-weight:bold;}
@@ -306,7 +306,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   position: absolute;
   top:0;
   font-size: 350px;
-  color: #16B6DF;
+  color: #2fbfdf;
   font-family: Arial;
   font-weight: bold;
   line-height: 300px;
@@ -317,7 +317,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   position: absolute;
   top:0;
   font-size: 350px;
-  color: #16B6DF;
+  color: #2fbfdf;
   font-family: Arial;
   font-weight: bold;
   line-height: 300px;
@@ -326,7 +326,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 }
 .quote-person span{
   display: block;
-  color: #16B6DF;
+  color: #2fbfdf;
   font-weight: bold;
   font-size: 0.9em;
 }
