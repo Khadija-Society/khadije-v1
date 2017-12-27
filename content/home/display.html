@@ -8,17 +8,27 @@
 {%block content%}
 
  {{block('about')}}
+ {{block('thinking')}}
+
+
+
+
  {{block('donate')}}
+ {{block('empty')}}
+
+ {{block('statistic')}}
+ {{block('certificates')}}
+
+ {{block('empty')}}
+
 
  {{block('quote-')}}
 
 
 
- {{block('statistic--')}}
- {{block('enterprise--')}}
  {{block('history---')}}
  {{block('installation--')}}
- {{block('roadmap')}}
+ {{block('roadmap--')}}
  {{block('why--')}}
  {{block('support--')}}
 
@@ -37,19 +47,24 @@
 </section>
 {%endblock%}
 
+{%block empty%}
+<section style="min-height: 400px;text-align: center;font-size: 10em;color:#ddd">
+...
+</section>
+{%endblock%}
 
 {%block about%}
  <div class="tile fs14" id='aboutBox'>
   <div class="cn">
     <div class="f">
-      <div class="c s12 text">
+      <div class="c5 s12 text">
         <h2><a href="{{url.base}}/about">{%trans "About"%} {{site.title}}</a></h2>
         <p>مؤسسه خیریه ای به نام حضرت خدیجه(س) راه اندازی شده است كه تاكنون هزار نفر را به زیارت حضرت فاطمه معصومه(س) آورده اند؛ این خیریه مردمی است و كسانی كه می توانند در این خیریه كمك كنند، در این مسیر ما را یاری كنند؛ شرط ثبت نام در این طرح آن است كه ثبت نام كنندگان باید زائر اولی باشند.</p>
         <p>كسانی كه افرادی را به زیارت می فرستند، قطعا ثوابشان از آمدن خودشان بیشتر است؛ افرادی كه می توانند وسیله حمل و نقل به قم و یا محل سكونتی در قم در اختیار بگذارند، یا كار فرهنگی را برعهده بگیرند و یا طلاب و مداحانی كه می توانند در این مسیر یاری برسانند، دریغ نكنند و در این راه به خدمتگذاری بپردازند.</p>
       </div>
-      <div class="cauto s12">
+      <div class="c s12">
         <div class="videoBox">
-          <div id="15143527106877784"><script type="text/JavaScript" src="https://www.aparat.com/embed/o4Kc8?data[rnddiv]=15143527106877784&data[w]=640"></script></div>
+          <div id="15143527106877784"><script async src="https://www.aparat.com/embed/o4Kc8?data[rnddiv]=15143527106877784&data[w]=640"></script></div>
         </div>
       </div>
     </div>
@@ -58,9 +73,73 @@
 {%endblock%}
 
 
+{%block thinking%}
+<section id='thinkingTile'>
+  <div class="cn">
+    <h3>{%trans "Do you know?"%}</h3>
+    <p>هزاران نفر در سراسر کشور عزیزمان تاکنون به زیارت امام رضا ع و حضرت معصومه س مشرف نشده‌اند و آرزوی زیارت این بزرگان را دارند؟</p>
+    <p>طبق بررسی‌های صورت گرفته فقط در استان قم بیش از ۵هزار نفر ساکن این استان تاکنون حتی یکبار هم به حرم حضرت معصومه سلام الله علیها مشرف نشده‌اند!</p>
+    <p><a href="{{url.baseRaw}}a" class="btn light outline">{%trans "Donate"%}</a></p>
+  </div>
+</section>
+{%endblock%}
+
+
+{%block statistic%}
+<section id='statisticTile'>
+  <div class="cn">
+   <div class="f">
+    <div class="c4">
+     <div class="statistic">
+       <div class="value">{{7569200 | number_format | fitNumber}}</div>
+       <div class="label">{%trans "Donate"%}</div>
+     </div>
+    </div>
+
+    <div class="c4">
+     <div class="statistic">
+       <div class="value">{{392 | number_format | fitNumber}}</div>
+       <div class="label">{%trans "Person"%}</div>
+     </div>
+    </div>
+
+    <div class="c4">
+     <div class="statistic">
+       <div class="value">{{12000000 | number_format | fitNumber}}</div>
+       <div class="label">{%trans "Balance"%}</div>
+     </div>
+    </div>
+
+   </div>
+  </div>
+</section>
+{%endblock%}
+
+
+{%block certificates%}
+<section id='certificateTile'>
+  <div class="cn f">
+    <div class="f">
+      <div class="cauto"><h3>{%trans "license and supporters"%}</h3></div>
+      <div class="c">
+       <nav>
+         <a href="#"><img src="{{url.static}}images/cert/ict.png" alt='{%trans "Certificate"%}'></a>
+         <a href="#"><img src="{{url.static}}images/cert/sabt.jpg" alt='{%trans "Certificate"%}'></a>
+         <a href="#"><img src="{{url.static}}images/cert/senf.jpg" alt='{%trans "Certificate"%}'></a>
+         <a href="#"><img src="{{url.static}}images/cert/enamad1.png" alt='{%trans "Certificate"%}'></a>
+       </nav>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+{%endblock%}
+
+
 {%block donate%}
-<section class="tile bg-graylight">
- <h2>Keep it simple</h2>
+<section class="tile">
+ <h2>Donate</h2>
 </section>
 {%endblock%}
 
@@ -87,13 +166,6 @@
 
 
 
-{%block statistic%}
-<section>
- statistic
-</section>
-{%endblock%}
-
-
 {%block roadmap%}
 <section id='roadmap'>
   <div class="title">
@@ -104,42 +176,6 @@
 {%endblock%}
 
 
-{%block enterprise%}
-<section>
- enterprise
-</section>
-{%endblock%}
-
-
-{%block history%}
-<section>
- history
-</section>
-{%endblock%}
-
-
-{%block installation%}
-<section>
- installation
-</section>
-{%endblock%}
-
-
-
-
-
-{%block why%}
-<section>
- why
-</section>
-{%endblock%}
-
-
-{%block support%}
-<section>
- support
-</section>
-{%endblock%}
 
 
 

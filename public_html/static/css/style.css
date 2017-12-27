@@ -160,7 +160,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   font-weight: 100;
 }
 
-.tile{padding:5em 0;width:100%;overflow:hidden;text-align:center;}
+.tile{padding:5em 0;width:100%;overflow:hidden;text-align:center;position:relative;}
 .tile h2{color:#333;font-weight:700;}
 .tile h3{margin:0;font-weight:200;color:#888;padding:0 15%;}
 .tile h4{margin:0;font-weight:200;color:#999;padding:0 15%;}
@@ -170,9 +170,27 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 #aboutBox .text{padding:1.2em;}
 
 
-.videoBox{max-width: 100%;overflow: hidden;}
+.videoBox{max-width: 100%;min-height:360px; overflow: hidden;position:relative;}
 .videoBox iframe{max-width: 100%;}
 .videoBox iframe .jwplayer.jw-flag-aspect-mode{height:100%!important}
+.videoBox:before{
+  font-family: "siftal" !important;
+  content: "\7e";
+  line-height: 1;
+  font-size: 6em;
+  color: #777;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0.3s;
+
+  -webkit-animation: spiny 1.5s infinite linear;
+  -webkit-animation-timing-function:cubic-bezier(.43, .84, .61, .14);
+  animation-timing-function:cubic-bezier(.43, .84, .61, .14);
+  transform-origin: 50% 50%;
+}
 
 .browserBox{max-width:700px;min-height:100px;border:3px solid #e5e5e8;border-top-width:30px;border-radius:5px;box-shadow:0 0 10px 1px #e5e5e8;margin:0 auto;position:relative;overflow:hidden;}
 .browserBox::before{content:'';position:absolute;height:14px;background-color:#d6d7d6;border-radius:5px;top:-22px;right:10px;left:80px;transition:0.3s}
@@ -183,6 +201,69 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 .browserBox:hover > span{background-color:#777;cursor:not-allowed;}
 .browserBox img{display:block;margin:0 auto;cursor:progress;}
 .browserBox iframe{max-width:100%;max-height:100%;display:block;margin:0 auto;}
+
+
+#thinkingTile{
+    background-image: url(../images/homepage/bg-blue.svg);
+    color: #FFF;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    z-index: 1;
+    background-size: cover;
+    font-size: 1.6em;
+}
+#thinkingTile h3{
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+#thinkingTile p{
+    font-weight: 400;
+    text-align: center;
+    width: 60%;
+    min-width: 280px;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.8;
+    margin-bottom: 1em;
+}
+
+#statisticTile{
+  background-image: url('/static/images/homepage/drop2.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color:#fff;
+  padding: 7em;
+  font-size: 1.4em;
+}
+#statisticTile:before{
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #777;
+  z-index: 1;
+  opacity:0.3;
+}
+#statisticTile .cn{
+  z-index: 2
+}
+
+#certificateTile{
+    background-color: #f9f9f9;
+    padding: 5em 0;
+    text-align: center;
+    font-size: 1.4em;
+}
+#certificateTile h3{color:#ccc;margin-top: 1.5em;}
+#certificateTile a img{height:100px;width:auto;}
 
 
 
