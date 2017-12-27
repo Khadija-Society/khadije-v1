@@ -18,12 +18,12 @@
 
  {{block('certificates')}}
  {{block('statistic')}}
- {{block('empty')}}
+
+ {{block('quote')}}
  {{block('address')}}
 
 
 
- {{block('quote-')}}
 
 
 
@@ -152,10 +152,15 @@
 
 
 {%block quote%}
-<section id='quote'>
-  <div class="title">
-  <h4>"{%trans "With Khadije we take less time of our customers and this means modern customer orientation"%}"</h4>
-  <h5>{%trans "Majid Sadeghi, Sales Supervisor at SuperSaeed"%}</h5>
+<section class='quoteTile'>
+  <div class="cn">
+   <article class="quote-person">
+    <p>هموطنان من، نپرسید کشورم چه کاری برایم می تواند بکند، بپرسید من چه کاری برای کشورم می توانم بکنم.</p>
+    <div class="author f">
+     <span class="c">حسن روحانی</span>
+     <abbr class="cauto os">اولین زیارت از قم</abbr>
+    </div>
+   </article>
  </div>
 </section>
 {%endblock%}

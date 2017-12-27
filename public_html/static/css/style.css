@@ -291,6 +291,52 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 
 }
 
+.quote-person{
+  max-width: 600px;
+  position: relative;
+  margin: 100px auto;
+  min-height: 150px;
+  font-size: 2em;
+}
+.quote-person p{
+    font-weight: 100;
+}
+
+.quote-person:before{
+  position: absolute;
+  top:0;
+  font-size: 350px;
+  color: #16B6DF;
+  font-family: Arial;
+  font-weight: bold;
+  line-height: 300px;
+  right: -200px;
+  content: '\201d';
+}
+.quote-person:after{
+  position: absolute;
+  top:0;
+  font-size: 350px;
+  color: #16B6DF;
+  font-family: Arial;
+  font-weight: bold;
+  line-height: 300px;
+  left: -200px;
+  content: '\201c';
+}
+.quote-person span{
+  display: block;
+  color: #16B6DF;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.quote-person abbr{
+  font-size: 0.7em;
+  color: #b6b6b6;
+  font-weight: bold;
+}
+
+
 
 
 
