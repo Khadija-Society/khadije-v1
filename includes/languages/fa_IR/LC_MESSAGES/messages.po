@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2017-12-26 12:55+0330\n"
-"PO-Revision-Date: 2017-12-26 12:57+0330\n"
+"POT-Creation-Date: 2017-12-27 18:18+0330\n"
+"PO-Revision-Date: 2017-12-27 18:19+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -86,7 +86,7 @@ msgstr ""
 #: dash/addons/content_account/home/view.php:11
 #: dash/addons/includes/languages/trans_addons.php:39
 #: khadije/includes/languages/trans_addons.php:39
-#: khadije/includes/languages/trans_twig.php:194
+#: khadije/includes/languages/trans_twig.php:209
 msgid "Dashboard"
 msgstr "داشبورد"
 
@@ -129,6 +129,8 @@ msgid "Operation Faild"
 msgstr "عملیات با خطا مواجه شد"
 
 #: dash/addons/content_api/v1/comment/tools/add.php:84
+#: khadije/content_cp/options/product/view.php:31
+#: khadije/includes/lib/app/need.php:241 khadije/includes/lib/app/need.php:248
 msgid "Id not found"
 msgstr "کد یافت نشد"
 
@@ -201,7 +203,9 @@ msgstr "نوع باید کمتر از 50 کاراکتر باشد"
 #: dash/addons/content_api/v1/user/tools/get.php:110
 #: dash/addons/content_enter/home/model.php:43
 #: dash/addons/content_su/sendnotify/model.php:31 dash/lib/app/user/add.php:48
-#: khadije/includes/lib/app/donate.php:125
+#: khadije/includes/lib/app/donate.php:257 khadije/includes/lib/app/myuser.php:312
+#: khadije/includes/lib/app/myuser.php:358 khadije/includes/lib/app/need.php:181
+#: khadije/includes/lib/app/need.php:235
 msgid "User not found"
 msgstr "کاربر یافت نشد"
 
@@ -1082,7 +1086,6 @@ msgstr "کلمه‌عبور جدید شما همان قدیمی‌است"
 #: dash/addons/content_enter/pass/recovery/model.php:53
 #: dash/addons/includes/languages/trans_addons.php:1069
 #: khadije/includes/languages/trans_addons.php:1069
-#: khadije/includes/languages/trans_twig.php:68
 msgid "Enter"
 msgstr "ورود"
 
@@ -1415,7 +1418,7 @@ msgstr "درگاه پرداخت خود را انتخاب کنید و میزان 
 
 #: dash/addons/includes/languages/trans_addons.php:17
 #: khadije/includes/languages/trans_addons.php:17
-#: khadije/includes/languages/trans_twig.php:208
+#: khadije/includes/languages/trans_twig.php:192
 msgid "Amount"
 msgstr "مقدار"
 
@@ -1461,12 +1464,12 @@ msgstr "تاریخچه پرداخت‌ها"
 
 #: dash/addons/includes/languages/trans_addons.php:26
 #: khadije/includes/languages/trans_addons.php:26
+#: khadije/includes/languages/trans_twig.php:216
 msgid "Title"
 msgstr "عنوان"
 
 #: dash/addons/includes/languages/trans_addons.php:27
 #: khadije/includes/languages/trans_addons.php:27
-#: khadije/includes/languages/trans_twig.php:88
 msgid "Date"
 msgstr "تاریخ"
 
@@ -1502,12 +1505,13 @@ msgstr "قیمت"
 
 #: dash/addons/includes/languages/trans_addons.php:36
 #: khadije/includes/languages/trans_addons.php:36
+#: khadije/includes/languages/trans_twig.php:222
 msgid "Count"
 msgstr "تعداد"
 
 #: dash/addons/includes/languages/trans_addons.php:40
 #: khadije/includes/languages/trans_addons.php:40
-#: khadije/includes/languages/trans_twig.php:195
+#: khadije/includes/languages/trans_twig.php:210
 msgid "Billing"
 msgstr "مالی"
 
@@ -1548,6 +1552,7 @@ msgstr "موقعیت شغلی مناسبی بین ۳ تا ۳۰ کاراکتر و
 
 #: dash/addons/includes/languages/trans_addons.php:50
 #: khadije/includes/languages/trans_addons.php:50
+#: khadije/includes/languages/trans_twig.php:225
 msgid "allowed extentions jpg, png (gif for bussiness plans). Max 500Kb"
 msgstr ""
 "پسوندهای مجاز jpg و png هستند‌(‌gif برای پلن‌های تجاری). حداکثر حجم مجاز ۵۰۰ کیلوبایت"
@@ -1775,7 +1780,7 @@ msgstr "شما بدست آوردید"
 
 #: dash/addons/includes/languages/trans_addons.php:93
 #: khadije/includes/languages/trans_addons.php:93
-#: khadije/includes/languages/trans_twig.php:89
+#: khadije/includes/languages/trans_twig.php:174
 msgid "Description"
 msgstr "توضیح"
 
@@ -1920,6 +1925,7 @@ msgstr "جمع تخفیف"
 
 #: dash/addons/includes/languages/trans_addons.php:126
 #: khadije/includes/languages/trans_addons.php:126
+#: khadije/includes/languages/trans_twig.php:230
 msgid "Status"
 msgstr "وضعیت"
 
@@ -1935,11 +1941,13 @@ msgstr "جزئیات"
 
 #: dash/addons/includes/languages/trans_addons.php:129
 #: khadije/includes/languages/trans_addons.php:129
+#: khadije/includes/languages/trans_twig.php:163
 msgid "Yes"
 msgstr "بلی"
 
 #: dash/addons/includes/languages/trans_addons.php:130
 #: khadije/includes/languages/trans_addons.php:130
+#: khadije/includes/languages/trans_twig.php:164
 msgid "No"
 msgstr "خیر"
 
@@ -2170,7 +2178,7 @@ msgstr "نوع"
 
 #: dash/addons/includes/languages/trans_addons.php:187
 #: khadije/includes/languages/trans_addons.php:187
-#: khadije/includes/languages/trans_twig.php:211
+#: khadije/includes/languages/trans_twig.php:195
 msgid "Please select one item"
 msgstr "لطفا یک گزینه را انتخاب کنید"
 
@@ -2207,6 +2215,7 @@ msgstr "موبایل"
 
 #: dash/addons/includes/languages/trans_addons.php:194
 #: khadije/includes/languages/trans_addons.php:194
+#: khadije/includes/languages/trans_twig.php:179
 msgid "Add"
 msgstr "افزودن"
 
@@ -2308,6 +2317,7 @@ msgstr "آواتار"
 
 #: dash/addons/includes/languages/trans_addons.php:222
 #: khadije/includes/languages/trans_addons.php:222
+#: khadije/includes/languages/trans_twig.php:224
 msgid "Edit"
 msgstr "ویرایش"
 
@@ -2328,26 +2338,31 @@ msgstr "نام معتبری بین ۳ تا ۳۰ کاراکتر وارد کنید
 
 #: dash/addons/includes/languages/trans_addons.php:228
 #: khadije/includes/languages/trans_addons.php:228
+#: khadije/includes/languages/trans_twig.php:147
 msgid "Last name"
 msgstr "نام‌خانوادگی"
 
 #: dash/addons/includes/languages/trans_addons.php:229
 #: khadije/includes/languages/trans_addons.php:229
+#: khadije/includes/languages/trans_twig.php:149
 msgid "National code"
 msgstr "کد ملی"
 
 #: dash/addons/includes/languages/trans_addons.php:230
 #: khadije/includes/languages/trans_addons.php:230
+#: khadije/includes/languages/trans_twig.php:160
 msgid "Father name"
 msgstr "نام پدر"
 
 #: dash/addons/includes/languages/trans_addons.php:231
 #: khadije/includes/languages/trans_addons.php:231
+#: khadije/includes/languages/trans_twig.php:150
 msgid "Birthday"
 msgstr "تاریخ تولد"
 
 #: dash/addons/includes/languages/trans_addons.php:232
 #: khadije/includes/languages/trans_addons.php:232
+#: khadije/includes/languages/trans_twig.php:153
 msgid "Gender"
 msgstr "جنسیت"
 
@@ -2363,16 +2378,19 @@ msgstr "زن"
 
 #: dash/addons/includes/languages/trans_addons.php:235
 #: khadije/includes/languages/trans_addons.php:235
+#: khadije/includes/languages/trans_twig.php:162
 msgid "Marital"
 msgstr "وضعیت تاهل"
 
 #: dash/addons/includes/languages/trans_addons.php:236
 #: khadije/includes/languages/trans_addons.php:236
+#: khadije/includes/languages/trans_twig.php:161
 msgid "Single"
 msgstr "مجرد"
 
 #: dash/addons/includes/languages/trans_addons.php:237
 #: khadije/includes/languages/trans_addons.php:237
+#: khadije/includes/languages/trans_twig.php:154
 msgid "Married"
 msgstr "متاهل"
 
@@ -2403,6 +2421,7 @@ msgstr "آخرین مدرک تحصیلی"
 
 #: dash/addons/includes/languages/trans_addons.php:243
 #: khadije/includes/languages/trans_addons.php:243
+#: khadije/includes/languages/trans_twig.php:151
 msgid "Job"
 msgstr "شغل"
 
@@ -2698,6 +2717,7 @@ msgstr "کم"
 
 #: dash/addons/includes/languages/trans_addons.php:349
 #: khadije/includes/languages/trans_addons.php:349
+#: khadije/includes/languages/trans_twig.php:180
 msgid "Save"
 msgstr "ذخیره"
 
@@ -2860,7 +2880,7 @@ msgstr " خانه"
 
 #: dash/addons/includes/languages/trans_addons.php:391
 #: khadije/includes/languages/trans_addons.php:391
-#: khadije/includes/languages/trans_twig.php:61
+#: khadije/includes/languages/trans_twig.php:57
 msgid "Control Panel"
 msgstr "کنترل پنل"
 
@@ -3041,6 +3061,7 @@ msgstr "مدیر عامل و موسس"
 
 #: dash/addons/includes/languages/trans_addons.php:427
 #: khadije/includes/languages/trans_addons.php:427
+#: khadije/includes/languages/trans_twig.php:155
 msgid "Remove"
 msgstr "حذف"
 
@@ -4012,6 +4033,7 @@ msgstr "فوکوس"
 
 #: dash/addons/includes/languages/trans_addons.php:629
 #: khadije/includes/languages/trans_addons.php:629
+#: khadije/includes/languages/trans_twig.php:228
 msgid "Active"
 msgstr "فعال"
 
@@ -5832,7 +5854,7 @@ msgstr "خروج از سیستم"
 
 #: dash/addons/includes/languages/trans_addons.php:1040
 #: khadije/includes/languages/trans_addons.php:1040
-#: khadije/includes/languages/trans_twig.php:39
+#: khadije/includes/languages/trans_twig.php:44
 msgid "View your current location and navigate to parent of it"
 msgstr "مکان فعلی خود را دیده و به مکان‌های والد آن منتقل شوید"
 
@@ -5908,7 +5930,7 @@ msgstr "کد را به این شماره ارسال کنید!"
 
 #: dash/addons/includes/languages/trans_addons.php:1058
 #: khadije/includes/languages/trans_addons.php:1058
-#: khadije/includes/languages/trans_twig.php:202
+#: khadije/includes/languages/trans_twig.php:186
 msgid "Full name"
 msgstr "نام کامل"
 
@@ -6300,7 +6322,7 @@ msgstr "خانه"
 
 #: dash/addons/includes/languages/trans_addons.php:1144
 #: dash/lib/view/twigAddons.php:359 khadije/includes/languages/trans_addons.php:1144
-#: khadije/includes/languages/trans_twig.php:43
+#: khadije/includes/languages/trans_twig.php:48
 msgid "Home"
 msgstr "صفحه نخست"
 
@@ -6376,6 +6398,7 @@ msgstr "یا"
 
 #: dash/addons/includes/languages/trans_addons.php:1159
 #: khadije/includes/languages/trans_addons.php:1159
+#: khadije/includes/languages/trans_twig.php:217
 msgid "Delete"
 msgstr "حذف"
 
@@ -7518,7 +7541,7 @@ msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: dash/addons/includes/languages/trans_addons.php:1383
 #: khadije/includes/languages/trans_addons.php:1383
-#: khadije/includes/languages/trans_twig.php:223
+#: khadije/includes/languages/trans_twig.php:234
 msgid " "
 msgstr " "
 
@@ -7774,35 +7797,35 @@ msgstr "اجرا شد"
 msgid "Old version"
 msgstr "نسخه قدیمی"
 
-#: dash/lib/db/transactions/set.php:80
+#: dash/lib/db/transactions/set.php:85
 msgid "Transaction user_id can not be null"
 msgstr "شناسه‌_کاربری تراکنش نمی‌تواند خالی باشد"
 
-#: dash/lib/db/transactions/set.php:92
+#: dash/lib/db/transactions/set.php:97
 msgid "Transaction caller can not be null"
 msgstr "دعوت کننده‌تراکنش نمی‌تواند خالی باشد"
 
-#: dash/lib/db/transactions/set.php:103
+#: dash/lib/db/transactions/set.php:108
 msgid "Transaction title can not be null"
 msgstr "عنوان‌تراکنش نمی‌تواند خالی باشد"
 
-#: dash/lib/db/transactions/set.php:114
+#: dash/lib/db/transactions/set.php:119
 msgid "Transaction type can not be null"
 msgstr "نوع‌تراکنش نمی‌تواند خالی باشد"
 
-#: dash/lib/db/transactions/set.php:125
+#: dash/lib/db/transactions/set.php:130
 msgid "Transaction status can not be null"
 msgstr "وضعیت‌تراکنش نمی‌تواند خالی باشد"
 
-#: dash/lib/db/transactions/set.php:136
+#: dash/lib/db/transactions/set.php:141
 msgid "Invalid transaction verify field"
 msgstr "مقدار تائید‌تراکنش نامعتبر است"
 
-#: dash/lib/db/transactions/set.php:147
+#: dash/lib/db/transactions/set.php:152
 msgid "Transaction unit can not be null"
 msgstr "واحد در‌تراکنش نمی‌تواند خالی باشد"
 
-#: dash/lib/db/transactions/set.php:164
+#: dash/lib/db/transactions/set.php:169
 msgid "Transaction unit_id can not be null"
 msgstr "شناسه_واحد تراکنش نمی‌تواند خالی باشد"
 
@@ -8191,7 +8214,7 @@ msgstr ""
 "کانون فرهنگی حضرت خدیجه مطابق قوانین بین‌الملل و وابسته به کشورهای دریافت‌کننده "
 "خدمات بوده و در این چارچوب فعالیت می‌نماید."
 
-#: khadije/content/home/view.php:48 khadije/includes/languages/trans_twig.php:56
+#: khadije/content/home/view.php:48 khadije/includes/languages/trans_twig.php:54
 msgid "Privacy Policy"
 msgstr "حریم خصوصی"
 
@@ -8207,7 +8230,7 @@ msgstr ""
 msgid "Khadije Social Responsibility"
 msgstr "مسئولیت اجتماعی کانون فرهنگی حضرت خدیجه"
 
-#: khadije/content/home/view.php:55 khadije/includes/languages/trans_twig.php:156
+#: khadije/content/home/view.php:55 khadije/includes/languages/trans_twig.php:111
 msgid ""
 "Social responsibility refers to our role in maintaining, caring about and helping "
 "our society, while having set as its goal a responsibility-centered enterprise "
@@ -8228,11 +8251,11 @@ msgstr "سردرد دارید؟ ما راه‌حل‌هایی برای شما د
 msgid "Change log of Khadije"
 msgstr "پیشرفت پروژه کانون فرهنگی حضرت خدیجه"
 
-#: khadije/content/home/view.php:67 khadije/includes/languages/trans_twig.php:93
+#: khadije/content/home/view.php:67
 msgid "We were born to do Best!"
 msgstr "ما برای انجام بهترین‌ها متولد شدیم!"
 
-#: khadije/content/home/view.php:67 khadije/includes/languages/trans_twig.php:90
+#: khadije/content/home/view.php:67
 msgid "We are Developers, please wait!"
 msgstr "ما توسعه دهنده هستیم، صبور باشید!"
 
@@ -8288,27 +8311,80 @@ msgstr "همیشه از پرداختی ماهیانه خود آگاه باشید
 msgid "Simple pricing"
 msgstr "هزینه‌های شفاف و ساده"
 
-#: khadije/content_a/home/view.php:9 khadije/content_u/donate/view.php:9
-#: khadije/content_u/home/view.php:9
+#: khadije/content_a/child/model.php:37
+msgid "Your Child was saved"
+msgstr ""
+
+#: khadije/content_a/child/view.php:9 khadije/content_a/donate/product/view.php:9
+#: khadije/content_a/donate/view.php:9 khadije/content_a/home/view.php:9
+#: khadije/content_a/profile/view.php:9 khadije/content_cp/options/donate/view.php:9
+#: khadije/content_cp/options/product/view.php:9
 msgid "Khadije Dashboard"
 msgstr "داشبورد کانون فرهنگی حضرت خدیجه"
 
-#: khadije/content_a/home/view.php:10 khadije/content_u/donate/view.php:10
-#: khadije/content_u/home/view.php:10
+#: khadije/content_a/child/view.php:10 khadije/content_a/donate/product/view.php:10
+#: khadije/content_a/donate/view.php:10 khadije/content_a/home/view.php:10
+#: khadije/content_a/profile/view.php:10
+#: khadije/content_cp/options/donate/view.php:10
+#: khadije/content_cp/options/product/view.php:10
 msgid "Glance at your stores and quickly navigate to stores."
 msgstr "نگاهی مختصر به فروشگاه‌ها و دسترسی سریع به آنان."
 
-#: khadije/content_u/donate/model.php:27
+#: khadije/content_a/donate/model.php:12
+#: khadije/content_a/donate/product/model.php:12
 msgid "Whate are you doing?"
 msgstr "اینجا چیکار می‌کنی عزیز من؟"
 
-#: khadije/content_u/donate/model.php:57
+#: khadije/content_a/donate/model.php:19
+#: khadije/content_a/donate/product/model.php:19
 msgid "Please set niyat less than 150 character"
 msgstr "لطفا نیت را در کمتر از ۱۵۰ کاراکتر بنویسید"
 
-#: khadije/content_u/donate/model.php:64
-msgid "Please set way less than 150 character"
-msgstr "لطفا روش هزینه‌کرد را در کمتر از ۱۵۰ کاراکتر بنویسید"
+#: khadije/content_a/donate/model.php:26
+#: khadije/content_a/donate/product/model.php:26
+msgid "Please set a valid way"
+msgstr ""
+
+#: khadije/content_a/donate/model.php:33
+#: khadije/content_a/donate/product/model.php:33
+msgid "Please set fullname less than 150 character"
+msgstr ""
+
+#: khadije/content_a/donate/model.php:41
+#: khadije/content_a/donate/product/model.php:41
+msgid "Please set email less than 90 character"
+msgstr ""
+
+#: khadije/content_a/donate/model.php:48
+#: khadije/content_a/donate/product/model.php:48
+msgid "Please set a valid mobile number"
+msgstr ""
+
+#: khadije/content_a/donate/model.php:60
+#: khadije/content_a/donate/product/model.php:60
+msgid "Please set a valid amount number"
+msgstr ""
+
+#: khadije/content_a/profile/model.php:50
+msgid "Your detail was saved"
+msgstr ""
+
+#: khadije/content_cp/options/donate/model.php:14
+msgid "The way successfully removed"
+msgstr ""
+
+#: khadije/content_cp/options/donate/model.php:27
+#: khadije/content_cp/options/product/model.php:72
+msgid "Way successfully added"
+msgstr ""
+
+#: khadije/content_cp/options/product/model.php:68
+msgid "Way successfully edited"
+msgstr ""
+
+#: khadije/content_cp/options/product/view.php:14
+msgid "Add new need"
+msgstr ""
 
 #: khadije/includes/languages/trans_addons.php:64
 msgid "Nobody can tell the Khadije story better than our customers."
@@ -8351,7 +8427,7 @@ msgid "Enter to Khadije"
 msgstr "ورود به کانون فرهنگی حضرت خدیجه"
 
 #: khadije/includes/languages/trans_addons.php:853
-#: khadije/includes/languages/trans_twig.php:50
+#: khadije/includes/languages/trans_twig.php:233
 msgid "Khadije"
 msgstr "کانون فرهنگی حضرت خدیجه"
 
@@ -8402,158 +8478,98 @@ msgid "Floor2, Yas Building"
 msgstr "ساختمان یاس، طبقه دوم"
 
 #: khadije/includes/languages/trans_twig.php:27
-msgid "Roadmap"
-msgstr "نقشه راه"
-
-#: khadije/includes/languages/trans_twig.php:28
-msgid "Amazing Financial Platform"
-msgstr "بهترین پلتفرم مالی"
-
-#: khadije/includes/languages/trans_twig.php:29
-msgid ""
-"With Khadije we take less time of our customers and this means modern customer "
-"orientation"
-msgstr ""
-"با کانون فرهنگی حضرت خدیجه وقت کمتری از مشتری که سهم بیشتری از فروشگاه را دارد "
-"گرفته می‌شود و این یعنی مشتری مداری مدرن"
-
-#: khadije/includes/languages/trans_twig.php:30
-msgid "Majid Sadeghi, Sales Supervisor at SuperSaeed"
-msgstr "مجید صادقی، سرپرست فروش در سوپرسعید"
-
-#: khadije/includes/languages/trans_twig.php:33
-msgid "Next →"
-msgstr "→ بعدی"
-
-#: khadije/includes/languages/trans_twig.php:34
-msgid "← Back"
-msgstr "قبلی ←"
-
-#: khadije/includes/languages/trans_twig.php:35
-msgid "Skip"
-msgstr "خروج"
-
-#: khadije/includes/languages/trans_twig.php:36
-msgid "Done"
-msgstr "اتمام"
-
-#: khadije/includes/languages/trans_twig.php:40
-msgid "Some right reserved!"
-msgstr "برخی از حقوق محفوظ است!"
-
-#: khadije/includes/languages/trans_twig.php:44
 msgid "About"
 msgstr "درباره"
 
+#: khadije/includes/languages/trans_twig.php:28
+msgid "Do you know?"
+msgstr "آیا می‌دانید؟"
+
+#: khadije/includes/languages/trans_twig.php:29
+msgid "Donate"
+msgstr "اهدای کمک نقدی"
+
+#: khadije/includes/languages/trans_twig.php:30
+msgid "Person"
+msgstr "نفر"
+
+#: khadije/includes/languages/trans_twig.php:31
+msgid "Balance"
+msgstr "اعتبار"
+
+#: khadije/includes/languages/trans_twig.php:32
+msgid "license and supporters"
+msgstr "مجوزها و حامیان"
+
+#: khadije/includes/languages/trans_twig.php:33
+msgid "Certificate"
+msgstr "گواهینامه‌ها"
+
+#: khadije/includes/languages/trans_twig.php:34
+msgid "Roadmap"
+msgstr "نقشه راه"
+
+#: khadije/includes/languages/trans_twig.php:35
+msgid "Amazing Financial Platform"
+msgstr "بهترین پلتفرم مالی"
+
+#: khadije/includes/languages/trans_twig.php:38
+msgid "Next →"
+msgstr "→ بعدی"
+
+#: khadije/includes/languages/trans_twig.php:39
+msgid "← Back"
+msgstr "قبلی ←"
+
+#: khadije/includes/languages/trans_twig.php:40
+msgid "Skip"
+msgstr "خروج"
+
+#: khadije/includes/languages/trans_twig.php:41
+msgid "Done"
+msgstr "اتمام"
+
 #: khadije/includes/languages/trans_twig.php:45
-msgid "Press and Media"
-msgstr "مطبوعات و رسانه‌ها"
+msgid "Some right reserved!"
+msgstr "برخی از حقوق محفوظ است!"
 
-#: khadije/includes/languages/trans_twig.php:46
-msgid "Careers"
-msgstr "فرصت‌های شغلی"
-
-#: khadije/includes/languages/trans_twig.php:47
+#: khadije/includes/languages/trans_twig.php:49
 msgid "Social Responsibility"
 msgstr "مسئولیت اجتماعی"
 
-#: khadije/includes/languages/trans_twig.php:48
+#: khadije/includes/languages/trans_twig.php:50
 msgid "FAQ"
 msgstr "سوالات پرتکرار"
 
-#: khadije/includes/languages/trans_twig.php:49
+#: khadije/includes/languages/trans_twig.php:51
 msgid "Enamad"
 msgstr "نماد اعتماد"
 
-#: khadije/includes/languages/trans_twig.php:51
-msgid "Benefits"
-msgstr "مزایا"
-
 #: khadije/includes/languages/trans_twig.php:52
-msgid "Pricing"
-msgstr "هزینه‌ها"
-
-#: khadije/includes/languages/trans_twig.php:53
-msgid "Changelog"
-msgstr "پیشرفت پروژه"
-
-#: khadije/includes/languages/trans_twig.php:54
 msgid "Learn More"
 msgstr "بیشتر بدانید"
 
-#: khadije/includes/languages/trans_twig.php:55
+#: khadije/includes/languages/trans_twig.php:53
 msgid "Terms of Service"
 msgstr "شرایط استفاده"
 
-#: khadije/includes/languages/trans_twig.php:57
+#: khadije/includes/languages/trans_twig.php:55
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: khadije/includes/languages/trans_twig.php:58
+#: khadije/includes/languages/trans_twig.php:56
 msgid "Contact"
 msgstr "تماس"
 
-#: khadije/includes/languages/trans_twig.php:59
-msgid "Logo"
-msgstr "لوگو"
-
-#: khadije/includes/languages/trans_twig.php:60
-msgid "Proudly Made in IRAN"
-msgstr "با افتخار ساخت ایران"
-
-#: khadije/includes/languages/trans_twig.php:62
-msgid "Admin Panel"
-msgstr "پنل ادمین"
-
-#: khadije/includes/languages/trans_twig.php:63
+#: khadije/includes/languages/trans_twig.php:58
 msgid "Exit Session"
 msgstr "خروج از نشست"
 
-#: khadije/includes/languages/trans_twig.php:64
+#: khadije/includes/languages/trans_twig.php:59
 msgid "Another Session"
 msgstr "نشست دیگر"
 
-#: khadije/includes/languages/trans_twig.php:67
-msgid "Store Panel"
-msgstr "پنل فروشگاه"
-
-#: khadije/includes/languages/trans_twig.php:71
-msgid "Free"
-msgstr "رایگان"
-
-#: khadije/includes/languages/trans_twig.php:72
-msgid "forever"
-msgstr "برای همیشه"
-
-#: khadije/includes/languages/trans_twig.php:73
-msgid ""
-"All the basics for personal use and anyone who wants to explore Khadije for an "
-"<b>unlimited period of time</b>."
-msgstr ""
-"تمام نیازهای اولیه برای استفاده شخصی و یا کسانی که می‌خواهند <b>بصورت نامحدود</b> "
-"در کانون فرهنگی حضرت خدیجه کنکاش کنند."
-
-#: khadije/includes/languages/trans_twig.php:74
-msgid "Standard"
-msgstr "استاندارد"
-
-#: khadije/includes/languages/trans_twig.php:75
-msgid "per month"
-msgstr "در ماه"
-
-#: khadije/includes/languages/trans_twig.php:76
-msgid "2 month discount on year"
-msgstr "دو ماه تخفیف در صورت پرداخت سالانه"
-
-#: khadije/includes/languages/trans_twig.php:77
-msgid "For someones ready to use Khadije as hero."
-msgstr "برای کسانی که آماده استفاده از کانون فرهنگی حضرت خدیجه هستند."
-
-#: khadije/includes/languages/trans_twig.php:78
-msgid "<b>Everything you need</b> for a growing business."
-msgstr "<b>تمام نیازهای شما</b> برای یک کسب و کار درحال توسعه."
-
-#: khadije/includes/languages/trans_twig.php:81
+#: khadije/includes/languages/trans_twig.php:64
 msgid ""
 "Advancement of technology and development of Web-based business Cause Need new "
 "tools to resolve the daily needs and that’s the goal of making Khadije."
@@ -8562,7 +8578,7 @@ msgstr ""
 "ابزارهایی مدرن برای رفع نیازهای روزمره، جرقه‌ای برای تولد کانون فرهنگی حضرت خدیجه "
 "بود."
 
-#: khadije/includes/languages/trans_twig.php:82
+#: khadije/includes/languages/trans_twig.php:65
 msgid ""
 "Khadije have a set of simple and practical tools on a regular basis for modern "
 "businesses."
@@ -8571,43 +8587,15 @@ msgstr ""
 "اختیار کسب و کارهای مدرن و همینطور تجارت‌های سنتی مایل به حرکت به‌سوی تکنولوژی قرار "
 "می‌دهد."
 
-#: khadije/includes/languages/trans_twig.php:85
-msgid "Soon"
-msgstr "بزودی"
-
-#: khadije/includes/languages/trans_twig.php:91
-msgid "Alfa version of Khadije will be released."
-msgstr "نسخه آلفای کانون فرهنگی حضرت خدیجه منتشر خواهد شد."
-
-#: khadije/includes/languages/trans_twig.php:92
-msgid ""
-"The name of project selected as Khadije and <a href='http://Khadije.ir'>Khadije."
-"ir</a> domains registered."
-msgstr ""
-"نام کانون فرهنگی حضرت خدیجه برای این پروژه برگزیده شده و دامنه‌ی <a href='http://"
-"Khadije.ir'>Khadije.ir</a> ثبت شد."
-
-#: khadije/includes/languages/trans_twig.php:94
-msgid "Be patient..."
-msgstr "صبور باشید..."
-
-#: khadije/includes/languages/trans_twig.php:97
-msgid ""
-"Big companies simply don’t work like small companies, and they don’t use Khadije "
-"the same way either. That’s why there’s Enterprise."
-msgstr ""
-"شرکت‌های بزرگ به آسانی شرکت‌های کوچک کار نمی‌کنند و از کانون فرهنگی حضرت خدیجه نیز به "
-"همان شکل استفاده نمی‌کنند. این دلیل راه‌اندازی بخش سازمانی ماست."
-
-#: khadije/includes/languages/trans_twig.php:100
+#: khadije/includes/languages/trans_twig.php:68
 msgid "General questions"
 msgstr "سوالات عمومی"
 
-#: khadije/includes/languages/trans_twig.php:101
+#: khadije/includes/languages/trans_twig.php:69
 msgid "How does Khadije work?"
 msgstr "کانون فرهنگی حضرت خدیجه چگونه کار می‌کند؟"
 
-#: khadije/includes/languages/trans_twig.php:102
+#: khadije/includes/languages/trans_twig.php:70
 msgid ""
 "The easiest way to learn how to use Khadije is enter to it, which takes less than "
 "3 minutes to setup your team."
@@ -8615,60 +8603,60 @@ msgstr ""
 "آسان‌ترین راه برای یادگیری نحوه‌ی کارکرد کانون فرهنگی حضرت خدیجه ورود به آن است که "
 "کمتر از ۳ دقیقه از زمان شما را برای راه‌اندازی اولیه و شروع به‌کار می‌گیرد."
 
-#: khadije/includes/languages/trans_twig.php:103
+#: khadije/includes/languages/trans_twig.php:71
 msgid "What is your privacy and security policy?"
 msgstr "قوانین و شرایط حریم خصوصی شما چیست؟"
 
-#: khadije/includes/languages/trans_twig.php:104
+#: khadije/includes/languages/trans_twig.php:72
 msgid "View Khadije's privacy and security policy at"
 msgstr "نگاه ما به حریم خصوصی را در این صفحه بخوانید"
 
-#: khadije/includes/languages/trans_twig.php:105
+#: khadije/includes/languages/trans_twig.php:73
 msgid "Where can I find your Terms of Service (TOS)?"
 msgstr "کجا می‌توانم شرایط و قوانین استفاده از سرویس را پیدا کنم؟"
 
-#: khadije/includes/languages/trans_twig.php:106
+#: khadije/includes/languages/trans_twig.php:74
 msgid "You can find them at"
 msgstr "شما می‌توانید آن را در اینجا بیابید"
 
-#: khadije/includes/languages/trans_twig.php:107
+#: khadije/includes/languages/trans_twig.php:75
 msgid "What are your bandwidth fees?"
 msgstr "تعرفه‌ی پهنای باند شما چقدر است؟"
 
-#: khadije/includes/languages/trans_twig.php:108
+#: khadije/includes/languages/trans_twig.php:76
 msgid "There are none. All Khadije plans include unlimited bandwidth for free."
 msgstr ""
 "هیچ! تمامی پلن‌های کانون فرهنگی حضرت خدیجه شامل پهنای‌باند نامحدود رایگان هستند و "
 "شما هزینه‌ای برای پهنای‌باند پرداخت نمی‌کنید."
 
-#: khadije/includes/languages/trans_twig.php:109
+#: khadije/includes/languages/trans_twig.php:77
 msgid "Do I need a web host?"
 msgstr "آیا برای استفاده نیاز به هاست دارم؟"
 
-#: khadije/includes/languages/trans_twig.php:110
+#: khadije/includes/languages/trans_twig.php:78
 msgid ""
 "No! Khadije includes secure, unlimited hosting on all plans with free bandwith."
 msgstr ""
 "خیر! کانون فرهنگی حضرت خدیجه به‌همراه هاست نامحدود و امن شده بر روی تمامی پلن‌ها به "
 "همراه پهنای باند نامحدود برای شما قابل استفاده است."
 
-#: khadije/includes/languages/trans_twig.php:111
+#: khadije/includes/languages/trans_twig.php:79
 msgid "Billing & Invoicing"
 msgstr "مالی و فاکتور"
 
-#: khadije/includes/languages/trans_twig.php:112
+#: khadije/includes/languages/trans_twig.php:80
 msgid "Is there a setup fee?"
 msgstr "آیا هزینه اولیه راه‌اندازی وجود داد؟"
 
-#: khadije/includes/languages/trans_twig.php:113
+#: khadije/includes/languages/trans_twig.php:81
 msgid "No. There are no setup fees on any of our plans!"
 msgstr "نه. هیچ‌گونه هزینه اولیه راه‌اندازی برای هیچ‌کدام از پلن‌ها وجود ندارد!"
 
-#: khadije/includes/languages/trans_twig.php:114
+#: khadije/includes/languages/trans_twig.php:82
 msgid "Can I cancel my account at any time?"
 msgstr "آیا می‌توانم حساب‌کاربری خودم را هر زمانی لغو کنم؟"
 
-#: khadije/includes/languages/trans_twig.php:115
+#: khadije/includes/languages/trans_twig.php:83
 msgid ""
 "Yes. If you ever decide that Khadije isn’t the best platform for your business, "
 "simply cancel your account."
@@ -8676,29 +8664,29 @@ msgstr ""
 "بله. اگر هر زمانی تصمیم گرفتید که کانون فرهنگی حضرت خدیجه بهترین خدمات موجود را به "
 "کسب و کار شما ارائه نمی‌دهد، به‌راحتی اکانت خود را لغو کنید."
 
-#: khadije/includes/languages/trans_twig.php:116
+#: khadije/includes/languages/trans_twig.php:84
 msgid "How long are your contracts?"
 msgstr "مدت زمان قراردادهای شما چقدر است؟"
 
-#: khadije/includes/languages/trans_twig.php:117
+#: khadije/includes/languages/trans_twig.php:85
 msgid "All Khadije plans are month to month. simple."
 msgstr "تمامی پلن‌های کانون فرهنگی حضرت خدیجه به مدت یکماه است. ساده‌ی ساده."
 
-#: khadije/includes/languages/trans_twig.php:118
+#: khadije/includes/languages/trans_twig.php:86
 msgid "Can I change my plan later on?"
 msgstr "آیا در آینده می‌توانم پلن انتخابی را تغییر دهم؟"
 
-#: khadije/includes/languages/trans_twig.php:119
+#: khadije/includes/languages/trans_twig.php:87
 msgid "Absolutely! You can upgrade or downgrade your plan at any time."
 msgstr ""
 "قطعا! شما هر زمانی لازم دیدید می‌توانید پلن خود را ارتقا داده و یا به پلن‌های "
 "پایین‌تر جابجا شوید."
 
-#: khadije/includes/languages/trans_twig.php:120
+#: khadije/includes/languages/trans_twig.php:88
 msgid "When is my billing date?"
 msgstr "موعد پرداخت هزینه‌های مالی من چه‌زمانی است؟"
 
-#: khadije/includes/languages/trans_twig.php:121
+#: khadije/includes/languages/trans_twig.php:89
 msgid ""
 "The date you first select a paid plan will be the recurring billing date. For "
 "example: If you sign up for the first time on July 15, all future charges will be "
@@ -8709,43 +8697,11 @@ msgstr ""
 "انتخاب کردید، تمامی فاکتورهای بعدی در تاریخ ۱۷‌ ام ماه‌های آینده صادر و کسر خواهند "
 "شد."
 
-#: khadije/includes/languages/trans_twig.php:124
-msgid "We try to complete help center as soon as posible"
-msgstr "ما در تلاش برای تکمیل مرکز راهنمایی خود در کوتاه‌ترین زمان ممکن هستیم."
-
-#: khadije/includes/languages/trans_twig.php:129
-msgid "only team admin"
-msgstr "فقط مدیر تیم"
-
-#: khadije/includes/languages/trans_twig.php:130
-msgid "Unlimited"
-msgstr "نامحدود"
-
-#: khadije/includes/languages/trans_twig.php:131
-msgid "Ready to use Khadije Enterprise?"
-msgstr "آماده استفاده از پلن سازمانی کانون فرهنگی حضرت خدیجه هستید؟"
-
-#: khadije/includes/languages/trans_twig.php:132
-msgid "Get started with our Enterprise plan."
-msgstr "با پلن سازمانی ما شروع کنید."
-
-#: khadije/includes/languages/trans_twig.php:133
-msgid "Get in Touch"
-msgstr "با ما در تماس باشید"
-
-#: khadije/includes/languages/trans_twig.php:134
-msgid ""
-"The easiest way to learn how to use Tejark is enter to it, which takes less than 3 "
-"minutes to setup your team."
-msgstr ""
-"آسان‌ترین راه برای یادگیری نحوه‌ی کارکرد کانون فرهنگی حضرت خدیجه ورود به آن است که "
-"کمتر از ۳ دقیقه از زمان شما را برای راه‌اندازی اولیه و شروع به‌کار می‌گیرد."
-
-#: khadije/includes/languages/trans_twig.php:137
+#: khadije/includes/languages/trans_twig.php:92
 msgid "What is Privacy?"
 msgstr "حریم‌خصوصی چیست؟"
 
-#: khadije/includes/languages/trans_twig.php:138
+#: khadije/includes/languages/trans_twig.php:93
 msgid ""
 "Privacy means that any individual is entitled to choose the information related to "
 "them, and selectively, share it with others."
@@ -8753,7 +8709,7 @@ msgstr ""
 "حریم‌خصوصی یعنی شخص بتواند اطلاعات مربوط به خود را مجزا کرده و به انتخاب خویش، در "
 "برابر دیگران آشکار کند."
 
-#: khadije/includes/languages/trans_twig.php:139
+#: khadije/includes/languages/trans_twig.php:94
 msgid ""
 "privacy is so important for mental peace as well as a peaceful personality that "
 "some experts have considered invasion of privacy disrespectful to human dignity."
@@ -8761,18 +8717,18 @@ msgstr ""
 "حریم‌خصوصی برای آرامش روانی و شخصیتی، بسیار مهم است تا جایی‌که بعضی از صاحب‌نظران نقض "
 "آن را به عنوان یک اقدام توهین‌آمیز نسبت به شرافت بشری قلمداد کرده‌اند."
 
-#: khadije/includes/languages/trans_twig.php:140
+#: khadije/includes/languages/trans_twig.php:95
 msgid "Controversies over the Invasion of Privacy"
 msgstr "جنجال‌های نقض حریم‌خصوصی"
 
-#: khadije/includes/languages/trans_twig.php:141
+#: khadije/includes/languages/trans_twig.php:96
 msgid ""
 "Within e-commerce, privacy has always been from among the most controversial "
 "topics and continues to be."
 msgstr ""
 "حریم‌خصوصی در کسب‌و‌کارهای الکترونیکی همیشه یکی از بحث‌برانگیزترین موضوعات بوده و هست."
 
-#: khadije/includes/languages/trans_twig.php:142
+#: khadije/includes/languages/trans_twig.php:97
 msgid ""
 "Accordingly, formulating privacy policies is regarded as one of the crucial "
 "concerns of technology companies."
@@ -8780,7 +8736,7 @@ msgstr ""
 "به همین دلیل، تعیین سیاست‌های حریم‌خصوصی جزء دغدغه‌های بسیار مهم شرکت‌های فناورانه "
 "محسوب می‌شود."
 
-#: khadije/includes/languages/trans_twig.php:143
+#: khadije/includes/languages/trans_twig.php:98
 msgid ""
 "Meanwhile, widespread controversies have been provoked over invasion of privacy in "
 "e-commerce so that, occasionally, the regulations have to be revised to eliminate "
@@ -8790,17 +8746,17 @@ msgstr ""
 "گرفته است؛ به‌گونه‌ای که هرچند وقت یک‌بار مجبور هستند قوانین را بازبینی نموده تا "
 "حفره‌های موجود را رفع نمایند."
 
-#: khadije/includes/languages/trans_twig.php:144
+#: khadije/includes/languages/trans_twig.php:99
 msgid "Privacy from Our Point of View"
 msgstr "حریم‌خصوصی از دیدگاه ما"
 
-#: khadije/includes/languages/trans_twig.php:145
+#: khadije/includes/languages/trans_twig.php:100
 msgid ""
 "Let us be straightforward! Cyberspace is not a safe location for personal "
 "information."
 msgstr "رو راست باشیم، فضای مجازی محل امنی برای اطلاعات خصوصی نیست."
 
-#: khadije/includes/languages/trans_twig.php:146
+#: khadije/includes/languages/trans_twig.php:101
 msgid ""
 "For that reason, Khadije makes no request for important information of yours and "
 "allow to save some general information including age, gender, education, "
@@ -8810,13 +8766,13 @@ msgstr ""
 "تنها اجازه ثبت برخی از اطلاعات عمومی شامل سن، جنسیت، مدرک تحصیلی، علاقمندی‌ها و ... "
 "را برای استفاده خصوصی در تیم یا شرکت شما می‌دهد."
 
-#: khadije/includes/languages/trans_twig.php:147
+#: khadije/includes/languages/trans_twig.php:102
 msgid ""
 "It is worth mentioning that recording the aforementioned points is totally "
 "voluntary."
 msgstr "لازم به توضیح است که ثبت موارد ذکرشده نیز به‌صورت کاملا اختیاری است."
 
-#: khadije/includes/languages/trans_twig.php:148
+#: khadije/includes/languages/trans_twig.php:103
 msgid ""
 "However, taking the nature of cyberspace into account, we should remember that "
 "offering an absolute assurance might not be possible."
@@ -8824,7 +8780,7 @@ msgstr ""
 "این را در نظر داشته باشید که با توجه به ماهیت فضای مجازی، ارائه تضمین صددرصدی "
 "به‌طور کل ممکن نیست."
 
-#: khadije/includes/languages/trans_twig.php:149
+#: khadije/includes/languages/trans_twig.php:104
 msgid ""
 "Assuring privacy and security, with that ideal concept we bear in mind, does not "
 "exist; and if somebody gives you an assurance of securing your privacy, he has "
@@ -8834,7 +8790,7 @@ msgstr ""
 "اگر کسی در دنیای مجازی، تضمین امنیت حریم‌خصوصی شما را بدهد قطعا از اعتماد شما "
 "سوءاستفاده کرده است."
 
-#: khadije/includes/languages/trans_twig.php:150
+#: khadije/includes/languages/trans_twig.php:105
 msgid ""
 "Upon buying any digital or the so-called smart device, you have invaded your own "
 "privacy yourself."
@@ -8842,7 +8798,7 @@ msgstr ""
 "شما با خرید هر دستگاه دیجیتالی یا به اصطلاح هوشمند، با دست خود حریم‌خصوصی‌تان را نقض "
 "کرده‌اید."
 
-#: khadije/includes/languages/trans_twig.php:151
+#: khadije/includes/languages/trans_twig.php:106
 msgid ""
 "If you want your privacy not to be invaded, you should depart from technology and "
 "say goodbye to any digital and smart device."
@@ -8850,7 +8806,7 @@ msgstr ""
 "اگر می‌خواهید این حریم‌خصوصی نقض نشود باید به‌طور کل از دنیای تکنولوژی فاصله بگیرید و "
 "با هر دستگاه دیجیتالی و هوشمندی خداحافظی کنید."
 
-#: khadije/includes/languages/trans_twig.php:152
+#: khadije/includes/languages/trans_twig.php:107
 msgid ""
 "In fact, we have employed all updated technologies of the world to provide you "
 "with the maximum security."
@@ -8858,7 +8814,7 @@ msgstr ""
 "ما به‌لحاظ فنی تمام تکنولوژی‌های روز دنیا را به‌کار برده‌ایم تا امنیت حداکثری را برای "
 "شما به ارمغان بیاوریم."
 
-#: khadije/includes/languages/trans_twig.php:153
+#: khadije/includes/languages/trans_twig.php:108
 msgid ""
 "As the final remark, we wish to assure you that our main concern is to secure your "
 "privacy and protect your information against impermissible access."
@@ -8866,7 +8822,7 @@ msgstr ""
 "در پایان، این اطمینان را به شما می‌دهیم که دغدغه‌ی ما، حفظ حریم‌خصوصی و محافظت از "
 "اطلاعات شما در برابر دسترسی‌های غیرمجاز هست."
 
-#: khadije/includes/languages/trans_twig.php:157
+#: khadije/includes/languages/trans_twig.php:112
 msgid ""
 "The issue of the social responsibility of organizations and corporations towards "
 "the society is from among the important issues being focused on in recent years."
@@ -8874,7 +8830,7 @@ msgstr ""
 "موضوع مسئولیت اجتماعی سازمان‌ها و شرکت‌ها نسبت به جامعه از جمله موضوعات مهمی است که "
 "در سال‌های اخیر مورد اهمیت قرار گرفته است."
 
-#: khadije/includes/languages/trans_twig.php:158
+#: khadije/includes/languages/trans_twig.php:113
 msgid ""
 "The social responsibility of organizations relates to the organization's "
 "responsibility towards society, human beings and the environment in which they are "
@@ -8884,7 +8840,7 @@ msgstr ""
 "است که در آن فعالیت می‌کند. این مسئولیت فراتر از قوانین مرسوم و منافع مالی سازمان "
 "بوده و پیشرفت منافع اجتماعی را دنبال می‌کند."
 
-#: khadije/includes/languages/trans_twig.php:159
+#: khadije/includes/languages/trans_twig.php:114
 msgid ""
 "Based on the mentioned definitions of social responsibility, Khadije considers "
 "itself committed to society. Accordingly, besides attempting to offer creative and "
@@ -8896,11 +8852,11 @@ msgstr ""
 "مسئولیت اجتماعی از مهم‌ترین ماموریت‌های کانون فرهنگی حضرت خدیجه بوده و به‌امیدخدا "
 "خواهد بود."
 
-#: khadije/includes/languages/trans_twig.php:160
+#: khadije/includes/languages/trans_twig.php:115
 msgid "Environmentalist"
 msgstr "دوست‌دار محیط‌زیست"
 
-#: khadije/includes/languages/trans_twig.php:161
+#: khadije/includes/languages/trans_twig.php:116
 msgid ""
 "In spite of technological advancements, paper usage is unfortunately preferred to "
 "modern ways. One of Khadije's objectives is trying to change this habit and "
@@ -8911,11 +8867,11 @@ msgstr ""
 "روش‌های مدرن است؛ یکی از اهداف کانون فرهنگی حضرت خدیجه تلاش برای تغییر این عادت و "
 "کمک به حذف کاغذ از زندگی روزمره و درنتیجه حفظ محیط‌زیست است."
 
-#: khadije/includes/languages/trans_twig.php:162
+#: khadije/includes/languages/trans_twig.php:117
 msgid "Philanthropist Activities"
 msgstr "فعالیت‌های خیرخواهانه"
 
-#: khadije/includes/languages/trans_twig.php:163
+#: khadije/includes/languages/trans_twig.php:118
 msgid ""
 "One of the most valuable resources of charity organizations is the voluntary and "
 "active participation of the individuals who, without any expectations, provide "
@@ -8924,7 +8880,7 @@ msgstr ""
 "یکی از ارزشمندترین سرمایه‌‌ی سازمان‌های خیریه، فعالیت و مشارکت داوطلبانه افرادی است "
 "که مهارت و سرمایه خود را بدون هیچ چشم‌داشتی در اختیار آن‌ها قرار می‌دهند."
 
-#: khadije/includes/languages/trans_twig.php:164
+#: khadije/includes/languages/trans_twig.php:119
 msgid ""
 "Khadije as well, with regard to its contribution to philanthropist activities, "
 "will honorably provide them with its services free of charge. To make use of these "
@@ -8936,11 +8892,11 @@ msgstr ""
 "استفاده از این خدمات، درخواست خود را همراه با مدارک احراز هویت به مرکز پشتیبانی "
 "کانون فرهنگی حضرت خدیجه ارسال نمایید."
 
-#: khadije/includes/languages/trans_twig.php:165
+#: khadije/includes/languages/trans_twig.php:120
 msgid "Recruiting Motivated Staff"
 msgstr "بکارگیری نیروهای باانگیزه"
 
-#: khadije/includes/languages/trans_twig.php:166
+#: khadije/includes/languages/trans_twig.php:121
 msgid ""
 "An outstanding characteristic of any organization is its specialized and highly "
 "motivated staff, playing a vital role in growth and development."
@@ -8948,7 +8904,7 @@ msgstr ""
 "ویژگی چشم‌گیر و بارز هر سازمانی وجود نیروی‌ انسانی باانگیزه و متخصص است که نقشی "
 "بنیادین در رشد و توسعه دارند."
 
-#: khadije/includes/languages/trans_twig.php:167
+#: khadije/includes/languages/trans_twig.php:122
 msgid ""
 "By the same token, we are always looking for creative and motivated Iranian youths "
 "in order to make the best and be effective in cooperation with them."
@@ -8956,15 +8912,15 @@ msgstr ""
 "ما هم در این راستا و برای خدمت به سرزمین‌مان، به دنبال جوانان ایرانی خلاق و "
 "باانگیزه هستیم تا با کمک هم برترین‌ها را بسازیم و اثرگذار باشیم."
 
-#: khadije/includes/languages/trans_twig.php:168
+#: khadije/includes/languages/trans_twig.php:123
 msgid "Join us and grow in a different location."
 msgstr "به ما بپیوندید و در مکانی متفاوت رشد کنید."
 
-#: khadije/includes/languages/trans_twig.php:169
+#: khadije/includes/languages/trans_twig.php:124
 msgid "Customer Care and Complete Satisfaction"
 msgstr "مشتری‌مداری و کسب رضایت کامل"
 
-#: khadije/includes/languages/trans_twig.php:170
+#: khadije/includes/languages/trans_twig.php:125
 msgid ""
 "Attracting people's participation as well as having their valuable presence has "
 "always been a great honor for Khadije and to appreciate your support, in return, "
@@ -8974,7 +8930,7 @@ msgstr ""
 "و به‌منظور قدردانی از این حمایت، کانون فرهنگی حضرت خدیجه نیز خدمات متقابلی را برای "
 "افزایش رضایت مشتریان خود ارائه می‌کند."
 
-#: khadije/includes/languages/trans_twig.php:171
+#: khadije/includes/languages/trans_twig.php:126
 msgid ""
 "These services are presented in different time intervals and are aimed at costomer "
 "care mission and appreciation of your valuable presence."
@@ -8982,7 +8938,7 @@ msgstr ""
 "این خدمات در بازه‌های زمانی متفاوت ارائه‌شده و در راستای ماموریت مشتری‌مداری و ارج "
 "نهادن به این حضور گرانبها می‌باشد."
 
-#: khadije/includes/languages/trans_twig.php:174
+#: khadije/includes/languages/trans_twig.php:129
 msgid ""
 "Utilizing Khadije's services means the acceptance of and commitment to observing "
 "all the tenors of this agreement."
@@ -8990,7 +8946,7 @@ msgstr ""
 "استفاده از خدمات کانون فرهنگی حضرت خدیجه به منزله‌ پذیرش و تعهد به رعایت تمام مفاد "
 "مندرج در این توافق‌نامه است."
 
-#: khadije/includes/languages/trans_twig.php:175
+#: khadije/includes/languages/trans_twig.php:130
 msgid ""
 "It is worth mentioning that due to the insecurity of cyberspace, you should never "
 "post your vital information on either Khadije or any other services!"
@@ -8998,7 +8954,7 @@ msgstr ""
 "لازم به یادآوری‌ست که با توجه به ناامن بودن فضای ‌مجازی، نه تنها در کانون فرهنگی "
 "حضرت خدیجه بلکه در هیچ سرویس دیگری، اطلاعات حیاتی خود را منتشر نکنید!"
 
-#: khadije/includes/languages/trans_twig.php:176
+#: khadije/includes/languages/trans_twig.php:131
 msgid ""
 "User's personal information is strictly confidential in our service. Khadije "
 "preserves the information as encoded and will not under any conditions transfer it "
@@ -9008,7 +8964,7 @@ msgstr ""
 "خدیجه این اطلاعات را به صورت کدشده نگه‌داری کرده و تحت هیچ شرایطی آن‌را به غیر "
 "واگذار نخواهد کرد."
 
-#: khadije/includes/languages/trans_twig.php:177
+#: khadije/includes/languages/trans_twig.php:132
 msgid ""
 "In case there is a request for receiving user's information by the competent "
 "authorities, according to the country the user lives in, Khadije will cooperate "
@@ -9019,7 +8975,7 @@ msgstr ""
 "اطلاعات‌کاربری، کانون فرهنگی حضرت خدیجه تنها پس از دریافت حکم قضایی کشور درخواست "
 "کننده، توانایی همکاری با آنان را خواهد داشت."
 
-#: khadije/includes/languages/trans_twig.php:178
+#: khadije/includes/languages/trans_twig.php:133
 msgid ""
 "Khadije will not offer any guarantee as to the quality of the products or services "
 "presented by the teams and will not accept any responsibility in this regard!"
@@ -9027,7 +8983,7 @@ msgstr ""
 "کانون فرهنگی حضرت خدیجه هیچگونه ضمانتی در مورد کیفیت محصولات یا خدمات ارائه شده "
 "توسط تیم‌ها را نمی‌پذیرد و مسئولیتی در قبال آن ندارد!"
 
-#: khadije/includes/languages/trans_twig.php:179
+#: khadije/includes/languages/trans_twig.php:134
 msgid ""
 "Users should assume responsibility for any harm, both material and immaterial, "
 "caused by direct, indirect or penal factors and due to their utilization of this "
@@ -9037,7 +8993,7 @@ msgstr ""
 "این سرویس برعهده کاربران بوده و کانون فرهنگی حضرت خدیجه هیچ‌گونه مسئولیتی دراین‌باره "
 "ندارد."
 
-#: khadije/includes/languages/trans_twig.php:180
+#: khadije/includes/languages/trans_twig.php:135
 msgid ""
 "Khadije accepts no responsibility, under any conditions, for the harms caused by "
 "users' mutual trust in each other or by the disclosure of information by users."
@@ -9045,7 +9001,7 @@ msgstr ""
 "تحت هیچ شرایطی کانون فرهنگی حضرت خدیجه مسئولیت خسارت‌های وارده در اثر اعتماد و "
 "اتکاء اعضاء به یکدیگر و فاش‌شدن اطلاعات توسط کاربر را نمی‌پذیرد."
 
-#: khadije/includes/languages/trans_twig.php:181
+#: khadije/includes/languages/trans_twig.php:136
 msgid ""
 "Khadije will do its best to protect both the users' information and the service; "
 "however, regarding the lack of certainty within the cyberspace, it will not assume "
@@ -9055,7 +9011,7 @@ msgstr ""
 "می‌نماید؛ ولی با توجه به عدم قطعیت در فضای مجازی، مسئولیتی در مورد از بين رفتن "
 "اطلاعات قرارگرفته بر روی سرویس نخواهد پذیرفت."
 
-#: khadije/includes/languages/trans_twig.php:182
+#: khadije/includes/languages/trans_twig.php:137
 msgid ""
 "We will publicize our information and news only via Khadije's formal website. "
 "Accordingly, those who publicize any attributed news and claims, within social "
@@ -9066,7 +9022,7 @@ msgstr ""
 "مسئولیت هرگونه خبر و ادعای نسبت‌داده‌شده در رسانه‌ها و شبکه‌های اجتماعی به عهده "
 "منتشرکننده آن بوده و کانون فرهنگی حضرت خدیجه مسئولیتی در قبال آن ندارد."
 
-#: khadije/includes/languages/trans_twig.php:183
+#: khadije/includes/languages/trans_twig.php:138
 msgid ""
 "Khadije will bear no responsibility for whatsoever messages sent to users, "
 "including those indicating winning a lottery, and all our information "
@@ -9076,7 +9032,7 @@ msgstr ""
 "قرعه‌کشی یا هر پیام دیگری نداشته و تمام اطلاع‌رسانی‌های ما از طریق روش‌های برقراری "
 "ارتباط کاربر با کانون فرهنگی حضرت خدیجه خواهد بود."
 
-#: khadije/includes/languages/trans_twig.php:184
+#: khadije/includes/languages/trans_twig.php:139
 msgid ""
 "Any misuse of Khadije's trade name is prohibited and will be suable by making a "
 "complaint to the legal competent authorities."
@@ -9084,7 +9040,7 @@ msgstr ""
 "هرگونه سوءاستفاده از نام تجاری کانون فرهنگی حضرت خدیجه ممنوع بوده و از طریق شکایت "
 "به مراجع قانونی دارای صلاحیت، قابل پیگرد خواهد بود."
 
-#: khadije/includes/languages/trans_twig.php:185
+#: khadije/includes/languages/trans_twig.php:140
 msgid ""
 "Furthermore, this agreement, under the name Terms and Conditions, will be "
 "available and observable, in all pages of the website. Users will be responsible "
@@ -9093,7 +9049,7 @@ msgstr ""
 "هم‌چنین این توافق‌نامه در تمام صفحات وب‌سایت با عنوان شرایط و قوانین موجود و قابل "
 "مشاهده است. مسئولیت عدم کسب اطلاع از آخرین تغییرات برعهده کاربر خواهد بود."
 
-#: khadije/includes/languages/trans_twig.php:186
+#: khadije/includes/languages/trans_twig.php:141
 msgid ""
 "It should be mentioned that in case there would be any modifications in the above-"
 "mentioned tenors, an updated version will be available for the public, and as "
@@ -9102,109 +9058,373 @@ msgstr ""
 "لازم به ذکر است که درصورت هرگونه تغییر در مفاد ذکر شده، نسخه به‌روزشده آن در دسترس "
 "عموم قرار خواهد گرفت و به اطلاع تمام کاربران خواهد رسید."
 
-#: khadije/includes/languages/trans_twig.php:189
-msgid "List of your stores"
-msgstr "لیست فروشگاه‌های شما"
+#: khadije/includes/languages/trans_twig.php:144
+msgid "List of your child"
+msgstr ""
 
-#: khadije/includes/languages/trans_twig.php:190
-msgid "Add new Store"
-msgstr "افزودن فروشگاه جدید"
+#: khadije/includes/languages/trans_twig.php:145
+msgid "Picture"
+msgstr "تصویر"
 
-#: khadije/includes/languages/trans_twig.php:191
-msgid "Store"
-msgstr "فروشگاه"
-
-#: khadije/includes/languages/trans_twig.php:198
-msgid "Pay"
-msgstr "پرداخت"
-
-#: khadije/includes/languages/trans_twig.php:199
+#: khadije/includes/languages/trans_twig.php:146
 msgid "First name"
 msgstr "نام"
 
-#: khadije/includes/languages/trans_twig.php:200
+#: khadije/includes/languages/trans_twig.php:148
+msgid "Father"
+msgstr "پدر"
+
+#: khadije/includes/languages/trans_twig.php:152
+msgid "Nesbat"
+msgstr "نسبت"
+
+#: khadije/includes/languages/trans_twig.php:156
+msgid "Enter a valid name from 2 to 40 character"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:157
+msgid "Enter a valid last name from 2 to 40 character"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:158
+msgid "Like 09120123456"
+msgstr "مثل 0912 012 3456"
+
+#: khadije/includes/languages/trans_twig.php:159
+msgid "10 digit national code"
+msgstr "کدملی ده رقمی"
+
+#: khadije/includes/languages/trans_twig.php:165
+msgid "Arabic Language"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:166
+msgid "Country"
+msgstr "کشور"
+
+#: khadije/includes/languages/trans_twig.php:167
+msgid "Province"
+msgstr "استان"
+
+#: khadije/includes/languages/trans_twig.php:168
+msgid "City"
+msgstr "شهر"
+
+#: khadije/includes/languages/trans_twig.php:169
+msgid "Zip code"
+msgstr "کدپستی"
+
+#: khadije/includes/languages/trans_twig.php:170
+msgid "Passport id"
+msgstr "شماره گذرنامه"
+
+#: khadije/includes/languages/trans_twig.php:171
+msgid "Passport expire date"
+msgstr "تاریخ انقضای گذرنامه"
+
+#: khadije/includes/languages/trans_twig.php:172
+msgid "Home Address"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:173
+msgid "Work Address"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:175
+msgid "Phone"
+msgstr "شماره تلفن"
+
+#: khadije/includes/languages/trans_twig.php:176
+msgid "Like"
+msgstr "مثل"
+
+#: khadije/includes/languages/trans_twig.php:177
+msgid "Education"
+msgstr "تحصیلات"
+
+#: khadije/includes/languages/trans_twig.php:178
+msgid "Education course"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:183
+msgid "Pay"
+msgstr "پرداخت"
+
+#: khadije/includes/languages/trans_twig.php:184
 msgid "Your name"
 msgstr "نام شما"
 
-#: khadije/includes/languages/trans_twig.php:201
+#: khadije/includes/languages/trans_twig.php:185
 msgid "Enter a valid name"
 msgstr "نام معتبر وارد کنید"
 
-#: khadije/includes/languages/trans_twig.php:203
+#: khadije/includes/languages/trans_twig.php:187
 msgid "Enter a valid last name"
 msgstr "نام خانوادگی معتبر وارد کنید"
 
-#: khadije/includes/languages/trans_twig.php:204
+#: khadije/includes/languages/trans_twig.php:188
 msgid "Enter a valid mobile"
 msgstr "شماره تلفن همراه معتبر وارد کنید"
 
-#: khadije/includes/languages/trans_twig.php:205
+#: khadije/includes/languages/trans_twig.php:189
 msgid "Enter a valid email"
 msgstr "رایانامه معتبر وارد کنید"
 
-#: khadije/includes/languages/trans_twig.php:206
+#: khadije/includes/languages/trans_twig.php:190
 msgid "Niyat"
 msgstr "نیت"
 
-#: khadije/includes/languages/trans_twig.php:207
+#: khadije/includes/languages/trans_twig.php:191
 msgid "Enter a valid niyat"
 msgstr "نیت معتبر وارد کنید"
 
-#: khadije/includes/languages/trans_twig.php:209
+#: khadije/includes/languages/trans_twig.php:193
 msgid "Enter a valid amount"
 msgstr "مقدار معتبری وارد کنید"
 
-#: khadije/includes/languages/trans_twig.php:210
+#: khadije/includes/languages/trans_twig.php:194
 msgid "Way"
 msgstr "روش"
 
-#: khadije/includes/languages/trans_twig.php:214
+#: khadije/includes/languages/trans_twig.php:198
+msgid "Requested"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:199
+msgid "Your help"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:202
 msgid "Travel"
 msgstr "سفر"
 
-#: khadije/includes/languages/trans_twig.php:215
+#: khadije/includes/languages/trans_twig.php:203
 msgid "Manage Child"
 msgstr "مدیریت فرزندان"
 
-#: khadije/includes/languages/trans_twig.php:216
+#: khadije/includes/languages/trans_twig.php:204
 msgid "Complete Profile"
 msgstr "تکمیل پروفایل"
 
-#: khadije/includes/languages/trans_twig.php:217
+#: khadije/includes/languages/trans_twig.php:205
 msgid "Pay Donate"
 msgstr "پرداخت نذر"
 
-#: khadije/includes/languages/trans_twig.php:218
+#: khadije/includes/languages/trans_twig.php:206
 msgid "Donate product"
 msgstr "نذر کالا"
 
-#: khadije/includes/languages/trans_twig.php:224
+#: khadije/includes/languages/trans_twig.php:215
+msgid "List of way"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:218
+msgid "Enter a valid way"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:221
+msgid "List of Product need"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:223
+msgid "Desctiption"
+msgstr "توضیحات"
+
+#: khadije/includes/languages/trans_twig.php:226
+msgid "Enter a valid title"
+msgstr "عنوان را وارد کنید"
+
+#: khadije/includes/languages/trans_twig.php:227
+msgid "Enter a valid count"
+msgstr ""
+
+#: khadije/includes/languages/trans_twig.php:229
+msgid "Deactive"
+msgstr "غیرفعال"
+
+#: khadije/includes/languages/trans_twig.php:235
 msgid "money"
 msgstr "پول"
 
-#: khadije/includes/languages/trans_twig.php:225
+#: khadije/includes/languages/trans_twig.php:236
 msgid "toman"
 msgstr "تومان"
 
-#: khadije/includes/lib/app/donate.php:39
+#: khadije/includes/lib/app/donate.php:15
+msgid "This way is not in your list!"
+msgstr ""
+
+#: khadije/includes/lib/app/donate.php:59
+msgid "Please set way"
+msgstr ""
+
+#: khadije/includes/lib/app/donate.php:65
+msgid "Please set way less than 150 character"
+msgstr "لطفا روش هزینه‌کرد را در کمتر از ۱۵۰ کاراکتر بنویسید"
+
+#: khadije/includes/lib/app/donate.php:112
+msgid "Duplicate way"
+msgstr ""
+
+#: khadije/includes/lib/app/donate.php:171
 msgid "Product name must be less than 500 character"
 msgstr "نام محصول باید کمتر از ۵۰۰ حرف باشد"
 
-#: khadije/includes/lib/app/donate.php:132
+#: khadije/includes/lib/app/donate.php:264
 msgid "Store not found"
 msgstr "فروشگاه یافت نشد"
 
-#: khadije/includes/lib/app/donate.php:155
+#: khadije/includes/lib/app/donate.php:287
 msgid "Product title can not be null"
 msgstr "عنوان محصول نمی تواند خالی باشد"
 
-#: khadije/includes/lib/app/donate.php:168
+#: khadije/includes/lib/app/donate.php:300
 msgid "No way to insert product"
 msgstr "راهی برای ثبت محصول نیست! خطایی رخ داده است."
 
-#: khadije/includes/lib/app/donate.php:194
+#: khadije/includes/lib/app/donate.php:326
 msgid "Product successfuly added"
 msgstr "محصول با موفقیت اضافه شد"
+
+#: khadije/includes/lib/app/myuser.php:29
+msgid "Invalid arguments gender"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:36
+msgid "Invalid arguments email"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:45
+msgid "Invalid arguments birthday"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:57
+msgid "Invalid arguments firstname"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:64
+msgid "Invalid arguments lastname"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:71
+msgid "Invalid arguments nationalcode"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:78
+msgid "Invalid arguments father"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:85
+msgid "Invalid arguments pasportcode"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:93
+msgid "Invalid arguments pasportdate"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:105
+msgid "Invalid arguments education"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:112
+msgid "Invalid arguments educationcourse"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:119
+msgid "Invalid arguments country"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:126
+msgid "Invalid arguments province"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:133
+msgid "Invalid arguments city"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:140
+msgid "Invalid arguments homeaddress"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:147
+msgid "Invalid arguments workaddress"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:154
+msgid "Invalid arguments arabiclang"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:161
+msgid "Invalid arguments phone"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:168
+msgid "Invalid arguments displayname"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:175
+msgid "Invalid arguments married"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:182
+msgid "Invalid arguments zipcode"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:189
+msgid "Invalid arguments desc"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:196
+msgid "Invalid arguments job"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:203
+msgid "Invalid arguments avatar"
+msgstr ""
+
+#: khadije/includes/lib/app/myuser.php:211
+msgid "Invalid arguments nesbat"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:29
+msgid "Please set a valid title"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:38
+msgid "Please set a valid request"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:44
+msgid "Request is too large"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:56
+msgid "Please set a valid amount"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:62
+msgid "Amount is too large"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:75
+msgid "Please set a valid fileurl"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:83
+msgid "Please set a valid desc"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:90
+msgid "Please set a valid type"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:97
+msgid "Please set a valid status"
+msgstr ""
+
+#: khadije/includes/lib/app/need.php:204
+msgid "No way to insert need"
+msgstr ""
 
 #: khadije/includes/mvc/view.php:11
 msgid "Khadije Charity"
@@ -9221,6 +9441,128 @@ msgstr "ما به :count نفر کمک کرده‌ایم تا بهتر کار ک
 #: khadije/includes/permission/permission.php:19
 msgid "Can view the admin page"
 msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
+
+#~ msgid ""
+#~ "With Khadije we take less time of our customers and this means modern customer "
+#~ "orientation"
+#~ msgstr ""
+#~ "با کانون فرهنگی حضرت خدیجه وقت کمتری از مشتری که سهم بیشتری از فروشگاه را دارد "
+#~ "گرفته می‌شود و این یعنی مشتری مداری مدرن"
+
+#~ msgid "Majid Sadeghi, Sales Supervisor at SuperSaeed"
+#~ msgstr "مجید صادقی، سرپرست فروش در سوپرسعید"
+
+#~ msgid "Press and Media"
+#~ msgstr "مطبوعات و رسانه‌ها"
+
+#~ msgid "Careers"
+#~ msgstr "فرصت‌های شغلی"
+
+#~ msgid "Benefits"
+#~ msgstr "مزایا"
+
+#~ msgid "Pricing"
+#~ msgstr "هزینه‌ها"
+
+#~ msgid "Changelog"
+#~ msgstr "پیشرفت پروژه"
+
+#~ msgid "Logo"
+#~ msgstr "لوگو"
+
+#~ msgid "Proudly Made in IRAN"
+#~ msgstr "با افتخار ساخت ایران"
+
+#~ msgid "Admin Panel"
+#~ msgstr "پنل ادمین"
+
+#~ msgid "Store Panel"
+#~ msgstr "پنل فروشگاه"
+
+#~ msgid "Free"
+#~ msgstr "رایگان"
+
+#~ msgid "forever"
+#~ msgstr "برای همیشه"
+
+#~ msgid ""
+#~ "All the basics for personal use and anyone who wants to explore Khadije for an "
+#~ "<b>unlimited period of time</b>."
+#~ msgstr ""
+#~ "تمام نیازهای اولیه برای استفاده شخصی و یا کسانی که می‌خواهند <b>بصورت نامحدود</"
+#~ "b> در کانون فرهنگی حضرت خدیجه کنکاش کنند."
+
+#~ msgid "Standard"
+#~ msgstr "استاندارد"
+
+#~ msgid "per month"
+#~ msgstr "در ماه"
+
+#~ msgid "2 month discount on year"
+#~ msgstr "دو ماه تخفیف در صورت پرداخت سالانه"
+
+#~ msgid "For someones ready to use Khadije as hero."
+#~ msgstr "برای کسانی که آماده استفاده از کانون فرهنگی حضرت خدیجه هستند."
+
+#~ msgid "<b>Everything you need</b> for a growing business."
+#~ msgstr "<b>تمام نیازهای شما</b> برای یک کسب و کار درحال توسعه."
+
+#~ msgid "Soon"
+#~ msgstr "بزودی"
+
+#~ msgid "Alfa version of Khadije will be released."
+#~ msgstr "نسخه آلفای کانون فرهنگی حضرت خدیجه منتشر خواهد شد."
+
+#~ msgid ""
+#~ "The name of project selected as Khadije and <a href='http://Khadije.ir'>Khadije."
+#~ "ir</a> domains registered."
+#~ msgstr ""
+#~ "نام کانون فرهنگی حضرت خدیجه برای این پروژه برگزیده شده و دامنه‌ی <a href='http://"
+#~ "Khadije.ir'>Khadije.ir</a> ثبت شد."
+
+#~ msgid "Be patient..."
+#~ msgstr "صبور باشید..."
+
+#~ msgid ""
+#~ "Big companies simply don’t work like small companies, and they don’t use "
+#~ "Khadije the same way either. That’s why there’s Enterprise."
+#~ msgstr ""
+#~ "شرکت‌های بزرگ به آسانی شرکت‌های کوچک کار نمی‌کنند و از کانون فرهنگی حضرت خدیجه نیز "
+#~ "به همان شکل استفاده نمی‌کنند. این دلیل راه‌اندازی بخش سازمانی ماست."
+
+#~ msgid "We try to complete help center as soon as posible"
+#~ msgstr "ما در تلاش برای تکمیل مرکز راهنمایی خود در کوتاه‌ترین زمان ممکن هستیم."
+
+#~ msgid "only team admin"
+#~ msgstr "فقط مدیر تیم"
+
+#~ msgid "Unlimited"
+#~ msgstr "نامحدود"
+
+#~ msgid "Ready to use Khadije Enterprise?"
+#~ msgstr "آماده استفاده از پلن سازمانی کانون فرهنگی حضرت خدیجه هستید؟"
+
+#~ msgid "Get started with our Enterprise plan."
+#~ msgstr "با پلن سازمانی ما شروع کنید."
+
+#~ msgid "Get in Touch"
+#~ msgstr "با ما در تماس باشید"
+
+#~ msgid ""
+#~ "The easiest way to learn how to use Tejark is enter to it, which takes less "
+#~ "than 3 minutes to setup your team."
+#~ msgstr ""
+#~ "آسان‌ترین راه برای یادگیری نحوه‌ی کارکرد کانون فرهنگی حضرت خدیجه ورود به آن است "
+#~ "که کمتر از ۳ دقیقه از زمان شما را برای راه‌اندازی اولیه و شروع به‌کار می‌گیرد."
+
+#~ msgid "List of your stores"
+#~ msgstr "لیست فروشگاه‌های شما"
+
+#~ msgid "Add new Store"
+#~ msgstr "افزودن فروشگاه جدید"
+
+#~ msgid "Store"
+#~ msgstr "فروشگاه"
 
 #~ msgid "Sale invoicing"
 #~ msgstr "صدور فاکتور فروش"
@@ -9298,9 +9640,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "User id not found"
 #~ msgstr "شناسه کاربر یافت نشد"
-
-#~ msgid "Father"
-#~ msgstr "پدر"
 
 #~ msgid "Mother"
 #~ msgstr "مادر"
@@ -9909,35 +10248,14 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Select customer grade"
 #~ msgstr "مقطع تحصیلی مشتری را انتخاب کنید"
 
-#~ msgid "Like 09120123456"
-#~ msgstr "مثل 0912 012 3456"
-
-#~ msgid "10 digit national code"
-#~ msgstr "کدملی ده رقمی"
-
 #~ msgid "Customer code"
 #~ msgstr "شناسه مشتری"
-
-#~ msgid "Desctiption"
-#~ msgstr "توضیحات"
 
 #~ msgid "Classroom"
 #~ msgstr "کلاس"
 
 #~ msgid "Please select one classroom"
 #~ msgstr "لطفا یک کلاس را انتخاب کنید"
-
-#~ msgid "Country"
-#~ msgstr "کشور"
-
-#~ msgid "Province"
-#~ msgstr "استان"
-
-#~ msgid "City"
-#~ msgstr "شهر"
-
-#~ msgid "Zip code"
-#~ msgstr "کدپستی"
 
 #~ msgid "Religion"
 #~ msgstr "مذهب"
@@ -9947,12 +10265,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Issue Place"
 #~ msgstr "محل صدور"
-
-#~ msgid "Passport id"
-#~ msgstr "شماره گذرنامه"
-
-#~ msgid "Passport expire date"
-#~ msgstr "تاریخ انقضای گذرنامه"
 
 #~ msgid "Id number"
 #~ msgstr "شماره شناسنامه"
@@ -9965,12 +10277,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Mobile of Customer"
 #~ msgstr "تلفن‌همراه مشتری"
-
-#~ msgid "Like"
-#~ msgstr "مثل"
-
-#~ msgid "Phone"
-#~ msgstr "شماره تلفن"
 
 #~ msgid "Mobile of father"
 #~ msgstr "تلفن‌همراه پدر"

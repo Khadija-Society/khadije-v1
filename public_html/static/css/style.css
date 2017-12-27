@@ -238,7 +238,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   background-size: cover;
   position: relative;
   color:#fff;
-  padding: 7em;
+  padding: 7em 0;
   font-size: 1.4em;
 }
 #statisticTile:before{
@@ -255,7 +255,9 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 #statisticTile .cn{
   z-index: 2
 }
-
+#statisticTile .statistic{
+  margin-bottom: 3em;
+}
 #statisticTile .statistic .label:first-child{
   font-size: 4em;
 }
@@ -269,7 +271,10 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
     font-size: 1.4em;
 }
 #certificateTile h3{color:#ccc;margin-top: 1.5em;}
-#certificateTile a img{height:100px;width:auto;}
+#certificateTile nav a{margin:0.5em;display:inline-block;}
+#certificateTile a img{height:100px;min-width:100px;width:auto;overflow:hidden;border-radius:3px;background-color:#fff;transition:0.3s;border:1px solid transparent;}
+#certificateTile nav a:hover img{border-color:#2fbfdf}
+#certificateTile a{border-color:#2fbfdf}
 
 #addressTile{
   background-image: url('/static/images/cert/khadije-map-wide.png');
@@ -498,6 +503,16 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   .tile h3{font-size:1.618rem;}
   .tile h4{font-size:1.4em;}
   .tile#firstView h3{min-width:initial;width:100%;}
+
+  .site-header{font-size: 0.8em}
+  .site-header .cn{margin: 0}
+  .site-header nav{display: none}
+
+  #landing{min-height:300px;}
+  #landing:after{top:0.5em;right:0;left:0;bottom:initial;text-align:center;}
+
+  #statisticTile{font-size:0.7em}
+  #statisticTile .cn{margin:0;width:100%;}
 }
 
 

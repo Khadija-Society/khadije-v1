@@ -195,10 +195,12 @@ html {
 
 body.rtl {
   direction: rtl;
+  overflow-x: hidden;
   font-family: IRANSans, "Segoe UI", Helvetica, sans-serif; }
 
 body.ltr {
   direction: ltr;
+  overflow-x: hidden;
   font-family: LatoLatinWeb, IRANSans, "Segoe UI", Helvetica, sans-serif; }
 
 *,
@@ -1362,7 +1364,8 @@ a:active {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  padding: 0.5em 2.5em; }
+  padding: 0.5em 2.5em;
+  overflow: hidden; }
 
 .alert .close {
   font-family: "FontAwesome";
