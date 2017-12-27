@@ -40,8 +40,8 @@
       </div>
       <input type="hidden" name="username" value="">
       {{block ('iNiyat') }}
-      {{block ('iAmount') }}
-      {{block ('iWay') }}
+      {{block ('iAmountLock') }}
+
       {{block ('ipay')}}
     </form>
   </div>
@@ -107,10 +107,10 @@
 
 
 
-{%block iAmount%}
+{%block iAmountLock%}
 <label for='famount'>{%trans "Amount"%}</label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Amount"%}'   maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount'>
+ <input type="number" name="amount" placeholder='{%trans "Amount"%}' readonly=""  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount'>
 </div>
 {%endblock%}
 

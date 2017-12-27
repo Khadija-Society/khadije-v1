@@ -11,7 +11,7 @@ class view extends \content_a\main\view
 		$this->data->page['special'] = true;
 
 		$this->data->need = \lib\app\need::list('product');
-
+		$this->data->way_list = \lib\app\donate::way_list();
 	}
 }
 ?>
