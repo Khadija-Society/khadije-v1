@@ -40,7 +40,7 @@ class model extends \content_a\main\model
 
 		if($upload_avatar)
 		{
-			$post['avatar']          = $upload_avatar;
+			$post['avatar'] = $upload_avatar;
 		}
 
 		\lib\app\myuser::edit($post);

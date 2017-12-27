@@ -204,6 +204,14 @@ class myuser
 			return false;
 		}
 
+
+		$nesbat = \lib\app::request('nesbat');
+		if($nesbat && mb_strlen($nesbat) > 80)
+		{
+			\lib\debug::error(T_("Invalid arguments nesbat"), 'nesbat');
+			return false;
+		}
+
 		$args                    = [];
 		$args['gender']          = $gender;
 		$args['email']           = $email;
@@ -229,6 +237,16 @@ class myuser
 		$args['desc']            = $desc;
 		$args['job']             = $job;
 		$args['avatar']          = $avatar;
+		$args['nesbat']          = $nesbat;
+
+		if($gender && $birthday && $firstname && $lastname && $father && $nationalcode)
+		{
+			$args['iscompleteprofile'] = 1;
+		}
+		else
+		{
+			$args['iscompleteprofile'] = 0;
+		}
 
 		return $args;
 	}
@@ -273,7 +291,44 @@ class myuser
 		return $result;
 	}
 
+	public static function add_child($_args, $_option = [])
+	{
+		$default_option =
+		[
+			'debug' => true,
+		];
 
+		if(!is_array($_option))
+		{
+			$_option = [];
+		}
+
+		$_option = array_merge($default_option, $_option);
+
+		\lib\app::variable($_args);
+
+		if(!\lib\user::id())
+		{
+			\lib\debug::error(T_("User not found"), 'user');
+			return false;
+		}
+
+		// check args
+		$args = self::check($_option);
+
+		if($args === false || !\lib\debug::$status)
+		{
+			return false;
+		}
+
+		if(!\lib\app::isset_request('avatar'))         unset($args['avatar']);
+
+		$args['parent'] = \lib\user::id();
+
+		\lib\db\users::insert($args);
+
+		return true;
+	}
 
 	/**
 	 * add new product
