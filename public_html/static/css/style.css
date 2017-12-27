@@ -256,6 +256,12 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   z-index: 2
 }
 
+#statisticTile .statistic .label:first-child{
+  font-size: 4em;
+}
+#statisticTile .value{font-weight: bold}
+
+
 #certificateTile{
     background-color: #f9f9f9;
     padding: 5em 0;
