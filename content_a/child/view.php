@@ -10,6 +10,9 @@ class view extends \content_a\main\view
 		$this->data->page['desc']    = T_("Glance at your stores and quickly navigate to stores.");
 		$this->data->page['special'] = true;
 
+		$this->data->page['badge']['link'] = $this->url('baseFull'). '/child';
+		$this->data->page['badge']['text'] = T_('Add new child');
+
 		$this->data->child_list = \lib\db\users::get(['parent' => \lib\user::id()]);
 
 	}

@@ -12,7 +12,6 @@
     <form method="post">
 
       {{block ('iCity') }}
-      {{block ('iPlace') }}
       {{block ('iDateStart') }}
       {{block ('iDateEnd') }}
       {{block ('iChild') }}
@@ -66,26 +65,14 @@
 {%endblock%}
 
 {%block iCity%}
-<label for="city">{%trans "City"%}</label>
+<label for="city">{%trans "City Place"%}</label>
 <select name="city" class="input select">
   <option value="">{%trans "Please select one itmes"%}</option>
-  <option value="qom">{%trans "Qom"%}</option>
-  <option value="mashhad">{%trans "Mashhad"%}</option>
-  <option value="atabat">{%trans "Atabat"%}</option>
+  {%for key, value in cityplace_list%}
+    <option value="{{value.id}}">{{value.city}} - {{value.place}}</option>
+  {%endfor%}
 </select>
 {%endblock%}
-
-
-{%block iPlace%}
-<label for="place">{%trans "Place"%}</label>
-<select name="place" class="input select">
-  <option value="">{%trans "Please select one itmes"%}</option>
-  <option value="qom_1">{%trans "Qom hotel"%}</option>
-  <option value="mashhad_1">{%trans "Mashhad hotel"%}</option>
-  <option value="atabat_1">{%trans "Atabat hotel"%}</option>
-</select>
-{%endblock%}
-
 
 
 

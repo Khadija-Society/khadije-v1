@@ -79,6 +79,7 @@ class myuser
 		}
 
 		$nationalcode = \lib\app::request('nationalcode');
+
 		if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
 		{
 			\lib\debug::error(T_("Invalid arguments nationalcode"), 'nationalcode');
@@ -339,12 +340,23 @@ class myuser
 			return false;
 		}
 
+
 		// check args
 		$args = self::check($_option);
 
 		if($args === false || !\lib\debug::$status)
 		{
 			return false;
+		}
+
+		if(isset($args['nationalcode']) && $args['nationalcode'])
+		{
+			$check_not_duplicate_in_child = \lib\db\users::get(['parent' => \lib\user::id(), 'nationalcode' => $args['nationalcode'], 'limit' => 1]);
+			if(isset($check_not_duplicate_in_child['id']))
+			{
+				\lib\debug::error(T_("Duplicate national code in your child list"), 'nationalcode');
+				return false;
+			}
 		}
 
 		if(!\lib\app::isset_request('avatar'))         unset($args['avatar']);
@@ -396,6 +408,23 @@ class myuser
 		if($args === false || !\lib\debug::$status)
 		{
 			return false;
+		}
+
+		if(isset($args['nationalcode']) && $args['nationalcode'])
+		{
+			$check_not_duplicate_in_child = \lib\db\users::get(['parent' => \lib\user::id(), 'nationalcode' => $args['nationalcode'], 'limit' => 1]);
+			if(isset($check_not_duplicate_in_child['id']))
+			{
+				if(intval($check_not_duplicate_in_child['id']) === intval($_id))
+				{
+					// no problem to continue;
+				}
+				else
+				{
+					\lib\debug::error(T_("Duplicate national code in your child list"), 'nationalcode');
+					return false;
+				}
+			}
 		}
 
 		if(!\lib\app::isset_request('avatar'))         unset($args['avatar']);
