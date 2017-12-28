@@ -16,7 +16,7 @@ class view extends \addons\content_cp\main\view
 		$city_list = array_unique($city_list);
 		$this->data->city_list = implode(',', $city_list);
 
-		// $this->data->way_list = \lib\app\cityplace::way_list();
+		$this->data->way_list = \lib\app\travel::cityplace_list();
 	}
 }
 ?>

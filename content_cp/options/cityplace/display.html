@@ -19,19 +19,21 @@
 
 {%if way_list%}
     <br>
-    <h2>{%trans "List of way"%}</h2>
+    <h2>{%trans "List of city place"%}</h2>
     <table class="tbl">
       <thead>
         <tr class="primary">
-          <th>{%trans "Title"%}</th>
+          <th>{%trans "City"%}</th>
+          <th>{%trans "Place"%}</th>
           <th>{%trans "Delete"%}</th>
         </tr>
       </thead>
       <tbody>
         {%for key, value in way_list%}
           <tr>
-            <td>{{value}}</td>
-            <td class="collapsing"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
+            <td>{{value.city}}</td>
+            <td>{{value.place}}</td>
+            <td class="collapsing"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
           </tr>
         {%endfor%}
       </tbody>
