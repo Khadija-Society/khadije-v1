@@ -9,7 +9,8 @@ body{
   height: 100%;
 }
 .vflex{min-height:100vh;display:flex;flex-direction:column;}
-.wrapper{flex:1;display:flex;flex-direction:column;}
+.wrapper{flex:1;}
+body:not([data-page="homepage"]) .wrapper{background-color:#f2f2f2;}
 
 /* header*/
 .site-header{height:60px;min-height:60px;font-size:1.2em;overflow:hidden;background-color:#15c5e5;transition:0.3s;}
