@@ -459,7 +459,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 
 
 /*vcard*/
-.vcard{font-style:normal;}
+.vcard{font-style:normal;background-color:transparent;}
 .vcard .adr{padding:1em 0}
 .vcard .adr div, .vcard .adr span, .vcard .email, .vcard .tel{display:block;padding:0.5em}
 .vcard .adr span{display:inline-block;}

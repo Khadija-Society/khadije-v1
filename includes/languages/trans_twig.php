@@ -5,8 +5,7 @@ class twigTransTerms
  {
 
 	//----------------------------------------------------content\contact\display.html
-	echo T_("Thank you for choosing us.");                                            // Line 8
-	echo T_("We do our best to improve khadije's quality. So, knowing your valuable comments about bugs and problems and more importantly your precious offers will help us in this way.");// Line 8
+	echo T_("We do our best to improve khadije's service quality. So, knowing your valuable comments will help us in this way.");// Line 8
 	echo T_("Name");                                                                  // Line 58
 	echo T_("Full Name");                                                             // Line 14
 	echo T_("Mobile");                                                                // Line 74

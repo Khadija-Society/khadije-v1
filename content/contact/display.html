@@ -3,40 +3,31 @@
 
 {%block page%}
 
- <div class="f content">
-  <div class="c6 s12">
-   <p>{%trans "Thank you for choosing us."%}<br/>{%trans "We do our best to improve khadije's quality. So, knowing your valuable comments about bugs and problems and more importantly your precious offers will help us in this way."%}</p>
-   <form method="post" data-clear>
-   {%if login%}
-   {%else%}
-    <div class="input pA5">
-     <label class="addon" for="name">{%trans "Name"%}</label>
-     <input type="text" name="name" id="name" placeholder='{%trans "Full Name"%}' maxlength='40'>
-    </div>
-    <div class="input pA5">
-     <label class="addon" for="mobile">{%trans "Mobile"%}</label>
-     <input type="tel" name="mobile" id="mobile" placeholder='98 912 333 4444' maxlength="17" autocomplete="off" data-validity='{%trans "Please enter valid mobile number. `:val` is incorrect"%}'>
-    </div>
-    <div class="input pA5">
-     <label class="addon" for="email">{%trans "Email"%}</label>
-     <input type="email" name="email" id="email" placeholder='mail@example.com' maxlength='40'>
-    </div>
-   {%endif%}
-    <div class="pA5">
-     <textarea class="c txt" name="content" placeholder='{%trans "Your Message"%}' rows=4 minlength="5" maxlength="1000" data-resizable></textarea>
-    </div>
-    <div class="input pA5 mTB25">
-     <button type="submit" name="submit-contact" class="btn block success">{%trans "Send"%}</button>
-    </div>
+ <div class="f">
 
-   </form>
+  <div class="c5 s12 pRa10">
+   <p>{%trans "We do our best to improve khadije's service quality. So, knowing your valuable comments will help us in this way."%}</p>
+    {{block ("Address")}}
+  </div>
+  <div class="c7 s12">
+    {{block ("ContactForm")}}
   </div>
 
+ </div>
+{%endblock%}
 
-  <div class="c4 s12 os bg-white pA25">
-    <h3>{%trans "How to contact us"%}</h3>
-    <div class="contact-data">
 
+
+{%block gMap%}
+    <a href="https://goo.gl/maps/HUdi1YmcFBz" target="_blank" class="map">
+     <img src="{{url.static}}images/map/ermile.png">
+    </a>
+{%endblock%}
+
+
+
+
+{%block Address%}
        <address class="vcard mB10">
         <div class="author author_name hide"><span class="fn">{%trans "khadije"%}</span></div>
         <div class="adr">
@@ -56,12 +47,66 @@
         <div class="email ltr">info@khadije.com</div>
         <a class="tel ltr" href="tel:+982536505281">{{"(+98) 25" | fitNumber}} {{"3650 5281" | fitNumber}}</a>
        </address>
-    </div>
-    <a href="https://goo.gl/maps/HUdi1YmcFBz" target="_blank" class="map">
-     <img src="{{url.static}}images/map/ermile.png">
-    </a>
-
-  </div>
-
- </div>
 {%endblock%}
+
+
+
+{%block ContactForm%}
+  <form method="post" data-clear>
+{%if login and false%}
+{%else%}
+    <div class="f">
+      <div class="c s12">{{block ("iName")}}</div>
+      <div class="c s12">{{block ("iMobile")}}</div>
+      <div class="c s12">{{block ("iEmail")}}</div>
+    </div>
+{%endif%}
+    <div class="f">
+      <div class="c">{{block ("iMsg")}}</div>
+    </div>
+    <div class="f">
+      <div class="c">{{block ("iSubmit")}}</div>
+    </div>
+  </form>
+{%endblock%}
+
+
+{%block iName%}
+    <div class="input pA5">
+     <label class="addon" for="name">{%trans "Name"%}</label>
+     <input type="text" name="name" id="name" placeholder='{%trans "Full Name"%}' maxlength='40'>
+    </div>
+{%endblock%}
+
+
+{%block iMobile%}
+    <div class="input pA5">
+     <label class="addon" for="mobile">{%trans "Mobile"%}</label>
+     <input type="tel" name="mobile" id="mobile" placeholder='98 912 333 4444' maxlength="13" autocomplete="off" data-validity='{%trans "Please enter valid mobile number. `:val` is incorrect"%}'>
+    </div>
+{%endblock%}
+
+
+{%block iEmail%}
+    <div class="input pA5">
+     <label class="addon" for="email">{%trans "Email"%}</label>
+     <input type="email" name="email" id="email" placeholder='mail@example.com' maxlength='40'>
+    </div>
+{%endblock%}
+
+
+{%block iMsg%}
+    <div class="pA5">
+     <textarea class="c txt" name="content" placeholder='{%trans "Your Message"%}' rows=7 minlength="5" maxlength="1000" data-resizable></textarea>
+    </div>
+{%endblock%}
+
+
+{%block iSubmit%}
+    <div class="input pA5 mTB10">
+     <button type="submit" name="submit-contact" class="btn block primary">{%trans "Send"%}</button>
+    </div>
+{%endblock%}
+
+
+
