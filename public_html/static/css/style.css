@@ -44,6 +44,10 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 .pc ul.list li{line-height:2em;transition:0.3s}
 .pc ul.list li:hover{background-color:rgba(255,255,255,0.7);}
 
+.map{display:block;overflow:hidden;text-align:center;}
+.map img{}
+
+
 .faq h4{font-size: 1.2em;color:#666}
 .faq li{transition:0.3s;padding:0.5em 1em;}
 .faq li:hover{background-color:rgba(255,255,255,0.7);}
