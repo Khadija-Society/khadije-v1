@@ -13,11 +13,11 @@
 
  {{block('donate2')}}
 
- {{block('roadmap2')}}
 
 
 
  {{block('statistic')}}
+ {{block('lastNews')}}
 
  {{block('quote')}}
  {{block('address2')}}
@@ -115,9 +115,9 @@
       <div class="c s12"><h3>{%trans "license and supporters"%}</h3></div>
       <div class="cauto s12">
        <nav>
-         <a href="#"><img src="{{url.static}}images/cert/ict.png" alt='{%trans "Certificate"%}'></a>
-         <a href="#"><img src="{{url.static}}images/cert/enamad2.png" alt='{%trans "Certificate"%}'></a>
-         <a href="#"><img src="{{url.static}}images/cert/ict.png" alt='{%trans "Certificate"%}'></a>
+         <a href="#"><img src="{{url.static}}images/cert/sabt.png" alt='{%trans "Certificate"%}'></a>
+         <a href="#"><img src="{{url.static}}images/cert/farhang.png" alt='{%trans "Certificate"%}'></a>
+         <a href="#"><img src="{{url.static}}images/cert/masajed.png" alt='{%trans "Certificate"%}'></a>
          <a href="#"><img src="{{url.static}}images/cert/enamad1.png" alt='{%trans "Certificate"%}'></a>
          <a href="https://arvancloud.com" title='{%trans "Secured by Arvancloud"%}'><img src="{{url.static}}images/cert/arvancloud.png" alt='{%trans "Arvancloud"%}'></a>
        </nav>
@@ -156,27 +156,24 @@
 {%endblock%}
 
 
+{%block lastNews%}
+<section id='lastNewsBox' class="news">
+  <div class="cn">
+    <div class="f">
+      <div class="c6 s12">
 
-{%block readmap%}
-<section class="module parallax parallax-2">
-  <div class="container">
-    <h1>WORK</h1>
+      </div>
+      <div class="c6 s12">
+        <article>
+          <img src="{{url.static}}/images/homepage/hostel.jpg">
+          <h3>اسکان رایگان ۱۱۰۰۰ زائر اولی در قم</h3>
+          <p>از ابتدای فعالیت این مؤسسه تا کنون 11 هزار زائرکه عنوان زیارت اولی دارند، از سراسر کشور توانسته اند به حرم حضرت معصومه سلام الله علیها مشرف شوند و در این زائر سرا اسکان پیدا کنند.</p>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 {%endblock%}
-
-
-
-
-{%block roadmap%}
-<section id='roadmap'>
-  <div class="title">
-  <h2>{%trans "Roadmap"%}</h2>
-  <h3>{%trans "Amazing Financial Platform"%}</h3>
- </div>
-</section>
-{%endblock%}
-
 
 
 
