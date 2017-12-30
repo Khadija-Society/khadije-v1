@@ -275,6 +275,18 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 #lastNewsBox h3{font-size:1.2em}
 .news article img{width:150px;max-height:200px;}
 .news article.wide img{width:100%;max-height:300px;}
+.news p{text-align:justify;}
+
+/* Alignment */
+.alignleft{display:inline;float:left;margin-right:1.5em;}
+.alignright{display:inline;float:right;margin-left:1.5em;}
+.aligncenter{clear:both;display:block;margin:0 auto;}
+.float-left{float:left;}
+.float-right{float:right;}
+.english{direction:ltr;text-align:left;font-family:'Segoe UI',Calibri,serif}
+.clear{clear:both;}
+.thumb{min-width:100px;width:40%;}
+
 
 
 
