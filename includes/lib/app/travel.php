@@ -193,6 +193,9 @@ class travel
 
 		$all_id                  = implode(',', $child);
 		$check_all_user_is_child = \lib\db\users::get(['parent' => \lib\user::id(), 'id' => ['IN', "($all_id)"]]);
+
+		$check_zaer_avali = [];
+
 		if(is_array($check_all_user_is_child))
 		{
 			$all_real_id = array_column($check_all_user_is_child, 'id');
@@ -204,6 +207,38 @@ class travel
 					return fales;
 				}
 			}
+
+			foreach ($check_all_user_is_child as $key => $value)
+			{
+				if(!isset($value['nationalcode']) || (isset($value['nationalcode']) && !$value['nationalcode']))
+				{
+					\lib\debug::error(T_("All child must be have nationalcode to add travel"), 'child');
+					return false;
+				}
+			}
+
+			$all_nationalcode = array_column($check_all_user_is_child, 'nationalcode');
+			$all_nationalcode = array_filter($all_nationalcode);
+			$all_nationalcode = array_unique($all_nationalcode);
+
+			$get_count_travel = \lib\db\nationalcodes::nationalcode_travel($all_nationalcode);
+
+			if(!is_array($get_count_travel))
+			{
+				$get_count_travel = [];
+			}
+
+			foreach ($get_count_travel as $key => $value)
+			{
+				if(isset($value[$city]) && $value[$city])
+				{
+					\lib\debug::error(T_("The nationalcode :nationalcode is traveled to :city before", ['nationalcode' => $value['nationalcode'], 'city' => T_($city)]));
+					return false;
+				}
+			}
+
+			\lib\db\nationalcodes::set_travel($all_nationalcode, $city);
+
 		}
 
 		$args              = [];

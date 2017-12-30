@@ -3,6 +3,40 @@ namespace lib\db;
 
 class nationalcodes
 {
+	public static function set_travel($_all_national_code, $_field)
+	{
+			if(!is_array($_all_national_code) || empty($_all_national_code))
+		{
+			return false;
+		}
+
+		$_all_national_code = implode(',', $_all_national_code);
+
+		$query =
+		"
+			UPDATE
+				nationalcodes
+			SET
+				nationalcodes.$_field = IF(nationalcodes.$_field IS NULL OR nationalcodes.$_field = '', 1, nationalcodes.$_field + 1)
+			WHERE
+				nationalcodes.nationalcode IN ($_all_national_code)
+		";
+		return \lib\db::query($query);
+
+	}
+
+	public static function nationalcode_travel($_all_national_code)
+	{
+		if(!is_array($_all_national_code) || empty($_all_national_code))
+		{
+			return false;
+		}
+
+		$_all_national_code = implode(',', $_all_national_code);
+
+		$query = "SELECT * FROM nationalcodes WHERE nationalcodes.nationalcode IN ($_all_national_code)";
+		return \lib\db::get($query);
+	}
 
 	public static function add($_nationalcode)
 	{
