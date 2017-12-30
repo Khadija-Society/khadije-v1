@@ -36,7 +36,7 @@
 {%block iChild%}
 {%for key, value in child_list%}
 <div class="switch1  pA5">
- <input type="checkbox" name="child_{{value.id}}" id="child_{{value.id}}" {%if userdetail.gender == 'female' %}checked{%endif%}>
+ <input type="checkbox" name="child_{{value.id}}" id="child_{{value.id}}" checked>
  <label for="child_{{value.id}}" ></label>
  <label for="child_{{value.id}}">{{value.firstname}} {{value.lastname}}  {{value.nationalcode | fitNumber}}</label>
 </div>

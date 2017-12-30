@@ -115,17 +115,86 @@ class travel
 			]
 		];
 
-		$name = \lib\app::request('name');
-		$name = trim($name);
-		if($name && mb_strlen($name) >= 500)
+		$cityplace = \lib\app::request('cityplace');
+		if(!$cityplace || !ctype_digit($cityplace))
 		{
-			// \lib\app::log('api:product:name:max:lenght', \lib\user::id(), $log_meta);
-			if($_option['debug']) debug::error(T_("Product name must be less than 500 character"), 'name');
+			\lib\debug::error(_("Please fill the cityplace"), 'cityplace');
 			return false;
 		}
 
-		$args                    = [];
-		$args['title']           = $title;
+		$cityplace_decode = \lib\db\options::get(['id' => $cityplace, 'limit' => 1]);
+
+		if(!isset($cityplace_decode['id']) || !isset($cityplace_decode['value']) || !isset($cityplace_decode['meta']))
+		{
+			\lib\debug::error(T_("Invalid city place code!"), 'cityplace');
+			return false;
+		}
+
+		$city  = $cityplace_decode['value'];
+		$place = $cityplace_decode['meta'];
+
+		$startdate = \lib\app::request('startdate');
+		$startdate = \lib\utility\convert::to_en_number($startdate);
+		if(!$startdate)
+		{
+			\lib\debug::error(_("Please fill the startdate"), 'startdate');
+			return false;
+		}
+
+		if(strtotime($startdate) === false)
+		{
+			\lib\debug::error(_("Invalid parameter startdate"), 'startdate');
+			return false;
+		}
+
+		$startdate = date("Y-m-d", strtotime($startdate));
+
+		$enddate = \lib\app::request('enddate');
+		$enddate = \lib\utility\convert::to_en_number($enddate);
+
+		if(!$enddate)
+		{
+			\lib\debug::error(_("Please fill the enddate"), 'enddate');
+			return false;
+		}
+
+		if(strtotime($enddate) === false)
+		{
+			\lib\debug::error(_("Invalid parameter enddate"), 'enddate');
+			return false;
+		}
+		$enddate = date("Y-m-d", strtotime($enddate));
+
+
+		$child = \lib\app::request('child');
+
+		if(!$child || !is_array($child) || empty($child))
+		{
+			\lib\debug::error(_("Please fill the child"), 'child');
+			return false;
+		}
+
+		$all_id                  = implode(',', $child);
+		$check_all_user_is_child = \lib\db\users::get(['parent' => \lib\user::id(), 'id' => ['IN', "($all_id)"]]);
+		if(is_array($check_all_user_is_child))
+		{
+			$all_real_id = array_column($check_all_user_is_child, 'id');
+			foreach ($child as $key => $value)
+			{
+				if(!in_array($value, $all_real_id))
+				{
+					\lib\debug::error(T_("Invalid child detail!"));
+					return fales;
+				}
+			}
+		}
+
+		$args              = [];
+		$args['place']     = $city;
+		$args['hotel']     = $place;
+		$args['startdate'] = $startdate;
+		$args['enddate']   = $enddate;
+		$args['child']     = $child;
 
 		return $args;
 	}
@@ -210,13 +279,6 @@ class travel
 			return false;
 		}
 
-		if(!\lib\store::id())
-		{
-			\lib\app::log('api:product:store_id:notfound', null, $log_meta);
-			if($_option['debug']) \lib\debug::error(T_("Store not found"), 'subdomain');
-			return false;
-		}
-
 		// check args
 		$args = self::check($_option);
 
@@ -225,62 +287,40 @@ class travel
 			return false;
 		}
 
-		$args['store_id'] = \lib\store::id();
-		$args['creator']  = \lib\user::id();
-
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
 		{
-			$args['status']  = 'available';
+			$args['status']  = 'enable';
 		}
 
-		if(!isset($args['title']) || (isset($args['title']) && !$args['title']))
+		$child               = $args['child'];
+
+		$args['user_id']     = \lib\user::id();
+		$args['countpeople'] = count($child);
+		$args['type']        = 'family';
+
+		unset($args['child']);
+
+		$travel_id = \lib\db\travels::insert($args);
+
+		if(!$travel_id)
 		{
-			\lib\app::log('api:product:title:not:set', \lib\user::id(), $log_meta);
-			if($_option['debug']) \lib\debug::error(T_("Product title can not be null"), 'title');
+			\lib\debug::error(T_("No way to add travel"));
 			return false;
 		}
 
-		$return = [];
+		$travelusers = [];
 
-		// \lib\temp::set('last_product_added', isset($args['slug'])? $args['slug'] : null);
-
-		$product_id = \lib\db\products::insert($args);
-
-		if(!$product_id)
+		foreach ($child as $key => $value)
 		{
-			\lib\app::log('api:product:no:cityplace:to:insert:product', \lib\user::id(), $log_meta);
-			if($_option['debug']) \lib\debug::error(T_("No cityplace to insert product"), 'db', 'system');
-			return false;
+			$travelusers[] = ['travel_id' => $travel_id, 'user_id' => $value];
 		}
 
-		// the product was inserted
-		// set the productprice record
-		$insert_productprices =
-		[
-			'product_id'      => $product_id,
-			'creator'         => \lib\user::id(),
-			'startdate'       => date("Y-m-d H:i:s"),
-			'startshamsidate' => \lib\utility\jdate::date("Ymd", false, false),
-			'enddate'         => null,
-			'endshamsidate'   => null,
-			'buyprice'        => $args['buyprice'],
-			'price'           => $args['price'],
-			'discount'        => $args['discount'],
-			'discountpercent' => $args['discountpercent'],
-		];
-		\lib\db\productprices::insert($insert_productprices);
-
-
-		$return['product_id'] = \lib\utility\shortURL::encode($product_id);
-
-		if(\lib\debug::$status)
+		if(!empty($travelusers))
 		{
-			if($_option['debug']) \lib\debug::true(T_("Product successfuly added"));
+			\lib\db\travelusers::multi_insert($travelusers);
 		}
 
-		self::clean_cache('var');
-
-		return $return;
+		return true;
 	}
 }
 ?>
