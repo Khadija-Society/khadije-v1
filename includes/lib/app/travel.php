@@ -5,6 +5,17 @@ class travel
 {
 	public static $cityplace_cat = 'city_place';
 
+	public static function city_list($_trans = false)
+	{
+		$city =
+		[
+			($_trans ? T_("Qom") : "qom"),
+			($_trans ? T_("Mashhad") : "mashhad"),
+			($_trans ? T_("Karbala") : "karbala"),
+		];
+
+		return $city;
+	}
 
 	public static function remove_cityplace($_id)
 	{
@@ -64,6 +75,12 @@ class travel
 		if(!$_place)
 		{
 			\lib\debug::error(T_("Please fill the place name"), 'place');
+			return false;
+		}
+
+		if(!in_array($_city, self::city_list()))
+		{
+			\lib\debug::error(T_("Please select city from the list"), 'city');
 			return false;
 		}
 

@@ -21,7 +21,11 @@ class model extends \addons\content_cp\main\model
 		else
 		{
 			\lib\app\travel::set_cityplace(\lib\utility::post('city'), \lib\utility::post('place'));
-			\lib\debug::true(T_("City place successfully added"));
+
+			if(\lib\debug::$status)
+			{
+				\lib\debug::true(T_("City place successfully added"));
+			}
 		}
 
 		if(\lib\debug::$status)

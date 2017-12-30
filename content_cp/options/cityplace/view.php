@@ -11,10 +11,7 @@ class view extends \addons\content_cp\main\view
 		$this->data->page['special'] = true;
 		$this->data->bodyclass       = 'unselectable siftal';
 
-
-		$city_list = \lib\utility\location\cites::list('localname');
-		$city_list = array_unique($city_list);
-		$this->data->city_list = implode(',', $city_list);
+		$this->data->city_list = \lib\app\travel::city_list();
 
 		$this->data->way_list = \lib\app\travel::cityplace_list();
 	}

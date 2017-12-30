@@ -31,7 +31,7 @@
       <tbody>
         {%for key, value in way_list%}
           <tr>
-            <td>{{value.city}}</td>
+            <td>{%set myCityName = value.city %}{%trans myCityName%}</td>
             <td>{{value.place}}</td>
             <td class="collapsing"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
           </tr>
@@ -56,9 +56,12 @@
 
 {%block iCity%}
 <label for='city'>{%trans "City"%}</label>
-<div class="input">
- <input type='text' class="awesomplete" name='city' id='city' autofocus data-minchars="1" data-autofirst data-list="{{city_list}}" placeholder='{%trans "City"%}'   value="{{userdetail.city}}" />
-</div>
+<select name="city" class="input select">
+  <option value="">{%trans "Please select one items"%}</option>
+  {%for key, value in city_list %}
+    <option value="{{value}}">{%set myNameCity = value %}{%trans value%}</option>
+  {%endfor%}
+</select>
 {%endblock%}
 
 
