@@ -80,6 +80,12 @@ class myuser
 
 		$nationalcode = \lib\app::request('nationalcode');
 
+		if(!$nationalcode)
+		{
+			\lib\debug::error(T_("The nationalcode is requeired"), 'nationalcode');
+			return false;
+		}
+
 		if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
 		{
 			\lib\debug::error(T_("Invalid arguments nationalcode"), 'nationalcode');
@@ -351,6 +357,12 @@ class myuser
 
 		if(isset($args['nationalcode']) && $args['nationalcode'])
 		{
+			$load_user = \lib\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
+			if(isset($load_user['nationalcode']) && $load_user['nationalcode'] === $args['nationalcode'])
+			{
+				\lib\debug::error(T_("This nationalcode is for your!"), 'nationalcode');
+				return false;
+			}
 			$check_not_duplicate_in_child = \lib\db\users::get(['parent' => \lib\user::id(), 'nationalcode' => $args['nationalcode'], 'limit' => 1]);
 			if(isset($check_not_duplicate_in_child['id']))
 			{
@@ -412,6 +424,12 @@ class myuser
 
 		if(isset($args['nationalcode']) && $args['nationalcode'])
 		{
+			$load_user = \lib\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
+			if(isset($load_user['nationalcode']) && $load_user['nationalcode'] === $args['nationalcode'])
+			{
+				\lib\debug::error(T_("This nationalcode is for your!"), 'nationalcode');
+				return false;
+			}
 			$check_not_duplicate_in_child = \lib\db\users::get(['parent' => \lib\user::id(), 'nationalcode' => $args['nationalcode'], 'limit' => 1]);
 			if(isset($check_not_duplicate_in_child['id']))
 			{
