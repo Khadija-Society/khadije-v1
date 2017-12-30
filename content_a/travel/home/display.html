@@ -7,23 +7,29 @@
   <p>{{page.desc}}</p>
 
 </div>
-<div class="f">
-  <div class="cbox c5">
-    <form method="post">
-
-      {{block ('iCity') }}
-      {{block ('iDateStart') }}
-      {{block ('iDateEnd') }}
-      {{block ('iChild') }}
-      {{block ('isave') }}
-    </form>
-      {%if edit_mode%}
-      <form method="post">
-        {{block ('iremove') }}
-      </form>
-      {%endif%}
-  </div>
-
+<div class="cbox">
+  <table class="tbl">
+    <thead>
+      <tr>
+        <th>{%trans "City"%}</th>
+        <th>{%trans "Place"%}</th>
+        <th>{%trans "Start Date"%}</th>
+        <th>{%trans "End Date"%}</th>
+        <th>{%trans "Status"%}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for key, value in travel_list%}
+        <tr>
+          <td>{%set myPlace = value.place%}{%trans myPlace%}</td>
+          <td>{{value.hotel}}</td>
+          <td>{{value.startdate | fitNumber}}</td>
+          <td>{{value.enddate | fitNumber}}</td>
+          <td>{%set myStatus = value.status | capitalize %}{%trans myStatus%}</td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
 </div>
 {%endblock%}
 

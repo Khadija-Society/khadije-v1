@@ -27,6 +27,19 @@ class travel
 		return false;
 	}
 
+	public static function user_travel_list()
+	{
+		$user_id = \lib\user::id();
+		if(!$user_id)
+		{
+			return false;
+		}
+
+		$travele_list = \lib\db\travels::get(['user_id' => $user_id]);
+
+		return $travele_list;
+	}
+
 
 	public static function cityplace_list()
 	{
