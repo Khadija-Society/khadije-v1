@@ -1,5 +1,5 @@
 <?php
-namespace content_a\travel;
+namespace content_a\travel\add;
 
 
 class model extends \content_a\main\model
@@ -52,7 +52,7 @@ class model extends \content_a\main\model
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("Your Travel was saved"));
-				$this->redirector($this->url('baseFull'));
+				$this->redirector($this->url('baseFull'). '/travel');
 			}
 
 		}

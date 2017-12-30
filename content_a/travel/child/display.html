@@ -27,6 +27,10 @@
         {{block ('iremove') }}
       </form>
       {%endif%}
+    <form method="post">
+      <input type="hidden" name="next" value="next">
+      {{block ('inext') }}
+    </form>
   </div>
 
 {%if child_list%}
@@ -63,7 +67,7 @@
             <td>{{value.nesbat}}</td>
             <td>{{value.gender}}</td>
             <td>{{value.married}}</td>
-            <td class="collapsing"><a href="{{url.baseFull}}/child?edit={{value.id}}" ><button class="btn primary xs">{%trans "Edit"%}</button></a></td>
+            <td class="collapsing"><a href="{{url.baseFull}}/travel/child?edit={{value.id}}" ><button class="btn primary xs">{%trans "Edit"%}</button></a></td>
           </tr>
         {%endfor%}
       </tbody>
@@ -317,6 +321,12 @@
 
 {%block isave%}
 <button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+
+
+{%block inext%}
+<button class="btn primary block mT20">{%trans "Next"%}</button>
 {%endblock%}
 
 

@@ -1,5 +1,5 @@
 <?php
-namespace content_a\profile;
+namespace content_a\travel\profile;
 
 
 class controller extends \content_a\main\controller

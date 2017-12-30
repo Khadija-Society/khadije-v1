@@ -1,5 +1,5 @@
 <?php
-namespace content_a\child;
+namespace content_a\travel\add;
 
 
 class controller extends \content_a\main\controller
@@ -12,7 +12,7 @@ class controller extends \content_a\main\controller
 			return;
 		}
 
-		$this->post('child')->ALL();
+		$this->post('travel')->ALL();
 
 		if(\lib\utility::get('edit'))
 		{

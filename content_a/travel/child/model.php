@@ -1,5 +1,5 @@
 <?php
-namespace content_a\child;
+namespace content_a\travel\child;
 
 
 class model extends \content_a\main\model
@@ -7,13 +7,18 @@ class model extends \content_a\main\model
 
 	public function post_child()
 	{
+		if(\lib\utility::post('next') === 'next')
+		{
+			$this->redirector($this->url('baseFull'). '/travel/add');
+			return;
+		}
 
 		if(\lib\utility::post('remove') === \lib\utility::get('edit') && \lib\utility::get('edit') != '')
 		{
 			\lib\app\myuser::remove_child(\lib\utility::get('edit'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector($this->url('baseFull'). '/child');
+				$this->redirector($this->url('baseFull'). '/travel/child');
 			}
 		}
 		else
