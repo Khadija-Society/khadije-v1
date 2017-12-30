@@ -2,7 +2,7 @@
 namespace content_cp\options\product;
 
 
-class view extends \addons\content_cp\main\view
+class view extends \content_cp\main2\view
 {
 	public function config()
 	{
