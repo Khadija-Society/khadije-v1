@@ -52,7 +52,7 @@
    {{block ('iEmail')}}
    <input type="hidden" name="username" value="">
    {{block ('iNiyat') }}
-   {{block ('iAmount') }}
+   {{block ('iAmountLock') }}
    {{block ('ipay')}}
  </form>
 
@@ -63,10 +63,10 @@
 {%block payProductBox%}
 
 {%if need%}
-  <div class="cbox">
+  <div class="cbox donateProduct">
     <div class="f">
       {%for key, value in need%}
-      <div class="c3 s12">
+      <div class="c4 s12">
          <div class="vcard green mA5">
                   {%if value.fileurl%}
             <img src="{{value.fileurl}}">
@@ -74,14 +74,16 @@
             <img src="{{url.static}}/siftal/images/default/image.png">
           {%endif%}
             <div class="content">
-              <a class="header">{{value.title}}</a>
-              <div class="meta"><span>{%trans "Requested"%}: {{value.request | number_format | fitNumber}}</span></div>
-              <div class="desc">{%trans "Amount"%}: {{value.amount | number_format | fitNumber}}</div>
+              <div class="header">{{value.title}}</div>
+              <div class="meta">
+                <span>{%trans "Requested"%} {{value.request | number_format | fitNumber}}</span>
+                <span class="badge">{{value.amount | number_format | fitNumber}} {%trans "Toman"%}</span>
+              </div>
             </div>
-            <div class="footer">{{value.desc}}</div>
             <div class="footer">
               <div class="input">
-               <input type="number" name="" placeholder='{%trans "Your help"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid name"%}' id='fname'>
+               <input type="number" name="{{value.id}}" placeholder='{%trans "Your help"%}' min='1' title='{%trans "Enter a valid number"%}' data-price='{{value.amount}}'>
+               <span class="addon">{{value.amount | number_format | fitNumber}}</span>
               </div>
 
             </div>
@@ -153,9 +155,17 @@
 
 
 {%block iAmount%}
-<label for='famount'>{%trans "Pay Amount"%} *</label>
+<label for='totalAmount'>{%trans "Pay Amount"%} *</label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount' required>
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='totalAmount' required>
+</div>
+{%endblock%}
+
+
+{%block iAmountLock%}
+<label for='totalAmount'>{%trans "Total Pay Amount"%} *</label>
+<div class="input">
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' id='totalAmount' required readonly>
 </div>
 {%endblock%}
 
