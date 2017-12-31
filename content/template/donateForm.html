@@ -1,6 +1,23 @@
+{%block donateProduct%}
+
+{%if payment_verify_msg %}
+<div class="msg success">{{payment_verify_msg}}</div>
+{%endif%}
+
+<div class="f">
+ <div class="c4 pRa10">
+{{block ('donateFormProduct')}}
+ </div>
+ <div class="c8">
+{{block ('payProductBox')}}
+ </div>
+</div>
+{%endblock%}
 
 
-{%block donateForm%}
+
+
+{%block donateFormPay%}
 
 {%if payment_verify_msg %}
 <div class="msg success">{{payment_verify_msg}}</div>
@@ -22,7 +39,59 @@
     </form>
   </div>
 </div>
+{%endblock%}
 
+
+
+
+
+{%block donateFormProduct%}
+ <form method="post" class="cbox">
+   {{block ('iFullname')}}
+   {{block ('iMobile')}}
+   {{block ('iEmail')}}
+   <input type="hidden" name="username" value="">
+   {{block ('iNiyat') }}
+   {{block ('iAmount') }}
+   {{block ('ipay')}}
+ </form>
+
+{%endblock%}
+
+
+
+{%block payProductBox%}
+
+{%if need%}
+  <div class="cbox">
+    <div class="f">
+      {%for key, value in need%}
+      <div class="c3 s12">
+         <div class="vcard green mA5">
+                  {%if value.fileurl%}
+            <img src="{{value.fileurl}}">
+          {%else%}
+            <img src="{{url.static}}/siftal/images/default/image.png">
+          {%endif%}
+            <div class="content">
+              <a class="header">{{value.title}}</a>
+              <div class="meta"><span>{%trans "Requested"%}: {{value.request | number_format | fitNumber}}</span></div>
+              <div class="desc">{%trans "Amount"%}: {{value.amount | number_format | fitNumber}}</div>
+            </div>
+            <div class="footer">{{value.desc}}</div>
+            <div class="footer">
+              <div class="input">
+               <input type="number" name="" placeholder='{%trans "Your help"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid name"%}' id='fname'>
+              </div>
+
+            </div>
+          </div>
+      </div>
+      {%endfor%}
+
+    </div>
+  </div>
+{%endif%}
 {%endblock%}
 
 
@@ -30,7 +99,7 @@
 
 
 {%block ipay%}
-<button class="btn primary block mT25">{%trans "Pay"%}</button>
+<button class="btn primary block mT25 mB10">{%trans "Pay"%}</button>
 {%endblock%}
 
 
@@ -86,7 +155,7 @@
 {%block iAmount%}
 <label for='famount'>{%trans "Pay Amount"%} *</label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount' required>
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount' required>
 </div>
 {%endblock%}
 

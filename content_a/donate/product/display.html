@@ -1,11 +1,10 @@
-{%extends display.khadijeControlLayout%}
+{%extends display.admin%}
 
 
 {%block pageContent%}
 
-{%use "content/template/donateProductForm.html"%}
-
-{{block("donateForm")}}
+{%use "content/template/donateForm.html"%}
+{{block("donateProduct")}}
 
 {%endblock%}
 
