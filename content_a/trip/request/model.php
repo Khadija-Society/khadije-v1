@@ -1,11 +1,11 @@
 <?php
-namespace content_a\travel\add;
+namespace content_a\trip\add;
 
 
 class model extends \content_a\main\model
 {
 
-	public function post_travel()
+	public function post_trip()
 	{
 
 		if(\lib\utility::post('remove') === \lib\utility::get('edit') && \lib\utility::get('edit') != '')
@@ -13,7 +13,7 @@ class model extends \content_a\main\model
 			\lib\app\travel::remove(\lib\utility::get('edit'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector($this->url('baseFull'). '/travel');
+				$this->redirector($this->url('baseFull'). '/trip');
 			}
 		}
 		else
@@ -52,7 +52,7 @@ class model extends \content_a\main\model
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("Your Travel was saved"));
-				$this->redirector($this->url('baseFull'). '/travel');
+				$this->redirector($this->url('baseFull'). '/trip');
 			}
 
 		}

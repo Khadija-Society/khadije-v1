@@ -1,15 +1,15 @@
 <?php
-namespace content_a\travel\child;
+namespace content_a\trip\partner;
 
 
 class model extends \content_a\main\model
 {
 
-	public function post_child()
+	public function post_partner()
 	{
 		if(\lib\utility::post('next') === 'next')
 		{
-			$this->redirector($this->url('baseFull'). '/travel/add');
+			$this->redirector($this->url('baseFull'). '/trip/add');
 			return;
 		}
 
@@ -18,7 +18,7 @@ class model extends \content_a\main\model
 			\lib\app\myuser::remove_child(\lib\utility::get('edit'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector($this->url('baseFull'). '/travel/child');
+				$this->redirector($this->url('baseFull'). '/trip/partner');
 			}
 		}
 		else

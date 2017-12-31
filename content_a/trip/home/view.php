@@ -1,5 +1,5 @@
 <?php
-namespace content_a\travel\home;
+namespace content_a\trip\home;
 
 
 class view extends \content_a\main\view
@@ -11,11 +11,11 @@ class view extends \content_a\main\view
 		// $this->data->page['desc']    = T_("Glance at your stores and quickly navigate to stores.");
 		// $this->data->page['special'] = true;
 
-		$this->data->travel_list = \lib\app\travel::user_travel_list();
+		$this->data->trip_list = \lib\app\travel::user_travel_list();
 
-		if(!$this->data->travel_list || empty($this->data->travel_list))
+		if(!$this->data->trip_list || empty($this->data->trip_list))
 		{
-			$this->redirector($this->url('baseFull').'/travel/profile')->redirect();
+			$this->redirector($this->url('baseFull').'/trip/profile')->redirect();
 			return;
 		}
 	}

@@ -1,12 +1,13 @@
 <?php
-namespace content_a\travel\home;
+namespace content_a\trip\profile;
 
 
 class controller extends \content_a\main\controller
 {
 	function ready()
 	{
-		$this->post('travel')->ALL();
+
+		$this->post('profile')->ALL();
 		$this->get()->ALL();
 	}
 }

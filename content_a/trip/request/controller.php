@@ -1,12 +1,18 @@
 <?php
-namespace content_a\travel\child;
+namespace content_a\trip\add;
 
 
 class controller extends \content_a\main\controller
 {
 	function ready()
 	{
-		$this->post('child')->ALL();
+		if(!$this->login())
+		{
+			$this->redirector($this->url('base'). '/enter')->redirect();
+			return;
+		}
+
+		$this->post('trip')->ALL();
 
 		if(\lib\utility::get('edit'))
 		{

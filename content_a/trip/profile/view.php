@@ -1,5 +1,5 @@
 <?php
-namespace content_a\travel\profile;
+namespace content_a\trip\profile;
 
 
 class view extends \content_a\main\view

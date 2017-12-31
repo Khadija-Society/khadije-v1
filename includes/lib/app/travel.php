@@ -354,7 +354,7 @@ class travel
 
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
 		{
-			$args['status']  = 'enable';
+			$args['status']  = 'awaiting';
 		}
 
 		$child               = $args['child'];

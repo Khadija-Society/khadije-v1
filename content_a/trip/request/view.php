@@ -1,5 +1,5 @@
 <?php
-namespace content_a\travel\add;
+namespace content_a\trip\add;
 
 
 class view extends \content_a\main\view
