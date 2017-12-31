@@ -492,13 +492,21 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 .vcard .adr .locality{display:inline-block;}
 .vcard .adr .street-address{display:inline-block;}
 .vcard .adr .extended-address{display:inline-block;}
-.vcard .adr > *:hover{background-color:#fff};
+.vcard .adr > *:hover{background-color:#fff}
 
 
 
 
 
 [data-page="homepage"] #tfooter .link_home{display:none;}
+
+.placePrev300{
+  max-height: 300px;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+.placePrev300 img{display: block;margin:0 auto}
 
 
 .tbl.productList th{vertical-align: middle;text-align: center;}

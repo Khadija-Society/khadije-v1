@@ -3,7 +3,7 @@
 
 {%block pageContent%}
 <div class="f justify-center">
- <div class="cbox c8">
+ <div class="cbox c8 s12">
   <form method="post">
 
 {{block ('iCity') }}
@@ -21,7 +21,7 @@
 
  <div class="f">
 {% for cityPlace in cityplace_list %}
-  <div class="c4 s12">
+  <div class="c4">
    <div class="radio1 green">
     <input type="radio" id="r-{{cityPlace}}" name="city" value="{{cityPlace}}" {%if cityPlace == 'karbala'%} checked{%endif%}>
     <label for="r-{{cityPlace}}">{%trans cityPlace%}</label>
@@ -30,9 +30,9 @@
 {% endfor %}
  </div>
 
- <div class="f">
+ <div class="placePrev300">
 {% for cityPlace in cityplace_list %}
-  <img src="{{url.static}}images/place/{{cityPlace}}.jpg" alt='{%trans cityPlace%}' {%if cityPlace == 'karbala'%}{%else%} data-response-hide{%endif%} data-response='city' data-response-where="{{cityPlace}}" data-respnse-effect='effect'>
+  <img src="{{url.static}}images/place/{{cityPlace}}.jpg" alt='{%trans cityPlace%}' {%if cityPlace == 'karbala'%}{%else%} data-response-hide{%endif%} data-response='city' data-response-where="{{cityPlace}}" data-response-classTrue='show' data-response-classFalse='hide' data-response-timing='fast'>
 {% endfor %}
  </div>
 
