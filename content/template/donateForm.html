@@ -2,6 +2,10 @@
 
 {%block donateForm%}
 
+{%if payment_verify_msg %}
+<div class="msg success">{{payment_verify_msg}}</div>
+{%endif%}
+
 <div class="f justify-center">
   <div class="cbox c5 fs12">
     <form method="post">
