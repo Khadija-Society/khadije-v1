@@ -506,7 +506,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   width: 100%;
   overflow: hidden;
 }
-.placePrev300 img{display: block;margin:0 auto}
+.placePrev300 img{display: block;margin:0 auto;overflow:hidden;border-radius:3px;}
 
 
 .tbl.productList th{vertical-align: middle;text-align: center;}

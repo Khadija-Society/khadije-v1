@@ -32,7 +32,7 @@
 
  <div class="placePrev300">
 {% for cityPlace in cityplace_list %}
-  <img src="{{url.static}}images/place/{{cityPlace}}.jpg" alt='{%trans cityPlace%}' {%if cityPlace == 'karbala'%}{%else%} data-response-hide{%endif%} data-response='city' data-response-where="{{cityPlace}}" data-response-classTrue='show' data-response-classFalse='hide' data-response-timing='fast'>
+  <img src="{{url.static}}images/place/{{cityPlace}}.jpg" alt='{%trans cityPlace%}' {%if cityPlace == 'karbala'%}{%else%} data-response-hide{%endif%} data-response='city' data-response-where="{{cityPlace}}" data-response-classTrue='show' data-response-classFalse='hide'>
 {% endfor %}
  </div>
 
