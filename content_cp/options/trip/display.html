@@ -1,0 +1,47 @@
+{%extends display.khadijeCpMain%}
+
+
+{%block pageContent%}
+<div class="f justify-center">
+  <div class="cbox c5">
+    <form method="post">
+      {{block ('iqom')}}
+      {{block ('ikarbala')}}
+      {{block ('imashhad')}}
+      {{block ('isave')}}
+    </form>
+  </div>
+</div>
+{%endblock%}
+
+
+
+{%block isave%}
+<button class="btn primary block mT25">{%trans "Save"%}</button>
+{%endblock%}
+
+
+
+{%block iqom%}
+<div class="switch1">
+   <input type="checkbox" name="qom" id="qom" {%if active_city.qom%} checked {%endif%}>
+   <label for="qom"></label>
+   <label for="qom">{%trans "Qom"%}<small>{%trans "Can trip user to qom"%}</small></label>
+  </div>
+{%endblock%}
+
+{%block ikarbala%}
+<div class="switch1">
+   <input type="checkbox" name="karbala" id="karbala" {%if active_city.karbala%} checked {%endif%}>
+   <label for="karbala"></label>
+   <label for="karbala">{%trans "Karbala"%}<small>{%trans "Can trip user to karbala"%}</small></label>
+  </div>
+{%endblock%}
+
+{%block imashhad%}
+<div class="switch1">
+   <input type="checkbox" name="mashhad" id="mashhad" {%if active_city.mashhad%} checked {%endif%}>
+   <label for="mashhad"></label>
+   <label for="mashhad">{%trans "Mashhad"%}<small>{%trans "Can trip user to mashhad"%}</small></label>
+  </div>
+{%endblock%}

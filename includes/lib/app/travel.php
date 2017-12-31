@@ -9,13 +9,112 @@ class travel
 	{
 		$city =
 		[
-			($_trans ? T_("Qom") : "qom"),
-			($_trans ? T_("Mashhad") : "mashhad"),
 			($_trans ? T_("Karbala") : "karbala"),
+			($_trans ? T_("Mashhad") : "mashhad"),
+			($_trans ? T_("Qom") 	 : "qom"),
 		];
 
 		return $city;
 	}
+
+	public static function active_city()
+	{
+		$get_detail =
+		[
+			'cat'    => 'trip_city',
+			'status' => 'enable',
+		];
+
+		$get = \lib\db\options::get($get_detail);
+
+		$city_list = [];
+
+		if(is_array($get))
+		{
+			$temp = array_column($get, 'value');
+			foreach ($temp as $key => $value)
+			{
+				$city_list[$value] = T_($value);
+			}
+		}
+
+		return $city_list;
+	}
+
+
+	public static function city_signup_setting($_city, $_action)
+	{
+		if(!$_action || $_action == '')
+		{
+			$_action = false;
+		}
+		else
+		{
+			$_action = true;
+		}
+
+		if(!in_array($_city, self::city_list()))
+		{
+			\lib\debug::error(T_("Invalid city"));
+			return false;
+		}
+
+		$get_detail =
+		[
+			'cat'   => 'trip_city',
+			'key'   => 'trip_city_'. $_city,
+			'limit' => 1,
+		];
+
+		$get = \lib\db\options::get($get_detail);
+
+		if(isset($get['id']))
+		{
+			$update = true;
+		}
+		else
+		{
+			$update = false;
+		}
+
+		if($_action)
+		{
+			if($update)
+			{
+				\lib\db\options::update(['status' => 'enable'], $get['id']);
+			}
+			else
+			{
+				$insert_new =
+				[
+					'cat'    => 'trip_city',
+					'key'    => 'trip_city_'. $_city,
+					'value'  => $_city,
+					'status' => 'enable',
+				];
+				\lib\db\options::insert($insert_new);
+			}
+		}
+		else
+		{
+			if($update)
+			{
+				\lib\db\options::update(['status' => 'disable'], $get['id']);
+			}
+			else
+			{
+				$insert_new =
+				[
+					'cat'    => 'trip_city',
+					'key'    => 'trip_city_'. $_city,
+					'value'  => $_city,
+					'status' => 'disable',
+				];
+				\lib\db\options::insert($insert_new);
+			}
+		}
+	}
+
 
 	public static function remove_cityplace($_id)
 	{
