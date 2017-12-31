@@ -1,5 +1,5 @@
 <?php
-namespace content_a\trip\add;
+namespace content_a\trip\request;
 
 
 class controller extends \content_a\main\controller
@@ -12,16 +12,8 @@ class controller extends \content_a\main\controller
 			return;
 		}
 
+		$this->get()->ALL();
 		$this->post('trip')->ALL();
-
-		if(\lib\utility::get('edit'))
-		{
-			$this->get(false, 'edit')->ALL();
-		}
-		else
-		{
-			$this->get()->ALL();
-		}
 	}
 }
 ?>

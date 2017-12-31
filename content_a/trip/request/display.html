@@ -1,70 +1,41 @@
-{%extends display.khadijeControlLayout%}
+{%extends display.admin%}
 
 
-{%block content%}
-<div class="tbox">
-  <h2>{{page.title}}</h2>
-  <p>{{page.desc}}</p>
+{%block pageContent%}
+<div class="f justify-center">
+ <div class="cbox c8">
+  <form method="post">
 
-</div>
-<div class="f">
-  <div class="cbox c5">
-    <form method="post">
+{{block ('iCity') }}
 
-      {{block ('iCity') }}
-      {{block ('iDateStart') }}
-      {{block ('iDateEnd') }}
-      {{block ('iChild') }}
-      {{block ('isave') }}
-    </form>
-      {%if edit_mode%}
-      <form method="post">
-        {{block ('iremove') }}
-      </form>
-      {%endif%}
-  </div>
+{{block ('iNext') }}
 
+  </form>
+ </div>
 </div>
 {%endblock%}
 
 
-
-
-
-
-
-{%block iChild%}
-{%for key, value in child_list%}
-<div class="switch1  pA5">
- <input type="checkbox" name="child_{{value.id}}" id="child_{{value.id}}" checked>
- <label for="child_{{value.id}}" ></label>
- <label for="child_{{value.id}}">{{value.firstname}} {{value.lastname}}  {{value.nationalcode | fitNumber}}</label>
-</div>
-{%endfor%}
-{%endblock%}
-
-
-
-
-
-
-{%block iDateStart%}
-<label for="startdate">{%trans "Start Date"%}</label>
-<div class="input">
-  <input class="datepicker" type="text" name="startdate" id="startdate" placeholder='{{"1369/04/15" | fitNumber}}' value="{{startdate}}" maxlength='20' data-format="YYYY/MM/DD" data-initialValue='false' data-view="year">
-</div>
-{%endblock%}
-
-
-
-{%block iDateEnd%}
-<label for="enddate">{%trans "End Date"%}</label>
-<div class="input">
-  <input class="datepicker" type="text" name="enddate" id="enddate" placeholder='{{"1369/04/15" | fitNumber}}' value="{{enddate}}" maxlength='20' data-format="YYYY/MM/DD" data-initialValue='false' data-view="year">
-</div>
-{%endblock%}
 
 {%block iCity%}
+
+<div class="f">
+
+
+{% for cityPlace in cityplace_list %}
+<div class="c4 s12">
+ <div class="radio1 green">
+  <input type="radio" id="r-{{cityPlace}}" name="city" value="{{cityPlace}}" {%if cityPlace == 'karbala'%} checked{%endif%} >
+  <label for="r-{{cityPlace}}">{%trans cityPlace%}</label>
+ </div>
+</div>
+{% endfor %}
+</div>
+
+{%endblock%}
+
+
+{%block iCity2%}
 <label for="city">{%trans "City Place"%}</label>
 <select name="city" class="input select">
   <option value="">{%trans "Please select one itmes"%}</option>
@@ -75,22 +46,8 @@
 {%endblock%}
 
 
-
-
-{%block iadd%}
-<button class="btn primary block mT20">{%trans "Add"%}</button>
+{%block iNext%}
+<button class="btn primary block mT20">{%trans "Continue"%}</button>
 {%endblock%}
-
-{%block isave%}
-<button class="btn primary block mT20">{%trans "Save"%}</button>
-{%endblock%}
-
-
-{%block iremove%}
-<input type="hidden" name="remove" value="{{utilityGET.edit}}">
-<button class="btn danger block mT20">{%trans "Remove"%}</button>
-{%endblock%}
-
-
 
 

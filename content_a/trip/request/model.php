@@ -1,5 +1,5 @@
 <?php
-namespace content_a\trip\add;
+namespace content_a\trip\request;
 
 
 class model extends \content_a\main\model
