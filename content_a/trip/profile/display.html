@@ -57,35 +57,17 @@
 
 
 {%block iname%}
-<label for="name">{%trans "Name"%}</label>
+<label for="name">{%trans "Name"%} *</label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%}' value="{{userdetail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}'>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%}' value="{{userdetail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
 
 {%block ifamily%}
-<label for="lastName">{%trans "Last name"%}</label>
+<label for="lastName">{%trans "Last name"%} *</label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%}' value="{{userdetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}'>
-</div>
-{%endblock%}
-
-
-
-
-{%block imobile%}
-<label for="mobile">{%trans "Mobile"%}</label>
-<div class="input">
-  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{userdetail.mobile}}" maxlength='30'>
-</div>
-{%endblock%}
-
-
-{%block incode%}
-<label for="nationalcode">{%trans "National code"%}</label>
-<div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%}' value="{{userdetail.nationalcode}}" min=0 max=9999999999>
+  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%}' value="{{userdetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
@@ -94,6 +76,22 @@
 <label for="father">{%trans "Father name"%}</label>
 <div class="input">
   <input type="text" name="father" id="father" placeholder='{%trans "Father name"%}' value="{{userdetail.father}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+{%block imobile%}
+<label for="mobile">{%trans "Mobile"%} *</label>
+<div class="input">
+  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{userdetail.mobile}}" maxlength='30'>
+</div>
+{%endblock%}
+
+
+{%block incode%}
+<label for="nationalcode">{%trans "National code"%} *</label>
+<div class="input">
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%}' value="{{userdetail.nationalcode}}" min=1000000000 max='9999999999' required>
 </div>
 {%endblock%}
 
