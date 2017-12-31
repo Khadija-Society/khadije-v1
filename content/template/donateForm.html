@@ -75,33 +75,47 @@
 
 
 {%block iNiyat%}
-<label for='fniyat'>{%trans "Niyat"%}</label>
+<label for='fniyat'>{%trans "Intent"%}</label>
 <div class="input">
- <input type="text" name="niyat" placeholder='{%trans "Niyat"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid niyat"%}' id='fniyat'>
+ <input type="text" name="niyat" placeholder='{%trans "Intention to donate this fee"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid niyat"%}' id='fniyat'>
 </div>
 {%endblock%}
 
 
 
 {%block iAmount%}
-<label for='famount'>{%trans "Amount"%}</label>
+<label for='famount'>{%trans "Pay Amount"%} *</label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Amount"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount'>
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount' required>
 </div>
 {%endblock%}
 
 
 {%block iWay%}
-<label for='fway'>{%trans "Way"%}</label>
+<label for='fway'>{%trans "Spending method"%}</label>
+
+{%if way_list|length < 6%}
+
+{%for key, myWay in way_list%}
+ <div class="radio1 green">
+  <input type="radio" id="r-{{myWay}}" name="city" value="{{myWay}}">
+  <label for="r-{{myWay}}">{%trans myWay%}</label>
+ </div>
+{%endfor%}
+
+{%else%}
+
 <div class="input">
  <select name="way" class="select">
-
    <option value="">{%trans "Please select one item"%}</option>
    {%for key, value in way_list%}
     <option value="{{value}}">{{value}}</option>
    {%endfor%}
  </select>
 </div>
+
+{%endif%}
+
 {%endblock%}
 
 
