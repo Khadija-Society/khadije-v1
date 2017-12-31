@@ -1,10 +1,8 @@
 <?php
-namespace content_a\donate;
+namespace content\donate;
 
-
-class model extends \content_a\main\model
+class model extends \mvc\model
 {
-
 	public function post_donate()
 	{
 		$args =
