@@ -8918,7 +8918,7 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  min-height: 4em;
+  min-height: 36px;
   max-height: 30em;
   overflow: hidden; }
 
@@ -8930,6 +8930,9 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
 
 .txt[rows] {
   resize: none; }
+
+.txt[rows] {
+  line-height: 1; }
 
 .select {
   display: block;
