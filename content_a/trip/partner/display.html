@@ -1,42 +1,58 @@
 {%extends display.admin%}
 
 
-{%block content%}
-<div class="tbox">
-  <h2>{{page.title}}</h2>
-  <p>{{page.desc}}</p>
+{%block pageContent%}
 
-</div>
 <div class="f">
-  <div class="cbox c5">
-    <form method="post">
+ <div class="c4 s12 pRa10">
+{{block ('partnertForm') }}
+  </div>
+  <div class="c8 s12">
+  {{block ('partnertList') }}
+  </div>
+ </div>
+</div>
+  {{block ('nextForm') }}
+{%endblock%}
 
-      {{block ('iname') }}
-      {{block ('ifamily') }}
-      {{block ('ifather') }}
-      {{block ('incode') }}
-      {{block ('ibirthday') }}
 
-      {{block ('iNesbat') }}
-      {{block ('igender') }}
-      {{block ('iMarried') }}
-      {{block ('isave') }}
+{%block partnertForm%}
+    <form method="post" class="cbox">
+
+     <div class="f">
+      <div class="c s12 pRa5">{{block ('iname') }}</div>
+      <div class="c s12">{{block ('ifamily') }}</div>
+     </div>
+
+     <div class="f">
+      <div class="c s12 pRa5">{{block ('ifather') }}</div>
+      <div class="c s12">{{block ('ibirthday') }}</div>
+     </div>
+
+     <div class="f">
+      <div class="c s12 pRa5">{{block ('iNesbat') }}</div>
+      <div class="c s12">{{block ('incode') }}</div>
+     </div>
+
+     <div class="f">
+      <div class="c s12 pRa5">{{block ('igender') }}</div>
+      <div class="c s12">{{block ('iMarried') }}</div>
+     </div>
+
+     {{block ('isave') }}
     </form>
       {%if edit_mode%}
       <form method="post">
         {{block ('iremove') }}
       </form>
       {%endif%}
-    <form method="post">
-      <input type="hidden" name="next" value="next">
-      {{block ('inext') }}
-    </form>
-  </div>
+{%endblock%}
 
+
+{%block partnertList%}
 {%if child_list%}
 
-<div class="cbox ">
-
+  <div class="cbox">
     <h2>{%trans "List of your child"%}</h2>
     <table class="tbl">
       <thead>
@@ -69,27 +85,31 @@
       </tbody>
     </table>
   </div>
-</div>
 {%endif%}
-</div>
+{%endblock%}
+
+
+{%block nextForm%}
+    <form method="post">
+      <input type="hidden" name="next" value="next">
+      {{block ('inext') }}
+    </form>
 {%endblock%}
 
 
 
-
-
 {%block iname%}
-<label for="name">{%trans "Name"%}</label>
+<label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%}' value="{{child_detail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}'>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{child_detail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
 
 {%block ifamily%}
-<label for="lastName">{%trans "Last name"%}</label>
+<label for="lastName">{%trans "Last name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%}' value="{{child_detail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}'>
+  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{child_detail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
@@ -105,9 +125,9 @@
 
 
 {%block incode%}
-<label for="nationalcode">{%trans "National code"%}</label>
+<label for="nationalcode">{%trans "National code"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%}' value="{{child_detail.nationalcode}}" min=0 max=9999999999>
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{child_detail.nationalcode}}" min=0 max=9999999999 required>
 </div>
 {%endblock%}
 
@@ -129,19 +149,19 @@
 
 
 {%block igender%}
-<div class="switch1 gender pA5">
+<label for="gender">{%trans "Gender"%}</label>
+<div class="switch1 gender mA0 pLR5">
  <input type="checkbox" name="gender" id="gender" {%if userdetail.gender == 'female' %}checked{%endif%}>
  <label for="gender" ></label>
- <label for="gender">{%trans "Gender"%}</label>
 </div>
 {%endblock%}
 
 
 {%block iMarried%}
-<div class="switch1 pA5">
+<label for="Married">{%trans "Marital"%}</label>
+<div class="switch1 mA0 pLR5">
  <input type="checkbox" name="Married" id="Married" {%if userdetail.married == 'married' %}checked{%endif%}>
  <label for="Married"  data-on='{%trans "Married"%}' data-off='{%trans "Single"%}'></label>
- <label for="Married">{%trans "Marital"%}</label>
 </div>
 
 {%endblock%}
