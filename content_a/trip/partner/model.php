@@ -9,7 +9,7 @@ class model extends \content_a\main\model
 	{
 		if(\lib\utility::post('next') === 'next')
 		{
-			$this->redirector($this->url('baseFull'). '/trip/add');
+			$this->redirector($this->url('baseFull'). '/trip');
 			return;
 		}
 
@@ -18,7 +18,7 @@ class model extends \content_a\main\model
 			\lib\app\myuser::remove_child(\lib\utility::get('edit'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector($this->url('baseFull'). '/trip/partner');
+				$this->redirector($this->url('baseFull'). '/trip/partner?trip='. \lib\utility::get('trip'));
 			}
 		}
 		else
@@ -30,32 +30,13 @@ class model extends \content_a\main\model
 			$post['father']          = \lib\utility::post('father');
 			$post['nationalcode']    = \lib\utility::post('nationalcode');
 			$post['birthday']        = \lib\utility::post('birthday');
-			$post['job']             = \lib\utility::post('job');
 			$post['gender']          = \lib\utility::post('gender') ? 'female' : 'male';
 			$post['married']         = \lib\utility::post('Married') ? 'married' : 'single';
 			$post['nesbat']          = \lib\utility::post('nesbat');
 
+			$post['travel_id']       = \lib\utility::get('trip');
 
-			$upload_avatar = self::upload_avatar();
-			if($upload_avatar === false)
-			{
-				return false;
-			}
-
-			if($upload_avatar)
-			{
-				$post['avatar'] = $upload_avatar;
-			}
-
-			if(\lib\utility::get('edit') && \lib\utility::get('edit') != '')
-			{
-
-				\lib\app\myuser::edit_child($post, \lib\utility::get('edit'));
-			}
-			else
-			{
-				\lib\app\myuser::add_child($post);
-			}
+			\lib\app\myuser::add_child($post);
 
 			if(\lib\debug::$status)
 			{
@@ -65,31 +46,6 @@ class model extends \content_a\main\model
 
 		}
 
-	}
-
-
-	/**
-	 * Uploads a avatar.
-	 *
-	 * @return     boolean  ( description_of_the_return_value )
-	 */
-	public static function upload_avatar()
-	{
-		if(\lib\utility::files('avatar'))
-		{
-			$uploaded_file = \lib\app\file::upload(['debug' => false, 'upload_name' => 'avatar']);
-
-			if(isset($uploaded_file['url']))
-			{
-				return $uploaded_file['url'];
-			}
-			// if in upload have error return
-			if(!\lib\debug::$status)
-			{
-				return false;
-			}
-		}
-		return null;
 	}
 
 }

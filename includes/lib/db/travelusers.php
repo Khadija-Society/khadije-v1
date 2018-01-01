@@ -3,6 +3,21 @@ namespace lib\db;
 
 class travelusers
 {
+	public static function duplicate_nationalcode_in_child($_national_code, $_travel_id)
+	{
+		$query =
+		"
+			SELECT * FROM users
+			INNER JOIN travelusers ON travelusers.user_id = users.id
+			WHERE
+			travelusers.travel_id = $_travel_id AND
+			users.nationalcode    = $_national_code
+		";
+
+		$result = \lib\db::get($query);
+
+		return $result;
+	}
 
 	/**
 	 * insert new productprice

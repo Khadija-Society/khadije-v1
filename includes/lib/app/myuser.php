@@ -346,6 +346,11 @@ class myuser
 			return false;
 		}
 
+		if(!\lib\app::request('travel_id') || !ctype_digit(\lib\app::request('travel_id')))
+		{
+			\lib\debug::error(T_("Travel id not found"));
+			return false;
+		}
 
 		// check args
 		$args = self::check($_option);
@@ -363,21 +368,34 @@ class myuser
 				\lib\debug::error(T_("This nationalcode is for your!"), 'nationalcode');
 				return false;
 			}
-			$check_not_duplicate_in_child = \lib\db\users::get(['parent' => \lib\user::id(), 'nationalcode' => $args['nationalcode'], 'limit' => 1]);
-			if(isset($check_not_duplicate_in_child['id']))
+
+			$duplicate_nationalcode_in_child = \lib\db\travelusers::duplicate_nationalcode_in_child($args['nationalcode'], \lib\app::request('travel_id'));
+			if($duplicate_nationalcode_in_child)
 			{
 				\lib\debug::error(T_("Duplicate national code in your child list"), 'nationalcode');
 				return false;
 			}
 		}
 
-		if(!\lib\app::isset_request('avatar'))         unset($args['avatar']);
-
-		$args['parent'] = \lib\user::id();
-
 		\lib\db\users::insert($args);
+		$user_id = \lib\db::insert_id();
 
-		return true;
+		if(!$user_id)
+		{
+			\lib\debug::error(T_("Can not add partner"), 'db');
+			return false;
+		}
+
+		$insert_travelusers =
+		[
+			'user_id'   => $user_id,
+			'travel_id' => \lib\app::request('travel_id'),
+			'status'    => 'awaiting',
+		];
+
+		$result = \lib\db\travelusers::insert($insert_travelusers);
+
+		return $result;
 	}
 
 		public static function edit_child($_args, $_id, $_option = [])
@@ -445,7 +463,6 @@ class myuser
 			}
 		}
 
-		if(!\lib\app::isset_request('avatar'))         unset($args['avatar']);
 
 		\lib\db\users::update($args, $_id);
 
