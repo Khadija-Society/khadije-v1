@@ -4,42 +4,30 @@
 {%block pageContent%}
 
 <div class="f">
- <div class="c4 s12 pRa10">
+ <div class="c3 s12 pRa10">
 {{block ('partnertForm') }}
   </div>
-  <div class="c8 s12">
-  {{block ('partnertList') }}
+  <div class="c9 s12">
+{{block ('partnertList') }}
+{{block ('nextForm') }}
   </div>
  </div>
-</div>
-  {{block ('nextForm') }}
 {%endblock%}
 
 
 {%block partnertForm%}
     <form method="post" class="cbox">
+{{block ('iname') }}
+{{block ('ifamily') }}
+{{block ('ibirthday') }}
+{{block ('ifather') }}
+{{block ('iNesbat') }}
+{{block ('incode') }}
+{{block ('igender') }}
+{{block ('iMarried') }}
 
-     <div class="f">
-      <div class="c s12 pRa5">{{block ('iname') }}</div>
-      <div class="c s12">{{block ('ifamily') }}</div>
-     </div>
 
-     <div class="f">
-      <div class="c s12 pRa5">{{block ('ifather') }}</div>
-      <div class="c s12">{{block ('ibirthday') }}</div>
-     </div>
-
-     <div class="f">
-      <div class="c s12 pRa5">{{block ('iNesbat') }}</div>
-      <div class="c s12">{{block ('incode') }}</div>
-     </div>
-
-     <div class="f">
-      <div class="c s12 pRa5">{{block ('igender') }}</div>
-      <div class="c s12">{{block ('iMarried') }}</div>
-     </div>
-
-     {{block ('isave') }}
+     {{block ('iAdd') }}
     </form>
       {%if edit_mode%}
       <form method="post">
@@ -50,10 +38,10 @@
 
 
 {%block partnertList%}
-{%if child_list%}
-
   <div class="cbox">
-    <h2>{%trans "List of your child"%}</h2>
+    <h3>{%trans "List of your child"%}</h3>
+
+{%if child_list%}
     <table class="tbl">
       <thead>
         <tr class="primary">
@@ -84,13 +72,17 @@
         {%endfor%}
       </tbody>
     </table>
-  </div>
+{%else%}
+   <p class="alert alert-alert txtC">{%trans "You are not registered partner yet"%}</p>
+   <p class="alert alert-info txtC">{%trans "you can send a single person request without partner on press below button"%}</p>
 {%endif%}
+  </div>
+
 {%endblock%}
 
 
 {%block nextForm%}
-    <form method="post">
+    <form method="post" class="cbox">
       <input type="hidden" name="next" value="next">
       {{block ('inext') }}
     </form>
@@ -149,19 +141,19 @@
 
 
 {%block igender%}
-<label for="gender">{%trans "Gender"%}</label>
-<div class="switch1 gender mA0 pLR5">
+<div class="switch1 gender">
  <input type="checkbox" name="gender" id="gender" {%if userdetail.gender == 'female' %}checked{%endif%}>
  <label for="gender" ></label>
+ <label for="gender">{%trans "Gender"%}</label>
 </div>
 {%endblock%}
 
 
 {%block iMarried%}
-<label for="Married">{%trans "Marital"%}</label>
-<div class="switch1 mA0 pLR5">
+<div class="switch1">
  <input type="checkbox" name="Married" id="Married" {%if userdetail.married == 'married' %}checked{%endif%}>
  <label for="Married"  data-on='{%trans "Married"%}' data-off='{%trans "Single"%}'></label>
+ <label for="Married">{%trans "Marital"%}</label>
 </div>
 
 {%endblock%}
@@ -331,18 +323,14 @@
 
 
 
-{%block iadd%}
-<button class="btn primary block mT20">{%trans "Add"%}</button>
-{%endblock%}
-
-{%block isave%}
-<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%block iAdd%}
+<button class="btn primary block mT20">{%trans "Add as new partner"%}</button>
 {%endblock%}
 
 
 
 {%block inext%}
-<button class="btn primary block mT20">{%trans "Next"%}</button>
+<button class="btn success block ">{%trans "Final register in trip request"%}</button>
 {%endblock%}
 
 
