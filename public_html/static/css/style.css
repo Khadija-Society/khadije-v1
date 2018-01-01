@@ -177,8 +177,8 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 #aboutBox .text{padding:1.2em;}
 
 
-.videoBox{max-width: 100%;min-height:360px; overflow: hidden;position:relative;}
-.videoBox iframe{max-width: 100%;}
+.videoBox{max-width: 100%;max-height:360px; overflow: hidden;position:relative;min-height:200px;}
+.videoBox iframe{max-width: 100%;width:100%;min-height:200px;}
 .videoBox iframe .jwplayer.jw-flag-aspect-mode{height:100%!important}
 .videoBox:before{
   font-family: "siftal" !important;
@@ -299,7 +299,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 #certificateTile h3{color:#ccc;margin-top: 1.5em;}
 #certificateTile nav a{margin:0.5em;display:inline-block;border-color:#2fbfdf}
 #certificateTile nav a:hover img{border-color:#2fbfdf}
-#certificateTile nav a img{height:100px;min-width:100px;width:auto;overflow:hidden;border-radius:3px;background-color:#fff;transition:0.3s;border:1px solid transparent;}
+#certificateTile nav a img{height:6em;min-width:6em;width:auto;overflow:hidden;border-radius:3px;background-color:#fff;transition:0.3s;border:1px solid transparent;}
 
 #addressTile{
   background-image: url('/static/images/cert/khadije-map-wide.png');
@@ -324,7 +324,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 .quote-person{
   max-width: 600px;
   position: relative;
-  margin: 100px auto;
+  margin: 5em auto;
   min-height: 150px;
   font-size: 2em;
 }
@@ -336,6 +336,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   position: absolute;
   top:0;
   font-size: 350px;
+  font-size: 17em;
   color: #2fbfdf;
   font-family: Arial;
   font-weight: bold;
@@ -544,7 +545,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   .tile#firstView h3{min-width:initial;width:100%;}
 
   .site-header{font-size: 0.8em}
-  .site-header .cn{margin: 0}
+  .site-header .cn{margin: 0;width:100%;}
   .site-header nav{display: none}
 
   #landing{min-height:300px;}
@@ -552,6 +553,13 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 
   #statisticTile{font-size:0.7em}
   #statisticTile .cn{margin:0;width:100%;}
+
+  #lastNewsBox h2{text-align:center;}
+  #lastNewsBox h3{text-align:center;}
+  #lastNewsBox .pRa25{padding: 0}
+
+  .quote-person:before{font-size: 10em;right:0;top:-1em}
+  .quote-person:after{display:none}
 }
 
 
