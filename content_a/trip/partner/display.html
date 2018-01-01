@@ -42,36 +42,36 @@
     <h3>{%trans "List of your child"%}</h3>
 
 {%if child_list%}
-    <table class="tbl">
-      <thead>
-        <tr class="primary">
-          <th>{%trans "First name"%}</th>
-          <th>{%trans "Last name"%}</th>
-          <th>{%trans "Father"%}</th>
-          <th>{%trans "National code"%}</th>
-          <th>{%trans "Birthday"%}</th>
-          <th>{%trans "Nesbat"%}</th>
-          <th>{%trans "Gender"%}</th>
-          <th>{%trans "Married"%}</th>
-          <th>{%trans "Remove"%}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {%for key, value in child_list%}
-          <tr>
-            <td>{{value.firstname}}</td>
-            <td>{{value.lastname}}</td>
-            <td>{{value.father}}</td>
-            <td>{{value.nationalcode | fitNumber}}</td>
-            <td>{{value.birthday | fitNumber}}</td>
-            <td>{{value.nesbat}}</td>
-            <td>{{value.gender}}</td>
-            <td>{{value.married}}</td>
-            <td class="collapsing"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"remove"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
-          </tr>
-        {%endfor%}
-      </tbody>
-    </table>
+    <div class="f">
+{%for key, value in child_list%}
+     <div class="c4 s12">
+      <div class="vcard mA5">
+        <div class="content f">
+          <div class="c">
+            <div class="header"><small>{{value.firstname}}</small> {{value.lastname}}</div>
+            <div class="meta"><span>{{value.nationalcode | fitNumber}}</span></div>
+          </div>
+          <div class="cauto">
+{%if value.gender == 'female'%}
+            <img src="{{url.static}}siftal/images/avatar/woman.png" class="mini">
+{%else%}
+            <img src="{{url.static}}siftal/images/avatar/man.png" class="mini">
+{%endif%}
+          </div>
+          <div class="desc c12">
+           <span class="badge info">{{value.nesbat}}</span>
+           <span class="badge">{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</span>
+           <span class="badge success">{{value.birthday | fitNumber}}</span>
+           <span class="badge" title="{%trans "Child"%}">{{value.father}}</span>
+          </div>
+        </div>
+        <div class="footer f pAn">
+          <a href="{{url.full}}" class="btn secondary" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"remove"}'>{%trans "Remove"%}</a>
+        </div>
+      </div>
+     </div>
+{%endfor%}
+    </div>
 {%else%}
    <p class="alert alert-alert txtC">{%trans "You are not registered partner yet"%}</p>
    <p class="alert alert-info txtC">{%trans "you can send a single person request without partner on press below button"%}</p>
