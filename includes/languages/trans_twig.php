@@ -7,11 +7,10 @@ class twigTransTerms
 	//----------------------------------------------------content\contact\display.html
 	echo T_("We do our best to improve khadije's service quality. So, knowing your valuable comments will help us in this way.");// Line 12
 	echo T_("khadije");                                                               // Line 39
-	echo T_("Ermile, Floor2, Yas Building");                                          // Line 42
-	echo T_("1st alley, Haft-e-tir St");                                              // Line 49
+	echo T_("Najmeh Shabestan");                                                      // Line 50
+	echo T_("Najmeh Park, Fatemi St");                                                // Line 49
 	echo T_("Qom");                                                                   // Line 70
 	echo T_("Iran");                                                                  // Line 47
-	echo T_("Floor2, Yas Building");                                                  // Line 50
 	echo T_("Name");                                                                  // Line 62
 	echo T_("Full Name");                                                             // Line 84
 	echo T_("Mobile");                                                                // Line 84
@@ -21,16 +20,15 @@ class twigTransTerms
 	echo T_("Send");                                                                  // Line 114
 
 	//-------------------------------------------------------content\home\display.html
-	echo T_("Integrated Sales and Online Accounting");                                // Line 32
 	echo T_("About");                                                                 // Line 6
-	echo T_("Do you know?");                                                          // Line 68
-	echo T_("Register in first trip request");                                        // Line 71
+	echo T_("Do you know?");                                                          // Line 67
+	echo T_("Register in first trip request");                                        // Line 70
 	echo T_("Mashhad");                                                               // Line 86
 	echo T_("Karbala");                                                               // Line 78
-	echo T_("license and supporters");                                                // Line 116
-	echo T_("Certificate");                                                           // Line 121
-	echo T_("Secured by Arvancloud");                                                 // Line 122
-	echo T_("Arvancloud");                                                            // Line 122
+	echo T_("license and supporters");                                                // Line 115
+	echo T_("Certificate");                                                           // Line 120
+	echo T_("Secured by Arvancloud");                                                 // Line 121
+	echo T_("Arvancloud");                                                            // Line 121
 
 	//--------------------------------------------------------content\main\layout.html
 	echo T_("Next →");                                                                // Line 34

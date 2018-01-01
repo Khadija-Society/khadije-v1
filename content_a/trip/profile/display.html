@@ -81,8 +81,8 @@
 
 
 {%block imobile%}
-<label for="mobile">{%trans "Mobile"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-<div class="input">
+<label for="mobile" class="disabled">{%trans "Mobile"%}</label>
+<div class="input disabled">
   <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%} *' value="{{userdetail.mobile}}" maxlength='30'>
 </div>
 {%endblock%}
@@ -206,8 +206,8 @@
 
 {%block iPhone%}
 <label for="phone">{%trans "Phone"%}</label>
-<div class="input">
-  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 025 3650 5281' value="{{userdetail.phone}}" maxlength='50'>
+<div class="input ltr">
+  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 02536505460' value="{{userdetail.phone}}" maxlength='50'>
 </div>
 {%endblock%}
 
