@@ -17,8 +17,9 @@ class view extends \content_cp\main2\view
 
 		$args =
 		[
-			'order'   => \lib\utility::get('order'),
-			'sort'    => \lib\utility::get('sort'),
+			'order' => \lib\utility::get('order'),
+			'sort'  => \lib\utility::get('sort'),
+			'in'    => \lib\utility::get('in'),
 		];
 
 		$search_string            = \lib\utility::get('q');

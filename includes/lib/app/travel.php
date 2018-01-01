@@ -189,6 +189,7 @@ class travel
 		[
 			'order' => null,
 			'sort'  => null,
+			'in'    => null,
 		];
 
 		if(!is_array($_args))
@@ -216,7 +217,7 @@ class travel
 		}
 
 		$field             = [];
-
+		unset($option['in']);
 
 		$result = \lib\db\travels::search($_string, $option, $field);
 

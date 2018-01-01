@@ -59,7 +59,17 @@ class travels
 
 		$default_option =
 		[
-			'search_field'      => null,
+			'search_field'      =>
+			"
+				(
+					users.firstname LIKE '%__string__%' OR
+					users.lastname LIKE '%__string__%' OR
+					users.nationalcode LIKE '%__string__%' OR
+					travels.id = '__string__' OR
+					travels.place = '__string__'
+
+				)
+			",
 			'public_show_field' => " users.firstname AS `firstname`, users.lastname AS `lastname`, users.nationalcode AS `nationalcode`, travels.* ",
 			'master_join'       => " INNER JOIN users ON users.id = travels.user_id",
 		];
