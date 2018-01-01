@@ -63,7 +63,7 @@
         <td>{{value.id}}</td>
         <td>{{value.firstname}}</td>
         <td>{{value.lastname}}</td>
-        <td>{{value.nationalcode}}</td>
+        <td>{{value.nationalcode | fitNumber}}</td>
         <td>{%set my_place = value.place | capitalize%}{%trans my_place%}</td>
         <td>{{value.countpeople | fitNumber}}</td>
         <td>{%set my_type = value.type | capitalize%}{%trans my_type%}</td>
