@@ -1,0 +1,79 @@
+{%extends display.khadijeCpMain%}
+
+
+{%block pageContent%}
+
+
+{%if trip_list%}
+{{block('searchblock')}}
+<div class="cbox fs12">
+{{block('datatable')}}
+</div>
+
+
+{%elseif utilityGET.q or utilityGET.barcode%}
+{{block('searchblock')}}
+<div class="fs14 alert alert-info pA25">
+ {%trans "No trip founded."%} {%trans "Search with new keywords."%}
+</div>
+
+
+{%else%}
+<div class="cbox fs12">
+ <h3>{%trans "You are not have trip yet!"%}</h3>
+</div>
+{%endif%}
+
+{%endblock%}
+
+
+{%block searchblock%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.baseFull}}/trip'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search in trips"%}' id="q" value="{{utilityGET.q}}{{utilityGET.barcode}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block datatable%}
+
+  <table class="tbl">
+    <thead class="">
+      <tr>
+        <th data-sort="{{sort_link.id.order}}" class=""><a href="{{sort_link.id.link}}">{%trans "ID"%}</a></th>
+        <th data-sort="{{sort_link.firstname.order}}" class=""><a href="{{sort_link.firstname.link}}">{%trans "First name"%}</a></th>
+        <th data-sort="{{sort_link.lastname.order}}" class=""><a href="{{sort_link.lastname.link}}">{%trans "Last name"%}</a></th>
+        <th data-sort="{{sort_link.nationalcode.order}}" class=""><a href="{{sort_link.nationalcode.link}}">{%trans "National code"%}</a></th>
+        <th data-sort="{{sort_link.place.order}}" class=""><a href="{{sort_link.place.link}}">{%trans "City"%}</a></th>
+        <th data-sort="{{sort_link.countpeople.order}}" class=""><a href="{{sort_link.countpeople.link}}">{%trans "Count people"%}</a></th>
+        <th data-sort="{{sort_link.type.order}}" class=""><a href="{{sort_link.type.link}}">{%trans "Type"%}</a></th>
+        <th data-sort="{{sort_link.status.order}}" class=""><a href="{{sort_link.status.link}}">{%trans "Status"%}</a></th>
+        <th data-sort="{{sort_link.desc.order}}" class=""><a href="{{sort_link.desc.link}}">{%trans "Desc"%}</a></th>
+        <th data-sort="{{sort_link.datecreated.order}}" class=""><a href="{{sort_link.datecreated.link}}">{%trans "Date created"%}</a></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in trip_list%}
+      <tr>
+        <td>{{value.id}}</td>
+        <td>{{value.firstname}}</td>
+        <td>{{value.lastname}}</td>
+        <td>{{value.nationalcode}}</td>
+        <td>{%set my_place = value.place | capitalize%}{%trans my_place%}</td>
+        <td>{{value.countpeople | fitNumber}}</td>
+        <td>{%set my_type = value.type | capitalize%}{%trans my_type%}</td>
+        <td>{%set my_status = value.status | capitalize%}{%trans my_status%}</td>
+        <td>{{value.desc}}</td>
+        <td>{{value.datecreated | tdate ("Y/m/d H:i")}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+{%endblock%}
+
