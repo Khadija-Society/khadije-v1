@@ -48,7 +48,7 @@ class model extends \content_a\main\model
 		if(\lib\debug::$status)
 		{
 			\lib\debug::true(T_("Your detail was saved"));
-			$this->redirector($this->url('baseFull'). '/trip/child');
+			$this->redirector($this->url('baseFull'). '/trip/partner?trip='. \lib\utility::get('trip'));
 		}
 
 	}

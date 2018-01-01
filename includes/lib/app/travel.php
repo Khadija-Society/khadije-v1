@@ -244,164 +244,53 @@ class travel
 			]
 		];
 
-		$cityplace = \lib\app::request('cityplace');
-		if(!$cityplace || !ctype_digit($cityplace))
+		$city = \lib\app::request('city');
+		if(!$city || !in_array(T_($city), self::active_city()))
 		{
-			\lib\debug::error(_("Please fill the cityplace"), 'cityplace');
+			\lib\debug::error(_("Invalid city"), 'city');
 			return false;
 		}
 
-		$cityplace_decode = \lib\db\options::get(['id' => $cityplace, 'limit' => 1]);
-
-		if(!isset($cityplace_decode['id']) || !isset($cityplace_decode['value']) || !isset($cityplace_decode['meta']))
-		{
-			\lib\debug::error(T_("Invalid city place code!"), 'cityplace');
-			return false;
-		}
-
-		$city  = $cityplace_decode['value'];
-		$place = $cityplace_decode['meta'];
 
 		$startdate = \lib\app::request('startdate');
 		$startdate = \lib\utility\convert::to_en_number($startdate);
-		if(!$startdate)
-		{
-			\lib\debug::error(_("Please fill the startdate"), 'startdate');
-			return false;
-		}
 
-		if(strtotime($startdate) === false)
+		if($startdate && strtotime($startdate) === false)
 		{
 			\lib\debug::error(_("Invalid parameter startdate"), 'startdate');
 			return false;
 		}
 
-		$startdate = date("Y-m-d", strtotime($startdate));
+		if($startdate)
+		{
+			$startdate = date("Y-m-d", strtotime($startdate));
+		}
 
 		$enddate = \lib\app::request('enddate');
 		$enddate = \lib\utility\convert::to_en_number($enddate);
 
-		if(!$enddate)
-		{
-			\lib\debug::error(_("Please fill the enddate"), 'enddate');
-			return false;
-		}
-
-		if(strtotime($enddate) === false)
+		if($enddate && strtotime($enddate) === false)
 		{
 			\lib\debug::error(_("Invalid parameter enddate"), 'enddate');
 			return false;
 		}
-		$enddate = date("Y-m-d", strtotime($enddate));
 
-
-		$child = \lib\app::request('child');
-
-		if(!$child || !is_array($child) || empty($child))
+		if($enddate)
 		{
-			\lib\debug::error(_("Please fill the child"), 'child');
-			return false;
+			$enddate = date("Y-m-d", strtotime($enddate));
 		}
 
-		$all_id                  = implode(',', $child);
-		$check_all_user_is_child = \lib\db\users::get(['parent' => \lib\user::id(), 'id' => ['IN', "($all_id)"]]);
-
-		$check_zaer_avali = [];
-
-		if(is_array($check_all_user_is_child))
-		{
-			$all_real_id = array_column($check_all_user_is_child, 'id');
-			foreach ($child as $key => $value)
-			{
-				if(!in_array($value, $all_real_id))
-				{
-					\lib\debug::error(T_("Invalid child detail!"));
-					return fales;
-				}
-			}
-
-			foreach ($check_all_user_is_child as $key => $value)
-			{
-				if(!isset($value['nationalcode']) || (isset($value['nationalcode']) && !$value['nationalcode']))
-				{
-					\lib\debug::error(T_("All child must be have nationalcode to add travel"), 'child');
-					return false;
-				}
-			}
-
-			$all_nationalcode = array_column($check_all_user_is_child, 'nationalcode');
-			$all_nationalcode = array_filter($all_nationalcode);
-			$all_nationalcode = array_unique($all_nationalcode);
-
-			$get_count_travel = \lib\db\nationalcodes::nationalcode_travel($all_nationalcode);
-
-			if(!is_array($get_count_travel))
-			{
-				$get_count_travel = [];
-			}
-
-			foreach ($get_count_travel as $key => $value)
-			{
-				if(isset($value[$city]) && $value[$city])
-				{
-					\lib\debug::error(T_("The nationalcode :nationalcode is traveled to :city before", ['nationalcode' => $value['nationalcode'], 'city' => T_($city)]));
-					return false;
-				}
-			}
-
-			\lib\db\nationalcodes::set_travel($all_nationalcode, $city);
-
-		}
 
 		$args              = [];
 		$args['place']     = $city;
-		$args['hotel']     = $place;
 		$args['startdate'] = $startdate;
 		$args['enddate']   = $enddate;
-		$args['child']     = $child;
+
 
 		return $args;
 	}
 
 
-	/**
-	 * ready data of product to load in api
-	 *
-	 * @param      <type>  $_data  The data
-	 */
-	public static function ready($_data)
-	{
-		$result = [];
-
-		if(!is_array($_data))
-		{
-			return null;
-		}
-
-		foreach ($_data as $key => $value)
-		{
-
-			switch ($key)
-			{
-				case 'id':
-				case 'creator':
-					if(isset($value))
-					{
-						$result[$key] = \lib\utility\shortURL::encode($value);
-					}
-					else
-					{
-						$result[$key] = null;
-					}
-					break;
-
-				default:
-					$result[$key] = isset($value) ? (string) $value : null;
-					break;
-			}
-		}
-		return $result;
-	}
 
 
 	/**
@@ -451,18 +340,20 @@ class travel
 			return false;
 		}
 
+		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \lib\user::id(), 'place' => $args['place'], 'status' => 'awaiting', 'limit' => 1]);
+		if(isset($check_duplicate_travel['id']))
+		{
+			\lib\debug::error(T_("You signup to this trip before, please wait for checking status of that trip"));
+			return false;
+		}
+
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
 		{
 			$args['status']  = 'awaiting';
 		}
 
-		$child               = $args['child'];
-
 		$args['user_id']     = \lib\user::id();
-		$args['countpeople'] = count($child);
 		$args['type']        = 'family';
-
-		unset($args['child']);
 
 		$travel_id = \lib\db\travels::insert($args);
 
@@ -472,19 +363,7 @@ class travel
 			return false;
 		}
 
-		$travelusers = [];
-
-		foreach ($child as $key => $value)
-		{
-			$travelusers[] = ['travel_id' => $travel_id, 'user_id' => $value];
-		}
-
-		if(!empty($travelusers))
-		{
-			\lib\db\travelusers::multi_insert($travelusers);
-		}
-
-		return true;
+		return $travel_id;
 	}
 }
 ?>
