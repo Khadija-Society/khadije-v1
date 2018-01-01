@@ -15,7 +15,7 @@ class view extends \content_a\main\view
 
 		if(!$this->data->trip_list || empty($this->data->trip_list))
 		{
-			$this->redirector($this->url('baseFull').'/trip/profile')->redirect();
+			$this->redirector($this->url('baseFull').'/trip/request')->redirect();
 			return;
 		}
 	}

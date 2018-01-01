@@ -1,0 +1,1 @@
+ALTER TABLE `travels` CHANGE `status` `status` ENUM('enable','disable','expire','deleted','lock','awaiting','cancel', 'accept', 'reject', 'spam') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'enable';

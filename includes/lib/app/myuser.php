@@ -470,36 +470,6 @@ class myuser
 	}
 
 
-	public static function remove_child($_id)
-	{
-		if(!\lib\user::id())
-		{
-			\lib\debug::error(T_("User not found"), 'user');
-			return false;
-		}
-
-		if(!$_id || !is_numeric($_id))
-		{
-			return false;
-		}
-
-		$check = \lib\db\users::get(['id' => $_id, 'parent' => \lib\user::id(), 'limit' => 1]);
-
-		if(!isset($check['id']))
-		{
-			return false;
-		}
-
-		if(\lib\db\users::hard_delete($_id))
-		{
-			\lib\debug::true(T_("Your child removed"));
-		}
-		else
-		{
-			\lib\debug::error(T_("Can not remove this child"));
-		}
-	}
-
 	/**
 	 * add new product
 	 *

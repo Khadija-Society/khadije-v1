@@ -3,6 +3,33 @@ namespace lib\db;
 
 class travelusers
 {
+
+	public static function remove($_id, $_travel_id)
+	{
+		$query = "DELETE FROM travelusers WHERE travelusers.id = $_id AND travelusers.travel_id = $_travel_id LIMIT 1";
+
+		$result = \lib\db::query($query);
+
+		return $result;
+	}
+
+
+	public static function get_travel_child($_travel_id)
+	{
+		$query =
+		"
+			SELECT * FROM users
+			INNER JOIN travelusers ON travelusers.user_id = users.id
+			WHERE
+			travelusers.travel_id = $_travel_id
+		";
+
+		$result = \lib\db::get($query);
+
+		return $result;
+	}
+
+
 	public static function duplicate_nationalcode_in_child($_national_code, $_travel_id)
 	{
 		$query =

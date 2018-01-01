@@ -134,7 +134,7 @@ class travel
 			return false;
 		}
 
-		$travele_list = \lib\db\travels::get(['user_id' => $user_id]);
+		$travele_list = \lib\db\travels::get(['user_id' => $user_id, 'status' => ["IN", "('awaiting', 'accept')"]]);
 
 		return $travele_list;
 	}

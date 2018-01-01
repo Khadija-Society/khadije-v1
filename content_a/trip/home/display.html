@@ -16,6 +16,7 @@
         <th>{%trans "Start Date"%}</th>
         <th>{%trans "End Date"%}</th>
         <th>{%trans "Status"%}</th>
+        <th>{%trans "Cancel"%}</th>
       </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@
           <td>{{value.startdate | fitNumber}}</td>
           <td>{{value.enddate | fitNumber}}</td>
           <td>{%set myStatus = value.status | capitalize %}{%trans myStatus%}</td>
+          <td class="collapsing"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"cancel"}'><button class="btn danger xs">{%trans "Cancel"%}</button></a></td>
         </tr>
       {%endfor%}
     </tbody>

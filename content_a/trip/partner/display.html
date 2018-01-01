@@ -41,33 +41,29 @@
     <table class="tbl">
       <thead>
         <tr class="primary">
-          <th>{%trans "Picture"%}</th>
           <th>{%trans "First name"%}</th>
           <th>{%trans "Last name"%}</th>
           <th>{%trans "Father"%}</th>
           <th>{%trans "National code"%}</th>
           <th>{%trans "Birthday"%}</th>
-          <th>{%trans "Job"%}</th>
           <th>{%trans "Nesbat"%}</th>
           <th>{%trans "Gender"%}</th>
           <th>{%trans "Married"%}</th>
-          <th>{%trans "Edit"%}</th>
+          <th>{%trans "Remove"%}</th>
         </tr>
       </thead>
       <tbody>
         {%for key, value in child_list%}
           <tr>
-            <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}"></td>
             <td>{{value.firstname}}</td>
             <td>{{value.lastname}}</td>
             <td>{{value.father}}</td>
             <td>{{value.nationalcode | fitNumber}}</td>
             <td>{{value.birthday | fitNumber}}</td>
-            <td>{{value.job}}</td>
             <td>{{value.nesbat}}</td>
             <td>{{value.gender}}</td>
             <td>{{value.married}}</td>
-            <td class="collapsing"><a href="{{url.baseFull}}/trip/child?edit={{value.id}}" ><button class="btn primary xs">{%trans "Edit"%}</button></a></td>
+            <td class="collapsing"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"remove"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
           </tr>
         {%endfor%}
       </tbody>

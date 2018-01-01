@@ -1,5 +1,5 @@
 <?php
-namespace content_a\trip\child;
+namespace content_a\trip\partner;
 
 
 class view extends \content_a\main\view
@@ -11,10 +11,10 @@ class view extends \content_a\main\view
 		// $this->data->page['desc']    = T_("Glance at your stores and quickly navigate to stores.");
 		// $this->data->page['special'] = true;
 
-		$this->data->page['badge']['link'] = $this->url('baseFull'). '/child';
-		$this->data->page['badge']['text'] = T_('Add new child');
+		$this->data->page['badge']['link'] = $this->url('baseFull'). '/partner';
+		$this->data->page['badge']['text'] = T_('Add new partner');
 
-		$this->data->child_list = \lib\db\users::get(['parent' => \lib\user::id()]);
+		$this->data->child_list = \lib\db\travelusers::get_travel_child(\lib\utility::get('trip'));
 
 	}
 

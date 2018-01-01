@@ -13,9 +13,9 @@ class model extends \content_a\main\model
 			return;
 		}
 
-		if(\lib\utility::post('remove') === \lib\utility::get('edit') && \lib\utility::get('edit') != '')
+		if(\lib\utility::post('type') === 'remove' && \lib\utility::post('key') != '' && ctype_digit(\lib\utility::post('key')))
 		{
-			\lib\app\myuser::remove_child(\lib\utility::get('edit'));
+			\lib\db\travelusers::remove(\lib\utility::post('key'), \lib\utility::get('trip'));
 			if(\lib\debug::$status)
 			{
 				$this->redirector($this->url('baseFull'). '/trip/partner?trip='. \lib\utility::get('trip'));
