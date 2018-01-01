@@ -565,6 +565,15 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   /* add to siftal*/
   .siftal #header h1{max-width: 60%;max-width:calc( 100% - 110px);font-size:1.2em}
   .siftal #header h1 + .hm {display:none!important;}
+
+
+  .c3.pRa5{padding-right:0}
+  .rtl .c3.pRa5{padding-left:0}
+  .c6.pRa5{padding-right:0}
+  .rtl .c6.pRa5{padding-left:0}
+  .c8.pRa5{padding-right:0}
+  .rtl .c8.pRa5{padding-left:0}
+
 }
 
   /* add to siftal*/
