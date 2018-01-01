@@ -4,6 +4,9 @@
 {%block pageContent%}
 <div class="f justify-center">
  <div class="cbox c8 s12">
+{%if cityplace_list%}
+
+
   <form method="post">
 
 {{block ('iCity') }}
@@ -11,6 +14,10 @@
 {{block ('iNext') }}
 
   </form>
+{%else%}
+<p class="alert alert-info txtC mT20">{%trans "All cities are disabled now"%}</p>
+{%endif%}
+
  </div>
 </div>
 {%endblock%}
@@ -24,7 +31,7 @@
 
   <div class="c4">
    <div class="radio1 green">
-    <input type="radio" id="r-{{cityPlace}}" name="city" value="{{cityPlace}}" {%if cityPlace == 'karbala'%} checked{%endif%}>
+    <input type="radio" id="r-{{cityPlace}}" name="city" value="{{cityPlace}}" {%if cityPlace == 'karbala' or (cityplace_list | length == 1) %} checked{%endif%}>
     <label for="r-{{cityPlace}}">{%trans cityPlace%}</label>
    </div>
   </div>
@@ -33,7 +40,7 @@
 
  <div class="placePrev300">
 {% for cityPlace, T_cityPlace in cityplace_list %}
-  <img src="{{url.static}}images/place/{{cityPlace}}.jpg" alt='{%trans cityPlace%}' {%if cityPlace == 'karbala'%}{%else%} data-response-hide{%endif%} data-response='city' data-response-where="{{cityPlace}}" data-response-classTrue='show' data-response-classFalse='hide'>
+  <img src="{{url.static}}images/place/{{cityPlace}}.jpg" alt='{%trans cityPlace%}' {%if cityPlace == 'karbala' or (cityplace_list | length == 1) %}{%else%} data-response-hide{%endif%} data-response='city' data-response-where="{{cityPlace}}" data-response-classTrue='show' data-response-classFalse='hide'>
 {% endfor %}
  </div>
 
