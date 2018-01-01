@@ -20,7 +20,8 @@
 {%block iCity%}
 
  <div class="f">
-{% for cityPlace in cityplace_list %}
+{% for cityPlace, T_cityPlace in cityplace_list %}
+
   <div class="c4">
    <div class="radio1 green">
     <input type="radio" id="r-{{cityPlace}}" name="city" value="{{cityPlace}}" {%if cityPlace == 'karbala'%} checked{%endif%}>
@@ -31,7 +32,7 @@
  </div>
 
  <div class="placePrev300">
-{% for cityPlace in cityplace_list %}
+{% for cityPlace, T_cityPlace in cityplace_list %}
   <img src="{{url.static}}images/place/{{cityPlace}}.jpg" alt='{%trans cityPlace%}' {%if cityPlace == 'karbala'%}{%else%} data-response-hide{%endif%} data-response='city' data-response-where="{{cityPlace}}" data-response-classTrue='show' data-response-classFalse='hide'>
 {% endfor %}
  </div>
