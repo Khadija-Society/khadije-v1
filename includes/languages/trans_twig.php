@@ -238,6 +238,15 @@ class twigTransTerms
 	echo T_("accept");                                                                // Line 33 Seperate
 	echo T_("reject");                                                                // Line 34 Seperate
 	echo T_("spam");                                                                  // Line 35 Seperate
+	echo T_("mashhad");                                                               // Line 37 Seperate
+	echo T_("karbala");                                                               // Line 38 Seperate
+	echo T_("qom");                                                                   // Line 39 Seperate
+	echo T_("najaf");                                                                 // Line 40 Seperate
+	echo T_("Najaf");                                                                 // Line 41 Seperate
+	echo T_("Mecca");                                                                 // Line 42 Seperate
+	echo T_("mecca");                                                                 // Line 43 Seperate
+	echo T_("syria");                                                                 // Line 44 Seperate
+	echo T_("Syria");                                                                 // Line 45 Seperate
 
 	//---------------------public_html\static\siftal\fonts\siftal\icons-reference.html
 

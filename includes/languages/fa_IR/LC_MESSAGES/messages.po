@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-01-01 19:32+0330\n"
-"PO-Revision-Date: 2018-01-01 19:49+0330\n"
+"POT-Creation-Date: 2018-01-01 19:52+0330\n"
+"PO-Revision-Date: 2018-01-01 19:52+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -6291,6 +6291,7 @@ msgstr "ایران"
 
 #: dash/addons/includes/languages/trans_addons.php:1134
 #: khadije/includes/languages/trans_addons.php:1134
+#: khadije/includes/languages/trans_twig.php:243
 msgid "qom"
 msgstr "قم"
 
@@ -9110,6 +9111,38 @@ msgstr "رد کردن"
 #: khadije/includes/languages/trans_twig.php:240
 msgid "spam"
 msgstr "هرزنامه"
+
+#: khadije/includes/languages/trans_twig.php:241
+msgid "mashhad"
+msgstr "مشهد"
+
+#: khadije/includes/languages/trans_twig.php:242
+msgid "karbala"
+msgstr "کربلا"
+
+#: khadije/includes/languages/trans_twig.php:244
+msgid "najaf"
+msgstr "نجف"
+
+#: khadije/includes/languages/trans_twig.php:245
+msgid "Najaf"
+msgstr "نجف"
+
+#: khadije/includes/languages/trans_twig.php:246
+msgid "Mecca"
+msgstr "مکه"
+
+#: khadije/includes/languages/trans_twig.php:247
+msgid "mecca"
+msgstr "مکه"
+
+#: khadije/includes/languages/trans_twig.php:248
+msgid "syria"
+msgstr "سوریه"
+
+#: khadije/includes/languages/trans_twig.php:249
+msgid "Syria"
+msgstr "سوریه"
 
 #: khadije/includes/lib/app/donate.php:15
 msgid "This way is not in your list!"
