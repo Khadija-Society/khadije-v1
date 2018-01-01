@@ -560,8 +560,16 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 
   .quote-person:before{font-size: 10em;right:0;top:-1em}
   .quote-person:after{display:none}
+
+
+  /* add to siftal*/
+  .siftal #header h1{max-width: 60%;max-width:calc( 100% - 110px);font-size:1.2em}
+  .siftal #header h1 + .hm {display:none!important;}
 }
 
+  /* add to siftal*/
+  .siftal header h1{font-size:1.5em;}
+  .siftal header h1 span{font-weight:bold;}
 
 
 
