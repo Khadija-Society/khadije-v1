@@ -20,7 +20,6 @@ class travels
 		return \lib\db\config::public_multi_insert('travels', ...func_get_args());
 	}
 
-
 	/**
 	 * update productprice
 	 *

@@ -300,6 +300,12 @@ class travel
 		}
 
 		$field             = [];
+
+		if($option['in'] && $_string && in_array($option['in'], ['status', 'place', 'type']))
+		{
+			$option['travels.'.$option['in']] = $_string;
+			$_string = null;
+		}
 		unset($option['in']);
 
 		$result = \lib\db\travels::search($_string, $option, $field);
