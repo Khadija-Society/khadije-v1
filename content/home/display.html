@@ -68,7 +68,7 @@
     <h3>{%trans "Do you know?"%}</h3>
     <p>هزاران نفر در سراسر کشور عزیزمان تاکنون به زیارت امام رضا ع و حضرت معصومه س مشرف نشده‌اند و آرزوی زیارت این بزرگان را دارند؟</p>
     <p>طبق بررسی‌های صورت گرفته فقط در استان قم بیش از ۵هزار نفر ساکن این استان تاکنون حتی یکبار هم به حرم حضرت معصومه سلام الله علیها مشرف نشده‌اند!</p>
-    <p><a href="{{url.baseRaw}}a" class="btn light outline" data-direct>{%trans "Donate"%}</a></p>
+    <p><a href="{{url.baseRaw}}a" class="btn light outline hide" data-direct>{%trans "Donate"%}</a></p>
   </div>
 </section>
 {%endblock%}
@@ -77,28 +77,29 @@
 {%block statistic%}
 <section id='statisticTile'>
   <div class="cn">
+  <h2 class="txtC mB25">آمار زائر اولیها در {{site.title}}</h2>
    <div class="f">
     <div class="c">
      <div class="statistic">
-       <div class="label"><span class="sf-card"></span></div>
-       <div class="value">{{7569200 | number_format | fitNumber}}</div>
-       <div class="label">{%trans "Donate"%}</div>
+       <div class="label hide"><span class="sf-card"></span></div>
+       <div class="value">{{16000 | number_format | fitNumber}}</div>
+       <div class="label">{%trans "Qom"%}</div>
      </div>
     </div>
 
     <div class="cauto">
      <div class="statistic">
-       <div class="label"><span class="sf-users"></span></div>
-       <div class="value">{{392 | number_format | fitNumber}}</div>
-       <div class="label">{%trans "Person"%}</div>
+       <div class="label hide"><span class="sf-users"></span></div>
+       <div class="value">{{2000 | number_format | fitNumber}}</div>
+       <div class="label">{%trans "Mashhad"%}</div>
      </div>
     </div>
 
     <div class="c">
      <div class="statistic">
-       <div class="label"><span class="sf-exchange"></span></div>
-       <div class="value">{{12000000 | number_format | fitNumber}}</div>
-       <div class="label">{%trans "Balance"%}</div>
+       <div class="label hide"><span class="sf-exchange"></span></div>
+       <div class="value">{{110 | number_format | fitNumber}}</div>
+       <div class="label">{%trans "Karbala"%}</div>
      </div>
     </div>
 
