@@ -12,7 +12,9 @@ class travel
 		'status',
 	];
 
+
 	public static $cityplace_cat = 'city_place';
+
 
 	public static function city_list($_trans = false)
 	{
@@ -25,6 +27,7 @@ class travel
 
 		return $city;
 	}
+
 
 	public static function active_city()
 	{
@@ -51,7 +54,7 @@ class travel
 	}
 
 
-	public static function city_signup_setting($_city, $_action)
+	public static function save_option_setting($_cat, $_key, $_value, $_action)
 	{
 		if(!$_action || $_action == '')
 		{
@@ -62,16 +65,10 @@ class travel
 			$_action = true;
 		}
 
-		if(!in_array($_city, self::city_list()))
-		{
-			\lib\debug::error(T_("Invalid city"));
-			return false;
-		}
-
 		$get_detail =
 		[
-			'cat'   => 'trip_city',
-			'key'   => 'trip_city_'. $_city,
+			'cat'   => $_cat,
+			'key'   => $_key,
 			'limit' => 1,
 		];
 
@@ -90,15 +87,15 @@ class travel
 		{
 			if($update)
 			{
-				\lib\db\options::update(['status' => 'enable'], $get['id']);
+				\lib\db\options::update(['status' => 'enable', 'value' => $_value], $get['id']);
 			}
 			else
 			{
 				$insert_new =
 				[
-					'cat'    => 'trip_city',
-					'key'    => 'trip_city_'. $_city,
-					'value'  => $_city,
+					'cat'    => $_cat,
+					'key'    => $_key,
+					'value'  => $_value,
 					'status' => 'enable',
 				];
 				\lib\db\options::insert($insert_new);
@@ -108,19 +105,104 @@ class travel
 		{
 			if($update)
 			{
-				\lib\db\options::update(['status' => 'disable'], $get['id']);
+				\lib\db\options::update(['status' => 'disable', 'value' => $_value], $get['id']);
 			}
 			else
 			{
 				$insert_new =
 				[
-					'cat'    => 'trip_city',
-					'key'    => 'trip_city_'. $_city,
-					'value'  => $_city,
+					'cat'    => $_cat,
+					'key'    => $_key,
+					'value'  => $_value,
 					'status' => 'disable',
 				];
 				\lib\db\options::insert($insert_new);
 			}
+		}
+	}
+
+
+	public static function city_signup_setting($_city, $_action)
+	{
+
+		if(!in_array($_city, self::city_list()))
+		{
+			\lib\debug::error(T_("Invalid city"));
+			return false;
+		}
+
+		self::save_option_setting('trip_city', 'trip_city_'. $_city, $_city, $_action);
+
+	}
+
+
+	public static function trip_master_active($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_master_active', 'value' => 'trip_master_active', 'limit' => 1]);
+			if(isset($get['status']) && $get['status'] === 'enable')
+			{
+				return true;
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('trip_settings', 'trip_master_active', 'trip_master_active', $_action);
+		}
+	}
+
+
+	public static function trip_count_partner($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_count_partner', 'limit' => 1]);
+			if(isset($get['value']) && $get['value'] )
+			{
+				return $get['value'];
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('trip_settings', 'trip_count_partner', $_action, $_action);
+		}
+	}
+
+	public static function trip_max_awaiting($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_max_awaiting', 'limit' => 1]);
+			if(isset($get['value']) && $get['value'])
+			{
+				return $get['value'];
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('trip_settings', 'trip_max_awaiting', $_action, $_action);
+		}
+	}
+
+
+	public static function trip_getdate($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_getdate', 'value' => 'trip_getdate', 'limit' => 1]);
+			if(isset($get['status']) && $get['status'] === 'enable')
+			{
+				return true;
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('trip_settings', 'trip_getdate', 'trip_getdate', $_action);
 		}
 	}
 
@@ -134,6 +216,7 @@ class travel
 
 		return false;
 	}
+
 
 	public static function user_travel_list()
 	{
@@ -224,6 +307,7 @@ class travel
 		return $result;
 	}
 
+
 	public static function set_cityplace($_city, $_place)
 	{
 		$cat = self::$cityplace_cat;
@@ -275,7 +359,6 @@ class travel
 			'meta'  => $_place,
 		];
 		\lib\db\options::insert($insert_args);
-
 	}
 
 
@@ -343,17 +426,13 @@ class travel
 			$enddate = date("Y-m-d", strtotime($enddate));
 		}
 
-
 		$args              = [];
 		$args['place']     = $city;
 		$args['startdate'] = $startdate;
 		$args['enddate']   = $enddate;
 
-
 		return $args;
 	}
-
-
 
 
 	/**

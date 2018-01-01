@@ -5,9 +5,18 @@
 <div class="f justify-center">
   <div class="cbox c5">
     <form method="post">
-      {{block ('ikarbala')}}
-      {{block ('imashhad')}}
-      {{block ('iqom')}}
+
+      {{block ('iActiveMaster')}}
+      <div data-response="master_active" {%if not trip_master_active%} data-response-hide {%endif%}>
+        {{block ('ikarbala')}}
+        {{block ('imashhad')}}
+        {{block ('iqom')}}
+
+        {{block ('icountPartner')}}
+        {{block ('imaxAwaiting')}}
+        {{block ('igetDate')}}
+      </div>
+
       {{block ('isave')}}
     </form>
   </div>
@@ -20,6 +29,38 @@
 <button class="btn primary block mT25">{%trans "Save"%}</button>
 {%endblock%}
 
+
+{%block iActiveMaster%}
+<div class="switch1">
+   <input type="checkbox" name="master_active" id="master_active" {%if trip_master_active%} checked {%endif%}>
+   <label for="master_active"></label>
+   <label for="master_active">{%trans "Enable Trip"%}</label>
+  </div>
+{%endblock%}
+
+
+{%block icountPartner%}
+<div class="input">
+  <label for="countpartner">{%trans "Maximum partner count"%}</label>
+  <input type="number" id="countpartner" name="count_partner" placeholder='{%trans "Maximum partner count"%}'  value="{{trip_count_partner}}" >
+</div>
+{%endblock%}
+
+
+{%block imaxAwaiting%}
+<div class="input">
+  <label for="maxawaiting">{%trans "Maximum people can signup as awaiting"%}</label>
+  <input type="number" id="maxawaiting" name="max_awaiting" placeholder='{%trans "Maximum people can signup as awaiting"%}'  value="{{trip_max_awaiting}}">
+</div>
+{%endblock%}
+
+{%block igetDate%}
+<div class="switch1">
+   <input type="checkbox" name="getdate" id="getdate" {%if trip_getdate%} checked {%endif%}>
+   <label for="getdate"></label>
+   <label for="getdate">{%trans "User can set date of trip"%}</label>
+  </div>
+{%endblock%}
 
 
 {%block iqom%}
