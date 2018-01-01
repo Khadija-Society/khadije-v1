@@ -3,6 +3,15 @@ namespace lib\app;
 
 class travel
 {
+	public static $sort_field =
+	[
+		'id',
+		'place',
+		'countpeople',
+		'type',
+		'status',
+	];
+
 	public static $cityplace_cat = 'city_place';
 
 	public static function city_list($_trans = false)

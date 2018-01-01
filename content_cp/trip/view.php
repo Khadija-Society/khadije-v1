@@ -30,6 +30,8 @@ class view extends \content_cp\main2\view
 
 		$this->data->trip_list = \lib\app\travel::list($search_string, $args);
 
+		$this->data->sort_link = self::make_sort_link(\lib\app\travel::$sort_field, $this->url('baseFull'). '/trip');
+
 	}
 }
 ?>
