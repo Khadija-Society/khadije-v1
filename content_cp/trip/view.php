@@ -33,6 +33,11 @@ class view extends \content_cp\main2\view
 
 		$this->data->sort_link = self::make_sort_link(\lib\app\travel::$sort_field, $this->url('baseFull'). '/trip');
 
+		if(isset($this->controller->pagnation))
+		{
+			$this->data->pagnation = $this->controller->pagnation_get();
+		}
+
 	}
 }
 ?>
