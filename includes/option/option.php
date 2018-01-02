@@ -65,6 +65,7 @@ self::$config['enter']['call_template_en'] = 'ermile-en';
  * first signup url
  * main redirect url . signup redirect url
  */
+self::$config['enter']['singup_username']     = false;
 self::$config['enter']['singup_redirect']     = 'u';
 
 
