@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-01-02 12:57+0330\n"
-"PO-Revision-Date: 2018-01-02 12:58+0330\n"
+"POT-Creation-Date: 2018-01-02 13:18+0330\n"
+"PO-Revision-Date: 2018-01-02 13:19+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -2894,7 +2894,7 @@ msgstr " خانه"
 
 #: dash/addons/includes/languages/trans_addons.php:391
 #: khadije/includes/languages/trans_addons.php:391
-#: khadije/includes/languages/trans_twig.php:72
+#: khadije/includes/languages/trans_twig.php:74
 msgid "Control Panel"
 msgstr "کنترل پنل"
 
@@ -8213,7 +8213,15 @@ msgstr "تماس با ما"
 msgid "We do our best to improve khadije's service quality."
 msgstr "تمام تلاش ما در جهت افزایش کیفیت خدمات ارائه شده توسط موسسه خدیجه است."
 
-#: khadije/content/donate/view.php:14 khadije/content_a/donate/view.php:19
+#: khadije/content/donate/view.php:8 khadije/includes/languages/trans_twig.php:72
+msgid "Donate"
+msgstr "اهدای کمک نقدی"
+
+#: khadije/content/donate/view.php:9
+msgid "Pay your donate online with below form"
+msgstr "پرداخت آنلاین هدایای نقدی را توسط فرم زیر انجام دهید"
+
+#: khadije/content/donate/view.php:18 khadije/content_a/donate/view.php:19
 msgid "Thanks for your payment"
 msgstr "از پرداخت شما سپاسگذاریم"
 
@@ -8672,24 +8680,20 @@ msgid "Contact"
 msgstr "تماس"
 
 #: khadije/includes/languages/trans_twig.php:73
+msgid "Register for family trip"
+msgstr "ثبت نام تشرف خانوادگی"
+
+#: khadije/includes/languages/trans_twig.php:75
 msgid "Exit Session"
 msgstr "خروج از نشست"
 
-#: khadije/includes/languages/trans_twig.php:74
+#: khadije/includes/languages/trans_twig.php:76
 msgid "Another Session"
 msgstr "نشست دیگر"
 
-#: khadije/includes/languages/trans_twig.php:77
-msgid "Donate"
-msgstr "اهدای کمک نقدی"
-
-#: khadije/includes/languages/trans_twig.php:78
+#: khadije/includes/languages/trans_twig.php:79
 msgid "Donate product"
 msgstr "نذر کالا"
-
-#: khadije/includes/languages/trans_twig.php:79
-msgid "Register for family trip"
-msgstr "ثبت نام تشرف خانوادگی"
 
 #: khadije/includes/languages/trans_twig.php:82
 msgid "Soon"

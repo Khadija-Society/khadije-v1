@@ -69,14 +69,14 @@ class twigTransTerms
 	echo T_("Honors");                                                                // Line 9
 	echo T_("FAQ");                                                                   // Line 10
 	echo T_("Contact");                                                               // Line 11
-	echo T_("Control Panel");                                                         // Line 19
-	echo T_("Exit Session");                                                          // Line 20
-	echo T_("Another Session");                                                       // Line 21
+	echo T_("Donate");                                                                // Line 24
+	echo T_("Register for family trip");                                              // Line 14
+	echo T_("Control Panel");                                                         // Line 21
+	echo T_("Exit Session");                                                          // Line 22
+	echo T_("Another Session");                                                       // Line 23
 
 	//----------------------------------------------------content\template\header.html
-	echo T_("Donate");                                                                // Line 24
 	echo T_("Donate product");                                                        // Line 7
-	echo T_("Register for family trip");                                              // Line 14
 
 	//----------------------------------------------content\template\static\about.html
 	echo T_("Soon");                                                                  // Line 6
