@@ -9,7 +9,7 @@ class view extends \lib\view
 
 
 		$this->data->site['title']           = T_("Khadije Charity");
-		$this->data->site['desc']            = T_("Executor of pilgrimage to the Ahl al-Bayt shrine");
+		$this->data->site['desc']            = T_("Executor of first pilgrimage to the Ahl al-Bayt");
 		$this->data->site['slogan']          = $this->data->site['desc'];
 
 		$this->data->page['desc']            = $this->data->site['desc']. ' | '. $this->data->site['slogan'];

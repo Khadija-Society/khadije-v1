@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-01-02 13:18+0330\n"
-"PO-Revision-Date: 2018-01-02 13:19+0330\n"
+"POT-Creation-Date: 2018-01-02 18:11+0330\n"
+"PO-Revision-Date: 2018-01-02 18:16+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -9299,8 +9299,8 @@ msgid "Khadije Charity"
 msgstr "موسسه حضرت خدیجه سلام الله علیها"
 
 #: khadije/includes/mvc/view.php:12
-msgid "Executor of pilgrimage to the Ahl al-Bayt shrine"
-msgstr "مجری طرح زیارت اولی های حرم اهل بیت علیهم السلام"
+msgid "Executor of first pilgrimage to the Ahl al-Bayt"
+msgstr "مجری طرح زیارت اولی‌های اهل بیت علیهم السلام"
 
 #: khadije/includes/mvc/view.php:33
 msgid "We help :count people to work beter!"
@@ -9309,6 +9309,9 @@ msgstr "ما به :count نفر کمک کرده‌ایم تا بهتر کار ک
 #: khadije/includes/permission/permission.php:19
 msgid "Can view the admin page"
 msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
+
+#~ msgid "Executor of pilgrimage to the Ahl al-Bayt shrine"
+#~ msgstr "مجری طرح زیارت اولی های حرم اهل بیت علیهم السلام"
 
 #~ msgid "Integrated Sales and Online Accounting"
 #~ msgstr "فروش یکپارچه و حسابداری آنلاین"
