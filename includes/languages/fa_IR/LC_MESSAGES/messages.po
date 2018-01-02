@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-01-01 23:13+0330\n"
-"PO-Revision-Date: 2018-01-01 23:15+0330\n"
+"POT-Creation-Date: 2018-01-02 12:57+0330\n"
+"PO-Revision-Date: 2018-01-02 12:58+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -8217,118 +8217,35 @@ msgstr "تمام تلاش ما در جهت افزایش کیفیت خدمات ا
 msgid "Thanks for your payment"
 msgstr "از پرداخت شما سپاسگذاریم"
 
-#: khadije/content/home/view.php:40 khadije/content/home/view.php:115
-msgid "Integrated Sales and Online Accounting"
-msgstr "فروش یکپارچه و حسابداری آنلاین"
-
-#: khadije/content/home/view.php:46
-msgid "Terms of Service Agreement"
-msgstr "توافق‌نامه استفاده از سرویس"
-
-#: khadije/content/home/view.php:47
-msgid ""
-"Khadije acts upon international rules, depends on the countries receiving its "
-"services and renders its activities within this framework."
-msgstr ""
-"کانون فرهنگی حضرت خدیجه مطابق قوانین بین‌الملل و وابسته به کشورهای دریافت‌کننده "
-"خدمات بوده و در این چارچوب فعالیت می‌نماید."
-
-#: khadije/content/home/view.php:52
-msgid "Privacy Policy"
-msgstr "حریم خصوصی"
-
-#: khadije/content/home/view.php:53
-msgid ""
-"We wish to assure you that our main concern is to secure your privacy and protect "
-"your information against impermissible access."
-msgstr ""
-"ما این اطمینان را به شما می‌دهیم که دغدغه‌ی ما، حفظ حریم‌خصوصی و محافظت از اطلاعات "
-"شما در برابر دسترسی‌های غیرمجاز هست."
-
-#: khadije/content/home/view.php:58
-msgid "Khadije Social Responsibility"
-msgstr "مسئولیت اجتماعی کانون فرهنگی حضرت خدیجه"
-
-#: khadije/content/home/view.php:59
-msgid ""
-"Social responsibility refers to our role in maintaining, caring about and helping "
-"our society, while having set as its goal a responsibility-centered enterprise "
-"along with wealth production."
-msgstr ""
-"مسئولیت اجتماعی به نقش ما در جهت حفظ، مراقبت و کمک به جامعه‌ای که در آن هستیم اشاره "
-"می‌کند و هدف آن کسب‌وکار مسئولانه‌ی همراه با تولید ثروت است."
-
-#: khadije/content/home/view.php:64
-msgid "Enterprise"
-msgstr "مشتریان سازمان"
-
-#: khadije/content/home/view.php:65
-msgid "Have a headaches? We have soulutions. Be patient..."
-msgstr "سردرد دارید؟ ما راه‌حل‌هایی برای شما داریم. صبور باشید..."
-
-#: khadije/content/home/view.php:70
-msgid "Change log of Khadije"
-msgstr "پیشرفت پروژه کانون فرهنگی حضرت خدیجه"
-
-#: khadije/content/home/view.php:71
-msgid "We were born to do Best!"
-msgstr "ما برای انجام بهترین‌ها متولد شدیم!"
-
-#: khadije/content/home/view.php:71
-msgid "We are Developers, please wait!"
-msgstr "ما توسعه دهنده هستیم، صبور باشید!"
-
-#: khadije/content/home/view.php:79
+#: khadije/content/home/view.php:45
 msgid "Frequently Asked Questions"
 msgstr "سوالات متداول"
 
-#: khadije/content/home/view.php:80
+#: khadije/content/home/view.php:46
 msgid "This FAQ provides answers to basic questions about Khadije."
 msgstr ""
 "احتمالا سوالات اولیه و ساده‌ی شما از کانون فرهنگی حضرت خدیجه در این صفحه سوالات "
 "متداول یافت خواهد."
 
-#: khadije/content/home/view.php:84
-msgid "Help Center"
-msgstr "مرکز راهنمایی"
+#: khadije/content/home/view.php:51
+msgid "Our missions"
+msgstr "ماموریت ما"
 
-#: khadije/content/home/view.php:85
-msgid "Need HELP? Be patient..."
-msgstr "کمک نیاز دارید؟ صبور باشید..."
+#: khadije/content/home/view.php:56 khadije/includes/languages/trans_twig.php:68
+msgid "Vision"
+msgstr "چشم‌انداز"
 
-#: khadije/content/home/view.php:92
-msgid "Khadije benefits"
-msgstr "مزایای کانون فرهنگی حضرت خدیجه"
+#: khadije/content/home/view.php:61
+msgid "Our honors"
+msgstr "افتخارات ما"
 
-#: khadije/content/home/view.php:93
-msgid "What can you do with Khadije?"
-msgstr "کانون فرهنگی حضرت خدیجه چه کارهایی میتواند انجام دهد؟"
+#: khadije/content/home/view.php:66
+msgid "Our certificates"
+msgstr "گواهینامه‌های ما"
 
-#: khadije/content/home/view.php:98
-msgid "About our platform"
-msgstr "درباره پلتفرم ما"
-
-#: khadije/content/home/view.php:103
-msgid "Khadije Logo"
-msgstr "لوگوی کانون فرهنگی حضرت خدیجه"
-
-#: khadije/content/home/view.php:104
-msgid "Need know more about Khadije Logo? We are not choose our final logo yet!"
-msgstr ""
-"نیاز به دانستن بیشتر در مورد لوگوی کانون فرهنگی حضرت خدیجه دارید؟ ما هنوز لوگوی "
-"نهایی خودمان را انتخاب نکرده‌ایم!"
-
-#: khadije/content/home/view.php:108
-msgid "Plans and Pricing of Khadije"
-msgstr "پلن‌ها و هزینه‌های کانون فرهنگی حضرت خدیجه"
-
-#: khadije/content/home/view.php:109
-msgid "Always know what you'll pay per month."
-msgstr "همیشه از پرداختی ماهیانه خود آگاه باشید."
-
-#: khadije/content/home/view.php:109
-msgid "Simple pricing"
-msgstr "هزینه‌های شفاف و ساده"
+#: khadije/content/home/view.php:71
+msgid "About our charity"
+msgstr "درباره موسسه ما"
 
 #: khadije/content_a/donate/product/model.php:12
 #: khadije/includes/lib/app/donate.php:235
@@ -8741,10 +8658,6 @@ msgstr "صفحه نخست"
 #: khadije/includes/languages/trans_twig.php:67
 msgid "Misson & Target"
 msgstr "ماموریت و اهداف"
-
-#: khadije/includes/languages/trans_twig.php:68
-msgid "Vision"
-msgstr "چشم‌انداز"
 
 #: khadije/includes/languages/trans_twig.php:69
 msgid "Honors"
@@ -9392,6 +9305,87 @@ msgstr "ما به :count نفر کمک کرده‌ایم تا بهتر کار ک
 #: khadije/includes/permission/permission.php:19
 msgid "Can view the admin page"
 msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
+
+#~ msgid "Integrated Sales and Online Accounting"
+#~ msgstr "فروش یکپارچه و حسابداری آنلاین"
+
+#~ msgid "Terms of Service Agreement"
+#~ msgstr "توافق‌نامه استفاده از سرویس"
+
+#~ msgid ""
+#~ "Khadije acts upon international rules, depends on the countries receiving its "
+#~ "services and renders its activities within this framework."
+#~ msgstr ""
+#~ "کانون فرهنگی حضرت خدیجه مطابق قوانین بین‌الملل و وابسته به کشورهای دریافت‌کننده "
+#~ "خدمات بوده و در این چارچوب فعالیت می‌نماید."
+
+#~ msgid "Privacy Policy"
+#~ msgstr "حریم خصوصی"
+
+#~ msgid ""
+#~ "We wish to assure you that our main concern is to secure your privacy and "
+#~ "protect your information against impermissible access."
+#~ msgstr ""
+#~ "ما این اطمینان را به شما می‌دهیم که دغدغه‌ی ما، حفظ حریم‌خصوصی و محافظت از اطلاعات "
+#~ "شما در برابر دسترسی‌های غیرمجاز هست."
+
+#~ msgid "Khadije Social Responsibility"
+#~ msgstr "مسئولیت اجتماعی کانون فرهنگی حضرت خدیجه"
+
+#~ msgid ""
+#~ "Social responsibility refers to our role in maintaining, caring about and "
+#~ "helping our society, while having set as its goal a responsibility-centered "
+#~ "enterprise along with wealth production."
+#~ msgstr ""
+#~ "مسئولیت اجتماعی به نقش ما در جهت حفظ، مراقبت و کمک به جامعه‌ای که در آن هستیم "
+#~ "اشاره می‌کند و هدف آن کسب‌وکار مسئولانه‌ی همراه با تولید ثروت است."
+
+#~ msgid "Enterprise"
+#~ msgstr "مشتریان سازمان"
+
+#~ msgid "Have a headaches? We have soulutions. Be patient..."
+#~ msgstr "سردرد دارید؟ ما راه‌حل‌هایی برای شما داریم. صبور باشید..."
+
+#~ msgid "Change log of Khadije"
+#~ msgstr "پیشرفت پروژه کانون فرهنگی حضرت خدیجه"
+
+#~ msgid "We were born to do Best!"
+#~ msgstr "ما برای انجام بهترین‌ها متولد شدیم!"
+
+#~ msgid "We are Developers, please wait!"
+#~ msgstr "ما توسعه دهنده هستیم، صبور باشید!"
+
+#~ msgid "Help Center"
+#~ msgstr "مرکز راهنمایی"
+
+#~ msgid "Need HELP? Be patient..."
+#~ msgstr "کمک نیاز دارید؟ صبور باشید..."
+
+#~ msgid "Khadije benefits"
+#~ msgstr "مزایای کانون فرهنگی حضرت خدیجه"
+
+#~ msgid "What can you do with Khadije?"
+#~ msgstr "کانون فرهنگی حضرت خدیجه چه کارهایی میتواند انجام دهد؟"
+
+#~ msgid "About our platform"
+#~ msgstr "درباره پلتفرم ما"
+
+#~ msgid "Khadije Logo"
+#~ msgstr "لوگوی کانون فرهنگی حضرت خدیجه"
+
+#~ msgid "Need know more about Khadije Logo? We are not choose our final logo yet!"
+#~ msgstr ""
+#~ "نیاز به دانستن بیشتر در مورد لوگوی کانون فرهنگی حضرت خدیجه دارید؟ ما هنوز لوگوی "
+#~ "نهایی خودمان را انتخاب نکرده‌ایم!"
+
+#~ msgid "Plans and Pricing of Khadije"
+#~ msgstr "پلن‌ها و هزینه‌های کانون فرهنگی حضرت خدیجه"
+
+#~ msgid "Always know what you'll pay per month."
+#~ msgstr "همیشه از پرداختی ماهیانه خود آگاه باشید."
+
+#~ msgid "Simple pricing"
+#~ msgstr "هزینه‌های شفاف و ساده"
 
 #~ msgid "Ermile, Floor2, Yas Building"
 #~ msgstr "ساختمان یاس، طبقه دوم، ارمایل"

@@ -91,7 +91,7 @@ class twigTransTerms
 
 	//--------------------------------------------content\template\static\mission.html
 
-	//----------------------------------------------content\template\static\vison.html
+	//---------------------------------------------content\template\static\vision.html
 
 	//-----------------------------------------------------content_a\home\display.html
 	echo T_("Manage Child");                                                          // Line 54
