@@ -58,8 +58,8 @@ self::$config['favicon']['version']           = 4;
  * call kavenegar template
  */
 self::$config['enter']['call']                = true;
-self::$config['enter']['call_template_fa'] = 'ermile-fa';
-self::$config['enter']['call_template_en'] = 'ermile-en';
+self::$config['enter']['call_template_fa'] = 'khadije-fa';
+self::$config['enter']['call_template_en'] = 'khadije-en';
 
 /**
  * first signup url
