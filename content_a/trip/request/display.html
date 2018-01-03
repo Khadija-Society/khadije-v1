@@ -3,7 +3,7 @@
 
 {%block pageContent%}
 <div class="f justify-center">
- <div class="cbox c8 s12">
+ <div class="cbox c10 s12">
 {%if cityplace_list%}
 
 
@@ -26,23 +26,19 @@
 
 {%block iCity%}
 
- <div class="f">
+ <div class="f justify-center txtC">
 {% for cityPlace, T_cityPlace in cityplace_list %}
-
-  <div class="c4">
-   <div class="radio1 green">
-    <input type="radio" id="r-{{cityPlace}}" name="city" value="{{cityPlace}}" {%if cityPlace == 'karbala' or (cityplace_list | length == 1) %} checked{%endif%}>
-    <label for="r-{{cityPlace}}">{%trans cityPlace%}</label>
-   </div>
+  <div class="c4 pA10">
+    <a class="vcard shadow" href="{{url.full}}" data-ajaxify data-method="post" data-data='{"city": "{{cityPlace}}"}'>
+     <img src="{{url.static}}images/place/{{cityPlace}}-square.jpg" alt='{%trans cityPlace%}'>
+     <div class="content">
+      <div class="header">{%trans cityPlace%}</div>
+     </div>
+    </a>
   </div>
 {% endfor %}
  </div>
 
- <div class="placePrev300">
-{% for cityPlace, T_cityPlace in cityplace_list %}
-  <img src="{{url.static}}images/place/{{cityPlace}}.jpg" alt='{%trans cityPlace%}' {%if cityPlace == 'karbala' or (cityplace_list | length == 1) %}{%else%} data-response-hide{%endif%} data-response='city' data-response-where="{{cityPlace}}" data-response-classTrue='show' data-response-classFalse='hide'>
-{% endfor %}
- </div>
 
 {%endblock%}
 
