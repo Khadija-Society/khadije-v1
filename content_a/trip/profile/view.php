@@ -29,7 +29,7 @@ class view extends \content_a\main\view
 
 		$provice_list = \lib\utility\location\provinces::list('localname');
 		$provice_list = array_unique($provice_list);
-		$this->data->provice_list = implode(',', $provice_list);
+		$this->data->provice_list = $provice_list;
 	}
 }
 ?>

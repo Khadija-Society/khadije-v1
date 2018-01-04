@@ -245,6 +245,16 @@ class myuser
 			return false;
 		}
 
+
+		$provice_list = \lib\utility\location\provinces::list('localname');
+		$provice_list = array_unique($provice_list);
+
+		if(!in_array($post['province'], $provice_list))
+		{
+			\lib\debug::error(T_("Invalid province name"), 'province');
+			return false;
+		}
+
 		$args                    = [];
 		$args['gender']          = $gender;
 		$args['email']           = $email;

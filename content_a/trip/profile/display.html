@@ -136,16 +136,21 @@
 {%block icountry%}
 <label for='country'>{%trans "Country"%}</label>
 <div class="input">
- <input type='text' class="awesomplete" name='country' id='country' data-minchars="1" data-autofirst data-list="{{country_list}}" value="{{userdetail.country}}" />
+ <input type='text' class="awesomplete" name='country' id='country' data-minchars="1" data-autofirst data-list="{{country_list}}" value="{{userdetail.country}}" autocomplete="off" />
 </div>
 {%endblock%}
 
 
 {%block iprovince%}
-<label for='province'>{%trans "Province"%}</label>
-<div class="input">
- <input type='text' class="awesomplete" name='province' id='province' data-minchars="1" data-autofirst data-list="{{provice_list}}" value="{{userdetail.province}}" />
-</div>
+<label for='province'>{%trans "Province"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<select name="province" class="select">
+  <option value="">{%trans "Please select one item"%}</option>
+  {%for key, value in provice_list%}
+    <option value="{{value}}" {%if userdetail.province == value%} selected {%endif%}>{{value}}</option>
+  {%endfor%}
+
+</select>
+
 {%endblock%}
 
 
