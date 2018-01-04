@@ -79,12 +79,16 @@ class myuser
 		}
 
 		$nationalcode = \lib\app::request('nationalcode');
-		$nationalcode = \lib\utility\convert::to_en_number($nationalcode);
-		if(!$nationalcode)
+		$pasportcode = \lib\app::request('pasportcode');
+
+		if(!$nationalcode && !$pasportcode)
 		{
-			\lib\debug::error(T_("The nationalcode is requeired"), 'nationalcode');
+			\lib\debug::error(T_("National code or pasportcode code is required"), ['nationalcode', 'pasportcode']);
 			return false;
 		}
+
+
+		$nationalcode = \lib\utility\convert::to_en_number($nationalcode);
 
 		if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
 		{
@@ -112,7 +116,6 @@ class myuser
 			return false;
 		}
 
-		$pasportcode = \lib\app::request('pasportcode');
 		if($pasportcode && mb_strlen($pasportcode) > 50)
 		{
 			\lib\debug::error(T_("Invalid arguments pasportcode"), 'pasportcode');
@@ -249,7 +252,7 @@ class myuser
 		$provice_list = \lib\utility\location\provinces::list('localname');
 		$provice_list = array_unique($provice_list);
 
-		if(!in_array($post['province'], $provice_list))
+		if(!in_array($province, $provice_list))
 		{
 			\lib\debug::error(T_("Invalid province name"), 'province');
 			return false;
