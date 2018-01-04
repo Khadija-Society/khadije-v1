@@ -60,7 +60,7 @@
     <tbody>
       {%for key, value in trip_list%}
       <tr>
-        <td>{{value.id}}</td>
+        <td><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
         <td>{{value.firstname}}</td>
         <td>{{value.lastname}}</td>
         <td>{{value.nationalcode | fitNumber}}</td>

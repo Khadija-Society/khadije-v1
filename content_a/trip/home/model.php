@@ -19,11 +19,21 @@ class model extends \content_a\main\model
 				return false;
 			}
 
-			\lib\db\travels::update(['status' => 'cancel'], $key);
+			if(isset($check_valid_key['status']) && $check_valid_key['status'] === 'awaiting')
+			{
 
-			\lib\debug::true(T_("Your trip was canceled"));
+				\lib\db\travels::update(['status' => 'cancel'], $key);
 
-			$this->redirector($this->url('full'));
+				\lib\debug::true(T_("Your trip was canceled"));
+
+				$this->redirector($this->url('full'));
+
+			}
+			else
+			{
+				\lib\debug::error(T_("Can not change this trip status"));
+				return false;
+			}
 		}
 	}
 }
