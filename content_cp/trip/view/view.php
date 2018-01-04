@@ -16,6 +16,11 @@ class view extends \content_cp\main2\view
 		$this->data->bodyclass       = 'unselectable siftal';
 
 		$this->data->travel_detail = \lib\db\travels::search(null, ['travels.id' => \lib\utility::get('id'), 'pagenation' => false]);
+		if(isset($this->data->travel_detail[0]))
+		{
+			$this->data->travel_detail = $this->data->travel_detail[0];
+		}
+
 
 		$this->data->travel_partner = \lib\db\travelusers::get_travel_child(\lib\utility::get('id'));
 

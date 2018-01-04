@@ -69,7 +69,20 @@ class travels
 
 				)
 			",
-			'public_show_field' => " users.firstname AS `firstname`, users.lastname AS `lastname`, users.nationalcode AS `nationalcode`, travels.* ",
+			'public_show_field' =>
+			"
+				 users.firstname AS `firstname`,
+				 users.mobile AS `mobile`,
+				 users.birthday AS `birthday`,
+				 users.province AS `province`,
+				 users.married AS `married`,
+				 users.city AS `city`,
+				 users.gender AS `gender`,
+				 users.father AS `father`,
+				 users.lastname AS `lastname`,
+				 users.nationalcode AS `nationalcode`,
+				 travels.*
+			",
 			'master_join'       => " INNER JOIN users ON users.id = travels.user_id",
 		];
 

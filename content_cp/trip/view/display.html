@@ -1,6 +1,40 @@
 {%extends display.khadijeCpMain%}
 
 {%block pageContent%}
+<div class="cbox">
+
+  <div class="f">
+    <div class="c2 msg mLa5">firstname:    <small> {{travel_detail.firstname}} </small> </div>
+    <div class="c2 msg mLa5">mobile:       <small> {{travel_detail.mobile}} </small> </div>
+    <div class="c2 msg mLa5">birthday:     <small> {{travel_detail.birthday}} </small> </div>
+    <div class="c2 msg mLa5">province:     <small> {{travel_detail.province}} </small> </div>
+  </div>
+
+  <div class="f">
+    <div class="c2 msg mLa5">married:      <small> {{travel_detail.married}} </small> </div>
+    <div class="c2 msg mLa5">city:         <small> {{travel_detail.city}} </small> </div>
+    <div class="c2 msg mLa5">gender:       <small> {{travel_detail.gender}} </small> </div>
+    <div class="c2 msg mLa5">father:       <small> {{travel_detail.father}} </small> </div>
+  </div>
+
+  <div class="f">
+    <div class="c2 msg mLa5">lastname:     <small> {{travel_detail.lastname}} </small> </div>
+    <div class="c2 msg mLa5">nationalcode: <small> {{travel_detail.nationalcode}} </small> </div>
+    <div class="c2 msg mLa5">place:        <small> {{travel_detail.place}} </small> </div>
+    <div class="c2 msg mLa5">startdate:    <small> {{travel_detail.startdate}} </small> </div>
+
+  </div>
+
+  <div class="f">
+
+    <div class="c2 msg mLa5">enddate:      <small> {{travel_detail.enddate}} </small> </div>
+    <div class="c2 msg mLa5">type:         <small> {{travel_detail.type}} </small> </div>
+    <div class="c2 msg mLa5">status:       <small> {{travel_detail.status}} </small> </div>
+    <div class="c2 msg mLa5">datecreated:  <small> {{travel_detail.datecreated}} </small> </div>
+  </div>
+
+</div>
+
 
 <div class="f">
  <div class="c3 s12 pRa10">
@@ -40,9 +74,9 @@
   <div class="cbox">
     <h3>{%trans "List of your child"%}</h3>
 
-{%if child_list%}
+{%if travel_partner%}
     <div class="f">
-{%for key, value in child_list%}
+{%for key, value in travel_partner%}
      <div class="c4 s12">
       <div class="vcard mA5">
         <div class="content f">

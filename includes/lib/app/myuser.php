@@ -240,7 +240,6 @@ class myuser
 			return false;
 		}
 
-
 		$nesbat = \lib\app::request('nesbat');
 		if($nesbat && mb_strlen($nesbat) > 80)
 		{
@@ -248,11 +247,10 @@ class myuser
 			return false;
 		}
 
-
 		$provice_list = \lib\utility\location\provinces::list('localname');
 		$provice_list = array_unique($provice_list);
 
-		if(!in_array($province, $provice_list))
+		if($province && !in_array($province, $provice_list))
 		{
 			\lib\debug::error(T_("Invalid province name"), 'province');
 			return false;
