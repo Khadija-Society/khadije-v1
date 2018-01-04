@@ -39,6 +39,13 @@
     <div class="c2 msg mLa5">{%trans "Date created" %}:  <small> {{travel_detail.datecreated}} </small> </div>
   </div>
 
+  <form method="post">
+    <input type="hidden" name="edit_travel" value="edit_travel">
+    {{block ('istartdate') }}
+    {{block ('ienddate') }}
+    {{block ('iDescription') }}
+  </form>
+
 </div>
 
 
@@ -303,6 +310,24 @@
 <textarea name="desc" rows="3" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{userdetail.desc}}</textarea>
 {%endblock%}
 
+
+
+
+{%block istartdate%}
+<label for='startdate'>{%trans "Start date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="startdate" id="startdate" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travel_detail.startdate}}" maxlength='20' data-format="YYYY/MM/DD" data-initialValue='false' data-view="year">
+</div>
+{%endblock%}
+
+
+
+{%block ienddate%}
+<label for='enddate'>{%trans "End date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="enddate" id="enddate" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travel_detail.enddate}}" maxlength='20' data-format="YYYY/MM/DD" data-initialValue='false' data-view="year">
+</div>
+{%endblock%}
 
 
 
