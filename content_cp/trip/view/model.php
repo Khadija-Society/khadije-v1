@@ -4,75 +4,58 @@ namespace content_cp\trip\view;
 
 class model extends \content_cp\main2\model
 {
-	/**
-	 * Uploads a thumb.
-	 *
-	 * @return     boolean  ( description_of_the_return_value )
-	 */
-	public static function upload_thumb()
+	public static function getPost()
 	{
-		if(\lib\utility::files('thumb'))
-		{
-			$uploaded_file = \lib\app\file::upload(['debug' => false, 'upload_name' => 'thumb']);
-
-			if(isset($uploaded_file['url']))
-			{
-				return $uploaded_file['url'];
-			}
-			// if in upload have error return
-			if(!\lib\debug::$status)
-			{
-				return false;
-			}
-		}
-		return null;
+		$post                    = [];
+		$post['firstname']       = \lib\utility::post('name');
+		$post['lastname']        = \lib\utility::post('lastName');
+		$post['father']          = \lib\utility::post('father');
+		$post['nationalcode']    = \lib\utility::post('nationalcode');
+		$post['birthday']        = \lib\utility::post('birthday');
+		$post['gender']          = \lib\utility::post('gender') ? 'female' : 'male';
+		$post['married']         = \lib\utility::post('Married') ? 'married' : 'single';
+		$post['nesbat']          = \lib\utility::post('nesbat');
+		return $post;
 	}
 
-
-	public function post_product()
+	public function post_trip()
 	{
-
-		$post           = [];
-		$post['title']  = \lib\utility::post('title');
-		$post['count']  = \lib\utility::post('count');
-		$post['amount'] = \lib\utility::post('amount');
-		$post['desc']   = \lib\utility::post('desc');
-		$post['status'] = \lib\utility::post('status') ? 'enable' : 'disable' ;
-		$post['type']   = 'product';
-
-		$file = self::upload_thumb();
-		if($file === false)
+		if(\lib\utility::post('type') === 'remove' && \lib\utility::post('key') != '' && ctype_digit(\lib\utility::post('key')))
 		{
-			return false;
-		}
-
-		if($file)
-		{
-			$post['fileurl'] = $file;
-		}
-
-		if(\lib\utility::get('edit'))
-		{
-			$id = \lib\utility::get('edit');
-			\lib\app\need::edit($id, $post);
-		}
-		else
-		{
-			\lib\app\need::add($post);
-		}
-
-		if(\lib\debug::$status)
-		{
-			if(\lib\utility::get('edit'))
+			\lib\db\travelusers::remove(\lib\utility::post('key'), \lib\utility::get('id'));
+			if(\lib\debug::$status)
 			{
-				\lib\debug::true(T_("Way successfully edited"));
+				$this->redirector($this->url('full'));
 			}
-			else
-			{
-				\lib\debug::true(T_("Way successfully added"));
-			}
-			$this->redirector($this->url('full'));
 		}
+		elseif(\lib\utility::post('save_child') === 'save_child')
+		{
+			$post = self::getPost();
+
+			$post['travel_id']       = \lib\utility::get('id');
+
+			\lib\app\myuser::add_child($post);
+
+			if(\lib\debug::$status)
+			{
+				\lib\debug::true(T_("Your Child was saved"));
+				$this->redirector($this->url('baseFull'). '/trip/view?id='. \lib\utility::get('id'));
+			}
+
+		}
+		elseif(\lib\utility::post('edit_child') === 'edit_child' && \lib\utility::get('partner') && is_numeric(\lib\utility::get('partner')))
+		{
+			$post              = self::getPost();
+			$post['travel_id'] = \lib\utility::get('id');
+			\lib\app\myuser::edit_child($post, \lib\utility::get('partner'));
+
+			if(\lib\debug::$status)
+			{
+				\lib\debug::true(T_("The partner was updated"));
+				$this->redirector($this->url('full'));
+			}
+		}
+
 	}
 }
 ?>

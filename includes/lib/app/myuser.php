@@ -447,7 +447,7 @@ class myuser
 			return false;
 		}
 
-		$check = \lib\db\users::get(['id' => $_id, 'parent' => \lib\user::id(), 'limit' => 1]);
+		$check = \lib\db\users::get(['id' => $_id, 'limit' => 1]);
 
 		if(!isset($check['id']))
 		{
@@ -470,10 +470,11 @@ class myuser
 				\lib\debug::error(T_("This nationalcode is for your!"), 'nationalcode');
 				return false;
 			}
-			$check_not_duplicate_in_child = \lib\db\users::get(['parent' => \lib\user::id(), 'nationalcode' => $args['nationalcode'], 'limit' => 1]);
-			if(isset($check_not_duplicate_in_child['id']))
+			$check_not_duplicate_in_child = \lib\db\travelusers::duplicate_nationalcode_in_child($args['nationalcode'], \lib\app::request('travel_id'));
+
+			if(isset($check_not_duplicate_in_child[0]['id']))
 			{
-				if(intval($check_not_duplicate_in_child['id']) === intval($_id))
+				if(intval($check_not_duplicate_in_child[0]['id']) === intval($_id))
 				{
 					// no problem to continue;
 				}
