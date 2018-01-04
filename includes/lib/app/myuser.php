@@ -39,8 +39,13 @@ class myuser
 
 		$birthday = \lib\app::request('birthday');
 		$birthday = \lib\utility\convert::to_en_number($birthday);
+		if(!$birthday)
+		{
+			\lib\debug::error(T_("Birthday is required"), 'birthday');
+			return false;
+		}
 
-		if($birthday && strtotime($birthday) === false)
+		if(strtotime($birthday) === false)
 		{
 			\lib\debug::error(T_("Invalid arguments birthday"), 'birthday');
 			return false;
