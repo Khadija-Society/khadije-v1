@@ -71,19 +71,26 @@ class travels
 			",
 			'public_show_field' =>
 			"
-				 users.firstname AS `firstname`,
-				 users.mobile AS `mobile`,
-				 users.birthday AS `birthday`,
-				 users.province AS `province`,
-				 users.married AS `married`,
-				 users.city AS `city`,
-				 users.gender AS `gender`,
-				 users.father AS `father`,
-				 users.lastname AS `lastname`,
-				 users.nationalcode AS `nationalcode`,
+				nationalcodes.qom    AS `qom`,
+				nationalcodes.mashhad AS `mashhad`,
+				nationalcodes.karbala AS `karbala`,
+				users.firstname      AS `firstname`,
+				users.mobile         AS `mobile`,
+				users.birthday       AS `birthday`,
+				users.province       AS `province`,
+				users.married        AS `married`,
+				users.city           AS `city`,
+				users.gender         AS `gender`,
+				users.father         AS `father`,
+				users.lastname       AS `lastname`,
+				users.nationalcode   AS `nationalcode`,
 				 travels.*
 			",
-			'master_join'       => " INNER JOIN users ON users.id = travels.user_id",
+			'master_join'       =>
+			"
+				INNER JOIN users ON users.id = travels.user_id
+				LEFT JOIN nationalcodes ON nationalcodes.nationalcode = users.nationalcode
+			",
 		];
 
 		$_options = array_merge($default_option, $_options);

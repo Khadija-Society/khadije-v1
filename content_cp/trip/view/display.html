@@ -2,7 +2,15 @@
 
 {%block pageContent%}
 <div class="cbox">
+ {%if not travel_detail[travel_detail.place] %}
+ <span class="sf-check fc-green"></span>
+{%else%}
+<span class="badge warn ">
+  <i class="sf-cross"></i>
+  {{travel_detail[travel_detail.place]| fitNumber}}
+</span>
 
+{%endif%}
   <div class="f">
     <div class="c2 msg mLa5">{%trans "First name" %}:    <small> {{travel_detail.firstname}} </small> </div>
     <div class="c2 msg mLa5">{%trans "Mobile" %}:       <small> {{travel_detail.mobile}} </small> </div>
