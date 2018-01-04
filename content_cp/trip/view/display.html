@@ -3,12 +3,36 @@
 {%block pageContent%}
 
 <div class="cbox">
-  <div class="f txtC">
-    <div class="c3 s12">
+  <div class="f">
+    <div class="c3 s12 pRa10 txtC">
     {{block ('SCity') }}
-
     </div>
 
+    <div class="c9 s12">
+        <h2>{{travel_detail.firstname}} <b>{{travel_detail.lastname}}</b> <small class="badge info">{{travel_detail.mobile}}</small></h2>
+
+        <p>
+          <span class="badge">{%trans "Birthday" %} {{travel_detail.birthday}}</span>
+          <span class="badge">{{travel_detail.married}}</span>
+          <span class="badge">{{travel_detail.gender}}</span>
+
+          <span class="badge">{{travel_detail.father}}</span>
+          <span class="badge fs12">{%trans "Date created" %} {{travel_detail.datecreated | tdate("Y/m/d H:i")}}</span>
+        </p>
+
+        <p>{%trans "Nationalcode" %} {{travel_detail.nationalcode |fitNumber}}</p>
+
+        <p>{%trans "Reserve date" %} {{travel_detail.startdate}} - {{travel_detail.enddate}}</p>
+
+
+
+        <h5 class="mT25">{%trans "Address"%}</h5>
+        <span class="badge">{{travel_detail.province}}</span>
+        <span class="badge">{{travel_detail.city}}</span>
+        <span class="badge">{{travel_detail.address}}</span>
+
+        <h2>{{travel_detail.status}}</h2>
+    </div>
   </div>
 </div>
 
@@ -16,43 +40,6 @@
 
 
 <div class="cbox">
- {%if not travel_detail[travel_detail.place] %}
- <span class="sf-check fc-green"></span>
-{%else%}
-<span class="badge warn ">
-  <i class="sf-cross"></i>
-  {{travel_detail[travel_detail.place]| fitNumber}}
-</span>
-
-{%endif%}
-  <div class="f">
-    <div class="c2 msg mLa5">{%trans "First name" %}:   <small> {{travel_detail.firstname}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Mobile" %}:       <small> {{travel_detail.mobile}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Birthday" %}:     <small> {{travel_detail.birthday}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Province" %}:     <small> {{travel_detail.province}} </small> </div>
-  </div>
-
-  <div class="f">
-    <div class="c2 msg mLa5">{%trans "Married" %}:      <small> {{travel_detail.married}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "City" %}:         <small> {{travel_detail.city}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Gender" %}:       <small> {{travel_detail.gender}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Father" %}:       <small> {{travel_detail.father}} </small> </div>
-  </div>
-
-  <div class="f">
-    <div class="c2 msg mLa5">{%trans "Last name" %}:    <small> {{travel_detail.lastname}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Nationalcode" %}: <small> {{travel_detail.nationalcode}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Place" %}:        <small> {{travel_detail.place}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Start date" %}:   <small> {{travel_detail.startdate}} </small> </div>
-  </div>
-
-  <div class="f">
-    <div class="c2 msg mLa5">{%trans "Enddate" %}:      <small> {{travel_detail.enddate}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Type" %}:         <small> {{travel_detail.type}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Status" %}:       <small> {{travel_detail.status}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Date created" %}: <small> {{travel_detail.datecreated}} </small> </div>
-  </div>
-
   <form method="post">
     <input type="hidden" name="edit_travel" value="edit_travel">
     {{block ('istartdate') }}
@@ -167,12 +154,26 @@
 
 {%block SCity%}
 {%set cityPlace = travel_detail.place %}
-    <div class="vcard shadow">
+    <div class="vcard">
      <img src="{{url.static}}images/place/{{travel_detail.place}}-square.jpg" alt='{%trans cityPlace%}'>
      <div class="content">
       <div class="header">{%trans cityPlace%}</div>
      </div>
+      <div class="footer">{{block("SCheckHistory")}}</div>
     </div>
+{%endblock%}
+
+
+
+{%block SCheckHistory%}
+{%if not travel_detail[travel_detail.place] %}
+<span class="sf-check fc-green"></span>
+{%else%}
+<span class="badge warn ">
+ <i class="sf-cross"></i>
+  {{travel_detail[travel_detail.place]| fitNumber}}
+</span>
+{%endif%}
 {%endblock%}
 
 
