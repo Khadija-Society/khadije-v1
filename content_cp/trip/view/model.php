@@ -47,12 +47,22 @@ class model extends \content_cp\main2\model
 		{
 			$post              = self::getPost();
 			$post['travel_id'] = \lib\utility::get('id');
-			\lib\app\myuser::edit_child($post, \lib\utility::get('partner'));
+			$get_user_id = \lib\db\travelusers::get(['id' => \lib\utility::get('partner'), 'travel_id' => \lib\utility::get('id'), 'limit' => 1]);
+			if(isset($get_user_id['user_id']))
+			{
+				$user_id = $get_user_id['user_id'];
+			}
+			else
+			{
+				\lib\debug::error(T_("Invalid user travel detail"));
+				return false;
+			}
+			\lib\app\myuser::edit_child($post, $user_id);
 
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("The partner was updated"));
-				$this->redirector($this->url('full'));
+				$this->redirector($this->url('baseFull'). '/trip/view?id='. \lib\utility::get('id'));
 			}
 		}
 

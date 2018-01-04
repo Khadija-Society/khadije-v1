@@ -472,9 +472,9 @@ class myuser
 			}
 			$check_not_duplicate_in_child = \lib\db\travelusers::duplicate_nationalcode_in_child($args['nationalcode'], \lib\app::request('travel_id'));
 
-			if(isset($check_not_duplicate_in_child[0]['id']))
+			if(isset($check_not_duplicate_in_child[0]['user_id']))
 			{
-				if(intval($check_not_duplicate_in_child[0]['id']) === intval($_id))
+				if(intval($check_not_duplicate_in_child[0]['user_id']) === intval($_id))
 				{
 					// no problem to continue;
 				}
