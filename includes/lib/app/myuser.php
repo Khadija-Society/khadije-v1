@@ -79,7 +79,7 @@ class myuser
 		}
 
 		$nationalcode = \lib\app::request('nationalcode');
-
+		$nationalcode = \lib\utility\convert::to_en_number($nationalcode);
 		if(!$nationalcode)
 		{
 			\lib\debug::error(T_("The nationalcode is requeired"), 'nationalcode');
@@ -326,6 +326,7 @@ class myuser
 
 	public static function add_child($_args, $_option = [])
 	{
+
 		$default_option =
 		[
 			'debug' => true,
@@ -376,6 +377,16 @@ class myuser
 				return false;
 			}
 		}
+
+		$max_count_partner = \lib\app\travel::trip_count_partner('get');
+		$count_partner     = \lib\db\travelusers::get_travel_child(\lib\utility::get('trip'));
+		if(count($count_partner) + 1 > intval($max_count_partner) )
+		{
+			\lib\debug::error(T_("Maximum partner added. can not add another"));
+			return false;
+		}
+
+
 
 		\lib\db\users::insert($args);
 		$user_id = \lib\db::insert_id();

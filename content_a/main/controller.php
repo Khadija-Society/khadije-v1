@@ -29,6 +29,7 @@ class controller extends \mvc\controller
 			\lib\error::access(T_("Invalid trip id"));
 		}
 
+		// if status of trip is not awatign redirect to list of travel
 	}
 }
 ?>
