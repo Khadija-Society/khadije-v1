@@ -8,7 +8,7 @@ class model extends \content_a\main\model
 	public function post_profile()
 	{
 		$post                    = [];
-		$post['gender']          = \lib\utility::post('gender') ? 'female' : 'male';
+		$post['gender']          = \lib\utility::post('gender') ;
 		$post['email']           = \lib\utility::post('email');
 		$post['birthday']        = \lib\utility::post('birthday');
 		$post['firstname']       = \lib\utility::post('name');
@@ -23,9 +23,8 @@ class model extends \content_a\main\model
 		$post['homeaddress']     = \lib\utility::post('homeaddress');
 		$post['phone']           = \lib\utility::post('phone');
 		$post['displayname']     = trim($post['firstname'] . ' '. $post['lastname']);
-		$post['married']         = \lib\utility::post('Married') ? 'married' : 'single';
+		$post['married']         = \lib\utility::post('Married') ;
 		$post['zipcode']         = \lib\utility::post('zipcode');
-
 
 		\lib\app\myuser::edit($post);
 

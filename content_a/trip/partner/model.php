@@ -30,8 +30,10 @@ class model extends \content_a\main\model
 			$post['father']          = \lib\utility::post('father');
 			$post['nationalcode']    = \lib\utility::post('nationalcode');
 			$post['birthday']        = \lib\utility::post('birthday');
-			$post['gender']          = \lib\utility::post('gender') ? 'female' : 'male';
-			$post['married']         = \lib\utility::post('Married') ? 'married' : 'single';
+			$post['gender']          = \lib\utility::post('gender') ;
+			$post['pasportcode']          = \lib\utility::post('passport') ;
+
+			$post['married']         = \lib\utility::post('Married');
 			$post['nesbat']          = \lib\utility::post('nesbat');
 
 			$post['travel_id']       = \lib\utility::get('trip');

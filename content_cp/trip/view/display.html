@@ -56,7 +56,7 @@
   </div>
   <div class="c9 s12">
 {{block ('partnertList') }}
-{{block ('nextForm') }}
+{{block ('statusForm') }}
   </div>
  </div>
 {%endblock%}
@@ -147,11 +147,45 @@
 {%endblock%}
 
 
-{%block nextForm%}
+{%block statusForm%}
     <form method="post" class="cbox">
-      <input type="hidden" name="next" value="next">
-      {{block ('inext') }}
+      <input type="hidden" name="status_change" value="status_change">
+      {{block('iStatus')}}
+      <button class="btn success block ">{%trans "Change Status"%}</button>
     </form>
+{%endblock%}
+
+
+{%block iStatus%}
+
+<div class="mT15">
+ <label >{%trans "Status of trip"%}</label>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-available" name="status" value="available" {%if trip.status == 'available' or not trip.status %} checked{%endif%}>
+  <label for="r-available">{%trans "Avalible"%} <small>{%trans "Normal status of trip"%}</small></label>
+ </div>
+
+ <div class="radio1 blue">
+  <input type="radio" id="r-soon" name="status" value="soon" {%if trip.status == 'soon' %} checked{%endif%}>
+  <label for="r-soon">{%trans "Soon"%} <small>{%trans "maybe come in future and be available"%}</small></label>
+ </div>
+
+ <div class="radio1 yellow">
+  <input type="radio" id="r-unavailable" name="status" value="unavailable" {%if trip.status == 'unavailable' %} checked{%endif%}>
+  <label for="r-unavailable">{%trans "Unavailable"%} <small>{%trans "temporary does not exist in store"%}</small></label>
+ </div>
+
+ <div class="radio1 red">
+  <input type="radio" id="r-discountinued" name="status" value="discountinued" {%if trip.status == 'discountinued' %} checked{%endif%}>
+  <label for="r-discountinued">{%trans "Discountinued"%} <small>{%trans "does not exist for now and on the future"%}</small></label>
+ </div>
+
+ <div class="radio1 black mB25">
+  <input type="radio" id="r-unset" name="status" value="unset" {%if trip.status == 'unset'%} checked{%endif%} >
+  <label for="r-unset">{%trans "Unset"%} <small>{%trans "Unknown status for trip"%}</small></label>
+ </div>
+</div>
 {%endblock%}
 
 

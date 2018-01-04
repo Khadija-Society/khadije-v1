@@ -14,6 +14,35 @@ class view extends \content_a\main\view
 
 
 		$this->data->child_list = \lib\db\travelusers::get_travel_child(\lib\utility::get('trip'));
+
+
+  		$child_list =
+  		[
+	  		T_('Father'),
+	  		T_('Mother'),
+	  		T_('Sister'),
+	  		T_('Brother'),
+	  		T_('Grandfather'),
+	  		T_('Grandmother'),
+	  		T_('Aunt'),
+	  		T_('Husband'),
+	  		T_('Uncle'),
+	  		T_('Boy'),
+	  		T_('Girl'),
+	  		T_('Spouse'),
+	  		T_('Stepmother'),
+	  		T_('Stepfather'),
+	  		T_('Neighbor'),
+	  		T_('Teacher'),
+	  		T_('Friend'),
+	  		T_('Boss'),
+	  		T_('Supervisor'),
+	  		T_('Child'),
+	  		T_('Grandson'),
+  		];
+
+  		$this->data->nesbat_list = implode(',', $child_list);
+
 	}
 
 

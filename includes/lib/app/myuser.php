@@ -267,7 +267,14 @@ class myuser
 		$args['birthday']        = $birthday;
 		$args['firstname']       = $firstname;
 		$args['lastname']        = $lastname;
-		$args['nationalcode']    = $nationalcode;
+		if($nationalcode)
+		{
+			$args['nationalcode']    = "(SELECT'$nationalcode')";
+		}
+		else
+		{
+			$args['nationalcode']    = null;
+		}
 		$args['father']          = $father;
 		$args['pasportcode']     = $pasportcode;
 		$args['pasportdate']     = $pasportdate;

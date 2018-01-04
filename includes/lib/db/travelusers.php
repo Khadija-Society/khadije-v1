@@ -31,9 +31,7 @@ class travelusers
 			WHERE
 			travelusers.travel_id = $_travel_id
 		";
-
 		$result = \lib\db::get($query);
-
 		return $result;
 	}
 
