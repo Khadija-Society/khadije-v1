@@ -8,19 +8,19 @@
   <form class="cbox" method="post">
 
    <div class="f">
+    <div class="c6 s12">{{block ('igenderRadio') }}</div>
+    <div class="c6 s12">{{block ('iMarriedRadio') }}</div>
+   </div>
+
+   <div class="f">
     <div class="c6 s12 pRa5">{{block ('iname') }}</div>
     <div class="c6 s12">{{block ('ifamily') }}</div>
    </div>
 
    <div class="f">
-    <div class="c6 s12 pRa5">{{block ('ifather') }}</div>
-    <div class="c6 s12">{{block ('ibirthday') }}</div>
-   </div>
-
-   <div class="f">
-    <div class="c6 s12 pRa5">{{block ('incode') }}</div>
-    <div class="c3 s12">{{block ('igender') }}</div>
-    <div class="c3 s12">{{block ('iMarried') }}</div>
+    <div class="c4 s12 pRa5">{{block ('ifather') }}</div>
+    <div class="c4 s12 pRa5">{{block ('incode') }}</div>
+    <div class="c4 s12">{{block ('ibirthday') }}</div>
    </div>
 
    <div class="f">
@@ -91,7 +91,7 @@
 {%block incode%}
 <label for="nationalcode">{%trans "National code"%} <small class="fc-red">* {%trans "Require"%} | {%trans "Iranian must fill"%}</small></label>
 <div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{userdetail.nationalcode}}" min=1000000000 max='9999999999' required>
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{userdetail.nationalcode}}" min=1000000000 max='9999999999'>
 </div>
 {%endblock%}
 
@@ -113,14 +113,46 @@
 {%endblock%}
 
 
+{%block igenderRadio%}
+<label for="gender">{%trans "Gender"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="f">
+ <div class="radio1 green">
+  <input type="radio" id="r-male" name="gender" required value="male" {%if userdetail.gender == 'male' %}checked{%endif%}>
+  <label for="r-male">{%trans "Male"%}</label>
+ </div>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-female" name="gender" required value="female" {%if userdetail.gender == 'female' %}checked{%endif%}>
+  <label for="r-female">{%trans "Female"%}</label>
+ </div>
+</div>
+{%endblock%}
+
+
 {%block iMarried%}
 <label for="Married">{%trans "Marital"%}</label>
 <div class="switch1 mA0 pLR5">
  <input type="checkbox" name="Married" id="Married" {%if userdetail.married == 'married' %}checked{%endif%}>
  <label for="Married"  data-on='{%trans "Married"%}' data-off='{%trans "Single"%}'></label>
 </div>
-
 {%endblock%}
+
+
+{%block iMarriedRadio%}
+<label for="Married">{%trans "Marital"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="f">
+ <div class="radio1 yellow">
+  <input type="radio" id="r-signle" name="Married" required value="signle" {%if userdetail.married == 'single' %}checked{%endif%}>
+  <label for="r-signle">{%trans "Single"%}</label>
+ </div>
+
+ <div class="radio1 yellow">
+  <input type="radio" id="r-married" name="Married" required value="married" {%if userdetail.married == 'married' %}checked{%endif%}>
+  <label for="r-married">{%trans "Married"%}</label>
+ </div>
+</div>
+{%endblock%}
+
 
 {%block iArabicLang%}
 <div class="switch1 pA5">
@@ -157,7 +189,7 @@
 {%block icity%}
 <label for='city'>{%trans "City"%}</label>
 <div class="input">
- <input type='text' class="awesomplete" name='city' id='city' data-minchars="1" data-autofirst data-list="{{city_list}}" value="{{userdetail.city}}" />
+ <input type='text' class="awesomplete" name='city' id='city' data-minchars="1" data-autofirst data-list="{{city_list}}" value="{{userdetail.city}}" autocomplete="off"/>
 </div>
 {%endblock%}
 
