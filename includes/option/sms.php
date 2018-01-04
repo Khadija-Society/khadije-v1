@@ -8,7 +8,7 @@ self::$sms['kavenegar']['debug']  = null;
 self::$sms['kavenegar']['line']   = '10002000200251';
 self::$sms['kavenegar']['iran']   = true;
 self::$sms['kavenegar']['header'] = null;
-self::$sms['kavenegar']['footer'] = 'khadije';
+self::$sms['kavenegar']['footer'] = 'خیریه حضرت خدیجه';
 self::$sms['kavenegar']['one']    = true;
 
 
