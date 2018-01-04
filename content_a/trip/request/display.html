@@ -4,16 +4,16 @@
 {%block pageContent%}
 <div class="f justify-center">
  <div class="cbox c10 s12">
-{%if cityplace_list%}
 
+
+{%if signup_locked%}
+<p class="alert alert-error txtC mT20">{%trans "Trip signup is disabled"%}</p>
+{%elseif cityplace_list%}
 
   <form method="post">
-
 {{block ('iCity') }}
-
-{{block ('iNext') }}
-
   </form>
+
 {%else%}
 <p class="alert alert-info txtC mT20">{%trans "All cities are disabled now"%}</p>
 {%endif%}

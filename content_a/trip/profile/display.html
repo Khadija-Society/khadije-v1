@@ -89,7 +89,7 @@
 
 
 {%block incode%}
-<label for="nationalcode">{%trans "National code"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<label for="nationalcode">{%trans "National code"%} <small class="fc-red">* {%trans "Require"%} | {%trans "Iranian must fill"%}</small></label>
 <div class="input">
   <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{userdetail.nationalcode}}" min=1000000000 max='9999999999' required>
 </div>
@@ -173,7 +173,7 @@
 
 
 {%block ipassport%}
-<label for='passport'>{%trans "Passport id"%}</label>
+<label for='passport'>{%trans "Passport id"%} <small class="fc-red">* {%trans "Require"%} | {%trans "Foreigners must fill"%}</small></label>
 <div class="input ltr">
  <input type="text" name='passport' id='passport' value="{{userdetail.pasportcode}}" />
 </div>
