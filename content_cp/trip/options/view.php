@@ -1,14 +1,18 @@
 <?php
-namespace content_cp\options\trip;
+namespace content_cp\trip\options;
 
 
 class view extends \content_cp\main2\view
 {
 	public function config()
 	{
-		$this->data->page['title']   = T_("Khadije Dashboard");
+		$this->data->page['title'] = T_("Request options");
+		$this->data->page['desc']  = T_("change request options");
 
-		$this->data->page['special'] = true;
+		$this->data->page['badge']['link'] = $this->url('baseFull'). '/trip';
+		$this->data->page['badge']['text'] = T_('Back to request list');
+
+
 		$this->data->bodyclass          = 'unselectable siftal';
 
 		$this->data->active_city        = \lib\app\travel::active_city();

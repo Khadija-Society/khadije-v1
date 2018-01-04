@@ -1,11 +1,11 @@
 <?php
-namespace content_cp\options\trip;
+namespace content_cp\trip\options;
 
 
 class model extends \addons\content_cp\main\model
 {
 
-	public function post_trip()
+	public function post_options()
 	{
 
 		\lib\app\travel::trip_master_active(\lib\utility::post('master_active'));
