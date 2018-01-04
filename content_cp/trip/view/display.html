@@ -76,11 +76,24 @@
 {%if travel_partner%}
     <div class="f">
 {%for key, value in travel_partner%}
+{% set CountTravel = value[travel_detail.place] %}
      <div class="c4 s12">
       <div class="vcard mA5">
         <div class="content f">
           <div class="c">
-            <div class="header"><small>{{value.firstname}}</small> {{value.lastname}}</div>
+            <div class="header">
+              <small>{{value.firstname}}</small> {{value.lastname}}
+              {%if not CountTravel%}
+                <span class="sf-check fc-green"></span>
+              {%else%}
+              <span class="badge warn ">
+                <i class="sf-cross"></i>
+                {{CountTravel| fitNumber}}
+              </span>
+
+              {%endif%}
+
+            </div>
             <div class="meta"><span>{{value.nationalcode | fitNumber}}</span></div>
           </div>
           <div class="cauto">
@@ -94,7 +107,8 @@
            <span class="badge info">{{value.nesbat}}</span>
            <span class="badge">{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</span>
            <span class="badge success">{{value.birthday | fitNumber}}</span>
-           <span class="badge" title="{%trans "Child"%}">{{value.father}}</span>
+           <span class="badge" title='{%trans "Child"%}'>{{value.father}}</span>
+
           </div>
         </div>
         <div class="footer f pAn">

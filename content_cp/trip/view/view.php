@@ -21,8 +21,9 @@ class view extends \content_cp\main2\view
 			$this->data->travel_detail = $this->data->travel_detail[0];
 		}
 
-		$this->data->travel_partner = \lib\db\travelusers::get_travel_child(\lib\utility::get('id'));
+		$x = $this->data->travel_partner = \lib\db\travelusers::get_travel_child(\lib\utility::get('id'));
 
+		// load partner detail
 		if(\lib\utility::get('partner') && is_numeric(\lib\utility::get('partner')))
 		{
 			$this->data->edit_mode = true;

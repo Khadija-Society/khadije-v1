@@ -18,8 +18,14 @@ class travelusers
 	{
 		$query =
 		"
-			SELECT * FROM users
+			SELECT
+				users.*,
+				nationalcodes.qom AS `qom`,
+				nationalcodes.mashhad AS `mashhad`,
+				nationalcodes.karbala AS `karbala`
+			FROM users
 			INNER JOIN travelusers ON travelusers.user_id = users.id
+			LEFT JOIN nationalcodes ON nationalcodes.nationalcode = users.nationalcode
 			WHERE
 			travelusers.travel_id = $_travel_id
 		";
