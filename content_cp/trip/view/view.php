@@ -6,14 +6,13 @@ class view extends \content_cp\main2\view
 {
 	public function config()
 	{
-		$this->data->page['title']   = T_("Khadije Dashboard");
+		$this->data->page['title'] = T_("View request detail");
+		$this->data->page['desc']  = T_("check request and update status");
 
-		$this->data->page['special'] = true;
+		$this->data->page['badge']['link'] = $this->url('baseFull'). '/trip';
+		$this->data->page['badge']['text'] = T_('Back to request list');
 
-		// $this->data->page['badge']['link'] = $this->url('baseFull'). '/options/product';
-		// $this->data->page['badge']['text'] = T_('Add new need');
-
-		$this->data->bodyclass       = 'unselectable siftal';
+		$this->data->bodyclass = 'unselectable siftal';
 
 		$this->data->travel_detail = \lib\db\travels::search(null, ['travels.id' => \lib\utility::get('id'), 'pagenation' => false]);
 		if(isset($this->data->travel_detail[0]))
@@ -39,9 +38,7 @@ class view extends \content_cp\main2\view
 					}
 				}
 			}
-
 		}
-
 	}
 }
 ?>

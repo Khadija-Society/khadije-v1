@@ -1,6 +1,20 @@
 {%extends display.khadijeCpMain%}
 
 {%block pageContent%}
+
+<div class="cbox">
+  <div class="f txtC">
+    <div class="c3 s12">
+    {{block ('SCity') }}
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
 <div class="cbox">
  {%if not travel_detail[travel_detail.place] %}
  <span class="sf-check fc-green"></span>
@@ -12,7 +26,7 @@
 
 {%endif%}
   <div class="f">
-    <div class="c2 msg mLa5">{%trans "First name" %}:    <small> {{travel_detail.firstname}} </small> </div>
+    <div class="c2 msg mLa5">{%trans "First name" %}:   <small> {{travel_detail.firstname}} </small> </div>
     <div class="c2 msg mLa5">{%trans "Mobile" %}:       <small> {{travel_detail.mobile}} </small> </div>
     <div class="c2 msg mLa5">{%trans "Birthday" %}:     <small> {{travel_detail.birthday}} </small> </div>
     <div class="c2 msg mLa5">{%trans "Province" %}:     <small> {{travel_detail.province}} </small> </div>
@@ -26,17 +40,17 @@
   </div>
 
   <div class="f">
-    <div class="c2 msg mLa5">{%trans "Last name" %}:     <small> {{travel_detail.lastname}} </small> </div>
+    <div class="c2 msg mLa5">{%trans "Last name" %}:    <small> {{travel_detail.lastname}} </small> </div>
     <div class="c2 msg mLa5">{%trans "Nationalcode" %}: <small> {{travel_detail.nationalcode}} </small> </div>
     <div class="c2 msg mLa5">{%trans "Place" %}:        <small> {{travel_detail.place}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Start date" %}:    <small> {{travel_detail.startdate}} </small> </div>
+    <div class="c2 msg mLa5">{%trans "Start date" %}:   <small> {{travel_detail.startdate}} </small> </div>
   </div>
 
   <div class="f">
     <div class="c2 msg mLa5">{%trans "Enddate" %}:      <small> {{travel_detail.enddate}} </small> </div>
     <div class="c2 msg mLa5">{%trans "Type" %}:         <small> {{travel_detail.type}} </small> </div>
     <div class="c2 msg mLa5">{%trans "Status" %}:       <small> {{travel_detail.status}} </small> </div>
-    <div class="c2 msg mLa5">{%trans "Date created" %}:  <small> {{travel_detail.datecreated}} </small> </div>
+    <div class="c2 msg mLa5">{%trans "Date created" %}: <small> {{travel_detail.datecreated}} </small> </div>
   </div>
 
   <form method="post">
@@ -147,6 +161,25 @@
 {%endblock%}
 
 
+
+
+
+
+{%block SCity%}
+{%set cityPlace = travel_detail.place %}
+    <div class="vcard shadow">
+     <img src="{{url.static}}images/place/{{travel_detail.place}}-square.jpg" alt='{%trans cityPlace%}'>
+     <div class="content">
+      <div class="header">{%trans cityPlace%}</div>
+     </div>
+    </div>
+{%endblock%}
+
+
+
+
+
+
 {%block statusForm%}
     <form method="post" class="cbox">
       <input type="hidden" name="status_change" value="status_change">
@@ -193,7 +226,7 @@
 {%block iname%}
 <label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{partner_detail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{partner_detail.firstname}}" maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
