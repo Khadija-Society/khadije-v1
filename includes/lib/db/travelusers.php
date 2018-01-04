@@ -20,6 +20,8 @@ class travelusers
 		"
 			SELECT
 				users.*,
+				travelusers.id AS `id`,
+				travelusers.user_id AS `user_id`,
 				nationalcodes.qom AS `qom`,
 				nationalcodes.mashhad AS `mashhad`,
 				nationalcodes.karbala AS `karbala`
