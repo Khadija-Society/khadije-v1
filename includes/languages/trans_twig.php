@@ -31,12 +31,13 @@ class twigTransTerms
 	echo T_("Certificate");                                                           // Line 125
 	echo T_("Secured by Arvancloud");                                                 // Line 126
 	echo T_("Arvancloud");                                                            // Line 126
+	echo T_("Last news");                                                             // Line 165
 
 	//--------------------------------------------------------content\main\layout.html
-	echo T_("Next →");                                                                // Line 34
-	echo T_("← Back");                                                                // Line 34
-	echo T_("Skip");                                                                  // Line 34
-	echo T_("Done");                                                                  // Line 34
+	echo T_("Next →");                                                                // Line 38
+	echo T_("← Back");                                                                // Line 38
+	echo T_("Skip");                                                                  // Line 38
+	echo T_("Done");                                                                  // Line 38
 
 	//---------------------------------------------------content\template\dafault.html
 	echo T_("View your current location and navigate to parent of it");               // Line 9
@@ -100,9 +101,10 @@ class twigTransTerms
 	echo T_("Request date");                                                          // Line 34
 	echo T_("Reserve date");                                                          // Line 43
 	echo T_("Cancel");                                                                // Line 22 Seperate
-	echo T_("register for new group request");                                        // Line 46
-	echo T_("Start Date");                                                            // Line 79
-	echo T_("End Date");                                                              // Line 88
+	echo T_("Edit");                                                                  // Line 148
+	echo T_("register for new group request");                                        // Line 49
+	echo T_("Start Date");                                                            // Line 82
+	echo T_("End Date");                                                              // Line 91
 	echo T_("City Place");                                                            // Line 17
 	echo T_("Please select one itmes");                                               // Line 49
 	echo T_("Add");                                                                   // Line 84
@@ -172,7 +174,7 @@ class twigTransTerms
 	//--------------------------------------------------content_a\profile\display.html
 
 	//------------------------------------------------content_a\trip\home\display.html
-	echo T_("register for new trip request");                                         // Line 46
+	echo T_("register for new trip request");                                         // Line 49
 
 	//---------------------------------------------content_a\trip\partner\display.html
 	echo T_("Final register in trip request");                                        // Line 366
@@ -188,6 +190,18 @@ class twigTransTerms
 	echo T_("request list");                                                          // Line 6
 
 	//----------------------------------------------------content_cp\main2\layout.html
+
+	//--------------------------------------------content_cp\nationalcode\display.html
+	echo T_("No nationalcode founded.");                                              // Line 17
+	echo T_("Search with new keywords.");                                             // Line 17
+	echo T_("You are not have nationalcode yet!");                                    // Line 23
+	echo T_("Search in national codes");                                              // Line 34
+	echo T_("Search");                                                                // Line 35
+	echo T_("Nationalcode");                                                          // Line 23
+
+	//---------------------------------------content_cp\nationalcode\edit\display.html
+
+	//-------------------------------------content_cp\nationalcode\import\display.html
 
 	//---------------------------------------content_cp\options\cityplace\display.html
 	echo T_("List of city place");                                                    // Line 22
@@ -211,7 +225,6 @@ class twigTransTerms
 	echo T_("Count");                                                                 // Line 112
 	echo T_("Amount");                                                                // Line 134
 	echo T_("Desctiption");                                                           // Line 41
-	echo T_("Edit");                                                                  // Line 148
 	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 72
 	echo T_("Enter a valid title");                                                   // Line 96
 	echo T_("Enter a valid count");                                                   // Line 112
@@ -221,10 +234,8 @@ class twigTransTerms
 
 	//----------------------------------------------------content_cp\trip\display.html
 	echo T_("No trip founded.");                                                      // Line 17
-	echo T_("Search with new keywords.");                                             // Line 17
 	echo T_("You are not have trip yet!");                                            // Line 23
 	echo T_("Search in trips");                                                       // Line 34
-	echo T_("Search");                                                                // Line 35
 	echo T_("ID");                                                                    // Line 47
 	echo T_("Type");                                                                  // Line 51
 	echo T_("Date created");                                                          // Line 38
@@ -245,7 +256,6 @@ class twigTransTerms
 	echo T_("Maximum group count");                                                   // Line 183
 
 	//-----------------------------------------------content_cp\trip\view\display.html
-	echo T_("Nationalcode");                                                          // Line 23
 	echo T_("List of trip partner");                                                  // Line 104
 	echo T_("No partner set");                                                        // Line 157
 	echo T_("Status of trip");                                                        // Line 200
