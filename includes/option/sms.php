@@ -7,8 +7,8 @@ self::$sms['kavenegar']['apikey'] = '774F6B6C305A36356A534A6B62324D727842454D4B6
 self::$sms['kavenegar']['debug']  = null;
 self::$sms['kavenegar']['line']   = '10002000200251';
 self::$sms['kavenegar']['iran']   = true;
-self::$sms['kavenegar']['header'] = null;
-self::$sms['kavenegar']['footer'] = 'خیریه حضرت خدیجه';
+self::$sms['kavenegar']['header'] = 'خیریه حضرت خدیجه';
+self::$sms['kavenegar']['footer'] = 'Khadije.com';
 self::$sms['kavenegar']['one']    = true;
 
 
