@@ -24,7 +24,20 @@ class view extends \content_cp\main2\view
 			$this->data->page['title'] = T_('Search'). ' '.  $search_string;
 		}
 
+		$export = false;
+		if(\lib\utility::get('export') === 'true')
+		{
+			$export = true;
+			$args['pagenation'] = false;
+		}
+
 		$this->data->nationalcode_list = \lib\app\nationalcode::list($search_string, $args);
+
+		if($export)
+		{
+			\lib\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->nationalcode_list]);
+		}
+
 
 		$this->data->sort_link = self::make_sort_link(\lib\app\nationalcode::$sort_field, $this->url('baseFull'). '/nationalcode');
 
