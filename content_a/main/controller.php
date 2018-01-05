@@ -30,13 +30,13 @@ class controller extends \mvc\controller
 		}
 
 		// if status of trip is not awatign redirect to list of travel
-		if(isset($check_valid_trip['status']) && $check_valid_trip['status'] === 'awaiting')
+		if(isset($check_valid_trip['status']) && $check_valid_trip['status'] === 'draft')
 		{
 			// no problem to edit it
 		}
 		else
 		{
-			\lib\error::access(T_("Your trip is checked. can not edit it"));
+			\lib\error::access(T_("Your trip is not draft. can not edit it"));
 		}
 	}
 }

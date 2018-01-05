@@ -359,7 +359,7 @@ class travel
 			return false;
 		}
 
-		$travele_list = \lib\db\travels::get(['user_id' => $user_id, 'status' => ["IN", "('awaiting', 'accept')"]]);
+		$travele_list = \lib\db::get("SELECT * FROM travels WHERE `user_id` = $user_id ORDER BY id DESC LIMIT 50 ");
 
 		return $travele_list;
 	}
@@ -621,7 +621,7 @@ class travel
 			return false;
 		}
 
-		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \lib\user::id(), 'place' => $args['place'], 'status' => 'awaiting', 'limit' => 1]);
+		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \lib\user::id(), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
 		if(isset($check_duplicate_travel['id']))
 		{
 			\lib\debug::error(T_("You signup to this trip before, please wait for checking status of that trip"));
@@ -630,7 +630,7 @@ class travel
 
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
 		{
-			$args['status']  = 'awaiting';
+			$args['status']  = 'draft';
 		}
 
 		$args['user_id']     = \lib\user::id();

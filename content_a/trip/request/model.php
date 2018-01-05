@@ -8,8 +8,9 @@ class model extends \content_a\main\model
 	public function post_trip()
 	{
 
-		$post         = [];
-		$post['city'] = \lib\utility::post('city');
+		$post           = [];
+		$post['city']   = \lib\utility::post('city');
+		$post['status'] = 'draft';
 
 		$travel_id = \lib\app\travel::add($post);
 

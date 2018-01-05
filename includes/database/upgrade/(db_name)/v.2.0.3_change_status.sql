@@ -1,0 +1,1 @@
+ALTER TABLE `travels` CHANGE `status` `status` ENUM('awaiting', 'spam', 'cancel', 'reject', 'review', 'notanswer', 'queue','gone', 'delete','admincancel', 'draft') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'draft';

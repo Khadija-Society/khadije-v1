@@ -19,7 +19,7 @@ class model extends \content_a\main\model
 				return false;
 			}
 
-			if(isset($check_valid_key['status']) && $check_valid_key['status'] === 'awaiting')
+			if(isset($check_valid_key['status']) && in_array($check_valid_key['status'], ['awaiting', 'draft']))
 			{
 
 				\lib\db\travels::update(['status' => 'cancel'], $key);
