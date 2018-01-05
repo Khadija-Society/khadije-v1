@@ -19,9 +19,16 @@ class view extends \content_cp\main2\view
 		[
 			'order'          => \lib\utility::get('order'),
 			'sort'           => \lib\utility::get('sort'),
-			'in'             => \lib\utility::get('in'),
-			'travels.status' => 'awaiting',
 		];
+
+		if(!$args['order'])
+		{
+			$args['order'] = 'DESC';
+		}
+
+		if(\lib\utility::get('status')) $args['travels.status'] = \lib\utility::get('status');
+		if(\lib\utility::get('type')) $args['travels.type']     = \lib\utility::get('type');
+		if(\lib\utility::get('place')) $args['travels.place']   = \lib\utility::get('place');
 
 		$search_string            = \lib\utility::get('q');
 
