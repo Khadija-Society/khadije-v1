@@ -43,6 +43,9 @@ class view extends \content_cp\main2\view
 
 		$this->data->sort_link = self::make_sort_link(\lib\app\transaction::$sort_field, $this->url('baseFull'). '/donate');
 
+		$this->data->total_paid = \lib\app\transaction::total_paid();
+		$this->data->total_paid_date = \lib\app\transaction::total_paid_date(date("Y-m-d"));
+
 		if(isset($this->controller->pagnation))
 		{
 			$this->data->pagnation = $this->controller->pagnation_get();
