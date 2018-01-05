@@ -8,30 +8,41 @@
     {{block ('SCity') }}
     </div>
 
-    <div class="c9 s12">
-        <h2>{{travel_detail.firstname}} <b>{{travel_detail.lastname}}</b> <small class="badge info">{{travel_detail.mobile}}</small></h2>
+    <div class="c6 s12">
+        <h2>{{travel_detail.firstname}} <b>{{travel_detail.lastname}}</b></h2>
 
         <p>
-          <span class="badge">{%trans "Birthday" %} {{travel_detail.birthday}}</span>
-          <span class="badge">{{travel_detail.married}}</span>
-          <span class="badge">{{travel_detail.gender}}</span>
-
-          <span class="badge">{{travel_detail.father}}</span>
-          <span class="badge fs12">{%trans "Date created" %} {{travel_detail.datecreated | tdate("Y/m/d H:i")}}</span>
+{%if travel_detail.birthday%}
+          <span class="badge">{%trans "Birthday" %}{{travel_detail.birthday}}</span>
+{%endif%}
+          <span class="badge success">{%set GenderS = travel_detail.gender | capitalize%} {%trans GenderS%}</span>
+          <span class="badge warn">{%set MaritalS = travel_detail.married | capitalize%}{%trans MaritalS%}</span>
+          <span class="badge" title='{%trans "Father name"%}'>{{travel_detail.father}}</span>
         </p>
 
         <p>{%trans "Nationalcode" %} {{travel_detail.nationalcode |fitNumber}}</p>
 
-        <p>{%trans "Reserve date" %} {{travel_detail.startdate}} - {{travel_detail.enddate}}</p>
-
-
-
         <h5 class="mT25">{%trans "Address"%}</h5>
-        <span class="badge">{{travel_detail.province}}</span>
-        <span class="badge">{{travel_detail.city}}</span>
-        <span class="badge">{{travel_detail.address}}</span>
+        <p>
+          <span class="badge">{{travel_detail.country}}</span>
+          <span class="badge">{{travel_detail.province}}</span>
+          <span class="badge">{{travel_detail.city}}</span>
+          <span class="badge">{{travel_detail.address}}</span>
+          <br>
+          <small class="badge info">{{travel_detail.mobile}}</small>
+        </p>
+    </div>
 
-        <h2>{{travel_detail.status}}</h2>
+    <div class="c3 s12">
+      <h2 class="alert alert-info pLRn txtC fs14">{%set StatusS = travel_detail.status | capitalize%}{%trans StatusS%}</h2>
+      <p class="badge block">{%trans "Date created" %} {{travel_detail.datecreated | tdate("Y/m/d H:i")}}</p>
+{%if travel_detail.datemodified%}
+      <p class="badge block primary">{%trans "Last modified" %} {{travel_detail.datemodified | tdate("Y/m/d H:i")}}</p>
+{%endif%}
+{%if travel_detail.startdate or true%}
+      <p class="badge block info">{%trans "Reserve date" %} {{travel_detail.startdate}} - {{travel_detail.enddate}}</p>
+{%endif%}
+
     </div>
   </div>
 </div>
