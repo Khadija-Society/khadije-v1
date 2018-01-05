@@ -37,7 +37,8 @@ class view extends \mvc\view
 		switch ($this->module())
 		{
 			case 'home':
-
+				$this->data->page['title'] = $this->data->site['title']. ' | '. $this->data->site['desc'];
+				$this->data->page['special'] = true;
 				break;
 
 
