@@ -5,7 +5,8 @@
 <div class="f">
  <div class="c6 s12">{{block ("addDonate")}}</div>
  <div class="c6 s12">{{block ("addDonateProduct")}}</div>
- <div class="c12 s12">{{block ("addTravel")}}</div>
+ <div class="c6 s12">{{block ("addTrip")}}</div>
+ <div class="c6 s12">{{block ("addTripGroup")}}</div>
 
 </div>
 
@@ -36,10 +37,20 @@
 {%endblock%}
 
 
-{%block addTravel%}
-<a class="dcard x3" href='{{url.baseFull}}/trip'>
+{%block addTripGroup%}
+<a class="dcard x3" href='{{url.baseFull}}/group'>
  <div class="statistic">
   <div class="value"><i class="sf-bus"></i></div>
+  <div class="label">ثبت تشرف کاروانی به عتبات عالیات</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block addTrip%}
+<a class="dcard x3" href='{{url.baseFull}}/trip'>
+ <div class="statistic">
+  <div class="value"><i class="sf-pull-request"></i></div>
   <div class="label">ثبت تشرف خانوادگی به عتبات عالیات</div>
  </div>
 </a>
