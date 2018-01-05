@@ -18,6 +18,7 @@ class model extends \content_cp\main2\model
 		return $post;
 	}
 
+
 	public function post_trip()
 	{
 		if(\lib\utility::post('type') === 'remove' && \lib\utility::post('key') != '' && ctype_digit(\lib\utility::post('key')))
@@ -128,5 +129,58 @@ class model extends \content_cp\main2\model
 		}
 
 	}
+
+
+	public function send_sms($_status)
+	{
+		$mobile        = '09357269759';
+		$msg           = '';
+		$travel_detail = \lib\db\travels::get(['id' => \lib\utility::get('trip'), 'limit' => 1]);
+		if(isset($travel_detail['place']))
+		{
+			$city = T_($travel_detail['place']);
+		}
+
+		switch ($_status)
+		{
+			case 'awaiting':
+				$msg = "درخواست تشرف به $city در حال انتظمار است.";
+				break;
+
+			case 'review':
+				$msg = "درخواست تشرف به $city در دست بررسی است. بزودی با شما تماس خواهیم گرفت.";
+				break;
+
+			case 'queue':
+				$msg = "درخواست تشرف به $city در تایید شده و شما در صف تشرف قرار گرفته‌اید.";
+				break;
+
+			case 'notanswer':
+				$msg = "برای درخواست تشرف به $city با شما تماس گرفته شد و پاسخگو نبودید.";
+				break;
+
+
+			case 'spam':
+			case 'draft':
+			case 'cancel':
+			case 'gone':
+			case 'reject':
+			case 'admincancel':
+
+				break;
+
+			default:
+				break;
+		}
+
+
+
+
+		if($msg)
+		{
+			\lib\utility\sms::send($mobile, $msg);
+		}
+	}
+
 }
 ?>

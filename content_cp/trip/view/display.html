@@ -203,7 +203,7 @@
 
    <div class="radio1 blue">
     <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if trip.status == 'awaiting' or not trip.status %} checked{%endif%}>
-    <label for="r-awaiting">{%trans "Awaiting"%} <small>{%trans "send new complete request"%}</small></label>
+    <label for="r-awaiting">{%trans "Awaiting"%} <small>{%trans "send new complete request"%}</small><i class="sf-mobile fs12"></i></label>
    </div>
 
    <div class="radio1 red">
@@ -213,12 +213,12 @@
 
    <div class="radio1 yellow">
     <input type="radio" id="r-review" name="status" value="review" {%if trip.status == 'review' %} checked{%endif%}>
-    <label for="r-review">{%trans "Review"%} <small>{%trans "after check and before accept"%}</small></label>
+    <label for="r-review">{%trans "Review"%} <small>{%trans "after check and before accept"%}</small><i class="sf-mobile fs12"></i></label>
    </div>
 
    <div class="radio1 blue">
     <input type="radio" id="r-queue" name="status" value="queue" {%if trip.status == 'queue' %} checked{%endif%}>
-    <label for="r-queue">{%trans "queue"%} <small>{%trans "In queue of send"%}</small></label>
+    <label for="r-queue">{%trans "queue"%} <small>{%trans "In queue of send"%}</small><i class="sf-mobile fs12"></i></label>
    </div>
 
    <div class="radio1 green">
@@ -247,7 +247,7 @@
 
    <div class="radio1 black">
     <input type="radio" id="r-notanswer" name="status" value="notanswer" {%if trip.status == 'notanswer'%} checked{%endif%} >
-    <label for="r-notanswer">{%trans "Not Answer"%} <small>{%trans "not answer to call check"%}</small></label>
+    <label for="r-notanswer">{%trans "Not Answer"%} <small>{%trans "not answer to call check"%}</small><i class="sf-mobile fs12"></i></label>
    </div>
 
 
