@@ -157,7 +157,7 @@
 {%block iAmount%}
 <label for='totalAmount'>{%trans "Pay Amount"%} *</label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='totalAmount' required>
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' title='{%trans "Enter a valid amount"%}' id='totalAmount' required>
 </div>
 {%endblock%}
 
@@ -171,7 +171,7 @@
 
 
 {%block iWay%}
-<label for='fway'>{%trans "Spending method"%}</label>
+<label>{%trans "Spending method"%}</label>
 
 {%if way_list|length < 6%}
 
