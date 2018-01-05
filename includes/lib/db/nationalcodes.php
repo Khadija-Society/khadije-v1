@@ -82,17 +82,34 @@ class nationalcodes
 	}
 
 
-	/**
+
+/**
 	 * Searches for the first match.
 	 *
-	 * @return     <type>  ( description_of_the_return_value )
+	 * @param      <type>  $_string   The string
+	 * @param      array   $_options  The options
 	 */
-	public static function search()
+	public static function search($_string = null, $_options = [])
 	{
-		return \lib\db\config::public_search('nationalcodes', ...func_get_args());
+		if(!is_array($_options))
+		{
+			$_options = [];
+		}
+
+		$default_option =
+		[
+			'search_field'      =>
+			"
+				(
+					nationalcodes.nationalcode LIKE '%__string__%'
+				)
+			",
+
+		];
+
+		$_options = array_merge($default_option, $_options);
+		return \lib\db\config::public_search('nationalcodes', $_string, $_options);
 	}
-
-
 	/**
 	 * delete by where
 	 *
