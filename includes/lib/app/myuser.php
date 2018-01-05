@@ -269,7 +269,7 @@ class myuser
 		$args['lastname']        = $lastname;
 		if($nationalcode)
 		{
-			$args['nationalcode']    = "(SELECT'$nationalcode')";
+			$args['nationalcode']    = "(SELECT '$nationalcode')";
 		}
 		else
 		{
@@ -387,7 +387,7 @@ class myuser
 		if(isset($args['nationalcode']) && $args['nationalcode'])
 		{
 			$load_user = \lib\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
-			if(isset($load_user['nationalcode']) && $load_user['nationalcode'] === $args['nationalcode'])
+			if(isset($load_user['nationalcode']) && "(SELECT '$load_user[nationalcode]')" === $args['nationalcode'])
 			{
 				\lib\debug::error(T_("This nationalcode is for your!"), 'nationalcode');
 				return false;
@@ -401,7 +401,15 @@ class myuser
 			}
 		}
 
-		$max_count_partner = \lib\app\travel::trip_count_partner('get');
+		if(\lib\app::request('type') === 'group')
+		{
+			$max_count_partner = \lib\app\travel::group_count_partner_max();
+		}
+		else
+		{
+			$max_count_partner = \lib\app\travel::trip_count_partner('get');
+		}
+
 		$count_partner     = \lib\db\travelusers::get_travel_child(\lib\utility::get('trip'));
 		if(count($count_partner) + 1 > intval($max_count_partner) )
 		{

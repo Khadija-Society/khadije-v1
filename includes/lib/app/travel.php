@@ -621,7 +621,7 @@ class travel
 			return false;
 		}
 
-		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \lib\user::id(), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
+		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \lib\user::id(), 'type' => \lib\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
 		if(isset($check_duplicate_travel['id']))
 		{
 			\lib\debug::error(T_("You signup to this trip before, please wait for checking status of that trip"));

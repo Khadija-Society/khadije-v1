@@ -9,6 +9,15 @@ class model extends \content_a\main\model
 	{
 		if(\lib\utility::post('next') === 'next')
 		{
+			$count_partner = \lib\db\travelusers::get(['travel_id' => \lib\utility::get('trip')]);
+			$min           = \lib\app\travel::group_count_partner_min();
+
+			if(count($count_partner) < $min)
+			{
+				\lib\debug::error(T_("You must register at least :min partner", ['min' => \lib\utility\convert::to_fa_number($min)]));
+				return false;
+			}
+
 			\lib\db\travels::update(['status' => 'awaiting'], \lib\utility::get('trip'));
 			// send next
 			if(\lib\user::detail('mobile') && \lib\utility\filter::mobile(\lib\user::detail('mobile')))
@@ -36,7 +45,7 @@ class model extends \content_a\main\model
 			\lib\db\travelusers::remove(\lib\utility::post('key'), \lib\utility::get('trip'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector($this->url('baseFull'). '/group/partner?group='. \lib\utility::get('trip'));
+				$this->redirector($this->url('baseFull'). '/group/partner?trip='. \lib\utility::get('trip'));
 			}
 		}
 		else
@@ -53,6 +62,7 @@ class model extends \content_a\main\model
 
 			$post['married']      = \lib\utility::post('Married');
 			$post['nesbat']       = \lib\utility::post('nesbat');
+			$post['type']         = 'group';
 
 			$post['travel_id']    = \lib\utility::get('trip');
 

@@ -13,7 +13,7 @@ class controller extends \mvc\controller
 		}
 	}
 
-	public function check_trip_id()
+	public function check_trip_id($_type = 'family')
 	{
 		$trip = \lib\utility::get('trip');
 
@@ -22,7 +22,7 @@ class controller extends \mvc\controller
 			\lib\error::access(T_("Trip id not found"));
 		}
 
-		$check_valid_trip = \lib\db\travels::get(['id' => $trip, 'user_id' => \lib\user::id(), 'limit' => 1]);
+		$check_valid_trip = \lib\db\travels::get(['id' => $trip, 'type' => $_type, 'user_id' => \lib\user::id(), 'limit' => 1]);
 
 		if(!isset($check_valid_trip['id']))
 		{
