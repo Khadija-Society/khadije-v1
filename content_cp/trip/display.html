@@ -60,9 +60,9 @@
         <td class="s0"><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
         <td><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
         <td>{{value.nationalcode | fitNumber}}</td>
-        <td>{%set my_place = value.place | capitalize%}<a href="{{url.baseFull}}/trip?in=place&q={{value.place}}">{%trans my_place%}</a></td>
-        <td>{%set my_type = value.type | capitalize%}<a href="{{url.baseFull}}/trip?in=type&q={{value.type}}">{%trans my_type%}</a></td>
-        <td>{%set my_status = value.status | capitalize%}<a href="{{url.baseFull}}/trip?in=status&q={{value.status}}">{%trans my_status%}</a></td>
+        <td>{%set my_place = value.place | capitalize%}<a href="{{url.baseFull}}/trip?place={{value.place}}">{%trans my_place%}</a></td>
+        <td>{%set my_type = value.type | capitalize%}<a href="{{url.baseFull}}/trip?type={{value.type}}">{%trans my_type%}</a></td>
+        <td>{%set my_status = value.status | capitalize%}<a href="{{url.baseFull}}/trip?status={{value.status}}">{%trans my_status%}</a></td>
         <td class="s0">{{value.datecreated | tdate ("Y/m/d H:i")}}</td>
       </tr>
       {%endfor%}
