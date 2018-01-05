@@ -3,7 +3,7 @@
 
 {%block sidenav%}
 {{parent()}}
-    <li><a href="{{url.base}}/cp/options/donate"><i class='sf-gauge'></i> <span>{% trans "Donate" %}</span></a></li>
-    <li><a href="{{url.base}}/cp/options/cityplace"><i class='sf-gauge'></i> <span>{% trans "City Place" %}</span></a></li>
-    <li><a href="{{url.base}}/cp/options/product"><i class='sf-gauge'></i> <span>{% trans "Product" %}</span></a></li>
+    <li><a href="{{url.baseFull}}/trip"><i class='sf-pull-request'></i> <span>{%trans "request list"%}</span></a></li>
+    <li><a href="{{url.baseFull}}/donateproduct"><i class='sf-bag'></i> <span>{%trans "Donate product list"%}</span></a></li>
+    <li><a href="{{url.baseFull}}/donate"><i class='sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
 {%endblock%}
