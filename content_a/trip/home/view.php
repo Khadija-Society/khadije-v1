@@ -13,7 +13,7 @@ class view extends \content_a\main\view
 		$this->data->page['badge']['text'] = T_('register for new trip request');
 
 
-		$this->data->trip_list = \lib\app\travel::user_travel_list();
+		$this->data->trip_list = \lib\app\travel::user_travel_list('family');
 
 		if(!$this->data->trip_list || empty($this->data->trip_list))
 		{

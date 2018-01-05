@@ -351,7 +351,7 @@ class travel
 	}
 
 
-	public static function user_travel_list()
+	public static function user_travel_list($_type = 'family')
 	{
 		$user_id = \lib\user::id();
 		if(!$user_id)
@@ -359,7 +359,7 @@ class travel
 			return false;
 		}
 
-		$travele_list = \lib\db::get("SELECT * FROM travels WHERE `user_id` = $user_id ORDER BY id DESC LIMIT 50 ");
+		$travele_list = \lib\db::get("SELECT * FROM travels WHERE `user_id` = $user_id AND type = '$_type' ORDER BY id DESC LIMIT 50 ");
 
 		return $travele_list;
 	}
@@ -634,7 +634,7 @@ class travel
 		}
 
 		$args['user_id']     = \lib\user::id();
-		$args['type']        = 'family';
+		$args['type']        = \lib\app::request('type');
 
 		$travel_id = \lib\db\travels::insert($args);
 

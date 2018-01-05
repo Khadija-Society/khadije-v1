@@ -1,0 +1,123 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+
+
+<div class="f justify-center fs12">
+ <div class="c8 m8 s12">
+{%for key, value in group_list%}
+
+{%set myPlace = value.place%}
+{%set myStatus = value.status | capitalize %}
+
+  <div class="icard">
+
+   <div class="size-we50 size-he50 pAn">
+    <img src="{{url.static}}images/place/{{value.place}}-square.jpg" alt='{%trans myPlace%}'>
+   </div>
+    <div>
+{%if value.status == 'awaiting' and false%}
+     <a href="{{url.baseFull}}/group/profile?group={{value.id}}" title='{%trans "Click to edit"%}'><b>{%trans myPlace%}</b></a>
+{%else%}
+     <b>{%trans myPlace%}</b>
+{%endif%}
+    </div>
+
+{%if value.datemodified%}
+    <div class='s0' title='{%trans "Last modified"%}'>{{value.datemodified | tdate("Y/m/d H:i")}}</div>
+{%else%}
+    <div class='s0' title='{%trans "Request date"%}'>{{value.datecreated | tdate("Y/m/d H:i")}}</div>
+{%endif%}
+
+    <div class='s0' title='{%trans "Reserve date"%}'>{{value.startdate | fitNumber}} - {{value.enddate | fitNumber}}</div>
+    <div title='{%trans "Request date"%} {{value.datecreated | tdate("Y/m/d H:i")}}'>
+    {%trans myStatus%}
+{%if value.status == 'awaiting' or value.status == 'draft'%}
+     <a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"cancel"}' class="badge danger sm mA5">{%trans "Cancel"%}</a>
+{%endif%}
+   </div>
+  </div>
+
+
+{%endfor%}
+
+  <div class="icard">
+   <a href="{{url.baseFull}}/group/request" class="btn primary block">{%trans "register for new group request"%}</a>
+  </div>
+
+ </div>
+</div>
+
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+{%block iChild%}
+{%for key, value in child_list%}
+<div class="switch1  pA5">
+ <input type="checkbox" name="child_{{value.id}}" id="child_{{value.id}}" checked>
+ <label for="child_{{value.id}}" ></label>
+ <label for="child_{{value.id}}">{{value.firstname}} {{value.lastname}}  {{value.nationalcode | fitNumber}}</label>
+</div>
+{%endfor%}
+{%endblock%}
+
+
+
+
+
+
+{%block iDateStart%}
+<label for="startdate">{%trans "Start Date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="startdate" id="startdate" placeholder='{{"1369/04/15" | fitNumber}}' value="{{startdate}}" maxlength='20' data-format="YYYY/MM/DD" data-initialValue='false' data-view="year">
+</div>
+{%endblock%}
+
+
+
+{%block iDateEnd%}
+<label for="enddate">{%trans "End Date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="enddate" id="enddate" placeholder='{{"1369/04/15" | fitNumber}}' value="{{enddate}}" maxlength='20' data-format="YYYY/MM/DD" data-initialValue='false' data-view="year">
+</div>
+{%endblock%}
+
+{%block iCity%}
+<label for="city">{%trans "City Place"%}</label>
+<select name="city" class="input select">
+  <option value="">{%trans "Please select one itmes"%}</option>
+  {%for key, value in cityplace_list%}
+    <option value="{{value.id}}">{{value.city}} - {{value.place}}</option>
+  {%endfor%}
+</select>
+{%endblock%}
+
+
+
+
+{%block iadd%}
+<button class="btn primary block mT20">{%trans "Add"%}</button>
+{%endblock%}
+
+{%block isave%}
+<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+
+{%block iremove%}
+<input type="hidden" name="remove" value="{{utilityGET.edit}}">
+<button class="btn danger block mT20">{%trans "Remove"%}</button>
+{%endblock%}
+
+
+
+
