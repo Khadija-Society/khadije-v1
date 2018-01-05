@@ -80,6 +80,7 @@ class travels
 				users.province       AS `province`,
 				users.married        AS `married`,
 				users.city           AS `city`,
+				users.country        AS `country`,
 				users.gender         AS `gender`,
 				users.father         AS `father`,
 				users.lastname       AS `lastname`,
