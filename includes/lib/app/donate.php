@@ -356,6 +356,7 @@ class donate
 				'hazinekard' => $way,
 				'niyat'      => $niyat,
 				'fullname'   => $fullname,
+				'donate'     => 'cash',
 			]
 		];
 

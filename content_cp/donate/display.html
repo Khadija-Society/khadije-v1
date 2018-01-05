@@ -1,0 +1,85 @@
+{%extends display.khadijeCpMain%}
+
+
+{%block pageContent%}
+
+
+{%if donate_list%}
+{{block('searchblock')}}
+<div class="cbox fs12">
+{{block('datatable')}}
+</div>
+
+
+{%elseif utilityGET.q %}
+{{block('searchblock')}}
+<div class="fs14 alert alert-info pA25">
+ {%trans "No donate founded."%} {%trans "Search with new keywords."%}
+</div>
+
+
+{%else%}
+<div class="cbox fs12">
+ <h3>{%trans "You are not have donate yet!"%}</h3>
+</div>
+{%endif%}
+
+{%endblock%}
+
+
+{%block searchblock%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.baseFull}}/donate'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search in donates"%}' id="q" value="{{utilityGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block datatable%}
+
+
+
+  <table class="tbl">
+    <thead class="">
+      <tr>
+        <th>{%trans "ID"%}</th>
+        <th>{%trans "mobile"%}</th>
+        <th>{%trans "Fullname"%}</th>
+        <th>{%trans "Title"%}</th>
+        <th>{%trans "Amount"%}</th>
+        <th>{%trans "Status"%}</th>
+        <th>{%trans "Payment"%}</th>
+        <th>{%trans "Date"%}</th>
+        <th>{%trans "Niyat"%}</th>
+        <th>{%trans "Hazinekard"%}</th>
+        <th>{%trans "Unit"%}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in donate_list%}
+      <tr>
+        <td>{{value.id}}</td>
+        <!-- <td>{{value.code}}</td> -->
+        <td>{{value.mobile |fitNumber}}</td>
+        <td>{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
+        <td>{{value.title}}</td>
+        <td>{{value.plus | number_format | fitNumber}}</td>
+        <td>{{value.condition}}</td>
+        <!-- <td>{{value.verify}}</td> -->
+        <td>{{value.payment}}</td>
+        <td>{{value.date | tdate("Y-m-d H:i:s")}}</td>
+        <td>{{value.niyat}}</td>
+        <td>{{value.hazinekard}}</td>
+        <td>{{value.unit}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+{%endblock%}
+

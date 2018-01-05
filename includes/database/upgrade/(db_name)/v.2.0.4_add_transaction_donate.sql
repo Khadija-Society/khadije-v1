@@ -1,0 +1,1 @@
+ALTER TABLE `transactions` ADD `donate` VARCHAR(200) NULL AFTER `fullname`;
