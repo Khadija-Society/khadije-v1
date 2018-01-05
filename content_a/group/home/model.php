@@ -24,7 +24,7 @@ class model extends \content_a\main\model
 
 				\lib\db\travels::update(['status' => 'cancel'], $key);
 
-				\lib\debug::true(T_("Your group was canceled"));
+				\lib\debug::true(T_("Your request was canceled"));
 
 				$this->redirector($this->url('full'));
 

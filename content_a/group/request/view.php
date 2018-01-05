@@ -18,7 +18,7 @@ class view extends \content_a\main\view
 		}
 		else
 		{
-			$this->data->cityplace_list = \lib\app\travel::active_city();
+			$this->data->cityplace_list = \lib\app\travel::group_active_city();
 		}
 
 	}
