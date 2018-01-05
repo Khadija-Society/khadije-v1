@@ -6,8 +6,8 @@ class view extends \content_cp\main2\view
 {
 	public function config()
 	{
-		$this->data->page['title'] = T_("Import nationalcode");
-		$this->data->page['desc']  = T_("Import nationalcode here");
+		$this->data->page['title'] = T_("Import national code");
+		$this->data->page['desc']  = T_("Import list of national code, each line must have one nationalcode");
 
 		$this->data->bodyclass       = 'unselectable siftal';
 

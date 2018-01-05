@@ -6,8 +6,12 @@ class view extends \content_cp\main2\view
 {
 	public function config()
 	{
-		$this->data->page['title'] = T_("Edit nationalcode");
-		$this->data->page['desc']  = T_("Edit nationalcode here");
+		$this->data->page['title'] = T_("Edit national code");
+		$this->data->page['desc']  = T_("Edit special national code and update number of times");
+
+		$this->data->page['badge']['link'] = $this->url('baseFull'). '/nationalcode';
+		$this->data->page['badge']['text'] = T_('Back to national codes list');
+
 
 		$this->data->bodyclass       = 'unselectable siftal';
 

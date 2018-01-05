@@ -4,7 +4,7 @@
 {%block pageContent%}
 <div class="">
 
-  <p class="badge block primary fs14">{%trans "Nationalcode" %} {{nationalcode_detail.nationalcode | fitNumber}}</p>
+  <p class="alert alert-info fs18 txtC">{%trans "Nationalcode" %} <b>{{nationalcode_detail.nationalcode | fitNumber}}</b></p>
 <form method="post" class="f">
 
   <div class="c4 s12">
@@ -40,7 +40,9 @@
     </div>
   </div>
 
-  <button class="btn success fs16 c12">{%trans "Save"%}</button>
+  <div class="cbox">
+    <button class="btn success block">{%trans "Save"%}</button>
+  </div>
 </form>
 
 </div>

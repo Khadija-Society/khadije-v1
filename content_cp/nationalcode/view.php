@@ -6,8 +6,15 @@ class view extends \content_cp\main2\view
 {
 	public function config()
 	{
-		$this->data->page['title'] = T_("Nationalcode list");
-		$this->data->page['desc']  = T_("check nationalcode and update value of each nationalcode");
+		$this->data->page['title'] = T_("National code list");
+		$this->data->page['desc']  = T_("check nationalcode of persons and number of trips");
+
+		$export_link = ' <a href="'. $this->url('baseFull'). '/nationalcode?export=true">'. T_("Export"). '</a>';
+		$this->data->page['desc'] .= $export_link;
+
+		$this->data->page['badge']['link'] = $this->url('baseFull'). '/nationalcode/import';
+		$this->data->page['badge']['text'] = T_('Import');
+
 
 		$this->data->bodyclass       = 'unselectable siftal';
 
