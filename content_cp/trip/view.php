@@ -12,7 +12,6 @@ class view extends \content_cp\main2\view
 		$this->data->page['badge']['link'] = $this->url('baseFull'). '/trip/options';
 		$this->data->page['badge']['text'] = T_('Options');
 
-
 		$this->data->bodyclass       = 'unselectable siftal';
 
 		$args =
@@ -37,7 +36,19 @@ class view extends \content_cp\main2\view
 			$this->data->page['title'] = T_('Search'). ' '.  $search_string;
 		}
 
+		$export = false;
+		if(\lib\utility::get('export') === 'true')
+		{
+			$export = true;
+			$args['pagenation'] = false;
+		}
+
 		$this->data->trip_list = \lib\app\travel::list($search_string, $args);
+
+		if($export)
+		{
+			\lib\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->trip_list]);
+		}
 
 		$this->data->sort_link = self::make_sort_link(\lib\app\travel::$sort_field, $this->url('baseFull'). '/trip');
 
