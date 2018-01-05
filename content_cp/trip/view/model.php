@@ -114,13 +114,27 @@ class model extends \content_cp\main2\model
 				return false;
 			}
 
-			$update =
-			[
-				'startdate' => $start_date,
-				'enddate'   => $end_date,
-				'desc'      => $desc,
-			];
+			$status = \lib\utility::post('status');
+
+			if($status && !in_array($status, ['awaiting', 'spam', 'cancel', 'reject', 'review', 'notanswer', 'queue','gone', 'delete','admincancel', 'draft']))
+			{
+				\lib\debug::error(_T("Invalid status of trip"), 'status');
+				return false;
+			}
+
+			$update              = [];
+			$update['startdate'] = $start_date;
+			$update['enddate']   = $end_date;
+			$update['desc']      = $desc;
+
+			if($status)
+			{
+				$update['status'] = $status;
+			}
+
 			\lib\db\travels::update($update, \lib\utility::get('id'));
+
+			$this->send_sms($status);
 
 			\lib\debug::true(T_("The travel updated"));
 
@@ -133,9 +147,26 @@ class model extends \content_cp\main2\model
 
 	public function send_sms($_status)
 	{
-		$mobile        = '09357269759';
+		$mobile        = null;
 		$msg           = '';
-		$travel_detail = \lib\db\travels::get(['id' => \lib\utility::get('trip'), 'limit' => 1]);
+		$travel_detail = \lib\db\travels::get(['id' => \lib\utility::get('id'), 'limit' => 1]);
+		if(!isset($travel_detail['user_id']))
+		{
+			return;
+		}
+
+		$load_user = \lib\db\users::get_by_id($travel_detail['user_id']);
+		if(!isset($load_user['mobile']))
+		{
+			return;
+		}
+		if(!\lib\utility\filter::mobile($load_user['mobile']))
+		{
+			return;
+		}
+
+		$mobile = $load_user['mobile'];
+
 		if(isset($travel_detail['place']))
 		{
 			$city = T_($travel_detail['place']);
@@ -173,10 +204,7 @@ class model extends \content_cp\main2\model
 				break;
 		}
 
-
-
-
-		if($msg)
+		if($msg && $mobile)
 		{
 			\lib\utility\sms::send($mobile, $msg);
 		}
