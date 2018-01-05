@@ -355,7 +355,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   left: -200px;
   content: '\201c';
 }
-.quote-person span{
+.quote-person h4{
   display: block;
   color: #2fbfdf;
   font-weight: bold;
