@@ -42,3 +42,11 @@
  </div>
 </a>
 {%endblock%}
+
+
+{%block sidenav%}
+{{parent()}}
+    <li><a href="{{url.baseFull}}/trip"><i class='sf-pull-request'></i> <span>{%trans "request list"%}</span></a></li>
+    <li><a href="{{url.baseFull}}/donateproduct"><i class='sf-bag'></i> <span>{%trans "Donate product list"%}</span></a></li>
+    <li><a href="{{url.baseFull}}/donate"><i class='sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
+{%endblock%}
