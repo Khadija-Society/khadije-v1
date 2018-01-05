@@ -29,6 +29,32 @@ class travel
 	}
 
 
+
+	public static function group_active_city()
+	{
+		$get_detail =
+		[
+			'cat'    => 'group_city',
+			'status' => 'enable',
+		];
+
+		$get = \lib\db\options::get($get_detail);
+
+		$city_list = [];
+
+		if(is_array($get))
+		{
+			$temp = array_column($get, 'value');
+			foreach ($temp as $key => $value)
+			{
+				$city_list[$value] = T_($value);
+			}
+		}
+
+		return $city_list;
+	}
+
+
 	public static function active_city()
 	{
 		$get_detail =
@@ -188,6 +214,113 @@ class travel
 		}
 	}
 
+	//----------------------------------------------------------------------------------------------------
+
+	public static function group_city_signup_setting($_city, $_action)
+	{
+
+		if(!in_array($_city, self::city_list()))
+		{
+			\lib\debug::error(T_("Invalid city"));
+			return false;
+		}
+
+		self::save_option_setting('group_city', 'group_city_'. $_city, $_city, $_action);
+
+	}
+
+
+	public static function group_master_active($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_master_active', 'value' => 'group_master_active', 'limit' => 1]);
+			if(isset($get['status']) && $get['status'] === 'enable')
+			{
+				return true;
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('group_settings', 'group_master_active', 'group_master_active', $_action);
+		}
+	}
+
+
+	public static function group_count_partner_min($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_count_partner_min', 'limit' => 1]);
+			if(isset($get['value']) && $get['value'] )
+			{
+				return $get['value'];
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('group_settings', 'group_count_partner_min', $_action, $_action);
+		}
+	}
+
+	public static function group_count_partner_max($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_count_partner_max', 'limit' => 1]);
+			if(isset($get['value']) && $get['value'] )
+			{
+				return $get['value'];
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('group_settings', 'group_count_partner_max', $_action, $_action);
+		}
+	}
+
+
+	public static function group_max_awaiting($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_max_awaiting', 'limit' => 1]);
+			if(isset($get['value']) && $get['value'])
+			{
+				return $get['value'];
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('group_settings', 'group_max_awaiting', $_action, $_action);
+		}
+	}
+
+
+	public static function group_getdate($_action = 'get')
+	{
+		if($_action === 'get')
+		{
+			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_getdate', 'value' => 'group_getdate', 'limit' => 1]);
+			if(isset($get['status']) && $get['status'] === 'enable')
+			{
+				return true;
+			}
+			return false;
+		}
+		else
+		{
+			self::save_option_setting('group_settings', 'group_getdate', 'group_getdate', $_action);
+		}
+	}
+
+
+
+	//----------------------------------------------------------------------------------------------------
 
 	public static function trip_getdate($_action = 'get')
 	{
