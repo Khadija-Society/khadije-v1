@@ -9,13 +9,13 @@ class twigTransTerms
 	echo T_("khadije");                                                               // Line 39
 	echo T_("Najmeh Shabestan");                                                      // Line 50
 	echo T_("Najmeh Park, Fatemi St");                                                // Line 49
-	echo T_("Qom");                                                                   // Line 70
+	echo T_("Qom");                                                                   // Line 150
 	echo T_("Iran");                                                                  // Line 47
-	echo T_("Name");                                                                  // Line 162
+	echo T_("Name");                                                                  // Line 266
 	echo T_("Full Name");                                                             // Line 85
-	echo T_("Mobile");                                                                // Line 178
+	echo T_("Mobile");                                                                // Line 282
 	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 93
-	echo T_("Email");                                                                 // Line 345
+	echo T_("Email");                                                                 // Line 449
 	echo T_("Your Message");                                                          // Line 108
 	echo T_("Send");                                                                  // Line 115
 
@@ -24,8 +24,8 @@ class twigTransTerms
 	echo T_("Do you know?");                                                          // Line 67
 	echo T_("Register in first trip request");                                        // Line 71
 	echo T_("Donate");                                                                // Line 24
-	echo T_("Mashhad");                                                               // Line 86
-	echo T_("Karbala");                                                               // Line 78
+	echo T_("Mashhad");                                                               // Line 168
+	echo T_("Karbala");                                                               // Line 159
 	echo T_("license and supporters");                                                // Line 119
 	echo T_("Certificate");                                                           // Line 124
 	echo T_("Secured by Arvancloud");                                                 // Line 125
@@ -47,7 +47,7 @@ class twigTransTerms
 	echo T_("Your help");                                                             // Line 85
 	echo T_("Enter a valid number");                                                  // Line 85
 	echo T_("Pay");                                                                   // Line 104
-	echo T_("First name");                                                            // Line 15
+	echo T_("First name");                                                            // Line 48
 	echo T_("Your name");                                                             // Line 112
 	echo T_("Enter a valid name");                                                    // Line 112
 	echo T_("Full name");                                                             // Line 120
@@ -102,80 +102,85 @@ class twigTransTerms
 	echo T_("Dashboard");                                                             // Line 5
 
 	//--------------------------------------------------content_a\profile\display.html
-	echo T_("Enter a valid name from 2 to 40 character");                             // Line 162
-	echo T_("Last name");                                                             // Line 170
-	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 170
-	echo T_("Like 09120123456");                                                      // Line 180
-	echo T_("National code");                                                         // Line 186
-	echo T_("10 digit national code");                                                // Line 188
-	echo T_("Father name");                                                           // Line 196
-	echo T_("Birthday");                                                              // Line 202
-	echo T_("Gender");                                                                // Line 213
-	echo T_("Married");                                                               // Line 221
-	echo T_("Single");                                                                // Line 221
-	echo T_("Marital");                                                               // Line 222
-	echo T_("Yes");                                                                   // Line 230
-	echo T_("No");                                                                    // Line 230
-	echo T_("Arabic Language");                                                       // Line 231
-	echo T_("Country");                                                               // Line 247
-	echo T_("Province");                                                              // Line 255
-	echo T_("City");                                                                  // Line 263
-	echo T_("Zip code");                                                              // Line 271
-	echo T_("Passport id");                                                           // Line 281
-	echo T_("Passport expire date");                                                  // Line 289
-	echo T_("Home Address");                                                          // Line 299
-	echo T_("Work Address");                                                          // Line 304
-	echo T_("Description");                                                           // Line 311
-	echo T_("Phone");                                                                 // Line 336
-	echo T_("Like");                                                                  // Line 347
-	echo T_("Education");                                                             // Line 386
-	echo T_("Education course");                                                      // Line 395
-	echo T_("Job");                                                                   // Line 404
+	echo T_("Enter a valid name from 2 to 40 character");                             // Line 266
+	echo T_("Last name");                                                             // Line 274
+	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 274
+	echo T_("Like 09120123456");                                                      // Line 284
+	echo T_("National code");                                                         // Line 290
+	echo T_("10 digit national code");                                                // Line 292
+	echo T_("Father name");                                                           // Line 300
+	echo T_("Birthday");                                                              // Line 306
+	echo T_("Gender");                                                                // Line 317
+	echo T_("Married");                                                               // Line 325
+	echo T_("Single");                                                                // Line 325
+	echo T_("Marital");                                                               // Line 326
+	echo T_("Yes");                                                                   // Line 334
+	echo T_("No");                                                                    // Line 334
+	echo T_("Arabic Language");                                                       // Line 335
+	echo T_("Country");                                                               // Line 351
+	echo T_("Province");                                                              // Line 359
+	echo T_("City");                                                                  // Line 367
+	echo T_("Zip code");                                                              // Line 375
+	echo T_("Passport id");                                                           // Line 385
+	echo T_("Passport expire date");                                                  // Line 393
+	echo T_("Home Address");                                                          // Line 403
+	echo T_("Work Address");                                                          // Line 408
+	echo T_("Description");                                                           // Line 415
+	echo T_("Phone");                                                                 // Line 440
+	echo T_("Like");                                                                  // Line 451
+	echo T_("Education");                                                             // Line 490
+	echo T_("Education course");                                                      // Line 499
+	echo T_("Job");                                                                   // Line 508
 	echo T_("Add");                                                                   // Line 84
-	echo T_("Save");                                                                  // Line 29
+	echo T_("Save");                                                                  // Line 48
 
 	//------------------------------------------------content_a\trip\home\display.html
 	echo T_("Click to edit");                                                         // Line 21
-	echo T_("Last modified");                                                         // Line 28
+	echo T_("Last modified");                                                         // Line 40
 	echo T_("Request date");                                                          // Line 34
-	echo T_("Reserve date");                                                          // Line 33
+	echo T_("Reserve date");                                                          // Line 43
 	echo T_("Cancel");                                                                // Line 22 Seperate
 	echo T_("register for new trip request");                                         // Line 46
 	echo T_("Start Date");                                                            // Line 79
 	echo T_("End Date");                                                              // Line 88
 	echo T_("City Place");                                                            // Line 17
 	echo T_("Please select one itmes");                                               // Line 49
-	echo T_("Remove");                                                                // Line 428
+	echo T_("Remove");                                                                // Line 532
 
 	//---------------------------------------------content_a\trip\partner\display.html
-	echo T_("List of your child");                                                    // Line 42
-	echo T_("Child");                                                                 // Line 126
-	echo T_("You are not registered partner yet");                                    // Line 76
-	echo T_("you can send a single person request without partner on press below button");// Line 77
-	echo T_("Require");                                                               // Line 186
-	echo T_("Nesbat");                                                                // Line 239
-	echo T_("Add as new partner");                                                    // Line 411
-	echo T_("Final register in trip request");                                        // Line 422
-
-	//---------------------------------------------content_a\trip\profile\display.html
-	echo T_("Iranian must fill");                                                     // Line 92
+	echo T_("List of your child");                                                    // Line 43
+	echo T_("Child");                                                                 // Line 142
+	echo T_("You are not registered partner yet");                                    // Line 77
+	echo T_("you can send a single person request without partner on press below button");// Line 78
+	echo T_("Foreigners must fill");                                                  // Line 208
+	echo T_("Require");                                                               // Line 290
 	echo T_("Male");                                                                  // Line 121
 	echo T_("Female");                                                                // Line 126
-	echo T_("Foreigners must fill");                                                  // Line 208
-	echo T_("Address");                                                               // Line 226
+	echo T_("Iranian must fill");                                                     // Line 92
+	echo T_("Nesbat");                                                                // Line 343
+	echo T_("Add as new partner");                                                    // Line 515
+	echo T_("Final register in trip request");                                        // Line 366
+
+	//---------------------------------------------content_a\trip\profile\display.html
+	echo T_("Address");                                                               // Line 25
 	echo T_("Continue");                                                              // Line 58
 
 	//---------------------------------------------content_a\trip\request\display.html
 	echo T_("Trip signup is disabled");                                               // Line 10
 	echo T_("All cities are disabled now");                                           // Line 18
 
+	//----------------------------------------------------content_cp\home\display.html
+	echo T_("Donate product list");                                                   // Line 21
+	echo T_("Donate list");                                                           // Line 31
+	echo T_("request list");                                                          // Line 41
+
 	//----------------------------------------------------content_cp\main2\layout.html
 	echo T_("Product");                                                               // Line 10
 
 	//---------------------------------------content_cp\options\cityplace\display.html
 	echo T_("List of city place");                                                    // Line 22
-	echo T_("Place");                                                                 // Line 31
-	echo T_("Delete");                                                                // Line 26
+	echo T_("Place");                                                                 // Line 72
+	echo T_("Delete");                                                                // Line 251
 	echo T_("Please select one items");                                               // Line 60
 	echo T_("Enter a valid place");                                                   // Line 72
 
@@ -193,22 +198,13 @@ class twigTransTerms
 	echo T_("Count");                                                                 // Line 112
 	echo T_("Amount");                                                                // Line 134
 	echo T_("Desctiption");                                                           // Line 41
-	echo T_("Edit");                                                                  // Line 134
+	echo T_("Edit");                                                                  // Line 150
 	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 72
 	echo T_("Enter a valid title");                                                   // Line 96
 	echo T_("Enter a valid count");                                                   // Line 112
 	echo T_("Active");                                                                // Line 120
 	echo T_("Deactive");                                                              // Line 120
-	echo T_("Status");                                                                // Line 38
-
-	//--------------------------------------------content_cp\options\trip\display.html
-	echo T_("Enable Trip");                                                           // Line 37
-	echo T_("Maximum partner count");                                                 // Line 45
-	echo T_("Maximum people can signup as awaiting");                                 // Line 53
-	echo T_("User can set date of trip");                                             // Line 61
-	echo T_("Can trip user to qom");                                                  // Line 70
-	echo T_("Can trip user to karbala");                                              // Line 78
-	echo T_("Can trip user to mashhad");                                              // Line 86
+	echo T_("Status");                                                                // Line 54
 
 	//----------------------------------------------------content_cp\trip\display.html
 	echo T_("No trip founded.");                                                      // Line 17
@@ -218,19 +214,53 @@ class twigTransTerms
 	echo T_("Search");                                                                // Line 35
 	echo T_("ID");                                                                    // Line 47
 	echo T_("Count people");                                                          // Line 52
-	echo T_("Type");                                                                  // Line 37
+	echo T_("Type");                                                                  // Line 53
 	echo T_("Desc");                                                                  // Line 55
-	echo T_("Date created");                                                          // Line 39
+	echo T_("Date created");                                                          // Line 38
+
+	//--------------------------------------------content_cp\trip\options\display.html
+	echo T_("Family trip options");                                                   // Line 27
+	echo T_("Enable Family Trip");                                                    // Line 56
+	echo T_("Maximum partner count");                                                 // Line 184
+	echo T_("Maximum people can signup as awaiting");                                 // Line 72
+	echo T_("User can set date of trip");                                             // Line 80
+	echo T_("Can trip user to qom");                                                  // Line 150
+	echo T_("Can trip user to karbala");                                              // Line 159
+	echo T_("Can trip user to mashhad");                                              // Line 168
+	echo T_("Group trip options");                                                    // Line 116
+	echo T_("Enable Group Trip");                                                     // Line 141
+	echo T_("Minimum group count");                                                   // Line 175
+	echo T_("Minimum partner count");                                                 // Line 176
+	echo T_("Maximum group count");                                                   // Line 183
 
 	//-----------------------------------------------content_cp\trip\view\display.html
-	echo T_("Father");                                                                // Line 25
-	echo T_("Nationalcode");                                                          // Line 30
-	echo T_("Start date");                                                            // Line 318
-	echo T_("Enddate");                                                               // Line 36
-	echo T_("List of trip partner");                                                  // Line 90
-	echo T_("No partner set");                                                        // Line 143
-	echo T_("End date");                                                              // Line 327
-	echo T_("Edit partner");                                                          // Line 416
+	echo T_("Nationalcode");                                                          // Line 23
+	echo T_("List of trip partner");                                                  // Line 106
+	echo T_("No partner set");                                                        // Line 159
+	echo T_("Status of trip");                                                        // Line 202
+	echo T_("Draft");                                                                 // Line 206
+	echo T_("try to fill request");                                                   // Line 206
+	echo T_("Awaiting");                                                              // Line 21 Seperate
+	echo T_("send new complete request");                                             // Line 211
+	echo T_("cancel from user");                                                      // Line 216
+	echo T_("Spam");                                                                  // Line 25 Seperate
+	echo T_("inapropirate request and spam detected");                                // Line 221
+	echo T_("Reject");                                                                // Line 24 Seperate
+	echo T_("does not accepted for some reason");                                     // Line 226
+	echo T_("Review");                                                                // Line 231
+	echo T_("after check and before accept");                                         // Line 231
+	echo T_("Not Answer");                                                            // Line 236
+	echo T_("not answer to call check");                                              // Line 236
+	echo T_("queue");                                                                 // Line 241
+	echo T_("In queue of send");                                                      // Line 241
+	echo T_("Gone");                                                                  // Line 246
+	echo T_("successfully go to trip");                                               // Line 246
+	echo T_("delete from admin");                                                     // Line 256
+	echo T_("Admin Cancel");                                                          // Line 256
+	echo T_("Start date");                                                            // Line 422
+	echo T_("End date");                                                              // Line 431
+	echo T_("Edit partner");                                                          // Line 520
+	echo T_("Save changes");                                                          // Line 526
 
 	//--------------------------------------------includes\languages\trans_static.html
 	echo T_("Khadije");                                                               // Line 7 Seperate
@@ -242,10 +272,7 @@ class twigTransTerms
 	echo T_("Expire");                                                                // Line 18 Seperate
 	echo T_("Deleted");                                                               // Line 19 Seperate
 	echo T_("Lock");                                                                  // Line 20 Seperate
-	echo T_("Awaiting");                                                              // Line 21 Seperate
 	echo T_("Accept");                                                                // Line 23 Seperate
-	echo T_("Reject");                                                                // Line 24 Seperate
-	echo T_("Spam");                                                                  // Line 25 Seperate
 	echo T_("enable");                                                                // Line 26 Seperate
 	echo T_("disable");                                                               // Line 27 Seperate
 	echo T_("expire");                                                                // Line 28 Seperate

@@ -29,7 +29,7 @@
           <span class="badge">{{travel_detail.city}}</span>
           <span class="badge">{{travel_detail.address}}</span>
           <br>
-          <small class="badge info">{{travel_detail.mobile}}</small>
+          <small class="badge info fs12">{{travel_detail.mobile}}</small>
         </p>
     </div>
 
@@ -50,16 +50,19 @@
 
 
 
-<div class="cbox">
-  <form method="post">
-    <input type="hidden" name="edit_travel" value="edit_travel">
-    {{block ('istartdate') }}
-    {{block ('ienddate') }}
-    {{block ('iDescription') }}
-    {{block ('iEdit') }}
-  </form>
+<form method="post" class="cbox">
+  <div class="f">
 
-</div>
+    <div class="c8 s12 pRa10">{{block('iStatus')}}</div>
+    <div class="c4 s12">
+      <input type="hidden" name="edit_travel" value="edit_travel">
+      {{block ('istartdate') }}
+      {{block ('ienddate') }}
+      {{block ('iDescription') }}
+    </div>
+  </div>
+  {{block ('iSave') }}
+</form>
 
 
 <div class="f">
@@ -68,7 +71,6 @@
   </div>
   <div class="c9 s12">
 {{block ('partnertList') }}
-{{block ('statusForm') }}
   </div>
  </div>
 {%endblock%}
@@ -192,44 +194,74 @@
 
 
 
-{%block statusForm%}
-    <form method="post" class="cbox">
-      <input type="hidden" name="status_change" value="status_change">
-      {{block('iStatus')}}
-      <button class="btn success block ">{%trans "Change Status"%}</button>
-    </form>
-{%endblock%}
-
-
 {%block iStatus%}
 
-<div class="mT15">
+<div>
  <label >{%trans "Status of trip"%}</label>
+ <div class="f">
+  <div class="c6 s12">
 
- <div class="radio1 green">
-  <input type="radio" id="r-available" name="status" value="available" {%if trip.status == 'available' or not trip.status %} checked{%endif%}>
-  <label for="r-available">{%trans "Avalible"%} <small>{%trans "Normal status of trip"%}</small></label>
+   <div class="radio1 blue">
+    <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if trip.status == 'awaiting' or not trip.status %} checked{%endif%}>
+    <label for="r-awaiting">{%trans "Awaiting"%} <small>{%trans "send new complete request"%}</small></label>
+   </div>
+
+   <div class="radio1 red">
+    <input type="radio" id="r-spam" name="status" value="spam" {%if trip.status == 'spam' %} checked{%endif%}>
+    <label for="r-spam">{%trans "Spam"%} <small>{%trans "inapropirate request and spam detected"%}</small></label>
+   </div>
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-review" name="status" value="review" {%if trip.status == 'review' %} checked{%endif%}>
+    <label for="r-review">{%trans "Review"%} <small>{%trans "after check and before accept"%}</small></label>
+   </div>
+
+   <div class="radio1 blue">
+    <input type="radio" id="r-queue" name="status" value="queue" {%if trip.status == 'queue' %} checked{%endif%}>
+    <label for="r-queue">{%trans "queue"%} <small>{%trans "In queue of send"%}</small></label>
+   </div>
+
+   <div class="radio1 green">
+    <input type="radio" id="r-gone" name="status" value="gone" {%if trip.status == 'gone' %} checked{%endif%}>
+    <label for="r-gone">{%trans "Gone"%} <small>{%trans "successfully go to trip"%}</small></label>
+   </div>
+
+
+  </div>
+  <div class="c6 s12">
+
+   <div class="radio1 black">
+    <input type="radio" id="r-draft" name="status" value="draft" {%if trip.status == 'draft' or not trip.status %} checked{%endif%}>
+    <label for="r-draft">{%trans "Draft"%} <small>{%trans "try to fill request"%}</small></label>
+   </div>
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-cancel" name="status" value="cancel" {%if trip.status == 'cancel' %} checked{%endif%}>
+    <label for="r-cancel">{%trans "Cancel"%} <small>{%trans "cancel from user"%}</small></label>
+   </div>
+
+   <div class="radio1 red">
+    <input type="radio" id="r-reject" name="status" value="reject" {%if trip.status == 'reject' %} checked{%endif%}>
+    <label for="r-reject">{%trans "Reject"%} <small>{%trans "does not accepted for some reason"%}</small></label>
+   </div>
+
+   <div class="radio1 black">
+    <input type="radio" id="r-notanswer" name="status" value="notanswer" {%if trip.status == 'notanswer'%} checked{%endif%} >
+    <label for="r-notanswer">{%trans "Not Answer"%} <small>{%trans "not answer to call check"%}</small></label>
+   </div>
+
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-admincancel" name="status" value="admincancel" {%if trip.status == 'admincancel'%} checked{%endif%} >
+    <label for="r-admincancel">{%trans "Admin Cancel"%} <small>{%trans "delete from admin"%}</small></label>
+   </div>
+  </div>
  </div>
 
- <div class="radio1 blue">
-  <input type="radio" id="r-soon" name="status" value="soon" {%if trip.status == 'soon' %} checked{%endif%}>
-  <label for="r-soon">{%trans "Soon"%} <small>{%trans "maybe come in future and be available"%}</small></label>
- </div>
 
- <div class="radio1 yellow">
-  <input type="radio" id="r-unavailable" name="status" value="unavailable" {%if trip.status == 'unavailable' %} checked{%endif%}>
-  <label for="r-unavailable">{%trans "Unavailable"%} <small>{%trans "temporary does not exist in store"%}</small></label>
- </div>
 
- <div class="radio1 red">
-  <input type="radio" id="r-discountinued" name="status" value="discountinued" {%if trip.status == 'discountinued' %} checked{%endif%}>
-  <label for="r-discountinued">{%trans "Discountinued"%} <small>{%trans "does not exist for now and on the future"%}</small></label>
- </div>
 
- <div class="radio1 black mB25">
-  <input type="radio" id="r-unset" name="status" value="unset" {%if trip.status == 'unset'%} checked{%endif%} >
-  <label for="r-unset">{%trans "Unset"%} <small>{%trans "Unknown status for trip"%}</small></label>
- </div>
+
 </div>
 {%endblock%}
 
@@ -387,7 +419,7 @@
 
 {%block iDescription%}
 <label for='fdesc'>{%trans "Description"%}</label>
-<textarea name="desc" rows="3" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{userdetail.desc}}</textarea>
+<textarea name="desc" rows="5" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{userdetail.desc}}</textarea>
 {%endblock%}
 
 
@@ -497,8 +529,8 @@
 
 
 
-{%block inext%}
-<button class="btn success block ">{%trans "Final register in trip request"%}</button>
+{%block iSave%}
+<button class="btn success block mT20">{%trans "Save changes"%}</button>
 {%endblock%}
 
 
