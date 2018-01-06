@@ -23,21 +23,14 @@
  {{block('address2')}}
  {{block('certificates')}}
 
+ {{block('imani2')}}
+
 {%endblock%}
 
 
 
 {%block landPage%}
-<div id='landing' data-scroll>
-
-</div>
-{%endblock%}
-
-
-{%block empty%}
-<section style="min-height: 400px;text-align: center;font-size: 10em;color:#ddd">
-...
-</section>
+<div id='landing' data-scroll></div>
 {%endblock%}
 
 
@@ -54,6 +47,24 @@
         <div class="videoBox">
           <div id="15143527106877784"><script async src="https://www.aparat.com/embed/o4Kc8?data[rnddiv]=15143527106877784"></script></div>
         </div>
+      </div>
+    </div>
+  </div>
+ </div>
+{%endblock%}
+
+
+{%block imani%}
+ <div class="tile fs14" id='imaniBox'>
+  <div class="cn">
+    <div class="f">
+      <div class="c s12">
+        <img src="{{url.static}}images/homepage/imani.png" alt='شهید مهدی ایمانی'>
+      </div>
+      <div class="c5 s12 text">
+        <h2><a href="{{url.base}}/about">{%trans "About"%} {{site.title}}</a></h2>
+        <p>موسسه حضرت خدیجه علیها السلام به همت جناب آقای زهیر ثباتی مقدم در سال 1394و با حضور حضرت حجت الاسلام و المسلمین فرحزاد ایجاد و بعداً با عنوان توسعه فرهنگ زیارت اهل بیت علیهم السلام و ترویج نام و مرام مادران و همسران اهل بیت علیهم السلام بویژه حضرت خدیجه علیها السلام   و احیای سنن فراموش شده (برگزاری مناسبتها و سنن فراموش شده یا کمتر مورد توجه قرار گرفته مثل قرباینی،اطعام غدیر،وفات حضرت خدیجه  و...) فعالیت آن ادامه پیدا کرد.</p>
+        <p>مأموریت مشخص موسسه همانگونه که از نامش برداشت میشود، ساماندهی امور زائرین با کمک و مشارکت مردم و ایجاد روحیه انجام امور خیریه حتی با ارقام محدود می باشد.</p>
       </div>
     </div>
   </div>
@@ -115,7 +126,7 @@
 
 {%block certificates%}
 <section id='certificateTile'>
-  <div class="cn f">
+  <div class="cn">
     <div class="f">
       <div class="c s12"><h3>{%trans "license and supporters"%}</h3></div>
       <div class="cauto s12">
@@ -135,7 +146,6 @@
 {%block address%}
 <a id='addressTile' href="{{url.base}}/contact"></a>
 {%endblock%}
-
 
 
 {%block donate%}
@@ -210,8 +220,5 @@
   </div>
 </section>
 {%endblock%}
-
-
-
 
 
