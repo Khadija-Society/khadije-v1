@@ -13,6 +13,7 @@ class view extends \content_a\main\view
 		$this->data->page['badge']['text'] = T_('check your service requests');
 
 		$this->data->service_need_list = \lib\db\needs::get(['type' => 'expertise', 'status' => 'enable']);
+
 	}
 }
 ?>

@@ -1,11 +1,11 @@
 <?php
-namespace content_a\service\partner;
+namespace content_a\service\detail;
 
 
 class model extends \content_a\main\model
 {
 
-	public function post_partner()
+	public function post_detail()
 	{
 		if(\lib\utility::post('next') === 'next')
 		{
@@ -36,7 +36,7 @@ class model extends \content_a\main\model
 			\lib\db\travelusers::remove(\lib\utility::post('key'), \lib\utility::get('service'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector($this->url('baseFull'). '/service/partner?service='. \lib\utility::get('service'));
+				$this->redirector($this->url('baseFull'). '/service/detail?service='. \lib\utility::get('service'));
 			}
 		}
 		else

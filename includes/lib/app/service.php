@@ -131,7 +131,6 @@ class service
 		$args['file']        = $file;
 		$args['startdate']   = $startdate;
 		$args['enddate']     = $enddate;
-		$args['status']      = $status;
 		$args['desc']        = $desc;
 		$args['status']      = $status;
 
@@ -272,9 +271,11 @@ class service
 			return false;
 		}
 
+		$args['user_id'] = \lib\user::id();
+
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
 		{
-			$args['status']  = 'enable';
+			$args['status']  = 'draft';
 		}
 
 		$return = [];

@@ -1,5 +1,5 @@
 <?php
-namespace content_a\service\partner;
+namespace content_a\service\detail;
 
 
 class controller extends \content_a\main\controller
@@ -8,7 +8,7 @@ class controller extends \content_a\main\controller
 	{
 		$this->check_service_id();
 
-		$this->post('partner')->ALL();
+		$this->post('detail')->ALL();
 		$this->get()->ALL();
 	}
 }

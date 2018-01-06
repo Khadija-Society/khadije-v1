@@ -8,17 +8,16 @@ class model extends \content_a\main\model
 	public function post_service()
 	{
 
-		$post           = [];
-		$post['city']   = \lib\utility::post('city');
-		$post['status'] = 'draft';
-		$post['type']   = 'family';
+		$post            = [];
+		$post['need_id'] = \lib\utility::post('need');
+		$post['status']  = 'draft';
 
-		$travel_id = \lib\app\travel::add($post);
+		$service_id = \lib\app\service::add($post);
 
-		if(\lib\debug::$status && $travel_id)
+		if(\lib\debug::$status && $service_id)
 		{
-			\lib\debug::true(T_("Your Travel was saved"));
-			$this->redirector($this->url('baseFull'). '/service/profile?service='. $travel_id);
+			\lib\debug::true(T_("Your request was saved"));
+			$this->redirector($this->url('baseFull'). '/service/profile?id='. $service_id);
 		}
 	}
 }

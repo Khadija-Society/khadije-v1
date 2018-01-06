@@ -1,5 +1,5 @@
 <?php
-namespace content_a\service\partner;
+namespace content_a\service\detail;
 
 
 class view extends \content_a\main\view
@@ -7,7 +7,7 @@ class view extends \content_a\main\view
 	public function config()
 	{
 		$this->data->page['title'] = T_("Register for new service request"). ' | '. T_('Step 3');
-		$this->data->page['desc']  = T_('fill your partner detail'). ' '. T_('partner can be family or friends'). ' '. T_('Also you can skip this step and register only for yours without partner');
+		$this->data->page['desc']  = T_('fill your detail detail'). ' '. T_('detail can be family or friends'). ' '. T_('Also you can skip this step and register only for yours without detail');
 
 		// $this->data->page['badge']['link'] = $this->url('baseFull'). '/service';
 		// $this->data->page['badge']['text'] = T_('check your service requests');
