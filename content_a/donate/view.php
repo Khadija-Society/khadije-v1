@@ -18,7 +18,6 @@ class view extends \content_a\main\view
 			\lib\session::set('payment_verify_ok', null);
 			$this->data->payment_verify_msg = T_("Thanks for your payment");
 		}
-
 	}
 }
 ?>

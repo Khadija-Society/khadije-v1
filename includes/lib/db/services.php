@@ -61,19 +61,14 @@ class services
 			'search_field'      =>
 			"
 				(
-					users.firstname LIKE '%__string__%' OR
-					users.lastname LIKE '%__string__%' OR
-					users.nationalcode LIKE '%__string__%' OR
-					services.id = '__string__' OR
-					services.place = '__string__'
+
+					services.expert = '__string__'
 
 				)
 			",
 			'public_show_field' =>
 			"
-				nationalcodes.qom    AS `qom`,
-				nationalcodes.mashhad AS `mashhad`,
-				nationalcodes.karbala AS `karbala`,
+
 				users.firstname      AS `firstname`,
 				users.mobile         AS `mobile`,
 				users.birthday       AS `birthday`,
@@ -91,12 +86,12 @@ class services
 				users.father         AS `father`,
 				users.lastname       AS `lastname`,
 				users.nationalcode   AS `nationalcode`,
-				 services.*
+				services.*
 			",
 			'master_join'       =>
 			"
 				INNER JOIN users ON users.id = services.user_id
-				LEFT JOIN nationalcodes ON nationalcodes.nationalcode = users.nationalcode
+
 			",
 		];
 
