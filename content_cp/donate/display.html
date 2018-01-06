@@ -5,14 +5,14 @@
 
 
 {%if donate_list%}
-{{block('searchblock')}}
+{{block('GlanceDetail')}}
 <div class="cbox fs12">
 {{block('datatable')}}
 </div>
 
 
 {%elseif utilityGET.q %}
-{{block('searchblock')}}
+{{block('GlanceDetail')}}
 <div class="fs14 alert alert-info pA25">
  {%trans "No donate founded."%} {%trans "Search with new keywords."%}
 </div>
@@ -27,14 +27,14 @@
 {%endblock%}
 
 
-{%block searchblock%}
+{%block GlanceDetail%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.baseFull}}/donate'>
-    <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search in donates"%}' id="q" value="{{utilityGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
-      <button class="addon btn ">{%trans "Search" %}</button>
+  <div class="f">
+    <div class="c4">
+
     </div>
-  </form>
+
+  </div>
 </div>
 {%endblock%}
 
@@ -44,38 +44,30 @@
 
 
   <table class="tbl">
-    <thead class="">
+    <thead class="primary">
       <tr>
-        <th>{%trans "ID"%}</th>
+        <th class="s0">{%trans "Name"%}</th>
         <th>{%trans "mobile"%}</th>
-        <th>{%trans "Fullname"%}</th>
-        <th>{%trans "Title"%}</th>
+        <th class="s0">{%trans "Title"%}</th>
         <th>{%trans "Amount"%}</th>
-        <th>{%trans "Status"%}</th>
-        <th>{%trans "Payment"%}</th>
-        <th>{%trans "Date"%}</th>
-        <th>{%trans "Niyat"%}</th>
+        <th class="s0">{%trans "Niyat"%}</th>
         <th>{%trans "Hazinekard"%}</th>
-        <th>{%trans "Unit"%}</th>
+        <th class="s0">{%trans "Status"%}</th>
+        <th class="s0">{%trans "Date"%}</th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in donate_list%}
       <tr>
-        <td>{{value.id}}</td>
-        <!-- <td>{{value.code}}</td> -->
+        <td class="s0">{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
         <td>{{value.mobile |fitNumber}}</td>
-        <td>{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
-        <td>{{value.title}}</td>
-        <td>{{value.plus | number_format | fitNumber}}</td>
-        <td>{{value.condition}}</td>
-        <!-- <td>{{value.verify}}</td> -->
-        <td>{{value.payment}}</td>
-        <td>{{value.date | tdate("Y-m-d H:i:s")}}</td>
-        <td>{{value.niyat}}</td>
+        <td class="s0">{{value.title}} <span class="sf-zarinpal"></span></td>
+        <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} {{value.plus | number_format | fitNumber}}  {%set pUnit = value.unit%}{%trans pUnit%}</td>
+        <td class="s0">{{value.niyat}}</td>
         <td>{{value.hazinekard}}</td>
-        <td>{{value.unit}}</td>
+        <td class="s0">{{value.condition}}</td>
+        <td class="s0">{{value.date | tdate("Y-m-d H:i:s")}}</td>
       </tr>
       {%endfor%}
     </tbody>
