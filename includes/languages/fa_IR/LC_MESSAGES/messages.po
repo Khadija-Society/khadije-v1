@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-01-06 11:48+0330\n"
-"PO-Revision-Date: 2018-01-06 11:54+0330\n"
+"POT-Creation-Date: 2018-01-06 13:23+0330\n"
+"PO-Revision-Date: 2018-01-06 13:23+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -1871,7 +1871,7 @@ msgstr "ورود به جیبرس"
 
 #: dash/addons/includes/languages/trans_addons.php:111
 #: khadije/content_cp/donate/view.php:30 khadije/content_cp/nationalcode/view.php:31
-#: khadije/content_cp/service/view.php:35 khadije/content_cp/trip/view.php:36
+#: khadije/content_cp/service/view.php:35 khadije/content_cp/trip/view.php:38
 #: khadije/includes/languages/trans_addons.php:111
 #: khadije/includes/languages/trans_twig.php:231
 msgid "Search"
@@ -8558,7 +8558,7 @@ msgstr "درخواست شما در وضعیت پیش‌نویس نیست و ام
 msgid "Husband of the aunt"
 msgstr "شوهر عمه"
 
-#: khadije/content_a/service/detail/model.php:27
+#: khadije/content_a/service/detail/model.php:28
 msgid "Detail was saved"
 msgstr "جزئیات ذخیره شد"
 

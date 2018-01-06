@@ -3,21 +3,31 @@
 
 {%block pageContent%}
 
+<div class="f justify-center">
+	<div class="c6">
+		<div class="cbox">
+			<form method="post">
+				{{block('iThumb--')}}
 
-<div class="cbox">
-	<form method="post">
-		{{block('iThumb')}}
-		{{block('iexpert')}}
-		{{block('iexpertvalue')}}
-		{{block('iexpertyear')}}
-		{{block('iJob')}}
-		{{block('iArabicLang')}}
-		{{block('istartdate')}}
-		{{block('ienddate')}}
-		{{block('icar')}}
-		{{block('iDescription')}}
-		{{block('iAdd')}}
-	</form>
+				{{block('iexpert')}}
+				<div class="f">
+					<div class="c6 s12 pRa5">{{block('iexpertvalue')}}</div>
+					<div class="c6 s12 pRa5">{{block('iexpertyear')}}</div>
+				</div>
+				<div class="f">
+					<div class="c6 s12 pRa5">{{block('istartdate')}}</div>
+					<div class="c6 s12 pRa5">{{block('ienddate')}}</div>
+				</div>
+				{{block('iJob')}}
+
+				{{block('icar2')}}
+				{{block('iDescription')}}
+				{{block('iArabicLang')}}
+				{{block('iAdd')}}
+			</form>
+		</div>
+
+	</div>
 </div>
 
 {%endblock%}
@@ -26,7 +36,7 @@
 
 {%block iDescription%}
 <label for='fdesc'>{%trans "Description"%}</label>
-<textarea name="desc"  rows="3" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{service_detail.desc}}</textarea>
+<textarea name="desc"  rows="5" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{service_detail.desc}}</textarea>
 {%endblock%}
 
 
@@ -40,7 +50,7 @@
 
 
 {%block iAdd%}
-<button class="btn primary block mT20">{%trans "Add as new partner"%}</button>
+<button class="btn primary block mT20">{%trans "Save all"%}</button>
 {%endblock%}
 
 

@@ -170,13 +170,13 @@ class twigTransTerms
 	echo T_("Job");                                                                   // Line 515
 
 	//-------------------------------------------content_a\service\detail\display.html
-	echo T_("Add as new partner");                                                    // Line 522
+	echo T_("Save all");                                                              // Line 53
 	echo T_("Start date");                                                            // Line 429
 	echo T_("End date");                                                              // Line 438
-	echo T_("Expert title");                                                          // Line 66
-	echo T_("Expert value");                                                          // Line 74
-	echo T_("Expert year");                                                           // Line 82
-	echo T_("Your car name");                                                         // Line 90
+	echo T_("Expert title");                                                          // Line 76
+	echo T_("Expert value");                                                          // Line 84
+	echo T_("Expert year");                                                           // Line 92
+	echo T_("Your car name");                                                         // Line 100
 	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 66
 
 	//---------------------------------------------content_a\service\home\display.html
@@ -194,22 +194,27 @@ class twigTransTerms
 	echo T_("you can send a single person request without partner on press below button");// Line 64
 	echo T_("Nesbat");                                                                // Line 350
 	echo T_("Home Address");                                                          // Line 410
+	echo T_("Add as new partner");                                                    // Line 522
 	echo T_("Final register in trip request");                                        // Line 352
 
 	//---------------------------------------------content_a\trip\request\display.html
 	echo T_("Trip signup is disabled");                                               // Line 10
 
 	//--------------------------------------------------content_cp\donate\display.html
-	echo T_("No donate founded.");                                                    // Line 17
+	echo T_("No donate founded.");                                                    // Line 19
 	echo T_("Search with new keywords.");                                             // Line 17
-	echo T_("You are not have donate yet!");                                          // Line 23
-	echo T_("mobile");                                                                // Line 50
+	echo T_("You are not have donate yet!");                                          // Line 25
+	echo T_("Total Donation");                                                        // Line 38
+	echo T_("Today Donation");                                                        // Line 47
+	echo T_("Search in donations");                                                   // Line 60
+	echo T_("Search");                                                                // Line 35
+	echo T_("mobile");                                                                // Line 77
 	echo T_("Title");                                                                 // Line 90
 	echo T_("Amount");                                                                // Line 128
-	echo T_("Niyat");                                                                 // Line 53
-	echo T_("Hazinekard");                                                            // Line 54
-	echo T_("Status");                                                                // Line 52
-	echo T_("Date");                                                                  // Line 56
+	echo T_("Niyat");                                                                 // Line 80
+	echo T_("Hazinekard");                                                            // Line 81
+	echo T_("Status");                                                                // Line 54
+	echo T_("Date");                                                                  // Line 83
 
 	//------------------------------------------content_cp\donate\options\display.html
 	echo T_("List of way");                                                           // Line 19
@@ -228,7 +233,6 @@ class twigTransTerms
 	echo T_("No nationalcode founded.");                                              // Line 17
 	echo T_("You are not have nationalcode yet!");                                    // Line 23
 	echo T_("Search in national codes");                                              // Line 34
-	echo T_("Search");                                                                // Line 35
 	echo T_("Nationalcode");                                                          // Line 23
 
 	//---------------------------------------content_cp\nationalcode\edit\display.html
@@ -256,7 +260,7 @@ class twigTransTerms
 	echo T_("You are not have service yet!");                                         // Line 23
 	echo T_("Search in services");                                                    // Line 34
 	echo T_("ID");                                                                    // Line 47
-	echo T_("Type");                                                                  // Line 51
+	echo T_("Type");                                                                  // Line 53
 	echo T_("Date created");                                                          // Line 38
 
 	//-----------------------------------------content_cp\service\options\display.html
@@ -265,6 +269,7 @@ class twigTransTerms
 	echo T_("No trip founded.");                                                      // Line 17
 	echo T_("You are not have trip yet!");                                            // Line 23
 	echo T_("Search in trips");                                                       // Line 34
+	echo T_("Birthdate");                                                             // Line 50
 
 	//--------------------------------------------content_cp\trip\options\display.html
 	echo T_("Family trip options");                                                   // Line 27
