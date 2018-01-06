@@ -6,12 +6,11 @@ class view extends \content_cp\main2\view
 {
 	public function config()
 	{
-		$this->data->page['title']   = T_("Khadije Dashboard");
-
-		$this->data->page['special'] = true;
+		$this->data->page['title'] = T_("Service request options");
+		$this->data->page['desc']  = T_("check service request options and update requests");
 
 		$this->data->page['badge']['link'] = $this->url('baseFull'). '/service';
-		$this->data->page['badge']['text'] = T_('Add new need');
+		$this->data->page['badge']['text'] = T_('Back to service request list');
 
 		$this->data->bodyclass       = 'unselectable siftal';
 
