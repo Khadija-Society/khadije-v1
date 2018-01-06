@@ -25,9 +25,11 @@ class view extends \content_cp\main2\view
 			$args['order'] = 'DESC';
 		}
 
-		if(\lib\utility::get('status')) $args['travels.status'] = \lib\utility::get('status');
-		if(\lib\utility::get('type')) $args['travels.type']     = \lib\utility::get('type');
-		if(\lib\utility::get('place')) $args['travels.place']   = \lib\utility::get('place');
+		if(\lib\utility::get('status')) $args['travels.status']           = \lib\utility::get('status');
+		if(\lib\utility::get('type')) $args['travels.type']               = \lib\utility::get('type');
+		if(\lib\utility::get('place')) $args['travels.place']             = \lib\utility::get('place');
+		if(\lib\utility::get('gender')) $args['users.gender']             = \lib\utility::get('gender');
+		if(\lib\utility::get('birthday')) $args['YEAR(users.birthday)'] = \lib\utility::get('birthday');
 
 		$search_string            = \lib\utility::get('q');
 
