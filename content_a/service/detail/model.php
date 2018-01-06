@@ -18,6 +18,7 @@ class model extends \content_a\main\model
 		$post['enddate']     = \lib\utility::post('enddate');
 		$post['car']         = \lib\utility::post('car');
 		$post['desc']        = \lib\utility::post('desc');
+		$post['status']        = 'awaiting';
 
 
 		\lib\app\service::edit($post, \lib\utility::get('id'));
