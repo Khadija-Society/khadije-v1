@@ -9,3 +9,21 @@
 <li><a href="{{url.baseFull}}/group"><i class='sf-bus'></i> <span>ثبت تشرف کاروانی</span></a></li>
 
 {%endblock%}
+
+
+
+{%block avatar%}
+   <a href="{{url.base}}/a/profile" title='{%trans "Edit your profile"%}' class="avatar">
+{%if login.avatar%}
+     <img src="{{url.root}}/{{login.avatar}}" alt='{%trans "Avatar of you"%}'>
+{%else%}
+{%if login.gender == 'female'%}
+     <img src="{{url.static}}siftal/images/avatar/woman.png" alt='{%trans "Default Avatar"%}'>
+{%else%}
+     <img src="{{url.static}}siftal/images/avatar/man.png" alt='{%trans "Default Avatar"%}'>
+{%endif%}
+{%endif%}
+   </a>
+{%endblock%}
+
+
