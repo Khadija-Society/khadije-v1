@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\options\donate;
+namespace content_cp\donate\options;
 
 
 class model extends \addons\content_cp\main\model

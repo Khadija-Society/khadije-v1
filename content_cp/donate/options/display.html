@@ -13,15 +13,13 @@
   </div>
 </div>
 
-<div class="f justify-center">
-<div class="cbox c5">
-
 {%if way_list%}
-    <br>
+<div class="f justify-center">
+  <div class="cbox c5">
     <h2>{%trans "List of way"%}</h2>
     <table class="tbl">
       <thead>
-        <tr class="primary">
+        <tr>
           <th>{%trans "Title"%}</th>
           <th>{%trans "Delete"%}</th>
         </tr>
@@ -35,9 +33,9 @@
         {%endfor%}
       </tbody>
     </table>
-{%endif%}
   </div>
 </div>
+{%endif%}
 
 {%endblock%}
 
@@ -52,7 +50,7 @@
 
 
 {%block iWay%}
-<label for='fway'>{%trans "Way"%}</label>
+<label for='fway'>{%trans "Spending method"%}</label>
 <div class="input">
  <input type="text" name="way" placeholder='{%trans "Way"%}' autofocus  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid way"%}' id='fway'>
 </div>
