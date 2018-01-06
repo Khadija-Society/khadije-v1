@@ -287,7 +287,7 @@ class service
 			\lib\debug::error(T_("No way to insert service"), 'db', 'system');
 			return false;
 		}
-		return true;
+		return $service_id;
 	}
 
 	/**
