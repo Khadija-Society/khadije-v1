@@ -6,8 +6,8 @@ class view extends \content_cp\main2\view
 {
 	public function config()
 	{
-		$this->data->page['title'] = T_("Request list");
-		$this->data->page['desc']  = T_("check request and update status of each request");
+		$this->data->page['title'] = T_("Service request list");
+		$this->data->page['desc']  = T_("check service requests");
 
 		$this->data->page['badge']['link'] = $this->url('baseFull'). '/service/options';
 		$this->data->page['badge']['text'] = T_('Options');
