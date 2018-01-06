@@ -6,8 +6,8 @@ class view extends \content_cp\main2\view
 {
 	public function config()
 	{
-		$this->data->page['title'] = T_("Nationalcode list");
-		$this->data->page['desc']  = T_("check donate and update value of each donate");
+		$this->data->page['title'] = T_("Donation list");
+		$this->data->page['desc']  = T_("check last donates and monitor all donate transaction");
 
 		$this->data->bodyclass       = 'unselectable siftal';
 

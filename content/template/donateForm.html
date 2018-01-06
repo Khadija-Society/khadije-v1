@@ -19,12 +19,12 @@
 
 {%block donateFormPay%}
 
-{%if payment_verify_msg %}
-<div class="msg success">{{payment_verify_msg}}</div>
-{%endif%}
 
 <div class="f justify-center">
   <div class="cbox c5 fs12">
+{%if payment_verify_msg %}
+    <div class="msg success">{{payment_verify_msg}}</div>
+{%endif%}
     <form method="post">
       {{block ('iFullname')}}
       <div class="f">
@@ -155,7 +155,7 @@
 
 
 {%block iAmount%}
-<label for='totalAmount'>{%trans "Pay Amount"%} *</label>
+<label for='totalAmount'>{%trans "Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
  <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' title='{%trans "Enter a valid amount"%}' id='totalAmount' required>
 </div>
@@ -163,7 +163,7 @@
 
 
 {%block iAmountLock%}
-<label for='totalAmount'>{%trans "Total Pay Amount"%} *</label>
+<label for='totalAmount'>{%trans "Total Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
  <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' id='totalAmount' required readonly>
 </div>
