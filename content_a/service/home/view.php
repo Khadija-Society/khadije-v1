@@ -1,0 +1,25 @@
+<?php
+namespace content_a\service\home;
+
+
+class view extends \content_a\main\view
+{
+	public function config()
+	{
+		$this->data->page['title'] = T_("List of your service request");
+		$this->data->page['desc']  = T_('You can check your last request and cancel them or add new request');
+
+		$this->data->page['badge']['link'] = $this->url('baseFull'). '/service/request';
+		$this->data->page['badge']['text'] = T_('register for new service request');
+
+
+		$this->data->service_list = \lib\app\service::user_service_list();
+
+		if(!$this->data->service_list || empty($this->data->service_list))
+		{
+			$this->redirector($this->url('baseFull').'/service/request')->redirect();
+			return;
+		}
+	}
+}
+?>

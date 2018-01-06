@@ -1,0 +1,21 @@
+CREATE TABLE `services` (
+`id`            int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+`user_id`       int(10) UNSIGNED NOT NULL,
+`need_id`       int(10) UNSIGNED  NULL,
+`expert`        varchar(200) CHARACTER SET utf8mb4 NULL,
+`job`         	varchar(200) CHARACTER SET utf8mb4 NULL,
+`expertvalue`   varchar(200) CHARACTER SET utf8mb4 NULL,
+`expertyear`    smallint(3) NULL,
+`arabiclang`    bit(1) NULL DEFAULT NULL,
+`car`           varchar(200) CHARACTER SET utf8mb4 NULL,
+`file`          varchar(2000) CHARACTER SET utf8mb4 NULL,
+`startdate`     varchar(20) NULL DEFAULT NULL,
+`enddate`       varchar(20) NULL DEFAULT NULL,
+`status`        enum('draft','awaiting','accept','reject','cancel', 'spam') NOT NULL DEFAULT 'draft',
+`desc`          text CHARACTER SET utf8mb4,
+`datecreated`   timestamp DEFAULT CURRENT_TIMESTAMP,
+`datemodified`  timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`),
+CONSTRAINT `service_need_id` FOREIGN KEY (`need_id`) REFERENCES `needs` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `service_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,61 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+<div class="f justify-center">
+ <div class="cbox c10 s12">
+
+
+{%if signup_locked%}
+<p class="alert alert-error txtC mT20">{%trans "Service signup is disabled"%}</p>
+{%elseif cityplace_list%}
+
+  <form method="post">
+{{block ('iCity') }}
+  </form>
+
+{%else%}
+<p class="alert alert-info txtC mT20">{%trans "All cities are disabled now"%}</p>
+{%endif%}
+
+ </div>
+</div>
+{%endblock%}
+
+
+
+{%block iCity%}
+
+ <div class="f justify-center txtC">
+{% for cityPlace, T_cityPlace in cityplace_list %}
+  <div class="c4 s12 pA10">
+    <a class="vcard shadow" href="{{url.full}}" data-ajaxify data-method="post" data-data='{"city": "{{cityPlace}}"}'>
+     <img src="{{url.static}}images/place/{{cityPlace}}-square.jpg" alt='{%trans cityPlace%}'>
+     <div class="content">
+      <div class="header">{%trans cityPlace%}</div>
+     </div>
+    </a>
+  </div>
+{% endfor %}
+ </div>
+
+
+{%endblock%}
+
+
+{%block iCity2%}
+<label for="city">{%trans "City Place"%}</label>
+<select name="city" class="input select">
+  <option value="">{%trans "Please select one itmes"%}</option>
+  {%for key, value in cityplace_list%}
+    <option value="{{value.id}}">{{value.city}} - {{value.place}}</option>
+  {%endfor%}
+</select>
+{%endblock%}
+
+
+{%block iNext%}
+<button class="btn primary block mT20">{%trans "Continue"%}</button>
+{%endblock%}
+
+
