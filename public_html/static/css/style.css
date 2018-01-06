@@ -176,6 +176,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 #aboutBox h2{font-size: 1.5em;}
 #aboutBox .text{padding:1.2em;}
 
+#imaniBox h3{font-size: 1.3em;}
 
 .videoBox{max-width: 100%;max-height:360px; overflow: hidden;position:relative;min-height:200px;}
 .videoBox iframe{max-width: 100%;width:100%;min-height:200px;}

@@ -73,6 +73,10 @@ class view extends \mvc\view
 				// $this->data->page['desc']  = $this->data->site['desc'];
 				break;
 
+			case 'mahdi-imani':
+				$this->data->page['title'] = T_('Shahid Mahdi Imani');
+				$this->data->page['desc']  = 'وصیت نامه شهید مدافع حرم، مهدی ایمانی';
+				break;
 
 			default:
 				// $this->data->page['title']   = $this->data->site['title'];
