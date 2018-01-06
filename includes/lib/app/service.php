@@ -297,7 +297,7 @@ class service
 	 *
 	 * @return     array|boolean  ( description_of_the_return_value )
 	 */
-	public static function edit($_id, $_args, $_option = [])
+	public static function edit($_args, $_id, $_option = [])
 	{
 		$default_option =
 		[
@@ -325,7 +325,7 @@ class service
 			return false;
 		}
 
-		$check_id = \lib\db\services::get(['id' => $_id, 'limit' => 1]);
+		$check_id = \lib\db\services::get(['id' => $_id, 'user_id' => \lib\user::id(), 'limit' => 1]);
 		if(!isset($check_id['id']))
 		{
 			\lib\debug::error(T_("Id not found"), 'id');
@@ -340,13 +340,7 @@ class service
 			return false;
 		}
 
-		if(!\lib\app::isset_request('fileurl'))         unset($args['fileurl']);
-
-
-		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
-		{
-			$args['status']  = 'enable';
-		}
+		if(!\lib\app::isset_request('file'))         unset($args['file']);
 
 		$return = [];
 
