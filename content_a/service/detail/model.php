@@ -13,11 +13,12 @@ class model extends \content_a\main\model
 		$post['expertvalue'] = \lib\utility::post('expertvalue');
 		$post['expertyear']  = \lib\utility::post('expertyear');
 		$post['job']         = \lib\utility::post('job');
-		$post['ArabicLang']  = \lib\utility::post('ArabicLang');
+		$post['arabiclang']  = \lib\utility::post('ArabicLang');
 		$post['startdate']   = \lib\utility::post('startdate');
 		$post['enddate']     = \lib\utility::post('enddate');
 		$post['car']         = \lib\utility::post('car');
 		$post['desc']        = \lib\utility::post('desc');
+
 
 		\lib\app\service::edit($post, \lib\utility::get('id'));
 

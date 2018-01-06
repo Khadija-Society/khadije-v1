@@ -18,7 +18,7 @@
    </div>
     <div>
 {%if value.status == 'awaiting' and false%}
-     <a href="{{url.baseFull}}/service/profile?service={{value.id}}" title='{%trans "Click to edit"%}'><b>{%trans myPlace%}</b></a>
+     <a href="{{url.baseFull}}/service/profile?id={{value.id}}" title='{%trans "Click to edit"%}'><b>{%trans myPlace%}</b></a>
 {%else%}
      <b>{%trans myPlace%}</b>
 {%endif%}
@@ -37,7 +37,7 @@
      <a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"cancel"}' class="badge danger sm mA5">{%trans "Cancel"%}</a>
 {%endif%}
 {%if value.status == 'draft'%}
-     <a href="{{url.baseFull}}/service/profile?service={{value.id}}" class="badge sm mA5">{%trans "Edit"%}</a>
+     <a href="{{url.baseFull}}/service/profile?id={{value.id}}" class="badge sm mA5">{%trans "Edit"%}</a>
 {%endif%}
    </div>
   </div>

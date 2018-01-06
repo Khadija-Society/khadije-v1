@@ -57,7 +57,7 @@ class service
 		}
 
 		$arabiclang = \lib\app::request('arabiclang');
-
+		$arabiclang  = $arabiclang ? 1 : 0;
 
 		$car = \lib\app::request('car');
 		if($car && mb_strlen($car) > 200)
@@ -335,12 +335,19 @@ class service
 		// check args
 		$args = self::check($_option);
 
+
+
 		if($args === false || !\lib\debug::$status)
 		{
 			return false;
 		}
 
 		if(!\lib\app::isset_request('file'))         unset($args['file']);
+
+		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
+		{
+			$args['status']  = 'draft';
+		}
 
 		$return = [];
 
