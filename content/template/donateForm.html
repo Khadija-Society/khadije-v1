@@ -35,6 +35,7 @@
       {{block ('iNiyat') }}
       {{block ('iAmount') }}
       {{block ('iWay') }}
+      {{block ('iDonersList')}}
       {{block ('ipay')}}
     </form>
   </div>
@@ -176,6 +177,23 @@
 <label for='totalAmount'>{%trans "Total Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
  <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' id='totalAmount' required readonly>
+</div>
+{%endblock%}
+
+
+{%block iDonersList%}
+<label class="mT20">{%trans "Show as doners"%}</label>
+ <div class="c radio1 green">
+  <input type="radio" id="r-yes" name="doners" value="yes">
+  <label for="r-yes">{%trans "Yes"%}. <a href="{{urlRaw}}/doners" target="_blank">{%trans "show in doners list"%}</a></label>
+ </div>
+
+ <div class="c radio1 black">
+  <input type="radio" id="r-no" name="doners" value="no">
+  <label for="r-no">{%trans "No, Show as anonymous"%}</label>
+ </div>
+<div class="f">
+
 </div>
 {%endblock%}
 
