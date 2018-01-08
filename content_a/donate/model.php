@@ -16,6 +16,7 @@ class model extends \content_a\main\model
 			'email'    => \lib\utility::post('email'),
 			'mobile'   => \lib\utility::post('mobile'),
 			'amount'   => \lib\utility::post('amount'),
+			'doners'   => \lib\utility::post('doners') === 'yes' ? 1 : 0,
 		];
 
 		\lib\app\donate::add($args);

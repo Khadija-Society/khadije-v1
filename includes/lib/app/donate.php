@@ -266,6 +266,9 @@ class donate
 			return false;
 		}
 
+		$doners = \lib\app::request('doners');
+		$doners = $doners ? 1 : 0;
+
 
 		$email = \lib\app::request('email');
 		if(mb_strlen($email) > 90)
@@ -376,6 +379,7 @@ class donate
 				'niyat'      => $niyat,
 				'fullname'   => $fullname,
 				'donate'     => 'cash',
+				'doners'     => $doners,
 			]
 		];
 

@@ -12,6 +12,8 @@ class view extends \mvc\view
 		$this->data->bodyclass = 'unselectable vflex';
 		$this->data->way_list  = \lib\app\donate::way_list();
 
+		$x = \lib\db\mytransactions::user_transaction('cash');
+
 
 	}
 }
