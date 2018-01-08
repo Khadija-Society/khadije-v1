@@ -139,7 +139,7 @@
 {%block iFullname%}
 <label for='ffamily'>{%trans "Full name"%}</label>
 <div class="input">
- <input type="text" name="fullname" placeholder='{%trans "Full name"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid last name"%}' id='ffamily' value='{{user.displayname}}'>
+ <input type="text" name="fullname" placeholder='{%trans "Full name"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid last name"%}' id='ffamily' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.displayname}}'{%endif%}>
 </div>
 {%endblock%}
 
@@ -150,7 +150,7 @@
 {%block iMobile%}
 <label for='fmobile'>{%trans "Mobile"%}</label>
 <div class="input">
- <input type="tel" name="mobile" placeholder='{%trans "Mobile"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid mobile"%}' id='fmobile' value='{{user.mobile}}'>
+ <input type="tel" name="mobile" placeholder='{%trans "Mobile"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid mobile"%}' id='fmobile' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.mobile}}'{%endif%}>
 </div>
 {%endblock%}
 
@@ -209,7 +209,7 @@
 
 {%block iDirectPay%}
 {%if user.permission == 'admin' or user.permission == 'supervisor'%}
- <div class="switch1 mT20 yellow">
+ <div class="switch1 mT20">
  <input type="checkbox" name="manualPay" id="manualPay">
  <label for="manualPay"  data-on='{%trans "Manual"%}' data-off='{%trans "Normal"%}'></label>
  <label for="manualPay">{%trans "Admin direct pay"%}</label>
