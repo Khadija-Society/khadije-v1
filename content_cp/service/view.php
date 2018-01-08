@@ -26,7 +26,7 @@ class view extends \content_cp\main2\view
 		}
 
 		if(\lib\utility::get('status')) $args['services.status'] = \lib\utility::get('status');
-		if(\lib\utility::get('type')) $args['services.type']     = \lib\utility::get('type');
+
 
 		$search_string            = \lib\utility::get('q');
 

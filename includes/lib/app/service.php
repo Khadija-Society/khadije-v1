@@ -6,6 +6,13 @@ class service
 	public static $sort_field =
 	[
 		'id',
+		'expert',
+		'job',
+		'expertvalue',
+		'expertyear',
+		'startdate',
+		'enddate',
+		'status',
 	];
 
 

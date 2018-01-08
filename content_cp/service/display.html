@@ -44,26 +44,43 @@
   <table class="tbl">
     <thead class="">
       <tr>
-        <th data-sort="{{sort_link.id.order}}" class="s0"><a href="{{sort_link.id.link}}">{%trans "ID"%}</a></th>
-        <th data-sort="{{sort_link.firstname.order}}" class=""><a href="{{sort_link.firstname.link}}">{%trans "First name"%}</a></th>
-        <th data-sort="{{sort_link.nationalcode.order}}" class=""><a href="{{sort_link.nationalcode.link}}">{%trans "National code"%}</a></th>
-        <th data-sort="{{sort_link.place.order}}" class=""><a href="{{sort_link.place.link}}">{%trans "City"%}</a></th>
-        <th data-sort="{{sort_link.type.order}}" class=""><a href="{{sort_link.type.link}}">{%trans "Type"%}</a></th>
-        <th data-sort="{{sort_link.status.order}}" class=""><a href="{{sort_link.status.link}}">{%trans "Status"%}</a></th>
-        <th data-sort="{{sort_link.datecreated.order}}" class="s0"><a href="{{sort_link.datecreated.link}}">{%trans "Date created"%}</a></th>
+        <th data-sort="{{sort_link.firstname.order}}"><a href="{{sort_link.firstname.link}}/service">{%trans "firstname"%}</a></th>
+        <th data-sort="{{sort_link.lastname.order}}"><a href="{{sort_link.lastname.link}}/service">{%trans "lastname"%}</a></th>
+        <th data-sort="{{sort_link.mobile.order}}"><a href="{{sort_link.mobile.link}}/service">{%trans "mobile"%}</a></th>
+        <th data-sort="{{sort_link.birthday.order}}"><a href="{{sort_link.birthday.link}}/service">{%trans "birthday"%}</a></th>
+        <th data-sort="{{sort_link.province.order}}"><a href="{{sort_link.province.link}}/service">{%trans "province"%}</a></th>
+        <th data-sort="{{sort_link.phone.order}}"><a href="{{sort_link.phone.link}}/service">{%trans "phone"%}</a></th>
+        <th data-sort="{{sort_link.married.order}}"><a href="{{sort_link.married.link}}/service">{%trans "married"%}</a></th>
+        <th data-sort="{{sort_link.gender.order}}"><a href="{{sort_link.gender.link}}/service">{%trans "gender"%}</a></th>
+        <th data-sort="{{sort_link.expert.order}}"><a href="{{sort_link.expert.link}}/service">{%trans "expert"%}</a></th>
+        <th data-sort="{{sort_link.job.order}}"><a href="{{sort_link.job.link}}/service">{%trans "job"%}</a></th>
+        <th data-sort="{{sort_link.expertvalue.order}}"><a href="{{sort_link.expertvalue.link}}/service">{%trans "expertvalue"%}</a></th>
+        <th data-sort="{{sort_link.expertyear.order}}"><a href="{{sort_link.expertyear.link}}/service">{%trans "expertyear"%}</a></th>
+        <th data-sort="{{sort_link.startdate.order}}"><a href="{{sort_link.startdate.link}}/service">{%trans "startdate"%}</a></th>
+        <th data-sort="{{sort_link.enddate.order}}"><a href="{{sort_link.enddate.link}}/service">{%trans "enddate"%}</a></th>
+        <th data-sort="{{sort_link.status.order}}"><a href="{{sort_link.status.link}}/service">{%trans "status"%}</a></th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in service_list%}
       <tr>
-        <td class="s0"><a href="{{url.baseFull}}/service/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
-        <td><a href="{{url.baseFull}}/service/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
-        <td>{{value.nationalcode | fitNumber}}</td>
-        <td>{%set my_place = value.place | capitalize%}<a href="{{url.baseFull}}/service?place={{value.place}}">{%trans my_place%}</a></td>
-        <td>{%set my_type = value.type | capitalize%}<a href="{{url.baseFull}}/service?type={{value.type}}">{%trans my_type%}</a></td>
+        <td>{{value.firstname}}</td>
+        <td>{{value.lastname}}</td>
+        <td>{{value.mobile | fitNumber}}</td>
+        <td>{{value.birthday | date("Y-m-d")}}</td>
+        <td>{{value.province}}</td>
+        <td>{{value.phone | fitNumber}}</td>
+        <td>{%set my_married = value.married | capitalize%}{%trans my_married%}</td>
+        <td>{%set my_gender = value.gender | capitalize%}{%trans my_gender%}</td>
+        <td>{{value.expert}}</td>
+        <td>{{value.job}}</td>
+        <td>{{value.expertvalue}}</td>
+        <td>{{value.expertyear | fitNumber}}</td>
+        <td>{{value.startdate | date("Y-m-d")}}</td>
+        <td>{{value.enddate | date("Y-m-d")}}</td>
         <td>{%set my_status = value.status | capitalize%}<a href="{{url.baseFull}}/service?status={{value.status}}">{%trans my_status%}</a></td>
-        <td class="s0">{{value.datecreated | tdate ("Y/m/d H:i")}}</td>
+
       </tr>
       {%endfor%}
     </tbody>
