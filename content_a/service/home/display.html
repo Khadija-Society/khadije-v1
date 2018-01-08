@@ -11,18 +11,8 @@
 {%set myPlace = value.place%}
 {%set myStatus = value.status | capitalize %}
 
-  <div class="icard">
-
-   <div class="size-we50 size-he50 pAn">
-    <img src="{{url.static}}images/place/{{value.place}}-square.jpg" alt='{%trans myPlace%}'>
-   </div>
-    <div>
-{%if value.status == 'awaiting' and false%}
-     <a href="{{url.baseFull}}/service/profile?id={{value.id}}" title='{%trans "Click to edit"%}'><b>{%trans myPlace%}</b></a>
-{%else%}
-     <b>{%trans myPlace%}</b>
-{%endif%}
-    </div>
+  <div class="icard size-he50">
+    <div><b>{{value.expert}}</b></div>
 
 {%if value.datemodified%}
     <div class='s0' title='{%trans "Last modified"%}'>{{value.datemodified | tdate("Y/m/d H:i")}}</div>
@@ -30,7 +20,6 @@
     <div class='s0' title='{%trans "Request date"%}'>{{value.datecreated | tdate("Y/m/d H:i")}}</div>
 {%endif%}
 
-    <div class='s0' title='{%trans "Reserve date"%}'>{{value.startdate | fitNumber}} - {{value.enddate | fitNumber}}</div>
     <div title='{%trans "Request date"%} {{value.datecreated | tdate("Y/m/d H:i")}}'>
     {%trans myStatus%}
 {%if value.status == 'awaiting' or value.status == 'draft'%}
@@ -41,7 +30,6 @@
 {%endif%}
    </div>
   </div>
-
 
 {%endfor%}
 
