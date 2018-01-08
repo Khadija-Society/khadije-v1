@@ -6,16 +6,18 @@
 <div class="cn fs14">
  <div class="example small">
 
-  <a href="#" class="vcard shadow">
-   <img src="{{url.static}}/siftal/images/avatar/man.png">
+{%for key, value in DonersList%}
+  <div class="vcard shadow">
+   <img src="{{url.static}}/siftal/images/useful/gift.png">
    <div class="content">
-    <div class="header">test</div>
-    <div class="meta"><span>{{12000 | number_format | fitNumber}}</span></div>
+    <div class="header">{%if value.doners%} {{value.firstname}} {{value.lastname}}{%else%}{%trans "Anonymous"%}{%endif%}</div>
+    <div class="meta"><span>{{value.plus | number_format | fitNumber}}</span></div>
    </div>
-  </a>
+  </div>
+
+{%endfor%}
 
  </div>
-
 </div>
 
 
