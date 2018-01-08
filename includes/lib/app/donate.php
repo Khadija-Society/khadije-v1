@@ -5,6 +5,15 @@ class donate
 {
 	public static $way_key = 'hazinekard_list';
 
+	public static function sms_success()
+	{
+		$mobile = \lib\session::get('temp_mobile_sms_verify_payment');
+		if($mobile)
+		{
+			\lib\utility\sms::send($mobile, "نذر شما قبول. موفق باشید");
+		}
+	}
+
 	public static function remove_way($_way)
 	{
 		$_way = trim($_way);
@@ -347,6 +356,16 @@ class donate
 				$user_id = 'unverify';
 			}
 		}
+
+		if($mobile && \lib\utility\filter::mobile($mobile))
+		{
+			\lib\session::set('temp_mobile_sms_verify_payment', $mobile);
+		}
+		elseif(\lib\user::id() && \lib\user::detail('mobile') && \lib\utility\filter::mobile(\lib\user::detail('mobile')))
+		{
+			\lib\session::set('temp_mobile_sms_verify_payment', \lib\user::detail('mobile'));
+		}
+
 
 		$meta =
 		[
