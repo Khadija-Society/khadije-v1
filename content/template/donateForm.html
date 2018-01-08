@@ -36,6 +36,7 @@
       {{block ('iAmount') }}
       {{block ('iWay') }}
       {{block ('iDonersList')}}
+      {{block ('iDirectPay')}}
       {{block ('ipay')}}
     </form>
   </div>
@@ -203,9 +204,17 @@
   <input type="radio" id="r-no" name="doners" value="no" checked>
   <label for="r-no">{%trans "No, Show as anonymous"%}</label>
  </div>
-<div class="f">
+{%endblock%}
 
+
+{%block iDirectPay%}
+{%if user.permission == 'admin' or user.permission == 'supervisor'%}
+ <div class="switch1 mT20 yellow">
+ <input type="checkbox" name="manualPay" id="manualPay">
+ <label for="manualPay"  data-on='{%trans "Manual"%}' data-off='{%trans "Normal"%}'></label>
+ <label for="manualPay">{%trans "Admin direct pay"%}</label>
 </div>
+{%endif%}
 {%endblock%}
 
 

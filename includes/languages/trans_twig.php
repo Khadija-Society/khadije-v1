@@ -19,13 +19,16 @@ class twigTransTerms
 	echo T_("Your Message");                                                          // Line 108
 	echo T_("Send");                                                                  // Line 115
 
+	//-----------------------------------------------------content\doners\display.html
+	echo T_("Anonymous");                                                             // Line 13
+
 	//-------------------------------------------------------content\home\display.html
 	echo T_("About");                                                                 // Line 6
 	echo T_("Shahid Mahdi Imani");                                                    // Line 8
 	echo T_("Do you know?");                                                          // Line 80
 	echo T_("Family trip signup");                                                    // Line 84
 	echo T_("Group trip signup");                                                     // Line 85
-	echo T_("Donate");                                                                // Line 7
+	echo T_("Donate");                                                                // Line 12
 	echo T_("Mashhad");                                                               // Line 168
 	echo T_("Karbala");                                                               // Line 159
 	echo T_("license and supporters");                                                // Line 133
@@ -45,30 +48,33 @@ class twigTransTerms
 	echo T_("Some right reserved!");                                                  // Line 28
 
 	//------------------------------------------------content\template\donateForm.html
-	echo T_("List of last success donations");                                        // Line 72
-	echo T_("Requested");                                                             // Line 100
-	echo T_("Toman");                                                                 // Line 101
-	echo T_("Your help");                                                             // Line 106
-	echo T_("Enter a valid number");                                                  // Line 106
-	echo T_("Pay");                                                                   // Line 125
+	echo T_("List of last success donations");                                        // Line 73
+	echo T_("Requested");                                                             // Line 101
+	echo T_("Toman");                                                                 // Line 183
+	echo T_("Your help");                                                             // Line 107
+	echo T_("Enter a valid number");                                                  // Line 107
+	echo T_("Pay");                                                                   // Line 126
 	echo T_("First name");                                                            // Line 48
-	echo T_("Your name");                                                             // Line 133
-	echo T_("Enter a valid name");                                                    // Line 133
-	echo T_("Full name");                                                             // Line 141
-	echo T_("Enter a valid last name");                                               // Line 141
-	echo T_("Enter a valid mobile");                                                  // Line 152
-	echo T_("Enter a valid email");                                                   // Line 161
-	echo T_("Intent");                                                                // Line 170
-	echo T_("Intention to donate this fee");                                          // Line 172
-	echo T_("Enter a valid niyat");                                                   // Line 172
-	echo T_("Pay Amount");                                                            // Line 189
+	echo T_("Your name");                                                             // Line 134
+	echo T_("Enter a valid name");                                                    // Line 134
+	echo T_("Full name");                                                             // Line 142
+	echo T_("Enter a valid last name");                                               // Line 142
+	echo T_("Enter a valid mobile");                                                  // Line 153
+	echo T_("Enter a valid email");                                                   // Line 162
+	echo T_("Intent");                                                                // Line 171
+	echo T_("Intention to donate this fee");                                          // Line 173
+	echo T_("Enter a valid niyat");                                                   // Line 173
+	echo T_("Pay Amount");                                                            // Line 191
 	echo T_("Require");                                                               // Line 297
 	echo T_("Enter a valid amount");                                                  // Line 127
-	echo T_("Total Pay Amount");                                                      // Line 187
-	echo T_("Show in public doners list?");                                           // Line 195
-	echo T_("Check doners list");                                                     // Line 195
-	echo T_("Yes, show my name and price");                                           // Line 198
-	echo T_("No, Show as anonymous");                                                 // Line 203
+	echo T_("Total Pay Amount");                                                      // Line 189
+	echo T_("Show in public doners list?");                                           // Line 197
+	echo T_("Check doners list");                                                     // Line 197
+	echo T_("Yes, show my name and price");                                           // Line 200
+	echo T_("No, Show as anonymous");                                                 // Line 205
+	echo T_("Manual");                                                                // Line 214
+	echo T_("Normal");                                                                // Line 214
+	echo T_("Admin direct pay");                                                      // Line 215
 	echo T_("Spending method");                                                       // Line 53
 	echo T_("Please select one item");                                                // Line 179
 
@@ -132,13 +138,13 @@ class twigTransTerms
 
 	//-----------------------------------------------------content_a\home\display.html
 	echo T_("Pay Donate");                                                            // Line 66
-	echo T_("Donate product");                                                        // Line 6
+	echo T_("Donate product");                                                        // Line 76
 
 	//------------------------------------------------------content_a\main\layout.html
 	echo T_("Dashboard");                                                             // Line 5
-	echo T_("Edit your profile");                                                     // Line 17
-	echo T_("Avatar of you");                                                         // Line 19
-	echo T_("Default Avatar");                                                        // Line 24
+	echo T_("Edit your profile");                                                     // Line 15
+	echo T_("Avatar of you");                                                         // Line 17
+	echo T_("Default Avatar");                                                        // Line 22
 
 	//----------------------------------------------content_a\profile\profileForm.html
 	echo T_("Enter a valid name from 2 to 40 character");                             // Line 273
@@ -367,6 +373,7 @@ class twigTransTerms
 	echo T_("mecca");                                                                 // Line 43 Seperate
 	echo T_("syria");                                                                 // Line 44 Seperate
 	echo T_("Syria");                                                                 // Line 45 Seperate
+	echo T_("Group");                                                                 // Line 46 Seperate
 
 	//---------------------public_html\static\siftal\fonts\siftal\icons-reference.html
 
