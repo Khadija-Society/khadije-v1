@@ -46,9 +46,9 @@
       <tr>
         <th data-sort="{{sort_link.id.order}}" class="s0"><a href="{{sort_link.id.link}}">{%trans "ID"%}</a></th>
         <th data-sort="{{sort_link.firstname.order}}" class=""><a href="{{sort_link.firstname.link}}">{%trans "First name"%}</a></th>
-        <th data-sort="{{sort_link.gender.order}}" class=""><a href="{{sort_link.gender.link}}">{%trans "Gender"%}</a></th>
-        <th data-sort="{{sort_link.gender.order}}" class=""><a href="{{sort_link.gender.link}}">{%trans "Birthdate"%}</a></th>
-        <th data-sort="{{sort_link.nationalcode.order}}" class=""><a href="{{sort_link.nationalcode.link}}">{%trans "National code"%}</a></th>
+        <th data-sort="{{sort_link.gender.order}}" class="s0"><a href="{{sort_link.gender.link}}">{%trans "Gender"%}</a></th>
+        <th data-sort="{{sort_link.gender.order}}" class="s0"><a href="{{sort_link.gender.link}}">{%trans "Birthdate"%}</a></th>
+        <th data-sort="{{sort_link.nationalcode.order}}" class="s0"><a href="{{sort_link.nationalcode.link}}">{%trans "National code"%}</a></th>
         <th data-sort="{{sort_link.place.order}}" class=""><a href="{{sort_link.place.link}}">{%trans "City"%}</a></th>
         <th data-sort="{{sort_link.type.order}}" class=""><a href="{{sort_link.type.link}}">{%trans "Type"%}</a></th>
         <th data-sort="{{sort_link.status.order}}" class=""><a href="{{sort_link.status.link}}">{%trans "Status"%}</a></th>
@@ -61,10 +61,10 @@
       <tr>
         <td class="s0"><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
         <td><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
-        <td>{%set myGender = value.gender | capitalize%}<a href="{{url.baseFull}}/trip?gender={{value.gender}}">{%trans myGender%}</a></td>
-        <td><a href='{{url.baseFull}}/trip?birthday={{value.birthday | date("Y")}}'>{{value.birthday | date("Y") | fitNumber}}</a>{{value.birthday | date("-m-d") | fitNumber}}</td>
+        <td class="s0">{%set myGender = value.gender | capitalize%}<a href="{{url.baseFull}}/trip?gender={{value.gender}}">{%trans myGender%}</a></td>
+        <td class="s0"><a href='{{url.baseFull}}/trip?birthday={{value.birthday | date("Y")}}'>{{value.birthday | date("Y") | fitNumber}}</a>{{value.birthday | date("-m-d") | fitNumber}}</td>
 
-        <td>{{value.nationalcode | fitNumber}}</td>
+        <td class="s0">{{value.nationalcode | fitNumber}}</td>
         <td>{%set my_place = value.place | capitalize%}<a href="{{url.baseFull}}/trip?place={{value.place}}">{%trans my_place%}</a></td>
         <td>{%set my_type = value.type | capitalize%}<a href="{{url.baseFull}}/trip?type={{value.type}}">{%trans my_type%}</a></td>
         <td>{%set my_status = value.status | capitalize%}<a href="{{url.baseFull}}/trip?status={{value.status}}">{%trans my_status%}</a></td>
