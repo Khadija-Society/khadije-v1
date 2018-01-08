@@ -35,12 +35,6 @@ class service
 
 		$_option = array_merge($default_option, $_option);
 
-		$expert = \lib\app::request('expert');
-		if($expert && mb_strlen($expert) > 200)
-		{
-			\lib\debug::error(T_("You must set expert less than 200 character"), 'expert');
-			return false;
-		}
 
 		$job = \lib\app::request('job');
 		if($job && mb_strlen($job) > 200)
@@ -106,7 +100,7 @@ class service
 		}
 
 		$status = \lib\app::request('status');
-		if($expert && mb_strlen($status) > 200)
+		if($status && mb_strlen($status) > 200)
 		{
 			\lib\debug::error(T_("Invalid status"), 'status');
 			return false;
@@ -129,7 +123,7 @@ class service
 
 
 		$args                = [];
-		$args['expert']      = $expert;
+
 		$args['job']         = $job;
 		$args['expertvalue'] = $expertvalue;
 		$args['expertyear']  = $expertyear;
@@ -277,8 +271,37 @@ class service
 		{
 			return false;
 		}
+		$need_id = \lib\app::request('need_id');
+
+		if(!$need_id || !is_numeric($need_id))
+		{
+			\lib\debug::error(T_("Service id not found"));
+			return false;
+		}
+
+		$need_detail = \lib\db\needs::get(['id' => $need_id, 'limit' => 1]);
+		if(!isset($need_detail['id']) || !isset($need_detail['status']))
+		{
+			\lib\debug::error(T_("Service id is invalid"));
+			return false;
+		}
+
+		if($need_detail['status'] != 'enable')
+		{
+			\lib\debug::error(T_("This service is unavalible"));
+			return false;
+		}
+
+		$args['expert']  = $need_detail['title'];
 
 		$args['user_id'] = \lib\user::id();
+
+		$check_duplicate = \lib\db\services::get(['user_id' => \lib\user::id(), 'expert' => $args['expert'], 'limit' => 1]);
+		if(isset($check_duplicate['id']))
+		{
+			\lib\debug::error(T_("You register to this service before"));
+			return false;
+		}
 
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
 		{
@@ -348,6 +371,7 @@ class service
 		{
 			return false;
 		}
+
 
 		if(!\lib\app::isset_request('file'))         unset($args['file']);
 

@@ -9,7 +9,6 @@ class model extends \content_a\main\model
 	{
 
 		$post                = [];
-		$post['expert']      = \lib\utility::post('expert');
 		$post['expertvalue'] = \lib\utility::post('expertvalue');
 		$post['expertyear']  = \lib\utility::post('expertyear');
 		$post['job']         = \lib\utility::post('job');

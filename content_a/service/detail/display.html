@@ -71,9 +71,11 @@
 
 
 {%block iexpert%}
-<label for="fexpert">{%trans "Expert title"%}</label>
-<div class="input">
-  <input type="text" name="expert" value="{{service_detail.expert}}" id="fexpert" placeholder='{%trans "Expert title"%}'  maxlength='50'>
+<div class="disabled">
+	<label for="fexpert">{%trans "Expert title"%}</label>
+	<div class="input ">
+	  <input type="text" name="expert" disabled value="{{service_detail.expert}}" id="fexpert" placeholder='{%trans "Expert title"%}'  maxlength='50'>
+	</div>
 </div>
 {%endblock%}
 
@@ -81,7 +83,7 @@
 {%block iexpertvalue%}
 <label for="fexpertvalue">{%trans "Expert value"%}</label>
 <div class="input">
-  <input type="text" name="expertvalue" value="{{service_detail.expertvalue}}" id="fexpertvalue" placeholder='{%trans "Expert value"%}'  maxlength='50'>
+  <input type="text" name="expertvalue" autofocus value="{{service_detail.expertvalue}}" id="fexpertvalue" placeholder='{%trans "Expert value"%}'  maxlength='50'>
 </div>
 {%endblock%}
 

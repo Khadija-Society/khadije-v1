@@ -8,7 +8,7 @@ class view extends \lib\view
 		// define default value for global
 
 
-		$this->data->site['title']           = T_("Khadije Charity");
+		$this->data->site['title']           = T_("حرم");
 		$this->data->site['desc']            = T_("Executor of first pilgrimage to the Ahl al-Bayt");
 		$this->data->site['slogan']          = $this->data->site['desc'];
 
