@@ -45,29 +45,30 @@ class twigTransTerms
 	echo T_("Some right reserved!");                                                  // Line 28
 
 	//------------------------------------------------content\template\donateForm.html
-	echo T_("Requested");                                                             // Line 90
-	echo T_("Toman");                                                                 // Line 91
-	echo T_("Your help");                                                             // Line 96
-	echo T_("Enter a valid number");                                                  // Line 96
-	echo T_("Pay");                                                                   // Line 115
+	echo T_("List of last success donations");                                        // Line 72
+	echo T_("Requested");                                                             // Line 100
+	echo T_("Toman");                                                                 // Line 101
+	echo T_("Your help");                                                             // Line 106
+	echo T_("Enter a valid number");                                                  // Line 106
+	echo T_("Pay");                                                                   // Line 125
 	echo T_("First name");                                                            // Line 48
-	echo T_("Your name");                                                             // Line 123
-	echo T_("Enter a valid name");                                                    // Line 123
-	echo T_("Full name");                                                             // Line 131
-	echo T_("Enter a valid last name");                                               // Line 131
-	echo T_("Enter a valid mobile");                                                  // Line 142
-	echo T_("Enter a valid email");                                                   // Line 151
-	echo T_("Intent");                                                                // Line 160
-	echo T_("Intention to donate this fee");                                          // Line 162
-	echo T_("Enter a valid niyat");                                                   // Line 162
-	echo T_("Pay Amount");                                                            // Line 179
+	echo T_("Your name");                                                             // Line 133
+	echo T_("Enter a valid name");                                                    // Line 133
+	echo T_("Full name");                                                             // Line 141
+	echo T_("Enter a valid last name");                                               // Line 141
+	echo T_("Enter a valid mobile");                                                  // Line 152
+	echo T_("Enter a valid email");                                                   // Line 161
+	echo T_("Intent");                                                                // Line 170
+	echo T_("Intention to donate this fee");                                          // Line 172
+	echo T_("Enter a valid niyat");                                                   // Line 172
+	echo T_("Pay Amount");                                                            // Line 189
 	echo T_("Require");                                                               // Line 297
 	echo T_("Enter a valid amount");                                                  // Line 127
-	echo T_("Total Pay Amount");                                                      // Line 177
-	echo T_("Show in doners list?");                                                  // Line 185
-	echo T_("Yes");                                                                   // Line 341
-	echo T_("show in doners list");                                                   // Line 188
-	echo T_("No, Show as anonymous");                                                 // Line 193
+	echo T_("Total Pay Amount");                                                      // Line 187
+	echo T_("Show in public doners list?");                                           // Line 195
+	echo T_("Check doners list");                                                     // Line 195
+	echo T_("Yes, show my name and price");                                           // Line 198
+	echo T_("No, Show as anonymous");                                                 // Line 203
 	echo T_("Spending method");                                                       // Line 53
 	echo T_("Please select one item");                                                // Line 179
 
@@ -155,6 +156,7 @@ class twigTransTerms
 	echo T_("Marital");                                                               // Line 333
 	echo T_("Married");                                                               // Line 332
 	echo T_("Single");                                                                // Line 332
+	echo T_("Yes");                                                                   // Line 341
 	echo T_("No");                                                                    // Line 341
 	echo T_("Arabic Language");                                                       // Line 342
 	echo T_("Country");                                                               // Line 358

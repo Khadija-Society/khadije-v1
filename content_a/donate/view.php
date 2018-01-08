@@ -10,8 +10,8 @@ class view extends \content_a\main\view
 		$this->data->page['desc']  = $this->data->site['title']. ' | '. $this->data->site['desc'];
 
 
-		$this->data->way_list    = \lib\app\donate::way_list();
-
+		$this->data->way_list      = \lib\app\donate::way_list();
+		$this->data->donateArchive = \lib\db\mytransactions::user_transaction('cash');
 
 		if(\lib\session::get('payment_request_start'))
 		{

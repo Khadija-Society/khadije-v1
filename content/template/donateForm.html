@@ -41,14 +41,8 @@
   </div>
 
 </div>
+{{block ('donateArchive')}}
 
-{%if payment_verify_msg %}
-<div class="f justify-center">
-  <div class="cbox c5 s12">
-    <p class="alert alert-info">123</p>
-  </div>
-</div>
-{%endif%}
 
 {%endblock%}
 
@@ -67,6 +61,22 @@
    {{block ('ipay')}}
  </form>
 
+{%endblock%}
+
+
+
+{%block donateArchive%}
+{%if donateArchive %}
+<div class="f justify-center">
+  <div class="cbox c5 s12">
+    <h4>{%trans "List of last success donations"%}</h4>
+{%for key, value in donateArchive%}
+    <p class="alert alert-success">{{value.date | tdate("Y/m/d H:i") }} <span class="floatRa">{{value.plus | number_format | fitNumber}}</span></p>
+{%endfor%}
+  </div>
+</div>
+
+{%endif%}
 {%endblock%}
 
 
@@ -169,6 +179,7 @@
 <label for='totalAmount'>{%trans "Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
  <input type="number" name="amount" placeholder='{%trans "Pay Amount"%} *' title='{%trans "Enter a valid amount"%}' id='totalAmount' required>
+  <span class="addon">{%trans "Toman"%}</span>
 </div>
 {%endblock%}
 
@@ -182,14 +193,14 @@
 
 
 {%block iDonersList%}
-<label class="mT20">{%trans "Show in doners list?"%}</label>
- <div class="c radio1 green">
+<label class="mT20">{%trans "Show in public doners list?"%} <a href="{{urlRaw}}/doners" target="_blank">{%trans "Check doners list"%}</a></label>
+ <div class="c radio1">
   <input type="radio" id="r-yes" name="doners" value="yes">
-  <label for="r-yes">{%trans "Yes"%}. <a href="{{urlRaw}}/doners" target="_blank">{%trans "show in doners list"%}</a></label>
+  <label for="r-yes">{%trans "Yes, show my name and price"%}</label>
  </div>
 
  <div class="c radio1 black">
-  <input type="radio" id="r-no" name="doners" value="no">
+  <input type="radio" id="r-no" name="doners" value="no" checked>
   <label for="r-no">{%trans "No, Show as anonymous"%}</label>
  </div>
 <div class="f">

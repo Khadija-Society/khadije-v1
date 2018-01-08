@@ -19,6 +19,7 @@ class mytransactions
 		$query =
 		"
 			SELECT
+				transactions.doners,
 				transactions.date,
 				transactions.plus,
 				users.firstname,
