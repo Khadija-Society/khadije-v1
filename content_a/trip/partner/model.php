@@ -27,7 +27,7 @@ class model extends \content_a\main\model
 				\lib\utility\sms::send(\lib\user::detail('mobile'), $msg);
 			}
 
-			$this->redirector($this->url('baseFull'). '/trip');
+			$this->redirector($this->url('baseFull'). '/trip?success=yes');
 			return;
 		}
 
