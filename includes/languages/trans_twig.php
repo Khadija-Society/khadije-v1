@@ -64,7 +64,7 @@ class twigTransTerms
 	echo T_("Require");                                                               // Line 297
 	echo T_("Enter a valid amount");                                                  // Line 127
 	echo T_("Total Pay Amount");                                                      // Line 177
-	echo T_("Show as doners");                                                        // Line 185
+	echo T_("Show in doners list?");                                                  // Line 185
 	echo T_("Yes");                                                                   // Line 341
 	echo T_("show in doners list");                                                   // Line 188
 	echo T_("No, Show as anonymous");                                                 // Line 193

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-01-08 12:10+0330\n"
-"PO-Revision-Date: 2018-01-08 12:10+0330\n"
+"POT-Creation-Date: 2018-01-08 12:15+0330\n"
+"PO-Revision-Date: 2018-01-08 12:19+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -8235,9 +8235,13 @@ msgstr "اهدای کمک نقدی"
 msgid "Pay your donate online with below form"
 msgstr "پرداخت آنلاین هدایای نقدی را توسط فرم زیر انجام دهید"
 
-#: khadije/content/donate/view.php:18 khadije/content_a/donate/view.php:18
+#: khadije/content/donate/view.php:20 khadije/content_a/donate/view.php:21
 msgid "Thanks for your payment"
 msgstr "از پرداخت شما سپاسگذاریم"
+
+#: khadije/content/donate/view.php:25 khadije/content_a/donate/view.php:26
+msgid "Payment unsuccessfull"
+msgstr "پرداخت ناموفق بود"
 
 #: khadije/content/doners/view.php:8
 msgid "Doners"
@@ -8282,37 +8286,37 @@ msgid "Shahid Mahdi Imani"
 msgstr "شهید مهدی ایمانی"
 
 #: khadije/content_a/donate/product/model.php:12
-#: khadije/includes/lib/app/donate.php:235
+#: khadije/includes/lib/app/donate.php:244
 msgid "Whate are you doing?"
 msgstr "اینجا چیکار می‌کنی عزیز من؟"
 
 #: khadije/content_a/donate/product/model.php:19
-#: khadije/includes/lib/app/donate.php:242
+#: khadije/includes/lib/app/donate.php:251
 msgid "Please set niyat less than 150 character"
 msgstr "لطفا نیت را در کمتر از ۱۵۰ کاراکتر بنویسید"
 
 #: khadije/content_a/donate/product/model.php:26
-#: khadije/includes/lib/app/donate.php:249
+#: khadije/includes/lib/app/donate.php:258
 msgid "Please set a valid way"
 msgstr "لطفا روش پرداخت را به صورت صحیح وارد کنید"
 
 #: khadije/content_a/donate/product/model.php:33
-#: khadije/includes/lib/app/donate.php:256
+#: khadije/includes/lib/app/donate.php:265
 msgid "Please set fullname less than 150 character"
 msgstr "لطفا نام کامل خود را کمتر از ۱۵۰ حرف وارد کنید"
 
 #: khadije/content_a/donate/product/model.php:41
-#: khadije/includes/lib/app/donate.php:264
+#: khadije/includes/lib/app/donate.php:273
 msgid "Please set email less than 90 character"
 msgstr "لطفا ایمیل خود را کمتر از ۹۰ حرف وارد کنید"
 
 #: khadije/content_a/donate/product/model.php:48
-#: khadije/includes/lib/app/donate.php:271
+#: khadije/includes/lib/app/donate.php:280
 msgid "Please set a valid mobile number"
 msgstr "لطفا شماره تلفن همراه را به صورت صحیح وارد کنید"
 
 #: khadije/content_a/donate/product/model.php:60
-#: khadije/includes/lib/app/donate.php:283
+#: khadije/includes/lib/app/donate.php:292
 msgid "Please set a valid amount number"
 msgstr "لطفا مبلغ قابل پرداخت را به صورت صحیح وارد کنید"
 
@@ -8992,8 +8996,8 @@ msgid "Total Pay Amount"
 msgstr "کل مبلغ پرداختی"
 
 #: khadije/includes/languages/trans_twig.php:67
-msgid "Show as doners"
-msgstr "نمایش به‌عنوان خیر"
+msgid "Show in doners list?"
+msgstr "نمایش در لیست خیرین؟"
 
 #: khadije/includes/languages/trans_twig.php:69
 msgid "show in doners list"
@@ -9708,23 +9712,23 @@ msgstr "سوریه"
 msgid "Syria"
 msgstr "سوریه"
 
-#: khadije/includes/lib/app/donate.php:15
+#: khadije/includes/lib/app/donate.php:24
 msgid "This way is not in your list!"
 msgstr "این روش مصرف در لیست شما وجود ندارد!"
 
-#: khadije/includes/lib/app/donate.php:59
+#: khadije/includes/lib/app/donate.php:68
 msgid "Please set way"
 msgstr "لطفا روش مصرف را انتخاب کنید"
 
-#: khadije/includes/lib/app/donate.php:65
+#: khadije/includes/lib/app/donate.php:74
 msgid "Please set way less than 150 character"
 msgstr "لطفا روش هزینه‌کرد را در کمتر از ۱۵۰ کاراکتر بنویسید"
 
-#: khadije/includes/lib/app/donate.php:112
+#: khadije/includes/lib/app/donate.php:121
 msgid "Duplicate way"
 msgstr "روش مصرف تکراری است"
 
-#: khadije/includes/lib/app/donate.php:171
+#: khadije/includes/lib/app/donate.php:180
 msgid "Product name must be less than 500 character"
 msgstr "نام محصول باید کمتر از ۵۰۰ حرف باشد"
 
@@ -10002,6 +10006,9 @@ msgstr "ما به :count نفر کمک کرده‌ایم تا بهتر کار ک
 #: khadije/includes/permission/permission.php:19
 msgid "Can view the admin page"
 msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
+
+#~ msgid "Show as doners"
+#~ msgstr "نمایش به‌عنوان خیر"
 
 #~ msgid "Birthday is required"
 #~ msgstr "تاریخ تولد الزامی است"
