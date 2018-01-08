@@ -9,6 +9,9 @@ class view extends \content_cp\main2\view
 		$this->data->page['title'] = T_("Service request list");
 		$this->data->page['desc']  = T_("check service requests");
 
+		$export_link = ' <a href="'. $this->url('baseFull'). '/service?export=true">'. T_("Export"). '</a>';
+		$this->data->page['desc'] .= $export_link;
+
 		$this->data->page['badge']['link'] = $this->url('baseFull'). '/service/options';
 		$this->data->page['badge']['text'] = T_('Options');
 

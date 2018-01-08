@@ -9,6 +9,9 @@ class view extends \content_cp\main2\view
 		$this->data->page['title'] = T_("Request list");
 		$this->data->page['desc']  = T_("check request and update status of each request");
 
+		$export_link = ' <a href="'. $this->url('baseFull'). '/trip?export=true">'. T_("Export"). '</a>';
+		$this->data->page['desc'] .= $export_link;
+
 		$this->data->page['badge']['link'] = $this->url('baseFull'). '/trip/options';
 		$this->data->page['badge']['text'] = T_('Options');
 

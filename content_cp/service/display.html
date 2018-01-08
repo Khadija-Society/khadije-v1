@@ -42,45 +42,40 @@
 {%block datatable%}
 
   <table class="tbl">
-    <thead class="">
+    <thead class="primary">
       <tr>
         <th data-sort="{{sort_link.firstname.order}}"><a href="{{sort_link.firstname.link}}/service">{%trans "firstname"%}</a></th>
-        <th data-sort="{{sort_link.lastname.order}}"><a href="{{sort_link.lastname.link}}/service">{%trans "lastname"%}</a></th>
         <th data-sort="{{sort_link.mobile.order}}"><a href="{{sort_link.mobile.link}}/service">{%trans "mobile"%}</a></th>
         <th data-sort="{{sort_link.birthday.order}}"><a href="{{sort_link.birthday.link}}/service">{%trans "birthday"%}</a></th>
         <th data-sort="{{sort_link.province.order}}"><a href="{{sort_link.province.link}}/service">{%trans "province"%}</a></th>
         <th data-sort="{{sort_link.phone.order}}"><a href="{{sort_link.phone.link}}/service">{%trans "phone"%}</a></th>
         <th data-sort="{{sort_link.married.order}}"><a href="{{sort_link.married.link}}/service">{%trans "married"%}</a></th>
         <th data-sort="{{sort_link.gender.order}}"><a href="{{sort_link.gender.link}}/service">{%trans "gender"%}</a></th>
-        <th data-sort="{{sort_link.expert.order}}"><a href="{{sort_link.expert.link}}/service">{%trans "expert"%}</a></th>
         <th data-sort="{{sort_link.job.order}}"><a href="{{sort_link.job.link}}/service">{%trans "job"%}</a></th>
         <th data-sort="{{sort_link.expertvalue.order}}"><a href="{{sort_link.expertvalue.link}}/service">{%trans "expertvalue"%}</a></th>
         <th data-sort="{{sort_link.expertyear.order}}"><a href="{{sort_link.expertyear.link}}/service">{%trans "expertyear"%}</a></th>
         <th data-sort="{{sort_link.startdate.order}}"><a href="{{sort_link.startdate.link}}/service">{%trans "startdate"%}</a></th>
         <th data-sort="{{sort_link.enddate.order}}"><a href="{{sort_link.enddate.link}}/service">{%trans "enddate"%}</a></th>
-        <th data-sort="{{sort_link.status.order}}"><a href="{{sort_link.status.link}}/service">{%trans "status"%}</a></th>
+        <th data-sort="{{sort_link.status.order}}"><a href="{{sort_link.status.link}}/service">{%trans "Expert"%}</a></th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in service_list%}
       <tr>
-        <td>{{value.firstname}}</td>
-        <td>{{value.lastname}}</td>
+        <td>{{value.firstname}} <b>{{value.lastname}}</b></td>
         <td>{{value.mobile | fitNumber}}</td>
         <td>{{value.birthday | date("Y-m-d")}}</td>
         <td>{{value.province}}</td>
         <td>{{value.phone | fitNumber}}</td>
         <td>{%set my_married = value.married | capitalize%}{%trans my_married%}</td>
         <td>{%set my_gender = value.gender | capitalize%}{%trans my_gender%}</td>
-        <td>{{value.expert}}</td>
         <td>{{value.job}}</td>
         <td>{{value.expertvalue}}</td>
         <td>{{value.expertyear | fitNumber}}</td>
         <td>{{value.startdate | date("Y-m-d")}}</td>
         <td>{{value.enddate | date("Y-m-d")}}</td>
-        <td>{%set my_status = value.status | capitalize%}<a href="{{url.baseFull}}/service?status={{value.status}}">{%trans my_status%}</a></td>
-
+        <td>{{value.expert}}</td>
       </tr>
       {%endfor%}
     </tbody>

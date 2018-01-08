@@ -9,6 +9,9 @@ class view extends \content_cp\main2\view
 		$this->data->page['title'] = T_("Donation list");
 		$this->data->page['desc']  = T_("check last donates and monitor all donate transaction");
 
+		$export_link = ' <a href="'. $this->url('baseFull'). '/donate?export=true">'. T_("Export"). '</a>';
+		$this->data->page['desc'] .= $export_link;
+
 		$this->data->page['badge']['link'] = $this->url('baseFull'). '/donate/options';
 		$this->data->page['badge']['text'] = T_('Options');
 
