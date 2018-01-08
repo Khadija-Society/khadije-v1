@@ -45,25 +45,29 @@ class twigTransTerms
 	echo T_("Some right reserved!");                                                  // Line 28
 
 	//------------------------------------------------content\template\donateForm.html
-	echo T_("Requested");                                                             // Line 79
-	echo T_("Toman");                                                                 // Line 80
-	echo T_("Your help");                                                             // Line 85
-	echo T_("Enter a valid number");                                                  // Line 85
-	echo T_("Pay");                                                                   // Line 104
+	echo T_("Requested");                                                             // Line 90
+	echo T_("Toman");                                                                 // Line 91
+	echo T_("Your help");                                                             // Line 96
+	echo T_("Enter a valid number");                                                  // Line 96
+	echo T_("Pay");                                                                   // Line 115
 	echo T_("First name");                                                            // Line 48
-	echo T_("Your name");                                                             // Line 112
-	echo T_("Enter a valid name");                                                    // Line 112
-	echo T_("Full name");                                                             // Line 120
-	echo T_("Enter a valid last name");                                               // Line 120
-	echo T_("Enter a valid mobile");                                                  // Line 131
-	echo T_("Enter a valid email");                                                   // Line 140
-	echo T_("Intent");                                                                // Line 149
-	echo T_("Intention to donate this fee");                                          // Line 151
-	echo T_("Enter a valid niyat");                                                   // Line 151
-	echo T_("Pay Amount");                                                            // Line 168
+	echo T_("Your name");                                                             // Line 123
+	echo T_("Enter a valid name");                                                    // Line 123
+	echo T_("Full name");                                                             // Line 131
+	echo T_("Enter a valid last name");                                               // Line 131
+	echo T_("Enter a valid mobile");                                                  // Line 142
+	echo T_("Enter a valid email");                                                   // Line 151
+	echo T_("Intent");                                                                // Line 160
+	echo T_("Intention to donate this fee");                                          // Line 162
+	echo T_("Enter a valid niyat");                                                   // Line 162
+	echo T_("Pay Amount");                                                            // Line 179
 	echo T_("Require");                                                               // Line 297
 	echo T_("Enter a valid amount");                                                  // Line 127
-	echo T_("Total Pay Amount");                                                      // Line 166
+	echo T_("Total Pay Amount");                                                      // Line 177
+	echo T_("Show as doners");                                                        // Line 185
+	echo T_("Yes");                                                                   // Line 341
+	echo T_("show in doners list");                                                   // Line 188
+	echo T_("No, Show as anonymous");                                                 // Line 193
 	echo T_("Spending method");                                                       // Line 53
 	echo T_("Please select one item");                                                // Line 179
 
@@ -74,13 +78,16 @@ class twigTransTerms
 	echo T_("Honors");                                                                // Line 9
 	echo T_("FAQ");                                                                   // Line 10
 	echo T_("Contact");                                                               // Line 11
-	echo T_("Register for family trip");                                              // Line 14
-	echo T_("Register for group trip");                                               // Line 13
+	echo T_("Register for family trip");                                              // Line 16
+	echo T_("Register for group trip");                                               // Line 17
 	echo T_("Control Panel");                                                         // Line 25
 	echo T_("Exit Session");                                                          // Line 26
 	echo T_("Another Session");                                                       // Line 27
 
 	//----------------------------------------------------content\template\header.html
+	echo T_("Enter");                                                                 // Line 13
+	echo T_("Admin panel");                                                           // Line 15
+	echo T_("Signup");                                                                // Line 17
 
 	//----------------------------------------------content\template\static\about.html
 	echo T_("Soon");                                                                  // Line 6
@@ -102,15 +109,15 @@ class twigTransTerms
 	//---------------------------------------------content\template\static\vision.html
 
 	//-----------------------------------------------content_a\group\home\display.html
-	echo T_("Click to edit");                                                         // Line 21
+	echo T_("Click to edit");                                                         // Line 25
 	echo T_("Last modified");                                                         // Line 40
-	echo T_("Request date");                                                          // Line 34
+	echo T_("Request date");                                                          // Line 38
 	echo T_("Reserve date");                                                          // Line 43
 	echo T_("Cancel");                                                                // Line 22 Seperate
 	echo T_("Edit");                                                                  // Line 148
 	echo T_("register for new group request");                                        // Line 49
-	echo T_("Start Date");                                                            // Line 82
-	echo T_("End Date");                                                              // Line 91
+	echo T_("Start Date");                                                            // Line 86
+	echo T_("End Date");                                                              // Line 95
 	echo T_("City Place");                                                            // Line 47
 	echo T_("Please select one itmes");                                               // Line 49
 	echo T_("Add");                                                                   // Line 77
@@ -148,7 +155,6 @@ class twigTransTerms
 	echo T_("Marital");                                                               // Line 333
 	echo T_("Married");                                                               // Line 332
 	echo T_("Single");                                                                // Line 332
-	echo T_("Yes");                                                                   // Line 341
 	echo T_("No");                                                                    // Line 341
 	echo T_("Arabic Language");                                                       // Line 342
 	echo T_("Country");                                                               // Line 358
@@ -183,7 +189,8 @@ class twigTransTerms
 	//------------------------------------------content_a\service\request\display.html
 
 	//------------------------------------------------content_a\trip\home\display.html
-	echo T_("register for new trip request");                                         // Line 49
+	echo T_("You are successfully registered new trip request and you can track the status from this page");// Line 10
+	echo T_("register for new trip request");                                         // Line 53
 
 	//-----------------------------------------content_a\trip\partner\partnerForm.html
 	echo T_("List of your child");                                                    // Line 29
@@ -206,7 +213,7 @@ class twigTransTerms
 	echo T_("Today Donation");                                                        // Line 47
 	echo T_("Search in donations");                                                   // Line 60
 	echo T_("Search");                                                                // Line 35
-	echo T_("mobile");                                                                // Line 77
+	echo T_("mobile");                                                                // Line 49
 	echo T_("Title");                                                                 // Line 89
 	echo T_("Amount");                                                                // Line 127
 	echo T_("Niyat");                                                                 // Line 80
@@ -261,9 +268,20 @@ class twigTransTerms
 	echo T_("No service founded.");                                                   // Line 17
 	echo T_("You are not have service yet!");                                         // Line 23
 	echo T_("Search in services");                                                    // Line 34
-	echo T_("ID");                                                                    // Line 47
-	echo T_("Type");                                                                  // Line 53
-	echo T_("Date created");                                                          // Line 38
+	echo T_("firstname");                                                             // Line 47
+	echo T_("lastname");                                                              // Line 48
+	echo T_("birthday");                                                              // Line 50
+	echo T_("province");                                                              // Line 51
+	echo T_("phone");                                                                 // Line 52
+	echo T_("married");                                                               // Line 53
+	echo T_("gender");                                                                // Line 54
+	echo T_("expert");                                                                // Line 55
+	echo T_("job");                                                                   // Line 56
+	echo T_("expertvalue");                                                           // Line 57
+	echo T_("expertyear");                                                            // Line 58
+	echo T_("startdate");                                                             // Line 59
+	echo T_("enddate");                                                               // Line 60
+	echo T_("status");                                                                // Line 61
 
 	//-----------------------------------------content_cp\service\options\display.html
 
@@ -271,7 +289,10 @@ class twigTransTerms
 	echo T_("No trip founded.");                                                      // Line 17
 	echo T_("You are not have trip yet!");                                            // Line 23
 	echo T_("Search in trips");                                                       // Line 34
+	echo T_("ID");                                                                    // Line 47
 	echo T_("Birthdate");                                                             // Line 50
+	echo T_("Type");                                                                  // Line 53
+	echo T_("Date created");                                                          // Line 38
 
 	//--------------------------------------------content_cp\trip\options\display.html
 	echo T_("Family trip options");                                                   // Line 27

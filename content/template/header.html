@@ -10,8 +10,12 @@
 
    <nav class="cauto os">
     <a href="{{url.base}}/donate">{%trans "Donate"%}</a>
-    <a href="{{url.base}}/a/group" data-direct>{%trans "Register for group trip"%}</a>
-    <a href="{{url.base}}/a/trip" data-direct class="btn">{%trans "Register for family trip"%}</a>
+    <a href="{{url.base}}/enter" data-direct>{%trans "Enter"%}</a>
+{%if login.id%}
+    <a href="{{url.base}}/a" data-direct class="btn">{%trans "Admin panel"%}</a>
+{%else%}
+    <a href="{{url.base}}/enter/signup" data-direct class="btn">{%trans "Signup"%}</a>
+{%endif%}
    </nav>
   </div>
  </header>

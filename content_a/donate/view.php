@@ -6,11 +6,11 @@ class view extends \content_a\main\view
 {
 	public function config()
 	{
-		$this->data->page['title']   = T_("Donate");
-		$this->data->page['desc']    = $this->data->site['title']. ' | '. $this->data->site['desc'];
+		$this->data->page['title'] = T_("Donate");
+		$this->data->page['desc']  = $this->data->site['title']. ' | '. $this->data->site['desc'];
 
 
-		$this->data->way_list = \lib\app\donate::way_list();
+		$this->data->way_list    = \lib\app\donate::way_list();
 
 
 		if(\lib\session::get('payment_request_start'))

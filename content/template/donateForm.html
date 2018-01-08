@@ -35,10 +35,21 @@
       {{block ('iNiyat') }}
       {{block ('iAmount') }}
       {{block ('iWay') }}
+      {{block ('iDonersList')}}
       {{block ('ipay')}}
     </form>
   </div>
+
 </div>
+
+{%if payment_verify_msg %}
+<div class="f justify-center">
+  <div class="cbox c5 s12">
+    <p class="alert alert-info">123</p>
+  </div>
+</div>
+{%endif%}
+
 {%endblock%}
 
 
@@ -117,7 +128,7 @@
 {%block iFullname%}
 <label for='ffamily'>{%trans "Full name"%}</label>
 <div class="input">
- <input type="text" name="fullname" placeholder='{%trans "Full name"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid last name"%}' id='ffamily'>
+ <input type="text" name="fullname" placeholder='{%trans "Full name"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid last name"%}' id='ffamily' value='{{user.displayname}}'>
 </div>
 {%endblock%}
 
@@ -128,7 +139,7 @@
 {%block iMobile%}
 <label for='fmobile'>{%trans "Mobile"%}</label>
 <div class="input">
- <input type="tel" name="mobile" placeholder='{%trans "Mobile"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid mobile"%}' id='fmobile'>
+ <input type="tel" name="mobile" placeholder='{%trans "Mobile"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid mobile"%}' id='fmobile' value='{{user.mobile}}'>
 </div>
 {%endblock%}
 
@@ -137,7 +148,7 @@
 {%block iEmail%}
 <label for='femail'>{%trans "Email"%}</label>
 <div class="input">
- <input type="email" name="email" placeholder='{%trans "Email"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid email"%}' id='femail'>
+ <input type="email" name="email" placeholder='{%trans "Email"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid email"%}' id='femail' value='{{user.email}}'>
 </div>
 {%endblock%}
 
@@ -157,7 +168,7 @@
 {%block iAmount%}
 <label for='totalAmount'>{%trans "Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' title='{%trans "Enter a valid amount"%}' id='totalAmount' required>
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%} *' title='{%trans "Enter a valid amount"%}' id='totalAmount' required>
 </div>
 {%endblock%}
 
@@ -166,6 +177,23 @@
 <label for='totalAmount'>{%trans "Total Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
  <input type="number" name="amount" placeholder='{%trans "Pay Amount"%}' id='totalAmount' required readonly>
+</div>
+{%endblock%}
+
+
+{%block iDonersList%}
+<label class="mT20">{%trans "Show as doners"%}</label>
+ <div class="c radio1 green">
+  <input type="radio" id="r-yes" name="doners" value="yes">
+  <label for="r-yes">{%trans "Yes"%}. <a href="{{urlRaw}}/doners" target="_blank">{%trans "show in doners list"%}</a></label>
+ </div>
+
+ <div class="c radio1 black">
+  <input type="radio" id="r-no" name="doners" value="no">
+  <label for="r-no">{%trans "No, Show as anonymous"%}</label>
+ </div>
+<div class="f">
+
 </div>
 {%endblock%}
 
