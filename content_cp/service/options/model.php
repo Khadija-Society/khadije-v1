@@ -54,11 +54,11 @@ class model extends \content_cp\main2\model
 		if(\lib\utility::get('edit'))
 		{
 			$id = \lib\utility::get('edit');
-			\lib\app\need::edit($id, $post);
+			\lib\app\need::edit($id, $post, ['service' => true]);
 		}
 		else
 		{
-			\lib\app\need::add($post);
+			\lib\app\need::add($post, ['service' => true]);
 		}
 
 		if(\lib\debug::$status)

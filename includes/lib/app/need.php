@@ -12,7 +12,8 @@ class need
 	{
 		$default_option =
 		[
-			'debug' => true,
+			'debug'   => true,
+			'service' => false,
 		];
 
 		if(!is_array($_option))
@@ -21,6 +22,12 @@ class need
 		}
 
 		$_option = array_merge($default_option, $_option);
+
+		$is_service = false;
+		if($_option['service'])
+		{
+			$is_service = true;
+		}
 
 		$title = \lib\app::request('title');
 		$title = trim($title);
@@ -33,13 +40,13 @@ class need
 		$request = \lib\app::request('count');
 		$request = trim($request);
 		$request = \lib\utility\convert::to_en_number($request);
-		if(!is_numeric($request))
+		if(!$is_service && !is_numeric($request))
 		{
 			\lib\debug::error(T_("Please set a valid request"), 'request');
 			return false;
 		}
 
-		if(intval($request) > 1E+8)
+		if(!$is_service && intval($request) > 1E+8)
 		{
 			\lib\debug::error(T_("Request is too large"), 'request');
 			return false;
@@ -51,19 +58,19 @@ class need
 		$amount = \lib\app::request('amount');
 		$amount = trim($amount);
 		$amount = \lib\utility\convert::to_en_number($amount);
-		if($amount && !is_numeric($amount))
+		if(!$is_service && $amount && !is_numeric($amount))
 		{
 			\lib\debug::error(T_("Please set a valid amount"), 'amount');
 			return false;
 		}
 
-		if($amount && intval($amount) > 1E+8)
+		if(!$is_service && $amount && intval($amount) > 1E+8)
 		{
 			\lib\debug::error(T_("Amount is too large"), 'amount');
 			return false;
 		}
 
-		if($amount)
+		if(!$is_service && $amount)
 		{
 			$amount = intval($amount);
 		}
@@ -164,7 +171,8 @@ class need
 	{
 		$default_option =
 		[
-			'debug' => true,
+			'debug'   => true,
+			'service' => false,
 		];
 
 		if(!is_array($_option))
@@ -218,7 +226,8 @@ class need
 	{
 		$default_option =
 		[
-			'debug' => true,
+			'debug'   => true,
+			'service' => false,
 		];
 
 		if(!is_array($_option))
