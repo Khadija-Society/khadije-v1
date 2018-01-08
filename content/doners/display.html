@@ -7,7 +7,7 @@
  <div class="example small">
 
 {%for key, value in DonersList%}
-  <div class="vcard shadow">
+  <div class="vcard shadow" title='{{value.date | tdate("Y/m/d H:i") }}'>
    <img src="{{url.static}}/siftal/images/useful/gift.png">
    <div class="content">
     <div class="header">{%if value.doners%} {{value.firstname}} {{value.lastname}}{%else%}{%trans "Anonymous"%}{%endif%}</div>
