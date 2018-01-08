@@ -22,20 +22,15 @@ class mytransactions
 				transactions.doners,
 				transactions.date,
 				transactions.plus,
-				users.firstname,
-				users.lastname,
-				users.gender
+				transactions.fullname
 			FROM
 				transactions
-			INNER JOIN users ON users.id = transactions.user_id
 			WHERE
 				transactions.donate  = '$_type' AND
 				transactions.user_id = $user_id AND
 				transactions.verify  = 1
 			ORDER BY transactions.id DESC
-
 			LIMIT 100
-
 		";
 		return \lib\db::get($query);
 	}
@@ -49,17 +44,13 @@ class mytransactions
 				transactions.doners,
 				transactions.date,
 				transactions.plus,
-				users.firstname,
-				users.lastname,
-				users.gender
+				transactions.fullname
 			FROM
 				transactions
-			INNER JOIN users ON users.id = transactions.user_id
 			WHERE
 				transactions.verify  = 1
 			ORDER BY transactions.id DESC
 			LIMIT 1000
-
 		";
 		return \lib\db::get($query);
 	}

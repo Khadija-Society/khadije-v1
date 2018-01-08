@@ -17,6 +17,11 @@ class model extends \mvc\model
 			'doners'   => \lib\utility::post('doners') === 'yes' ? 1 : 0,
 		];
 
+		if(\lib\permission::access('admin'))
+		{
+			$args['manuall'] = \lib\utility::post('manualPay');
+		}
+
 		\lib\app\donate::add($args);
 	}
 }

@@ -383,7 +383,42 @@ class donate
 			]
 		];
 
-		\lib\utility\payment\pay::start($user_id, 'zarinpal', \lib\app::request('amount'), $meta);
+		if(\lib\app::request('manuall') === 'on')
+		{
+			$transaction_set =
+	        [
+				'caller'     => 'manually',
+				'title'      => T_("Pay donate"),
+				'user_id'    => $user_id,
+				'minus'      => null,
+				'plus'       => \lib\app::request('amount'),
+				'verify'     => 1,
+				'dateverify' => time(),
+				'type'       => 'money',
+				'unit'       => 'toman',
+				'date'       => date("Y-m-d H:i:s"),
+				'hazinekard' => $way,
+				'niyat'      => $niyat,
+				'fullname'   => $fullname,
+				'donate'     => 'cash',
+				'doners'     => $doners,
+	        ];
+
+	        $insert = \lib\db\transactions::set($transaction_set);
+
+	        if($insert)
+	        {
+	        	\lib\debug::true(T_("Transaction successfully inserted"));
+	        }
+	        else
+	        {
+	        	\lib\debug::error(T_("Can not add transactions"));
+	        }
+		}
+		else
+		{
+			\lib\utility\payment\pay::start($user_id, 'zarinpal', \lib\app::request('amount'), $meta);
+		}
 	}
 }
 ?>

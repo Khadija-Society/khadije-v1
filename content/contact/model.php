@@ -17,6 +17,28 @@ class model extends \mvc\model
 	 */
 	public function post_contact()
 	{
+		if(\lib\utility::post('username'))
+		{
+			\lib\debug::error(T_("Whate are you doing?"));
+			return false;
+		}
+
+		$count = \lib\session::get('count_fill_contact');
+		if($count)
+		{
+			\lib\session::set('count_fill_contact', $count + 1, null, 60 * 60);
+		}
+		else
+		{
+			\lib\session::set('count_fill_contact', 1, null, 60 * 60);
+		}
+
+		if($count >= 3)
+		{
+			\lib\debug::warn(T_("How are you?"). ":)");
+			return false;
+		}
+
 		// check login
 		if($this->login())
 		{
