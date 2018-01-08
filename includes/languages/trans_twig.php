@@ -62,7 +62,7 @@ class twigTransTerms
 	echo T_("Enter a valid niyat");                                                   // Line 151
 	echo T_("Pay Amount");                                                            // Line 168
 	echo T_("Require");                                                               // Line 297
-	echo T_("Enter a valid amount");                                                  // Line 128
+	echo T_("Enter a valid amount");                                                  // Line 127
 	echo T_("Total Pay Amount");                                                      // Line 166
 	echo T_("Spending method");                                                       // Line 53
 	echo T_("Please select one item");                                                // Line 179
@@ -113,7 +113,7 @@ class twigTransTerms
 	echo T_("End Date");                                                              // Line 91
 	echo T_("City Place");                                                            // Line 47
 	echo T_("Please select one itmes");                                               // Line 49
-	echo T_("Add");                                                                   // Line 78
+	echo T_("Add");                                                                   // Line 77
 	echo T_("Save");                                                                  // Line 48
 	echo T_("Remove");                                                                // Line 539
 
@@ -123,16 +123,14 @@ class twigTransTerms
 	echo T_("Continue");                                                              // Line 58
 
 	//-----------------------------------------------------content_a\home\display.html
-	echo T_("Manage Child");                                                          // Line 65
-	echo T_("Complete Profile");                                                      // Line 76
-	echo T_("Pay Donate");                                                            // Line 86
+	echo T_("Pay Donate");                                                            // Line 66
 	echo T_("Donate product");                                                        // Line 6
 
 	//------------------------------------------------------content_a\main\layout.html
 	echo T_("Dashboard");                                                             // Line 5
-	echo T_("Edit your profile");                                                     // Line 16
-	echo T_("Avatar of you");                                                         // Line 18
-	echo T_("Default Avatar");                                                        // Line 23
+	echo T_("Edit your profile");                                                     // Line 17
+	echo T_("Avatar of you");                                                         // Line 19
+	echo T_("Default Avatar");                                                        // Line 24
 
 	//----------------------------------------------content_a\profile\profileForm.html
 	echo T_("Enter a valid name from 2 to 40 character");                             // Line 273
@@ -177,7 +175,7 @@ class twigTransTerms
 	echo T_("Expert value");                                                          // Line 84
 	echo T_("Expert year");                                                           // Line 92
 	echo T_("Your car name");                                                         // Line 100
-	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 66
+	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 65
 
 	//---------------------------------------------content_a\service\home\display.html
 	echo T_("register for new service request");                                      // Line 49
@@ -209,8 +207,8 @@ class twigTransTerms
 	echo T_("Search in donations");                                                   // Line 60
 	echo T_("Search");                                                                // Line 35
 	echo T_("mobile");                                                                // Line 77
-	echo T_("Title");                                                                 // Line 90
-	echo T_("Amount");                                                                // Line 128
+	echo T_("Title");                                                                 // Line 89
+	echo T_("Amount");                                                                // Line 127
 	echo T_("Niyat");                                                                 // Line 80
 	echo T_("Hazinekard");                                                            // Line 81
 	echo T_("Status");                                                                // Line 54
@@ -224,10 +222,14 @@ class twigTransTerms
 
 	//----------------------------------------------------content_cp\home\display.html
 	echo T_("Donate product list");                                                   // Line 7
-	echo T_("Donate list");                                                           // Line 8
-	echo T_("request list");                                                          // Line 6
+	echo T_("Donate list");                                                           // Line 6
+	echo T_("request trip list");                                                     // Line 43
+	echo T_("request service list");                                                  // Line 53
+	echo T_("request list");                                                          // Line 71
 
 	//----------------------------------------------------content_cp\main2\layout.html
+	echo T_("Request trip list");                                                     // Line 8
+	echo T_("Request service list");                                                  // Line 10
 
 	//--------------------------------------------content_cp\nationalcode\display.html
 	echo T_("No nationalcode founded.");                                              // Line 17
@@ -246,14 +248,14 @@ class twigTransTerms
 	echo T_("Enter a valid place");                                                   // Line 72
 
 	//-----------------------------------------content_cp\options\product\display.html
-	echo T_("List of Product need");                                                  // Line 31
-	echo T_("Picture");                                                               // Line 35
-	echo T_("Count");                                                                 // Line 106
-	echo T_("Desctiption");                                                           // Line 37
-	echo T_("Enter a valid title");                                                   // Line 90
-	echo T_("Enter a valid count");                                                   // Line 106
-	echo T_("Active");                                                                // Line 114
-	echo T_("Deactive");                                                              // Line 114
+	echo T_("List of Product need");                                                  // Line 33
+	echo T_("Picture");                                                               // Line 34
+	echo T_("Count");                                                                 // Line 105
+	echo T_("Desctiption");                                                           // Line 36
+	echo T_("Enter a valid title");                                                   // Line 89
+	echo T_("Enter a valid count");                                                   // Line 105
+	echo T_("Active");                                                                // Line 113
+	echo T_("Deactive");                                                              // Line 113
 
 	//-------------------------------------------------content_cp\service\display.html
 	echo T_("No service founded.");                                                   // Line 17

@@ -1032,12 +1032,12 @@ class twigTransTerms
 	//---------------------------------------addons\content_su\users\edit\display.html
 
 	//------------------------------------------addons\includes\html\display-dash.html
-	echo T_("Edit your profile");                                                     // Line 50
-	echo T_("Avatar of you");                                                         // Line 52
-	echo T_("Default Avatar");                                                        // Line 54
-	echo T_("Hello");                                                                 // Line 57
+	echo T_("Edit your profile");                                                     // Line 51
+	echo T_("Avatar of you");                                                         // Line 53
+	echo T_("Default Avatar");                                                        // Line 55
+	echo T_("Hello");                                                                 // Line 61
 	echo T_("Logout");                                                                // Line 104 Seperate
-	echo T_("View your current location and navigate to parent of it");               // Line 95
+	echo T_("View your current location and navigate to parent of it");               // Line 99
 
 	//----------------------------------addons\includes\html\display-enter-blocks.html
 	echo T_("Please enter valid mobile number");                                      // Line 12
