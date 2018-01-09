@@ -4,21 +4,21 @@
 {%block pageData%}
 
 <div class="cn fs14">
- <div class="example small">
+ <div class="example small f justify-center">
 
 {%for key, value in DonersList%}
-  <div class="vcard shadow" title='{{value.date | tdate("Y/m/d H:i") }}'>
+  <div class="vcard cauto shadow" title='{{value.date | tdate("Y/m/d H:i") }}'>
    <img src="{{url.static}}/siftal/images/useful/gift.png">
    <div class="content">
     <div class="header">{%if value.doners%} {{value.firstname}} {{value.lastname}}{%else%}{%trans "Anonymous"%}{%endif%}</div>
-    <div class="meta"><span>{{value.plus | number_format | fitNumber}}</span></div>
+    <div class="meta"><span>{{value.plus | number_format | fitNumber}}</span> <span>{%trans "Toman"%}</span></div>
    </div>
   </div>
 
 {%endfor%}
 
 
- <a href="{{url.base}}/donate" class="vcard shadow">
+ <a href="{{url.base}}/donate" class="vcard cauto shadow">
    <img src="{{url.static}}/siftal/images/useful/care.png">
   <div class="content">
    <button class="btn block success">{%trans "Be good too"%}</button>
