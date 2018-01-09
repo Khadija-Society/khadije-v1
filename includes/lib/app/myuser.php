@@ -269,7 +269,7 @@ class myuser
 		$args['lastname']        = $lastname;
 		if($nationalcode)
 		{
-			$args['nationalcode']    = "(SELECT '$nationalcode')";
+			$args['nationalcode']    = "$nationalcode";
 		}
 		else
 		{
@@ -387,7 +387,7 @@ class myuser
 		if(isset($args['nationalcode']) && $args['nationalcode'])
 		{
 			$load_user = \lib\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
-			if(isset($load_user['nationalcode']) && "(SELECT '$load_user[nationalcode]')" === $args['nationalcode'])
+			if(isset($load_user['nationalcode']) && intval($load_user['nationalcode']) === intval($args['nationalcode']))
 			{
 				\lib\debug::error(T_("This nationalcode is for your!"), 'nationalcode');
 				return false;
