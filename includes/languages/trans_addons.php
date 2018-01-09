@@ -143,6 +143,20 @@ class twigTransTerms
 	echo T_("Permission cat");                                                        // Line 10
 	echo T_("Save change");                                                           // Line 32
 
+	//--------------------------------------------addons\content_cp\terms\display.html
+	echo T_("Slug");                                                                  // Line 84
+	echo T_("Desctiption");                                                           // Line 42
+	echo T_("Add");                                                                   // Line 149 Seperate
+	echo T_("Edit");                                                                  // Line 150 Seperate
+	echo T_("Require");                                                               // Line 74
+	echo T_("Enter a valid title");                                                   // Line 76
+	echo T_("Used for url");                                                          // Line 82
+	echo T_("Enter a valid slug");                                                    // Line 84
+	echo T_("Parent Category");                                                       // Line 90
+	echo T_("Please select one itme");                                                // Line 92
+	echo T_("Active");                                                                // Line 56
+	echo T_("Deactive");                                                              // Line 109
+
 	//---------------------------------addons\content_cp\transactions\add\display.html
 	echo T_("Saved record");                                                          // Line 6
 	echo T_("Code");                                                                  // Line 73
@@ -160,7 +174,6 @@ class twigTransTerms
 	echo T_("Prize");                                                                 // Line 53
 	echo T_("Unit");                                                                  // Line 34
 	echo T_("Mobile");                                                                // Line 168 Seperate
-	echo T_("Add");                                                                   // Line 149 Seperate
 
 	//-------------------------------------addons\content_cp\transactions\display.html
 	echo T_("Add New Transaction");                                                   // Line 7
@@ -188,7 +201,6 @@ class twigTransTerms
 	echo T_("Email");                                                                 // Line 100
 	echo T_("Username");                                                              // Line 27
 	echo T_("Avatar");                                                                // Line 28
-	echo T_("Edit");                                                                  // Line 150 Seperate
 	echo T_("Logs");                                                                  // Line 31
 	echo T_("Transactions");                                                          // Line 32
 	echo T_("Permission");                                                            // Line 33
@@ -626,7 +638,6 @@ class twigTransTerms
 
 	//------------------------------------addons\content_su\sample\template\input.html
 	echo T_("Focus");                                                                 // Line 51
-	echo T_("Active");                                                                // Line 56
 	echo T_("Readonly");                                                              // Line 61
 	echo T_("Disabled");                                                              // Line 66
 	echo T_("All type of input conditions");                                          // Line 74

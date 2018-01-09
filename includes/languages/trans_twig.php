@@ -21,6 +21,7 @@ class twigTransTerms
 
 	//-----------------------------------------------------content\doners\display.html
 	echo T_("Anonymous");                                                             // Line 13
+	echo T_("Be good too");                                                           // Line 24
 
 	//-------------------------------------------------------content\home\display.html
 	echo T_("About");                                                                 // Line 6
@@ -28,7 +29,7 @@ class twigTransTerms
 	echo T_("Do you know?");                                                          // Line 80
 	echo T_("Family trip signup");                                                    // Line 84
 	echo T_("Group trip signup");                                                     // Line 85
-	echo T_("Donate");                                                                // Line 12
+	echo T_("Donate");                                                                // Line 13
 	echo T_("Mashhad");                                                               // Line 168
 	echo T_("Karbala");                                                               // Line 159
 	echo T_("license and supporters");                                                // Line 133
@@ -92,9 +93,9 @@ class twigTransTerms
 	echo T_("Exit Session");                                                          // Line 27
 
 	//----------------------------------------------------content\template\header.html
-	echo T_("Admin panel");                                                           // Line 14
-	echo T_("Enter");                                                                 // Line 16
-	echo T_("Signup");                                                                // Line 17
+	echo T_("Admin panel");                                                           // Line 15
+	echo T_("Enter");                                                                 // Line 17
+	echo T_("Signup");                                                                // Line 18
 
 	//----------------------------------------------content\template\static\about.html
 	echo T_("Soon");                                                                  // Line 6
