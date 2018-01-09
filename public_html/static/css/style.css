@@ -502,6 +502,7 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
 .mw200{max-width:200px;}
 
 
+[data-page="doners"] .vcard { background-color:#fff; }
 [data-page="doners"] .vcard img{padding:5px;}
 
 
