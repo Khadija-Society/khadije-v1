@@ -12,12 +12,12 @@ class twigTransTerms
 	echo T_("Qom");                                                                   // Line 150
 	echo T_("Iran");                                                                  // Line 47
 	echo T_("Name");                                                                  // Line 273
-	echo T_("Full Name");                                                             // Line 85
+	echo T_("Full Name");                                                             // Line 86
 	echo T_("Mobile");                                                                // Line 289
-	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 93
+	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 94
 	echo T_("Email");                                                                 // Line 456
-	echo T_("Your Message");                                                          // Line 108
-	echo T_("Send");                                                                  // Line 115
+	echo T_("Your Message");                                                          // Line 109
+	echo T_("Send");                                                                  // Line 116
 
 	//-----------------------------------------------------content\doners\display.html
 	echo T_("Anonymous");                                                             // Line 13
@@ -66,7 +66,7 @@ class twigTransTerms
 	echo T_("Enter a valid niyat");                                                   // Line 173
 	echo T_("Pay Amount");                                                            // Line 191
 	echo T_("Require");                                                               // Line 297
-	echo T_("Enter a valid amount");                                                  // Line 127
+	echo T_("Enter a valid amount");                                                  // Line 129
 	echo T_("Total Pay Amount");                                                      // Line 189
 	echo T_("Show in public doners list?");                                           // Line 197
 	echo T_("Check doners list");                                                     // Line 197
@@ -85,15 +85,15 @@ class twigTransTerms
 	echo T_("Honors");                                                                // Line 9
 	echo T_("FAQ");                                                                   // Line 10
 	echo T_("Contact");                                                               // Line 11
-	echo T_("Register for family trip");                                              // Line 16
-	echo T_("Register for group trip");                                               // Line 17
-	echo T_("Control Panel");                                                         // Line 25
-	echo T_("Exit Session");                                                          // Line 26
-	echo T_("Another Session");                                                       // Line 27
+	echo T_("Doners");                                                                // Line 12
+	echo T_("Register for family trip");                                              // Line 17
+	echo T_("Register for group trip");                                               // Line 18
+	echo T_("Control Panel");                                                         // Line 26
+	echo T_("Exit Session");                                                          // Line 27
 
 	//----------------------------------------------------content\template\header.html
-	echo T_("Enter");                                                                 // Line 13
-	echo T_("Admin panel");                                                           // Line 15
+	echo T_("Admin panel");                                                           // Line 14
+	echo T_("Enter");                                                                 // Line 16
 	echo T_("Signup");                                                                // Line 17
 
 	//----------------------------------------------content\template\static\about.html
@@ -127,7 +127,7 @@ class twigTransTerms
 	echo T_("End Date");                                                              // Line 95
 	echo T_("City Place");                                                            // Line 47
 	echo T_("Please select one itmes");                                               // Line 49
-	echo T_("Add");                                                                   // Line 77
+	echo T_("Add");                                                                   // Line 79
 	echo T_("Save");                                                                  // Line 48
 	echo T_("Remove");                                                                // Line 539
 
@@ -185,14 +185,14 @@ class twigTransTerms
 	echo T_("Save all");                                                              // Line 53
 	echo T_("Start date");                                                            // Line 429
 	echo T_("End date");                                                              // Line 438
-	echo T_("Expert title");                                                          // Line 76
-	echo T_("Expert value");                                                          // Line 84
-	echo T_("Expert year");                                                           // Line 92
-	echo T_("Your car name");                                                         // Line 100
-	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 65
+	echo T_("Expert title");                                                          // Line 77
+	echo T_("Expert value");                                                          // Line 86
+	echo T_("Expert year");                                                           // Line 94
+	echo T_("Your car name");                                                         // Line 102
+	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 67
 
 	//---------------------------------------------content_a\service\home\display.html
-	echo T_("register for new service request");                                      // Line 49
+	echo T_("register for new service request");                                      // Line 37
 
 	//------------------------------------------content_a\service\request\display.html
 
@@ -221,9 +221,9 @@ class twigTransTerms
 	echo T_("Today Donation");                                                        // Line 47
 	echo T_("Search in donations");                                                   // Line 60
 	echo T_("Search");                                                                // Line 35
-	echo T_("mobile");                                                                // Line 49
-	echo T_("Title");                                                                 // Line 89
-	echo T_("Amount");                                                                // Line 127
+	echo T_("mobile");                                                                // Line 48
+	echo T_("Title");                                                                 // Line 91
+	echo T_("Amount");                                                                // Line 129
 	echo T_("Niyat");                                                                 // Line 80
 	echo T_("Hazinekard");                                                            // Line 81
 	echo T_("Status");                                                                // Line 54
@@ -240,11 +240,10 @@ class twigTransTerms
 	echo T_("Donate list");                                                           // Line 6
 	echo T_("request trip list");                                                     // Line 43
 	echo T_("request service list");                                                  // Line 53
-	echo T_("request list");                                                          // Line 71
+	echo T_("Request service list");                                                  // Line 8
+	echo T_("Request trip list");                                                     // Line 10
 
 	//----------------------------------------------------content_cp\main2\layout.html
-	echo T_("Request trip list");                                                     // Line 8
-	echo T_("Request service list");                                                  // Line 10
 
 	//--------------------------------------------content_cp\nationalcode\display.html
 	echo T_("No nationalcode founded.");                                              // Line 17
@@ -265,31 +264,29 @@ class twigTransTerms
 	//-----------------------------------------content_cp\options\product\display.html
 	echo T_("List of Product need");                                                  // Line 33
 	echo T_("Picture");                                                               // Line 34
-	echo T_("Count");                                                                 // Line 105
+	echo T_("Count");                                                                 // Line 107
 	echo T_("Desctiption");                                                           // Line 36
-	echo T_("Enter a valid title");                                                   // Line 89
-	echo T_("Enter a valid count");                                                   // Line 105
-	echo T_("Active");                                                                // Line 113
-	echo T_("Deactive");                                                              // Line 113
+	echo T_("Enter a valid title");                                                   // Line 91
+	echo T_("Enter a valid count");                                                   // Line 107
+	echo T_("Active");                                                                // Line 115
+	echo T_("Deactive");                                                              // Line 115
 
 	//-------------------------------------------------content_cp\service\display.html
 	echo T_("No service founded.");                                                   // Line 17
 	echo T_("You are not have service yet!");                                         // Line 23
 	echo T_("Search in services");                                                    // Line 34
 	echo T_("firstname");                                                             // Line 47
-	echo T_("lastname");                                                              // Line 48
-	echo T_("birthday");                                                              // Line 50
-	echo T_("province");                                                              // Line 51
-	echo T_("phone");                                                                 // Line 52
-	echo T_("married");                                                               // Line 53
-	echo T_("gender");                                                                // Line 54
-	echo T_("expert");                                                                // Line 55
-	echo T_("job");                                                                   // Line 56
-	echo T_("expertvalue");                                                           // Line 57
-	echo T_("expertyear");                                                            // Line 58
-	echo T_("startdate");                                                             // Line 59
-	echo T_("enddate");                                                               // Line 60
-	echo T_("status");                                                                // Line 61
+	echo T_("birthday");                                                              // Line 49
+	echo T_("province");                                                              // Line 50
+	echo T_("phone");                                                                 // Line 51
+	echo T_("married");                                                               // Line 52
+	echo T_("gender");                                                                // Line 53
+	echo T_("job");                                                                   // Line 54
+	echo T_("expertvalue");                                                           // Line 55
+	echo T_("expertyear");                                                            // Line 56
+	echo T_("startdate");                                                             // Line 57
+	echo T_("enddate");                                                               // Line 58
+	echo T_("Expert");                                                                // Line 59
 
 	//-----------------------------------------content_cp\service\options\display.html
 
