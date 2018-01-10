@@ -246,6 +246,7 @@ class donate
 		}
 
 		$niyat = \lib\app::request('niyat');
+		$niyat = trim($niyat);
 		if(mb_strlen($niyat) > 150)
 		{
 			\lib\debug::error(T_("Please set niyat less than 150 character"), 'niyat');
@@ -253,6 +254,7 @@ class donate
 		}
 
 		$way = \lib\app::request('way');
+		$way = trim($way);
 		if($way && !in_array($way, \lib\app\donate::way_list()))
 		{
 			\lib\debug::error(T_("Please set a valid way"), 'way');
@@ -260,6 +262,7 @@ class donate
 		}
 
 		$fullname = \lib\app::request('fullname');
+		$fullname = trim($fullname);
 		if(mb_strlen($fullname) > 150)
 		{
 			\lib\debug::error(T_("Please set fullname less than 150 character"), 'fullname');
@@ -271,6 +274,7 @@ class donate
 
 
 		$email = \lib\app::request('email');
+		$email = trim($email);
 		if(mb_strlen($email) > 90)
 		{
 			\lib\debug::error(T_("Please set email less than 90 character"), 'email');
@@ -278,6 +282,7 @@ class donate
 		}
 
 		$mobile = \lib\app::request('mobile');
+		$mobile = trim($mobile);
 		if($mobile && !\lib\utility\filter::mobile($mobile))
 		{
 			\lib\debug::error(T_("Please set a valid mobile number"), 'mobile');
