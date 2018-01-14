@@ -558,6 +558,8 @@ body.loading-page .site-header .logo img{padding:7px;opacity:0.7}
   #landing{min-height:300px;}
   #landing:after{top:0.5em;right:0;left:0;bottom:initial;text-align:center;}
 
+  #aboutBox{padding:2em 0;}
+
   #statisticTile{font-size:0.7em}
   #statisticTile .cn{margin:0;width:100%;}
 

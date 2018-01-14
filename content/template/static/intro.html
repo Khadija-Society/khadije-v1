@@ -1,7 +1,7 @@
 {%extends display.main%}
 
 
-{%block beforeHeader1%}
+{%block beforeHeader%}
  {{block('landPage')}}
 {%endblock%}
 
@@ -40,18 +40,10 @@
     <div class="f">
       <div class="c5 s12 text">
         <h2><a href="{{url.base}}/about">{%trans "About"%} {{site.title}} {%if site.currentlang == 'fa'%}<small>سلام الله علیها</small>{%endif%}</a></h2>
-        <h3 class="fs11">{{site.desc}}</h3>
         <p>موسسه حضرت خدیجه علیها السلام به همت جناب آقای زهیر ثباتی مقدم در سال 1394و با حضور حضرت حجت الاسلام و المسلمین فرحزاد ایجاد و بعداً با عنوان توسعه فرهنگ زیارت اهل بیت علیهم السلام و ترویج نام و مرام مادران و همسران اهل بیت علیهم السلام بویژه حضرت خدیجه علیها السلام   و احیای سنن فراموش شده (برگزاری مناسبتها و سنن فراموش شده یا کمتر مورد توجه قرار گرفته مثل قرباینی،اطعام غدیر،وفات حضرت خدیجه  و...) فعالیت آن ادامه پیدا کرد.</p>
-        <div class="f">
-          <div class="c6 s12 pRa5">
-            <a href="{{url.baseRaw}}a/trip" class="btn block primary outline mB20" data-direct>{%trans "Family trip signup"%}</a>
-          </div>
-          <div class="c6 s12">
-            <a href="{{url.baseRaw}}a/group" class="btn block primary outline mB20" data-direct>{%trans "Group trip signup"%}</a>
-          </div>
-        </div>
+        <p>مأموریت مشخص موسسه همانگونه که از نامش برداشت میشود، ساماندهی امور زائرین با کمک و مشارکت مردم و ایجاد روحیه انجام امور خیریه حتی با ارقام محدود می باشد.</p>
       </div>
-      <div class="c s0">
+      <div class="c s12">
         <div class="videoBox">
           <div id="15143527106877784"><script async src="https://www.aparat.com/embed/o4Kc8?data[rnddiv]=15143527106877784"></script></div>
         </div>
@@ -89,8 +81,8 @@
     <p>هزاران نفر در سراسر کشور عزیزمان تاکنون به زیارت امام رضا ع و حضرت معصومه س مشرف نشده‌اند و آرزوی زیارت این بزرگان را دارند؟</p>
     <p>طبق بررسی‌های صورت گرفته فقط در استان قم بیش از ۵هزار نفر ساکن این استان تاکنون حتی یکبار هم به حرم حضرت معصومه سلام الله علیها مشرف نشده‌اند!</p>
     <p>
-      <a href="{{url.baseRaw}}a/trip" class="btn light outline hide mB20" data-direct>{%trans "Family trip signup"%}</a>
-      <a href="{{url.baseRaw}}a/group" class="btn light outline hide mB20" data-direct>{%trans "Group trip signup"%}</a>
+      <a href="{{url.baseRaw}}a/trip" class="btn light outline mB20" data-direct>{%trans "Family trip signup"%}</a>
+      <a href="{{url.baseRaw}}a/group" class="btn light outline mB20" data-direct>{%trans "Group trip signup"%}</a>
       <a href="{{url.base}}/donate" class="btn light outline mB20">{%trans "Donate"%}</a>
 
     </p>
