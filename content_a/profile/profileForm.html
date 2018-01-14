@@ -117,12 +117,12 @@
 <label for="gender">{%trans "Gender"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="f">
  <div class="radio1 green">
-  <input type="radio" id="r-male" name="gender" required value="male" {%if userdetail.gender == 'male' %}checked{%endif%}>
+  <input type="radio" id="r-male" name="gender" value="male" {%if userdetail.gender == 'male' %}checked{%endif%}>
   <label for="r-male">{%trans "Male"%}</label>
  </div>
 
  <div class="radio1 green">
-  <input type="radio" id="r-female" name="gender" required value="female" {%if userdetail.gender == 'female' %}checked{%endif%}>
+  <input type="radio" id="r-female" name="gender" value="female" {%if userdetail.gender == 'female' %}checked{%endif%}>
   <label for="r-female">{%trans "Female"%}</label>
  </div>
 </div>
@@ -142,12 +142,12 @@
 <label for="Married">{%trans "Marital"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="f">
  <div class="radio1 yellow">
-  <input type="radio" id="r-single" name="Married" required value="single" {%if userdetail.married == 'single' %}checked{%endif%}>
+  <input type="radio" id="r-single" name="Married" value="single" {%if userdetail.married == 'single' %}checked{%endif%}>
   <label for="r-single">{%trans "Single"%}</label>
  </div>
 
  <div class="radio1 yellow">
-  <input type="radio" id="r-married" name="Married" required value="married" {%if userdetail.married == 'married' %}checked{%endif%}>
+  <input type="radio" id="r-married" name="Married" value="married" {%if userdetail.married == 'married' %}checked{%endif%}>
   <label for="r-married">{%trans "Married"%}</label>
  </div>
 </div>
