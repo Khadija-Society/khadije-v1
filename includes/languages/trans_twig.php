@@ -20,8 +20,10 @@ class twigTransTerms
 	echo T_("Send");                                                                  // Line 116
 
 	//-----------------------------------------------------content\doners\display.html
-	echo T_("Anonymous");                                                             // Line 13
-	echo T_("Be good too");                                                           // Line 24
+	echo T_("Untitled");                                                              // Line 18
+	echo T_("Anonymous");                                                             // Line 21
+	echo T_("Toman");                                                                 // Line 183
+	echo T_("Be good too");                                                           // Line 34
 
 	//-------------------------------------------------------content\home\display.html
 	echo T_("About");                                                                 // Line 6
@@ -51,7 +53,6 @@ class twigTransTerms
 	//------------------------------------------------content\template\donateForm.html
 	echo T_("List of last success donations");                                        // Line 73
 	echo T_("Requested");                                                             // Line 101
-	echo T_("Toman");                                                                 // Line 183
 	echo T_("Your help");                                                             // Line 107
 	echo T_("Enter a valid number");                                                  // Line 107
 	echo T_("Pay");                                                                   // Line 126

@@ -131,6 +131,11 @@ class twigTransTerms
 
 	//----------------------------------------------addons\content_cp\main\layout.html
 	echo T_("Options");                                                               // Line 84 Seperate
+	echo T_("News");                                                                  // Line 9
+	echo T_("All news");                                                              // Line 11
+	echo T_("Add new news");                                                          // Line 12
+	echo T_("Categries");                                                             // Line 13
+	echo T_("Tags");                                                                  // Line 14
 	echo T_("Last update on");                                                        // Line 26
 	echo T_("wait for next version!");                                                // Line 26
 	echo T_("Powered by");                                                            // Line 28
@@ -144,18 +149,18 @@ class twigTransTerms
 	echo T_("Save change");                                                           // Line 32
 
 	//--------------------------------------------addons\content_cp\terms\display.html
-	echo T_("Slug");                                                                  // Line 84
-	echo T_("Desctiption");                                                           // Line 42
+	echo T_("Slug");                                                                  // Line 87
+	echo T_("Desctiption");                                                           // Line 45
 	echo T_("Add");                                                                   // Line 149 Seperate
 	echo T_("Edit");                                                                  // Line 150 Seperate
-	echo T_("Require");                                                               // Line 74
-	echo T_("Enter a valid title");                                                   // Line 76
-	echo T_("Used for url");                                                          // Line 82
-	echo T_("Enter a valid slug");                                                    // Line 84
-	echo T_("Parent Category");                                                       // Line 90
-	echo T_("Please select one itme");                                                // Line 92
+	echo T_("Require");                                                               // Line 77
+	echo T_("Enter a valid title");                                                   // Line 79
+	echo T_("Used for url");                                                          // Line 85
+	echo T_("Enter a valid slug");                                                    // Line 87
+	echo T_("Parent Category");                                                       // Line 93
+	echo T_("Please select one itme");                                                // Line 95
 	echo T_("Active");                                                                // Line 56
-	echo T_("Deactive");                                                              // Line 109
+	echo T_("Deactive");                                                              // Line 112
 
 	//---------------------------------addons\content_cp\transactions\add\display.html
 	echo T_("Saved record");                                                          // Line 6

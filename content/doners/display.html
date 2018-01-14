@@ -10,7 +10,17 @@
   <div class="vcard cauto shadow" title='{{value.date | tdate("Y/m/d H:i") }}'>
    <img src="{{url.static}}/siftal/images/useful/gift.png">
    <div class="content">
-    <div class="header">{%if value.doners%} {{value.firstname}} {{value.lastname}}{%else%}{%trans "Anonymous"%}{%endif%}</div>
+    <div class="header">
+    {%if value.doners%}
+      {%if value.firstname or value.lastname%}
+      {{value.firstname}} {{value.lastname}}
+      {%else%}
+        {%trans "Untitled"%}
+      {%endif%}
+    {%else%}
+      {%trans "Anonymous"%}
+    {%endif%}
+  </div>
     <div class="meta"><span>{{value.plus | number_format | fitNumber}}</span> <span>{%trans "Toman"%}</span></div>
    </div>
   </div>
