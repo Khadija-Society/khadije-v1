@@ -19,9 +19,10 @@ class view extends \mvc\view
 		{
 			if(\lib\utility\payment\verify::get_status())
 			{
+				$amount = \lib\utility\payment\verify::get_amount();
 				$this->data->payment_verify_msg_true = true;
-				$this->data->payment_verify_msg = T_("Thanks for your payment");
-				\lib\app\donate::sms_success(\lib\utility\payment\verify::get_amount());
+				$this->data->payment_verify_msg = T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \lib\utility\human::fitNumber($amount)]);
+				\lib\app\donate::sms_success($amount);
 			}
 			else
 			{
