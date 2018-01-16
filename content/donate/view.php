@@ -21,7 +21,7 @@ class view extends \mvc\view
 			{
 				$this->data->payment_verify_msg_true = true;
 				$this->data->payment_verify_msg = T_("Thanks for your payment");
-				\lib\app\donate::sms_success();
+				\lib\app\donate::sms_success(\lib\utility\payment\verify::get_amount());
 			}
 			else
 			{

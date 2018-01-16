@@ -5,13 +5,27 @@ class donate
 {
 	public static $way_key = 'hazinekard_list';
 
-	public static function sms_success()
+	public static function sms_success($_amount = null)
 	{
+
 		$mobile = \lib\session::get('temp_mobile_sms_verify_payment');
 		\lib\session::set('temp_mobile_sms_verify_payment', null);
 		if($mobile)
 		{
-			\lib\utility\sms::send($mobile, "نذر شما قبول. موفق باشید");
+			$msg = '';
+			if($_amount)
+			{
+				$_amount = number_format(\lib\utility\convert::to_fa_number($_amount));
+				$msg .= "نذر شما قبول\n";
+				$msg .= "مبلغ ". $_amount. " تومان دریافت شد";
+			}
+			else
+			{
+				$msg .= "نذر شما قبول\n";
+				$msg .= "موفق باشید";
+			}
+
+			\lib\utility\sms::send($mobile, $msg);
 		}
 	}
 
