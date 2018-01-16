@@ -25,7 +25,7 @@ class view extends \content_cp\main2\view
 		];
 
 		$args['donate'] = 'cash';
-
+		$args['condition'] = 'ok';
 		$search_string            = \lib\utility::get('q');
 
 		if($search_string)
