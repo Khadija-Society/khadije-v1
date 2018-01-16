@@ -94,7 +94,8 @@
         <td class="s0">{{value.niyat}}</td>
         <td>{{value.hazinekard}}</td>
         <td class="s0">{{value.condition}}</td>
-        <td class="s0">{{value.date | tdate("Y-m-d H:i:s")}}</td>
+
+        <td class="s0" title='{{value.date | tdate("Y-m-d H:i:s")}}'>{{value.dateverify | date("Y-m-d H:i:s") | tdate("Y-m-d H:i:s")}}</td>
       </tr>
       {%endfor%}
     </tbody>
