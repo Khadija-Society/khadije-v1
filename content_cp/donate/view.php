@@ -24,6 +24,11 @@ class view extends \content_cp\main2\view
 			'sort'           => \lib\utility::get('sort'),
 		];
 
+		if(!$args['order'])
+		{
+			$args['order'] = 'DESC';
+		}
+
 		$args['donate'] = 'cash';
 		$args['condition'] = 'ok';
 		$search_string            = \lib\utility::get('q');
