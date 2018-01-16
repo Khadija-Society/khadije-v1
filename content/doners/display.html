@@ -6,6 +6,15 @@
 <div class="cn fs14">
  <div class="example tiny f justify-center">
 
+{%if DonersList | length > 30%}
+ <a href="{{url.base}}/donate" class="vcard cauto shadow">
+   <img src="{{url.static}}/siftal/images/useful/care.png">
+  <div class="content">
+   <button class="btn block success fs09">{%trans "Be good too"%}</button>
+  </div>
+ </a>
+{%endif%}
+
 {%for key, value in DonersList%}
   <div class="vcard cauto shadow" title='{{value.date | tdate("Y/m/d H:i") }}'>
    <img src="{{url.static}}/siftal/images/useful/gift.png">
@@ -31,7 +40,7 @@
  <a href="{{url.base}}/donate" class="vcard cauto shadow">
    <img src="{{url.static}}/siftal/images/useful/care.png">
   <div class="content">
-   <button class="btn block success">{%trans "Be good too"%}</button>
+   <button class="btn block success fs09">{%trans "Be good too"%}</button>
   </div>
  </a>
 
