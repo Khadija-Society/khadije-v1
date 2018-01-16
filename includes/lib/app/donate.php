@@ -8,6 +8,7 @@ class donate
 	public static function sms_success()
 	{
 		$mobile = \lib\session::get('temp_mobile_sms_verify_payment');
+		\lib\session::set('temp_mobile_sms_verify_payment', null);
 		if($mobile)
 		{
 			\lib\utility\sms::send($mobile, "نذر شما قبول. موفق باشید");

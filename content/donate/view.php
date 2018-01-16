@@ -17,16 +17,19 @@ class view extends \mvc\view
 
 		if(\lib\session::get('payment_request_start'))
 		{
-			if(\lib\utility\payment::get_status())
+			if(\lib\utility\payment\verify::get_status())
 			{
-				\lib\utility\payment::clear_session();
+				$this->data->payment_verify_msg_true = true;
 				$this->data->payment_verify_msg = T_("Thanks for your payment");
-				\lib\utility\donate::sms_success();
+				\lib\app\donate::sms_success();
 			}
 			else
 			{
+				$this->data->payment_verify_msg_true = false;
 				$this->data->payment_verify_msg = T_("Payment unsuccessfull");
 			}
+
+			\lib\utility\payment\verify::clear_session();
 		}
 	}
 }
