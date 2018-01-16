@@ -15,7 +15,7 @@ class donate
 			$msg = '';
 			if($_amount)
 			{
-				$_amount = number_format(\lib\utility\convert::to_fa_number($_amount));
+				$_amount = \lib\utility\convert::to_fa_number($_amount);
 				$msg .= "نذر شما قبول\n";
 				$msg .= "مبلغ ". $_amount. " تومان دریافت شد";
 			}
