@@ -437,7 +437,14 @@ class donate
 		}
 		else
 		{
-			\lib\utility\payment\pay::start($user_id, 'zarinpal', \lib\app::request('amount'), $meta);
+			if(intval(\lib\user::id()) === 1 || Tld === 'local' || intval(\lib\user::id()) === 7)
+			{
+				\lib\utility\payment\pay::start($user_id, 'asanpardakht', \lib\app::request('amount'), $meta);
+			}
+			else
+			{
+				\lib\utility\payment\pay::start($user_id, 'zarinpal', \lib\app::request('amount'), $meta);
+			}
 		}
 	}
 }
