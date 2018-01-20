@@ -530,10 +530,21 @@ class travel
 		];
 
 		$city = \lib\app::request('city');
-		if(!$city || !in_array(T_($city), self::active_city()))
+		if(\lib\app::request('type') === 'group')
 		{
-			\lib\debug::error(_("Invalid city"), 'city');
-			return false;
+			if(!$city || !in_array(T_($city), self::group_active_city()))
+			{
+				\lib\debug::error(_("Invalid city"), 'city');
+				return false;
+			}
+		}
+		else
+		{
+			if(!$city || !in_array(T_($city), self::active_city()))
+			{
+				\lib\debug::error(_("Invalid city"), 'city');
+				return false;
+			}
 		}
 
 
