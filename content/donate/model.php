@@ -17,12 +17,19 @@ class model extends \mvc\model
 			'doners'   => \lib\utility::post('doners') === 'yes' ? 1 : 0,
 		];
 
+		$redirect = false;
 		if(\lib\permission::access('admin'))
 		{
+			$redirect = true;
 			$args['manuall'] = \lib\utility::post('manualPay');
 		}
 
 		\lib\app\donate::add($args);
+
+		if($redirect)
+		{
+			$this->redirector($this->url('full'));
+		}
 	}
 }
 ?>
