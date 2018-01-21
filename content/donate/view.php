@@ -10,7 +10,7 @@ class view extends \mvc\view
 		$this->data->page['desc']  = T_("Pay your donate online with below form");
 
 
-		$this->data->bodyclass = 'unselectable vflex';
+		$this->data->bodyclass = 'unselectable';
 		$this->data->way_list  = \lib\app\donate::way_list();
 		$this->data->donateArchive = \lib\db\mytransactions::user_transaction('cash');
 

@@ -9,7 +9,7 @@ class view extends \mvc\view
 		$this->data->page['desc']  = T_("List of our last doners");
 
 
-		$this->data->bodyclass = 'unselectable vflex';
+		$this->data->bodyclass = 'unselectable';
 		$this->data->way_list  = \lib\app\donate::way_list();
 
 		$this->data->DonersList = \lib\db\mytransactions::transaction_list();
