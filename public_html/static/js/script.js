@@ -10,7 +10,7 @@ route('*', function()
 
 $(function()
 {
-
+	responsiveSiteSidebar();
 });
 
 
@@ -47,3 +47,43 @@ function calcDonateProductTotalPrices()
 
 	$('#totalAmount').val(TotalPrice);
 }
+
+
+function responsiveSiteSidebar()
+{
+  $('body').on('click', function(_e)
+  {
+  	console.log(11);
+  	console.log(_e.target);
+    if($(_e.target).is('#sitesidebarHandler'))
+    {
+      // click on hanlder, do nothing!
+      $("body").attr('data-sidebar', 'dada');
+    }
+    else if($(_e.target).is('#sitesidebar') || $(_e.target).parents('#sitesidebar').lenght)
+    {
+      $("body").attr('data-sidebar', 'baba');
+    }
+    else if($('body').attr('data-sidebar') === undefined)
+    {
+      // do nothing because its none!
+    }
+    else
+    {
+      $("body").attr('data-sidebar', null);
+    }
+  });
+
+  $('#sitesidebar a[href]').on('click', function()
+  {
+      setTimeout(function()
+      {
+        $("body").attr('data-sidebar', null);
+      }, 500);
+  })
+}
+
+
+
+
+

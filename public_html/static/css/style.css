@@ -36,9 +36,9 @@ a{transition:0.3s;}
 .site-header .btn:focus{background-color:rgba(255,255,255,0.5);}
 
 
-#sitesidebar{display: block;position: fixed;top: 0;bottom: 0;overflow-y: auto;z-index: 3;background-color: rgba(0,0,0,0.7);width:250px;left: 0;left: -250px;}
+#sitesidebar{display: block;position: fixed;top: 0;bottom: 0;overflow-y: auto;z-index: 3;background-color: rgba(0,0,0,0.8);width:250px;left: 0;left: -250px;transition:0.3s;}
 body.rtl[data-sidebar] #sitesidebar{left:0;}
-#sitesidebar ul.sidenav{font-size:1.4em}
+#sitesidebar ul.sidenav{font-size:1.4em;margin-top:50px;}
 #sitesidebar ul > li{color:#eee;}
 #sitesidebar ul > li.title{background-color:#333;padding:0.5em 1em;}
 #sitesidebar ul > li > a{display:block;padding:1.2em 2em;color:#eee;transition:0.3s;cursor:pointer;max-width:300px;margin:0 auto;}
@@ -46,8 +46,9 @@ body.rtl[data-sidebar] #sitesidebar{left:0;}
 #sitesidebar ul > li > a:hover{background-color:rgba(0,0,0,0.3)}
 #sitesidebar ul > li > a:focus{background-color:rgba(0,0,0,0.7);color:#fff;}
 
-#sidenavHandler{position:fixed;top:10px;left:10px;width:50px;height:50px;background-color:rgba(255,255,255,0.7);color:#333;border-radius:3px;border:1px solid #333;z-index:3}
-
+#sitesidebarHandler{position:fixed;top:2em;left:2em;background-color:rgba(255,255,255,0.4);color:#333;border-radius:3px;border:1px solid #777;z-index:3;transition:0.3s;display:none;}
+#sitesidebarHandler:hover{background-color:rgba(255,255,255,0.6);}
+#sitesidebarHandler:after{font-family:"siftal" !important;line-height:1;content:"\e04a";display:block;text-align:center;font-size:30px;padding:5px}
 
 /* page loading effect*/
 body.loading-page .site-header .title img{padding:7px;opacity:0.7}
@@ -548,10 +549,15 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 
 @media all and (min-width: 768px) and (max-width: 959px) {
   .page-title{padding:7em 0;}
+  .site-header nav{display: none}
+  #sitesidebarHandler{display:block;}
+
 }
 
 
 @media (max-width: 767px) {
+  #sitesidebarHandler{display:block;}
+
   .page-title{padding:5em 0;}
   .page-title h2{padding: 0 5%;}
   #tfooter nav.s12{margin-bottom:2em;}
