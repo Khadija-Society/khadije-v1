@@ -9,10 +9,10 @@ class view extends \lib\view
 
 
 		$this->data->site['title']           = T_("Khadije Charity");
-		if(Tld === 'local')
-		{
-			$this->data->site['title']           = T_("Test");
-		}
+		// if(Tld === 'local')
+		// {
+		// 	$this->data->site['title']           = T_("Test");
+		// }
 		$this->data->site['desc']            = T_("Executor of first pilgrimage to the Ahl al-Bayt");
 		$this->data->site['slogan']          = $this->data->site['desc'];
 

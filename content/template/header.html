@@ -1,15 +1,14 @@
  <header class='site-header'>
-  <div class="cn f">
+  <div class="cn">
+    <div class="title">
+     <h1>
+      <a href='{{url.base}}' tabindex='1'><span class="bold" title="{{site.desc}}">{{site.title}} {%if site.currentlang == 'fa'%} <small>سلام الله علیها</small>{%endif%}</span></a>
+     </h1>
+     <h2><a href='{{url.base}}' tabindex='2'>{{site.desc}}</a></h2>
+    </div>
 
-   <h1 class="cauto logo">
-    <a class="flex" href='{{url.base}}' tabindex='1'>
-     <img src='{{url.static}}images/logo.png' alt='{{site.title}} | {{site.desc}}'>
-     <span class="bold" title="{{site.desc}}">{{site.title}} {%if site.currentlang == 'fa'%} <small>سلام الله علیها</small>{%endif%}</span>
 
-    </a>
-   </h1>
-
-   <nav class="cauto os">
+   <nav class="floatRa">
     <a href="{{url.base}}/donate">{%trans "Donate"%}</a>
 {%if login.id%}
     <a href="{{url.base}}/a" data-direct class="btn">{%trans "Admin panel"%}</a>
@@ -19,5 +18,17 @@
 {%endif%}
    </nav>
   </div>
+  <a class="logo" href='{{url.base}}' tabindex='-1'>
+   <img src='{{url.static}}images/logo.png' alt='{{site.title}} | {{site.desc}}'>
+  </a>
  </header>
 
+<div id="sidenavHandler"><i class="sf-ellipsis-v"></i></div>
+<aside id='sitesidebar' class="unselectable scr">
+  <ul class="sidenav" data-xhr="sidenav">
+    <li><a href="{{url.base}}/about">درباره موسسه</a></li>
+    <li><a href="{{url.base}}/enter/signup">ثبت‌نام</a></li>
+    <li><a href="{{url.base}}/donate">من هم می‌خواهم در ثواب زیارت سهیم باشم</a></li>
+    <li><a href="{{url.base}}/a/service">چطور می‌توانم با موسسه همکاری کنم؟</a></li>
+  </ul>
+</aside>
