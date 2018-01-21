@@ -33,6 +33,10 @@ self::$config['parsian']['CallBackUrl']  = null;
 self::$config['parsian']['exchange']     = null;
 
 
+self::$config['payir']['status']   = true;
+self::$config['payir']['api']      = "2556625040aca77c877982b78b9fea93";
+self::$config['payir']['redirect'] = null;
+
 /**
 * config of irkish payment
 */
