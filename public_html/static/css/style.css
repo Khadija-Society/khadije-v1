@@ -26,7 +26,7 @@ a{transition:0.3s;}
 .site-header .title:hover{opacity:0.9}
 .site-header .title a:focus{opacity:0.8;}
 
-.site-header .logo{display:inline-block;width:180px;height:180px;position:absolute;top:0;right:0;left:0;margin:0 auto;z-index:1}
+.site-header .logo{display:inline-block;width:160px;height:160px;position:absolute;top:10px;right:0;left:0;margin:0 auto;z-index:1}
 .site-header nav{}
 .site-header nav a{padding:0 1em;line-height:89px;color:#fff;display:inline-block;transition:0.2s;font-weight:700;position:relative;border-bottom:1px solid transparent;}
 .site-header nav a:hover{border-bottom-color:#fff;}
@@ -191,9 +191,9 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 
 #harameyn{
   background-image: url('/static/images/homepage/harameyn.jpg');
-  min-height:600px;
+  min-height:400px;
   /*height: 100vh;*/
-  /*height: calc(100vh - 60px);*/
+  height: calc(100vh - 90px);
   max-height: 1000px;
   /*background-attachment: fixed;*/
   background-position: bottom center;
@@ -233,6 +233,7 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 .tile h4{margin:0;font-weight:200;color:#999;padding:0 15%;}
 
 
+#aboutBox{padding:7em 0;}
 #aboutBox h2{font-size: 1.5em;}
 #aboutBox h2 small{font-size:0.5em;}
 #aboutBox .text{padding:1.2em;}
