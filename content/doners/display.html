@@ -4,7 +4,9 @@
 {%block pageData%}
 
 {%if payment_verify_msg %}
-<div class="msg txtC {%if payment_verify_msg_true %}success{%else%}danger{%endif%}">{{payment_verify_msg}}</div>
+<div class="cn">
+  <div class="msg txtC {%if payment_verify_msg_true %}success{%else%}danger{%endif%}">{{payment_verify_msg}}</div>
+</div>
 {%endif%}
 
 <div class="fs14 pA25">
