@@ -46,6 +46,9 @@ class controller extends \mvc\controller
 	// for routing check
 	function ready()
 	{
+
+		$this->post('donate')->ALL();
+
 		// if have display return false
 		if($this->display_name !== null)
 		{
@@ -62,6 +65,7 @@ class controller extends \mvc\controller
 		{
 			return;
 		}
+
 	}
 }
 ?>
