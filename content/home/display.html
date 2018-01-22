@@ -7,9 +7,7 @@
 
 {%block content%}
 
-{%if utilityGET.fake%}
- {{block('harameyn')}}
-{%endif%}
+ {{block('harameyn2')}}
 
  {{block('about')}}
  {{block('thinking')}}
@@ -32,14 +30,20 @@
 {%endblock%}
 
 
+{%block landPage2%}
+<div id='landing2' data-scroll></div>
+{%endblock%}
+
 
 {%block landPage%}
 <div id='landing' data-scroll></div>
 {%endblock%}
 
 
-{%block harameyn%}
-<div id='harameyn' data-scroll></div>
+{%block harameyn2%}
+<div id='harameyn2' data-scroll>
+  <img src="{{url.static}}/images/homepage/harameyn.jpg">
+</div>
 {%endblock%}
 
 
@@ -127,7 +131,7 @@
     <div class="c">
      <div class="statistic">
        <div class="label hide"><span class="sf-card"></span></div>
-       <div class="value">{{16000 | number_format | fitNumber}}</div>
+       <div class="value">{{staticvar.qom | number_format | fitNumber}}</div>
        <div class="label">{%trans "Qom"%}</div>
      </div>
     </div>
