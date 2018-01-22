@@ -11,7 +11,8 @@ require_once('sms.php');
 self::$language =
 [
 	'default' => 'fa',
-	'list'    => ['fa','en',],
+	// 'list'    => ['fa','en',],
+	'list'    => ['fa'],
 ];
 /**
  * system default lanuage
