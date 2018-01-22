@@ -21,8 +21,8 @@
    <div class="content">
     <div class="header">
     {%if value.doners%}
-      {%if value.firstname or value.lastname%}
-      {{value.firstname}} {{value.lastname}}
+      {%if value.fullname%}
+      {{value.fullname}}
       {%else%}
         {%trans "Untitled"%}
       {%endif%}
