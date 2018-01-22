@@ -7619,6 +7619,321 @@ li.sortable-placeholder {
 .rtl .chart {
   text-align: right; }
 
+[class^="spay-256-"] {
+  background: url("../images/spay/spay256.png") no-repeat;
+  display: inline-block;
+  width: 256px;
+  height: 256px; }
+
+.spay-256-saderat {
+  background-position: 0 0; }
+
+.spay-256-mellat {
+  background-position: -256px 0; }
+
+.spay-256-tejarat {
+  background-position: -512px 0; }
+
+.spay-256-melli {
+  background-position: -768px 0; }
+
+.spay-256-sepah {
+  background-position: -1024px 0; }
+
+.spay-256-keshavarzi {
+  background-position: 0 -256px; }
+
+.spay-256-parsian {
+  background-position: -256px -256px; }
+
+.spay-256-maskan {
+  background-position: -512px -256px; }
+
+.spay-256-refah {
+  background-position: -768px -256px; }
+
+.spay-256-novin {
+  background-position: -1024px -256px; }
+
+.spay-256-ansar {
+  background-position: 0 -512px; }
+
+.spay-256-pasargad {
+  background-position: -256px -512px; }
+
+.spay-256-saman {
+  background-position: -512px -512px; }
+
+.spay-256-sina {
+  background-position: -768px -512px; }
+
+.spay-256-post {
+  background-position: -1024px -512px; }
+
+.spay-256-ghavamin {
+  background-position: 0 -768px; }
+
+.spay-256-taavon {
+  background-position: -256px -768px; }
+
+.spay-256-shahr {
+  background-position: -512px -768px; }
+
+.spay-256-ayande {
+  background-position: -768px -768px; }
+
+.spay-256-sarmayeh {
+  background-position: -1024px -768px; }
+
+.spay-256-day {
+  background-position: 0 -1024px; }
+
+.spay-256-hekmat {
+  background-position: -256px -1024px; }
+
+.spay-256-iranzamin {
+  background-position: -512px -1024px; }
+
+.spay-256-karafarin {
+  background-position: -768px -1024px; }
+
+.spay-256-gardeshgari {
+  background-position: -1024px -1024px; }
+
+.spay-256-madan {
+  background-position: 0 -1280px; }
+
+.spay-256-tsaderat {
+  background-position: -256px -1280px; }
+
+.spay-256-khavarmiyane {
+  background-position: -512px -1280px; }
+
+.spay-256-ivbb {
+  background-position: -768px -1280px; }
+
+.spay-256-irkish {
+  background-position: -1024px -1280px; }
+
+.spay-256-asanpardakht {
+  background-position: 0 -1536px; }
+
+.spay-256-zarinpal {
+  background-position: -256px -1536px; }
+
+.spay-256-payir {
+  background-position: -512px -1536px; }
+
+[class^="spay-128-"] {
+  background: url("../images/spay/spay128.png") no-repeat;
+  display: inline-block;
+  width: 128px;
+  height: 128px; }
+
+.spay-128-saderat {
+  background-position: 0 0; }
+
+.spay-128-mellat {
+  background-position: -128px 0; }
+
+.spay-128-tejarat {
+  background-position: -256px 0; }
+
+.spay-128-melli {
+  background-position: -384px 0; }
+
+.spay-128-sepah {
+  background-position: -512px 0; }
+
+.spay-128-keshavarzi {
+  background-position: 0 -128px; }
+
+.spay-128-parsian {
+  background-position: -128px -128px; }
+
+.spay-128-maskan {
+  background-position: -256px -128px; }
+
+.spay-128-refah {
+  background-position: -384px -128px; }
+
+.spay-128-novin {
+  background-position: -512px -128px; }
+
+.spay-128-ansar {
+  background-position: 0 -256px; }
+
+.spay-128-pasargad {
+  background-position: -128px -256px; }
+
+.spay-128-saman {
+  background-position: -256px -256px; }
+
+.spay-128-sina {
+  background-position: -384px -256px; }
+
+.spay-128-post {
+  background-position: -512px -256px; }
+
+.spay-128-ghavamin {
+  background-position: 0 -384px; }
+
+.spay-128-taavon {
+  background-position: -128px -384px; }
+
+.spay-128-shahr {
+  background-position: -256px -384px; }
+
+.spay-128-ayande {
+  background-position: -384px -384px; }
+
+.spay-128-sarmayeh {
+  background-position: -512px -384px; }
+
+.spay-128-day {
+  background-position: 0 -512px; }
+
+.spay-128-hekmat {
+  background-position: -128px -512px; }
+
+.spay-128-iranzamin {
+  background-position: -256px -512px; }
+
+.spay-128-karafarin {
+  background-position: -384px -512px; }
+
+.spay-128-gardeshgari {
+  background-position: -512px -512px; }
+
+.spay-128-madan {
+  background-position: 0 -640px; }
+
+.spay-128-tsaderat {
+  background-position: -128px -640px; }
+
+.spay-128-khavarmiyane {
+  background-position: -256px -640px; }
+
+.spay-128-ivbb {
+  background-position: -384px -640px; }
+
+.spay-128-irkish {
+  background-position: -512px -640px; }
+
+.spay-128-asanpardakht {
+  background-position: 0 -786px; }
+
+.spay-128-zarinpal {
+  background-position: -64px -786px; }
+
+.spay-128-payir {
+  background-position: -128px -786px; }
+
+[class^="spay-64-"] {
+  background: url("../images/spay/spay64.png") no-repeat;
+  display: inline-block;
+  width: 64px;
+  height: 64px; }
+
+.spay-64-saderat {
+  background-position: 0 0; }
+
+.spay-64-mellat {
+  background-position: -64px 0; }
+
+.spay-64-tejarat {
+  background-position: -128px 0; }
+
+.spay-64-melli {
+  background-position: -192px 0; }
+
+.spay-64-sepah {
+  background-position: -256px 0; }
+
+.spay-64-keshavarzi {
+  background-position: 0 -64px; }
+
+.spay-64-parsian {
+  background-position: -64px -64px; }
+
+.spay-64-maskan {
+  background-position: -128px -64px; }
+
+.spay-64-refah {
+  background-position: -192px -64px; }
+
+.spay-64-novin {
+  background-position: -256px -64px; }
+
+.spay-64-ansar {
+  background-position: 0 -128px; }
+
+.spay-64-pasargad {
+  background-position: -64px -128px; }
+
+.spay-64-saman {
+  background-position: -128px -128px; }
+
+.spay-64-sina {
+  background-position: -192px -128px; }
+
+.spay-64-post {
+  background-position: -256px -128px; }
+
+.spay-64-ghavamin {
+  background-position: 0 -192px; }
+
+.spay-64-taavon {
+  background-position: -64px -192px; }
+
+.spay-64-shahr {
+  background-position: -128px -192px; }
+
+.spay-64-ayande {
+  background-position: -192px -192px; }
+
+.spay-64-sarmayeh {
+  background-position: -256px -192px; }
+
+.spay-64-day {
+  background-position: 0 -256px; }
+
+.spay-64-hekmat {
+  background-position: -64px -256px; }
+
+.spay-64-iranzamin {
+  background-position: -128px -256px; }
+
+.spay-64-karafarin {
+  background-position: -192px -256px; }
+
+.spay-64-gardeshgari {
+  background-position: -256px -256px; }
+
+.spay-64-madan {
+  background-position: 0 -320px; }
+
+.spay-64-tsaderat {
+  background-position: -64px -320px; }
+
+.spay-64-khavarmiyane {
+  background-position: -128px -320px; }
+
+.spay-64-ivbb {
+  background-position: -192px -320px; }
+
+.spay-64-irkish {
+  background-position: -256px -320px; }
+
+.spay-64-asanpardakht {
+  background-position: 0 -384px; }
+
+.spay-64-zarinpal {
+  background-position: -64px -384px; }
+
+.spay-64-payir {
+  background-position: -128px -384px; }
+
 body.enter {
   min-height: 100%; }
 
@@ -8880,14 +9195,15 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
   opacity: 0; }
 
 .radioGateway label {
-  padding: 1em;
+  padding: 0;
   position: relative;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 2px solid #efefef;
   transition: 0.3s;
   background-color: rgba(255, 255, 255, 0.3);
-  width: 6em;
-  height: 6em; }
+  width: 68px;
+  height: 68px;
+  border-radius: 0.25rem; }
 
 .radioGateway img {
   width: 100%;
@@ -11900,7 +12216,7 @@ body.siftal.loading-page #sidebar .avatar:before {
 
 .siftal #sidebar ul > li > a {
   display: block;
-  padding: 1.5em 2em;
+  padding: 1.2em 2em;
   color: #d5d5d5;
   transition: 0.3s;
   cursor: pointer;
@@ -11920,7 +12236,8 @@ body.siftal.loading-page #sidebar .avatar:before {
   background-color: rgba(0, 0, 0, 0.7); }
 
 .siftal #sidebar ul > li > ul {
-  background-color: #252525; }
+  background-color: #252525;
+  font-size: 0.9em; }
 
 .siftal #sidebar ul > li > ul > li > a {
   padding: 0.8em 3em; }

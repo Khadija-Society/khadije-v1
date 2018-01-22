@@ -362,8 +362,8 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 }
 
 #quickpay{
-  text-align: center;
-  background-color: #eee;
+  text-align:center;
+  background-color:#eee;
 }
 #quickpay > p{
     width: 60%;
