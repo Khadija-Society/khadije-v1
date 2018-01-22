@@ -53,8 +53,6 @@ function responsiveSiteSidebar()
 {
   $('body').on('click', function(_e)
   {
-  	console.log(11);
-  	console.log(_e.target);
     if($(_e.target).is('#sitesidebarHandler'))
     {
       // click on hanlder, do nothing!
