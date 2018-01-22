@@ -42,7 +42,7 @@
 
 {%block harameyn2%}
 <div id='harameyn2' data-scroll>
-  <img src="{{url.static}}/images/homepage/harameyn.jpg">
+  <img src="{{url.static}}/images/homepage/harameyn.jpg" alt="{{site.title}}">
 </div>
 {%endblock%}
 
@@ -139,7 +139,7 @@
     <div class="cauto">
      <div class="statistic">
        <div class="label hide"><span class="sf-users"></span></div>
-       <div class="value">{{2000 | number_format | fitNumber}}</div>
+       <div class="value">{{staticvar.mashhad | number_format | fitNumber}}</div>
        <div class="label">{%trans "Mashhad"%}</div>
      </div>
     </div>
@@ -147,7 +147,7 @@
     <div class="c">
      <div class="statistic">
        <div class="label hide"><span class="sf-exchange"></span></div>
-       <div class="value">{{110 | number_format | fitNumber}}</div>
+       <div class="value">{{staticvar.karbala | number_format | fitNumber}}</div>
        <div class="label">{%trans "Karbala"%}</div>
      </div>
     </div>
