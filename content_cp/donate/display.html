@@ -55,7 +55,7 @@
 
 {%block searchblock%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.baseFull}}/trip'>
+  <form method="get" action='{{url.baseFull}}/donate'>
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search in donations"%}' id="q" value="{{utilityGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -75,26 +75,23 @@
       <tr>
         <th class="s0">{%trans "Name"%}</th>
         <th>{%trans "mobile"%}</th>
-        <th class="s0">{%trans "Title"%}</th>
-        <th>{%trans "Amount"%}</th>
+        <th class="s0" data-sort="{{sort_link.payment.order}}"><a href="{{sort_link.payment.link}}">{%trans "Payment"%}</a></th>
+        <th data-sort="{{sort_link.plus.order}}"><a href="{{sort_link.plus.link}}">{%trans "Amount"%}</a></th>
         <th class="s0">{%trans "Niyat"%}</th>
         <th>{%trans "Hazinekard"%}</th>
-        <th class="s0">{%trans "Status"%}</th>
-        <th class="s0">{%trans "Date"%}</th>
+        <th class="s0" data-sort="{{sort_link.dateverify.order}}"><a href="{{sort_link.dateverify.link}}">{%trans "Date"%}</a></th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in donate_list%}
       <tr>
-        <td class="s0">{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
+        <td class="s0">{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}{%if value.doners%}{%else%}<small class="badge mLa5">گمنام</small>{%endif%}</td>
         <td>{{value.mobile |fitNumber}}</td>
-        <td class="s0">{{value.title}} <span class="sf-zarinpal"></span></td>
+        <td class="s0">{%set myPayment = value.payment%}{%trans myPayment%}</td>
         <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} {{value.plus | number_format | fitNumber}}  {%set pUnit = value.unit%}{%trans pUnit%}</td>
         <td class="s0">{{value.niyat}}</td>
         <td>{{value.hazinekard}}</td>
-        <td class="s0">{{value.condition}}</td>
-
         <td class="s0" title='{{value.date | tdate("Y-m-d H:i:s")}}'>{{value.dateverify | date("Y-m-d H:i:s") | tdate("Y-m-d H:i:s")}}</td>
       </tr>
       {%endfor%}
