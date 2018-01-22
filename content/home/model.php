@@ -13,9 +13,9 @@ class model extends \mvc\model
 			[
 				// 'hazinekard' => $way,
 				// 'niyat'      => $niyat,
-				// 'fullname'   => $fullname,
-				// 'donate'     => 'cash',
-				// 'doners'     => $doners,
+				'fullname'   => $this->login('displayname'),
+				'donate'     => 'cash',
+				'doners'     => 0,
 			]
 		];
 
