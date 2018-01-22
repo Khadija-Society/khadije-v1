@@ -439,7 +439,7 @@ class donate
 		{
 			if(intval(\lib\user::id()) === 1 || Tld === 'local' || intval(\lib\user::id()) === 7)
 			{
-				\lib\utility\payment\pay::start($user_id, 'payir', \lib\app::request('amount'), $meta);
+				\lib\utility\payment\pay::start($user_id, 'asanpardakht', \lib\app::request('amount'), $meta);
 			}
 			else
 			{
