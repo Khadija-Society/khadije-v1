@@ -14,6 +14,10 @@ class view extends \mvc\view
 
 		$this->data->DonersList = \lib\db\mytransactions::transaction_list();
 
+		if(isset($this->controller->pagnation))
+		{
+			$this->data->pagnation = $this->controller->pagnation_get();
+		}
 	}
 }
 ?>

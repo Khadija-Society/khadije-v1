@@ -38,6 +38,12 @@ class mytransactions
 
 	public static function transaction_list()
 	{
+		$limit = 100;
+		$pagenation_query = "SELECT	COUNT(*) AS `count`	FROM `transactions` WHERE transactions.verify = 1 ";
+		$pagenation_query = \lib\db::get($pagenation_query, 'count', true);
+		list($limit_start, $limit) = \lib\db::pagnation((int) $pagenation_query, $limit);
+		$limit = " LIMIT $limit_start, $limit ";
+
 		$query =
 		"
 			SELECT
@@ -50,7 +56,7 @@ class mytransactions
 			WHERE
 				transactions.verify  = 1
 			ORDER BY transactions.id DESC
-			LIMIT 1000
+			$limit
 		";
 		return \lib\db::get($query);
 	}
