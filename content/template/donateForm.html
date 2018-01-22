@@ -24,10 +24,10 @@
 <div class="msg txtC {%if payment_verify_msg_true %}success{%else%}danger{%endif%}">{{payment_verify_msg}}</div>
 {%endif%}
     <form method="post">
-      {{block ('iFullname')}}
+
       <div class="f">
-        <div class="c pRa5">{{block ('iMobile')}}</div>
-        <div class="c">{{block ('iEmail')}}</div>
+        <div class="c pRa5">{{block ('iFullname')}}</div>
+        <div class="c">{{block ('iMobile')}}</div>
       </div>
       <input type="hidden" name="username" value="">
       {{block ('iNiyat') }}
@@ -194,12 +194,12 @@
 {%block iDonersList%}
 <label class="mT20">{%trans "Show in public doners list?"%} <a href="{{urlRaw}}/doners" target="_blank">{%trans "Check doners list"%}</a></label>
  <div class="c radio1">
-  <input type="radio" id="r-yes" name="doners" value="yes">
+  <input type="radio" id="r-yes" name="doners" value="yes" checked>
   <label for="r-yes">{%trans "Yes, show my name and price"%}</label>
  </div>
 
  <div class="c radio1 black">
-  <input type="radio" id="r-no" name="doners" value="no" checked>
+  <input type="radio" id="r-no" name="doners" value="no">
   <label for="r-no">{%trans "No, Show as anonymous"%}</label>
  </div>
 {%endblock%}
