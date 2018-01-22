@@ -3,6 +3,10 @@
 
 {%block pageData%}
 
+{%if payment_verify_msg %}
+<div class="msg txtC {%if payment_verify_msg_true %}success{%else%}danger{%endif%}">{{payment_verify_msg}}</div>
+{%endif%}
+
 <div class="fs14 pA25">
  <div class="tiny f justify-center">
 
