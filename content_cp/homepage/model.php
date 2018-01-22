@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\staticvar;
+namespace content_cp\homepage;
 
 
 class model extends \content_cp\main2\model

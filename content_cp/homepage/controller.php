@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\staticvar;
+namespace content_cp\homepage;
 
 
 class controller extends \content_cp\main2\controller
