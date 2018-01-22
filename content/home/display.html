@@ -7,7 +7,10 @@
 
 {%block content%}
 
+{%if utilityGET.fake%}
  {{block('harameyn')}}
+{%endif%}
+
  {{block('about')}}
  {{block('thinking')}}
 
@@ -47,22 +50,22 @@
       <div class="c۶ s12 text">
         <h2><a href="{{url.base}}/about">{%trans "About"%} {{site.title}} {%if site.currentlang == 'fa'%}<small>سلام الله علیها</small>{%endif%}</a></h2>
         <h3 class="fs11">{{site.desc}}</h3>
-        <p>موسسه حضرت خدیجه علیها السلام با عنوان توسعه فرهنگ زیارت اهل بیت علیهم السلام و ترویج نام و مرام مادران و همسران اهل بیت علیهم السلام بویژه حضرت خدیجه علیها السلام   و احیای سنن فراموش شده (برگزاری مناسبتها و سنن فراموش شده یا کمتر مورد توجه قرار گرفته مثل قربانی،اطعام غدیر،وفات حضرت خدیجه  و...) فعالیت آن ادامه پیدا کرد.</p>
+        <p>موسسه‌ی فرهنگی هنری حضرت خدیجه در سال ۱۳۹۴ با هدف توسعه‌ی فرهنگ زیارت اهل بیت علیهم السلام تاسیس گردید. و با دو اولویت زیارت اهل بیت و احیای سنن فراموش شده از قبیل قربانی، اطعام غدیر و... فعالیت خود را ادامه داده است. هم‌چنین این موسسه در راستای اهداف خود، به فعالیت‌های خداپسندانه از جمله تامین جهیزیه، اعطای خدمات درمان نیازمندان و سایر امور خیریه، پرداخته است.</p>
 
         <div class="f">
-          <a href="{{url.base}}/donate" class="btn block primary success mB20">{%trans "Donate"%}</a>
+          <a href="{{url.base}}/donate" class="btn block primary success mB10">{%trans "Donate"%}</a>
         </div>
 
         <div class="f">
           <div class="c6 s12 pRa5">
-            <a href="{{url.baseRaw}}a/trip" class="btn block primary outline mB20" data-direct>{%trans "Family trip signup"%}</a>
+            <a href="{{url.baseRaw}}a/trip" class="btn block primary outline mB10" data-direct>{%trans "Family trip signup"%}</a>
           </div>
           <div class="c6 s12">
-            <a href="{{url.baseRaw}}a/group" class="btn block primary outline mB20" data-direct>{%trans "Group trip signup"%}</a>
+            <a href="{{url.baseRaw}}a/group" class="btn block primary outline mB10" data-direct>{%trans "Group trip signup"%}</a>
           </div>
         </div>
         <div class="f">
-          <a href="http://old.tv3.ir/zaer-karbala" class="btn block primary outline primary mB20" data-direct target="_blank">ثبت‌نام زائراولی‌هادر طرح زائران کربلای معلی (انفرادی)</a>
+          <a href="http://old.tv3.ir/zaer-karbala" class="btn block primary outline primary mB10" data-direct target="_blank">ثبت‌نام زائراولی‌هادر طرح زائران کربلای معلی (انفرادی)</a>
         </div>
 
       </div>
