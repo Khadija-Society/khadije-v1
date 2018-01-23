@@ -3,8 +3,7 @@
 
 {%block pageContent%}
 <div class="f">
- <div class="c6 s12">{{block ("Bdonate")}}</div>
- <div class="c6 s12">{{block ("BDonateProduct")}}</div>
+ <div class="c12">{{block ("Bdonate")}}</div>
  <div class="c9 s12">{{block ("Btrip")}}</div>
  <div class="c3 s12">{{block ("BNcode")}}</div>
  <div class="c6 s12">{{block ("BService")}}</div>
@@ -69,7 +68,6 @@
 {%block sidenav%}
     <li><a href="{{url.base}}/cp"><i class='sf-gauge'></i> <span>{% trans "Dashboard" %}</span></a></li>
     <li><a href="{{url.baseFull}}/donate"><i class='sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/donateproduct"><i class='sf-bag'></i> <span>{%trans "Donate product list"%}</span></a></li>
     <li><a href="{{url.baseFull}}/service"><i class='sf-user-md'></i> <span>{%trans "Request service list"%}</span></a></li>
     <li><a href="{{url.baseFull}}/nationalcode"><i class='sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
     <li><a href="{{url.baseFull}}/trip"><i class='sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>
