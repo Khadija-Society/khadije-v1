@@ -5,9 +5,8 @@ class view extends \addons\content_cp\main\view
 {
 	public function repository()
 	{
-		// parent::config();
+		parent::repository();
 		$this->data->display['khadijeCpMain'] = 'content_cp\\main2\\layout.html';
-
 	}
 
 
