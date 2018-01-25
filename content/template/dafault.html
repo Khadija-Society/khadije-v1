@@ -40,10 +40,10 @@
 
 {%block imagegallery%}
 <div id="lightgallery">
-    <a data-action href="{{url.static}}lightgallery/demo/1.jpg"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg"></a>
-    <a data-action href="{{url.static}}lightgallery/demo/2.jpg"><img src="{{url.static}}lightgallery/demo/thumb-2.jpg"></a>
-    <a data-action href="{{url.static}}lightgallery/demo/3.jpg"><img src="{{url.static}}lightgallery/demo/thumb-3.jpg"></a>
-    <a data-action href="{{url.static}}lightgallery/demo/4.jpg"><img src="{{url.static}}lightgallery/demo/thumb-4.jpg"></a>
+    <a data-action href="{{url.static}}lightgallery/demo/1.jpg"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg" alt="{{datarow.title | raw}}"></a>
+    <a data-action href="{{url.static}}lightgallery/demo/2.jpg"><img src="{{url.static}}lightgallery/demo/thumb-2.jpg" alt="{{datarow.title | raw}}"></a>
+    <a data-action href="{{url.static}}lightgallery/demo/3.jpg"><img src="{{url.static}}lightgallery/demo/thumb-3.jpg" alt="{{datarow.title | raw}}"></a>
+    <a data-action href="{{url.static}}lightgallery/demo/4.jpg"><img src="{{url.static}}lightgallery/demo/thumb-4.jpg" alt="{{datarow.title | raw}}"></a>
 </div>
 {%endblock%}
 
