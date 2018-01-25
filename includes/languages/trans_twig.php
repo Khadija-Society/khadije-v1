@@ -48,8 +48,7 @@ class twigTransTerms
 	echo T_("Done");                                                                  // Line 38
 
 	//---------------------------------------------------content\template\dafault.html
-	echo T_("View your current location and navigate to parent of it");               // Line 9
-	echo T_("Some right reserved!");                                                  // Line 28
+	echo T_("View your current location and navigate to parent of it");               // Line 6
 
 	//------------------------------------------------content\template\donateForm.html
 	echo T_("List of last success donations");                                        // Line 71
