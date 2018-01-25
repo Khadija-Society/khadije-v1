@@ -252,9 +252,10 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 
 
 .postPreview{}
-.postPreview img{width:300px;height:auto;display:inline-block;margin:0 auto;padding:0;margin:0.5em;border:1px solid transparent;transition:0.3s}
-.postPreview img:hover{border-color:#333}
-
+.postPreview img.thumb{width:300px;height:auto;display:inline-block;margin:0 auto;padding:0;margin:0.5em;border:1px solid transparent;transition:0.3s}
+.postPreview img.thumb:hover{border-color:#333}
+#lightgallery{text-align:center;}
+#lightgallery img{max-width:200px;margin:0 auto;}
 
 
 
@@ -312,7 +313,7 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
   #quickpay .msg{padding:1em 0.5em;}
   #thinkingTile p{width:96%}
 
-  .postPreview img{display: block;float:initial!important;margin:1em auto 3em;}
+  .postPreview img.thumb{display: block;float:initial!important;margin:1em auto 3em;}
 
   .s12.pRa5{padding-right:0}
   .rtl .s12.pRa5{padding-left:0}

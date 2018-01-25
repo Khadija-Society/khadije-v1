@@ -10,7 +10,7 @@
   <section class="postPreview">
   	<h2>{{datarow.title | raw}}</h2>
 {%if datarow.meta.thumb%}
-  	<img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa">
+  	<img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
 {%endif%}
 
 {%if datarow.content%}
@@ -19,6 +19,8 @@
   	{{datarow.description | raw}}
 {%endif%}
 
+
+{{block('imagegallery')}}
 
 
     {%if datarow.datemodified%}
@@ -33,3 +35,24 @@
 
 	{{tags({"html" : true})}}
 {%endblock%}
+
+
+
+{%block imagegallery%}
+<div id="lightgallery">
+    <a data-action href="{{url.static}}lightgallery/demo/1.jpg"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg"></a>
+    <a data-action href="{{url.static}}lightgallery/demo/2.jpg"><img src="{{url.static}}lightgallery/demo/thumb-2.jpg"></a>
+    <a data-action href="{{url.static}}lightgallery/demo/3.jpg"><img src="{{url.static}}lightgallery/demo/thumb-3.jpg"></a>
+    <a data-action href="{{url.static}}lightgallery/demo/4.jpg"><img src="{{url.static}}lightgallery/demo/thumb-4.jpg"></a>
+</div>
+{%endblock%}
+
+
+{%block foot_js%}
+  <link rel="stylesheet" href="{{url.static}}lightgallery/css/lightgallery.min.css">
+  <script src="{{url.static}}lightgallery/js/lightgallery.min.js"></script>
+  <script>
+    lightGallery(document.getElementById('lightgallery'));
+</script>
+{%endblock%}
+
