@@ -3,10 +3,33 @@
 
 {%block page%}
 
-   <nav class="breadcrumb unselectable" data-xhr="breadcrumb" tabindex='-1' data-step='4' data-intro='{%trans "View your current location and navigate to parent of it"%}' data-position='bottom'>
+   <nav class="breadcrumb block msg hide" data-xhr="breadcrumb" tabindex='-1' data-step='4' data-intro='{%trans "View your current location and navigate to parent of it"%}' data-position='bottom'>
    {{breadcrumb(null, true) | raw}}
    </nav>
 
-  {{datarow.content | raw}}
+  <section>
+  	<h2>{{datarow.title | raw}}</h2>
+{%if datarow.meta.thumb%}
+  	<img src="{{datarow.meta.thumb}}" class="floatRa w300 s12">
+{%endif%}
 
+{%if datarow.content%}
+  	{{datarow.content | raw}}
+{%else%}
+  	{{datarow.description | raw}}
+{%endif%}
+
+
+
+    {%if datarow.datemodified%}
+    <div class='msg f'>
+      <div class="c">{{datarow.publishdate}}</div>
+      <div class="cauto os">ویرایش شده در <time datetime="{{datarow.datemodified}}">{{datarow.datemodified | sdate}}</time></div>
+    </div>
+    {%endif%}
+  </section>
+
+
+
+	{{tags({"html" : true})}}
 {%endblock%}
