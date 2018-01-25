@@ -8349,7 +8349,7 @@ li.sortable-placeholder {
   position: relative;
   color: #fff;
   border-radius: 4px;
-  font-size: .9rem;
+  font-size: 1.2rem;
   padding: .3rem .6rem;
   text-align: center;
   will-change: transform;
@@ -8359,11 +8359,11 @@ li.sortable-placeholder {
 
 .tippy-tooltip[data-size=small] {
   padding: .2rem .4rem;
-  font-size: .75rem; }
+  font-size: .8rem; }
 
 .tippy-tooltip[data-size=large] {
   padding: .4rem .8rem;
-  font-size: 1rem; }
+  font-size: 2rem; }
 
 .tippy-tooltip[data-animatefill] {
   overflow: hidden;
