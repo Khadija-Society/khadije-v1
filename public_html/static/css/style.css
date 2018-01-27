@@ -1,6 +1,5 @@
 
 
-html {height: 100%;}
 body{height: 100%;}
 .vflex{min-height:100vh;display:flex;flex-direction:column;}
 .wrapper{flex:1;}
