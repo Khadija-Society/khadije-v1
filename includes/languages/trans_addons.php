@@ -164,29 +164,32 @@ class twigTransTerms
 	echo T_("Try to start with add new record!");                                     // Line 93
 
 	//---------------------------------------------addons\content_cp\posts\layout.html
+	echo T_("Enter title here");                                                      // Line 4
 	echo T_("Enter a good and short title");                                          // Line 4
-	echo T_("Enter a valid title");                                                   // Line 124
-	echo T_("Slug used for url");                                                     // Line 16
-	echo T_("Enter a valid slug");                                                    // Line 132
+	echo T_("Slug");                                                                  // Line 132
+	echo T_("Slug used to create url");                                               // Line 16
 	echo T_("Write post ");                                                           // Line 22
 	echo T_("Publish date");                                                          // Line 29
 	echo T_("Save");                                                                  // Line 46
-	echo T_("Status of post");                                                        // Line 49
 	echo T_("Publish");                                                               // Line 53
 	echo T_("Draft");                                                                 // Line 58
 	echo T_("Deleted");                                                               // Line 63
 	echo T_("Comment");                                                               // Line 74
 	echo T_("Language");                                                              // Line 80
 	echo T_("Whithout language");                                                     // Line 82
-	echo T_("Tag");                                                                   // Line 113
-	echo T_("Tag keywords...");                                                       // Line 117
+	echo T_("Choose category of post");                                               // Line 95
+	echo T_("Tag");                                                                   // Line 112
+	echo T_("Tag keywords...");                                                       // Line 116
+	echo T_("Add tag");                                                               // Line 117
+	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 127
 
 	//--------------------------------------------addons\content_cp\terms\display.html
-	echo T_("Slug");                                                                  // Line 132
 	echo T_("Add");                                                                   // Line 149 Seperate
 	echo T_("Edit");                                                                  // Line 150 Seperate
 	echo T_("Require");                                                               // Line 122
+	echo T_("Enter a valid title");                                                   // Line 124
 	echo T_("Used for url");                                                          // Line 130
+	echo T_("Enter a valid slug");                                                    // Line 132
 	echo T_("Parent Category");                                                       // Line 139
 	echo T_("Please select one itme");                                                // Line 141
 	echo T_("Active");                                                                // Line 56
@@ -1085,6 +1088,7 @@ class twigTransTerms
 	echo T_("Avatar of you");                                                         // Line 53
 	echo T_("Default Avatar");                                                        // Line 55
 	echo T_("Hello");                                                                 // Line 61
+	echo T_("Work in your language");                                                 // Line 82
 	echo T_("Logout");                                                                // Line 104 Seperate
 	echo T_("View your current location and navigate to parent of it");               // Line 99
 
