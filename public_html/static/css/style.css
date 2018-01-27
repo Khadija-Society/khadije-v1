@@ -46,7 +46,7 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 
 /* static pages design*/
 .page-title{padding:9em 0;text-align:center;overflow:hidden;background-color:#16badf;}
-.page-title h1{font-weight:700;line-height:2em;font-size:4em;color:#fff;}
+.page-title h1{font-weight:700;line-height:2em;font-size:3.5em;color:#fff;}
 .page-title h2{font-weight:100;line-height:2em;color:#eee;padding:0 10%;}
 .pc{color:#333;background-color:#f2f2f2;font-size:1.4em;padding:4em 0;flex:1}
 .pc .em{font-weight:bold;text-align:center;padding:1em 5%;background-color:#ddd;}
@@ -254,9 +254,13 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 .postPreview{}
 .postPreview img.thumb{width:300px;height:auto;display:inline-block;margin:0 auto;padding:0;margin:0.5em;border:1px solid transparent;transition:0.3s}
 .postPreview img.thumb:hover{border-color:#333}
-#lightgallery{text-align:center;}
-#lightgallery img{max-width:200px;margin:0 auto;}
+#lightgallery{text-align:center; margin:1em 0;}
+#lightgallery img{width:200px;max-width:45%; margin:0 auto;}
 
+.postListPreview{width:70%;min-width:280px;margin:0 auto;}
+.postListPreview section{border-bottom:1px dashed #ccc;margin-bottom:3em;}
+.postListPreview img{}
+.postListPreview h3{margin-top:0;}
 
 
 @media all and (min-width: 768px) and (max-width: 959px) {
@@ -271,7 +275,8 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
   #sitesidebarHandler{display:block;}
 
   .page-title{padding:5em 0;}
-  .page-title h2{padding: 0 5%;}
+  .page-title h1{font-size: 2.5em;}
+  .page-title h2{padding: 0 5%;font-size:1.8em;}
   #tfooter nav.s12{margin-bottom:2em;}
   .pc{padding:2em 0;}
   .pc ul.list{margin: 2em 2%;}

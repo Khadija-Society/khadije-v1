@@ -7,32 +7,40 @@
    {{breadcrumb(null, true) | raw}}
    </nav>
 
-  <section class="postPreview">
-  	<h2>{{datarow.title | raw}}</h2>
-{%if datarow.meta.thumb%}
-  	<img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
-{%endif%}
-
-{%if datarow.content%}
-  	{{datarow.content | raw}}
+{%if datarow.type == 'post' or datarow.type == 'page'%}
+  {{block('posts')}}
 {%else%}
-  	{{datarow.description | raw}}
+  {{block('terms')}}
 {%endif%}
 
-{{block('imagegallery')}}
+  {{tags({"html" : true})}}
+{%endblock%}
 
 
-    {%if datarow.datemodified%}
+
+{%block posts%}
+  <section class="postPreview">
+    <h2>{{datarow.title | raw}}</h2>
+{%if datarow.meta.thumb%}
+    <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
+{%endif%}
+
+    {{datarow.content | raw}}
+    {{block('imagegallery')}}
+
+{%if datarow.datemodified%}
     <div class='msg f'>
       <div class="c">{{datarow.publishdate}}</div>
       <div class="cauto os">ویرایش شده در <time datetime="{{datarow.datemodified}}">{{datarow.datemodified | sdate}}</time></div>
     </div>
-    {%endif%}
+{%endif%}
   </section>
+{%endblock%}
 
 
 
-	{{tags({"html" : true})}}
+{%block terms%}
+    {{block('datatablePosts')}}
 {%endblock%}
 
 
@@ -44,6 +52,42 @@
     <a data-action href="{{url.static}}lightgallery/demo/3.jpg"><img src="{{url.static}}lightgallery/demo/thumb-3.jpg" alt="{{datarow.title | raw}}"></a>
     <a data-action href="{{url.static}}lightgallery/demo/4.jpg"><img src="{{url.static}}lightgallery/demo/thumb-4.jpg" alt="{{datarow.title | raw}}"></a>
 </div>
+{%endblock%}
+
+
+{%block datatablePosts%}
+<article class="postListPreview">
+    <section class="f">
+      <div class="cauto s12 pRa10 txtC">
+        <a href="#"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg" alt="{{site.title}}" width="150px"></a>
+      </div>
+      <div class="c s12">
+        <h3><a href="#">به جای شرکت‌های دانش‌بنیان، جیب بانک‌ها را پر کردند!</a></h3>
+        <p>در حالی که برخی طرح‌های فوق‌العاده و سودمند به دلیل بی بهره بودن از منابع مالی، راه به جایی نمی‌برند و در نهایت نابود می‌شوند، بودجه تعیین شده برای حمایت از این طرح‌ها به جیب بانک‌ها سرازیر می‌شود!</p>
+      </div>
+    </section>
+
+    <section class="f">
+      <div class="cauto s12 pRa10 txtC">
+        <a href="#"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg" alt="{{site.title}}" width="150px"></a>
+      </div>
+      <div class="c s12">
+        <h3><a href="#">به جای شرکت‌های دانش‌بنیان، جیب بانک‌ها را پر کردند!</a></h3>
+        <p>در حالی که برخی طرح‌های فوق‌العاده و سودمند به دلیل بی بهره بودن از منابع مالی، راه به جایی نمی‌برند و در نهایت نابود می‌شوند، بودجه تعیین شده برای حمایت از این طرح‌ها به جیب بانک‌ها سرازیر می‌شود!</p>
+      </div>
+    </section>
+
+    <section class="f">
+      <div class="cauto s12 pRa10 txtC">
+        <a href="#"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg" alt="{{site.title}}" width="150px"></a>
+      </div>
+      <div class="c s12">
+        <h3><a href="#">به جای شرکت‌های دانش‌بنیان، جیب بانک‌ها را پر کردند!</a></h3>
+        <p>در حالی که برخی طرح‌های فوق‌العاده و سودمند به دلیل بی بهره بودن از منابع مالی، راه به جایی نمی‌برند و در نهایت نابود می‌شوند، بودجه تعیین شده برای حمایت از این طرح‌ها به جیب بانک‌ها سرازیر می‌شود!</p>
+      </div>
+    </section>
+
+</article>
 {%endblock%}
 
 
