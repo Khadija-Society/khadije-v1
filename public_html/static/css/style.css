@@ -47,6 +47,8 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 /* static pages design*/
 .page-title{padding:9em 0;text-align:center;overflow:hidden;background-color:#16badf;}
 .page-title h1{font-weight:700;line-height:2em;font-size:3.5em;color:#fff;}
+.page-title h1 a:hover{color:#eee;}
+.page-title h1 a:focus{color:#ddd;}
 .page-title h2{font-weight:100;line-height:2em;color:#eee;padding:0 10%;}
 .pc{color:#333;background-color:#f2f2f2;font-size:1.4em;padding:4em 0;flex:1}
 .pc .em{font-weight:bold;text-align:center;padding:1em 5%;background-color:#ddd;}
