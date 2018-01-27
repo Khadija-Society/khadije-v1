@@ -13,7 +13,6 @@
   {{block('terms')}}
 {%endif%}
 
-  {{tags({"html" : true})}}
 {%endblock%}
 
 
@@ -27,6 +26,13 @@
 
     {{datarow.content | raw}}
     {{block('imagegallery')}}
+
+
+    <div class="tagDetector">
+      <div class="tagBox">
+        {{tags({"format" : 'html'})}}
+      </div>
+    </div>
 
 {%if datarow.datemodified%}
     <div class='msg f'>
