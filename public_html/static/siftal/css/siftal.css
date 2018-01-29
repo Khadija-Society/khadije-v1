@@ -186,8 +186,8 @@ main, article, aside, figure, figcaption, footer, header, nav, section, details,
 /* force a vertical scrollbar to prevent a jumpy page */
 html {
   box-sizing: border-box;
-  /*overflow-y: auto;*/
   overflow-y: scroll;
+  overflow-x: hidden;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
@@ -3229,7 +3229,7 @@ img.mini {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0 1.5em;
+  margin: 0 auto;
   max-width: auto; }
 
 .statistics:after {
@@ -8441,6 +8441,12 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
   .tippy-popper {
     max-width: 96%;
     max-width: calc(100% - 20px); } }
+.dropzone {
+  padding: 5em 1em;
+  border: 1px dashed #eee;
+  background-color: #fcfcfc;
+  text-align: center; }
+
 body.enter {
   min-height: 100%; }
 
@@ -12349,7 +12355,6 @@ body.siftal {
   display: -ms-flexbox;
   display: -moz-box;
   display: flex;
-  overflow: hidden;
   min-height: 100%;
   height: 100%;
   color: #333;
