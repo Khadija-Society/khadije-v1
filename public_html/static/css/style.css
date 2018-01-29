@@ -167,7 +167,7 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 #lastNewsBox article:hover h2{background-color:#eee}
 #lastNewsBox article:hover h3{background-color:#eee}
 .news article img{width:150px;max-height:200px}
-.news article.wide img{width:100%;max-height:300px}
+.news article.wide img{width:100%;max-height:400px}
 .news p{text-align:justify}
 .alignleft{display:inline;float:left;margin-right:1.5em}
 .alignright{display:inline;float:right;margin-left:1.5em}

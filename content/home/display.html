@@ -257,6 +257,7 @@
 {%block lastNews%}
 <section id='lastNewsBox' class="news">
 {%set lastPostsRecord = posts({"limit" : 4})%}
+{%set defaultImage  = url.static ~ "/images/homepage/news-haram.jpg" %}
 
 
   <h2 class="hide">{%trans "Last news"%} {{site.title}}</h2>
@@ -264,16 +265,19 @@
     <div class="f">
 
       <div class="c6 s12 pRa25">
+{%if lastPostsRecord.0.title%}
         <article class="wide">
           <a href="{{url.root}}/{{lastPostsRecord.0.url}}">
-            <img src="{{url.static}}/images/homepage/news-haram.jpg" alt="{{lastPostsRecord.0.title}}">
+            <img src="{%if lastPostsRecord.0.meta.thumb%}{{lastPostsRecord.0.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{lastPostsRecord.0.title}}">
           </a>
           <h2><a href="{{url.root}}/{{lastPostsRecord.0.url}}">{{lastPostsRecord.0.title}}</a></h2>
           <p>{{lastPostsRecord.0.excerpt}}</p>
         </article>
+{%endif%}
       </div>
 
       <div class="c6 s12">
+{%if lastPostsRecord.1.title%}
         <article class="f mB25">
           <div class="c">
             <h3><a href="{{url.root}}/{{lastPostsRecord.1.url}}">{{lastPostsRecord.1.title}}</a></h3>
@@ -281,11 +285,13 @@
           </div>
           <div class="c4 txtRa">
             <a href="{{url.root}}/{{lastPostsRecord.1.url}}">
-              <img src="{{url.static}}/images/homepage/news-haram.jpg" alt="{{lastPostsRecord.1.title}}">
+              <img src="{%if lastPostsRecord.1.meta.thumb%}{{lastPostsRecord.1.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{lastPostsRecord.1.title}}">
             </a>
           </div>
         </article>
+{%endif%}
 
+{%if lastPostsRecord.2.title%}
         <article class="f mB25">
           <div class="c">
             <h3><a href="{{url.root}}/{{lastPostsRecord.2.url}}">{{lastPostsRecord.2.title}}</a></h3>
@@ -293,11 +299,13 @@
           </div>
           <div class="c4 txtRa">
             <a href="{{url.root}}/{{lastPostsRecord.2.url}}">
-              <img src="{{url.static}}/images/homepage/news-haram.jpg" alt="{{lastPostsRecord.2.title}}">
+              <img src="{%if lastPostsRecord.2.meta.thumb%}{{lastPostsRecord.2.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{lastPostsRecord.2.title}}">
             </a>
           </div>
         </article>
+{%endif%}
 
+{%if lastPostsRecord.3.title%}
         <article class="f mB25">
           <div class="c">
             <h3><a href="{{url.root}}/{{lastPostsRecord.3.url}}">{{lastPostsRecord.3.title}}</a></h3>
@@ -305,10 +313,11 @@
           </div>
           <div class="c4 txtRa">
             <a href="{{url.root}}/{{lastPostsRecord.3.url}}">
-              <img src="{{url.static}}/images/homepage/news-haram.jpg" alt="{{lastPostsRecord.3.title}}">
+              <img src="{%if lastPostsRecord.3.meta.thumb%}{{lastPostsRecord.3.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{lastPostsRecord.3.title}}">
             </a>
           </div>
         </article>
+{%endif%}
 
       </div>
     </div>
