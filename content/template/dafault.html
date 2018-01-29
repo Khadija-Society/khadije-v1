@@ -52,12 +52,13 @@
 
 
 {%block imagegallery%}
-<div id="lightgallery">
-    <a data-action href="{{url.static}}lightgallery/demo/1.jpg"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg" alt="{{datarow.title | raw}}"></a>
-    <a data-action href="{{url.static}}lightgallery/demo/2.jpg"><img src="{{url.static}}lightgallery/demo/thumb-2.jpg" alt="{{datarow.title | raw}}"></a>
-    <a data-action href="{{url.static}}lightgallery/demo/3.jpg"><img src="{{url.static}}lightgallery/demo/thumb-3.jpg" alt="{{datarow.title | raw}}"></a>
-    <a data-action href="{{url.static}}lightgallery/demo/4.jpg"><img src="{{url.static}}lightgallery/demo/thumb-4.jpg" alt="{{datarow.title | raw}}"></a>
-</div>
+  {%if datarow.meta.gallery%}
+    <div id="lightgallery">
+      {%for key, value in datarow.meta.gallery%}
+        <a data-action href="{{value}}"><img src="{{value}}" alt="{{datarow.title | raw}}"></a>
+      {%endfor%}
+    </div>
+  {%endif%}
 {%endblock%}
 
 
