@@ -34,6 +34,11 @@ class view extends \content_cp\main2\view
 		if(\lib\utility::get('gender')) $args['users.gender']             = \lib\utility::get('gender');
 		if(\lib\utility::get('birthday')) $args['YEAR(users.birthday)'] = \lib\utility::get('birthday');
 
+		if(!isset($args['travels.status']))
+		{
+			$args['travels.status'] = ["NOT IN", "('cancel', 'draft')"];
+		}
+
 		$search_string            = \lib\utility::get('q');
 
 		if($search_string)
