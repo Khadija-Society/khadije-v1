@@ -8,4 +8,15 @@
     <li><a href="{{url.baseFull}}/nationalcode"><i class='sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
     <li><a href="{{url.baseFull}}/trip"><i class='sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>
     <li><a href="{{url.baseFull}}/homepage"><i class='sf-cog'></i> <span>{%trans "Homepage settings"%}</span></a></li>
+
+    <li>
+        <a href="{{url.baseFull}}/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
+        <ul>
+            <li><a href="{{url.baseFull}}/posts">{% trans "News" %}</a></li>
+            <li><a href="{{url.baseFull}}/terms?type=cat">{% trans "Categries" %}</a></li>
+            <li><a href="{{url.baseFull}}/terms?type=tag">{% trans "Tags" %}</a></li>
+            <li><a href="{{url.baseFull}}/posts?type=page">{% trans "Pages" %}</a></li>
+        </ul>
+    </li>
+
 {%endblock%}
