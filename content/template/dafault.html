@@ -62,38 +62,34 @@
 
 
 {%block datatablePosts%}
+
+{%if datarow.type == 'cat'%}
+
+  {%set myPostByThisCat = posts({"cat" : datarow.slug})%}
+
+{%elseif datarow.type == 'tag' %}
+
+  {%set myPostByThisCat = posts({"tag" : datarow.slug})%}
+
+{%endif%}
+
+{%if myPostByThisCat %}
 <article class="postListPreview">
+  {%for key, value in myPostByThisCat%}
     <section class="f">
       <div class="cauto s12 pRa10 txtC">
-        <a href="#"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg" alt="{{site.title}}" width="150px"></a>
+        <a href="{{value.url}}"><img src="{{value.meta.thumb}}" alt="{{value.title}}" width="150px"></a>
       </div>
       <div class="c s12">
-        <h3><a href="#">به جای شرکت‌های دانش‌بنیان، جیب بانک‌ها را پر کردند!</a></h3>
-        <p>در حالی که برخی طرح‌های فوق‌العاده و سودمند به دلیل بی بهره بودن از منابع مالی، راه به جایی نمی‌برند و در نهایت نابود می‌شوند، بودجه تعیین شده برای حمایت از این طرح‌ها به جیب بانک‌ها سرازیر می‌شود!</p>
+        <h3><a href="{{value.url}}">{{value.title}}</a></h3>
+        <p>{{value.content | raw}}</p>
       </div>
     </section>
-
-    <section class="f">
-      <div class="cauto s12 pRa10 txtC">
-        <a href="#"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg" alt="{{site.title}}" width="150px"></a>
-      </div>
-      <div class="c s12">
-        <h3><a href="#">به جای شرکت‌های دانش‌بنیان، جیب بانک‌ها را پر کردند!</a></h3>
-        <p>در حالی که برخی طرح‌های فوق‌العاده و سودمند به دلیل بی بهره بودن از منابع مالی، راه به جایی نمی‌برند و در نهایت نابود می‌شوند، بودجه تعیین شده برای حمایت از این طرح‌ها به جیب بانک‌ها سرازیر می‌شود!</p>
-      </div>
-    </section>
-
-    <section class="f">
-      <div class="cauto s12 pRa10 txtC">
-        <a href="#"><img src="{{url.static}}lightgallery/demo/thumb-1.jpg" alt="{{site.title}}" width="150px"></a>
-      </div>
-      <div class="c s12">
-        <h3><a href="#">به جای شرکت‌های دانش‌بنیان، جیب بانک‌ها را پر کردند!</a></h3>
-        <p>در حالی که برخی طرح‌های فوق‌العاده و سودمند به دلیل بی بهره بودن از منابع مالی، راه به جایی نمی‌برند و در نهایت نابود می‌شوند، بودجه تعیین شده برای حمایت از این طرح‌ها به جیب بانک‌ها سرازیر می‌شود!</p>
-      </div>
-    </section>
-
+  {%endfor%}
 </article>
+{%endif%}
+
+
 {%endblock%}
 
 
