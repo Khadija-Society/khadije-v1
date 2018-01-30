@@ -8,6 +8,7 @@ class model extends \mvc\model
 		$args =
 		[
 			'username' => \lib\utility::post('username'),
+			'bank'     => mb_strtolower(\lib\utility::post('bank')),
 			'niyat'    => \lib\utility::post('niyat'),
 			'way'      => \lib\utility::post('way'),
 			'fullname' => \lib\utility::post('fullname'),
@@ -16,6 +17,8 @@ class model extends \mvc\model
 			'amount'   => \lib\utility::post('amount'),
 			'doners'   => \lib\utility::post('doners') === 'yes' ? 1 : 0,
 		];
+
+		if(!in_array(mb_strtolower(\lib\utility::post('bank')), ['asanpardakht', 'zarinpal', 'payir']))
 
 		$redirect = false;
 		if(\lib\permission::access('admin'))
