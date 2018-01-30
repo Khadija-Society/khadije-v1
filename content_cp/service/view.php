@@ -33,6 +33,8 @@ class view extends \content_cp\main2\view
 
 		$search_string            = \lib\utility::get('q');
 
+		if(!$search_string) $search_string = null;
+
 		if($search_string)
 		{
 			$this->data->page['title'] = T_('Search'). ' '.  $search_string;
