@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-01-30 14:50+0330\n"
-"PO-Revision-Date: 2018-01-30 14:50+0330\n"
+"POT-Creation-Date: 2018-01-30 15:16+0330\n"
+"PO-Revision-Date: 2018-01-30 15:16+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -1062,7 +1062,7 @@ msgstr "با استفاده از گوگل وارد :name شوید"
 msgid "Mobile not found"
 msgstr "موبایل یافت نشد"
 
-#: dash/addons/content_enter/home/model.php:94
+#: dash/addons/content_enter/home/model.php:95
 #: dash/addons/content_enter/signup/model.php:30
 #: dash/addons/includes/languages/trans_addons.php:719
 #: khadije/content/contact/model.php:38
@@ -1070,23 +1070,18 @@ msgstr "موبایل یافت نشد"
 msgid "How are you?"
 msgstr "حال شما چطوره؟"
 
-#: dash/addons/content_enter/home/model.php:106
-#: dash/addons/content_enter/mobile/change/model.php:20
-#: dash/addons/content_enter/mobile/set/model.php:30
-#: dash/addons/content_enter/pass/change/model.php:20
-#: dash/addons/content_enter/pass/recovery/model.php:30
-#: dash/addons/content_enter/pass/set/model.php:30
-#: dash/addons/content_enter/pass/signup/model.php:30
-#: dash/addons/content_enter/signup/model.php:36
-#: dash/addons/content_enter/username/model.php:12
-#: dash/addons/content_enter/verify/model.php:23
-msgid "Dont!"
-msgstr "نکن عزیزم!"
-
-#: dash/addons/content_enter/home/model.php:140
+#: dash/addons/content_enter/home/model.php:137
 #: dash/addons/content_enter/username/model.php:40
 msgid "Username not found"
 msgstr "نام کاربری یافت نشد"
+
+#: dash/addons/content_enter/home/model.php:173
+msgid "Opts!, Maybe your browser saved your password incorrectly."
+msgstr "اوه! امیدواریم مرورگر شما پسوردتون رو اشتباه ذخیره کرده باشه."
+
+#: dash/addons/content_enter/home/model.php:173
+msgid "Please remove your saved password and try again"
+msgstr "لطفا پسورد ذخیره‌شده را پاک کرده و مجددا تلاش کنید"
 
 #: dash/addons/content_enter/home/view.php:26
 msgid "Enter to :name with mobile"
@@ -1211,6 +1206,18 @@ msgstr "حساب کاربری تکراری"
 #: dash/addons/content_enter/main/tools/verification_code.php:592
 msgid "Invalid code, try again"
 msgstr "کد اشتباه، دوباره تلاش کنید"
+
+#: dash/addons/content_enter/mobile/change/model.php:20
+#: dash/addons/content_enter/mobile/set/model.php:30
+#: dash/addons/content_enter/pass/change/model.php:20
+#: dash/addons/content_enter/pass/recovery/model.php:30
+#: dash/addons/content_enter/pass/set/model.php:30
+#: dash/addons/content_enter/pass/signup/model.php:30
+#: dash/addons/content_enter/signup/model.php:36
+#: dash/addons/content_enter/username/model.php:12
+#: dash/addons/content_enter/verify/model.php:23
+msgid "Dont!"
+msgstr "نکن عزیزم!"
 
 #: dash/addons/content_enter/mobile/change/model.php:27
 #: dash/addons/content_enter/pass/change/model.php:27
