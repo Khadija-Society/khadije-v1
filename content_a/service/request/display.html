@@ -5,9 +5,13 @@
 <div class="f justify-center">
  <div class="cbox c10 s12">
 
+{%if not service_need_list%}
+  <p class="msg info2 txtC">در حال حاضر درخواست نیازی توسط موسسه اعلام نشده است!</p>
+{%else%}
   <form method="post">
 {{block ('iCity') }}
   </form>
+{%endif%}
 
  </div>
 </div>

@@ -6,6 +6,7 @@
  <div class="c12">{{block ("addDonate")}}</div>
  <div class="c6 s12">{{block ("addTrip")}}</div>
  <div class="c6 s12">{{block ("addTripGroup")}}</div>
+ <div class="c12">{{block ("addService")}}</div>
 
 </div>
 
@@ -63,6 +64,17 @@
  <div class="statistic">
   <div class="value"><i class="sf-credit-card"></i></div>
   <div class="label">{%trans "Donate"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block addService%}
+<a class="dcard x2" href='{{url.baseFull}}/service'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-md"></i></div>
+  <div class="label">ثبت درخواست خادمی</div>
  </div>
 </a>
 {%endblock%}
