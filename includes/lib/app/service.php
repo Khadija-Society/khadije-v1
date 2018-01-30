@@ -296,7 +296,7 @@ class service
 
 		$args['user_id'] = \lib\user::id();
 
-		$check_duplicate = \lib\db\services::get(['user_id' => \lib\user::id(), 'expert' => $args['expert'], 'limit' => 1]);
+		$check_duplicate = \lib\db\services::get(['user_id' => \lib\user::id(), 'expert' => $args['expert'], 'status' => ["IN", "('draft','awaiting','accept','spam')"], 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
 			\lib\debug::error(T_("You register to this service before"));
