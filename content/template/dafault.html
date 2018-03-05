@@ -53,11 +53,30 @@
 {%block imagegallery%}
   {%if datarow.meta.gallery%}
     <div id="lightgallery">
-      {%for key, value in datarow.meta.gallery%}
-        <a data-action href="{{value}}"><img src="{{value}}" alt="{{datarow.title | raw}}"></a>
+      {%for key, myUrl in datarow.meta.gallery%}
+        {%if myUrl ends with '.jpg' or myUrl ends with '.png' or myUrl ends with '.gif'%}
+          <a data-action href="{{myUrl}}"><img src="{{myUrl}}" alt="{{datarow.title | raw}}"></a>
+        {%endif%}
       {%endfor%}
     </div>
   {%endif%}
+
+
+    <div class="gallery2">
+      {%for key, myUrl in datarow.meta.gallery%}
+        {%if myUrl ends with '.mp4' %}
+        <video controls>
+            <source src="{{myUrl}}" type="video/mp4">
+        </video>
+        {%elseif myUrl ends with '.mp3' %}
+          <audio controls><source src="{{myUrl}}" type="audio/mpeg"></audio>
+        {%elseif myUrl ends with '.pdf' %}
+        <a href="{{myUrl}}" class="btn pA25">PDF</a>
+        {%else%}
+        {%endif%}
+      {%endfor%}
+    </div>
+
 {%endblock%}
 
 
