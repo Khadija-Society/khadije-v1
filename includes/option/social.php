@@ -3,12 +3,12 @@
 /**
 * the social network
 */
-self::$social['status']                                = null;
+self::$social['status']                                = true;
 
-self::$social['list']['telegram']                      = null;
+self::$social['list']['telegram']                      = 'mhkhadije';
 self::$social['list']['facebook']                      = null;
 self::$social['list']['twitter']                       = null;
-self::$social['list']['instagram']                     = null;
+self::$social['list']['instagram']                     = 'mhkhadije';
 self::$social['list']['googleplus']                    = null;
 self::$social['list']['github']                        = null;
 self::$social['list']['linkedin']                      = null;
