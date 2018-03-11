@@ -62,9 +62,9 @@
         <td class="s0"><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
         <td><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
         <td class="s0">{%set myGender = value.gender | capitalize%}<a href="{{url.baseFull}}/trip?gender={{value.gender}}">{%trans myGender%}</a></td>
-        <td class="s0"><a href='{{url.baseFull}}/trip?birthday={{value.birthday | date("Y")}}'>{{value.birthday | date("Y") | fitNumber}}</a>{{value.birthday | date("-m-d") | fitNumber}}</td>
+        <td class="s0"><a href='{{url.baseFull}}/trip?birthday={{value.birthday | date("Y")}}'>{{value.birthday | date("Y") | fitNumber(false)}}</a>{{value.birthday | date("-m-d") | fitNumber(false)}}</td>
 
-        <td class="s0">{{value.nationalcode | fitNumber}}</td>
+        <td class="s0">{{value.nationalcode | fitNumber(false)}}</td>
         <td>{%set my_place = value.place | capitalize%}<a href="{{url.baseFull}}/trip?place={{value.place}}">{%trans my_place%}</a></td>
         <td>{%set my_type = value.type | capitalize%}<a href="{{url.baseFull}}/trip?type={{value.type}}">{%trans my_type%}</a></td>
         <td>{%set my_status = value.status | capitalize%}<a href="{{url.baseFull}}/trip?status={{value.status}}">{%trans my_status%}</a></td>

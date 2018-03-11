@@ -64,17 +64,17 @@
       {%for key, value in service_list%}
       <tr>
         <td>{{value.firstname}} <b>{{value.lastname}}</b></td>
-        <td>{{value.mobile | fitNumber}}</td>
-        <td>{{value.birthday | date("Y-m-d") | fitNumber}}</td>
+        <td>{{value.mobile | fitNumber(false)}}</td>
+        <td>{{value.birthday | date("Y-m-d") | fitNumber(false)}}</td>
         <td>{{value.province}}</td>
-        <td>{{value.phone | fitNumber}}</td>
+        <td>{{value.phone | fitNumber(false)}}</td>
         <td>{%set my_married = value.married | capitalize%}{%trans my_married%}</td>
         <td>{%set my_gender = value.gender | capitalize%}{%trans my_gender%}</td>
         <td>{{value.job}}</td>
         <td>{{value.expertvalue}}</td>
-        <td>{{value.expertyear | fitNumber}}</td>
-        <td>{{value.startdate | date("Y-m-d") | fitNumber}}</td>
-        <td>{{value.enddate | date("Y-m-d") | fitNumber}}</td>
+        <td>{{value.expertyear | fitNumber(false)}}</td>
+        <td>{{value.startdate | date("Y-m-d") | fitNumber(false)}}</td>
+        <td>{{value.enddate | date("Y-m-d") | fitNumber(false)}}</td>
         <td>{{value.expert}}</td>
       </tr>
       {%endfor%}
