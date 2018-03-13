@@ -1,16 +1,19 @@
 {%extends display.main%}
 
 
-{%block pageContent%}
+{%block pageData%}
 <div class="f justify-center">
  <div class="cbox c10 s12">
+
 
 {%if not service_need_list%}
   <p class="msg info2 txtC">در حال حاضر درخواست نیازی توسط موسسه اعلام نشده است!</p>
 {%else%}
   <form method="post">
+  <p class="msg info2 txtC">نیازمندی‌های زیر در حال حاضر در موسسه حضرت خدیجه مورد نیاز است</p>
 {{block ('iCity') }}
   </form>
+  <a href="{{url.base}}/a/service" class="btn success block" data-direct>ثبت‌نام و ثبت درخواست</a>
 {%endif%}
 
  </div>
@@ -24,33 +27,18 @@
  <div class="f justify-center txtC">
 {% for key, value in service_need_list %}
   <div class="c4 s12 pA10">
-    <a class="vcard shadow" href="{{url.full}}" data-ajaxify data-method="post" data-data='{"need": "{{value.id}}"}'>
+    <a class="vcard shadow" href="{{url.base}}/a/service" data-direct>
      <img src="{{value.fileurl}}" alt='{{value.title}}'>
      <div class="content">
       <div class="header">{{value.title}}</div>
      </div>
+     <div class="footer">{{value.desc}}</div>
     </a>
   </div>
 {% endfor %}
  </div>
 
-
 {%endblock%}
 
-
-{%block iCity2%}
-<label for="city">{%trans "City Place"%}</label>
-<select name="city" class="input select">
-  <option value="">{%trans "Please select one itmes"%}</option>
-  {%for key, value in cityplace_list%}
-    <option value="{{value.id}}">{{value.city}} - {{value.place}}</option>
-  {%endfor%}
-</select>
-{%endblock%}
-
-
-{%block iNext%}
-<button class="btn primary block mT20">{%trans "Continue"%}</button>
-{%endblock%}
 
 

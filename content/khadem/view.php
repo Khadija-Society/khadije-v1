@@ -6,7 +6,7 @@ class view extends \mvc\view
 {
 	public function config()
 	{
-		$this->data->page['title'] = T_("Register for new service request"). ' | '. T_('Step 1');
+		$this->data->page['title'] = T_("Register for new service request");
 		$this->data->page['desc']  = T_('in 3 simple step register your request for have service to holy places');
 
 		$this->data->page['badge']['link'] = $this->url('baseFull'). '/service';
