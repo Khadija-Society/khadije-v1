@@ -79,7 +79,7 @@ class model extends \content_cp\main2\model
 			\lib\debug::true(T_("Data saved"));
 		}
 
-		$this->redirector($this->url('full'));
+		$this->redirector(\lib\url::pwd());
 
 	}
 }

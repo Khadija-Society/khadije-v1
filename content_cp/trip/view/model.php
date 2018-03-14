@@ -26,7 +26,7 @@ class model extends \content_cp\main2\model
 			\lib\db\travelusers::remove(\lib\utility::post('key'), \lib\utility::get('id'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector($this->url('full'));
+				$this->redirector(\lib\url::pwd());
 			}
 		}
 		elseif(\lib\utility::post('save_child') === 'save_child')
@@ -138,7 +138,7 @@ class model extends \content_cp\main2\model
 
 			\lib\debug::true(T_("The travel updated"));
 
-			$this->redirector($this->url('full'));
+			$this->redirector(\lib\url::pwd());
 
 		}
 

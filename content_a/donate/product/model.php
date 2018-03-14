@@ -127,7 +127,7 @@ class model extends \content_a\main\model
 
 		$meta =
 		[
-			'turn_back'   => $this->url('full'),
+			'turn_back'   => \lib\url::pwd(),
 			'other_field' =>
 			[
 				'hazinekard' => $way,

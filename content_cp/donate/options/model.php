@@ -29,7 +29,7 @@ class model extends \addons\content_cp\main\model
 
 		if(\lib\debug::$status)
 		{
-			$this->redirector($this->url('full'));
+			$this->redirector(\lib\url::pwd());
 		}
 	}
 }

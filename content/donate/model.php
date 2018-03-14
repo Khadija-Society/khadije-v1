@@ -31,7 +31,7 @@ class model extends \mvc\model
 
 		if($redirect)
 		{
-			$this->redirector($this->url('full'));
+			$this->redirector(\lib\url::pwd());
 		}
 	}
 }

@@ -26,7 +26,7 @@ class model extends \content_a\main\model
 
 				\lib\debug::true(T_("Your service was canceled"));
 
-				$this->redirector($this->url('full'));
+				$this->redirector(\lib\url::pwd());
 
 			}
 			else

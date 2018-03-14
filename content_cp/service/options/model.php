@@ -71,7 +71,7 @@ class model extends \content_cp\main2\model
 			else
 			{
 				\lib\debug::true(T_("Way successfully added"));
-				$this->redirector($this->url('full'));
+				$this->redirector(\lib\url::pwd());
 			}
 		}
 	}

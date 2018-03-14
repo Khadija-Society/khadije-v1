@@ -8,7 +8,7 @@ class controller extends \mvc\controller
 	{
 		if(!$this->login())
 		{
-			$this->redirector($this->url('base'). '/enter/signup?referer='. $this->url('full'))->redirect();
+			$this->redirector($this->url('base'). '/enter/signup?referer='. \lib\url::pwd())->redirect();
 			return;
 		}
 	}
