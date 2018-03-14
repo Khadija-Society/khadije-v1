@@ -17,7 +17,7 @@ class model extends \content_a\main\model
 		if(\lib\debug::$status && $service_id)
 		{
 			\lib\debug::true(T_("Your request was saved"));
-			$this->redirector($this->url('baseFull'). '/service/profile?id='. $service_id);
+			$this->redirector(\lib\url::here(). '/service/profile?id='. $service_id);
 		}
 	}
 }

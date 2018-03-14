@@ -29,7 +29,7 @@
 
 {%block searchblock%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.baseFull}}/nationalcode'>
+  <form method="get" action='{{url.here}}/nationalcode'>
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search in national codes"%}' id="q" value="{{utilityGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -54,7 +54,7 @@
     <tbody class="txtC">
       {%for key, value in nationalcode_list%}
       <tr>
-        <td><a href="{{url.baseFull}}/nationalcode/edit?id={{value.id}}">{{value.nationalcode | fitNumber(false)}}</a></td>
+        <td><a href="{{url.here}}/nationalcode/edit?id={{value.id}}">{{value.nationalcode | fitNumber(false)}}</a></td>
         <td><span class="badge danger fs09">{{value.qom | fitNumber}}</span></td>
         <td><span class="badge danger fs09">{{value.mashhad | fitNumber}}</span></td>
         <td><span class="badge danger fs09">{{value.karbala | fitNumber}}</span></td>

@@ -145,7 +145,7 @@
             {%if edit_mode%}
               <div class="c"></div>
             {%else%}
-              <a href="{{url.baseFull}}/trip/view?id={{utilityGET.id}}&partner={{value.id}}" class="btn primary c mRa5 " >{%trans "Edit"%}</a>
+              <a href="{{url.here}}/trip/view?id={{utilityGET.id}}&partner={{value.id}}" class="btn primary c mRa5 " >{%trans "Edit"%}</a>
             {%endif%}
             <a href="{{url.pwd |raw}}" class="btn danger cauto" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"remove"}'>{%trans "Remove"%}</a>
         </div>

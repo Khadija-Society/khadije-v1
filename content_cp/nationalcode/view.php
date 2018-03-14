@@ -9,10 +9,10 @@ class view extends \content_cp\main2\view
 		$this->data->page['title'] = T_("National code list");
 		$this->data->page['desc']  = T_("check nationalcode of persons and number of trips");
 
-		$export_link = ' <a href="'. $this->url('baseFull'). '/nationalcode?export=true">'. T_("Export"). '</a>';
+		$export_link = ' <a href="'. \lib\url::here(). '/nationalcode?export=true">'. T_("Export"). '</a>';
 		$this->data->page['desc'] .= $export_link;
 
-		$this->data->page['badge']['link'] = $this->url('baseFull'). '/nationalcode/import';
+		$this->data->page['badge']['link'] = \lib\url::here(). '/nationalcode/import';
 		$this->data->page['badge']['text'] = T_('Import');
 
 
@@ -46,7 +46,7 @@ class view extends \content_cp\main2\view
 		}
 
 
-		$this->data->sort_link = self::make_sort_link(\lib\app\nationalcode::$sort_field, $this->url('baseFull'). '/nationalcode');
+		$this->data->sort_link = self::make_sort_link(\lib\app\nationalcode::$sort_field, \lib\url::here(). '/nationalcode');
 
 		if(isset($this->controller->pagnation))
 		{

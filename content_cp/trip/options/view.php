@@ -9,7 +9,7 @@ class view extends \content_cp\main2\view
 		$this->data->page['title'] = T_("Request options");
 		$this->data->page['desc']  = T_("change request options");
 
-		$this->data->page['badge']['link'] = $this->url('baseFull'). '/trip';
+		$this->data->page['badge']['link'] = \lib\url::here(). '/trip';
 		$this->data->page['badge']['text'] = T_('Back to request list');
 
 

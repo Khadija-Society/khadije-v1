@@ -9,7 +9,7 @@ class view extends \content_a\main\view
 		$this->data->page['title'] = T_("List of your trip request");
 		$this->data->page['desc']  = T_('You can check your last request and cancel them or add new request');
 
-		$this->data->page['badge']['link'] = $this->url('baseFull'). '/trip/request';
+		$this->data->page['badge']['link'] = \lib\url::here(). '/trip/request';
 		$this->data->page['badge']['text'] = T_('register for new trip request');
 
 
@@ -17,7 +17,7 @@ class view extends \content_a\main\view
 
 		if(!$this->data->trip_list || empty($this->data->trip_list))
 		{
-			$this->redirector($this->url('baseFull').'/trip/request')->redirect();
+			$this->redirector(\lib\url::here().'/trip/request')->redirect();
 			return;
 		}
 	}

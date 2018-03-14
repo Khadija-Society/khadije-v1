@@ -16,7 +16,7 @@
 
 
 {%block BDonateProduct%}
-<a class="dcard x1" href='{{url.baseFull}}/donateproduct'>
+<a class="dcard x1" href='{{url.here}}/donateproduct'>
  <div class="statistic">
   <div class="value"><i class="sf-bag"></i></div>
   <div class="label">{%trans "Donate product list"%}</div>
@@ -26,7 +26,7 @@
 
 
 {%block Bdonate%}
-<a class="dcard x1" href='{{url.baseFull}}/donate'>
+<a class="dcard x1" href='{{url.here}}/donate'>
  <div class="statistic">
   <div class="value"><i class="sf-card"></i></div>
   <div class="label">{%trans "Donate list"%}</div>
@@ -36,7 +36,7 @@
 
 
 {%block Btrip%}
-<a class="dcard x2" href='{{url.baseFull}}/trip'>
+<a class="dcard x2" href='{{url.here}}/trip'>
  <div class="statistic">
   <div class="value"><i class="sf-pull-request"></i></div>
   <div class="label">{%trans "request trip list"%}</div>
@@ -46,7 +46,7 @@
 
 
 {%block BService%}
-<a class="dcard x2" href='{{url.baseFull}}/service'>
+<a class="dcard x2" href='{{url.here}}/service'>
  <div class="statistic">
   <div class="value"><i class="sf-user-md"></i></div>
   <div class="label">{%trans "request service list"%}</div>
@@ -56,7 +56,7 @@
 
 
 {%block BNcode%}
-<a class="dcard x2" href='{{url.baseFull}}/nationalcode'>
+<a class="dcard x2" href='{{url.here}}/nationalcode'>
  <div class="statistic">
   <div class="value"><i class="sf-user-5"></i></div>
   <div class="label">{%trans "National code"%}</div>
@@ -67,18 +67,18 @@
 
 {%block sidenav%}
     <li><a href="{{url.base}}/cp"><i class='sf-gauge'></i> <span>{% trans "Dashboard" %}</span></a></li>
-    <li><a href="{{url.baseFull}}/donate"><i class='sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/service"><i class='sf-user-md'></i> <span>{%trans "Request service list"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/nationalcode"><i class='sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/trip"><i class='sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/homepage"><i class='sf-cog'></i> <span>{%trans "Homepage settings"%}</span></a></li>
+    <li><a href="{{url.here}}/donate"><i class='sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
+    <li><a href="{{url.here}}/service"><i class='sf-user-md'></i> <span>{%trans "Request service list"%}</span></a></li>
+    <li><a href="{{url.here}}/nationalcode"><i class='sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
+    <li><a href="{{url.here}}/trip"><i class='sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>
+    <li><a href="{{url.here}}/homepage"><i class='sf-cog'></i> <span>{%trans "Homepage settings"%}</span></a></li>
     <li>
-        <a href="{{url.baseFull}}/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
+        <a href="{{url.here}}/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
         <ul>
-            <li><a href="{{url.baseFull}}/posts">{% trans "News" %}</a></li>
-            <li><a href="{{url.baseFull}}/terms?type=cat">{% trans "Categries" %}</a></li>
-            <li><a href="{{url.baseFull}}/terms?type=tag">{% trans "Tags" %}</a></li>
-            <li><a href="{{url.baseFull}}/posts?type=page">{% trans "Pages" %}</a></li>
+            <li><a href="{{url.here}}/posts">{% trans "News" %}</a></li>
+            <li><a href="{{url.here}}/terms?type=cat">{% trans "Categries" %}</a></li>
+            <li><a href="{{url.here}}/terms?type=tag">{% trans "Tags" %}</a></li>
+            <li><a href="{{url.here}}/posts?type=page">{% trans "Pages" %}</a></li>
         </ul>
     </li>
 {%endblock%}

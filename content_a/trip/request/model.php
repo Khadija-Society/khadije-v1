@@ -18,7 +18,7 @@ class model extends \content_a\main\model
 		if(\lib\debug::$status && $travel_id)
 		{
 			\lib\debug::true(T_("Your Travel was saved"));
-			$this->redirector($this->url('baseFull'). '/trip/profile?trip='. $travel_id);
+			$this->redirector(\lib\url::here(). '/trip/profile?trip='. $travel_id);
 		}
 	}
 }

@@ -36,7 +36,7 @@ class model extends \content_a\main\model
 				\lib\utility\sms::send(\lib\user::detail('mobile'), $msg);
 			}
 
-			$this->redirector($this->url('baseFull'). '/group');
+			$this->redirector(\lib\url::here(). '/group');
 			return;
 		}
 
@@ -45,7 +45,7 @@ class model extends \content_a\main\model
 			\lib\db\travelusers::remove(\lib\utility::post('key'), \lib\utility::get('trip'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector($this->url('baseFull'). '/group/partner?trip='. \lib\utility::get('trip'));
+				$this->redirector(\lib\url::here(). '/group/partner?trip='. \lib\utility::get('trip'));
 			}
 		}
 		else

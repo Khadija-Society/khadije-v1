@@ -66,7 +66,7 @@ class model extends \content_cp\main2\model
 			if(\lib\utility::get('edit'))
 			{
 				\lib\debug::true(T_("Way successfully edited"));
-				$this->redirector($this->url('baseFull'). '/service/options');
+				$this->redirector(\lib\url::here(). '/service/options');
 			}
 			else
 			{

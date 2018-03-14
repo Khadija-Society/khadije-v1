@@ -7,7 +7,7 @@ class controller extends \lib\controller
 	{
 		if(\lib\router::get_url() === 'main')
 		{
-			$this->redirector($this->url('baseFull'))->redirect();
+			$this->redirector(\lib\url::here())->redirect();
 			\lib\error::page();
 		}
 	}

@@ -40,7 +40,7 @@ class model extends \content_cp\main2\model
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("Your Child was saved"));
-				$this->redirector($this->url('baseFull'). '/trip/view?id='. \lib\utility::get('id'));
+				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\utility::get('id'));
 			}
 
 		}
@@ -66,7 +66,7 @@ class model extends \content_cp\main2\model
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("The partner was updated"));
-				$this->redirector($this->url('baseFull'). '/trip/view?id='. \lib\utility::get('id'));
+				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\utility::get('id'));
 			}
 		}
 		elseif(\lib\utility::post('edit_travel') === 'edit_travel')

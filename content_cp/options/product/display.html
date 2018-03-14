@@ -50,7 +50,7 @@
             <td>{{value.request | number_format | fitNumber}}</td>
             <td>{{value.amount | number_format | fitNumber}}</td>
             <td>{{value.desc}}</td>
-            <td class="collapsing"><a href="{{url.baseFull}}/options/product?edit={{value.id}}" ><button class="btn primary xs">{%trans "Edit"%}</button></a></td>
+            <td class="collapsing"><a href="{{url.here}}/options/product?edit={{value.id}}" ><button class="btn primary xs">{%trans "Edit"%}</button></a></td>
           </tr>
         {%endfor%}
       </tbody>

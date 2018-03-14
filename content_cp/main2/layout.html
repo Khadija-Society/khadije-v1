@@ -3,19 +3,19 @@
 
 {%block sidenav%}
     <li><a href="{{url.base}}/cp"><i class='sf-gauge'></i> <span>{% trans "Dashboard" %}</span></a></li>
-    <li><a href="{{url.baseFull}}/donate"><i class='sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/service"><i class='sf-user-md'></i> <span>{%trans "Request service list"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/nationalcode"><i class='sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/trip"><i class='sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>
-    <li><a href="{{url.baseFull}}/homepage"><i class='sf-cog'></i> <span>{%trans "Homepage settings"%}</span></a></li>
+    <li><a href="{{url.here}}/donate"><i class='sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
+    <li><a href="{{url.here}}/service"><i class='sf-user-md'></i> <span>{%trans "Request service list"%}</span></a></li>
+    <li><a href="{{url.here}}/nationalcode"><i class='sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
+    <li><a href="{{url.here}}/trip"><i class='sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>
+    <li><a href="{{url.here}}/homepage"><i class='sf-cog'></i> <span>{%trans "Homepage settings"%}</span></a></li>
 
     <li>
-        <a href="{{url.baseFull}}/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
+        <a href="{{url.here}}/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
         <ul>
-            <li><a href="{{url.baseFull}}/posts">{% trans "News" %}</a></li>
-            <li><a href="{{url.baseFull}}/terms?type=cat">{% trans "Categries" %}</a></li>
-            <li><a href="{{url.baseFull}}/terms?type=tag">{% trans "Tags" %}</a></li>
-            <li><a href="{{url.baseFull}}/posts?type=page">{% trans "Pages" %}</a></li>
+            <li><a href="{{url.here}}/posts">{% trans "News" %}</a></li>
+            <li><a href="{{url.here}}/terms?type=cat">{% trans "Categries" %}</a></li>
+            <li><a href="{{url.here}}/terms?type=tag">{% trans "Tags" %}</a></li>
+            <li><a href="{{url.here}}/posts?type=page">{% trans "Pages" %}</a></li>
         </ul>
     </li>
 

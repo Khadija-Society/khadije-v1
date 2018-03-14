@@ -29,7 +29,7 @@
 
 {%block searchblock%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.baseFull}}/trip'>
+  <form method="get" action='{{url.here}}/trip'>
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search in trips"%}' id="q" value="{{utilityGET.q}}{{utilityGET.barcode}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -59,15 +59,15 @@
     <tbody>
       {%for key, value in trip_list%}
       <tr>
-        <td class="s0"><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
-        <td><a href="{{url.baseFull}}/trip/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
-        <td class="s0">{%set myGender = value.gender | capitalize%}<a href="{{url.baseFull}}/trip?gender={{value.gender}}">{%trans myGender%}</a></td>
-        <td class="s0"><a href='{{url.baseFull}}/trip?birthday={{value.birthday | date("Y")}}'>{{value.birthday | date("Y") | fitNumber(false)}}</a>{{value.birthday | date("-m-d") | fitNumber(false)}}</td>
+        <td class="s0"><a href="{{url.here}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
+        <td><a href="{{url.here}}/trip/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
+        <td class="s0">{%set myGender = value.gender | capitalize%}<a href="{{url.here}}/trip?gender={{value.gender}}">{%trans myGender%}</a></td>
+        <td class="s0"><a href='{{url.here}}/trip?birthday={{value.birthday | date("Y")}}'>{{value.birthday | date("Y") | fitNumber(false)}}</a>{{value.birthday | date("-m-d") | fitNumber(false)}}</td>
 
         <td class="s0">{{value.nationalcode | fitNumber(false)}}</td>
-        <td>{%set my_place = value.place | capitalize%}<a href="{{url.baseFull}}/trip?place={{value.place}}">{%trans my_place%}</a></td>
-        <td>{%set my_type = value.type | capitalize%}<a href="{{url.baseFull}}/trip?type={{value.type}}">{%trans my_type%}</a></td>
-        <td>{%set my_status = value.status | capitalize%}<a href="{{url.baseFull}}/trip?status={{value.status}}">{%trans my_status%}</a></td>
+        <td>{%set my_place = value.place | capitalize%}<a href="{{url.here}}/trip?place={{value.place}}">{%trans my_place%}</a></td>
+        <td>{%set my_type = value.type | capitalize%}<a href="{{url.here}}/trip?type={{value.type}}">{%trans my_type%}</a></td>
+        <td>{%set my_status = value.status | capitalize%}<a href="{{url.here}}/trip?status={{value.status}}">{%trans my_status%}</a></td>
         <td class="s0">{{value.datecreated | tdate ("Y/m/d H:i")}}</td>
       </tr>
       {%endfor%}
