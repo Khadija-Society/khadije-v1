@@ -9,7 +9,7 @@ class view extends \lib\view
 
 
 		$this->data->site['title']           = T_("Khadije Charity");
-		// if(Tld === 'local')
+		// if(\lib\url::isLocal())
 		// {
 		// 	$this->data->site['title']           = T_("Test");
 		// }
