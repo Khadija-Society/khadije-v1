@@ -28,7 +28,7 @@
         {%for key, value in way_list%}
           <tr>
             <td>{{value}}</td>
-            <td class="collapsing"><a href="{{url.full}}" data-ajaxify data-method="post" data-data='{"key": "{{value}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
+            <td class="collapsing"><a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
           </tr>
         {%endfor%}
       </tbody>
