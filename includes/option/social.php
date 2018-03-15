@@ -12,7 +12,7 @@ self::$social['list']['instagram']                     = 'mhkhadije';
 self::$social['list']['googleplus']                    = null;
 self::$social['list']['github']                        = null;
 self::$social['list']['linkedin']                      = null;
-self::$social['list']['aparat']                        = null;
+self::$social['list']['aparat']                        = 'mhkhadije';
 
 /**
 * TELEGRAM
