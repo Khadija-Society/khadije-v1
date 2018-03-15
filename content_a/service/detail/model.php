@@ -20,7 +20,7 @@ class model extends \content_a\main\model
 		$post['status']        = 'awaiting';
 
 
-		\lib\app\service::edit($post, \lib\utility::get('id'));
+		\lib\app\service::edit($post, \lib\request::get('id'));
 
 		if(\lib\debug::$status)
 		{

@@ -10,7 +10,7 @@ class controller extends \content_cp\main2\controller
 
 		$this->post('trip')->ALL();
 
-		if(\lib\utility::get('id') && is_numeric(\lib\utility::get('id')))
+		if(\lib\request::get('id') && is_numeric(\lib\request::get('id')))
 		{
 			$this->get()->ALL();
 		}

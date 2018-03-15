@@ -11,7 +11,7 @@ class view extends \content_a\main\view
 
 		$this->data->edit_mode = true;
 
-		$id = \lib\utility::get('id');
+		$id = \lib\request::get('id');
 
 		$this->data->service_detail = null;
 

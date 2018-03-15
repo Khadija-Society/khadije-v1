@@ -9,7 +9,7 @@ class model extends \content_a\main\model
 	{
 		if(\lib\request::post('next') === 'next')
 		{
-			$count_partner = \lib\db\travelusers::get(['travel_id' => \lib\utility::get('trip')]);
+			$count_partner = \lib\db\travelusers::get(['travel_id' => \lib\request::get('trip')]);
 			$min           = \lib\app\travel::group_count_partner_min();
 
 			if(count($count_partner) < $min)
@@ -18,11 +18,11 @@ class model extends \content_a\main\model
 				return false;
 			}
 
-			\lib\db\travels::update(['status' => 'awaiting'], \lib\utility::get('trip'));
+			\lib\db\travels::update(['status' => 'awaiting'], \lib\request::get('trip'));
 			// send next
 			if(\lib\user::detail('mobile') && \lib\utility\filter::mobile(\lib\user::detail('mobile')))
 			{
-				$travel_detail = \lib\db\travels::get(['id' => \lib\utility::get('trip'), 'limit' => 1]);
+				$travel_detail = \lib\db\travels::get(['id' => \lib\request::get('trip'), 'limit' => 1]);
 				if(isset($travel_detail['place']))
 				{
 					$city = T_($travel_detail['place']);
@@ -42,10 +42,10 @@ class model extends \content_a\main\model
 
 		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
 		{
-			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\utility::get('trip'));
+			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('trip'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector(\lib\url::here(). '/group/partner?trip='. \lib\utility::get('trip'));
+				$this->redirector(\lib\url::here(). '/group/partner?trip='. \lib\request::get('trip'));
 			}
 		}
 		else
@@ -64,7 +64,7 @@ class model extends \content_a\main\model
 			$post['nesbat']       = \lib\request::post('nesbat');
 			$post['type']         = 'group';
 
-			$post['travel_id']    = \lib\utility::get('trip');
+			$post['travel_id']    = \lib\request::get('trip');
 
 			\lib\app\myuser::add_child($post);
 

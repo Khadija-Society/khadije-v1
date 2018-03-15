@@ -13,7 +13,7 @@ class view extends \content_a\main\view
 		// $this->data->page['badge']['text'] = T_('check your group requests');
 
 
-		$this->data->child_list = \lib\db\travelusers::get_travel_child(\lib\utility::get('trip'));
+		$this->data->child_list = \lib\db\travelusers::get_travel_child(\lib\request::get('trip'));
 
 
   		$child_list =
@@ -50,7 +50,7 @@ class view extends \content_a\main\view
 	{
 		$this->data->edit_mode = true;
 
-		$id = \lib\utility::get('edit');
+		$id = \lib\request::get('edit');
 
 		$this->data->child_detail = null;
 

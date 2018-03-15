@@ -23,7 +23,7 @@ class model extends \content_cp\main2\model
 	{
 		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
 		{
-			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\utility::get('id'));
+			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('id'));
 			if(\lib\debug::$status)
 			{
 				$this->redirector(\lib\url::pwd());
@@ -33,23 +33,23 @@ class model extends \content_cp\main2\model
 		{
 			$post = self::getPost();
 
-			$post['travel_id']       = \lib\utility::get('id');
+			$post['travel_id']       = \lib\request::get('id');
 
 			\lib\app\myuser::add_child($post);
 
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("Your Child was saved"));
-				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\utility::get('id'));
+				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 
 		}
-		elseif(\lib\request::post('edit_child') === 'edit_child' && \lib\utility::get('partner') && is_numeric(\lib\utility::get('partner')))
+		elseif(\lib\request::post('edit_child') === 'edit_child' && \lib\request::get('partner') && is_numeric(\lib\request::get('partner')))
 		{
 			$post              = self::getPost();
-			$post['travel_id'] = \lib\utility::get('id');
+			$post['travel_id'] = \lib\request::get('id');
 
-			$get_user_id = \lib\db\travelusers::get(['id' => \lib\utility::get('partner'), 'travel_id' => \lib\utility::get('id'), 'limit' => 1]);
+			$get_user_id = \lib\db\travelusers::get(['id' => \lib\request::get('partner'), 'travel_id' => \lib\request::get('id'), 'limit' => 1]);
 
 			if(isset($get_user_id['user_id']))
 			{
@@ -66,7 +66,7 @@ class model extends \content_cp\main2\model
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("The partner was updated"));
-				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\utility::get('id'));
+				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 		}
 		elseif(\lib\request::post('edit_travel') === 'edit_travel')
@@ -132,7 +132,7 @@ class model extends \content_cp\main2\model
 				$update['status'] = $status;
 			}
 
-			\lib\db\travels::update($update, \lib\utility::get('id'));
+			\lib\db\travels::update($update, \lib\request::get('id'));
 
 			$this->send_sms($status);
 
@@ -149,7 +149,7 @@ class model extends \content_cp\main2\model
 	{
 		$mobile        = null;
 		$msg           = '';
-		$travel_detail = \lib\db\travels::get(['id' => \lib\utility::get('id'), 'limit' => 1]);
+		$travel_detail = \lib\db\travels::get(['id' => \lib\request::get('id'), 'limit' => 1]);
 		if(!isset($travel_detail['user_id']))
 		{
 			return;

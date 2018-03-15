@@ -51,9 +51,9 @@ class model extends \addons\content_cp\main\model
 			$post['fileurl'] = $file;
 		}
 
-		if(\lib\utility::get('edit'))
+		if(\lib\request::get('edit'))
 		{
-			$id = \lib\utility::get('edit');
+			$id = \lib\request::get('edit');
 			\lib\app\need::edit($id, $post);
 		}
 		else
@@ -63,7 +63,7 @@ class model extends \addons\content_cp\main\model
 
 		if(\lib\debug::$status)
 		{
-			if(\lib\utility::get('edit'))
+			if(\lib\request::get('edit'))
 			{
 				\lib\debug::true(T_("Way successfully edited"));
 			}

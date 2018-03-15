@@ -15,9 +15,9 @@ class view extends \content_cp\main2\view
 
 		$this->data->bodyclass       = 'unselectable siftal';
 
-		if(\lib\utility::get('id') && is_numeric(\lib\utility::get('id')))
+		if(\lib\request::get('id') && is_numeric(\lib\request::get('id')))
 		{
-			$this->data->nationalcode_detail = \lib\db\nationalcodes::get(['id' => \lib\utility::get('id'), 'limit' => 1]);
+			$this->data->nationalcode_detail = \lib\db\nationalcodes::get(['id' => \lib\request::get('id'), 'limit' => 1]);
 		}
 	}
 }

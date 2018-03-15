@@ -42,9 +42,9 @@ class model extends \content_cp\main2\model
 			$update['karbala'] = null;
 		}
 
-		if(\lib\utility::get('id') && is_numeric(\lib\utility::get('id')))
+		if(\lib\request::get('id') && is_numeric(\lib\request::get('id')))
 		{
-			\lib\db\nationalcodes::update($update, \lib\utility::get('id'));
+			\lib\db\nationalcodes::update($update, \lib\request::get('id'));
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("Your change was saved"));

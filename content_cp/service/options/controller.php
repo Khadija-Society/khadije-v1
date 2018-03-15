@@ -8,7 +8,7 @@ class controller extends \content_cp\main2\controller
 	{
 
 		$this->post('service')->ALL();
-		if(\lib\utility::get('edit'))
+		if(\lib\request::get('edit'))
 		{
 			$this->get(false, 'edit')->ALL();
 		}

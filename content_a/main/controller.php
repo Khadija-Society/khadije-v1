@@ -15,7 +15,7 @@ class controller extends \mvc\controller
 
 	public function check_trip_id($_type = 'family')
 	{
-		$trip = \lib\utility::get('trip');
+		$trip = \lib\request::get('trip');
 
 		if(!$trip || !ctype_digit($trip) || $trip == '')
 		{
@@ -42,7 +42,7 @@ class controller extends \mvc\controller
 
 	public function check_service_id()
 	{
-		$id = \lib\utility::get('id');
+		$id = \lib\request::get('id');
 
 		if(!$id || !ctype_digit($id) || $id == '')
 		{

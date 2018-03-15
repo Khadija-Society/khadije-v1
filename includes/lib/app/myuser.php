@@ -410,7 +410,7 @@ class myuser
 			$max_count_partner = \lib\app\travel::trip_count_partner('get');
 		}
 
-		$count_partner     = \lib\db\travelusers::get_travel_child(\lib\utility::get('trip'));
+		$count_partner     = \lib\db\travelusers::get_travel_child(\lib\request::get('trip'));
 		if(count($count_partner) + 1 > intval($max_count_partner) )
 		{
 			\lib\debug::error(T_("Maximum partner added. can not add another"));

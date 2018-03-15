@@ -20,10 +20,10 @@ class view extends \content_cp\main2\view
 
 	public function view_edit()
 	{
-		if(\lib\utility::get('edit'))
+		if(\lib\request::get('edit'))
 		{
 			$this->data->edit_mode = true;
-			$id = \lib\utility::get('edit');
+			$id = \lib\request::get('edit');
 			$this->data->product_detail = \lib\db\needs::get(['id' => $id, 'limit' => 1]);
 			if(!$this->data->product_detail)
 			{
