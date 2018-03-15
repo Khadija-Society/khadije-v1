@@ -9,14 +9,14 @@ class model extends \content_a\main\model
 	{
 
 		$post                = [];
-		$post['expertvalue'] = \lib\utility::post('expertvalue');
-		$post['expertyear']  = \lib\utility::post('expertyear');
-		$post['job']         = \lib\utility::post('job');
-		$post['arabiclang']  = \lib\utility::post('ArabicLang');
-		$post['startdate']   = \lib\utility::post('startdate');
-		$post['enddate']     = \lib\utility::post('enddate');
-		$post['car']         = \lib\utility::post('car');
-		$post['desc']        = \lib\utility::post('desc');
+		$post['expertvalue'] = \lib\request::post('expertvalue');
+		$post['expertyear']  = \lib\request::post('expertyear');
+		$post['job']         = \lib\request::post('job');
+		$post['arabiclang']  = \lib\request::post('ArabicLang');
+		$post['startdate']   = \lib\request::post('startdate');
+		$post['enddate']     = \lib\request::post('enddate');
+		$post['car']         = \lib\request::post('car');
+		$post['desc']        = \lib\request::post('desc');
 		$post['status']        = 'awaiting';
 
 

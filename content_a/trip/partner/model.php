@@ -7,7 +7,7 @@ class model extends \content_a\main\model
 
 	public function post_partner()
 	{
-		if(\lib\utility::post('next') === 'next')
+		if(\lib\request::post('next') === 'next')
 		{
 			\lib\db\travels::update(['status' => 'awaiting'], \lib\utility::get('trip'));
 			// send next
@@ -31,9 +31,9 @@ class model extends \content_a\main\model
 			return;
 		}
 
-		if(\lib\utility::post('type') === 'remove' && \lib\utility::post('key') != '' && ctype_digit(\lib\utility::post('key')))
+		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
 		{
-			\lib\db\travelusers::remove(\lib\utility::post('key'), \lib\utility::get('trip'));
+			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\utility::get('trip'));
 			if(\lib\debug::$status)
 			{
 				$this->redirector(\lib\url::here(). '/trip/partner?trip='. \lib\utility::get('trip'));
@@ -43,16 +43,16 @@ class model extends \content_a\main\model
 		{
 
 			$post                 = [];
-			$post['firstname']    = \lib\utility::post('name');
-			$post['lastname']     = \lib\utility::post('lastName');
-			$post['father']       = \lib\utility::post('father');
-			$post['nationalcode'] = \lib\utility::post('nationalcode');
-			$post['birthday']     = \lib\utility::post('birthday');
-			$post['gender']       = \lib\utility::post('gender') ;
-			$post['pasportcode']  = \lib\utility::post('passport') ;
+			$post['firstname']    = \lib\request::post('name');
+			$post['lastname']     = \lib\request::post('lastName');
+			$post['father']       = \lib\request::post('father');
+			$post['nationalcode'] = \lib\request::post('nationalcode');
+			$post['birthday']     = \lib\request::post('birthday');
+			$post['gender']       = \lib\request::post('gender') ;
+			$post['pasportcode']  = \lib\request::post('passport') ;
 
-			$post['married']      = \lib\utility::post('Married');
-			$post['nesbat']       = \lib\utility::post('nesbat');
+			$post['married']      = \lib\request::post('Married');
+			$post['nesbat']       = \lib\request::post('nesbat');
 
 			$post['travel_id']    = \lib\utility::get('trip');
 

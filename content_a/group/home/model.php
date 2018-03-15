@@ -6,10 +6,10 @@ class model extends \content_a\main\model
 
 	public function post_group()
 	{
-		if(\lib\utility::post('key') && \lib\utility::post('type') === 'cancel' && ctype_digit(\lib\utility::post('key')))
+		if(\lib\request::post('key') && \lib\request::post('type') === 'cancel' && ctype_digit(\lib\request::post('key')))
 		{
 
-			$key = \lib\utility::post('key');
+			$key = \lib\request::post('key');
 
 			$check_valid_key = \lib\db\travels::get(['id' => $key, 'type' => 'group', 'user_id' => \lib\user::id(), 'limit' => 1]);
 

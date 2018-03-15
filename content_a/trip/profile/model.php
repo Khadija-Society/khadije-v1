@@ -8,23 +8,23 @@ class model extends \content_a\main\model
 	public function post_profile()
 	{
 		$post                    = [];
-		$post['gender']          = \lib\utility::post('gender') ;
-		$post['email']           = \lib\utility::post('email');
-		$post['birthday']        = \lib\utility::post('birthday');
-		$post['firstname']       = \lib\utility::post('name');
-		$post['lastname']        = \lib\utility::post('lastName');
-		$post['nationalcode']    = \lib\utility::post('nationalcode');
-		$post['father']          = \lib\utility::post('father');
-		$post['pasportcode']     = \lib\utility::post('passport');
-		$post['pasportdate']     = \lib\utility::post('passportexpire');
-		$post['country']         = \lib\utility::post('country');
-		$post['province']        = \lib\utility::post('province');
-		$post['city']            = \lib\utility::post('city');
-		$post['homeaddress']     = \lib\utility::post('homeaddress');
-		$post['phone']           = \lib\utility::post('phone');
+		$post['gender']          = \lib\request::post('gender') ;
+		$post['email']           = \lib\request::post('email');
+		$post['birthday']        = \lib\request::post('birthday');
+		$post['firstname']       = \lib\request::post('name');
+		$post['lastname']        = \lib\request::post('lastName');
+		$post['nationalcode']    = \lib\request::post('nationalcode');
+		$post['father']          = \lib\request::post('father');
+		$post['pasportcode']     = \lib\request::post('passport');
+		$post['pasportdate']     = \lib\request::post('passportexpire');
+		$post['country']         = \lib\request::post('country');
+		$post['province']        = \lib\request::post('province');
+		$post['city']            = \lib\request::post('city');
+		$post['homeaddress']     = \lib\request::post('homeaddress');
+		$post['phone']           = \lib\request::post('phone');
 		$post['displayname']     = trim($post['firstname'] . ' '. $post['lastname']);
-		$post['married']         = \lib\utility::post('Married') ;
-		$post['zipcode']         = \lib\utility::post('zipcode');
+		$post['married']         = \lib\request::post('Married') ;
+		$post['zipcode']         = \lib\request::post('zipcode');
 
 		\lib\app\myuser::edit($post);
 

@@ -7,9 +7,9 @@ class model extends \addons\content_cp\main\model
 
 	public function post_donate()
 	{
-		if(\lib\utility::post('type') === 'delete' && \lib\utility::post('key'))
+		if(\lib\request::post('type') === 'delete' && \lib\request::post('key'))
 		{
-			if(\lib\app\donate::remove_way(\lib\utility::post('key')))
+			if(\lib\app\donate::remove_way(\lib\request::post('key')))
 			{
 				\lib\debug::warn(T_("The way successfully removed"));
 			}
@@ -20,7 +20,7 @@ class model extends \addons\content_cp\main\model
 		}
 		else
 		{
-			$way = \lib\utility::post('way');
+			$way = \lib\request::post('way');
 
 			\lib\app\donate::set_way($way);
 

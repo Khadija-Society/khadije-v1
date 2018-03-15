@@ -7,9 +7,9 @@ class model extends \addons\content_cp\main\model
 
 	public function post_cityplace()
 	{
-		if(\lib\utility::post('type') === 'delete' && \lib\utility::post('key'))
+		if(\lib\request::post('type') === 'delete' && \lib\request::post('key'))
 		{
-			if(\lib\app\travel::remove_cityplace(\lib\utility::post('key')))
+			if(\lib\app\travel::remove_cityplace(\lib\request::post('key')))
 			{
 				\lib\debug::warn(T_("The city place successfully removed"));
 			}
@@ -20,7 +20,7 @@ class model extends \addons\content_cp\main\model
 		}
 		else
 		{
-			\lib\app\travel::set_cityplace(\lib\utility::post('city'), \lib\utility::post('place'));
+			\lib\app\travel::set_cityplace(\lib\request::post('city'), \lib\request::post('place'));
 
 			if(\lib\debug::$status)
 			{

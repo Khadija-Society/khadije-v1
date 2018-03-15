@@ -17,7 +17,7 @@ class model extends \mvc\model
 	 */
 	public function post_contact()
 	{
-		if(\lib\utility::post('username'))
+		if(\lib\request::post('username'))
 		{
 			\lib\debug::error(T_("Whate are you doing?"));
 			return false;
@@ -49,7 +49,7 @@ class model extends \mvc\model
 
 			if(!$mobile)
 			{
-				$mobile = \lib\utility::post('mobile');
+				$mobile = \lib\request::post('mobile');
 			}
 
 			// get display name from user login session
@@ -57,26 +57,26 @@ class model extends \mvc\model
 			// user not set users display name, we get display name from contact form
 			if(!$displayname)
 			{
-				$displayname = \lib\utility::post("name");
+				$displayname = \lib\request::post("name");
 			}
 			// get email from user login session
 			$email = \lib\db\users::get_email($user_id);
 			// user not set users email, we get email from contact form
 			if(!$email)
 			{
-				$email = \lib\utility::post("email");
+				$email = \lib\request::post("email");
 			}
 		}
 		else
 		{
 			// users not registered
 			$user_id     = null;
-			$displayname = \lib\utility::post("name");
-			$email       = \lib\utility::post("email");
-			$mobile      = \lib\utility::post("mobile");
+			$displayname = \lib\request::post("name");
+			$email       = \lib\request::post("email");
+			$mobile      = \lib\request::post("mobile");
 		}
 		// get the content
-		$content = \lib\utility::post("content");
+		$content = \lib\request::post("content");
 
 		// save log meta
 		$log_meta =
@@ -85,7 +85,7 @@ class model extends \mvc\model
 			[
 				'login'    => $this->login('all'),
 				'language' => \lib\language::get_language(),
-				'post'     => \lib\utility::post(),
+				'post'     => \lib\request::post(),
 			]
 		];
 

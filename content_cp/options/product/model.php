@@ -33,11 +33,11 @@ class model extends \addons\content_cp\main\model
 	{
 
 		$post           = [];
-		$post['title']  = \lib\utility::post('title');
-		$post['count']  = \lib\utility::post('count');
-		$post['amount'] = \lib\utility::post('amount');
-		$post['desc']   = \lib\utility::post('desc');
-		$post['status'] = \lib\utility::post('status') ? 'enable' : 'disable' ;
+		$post['title']  = \lib\request::post('title');
+		$post['count']  = \lib\request::post('count');
+		$post['amount'] = \lib\request::post('amount');
+		$post['desc']   = \lib\request::post('desc');
+		$post['status'] = \lib\request::post('status') ? 'enable' : 'disable' ;
 		$post['type']   = 'product';
 
 		$file = self::upload_thumb();

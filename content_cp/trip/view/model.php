@@ -7,29 +7,29 @@ class model extends \content_cp\main2\model
 	public static function getPost()
 	{
 		$post                    = [];
-		$post['firstname']       = \lib\utility::post('name');
-		$post['lastname']        = \lib\utility::post('lastName');
-		$post['father']          = \lib\utility::post('father');
-		$post['nationalcode']    = \lib\utility::post('nationalcode');
-		$post['birthday']        = \lib\utility::post('birthday');
-		$post['gender']          = \lib\utility::post('gender') ? 'female' : 'male';
-		$post['married']         = \lib\utility::post('Married') ? 'married' : 'single';
-		$post['nesbat']          = \lib\utility::post('nesbat');
+		$post['firstname']       = \lib\request::post('name');
+		$post['lastname']        = \lib\request::post('lastName');
+		$post['father']          = \lib\request::post('father');
+		$post['nationalcode']    = \lib\request::post('nationalcode');
+		$post['birthday']        = \lib\request::post('birthday');
+		$post['gender']          = \lib\request::post('gender') ? 'female' : 'male';
+		$post['married']         = \lib\request::post('Married') ? 'married' : 'single';
+		$post['nesbat']          = \lib\request::post('nesbat');
 		return $post;
 	}
 
 
 	public function post_trip()
 	{
-		if(\lib\utility::post('type') === 'remove' && \lib\utility::post('key') != '' && ctype_digit(\lib\utility::post('key')))
+		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
 		{
-			\lib\db\travelusers::remove(\lib\utility::post('key'), \lib\utility::get('id'));
+			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\utility::get('id'));
 			if(\lib\debug::$status)
 			{
 				$this->redirector(\lib\url::pwd());
 			}
 		}
-		elseif(\lib\utility::post('save_child') === 'save_child')
+		elseif(\lib\request::post('save_child') === 'save_child')
 		{
 			$post = self::getPost();
 
@@ -44,7 +44,7 @@ class model extends \content_cp\main2\model
 			}
 
 		}
-		elseif(\lib\utility::post('edit_child') === 'edit_child' && \lib\utility::get('partner') && is_numeric(\lib\utility::get('partner')))
+		elseif(\lib\request::post('edit_child') === 'edit_child' && \lib\utility::get('partner') && is_numeric(\lib\utility::get('partner')))
 		{
 			$post              = self::getPost();
 			$post['travel_id'] = \lib\utility::get('id');
@@ -69,9 +69,9 @@ class model extends \content_cp\main2\model
 				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\utility::get('id'));
 			}
 		}
-		elseif(\lib\utility::post('edit_travel') === 'edit_travel')
+		elseif(\lib\request::post('edit_travel') === 'edit_travel')
 		{
-			$start_date = \lib\utility::post('startdate');
+			$start_date = \lib\request::post('startdate');
 			$start_date = \lib\utility\convert::to_en_number($start_date);
 			if($start_date && strtotime($start_date) === false)
 			{
@@ -88,7 +88,7 @@ class model extends \content_cp\main2\model
 				$start_date = null;
 			}
 
-			$end_date   = \lib\utility::post('enddate');
+			$end_date   = \lib\request::post('enddate');
 			$end_date   = \lib\utility\convert::to_en_number($end_date);
 			if($end_date && strtotime($end_date) === false)
 			{
@@ -106,7 +106,7 @@ class model extends \content_cp\main2\model
 			}
 
 
-			$desc       = \lib\utility::post('desc');
+			$desc       = \lib\request::post('desc');
 
 			if(mb_strlen($desc) > 500)
 			{
@@ -114,7 +114,7 @@ class model extends \content_cp\main2\model
 				return false;
 			}
 
-			$status = \lib\utility::post('status');
+			$status = \lib\request::post('status');
 
 			if($status && !in_array($status, ['awaiting', 'spam', 'cancel', 'reject', 'review', 'notanswer', 'queue','gone', 'delete','admincancel', 'draft']))
 			{

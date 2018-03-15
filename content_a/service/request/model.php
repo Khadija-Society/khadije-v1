@@ -9,7 +9,7 @@ class model extends \content_a\main\model
 	{
 
 		$post            = [];
-		$post['need_id'] = \lib\utility::post('need');
+		$post['need_id'] = \lib\request::post('need');
 		$post['status']  = 'draft';
 
 		$service_id = \lib\app\service::add($post);

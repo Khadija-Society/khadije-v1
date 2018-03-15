@@ -7,9 +7,9 @@ class model extends \content_cp\main2\model
 	public function post_nationalcode()
 	{
 		$update            = [];
-		$update['qom']     = \lib\utility::post('qom');
-		$update['mashhad'] = \lib\utility::post('mashhad');
-		$update['karbala'] = \lib\utility::post('karbala');
+		$update['qom']     = \lib\request::post('qom');
+		$update['mashhad'] = \lib\request::post('mashhad');
+		$update['karbala'] = \lib\request::post('karbala');
 
 		if($update['qom'] && !is_numeric($update['qom']) || intval($update['qom']) > 999)
 		{
