@@ -28,7 +28,7 @@ class view extends \lib\view
 		$this->data->template['share']       = 'content/template/share.html';
 
 
-		if(in_array(\lib\router::get_repository_name(), ['content']))
+		if(in_array(\lib\content::name(), ['content']))
 		{
 			// get total uses
 			$total_users                     = 10; // intval(\lib\db\userteams::total_userteam());
