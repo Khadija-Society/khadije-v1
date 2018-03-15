@@ -5,7 +5,7 @@ class controller extends \lib\controller
 {
 	public function project()
 	{
-		if(\lib\router::get_url() === 'main')
+		if(\lib\url::directory() === 'main')
 		{
 			$this->redirector(\lib\url::here())->redirect();
 			\lib\error::page();
