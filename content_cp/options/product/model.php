@@ -71,7 +71,7 @@ class model extends \addons\content_cp\main\model
 			{
 				\lib\debug::true(T_("Way successfully added"));
 			}
-			$this->redirector(\lib\url::pwd());
+			\lib\redirect::pwd();
 		}
 	}
 }

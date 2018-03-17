@@ -27,7 +27,7 @@ class model extends \content_a\main\model
 				\lib\utility\sms::send(\lib\user::detail('mobile'), $msg);
 			}
 
-			$this->redirector(\lib\url::here(). '/trip?success=yes');
+			\lib\redirect::to(\lib\url::here(). '/trip?success=yes');
 			return;
 		}
 
@@ -36,7 +36,7 @@ class model extends \content_a\main\model
 			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('trip'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
+				\lib\redirect::to(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
 			}
 		}
 		else
@@ -61,7 +61,7 @@ class model extends \content_a\main\model
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("Your Child was saved"));
-				$this->redirector(\lib\url::pwd());
+				\lib\redirect::pwd();
 			}
 
 		}

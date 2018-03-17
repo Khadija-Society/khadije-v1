@@ -66,12 +66,12 @@ class model extends \content_cp\main2\model
 			if(\lib\request::get('edit'))
 			{
 				\lib\debug::true(T_("Way successfully edited"));
-				$this->redirector(\lib\url::here(). '/service/options');
+				\lib\redirect::to(\lib\url::here(). '/service/options');
 			}
 			else
 			{
 				\lib\debug::true(T_("Way successfully added"));
-				$this->redirector(\lib\url::pwd());
+				\lib\redirect::pwd();
 			}
 		}
 	}

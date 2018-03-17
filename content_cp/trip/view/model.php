@@ -26,7 +26,7 @@ class model extends \content_cp\main2\model
 			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('id'));
 			if(\lib\debug::$status)
 			{
-				$this->redirector(\lib\url::pwd());
+				\lib\redirect::pwd();
 			}
 		}
 		elseif(\lib\request::post('save_child') === 'save_child')
@@ -40,7 +40,7 @@ class model extends \content_cp\main2\model
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("Your Child was saved"));
-				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
+				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 
 		}
@@ -66,7 +66,7 @@ class model extends \content_cp\main2\model
 			if(\lib\debug::$status)
 			{
 				\lib\debug::true(T_("The partner was updated"));
-				$this->redirector(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
+				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 		}
 		elseif(\lib\request::post('edit_travel') === 'edit_travel')
@@ -138,7 +138,7 @@ class model extends \content_cp\main2\model
 
 			\lib\debug::true(T_("The travel updated"));
 
-			$this->redirector(\lib\url::pwd());
+			\lib\redirect::pwd();
 
 		}
 

@@ -31,7 +31,7 @@ class model extends \content_a\main\model
 		if(\lib\debug::$status)
 		{
 			\lib\debug::true(T_("Your detail was saved"));
-			$this->redirector(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
+			\lib\redirect::to(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
 		}
 
 	}

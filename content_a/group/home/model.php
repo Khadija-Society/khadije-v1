@@ -26,7 +26,7 @@ class model extends \content_a\main\model
 
 				\lib\debug::true(T_("Your request was canceled"));
 
-				$this->redirector(\lib\url::pwd());
+				\lib\redirect::pwd();
 
 			}
 			else

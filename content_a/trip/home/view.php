@@ -17,7 +17,7 @@ class view extends \content_a\main\view
 
 		if(!$this->data->trip_list || empty($this->data->trip_list))
 		{
-			$this->redirector(\lib\url::here().'/trip/request')->redirect();
+			\lib\redirect::to(\lib\url::here().'/trip/request');
 			return;
 		}
 	}

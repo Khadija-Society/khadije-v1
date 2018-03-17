@@ -30,7 +30,7 @@ class model extends \addons\content_cp\main\model
 
 		if(\lib\debug::$status)
 		{
-			$this->redirector(\lib\url::pwd());
+			\lib\redirect::pwd();
 		}
 
 	}

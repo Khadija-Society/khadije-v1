@@ -7,7 +7,7 @@ class controller extends \lib\controller
 	{
 		if(\lib\url::directory() === 'main')
 		{
-			$this->redirector(\lib\url::here())->redirect();
+			\lib\redirect::to(\lib\url::here());
 			\lib\error::page();
 		}
 	}

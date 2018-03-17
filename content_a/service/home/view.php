@@ -17,7 +17,7 @@ class view extends \content_a\main\view
 
 		if(!$this->data->service_list || empty($this->data->service_list))
 		{
-			$this->redirector(\lib\url::here().'/service/request')->redirect();
+			\lib\redirect::to(\lib\url::here().'/service/request');
 			return;
 		}
 	}

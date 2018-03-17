@@ -9,7 +9,7 @@ class model extends \content_cp\main2\model
 		self::upload_traveled('qom');
 		self::upload_traveled('karbala');
 		self::upload_traveled('mashhad');
-		$this->redirector(\lib\url::pwd());
+		\lib\redirect::pwd();
 
 	}
 
