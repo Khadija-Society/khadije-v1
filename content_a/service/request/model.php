@@ -14,9 +14,9 @@ class model extends \content_a\main\model
 
 		$service_id = \lib\app\service::add($post);
 
-		if(\lib\debug::$status && $service_id)
+		if(\lib\notif::$status && $service_id)
 		{
-			\lib\debug::true(T_("Your request was saved"));
+			\lib\notif::true(T_("Your request was saved"));
 			\lib\redirect::to(\lib\url::here(). '/service/profile?id='. $service_id);
 		}
 	}

@@ -26,14 +26,14 @@ class myuser
 		$gender = \lib\app::request('gender');
 		if($gender && !in_array($gender, ['male', 'female']))
 		{
-			\lib\debug::error(T_("Invalid arguments gender"), 'gender');
+			\lib\notif::error(T_("Invalid arguments gender"), 'gender');
 			return false;
 		}
 
 		$email = \lib\app::request('email');
 		if($email && mb_strlen($email) > 70)
 		{
-			\lib\debug::error(T_("Invalid arguments email"), 'email');
+			\lib\notif::error(T_("Invalid arguments email"), 'email');
 			return false;
 		}
 
@@ -41,13 +41,13 @@ class myuser
 		$birthday = \lib\utility\convert::to_en_number($birthday);
 		if(!$birthday)
 		{
-			\lib\debug::error(T_("Birthday is required"), 'birthday');
+			\lib\notif::error(T_("Birthday is required"), 'birthday');
 			return false;
 		}
 
 		if(strtotime($birthday) === false)
 		{
-			\lib\debug::error(T_("Invalid arguments birthday"), 'birthday');
+			\lib\notif::error(T_("Invalid arguments birthday"), 'birthday');
 			return false;
 		}
 
@@ -60,26 +60,26 @@ class myuser
 
 		if(!$firstname)
 		{
-			\lib\debug::error(T_("First name is required"), 'name');
+			\lib\notif::error(T_("First name is required"), 'name');
 			return false;
 		}
 
 		if($firstname && mb_strlen($firstname) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments firstname"), 'name');
+			\lib\notif::error(T_("Invalid arguments firstname"), 'name');
 			return false;
 		}
 
 		$lastname = \lib\app::request('lastname');
 		if($lastname && mb_strlen($lastname) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments lastname"), 'lastName');
+			\lib\notif::error(T_("Invalid arguments lastname"), 'lastName');
 			return false;
 		}
 
 		if(!$lastname)
 		{
-			\lib\debug::error(T_("Last name is required"), 'lastName');
+			\lib\notif::error(T_("Last name is required"), 'lastName');
 			return false;
 		}
 
@@ -88,7 +88,7 @@ class myuser
 
 		if(!$nationalcode && !$pasportcode)
 		{
-			\lib\debug::error(T_("National code or pasportcode code is required"), ['nationalcode', 'pasportcode']);
+			\lib\notif::error(T_("National code or pasportcode code is required"), ['nationalcode', 'pasportcode']);
 			return false;
 		}
 
@@ -97,7 +97,7 @@ class myuser
 
 		if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
 		{
-			\lib\debug::error(T_("Invalid arguments nationalcode"), 'nationalcode');
+			\lib\notif::error(T_("Invalid arguments nationalcode"), 'nationalcode');
 			return false;
 		}
 
@@ -109,7 +109,7 @@ class myuser
 			}
 			else
 			{
-				\lib\debug::error(T_("Invalid nationalcode"), 'nationalcode');
+				\lib\notif::error(T_("Invalid nationalcode"), 'nationalcode');
 				return false;
 			}
 		}
@@ -117,13 +117,13 @@ class myuser
 		$father = \lib\app::request('father');
 		if($father && mb_strlen($father) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments father"), 'father');
+			\lib\notif::error(T_("Invalid arguments father"), 'father');
 			return false;
 		}
 
 		if($pasportcode && mb_strlen($pasportcode) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments pasportcode"), 'pasportcode');
+			\lib\notif::error(T_("Invalid arguments pasportcode"), 'pasportcode');
 			return false;
 		}
 
@@ -131,7 +131,7 @@ class myuser
 		$pasportdate = \lib\utility\convert::to_en_number($pasportdate);
 		if($pasportdate && strtotime($pasportdate) === false)
 		{
-			\lib\debug::error(T_("Invalid arguments pasportdate"), 'pasportdate');
+			\lib\notif::error(T_("Invalid arguments pasportdate"), 'pasportdate');
 			return false;
 		}
 
@@ -143,112 +143,112 @@ class myuser
 		$education = \lib\app::request('education');
 		if($education && mb_strlen($education) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments education"), 'education');
+			\lib\notif::error(T_("Invalid arguments education"), 'education');
 			return false;
 		}
 
 		$educationcourse = \lib\app::request('educationcourse');
 		if($educationcourse && mb_strlen($educationcourse) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments educationcourse"), 'educationcourse');
+			\lib\notif::error(T_("Invalid arguments educationcourse"), 'educationcourse');
 			return false;
 		}
 
 		$country = \lib\app::request('country');
 		if($country && mb_strlen($country) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments country"), 'country');
+			\lib\notif::error(T_("Invalid arguments country"), 'country');
 			return false;
 		}
 
 		$province = \lib\app::request('province');
 		if($province && mb_strlen($province) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments province"), 'province');
+			\lib\notif::error(T_("Invalid arguments province"), 'province');
 			return false;
 		}
 
 		$city = \lib\app::request('city');
 		if($city && mb_strlen($city) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments city"), 'city');
+			\lib\notif::error(T_("Invalid arguments city"), 'city');
 			return false;
 		}
 
 		$homeaddress = \lib\app::request('homeaddress');
 		if($homeaddress && mb_strlen($homeaddress) > 700)
 		{
-			\lib\debug::error(T_("Invalid arguments homeaddress"), 'homeaddress');
+			\lib\notif::error(T_("Invalid arguments homeaddress"), 'homeaddress');
 			return false;
 		}
 
 		$workaddress = \lib\app::request('workaddress');
 		if($workaddress && mb_strlen($workaddress) > 700)
 		{
-			\lib\debug::error(T_("Invalid arguments workaddress"), 'workaddress');
+			\lib\notif::error(T_("Invalid arguments workaddress"), 'workaddress');
 			return false;
 		}
 
 		$arabiclang = \lib\app::request('arabiclang');
 		if($arabiclang && !in_array($arabiclang, ['yes', 'no']))
 		{
-			\lib\debug::error(T_("Invalid arguments arabiclang"), 'arabiclang');
+			\lib\notif::error(T_("Invalid arguments arabiclang"), 'arabiclang');
 			return false;
 		}
 
 		$phone = \lib\app::request('phone');
 		if(($phone && !is_numeric($phone)) || intval($phone) > 1E+10)
 		{
-			\lib\debug::error(T_("Invalid arguments phone"), 'phone');
+			\lib\notif::error(T_("Invalid arguments phone"), 'phone');
 			return false;
 		}
 
 		$displayname = \lib\app::request('displayname');
 		if($displayname && mb_strlen($displayname) > 90)
 		{
-			\lib\debug::error(T_("Invalid arguments displayname"), 'displayname');
+			\lib\notif::error(T_("Invalid arguments displayname"), 'displayname');
 			return false;
 		}
 
 		$married = \lib\app::request('married');
 		if($married && !in_array($married, ['single', 'married']))
 		{
-			\lib\debug::error(T_("Invalid arguments married"), 'married');
+			\lib\notif::error(T_("Invalid arguments married"), 'married');
 			return false;
 		}
 
 		$zipcode = \lib\app::request('zipcode');
 		if(($zipcode && !is_numeric($zipcode)) || intval($zipcode) > 1E+10 )
 		{
-			\lib\debug::error(T_("Invalid arguments zipcode"), 'zipcode');
+			\lib\notif::error(T_("Invalid arguments zipcode"), 'zipcode');
 			return false;
 		}
 
 		$desc = \lib\app::request('desc');
 		if($desc && mb_strlen($desc) > 700)
 		{
-			\lib\debug::error(T_("Invalid arguments desc"), 'desc');
+			\lib\notif::error(T_("Invalid arguments desc"), 'desc');
 			return false;
 		}
 
 		$job = \lib\app::request('job');
 		if($job && mb_strlen($job) > 50)
 		{
-			\lib\debug::error(T_("Invalid arguments job"), 'job');
+			\lib\notif::error(T_("Invalid arguments job"), 'job');
 			return false;
 		}
 
 		$avatar = \lib\app::request('avatar');
 		if($avatar && mb_strlen($avatar) > 1000)
 		{
-			\lib\debug::error(T_("Invalid arguments avatar"), 'avatar');
+			\lib\notif::error(T_("Invalid arguments avatar"), 'avatar');
 			return false;
 		}
 
 		$nesbat = \lib\app::request('nesbat');
 		if($nesbat && mb_strlen($nesbat) > 80)
 		{
-			\lib\debug::error(T_("Invalid arguments nesbat"), 'nesbat');
+			\lib\notif::error(T_("Invalid arguments nesbat"), 'nesbat');
 			return false;
 		}
 
@@ -257,7 +257,7 @@ class myuser
 
 		if($province && !in_array($province, $provice_list))
 		{
-			\lib\debug::error(T_("Invalid province name"), 'province');
+			\lib\notif::error(T_("Invalid province name"), 'province');
 			return false;
 		}
 
@@ -366,20 +366,20 @@ class myuser
 
 		if(!\lib\user::id())
 		{
-			\lib\debug::error(T_("User not found"), 'user');
+			\lib\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
 		if(!\lib\app::request('travel_id') || !ctype_digit(\lib\app::request('travel_id')))
 		{
-			\lib\debug::error(T_("Travel id not found"));
+			\lib\notif::error(T_("Travel id not found"));
 			return false;
 		}
 
 		// check args
 		$args = self::check($_option);
 
-		if($args === false || !\lib\debug::$status)
+		if($args === false || !\lib\notif::$status)
 		{
 			return false;
 		}
@@ -389,14 +389,14 @@ class myuser
 			$load_user = \lib\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
 			if(isset($load_user['nationalcode']) && intval($load_user['nationalcode']) === intval($args['nationalcode']))
 			{
-				\lib\debug::error(T_("This nationalcode is for your!"), 'nationalcode');
+				\lib\notif::error(T_("This nationalcode is for your!"), 'nationalcode');
 				return false;
 			}
 
 			$duplicate_nationalcode_in_child = \lib\db\travelusers::duplicate_nationalcode_in_child($args['nationalcode'], \lib\app::request('travel_id'));
 			if($duplicate_nationalcode_in_child)
 			{
-				\lib\debug::error(T_("Duplicate national code in your child list"), 'nationalcode');
+				\lib\notif::error(T_("Duplicate national code in your child list"), 'nationalcode');
 				return false;
 			}
 		}
@@ -413,7 +413,7 @@ class myuser
 		$count_partner     = \lib\db\travelusers::get_travel_child(\lib\request::get('trip'));
 		if(count($count_partner) + 1 > intval($max_count_partner) )
 		{
-			\lib\debug::error(T_("Maximum partner added. can not add another"));
+			\lib\notif::error(T_("Maximum partner added. can not add another"));
 			return false;
 		}
 
@@ -424,7 +424,7 @@ class myuser
 
 		if(!$user_id)
 		{
-			\lib\debug::error(T_("Can not add partner"), 'db');
+			\lib\notif::error(T_("Can not add partner"), 'db');
 			return false;
 		}
 
@@ -458,7 +458,7 @@ class myuser
 
 		if(!\lib\user::id())
 		{
-			\lib\debug::error(T_("User not found"), 'user');
+			\lib\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
@@ -477,7 +477,7 @@ class myuser
 		// check args
 		$args = self::check($_option);
 
-		if($args === false || !\lib\debug::$status)
+		if($args === false || !\lib\notif::$status)
 		{
 			return false;
 		}
@@ -487,7 +487,7 @@ class myuser
 			$load_user = \lib\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
 			if(isset($load_user['nationalcode']) && $load_user['nationalcode'] === $args['nationalcode'])
 			{
-				\lib\debug::error(T_("This nationalcode is for your!"), 'nationalcode');
+				\lib\notif::error(T_("This nationalcode is for your!"), 'nationalcode');
 				return false;
 			}
 			$check_not_duplicate_in_child = \lib\db\travelusers::duplicate_nationalcode_in_child($args['nationalcode'], \lib\app::request('travel_id'));
@@ -500,7 +500,7 @@ class myuser
 				}
 				else
 				{
-					\lib\debug::error(T_("Duplicate national code in your child list"), 'nationalcode');
+					\lib\notif::error(T_("Duplicate national code in your child list"), 'nationalcode');
 					return false;
 				}
 			}
@@ -538,14 +538,14 @@ class myuser
 
 		if(!\lib\user::id())
 		{
-			\lib\debug::error(T_("User not found"), 'user');
+			\lib\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
 		// check args
 		$args = self::check($_option);
 
-		if($args === false || !\lib\debug::$status)
+		if($args === false || !\lib\notif::$status)
 		{
 			return false;
 		}

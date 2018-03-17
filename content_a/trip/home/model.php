@@ -15,7 +15,7 @@ class model extends \content_a\main\model
 
 			if(!isset($check_valid_key['id']))
 			{
-				\lib\debug::error(T_("Invalid trip id"));
+				\lib\notif::error(T_("Invalid trip id"));
 				return false;
 			}
 
@@ -24,14 +24,14 @@ class model extends \content_a\main\model
 
 				\lib\db\travels::update(['status' => 'cancel'], $key);
 
-				\lib\debug::true(T_("Your trip was canceled"));
+				\lib\notif::true(T_("Your trip was canceled"));
 
 				\lib\redirect::pwd();
 
 			}
 			else
 			{
-				\lib\debug::error(T_("Can not change this trip status"));
+				\lib\notif::error(T_("Can not change this trip status"));
 				return false;
 			}
 		}

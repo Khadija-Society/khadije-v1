@@ -20,7 +20,7 @@ class model extends \content_cp\main2\model
 				return $uploaded_file['url'];
 			}
 			// if in upload have error return
-			if(!\lib\debug::$status)
+			if(!\lib\notif::$status)
 			{
 				return false;
 			}
@@ -61,16 +61,16 @@ class model extends \content_cp\main2\model
 			\lib\app\need::add($post, ['service' => true]);
 		}
 
-		if(\lib\debug::$status)
+		if(\lib\notif::$status)
 		{
 			if(\lib\request::get('edit'))
 			{
-				\lib\debug::true(T_("Way successfully edited"));
+				\lib\notif::true(T_("Way successfully edited"));
 				\lib\redirect::to(\lib\url::here(). '/service/options');
 			}
 			else
 			{
-				\lib\debug::true(T_("Way successfully added"));
+				\lib\notif::true(T_("Way successfully added"));
 				\lib\redirect::pwd();
 			}
 		}

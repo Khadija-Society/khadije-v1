@@ -15,9 +15,9 @@ class model extends \content_a\main\model
 
 		$travel_id = \lib\app\travel::add($post);
 
-		if(\lib\debug::$status && $travel_id)
+		if(\lib\notif::$status && $travel_id)
 		{
-			\lib\debug::true(T_("Your Travel was saved"));
+			\lib\notif::true(T_("Your Travel was saved"));
 			\lib\redirect::to(\lib\url::here(). '/group/profile?trip='. $travel_id);
 		}
 	}

@@ -11,7 +11,7 @@ class model extends \addons\content_cp\main\model
 		{
 			if(\lib\app\donate::remove_way(\lib\request::post('key')))
 			{
-				\lib\debug::warn(T_("The way successfully removed"));
+				\lib\notif::warn(T_("The way successfully removed"));
 			}
 			else
 			{
@@ -24,10 +24,10 @@ class model extends \addons\content_cp\main\model
 
 			\lib\app\donate::set_way($way);
 
-			\lib\debug::true(T_("Way successfully added"));
+			\lib\notif::true(T_("Way successfully added"));
 		}
 
-		if(\lib\debug::$status)
+		if(\lib\notif::$status)
 		{
 			\lib\redirect::pwd();
 		}

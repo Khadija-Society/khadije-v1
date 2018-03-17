@@ -36,7 +36,7 @@ class donate
 		$old = self::way_list();
 		if(array_search($_way, $old) === false)
 		{
-			\lib\debug::error(T_("This way is not in your list!"));
+			\lib\notif::error(T_("This way is not in your list!"));
 			return false;
 		}
 		unset($old[array_search($_way, $old)]);
@@ -80,13 +80,13 @@ class donate
 
 			if(!$_way)
 			{
-				\lib\debug::error(T_("Please set way"), 'way');
+				\lib\notif::error(T_("Please set way"), 'way');
 				return false;
 			}
 
 			if(mb_strlen($_way) > 150)
 			{
-				\lib\debug::error(T_("Please set way less than 150 character"), 'way');
+				\lib\notif::error(T_("Please set way less than 150 character"), 'way');
 				return false;
 			}
 		}
@@ -133,7 +133,7 @@ class donate
 
 			if(in_array($_way, $way_list))
 			{
-				\lib\debug::error(T_("Duplicate way"), 'way');
+				\lib\notif::error(T_("Duplicate way"), 'way');
 				return false;
 			}
 
@@ -192,7 +192,7 @@ class donate
 		if($name && mb_strlen($name) >= 500)
 		{
 			// \lib\app::log('api:product:name:max:lenght', \lib\user::id(), $log_meta);
-			if($_option['debug']) debug::error(T_("Product name must be less than 500 character"), 'name');
+			if($_option['debug']) \lib\notif::error(T_("Product name must be less than 500 character"), 'name');
 			return false;
 		}
 
@@ -256,7 +256,7 @@ class donate
 
 		if(\lib\app::request('username'))
 		{
-			\lib\debug::error(T_("Whate are you doing?"));
+			\lib\notif::error(T_("Whate are you doing?"));
 			return false;
 		}
 
@@ -264,7 +264,7 @@ class donate
 		$niyat = trim($niyat);
 		if(mb_strlen($niyat) > 150)
 		{
-			\lib\debug::error(T_("Please set niyat less than 150 character"), 'niyat');
+			\lib\notif::error(T_("Please set niyat less than 150 character"), 'niyat');
 			return false;
 		}
 
@@ -272,7 +272,7 @@ class donate
 		$way = trim($way);
 		if($way && !in_array($way, \lib\app\donate::way_list()))
 		{
-			\lib\debug::error(T_("Please set a valid way"), 'way');
+			\lib\notif::error(T_("Please set a valid way"), 'way');
 			return false;
 		}
 
@@ -280,7 +280,7 @@ class donate
 		$fullname = trim($fullname);
 		if(mb_strlen($fullname) > 150)
 		{
-			\lib\debug::error(T_("Please set fullname less than 150 character"), 'fullname');
+			\lib\notif::error(T_("Please set fullname less than 150 character"), 'fullname');
 			return false;
 		}
 
@@ -292,7 +292,7 @@ class donate
 		$email = trim($email);
 		if(mb_strlen($email) > 90)
 		{
-			\lib\debug::error(T_("Please set email less than 90 character"), 'email');
+			\lib\notif::error(T_("Please set email less than 90 character"), 'email');
 			return false;
 		}
 
@@ -300,7 +300,7 @@ class donate
 		$mobile = trim($mobile);
 		if($mobile && !\lib\utility\filter::mobile($mobile))
 		{
-			\lib\debug::error(T_("Please set a valid mobile number"), 'mobile');
+			\lib\notif::error(T_("Please set a valid mobile number"), 'mobile');
 			return false;
 		}
 
@@ -312,7 +312,7 @@ class donate
 		$amount = \lib\app::request('amount');
 		if(!$amount || !is_numeric($amount))
 		{
-			\lib\debug::error(T_("Please set a valid amount number"), 'amount');
+			\lib\notif::error(T_("Please set a valid amount number"), 'amount');
 			return false;
 		}
 
@@ -428,11 +428,11 @@ class donate
 
 	        if($insert)
 	        {
-	        	\lib\debug::true(T_("Transaction successfully inserted"));
+	        	\lib\notif::true(T_("Transaction successfully inserted"));
 	        }
 	        else
 	        {
-	        	\lib\debug::error(T_("Can not add transactions"));
+	        	\lib\notif::error(T_("Can not add transactions"));
 	        }
 		}
 		else

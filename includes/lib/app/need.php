@@ -33,7 +33,7 @@ class need
 		$title = trim($title);
 		if($title && mb_strlen($title) >= 200)
 		{
-			\lib\debug::error(T_("Please set a valid title"), 'title');
+			\lib\notif::error(T_("Please set a valid title"), 'title');
 			return false;
 		}
 
@@ -42,13 +42,13 @@ class need
 		$request = \lib\utility\convert::to_en_number($request);
 		if(!$is_service && !is_numeric($request))
 		{
-			\lib\debug::error(T_("Please set a valid request"), 'request');
+			\lib\notif::error(T_("Please set a valid request"), 'request');
 			return false;
 		}
 
 		if(!$is_service && intval($request) > 1E+8)
 		{
-			\lib\debug::error(T_("Request is too large"), 'request');
+			\lib\notif::error(T_("Request is too large"), 'request');
 			return false;
 		}
 
@@ -60,13 +60,13 @@ class need
 		$amount = \lib\utility\convert::to_en_number($amount);
 		if(!$is_service && $amount && !is_numeric($amount))
 		{
-			\lib\debug::error(T_("Please set a valid amount"), 'amount');
+			\lib\notif::error(T_("Please set a valid amount"), 'amount');
 			return false;
 		}
 
 		if(!$is_service && $amount && intval($amount) > 1E+8)
 		{
-			\lib\debug::error(T_("Amount is too large"), 'amount');
+			\lib\notif::error(T_("Amount is too large"), 'amount');
 			return false;
 		}
 
@@ -79,7 +79,7 @@ class need
 		$fileurl = trim($fileurl);
 		if($fileurl && mb_strlen($fileurl) >= 1000)
 		{
-			\lib\debug::error(T_("Please set a valid fileurl"), 'fileurl');
+			\lib\notif::error(T_("Please set a valid fileurl"), 'fileurl');
 			return false;
 		}
 
@@ -87,21 +87,21 @@ class need
 		$desc = trim($desc);
 		if($desc && mb_strlen($desc) >= 200)
 		{
-			\lib\debug::error(T_("Please set a valid desc"), 'desc');
+			\lib\notif::error(T_("Please set a valid desc"), 'desc');
 			return false;
 		}
 
 		$type = \lib\app::request('type');
 		if($type && !in_array($type, ['product', 'expertise']))
 		{
-			\lib\debug::error(T_("Please set a valid type"), 'type');
+			\lib\notif::error(T_("Please set a valid type"), 'type');
 			return false;
 		}
 
 		$status = \lib\app::request('status');
 		if($status && !in_array($status, ['enable','disable']))
 		{
-			\lib\debug::error(T_("Please set a valid status"), 'status');
+			\lib\notif::error(T_("Please set a valid status"), 'status');
 			return false;
 		}
 
@@ -186,14 +186,14 @@ class need
 
 		if(!\lib\user::id())
 		{
-			\lib\debug::error(T_("User not found"), 'user');
+			\lib\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
 		// check args
 		$args = self::check($_option);
 
-		if($args === false || !\lib\debug::$status)
+		if($args === false || !\lib\notif::$status)
 		{
 			return false;
 		}
@@ -209,7 +209,7 @@ class need
 
 		if(!$need_id)
 		{
-			\lib\debug::error(T_("No way to insert need"), 'db', 'system');
+			\lib\notif::error(T_("No way to insert need"), 'db', 'system');
 			return false;
 		}
 		return true;
@@ -241,27 +241,27 @@ class need
 
 		if(!\lib\user::id())
 		{
-			\lib\debug::error(T_("User not found"), 'user');
+			\lib\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
 		if(!$_id || !is_numeric($_id))
 		{
-			\lib\debug::error(T_("Id not found"), 'id');
+			\lib\notif::error(T_("Id not found"), 'id');
 			return false;
 		}
 
 		$check_id = \lib\db\needs::get(['id' => $_id, 'limit' => 1]);
 		if(!isset($check_id['id']))
 		{
-			\lib\debug::error(T_("Id not found"), 'id');
+			\lib\notif::error(T_("Id not found"), 'id');
 			return false;
 		}
 
 		// check args
 		$args = self::check($_option);
 
-		if($args === false || !\lib\debug::$status)
+		if($args === false || !\lib\notif::$status)
 		{
 			return false;
 		}

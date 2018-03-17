@@ -46,14 +46,14 @@ class model extends \content_cp\main2\model
 
 				if(empty($query))
 				{
-					\lib\debug::error(T_("No valid national code founded in your list"));
+					\lib\notif::error(T_("No valid national code founded in your list"));
 					return false;
 				}
 
 				$query = implode(";", $query);
 				\lib\db::query($query, true, ['multi_query' => true]);
 
-				\lib\debug::true(T_("Travel this nationalcode to :city saved", ['city' => T_($_city)]));
+				\lib\notif::true(T_("Travel this nationalcode to :city saved", ['city' => T_($_city)]));
 
 			}
 		}

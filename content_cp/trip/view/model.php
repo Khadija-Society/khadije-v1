@@ -24,7 +24,7 @@ class model extends \content_cp\main2\model
 		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
 		{
 			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('id'));
-			if(\lib\debug::$status)
+			if(\lib\notif::$status)
 			{
 				\lib\redirect::pwd();
 			}
@@ -37,9 +37,9 @@ class model extends \content_cp\main2\model
 
 			\lib\app\myuser::add_child($post);
 
-			if(\lib\debug::$status)
+			if(\lib\notif::$status)
 			{
-				\lib\debug::true(T_("Your Child was saved"));
+				\lib\notif::true(T_("Your Child was saved"));
 				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 
@@ -57,15 +57,15 @@ class model extends \content_cp\main2\model
 			}
 			else
 			{
-				\lib\debug::error(T_("Invalid user travel detail"));
+				\lib\notif::error(T_("Invalid user travel detail"));
 				return false;
 			}
 
 			\lib\app\myuser::edit_child($post, $user_id);
 
-			if(\lib\debug::$status)
+			if(\lib\notif::$status)
 			{
-				\lib\debug::true(T_("The partner was updated"));
+				\lib\notif::true(T_("The partner was updated"));
 				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 		}
@@ -75,7 +75,7 @@ class model extends \content_cp\main2\model
 			$start_date = \lib\utility\convert::to_en_number($start_date);
 			if($start_date && strtotime($start_date) === false)
 			{
-				\lib\debug::error(T_("Invalid start_date"), 'start_date');
+				\lib\notif::error(T_("Invalid start_date"), 'start_date');
 				return false;
 			}
 
@@ -92,7 +92,7 @@ class model extends \content_cp\main2\model
 			$end_date   = \lib\utility\convert::to_en_number($end_date);
 			if($end_date && strtotime($end_date) === false)
 			{
-				\lib\debug::error(T_("Invalid end_date"), 'end_date');
+				\lib\notif::error(T_("Invalid end_date"), 'end_date');
 				return false;
 			}
 
@@ -110,7 +110,7 @@ class model extends \content_cp\main2\model
 
 			if(mb_strlen($desc) > 500)
 			{
-				\lib\debug::error(T_("Maximum input for desc"), 'desc');
+				\lib\notif::error(T_("Maximum input for desc"), 'desc');
 				return false;
 			}
 
@@ -118,7 +118,7 @@ class model extends \content_cp\main2\model
 
 			if($status && !in_array($status, ['awaiting', 'spam', 'cancel', 'reject', 'review', 'notanswer', 'queue','gone', 'delete','admincancel', 'draft']))
 			{
-				\lib\debug::error(_T("Invalid status of trip"), 'status');
+				\lib\notif::error(_T("Invalid status of trip"), 'status');
 				return false;
 			}
 
@@ -136,7 +136,7 @@ class model extends \content_cp\main2\model
 
 			$this->send_sms($status);
 
-			\lib\debug::true(T_("The travel updated"));
+			\lib\notif::true(T_("The travel updated"));
 
 			\lib\redirect::pwd();
 

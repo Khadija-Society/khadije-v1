@@ -9,28 +9,28 @@ class model extends \content_a\main\model
 	{
 		if(\lib\request::post('username'))
 		{
-			\lib\debug::error(T_("Whate are you doing?"));
+			\lib\notif::error(T_("Whate are you doing?"));
 			return false;
 		}
 
 		$niyat = \lib\request::post('niyat');
 		if(mb_strlen($niyat) > 150)
 		{
-			\lib\debug::error(T_("Please set niyat less than 150 character"), 'niyat');
+			\lib\notif::error(T_("Please set niyat less than 150 character"), 'niyat');
 			return false;
 		}
 
 		$way = \lib\request::post('way');
 		if($way && !in_array($way, \lib\app\donate::way_list()))
 		{
-			\lib\debug::error(T_("Please set a valid way"), 'way');
+			\lib\notif::error(T_("Please set a valid way"), 'way');
 			return false;
 		}
 
 		$fullname = \lib\request::post('fullname');
 		if(mb_strlen($fullname) > 150)
 		{
-			\lib\debug::error(T_("Please set fullname less than 150 character"), 'fullname');
+			\lib\notif::error(T_("Please set fullname less than 150 character"), 'fullname');
 			return false;
 		}
 
@@ -38,14 +38,14 @@ class model extends \content_a\main\model
 		$email = \lib\request::post('email');
 		if(mb_strlen($email) > 90)
 		{
-			\lib\debug::error(T_("Please set email less than 90 character"), 'email');
+			\lib\notif::error(T_("Please set email less than 90 character"), 'email');
 			return false;
 		}
 
 		$mobile = \lib\request::post('mobile');
 		if($mobile && !\lib\utility\filter::mobile($mobile))
 		{
-			\lib\debug::error(T_("Please set a valid mobile number"), 'mobile');
+			\lib\notif::error(T_("Please set a valid mobile number"), 'mobile');
 			return false;
 		}
 
@@ -57,7 +57,7 @@ class model extends \content_a\main\model
 		$amount = \lib\request::post('amount');
 		if(!$amount || !is_numeric($amount))
 		{
-			\lib\debug::error(T_("Please set a valid amount number"), 'amount');
+			\lib\notif::error(T_("Please set a valid amount number"), 'amount');
 			return false;
 		}
 

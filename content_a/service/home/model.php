@@ -15,7 +15,7 @@ class model extends \content_a\main\model
 
 			if(!isset($check_valid_key['id']))
 			{
-				\lib\debug::error(T_("Invalid service id"));
+				\lib\notif::error(T_("Invalid service id"));
 				return false;
 			}
 
@@ -24,14 +24,14 @@ class model extends \content_a\main\model
 
 				\lib\db\services::update(['status' => 'cancel'], $key);
 
-				\lib\debug::true(T_("Your service was canceled"));
+				\lib\notif::true(T_("Your service was canceled"));
 
 				\lib\redirect::pwd();
 
 			}
 			else
 			{
-				\lib\debug::error(T_("Can not change this service status"));
+				\lib\notif::error(T_("Can not change this service status"));
 				return false;
 			}
 		}

@@ -14,7 +14,7 @@ class model extends \content_a\main\model
 
 			if(count($count_partner) < $min)
 			{
-				\lib\debug::error(T_("You must register at least :min partner", ['min' => \lib\utility\convert::to_fa_number($min)]));
+				\lib\notif::error(T_("You must register at least :min partner", ['min' => \lib\utility\convert::to_fa_number($min)]));
 				return false;
 			}
 
@@ -43,7 +43,7 @@ class model extends \content_a\main\model
 		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
 		{
 			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('trip'));
-			if(\lib\debug::$status)
+			if(\lib\notif::$status)
 			{
 				\lib\redirect::to(\lib\url::here(). '/group/partner?trip='. \lib\request::get('trip'));
 			}
@@ -68,9 +68,9 @@ class model extends \content_a\main\model
 
 			\lib\app\myuser::add_child($post);
 
-			if(\lib\debug::$status)
+			if(\lib\notif::$status)
 			{
-				\lib\debug::true(T_("Your Child was saved"));
+				\lib\notif::true(T_("Your Child was saved"));
 				\lib\redirect::pwd();
 			}
 

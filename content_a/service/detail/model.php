@@ -22,9 +22,9 @@ class model extends \content_a\main\model
 
 		\lib\app\service::edit($post, \lib\request::get('id'));
 
-		if(\lib\debug::$status)
+		if(\lib\notif::$status)
 		{
-			\lib\debug::true(T_("Detail was saved"));
+			\lib\notif::true(T_("Detail was saved"));
 			\lib\redirect::to(\lib\url::here(). '/service');
 		}
 	}

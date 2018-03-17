@@ -28,9 +28,9 @@ class model extends \content_a\main\model
 
 		\lib\app\myuser::edit($post);
 
-		if(\lib\debug::$status)
+		if(\lib\notif::$status)
 		{
-			\lib\debug::true(T_("Your detail was saved"));
+			\lib\notif::true(T_("Your detail was saved"));
 			\lib\redirect::to(\lib\url::here());
 		}
 
