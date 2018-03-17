@@ -6,7 +6,7 @@ class controller extends \content_a\main\controller
 {
 	function ready()
 	{
-		if(!$this->login())
+		if(!\lib\user::login())
 		{
 			\lib\redirect::to(\lib\url::base(). '/enter');
 			return;

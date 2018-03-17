@@ -554,7 +554,7 @@ class myuser
 
 		\lib\db\users::update($args, \lib\user::id());
 
-		\lib\user::update_session(\lib\user::id());
+		\lib\user::refresh();
 
 		return true;
 	}

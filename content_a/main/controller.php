@@ -6,7 +6,7 @@ class controller extends \mvc\controller
 {
 	public function repository()
 	{
-		if(!$this->login())
+		if(!\lib\user::login())
 		{
 			\lib\redirect::to(\lib\url::base(). '/enter/signup?referer='. \lib\url::pwd());
 			return;

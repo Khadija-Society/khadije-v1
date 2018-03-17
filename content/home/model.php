@@ -13,7 +13,7 @@ class model extends \mvc\model
 			[
 				// 'hazinekard' => $way,
 				// 'niyat'      => $niyat,
-				'fullname'   => $this->login('displayname'),
+				'fullname'   => \lib\user::login('displayname'),
 				'donate'     => 'cash',
 				'doners'     => 0,
 			]

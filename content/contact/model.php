@@ -40,12 +40,12 @@ class model extends \mvc\model
 		}
 
 		// check login
-		if($this->login())
+		if(\lib\user::login())
 		{
-			$user_id = $this->login("id");
+			$user_id = \lib\user::id();
 
 			// get mobile from user login session
-			$mobile = $this->login('mobile');
+			$mobile = \lib\user::login('mobile');
 
 			if(!$mobile)
 			{
@@ -53,7 +53,7 @@ class model extends \mvc\model
 			}
 
 			// get display name from user login session
-			$displayname = $this->login("displayname");
+			$displayname = \lib\user::login("displayname");
 			// user not set users display name, we get display name from contact form
 			if(!$displayname)
 			{
@@ -83,7 +83,7 @@ class model extends \mvc\model
 		[
 			'meta' =>
 			[
-				'login'    => $this->login('all'),
+				'login'    => \lib\user::login('all'),
 				'language' => \lib\language::current(),
 				'post'     => \lib\request::post(),
 			]
@@ -92,7 +92,7 @@ class model extends \mvc\model
 		/**
 		 * register user if set mobile and not register
 		 */
-		if($mobile && !$this->login())
+		if($mobile && !\lib\user::login())
 		{
 			$mobile = \lib\utility\filter::mobile($mobile);
 

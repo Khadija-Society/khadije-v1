@@ -61,9 +61,9 @@ class model extends \content_a\main\model
 			return false;
 		}
 
-		$user_id = $this->login('id');
+		$user_id = \lib\user::id();
 
-		if(!$this->login('id'))
+		if(!\lib\user::id())
 		{
 			if($mobile)
 			{
