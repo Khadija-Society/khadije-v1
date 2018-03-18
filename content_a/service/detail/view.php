@@ -22,7 +22,7 @@ class view extends \content_a\main\view
 
 		if(!$this->data->service_detail)
 		{
-			\lib\error::page(T_("Id not found"));
+			\lib\header::status(404, T_("Id not found"));
 		}
 	}
 
