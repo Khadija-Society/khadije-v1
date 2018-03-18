@@ -22,13 +22,13 @@ class model extends \addons\content_cp\main\model
 		{
 			\lib\app\travel::set_cityplace(\lib\request::post('city'), \lib\request::post('place'));
 
-			if(\lib\notif::$status)
+			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("City place successfully added"));
 			}
 		}
 
-		if(\lib\notif::$status)
+		if(\lib\engine\process::status())
 		{
 			\lib\redirect::pwd();
 		}

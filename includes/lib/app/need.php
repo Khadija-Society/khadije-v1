@@ -193,7 +193,7 @@ class need
 		// check args
 		$args = self::check($_option);
 
-		if($args === false || !\lib\notif::$status)
+		if($args === false || !\lib\engine\process::status())
 		{
 			return false;
 		}
@@ -261,7 +261,7 @@ class need
 		// check args
 		$args = self::check($_option);
 
-		if($args === false || !\lib\notif::$status)
+		if($args === false || !\lib\engine\process::status())
 		{
 			return false;
 		}

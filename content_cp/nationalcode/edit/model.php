@@ -45,7 +45,7 @@ class model extends \content_cp\main2\model
 		if(\lib\request::get('id') && is_numeric(\lib\request::get('id')))
 		{
 			\lib\db\nationalcodes::update($update, \lib\request::get('id'));
-			if(\lib\notif::$status)
+			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("Your change was saved"));
 			}

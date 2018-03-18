@@ -27,7 +27,7 @@ class model extends \addons\content_cp\main\model
 			\lib\notif::ok(T_("Way successfully added"));
 		}
 
-		if(\lib\notif::$status)
+		if(\lib\engine\process::status())
 		{
 			\lib\redirect::pwd();
 		}

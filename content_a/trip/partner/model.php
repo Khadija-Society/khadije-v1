@@ -34,7 +34,7 @@ class model extends \content_a\main\model
 		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
 		{
 			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('trip'));
-			if(\lib\notif::$status)
+			if(\lib\engine\process::status())
 			{
 				\lib\redirect::to(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
 			}
@@ -58,7 +58,7 @@ class model extends \content_a\main\model
 
 			\lib\app\myuser::add_child($post);
 
-			if(\lib\notif::$status)
+			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("Your Child was saved"));
 				\lib\redirect::pwd();

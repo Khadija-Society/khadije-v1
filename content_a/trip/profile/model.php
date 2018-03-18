@@ -28,7 +28,7 @@ class model extends \content_a\main\model
 
 		\lib\app\myuser::edit($post);
 
-		if(\lib\notif::$status)
+		if(\lib\engine\process::status())
 		{
 			\lib\notif::ok(T_("Your detail was saved"));
 			\lib\redirect::to(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));

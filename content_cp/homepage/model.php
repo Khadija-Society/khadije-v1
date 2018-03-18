@@ -74,7 +74,7 @@ class model extends \content_cp\main2\model
 			\lib\utility\file::write($url, $result);
 		}
 
-		if(\lib\notif::$status)
+		if(\lib\engine\process::status())
 		{
 			\lib\notif::ok(T_("Data saved"));
 		}

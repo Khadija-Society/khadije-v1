@@ -20,7 +20,7 @@ class model extends \addons\content_cp\main\model
 				return $uploaded_file['url'];
 			}
 			// if in upload have error return
-			if(!\lib\notif::$status)
+			if(!\lib\engine\process::status())
 			{
 				return false;
 			}
@@ -61,7 +61,7 @@ class model extends \addons\content_cp\main\model
 			\lib\app\need::add($post);
 		}
 
-		if(\lib\notif::$status)
+		if(\lib\engine\process::status())
 		{
 			if(\lib\request::get('edit'))
 			{

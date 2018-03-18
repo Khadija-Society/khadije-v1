@@ -24,7 +24,7 @@ class model extends \content_cp\main2\model
 		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
 		{
 			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('id'));
-			if(\lib\notif::$status)
+			if(\lib\engine\process::status())
 			{
 				\lib\redirect::pwd();
 			}
@@ -37,7 +37,7 @@ class model extends \content_cp\main2\model
 
 			\lib\app\myuser::add_child($post);
 
-			if(\lib\notif::$status)
+			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("Your Child was saved"));
 				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
@@ -63,7 +63,7 @@ class model extends \content_cp\main2\model
 
 			\lib\app\myuser::edit_child($post, $user_id);
 
-			if(\lib\notif::$status)
+			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("The partner was updated"));
 				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
