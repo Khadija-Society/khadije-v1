@@ -11,7 +11,7 @@ class model extends \content_cp\main2\model
 	 */
 	public static function upload_thumb()
 	{
-		if(\lib\utility::files('thumb'))
+		if(\lib\request::files('thumb'))
 		{
 			$uploaded_file = \lib\app\file::upload(['debug' => false, 'upload_name' => 'thumb']);
 
