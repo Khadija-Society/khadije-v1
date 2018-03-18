@@ -19,14 +19,14 @@ class controller extends \mvc\controller
 
 		if(!$trip || !ctype_digit($trip) || $trip == '')
 		{
-			\lib\error::access(T_("Trip id not found"));
+			\lib\header::status(403, T_("Trip id not found"));
 		}
 
 		$check_valid_trip = \lib\db\travels::get(['id' => $trip, 'type' => $_type, 'user_id' => \lib\user::id(), 'limit' => 1]);
 
 		if(!isset($check_valid_trip['id']))
 		{
-			\lib\error::access(T_("Invalid trip id"));
+			\lib\header::status(403, T_("Invalid trip id"));
 		}
 
 		// if status of trip is not awatign redirect to list of travel
@@ -36,7 +36,7 @@ class controller extends \mvc\controller
 		}
 		else
 		{
-			\lib\error::access(T_("Your trip is not draft. can not edit it"));
+			\lib\header::status(403, T_("Your trip is not draft. can not edit it"));
 		}
 	}
 
@@ -46,14 +46,14 @@ class controller extends \mvc\controller
 
 		if(!$id || !ctype_digit($id) || $id == '')
 		{
-			\lib\error::access(T_("Service id not found"));
+			\lib\header::status(403, T_("Service id not found"));
 		}
 
 		$check_valid_id = \lib\db\services::get(['id' => $id, 'user_id' => \lib\user::id(), 'limit' => 1]);
 
 		if(!isset($check_valid_id['id']))
 		{
-			\lib\error::access(T_("Invalid service id"));
+			\lib\header::status(403, T_("Invalid service id"));
 		}
 
 		// if status of id is not awatign redirect to list of travel
@@ -63,7 +63,7 @@ class controller extends \mvc\controller
 		}
 		else
 		{
-			\lib\error::access(T_("Your service is not draft. can not edit it"));
+			\lib\header::status(403, T_("Your service is not draft. can not edit it"));
 		}
 	}
 }
