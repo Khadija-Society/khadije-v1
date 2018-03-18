@@ -76,7 +76,7 @@ class model extends \content_cp\main2\model
 
 		if(\lib\notif::$status)
 		{
-			\lib\notif::true(T_("Data saved"));
+			\lib\notif::ok(T_("Data saved"));
 		}
 
 		\lib\redirect::pwd();

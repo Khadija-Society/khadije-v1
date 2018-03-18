@@ -53,7 +53,7 @@ class model extends \content_cp\main2\model
 				$query = implode(";", $query);
 				\lib\db::query($query, true, ['multi_query' => true]);
 
-				\lib\notif::true(T_("Travel this nationalcode to :city saved", ['city' => T_($_city)]));
+				\lib\notif::ok(T_("Travel this nationalcode to :city saved", ['city' => T_($_city)]));
 
 			}
 		}

@@ -70,7 +70,7 @@ class model extends \content_a\main\model
 
 			if(\lib\notif::$status)
 			{
-				\lib\notif::true(T_("Your Child was saved"));
+				\lib\notif::ok(T_("Your Child was saved"));
 				\lib\redirect::pwd();
 			}
 

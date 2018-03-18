@@ -47,7 +47,7 @@ class model extends \content_cp\main2\model
 			\lib\db\nationalcodes::update($update, \lib\request::get('id'));
 			if(\lib\notif::$status)
 			{
-				\lib\notif::true(T_("Your change was saved"));
+				\lib\notif::ok(T_("Your change was saved"));
 			}
 		}
 		else

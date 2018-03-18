@@ -39,7 +39,7 @@ class model extends \content_cp\main2\model
 
 			if(\lib\notif::$status)
 			{
-				\lib\notif::true(T_("Your Child was saved"));
+				\lib\notif::ok(T_("Your Child was saved"));
 				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 
@@ -65,7 +65,7 @@ class model extends \content_cp\main2\model
 
 			if(\lib\notif::$status)
 			{
-				\lib\notif::true(T_("The partner was updated"));
+				\lib\notif::ok(T_("The partner was updated"));
 				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 		}
@@ -136,7 +136,7 @@ class model extends \content_cp\main2\model
 
 			$this->send_sms($status);
 
-			\lib\notif::true(T_("The travel updated"));
+			\lib\notif::ok(T_("The travel updated"));
 
 			\lib\redirect::pwd();
 

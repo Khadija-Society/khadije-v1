@@ -65,12 +65,12 @@ class model extends \content_cp\main2\model
 		{
 			if(\lib\request::get('edit'))
 			{
-				\lib\notif::true(T_("Way successfully edited"));
+				\lib\notif::ok(T_("Way successfully edited"));
 				\lib\redirect::to(\lib\url::here(). '/service/options');
 			}
 			else
 			{
-				\lib\notif::true(T_("Way successfully added"));
+				\lib\notif::ok(T_("Way successfully added"));
 				\lib\redirect::pwd();
 			}
 		}

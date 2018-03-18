@@ -24,7 +24,7 @@ class model extends \addons\content_cp\main\model
 
 			if(\lib\notif::$status)
 			{
-				\lib\notif::true(T_("City place successfully added"));
+				\lib\notif::ok(T_("City place successfully added"));
 			}
 		}
 

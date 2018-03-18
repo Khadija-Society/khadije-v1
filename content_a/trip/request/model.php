@@ -17,7 +17,7 @@ class model extends \content_a\main\model
 
 		if(\lib\notif::$status && $travel_id)
 		{
-			\lib\notif::true(T_("Your Travel was saved"));
+			\lib\notif::ok(T_("Your Travel was saved"));
 			\lib\redirect::to(\lib\url::here(). '/trip/profile?trip='. $travel_id);
 		}
 	}

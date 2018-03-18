@@ -428,7 +428,7 @@ class donate
 
 	        if($insert)
 	        {
-	        	\lib\notif::true(T_("Transaction successfully inserted"));
+	        	\lib\notif::ok(T_("Transaction successfully inserted"));
 	        }
 	        else
 	        {

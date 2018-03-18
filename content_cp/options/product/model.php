@@ -65,11 +65,11 @@ class model extends \addons\content_cp\main\model
 		{
 			if(\lib\request::get('edit'))
 			{
-				\lib\notif::true(T_("Way successfully edited"));
+				\lib\notif::ok(T_("Way successfully edited"));
 			}
 			else
 			{
-				\lib\notif::true(T_("Way successfully added"));
+				\lib\notif::ok(T_("Way successfully added"));
 			}
 			\lib\redirect::pwd();
 		}

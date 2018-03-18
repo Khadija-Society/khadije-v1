@@ -24,7 +24,7 @@ class model extends \content_a\main\model
 
 				\lib\db\services::update(['status' => 'cancel'], $key);
 
-				\lib\notif::true(T_("Your service was canceled"));
+				\lib\notif::ok(T_("Your service was canceled"));
 
 				\lib\redirect::pwd();
 

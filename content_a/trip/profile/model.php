@@ -30,7 +30,7 @@ class model extends \content_a\main\model
 
 		if(\lib\notif::$status)
 		{
-			\lib\notif::true(T_("Your detail was saved"));
+			\lib\notif::ok(T_("Your detail was saved"));
 			\lib\redirect::to(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
 		}
 

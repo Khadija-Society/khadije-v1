@@ -24,7 +24,7 @@ class model extends \content_a\main\model
 
 				\lib\db\travels::update(['status' => 'cancel'], $key);
 
-				\lib\notif::true(T_("Your request was canceled"));
+				\lib\notif::ok(T_("Your request was canceled"));
 
 				\lib\redirect::pwd();
 

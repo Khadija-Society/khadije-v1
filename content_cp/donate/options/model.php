@@ -24,7 +24,7 @@ class model extends \addons\content_cp\main\model
 
 			\lib\app\donate::set_way($way);
 
-			\lib\notif::true(T_("Way successfully added"));
+			\lib\notif::ok(T_("Way successfully added"));
 		}
 
 		if(\lib\notif::$status)

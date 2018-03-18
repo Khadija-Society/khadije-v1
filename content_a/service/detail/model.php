@@ -24,7 +24,7 @@ class model extends \content_a\main\model
 
 		if(\lib\notif::$status)
 		{
-			\lib\notif::true(T_("Detail was saved"));
+			\lib\notif::ok(T_("Detail was saved"));
 			\lib\redirect::to(\lib\url::here(). '/service');
 		}
 	}
