@@ -8,7 +8,7 @@ class controller extends \lib\controller
 		if(\lib\url::directory() === 'main')
 		{
 			\lib\redirect::to(\lib\url::here());
-			\lib\error::page();
+			\lib\header::status(404);
 		}
 	}
 }
