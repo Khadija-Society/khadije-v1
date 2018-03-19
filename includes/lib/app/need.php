@@ -143,7 +143,7 @@ class need
 				case 'creator':
 					if(isset($value))
 					{
-						$result[$key] = \lib\utility\shortURL::encode($value);
+						$result[$key] = \lib\coding::encode($value);
 					}
 					else
 					{
