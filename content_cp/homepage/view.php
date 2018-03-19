@@ -13,7 +13,7 @@ class view extends \content_cp\main2\view
 
 		$url = root. 'public_html/files/data/staticvar.txt';
 
-		$result = @\lib\utility\file::read($url);
+		$result = @\lib\file::read($url);
 
 		if(is_string($result))
 		{
