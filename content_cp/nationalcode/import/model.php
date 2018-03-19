@@ -30,7 +30,7 @@ class model extends \content_cp\main2\model
 				{
 					$value = preg_replace("/\,|\'|\"|\,|\;\`/", '', $value);
 					$value = \lib\utility\convert::to_en_number($value);
-					if($value && is_numeric($value) && mb_strlen($value) === 10 && \lib\utility\nationalcode::check($value))
+					if($value && is_numeric($value) && mb_strlen($value) === 10 && \lib\utility\filter::nationalcode($value))
 					{
 						if(in_array($value, $inserted))
 						{

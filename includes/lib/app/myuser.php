@@ -103,7 +103,7 @@ class myuser
 
 		if($nationalcode)
 		{
-			if(\lib\utility\nationalcode::check($nationalcode))
+			if(\lib\utility\filter::nationalcode($nationalcode))
 			{
 				\lib\db\nationalcodes::add($nationalcode);
 			}
