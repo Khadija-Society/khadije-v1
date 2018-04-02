@@ -45,7 +45,7 @@
       <tbody>
         {%for key, value in need%}
           <tr>
-            <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}"></td>
+            <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.site}}/static//siftal/images/default/image.png{%endif%}"></td>
             <td>{{value.title}}</td>
             <td>{{value.request | number_format | fitNumber}}</td>
             <td>{{value.amount | number_format | fitNumber}}</td>
