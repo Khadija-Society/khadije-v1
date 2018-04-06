@@ -29,7 +29,7 @@ class need
 			$is_service = true;
 		}
 
-		$title = \lib\app::request('title');
+		$title = \dash\app::request('title');
 		$title = trim($title);
 		if($title && mb_strlen($title) >= 200)
 		{
@@ -37,7 +37,7 @@ class need
 			return false;
 		}
 
-		$request = \lib\app::request('count');
+		$request = \dash\app::request('count');
 		$request = trim($request);
 		$request = \dash\utility\convert::to_en_number($request);
 		if(!$is_service && !is_numeric($request))
@@ -55,7 +55,7 @@ class need
 		$request = intval($request);
 
 
-		$amount = \lib\app::request('amount');
+		$amount = \dash\app::request('amount');
 		$amount = trim($amount);
 		$amount = \dash\utility\convert::to_en_number($amount);
 		if(!$is_service && $amount && !is_numeric($amount))
@@ -75,7 +75,7 @@ class need
 			$amount = intval($amount);
 		}
 
-		$fileurl = \lib\app::request('fileurl');
+		$fileurl = \dash\app::request('fileurl');
 		$fileurl = trim($fileurl);
 		if($fileurl && mb_strlen($fileurl) >= 1000)
 		{
@@ -83,7 +83,7 @@ class need
 			return false;
 		}
 
-		$desc = \lib\app::request('desc');
+		$desc = \dash\app::request('desc');
 		$desc = trim($desc);
 		if($desc && mb_strlen($desc) >= 200)
 		{
@@ -91,14 +91,14 @@ class need
 			return false;
 		}
 
-		$type = \lib\app::request('type');
+		$type = \dash\app::request('type');
 		if($type && !in_array($type, ['product', 'expertise']))
 		{
 			\lib\notif::error(T_("Please set a valid type"), 'type');
 			return false;
 		}
 
-		$status = \lib\app::request('status');
+		$status = \dash\app::request('status');
 		if($status && !in_array($status, ['enable','disable']))
 		{
 			\lib\notif::error(T_("Please set a valid status"), 'status');
@@ -143,7 +143,7 @@ class need
 				case 'creator':
 					if(isset($value))
 					{
-						$result[$key] = \lib\coding::encode($value);
+						$result[$key] = \dash\coding::encode($value);
 					}
 					else
 					{
@@ -182,7 +182,7 @@ class need
 
 		$_option = array_merge($default_option, $_option);
 
-		\lib\app::variable($_args);
+		\dash\app::variable($_args);
 
 		if(!\lib\user::id())
 		{
@@ -237,7 +237,7 @@ class need
 
 		$_option = array_merge($default_option, $_option);
 
-		\lib\app::variable($_args);
+		\dash\app::variable($_args);
 
 		if(!\lib\user::id())
 		{
@@ -266,7 +266,7 @@ class need
 			return false;
 		}
 
-		if(!\lib\app::isset_request('fileurl'))         unset($args['fileurl']);
+		if(!\dash\app::isset_request('fileurl'))         unset($args['fileurl']);
 
 
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))

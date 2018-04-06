@@ -525,12 +525,12 @@ class travel
 			'data' => null,
 			'meta' =>
 			[
-				'input' => \lib\app::request(),
+				'input' => \dash\app::request(),
 			]
 		];
 
-		$city = \lib\app::request('city');
-		if(\lib\app::request('type') === 'group')
+		$city = \dash\app::request('city');
+		if(\dash\app::request('type') === 'group')
 		{
 			if(!$city || !in_array(T_($city), self::group_active_city()))
 			{
@@ -548,7 +548,7 @@ class travel
 		}
 
 
-		$startdate = \lib\app::request('startdate');
+		$startdate = \dash\app::request('startdate');
 		$startdate = \dash\utility\convert::to_en_number($startdate);
 
 		if($startdate && strtotime($startdate) === false)
@@ -562,7 +562,7 @@ class travel
 			$startdate = date("Y-m-d", strtotime($startdate));
 		}
 
-		$enddate = \lib\app::request('enddate');
+		$enddate = \dash\app::request('enddate');
 		$enddate = \dash\utility\convert::to_en_number($enddate);
 
 		if($enddate && strtotime($enddate) === false)
@@ -606,20 +606,20 @@ class travel
 
 		$_option = array_merge($default_option, $_option);
 
-		\lib\app::variable($_args);
+		\dash\app::variable($_args);
 
 		$log_meta =
 		[
 			'data' => null,
 			'meta' =>
 			[
-				'input' => \lib\app::request(),
+				'input' => \dash\app::request(),
 			]
 		];
 
 		if(!\lib\user::id())
 		{
-			\lib\app::log('api:product:user_id:notfound', null, $log_meta);
+			\dash\app::log('api:product:user_id:notfound', null, $log_meta);
 			if($_option['debug']) \lib\notif::error(T_("User not found"), 'user');
 			return false;
 		}
@@ -632,7 +632,7 @@ class travel
 			return false;
 		}
 
-		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \lib\user::id(), 'type' => \lib\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
+		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \lib\user::id(), 'type' => \dash\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
 		if(isset($check_duplicate_travel['id']))
 		{
 			\lib\notif::error(T_("You signup to this trip before, please wait for checking status of that trip"));
@@ -645,7 +645,7 @@ class travel
 		}
 
 		$args['user_id']     = \lib\user::id();
-		$args['type']        = \lib\app::request('type');
+		$args['type']        = \dash\app::request('type');
 
 		$travel_id = \lib\db\travels::insert($args);
 

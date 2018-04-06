@@ -183,15 +183,15 @@ class donate
 			'data' => null,
 			'meta' =>
 			[
-				'input' => \lib\app::request(),
+				'input' => \dash\app::request(),
 			]
 		];
 
-		$name = \lib\app::request('name');
+		$name = \dash\app::request('name');
 		$name = trim($name);
 		if($name && mb_strlen($name) >= 500)
 		{
-			// \lib\app::log('api:product:name:max:lenght', \lib\user::id(), $log_meta);
+			// \dash\app::log('api:product:name:max:lenght', \lib\user::id(), $log_meta);
 			if($_option['debug']) \lib\notif::error(T_("Product name must be less than 500 character"), 'name');
 			return false;
 		}
@@ -226,7 +226,7 @@ class donate
 				case 'creator':
 					if(isset($value))
 					{
-						$result[$key] = \lib\coding::encode($value);
+						$result[$key] = \dash\coding::encode($value);
 					}
 					else
 					{
@@ -252,15 +252,15 @@ class donate
 	 */
 	public static function add($_args, $_option = [])
 	{
-		\lib\app::variable($_args);
+		\dash\app::variable($_args);
 
-		if(\lib\app::request('username'))
+		if(\dash\app::request('username'))
 		{
 			\lib\notif::error(T_("Whate are you doing?"));
 			return false;
 		}
 
-		$niyat = \lib\app::request('niyat');
+		$niyat = \dash\app::request('niyat');
 		$niyat = trim($niyat);
 		if(mb_strlen($niyat) > 150)
 		{
@@ -268,7 +268,7 @@ class donate
 			return false;
 		}
 
-		$way = \lib\app::request('way');
+		$way = \dash\app::request('way');
 		$way = trim($way);
 		if($way && !in_array($way, \lib\app\donate::way_list()))
 		{
@@ -276,7 +276,7 @@ class donate
 			return false;
 		}
 
-		$fullname = \lib\app::request('fullname');
+		$fullname = \dash\app::request('fullname');
 		$fullname = trim($fullname);
 		if(mb_strlen($fullname) > 150)
 		{
@@ -284,11 +284,11 @@ class donate
 			return false;
 		}
 
-		$doners = \lib\app::request('doners');
+		$doners = \dash\app::request('doners');
 		$doners = $doners ? 1 : 0;
 
 
-		$email = \lib\app::request('email');
+		$email = \dash\app::request('email');
 		$email = trim($email);
 		if(mb_strlen($email) > 90)
 		{
@@ -296,7 +296,7 @@ class donate
 			return false;
 		}
 
-		$mobile = \lib\app::request('mobile');
+		$mobile = \dash\app::request('mobile');
 		$mobile = trim($mobile);
 		if($mobile && !\dash\utility\filter::mobile($mobile))
 		{
@@ -309,7 +309,7 @@ class donate
 			$mobile = \dash\utility\filter::mobile($mobile);
 		}
 
-		$amount = \lib\app::request('amount');
+		$amount = \dash\app::request('amount');
 		if(!$amount || !is_numeric($amount))
 		{
 			\lib\notif::error(T_("Please set a valid amount number"), 'amount');
@@ -403,7 +403,7 @@ class donate
 			]
 		];
 
-		if(\lib\app::request('manuall') === 'on')
+		if(\dash\app::request('manuall') === 'on')
 		{
 			$transaction_set =
 	        [
@@ -411,7 +411,7 @@ class donate
 				'title'      => T_("Pay donate"),
 				'user_id'    => $user_id,
 				'minus'      => null,
-				'plus'       => \lib\app::request('amount'),
+				'plus'       => \dash\app::request('amount'),
 				'verify'     => 1,
 				'dateverify' => time(),
 				'type'       => 'money',
@@ -437,7 +437,7 @@ class donate
 		}
 		else
 		{
-			\dash\utility\payment\pay::start($user_id, \lib\app::request('bank'), \lib\app::request('amount'), $meta);
+			\dash\utility\payment\pay::start($user_id, \dash\app::request('bank'), \dash\app::request('amount'), $meta);
 		}
 	}
 }
