@@ -386,7 +386,7 @@ class myuser
 
 		if(isset($args['nationalcode']) && $args['nationalcode'])
 		{
-			$load_user = \lib\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
+			$load_user = \dash\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
 			if(isset($load_user['nationalcode']) && intval($load_user['nationalcode']) === intval($args['nationalcode']))
 			{
 				\lib\notif::error(T_("This nationalcode is for your!"), 'nationalcode');
@@ -419,7 +419,7 @@ class myuser
 
 
 
-		\lib\db\users::insert($args);
+		\dash\db\users::insert($args);
 		$user_id = \lib\db::insert_id();
 
 		if(!$user_id)
@@ -467,7 +467,7 @@ class myuser
 			return false;
 		}
 
-		$check = \lib\db\users::get(['id' => $_id, 'limit' => 1]);
+		$check = \dash\db\users::get(['id' => $_id, 'limit' => 1]);
 
 		if(!isset($check['id']))
 		{
@@ -484,7 +484,7 @@ class myuser
 
 		if(isset($args['nationalcode']) && $args['nationalcode'])
 		{
-			$load_user = \lib\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
+			$load_user = \dash\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
 			if(isset($load_user['nationalcode']) && $load_user['nationalcode'] === $args['nationalcode'])
 			{
 				\lib\notif::error(T_("This nationalcode is for your!"), 'nationalcode');
@@ -507,7 +507,7 @@ class myuser
 		}
 
 
-		\lib\db\users::update($args, $_id);
+		\dash\db\users::update($args, $_id);
 
 		return true;
 	}
@@ -552,7 +552,7 @@ class myuser
 
 		if(!\lib\app::isset_request('avatar'))         unset($args['avatar']);
 
-		\lib\db\users::update($args, \lib\user::id());
+		\dash\db\users::update($args, \lib\user::id());
 
 		\lib\user::refresh();
 

@@ -48,7 +48,7 @@ class donate
 
 	public static function way_list()
 	{
-		$list = \lib\db\options::get(['key' => self::$way_key, 'limit' => 1]);
+		$list = \dash\db\options::get(['key' => self::$way_key, 'limit' => 1]);
 
 		$way_list = [];
 
@@ -93,7 +93,7 @@ class donate
 
 		$key = self::$way_key;
 
-		$list = \lib\db\options::get(['key' => $key, 'limit' => 1]);
+		$list = \dash\db\options::get(['key' => $key, 'limit' => 1]);
 
 		$update = false;
 
@@ -144,7 +144,7 @@ class donate
 
 		if($update)
 		{
-			\lib\db\options::update(['meta' => $meta], $list['id']);
+			\dash\db\options::update(['meta' => $meta], $list['id']);
 		}
 		else
 		{
@@ -153,7 +153,7 @@ class donate
 				'key'  => $key,
 				'meta' => $meta,
 			];
-			\lib\db\options::insert($insert_args);
+			\dash\db\options::insert($insert_args);
 		}
 
 	}
@@ -322,7 +322,7 @@ class donate
 		{
 			if($mobile)
 			{
-				$check_user_mobile = \lib\db\users::get_by_mobile($mobile);
+				$check_user_mobile = \dash\db\users::get_by_mobile($mobile);
 				if(isset($check_user_mobile['id']))
 				{
 					$user_id = $check_user_mobile['id'];
@@ -331,7 +331,7 @@ class donate
 				{
 					if($email)
 					{
-						$check_user_email = \lib\db\users::get_by_email($email);
+						$check_user_email = \dash\db\users::get_by_email($email);
 						if(isset($check_user_email['id']))
 						{
 							$user_id = $check_user_email['id'];
@@ -343,7 +343,7 @@ class donate
 								'email'      => $email,
 								'displayname' => $fullname,
 							];
-							$user_id = \lib\db\users::signup($signup);
+							$user_id = \dash\db\users::signup($signup);
 						}
 					}
 					else
@@ -353,13 +353,13 @@ class donate
 							'mobile'      => $mobile,
 							'displayname' => $fullname,
 						];
-						$user_id = \lib\db\users::signup($signup);
+						$user_id = \dash\db\users::signup($signup);
 					}
 				}
 			}
 			elseif($email)
 			{
-				$check_user_email = \lib\db\users::get_by_email($email);
+				$check_user_email = \dash\db\users::get_by_email($email);
 				if(isset($check_user_email['id']))
 				{
 					$user_id = $check_user_email['id'];
@@ -371,7 +371,7 @@ class donate
 						'email'      => $email,
 						'displayname' => $fullname,
 					];
-					$user_id = \lib\db\users::signup($signup);
+					$user_id = \dash\db\users::signup($signup);
 				}
 			}
 			else
@@ -424,7 +424,7 @@ class donate
 				'doners'     => $doners,
 	        ];
 
-	        $insert = \lib\db\transactions::set($transaction_set);
+	        $insert = \dash\db\transactions::set($transaction_set);
 
 	        if($insert)
 	        {

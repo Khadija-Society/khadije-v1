@@ -11,13 +11,13 @@ class services
 	 */
 	public static function insert()
 	{
-		\lib\db\config::public_insert('services', ...func_get_args());
+		\dash\db\config::public_insert('services', ...func_get_args());
 		return \lib\db::insert_id();
 	}
 
 	public static function mulit_insert()
 	{
-		return \lib\db\config::public_multi_insert('services', ...func_get_args());
+		return \dash\db\config::public_multi_insert('services', ...func_get_args());
 	}
 
 	/**
@@ -27,7 +27,7 @@ class services
 	 */
 	public static function update()
 	{
-		return \lib\db\config::public_update('services', ...func_get_args());
+		return \dash\db\config::public_update('services', ...func_get_args());
 	}
 
 
@@ -38,7 +38,7 @@ class services
 	 */
 	public static function get()
 	{
-		$result = \lib\db\config::public_get('services', ...func_get_args());
+		$result = \dash\db\config::public_get('services', ...func_get_args());
 		return $result;
 	}
 
@@ -96,7 +96,7 @@ class services
 		];
 
 		$_options = array_merge($default_option, $_options);
-		return \lib\db\config::public_search('services', $_string, $_options);
+		return \dash\db\config::public_search('services', $_string, $_options);
 	}
 
 
@@ -109,7 +109,7 @@ class services
 	 */
 	public static function delete_where($_where)
 	{
-		$where = \lib\db\config::make_where($_where);
+		$where = \dash\db\config::make_where($_where);
 		if($where)
 		{
 			$query = "DELETE FROM services WHERE $where";

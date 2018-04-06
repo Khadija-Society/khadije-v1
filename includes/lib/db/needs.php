@@ -11,7 +11,7 @@ class needs
 	 */
 	public static function insert()
 	{
-		\lib\db\config::public_insert('needs', ...func_get_args());
+		\dash\db\config::public_insert('needs', ...func_get_args());
 		return \lib\db::insert_id();
 	}
 
@@ -23,7 +23,7 @@ class needs
 	 */
 	public static function update()
 	{
-		return \lib\db\config::public_update('needs', ...func_get_args());
+		return \dash\db\config::public_update('needs', ...func_get_args());
 	}
 
 
@@ -34,7 +34,7 @@ class needs
 	 */
 	public static function get()
 	{
-		$result = \lib\db\config::public_get('needs', ...func_get_args());
+		$result = \dash\db\config::public_get('needs', ...func_get_args());
 		return $result;
 	}
 
@@ -46,7 +46,7 @@ class needs
 	 */
 	public static function search()
 	{
-		return \lib\db\config::public_search('needs', ...func_get_args());
+		return \dash\db\config::public_search('needs', ...func_get_args());
 	}
 
 
@@ -59,7 +59,7 @@ class needs
 	 */
 	public static function delete_where($_where)
 	{
-		$where = \lib\db\config::make_where($_where);
+		$where = \dash\db\config::make_where($_where);
 		if($where)
 		{
 			$query = "DELETE FROM needs WHERE $where";

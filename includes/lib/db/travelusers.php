@@ -59,13 +59,13 @@ class travelusers
 	 */
 	public static function insert()
 	{
-		\lib\db\config::public_insert('travelusers', ...func_get_args());
+		\dash\db\config::public_insert('travelusers', ...func_get_args());
 		return \lib\db::insert_id();
 	}
 
 	public static function multi_insert()
 	{
-		return \lib\db\config::public_multi_insert('travelusers', ...func_get_args());
+		return \dash\db\config::public_multi_insert('travelusers', ...func_get_args());
 	}
 
 
@@ -76,7 +76,7 @@ class travelusers
 	 */
 	public static function update()
 	{
-		return \lib\db\config::public_update('travelusers', ...func_get_args());
+		return \dash\db\config::public_update('travelusers', ...func_get_args());
 	}
 
 
@@ -87,7 +87,7 @@ class travelusers
 	 */
 	public static function get()
 	{
-		$result = \lib\db\config::public_get('travelusers', ...func_get_args());
+		$result = \dash\db\config::public_get('travelusers', ...func_get_args());
 		return $result;
 	}
 
@@ -99,7 +99,7 @@ class travelusers
 	 */
 	public static function search()
 	{
-		return \lib\db\config::public_search('travelusers', ...func_get_args());
+		return \dash\db\config::public_search('travelusers', ...func_get_args());
 	}
 
 
@@ -112,7 +112,7 @@ class travelusers
 	 */
 	public static function delete_where($_where)
 	{
-		$where = \lib\db\config::make_where($_where);
+		$where = \dash\db\config::make_where($_where);
 		if($where)
 		{
 			$query = "DELETE FROM travelusers WHERE $where";

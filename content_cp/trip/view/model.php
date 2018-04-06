@@ -155,7 +155,7 @@ class model extends \content_cp\main2\model
 			return;
 		}
 
-		$load_user = \lib\db\users::get_by_id($travel_detail['user_id']);
+		$load_user = \dash\db\users::get_by_id($travel_detail['user_id']);
 		if(!isset($load_user['mobile']))
 		{
 			return;

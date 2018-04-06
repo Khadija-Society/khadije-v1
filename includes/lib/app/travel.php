@@ -38,7 +38,7 @@ class travel
 			'status' => 'enable',
 		];
 
-		$get = \lib\db\options::get($get_detail);
+		$get = \dash\db\options::get($get_detail);
 
 		$city_list = [];
 
@@ -63,7 +63,7 @@ class travel
 			'status' => 'enable',
 		];
 
-		$get = \lib\db\options::get($get_detail);
+		$get = \dash\db\options::get($get_detail);
 
 		$city_list = [];
 
@@ -98,7 +98,7 @@ class travel
 			'limit' => 1,
 		];
 
-		$get = \lib\db\options::get($get_detail);
+		$get = \dash\db\options::get($get_detail);
 
 		if(isset($get['id']))
 		{
@@ -113,7 +113,7 @@ class travel
 		{
 			if($update)
 			{
-				\lib\db\options::update(['status' => 'enable', 'value' => $_value], $get['id']);
+				\dash\db\options::update(['status' => 'enable', 'value' => $_value], $get['id']);
 			}
 			else
 			{
@@ -124,14 +124,14 @@ class travel
 					'value'  => $_value,
 					'status' => 'enable',
 				];
-				\lib\db\options::insert($insert_new);
+				\dash\db\options::insert($insert_new);
 			}
 		}
 		else
 		{
 			if($update)
 			{
-				\lib\db\options::update(['status' => 'disable', 'value' => $_value], $get['id']);
+				\dash\db\options::update(['status' => 'disable', 'value' => $_value], $get['id']);
 			}
 			else
 			{
@@ -142,7 +142,7 @@ class travel
 					'value'  => $_value,
 					'status' => 'disable',
 				];
-				\lib\db\options::insert($insert_new);
+				\dash\db\options::insert($insert_new);
 			}
 		}
 	}
@@ -166,7 +166,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_master_active', 'value' => 'trip_master_active', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_master_active', 'value' => 'trip_master_active', 'limit' => 1]);
 			if(isset($get['status']) && $get['status'] === 'enable')
 			{
 				return true;
@@ -184,7 +184,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_count_partner', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_count_partner', 'limit' => 1]);
 			if(isset($get['value']) && $get['value'] )
 			{
 				return $get['value'];
@@ -201,7 +201,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_max_awaiting', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_max_awaiting', 'limit' => 1]);
 			if(isset($get['value']) && $get['value'])
 			{
 				return $get['value'];
@@ -234,7 +234,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_master_active', 'value' => 'group_master_active', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'group_settings', 'key' => 'group_master_active', 'value' => 'group_master_active', 'limit' => 1]);
 			if(isset($get['status']) && $get['status'] === 'enable')
 			{
 				return true;
@@ -252,7 +252,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_count_partner_min', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'group_settings', 'key' => 'group_count_partner_min', 'limit' => 1]);
 			if(isset($get['value']) && $get['value'] )
 			{
 				return $get['value'];
@@ -269,7 +269,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_count_partner_max', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'group_settings', 'key' => 'group_count_partner_max', 'limit' => 1]);
 			if(isset($get['value']) && $get['value'] )
 			{
 				return $get['value'];
@@ -287,7 +287,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_max_awaiting', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'group_settings', 'key' => 'group_max_awaiting', 'limit' => 1]);
 			if(isset($get['value']) && $get['value'])
 			{
 				return $get['value'];
@@ -305,7 +305,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'group_settings', 'key' => 'group_getdate', 'value' => 'group_getdate', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'group_settings', 'key' => 'group_getdate', 'value' => 'group_getdate', 'limit' => 1]);
 			if(isset($get['status']) && $get['status'] === 'enable')
 			{
 				return true;
@@ -326,7 +326,7 @@ class travel
 	{
 		if($_action === 'get')
 		{
-			$get = \lib\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_getdate', 'value' => 'trip_getdate', 'limit' => 1]);
+			$get = \dash\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_getdate', 'value' => 'trip_getdate', 'limit' => 1]);
 			if(isset($get['status']) && $get['status'] === 'enable')
 			{
 				return true;
@@ -367,7 +367,7 @@ class travel
 
 	public static function cityplace_list()
 	{
-		$list = \lib\db\options::get(['cat' => self::$cityplace_cat]);
+		$list = \dash\db\options::get(['cat' => self::$cityplace_cat]);
 
 		$cityplace_list = [];
 
@@ -482,7 +482,7 @@ class travel
 			return false;
 		}
 
-		$list = \lib\db\options::get(['cat' => $cat]);
+		$list = \dash\db\options::get(['cat' => $cat]);
 
 		if(\lib\db\myoption::check_city_place_duplicate($_city, $_place, $cat))
 		{
@@ -497,7 +497,7 @@ class travel
 			'value' => $_city,
 			'meta'  => $_place,
 		];
-		\lib\db\options::insert($insert_args);
+		\dash\db\options::insert($insert_args);
 	}
 
 

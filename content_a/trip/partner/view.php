@@ -56,7 +56,7 @@ class view extends \content_a\main\view
 
 		if(is_numeric($id))
 		{
-			$this->data->child_detail = \lib\db\users::get(['id' => $id, 'parent' => \lib\user::id(), 'limit' => 1]);
+			$this->data->child_detail = \dash\db\users::get(['id' => $id, 'parent' => \lib\user::id(), 'limit' => 1]);
 		}
 
 		if(!$this->data->child_detail)

@@ -67,7 +67,7 @@ class model extends \content_a\main\model
 		{
 			if($mobile)
 			{
-				$check_user_mobile = \lib\db\users::get_by_mobile($mobile);
+				$check_user_mobile = \dash\db\users::get_by_mobile($mobile);
 				if(isset($check_user_mobile['id']))
 				{
 					$user_id = $check_user_mobile['id'];
@@ -76,7 +76,7 @@ class model extends \content_a\main\model
 				{
 					if($email)
 					{
-						$check_user_email = \lib\db\users::get_by_email($email);
+						$check_user_email = \dash\db\users::get_by_email($email);
 						if(isset($check_user_email['id']))
 						{
 							$user_id = $check_user_email['id'];
@@ -88,7 +88,7 @@ class model extends \content_a\main\model
 								'email'      => $email,
 								'displayname' => $fullname,
 							];
-							$user_id = \lib\db\users::signup($signup);
+							$user_id = \dash\db\users::signup($signup);
 						}
 					}
 					else
@@ -98,13 +98,13 @@ class model extends \content_a\main\model
 							'mobile'      => $mobile,
 							'displayname' => $fullname,
 						];
-						$user_id = \lib\db\users::signup($signup);
+						$user_id = \dash\db\users::signup($signup);
 					}
 				}
 			}
 			elseif($email)
 			{
-				$check_user_email = \lib\db\users::get_by_email($email);
+				$check_user_email = \dash\db\users::get_by_email($email);
 				if(isset($check_user_email['id']))
 				{
 					$user_id = $check_user_email['id'];
@@ -116,7 +116,7 @@ class model extends \content_a\main\model
 						'email'      => $email,
 						'displayname' => $fullname,
 					];
-					$user_id = \lib\db\users::signup($signup);
+					$user_id = \dash\db\users::signup($signup);
 				}
 			}
 			else

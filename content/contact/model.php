@@ -60,7 +60,7 @@ class model extends \mvc\model
 				$displayname = \dash\request::post("name");
 			}
 			// get email from user login session
-			$email = \lib\db\users::get_email($user_id);
+			$email = \dash\db\users::get_email($user_id);
 			// user not set users email, we get email from contact form
 			if(!$email)
 			{
@@ -100,14 +100,14 @@ class model extends \mvc\model
 			if($mobile)
 			{
 				// check existing mobile
-				$exists_user = \lib\db\users::get_by_mobile($mobile);
+				$exists_user = \dash\db\users::get_by_mobile($mobile);
 				// register if the mobile is valid
 				if(!$exists_user || empty($exists_user))
 				{
 					// signup user by site_guest
-					$user_id = \lib\db\users::signup(['mobile' => $mobile, 'displayname' => $displayname]);
+					$user_id = \dash\db\users::signup(['mobile' => $mobile, 'displayname' => $displayname]);
 					// save log by caller 'user:send:contact:register:by:mobile'
-					\lib\db\logs::set('user:send:contact:register:by:mobile', $user_id, $log_meta);
+					\dash\db\logs::set('user:send:contact:register:by:mobile', $user_id, $log_meta);
 				}
 				elseif(isset($exists_user['id']))
 				{
@@ -132,7 +132,7 @@ class model extends \mvc\model
 			'user_id' => $user_id
 		];
 		// insert comments
-		$result = \lib\db\comments::insert($args);
+		$result = \dash\db\comments::insert($args);
 		if($result)
 		{
 			// $mail =
@@ -143,12 +143,12 @@ class model extends \mvc\model
 			// ];
 			// \lib\mail::send($mail);
 
-			\lib\db\logs::set('user:send:contact', $user_id, $log_meta);
+			\dash\db\logs::set('user:send:contact', $user_id, $log_meta);
 			\lib\notif::ok(T_("Thank You For contacting us"));
 		}
 		else
 		{
-			\lib\db\logs::set('user:send:contact:fail', $user_id, $log_meta);
+			\dash\db\logs::set('user:send:contact:fail', $user_id, $log_meta);
 			\lib\notif::error(T_("We could'nt save the contact"));
 		}
 	}
