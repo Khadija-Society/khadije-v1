@@ -13,7 +13,7 @@ class view extends \mvc\view
 	{
 		if(isset($_data['birthday']))
 		{
-			$_data['birthday'] = \lib\utility\jdate::to_gregorian($_data['birthday']);
+			$_data['birthday'] = \dash\utility\jdate::to_gregorian($_data['birthday']);
 		}
 		return $_data;
 	}

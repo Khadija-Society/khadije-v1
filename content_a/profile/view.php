@@ -47,14 +47,14 @@ class view extends \content_a\main\view
 		];
 		$this->data->parent_list = implode(',' ,array_values($parent_list));
 
-		$country_list = \lib\utility\location\countres::list('name', 'name - localname');
+		$country_list = \dash\utility\location\countres::list('name', 'name - localname');
 		$this->data->country_list = implode(',', $country_list);
 
-		$city_list = \lib\utility\location\cites::list('localname');
+		$city_list = \dash\utility\location\cites::list('localname');
 		$city_list = array_unique($city_list);
 		$this->data->city_list = implode(',', $city_list);
 
-		$provice_list = \lib\utility\location\provinces::list('localname');
+		$provice_list = \dash\utility\location\provinces::list('localname');
 		$provice_list = array_unique($provice_list);
 		$this->data->provice_list = implode(',', $provice_list);
 	}

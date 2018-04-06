@@ -72,7 +72,7 @@ class model extends \content_cp\main2\model
 		elseif(\dash\request::post('edit_travel') === 'edit_travel')
 		{
 			$start_date = \dash\request::post('startdate');
-			$start_date = \lib\utility\convert::to_en_number($start_date);
+			$start_date = \dash\utility\convert::to_en_number($start_date);
 			if($start_date && strtotime($start_date) === false)
 			{
 				\lib\notif::error(T_("Invalid start_date"), 'start_date');
@@ -89,7 +89,7 @@ class model extends \content_cp\main2\model
 			}
 
 			$end_date   = \dash\request::post('enddate');
-			$end_date   = \lib\utility\convert::to_en_number($end_date);
+			$end_date   = \dash\utility\convert::to_en_number($end_date);
 			if($end_date && strtotime($end_date) === false)
 			{
 				\lib\notif::error(T_("Invalid end_date"), 'end_date');
@@ -160,7 +160,7 @@ class model extends \content_cp\main2\model
 		{
 			return;
 		}
-		if(!\lib\utility\filter::mobile($load_user['mobile']))
+		if(!\dash\utility\filter::mobile($load_user['mobile']))
 		{
 			return;
 		}
@@ -206,7 +206,7 @@ class model extends \content_cp\main2\model
 
 		if($msg && $mobile)
 		{
-			\lib\utility\sms::send($mobile, $msg);
+			\dash\utility\sms::send($mobile, $msg);
 		}
 	}
 

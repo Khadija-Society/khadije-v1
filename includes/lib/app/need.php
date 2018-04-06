@@ -39,7 +39,7 @@ class need
 
 		$request = \lib\app::request('count');
 		$request = trim($request);
-		$request = \lib\utility\convert::to_en_number($request);
+		$request = \dash\utility\convert::to_en_number($request);
 		if(!$is_service && !is_numeric($request))
 		{
 			\lib\notif::error(T_("Please set a valid request"), 'request');
@@ -57,7 +57,7 @@ class need
 
 		$amount = \lib\app::request('amount');
 		$amount = trim($amount);
-		$amount = \lib\utility\convert::to_en_number($amount);
+		$amount = \dash\utility\convert::to_en_number($amount);
 		if(!$is_service && $amount && !is_numeric($amount))
 		{
 			\lib\notif::error(T_("Please set a valid amount"), 'amount');

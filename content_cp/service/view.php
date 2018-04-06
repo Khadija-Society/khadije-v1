@@ -51,7 +51,7 @@ class view extends \content_cp\main2\view
 
 		if($export)
 		{
-			\lib\utility\export::csv(['name' => 'export_service', 'data' => $this->data->service_list]);
+			\dash\utility\export::csv(['name' => 'export_service', 'data' => $this->data->service_list]);
 		}
 
 		$this->data->sort_link = self::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/service');

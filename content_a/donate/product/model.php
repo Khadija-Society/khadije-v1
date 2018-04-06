@@ -43,7 +43,7 @@ class model extends \content_a\main\model
 		}
 
 		$mobile = \dash\request::post('mobile');
-		if($mobile && !\lib\utility\filter::mobile($mobile))
+		if($mobile && !\dash\utility\filter::mobile($mobile))
 		{
 			\lib\notif::error(T_("Please set a valid mobile number"), 'mobile');
 			return false;
@@ -51,7 +51,7 @@ class model extends \content_a\main\model
 
 		if($mobile)
 		{
-			$mobile = \lib\utility\filter::mobile($mobile);
+			$mobile = \dash\utility\filter::mobile($mobile);
 		}
 
 		$amount = \dash\request::post('amount');
@@ -136,7 +136,7 @@ class model extends \content_a\main\model
 			]
 		];
 
-		\lib\utility\payment\pay::start($user_id, 'zarinpal', \dash\request::post('amount'), $meta);
+		\dash\utility\payment\pay::start($user_id, 'zarinpal', \dash\request::post('amount'), $meta);
 	}
 }
 ?>

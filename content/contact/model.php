@@ -94,7 +94,7 @@ class model extends \mvc\model
 		 */
 		if($mobile && !\lib\user::login())
 		{
-			$mobile = \lib\utility\filter::mobile($mobile);
+			$mobile = \dash\utility\filter::mobile($mobile);
 
 			// check valid mobile
 			if($mobile)

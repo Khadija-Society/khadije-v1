@@ -11,7 +11,7 @@ class model extends \content_a\main\model
 		{
 			\lib\db\travels::update(['status' => 'awaiting'], \dash\request::get('trip'));
 			// send next
-			if(\lib\user::detail('mobile') && \lib\utility\filter::mobile(\lib\user::detail('mobile')))
+			if(\lib\user::detail('mobile') && \dash\utility\filter::mobile(\lib\user::detail('mobile')))
 			{
 				$travel_detail = \lib\db\travels::get(['id' => \dash\request::get('trip'), 'limit' => 1]);
 				if(isset($travel_detail['place']))
@@ -24,7 +24,7 @@ class model extends \content_a\main\model
 					$msg = "درخواست شما برای تشرف با موفقیت ثبت شد.";
 				}
 
-				\lib\utility\sms::send(\lib\user::detail('mobile'), $msg);
+				\dash\utility\sms::send(\lib\user::detail('mobile'), $msg);
 			}
 
 			\lib\redirect::to(\dash\url::here(). '/trip?success=yes');

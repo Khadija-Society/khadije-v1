@@ -75,7 +75,7 @@ class service
 		}
 
 		$startdate = \lib\app::request('startdate');
-		$startdate = \lib\utility\convert::to_en_number($startdate);
+		$startdate = \dash\utility\convert::to_en_number($startdate);
 		if($startdate && strtotime($startdate) === false)
 		{
 			\lib\notif::error(T_("Invalid startdate"), 'startdate');
@@ -88,7 +88,7 @@ class service
 
 
 		$enddate = \lib\app::request('enddate');
-		$enddate = \lib\utility\convert::to_en_number($enddate);
+		$enddate = \dash\utility\convert::to_en_number($enddate);
 		if($enddate && strtotime($enddate) === false)
 		{
 			\lib\notif::error(T_("Invalid enddate"), 'enddate');

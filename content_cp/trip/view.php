@@ -57,7 +57,7 @@ class view extends \content_cp\main2\view
 
 		if($export)
 		{
-			\lib\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->trip_list]);
+			\dash\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->trip_list]);
 		}
 
 		$this->data->sort_link = self::make_sort_link(\lib\app\travel::$sort_field, \dash\url::here(). '/trip');

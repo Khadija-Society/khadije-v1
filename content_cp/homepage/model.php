@@ -13,7 +13,7 @@ class model extends \content_cp\main2\model
 			return false;
 		}
 
-		$qom = \lib\utility\convert::to_en_number($qom);
+		$qom = \dash\utility\convert::to_en_number($qom);
 		if(!is_numeric($qom))
 		{
 			\lib\notif::error(T_("Please set the number of qom"));
@@ -30,7 +30,7 @@ class model extends \content_cp\main2\model
 			return false;
 		}
 
-		$mashhad = \lib\utility\convert::to_en_number($mashhad);
+		$mashhad = \dash\utility\convert::to_en_number($mashhad);
 		if(!is_numeric($mashhad))
 		{
 			\lib\notif::error(T_("Please set the number of mashhad"));
@@ -47,7 +47,7 @@ class model extends \content_cp\main2\model
 			return false;
 		}
 
-		$karbala = \lib\utility\convert::to_en_number($karbala);
+		$karbala = \dash\utility\convert::to_en_number($karbala);
 		if(!is_numeric($karbala))
 		{
 			\lib\notif::error(T_("Please set the number of karbala"));

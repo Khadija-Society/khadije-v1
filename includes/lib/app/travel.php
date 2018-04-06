@@ -549,7 +549,7 @@ class travel
 
 
 		$startdate = \lib\app::request('startdate');
-		$startdate = \lib\utility\convert::to_en_number($startdate);
+		$startdate = \dash\utility\convert::to_en_number($startdate);
 
 		if($startdate && strtotime($startdate) === false)
 		{
@@ -563,7 +563,7 @@ class travel
 		}
 
 		$enddate = \lib\app::request('enddate');
-		$enddate = \lib\utility\convert::to_en_number($enddate);
+		$enddate = \dash\utility\convert::to_en_number($enddate);
 
 		if($enddate && strtotime($enddate) === false)
 		{

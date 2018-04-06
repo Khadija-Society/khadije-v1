@@ -38,7 +38,7 @@ class myuser
 		}
 
 		$birthday = \lib\app::request('birthday');
-		$birthday = \lib\utility\convert::to_en_number($birthday);
+		$birthday = \dash\utility\convert::to_en_number($birthday);
 		if(!$birthday)
 		{
 			\lib\notif::error(T_("Birthday is required"), 'birthday');
@@ -93,7 +93,7 @@ class myuser
 		}
 
 
-		$nationalcode = \lib\utility\convert::to_en_number($nationalcode);
+		$nationalcode = \dash\utility\convert::to_en_number($nationalcode);
 
 		if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
 		{
@@ -103,7 +103,7 @@ class myuser
 
 		if($nationalcode)
 		{
-			if(\lib\utility\filter::nationalcode($nationalcode))
+			if(\dash\utility\filter::nationalcode($nationalcode))
 			{
 				\lib\db\nationalcodes::add($nationalcode);
 			}
@@ -128,7 +128,7 @@ class myuser
 		}
 
 		$pasportdate = \lib\app::request('pasportdate');
-		$pasportdate = \lib\utility\convert::to_en_number($pasportdate);
+		$pasportdate = \dash\utility\convert::to_en_number($pasportdate);
 		if($pasportdate && strtotime($pasportdate) === false)
 		{
 			\lib\notif::error(T_("Invalid arguments pasportdate"), 'pasportdate');
@@ -252,7 +252,7 @@ class myuser
 			return false;
 		}
 
-		$provice_list = \lib\utility\location\provinces::list('localname');
+		$provice_list = \dash\utility\location\provinces::list('localname');
 		$provice_list = array_unique($provice_list);
 
 		if($province && !in_array($province, $provice_list))

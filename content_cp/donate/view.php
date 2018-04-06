@@ -54,7 +54,7 @@ class view extends \content_cp\main2\view
 
 		if($export)
 		{
-			\lib\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->donate_list]);
+			\dash\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->donate_list]);
 		}
 
 

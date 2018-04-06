@@ -15,7 +15,7 @@ class donate
 			$msg = '';
 			if($_amount)
 			{
-				$_amount = \lib\utility\convert::to_fa_number($_amount);
+				$_amount = \dash\utility\convert::to_fa_number($_amount);
 				$msg .= "نذر شما قبول\n";
 				$msg .= "مبلغ ". $_amount. " تومان دریافت شد";
 			}
@@ -25,7 +25,7 @@ class donate
 				$msg .= "موفق باشید";
 			}
 
-			\lib\utility\sms::send($mobile, $msg);
+			\dash\utility\sms::send($mobile, $msg);
 		}
 	}
 
@@ -298,7 +298,7 @@ class donate
 
 		$mobile = \lib\app::request('mobile');
 		$mobile = trim($mobile);
-		if($mobile && !\lib\utility\filter::mobile($mobile))
+		if($mobile && !\dash\utility\filter::mobile($mobile))
 		{
 			\lib\notif::error(T_("Please set a valid mobile number"), 'mobile');
 			return false;
@@ -306,7 +306,7 @@ class donate
 
 		if($mobile)
 		{
-			$mobile = \lib\utility\filter::mobile($mobile);
+			$mobile = \dash\utility\filter::mobile($mobile);
 		}
 
 		$amount = \lib\app::request('amount');
@@ -380,11 +380,11 @@ class donate
 			}
 		}
 
-		if($mobile && \lib\utility\filter::mobile($mobile))
+		if($mobile && \dash\utility\filter::mobile($mobile))
 		{
 			\lib\session::set('temp_mobile_sms_verify_payment', $mobile);
 		}
-		elseif(\lib\user::id() && \lib\user::detail('mobile') && \lib\utility\filter::mobile(\lib\user::detail('mobile')))
+		elseif(\lib\user::id() && \lib\user::detail('mobile') && \dash\utility\filter::mobile(\lib\user::detail('mobile')))
 		{
 			\lib\session::set('temp_mobile_sms_verify_payment', \lib\user::detail('mobile'));
 		}
@@ -437,7 +437,7 @@ class donate
 		}
 		else
 		{
-			\lib\utility\payment\pay::start($user_id, \lib\app::request('bank'), \lib\app::request('amount'), $meta);
+			\dash\utility\payment\pay::start($user_id, \lib\app::request('bank'), \lib\app::request('amount'), $meta);
 		}
 	}
 }
