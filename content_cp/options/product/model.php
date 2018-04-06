@@ -13,7 +13,7 @@ class model extends \addons\content_cp\main\model
 	{
 		if(\dash\request::files('thumb'))
 		{
-			$uploaded_file = \lib\app\file::upload(['debug' => false, 'upload_name' => 'thumb']);
+			$uploaded_file = \dash\app\file::upload(['debug' => false, 'upload_name' => 'thumb']);
 
 			if(isset($uploaded_file['url']))
 			{

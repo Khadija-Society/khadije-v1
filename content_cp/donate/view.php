@@ -50,7 +50,7 @@ class view extends \content_cp\main2\view
 			$args['pagenation'] = false;
 		}
 
-		$this->data->donate_list = \lib\app\transaction::list($search_string, $args);
+		$this->data->donate_list = \dash\app\transaction::list($search_string, $args);
 
 		if($export)
 		{
@@ -58,10 +58,10 @@ class view extends \content_cp\main2\view
 		}
 
 
-		$this->data->sort_link = self::make_sort_link(\lib\app\transaction::$sort_field, \dash\url::here(). '/donate');
+		$this->data->sort_link = self::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate');
 
-		$this->data->total_paid = \lib\app\transaction::total_paid();
-		$this->data->total_paid_date = \lib\app\transaction::total_paid_date(date("Y-m-d"));
+		$this->data->total_paid = \dash\app\transaction::total_paid();
+		$this->data->total_paid_date = \dash\app\transaction::total_paid_date(date("Y-m-d"));
 
 		if(isset($this->controller->pagnation))
 		{
