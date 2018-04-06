@@ -359,7 +359,7 @@ class travel
 			return false;
 		}
 
-		$travele_list = \lib\db::get("SELECT * FROM travels WHERE `user_id` = $user_id AND type = '$_type' ORDER BY id DESC LIMIT 50 ");
+		$travele_list = \dash\db::get("SELECT * FROM travels WHERE `user_id` = $user_id AND type = '$_type' ORDER BY id DESC LIMIT 50 ");
 
 		return $travele_list;
 	}

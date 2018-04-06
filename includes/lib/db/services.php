@@ -12,7 +12,7 @@ class services
 	public static function insert()
 	{
 		\dash\db\config::public_insert('services', ...func_get_args());
-		return \lib\db::insert_id();
+		return \dash\db::insert_id();
 	}
 
 	public static function mulit_insert()
@@ -113,7 +113,7 @@ class services
 		if($where)
 		{
 			$query = "DELETE FROM services WHERE $where";
-			return \lib\db::query($query);
+			return \dash\db::query($query);
 		}
 		return false;
 	}

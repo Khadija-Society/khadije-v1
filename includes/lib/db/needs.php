@@ -12,7 +12,7 @@ class needs
 	public static function insert()
 	{
 		\dash\db\config::public_insert('needs', ...func_get_args());
-		return \lib\db::insert_id();
+		return \dash\db::insert_id();
 	}
 
 
@@ -63,7 +63,7 @@ class needs
 		if($where)
 		{
 			$query = "DELETE FROM needs WHERE $where";
-			return \lib\db::query($query);
+			return \dash\db::query($query);
 		}
 		return false;
 	}

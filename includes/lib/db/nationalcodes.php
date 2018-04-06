@@ -21,7 +21,7 @@ class nationalcodes
 			WHERE
 				nationalcodes.nationalcode IN ($_all_national_code)
 		";
-		return \lib\db::query($query);
+		return \dash\db::query($query);
 
 	}
 
@@ -35,7 +35,7 @@ class nationalcodes
 		$_all_national_code = implode(',', $_all_national_code);
 
 		$query = "SELECT * FROM nationalcodes WHERE nationalcodes.nationalcode IN ($_all_national_code)";
-		return \lib\db::get($query);
+		return \dash\db::get($query);
 	}
 
 	public static function add($_nationalcode)
@@ -43,7 +43,7 @@ class nationalcodes
 		if($_nationalcode)
 		{
 			$query = "INSERT IGNORE INTO nationalcodes SET nationalcodes.nationalcode = '$_nationalcode' ";
-			\lib\db::query($query);
+			\dash\db::query($query);
 		}
 	}
 
@@ -55,7 +55,7 @@ class nationalcodes
 	public static function insert()
 	{
 		\dash\db\config::public_insert('nationalcodes', ...func_get_args());
-		return \lib\db::insert_id();
+		return \dash\db::insert_id();
 	}
 
 
@@ -123,7 +123,7 @@ class nationalcodes
 		if($where)
 		{
 			$query = "DELETE FROM nationalcodes WHERE $where";
-			return \lib\db::query($query);
+			return \dash\db::query($query);
 		}
 		return false;
 	}

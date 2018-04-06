@@ -420,7 +420,7 @@ class myuser
 
 
 		\dash\db\users::insert($args);
-		$user_id = \lib\db::insert_id();
+		$user_id = \dash\db::insert_id();
 
 		if(!$user_id)
 		{

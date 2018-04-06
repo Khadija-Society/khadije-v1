@@ -395,7 +395,7 @@ class service
 		{
 			return false;
 		}
-		return \lib\db::get("SELECT * FROM services WHERE services.user_id = $user_id ORDER BY id DESC LIMIT 50");
+		return \dash\db::get("SELECT * FROM services WHERE services.user_id = $user_id ORDER BY id DESC LIMIT 50");
 	}
 }
 ?>

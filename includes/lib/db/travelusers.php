@@ -8,7 +8,7 @@ class travelusers
 	{
 		$query = "DELETE FROM travelusers WHERE travelusers.id = $_id AND travelusers.travel_id = $_travel_id LIMIT 1";
 
-		$result = \lib\db::query($query);
+		$result = \dash\db::query($query);
 
 		return $result;
 	}
@@ -31,7 +31,7 @@ class travelusers
 			WHERE
 			travelusers.travel_id = $_travel_id
 		";
-		$result = \lib\db::get($query);
+		$result = \dash\db::get($query);
 		return $result;
 	}
 
@@ -47,7 +47,7 @@ class travelusers
 			users.nationalcode    = $_national_code
 		";
 
-		$result = \lib\db::get($query);
+		$result = \dash\db::get($query);
 
 		return $result;
 	}
@@ -60,7 +60,7 @@ class travelusers
 	public static function insert()
 	{
 		\dash\db\config::public_insert('travelusers', ...func_get_args());
-		return \lib\db::insert_id();
+		return \dash\db::insert_id();
 	}
 
 	public static function multi_insert()
@@ -116,7 +116,7 @@ class travelusers
 		if($where)
 		{
 			$query = "DELETE FROM travelusers WHERE $where";
-			return \lib\db::query($query);
+			return \dash\db::query($query);
 		}
 		return false;
 	}

@@ -51,7 +51,7 @@ class model extends \content_cp\main2\model
 				}
 
 				$query = implode(";", $query);
-				\lib\db::query($query, true, ['multi_query' => true]);
+				\dash\db::query($query, true, ['multi_query' => true]);
 
 				\lib\notif::ok(T_("Travel this nationalcode to :city saved", ['city' => T_($_city)]));
 
