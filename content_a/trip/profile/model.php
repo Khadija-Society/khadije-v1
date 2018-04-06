@@ -31,7 +31,7 @@ class model extends \content_a\main\model
 		if(\lib\engine\process::status())
 		{
 			\lib\notif::ok(T_("Your detail was saved"));
-			\lib\redirect::to(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
+			\lib\redirect::to(\dash\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
 		}
 
 	}

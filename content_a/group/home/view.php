@@ -9,7 +9,7 @@ class view extends \content_a\main\view
 		$this->data->page['title'] = T_("List of your group request");
 		$this->data->page['desc']  = T_('You can check your last request and cancel them or add new request');
 
-		$this->data->page['badge']['link'] = \lib\url::here(). '/group/request';
+		$this->data->page['badge']['link'] = \dash\url::here(). '/group/request';
 		$this->data->page['badge']['text'] = T_('register for new group request');
 
 
@@ -17,7 +17,7 @@ class view extends \content_a\main\view
 
 		if(!$this->data->group_list || empty($this->data->group_list))
 		{
-			\lib\redirect::to(\lib\url::here().'/group/request');
+			\lib\redirect::to(\dash\url::here().'/group/request');
 			return;
 		}
 	}

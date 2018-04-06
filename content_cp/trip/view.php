@@ -9,10 +9,10 @@ class view extends \content_cp\main2\view
 		$this->data->page['title'] = T_("Request list");
 		$this->data->page['desc']  = T_("check request and update status of each request");
 
-		$export_link = ' <a href="'. \lib\url::here(). '/trip?export=true">'. T_("Export"). '</a>';
+		$export_link = ' <a href="'. \dash\url::here(). '/trip?export=true">'. T_("Export"). '</a>';
 		$this->data->page['desc'] .= $export_link;
 
-		$this->data->page['badge']['link'] = \lib\url::here(). '/trip/options';
+		$this->data->page['badge']['link'] = \dash\url::here(). '/trip/options';
 		$this->data->page['badge']['text'] = T_('Options');
 
 		$this->data->bodyclass       = 'unselectable siftal';
@@ -60,7 +60,7 @@ class view extends \content_cp\main2\view
 			\lib\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->trip_list]);
 		}
 
-		$this->data->sort_link = self::make_sort_link(\lib\app\travel::$sort_field, \lib\url::here(). '/trip');
+		$this->data->sort_link = self::make_sort_link(\lib\app\travel::$sort_field, \dash\url::here(). '/trip');
 
 		if(isset($this->controller->pagnation))
 		{

@@ -8,7 +8,7 @@ class controller extends \content_a\main\controller
 	{
 		if(!\lib\user::login())
 		{
-			\lib\redirect::to(\lib\url::base(). '/enter');
+			\lib\redirect::to(\dash\url::base(). '/enter');
 			return;
 		}
 

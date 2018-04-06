@@ -10,7 +10,7 @@ class view extends \content_cp\main2\view
 
 		$this->data->page['special'] = true;
 
-		$this->data->page['badge']['link'] = \lib\url::here(). '/options/product';
+		$this->data->page['badge']['link'] = \dash\url::here(). '/options/product';
 		$this->data->page['badge']['text'] = T_('Add new need');
 
 		$this->data->bodyclass       = 'unselectable siftal';

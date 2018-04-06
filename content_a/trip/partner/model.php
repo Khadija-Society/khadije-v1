@@ -27,7 +27,7 @@ class model extends \content_a\main\model
 				\lib\utility\sms::send(\lib\user::detail('mobile'), $msg);
 			}
 
-			\lib\redirect::to(\lib\url::here(). '/trip?success=yes');
+			\lib\redirect::to(\dash\url::here(). '/trip?success=yes');
 			return;
 		}
 
@@ -36,7 +36,7 @@ class model extends \content_a\main\model
 			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('trip'));
 			if(\lib\engine\process::status())
 			{
-				\lib\redirect::to(\lib\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
+				\lib\redirect::to(\dash\url::here(). '/trip/partner?trip='. \lib\request::get('trip'));
 			}
 		}
 		else

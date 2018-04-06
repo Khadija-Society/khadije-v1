@@ -8,7 +8,7 @@ class controller extends \mvc\controller
 	{
 		if(!\lib\user::login())
 		{
-			\lib\redirect::to(\lib\url::base(). '/enter/signup?referer='. \lib\url::pwd());
+			\lib\redirect::to(\dash\url::base(). '/enter/signup?referer='. \dash\url::pwd());
 			return;
 		}
 	}

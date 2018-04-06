@@ -5,9 +5,9 @@ class controller extends \lib\controller
 {
 	public function project()
 	{
-		if(\lib\url::directory() === 'main')
+		if(\dash\url::directory() === 'main')
 		{
-			\lib\redirect::to(\lib\url::here());
+			\lib\redirect::to(\dash\url::here());
 			\lib\header::status(404);
 		}
 	}

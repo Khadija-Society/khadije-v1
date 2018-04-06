@@ -8,7 +8,7 @@ class model extends \mvc\model
 	{
 		$meta =
 		[
-			'turn_back'   => \lib\url::base(). '/doners',
+			'turn_back'   => \dash\url::base(). '/doners',
 			'other_field' =>
 			[
 				// 'hazinekard' => $way,

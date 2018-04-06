@@ -9,7 +9,7 @@ class view extends \lib\view
 
 
 		$this->data->site['title']           = T_("Khadije Charity");
-		// if(\lib\url::isLocal())
+		// if(\dash\url::isLocal())
 		// {
 		// 	$this->data->site['title']           = T_("Test");
 		// }
@@ -28,7 +28,7 @@ class view extends \lib\view
 		$this->data->template['share']       = 'content/template/share.html';
 
 
-		if(\lib\url::content() === null)
+		if(\dash\url::content() === null)
 		{
 			// get total uses
 			$total_users                     = 10; // intval(\lib\db\userteams::total_userteam());

@@ -9,7 +9,7 @@ class view extends \content_cp\main2\view
 		$this->data->page['title'] = T_("View request detail");
 		$this->data->page['desc']  = T_("check request and update status");
 
-		$this->data->page['badge']['link'] = \lib\url::here(). '/trip';
+		$this->data->page['badge']['link'] = \dash\url::here(). '/trip';
 		$this->data->page['badge']['text'] = T_('Back to request list');
 
 		$this->data->bodyclass = 'unselectable siftal';

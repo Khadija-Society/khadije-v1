@@ -40,7 +40,7 @@ class model extends \content_cp\main2\model
 			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("Your Child was saved"));
-				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
+				\lib\redirect::to(\dash\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 
 		}
@@ -66,7 +66,7 @@ class model extends \content_cp\main2\model
 			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("The partner was updated"));
-				\lib\redirect::to(\lib\url::here(). '/trip/view?id='. \lib\request::get('id'));
+				\lib\redirect::to(\dash\url::here(). '/trip/view?id='. \lib\request::get('id'));
 			}
 		}
 		elseif(\lib\request::post('edit_travel') === 'edit_travel')

@@ -9,10 +9,10 @@ class view extends \content_cp\main2\view
 		$this->data->page['title'] = T_("Donation list");
 		$this->data->page['desc']  = T_("check last donates and monitor all donate transaction");
 
-		$export_link = ' <a href="'. \lib\url::here(). '/donate?export=true">'. T_("Export"). '</a>';
+		$export_link = ' <a href="'. \dash\url::here(). '/donate?export=true">'. T_("Export"). '</a>';
 		$this->data->page['desc'] .= $export_link;
 
-		$this->data->page['badge']['link'] = \lib\url::here(). '/donate/options';
+		$this->data->page['badge']['link'] = \dash\url::here(). '/donate/options';
 		$this->data->page['badge']['text'] = T_('Options');
 
 
@@ -58,7 +58,7 @@ class view extends \content_cp\main2\view
 		}
 
 
-		$this->data->sort_link = self::make_sort_link(\lib\app\transaction::$sort_field, \lib\url::here(). '/donate');
+		$this->data->sort_link = self::make_sort_link(\lib\app\transaction::$sort_field, \dash\url::here(). '/donate');
 
 		$this->data->total_paid = \lib\app\transaction::total_paid();
 		$this->data->total_paid_date = \lib\app\transaction::total_paid_date(date("Y-m-d"));

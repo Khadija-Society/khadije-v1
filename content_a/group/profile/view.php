@@ -9,7 +9,7 @@ class view extends \content_a\main\view
 		$this->data->page['title'] = T_("Register for new group request"). ' | '. T_('Step 2');
 		$this->data->page['desc']  = T_('fill your personal data in this step'). ' '. T_('In next step fill your partner data');
 
-		// $this->data->page['badge']['link'] = \lib\url::here(). '/group';
+		// $this->data->page['badge']['link'] = \dash\url::here(). '/group';
 		// $this->data->page['badge']['text'] = T_('check your group requests');
 
 
