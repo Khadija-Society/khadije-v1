@@ -6,10 +6,10 @@ class model extends \content_a\main\model
 
 	public function post_trip()
 	{
-		if(\lib\request::post('key') && \lib\request::post('type') === 'cancel' && ctype_digit(\lib\request::post('key')))
+		if(\dash\request::post('key') && \dash\request::post('type') === 'cancel' && ctype_digit(\dash\request::post('key')))
 		{
 
-			$key = \lib\request::post('key');
+			$key = \dash\request::post('key');
 
 			$check_valid_key = \lib\db\travels::get(['id' => $key, 'type' => 'family', 'user_id' => \lib\user::id(), 'limit' => 1]);
 

@@ -11,7 +11,7 @@ class model extends \addons\content_cp\main\model
 	 */
 	public static function upload_thumb()
 	{
-		if(\lib\request::files('thumb'))
+		if(\dash\request::files('thumb'))
 		{
 			$uploaded_file = \lib\app\file::upload(['debug' => false, 'upload_name' => 'thumb']);
 
@@ -33,11 +33,11 @@ class model extends \addons\content_cp\main\model
 	{
 
 		$post           = [];
-		$post['title']  = \lib\request::post('title');
-		$post['count']  = \lib\request::post('count');
-		$post['amount'] = \lib\request::post('amount');
-		$post['desc']   = \lib\request::post('desc');
-		$post['status'] = \lib\request::post('status') ? 'enable' : 'disable' ;
+		$post['title']  = \dash\request::post('title');
+		$post['count']  = \dash\request::post('count');
+		$post['amount'] = \dash\request::post('amount');
+		$post['desc']   = \dash\request::post('desc');
+		$post['status'] = \dash\request::post('status') ? 'enable' : 'disable' ;
 		$post['type']   = 'product';
 
 		$file = self::upload_thumb();
@@ -51,9 +51,9 @@ class model extends \addons\content_cp\main\model
 			$post['fileurl'] = $file;
 		}
 
-		if(\lib\request::get('edit'))
+		if(\dash\request::get('edit'))
 		{
-			$id = \lib\request::get('edit');
+			$id = \dash\request::get('edit');
 			\lib\app\need::edit($id, $post);
 		}
 		else
@@ -63,7 +63,7 @@ class model extends \addons\content_cp\main\model
 
 		if(\lib\engine\process::status())
 		{
-			if(\lib\request::get('edit'))
+			if(\dash\request::get('edit'))
 			{
 				\lib\notif::ok(T_("Way successfully edited"));
 			}

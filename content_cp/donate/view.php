@@ -20,8 +20,8 @@ class view extends \content_cp\main2\view
 
 		$args =
 		[
-			'order'          => \lib\request::get('order'),
-			'sort'           => \lib\request::get('sort'),
+			'order'          => \dash\request::get('order'),
+			'sort'           => \dash\request::get('sort'),
 		];
 
 		if(!$args['order'])
@@ -36,7 +36,7 @@ class view extends \content_cp\main2\view
 
 		$args['donate'] = 'cash';
 		$args['condition'] = 'ok';
-		$search_string            = \lib\request::get('q');
+		$search_string            = \dash\request::get('q');
 
 		if($search_string)
 		{
@@ -44,7 +44,7 @@ class view extends \content_cp\main2\view
 		}
 
 		$export = false;
-		if(\lib\request::get('export') === 'true')
+		if(\dash\request::get('export') === 'true')
 		{
 			$export = true;
 			$args['pagenation'] = false;

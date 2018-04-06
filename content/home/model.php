@@ -19,7 +19,7 @@ class model extends \mvc\model
 			]
 		];
 
-		\lib\utility\payment\pay::start(\lib\user::id(), 'asanpardakht', \lib\request::post('quickpay'), $meta);
+		\lib\utility\payment\pay::start(\lib\user::id(), 'asanpardakht', \dash\request::post('quickpay'), $meta);
 	}
 
 }

@@ -7,49 +7,49 @@ class model extends \content_cp\main2\model
 	public static function getPost()
 	{
 		$post                    = [];
-		$post['firstname']       = \lib\request::post('name');
-		$post['lastname']        = \lib\request::post('lastName');
-		$post['father']          = \lib\request::post('father');
-		$post['nationalcode']    = \lib\request::post('nationalcode');
-		$post['birthday']        = \lib\request::post('birthday');
-		$post['gender']          = \lib\request::post('gender') ? 'female' : 'male';
-		$post['married']         = \lib\request::post('Married') ? 'married' : 'single';
-		$post['nesbat']          = \lib\request::post('nesbat');
+		$post['firstname']       = \dash\request::post('name');
+		$post['lastname']        = \dash\request::post('lastName');
+		$post['father']          = \dash\request::post('father');
+		$post['nationalcode']    = \dash\request::post('nationalcode');
+		$post['birthday']        = \dash\request::post('birthday');
+		$post['gender']          = \dash\request::post('gender') ? 'female' : 'male';
+		$post['married']         = \dash\request::post('Married') ? 'married' : 'single';
+		$post['nesbat']          = \dash\request::post('nesbat');
 		return $post;
 	}
 
 
 	public function post_trip()
 	{
-		if(\lib\request::post('type') === 'remove' && \lib\request::post('key') != '' && ctype_digit(\lib\request::post('key')))
+		if(\dash\request::post('type') === 'remove' && \dash\request::post('key') != '' && ctype_digit(\dash\request::post('key')))
 		{
-			\lib\db\travelusers::remove(\lib\request::post('key'), \lib\request::get('id'));
+			\lib\db\travelusers::remove(\dash\request::post('key'), \dash\request::get('id'));
 			if(\lib\engine\process::status())
 			{
 				\lib\redirect::pwd();
 			}
 		}
-		elseif(\lib\request::post('save_child') === 'save_child')
+		elseif(\dash\request::post('save_child') === 'save_child')
 		{
 			$post = self::getPost();
 
-			$post['travel_id']       = \lib\request::get('id');
+			$post['travel_id']       = \dash\request::get('id');
 
 			\lib\app\myuser::add_child($post);
 
 			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("Your Child was saved"));
-				\lib\redirect::to(\dash\url::here(). '/trip/view?id='. \lib\request::get('id'));
+				\lib\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
 			}
 
 		}
-		elseif(\lib\request::post('edit_child') === 'edit_child' && \lib\request::get('partner') && is_numeric(\lib\request::get('partner')))
+		elseif(\dash\request::post('edit_child') === 'edit_child' && \dash\request::get('partner') && is_numeric(\dash\request::get('partner')))
 		{
 			$post              = self::getPost();
-			$post['travel_id'] = \lib\request::get('id');
+			$post['travel_id'] = \dash\request::get('id');
 
-			$get_user_id = \lib\db\travelusers::get(['id' => \lib\request::get('partner'), 'travel_id' => \lib\request::get('id'), 'limit' => 1]);
+			$get_user_id = \lib\db\travelusers::get(['id' => \dash\request::get('partner'), 'travel_id' => \dash\request::get('id'), 'limit' => 1]);
 
 			if(isset($get_user_id['user_id']))
 			{
@@ -66,12 +66,12 @@ class model extends \content_cp\main2\model
 			if(\lib\engine\process::status())
 			{
 				\lib\notif::ok(T_("The partner was updated"));
-				\lib\redirect::to(\dash\url::here(). '/trip/view?id='. \lib\request::get('id'));
+				\lib\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
 			}
 		}
-		elseif(\lib\request::post('edit_travel') === 'edit_travel')
+		elseif(\dash\request::post('edit_travel') === 'edit_travel')
 		{
-			$start_date = \lib\request::post('startdate');
+			$start_date = \dash\request::post('startdate');
 			$start_date = \lib\utility\convert::to_en_number($start_date);
 			if($start_date && strtotime($start_date) === false)
 			{
@@ -88,7 +88,7 @@ class model extends \content_cp\main2\model
 				$start_date = null;
 			}
 
-			$end_date   = \lib\request::post('enddate');
+			$end_date   = \dash\request::post('enddate');
 			$end_date   = \lib\utility\convert::to_en_number($end_date);
 			if($end_date && strtotime($end_date) === false)
 			{
@@ -106,7 +106,7 @@ class model extends \content_cp\main2\model
 			}
 
 
-			$desc       = \lib\request::post('desc');
+			$desc       = \dash\request::post('desc');
 
 			if(mb_strlen($desc) > 500)
 			{
@@ -114,7 +114,7 @@ class model extends \content_cp\main2\model
 				return false;
 			}
 
-			$status = \lib\request::post('status');
+			$status = \dash\request::post('status');
 
 			if($status && !in_array($status, ['awaiting', 'spam', 'cancel', 'reject', 'review', 'notanswer', 'queue','gone', 'delete','admincancel', 'draft']))
 			{
@@ -132,7 +132,7 @@ class model extends \content_cp\main2\model
 				$update['status'] = $status;
 			}
 
-			\lib\db\travels::update($update, \lib\request::get('id'));
+			\lib\db\travels::update($update, \dash\request::get('id'));
 
 			$this->send_sms($status);
 
@@ -149,7 +149,7 @@ class model extends \content_cp\main2\model
 	{
 		$mobile        = null;
 		$msg           = '';
-		$travel_detail = \lib\db\travels::get(['id' => \lib\request::get('id'), 'limit' => 1]);
+		$travel_detail = \lib\db\travels::get(['id' => \dash\request::get('id'), 'limit' => 1]);
 		if(!isset($travel_detail['user_id']))
 		{
 			return;

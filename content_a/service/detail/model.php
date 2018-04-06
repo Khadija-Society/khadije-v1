@@ -9,18 +9,18 @@ class model extends \content_a\main\model
 	{
 
 		$post                = [];
-		$post['expertvalue'] = \lib\request::post('expertvalue');
-		$post['expertyear']  = \lib\request::post('expertyear');
-		$post['job']         = \lib\request::post('job');
-		$post['arabiclang']  = \lib\request::post('ArabicLang');
-		$post['startdate']   = \lib\request::post('startdate');
-		$post['enddate']     = \lib\request::post('enddate');
-		$post['car']         = \lib\request::post('car');
-		$post['desc']        = \lib\request::post('desc');
+		$post['expertvalue'] = \dash\request::post('expertvalue');
+		$post['expertyear']  = \dash\request::post('expertyear');
+		$post['job']         = \dash\request::post('job');
+		$post['arabiclang']  = \dash\request::post('ArabicLang');
+		$post['startdate']   = \dash\request::post('startdate');
+		$post['enddate']     = \dash\request::post('enddate');
+		$post['car']         = \dash\request::post('car');
+		$post['desc']        = \dash\request::post('desc');
 		$post['status']        = 'awaiting';
 
 
-		\lib\app\service::edit($post, \lib\request::get('id'));
+		\lib\app\service::edit($post, \dash\request::get('id'));
 
 		if(\lib\engine\process::status())
 		{

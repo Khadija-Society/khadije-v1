@@ -14,16 +14,16 @@ class view extends \content_cp\main2\view
 
 		$this->data->bodyclass = 'unselectable siftal';
 
-		$this->data->travel_detail = \lib\db\travels::search(null, ['travels.id' => \lib\request::get('id'), 'pagenation' => false]);
+		$this->data->travel_detail = \lib\db\travels::search(null, ['travels.id' => \dash\request::get('id'), 'pagenation' => false]);
 		if(isset($this->data->travel_detail[0]))
 		{
 			$this->data->travel_detail = $this->data->travel_detail[0];
 		}
 
-		$this->data->travel_partner = \lib\db\travelusers::get_travel_child(\lib\request::get('id'));
+		$this->data->travel_partner = \lib\db\travelusers::get_travel_child(\dash\request::get('id'));
 
 		// load partner detail
-		if(\lib\request::get('partner') && is_numeric(\lib\request::get('partner')))
+		if(\dash\request::get('partner') && is_numeric(\dash\request::get('partner')))
 		{
 			$this->data->edit_mode = true;
 
@@ -31,7 +31,7 @@ class view extends \content_cp\main2\view
 			{
 				foreach ($this->data->travel_partner as $key => $value)
 				{
-					if(isset($value['id']) && intval($value['id']) === intval(\lib\request::get('partner')))
+					if(isset($value['id']) && intval($value['id']) === intval(\dash\request::get('partner')))
 					{
 						$this->data->partner_detail = $value;
 						break;

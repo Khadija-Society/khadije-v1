@@ -16,7 +16,7 @@ class model extends \content_cp\main2\model
 
 	public static function upload_traveled($_city)
 	{
-		if($file = \lib\request::files($_city))
+		if($file = \dash\request::files($_city))
 		{
 			if(isset($file['tmp_name']))
 			{

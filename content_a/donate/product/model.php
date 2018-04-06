@@ -7,27 +7,27 @@ class model extends \content_a\main\model
 
 	public function post_donate()
 	{
-		if(\lib\request::post('username'))
+		if(\dash\request::post('username'))
 		{
 			\lib\notif::error(T_("Whate are you doing?"));
 			return false;
 		}
 
-		$niyat = \lib\request::post('niyat');
+		$niyat = \dash\request::post('niyat');
 		if(mb_strlen($niyat) > 150)
 		{
 			\lib\notif::error(T_("Please set niyat less than 150 character"), 'niyat');
 			return false;
 		}
 
-		$way = \lib\request::post('way');
+		$way = \dash\request::post('way');
 		if($way && !in_array($way, \lib\app\donate::way_list()))
 		{
 			\lib\notif::error(T_("Please set a valid way"), 'way');
 			return false;
 		}
 
-		$fullname = \lib\request::post('fullname');
+		$fullname = \dash\request::post('fullname');
 		if(mb_strlen($fullname) > 150)
 		{
 			\lib\notif::error(T_("Please set fullname less than 150 character"), 'fullname');
@@ -35,14 +35,14 @@ class model extends \content_a\main\model
 		}
 
 
-		$email = \lib\request::post('email');
+		$email = \dash\request::post('email');
 		if(mb_strlen($email) > 90)
 		{
 			\lib\notif::error(T_("Please set email less than 90 character"), 'email');
 			return false;
 		}
 
-		$mobile = \lib\request::post('mobile');
+		$mobile = \dash\request::post('mobile');
 		if($mobile && !\lib\utility\filter::mobile($mobile))
 		{
 			\lib\notif::error(T_("Please set a valid mobile number"), 'mobile');
@@ -54,7 +54,7 @@ class model extends \content_a\main\model
 			$mobile = \lib\utility\filter::mobile($mobile);
 		}
 
-		$amount = \lib\request::post('amount');
+		$amount = \dash\request::post('amount');
 		if(!$amount || !is_numeric($amount))
 		{
 			\lib\notif::error(T_("Please set a valid amount number"), 'amount');
@@ -136,7 +136,7 @@ class model extends \content_a\main\model
 			]
 		];
 
-		\lib\utility\payment\pay::start($user_id, 'zarinpal', \lib\request::post('amount'), $meta);
+		\lib\utility\payment\pay::start($user_id, 'zarinpal', \dash\request::post('amount'), $meta);
 	}
 }
 ?>

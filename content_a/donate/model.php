@@ -9,14 +9,14 @@ class model extends \content_a\main\model
 	{
 		$args =
 		[
-			'username' => \lib\request::post('username'),
-			'niyat'    => \lib\request::post('niyat'),
-			'way'      => \lib\request::post('way'),
-			'fullname' => \lib\request::post('fullname'),
-			'email'    => \lib\request::post('email'),
-			'mobile'   => \lib\request::post('mobile'),
-			'amount'   => \lib\request::post('amount'),
-			'doners'   => \lib\request::post('doners') === 'yes' ? 1 : 0,
+			'username' => \dash\request::post('username'),
+			'niyat'    => \dash\request::post('niyat'),
+			'way'      => \dash\request::post('way'),
+			'fullname' => \dash\request::post('fullname'),
+			'email'    => \dash\request::post('email'),
+			'mobile'   => \dash\request::post('mobile'),
+			'amount'   => \dash\request::post('amount'),
+			'doners'   => \dash\request::post('doners') === 'yes' ? 1 : 0,
 		];
 
 		\lib\app\donate::add($args);

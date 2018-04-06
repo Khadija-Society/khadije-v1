@@ -6,7 +6,7 @@ class model extends \content_cp\main2\model
 {
 	public function post_staticvar()
 	{
-		$qom = \lib\request::post('qom');
+		$qom = \dash\request::post('qom');
 		if(!$qom)
 		{
 			\lib\notif::error(T_("Please set the qom var"), 'qom');
@@ -23,7 +23,7 @@ class model extends \content_cp\main2\model
 		$qom = intval($qom);
 
 
-		$mashhad = \lib\request::post('mashhad');
+		$mashhad = \dash\request::post('mashhad');
 		if(!$mashhad)
 		{
 			\lib\notif::error(T_("Please set the mashhad var"), 'mashhad');
@@ -40,7 +40,7 @@ class model extends \content_cp\main2\model
 		$mashhad = intval($mashhad);
 
 
-		$karbala = \lib\request::post('karbala');
+		$karbala = \dash\request::post('karbala');
 		if(!$karbala)
 		{
 			\lib\notif::error(T_("Please set the karbala var"), 'karbala');

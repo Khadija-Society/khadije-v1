@@ -9,7 +9,7 @@ class model extends \content_a\main\model
 	{
 
 		$post           = [];
-		$post['city']   = \lib\request::post('city');
+		$post['city']   = \dash\request::post('city');
 		$post['status'] = 'draft';
 		$post['type']   = 'group';
 

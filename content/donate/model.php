@@ -7,24 +7,24 @@ class model extends \mvc\model
 	{
 		$args =
 		[
-			'username' => \lib\request::post('username'),
-			'bank'     => mb_strtolower(\lib\request::post('bank')),
-			'niyat'    => \lib\request::post('niyat'),
-			'way'      => \lib\request::post('way'),
-			'fullname' => \lib\request::post('fullname'),
-			'email'    => \lib\request::post('email'),
-			'mobile'   => \lib\request::post('mobile'),
-			'amount'   => \lib\request::post('amount'),
-			'doners'   => \lib\request::post('doners') === 'yes' ? 1 : 0,
+			'username' => \dash\request::post('username'),
+			'bank'     => mb_strtolower(\dash\request::post('bank')),
+			'niyat'    => \dash\request::post('niyat'),
+			'way'      => \dash\request::post('way'),
+			'fullname' => \dash\request::post('fullname'),
+			'email'    => \dash\request::post('email'),
+			'mobile'   => \dash\request::post('mobile'),
+			'amount'   => \dash\request::post('amount'),
+			'doners'   => \dash\request::post('doners') === 'yes' ? 1 : 0,
 		];
 
-		if(!in_array(mb_strtolower(\lib\request::post('bank')), ['asanpardakht', 'zarinpal', 'payir']))
+		if(!in_array(mb_strtolower(\dash\request::post('bank')), ['asanpardakht', 'zarinpal', 'payir']))
 
 		$redirect = false;
 		if(\lib\permission::access('admin'))
 		{
 			$redirect = true;
-			$args['manuall'] = \lib\request::post('manualPay');
+			$args['manuall'] = \dash\request::post('manualPay');
 		}
 
 		\lib\app\donate::add($args);

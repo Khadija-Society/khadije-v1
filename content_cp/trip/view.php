@@ -19,8 +19,8 @@ class view extends \content_cp\main2\view
 
 		$args =
 		[
-			'order'          => \lib\request::get('order'),
-			'sort'           => \lib\request::get('sort'),
+			'order'          => \dash\request::get('order'),
+			'sort'           => \dash\request::get('sort'),
 		];
 
 		if(!$args['order'])
@@ -28,18 +28,18 @@ class view extends \content_cp\main2\view
 			$args['order'] = 'DESC';
 		}
 
-		if(\lib\request::get('status')) $args['travels.status']           = \lib\request::get('status');
-		if(\lib\request::get('type')) $args['travels.type']               = \lib\request::get('type');
-		if(\lib\request::get('place')) $args['travels.place']             = \lib\request::get('place');
-		if(\lib\request::get('gender')) $args['users.gender']             = \lib\request::get('gender');
-		if(\lib\request::get('birthday')) $args['YEAR(users.birthday)'] = \lib\request::get('birthday');
+		if(\dash\request::get('status')) $args['travels.status']           = \dash\request::get('status');
+		if(\dash\request::get('type')) $args['travels.type']               = \dash\request::get('type');
+		if(\dash\request::get('place')) $args['travels.place']             = \dash\request::get('place');
+		if(\dash\request::get('gender')) $args['users.gender']             = \dash\request::get('gender');
+		if(\dash\request::get('birthday')) $args['YEAR(users.birthday)'] = \dash\request::get('birthday');
 
 		if(!isset($args['travels.status']))
 		{
 			$args['travels.status'] = ["NOT IN", "('cancel', 'draft')"];
 		}
 
-		$search_string            = \lib\request::get('q');
+		$search_string            = \dash\request::get('q');
 
 		if($search_string)
 		{
@@ -47,7 +47,7 @@ class view extends \content_cp\main2\view
 		}
 
 		$export = false;
-		if(\lib\request::get('export') === 'true')
+		if(\dash\request::get('export') === 'true')
 		{
 			$export = true;
 			$args['pagenation'] = false;
