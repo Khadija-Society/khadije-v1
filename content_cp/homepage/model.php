@@ -59,19 +59,19 @@ class model extends \content_cp\main2\model
 		$result ="$qom\n$mashhad\n$karbala";
 
 		$url    = root. 'public_html/files/data/';
-		if(!\lib\file::exists($url))
+		if(!\dash\file::exists($url))
 		{
-			\lib\file::makeDir($url, null, true);
+			\dash\file::makeDir($url, null, true);
 		}
 
 		$url .= 'staticvar.txt';
-		if(!\lib\file::exists($url))
+		if(!\dash\file::exists($url))
 		{
-			\lib\file::write($url, $result);
+			\dash\file::write($url, $result);
 		}
 		else
 		{
-			\lib\file::write($url, $result);
+			\dash\file::write($url, $result);
 		}
 
 		if(\lib\engine\process::status())

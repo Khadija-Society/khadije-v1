@@ -12,7 +12,7 @@ class view extends \mvc\view
 
 		$url = root. 'public_html/files/data/staticvar.txt';
 
-		$result = @\lib\file::read($url);
+		$result = @\dash\file::read($url);
 
 		$temp            = [];
 		$temp['qom']     = 16000;
