@@ -9,14 +9,14 @@ class model extends \content_cp\main2\model
 		$qom = \dash\request::post('qom');
 		if(!$qom)
 		{
-			\lib\notif::error(T_("Please set the qom var"), 'qom');
+			\dash\notif::error(T_("Please set the qom var"), 'qom');
 			return false;
 		}
 
 		$qom = \dash\utility\convert::to_en_number($qom);
 		if(!is_numeric($qom))
 		{
-			\lib\notif::error(T_("Please set the number of qom"));
+			\dash\notif::error(T_("Please set the number of qom"));
 			return false;
 		}
 
@@ -26,14 +26,14 @@ class model extends \content_cp\main2\model
 		$mashhad = \dash\request::post('mashhad');
 		if(!$mashhad)
 		{
-			\lib\notif::error(T_("Please set the mashhad var"), 'mashhad');
+			\dash\notif::error(T_("Please set the mashhad var"), 'mashhad');
 			return false;
 		}
 
 		$mashhad = \dash\utility\convert::to_en_number($mashhad);
 		if(!is_numeric($mashhad))
 		{
-			\lib\notif::error(T_("Please set the number of mashhad"));
+			\dash\notif::error(T_("Please set the number of mashhad"));
 			return false;
 		}
 
@@ -43,14 +43,14 @@ class model extends \content_cp\main2\model
 		$karbala = \dash\request::post('karbala');
 		if(!$karbala)
 		{
-			\lib\notif::error(T_("Please set the karbala var"), 'karbala');
+			\dash\notif::error(T_("Please set the karbala var"), 'karbala');
 			return false;
 		}
 
 		$karbala = \dash\utility\convert::to_en_number($karbala);
 		if(!is_numeric($karbala))
 		{
-			\lib\notif::error(T_("Please set the number of karbala"));
+			\dash\notif::error(T_("Please set the number of karbala"));
 			return false;
 		}
 
@@ -76,10 +76,10 @@ class model extends \content_cp\main2\model
 
 		if(\lib\engine\process::status())
 		{
-			\lib\notif::ok(T_("Data saved"));
+			\dash\notif::ok(T_("Data saved"));
 		}
 
-		\lib\redirect::pwd();
+		\dash\redirect::pwd();
 
 	}
 }

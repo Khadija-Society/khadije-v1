@@ -153,7 +153,7 @@ class travel
 
 		if(!in_array($_city, self::city_list()))
 		{
-			\lib\notif::error(T_("Invalid city"));
+			\dash\notif::error(T_("Invalid city"));
 			return false;
 		}
 
@@ -221,7 +221,7 @@ class travel
 
 		if(!in_array($_city, self::city_list()))
 		{
-			\lib\notif::error(T_("Invalid city"));
+			\dash\notif::error(T_("Invalid city"));
 			return false;
 		}
 
@@ -353,7 +353,7 @@ class travel
 
 	public static function user_travel_list($_type = 'family')
 	{
-		$user_id = \lib\user::id();
+		$user_id = \dash\user::id();
 		if(!$user_id)
 		{
 			return false;
@@ -396,7 +396,7 @@ class travel
 	 */
 	public static function list($_string = null, $_args = [])
 	{
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
 			return false;
 		}
@@ -453,32 +453,32 @@ class travel
 
 		if(mb_strlen($_city) > 50)
 		{
-			\lib\notif::error(T_("City name must be less than 50 character"), 'city');
+			\dash\notif::error(T_("City name must be less than 50 character"), 'city');
 			return false;
 		}
 
 		if(mb_strlen($_place) > 50)
 		{
-			\lib\notif::error(T_("Place name must be less than 50 character"), 'place');
+			\dash\notif::error(T_("Place name must be less than 50 character"), 'place');
 			return false;
 		}
 
 		if(!$_city)
 		{
-			\lib\notif::error(T_("Please fill the city name"), 'city');
+			\dash\notif::error(T_("Please fill the city name"), 'city');
 			return false;
 		}
 
 
 		if(!$_place)
 		{
-			\lib\notif::error(T_("Please fill the place name"), 'place');
+			\dash\notif::error(T_("Please fill the place name"), 'place');
 			return false;
 		}
 
 		if(!in_array($_city, self::city_list()))
 		{
-			\lib\notif::error(T_("Please select city from the list"), 'city');
+			\dash\notif::error(T_("Please select city from the list"), 'city');
 			return false;
 		}
 
@@ -486,7 +486,7 @@ class travel
 
 		if(\lib\db\myoption::check_city_place_duplicate($_city, $_place, $cat))
 		{
-			\lib\notif::error(T_("Duplicate place in one city"), 'city');
+			\dash\notif::error(T_("Duplicate place in one city"), 'city');
 			return false;
 		}
 
@@ -534,7 +534,7 @@ class travel
 		{
 			if(!$city || !in_array(T_($city), self::group_active_city()))
 			{
-				\lib\notif::error(_("Invalid city"), 'city');
+				\dash\notif::error(_("Invalid city"), 'city');
 				return false;
 			}
 		}
@@ -542,7 +542,7 @@ class travel
 		{
 			if(!$city || !in_array(T_($city), self::active_city()))
 			{
-				\lib\notif::error(_("Invalid city"), 'city');
+				\dash\notif::error(_("Invalid city"), 'city');
 				return false;
 			}
 		}
@@ -553,7 +553,7 @@ class travel
 
 		if($startdate && strtotime($startdate) === false)
 		{
-			\lib\notif::error(_("Invalid parameter startdate"), 'startdate');
+			\dash\notif::error(_("Invalid parameter startdate"), 'startdate');
 			return false;
 		}
 
@@ -567,7 +567,7 @@ class travel
 
 		if($enddate && strtotime($enddate) === false)
 		{
-			\lib\notif::error(_("Invalid parameter enddate"), 'enddate');
+			\dash\notif::error(_("Invalid parameter enddate"), 'enddate');
 			return false;
 		}
 
@@ -617,10 +617,10 @@ class travel
 			]
 		];
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
 			\dash\app::log('api:product:user_id:notfound', null, $log_meta);
-			if($_option['debug']) \lib\notif::error(T_("User not found"), 'user');
+			if($_option['debug']) \dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
@@ -632,10 +632,10 @@ class travel
 			return false;
 		}
 
-		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \lib\user::id(), 'type' => \dash\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
+		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \dash\user::id(), 'type' => \dash\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
 		if(isset($check_duplicate_travel['id']))
 		{
-			\lib\notif::error(T_("You signup to this trip before, please wait for checking status of that trip"));
+			\dash\notif::error(T_("You signup to this trip before, please wait for checking status of that trip"));
 			return false;
 		}
 
@@ -644,14 +644,14 @@ class travel
 			$args['status']  = 'draft';
 		}
 
-		$args['user_id']     = \lib\user::id();
+		$args['user_id']     = \dash\user::id();
 		$args['type']        = \dash\app::request('type');
 
 		$travel_id = \lib\db\travels::insert($args);
 
 		if(!$travel_id)
 		{
-			\lib\notif::error(T_("No way to add travel"));
+			\dash\notif::error(T_("No way to add travel"));
 			return false;
 		}
 

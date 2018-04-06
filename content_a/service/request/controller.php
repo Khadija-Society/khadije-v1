@@ -6,9 +6,9 @@ class controller extends \content_a\main\controller
 {
 	function ready()
 	{
-		if(!\lib\user::login())
+		if(!\dash\user::login())
 		{
-			\lib\redirect::to(\dash\url::base(). '/enter');
+			\dash\redirect::to(\dash\url::base(). '/enter');
 			return;
 		}
 

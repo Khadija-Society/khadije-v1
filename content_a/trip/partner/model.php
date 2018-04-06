@@ -11,7 +11,7 @@ class model extends \content_a\main\model
 		{
 			\lib\db\travels::update(['status' => 'awaiting'], \dash\request::get('trip'));
 			// send next
-			if(\lib\user::detail('mobile') && \dash\utility\filter::mobile(\lib\user::detail('mobile')))
+			if(\dash\user::detail('mobile') && \dash\utility\filter::mobile(\dash\user::detail('mobile')))
 			{
 				$travel_detail = \lib\db\travels::get(['id' => \dash\request::get('trip'), 'limit' => 1]);
 				if(isset($travel_detail['place']))
@@ -24,10 +24,10 @@ class model extends \content_a\main\model
 					$msg = "درخواست شما برای تشرف با موفقیت ثبت شد.";
 				}
 
-				\dash\utility\sms::send(\lib\user::detail('mobile'), $msg);
+				\dash\utility\sms::send(\dash\user::detail('mobile'), $msg);
 			}
 
-			\lib\redirect::to(\dash\url::here(). '/trip?success=yes');
+			\dash\redirect::to(\dash\url::here(). '/trip?success=yes');
 			return;
 		}
 
@@ -36,7 +36,7 @@ class model extends \content_a\main\model
 			\lib\db\travelusers::remove(\dash\request::post('key'), \dash\request::get('trip'));
 			if(\lib\engine\process::status())
 			{
-				\lib\redirect::to(\dash\url::here(). '/trip/partner?trip='. \dash\request::get('trip'));
+				\dash\redirect::to(\dash\url::here(). '/trip/partner?trip='. \dash\request::get('trip'));
 			}
 		}
 		else
@@ -60,8 +60,8 @@ class model extends \content_a\main\model
 
 			if(\lib\engine\process::status())
 			{
-				\lib\notif::ok(T_("Your Child was saved"));
-				\lib\redirect::pwd();
+				\dash\notif::ok(T_("Your Child was saved"));
+				\dash\redirect::pwd();
 			}
 
 		}

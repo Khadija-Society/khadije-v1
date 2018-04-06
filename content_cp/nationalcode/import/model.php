@@ -9,7 +9,7 @@ class model extends \content_cp\main2\model
 		self::upload_traveled('qom');
 		self::upload_traveled('karbala');
 		self::upload_traveled('mashhad');
-		\lib\redirect::pwd();
+		\dash\redirect::pwd();
 
 	}
 
@@ -46,14 +46,14 @@ class model extends \content_cp\main2\model
 
 				if(empty($query))
 				{
-					\lib\notif::error(T_("No valid national code founded in your list"));
+					\dash\notif::error(T_("No valid national code founded in your list"));
 					return false;
 				}
 
 				$query = implode(";", $query);
 				\dash\db::query($query, true, ['multi_query' => true]);
 
-				\lib\notif::ok(T_("Travel this nationalcode to :city saved", ['city' => T_($_city)]));
+				\dash\notif::ok(T_("Travel this nationalcode to :city saved", ['city' => T_($_city)]));
 
 			}
 		}

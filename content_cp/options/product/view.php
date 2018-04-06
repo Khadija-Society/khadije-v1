@@ -28,7 +28,7 @@ class view extends \content_cp\main2\view
 			$this->data->product_detail = \lib\db\needs::get(['id' => $id, 'limit' => 1]);
 			if(!$this->data->product_detail)
 			{
-				\lib\header::status(404, T_("Id not found"));
+				\dash\header::status(404, T_("Id not found"));
 			}
 		}
 	}

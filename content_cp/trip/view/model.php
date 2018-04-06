@@ -26,7 +26,7 @@ class model extends \content_cp\main2\model
 			\lib\db\travelusers::remove(\dash\request::post('key'), \dash\request::get('id'));
 			if(\lib\engine\process::status())
 			{
-				\lib\redirect::pwd();
+				\dash\redirect::pwd();
 			}
 		}
 		elseif(\dash\request::post('save_child') === 'save_child')
@@ -39,8 +39,8 @@ class model extends \content_cp\main2\model
 
 			if(\lib\engine\process::status())
 			{
-				\lib\notif::ok(T_("Your Child was saved"));
-				\lib\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
+				\dash\notif::ok(T_("Your Child was saved"));
+				\dash\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
 			}
 
 		}
@@ -57,7 +57,7 @@ class model extends \content_cp\main2\model
 			}
 			else
 			{
-				\lib\notif::error(T_("Invalid user travel detail"));
+				\dash\notif::error(T_("Invalid user travel detail"));
 				return false;
 			}
 
@@ -65,8 +65,8 @@ class model extends \content_cp\main2\model
 
 			if(\lib\engine\process::status())
 			{
-				\lib\notif::ok(T_("The partner was updated"));
-				\lib\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
+				\dash\notif::ok(T_("The partner was updated"));
+				\dash\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
 			}
 		}
 		elseif(\dash\request::post('edit_travel') === 'edit_travel')
@@ -75,7 +75,7 @@ class model extends \content_cp\main2\model
 			$start_date = \dash\utility\convert::to_en_number($start_date);
 			if($start_date && strtotime($start_date) === false)
 			{
-				\lib\notif::error(T_("Invalid start_date"), 'start_date');
+				\dash\notif::error(T_("Invalid start_date"), 'start_date');
 				return false;
 			}
 
@@ -92,7 +92,7 @@ class model extends \content_cp\main2\model
 			$end_date   = \dash\utility\convert::to_en_number($end_date);
 			if($end_date && strtotime($end_date) === false)
 			{
-				\lib\notif::error(T_("Invalid end_date"), 'end_date');
+				\dash\notif::error(T_("Invalid end_date"), 'end_date');
 				return false;
 			}
 
@@ -110,7 +110,7 @@ class model extends \content_cp\main2\model
 
 			if(mb_strlen($desc) > 500)
 			{
-				\lib\notif::error(T_("Maximum input for desc"), 'desc');
+				\dash\notif::error(T_("Maximum input for desc"), 'desc');
 				return false;
 			}
 
@@ -118,7 +118,7 @@ class model extends \content_cp\main2\model
 
 			if($status && !in_array($status, ['awaiting', 'spam', 'cancel', 'reject', 'review', 'notanswer', 'queue','gone', 'delete','admincancel', 'draft']))
 			{
-				\lib\notif::error(_T("Invalid status of trip"), 'status');
+				\dash\notif::error(_T("Invalid status of trip"), 'status');
 				return false;
 			}
 
@@ -136,9 +136,9 @@ class model extends \content_cp\main2\model
 
 			$this->send_sms($status);
 
-			\lib\notif::ok(T_("The travel updated"));
+			\dash\notif::ok(T_("The travel updated"));
 
-			\lib\redirect::pwd();
+			\dash\redirect::pwd();
 
 		}
 

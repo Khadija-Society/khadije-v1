@@ -6,7 +6,7 @@ class mytransactions
 
 	public static function user_transaction($_type = 'donate')
 	{
-		$user_id = \lib\user::id();
+		$user_id = \dash\user::id();
 		if(!$user_id)
 		{
 			return false;

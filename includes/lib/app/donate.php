@@ -8,8 +8,8 @@ class donate
 	public static function sms_success($_amount = null)
 	{
 
-		$mobile = \lib\session::get('temp_mobile_sms_verify_payment');
-		\lib\session::set('temp_mobile_sms_verify_payment', null);
+		$mobile = \dash\session::get('temp_mobile_sms_verify_payment');
+		\dash\session::set('temp_mobile_sms_verify_payment', null);
 		if($mobile)
 		{
 			$msg = '';
@@ -36,7 +36,7 @@ class donate
 		$old = self::way_list();
 		if(array_search($_way, $old) === false)
 		{
-			\lib\notif::error(T_("This way is not in your list!"));
+			\dash\notif::error(T_("This way is not in your list!"));
 			return false;
 		}
 		unset($old[array_search($_way, $old)]);
@@ -80,13 +80,13 @@ class donate
 
 			if(!$_way)
 			{
-				\lib\notif::error(T_("Please set way"), 'way');
+				\dash\notif::error(T_("Please set way"), 'way');
 				return false;
 			}
 
 			if(mb_strlen($_way) > 150)
 			{
-				\lib\notif::error(T_("Please set way less than 150 character"), 'way');
+				\dash\notif::error(T_("Please set way less than 150 character"), 'way');
 				return false;
 			}
 		}
@@ -133,7 +133,7 @@ class donate
 
 			if(in_array($_way, $way_list))
 			{
-				\lib\notif::error(T_("Duplicate way"), 'way');
+				\dash\notif::error(T_("Duplicate way"), 'way');
 				return false;
 			}
 
@@ -191,8 +191,8 @@ class donate
 		$name = trim($name);
 		if($name && mb_strlen($name) >= 500)
 		{
-			// \dash\app::log('api:product:name:max:lenght', \lib\user::id(), $log_meta);
-			if($_option['debug']) \lib\notif::error(T_("Product name must be less than 500 character"), 'name');
+			// \dash\app::log('api:product:name:max:lenght', \dash\user::id(), $log_meta);
+			if($_option['debug']) \dash\notif::error(T_("Product name must be less than 500 character"), 'name');
 			return false;
 		}
 
@@ -256,7 +256,7 @@ class donate
 
 		if(\dash\app::request('username'))
 		{
-			\lib\notif::error(T_("Whate are you doing?"));
+			\dash\notif::error(T_("Whate are you doing?"));
 			return false;
 		}
 
@@ -264,7 +264,7 @@ class donate
 		$niyat = trim($niyat);
 		if(mb_strlen($niyat) > 150)
 		{
-			\lib\notif::error(T_("Please set niyat less than 150 character"), 'niyat');
+			\dash\notif::error(T_("Please set niyat less than 150 character"), 'niyat');
 			return false;
 		}
 
@@ -272,7 +272,7 @@ class donate
 		$way = trim($way);
 		if($way && !in_array($way, \lib\app\donate::way_list()))
 		{
-			\lib\notif::error(T_("Please set a valid way"), 'way');
+			\dash\notif::error(T_("Please set a valid way"), 'way');
 			return false;
 		}
 
@@ -280,7 +280,7 @@ class donate
 		$fullname = trim($fullname);
 		if(mb_strlen($fullname) > 150)
 		{
-			\lib\notif::error(T_("Please set fullname less than 150 character"), 'fullname');
+			\dash\notif::error(T_("Please set fullname less than 150 character"), 'fullname');
 			return false;
 		}
 
@@ -292,7 +292,7 @@ class donate
 		$email = trim($email);
 		if(mb_strlen($email) > 90)
 		{
-			\lib\notif::error(T_("Please set email less than 90 character"), 'email');
+			\dash\notif::error(T_("Please set email less than 90 character"), 'email');
 			return false;
 		}
 
@@ -300,7 +300,7 @@ class donate
 		$mobile = trim($mobile);
 		if($mobile && !\dash\utility\filter::mobile($mobile))
 		{
-			\lib\notif::error(T_("Please set a valid mobile number"), 'mobile');
+			\dash\notif::error(T_("Please set a valid mobile number"), 'mobile');
 			return false;
 		}
 
@@ -312,13 +312,13 @@ class donate
 		$amount = \dash\app::request('amount');
 		if(!$amount || !is_numeric($amount))
 		{
-			\lib\notif::error(T_("Please set a valid amount number"), 'amount');
+			\dash\notif::error(T_("Please set a valid amount number"), 'amount');
 			return false;
 		}
 
-		$user_id = \lib\user::id();
+		$user_id = \dash\user::id();
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
 			if($mobile)
 			{
@@ -382,11 +382,11 @@ class donate
 
 		if($mobile && \dash\utility\filter::mobile($mobile))
 		{
-			\lib\session::set('temp_mobile_sms_verify_payment', $mobile);
+			\dash\session::set('temp_mobile_sms_verify_payment', $mobile);
 		}
-		elseif(\lib\user::id() && \lib\user::detail('mobile') && \dash\utility\filter::mobile(\lib\user::detail('mobile')))
+		elseif(\dash\user::id() && \dash\user::detail('mobile') && \dash\utility\filter::mobile(\dash\user::detail('mobile')))
 		{
-			\lib\session::set('temp_mobile_sms_verify_payment', \lib\user::detail('mobile'));
+			\dash\session::set('temp_mobile_sms_verify_payment', \dash\user::detail('mobile'));
 		}
 
 
@@ -428,11 +428,11 @@ class donate
 
 	        if($insert)
 	        {
-	        	\lib\notif::ok(T_("Transaction successfully inserted"));
+	        	\dash\notif::ok(T_("Transaction successfully inserted"));
 	        }
 	        else
 	        {
-	        	\lib\notif::error(T_("Can not add transactions"));
+	        	\dash\notif::error(T_("Can not add transactions"));
 	        }
 		}
 		else

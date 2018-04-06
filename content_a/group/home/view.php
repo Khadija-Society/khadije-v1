@@ -17,7 +17,7 @@ class view extends \content_a\main\view
 
 		if(!$this->data->group_list || empty($this->data->group_list))
 		{
-			\lib\redirect::to(\dash\url::here().'/group/request');
+			\dash\redirect::to(\dash\url::here().'/group/request');
 			return;
 		}
 	}

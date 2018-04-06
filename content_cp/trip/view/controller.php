@@ -16,7 +16,7 @@ class controller extends \content_cp\main2\controller
 		}
 		else
 		{
-			\lib\header::status(403, T_("Id not found"));
+			\dash\header::status(403, T_("Id not found"));
 		}
 	}
 }

@@ -11,11 +11,11 @@ class model extends \content_a\main\model
 
 			$key = \dash\request::post('key');
 
-			$check_valid_key = \lib\db\services::get(['id' => $key,  'user_id' => \lib\user::id(), 'limit' => 1]);
+			$check_valid_key = \lib\db\services::get(['id' => $key,  'user_id' => \dash\user::id(), 'limit' => 1]);
 
 			if(!isset($check_valid_key['id']))
 			{
-				\lib\notif::error(T_("Invalid service id"));
+				\dash\notif::error(T_("Invalid service id"));
 				return false;
 			}
 
@@ -24,14 +24,14 @@ class model extends \content_a\main\model
 
 				\lib\db\services::update(['status' => 'cancel'], $key);
 
-				\lib\notif::ok(T_("Your service was canceled"));
+				\dash\notif::ok(T_("Your service was canceled"));
 
-				\lib\redirect::pwd();
+				\dash\redirect::pwd();
 
 			}
 			else
 			{
-				\lib\notif::error(T_("Can not change this service status"));
+				\dash\notif::error(T_("Can not change this service status"));
 				return false;
 			}
 		}

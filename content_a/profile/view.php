@@ -11,7 +11,7 @@ class view extends \content_a\main\view
 		// $this->data->page['desc']    = T_("Glance at your stores and quickly navigate to stores.");
 		// $this->data->page['special'] = true;
 
-		$this->data->userdetail      = \dash\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
+		$this->data->userdetail      = \dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]);
 		$this->data->userdetail = $this->fix_value($this->data->userdetail);
 
 		$this->static_var();

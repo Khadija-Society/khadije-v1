@@ -16,8 +16,8 @@ class model extends \content_a\main\model
 
 		if(\lib\engine\process::status() && $service_id)
 		{
-			\lib\notif::ok(T_("Your request was saved"));
-			\lib\redirect::to(\dash\url::here(). '/service/profile?id='. $service_id);
+			\dash\notif::ok(T_("Your request was saved"));
+			\dash\redirect::to(\dash\url::here(). '/service/profile?id='. $service_id);
 		}
 	}
 }

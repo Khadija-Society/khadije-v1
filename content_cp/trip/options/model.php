@@ -35,7 +35,7 @@ class model extends \addons\content_cp\main\model
 
 		if(\lib\engine\process::status())
 		{
-			\lib\notif::ok(T_("Your change was saved"));
+			\dash\notif::ok(T_("Your change was saved"));
 		}
 
 	}

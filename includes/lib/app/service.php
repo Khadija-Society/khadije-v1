@@ -39,21 +39,21 @@ class service
 		$job = \dash\app::request('job');
 		if($job && mb_strlen($job) > 200)
 		{
-			\lib\notif::error(T_("You must set job less than 200 character"), 'job');
+			\dash\notif::error(T_("You must set job less than 200 character"), 'job');
 			return false;
 		}
 
 		$expertvalue = \dash\app::request('expertvalue');
 		if($expertvalue && mb_strlen($expertvalue) > 200)
 		{
-			\lib\notif::error(T_("You must set expert value less than 200 character"), 'expertvalue');
+			\dash\notif::error(T_("You must set expert value less than 200 character"), 'expertvalue');
 			return false;
 		}
 
 		$expertyear = \dash\app::request('expertyear');
 		if($expertyear && !is_numeric($expertyear))
 		{
-			\lib\notif::error(T_("You must set the expert year as a number"), 'expertyear');
+			\dash\notif::error(T_("You must set the expert year as a number"), 'expertyear');
 			return false;
 		}
 
@@ -63,14 +63,14 @@ class service
 		$car = \dash\app::request('car');
 		if($car && mb_strlen($car) > 200)
 		{
-			\lib\notif::error(T_("Invalid car"), 'car');
+			\dash\notif::error(T_("Invalid car"), 'car');
 			return false;
 		}
 
 		$file = \dash\app::request('file');
 		if($file && mb_strlen($file) > 2000)
 		{
-			\lib\notif::error(T_("Invalid file"), 'file');
+			\dash\notif::error(T_("Invalid file"), 'file');
 			return false;
 		}
 
@@ -78,7 +78,7 @@ class service
 		$startdate = \dash\utility\convert::to_en_number($startdate);
 		if($startdate && strtotime($startdate) === false)
 		{
-			\lib\notif::error(T_("Invalid startdate"), 'startdate');
+			\dash\notif::error(T_("Invalid startdate"), 'startdate');
 			return false;
 		}
 		if($startdate)
@@ -91,7 +91,7 @@ class service
 		$enddate = \dash\utility\convert::to_en_number($enddate);
 		if($enddate && strtotime($enddate) === false)
 		{
-			\lib\notif::error(T_("Invalid enddate"), 'enddate');
+			\dash\notif::error(T_("Invalid enddate"), 'enddate');
 			return false;
 		}
 		if($enddate)
@@ -102,7 +102,7 @@ class service
 		$status = \dash\app::request('status');
 		if($status && mb_strlen($status) > 200)
 		{
-			\lib\notif::error(T_("Invalid status"), 'status');
+			\dash\notif::error(T_("Invalid status"), 'status');
 			return false;
 		}
 
@@ -110,14 +110,14 @@ class service
 		$desc = trim($desc);
 		if($desc && mb_strlen($desc) >= 200)
 		{
-			\lib\notif::error(T_("Please set a valid desc"), 'desc');
+			\dash\notif::error(T_("Please set a valid desc"), 'desc');
 			return false;
 		}
 
 		$status = \dash\app::request('status');
 		if($status && !in_array($status, ['draft','awaiting','accept','reject','cancel', 'spam']))
 		{
-			\lib\notif::error(T_("Please set a valid status"), 'status');
+			\dash\notif::error(T_("Please set a valid status"), 'status');
 			return false;
 		}
 
@@ -191,7 +191,7 @@ class service
 	 */
 	public static function list($_string = null, $_args = [])
 	{
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
 			return false;
 		}
@@ -258,9 +258,9 @@ class service
 
 		\dash\app::variable($_args);
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
-			\lib\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
@@ -275,31 +275,31 @@ class service
 
 		if(!$need_id || !is_numeric($need_id))
 		{
-			\lib\notif::error(T_("Service id not found"));
+			\dash\notif::error(T_("Service id not found"));
 			return false;
 		}
 
 		$need_detail = \lib\db\needs::get(['id' => $need_id, 'limit' => 1]);
 		if(!isset($need_detail['id']) || !isset($need_detail['status']))
 		{
-			\lib\notif::error(T_("Service id is invalid"));
+			\dash\notif::error(T_("Service id is invalid"));
 			return false;
 		}
 
 		if($need_detail['status'] != 'enable')
 		{
-			\lib\notif::error(T_("This service is unavalible"));
+			\dash\notif::error(T_("This service is unavalible"));
 			return false;
 		}
 
 		$args['expert']  = $need_detail['title'];
 
-		$args['user_id'] = \lib\user::id();
+		$args['user_id'] = \dash\user::id();
 
-		$check_duplicate = \lib\db\services::get(['user_id' => \lib\user::id(), 'expert' => $args['expert'], 'status' => ["IN", "('draft','awaiting','accept','spam')"], 'limit' => 1]);
+		$check_duplicate = \lib\db\services::get(['user_id' => \dash\user::id(), 'expert' => $args['expert'], 'status' => ["IN", "('draft','awaiting','accept','spam')"], 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
-			\lib\notif::error(T_("You register to this service before"));
+			\dash\notif::error(T_("You register to this service before"));
 			return false;
 		}
 
@@ -314,7 +314,7 @@ class service
 
 		if(!$service_id)
 		{
-			\lib\notif::error(T_("No way to insert service"), 'db', 'system');
+			\dash\notif::error(T_("No way to insert service"), 'db', 'system');
 			return false;
 		}
 		return $service_id;
@@ -343,22 +343,22 @@ class service
 
 		\dash\app::variable($_args);
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
-			\lib\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
 		if(!$_id || !is_numeric($_id))
 		{
-			\lib\notif::error(T_("Id not found"), 'id');
+			\dash\notif::error(T_("Id not found"), 'id');
 			return false;
 		}
 
-		$check_id = \lib\db\services::get(['id' => $_id, 'user_id' => \lib\user::id(), 'limit' => 1]);
+		$check_id = \lib\db\services::get(['id' => $_id, 'user_id' => \dash\user::id(), 'limit' => 1]);
 		if(!isset($check_id['id']))
 		{
-			\lib\notif::error(T_("Id not found"), 'id');
+			\dash\notif::error(T_("Id not found"), 'id');
 			return false;
 		}
 
@@ -390,7 +390,7 @@ class service
 
 	public static function user_service_list()
 	{
-		$user_id = \lib\user::id();
+		$user_id = \dash\user::id();
 		if(!$user_id)
 		{
 			return false;

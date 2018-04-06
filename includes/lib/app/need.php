@@ -33,7 +33,7 @@ class need
 		$title = trim($title);
 		if($title && mb_strlen($title) >= 200)
 		{
-			\lib\notif::error(T_("Please set a valid title"), 'title');
+			\dash\notif::error(T_("Please set a valid title"), 'title');
 			return false;
 		}
 
@@ -42,13 +42,13 @@ class need
 		$request = \dash\utility\convert::to_en_number($request);
 		if(!$is_service && !is_numeric($request))
 		{
-			\lib\notif::error(T_("Please set a valid request"), 'request');
+			\dash\notif::error(T_("Please set a valid request"), 'request');
 			return false;
 		}
 
 		if(!$is_service && intval($request) > 1E+8)
 		{
-			\lib\notif::error(T_("Request is too large"), 'request');
+			\dash\notif::error(T_("Request is too large"), 'request');
 			return false;
 		}
 
@@ -60,13 +60,13 @@ class need
 		$amount = \dash\utility\convert::to_en_number($amount);
 		if(!$is_service && $amount && !is_numeric($amount))
 		{
-			\lib\notif::error(T_("Please set a valid amount"), 'amount');
+			\dash\notif::error(T_("Please set a valid amount"), 'amount');
 			return false;
 		}
 
 		if(!$is_service && $amount && intval($amount) > 1E+8)
 		{
-			\lib\notif::error(T_("Amount is too large"), 'amount');
+			\dash\notif::error(T_("Amount is too large"), 'amount');
 			return false;
 		}
 
@@ -79,7 +79,7 @@ class need
 		$fileurl = trim($fileurl);
 		if($fileurl && mb_strlen($fileurl) >= 1000)
 		{
-			\lib\notif::error(T_("Please set a valid fileurl"), 'fileurl');
+			\dash\notif::error(T_("Please set a valid fileurl"), 'fileurl');
 			return false;
 		}
 
@@ -87,21 +87,21 @@ class need
 		$desc = trim($desc);
 		if($desc && mb_strlen($desc) >= 200)
 		{
-			\lib\notif::error(T_("Please set a valid desc"), 'desc');
+			\dash\notif::error(T_("Please set a valid desc"), 'desc');
 			return false;
 		}
 
 		$type = \dash\app::request('type');
 		if($type && !in_array($type, ['product', 'expertise']))
 		{
-			\lib\notif::error(T_("Please set a valid type"), 'type');
+			\dash\notif::error(T_("Please set a valid type"), 'type');
 			return false;
 		}
 
 		$status = \dash\app::request('status');
 		if($status && !in_array($status, ['enable','disable']))
 		{
-			\lib\notif::error(T_("Please set a valid status"), 'status');
+			\dash\notif::error(T_("Please set a valid status"), 'status');
 			return false;
 		}
 
@@ -184,9 +184,9 @@ class need
 
 		\dash\app::variable($_args);
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
-			\lib\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
@@ -209,7 +209,7 @@ class need
 
 		if(!$need_id)
 		{
-			\lib\notif::error(T_("No way to insert need"), 'db', 'system');
+			\dash\notif::error(T_("No way to insert need"), 'db', 'system');
 			return false;
 		}
 		return true;
@@ -239,22 +239,22 @@ class need
 
 		\dash\app::variable($_args);
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
-			\lib\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
 		if(!$_id || !is_numeric($_id))
 		{
-			\lib\notif::error(T_("Id not found"), 'id');
+			\dash\notif::error(T_("Id not found"), 'id');
 			return false;
 		}
 
 		$check_id = \lib\db\needs::get(['id' => $_id, 'limit' => 1]);
 		if(!isset($check_id['id']))
 		{
-			\lib\notif::error(T_("Id not found"), 'id');
+			\dash\notif::error(T_("Id not found"), 'id');
 			return false;
 		}
 

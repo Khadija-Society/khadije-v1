@@ -15,7 +15,7 @@ class view extends \mvc\view
 		$this->data->donateArchive = \lib\db\mytransactions::user_transaction('cash');
 
 
-		if(\lib\session::get('payment_request_start'))
+		if(\dash\session::get('payment_request_start'))
 		{
 			if(\dash\utility\payment\verify::get_status())
 			{

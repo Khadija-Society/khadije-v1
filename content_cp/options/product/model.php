@@ -65,13 +65,13 @@ class model extends \addons\content_cp\main\model
 		{
 			if(\dash\request::get('edit'))
 			{
-				\lib\notif::ok(T_("Way successfully edited"));
+				\dash\notif::ok(T_("Way successfully edited"));
 			}
 			else
 			{
-				\lib\notif::ok(T_("Way successfully added"));
+				\dash\notif::ok(T_("Way successfully added"));
 			}
-			\lib\redirect::pwd();
+			\dash\redirect::pwd();
 		}
 	}
 }

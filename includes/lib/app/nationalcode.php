@@ -24,7 +24,7 @@ class nationalcode
 	 */
 	public static function list($_string = null, $_args = [])
 	{
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
 			return false;
 		}

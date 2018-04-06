@@ -17,12 +17,12 @@ class view extends \content_a\main\view
 
 		if(is_numeric($id))
 		{
-			$this->data->service_detail = \lib\db\services::get(['id' => $id, 'user_id' => \lib\user::id(), 'limit' => 1]);
+			$this->data->service_detail = \lib\db\services::get(['id' => $id, 'user_id' => \dash\user::id(), 'limit' => 1]);
 		}
 
 		if(!$this->data->service_detail)
 		{
-			\lib\header::status(404, T_("Id not found"));
+			\dash\header::status(404, T_("Id not found"));
 		}
 	}
 

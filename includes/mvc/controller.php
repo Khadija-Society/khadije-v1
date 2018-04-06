@@ -7,8 +7,8 @@ class controller extends \lib\controller
 	{
 		if(\dash\url::directory() === 'main')
 		{
-			\lib\redirect::to(\dash\url::here());
-			\lib\header::status(404);
+			\dash\redirect::to(\dash\url::here());
+			\dash\header::status(404);
 		}
 	}
 }

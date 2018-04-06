@@ -9,28 +9,28 @@ class model extends \content_a\main\model
 	{
 		if(\dash\request::post('username'))
 		{
-			\lib\notif::error(T_("Whate are you doing?"));
+			\dash\notif::error(T_("Whate are you doing?"));
 			return false;
 		}
 
 		$niyat = \dash\request::post('niyat');
 		if(mb_strlen($niyat) > 150)
 		{
-			\lib\notif::error(T_("Please set niyat less than 150 character"), 'niyat');
+			\dash\notif::error(T_("Please set niyat less than 150 character"), 'niyat');
 			return false;
 		}
 
 		$way = \dash\request::post('way');
 		if($way && !in_array($way, \lib\app\donate::way_list()))
 		{
-			\lib\notif::error(T_("Please set a valid way"), 'way');
+			\dash\notif::error(T_("Please set a valid way"), 'way');
 			return false;
 		}
 
 		$fullname = \dash\request::post('fullname');
 		if(mb_strlen($fullname) > 150)
 		{
-			\lib\notif::error(T_("Please set fullname less than 150 character"), 'fullname');
+			\dash\notif::error(T_("Please set fullname less than 150 character"), 'fullname');
 			return false;
 		}
 
@@ -38,14 +38,14 @@ class model extends \content_a\main\model
 		$email = \dash\request::post('email');
 		if(mb_strlen($email) > 90)
 		{
-			\lib\notif::error(T_("Please set email less than 90 character"), 'email');
+			\dash\notif::error(T_("Please set email less than 90 character"), 'email');
 			return false;
 		}
 
 		$mobile = \dash\request::post('mobile');
 		if($mobile && !\dash\utility\filter::mobile($mobile))
 		{
-			\lib\notif::error(T_("Please set a valid mobile number"), 'mobile');
+			\dash\notif::error(T_("Please set a valid mobile number"), 'mobile');
 			return false;
 		}
 
@@ -57,13 +57,13 @@ class model extends \content_a\main\model
 		$amount = \dash\request::post('amount');
 		if(!$amount || !is_numeric($amount))
 		{
-			\lib\notif::error(T_("Please set a valid amount number"), 'amount');
+			\dash\notif::error(T_("Please set a valid amount number"), 'amount');
 			return false;
 		}
 
-		$user_id = \lib\user::id();
+		$user_id = \dash\user::id();
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
 			if($mobile)
 			{

@@ -11,7 +11,7 @@ class model extends \addons\content_cp\main\model
 		{
 			if(\lib\app\travel::remove_cityplace(\dash\request::post('key')))
 			{
-				\lib\notif::warn(T_("The city place successfully removed"));
+				\dash\notif::warn(T_("The city place successfully removed"));
 			}
 			else
 			{
@@ -24,13 +24,13 @@ class model extends \addons\content_cp\main\model
 
 			if(\lib\engine\process::status())
 			{
-				\lib\notif::ok(T_("City place successfully added"));
+				\dash\notif::ok(T_("City place successfully added"));
 			}
 		}
 
 		if(\lib\engine\process::status())
 		{
-			\lib\redirect::pwd();
+			\dash\redirect::pwd();
 		}
 
 	}

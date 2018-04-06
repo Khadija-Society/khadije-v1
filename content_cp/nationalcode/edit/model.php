@@ -13,7 +13,7 @@ class model extends \content_cp\main2\model
 
 		if($update['qom'] && !is_numeric($update['qom']) || intval($update['qom']) > 999)
 		{
-			\lib\notif::error(T_("Invalid qom number"), 'qom');
+			\dash\notif::error(T_("Invalid qom number"), 'qom');
 			return false;
 		}
 		if(!$update['qom'])
@@ -24,7 +24,7 @@ class model extends \content_cp\main2\model
 
 		if($update['mashhad'] && !is_numeric($update['mashhad']) || intval($update['mashhad']) > 999)
 		{
-			\lib\notif::error(T_("Invalid mashhad number"), 'mashhad');
+			\dash\notif::error(T_("Invalid mashhad number"), 'mashhad');
 			return false;
 		}
 		if(!$update['mashhad'])
@@ -34,7 +34,7 @@ class model extends \content_cp\main2\model
 
 		if($update['karbala'] && !is_numeric($update['karbala']) || intval($update['karbala']) > 999)
 		{
-			\lib\notif::error(T_("Invalid karbala number"), 'karbala');
+			\dash\notif::error(T_("Invalid karbala number"), 'karbala');
 			return false;
 		}
 		if(!$update['karbala'])
@@ -47,12 +47,12 @@ class model extends \content_cp\main2\model
 			\lib\db\nationalcodes::update($update, \dash\request::get('id'));
 			if(\lib\engine\process::status())
 			{
-				\lib\notif::ok(T_("Your change was saved"));
+				\dash\notif::ok(T_("Your change was saved"));
 			}
 		}
 		else
 		{
-			\lib\notif::error(T_("Id not found"));
+			\dash\notif::error(T_("Id not found"));
 		}
 
 

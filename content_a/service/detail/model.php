@@ -24,8 +24,8 @@ class model extends \content_a\main\model
 
 		if(\lib\engine\process::status())
 		{
-			\lib\notif::ok(T_("Detail was saved"));
-			\lib\redirect::to(\dash\url::here(). '/service');
+			\dash\notif::ok(T_("Detail was saved"));
+			\dash\redirect::to(\dash\url::here(). '/service');
 		}
 	}
 }

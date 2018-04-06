@@ -21,7 +21,7 @@ class model extends \mvc\model
 		if(!in_array(mb_strtolower(\dash\request::post('bank')), ['asanpardakht', 'zarinpal', 'payir']))
 
 		$redirect = false;
-		if(\lib\permission::access('admin'))
+		if(\dash\permission::access('admin'))
 		{
 			$redirect = true;
 			$args['manuall'] = \dash\request::post('manualPay');
@@ -31,7 +31,7 @@ class model extends \mvc\model
 
 		if($redirect)
 		{
-			\lib\redirect::pwd();
+			\dash\redirect::pwd();
 		}
 	}
 }

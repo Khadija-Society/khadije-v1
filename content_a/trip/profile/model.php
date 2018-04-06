@@ -30,8 +30,8 @@ class model extends \content_a\main\model
 
 		if(\lib\engine\process::status())
 		{
-			\lib\notif::ok(T_("Your detail was saved"));
-			\lib\redirect::to(\dash\url::here(). '/trip/partner?trip='. \dash\request::get('trip'));
+			\dash\notif::ok(T_("Your detail was saved"));
+			\dash\redirect::to(\dash\url::here(). '/trip/partner?trip='. \dash\request::get('trip'));
 		}
 
 	}

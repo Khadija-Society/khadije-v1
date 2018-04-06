@@ -19,33 +19,33 @@ class model extends \mvc\model
 	{
 		if(\dash\request::post('username'))
 		{
-			\lib\notif::error(T_("Whate are you doing?"));
+			\dash\notif::error(T_("Whate are you doing?"));
 			return false;
 		}
 
-		$count = \lib\session::get('count_fill_contact');
+		$count = \dash\session::get('count_fill_contact');
 		if($count)
 		{
-			\lib\session::set('count_fill_contact', $count + 1, null, 60 * 60);
+			\dash\session::set('count_fill_contact', $count + 1, null, 60 * 60);
 		}
 		else
 		{
-			\lib\session::set('count_fill_contact', 1, null, 60 * 60);
+			\dash\session::set('count_fill_contact', 1, null, 60 * 60);
 		}
 
 		if($count >= 3)
 		{
-			\lib\notif::warn(T_("How are you?"). ":)");
+			\dash\notif::warn(T_("How are you?"). ":)");
 			return false;
 		}
 
 		// check login
-		if(\lib\user::login())
+		if(\dash\user::login())
 		{
-			$user_id = \lib\user::id();
+			$user_id = \dash\user::id();
 
 			// get mobile from user login session
-			$mobile = \lib\user::login('mobile');
+			$mobile = \dash\user::login('mobile');
 
 			if(!$mobile)
 			{
@@ -53,7 +53,7 @@ class model extends \mvc\model
 			}
 
 			// get display name from user login session
-			$displayname = \lib\user::login("displayname");
+			$displayname = \dash\user::login("displayname");
 			// user not set users display name, we get display name from contact form
 			if(!$displayname)
 			{
@@ -83,8 +83,8 @@ class model extends \mvc\model
 		[
 			'meta' =>
 			[
-				'login'    => \lib\user::login('all'),
-				'language' => \lib\language::current(),
+				'login'    => \dash\user::login('all'),
+				'language' => \dash\language::current(),
 				'post'     => \dash\request::post(),
 			]
 		];
@@ -92,7 +92,7 @@ class model extends \mvc\model
 		/**
 		 * register user if set mobile and not register
 		 */
-		if($mobile && !\lib\user::login())
+		if($mobile && !\dash\user::login())
 		{
 			$mobile = \dash\utility\filter::mobile($mobile);
 
@@ -119,7 +119,7 @@ class model extends \mvc\model
 		// check content
 		if($content == '')
 		{
-			\lib\notif::error(T_("Please try type something!"), "content");
+			\dash\notif::error(T_("Please try type something!"), "content");
 			return false;
 		}
 		// ready to insert comments
@@ -141,15 +141,15 @@ class model extends \mvc\model
 			// 	'subject' => 'contact',
 			// 	'body'    => $content,
 			// ];
-			// \lib\mail::send($mail);
+			// \dash\mail::send($mail);
 
 			\dash\db\logs::set('user:send:contact', $user_id, $log_meta);
-			\lib\notif::ok(T_("Thank You For contacting us"));
+			\dash\notif::ok(T_("Thank You For contacting us"));
 		}
 		else
 		{
 			\dash\db\logs::set('user:send:contact:fail', $user_id, $log_meta);
-			\lib\notif::error(T_("We could'nt save the contact"));
+			\dash\notif::error(T_("We could'nt save the contact"));
 		}
 	}
 }

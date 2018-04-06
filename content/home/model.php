@@ -13,13 +13,13 @@ class model extends \mvc\model
 			[
 				// 'hazinekard' => $way,
 				// 'niyat'      => $niyat,
-				'fullname'   => \lib\user::login('displayname'),
+				'fullname'   => \dash\user::login('displayname'),
 				'donate'     => 'cash',
 				'doners'     => 0,
 			]
 		];
 
-		\dash\utility\payment\pay::start(\lib\user::id(), 'asanpardakht', \dash\request::post('quickpay'), $meta);
+		\dash\utility\payment\pay::start(\dash\user::id(), 'asanpardakht', \dash\request::post('quickpay'), $meta);
 	}
 
 }

@@ -30,8 +30,8 @@ class model extends \content_a\main\model
 
 		if(\lib\engine\process::status())
 		{
-			\lib\notif::ok(T_("Your detail was saved"));
-			\lib\redirect::to(\dash\url::here(). '/service/detail?id='. \dash\request::get('id'));
+			\dash\notif::ok(T_("Your detail was saved"));
+			\dash\redirect::to(\dash\url::here(). '/service/detail?id='. \dash\request::get('id'));
 		}
 
 	}

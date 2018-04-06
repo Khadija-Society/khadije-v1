@@ -65,13 +65,13 @@ class model extends \content_cp\main2\model
 		{
 			if(\dash\request::get('edit'))
 			{
-				\lib\notif::ok(T_("Way successfully edited"));
-				\lib\redirect::to(\dash\url::here(). '/service/options');
+				\dash\notif::ok(T_("Way successfully edited"));
+				\dash\redirect::to(\dash\url::here(). '/service/options');
 			}
 			else
 			{
-				\lib\notif::ok(T_("Way successfully added"));
-				\lib\redirect::pwd();
+				\dash\notif::ok(T_("Way successfully added"));
+				\dash\redirect::pwd();
 			}
 		}
 	}

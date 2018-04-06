@@ -26,14 +26,14 @@ class myuser
 		$gender = \dash\app::request('gender');
 		if($gender && !in_array($gender, ['male', 'female']))
 		{
-			\lib\notif::error(T_("Invalid arguments gender"), 'gender');
+			\dash\notif::error(T_("Invalid arguments gender"), 'gender');
 			return false;
 		}
 
 		$email = \dash\app::request('email');
 		if($email && mb_strlen($email) > 70)
 		{
-			\lib\notif::error(T_("Invalid arguments email"), 'email');
+			\dash\notif::error(T_("Invalid arguments email"), 'email');
 			return false;
 		}
 
@@ -41,13 +41,13 @@ class myuser
 		$birthday = \dash\utility\convert::to_en_number($birthday);
 		if(!$birthday)
 		{
-			\lib\notif::error(T_("Birthday is required"), 'birthday');
+			\dash\notif::error(T_("Birthday is required"), 'birthday');
 			return false;
 		}
 
 		if(strtotime($birthday) === false)
 		{
-			\lib\notif::error(T_("Invalid arguments birthday"), 'birthday');
+			\dash\notif::error(T_("Invalid arguments birthday"), 'birthday');
 			return false;
 		}
 
@@ -60,26 +60,26 @@ class myuser
 
 		if(!$firstname)
 		{
-			\lib\notif::error(T_("First name is required"), 'name');
+			\dash\notif::error(T_("First name is required"), 'name');
 			return false;
 		}
 
 		if($firstname && mb_strlen($firstname) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments firstname"), 'name');
+			\dash\notif::error(T_("Invalid arguments firstname"), 'name');
 			return false;
 		}
 
 		$lastname = \dash\app::request('lastname');
 		if($lastname && mb_strlen($lastname) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments lastname"), 'lastName');
+			\dash\notif::error(T_("Invalid arguments lastname"), 'lastName');
 			return false;
 		}
 
 		if(!$lastname)
 		{
-			\lib\notif::error(T_("Last name is required"), 'lastName');
+			\dash\notif::error(T_("Last name is required"), 'lastName');
 			return false;
 		}
 
@@ -88,7 +88,7 @@ class myuser
 
 		if(!$nationalcode && !$pasportcode)
 		{
-			\lib\notif::error(T_("National code or pasportcode code is required"), ['nationalcode', 'pasportcode']);
+			\dash\notif::error(T_("National code or pasportcode code is required"), ['nationalcode', 'pasportcode']);
 			return false;
 		}
 
@@ -97,7 +97,7 @@ class myuser
 
 		if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
 		{
-			\lib\notif::error(T_("Invalid arguments nationalcode"), 'nationalcode');
+			\dash\notif::error(T_("Invalid arguments nationalcode"), 'nationalcode');
 			return false;
 		}
 
@@ -109,7 +109,7 @@ class myuser
 			}
 			else
 			{
-				\lib\notif::error(T_("Invalid nationalcode"), 'nationalcode');
+				\dash\notif::error(T_("Invalid nationalcode"), 'nationalcode');
 				return false;
 			}
 		}
@@ -117,13 +117,13 @@ class myuser
 		$father = \dash\app::request('father');
 		if($father && mb_strlen($father) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments father"), 'father');
+			\dash\notif::error(T_("Invalid arguments father"), 'father');
 			return false;
 		}
 
 		if($pasportcode && mb_strlen($pasportcode) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments pasportcode"), 'pasportcode');
+			\dash\notif::error(T_("Invalid arguments pasportcode"), 'pasportcode');
 			return false;
 		}
 
@@ -131,7 +131,7 @@ class myuser
 		$pasportdate = \dash\utility\convert::to_en_number($pasportdate);
 		if($pasportdate && strtotime($pasportdate) === false)
 		{
-			\lib\notif::error(T_("Invalid arguments pasportdate"), 'pasportdate');
+			\dash\notif::error(T_("Invalid arguments pasportdate"), 'pasportdate');
 			return false;
 		}
 
@@ -143,112 +143,112 @@ class myuser
 		$education = \dash\app::request('education');
 		if($education && mb_strlen($education) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments education"), 'education');
+			\dash\notif::error(T_("Invalid arguments education"), 'education');
 			return false;
 		}
 
 		$educationcourse = \dash\app::request('educationcourse');
 		if($educationcourse && mb_strlen($educationcourse) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments educationcourse"), 'educationcourse');
+			\dash\notif::error(T_("Invalid arguments educationcourse"), 'educationcourse');
 			return false;
 		}
 
 		$country = \dash\app::request('country');
 		if($country && mb_strlen($country) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments country"), 'country');
+			\dash\notif::error(T_("Invalid arguments country"), 'country');
 			return false;
 		}
 
 		$province = \dash\app::request('province');
 		if($province && mb_strlen($province) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments province"), 'province');
+			\dash\notif::error(T_("Invalid arguments province"), 'province');
 			return false;
 		}
 
 		$city = \dash\app::request('city');
 		if($city && mb_strlen($city) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments city"), 'city');
+			\dash\notif::error(T_("Invalid arguments city"), 'city');
 			return false;
 		}
 
 		$homeaddress = \dash\app::request('homeaddress');
 		if($homeaddress && mb_strlen($homeaddress) > 700)
 		{
-			\lib\notif::error(T_("Invalid arguments homeaddress"), 'homeaddress');
+			\dash\notif::error(T_("Invalid arguments homeaddress"), 'homeaddress');
 			return false;
 		}
 
 		$workaddress = \dash\app::request('workaddress');
 		if($workaddress && mb_strlen($workaddress) > 700)
 		{
-			\lib\notif::error(T_("Invalid arguments workaddress"), 'workaddress');
+			\dash\notif::error(T_("Invalid arguments workaddress"), 'workaddress');
 			return false;
 		}
 
 		$arabiclang = \dash\app::request('arabiclang');
 		if($arabiclang && !in_array($arabiclang, ['yes', 'no']))
 		{
-			\lib\notif::error(T_("Invalid arguments arabiclang"), 'arabiclang');
+			\dash\notif::error(T_("Invalid arguments arabiclang"), 'arabiclang');
 			return false;
 		}
 
 		$phone = \dash\app::request('phone');
 		if(($phone && !is_numeric($phone)) || intval($phone) > 1E+10)
 		{
-			\lib\notif::error(T_("Invalid arguments phone"), 'phone');
+			\dash\notif::error(T_("Invalid arguments phone"), 'phone');
 			return false;
 		}
 
 		$displayname = \dash\app::request('displayname');
 		if($displayname && mb_strlen($displayname) > 90)
 		{
-			\lib\notif::error(T_("Invalid arguments displayname"), 'displayname');
+			\dash\notif::error(T_("Invalid arguments displayname"), 'displayname');
 			return false;
 		}
 
 		$married = \dash\app::request('married');
 		if($married && !in_array($married, ['single', 'married']))
 		{
-			\lib\notif::error(T_("Invalid arguments married"), 'married');
+			\dash\notif::error(T_("Invalid arguments married"), 'married');
 			return false;
 		}
 
 		$zipcode = \dash\app::request('zipcode');
 		if(($zipcode && !is_numeric($zipcode)) || intval($zipcode) > 1E+10 )
 		{
-			\lib\notif::error(T_("Invalid arguments zipcode"), 'zipcode');
+			\dash\notif::error(T_("Invalid arguments zipcode"), 'zipcode');
 			return false;
 		}
 
 		$desc = \dash\app::request('desc');
 		if($desc && mb_strlen($desc) > 700)
 		{
-			\lib\notif::error(T_("Invalid arguments desc"), 'desc');
+			\dash\notif::error(T_("Invalid arguments desc"), 'desc');
 			return false;
 		}
 
 		$job = \dash\app::request('job');
 		if($job && mb_strlen($job) > 50)
 		{
-			\lib\notif::error(T_("Invalid arguments job"), 'job');
+			\dash\notif::error(T_("Invalid arguments job"), 'job');
 			return false;
 		}
 
 		$avatar = \dash\app::request('avatar');
 		if($avatar && mb_strlen($avatar) > 1000)
 		{
-			\lib\notif::error(T_("Invalid arguments avatar"), 'avatar');
+			\dash\notif::error(T_("Invalid arguments avatar"), 'avatar');
 			return false;
 		}
 
 		$nesbat = \dash\app::request('nesbat');
 		if($nesbat && mb_strlen($nesbat) > 80)
 		{
-			\lib\notif::error(T_("Invalid arguments nesbat"), 'nesbat');
+			\dash\notif::error(T_("Invalid arguments nesbat"), 'nesbat');
 			return false;
 		}
 
@@ -257,7 +257,7 @@ class myuser
 
 		if($province && !in_array($province, $provice_list))
 		{
-			\lib\notif::error(T_("Invalid province name"), 'province');
+			\dash\notif::error(T_("Invalid province name"), 'province');
 			return false;
 		}
 
@@ -364,15 +364,15 @@ class myuser
 
 		\dash\app::variable($_args);
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
-			\lib\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
 		if(!\dash\app::request('travel_id') || !ctype_digit(\dash\app::request('travel_id')))
 		{
-			\lib\notif::error(T_("Travel id not found"));
+			\dash\notif::error(T_("Travel id not found"));
 			return false;
 		}
 
@@ -386,17 +386,17 @@ class myuser
 
 		if(isset($args['nationalcode']) && $args['nationalcode'])
 		{
-			$load_user = \dash\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
+			$load_user = \dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]);
 			if(isset($load_user['nationalcode']) && intval($load_user['nationalcode']) === intval($args['nationalcode']))
 			{
-				\lib\notif::error(T_("This nationalcode is for your!"), 'nationalcode');
+				\dash\notif::error(T_("This nationalcode is for your!"), 'nationalcode');
 				return false;
 			}
 
 			$duplicate_nationalcode_in_child = \lib\db\travelusers::duplicate_nationalcode_in_child($args['nationalcode'], \dash\app::request('travel_id'));
 			if($duplicate_nationalcode_in_child)
 			{
-				\lib\notif::error(T_("Duplicate national code in your child list"), 'nationalcode');
+				\dash\notif::error(T_("Duplicate national code in your child list"), 'nationalcode');
 				return false;
 			}
 		}
@@ -413,7 +413,7 @@ class myuser
 		$count_partner     = \lib\db\travelusers::get_travel_child(\dash\request::get('trip'));
 		if(count($count_partner) + 1 > intval($max_count_partner) )
 		{
-			\lib\notif::error(T_("Maximum partner added. can not add another"));
+			\dash\notif::error(T_("Maximum partner added. can not add another"));
 			return false;
 		}
 
@@ -424,7 +424,7 @@ class myuser
 
 		if(!$user_id)
 		{
-			\lib\notif::error(T_("Can not add partner"), 'db');
+			\dash\notif::error(T_("Can not add partner"), 'db');
 			return false;
 		}
 
@@ -456,9 +456,9 @@ class myuser
 
 		\dash\app::variable($_args);
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
-			\lib\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
@@ -484,10 +484,10 @@ class myuser
 
 		if(isset($args['nationalcode']) && $args['nationalcode'])
 		{
-			$load_user = \dash\db\users::get(['id' => \lib\user::id(), 'limit' => 1]);
+			$load_user = \dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]);
 			if(isset($load_user['nationalcode']) && $load_user['nationalcode'] === $args['nationalcode'])
 			{
-				\lib\notif::error(T_("This nationalcode is for your!"), 'nationalcode');
+				\dash\notif::error(T_("This nationalcode is for your!"), 'nationalcode');
 				return false;
 			}
 			$check_not_duplicate_in_child = \lib\db\travelusers::duplicate_nationalcode_in_child($args['nationalcode'], \dash\app::request('travel_id'));
@@ -500,7 +500,7 @@ class myuser
 				}
 				else
 				{
-					\lib\notif::error(T_("Duplicate national code in your child list"), 'nationalcode');
+					\dash\notif::error(T_("Duplicate national code in your child list"), 'nationalcode');
 					return false;
 				}
 			}
@@ -536,9 +536,9 @@ class myuser
 
 		\dash\app::variable($_args);
 
-		if(!\lib\user::id())
+		if(!\dash\user::id())
 		{
-			\lib\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
 
@@ -552,9 +552,9 @@ class myuser
 
 		if(!\dash\app::isset_request('avatar'))         unset($args['avatar']);
 
-		\dash\db\users::update($args, \lib\user::id());
+		\dash\db\users::update($args, \dash\user::id());
 
-		\lib\user::refresh();
+		\dash\user::refresh();
 
 		return true;
 	}
