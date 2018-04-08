@@ -28,7 +28,7 @@ class model extends \content_a\main\model
 
 		\lib\app\myuser::edit($post);
 
-		if(\lib\engine\process::status())
+		if(\dash\engine\process::status())
 		{
 			\dash\notif::ok(T_("Your detail was saved"));
 			\dash\redirect::to(\dash\url::here(). '/service/detail?id='. \dash\request::get('id'));

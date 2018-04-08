@@ -27,7 +27,7 @@ class model extends \addons\content_cp\main\model
 			\dash\notif::ok(T_("Way successfully added"));
 		}
 
-		if(\lib\engine\process::status())
+		if(\dash\engine\process::status())
 		{
 			\dash\redirect::pwd();
 		}

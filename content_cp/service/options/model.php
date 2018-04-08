@@ -20,7 +20,7 @@ class model extends \content_cp\main2\model
 				return $uploaded_file['url'];
 			}
 			// if in upload have error return
-			if(!\lib\engine\process::status())
+			if(!\dash\engine\process::status())
 			{
 				return false;
 			}
@@ -61,7 +61,7 @@ class model extends \content_cp\main2\model
 			\lib\app\need::add($post, ['service' => true]);
 		}
 
-		if(\lib\engine\process::status())
+		if(\dash\engine\process::status())
 		{
 			if(\dash\request::get('edit'))
 			{

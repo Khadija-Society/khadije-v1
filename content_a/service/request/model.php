@@ -14,7 +14,7 @@ class model extends \content_a\main\model
 
 		$service_id = \lib\app\service::add($post);
 
-		if(\lib\engine\process::status() && $service_id)
+		if(\dash\engine\process::status() && $service_id)
 		{
 			\dash\notif::ok(T_("Your request was saved"));
 			\dash\redirect::to(\dash\url::here(). '/service/profile?id='. $service_id);

@@ -33,7 +33,7 @@ class model extends \addons\content_cp\main\model
 			\lib\app\travel::group_city_signup_setting('qom', \dash\request::post('qom'));
 		}
 
-		if(\lib\engine\process::status())
+		if(\dash\engine\process::status())
 		{
 			\dash\notif::ok(T_("Your change was saved"));
 		}

@@ -22,13 +22,13 @@ class model extends \addons\content_cp\main\model
 		{
 			\lib\app\travel::set_cityplace(\dash\request::post('city'), \dash\request::post('place'));
 
-			if(\lib\engine\process::status())
+			if(\dash\engine\process::status())
 			{
 				\dash\notif::ok(T_("City place successfully added"));
 			}
 		}
 
-		if(\lib\engine\process::status())
+		if(\dash\engine\process::status())
 		{
 			\dash\redirect::pwd();
 		}

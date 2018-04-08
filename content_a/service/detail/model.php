@@ -22,7 +22,7 @@ class model extends \content_a\main\model
 
 		\lib\app\service::edit($post, \dash\request::get('id'));
 
-		if(\lib\engine\process::status())
+		if(\dash\engine\process::status())
 		{
 			\dash\notif::ok(T_("Detail was saved"));
 			\dash\redirect::to(\dash\url::here(). '/service');

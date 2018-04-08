@@ -74,7 +74,7 @@ class model extends \content_cp\main2\model
 			\dash\file::write($url, $result);
 		}
 
-		if(\lib\engine\process::status())
+		if(\dash\engine\process::status())
 		{
 			\dash\notif::ok(T_("Data saved"));
 		}
