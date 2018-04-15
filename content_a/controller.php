@@ -16,7 +16,6 @@ class controller
 	public static function check_trip_id($_type = 'family')
 	{
 		$trip = \dash\request::get('trip');
-
 		if(!$trip || !ctype_digit($trip) || $trip == '')
 		{
 			\dash\header::status(403, T_("Trip id not found"));

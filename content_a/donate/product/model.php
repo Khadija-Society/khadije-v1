@@ -5,7 +5,7 @@ namespace content_a\donate\product;
 class model
 {
 
-	public function post()
+	public static function post()
 	{
 		if(\dash\request::post('username'))
 		{

@@ -5,7 +5,7 @@ namespace content_a\donate;
 class model
 {
 
-	public function post()
+	public static function post()
 	{
 		$args =
 		[

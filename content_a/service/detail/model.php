@@ -5,7 +5,7 @@ namespace content_a\service\detail;
 class model
 {
 
-	public function post()
+	public static function post()
 	{
 
 		$post                = [];

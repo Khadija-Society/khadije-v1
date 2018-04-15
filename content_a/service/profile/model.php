@@ -5,7 +5,7 @@ namespace content_a\service\profile;
 class model
 {
 
-	public function post()
+	public static function post()
 	{
 		$post                    = [];
 		$post['gender']          = \dash\request::post('gender') ;

@@ -2,10 +2,10 @@
 namespace content_a\group\partner;
 
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_partner()
+	public static function post()
 	{
 		if(\dash\request::post('next') === 'next')
 		{

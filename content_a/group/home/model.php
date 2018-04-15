@@ -4,7 +4,7 @@ namespace content_a\group\home;
 class model
 {
 
-	public function post()
+	public static function post()
 	{
 		if(\dash\request::post('key') && \dash\request::post('type') === 'cancel' && ctype_digit(\dash\request::post('key')))
 		{

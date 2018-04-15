@@ -218,6 +218,7 @@ class myuser
 		}
 
 		$zipcode = \dash\app::request('zipcode');
+		$zipcode = \dash\utility\convert::to_en_number($zipcode);
 		if(($zipcode && !is_numeric($zipcode)) || intval($zipcode) > 1E+10 )
 		{
 			\dash\notif::error(T_("Invalid arguments zipcode"), 'zipcode');

@@ -16,7 +16,7 @@ class view
 	}
 
 
-	public function static_var()
+	public static function static_var()
 	{
 		$countryList = \dash\utility\location\countres::list('name', 'name - localname');
 		\dash\data::countryList(implode(',', $countryList));
