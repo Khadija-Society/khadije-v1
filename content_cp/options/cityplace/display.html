@@ -17,7 +17,7 @@
 <div class="f justify-center">
 <div class="cbox c5">
 
-{%if way_list%}
+{%if wayList%}
     <br>
     <h2>{%trans "List of city place"%}</h2>
     <table class="tbl">
@@ -29,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        {%for key, value in way_list%}
+        {%for key, value in wayList%}
           <tr>
             <td>{%set myCityName = value.city %}{%trans myCityName%}</td>
             <td>{{value.place}}</td>

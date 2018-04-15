@@ -1,9 +1,9 @@
 <?php
 namespace content\donate;
 
-class model extends \mvc\model
+class model
 {
-	public function post_donate()
+	public static function post()
 	{
 		$args =
 		[

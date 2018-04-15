@@ -15,7 +15,7 @@ class view extends \content_cp\main2\view
 
 		$this->data->bodyclass       = 'unselectable siftal';
 
-		$this->data->way_list = \lib\app\donate::way_list();
+		$this->data->wayList = \lib\app\donate::way_list();
 	}
 }
 ?>

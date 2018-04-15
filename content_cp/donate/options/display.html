@@ -13,7 +13,7 @@
   </div>
 </div>
 
-{%if way_list%}
+{%if wayList%}
 <div class="f justify-center">
   <div class="cbox c5">
     <h2>{%trans "List of way"%}</h2>
@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        {%for key, value in way_list%}
+        {%for key, value in wayList%}
           <tr>
             <td>{{value}}</td>
             <td class="collapsing"><a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>

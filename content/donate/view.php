@@ -2,32 +2,31 @@
 namespace content\donate;
 
 
-class view extends \mvc\view
+class view
 {
-	function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Donate");
-		$this->data->page['desc']  = T_("Pay your donate online with below form");
+		\dash\data::page_title(T_("Donate"));
+		\dash\data::page_desc(T_("Pay your donate online with below form"));
 
 
-		$this->data->bodyclass = 'unselectable';
-		$this->data->way_list  = \lib\app\donate::way_list();
-		$this->data->donateArchive = \lib\db\mytransactions::user_transaction('cash');
-
+		\dash\data::bodyclass('unselectable');
+		\dash\data::wayList(\lib\app\donate::way_list());
+		\dash\data::donateArchive(\lib\db\mytransactions::user_transaction('cash'));
 
 		if(\dash\session::get('payment_request_start'))
 		{
 			if(\dash\utility\payment\verify::get_status())
 			{
 				$amount = \dash\utility\payment\verify::get_amount();
-				$this->data->payment_verify_msg_true = true;
-				$this->data->payment_verify_msg = T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($amount)]);
+				\dash\data::paymentVerify_msg_true(true);
+				\dash\data::paymentVerify_msg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($amount)]));
 				\lib\app\donate::sms_success($amount);
 			}
 			else
 			{
-				$this->data->payment_verify_msg_true = false;
-				$this->data->payment_verify_msg = T_("Payment unsuccessfull");
+				\dash\data::paymentVerify_msg_true(false);
+				\dash\data::paymentVerify_msg(T_("Payment unsuccessfull"));
 			}
 
 			\dash\utility\payment\verify::clear_session();
