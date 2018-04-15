@@ -10,7 +10,7 @@ class view
 		\dash\data::page_desc(T_('fill your personal data in this step'). ' '. T_('In next step fill your partner data'));
 
 		\dash\data::userdetail(\dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]));
-		\dash\data::userdetail(self::fix_value(\dash\data::userdetail()));
+		\dash\data::userdetail(\content_a\view::fix_value(\dash\data::userdetail()));
 		self::static_var();
 	}
 

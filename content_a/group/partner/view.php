@@ -38,21 +38,21 @@ class view
 
   		\dash\data::nesbatList(implode(',', $childList));
 
-		\dash\data::editMode(true);
+		// \dash\data::editMode(true);
 
-		$id = \dash\request::get('edit');
+		// $id = \dash\request::get('edit');
 
-		\dash\data::childDetail(null);
+		// \dash\data::childDetail(null);
 
-		if(is_numeric($id))
-		{
-			\dash\data::childDetail(\dash\db\users::get(['id' => $id, 'parent' => \dash\user::id(), 'limit' => 1]));
-		}
+		// if(is_numeric($id))
+		// {
+		// 	\dash\data::childDetail(\dash\db\users::get(['id' => $id, 'parent' => \dash\user::id(), 'limit' => 1]));
+		// }
 
-		if(!\dash\data::childDetail())
-		{
-			\dash\header::status(404, T_("Id not found"));
-		}
+		// if(!\dash\data::childDetail())
+		// {
+		// 	\dash\header::status(404, T_("Id not found"));
+		// }
 	}
 }
 ?>
