@@ -53,11 +53,11 @@ class view extends \content_cp\main2\view
 			$args['pagenation'] = false;
 		}
 
-		$this->data->trip_list = \lib\app\travel::list($search_string, $args);
+		$this->data->tripList = \lib\app\travel::list($search_string, $args);
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->trip_list]);
+			\dash\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->tripList]);
 		}
 
 		$this->data->sort_link = self::make_sort_link(\lib\app\travel::$sort_field, \dash\url::here(). '/trip');

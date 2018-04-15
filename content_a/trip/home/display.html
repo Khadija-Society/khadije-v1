@@ -10,7 +10,7 @@
 <p class="alert alert-success txtC">{%trans "You are successfully registered new trip request and you can track the status from this page"%}</p>
 {%endif %}
 
-{%for key, value in trip_list%}
+{%for key, value in tripList%}
 
 {%set myPlace = value.place%}
 {%set myStatus = value.status | capitalize %}
@@ -68,7 +68,7 @@
 
 
 {%block iChild%}
-{%for key, value in child_list%}
+{%for key, value in childList%}
 <div class="switch1  pA5">
  <input type="checkbox" name="child_{{value.id}}" id="child_{{value.id}}" checked>
  <label for="child_{{value.id}}" ></label>

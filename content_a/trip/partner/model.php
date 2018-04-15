@@ -2,10 +2,10 @@
 namespace content_a\trip\partner;
 
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_partner()
+	public static function post()
 	{
 		if(\dash\request::post('next') === 'next')
 		{
@@ -63,10 +63,7 @@ class model extends \content_a\main\model
 				\dash\notif::ok(T_("Your Child was saved"));
 				\dash\redirect::pwd();
 			}
-
 		}
-
 	}
-
 }
 ?>

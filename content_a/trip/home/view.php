@@ -2,20 +2,20 @@
 namespace content_a\trip\home;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("List of your trip request");
-		$this->data->page['desc']  = T_('You can check your last request and cancel them or add new request');
+		\dash\data::page_title(T_("List of your trip request"));
+		\dash\data::page_desc(T_('You can check your last request and cancel them or add new request'));
 
-		$this->data->page['badge']['link'] = \dash\url::here(). '/trip/request';
-		$this->data->page['badge']['text'] = T_('register for new trip request');
+		\dash\data::badge_link(\dash\url::here(). '/trip/request');
+		\dash\data::badge_text(T_('register for new trip request'));
 
 
-		$this->data->trip_list = \lib\app\travel::user_travel_list('family');
+		\dash\data::tripList(\lib\app\travel::user_travel_list('family'));
 
-		if(!$this->data->trip_list || empty($this->data->trip_list))
+		if(!\dash\data::tripList() || empty(\dash\data::tripList()))
 		{
 			\dash\redirect::to(\dash\url::here().'/trip/request');
 			return;

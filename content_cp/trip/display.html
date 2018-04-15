@@ -4,7 +4,7 @@
 {%block pageContent%}
 
 
-{%if trip_list%}
+{%if tripList%}
 {{block('searchblock')}}
 <div class="cbox fs12">
 {{block('datatable')}}
@@ -57,7 +57,7 @@
     </thead>
 
     <tbody>
-      {%for key, value in trip_list%}
+      {%for key, value in tripList%}
       <tr>
         <td class="s0"><a href="{{url.here}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
         <td><a href="{{url.here}}/trip/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>

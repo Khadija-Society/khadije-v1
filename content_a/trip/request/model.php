@@ -2,10 +2,10 @@
 namespace content_a\trip\request;
 
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_trip()
+	public static function post()
 	{
 
 		$post           = [];

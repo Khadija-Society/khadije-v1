@@ -11,7 +11,7 @@ class view
 
 		\dash\data::childList(\lib\db\travelusers::get_travel_child(\dash\request::get('trip')));
 
-  		$child_list =
+  		$childList =
   		[
 	  		T_('Father'),
 	  		T_('Mother'),
@@ -36,7 +36,7 @@ class view
 	  		T_('Grandson'),
   		];
 
-  		\dash\data::nesbatList(implode(',', $child_list));
+  		\dash\data::nesbatList(implode(',', $childList));
 
 		\dash\data::editMode(true);
 

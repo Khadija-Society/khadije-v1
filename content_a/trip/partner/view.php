@@ -2,21 +2,16 @@
 namespace content_a\trip\partner;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Register for new trip request"). ' | '. T_('Step 3');
-		$this->data->page['desc']  = T_('fill your partner detail'). ' '. T_('partner can be family or friends'). ' '. T_('Also you can skip this step and register only for yours without partner');
+		\dash\data::page_title(T_("Register for new trip request"). ' | '. T_('Step 3'));
+		\dash\data::page_desc(T_('fill your partner detail'). ' '. T_('partner can be family or friends'). ' '. T_('Also you can skip this step and register only for yours without partner'));
 
-		// $this->data->page['badge']['link'] = \dash\url::here(). '/trip';
-		// $this->data->page['badge']['text'] = T_('check your trip requests');
+		\dash\data::childList(\lib\db\travelusers::get_travel_child(\dash\request::get('trip')));
 
-
-		$this->data->child_list = \lib\db\travelusers::get_travel_child(\dash\request::get('trip'));
-
-
-  		$child_list =
+  		$childList =
   		[
 	  		T_('Father'),
 	  		T_('Mother'),
@@ -41,28 +36,23 @@ class view extends \content_a\main\view
 	  		T_('Grandson'),
   		];
 
-  		$this->data->nesbatList = implode(',', $child_list);
-
-	}
-
-
-	public function view_edit()
-	{
-		$this->data->editMode = true;
+  		\dash\data::nesbatList(implode(',', $childList));
+		\dash\data::editMode(true);
 
 		$id = \dash\request::get('edit');
 
-		$this->data->childDetail = null;
+		\dash\data::childDetail(null);
 
 		if(is_numeric($id))
 		{
-			$this->data->childDetail = \dash\db\users::get(['id' => $id, 'parent' => \dash\user::id(), 'limit' => 1]);
+			\dash\data::childDetail(\dash\db\users::get(['id' => $id, 'parent' => \dash\user::id(), 'limit' => 1]));
 		}
 
-		if(!$this->data->childDetail)
+		if(!\dash\data::childDetail())
 		{
 			\dash\header::status(404, T_("Id not found"));
 		}
 	}
+
 }
 ?>
