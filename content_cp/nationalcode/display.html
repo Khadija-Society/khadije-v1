@@ -4,7 +4,7 @@
 {%block pageContent%}
 
 
-{%if nationalcode_list%}
+{%if nationalcodeList%}
 {{block('searchblock')}}
 <div class="cbox fs12">
 {{block('datatable')}}
@@ -52,7 +52,7 @@
     </thead>
 
     <tbody class="txtC">
-      {%for key, value in nationalcode_list%}
+      {%for key, value in nationalcodeList%}
       <tr>
         <td><a href="{{url.here}}/nationalcode/edit?id={{value.id}}">{{value.nationalcode | fitNumber(false)}}</a></td>
         <td><span class="badge danger fs09">{{value.qom | fitNumber}}</span></td>

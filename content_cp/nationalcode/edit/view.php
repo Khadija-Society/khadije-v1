@@ -2,22 +2,19 @@
 namespace content_cp\nationalcode\edit;
 
 
-class view extends \content_cp\main2\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Edit national code");
-		$this->data->page['desc']  = T_("Edit special national code and update number of times");
-
-		$this->data->page['badge']['link'] = \dash\url::here(). '/nationalcode';
-		$this->data->page['badge']['text'] = T_('Back to national codes list');
-
-
-		$this->data->bodyclass       = 'unselectable siftal';
+		\dash\data::page_title(T_("Edit national code"));
+		\dash\data::page_desc(T_("Edit special national code and update number of times"));
+		\dash\data::badge_link(\dash\url::here(). '/nationalcode');
+		\dash\data::badge_text(T_('Back to national codes list'));
+		\dash\data::body_class('unselectable siftal');
 
 		if(\dash\request::get('id') && is_numeric(\dash\request::get('id')))
 		{
-			$this->data->nationalcode_detail = \lib\db\nationalcodes::get(['id' => \dash\request::get('id'), 'limit' => 1]);
+			\dash\data::nationalcodeDetail(\lib\db\nationalcodes::get(['id' => \dash\request::get('id'), 'limit' => 1]));
 		}
 	}
 }

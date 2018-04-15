@@ -2,14 +2,14 @@
 namespace content_cp\homepage;
 
 
-class view extends \content_cp\main2\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Homepage settings");
-		$this->data->page['desc']  = T_("For show in home page");
+		\dash\data::page_title(T_("Homepage settings"));
+		\dash\data::page_desc(T_("For show in home page"));
 
-		$this->data->bodyclass     = 'unselectable siftal';
+		\dash\data::bodyclass('unselectable siftal');
 
 		$url = root. 'public_html/files/data/staticvar.txt';
 
@@ -22,10 +22,8 @@ class view extends \content_cp\main2\view
 			$temp['qom']           = isset($result[0]) ? $result[0] : null;
 			$temp['mashhad']       = isset($result[1]) ? $result[1] : null;
 			$temp['karbala']       = isset($result[2]) ? $result[2] : null;
-			$this->data->staticvar = $temp;
+			\dash\data::staticvar($temp);
 		}
-
-
 	}
 }
 ?>

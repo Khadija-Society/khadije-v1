@@ -2,9 +2,9 @@
 namespace content_cp\homepage;
 
 
-class model extends \content_cp\main2\model
+class model
 {
-	public function post_staticvar()
+	public static function post()
 	{
 		$qom = \dash\request::post('qom');
 		if(!$qom)

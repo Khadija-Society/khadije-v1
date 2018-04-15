@@ -2,9 +2,9 @@
 namespace content_cp\nationalcode\import;
 
 
-class model extends \content_cp\main2\model
+class model
 {
-	public function post_nationalcode()
+	public static function post()
 	{
 		self::upload_traveled('qom');
 		self::upload_traveled('karbala');

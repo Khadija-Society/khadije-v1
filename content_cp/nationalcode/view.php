@@ -2,21 +2,19 @@
 namespace content_cp\nationalcode;
 
 
-class view extends \content_cp\main2\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("National code list");
-		$this->data->page['desc']  = T_("check nationalcode of persons and number of trips");
+		\dash\data::page_title(T_("National code list"));
+		\dash\data::page_desc(T_("check nationalcode of persons and number of trips"));
+		\dash\data::badge_link(\dash\url::here(). '/nationalcode/import');
+		\dash\data::badge_text(T_('Import'));
 
 		$export_link = ' <a href="'. \dash\url::here(). '/nationalcode?export=true">'. T_("Export"). '</a>';
-		$this->data->page['desc'] .= $export_link;
+		\dash\data::page_desc(\dash\data::page_desc(). $export_link);
 
-		$this->data->page['badge']['link'] = \dash\url::here(). '/nationalcode/import';
-		$this->data->page['badge']['text'] = T_('Import');
-
-
-		$this->data->bodyclass       = 'unselectable siftal';
+		\dash\data::bodyclass('unselectable siftal');
 
 		$args =
 		[
@@ -28,7 +26,7 @@ class view extends \content_cp\main2\view
 
 		if($search_string)
 		{
-			$this->data->page['title'] = T_('Search'). ' '.  $search_string;
+			\dash\data::page_title() = T_('Search'). ' '.  $search_string;
 		}
 
 		$export = false;
@@ -38,21 +36,14 @@ class view extends \content_cp\main2\view
 			$args['pagenation'] = false;
 		}
 
-		$this->data->nationalcode_list = \lib\app\nationalcode::list($search_string, $args);
+		\dash\data::nationalcodeList(\lib\app\nationalcode::list($search_string, $args));
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_trip', 'data' => $this->data->nationalcode_list]);
+			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::nationalcodeList()]);
 		}
 
-
-		$this->data->sortLink = self::make_sortLink(\lib\app\nationalcode::$sort_field, \dash\url::here(). '/nationalcode');
-
-		if(isset($this->controller->pagnation))
-		{
-			$this->data->pagnation = $this->controller->pagnation_get();
-		}
-
+		\dash\data::sortLink(\content_cp\view::make_sortLink(\lib\app\nationalcode::$sort_field, \dash\url::here(). '/nationalcode'));
 	}
 }
 ?>

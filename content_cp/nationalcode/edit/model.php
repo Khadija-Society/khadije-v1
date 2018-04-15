@@ -2,9 +2,9 @@
 namespace content_cp\nationalcode\edit;
 
 
-class model extends \content_cp\main2\model
+class model
 {
-	public function post_nationalcode()
+	public static function post()
 	{
 		$update            = [];
 		$update['qom']     = \dash\request::post('qom');
