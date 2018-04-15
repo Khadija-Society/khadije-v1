@@ -6,7 +6,7 @@
  <div class="cbox c10 s12">
 
 
-{%if not service_need_list%}
+{%if not serviceNeed_list%}
   <p class="msg info2 txtC">در حال حاضر درخواست نیازی توسط موسسه اعلام نشده است!</p>
 {%else%}
   <form method="post">
@@ -25,7 +25,7 @@
 {%block iCity%}
 
  <div class="f justify-center txtC">
-{% for key, value in service_need_list %}
+{% for key, value in serviceNeed_list %}
   <div class="c4 s12 pA10">
     <a class="vcard shadow" href="{{url.base}}/a/service" data-direct>
      <img src="{{value.fileurl}}" alt='{{value.title}}'>
