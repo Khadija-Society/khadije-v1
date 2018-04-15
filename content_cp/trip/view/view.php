@@ -25,7 +25,7 @@ class view extends \content_cp\main2\view
 		// load partner detail
 		if(\dash\request::get('partner') && is_numeric(\dash\request::get('partner')))
 		{
-			$this->data->edit_mode = true;
+			$this->data->editMode = true;
 
 			if(is_array($this->data->travel_partner))
 			{

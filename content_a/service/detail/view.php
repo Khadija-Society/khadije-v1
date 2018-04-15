@@ -2,25 +2,23 @@
 namespace content_a\service\detail;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Register for new service request"). ' | '. T_('Step 3');
-		$this->data->page['desc']  = T_('fill your request detail');
+		\dash\data::page_title(T_("Register for new service request"). ' | '. T_('Step 3'));
+		\dash\data::page_desc(T_('fill your request detail'));
 
-		$this->data->edit_mode = true;
+		\dash\data::editMode(true);
 
 		$id = \dash\request::get('id');
 
-		$this->data->service_detail = null;
-
 		if(is_numeric($id))
 		{
-			$this->data->service_detail = \lib\db\services::get(['id' => $id, 'user_id' => \dash\user::id(), 'limit' => 1]);
+			\dash\data::serviceDetail(\lib\db\services::get(['id' => $id, 'user_id' => \dash\user::id(), 'limit' => 1]));
 		}
 
-		if(!$this->data->service_detail)
+		if(!\dash\data::serviceDetail())
 		{
 			\dash\header::status(404, T_("Id not found"));
 		}

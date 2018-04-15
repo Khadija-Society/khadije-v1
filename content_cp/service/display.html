@@ -4,7 +4,7 @@
 {%block pageContent%}
 
 
-{%if service_list%}
+{%if serviceList%}
 {{block('searchblock')}}
 <div class="cbox fs12">
 {{block('datatable')}}
@@ -61,7 +61,7 @@
     </thead>
 
     <tbody>
-      {%for key, value in service_list%}
+      {%for key, value in serviceList%}
       <tr>
         <td>{{value.firstname}} <b>{{value.lastname}}</b></td>
         <td>{{value.mobile | fitNumber(false)}}</td>

@@ -23,7 +23,7 @@ class view extends \content_cp\main2\view
 	{
 		if(\dash\request::get('edit'))
 		{
-			$this->data->edit_mode = true;
+			$this->data->editMode = true;
 			$id = \dash\request::get('edit');
 			$this->data->product_detail = \lib\db\needs::get(['id' => $id, 'limit' => 1]);
 			if(!$this->data->product_detail)

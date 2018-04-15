@@ -1,14 +1,13 @@
 <?php
 namespace content_a\service\home;
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_service()
+	public static function post()
 	{
 		if(\dash\request::post('key') && \dash\request::post('type') === 'cancel' && ctype_digit(\dash\request::post('key')))
 		{
-
 			$key = \dash\request::post('key');
 
 			$check_valid_key = \lib\db\services::get(['id' => $key,  'user_id' => \dash\user::id(), 'limit' => 1]);

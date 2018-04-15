@@ -47,11 +47,11 @@ class view extends \content_cp\main2\view
 			$args['pagenation'] = false;
 		}
 
-		$this->data->service_list = \lib\app\service::list($search_string, $args);
+		$this->data->serviceList = \lib\app\service::list($search_string, $args);
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_service', 'data' => $this->data->service_list]);
+			\dash\utility\export::csv(['name' => 'export_service', 'data' => $this->data->serviceList]);
 		}
 
 		$this->data->sort_link = self::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/service');

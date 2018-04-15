@@ -2,10 +2,10 @@
 namespace content_a\service\detail;
 
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_detail()
+	public function post()
 	{
 
 		$post                = [];

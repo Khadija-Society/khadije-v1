@@ -388,7 +388,7 @@ class service
 	}
 
 
-	public static function user_service_list()
+	public static function user_serviceList()
 	{
 		$user_id = \dash\user::id();
 		if(!$user_id)

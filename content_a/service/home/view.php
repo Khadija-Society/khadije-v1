@@ -2,20 +2,20 @@
 namespace content_a\service\home;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("List of your service request");
-		$this->data->page['desc']  = T_('You can check your last request and cancel them or add new request');
+		\dash\data::page_title(T_("List of your service request"));
+		\dash\data::page_desc(T_('You can check your last request and cancel them or add new request'));
 
-		$this->data->page['badge']['link'] = \dash\url::here(). '/service/request';
-		$this->data->page['badge']['text'] = T_('register for new service request');
+		\dash\data::badge_link(\dash\url::here(). '/service/request');
+		\dash\data::badge_text(T_('register for new service request'));
 
 
-		$this->data->service_list = \lib\app\service::user_service_list();
+		\dash\data::serviceList(\lib\app\service::user_serviceList());
 
-		if(!$this->data->service_list || empty($this->data->service_list))
+		if(!\dash\data::serviceList() || empty(\dash\data::serviceList()))
 		{
 			\dash\redirect::to(\dash\url::here().'/service/request');
 			return;

@@ -2,10 +2,10 @@
 namespace content_a\service\request;
 
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_service()
+	public static function post()
 	{
 
 		$post            = [];

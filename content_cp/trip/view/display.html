@@ -87,7 +87,7 @@
 {{block ('igender') }}
 {{block ('iMarried') }}
 
-{%if edit_mode%}
+{%if editMode%}
   <input type="hidden" name="edit_child" value="edit_child">
   {{block ('iEdit') }}
 {%else%}
@@ -142,7 +142,7 @@
           </div>
         </div>
         <div class="footer f pAn">
-            {%if edit_mode%}
+            {%if editMode%}
               <div class="c"></div>
             {%else%}
               <a href="{{url.here}}/trip/view?id={{requestGET.id}}&partner={{value.id}}" class="btn primary c mRa5 " >{%trans "Edit"%}</a>

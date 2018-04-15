@@ -38,7 +38,7 @@ class view
 
   		\dash\data::nesbatList(implode(',', $child_list));
 
-		\dash\data::edit_mode(true);
+		\dash\data::editMode(true);
 
 		$id = \dash\request::get('edit');
 

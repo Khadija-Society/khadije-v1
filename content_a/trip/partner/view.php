@@ -48,7 +48,7 @@ class view extends \content_a\main\view
 
 	public function view_edit()
 	{
-		$this->data->edit_mode = true;
+		$this->data->editMode = true;
 
 		$id = \dash\request::get('edit');
 
