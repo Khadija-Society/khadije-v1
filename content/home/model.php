@@ -2,9 +2,9 @@
 namespace content\home;
 
 
-class model extends \mvc\model
+class model
 {
-	public function post_donate()
+	public static function post()
 	{
 		$meta =
 		[
