@@ -1,17 +1,16 @@
 <?php
-namespace content_cp\main2;
+namespace content_cp;
 
-class view extends \addons\content_cp\main\view
+class view
 {
-	public function repository()
+	public static function config()
 	{
-		parent::repository();
-		$this->data->display['khadijeCpMain'] = 'content_cp\\main2\\layout.html';
+		\dash\data::display_khadijeCpMain('content_cp\\layout.html');
 	}
 
 
 
-	public static function make_sort_link($_field, $_url)
+	public static function make_sortLink($_field, $_url)
 	{
 		$get = \dash\request::get();
 		if(!is_array($get))

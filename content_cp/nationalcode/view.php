@@ -46,7 +46,7 @@ class view extends \content_cp\main2\view
 		}
 
 
-		$this->data->sort_link = self::make_sort_link(\lib\app\nationalcode::$sort_field, \dash\url::here(). '/nationalcode');
+		$this->data->sortLink = self::make_sortLink(\lib\app\nationalcode::$sort_field, \dash\url::here(). '/nationalcode');
 
 		if(isset($this->controller->pagnation))
 		{

@@ -4,7 +4,7 @@
 {%block pageContent%}
 
 
-{%if donate_list%}
+{%if donateList%}
 {{block('GlanceDetail')}}
 {{block('searchblock')}}
 <div class="cbox fs12">
@@ -34,7 +34,7 @@
     <div class="c6 s12">
       <div class="dcard x1">
        <div class="statistic">
-        <div class="value">{{total_paid | fitNumber}}</div>
+        <div class="value">{{totalPaid | fitNumber}}</div>
         <div class="label">{%trans "Total Donation"%}</div>
        </div>
       </div>
@@ -43,7 +43,7 @@
     <div class="c6 s12">
       <div class="dcard x1">
        <div class="statistic">
-        <div class="value">{{total_paid_date | fitNumber}}</div>
+        <div class="value">{{totalPaidDate | fitNumber}}</div>
         <div class="label">{%trans "Today Donation"%}</div>
        </div>
       </div>
@@ -75,16 +75,16 @@
       <tr>
         <th class="s0">{%trans "Name"%}</th>
         <th>{%trans "mobile"%}</th>
-        <th class="s0" data-sort="{{sort_link.payment.order}}"><a href="{{sort_link.payment.link}}">{%trans "Payment"%}</a></th>
-        <th data-sort="{{sort_link.plus.order}}"><a href="{{sort_link.plus.link}}">{%trans "Amount"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.payment.order}}"><a href="{{sortLink.payment.link}}">{%trans "Payment"%}</a></th>
+        <th data-sort="{{sortLink.plus.order}}"><a href="{{sortLink.plus.link}}">{%trans "Amount"%}</a></th>
         <th class="s0">{%trans "Niyat"%}</th>
         <th>{%trans "Hazinekard"%}</th>
-        <th class="s0" data-sort="{{sort_link.dateverify.order}}"><a href="{{sort_link.dateverify.link}}">{%trans "Date"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.dateverify.order}}"><a href="{{sortLink.dateverify.link}}">{%trans "Date"%}</a></th>
       </tr>
     </thead>
 
     <tbody>
-      {%for key, value in donate_list%}
+      {%for key, value in donateList%}
       <tr>
         <td class="s0">{%if value.doners%}{%else%}<small class="badge mRa5">گمنام</small> {%endif%}{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
         <td>{{value.mobile |fitNumber(false)}}</td>

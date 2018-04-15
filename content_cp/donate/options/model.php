@@ -2,10 +2,10 @@
 namespace content_cp\donate\options;
 
 
-class model extends \addons\content_cp\main\model
+class model
 {
 
-	public function post_donate()
+	public static function post()
 	{
 		if(\dash\request::post('type') === 'delete' && \dash\request::post('key'))
 		{

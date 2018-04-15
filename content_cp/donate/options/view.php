@@ -2,20 +2,16 @@
 namespace content_cp\donate\options;
 
 
-class view extends \content_cp\main2\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Donation options");
-		$this->data->page['desc']  = T_("check and update some options on donations");
-
-		$this->data->page['badge']['link'] = \dash\url::here(). '/donate';
-		$this->data->page['badge']['text'] = T_('Back to donate list');
-
-
-		$this->data->bodyclass       = 'unselectable siftal';
-
-		$this->data->wayList = \lib\app\donate::way_list();
+		\dash\data::page_title(T_("Donation options"));
+		\dash\data::page_desc(T_("check and update some options on donations"));
+		\dash\data::badge_link(\dash\url::here(). '/donate');
+		\dash\data::badge_text(T_('Back to donate list'));
+		\dash\data::bodyclass('unselectable siftal');
+		\dash\data::wayList(\lib\app\donate::way_list());
 	}
 }
 ?>
