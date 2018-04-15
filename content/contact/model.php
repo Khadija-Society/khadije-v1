@@ -1,21 +1,13 @@
 <?php
 namespace content\contact;
 
-class model extends \mvc\model
+class model
 {
-
-	// log callers
-	// user:send:contact
-	// user:send:contact:fail
-	// user:send:contact:empty:message
-	// user:send:contact:empty:mobile
-	// user:send:contact:wrong:captha
-	// user:send:contact:register:by:mobile
 
 	/**
 	 * save contact form
 	 */
-	public function post_contact()
+	public static function post()
 	{
 		if(\dash\request::post('username'))
 		{
