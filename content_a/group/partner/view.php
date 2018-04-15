@@ -2,19 +2,14 @@
 namespace content_a\group\partner;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Register for new group request"). ' | '. T_('Step 3');
-		$this->data->page['desc']  = T_('fill your partner detail'). ' '. T_('partner can be family or friends'). ' '. T_('Also you can skip this step and register only for yours without partner');
+		\dash\data::page_title(T_("Register for new group request"). ' | '. T_('Step 3'));
+		\dash\data::page_desc(T_('fill your partner detail'). ' '. T_('partner can be family or friends'). ' '. T_('Also you can skip this step and register only for yours without partner'));
 
-		// $this->data->page['badge']['link'] = \dash\url::here(). '/group';
-		// $this->data->page['badge']['text'] = T_('check your group requests');
-
-
-		$this->data->child_list = \lib\db\travelusers::get_travel_child(\dash\request::get('trip'));
-
+		\dash\data::childList(\lib\db\travelusers::get_travel_child(\dash\request::get('trip')));
 
   		$child_list =
   		[
@@ -41,25 +36,20 @@ class view extends \content_a\main\view
 	  		T_('Grandson'),
   		];
 
-  		$this->data->nesbat_list = implode(',', $child_list);
+  		\dash\data::nesbatList(implode(',', $child_list));
 
-	}
-
-
-	public function view_edit()
-	{
-		$this->data->edit_mode = true;
+		\dash\data::edit_mode(true);
 
 		$id = \dash\request::get('edit');
 
-		$this->data->child_detail = null;
+		\dash\data::childDetail(null);
 
 		if(is_numeric($id))
 		{
-			$this->data->child_detail = \dash\db\users::get(['id' => $id, 'parent' => \dash\user::id(), 'limit' => 1]);
+			\dash\data::childDetail(\dash\db\users::get(['id' => $id, 'parent' => \dash\user::id(), 'limit' => 1]));
 		}
 
-		if(!$this->data->child_detail)
+		if(!\dash\data::childDetail())
 		{
 			\dash\header::status(404, T_("Id not found"));
 		}

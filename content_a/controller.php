@@ -1,11 +1,11 @@
 <?php
-namespace content_a\main;
+namespace content_a;
 
-
-class controller extends \mvc\controller
+class controller
 {
-	public function repository()
+	public static function routing()
 	{
+
 		if(!\dash\user::login())
 		{
 			\dash\redirect::to(\dash\url::base(). '/enter/signup?referer='. \dash\url::pwd());
@@ -13,7 +13,7 @@ class controller extends \mvc\controller
 		}
 	}
 
-	public function check_trip_id($_type = 'family')
+	public static function check_trip_id($_type = 'family')
 	{
 		$trip = \dash\request::get('trip');
 
@@ -40,7 +40,7 @@ class controller extends \mvc\controller
 		}
 	}
 
-	public function check_service_id()
+	public static function check_service_id()
 	{
 		$id = \dash\request::get('id');
 

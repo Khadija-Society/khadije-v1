@@ -2,28 +2,27 @@
 namespace content_a\donate;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Donate");
-		$this->data->page['desc']  = $this->data->site['title']. ' | '. $this->data->site['desc'];
+		\dash\data::page_title(T_("Donate"));
+		\dash\data::page_desc(\dash\data::site_title(). ' | '. \dash\data::site_desc());
 
-
-		$this->data->wayList      = \lib\app\donate::way_list();
-		$this->data->donateArchive = \lib\db\mytransactions::user_transaction('cash');
+		\dash\data::wayList(\lib\app\donate::way_list());
+		\dash\data::donateArchive(\lib\db\mytransactions::user_transaction('cash'));
 
 		if(\dash\session::get('payment_request_start'))
 		{
 			if(\lib\utility\payment::get_status())
 			{
 				\lib\utility\payment::clear_session();
-				$this->data->paymentVerify_msg = T_("Thanks for your payment");
+				\dash\data::paymentVerify_msg(T_("Thanks for your payment"));
 				\lib\utility\donate::sms_success();
 			}
 			else
 			{
-				$this->data->paymentVerify_msg = T_("Payment unsuccessfull");
+				\dash\data::paymentVerify_msg(T_("Payment unsuccessfull"));
 			}
 		}
 	}

@@ -2,20 +2,20 @@
 namespace content_a\group\home;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("List of your group request");
-		$this->data->page['desc']  = T_('You can check your last request and cancel them or add new request');
+		\dash\data::page_title(T_("List of your group request"));
+		\dash\data::page_desc(T_('You can check your last request and cancel them or add new request'));
 
-		$this->data->page['badge']['link'] = \dash\url::here(). '/group/request';
-		$this->data->page['badge']['text'] = T_('register for new group request');
+		\dash\data::badge_link(\dash\url::here(). '/group/request');
+		\dash\data::badge_text(T_('register for new group request'));
 
 
-		$this->data->group_list = \lib\app\travel::user_travel_list('group');
+		\dash\data::groupList(\lib\app\travel::user_travel_list('group'));
 
-		if(!$this->data->group_list || empty($this->data->group_list))
+		if(!\dash\data::groupList() || empty(\dash\data::groupList()))
 		{
 			\dash\redirect::to(\dash\url::here().'/group/request');
 			return;

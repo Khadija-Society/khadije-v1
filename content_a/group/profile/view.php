@@ -2,24 +2,20 @@
 namespace content_a\group\profile;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Register for new group request"). ' | '. T_('Step 2');
-		$this->data->page['desc']  = T_('fill your personal data in this step'). ' '. T_('In next step fill your partner data');
+		\dash\data::page_title(T_("Register for new group request"). ' | '. T_('Step 2'));
+		\dash\data::page_desc(T_('fill your personal data in this step'). ' '. T_('In next step fill your partner data'));
 
-		// $this->data->page['badge']['link'] = \dash\url::here(). '/group';
-		// $this->data->page['badge']['text'] = T_('check your group requests');
-
-
-		$this->data->userdetail      = \dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]);
-		$this->data->userdetail = $this->fix_value($this->data->userdetail);
+		\dash\data::userdetail(\dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]));
+		\dash\data::userdetail(self::fix_value(\dash\data::userdetail()));
 		$this->static_var();
 	}
 
 
-	public function static_var()
+	public static function static_var()
 	{
 		$country_list = \dash\utility\location\countres::list('name', 'name - localname');
 		$this->data->country_list = implode(',', $country_list);

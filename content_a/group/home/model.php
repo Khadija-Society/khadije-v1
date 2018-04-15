@@ -1,10 +1,10 @@
 <?php
 namespace content_a\group\home;
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_group()
+	public function post()
 	{
 		if(\dash\request::post('key') && \dash\request::post('type') === 'cancel' && ctype_digit(\dash\request::post('key')))
 		{

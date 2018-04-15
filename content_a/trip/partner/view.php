@@ -41,7 +41,7 @@ class view extends \content_a\main\view
 	  		T_('Grandson'),
   		];
 
-  		$this->data->nesbat_list = implode(',', $child_list);
+  		$this->data->nesbatList = implode(',', $child_list);
 
 	}
 
@@ -52,14 +52,14 @@ class view extends \content_a\main\view
 
 		$id = \dash\request::get('edit');
 
-		$this->data->child_detail = null;
+		$this->data->childDetail = null;
 
 		if(is_numeric($id))
 		{
-			$this->data->child_detail = \dash\db\users::get(['id' => $id, 'parent' => \dash\user::id(), 'limit' => 1]);
+			$this->data->childDetail = \dash\db\users::get(['id' => $id, 'parent' => \dash\user::id(), 'limit' => 1]);
 		}
 
-		if(!$this->data->child_detail)
+		if(!$this->data->childDetail)
 		{
 			\dash\header::status(404, T_("Id not found"));
 		}

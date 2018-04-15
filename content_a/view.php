@@ -1,44 +1,33 @@
 <?php
-namespace mvc;
+namespace content_a;
 
-class view extends \lib\view
+class view
 {
-	function project()
+	public static function config()
 	{
-		// define default value for global
 
-
-		$this->data->site['title']           = T_("Khadije Charity");
-		// if(\dash\url::isLocal())
-		// {
-		// 	$this->data->site['title']           = T_("Test");
-		// }
-		$this->data->site['desc']            = T_("Executor of first pilgrimage to the Ahl al-Bayt");
-		$this->data->site['slogan']          = $this->data->site['desc'];
-
-		$this->data->page['desc']            = $this->data->site['desc']. ' | '. $this->data->site['slogan'];
-
-		$this->data->bodyclass               = 'unselectable';
+		\dash\data::site_title(T_("Khadije Charity"));
+		\dash\data::site_desc(T_("Executor of first pilgrimage to the Ahl al-Bayt"));
+		\dash\data::site_slogan(\dash\data::site_desc());
+		\dash\data::page_desc(\dash\data::site_desc(). ' | '. \dash\data::site_slogan());
 
 		// for pushstate of main page
-		$this->data->template['xhr']         = 'content/main/layout-xhr.html';
+		\dash\data::template_xhr('content/main/layout-xhr.html');
 
-		$this->data->display['admin']        = 'content_a/main/layout.html';
-		$this->data->template['social']      = 'content/template/social.html';
-		$this->data->template['share']       = 'content/template/share.html';
+		\dash\data::display_admin('content_a/main/layout.html');
+		\dash\data::template_social('content/template/social.html');
+		\dash\data::template_share('content/template/share.html');
+		\dash\data::bodyclass('fixed unselectable siftal');
 
+	}
 
-		if(\dash\url::content() === null)
+	public static function fix_value($_data)
+	{
+		if(isset($_data['birthday']))
 		{
-			// get total uses
-			$total_users                     = 10; // intval(\lib\db\userteams::total_userteam());
-			$total_users                     = number_format($total_users);
-			$this->data->total_users         = \dash\utility\human::number($total_users);
-			$this->data->footer_stat         = T_("We help :count people to work beter!", ['count' => $this->data->total_users]);
+			$_data['birthday'] = \dash\utility\jdate::to_gregorian($_data['birthday']);
 		}
-
-		// if you need to set a class for body element in html add in this value
-		$this->data->bodyclass           = null;
+		return $_data;
 	}
 }
 ?>

@@ -6,7 +6,7 @@ class controller extends \content_a\main\controller
 {
 	function ready()
 	{
-		$this->check_service_id();
+		\content_a\controller::check_service_id();
 
 		$this->post('profile')->ALL();
 		$this->get()->ALL();

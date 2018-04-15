@@ -28,9 +28,9 @@
   <div class="cbox">
     <h3>{%trans "List of your child"%}</h3>
 
-{%if child_list%}
+{%if childList%}
     <div class="f">
-{%for key, value in child_list%}
+{%for key, value in childList%}
      <div class="c4 s12">
       <div class="vcard mA5">
         <div class="content f">
@@ -90,7 +90,7 @@
 {%block iname%}
 <label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{child_detail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{childDetail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
@@ -98,7 +98,7 @@
 {%block ifamily%}
 <label for="lastName">{%trans "Last name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{child_detail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
+  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{childDetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
@@ -136,7 +136,7 @@
 {%block imobile%}
 <label for="mobile">{%trans "Mobile"%}</label>
 <div class="input">
-  <input type="text" readonly id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{child_detail.mobile}}" maxlength='30'>
+  <input type="text" readonly id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{childDetail.mobile}}" maxlength='30'>
 </div>
 {%endblock%}
 
@@ -144,7 +144,7 @@
 {%block incode%}
 <label for="nationalcode">{%trans "National code"%}  <small class="fc-red">* {%trans "Iranian must fill"%}</small></label>
 <div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{child_detail.nationalcode}}" min=0 max=9999999999 >
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{childDetail.nationalcode}}" min=0 max=9999999999 >
 </div>
 {%endblock%}
 
@@ -152,7 +152,7 @@
 {%block ifather%}
 <label for="father">{%trans "Father name"%}</label>
 <div class="input">
-  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%}' value="{{child_detail.father}}" maxlength='50'>
+  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%}' value="{{childDetail.father}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -160,7 +160,7 @@
 {%block ibirthday%}
 <label for="birthday">{%trans "Birthday"%}</label>
 <div class="input">
-  <input class="datepicker" type="text" name="birthday" id="birthday" required placeholder='{{"1369/04/15" | fitNumber}}' value="{{child_detail.birthday}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+  <input class="datepicker" type="text" name="birthday" id="birthday" required placeholder='{{"1369/04/15" | fitNumber}}' value="{{childDetail.birthday}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
 </div>
 {%endblock%}
 
@@ -197,7 +197,7 @@
 {%block iNesbat%}
 <label for='nesbat'>{%trans "Nesbat"%}</label>
 <div class="input">
- <input type='text' class="autoList" name='nesbat' id='nesbat' data-minchars="1"  value="{{child_detail.nesbat}}" data-list={{nesbat_list}}/>
+ <input type='text' class="autoList" name='nesbat' id='nesbat' data-minchars="1"  value="{{childDetail.nesbat}}" data-list={{nesbatList}}/>
 </div>
 {%endblock%}
 
@@ -205,7 +205,7 @@
 {%block icountry%}
 <label for='country'>{%trans "Country"%}</label>
 <div class="input">
- <input type='text' class="autoList" name='country' id='country' data-minchars="1" data-autofirst data-list="{{country_list}}" value="{{child_detail.country}}" />
+ <input type='text' class="autoList" name='country' id='country' data-minchars="1" data-autofirst data-list="{{country_list}}" value="{{childDetail.country}}" />
 </div>
 {%endblock%}
 
@@ -213,7 +213,7 @@
 {%block iprovince%}
 <label for='province'>{%trans "Province"%}</label>
 <div class="input">
- <input type='text' class="autoList" name='province' id='province' data-minchars="1" data-autofirst data-list="{{provice_list}}" value="{{child_detail.province}}" />
+ <input type='text' class="autoList" name='province' id='province' data-minchars="1" data-autofirst data-list="{{provice_list}}" value="{{childDetail.province}}" />
 </div>
 {%endblock%}
 
@@ -221,7 +221,7 @@
 {%block icity%}
 <label for='city'>{%trans "City"%}</label>
 <div class="input">
- <input type='text' class="autoList" name='city' id='city' data-minchars="1" data-autofirst data-list="{{city_list}}" value="{{child_detail.city}}" />
+ <input type='text' class="autoList" name='city' id='city' data-minchars="1" data-autofirst data-list="{{city_list}}" value="{{childDetail.city}}" />
 </div>
 {%endblock%}
 
@@ -229,7 +229,7 @@
 {%block izipcode%}
 <label for='zipcode'>{%trans "Zip code"%}</label>
 <div class="input">
- <input type='tel' name='zipcode' id='zipcode' min="0" max="9999999999" value="{{child_detail.zipcode}}"/>
+ <input type='tel' name='zipcode' id='zipcode' min="0" max="9999999999" value="{{childDetail.zipcode}}"/>
 </div>
 {%endblock%}
 
@@ -241,7 +241,7 @@
 {%block ipassportexpire%}
 <label for='passportexpire'>{%trans "Passport expire date"%}</label>
 <div class="input">
-  <input class="datepicker" type="text" name="passportexpire" id="passportexpire" placeholder='{{"1397/03/30" | fitNumber}}' value="{{child_detail.pasportdate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+  <input class="datepicker" type="text" name="passportexpire" id="passportexpire" placeholder='{{"1397/03/30" | fitNumber}}' value="{{childDetail.pasportdate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
 </div>
 {%endblock%}
 
@@ -270,7 +270,7 @@
 {%block iPhone%}
 <label for="phone">{%trans "Phone"%}</label>
 <div class="input">
-  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 025 3650 5281' value="{{child_detail.phone}}" maxlength='50'>
+  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 025 3650 5281' value="{{childDetail.phone}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -279,7 +279,7 @@
 {%block iEmail%}
 <label for="email">{%trans "Email"%}</label>
 <div class="input">
-  <input type="email" name="email" id="email" placeholder='{%trans "Like"%} abc@example.com' value="{{child_detail.email}}" maxlength='50'>
+  <input type="email" name="email" id="email" placeholder='{%trans "Like"%} abc@example.com' value="{{childDetail.email}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -318,7 +318,7 @@
 {%block iEducation%}
 <label for="feducation">{%trans "Education"%}</label>
 <div class="input">
-  <input type="text" name="education" id="feducation" placeholder='{%trans "Education"%}' value="{{child_detail.education}}" maxlength='50'>
+  <input type="text" name="education" id="feducation" placeholder='{%trans "Education"%}' value="{{childDetail.education}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -327,7 +327,7 @@
 {%block iEducationCourse%}
 <label for="feducationcourse">{%trans "Education course"%}</label>
 <div class="input">
-  <input type="text" name="educationcourse" id="feducationcourse" placeholder='{%trans "Education course"%}' value="{{child_detail.education}}" maxlength='50'>
+  <input type="text" name="educationcourse" id="feducationcourse" placeholder='{%trans "Education course"%}' value="{{childDetail.education}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -336,7 +336,7 @@
 {%block iJob%}
 <label for="fjob">{%trans "Job"%}</label>
 <div class="input">
-  <input type="text" name="job" id="fjob" placeholder='{%trans "Job"%}' value="{{child_detail.job}}" maxlength='50'>
+  <input type="text" name="job" id="fjob" placeholder='{%trans "Job"%}' value="{{childDetail.job}}" maxlength='50'>
 </div>
 {%endblock%}
 

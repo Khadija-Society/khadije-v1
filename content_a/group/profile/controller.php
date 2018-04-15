@@ -2,14 +2,11 @@
 namespace content_a\group\profile;
 
 
-class controller extends \content_a\main\controller
+class controller
 {
-	function ready()
+	public static function ready()
 	{
-		$this->check_trip_id('group');
-
-		$this->post('profile')->ALL();
-		$this->get()->ALL();
+		\content_a\controller::check_trip_id('group');
 	}
 }
 ?>

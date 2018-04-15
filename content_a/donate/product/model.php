@@ -2,10 +2,10 @@
 namespace content_a\donate\product;
 
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_donate()
+	public function post()
 	{
 		if(\dash\request::post('username'))
 		{
