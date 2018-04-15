@@ -14,11 +14,11 @@ class view extends \content_a\main\view
 
 		if(!\lib\app\travel::trip_master_active('get'))
 		{
-			$this->data->signup_locked = true;
+			$this->data->signupLocked = true;
 		}
 		else
 		{
-			$this->data->cityplace_list = \lib\app\travel::active_city();
+			$this->data->cityplaceList = \lib\app\travel::active_city();
 		}
 
 	}

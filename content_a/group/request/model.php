@@ -2,10 +2,10 @@
 namespace content_a\group\request;
 
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_group()
+	public static function post()
 	{
 
 		$post           = [];

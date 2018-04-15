@@ -2,16 +2,13 @@
 namespace content_a\home;
 
 
-class view extends \content_a\main\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title']   = T_("Khadije Dashboard");
-		$this->data->page['desc']    = $this->data->site['desc'];
-		// $this->data->page['special'] = true;
-
-		$this->data->dateDetail      = \dash\date::month_precent();
-
+		\dash\data::page_title(T_("Khadije Dashboard"));
+		\dash\data::page_desc(\dash\data::site_desc());
+		\dash\data::dateDetail(\dash\date::month_precent());
 	}
 }
 ?>

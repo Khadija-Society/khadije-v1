@@ -6,9 +6,9 @@
  <div class="cbox c10 s12">
 
 
-{%if signup_locked%}
+{%if signupLocked%}
 <p class="alert alert-error txtC mT20">{%trans "Trip signup is disabled"%}</p>
-{%elseif cityplace_list%}
+{%elseif cityplaceList%}
 
   <form method="post">
 {{block ('iCity') }}
@@ -27,7 +27,7 @@
 {%block iCity%}
 
  <div class="f justify-center txtC">
-{% for cityPlace, T_cityPlace in cityplace_list %}
+{% for cityPlace, T_cityPlace in cityplaceList %}
   <div class="c4 s12 pA10">
     <a class="vcard shadow" href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"city": "{{cityPlace}}"}'>
      <img src="{{url.site}}/static/images/place/{{cityPlace}}-square.jpg" alt='{%trans cityPlace%}'>
@@ -47,7 +47,7 @@
 <label for="city">{%trans "City Place"%}</label>
 <select name="city" class="input select">
   <option value="">{%trans "Please select one itmes"%}</option>
-  {%for key, value in cityplace_list%}
+  {%for key, value in cityplaceList%}
     <option value="{{value.id}}">{{value.city}} - {{value.place}}</option>
   {%endfor%}
 </select>

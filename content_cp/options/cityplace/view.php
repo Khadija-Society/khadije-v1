@@ -13,7 +13,7 @@ class view extends \content_cp\main2\view
 
 		$this->data->city_list = \lib\app\travel::city_list();
 
-		$this->data->wayList = \lib\app\travel::cityplace_list();
+		$this->data->wayList = \lib\app\travel::cityplaceList();
 	}
 }
 ?>

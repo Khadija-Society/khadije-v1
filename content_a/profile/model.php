@@ -2,10 +2,10 @@
 namespace content_a\profile;
 
 
-class model extends \content_a\main\model
+class model
 {
 
-	public function post_profile()
+	public static function post()
 	{
 		$post                    = [];
 		$post['gender']          = \dash\request::post('gender') ;

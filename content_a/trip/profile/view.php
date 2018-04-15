@@ -21,16 +21,16 @@ class view extends \content_a\main\view
 
 	public function static_var()
 	{
-		$country_list = \dash\utility\location\countres::list('name', 'name - localname');
-		$this->data->country_list = implode(',', $country_list);
+		$countryList = \dash\utility\location\countres::list('name', 'name - localname');
+		$this->data->countryList = implode(',', $countryList);
 
-		$city_list = \dash\utility\location\cites::list('localname');
-		$city_list = array_unique($city_list);
-		$this->data->city_list = implode(',', $city_list);
+		$cityList = \dash\utility\location\cites::list('localname');
+		$cityList = array_unique($cityList);
+		$this->data->cityList = implode(',', $cityList);
 
-		$provice_list = \dash\utility\location\provinces::list('localname');
-		$provice_list = array_unique($provice_list);
-		$this->data->provice_list = $provice_list;
+		$proviceList = \dash\utility\location\provinces::list('localname');
+		$proviceList = array_unique($proviceList);
+		$this->data->proviceList = $proviceList;
 	}
 }
 ?>

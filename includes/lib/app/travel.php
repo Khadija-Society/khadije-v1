@@ -365,11 +365,11 @@ class travel
 	}
 
 
-	public static function cityplace_list()
+	public static function cityplaceList()
 	{
 		$list = \dash\db\options::get(['cat' => self::$cityplace_cat]);
 
-		$cityplace_list = [];
+		$cityplaceList = [];
 
 		if(is_array($list))
 		{
@@ -377,12 +377,12 @@ class travel
 			{
 				if(isset($value['value']) && isset($value['meta']) && isset($value['status']) && $value['status'] === 'enable' && isset($value['id']))
 				{
-					$cityplace_list[] = ['city' => $value['value'], 'place' => $value['meta'], 'id' => $value['id']];
+					$cityplaceList[] = ['city' => $value['value'], 'place' => $value['meta'], 'id' => $value['id']];
 				}
 			}
 		}
 
-		return $cityplace_list;
+		return $cityplaceList;
 	}
 
 

@@ -168,7 +168,7 @@
 {%block icountry%}
 <label for='country'>{%trans "Country"%}</label>
 <div class="input">
- <input type='text' class="autoList" name='country' id='country' data-minchars="1" data-autofirst data-list="{{country_list}}" value="{{userdetail.country}}" autocomplete="off" />
+ <input type='text' class="autoList" name='country' id='country' data-minchars="1" data-autofirst data-list="{{countryList}}" value="{{userdetail.country}}" autocomplete="off" />
 </div>
 {%endblock%}
 
@@ -177,7 +177,7 @@
 <label for='province'>{%trans "Province"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <select name="province" class="select">
   <option value="">{%trans "Please select one item"%}</option>
-  {%for key, value in provice_list%}
+  {%for key, value in proviceList%}
     <option value="{{value}}" {%if userdetail.province == value%} selected {%endif%}>{{value}}</option>
   {%endfor%}
 
@@ -189,7 +189,7 @@
 {%block icity%}
 <label for='city'>{%trans "City"%}</label>
 <div class="input">
- <input type='text' class="autoList" name='city' id='city' data-minchars="1" data-autofirst data-list="{{city_list}}" value="{{userdetail.city}}" autocomplete="off"/>
+ <input type='text' class="autoList" name='city' id='city' data-minchars="1" data-autofirst data-list="{{cityList}}" value="{{userdetail.city}}" autocomplete="off"/>
 </div>
 {%endblock%}
 
