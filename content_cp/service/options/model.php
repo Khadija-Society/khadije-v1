@@ -2,7 +2,7 @@
 namespace content_cp\service\options;
 
 
-class model extends \content_cp\main2\model
+class model
 {
 	/**
 	 * Uploads a thumb.
@@ -29,7 +29,7 @@ class model extends \content_cp\main2\model
 	}
 
 
-	public function post_service()
+	public static function post()
 	{
 
 		$post           = [];

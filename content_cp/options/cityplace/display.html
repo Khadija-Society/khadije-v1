@@ -58,7 +58,7 @@
 <label for='city'>{%trans "City"%}</label>
 <select name="city" class="input select">
   <option value="">{%trans "Please select one items"%}</option>
-  {%for key, value in city_list %}
+  {%for key, value in cityList %}
     <option value="{{value}}">{%set myNameCity = value %}{%trans value%}</option>
   {%endfor%}
 </select>

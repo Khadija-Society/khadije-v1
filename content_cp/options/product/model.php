@@ -2,7 +2,7 @@
 namespace content_cp\options\product;
 
 
-class model extends \addons\content_cp\main\model
+class model
 {
 	/**
 	 * Uploads a thumb.
@@ -29,7 +29,7 @@ class model extends \addons\content_cp\main\model
 	}
 
 
-	public function post_product()
+	public static function post()
 	{
 
 		$post           = [];

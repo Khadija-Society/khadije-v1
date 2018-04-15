@@ -2,18 +2,15 @@
 namespace content_cp\options\cityplace;
 
 
-class view extends \content_cp\main2\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title']   = T_("Khadije Dashboard");
-
-		$this->data->page['special'] = true;
-		$this->data->bodyclass       = 'unselectable siftal';
-
-		$this->data->city_list = \lib\app\travel::city_list();
-
-		$this->data->wayList = \lib\app\travel::cityplaceList();
+		\dash\data::page_title(T_("Khadije Dashboard"));
+		\dash\data::page_special(true);
+		\dash\data::bodyclass('unselectable siftal');
+		\dash\data::cityList(\lib\app\travel::cityList());
+		\dash\data::wayList(\lib\app\travel::cityplaceList());
 	}
 }
 ?>

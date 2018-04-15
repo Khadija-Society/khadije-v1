@@ -2,20 +2,20 @@
 namespace content_cp\service;
 
 
-class view extends \content_cp\main2\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Service request list");
-		$this->data->page['desc']  = T_("check service requests");
+		\dash\data::page_title(T_("Service request list"));
+		\dash\data::page_desc(T_("check service requests"));
 
 		$export_link = ' <a href="'. \dash\url::here(). '/service?export=true">'. T_("Export"). '</a>';
-		$this->data->page['desc'] .= $export_link;
+		\dash\data::page_desc(\dash\data::page_desc() . $export_link);
 
-		$this->data->page['badge']['link'] = \dash\url::here(). '/service/options';
-		$this->data->page['badge']['text'] = T_('Options');
+		\dash\data::badge_link(\dash\url::here(). '/service/options');
+		\dash\data::badge_text(T_('Options'));
 
-		$this->data->bodyclass       = 'unselectable siftal';
+		\dash\data::bodyclass('unselectable siftal');
 
 		$args =
 		[
@@ -37,7 +37,7 @@ class view extends \content_cp\main2\view
 
 		if($search_string)
 		{
-			$this->data->page['title'] = T_('Search'). ' '.  $search_string;
+			\dash\data::page_title(T_('Search'). ' '.  $search_string);
 		}
 
 		$export = false;
@@ -47,20 +47,14 @@ class view extends \content_cp\main2\view
 			$args['pagenation'] = false;
 		}
 
-		$this->data->serviceList = \lib\app\service::list($search_string, $args);
+		\dash\data::serviceList(\lib\app\service::list($search_string, $args));
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_service', 'data' => $this->data->serviceList]);
+			\dash\utility\export::csv(['name' => 'export_service', 'data' => \dash\data::serviceList()]);
 		}
 
-		$this->data->sortLink = self::make_sortLink(\lib\app\service::$sort_field, \dash\url::here(). '/service');
-
-		if(isset($this->controller->pagnation))
-		{
-			$this->data->pagnation = $this->controller->pagnation_get();
-		}
-
+		\dash\data::sortLink(\content_cp\view::make_sortLink(\lib\app\service::$sort_field, \dash\url::here(). '/service'));
 	}
 }
 ?>

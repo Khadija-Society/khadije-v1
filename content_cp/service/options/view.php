@@ -2,34 +2,30 @@
 namespace content_cp\service\options;
 
 
-class view extends \content_cp\main2\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title'] = T_("Service request options");
-		$this->data->page['desc']  = T_("check service request options and update requests");
+		\dash\data::page_title(T_("Service request options"));
+		\dash\data::page_desc(T_("check service request options and update requests"));
+		\dash\data::badge_link(\dash\url::here(). '/service');
+		\dash\data::badge_text(T_('Back to service request list'));
 
-		$this->data->page['badge']['link'] = \dash\url::here(). '/service';
-		$this->data->page['badge']['text'] = T_('Back to service request list');
+		\dash\data::bodyclass('unselectable siftal');
 
-		$this->data->bodyclass       = 'unselectable siftal';
+		\dash\data::need(\lib\app\need::list('expertise'));
 
-		$this->data->need = \lib\app\need::list('expertise');
-
-	}
-
-	public function view_edit()
-	{
 		if(\dash\request::get('edit'))
 		{
-			$this->data->editMode = true;
+			\dash\data::editMode(true);
 			$id = \dash\request::get('edit');
-			$this->data->product_detail = \lib\db\needs::get(['id' => $id, 'limit' => 1]);
-			if(!$this->data->product_detail)
+			\dash\data::productDetail(\lib\db\needs::get(['id' => $id, 'limit' => 1]));
+			if(!\dash\data::productDetail())
 			{
 				\dash\header::status(404, T_("Id not found"));
 			}
 		}
 	}
+
 }
 ?>

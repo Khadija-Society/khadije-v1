@@ -16,7 +16,7 @@ class travel
 	public static $cityplace_cat = 'city_place';
 
 
-	public static function city_list($_trans = false)
+	public static function cityList($_trans = false)
 	{
 		$city =
 		[
@@ -40,18 +40,18 @@ class travel
 
 		$get = \dash\db\options::get($get_detail);
 
-		$city_list = [];
+		$cityList = [];
 
 		if(is_array($get))
 		{
 			$temp = array_column($get, 'value');
 			foreach ($temp as $key => $value)
 			{
-				$city_list[$value] = T_($value);
+				$cityList[$value] = T_($value);
 			}
 		}
 
-		return $city_list;
+		return $cityList;
 	}
 
 
@@ -65,18 +65,18 @@ class travel
 
 		$get = \dash\db\options::get($get_detail);
 
-		$city_list = [];
+		$cityList = [];
 
 		if(is_array($get))
 		{
 			$temp = array_column($get, 'value');
 			foreach ($temp as $key => $value)
 			{
-				$city_list[$value] = T_($value);
+				$cityList[$value] = T_($value);
 			}
 		}
 
-		return $city_list;
+		return $cityList;
 	}
 
 
@@ -151,7 +151,7 @@ class travel
 	public static function city_signup_setting($_city, $_action)
 	{
 
-		if(!in_array($_city, self::city_list()))
+		if(!in_array($_city, self::cityList()))
 		{
 			\dash\notif::error(T_("Invalid city"));
 			return false;
@@ -219,7 +219,7 @@ class travel
 	public static function group_city_signup_setting($_city, $_action)
 	{
 
-		if(!in_array($_city, self::city_list()))
+		if(!in_array($_city, self::cityList()))
 		{
 			\dash\notif::error(T_("Invalid city"));
 			return false;
@@ -476,7 +476,7 @@ class travel
 			return false;
 		}
 
-		if(!in_array($_city, self::city_list()))
+		if(!in_array($_city, self::cityList()))
 		{
 			\dash\notif::error(T_("Please select city from the list"), 'city');
 			return false;

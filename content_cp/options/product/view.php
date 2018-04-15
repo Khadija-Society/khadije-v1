@@ -2,31 +2,27 @@
 namespace content_cp\options\product;
 
 
-class view extends \content_cp\main2\view
+class view
 {
-	public function config()
+	public static function config()
 	{
-		$this->data->page['title']   = T_("Khadije Dashboard");
+		\dash\data::page_title(T_("Khadije Dashboard"));
 
-		$this->data->page['special'] = true;
+		\dash\data::page_special(true);
 
-		$this->data->page['badge']['link'] = \dash\url::here(). '/options/product';
-		$this->data->page['badge']['text'] = T_('Add new need');
+		\dash\data::badge_link(\dash\url::here(). '/options/product');
+		\dash\data::badge_text(T_('Add new need'));
 
-		$this->data->bodyclass       = 'unselectable siftal';
+		\dash\data::bodyclass('unselectable siftal');
 
-		$this->data->need = \lib\app\need::list('product');
+		\dash\data::need(\lib\app\need::list('product'));
 
-	}
-
-	public function view_edit()
-	{
 		if(\dash\request::get('edit'))
 		{
-			$this->data->editMode = true;
+			\dash\data::editMode(true);
 			$id = \dash\request::get('edit');
-			$this->data->product_detail = \lib\db\needs::get(['id' => $id, 'limit' => 1]);
-			if(!$this->data->product_detail)
+			\dash\data::productDetail(\lib\db\needs::get(['id' => $id, 'limit' => 1]));
+			if(!\dash\data::productDetail())
 			{
 				\dash\header::status(404, T_("Id not found"));
 			}
