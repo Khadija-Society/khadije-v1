@@ -6,7 +6,6 @@ class view
 	public static function config()
 	{
 		\dash\data::bodyclass('unselectable');
-		// $this->include->js     = false;
 
 		self::set_static_titles();
 

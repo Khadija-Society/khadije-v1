@@ -18,7 +18,6 @@ class view
 
 	public static function static_var()
 	{
-		// $this->data->grade_list = \lib\utility\grade::list();
 		$parentList =
 		[
 			"father"              => T_("Father"),
