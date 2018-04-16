@@ -33,9 +33,24 @@ class view
 			$args['sort'] = 'dateverify';
 		}
 
-		$args['donate'] = 'cash';
+		if(\dash\request::get('payment'))
+		{
+			$args['payment'] = \dash\request::get('payment');
+		}
+
+		if(\dash\request::get('mobile'))
+		{
+			$args['mobile'] = \dash\request::get('mobile');
+		}
+
+		if(\dash\request::get('hazinekard'))
+		{
+			$args['hazinekard'] = \dash\request::get('hazinekard');
+		}
+
+		$args['donate']    = 'cash';
 		$args['condition'] = 'ok';
-		$search_string            = \dash\request::get('q');
+		$search_string     = \dash\request::get('q');
 
 		if($search_string)
 		{
