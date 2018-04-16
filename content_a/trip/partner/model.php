@@ -13,10 +13,10 @@ class model
 			// send next
 			if(\dash\user::detail('mobile') && \dash\utility\filter::mobile(\dash\user::detail('mobile')))
 			{
-				$travel_detail = \lib\db\travels::get(['id' => \dash\request::get('trip'), 'limit' => 1]);
-				if(isset($travel_detail['place']))
+				$travelDetail = \lib\db\travels::get(['id' => \dash\request::get('trip'), 'limit' => 1]);
+				if(isset($travelDetail['place']))
 				{
-					$city = T_($travel_detail['place']);
+					$city = T_($travelDetail['place']);
 					$msg = "درخواست شما برای تشرف به $city با موفقیت ثبت شد.";
 				}
 				else

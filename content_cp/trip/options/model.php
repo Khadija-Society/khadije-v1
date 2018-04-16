@@ -2,10 +2,10 @@
 namespace content_cp\trip\options;
 
 
-class model extends \addons\content_cp\main\model
+class model
 {
 
-	public function post_options()
+	public static function post()
 	{
 
 		if(\dash\request::post('type') === 'family')

@@ -2,7 +2,7 @@
 namespace content_cp\trip\view;
 
 
-class model extends \content_cp\main2\model
+class model
 {
 	public static function getPost()
 	{
@@ -19,7 +19,7 @@ class model extends \content_cp\main2\model
 	}
 
 
-	public function post_trip()
+	public static function post()
 	{
 		if(\dash\request::post('type') === 'remove' && \dash\request::post('key') != '' && ctype_digit(\dash\request::post('key')))
 		{
@@ -134,7 +134,7 @@ class model extends \content_cp\main2\model
 
 			\lib\db\travels::update($update, \dash\request::get('id'));
 
-			$this->send_sms($status);
+			self::send_sms($status);
 
 			\dash\notif::ok(T_("The travel updated"));
 
@@ -145,17 +145,17 @@ class model extends \content_cp\main2\model
 	}
 
 
-	public function send_sms($_status)
+	public static function send_sms($_status)
 	{
 		$mobile        = null;
 		$msg           = '';
-		$travel_detail = \lib\db\travels::get(['id' => \dash\request::get('id'), 'limit' => 1]);
-		if(!isset($travel_detail['user_id']))
+		$travelDetail = \lib\db\travels::get(['id' => \dash\request::get('id'), 'limit' => 1]);
+		if(!isset($travelDetail['user_id']))
 		{
 			return;
 		}
 
-		$load_user = \dash\db\users::get_by_id($travel_detail['user_id']);
+		$load_user = \dash\db\users::get_by_id($travelDetail['user_id']);
 		if(!isset($load_user['mobile']))
 		{
 			return;
@@ -167,9 +167,9 @@ class model extends \content_cp\main2\model
 
 		$mobile = $load_user['mobile'];
 
-		if(isset($travel_detail['place']))
+		if(isset($travelDetail['place']))
 		{
-			$city = T_($travel_detail['place']);
+			$city = T_($travelDetail['place']);
 		}
 
 		switch ($_status)

@@ -29,7 +29,7 @@
 
     <form method="post">
       {{block ('iActiveMaster')}}
-      <div data-response="master_active" {%if not trip_master_active%} data-response-hide {%endif%}>
+      <div data-response="master_active" {%if not tripMasterActive%} data-response-hide {%endif%}>
         {{block ('ikarbala')}}
         {{block ('imashhad')}}
         {{block ('iqom')}}
@@ -51,7 +51,7 @@
 
 {%block iActiveMaster%}
 <div class="switch1">
-   <input type="checkbox" name="master_active" id="master_active" {%if trip_master_active%} checked {%endif%}>
+   <input type="checkbox" name="master_active" id="master_active" {%if tripMasterActive%} checked {%endif%}>
    <label for="master_active"></label>
    <label for="master_active">{%trans "Enable Family Trip"%}</label>
   </div>
@@ -75,7 +75,7 @@
 
 {%block igetDate%}
 <div class="switch1">
-   <input type="checkbox" name="getdate" id="getdate" {%if trip_getdate%} checked {%endif%}>
+   <input type="checkbox" name="getdate" id="getdate" {%if tripGetdate%} checked {%endif%}>
    <label for="getdate"></label>
    <label for="getdate">{%trans "User can set date of trip"%}</label>
   </div>
@@ -84,7 +84,7 @@
 
 {%block iqom%}
 <div class="switch1">
-   <input type="checkbox" name="qom" id="qom" {%if active_city.qom%} checked {%endif%}>
+   <input type="checkbox" name="qom" id="qom" {%if activeCity.qom%} checked {%endif%}>
    <label for="qom"></label>
    <label for="qom">{%trans "Qom"%} <small>{%trans "Can trip user to qom"%}</small></label>
   </div>
@@ -92,7 +92,7 @@
 
 {%block ikarbala%}
 <div class="switch1">
-   <input type="checkbox" name="karbala" id="karbala" {%if active_city.karbala%} checked {%endif%}>
+   <input type="checkbox" name="karbala" id="karbala" {%if activeCity.karbala%} checked {%endif%}>
    <label for="karbala"></label>
    <label for="karbala">{%trans "Karbala"%} <small>{%trans "Can trip user to karbala"%}</small></label>
   </div>
@@ -100,7 +100,7 @@
 
 {%block imashhad%}
 <div class="switch1">
-   <input type="checkbox" name="mashhad" id="mashhad" {%if active_city.mashhad%} checked {%endif%}>
+   <input type="checkbox" name="mashhad" id="mashhad" {%if activeCity.mashhad%} checked {%endif%}>
    <label for="mashhad"></label>
    <label for="mashhad">{%trans "Mashhad"%} <small>{%trans "Can trip user to mashhad"%}</small></label>
   </div>
@@ -118,7 +118,7 @@
 
     <form method="post">
       {{block ('iActiveMasterGroup')}}
-      <div data-response="master_active_group" {%if not group_master_active%} data-response-hide {%endif%}>
+      <div data-response="master_active_group" {%if not groupMasterActive%} data-response-hide {%endif%}>
         {{block ('ikarbalaGroup')}}
         {{block ('imashhadGroup')}}
         {{block ('iqomGroup')}}
@@ -136,7 +136,7 @@
 
 {%block iActiveMasterGroup%}
 <div class="switch1">
-   <input type="checkbox" name="master_active_group" id="master_active_group" {%if group_master_active%} checked {%endif%}>
+   <input type="checkbox" name="master_active_group" id="master_active_group" {%if groupMasterActive%} checked {%endif%}>
    <label for="master_active_group"></label>
    <label for="master_active_group">{%trans "Enable Group Trip"%}</label>
   </div>
@@ -145,7 +145,7 @@
 
 {%block iqomGroup%}
 <div class="switch1">
-   <input type="checkbox" name="qom" id="qom_group" {%if group_active_city.qom%} checked {%endif%}>
+   <input type="checkbox" name="qom" id="qom_group" {%if groupActiveCity.qom%} checked {%endif%}>
    <label for="qom_group"></label>
    <label for="qom_group">{%trans "Qom"%} <small>{%trans "Can trip user to qom"%}</small></label>
   </div>
@@ -154,7 +154,7 @@
 
 {%block ikarbalaGroup%}
 <div class="switch1">
-   <input type="checkbox" name="karbala" id="karbala_group" {%if group_active_city.karbala%} checked {%endif%}>
+   <input type="checkbox" name="karbala" id="karbala_group" {%if groupActiveCity.karbala%} checked {%endif%}>
    <label for="karbala_group"></label>
    <label for="karbala_group">{%trans "Karbala"%} <small>{%trans "Can trip user to karbala"%}</small></label>
   </div>
@@ -163,7 +163,7 @@
 
 {%block imashhadGroup%}
 <div class="switch1">
-   <input type="checkbox" name="mashhad" id="mashhad_group" {%if group_active_city.mashhad%} checked {%endif%}>
+   <input type="checkbox" name="mashhad" id="mashhad_group" {%if groupActiveCity.mashhad%} checked {%endif%}>
    <label for="mashhad_group"></label>
    <label for="mashhad_group">{%trans "Mashhad"%} <small>{%trans "Can trip user to mashhad"%}</small></label>
   </div>
@@ -173,7 +173,7 @@
 {%block iminPartnerGroup%}
 <div class="input">
   <label for="countpartner_group_min">{%trans "Minimum group count"%}</label>
-  <input type="number" id="countpartner_group_min" name="count_partner_min" placeholder='{%trans "Minimum partner count"%}'  value="{{group_count_partner_min}}" >
+  <input type="number" id="countpartner_group_min" name="count_partner_min" placeholder='{%trans "Minimum partner count"%}'  value="{{groupCountPartnerMin}}" >
 </div>
 {%endblock%}
 
@@ -181,7 +181,7 @@
 {%block imaxPartnerGroup%}
 <div class="input">
   <label for="countpartner_group_max">{%trans "Maximum group count"%}</label>
-  <input type="number" id="countpartner_group_max" name="count_partner_max" placeholder='{%trans "Maximum partner count"%}'  value="{{group_count_partner_max}}" >
+  <input type="number" id="countpartner_group_max" name="count_partner_max" placeholder='{%trans "Maximum partner count"%}'  value="{{groupCountPartnerMax}}" >
 </div>
 {%endblock%}
 

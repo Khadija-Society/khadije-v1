@@ -2,17 +2,13 @@
 namespace content_cp\trip\view;
 
 
-class controller extends \content_cp\main2\controller
+class controller
 {
-	function ready()
+	public static function routing()
 	{
-
-
-		$this->post('trip')->ALL();
-
 		if(\dash\request::get('id') && is_numeric(\dash\request::get('id')))
 		{
-			$this->get()->ALL();
+
 		}
 		else
 		{
