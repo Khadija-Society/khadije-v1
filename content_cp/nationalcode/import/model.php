@@ -9,6 +9,7 @@ class model
 		self::upload_traveled('qom');
 		self::upload_traveled('karbala');
 		self::upload_traveled('mashhad');
+		\dash\notif::ok(T_("Opertation complete"));
 		\dash\redirect::pwd();
 
 	}

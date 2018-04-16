@@ -26,7 +26,7 @@ class view
 
 		if($search_string)
 		{
-			\dash\data::page_title() = T_('Search'). ' '.  $search_string;
+			\dash\data::page_title(T_('Search'). ' '.  $search_string);
 		}
 
 		$export = false;

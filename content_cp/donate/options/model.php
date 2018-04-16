@@ -23,8 +23,10 @@ class model
 			$way = \dash\request::post('way');
 
 			\lib\app\donate::set_way($way);
-
-			\dash\notif::ok(T_("Way successfully added"));
+			if(\dash\engine\process::status())
+			{
+				\dash\notif::ok(T_("Way successfully added"));
+			}
 		}
 
 		if(\dash\engine\process::status())
