@@ -29,7 +29,6 @@ class twigTransTerms
 	//-------------------------------------------------------content\home\display.html
 	echo T_("About");                                                                 // Line 42
 	echo T_("Donate");                                                                // Line 66
-	echo T_("Family trip signup");                                                    // Line 84
 	echo T_("Group trip signup");                                                     // Line 85
 	echo T_("Shahid Mahdi Imani");                                                    // Line 69
 	echo T_("Do you know?");                                                          // Line 80
@@ -81,19 +80,18 @@ class twigTransTerms
 	echo T_("Please select one item");                                                // Line 179
 
 	//----------------------------------------------------content\template\footer.html
-	echo T_("Enter");                                                                 // Line 6
-	echo T_("Signup");                                                                // Line 7
-	echo T_("Misson & Target");                                                       // Line 20
-	echo T_("Vision");                                                                // Line 21
-	echo T_("Honors");                                                                // Line 22
-	echo T_("FAQ");                                                                   // Line 23
-	echo T_("Contact");                                                               // Line 24
-	echo T_("Doners");                                                                // Line 32
-	echo T_("Register for family trip");                                              // Line 39
-	echo T_("Register for group trip");                                               // Line 40
-	echo T_("Developed by Ermile");                                                   // Line 47
-	echo T_("Control Panel");                                                         // Line 53
-	echo T_("Exit Session");                                                          // Line 54
+	echo T_("Enter");                                                                 // Line 7
+	echo T_("Signup");                                                                // Line 8
+	echo T_("Misson & Target");                                                       // Line 22
+	echo T_("Vision");                                                                // Line 23
+	echo T_("Honors");                                                                // Line 24
+	echo T_("FAQ");                                                                   // Line 25
+	echo T_("Contact");                                                               // Line 26
+	echo T_("Doners");                                                                // Line 34
+	echo T_("Register for group trip");                                               // Line 42
+	echo T_("Developed by Ermile");                                                   // Line 50
+	echo T_("Control Panel");                                                         // Line 56
+	echo T_("Exit Session");                                                          // Line 57
 
 	//----------------------------------------------------content\template\header.html
 
@@ -105,6 +103,7 @@ class twigTransTerms
 	//-----------------------------------------------content\template\static\blog.html
 
 	//----------------------------------------------content\template\static\intro.html
+	echo T_("Family trip signup");                                                    // Line 84
 
 	//-----------------------------------------------content_a\group\home\display.html
 	echo T_("Click to edit");                                                         // Line 25
@@ -241,7 +240,7 @@ class twigTransTerms
 
 	//------------------------------------------------content_cp\homepage\display.html
 
-	//----------------------------------------------------content_cp\main2\layout.html
+	//----------------------------------------------------------content_cp\layout.html
 
 	//--------------------------------------------content_cp\nationalcode\display.html
 	echo T_("No nationalcode founded.");                                              // Line 17
