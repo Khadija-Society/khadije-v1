@@ -18,14 +18,14 @@ class view
 			if(\dash\utility\payment\verify::get_status())
 			{
 				$amount = \dash\utility\payment\verify::get_amount();
-				\dash\data::paymentVerify_msg_true(true);
-				\dash\data::paymentVerify_msg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($amount)]));
+				\dash\data:: paymentVerifyMsgTrue(true);
+				\dash\data:: paymentVerifyMsg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($amount)]));
 				\lib\app\donate::sms_success($amount);
 			}
 			else
 			{
-				\dash\data::paymentVerify_msg_true(false);
-				\dash\data::paymentVerify_msg(T_("Payment unsuccessfull"));
+				\dash\data:: paymentVerifyMsgTrue(false);
+				\dash\data:: paymentVerifyMsg(T_("Payment unsuccessfull"));
 			}
 
 			\dash\utility\payment\verify::clear_session();

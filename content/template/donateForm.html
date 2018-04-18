@@ -1,7 +1,7 @@
 {%block donateProduct%}
 
-{%if paymentVerify_msg %}
-<div class="msg txtC {%if paymentVerify_msg_true %}success{%else%}danger{%endif%}">{{paymentVerify_msg}}</div>
+{%if  paymentVerifyMsg %}
+<div class="msg txtC {%if  paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 {%endif%}
 
 <div class="f">
@@ -20,8 +20,8 @@
 
 <div class="f justify-center">
   <div class="cbox c5 s12 fs12">
-{%if paymentVerify_msg %}
-<div class="msg txtC {%if paymentVerify_msg_true %}success{%else%}danger{%endif%}">{{paymentVerify_msg}}</div>
+{%if  paymentVerifyMsg %}
+<div class="msg txtC {%if  paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 {%endif%}
     <form method="post">
 

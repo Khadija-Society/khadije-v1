@@ -17,12 +17,12 @@ class view
 			if(\lib\utility\payment::get_status())
 			{
 				\lib\utility\payment::clear_session();
-				\dash\data::paymentVerify_msg(T_("Thanks for your payment"));
+				\dash\data:: paymentVerifyMsg(T_("Thanks for your payment"));
 				\lib\utility\donate::sms_success();
 			}
 			else
 			{
-				\dash\data::paymentVerify_msg(T_("Payment unsuccessfull"));
+				\dash\data:: paymentVerifyMsg(T_("Payment unsuccessfull"));
 			}
 		}
 	}
