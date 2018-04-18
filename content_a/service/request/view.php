@@ -12,7 +12,7 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/service');
 		\dash\data::badge_text(T_('check your service requests'));
 
-		\dash\data::serviceNeed_list(\lib\db\needs::get(['type' => 'expertise', 'status' => 'enable']));
+		\dash\data::serviceNeedList(\lib\db\needs::get(['type' => 'expertise', 'status' => 'enable']));
 
 	}
 }

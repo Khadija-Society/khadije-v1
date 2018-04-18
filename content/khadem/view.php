@@ -10,7 +10,7 @@ class view
 		\dash\data::page_desc(T_('in 3 simple step register your request for have service to holy places'));
 		\dash\data::badge_link(\dash\url::here(). '/service');
 		\dash\data::badge_text(T_('check your service requests'));
-		\dash\data::serviceNeed_list(\lib\db\needs::get(['type' => 'expertise', 'status' => 'enable']));
+		\dash\data::serviceNeedList(\lib\db\needs::get(['type' => 'expertise', 'status' => 'enable']));
 	}
 }
 ?>
