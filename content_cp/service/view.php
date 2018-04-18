@@ -54,7 +54,7 @@ class view
 			\dash\utility\export::csv(['name' => 'export_service', 'data' => \dash\data::serviceList()]);
 		}
 
-		\dash\data::sortLink(\content_cp\view::make_sortLink(\lib\app\service::$sort_field, \dash\url::here(). '/service'));
+		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/service'));
 	}
 }
 ?>

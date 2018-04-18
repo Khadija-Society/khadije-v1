@@ -59,7 +59,7 @@ class view
 			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::tripList()]);
 		}
 
-		\dash\data::sortLink(\content_cp\view::make_sortLink(\lib\app\travel::$sort_field, \dash\url::here(). '/trip'));
+		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\travel::$sort_field, \dash\url::here(). '/trip'));
 
 	}
 }

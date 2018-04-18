@@ -43,7 +43,7 @@ class view
 			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::nationalcodeList()]);
 		}
 
-		\dash\data::sortLink(\content_cp\view::make_sortLink(\lib\app\nationalcode::$sort_field, \dash\url::here(). '/nationalcode'));
+		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\nationalcode::$sort_field, \dash\url::here(). '/nationalcode'));
 	}
 }
 ?>

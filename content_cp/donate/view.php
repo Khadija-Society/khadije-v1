@@ -71,7 +71,7 @@ class view
 			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::donateList()]);
 		}
 
-		\dash\data::sortLink(\content_cp\view::make_sortLink(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
+		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
 
 		\dash\data::totalPaid(\dash\app\transaction::total_paid());
 		\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d")));
