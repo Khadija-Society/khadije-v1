@@ -19,6 +19,7 @@ self::$language =
  */
 
 self::$url['tld'] = 'com';
+self::$url['protocol'] = 'https';
 
 
 self::$config['redirect_url']                 = 'https://khadije.com';
