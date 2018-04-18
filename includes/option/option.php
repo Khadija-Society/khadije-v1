@@ -18,6 +18,8 @@ self::$language =
  * system default lanuage
  */
 
+self::$url['tld'] = 'com';
+
 
 self::$config['redirect_url']                 = 'https://khadije.com';
 self::$config['multi_domain']                 = true;
