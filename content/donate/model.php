@@ -19,6 +19,11 @@ class model
 		];
 
 		if(!in_array(mb_strtolower(\dash\request::post('bank')), ['asanpardakht', 'zarinpal', 'payir']))
+		{
+			\dash\notif::error(T_("شناسه بانک نا معتبر"));
+			return false;
+		}
+
 
 		$redirect = false;
 		if(\dash\permission::access('admin'))

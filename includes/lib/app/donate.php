@@ -392,7 +392,7 @@ class donate
 
 		$meta =
 		[
-			'turn_back'   => \dash\url::full(),
+			'turn_back'   => \dash\url::pwd(),
 			'other_field' =>
 			[
 				'hazinekard' => $way,
