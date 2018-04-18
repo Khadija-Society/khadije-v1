@@ -17,7 +17,7 @@ self::$language =
 /**
  * system default lanuage
  */
-self::$config['fix'] = false;
+self::$url['fix'] = false;
 
 self::$config['redirect_url']                 = 'https://khadije.com';
 self::$config['multi_domain']                 = true;
