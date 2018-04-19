@@ -14,49 +14,22 @@ self::$language =
 	// 'list'    => ['fa','en',],
 	'list'    => ['fa'],
 ];
-/**
- * system default lanuage
- */
 
-self::$url['tld'] = 'com';
-self::$url['protocol'] = 'https';
-
-
-self::$config['redirect_url']                 = 'https://khadije.com';
-self::$config['multi_domain']                 = true;
-self::$config['redirect_to_main']             = true;
-self::$config['https']                        = true;
-self::$config['default_tld']                  = 'com';
-self::$config['default_permission']           = null;
-self::$config['debug']                        = false;
-self::$config['coming']                       = false;
-self::$config['short_url']                    = null;
-self::$config['save_as_cookie']               = false;
-self::$config['log_visitors']                 = true;
-self::$config['passphrase']                   = null;
-self::$config['passkey']                      = null;
-self::$config['passvalue']                    = null;
-self::$config['default']                      = null;
-self::$config['redirect']                     = 'a';
-self::$config['register']                     = true;
-self::$config['recovery']                     = true;
-self::$config['fake_sub']                     = null;
-self::$config['real_sub']                     = true;
-self::$config['force_short_url']              = null;
-self::$config['sms']                          = true;
-
-self::$config['account']                      = true;
-self::$config['main_account']                 = null;
-self::$config['account_status']               = true;
-self::$config['use_main_account']             = false;
-
-self::$config['domain_same']                  = true;
-self::$config['domain_name']                  = 'khadije';
-self::$config['main_site']                    = 'https://khadije.com';
-
-self::$config['favicon']['version']           = 4;
+// fix url and redirect
+// http://khadije.net
+// http://khadije.org
+// to https://khadije.com
+self::$url['tld']                   = 'com';
+self::$url['protocol']              = 'https';
 
 
+
+self::$config['debug']              = false;
+self::$config['coming']             = false;
+self::$config['redirect']           = 'a';
+
+
+self::$config['favicon']['version'] = 4;
 
 
 /**
