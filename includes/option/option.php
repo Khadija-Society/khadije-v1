@@ -23,6 +23,10 @@ self::$url['tld']                   = 'com';
 self::$url['protocol']              = 'https';
 
 
+self::$config['site']['title']  = "Khadije Charity";
+self::$config['site']['desc']   = "Executor of first pilgrimage to the Ahl al-Bayt";
+self::$config['site']['slogan'] = "Executor of first pilgrimage to the Ahl al-Bayt";
+
 
 self::$config['debug']              = false;
 self::$config['coming']             = false;
