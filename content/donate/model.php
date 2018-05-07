@@ -26,7 +26,7 @@ class model
 
 
 		$redirect = false;
-		if(\dash\permission::access('admin'))
+		if(\dash\permission::check('admin'))
 		{
 			$redirect = true;
 			$args['manuall'] = \dash\request::post('manualPay');
