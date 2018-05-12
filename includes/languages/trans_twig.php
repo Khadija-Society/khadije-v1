@@ -27,18 +27,18 @@ class twigTransTerms
 	echo T_("Toman");                                                                 // Line 200
 
 	//-------------------------------------------------------content\home\display.html
-	echo T_("About");                                                                 // Line 42
+	echo T_("About");                                                                 // Line 56
 	echo T_("Donate");                                                                // Line 66
-	echo T_("Group trip signup");                                                     // Line 85
-	echo T_("Shahid Mahdi Imani");                                                    // Line 69
-	echo T_("Do you know?");                                                          // Line 80
+	echo T_("Group trip signup");                                                     // Line 68
+	echo T_("Shahid Mahdi Imani");                                                    // Line 96
+	echo T_("Do you know?");                                                          // Line 174
 	echo T_("Mashhad");                                                               // Line 168
 	echo T_("Karbala");                                                               // Line 159
-	echo T_("license and supporters");                                                // Line 133
-	echo T_("Certificate");                                                           // Line 138
-	echo T_("Secured by Arvancloud");                                                 // Line 139
-	echo T_("Arvancloud");                                                            // Line 139
-	echo T_("Last news");                                                             // Line 177
+	echo T_("license and supporters");                                                // Line 226
+	echo T_("Certificate");                                                           // Line 231
+	echo T_("Secured by Arvancloud");                                                 // Line 232
+	echo T_("Arvancloud");                                                            // Line 232
+	echo T_("Last news");                                                             // Line 276
 
 	//--------------------------------------------------------content\main\layout.html
 	echo T_("Next →");                                                                // Line 38
@@ -95,15 +95,12 @@ class twigTransTerms
 
 	//----------------------------------------------------content\template\header.html
 
-	//---------------------------------------content\template\static\-certificate.html
-	echo T_("Soon");                                                                  // Line 6
-
-	//------------------------------------content\template\static\-mahdi-imani-fa.html
-
 	//-----------------------------------------------content\template\static\blog.html
 
-	//----------------------------------------------content\template\static\intro.html
+	//-------------------------------------------------content\template\static\v1.html
 	echo T_("Family trip signup");                                                    // Line 84
+
+	//-------------------------------------------------content\template\static\v2.html
 
 	//-----------------------------------------------content_a\group\home\display.html
 	echo T_("Click to edit");                                                         // Line 25
