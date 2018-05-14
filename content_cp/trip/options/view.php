@@ -18,7 +18,7 @@ class view
 
 
 		\dash\data::bodyclass('unselectable');
-		\dash\data::include_siftal(true);
+		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
 		\dash\data::activeCity(\lib\app\travel::active_city());

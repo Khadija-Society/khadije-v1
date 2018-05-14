@@ -11,7 +11,7 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/donate');
 		\dash\data::badge_text(T_('Back to donate list'));
 		\dash\data::bodyclass('unselectable');
-		\dash\data::include_siftal(true);
+		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 		\dash\data::wayList(\lib\app\donate::way_list());
 	}

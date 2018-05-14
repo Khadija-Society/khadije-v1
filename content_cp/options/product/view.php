@@ -14,7 +14,7 @@ class view
 		\dash\data::badge_text(T_('Add new need'));
 
 		\dash\data::bodyclass('unselectable');
-		\dash\data::include_siftal(true);
+		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
 		\dash\data::need(\lib\app\need::list('product'));

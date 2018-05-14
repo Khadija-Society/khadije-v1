@@ -16,7 +16,7 @@ class view
 		\dash\data::badge_text(T_('Options'));
 
 		\dash\data::bodyclass('unselectable');
-		\dash\data::include_siftal(true);
+		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
 		$args =

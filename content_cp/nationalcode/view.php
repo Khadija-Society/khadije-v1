@@ -15,7 +15,7 @@ class view
 		\dash\data::page_desc(\dash\data::page_desc(). $export_link);
 
 		\dash\data::bodyclass('unselectable');
-		\dash\data::include_siftal(true);
+		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
 		$args =

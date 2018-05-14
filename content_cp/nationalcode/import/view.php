@@ -9,7 +9,7 @@ class view
 		\dash\data::page_title(T_("Import national code"));
 		\dash\data::page_desc(T_("Import list of national code, each line must have one nationalcode"));
 		\dash\data::bodyclass('unselectable');
-		\dash\data::include_siftal(true);
+		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 	}
 }
