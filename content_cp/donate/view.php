@@ -15,7 +15,9 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/donate/options');
 		\dash\data::badge_text(T_('Options'));
 
-		\dash\data::bodyclass('unselectable siftal');
+		\dash\data::bodyclass('unselectable');
+		\dash\data::include_siftal(true);
+		\dash\data::include_css(false);
 
 		$args =
 		[

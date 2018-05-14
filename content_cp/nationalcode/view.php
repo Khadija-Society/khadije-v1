@@ -14,7 +14,9 @@ class view
 		$export_link = ' <a href="'. \dash\url::here(). '/nationalcode?export=true">'. T_("Export"). '</a>';
 		\dash\data::page_desc(\dash\data::page_desc(). $export_link);
 
-		\dash\data::bodyclass('unselectable siftal');
+		\dash\data::bodyclass('unselectable');
+		\dash\data::include_siftal(true);
+		\dash\data::include_css(false);
 
 		$args =
 		[

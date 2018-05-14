@@ -17,7 +17,9 @@ class view
 		\dash\data::badge_text(T_('Back to request list'));
 
 
-		\dash\data::bodyclass('unselectable siftal');
+		\dash\data::bodyclass('unselectable');
+		\dash\data::include_siftal(true);
+		\dash\data::include_css(false);
 
 		\dash\data::activeCity(\lib\app\travel::active_city());
 		\dash\data::tripMasterActive(\lib\app\travel::trip_master_active());

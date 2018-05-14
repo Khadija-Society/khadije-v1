@@ -9,7 +9,9 @@ class view
 		\dash\data::page_title(T_("Homepage settings"));
 		\dash\data::page_desc(T_("For show in home page"));
 
-		\dash\data::bodyclass('unselectable siftal');
+		\dash\data::bodyclass('unselectable');
+		\dash\data::include_siftal(true);
+		\dash\data::include_css(false);
 
 		$url = root. 'public_html/files/data/staticvar.txt';
 

@@ -13,7 +13,9 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/options/product');
 		\dash\data::badge_text(T_('Add new need'));
 
-		\dash\data::bodyclass('unselectable siftal');
+		\dash\data::bodyclass('unselectable');
+		\dash\data::include_siftal(true);
+		\dash\data::include_css(false);
 
 		\dash\data::need(\lib\app\need::list('product'));
 

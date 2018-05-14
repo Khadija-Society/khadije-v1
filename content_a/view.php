@@ -17,7 +17,9 @@ class view
 		\dash\data::display_admin('content_a/main/layout.html');
 		\dash\data::template_social('content/template/social.html');
 		\dash\data::template_share('content/template/share.html');
-		\dash\data::bodyclass('fixed unselectable siftal');
+		\dash\data::include_siftal(true);
+		\dash\data::include_css(false);
+		\dash\data::bodyclass('fixed unselectable');
 
 	}
 

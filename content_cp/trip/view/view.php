@@ -12,7 +12,9 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/trip');
 		\dash\data::badge_text(T_('Back to request list'));
 
-		\dash\data::bodyclass('unselectable siftal');
+		\dash\data::bodyclass('unselectable');
+		\dash\data::include_siftal(true);
+		\dash\data::include_css(false);
 
 		$travelDetail = \lib\db\travels::search(null, ['travels.id' => \dash\request::get('id'), 'pagenation' => false]);
 
