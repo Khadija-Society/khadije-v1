@@ -7,6 +7,7 @@ class model
 
 	public static function post()
 	{
+		\dash\permission::access('cpOptionCityPlace');
 		if(\dash\request::post('type') === 'delete' && \dash\request::post('key'))
 		{
 			if(\lib\app\travel::remove_cityplace(\dash\request::post('key')))

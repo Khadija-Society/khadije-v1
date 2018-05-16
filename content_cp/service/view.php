@@ -6,6 +6,8 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('cpServiceView');
+
 		\dash\data::page_title(T_("Service request list"));
 		\dash\data::page_desc(T_("check service requests"));
 

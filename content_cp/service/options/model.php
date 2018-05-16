@@ -31,7 +31,7 @@ class model
 
 	public static function post()
 	{
-
+		\dash\permission::access('cpServiceOption');
 		$post           = [];
 		$post['title']  = \dash\request::post('title');
 		$post['count']  = \dash\request::post('count');

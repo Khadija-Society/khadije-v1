@@ -6,6 +6,7 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('cpOptionCityPlace');
 		\dash\data::page_title(T_("Khadije Dashboard"));
 		\dash\data::page_special(true);
 		\dash\data::bodyclass('unselectable');

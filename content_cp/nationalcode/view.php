@@ -6,6 +6,8 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('cpNationalCodeView');
+
 		\dash\data::page_title(T_("National code list"));
 		\dash\data::page_desc(T_("check nationalcode of persons and number of trips"));
 		\dash\data::badge_link(\dash\url::here(). '/nationalcode/import');

@@ -1,0 +1,82 @@
+{
+  "ControlPanel": {
+    "title": "ControlPanel",
+    "cat": "Control Panel",
+    "require": []
+  },
+  "cpTripEdit": {
+    "title": "cpTripEdit",
+    "cat": "Trip",
+    "require": []
+  },
+  "cpTripView": {
+    "title": "cpTripView",
+    "cat": "Trip",
+    "require": []
+  },
+  "cpTripOption": {
+    "title": "cpTripOption",
+    "cat": "Trip",
+    "require": []
+  },
+  "donateManualPay": {
+    "title": "donateManualPay",
+    "cat": "Donate",
+    "require": []
+  },
+  "cpDonateView": {
+    "title": "cpDonateView",
+    "cat": "Donate",
+    "require": []
+  },
+  "cpDonateTotalPay": {
+    "title": "cpDonateTotalPay",
+    "cat": "Donate",
+    "require": []
+  },
+  "cpDonateOption": {
+    "title": "cpDonateOption",
+    "cat": "Donate",
+    "require": []
+  },
+  "cpNationalCodeEdit": {
+    "title": "cpNationalCodeEdit",
+    "cat": "National Code",
+    "require": []
+  },
+  "cpNationalCodeView": {
+    "title": "cpNationalCodeView",
+    "cat": "National Code",
+    "require": []
+  },
+  "cpNationalCodeImport": {
+    "title": "cpNationalCodeImport",
+    "cat": "National Code",
+    "require": []
+  },
+  "cpHomePageNumber": {
+    "title": "cpHomePageNumber",
+    "cat": "Setting",
+    "require": []
+  },
+  "cpOptionProduct": {
+    "title": "cpOptionProduct",
+    "cat": "Setting",
+    "require": []
+  },
+  "cpOptionCityPlace": {
+    "title": "cpOptionCityPlace",
+    "cat": "Setting",
+    "require": []
+  },
+  "cpServiceView": {
+    "title": "cpServiceView",
+    "cat": "Service",
+    "require": []
+  },
+  "cpServiceOption": {
+    "title": "cpServiceOption",
+    "cat": "Service",
+    "require": []
+  }
+}

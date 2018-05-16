@@ -6,6 +6,7 @@ class model
 {
 	public static function post()
 	{
+		\dash\permission::access('cpNationalCodeImport');
 		self::upload_traveled('qom');
 		self::upload_traveled('karbala');
 		self::upload_traveled('mashhad');

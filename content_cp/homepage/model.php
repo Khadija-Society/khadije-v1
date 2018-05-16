@@ -6,6 +6,8 @@ class model
 {
 	public static function post()
 	{
+		\dash\permission::access('cpHomePageNumber');
+
 		$qom = \dash\request::post('qom');
 		if(!$qom)
 		{

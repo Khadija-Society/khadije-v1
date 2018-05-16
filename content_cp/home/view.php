@@ -5,6 +5,9 @@ class view
 {
 	public static function config()
 	{
+
+		\dash\permission::access('ControlPanel');
+
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 

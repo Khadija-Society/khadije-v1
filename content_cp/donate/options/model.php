@@ -7,6 +7,8 @@ class model
 
 	public static function post()
 	{
+		\dash\permission::access('cpDonateOption');
+
 		if(\dash\request::post('type') === 'delete' && \dash\request::post('key'))
 		{
 			if(\lib\app\donate::remove_way(\dash\request::post('key')))

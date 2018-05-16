@@ -6,6 +6,8 @@ class model
 {
 	public static function post()
 	{
+		\dash\permission::access('cpNationalCodeEdit');
+
 		$update            = [];
 		$update['qom']     = \dash\request::post('qom');
 		$update['mashhad'] = \dash\request::post('mashhad');

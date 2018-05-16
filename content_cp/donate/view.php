@@ -6,6 +6,8 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('cpDonateView');
+
 		\dash\data::page_title(T_("Donation list"));
 		\dash\data::page_desc(T_("check last donates and monitor all donate transaction"));
 
@@ -75,8 +77,11 @@ class view
 
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
 
-		\dash\data::totalPaid(\dash\app\transaction::total_paid());
-		\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d")));
+		if(\dash\permission::check('cpDonateTotalPay'))
+		{
+			\dash\data::totalPaid(\dash\app\transaction::total_paid());
+			\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d")));
+		}
 
 	}
 }
