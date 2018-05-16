@@ -78,5 +78,20 @@
     "title": "cpServiceOption",
     "cat": "Service",
     "require": []
+  },
+  "cpTripQom": {
+    "title": "cpTripQom",
+    "cat": "Trip",
+    "require": []
+  },
+  "cpTripMashhad": {
+    "title": "cpTripMashhad",
+    "cat": "Trip",
+    "require": []
+  },
+  "cpTripKarbala": {
+    "title": "cpTripKarbala",
+    "cat": "Trip",
+    "require": []
   }
 }

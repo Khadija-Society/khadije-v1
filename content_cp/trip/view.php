@@ -31,11 +31,41 @@ class view
 			$args['order'] = 'DESC';
 		}
 
-		if(\dash\request::get('status')) $args['travels.status']           = \dash\request::get('status');
-		if(\dash\request::get('type')) $args['travels.type']               = \dash\request::get('type');
-		if(\dash\request::get('place')) $args['travels.place']             = \dash\request::get('place');
-		if(\dash\request::get('gender')) $args['users.gender']             = \dash\request::get('gender');
+		if(\dash\request::get('status')) $args['travels.status']         = \dash\request::get('status');
+		if(\dash\request::get('type')) $args['travels.type']             = \dash\request::get('type');
+		if(\dash\request::get('place')) $args['travels.place']           = \dash\request::get('place');
+		if(\dash\request::get('gender')) $args['users.gender']           = \dash\request::get('gender');
 		if(\dash\request::get('birthday')) $args['YEAR(users.birthday)'] = \dash\request::get('birthday');
+
+		$in = [];
+		if(\dash\permission::check('cpTripQom'))
+		{
+			array_push($in, 'qom');
+		}
+
+		if(\dash\permission::check('cpTripMashhad'))
+		{
+			array_push($in, 'mashhad');
+		}
+
+		if(\dash\permission::check('cpTripKarbala'))
+		{
+			array_push($in, 'karbala');
+		}
+
+		$implode_in = "('". implode("','", $in). "')";
+
+		if(isset($args['travels.place']))
+		{
+			if(!in_array($args['travels.place'], $in))
+			{
+				$args['travels.place'] = ["IN", $implode_in];
+			}
+		}
+		else
+		{
+			$args['travels.place'] = ["IN", $implode_in];
+		}
 
 		if(!isset($args['travels.status']))
 		{

@@ -16,15 +16,6 @@ class view
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
-		$travelDetail = \lib\db\travels::search(null, ['travels.id' => \dash\request::get('id'), 'pagenation' => false]);
-
-		\dash\data::travelDetail($travelDetail);
-
-		if(isset($travelDetail[0]))
-		{
-			\dash\data::travelDetail($travelDetail[0]);
-		}
-
 
 		\dash\data::travelPartner(\lib\db\travelusers::get_travel_child(\dash\request::get('id')));
 
