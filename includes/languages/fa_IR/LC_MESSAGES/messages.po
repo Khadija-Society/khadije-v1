@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-05-19 13:56+0430\n"
-"PO-Revision-Date: 2018-05-19 14:02+0430\n"
+"POT-Creation-Date: 2018-05-19 14:09+0430\n"
+"PO-Revision-Date: 2018-05-19 14:09+0430\n"
 "Last-Translator: Reza <rm.biqarar@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -134,7 +134,7 @@ msgstr "پروفایل خود را بررسی کنید و یا آواتار بر
 #: dash/addons/content_account/profile/view.php:10
 #: dash/addons/includes/languages/trans_addons.php:638
 #: khadije/includes/languages/trans_addons.php:651
-#: khadije/includes/languages/trans_twig.php:369
+#: khadije/includes/languages/trans_twig.php:370
 msgid "Edit your profile"
 msgstr "پروفایل خود را ویرایش کنید"
 
@@ -1778,13 +1778,13 @@ msgstr "جنسیت"
 
 #: dash/addons/includes/languages/trans_addons.php:174
 #: khadije/includes/languages/trans_addons.php:93
-#: khadije/includes/languages/trans_twig.php:346
+#: khadije/includes/languages/trans_twig.php:347
 msgid "Male"
 msgstr "مرد"
 
 #: dash/addons/includes/languages/trans_addons.php:175
 #: khadije/includes/languages/trans_addons.php:94
-#: khadije/includes/languages/trans_twig.php:347
+#: khadije/includes/languages/trans_twig.php:348
 msgid "Female"
 msgstr "زن"
 
@@ -1864,7 +1864,7 @@ msgstr "افزودن"
 
 #: dash/addons/includes/languages/trans_addons.php:191
 #: khadije/includes/languages/trans_addons.php:114
-#: khadije/includes/languages/trans_twig.php:388
+#: khadije/includes/languages/trans_twig.php:389
 msgid "Save all"
 msgstr "ذخیره همه"
 
@@ -3658,13 +3658,13 @@ msgstr "خودکار"
 
 #: dash/addons/includes/languages/trans_addons.php:639
 #: khadije/includes/languages/trans_addons.php:652
-#: khadije/includes/languages/trans_twig.php:370
+#: khadije/includes/languages/trans_twig.php:371
 msgid "Avatar of you"
 msgstr "آواتار شما"
 
 #: dash/addons/includes/languages/trans_addons.php:640
 #: khadije/includes/languages/trans_addons.php:653
-#: khadije/includes/languages/trans_twig.php:371
+#: khadije/includes/languages/trans_twig.php:372
 msgid "Default Avatar"
 msgstr "آواتار پیش‌فرض"
 
@@ -9662,7 +9662,7 @@ msgstr ""
 "تقاضاهای قبلی انصراف دهید"
 
 #: khadije/content_a/group/home/view.php:13
-#: khadije/includes/languages/trans_twig.php:377
+#: khadije/includes/languages/trans_twig.php:378
 msgid "register for new group request"
 msgstr "ثبت‌نام برای درخواست تشرف کاروانی"
 
@@ -9879,7 +9879,7 @@ msgid "List of your service request"
 msgstr "لیست درخواست‌های خادمی شما"
 
 #: khadije/content_a/service/home/view.php:13
-#: khadije/includes/languages/trans_twig.php:385
+#: khadije/includes/languages/trans_twig.php:386
 msgid "register for new service request"
 msgstr "ثبت‌نام برای خادمین جدید"
 
@@ -9900,7 +9900,7 @@ msgid "List of your trip request"
 msgstr "لیست درخواست‌های سفر شما"
 
 #: khadije/content_a/trip/home/view.php:13
-#: khadije/includes/languages/trans_twig.php:362
+#: khadije/includes/languages/trans_twig.php:363
 msgid "register for new trip request"
 msgstr "ثبت نام برای درخواست تشرف"
 
@@ -10996,59 +10996,63 @@ msgid "National"
 msgstr "کد ملی"
 
 #: khadije/includes/languages/trans_twig.php:338
+msgid "National Code"
+msgstr "کد ملی"
+
+#: khadije/includes/languages/trans_twig.php:339
 msgid "Setting"
 msgstr "تنظیمات"
 
-#: khadije/includes/languages/trans_twig.php:339
+#: khadije/includes/languages/trans_twig.php:340
 msgid "Service"
 msgstr "خدمات"
 
-#: khadije/includes/languages/trans_twig.php:342
+#: khadije/includes/languages/trans_twig.php:343
 msgid "List of your child"
 msgstr "لیست همراهان شما"
 
-#: khadije/includes/languages/trans_twig.php:343
+#: khadije/includes/languages/trans_twig.php:344
 msgid "You are not registered partner yet"
 msgstr "شما هنوز همراهی برای خود ثبت نکرده‌اید"
 
-#: khadije/includes/languages/trans_twig.php:344
+#: khadije/includes/languages/trans_twig.php:345
 msgid "you can send a single person request without partner on press below button"
 msgstr ""
 "شما می‌توانید درخواست خود را شخصا و بدون همراه از طریق فشردن دکمه زیر ثبت کنید"
 
-#: khadije/includes/languages/trans_twig.php:345
+#: khadije/includes/languages/trans_twig.php:346
 msgid "Foreigners must fill"
 msgstr "برای اتباع خارجی الزامی"
 
-#: khadije/includes/languages/trans_twig.php:348
+#: khadije/includes/languages/trans_twig.php:349
 msgid "Iranian must fill"
 msgstr "برای ایرانیان الزامی"
 
-#: khadije/includes/languages/trans_twig.php:349
+#: khadije/includes/languages/trans_twig.php:350
 msgid "Final register in trip request"
 msgstr "اتمام و نهایی‌سازی درخواست تشرف"
 
-#: khadije/includes/languages/trans_twig.php:352
+#: khadije/includes/languages/trans_twig.php:353
 msgid "Trip signup is disabled"
 msgstr "ثبت‌نام درخواست تشرف غیرفعال است"
 
-#: khadije/includes/languages/trans_twig.php:353
+#: khadije/includes/languages/trans_twig.php:354
 msgid "All cities are disabled now"
 msgstr "همه شهرها در حال حاضر غیرفعال هستند"
 
-#: khadije/includes/languages/trans_twig.php:354
+#: khadije/includes/languages/trans_twig.php:355
 msgid "City Place"
 msgstr "محل شهر"
 
-#: khadije/includes/languages/trans_twig.php:355
+#: khadije/includes/languages/trans_twig.php:356
 msgid "Please select one itmes"
 msgstr "لطفا یک گزینه را انتخاب کنید"
 
-#: khadije/includes/languages/trans_twig.php:356
+#: khadije/includes/languages/trans_twig.php:357
 msgid "Continue"
 msgstr "ادامه"
 
-#: khadije/includes/languages/trans_twig.php:359
+#: khadije/includes/languages/trans_twig.php:360
 msgid ""
 "You are successfully registered new trip request and you can track the status "
 "from this page"
@@ -11056,43 +11060,43 @@ msgstr ""
 "شما با موفقیت درخواست جدید تشرف را ثبت کرده و می توانید وضعیت را از این صفحه "
 "پیگیری کنید"
 
-#: khadije/includes/languages/trans_twig.php:360
+#: khadije/includes/languages/trans_twig.php:361
 msgid "Click to edit"
 msgstr "برای ویرایش کلیک کنید"
 
-#: khadije/includes/languages/trans_twig.php:361
+#: khadije/includes/languages/trans_twig.php:362
 msgid "Request date"
 msgstr "تاریخ درخواست"
 
-#: khadije/includes/languages/trans_twig.php:363
+#: khadije/includes/languages/trans_twig.php:364
 msgid "Start Date"
 msgstr "تاریخ شروع"
 
-#: khadije/includes/languages/trans_twig.php:364
+#: khadije/includes/languages/trans_twig.php:365
 msgid "End Date"
 msgstr "تاریخ پایان"
 
-#: khadije/includes/languages/trans_twig.php:374
+#: khadije/includes/languages/trans_twig.php:375
 msgid "Group signup is disabled"
 msgstr "ثبت‌نام کاروان‌ها غیرفعال است"
 
-#: khadije/includes/languages/trans_twig.php:380
+#: khadije/includes/languages/trans_twig.php:381
 msgid "Donate product"
 msgstr "نذر کالا"
 
-#: khadije/includes/languages/trans_twig.php:389
+#: khadije/includes/languages/trans_twig.php:390
 msgid "Expert title"
 msgstr "عنوان تخصص"
 
-#: khadije/includes/languages/trans_twig.php:390
+#: khadije/includes/languages/trans_twig.php:391
 msgid "Expert value"
 msgstr "میزان تخصص"
 
-#: khadije/includes/languages/trans_twig.php:391
+#: khadije/includes/languages/trans_twig.php:392
 msgid "Expert year"
 msgstr "سابقه تخصص به سال"
 
-#: khadije/includes/languages/trans_twig.php:392
+#: khadije/includes/languages/trans_twig.php:393
 msgid "Your car name"
 msgstr "نام خودروی شما"
 

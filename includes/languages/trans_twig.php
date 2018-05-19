@@ -335,8 +335,9 @@ class twigTransTerms
 	echo T_("Control");                                                               // Line 68 Seperate
 	echo T_("Trip");                                                                  // Line 69 Seperate
 	echo T_("National");                                                              // Line 71 Seperate
-	echo T_("Setting");                                                               // Line 72 Seperate
-	echo T_("Service");                                                               // Line 73 Seperate
+	echo T_("National Code");                                                         // Line 72 Seperate
+	echo T_("Setting");                                                               // Line 73 Seperate
+	echo T_("Service");                                                               // Line 74 Seperate
 
 	//-----------------------------------------content_a/trip/partner/partnerForm.html
 	echo T_("List of your child");                                                    // Line 29
