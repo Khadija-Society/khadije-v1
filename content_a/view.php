@@ -19,6 +19,7 @@ class view
 		\dash\data::template_share('content/template/share.html');
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
+		\dash\data::include_js(false);
 		\dash\data::bodyclass('fixed unselectable');
 
 	}
