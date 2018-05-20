@@ -39,7 +39,7 @@ class twigTransTerms
 
 	//-----------------------------addons\content_account\billing\invoice\display.html
 	echo T_("Factor of team");                                                        // Line 8
-	echo T_("Total");                                                                 // Line 21
+	echo T_("Total");                                                                 // Line 3
 	echo T_("Price");                                                                 // Line 20
 	echo T_("Count");                                                                 // Line 91
 
@@ -199,7 +199,7 @@ class twigTransTerms
 	echo T_("Posts");                                                                 // Line 94 Seperate
 	echo T_("Page");                                                                  // Line 45
 	echo T_("Category");                                                              // Line 56
-	echo T_("Tags");                                                                  // Line 13
+	echo T_("Tags");                                                                  // Line 12
 
 	//------------------------------------addons\content_cp\comments\edit\display.html
 	echo T_("Author");                                                                // Line 55
@@ -220,11 +220,10 @@ class twigTransTerms
 	echo T_("CMS");                                                                   // Line 56
 
 	//---------------------------------------------------addons\content_cp\layout.html
-	echo T_("Site");                                                                  // Line 229 Seperate
-	echo T_("News");                                                                  // Line 11
-	echo T_("Categries");                                                             // Line 12
+	echo T_("News");                                                                  // Line 10
+	echo T_("Categries");                                                             // Line 11
 	echo T_("Pages");                                                                 // Line 95 Seperate
-	echo T_("Files");                                                                 // Line 15
+	echo T_("Files");                                                                 // Line 14
 	echo T_("Users");                                                                 // Line 100 Seperate
 	echo T_("Add new user");                                                          // Line 6
 	echo T_("Permissions");                                                           // Line 211 Seperate
@@ -252,7 +251,7 @@ class twigTransTerms
 	echo T_("Count of user in permission");                                           // Line 51
 	echo T_("Remove this permission if not need");                                    // Line 55
 	echo T_("No user");                                                               // Line 55
-	echo T_("Click to show list of user by thie permission");                         // Line 57
+	echo T_("Click to show list of user by this permission");                         // Line 57
 	echo T_("User");                                                                  // Line 54
 
 	//---------------------------------------addons\content_cp\posts\home\display.html
@@ -396,7 +395,7 @@ class twigTransTerms
 
 	//-------------------------------------------addons\content_su\backup\display.html
 	echo T_("Backup database");                                                       // Line 5
-	echo T_("Back");                                                                  // Line 10
+	echo T_("Back");                                                                  // Line 22
 	echo T_("File is empty");                                                         // Line 15
 	echo T_("Database info");                                                         // Line 25
 	echo T_("Show Auto backup log file");                                             // Line 30
@@ -455,7 +454,7 @@ class twigTransTerms
 	echo T_("price");                                                                 // Line 19
 	echo T_("count");                                                                 // Line 20
 	echo T_("total");                                                                 // Line 21
-	echo T_("discount");                                                              // Line 22
+	echo T_("discount");                                                              // Line 1080 Seperate
 	echo T_("desc");                                                                  // Line 34
 
 	//-----------------------------------------addons\content_su\invoices\display.html
@@ -510,7 +509,7 @@ class twigTransTerms
 	echo T_("readdate");                                                              // Line 30
 	echo T_("gateway");                                                               // Line 31
 	echo T_("auto");                                                                  // Line 32
-	echo T_("datemodified");                                                          // Line 33
+	echo T_("datemodified");                                                          // Line 31
 
 	//---------------------------------------addons\content_su\permission\display.html
 	echo T_("Change permission of user");                                             // Line 6
@@ -538,30 +537,18 @@ class twigTransTerms
 	echo T_("Decode");                                                                // Line 28
 
 	//--------------------------------------------addons\content_su\tools\display.html
-	echo T_("You can use our tools");                                                 // Line 5
+	echo T_("You can use our tools");                                                 // Line 6
 	echo T_("If you dont know about this page, leave it!");                           // Line 38
-	echo T_("Special tools");                                                         // Line 9
+	echo T_("Special tools");                                                         // Line 7
 	echo T_("Backup");                                                                // Line 161
-	echo T_("Sitemap");                                                               // Line 13
-	echo T_("Server information");                                                    // Line 14
-	echo T_("Log");                                                                   // Line 15
-	echo T_("Translation tools");                                                     // Line 17
+	echo T_("Sitemap");                                                               // Line 34
+	echo T_("Server information");                                                    // Line 44
+	echo T_("Log");                                                                   // Line 54
+	echo T_("Translation tools");                                                     // Line 64
 	echo T_("Update");                                                                // Line 152 Seperate
 
 	//----------------------------------------addons\content_su\tools\log\display.html
-	echo T_("Server Logs");                                                           // Line 7
-	echo T_("Access logs");                                                           // Line 9
-	echo T_("Error logs");                                                            // Line 10
-	echo T_("Database Logs");                                                         // Line 15
-	echo T_("Logs - check");                                                          // Line 18
-	echo T_("Logs - warn");                                                           // Line 19
-	echo T_("Logs - critical");                                                       // Line 20
-	echo T_("Error Logs");                                                            // Line 21
-	echo T_("Cronjob log");                                                           // Line 26
-	echo T_("Cronjob Logs");                                                          // Line 28
-	echo T_("Telegram Errors");                                                       // Line 34
-	echo T_("telegram Logs");                                                         // Line 37
-	echo T_("telegram - Error Logs");                                                 // Line 38
+	echo T_("MB");                                                                    // Line 49 Seperate
 
 	//------------------------------------addons\content_su\tools\sitemap\display.html
 	echo T_("Create sitemap automatically by click on this page");                    // Line 6
@@ -571,10 +558,10 @@ class twigTransTerms
 	echo T_("Create Sitemap Result");                                                 // Line 18
 
 	//--------------------------------addons\content_su\tools\translation\display.html
-	echo T_("Translate");                                                             // Line 7
-	echo T_("Extract twig trans func in current project");                            // Line 9
-	echo T_("Extract twig trans func in dash addons");                                // Line 11
-	echo T_("Extract twig trans func in dash addons and update on dash addons");      // Line 12
+	echo T_("Translate");                                                             // Line 8
+	echo T_("Extract twig trans func in current project");                            // Line 16
+	echo T_("Extract twig trans func in dash addons");                                // Line 26
+	echo T_("Extract twig trans func in dash addons and update on dash addons");      // Line 35
 
 	//---------------------------------addons\content_su\transactions\add\display.html
 	echo T_("type");                                                                  // Line 16
@@ -703,6 +690,9 @@ class twigTransTerms
 	echo T_("Enter a valid username!");                                               // Line 364
 
 	//-------------------------------------------addons\includes\html\display-mvc.html
+	echo T_("You are supervisor!");                                                   // Line 104
+
+	//----------------------------------------addons\includes\html\inc_pagination.html
 
 	//-------------------------------------addons\includes\languages\trans_static.html
 	echo T_("dash");                                                                  // Line 8 Seperate
@@ -739,7 +729,6 @@ class twigTransTerms
 	echo T_("NaN");                                                                   // Line 46 Seperate
 	echo T_("Byte");                                                                  // Line 47 Seperate
 	echo T_("KB");                                                                    // Line 48 Seperate
-	echo T_("MB");                                                                    // Line 49 Seperate
 	echo T_("GB");                                                                    // Line 50 Seperate
 	echo T_("TB");                                                                    // Line 51 Seperate
 	echo T_("PB");                                                                    // Line 52 Seperate
@@ -862,7 +851,7 @@ class twigTransTerms
 	echo T_("bookcategories");                                                        // Line 209 Seperate
 	echo T_("permissions");                                                           // Line 210 Seperate
 	echo T_("logout");                                                                // Line 212 Seperate
-	echo T_("lock");                                                                  // Line 213 Seperate
+	echo T_("lock");                                                                  // Line 1038 Seperate
 	echo T_("profile");                                                               // Line 214 Seperate
 	echo T_("You can't view this part of system");                                    // Line 219 Seperate
 	echo T_("You can't add new");                                                     // Line 220 Seperate
@@ -871,8 +860,9 @@ class twigTransTerms
 	echo T_("You can't access to this part of system");                               // Line 223 Seperate
 	echo T_("Because of your permission");                                            // Line 224 Seperate
 	echo T_("You can't access to this page!");                                        // Line 225 Seperate
-	echo T_("enable");                                                                // Line 231 Seperate
-	echo T_("disable");                                                               // Line 232 Seperate
+	echo T_("Site");                                                                  // Line 229 Seperate
+	echo T_("enable");                                                                // Line 1034 Seperate
+	echo T_("disable");                                                               // Line 1035 Seperate
 	echo T_("For multilanguage sites enter title in English and translate it");       // Line 233 Seperate
 	echo T_("main URL");                                                              // Line 237 Seperate
 	echo T_("Enable coming soon");                                                    // Line 238 Seperate
@@ -1577,6 +1567,80 @@ class twigTransTerms
 	echo T_("Yemen");                                                                 // Line 1011 Seperate
 	echo T_("Zambia");                                                                // Line 1012 Seperate
 	echo T_("Zimbabwe");                                                              // Line 1013 Seperate
+	echo T_("expire");                                                                // Line 1036 Seperate
+	echo T_("deleted");                                                               // Line 1037 Seperate
+	echo T_("awaiting");                                                              // Line 1039 Seperate
+	echo T_("block");                                                                 // Line 1040 Seperate
+	echo T_("filter");                                                                // Line 1041 Seperate
+	echo T_("close");                                                                 // Line 1042 Seperate
+	echo T_("male");                                                                  // Line 1043 Seperate
+	echo T_("female");                                                                // Line 1044 Seperate
+	echo T_("single");                                                                // Line 1045 Seperate
+	echo T_("married");                                                               // Line 1046 Seperate
+	echo T_("leave");                                                                 // Line 1047 Seperate
+	echo T_("real");                                                                  // Line 1048 Seperate
+	echo T_("learn");                                                                 // Line 1049 Seperate
+	echo T_("requirement");                                                           // Line 1050 Seperate
+	echo T_("beside");                                                                // Line 1051 Seperate
+	echo T_("soon");                                                                  // Line 1052 Seperate
+	echo T_("next");                                                                  // Line 1053 Seperate
+	echo T_("active");                                                                // Line 1054 Seperate
+	echo T_("deactive");                                                              // Line 1055 Seperate
+	echo T_("full");                                                                  // Line 1056 Seperate
+	echo T_("all");                                                                   // Line 1057 Seperate
+	echo T_("sunday");                                                                // Line 1058 Seperate
+	echo T_("monday");                                                                // Line 1059 Seperate
+	echo T_("tuesday");                                                               // Line 1060 Seperate
+	echo T_("wednesday");                                                             // Line 1061 Seperate
+	echo T_("thursday");                                                              // Line 1062 Seperate
+	echo T_("friday");                                                                // Line 1063 Seperate
+	echo T_("saturday");                                                              // Line 1064 Seperate
+	echo T_("class");                                                                 // Line 1065 Seperate
+	echo T_("exam");                                                                  // Line 1066 Seperate
+	echo T_("weekly");                                                                // Line 1067 Seperate
+	echo T_("rotational");                                                            // Line 1068 Seperate
+	echo T_("date");                                                                  // Line 1069 Seperate
+	echo T_("taken");                                                                 // Line 1070 Seperate
+	echo T_("remove");                                                                // Line 1071 Seperate
+	echo T_("add");                                                                   // Line 1072 Seperate
+	echo T_("removeforce");                                                           // Line 1073 Seperate
+	echo T_("removeadmin");                                                           // Line 1074 Seperate
+	echo T_("cancel");                                                                // Line 1075 Seperate
+	echo T_("student");                                                               // Line 1076 Seperate
+	echo T_("expert");                                                                // Line 1077 Seperate
+	echo T_("acept");                                                                 // Line 1078 Seperate
+	echo T_("reject");                                                                // Line 1079 Seperate
+	echo T_("teacher");                                                               // Line 1081 Seperate
+	echo T_("other");                                                                 // Line 1082 Seperate
+	echo T_("removed");                                                               // Line 1083 Seperate
+	echo T_("unreachable");                                                           // Line 1084 Seperate
+	echo T_("paid");                                                                  // Line 1085 Seperate
+	echo T_("skipped");                                                               // Line 1086 Seperate
+	echo T_("critical");                                                              // Line 1087 Seperate
+	echo T_("high");                                                                  // Line 1088 Seperate
+	echo T_("medium");                                                                // Line 1089 Seperate
+	echo T_("low");                                                                   // Line 1090 Seperate
+	echo T_("deliver");                                                               // Line 1091 Seperate
+	echo T_("draft");                                                                 // Line 1092 Seperate
+	echo T_("true");                                                                  // Line 1093 Seperate
+	echo T_("false");                                                                 // Line 1094 Seperate
+	echo T_("skip");                                                                  // Line 1095 Seperate
+	echo T_("gift");                                                                  // Line 1096 Seperate
+	echo T_("prize");                                                                 // Line 1097 Seperate
+	echo T_("transfer");                                                              // Line 1098 Seperate
+	echo T_("promo");                                                                 // Line 1099 Seperate
+	echo T_("money");                                                                 // Line 1100 Seperate
+	echo T_("expired");                                                               // Line 1101 Seperate
+	echo T_("filtered");                                                              // Line 1102 Seperate
+	echo T_("blocked");                                                               // Line 1103 Seperate
+	echo T_("spam");                                                                  // Line 1104 Seperate
+	echo T_("request");                                                               // Line 1105 Seperate
+	echo T_("redirect");                                                              // Line 1106 Seperate
+	echo T_("pending");                                                               // Line 1107 Seperate
+	echo T_("error");                                                                 // Line 1108 Seperate
+	echo T_("verify_request");                                                        // Line 1109 Seperate
+	echo T_("verify_error");                                                          // Line 1110 Seperate
+	echo T_("ok");                                                                    // Line 1111 Seperate
 
  }
 }
