@@ -1,0 +1,101 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+
+
+{%if bookList%}
+{{block('GlanceDetail')}}
+{{block('searchblock')}}
+<div class="cbox fs12">
+{{block('datatable')}}
+</div>
+
+
+{%elseif requestGET.q %}
+{{block('GlanceDetail')}}
+{{block('searchblock')}}
+<div class="fs14 alert alert-info pA25">
+ {%trans "No book founded."%} {%trans "Search with new keywords."%}
+</div>
+
+
+{%else%}
+<div class="cbox fs12">
+ <h3>{%trans "You are not have book yet!"%}</h3>
+</div>
+{%endif%}
+
+{%endblock%}
+
+
+{%block GlanceDetail%}
+  <div class="f">
+    <div class="c6 s12">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{totalPaid | fitNumber}}</div>
+        <div class="label">{%trans "Total Donation"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="c6 s12">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{totalPaidDate | fitNumber}}</div>
+        <div class="label">{%trans "Today Donation"%}</div>
+       </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
+
+
+
+{%block searchblock%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.here}}/book'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search in donations"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+
+{%block datatable%}
+
+
+
+  <table class="tbl">
+    <thead class="primary">
+      <tr>
+        <th class="s0">{%trans "Name"%}</th>
+        <th>{%trans "mobile"%}</th>
+        <th class="s0" data-sort="{{sortLink.payment.order}}"><a href="{{sortLink.payment.link}}">{%trans "Payment"%}</a></th>
+        <th data-sort="{{sortLink.plus.order}}"><a href="{{sortLink.plus.link}}">{%trans "Amount"%}</a></th>
+
+        <th>{%trans "Book"%}</th>
+        <th class="s0" data-sort="{{sortLink.dateverify.order}}"><a href="{{sortLink.dateverify.link}}">{%trans "Date"%}</a></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in bookList%}
+      <tr>
+        <td class="s0">{%if value.doners%}{%else%}<small class="badge mRa5">گمنام</small> {%endif%}{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
+        <td><a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber(false)}}</a></td>
+        <td class="s0"><a href="{{url.current}}?payment={{value.payment}}">{%set myPayment = value.payment%}{%trans myPayment%}</a></td>
+        <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} {{value.plus | fitNumber}}  {%set pUnit = value.unit%}{%trans pUnit%}</td>
+        <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}">{{value.hazinekard}}</a></td>
+        <td class="s0" title='{{value.dateverify | date("Y-m-d H:i:s") | tdate("Y-m-d H:i:s")}}'>{{value.dateverify | date("Y-m-d H:i:s")  | sdate("day","Y/m/d") }}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+{%endblock%}
+
