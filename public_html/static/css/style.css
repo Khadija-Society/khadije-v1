@@ -235,8 +235,8 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 .rtl #tfooter #xaccess a{right:0;left:initial;margin-right:0;margin-left:2em;}
 .rtl #tfooter #xaccess a:hover{margin-right:0;margin-left:0;}
 #tfooter .middle .share12{background-color:rgba(0,0,0,0.1);border-radius:0.25rem;text-align:center;}
-#tfooter .middle .share1 a{display:inline-block;}
-#tfooter .middle nav.share1 a:hover{background-color:#333}
+#tfooter .middle .share1 a{display:inline-block;background-color:#ddd}
+#tfooter .middle nav.share1 a:hover{background-color:#aaa}
 
 /*vcard*/
 .vcard{font-style:normal;background-color:transparent;}
