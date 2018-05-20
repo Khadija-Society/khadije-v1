@@ -98,5 +98,20 @@
     "title": "cpBookTransactionView",
     "cat": "Donate",
     "require": []
+  },
+  "cpReportDaily": {
+    "title": "cpReportDaily",
+    "cat": "Report",
+    "require": []
+  },
+  "cpReportMonth": {
+    "title": "cpReportMonth",
+    "cat": "Report",
+    "require": []
+  },
+  "cpReportView": {
+    "title": "cpReportView",
+    "cat": "Report",
+    "require": []
   }
 }
