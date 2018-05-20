@@ -93,5 +93,10 @@
     "title": "cpTripKarbala",
     "cat": "Trip",
     "require": []
+  },
+  "cpBookTransactionView": {
+    "title": "cpBookTransactionView",
+    "cat": "Donate",
+    "require": []
   }
 }

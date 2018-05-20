@@ -9,7 +9,7 @@ class twigTransTerms
 	echo T_("Doner");                                                                 // Line 26
 	echo T_("Untitled");                                                              // Line 33
 	echo T_("Anonymous");                                                             // Line 36
-	echo T_("Toman");                                                                 // Line 200
+	echo T_("Toman");                                                                 // Line 22
 
 	//----------------------------------------------------content/contact/display.html
 	echo T_("We do our best to improve khadije's service quality. So, knowing your valuable comments will help us in this way.");// Line 12
@@ -64,17 +64,17 @@ class twigTransTerms
 	echo T_("Please select one item");                                                // Line 179
 
 	//-------------------------------------------------content/template/static/v1.html
-	echo T_("Shahid Mahdi Imani");                                                    // Line 96
-	echo T_("Do you know?");                                                          // Line 174
+	echo T_("Shahid Mahdi Imani");                                                    // Line 106
+	echo T_("Do you know?");                                                          // Line 184
 	echo T_("Family trip signup");                                                    // Line 84
 	echo T_("Group trip signup");                                                     // Line 68
 	echo T_("Mashhad");                                                               // Line 21
 	echo T_("Karbala");                                                               // Line 30
-	echo T_("license and supporters");                                                // Line 226
-	echo T_("Certificate");                                                           // Line 231
-	echo T_("Secured by Arvancloud");                                                 // Line 232
-	echo T_("Arvancloud");                                                            // Line 232
-	echo T_("Last news");                                                             // Line 276
+	echo T_("license and supporters");                                                // Line 236
+	echo T_("Certificate");                                                           // Line 241
+	echo T_("Secured by Arvancloud");                                                 // Line 242
+	echo T_("Arvancloud");                                                            // Line 242
+	echo T_("Last news");                                                             // Line 286
 
 	//-------------------------------------------------content/template/static/v2.html
 
@@ -94,6 +94,11 @@ class twigTransTerms
 	echo T_("Control Panel");                                                         // Line 56
 	echo T_("Exit Session");                                                          // Line 57
 
+	//------------------------------------------------content/mylovestory/display.html
+	echo T_("Price");                                                                 // Line 18
+	echo T_("Download book");                                                         // Line 20
+	echo T_("Buy book");                                                              // Line 22
+
 	//--------------------------------------------------------content/main/layout.html
 	echo T_("Next →");                                                                // Line 38
 	echo T_("← Back");                                                                // Line 38
@@ -101,6 +106,8 @@ class twigTransTerms
 	echo T_("Done");                                                                  // Line 38
 
 	//-------------------------------------------------------content/home/display.html
+	echo T_("Click to go to download page");                                          // Line 75
+	echo T_("Download love story book");                                              // Line 76
 
 	//-----------------------------------------------content_cp/trip/view/display.html
 	echo T_("Birthday");                                                              // Line 100
@@ -218,6 +225,11 @@ class twigTransTerms
 	echo T_("Way");                                                                   // Line 55
 	echo T_("Enter a valid way");                                                     // Line 55
 
+	//----------------------------------------------------content_cp/book/display.html
+	echo T_("No book founded.");                                                      // Line 19
+	echo T_("You are not have book yet!");                                            // Line 25
+	echo T_("Book");                                                                  // Line 81
+
 	//---------------------------------------content_cp/nationalcode/edit/display.html
 
 	//--------------------------------------------content_cp/nationalcode/display.html
@@ -243,6 +255,10 @@ class twigTransTerms
 	echo T_("Categries");                                                             // Line 16
 	echo T_("Tags");                                                                  // Line 17
 	echo T_("Pages");                                                                 // Line 18
+	echo T_("Comments");                                                              // Line 19
+	echo T_("Users");                                                                 // Line 23
+	echo T_("Add new user");                                                          // Line 25
+	echo T_("Permissions");                                                           // Line 26
 
 	//-----------------------------------------content_cp/options/product/display.html
 	echo T_("List of Product need");                                                  // Line 33
@@ -338,6 +354,8 @@ class twigTransTerms
 	echo T_("National Code");                                                         // Line 72 Seperate
 	echo T_("Setting");                                                               // Line 73 Seperate
 	echo T_("Service");                                                               // Line 74 Seperate
+	echo T_("cpBookTransactionView");                                                 // Line 78 Seperate
+	echo T_("mylovestory");                                                           // Line 79 Seperate
 
 	//-----------------------------------------content_a/trip/partner/partnerForm.html
 	echo T_("List of your child");                                                    // Line 29

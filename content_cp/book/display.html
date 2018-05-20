@@ -86,11 +86,11 @@
     <tbody>
       {%for key, value in bookList%}
       <tr>
-        <td class="s0">{%if value.doners%}{%else%}<small class="badge mRa5">گمنام</small> {%endif%}{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
+        <td class="s0">{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
         <td><a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber(false)}}</a></td>
         <td class="s0"><a href="{{url.current}}?payment={{value.payment}}">{%set myPayment = value.payment%}{%trans myPayment%}</a></td>
         <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} {{value.plus | fitNumber}}  {%set pUnit = value.unit%}{%trans pUnit%}</td>
-        <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}">{{value.hazinekard}}</a></td>
+        <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}">{%set myHazinekard = value.hazinekard%}{%trans myHazinekard%}</a></td>
         <td class="s0" title='{{value.dateverify | date("Y-m-d H:i:s") | tdate("Y-m-d H:i:s")}}'>{{value.dateverify | date("Y-m-d H:i:s")  | sdate("day","Y/m/d") }}</td>
       </tr>
       {%endfor%}
