@@ -225,6 +225,15 @@ class twigTransTerms
 	echo T_("Way");                                                                   // Line 55
 	echo T_("Enter a valid way");                                                     // Line 55
 
+	//--------------------------------------------content_cp/report/daily/display.html
+	echo T_("Sum");                                                                   // Line 30
+
+	//--------------------------------------------content_cp/report/month/display.html
+
+	//---------------------------------------------content_cp/report/home/display.html
+	echo T_("Report daily");                                                          // Line 17
+	echo T_("Report Month");                                                          // Line 28
+
 	//----------------------------------------------------content_cp/book/display.html
 	echo T_("No book founded.");                                                      // Line 19
 	echo T_("You are not have book yet!");                                            // Line 25
@@ -247,18 +256,18 @@ class twigTransTerms
 	echo T_("request trip list");                                                     // Line 42
 	echo T_("request service list");                                                  // Line 52
 	echo T_("Dashboard");                                                             // Line 5
-	echo T_("Request service list");                                                  // Line 7
-	echo T_("Request trip list");                                                     // Line 9
-	echo T_("Homepage settings");                                                     // Line 10
-	echo T_("CMS");                                                                   // Line 13
-	echo T_("News");                                                                  // Line 15
-	echo T_("Categries");                                                             // Line 16
-	echo T_("Tags");                                                                  // Line 17
-	echo T_("Pages");                                                                 // Line 18
-	echo T_("Comments");                                                              // Line 19
-	echo T_("Users");                                                                 // Line 23
-	echo T_("Add new user");                                                          // Line 25
-	echo T_("Permissions");                                                           // Line 26
+	echo T_("Request service list");                                                  // Line 9
+	echo T_("Request trip list");                                                     // Line 11
+	echo T_("Homepage settings");                                                     // Line 12
+	echo T_("CMS");                                                                   // Line 15
+	echo T_("News");                                                                  // Line 17
+	echo T_("Categries");                                                             // Line 18
+	echo T_("Tags");                                                                  // Line 19
+	echo T_("Pages");                                                                 // Line 20
+	echo T_("Comments");                                                              // Line 21
+	echo T_("Users");                                                                 // Line 25
+	echo T_("Add new user");                                                          // Line 27
+	echo T_("Permissions");                                                           // Line 28
 
 	//-----------------------------------------content_cp/options/product/display.html
 	echo T_("List of Product need");                                                  // Line 33
@@ -278,6 +287,8 @@ class twigTransTerms
 	echo T_("Enter a valid place");                                                   // Line 72
 
 	//----------------------------------------------------------content_cp/layout.html
+	echo T_("Book transaction list");                                                 // Line 7
+	echo T_("Report");                                                                // Line 8
 
 	//-------------------------------------------------content_cp/service/display.html
 	echo T_("No service founded.");                                                   // Line 17
@@ -356,6 +367,9 @@ class twigTransTerms
 	echo T_("Service");                                                               // Line 74 Seperate
 	echo T_("cpBookTransactionView");                                                 // Line 78 Seperate
 	echo T_("mylovestory");                                                           // Line 79 Seperate
+	echo T_("cpReportDaily");                                                         // Line 81 Seperate
+	echo T_("cpReportMonth");                                                         // Line 82 Seperate
+	echo T_("cpReportView");                                                          // Line 83 Seperate
 
 	//-----------------------------------------content_a/trip/partner/partnerForm.html
 	echo T_("List of your child");                                                    // Line 29
