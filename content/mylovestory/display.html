@@ -9,14 +9,17 @@
 		  		<img src="{{url.site}}/static/images/book/majaraye-eshge-man.jpg" alt='{{page.title}}'>
 			</div>
 			<div class="c8 s12">
+				{%if  paymentVerifyMsg %}
+					<div class="msg txtC {%if  paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
+				{%endif%}
 				<div class="msg primary2 fs08">
 					<h2>کتاب این تو  و این ماجرای عشق من اثر  انیسه سادات هاشمی</h2>
 				</div>
 				<p class="txtB fs12 msg">{%trans "Price"%} {{"2000" | fitNumber}} {%trans "Toman"%}</p>
-{%if buy.true or 1%}
-				<a class="btn success">{%trans "Download book"%}</a>
+{%if downloaLink %}
+				<a class="btn success" data-ajaxify data-data='{"download": 1}' data-method='post'  >{%trans "Download book"%}</a>
 {%else%}
-				<div class="btn primary">{%trans "Buy book"%} <span>{{"2000" | fitNumber}} {%trans "Toman"%}</span></div>
+				<div class="btn primary" data-ajaxify data-data='{"pay": 1}' data-method='post' >{%trans "Buy book"%} <span>{{"2000" | fitNumber}} {%trans "Toman"%}</span></div>
 {%endif%}
 			</div>
 		</div>
