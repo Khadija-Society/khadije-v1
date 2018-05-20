@@ -2,7 +2,8 @@
 
 
 {%block sidenav%}
-  <li><a href="{{url.base}}/cp"><i class='sf-gauge'></i> <span>{% trans "Dashboard" %}</span></a></li>
+  <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Dashboard" %}</span></a></li>
+  <li><a href="{{url.here}}/homepage"><i class='sf-cog'></i> <span>{%trans "Homepage settings"%}</span></a></li>
 
   <li>
     <a href="#"><i class='sf-money'></i> <span>{% trans "Financial" %}</span></a>
@@ -10,15 +11,16 @@
       <li><a href="{{url.here}}/donate"><i class='floatRa mRa10 fc-mute sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
       <li><a href="{{url.here}}/book"><i class='floatRa mRa10 fc-mute sf-book'></i> <span>{%trans "Book transaction list"%}</span></a></li>
       <li><a href="{{url.here}}/report"><i class='floatRa mRa10 fc-mute sf-bar-chart'></i> <span>{%trans "Report"%}</span></a></li>
-
     </ul>
   </li>
-
-
-  <li><a href="{{url.here}}/service"><i class='sf-user-md'></i> <span>{%trans "Request service list"%}</span></a></li>
-  <li><a href="{{url.here}}/nationalcode"><i class='sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
-  <li><a href="{{url.here}}/trip"><i class='sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>
-  <li><a href="{{url.here}}/homepage"><i class='sf-cog'></i> <span>{%trans "Homepage settings"%}</span></a></li>
+  <li>
+    <a href="#"><i class='sf-umbrella'></i> <span>{% trans "Requests" %}</span></a>
+    <ul>
+      <li><a href="{{url.here}}/service"><i class='floatRa mRa10 fc-mute sf-user-md'></i> <span>{%trans "Request service list"%}</span></a></li>
+      <li><a href="{{url.here}}/trip"><i class='floatRa mRa10 fc-mute sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>
+      <li><a href="{{url.here}}/nationalcode"><i class='floatRa mRa10 fc-mute sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
+    </ul>
+  </li>
 
   <li>
     <a href="{{url.here}}/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
