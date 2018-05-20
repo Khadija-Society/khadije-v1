@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-05-20 15:48+0430\n"
-"PO-Revision-Date: 2018-05-20 15:48+0430\n"
+"POT-Creation-Date: 2018-05-20 20:20+0430\n"
+"PO-Revision-Date: 2018-05-20 20:21+0430\n"
 "Last-Translator: Reza <rm.biqarar@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -1496,7 +1496,7 @@ msgstr "بدون کاربر"
 
 #: dash/addons/includes/languages/trans_addons.php:107
 msgid "Click to show list of user by this permission"
-msgstr ""
+msgstr "برای نمایش لیست افراد با این سطح دسترسی کلیک کنید"
 
 #: dash/addons/includes/languages/trans_addons.php:108
 #: khadije/includes/languages/trans_addons.php:256
@@ -3712,7 +3712,7 @@ msgstr "مکان فعلی خود را دیده و به مکان‌های وال�
 
 #: dash/addons/includes/languages/trans_addons.php:650
 msgid "You are supervisor!"
-msgstr ""
+msgstr "شما مدیر فنی سیستم هستید!"
 
 #: dash/addons/includes/languages/trans_addons.php:655
 #: khadije/includes/languages/trans_addons.php:663
@@ -8312,7 +8312,7 @@ msgstr "در حال انتظار"
 
 #: dash/addons/includes/languages/trans_addons.php:1573
 msgid "block"
-msgstr ""
+msgstr "قفل شده"
 
 #: dash/addons/includes/languages/trans_addons.php:1574
 msgid "filter"
@@ -8320,19 +8320,19 @@ msgstr "فیلتر"
 
 #: dash/addons/includes/languages/trans_addons.php:1575
 msgid "close"
-msgstr ""
+msgstr "بسته"
 
 #: dash/addons/includes/languages/trans_addons.php:1576
 msgid "male"
-msgstr ""
+msgstr "مرد"
 
 #: dash/addons/includes/languages/trans_addons.php:1577
 msgid "female"
-msgstr ""
+msgstr "زن"
 
 #: dash/addons/includes/languages/trans_addons.php:1578
 msgid "single"
-msgstr ""
+msgstr "مجرد"
 
 #: dash/addons/includes/languages/trans_addons.php:1579
 #: khadije/includes/languages/trans_twig.php:301
@@ -8341,31 +8341,31 @@ msgstr "متاهل"
 
 #: dash/addons/includes/languages/trans_addons.php:1580
 msgid "leave"
-msgstr ""
+msgstr "ترک کردن"
 
 #: dash/addons/includes/languages/trans_addons.php:1581
 msgid "real"
-msgstr ""
+msgstr "حقیقی"
 
 #: dash/addons/includes/languages/trans_addons.php:1582
 msgid "learn"
-msgstr ""
+msgstr "آموزش"
 
 #: dash/addons/includes/languages/trans_addons.php:1583
 msgid "requirement"
-msgstr ""
+msgstr "نیازمند"
 
 #: dash/addons/includes/languages/trans_addons.php:1584
 msgid "beside"
-msgstr ""
+msgstr "داخلی"
 
 #: dash/addons/includes/languages/trans_addons.php:1585
 msgid "soon"
-msgstr ""
+msgstr "به زودی"
 
 #: dash/addons/includes/languages/trans_addons.php:1586
 msgid "next"
-msgstr ""
+msgstr "بعدی"
 
 #: dash/addons/includes/languages/trans_addons.php:1587
 msgid "active"
@@ -8377,7 +8377,7 @@ msgstr "غیرفعال"
 
 #: dash/addons/includes/languages/trans_addons.php:1589
 msgid "full"
-msgstr ""
+msgstr "کامل"
 
 #: dash/addons/includes/languages/trans_addons.php:1590
 msgid "all"
@@ -8385,47 +8385,47 @@ msgstr "همه"
 
 #: dash/addons/includes/languages/trans_addons.php:1591
 msgid "sunday"
-msgstr ""
+msgstr "یک شنبه"
 
 #: dash/addons/includes/languages/trans_addons.php:1592
 msgid "monday"
-msgstr ""
+msgstr "دوشنبه"
 
 #: dash/addons/includes/languages/trans_addons.php:1593
 msgid "tuesday"
-msgstr ""
+msgstr "سه شنبه"
 
 #: dash/addons/includes/languages/trans_addons.php:1594
 msgid "wednesday"
-msgstr ""
+msgstr "چهارشنبه"
 
 #: dash/addons/includes/languages/trans_addons.php:1595
 msgid "thursday"
-msgstr ""
+msgstr "سه شنبه"
 
 #: dash/addons/includes/languages/trans_addons.php:1596
 msgid "friday"
-msgstr ""
+msgstr "جمعه"
 
 #: dash/addons/includes/languages/trans_addons.php:1597
 msgid "saturday"
-msgstr ""
+msgstr "شنبه"
 
 #: dash/addons/includes/languages/trans_addons.php:1598
 msgid "class"
-msgstr ""
+msgstr "کلاس"
 
 #: dash/addons/includes/languages/trans_addons.php:1599
 msgid "exam"
-msgstr ""
+msgstr "آزمون"
 
 #: dash/addons/includes/languages/trans_addons.php:1600
 msgid "weekly"
-msgstr ""
+msgstr "هفتگی "
 
 #: dash/addons/includes/languages/trans_addons.php:1601
 msgid "rotational"
-msgstr ""
+msgstr "چرخشی"
 
 #: dash/addons/includes/languages/trans_addons.php:1602
 msgid "date"
@@ -8433,23 +8433,23 @@ msgstr "تاریخ"
 
 #: dash/addons/includes/languages/trans_addons.php:1603
 msgid "taken"
-msgstr ""
+msgstr "گرفتن"
 
 #: dash/addons/includes/languages/trans_addons.php:1604
 msgid "remove"
-msgstr ""
+msgstr "حذف"
 
 #: dash/addons/includes/languages/trans_addons.php:1605
 msgid "add"
-msgstr ""
+msgstr "اضافه کردن"
 
 #: dash/addons/includes/languages/trans_addons.php:1606
 msgid "removeforce"
-msgstr ""
+msgstr "حذف اضطراری"
 
 #: dash/addons/includes/languages/trans_addons.php:1607
 msgid "removeadmin"
-msgstr ""
+msgstr "حذف مدیریت"
 
 #: dash/addons/includes/languages/trans_addons.php:1608
 #: khadije/includes/languages/trans_twig.php:329
@@ -8458,7 +8458,7 @@ msgstr "انصراف"
 
 #: dash/addons/includes/languages/trans_addons.php:1609
 msgid "student"
-msgstr ""
+msgstr "دانش آموز"
 
 #: dash/addons/includes/languages/trans_addons.php:1610
 msgid "expert"
@@ -8466,7 +8466,7 @@ msgstr "تخصص"
 
 #: dash/addons/includes/languages/trans_addons.php:1611
 msgid "acept"
-msgstr ""
+msgstr "قبول کردن"
 
 #: dash/addons/includes/languages/trans_addons.php:1612
 #: khadije/includes/languages/trans_twig.php:331
@@ -8475,11 +8475,11 @@ msgstr "رد کردن"
 
 #: dash/addons/includes/languages/trans_addons.php:1613
 msgid "teacher"
-msgstr ""
+msgstr "استاد"
 
 #: dash/addons/includes/languages/trans_addons.php:1614
 msgid "other"
-msgstr ""
+msgstr "سایر"
 
 #: dash/addons/includes/languages/trans_addons.php:1615
 msgid "removed"
@@ -8487,15 +8487,15 @@ msgstr "حذف شده"
 
 #: dash/addons/includes/languages/trans_addons.php:1616
 msgid "unreachable"
-msgstr ""
+msgstr "غیر قابل دسترس"
 
 #: dash/addons/includes/languages/trans_addons.php:1617
 msgid "paid"
-msgstr ""
+msgstr "پرداخت شده"
 
 #: dash/addons/includes/languages/trans_addons.php:1618
 msgid "skipped"
-msgstr ""
+msgstr "رد شده"
 
 #: dash/addons/includes/languages/trans_addons.php:1619
 msgid "critical"
@@ -8523,31 +8523,31 @@ msgstr "پیش‌نویس"
 
 #: dash/addons/includes/languages/trans_addons.php:1625
 msgid "true"
-msgstr ""
+msgstr "درست"
 
 #: dash/addons/includes/languages/trans_addons.php:1626
 msgid "false"
-msgstr ""
+msgstr "اشتباه"
 
 #: dash/addons/includes/languages/trans_addons.php:1627
 msgid "skip"
-msgstr ""
+msgstr "پرش کردن"
 
 #: dash/addons/includes/languages/trans_addons.php:1628
 msgid "gift"
-msgstr ""
+msgstr "هدیه"
 
 #: dash/addons/includes/languages/trans_addons.php:1629
 msgid "prize"
-msgstr ""
+msgstr "جایزه"
 
 #: dash/addons/includes/languages/trans_addons.php:1630
 msgid "transfer"
-msgstr ""
+msgstr "جابجایی"
 
 #: dash/addons/includes/languages/trans_addons.php:1631
 msgid "promo"
-msgstr ""
+msgstr "تخفیف"
 
 #: dash/addons/includes/languages/trans_addons.php:1632
 #: khadije/includes/languages/trans_twig.php:315
@@ -8556,15 +8556,15 @@ msgstr "پول"
 
 #: dash/addons/includes/languages/trans_addons.php:1633
 msgid "expired"
-msgstr ""
+msgstr "منقضی شده"
 
 #: dash/addons/includes/languages/trans_addons.php:1634
 msgid "filtered"
-msgstr ""
+msgstr "فیلتر شده"
 
 #: dash/addons/includes/languages/trans_addons.php:1635
 msgid "blocked"
-msgstr ""
+msgstr "قفل شده"
 
 #: dash/addons/includes/languages/trans_addons.php:1636
 #: khadije/includes/languages/trans_twig.php:332
@@ -8573,27 +8573,27 @@ msgstr "هرزنامه"
 
 #: dash/addons/includes/languages/trans_addons.php:1637
 msgid "request"
-msgstr ""
+msgstr "درخواست"
 
 #: dash/addons/includes/languages/trans_addons.php:1638
 msgid "redirect"
-msgstr ""
+msgstr "تغییر مسیر"
 
 #: dash/addons/includes/languages/trans_addons.php:1639
 msgid "pending"
-msgstr ""
+msgstr "در انتظار ارسال"
 
 #: dash/addons/includes/languages/trans_addons.php:1640
 msgid "error"
-msgstr ""
+msgstr "خطا"
 
 #: dash/addons/includes/languages/trans_addons.php:1641
 msgid "verify_request"
-msgstr ""
+msgstr "درخواست تایید"
 
 #: dash/addons/includes/languages/trans_addons.php:1642
 msgid "verify_error"
-msgstr ""
+msgstr "خطای تایید"
 
 #: dash/addons/includes/languages/trans_addons.php:1643
 msgid "ok"
@@ -8990,20 +8990,20 @@ msgstr "تاریخ تولد نامعتبر"
 msgid "Invalid birthdate, birthdate can not larger than date now!"
 msgstr "تاریخ تولد اشتباه است. تاریخ تولد نباید بزرگتر از تاریخ امروز باشد"
 
-#: dash/lib/db/mysql/tools/connect.php:100
+#: dash/lib/db/mysql/tools/connect.php:104
 msgid "we can't find database service!"
 msgstr "ما نمی‌توانیم سرویس دیتابیس را بیابیم!"
 
-#: dash/lib/db/mysql/tools/connect.php:100 dash/lib/db/mysql/tools/connect.php:112
-#: dash/lib/db/mysql/tools/connect.php:147
+#: dash/lib/db/mysql/tools/connect.php:104 dash/lib/db/mysql/tools/connect.php:116
+#: dash/lib/db/mysql/tools/connect.php:151
 msgid "Please contact administrator!"
 msgstr "لطفا با مدیر سیستم تماس بگیرید!"
 
-#: dash/lib/db/mysql/tools/connect.php:112
+#: dash/lib/db/mysql/tools/connect.php:116
 msgid "We can't connect to database service!"
 msgstr "ما نمی‌توانیم به سرویس دیتابیس متصل شویم!"
 
-#: dash/lib/db/mysql/tools/connect.php:147
+#: dash/lib/db/mysql/tools/connect.php:151
 msgid "We can't connect to correct database!"
 msgstr "ما نمی‌توانیم به دیتابیس صحیح متصل شویم!"
 
@@ -9491,8 +9491,8 @@ msgid "We do our best to improve khadije's service quality."
 msgstr "تمام تلاش ما در جهت افزایش کیفیت خدمات ارائه شده توسط موسسه خدیجه است."
 
 #: khadije/content/donate/model.php:23
-msgid "شناسه بانک نا معتبر"
-msgstr ""
+msgid "Bank id is not correct"
+msgstr "بانک انتخابی معتبر نیست"
 
 #: khadije/content/donate/view.php:9 khadije/content_a/donate/view.php:9
 #: khadije/includes/languages/trans_twig.php:34
@@ -9572,19 +9572,19 @@ msgstr "درخواست‌های خادمی خود را بررسی کنید"
 
 #: khadije/content/mylovestory/model.php:68
 msgid "Please pay amount and try to download"
-msgstr ""
+msgstr "لطفا پس از پرداخت برای دانلود تلاش کنید"
 
 #: khadije/content/mylovestory/view.php:23
 msgid "My Love Story"
-msgstr ""
+msgstr "ماجرای عشق من"
 
 #: khadije/content/mylovestory/view.php:24
 msgid "Download :title book"
-msgstr ""
+msgstr "دانلود کتاب :title"
 
 #: khadije/content/mylovestory/view.php:32
 msgid "Thanks for your buy book"
-msgstr ""
+msgstr "ممنون از اینکه کتاب را خریدید"
 
 #: khadije/content/view.php:9 khadije/content_a/view.php:9
 msgid "Khadije Charity"
@@ -9943,11 +9943,11 @@ msgstr "درخواست‌های تشرف خود را بررسی کنید"
 
 #: khadije/content_cp/book/view.php:11
 msgid "Pay book list"
-msgstr ""
+msgstr "لیست پرداخت‌های کتاب"
 
 #: khadije/content_cp/book/view.php:12
 msgid "check last books and monitor all book transaction"
-msgstr ""
+msgstr "بررسی آخرین کتاب‌ها و تراکنش‌های آن"
 
 #: khadije/content_cp/book/view.php:14 khadije/content_cp/donate/view.php:14
 #: khadije/content_cp/nationalcode/view.php:16
@@ -10098,28 +10098,28 @@ msgstr "افزودن نیاز جدید"
 #: khadije/content_cp/report/daily/view.php:12
 #: khadije/includes/languages/trans_twig.php:234
 msgid "Report daily"
-msgstr ""
+msgstr "گزارش روزانه"
 
 #: khadije/content_cp/report/daily/view.php:15
 #: khadije/content_cp/report/month/view.php:14
 msgid "Back to report list"
-msgstr ""
+msgstr "بازگشت به لیست گزارشات"
 
 #: khadije/content_cp/report/home/view.php:11
 msgid "Report list"
-msgstr ""
+msgstr "لیست گزارشات"
 
 #: khadije/content_cp/report/home/view.php:12
 msgid "Show and analyze best report in this platform."
-msgstr ""
+msgstr "نمایش و آنالیز بهترین گزارشات در این پلتفرم."
 
 #: khadije/content_cp/report/home/view.php:14
 msgid "Back to store dashboard"
-msgstr ""
+msgstr "بازگشت به داشبورد فروشگاه"
 
 #: khadije/content_cp/report/month/view.php:11
 msgid "Report month"
-msgstr ""
+msgstr "گزارش به تفکیک ماه"
 
 #: khadije/content_cp/service/options/view.php:9
 msgid "Service request options"
@@ -10474,11 +10474,11 @@ msgstr "خروج از نشست"
 
 #: khadije/includes/languages/trans_twig.php:99
 msgid "Download book"
-msgstr ""
+msgstr "دانلود کتاب"
 
 #: khadije/includes/languages/trans_twig.php:100
 msgid "Buy book"
-msgstr ""
+msgstr "خرید کتاب"
 
 #: khadije/includes/languages/trans_twig.php:103
 msgid "Next →"
@@ -10498,11 +10498,11 @@ msgstr "اتمام"
 
 #: khadije/includes/languages/trans_twig.php:109
 msgid "Click to go to download page"
-msgstr ""
+msgstr "برای رفتن به صفحه دانلود کتاب کلیک کنید"
 
 #: khadije/includes/languages/trans_twig.php:110
 msgid "Download love story book"
-msgstr ""
+msgstr "دانلود کتاب ماجرای عشق من"
 
 #: khadije/includes/languages/trans_twig.php:115
 msgid "Nationalcode"
@@ -10802,7 +10802,7 @@ msgstr "جمع"
 
 #: khadije/includes/languages/trans_twig.php:235
 msgid "Report Month"
-msgstr ""
+msgstr "گزارش به تفکیک ماه"
 
 #: khadije/includes/languages/trans_twig.php:238
 msgid "No book founded."
@@ -10886,7 +10886,7 @@ msgstr "محل معتبری را انتخاب کنید"
 
 #: khadije/includes/languages/trans_twig.php:290
 msgid "Book transaction list"
-msgstr ""
+msgstr "لیست تراکنش‌های کتاب"
 
 #: khadije/includes/languages/trans_twig.php:291
 msgid "Report"
@@ -11118,15 +11118,15 @@ msgstr "ماجرای عشق من"
 
 #: khadije/includes/languages/trans_twig.php:370
 msgid "cpReportDaily"
-msgstr ""
+msgstr "گزارش روزانه در کنترل‌پنل"
 
 #: khadije/includes/languages/trans_twig.php:371
 msgid "cpReportMonth"
-msgstr ""
+msgstr "گزارش ماهانه در کنترل‌پنل"
 
 #: khadije/includes/languages/trans_twig.php:372
 msgid "cpReportView"
-msgstr ""
+msgstr "مشاهده گزارش در کنترل‌پنل"
 
 #: khadije/includes/languages/trans_twig.php:375
 msgid "List of your child"

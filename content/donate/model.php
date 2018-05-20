@@ -20,7 +20,7 @@ class model
 
 		if(!in_array(mb_strtolower(\dash\request::post('bank')), ['asanpardakht', 'zarinpal', 'payir']))
 		{
-			\dash\notif::error(T_("شناسه بانک نا معتبر"));
+			\dash\notif::error(T_("Bank id is not correct"));
 			return false;
 		}
 
