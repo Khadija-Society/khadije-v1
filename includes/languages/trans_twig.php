@@ -50,8 +50,10 @@ class twigTransTerms
 
 	//------------------------------------------------content\mylovestory\display.html
 	echo T_("Price");                                                                 // Line 18
-	echo T_("Download book");                                                         // Line 20
-	echo T_("Buy book");                                                              // Line 22
+	echo T_("You are buy this book before and now you can download book via below link");// Line 20
+	echo T_("Download book");                                                         // Line 21
+	echo T_("Click to buy book");                                                     // Line 23
+	echo T_("Buy book");                                                              // Line 23
 
 	//---------------------------------------------------content\template\dafault.html
 	echo T_("View your current location and navigate to parent of it");               // Line 6
