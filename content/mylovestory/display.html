@@ -13,14 +13,14 @@
 					<div class="msg txtC {%if  paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 				{%endif%}
 				<div class="msg primary2 fs08">
-					<h2>کتاب این تو  و این ماجرای عشق من اثر  انیسه سادات هاشمی</h2>
+					<h2 class="txtB">کتاب این تو  و این ماجرای عشق من اثر  انیسه سادات هاشمی</h2>
 				</div>
 				<p class="txtB fs12 msg">{%trans "Price"%} {{"3500" | fitNumber}} {%trans "Toman"%}</p>
 {%if downloaLink %}
 				<p class="txtB msg success2">{%trans "You are buy this book before and now you can download book via below link"%}</p>
 				<a class="btn success" data-ajaxify data-data='{"download": 1}' data-method='post'>{%trans "Download book"%}</a>
 {%else%}
-				<div class="btn primary lg" data-ajaxify data-data='{"pay": 1}' data-method='post'>{%trans "Buy book"%} <span>{{"3500" | fitNumber}} {%trans "Toman"%}</span></div>
+				<div class="btn primary lg" data-ajaxify data-data='{"pay": 1}' data-method='post' title='{%trans "Click to buy book"%}'>{%trans "Buy book"%} <span>{{"3500" | fitNumber}} {%trans "Toman"%}</span></div>
 {%endif%}
 			</div>
 		</div>
