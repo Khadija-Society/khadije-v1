@@ -16,21 +16,21 @@
 </header>
 
 <form class="inputer" autocomplete="off" method="post">
-  <textarea class="el" name='desc' placeholder='{%trans "Wrote your heart sounds"%}'></textarea>
+  <textarea class="el" name='desc' placeholder='{%trans "Wrote your heart sounds"%}' maxlength='1000'></textarea>
   <div class="f">
     <div class="c pRa5">
-      <input type="text" name="title" class="el" placeholder='{%trans "Name"%} {%trans "optional"%}'>
+      <input type="text" name="title" class="el" placeholder='{%trans "Name"%} {%trans "optional"%}' title='{%trans "Not require"%}' maxlength='30'>
     </div>
     <div class="c pRa5">
-      <input type="tel" name="mobile" class="el" placeholder='{%trans "Mobile"%} {%trans "optional"%}'>
+      <input type="tel" name="mobile" class="el" placeholder='{%trans "Mobile"%} {%trans "optional"%}' title='{%trans "Mobile number is not showing on site and optional"%}'>
     </div>
     <div class="cauto os">
       <button class="el" title='{%trans "Press here to send"%}'>{%trans "Send"%}</button>
     </div>
   </div>
-
-
 </form>
+
+
 
 
 {%endblock%}

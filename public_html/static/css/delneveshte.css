@@ -1,7 +1,7 @@
 body{background-color: #ddd;background-image:url('../images/delneveshte/bg2.jpg');background-position: center;background-size: cover;background-repeat: no-repeat;min-height:100%;}
 
 header{position: absolute;top: 1em;right: 1em;width: 150px;text-align:center;}
-header h1{font-size: 1.2em;}
+header h1{font-size: 1.2em;color:#fff}
 header img{display: block;}
 
 .inputer{font-size: 1.4em;position: absolute;top: 2em;right: 0;left: 0;width: 50%;min-width:250px;max-width:700px;width: 50%;margin: 1em auto;}
