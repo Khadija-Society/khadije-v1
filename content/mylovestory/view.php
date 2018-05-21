@@ -7,16 +7,16 @@ class view
 	public static function config()
 	{
 		$download_link = \content\mylovestory\model::pay_before();
-		if($download_link && \dash\request::get('download'))
-		{
-			$book_path = __DIR__.'/mylovestory.pdf';
-			\dash\file::download($book_path);
-		}
+		// if($download_link && \dash\request::get('download'))
+		// {
+		// 	$book_path = __DIR__.'/mylovestory.pdf';
+		// 	\dash\file::download($book_path);
+		// }
 
-		if(\dash\request::get('download'))
-		{
-			\dash\redirect::to(\dash\url::this());
-		}
+		// if(\dash\request::get('download'))
+		// {
+		// 	\dash\redirect::to(\dash\url::this());
+		// }
 
 
 
