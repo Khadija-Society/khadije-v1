@@ -1,21 +1,22 @@
 body{background-color: #ddd;background-image:url('../images/delneveshte/bg2.jpg');background-position: center;background-size: cover;background-repeat: no-repeat;min-height:100%;color: #fff;background-attachment:fixed;}
 
-header{position: absolute;top: 1em;right: 1em;width: 150px;text-align:center;}
+header{position: absolute;top: 1em;right: 1em;width: 150px;text-align:center;user-select:none}
 header h1{font-size: 1.2em;color:#fff}
 header img{display: block;}
 
-.inputer{font-size: 1.4em;position:relative;width: 50%;min-width:250px;max-width:700px;width: 50%;margin: 3em auto;}
+.inputer{font-size: 1.4em;position:relative;width: 50%;min-width:250px;max-width:700px;width: 50%;margin: 0 auto 3em;user-select:none;}
 .inputer .el{background-color: rgba(255,255,255,0.4);border:1px solid transparent;transition:0.3s;color: #333;width:100%;}
 .inputer .el:hover{background-color: rgba(255,255,255,0.5);}
 .inputer .el:focus{background-color: rgba(255,255,255,0.7);border-color: #fff;}
-.inputer textarea.el{min-height: 160px;max-height: 400px;width:100%;padding:9px 1em;line-height: 2em;resize:none;}
+.inputer textarea.el{min-height: 160px;max-height: 400px;width:100%;padding:9px 1em;line-height: 2em;resize:none;margin-top:3em;}
 .inputer button.el{padding:9px 2em;}
 .inputer input.el{padding:9px 1em;}
 
-.messages{width:50%;margin:0 auto;font-size:1.3em;margin-bottom:5em;}
+.messages{width:50%;margin:0 auto;font-size:1.3em;margin-bottom:1em;}
+.messages h2{user-select:none;}
 .messages .msg{line-height:2em;overflow:hidden;}
 .messages .msg:hover{opacity:0.9}
-.messages .badge{margin-top:15px}
+.messages .badge{margin-top:15px;user-select:none;}
 
 
 
