@@ -18,10 +18,15 @@
 <form class="inputer" autocomplete="off" method="post">
   <textarea class="el" name='desc' placeholder='{%trans "Wrote your heart sounds"%}'></textarea>
   <div class="f">
-    <div class="c">
-      <input type="text" name="title" class="el" placeholder='{%trans "Name"%}'>
+    <div class="c pRa5">
+      <input type="text" name="title" class="el" placeholder='{%trans "Name"%} {%trans "optional"%}'>
     </div>
-    <div class="cauto os"><button class="el">{%trans "Send"%}</button></div>
+    <div class="c pRa5">
+      <input type="tel" name="mobile" class="el" placeholder='{%trans "Mobile"%} {%trans "optional"%}'>
+    </div>
+    <div class="cauto os">
+      <button class="el" title='{%trans "Press here to send"%}'>{%trans "Send"%}</button>
+    </div>
   </div>
 
 
