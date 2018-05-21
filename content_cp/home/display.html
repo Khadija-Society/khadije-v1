@@ -8,11 +8,22 @@
  <div class="c3 s12">{{block ("BNcode")}}</div>
  <div class="c12 s12">{{block ("BService")}}</div>
  <div class="c2 s12">{{block ("TemplateSMS")}}</div>
- <div class="c10 s12">{{block ("bAdvice")}}</div>
+ <div class="c4 s12">{{block ("bAdvice")}}</div>
+ <div class="c6 s12">{{block ("bHealth")}}</div>
 
 </div>
 {%endblock%}
 
+
+
+{%block bHealth%}
+<a class="dcard x1" href='{{url.here}}/health'>
+ <div class="statistic">
+  <div class="value"><i class="sf-heartbeat"></i></div>
+  <div class="label">{%trans "Health Service"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block bAdvice%}
 <a class="dcard x1" href='{{url.here}}/advice'>
