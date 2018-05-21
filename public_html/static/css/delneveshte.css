@@ -8,9 +8,9 @@ header img{display: block;}
 .inputer .el{background-color: rgba(255,255,255,0.4);border:1px solid transparent;transition:0.3s;color: #333;width:100%;}
 .inputer .el:hover{background-color: rgba(255,255,255,0.5);}
 .inputer .el:focus{background-color: rgba(255,255,255,0.7);border-color: #fff;}
-.inputer textarea.el{min-height: 160px;max-height: 400px;width:100%;padding: 1em;line-height: 2em;resize:none;}
-.inputer button.el{padding:10px 2em;}
-.inputer input.el{padding:10px 1em;}
+.inputer textarea.el{min-height: 160px;max-height: 400px;width:100%;padding:9px 1em;line-height: 2em;resize:none;}
+.inputer button.el{padding:9px 2em;}
+.inputer input.el{padding:9px 1em;}
 
 .messages{width:50%;margin:0 auto;font-size:1.3em;margin-bottom:5em;}
 .messages .msg{line-height:2em;overflow:hidden;}
