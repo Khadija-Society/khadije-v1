@@ -5,8 +5,8 @@ class view
 {
 	public static function config()
 	{
-
 		\dash\permission::access('ControlPanel');
+
 
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
@@ -19,6 +19,12 @@ class view
 		\dash\data::dash_lastUpdate(\dash\utility\git::getLastUpdate());
 
 		\dash\data::page_title(T_(ucfirst( str_replace('/', ' ', \dash\url::directory()))));
+
+		if(!\dash\data::page_title())
+		{
+			\dash\data::page_title(T_("Khadije Dashboard"));
+		}
+		\dash\data::page_desc(T_("Khadije Dashboard"));
 
 		// $this->data->dir['right']     = $this->global->direction == 'rtl'? 'left':  'right';
 		// $this->data->dir['left']      = $this->global->direction == 'rtl'? 'right': 'left';

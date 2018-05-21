@@ -5,6 +5,18 @@ class donate
 {
 	public static $way_key = 'hazinekard_list';
 
+	public static function option_key_type($_type)
+	{
+		if($_type === 'donate')
+		{
+			return self::$way_key;
+		}
+		elseif($_type === 'sms')
+		{
+			return 'template_sms';
+		}
+	}
+
 	public static function sms_success($_amount = null)
 	{
 
@@ -29,26 +41,29 @@ class donate
 		}
 	}
 
-	public static function remove_way($_way)
+	public static function remove_way($_way, $_type = 'donate')
 	{
 		$_way = trim($_way);
 
-		$old = self::way_list();
+		$old = self::way_list($_type);
 		if(array_search($_way, $old) === false)
 		{
-			\dash\notif::error(T_("This way is not in your list!"));
+			\dash\notif::error(T_("This :way is not in your list!", ['way' => T_($_type)]));
 			return false;
 		}
+
 		unset($old[array_search($_way, $old)]);
 
-		self::set_way($old, true);
+		self::set_way($old, true, $_type);
 		return true;
 
 	}
 
-	public static function way_list()
+	public static function way_list($_type = 'donate')
 	{
-		$list = \dash\db\options::get(['key' => self::$way_key, 'limit' => 1]);
+		$key = self::option_key_type($_type);
+
+		$list = \dash\db\options::get(['key' => $key, 'limit' => 1]);
 
 		$way_list = [];
 
@@ -72,7 +87,7 @@ class donate
 	}
 
 
-	public static function set_way($_way, $_set_all_way = false)
+	public static function set_way($_way, $_set_all_way = false, $_type = 'donate')
 	{
 		if(!$_set_all_way)
 		{
@@ -80,18 +95,18 @@ class donate
 
 			if(!$_way)
 			{
-				\dash\notif::error(T_("Please set way"), 'way');
+				\dash\notif::error(T_("Please set :way", ['way' => T_($_type)]), 'way');
 				return false;
 			}
 
-			if(mb_strlen($_way) > 150)
+			if(mb_strlen($_way) > 500)
 			{
-				\dash\notif::error(T_("Please set way less than 150 character"), 'way');
+				\dash\notif::error(T_("Please set value less than 500 character"), 'way');
 				return false;
 			}
 		}
 
-		$key = self::$way_key;
+		$key = self::option_key_type($_type);
 
 		$list = \dash\db\options::get(['key' => $key, 'limit' => 1]);
 
@@ -133,7 +148,7 @@ class donate
 
 			if(in_array($_way, $way_list))
 			{
-				\dash\notif::error(T_("Duplicate way"), 'way');
+				\dash\notif::error(T_("Duplicate :way", ['way' => T_($_type)]), 'way');
 				return false;
 			}
 

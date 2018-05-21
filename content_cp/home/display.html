@@ -7,11 +7,20 @@
  <div class="c9 s12">{{block ("Btrip")}}</div>
  <div class="c3 s12">{{block ("BNcode")}}</div>
  <div class="c12 s12">{{block ("BService")}}</div>
+ <div class="c12 s12">{{block ("TemplateSMS")}}</div>
 
 </div>
 {%endblock%}
 
 
+{%block TemplateSMS%}
+<a class="dcard x1" href='{{url.here}}/templatesms'>
+ <div class="statistic">
+  <div class="value"><i class="sf-envelope"></i></div>
+  <div class="label">{%trans "SMS Template"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 
 
