@@ -1,0 +1,155 @@
+{%extends display.admin%}
+
+{%block pageContent%}
+<div class="f justify-center">
+	<div class="c6">
+		<div class="cbox">
+			{%if serviceDetail %}
+				<h2>{{serviceDetail.expert}}</h2>
+				<h5>{%trans "Your are using this advice"%}</h5>
+				<h5>{%trans "If you sure from your request complete it"%}</h5>
+				<h5>{%trans "Else you can cancel your request"%}</h5>
+				<form method="post">
+					<input type="hidden" name="status" value="awaiting">
+					<button class="btn success block mT20">{%trans "OK"%}</button>
+				</form>
+
+				<form method="post">
+					<input type="hidden" name="status" value="cancel">
+					<button class="btn danger block mT20">{%trans "Cancel"%}</button>
+				</form>
+
+			{%else%}
+			{%endif%}
+		</div>
+	</div>
+</div>
+{%endblock%}
+
+{%block pageContent2%}
+
+<div class="f justify-center">
+	<div class="c6">
+		<div class="cbox">
+			<form method="post">
+				{{block('iThumb--')}}
+
+				{{block('iexpert')}}
+				<div class="f">
+					<div class="c6 s12 pRa5">{{block('iexpertvalue')}}</div>
+					<div class="c6 s12 pRa5">{{block('iexpertyear')}}</div>
+				</div>
+				<div class="f">
+					<div class="c6 s12 pRa5">{{block('istartdate')}}</div>
+					<div class="c6 s12 pRa5">{{block('ienddate')}}</div>
+				</div>
+				{{block('iJob')}}
+
+				{{block('icar2')}}
+				{{block('iDescription')}}
+				{{block('iArabicLang')}}
+				{{block('iAdd')}}
+			</form>
+		</div>
+
+	</div>
+</div>
+
+{%endblock%}
+
+
+
+{%block iDescription%}
+<label for='fdesc'>{%trans "Description"%}</label>
+<textarea name="desc"  rows="5" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{serviceDetail.desc}}</textarea>
+{%endblock%}
+
+
+
+{%block iJob%}
+<label for="fjob">{%trans "Job"%}</label>
+<div class="input">
+  <input type="text" name="job" value="{{serviceDetail.job}}" id="fjob" placeholder='{%trans "Job"%}' value="{{childDetail.job}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+{%block iAdd%}
+<button class="btn primary block mT20">{%trans "Save all"%}</button>
+{%endblock%}
+
+
+{%block istartdate%}
+<label for="startdate">{%trans "Start date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="startdate" value="{{serviceDetail.startdate}}" id="startdate"  placeholder='{{"1396/11/15" | fitNumber}}'  data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+
+
+{%block ienddate%}
+<label for="enddate">{%trans "End date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="enddate" value="{{serviceDetail.enddate}}" id="enddate"  placeholder='{{"1396/11/15" | fitNumber}}'  data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+
+
+{%block iexpert%}
+<div class="disabled">
+	<label for="fexpert">{%trans "Expert title"%}</label>
+	<div class="input ">
+	  <input type="text" name="expert" disabled value="{{serviceDetail.expert}}" id="fexpert" placeholder='{%trans "Expert title"%}'  maxlength='50'>
+	</div>
+</div>
+{%endblock%}
+
+
+{%block iexpertvalue%}
+<label for="fexpertvalue">{%trans "Expert value"%}</label>
+<div class="input">
+  <input type="text" name="expertvalue" autofocus value="{{serviceDetail.expertvalue}}" id="fexpertvalue" placeholder='{%trans "Expert value"%}'  maxlength='50'>
+</div>
+{%endblock%}
+
+
+{%block iexpertyear%}
+<label for="fexpertyear">{%trans "Expert year"%}</label>
+<div class="input">
+  <input type="number" name="expertyear" value="{{serviceDetail.expertyear}}" id="fexpertyear" placeholder='{%trans "Expert year"%}'  maxlength='50'>
+</div>
+{%endblock%}
+
+
+{%block icar%}
+<label for="fcar">{%trans "Your car name"%}</label>
+<div class="input">
+  <input type="text" name="car" value="{{serviceDetail.car}}" id="fcar" placeholder='{%trans "Your car name"%}'  maxlength='50'>
+</div>
+{%endblock%}
+
+
+
+{%block iArabicLang%}
+<div class="switch1 pA5">
+ <input type="checkbox" name="ArabicLang" id="ArabicLang" {%if serviceDetail.arabiclang %}checked{%endif%}>
+ <label for="ArabicLang"  data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
+ <label for="ArabicLang">{%trans "Arabic Language"%}</label>
+</div>
+
+{%endblock%}
+
+
+
+{%block iThumb%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="thumb" value="{{serviceDetail.thumb}}" id="fthumb" data-preview data-max="500">
+ <label for="fthumb" title='{%trans "allowed extentions jpg, png (gif for bussiness plans). Max 500Kb"%}'>
+ </label>
+</div>
+{%endblock%}
+
+
+
+
+

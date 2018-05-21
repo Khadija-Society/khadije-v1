@@ -6,13 +6,40 @@
  <div class="c12">{{block ("addDonate")}}</div>
  <div class="c6 s12">{{block ("addTrip")}}</div>
  <div class="c6 s12">{{block ("addTripGroup")}}</div>
- <div class="c12">{{block ("addService")}}</div>
-
+ <div class="c4">{{block ("addService")}}</div>
+ <div class="c4 s12">{{block ("bAdvice")}}</div>
+ <div class="c4 s12">{{block ("bHealth")}}</div>
+ <div class="c12 s12">{{block ("bNiyabat")}}</div>
 </div>
-
-
 {%endblock%}
 
+
+{%block bNiyabat%}
+<a class="dcard x2" href='{{url.here}}/representation'>
+ <div class="statistic">
+  <div class="value"><i class="sf-coffee"></i></div>
+  <div class="label">{%trans "Representation"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bHealth%}
+<a class="dcard x2" href='{{url.here}}/health'>
+ <div class="statistic">
+  <div class="value"><i class="sf-heartbeat"></i></div>
+  <div class="label">{%trans "Health Service"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bAdvice%}
+<a class="dcard x2" href='{{url.here}}/advice'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chat-alt-fill"></i></div>
+  <div class="label">{%trans "Advice"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 
 {%block prDate%}

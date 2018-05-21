@@ -391,14 +391,14 @@ class service
 	}
 
 
-	public static function user_serviceList()
+	public static function user_serviceList($_type = 'khadem')
 	{
 		$user_id = \dash\user::id();
 		if(!$user_id)
 		{
 			return false;
 		}
-		return \dash\db::get("SELECT * FROM services WHERE services.user_id = $user_id ORDER BY id DESC LIMIT 50");
+		return \dash\db::get("SELECT * FROM services WHERE services.user_id = $user_id AND services.type = '$_type' ORDER BY id DESC LIMIT 50");
 	}
 }
 ?>
