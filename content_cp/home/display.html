@@ -13,8 +13,18 @@
  <div class="c3 s12">{{block ("bHealth")}}</div>
  <div class="c3 s12">{{block ("bNiyabat")}}</div>
  <div class="c3 s12">{{block ("bSendSMS")}}</div>
+ <div class="c3 s12">{{block ("bDelneveshte")}}</div>
 
 </div>
+{%endblock%}
+
+{%block bDelneveshte%}
+<a class="dcard x2" href='{{url.here}}/delneveshte'>
+ <div class="statistic">
+  <div class="value"><i class="sf-bullhorn"></i></div>
+  <div class="label">{%trans "Delneveshte"%}</div>
+ </div>
+</a>
 {%endblock%}
 
 {%block bSendSMS%}
