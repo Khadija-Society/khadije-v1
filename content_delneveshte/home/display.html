@@ -15,11 +15,13 @@
   </a>
 </header>
 
-<form class="inputer">
-  <textarea name='text' placeholder='{%trans "Wrote your heart sounds"%}'  rows="4"></textarea>
+<form class="inputer" autocomplete="off" method="post">
+  <textarea class="el" name='desc' placeholder='{%trans "Wrote your heart sounds"%}'></textarea>
   <div class="f">
-    <div class="c"></div>
-    <div class="cauto os"><button>{%trans "Send"%}</button></div>
+    <div class="c">
+      <input type="text" name="title" class="el" placeholder='{%trans "Name"%}'>
+    </div>
+    <div class="cauto os"><button class="el">{%trans "Send"%}</button></div>
   </div>
 
 
