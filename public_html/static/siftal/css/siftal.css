@@ -381,7 +381,8 @@ kbd {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 2px 6px;
   transition: 0.3s;
-  border-radius: 0.25rem; }
+  border-radius: 0.25rem;
+  line-height: 1.25; }
 
 kbd:hover {
   background-color: rgba(0, 0, 0, 0.2); }
@@ -12886,7 +12887,7 @@ input[type="tel"], input[type="email"], input[type="date"], input[type="number"]
 
 .switch1 {
   overflow: hidden;
-  margin: 10px 0;
+  margin: 0 auto;
   vertical-align: middle;
   height: 36px; }
 
@@ -12906,7 +12907,7 @@ input[type="tel"], input[type="email"], input[type="date"], input[type="number"]
 .switch1 label:first-of-type {
   position: relative;
   cursor: pointer;
-  height: 35px;
+  height: 36px;
   width: 80px;
   background: #eee;
   border-radius: 15px;
@@ -13019,6 +13020,9 @@ html[lang=fa] .switch1.gender label:first-of-type:before {
 html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
   content: "زن";
   font-size: 12px; }
+
+.switch1.flat label:first-of-type {
+  border-radius: 0; }
 
 .radio1 {
   padding: 8px 0;
