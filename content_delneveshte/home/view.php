@@ -30,6 +30,14 @@ class view
 		}
 
 		\dash\data::dataTable(array_merge($delneveshte, $list));
+
+
+		\dash\data::display_delneveshte("content_delneveshte/home/layout.html");
+		if(\dash\request::ajax())
+		{
+			\dash\data::display_delneveshte("content_delneveshte/home/messages.html");
+		}
+
 	}
 }
 ?>

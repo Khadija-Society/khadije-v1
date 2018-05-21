@@ -1,0 +1,33 @@
+
+      <section class="messages" data-xhr='messages'>
+        <h2 class="txtC">{%trans "Last messages"%}</h2>
+{%for key, value in dataTable%}
+
+{%set myClass%}
+{%if value.status == "awaiting"%} light
+{%elseif value.status == 'unapproved'%} warn2
+{%elseif value.status == 'spam'%} danger
+{%endif%}
+{%endset%}
+        <div class="msg {%if perm('cpDelneveshteView')%}{{myClass}}{%endif%}">
+          <b>{{value.author}}</b>
+          {{value.content | nl2br}}
+          <div class="floatRa">
+{%if perm('cpDelneveshteView')%}
+{%if value.meta.mobile%}
+            <span class="badge">{{value.meta.mobile}}</span>
+{%endif%}
+            <span class="badge primary">{%set myStatus = value.status%}{%trans myStatus%}</span>
+{%endif%}
+            <span class="badge" title='{{value.datecreated | tdate(true)}}'>{{value.datecreated | sdate}}</span>
+          </div>
+
+        </div>
+{%endfor%}
+{%if pagination%}
+        <div class="msg pAn">
+         {%include display.pagination%}
+        </div>
+{%endif%}
+      </section>
+

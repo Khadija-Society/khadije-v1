@@ -101,6 +101,7 @@ class model
 			}
 
 			$_SESSION['delneveshte'][] = array_merge($args, ['status' => 'unapproved', 'datecreated' => date("Y-m-d H:i:s")]);
+			\dash\redirect::pwd();
 
 		}
 		else
