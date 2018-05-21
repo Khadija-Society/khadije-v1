@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Advice request options"));
+		\dash\data::page_title(T_("Representation request options"));
 		\dash\data::page_desc(T_("check representation request options and update requests"));
 		\dash\data::badge_link(\dash\url::here(). '/representation');
 		\dash\data::badge_text(T_('Back to representation request list'));

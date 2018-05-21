@@ -6,9 +6,9 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpAdviceView');
+		\dash\permission::access('cpRepresentationView');
 
-		\dash\data::page_title(T_("Advice request list"));
+		\dash\data::page_title(T_("Representation request list"));
 		\dash\data::page_desc(T_("check representation requests"));
 
 		$export_link = ' <a href="'. \dash\url::here(). '/representation?export=true">'. T_("Export"). '</a>';

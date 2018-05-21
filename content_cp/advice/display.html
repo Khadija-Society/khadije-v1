@@ -29,9 +29,9 @@
 
 {%block searchblock%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.here}}/service'>
+  <form method="get" action='{{url.here}}/advice'>
     <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search in services"%}' id="q" value="{{requestGET.q}}{{requestGET.barcode}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <input type="search" name="q" placeholder='{%trans "Search in advice"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
   </form>
@@ -51,12 +51,8 @@
         <th data-sort="{{sortLink.phone.order}}"><a href="{{sortLink.phone.link}}">{%trans "phone"%}</a></th>
         <th data-sort="{{sortLink.married.order}}"><a href="{{sortLink.married.link}}">{%trans "married"%}</a></th>
         <th data-sort="{{sortLink.gender.order}}"><a href="{{sortLink.gender.link}}">{%trans "gender"%}</a></th>
-        <th data-sort="{{sortLink.job.order}}"><a href="{{sortLink.job.link}}">{%trans "job"%}</a></th>
-        <th data-sort="{{sortLink.expertvalue.order}}"><a href="{{sortLink.expertvalue.link}}">{%trans "expertvalue"%}</a></th>
-        <th data-sort="{{sortLink.expertyear.order}}"><a href="{{sortLink.expertyear.link}}">{%trans "expertyear"%}</a></th>
-        <th data-sort="{{sortLink.startdate.order}}"><a href="{{sortLink.startdate.link}}">{%trans "startdate"%}</a></th>
-        <th data-sort="{{sortLink.enddate.order}}"><a href="{{sortLink.enddate.link}}">{%trans "enddate"%}</a></th>
-        <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Expert"%}</a></th>
+        <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Advice"%}</a></th>
+        <th data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
       </tr>
     </thead>
 
@@ -70,12 +66,8 @@
         <td>{{value.phone | fitNumber(false)}}</td>
         <td>{%set my_married = value.married | capitalize%}{%trans my_married%}</td>
         <td>{%set my_gender = value.gender | capitalize%}{%trans my_gender%}</td>
-        <td>{{value.job}}</td>
-        <td>{{value.expertvalue}}</td>
-        <td>{{value.expertyear | fitNumber(false)}}</td>
-        <td>{{value.startdate | date("Y-m-d") | fitNumber(false)}}</td>
-        <td>{{value.enddate | date("Y-m-d") | fitNumber(false)}}</td>
-        <td>{{value.expert}}</td>
+        <td><a href="{{url.this}}?expert={{value.expert}}">{{value.expert}}</a></td>
+        <td><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status %}{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
     </tbody>

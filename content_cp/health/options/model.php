@@ -31,7 +31,7 @@ class model
 
 	public static function post()
 	{
-		\dash\permission::access('cpAdviceOption');
+		\dash\permission::access('cpHealthOption');
 
 		$post           = [];
 		$post['title']  = \dash\request::post('title');
@@ -66,12 +66,12 @@ class model
 		{
 			if(\dash\request::get('edit'))
 			{
-				\dash\notif::ok(T_("Advice successfully edited"));
+				\dash\notif::ok(T_("Health successfully edited"));
 				\dash\redirect::to(\dash\url::here(). '/health/options');
 			}
 			else
 			{
-				\dash\notif::ok(T_("Advice successfully added"));
+				\dash\notif::ok(T_("Health successfully added"));
 				\dash\redirect::pwd();
 			}
 		}

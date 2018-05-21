@@ -6,9 +6,9 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpAdviceView');
+		\dash\permission::access('cpHealthView');
 
-		\dash\data::page_title(T_("Advice request list"));
+		\dash\data::page_title(T_("Health request list"));
 		\dash\data::page_desc(T_("check health requests"));
 
 		$export_link = ' <a href="'. \dash\url::here(). '/health?export=true">'. T_("Export"). '</a>';
