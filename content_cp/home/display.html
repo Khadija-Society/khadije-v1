@@ -3,20 +3,21 @@
 
 {%block pageContent%}
 <div class="f">
- <div class="c12">{{block ("Bdonate")}}</div>
- <div class="c9 s12">{{block ("Btrip")}}</div>
+
+ <div class="c3">{{block ("Bdonate")}}</div>
+ <div class="c3 s12">{{block ("Btrip")}}</div>
  <div class="c3 s12">{{block ("BNcode")}}</div>
- <div class="c12 s12">{{block ("BService")}}</div>
- <div class="c2 s12">{{block ("TemplateSMS")}}</div>
- <div class="c4 s12">{{block ("bAdvice")}}</div>
- <div class="c6 s12">{{block ("bHealth")}}</div>
- <div class="c6 s12">{{block ("bNiyabat")}}</div>
+ <div class="c3 s12">{{block ("BService")}}</div>
+ <div class="c3 s12">{{block ("TemplateSMS")}}</div>
+ <div class="c3 s12">{{block ("bAdvice")}}</div>
+ <div class="c3 s12">{{block ("bHealth")}}</div>
+ <div class="c3 s12">{{block ("bNiyabat")}}</div>
 
 </div>
 {%endblock%}
 
 {%block bNiyabat%}
-<a class="dcard x1" href='{{url.here}}/representation'>
+<a class="dcard x2" href='{{url.here}}/representation'>
  <div class="statistic">
   <div class="value"><i class="sf-coffee"></i></div>
   <div class="label">{%trans "Representation"%}</div>
@@ -25,7 +26,7 @@
 {%endblock%}
 
 {%block bHealth%}
-<a class="dcard x1" href='{{url.here}}/health'>
+<a class="dcard x2" href='{{url.here}}/health'>
  <div class="statistic">
   <div class="value"><i class="sf-heartbeat"></i></div>
   <div class="label">{%trans "Health Service"%}</div>
@@ -34,7 +35,7 @@
 {%endblock%}
 
 {%block bAdvice%}
-<a class="dcard x1" href='{{url.here}}/advice'>
+<a class="dcard x2" href='{{url.here}}/advice'>
  <div class="statistic">
   <div class="value"><i class="sf-chat-alt-fill"></i></div>
   <div class="label">{%trans "Advice"%}</div>
@@ -43,7 +44,7 @@
 {%endblock%}
 
 {%block TemplateSMS%}
-<a class="dcard x1" href='{{url.here}}/templatesms'>
+<a class="dcard x2" href='{{url.here}}/templatesms'>
  <div class="statistic">
   <div class="value"><i class="sf-envelope"></i></div>
   <div class="label">{%trans "SMS Template"%}</div>
@@ -54,7 +55,7 @@
 
 
 {%block BDonateProduct%}
-<a class="dcard x1" href='{{url.here}}/donateproduct'>
+<a class="dcard x2" href='{{url.here}}/donateproduct'>
  <div class="statistic">
   <div class="value"><i class="sf-bag"></i></div>
   <div class="label">{%trans "Donate product list"%}</div>
@@ -64,7 +65,7 @@
 
 
 {%block Bdonate%}
-<a class="dcard x1" href='{{url.here}}/donate'>
+<a class="dcard x2" href='{{url.here}}/donate'>
  <div class="statistic">
   <div class="value"><i class="sf-card"></i></div>
   <div class="label">{%trans "Donate list"%}</div>

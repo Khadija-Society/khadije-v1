@@ -3,13 +3,13 @@
 
 {%block pageContent%}
 <div class="f">
- <div class="c12">{{block ("addDonate")}}</div>
- <div class="c6 s12">{{block ("addTrip")}}</div>
- <div class="c6 s12">{{block ("addTripGroup")}}</div>
- <div class="c4">{{block ("addService")}}</div>
- <div class="c4 s12">{{block ("bAdvice")}}</div>
- <div class="c4 s12">{{block ("bHealth")}}</div>
- <div class="c12 s12">{{block ("bNiyabat")}}</div>
+ <div class="c3">{{block ("addDonate")}}</div>
+ <div class="c3 s12">{{block ("addTrip")}}</div>
+ <div class="c3 s12">{{block ("addTripGroup")}}</div>
+ <div class="c3">{{block ("addService")}}</div>
+ <div class="c3 s12">{{block ("bAdvice")}}</div>
+ <div class="c3 s12">{{block ("bHealth")}}</div>
+ <div class="c3 s12">{{block ("bNiyabat")}}</div>
 </div>
 {%endblock%}
 
@@ -87,7 +87,7 @@
 
 
 {%block addDonate%}
-<a class="dcard x1" href='{{url.base}}/donate' data-direct>
+<a class="dcard x2" href='{{url.base}}/donate' data-direct>
  <div class="statistic">
   <div class="value"><i class="sf-credit-card"></i></div>
   <div class="label">{%trans "Donate"%}</div>
@@ -108,7 +108,7 @@
 
 
 {%block addDonateProduct%}
-<a class="dcard x1" href='{{url.base}}/donate/product' data-direct>
+<a class="dcard x2" href='{{url.base}}/donate/product' data-direct>
  <div class="statistic">
   <div class="value"><i class="sf-basket"></i></div>
   <div class="label">{%trans "Donate product"%}</div>
