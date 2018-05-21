@@ -95,12 +95,18 @@ class model
 		{
 			\dash\notif::ok(T_("Your gele vas saved and after accept you can see it in this page"));
 
+			if(!isset($_SESSION['delneveshte']))
+			{
+				$_SESSION['delneveshte'] = [];
+			}
+
+			$_SESSION['delneveshte'][] = $args;
+
 		}
 		else
 		{
 			\dash\notif::error(T_("We could'nt save the contact"));
 		}
-
 	}
 }
 ?>

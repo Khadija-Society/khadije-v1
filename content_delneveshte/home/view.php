@@ -11,29 +11,25 @@ class view
 		\dash\data::include_css(false);
 		\dash\data::include_js(false);
 
-		$args =
-		[
-			'sort'  => \dash\request::get('sort'),
-			'order' => \dash\request::get('order'),
-		];
-
-		// $args['status'] = 'aproved';
-
-		$args['type'] = 'delneveshte';
-
-
-		if(!$args['order'])
-		{
-			$args['order'] = 'DESC';
-		}
-
-		if(!$args['sort'])
-		{
-			$args['sort'] = 'id';
-		}
+		$args           = [];
+		$args['status'] = 'approved';
+		$args['type']   = 'delneveshte';
+		$args['limit']  = 100;
+		$args['order']  = 'DESC';
+		$args['sort']   = 'id';
 
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\comment::$sort_field, \dash\url::this()));
-		\dash\data::dataTable(\dash\app\comment::list(null, $args));
+
+		$list = \dash\app\comment::list(null, $args);
+
+		$delneveshte = [];
+		if(isset($_SESSION['delneveshte']))
+		{
+			$delneveshte = $_SESSION['delneveshte'];
+			$delneveshte = array_reverse($delneveshte);
+		}
+
+		\dash\data::dataTable(array_merge($delneveshte, $list));
 	}
 }
 ?>
