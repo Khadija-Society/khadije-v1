@@ -10,11 +10,19 @@
  <div class="c2 s12">{{block ("TemplateSMS")}}</div>
  <div class="c4 s12">{{block ("bAdvice")}}</div>
  <div class="c6 s12">{{block ("bHealth")}}</div>
+ <div class="c6 s12">{{block ("bNiyabat")}}</div>
 
 </div>
 {%endblock%}
 
-
+{%block bNiyabat%}
+<a class="dcard x1" href='{{url.here}}/representation'>
+ <div class="statistic">
+  <div class="value"><i class="sf-coffee"></i></div>
+  <div class="label">{%trans "Representation"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block bHealth%}
 <a class="dcard x1" href='{{url.here}}/health'>
