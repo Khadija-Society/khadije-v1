@@ -11,6 +11,7 @@ class model
 		$post            = [];
 		$post['need_id'] = \dash\request::post('need');
 		$post['status']  = 'draft';
+		$post['type']    = 'khadem';
 
 		$service_id = \lib\app\service::add($post);
 

@@ -10,10 +10,19 @@ class need
 	 */
 	private static function check($_option = [])
 	{
+		$title   = null;
+		$request = null;
+		$amount  = null;
+		$fileurl = null;
+		$desc    = null;
+		$type    = null;
+		$status  = null;
+
 		$default_option =
 		[
-			'debug'   => true,
-			'service' => false,
+			'debug'    => true,
+			'service'  => false,
+			'is_other' => false,
 		];
 
 		if(!is_array($_option))
@@ -28,6 +37,11 @@ class need
 		{
 			$is_service = true;
 		}
+		$is_other = false;
+		if($_option['is_other'])
+		{
+			$is_other = true;
+		}
 
 		$title = \dash\app::request('title');
 		$title = trim($title);
@@ -38,42 +52,56 @@ class need
 		}
 
 		$request = \dash\app::request('count');
-		$request = trim($request);
-		$request = \dash\utility\convert::to_en_number($request);
-		if(!$is_service && !is_numeric($request))
+		if(!$is_other)
 		{
-			\dash\notif::error(T_("Please set a valid request"), 'request');
-			return false;
+			$request = trim($request);
+			$request = \dash\utility\convert::to_en_number($request);
+			if(!$is_service && !is_numeric($request))
+			{
+				\dash\notif::error(T_("Please set a valid request"), 'request');
+				return false;
+			}
+
+			if(!$is_service && intval($request) > 1E+8)
+			{
+				\dash\notif::error(T_("Request is too large"), 'request');
+				return false;
+			}
+
+			$request = intval($request);
+
+			$amount = \dash\app::request('amount');
+			$amount = trim($amount);
+			$amount = \dash\utility\convert::to_en_number($amount);
+			if(!$is_service && $amount && !is_numeric($amount))
+			{
+				\dash\notif::error(T_("Please set a valid amount"), 'amount');
+				return false;
+			}
+
+			if(!$is_service && $amount && intval($amount) > 1E+8)
+			{
+				\dash\notif::error(T_("Amount is too large"), 'amount');
+				return false;
+			}
+
+			if(!$is_service && $amount)
+			{
+				$amount = intval($amount);
+			}
+
+			$type = \dash\app::request('type');
+			if($type && !in_array($type, ['product', 'expertise']))
+			{
+				\dash\notif::error(T_("Please set a valid type"), 'type');
+				return false;
+			}
+		}
+		else
+		{
+			$type = \dash\app::request('type');
 		}
 
-		if(!$is_service && intval($request) > 1E+8)
-		{
-			\dash\notif::error(T_("Request is too large"), 'request');
-			return false;
-		}
-
-		$request = intval($request);
-
-
-		$amount = \dash\app::request('amount');
-		$amount = trim($amount);
-		$amount = \dash\utility\convert::to_en_number($amount);
-		if(!$is_service && $amount && !is_numeric($amount))
-		{
-			\dash\notif::error(T_("Please set a valid amount"), 'amount');
-			return false;
-		}
-
-		if(!$is_service && $amount && intval($amount) > 1E+8)
-		{
-			\dash\notif::error(T_("Amount is too large"), 'amount');
-			return false;
-		}
-
-		if(!$is_service && $amount)
-		{
-			$amount = intval($amount);
-		}
 
 		$fileurl = \dash\app::request('fileurl');
 		$fileurl = trim($fileurl);
@@ -91,12 +119,6 @@ class need
 			return false;
 		}
 
-		$type = \dash\app::request('type');
-		if($type && !in_array($type, ['product', 'expertise']))
-		{
-			\dash\notif::error(T_("Please set a valid type"), 'type');
-			return false;
-		}
 
 		$status = \dash\app::request('status');
 		if($status && !in_array($status, ['enable','disable']))
@@ -104,7 +126,6 @@ class need
 			\dash\notif::error(T_("Please set a valid status"), 'status');
 			return false;
 		}
-
 
 
 		$args            = [];
@@ -171,8 +192,9 @@ class need
 	{
 		$default_option =
 		[
-			'debug'   => true,
-			'service' => false,
+			'debug'    => true,
+			'service'  => false,
+			'is_other' => false,
 		];
 
 		if(!is_array($_option))
@@ -226,8 +248,9 @@ class need
 	{
 		$default_option =
 		[
-			'debug'   => true,
-			'service' => false,
+			'debug'    => true,
+			'service'  => false,
+			'is_other' => false,
 		];
 
 		if(!is_array($_option))

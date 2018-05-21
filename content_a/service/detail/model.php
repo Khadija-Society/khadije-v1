@@ -17,7 +17,8 @@ class model
 		$post['enddate']     = \dash\request::post('enddate');
 		$post['car']         = \dash\request::post('car');
 		$post['desc']        = \dash\request::post('desc');
-		$post['status']        = 'awaiting';
+		$post['status']      = 'awaiting';
+		$post['type']        = 'khadem';
 
 
 		\lib\app\service::edit($post, \dash\request::get('id'));

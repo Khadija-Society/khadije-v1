@@ -7,11 +7,21 @@
  <div class="c9 s12">{{block ("Btrip")}}</div>
  <div class="c3 s12">{{block ("BNcode")}}</div>
  <div class="c12 s12">{{block ("BService")}}</div>
- <div class="c12 s12">{{block ("TemplateSMS")}}</div>
+ <div class="c2 s12">{{block ("TemplateSMS")}}</div>
+ <div class="c10 s12">{{block ("bAdvice")}}</div>
 
 </div>
 {%endblock%}
 
+
+{%block bAdvice%}
+<a class="dcard x1" href='{{url.here}}/advice'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chat-alt-fill"></i></div>
+  <div class="label">{%trans "Advice"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block TemplateSMS%}
 <a class="dcard x1" href='{{url.here}}/templatesms'>

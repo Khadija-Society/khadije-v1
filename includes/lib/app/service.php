@@ -121,9 +121,12 @@ class service
 			return false;
 		}
 
+		$type = \dash\app::request('type');
+
 
 		$args                = [];
 
+		$args['type']         = $type;
 		$args['job']         = $job;
 		$args['expertvalue'] = $expertvalue;
 		$args['expertyear']  = $expertyear;

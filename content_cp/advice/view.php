@@ -1,20 +1,20 @@
 <?php
-namespace content_cp\service;
+namespace content_cp\advice;
 
 
 class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpServiceView');
+		\dash\permission::access('cpAdviceView');
 
-		\dash\data::page_title(T_("Service request list"));
-		\dash\data::page_desc(T_("check service requests"));
+		\dash\data::page_title(T_("Advice request list"));
+		\dash\data::page_desc(T_("check advice requests"));
 
-		$export_link = ' <a href="'. \dash\url::here(). '/service?export=true">'. T_("Export"). '</a>';
+		$export_link = ' <a href="'. \dash\url::here(). '/advice?export=true">'. T_("Export"). '</a>';
 		\dash\data::page_desc(\dash\data::page_desc() . $export_link);
 
-		\dash\data::badge_link(\dash\url::here(). '/service/options');
+		\dash\data::badge_link(\dash\url::here(). '/advice/options');
 		\dash\data::badge_text(T_('Options'));
 
 		\dash\data::bodyclass('unselectable');
@@ -33,8 +33,8 @@ class view
 		}
 
 		if(\dash\request::get('status')) $args['services.status'] = \dash\request::get('status');
+		$args['services.type'] = 'advice';
 
-		$args['services.type'] = 'khadem';
 
 		$search_string            = \dash\request::get('q');
 
