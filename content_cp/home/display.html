@@ -8,12 +8,22 @@
  <div class="c3 s12">{{block ("Btrip")}}</div>
  <div class="c3 s12">{{block ("BNcode")}}</div>
  <div class="c3 s12">{{block ("BService")}}</div>
- <div class="c3 s12">{{block ("TemplateSMS")}}</div>
+
  <div class="c3 s12">{{block ("bAdvice")}}</div>
  <div class="c3 s12">{{block ("bHealth")}}</div>
  <div class="c3 s12">{{block ("bNiyabat")}}</div>
+ <div class="c3 s12">{{block ("bSendSMS")}}</div>
 
 </div>
+{%endblock%}
+
+{%block bSendSMS%}
+<a class="dcard x2" href='{{url.here}}/sms'>
+ <div class="statistic">
+  <div class="value"><i class="sf-envelope"></i></div>
+  <div class="label">{%trans "Send SMS"%}</div>
+ </div>
+</a>
 {%endblock%}
 
 {%block bNiyabat%}
@@ -46,7 +56,7 @@
 {%block TemplateSMS%}
 <a class="dcard x2" href='{{url.here}}/templatesms'>
  <div class="statistic">
-  <div class="value"><i class="sf-envelope"></i></div>
+  <div class="value"><i class="sf-bars"></i></div>
   <div class="label">{%trans "SMS Template"%}</div>
  </div>
 </a>
