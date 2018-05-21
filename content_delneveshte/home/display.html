@@ -33,10 +33,8 @@
 <script>
 function addLastMessage()
 {
-
   $('.messages .msg:first-of-type').transition('pulse');
   $('.messages .msg:first-of-type').transition('jiggle');
-
 }
 </script>
 {%endblock%}
@@ -94,9 +92,13 @@ function addLastMessage()
           <b>{{value.author}}</b>
           {{value.content | nl2br}}
           <div class="floatRa">
+{%if perm('cpDelneveshteView')%}
+{%if value.meta.mobile%}
+            <span class="badge">{{value.meta.mobile}}</span>
+{%endif%}
+            <span class="badge primary">{%set myStatus = value.status%}{%trans myStatus%}</span>
+{%endif%}
             <span class="badge" title='{{value.datecreated | tdate(true)}}'>{{value.datecreated | sdate}}</span>
-            {%if perm('cpDelneveshteView')%}<span class="badge primary">{%set myStatus = value.status%}{{myStatus}}</span>{%endif%}
-
           </div>
 
         </div>
