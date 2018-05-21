@@ -100,7 +100,7 @@ class model
 				$_SESSION['delneveshte'] = [];
 			}
 
-			$_SESSION['delneveshte'][] = $args;
+			$_SESSION['delneveshte'][] = array_merge($args, ['status' => 'unapproved', 'datecreated' => date("Y-m-d H:i:s")]);
 
 		}
 		else
