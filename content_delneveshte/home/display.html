@@ -83,7 +83,14 @@ function addLastMessage()
       <section class="messages">
         <h2 class="txtC">{%trans "Last messages"%}</h2>
 {%for key, value in dataTable%}
-        <div class="msg">
+
+{%set myStatus%}
+{%if value.status == "awaiting"%} light
+{%elseif value.status == 'unapproved'%} warn2
+{%elseif value.status == 'spam'%} danger
+{%endif%}
+{%endset%}
+        <div class="msg {%if perm('cpDelneveshteView')%}{{myStatus}}{%endif%}">
           <b>{{value.author}}</b>
           {{value.content | nl2br}}
           <span class="floatRa badge" title='{{value.datecreated | tdate}}'>{{value.datecreated | sdate}}</span>
