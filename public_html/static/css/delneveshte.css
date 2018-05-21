@@ -1,4 +1,4 @@
-body{background-color: #ddd;background-image:url('../images/delneveshte/bg2.jpg');background-position: center;background-size: cover;background-repeat: no-repeat;min-height:100%;color: #fff}
+body{background-color: #ddd;background-image:url('../images/delneveshte/bg2.jpg');background-position: center;background-size: cover;background-repeat: no-repeat;min-height:100%;color: #fff;background-attachment:fixed;}
 
 header{position: absolute;top: 1em;right: 1em;width: 150px;text-align:center;}
 header h1{font-size: 1.2em;color:#fff}
@@ -12,7 +12,7 @@ header img{display: block;}
 .inputer button.el{padding:10px 2em;}
 .inputer input.el{padding:10px 1em;}
 
-.messages{width:50%;margin:0 auto;font-size:1.3em;}
+.messages{width:50%;margin:0 auto;font-size:1.3em;margin-bottom:5em;}
 .messages .msg{line-height:2em;overflow:hidden;}
 .messages .msg:hover{opacity:0.9}
 .messages .badge{margin-top:15px}
