@@ -65,7 +65,7 @@
 {%for key, value in dataTable%}
   <div class="msg">
     <b>{{value.author}}</b>
-    {{value.content}}
+    {{value.content | nl2br}}
     <span class="floatRa badge" title='{{value.datecreated | tdate}}'>{{value.datecreated | sdate}}</span>
   </div>
 {%endfor%}

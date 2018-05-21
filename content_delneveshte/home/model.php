@@ -6,6 +6,7 @@ class model
 {
 	public static function post()
 	{
+
 		$desc       = trim(\dash\request::post('desc'));
 		$title      = trim(\dash\request::post('title'));
 		$mobile_raw = trim(\dash\request::post('mobile'));
@@ -17,6 +18,8 @@ class model
 			\dash\notif::warn(T_("Dele tangat che mikhahad bego..."), 'desc');
 			return false;
 		}
+
+		$desc = addslashes($_POST['desc']);
 
 		if(\dash\request::post('username'))
 		{
@@ -91,7 +94,7 @@ class model
 		if($result)
 		{
 			\dash\notif::ok(T_("Your gele vas saved and after accept you can see it in this page"));
-			\dash\redirect::pwd();
+
 		}
 		else
 		{
