@@ -7,6 +7,8 @@ class model
 
 	public static function post()
 	{
+		\dash\permission::access('cpRepresentationChangeStatus');
+
 		$status = \dash\request::post('status');
 
 		if(!in_array($status, ['draft','awaiting','accept','reject','cancel','spam']))

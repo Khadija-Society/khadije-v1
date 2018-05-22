@@ -6,6 +6,8 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('cpTripView');
+
 		\dash\data::page_title(T_("View request detail"));
 		\dash\data::page_desc(T_("check request and update status"));
 

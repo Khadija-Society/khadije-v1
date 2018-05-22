@@ -6,8 +6,6 @@ class controller
 {
 	public static function routing()
 	{
-		\dash\permission::access('cpRepresentationEdit');
-
 		if(\dash\request::get('id') && is_numeric(\dash\request::get('id')))
 		{
 

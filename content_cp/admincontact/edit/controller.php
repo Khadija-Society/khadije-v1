@@ -6,7 +6,7 @@ class controller
 
 	public static function routing()
 	{
-		\dash\permission::access('cpDelneveshteEdit');
+		\dash\permission::access('cpAdminContactChangeStatus');
 
 		$id = \dash\request::get('id');
 

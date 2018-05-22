@@ -6,6 +6,8 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('cpRepresentationOption');
+
 		\dash\data::page_title(T_("Representation request options"));
 		\dash\data::page_desc(T_("check representation request options and update requests"));
 		\dash\data::badge_link(\dash\url::here(). '/representation');

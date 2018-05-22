@@ -6,6 +6,8 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('cpRepresentationChangeStatus');
+
 		\dash\data::page_title(T_("View representation detail"));
 		\dash\data::page_desc(T_("check representation and update status"));
 
