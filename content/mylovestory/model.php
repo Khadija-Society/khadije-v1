@@ -49,7 +49,7 @@ class model
 					$bank = 'payir';
 				}
 
-				\dash\utility\payment\pay::start(\dash\user::id(), $bank, 3500, $meta);
+				\dash\utility\payment\pay::start(\dash\user::id(), $bank, 3000, $meta);
 			}
 			else
 			{
