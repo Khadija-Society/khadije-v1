@@ -11,18 +11,22 @@
 {%endset%}
         <div class="msg{%if perm('cpDelneveshteView')%} {{myClass |trim}}{%endif%}{%if key == 0 and value.status == 'unapproved'%} lastOne{%endif%}">
           <div class="f">
-            <div class="cauto s12">
+            <div class="cauto s12 f align-center justify-center">
 {%if value.meta.gender == 'male'%}
-              <img src='{{url.site}}/static/siftal/images/avatar/man.png' alt='{%trans "Mr"%} {{value.author}}' class="mRa10">
+              <img src='{{url.site}}/static/siftal/images/avatar/man.png' alt='{%trans "Mr"%} {{value.author}}' class="mLa10">
 {%elseif value.meta.gender == 'female'%}
-              <img src='{{url.site}}/static/siftal/images/avatar/woman.png' alt='{%trans "Miss"%} {{value.author}}' class="mRa10">
+              <img src='{{url.site}}/static/siftal/images/avatar/woman.png' alt='{%trans "Miss"%} {{value.author}}' class="mLa10">
 {%endif%}
             </div>
-            <div class="c">
+            <div class="c desc pLa10 f align-center justify-center">
 {%if value.author%}
               <b>{{value.author}}</b>
 {%endif%}
               {{value.content | nl2br}}
+            </div>
+            <div class="cauto os s12 f align-center justify-center">
+              <input class="loveBtn" type="checkbox" id="love{{key}}" name='love{{key}}'>
+              <label for="love{{key}}"></label>
             </div>
           </div>
           <div class="meta">
