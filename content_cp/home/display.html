@@ -14,9 +14,32 @@
  <div class="c3 s12">{{block ("bNiyabat")}}</div>
  <div class="c3 s12">{{block ("bSendSMS")}}</div>
  <div class="c3 s12">{{block ("bDelneveshte")}}</div>
+ <div class="c3 s12">{{block ("homePageNumber")}}</div>
+ <div class="c3 s12">{{block ("Report")}}</div>
 
 </div>
 {%endblock%}
+
+
+
+{%block Report%}
+<a class="dcard x2" href='{{url.here}}/report'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chart"></i></div>
+  <div class="label">{%trans "Report"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block homePageNumber%}
+<a class="dcard x2" href='{{url.here}}/homepage'>
+ <div class="statistic">
+  <div class="value"><i class="sf-cog"></i></div>
+  <div class="label">{%trans "Home page number"%}</div>
+ </div>
+</a>
+{%endblock%}
+
 
 {%block bDelneveshte%}
 <a class="dcard x2" href='{{url.here}}/delneveshte'>

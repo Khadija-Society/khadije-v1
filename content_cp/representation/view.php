@@ -33,6 +33,7 @@ class view
 		}
 
 		if(\dash\request::get('status')) $args['services.status'] = \dash\request::get('status');
+		if(\dash\request::get('representation')) $args['services.expert'] = \dash\request::get('representation');
 		$args['services.type'] = 'representation';
 
 
@@ -52,14 +53,24 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		\dash\data::serviceList(\lib\app\service::list($search_string, $args));
+		\dash\data::dataTable(\lib\app\service::list($search_string, $args));
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_service', 'data' => \dash\data::serviceList()]);
+			\dash\utility\export::csv(['name' => 'export_service', 'data' => \dash\data::dataTable()]);
 		}
 
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/service'));
+		$filterArray = $args;
+		unset($filterArray['services.type']);
+		if(isset($filterArray['services.expert']))
+		{
+			$filterArray[T_("Representation")] = $filterArray['services.expert'];
+			unset($filterArray['services.expert']);
+		}
+		// set dataFilter
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
+		\dash\data::dataFilter($dataFilter);
 	}
 }
 ?>

@@ -1,33 +1,43 @@
 {%extends display.cpMain%}
 
 
+
+
+
+
 {%block pageContent%}
 
+{%if dataTable%}
+ {%if dataFilter%}
 
-{%if serviceList%}
-{{block('searchblock')}}
-<div class="cbox fs12">
-{{block('datatable')}}
-</div>
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
 
+ {%else%}
 
-{%elseif requestGET.q or requestGET.barcode%}
-{{block('searchblock')}}
-<div class="fs14 alert alert-info pA25">
- {%trans "No service founded."%} {%trans "Search with new keywords."%}
-</div>
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
 
-
+ {%endif%}
 {%else%}
-<div class="cbox fs12">
- <h3>{%trans "You are not have service yet!"%}</h3>
-</div>
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlFilterNoResult')}}
+
+ {%endif%}
 {%endif%}
 
 {%endblock%}
 
 
-{%block searchblock%}
+
+
+{%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.here}}/health'>
     <div class="input">
@@ -39,8 +49,8 @@
 {%endblock%}
 
 
-{%block datatable%}
-
+{%block htmlTable%}
+ <div class="cbox fs12">
   <table class="tbl">
     <thead class="primary">
       <tr>
@@ -57,7 +67,7 @@
     </thead>
 
     <tbody>
-      {%for key, value in serviceList%}
+      {%for key, value in dataTable%}
       <tr>
         <td>{{value.firstname}} <b>{{value.lastname}}</b></td>
         <td>{{value.mobile | fitNumber(false)}}</td>
@@ -66,12 +76,35 @@
         <td>{{value.phone | fitNumber(false)}}</td>
         <td>{%set my_married = value.married | capitalize%}{%trans my_married%}</td>
         <td>{%set my_gender = value.gender | capitalize%}{%trans my_gender%}</td>
-        <td><a href="{{url.this}}?expert={{value.expert}}">{{value.expert}}</a></td>
+        <td><a href="{{url.this}}?health={{value.expert}}">{{value.expert}}</a></td>
         <td><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status %}{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
   </table>
   {%include display.pagination%}
+
+ </div>
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 alert alert-info">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.here}}/health">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 alert alert-error">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.here}}/health">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 alert alert-success pTB20">{%trans "Hi!"%}</p>
 {%endblock%}
 

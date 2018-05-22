@@ -86,14 +86,61 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		\dash\data::tripList(\lib\app\travel::list($search_string, $args));
+		\dash\data::dataTable(\lib\app\travel::list($search_string, $args));
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::tripList()]);
+			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::dataTable()]);
 		}
 
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\travel::$sort_field, \dash\url::here(). '/trip'));
+		$filterArray = $args;
+
+		if(isset($filterArray['travels.status']) && is_array($filterArray['travels.status']))
+		{
+			unset($filterArray['travels.status']);
+		}
+
+		if(isset($filterArray['travels.place']) && is_array($filterArray['travels.place']))
+		{
+			unset($filterArray['travels.place']);
+		}
+
+		if(isset($filterArray['travels.place']))
+		{
+			$filterArray[T_("Place")] = $filterArray['travels.place'];
+			unset($filterArray['travels.place']);
+		}
+
+		if(isset($filterArray['travels.status']))
+		{
+			$filterArray[T_("Status")] = $filterArray['travels.status'];
+			unset($filterArray['travels.status']);
+		}
+
+		if(isset($filterArray['travels.type']))
+		{
+			$filterArray[T_("Type")] = $filterArray['travels.type'];
+			unset($filterArray['travels.type']);
+		}
+
+		if(isset($filterArray['YEAR(users.birthday)']))
+		{
+			$filterArray[T_("Birth year")] = $filterArray['YEAR(users.birthday)'];
+			unset($filterArray['YEAR(users.birthday)']);
+		}
+
+		if(isset($filterArray['users.gender']))
+		{
+			$filterArray[T_("Gender")] = $filterArray['users.gender'];
+			unset($filterArray['users.gender']);
+		}
+
+
+
+		// set dataFilter
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
+		\dash\data::dataFilter($dataFilter);
 
 	}
 }

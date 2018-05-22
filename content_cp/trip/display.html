@@ -1,33 +1,43 @@
 {%extends display.cpMain%}
 
 
+
+
+
+
 {%block pageContent%}
 
+{%if dataTable%}
+ {%if dataFilter%}
 
-{%if tripList%}
-{{block('searchblock')}}
-<div class="cbox fs12">
-{{block('datatable')}}
-</div>
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
 
+ {%else%}
 
-{%elseif requestGET.q or requestGET.barcode%}
-{{block('searchblock')}}
-<div class="fs14 alert alert-info pA25">
- {%trans "No trip founded."%} {%trans "Search with new keywords."%}
-</div>
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
 
-
+ {%endif%}
 {%else%}
-<div class="cbox fs12">
- <h3>{%trans "You are not have trip yet!"%}</h3>
-</div>
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlFilterNoResult')}}
+
+ {%endif%}
 {%endif%}
 
 {%endblock%}
 
 
-{%block searchblock%}
+
+
+{%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.here}}/trip'>
     <div class="input">
@@ -39,9 +49,9 @@
 {%endblock%}
 
 
-{%block datatable%}
-
-  <table class="tbl">
+{%block htmlTable%}
+ <div class="cbox fs12">
+ <table class="tbl">
     <thead class="primary">
       <tr>
         <th data-sort="{{sortLink.id.order}}" class="s0"><a href="{{sortLink.id.link}}">{%trans "ID"%}</a></th>
@@ -57,7 +67,7 @@
     </thead>
 
     <tbody>
-      {%for key, value in tripList%}
+      {%for key, value in dataTable%}
       <tr>
         <td class="s0"><a href="{{url.here}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
         <td><a href="{{url.here}}/trip/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
@@ -74,5 +84,28 @@
     </tbody>
   </table>
   {%include display.pagination%}
+
+ </div>
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 alert alert-info">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.here}}/trip">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 alert alert-error">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.here}}/trip">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 alert alert-success pTB20">{%trans "Hi!"%}</p>
 {%endblock%}
 
