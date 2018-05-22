@@ -85,6 +85,10 @@
     {
       myLoves -=1;
     }
+    if(myLoves < 0)
+    {
+      myLoves = 0;
+    }
     myEl.attr('data-val', myLoves);
     myEl.text(fitNumber(myLoves));
   }
