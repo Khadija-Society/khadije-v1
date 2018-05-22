@@ -1,0 +1,83 @@
+{%extends display.cpMain%}
+
+{%block pageContent%}
+
+<div class="cbox">
+  <form method="post" class="cbox">
+
+    <h2>{{representationDetail.firstname}}<b>{{representationDetail.lastname}}</b></h2>
+    <br>
+    <h3>{{representationDetail.expert}}</h3>
+
+    <div class="f">
+      <div class="c8 s12 pRa10">{{block('iStatus')}}</div>
+      <div class="c4 s12">
+        <input type="hidden" name="edit_travel" value="edit_travel">
+        {{block ('istartdate') }}
+        {{block ('ienddate') }}
+        {{block ('iDescription') }}
+      </div>
+    </div>
+    {{block ('iSave') }}
+  </form>
+</div>
+
+{%endblock%}
+
+
+
+
+
+{%block iStatus%}
+
+<div>
+ <label >{%trans "Status of representation"%}</label>
+ <div class="f">
+  <div class="c6 s12">
+
+   <div class="radio1 blue">
+    <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if representationDetail.status == 'awaiting' or not representationDetail.status %} checked{%endif%}>
+    <label for="r-awaiting">{%trans "Awaiting"%}</label>
+   </div>
+
+   <div class="radio1 red">
+    <input type="radio" id="r-spam" name="status" value="spam" {%if representationDetail.status == 'spam' %} checked{%endif%}>
+    <label for="r-spam">{%trans "Spam"%} <small>{%trans "inapropirate request and spam detected"%}</small></label>
+   </div>
+
+   <div class="radio1 green">
+    <input type="radio" id="r-accept" name="status" value="accept" {%if representationDetail.status == 'accept' %} checked{%endif%}>
+    <label for="r-accept">{%trans "Done Representation"%} <small>{%trans "Representation is done"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+
+  </div>
+  <div class="c6 s12">
+
+   <div class="radio1 black">
+    <input type="radio" id="r-draft" name="status" value="draft" {%if representationDetail.status == 'draft' or not representationDetail.status %} checked{%endif%}>
+    <label for="r-draft">{%trans "Draft"%} <small>{%trans "try to fill request"%}</small></label>
+   </div>
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-cancel" name="status" value="cancel" {%if representationDetail.status == 'cancel' %} checked{%endif%}>
+    <label for="r-cancel">{%trans "Cancel"%} <small>{%trans "cancel from user"%}</small></label>
+   </div>
+
+
+  </div>
+ </div>
+
+
+</div>
+{%endblock%}
+
+
+
+{%block iSave%}
+<button class="btn success block mT20">{%trans "Save changes"%}</button>
+{%endblock%}
+
+
+
+
