@@ -25,7 +25,7 @@
               {{value.content | nl2br}}
             </div>
             <div class="cauto os s12 f align-center justify-center">
-              <input class="loveBtn" type="checkbox" id="love{{key}}" name='love{{key}}'>
+              <input class="loveBtn" type="checkbox" id="love{{key}}" name='love{{key}}' data-ajaxify data-data='{"like": "{{value.id}}"}' data-method='post'>
               <label for="love{{key}}"></label>
             </div>
           </div>
@@ -37,6 +37,7 @@
             <span class="badge primary">{%set myStatus = value.status%}{%trans myStatus%}</span>
 {%endif%}
             <span class="badge" title='{{value.datecreated | tdate(true)}}'>{{value.datecreated | sdate}}</span>
+            <span class="badge danger" title='{%trans "People who sympathetic with this person"%}'>{{3000 | fitNumber}} <i class="sf-heart"></i></span>
           </div>
         </div>
 {%endfor%}
