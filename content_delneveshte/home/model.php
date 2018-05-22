@@ -100,6 +100,8 @@ class model
 				$_SESSION['delneveshte'] = [];
 			}
 
+			$args['meta'] = json_decode($args['meta'], true);
+
 			$_SESSION['delneveshte'][] = array_merge($args, ['status' => 'unapproved', 'datecreated' => date("Y-m-d H:i:s")]);
 			\dash\redirect::pwd();
 
