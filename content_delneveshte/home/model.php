@@ -122,7 +122,7 @@ class model
 				$_SESSION['delneveshte'] = [];
 			}
 
-			$_SESSION['delneveshte'][] = array_merge($args, ['status' => 'awaiting', 'datecreated' => date("Y-m-d H:i:s")]);
+			$_SESSION['delneveshte'][] = array_merge($args, ['id' => 251, 'status' => 'awaiting', 'datecreated' => date("Y-m-d H:i:s")]);
 			\dash\redirect::pwd();
 		}
 		else
