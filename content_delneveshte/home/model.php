@@ -106,7 +106,7 @@ class model
 		}
 		else
 		{
-			\dash\notif::error(T_("We could'nt save the contact"));
+			\dash\notif::error(T_("We could not save the contact"));
 		}
 	}
 }

@@ -19,6 +19,7 @@
   .messages .msg{line-height:2em;overflow:hidden;}
   .messages .msg:hover{opacity:0.9}
   .messages .badge{margin-top:15px;user-select:none;}
+  .messages .msg.lastOne{display: none;}
 
   @media all and (min-width: 768px) and (max-width: 959px) {
     header{position:static;}
@@ -35,11 +36,23 @@
 
 {%block foot_js%}
 <script>
-function addLastMessage()
-{
-  $('.messages .msg:first-of-type').transition('pulse');
-  $('.messages .msg:first-of-type').transition('jiggle');
-}
+
+  route('*', function()
+  {
+
+  }).once(function()
+  {
+    showLastMessageWithEffect()
+  });
+
+  function showLastMessageWithEffect()
+  {
+    var lastOne = $('.messages .msg.lastOne');
+    if(lastOne.length > 0)
+    {
+      $('.messages .msg.lastOne').transition('zoom');
+    }
+  }
 </script>
 {%endblock%}
 
@@ -58,7 +71,7 @@ function addLastMessage()
   <div class="f justify-center">
     <div class="c6 m9 s12">
 
-      <form class="inputer" autocomplete="off" method="post">
+      <form class="inputer" autocomplete="off" method="post" data-clear>
         <textarea class="el" name='desc' placeholder='{%trans "Wrote your heart sounds"%}' maxlength='1000'></textarea>
         <div class="f">
           <div class="cauto pRa5">
