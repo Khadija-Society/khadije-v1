@@ -19,7 +19,7 @@ class model
 			return false;
 		}
 
-		$desc = addslashes($_POST['desc']);
+		$desc = $_POST['desc'];
 
 		if(\dash\request::post('username'))
 		{
@@ -78,7 +78,6 @@ class model
 		$meta['gender'] = $gender;
 		$meta['mobile'] = $mobile;
 		$meta['name']   = $title;
-		$meta = json_encode($meta, JSON_UNESCAPED_UNICODE);
 
 		$args =
 		[
@@ -87,10 +86,10 @@ class model
 			'content' => $desc,
 			'user_id' => $user_id,
 			'meta'    => $meta,
-
 		];
+
 		// insert comments
-		$result = \dash\db\comments::insert($args);
+		$result = \dash\app\comment::add($args);
 		if($result)
 		{
 			\dash\notif::ok(T_("Your gele vas saved and after accept you can see it in this page"));
@@ -100,11 +99,8 @@ class model
 				$_SESSION['delneveshte'] = [];
 			}
 
-			$args['meta'] = json_decode($args['meta'], true);
-
 			$_SESSION['delneveshte'][] = array_merge($args, ['status' => 'awaiting', 'datecreated' => date("Y-m-d H:i:s")]);
 			\dash\redirect::pwd();
-
 		}
 		else
 		{
