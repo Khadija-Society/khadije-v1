@@ -38,6 +38,11 @@ class view
 			\dash\data::display_delneveshte("content_delneveshte/home/messages.html");
 		}
 
+		if(isset($_SESSION['delneveshte_like']))
+		{
+			\dash\data::likes($_SESSION['delneveshte_like']);
+		}
+
 	}
 }
 ?>

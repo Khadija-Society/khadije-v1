@@ -7,6 +7,29 @@ class model
 	public static function post()
 	{
 
+		if(\dash\request::post('like'))
+		{
+			if(!isset($_SESSION['delneveshte_like']))
+			{
+				$_SESSION['delneveshte_like'] = [];
+			}
+
+			$like = \dash\request::post('like');
+			if(!in_array($like, $_SESSION['delneveshte_like']))
+			{
+				$like = \dash\coding::decode($like);
+				if(!$like)
+				{
+					return;
+				}
+
+				$_SESSION['delneveshte_like'][] = $like;
+
+				\dash\db\comments::set_comment_data($like, 'plus');
+			}
+			return;
+		}
+
 		$desc       = trim(\dash\request::post('desc'));
 		$title      = trim(\dash\request::post('title'));
 		$mobile_raw = trim(\dash\request::post('mobile'));
