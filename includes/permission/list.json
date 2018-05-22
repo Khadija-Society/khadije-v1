@@ -113,5 +113,60 @@
     "title": "cpReportView",
     "cat": "Report",
     "require": []
+  },
+  "cpDelneveshteEdit": {
+    "title": "cpDelneveshteEdit",
+    "cat": "Delneveshte",
+    "require": []
+  },
+  "cpDelneveshteView": {
+    "title": "cpDelneveshteView",
+    "cat": "Delneveshte",
+    "require": []
+  },
+  "cpAdminContactChangeStatus": {
+    "title": "cpAdminContactChangeStatus",
+    "cat": "Admin Contact",
+    "require": []
+  },
+  "cpAdminContactView": {
+    "title": "cpAdminContactView",
+    "cat": "Admin Contact",
+    "require": []
+  },
+  "cpRepresentationChangeStatus": {
+    "title": "cpRepresentationChangeStatus",
+    "cat": "Representation",
+    "require": []
+  },
+  "cpRepresentationView": {
+    "title": "cpRepresentationView",
+    "cat": "Representation",
+    "require": []
+  },
+  "cpRepresentationOption": {
+    "title": "cpRepresentationOption",
+    "cat": "Representation",
+    "require": []
+  },
+  "cpAdviceView": {
+    "title": "cpAdviceView",
+    "cat": "Advice",
+    "require": []
+  },
+  "cpAdviceOption": {
+    "title": "cpAdviceOption",
+    "cat": "Advice",
+    "require": []
+  },
+  "cpHealthView": {
+    "title": "cpHealthView",
+    "cat": "Health",
+    "require": []
+  },
+  "cpHealthOption": {
+    "title": "cpHealthOption",
+    "cat": "Health",
+    "require": []
   }
 }

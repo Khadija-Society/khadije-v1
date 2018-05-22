@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpDeleneveshteView');
+		\dash\permission::access('cpDelneveshteView');
 
 		\dash\data::page_title(T_("Deleneveshte"));
 		\dash\data::page_desc(T_('Check list of delneveshte and search or filter in them to find your delneveshte.'). ' '. T_('Also add or edit specefic delneveshte.'));
