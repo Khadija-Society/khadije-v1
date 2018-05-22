@@ -17,17 +17,17 @@ class model
 			$like = \dash\request::post('like');
 			if(!in_array($like, $_SESSION['delneveshte_like']))
 			{
-				$like = \dash\coding::decode($like);
-				if(!$like)
+				$like_id = \dash\coding::decode($like);
+				if(!$like_id)
 				{
-					return;
+					return \dash\notif::ok("ok");
 				}
 
 				$_SESSION['delneveshte_like'][] = $like;
 
-				\dash\db\comments::set_comment_data($like, 'plus');
+				\dash\db\comments::set_comment_data($like_id, 'plus');
 			}
-			return;
+			return \dash\notif::ok("ok");
 		}
 
 		$desc       = trim(\dash\request::post('desc'));
