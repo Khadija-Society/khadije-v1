@@ -1,32 +1,6 @@
 {%extends display.cpMain%}
 
 
-{%block pageContent%}
-
-
-{%if bookList%}
-{{block('GlanceDetail')}}
-{{block('searchblock')}}
-<div class="cbox fs12">
-{{block('datatable')}}
-</div>
-
-
-{%elseif requestGET.q %}
-{{block('GlanceDetail')}}
-{{block('searchblock')}}
-<div class="fs14 alert alert-info pA25">
- {%trans "No book founded."%} {%trans "Search with new keywords."%}
-</div>
-
-
-{%else%}
-<div class="cbox fs12">
- <h3>{%trans "You are not have book yet!"%}</h3>
-</div>
-{%endif%}
-
-{%endblock%}
 
 
 {%block GlanceDetail%}
@@ -53,11 +27,46 @@
 
 
 
-{%block searchblock%}
+
+
+
+{%block pageContent%}
+{{block('GlanceDetail')}}
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlFilterNoResult')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.here}}/book'>
     <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search in donations"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <input type="search" name="q" placeholder='{%trans "Search in book transaction"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
   </form>
@@ -65,12 +74,9 @@
 {%endblock%}
 
 
-
-{%block datatable%}
-
-
-
-  <table class="tbl">
+{%block htmlTable%}
+ <div class="cbox fs12">
+   <table class="tbl">
     <thead class="primary">
       <tr>
         <th class="s0">{%trans "Name"%}</th>
@@ -84,18 +90,42 @@
     </thead>
 
     <tbody>
-      {%for key, value in bookList%}
+      {%for key, value in dataTable%}
       <tr>
         <td class="s0">{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
         <td><a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber(false)}}</a></td>
         <td class="s0"><a href="{{url.current}}?payment={{value.payment}}">{%set myPayment = value.payment%}{%trans myPayment%}</a></td>
         <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} {{value.plus | fitNumber}}  {%set pUnit = value.unit%}{%trans pUnit%}</td>
-        <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}">{%set myHazinekard = value.hazinekard%}{%trans myHazinekard%}</a></td>
+        <td><a href="{{url.current}}?book={{value.hazinekard}}">{%set myHazinekard = value.hazinekard%}{%trans myHazinekard%}</a></td>
         <td class="s0" title='{{value.dateverify | date("Y-m-d H:i:s") | tdate("Y-m-d H:i:s")}}'>{{value.dateverify | date("Y-m-d H:i:s")  | sdate("day","Y/m/d") }}</td>
       </tr>
       {%endfor%}
     </tbody>
   </table>
+  </table>
   {%include display.pagination%}
+
+ </div>
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 alert alert-info">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.here}}/book">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 alert alert-error">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.here}}/book">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 alert alert-success pTB20">{%trans "Hi!"%}</p>
 {%endblock%}
 

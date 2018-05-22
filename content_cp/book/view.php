@@ -44,9 +44,9 @@ class view
 			$args['mobile'] = \dash\request::get('mobile');
 		}
 
-		if(\dash\request::get('hazinekard'))
+		if(\dash\request::get('book'))
 		{
-			$args['hazinekard'] = \dash\request::get('hazinekard');
+			$args['hazinekard'] = \dash\request::get('book');
 		}
 
 		$args['donate']    = 'book';
@@ -65,11 +65,11 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		\dash\data::bookList(\dash\app\transaction::list($search_string, $args));
+		\dash\data::dataTable(\dash\app\transaction::list($search_string, $args));
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::bookList()]);
+			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::dataTable()]);
 		}
 
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/book'));
@@ -79,6 +79,18 @@ class view
 			\dash\data::totalPaid(\lib\db\mytransactions::total_paid(['donate' => 'book']));
 			\dash\data::totalPaidDate(\lib\db\mytransactions::total_paid(['donate' => 'book'], true));
 		}
+
+		$filterArray = $args;
+		unset($filterArray['donate']);
+		unset($filterArray['condition']);
+		if(isset($filterArray['hazinekard']))
+		{
+			$filterArray[T_("Book")] = $filterArray['hazinekard'];
+			unset($filterArray['hazinekard']);
+		}
+		// set dataFilter
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
+		\dash\data::dataFilter($dataFilter);
 
 	}
 }
