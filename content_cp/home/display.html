@@ -16,10 +16,20 @@
  <div class="c3 s12">{{block ("bDelneveshte")}}</div>
  <div class="c3 s12">{{block ("homePageNumber")}}</div>
  <div class="c3 s12">{{block ("Report")}}</div>
+ <div class="c3 s12">{{block ("AdminComment")}}</div>
 
 </div>
 {%endblock%}
 
+
+{%block AdminComment%}
+<a class="dcard x2" href='{{url.here}}/admincontact'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-3"></i></div>
+  <div class="label">{%trans "Admin Contact"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 
 {%block Report%}

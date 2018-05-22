@@ -1,0 +1,16 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+<div class="cbox">
+  <div class="msg {%if dataRow.status == 'approved'%} success {%endif%}">{%if dataRow.status == 'approved'%} {%trans "Checked"%} {%else %} {%trans "Not checked"%} {%endif%}</div>
+  {%if dataRow.author%}<div class="msg">{%trans "Author"%}: {{dataRow.author}}</div>{%endif%}
+  {%if dataRow.email%}<div class="msg">{%trans "Email"%}: {{dataRow.email}}</div>{%endif%}
+  <p>{{dataRow.content}}</p>
+	<div class="msg">{{dataRow.datecreated | tdate("Y/m/d H:i:s")}}</div>
+  <form method="post">
+  	<button class="btn c success" name="status" value="approved">{%trans "Checked"%}</button>
+  </form>
+</div>
+{% endblock %}
+
