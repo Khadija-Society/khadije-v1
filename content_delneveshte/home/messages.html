@@ -37,7 +37,7 @@
             <span class="badge primary">{%set myStatus = value.status%}{%trans myStatus%}</span>
 {%endif%}
             <span class="badge" title='{{value.datecreated | tdate(true)}}'>{{value.datecreated | sdate}}</span>
-            <span class="badge danger" title='{%trans "People who sympathetic with this person"%}'>{{3000 | fitNumber}} <i class="sf-heart"></i></span>
+            <div class="badge danger" title='{%trans "People who sympathetic with this person"%}'><label for='love{{key}}'>{{value.plus | fitNumber}}</label><i class="sf-heart-o"></i></div>
           </div>
         </div>
 {%endfor%}
