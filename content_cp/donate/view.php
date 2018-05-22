@@ -68,11 +68,11 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		\dash\data::donateList(\dash\app\transaction::list($search_string, $args));
+		\dash\data::dataTable(\dash\app\transaction::list($search_string, $args));
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::donateList()]);
+			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::dataTable()]);
 		}
 
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
@@ -82,6 +82,14 @@ class view
 			\dash\data::totalPaid(\dash\app\transaction::total_paid());
 			\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d")));
 		}
+
+		$filterArray = $args;
+		unset($filterArray['donate']);
+		unset($filterArray['condition']);
+
+		// set dataFilter
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
+		\dash\data::dataFilter($dataFilter);
 
 	}
 }

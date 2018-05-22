@@ -1,34 +1,6 @@
 {%extends display.cpMain%}
 
 
-{%block pageContent%}
-
-
-{%if donateList%}
-{{block('GlanceDetail')}}
-{{block('searchblock')}}
-<div class="cbox fs12">
-{{block('datatable')}}
-</div>
-
-
-{%elseif requestGET.q %}
-{{block('GlanceDetail')}}
-{{block('searchblock')}}
-<div class="fs14 alert alert-info pA25">
- {%trans "No donate founded."%} {%trans "Search with new keywords."%}
-</div>
-
-
-{%else%}
-<div class="cbox fs12">
- <h3>{%trans "You are not have donate yet!"%}</h3>
-</div>
-{%endif%}
-
-{%endblock%}
-
-
 {%block GlanceDetail%}
   <div class="f">
     <div class="c6 s12">
@@ -53,7 +25,39 @@
 
 
 
-{%block searchblock%}
+{%block pageContent%}
+{{block('GlanceDetail')}}
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlFilterNoResult')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.here}}/donate'>
     <div class="input">
@@ -65,11 +69,8 @@
 {%endblock%}
 
 
-
-{%block datatable%}
-
-
-
+{%block htmlTable%}
+ <div class="cbox fs12">
   <table class="tbl">
     <thead class="primary">
       <tr>
@@ -84,7 +85,7 @@
     </thead>
 
     <tbody>
-      {%for key, value in donateList%}
+      {%for key, value in dataTable%}
       <tr>
         <td class="s0">{%if value.doners%}{%else%}<small class="badge mRa5">گمنام</small> {%endif%}{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
         <td><a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber(false)}}</a></td>
@@ -98,5 +99,28 @@
     </tbody>
   </table>
   {%include display.pagination%}
+
+ </div>
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 alert alert-info">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.here}}/donate">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 alert alert-error">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.here}}/donate">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 alert alert-success pTB20">{%trans "Hi!"%}</p>
 {%endblock%}
 
