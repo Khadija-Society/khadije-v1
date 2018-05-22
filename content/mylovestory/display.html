@@ -15,11 +15,11 @@
 				<div class="msg primary2 fs08">
 					<h2 class="txtB">کتاب این تو  و این ماجرای عشق من اثر  انیسه سادات هاشمی</h2>
 				</div>
-				<!-- <p class="txtB fs12 msg">{%trans "Price"%} {{"3000" | fitNumber}} {%trans "Toman"%}</p> -->
-{%if false and downloaLink %}
+				<p class="txtB fs12 msg">{%trans "Price"%} {{"3000" | fitNumber}} {%trans "Toman"%}</p>
+{%if downloaLink %}
 				<p class="txtB msg success2">{%trans "You are buy this book before and now you can download book via below link"%}</p>
 				<a class="btn success" data-ajaxify data-data='{"download": 1}' data-method='post'>{%trans "Download book"%}</a>
-{%elseif false%}
+{%else%}
 				<div class="btn primary lg" data-ajaxify data-data='{"pay": 1}' data-method='post' title='{%trans "Click to buy book"%}'>{%trans "Buy book"%} <span>{{"3000" | fitNumber}} {%trans "Toman"%}</span></div>
 {%endif%}
 			</div>
