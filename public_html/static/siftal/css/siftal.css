@@ -12949,6 +12949,16 @@ input[type="tel"], input[type="email"], input[type="date"], input[type="number"]
   top: 3px;
   left: 3px; }
 
+.switch1 input.disabled + label:first-of-type {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none; }
+
+.switch1 input:disabled + label:first-of-type {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none; }
+
 .switch1 input:checked + label:first-of-type {
   background: #33414e;
   background: #34A7C1;
