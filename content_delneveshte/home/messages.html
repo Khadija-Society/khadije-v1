@@ -9,12 +9,22 @@
 {%elseif value.status == 'spam'%} danger
 {%endif%}
 {%endset%}
-        <div class="msg{%if perm('cpDelneveshteView')%} {{myClass |trim}}{%endif%}{%if key == 0 and value.status == 'unapproved'%} lastOne{%endif%}">
-{%if value.author%}
-          <b>{{value.author}}</b>
+        <div class="f msg{%if perm('cpDelneveshteView')%} {{myClass |trim}}{%endif%}{%if key == 0 and value.status == 'unapproved'%} lastOne{%endif%}">
+          <div class="cauto s12">
+
+{%if value.meta.gender == 'female' or 1%}
+          <img src='{{url.site}}/static/siftal/images/avatar/woman.png' alt='{%trans "Mr"%} {{value.author}}' class="mRa10">
+{%elseif value.meta.gender == 'male' or 1%}
 {%endif%}
-          {{value.content | nl2br}}
-          <div class="floatRa">
+          </div>
+          <div class="c">
+
+{%if value.author%}
+            <b>{{value.author}}</b>
+{%endif%}
+            {{value.content | nl2br}}
+          </div>
+          <div class="meta">
 {%if perm('cpDelneveshteView')%}
 {%if value.meta.mobile%}
             <span class="badge">{{value.meta.mobile}}</span>
