@@ -15,19 +15,25 @@ class model
 			}
 
 			$like = \dash\request::post('like');
+			$like_id = \dash\coding::decode($like);
+
+			if(!$like_id)
+			{
+				return;
+			}
+
 			if(!in_array($like, $_SESSION['delneveshte_like']))
 			{
-				$like_id = \dash\coding::decode($like);
-				if(!$like_id)
-				{
-					return \dash\notif::ok("ok");
-				}
-
 				$_SESSION['delneveshte_like'][] = $like;
-
 				\dash\db\comments::set_comment_data($like_id, 'plus');
 			}
-			return \dash\notif::ok("ok");
+			else
+			{
+				unset($_SESSION['delneveshte_like'][array_search($like, $_SESSION['delneveshte_like'])]);
+				\dash\db\comments::set_comment_data($like_id, 'minus');
+			}
+
+			return;
 		}
 
 		$desc       = trim(\dash\request::post('desc'));
