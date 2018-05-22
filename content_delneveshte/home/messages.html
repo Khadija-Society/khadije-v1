@@ -9,20 +9,21 @@
 {%elseif value.status == 'spam'%} danger
 {%endif%}
 {%endset%}
-        <div class="f msg{%if perm('cpDelneveshteView')%} {{myClass |trim}}{%endif%}{%if key == 0 and value.status == 'unapproved'%} lastOne{%endif%}">
-          <div class="cauto s12">
-
-{%if value.meta.gender == 'female' or 1%}
-          <img src='{{url.site}}/static/siftal/images/avatar/woman.png' alt='{%trans "Mr"%} {{value.author}}' class="mRa10">
-{%elseif value.meta.gender == 'male' or 1%}
+        <div class="msg{%if perm('cpDelneveshteView')%} {{myClass |trim}}{%endif%}{%if key == 0 and value.status == 'unapproved'%} lastOne{%endif%}">
+          <div class="f">
+            <div class="cauto s12">
+{%if value.meta.gender == 'male'%}
+              <img src='{{url.site}}/static/siftal/images/avatar/man.png' alt='{%trans "Mr"%} {{value.author}}' class="mRa10">
+{%elseif value.meta.gender == 'female'%}
+              <img src='{{url.site}}/static/siftal/images/avatar/woman.png' alt='{%trans "Miss"%} {{value.author}}' class="mRa10">
 {%endif%}
-          </div>
-          <div class="c">
-
+            </div>
+            <div class="c">
 {%if value.author%}
-            <b>{{value.author}}</b>
+              <b>{{value.author}}</b>
 {%endif%}
-            {{value.content | nl2br}}
+              {{value.content | nl2br}}
+            </div>
           </div>
           <div class="meta">
 {%if perm('cpDelneveshteView')%}
