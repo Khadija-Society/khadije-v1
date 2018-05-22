@@ -11,13 +11,13 @@ class twigTransTerms
 	echo T_("Najmeh Park, Fatemi St");                                                // Line 49
 	echo T_("Qom");                                                                   // Line 150
 	echo T_("Iran");                                                                  // Line 47
-	echo T_("Name");                                                                  // Line 273
+	echo T_("Name");                                                                  // Line 84
 	echo T_("Full Name");                                                             // Line 86
-	echo T_("Mobile");                                                                // Line 289
+	echo T_("Mobile");                                                                // Line 87
 	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 94
 	echo T_("Email");                                                                 // Line 456
 	echo T_("Your Message");                                                          // Line 109
-	echo T_("Send");                                                                  // Line 116
+	echo T_("Send");                                                                  // Line 91
 
 	//-----------------------------------------------------content\doners\display.html
 	echo T_("Be good too");                                                           // Line 49
@@ -111,14 +111,31 @@ class twigTransTerms
 
 	//-------------------------------------------------content\template\static\v2.html
 
-	//-----------------------------------------------content_a\group\home\display.html
-	echo T_("Click to edit");                                                         // Line 25
+	//--------------------------------------------content_a\advice\detail\display.html
+	echo T_("Your are using this advice");                                            // Line 9
+	echo T_("If you sure from your request complete it");                             // Line 10
+	echo T_("Else you can cancel your request");                                      // Line 11
+	echo T_("OK");                                                                    // Line 14
+	echo T_("Cancel");                                                                // Line 22 Seperate
+	echo T_("Description");                                                           // Line 422
+	echo T_("Job");                                                                   // Line 515
+	echo T_("Save all");                                                              // Line 53
+	echo T_("Start date");                                                            // Line 429
+	echo T_("End date");                                                              // Line 438
+	echo T_("Expert title");                                                          // Line 77
+	echo T_("Expert value");                                                          // Line 86
+	echo T_("Expert year");                                                           // Line 94
+	echo T_("Your car name");                                                         // Line 102
+	echo T_("Yes");                                                                   // Line 341
+	echo T_("No");                                                                    // Line 341
+	echo T_("Arabic Language");                                                       // Line 342
+	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 67
+
+	//----------------------------------------------content_a\advice\home\display.html
 	echo T_("Last modified");                                                         // Line 40
 	echo T_("Request date");                                                          // Line 38
-	echo T_("Reserve date");                                                          // Line 43
-	echo T_("Cancel");                                                                // Line 22 Seperate
 	echo T_("Edit");                                                                  // Line 148
-	echo T_("register for new group request");                                        // Line 49
+	echo T_("register for new advice request");                                       // Line 37
 	echo T_("Start Date");                                                            // Line 86
 	echo T_("End Date");                                                              // Line 95
 	echo T_("City Place");                                                            // Line 47
@@ -127,13 +144,31 @@ class twigTransTerms
 	echo T_("Save");                                                                  // Line 48
 	echo T_("Remove");                                                                // Line 539
 
+	//-------------------------------------------content_a\advice\request\display.html
+	echo T_("Continue");                                                              // Line 58
+
+	//-----------------------------------------------content_a\group\home\display.html
+	echo T_("Click to edit");                                                         // Line 25
+	echo T_("Reserve date");                                                          // Line 43
+	echo T_("register for new group request");                                        // Line 49
+
 	//--------------------------------------------content_a\group\request\display.html
 	echo T_("Group signup is disabled");                                              // Line 10
 	echo T_("All cities are disabled now");                                           // Line 18
-	echo T_("Continue");                                                              // Line 58
+
+	//--------------------------------------------content_a\health\detail\display.html
+	echo T_("Your are using this health");                                            // Line 9
+
+	//----------------------------------------------content_a\health\home\display.html
+	echo T_("register for new health request");                                       // Line 37
+
+	//-------------------------------------------content_a\health\request\display.html
 
 	//-----------------------------------------------------content_a\home\display.html
-	echo T_("Donate product");                                                        // Line 87
+	echo T_("Representation");                                                        // Line 54
+	echo T_("Health Service");                                                        // Line 52
+	echo T_("Advice");                                                                // Line 61
+	echo T_("Donate product");                                                        // Line 114
 
 	//------------------------------------------------------content_a\main\layout.html
 	echo T_("Dashboard");                                                             // Line 1
@@ -157,9 +192,6 @@ class twigTransTerms
 	echo T_("Marital");                                                               // Line 333
 	echo T_("Married");                                                               // Line 332
 	echo T_("Single");                                                                // Line 332
-	echo T_("Yes");                                                                   // Line 341
-	echo T_("No");                                                                    // Line 341
-	echo T_("Arabic Language");                                                       // Line 342
 	echo T_("Country");                                                               // Line 358
 	echo T_("Province");                                                              // Line 366
 	echo T_("City");                                                                  // Line 374
@@ -169,22 +201,20 @@ class twigTransTerms
 	echo T_("Passport expire date");                                                  // Line 400
 	echo T_("Address");                                                               // Line 25
 	echo T_("Work Address");                                                          // Line 415
-	echo T_("Description");                                                           // Line 422
 	echo T_("Phone");                                                                 // Line 447
 	echo T_("Like");                                                                  // Line 458
 	echo T_("Education");                                                             // Line 497
 	echo T_("Education course");                                                      // Line 506
-	echo T_("Job");                                                                   // Line 515
+
+	//------------------------------------content_a\representation\detail\display.html
+	echo T_("Your are using this representation");                                    // Line 9
+
+	//--------------------------------------content_a\representation\home\display.html
+	echo T_("register for new representation request");                               // Line 37
+
+	//-----------------------------------content_a\representation\request\display.html
 
 	//-------------------------------------------content_a\service\detail\display.html
-	echo T_("Save all");                                                              // Line 53
-	echo T_("Start date");                                                            // Line 429
-	echo T_("End date");                                                              // Line 438
-	echo T_("Expert title");                                                          // Line 77
-	echo T_("Expert value");                                                          // Line 86
-	echo T_("Expert year");                                                           // Line 94
-	echo T_("Your car name");                                                         // Line 102
-	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 67
 
 	//---------------------------------------------content_a\service\home\display.html
 	echo T_("register for new service request");                                      // Line 37
@@ -208,19 +238,55 @@ class twigTransTerms
 	//---------------------------------------------content_a\trip\request\display.html
 	echo T_("Trip signup is disabled");                                               // Line 10
 
+	//--------------------------------------------------content_cp\advice\display.html
+	echo T_("No service founded.");                                                   // Line 17
+	echo T_("Search with new keywords.");                                             // Line 17
+	echo T_("You are not have service yet!");                                         // Line 23
+	echo T_("Search in advice");                                                      // Line 34
+	echo T_("Search");                                                                // Line 35
+	echo T_("firstname");                                                             // Line 47
+	echo T_("mobile");                                                                // Line 48
+	echo T_("birthday");                                                              // Line 49
+	echo T_("province");                                                              // Line 50
+	echo T_("phone");                                                                 // Line 51
+	echo T_("married");                                                               // Line 52
+	echo T_("gender");                                                                // Line 53
+	echo T_("Status");                                                                // Line 54
+
+	//------------------------------------------content_cp\advice\options\display.html
+	echo T_("Picture");                                                               // Line 34
+	echo T_("Title");                                                                 // Line 91
+	echo T_("Desctiption");                                                           // Line 36
+	echo T_("Enter a valid title");                                                   // Line 91
+	echo T_("Count");                                                                 // Line 107
+	echo T_("Enter a valid count");                                                   // Line 107
+	echo T_("Active");                                                                // Line 115
+	echo T_("Deactive");                                                              // Line 115
+	echo T_("Amount");                                                                // Line 129
+
 	//----------------------------------------------------content_cp\book\display.html
 	echo T_("No book founded.");                                                      // Line 19
-	echo T_("Search with new keywords.");                                             // Line 17
 	echo T_("You are not have book yet!");                                            // Line 25
 	echo T_("Total Donation");                                                        // Line 38
 	echo T_("Today Donation");                                                        // Line 47
 	echo T_("Search in donations");                                                   // Line 60
-	echo T_("Search");                                                                // Line 35
-	echo T_("mobile");                                                                // Line 48
 	echo T_("Payment");                                                               // Line 78
-	echo T_("Amount");                                                                // Line 129
 	echo T_("Book");                                                                  // Line 81
 	echo T_("Date");                                                                  // Line 29
+
+	//----------------------------------------content_cp\delneveshte\edit\display.html
+	echo T_("Author");                                                                // Line 55
+	echo T_("Text");                                                                  // Line 20
+	echo T_("Approved");                                                              // Line 28
+	echo T_("Spam");                                                                  // Line 25 Seperate
+	echo T_("Unapproved");                                                            // Line 30
+
+	//----------------------------------------content_cp\delneveshte\home\display.html
+	echo T_("Content");                                                               // Line 57
+	echo T_("Clear filters");                                                         // Line 91
+	echo T_("Result not found!");                                                     // Line 90
+	echo T_("Hi!");                                                                   // Line 97
+	echo T_("Try to start with add new record!");                                     // Line 97
 
 	//--------------------------------------------------content_cp\donate\display.html
 	echo T_("No donate founded.");                                                    // Line 19
@@ -230,16 +296,24 @@ class twigTransTerms
 
 	//------------------------------------------content_cp\donate\options\display.html
 	echo T_("List of way");                                                           // Line 19
-	echo T_("Title");                                                                 // Line 91
 	echo T_("Delete");                                                                // Line 28
 	echo T_("Way");                                                                   // Line 55
 	echo T_("Enter a valid way");                                                     // Line 55
 
+	//--------------------------------------------------content_cp\health\display.html
+	echo T_("Search in health");                                                      // Line 34
+	echo T_("Health");                                                                // Line 54
+
+	//------------------------------------------content_cp\health\options\display.html
+
 	//----------------------------------------------------content_cp\home\display.html
-	echo T_("Donate product list");                                                   // Line 22
+	echo T_("Delneveshte");                                                           // Line 25
+	echo T_("Send SMS");                                                              // Line 34
+	echo T_("SMS Template");                                                          // Line 70
+	echo T_("Donate product list");                                                   // Line 81
 	echo T_("Donate list");                                                           // Line 7
-	echo T_("request trip list");                                                     // Line 42
-	echo T_("request service list");                                                  // Line 52
+	echo T_("request trip list");                                                     // Line 101
+	echo T_("request service list");                                                  // Line 111
 
 	//------------------------------------------------content_cp\homepage\display.html
 
@@ -261,14 +335,6 @@ class twigTransTerms
 
 	//-----------------------------------------content_cp\options\product\display.html
 	echo T_("List of Product need");                                                  // Line 33
-	echo T_("Picture");                                                               // Line 34
-	echo T_("Count");                                                                 // Line 107
-	echo T_("Desctiption");                                                           // Line 36
-	echo T_("Enter a valid title");                                                   // Line 91
-	echo T_("Enter a valid count");                                                   // Line 107
-	echo T_("Active");                                                                // Line 115
-	echo T_("Deactive");                                                              // Line 115
-	echo T_("Status");                                                                // Line 54
 
 	//--------------------------------------------content_cp\report\daily\display.html
 	echo T_("Sum");                                                                   // Line 30
@@ -279,16 +345,13 @@ class twigTransTerms
 
 	//--------------------------------------------content_cp\report\month\display.html
 
+	//------------------------------------------content_cp\representation\display.html
+	echo T_("Search in representation");                                              // Line 34
+
+	//----------------------------------content_cp\representation\options\display.html
+
 	//-------------------------------------------------content_cp\service\display.html
-	echo T_("No service founded.");                                                   // Line 17
-	echo T_("You are not have service yet!");                                         // Line 23
 	echo T_("Search in services");                                                    // Line 34
-	echo T_("firstname");                                                             // Line 47
-	echo T_("birthday");                                                              // Line 49
-	echo T_("province");                                                              // Line 50
-	echo T_("phone");                                                                 // Line 51
-	echo T_("married");                                                               // Line 52
-	echo T_("gender");                                                                // Line 53
 	echo T_("job");                                                                   // Line 54
 	echo T_("expertvalue");                                                           // Line 55
 	echo T_("expertyear");                                                            // Line 56
@@ -346,7 +409,6 @@ class twigTransTerms
 	echo T_("Status of trip");                                                        // Line 200
 	echo T_("Awaiting");                                                              // Line 21 Seperate
 	echo T_("send new complete request");                                             // Line 206
-	echo T_("Spam");                                                                  // Line 25 Seperate
 	echo T_("inapropirate request and spam detected");                                // Line 211
 	echo T_("Review");                                                                // Line 216
 	echo T_("after check and before accept");                                         // Line 216
@@ -365,6 +427,17 @@ class twigTransTerms
 	echo T_("delete from admin");                                                     // Line 256
 	echo T_("Edit partner");                                                          // Line 527
 	echo T_("Save changes");                                                          // Line 533
+
+	//--------------------------------------------content_delneveshte\home\layout.html
+	echo T_("Click and go to khadije site");                                          // Line 64
+	echo T_("Wrote your heart sounds");                                               // Line 75
+	echo T_("optional");                                                              // Line 87
+	echo T_("Not require");                                                           // Line 84
+	echo T_("Mobile number is not showing on site and optional");                     // Line 87
+	echo T_("Press here to send");                                                    // Line 91
+
+	//------------------------------------------content_delneveshte\home\messages.html
+	echo T_("Last messages");                                                         // Line 3
 
 	//--------------------------------------------includes\languages\trans_static.html
 	echo T_("Khadije");                                                               // Line 7 Seperate
@@ -427,8 +500,6 @@ class twigTransTerms
 	echo T_("cpReportDaily");                                                         // Line 81 Seperate
 	echo T_("cpReportMonth");                                                         // Line 82 Seperate
 	echo T_("cpReportView");                                                          // Line 83 Seperate
-
-	//---------------------public_html\files\1\8-eacf331f0ffc35d4b482f1d15a887d3b.html
 
 	//---------------------public_html\static\siftal\fonts\siftal\icons-reference.html
 

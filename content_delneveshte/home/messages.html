@@ -10,7 +10,9 @@
 {%endif%}
 {%endset%}
         <div class="msg{%if perm('cpDelneveshteView')%} {{myClass |trim}}{%endif%}{%if key == 0 and value.status == 'unapproved'%} lastOne{%endif%}">
+{%if value.author%}
           <b>{{value.author}}</b>
+{%endif%}
           {{value.content | nl2br}}
           <div class="floatRa">
 {%if perm('cpDelneveshteView')%}

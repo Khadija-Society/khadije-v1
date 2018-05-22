@@ -203,8 +203,10 @@ class twigTransTerms
 
 	//------------------------------------addons\content_cp\comments\edit\display.html
 	echo T_("Author");                                                                // Line 55
-	echo T_("Approve");                                                               // Line 13
-	echo T_("Spam");                                                                  // Line 14
+	echo T_("Text");                                                                  // Line 25
+	echo T_("Approved");                                                              // Line 28
+	echo T_("Spam");                                                                  // Line 29
+	echo T_("Unapproved");                                                            // Line 30
 
 	//------------------------------------addons\content_cp\comments\home\display.html
 	echo T_("Search");                                                                // Line 112 Seperate
@@ -284,6 +286,26 @@ class twigTransTerms
 	echo T_("MP3");                                                                   // Line 175
 	echo T_("PDF");                                                                   // Line 177
 	echo T_("Without preview");                                                       // Line 179
+
+	//----------------------------------------addons\content_cp\sms\group\display.html
+	echo T_("What do you want to send to this user?");                                // Line 59
+	echo T_("Send");                                                                  // Line 63
+
+	//-----------------------------------------addons\content_cp\sms\home\display.html
+	echo T_("Your sms panel balance");                                                // Line 18
+	echo T_("Send quick");                                                            // Line 27
+	echo T_("Group send");                                                            // Line 36
+	echo T_("Template");                                                              // Line 46
+
+	//-----------------------------------------addons\content_cp\sms\send\display.html
+
+	//-------------------------------------addons\content_cp\sms\template\display.html
+	echo T_("List of template sms");                                                  // Line 20
+	echo T_("Delete");                                                                // Line 92 Seperate
+	echo T_("Template name");                                                         // Line 57
+	echo T_("Template Name");                                                         // Line 59
+	echo T_("Template text");                                                         // Line 65
+	echo T_("Template Text");                                                         // Line 67
 
 	//--------------------------------------------addons\content_cp\terms\display.html
 	echo T_("Enter a valid title");                                                   // Line 124
@@ -521,8 +543,6 @@ class twigTransTerms
 	echo T_("Mobile or user_id");                                                     // Line 12
 	echo T_("Find Connection way");                                                   // Line 14
 	echo T_("Inner system notification");                                             // Line 42
-	echo T_("What do you want to send to this user?");                                // Line 59
-	echo T_("Send");                                                                  // Line 63
 
 	//-------------------------------------------addons\content_su\server\display.html
 	echo T_("Show $_SERVER");                                                         // Line 6
@@ -765,7 +785,6 @@ class twigTransTerms
 	echo T_("seriously, are you sure? There's no coming back.");                      // Line 89 Seperate
 	echo T_("Cancel");                                                                // Line 90 Seperate
 	echo T_("or");                                                                    // Line 91 Seperate
-	echo T_("Delete");                                                                // Line 92 Seperate
 	echo T_("Terms");                                                                 // Line 96 Seperate
 	echo T_("Attachments");                                                           // Line 97 Seperate
 	echo T_("Visitors");                                                              // Line 99 Seperate
@@ -1569,7 +1588,7 @@ class twigTransTerms
 	echo T_("Zimbabwe");                                                              // Line 1013 Seperate
 	echo T_("expire");                                                                // Line 1036 Seperate
 	echo T_("deleted");                                                               // Line 1037 Seperate
-	echo T_("awaiting");                                                              // Line 1039 Seperate
+	echo T_("awaiting");                                                              // Line 1112 Seperate
 	echo T_("block");                                                                 // Line 1040 Seperate
 	echo T_("filter");                                                                // Line 1041 Seperate
 	echo T_("close");                                                                 // Line 1042 Seperate
@@ -1641,6 +1660,8 @@ class twigTransTerms
 	echo T_("verify_request");                                                        // Line 1109 Seperate
 	echo T_("verify_error");                                                          // Line 1110 Seperate
 	echo T_("ok");                                                                    // Line 1111 Seperate
+	echo T_("approved");                                                              // Line 1113 Seperate
+	echo T_("unapproved");                                                            // Line 1114 Seperate
 
  }
 }
