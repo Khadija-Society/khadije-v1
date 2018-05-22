@@ -29,6 +29,14 @@
     </ul>
   </li>
   <li>
+      <a href="{{url.here}}/sms"><i class='sf-envelope'></i> <span>{% trans "SMS" %}</span></a>
+      <ul>
+          <li><a href="{{url.here}}/sms/send">{% trans "Quick send" %} <i class='floatRa mRa10 fc-mute sf-paper-plane'></i></a></li>
+          <li><a href="{{url.here}}/sms/group">{% trans "Group send" %} <i class='floatRa mRa10 fc-mute sf-rocket'></i></a></li>
+          <li><a href="{{url.here}}/sms/template">{% trans "Templates" %} <i class='floatRa mRa10 fc-mute sf-right-quote-alt'></i></a></li>
+      </ul>
+  </li>
+  <li>
     <a href="{{url.here}}/users"><i class='sf-users'></i> <span>{% trans "Users" %}</span></a>
     <ul>
       <li><a href="{{url.here}}/users/set">{% trans "Add new user" %} <i class='floatRa mRa10 fc-mute sf-user-plus'></i></a></li>
