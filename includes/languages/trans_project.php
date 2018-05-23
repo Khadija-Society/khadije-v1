@@ -123,9 +123,9 @@ class twigTransTerms
 	echo T_("Remove");                                                                // Line 109
 	echo T_("No partner set");                                                        // Line 157
 	echo T_("Status of trip");                                                        // Line 200
-	echo T_("Awaiting");                                                              // Line 21 Seperate
+	echo T_("Awaiting");                                                              // Line 40
 	echo T_("send new complete request");                                             // Line 206
-	echo T_("Spam");                                                                  // Line 25 Seperate
+	echo T_("Spam");                                                                  // Line 45
 	echo T_("inapropirate request and spam detected");                                // Line 45
 	echo T_("Review");                                                                // Line 216
 	echo T_("after check and before accept");                                         // Line 216
@@ -137,7 +137,7 @@ class twigTransTerms
 	echo T_("try to fill request");                                                   // Line 59
 	echo T_("Cancel");                                                                // Line 26
 	echo T_("cancel from user");                                                      // Line 64
-	echo T_("Reject");                                                                // Line 24 Seperate
+	echo T_("Reject");                                                                // Line 245
 	echo T_("does not accepted for some reason");                                     // Line 245
 	echo T_("Not Answer");                                                            // Line 250
 	echo T_("not answer to call check");                                              // Line 250
@@ -341,14 +341,14 @@ class twigTransTerms
 
 	//--------------------------------------------------content_cp/health/display.html
 	echo T_("Search in health");                                                      // Line 44
-	echo T_("Health");                                                                // Line 90 Seperate
+	echo T_("Health");                                                                // Line 64
 
 	//------------------------------------------content_cp/health/options/display.html
 
 	//----------------------------------------------------content_cp/home/display.html
-	echo T_("Admin Contact");                                                         // Line 87 Seperate
+	echo T_("Admin Contact");                                                         // Line 29
 	echo T_("Home page number");                                                      // Line 48
-	echo T_("Delneveshte");                                                           // Line 86 Seperate
+	echo T_("Delneveshte");                                                           // Line 58
 	echo T_("Send SMS");                                                              // Line 67
 	echo T_("Health Service");                                                        // Line 30
 	echo T_("SMS Template");                                                          // Line 103
@@ -375,79 +375,6 @@ class twigTransTerms
 	echo T_("Expert");                                                                // Line 69
 
 	//-----------------------------------------content_cp/service/options/display.html
-
-	//--------------------------------------------includes/languages/trans_static.html
-	echo T_("Khadije");                                                               // Line 7 Seperate
-	echo T_(" ");                                                                     // Line 11 Seperate
-	echo T_("money");                                                                 // Line 13 Seperate
-	echo T_("toman");                                                                 // Line 14 Seperate
-	echo T_("Enable");                                                                // Line 16 Seperate
-	echo T_("Disable");                                                               // Line 17 Seperate
-	echo T_("Expire");                                                                // Line 18 Seperate
-	echo T_("Deleted");                                                               // Line 19 Seperate
-	echo T_("Lock");                                                                  // Line 20 Seperate
-	echo T_("Accept");                                                                // Line 23 Seperate
-	echo T_("enable");                                                                // Line 26 Seperate
-	echo T_("disable");                                                               // Line 27 Seperate
-	echo T_("expire");                                                                // Line 28 Seperate
-	echo T_("deleted");                                                               // Line 29 Seperate
-	echo T_("lock");                                                                  // Line 30 Seperate
-	echo T_("awaiting");                                                              // Line 31 Seperate
-	echo T_("cancel");                                                                // Line 32 Seperate
-	echo T_("accept");                                                                // Line 33 Seperate
-	echo T_("reject");                                                                // Line 34 Seperate
-	echo T_("spam");                                                                  // Line 35 Seperate
-	echo T_("mashhad");                                                               // Line 37 Seperate
-	echo T_("karbala");                                                               // Line 38 Seperate
-	echo T_("qom");                                                                   // Line 39 Seperate
-	echo T_("najaf");                                                                 // Line 40 Seperate
-	echo T_("Najaf");                                                                 // Line 41 Seperate
-	echo T_("Mecca");                                                                 // Line 42 Seperate
-	echo T_("mecca");                                                                 // Line 43 Seperate
-	echo T_("syria");                                                                 // Line 44 Seperate
-	echo T_("Syria");                                                                 // Line 45 Seperate
-	echo T_("Group");                                                                 // Line 46 Seperate
-	echo T_("ControlPanel");                                                          // Line 49 Seperate
-	echo T_("cpTripEdit");                                                            // Line 50 Seperate
-	echo T_("cpTripView");                                                            // Line 51 Seperate
-	echo T_("cpTripOption");                                                          // Line 52 Seperate
-	echo T_("donateManualPay");                                                       // Line 53 Seperate
-	echo T_("cpDonateView");                                                          // Line 54 Seperate
-	echo T_("cpDonateTotalPay");                                                      // Line 55 Seperate
-	echo T_("cpDonateOption");                                                        // Line 56 Seperate
-	echo T_("cpNationalCodeEdit");                                                    // Line 57 Seperate
-	echo T_("cpNationalCodeView");                                                    // Line 58 Seperate
-	echo T_("cpNationalCodeImport");                                                  // Line 59 Seperate
-	echo T_("cpHomePageNumber");                                                      // Line 60 Seperate
-	echo T_("cpOptionProduct");                                                       // Line 61 Seperate
-	echo T_("cpOptionCityPlace");                                                     // Line 62 Seperate
-	echo T_("cpServiceView");                                                         // Line 63 Seperate
-	echo T_("cpServiceOption");                                                       // Line 64 Seperate
-	echo T_("cpTripQom");                                                             // Line 65 Seperate
-	echo T_("cpTripMashhad");                                                         // Line 66 Seperate
-	echo T_("cpTripKarbala");                                                         // Line 67 Seperate
-	echo T_("Control");                                                               // Line 68 Seperate
-	echo T_("Trip");                                                                  // Line 69 Seperate
-	echo T_("National");                                                              // Line 71 Seperate
-	echo T_("National Code");                                                         // Line 72 Seperate
-	echo T_("Setting");                                                               // Line 73 Seperate
-	echo T_("Service");                                                               // Line 74 Seperate
-	echo T_("cpBookTransactionView");                                                 // Line 78 Seperate
-	echo T_("mylovestory");                                                           // Line 79 Seperate
-	echo T_("cpReportDaily");                                                         // Line 81 Seperate
-	echo T_("cpReportMonth");                                                         // Line 82 Seperate
-	echo T_("cpReportView");                                                          // Line 83 Seperate
-	echo T_("cpDelneveshteEdit");                                                     // Line 91 Seperate
-	echo T_("cpDelneveshteView");                                                     // Line 92 Seperate
-	echo T_("cpAdminContactChangeStatus");                                            // Line 93 Seperate
-	echo T_("cpAdminContactView");                                                    // Line 94 Seperate
-	echo T_("cpRepresentationChangeStatus");                                          // Line 95 Seperate
-	echo T_("cpRepresentationView");                                                  // Line 96 Seperate
-	echo T_("cpRepresentationOption");                                                // Line 97 Seperate
-	echo T_("cpAdviceView");                                                          // Line 98 Seperate
-	echo T_("cpAdviceOption");                                                        // Line 99 Seperate
-	echo T_("cpHealthView");                                                          // Line 100 Seperate
-	echo T_("cpHealthOption");                                                        // Line 101 Seperate
 
 	//-----------------------------------------content_a/trip/partner/partnerForm.html
 	echo T_("List of your child");                                                    // Line 29
