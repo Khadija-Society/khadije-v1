@@ -31,6 +31,20 @@ class report
 		return $result;
 	}
 
+	public static function hazinekard()
+	{
+
+		$query  = "SELECT sum(transactions.plus) AS `sum`, transactions.hazinekard AS `hazinekard` FROM transactions WHERE verify = 1 GROUP BY transactions.hazinekard";
+		$result = \dash\db::get($query, ['hazinekard', 'sum']);
+		$temp = [];
+		foreach ($result as $title => $xvalue)
+		{
+			$temp[] = ['hazinekard' => $title, 'sum' => $xvalue];
+		}
+
+		return $temp;
+	}
+
 
 	public static function key_value($_data, $_json = false)
 	{
