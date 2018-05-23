@@ -7,12 +7,12 @@ class report
 	public static function counttransaction()
 	{
 		$result  = [];
-		$query   = "SELECT sum(transactions.plus) AS `sum`, transactions.payment AS `payment` FROM transactions GROUP BY transactions.payment";
+		$query   = "SELECT sum(transactions.plus) AS `sum`, transactions.payment AS `payment` FROM transactions WHERE verify = 1 GROUP BY transactions.payment";
 		$payment = \dash\db::get($query, ['payment', 'sum']);
 
 		foreach ($payment as $key => $value)
 		{
-			$hazine_query = "SELECT sum(transactions.plus) AS `value`, transactions.hazinekard AS `title` FROM transactions  where transactions.payment = '$key' GROUP BY transactions.hazinekard";
+			$hazine_query = "SELECT sum(transactions.plus) AS `value`, transactions.hazinekard AS `title` FROM transactions  WHERE verify = 1 AND transactions.payment = '$key' GROUP BY transactions.hazinekard";
 			$pie          = \dash\db::get($hazine_query, ['title', 'value']);
 			$new_pie      = [];
 
@@ -23,7 +23,7 @@ class report
 
 			$result[] =
 			[
-				'payment' => T_($key),
+				'payment' => T_(ucfirst($key)),
 				'sum'     => $value,
 				'pie'     => $new_pie,
 			];
