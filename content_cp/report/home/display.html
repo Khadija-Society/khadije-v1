@@ -5,15 +5,34 @@
 
 {{block('rDaily')}}
 {{block('rMonth')}}
+{{block('rCounttransaction')}}
+{{block('hazinekardChard')}}
 
 {%endblock%}
 
 
+{%block rCounttransaction%}
+<a class="dcard x1" href='{{url.here}}/report/counttransaction'>
+ <div class="statistic">
+  <div class="value"></div>
+  <div class="label">{%trans "Report Count transaction group by payment and hazinekard"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block hazinekardChard%}
+<a class="dcard x1" href='{{url.here}}/report/hazinekard'>
+ <div class="statistic">
+  <div class="value"></div>
+  <div class="label">{%trans "Report sum transaction group by hazinekard"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block rDaily%}
 <a class="dcard x1" href='{{url.here}}/report/daily'>
  <div class="statistic">
-  <div class="value"><span>{{dashboardData.product_count |fitNumber}}</span></div>
+  <div class="value"></div>
   <div class="label">{%trans "Report daily"%}</div>
  </div>
 </a>
@@ -24,7 +43,7 @@
 {%block rMonth%}
 <a class="dcard x1" href='{{url.here}}/report/month'>
  <div class="statistic">
-  <div class="value"><span>{{dashboardData.product_count |fitNumber}}</span></div>
+  <div class="value"></div>
   <div class="label">{%trans "Report Month"%}</div>
  </div>
 </a>
