@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpServiceView');
 
+		\dash\data::page_pictogram('user-md');
+
 		\dash\data::page_title(T_("Service request list"));
 		\dash\data::page_desc(T_("check service requests"));
 
