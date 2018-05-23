@@ -129,7 +129,7 @@ class model
 				$_SESSION['delneveshte'] = [];
 			}
 
-			$_SESSION['delneveshte'][] = array_merge($args, ['id' => 251, 'status' => 'awaiting', 'datecreated' => date("Y-m-d H:i:s")]);
+			$_SESSION['delneveshte'][] = \dash\safe::safe(array_merge($args, ['id' => 251, 'status' => 'awaiting', 'datecreated' => date("Y-m-d H:i:s")]), 'sqlinjection');
 			\dash\redirect::pwd();
 		}
 		else
