@@ -12,7 +12,7 @@
     </ul>
   </li>
   {%endif%}
-
+s
   {% if perm('cpServiceView') or perm('cpTripView') or perm('cpAdviceView') or perm('cpHealthView') or perm('cpRepresentationView') or perm('cpNationalCodeView') %}
   <li>
     <a href="#"><i class='sf-umbrella'></i> <span>{% trans "Requests" %}</span></a>
@@ -35,7 +35,6 @@
             {%if perm('cpCategoryView') %}<li><a href="{{url.here}}/terms?type=cat">{% trans "Categries" %} <i class='floatRa mRa10 fc-mute sf-grid'></i></a></li>{%endif%}
             {%if perm('cpTagView') %}<li><a href="{{url.here}}/terms?type=tag">{% trans "Tags" %} <i class='floatRa mRa10 fc-mute sf-tags'></i></a></li>{%endif%}
             {%if perm('cpPageView') %}<li><a href="{{url.here}}/posts?type=page">{% trans "Pages" %} <i class='floatRa mRa10 fc-mute sf-files-o'></i></a></li>{%endif%}
-            {%if perm('cpPostsView') %}<li><a href="{{url.here}}/attachments">{% trans "Files" %} <i class='floatRa mRa10 fc-mute sf-attach'></i></a></li>{%endif%}
             {%if perm('cpCommentsView') %}<li><a href="{{url.here}}/comments">{% trans "Comments" %} <i class='floatRa mRa10 fc-mute sf-comments'></i></a></li>{%endif%}
         </ul>
     </li>
