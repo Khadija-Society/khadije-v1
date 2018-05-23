@@ -23,7 +23,7 @@ class view
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back to list of delneveshteha'));
 
-		\dash\data::page_pictogram('commenting');
+		\dash\data::page_pictogram('edit');
 	}
 }
 ?>

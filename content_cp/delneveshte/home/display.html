@@ -49,7 +49,7 @@
 {%block htmlTable%}
  <div class="cbox fs12">
   <table class="tbl bordered1">
-    <thead class="primary">
+    <thead class="danger">
       <tr>
         <th data-sort="{{sortLink.author.order}}"><a href="{{sortLink.author.link}}">{%trans "Author"%}</a></th>
         <th class="s0">{%trans "Detail"%}</th>
@@ -137,3 +137,9 @@
 <p class="fs14 alert alert-success pTB20">{%trans "Hi!"%} <a href="{{url.here}}/comments/add{{moduleType}}">{%trans "Try to start with add new record!"%}</a></p>
 {%endblock%}
 
+{%block foot_js%}
+<style>
+  .tbox .pictogram{color:#e02020;}
+  .tbox:hover .pictogram{color:red;}
+</style>
+{%endblock%}
