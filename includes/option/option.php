@@ -3,7 +3,10 @@ require_once('social.php');
 require_once('payment.php');
 require_once('sms.php');
 
-
+if(!defined('db_log_name'))
+{
+	define('db_log_name', 'khadije_log');
+}
 /**
 @ In the name Of Allah
 * The base configurations of the khadije.
@@ -27,6 +30,7 @@ self::$config['site']['title']  = "Khadije Charity";
 self::$config['site']['desc']   = "Executor of first pilgrimage to the Ahl al-Bayt";
 self::$config['site']['slogan'] = "Executor of first pilgrimage to the Ahl al-Bayt";
 
+self::$config['visitor']              = true;
 
 self::$config['debug']              = false;
 self::$config['coming']             = false;
