@@ -8,15 +8,13 @@ class view
 	{
 		\dash\permission::access('cpDelneveshteView');
 
-		\dash\data::page_title(T_("Deleneveshte"));
+		\dash\data::page_title(T_("Deleneveshteha"));
 		\dash\data::page_desc(T_('Check list of delneveshte and search or filter in them to find your delneveshte.'). ' '. T_('Also add or edit specefic delneveshte.'));
-
-		// $this->data->page['badge']['link'] = \dash\url::this(). '';
-		// $this->data->page['badge']['text'] = T_('Add new :val', ['val' => $myType]);
+		\dash\data::page_pictogram('heart-o');
 
 		// add back level to summary link
-		$product_list_link        =  '<a href="'. \dash\url::here() .'" data-shortkey="121">'. T_('Back to dashboard'). '</a>';
-		\dash\data::page_desc(\dash\data::page_desc(). ' | '. $product_list_link);
+		\dash\data::badge2_text(T_('Back to dashboard'));
+		\dash\data::badge2_link(\dash\url::here());
 
 		$search_string            = \dash\request::get('q');
 		if($search_string)
