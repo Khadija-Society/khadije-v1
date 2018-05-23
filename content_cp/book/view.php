@@ -8,10 +8,9 @@ class view
 	{
 		\dash\permission::access('cpBookTransactionView');
 
+		\dash\data::page_title(T_("Books transaction"));
+		\dash\data::page_desc(T_("check books last transactions and monitor them"));
 		\dash\data::page_pictogram('book');
-
-		\dash\data::page_title(T_("Pay book list"));
-		\dash\data::page_desc(T_("check last books and monitor all book transaction"));
 
 		$export_link = ' <a href="'. \dash\url::here(). '/book?export=true">'. T_("Export"). '</a>';
 		\dash\data::page_desc(\dash\data::page_desc(). $export_link);
