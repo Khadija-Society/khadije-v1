@@ -6,6 +6,7 @@ class view
 	public static function config()
 	{
 		\dash\permission::access('ControlPanel');
+		\dash\data::page_pictogram('gauge');
 
 
 		\dash\data::include_adminPanel(true);

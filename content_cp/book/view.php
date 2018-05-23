@@ -79,6 +79,7 @@ class view
 		{
 			\dash\data::totalPaid(\lib\db\mytransactions::total_paid(['donate' => 'book']));
 			\dash\data::totalPaidDate(\lib\db\mytransactions::total_paid(['donate' => 'book'], true));
+			\dash\data::totalPaidCount(\lib\db\mytransactions::total_paid(['donate' => 'book'], false, true));
 		}
 
 		$filterArray = $args;

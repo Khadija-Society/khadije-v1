@@ -84,6 +84,7 @@ class view
 		{
 			\dash\data::totalPaid(\dash\app\transaction::total_paid());
 			\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d")));
+			\dash\data::totalPaidCount(\dash\app\transaction::total_paid_count());
 		}
 
 		$filterArray = $args;

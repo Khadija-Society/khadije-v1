@@ -3,10 +3,15 @@ namespace lib\db;
 
 class mytransactions
 {
-	public static function total_paid($_where, $_today = false)
+	public static function total_paid($_where, $_today = false, $_count = false)
 	{
 		$result = 0;
 		$make_where = \dash\db\config::make_where($_where);
+		$field =  " SUM(transactions.plus) ";
+		if($_count)
+		{
+			$field = " COUNT(*) ";
+		}
 		if($make_where)
 		{
 			$date = null;
@@ -15,7 +20,7 @@ class mytransactions
 				$date = date("Y-m-d");
 				$date = "AND DATE(transactions.date) = DATE('$date') ";
 			}
-			$query = "SELECT sum(transactions.plus) AS `sum` FROM transactions WHERE $make_where AND verify = 1 $date";
+			$query = "SELECT $field AS `sum` FROM transactions WHERE $make_where AND verify = 1 $date";
 			$result = \dash\db::get($query, 'sum', true);
 		}
 
