@@ -32,7 +32,6 @@ class view
 				{
 					if(isset($value['id']) && intval($value['id']) === intval(\dash\request::get('partner')))
 					{
-						$value = \content_a\view::fix_value($value);
 						\dash\data::partnerDetail($value);
 						break;
 					}

@@ -5,6 +5,11 @@ class view
 {
 	public static function config()
 	{
+		if(\dash\request::get('fixallbirthdate') && \dash\permission::supervisor())
+		{
+			self::fixallbirthdate();
+		}
+
 		\dash\data::bodyclass('unselectable');
 
 		self::set_static_titles();
@@ -87,6 +92,36 @@ class view
 
 				break;
 		}
+	}
+
+
+
+	public static function fixallbirthdate()
+	{
+		$query = "SELECT users.id, users.birthday FROM users where users.birthday is not null";
+		$result = \dash\db::get($query, ['id', 'birthday']);
+		$update = [];
+		foreach ($result as $key => $value)
+		{
+			$new_birthdate = \dash\date::birthdate($value);
+			if(!$new_birthdate)
+			{
+				$update[] = "UPDATE users SET users.birthday = NULL WHERE users.id = $key ";
+			}
+			else
+			{
+				$update[] = "UPDATE users SET users.birthday = '$new_birthdate' WHERE users.id = $key ";
+			}
+
+		}
+		if(!empty($update))
+		{
+			\dash\db::query(implode($update, " ; "), true, ['multi_query' => true]);
+
+		}
+		echo count($update). " birthday changed";
+		\dash\code::exit();
+
 	}
 }
 ?>

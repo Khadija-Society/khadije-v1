@@ -38,22 +38,17 @@ class myuser
 		}
 
 		$birthday = \dash\app::request('birthday');
-		$birthday = \dash\utility\convert::to_en_number($birthday);
 		if(!$birthday)
 		{
 			\dash\notif::error(T_("Birthday is required"), 'birthday');
 			return false;
 		}
 
-		if(strtotime($birthday) === false)
-		{
-			\dash\notif::error(T_("Invalid arguments birthday"), 'birthday');
-			return false;
-		}
+		$birthday = \dash\date::birthdate($birthday, true);
 
-		if($birthday)
+		if($birthday === false)
 		{
-			$birthday = date("Y-m-d", strtotime($birthday));
+			return false;
 		}
 
 		$firstname = \dash\app::request('firstname');

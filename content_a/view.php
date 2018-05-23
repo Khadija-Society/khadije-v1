@@ -24,13 +24,5 @@ class view
 
 	}
 
-	public static function fix_value($_data)
-	{
-		if(isset($_data['birthday']))
-		{
-			$_data['birthday'] = \dash\utility\jdate::to_gregorian($_data['birthday']);
-		}
-		return $_data;
-	}
 }
 ?>

@@ -10,7 +10,7 @@ class view
 		\dash\data::page_desc(\dash\data::site_desc());
 
 		\dash\data::userdetail(\dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]));
-		\dash\data::userdetail(\content_a\view::fix_value(\dash\data::userdetail()));
+
 
 		self::static_var();
 
