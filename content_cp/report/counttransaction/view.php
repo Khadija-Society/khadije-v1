@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpChartCountTransaction');
 
+		\dash\data::page_pictogram('chart');
+
 		\dash\data::include_chart(false);
 		\dash\data::include_chart4(true);
 

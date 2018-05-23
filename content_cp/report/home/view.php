@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpReportView');
 
+		\dash\data::page_pictogram('chart');
+
 		\dash\data::page_title(T_('Report list'));
 		\dash\data::page_desc(T_('Show and analyze best report in this platform.'));
 

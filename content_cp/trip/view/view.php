@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpTripView');
 
+		\dash\data::page_pictogram('edit');
+
 		\dash\data::page_title(T_("View request detail"));
 		\dash\data::page_desc(T_("check request and update status"));
 

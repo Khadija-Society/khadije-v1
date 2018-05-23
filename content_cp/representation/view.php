@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpRepresentationView');
 
+		\dash\data::page_pictogram('coffee');
+
 		\dash\data::page_title(T_("Representation request list"));
 		\dash\data::page_desc(T_("check representation requests"));
 

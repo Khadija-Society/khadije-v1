@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpTripView');
 
+		\dash\data::page_pictogram('bus');
+
 		\dash\data::page_title(T_("Request list"));
 		\dash\data::page_desc(T_("check request and update status of each request"));
 		\dash\data::badge_link(\dash\url::here(). '/trip/options');
