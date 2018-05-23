@@ -24,7 +24,7 @@
   {{block('htmlFilterNoResult')}}
 
  {%else%}
-  {{block('htmlFilterNoResult')}}
+  {{block('htmlStartAddNew')}}
 
  {%endif%}
 {%endif%}
@@ -132,6 +132,6 @@
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 alert alert-success pTB20">{%trans "Hi!"%} <a href="{{url.here}}/admincontact/add{{moduleType}}">{%trans "Try to start with add new record!"%}</a></p>
+<p class="fs14 alert alert-success pTB20">{%trans "No record exist!"%}</p>
 {%endblock%}
 
