@@ -8,6 +8,9 @@ class view
 	{
 		\dash\permission::access('cpHealthView');
 
+
+		\dash\data::page_pictogram('heartbeat');
+
 		\dash\data::page_title(T_("Health request list"));
 		\dash\data::page_desc(T_("check health requests"));
 

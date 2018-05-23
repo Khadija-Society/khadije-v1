@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpTripOption');
 
+		\dash\data::page_pictogram('cogs');
+
 		\dash\data::page_title(T_("Request options"));
 
 		\dash\data::page_desc(T_("change request options"));

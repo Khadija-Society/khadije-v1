@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpNationalCodeEdit');
 
+		\dash\data::page_pictogram('edit');
+
 		\dash\data::page_title(T_("Edit national code"));
 		\dash\data::page_desc(T_("Edit special national code and update number of times"));
 		\dash\data::badge_link(\dash\url::here(). '/nationalcode');

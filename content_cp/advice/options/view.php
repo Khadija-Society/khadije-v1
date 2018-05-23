@@ -7,6 +7,7 @@ class view
 	public static function config()
 	{
 		\dash\permission::access('cpAdviceOption');
+		\dash\data::page_pictogram('cogs');
 
 		\dash\data::page_title(T_("Advice request options"));
 		\dash\data::page_desc(T_("check advice request options and update requests"));

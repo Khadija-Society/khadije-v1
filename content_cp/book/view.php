@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpBookTransactionView');
 
+		\dash\data::page_pictogram('book');
+
 		\dash\data::page_title(T_("Pay book list"));
 		\dash\data::page_desc(T_("check last books and monitor all book transaction"));
 

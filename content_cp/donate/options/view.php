@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpDonateOption');
 
+		\dash\data::page_pictogram('cogs');
+
 		\dash\data::page_title(T_("Donation options"));
 		\dash\data::page_desc(T_("check and update some options on donations"));
 		\dash\data::badge_link(\dash\url::here(). '/donate');

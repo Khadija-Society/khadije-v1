@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpAdviceView');
 
+		\dash\data::page_pictogram('chat-alt-fill');
+
 		\dash\data::page_title(T_("Advice request list"));
 		\dash\data::page_desc(T_("check advice requests"));
 

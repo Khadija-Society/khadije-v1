@@ -8,6 +8,9 @@ class view
 	{
 		\dash\permission::access('cpDonateView');
 
+
+		\dash\data::page_pictogram('card');
+
 		\dash\data::page_title(T_("Donation list"));
 		\dash\data::page_desc(T_("check last donates and monitor all donate transaction"));
 

@@ -8,6 +8,9 @@ class view
 	{
 		\dash\permission::access('cpHomePageNumber');
 
+
+		\dash\data::page_pictogram('display');
+
 		\dash\data::page_title(T_("Homepage settings"));
 		\dash\data::page_desc(T_("For show in home page"));
 

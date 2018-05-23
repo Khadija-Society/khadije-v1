@@ -8,6 +8,8 @@ class view
 	{
 		\dash\permission::access('cpHealthOption');
 
+		\dash\data::page_pictogram('cogs');
+
 		\dash\data::page_title(T_("Health request options"));
 		\dash\data::page_desc(T_("check health request options and update requests"));
 		\dash\data::badge_link(\dash\url::here(). '/health');
