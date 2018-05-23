@@ -50,12 +50,4 @@
      <div class="cauto os s12" id='ermile'><a href="https://ermile.com" target='_blank'>{%trans "Developed by Ermile"%}</a></div>
     </div>
   </div>
-
-{%if perm('cp') or main_account or perm('admin:everyone_login:view')%}
-  <div id="xaccess">
-{%if perm('cp')%}<a href="{{url.base}}/cp" data-direct>{%trans "Control Panel"%}</a>{%endif%}
-{%if main_account %}<a href="{{url.base}}/enter?mobile={{main_mobile}}&referer={{url.pwd}}" data-direct>{%trans "Exit Session"%}</a>{%endif%}
-  </div>
-{%endif%}
-
  </footer>

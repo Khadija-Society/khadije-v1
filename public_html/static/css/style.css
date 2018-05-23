@@ -228,13 +228,7 @@ body.loading-page .site-header .title img{padding:7px;opacity:0.7}
 #tfooter #ermile a:hover{border-bottom:1px dashed #aaa}
 #tfooter #ermile a:focus{border-bottom:1px dashed #777}
 
-/* xaccess*/
-#tfooter #xaccess{position:fixed;left:0;bottom:17%;z-index:3;}
-#tfooter #xaccess a{display:block;background-color:#000;opacity:0.3;padding:0.5em 1em;transition:0.3s;margin-top:0.2em;margin-right:2em;color:#fff;}
-#tfooter #xaccess a:hover{opacity:0.8;padding:0.5em 2em;margin-right:0;}
-.rtl #tfooter #xaccess{right:0;left:initial;}
-.rtl #tfooter #xaccess a{right:0;left:initial;margin-right:0;margin-left:2em;}
-.rtl #tfooter #xaccess a:hover{margin-right:0;margin-left:0;}
+
 #tfooter .middle .share12{background-color:rgba(0,0,0,0.1);border-radius:0.25rem;text-align:center;}
 #tfooter .middle .share1 a{display:inline-block;background-color:#ddd}
 #tfooter .middle nav.share1 a:hover{background-color:#aaa}
