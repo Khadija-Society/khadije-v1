@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-05-23 18:29+0430\n"
-"PO-Revision-Date: 2018-05-23 18:41+0430\n"
+"POT-Creation-Date: 2018-05-23 18:44+0430\n"
+"PO-Revision-Date: 2018-05-23 18:45+0430\n"
 "Last-Translator: Reza <rm.biqarar@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -8290,8 +8290,8 @@ msgid "Step 1"
 msgstr "مرحله ۱"
 
 #: khadije/content_a/advice/request/view.php:10
-msgid "in 3 simple step register your request for have advice to holy places"
-msgstr ""
+msgid "in 3 simple step register your request for have advice"
+msgstr "در سه مرحله ساده، درخواست خود را برای مشاوره ثبت کنید"
 
 #: khadije/content_a/advice/request/view.php:13
 msgid "check your advice requests"
@@ -8555,8 +8555,8 @@ msgid "Your health was saved"
 msgstr "درخواست خدمات درمانی شما ذخیره شد"
 
 #: khadije/content_a/health/request/view.php:10
-msgid "in 3 simple step register your request for have health to holy places"
-msgstr ""
+msgid "in 3 simple step register your request for have health"
+msgstr "در سه مرحله ساده، درخواست خود را برای خدمات درمانی ثبت کنید"
 
 #: khadije/content_a/health/request/view.php:13
 msgid "check your health requests"
@@ -8590,9 +8590,8 @@ msgid "Your representation was saved"
 msgstr "درخواست زیارت نیابتی شما با موفقیت انجام شد"
 
 #: khadije/content_a/representation/request/view.php:10
-msgid ""
-"in 3 simple step register your request for have representation to holy places"
-msgstr ""
+msgid "in 3 simple step register your request for have representation"
+msgstr "در سه مرحله ساده، درخواست خود را برای زیارت نیابتی ثبت کنید"
 
 #: khadije/content_a/representation/request/view.php:13
 msgid "check your representation requests"
