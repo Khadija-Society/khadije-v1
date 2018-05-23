@@ -36,9 +36,9 @@ class model
 			return;
 		}
 
-		$desc       = trim(\dash\request::post('desc'));
-		$title      = trim(\dash\request::post('title'));
-		$mobile_raw = trim(\dash\request::post('mobile'));
+		$desc       = \dash\request::post('desc');
+		$title      = \dash\request::post('title');
+		$mobile_raw = \dash\request::post('mobile');
 		$mobile     = \dash\utility\filter::mobile($mobile_raw);
 		$gender     = \dash\request::post('switchGender') ? 'female' : 'male';
 
@@ -115,6 +115,7 @@ class model
 			'content' => $desc,
 			'user_id' => $user_id,
 			'meta'    => $meta,
+			'mobile'  => \dash\request::post('mobile'),
 		];
 
 		// insert comments
@@ -133,7 +134,7 @@ class model
 		}
 		else
 		{
-			\dash\notif::error(T_("We could not save the contact"));
+			// \dash\notif::error(T_("We could not save the contact"));
 		}
 	}
 }

@@ -25,10 +25,13 @@ class model
 			\dash\session::set('count_fill_contact', 1, null, 60 * 60);
 		}
 
-		if($count >= 3)
+		if(!\dash\url::isLocal())
 		{
-			\dash\notif::warn(T_("How are you?"). ":)");
-			return false;
+			if($count >= 3)
+			{
+				\dash\notif::warn(T_("How are you?"). ":)");
+				return false;
+			}
 		}
 
 		// check login
@@ -70,17 +73,6 @@ class model
 		// get the content
 		$content = \dash\request::post("content");
 
-		// save log meta
-		$log_meta =
-		[
-			'meta' =>
-			[
-				'login'    => \dash\user::login('all'),
-				'language' => \dash\language::current(),
-				'post'     => \dash\request::post(),
-			]
-		];
-
 		/**
 		 * register user if set mobile and not register
 		 */
@@ -99,7 +91,7 @@ class model
 					// signup user by site_guest
 					$user_id = \dash\db\users::signup(['mobile' => $mobile, 'displayname' => $displayname]);
 					// save log by caller 'user:send:contact:register:by:mobile'
-					\dash\db\logs::set('user:send:contact:register:by:mobile', $user_id, $log_meta);
+					\dash\db\logs::set('user:send:contact:register:by:mobile', $user_id, null);
 				}
 				elseif(isset($exists_user['id']))
 				{
@@ -114,6 +106,9 @@ class model
 			\dash\notif::error(T_("Please try type something!"), "content");
 			return false;
 		}
+
+		$content  = $_POST['content'];
+
 		// ready to insert comments
 		$args =
 		[
@@ -121,10 +116,12 @@ class model
 			'email'   => $email,
 			'type'    => 'comment',
 			'content' => $content,
+			'mobile'  => \dash\request::post("mobile"),
 			'user_id' => $user_id
 		];
+
 		// insert comments
-		$result = \dash\db\comments::insert($args);
+		$result = \dash\app\comment::add($args);
 		if($result)
 		{
 			// $mail =
@@ -135,13 +132,13 @@ class model
 			// ];
 			// \dash\mail::send($mail);
 
-			\dash\db\logs::set('user:send:contact', $user_id, $log_meta);
+			\dash\db\logs::set('user:send:contact', $user_id, null);
 			\dash\notif::ok(T_("Thank You For contacting us"));
 		}
 		else
 		{
-			\dash\db\logs::set('user:send:contact:fail', $user_id, $log_meta);
-			\dash\notif::error(T_("We could'nt save the contact"));
+			// \dash\db\logs::set('user:send:contact:fail', $user_id, null);
+			// \dash\notif::error(T_("We could'nt save the contact"));
 		}
 	}
 }
