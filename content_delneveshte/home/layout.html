@@ -54,14 +54,10 @@
 
 {%block foot_js%}
 <script>
-
-  route('*', function()
-  {
-
-  }).once(function()
+  function pushStateFinal()
   {
     showLastMessageWithEffect()
-  });
+  }
 
   function showLastMessageWithEffect()
   {
