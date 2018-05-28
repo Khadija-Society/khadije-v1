@@ -2,12 +2,14 @@
 
 
 {%block pageContent%}
-<style type="text/css">#chartdiv{width: 100%;max-height: 600px;height: 97vh;}</style>
+<style type="text/css">#chartdiv{width: 100%;max-height: 600px;height: 97vh;background: #fff}</style>
 <div id="chartdiv"></div>
 {%endblock%}
 
 
 {%block foot_js%}
-{% include 'content_cp/report/hazinekard/chart.html' %}
+<script type="text/javascript">
+	{% include 'content_cp/report/hazinekard/chart.js' %}
+</script>
 {%endblock%}
 

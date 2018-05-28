@@ -10,6 +10,8 @@ class view
 
 		\dash\data::page_pictogram('chart');
 
+		\dash\data::include_chart(true);
+
 		\dash\data::page_title(T_('Report month'));
 		// \dash\data::page_desc(T_('Sale your product via Jibres and enjoy using integrated web base platform.'));
 
