@@ -5,7 +5,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cotentCp');
+		\dash\permission::access('contentCp');
 		\dash\data::page_pictogram('gauge');
 
 
