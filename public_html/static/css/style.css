@@ -147,14 +147,14 @@ body{
 }
 #sHeader .cn:before{
 	content: "";
-	height:3px;
+	height:2px;
 	width: 100%;
 	display: block;
 	background-color: #a36b24;
 }
 #sHeader .brand{
 	display: block;
-	margin-top: 3px;
+	margin-top: 4px;
 }
 #sHeader .brand h1{
 	display: none;
@@ -229,7 +229,7 @@ body{
 	margin-bottom:1em;
 }
 .goldenB{
-	padding:2px;
+	padding:1px;
 	border: 1px solid #aa6622;
 	border-radius:3px;
 }
