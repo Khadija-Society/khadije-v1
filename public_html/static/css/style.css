@@ -413,3 +413,48 @@ body{
 }
 
 
+
+
+
+
+
+
+@media all and (min-width: 768px) and (max-width: 959px) {
+	.sB3{
+		margin: 0 50px 1em;
+		font-size: 2rem;
+	}
+	.sB3:before{
+		width: 50px;
+		right: -50px;
+	  background-position: -202px -350px;
+	}
+	.sB3:after{
+		width: 50px;
+		left: -50px;
+	  background-position: -140px -350px;
+	}
+}
+
+
+@media (max-width: 767px) {
+	.sB3{
+		margin: 0 30px 1em;
+		padding: 0;
+		line-height:1.2!important;
+		height:auto;
+		font-size: 2rem;
+	}
+	.sB3:before{
+		width: 30px;
+		right: -30px;
+	  background-position: -202px -350px;
+	}
+	.sB3:after{
+		width: 30px;
+		left: -30px;
+	  background-position: -170px -350px;
+	}
+}
+
+
