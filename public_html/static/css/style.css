@@ -96,6 +96,16 @@ body{
 	padding: 0 0.5em;
 	display: inline-block;
 	color: #020558;
+	transition:0.3s background;
+}
+#sHeaderNav .mainNav a:hover{
+	background-color: rgba(0,0,0,0.0.5);
+}
+#sHeaderNav .mainNav a:focus{
+	background-color: rgba(0,0,0,0.1);
+}
+#sHeaderNav .mainNav a.weAreHere{
+	background-color: rgba(0,170,170, 0.1);
 }
 .donate{
 	margin: 0 24px;
