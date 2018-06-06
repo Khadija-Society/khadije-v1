@@ -4,13 +4,6 @@ body{
 .wrapper{
 	padding: 0 2em;
 }
-#sHeader .cn:before{
-	content: "";
-	height:3px;
-	width: 100%;
-	display: block;
-	background-color: #a36b24;
-}
 #sHeader{
 	background-color: #020558;
 	background-image: url('../images/homepage-v3/header-pattern.png');
@@ -18,6 +11,14 @@ body{
 	background-position: center;
 	color: #eee;
 	overflow: hidden;
+	user-select: none;
+}
+#sHeader .cn:before{
+	content: "";
+	height:3px;
+	width: 100%;
+	display: block;
+	background-color: #a36b24;
 }
 /*header lang*/
 #sHeader .langlist{
@@ -43,12 +44,28 @@ body{
 #sHeader .langlist a.isActive{
 	color: #eee;
 }
+#sHeader .hadith{
+	color: #aaa;
+	text-align: right;
+	font-size: 12px;
+	line-height: 25px;
+	transition:0.3s;
+	position: relative;
+	top: 60px;
+}
+#sHeader .hadith:hover{
+	color: #bbb;
+}
+.rtl #sHeader .hadith{
+	text-align: left;
+}
 /*header nav*/
 #sHeaderNav{
 	line-height:41px;
 	font-size: 1.5em;
 	font-weight:bold;
 	position: relative;
+	user-select: none;
 }
 #sHeaderNav .cn:before{
 	content: "";
