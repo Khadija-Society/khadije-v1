@@ -3,22 +3,18 @@
 
 
 {%block body%}
-<div class="bheader" data-xhr='bheader'>
-{%block beforeHeader%}{%endblock%}
-</div>
-
 {{block('pageHeader')}}
 
  <div class="wrapper" data-xhr='wrapper'>
 {%block content%}
   <div class="page-title">
    <div class="cn">
-{%if page.title%}
+<!-- {%if page.title%}
     <h1><a href="{{url.pwd}}">{{page.title}}</a></h1>
 {%endif%}
 {%if page.desc%}
     <h2>{{page.desc}}</h2>
-{%endif%}
+{%endif%} -->
    </div>
   </div>
 
@@ -32,7 +28,7 @@
 {%endblock%}
 {%endblock%}
  </div>
-{{block('pageFooter')}}
+{{block('pageFooter2')}}
 {%endblock%}
 
 
@@ -40,27 +36,56 @@
 
 
 {%block pageHeader%}
- <header class='site-header' data-scroll>
+ <header id='sHeader' data-scroll>
   <div class="cn">
+    <div class="f">
+      <div class="cauto">
+        <div class="sprite-brand">
+        </div>
+      </div>
+      <div class="c">
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+ </header>
+ <nav id="sHeaderNav">
+  <div class="cn">
+   <div class="wrapper f">
+    <div class="mainNav c">
+     <a href="{{url.base}}/about">{%trans "About"%}</a>
+     <a href="{{url.base}}/blog">{%trans "News"%}</a>
+     <a href="{{url.base}}/khadije">{%trans "Khadije Wiki"%}</a>
+     <a href="{{url.base}}/services">{%trans "Services"%}</a>
+     <a href="{{url.base}}/delneveshteha">{%trans "Self expressions"%}</a>
+     <a href="{{url.base}}/festival">{%trans "Festival"%}</a>
+    </div>
+     <a class="donate cauto" href="{{url.base}}/donate">{%trans "Donate"%}</a>
+   </div>
+  </div>
+ </nav>
+
+
+
+{%if false%}
     <div class="title">
      <h1>
       <a href='{{url.base}}' tabindex='1'><span class="bold" title="{{site.desc}}">{{site.title}} {%if lang.current == 'fa'%} <small>سلام الله علیها</small>{%endif%}</span></a>
      </h1>
      <h2><a href='{{url.base}}' tabindex='2'>{{site.desc}}</a></h2>
     </div>
-
-
    <nav class="floatRa">
     <a href="{{url.base}}/about">{%trans "About"%}</a>
     <a href="{{url.base}}/a" data-direct>ثبت‌نام تشرف یا خادمی</a>
     <a href="{{url.base}}/donate" class="btn">{%trans "Donate"%}</a>
    </nav>
-  </div>
-  <a class="logo" href='{{url.base}}' tabindex='-1'>
-   <img src='{{url.site}}/static/images/logo.png' alt='{{site.title}} | {{site.desc}}'>
-  </a>
- </header>
-
+   <a class="logo" href='{{url.base}}' tabindex='-1'>
+    <img src='{{url.site}}/static/images/logo.png' alt='{{site.title}} | {{site.desc}}'>
+   </a>
 <div id="sitesidebarHandler"></div>
 <aside id='sitesidebar' class="unselectable scr">
   <ul class="sidenav" data-xhr="sidenav">
@@ -70,6 +95,7 @@
     <li><a tabindex='-1' href="{{url.base}}/a" data-direct>ثبت‌نام تشرف یا خادمی</a></li>
   </ul>
 </aside>
+{%endif%}
 {%endblock%}
 
 
