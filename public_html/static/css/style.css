@@ -439,8 +439,15 @@ body{
 
 
 @media (max-width: 767px) {
+	#sHeader{
+		height: 90px;
+	}
 	#sHeader .cn{
-
+		width: 100%;
+	}
+	#sHeader .brand img{
+		width: 320px;
+		height: 85px;
 	}
 	.sB2{
 		margin:0 auto;
