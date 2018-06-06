@@ -1,6 +1,10 @@
 {%extends display.main%}
 
 
+{%block head_css%}
+ <link rel="stylesheet"       href="{{url.site}}/static/{{'css/style-old-v2.css' | filemtime(true)}}">
+{%endblock%}
+
 {%block beforeHeader1%}
  {{block('landPage')}}
 {%endblock%}
@@ -9,8 +13,8 @@
 
  {{block('harameyn2')}}
 
- {{block('quickpay')}}
  {{block('about')}}
+ {{block('quickpay')}}
  {{block('servicing')}}
 
 
@@ -43,7 +47,7 @@
 
 {%block harameyn2%}
 <div id='harameyn2'>
-  <img src="{{url.site}}/static//images/homepage/harameyn.jpg" alt="{{site.title}}">
+  <img src="{{url.site}}/static/images/homepage/harameyn.jpg" alt="{{site.title}}">
 </div>
 {%endblock%}
 
@@ -52,7 +56,7 @@
  <div class="tile fs14" id='aboutBox'>
   <div class="cn">
     <div class="f">
-      <div class="c6 m12 s12 text">
+      <div class="c7 m12 s12 text">
         <h2><a href="{{url.base}}/about">{%trans "About"%} {{site.title}} {%if lang.current == 'fa'%}<small>سلام الله علیها</small>{%endif%}</a></h2>
         <p>موسسه‌ی فرهنگی هنری حضرت خدیجه در سال ۱۳۹۴ با هدف توسعه‌ی فرهنگ زیارت اهل بیت علیهم السلام تاسیس گردید. و با دو اولویت زیارت اهل بیت و احیای سنن فراموش شده از قبیل قربانی، اطعام غدیر و... فعالیت خود را ادامه داده است. هم‌چنین این موسسه در راستای اهداف خود، به فعالیت‌های خداپسندانه از جمله تامین جهیزیه، اعطای خدمات درمان نیازمندان و سایر امور خیریه، پرداخته است.</p>
 
@@ -61,19 +65,29 @@
         </div>
 
         <div class="f">
-          <div class="c6 s12 pRa5">
-            <a href="{{url.base}}/a/trip" class="btn block primary outline mB10" data-direct>ثبت‌نام تشرف انفرادی</a>
+          <div class="c12">
+            <a href="{{url.base}}/a/trip" class="btn xl block primary outline mB10 sahargahan" data-direct ><img src="{{url.site}}/static/images/homepage/sahargahan.png" alt="سحرگهان حرم">برنامه سحرگهان حرم حضرت معصومه سلام الله علیها </a>
           </div>
-          <div class="c6 s12">
+          <div class="c12">
             <a href="{{url.base}}/a/group" class="btn block primary outline mB10" data-direct>{%trans "Group trip signup"%}</a>
           </div>
         </div>
 
       </div>
       <div class="c m12 s12">
+        <div class="homepageBook">
+          <a href="{{url.base}}/mylovestory" title='{%trans "Click to go to download page"%}'>
+            <h2>{%trans "Download love story book"%}</h2>
+            <img src="{{url.site}}/static/images/book/majaraye-eshge-man.jpg" alt='{{page.title}}'>
+          </a>
+        </div>
+
+{%if false%}
         <div class="videoBox">
           <div id="15210142126358705"><script async type="text/JavaScript" src="https://www.aparat.com/embed/CFuQR?data[rnddiv]=15210142126358705&data[responsive]=yes"></script></div>
         </div>
+{%endif%}
+
       </div>
     </div>
   </div>
@@ -162,7 +176,7 @@
     <p>خدمت به زائران اهل بیت علیهم السلام از آرزوهای  بسیاری از مومنین و مومنان است</p>
     <p>موسسه حضرت خدیجه س آماده همکاری با خادمین محترم میباشد</p>
     <p></p>
-    <p><a href="{{url.base}}/khadem" class="btn secondary"><img src="{{url.site}}/static/images/homepage/nosrati-lakom-moado.png"></a></p>
+    <p><a href="{{url.base}}/khadem" class="btn secondary hauto"><img src="{{url.site}}/static/images/homepage/nosrati-lakom-moado.png"></a></p>
   </div>
 </section>
 {%endblock%}
