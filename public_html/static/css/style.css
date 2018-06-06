@@ -238,13 +238,13 @@ body{
   background-image: url('../images/homepage-v3/sprite.png');
   background-repeat: no-repeat;
   background-position: 1000px 1000px;
-  transition: 0.3s;
 }
 .sprite-servants{
 	width: 140px;
 	height: 140px;
   background-position: -420px 0;
   margin: 0 auto;
+  transition: 0.3s;
 }
 .sprite-servants:hover{
   background-position: -420px -140px;
@@ -254,6 +254,7 @@ body{
 	height: 140px;
   background-position: -560px 0;
   margin: 0 auto;
+  transition: 0.3s;
 }
 .sprite-virtual:hover{
   background-position: -560px -140px;
@@ -263,6 +264,7 @@ body{
 	height: 140px;
   background-position: -700px 0;
   margin: 0 auto;
+  transition: 0.3s;
 }
 .sprite-travel:hover{
   background-position: -700px -140px;
@@ -272,6 +274,7 @@ body{
 	height: 140px;
   background-position: -280px 0;
   margin: 0 auto;
+  transition: 0.3s;
 }
 .sprite-deputy:hover{
   background-position: -280px -140px;
@@ -281,9 +284,48 @@ body{
 	height: 140px;
   background-position: 0 0;
   margin: 0 auto;
+  transition: 0.3s;
 }
 .sprite-lottory:hover{
   background-position: 0 -140px;
 }
+
+.sprite-farahzad{
+	width: 140px;
+	height: 140px;
+  background-position: -840px 0;
+  margin: 0 auto;
+}
+.sprite-farahzad:hover{
+  background-position: -840px -140px;
+}
+.sprite-imani{
+	width: 140px;
+	height: 210px;
+  background-position: -980px 0;
+  margin: 0 auto;
+}
+.sprite-imani:hover{
+  background-position: -980px -210px;
+}
+.sprite-adminContact{
+	width: 140px;
+	height: 140px;
+  background-position: -140px 0;
+  margin: 0 auto;
+}
+.sprite-adminContact:hover{
+  background-position: -140px -140px;
+}
+
+.picto{
+	text-align: center;
+}
+.picto h2{
+	margin-top: 1em;
+}
+
+
+
 
 
