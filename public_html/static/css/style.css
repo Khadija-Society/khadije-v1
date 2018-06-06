@@ -85,7 +85,7 @@ body{
 	user-select: none;
 }
 #sHeaderNav .wrapper{
-	padding-top: 30px
+	padding-top: 20px
 }
 #sHeaderNav .wrapper:before{
 	content: "";
@@ -93,7 +93,7 @@ body{
 	width: 100%;
 	display: block;
 	background-color: #00aaaa;
-	top: 51px;
+	top: 41px;
 	right: 0;
 	left: 0;
 	position: absolute;
