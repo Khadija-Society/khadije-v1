@@ -225,7 +225,7 @@ body{
 
 /* slider*/
 .slider{
-
+	margin-bottom:1em;
 }
 .goldenB{
 	padding:2px;
@@ -246,7 +246,9 @@ body{
 .salavat img{
 	display: block;
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 300px;
 }
 .salavat .counter{
 	color: #020558;
@@ -353,6 +355,10 @@ body{
 .picto{
 	text-align: center;
 }
+.picto a{
+	display: block;
+	margin-bottom: 2em;
+}
 .picto h2{
 	margin-top: 1em;
 }
@@ -376,7 +382,7 @@ body{
 .latestNews .list a{
 	background-color: #eee;
 	transition: 0.3s;
-	padding:5px 1em;
+	padding:5px 1.2em;
 	overflow: hidden;
 	position: relative;
 }
