@@ -5,6 +5,7 @@ body{
 	background-color: #f5f5f5;
  	padding:10px 3%;
  	position: relative;
+ 	overflow: hidden;
 }
 
 /*add special border*/
@@ -438,6 +439,12 @@ body{
 
 
 @media (max-width: 767px) {
+	#sHeader .cn{
+
+	}
+	.sB2{
+		margin:0 auto;
+	}
 	.sB3{
 		margin: 0 30px 1em;
 		padding: 0;
