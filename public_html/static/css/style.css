@@ -191,17 +191,11 @@ body{
 	position: absolute;
 }
 
-
-[class^="sprite-"] {
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-repeat: no-repeat;
-  background-position: 1000px 1000px;
-}
-
+/* slider*/
 .slider{
 
 }
-.goldenBorder{
+.goldenB{
 	padding:2px;
 	border: 1px solid #aa6622;
 	border-radius:3px;
@@ -209,10 +203,12 @@ body{
 .slider img{
 	display: block;
 }
+/* slavat*/
 .salavat{
 	text-align: center;
 	font-size: 1.5em;
 	position: relative;
+	margin-bottom: 25px;
 	user-select: none;
 }
 .salavat img{
@@ -237,10 +233,57 @@ body{
 	display: block;
 }
 
-
-
-
-
-
+/* sprite*/
+[class^="sprite-"] {
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-repeat: no-repeat;
+  background-position: 1000px 1000px;
+  transition: 0.3s;
+}
+.sprite-servants{
+	width: 140px;
+	height: 140px;
+  background-position: -420px 0;
+  margin: 0 auto;
+}
+.sprite-servants:hover{
+  background-position: -420px -140px;
+}
+.sprite-virtual{
+	width: 140px;
+	height: 140px;
+  background-position: -560px 0;
+  margin: 0 auto;
+}
+.sprite-virtual:hover{
+  background-position: -560px -140px;
+}
+.sprite-travel{
+	width: 140px;
+	height: 140px;
+  background-position: -700px 0;
+  margin: 0 auto;
+}
+.sprite-travel:hover{
+  background-position: -700px -140px;
+}
+.sprite-deputy{
+	width: 140px;
+	height: 140px;
+  background-position: -280px 0;
+  margin: 0 auto;
+}
+.sprite-deputy:hover{
+  background-position: -280px -140px;
+}
+.sprite-lottory{
+	width: 140px;
+	height: 140px;
+  background-position: 0 0;
+  margin: 0 auto;
+}
+.sprite-lottory:hover{
+  background-position: 0 -140px;
+}
 
 
