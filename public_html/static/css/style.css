@@ -43,11 +43,67 @@ body{
   background-image: url('../images/homepage-v3/sprite.png');
   background-position: -50px -350px;
 }
+.sB1 a{
+	padding: 0 0.5em;
+	height: 40px;
+	display: inline-block;
+	color: #020558;
+	transition:0.3s background;
+}
+.sB1 a:hover{
+	background-color: rgba(0,0,0,0.05);
+}
+.sB1 a:focus{
+	background-color: rgba(0,0,0,0.1);
+}
+.sB1 a.weAreHere{
+	background-color: rgba(0,170,170, 0.1);
+}
+.sB2{
+	margin: 0 24px;
+	background-color: #020456;
+	border-top: 2px solid #00aaaa;
+	border-bottom: 2px solid #00aaaa;
+	padding: 0 1em;
+	line-height:40px;
+	height:44px;
+	font-size: 1.5rem;
+	font-weight:bold;
+	position: relative;
+	user-select: none;
+}
+.sB2 a{
+	color: #ccc;
+	transition:0.3s color;
+}
+.sB2 a:hover{
+	color: #fff
+}
+.sB2:before{
+	content: "";
+	height:44px;
+	width: 24px;
+	display: inline-block;
+	position: absolute;
+	right: -24px;
+	top: -2px;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-position: -25px -350px;
+}
+.sB2:after{
+	content: "";
+	height:44px;
+	width: 24px;
+	display: inline-block;
+	position: absolute;
+	left: -24px;
+	top: -2px;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-position: -0px -350px;
+}
 
 
-
-
-
+/*site header*/
 #sHeader{
 	background-color: #020558;
 	background-image: url('../images/homepage-v3/header-pattern.png');
@@ -103,6 +159,7 @@ body{
 #sHeader .langlist a.isActive{
 	color: #eee;
 }
+/*header hadith*/
 #sHeader .hadith{
 	color: #aaa;
 	text-align: right;
@@ -134,63 +191,6 @@ body{
 	position: absolute;
 }
 
-#sHeaderNav .mainNav a{
-	padding: 0 0.5em;
-	height: 40px;
-	display: inline-block;
-	color: #020558;
-	transition:0.3s background;
-}
-#sHeaderNav .mainNav a:hover{
-	background-color: rgba(0,0,0,0.05);
-}
-#sHeaderNav .mainNav a:focus{
-	background-color: rgba(0,0,0,0.1);
-}
-#sHeaderNav .mainNav a.weAreHere{
-	background-color: rgba(0,170,170, 0.1);
-}
-.donate{
-	margin: 0 24px;
-	background-color: #020456;
-	border-top: 2px solid #00aaaa;
-	border-bottom: 2px solid #00aaaa;
-	padding: 0 1em;
-	line-height:40px;
-	height:44px;
-	font-size: 1.5rem;
-	font-weight:bold;
-	position: relative;
-}
-.donate a{
-	color: #ccc;
-	transition:0.3s color;
-}
-.donate a:hover{
-	color: #fff
-}
-.donate:before{
-	content: "";
-	height:44px;
-	width: 24px;
-	display: inline-block;
-	position: absolute;
-	right: -24px;
-	top: -2px;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -25px -350px;
-}
-.donate:after{
-	content: "";
-	height:44px;
-	width: 24px;
-	display: inline-block;
-	position: absolute;
-	left: -24px;
-	top: -2px;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -0px -350px;
-}
 
 [class^="sprite-"] {
   background-image: url('../images/homepage-v3/sprite.png');
@@ -213,6 +213,7 @@ body{
 	text-align: center;
 	font-size: 1.5em;
 	position: relative;
+	user-select: none;
 }
 .salavat img{
 	display: block;
