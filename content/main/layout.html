@@ -1,13 +1,14 @@
 {%extends display.mvc%}
 
-{%use 'content/main/header-social.html'%}
+
 
 {%block body%}
 <div class="bheader" data-xhr='bheader'>
 {%block beforeHeader%}{%endblock%}
 </div>
 
-{%include 'content/template/header.html'%}
+{{block('pageHeader')}}
+
  <div class="wrapper" data-xhr='wrapper'>
 {%block content%}
   <div class="page-title">
@@ -31,11 +32,165 @@
 {%endblock%}
 {%endblock%}
  </div>
-{%include 'content/template/footer.html'%}
-
-
-{%set introOption%}
-.setOptions({ 'nextLabel': '{%trans "Next →"%}', 'prevLabel': '{%trans "← Back"%}', 'skipLabel': '{%trans "Skip"%}', 'doneLabel': '{%trans "Done"%}', 'showStepNumbers': 'false', 'showProgress': 'true' })
-{%endset%}
-
+{{block('pageFooter')}}
 {%endblock%}
+
+
+
+
+
+{%block pageHeader%}
+ <header class='site-header' data-scroll>
+  <div class="cn">
+    <div class="title">
+     <h1>
+      <a href='{{url.base}}' tabindex='1'><span class="bold" title="{{site.desc}}">{{site.title}} {%if lang.current == 'fa'%} <small>سلام الله علیها</small>{%endif%}</span></a>
+     </h1>
+     <h2><a href='{{url.base}}' tabindex='2'>{{site.desc}}</a></h2>
+    </div>
+
+
+   <nav class="floatRa">
+    <a href="{{url.base}}/about">{%trans "About"%}</a>
+    <a href="{{url.base}}/a" data-direct>ثبت‌نام تشرف یا خادمی</a>
+    <a href="{{url.base}}/donate" class="btn">{%trans "Donate"%}</a>
+   </nav>
+  </div>
+  <a class="logo" href='{{url.base}}' tabindex='-1'>
+   <img src='{{url.site}}/static/images/logo.png' alt='{{site.title}} | {{site.desc}}'>
+  </a>
+ </header>
+
+<div id="sitesidebarHandler"></div>
+<aside id='sitesidebar' class="unselectable scr">
+  <ul class="sidenav" data-xhr="sidenav">
+    <li><a tabindex='-1' href="{{url.base}}">صفحه نخست</a></li>
+    <li><a tabindex='-1' href="{{url.base}}/about">درباره موسسه</a></li>
+    <li><a tabindex='-1' href="{{url.base}}/donate">پرداخت کمک نقدی</a></li>
+    <li><a tabindex='-1' href="{{url.base}}/a" data-direct>ثبت‌نام تشرف یا خادمی</a></li>
+  </ul>
+</aside>
+{%endblock%}
+
+
+
+{%block pageFooter%}
+ <footer id='tfooter'>
+  <div class="cn">
+    <div class="f top">
+      <div class="c s12"><h3><a href="{{url.base}}">{{site.title}}؛ {{site.desc}}</a></h3></div>
+{%if not login.id%}
+      <div class="cauto s12 os txtRa">
+        <a href="{{url.base}}/enter" data-direct class="btn outline primary pRa10">{%trans "Enter"%}</a>
+        <a href="{{url.base}}/enter/signup" data-direct class="btn outline primary pRa10">{%trans "Signup"%}</a>
+      </div>
+{%endif%}
+
+    </div>
+    <div class="f middle">
+      <div class="c3 s12 pRa25">
+        <p>موسسه‌ی فرهنگی هنری حضرت خدیجه در سال ۱۳۹۴ با هدف توسعه‌ی فرهنگ زیارت اهل بیت علیهم السلام تاسیس گردید. و با دو اولویت زیارت اهل بیت و احیای سنن فراموش شده از قبیل قربانی، اطعام غدیر و... فعالیت خود را ادامه داده است.</p>
+      </div>
+
+      <div class="c3 s12 pRa25">
+         <h4><a href="{{url.base}}">{{site.title}}</a></h4>
+         <nav>
+          <a href="{{url.base}}/about">{%trans "About"%}</a>
+          <a href="{{url.base}}/mission">{%trans "Misson & Target"%}</a>
+          <a href="{{url.base}}/vision">{%trans "Vision"%}</a>
+          <a href="{{url.base}}/honors">{%trans "Honors"%}</a>
+          <a class="hide" href="{{url.base}}/faq">{%trans "FAQ"%}</a>
+          <a href="{{url.base}}/contact">{%trans "Contact"%}</a>
+         </nav>
+      </div>
+
+      <div class="c3 s12 pRa25">
+         <h4>کمک</h4>
+         <nav>
+          <a href="{{url.base}}/donate">{%trans "Donate"%}</a>
+          <a href="{{url.base}}/doners">{%trans "Doners"%}</a>
+         </nav>
+      </div>
+
+      <div class="c3 s12 pRa25">
+         <h4>درخواست تشرف</h4>
+         <nav>
+          <a href="{{url.base}}/a/trip" data-direct>ثبت‌نام تشرف انفرادی</a>
+          <a href="{{url.base}}/a/group" data-direct>{%trans "Register for group trip"%}</a>
+         </nav>
+
+        {{block('pageSocialLinks')}}
+      </div>
+    </div>
+
+    <div class="bottom f">
+     <div class="c s12">تمام حقوق این وب‌سایت متعلق به <a href="{{url.base}}">{{site.title}}</a> سلام الله علیها می‌باشد.</div>
+     <div class="cauto os s12" id='ermile'><a href="https://ermile.com" target='_blank'>{%trans "Developed by Ermile"%}</a></div>
+    </div>
+  </div>
+ </footer>
+{%endblock%}
+
+
+
+{%block pageSocialLinks%}
+<nav class="share1">
+{%if social.facebook%}
+  <a data-direct target='_blank' href="https://www.facebook.com/{{social.facebook}}" class="facebook">{{site.title}} facebook</a>
+{%endif%}
+{%if social.twitter%}
+  <a data-direct target='_blank' href="https://twitter.com/{{social.twitter}}" class="twitter">{{site.title}} twitter</a>
+{%endif%}
+{%if social.googleplus%}
+  <a data-direct target='_blank' href="https://plus.google.com/{{social.googleplus}}" class="googleplus">{{site.title}} google+</a>
+{%endif%}
+{%if social.telegram%}
+  <a data-direct target='_blank' href="https://t.me/{{social.telegram}}" class="telegram" title='تلگرام'>{{site.title}} telegram</a>
+{%endif%}
+{%if social.instagram%}
+  <a data-direct target='_blank' href="https://instagram.com/{{social.instagram}}" class="instagram" title='اینستاگرام'>{{site.title}} instagram</a>
+{%endif%}
+{%if social.linkedin%}
+  <a data-direct target='_blank' href="https://www.linkedin.com/{{social.linkedin}}" class="linkedin">{{site.title}} linkedin</a>
+{%endif%}
+{%if social.aparat%}
+  <a data-direct target='_blank' href="https://www.aparat.com/{{social.aparat}}" class="aparat" title='آپارات'>
+    <img src="{{url.site}}/static/images/homepage/share/aparat_64.png" alt="aparat">
+  </a>
+{%endif%}
+  <a data-direct target='_blank' href="https://eitaa.com/mhkhadije" class="aparat" title='ایتا'>
+    <img src="{{url.site}}/static/images/homepage/share/eitaa.png" alt="eitaa">
+  </a>
+  <a data-direct target='_blank' href="https://sapp.ir/mhkhadije" class="aparat" title='سروش'>
+    <img src="{{url.site}}/static/images/homepage/share/soroush.png" alt="soroush">
+  </a>
+{%if false%}
+  <a data-direct target='_blank' href="{{url.base}}/rss" class="rss">{{site.title}} rss</a>
+{%endif%}
+</nav>
+{%endblock%}
+
+
+
+{%block facebook%}
+ <meta property ="og:title"                content="{{pageTitle}}"/>
+ <meta property ="og:description"          content="{{pageDesc}}"/>
+ <meta property ="og:url"                  content="{{url.pwd}}"/>
+ <meta property ="og:type"                 content="website"/>
+{%block facebookImages%}
+{%if lang.current == 'fa'%}
+ <meta property ='og:locale'               content='fa_IR'/>
+{%endif%}
+{%if lang.current == 'fa'%}
+ <meta property ="og:image"                content="{{url.site}}/static/images/share/og-wide-fa.png"/>
+{%else%}
+ <meta property ="og:image"                content="{{url.site}}/static/images/share/og-wide-en.png"/>
+{%endif%}
+ <meta property ="og:image:width"          content="525"/>
+ <meta property ="og:image:height"         content="275"/>
+ <meta property ="og:image"                content="{{url.site}}/static/images/share/og-square.png"/>
+ <meta property ="og:image:width"          content="512"/>
+ <meta property ="og:image:height"         content="512"/>
+{%endblock%}
+{%endblock%}
+
