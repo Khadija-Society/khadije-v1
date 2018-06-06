@@ -6,6 +6,48 @@ body{
  	padding:10px 2em;
  	position: relative;
 }
+
+/*add special border*/
+.sB1{
+	background-color: #eee;
+	border-top: 2px solid #00aaaa;
+	border-bottom: 2px solid #00aaaa;
+	margin: 0 24px;
+	height:44px;
+	position: relative;
+	line-height:40px;
+	font-size: 1.5rem;
+	font-weight:bold;
+	user-select: none;
+	display: block;
+}
+.sB1:before{
+	content: "";
+	height:44px;
+	width: 24px;
+	display: inline-block;
+	position: absolute;
+	right: -24px;
+	top: -2px;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-position: -75px -350px;
+}
+.sB1:after{
+	content: "";
+	height:44px;
+	width: 24px;
+	display: inline-block;
+	position: absolute;
+	left: -24px;
+	top: -2px;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-position: -50px -350px;
+}
+
+
+
+
+
 #sHeader{
 	background-color: #020558;
 	background-image: url('../images/homepage-v3/header-pattern.png');
@@ -77,13 +119,6 @@ body{
 	text-align: left;
 }
 /*header nav*/
-#sHeaderNav{
-	line-height:40px;
-	font-size: 1.5em;
-	font-weight:bold;
-	position: relative;
-	user-select: none;
-}
 #sHeaderNav .wrapper{
 	padding-top: 20px
 }
@@ -99,36 +134,6 @@ body{
 	position: absolute;
 }
 
-#sHeaderNav .mainNav{
-	background-color: #eee;
-	border-top: 2px solid #00aaaa;
-	border-bottom: 2px solid #00aaaa;
-	margin: 0 24px;
-	height:44px;
-	position: relative;
-}
-#sHeaderNav .mainNav:before{
-	content: "";
-	height:44px;
-	width: 24px;
-	display: inline-block;
-	position: absolute;
-	right: -24px;
-	top: -2px;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -75px -350px;
-}
-#sHeaderNav .mainNav:after{
-	content: "";
-	height:44px;
-	width: 24px;
-	display: inline-block;
-	position: absolute;
-	left: -24px;
-	top: -2px;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -50px -350px;
-}
 #sHeaderNav .mainNav a{
 	padding: 0 0.5em;
 	height: 40px;
@@ -187,17 +192,53 @@ body{
   background-position: -0px -350px;
 }
 
-
 [class^="sprite-"] {
   background-image: url('../images/homepage-v3/sprite.png');
   background-repeat: no-repeat;
   background-position: 1000px 1000px;
 }
-.sprite-brand {
-	margin-top: 6px;
-  height: 112px;
-  width: 430px;
-  background-position: -100px -350px;
+
+.slider{
+
 }
+.goldenBorder{
+	padding:2px;
+	border: 1px solid #aa6622;
+	border-radius:3px;
+}
+.slider img{
+	display: block;
+}
+.salavat{
+	text-align: center;
+	font-size: 1.5em;
+}
+.salavat img{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+.salavat .counter{
+	color: #020558;
+	font-size: 2em;
+	font-weight: bold;
+	padding:0.5em 0;
+
+}
+.salavat .Allah{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+.salavat .Allah a{
+	display: block;
+}
+
+
+
+
+
+
 
 
