@@ -21,9 +21,18 @@ body{
 	display: block;
 	background-color: #a36b24;
 }
-#sHeader .brand
-{
+#sHeader .brand{
+	display: block;
 	margin-top: 3px;
+}
+#sHeader .brand h1{
+	display: none;
+}
+#sHeader .brand h2{
+	display: none;
+}
+#sHeader .brand img
+{
   height: 114px;
 	width: 430px;
 	display: block;

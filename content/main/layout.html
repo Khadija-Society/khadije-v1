@@ -40,7 +40,11 @@
   <div class="cn">
     <div class="f">
       <div class="cauto">
-        <img class="brand" src="{{url.site}}/static/images/homepage-v3/header-logo-fa.png" alt='{{site.title}} | {{site.desc}}' title='{{site.desc}}'>
+        <a href="{{url.base}}/" class="brand">
+          <img src="{{url.site}}/static/images/homepage-v3/header-logo-fa.png" alt='{{site.title}} | {{site.desc}}' title='{{site.desc}}'>
+          <h1>{{site.title}}</h1>
+          <h2>{{site.desc}}</h2>
+        </a>
       </div>
       <div class="c">
        {{langList({'html':true, 'all': true})}}
