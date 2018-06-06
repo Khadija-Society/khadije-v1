@@ -14,8 +14,7 @@ if(!defined('db_log_name'))
 self::$language =
 [
 	'default' => 'fa',
-	// 'list'    => ['fa','en',],
-	'list'    => ['fa'],
+	'list'    => ['fa', 'ar', 'en'],
 ];
 
 // fix url and redirect

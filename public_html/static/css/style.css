@@ -19,7 +19,31 @@ body{
 	color: #eee;
 	overflow: hidden;
 }
-
+/*header lang*/
+#sHeader .langlist{
+	line-height: 25px;
+	font-size: 12px;
+	text-align: right;
+}
+.rtl #sHeader .langlist{
+	text-align: left;
+}
+#sHeader .langlist a{
+	color: #999;
+	padding:0 .5em;
+	transition:0.3s color;
+	display:inline-block;
+}
+#sHeader .langlist a:hover{
+	color: #aaa;
+}
+#sHeader .langlist a:focus{
+	color: #bbb;
+}
+#sHeader .langlist a.isActive{
+	color: #eee;
+}
+/*header nav*/
 #sHeaderNav{
 	line-height:41px;
 	font-size: 1.5em;
