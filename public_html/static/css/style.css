@@ -45,7 +45,7 @@ body{
 }
 /*header nav*/
 #sHeaderNav{
-	line-height:40px;
+	line-height:41px;
 	font-size: 1.5em;
 	font-weight:bold;
 	position: relative;
@@ -99,7 +99,7 @@ body{
 	transition:0.3s background;
 }
 #sHeaderNav .mainNav a:hover{
-	background-color: rgba(0,0,0,0.0.5);
+	background-color: rgba(0,0,0,0.05);
 }
 #sHeaderNav .mainNav a:focus{
 	background-color: rgba(0,0,0,0.1);
@@ -113,7 +113,7 @@ body{
 	border-top: 2px solid #00aaaa;
 	border-bottom: 2px solid #00aaaa;
 	padding: 0 1em;
-	line-height:40px;
+	line-height:41px;
 	font-size: 1.5rem;
 	font-weight:bold;
 	position: relative;
