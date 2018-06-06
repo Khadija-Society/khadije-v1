@@ -2,7 +2,9 @@ body{
 	background-color: #eee;
 }
 .wrapper{
-	padding: 0 2em;
+	background-color: #f5f5f5;
+ 	padding:10px 2em;
+ 	position: relative;
 }
 #sHeader{
 	background-color: #020558;
@@ -51,7 +53,7 @@ body{
 	line-height: 25px;
 	transition:0.3s;
 	position: relative;
-	top: 60px;
+	top: 65px;
 }
 #sHeader .hadith:hover{
 	color: #bbb;
@@ -67,19 +69,18 @@ body{
 	position: relative;
 	user-select: none;
 }
-#sHeaderNav .cn:before{
+#sHeaderNav .wrapper:before{
 	content: "";
 	height:2px;
 	width: 100%;
 	display: block;
 	background-color: #00aaaa;
-	top: 23px;
-	position: relative;
+	top: 31px;
+	right: 0;
+	left: 0;
+	position: absolute;
 }
-#sHeaderNav .cn{
-	background-color: #f5f5f5;
- 	padding:10px 0;
-}
+
 #sHeaderNav .mainNav{
 	background-color: #eee;
 	border-top: 2px solid #00aaaa;
