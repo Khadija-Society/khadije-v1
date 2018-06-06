@@ -449,6 +449,9 @@ body{
 		width: 320px;
 		height: 85px;
 	}
+	#sHeader .langlist .isActive{
+		display: none;
+	}
 	.sB2{
 		margin:0 auto;
 	}
@@ -471,4 +474,11 @@ body{
 	}
 }
 
+@media (max-width: 475px) {
+	#sHeader .langlist{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
+}
