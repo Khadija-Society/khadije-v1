@@ -212,6 +212,7 @@ body{
 .salavat{
 	text-align: center;
 	font-size: 1.5em;
+	position: relative;
 }
 .salavat img{
 	display: block;
@@ -222,12 +223,12 @@ body{
 	color: #020558;
 	font-size: 2em;
 	font-weight: bold;
-	padding:0.5em 0;
+	padding:10px 0 5px;
 
 }
 .salavat .Allah{
 	position: absolute;
-	bottom: 0;
+	bottom: -22px;
 	right: 0;
 	left: 0;
 }
