@@ -6,10 +6,10 @@ body{
 }
 #sHeader .cn:before{
 	content: "";
-	height:2px;
+	height:3px;
 	width: 100%;
 	display: block;
-	background-color: #5d3f40;
+	background-color: #a36b24;
 }
 #sHeader{
 	background-color: #020558;
@@ -23,6 +23,7 @@ body{
 #sHeaderNav{
 	line-height:41px;
 	font-size: 1.5em;
+	font-weight:bold;
 	position: relative;
 }
 #sHeaderNav .cn:before{
@@ -31,59 +32,97 @@ body{
 	width: 100%;
 	display: block;
 	background-color: #00aaaa;
-	top: 23px;
+	top: 25px;
 	position: relative;
 }
 #sHeaderNav .cn{
-	background-color: #fff;
+	background-color: #f5f5f5;
  	padding:10px 0;
 }
 #sHeaderNav .mainNav{
 	background-color: #eee;
 	border-top: 2px solid #00aaaa;
 	border-bottom: 2px solid #00aaaa;
-	margin: 0 20px;
+	margin: 0 26px;
+	position: relative;
 }
 #sHeaderNav .mainNav:before{
 	content: "";
 	height:41px;
-	width: 20px;
+	width: 26px;
 	display: inline-block;
-	background-color: #ddd;
 	position: absolute;
-	right: -20px;
+	right: -26px;
+	top:0;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-position: -26px -400px;
 }
 #sHeaderNav .mainNav:after{
 	content: "";
 	height:41px;
-	width: 20px;
+	width: 26px;
 	display: inline-block;
-	background-color: #ddd;
 	position: absolute;
-	left: -20px;
+	left: -26px;
+	top: 0;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-position: -0px -400px;
 }
 #sHeaderNav .mainNav a{
 	padding: 0 0.5em;
 	display: inline-block;
+	color: #020558;
 }
-#sHeaderNav .donate{
-	margin: 0 20px;
+.donate{
+	margin: 0 26px;
 	background-color: #020456;
 	border-top: 2px solid #00aaaa;
 	border-bottom: 2px solid #00aaaa;
-	color: #fff;
 	padding: 0 1em;
+	line-height:41px;
+	font-size: 1.5rem;
+	font-weight:bold;
+	position: relative;
 }
-
+.donate a{
+	color: #ccc;
+	transition:0.3s color;
+}
+.donate a:hover{
+	color: #fff
+}
+.donate:before{
+	content: "";
+	height:41px;
+	width: 26px;
+	display: inline-block;
+	position: absolute;
+	right: -26px;
+	top:0;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-position: -26px -350px;
+}
+.donate:after{
+	content: "";
+	height:41px;
+	width: 26px;
+	display: inline-block;
+	position: absolute;
+	left: -26px;
+	top: 0;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-position: -0px -350px;
+}
 
 
 [class^="sprite-"] {
   background-image: url('../images/homepage-v3/sprite.png');
   background-repeat: no-repeat;
+  background-position: 1000px 1000px;
 }
 .sprite-brand {
 	margin-top: 6px;
-  height: 114px;
+  height: 112px;
   width: 430px;
   background-position: -100px -350px;
 }
