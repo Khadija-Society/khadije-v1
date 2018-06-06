@@ -12,7 +12,6 @@ body{
 	height: 120px;
 	background-position: center;
 	color: #eee;
-	overflow: hidden;
 	user-select: none;
 }
 #sHeader .cn:before{
@@ -21,6 +20,13 @@ body{
 	width: 100%;
 	display: block;
 	background-color: #a36b24;
+}
+#sHeader .brand
+{
+	margin-top: 3px;
+  height: 114px;
+	width: 430px;
+	display: block;
 }
 /*header lang*/
 #sHeader .langlist{
@@ -63,11 +69,14 @@ body{
 }
 /*header nav*/
 #sHeaderNav{
-	line-height:41px;
+	line-height:40px;
 	font-size: 1.5em;
 	font-weight:bold;
 	position: relative;
 	user-select: none;
+}
+#sHeaderNav .wrapper{
+	padding-top: 30px
 }
 #sHeaderNav .wrapper:before{
 	content: "";
@@ -75,7 +84,7 @@ body{
 	width: 100%;
 	display: block;
 	background-color: #00aaaa;
-	top: 31px;
+	top: 51px;
 	right: 0;
 	left: 0;
 	position: absolute;
@@ -86,6 +95,7 @@ body{
 	border-top: 2px solid #00aaaa;
 	border-bottom: 2px solid #00aaaa;
 	margin: 0 24px;
+	height:44px;
 	position: relative;
 }
 #sHeaderNav .mainNav:before{
@@ -112,6 +122,7 @@ body{
 }
 #sHeaderNav .mainNav a{
 	padding: 0 0.5em;
+	height: 40px;
 	display: inline-block;
 	color: #020558;
 	transition:0.3s background;
@@ -131,7 +142,8 @@ body{
 	border-top: 2px solid #00aaaa;
 	border-bottom: 2px solid #00aaaa;
 	padding: 0 1em;
-	line-height:41px;
+	line-height:40px;
+	height:44px;
 	font-size: 1.5rem;
 	font-weight:bold;
 	position: relative;
