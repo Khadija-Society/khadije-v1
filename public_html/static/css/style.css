@@ -488,6 +488,7 @@ body{
 	background-image: url('../images/homepage-v3/footer-pattern.png');
 	background-repeat: repeat-x;
 	background-position: bottom;
+	color: #333;
 }
 #sFooter .brand{
 	width: 140px;
@@ -500,7 +501,8 @@ body{
 	margin:0 auto;
 	background-color: #f5f5f5;
 	border-radius: 50%;
-	transition: 0.3s
+	transition: 0.3s;
+	user-select: none;
 }
 #sFooter:hover .brand{
 	background-color: #fff;
@@ -539,6 +541,9 @@ body{
 	background-color: rgba(0,0,0,0.1);
 }
 /* share links*/
+.shareC{
+	user-select: none;
+}
 .shareC a{
 	position:relative;
 	display:inline-block!important;
@@ -553,11 +558,27 @@ body{
 	background-color:rgba(0,0,0,0.02);
 }
 #sFooter hr{
-	margin: 20px 0;
+	border-color: #aa6523;
+	position: relative;
+	margin:50px auto 70px;
+}
+#sFooter hr:before{
+	content: "";
+	height:60px;
+	width: 580px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: -30px;
+	margin:0 auto;
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-color: #e4e4e4;
+  background-position: 0 -420px;
 }
 #sFooter #copyright{
 	border-top: 1px solid #aa6523;
 	padding: 1em 0;
+	user-select: none;
 }
 #sFooter #copyright a{
 	padding:5px 0;
