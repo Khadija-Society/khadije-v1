@@ -682,7 +682,7 @@ body{
 	padding-top: 2em;
 }
 .pageTitle .sB3{
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 .pageData .msg{
@@ -712,6 +712,23 @@ body{
 	background-color: #f5f5f5;
 	background-position: -320px -350px;
 }
+
+.pageData .postPreview{}
+.pageData .postPreview img.thumb{width:300px;height:auto;display:inline-block;margin:0 auto;padding:0;margin:0.5em;border:1px solid transparent;transition:0.3s}
+.pageData .postPreview img.thumb:hover{border-color:#333}
+.pageData #lightgallery{text-align:center; margin:1em 0;}
+.pageData #lightgallery img{width:200px;max-width:45%; margin:0 auto;}
+.pageData #lightgallery video{width:200px;max-width:45%; margin:0 auto;}
+.pageData #lightgallery audio{width:200px;max-width:45%; margin:0 auto;}
+
+.pageData .gallery2{text-align:center;}
+.pageData .gallery2 video{width:500px;max-width:90%;margin:1em auto;display:inline-block;}
+.pageData .gallery2 audio{width:250px;max-width:90%;margin:1em auto;display:inline-block;}
+
+.pageData .postListPreview{width:70%;min-width:280px;margin:0 auto;}
+.pageData .postListPreview section{border-bottom:1px dashed #ccc;margin-bottom:3em;}
+.pageData .postListPreview img{}
+.pageData .postListPreview h3{margin-top:0;}
 
 
 
