@@ -50,6 +50,7 @@ body{
 	display: inline-block;
 	color: #020558;
 	transition:0.3s background;
+	overflow: hidden;
 }
 .sB1 a:hover{
 	background-color: rgba(0,0,0,0.05);
@@ -198,6 +199,8 @@ body{
 	text-align: right;
 	font-size: 12px;
 	line-height: 25px;
+	max-height: 25px;
+	overflow: hidden;
 	transition:0.3s;
 	position: relative;
 	top: 65px;
@@ -237,6 +240,9 @@ body{
 	display: block;
 }
 /* slavat*/
+.salavatBox{
+	margin: 0 auto;
+}
 .salavat{
 	text-align: center;
 	font-size: 1.5em;
@@ -249,7 +255,7 @@ body{
 	padding: 0;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 300px;
+	max-width: 400px;
 }
 .salavat .counter{
 	color: #020558;
