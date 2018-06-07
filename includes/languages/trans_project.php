@@ -27,6 +27,7 @@ class twigTransTerms
 	echo T_("Toman");                                                                 // Line 200
 
 	//--------------------------------------------------------content\main\layout.html
+	echo T_("If religion being in the Pleiades, people from Persia can obtainment to that");// Line 51
 	echo T_("Homepage");                                                              // Line 60
 	echo T_("About");                                                                 // Line 12
 	echo T_("News");                                                                  // Line 34
