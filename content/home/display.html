@@ -3,140 +3,119 @@
 
 {%block content%}
 
- <div class="cn">
-   <div class="wrapper">
-    <div class="f justify-center">
-      <div class="c8 s12 pRa10">
-        <div class="slider">
-          <img class="goldenB" src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample">
+  <div class="f justify-center">
+    <div class="c8 s12 pRa10">
+      <div class="slider">
+        <img class="goldenB" src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample">
+      </div>
+    </div>
+    <div class="c3 sauto salavatBox">
+      <div class="salavat goldenB">
+        <img src="{{url.site}}/static/images/homepage-v3/salavat.png" alt='{%trans "O Allah, let Your Peace come upon Muhammad and the family of Muhammad"%}'>
+        <div class="counter">{{"792046" | fitNumber}}</div>
+        <div class="mB25">{%trans "You also partake in salawat"%}</div>
+        <div class="Allah sB1">
+          <a href="#">{%trans "Say salawat and press here"%}</a>
         </div>
       </div>
-      <div class="c3 sauto salavatBox">
-        <div class="salavat goldenB">
-          <img src="{{url.site}}/static/images/homepage-v3/salavat.png" alt='{%trans "O Allah, let Your Peace come upon Muhammad and the family of Muhammad"%}'>
-          <div class="counter">{{"792046" | fitNumber}}</div>
-          <div class="mB25">{%trans "You also partake in salawat"%}</div>
-          <div class="Allah sB1">
-            <a href="#">{%trans "Say salawat and press here"%}</a>
+    </div>
+  </div>
+
+
+  <section class="f justify-center picto fs07">
+    <div class="c">
+      <a href="{{url.base}}/a/service">
+        <div class="sprite-servants"></div>
+        <h2>{%trans "Servants registration"%}</h2>
+      </a>
+    </div>
+    <div class="c">
+      <a href="{{url.base}}/virtual">
+        <div class="sprite-virtual"></div>
+        <h2>{%trans "Virtual pilgrimage"%}</h2>
+      </a>
+    </div>
+    <div class="c">
+      <a href="{{url.base}}/a/travel">
+        <div class="sprite-travel"></div>
+        <h2>{%trans "Collective or individual travel"%}</h2>
+      </a>
+    </div>
+    <div class="c">
+      <a href="{{url.base}}/a/deputy">
+        <div class="sprite-deputy"></div>
+        <h2>{%trans "Deputy pilgrimage"%}</h2>
+      </a>
+    </div>
+    <div class="c">
+      <a href="{{url.base}}/lottory">
+        <div class="sprite-lottory"></div>
+        <h2>{%trans "Balloting names"%}</h2>
+      </a>
+    </div>
+  </section>
+
+
+  <section class="billingInfo txtC mT50 mB25">
+    <h3 class="sB3">{%trans "Join to the charity and participate in the pilgrimage reward"%}</h3>
+    <p>{%trans "The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt."%} {%trans "Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods."%}</p>
+    <div class="f justify-center">
+      <div class="c6 s12 pA5">
+        <div class="f msg info2">
+          <div class="s12 cauto"><span class="spay-64-melli mT10"></span></div>
+          <div class="c txtC">
+            <p>
+              {%trans "Card number"%} <span class="ltr compact">{{"6037-9918-9994-4486" | fitNumber}}</span><br>
+              {%trans "Account number"%} <span class="ltr compact">{{"0116221622004" | fitNumber}}</span><br>
+              {%trans "Iranian bank Shaba number"%} <span class="ltr compact">{{"IR 19 0170 0000 0011 6221 6220 04" | fitNumber(false)}}</span>
+            </p>
           </div>
         </div>
       </div>
     </div>
-   </div>
- </div>
+  </section>
 
 
- <div class="cn">
-   <div class="wrapper">
-    <section class="f justify-center picto fs07">
-      <div class="c">
-        <a href="{{url.base}}/a/service">
-          <div class="sprite-servants"></div>
-          <h2>{%trans "Servants registration"%}</h2>
-        </a>
-      </div>
-      <div class="c">
-        <a href="{{url.base}}/virtual">
-          <div class="sprite-virtual"></div>
-          <h2>{%trans "Virtual pilgrimage"%}</h2>
-        </a>
-      </div>
-      <div class="c">
-        <a href="{{url.base}}/a/travel">
-          <div class="sprite-travel"></div>
-          <h2>{%trans "Collective or individual travel"%}</h2>
-        </a>
-      </div>
-      <div class="c">
-        <a href="{{url.base}}/a/deputy">
-          <div class="sprite-deputy"></div>
-          <h2>{%trans "Deputy pilgrimage"%}</h2>
-        </a>
-      </div>
-      <div class="c">
-        <a href="{{url.base}}/lottory">
-          <div class="sprite-lottory"></div>
-          <h2>{%trans "Balloting names"%}</h2>
-        </a>
-      </div>
-    </section>
-   </div>
- </div>
-
-
- <div class="cn">
-   <div class="wrapper">
-    <section class="billingInfo txtC mT50 mB25">
-      <h3 class="sB3">{%trans "Join to the charity and participate in the pilgrimage reward"%}</h3>
-      <p>{%trans "The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt."%} {%trans "Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods."%}</p>
-      <div class="f justify-center">
-        <div class="c6 s12 pA5">
-          <div class="f msg info2">
-            <div class="s12 cauto"><span class="spay-64-melli mT10"></span></div>
-            <div class="c txtC">
-              <p>
-                {%trans "Card number"%} <span class="ltr compact">{{"6037-9918-9994-4486" | fitNumber}}</span><br>
-                {%trans "Account number"%} <span class="ltr compact">{{"0116221622004" | fitNumber}}</span><br>
-                {%trans "Iranian bank Shaba number"%} <span class="ltr compact">{{"IR 19 0170 0000 0011 6221 6220 04" | fitNumber(false)}}</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-   </div>
- </div>
-
-
- <div class="cn">
-   <div class="wrapper">
-    <section class="latestNews txtC mT25 mB25">
-      <h3 class="sB3">{%trans "Latest News"%}</h3>
-      <div class="goldenB f">
-        <div class="c8 s12">
-          <img src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample">
-        </div>
-        <div class="c4 s12">
-          <nav class="f f-column list">
-            <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-            <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur </a>
-            <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit </a>
-            <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-            <a class="c f align-center justify-center active" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-            <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, e et dolore magna aliqua. Ut enim ad minim ven</a>
-            <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-            <a class="c txtRa archiveLink" href="{{url.base}}/blog">{%trans "Archive"%}</a>
-          </nav>
-        </div>
-      </div>
-    </section>
-   </div>
- </div>
-
-
- <div class="cn">
-   <div class="wrapper">
-    <section class="f justify-center picto fs09">
-      <div class="c4 s12">
-        <a href="{{url.base}}/farahzad">
-          <div class="sprite-farahzad"></div>
-          <h2>{%trans "Mr.Farahzad's statement"%}</h2>
-        </a>
+  <section class="latestNews txtC mT25 mB25">
+    <h3 class="sB3">{%trans "Latest News"%}</h3>
+    <div class="goldenB f">
+      <div class="c8 s12">
+        <img src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample">
       </div>
       <div class="c4 s12">
-        <a href="{{url.base}}/imani">
-          <div class="sprite-imani"></div>
-        </a>
+        <nav class="f f-column list">
+          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur </a>
+          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit </a>
+          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+          <a class="c f align-center justify-center active" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, e et dolore magna aliqua. Ut enim ad minim ven</a>
+          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+          <a class="c txtRa archiveLink" href="{{url.base}}/blog">{%trans "Archive"%}</a>
+        </nav>
       </div>
-      <div class="c4 s12">
-        <a href="{{url.base}}/admin">
-          <div class="sprite-adminContact"></div>
-          <h2>{%trans "Contact with manager"%}</h2>
-        </a>
-      </div>
-    </section>
-   </div>
- </div>
+    </div>
+  </section>
+
+  <section class="f justify-center picto fs09">
+    <div class="c4 s12">
+      <a href="{{url.base}}/farahzad">
+        <div class="sprite-farahzad"></div>
+        <h2>{%trans "Mr.Farahzad's statement"%}</h2>
+      </a>
+    </div>
+    <div class="c4 s12">
+      <a href="{{url.base}}/imani">
+        <div class="sprite-imani"></div>
+      </a>
+    </div>
+    <div class="c4 s12">
+      <a href="{{url.base}}/admin">
+        <div class="sprite-adminContact"></div>
+        <h2>{%trans "Contact with manager"%}</h2>
+      </a>
+    </div>
+  </section>
 
 {%endblock%}
 
