@@ -499,6 +499,11 @@ body{
 	background-repeat: repeat-x;
 	background-position: bottom;
 	color: #333;
+	animation: animatedBackground 60s linear infinite;
+}
+@keyframes animatedBackground {
+	from { background-position: 0 bottom; }
+	to { background-position: 100% bottom; }
 }
 #sFooter .cn{
 	overflow:hidden;
