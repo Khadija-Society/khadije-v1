@@ -38,7 +38,16 @@
       </div>
       <div class="c p0">
        {{langList({'html':true, 'all': true})}}
-       <div class="hadith m0 s0">{%trans "If religion being in the Pleiades, people from Persia can obtainment to that"%}</div>
+       <div class="hadith m0 s0"><span class="typed"></span>
+
+        <div id="typed-strings" class="hide">
+          <h4>{%trans "If religion being in the Pleiades, people from Persia can obtainment to that"%}</h4>
+          {%if lang.current == 'fa'%}
+          <h4>رسول خدا فرمود: حضرت مریم سیده زمان خودش بود و حضرت خدیجه سیده این زمان.</h4>
+          <h4>پیغمبر اکرم فرمود: با فضیلت‌‌ترین زنان بهشت چهار تا هستند: حضرت خدیجه و حضرت زهرا و حضرت آسیه و حضرت مریم سلام الله علیهن اجمعین.</h4>
+          {%endif%}
+        </div>
+       </div>
       </div>
     </div>
   </div>
