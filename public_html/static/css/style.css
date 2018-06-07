@@ -240,6 +240,9 @@ body{
 /* slider*/
 .slider{
 	margin-bottom:1em;
+	max-width: 800px;
+	max-height: 450px;
+	overflow:hidden;
 }
 .goldenB{
 	padding:1px;
@@ -250,9 +253,6 @@ body{
 	display: block;
 }
 /* slavat*/
-.salavatBox{
-	margin: 0 auto;
-}
 .salavat{
 	text-align: center;
 	font-size: 1.5em;
@@ -446,7 +446,8 @@ body{
 .latestNews{
 	font-size: 1.3em;
 }
-.latestNews img{
+.latestNews img{display: none;}
+.latestNews img.active{
 	display: block;
 }
 .latestNews .list{
@@ -490,6 +491,10 @@ body{
 	border-right: none;
 	border-left: 15px solid #aa6622;
 	left: initial;
+}
+.latestNews .list a h2{
+	margin: 0;
+	font-size: 1em;
 }
 
 /* footer*/
