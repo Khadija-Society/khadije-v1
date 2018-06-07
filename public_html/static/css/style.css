@@ -6,10 +6,10 @@ body{
 }
 .wrapper{
 	background-color: #f5f5f5;
- 	padding:10px 3%;
- 	position: relative;
- 	overflow: hidden;
- 	padding-bottom: 100px;
+	padding:10px 3%;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 100px;
 }
 
 /*add special border*/
@@ -34,8 +34,8 @@ body{
 	position: absolute;
 	right: -22px;
 	top: -2px;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -69px -350px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -69px -350px;
 }
 .sB1:after{
 	content: "";
@@ -45,8 +45,8 @@ body{
 	position: absolute;
 	left: -22px;
 	top: -2px;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -46px -350px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -46px -350px;
 }
 .sB1 a{
 	padding: 0 0.5em;
@@ -93,8 +93,8 @@ body{
 	position: absolute;
 	right: -22px;
 	top: -2px;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -23px -350px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -23px -350px;
 }
 .sB2:after{
 	content: "";
@@ -104,8 +104,8 @@ body{
 	position: absolute;
 	left: -22px;
 	top: -2px;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -0px -350px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -0px -350px;
 }
 .sB3{
 	margin: 0 100px 2em;
@@ -126,8 +126,8 @@ body{
 	position: absolute;
 	right: -100px;
 	top: 0;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -202px -350px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -202px -350px;
 }
 .sB3:after{
 	content: "";
@@ -137,8 +137,8 @@ body{
 	position: absolute;
 	left: -100px;
 	top: 0;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -100px -350px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -100px -350px;
 }
 
 /*site header*/
@@ -170,7 +170,7 @@ body{
 }
 #sHeader .brand img
 {
-  height: 114px;
+	height: 114px;
 	width: 430px;
 	display: block;
 }
@@ -221,9 +221,9 @@ body{
 /*header nav*/
 #sHeaderNav .headerLine{
 	background-color: #f5f5f5;
- 	padding:20px 3% 10px;
- 	position: relative;
- 	overflow: hidden;
+	padding:20px 3% 10px;
+	position: relative;
+	overflow: hidden;
 }
 #sHeaderNav .headerLine:before{
 	content: "";
@@ -286,142 +286,142 @@ body{
 
 /* sprite*/
 [class^="sprite-"] {
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-repeat: no-repeat;
-  background-position: 1000px 1000px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-repeat: no-repeat;
+	background-position: 1000px 1000px;
 }
 .sprite-servants{
 	width: 140px;
 	height: 140px;
-  background-position: -420px 0;
-  margin: 0 auto;
-  transition: 0.3s;
+	background-position: -420px 0;
+	margin: 0 auto;
+	transition: 0.3s;
 }
 .sprite-servants:hover{
-  background-position: -420px -140px;
+	background-position: -420px -140px;
 }
 .sprite-virtual{
 	width: 140px;
 	height: 140px;
-  background-position: -560px 0;
-  margin: 0 auto;
-  transition: 0.3s;
+	background-position: -560px 0;
+	margin: 0 auto;
+	transition: 0.3s;
 }
 .sprite-virtual:hover{
-  background-position: -560px -140px;
+	background-position: -560px -140px;
 }
 .sprite-travel{
 	width: 140px;
 	height: 140px;
-  background-position: -700px 0;
-  margin: 0 auto;
-  transition: 0.3s;
+	background-position: -700px 0;
+	margin: 0 auto;
+	transition: 0.3s;
 }
 .sprite-travel:hover{
-  background-position: -700px -140px;
+	background-position: -700px -140px;
 }
 .sprite-deputy{
 	width: 140px;
 	height: 140px;
-  background-position: -280px 0;
-  margin: 0 auto;
-  transition: 0.3s;
+	background-position: -280px 0;
+	margin: 0 auto;
+	transition: 0.3s;
 }
 .sprite-deputy:hover{
-  background-position: -280px -140px;
+	background-position: -280px -140px;
 }
 .sprite-lottory{
 	width: 140px;
 	height: 140px;
-  background-position: 0 0;
-  margin: 0 auto;
-  transition: 0.3s;
+	background-position: 0 0;
+	margin: 0 auto;
+	transition: 0.3s;
 }
 .sprite-lottory:hover{
-  background-position: 0 -140px;
+	background-position: 0 -140px;
 }
 
 .sprite-farahzad{
 	width: 140px;
 	height: 140px;
-  background-position: -840px 0;
-  margin: 0 auto;
+	background-position: -840px 0;
+	margin: 0 auto;
 }
 .sprite-farahzad:hover{
-  background-position: -840px -140px;
+	background-position: -840px -140px;
 }
 .sprite-imani{
 	width: 140px;
 	height: 210px;
-  background-position: -980px 0;
-  margin: 0 auto;
+	background-position: -980px 0;
+	margin: 0 auto;
 }
 .sprite-imani:hover{
-  background-position: -980px -210px;
+	background-position: -980px -210px;
 }
 .sprite-adminContact{
 	width: 140px;
 	height: 140px;
-  background-position: -140px 0;
-  margin: 0 auto;
+	background-position: -140px 0;
+	margin: 0 auto;
 }
 .sprite-adminContact:hover{
-  background-position: -140px -140px;
+	background-position: -140px -140px;
 }
 /* social links*/
 .sprite-sapp{
-  background-position: 0 -300px;
+	background-position: 0 -300px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 .sprite-eitaa{
-  background-position: -32px -300px;
+	background-position: -32px -300px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 .sprite-aparat{
-  background-position: -96px -300px;
+	background-position: -96px -300px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 .sprite-telegram{
-  background-position: -160px -300px;
+	background-position: -160px -300px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 .sprite-whatsapp{
-  background-position: -192px -300px;
+	background-position: -192px -300px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 .sprite-instagram{
-  background-position: -288px -300px;
+	background-position: -288px -300px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 .sprite-twitter{
-  background-position: -320px -140px;
+	background-position: -320px -140px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 .sprite-facebook{
-  background-position: -352px -140px;
+	background-position: -352px -140px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 .sprite-youtube{
-  background-position: -384px -140px;
+	background-position: -384px -140px;
 	width: 32px;
 	height: 32px;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 /* picto styles*/
@@ -475,21 +475,21 @@ body{
 	color: #fff
 }
 .latestNews .list a.active::before{
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 15px solid #aa6622;
-  position: absolute;
-  left: -15px;
-  z-index: 2;
+	content: "";
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid #aa6622;
+	position: absolute;
+	left: -15px;
+	z-index: 2;
 }
 .rtl .latestNews .list a.active::before{
-  right: -15px;
-  border-right: none;
-  border-left: 15px solid #aa6622;
-  left: initial;
+	right: -15px;
+	border-right: none;
+	border-left: 15px solid #aa6622;
+	left: initial;
 }
 
 /* footer*/
@@ -540,8 +540,8 @@ body{
 	right: -22px;
 	top: 70px;
 	margin:0 auto;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-position: -450px -300px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -450px -300px;
 }
 #sFooter .brand h2{
 	display: none;
@@ -599,9 +599,9 @@ body{
 	left: 0;
 	top: -30px;
 	margin:0 auto;
-  background-image: url('../images/homepage-v3/sprite.png');
-  background-color: #e4e4e4;
-  background-position: 0 -420px;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-color: #e4e4e4;
+	background-position: 0 -420px;
 }
 #sFooter #copyright{
 	border-top: 1px solid #aa6523;
@@ -651,12 +651,12 @@ body{
 	.sB3:before{
 		width: 50px;
 		right: -50px;
-	  background-position: -202px -350px;
+		background-position: -202px -350px;
 	}
 	.sB3:after{
 		width: 50px;
 		left: -50px;
-	  background-position: -140px -350px;
+		background-position: -140px -350px;
 	}
 }
 
@@ -686,12 +686,12 @@ body{
 	.sB3:before{
 		width: 30px;
 		right: -30px;
-	  background-position: -202px -350px;
+		background-position: -202px -350px;
 	}
 	.sB3:after{
 		width: 30px;
 		left: -30px;
-	  background-position: -170px -350px;
+		background-position: -170px -350px;
 	}
 }
 
