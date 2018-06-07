@@ -2,6 +2,7 @@
 function pushState()
 {
   bindLatestNews();
+  runLightBox();
 }
 
 $(function()
@@ -39,6 +40,10 @@ function changeToNews(_to)
   }
 }
 
+function runLightBox()
+{
+  lightGallery(document.getElementById('lightgallery'));
+}
 
 
 
