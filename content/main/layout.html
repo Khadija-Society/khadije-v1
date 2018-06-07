@@ -249,8 +249,9 @@
 
   <div class="cn">
     <div class="f">
-      <div class="c6 s12 pRa10">
+      <div class="c6 s12 pRa25">
         <p>{%trans "Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities."%}</p>
+        {{block('pageSocialLinks')}}
       </div>
       <div class="c3 s6 pRa10">
         <h3>{{site.title}}</h3>
@@ -381,39 +382,33 @@
 
 
 {%block pageSocialLinks%}
-<nav class="share1">
+<nav class="shareC txtRa">
 {%if social.facebook%}
-  <a data-direct target='_blank' href="https://www.facebook.com/{{social.facebook}}" class="facebook">{{site.title}} facebook</a>
+  <a data-direct target='_blank' href="https://www.facebook.com/{{social.facebook}}" class="sprite-facebook">{{site.title}} facebook</a>
 {%endif%}
 {%if social.twitter%}
-  <a data-direct target='_blank' href="https://twitter.com/{{social.twitter}}" class="twitter">{{site.title}} twitter</a>
+  <a data-direct target='_blank' href="https://twitter.com/{{social.twitter}}" class="sprite-twitter">{{site.title}} twitter</a>
 {%endif%}
 {%if social.googleplus%}
-  <a data-direct target='_blank' href="https://plus.google.com/{{social.googleplus}}" class="googleplus">{{site.title}} google+</a>
+  <a data-direct target='_blank' href="https://plus.google.com/{{social.googleplus}}" class="sprite-googleplus">{{site.title}} google+</a>
 {%endif%}
 {%if social.telegram%}
-  <a data-direct target='_blank' href="https://t.me/{{social.telegram}}" class="telegram" title='تلگرام'>{{site.title}} telegram</a>
+  <a data-direct target='_blank' href="https://t.me/{{social.telegram}}" class="sprite-telegram" title='تلگرام'>{{site.title}} telegram</a>
 {%endif%}
 {%if social.instagram%}
-  <a data-direct target='_blank' href="https://instagram.com/{{social.instagram}}" class="instagram" title='اینستاگرام'>{{site.title}} instagram</a>
+  <a data-direct target='_blank' href="https://instagram.com/{{social.instagram}}" class="sprite-instagram" title='اینستاگرام'>{{site.title}} instagram</a>
 {%endif%}
 {%if social.linkedin%}
-  <a data-direct target='_blank' href="https://www.linkedin.com/{{social.linkedin}}" class="linkedin">{{site.title}} linkedin</a>
+  <a data-direct target='_blank' href="https://www.linkedin.com/{{social.linkedin}}" class="sprite-linkedin">{{site.title}} linkedin</a>
 {%endif%}
 {%if social.aparat%}
-  <a data-direct target='_blank' href="https://www.aparat.com/{{social.aparat}}" class="aparat" title='آپارات'>
-    <img src="{{url.site}}/static/images/homepage/share/aparat_64.png" alt="aparat">
+  <a data-direct target='_blank' href="https://www.aparat.com/{{social.aparat}}" class="sprite-aparat" title='{%trans "Aparat"%}'>
   </a>
 {%endif%}
-  <a data-direct target='_blank' href="https://eitaa.com/mhkhadije" class="aparat" title='ایتا'>
-    <img src="{{url.site}}/static/images/homepage/share/eitaa.png" alt="eitaa">
+  <a data-direct target='_blank' href="https://eitaa.com/mhkhadije" class="sprite-eitaa" title='{%trans "Eitaa"%}'>
   </a>
-  <a data-direct target='_blank' href="https://sapp.ir/mhkhadije" class="aparat" title='سروش'>
-    <img src="{{url.site}}/static/images/homepage/share/soroush.png" alt="soroush">
+  <a data-direct target='_blank' href="https://sapp.ir/mhkhadije" class="sprite-sapp" title='{%trans "Soroush App"%}'>
   </a>
-{%if false%}
-  <a data-direct target='_blank' href="{{url.base}}/rss" class="rss">{{site.title}} rss</a>
-{%endif%}
 </nav>
 {%endblock%}
 

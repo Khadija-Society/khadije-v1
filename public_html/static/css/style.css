@@ -361,7 +361,63 @@ body{
 .sprite-adminContact:hover{
   background-position: -140px -140px;
 }
+/* social links*/
+.sprite-sapp{
+  background-position: 0 -300px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
+.sprite-eitaa{
+  background-position: -32px -300px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
+.sprite-aparat{
+  background-position: -96px -300px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
+.sprite-telegram{
+  background-position: -160px -300px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
+.sprite-whatsapp{
+  background-position: -192px -300px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
+.sprite-instagram{
+  background-position: -288px -300px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
+.sprite-twitter{
+  background-position: -320px -140px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
+.sprite-facebook{
+  background-position: -352px -140px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
+.sprite-youtube{
+  background-position: -384px -140px;
+	width: 32px;
+	height: 32px;
+  margin: 0 auto;
+}
 
+/* picto styles*/
 .picto{
 	text-align: center;
 }
@@ -481,6 +537,20 @@ body{
 }
 #sFooter nav a:focus{
 	background-color: rgba(0,0,0,0.1);
+}
+/* share links*/
+.shareC a{
+	position:relative;
+	display:inline-block!important;
+	overflow:hidden;
+	margin:2px;
+	width:32px;
+	height:32px;
+	padding: 0!important;
+	font-size:0!important;
+	line-height:0!important;
+	border-radius:1px;
+	background-color:rgba(0,0,0,0.02);
 }
 #sFooter hr{
 	margin: 20px 0;
