@@ -146,6 +146,7 @@ body{
 	background-color: #020558;
 	background-image: url('../images/homepage-v3/header-pattern.png');
 	height: 120px;
+	animation: animatedBackground 60s linear infinite reverse;
 	background-position: center;
 	color: #eee;
 	user-select: none;
