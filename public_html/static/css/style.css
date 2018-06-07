@@ -477,10 +477,16 @@ body{
   height: 0;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-  border-left: 15px solid #aa6622;
+  border-right: 15px solid #aa6622;
   position: absolute;
-  right: -15px;
+  left: -15px;
   z-index: 2;
+}
+.rtl .latestNews .list a.active::before{
+  right: -15px;
+  border-right: none;
+  border-left: 15px solid #aa6622;
+  left: initial;
 }
 
 /* footer*/
