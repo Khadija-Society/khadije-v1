@@ -490,6 +490,9 @@ body{
 	background-position: bottom;
 	color: #333;
 }
+#sFooter .cn{
+	overflow:hidden;
+}
 #sFooter .brand{
 	width: 140px;
 	height: 140px;
@@ -543,6 +546,7 @@ body{
 /* share links*/
 .shareC{
 	user-select: none;
+	margin: 1em auto 2em;
 }
 .shareC a{
 	position:relative;
@@ -561,11 +565,13 @@ body{
 	border-color: #aa6523;
 	position: relative;
 	margin:50px auto 70px;
+	max-width: 100%;
 }
 #sFooter hr:before{
 	content: "";
 	height:60px;
 	width: 580px;
+	max-width: 100%;
 	position: absolute;
 	right: 0;
 	left: 0;
