@@ -30,7 +30,7 @@
   <div class="cn">
     <div class="f">
       <div class="cauto">
-        <a href="{{url.base}}/" class="brand">
+        <a href="{{url.here}}/" class="brand">
           <img src="{{url.site}}/static/images/homepage-v3/header-logo-{{lang.current}}.png" alt='{{site.title}} | {{site.desc}}' title='{{site.desc}}'>
           <h1>{{site.title}}</h1>
           <h2>{{site.desc}}</h2>
@@ -56,16 +56,16 @@
   <div class="cn">
    <div class="headerLine f">
     <div class="mainNav sB1 c s0">
-     <a href="{{url.base}}/"><span class="sf-home pRa5 fs12"></span>{%trans "Homepage"%}</a>
-     <a href="{{url.base}}/about">{%trans "About"%}</a>
-     <a href="{{url.base}}/blog">{%trans "News"%}</a>
-     <a href="{{url.base}}/khadije">{%trans "Khadije Wiki"%}</a>
-     <a href="{{url.base}}/services">{%trans "Services"%}</a>
-     <a href="{{url.base}}/delneveshteha" data-direct>{%trans "Self expressions"%}</a>
-     <a href="{{url.base}}/festival" data-direct>{%trans "Festival"%}</a>
+     <a href="{{url.here}}/"><span class="sf-home pRa5 fs12"></span>{%trans "Homepage"%}</a>
+     <a href="{{url.here}}/about">{%trans "About"%}</a>
+     <a href="{{url.here}}/blog">{%trans "News"%}</a>
+     <a href="{{url.here}}/khadije">{%trans "Khadije Wiki"%}</a>
+     <a href="{{url.here}}/services">{%trans "Services"%}</a>
+     <a href="{{url.here}}/delneveshteha" data-direct>{%trans "Self expressions"%}</a>
+     <a href="{{url.here}}/festival" data-direct>{%trans "Festival"%}</a>
     </div>
     <div class="donate sB2 cauto">
-     <a href="{{url.base}}/donate">{%trans "Donate"%}</a>
+     <a href="{{url.here}}/donate">{%trans "Donate"%}</a>
     </div>
    </div>
   </div>
@@ -76,10 +76,10 @@
 <div id="sitesidebarHandler"></div>
 <aside id='sitesidebar' class="unselectable scr">
   <ul class="sidenav" data-xhr="sidenav">
-    <li><a tabindex='-1' href="{{url.base}}">صفحه نخست</a></li>
-    <li><a tabindex='-1' href="{{url.base}}/about">درباره موسسه</a></li>
-    <li><a tabindex='-1' href="{{url.base}}/donate">پرداخت کمک نقدی</a></li>
-    <li><a tabindex='-1' href="{{url.base}}/a" data-direct>ثبت‌نام تشرف یا خادمی</a></li>
+    <li><a tabindex='-1' href="{{url.here}}">صفحه نخست</a></li>
+    <li><a tabindex='-1' href="{{url.here}}/about">درباره موسسه</a></li>
+    <li><a tabindex='-1' href="{{url.here}}/donate">پرداخت کمک نقدی</a></li>
+    <li><a tabindex='-1' href="{{url.here}}/a" data-direct>ثبت‌نام تشرف یا خادمی</a></li>
   </ul>
 </aside>
 {%endif%}
@@ -89,7 +89,7 @@
 
 {%block pageFooter%}
 <footer id='sFooter'>
-  <a href="{{url.base}}/" class="brand p0" title='{{site.desc}}'>
+  <a href="{{url.here}}/" class="brand p0" title='{{site.desc}}'>
     <img src="{{url.site}}/static/images/homepage-v3/khadije.svg" alt='{{site.desc}}'>
     <h2>{{site.title}}</h2>
   </a>
@@ -103,12 +103,12 @@
             </p>
 {%if login.id%}
           <div>
-            <a href="{{url.base}}/a" data-direct class="btn outline primary pRa10">{%trans "User Panel"%}</a>
+            <a href="{{url.here}}/a" data-direct class="btn outline primary pRa10">{%trans "User Panel"%}</a>
           </div>
 {%else%}
           <div>
-            <a href="{{url.base}}/enter" data-direct class="btn outline primary pRa10">{%trans "Enter"%}</a>
-            <a href="{{url.base}}/enter/signup" data-direct class="btn outline primary pRa10">{%trans "Signup in Khadije charity"%}</a>
+            <a href="{{url.here}}/enter" data-direct class="btn outline primary pRa10">{%trans "Enter"%}</a>
+            <a href="{{url.here}}/enter/signup" data-direct class="btn outline primary pRa10">{%trans "Signup in Khadije charity"%}</a>
           </div>
 {%endif%}
 
@@ -127,19 +127,19 @@
       <div class="c3 s6 pRa10">
         <h3>{{site.title}}</h3>
         <nav>
-          <a href="{{url.base}}/about">{%trans "About"%}</a>
-          <a href="{{url.base}}/misson">{%trans "Mission"%}</a>
-          <a href="{{url.base}}/vison">{%trans "Vision"%}</a>
-          <a href="{{url.base}}/honors">{%trans "Honors"%}</a>
-          <a href="{{url.base}}/contact">{%trans "contact"%}</a>
+          <a href="{{url.here}}/about">{%trans "About"%}</a>
+          <a href="{{url.here}}/misson">{%trans "Mission"%}</a>
+          <a href="{{url.here}}/vison">{%trans "Vision"%}</a>
+          <a href="{{url.here}}/honors">{%trans "Honors"%}</a>
+          <a href="{{url.here}}/contact">{%trans "contact"%}</a>
         </nav>
       </div>
       <div class="c3 s6">
         <h3>{%trans "Encyclopedia of Hazrat Khadijah"%}</h3>
         <nav>
-          <a href="{{url.base}}/wiki/biography">{%trans "Biography"%}</a>
-          <a href="{{url.base}}/wiki/bibliography">{%trans "Bibliography"%}</a>
-          <a href="{{url.base}}/wiki/about">{%trans "Specialized sites"%}</a>
+          <a href="{{url.here}}/wiki/biography">{%trans "Biography"%}</a>
+          <a href="{{url.here}}/wiki/bibliography">{%trans "Bibliography"%}</a>
+          <a href="{{url.here}}/wiki/about">{%trans "Specialized sites"%}</a>
         </nav>
       </div>
     </div>
@@ -148,30 +148,30 @@
       <div class="c s6">
         <h3>{%trans "Pilgrimage"%}</h3>
         <nav>
-          <a href="{{url.base}}/seputy">{%trans "Deputy pilgrimage"%}</a>
-          <a href="{{url.base}}/virtual">{%trans "Virtual pilgrimage"%}</a>
+          <a href="{{url.here}}/seputy">{%trans "Deputy pilgrimage"%}</a>
+          <a href="{{url.here}}/virtual">{%trans "Virtual pilgrimage"%}</a>
         </nav>
       </div>
       <div class="c s6">
         <h3>{%trans "Requests"%}</h3>
         <nav>
-          <a href="{{url.base}}/a/trip">{%trans "Individual registration"%}</a>
-          <a href="{{url.base}}/a/group">{%trans "Group registration"%}</a>
-          <a href="{{url.base}}/a/service">{%trans "Servants registration"%}</a>
+          <a href="{{url.here}}/a/trip">{%trans "Individual registration"%}</a>
+          <a href="{{url.here}}/a/group">{%trans "Group registration"%}</a>
+          <a href="{{url.here}}/a/service">{%trans "Servants registration"%}</a>
         </nav>
       </div>
       <div class="c s6">
         <h3>{%trans "Services"%}</h3>
         <nav>
-          <a href="{{url.base}}/a/advice">{%trans "Consulting service"%}</a>
-          <a href="{{url.base}}/a/health">{%trans "Health service"%}</a>
+          <a href="{{url.here}}/a/advice">{%trans "Consulting service"%}</a>
+          <a href="{{url.here}}/a/health">{%trans "Health service"%}</a>
         </nav>
       </div>
       <div class="c s6">
         <h3>{%trans "Help"%}</h3>
         <nav>
-          <a href="{{url.base}}/donate">{%trans "Donate"%}</a>
-          <a href="{{url.base}}/doners">{%trans "Doners"%}</a>
+          <a href="{{url.here}}/donate">{%trans "Donate"%}</a>
+          <a href="{{url.here}}/doners">{%trans "Doners"%}</a>
         </nav>
       </div>
       <div class="c s6">
