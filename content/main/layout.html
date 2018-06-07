@@ -8,19 +8,14 @@
  <div class="cn">
   <div class="wrapper" data-xhr='wrapper'>
 {%block content%}
-   <div class="pageTitle">
+   <div class="pageData">
 {%if page.title%}
-    <h1><a href="{{url.pwd}}">{{page.title}}</a></h1>
+    <h2 class="pageTitle"><a href="{{url.pwd}}" class="sB3">{{page.title}}</a></h2>
 {%endif%}
-{%if page.desc%}
-    <h2>{{page.desc}}</h2>
-{%endif%}
-  </div>
-  <div class="pageData">
 {%block pageData%}{%endblock%}
   </div>
 {%endblock%}
-  </div>
+ </div>
 </div>
 
 {{block('pageFooter')}}
