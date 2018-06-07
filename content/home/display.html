@@ -84,7 +84,7 @@
       <div class="c8 s12">
         <div class="preview">
 {%for key, myNews in lastPostsRecord%}
-          <a href="{{url.base}}/{{myNews.url}}" data-index='{{key}}'>
+          <a href="{{url.base}}/{{myNews.url}}" data-index='{{key}}' class="f align-center justify-center {%if key == 0%}active{%endif%}">
             <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}"">
             <div class="meta">
               <h2>{{myNews.title}}</h2>
@@ -92,13 +92,12 @@
             </div>
           </a>
 {%endfor%}
-          <img src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample" class="default active2">
         </div>
       </div>
-      <div class="c4 s12">
+      <div class="c4 s12 listBox">
         <nav class="f f-column list">
 {%for key, myNews in lastPostsRecord%}
-          <a class="c f align-center justify-center" href="{{url.base}}/{{myNews.url}}" data-index='{{key}}'>{{myNews.title}}</a>
+          <a class="c f align-center justify-center {%if key == 0%}active{%endif%}" href="{{url.base}}/{{myNews.url}}" data-index='{{key}}'>{{myNews.title}}</a>
 {%endfor%}
           <a class="c txtRa archiveLink" href="{{url.base}}/blog">{%trans "Archive"%}</a>
         </nav>
