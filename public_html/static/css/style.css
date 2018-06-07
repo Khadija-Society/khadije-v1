@@ -634,6 +634,7 @@ body{
 
 .pageData .msg{
 	border-color: #aa6523;
+	background-color: #eee;
 }
 .pageData .msg:hover{
 	border-color: #5a2f06;
