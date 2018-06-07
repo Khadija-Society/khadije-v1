@@ -19,8 +19,6 @@
 
 {%block posts%}
   <section class="postPreview">
-    <h2>{{datarow.title | raw}}</h2>
-    <h3 class="fs12">{{datarow.subtitle | raw}}</h3>
 {%if datarow.meta.thumb%}
     <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
 {%endif%}
@@ -28,13 +26,10 @@
     {{datarow.content | raw}}
     {{block('imagegallery')}}
 
-
-    <div class="tagBox msg">
-      {{tags({"format" : 'html'})}}
-    </div>
+    <div class="tagBox msg">{{tags({"format" : 'html'})}}</div>
 
 {%if datarow.datemodified%}
-    <div class='msg f'>
+    <div class='msg f mT20'>
       <div class="c">{{datarow.publishdate | tdate('d F Y - H:i')}}</div>
       <div class="cauto os">ویرایش شده در <time datetime="{{datarow.datemodified}}">{{datarow.datemodified | sdate}}</time></div>
     </div>
