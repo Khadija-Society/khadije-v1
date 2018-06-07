@@ -20,9 +20,9 @@
             </div>
             <div class="c desc pLa10 f align-center justify-center">
 {%if value.author%}
-              <b>{{value.author}}</b>
+              <h3 class="txtB">{{value.author}}</h3>
 {%endif%}
-              {{value.content | nl2br}}
+              <div>{{value.content | nl2br}}</div>
             </div>
             <div class="cauto os s12 f align-center justify-center">
               <input class="loveBtn" type="checkbox" id="love{{key}}" name='love{{key}}' data-ajaxify data-data='{"like": "{{value.id}}"}' data-method='post' data-continue data-fn='checkLoves' {%if value.id in likes%}checked{%endif%}>
@@ -36,8 +36,8 @@
 {%endif%}
             <span class="badge primary">{%set myStatus = value.status%}{%trans myStatus%}</span>
 {%endif%}
-            <label class="badge danger" for='love{{key}}' title='{%trans "People who sympathetic with this person"%}'><span data-val='{{(value.plus - value.minus)}}'>{{(value.plus - value.minus) | fitNumber}}</span><i class="sf-heart-o"></i></label>
-            <span class="badge" title='{{value.datecreated | tdate(true)}}'>{{value.datecreated | sdate}}</span>
+            <label class="badge danger" for='love{{key}}' title='{%trans "People who sympathetic with this person"%}'><span data-val='{{(value.plus - value.minus)}}'>{{(value.plus - value.minus) | fitNumber}}</span> <i class="sf-heart-o"></i></label>
+            <span class="badge" title='{{value.datecreated | tdate(true)}}'>{{value.datecreated | sdate('year')}}</span>
           </div>
         </div>
 {%endfor%}
