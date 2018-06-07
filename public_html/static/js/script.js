@@ -1,12 +1,12 @@
 
 function pushState()
 {
+  bindLatestNews();
 }
 
 $(function()
 {
   typeTitles();
-  bindLatestNews();
 });
 
 
@@ -14,6 +14,7 @@ $(function()
 
 function bindLatestNews()
 {
+  $('.latestNews .list a').off('mouseover');
   $('.latestNews .list a').on('mouseover', function()
   {
     var selectedIndex = $(this).attr('data-index');
