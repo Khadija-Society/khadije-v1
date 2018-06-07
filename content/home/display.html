@@ -78,19 +78,28 @@
 
   <section class="latestNews txtC mT25 mB25">
     <h3 class="sB3">{%trans "Latest News"%}</h3>
+    {%set lastPostsRecord = posts({"limit" : 7})%}
+    {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
     <div class="goldenB f">
       <div class="c8 s12">
-        <img src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample">
+        <div class="preview">
+{%for key, myNews in lastPostsRecord%}
+          <a href="{{url.base}}/{{myNews.url}}" data-index='key'>
+            <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}" class="{%if key == 0%}active{%endif%}">
+            <div class="meta">
+              <h2>{{myNews.title}}</h2>
+              <p>{{myNews.excerpt}}</p>
+            </div>
+          </a>
+{%endfor%}
+          <img src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample" class="default">
+        </div>
       </div>
       <div class="c4 s12">
         <nav class="f f-column list">
-          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur </a>
-          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit </a>
-          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-          <a class="c f align-center justify-center active" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, e et dolore magna aliqua. Ut enim ad minim ven</a>
-          <a class="c f align-center justify-center" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+{%for key, myNews in lastPostsRecord%}
+          <a class="c f align-center justify-center" href="{{url.base}}/{{myNews.url}}" data-index='key'>{{myNews.title}}</a>
+{%endfor%}
           <a class="c txtRa archiveLink" href="{{url.base}}/blog">{%trans "Archive"%}</a>
         </nav>
       </div>

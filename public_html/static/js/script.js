@@ -6,13 +6,24 @@ function pushState()
 $(function()
 {
   typeTitles();
+  bindLatestNews();
 });
 
 
 
 
+function bindLatestNews()
+{
+  $('.latestNews .list a').on('mouseover', function()
+  {
+    $(this).parents('.latestNews').find('.active').removeClass('active')
+    $(this).addClass('active');
+    var selected = $(this).attr('data-index');
+    console.log(selected);
+    console.log($(this));
+  });
 
-
+}
 
 
 
