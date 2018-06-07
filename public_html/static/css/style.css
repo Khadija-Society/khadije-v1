@@ -477,10 +477,10 @@ body{
 	line-height: 20px;
 }
 #sFooter nav a:hover{
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.05);
 }
 #sFooter nav a:focus{
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(0,0,0,0.1);
 }
 #sFooter hr{
 	margin: 20px 0;
