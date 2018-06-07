@@ -1,9 +1,12 @@
 
 function pushState()
 {
-  typeTitles();
 }
 
+$(function()
+{
+  typeTitles();
+});
 
 
 
