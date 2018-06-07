@@ -461,10 +461,17 @@ body{
 #sFooter .brand h2{
 	display: none;
 }
+#sFooter h3{
+	font-size: 1.4em;
+	color: #777;
+}
+#sFooter nav{
+	margin-bottom:1em;
+}
 #sFooter nav a{
 	display: block;
 	transition:0.3s;
-	padding:5px 1em;
+	padding:5px 0.5em;
 	line-height: 20px;
 }
 #sFooter nav a:hover{
@@ -472,6 +479,9 @@ body{
 }
 #sFooter nav a:focus{
 	background-color: rgba(0,0,0,0.2);
+}
+#sFooter hr{
+	margin: 20px 0;
 }
 
 
