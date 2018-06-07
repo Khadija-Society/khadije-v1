@@ -638,6 +638,26 @@ body{
 .pageData .msg:hover{
 	border-color: #5a2f06;
 }
+.pageData hr{
+	border-color: #00aaaa;
+	position: relative;
+	margin:50px auto 70px;
+	max-width: 100%;
+}
+.pageData hr:before{
+	content: "";
+	height:40px;
+	width: 120px;
+	max-width: 100%;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: -20px;
+	margin:0 auto;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-color: #f5f5f5;
+	background-position: -320px -350px;
+}
 
 
 
