@@ -618,6 +618,12 @@ body{
 	font-size: 1.5em;
 }
 
+.pageData .msg{
+	border-color: #aa6523;
+}
+.pageData .msg:hover{
+	border-color: #aa6523;
+}
 
 
 
