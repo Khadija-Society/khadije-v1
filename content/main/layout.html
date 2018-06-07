@@ -5,29 +5,24 @@
 {%block body%}
 {{block('pageHeader')}}
 
- <div class="wrapper2" data-xhr='wrapper'>
+ <div class="cn">
+  <div class="wrapper" data-xhr='wrapper'>
 {%block content%}
-  <div class="page-title">
-   <div class="cn">
-<!-- {%if page.title%}
+   <div class="pageTitle">
+{%if page.title%}
     <h1><a href="{{url.pwd}}">{{page.title}}</a></h1>
 {%endif%}
 {%if page.desc%}
     <h2>{{page.desc}}</h2>
-{%endif%} -->
-   </div>
+{%endif%}
   </div>
+  <div class="pageData">
+{%block pageData%}{%endblock%}
+  </div>
+{%endblock%}
+  </div>
+</div>
 
-{%block pageData%}
-  <div class="pc">
-   <div class="cn">
-{%block page%}{%endblock%}
-   </div>
-  </div>
-{%block pageExtra%}{%endblock%}
-{%endblock%}
-{%endblock%}
- </div>
 {{block('pageFooter')}}
 {%endblock%}
 
