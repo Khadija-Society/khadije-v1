@@ -215,10 +215,13 @@ body{
 	text-align: left;
 }
 /*header nav*/
-#sHeaderNav .wrapper{
-	padding-top: 20px
+#sHeaderNav .headerLine{
+	background-color: #f5f5f5;
+ 	padding:20px 3% 10px;
+ 	position: relative;
+ 	overflow: hidden;
 }
-#sHeaderNav .wrapper:before{
+#sHeaderNav .headerLine:before{
 	content: "";
 	height:2px;
 	width: 100%;
