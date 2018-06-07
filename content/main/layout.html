@@ -5,7 +5,7 @@
 {%block body%}
 {{block('pageHeader')}}
 
- <div class="wrapper" data-xhr='wrapper'>
+ <div class="wrapper2" data-xhr='wrapper'>
 {%block content%}
   <div class="page-title">
    <div class="cn">
@@ -28,7 +28,7 @@
 {%endblock%}
 {%endblock%}
  </div>
-{{block('pageFooter2')}}
+{{block('pageFooter')}}
 {%endblock%}
 
 
@@ -80,7 +80,7 @@
           <img class="goldenB" src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample">
         </div>
       </div>
-      <div class="c4 sauto">
+      <div class="c3 sauto salavatBox">
         <div class="salavat goldenB">
           <img src="{{url.site}}/static/images/homepage-v3/salavat.png" alt='{%trans "O Allah, let Your Peace come upon Muhammad and the family of Muhammad"%}'>
           <div class="counter">{{"792046" | fitNumber}}</div>
@@ -241,6 +241,37 @@
 
 
 {%block pageFooter%}
+<footer id='sFooter'>
+  <a href="{{url.base}}/" class="brand">
+    <img src="{{url.site}}/static/images/homepage-v3/khadije.svg" alt='{{site.desc}}' title='{{site.desc}}'>
+    <h2>{{site.title}}</h2>
+  </a>
+
+  <div class="cn">
+    <div class="f">
+      <div class="c6 s12 pRa10">
+        <p>{%trans "Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities."%}</p>
+      </div>
+      <div class="c3 s12 pRa10">
+        <h3>{{site.title}}</h3>
+        <nav>
+          <a href="{{url.base}}/about">{%trans "About"%}</a>
+          <a href="{{url.base}}/misson">{%trans "Mission"%}</a>
+          <a href="{{url.base}}/vison">{%trans "Vision"%}</a>
+          <a href="{{url.base}}/honors">{%trans "Honors"%}</a>
+          <a href="{{url.base}}/contact">{%trans "contact"%}</a>
+        </nav>
+      </div>
+      <div class="c3 s12">
+
+      </div>
+    </div>
+  </div>
+</footer>
+{%endblock%}
+
+
+{%block pageFooterOld%}
  <footer id='tfooter'>
   <div class="cn">
     <div class="f top">
