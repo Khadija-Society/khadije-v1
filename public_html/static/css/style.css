@@ -429,6 +429,9 @@ body{
 	margin-top: 100px;
 	padding-top: 120px;
 	position: relative;
+	background-image: url('../images/homepage-v3/footer-pattern.png');
+	background-repeat: repeat-x;
+	background-position: bottom;
 }
 #sFooter .brand{
 	width: 140px;
@@ -494,7 +497,7 @@ body{
 	display: inline-block;
 }
 #sFooter #copyright a:hover{border-bottom:1px dashed #aaa}
-#sFooter #copyright a:focus{border-bottom:1px dashed #777}
+#sFooter #copyright a:focus{background-color: rgba(0,0,0,0.1);}
 
 
 
