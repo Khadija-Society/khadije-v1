@@ -451,6 +451,7 @@ body{
 	padding:5px 1.2em;
 	overflow: hidden;
 	position: relative;
+	min-height: 30px;
 }
 .latestNews .list a.archiveLink{
 	background-color: #ddd;
@@ -638,8 +639,6 @@ body{
 	}
 	.sB3{
 		margin: 0 30px 1em;
-		padding: 0;
-		line-height:1.2!important;
 		height:auto;
 		font-size: 2rem;
 	}
