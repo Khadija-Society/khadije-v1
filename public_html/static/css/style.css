@@ -428,7 +428,6 @@ body{
 	background-color: #e4e4e4;
 	margin-top: 100px;
 	padding-top: 120px;
-	padding-bottom: 120px;
 	position: relative;
 }
 #sFooter .brand{
@@ -483,7 +482,19 @@ body{
 #sFooter hr{
 	margin: 20px 0;
 }
-
+#sFooter #copyright{
+	border-top: 1px solid #aa6523;
+	padding: 1em 0;
+}
+#sFooter #copyright a{
+	padding:5px 0;
+	transition:0.3s;
+	line-height: 25px;
+	border-bottom:1px dashed transparent;
+	display: inline-block;
+}
+#sFooter #copyright a:hover{border-bottom:1px dashed #aaa}
+#sFooter #copyright a:focus{border-bottom:1px dashed #777}
 
 
 

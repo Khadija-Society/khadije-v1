@@ -11,6 +11,15 @@ class view
 
 		\dash\data::page_desc(\dash\data::site_desc(). ' | '. \dash\data::site_slogan());
 
+		\dash\data::page_copyright(
+			T_('© :year :site. All right reserved.',
+			[
+				'year' => \dash\date::tdate(false, "year"),
+				'site' => "<a href='". \dash\url::base(). "' title='". \dash\data::site_desc() ."'>". \dash\data::site_title(). "</a>"
+			]
+		));
+
+
 		// for pushstate of main page
 		// \dash\data::template_xhr('content/main/layout-xhr.html');
 	}
