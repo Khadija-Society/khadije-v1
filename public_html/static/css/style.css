@@ -9,6 +9,7 @@ body{
  	padding:10px 3%;
  	position: relative;
  	overflow: hidden;
+ 	padding-bottom: 70px;
 }
 
 /*add special border*/
@@ -486,7 +487,6 @@ body{
 #sFooter{
 	font-size: 1.3em;
 	background-color: #e4e4e4;
-	margin-top: 100px;
 	padding-top: 120px;
 	position: relative;
 	background-image: url('../images/homepage-v3/footer-pattern.png');
@@ -510,8 +510,12 @@ body{
 	border-radius: 50%;
 	transition: 0.3s;
 	user-select: none;
+	border: 1px solid transparent;
 }
 #sFooter:hover .brand{
+	border-color: #fff;
+}
+#sFooter .brand:hover{
 	background-color: #fff;
 }
 #sFooter .brand:before{
