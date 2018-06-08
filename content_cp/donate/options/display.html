@@ -5,8 +5,8 @@
 
 
 <div class="f justify-center">
-  <div class="cbox c5">
-    <form method="post">
+  <div class="c5 s12">
+    <form method="post" class="cbox" autocomplete="off">
       {{block ('iWay') }}
       {{block ('iadd')}}
     </form>
@@ -15,24 +15,26 @@
 
 {%if wayList%}
 <div class="f justify-center">
-  <div class="cbox c5">
-    <h2>{%trans "List of way"%}</h2>
-    <table class="tbl">
-      <thead>
-        <tr>
-          <th>{%trans "Title"%}</th>
-          <th>{%trans "Delete"%}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {%for key, value in wayList%}
+  <div class="c5 s12">
+    <div class="cbox">
+      <h2>{%trans "List of way"%}</h2>
+      <table class="tbl">
+        <thead>
           <tr>
-            <td>{{value}}</td>
-            <td class="collapsing"><a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
+            <th>{%trans "Title"%}</th>
+            <th>{%trans "Delete"%}</th>
           </tr>
-        {%endfor%}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {%for key, value in wayList%}
+            <tr>
+              <td>{{value}}</td>
+              <td class="collapsing"><a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
+            </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 {%endif%}
