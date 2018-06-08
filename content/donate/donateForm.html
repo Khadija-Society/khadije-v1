@@ -1,7 +1,7 @@
 {%block donateProduct%}
 
 {%if  paymentVerifyMsg %}
-<div class="msg txtC {%if  paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
+<div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 {%endif%}
 
 <div class="f">
@@ -19,11 +19,11 @@
 
 
 <div class="f justify-center">
-  <div class="cbox c5 s12 fs12">
+  <div class="cbox c6 s12 fs10">
 {%if  paymentVerifyMsg %}
-<div class="msg txtC {%if  paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
+<div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 {%endif%}
-    <form method="post">
+    <form method="post" autocomplete="off">
 
       <div class="f">
         <div class="c pRa5">{{block ('iFullname')}}</div>
@@ -40,8 +40,8 @@
     </form>
   </div>
 
-</div>
 {{block ('donateArchive')}}
+</div>
 
 
 {%endblock%}
@@ -69,7 +69,7 @@
 
 
 {%block donateFormProduct%}
- <form method="post" class="cbox">
+ <form method="post" class="cbox" autocomplete="off">
    {{block ('iFullname')}}
    {{block ('iMobile')}}
    {{block ('iEmail')}}
@@ -85,15 +85,18 @@
 
 {%block donateArchive%}
 {%if donateArchive %}
-<div class="f justify-center">
-  <div class="cbox c5 s12">
-    <h4>{%trans "List of last success donations"%}</h4>
-{%for key, value in donateArchive%}
-    <p class="alert alert-success">{{value.date | tdate("Y/m/d H:i") }} <span class="floatRa">{{value.plus | number_format | fitNumber}}</span></p>
-{%endfor%}
-  </div>
-</div>
+  <div class="c5 s12 pLa25">
+   <div class="cbox fs09">
 
+    <h4 class="txtC">{%trans "List of last success donations of yours"%}</h4>
+{%for key, value in donateArchive%}
+    <div class="msg">
+      <b>{{value.plus | fitNumber}} {%trans "Toman"%}</b>
+      <span class="floatRa" title='{{value.date | tdate("Y/m/d H:i") }}'> {{value.date | sdate('year') }}</span>
+    </div>
+{%endfor%}
+   </div>
+  </div>
 {%endif%}
 {%endblock%}
 

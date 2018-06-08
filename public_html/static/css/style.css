@@ -681,11 +681,11 @@ body{
 	font-size: 1em;
 }
 
-.pageData .msg{
+.pageData .msg.simple{
 	border-color: #aa6523;
 	background-color: #eee;
 }
-.pageData .msg:hover{
+.pageData .msg.simple:hover{
 	border-color: #5a2f06;
 }
 .pageData hr, hr.special{
