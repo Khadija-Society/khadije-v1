@@ -140,6 +140,10 @@ body{
 	background-image: url('../images/homepage-v3/sprite.png');
 	background-position: -100px -350px;
 }
+.lightPulse{
+	animation: lightPulse 1s infinite;
+}
+@keyframes lightPulse{ 0% { opacity:1; } 30% { opacity:0.9; } 100% { opacity:1; } }
 
 /*site header*/
 #sHeader{
