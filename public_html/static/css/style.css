@@ -458,90 +458,6 @@ body{
 	letter-spacing: 3px;
 }
 
-.latestNewsSlider{
-	margin-bottom:1em;
-	max-width: 800px;
-	max-height: 450px;
-	overflow:hidden;
-}
-
-.latestNewsSlider .sp-thumbnail {
-    background-color: #F0F0F0;
-}
-.latestNewsSlider .sp-thumbnail-image-container {
-	width: 100px;
-	height: 80px;
-	overflow: hidden;
-}
-
-.latestNewsSlider .sp-thumbnail-image {
-	height: 100%;
-}
-
-.latestNewsSlider .sp-thumbnail-text {
-	width: 170px;
-    padding: 8px;
-    font-size: 1.1em;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.latestNewsSlider .sp-thumbnail-title {
-	margin-bottom: 5px;
-	text-transform: uppercase;
-	color: #333;
-}
-
-.latestNewsSlider .sp-thumbnail-description {
-	font-size: 14px;
-	color: #333;
-}
-.sp-right-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
-	border-left-color:#2080d0;
-}
-.sp-right-thumbnails.sp-has-pointer .sp-selected-thumbnail:after{
-	border-right-color:#2080d0;
-}
-.sp-left-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
-	border-left-color:#2080d0;
-}
-.sp-left-thumbnails.sp-has-pointer .sp-selected-thumbnail:after{
-	border-left-color:#2080d0;
-}
-.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
-	border-bottom-color:#2080d0;
-}
-.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:after{
-	border-bottom-color:#2080d0;
-}
-.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
-	right: 0;
-	left: 0;
-}
-
-@media (max-width: 500px) {
-	.latestNewsSlider .sp-thumbnail {
-		text-align: center;
-	}
-
-	.latestNewsSlider .sp-thumbnail-image-container {
-		display: none;
-	}
-
-	.latestNewsSlider .sp-thumbnail-text {
-		width: 120px;
-	}
-
-	.latestNewsSlider .sp-thumbnail-title {
-		font-size: 12px;
-		text-transform: uppercase;
-	}
-
-	.latestNewsSlider .sp-thumbnail-description {
-		display: none;
-	}
-}
-
 
 
 /* footer*/
@@ -671,6 +587,13 @@ body{
 #sFooter #copyright a:focus{background-color: rgba(0,0,0,0.1);}
 
 
+.msg.simple{
+	border-color: #aa6523;
+	background-color: #eee;
+}
+.msg.simple:hover{
+	border-color: #5a2f06;
+}
 
 .pageData{
 	font-size: 1.4em;
@@ -682,14 +605,6 @@ body{
 }
 .pageTitle .sB3{
 	font-size: 1em;
-}
-
-.pageData .msg.simple{
-	border-color: #aa6523;
-	background-color: #eee;
-}
-.pageData .msg.simple:hover{
-	border-color: #5a2f06;
 }
 .pageData hr, hr.special{
 	border-color: #00aaaa;
@@ -1025,6 +940,91 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 .slider-pro img.sp-layer{border:none}
 
 
+
+/* customize componenets*/
+.latestNewsSlider{
+	margin-bottom:1em;
+	max-width: 800px;
+	max-height: 450px;
+	overflow:hidden;
+}
+
+.latestNewsSlider .sp-thumbnail {
+    background-color: #F0F0F0;
+}
+.latestNewsSlider .sp-thumbnail-image-container {
+	width: 100px;
+	height: 80px;
+	overflow: hidden;
+}
+
+.latestNewsSlider .sp-thumbnail-image {
+	height: 100%;
+}
+
+.latestNewsSlider .sp-thumbnail-text {
+	width: 170px;
+    padding: 8px;
+    font-size: 1.1em;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.latestNewsSlider .sp-thumbnail-title {
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	color: #333;
+}
+
+.latestNewsSlider .sp-thumbnail-description {
+	font-size: 14px;
+	color: #333;
+}
+.sp-right-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
+	border-left-color:#2080d0;
+}
+.sp-right-thumbnails.sp-has-pointer .sp-selected-thumbnail:after{
+	border-right-color:#2080d0;
+}
+.sp-left-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
+	border-left-color:#2080d0;
+}
+.sp-left-thumbnails.sp-has-pointer .sp-selected-thumbnail:after{
+	border-left-color:#2080d0;
+}
+.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
+	border-bottom-color:#2080d0;
+}
+.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:after{
+	border-bottom-color:#2080d0;
+}
+.sp-bottom-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
+	right: 0;
+	left: 0;
+}
+
+@media (max-width: 500px) {
+	.latestNewsSlider .sp-thumbnail {
+		text-align: center;
+	}
+
+	.latestNewsSlider .sp-thumbnail-image-container {
+		display: none;
+	}
+
+	.latestNewsSlider .sp-thumbnail-text {
+		width: 120px;
+	}
+
+	.latestNewsSlider .sp-thumbnail-title {
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+
+	.latestNewsSlider .sp-thumbnail-description {
+		display: none;
+	}
+}
 
 
 @media all and (min-width: 768px) and (max-width: 959px) {
