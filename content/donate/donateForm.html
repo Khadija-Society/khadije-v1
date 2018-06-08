@@ -93,7 +93,7 @@
     <h4 class="txtC">{%trans "List of last success donations of yours"%}</h4>
 {%for key, value in donateArchive%}
     <div class="msg f">
-      <div class="c">{{value.plus | fitNumber}} {%trans "Toman"%}</div>
+      <div class="c"><b>{{value.plus | fitNumber}}</b> {%trans "Toman"%}</div>
       <div class="c">
 {%if value.doners%}
 {%if value.fullname%}
