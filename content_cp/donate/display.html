@@ -98,7 +98,7 @@
       <tr>
         <td class="s0">{%if value.doners%}{%else%}<small class="badge mRa5">گمنام</small> {%endif%}{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
         <td><a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber(false)}}</a></td>
-        <td class="s0"><a href="{{url.current}}?payment={{value.payment}}">{%set myPayment = value.payment%}{%trans myPayment%}</a></td>
+        <td class="s0"><a href="{{url.current}}?payment={{value.payment}}">{%set myPayment = value.payment | capitalize%}{%trans myPayment%}</a></td>
         <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} {{value.plus | fitNumber}}  {%set pUnit = value.unit%}{%trans pUnit%}</td>
         <td class="s0">{{value.niyat}}</td>
         <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}">{{value.hazinekard}}</a></td>
