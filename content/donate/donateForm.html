@@ -161,7 +161,7 @@
 {%block iFullname%}
 <label for='ffamily'>{%trans "Full name"%}</label>
 <div class="input">
- <input type="text" name="fullname" placeholder='{%trans "Full name"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid last name"%}' id='ffamily' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.displayname}}'{%endif%}>
+ <input type="text" name="fullname" placeholder='{%trans "Your Name"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter first name and last name to show in doners list or leave it blank"%}' id='ffamily' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.displayname}}'{%endif%}>
 </div>
 {%endblock%}
 
@@ -172,7 +172,7 @@
 {%block iMobile%}
 <label for='fmobile'>{%trans "Mobile"%}</label>
 <div class="input">
- <input type="tel" name="mobile" placeholder='{%trans "Mobile"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid mobile"%}' id='fmobile' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.mobile}}'{%endif%}>
+ <input type="tel" name="mobile" placeholder='{%trans "Your mobile number"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "If you enter your mobile, we send verify of payment via SMS to this number"%}' id='fmobile' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.mobile}}'{%endif%}>
 </div>
 {%endblock%}
 
@@ -192,7 +192,7 @@
 {%block iNiyat%}
 <label for='fniyat'>{%trans "Intent"%}</label>
 <div class="input">
- <input type="text" name="niyat" placeholder='{%trans "Intention to donate this fee"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter a valid niyat"%}' id='fniyat'>
+ <input type="text" name="niyat" placeholder='{%trans "Intention to donate this fee"%}' maxlength='50' pattern=".{1,50}" title='{%trans "It is optional and depending on your intention can enter it"%}' id='fniyat'>
 </div>
 {%endblock%}
 
@@ -201,7 +201,7 @@
 {%block iAmount%}
 <label for='totalAmount'>{%trans "Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Pay Amount"%} {%trans "Toman"%}*' title='{%trans "Enter a valid amount"%}' id='totalAmount' required>
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%} {%trans "Toman"%}*' title='{%trans "Amount of your donation"%} {%trans "Toman"%}' id='totalAmount' required>
   <span class="addon">{%trans "Toman"%}</span>
 </div>
 {%endblock%}
@@ -230,7 +230,7 @@
 
 
 {%block iDirectPay%}
-{%if user.permission == 'admin' or user.permission == 'supervisor'%}
+{%if user.permission == 'admin' or user.permission == 'supervisor' and false%}
  <div class="switch1 mT20">
  <input type="checkbox" name="manualPay" id="manualPay">
  <label for="manualPay"  data-on='{%trans "Manual"%}' data-off='{%trans "Normal"%}'></label>
