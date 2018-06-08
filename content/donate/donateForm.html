@@ -92,9 +92,21 @@
 
     <h4 class="txtC">{%trans "List of last success donations of yours"%}</h4>
 {%for key, value in donateArchive%}
-    <div class="msg">
-      <b>{{value.plus | fitNumber}} {%trans "Toman"%}</b>
-      <span class="floatRa" title='{{value.date | tdate("Y/m/d H:i") }}'> {{value.date | sdate('year') }}</span>
+    <div class="msg f">
+      <div class="c">{{value.plus | fitNumber}} {%trans "Toman"%}</div>
+      <div class="c">
+{%if value.doners%}
+{%if value.fullname%}
+        <div class="badge primary">{{value.fullname}}</div>
+{%else%}
+        <div class="badge success">{%trans "Untitled"%}</div>
+{%endif%}
+{%else%}
+        <div class="badge">{%trans "Anonymous"%}</div>
+{%endif%}
+      </div>
+
+      <div class="cauto os" title='{{value.date | tdate("Y/m/d H:i") }}'> {{value.date | sdate('year') }}</div>
     </div>
 {%endfor%}
    </div>
