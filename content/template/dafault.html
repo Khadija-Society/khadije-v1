@@ -27,10 +27,10 @@
     </div>
     {{block('imagegallery')}}
 
-    <div class="tagBox msg">{{tags({"format" : 'html'})}}</div>
+    <div class="tagBox msg simple">{{tags({"format" : 'html'})}}</div>
 
 {%if datarow.datemodified%}
-    <div class='msg f mT20'>
+    <div class='msg simple f mT20'>
       <div class="c">{{datarow.publishdate | tdate('d F Y - H:i')}}</div>
       <div class="cauto os">ویرایش شده در <time datetime="{{datarow.datemodified}}">{{datarow.datemodified | sdate}}</time></div>
     </div>
