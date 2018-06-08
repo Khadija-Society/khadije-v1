@@ -2,8 +2,8 @@
 
 
 {%block pageData%}
-<div class="bg-white">
-	<div class="cn pTB50 fs14">
+<div>
+	<div class="pTB50">
 		<div class="f">
 			<div class="c4 s12 pRa10">
 		  		<img src="{{url.site}}/static/images/book/majaraye-eshge-man.jpg" alt='{{page.title}}'>
@@ -27,7 +27,7 @@
 {%endif%}
 			</div>
 		</div>
-		<div class="mT25 msg light">
+		<div class="mT25 msg simple">
 			<h3>خلاصه‌ای از کتاب</h3>
 			<p>خدیجه...</p>
 			<p>خدیجه...</p>
@@ -43,10 +43,10 @@
 		<div class="mT25 msg">
 			<p class="txtB">برای تهیه نسخه کاغذی کتاب می‌توانید با مراکز زیر تماس حاصل فرمایید</p>
 			<p>قم، بلوار سمیه، خیابان عباس‌آباد، پلاک ۱۱۲
-				<a href="tel:02537740066" class="btn">02537740066</a>
-				<a href="tel:02537832143" class="btn">02537832143</a>
-				<a href="tel:09126514329" class="btn">09126514329</a>
-				<a href="tel:09122534967" class="btn">09122534967</a>
+				<a href="tel:02537740066" class="btn">{{"02537740066" | fitNumber(false)}}</a>
+				<a href="tel:02537832143" class="btn">{{"02537832143" | fitNumber(false)}}</a>
+				<a href="tel:09126514329" class="btn">{{"09126514329" | fitNumber(false)}}</a>
+				<a href="tel:09122534967" class="btn">{{"09122534967" | fitNumber(false)}}</a>
 			</p>
 			<p></p>
 		</div>
