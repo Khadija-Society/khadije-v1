@@ -712,7 +712,8 @@ body{
 .pageData .postPreview{}
 .pageData .postPreview img.thumb{width:300px;height:auto;display:inline-block;margin:0 auto;padding:0;margin:0.5em;border:1px solid transparent;transition:0.3s}
 .pageData .postPreview img.thumb:hover{border-color:#333}
-.pageData #lightgallery{text-align:center; margin:1em 0;}
+.pageData .postMainContent{overflow: hidden;}
+.pageData #lightgallery{text-align:center; margin:2em 0;clear: both;}
 .pageData #lightgallery img{width:200px;max-width:45%; margin:0 auto;}
 .pageData #lightgallery video{width:200px;max-width:45%; margin:0 auto;}
 .pageData #lightgallery audio{width:200px;max-width:45%; margin:0 auto;}
