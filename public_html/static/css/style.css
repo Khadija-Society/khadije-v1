@@ -240,25 +240,11 @@ body{
 	left: 0;
 	position: absolute;
 }
-
-/* slider*/
-.slider{
-	margin-bottom:1em;
-	max-width: 800px;
-	max-height: 450px;
-	overflow:hidden;
-}
 .goldenB{
 	padding:1px;
 	border: 1px solid #aa6622;
 	border-radius:3px;
 }
-.slider img{
-	display: block;
-}
-.slider-pro a{color:#ddd;transition:0.3s color;}
-.slider-pro a:hover{color:#eee}
-.slider-pro a:focus{color:#fff}
 
 /* slavat*/
 .salavat{
@@ -942,6 +928,18 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 
 
 /* customize componenets*/
+/* slider*/
+.slider{
+	margin-bottom:1em;
+	max-width: 800px;
+	max-height: 450px;
+	overflow:hidden;
+}
+
+.slider-pro a{color:#ddd;transition:0.3s color;}
+.slider-pro a:hover{color:#eee}
+.slider-pro a:focus{color:#fff}
+/*news slider*/
 .latestNewsSlider{
 	margin-bottom:1em;
 	max-width: 800px;
