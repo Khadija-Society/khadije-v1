@@ -3,6 +3,8 @@
 
 {%block pageData%}
 
+  <h2 class="mT50 txtC">{%trans "Latest news"%} {{site.title}}</h2>
+  <hr>
    <nav class="breadcrumb block msg hide" data-xhr="breadcrumb" tabindex='-1' data-step='4' data-intro='{%trans "View your current location and navigate to parent of it"%}' data-position='bottom'>
    {{breadcrumb(null, true) | raw}}
    </nav>
