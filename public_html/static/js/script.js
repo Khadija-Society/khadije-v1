@@ -3,6 +3,7 @@ function pushState()
 {
   bindLatestNews();
   runLightBox();
+  runTopSlider();
 }
 
 $(function()
@@ -11,6 +12,20 @@ $(function()
 });
 
 
+
+function runTopSlider()
+{
+    $('#topSlider').sliderPro(
+    {
+      width: 960,
+      height: 500,
+      arrows: true,
+      buttons: false,
+      waitForLayers: true,
+      autoplay: false,
+      autoScaleLayers: false,
+    });
+}
 
 
 function bindLatestNews()
@@ -22,6 +37,8 @@ function bindLatestNews()
     changeToNews(selectedIndex);
   });
 }
+
+
 function changeToNews(_to)
 {
   if(_to === undefined)

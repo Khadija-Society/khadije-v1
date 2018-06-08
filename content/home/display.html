@@ -5,8 +5,26 @@
 
   <div class="f justify-center">
     <div class="c8 s12 pRa10">
-      <div class="slider">
-        <img class="goldenB" src="{{url.site}}/static/images/homepage-v3/slider-sample.jpg" alt="sample">
+      <div class="slider slider-pro goldenB" id='topSlider'>
+
+{%set topSliderPosts = posts({"limit" : 7})%}
+{%set defaultImageTop = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
+        <div class="sp-slides">
+{%for key, myNews in topSliderPosts%}
+          <div class="sp-slide">
+            <img class="sp-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
+
+            <h3 class="sp-layer sp-black sp-padding" data-position="topRight" data-horizontal="40" data-vertical="10%" data-show-transition="down" data-hide-transition="right">
+              <a href="{{url.here}}/{{myNews.url}}">{{myNews.title}}</a>
+            </h3>
+
+            <p class="sp-layer sp-black sp-padding hide-small-screen" data-position="bottomRight" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="up" data-show-delay="400" data-hide-transition="down">
+              {{myNews.excerpt}} <a href="{{url.here}}/{{myNews.url}}">{%trans "Read more"%}</a>
+            </p>
+          </div>
+{%endfor%}
+        </div>
+
       </div>
     </div>
     <div class="c3 sauto salavatBox">
@@ -85,7 +103,7 @@
         <div class="preview">
 {%for key, myNews in lastPostsRecord%}
           <a href="{{url.here}}/{{myNews.url}}" data-index='{{key}}' class="f align-center justify-center {%if key == 0%}active{%endif%}">
-            <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}"">
+            <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}">
             <div class="meta">
               <h2>{{myNews.title}}</h2>
               <p>{{myNews.excerpt}}</p>

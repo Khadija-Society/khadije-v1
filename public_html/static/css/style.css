@@ -252,6 +252,10 @@ body{
 .slider img{
 	display: block;
 }
+.slider a{color:#ddd;transition:0.3s color;}
+.slider a:hover{color:#eee}
+.slider a:focus{color:#fff}
+
 /* slavat*/
 .salavat{
 	text-align: center;
