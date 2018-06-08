@@ -23,7 +23,7 @@
 
 {%for key, value in DonersList%}
   <div class="vcard cauto shadow" title='{{value.date | tdate("Y/m/d H:i") }}'>
-   <img src="{{url.site}}/static//siftal/images/useful/gift.png" alt='{%trans "Doner"%} {{value.firstname}} {{value.lastname}}'>
+   <img src="{{url.site}}/static//siftal/images/useful/gift.png" alt='{%trans "Doner"%} {{value.firstname}} {{value.lastname}}' class="pA5-f">
    <div class="content">
     <div class="header fc-mute">
     {%if value.doners%}
