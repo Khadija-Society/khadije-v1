@@ -18,8 +18,7 @@
               <a href="{{url.here}}/{{myNews.url}}">{{myNews.title}}</a>
             </h3>
 
-            <p class="sp-layer sp-black sp-padding hide-small-screen hide" data-position="bottomRight" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="up" data-show-delay="400" data-hide-transition="down">
-              {{myNews.excerpt}} <a href="{{url.here}}/{{myNews.url}}" class="badge floatRa mT5">{%trans "Read more"%}</a>
+            <p class="sp-layer sp-black sp-padding hide-medium-screen hide-small-screen" data-position="bottomRight" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="up" data-show-delay="400" data-hide-transition="down">{{myNews.excerpt}} <a href="{{url.here}}/{{myNews.url}}" class="badge floatRa mT5">{%trans "Read more"%}</a>
             </p>
           </div>
 {%endfor%}
@@ -94,7 +93,7 @@
   </section>
 
 
-  <section class="latestNews txtC mT25 mB25">
+  <section class="latestNews txtC mT25 mB50">
     <h3 class="sB3">{%trans "Latest News"%}</h3>
     {%set lastPostsRecord = posts({"limit" : 10})%}
     {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
@@ -106,8 +105,7 @@
           <div class="sp-slide">
             <img class="sp-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
 
-            <p class="sp-layer sp-black sp-padding hide-medium-screen hide-small-screen" data-horizontal="20" data-vertical="5%" data-width="300" data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500" data-position="topRight">
-              {{myNews.excerpt}} <br><a href="{{url.here}}/{{myNews.url}}" class="badge floatRa mT5 pA5">{%trans "Read more"%}</a>
+            <p class="sp-layer sp-white sp-padding hide-medium-screen hide-small-screen" data-horizontal="20" data-vertical="5%" data-width="300" data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500" data-position="topRight">{{myNews.excerpt}}<br><a href="{{url.here}}/{{myNews.url}}" class="badge floatRa mT5 pA5">{%trans "Read more"%}</a>
             </p>
           </div>
 {%endfor%}

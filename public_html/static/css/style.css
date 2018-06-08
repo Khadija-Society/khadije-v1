@@ -780,6 +780,9 @@ body{
 		left: -30px;
 		background-position: -170px -350px;
 	}
+	.salavat{
+		max-width: 200px;
+	}
 }
 
 @media (max-width: 475px) {

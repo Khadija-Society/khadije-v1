@@ -42,8 +42,8 @@ function runLastNewsSlider()
       // thumbnailPointer: true,
       // thumbnailWidth: 290,
 
-      width: 670,
-      height: 500,
+      width: 800,
+      height: 450,
       orientation: 'vertical',
       loop: false,
       arrows: true,
@@ -51,13 +51,16 @@ function runLastNewsSlider()
       thumbnailsPosition: 'left',
       thumbnailPointer: true,
       thumbnailWidth: 290,
-      breakpoints: {
-        800: {
+      breakpoints:
+      {
+        800:
+        {
           thumbnailsPosition: 'bottom',
           thumbnailWidth: 270,
           thumbnailHeight: 100
         },
-        500: {
+        500:
+        {
           thumbnailsPosition: 'bottom',
           thumbnailWidth: 120,
           thumbnailHeight: 50
