@@ -3,13 +3,13 @@
 
 {%block pageData%}
 
-{%if  paymentVerifyMsg %}
+{%if paymentVerifyMsg %}
 <div class="cn pA50">
-  <div class="msg txtC {%if  paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
+  <div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 </div>
 {%endif%}
 
-<div class="fs14 pA25">
+<div class="fs10 pA25">
  <div class="tiny f justify-center">
 
 {%if DonersList | length > 30%}
@@ -25,7 +25,7 @@
   <div class="vcard cauto shadow" title='{{value.date | tdate("Y/m/d H:i") }}'>
    <img src="{{url.site}}/static//siftal/images/useful/gift.png" alt='{%trans "Doner"%} {{value.firstname}} {{value.lastname}}'>
    <div class="content">
-    <div class="header">
+    <div class="header fc-mute">
     {%if value.doners%}
       {%if value.fullname%}
       {{value.fullname}}
