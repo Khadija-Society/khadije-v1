@@ -1,9 +1,9 @@
 
 function pushState()
 {
-  bindLatestNews();
   runLightBox();
   runTopSlider();
+  runLastNewsSlider();
 }
 
 $(function()
@@ -29,47 +29,43 @@ function runTopSlider()
 
 function runLastNewsSlider()
 {
-    $('#topSlider').sliderPro(
+    $('#latestNewsSlider').sliderPro(
     {
-      width: 960,
+      // width: 1000,
+      // height: 450,
+      // // aspectRatio: 16/9,
+      // orientation: 'vertical',
+      // // loop: false,
+      // arrows: true,
+      // buttons: false,
+      // thumbnailsPosition: 'right',
+      // thumbnailPointer: true,
+      // thumbnailWidth: 290,
+
+      width: 670,
       height: 500,
+      orientation: 'vertical',
+      loop: false,
       arrows: true,
       buttons: false,
-      waitForLayers: true,
-      autoplay: false,
-      autoScaleLayers: false,
+      thumbnailsPosition: 'left',
+      thumbnailPointer: true,
+      thumbnailWidth: 290,
+      breakpoints: {
+        800: {
+          thumbnailsPosition: 'bottom',
+          thumbnailWidth: 270,
+          thumbnailHeight: 100
+        },
+        500: {
+          thumbnailsPosition: 'bottom',
+          thumbnailWidth: 120,
+          thumbnailHeight: 50
+        }
+      }
     });
 }
 
-
-function bindLatestNews()
-{
-  $('.latestNews .list a').off('mouseover');
-  $('.latestNews .list a').on('mouseover', function()
-  {
-    var selectedIndex = $(this).attr('data-index');
-    changeToNews(selectedIndex);
-  });
-}
-
-
-function changeToNews(_to)
-{
-  if(_to === undefined)
-  {
-    return false;
-  }
-  var newsBox = $('.latestNews');
-  newsBox.find('.list .active').removeClass('active')
-
-  // change selectedIndex news
-  if(_to)
-  {
-    newsBox.find('.list a[data-index="' + _to +'"]').addClass('active');
-    newsBox.find('.preview .active').removeClass('active')
-    newsBox.find('.preview a[data-index="' + _to +'"]').addClass('active');
-  }
-}
 
 function runLightBox()
 {

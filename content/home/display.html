@@ -18,7 +18,7 @@
               <a href="{{url.here}}/{{myNews.url}}">{{myNews.title}}</a>
             </h3>
 
-            <p class="sp-layer sp-black sp-padding hide-small-screen" data-position="bottomRight" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="up" data-show-delay="400" data-hide-transition="down">
+            <p class="sp-layer sp-black sp-padding hide-small-screen hide" data-position="bottomRight" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="up" data-show-delay="400" data-hide-transition="down">
               {{myNews.excerpt}} <a href="{{url.here}}/{{myNews.url}}" class="badge floatRa mT5">{%trans "Read more"%}</a>
             </p>
           </div>
@@ -96,30 +96,34 @@
 
   <section class="latestNews txtC mT25 mB25">
     <h3 class="sB3">{%trans "Latest News"%}</h3>
-    {%set lastPostsRecord = posts({"limit" : 7})%}
+    {%set lastPostsRecord = posts({"limit" : 10})%}
     {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
-    <div class="goldenB f">
-      <div class="c8 s12">
-        <div class="preview">
+
+    <div class="goldenB latestNewsSlider slider-pro" id='latestNewsSlider'>
+
+        <div class="sp-slides">
 {%for key, myNews in lastPostsRecord%}
-          <a href="{{url.here}}/{{myNews.url}}" data-index='{{key}}' class="f align-center justify-center {%if key == 0%}active{%endif%}">
-            <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}">
-            <div class="meta">
-              <h2>{{myNews.title}}</h2>
-              <p>{{myNews.excerpt}}</p>
-            </div>
-          </a>
+          <div class="sp-slide">
+            <img class="sp-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
+
+            <p class="sp-layer sp-black sp-padding hide-medium-screen hide-small-screen" data-horizontal="20" data-vertical="5%" data-width="300" data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500" data-position="topRight">
+              {{myNews.excerpt}} <br><a href="{{url.here}}/{{myNews.url}}" class="badge floatRa mT5 pA5">{%trans "Read more"%}</a>
+            </p>
+          </div>
 {%endfor%}
         </div>
-      </div>
-      <div class="c4 s12 listBox">
-        <nav class="f f-column list">
+
+        <div class="sp-thumbnails">
 {%for key, myNews in lastPostsRecord%}
-          <a class="c f align-center justify-center {%if key == 0%}active{%endif%}" href="{{url.here}}/{{myNews.url}}" data-index='{{key}}'>{{myNews.title}}</a>
+          <div class="sp-thumbnail f">
+            <div class="cauto sp-thumbnail-image-container">
+              <img class="sp-thumbnail-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
+            </div>
+            <h3 class="c sp-thumbnail-text f align-center justify-center">{{myNews.title}}</h3>
+          </div>
 {%endfor%}
-          <a class="c txtRa archiveLink" href="{{url.here}}/blog">{%trans "Archive"%}</a>
-        </nav>
-      </div>
+        </div>
+
     </div>
   </section>
 
