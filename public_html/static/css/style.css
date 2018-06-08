@@ -1085,11 +1085,13 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 	.radioGateway{padding: 1em 0.4em; }
 }
 
-@media (max-width: 475px) {
+@media (max-width: 543px) {
 	#sHeader .langlist{
 		position: absolute;
 		top: 0;
 		left: 0;
 	}
-
+	.shahidImani{
+		order:1;
+	}
 }
