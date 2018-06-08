@@ -263,6 +263,10 @@ body{
 	position: relative;
 	margin-bottom: 25px;
 	user-select: none;
+	background-color: #fff;
+}
+.salavat .sB1{
+	/*background-color: #fff;*/
 }
 .salavat img{
 	display: block;

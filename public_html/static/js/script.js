@@ -27,6 +27,20 @@ function runTopSlider()
     });
 }
 
+function runLastNewsSlider()
+{
+    $('#topSlider').sliderPro(
+    {
+      width: 960,
+      height: 500,
+      arrows: true,
+      buttons: false,
+      waitForLayers: true,
+      autoplay: false,
+      autoScaleLayers: false,
+    });
+}
+
 
 function bindLatestNews()
 {
