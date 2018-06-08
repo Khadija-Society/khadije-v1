@@ -17,12 +17,12 @@ function runTopSlider()
 {
     $('#topSlider').sliderPro(
     {
-      width: 960,
-      height: 500,
+      width: 800,
+      height: 450,
+      aspectRatio: 16/9,
       arrows: true,
       buttons: false,
       waitForLayers: true,
-      autoplay: false,
       autoScaleLayers: false,
     });
 }
