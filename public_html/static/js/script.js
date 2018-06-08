@@ -39,7 +39,6 @@ function runLastNewsSlider()
       orientation: 'vertical',
       // arrows: true,
       buttons: false,
-      waitForLayers: true,
       thumbnailsPosition: 'left',
       thumbnailPointer: true,
       thumbnailWidth: 290,
