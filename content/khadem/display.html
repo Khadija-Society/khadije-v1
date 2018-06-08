@@ -3,14 +3,13 @@
 
 {%block pageData%}
 <div class="f justify-center">
- <div class="cbox c10 s12">
-
+ <div class="c10 s12">
 
 {%if not serviceNeedList%}
-  <p class="msg info2 txtC">در حال حاضر درخواست نیازی توسط موسسه اعلام نشده است!</p>
+  <p class="msg info2 txtC">{%trans "Now we dont need sercants, check it later!"%}</p>
 {%else%}
   <form method="post">
-  <p class="msg info2 txtC">نیازمندی‌های زیر در حال حاضر در موسسه حضرت خدیجه مورد نیاز است</p>
+  <p class="msg info2 txtC">{%trans "Currently we need help in below categories"%}</p>
 {{block ('iCity') }}
   </form>
   <a href="{{url.base}}/a/service" class="btn success block" data-direct>ثبت‌نام و ثبت درخواست</a>
