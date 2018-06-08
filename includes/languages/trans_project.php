@@ -11,13 +11,13 @@ class twigTransTerms
 	echo T_("Najmeh Park, Fatemi St");                                                // Line 49
 	echo T_("Qom");                                                                   // Line 150
 	echo T_("Iran");                                                                  // Line 47
-	echo T_("Name");                                                                  // Line 119
+	echo T_("Name");                                                                  // Line 120
 	echo T_("Full Name");                                                             // Line 86
-	echo T_("Mobile");                                                                // Line 122
+	echo T_("Mobile");                                                                // Line 123
 	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 94
 	echo T_("Email");                                                                 // Line 456
 	echo T_("Your Message");                                                          // Line 109
-	echo T_("Send");                                                                  // Line 126
+	echo T_("Send");                                                                  // Line 127
 
 	//--------------------------------------------------content\donate\donateForm.html
 	echo T_("List of last success donations");                                        // Line 90
@@ -57,24 +57,25 @@ class twigTransTerms
 	echo T_("Anonymous");                                                             // Line 36
 
 	//-------------------------------------------------------content\home\display.html
-	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 14
-	echo T_("You also partake in salawat");                                           // Line 16
-	echo T_("Say salawat and press here");                                            // Line 18
+	echo T_("Read more");                                                             // Line 22
+	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 32
+	echo T_("You also partake in salawat");                                           // Line 34
+	echo T_("Say salawat and press here");                                            // Line 36
 	echo T_("Servants registration");                                                 // Line 160
 	echo T_("Virtual pilgrimage");                                                    // Line 152
-	echo T_("Collective or individual travel");                                       // Line 41
+	echo T_("Collective or individual travel");                                       // Line 59
 	echo T_("Deputy pilgrimage");                                                     // Line 151
-	echo T_("Balloting names");                                                       // Line 53
-	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 60
-	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 61
-	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 61
-	echo T_("Card number");                                                           // Line 68
-	echo T_("Account number");                                                        // Line 69
-	echo T_("Iranian bank Shaba number");                                             // Line 70
-	echo T_("Latest News");                                                           // Line 80
-	echo T_("Archive");                                                               // Line 102
-	echo T_("Mr.Farahzad's statement");                                               // Line 112
-	echo T_("Contact with manager");                                                  // Line 123
+	echo T_("Balloting names");                                                       // Line 71
+	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 78
+	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 79
+	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 79
+	echo T_("Card number");                                                           // Line 86
+	echo T_("Account number");                                                        // Line 87
+	echo T_("Iranian bank Shaba number");                                             // Line 88
+	echo T_("Latest News");                                                           // Line 98
+	echo T_("Archive");                                                               // Line 120
+	echo T_("Mr.Farahzad's statement");                                               // Line 130
+	echo T_("Contact with manager");                                                  // Line 141
 
 	//--------------------------------------------------------content\main\layout.html
 	echo T_("If religion being in the Pleiades, people from Persia can obtainment to that");// Line 44
@@ -512,12 +513,12 @@ class twigTransTerms
 	echo T_("Edit partner");                                                          // Line 527
 
 	//--------------------------------------------content_delneveshte\home\layout.html
-	echo T_("Click and go to khadije site");                                          // Line 99
-	echo T_("Wrote your heart sounds");                                               // Line 110
-	echo T_("optional");                                                              // Line 122
-	echo T_("Not require");                                                           // Line 119
-	echo T_("Mobile number is not showing on site and optional");                     // Line 122
-	echo T_("Press here to send");                                                    // Line 126
+	echo T_("Click and go to khadije site");                                          // Line 100
+	echo T_("Wrote your heart sounds");                                               // Line 111
+	echo T_("optional");                                                              // Line 123
+	echo T_("Not require");                                                           // Line 120
+	echo T_("Mobile number is not showing on site and optional");                     // Line 123
+	echo T_("Press here to send");                                                    // Line 127
 
 	//------------------------------------------content_delneveshte\home\messages.html
 	echo T_("Last messages");                                                         // Line 3

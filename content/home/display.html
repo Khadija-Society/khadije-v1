@@ -3,7 +3,7 @@
 
 {%block content%}
 
-  <div class="f justify-center">
+  <div class="f justify-center mB25">
     <div class="c8 s12 pRa10">
       <div class="slider slider-pro goldenB" id='topSlider'>
 
@@ -19,7 +19,7 @@
             </h3>
 
             <p class="sp-layer sp-black sp-padding hide-small-screen" data-position="bottomRight" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="up" data-show-delay="400" data-hide-transition="down">
-              {{myNews.excerpt}} <a href="{{url.here}}/{{myNews.url}}">{%trans "Read more"%}</a>
+              {{myNews.excerpt}} <a href="{{url.here}}/{{myNews.url}}" class="badge floatRa mT5">{%trans "Read more"%}</a>
             </p>
           </div>
 {%endfor%}
