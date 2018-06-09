@@ -60,6 +60,7 @@
      <a href="{{url.here}}/about">{%trans "About"%}</a>
      <a href="{{url.here}}/blog">{%trans "News"%}</a>
      <a href="{{url.here}}/khadije">{%trans "Khadije Wiki"%}</a>
+     <a href="{{url.here}}/a" data-direct>{%trans "Services"%}</a>
      <a href="{{url.here}}/delneveshte" data-direct>{%trans "Self expressions"%}</a>
     </div>
     <div class="mainNavMobile sB1 c0 sauto" id="sidenavHandler">
@@ -71,19 +72,19 @@
    </div>
   </div>
  </nav>
-
-
-{%if false%}
-<div id="sitesidebarHandler"></div>
-<aside id='sitesidebar' class="unselectable scr">
-  <ul class="sidenav" data-xhr="sidenav">
-    <li><a tabindex='-1' href="{{url.here}}">صفحه نخست</a></li>
-    <li><a tabindex='-1' href="{{url.here}}/about">درباره موسسه</a></li>
-    <li><a tabindex='-1' href="{{url.here}}/donate">پرداخت کمک نقدی</a></li>
-    <li><a tabindex='-1' href="{{url.here}}/a" data-direct>ثبت‌نام تشرف یا خادمی</a></li>
-  </ul>
-</aside>
-{%endif%}
+ <aside id="sidebar">
+    <nav>
+      <ul>
+        <li class="title">{{site.title}}</li>
+       <li><a tabindex='-1' href="{{url.here}}/"><span class="sf-home pRa5"></span>{%trans "Homepage"%}</a></li>
+       <li><a tabindex='-1' href="{{url.here}}/about">{%trans "About"%}</a></li>
+       <li><a tabindex='-1' href="{{url.here}}/blog">{%trans "News"%}</a></li>
+       <li><a tabindex='-1' href="{{url.here}}/a">{%trans "Services"%}</a></li>
+       <li><a tabindex='-1' href="{{url.here}}/delneveshte" data-direct>{%trans "Self expressions"%}</a></li>
+       <li class="mT25"><a tabindex='-1' href="{{url.here}}/donate" class="donate"><span class="sf-gift pRa5 fs20"></span>{%trans "Donate"%}</a></li>
+      </ul>
+    </nav>
+ </aside>
 {%endblock%}
 
 
