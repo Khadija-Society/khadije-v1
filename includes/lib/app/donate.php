@@ -61,29 +61,37 @@ class donate
 
 	public static function way_list($_type = 'donate')
 	{
-		$key = self::option_key_type($_type);
-
-		$list = \dash\db\options::get(['key' => $key, 'limit' => 1]);
-
-		$way_list = [];
-
-		if(isset($list['meta']))
+		$list = \lib\app\need::list('donate');
+		if(!is_array($list))
 		{
-			if(is_array($list['meta']))
-			{
-				$way_list = $list['meta'];
-			}
-			else
-			{
-				$way_list = json_decode($list['meta']);
-			}
+			$list = [];
 		}
+		return array_column($list, 'title');
 
-		if(!is_array($way_list))
-		{
-			$way_list = [];
-		}
-		return $way_list;
+
+		// $key = self::option_key_type($_type);
+
+		// $list = \dash\db\options::get(['key' => $key, 'limit' => 1]);
+
+		// $way_list = [];
+
+		// if(isset($list['meta']))
+		// {
+		// 	if(is_array($list['meta']))
+		// 	{
+		// 		$way_list = $list['meta'];
+		// 	}
+		// 	else
+		// 	{
+		// 		$way_list = json_decode($list['meta']);
+		// 	}
+		// }
+
+		// if(!is_array($way_list))
+		// {
+		// 	$way_list = [];
+		// }
+		// return $way_list;
 	}
 
 

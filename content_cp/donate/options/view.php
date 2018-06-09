@@ -17,7 +17,19 @@ class view
 		\dash\data::bodyclass('unselectable');
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
-		\dash\data::wayList(\lib\app\donate::way_list());
+
+		\dash\data::need(\lib\app\need::list('donate'));
+
+		if(\dash\request::get('edit'))
+		{
+			\dash\data::editMode(true);
+			$id = \dash\request::get('edit');
+			\dash\data::productDetail(\lib\db\needs::get(['id' => $id, 'limit' => 1]));
+			if(!\dash\data::productDetail())
+			{
+				\dash\header::status(404, T_("Id not found"));
+			}
+		}
 	}
 }
 ?>

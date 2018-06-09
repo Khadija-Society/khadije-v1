@@ -11,7 +11,7 @@ class view
 
 
 		\dash\data::bodyclass('unselectable');
-		\dash\data::wayList(\lib\app\donate::way_list());
+		\dash\data::wayList(\lib\app\need::list('donate'));
 		\dash\data::donateArchive(\lib\db\mytransactions::user_transaction('cash'));
 
 		if(\dash\session::get('payment_request_start'))

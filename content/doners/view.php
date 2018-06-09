@@ -9,7 +9,6 @@ class view
 		\dash\data::page_desc(T_("List of our last doners"));
 
 		\dash\data::bodyclass('unselectable');
-		\dash\data::wayList(\lib\app\donate::way_list());
 
 		\dash\data::DonersList(\lib\db\mytransactions::transaction_list());
 
