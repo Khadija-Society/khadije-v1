@@ -4,7 +4,7 @@
 
   {%if perm('cpDonateView') or perm('cpBookTransactionView') or perm('cpReportView') %}
   <li>
-    <a href="#"><i class='sf-money'></i> <span>{% trans "Financial" %}</span></a>
+    <a href="{{url.here}}/mytransaction"><i class='sf-money'></i> <span>{% trans "Financial" %}</span></a>
     <ul>
       {%if perm('cpDonateView') %}<li><a href="{{url.here}}/donate"><i class='floatRa mRa10 fc-mute sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>{%endif%}
       {%if perm('cpBookTransactionView') %}<li><a href="{{url.here}}/book"><i class='floatRa mRa10 fc-mute sf-book'></i> <span>{%trans "Book transaction list"%}</span></a></li>{%endif%}
