@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Arabic\n"
-"POT-Creation-Date: 2018-06-09 16:15+0430\n"
-"PO-Revision-Date: 2018-06-09 16:16+0430\n"
-"Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
+"POT-Creation-Date: 2018-06-09 16:35+0430\n"
+"PO-Revision-Date: 2018-06-09 16:36+0430\n"
+"Last-Translator: Reza <rm.biqarar@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -34,7 +34,8 @@ msgstr "تفاصيل استخدام الفواتير"
 #: dash/addons/content_account/billing/detail/view.php:9
 msgid ""
 "Check your current usage and active user and price for this period of time."
-msgstr "تحقق من استخدامك الحالي و المستخدم النشط و الأسعار لهذه الفترة الزمنية."
+msgstr ""
+"تحقق من استخدامك الحالي و المستخدم النشط و الأسعار لهذه الفترة الزمنية."
 
 #: dash/addons/content_account/billing/invoice/view.php:8
 msgid "Invoice Detail"
@@ -135,7 +136,7 @@ msgid "User id not found"
 msgstr ""
 
 #: dash/addons/content_account/view/model.php:35
-#: khadije/content_cp/familytrip/options/model.php:27
+#: khadije/content_cp/familytrip/options/model.php:31
 #: khadije/content_cp/nationalcode/edit/model.php:52
 #: khadije/content_cp/trip/options/model.php:29
 msgid "Your change was saved"
@@ -176,7 +177,8 @@ msgstr "اكتمال النسخ الاحتياطي"
 msgid "Invalid id"
 msgstr "المعرف غير صالح"
 
-#: dash/addons/content_cp/comments/edit/model.php:12 dash/lib/app/comment.php:204
+#: dash/addons/content_cp/comments/edit/model.php:12
+#: dash/lib/app/comment.php:204
 #: khadije/content_cp/admincontact/edit/model.php:12
 #: khadije/content_cp/delneveshte/edit/model.php:12
 #: khadije/includes/lib/app/service.php:105
@@ -204,8 +206,8 @@ msgstr ""
 #: khadije/content_cp/admincontact/edit/view.php:21
 #: khadije/content_cp/delneveshte/edit/view.php:21
 msgid ""
-"This is often useful when you notice that a commenter has made a typographical "
-"error."
+"This is often useful when you notice that a commenter has made a "
+"typographical error."
 msgstr ""
 
 #: dash/addons/content_cp/comments/edit/view.php:24
@@ -227,7 +229,8 @@ msgid "Comments"
 msgstr "التعليقات"
 
 #: dash/addons/content_cp/comments/home/view.php:12
-msgid "Check list of comments and search or filter in them to find your comments."
+msgid ""
+"Check list of comments and search or filter in them to find your comments."
 msgstr "تحقق من قائمة التعليقات و البحث أو التصفية فيها للعثور على تعليقاتك."
 
 #: dash/addons/content_cp/comments/home/view.php:12
@@ -301,8 +304,9 @@ msgid "Delete a permissions"
 msgstr ""
 
 #: dash/addons/content_cp/permission/delete/view.php:34
+#, fuzzy
 msgid "Id not set"
-msgstr ""
+msgstr "لم يتم تعيين معرف المستخدم"
 
 #: dash/addons/content_cp/permission/view.php:11
 #: dash/addons/includes/languages/trans_dash.php:235
@@ -326,7 +330,8 @@ msgstr "إضافة مشاركة جديدة"
 
 #: dash/addons/content_cp/posts/add/view.php:24
 msgid "Posts can contain keyword and category with title and descriptions."
-msgstr "يمكن أن تحتوي المشاركات على الكلمة الرئيسية و الفئة مع العنوان و الأوصاف."
+msgstr ""
+"يمكن أن تحتوي المشاركات على الكلمة الرئيسية و الفئة مع العنوان و الأوصاف."
 
 #: dash/addons/content_cp/posts/add/view.php:27
 #: dash/addons/content_cp/posts/edit/view.php:36
@@ -353,7 +358,8 @@ msgid "Edit post"
 msgstr "تعديل المشاركة"
 
 #: dash/addons/content_cp/posts/edit/view.php:33
-msgid "You can change everything, change url and add gallery or some other change"
+msgid ""
+"You can change everything, change url and add gallery or some other change"
 msgstr ""
 "يمكنك تغيير كل شيء، مثلاً تغيير العنوان و إضافة معرض و بعض التغييرات الأخرى"
 
@@ -370,7 +376,8 @@ msgstr "المشاركات"
 
 #: dash/addons/content_cp/posts/home/view.php:25
 msgid "Check list of posts and search or filter in them to find your posts."
-msgstr "تحقق من قائمة المشاركات و ابحث عنها أو قم بتصفيتها للعثور على مشاركاتك."
+msgstr ""
+"تحقق من قائمة المشاركات و ابحث عنها أو قم بتصفيتها للعثور على مشاركاتك."
 
 #: dash/addons/content_cp/posts/home/view.php:25
 msgid "Also add or edit specefic post."
@@ -506,7 +513,8 @@ msgstr "تحقّق من العلامات و قم بإضافة أو تعديل ب
 #: dash/addons/includes/languages/trans_dash.php:198
 #: dash/addons/includes/languages/trans_static.php:112
 #: khadije/content_cp/advice/view.php:48 khadije/content_cp/book/view.php:59
-#: khadije/content_cp/donate/view.php:64 khadije/content_cp/familytrip/view.php:83
+#: khadije/content_cp/donate/view.php:64
+#: khadije/content_cp/familytrip/view.php:83
 #: khadije/content_cp/health/view.php:49
 #: khadije/content_cp/nationalcode/view.php:35
 #: khadije/content_cp/representation/view.php:48
@@ -572,8 +580,8 @@ msgstr ""
 
 #: dash/addons/content_cp/users/set/view.php:14
 msgid ""
-"You can add new user and after add with minimal data, we allow you to add extra "
-"detail of user."
+"You can add new user and after add with minimal data, we allow you to add "
+"extra detail of user."
 msgstr ""
 
 #: dash/addons/content_cp/users/set/view.php:18
@@ -582,14 +590,16 @@ msgstr ""
 
 #: dash/addons/content_cp/users/set/view.php:47
 #: dash/addons/content_enter/home/model.php:45
-#: dash/addons/content_su/sendnotify/model.php:30 dash/lib/app/parent/add.php:50
-#: dash/lib/app/parent/add.php:59 dash/lib/app/parent/delete.php:35
-#: dash/lib/app/parent/delete.php:113 dash/lib/app/parent/get.php:35
-#: dash/lib/app/parent/get.php:44 dash/lib/app/posts/add.php:37
-#: dash/lib/app/term.php:302 dash/lib/app/user/add.php:48
-#: khadije/includes/lib/app/myuser.php:365 khadije/includes/lib/app/myuser.php:457
-#: khadije/includes/lib/app/myuser.php:537 khadije/includes/lib/app/need.php:230
-#: khadije/includes/lib/app/need.php:286 khadije/includes/lib/app/service.php:266
+#: dash/addons/content_su/sendnotify/model.php:30
+#: dash/lib/app/parent/add.php:50 dash/lib/app/parent/add.php:59
+#: dash/lib/app/parent/delete.php:35 dash/lib/app/parent/delete.php:113
+#: dash/lib/app/parent/get.php:35 dash/lib/app/parent/get.php:44
+#: dash/lib/app/posts/add.php:37 dash/lib/app/term.php:302
+#: dash/lib/app/user/add.php:48 khadije/includes/lib/app/myuser.php:365
+#: khadije/includes/lib/app/myuser.php:464
+#: khadije/includes/lib/app/myuser.php:544
+#: khadije/includes/lib/app/need.php:230 khadije/includes/lib/app/need.php:286
+#: khadije/includes/lib/app/service.php:266
 #: khadije/includes/lib/app/service.php:351
 #: khadije/includes/lib/app/travel.php:623
 msgid "User not found"
@@ -608,7 +618,7 @@ msgstr "مع شرط"
 #: dash/addons/content_cp/view.php:96 dash/addons/content_su/view.php:143
 #: dash/addons/includes/languages/trans_static.php:39 dash/lib/app/sort.php:88
 msgid ", "
-msgstr ", "
+msgstr ""
 
 #: dash/addons/content_enter/alert/view.php:9
 #: dash/addons/content_enter/alert/view.php:15
@@ -689,10 +699,11 @@ msgid "Delete account"
 msgstr "إزالة الحساب"
 
 #: dash/addons/content_enter/email/change/google/model.php:17
-msgid "Please log in with your previous email or ignore your mobile registration."
+msgid ""
+"Please log in with your previous email or ignore your mobile registration."
 msgstr ""
-"يرجى تسجيل الدخول باستخدام بريدك الإلكتروني السابق، أو تجاهل تسجيل الجوال الخاص "
-"بك."
+"يرجى تسجيل الدخول باستخدام بريدك الإلكتروني السابق، أو تجاهل تسجيل الجوال "
+"الخاص بك."
 
 #: dash/addons/content_enter/email/change/google/view.php:9
 msgid "Change google mail"
@@ -894,8 +905,8 @@ msgid ""
 "If forget your password, Please enter new password. after pass verification "
 "your new password is usable."
 msgstr ""
-"إذا نسيت كلمة المرور الخاصة بك ، يرجى إدخال كلمة مرور جديدة. بعد التحقق من صحة "
-"كلمة المرور الجديدة الخاصة بك قابلة للاستخدام."
+"إذا نسيت كلمة المرور الخاصة بك ، يرجى إدخال كلمة مرور جديدة. بعد التحقق من "
+"صحة كلمة المرور الجديدة الخاصة بك قابلة للاستخدام."
 
 #: dash/addons/content_enter/pass/view.php:22
 #: dash/addons/includes/languages/trans_dash.php:708
@@ -1060,7 +1071,8 @@ msgid "Your login code is :code"
 msgstr "رمز تسجيل الدخول الخاص بك: code"
 
 #: dash/addons/content_enter/verify/telegram/model.php:52
-msgid "This code can be used to log in to your account. Do not give it to anyone!"
+msgid ""
+"This code can be used to log in to your account. Do not give it to anyone!"
 msgstr "يستخدم هذا الرمز لإدخال حسابك، لا تعطيه للآخرين!"
 
 #: dash/addons/content_enter/verify/telegram/model.php:53
@@ -1073,14 +1085,16 @@ msgstr "يرجى تأكيد هويتك."
 
 #: dash/addons/content_enter/verify/view.php:37
 msgid "We've sent the code via Telegram. Please enter the code below."
-msgstr "قد أرسلنا رمز التحقق من خلال تليجرام، يرجى إدخال الرمز في المربع أدناه."
+msgstr ""
+"قد أرسلنا رمز التحقق من خلال تليجرام، يرجى إدخال الرمز في المربع أدناه."
 
 #: dash/addons/content_enter/verify/view.php:41
 msgid "We trying to call you. be patient..."
 msgstr "نحن نحاول الاتصال بك. كن صبوراً..."
 
 #: dash/addons/content_enter/verify/view.php:45
-msgid "Your verification code sended to your mobile number via sms. be patient..."
+msgid ""
+"Your verification code sended to your mobile number via sms. be patient..."
 msgstr ""
 "تم إرسال رمز التحقق إلى رقم هاتفك عبر الرسائل القصيرة، و سوف يصل قريباً. كن "
 "صبوراً..."
@@ -1090,8 +1104,8 @@ msgid ""
 "We can't send code to you with our existing methods! For the last chance of "
 "verify yourself you can send code to our number."
 msgstr ""
-"لم نتمكن من إرسال الرمز إليك عبر هذه الطرق المتاحة! للحصول على الفرصة الأخيرة "
-"للتحقق من نفسك، يمكنك إرسال الرمز إلى رقمنا."
+"لم نتمكن من إرسال الرمز إليك عبر هذه الطرق المتاحة! للحصول على الفرصة "
+"الأخيرة للتحقق من نفسك، يمكنك إرسال الرمز إلى رقمنا."
 
 #: dash/addons/content_enter/verify/view.php:57
 msgid "What happend?"
@@ -1278,7 +1292,8 @@ msgstr "قائمة المعاملات"
 msgid ""
 "Check list of Transactions and search or filter in them to find your "
 "transactions."
-msgstr "تحقق من قائمة المعاملات و ابحث عنها أو التصفية فيها للعثور على معاملاتك."
+msgstr ""
+"تحقق من قائمة المعاملات و ابحث عنها أو التصفية فيها للعثور على معاملاتك."
 
 #: dash/addons/content_su/transactions/view.php:11
 msgid "Also add or edit specefic transactions."
@@ -1294,7 +1309,8 @@ msgstr "التحديث"
 
 #: dash/addons/content_su/update/view.php:10
 msgid "Check curent version of dash and update to latest version if available."
-msgstr "تحقق من الإصدار الحالي من الشرطة و تحديثه إلى أحدث إصدار إذا كان متاحاً."
+msgstr ""
+"تحقق من الإصدار الحالي من الشرطة و تحديثه إلى أحدث إصدار إذا كان متاحاً."
 
 #: dash/addons/content_su/update/view.php:16
 msgid "Inside project"
@@ -1518,13 +1534,15 @@ msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:60
 #: khadije/includes/languages/trans_dash.php:60
+#, fuzzy
 msgid "Default language"
-msgstr ""
+msgstr "اللغة الافتراضية"
 
 #: dash/addons/includes/languages/trans_dash.php:61
 #: khadije/includes/languages/trans_dash.php:61
+#, fuzzy
 msgid "Select one item"
-msgstr ""
+msgstr "يرجي تعيين عنصر واحد"
 
 #: dash/addons/includes/languages/trans_dash.php:62
 #: khadije/includes/languages/trans_dash.php:62
@@ -1534,8 +1552,9 @@ msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:63
 #: khadije/includes/languages/trans_dash.php:63
+#, fuzzy
 msgid "like"
-msgstr ""
+msgstr "الإعجاب"
 
 #: dash/addons/includes/languages/trans_dash.php:64
 #: khadije/includes/languages/trans_dash.php:64
@@ -1596,8 +1615,9 @@ msgstr "الإعجاب"
 
 #: dash/addons/includes/languages/trans_dash.php:75
 #: khadije/includes/languages/trans_dash.php:75
+#, fuzzy
 msgid "Firstname"
-msgstr ""
+msgstr "الاسم"
 
 #: dash/addons/includes/languages/trans_dash.php:76
 #: khadije/includes/languages/trans_dash.php:76
@@ -1606,8 +1626,9 @@ msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:77
 #: khadije/includes/languages/trans_dash.php:77
+#, fuzzy
 msgid "Lastname"
-msgstr ""
+msgstr "سورينام"
 
 #: dash/addons/includes/languages/trans_dash.php:78
 #: khadije/includes/languages/trans_dash.php:78
@@ -1635,7 +1656,8 @@ msgid "Enter a valid title from 3 to 40 character"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:83
-#: khadije/content_cp/familytrip/view.php:128 khadije/content_cp/trip/view.php:129
+#: khadije/content_cp/familytrip/view.php:128
+#: khadije/content_cp/trip/view.php:129
 #: khadije/includes/languages/trans_dash.php:83
 #: khadije/includes/languages/trans_project.php:497
 msgid "Type"
@@ -1687,7 +1709,8 @@ msgid "Like 09120123456"
 msgstr "مثل 09120123456"
 
 #: dash/addons/includes/languages/trans_dash.php:92
-#: khadije/content_cp/familytrip/view.php:140 khadije/content_cp/trip/view.php:141
+#: khadije/content_cp/familytrip/view.php:140
+#: khadije/content_cp/trip/view.php:141
 #: khadije/includes/languages/trans_dash.php:92
 #: khadije/includes/languages/trans_project.php:261
 msgid "Gender"
@@ -1706,7 +1729,8 @@ msgid "Female"
 msgstr "المرأة"
 
 #: dash/addons/includes/languages/trans_dash.php:95
-#: khadije/content_cp/familytrip/view.php:122 khadije/content_cp/trip/view.php:123
+#: khadije/content_cp/familytrip/view.php:122
+#: khadije/content_cp/trip/view.php:123
 #: khadije/includes/languages/trans_dash.php:95
 #: khadije/includes/languages/trans_project.php:320
 msgid "Status"
@@ -1733,8 +1757,9 @@ msgstr "العطل"
 
 #: dash/addons/includes/languages/trans_dash.php:99
 #: khadije/includes/languages/trans_dash.php:99
+#, fuzzy
 msgid "Removed"
-msgstr ""
+msgstr "تم حذف البريد الإلكتروني الخاص بك"
 
 #: dash/addons/includes/languages/trans_dash.php:100
 #: khadije/includes/languages/trans_dash.php:100
@@ -1753,8 +1778,9 @@ msgstr "الإذن"
 
 #: dash/addons/includes/languages/trans_dash.php:103
 #: khadije/includes/languages/trans_dash.php:103
+#, fuzzy
 msgid "No permission"
-msgstr ""
+msgstr "الإذن"
 
 #: dash/addons/includes/languages/trans_dash.php:104
 #: dash/addons/includes/languages/trans_static.php:842
@@ -1770,8 +1796,9 @@ msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:106
 #: khadije/includes/languages/trans_dash.php:106
+#, fuzzy
 msgid "Click here"
-msgstr ""
+msgstr "انقر هنا"
 
 #: dash/addons/includes/languages/trans_dash.php:107
 #: khadije/includes/languages/trans_dash.php:107
@@ -1850,9 +1877,11 @@ msgstr "إحالة أصدقائك من خلال وسائل التواصل الا
 #: dash/addons/includes/languages/trans_dash.php:123
 #: khadije/includes/languages/trans_dash.php:123
 msgid ""
-"Share the referral rewards program with friends on Facebook, Twitter, or Email."
+"Share the referral rewards program with friends on Facebook, Twitter, or "
+"Email."
 msgstr ""
-"شارك برنامج مكافآت الإحالة مع الأصدقاء في الفيسبوك، تويتر، أو البريد الإلكتروني."
+"شارك برنامج مكافآت الإحالة مع الأصدقاء في الفيسبوك، تويتر، أو البريد "
+"الإلكتروني."
 
 #: dash/addons/includes/languages/trans_dash.php:124
 #: khadije/includes/languages/trans_dash.php:124
@@ -1862,8 +1891,8 @@ msgstr "عندما ينقرون على مشاركتك، سنعلم أنك أنت
 #: dash/addons/includes/languages/trans_dash.php:125
 #: khadije/includes/languages/trans_dash.php:125
 msgid ""
-"If someone forget to use your link, we allow to set your ref code as promo code "
-"in billing page!"
+"If someone forget to use your link, we allow to set your ref code as promo "
+"code in billing page!"
 msgstr ""
 "إذا نسي أحد الأشخاص استخدام الرابط ، فإننا نسمح لك بتعيين رمز المرجع كرمز "
 "ترويجي في صفحة الفوترة!"
@@ -1881,11 +1910,11 @@ msgstr "يدخل صديقك و يحصل على رصيد بقيمة 5 دولار�
 #: dash/addons/includes/languages/trans_dash.php:128
 #: khadije/includes/languages/trans_dash.php:128
 msgid ""
-"Anyone you refer to Jibres that enter using your unique referral link or your "
-"promo code will receive $5 in credit."
+"Anyone you refer to Jibres that enter using your unique referral link or "
+"your promo code will receive $5 in credit."
 msgstr ""
-"أي شخص تشير إليه إلى جيبرس و الذي يتم إدخاله باستخدام رابط الإحالة الفريد، أو "
-"رمزك الترويجي، سيحصل على رصيد بقيمة 5 $ امريكية."
+"أي شخص تشير إليه إلى جيبرس و الذي يتم إدخاله باستخدام رابط الإحالة الفريد، "
+"أو رمزك الترويجي، سيحصل على رصيد بقيمة 5 $ امريكية."
 
 #: dash/addons/includes/languages/trans_dash.php:129
 #: khadije/includes/languages/trans_dash.php:129
@@ -1910,11 +1939,11 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:132
 #: khadije/includes/languages/trans_dash.php:132
 msgid ""
-"We calculate your percentage until 6 month of your friend registration. Because "
-"of that it was your chance to convinced your friend to charge more!"
+"We calculate your percentage until 6 month of your friend registration. "
+"Because of that it was your chance to convinced your friend to charge more!"
 msgstr ""
-"نقوم بحساب النسبة المئوية الخاصة بك حتى 6 أشهر من تسجيل صديقك. و بسبب ذلك كانت "
-"فرصتك في إقناع صديقك بتحصيل وم أكثر!"
+"نقوم بحساب النسبة المئوية الخاصة بك حتى 6 أشهر من تسجيل صديقك. و بسبب ذلك "
+"كانت فرصتك في إقناع صديقك بتحصيل وم أكثر!"
 
 #: dash/addons/includes/languages/trans_dash.php:133
 #: khadije/includes/languages/trans_dash.php:133
@@ -1924,7 +1953,8 @@ msgstr "شارك الرابط الخاص بك"
 #: dash/addons/includes/languages/trans_dash.php:134
 #: khadije/includes/languages/trans_dash.php:134
 msgid ""
-"Copy your personal referral link and share it with your friends and followers."
+"Copy your personal referral link and share it with your friends and "
+"followers."
 msgstr "انسخ رابط الإحالة الشخصي الخاص بك و شاركه مع أصدقائك و متابعيك."
 
 #: dash/addons/includes/languages/trans_dash.php:135
@@ -2150,14 +2180,16 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:189
 #: khadije/includes/languages/trans_dash.php:189
 #: khadije/includes/languages/trans_project.php:318
+#, fuzzy
 msgid "Updated on"
-msgstr ""
+msgstr "تم تحديث التعليق بنجاح"
 
 #: dash/addons/includes/languages/trans_dash.php:190
 #: khadije/includes/languages/trans_dash.php:190
 #: khadije/includes/languages/trans_project.php:319
+#, fuzzy
 msgid "Current status"
-msgstr ""
+msgstr "الولايات المتحدة الامريكانية"
 
 #: dash/addons/includes/languages/trans_dash.php:191
 #: khadije/includes/languages/trans_dash.php:191
@@ -2228,8 +2260,9 @@ msgstr "التصحيح"
 #: dash/addons/includes/languages/trans_dash.php:206
 #: khadije/includes/languages/trans_dash.php:206
 #: khadije/includes/languages/trans_project.php:335
+#, fuzzy
 msgid "Created on"
-msgstr ""
+msgstr "تاريخ الإنشاء"
 
 #: dash/addons/includes/languages/trans_dash.php:207
 #: khadije/includes/languages/trans_dash.php:207
@@ -2337,8 +2370,9 @@ msgstr "المستخدمين"
 #: dash/addons/includes/languages/trans_static.php:841
 #: khadije/includes/languages/trans_dash.php:236
 #: khadije/includes/languages/trans_project.php:488
+#, fuzzy
 msgid "SMS"
-msgstr ""
+msgstr "تم تسجيل المستخدم مع SMS"
 
 #: dash/addons/includes/languages/trans_dash.php:237
 #: khadije/includes/languages/trans_dash.php:237
@@ -2364,8 +2398,8 @@ msgstr "بعض الحقوق محفوظة"
 
 #: dash/addons/includes/languages/trans_dash.php:241
 #: dash/addons/includes/languages/trans_static.php:58
-#: dash/addons/includes/languages/trans_static.php:175 dash/lib/engine/view.php:73
-#: khadije/includes/languages/trans_dash.php:241
+#: dash/addons/includes/languages/trans_static.php:175
+#: dash/lib/engine/view.php:73 khadije/includes/languages/trans_dash.php:241
 msgid "Ermile"
 msgstr "ارمايل"
 
@@ -2378,8 +2412,8 @@ msgstr "الإصدار"
 #: dash/addons/includes/languages/trans_dash.php:245
 #: khadije/includes/languages/trans_dash.php:245
 msgid ""
-"The permission name should be unique and contain only alphanameric characters "
-"and underscores"
+"The permission name should be unique and contain only alphanameric "
+"characters and underscores"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:246
@@ -2607,8 +2641,9 @@ msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:300
 #: khadije/includes/languages/trans_dash.php:300
+#, fuzzy
 msgid "Show"
-msgstr ""
+msgstr "عرض معلومات الخادم"
 
 #: dash/addons/includes/languages/trans_dash.php:301
 #: khadije/includes/languages/trans_dash.php:301
@@ -2618,8 +2653,9 @@ msgstr "المجموعة"
 
 #: dash/addons/includes/languages/trans_dash.php:302
 #: khadije/includes/languages/trans_dash.php:302
+#, fuzzy
 msgid "No group"
-msgstr ""
+msgstr "المجموعة"
 
 #: dash/addons/includes/languages/trans_dash.php:309
 #: khadije/includes/languages/trans_dash.php:309
@@ -2699,8 +2735,9 @@ msgstr "حاول أن تبدأ بإضافة سجلات جديدة!"
 
 #: dash/addons/includes/languages/trans_dash.php:329
 #: khadije/includes/languages/trans_dash.php:329
+#, fuzzy
 msgid "Display Name"
-msgstr ""
+msgstr "إسم العرض"
 
 #: dash/addons/includes/languages/trans_dash.php:331
 #: khadije/includes/languages/trans_dash.php:331
@@ -2709,8 +2746,9 @@ msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:332
 #: khadije/includes/languages/trans_dash.php:332
+#, fuzzy
 msgid "Last Modified"
-msgstr ""
+msgstr "آخر تعديل"
 
 #: dash/addons/includes/languages/trans_dash.php:333
 #: khadije/includes/languages/trans_dash.php:333
@@ -2875,7 +2913,8 @@ msgstr "أزل عنوان بريدي الإلكتروني"
 
 #: dash/addons/includes/languages/trans_dash.php:385
 #: khadije/includes/languages/trans_dash.php:385
-msgid "We found your Google Mail that is different from your current google mail"
+msgid ""
+"We found your Google Mail that is different from your current google mail"
 msgstr "لقد وجدنا Google Mail الخاص بك مختلفًا عن بريد Google الحالي الخاص بك"
 
 #: dash/addons/includes/languages/trans_dash.php:386
@@ -3280,7 +3319,7 @@ msgstr "نعم"
 #: khadije/includes/languages/trans_dash.php:498
 #: khadije/includes/languages/trans_project.php:199
 msgid "No"
-msgstr "لا"
+msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:501
 #: khadije/includes/languages/trans_dash.php:501
@@ -3643,7 +3682,7 @@ msgstr "الوحدة"
 #: dash/addons/includes/languages/trans_dash.php:602
 #: khadije/includes/languages/trans_dash.php:602
 msgid "$"
-msgstr "$"
+msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:603
 #: khadije/includes/languages/trans_dash.php:603
@@ -4053,8 +4092,9 @@ msgstr "أدخل اسم المستخدم الصالح من 4 إلى 50 حرفا�
 
 #: dash/addons/includes/languages/trans_dash.php:699
 #: khadije/includes/languages/trans_dash.php:698
+#, fuzzy
 msgid "Delete Account"
-msgstr ""
+msgstr "إزالة الحساب"
 
 #: dash/addons/includes/languages/trans_dash.php:700
 #: khadije/includes/languages/trans_dash.php:699
@@ -4079,8 +4119,9 @@ msgstr "تسجيل الدخول"
 
 #: dash/addons/includes/languages/trans_dash.php:704
 #: khadije/includes/languages/trans_dash.php:703
+#, fuzzy
 msgid "No account?"
-msgstr ""
+msgstr "الحساب"
 
 #: dash/addons/includes/languages/trans_dash.php:705
 #: khadije/includes/languages/trans_dash.php:704
@@ -4283,11 +4324,11 @@ msgstr "منذ"
 
 #: dash/addons/includes/languages/trans_static.php:37
 msgid ","
-msgstr ","
+msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:38
 msgid " ,"
-msgstr " ,"
+msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:40
 #: dash/lib/utility/human.php:50
@@ -4457,7 +4498,8 @@ msgstr "محتوى الموقع"
 
 #: dash/addons/includes/languages/trans_static.php:84
 #: khadije/content_cp/advice/view.php:20 khadije/content_cp/donate/view.php:21
-#: khadije/content_cp/familytrip/view.php:16 khadije/content_cp/health/view.php:21
+#: khadije/content_cp/familytrip/view.php:16
+#: khadije/content_cp/health/view.php:21
 #: khadije/content_cp/representation/view.php:20
 #: khadije/content_cp/service/view.php:20 khadije/content_cp/trip/view.php:16
 msgid "Options"
@@ -4485,7 +4527,7 @@ msgstr "على محمل الجد، هل أنت متأكد؟ لا يوجد عود
 
 #: dash/addons/includes/languages/trans_static.php:91
 msgid "or"
-msgstr "أو"
+msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:97
 msgid "Attachments"
@@ -5070,7 +5112,7 @@ msgstr "الإرسال"
 
 #: dash/addons/includes/languages/trans_static.php:283
 msgid " to "
-msgstr " الي "
+msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:284
 msgid "until"
@@ -5257,8 +5299,10 @@ msgid "You can edit this permission"
 msgstr "يمكنك تحرير هذا الإذن"
 
 #: dash/addons/includes/languages/trans_static.php:356
-msgid "Define or edit user permissions to allow or block access to special pages"
-msgstr "تحديد أذونات المستخدم أو تحريرها للسماح أو حظر الوصول إلى الصفحات الخاصة"
+msgid ""
+"Define or edit user permissions to allow or block access to special pages"
+msgstr ""
+"تحديد أذونات المستخدم أو تحريرها للسماح أو حظر الوصول إلى الصفحات الخاصة"
 
 #: dash/addons/includes/languages/trans_static.php:357
 msgid "You are editing permission"
@@ -5745,992 +5789,992 @@ msgstr "الدفع"
 
 #: dash/addons/includes/languages/trans_static.php:508
 msgid "afghanistan"
-msgstr ""
+msgstr "أفغانستان"
 
 #: dash/addons/includes/languages/trans_static.php:509
 msgid "åland"
-msgstr ""
+msgstr "أرض"
 
 #: dash/addons/includes/languages/trans_static.php:510
 msgid "albania"
-msgstr ""
+msgstr "ألبانيا"
 
 #: dash/addons/includes/languages/trans_static.php:511
 msgid "algeria"
-msgstr ""
+msgstr "الجزائر"
 
 #: dash/addons/includes/languages/trans_static.php:512
 msgid "american samoa"
-msgstr ""
+msgstr "ساموا الأمريكية"
 
 #: dash/addons/includes/languages/trans_static.php:513
 msgid "andorra"
-msgstr ""
+msgstr "أندورا"
 
 #: dash/addons/includes/languages/trans_static.php:514
 msgid "angola"
-msgstr ""
+msgstr "أنغولا"
 
 #: dash/addons/includes/languages/trans_static.php:515
 msgid "anguilla"
-msgstr ""
+msgstr "أنغيلا"
 
 #: dash/addons/includes/languages/trans_static.php:516
 msgid "antarctica"
-msgstr ""
+msgstr "القارة القطبية الجنوبية"
 
 #: dash/addons/includes/languages/trans_static.php:517
 msgid "antigua and barbuda"
-msgstr ""
+msgstr "أنتيغوا وبربودا"
 
 #: dash/addons/includes/languages/trans_static.php:518
 msgid "argentina"
-msgstr ""
+msgstr "الأرجنتين"
 
 #: dash/addons/includes/languages/trans_static.php:519
 msgid "armenia"
-msgstr ""
+msgstr "أرمينيا"
 
 #: dash/addons/includes/languages/trans_static.php:520
 msgid "aruba"
-msgstr ""
+msgstr "أروبا"
 
 #: dash/addons/includes/languages/trans_static.php:521
 msgid "australia"
-msgstr ""
+msgstr "أستراليا"
 
 #: dash/addons/includes/languages/trans_static.php:522
 msgid "austria"
-msgstr ""
+msgstr "النمسا"
 
 #: dash/addons/includes/languages/trans_static.php:523
 msgid "azerbaijan"
-msgstr ""
+msgstr "أذربيجان"
 
 #: dash/addons/includes/languages/trans_static.php:524
 msgid "bahamas"
-msgstr ""
+msgstr "جزر البهاما"
 
 #: dash/addons/includes/languages/trans_static.php:525
 msgid "bahrain"
-msgstr ""
+msgstr "البحرين"
 
 #: dash/addons/includes/languages/trans_static.php:526
 msgid "bangladesh"
-msgstr ""
+msgstr "بنغلاديش"
 
 #: dash/addons/includes/languages/trans_static.php:527
 msgid "barbados"
-msgstr ""
+msgstr "بربادوس"
 
 #: dash/addons/includes/languages/trans_static.php:528
 msgid "belarus"
-msgstr ""
+msgstr "روسيا البيضاء"
 
 #: dash/addons/includes/languages/trans_static.php:529
 msgid "belgium"
-msgstr ""
+msgstr "بلجيكا"
 
 #: dash/addons/includes/languages/trans_static.php:530
 msgid "belize"
-msgstr ""
+msgstr "بليز"
 
 #: dash/addons/includes/languages/trans_static.php:531
 msgid "benin"
-msgstr ""
+msgstr "بنين"
 
 #: dash/addons/includes/languages/trans_static.php:532
 msgid "bermuda"
-msgstr ""
+msgstr "برمودا"
 
 #: dash/addons/includes/languages/trans_static.php:533
 msgid "bhutan"
-msgstr ""
+msgstr "بوتان"
 
 #: dash/addons/includes/languages/trans_static.php:534
 msgid "bolivia"
-msgstr ""
+msgstr "بوليفيا"
 
 #: dash/addons/includes/languages/trans_static.php:535
 msgid "bonaire"
-msgstr ""
+msgstr "بونير"
 
 #: dash/addons/includes/languages/trans_static.php:536
 msgid "bosnia and herzegovina"
-msgstr ""
+msgstr "البوسنة والهرسك"
 
 #: dash/addons/includes/languages/trans_static.php:537
 msgid "botswana"
-msgstr ""
+msgstr "بوتسوانا"
 
 #: dash/addons/includes/languages/trans_static.php:538
 msgid "bouvet island"
-msgstr ""
+msgstr "جزيرة بوفيت"
 
 #: dash/addons/includes/languages/trans_static.php:539
 msgid "brazil"
-msgstr ""
+msgstr "البرازيل"
 
 #: dash/addons/includes/languages/trans_static.php:540
 msgid "british indian ocean territory"
-msgstr ""
+msgstr "إقليم المحيط البريطاني الهندي"
 
 #: dash/addons/includes/languages/trans_static.php:541
 msgid "british virgin islands"
-msgstr ""
+msgstr "جزر فيرجن البريطانية"
 
 #: dash/addons/includes/languages/trans_static.php:542
 msgid "brunei"
-msgstr ""
+msgstr "بروناي"
 
 #: dash/addons/includes/languages/trans_static.php:543
 msgid "bulgaria"
-msgstr ""
+msgstr "بلغاريا"
 
 #: dash/addons/includes/languages/trans_static.php:544
 msgid "burkina faso"
-msgstr ""
+msgstr "بوركينا فاسو"
 
 #: dash/addons/includes/languages/trans_static.php:545
 msgid "burundi"
-msgstr ""
+msgstr "بوروندي"
 
 #: dash/addons/includes/languages/trans_static.php:546
 msgid "cambodia"
-msgstr ""
+msgstr "كمبوديا"
 
 #: dash/addons/includes/languages/trans_static.php:547
 msgid "cameroon"
-msgstr ""
+msgstr "الكاميرون"
 
 #: dash/addons/includes/languages/trans_static.php:548
 msgid "canada"
-msgstr ""
+msgstr "كندا"
 
 #: dash/addons/includes/languages/trans_static.php:549
 msgid "cape verde"
-msgstr ""
+msgstr "الرأس الأخضر"
 
 #: dash/addons/includes/languages/trans_static.php:550
 msgid "cayman islands"
-msgstr ""
+msgstr "جزر كايمان"
 
 #: dash/addons/includes/languages/trans_static.php:551
 msgid "central african republic"
-msgstr ""
+msgstr "جمهورية افريقيا الوسطى"
 
 #: dash/addons/includes/languages/trans_static.php:552
 msgid "chad"
-msgstr ""
+msgstr "تشاد"
 
 #: dash/addons/includes/languages/trans_static.php:553
 msgid "chile"
-msgstr ""
+msgstr "تشيلي"
 
 #: dash/addons/includes/languages/trans_static.php:554
 msgid "china"
-msgstr ""
+msgstr "الصين"
 
 #: dash/addons/includes/languages/trans_static.php:555
 msgid "christmas island"
-msgstr ""
+msgstr "جزيرة عيد الميلاد"
 
 #: dash/addons/includes/languages/trans_static.php:556
 msgid "cocos (keeling) islands"
-msgstr ""
+msgstr "جزر كوكوس (keeling)"
 
 #: dash/addons/includes/languages/trans_static.php:557
 msgid "colombia"
-msgstr ""
+msgstr "كولومبيا"
 
 #: dash/addons/includes/languages/trans_static.php:558
 msgid "comoros"
-msgstr ""
+msgstr "جزر القمر"
 
 #: dash/addons/includes/languages/trans_static.php:559
 msgid "cook islands"
-msgstr ""
+msgstr "جزر كوك"
 
 #: dash/addons/includes/languages/trans_static.php:560
 msgid "costa rica"
-msgstr ""
+msgstr "كوستا ريكا"
 
 #: dash/addons/includes/languages/trans_static.php:561
 msgid "croatia"
-msgstr ""
+msgstr "كرواتيا"
 
 #: dash/addons/includes/languages/trans_static.php:562
 msgid "cuba"
-msgstr ""
+msgstr "كوبا"
 
 #: dash/addons/includes/languages/trans_static.php:563
 msgid "curacao"
-msgstr ""
+msgstr "كوراكاو"
 
 #: dash/addons/includes/languages/trans_static.php:564
 msgid "cyprus"
-msgstr ""
+msgstr "قبرص"
 
 #: dash/addons/includes/languages/trans_static.php:565
 msgid "czech republic"
-msgstr ""
+msgstr "جمهورية التشيك"
 
 #: dash/addons/includes/languages/trans_static.php:566
 msgid "democratic republic of the congo"
-msgstr ""
+msgstr "جمهورية الكونغو الديموقراطية"
 
 #: dash/addons/includes/languages/trans_static.php:567
 msgid "denmark"
-msgstr ""
+msgstr "الدنمارك"
 
 #: dash/addons/includes/languages/trans_static.php:568
 msgid "djibouti"
-msgstr ""
+msgstr "جيبوتي"
 
 #: dash/addons/includes/languages/trans_static.php:569
 msgid "dominica"
-msgstr ""
+msgstr "دومينيكا"
 
 #: dash/addons/includes/languages/trans_static.php:570
 msgid "dominican republic"
-msgstr ""
+msgstr "جمهورية الدومنيكان"
 
 #: dash/addons/includes/languages/trans_static.php:571
 msgid "east timor"
-msgstr ""
+msgstr "تيمور الشرقية"
 
 #: dash/addons/includes/languages/trans_static.php:572
 msgid "ecuador"
-msgstr ""
+msgstr "الاكوادور"
 
 #: dash/addons/includes/languages/trans_static.php:573
 msgid "egypt"
-msgstr ""
+msgstr "مصر"
 
 #: dash/addons/includes/languages/trans_static.php:574
 msgid "el salvador"
-msgstr ""
+msgstr "السلفادور"
 
 #: dash/addons/includes/languages/trans_static.php:575
 msgid "equatorial guinea"
-msgstr ""
+msgstr "غينيا الإستوائية"
 
 #: dash/addons/includes/languages/trans_static.php:576
 msgid "eritrea"
-msgstr ""
+msgstr "إريتريا"
 
 #: dash/addons/includes/languages/trans_static.php:577
 msgid "estonia"
-msgstr ""
+msgstr "استونيا"
 
 #: dash/addons/includes/languages/trans_static.php:578
 msgid "ethiopia"
-msgstr ""
+msgstr "أثيوبيا"
 
 #: dash/addons/includes/languages/trans_static.php:579
 msgid "falkland islands"
-msgstr ""
+msgstr "جزر فوكلاند"
 
 #: dash/addons/includes/languages/trans_static.php:580
 msgid "faroe islands"
-msgstr ""
+msgstr "جزر صناعية"
 
 #: dash/addons/includes/languages/trans_static.php:581
 msgid "fiji"
-msgstr ""
+msgstr "فيجي"
 
 #: dash/addons/includes/languages/trans_static.php:582
 msgid "finland"
-msgstr ""
+msgstr "فنلندا"
 
 #: dash/addons/includes/languages/trans_static.php:583
 msgid "france"
-msgstr ""
+msgstr "فرنسا"
 
 #: dash/addons/includes/languages/trans_static.php:584
 msgid "french guiana"
-msgstr ""
+msgstr "غيانا الفرنسية"
 
 #: dash/addons/includes/languages/trans_static.php:585
 msgid "french polynesia"
-msgstr ""
+msgstr "بولينيزيا الفرنسية"
 
 #: dash/addons/includes/languages/trans_static.php:586
 msgid "french southern territories"
-msgstr ""
+msgstr "المناطق الجنوبية لفرنسا"
 
 #: dash/addons/includes/languages/trans_static.php:587
 msgid "gabon"
-msgstr ""
+msgstr "الغابون"
 
 #: dash/addons/includes/languages/trans_static.php:588
 msgid "gambia"
-msgstr ""
+msgstr "غامبيا"
 
 #: dash/addons/includes/languages/trans_static.php:589
 msgid "georgia"
-msgstr ""
+msgstr "جورجيا"
 
 #: dash/addons/includes/languages/trans_static.php:590
 msgid "germany"
-msgstr ""
+msgstr "ألمانيا"
 
 #: dash/addons/includes/languages/trans_static.php:591
 msgid "ghana"
-msgstr ""
+msgstr "غانا"
 
 #: dash/addons/includes/languages/trans_static.php:592
 msgid "gibraltar"
-msgstr ""
+msgstr "جبل طارق"
 
 #: dash/addons/includes/languages/trans_static.php:593
 msgid "greece"
-msgstr ""
+msgstr "اليونان"
 
 #: dash/addons/includes/languages/trans_static.php:594
 msgid "greenland"
-msgstr ""
+msgstr "الأرض الخضراء"
 
 #: dash/addons/includes/languages/trans_static.php:595
 msgid "grenada"
-msgstr ""
+msgstr "غرينادا"
 
 #: dash/addons/includes/languages/trans_static.php:596
 msgid "guadeloupe"
-msgstr ""
+msgstr "جوادلوب"
 
 #: dash/addons/includes/languages/trans_static.php:597
 msgid "guam"
-msgstr ""
+msgstr "غوام"
 
 #: dash/addons/includes/languages/trans_static.php:598
 msgid "guatemala"
-msgstr ""
+msgstr "غواتيمالا"
 
 #: dash/addons/includes/languages/trans_static.php:599
 msgid "guernsey"
-msgstr ""
+msgstr "غيرنسي"
 
 #: dash/addons/includes/languages/trans_static.php:600
 msgid "guinea"
-msgstr ""
+msgstr "غينيا"
 
 #: dash/addons/includes/languages/trans_static.php:601
 msgid "guinea-bissau"
-msgstr ""
+msgstr "غينيا بيساو"
 
 #: dash/addons/includes/languages/trans_static.php:602
 msgid "guyana"
-msgstr ""
+msgstr "غيانا"
 
 #: dash/addons/includes/languages/trans_static.php:603
 msgid "haiti"
-msgstr ""
+msgstr "هايتي"
 
 #: dash/addons/includes/languages/trans_static.php:604
 msgid "heard island and mcdonald islands"
-msgstr ""
+msgstr "قلب الجزيرة وجزر ماكدونالز"
 
 #: dash/addons/includes/languages/trans_static.php:605
 msgid "honduras"
-msgstr ""
+msgstr "هندوراس"
 
 #: dash/addons/includes/languages/trans_static.php:606
 msgid "hong kong"
-msgstr ""
+msgstr "هونج كونج"
 
 #: dash/addons/includes/languages/trans_static.php:607
 msgid "hungary"
-msgstr ""
+msgstr "اليونان"
 
 #: dash/addons/includes/languages/trans_static.php:608
 msgid "iceland"
-msgstr ""
+msgstr "أيسلندا"
 
 #: dash/addons/includes/languages/trans_static.php:609
 msgid "india"
-msgstr ""
+msgstr "الهند"
 
 #: dash/addons/includes/languages/trans_static.php:610
 msgid "indonesia"
-msgstr ""
+msgstr "أندونيسيا"
 
 #: dash/addons/includes/languages/trans_static.php:611
 msgid "iraq"
-msgstr ""
+msgstr "العراق"
 
 #: dash/addons/includes/languages/trans_static.php:612
 msgid "ireland"
-msgstr ""
+msgstr "أيرلندا"
 
 #: dash/addons/includes/languages/trans_static.php:613
 msgid "isle of man"
-msgstr ""
+msgstr "جزيرة آيل أوف مان"
 
 #: dash/addons/includes/languages/trans_static.php:614
 msgid "italy"
-msgstr ""
+msgstr "إيطاليا"
 
 #: dash/addons/includes/languages/trans_static.php:615
 msgid "ivory coast"
-msgstr ""
+msgstr "ساحل العاج"
 
 #: dash/addons/includes/languages/trans_static.php:616
 msgid "jamaica"
-msgstr ""
+msgstr "جامايكا"
 
 #: dash/addons/includes/languages/trans_static.php:617
 msgid "japan"
-msgstr ""
+msgstr "اليابان"
 
 #: dash/addons/includes/languages/trans_static.php:618
 msgid "jersey"
-msgstr ""
+msgstr "جيرسي"
 
 #: dash/addons/includes/languages/trans_static.php:619
 msgid "jordan"
-msgstr ""
+msgstr "الأردن"
 
 #: dash/addons/includes/languages/trans_static.php:620
 msgid "kazakhstan"
-msgstr ""
+msgstr "كازاخستان"
 
 #: dash/addons/includes/languages/trans_static.php:621
 msgid "kenya"
-msgstr ""
+msgstr "كينيا"
 
 #: dash/addons/includes/languages/trans_static.php:622
 msgid "kiribati"
-msgstr ""
+msgstr "كيريباس"
 
 #: dash/addons/includes/languages/trans_static.php:623
 msgid "kosovo"
-msgstr ""
+msgstr "كوسوفو"
 
 #: dash/addons/includes/languages/trans_static.php:624
 msgid "kuwait"
-msgstr ""
+msgstr "الكويت"
 
 #: dash/addons/includes/languages/trans_static.php:625
 msgid "kyrgyzstan"
-msgstr ""
+msgstr "قيرغيزستان"
 
 #: dash/addons/includes/languages/trans_static.php:626
 msgid "laos"
-msgstr ""
+msgstr "لاوس"
 
 #: dash/addons/includes/languages/trans_static.php:627
 msgid "latvia"
-msgstr ""
+msgstr "لاتفيا"
 
 #: dash/addons/includes/languages/trans_static.php:628
 msgid "lebanon"
-msgstr ""
+msgstr "لبنان"
 
 #: dash/addons/includes/languages/trans_static.php:629
 msgid "lesotho"
-msgstr ""
+msgstr "ليسوتو"
 
 #: dash/addons/includes/languages/trans_static.php:630
 msgid "liberia"
-msgstr ""
+msgstr "ليبيريا"
 
 #: dash/addons/includes/languages/trans_static.php:631
 msgid "libya"
-msgstr ""
+msgstr "ليبيا"
 
 #: dash/addons/includes/languages/trans_static.php:632
 msgid "liechtenstein"
-msgstr ""
+msgstr "ليختنشتاين"
 
 #: dash/addons/includes/languages/trans_static.php:633
 msgid "lithuania"
-msgstr ""
+msgstr "ليتوانيا"
 
 #: dash/addons/includes/languages/trans_static.php:634
 msgid "luxembourg"
-msgstr ""
+msgstr "لوكسمبورغ"
 
 #: dash/addons/includes/languages/trans_static.php:635
 msgid "macau"
-msgstr ""
+msgstr "ماكاو"
 
 #: dash/addons/includes/languages/trans_static.php:636
 msgid "macedonia"
-msgstr ""
+msgstr "مقدونيا"
 
 #: dash/addons/includes/languages/trans_static.php:637
 msgid "madagascar"
-msgstr ""
+msgstr "مدغشقر"
 
 #: dash/addons/includes/languages/trans_static.php:638
 msgid "malawi"
-msgstr ""
+msgstr "ملاوي"
 
 #: dash/addons/includes/languages/trans_static.php:639
 msgid "malaysia"
-msgstr ""
+msgstr "ماليزيا"
 
 #: dash/addons/includes/languages/trans_static.php:640
 msgid "maldives"
-msgstr ""
+msgstr "جزر المالديف"
 
 #: dash/addons/includes/languages/trans_static.php:641
 msgid "mali"
-msgstr ""
+msgstr "مالي"
 
 #: dash/addons/includes/languages/trans_static.php:642
 msgid "malta"
-msgstr ""
+msgstr "مالطا"
 
 #: dash/addons/includes/languages/trans_static.php:643
 msgid "marshall islands"
-msgstr ""
+msgstr "جزر مارشال"
 
 #: dash/addons/includes/languages/trans_static.php:644
 msgid "martinique"
-msgstr ""
+msgstr "مارتينيك"
 
 #: dash/addons/includes/languages/trans_static.php:645
 msgid "mauritania"
-msgstr ""
+msgstr "موريتانيا"
 
 #: dash/addons/includes/languages/trans_static.php:646
 msgid "mauritius"
-msgstr ""
+msgstr "موريشيوس"
 
 #: dash/addons/includes/languages/trans_static.php:647
 msgid "mayotte"
-msgstr ""
+msgstr "مايوت"
 
 #: dash/addons/includes/languages/trans_static.php:648
 msgid "mexico"
-msgstr ""
+msgstr "المكسيك"
 
 #: dash/addons/includes/languages/trans_static.php:649
 msgid "micronesia"
-msgstr ""
+msgstr "ميكرونيزيا"
 
 #: dash/addons/includes/languages/trans_static.php:650
 msgid "moldova"
-msgstr ""
+msgstr "مولدوفا"
 
 #: dash/addons/includes/languages/trans_static.php:651
 msgid "monaco"
-msgstr ""
+msgstr "موناكو"
 
 #: dash/addons/includes/languages/trans_static.php:652
 msgid "mongolia"
-msgstr ""
+msgstr "منغوليا"
 
 #: dash/addons/includes/languages/trans_static.php:653
 msgid "montenegro"
-msgstr ""
+msgstr "الجبل الأسود"
 
 #: dash/addons/includes/languages/trans_static.php:654
 msgid "montserrat"
-msgstr ""
+msgstr "مونتسيرات"
 
 #: dash/addons/includes/languages/trans_static.php:655
 msgid "morocco"
-msgstr ""
+msgstr "المغرب"
 
 #: dash/addons/includes/languages/trans_static.php:656
 msgid "mozambique"
-msgstr ""
+msgstr "موزمبيق"
 
 #: dash/addons/includes/languages/trans_static.php:657
 msgid "myanmar (burma)"
-msgstr ""
+msgstr "ميانمار (بورما)"
 
 #: dash/addons/includes/languages/trans_static.php:658
 msgid "namibia"
-msgstr ""
+msgstr "ناميبيا"
 
 #: dash/addons/includes/languages/trans_static.php:659
 msgid "nauru"
-msgstr ""
+msgstr "ناورو"
 
 #: dash/addons/includes/languages/trans_static.php:660
 msgid "nepal"
-msgstr ""
+msgstr "نيبال"
 
 #: dash/addons/includes/languages/trans_static.php:661
 msgid "netherlands"
-msgstr ""
+msgstr "هولندا"
 
 #: dash/addons/includes/languages/trans_static.php:662
 msgid "new caledonia"
-msgstr ""
+msgstr "كاليدونيا الجديدة"
 
 #: dash/addons/includes/languages/trans_static.php:663
 msgid "new zealand"
-msgstr ""
+msgstr "نيوزيلاندا"
 
 #: dash/addons/includes/languages/trans_static.php:664
 msgid "nicaragua"
-msgstr ""
+msgstr "نيكاراغوا"
 
 #: dash/addons/includes/languages/trans_static.php:665
 msgid "niger"
-msgstr ""
+msgstr "النيجر"
 
 #: dash/addons/includes/languages/trans_static.php:666
 msgid "nigeria"
-msgstr ""
+msgstr "نيجيريا"
 
 #: dash/addons/includes/languages/trans_static.php:667
 msgid "niue"
-msgstr ""
+msgstr "نيوي"
 
 #: dash/addons/includes/languages/trans_static.php:668
 msgid "norfolk island"
-msgstr ""
+msgstr "جزيرة نورفولك"
 
 #: dash/addons/includes/languages/trans_static.php:669
 msgid "north korea"
-msgstr ""
+msgstr "كوريا الشمالية"
 
 #: dash/addons/includes/languages/trans_static.php:670
 msgid "northern mariana islands"
-msgstr ""
+msgstr "جزر مريانا الشمالية"
 
 #: dash/addons/includes/languages/trans_static.php:671
 msgid "norway"
-msgstr ""
+msgstr "النرويج"
 
 #: dash/addons/includes/languages/trans_static.php:672
 msgid "oman"
-msgstr ""
+msgstr "سلطنة عمان"
 
 #: dash/addons/includes/languages/trans_static.php:673
 msgid "pakistan"
-msgstr ""
+msgstr "باكستان"
 
 #: dash/addons/includes/languages/trans_static.php:674
 msgid "palau"
-msgstr ""
+msgstr "بالاو"
 
 #: dash/addons/includes/languages/trans_static.php:675
 msgid "palestine"
-msgstr ""
+msgstr "فلسطين"
 
 #: dash/addons/includes/languages/trans_static.php:676
 msgid "panama"
-msgstr ""
+msgstr "بناما"
 
 #: dash/addons/includes/languages/trans_static.php:677
 msgid "papua new guinea"
-msgstr ""
+msgstr "بابوا الجديدة غينيا"
 
 #: dash/addons/includes/languages/trans_static.php:678
 msgid "paraguay"
-msgstr ""
+msgstr "باراغواي"
 
 #: dash/addons/includes/languages/trans_static.php:679
 msgid "peru"
-msgstr ""
+msgstr "بيرو"
 
 #: dash/addons/includes/languages/trans_static.php:680
 msgid "philippines"
-msgstr ""
+msgstr "الفلبين"
 
 #: dash/addons/includes/languages/trans_static.php:681
 msgid "pitcairn islands"
-msgstr ""
+msgstr "جزر بيتكيرن"
 
 #: dash/addons/includes/languages/trans_static.php:682
 msgid "poland"
-msgstr ""
+msgstr "بولندا"
 
 #: dash/addons/includes/languages/trans_static.php:683
 msgid "portugal"
-msgstr ""
+msgstr "البرتغال"
 
 #: dash/addons/includes/languages/trans_static.php:684
 msgid "puerto rico"
-msgstr ""
+msgstr "بورتوريكو"
 
 #: dash/addons/includes/languages/trans_static.php:685
 msgid "qatar"
-msgstr ""
+msgstr "دولة قطر"
 
 #: dash/addons/includes/languages/trans_static.php:686
 msgid "republic of the congo"
-msgstr ""
+msgstr "جمهورية الكونغو"
 
 #: dash/addons/includes/languages/trans_static.php:687
 msgid "réunion"
-msgstr ""
+msgstr "جمع شمل"
 
 #: dash/addons/includes/languages/trans_static.php:688
 msgid "romania"
-msgstr ""
+msgstr "رومانيا"
 
 #: dash/addons/includes/languages/trans_static.php:689
 msgid "russia"
-msgstr ""
+msgstr "روسيا"
 
 #: dash/addons/includes/languages/trans_static.php:690
 msgid "rwanda"
-msgstr ""
+msgstr "رواندا"
 
 #: dash/addons/includes/languages/trans_static.php:691
 msgid "saint barthélemy"
-msgstr ""
+msgstr "سانت بارتيليمي"
 
 #: dash/addons/includes/languages/trans_static.php:692
 msgid "saint helena"
-msgstr ""
+msgstr "القديس هيلينا"
 
 #: dash/addons/includes/languages/trans_static.php:693
 msgid "saint kitts and nevis"
-msgstr ""
+msgstr "سانت كيتس ونيفيس"
 
 #: dash/addons/includes/languages/trans_static.php:694
 msgid "saint lucia"
-msgstr ""
+msgstr "القديسة لوسيا"
 
 #: dash/addons/includes/languages/trans_static.php:695
 msgid "saint martin"
-msgstr ""
+msgstr "القديس مارتن"
 
 #: dash/addons/includes/languages/trans_static.php:696
 msgid "saint pierre and miquelon"
-msgstr ""
+msgstr "سانت بيير وميكلون"
 
 #: dash/addons/includes/languages/trans_static.php:697
 msgid "saint vincent and the grenadines"
-msgstr ""
+msgstr "سانت فنسنت وجزر غرينادين"
 
 #: dash/addons/includes/languages/trans_static.php:698
 msgid "samoa"
-msgstr ""
+msgstr "ساموا"
 
 #: dash/addons/includes/languages/trans_static.php:699
 msgid "san marino"
-msgstr ""
+msgstr "سان مارينو"
 
 #: dash/addons/includes/languages/trans_static.php:700
 msgid "são tomé and príncipe"
-msgstr ""
+msgstr "ساو توم وبرينسيبي"
 
 #: dash/addons/includes/languages/trans_static.php:701
 msgid "saudi arabia"
-msgstr ""
+msgstr "المملكة العربية السعودية"
 
 #: dash/addons/includes/languages/trans_static.php:702
 msgid "senegal"
-msgstr ""
+msgstr "السنغال"
 
 #: dash/addons/includes/languages/trans_static.php:703
 msgid "serbia"
-msgstr ""
+msgstr "صربيا"
 
 #: dash/addons/includes/languages/trans_static.php:704
 msgid "seychelles"
-msgstr ""
+msgstr "سيشيل"
 
 #: dash/addons/includes/languages/trans_static.php:705
 msgid "sierra leone"
-msgstr ""
+msgstr "سيرا ليون"
 
 #: dash/addons/includes/languages/trans_static.php:706
 msgid "singapore"
-msgstr ""
+msgstr "سنغافورة"
 
 #: dash/addons/includes/languages/trans_static.php:707
 msgid "sint maarten"
-msgstr ""
+msgstr "سينت مارتن"
 
 #: dash/addons/includes/languages/trans_static.php:708
 msgid "slovakia"
-msgstr ""
+msgstr "سلوفاكيا"
 
 #: dash/addons/includes/languages/trans_static.php:709
 msgid "slovenia"
-msgstr ""
+msgstr "سلوفينيا"
 
 #: dash/addons/includes/languages/trans_static.php:710
 msgid "solomon islands"
-msgstr ""
+msgstr "جزر سليمان"
 
 #: dash/addons/includes/languages/trans_static.php:711
 msgid "somalia"
-msgstr ""
+msgstr "الصومال"
 
 #: dash/addons/includes/languages/trans_static.php:712
 msgid "south africa"
-msgstr ""
+msgstr "جنوب أفريقيا"
 
 #: dash/addons/includes/languages/trans_static.php:713
 msgid "south georgia and the south sandwich islands"
-msgstr ""
+msgstr "جورجيا الجنوبية وجزر ساندويتش الجنوبية"
 
 #: dash/addons/includes/languages/trans_static.php:714
 msgid "south korea"
-msgstr ""
+msgstr "كوريا الجنوبية"
 
 #: dash/addons/includes/languages/trans_static.php:715
 msgid "south sudan"
-msgstr ""
+msgstr "جنوب السودان"
 
 #: dash/addons/includes/languages/trans_static.php:716
 msgid "spain"
-msgstr ""
+msgstr "إسبانيا"
 
 #: dash/addons/includes/languages/trans_static.php:717
 msgid "sri lanka"
-msgstr ""
+msgstr "سيريلانكا"
 
 #: dash/addons/includes/languages/trans_static.php:718
 msgid "sudan"
-msgstr ""
+msgstr "سودان"
 
 #: dash/addons/includes/languages/trans_static.php:719
 msgid "suriname"
-msgstr ""
+msgstr "سورينام"
 
 #: dash/addons/includes/languages/trans_static.php:720
 msgid "svalbard and jan mayen"
-msgstr ""
+msgstr "سفالبارد وجان ماين"
 
 #: dash/addons/includes/languages/trans_static.php:721
 msgid "swaziland"
-msgstr ""
+msgstr "سوازيلاند"
 
 #: dash/addons/includes/languages/trans_static.php:722
 msgid "sweden"
-msgstr ""
+msgstr "السويد"
 
 #: dash/addons/includes/languages/trans_static.php:723
 msgid "switzerland"
-msgstr ""
+msgstr "سويسرا"
 
 #: dash/addons/includes/languages/trans_static.php:724
 #: khadije/includes/languages/trans_static.php:41
 msgid "syria"
-msgstr "السورية"
+msgstr "سوريا"
 
 #: dash/addons/includes/languages/trans_static.php:725
 msgid "taiwan"
-msgstr ""
+msgstr "تايوان"
 
 #: dash/addons/includes/languages/trans_static.php:726
 msgid "tajikistan"
-msgstr ""
+msgstr "طاجيكستان"
 
 #: dash/addons/includes/languages/trans_static.php:727
 msgid "tanzania"
-msgstr ""
+msgstr "تنزانيا"
 
 #: dash/addons/includes/languages/trans_static.php:728
 msgid "thailand"
-msgstr ""
+msgstr "تايلند"
 
 #: dash/addons/includes/languages/trans_static.php:729
 msgid "togo"
-msgstr ""
+msgstr "ليذهب"
 
 #: dash/addons/includes/languages/trans_static.php:730
 msgid "tokelau"
-msgstr ""
+msgstr "توكيلاو"
 
 #: dash/addons/includes/languages/trans_static.php:731
 msgid "tonga"
-msgstr ""
+msgstr "تونغا"
 
 #: dash/addons/includes/languages/trans_static.php:732
 msgid "trinidad and tobago"
-msgstr ""
+msgstr "ترينداد وتوباغو"
 
 #: dash/addons/includes/languages/trans_static.php:733
 msgid "tunisia"
-msgstr ""
+msgstr "تونس"
 
 #: dash/addons/includes/languages/trans_static.php:734
 msgid "turkey"
-msgstr ""
+msgstr "ديك رومي"
 
 #: dash/addons/includes/languages/trans_static.php:735
 msgid "turkmenistan"
-msgstr ""
+msgstr "تركمانستان"
 
 #: dash/addons/includes/languages/trans_static.php:736
 msgid "turks and caicos islands"
-msgstr ""
+msgstr "جزر تركس وكايكوس"
 
 #: dash/addons/includes/languages/trans_static.php:737
 msgid "tuvalu"
-msgstr ""
+msgstr "توفالو"
 
 #: dash/addons/includes/languages/trans_static.php:738
 msgid "minor outlying islands"
-msgstr ""
+msgstr "الجزر الصغيرة النائية"
 
 #: dash/addons/includes/languages/trans_static.php:739
 msgid "uganda"
-msgstr ""
+msgstr "أوغندا"
 
 #: dash/addons/includes/languages/trans_static.php:740
 msgid "ukraine"
-msgstr ""
+msgstr "أوكرانيا"
 
 #: dash/addons/includes/languages/trans_static.php:741
 msgid "united arab emirates"
-msgstr ""
+msgstr "الإمارات العربية المتحدة"
 
 #: dash/addons/includes/languages/trans_static.php:742
 msgid "united kingdom"
-msgstr ""
+msgstr "المملكة المتحدة"
 
 #: dash/addons/includes/languages/trans_static.php:743
 msgid "united states"
-msgstr ""
+msgstr "الولايات المتحدة الامريكانية"
 
 #: dash/addons/includes/languages/trans_static.php:744
 msgid "uruguay"
-msgstr ""
+msgstr "أوروغواي"
 
 #: dash/addons/includes/languages/trans_static.php:745
 msgid "uzbekistan"
-msgstr ""
+msgstr "أوزبكستان"
 
 #: dash/addons/includes/languages/trans_static.php:746
 msgid "vanuatu"
-msgstr ""
+msgstr "فانواتو"
 
 #: dash/addons/includes/languages/trans_static.php:747
 msgid "vatican city"
-msgstr ""
+msgstr "مدينة الفاتيكان"
 
 #: dash/addons/includes/languages/trans_static.php:748
 msgid "venezuela"
-msgstr ""
+msgstr "فنزويلا"
 
 #: dash/addons/includes/languages/trans_static.php:749
 msgid "vietnam"
-msgstr ""
+msgstr "فيتنام"
 
 #: dash/addons/includes/languages/trans_static.php:750
 msgid "wallis and futuna"
-msgstr ""
+msgstr "واليس وفوتونا"
 
 #: dash/addons/includes/languages/trans_static.php:751
 msgid "western sahara"
-msgstr ""
+msgstr "الصحراء الغربية"
 
 #: dash/addons/includes/languages/trans_static.php:752
 msgid "yemen"
-msgstr ""
+msgstr "اليمن"
 
 #: dash/addons/includes/languages/trans_static.php:753
 msgid "zambia"
-msgstr ""
+msgstr "زامبيا"
 
 #: dash/addons/includes/languages/trans_static.php:754
 msgid "zimbabwe"
-msgstr ""
+msgstr "زيمبابوي"
 
 #: dash/addons/includes/languages/trans_static.php:760
 #: khadije/includes/languages/trans_static.php:25
@@ -6761,16 +6805,19 @@ msgid "close"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:767
+#, fuzzy
 msgid "male"
-msgstr ""
+msgstr "الرجل"
 
 #: dash/addons/includes/languages/trans_static.php:768
+#, fuzzy
 msgid "female"
-msgstr ""
+msgstr "المرأة"
 
 #: dash/addons/includes/languages/trans_static.php:769
+#, fuzzy
 msgid "single"
-msgstr ""
+msgstr "غير المتزوج"
 
 #: dash/addons/includes/languages/trans_static.php:770
 #: khadije/includes/languages/trans_project.php:348
@@ -6778,8 +6825,9 @@ msgid "married"
 msgstr "المتزوج"
 
 #: dash/addons/includes/languages/trans_static.php:771
+#, fuzzy
 msgid "leave"
-msgstr ""
+msgstr "إذا كنت ترغب في تغيير كلمة المرور أدخِلها، و إلاّ أتركه فارغاً"
 
 #: dash/addons/includes/languages/trans_static.php:772
 msgid "real"
@@ -6798,28 +6846,34 @@ msgid "beside"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:776
+#, fuzzy
 msgid "soon"
-msgstr ""
+msgstr "التمكين قريباً"
 
 #: dash/addons/includes/languages/trans_static.php:777
+#, fuzzy
 msgid "next"
-msgstr ""
+msgstr "التالي"
 
 #: dash/addons/includes/languages/trans_static.php:778
+#, fuzzy
 msgid "active"
-msgstr ""
+msgstr "النشيط"
 
 #: dash/addons/includes/languages/trans_static.php:779
+#, fuzzy
 msgid "deactive"
-msgstr ""
+msgstr "العطل"
 
 #: dash/addons/includes/languages/trans_static.php:780
+#, fuzzy
 msgid "full"
-msgstr ""
+msgstr "الاسم الكامل غير صالح"
 
 #: dash/addons/includes/languages/trans_static.php:781
+#, fuzzy
 msgid "all"
-msgstr ""
+msgstr "كل شيء داخل هذا النظام"
 
 #: dash/addons/includes/languages/trans_static.php:782
 msgid "sunday"
@@ -6866,20 +6920,23 @@ msgid "rotational"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:793
+#, fuzzy
 msgid "date"
-msgstr ""
+msgstr "التاريخ"
 
 #: dash/addons/includes/languages/trans_static.php:794
 msgid "taken"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:795
+#, fuzzy
 msgid "remove"
-msgstr ""
+msgstr "الإزالة"
 
 #: dash/addons/includes/languages/trans_static.php:796
+#, fuzzy
 msgid "add"
-msgstr ""
+msgstr "الإضافة"
 
 #: dash/addons/includes/languages/trans_static.php:797
 msgid "removeforce"
@@ -6899,8 +6956,9 @@ msgid "student"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:801
+#, fuzzy
 msgid "expert"
-msgstr ""
+msgstr "الخبير"
 
 #: dash/addons/includes/languages/trans_static.php:802
 msgid "acept"
@@ -6912,16 +6970,18 @@ msgid "reject"
 msgstr "الرفض"
 
 #: dash/addons/includes/languages/trans_static.php:805
+#, fuzzy
 msgid "teacher"
-msgstr ""
+msgstr "المعلم"
 
 #: dash/addons/includes/languages/trans_static.php:806
 msgid "other"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:807
+#, fuzzy
 msgid "removed"
-msgstr ""
+msgstr "تم حذف البريد الإلكتروني الخاص بك"
 
 #: dash/addons/includes/languages/trans_static.php:808
 msgid "unreachable"
@@ -6936,28 +6996,33 @@ msgid "skipped"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:811
+#, fuzzy
 msgid "critical"
-msgstr ""
+msgstr "الحرج"
 
 #: dash/addons/includes/languages/trans_static.php:812
+#, fuzzy
 msgid "high"
-msgstr ""
+msgstr "العالي"
 
 #: dash/addons/includes/languages/trans_static.php:813
+#, fuzzy
 msgid "medium"
-msgstr ""
+msgstr "المتوسط"
 
 #: dash/addons/includes/languages/trans_static.php:814
+#, fuzzy
 msgid "low"
-msgstr ""
+msgstr "المنخفض"
 
 #: dash/addons/includes/languages/trans_static.php:815
 msgid "deliver"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:816
+#, fuzzy
 msgid "draft"
-msgstr ""
+msgstr "المشروع"
 
 #: dash/addons/includes/languages/trans_static.php:817
 msgid "true"
@@ -6968,24 +7033,29 @@ msgid "false"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:819
+#, fuzzy
 msgid "skip"
-msgstr ""
+msgstr "التخطي"
 
 #: dash/addons/includes/languages/trans_static.php:820
+#, fuzzy
 msgid "gift"
-msgstr ""
+msgstr "الهدية"
 
 #: dash/addons/includes/languages/trans_static.php:821
+#, fuzzy
 msgid "prize"
-msgstr ""
+msgstr "الجائزة"
 
 #: dash/addons/includes/languages/trans_static.php:822
+#, fuzzy
 msgid "transfer"
-msgstr ""
+msgstr "النقل"
 
 #: dash/addons/includes/languages/trans_static.php:823
+#, fuzzy
 msgid "promo"
-msgstr ""
+msgstr "الرمز الترويجي غير صالح"
 
 #: dash/addons/includes/languages/trans_static.php:824
 #: khadije/includes/languages/trans_static.php:10
@@ -7001,8 +7071,9 @@ msgid "filtered"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:827
+#, fuzzy
 msgid "blocked"
-msgstr ""
+msgstr "كنت ممنوع بسبب هذا السبب!"
 
 #: dash/addons/includes/languages/trans_static.php:828
 #: khadije/includes/languages/trans_static.php:32
@@ -7010,20 +7081,23 @@ msgid "spam"
 msgstr "المزعج"
 
 #: dash/addons/includes/languages/trans_static.php:829
+#, fuzzy
 msgid "request"
-msgstr ""
+msgstr "تحقق من الطلب و حالة التحديث في أي طلب"
 
 #: dash/addons/includes/languages/trans_static.php:830
+#, fuzzy
 msgid "redirect"
-msgstr ""
+msgstr "إعادة التوجيه"
 
 #: dash/addons/includes/languages/trans_static.php:831
 msgid "pending"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:832
+#, fuzzy
 msgid "error"
-msgstr ""
+msgstr "الخطأ"
 
 #: dash/addons/includes/languages/trans_static.php:833
 msgid "verify_request"
@@ -7034,8 +7108,9 @@ msgid "verify_error"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:835
+#, fuzzy
 msgid "ok"
-msgstr ""
+msgstr "حسناً"
 
 #: dash/addons/includes/languages/trans_static.php:837
 msgid "approved"
@@ -7209,8 +7284,8 @@ msgstr "ملف مكرر في هذا المعرض"
 msgid "Invalid gallery id"
 msgstr "معرف معرض غير صالح"
 
-#: dash/lib/app/posts.php:111 dash/lib/app/posts.php:117 dash/lib/app/term.php:88
-#: dash/lib/app/term.php:94
+#: dash/lib/app/posts.php:111 dash/lib/app/posts.php:117
+#: dash/lib/app/term.php:88 dash/lib/app/term.php:94
 msgid "Invalid parameter language"
 msgstr "اللغة المعلمة غير صالحة"
 
@@ -7502,7 +7577,8 @@ msgstr ""
 msgid "we can't find database service!"
 msgstr "لا يمكننا العثور على خدمة قاعدة البيانات!"
 
-#: dash/lib/db/mysql/tools/connect.php:104 dash/lib/db/mysql/tools/connect.php:116
+#: dash/lib/db/mysql/tools/connect.php:104
+#: dash/lib/db/mysql/tools/connect.php:116
 #: dash/lib/db/mysql/tools/connect.php:151
 msgid "Please contact administrator!"
 msgstr "يرجى الاتصال بالمسؤول!"
@@ -7604,8 +7680,9 @@ msgid "Non-Authoritative Information"
 msgstr ""
 
 #: dash/lib/header.php:77
+#, fuzzy
 msgid "No Content"
-msgstr ""
+msgstr "المحتوي"
 
 #: dash/lib/header.php:78
 msgid "Reset Content"
@@ -7640,8 +7717,9 @@ msgid "See Other"
 msgstr ""
 
 #: dash/lib/header.php:87
+#, fuzzy
 msgid "Not Modified"
-msgstr ""
+msgstr "آخر تعديل"
 
 #: dash/lib/header.php:88
 msgid "Use Proxy"
@@ -7676,8 +7754,9 @@ msgid "Forbidden"
 msgstr ""
 
 #: dash/lib/header.php:97
+#, fuzzy
 msgid "Not Found"
-msgstr ""
+msgstr "لم يتم العثور على المعرف"
 
 #: dash/lib/header.php:98
 msgid "Method Not Allowed"
@@ -7876,9 +7955,11 @@ msgid "Permission denied"
 msgstr ""
 
 #: dash/lib/utility.php:35
-msgid "This password is very simple and guessable, please use stronger password!"
+msgid ""
+"This password is very simple and guessable, please use stronger password!"
 msgstr ""
-"هذه كلمة المرور بسيطة جداً و يمكن تخمينها، يرجى استخدام كلمة المرور أكثر تعقيداً!"
+"هذه كلمة المرور بسيطة جداً و يمكن تخمينها، يرجى استخدام كلمة المرور أكثر "
+"تعقيداً!"
 
 #: dash/lib/utility/cloudflare.php:236
 msgid "The api Cloudflare opration success"
@@ -7917,8 +7998,9 @@ msgid "Your username was change"
 msgstr "تم تغيير اسم المستخدم الخاص بك"
 
 #: dash/lib/utility/enter.php:1021
+#, fuzzy
 msgid "Your password was changed"
-msgstr ""
+msgstr "يتم تغيير كلمة المرور الخاصة بك بنجاح"
 
 #: dash/lib/utility/enter.php:1183
 msgid "You must set 6 character and large in password"
@@ -8096,7 +8178,8 @@ msgid "IP or merchant code of the host is incorrect"
 msgstr "معرف أو رمز التجاري لِلمضيف غير صحيح"
 
 #: dash/lib/utility/payment/payment/zarinpal.php:132
-msgid "Due to Shaparak's limitations, It's impossible to pay the specified amount"
+msgid ""
+"Due to Shaparak's limitations, It's impossible to pay the specified amount"
 msgstr "بسبب قيود شاپرك، فإنه من المستحيل دفع هذا المبلغ المحدد"
 
 #: dash/lib/utility/payment/payment/zarinpal.php:133
@@ -8362,7 +8445,8 @@ msgstr "الخطوة 3"
 msgid "fill your request detail"
 msgstr "أدخل تفاصيل طلبك"
 
-#: khadije/content_a/advice/home/model.php:17 khadije/content_a/controller.php:55
+#: khadije/content_a/advice/home/model.php:17
+#: khadije/content_a/controller.php:57
 #: khadije/content_a/health/home/model.php:17
 #: khadije/content_a/representation/home/model.php:17
 #: khadije/content_a/service/home/model.php:17
@@ -8407,7 +8491,7 @@ msgstr ""
 #: khadije/content_a/profile/model.php:33
 #: khadije/content_a/representation/profile/model.php:33
 #: khadije/content_a/service/profile/model.php:33
-#: khadije/content_a/trip/profile/model.php:33
+#: khadije/content_a/trip/profile/model.php:66
 msgid "Your detail was saved"
 msgstr "تم حفظ معلومات الملف الشخصي الخاص بك"
 
@@ -8471,11 +8555,11 @@ msgstr "معرف الرحلة غير صحيح"
 msgid "Your trip is not draft. can not edit it"
 msgstr "رحلتك ليست مسودّة. لا يمكن تحريرها"
 
-#: khadije/content_a/controller.php:48 khadije/includes/lib/app/service.php:281
+#: khadije/content_a/controller.php:50 khadije/includes/lib/app/service.php:281
 msgid "Service id not found"
 msgstr "معرف الخدمة غير موجود"
 
-#: khadije/content_a/controller.php:65
+#: khadije/content_a/controller.php:67
 msgid "Your service is not draft. can not edit it"
 msgstr "خدمتك ليست مسودّة. لا يمكن تحريرها"
 
@@ -8784,6 +8868,10 @@ msgstr "قم بتسجيل طلب الرحلة الجديدة"
 msgid "Register for new trip request"
 msgstr "قم بتسجيل طلب الرحلة الجديدة"
 
+#: khadije/content_a/trip/profile/model.php:71
+msgid "Your trip request was saved"
+msgstr ""
+
 #: khadije/content_a/trip/request/view.php:10
 msgid "in 3 simple step register your request for have trip to holy places"
 msgstr "قم بتسجيل طلبك للذهاب إلى الأماكن المقدسة مع مجموعة، في 3 خطوات بسيطة"
@@ -8844,7 +8932,8 @@ msgid "check advice requests"
 msgstr ""
 
 #: khadije/content_cp/advice/view.php:16 khadije/content_cp/book/view.php:15
-#: khadije/content_cp/donate/view.php:17 khadije/content_cp/familytrip/view.php:18
+#: khadije/content_cp/donate/view.php:17
+#: khadije/content_cp/familytrip/view.php:18
 #: khadije/content_cp/health/view.php:17
 #: khadije/content_cp/nationalcode/view.php:18
 #: khadije/content_cp/representation/view.php:16
@@ -8868,8 +8957,9 @@ msgstr ""
 
 #: khadije/content_cp/book/view.php:90
 #: khadije/includes/languages/trans_project.php:369
+#, fuzzy
 msgid "Book"
-msgstr ""
+msgstr "الكتاب"
 
 #: khadije/content_cp/delneveshte/edit/model.php:33
 msgid "Delneveshte successfully updated"
@@ -8893,7 +8983,8 @@ msgstr ""
 
 #: khadije/content_cp/delneveshte/home/view.php:12
 msgid ""
-"Check list of delneveshte and search or filter in them to find your delneveshte."
+"Check list of delneveshte and search or filter in them to find your "
+"delneveshte."
 msgstr ""
 
 #: khadije/content_cp/delneveshte/home/view.php:12
@@ -8951,16 +9042,19 @@ msgstr "ارجع إلي قائمة الطلب"
 msgid "Family trip request list"
 msgstr ""
 
-#: khadije/content_cp/familytrip/view.php:14 khadije/content_cp/trip/view.php:14
+#: khadije/content_cp/familytrip/view.php:14
+#: khadije/content_cp/trip/view.php:14
 msgid "check request and update status of each request"
 msgstr "تحقق من الطلب و حالة التحديث في أي طلب"
 
-#: khadije/content_cp/familytrip/view.php:116 khadije/content_cp/trip/view.php:117
+#: khadije/content_cp/familytrip/view.php:116
+#: khadije/content_cp/trip/view.php:117
 #: khadije/includes/languages/trans_project.php:424
 msgid "Place"
 msgstr "المكان"
 
-#: khadije/content_cp/familytrip/view.php:134 khadije/content_cp/trip/view.php:135
+#: khadije/content_cp/familytrip/view.php:134
+#: khadije/content_cp/trip/view.php:135
 msgid "Birth year"
 msgstr ""
 
@@ -9164,8 +9258,9 @@ msgstr ""
 
 #: khadije/content_cp/report/daily/view.php:14
 #: khadije/includes/languages/trans_project.php:439
+#, fuzzy
 msgid "Report daily"
-msgstr ""
+msgstr "البرتغال"
 
 #: khadije/content_cp/report/home/view.php:13
 msgid "Report list"
@@ -9251,8 +9346,9 @@ msgstr "تحقق من طلب الخدمة"
 
 #: khadije/content_cp/service/view.php:71
 #: khadije/includes/languages/trans_static.php:71
+#, fuzzy
 msgid "Service"
-msgstr ""
+msgstr "الخدمة"
 
 #: khadije/content_cp/service/view.php:77
 #: khadije/includes/languages/trans_project.php:268
@@ -9277,11 +9373,11 @@ msgstr ""
 
 #: khadije/includes/languages/trans_project.php:8
 msgid ""
-"We do our best to improve khadije's service quality. So, knowing your valuable "
-"comments will help us in this way."
+"We do our best to improve khadije's service quality. So, knowing your "
+"valuable comments will help us in this way."
 msgstr ""
-"نحن نبذل قصارى جهدنا لتحسين جودة خدمة مركز الثقافي السيدة خديجة سلام الله عليها "
-"لذا، فإن معرفة تعليقاتك القيّمة ستساعدنا بهذه الطريقة."
+"نحن نبذل قصارى جهدنا لتحسين جودة خدمة مركز الثقافي السيدة خديجة سلام الله "
+"عليها لذا، فإن معرفة تعليقاتك القيّمة ستساعدنا بهذه الطريقة."
 
 #: khadije/includes/languages/trans_project.php:9
 msgid "khadije"
@@ -9356,8 +9452,9 @@ msgid "Enter a valid name"
 msgstr "أدخل إسماً صالحاً"
 
 #: khadije/includes/languages/trans_project.php:37
+#, fuzzy
 msgid "Your Name"
-msgstr ""
+msgstr "اسمك"
 
 #: khadije/includes/languages/trans_project.php:38
 msgid "Enter first name and last name to show in doners list or leave it blank"
@@ -9368,7 +9465,8 @@ msgid "Your mobile number"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:40
-msgid "If you enter your mobile, we send verify of payment via SMS to this number"
+msgid ""
+"If you enter your mobile, we send verify of payment via SMS to this number"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:41
@@ -9440,8 +9538,9 @@ msgid "Doner"
 msgstr "المتبرع"
 
 #: khadije/includes/languages/trans_project.php:64
+#, fuzzy
 msgid "Read more"
-msgstr ""
+msgstr "إقرأ المزيد"
 
 #: khadije/includes/languages/trans_project.php:65
 msgid "O Allah, let Your Peace come upon Muhammad and the family of Muhammad"
@@ -9500,8 +9599,9 @@ msgid "Card number"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:78
+#, fuzzy
 msgid "Account number"
-msgstr ""
+msgstr "رقم الحساب المصرفي"
 
 #: khadije/includes/languages/trans_project.php:79
 msgid "Iranian bank Shaba number"
@@ -9549,8 +9649,9 @@ msgid "Khadije Wiki"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:97
+#, fuzzy
 msgid "Services"
-msgstr ""
+msgstr "الخطأ في تحميل خدمات الويب"
 
 #: khadije/includes/languages/trans_project.php:98
 msgid "Self expressions"
@@ -9562,11 +9663,11 @@ msgstr ""
 
 #: khadije/includes/languages/trans_project.php:101
 msgid ""
-"Khadijah cultural and artistic charity was established in 2015 with the purpose "
-"of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage "
-"culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of "
-"forgotten traditions such as sacrifice, giving food on Ghadir day and ... has "
-"continued its activities."
+"Khadijah cultural and artistic charity was established in 2015 with the "
+"purpose of developing the Ahlul-Bayt <small>peace be upon them</small> "
+"pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the "
+"revival of forgotten traditions such as sacrifice, giving food on Ghadir day "
+"and ... has continued its activities."
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:102
@@ -9578,8 +9679,9 @@ msgid "Signup in Khadije charity"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:105
+#, fuzzy
 msgid "Enamad"
-msgstr ""
+msgstr "بناما"
 
 #: khadije/includes/languages/trans_project.php:106
 msgid "Mission"
@@ -9594,8 +9696,9 @@ msgid "Honors"
 msgstr "مرتبة الشرف"
 
 #: khadije/includes/languages/trans_project.php:109
+#, fuzzy
 msgid "contact"
-msgstr ""
+msgstr "الاتصال"
 
 #: khadije/includes/languages/trans_project.php:110
 msgid "Encyclopedia of Hazrat Khadijah"
@@ -9658,7 +9761,8 @@ msgid "Soroush App"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:131
-msgid "You are buy this book before and now you can download book via below link"
+msgid ""
+"You are buy this book before and now you can download book via below link"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:132
@@ -9962,8 +10066,8 @@ msgstr ""
 
 #: khadije/includes/languages/trans_project.php:298
 msgid ""
-"You are successfully registered new trip request and you can track the status "
-"from this page"
+"You are successfully registered new trip request and you can track the "
+"status from this page"
 msgstr "تم تسجيل طلب رحلة جديد بنجاح و يمكنك تتبع الحالة من هذه الصفحة"
 
 #: khadije/includes/languages/trans_project.php:302
@@ -9975,7 +10079,8 @@ msgid "You are not registered partner yet"
 msgstr "أنت لست شريكاً مسجلاً حتى الآن"
 
 #: khadije/includes/languages/trans_project.php:305
-msgid "you can send a single person request without partner on press below button"
+msgid ""
+"you can send a single person request without partner on press below button"
 msgstr "يمكنك إرسال الطلب بنفسك وحدك، بضغط على الزر أدناه"
 
 #: khadije/includes/languages/trans_project.php:306
@@ -10180,8 +10285,9 @@ msgid "List of Product need"
 msgstr "قائمة المنتجات المطلوبة"
 
 #: khadije/includes/languages/trans_project.php:434
+#, fuzzy
 msgid "Sum"
-msgstr ""
+msgstr "مجموع رصيدك المحصل من الإحالات."
 
 #: khadije/includes/languages/trans_project.php:437
 msgid "Report Count transaction group by payment and hazinekard"
@@ -10429,8 +10535,9 @@ msgid "optional"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:538
+#, fuzzy
 msgid "Not require"
-msgstr ""
+msgstr "تطلب"
 
 #: khadije/includes/languages/trans_project.php:539
 msgid "Mobile number is not showing on site and optional"
@@ -10513,8 +10620,9 @@ msgid "mecca"
 msgstr "المكة"
 
 #: khadije/includes/languages/trans_static.php:42
+#, fuzzy
 msgid "Syria"
-msgstr "السورية"
+msgstr "سوريا"
 
 #: khadije/includes/languages/trans_static.php:46
 msgid "ControlPanel"
@@ -10597,16 +10705,19 @@ msgid "Control"
 msgstr ""
 
 #: khadije/includes/languages/trans_static.php:66
+#, fuzzy
 msgid "Trip"
-msgstr ""
+msgstr "معرف الرحلة غير موجود"
 
 #: khadije/includes/languages/trans_static.php:68
+#, fuzzy
 msgid "National"
-msgstr ""
+msgstr "تحرير رمز الوطني"
 
 #: khadije/includes/languages/trans_static.php:69
+#, fuzzy
 msgid "National Code"
-msgstr ""
+msgstr "الرمز الوطني"
 
 #: khadije/includes/languages/trans_static.php:70
 msgid "Setting"
@@ -10856,19 +10967,21 @@ msgstr "إسم المحافظة غير صالحة"
 msgid "Travel id not found"
 msgstr "لم يتم العثور علي المعرف"
 
-#: khadije/includes/lib/app/myuser.php:388 khadije/includes/lib/app/myuser.php:486
+#: khadije/includes/lib/app/myuser.php:388
+#: khadije/includes/lib/app/myuser.php:493
 msgid "This nationalcode is for your!"
 msgstr "هذا الرمز الوطني هو لك!"
 
-#: khadije/includes/lib/app/myuser.php:395 khadije/includes/lib/app/myuser.php:499
+#: khadije/includes/lib/app/myuser.php:395
+#: khadije/includes/lib/app/myuser.php:506
 msgid "Duplicate national code in your child list"
 msgstr "رمز وطني مكرر في قائمة ولدك"
 
-#: khadije/includes/lib/app/myuser.php:412
+#: khadije/includes/lib/app/myuser.php:419
 msgid "Maximum partner added. can not add another"
 msgstr "الحد الأقصى للرفيق المضافة. لا يمكن إضافة آخر"
 
-#: khadije/includes/lib/app/myuser.php:423
+#: khadije/includes/lib/app/myuser.php:430
 msgid "Can not add partner"
 msgstr "لا يمكن إضافة الرفيق"
 
@@ -10904,11 +11017,13 @@ msgstr "يرجى تعيين نوع الحاجة صحيحاً"
 msgid "Please set a valid fileurl"
 msgstr "يرجى تعيين عنوان صالح لملف"
 
-#: khadije/includes/lib/app/need.php:124 khadije/includes/lib/app/service.php:113
+#: khadije/includes/lib/app/need.php:124
+#: khadije/includes/lib/app/service.php:113
 msgid "Please set a valid desc"
 msgstr "يرجى تعيين شرح الحاجة صحيحاً"
 
-#: khadije/includes/lib/app/need.php:132 khadije/includes/lib/app/service.php:120
+#: khadije/includes/lib/app/need.php:132
+#: khadije/includes/lib/app/service.php:120
 msgid "Please set a valid status"
 msgstr "يرجى تعيين حالة الحاجة صحيحة"
 
@@ -10964,8 +11079,10 @@ msgstr "قمت بالتسجيل في هذه الخدمة من قبل"
 msgid "No way to insert service"
 msgstr "لا توجد طريقة لإدخال الخدمة"
 
-#: khadije/includes/lib/app/travel.php:156 khadije/includes/lib/app/travel.php:224
-#: khadije/includes/lib/app/travel.php:537 khadije/includes/lib/app/travel.php:545
+#: khadije/includes/lib/app/travel.php:156
+#: khadije/includes/lib/app/travel.php:224
+#: khadije/includes/lib/app/travel.php:537
+#: khadije/includes/lib/app/travel.php:545
 msgid "Invalid city"
 msgstr "المدينة غير صالحة"
 
@@ -11014,2074 +11131,3 @@ msgstr "لا توجد طريقة لإضافة السفر"
 #: khadije/includes/permission/permission.php:19
 msgid "Can view the admin page"
 msgstr "يمكن عرض صفحة المشرف"
-
-#~ msgid "Please login to change your profile"
-#~ msgstr "يرجى الدخول لتغيير الملف الشخصي الخاص بك"
-
-#~ msgid "Please enter your name less than 50 character"
-#~ msgstr "يرجى إدخال اسمك بأقل من 50 حرفاً"
-
-#~ msgid "Please enter your displayname less than 50 character"
-#~ msgstr "يرجي إدخال اسم العرض الخاص بك أقل من 50 حرفاً"
-
-#~ msgid "Please enter your family less than 50 character"
-#~ msgstr "يرجى إدخال اسم عائلتك أقل من 50 حرفاً"
-
-#~ msgid "Profile data was updated"
-#~ msgstr "تم تحديث بيانات الملف الشخصي"
-
-#~ msgid "Edit profile"
-#~ msgstr "قم بتحرير الملف الشخصي الخاص بك"
-
-#~ msgid "Check your profile and edit name or avatar of your account"
-#~ msgstr "تحقق من ملفك الشخصي و تحرير الاسم أو الصورة الرمزية لحسابك"
-
-#~ msgid "You can accept or reject the comment"
-#~ msgstr "يمكنك الموافقة مع التعليق أو رفضه"
-
-#~ msgid "Can not access to cp"
-#~ msgstr "لا يمكنك الوصول إلى لوحة التحكم"
-
-#~ msgid "Please remove your saved password and try again"
-#~ msgstr "يرجى مسح كلمة المرور المحفوظة و حاول مرة أخرى"
-
-#~ msgid "Content"
-#~ msgstr "يحتوي"
-
-#~ msgid "First Name *"
-#~ msgstr "الإسم*"
-
-#~ msgid "Enter a valid name from 3 to 30 character"
-#~ msgstr "أدخل اسماً صالحاً من 3 إلى 30 حرفاً"
-
-#~ msgid "Last Name"
-#~ msgstr "الإسم العائلة"
-
-#~ msgid "Enter a valid family from 3 to 50 character"
-#~ msgstr "أدخل اسم عائلة صالحاً من 3 إلى 30 حرفاً"
-
-#~ msgid "Enter a valid team position from 3 to 50 character"
-#~ msgstr "396-\tأدخل موضع الفريق صالحاً من 3 إلى 30 حرفاً"
-
-#~ msgid "Your mobile"
-#~ msgstr "جوالك"
-
-#~ msgid "Your email"
-#~ msgstr "البريد الإلكتروني الخاص بك"
-
-#~ msgid "Money unit"
-#~ msgstr "وحدة النقود"
-
-#~ msgid "Please select one unit for default"
-#~ msgstr "يرجى تحديد وحدة واحدة للإعداد الافتراضي"
-
-#~ msgid "Dollar"
-#~ msgstr "دولار"
-
-#~ msgid "Update profile"
-#~ msgstr "تحديث الملف الشخصي"
-
-#~ msgid "Server Logs"
-#~ msgstr "سجلات الخادم"
-
-#~ msgid "Access logs"
-#~ msgstr "سجلات الوصول"
-
-#~ msgid "Error logs"
-#~ msgstr "سجلات الأخطاء"
-
-#~ msgid "Database Logs"
-#~ msgstr "سجلات قاعدة البيانات"
-
-#~ msgid "Logs - check"
-#~ msgstr "سجلات - تحقق"
-
-#~ msgid "Logs - warn"
-#~ msgstr "سجلات - تحذير"
-
-#~ msgid "Logs - critical"
-#~ msgstr "سجلات – حرجة"
-
-#~ msgid "Error Logs"
-#~ msgstr "سجلات الأخطاء"
-
-#~ msgid "Cronjob log"
-#~ msgstr "سجل كرون جاب"
-
-#~ msgid "Cronjob Logs"
-#~ msgstr "سجلات كرون جاب"
-
-#~ msgid "Telegram Errors"
-#~ msgstr "أخطاء تليجرام"
-
-#~ msgid "telegram Logs"
-#~ msgstr "سجلات تليجرام"
-
-#~ msgid "telegram - Error Logs"
-#~ msgstr "تليجرام- سجلات الأخطاء"
-
-#~ msgid "Profile successfully updated"
-#~ msgstr "تحديث الملف الشخصي بنجاح"
-
-#~ msgid "upload_1000_mb"
-#~ msgstr "الرفع 100 ميجابايت"
-
-#~ msgid "upload_100_mb"
-#~ msgstr "الرفع 100 ميجابايت"
-
-#~ msgid "upload_10_mb"
-#~ msgstr "الرفع 10 ميجابايت"
-
-#~ msgid "admin:admin:view"
-#~ msgstr "المشرف:المشرف:العرض"
-
-#~ msgid "cp:transaction:invoicedetails"
-#~ msgstr "لوحة التحكم:المعاملة:تفاصيل الفاتورة"
-
-#~ msgid "cp:transaction:invoices"
-#~ msgstr "لوحة التحكم:المعاملة:الفواتير"
-
-#~ msgid "cp:transaction:logs"
-#~ msgstr "لوحة التحكم:المعاملة:السجلات"
-
-#~ msgid "cp:transaction:notifications"
-#~ msgstr "لوحة التحكم:المعاملة:الإشعارات"
-
-#~ msgid "cp:permission:add"
-#~ msgstr "لوحة التحكم:إذن: الإضافة"
-
-#~ msgid "cp:transaction:add"
-#~ msgstr "لوحة التحكم:المعاملة:الإضافة"
-
-#~ msgid "cp:transaction"
-#~ msgstr "لوحة التحكم:المعاملة"
-
-#~ msgid "cp:user:add"
-#~ msgstr "لوحة التحكم:المستخدم:الإضافة"
-
-#~ msgid "cp:user"
-#~ msgstr "لوحة التحكم:المستخدم"
-
-#~ msgid "cp:user:detail"
-#~ msgstr "لوحة التحكم:المستخدم:التفاصيل"
-
-#~ msgid "cp:user:edit"
-#~ msgstr "لوحة التحكم:المستخدم:التحرير"
-
-#~ msgid "enter:another:session"
-#~ msgstr "دخول:آخر:الجلسة"
-
-#~ msgid "Can not access to it"
-#~ msgstr "لا يمكن الوصول إليها"
-
-#~ msgid "Access denied"
-#~ msgstr "رفض الوصول"
-
-#~ msgid "We could'nt save the contact"
-#~ msgstr "لم نتمكن من حفظ جهة الاتصال"
-
-#~ msgid "شناسه بانک نا معتبر"
-#~ msgstr "معرف حساب المصرفي غير صالح"
-
-#~ msgid "Frequently Asked Questions"
-#~ msgstr "أسئلة مكررة"
-
-#~ msgid "This FAQ provides answers to basic questions about Khadije."
-#~ msgstr "تقدم هذه الأسئلة الشائعة الأجوبة على الأسئلة الأساسية حول مؤسسة خديجة."
-
-#~ msgid "Our missions"
-#~ msgstr "مهماتنا"
-
-#~ msgid "Our honors"
-#~ msgstr "شرفنا"
-
-#~ msgid "Our certificates"
-#~ msgstr "شهاداتنا"
-
-#~ msgid "About our charity"
-#~ msgstr "حول أعمالنا الخيرية"
-
-#~ msgid "Thanks for your payment"
-#~ msgstr "شكرا على الدفع الخاص بك"
-
-#~ msgid "The way successfully removed"
-#~ msgstr "إزالة الطريق بنجاح"
-
-#~ msgid "Request list"
-#~ msgstr "قائمة الطلب"
-
-#~ msgid "Your profile information"
-#~ msgstr "معلومات ملفك الشخصي"
-
-#~ msgid "Search in :postss"
-#~ msgstr "البحث في: المشاركات"
-
-#~ msgid "Try to start with add new :posts!"
-#~ msgstr "حاول أن تبدأ بإضافة: المشاركات الجديدة!"
-
-#~ msgid "Last update on"
-#~ msgstr "آخر تحديث على"
-
-#~ msgid "wait for next version!"
-#~ msgstr "انتظر النسخة القادمة!"
-
-#~ msgid "Saved record"
-#~ msgstr "سجل محفوظ"
-
-#~ msgid "Repair to"
-#~ msgstr "الإصلاح لِ"
-
-#~ msgid "Add New Transaction"
-#~ msgstr "إضافة المعاملة الجديدة"
-
-#~ msgid "Displayname"
-#~ msgstr "اسم للعرض"
-
-#~ msgid "Amount request"
-#~ msgstr "المبلغ المطلوب"
-
-#~ msgid "Amount end"
-#~ msgstr "المبلغ النهائي"
-
-#~ msgid "Repait"
-#~ msgstr "الإصلاح"
-
-#~ msgid "Revers"
-#~ msgstr "العودة"
-
-#~ msgid "If you wanna more secure enter your mobile"
-#~ msgstr "إذا كنت تريد أكثر أماناً أدخل هاتفك المحمول"
-
-#~ msgid "I dont want use mobile"
-#~ msgstr "لا أريد استخدام المحمول"
-
-#~ msgid "Client"
-#~ msgstr "العميل"
-
-#~ msgid "Flights"
-#~ msgstr "رحلات الطيران"
-
-#~ msgid "Views"
-#~ msgstr "المشاهدات"
-
-#~ msgid "Favs"
-#~ msgstr "الإهتمامات"
-
-#~ msgid "Downloads"
-#~ msgstr "التحميلات"
-
-#~ msgid "Logitems List"
-#~ msgstr "قائمة عناصر السجل"
-
-#~ msgid "Logs Detail"
-#~ msgstr "تفاصيل السجلات"
-
-#~ msgid "Logs List"
-#~ msgstr "قائمة السجلات"
-
-#~ msgid "ShortURL"
-#~ msgstr "العنوان القصير URL"
-
-#~ msgid "Unbelievable Styles!"
-#~ msgstr "أساليب لا تصدق!"
-
-#~ msgid ""
-#~ "Definitions aren't limited to just buttons on a page. Siftal's components "
-#~ "allow several distinct types of definitions: elements, collections, views, "
-#~ "modules and behaviors which cover the gamut of interface design."
-#~ msgstr ""
-#~ "لا تقتصر التعريفات على الأزرار الموجودة على الصفحة فقط. تسمح مكونات siftal "
-#~ "بأنواع مختلفة من التعريفات: العناصر و المجموعات و جهات النظر و الوحدات و "
-#~ "السلوكيات التي تغطي نطاق تصميم الواجهة."
-
-#~ msgid ""
-#~ "For improved cross-browser rendering, we use <a href='sample/reset'>special "
-#~ "reset</a> to correct inconsistencies across browsers and devices while "
-#~ "providing slightly more opinionated resets to common HTML elements."
-#~ msgstr ""
-#~ "من أجل تحسين عرض المستعرض المتقاطع ، نستخدم من <a href='sample/reset'> إعادة "
-#~ "تعيين خاصة </a> لتصحيح حالات عدم الاتساق عبر المستعرضات و الجهاز مع توفير "
-#~ "إعادة تعيين أكثر برأيها إلى عناصر HTML الشائعة."
-
-#~ msgid "Button"
-#~ msgstr "زر"
-
-#~ msgid "Primary"
-#~ msgstr "الأولية"
-
-#~ msgid "Warn"
-#~ msgstr "حذر"
-
-#~ msgid "Check buttons collection"
-#~ msgstr "تحقق من مجموعة الأزرار"
-
-#~ msgid "Messages"
-#~ msgstr "الرسائل"
-
-#~ msgid "This site uses cookies"
-#~ msgstr "هذا الموقع يستخدم ملفات تعريف الارتباط"
-
-#~ msgid "Hello dear!"
-#~ msgstr "مرحبا عزيزي!"
-
-#~ msgid "Looking for help?"
-#~ msgstr "هل تبحث عن مساعدة؟"
-
-#~ msgid "Use our help center"
-#~ msgstr "استخدم مركز المساعدة الخاص بنا"
-
-#~ msgid "Check our FAQ"
-#~ msgstr "تحقق من الأسئلة الشائعة"
-
-#~ msgid "Icons"
-#~ msgstr "الرموز"
-
-#~ msgid "Badge"
-#~ msgstr "الشارة"
-
-#~ msgid "Add New"
-#~ msgstr "أضف جديداً"
-
-#~ msgid "Notification"
-#~ msgstr "الإخطار"
-
-#~ msgid "125"
-#~ msgstr "125"
-
-#~ msgid "64"
-#~ msgstr "64"
-
-#~ msgid "7"
-#~ msgstr "7"
-
-#~ msgid " Home"
-#~ msgstr " الدار"
-
-#~ msgid "Breadcrumb"
-#~ msgstr "التفصيلي"
-
-#~ msgid "Pagination"
-#~ msgstr "ترقيم الصفحات"
-
-#~ msgid "Previous"
-#~ msgstr "السابق"
-
-#~ msgid "6"
-#~ msgstr "6"
-
-#~ msgid "8"
-#~ msgstr "8"
-
-#~ msgid "Progress"
-#~ msgstr "تقدم"
-
-#~ msgid "Table"
-#~ msgstr "الجدول"
-
-#~ msgid "First Name"
-#~ msgstr "الإسم"
-
-#~ msgid "Javad"
-#~ msgstr "جواد"
-
-#~ msgid "Evazzadeh"
-#~ msgstr "عوض زاده"
-
-#~ msgid "Reza"
-#~ msgstr "رضا"
-
-#~ msgid "Mohiti"
-#~ msgstr "محيطي"
-
-#~ msgid "Hasan"
-#~ msgstr "حسن"
-
-#~ msgid "Salehi"
-#~ msgstr "صالحي"
-
-#~ msgid "Footer"
-#~ msgstr "تذييل الصفحة"
-
-#~ msgid "Input"
-#~ msgstr "الإدخال"
-
-#~ msgid "@"
-#~ msgstr "@"
-
-#~ msgid "."
-#~ msgstr "."
-
-#~ msgid "+"
-#~ msgstr "+"
-
-#~ msgid "-"
-#~ msgstr "-"
-
-#~ msgid "Textarea"
-#~ msgstr "تيكستاريا"
-
-#~ msgid "Vcard"
-#~ msgstr "بطاقة الزيارة"
-
-#~ msgid "Joined in 2018"
-#~ msgstr "انضم في عام 2018"
-
-#~ msgid "Ermile is our company in Qom!"
-#~ msgstr "ارمايل هي شركتنا في قم!"
-
-#~ msgid "123 Friends"
-#~ msgstr "الأصدقاء 123"
-
-#~ msgid "Ermile requested permission to transfer <b>Tejarak</b> team to you"
-#~ msgstr "ارمايل طلب الإذن لنقل فريق <b> Tejarak </ b> إليك"
-
-#~ msgid "Decline"
-#~ msgstr "الرفض"
-
-#~ msgid "3 days ago"
-#~ msgstr "قبل 3 أيام"
-
-#~ msgid "Check more!"
-#~ msgstr "تحقق أكثر!"
-
-#~ msgid "Javad Evazzdeh"
-#~ msgstr "جواد عوض زاده"
-
-#~ msgid "CEO and Founder"
-#~ msgstr "الرئيس التنفيذي و المؤسس"
-
-#~ msgid "Clockpicker"
-#~ msgstr "منتقي الساعة"
-
-#~ msgid "Datepicker"
-#~ msgstr "منتقي التاريخ"
-
-#~ msgid "Checkbox"
-#~ msgstr "مربع التحقق"
-
-#~ msgid "Check1 Sample1"
-#~ msgstr "تحقق 1 نموذج 1"
-
-#~ msgid "Switch"
-#~ msgstr "المفتاح الكهربائي"
-
-#~ msgid "YES"
-#~ msgstr "نعم"
-
-#~ msgid "NO!"
-#~ msgstr "لا!"
-
-#~ msgid "Are you like Siftal?"
-#~ msgstr "هل تستحب سيفتال؟"
-
-#~ msgid "Datalist"
-#~ msgstr "قائمة البيانات"
-
-#~ msgid "Radio"
-#~ msgstr "الراديو"
-
-#~ msgid "Blue"
-#~ msgstr "الأزرق"
-
-#~ msgid "Default"
-#~ msgstr "الافتراضي"
-
-#~ msgid "Red"
-#~ msgstr "الأحمر"
-
-#~ msgid "Yellow"
-#~ msgstr "الأصفر"
-
-#~ msgid "Green"
-#~ msgstr "الأخضر"
-
-#~ msgid "Black"
-#~ msgstr "الأسود"
-
-#~ msgid "Badges"
-#~ msgstr "الشارات"
-
-#~ msgid ""
-#~ "Documentation and examples for badges, our small count and labeling "
-#~ "component."
-#~ msgstr "وثائق و أمثلة للشارات ، عددنا القليلة و المكونات الموسومة."
-
-#~ msgid "Examples"
-#~ msgstr "الأمثلة"
-
-#~ msgid ""
-#~ "Badges scale to match the size of the immediate parent element by using "
-#~ "relative font sizing and <code class='code1'>em</code> units."
-#~ msgstr ""
-#~ "يتم شارات مقياس لتطابق مع حجم العنصر الرئيسي المباشر باستخدام التحجيم الخط "
-#~ "النسبي و وحدات </code> em <code class= 'code1'>\"."
-
-#~ msgid "Example heading"
-#~ msgstr "عنوان المثال"
-
-#~ msgid "New"
-#~ msgstr "الجديد"
-
-#~ msgid "Badges can be used as part of links or buttons to provide a counter."
-#~ msgstr "يمكن استخدام الشارات كجزء من الروابط أو الأزرار لتوفير عداد."
-
-#~ msgid "5"
-#~ msgstr "5"
-
-#~ msgid "Contextual variations"
-#~ msgstr "المتغيرات السياقية"
-
-#~ msgid ""
-#~ "Add any of the below mentioned modifier classes to change the appearance of "
-#~ "a badge."
-#~ msgstr "قم بإضافة أي من الفئات المعدِلة المذكورة أدناه لتغيير مظهر الشارة."
-
-#~ msgid "Secondary"
-#~ msgstr "الثانوي"
-
-#~ msgid "Success"
-#~ msgstr "النجاح"
-
-#~ msgid "Danger"
-#~ msgstr "الخطر"
-
-#~ msgid "Warning"
-#~ msgstr "التحذير"
-
-#~ msgid "Light"
-#~ msgstr "الضوء"
-
-#~ msgid "Dark"
-#~ msgstr "المظلم"
-
-#~ msgid "Rounded badge"
-#~ msgstr "الشارة المدورة"
-
-#~ msgid ""
-#~ "Use the <code class='code1'>.rounded</code> modifier class to make badges "
-#~ "more rounded (with a larger border-radius and additional horizontal padding)."
-#~ msgstr ""
-#~ "استخدام <code class= 'code1'>. معدِّل فئةً لجعل الشارات أكثر تقريباً (مع نصف قطر "
-#~ "أكبر و حزمة أفقيّة إضافية)"
-
-#~ msgid "Links"
-#~ msgstr "الروابط"
-
-#~ msgid ""
-#~ "Using the <code class='code1'>.badge</code> classes with the <code "
-#~ "class='code1'>&lt;a&gt;</code> element quickly provide actionable badges "
-#~ "with hover and focus states."
-#~ msgstr ""
-#~ "استخدام <code class= 'code1'>. شارة </code> الطبقات مع <code class= 'code1'> "
-#~ "lt;a&gt;&  </code>يوفر عنصر بسرعة شارات قابلة للتنفيذ مع حالات التحويم و "
-#~ "التركيز."
-
-#~ msgid "Barcode"
-#~ msgstr "الباركود"
-
-#~ msgid "A special handle to give barcode or rfid code"
-#~ msgstr "مقبض خاص لإعطاء الباركود أو رمز rfid"
-
-#~ msgid "Example"
-#~ msgstr "المثال"
-
-#~ msgid "This type of input filled only with readers, because of type speed!"
-#~ msgstr "يشغل هذا النوع من الإدخال فقط مع القراء ، بسبب سرعة الكتابة!"
-
-#~ msgid "Simple input"
-#~ msgstr "الإدخال البسيط"
-
-#~ msgid "input"
-#~ msgstr "الإدخال"
-
-#~ msgid "box"
-#~ msgstr "المربع"
-
-#~ msgid ""
-#~ "Siftal's box provide a flexible and extensible content container for title "
-#~ "and contents."
-#~ msgstr ""
-#~ "يوفر مربع سيفتال حاوية محتوى مرنة و قابلة للتوسعة للعناوين و المحتويات."
-
-#~ msgid ""
-#~ "You can use elements of this page in all part of site and mix them with "
-#~ "another elements."
-#~ msgstr ""
-#~ "يمكنك استخدام عناصر هذه الصفحة في كل جزء من الموقع و مزجها بعناصر أخرى."
-
-#~ msgid "Salam"
-#~ msgstr "السلام"
-
-#~ msgid ""
-#~ "Indicate the current page's location within a navigational hierarchy that "
-#~ "automatically adds separators via CSS."
-#~ msgstr ""
-#~ "للإشارة إلى موقع الصفحة الحالية داخل تسلسل هرمي للملاحة يضيف فواصلاً تلقائياً "
-#~ "عبر CSS."
-
-#~ msgid "Separators are automatically added in CSS through ::before and content."
-#~ msgstr ""
-#~ "للإشارة إلى موقع الصفحة الحالية داخل تسلسل هرمي للملاحة يضيف فواصلاً تلقائياً "
-#~ "عبر CSS."
-
-#~ msgid "Sizes"
-#~ msgstr "الأحجام"
-
-#~ msgid "A breadcrumb can vary in size"
-#~ msgstr "يمكن أن يختلف مسار التنقل في الحجم"
-
-#~ msgid ""
-#~ "Use Siftal's custom button styles for actions in forms, dialogs, and more "
-#~ "with support for multiple sizes, states, and more."
-#~ msgstr ""
-#~ "استخدم أنماط الأزرار المخصصة في Siftal للإجراءات في النماذج و مربعات الحوار "
-#~ "و المزيد مع دعم لأحجام و حالات متعددة و غير ذلك."
-
-#~ msgid "Simple Examples"
-#~ msgstr "المثال البسيط"
-
-#~ msgid ""
-#~ "Siftal includes several predefined button styles, each serving its own "
-#~ "semantic purpose, with a few extras thrown in for more control."
-#~ msgstr ""
-#~ "يتضمن Siftal العديد من أنماط الأزرار المعرفة مسبقاً، كل منها يخدم غرضه "
-#~ "الدلالي، مع بعض الإضافات التي يتم إدخالها لمزيد من التحكم."
-
-#~ msgid "Default Btn"
-#~ msgstr "الزر الإفتراضي"
-
-#~ msgid "a simple link"
-#~ msgstr "الرابط البسيط"
-
-#~ msgid "Button tags"
-#~ msgstr "علامات الزر"
-
-#~ msgid ""
-#~ "The <code class='code1'>.btn</code> classes are designed to be used with the "
-#~ "<code class='code1'>&lt;button&gt;</code> element. However, you can also use "
-#~ "these classes on <code class='code1'>&lt;a&gt;</code> or <code "
-#~ "class='code1'>&lt;input&gt;</code> elements (though some browsers may apply "
-#~ "a slightly different rendering)."
-#~ msgstr ""
-#~ "<code class='code1'>. زر </code> التي تم تصميم الطبقات ليتم استخدامها مع "
-#~ "codeclass='code1'>&lt;button&gt;</code>> مع هذا، يمكنك استخدام هذه الطبقات "
-#~ "في عناصر <code class='code1'>&lt;input&gt;</code> یا <code class='code1'>&lt;"
-#~ "a&gt;</code> (على الرغم من أن بعض المتصفحات قد تطبق طريقة عرض مختلفة قليلاً)."
-
-#~ msgid ""
-#~ "When using button classes on <code class='code1'>&lt;a&gt;</code> elements "
-#~ "that are used to trigger in-page functionality (like collapsing content), "
-#~ "rather than linking to new pages or sections within the current page, these "
-#~ "links should be given a <code class='code1'>role='button'</code> to "
-#~ "appropriately convey their purpose to assistive technologies such as screen "
-#~ "readers."
-#~ msgstr ""
-#~ "عند استخدام الطبقات على زر <code class='code1'>&lt;a&gt;</code> العناصر "
-#~ "المستخدمة لتشغيل وظيفة في الصفحة (مثل تصغير المحتوى) ، بدلاً من الارتباط "
-#~ "بصفحات أو أقسام جديدة داخل الصفحة الحالية ، يجب إعطاء هذه الروابط <code "
-#~ "class='code1'>role='button'</code>  لنقل الغرض منها إلى التقنيات المساعدة "
-#~ "مثل قارئات الشاشة."
-
-#~ msgid "Link!"
-#~ msgstr "الرابط!"
-
-#~ msgid "Outline buttons"
-#~ msgstr "أزرار المخطط التفصيلي"
-
-#~ msgid ""
-#~ "In need of a button, but not the hefty background colors they bring? Replace "
-#~ "the default modifier classes with the <code class='code1'>.outline</code> "
-#~ "ones to remove all background images and colors on any button."
-#~ msgstr ""
-#~ "في حاجة إلى زر ، ولكن ليس الألوان الخلفية الثقيلة التي تجلبها؟ استبدال فئات "
-#~ "التعديل الافتراضية مع  <code class='code1'>.outline</code> تلك لإزالة كل "
-#~ "الصور و الألوان الخلفية على أي زر."
-
-#~ msgid "Inverted"
-#~ msgstr "المقتبس"
-
-#~ msgid "A button can be formatted to appear on dark backgrounds"
-#~ msgstr "يمكن تنسيق زر لتظهر على خلفية داكنة"
-
-#~ msgid ""
-#~ "Fancy larger or smaller buttons? Add .btn-lg or .btn-sm for additional sizes."
-#~ msgstr "يتوهم أزرار أكبر أو أصغر؟ أضف .btn-lg أو .btn-sm لأحجام إضافية."
-
-#~ msgid "Extra small xs"
-#~ msgstr "صغير جداً xs"
-
-#~ msgid "Small sm"
-#~ msgstr "صغيرsm"
-
-#~ msgid "Large lg"
-#~ msgstr "الكبير lg"
-
-#~ msgid "Extra Large xl"
-#~ msgstr "اضافية كبيرة  xl"
-
-#~ msgid "Primary Block"
-#~ msgstr "الكتلة الأساسية"
-
-#~ msgid "Secondary block"
-#~ msgstr "الكتلة الثانوية"
-
-#~ msgid "Active state"
-#~ msgstr "الحالة النشطة"
-
-#~ msgid ""
-#~ "Buttons will appear pressed (with a darker background) when active. There’s "
-#~ "no need to add a class to <code class='code1'>&lt;button&gt;</code>s as they "
-#~ "use a pseudo-class. However, you can still force the same active appearance "
-#~ "with .active should you need to replicate the state programmatically."
-#~ msgstr ""
-#~ "سوف تظهر أزرار الضغط (مع خلفية داكنة) عندما نشط. ليس هناك حاجة لإضافة فصل "
-#~ "دراسي إلى <code class='code1'>&lt;button&gt;</code> كلها، لأنها تستخدم فئة "
-#~ "<code>pseudo</code>. و مع ذلك ، لا يزال بإمكانك فرض نفس المظهر النشط مع "
-#~ "<code>.active</code>. نشط يجب أن تحتاج إلى إجراء نسخ متماثل للحالة برمجياً."
-
-#~ msgid "Disabled state"
-#~ msgstr "حالة التعطيل"
-
-#~ msgid ""
-#~ "Make buttons look inactive by adding the disabled boolean attribute to any "
-#~ "<code class='code1'>&lt;button&gt;</code> element."
-#~ msgstr ""
-#~ "جعل الأزرار تبدو غير نشطة عن طريق إضافة السمة المنطقية المعطلة إلى أي عناصر "
-#~ "<code class='code1'>&lt;button&gt;</code> ."
-
-#~ msgid ""
-#~ "Disabled buttons using the <code class='code1'>&lt;a&gt;</code> element "
-#~ "behave a bit different because <code class='code1'>&lt;a&gt;</code>s don’t "
-#~ "support the <code class='code1'>disabled</code> attribute, so you must add "
-#~ "the <code class='code1'>.disabled</code> class to make it visually appear "
-#~ "disabled."
-#~ msgstr ""
-#~ "الأزرار المعطلة باستخدام <code class='code1'>&lt;a&gt;</code> عنصر تتصرف "
-#~ "مختلفة بعض الشيء لأنها <code class='code1'>&lt;a&gt;</code> كلها، لا تدعم من "
-#~ "هذه السمة <code class='code1'>.disabled</code> لذلك يجب عليك إضافة الفئة "
-#~ "<code class='code1'>.disabled</code> لجعله يبدو مرئيًا معطلاً.."
-
-#~ msgid "disabled"
-#~ msgstr "التعطيل"
-
-#~ msgid ".disabled"
-#~ msgstr ".التعطيل"
-
-#~ msgid ".disabled Link"
-#~ msgstr ".رابط التعطيل"
-
-#~ msgid "Link functionality caveat"
-#~ msgstr "رابط تحذير الوظيفية"
-
-#~ msgid ""
-#~ "The <code class='code1'>.disabled</code> class uses <code "
-#~ "class='code1'>pointer-events: none</code> to try to disable the link "
-#~ "functionality of <code class='code1'>&lt;a&gt;</code>s, but that CSS "
-#~ "property is not yet standardized. In addition, even in browsers that do "
-#~ "support <code class='code1'>pointer-events: none</code>, keyboard navigation "
-#~ "remains unaffected, meaning that sighted keyboard users and users of "
-#~ "assistive technologies will still be able to activate these links. So to be "
-#~ "safe, add a <code class='code1'>tabindex='-1'</code> attribute on these "
-#~ "links (to prevent them from receiving keyboard focus) and use custom "
-#~ "JavaScript to disable their functionality."
-#~ msgstr ""
-#~ "تستخدم طبقة <code class='code1'>.disabled</code> من  <code "
-#~ "class='code1'>pointer-events: none</code> في محاولة لتعطيل وظيفة الارتباط "
-#~ "<code class='code1'>&lt;a&gt;</code> كلها، لكن خاصية CSS هذه لم يتم توحيدها "
-#~ "بعد. بالإضافة إلى ذلك، حتى في المتصفحات التي تدعم <code "
-#~ "class='code1'>pointer-events: none</code>، سيظل التنقل باستخدام لوحة "
-#~ "المفاتيح غير متأثر، مما يعني أن مستخدمي لوحة المفاتيح المشهورين و مستخدمي "
-#~ "التقنيات المساعدة سيظلون قادرين على تنشيط هذه الروابط. قم بإضافة هذه السمة "
-#~ "<code class='code1'>tabindex='-1' none</code>، علي هذه الروابط، حتى تكون "
-#~ "آمنة (لمنعهم من تلقي التركيز على لوحة المفاتيح) و استخدام JavaScript مخصص "
-#~ "لتعطيل وظائفهم."
-
-#~ msgid ""
-#~ "Easily extend form controls by adding text, buttons, or button groups on "
-#~ "either side of textual inputs."
-#~ msgstr ""
-#~ "يمكنك بسهولة توسيع عناصر التحكم في النموذج عن طريق إضافة نص أو أزرار أو "
-#~ "مجموعات أزرار على جانبي المدخلات النصية."
-
-#~ msgid "Simple Examples with input element"
-#~ msgstr "أمثلة بسيطة مع عنصر الإدخال"
-
-#~ msgid "Check1 Sample2"
-#~ msgstr "تحقق 1 نموذج 2"
-
-#~ msgid "Check1 Sample3"
-#~ msgstr "تحقق 1 نموذج 3"
-
-#~ msgid "With custom text"
-#~ msgstr "مع نص مخصص"
-
-#~ msgid "HI"
-#~ msgstr "السلام"
-
-#~ msgid "BYE"
-#~ msgstr "الوداع"
-
-#~ msgid "With more detail"
-#~ msgstr "مع مزيد من التفاصيل"
-
-#~ msgid "Subscribe to our newsletter"
-#~ msgstr "اشترك في نشرتنا الإخبارية"
-
-#~ msgid "Special use"
-#~ msgstr "الإستخدام الخاص"
-
-#~ msgid "Clock"
-#~ msgstr "الساعة الحائط"
-
-#~ msgid "A simple real time clock using online and offline method for update."
-#~ msgstr ""
-#~ "ساعة بسيطة في الوقت الحقيقي باستخدام طريقة عبر الإنترنت و غير متصل للتحديث."
-
-#~ msgid "ClockPicker"
-#~ msgstr "محدِد الساعة"
-
-#~ msgid "Easily add time picker to your project"
-#~ msgstr "أضف منتقي الوقت لمشروعك بسهولة"
-
-#~ msgid "Read more info and example about clockpicker"
-#~ msgstr "قراءة المزيد من المعلومات و مثال حول محدِد الساعة"
-
-#~ msgid "Simple"
-#~ msgstr "بسيط"
-
-#~ msgid "Simple without default value"
-#~ msgstr "بسيطة بدون القيمة الإفتراضية"
-
-#~ msgid "choose clock"
-#~ msgstr "اختر الساعة"
-
-#~ msgid "Simple with addon"
-#~ msgstr "بسيطة مع الملحق"
-
-#~ msgid "Place at right, align the arrow to top, without auto close"
-#~ msgstr "ضعه على اليمين، قم بمحاذاة السهم إلى الأعلى، بدون الإغلاق التلقائي"
-
-#~ msgid "Ok"
-#~ msgstr "حسناً"
-
-#~ msgid "Place at right, align the arrow to bottom"
-#~ msgstr "ضعه على اليمين، محاذاة السهم إلى الأسفل"
-
-#~ msgid "Place at left, align the arrow to top"
-#~ msgstr "ضع على اليسار، محاذاة السهم إلى الأعلى"
-
-#~ msgid "Place at top, alighn the arrow to right"
-#~ msgstr "ضعه في الأعلى، محاذاة السهم إلى اليمين"
-
-#~ msgid "Place at top, alighn the arrow to left"
-#~ msgstr "ضعه في الأعلى، محاذاة السهم إلى اليسار"
-
-#~ msgid "Place at bottom, alighn the arrow to right"
-#~ msgstr "ضعه في الأسفل، محاذاة السهم إلى اليمين"
-
-#~ msgid "Place at bottom, alighn the arrow to left"
-#~ msgstr "ضعه في الأسفل، محاذاة السهم إلى اليسار"
-
-#~ msgid "Set options in javascript, instead of data-*"
-#~ msgstr "تعيين الخيارات في javascript، بدلاً من data- *"
-
-#~ msgid "Callbacks"
-#~ msgstr "الاسترجاعات"
-
-#~ msgid "Crop Images"
-#~ msgstr "قطع الصور"
-
-#~ msgid "A simple and full feature crop for avatar or something else!"
-#~ msgstr "ميزة القطع البسيطة و الكاملة للصورة الرمزية أو أي شيء آخر!"
-
-#~ msgid "Check more on cropprer documentation!"
-#~ msgstr "تحقق أكثر على قطع الوثائق!"
-
-#~ msgid "Only run cropper without anything!"
-#~ msgstr "فقط قم بتشغيل القاطعة بدون أي شيء!"
-
-#~ msgid "Only run cropper with aspect ratio and min width and height on cropbox"
-#~ msgstr ""
-#~ "فقط قم بتشغيل القاطعة مع نسبة العرض إلى الارتفاع و الحد الأدنى للعرض و "
-#~ "الارتفاع على صندوق القطع"
-
-#~ msgid "Complete example with full function"
-#~ msgstr "المثال الكامل مع الوظيفة الكاملة"
-
-#~ msgid "run cropper with aspect ratio and min width and height in modal"
-#~ msgstr ""
-#~ "كيفية تشغيل القاطعة مع نسبة العرض إلى الارتفاع و مقدار العرض و الارتفاع"
-
-#~ msgid "Crop image in modal"
-#~ msgstr "كيفية قطع الصورة"
-
-#~ msgid "Crop your avatar"
-#~ msgstr "قطع الصورة الرمزية الخاص بك"
-
-#~ msgid "Please choose and crop your image"
-#~ msgstr "يرجي اختيار و قطع صورتك"
-
-#~ msgid "complete example of crop in modal and show preview after that"
-#~ msgstr "المثال الكامل عن كيفية القطع و عرض المعاينة بعدها"
-
-#~ msgid "Crop"
-#~ msgstr "القطع"
-
-#~ msgid ""
-#~ "complete example of crop in modal and show preview after that with default "
-#~ "image"
-#~ msgstr "المثال الكامل عن كيفية القطع و عرض المعاينة بعدها مع الصورة الافتراضية"
-
-#~ msgid "Datalist element of HTML5 forms is pretty cool!"
-#~ msgstr "عنصر قائمة البيانات من أشكال HTML5 رائع جدًا!"
-
-#~ msgid "Find Iran State"
-#~ msgstr "العثور علي منطقة الايران"
-
-#~ msgid "Full width"
-#~ msgstr "العرض الكامل"
-
-#~ msgid "Find Iran State 2"
-#~ msgstr "العثور علي منطقة الايران 2"
-
-#~ msgid "Tehran"
-#~ msgstr "الطهران"
-
-#~ msgid "Awesomplete"
-#~ msgstr "المتممة التلقائية"
-
-#~ msgid "No JS"
-#~ msgstr "بدون جاوا سكريبت"
-
-#~ msgid "No JS and min char 1 and autoselect first item"
-#~ msgstr "بدون جاو ا‌اسکریبت و تحديد على الأقل 1 حرفاً و اختيار تلقائي البند الأول"
-
-#~ msgid "With datalist"
-#~ msgstr "مع قائمة البيانات"
-
-#~ msgid "Full Sample"
-#~ msgstr "النموذج الكامل"
-
-#~ msgid "Date Picker"
-#~ msgstr "تحديد التاريخ"
-
-#~ msgid "A simple date picker for fast use"
-#~ msgstr "محدد التاريخ البسيط للاستخدام السريع"
-
-#~ msgid "Read more info and example about persian datepicker"
-#~ msgstr "قراءة المزيد من المعلومات و مثال حول محدد التاريخ باللغة الفارسية"
-
-#~ msgid "Without any option"
-#~ msgstr "دون أي خيار"
-
-#~ msgid "Without any option and without default value"
-#~ msgstr "دون أي خيار و بدون القيمة الإفتراضية"
-
-#~ msgid "Without any option to use in php, get timestamp on backend"
-#~ msgstr "بدون أي خيار لاستخدامه في php، احصل على طابع زمني على النهاية الخلفية"
-
-#~ msgid "With custom format"
-#~ msgstr "مع التنسيق المخصص"
-
-#~ msgid "with default value"
-#~ msgstr "مع القيمة الافتراضية"
-
-#~ msgid "Connect to another field"
-#~ msgstr "تواصل مع حقل آخر"
-
-#~ msgid "Inline Mode"
-#~ msgstr "وضع في الخط"
-
-#~ msgid "English Number"
-#~ msgstr "الرقم الانجليزي"
-
-#~ msgid "Special View mode"
-#~ msgstr "وضع العرض الخاص"
-
-#~ msgid "Min is today"
-#~ msgstr "الحد الأدنى هو اليوم"
-
-#~ msgid "Max is today"
-#~ msgstr "الحد الأقصى هو اليوم"
-
-#~ msgid "Deadline"
-#~ msgstr "الموعد النهائي"
-
-#~ msgid "Siftal's deadline provide a simple box to show title and remain date."
-#~ msgstr "الموعد النهائي لسيفتال يوفر مربع بسيط لإظهار العنوان و تظل التاريخ."
-
-#~ msgid "Sample Deadline"
-#~ msgstr "نموذج الموعد النهائي"
-
-#~ msgid "days left"
-#~ msgstr "الأيام المتبقية"
-
-#~ msgid "Sample Deadline2"
-#~ msgstr "نموذج الموعد النهائي 2"
-
-#~ msgid "Orange"
-#~ msgstr "البرتقال"
-
-#~ msgid "Sample Deadline3"
-#~ msgstr "نموذج الموعد النهائي 3"
-
-#~ msgid "Page Grids"
-#~ msgstr "شبكات الصفحة"
-
-#~ msgid "one row will divide to the number of parts, if you just set class='c'"
-#~ msgstr "سيتم تقسيم صف واحد إلى عدد الأجزاء، إذا قمت بتعيين فقط class = 'c'"
-
-#~ msgid ""
-#~ "on large screens if you just set class='x', it will take the x class ratio"
-#~ msgstr "إذا قمت بتعيين class = 'x' على الشاشات الكبيرة، فستستغرق نسبة x class"
-
-#~ msgid "three equal parts"
-#~ msgstr "ثلاثة أجزاء متساوية"
-
-#~ msgid "sum of parts is 12, every part will take ratio of it's class number"
-#~ msgstr "مجموع الأجزاء هو 12، كل جزء سيأخذ نسبة من رقم الفئة"
-
-#~ msgid "it will take just 6 part of 12"
-#~ msgstr "سوف يأخذ فقط 6 جزء من 12"
-
-#~ msgid "float right boxes, by .os class"
-#~ msgstr "تعويم صناديق اليمني، بواسطة فئة: .os"
-
-#~ msgid "Responsive on medium devices, like tablet's by .m classes"
-#~ msgstr "متجاوب على الأجهزة متوسطة الحجم ، مثل الأجهزة اللوحية من خلال فئات .m"
-
-#~ msgid "Responsive on mobile devices by .s classes"
-#~ msgstr "متجاوب على الأجهزة المحمولة حسب فئات .s"
-
-#~ msgid "siftal"
-#~ msgstr "سيفتال"
-
-#~ msgid "This was created with "
-#~ msgstr "تم إنشاء هذا مع "
-
-#~ msgid "Fontastic"
-#~ msgstr "Fontastic"
-
-#~ msgid "CSS mapping"
-#~ msgstr "تخطيط CSS"
-
-#~ msgid "Character mapping"
-#~ msgstr "تخطيط الأحرف"
-
-#~ msgid "Focus"
-#~ msgstr "التركيز"
-
-#~ msgid "Readonly"
-#~ msgstr "يقرأ فقط"
-
-#~ msgid "Disabled"
-#~ msgstr "التعطيل"
-
-#~ msgid "All type of input conditions"
-#~ msgstr "كل أنحاء شروط الإدخال"
-
-#~ msgid "Extra Examples with input class and multiple part"
-#~ msgstr "الأمثلة الإضافية مع فئة المدخلات و الأجزاء المتعددة"
-
-#~ msgid "Add conditions class to input el"
-#~ msgstr "أضف فئة الشروط لإدخال el"
-
-#~ msgid "Simple input with label"
-#~ msgstr "أضف فئة الشروط لإدخال el"
-
-#~ msgid "Family"
-#~ msgstr "العائلة"
-
-#~ msgid "Extra features"
-#~ msgstr "الميزات الإضافية"
-
-#~ msgid "Fix addons"
-#~ msgstr "إصلاح الإضافات"
-
-#~ msgid "Sizing"
-#~ msgstr "التحجيم"
-
-#~ msgid "Button addons"
-#~ msgstr "إضافات الزر"
-
-#~ msgid "Search..."
-#~ msgstr "البحث..."
-
-#~ msgid "Go!"
-#~ msgstr "إذهب!"
-
-#~ msgid "Ding Ding!"
-#~ msgstr "دينگ دينگ!"
-
-#~ msgid "Simple file input"
-#~ msgstr "إدخال الملف البسيط"
-
-#~ msgid "Simple file input only accept images"
-#~ msgstr "إدخال الملف البسيط الذي يقبل الصور فقط"
-
-#~ msgid "Simple avatar selector with simple preview"
-#~ msgstr "محدد الصورة الرمزية بسيطة مع معاينة بسيطة"
-
-#~ msgid "Simple file input with min 100kb and max 200kb size!"
-#~ msgstr ""
-#~ "إدخال الملفات البسيطة بحد أدنى 100 كيلوبايت و حجم 200 كيلوبايت كحد أقصى!"
-
-#~ msgid "Life"
-#~ msgstr "الحياة"
-
-#~ msgid "Add life to page, after end life hard refresh page"
-#~ msgstr "أضف الحياة إلى الصفحة، بعد انتهاء الحياة قم بتحديث الصفحة الثابت"
-
-#~ msgid "Control from body[data-life=123]"
-#~ msgstr "التحكم من خلال عنصر الجسم [data-life = 123]"
-
-#~ msgid "Line"
-#~ msgstr "الخط"
-
-#~ msgid "Add fix simple line to bottom of page"
-#~ msgstr "إضافة سطر بسيط إلى ذيل الصفحة"
-
-#~ msgid "Ermile is intelligent"
-#~ msgstr "ارمايل ذكي"
-
-#~ msgid "goodbye"
-#~ msgstr "وداعاً"
-
-#~ msgid ""
-#~ "Provide contextual feedback messages for typical user actions with the "
-#~ "handful of available and flexible alert messages."
-#~ msgstr ""
-#~ "تقديم رسائل تعليقات سياقية لإجراءات المستخدم المعتادة مع عدد قليل من رسائل "
-#~ "التنبيه المتاحة و المرنة."
-
-#~ msgid "This is a primary message or alert. check it out!"
-#~ msgstr "هذه الرسالة أو التنبيه الأساسي. تحقق من ذلك!"
-
-#~ msgid "This is a secondary message or alert. check it out!"
-#~ msgstr "هذه الرسالة أو التنبيه الثانوي. تحقق من ذلك!"
-
-#~ msgid "This is a success message or alert. check it out!"
-#~ msgstr "هذه الرسالة أو التنبيه النجاح. تحقق من ذلك!"
-
-#~ msgid "This is a danger message or alert. check it out!"
-#~ msgstr "هذه الرسالة أو التنبيه الخطر. تحقق من ذلك!"
-
-#~ msgid "This is a warning message or alert. check it out!"
-#~ msgstr "هذه الرسالة أو التنبيه التحذير. تحقق من ذلك!"
-
-#~ msgid "This is a info message or alert. check it out!"
-#~ msgstr "هذه معلومات الرسالة أو التنبيه. تحقق من ذلك!"
-
-#~ msgid "This is a light message or alert. check it out!"
-#~ msgstr "هذه رسالة أو تنبيه الإضاءة. تحقق من ذلك!"
-
-#~ msgid "This is a dark message or alert. check it out!"
-#~ msgstr "هذه رسالة أو تنبيه المظلم. تحقق من ذلك!"
-
-#~ msgid "Examples with light color"
-#~ msgstr "الأمثلة مع اللون الفاتح"
-
-#~ msgid "This is a primary2 message or alert. check it out!"
-#~ msgstr "هذه الرسالة أو التنبيه الأساسي. تحقق من ذلك!"
-
-#~ msgid "This is a secondary2 message or alert. check it out!"
-#~ msgstr "هذه الرسالة أو التنبيه الثانوي. تحقق من ذلك!"
-
-#~ msgid "This is a success2 message or alert. check it out!"
-#~ msgstr "هذه الرسالة أو تنبيه النجاح برقم 2. تحقق من ذلك!"
-
-#~ msgid "This is a danger2 message or alert. check it out!"
-#~ msgstr "هذه رسالة أو تنبيه الخطر برقم 2. تحقق من ذلك!"
-
-#~ msgid "This is a warning2 message or alert. check it out!"
-#~ msgstr "هذه رسالة أو تنبيه التحذير برقم 2. تحقق من ذلك!"
-
-#~ msgid "This is a info2 message or alert. check it out!"
-#~ msgstr "هذه معلومات الرسالة أو التنبيه برقم 2. تحقق من ذلك!"
-
-#~ msgid "This is a light2 message or alert. check it out!"
-#~ msgstr "هذه رسالة أو تنبيه الإضاءة برقم 2. تحقق من ذلك!"
-
-#~ msgid "This is a dark2 message or alert. check it out!"
-#~ msgstr "هذه رسالة أو تنبيه المظلم برقم 2. تحقق من ذلك!"
-
-#~ msgid "Link color"
-#~ msgstr "لون الربط"
-
-#~ msgid ""
-#~ "Use the <code class='code1'>.link</code> utility class to quickly provide "
-#~ "matching colored links within any alert."
-#~ msgstr ""
-#~ "استخدم <code class='code1'>.link</code> فئة الأداة المساعدة لتوفير مطابقة "
-#~ "الروابط الملونة بسرعة في أي تنبيه."
-
-#~ msgid "This is a primary alert with"
-#~ msgstr "هذا هو التنبيه الأساسي مع"
-
-#~ msgid "an example link"
-#~ msgstr "مثال للرابط"
-
-#~ msgid "Give it a click if you like."
-#~ msgstr "أنقر عليها إذا أردت."
-
-#~ msgid "This is a secondary alert with"
-#~ msgstr "هذا هو التنبيه الثانوي مع"
-
-#~ msgid "This is a success alert with"
-#~ msgstr "هذا هو التنبيه النجاح مع"
-
-#~ msgid "This is a danger alert with"
-#~ msgstr "هذا هو التنبيه الخطر مع"
-
-#~ msgid "This is a warning alert with"
-#~ msgstr "هذا هو التنبيه التحذير مع"
-
-#~ msgid "This is a info alert with"
-#~ msgstr "هذا هو معلومات التنبيه مع"
-
-#~ msgid "This is a light alert with"
-#~ msgstr "هذا هو التنبيه الإضاءة مع"
-
-#~ msgid "This is a dark alert with"
-#~ msgstr "هذا هو التنبيه المظلم مع"
-
-#~ msgid "Additional content"
-#~ msgstr "المحتوى الإضافي"
-
-#~ msgid ""
-#~ "Alerts can also contain additional HTML elements like headings, paragraphs "
-#~ "and dividers."
-#~ msgstr ""
-#~ "يمكن أن تحتوي التنبيهات أيضًا على عناصر HTML إضافية مثل العناوين و الفقرات و "
-#~ "الفواصل."
-
-#~ msgid "Well done!"
-#~ msgstr "أحسنت!"
-
-#~ msgid ""
-#~ "Aww yeah, you successfully read this important alert message. This example "
-#~ "text is going to run a bit longer so that you can see how spacing within an "
-#~ "alert works with this kind of content."
-#~ msgstr ""
-#~ "نعم ، لقد قرأت رسالة التنبيه المهمة هذه بنجاح. سيتم تشغيل نص هذا المثال "
-#~ "لفترة أطول قليلاً بحيث يمكنك معرفة كيفية عمل التباعد في التنبيه مع هذا النوع "
-#~ "من المحتوى."
-
-#~ msgid ""
-#~ "Whenever you need to, be sure to use margin utilities to keep things nice "
-#~ "and tidy."
-#~ msgstr ""
-#~ "كلما كنت بحاجة إلى ذلك، تأكد من استخدام أدوات الهامش للحفاظ على الأشياء "
-#~ "اللطيفة و المرتبة."
-
-#~ msgid "Compact"
-#~ msgstr "المدمج"
-
-#~ msgid "A message can only take up the width of its content."
-#~ msgstr "لا يمكن للرسالة إلا أن تتناول عرض محتواها."
-
-#~ msgid ""
-#~ "Aww yeah, you successfully read this important alert message. Sign up now!"
-#~ msgstr "نعم ، لقد قرأت رسالة التنبيه المهمة هذه بنجاح. أفتح الحساب الأن!"
-
-#~ msgid "Another type of usage"
-#~ msgstr "نوع آخر من الاستخدام"
-
-#~ msgid "List Message"
-#~ msgstr "قائمة الرسائل"
-
-#~ msgid "A message with a list"
-#~ msgstr "رسالة مع قائمة واحدة"
-
-#~ msgid "Was this what you wanted?"
-#~ msgstr "هل كان هذا ما تريده؟"
-
-#~ msgid "It's good to see you again."
-#~ msgstr "من الجيد رؤيتك مرة أخرى."
-
-#~ msgid "Did you know it's been a while?"
-#~ msgstr "هل تعلم أنه كان هناك بعض الوقت؟"
-
-#~ msgid "Have you heard about our car?"
-#~ msgstr "هل سمعت عن سيارتنا؟"
-
-#~ msgid "Get the best news of the year!"
-#~ msgstr "الحصول على أفضل أخبار السنة!"
-
-#~ msgid "Just one second"
-#~ msgstr "فقط لحظة واحدة"
-
-#~ msgid "We're fetching that content for you. What content!?"
-#~ msgstr "نحن بصدد جلب هذا المحتوى لك. ما هو المحتوى !؟"
-
-#~ msgid "Notif"
-#~ msgstr "الإعلام"
-
-#~ msgid "Show simple and powerful notificaion via js and html attr"
-#~ msgstr "عرض الإخطار البسيط و القوي عبر js و html attr"
-
-#~ msgid "Complete Example with autorun"
-#~ msgstr "مثال كامل مع التشغيل التلقائي"
-
-#~ msgid "Hello World!"
-#~ msgstr "مرحبا بالعالم!"
-
-#~ msgid "On page route run this"
-#~ msgstr "على مسار الصفحة تشغيل هذا"
-
-#~ msgid "Simple Notification"
-#~ msgstr "الإخطار البسيط"
-
-#~ msgid "With title"
-#~ msgstr "مع العنوان"
-
-#~ msgid "Sticky Notif"
-#~ msgstr "الإعلام المرفق"
-
-#~ msgid "Colored"
-#~ msgstr "ملون"
-
-#~ msgid "Notif in special target"
-#~ msgstr "الإخطار في هدف خاص"
-
-#~ msgid "Sticky"
-#~ msgstr "المرفقة"
-
-#~ msgid "Notif in all position"
-#~ msgstr "الإخطار في كل موقف"
-
-#~ msgid "Top"
-#~ msgstr "الأعلي"
-
-#~ msgid "Left"
-#~ msgstr "اليسار"
-
-#~ msgid "Center"
-#~ msgstr "المركز"
-
-#~ msgid "Right"
-#~ msgstr "اليمين"
-
-#~ msgid "Bottom"
-#~ msgstr "الذيل"
-
-#~ msgid "Sample Page of admin"
-#~ msgstr "عينة صفحة من المشرف"
-
-#~ msgid "Template Form"
-#~ msgstr "نموذج القالب"
-
-#~ msgid "List"
-#~ msgstr "القائمة"
-
-#~ msgid "Headings"
-#~ msgstr "العناوين"
-
-#~ msgid "message (.msg)"
-#~ msgstr "الرسالة (.msg)"
-
-#~ msgid "message warning (.msg .warning)"
-#~ msgstr "رسالة التحذير (.msg .warning)"
-
-#~ msgid "message info (.msg .info)"
-#~ msgstr "معلومات الرسالة  (info. msg)"
-
-#~ msgid "message success (.msg .success)"
-#~ msgstr "نجاح الرسالة (.msg .success)"
-
-#~ msgid "message error (.msg .error)"
-#~ msgstr "رسالة الخطأ (error. msg)"
-
-#~ msgid "message danger (.msg .danger)"
-#~ msgstr "رسالة الخطر  (danger. msg)"
-
-#~ msgid "message compact (.msg .compact)"
-#~ msgstr "رسالة مضغوط (.msg .compact)"
-
-#~ msgid "message small (.msg .small)"
-#~ msgstr "رسالة صغيرة  (small. msg)"
-
-#~ msgid "message big (.msg .big)"
-#~ msgstr "رسالة كبيرة  (big. msg)"
-
-#~ msgid "message massive (.msg .massive)"
-#~ msgstr "رسالة هائلة (massive. msg)"
-
-#~ msgid "Privacy mode"
-#~ msgstr "وضع الخصوصية"
-
-#~ msgid "Private"
-#~ msgstr "الخاص"
-
-#~ msgid "Public"
-#~ msgstr "العامة"
-
-#~ msgid "Short Name"
-#~ msgstr "الاسم القصير"
-
-#~ msgid "phoneNumber"
-#~ msgstr "رقم الهاتف"
-
-#~ msgid "Alias"
-#~ msgstr "الاسم المستعار"
-
-#~ msgid "Default setting for new members of team"
-#~ msgstr "الإعداد الافتراضي للأعضاء الجديدة في الفريق"
-
-#~ msgid "Show users avatars"
-#~ msgstr "عرض الصور الرمزية الخاص بالمستخدمين"
-
-#~ msgid "Allow plus"
-#~ msgstr "السماح زائد"
-
-#~ msgid "Allow minus"
-#~ msgstr "السماح ناقص"
-
-#~ msgid "Remote user"
-#~ msgstr "المستخدم عن بعد"
-
-#~ msgid "24 hour"
-#~ msgstr "24 ساعة"
-
-#~ msgid "allowPlus"
-#~ msgstr "السماح زائد"
-
-#~ msgid "Advance"
-#~ msgstr "تقدم"
-
-#~ msgid "First"
-#~ msgstr "الأولي"
-
-#~ msgid "Second"
-#~ msgstr "الثانوي"
-
-#~ msgid "Third"
-#~ msgstr "الثالث"
-
-#~ msgid "This is heading 1"
-#~ msgstr "هذا هو العنوان 1"
-
-#~ msgid "This is heading 2"
-#~ msgstr "هذا هو العنوان 2"
-
-#~ msgid "This is heading 3"
-#~ msgstr "هذا هو العنوان 3"
-
-#~ msgid "This is heading 4"
-#~ msgstr "هذا هو العنوان 4"
-
-#~ msgid "This is heading 5"
-#~ msgstr "هذا هو العنوان 5"
-
-#~ msgid "This is heading 6"
-#~ msgstr "هذا هو العنوان 6"
-
-#~ msgid ""
-#~ "Documentation and examples for showing pagination to indicate a series of "
-#~ "related content exists across multiple pages."
-#~ msgstr ""
-#~ "توجد وثائق وأمثلة لعرض ترقيم الصفحات للإشارة إلى سلسلة من المحتوى ذي الصلة "
-#~ "عبر صفحات متعددة."
-
-#~ msgid "Overview"
-#~ msgstr "نظرة عامة"
-
-#~ msgid ""
-#~ "We use a large block of connected links for our pagination, making links "
-#~ "hard to miss and easily scalable—all while providing large hit areas. "
-#~ "Pagination is built with list HTML elements so screen readers can announce "
-#~ "the number of available links. Use a wrapping <nav> element to identify it "
-#~ "as a navigation section to screen readers and other assistive technologies."
-#~ msgstr ""
-#~ "نحن نستخدم كتلة كبيرة من الروابط المتصلة لترقيم الصفحات، مما يجعل من الصعب "
-#~ "تفويت الارتباطات و قابلية للتوسيع بسهولة – و كل ذلك مع توفير مناطق الضرب "
-#~ "الكبيرة. تم إنشاء ترقيم الصفحات باستخدام قائمة عناصر HTML بحيث يمكن لقارئي "
-#~ "الشاشة الإعلان عن عدد الروابط المتاحة. استخدم عنصر <nav> لإظهاره كقسم تنقل "
-#~ "لفحص القراء والتقنيات المساعدة الأخرى."
-
-#~ msgid "A pagination can use in many colors"
-#~ msgstr "يمكن استخدام ترقيم الصفحات في العديد من الألوان"
-
-#~ msgid "A pagination can vary in size"
-#~ msgstr "يمكن أن يختلف ترقيم الصفحات من حيث الحجم"
-
-#~ msgid "Documentation and examples for using Siftal progress bars."
-#~ msgstr "وثائق وأمثلة لاستخدام أشرطة التقدم سيفتال."
-
-#~ msgid ""
-#~ "Siftal use html progress and meter and have some styles on them, each "
-#~ "serving its own semantic purpose"
-#~ msgstr ""
-#~ "يستخدم سيفتال من تقدم HTML و متر و بعض الأساليب عليها، كل يخدم غرضه الدلالي"
-
-#~ msgid "Meter"
-#~ msgstr "المتر"
-
-#~ msgid "Use the meter element to measure data within a given range"
-#~ msgstr "استخدم عنصر المتر لقياس البيانات داخل نطاق معين"
-
-#~ msgid "Easily use our simple radio"
-#~ msgstr "استخدم الراديو البسيط لدينا بسهولة"
-
-#~ msgid "Radio type 1"
-#~ msgstr "نوع الراديو 1"
-
-#~ msgid "Default behaviour"
-#~ msgstr "السلوك الافتراضي"
-
-#~ msgid "Other"
-#~ msgstr "الآخر"
-
-#~ msgid "Radio1"
-#~ msgstr "الراديو 1"
-
-#~ msgid "None"
-#~ msgstr "لا شيء"
-
-#~ msgid "Colored Radio1"
-#~ msgstr "الراديو ملون"
-
-#~ msgid "CSS Reset"
-#~ msgstr "إعادة تعيين CSS"
-
-#~ msgid ""
-#~ "Reset, a collection of element-specific CSS changes in a single file, "
-#~ "kickstart Siftal to provide an elegant, consistent, and simple baseline to "
-#~ "build upon."
-#~ msgstr ""
-#~ "إعادة تعيين ، مجموعة من التغييرات CSS في عنصر معين في ملف واحد، بدء تشغيل "
-#~ "سيفتال لتوفير قاعدة أساسية أنيقة و متسقة و بسيطة للبناء عليها."
-
-#~ msgid "should have sans-serif font family (opinionated)"
-#~ msgstr "يجب أن لديه حروف غير مذيّل (برأيه)"
-
-#~ msgid "should have no margin (opinionated)"
-#~ msgstr "يجب أن لا يكون به هامش (برأيه)"
-
-#~ msgid "(there should be no red background visible on this page)"
-#~ msgstr "(يجب ألا تكون هناك خلفية حمراء ظاهرة في هذه الصفحة)"
-
-#~ msgid "should render as block"
-#~ msgstr "يجب أن يتم عرضها على شكل كتلة"
-
-#~ msgid "should render as inline-block and baseline-aligned"
-#~ msgstr "يجب أن يتم عرضه على هيئة مضمنة و محاذاة إلى خط الأساسي"
-
-#~ msgid "should not display"
-#~ msgstr "لا ينبغي أن تعرض"
-
-#~ msgid "dummy anchor"
-#~ msgstr "مرساة وهمية"
-
-#~ msgid ""
-#~ "should not have a focus outline when both focused and hovered (opinionated)"
-#~ msgstr "لا ينبغي أن يكون مخطط التركيز عندما كلاهما تركّزا و حائما (برأيه)"
-
-#~ msgid "should have a dotted bottom border"
-#~ msgstr "يجب أن يكون له الحد السفلي المنقط"
-
-#~ msgid "should have bold font-weight"
-#~ msgstr "يجب أن يكون له أحرف بارزة"
-
-#~ msgid "should have italic font-style"
-#~ msgstr "يجب أن يكون له نمط الخط مائلاً"
-
-#~ msgid "should not change size within an <code>article</code>"
-#~ msgstr "يجب ألا يغير حجم داخل <code>article</code>"
-
-#~ msgid "Heading (control)"
-#~ msgstr "العنوان (التحكم)"
-
-#~ msgid "Heading (in article)"
-#~ msgstr "العنوان (في المقالة)"
-
-#~ msgid "should not change size within a <code>section</code>"
-#~ msgstr "يجب ألا يغير حجم داخل <code>section</code>"
-
-#~ msgid "Heading (in section)"
-#~ msgstr "العنوان (في القسم)"
-
-#~ msgid "h1: Hi Siftal"
-#~ msgstr "h1: مرحبا سيفتال"
-
-#~ msgid "h2: Hi Siftal"
-#~ msgstr "h2: مرحبا سيفتال"
-
-#~ msgid "h3: Hi Siftal"
-#~ msgstr "h3: مرحبا سيفتال"
-
-#~ msgid "h4: Hi Siftal"
-#~ msgstr "h4: مرحبا سيفتال"
-
-#~ msgid "h5: Hi Siftal"
-#~ msgstr "h5: مرحبا سيفتال"
-
-#~ msgid "h6: Hi Siftal"
-#~ msgstr "h6: مرحبا سيفتال"
-
-#~ msgid "should have a yellow background"
-#~ msgstr "يجب أن يكون لديك خلفية صفراء"
-
-#~ msgid "should render equally small in all browsers"
-#~ msgstr "يجب أن تقدم صغيرة على قدم المساواة في جميع المتصفحات"
-
-#~ msgid "should not affect a line's visual line-height"
-#~ msgstr "يجب أن لا يؤثر خط البصرية علي خط الطول"
-
-#~ msgid "should not have a border when wrapped in an anchor"
-#~ msgstr "لا ينبغي أن يكون لها حدود عند لفها في مرساة"
-
-#~ msgid "should not overflow"
-#~ msgstr "يجب ألا تفيض"
-
-#~ msgid "should have margins"
-#~ msgstr "يجب أن يكون له هوامش"
-
-#~ msgid "should have a <code>content-box</code> box model"
-#~ msgstr "يجب أن يكون له <code>cotent-box</code> نموذج مربع"
-
-#~ msgid "should trigger a scrollbar when too wide for its container"
-#~ msgstr "يجب أن ينقل شريط التمرير عندما يكون عرضه كبيراً جداً بالنسبة لحاوياته"
-
-#~ msgid ""
-#~ " Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo "
-#~ "ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me."
-#~ msgstr ""
-#~ " لورم ايبسوم هو نص وهمي مع بساطة غير مسموعة من صناعة الطباعة و مع استخدام "
-#~ "مصممي الغرافيك. الطابعات و النصوص، و كذلك الصحف و المجلات."
-
-#~ msgid ""
-#~ "should render <code>em</code>-unit preformatted text at the same absolute "
-#~ "size as normal text"
-#~ msgstr ""
-#~ "يجب أن يتم عرض <code> em </ code> - بدون نص منسّق مسبقًا بنفس الحجم المطلق "
-#~ "للنص العادي"
-
-#~ msgid "should inherit <code>color</code> from ancestor"
-#~ msgstr "يجب أن ترث <code>color</code> من السلف"
-
-#~ msgid "should inherit <code>font</code> from ancestor"
-#~ msgstr "يجب أن ترث <code>font</code> من السلف"
-
-#~ msgid "should not have margins"
-#~ msgstr "لا ينبغي أن يكون لديك هوامش"
-
-#~ msgid "should have visible overflow"
-#~ msgstr "يجب أن يكون لديك تجاوز سعة مرئية"
-
-#~ msgid "should not inherit <code>text-transform</code>"
-#~ msgstr "يجب ألا ترث من <code>text-transform</code>"
-
-#~ msgid "should have <code>pointer</code> cursor style"
-#~ msgstr "يجب أن يكون لديك <code>pointer</code> نمط المؤشر"
-
-#~ msgid "should be styleable"
-#~ msgstr "يجب أن يكون لديك أسلوباً"
-
-#~ msgid "should have <code>default</code> cursor style"
-#~ msgstr "يجب أن يكون لديك <code>default</code> > نمط المؤشر"
-
-#~ msgid "should not have extra inner padding in Firefox"
-#~ msgstr "لا يجب أن يكون لديك حشوة داخلية إضافية في فايرفاكس"
-
-#~ msgid "should not inherit <code>line-height</code>"
-#~ msgstr "يجب ألا ترث من <code>line-height</code>"
-
-#~ msgid "should have a <code>border-box</code> box model"
-#~ msgstr "يجب أن يكون لديك <code>border-box</code> نموذج مربع"
-
-#~ msgid "should not have padding"
-#~ msgstr "لا ينبغي أن يكون لديك الحشو"
-
-#~ msgid ""
-#~ "should display a default cursor for the decrement button's click target in "
-#~ "Chrome"
-#~ msgstr "يجب أن يعرض مؤشراً افتراضياً لإنقاص أزرار النقر target في Chrome"
-
-#~ msgid "should not have a cancel button in Safari or Chrome"
-#~ msgstr "لا ينبغي أن يكون لديك زر الإلغاء في Safari أو Chrome"
-
-#~ msgid "should have consistent border, padding, and margin"
-#~ msgstr "يجب أن يكون لديك حدود متسقة و حشو و هامش"
-
-#~ msgid "should inherit color"
-#~ msgstr "يجب أن يرث اللون"
-
-#~ msgid "should not have a scrollbar unless overflowing"
-#~ msgstr "لا يجب أن يكون لديك شريط التمرير ما لم تفيض"
-
-#~ msgid "should not have spaces between cells"
-#~ msgstr "لا ينبغي أن يكون فراغات بين الخلايا"
-
-#~ msgid "Select"
-#~ msgstr "التحديد"
-
-#~ msgid "Easily change default select style to simple and clean Siftal design"
-#~ msgstr "قم بتغيير نمط خيار الافتراضي إلي تصميم بسيط و نظيف بسهولة"
-
-#~ msgid "Sarshomar"
-#~ msgstr "سرشمار"
-
-#~ msgid "Tejarak"
-#~ msgstr "تجارك"
-
-#~ msgid "Azvir"
-#~ msgstr "ازوير"
-
-#~ msgid "Talambar"
-#~ msgstr "تلمبار"
-
-#~ msgid "Jibres"
-#~ msgstr "جيبرس"
-
-#~ msgid "Multiple"
-#~ msgstr "المضاعف"
-
-#~ msgid "Share"
-#~ msgstr "شارك"
-
-#~ msgid "A complete box of share links to social media"
-#~ msgstr "مربع كامل من مشاركة الروابط في وسائل الإعلام الاجتماعية"
-
-#~ msgid "Sortable"
-#~ msgstr "قابل للفرز"
-
-#~ msgid "Allow to easily add sortable to projects"
-#~ msgstr "السماح لإضافة إمكانية الفرز إلى المشاريع بسهولة"
-
-#~ msgid "Statistic"
-#~ msgstr "الإحصائية"
-
-#~ msgid "A statistic emphasizes the current value of an attribute."
-#~ msgstr "تؤكد إحصائية علي القيمة الحالية للسمة."
-
-#~ msgid "A statistic can display a value with a label above or below it."
-#~ msgstr "يمكن أن تعرض الإحصائية قيمة مع تسمية فوقها أو أسفلها."
-
-#~ msgid "A group of statistics"
-#~ msgstr "مجموعة من الاحصائيات"
-
-#~ msgid "Faves"
-#~ msgstr "المفضلات"
-
-#~ msgid "Members"
-#~ msgstr "الأعضاء"
-
-#~ msgid "A statistic can contain a numeric, icon, image, or text value"
-#~ msgstr "يمكن أن تحتوي الإحصائية على قيمة رقمية أو رمز أو صورة أو قيمة نصية"
-
-#~ msgid "Saves"
-#~ msgstr "المحفوظات"
-
-#~ msgid "Three"
-#~ msgstr "الثلاثة"
-
-#~ msgid "Thousand"
-#~ msgstr "الألف"
-
-#~ msgid "Signups"
-#~ msgstr "التسجيل"
-
-#~ msgid "Team Members"
-#~ msgstr "اعضاء الفريق"
-
-#~ msgid "Tasks"
-#~ msgstr "المهام"
-
-#~ msgid "Olive"
-#~ msgstr "لون الزيتوني"
-
-#~ msgid "Teal"
-#~ msgstr "لون الأزرق المخضر"
-
-#~ msgid "Violet"
-#~ msgstr "لون البنفسجي"
-
-#~ msgid "Purple"
-#~ msgstr "لون الأرجواني"
-
-#~ msgid "Pink"
-#~ msgstr "لون الزهري"
-
-#~ msgid "Brown"
-#~ msgstr "لون البني"
-
-#~ msgid "Grey"
-#~ msgstr "لون الرمادي"
-
-#~ msgid "Step"
-#~ msgstr "الخطوة"
-
-#~ msgid ""
-#~ "A step shows the completion status of an activity in a series of activities"
-#~ msgstr "توضح الخطوة حالة إكمال نشاط في سلسلة من الأنشطة"
-
-#~ msgid "A table's colors can be changed"
-#~ msgstr "يمكن تغيير ألوان الجدول"
-
-#~ msgid ""
-#~ "Similar to colored tables, use one of modifier classes to make rows appear "
-#~ "colored."
-#~ msgstr ""
-#~ "على غرار الجداول الملونة ، استخدم إحدى فئات التعديل لإظهار الصفوف الملونة."
-
-#~ msgid ""
-#~ "Add <code class='code1'>.bordered</code> for borders on all sides of the "
-#~ "table and cells."
-#~ msgstr ""
-#~ "أضف <code class = 'code1'>. bordered </ code> للحدود على جميع جوانب الجدول و "
-#~ "الخلايا."
-
-#~ msgid "Only add <code class='code1'>.responsive</code> to table."
-#~ msgstr "أضف فقط <code class = 'code1'>. responsive </ code> الي الجدول."
-
-#~ msgid ""
-#~ "A table may sometimes need to be more compact to make more rows visible at a "
-#~ "time"
-#~ msgstr ""
-#~ "قد يلزم في بعض الأحيان أن يكون الجدول أكثر إحكاما لجعل الصفوف أكثر مرئية في "
-#~ "كل مرة"
-
-#~ msgid "A table may sometimes need to be more padded for legibility"
-#~ msgstr "قد يحتاج الجدول أحياناً إلى مزيد من الحشو للوضوح"
-
-#~ msgid "A table may sometimes need to be small"
-#~ msgstr "قد يحتاج اجدول أحياناً إلى أن تكون صغيرة"
-
-#~ msgid "A table may sometimes need to be large"
-#~ msgstr "قد يحتاج اجدول أحياناً إلى أن تكون كبيرة"
-
-#~ msgid ""
-#~ "Add <code class='code1'>data-sort=desc|asc</code> to table header for add "
-#~ "icon of sorting"
-#~ msgstr ""
-#~ "أضف <code class = 'code1'>. Data-sort=desc|asc </ code> إلى رأس الجدول "
-#~ "لإضافة رمز للفرز"
-
-#~ msgid "@evazzadeh"
-#~ msgstr "@evazzadeh"
-
-#~ msgid "@biqarar"
-#~ msgstr "@biqarar"
-
-#~ msgid "@baravak"
-#~ msgstr "@baravak"
-
-#~ msgid "Git Repository"
-#~ msgstr "دبابة Git"
-
-#~ msgid "node_modules"
-#~ msgstr "node_modules"
-
-#~ msgid "Initial commit"
-#~ msgstr "الالتزام الأولي"
-
-#~ msgid "10 hours ago"
-#~ msgstr "قبل 10 ساعات"
-
-#~ msgid "test"
-#~ msgstr "الاختبار"
-
-#~ msgid "build"
-#~ msgstr "البناء"
-
-#~ msgid "package.json"
-#~ msgstr "package.json"
-
-#~ msgid "Gruntfile.js"
-#~ msgstr "Gruntfile.js"
-
-#~ msgid "A textarea can be used to allow for extended user input."
-#~ msgstr "يمكن استخدام منطقة النص للسماح بإدخال المستخدم الموسَّع."
-
-#~ msgid "To specify an approximate text area size use the rows attribute."
-#~ msgstr "لتحديد حجم منطقة نص تقريبي ، استخدم سمة الصفوف."
-
-#~ msgid "vcard"
-#~ msgstr "بطاقة الزيارة"
-
-#~ msgid ""
-#~ "Siftal's cards provide a flexible and extensible content container with "
-#~ "multiple variants and options."
-#~ msgstr ""
-#~ "توفر بطاقات سيفتال حاوية محتوى مرنة و قابلة للتوسعة مع متغيرات و خيارات "
-#~ "متعددة."
-
-#~ msgid ""
-#~ "A card is a flexible and extensible content container. It includes options "
-#~ "for headers and footers, a wide variety of content, contextual background "
-#~ "colors, and powerful display options."
-#~ msgstr ""
-#~ "البطاقة عبارة عن حاوية محتوى مرنة و قابلة للتوسعة. و هي تتضمن خيارات للرؤوس "
-#~ "و التذييلات، و مجموعة متنوعة من المحتوى، و ألوان الخلفية السياقية، و خيارات "
-#~ "العرض القوية."
-
-#~ msgid ""
-#~ "Cards are built with as little markup and styles as possible, but still "
-#~ "manage to deliver a ton of control and customization. Built with flexbox, "
-#~ "they offer easy alignment and mix well with other  components."
-#~ msgstr ""
-#~ "يتم إنشاء البطاقات بأقل قدر ممكن من العلامات و الأنماط بقدر الإمكان، و لكنها "
-#~ "لا تزال قادرة على توفير الكثير من التحكم و التخصيص. بنيت مع مربع المرن، أنها "
-#~ "توفر سهولة المحاذاة و تخلط جيدا مع المكونات الأخرى."
-
-#~ msgid "10h"
-#~ msgstr "10 ساعات"
-
-#~ msgid "5 Comments"
-#~ msgstr "5 تعليقات"
-
-#~ msgid "1k likes"
-#~ msgstr "1 ألف اعجابات"
-
-#~ msgid ""
-#~ "Cards are designed to be flexible to your content. content blocks can "
-#~ "include any custom elements related to your content."
-#~ msgstr ""
-#~ "تم تصميم البطاقات لتكون مرنة للمحتوى الخاص بك. يمكن أن تتضمن كتل المحتوى أي "
-#~ "عناصر مخصصة ذات صلة بالمحتوى الخاص بك."
-
-#~ msgid "A card can contain a header."
-#~ msgstr "يمكن أن تحتوي البطاقة على رأس."
-
-#~ msgid ""
-#~ "Javad is a CEO and founder of Ermile and start developing Siftal from 2017 "
-#~ "and hope to write documentaion for it!"
-#~ msgstr ""
-#~ "جواد هو الرئيس التنفيذي و مؤسس الإرمايل و يبدأ تطوير Siftal من عام 2017، و "
-#~ "نأمل أن يكتب التوثيق له!"
-
-#~ msgid "Reza is a back-end developer of Ermile."
-#~ msgstr "رضا هو مطور خلفي لإرمايل."
-
-#~ msgid ""
-#~ "Hasan is a full-stack developer of Ermile and always trying to be in "
-#~ "classrooms!"
-#~ msgstr "حسن هو مطور كامل من إرمايل و يحاول دائماً أن يكون في الفصول الدراسية!"
-
-#~ msgid "A card can contain content metadata."
-#~ msgstr "يمكن أن تحتوي البطاقة على بيانات تعريف المحتوى."
-
-#~ msgid "Reza Motiti"
-#~ msgstr "رضا محيطي"
-
-#~ msgid "6 days ago"
-#~ msgstr "قبل 6 أيام"
-
-#~ msgid "Haram"
-#~ msgstr "الحرم"
-
-#~ msgid "10 days ago"
-#~ msgstr "قبل 10 أيام"
-
-#~ msgid "School"
-#~ msgstr "المدرسة"
-
-#~ msgid ""
-#~ "A card can be formatted so that the entire contents link to another page. "
-#~ "Also a card can contain contain links as images, headers, or inside content."
-#~ msgstr ""
-#~ "يمكن تنسيق البطاقة بحيث ترتبط المحتويات بالكامل بصفحة أخرى. كما يمكن أن "
-#~ "تحتوي البطاقة على روابط تحتوي على صور أو رؤوس أو محتوى داخل."
-
-#~ msgid "Center Card"
-#~ msgstr "بطاقة المركز"
-
-#~ msgid "A card can center itself inside its container."
-#~ msgstr "يمكن لبطاقة أن تشمل علي حاوية في المركز نفسها."
-
-#~ msgid "A card can specify a color."
-#~ msgstr "يمكن للبطاقة تحديد اللون."
-
-#~ msgid "A card can be used in many sizes"
-#~ msgstr "يمكن استخدام البطاقة بأحجام مختلفة"
-
-#~ msgid "Mini"
-#~ msgstr "المصغرة"
-
-#~ msgid "Tiny"
-#~ msgstr "الصغير جداً"
-
-#~ msgid "Small"
-#~ msgstr "الصغير"
-
-#~ msgid "Large"
-#~ msgstr "الكبير"
-
-#~ msgid "Big"
-#~ msgstr "الكبير"
-
-#~ msgid "Huge"
-#~ msgstr "الضخم"
-
-#~ msgid "Massive"
-#~ msgstr "الهائل"
-
-#~ msgid "Live Card"
-#~ msgstr "بطاقة الحية"
-
-#~ msgid "A card can be used in live with on and off status"
-#~ msgstr "يمكن استخدام البطاقة في وضع التشغيل و الخروج"
-
-#~ msgid "Test shortURL function"
-#~ msgstr "اختبار وظيفة قصيرة URL"
-
-#~ msgid "Ermile Repository"
-#~ msgstr "خازن إرميل"
-
-#~ msgid "Dash Repository"
-#~ msgstr "مستودع دش"
-
-#~ msgid "Current Project Repository"
-#~ msgstr "مستودع المشروع الحالي"
-
-#~ msgid "All: Dash + current project Repository"
-#~ msgstr "كل: Dash + خازن المشروع الحالي"
-
-#~ msgid "Database"
-#~ msgstr "قاعدة البيانات"
-
-#~ msgid "Project Database"
-#~ msgstr "قاعدة البيانات المشروع"
-
-#~ msgid "Automatically read database and create sql files"
-#~ msgstr "قراءة قاعدة البيانات وإنشاء ملفات SQL تلقائياً"
-
-#~ msgid "Exit Session"
-#~ msgstr "الخروج من الجلسة"
-
-#~ msgid "Soon"
-#~ msgstr "قريباٌ"
-
-#~ msgid "No donate founded."
-#~ msgstr "لا يوجد تبرع."
-
-#~ msgid "You are not have donate yet!"
-#~ msgstr "ليس لديك تبرع حتى الآن!"
-
-#~ msgid "No service founded."
-#~ msgstr "لم يتم العثور علي الخدمة."
-
-#~ msgid "You are not have service yet!"
-#~ msgstr "ليس لديك الخدمة حتي الآن!"
-
-#~ msgid "No trip founded."
-#~ msgstr "لا توجد رحلة."
-
-#~ msgid "You are not have trip yet!"
-#~ msgstr "ليس لديك رحلة حتى الآن!"
-
-#~ msgid "This way is not in your list!"
-#~ msgstr "هذا الطريق ليس في قائمتك!"
-
-#~ msgid "Please set way"
-#~ msgstr "يرجى تحديد الطريق"
-
-#~ msgid "Please set way less than 150 character"
-#~ msgstr "يرجى تحديد الطريق أقل من 150 حرفاً"
-
-#~ msgid "Duplicate way"
-#~ msgstr "الطريق المكرر"
-
-#~ msgid "Invalid arguments birthday"
-#~ msgstr "وسيطات الميلاد غير صالحة"
