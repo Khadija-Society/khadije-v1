@@ -180,7 +180,7 @@
 {%block iFullname%}
 <label for='ffamily'>{%trans "Full name"%}</label>
 <div class="input">
- <input type="text" name="fullname" placeholder='{%trans "Your Name"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter first name and last name to show in doners list or leave it blank"%}' id='ffamily' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.displayname}}'{%endif%}>
+ <input type="text" name="fullname" value="{{user.displayname}}" placeholder='{%trans "Your Name"%}' maxlength='50' pattern=".{1,50}" title='{%trans "Enter first name and last name to show in doners list or leave it blank"%}' id='ffamily' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.displayname}}'{%endif%}>
 </div>
 {%endblock%}
 
@@ -191,7 +191,7 @@
 {%block iMobile%}
 <label for='fmobile'>{%trans "Mobile"%}</label>
 <div class="input">
- <input type="tel" name="mobile" placeholder='{%trans "Your mobile number"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "If you enter your mobile, we send verify of payment via SMS to this number"%}' id='fmobile' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.mobile}}'{%endif%}>
+ <input type="tel" name="mobile" value="{{user.mobile}}" placeholder='{%trans "Your mobile number"%}' maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "If you enter your mobile, we send verify of payment via SMS to this number"%}' id='fmobile' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.mobile}}'{%endif%}>
 </div>
 {%endblock%}
 
