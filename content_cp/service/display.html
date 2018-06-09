@@ -75,7 +75,7 @@
       <tr>
         <td>{{value.firstname}} <b>{{value.lastname}}</b></td>
         <td>{{value.mobile | fitNumber(false)}}</td>
-        <td>{{value.birthday | date("Y-m-d") | fitNumber(false)}}</td>
+        <td>{{value.birthday | tdate("Y-m-d") | fitNumber(false)}}</td>
         <td><a href="{{url.here}}/service?province={{value.province}}">{{value.province}}</a></td>
         <td>{{value.phone | fitNumber(false)}}</td>
         <td>{%set my_married = value.married | capitalize%}{%trans my_married%}</td>
