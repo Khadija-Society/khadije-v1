@@ -326,7 +326,8 @@ class need
 
 	public static function list($_type)
 	{
-		return \lib\db\needs::get(['type' => $_type]);
+		return \lib\db\needs::get(['type' => $_type, 'lang' => \dash\language::current()]);
+
 	}
 }
 ?>

@@ -43,11 +43,11 @@
       <tbody>
         {%for key, value in need%}
           <tr>
-            <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.site}}/static//siftal/images/default/image.png{%endif%}"></td>
+            <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.site}}/static/siftal/images/default/image.png{%endif%}"></td>
             <td>{{value.title}}</td>
             <td>{{value.desc}}</td>
             <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
-            <td class="collapsing"><a href="{{url.here}}/health/options?edit={{value.id}}" ><button class="btn primary xs">{%trans "Edit"%}</button></a></td>
+            <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn primary xs">{%trans "Edit"%}</button></a></td>
           </tr>
         {%endfor%}
       </tbody>
