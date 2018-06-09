@@ -18,7 +18,8 @@
     <a href="#"><i class='sf-umbrella'></i> <span>{% trans "Requests" %}</span></a>
     <ul>
       {%if perm('cpServiceView') %}<li><a href="{{url.here}}/service"><i class='floatRa mRa10 fc-mute sf-user-md'></i> <span>{%trans "Request service list"%}</span></a></li>{%endif%}
-      {%if perm('cpTripView') %}<li><a href="{{url.here}}/trip"><i class='floatRa mRa10 fc-mute sf-pull-request'></i> <span>{%trans "Request trip list"%}</span></a></li>{%endif%}
+      {%if perm('cpTripView') %}<li><a href="{{url.here}}/trip"><i class='floatRa mRa10 fc-mute sf-bus'></i> <span>{%trans "Request trip list"%}</span></a></li>{%endif%}
+      {%if perm('cpTripView') %}<li><a href="{{url.here}}/familytrip"><i class='floatRa mRa10 fc-mute sf-pull-request'></i> <span>{%trans "Request family trip list"%}</span></a></li>{%endif%}
       {%if perm('cpAdviceView') %}<li><a href="{{url.here}}/advice"><i class='floatRa mRa10 fc-mute sf-chat-alt-fill'></i> <span>{%trans "advice service list"%}</span></a></li>{%endif%}
       {%if perm('cpHealthView') %}<li><a href="{{url.here}}/health"><i class='floatRa mRa10 fc-mute sf-heartbeat'></i> <span>{%trans "health service list"%}</span></a></li>{%endif%}
       {%if perm('cpRepresentationView') %}<li><a href="{{url.here}}/representation"><i class='floatRa mRa10 fc-mute sf-coffee'></i> <span>{%trans "representation service list"%}</span></a></li>{%endif%}
