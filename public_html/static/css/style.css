@@ -467,6 +467,11 @@ body.down #sHeaderNav.clone {
 .t733{
 	letter-spacing: 3px;
 }
+.billingInfo .msg{
+	line-height: 30px;
+	padding:14px 1.5em;
+}
+
 
 
 
