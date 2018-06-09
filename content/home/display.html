@@ -7,7 +7,7 @@
     <div class="c8 s12 pRa10">
       <div class="slider slider-pro goldenB" id='topSlider'>
 
-{%set topSliderPosts = posts({"limit" : 7})%}
+{%set topSliderPosts = posts({"limit" : 3, "tag" : "slider"})%}
 {%set defaultImageTop = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
         <div class="sp-slides">
 {%for key, myNews in topSliderPosts%}
