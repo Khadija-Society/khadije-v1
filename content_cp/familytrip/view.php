@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\trip;
+namespace content_cp\familytrip;
 
 
 class view
@@ -10,12 +10,12 @@ class view
 
 		\dash\data::page_pictogram('bus');
 
-		\dash\data::page_title(T_("Request group trip list"));
+		\dash\data::page_title(T_("Family trip request list"));
 		\dash\data::page_desc(T_("check request and update status of each request"));
-		\dash\data::badge_link(\dash\url::here(). '/trip/options');
+		\dash\data::badge_link(\dash\url::here(). '/familtytrip/options');
 		\dash\data::badge_text(T_('Options'));
 
-		$export_link = ' <a href="'. \dash\url::here(). '/trip?export=true">'. T_("Export"). '</a>';
+		$export_link = ' <a href="'. \dash\url::here(). '/familtytrip?export=true">'. T_("Export"). '</a>';
 		\dash\data::page_desc(\dash\data::page_desc(). $export_link);
 
 		\dash\data::bodyclass('unselectable');
@@ -35,7 +35,7 @@ class view
 
 		if(\dash\request::get('status')) $args['travels.status']         = \dash\request::get('status');
 
-		$args['travels.type']             = 'group';
+		$args['travels.type']             = 'family';
 
 		if(\dash\request::get('place')) $args['travels.place']           = \dash\request::get('place');
 		if(\dash\request::get('gender')) $args['users.gender']           = \dash\request::get('gender');
@@ -101,7 +101,6 @@ class view
 		$filterArray = $args;
 
 		unset($filterArray['travels.type']);
-
 		if(isset($filterArray['travels.status']) && is_array($filterArray['travels.status']))
 		{
 			unset($filterArray['travels.status']);
