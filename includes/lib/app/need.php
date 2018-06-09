@@ -51,6 +51,12 @@ class need
 			return false;
 		}
 
+		if(!$title)
+		{
+			\dash\notif::error(T_("Please set title"), 'title');
+			return false;
+		}
+
 		$request = \dash\app::request('count');
 		if(!$is_other)
 		{
@@ -127,8 +133,21 @@ class need
 			return false;
 		}
 
+		$lang = \dash\app::request('lang');
+
+		if($lang && !\dash\language::check($lang))
+		{
+			\dash\notif::error(T_("Please set a valid language"), 'language');
+			return false;
+		}
+
+		if(!$lang)
+		{
+			$lang = \dash\language::current();
+		}
 
 		$args            = [];
+		$args['lang']    = $lang;
 		$args['title']   = $title;
 		$args['request'] = $request;
 		$args['amount']  = $amount;
