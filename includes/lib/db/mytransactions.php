@@ -45,7 +45,9 @@ class mytransactions
 				transactions.doners,
 				transactions.date,
 				transactions.plus,
-				transactions.fullname
+				transactions.fullname,
+				transactions.niyat,
+				transactions.hazinekard
 			FROM
 				transactions
 			WHERE
