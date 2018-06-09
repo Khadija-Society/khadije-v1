@@ -9,17 +9,7 @@ class model
 	{
 		\dash\permission::access('cpTripOption');
 
-		if(\dash\request::post('type') === 'family')
-		{
-			\lib\app\travel::trip_master_active(\dash\request::post('master_active'));
-			\lib\app\travel::trip_count_partner(\dash\request::post('count_partner'));
-			\lib\app\travel::trip_max_awaiting(\dash\request::post('max_awaiting'));
-			\lib\app\travel::trip_getdate(\dash\request::post('getdate'));
 
-			\lib\app\travel::city_signup_setting('karbala', \dash\request::post('karbala'));
-			\lib\app\travel::city_signup_setting('mashhad', \dash\request::post('mashhad'));
-			\lib\app\travel::city_signup_setting('qom', \dash\request::post('qom'));
-		}
 
 		if(\dash\request::post('type') === 'group')
 		{

@@ -12,10 +12,10 @@ class view
 
 		\dash\data::page_title(T_("Family trip request list"));
 		\dash\data::page_desc(T_("check request and update status of each request"));
-		\dash\data::badge_link(\dash\url::here(). '/familtytrip/options');
+		\dash\data::badge_link(\dash\url::here(). '/familytrip/options');
 		\dash\data::badge_text(T_('Options'));
 
-		$export_link = ' <a href="'. \dash\url::here(). '/familtytrip?export=true">'. T_("Export"). '</a>';
+		$export_link = ' <a href="'. \dash\url::here(). '/familytrip?export=true">'. T_("Export"). '</a>';
 		\dash\data::page_desc(\dash\data::page_desc(). $export_link);
 
 		\dash\data::bodyclass('unselectable');
