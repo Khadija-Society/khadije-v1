@@ -122,6 +122,39 @@ body{
 .sB3:before{
 	content: "";
 	height:34px;
+	width: 140px;
+	display: inline-block;
+	position: absolute;
+	right: -140px;
+	top: 0;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -1100px -450px;
+}
+.sB3:after{
+	content: "";
+	height:34px;
+	width: 140px;
+	display: inline-block;
+	position: absolute;
+	left: -140px;
+	top: 0;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: -950px -450px;
+}
+.sB4{
+	margin: 0 100px 2em;
+	padding: 0 1em;
+	line-height:34px!important;
+	height:34px;
+	font-size: 2rem;
+	font-weight:bold;
+	position: relative;
+	user-select: none;
+	display: inline-block;
+}
+.sB4:before{
+	content: "";
+	height:34px;
 	width: 100px;
 	display: inline-block;
 	position: absolute;
@@ -130,7 +163,7 @@ body{
 	background-image: url('../images/homepage-v3/sprite.png');
 	background-position: -202px -350px;
 }
-.sB3:after{
+.sB4:after{
 	content: "";
 	height:34px;
 	width: 100px;
@@ -738,8 +771,8 @@ body[data-page="donate"] #sHeaderNav .headerLine{
 }
 body[data-page="donate"] .wrapper .cbox{
 	border: 1px solid #00aaaa;
-	margin-top: 50px;
-	padding-top: 30px;
+	margin-top: 70px;
+	padding-top: 20px;
 }
 body[data-page="donate"] .wrapper .cbox h2{
 	font-size: 1.3em;
@@ -748,16 +781,16 @@ body[data-page="donate"] .wrapper .cbox h2{
 
 body[data-page="donate"] .wrapper .cbox.donateForm:before{
 	content: "";
-	height:60px;
-	width: 580px;
+	height:110px;
+	width: 360px;
 	max-width: 100%;
 	position: absolute;
 	right: 0;
 	left: 0;
-	top: -30px;
+	top: -68px;
 	margin:0 auto;
 	background-image: url('../images/homepage-v3/sprite.png');
-	background-position: 0 -420px;
+	background-position: -950px -300px;
 }
 body[data-page="donate"] .wrapper .cbox.donateLists{
 	max-height: 600px;
