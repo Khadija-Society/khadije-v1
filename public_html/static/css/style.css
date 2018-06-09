@@ -738,11 +738,12 @@ body[data-page="donate"] #sHeaderNav .headerLine{
 }
 body[data-page="donate"] .wrapper .cbox{
 	border: 1px solid #00aaaa;
-	margin-top: 30px;
+	margin-top: 50px;
 	padding-top: 30px;
 }
 body[data-page="donate"] .wrapper .cbox h2{
 	font-size: 1.3em;
+	margin-bottom: 1em;
 }
 
 body[data-page="donate"] .wrapper .cbox.donateForm:before{
