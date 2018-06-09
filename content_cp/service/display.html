@@ -73,7 +73,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-        <td>{{value.firstname}} <b>{{value.lastname}}</b></td>
+        <td><a href="{{url.here}}/users/set?id={{value.user_id | coding('encode')}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
         <td>{{value.mobile | fitNumber(false)}}</td>
         <td>{{value.birthday | tdate("Y-m-d") | fitNumber(false)}}</td>
         <td><a href="{{url.here}}/service?province={{value.province}}">{{value.province}}</a></td>
