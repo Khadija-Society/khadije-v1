@@ -9,10 +9,22 @@ function pushState()
 $(function()
 {
   typeTitles();
+  fixedHeader();
 });
 
 
+function fixedHeader()
+{
+  var $header = $("#sHeaderNav");
+  var $clone  = $header.before($header.clone().addClass("clone"));
 
+  $(window).on("scroll", function()
+  {
+    var fromTop = $("html").scrollTop();
+    console.log(fromTop);
+    $('body').toggleClass("down", (fromTop > 200));
+  });
+}
 
 function runTopSlider()
 {
