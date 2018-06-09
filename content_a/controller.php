@@ -37,6 +37,8 @@ class controller
 		{
 			\dash\header::status(403, T_("Your trip is not draft. can not edit it"));
 		}
+
+		\dash\data::tripDetail($check_valid_trip);
 	}
 
 	public static function check_service_id()

@@ -109,7 +109,7 @@ class travel
 			$update = false;
 		}
 
-		if($_action)
+		if(isset($_action))
 		{
 			if($update)
 			{
@@ -180,12 +180,12 @@ class travel
 	}
 
 
-	public static function trip_count_partner($_action = 'get')
+	public static function trip_count_partner($_action = 'get', $_city = null)
 	{
 		if($_action === 'get')
 		{
-			$get = \dash\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_count_partner', 'limit' => 1]);
-			if(isset($get['value']) && $get['value'] )
+			$get = \dash\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_count_partner'. $_city, 'limit' => 1]);
+			if(isset($get['value']))
 			{
 				return $get['value'];
 			}
@@ -193,7 +193,7 @@ class travel
 		}
 		else
 		{
-			self::save_option_setting('trip_settings', 'trip_count_partner', $_action, $_action);
+			self::save_option_setting('trip_settings', 'trip_count_partner'. $_city, $_action, $_action);
 		}
 	}
 
@@ -202,7 +202,7 @@ class travel
 		if($_action === 'get')
 		{
 			$get = \dash\db\options::get(['cat' => 'trip_settings', 'key' => 'trip_max_awaiting', 'limit' => 1]);
-			if(isset($get['value']) && $get['value'])
+			if(isset($get['value']))
 			{
 				return $get['value'];
 			}

@@ -12,7 +12,11 @@ class model
 		if(\dash\request::post('type') === 'family')
 		{
 			\lib\app\travel::trip_master_active(\dash\request::post('master_active'));
-			\lib\app\travel::trip_count_partner(\dash\request::post('count_partner'));
+			// \lib\app\travel::trip_count_partner(\dash\request::post('count_partner'));
+			\lib\app\travel::trip_count_partner(\dash\request::post('count_partner_qom'), 'qom');
+			\lib\app\travel::trip_count_partner(\dash\request::post('count_partner_karbala'), 'karbala');
+			\lib\app\travel::trip_count_partner(\dash\request::post('count_partner_mashhad'), 'mashhad');
+
 			\lib\app\travel::trip_max_awaiting(\dash\request::post('max_awaiting'));
 			\lib\app\travel::trip_getdate(\dash\request::post('getdate'));
 

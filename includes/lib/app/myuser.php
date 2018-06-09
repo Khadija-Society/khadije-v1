@@ -397,13 +397,20 @@ class myuser
 			}
 		}
 
+		$tripcity = \lib\db\travels::get(['id' => $_args['travel_id'], 'limit' => 1]);
+		if(isset($tripcity['place']))
+		{
+			$tripcity = $tripcity['place'];
+		}
+
+
 		if(\dash\app::request('type') === 'group')
 		{
 			$max_count_partner = \lib\app\travel::group_count_partner_max();
 		}
 		else
 		{
-			$max_count_partner = \lib\app\travel::trip_count_partner('get');
+			$max_count_partner = \lib\app\travel::trip_count_partner('get', $tripcity);
 		}
 
 		$count_partner     = \lib\db\travelusers::get_travel_child(\dash\request::get('trip'));

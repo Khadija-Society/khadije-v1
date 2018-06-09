@@ -26,7 +26,12 @@ class view
 
 		\dash\data::activeCity(\lib\app\travel::active_city());
 		\dash\data::tripMasterActive(\lib\app\travel::trip_master_active());
-		\dash\data::tripCountPartner(\lib\app\travel::trip_count_partner());
+
+		// \dash\data::tripCountPartner(\lib\app\travel::trip_count_partner());
+		\dash\data::tripCountPartner_qom(\lib\app\travel::trip_count_partner('get', 'qom'));
+		\dash\data::tripCountPartner_mashhad(\lib\app\travel::trip_count_partner('get', 'mashhad'));
+		\dash\data::tripCountPartner_karbala(\lib\app\travel::trip_count_partner('get', 'karbala'));
+
 		\dash\data::tripMaxAwaiting(\lib\app\travel::trip_max_awaiting());
 		\dash\data::tripGetdate(\lib\app\travel::trip_getdate());
 

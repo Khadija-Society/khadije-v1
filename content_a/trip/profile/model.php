@@ -26,12 +26,51 @@ class model
 		$post['married']         = \dash\request::post('Married') ;
 		$post['zipcode']         = \dash\request::post('zipcode');
 
+
+		$partner = true;
+
+		$trip = \dash\data::tripDetail();
+		if(isset($trip['place']))
+		{
+			$count_partner = \lib\app\travel::trip_count_partner('get', $trip['place']);
+			if($count_partner === '0')
+			{
+				$post['status'] = 'awaiting';
+
+				$partner = false;
+
+				if(\dash\user::detail('mobile') && \dash\utility\filter::mobile(\dash\user::detail('mobile')))
+				{
+					if(isset($trip['place']))
+					{
+						$city = T_($trip['place']);
+						$msg = "درخواست شما برای تشرف به $city با موفقیت ثبت شد.";
+					}
+					else
+					{
+						$msg = "درخواست شما برای تشرف با موفقیت ثبت شد.";
+					}
+
+					\dash\utility\sms::send(\dash\user::detail('mobile'), $msg);
+				}
+			}
+		}
+
+
 		\lib\app\myuser::edit($post);
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok(T_("Your detail was saved"));
-			\dash\redirect::to(\dash\url::here(). '/trip/partner?trip='. \dash\request::get('trip'));
+			if($partner)
+			{
+				\dash\notif::ok(T_("Your detail was saved"));
+				\dash\redirect::to(\dash\url::here(). '/trip/partner?trip='. \dash\request::get('trip'));
+			}
+			else
+			{
+				\dash\notif::ok(T_("Your trip request was saved"));
+				\dash\redirect::to(\dash\url::here(). '/trip');
+			}
 		}
 
 	}
