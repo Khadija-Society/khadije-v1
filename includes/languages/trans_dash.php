@@ -669,7 +669,6 @@ class twigTransTerms
 	echo T_("Default Avatar");                                                        // Line 58
 	echo T_("Hello");                                                                 // Line 64
 	echo T_("Click to toggle sidebar status");                                        // Line 75
-	echo T_("Show side menu");                                                        // Line 91
 	echo T_("View website");                                                          // Line 93
 	echo T_("Work in your language");                                                 // Line 97
 	echo T_("Logout");                                                                // Line 105
