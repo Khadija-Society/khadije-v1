@@ -738,8 +738,13 @@ body[data-page="donate"] #sHeaderNav .headerLine{
 }
 body[data-page="donate"] .wrapper .cbox{
 	border: 1px solid #00aaaa;
+	margin-top: 30px;
 	padding-top: 30px;
 }
+body[data-page="donate"] .wrapper .cbox h2{
+	font-size: 1.3em;
+}
+
 body[data-page="donate"] .wrapper .cbox.donateForm:before{
 	content: "";
 	height:60px;
@@ -753,6 +758,12 @@ body[data-page="donate"] .wrapper .cbox.donateForm:before{
 	background-image: url('../images/homepage-v3/sprite.png');
 	background-position: 0 -420px;
 }
+body[data-page="donate"] .wrapper .cbox.donateLists{
+	max-height: 600px;
+	overflow-y: auto;
+}
+
+
 
 /* ***************************************************** components*/
 /* lightgallery*/

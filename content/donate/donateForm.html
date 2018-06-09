@@ -21,6 +21,8 @@
 <div class="f justify-center">
   <div class="c6 s12">
     <div class="cbox fs10 donateForm">
+      <h2 class="pageTitle"><a href="{{url.pwd}}">{{page.title}}</a></h2>
+
 {%if  paymentVerifyMsg %}
       <div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 {%endif%}
@@ -88,7 +90,7 @@
 {%block donateArchive%}
 {%if donateArchive %}
   <div class="c5 s12 pLa25">
-   <div class="cbox fs09">
+   <div class="cbox fs09 donateLists">
 
     <h4 class="txtC">{%trans "List of last success donations of yours"%}</h4>
 {%for key, value in donateArchive%}
