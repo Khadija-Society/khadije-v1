@@ -264,6 +264,10 @@ body.down #sHeaderNav.clone {
 #sHeaderNav.clone .headerLine:before{
 	top: 34px;
 }
+.mainNavMobile span{
+	font-size: 2em;
+	color: #020456;
+}
 .goldenB{
 	padding:1px;
 	border: 1px solid #aa6622;
