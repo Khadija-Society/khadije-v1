@@ -65,7 +65,7 @@ function runLastNewsSlider()
         {
           thumbnailsPosition: 'bottom',
           thumbnailWidth: 120,
-          thumbnailHeight: 50
+          thumbnailHeight: 70
         }
       }
     });
