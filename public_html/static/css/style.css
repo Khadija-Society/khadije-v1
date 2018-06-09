@@ -682,15 +682,16 @@ body.down #sHeaderNav.clone {
 /* contact vcard*/
 /*vcard*/
 .vcard .adr{padding:1em 0;font-style:normal;}
-.vcard .adr div, .vcard .adr span, .vcard .email, .vcard .tel{display:block;padding:0.5em}
+.vcard .adr div, .vcard .adr span, .vcard .email, .vcard .tel{display:block;padding:0.5em 1em}
 .vcard .adr span{display:inline-block;}
-
-.vcard .adr .country-name{display:inline-block;}
-.vcard .adr .locality{display:inline-block;}
-.vcard .adr .street-address{display:inline-block;}
-.vcard .adr .extended-address{display:inline-block;}
 .vcard .adr > *:hover{background-color:#fff}
 
+iframe.gMap{
+	min-height: 300px;
+	max-height: 400px;
+	width: 100%;
+	border: none;
+}
 
 
 
@@ -1083,6 +1084,9 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 
 
 @media all and (min-width: 768px) and (max-width: 959px) {
+	.sB1{
+		font-size: 1.2rem;
+	}
 	.sB3{
 		margin: 0 50px 1em;
 		font-size: 2rem;
