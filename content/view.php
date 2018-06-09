@@ -14,7 +14,7 @@ class view
 		\dash\data::page_copyright(
 			T_('© :year :site. All right reserved.',
 			[
-				'year' => \dash\date::tdate(false, "year"),
+				'year' => \dash\date::tdate(false, "year", true),
 				'site' => "<a href='". \dash\url::base(). "' title='". \dash\data::site_desc() ."'>". \dash\data::site_title(). "</a>"
 			]
 		));

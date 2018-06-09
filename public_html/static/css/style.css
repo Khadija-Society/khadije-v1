@@ -729,7 +729,30 @@ iframe.gMap{
 	border: none;
 }
 
-
+/* donate*/
+body[data-page="donate"] .wrapper{
+	background-color: transparent;
+}
+body[data-page="donate"] #sHeaderNav .headerLine{
+	background-color: rgba(245,245,245, 0.7);
+}
+body[data-page="donate"] .wrapper .cbox{
+	border: 1px solid #00aaaa;
+	padding-top: 30px;
+}
+body[data-page="donate"] .wrapper .cbox.donateForm:before{
+	content: "";
+	height:60px;
+	width: 580px;
+	max-width: 100%;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: -30px;
+	margin:0 auto;
+	background-image: url('../images/homepage-v3/sprite.png');
+	background-position: 0 -420px;
+}
 
 /* ***************************************************** components*/
 /* lightgallery*/
