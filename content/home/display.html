@@ -72,14 +72,14 @@
   </section>
 
 
-  <section class="billingInfo txtC mT50 mB25">
+  <section class="billingInfo">
     <h3 class="sB3">{%trans "Join to the charity and participate in the pilgrimage reward"%}</h3>
     <p>{%trans "The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt."%} {%trans "Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods."%}</p>
     <div class="f justify-center">
-      <div class="c6 s12 pA5">
-        <div class="f msg simple fs09" title='{%trans "in Resalat bank of Iran"%}'>
-          <div class="cauto f align-center txtC pRa10"><span class="spay-64-resalat"></span></div>
-          <div class="c txtC">
+      <div class="cauto s12 pRa10">
+        <div class="f msg simple bank" title='{%trans "in Resalat bank of Iran"%}' data-tippy-placement='bottom'>
+          <div class="cauto f align-center pRa10"><span class="spay-64-resalat"></span></div>
+          <div class="c">
             <div class="mT5">
               {%trans "Card number"%} <span class="ltr compact txtB">{{"5041-7270-4444-4444" | fitNumber(false)}}</span>
             </div>
@@ -90,6 +90,20 @@
               {%trans "Iranian bank Shaba number"%} <span class="ltr compact">{{"IR330700001000226176540002" | fitNumber(false)}}</span>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="c pRa10">
+        <form class="msg success2 quickpay f align-center" method="post">
+          <div class="input">
+           <input type="number" name="quickpay" placeholder='{%trans "Pay Amount"%} {%trans "Toman"%}*' title='{%trans "You can change amount of your donation"%} {%trans "Toman"%}' id='totalAmount' required value="5000" step="1000">
+            <span class="addon">{%trans "Toman"%}</span>
+          </div>
+          <button class="btn success block">{%trans "Donate as anonymous"%}</button>
+        </form>
+      </div>
+      <div class="c">
+        <div class="msg simple donateLink f align-center">
+          <a href="{{url.base}}/donate" class="btn primary">{%trans "Donate with register details"%}</a>
         </div>
       </div>
     </div>
