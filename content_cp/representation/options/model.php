@@ -35,6 +35,7 @@ class model
 
 		$post           = [];
 		$post['title']  = \dash\request::post('title');
+		$post['lang']  = \dash\request::post('language');
 		$post['count']  = null;
 		$post['amount'] = null;
 		$post['desc']   = \dash\request::post('desc');

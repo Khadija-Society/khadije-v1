@@ -33,6 +33,7 @@ class model
 	{
 		\dash\permission::access('cpServiceOption');
 		$post           = [];
+		$post['lang']  = \dash\request::post('language');
 		$post['title']  = \dash\request::post('title');
 		$post['count']  = \dash\request::post('count');
 		$post['amount'] = \dash\request::post('amount');

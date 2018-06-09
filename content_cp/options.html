@@ -92,10 +92,10 @@
 {%block iLanguage%}
 <label for="language">{%trans "Language"%}</label>
 <select name="language" class="select">
-  <option value=""><i>{%trans "Whithout language"%}</i></option>
+  <option value=""><i>{%trans "Please select one item"%}</i></option>
   {%for key, value in lang.list%}
     {%if key | length == 2%}
-    <option value="{{key}}" {%if productDetail.lang == key %} selected {%endif%}>{{value}}</option>
+    <option value="{{key}}" {%if productDetail.lang == key or (not productDetail and lang.current == key) %} selected {%endif%}>{{value}}</option>
     {%endif%}
   {%endfor%}
 </select>
