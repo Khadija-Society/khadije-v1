@@ -6,6 +6,7 @@ body{
 }
 .wrapper{
 	background-color: #f5f5f5;
+	background-color: rgba(245,245,245, 0.7);
 	padding:10px 3%;
 	position: relative;
 	overflow: hidden;
@@ -225,6 +226,7 @@ body{
 /*header nav*/
 #sHeaderNav .headerLine{
 	background-color: #f5f5f5;
+	background-color: rgba(245,245,245, 0.9);
 	padding:20px 3% 16px;
 	position: relative;
 	overflow: hidden;
