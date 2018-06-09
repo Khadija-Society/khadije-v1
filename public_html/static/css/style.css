@@ -461,6 +461,8 @@ body.down #sHeaderNav.clone {
 
 .billingInfo{
 	font-size: 1.5em;
+	margin-top: 5em;
+	text-align: center;
 }
 .billingInfo h2{
 }
@@ -483,7 +485,9 @@ body.down #sHeaderNav.clone {
 	height:95px;
 	line-height:83px;
 }
-
+.latestNews{
+	margin-top: 7em;
+}
 
 
 /* footer*/
