@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Arabic\n"
 "POT-Creation-Date: 2018-06-09 16:46+0430\n"
-"PO-Revision-Date: 2018-06-09 16:46+0430\n"
+"PO-Revision-Date: 2018-06-09 16:48+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: ar_IQ\n"
@@ -5445,7 +5445,7 @@ msgstr "نحتاج رقم الجوال!"
 #: dash/addons/includes/languages/trans_static.php:397
 #: khadije/includes/languages/trans_static.php:8
 msgid " "
-msgstr ""
+msgstr " "
 
 #: dash/addons/includes/languages/trans_static.php:404
 msgid "cpPermissionAdd"
