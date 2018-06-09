@@ -24,6 +24,8 @@ class view
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
+		$payment_args = [];
+		$payment_args['donate'] = 'cash';
 		$args =
 		[
 			'order'          => \dash\request::get('order'),
@@ -43,16 +45,23 @@ class view
 		if(\dash\request::get('payment'))
 		{
 			$args['payment'] = \dash\request::get('payment');
+			$payment_args['payment'] = \dash\request::get('payment');
 		}
 
 		if(\dash\request::get('mobile'))
 		{
 			$args['mobile'] = \dash\request::get('mobile');
+			$userDetail = \dash\db\users::get_by_mobile($args['mobile']);
+			if(isset($userDetail['id']))
+			{
+				$payment_args['user_id'] = $userDetail['id'];
+			}
 		}
 
 		if(\dash\request::get('hazinekard'))
 		{
 			$args['hazinekard'] = \dash\request::get('hazinekard');
+			$payment_args['hazinekard'] = \dash\request::get('hazinekard');
 		}
 
 		$args['donate']    = 'cash';
@@ -82,9 +91,9 @@ class view
 
 		if(\dash\permission::check('cpDonateTotalPay'))
 		{
-			\dash\data::totalPaid(\dash\app\transaction::total_paid());
-			\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d")));
-			\dash\data::totalPaidCount(\dash\app\transaction::total_paid_count());
+			\dash\data::totalPaid(\dash\app\transaction::total_paid($payment_args));
+			\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d"), $payment_args));
+			\dash\data::totalPaidCount(\dash\app\transaction::total_paid_count($payment_args));
 		}
 
 		$filterArray = $args;
