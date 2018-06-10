@@ -10,6 +10,10 @@ class salavats
 		{
 			$insert['user_id'] = \dash\user::id();
 		}
+		else
+		{
+			$insert['user_id'] = null;
+		}
 
 		return self::insert($insert);
 	}

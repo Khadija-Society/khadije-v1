@@ -8,6 +8,7 @@ class model
 	{
 		if(\dash\request::post('salavat'))
 		{
+			\dash\temp::set('force_stop_visitor', true);
 			$count =\lib\db\salavats::befrest();
 			\dash\notif::result($count);
 			return;
