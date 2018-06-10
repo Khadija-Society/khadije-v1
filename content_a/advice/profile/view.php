@@ -11,22 +11,8 @@ class view
 
 		\dash\data::userdetail(\dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]));
 
-		self::static_var();
+		\content_a\profile\view::static_var();
 	}
 
-
-	public static function static_var()
-	{
-		$countryList = \dash\utility\location\countres::list('name', 'name - localname');
-		\dash\data::countryList(implode(',', $countryList));
-
-		$cityList = \dash\utility\location\cites::list('localname');
-		$cityList = array_unique($cityList);
-		\dash\data::cityList(implode(',', $cityList));
-
-		$proviceList = \dash\utility\location\provinces::list('localname');
-		$proviceList = array_unique($proviceList);
-		\dash\data::proviceList($proviceList);
-	}
 }
 ?>

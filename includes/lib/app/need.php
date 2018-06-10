@@ -179,18 +179,17 @@ class need
 
 			switch ($key)
 			{
-				case 'id':
-				case 'creator':
-					if(isset($value))
+
+				case 'fileurl':
+					if($value)
 					{
-						$result[$key] = \dash\coding::encode($value);
+						$result[$key] = $value;
 					}
 					else
 					{
-						$result[$key] = null;
+						$result[$key] = \dash\app::static_image_url();
 					}
 					break;
-
 				default:
 					$result[$key] = isset($value) ? (string) $value : null;
 					break;
@@ -323,11 +322,24 @@ class need
 		return true;
 	}
 
-
-	public static function list($_type)
+	public static function active_list($_type)
 	{
-		return \lib\db\needs::get(['type' => $_type, 'lang' => \dash\language::current()]);
+		return self::list($_type, true);
 
 	}
+
+	public static function list($_type, $_enable = false)
+	{
+		if($_enable)
+		{
+			$list = \lib\db\needs::get(['type' => $_type, 'status' => 'enable', 'lang' => \dash\language::current()]);
+		}
+		else
+		{
+			$list = \lib\db\needs::get(['type' => $_type, 'lang' => \dash\language::current()]);
+		}
+		return array_map(['self', 'ready'], $list);
+	}
+
 }
 ?>

@@ -69,12 +69,12 @@ class model
 		{
 			if(\dash\request::get('edit'))
 			{
-				\dash\notif::ok(T_("Health successfully edited"));
+				\dash\notif::ok(T_("Donate successfully edited"));
 				\dash\redirect::to(\dash\url::this(). '/options');
 			}
 			else
 			{
-				\dash\notif::ok(T_("Health successfully added"));
+				\dash\notif::ok(T_("Donate successfully added"));
 				\dash\redirect::pwd();
 			}
 		}

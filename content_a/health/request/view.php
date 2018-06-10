@@ -12,7 +12,7 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/health');
 		\dash\data::badge_text(T_('check your health requests'));
 
-		\dash\data::serviceNeedList(\lib\db\needs::get(['type' => 'health', 'status' => 'enable']));
+		\dash\data::serviceNeedList(\lib\app\need::active_list('health'));
 
 	}
 }

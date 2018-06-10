@@ -177,6 +177,7 @@ class service
 					}
 					break;
 
+
 				default:
 					$result[$key] = isset($value) ? (string) $value : null;
 					break;

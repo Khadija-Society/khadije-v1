@@ -42,7 +42,7 @@
           </thead>
           <tbody>
             {%for key, value in need%}
-              <tr>
+              <tr {%if value.status == 'enable'%}{%else%} class="negative" {%endif%}>
                 <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.site}}/static/siftal/images/default/image.png{%endif%}"></td>
                 <td>{{value.title}}</td>
                 <td>{{value.desc}}</td>

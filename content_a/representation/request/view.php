@@ -12,8 +12,7 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/representation');
 		\dash\data::badge_text(T_('check your representation requests'));
 
-		\dash\data::serviceNeedList(\lib\db\needs::get(['type' => 'representation', 'status' => 'enable']));
-
+		\dash\data::serviceNeedList(\lib\app\need::active_list('representation'));
 	}
 }
 ?>

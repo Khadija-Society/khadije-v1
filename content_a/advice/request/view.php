@@ -12,8 +12,7 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/advice');
 		\dash\data::badge_text(T_('check your advice requests'));
 
-		\dash\data::serviceNeedList(\lib\db\needs::get(['type' => 'advice', 'status' => 'enable']));
-
+		\dash\data::serviceNeedList(\lib\app\need::active_list('advice'));
 	}
 }
 ?>
