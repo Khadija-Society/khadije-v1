@@ -1,0 +1,43 @@
+{%extends display.main%}
+
+
+{%block pageData%}
+<div class="f justify-center">
+ <div class="c10 s12">
+
+{%if not serviceNeedList%}
+  <p class="msg info2 txtC">{%trans "Now we dont need sercants, check it later!"%}</p>
+{%else%}
+  <form method="post">
+  <p class="msg info2 txtC">{%trans "Currently we need help in below categories"%}</p>
+{{block ('iCity') }}
+  </form>
+  <a href="{{url.base}}/a/service" class="btn success block" data-direct>ثبت‌نام و ثبت درخواست</a>
+{%endif%}
+
+ </div>
+</div>
+{%endblock%}
+
+
+
+{%block iCity%}
+
+ <div class="f justify-center txtC">
+{% for key, value in serviceNeedList %}
+  <div class="c4 s12 pA10">
+    <a class="vcard shadow" href="{{url.base}}/a/service" data-direct>
+     <img src="{{value.fileurl}}" alt='{{value.title}}'>
+     <div class="content">
+      <div class="header">{{value.title}}</div>
+     </div>
+     <div class="footer">{{value.desc}}</div>
+    </a>
+  </div>
+{% endfor %}
+ </div>
+
+{%endblock%}
+
+
+

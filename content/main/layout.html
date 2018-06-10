@@ -159,17 +159,17 @@
       <div class="c s6">
         <h3>{%trans "Requests"%}</h3>
         <nav>
-          <a href="{{url.here}}/a/trip">{%trans "Individual registration"%}</a>
-          <a href="{{url.here}}/a/group">{%trans "Group registration"%}</a>
-          <a href="{{url.here}}/khadem">{%trans "Servants registration"%}</a>
+          <a href="{{url.here}}/a/trip" data-direct>{%trans "Individual registration"%}</a>
+          <a href="{{url.here}}/a/group" data-direct>{%trans "Group registration"%}</a>
+          <a href="{{url.here}}/servant">{%trans "Servants registration"%}</a>
         </nav>
       </div>
 {%if lang.current == 'fa'%}
       <div class="c s6">
         <h3>{%trans "Services"%}</h3>
         <nav>
-          <a href="{{url.here}}/a/advice">{%trans "Consulting service"%}</a>
-          <a href="{{url.here}}/a/health">{%trans "Health service"%}</a>
+          <a href="{{url.here}}/consulting">{%trans "Consulting service"%}</a>
+          <a href="{{url.here}}/health">{%trans "Health service"%}</a>
         </nav>
       </div>
 {%endif%}

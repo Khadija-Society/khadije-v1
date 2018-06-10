@@ -1,5 +1,5 @@
 <?php
-namespace content\khadem;
+namespace content\servant;
 
 
 class view
