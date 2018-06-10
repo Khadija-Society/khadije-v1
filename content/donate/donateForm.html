@@ -263,30 +263,21 @@
 
 {%block iWay%}
 {%if wayList%}
-<div>
-
+<div class="donateWays">
   <label>{%trans "Spending method"%}</label>
-{%if wayList|length < 6%}
-
+  <div class="f justify-center">
 {%for key, myWay in wayList%}
-  <div class="radio1 green">
-    <input type="radio" id="r-{{myWay.title}}" name="way" value="{{myWay.title}}">
-    <label for="r-{{myWay.title}}">{{myWay.title}}</label>
-  </div>
-{%endfor%}
-
+    <div class="radio2 cauto" {%if myWay.desc%}title="{{myWay.desc}}"{%endif%}>
+{%if myWay.fileurl%}
+      <label for="r-{{myWay.title}}"><img src="{{myWay.fileurl}}" alt="{{myWay.title}}"></label>
 {%else%}
-
-  <div class="input">
-   <select name="way" class="select">
-     <option value="">{%trans "Please select one item"%}</option>
-     {%for key, value in wayList%}
-      <option value="{{value}}">{{value}}</option>
-     {%endfor%}
-   </select>
-  </div>
-
+      <label for="r-{{myWay.title}}"><img src="{{url.site}}/static/images/logo.png" alt="{{myWay.title}}"></label>
 {%endif%}
+      <input type="radio" id="r-{{myWay.title}}" name="way" value="{{myWay.title}}">
+      <label for="r-{{myWay.title}}">{{myWay.title}}</label>
+    </div>
+{%endfor%}
+  </div>
 </div>
 {%endif%}
 

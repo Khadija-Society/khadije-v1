@@ -797,18 +797,20 @@ body[data-page="donate"] .wrapper .cbox.donateLists{
 	max-height: 600px;
 	overflow-y: auto;
 }
-.donateWays{
-	overflow: hidden;
+.donateWays .radio2{
+	min-width: 100px;
+	max-width: 100px;
+	width: 100px;
+	margin:10px 10px;
+	font-size: 0.8em;
 }
-.donateWays .radio1{
-	max-width: 120px;
-	text-align: center;
-	margin:0 10px;
+.donateWays .radio2 label{
+	padding: 0;
 }
-
-.donateWays .radio1 label span{
-	margin-top: 10px;
-
+.donateWays .radio2 img{
+	width: 100%;
+	max-height: 100px;
+	background-color: #eee;
 }
 
 
