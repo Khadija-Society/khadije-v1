@@ -4,6 +4,30 @@ namespace lib\db;
 class travels
 {
 
+	public static function get_total($_where = null)
+	{
+		$where = \dash\db\config::make_where($_where);
+		if($where)
+		{
+			$where = " WHERE $where";
+		}
+		$query = "SELECT COUNT(*) AS `count` FROM travels $where";
+		return intval(\dash\db::get($query, 'count', true));
+	}
+
+	public static function get_total_today($_where = null)
+	{
+		$date = date("Y-m-d");
+
+		$where = \dash\db\config::make_where($_where);
+		if($where)
+		{
+			$where = " AND $where";
+		}
+		$query = "SELECT COUNT(*) AS `count` FROM travels WHERE DATE(travels.datecreated) = DATE('$date') $where";
+		return intval(\dash\db::get($query, 'count', true));
+	}
+
 	/**
 	 * insert new productprice
 	 *

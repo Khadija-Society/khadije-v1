@@ -22,24 +22,44 @@ class view
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
+
 		$args =
 		[
 			'order'          => \dash\request::get('order'),
 			'sort'           => \dash\request::get('sort'),
 		];
 
+
+		$travel_count_arg         = [];
+		$args['travels.type']     = 'family';
+		$travel_count_arg['type'] = 'family';
+
 		if(!$args['order'])
 		{
 			$args['order'] = 'DESC';
 		}
 
-		if(\dash\request::get('status')) $args['travels.status']         = \dash\request::get('status');
+		if(\dash\request::get('status'))
+		{
+			$args['travels.status']     = \dash\request::get('status');
+			$travel_count_arg['status'] = \dash\request::get('status');
+		}
 
-		$args['travels.type']             = 'family';
+		if(\dash\request::get('place'))
+		{
+			$args['travels.place']     = \dash\request::get('place');
+			$travel_count_arg['place'] = \dash\request::get('place');
+		}
 
-		if(\dash\request::get('place')) $args['travels.place']           = \dash\request::get('place');
-		if(\dash\request::get('gender')) $args['users.gender']           = \dash\request::get('gender');
-		if(\dash\request::get('birthday')) $args['YEAR(users.birthday)'] = \dash\request::get('birthday');
+		if(\dash\request::get('gender'))
+		{
+			$args['users.gender']           = \dash\request::get('gender');
+		}
+
+		if(\dash\request::get('birthday'))
+		{
+			$args['YEAR(users.birthday)'] = \dash\request::get('birthday');
+		}
 
 		$in = [];
 		if(\dash\permission::check('cpTripQom'))
@@ -73,7 +93,8 @@ class view
 
 		if(!isset($args['travels.status']))
 		{
-			$args['travels.status'] = ["NOT IN", "('cancel', 'draft')"];
+			$args['travels.status']     = ["NOT IN", "('cancel', 'draft')"];
+			$travel_count_arg['status'] = ["NOT IN", "('cancel', 'draft')"];
 		}
 
 		$search_string            = \dash\request::get('q');
@@ -146,6 +167,10 @@ class view
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
 		\dash\data::dataFilter($dataFilter);
+
+
+		\dash\data::totalRequest(\lib\db\travels::get_total($travel_count_arg));
+		\dash\data::todayRequest(\lib\db\travels::get_total_today($travel_count_arg));
 
 	}
 }
