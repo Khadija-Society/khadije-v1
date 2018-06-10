@@ -4,14 +4,28 @@ function pushState()
   runLightBox();
   runTopSlider();
   runLastNewsSlider();
+
 }
 
 $(function()
 {
+  salavat();
   typeTitles();
   fixedHeader();
 });
 
+
+function salavat()
+{
+	$('.salavat a').on("ajaxify:success", function(_el, _counter)
+	{
+		if(_counter.result)
+		{
+			_counter = _counter.result;
+			$(this).parents('.salavat').find('.counter').attr('data-salavat', _counter).text(fitNumber(_counter));
+		}
+	});
+}
 
 function fixedHeader()
 {

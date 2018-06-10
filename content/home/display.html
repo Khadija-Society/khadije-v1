@@ -28,10 +28,10 @@
     <div class="c3 sauto salavatBox">
       <div class="salavat goldenB">
         <img src="{{url.site}}/static/images/homepage-v3/salavat.jpg" alt='{%trans "O Allah, let Your Peace come upon Muhammad and the family of Muhammad"%}'>
-        <div class="counter">{{salavatShomar | fitNumber}}</div>
+        <div class="counter" data-salavat="{{salavatShomar}}">{{salavatShomar | fitNumber}}</div>
         <div class="mB25 fs08">{%trans "You also partake in salawat"%}</div>
         <div class="Allah sB1">
-          <a href="{{url.pwd}}" data-ajaxify data-data='{"salavat" : 1}' data-method='post'>{%trans "Say salawat and press here"%}</a>
+          <a href="{{url.pwd}}" data-ajaxify data-data='{"salavat" : true}' data-method='post'>{%trans "Say salawat and press here"%}</a>
         </div>
       </div>
     </div>
