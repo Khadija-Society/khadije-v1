@@ -60,5 +60,36 @@ class salavats
 		return $result;
 	}
 
+	public static function search($_string = null, $_options = [])
+	{
+		if(!is_array($_options))
+		{
+			$_options = [];
+		}
+
+		$default_option =
+		[
+			'search_field'      =>
+			"
+				(
+					users.firstname LIKE '%__string__%' OR
+					users.lastname LIKE '%__string__%' OR
+					users.mobile LIKE '%__string__%' OR
+					users.nationalcode LIKE '%__string__%'
+
+				)
+			",
+			'public_show_field' =>
+			"
+				users.*, (SELECT COUNT(*) FROM salavats WHERE salavats.user_id = users.id) AS `salavat_shomar`
+			",
+			'(SELECT COUNT(*) FROM salavats WHERE salavats.user_id = users.id)' => [" >= ", "1"],
+		];
+
+		$_options = array_merge($default_option, $_options);
+		return \dash\db\config::public_search('users', $_string, $_options);
+	}
+
+
 }
 ?>
