@@ -296,8 +296,10 @@ class twigTransTerms
 	echo T_("Without name");                                                          // Line 87
 	echo T_("Without mobile");                                                        // Line 137
 
-	//--------------------------------------------content_cp/report/daily/display.html
+	//-----------------------------------------content_cp/report/withname/display.html
 	echo T_("Sum");                                                                   // Line 15
+
+	//--------------------------------------------content_cp/report/daily/display.html
 
 	//---------------------------------content_cp/report/counttransaction/display.html
 
@@ -311,8 +313,6 @@ class twigTransTerms
 	echo T_("Report sum transaction group by hazinekard");                            // Line 53
 	echo T_("Report daily");                                                          // Line 62
 	echo T_("Report Month");                                                          // Line 73
-
-	//-----------------------------------------content_cp/report/whitname/display.html
 
 	//----------------------------------------content_cp/delneveshte/edit/display.html
 	echo T_("Author");                                                                // Line 54
@@ -331,6 +331,16 @@ class twigTransTerms
 	echo T_("Like given");                                                            // Line 57
 	echo T_("Visitor detail");                                                        // Line 95
 	echo T_("Created on");                                                            // Line 108
+
+	//----------------------------------------------content_cp/consulting/display.html
+	echo T_("Search in consulting");                                                  // Line 44
+	echo T_("firstname");                                                             // Line 57
+	echo T_("birthday");                                                              // Line 59
+	echo T_("province");                                                              // Line 60
+	echo T_("phone");                                                                 // Line 61
+	echo T_("married");                                                               // Line 62
+	echo T_("gender");                                                                // Line 63
+	echo T_("Consulting");                                                            // Line 99
 
 	//----------------------------------------------------content_cp/book/display.html
 	echo T_("Total Sale");                                                            // Line 12
@@ -366,18 +376,8 @@ class twigTransTerms
 
 	//------------------------------------------content_cp/representation/display.html
 	echo T_("Search in representation");                                              // Line 44
-	echo T_("firstname");                                                             // Line 57
-	echo T_("birthday");                                                              // Line 59
-	echo T_("province");                                                              // Line 60
-	echo T_("phone");                                                                 // Line 61
-	echo T_("married");                                                               // Line 62
-	echo T_("gender");                                                                // Line 63
 	echo T_("Representation");                                                        // Line 21
 	echo T_("Action");                                                                // Line 82
-
-	//--------------------------------------------------content_cp/consulting/display.html
-	echo T_("Search in consulting");                                                      // Line 44
-	echo T_("Consulting");                                                                // Line 99
 
 	//---------------------------------------------------------content_cp/sidenav.html
 	echo T_("Dashboard");                                                             // Line 5
@@ -390,7 +390,7 @@ class twigTransTerms
 	echo T_("Servant list");                                                          // Line 20
 	echo T_("Group trip");                                                            // Line 21
 	echo T_("Family trip");                                                           // Line 22
-	echo T_("consulting service list");                                                   // Line 23
+	echo T_("consulting service list");                                               // Line 23
 	echo T_("health service list");                                                   // Line 24
 	echo T_("representation service list");                                           // Line 25
 	echo T_("CMS");                                                                   // Line 33
@@ -484,6 +484,23 @@ class twigTransTerms
 	echo T_("Start Date");                                                            // Line 70
 	echo T_("End Date");                                                              // Line 79
 
+	//---------------------------------------content_a/consulting/request/display.html
+	echo T_("We do not provide consulting service yet!");                             // Line 9
+
+	//------------------------------------------content_a/consulting/home/display.html
+	echo T_("register for new consulting request");                                   // Line 37
+
+	//----------------------------------------content_a/consulting/detail/display.html
+	echo T_("Your are using this consulting");                                        // Line 9
+	echo T_("If you sure from your request complete it");                             // Line 10
+	echo T_("Else you can cancel your request");                                      // Line 11
+	echo T_("OK");                                                                    // Line 14
+	echo T_("Save all");                                                              // Line 53
+	echo T_("Expert title");                                                          // Line 77
+	echo T_("Expert value");                                                          // Line 86
+	echo T_("Expert year");                                                           // Line 94
+	echo T_("Your car name");                                                         // Line 102
+
 	//----------------------------------------------content_a/profile/profileForm.html
 	echo T_("Please select one itme");                                                // Line 128
 	echo T_("Select province");                                                       // Line 155
@@ -498,26 +515,9 @@ class twigTransTerms
 
 	//------------------------------------content_a/representation/detail/display.html
 	echo T_("Your are using this representation");                                    // Line 9
-	echo T_("If you sure from your request complete it");                             // Line 10
-	echo T_("Else you can cancel your request");                                      // Line 11
-	echo T_("OK");                                                                    // Line 14
-	echo T_("Save all");                                                              // Line 53
-	echo T_("Expert title");                                                          // Line 77
-	echo T_("Expert value");                                                          // Line 86
-	echo T_("Expert year");                                                           // Line 94
-	echo T_("Your car name");                                                         // Line 102
-
-	//-------------------------------------------content_a/consulting/request/display.html
-	echo T_("We do not provide consulting service yet!");                                 // Line 9
-
-	//----------------------------------------------content_a/consulting/home/display.html
-	echo T_("register for new consulting request");                                       // Line 37
-
-	//--------------------------------------------content_a/consulting/detail/display.html
-	echo T_("Your are using this consulting");                                            // Line 9
 
 	//------------------------------------------------------content_a/main/layout.html
-	echo T_("Consulting Service");                                                        // Line 39
+	echo T_("Consulting Service");                                                    // Line 39
 	echo T_("Edit your profile");                                                     // Line 22
 	echo T_("Avatar of you");                                                         // Line 24
 	echo T_("Default Avatar");                                                        // Line 29

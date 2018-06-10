@@ -186,7 +186,7 @@ class twigTransTerms
 	echo T_("Try to start with add new record!");                                     // Line 94
 
 	//---------------------------------------addons/content_cp/users/view/display.html
-	echo T_("Field");                                                                 // Line 10
+	echo T_("Field");                                                                 // Line 13
 	echo T_("Value");                                                                 // Line 14
 
 	//----------------------------------------addons/content_cp/users/set/display.html

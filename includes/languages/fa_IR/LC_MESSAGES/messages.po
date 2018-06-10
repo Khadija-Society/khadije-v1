@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-06-10 17:03+0430\n"
-"PO-Revision-Date: 2018-06-10 17:06+0430\n"
+"POT-Creation-Date: 2018-06-10 18:43+0430\n"
+"PO-Revision-Date: 2018-06-10 18:49+0430\n"
 "Last-Translator: Reza <rm.biqarar@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -510,7 +510,7 @@ msgstr "برچسب ها را بررسی کنید و برخی از برچسب ه�
 #: dash/addons/content_cp/terms/view.php:84
 #: dash/addons/includes/languages/trans_dash.php:198
 #: dash/addons/includes/languages/trans_static.php:112
-#: khadije/content_cp/advice/view.php:48 khadije/content_cp/book/view.php:59
+#: khadije/content_cp/book/view.php:59 khadije/content_cp/consulting/view.php:48
 #: khadije/content_cp/donate/view.php:73 khadije/content_cp/familytrip/view.php:104
 #: khadije/content_cp/health/view.php:49 khadije/content_cp/nationalcode/view.php:35
 #: khadije/content_cp/representation/view.php:48
@@ -522,11 +522,11 @@ msgstr "جستجو"
 
 #: dash/addons/content_cp/terms/view.php:113
 #: dash/addons/content_su/permission/view.php:11
-#: khadije/content_a/advice/detail/view.php:23
+#: khadije/content_a/consulting/detail/view.php:23
 #: khadije/content_a/health/detail/view.php:23
 #: khadije/content_a/representation/detail/view.php:23
 #: khadije/content_a/service/detail/view.php:23
-#: khadije/content_cp/advice/options/view.php:30
+#: khadije/content_cp/consulting/options/view.php:30
 #: khadije/content_cp/donate/options/view.php:30
 #: khadije/content_cp/familytrip/view/controller.php:17
 #: khadije/content_cp/health/options/view.php:31
@@ -630,7 +630,7 @@ msgstr "اینجا چیکار می‌کنی عزیز جان!؟"
 
 #: dash/addons/content_enter/alert/view.php:27
 #: dash/addons/content_enter/callback/model.php:107 dash/lib/header.php:73
-#: khadije/includes/languages/trans_project.php:503
+#: khadije/includes/languages/trans_project.php:497
 msgid "OK"
 msgstr "تایید"
 
@@ -1821,7 +1821,7 @@ msgstr "ذخیره"
 
 #: dash/addons/includes/languages/trans_dash.php:114
 #: khadije/includes/languages/trans_dash.php:245
-#: khadije/includes/languages/trans_project.php:504
+#: khadije/includes/languages/trans_project.php:498
 msgid "Save all"
 msgstr "ذخیره همه"
 
@@ -2700,7 +2700,7 @@ msgstr "دسته‌بندی والد"
 
 #: dash/addons/includes/languages/trans_dash.php:324
 #: khadije/includes/languages/trans_dash.php:269
-#: khadije/includes/languages/trans_project.php:488
+#: khadije/includes/languages/trans_project.php:505
 msgid "Please select one itme"
 msgstr "لطفا یک گزینه را انتخاب کنید"
 
@@ -4460,7 +4460,7 @@ msgid "SiteContent"
 msgstr "محتوای سایت"
 
 #: dash/addons/includes/languages/trans_static.php:84
-#: khadije/content_cp/advice/view.php:20 khadije/content_cp/donate/view.php:21
+#: khadije/content_cp/consulting/view.php:20 khadije/content_cp/donate/view.php:21
 #: khadije/content_cp/familytrip/view.php:16 khadije/content_cp/health/view.php:21
 #: khadije/content_cp/representation/view.php:20
 #: khadije/content_cp/service/view.php:20 khadije/content_cp/trip/view.php:16
@@ -6780,7 +6780,7 @@ msgid "single"
 msgstr "مجرد"
 
 #: dash/addons/includes/languages/trans_static.php:770
-#: khadije/includes/languages/trans_project.php:373
+#: khadije/includes/languages/trans_project.php:341
 msgid "married"
 msgstr "متاهل"
 
@@ -8290,6 +8290,10 @@ msgstr "خیرین"
 msgid "List of our last doners"
 msgstr "لیست آخرین خیرین ما"
 
+#: khadije/content/home/model.php:13
+msgid "Allahouma sali ala mohamed wa ali muhammad"
+msgstr "اللهم صل علی محمد و آل محمد و عجل فرجهم"
+
 #: khadije/content/live/view.php:9
 msgid "Live broadcast of ahl-al bayt shrine"
 msgstr "پخش زنده حرمین اهل بیت علیهم السلام"
@@ -8344,17 +8348,17 @@ msgstr "مجری طرح زیارت اولی‌های اهل بیت علیهم ا
 msgid "© :year :site. All right reserved."
 msgstr "تمام حقوق این وب‌سایت برای :site سلام الله علیها محفوظ می‌باشد. © :year"
 
-#: khadije/content_a/advice/detail/model.php:28
-msgid "Your advice request was saved"
+#: khadije/content_a/consulting/detail/model.php:28
+msgid "Your consulting request was saved"
 msgstr "درخواست مشاوره شما با موفقیت ذخیره شد"
 
-#: khadije/content_a/advice/detail/view.php:9
-#: khadije/content_a/advice/profile/view.php:9
-#: khadije/content_a/advice/request/view.php:9
-msgid "Register for new advice request"
+#: khadije/content_a/consulting/detail/view.php:9
+#: khadije/content_a/consulting/profile/view.php:9
+#: khadije/content_a/consulting/request/view.php:9
+msgid "Register for new consulting request"
 msgstr "ثبت نام برای خدمات مشاوره جدید"
 
-#: khadije/content_a/advice/detail/view.php:9
+#: khadije/content_a/consulting/detail/view.php:9
 #: khadije/content_a/group/partner/view.php:9
 #: khadije/content_a/health/detail/view.php:9
 #: khadije/content_a/representation/detail/view.php:9
@@ -8363,39 +8367,39 @@ msgstr "ثبت نام برای خدمات مشاوره جدید"
 msgid "Step 3"
 msgstr "مرحله ۳"
 
-#: khadije/content_a/advice/detail/view.php:10
+#: khadije/content_a/consulting/detail/view.php:10
 #: khadije/content_a/health/detail/view.php:10
 #: khadije/content_a/representation/detail/view.php:10
 #: khadije/content_a/service/detail/view.php:10
 msgid "fill your request detail"
 msgstr "جزئیات درخواست خود را وارد کنید"
 
-#: khadije/content_a/advice/home/model.php:17 khadije/content_a/controller.php:57
-#: khadije/content_a/health/home/model.php:17
+#: khadije/content_a/consulting/home/model.php:17
+#: khadije/content_a/controller.php:57 khadije/content_a/health/home/model.php:17
 #: khadije/content_a/representation/home/model.php:17
 #: khadije/content_a/service/home/model.php:17
 msgid "Invalid service id"
 msgstr "درخواست خادمی اشتباه"
 
-#: khadije/content_a/advice/home/model.php:26
+#: khadije/content_a/consulting/home/model.php:26
 #: khadije/content_a/health/home/model.php:26
 #: khadije/content_a/representation/home/model.php:26
 #: khadije/content_a/service/home/model.php:26
 msgid "Your service was canceled"
 msgstr "درخواست خادم شدن شما لغو شد"
 
-#: khadije/content_a/advice/home/model.php:33
+#: khadije/content_a/consulting/home/model.php:33
 #: khadije/content_a/health/home/model.php:33
 #: khadije/content_a/representation/home/model.php:33
 #: khadije/content_a/service/home/model.php:33
 msgid "Can not change this service status"
 msgstr "شما نمی‌توانید وضعیت درخواست خادمی را تغییر دهید"
 
-#: khadije/content_a/advice/home/view.php:9
-msgid "List of your advice request"
-msgstr "لیست خدمات مشاوره شما"
+#: khadije/content_a/consulting/home/view.php:9
+msgid "List of your consulting request"
+msgstr "لیست ٔرخواست‌های خدمات مشاوره شما"
 
-#: khadije/content_a/advice/home/view.php:10
+#: khadije/content_a/consulting/home/view.php:10
 #: khadije/content_a/group/home/view.php:10
 #: khadije/content_a/health/home/view.php:10
 #: khadije/content_a/representation/home/view.php:10
@@ -8406,12 +8410,12 @@ msgstr ""
 "شما می‌توانید آخرین درخواست‌های خود را بررسی کرده و درخواست جدیدی را ثبت یا از "
 "تقاضاهای قبلی انصراف دهید"
 
-#: khadije/content_a/advice/home/view.php:13
-#: khadije/includes/languages/trans_project.php:514
-msgid "register for new advice request"
+#: khadije/content_a/consulting/home/view.php:13
+#: khadije/includes/languages/trans_project.php:491
+msgid "register for new consulting request"
 msgstr "ثبت نام برای خدمات مشاوره جدید"
 
-#: khadije/content_a/advice/profile/model.php:33
+#: khadije/content_a/consulting/profile/model.php:33
 #: khadije/content_a/group/profile/model.php:33
 #: khadije/content_a/health/profile/model.php:33
 #: khadije/content_a/profile/model.php:33
@@ -8421,7 +8425,7 @@ msgstr "ثبت نام برای خدمات مشاوره جدید"
 msgid "Your detail was saved"
 msgstr "اطلاعات پروفایل شما ثبت شد"
 
-#: khadije/content_a/advice/profile/view.php:9
+#: khadije/content_a/consulting/profile/view.php:9
 #: khadije/content_a/group/profile/view.php:9
 #: khadije/content_a/health/profile/view.php:9
 #: khadije/content_a/representation/profile/view.php:9
@@ -8430,7 +8434,7 @@ msgstr "اطلاعات پروفایل شما ثبت شد"
 msgid "Step 2"
 msgstr "مرحله ۲"
 
-#: khadije/content_a/advice/profile/view.php:10
+#: khadije/content_a/consulting/profile/view.php:10
 #: khadije/content_a/group/profile/view.php:10
 #: khadije/content_a/health/profile/view.php:10
 #: khadije/content_a/representation/profile/view.php:10
@@ -8439,7 +8443,7 @@ msgstr "مرحله ۲"
 msgid "fill your personal data in this step"
 msgstr "اطلاعات شخصی خود را در این مرحله وارد کنید"
 
-#: khadije/content_a/advice/profile/view.php:10
+#: khadije/content_a/consulting/profile/view.php:10
 #: khadije/content_a/group/profile/view.php:10
 #: khadije/content_a/health/profile/view.php:10
 #: khadije/content_a/representation/profile/view.php:10
@@ -8448,11 +8452,11 @@ msgstr "اطلاعات شخصی خود را در این مرحله وارد کن
 msgid "In next step fill your partner data"
 msgstr "در مرحله بعدی، اطلاعات همراهان خود را وارد خواهید کرد"
 
-#: khadije/content_a/advice/request/model.php:20
-msgid "Your advice was saved"
-msgstr "درخواست مشاوره شما ذخیره شد"
+#: khadije/content_a/consulting/request/model.php:20
+msgid "Your consulting was saved"
+msgstr "درخواست مشاوره شما با موفقیت ذخیره شد"
 
-#: khadije/content_a/advice/request/view.php:9
+#: khadije/content_a/consulting/request/view.php:9
 #: khadije/content_a/group/request/view.php:9
 #: khadije/content_a/health/request/view.php:9
 #: khadije/content_a/representation/request/view.php:9
@@ -8461,13 +8465,13 @@ msgstr "درخواست مشاوره شما ذخیره شد"
 msgid "Step 1"
 msgstr "مرحله ۱"
 
-#: khadije/content_a/advice/request/view.php:10
-msgid "in 3 simple step register your request for have advice"
+#: khadije/content_a/consulting/request/view.php:10
+msgid "in 3 simple step register your request for have consulting"
 msgstr "در سه مرحله ساده، درخواست خود را برای مشاوره ثبت کنید"
 
-#: khadije/content_a/advice/request/view.php:13
-msgid "check your advice requests"
-msgstr "بررسی لیست خدمات مشاوره شما"
+#: khadije/content_a/consulting/request/view.php:13
+msgid "check your consulting requests"
+msgstr "درخواست‌های خدمات مشاوره خود را بررسی کنید"
 
 #: khadije/content_a/controller.php:21
 msgid "Trip id not found"
@@ -8719,7 +8723,7 @@ msgid "List of your representation request"
 msgstr "لیست درخواست‌های زیارت نیابتی شما"
 
 #: khadije/content_a/representation/home/view.php:13
-#: khadije/includes/languages/trans_project.php:497
+#: khadije/includes/languages/trans_project.php:514
 msgid "register for new representation request"
 msgstr "ثبت‌نام برای درخواست زیارت نیابتی "
 
@@ -8810,48 +8814,6 @@ msgstr "بررسی لیست پیام‌های مدیریت و جستجو در آ
 msgid "Also add or edit specefic admincontact."
 msgstr "همچنین ویرایش پیام خاص"
 
-#: khadije/content_cp/advice/options/model.php:70
-msgid "Advice successfully edited"
-msgstr "خدمات مشاوره با موفقیت ویرایش شد"
-
-#: khadije/content_cp/advice/options/model.php:75
-msgid "Advice successfully added"
-msgstr "خدمات مشاوره با موفقیت اضافه شد"
-
-#: khadije/content_cp/advice/options/view.php:12
-msgid "Advice request options"
-msgstr "تنظیمات خدمات مشاوره"
-
-#: khadije/content_cp/advice/options/view.php:13
-msgid "check advice request options and update requests"
-msgstr "بررسی خدمات مشاوره و به روزرسانی درخواست‌ها"
-
-#: khadije/content_cp/advice/options/view.php:15
-msgid "Back to advice request list"
-msgstr "بازگشت به لیست درخواست‌های مشاوره"
-
-#: khadije/content_cp/advice/view.php:13
-msgid "Advice request list"
-msgstr "لیست درخواست‌های مشاوره"
-
-#: khadije/content_cp/advice/view.php:14
-msgid "check advice requests"
-msgstr "بررسی لیست درخواست‌های خدمات مشاوره"
-
-#: khadije/content_cp/advice/view.php:16 khadije/content_cp/book/view.php:15
-#: khadije/content_cp/donate/view.php:17 khadije/content_cp/familytrip/view.php:18
-#: khadije/content_cp/health/view.php:17 khadije/content_cp/nationalcode/view.php:18
-#: khadije/content_cp/representation/view.php:16
-#: khadije/content_cp/service/view.php:16 khadije/content_cp/trip/view.php:18
-msgid "Export"
-msgstr "خروجی"
-
-#: khadije/content_cp/advice/view.php:70
-#: khadije/includes/languages/trans_project.php:380
-#: khadije/includes/languages/trans_static.php:83
-msgid "Advice"
-msgstr "نصیحت"
-
 #: khadije/content_cp/book/view.php:11
 msgid "Books transaction"
 msgstr "تراکنش کتاب‌ها"
@@ -8860,10 +8822,52 @@ msgstr "تراکنش کتاب‌ها"
 msgid "check books last transactions and monitor them"
 msgstr "بررسی لیست آخرین تراکنش‌های مربوط به کتاب"
 
+#: khadije/content_cp/book/view.php:15 khadije/content_cp/consulting/view.php:16
+#: khadije/content_cp/donate/view.php:17 khadije/content_cp/familytrip/view.php:18
+#: khadije/content_cp/health/view.php:17 khadije/content_cp/nationalcode/view.php:18
+#: khadije/content_cp/representation/view.php:16
+#: khadije/content_cp/service/view.php:16 khadije/content_cp/trip/view.php:18
+msgid "Export"
+msgstr "خروجی"
+
 #: khadije/content_cp/book/view.php:90
-#: khadije/includes/languages/trans_project.php:340
+#: khadije/includes/languages/trans_project.php:350
 msgid "Book"
 msgstr "کتاب"
+
+#: khadije/content_cp/consulting/options/model.php:70
+msgid "Consulting successfully edited"
+msgstr "خدمات مشاوره با موفقیت ویرایش شد"
+
+#: khadije/content_cp/consulting/options/model.php:75
+msgid "Consulting successfully added"
+msgstr "خدمات مشاوره با موفقیت اضافه شد"
+
+#: khadije/content_cp/consulting/options/view.php:12
+msgid "Consulting request options"
+msgstr "تنظیمات خدمات مشاوره"
+
+#: khadije/content_cp/consulting/options/view.php:13
+msgid "check consulting request options and update requests"
+msgstr "بررسی خدمات مشاوره و به روزرسانی درخواست‌ها"
+
+#: khadije/content_cp/consulting/options/view.php:15
+msgid "Back to consulting request list"
+msgstr "بازگشت به لیست درخواست‌های مشاوره"
+
+#: khadije/content_cp/consulting/view.php:13
+msgid "Consulting request list"
+msgstr "لیست ٔرخواست‌های خدمات مشاوره شما"
+
+#: khadije/content_cp/consulting/view.php:14
+msgid "check consulting requests"
+msgstr "درخواست‌های خدمات مشاوره خود را بررسی کنید"
+
+#: khadije/content_cp/consulting/view.php:70
+#: khadije/includes/languages/trans_project.php:343
+#: khadije/includes/languages/trans_static.php:83
+msgid "Consulting"
+msgstr "خدمات مشاوره"
 
 #: khadije/content_cp/delneveshte/edit/model.php:33
 msgid "Delneveshte successfully updated"
@@ -9159,12 +9163,12 @@ msgstr "گزارش به تفکیک درگاه بانکی و نوع هزینه ک
 #: khadije/content_cp/report/daily/view.php:17
 #: khadije/content_cp/report/hazinekard/view.php:19
 #: khadije/content_cp/report/month/view.php:18
-#: khadije/content_cp/report/whitname/view.php:18
+#: khadije/content_cp/report/withname/view.php:18
 msgid "Back to report list"
 msgstr "بازگشت به لیست گزارشات"
 
 #: khadije/content_cp/report/daily/view.php:14
-#: khadije/includes/languages/trans_project.php:312
+#: khadije/includes/languages/trans_project.php:314
 msgid "Report daily"
 msgstr "گزارش روزانه"
 
@@ -9180,7 +9184,7 @@ msgstr "برخی گزارش های مالی برای مدیریت"
 msgid "Report month"
 msgstr "گزارش به تفکیک ماه"
 
-#: khadije/content_cp/report/whitname/view.php:15
+#: khadije/content_cp/report/withname/view.php:15
 msgid "Report pay by name"
 msgstr "گزارش پرداخت‌ها به تفکیک نام"
 
@@ -9213,7 +9217,7 @@ msgid "check representation requests"
 msgstr "بررسی درخواست زیارت نیابتی"
 
 #: khadije/content_cp/representation/view.php:70
-#: khadije/includes/languages/trans_project.php:375
+#: khadije/includes/languages/trans_project.php:379
 #: khadije/includes/languages/trans_static.php:82
 msgid "Representation"
 msgstr "زیارت نیابتی"
@@ -10098,19 +10102,19 @@ msgstr "بدون موبایل"
 msgid "Sum"
 msgstr "جمع"
 
-#: khadije/includes/languages/trans_project.php:309
+#: khadije/includes/languages/trans_project.php:311
 msgid "Report Count transaction group by name"
 msgstr "گزارش جمع مبالغ تراکنش به تفکیک نام"
 
-#: khadije/includes/languages/trans_project.php:310
+#: khadije/includes/languages/trans_project.php:312
 msgid "Report Count transaction group by payment and hazinekard"
 msgstr "گزارش تعداد تراکنش‌ها به تفکیک درگاه و نوع هزینه کرد"
 
-#: khadije/includes/languages/trans_project.php:311
+#: khadije/includes/languages/trans_project.php:313
 msgid "Report sum transaction group by hazinekard"
 msgstr "گزارش جمع مبالغ تراکنش به تفکیک نوع هزینه کرد"
 
-#: khadije/includes/languages/trans_project.php:313
+#: khadije/includes/languages/trans_project.php:315
 msgid "Report Month"
 msgstr "گزارش به تفکیک ماه"
 
@@ -10119,88 +10123,88 @@ msgid "Like given"
 msgstr "لایک‌های دریافتی"
 
 #: khadije/includes/languages/trans_project.php:336
-msgid "Total Sale"
-msgstr "مجموع دریافتی"
+msgid "Search in consulting"
+msgstr "جستجو در خدمات مشاوره"
 
 #: khadije/includes/languages/trans_project.php:337
-msgid "Today Sale"
-msgstr "کمک‌های دریافتی امروز"
-
-#: khadije/includes/languages/trans_project.php:338
-msgid "Sale Count"
-msgstr "تعداد کمک های دریافتی"
-
-#: khadije/includes/languages/trans_project.php:339
-msgid "Search in book transaction"
-msgstr "جستجو در لیست تراکنش‌های کتاب"
-
-#: khadije/includes/languages/trans_project.php:345
-msgid "No nationalcode founded."
-msgstr "کدملی ای یافت نشد"
-
-#: khadije/includes/languages/trans_project.php:346
-msgid "You are not have nationalcode yet!"
-msgstr "شما هنوز کدملی ثبت‌شده‌ای ندارید!"
-
-#: khadije/includes/languages/trans_project.php:347
-msgid "Search in national codes"
-msgstr "جستجو در کدملی‌ها"
-
-#: khadije/includes/languages/trans_project.php:354
-msgid "Maximum partner count for qom"
-msgstr "حداکثر تعداد همراهان برای قم"
-
-#: khadije/includes/languages/trans_project.php:355
-msgid "Maximum partner count for karbala"
-msgstr "حداکثر تعداد همراهان برای کربلا"
-
-#: khadije/includes/languages/trans_project.php:356
-msgid "Maximum partner count for mashhad"
-msgstr "حداکثر تعداد همراهان برای مشهد"
-
-#: khadije/includes/languages/trans_project.php:363
-msgid "Status of representation"
-msgstr "وضعیت زیارت نیابتی"
-
-#: khadije/includes/languages/trans_project.php:364
-msgid "Done Representation"
-msgstr "زیارت نیابتی انجام شد"
-
-#: khadije/includes/languages/trans_project.php:365
-msgid "Representation is done"
-msgstr "زیارت نیابتی انجام شده است"
-
-#: khadije/includes/languages/trans_project.php:368
-msgid "Search in representation"
-msgstr "جستجو در زیارت نیابتی"
-
-#: khadije/includes/languages/trans_project.php:369
 msgid "firstname"
 msgstr "نام"
 
-#: khadije/includes/languages/trans_project.php:370
+#: khadije/includes/languages/trans_project.php:338
 msgid "birthday"
 msgstr "تاریخ تولد"
 
-#: khadije/includes/languages/trans_project.php:371
+#: khadije/includes/languages/trans_project.php:339
 msgid "province"
 msgstr "استان"
 
-#: khadije/includes/languages/trans_project.php:372
+#: khadije/includes/languages/trans_project.php:340
 msgid "phone"
 msgstr "شماره تلفن"
 
-#: khadije/includes/languages/trans_project.php:374
+#: khadije/includes/languages/trans_project.php:342
 msgid "gender"
 msgstr "جنسیت"
 
-#: khadije/includes/languages/trans_project.php:376
+#: khadije/includes/languages/trans_project.php:346
+msgid "Total Sale"
+msgstr "مجموع دریافتی"
+
+#: khadije/includes/languages/trans_project.php:347
+msgid "Today Sale"
+msgstr "کمک‌های دریافتی امروز"
+
+#: khadije/includes/languages/trans_project.php:348
+msgid "Sale Count"
+msgstr "تعداد کمک های دریافتی"
+
+#: khadije/includes/languages/trans_project.php:349
+msgid "Search in book transaction"
+msgstr "جستجو در لیست تراکنش‌های کتاب"
+
+#: khadije/includes/languages/trans_project.php:355
+msgid "No nationalcode founded."
+msgstr "کدملی ای یافت نشد"
+
+#: khadije/includes/languages/trans_project.php:356
+msgid "You are not have nationalcode yet!"
+msgstr "شما هنوز کدملی ثبت‌شده‌ای ندارید!"
+
+#: khadije/includes/languages/trans_project.php:357
+msgid "Search in national codes"
+msgstr "جستجو در کدملی‌ها"
+
+#: khadije/includes/languages/trans_project.php:364
+msgid "Maximum partner count for qom"
+msgstr "حداکثر تعداد همراهان برای قم"
+
+#: khadije/includes/languages/trans_project.php:365
+msgid "Maximum partner count for karbala"
+msgstr "حداکثر تعداد همراهان برای کربلا"
+
+#: khadije/includes/languages/trans_project.php:366
+msgid "Maximum partner count for mashhad"
+msgstr "حداکثر تعداد همراهان برای مشهد"
+
+#: khadije/includes/languages/trans_project.php:373
+msgid "Status of representation"
+msgstr "وضعیت زیارت نیابتی"
+
+#: khadije/includes/languages/trans_project.php:374
+msgid "Done Representation"
+msgstr "زیارت نیابتی انجام شد"
+
+#: khadije/includes/languages/trans_project.php:375
+msgid "Representation is done"
+msgstr "زیارت نیابتی انجام شده است"
+
+#: khadije/includes/languages/trans_project.php:378
+msgid "Search in representation"
+msgstr "جستجو در زیارت نیابتی"
+
+#: khadije/includes/languages/trans_project.php:380
 msgid "Action"
 msgstr "عملیات"
-
-#: khadije/includes/languages/trans_project.php:379
-msgid "Search in advice"
-msgstr "جستجو در خدمات مشاوره"
 
 #: khadije/includes/languages/trans_project.php:385
 msgid "Delneveshteha"
@@ -10235,8 +10239,8 @@ msgid "Family trip"
 msgstr "تشرف خانوادگی"
 
 #: khadije/includes/languages/trans_project.php:393
-msgid "advice service list"
-msgstr "خدمات مشاوره"
+msgid "consulting service list"
+msgstr "لیست خدمات مشاوره"
 
 #: khadije/includes/languages/trans_project.php:394
 msgid "health service list"
@@ -10421,60 +10425,60 @@ msgstr "تاریخ شروع"
 msgid "End Date"
 msgstr "تاریخ پایان"
 
-#: khadije/includes/languages/trans_project.php:489
-msgid "Select province"
-msgstr "استان را انتخاب کنید"
-
-#: khadije/includes/languages/trans_project.php:490
-msgid "Select city"
-msgstr "شهر را انتخاب کنید"
-
-#: khadije/includes/languages/trans_project.php:491
-msgid "Choose your country"
-msgstr "کشور خود را انتخاب کنید"
+#: khadije/includes/languages/trans_project.php:488
+msgid "We do not provide consulting service yet!"
+msgstr "در حال حاضر خدمات مشاوره ارائه نمی‌شود!"
 
 #: khadije/includes/languages/trans_project.php:494
-msgid "We do not provide representation service yet!"
-msgstr "در حال حاضر زیارت نیابتی ارائه نمی‌شود!"
+msgid "Your are using this consulting"
+msgstr "شما از این خدمات مشاوره استفاده می کنید"
 
-#: khadije/includes/languages/trans_project.php:500
-msgid "Your are using this representation"
-msgstr "شما از این زیارت نیابتی استفاده می کنید"
-
-#: khadije/includes/languages/trans_project.php:501
+#: khadije/includes/languages/trans_project.php:495
 msgid "If you sure from your request complete it"
 msgstr "اگر مطمئن هستید از درخواست خودتان آن را تکمیل کنید"
 
-#: khadije/includes/languages/trans_project.php:502
+#: khadije/includes/languages/trans_project.php:496
 msgid "Else you can cancel your request"
 msgstr "در غیر این صورت درخواست خود را لغو کنید"
 
-#: khadije/includes/languages/trans_project.php:505
+#: khadije/includes/languages/trans_project.php:499
 msgid "Expert title"
 msgstr "عنوان تخصص"
 
-#: khadije/includes/languages/trans_project.php:506
+#: khadije/includes/languages/trans_project.php:500
 msgid "Expert value"
 msgstr "میزان تخصص"
 
-#: khadije/includes/languages/trans_project.php:507
+#: khadije/includes/languages/trans_project.php:501
 msgid "Expert year"
 msgstr "سابقه تخصص به سال"
 
-#: khadije/includes/languages/trans_project.php:508
+#: khadije/includes/languages/trans_project.php:502
 msgid "Your car name"
 msgstr "نام خودروی شما"
 
+#: khadije/includes/languages/trans_project.php:506
+msgid "Select province"
+msgstr "استان را انتخاب کنید"
+
+#: khadije/includes/languages/trans_project.php:507
+msgid "Select city"
+msgstr "شهر را انتخاب کنید"
+
+#: khadije/includes/languages/trans_project.php:508
+msgid "Choose your country"
+msgstr "کشور خود را انتخاب کنید"
+
 #: khadije/includes/languages/trans_project.php:511
-msgid "We do not provide advice service yet!"
-msgstr "در حال حاضر خدمات مشاوره ارائه نمی‌شود!"
+msgid "We do not provide representation service yet!"
+msgstr "در حال حاضر زیارت نیابتی ارائه نمی‌شود!"
 
 #: khadije/includes/languages/trans_project.php:517
-msgid "Your are using this advice"
-msgstr "شما از این خدمات مشاوره استفاده می کنید"
+msgid "Your are using this representation"
+msgstr "شما از این زیارت نیابتی استفاده می کنید"
 
 #: khadije/includes/languages/trans_project.php:520
-msgid "Advice Service"
+msgid "Consulting Service"
 msgstr "خدمات مشاوره"
 
 #: khadije/includes/languages/trans_project.php:526
@@ -10738,11 +10742,11 @@ msgid "cpRepresentationOption"
 msgstr "تنظیمات زیارت نیابتی"
 
 #: khadije/includes/languages/trans_static.php:92
-msgid "cpAdviceView"
-msgstr "نمایش خدمات مشاوره"
+msgid "cpConsultingView"
+msgstr "خدمات مشاوره"
 
 #: khadije/includes/languages/trans_static.php:93
-msgid "cpAdviceOption"
+msgid "cpConsultingOption"
 msgstr "تنظیمات خدمات مشاوره"
 
 #: khadije/includes/languages/trans_static.php:94
@@ -11111,6 +11115,72 @@ msgstr "راهی برای ثبت تشرف وجود ندارد"
 #: khadije/includes/permission/permission.php:19
 msgid "Can view the admin page"
 msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
+
+#~ msgid "Your advice request was saved"
+#~ msgstr "درخواست مشاوره شما با موفقیت ذخیره شد"
+
+#~ msgid "Register for new advice request"
+#~ msgstr "ثبت نام برای خدمات مشاوره جدید"
+
+#~ msgid "List of your advice request"
+#~ msgstr "لیست خدمات مشاوره شما"
+
+#~ msgid "register for new advice request"
+#~ msgstr "ثبت نام برای خدمات مشاوره جدید"
+
+#~ msgid "Your advice was saved"
+#~ msgstr "درخواست مشاوره شما ذخیره شد"
+
+#~ msgid "in 3 simple step register your request for have advice"
+#~ msgstr "در سه مرحله ساده، درخواست خود را برای مشاوره ثبت کنید"
+
+#~ msgid "check your advice requests"
+#~ msgstr "بررسی لیست خدمات مشاوره شما"
+
+#~ msgid "Advice successfully edited"
+#~ msgstr "خدمات مشاوره با موفقیت ویرایش شد"
+
+#~ msgid "Advice successfully added"
+#~ msgstr "خدمات مشاوره با موفقیت اضافه شد"
+
+#~ msgid "Advice request options"
+#~ msgstr "تنظیمات خدمات مشاوره"
+
+#~ msgid "check advice request options and update requests"
+#~ msgstr "بررسی خدمات مشاوره و به روزرسانی درخواست‌ها"
+
+#~ msgid "Back to advice request list"
+#~ msgstr "بازگشت به لیست درخواست‌های مشاوره"
+
+#~ msgid "Advice request list"
+#~ msgstr "لیست درخواست‌های مشاوره"
+
+#~ msgid "check advice requests"
+#~ msgstr "بررسی لیست درخواست‌های خدمات مشاوره"
+
+#~ msgid "Advice"
+#~ msgstr "نصیحت"
+
+#~ msgid "Search in advice"
+#~ msgstr "جستجو در خدمات مشاوره"
+
+#~ msgid "advice service list"
+#~ msgstr "خدمات مشاوره"
+
+#~ msgid "We do not provide advice service yet!"
+#~ msgstr "در حال حاضر خدمات مشاوره ارائه نمی‌شود!"
+
+#~ msgid "Your are using this advice"
+#~ msgstr "شما از این خدمات مشاوره استفاده می کنید"
+
+#~ msgid "Advice Service"
+#~ msgstr "خدمات مشاوره"
+
+#~ msgid "cpAdviceView"
+#~ msgstr "نمایش خدمات مشاوره"
+
+#~ msgid "cpAdviceOption"
+#~ msgstr "تنظیمات خدمات مشاوره"
 
 #~ msgid "Ok"
 #~ msgstr "بسیار خب"
