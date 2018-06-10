@@ -257,6 +257,12 @@ body{
 .typed-cursor{opacity: 1;font-weight: 100;animation: blink 0.7s infinite;}
 @keyframes blink{ 0% { opacity:1; } 50% { opacity:0.3; } 100% { opacity:1; } }
 /*header nav*/
+#sHeaderNav
+{
+	-webkit-touch-callout:none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 #sHeaderNav .headerLine{
 	background-color: #f5f5f5;
 	background-color: rgba(245,245,245, 0.9);
@@ -289,9 +295,6 @@ body.down #sHeaderNav.clone {
 	z-index: 2;
 	transform: translateY(-100%);
 	transition: 0.3s transform cubic-bezier(.3,.73,.3,.74);
-	-webkit-touch-callout:none;
-	-webkit-user-select: none;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 #sHeaderNav.clone .headerLine{
 	padding-top: 13px;
