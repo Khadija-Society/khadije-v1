@@ -63,7 +63,7 @@ class mytransactions
 
 	public static function transaction_list()
 	{
-		$limit = 100;
+		$limit = 50;
 		$pagenation_query = "SELECT	COUNT(*) AS `count`	FROM `transactions` WHERE transactions.verify = 1 ";
 		$pagenation_query = \dash\db::get($pagenation_query, 'count', true);
 		list($limit_start, $limit) = \dash\db::pagnation((int) $pagenation_query, $limit);
