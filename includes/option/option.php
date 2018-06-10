@@ -26,6 +26,7 @@ self::$url['protocol']              = 'https';
 
 self::$config['slider_tag'][]  = "slider";
 
+self::$config['notif']['image'] = '/static/images/logo.png';
 
 self::$config['site']['title']  = "Khadije Charity";
 
