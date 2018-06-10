@@ -70,7 +70,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-        <td><a href="{{url.here}}/users/set?id={{value.user_id | coding('encode')}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
+        <td><a href="{{url.here}}/users/view?id={{value.user_id | coding('encode')}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
         <td><a href="{{url.here}}/service?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
         <td>{{value.expertvalue}}</td>
         <td>{{value.expertyear | fitNumber(false)}}</td>
