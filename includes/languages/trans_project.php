@@ -19,7 +19,7 @@ class twigTransTerms
 	echo T_("Full Name");                                                             // Line 88
 	echo T_("Mobile");                                                                // Line 123
 	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 96
-	echo T_("Email");                                                                 // Line 456
+	echo T_("Email");                                                                 // Line 66
 	echo T_("Your Message");                                                          // Line 110
 	echo T_("Send");                                                                  // Line 127
 
@@ -66,29 +66,30 @@ class twigTransTerms
 	//-----------------------------------------------------content\health\display.html
 
 	//-------------------------------------------------------content\home\display.html
-	echo T_("Read more");                                                             // Line 138
+	echo T_("Read more");                                                             // Line 140
 	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 36
 	echo T_("You also partake in salawat");                                           // Line 38
-	echo T_("Say salawat and press here");                                            // Line 40
+	echo T_("Say salawat");                                                           // Line 40
+	echo T_("and press here");                                                        // Line 40
 	echo T_("Servants registration");                                                 // Line 164
 	echo T_("Virtual pilgrimage");                                                    // Line 156
-	echo T_("Collective or individual travel");                                       // Line 63
+	echo T_("Collective or individual travel");                                       // Line 65
 	echo T_("Deputy pilgrimage");                                                     // Line 155
-	echo T_("Balloting names");                                                       // Line 75
-	echo T_("Tv show Sahargahan haram");                                              // Line 81
-	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 88
-	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 89
-	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 89
-	echo T_("in Resalat bank of Iran");                                               // Line 92
-	echo T_("Card number");                                                           // Line 96
-	echo T_("Account number");                                                        // Line 99
-	echo T_("Iranian bank Shaba number");                                             // Line 102
-	echo T_("You can change amount of your donation");                                // Line 110
-	echo T_("Donate as anonymous");                                                   // Line 113
-	echo T_("Donate with register details");                                          // Line 118
-	echo T_("Latest News");                                                           // Line 129
-	echo T_("Mr.Farahzad's statement");                                               // Line 162
-	echo T_("Contact with manager");                                                  // Line 173
+	echo T_("Balloting names");                                                       // Line 77
+	echo T_("Tv show Sahargahan haram");                                              // Line 83
+	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 90
+	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 91
+	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 91
+	echo T_("in Resalat bank of Iran");                                               // Line 94
+	echo T_("Card number");                                                           // Line 98
+	echo T_("Account number");                                                        // Line 101
+	echo T_("Iranian bank Shaba number");                                             // Line 104
+	echo T_("You can change amount of your donation");                                // Line 112
+	echo T_("Donate as anonymous");                                                   // Line 115
+	echo T_("Donate with register details");                                          // Line 120
+	echo T_("Latest News");                                                           // Line 131
+	echo T_("Mr.Farahzad's statement");                                               // Line 164
+	echo T_("Contact with manager");                                                  // Line 175
 
 	//--------------------------------------------------------content\main\layout.html
 	echo T_("If religion being in the Pleiades, people from Persia can obtainment to that");// Line 46
@@ -126,6 +127,8 @@ class twigTransTerms
 	echo T_("Aparat");                                                                // Line 221
 	echo T_("Eitaa");                                                                 // Line 224
 	echo T_("Soroush App");                                                           // Line 226
+
+	//----------------------------------------------------content\manager\display.html
 
 	//------------------------------------------------content\mylovestory\display.html
 	echo T_("Price");                                                                 // Line 18
@@ -325,7 +328,7 @@ class twigTransTerms
 	echo T_("Submitted on");                                                          // Line 33
 	echo T_("Updated on");                                                            // Line 34
 	echo T_("Current status");                                                        // Line 36
-	echo T_("Status");                                                                // Line 60
+	echo T_("Status");                                                                // Line 73
 	echo T_("Approve");                                                               // Line 101
 	echo T_("Awaiting");                                                              // Line 206
 	echo T_("Unapprove");                                                             // Line 103
@@ -334,16 +337,16 @@ class twigTransTerms
 	echo T_("Update");                                                                // Line 63
 
 	//---------------------------------------content_cp\admincontact\home\display.html
-	echo T_("Search");                                                                // Line 42
+	echo T_("Search");                                                                // Line 44
 	echo T_("Detail");                                                                // Line 55
 	echo T_("Comment");                                                               // Line 56
 	echo T_("Date");                                                                  // Line 29
 	echo T_("Without name");                                                          // Line 128
 	echo T_("Visitor detail");                                                        // Line 96
 	echo T_("Created on");                                                            // Line 110
-	echo T_("Clear filters");                                                         // Line 105
-	echo T_("Result not found!");                                                     // Line 104
-	echo T_("Search with new keywords.");                                             // Line 104
+	echo T_("Clear filters");                                                         // Line 144
+	echo T_("Result not found!");                                                     // Line 143
+	echo T_("Search with new keywords.");                                             // Line 143
 	echo T_("No record exist!");                                                      // Line 111
 
 	//----------------------------------------------------content_cp\book\display.html
@@ -547,6 +550,26 @@ class twigTransTerms
 	echo T_("delete from admin");                                                     // Line 256
 	echo T_("Edit partner");                                                          // Line 527
 
+	//----------------------------------------content_cp\usersalavat\home\display.html
+	echo T_("Username");                                                              // Line 57
+	echo T_("Display Name");                                                          // Line 60
+	echo T_("Password");                                                              // Line 70
+	echo T_("Salavat");                                                               // Line 76
+	echo T_("Created date");                                                          // Line 79
+	echo T_("Last Modified");                                                         // Line 82
+	echo T_("Mr");                                                                    // Line 16
+	echo T_("Mrs");                                                                   // Line 97
+	echo T_("Password is set");                                                       // Line 113
+	echo T_("Password is not set!");                                                  // Line 113
+	echo T_("Two step verification in enabled");                                      // Line 114
+	echo T_("Two step verification in disable");                                      // Line 114
+	echo T_("Hi!");                                                                   // Line 150
+	echo T_("Try to start with add new user!");                                       // Line 150
+	echo T_("All :Members");                                                          // Line 160
+	echo T_(":Experts");                                                              // Line 169
+	echo T_(":Teachers");                                                             // Line 179
+	echo T_("Students");                                                              // Line 190
+
 	//--------------------------------------------content_delneveshte\home\layout.html
 	echo T_("Click and go to khadije site");                                          // Line 100
 	echo T_("Wrote your heart sounds");                                               // Line 111
@@ -557,10 +580,11 @@ class twigTransTerms
 
 	//------------------------------------------content_delneveshte\home\messages.html
 	echo T_("Last messages");                                                         // Line 3
-	echo T_("Mr");                                                                    // Line 16
 	echo T_("Miss");                                                                  // Line 18
 	echo T_("I am sympathetic");                                                      // Line 29
 	echo T_("People who sympathetic with this person");                               // Line 39
+
+	//---------------------public_html\files\1\8-eacf331f0ffc35d4b482f1d15a887d3b.html
 
 	//---------------------public_html\static\siftal\fonts\siftal\icons-reference.html
 
