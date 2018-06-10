@@ -10,6 +10,7 @@
 {%set topSliderPosts = posts({"limit" : 3, "tag" : "slider"})%}
 {%set defaultImageTop = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
         <div class="sp-slides">
+{%if topSliderPosts%}
 {%for key, myNews in topSliderPosts%}
           <div class="sp-slide">
             <img class="sp-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
@@ -21,6 +22,11 @@
             <p class="sp-layer sp-black sp-padding s0" data-position="bottomRight" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="up" data-show-delay="400" data-hide-transition="down">{{myNews.excerpt}} <a href="{{url.here}}/{{myNews.url}}" class="badge floatRa mT5">{%trans "Read more"%}</a></p>
           </div>
 {%endfor%}
+{%else%}
+          <div class="sp-slide">
+            <img class="sp-image" src="{{defaultImageTop}}" alt="{{site.title}}">
+          </div>
+{%endif%}
         </div>
 
       </div>
@@ -58,7 +64,7 @@
       </a>
     </div>
     <div class="c">
-      <a href="{{url.here}}/a/deputy">
+      <a href="{{url.here}}/a/deputy" data-direct>
         <div class="sprite-deputy"></div>
         <h2>{%trans "Deputy pilgrimage"%}</h2>
       </a>
@@ -116,10 +122,11 @@
   </section>
 
 
+{%set lastPostsRecord = posts({"limit" : 10})%}
+{%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
+{%if lastPostsRecord%}
   <section class="latestNews txtC mT25 mB50">
     <h3 class="sB3">{%trans "Latest News"%}</h3>
-    {%set lastPostsRecord = posts({"limit" : 10})%}
-    {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
 
     <div class="goldenB latestNewsSlider slider-pro" id='latestNewsSlider'>
 
@@ -146,6 +153,7 @@
 
     </div>
   </section>
+{%endif%}
 
   <section class="f justify-center picto fs09">
     <div class="c4 s">
