@@ -12,15 +12,15 @@ class report
 
 		foreach ($payment as $key => $value)
 		{
-			$hazine_query = "SELECT sum(transactions.plus) AS `value`, transactions.hazinekard AS `title` FROM transactions  WHERE verify = 1 AND transactions.payment = '$key' GROUP BY transactions.hazinekard";
-			$pie          = \dash\db::get($hazine_query, ['title', 'value']);
-			$new_pie      = [];
+			// $hazine_query = "SELECT sum(transactions.plus) AS `value`, transactions.hazinekard AS `title` FROM transactions  WHERE verify = 1 AND transactions.payment = '$key' GROUP BY transactions.hazinekard";
+			// $pie          = \dash\db::get($hazine_query, ['title', 'value']);
+			// $new_pie      = [];
 
-			foreach ($pie as $title => $xvalue)
-			{
-				$new_pie[] = ['title' => $title, 'value' => $xvalue];
-			}
-
+			// foreach ($pie as $title => $xvalue)
+			// {
+			// 	$new_pie[] = ['title' => $title, 'value' => $xvalue];
+			// }
+			$new_pie = [];
 			$result[] =
 			[
 				'payment' => T_(ucfirst($key)),
@@ -34,7 +34,7 @@ class report
 	public static function hazinekard()
 	{
 
-		$query  = "SELECT sum(transactions.plus) AS `sum`, transactions.hazinekard AS `hazinekard` FROM transactions WHERE verify = 1 GROUP BY transactions.hazinekard";
+		$query  = "SELECT sum(transactions.plus) AS `sum`, transactions.hazinekard AS `hazinekard` FROM transactions WHERE verify = 1 GROUP BY transactions.hazinekard ORDER BY sum DESC";
 		$result = \dash\db::get($query, ['hazinekard', 'sum']);
 		$temp = [];
 		foreach ($result as $title => $xvalue)
