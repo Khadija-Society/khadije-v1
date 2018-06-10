@@ -69,7 +69,7 @@
           <a href="{{url.this}}/view?id={{value.id}}">{{value.id | fitNumber}}</a>
         </td>
         <td>
-          <a href="{{url.here}}/users/view?id={{value.user_id}}">
+          <a href="{{url.here}}/users/view?id={{value.user_id | coding('encode')}}">
             <span class="sf-user fc-mute"></span>
             {{value.firstname}} <b>{{value.lastname}}</b>
           </a>

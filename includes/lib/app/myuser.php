@@ -132,7 +132,8 @@ class myuser
 
 		if($pasportdate)
 		{
-			$pasportdate = date("Y-m-d", strtotime($pasportdate));
+			$pasportdate = \dash\date::force_gregorian($pasportdate);
+			$pasportdate = \dash\date::db($pasportdate);
 		}
 
 		$education = \dash\app::request('education');
@@ -248,12 +249,22 @@ class myuser
 			return false;
 		}
 
-		$provice_list = \dash\utility\location\provinces::list('localname');
-		$provice_list = array_unique($provice_list);
-
-		if($province && !in_array($province, $provice_list))
+		if($province && !\dash\utility\location\provinces::check($province))
 		{
 			\dash\notif::error(T_("Invalid province name"), 'province');
+			return false;
+		}
+
+		if($city && !\dash\utility\location\cites::check($city))
+		{
+			\dash\notif::error(T_("Invalid city name"), 'city');
+			return false;
+		}
+
+
+		if($country && !\dash\utility\location\countres::check($country))
+		{
+			\dash\notif::error(T_("Invalid country name"), 'country');
 			return false;
 		}
 

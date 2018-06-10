@@ -44,16 +44,15 @@ class view
 		];
 		\dash\data::parentList(implode(',' ,array_values($parentList)));
 
-		$countryList = \dash\utility\location\countres::list('name', 'name - localname');
-		\dash\data::countryList(implode(',', $countryList));
+		$countryList = \dash\utility\location\countres::$data;
+		\dash\data::countryList($countryList);
 
-		$cityList = \dash\utility\location\cites::list('localname');
-		$cityList = array_unique($cityList);
-		\dash\data::cityList(implode(',', $cityList));
+		$cityList    = \dash\utility\location\cites::key_list('localname');
+		\dash\data::cityList($cityList);
 
-		$proviceList = \dash\utility\location\provinces::list('localname');
-		$proviceList = array_unique($proviceList);
-		\dash\data::proviceList(implode(',', $proviceList));
+		$proviceList = \dash\utility\location\provinces::key_list('localname');
+		\dash\data::proviceList($proviceList);
+
 	}
 }
 ?>

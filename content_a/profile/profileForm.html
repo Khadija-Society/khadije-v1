@@ -7,14 +7,14 @@
  <div class="c9">
   <form class="cbox" method="post" autocomplete="off">
 
-   <div class="f mB10">
-    <div class="c6 s12">{{block ('igenderRadio') }}</div>
-    <div class="c6 s12">{{block ('iMarriedRadio') }}</div>
-   </div>
-
    <div class="f">
     <div class="c6 s12 pRa5">{{block ('iname') }}</div>
     <div class="c6 s12">{{block ('ifamily') }}</div>
+   </div>
+
+   <div class="f mB10">
+    <div class="c6 s12">{{block ('igender') }}</div>
+    <div class="c6 s12">{{block ('iMarital') }}</div>
    </div>
 
    <div class="f">
@@ -22,6 +22,7 @@
     <div class="c4 s12 pRa5">{{block ('incode') }}</div>
     <div class="c4 s12">{{block ('ibirthday') }}</div>
    </div>
+
 
    <div class="f">
     <div class="c4 s12 pRa5">{{block ('icountry') }}</div>
@@ -104,54 +105,35 @@
 {%endblock%}
 
 
+
+
+
+
 {%block igender%}
-<label for="gender">{%trans "Gender"%}</label>
-<div class="switch1 gender mA0 pLR5">
- <input type="checkbox" name="gender" id="gender" {%if userdetail.gender == 'female' %}checked{%endif%}>
- <label for="gender" ></label>
+<div class="pRa5">
+  <label for="gender">{%trans "Gender"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+  <select name="gender" class="ui dropdown select">
+    <option value="" readonly>{%trans "Please select one itme"%}</option>
+    <option value="male" {%if userdetail.gender == 'male' or ( not userdetail.gender and defaultDenderExpert == 'male') %}selected {%endif%}>{%trans "Male"%}</option>
+    <option value="female" {%if userdetail.gender == 'female' or ( not userdetail.gender and defaultDenderExpert == 'female') %}selected{%endif%}>{%trans "Female"%}</option>
+  </select>
 </div>
 {%endblock%}
 
 
-{%block igenderRadio%}
-<label for="gender">{%trans "Gender"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-<div class="f">
- <div class="radio1 green">
-  <input type="radio" id="r-male" name="gender" value="male" {%if userdetail.gender == 'male' %}checked{%endif%}>
-  <label for="r-male">{%trans "Male"%}</label>
- </div>
-
- <div class="radio1 green">
-  <input type="radio" id="r-female" name="gender" value="female" {%if userdetail.gender == 'female' %}checked{%endif%}>
-  <label for="r-female">{%trans "Female"%}</label>
- </div>
+{%block iMarital%}
+<div class="">
+  <label for="married">{%trans "Marital"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+  <select name="Married" class="ui dropdown select">
+    <option value="" readonly>{%trans "Please select one itme"%}</option>
+    <option value="single" {%if userdetail.married == 'single' %}selected {%endif%}>{%trans "Single"%}</option>
+    <option value="married" {%if userdetail.married == 'married' %}selected{%endif%}>{%trans "Married"%}</option>
+  </select>
 </div>
 {%endblock%}
 
 
-{%block iMarried%}
-<label for="Married">{%trans "Marital"%}</label>
-<div class="switch1 mA0 pLR5">
- <input type="checkbox" name="Married" id="Married" {%if userdetail.married == 'married' %}checked{%endif%}>
- <label for="Married"  data-on='{%trans "Married"%}' data-off='{%trans "Single"%}'></label>
-</div>
-{%endblock%}
 
-
-{%block iMarriedRadio%}
-<label for="Married">{%trans "Marital"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-<div class="f">
- <div class="radio1 yellow">
-  <input type="radio" id="r-single" name="Married" value="single" {%if userdetail.married == 'single' %}checked{%endif%}>
-  <label for="r-single">{%trans "Single"%}</label>
- </div>
-
- <div class="radio1 yellow">
-  <input type="radio" id="r-married" name="Married" value="married" {%if userdetail.married == 'married' %}checked{%endif%}>
-  <label for="r-married">{%trans "Married"%}</label>
- </div>
-</div>
-{%endblock%}
 
 
 {%block iArabicLang%}
@@ -165,33 +147,30 @@
 
 
 
-{%block icountry%}
-<label for='country'>{%trans "Country"%}</label>
-<div class="input">
- <input type='text' class="autoList" name='country' id='country' data-minchars="1" data-autofirst data-list="{{countryList}}" value="{{userdetail.country}}" autocomplete="off" />
-</div>
-{%endblock%}
 
 
 {%block iprovince%}
-<label for='province'>{%trans "Province"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-<select name="province" class="select">
-  <option value="">{%trans "Please select one item"%}</option>
+<label for='province'>{%trans "Province"%}</label>
+<select name="province" class="ui dropdown select search" id="province">
+  <option value="" readonly>{%trans "Select province"%}</option>
   {%for key, value in proviceList%}
-    <option value="{{value}}" {%if userdetail.province == value%} selected {%endif%}>{{value}}</option>
+    <option value="{{key}}" {% if userdetail.province == key %} selected {%endif%}>{{value}}</option>
   {%endfor%}
-
 </select>
-
 {%endblock%}
 
 
 {%block icity%}
 <label for='city'>{%trans "City"%}</label>
-<div class="input">
- <input type='text' class="autoList" name='city' id='city' data-minchars="1" data-autofirst data-list="{{cityList}}" value="{{userdetail.city}}" autocomplete="off"/>
-</div>
+<select name="city" class="ui dropdown select search" id="city">
+  <option value="" readonly>{%trans "Select city"%}</option>
+  {%for key, value in cityList%}
+    <option value="{{key}}" {% if userdetail.city == key %} selected {%endif%}>{{value}}</option>
+  {%endfor%}
+</select>
 {%endblock%}
+
+
 
 
 {%block izipcode%}
@@ -328,3 +307,21 @@
 
 
 
+{%block icountry%}
+<div class="mB10">
+  <label for='country'>{%trans "Country"%}</label>
+  <div class="ui fluid search selection dropdown">
+    <input type="hidden" name="country" value="{{userdetail.country}}">
+    <i class="dropdown icon"></i>
+    <div class="default text">{%trans "Choose your country"%}</div>
+    <div class="menu">
+{%for key, value in countryList%}
+      <div class="item" data-value="{{key}}">
+        <i class="{{value.iso2 | lower }} flag"></i>{%set myCountry = value.name%} {%trans myCountry%}
+        <small class="description">{{value.name | capitalize}}</small>
+      </div>
+{%endfor%}
+    </div>
+  </div>
+</div>
+{%endblock%}
