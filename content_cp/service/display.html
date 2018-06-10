@@ -62,6 +62,7 @@
         <th data-sort="{{sortLink.enddate.order}}"><a href="{{sortLink.enddate.link}}">{%trans "enddate"%}</a></th>
         <th data-sort="{{sortLink.job.order}}"><a href="{{sortLink.job.link}}">{%trans "job"%}</a></th>
         <th data-sort="{{sortLink.desc.order}}"><a href="{{sortLink.desc.link}}">{%trans "desc"%}</a></th>
+        <th data-sort="{{sortLink.arabiclang.order}}"><a href="{{sortLink.arabiclang.link}}">{%trans "arabic"%}</a></th>
         <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Expert"%}</a></th>
       </tr>
     </thead>
@@ -74,10 +75,11 @@
         <td>{{value.expertvalue}}</td>
         <td>{{value.expertyear | fitNumber(false)}}</td>
         <td>{{value.startdate | date("Y-m-d") | fitNumber(false)}}</td>
+        <td>{{value.enddate | date("Y-m-d") | fitNumber(false)}}</td>
         <td>{{value.job}}</td>
         <td>{{value.desc}}</td>
-        <td>{{value.enddate | date("Y-m-d") | fitNumber(false)}}</td>
-        <td><a href="{{url.here}}/service?expert={{value.expert}}">{{value.expert}}</a></td>
+        <td class="txtC">{%if value.arabiclang%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-times fc-mute"></span>{%endif%}</td>
+        <td class="collapsing"><a href="{{url.here}}/service?expert={{value.expert}}">{{value.expert}}</a></td>
       </tr>
       {%endfor%}
     </tbody>
