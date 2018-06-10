@@ -1,5 +1,5 @@
 <?php
-namespace content_a\advice\home;
+namespace content_a\consulting\home;
 
 class model
 {

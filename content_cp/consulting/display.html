@@ -39,9 +39,9 @@
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.here}}/advice'>
+  <form method="get" action='{{url.here}}/consulting'>
     <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search in advice"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
+      <input type="search" name="q" placeholder='{%trans "Search in consulting"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
   </form>
@@ -61,7 +61,7 @@
         <th data-sort="{{sortLink.phone.order}}"><a href="{{sortLink.phone.link}}">{%trans "phone"%}</a></th>
         <th data-sort="{{sortLink.married.order}}"><a href="{{sortLink.married.link}}">{%trans "married"%}</a></th>
         <th data-sort="{{sortLink.gender.order}}"><a href="{{sortLink.gender.link}}">{%trans "gender"%}</a></th>
-        <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Advice"%}</a></th>
+        <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Consulting"%}</a></th>
         <th data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
       </tr>
     </thead>
@@ -76,7 +76,7 @@
         <td>{{value.phone | fitNumber(false)}}</td>
         <td>{%set my_married = value.married | capitalize%}{%trans my_married%}</td>
         <td>{%set my_gender = value.gender | capitalize%}{%trans my_gender%}</td>
-        <td><a href="{{url.this}}?advice={{value.expert}}">{{value.expert}}</a></td>
+        <td><a href="{{url.this}}?consulting={{value.expert}}">{{value.expert}}</a></td>
         <td><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status %}{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
@@ -91,7 +91,7 @@
 {%block htmlFilter%}
 <p class="f fs14 alert alert-info">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.here}}/advice">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.here}}/consulting">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -99,7 +99,7 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 alert alert-error">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.here}}/advice">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.here}}/consulting">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 

@@ -149,14 +149,14 @@
     "cat": "Representation",
     "require": []
   },
-  "cpAdviceView": {
-    "title": "cpAdviceView",
-    "cat": "Advice",
+  "cpConsultingView": {
+    "title": "cpConsultingView",
+    "cat": "Consulting",
     "require": []
   },
-  "cpAdviceOption": {
-    "title": "cpAdviceOption",
-    "cat": "Advice",
+  "cpConsultingOption": {
+    "title": "cpConsultingOption",
+    "cat": "Consulting",
     "require": []
   },
   "cpHealthView": {

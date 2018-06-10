@@ -1,12 +1,12 @@
 <?php
-namespace content_a\advice\detail;
+namespace content_a\consulting\detail;
 
 
 class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Register for new advice request"). ' | '. T_('Step 3'));
+		\dash\data::page_title(T_("Register for new consulting request"). ' | '. T_('Step 3'));
 		\dash\data::page_desc(T_('fill your request detail'));
 
 		\dash\data::editMode(true);

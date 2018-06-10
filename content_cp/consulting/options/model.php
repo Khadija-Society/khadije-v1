@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\advice\options;
+namespace content_cp\consulting\options;
 
 
 class model
@@ -31,7 +31,7 @@ class model
 
 	public static function post()
 	{
-		\dash\permission::access('cpAdviceOption');
+		\dash\permission::access('cpConsultingOption');
 
 		$post           = [];
 		$post['title']  = \dash\request::post('title');
@@ -40,7 +40,7 @@ class model
 		$post['amount'] = null;
 		$post['desc']   = \dash\request::post('desc');
 		$post['status'] = \dash\request::post('status') ? 'enable' : 'disable' ;
-		$post['type']   = 'advice';
+		$post['type']   = 'consulting';
 
 		$file = self::upload_thumb();
 		if($file === false)
@@ -67,12 +67,12 @@ class model
 		{
 			if(\dash\request::get('edit'))
 			{
-				\dash\notif::ok(T_("Advice successfully edited"));
-				\dash\redirect::to(\dash\url::here(). '/advice/options');
+				\dash\notif::ok(T_("Consulting successfully edited"));
+				\dash\redirect::to(\dash\url::here(). '/consulting/options');
 			}
 			else
 			{
-				\dash\notif::ok(T_("Advice successfully added"));
+				\dash\notif::ok(T_("Consulting successfully added"));
 				\dash\redirect::pwd();
 			}
 		}

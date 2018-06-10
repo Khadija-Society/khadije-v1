@@ -80,7 +80,7 @@ class TransStatic
 	echo T_("Delneveshte");
 	echo T_("Admin Contact");
 	echo T_("Representation");
-	echo T_("Advice");
+	echo T_("Consulting");
 	echo T_("Health");
 	echo T_("cpDelneveshteEdit");
 	echo T_("cpDelneveshteView");
@@ -89,8 +89,8 @@ class TransStatic
 	echo T_("cpRepresentationChangeStatus");
 	echo T_("cpRepresentationView");
 	echo T_("cpRepresentationOption");
-	echo T_("cpAdviceView");
-	echo T_("cpAdviceOption");
+	echo T_("cpConsultingView");
+	echo T_("cpConsultingOption");
 	echo T_("cpHealthView");
 	echo T_("cpHealthOption");
 

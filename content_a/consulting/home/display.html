@@ -26,7 +26,7 @@
      <a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"cancel"}' class="badge danger sm mA5">{%trans "Cancel"%}</a>
 {%endif%}
 {%if value.status == 'draft'%}
-     <a href="{{url.here}}/advice/profile?id={{value.id}}" class="badge sm mA5">{%trans "Edit"%}</a>
+     <a href="{{url.here}}/consulting/profile?id={{value.id}}" class="badge sm mA5">{%trans "Edit"%}</a>
 {%endif%}
    </div>
   </div>
@@ -34,7 +34,7 @@
 {%endfor%}
 
   <div class="icard">
-   <a href="{{url.here}}/advice/request" class="btn primary block">{%trans "register for new advice request"%}</a>
+   <a href="{{url.here}}/consulting/request" class="btn primary block">{%trans "register for new consulting request"%}</a>
   </div>
 
  </div>

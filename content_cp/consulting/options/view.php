@@ -1,24 +1,24 @@
 <?php
-namespace content_cp\advice\options;
+namespace content_cp\consulting\options;
 
 
 class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpAdviceOption');
+		\dash\permission::access('cpConsultingOption');
 		\dash\data::page_pictogram('cogs');
 
-		\dash\data::page_title(T_("Advice request options"));
-		\dash\data::page_desc(T_("check advice request options and update requests"));
-		\dash\data::badge_link(\dash\url::here(). '/advice');
-		\dash\data::badge_text(T_('Back to advice request list'));
+		\dash\data::page_title(T_("Consulting request options"));
+		\dash\data::page_desc(T_("check consulting request options and update requests"));
+		\dash\data::badge_link(\dash\url::here(). '/consulting');
+		\dash\data::badge_text(T_('Back to consulting request list'));
 
 		\dash\data::bodyclass('unselectable');
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
-		\dash\data::need(\lib\app\need::list('advice'));
+		\dash\data::need(\lib\app\need::list('consulting'));
 
 		if(\dash\request::get('edit'))
 		{

@@ -1,5 +1,5 @@
 <?php
-namespace content_a\advice\request;
+namespace content_a\consulting\request;
 
 
 class model
@@ -11,14 +11,14 @@ class model
 		$post            = [];
 		$post['need_id'] = \dash\request::post('need');
 		$post['status']  = 'draft';
-		$post['type']    = 'advice';
+		$post['type']    = 'consulting';
 
 		$service_id = \lib\app\service::add($post);
 
 		if(\dash\engine\process::status() && $service_id)
 		{
-			\dash\notif::ok(T_("Your advice was saved"));
-			\dash\redirect::to(\dash\url::here(). '/advice/profile?id='. $service_id);
+			\dash\notif::ok(T_("Your consulting was saved"));
+			\dash\redirect::to(\dash\url::here(). '/consulting/profile?id='. $service_id);
 		}
 	}
 }

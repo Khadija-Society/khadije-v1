@@ -375,9 +375,9 @@ class twigTransTerms
 	echo T_("Representation");                                                        // Line 21
 	echo T_("Action");                                                                // Line 82
 
-	//--------------------------------------------------content_cp/advice/display.html
-	echo T_("Search in advice");                                                      // Line 44
-	echo T_("Advice");                                                                // Line 99
+	//--------------------------------------------------content_cp/consulting/display.html
+	echo T_("Search in consulting");                                                      // Line 44
+	echo T_("Consulting");                                                                // Line 99
 
 	//---------------------------------------------------------content_cp/sidenav.html
 	echo T_("Dashboard");                                                             // Line 5
@@ -390,7 +390,7 @@ class twigTransTerms
 	echo T_("Servant list");                                                          // Line 20
 	echo T_("Group trip");                                                            // Line 21
 	echo T_("Family trip");                                                           // Line 22
-	echo T_("advice service list");                                                   // Line 23
+	echo T_("consulting service list");                                                   // Line 23
 	echo T_("health service list");                                                   // Line 24
 	echo T_("representation service list");                                           // Line 25
 	echo T_("CMS");                                                                   // Line 33
@@ -507,17 +507,17 @@ class twigTransTerms
 	echo T_("Expert year");                                                           // Line 94
 	echo T_("Your car name");                                                         // Line 102
 
-	//-------------------------------------------content_a/advice/request/display.html
-	echo T_("We do not provide advice service yet!");                                 // Line 9
+	//-------------------------------------------content_a/consulting/request/display.html
+	echo T_("We do not provide consulting service yet!");                                 // Line 9
 
-	//----------------------------------------------content_a/advice/home/display.html
-	echo T_("register for new advice request");                                       // Line 37
+	//----------------------------------------------content_a/consulting/home/display.html
+	echo T_("register for new consulting request");                                       // Line 37
 
-	//--------------------------------------------content_a/advice/detail/display.html
-	echo T_("Your are using this advice");                                            // Line 9
+	//--------------------------------------------content_a/consulting/detail/display.html
+	echo T_("Your are using this consulting");                                            // Line 9
 
 	//------------------------------------------------------content_a/main/layout.html
-	echo T_("Advice Service");                                                        // Line 39
+	echo T_("Consulting Service");                                                        // Line 39
 	echo T_("Edit your profile");                                                     // Line 22
 	echo T_("Avatar of you");                                                         // Line 24
 	echo T_("Default Avatar");                                                        // Line 29

@@ -1,5 +1,5 @@
 <?php
-namespace content_a\advice\profile;
+namespace content_a\consulting\profile;
 
 
 class model
@@ -31,7 +31,7 @@ class model
 		if(\dash\engine\process::status())
 		{
 			\dash\notif::ok(T_("Your detail was saved"));
-			\dash\redirect::to(\dash\url::here(). '/advice/detail?id='. \dash\request::get('id'));
+			\dash\redirect::to(\dash\url::here(). '/consulting/detail?id='. \dash\request::get('id'));
 		}
 
 	}

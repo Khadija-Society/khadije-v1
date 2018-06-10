@@ -1,5 +1,5 @@
 <?php
-namespace content_a\advice\profile;
+namespace content_a\consulting\profile;
 
 
 class controller

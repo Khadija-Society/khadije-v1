@@ -1,5 +1,5 @@
 <?php
-namespace content_a\advice\detail;
+namespace content_a\consulting\detail;
 
 
 class model
@@ -18,15 +18,15 @@ class model
 		// $post['car']         = \dash\request::post('car');
 		// $post['desc']        = \dash\request::post('desc');
 		$post['status']      = \dash\request::post('status') === 'awaiting' ? 'awaiting' : 'cancel';
-		$post['type']        = 'advice';
+		$post['type']        = 'consulting';
 
 
 		\lib\app\service::edit($post, \dash\request::get('id'));
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok(T_("Your advice request was saved"));
-			\dash\redirect::to(\dash\url::here(). '/advice');
+			\dash\notif::ok(T_("Your consulting request was saved"));
+			\dash\redirect::to(\dash\url::here(). '/consulting');
 		}
 	}
 }
