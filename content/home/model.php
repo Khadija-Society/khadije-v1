@@ -10,7 +10,7 @@ class model
 		{
 			\dash\temp::set('force_stop_visitor', true);
 			$count =\lib\db\salavats::befrest();
-			\dash\notif::info(T_("Allahouma sali ala mohamed wa ali muhammad"),['position'=>'center']);
+			\dash\notif::info(T_("Allahouma sali ala mohamed wa ali muhammad"),['position'=>'bottomCenter']);
 			\dash\notif::result($count);
 			return;
 		}
