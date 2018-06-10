@@ -1252,6 +1252,9 @@ a:active {
   background-color: #f7f7f7;
   color: #333; }
 
+.msg:empty {
+  display: none; }
+
 .msg .title {
   font-size: 120%;
   font-weight: bold; }
@@ -1843,6 +1846,9 @@ progress.xl, meter.xl {
 .tbl p {
   margin: 0; }
 
+.tbl [class^="sf-"] {
+  display: inline-block; }
+
 .tbox {
   margin: 0.5em 0 1.5em;
   font-size: 1.2em;
@@ -2219,6 +2225,9 @@ progress.xl, meter.xl {
   -webkit-box-flex: 0;
   -ms-flex-positive: 0;
   flex-grow: 0; }
+
+.vcard .footer:empty {
+  padding: 0; }
 
 .vcard .footer.pAn .btn {
   border-top-left-radius: 0;
@@ -7348,6 +7357,9 @@ li.sortable-placeholder {
 .spay-256-payir {
   background-position: -512px -1536px; }
 
+.spay-256-resalat {
+  background-position: -768px -1536px; }
+
 [class^="spay-128-"] {
   background: url("../images/spay/spay128.png") no-repeat;
   display: inline-block;
@@ -7449,10 +7461,13 @@ li.sortable-placeholder {
   background-position: 0 -786px; }
 
 .spay-128-zarinpal {
-  background-position: -64px -786px; }
+  background-position: -128px -786px; }
 
 .spay-128-payir {
-  background-position: -128px -786px; }
+  background-position: -256px -786px; }
+
+.spay-128-resalat {
+  background-position: -384px -786px; }
 
 [class^="spay-64-"] {
   background: url("../images/spay/spay64.png") no-repeat;
@@ -7560,6 +7575,9 @@ li.sortable-placeholder {
 .spay-64-payir {
   background-position: -128px -384px; }
 
+.spay-64-resalat {
+  background-position: -192px -384px; }
+
 .tagDetector .tagBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7609,7 +7627,8 @@ li.sortable-placeholder {
   z-index: 9999;
   outline: 0;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-  pointer-events: none; }
+  pointer-events: none;
+  line-height: 1.5; }
 
 .tippy-popper[data-html] {
   max-width: 96%;
@@ -12840,8 +12859,11 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
 
 /* radio type 2*/
 .radio2 {
-  background-color: #eee;
+  background-color: #f7f7f7;
   border-radius: 3px; }
+
+.radio2 label[for] {
+  cursor: pointer; }
 
 .radio2 input[type="radio"] {
   padding: 0;
@@ -12854,19 +12876,17 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
 
 .radio2 input[type="radio"] + label {
   position: relative;
-  height: 50px;
   display: block;
   color: #777;
-  font-size: 1rem;
+  font-size: 1em;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 0 20px;
-  line-height: 15px;
-  text-align: center;
-  padding-top: 35px; }
+  padding: 35px 5px 0;
+  line-height: 25px;
+  text-align: center; }
 
 .radio2 input[type="radio"] + label::before {
   -webkit-transition: all 250ms cubic-bezier(0.4, 0.25, 0.3, 1);
@@ -12879,7 +12899,7 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
   border: 0 solid #999;
   font-size: 0;
   position: absolute;
-  bottom: 32px;
+  top: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 50%);
   transform: translate(-50%, 50%); }
@@ -12893,7 +12913,7 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
   border-radius: 50%;
   background-color: #999;
   position: absolute;
-  bottom: 32px;
+  top: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 50%);
   transform: translate(-50%, 50%); }
@@ -12905,7 +12925,8 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
   background-color: transparent;
   width: 30px;
   height: 30px;
-  border-width: 2px; }
+  border-width: 2px;
+  top: -10px; }
 
 .radio2 input[type="radio"]:checked + label::after {
   width: 20px;
@@ -12918,12 +12939,17 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
 .radio2 input[type="radio"]:focus + label::before {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); }
 
+.radio2 img {
+  max-width: 120px;
+  max-height: 120px; }
+
 /* radio type 1 - vertical*/
 .radio2.v input[type="radio"] + label {
   padding: 0 20px;
   line-height: 50px;
   padding-left: 40px;
-  text-align: left; }
+  text-align: left;
+  height: 50px; }
 
 .radio2.v input[type="radio"] + label::before {
   bottom: 25px;
@@ -12934,7 +12960,7 @@ html[lang=fa] .switch1.gender input:checked + label:first-of-type:before {
   left: 20px; }
 
 .rtl .radio2.v input[type="radio"] + label {
-  padding-left: 20px;
+  padding-left: 5px;
   padding-right: 40px;
   text-align: right; }
 
@@ -15673,11 +15699,6 @@ body .we500 {
 
 /* main styles */
 body.siftal {
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -15686,7 +15707,14 @@ body.siftal {
   min-height: 100%;
   height: 100%;
   color: #333;
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body.siftal #main {
   display: -webkit-box;
@@ -15800,7 +15828,6 @@ body.siftal .full .middle {
   background-color: #fff;
   overflow: hidden;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  z-index: 2;
   user-select: none; }
 
 .siftal header:hover {
@@ -15811,6 +15838,9 @@ body.siftal .full .middle {
   text-align: center;
   font-size: 1.2em;
   cursor: pointer !important; }
+
+.siftal header #sidenavHandler:hover {
+  background-color: rgba(0, 0, 0, 0.2); }
 
 .siftal header #sidenavHandler i {
   width: 100%;
@@ -15945,6 +15975,7 @@ body.siftal .full .middle {
 .siftal #sidebar .scr {
   overflow: hidden;
   overflow-y: auto;
+  height: 80%;
   height: calc(100vh - 70px); }
 
 .siftal #sidebar figure {
@@ -16002,7 +16033,8 @@ body.siftal .full .middle {
   padding: .5em;
   border-radius: 50%;
   margin: 0 auto;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 .siftal #sidebar figure figcaption {
   max-width: 100%;
@@ -16016,16 +16048,16 @@ body.siftal .full .middle {
 .siftal #main::before {
   content: "";
   position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: -1;
   opacity: 0;
   transition: .3s; }
 
 body[data-sidebar].siftal #main::before {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   opacity: 1;
   z-index: 2; }
 
@@ -16179,7 +16211,8 @@ body.siftal.loading-page #sidebar .avatar:before {
   display: block;
   vertical-align: middle;
   overflow: hidden;
-  transition: 0.3s; }
+  transition: 0.3s;
+  padding: 2px; }
 
 .siftal #ermile img:hover {
   background-color: #fff; }
@@ -17225,6 +17258,9 @@ body.siftal.loading-page #sidebar .avatar:before {
   .siftal #sidebar figure {
     margin: 2em 0; }
 
+  .siftal .toggleClean {
+    display: none; }
+
   .mp0 {
     padding: 0; }
 
@@ -17236,7 +17272,8 @@ body.siftal.loading-page #sidebar .avatar:before {
 
   .cn {
     min-width: 290px;
-    max-width: 750px; }
+    max-width: 750px;
+    width: 96%; }
 
   .f > .s {
     -webkit-flex-basis: 0;
@@ -17256,7 +17293,7 @@ body.siftal.loading-page #sidebar .avatar:before {
     -moz-box-flex: 0;
     flex: 0 0 auto;
     width: auto;
-    max-width: initial;
+    max-width: 100%;
     display: flex !important; }
 
   .s0 {
@@ -17613,10 +17650,30 @@ body.siftal.loading-page #sidebar .avatar:before {
     left: initial; }
 
   .siftal #sidebar figure {
-    margin: 2em 0; }
+    margin: 0.5em 0;
+    padding: 0; }
+
+  .siftal #sidebar figure .avatar {
+    display: inline-block;
+    vertical-align: middle;
+    width: 75px;
+    height: 75px;
+    margin: 1em; }
+
+  .siftal #sidebar figure figcaption {
+    display: inline-block;
+    max-width: 140px;
+    line-height: 1.5;
+    vertical-align: middle; }
+
+  .siftal #sidebar figure .avatar:after {
+    line-height: 70px; }
 
   .siftal #sidebar ul > li > a {
     padding: 1.2em 2em; }
+
+  .siftal .toggleClean {
+    display: none; }
 
   .tbl td.collapsing.sauto, .tbl th.collapsing.sauto {
     white-space: initial; }
@@ -17682,6 +17739,10 @@ body.siftal.loading-page #sidebar .avatar:before {
     display: none !important; } }
 /* Design for print */
 @media print {
+  html {
+    height: auto;
+    min-height: initial; }
+
   body {
     width: 100% !important;
     margin: 0 !important;
