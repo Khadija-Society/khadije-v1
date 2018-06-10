@@ -4,6 +4,27 @@ namespace lib\app;
 
 class report
 {
+	public static function whitname()
+	{
+		$query  = "SELECT sum(transactions.plus) AS `sum`, transactions.doners AS `doners` FROM transactions WHERE verify = 1 GROUP BY transactions.doners ORDER BY sum DESC";
+		$result = \dash\db::get($query, ['doners', 'sum']);
+
+		$temp = [];
+		foreach ($result as $title => $xvalue)
+		{
+			if((string) $title === '0')
+			{
+				$temp[] = ['doners' => T_("Anonymous"), 'sum' => $xvalue];
+			}
+			elseif((string) $title === '1')
+			{
+				$temp[] = ['doners' => T_("Whit name"), 'sum' => $xvalue];
+			}
+		}
+
+		return $temp;
+	}
+
 	public static function counttransaction()
 	{
 		$result  = [];

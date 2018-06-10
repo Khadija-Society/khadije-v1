@@ -1,0 +1,36 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+<div class="cbox">
+	<style type="text/css">#chartdiv{width: 100%;max-height: 600px;height: 97vh;background: #fff}</style>
+	<div id="chartdiv"></div>
+</div>
+
+<div class="cbox">
+	<table class="tbl">
+		<thead>
+			<tr class="primary">
+				<th>{%trans "Payment"%}</th>
+				<th>{%trans "Sum"%}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{%for key, value in chartTable%}
+			<tr>
+				<td>{{value.doners}}</td>
+				<td>{{value.sum | fitNumber}} {%trans "Toman"%}</td>
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table>
+</div>
+{%endblock%}
+
+
+{%block foot_js%}
+<script type="text/javascript">
+	{% include 'content_cp/report/whitname/chart.js' %}
+</script>
+{%endblock%}
+

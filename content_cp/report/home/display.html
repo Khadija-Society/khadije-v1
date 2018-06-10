@@ -18,9 +18,22 @@
 	<div class="c6">
 		{{block('hazinekardChard')}}
 	</div>
+
+	<div class="c6">
+		{{block('rWhitname')}}
+	</div>
 </div>
 
 
+{%endblock%}
+
+{%block rWhitname%}
+<a class="dcard x1" href='{{url.here}}/report/whitname'>
+ <div class="statistic">
+  <div class="value"></div>
+  <div class="label">{%trans "Report Count transaction group by name"%}</div>
+ </div>
+</a>
 {%endblock%}
 
 
