@@ -1,46 +1,8 @@
 {%extends display.cpMain%}
 
 
-
-
-
-{%block pageSteps%}
-  <div class="f">
-   <div class="c4 s12">
-    <a class="dcard {%if not requestGET.type %}active{%endif%}" href='{{url.this}}' data-shortkey="49ctrlshift" title='{%trans "All trip"%}'>
-     <div class="statistic">
-      <div class="value"><i class="sf-bus"></i></div>
-      <div class="label">{%trans "All"%} <kbd class=" hide mT5">Shift+1</kbd></div>
-     </div>
-    </a>
-   </div>
-
-   <div class="c4 s12">
-    <a class="dcard {%if requestGET.type == 'family'%}active{%endif%}" href='{{url.this}}?type=family' data-shortkey="50ctrlshift" title='{%trans "Group trip"%}'>
-     <div class="statistic">
-      <div class="value"><i class="sf-users"></i></div>
-      <div class="label">{%trans "Group trip"%} <kbd class=" hide mT5">Shift+2</kbd></div>
-     </div>
-    </a>
-   </div>
-
-   <div class="c4 s12">
-    <a class="dcard {%if requestGET.type == 'group'%}active{%endif%}" href='{{url.this}}?type=group' data-shortkey="51ctrlshift" title='{%trans "Family trip"%}'>
-     <div class="statistic">
-      <div class="value"><i class="sf-male"></i><i class="sf-female"></i></div>
-      <div class="label">{%trans "Familty trip"%} <kbd class=" hide mT5">Shift+3</kbd></div>
-     </div>
-    </a>
-   </div>
-
-
-  </div>
-{%endblock%}
-
-
-
 {%block pageContent%}
-
+  {{block('GlanceDetail')}}
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -74,9 +36,9 @@
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.here}}/trip'>
+  <form method="get" action='{{url.this}}'>
     <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search in trips"%}' id="q" value="{{requestGET.q}}{{requestGET.barcode}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <input type="search" name="q" placeholder='{%trans "Search in trips"%}' id="q" value="{{requestGET.q}}{{requestGET.barcode}}" autofocus autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
   </form>
@@ -89,7 +51,7 @@
  <table class="tbl">
     <thead class="primary">
       <tr>
-        <th data-sort="{{sortLink.id.order}}" class="s0"><a href="{{sortLink.id.link}}">{%trans "ID"%}</a></th>
+        <th data-sort="{{sortLink.id.order}}" class="s0 collapsing"><a href="{{sortLink.id.link}}">{%trans "ID"%}</a></th>
         <th data-sort="{{sortLink.firstname.order}}" class=""><a href="{{sortLink.firstname.link}}">{%trans "First name"%}</a></th>
         <th data-sort="{{sortLink.gender.order}}" class="s0"><a href="{{sortLink.gender.link}}">{%trans "Gender"%}</a></th>
         <th data-sort="{{sortLink.gender.order}}" class="s0"><a href="{{sortLink.gender.link}}">{%trans "Birthdate"%}</a></th>
@@ -103,15 +65,22 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-        <td class="s0"><a href="{{url.here}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a></td>
-        <td><a href="{{url.here}}/trip/view?id={{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
+        <td class="s0">
+          <a href="{{url.here}}/trip/view?id={{value.id}}">{{value.id | fitNumber}}</a>
+        </td>
+        <td>
+          <a href="{{url.here}}/users/view?id={{value.user_id}}">
+            <span class="sf-user fc-mute"></span>
+            {{value.firstname}} <b>{{value.lastname}}</b>
+          </a>
+        </td>
         <td class="s0">{%set myGender = value.gender | capitalize%}<a href="{{url.here}}/trip?gender={{value.gender}}">{%trans myGender%}</a></td>
         <td class="s0"><a href='{{url.here}}/trip?birthday={{value.birthday | date("Y")}}'>{{value.birthday | tdate("Y") | fitNumber(false)}}</a>{{value.birthday | tdate("-m-d") | fitNumber(false)}}</td>
 
         <td class="s0">{{value.nationalcode | fitNumber(false)}}</td>
         <td>{%set my_place = value.place | capitalize%}<a href="{{url.here}}/trip?place={{value.place}}">{%trans my_place%}</a></td>
         <td>{%set my_status = value.status | capitalize%}<a href="{{url.here}}/trip?status={{value.status}}">{%trans my_status%}</a></td>
-        <td class="s0">{{value.datecreated | tdate ("Y/m/d H:i")}}</td>
+        <td class="s0" title="{{value.datecreated | tdate ("Y/m/d H:i")}}">{{value.datecreated | sdate ("year")}}</td>
       </tr>
       {%endfor%}
     </tbody>
@@ -140,5 +109,29 @@
 
 {%block htmlStartAddNew%}
 <p class="fs14 alert alert-success pTB20">{%trans "No record exist!"%}</p>
+{%endblock%}
+
+
+
+{%block GlanceDetail%}
+  <div class="f">
+    <div class="c8 s6">
+      <div class="dcard x1">
+       <div class="statistic blue">
+        <div class="value">{{totalPaid | fitNumber}}</div>
+        <div class="label">{%trans "Total Request"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="c4 s6">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{totalPaidDate | fitNumber}}</div>
+        <div class="label">{%trans "Today"%}</div>
+       </div>
+      </div>
+    </div>
+  </div>
 {%endblock%}
 
