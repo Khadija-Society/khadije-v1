@@ -19,8 +19,7 @@
 
 {%block posts%}
 
-{%set allPostList = posts({"pagenation" : true, "limit" : 100})%}
-
+{%set allPostList = posts({"pagenation" : true, "limit" : 10})%}
 
 {%if allPostList %}
 <article class="postListPreview">

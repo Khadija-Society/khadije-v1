@@ -6,6 +6,13 @@ class model
 {
 	public static function post()
 	{
+		if(\dash\request::post('salavat'))
+		{
+			$count =\lib\db\salavats::befrest();
+			\dash\notif::result($count);
+			return;
+		}
+
 		$meta =
 		[
 			'turn_back'   => \dash\url::base(). '/doners',

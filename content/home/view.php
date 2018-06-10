@@ -21,6 +21,8 @@ class view
 			$temp['karbala'] = isset($result[2]) ? $result[2] : null;
 		}
 		\dash\data::staticvar($temp);
+
+		\dash\data::salavatShomar(\lib\db\salavats::shomar());
 	}
 }
 ?>
