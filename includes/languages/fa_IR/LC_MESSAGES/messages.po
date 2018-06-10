@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
 "POT-Creation-Date: 2018-06-10 09:06+0430\n"
-"PO-Revision-Date: 2018-06-10 09:06+0430\n"
+"PO-Revision-Date: 2018-06-10 13:10+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -8783,7 +8783,7 @@ msgstr "ثبت نام برای درخواست تشرف"
 
 #: khadije/content_a/trip/profile/model.php:71
 msgid "Your trip request was saved"
-msgstr ""
+msgstr "درخواست تشرف شما ذخیره شد"
 
 #: khadije/content_a/trip/request/view.php:10
 msgid "in 3 simple step register your request for have trip to holy places"
@@ -8949,7 +8949,7 @@ msgstr "بازگشت به لیست درخواست‌ها"
 
 #: khadije/content_cp/familytrip/view.php:13
 msgid "Family trip request list"
-msgstr ""
+msgstr "لیست درخواست‌های تشرف خانوادگی"
 
 #: khadije/content_cp/familytrip/view.php:14 khadije/content_cp/trip/view.php:14
 msgid "check request and update status of each request"
@@ -9261,7 +9261,7 @@ msgstr "استان"
 
 #: khadije/content_cp/trip/view.php:13
 msgid "Request group trip list"
-msgstr ""
+msgstr "لیست درخواست‌های تشرف کاروانی"
 
 #: khadije/content_delneveshte/home/model.php:47
 msgid "Dele tangat che mikhahad bego..."
@@ -10111,15 +10111,15 @@ msgstr "همه"
 
 #: khadije/includes/languages/trans_project.php:378
 msgid "Group trip"
-msgstr ""
+msgstr "تشرف کاروانی"
 
 #: khadije/includes/languages/trans_project.php:379
 msgid "Family trip"
-msgstr ""
+msgstr "تشرف خانوادگی"
 
 #: khadije/includes/languages/trans_project.php:380
 msgid "Familty trip"
-msgstr ""
+msgstr "تشرف خانوادگی"
 
 #: khadije/includes/languages/trans_project.php:381
 msgid "Search in trips"
@@ -10147,7 +10147,7 @@ msgstr "توانایی تشرف کاربران به قم"
 
 #: khadije/includes/languages/trans_project.php:390
 msgid "Maximum partner count for qom"
-msgstr ""
+msgstr "حداکثر تعداد همراهان برای قم"
 
 #: khadije/includes/languages/trans_project.php:391
 msgid "Can trip user to karbala"
@@ -10155,7 +10155,7 @@ msgstr "توانایی تشرف کاربران به کربلا"
 
 #: khadije/includes/languages/trans_project.php:392
 msgid "Maximum partner count for karbala"
-msgstr ""
+msgstr "حداکثر تعداد همراهان برای کربلا"
 
 #: khadije/includes/languages/trans_project.php:393
 msgid "Can trip user to mashhad"
@@ -10163,7 +10163,7 @@ msgstr "توانیی تشرف کاربران به مشهد"
 
 #: khadije/includes/languages/trans_project.php:394
 msgid "Maximum partner count for mashhad"
-msgstr ""
+msgstr "حداکثر تعداد همراهان برای مشهد"
 
 #: khadije/includes/languages/trans_project.php:395
 msgid "Group trip options"
@@ -10309,11 +10309,11 @@ msgstr "لیست کمک نقدی"
 
 #: khadije/includes/languages/trans_project.php:439
 msgid "Group trip request"
-msgstr ""
+msgstr "درخواست تشرف کاروانی"
 
 #: khadije/includes/languages/trans_project.php:440
 msgid "Family trip request"
-msgstr ""
+msgstr "درخواست تشرف خانوادگی"
 
 #: khadije/includes/languages/trans_project.php:441
 msgid "request service list"
@@ -10449,7 +10449,7 @@ msgstr "لیست درخواست‌های تشرف"
 
 #: khadije/includes/languages/trans_project.php:516
 msgid "Request family trip list"
-msgstr ""
+msgstr "لیست درخواست‌های تشرف خانوادگی"
 
 #: khadije/includes/languages/trans_project.php:517
 msgid "advice service list"
@@ -10969,7 +10969,7 @@ msgstr "لطفا وضعیت نیاز را به صورت دقیق انتخاب ک
 
 #: khadije/includes/lib/app/need.php:140
 msgid "Please set a valid language"
-msgstr ""
+msgstr "لطفا زبان معتبری تنظیم کنید"
 
 #: khadije/includes/lib/app/need.php:253
 msgid "No way to insert need"
