@@ -4,7 +4,7 @@
 {%block pageContent%}
 
 <div class="f">
-  <div class="c5 mRa10">
+  <div class="c5 s12 mRa10">
       <div class="f justify-center">
         <div class="cbox ">
           <form method="post" autocomplete="off">
@@ -24,39 +24,39 @@
       </div>
   </div>
 
-  <div class="c">
-
 {%if need%}
-<div class="f justify-center">
-<div class="cbox">
+  <div class="c s12">
 
-    <table class="tbl">
-      <thead>
-        <tr class="fs08">
-          <th>{%trans "Picture"%}</th>
-          <th>{%trans "Title"%}</th>
-          <th>{%trans "Desctiption"%}</th>
-          <th>{%trans "Status"%}</th>
-          <th>{%trans "Edit"%}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {%for key, value in need%}
-          <tr>
-            <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.site}}/static/siftal/images/default/image.png{%endif%}"></td>
-            <td>{{value.title}}</td>
-            <td>{{value.desc}}</td>
-            <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
-            <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn secondary xs">{%trans "Edit"%}</button></a></td>
-          </tr>
-        {%endfor%}
-      </tbody>
-    </table>
+    <div class="f justify-center">
+      <div class="cbox">
+
+        <table class="tbl">
+          <thead>
+            <tr class="fs08">
+              <th>{%trans "Picture"%}</th>
+              <th>{%trans "Title"%}</th>
+              <th>{%trans "Desctiption"%}</th>
+              <th>{%trans "Status"%}</th>
+              <th>{%trans "Edit"%}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for key, value in need%}
+              <tr>
+                <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.site}}/static/siftal/images/default/image.png{%endif%}"></td>
+                <td>{{value.title}}</td>
+                <td>{{value.desc}}</td>
+                <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
+                <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn secondary xs">{%trans "Edit"%}</button></a></td>
+              </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
-</div>
 {%endif%}
-
-  </div>
 </div>
 
 

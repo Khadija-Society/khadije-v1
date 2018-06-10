@@ -3,7 +3,7 @@
 
 {%block GlanceDetail%}
   <div class="f">
-    <div class="c s6">
+    <div class="c s12">
       <div class="dcard x1">
        <div class="statistic blue">
         <div class="value">{{totalPaid | fitNumber}}</div>
@@ -29,7 +29,7 @@
        </div>
       </div>
     </div>
-    <div class="cauto s6">
+    <div class="cauto s12">
       <div class="dcard x1">
        <div class="statistic brown">
         <div class="value">{%if totalPaidCount%}{{ (totalPaid / totalPaidCount) | round(-3) | fitNumber}} {%else%}-{%endif%}</div>
@@ -91,6 +91,7 @@
   <table class="tbl">
     <thead class="primary">
       <tr>
+        <th></th>
         <th class="s0">{%trans "Name"%}</th>
         <th>{%trans "mobile"%}</th>
         <th class="s0" data-sort="{{sortLink.payment.order}}"><a href="{{sortLink.payment.link}}">{%trans "Payment"%}</a></th>
@@ -104,8 +105,38 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-        <td class="s0">{%if value.doners%}{%else%}<small class="badge mRa5">گمنام</small> {%endif%}{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</td>
-        <td><a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber('mobile')}}</a></td>
+        <td class="collapsing">
+          {%if value.doners%}{%else%}<small class="badge">{%trans "Anonymous"%}</small> {%endif%}
+        </td>
+        <td class="s0">
+{%if value.user_id%}
+          <a href="{{url.here}}/users/set?id={{value.user_id}}">
+            <span class="sf-user fc-mute"></span>
+            {%if value.fullname%}
+            {{value.fullname}}
+            {%elseif value.displayname%}{{value.displayname}}
+            {%else%}
+            <small class='fc-mute'>{%trans "Without name"%}</small>
+            {%endif%}
+          </a>
+{%else%}
+            <span class="sf-chain-broken fc-mute"></span>
+            {%if value.fullname%}
+            {{value.fullname}}
+            {%elseif value.displayname%}{{value.displayname}}
+            {%else%}
+            <small class='fc-mute'>{%trans "Without name"%}</small>
+            {%endif%}
+{%endif%}
+
+        </td>
+        <td>
+            {%if value.mobile%}
+            <a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber('mobile')}}</a>
+            {%else%}
+            <small class='fc-mute'>{%trans "Without mobile"%}</small>
+            {%endif%}
+        </td>
         <td class="s0"><a href="{{url.current}}?payment={{value.payment}}">{%set myPayment = value.payment | capitalize%}{%trans myPayment%}</a></td>
         <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} <b>{{value.plus | fitNumber}}</b> {%set pUnit = value.unit%}{%trans pUnit%}</td>
         <td class="s0 max-w200">{{value.niyat}}</td>
