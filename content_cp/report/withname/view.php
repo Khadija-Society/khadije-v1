@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\report\whitname;
+namespace content_cp\report\withname;
 
 
 class view
