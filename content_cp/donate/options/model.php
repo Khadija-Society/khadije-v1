@@ -70,7 +70,7 @@ class model
 			if(\dash\request::get('edit'))
 			{
 				\dash\notif::ok(T_("Health successfully edited"));
-				\dash\redirect::to(\dash\url::here(). '/health/options');
+				\dash\redirect::to(\dash\url::this(). '/options');
 			}
 			else
 			{

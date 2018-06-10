@@ -7,7 +7,7 @@
   <div class="c5 mRa5">
       <div class="f justify-center">
         <div class="cbox ">
-          <form method="post">
+          <form method="post" autocomplete="off">
             {{block ('iThumb') }}
             {{block ('iTitle') }}
             {{block ('iDescription') }}
@@ -28,7 +28,7 @@
 
 {%if need%}
 <div class="f justify-center">
-<div class="cbox ">
+<div class="cbox">
 
     <table class="tbl">
       <thead>
@@ -114,7 +114,7 @@
 
 {%block iDescription%}
 <label for='fdesc'>{%trans "Description"%}</label>
-<textarea class="txt" name="desc" rows="3" placeholder='{%trans "Description"%}' id='fdesc'>{{productDetail.desc}}</textarea>
+<textarea class="txt mB5" name="desc" rows="3" placeholder='{%trans "Description"%}' id='fdesc'>{{productDetail.desc}}</textarea>
 
 {%endblock%}
 
