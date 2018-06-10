@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
 "POT-Creation-Date: 2018-06-10 09:06+0430\n"
-"PO-Revision-Date: 2018-06-10 13:10+0430\n"
+"PO-Revision-Date: 2018-06-10 13:25+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -9809,7 +9809,7 @@ msgstr "اگر مطمئن هستید از درخواست خودتان آن را 
 
 #: khadije/includes/languages/trans_project.php:186
 msgid "Else you can cancel your request"
-msgstr "در غیر این صورت درخواست خو را لغو کنید"
+msgstr "در غیر این صورت درخواست خود را لغو کنید"
 
 #: khadije/includes/languages/trans_project.php:192
 msgid "Start date"
