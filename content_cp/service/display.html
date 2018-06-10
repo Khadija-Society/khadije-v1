@@ -56,16 +56,12 @@
       <tr>
         <th data-sort="{{sortLink.firstname.order}}"><a href="{{sortLink.firstname.link}}">{%trans "firstname"%}</a></th>
         <th data-sort="{{sortLink.mobile.order}}"><a href="{{sortLink.mobile.link}}">{%trans "mobile"%}</a></th>
-        <th data-sort="{{sortLink.birthday.order}}"><a href="{{sortLink.birthday.link}}">{%trans "birthday"%}</a></th>
-        <th data-sort="{{sortLink.province.order}}"><a href="{{sortLink.province.link}}">{%trans "province"%}</a></th>
-        <th data-sort="{{sortLink.phone.order}}"><a href="{{sortLink.phone.link}}">{%trans "phone"%}</a></th>
-        <th data-sort="{{sortLink.married.order}}"><a href="{{sortLink.married.link}}">{%trans "married"%}</a></th>
-        <th data-sort="{{sortLink.gender.order}}"><a href="{{sortLink.gender.link}}">{%trans "gender"%}</a></th>
-        <th data-sort="{{sortLink.job.order}}"><a href="{{sortLink.job.link}}">{%trans "job"%}</a></th>
         <th data-sort="{{sortLink.expertvalue.order}}"><a href="{{sortLink.expertvalue.link}}">{%trans "expertvalue"%}</a></th>
         <th data-sort="{{sortLink.expertyear.order}}"><a href="{{sortLink.expertyear.link}}">{%trans "expertyear"%}</a></th>
         <th data-sort="{{sortLink.startdate.order}}"><a href="{{sortLink.startdate.link}}">{%trans "startdate"%}</a></th>
         <th data-sort="{{sortLink.enddate.order}}"><a href="{{sortLink.enddate.link}}">{%trans "enddate"%}</a></th>
+        <th data-sort="{{sortLink.job.order}}"><a href="{{sortLink.job.link}}">{%trans "job"%}</a></th>
+        <th data-sort="{{sortLink.desc.order}}"><a href="{{sortLink.desc.link}}">{%trans "desc"%}</a></th>
         <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Expert"%}</a></th>
       </tr>
     </thead>
@@ -74,16 +70,12 @@
       {%for key, value in dataTable%}
       <tr>
         <td><a href="{{url.here}}/users/set?id={{value.user_id | coding('encode')}}">{{value.firstname}} <b>{{value.lastname}}</b></a></td>
-        <td>{{value.mobile | fitNumber(false)}}</td>
-        <td>{{value.birthday | tdate("Y-m-d") | fitNumber(false)}}</td>
-        <td><a href="{{url.here}}/service?province={{value.province}}">{{value.province}}</a></td>
-        <td>{{value.phone | fitNumber(false)}}</td>
-        <td>{%set my_married = value.married | capitalize%}{%trans my_married%}</td>
-        <td>{%set my_gender = value.gender | capitalize%}{%trans my_gender%}</td>
-        <td>{{value.job}}</td>
+        <td><a href="{{url.here}}/service?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
         <td>{{value.expertvalue}}</td>
         <td>{{value.expertyear | fitNumber(false)}}</td>
         <td>{{value.startdate | date("Y-m-d") | fitNumber(false)}}</td>
+        <td>{{value.job}}</td>
+        <td>{{value.desc}}</td>
         <td>{{value.enddate | date("Y-m-d") | fitNumber(false)}}</td>
         <td><a href="{{url.here}}/service?expert={{value.expert}}">{{value.expert}}</a></td>
       </tr>
