@@ -56,13 +56,13 @@
       <tr>
         <th data-sort="{{sortLink.firstname.order}}"><a href="{{sortLink.firstname.link}}">{%trans "firstname"%}</a></th>
         <th data-sort="{{sortLink.mobile.order}}"><a href="{{sortLink.mobile.link}}">{%trans "mobile"%}</a></th>
-        <th data-sort="{{sortLink.expertvalue.order}}"><a href="{{sortLink.expertvalue.link}}">{%trans "expertvalue"%}</a></th>
-        <th data-sort="{{sortLink.expertyear.order}}"><a href="{{sortLink.expertyear.link}}">{%trans "expertyear"%}</a></th>
-        <th data-sort="{{sortLink.startdate.order}}"><a href="{{sortLink.startdate.link}}">{%trans "startdate"%}</a></th>
-        <th data-sort="{{sortLink.enddate.order}}"><a href="{{sortLink.enddate.link}}">{%trans "enddate"%}</a></th>
-        <th data-sort="{{sortLink.job.order}}"><a href="{{sortLink.job.link}}">{%trans "job"%}</a></th>
-        <th data-sort="{{sortLink.desc.order}}"><a href="{{sortLink.desc.link}}">{%trans "desc"%}</a></th>
-        <th data-sort="{{sortLink.arabiclang.order}}"><a href="{{sortLink.arabiclang.link}}">{%trans "arabic"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.expertvalue.order}}"><a href="{{sortLink.expertvalue.link}}">{%trans "expertvalue"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.expertyear.order}}"><a href="{{sortLink.expertyear.link}}">{%trans "expertyear"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.startdate.order}}"><a href="{{sortLink.startdate.link}}">{%trans "startdate"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.enddate.order}}"><a href="{{sortLink.enddate.link}}">{%trans "enddate"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.job.order}}"><a href="{{sortLink.job.link}}">{%trans "job"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.desc.order}}"><a href="{{sortLink.desc.link}}">{%trans "desc"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.arabiclang.order}}"><a href="{{sortLink.arabiclang.link}}">{%trans "arabic"%}</a></th>
         <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Expert"%}</a></th>
       </tr>
     </thead>
@@ -77,13 +77,13 @@
           </a>
         </td>
         <td><a href="{{url.here}}/service?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
-        <td>{{value.expertvalue}}</td>
-        <td>{{value.expertyear | fitNumber(false)}}</td>
-        <td>{{value.startdate | date("Y-m-d") | fitNumber(false)}}</td>
-        <td>{{value.enddate | date("Y-m-d") | fitNumber(false)}}</td>
-        <td>{{value.job}}</td>
-        <td>{{value.desc}}</td>
-        <td class="txtC">{%if value.arabiclang%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-times fc-mute"></span>{%endif%}</td>
+        <td class="s0">{{value.expertvalue}}</td>
+        <td class="s0">{{value.expertyear | fitNumber(false)}}</td>
+        <td class="s0">{{value.startdate | date("Y-m-d") | fitNumber(false)}}</td>
+        <td class="s0">{{value.enddate | date("Y-m-d") | fitNumber(false)}}</td>
+        <td class="s0">{{value.job}}</td>
+        <td class="s0">{{value.desc}}</td>
+        <td class="s0 txtC">{%if value.arabiclang%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-times fc-mute"></span>{%endif%}</td>
         <td class="collapsing"><a href="{{url.here}}/service?expert={{value.expert}}">{{value.expert}}</a></td>
       </tr>
       {%endfor%}

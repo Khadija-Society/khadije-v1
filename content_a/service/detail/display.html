@@ -6,7 +6,7 @@
 <div class="f justify-center">
 	<div class="c6">
 		<div class="cbox">
-			<form method="post">
+			<form method="post" autocomplete="off">
 				{{block('iThumb--')}}
 
 				{{block('iexpert')}}
@@ -106,7 +106,7 @@
 
 
 {%block iArabicLang%}
-<div class="switch1 pA5">
+<div class="switch1 mT10">
  <input type="checkbox" name="ArabicLang" id="ArabicLang" {%if serviceDetail.arabiclang %}checked{%endif%}>
  <label for="ArabicLang"  data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
  <label for="ArabicLang">{%trans "Arabic Language"%}</label>
