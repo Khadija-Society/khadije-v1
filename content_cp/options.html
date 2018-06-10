@@ -32,7 +32,7 @@
 
     <table class="tbl">
       <thead>
-        <tr class="primary">
+        <tr class="fs08">
           <th>{%trans "Picture"%}</th>
           <th>{%trans "Title"%}</th>
           <th>{%trans "Desctiption"%}</th>
@@ -47,7 +47,7 @@
             <td>{{value.title}}</td>
             <td>{{value.desc}}</td>
             <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
-            <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn primary xs">{%trans "Edit"%}</button></a></td>
+            <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn secondary xs">{%trans "Edit"%}</button></a></td>
           </tr>
         {%endfor%}
       </tbody>
