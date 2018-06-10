@@ -187,7 +187,7 @@ class need
 					}
 					else
 					{
-						$result[$key] = \dash\app::static_image_url();
+						$result[$key] = \dash\url::site(). '/static/images/logo.png';
 					}
 					break;
 				default:
