@@ -38,6 +38,21 @@ class view
 		if(\dash\request::get('expert')) $args['services.expert']  = \dash\request::get('expert');
 		if(\dash\request::get('province')) $args['users.province'] = \dash\request::get('province');
 
+
+		if(\dash\request::get('mobile'))
+		{
+			$mobile = \dash\request::get('mobile');
+			$mobile = \dash\utility\filter::mobile($mobile);
+			if($mobile)
+			{
+				$userDetail = \dash\db\users::get_by_mobile($mobile);
+				if(isset($userDetail['id']))
+				{
+					$args['services.user_id'] = $userDetail['id'];
+				}
+			}
+		}
+
 		$args['services.type'] = 'khadem';
 
 		$search_string            = \dash\request::get('q');
@@ -66,10 +81,18 @@ class view
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/service'));
 		$filterArray = $args;
 		unset($filterArray['services.type']);
+
 		if(isset($filterArray['services.expert']))
 		{
 			$filterArray[T_("Service")] = $filterArray['services.expert'];
 			unset($filterArray['services.expert']);
+		}
+
+
+		if(isset($filterArray['services.user_id']))
+		{
+			$filterArray[T_("Mobile")] = \dash\request::get('mobile');
+			unset($filterArray['services.user_id']);
 		}
 
 		if(isset($filterArray['users.province']))
