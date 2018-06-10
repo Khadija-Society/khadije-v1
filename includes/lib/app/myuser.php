@@ -30,6 +30,12 @@ class myuser
 			return false;
 		}
 
+		if(!$gender)
+		{
+			\dash\notif::error(T_("Plese set your gender"), 'gender');
+			return false;
+		}
+
 		$email = \dash\app::request('email');
 		if($email && mb_strlen($email) > 70)
 		{
@@ -210,6 +216,12 @@ class myuser
 		if($married && !in_array($married, ['single', 'married']))
 		{
 			\dash\notif::error(T_("Invalid arguments married"), 'married');
+			return false;
+		}
+
+		if(!$married)
+		{
+			\dash\notif::error(T_("Plese set your married"), 'married');
 			return false;
 		}
 

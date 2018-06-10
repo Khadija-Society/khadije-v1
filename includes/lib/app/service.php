@@ -76,27 +76,31 @@ class service
 
 		$startdate = \dash\app::request('startdate');
 		$startdate = \dash\utility\convert::to_en_number($startdate);
-		if($startdate && strtotime($startdate) === false)
-		{
-			\dash\notif::error(T_("Invalid startdate"), 'startdate');
-			return false;
-		}
+
 		if($startdate)
 		{
-			$startdate = date("Y-m-d", strtotime($startdate));
+			$startdate = \dash\date::db($startdate);
+			if($startdate === false)
+			{
+				\dash\notif::error(T_("Invalid startdate"), 'startdate');
+				return false;
+			}
+			$startdate = \dash\date::force_gregorian($startdate);
 		}
+
 
 
 		$enddate = \dash\app::request('enddate');
 		$enddate = \dash\utility\convert::to_en_number($enddate);
-		if($enddate && strtotime($enddate) === false)
-		{
-			\dash\notif::error(T_("Invalid enddate"), 'enddate');
-			return false;
-		}
 		if($enddate)
 		{
-			$enddate = date("Y-m-d", strtotime($enddate));
+			$enddate = \dash\date::db($enddate);
+			if($enddate === false)
+			{
+				\dash\notif::error(T_("Invalid enddate"), 'enddate');
+				return false;
+			}
+			$enddate = \dash\date::force_gregorian($enddate);
 		}
 
 		$status = \dash\app::request('status');
