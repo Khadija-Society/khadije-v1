@@ -15963,14 +15963,14 @@ body.siftal .full .middle {
 /* sidebar */
 .siftal #sidebar {
   overflow: hidden;
+  overflow-y: auto;
   width: 250px;
   height: 100%;
   position: relative;
   background-color: #302b2b;
   transition-duration: 0.3s;
   transition-property: right, left;
-  user-select: none;
-  padding-bottom: 80px; }
+  user-select: none; }
 
 .siftal #sidebar .scr {
   overflow: hidden;
