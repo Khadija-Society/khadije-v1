@@ -66,30 +66,31 @@ class twigTransTerms
 	//-----------------------------------------------------content\health\display.html
 
 	//-------------------------------------------------------content\home\display.html
-	echo T_("Read more");                                                             // Line 140
+	echo T_("Read more");                                                             // Line 147
 	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 36
 	echo T_("You also partake in salawat");                                           // Line 38
 	echo T_("Say salawat");                                                           // Line 40
 	echo T_("and press here");                                                        // Line 40
 	echo T_("Servants registration");                                                 // Line 164
 	echo T_("Virtual pilgrimage");                                                    // Line 156
-	echo T_("Collective or individual travel");                                       // Line 65
+	echo T_("Travel request");                                                        // Line 65
 	echo T_("Deputy pilgrimage");                                                     // Line 155
 	echo T_("Balloting names");                                                       // Line 77
-	echo T_("Tv show Sahargahan haram");                                              // Line 83
-	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 90
-	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 91
-	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 91
-	echo T_("in Resalat bank of Iran");                                               // Line 94
-	echo T_("Card number");                                                           // Line 98
-	echo T_("Account number");                                                        // Line 101
-	echo T_("Iranian bank Shaba number");                                             // Line 104
-	echo T_("You can change amount of your donation");                                // Line 112
-	echo T_("Donate as anonymous");                                                   // Line 115
-	echo T_("Donate with register details");                                          // Line 120
-	echo T_("Latest News");                                                           // Line 131
-	echo T_("Mr.Farahzad's statement");                                               // Line 164
-	echo T_("Contact with manager");                                                  // Line 175
+	echo T_("My love story book");                                                    // Line 83
+	echo T_("Tv show Sahargahan haram");                                              // Line 89
+	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 96
+	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 97
+	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 97
+	echo T_("in Resalat bank of Iran");                                               // Line 100
+	echo T_("Card number");                                                           // Line 104
+	echo T_("Account number");                                                        // Line 107
+	echo T_("Iranian bank Shaba number");                                             // Line 110
+	echo T_("You can change amount of your donation");                                // Line 118
+	echo T_("Donate as anonymous");                                                   // Line 121
+	echo T_("Donate with register details");                                          // Line 126
+	echo T_("Latest News");                                                           // Line 137
+	echo T_("Mr.Farahzad's statement");                                               // Line 171
+	echo T_("Contact with manager");                                                  // Line 182
 
 	//--------------------------------------------------------content\main\layout.html
 	echo T_("If religion being in the Pleiades, people from Persia can obtainment to that");// Line 46
@@ -115,8 +116,8 @@ class twigTransTerms
 	echo T_("Specialized sites");                                                     // Line 146
 	echo T_("Pilgrimage");                                                            // Line 153
 	echo T_("Requests");                                                              // Line 18
-	echo T_("Individual registration");                                               // Line 162
-	echo T_("Group registration");                                                    // Line 163
+	echo T_("Individual registration");                                               // Line 10
+	echo T_("Group registration");                                                    // Line 9
 	echo T_("Consulting service");                                                    // Line 171
 	echo T_("Health service");                                                        // Line 172
 	echo T_("Help");                                                                  // Line 177
@@ -186,6 +187,8 @@ class twigTransTerms
 
 	//-----------------------------------------------content\template\static\blog.html
 	echo T_("Latest news");                                                           // Line 6
+
+	//-------------------------------------------------------content\trip\display.html
 
 	//----------------------------------------content_a\consulting\detail\display.html
 	echo T_("Your are using this consulting");                                        // Line 9
@@ -583,8 +586,6 @@ class twigTransTerms
 	echo T_("Miss");                                                                  // Line 18
 	echo T_("I am sympathetic");                                                      // Line 29
 	echo T_("People who sympathetic with this person");                               // Line 39
-
-	//---------------------public_html\files\1\8-eacf331f0ffc35d4b482f1d15a887d3b.html
 
 	//---------------------public_html\static\siftal\fonts\siftal\icons-reference.html
 

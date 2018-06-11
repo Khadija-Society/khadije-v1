@@ -451,6 +451,16 @@ body.rtl[data-sidebar] #sidebar{left:0;}
 .sprite-samtekhoda:hover{
 	background-position: -1120px -140px;
 }
+.sprite-mylovestory{
+	width: 140px;
+	height: 140px;
+	background-position: -1260px 0;
+	margin: 0 auto;
+	transition: 0.3s;
+}
+.sprite-mylovestory:hover{
+	background-position: -1260px -140px;
+}
 .sprite-imani{
 	width: 140px;
 	height: 210px;
