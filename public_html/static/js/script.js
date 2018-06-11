@@ -37,10 +37,10 @@ function fixedHeader()
     $('body').toggleClass("down", ($("html").scrollTop() > 200));
   });
 
-  $(window).on("touchmove", function()
-  {
-    $('body').toggleClass("down", ($("html").scrollTop() > 200));
-  });
+  // $(window).on("touchmove", function()
+  // {
+  //   $('body').toggleClass("down", ($("html").scrollTop() > 200));
+  // });
 }
 
 function runTopSlider()
