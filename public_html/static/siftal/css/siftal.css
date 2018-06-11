@@ -15975,7 +15975,7 @@ body.siftal .full .middle {
 .siftal #sidebar .scr {
   overflow: hidden;
   overflow-y: auto;
-  height: 70%;
+  height: 80%;
   height: calc(100vh - 70px); }
 
 .siftal #sidebar figure {
