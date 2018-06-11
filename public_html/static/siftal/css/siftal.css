@@ -15976,7 +15976,7 @@ body.siftal .full .middle {
   overflow: hidden;
   overflow-y: auto;
   height: 80%;
-  height: calc(100vh - 70px); }
+  height: calc(100% - 70px); }
 
 .siftal #sidebar figure {
   padding: 4em 0;
