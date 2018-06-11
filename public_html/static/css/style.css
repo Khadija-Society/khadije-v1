@@ -773,6 +773,9 @@ iframe.gMap{
 }
 
 /* donate*/
+body[data-page="donate"]{
+	background-image: url('../images/homepage-v3/pattern-body2.png');
+}
 body[data-page="donate"] .wrapper{
 	background-color: transparent;
 }
