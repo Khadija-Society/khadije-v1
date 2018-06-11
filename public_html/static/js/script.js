@@ -34,7 +34,9 @@ function fixedHeader()
 
   $(window).on("scroll", function()
   {
-    $('body').toggleClass("down", ($("body").scrollTop() > 200));
+    var myScroll = $("html").scrollTop() || $("body").scrollTop();
+    // console.log($("html").scrollTop());
+    $('body').toggleClass("down", (myScroll > 200));
   });
 
   // $(window).on("touchmove", function()
