@@ -109,7 +109,7 @@ class travel
 			$update = false;
 		}
 
-		if(isset($_action))
+		if($_action || $_action === '0')
 		{
 			if($update)
 			{
