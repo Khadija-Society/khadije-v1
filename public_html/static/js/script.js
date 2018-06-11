@@ -35,7 +35,6 @@ function fixedHeader()
   $(window).on("scroll", function()
   {
     var myScroll = $("html").scrollTop() || $("body").scrollTop();
-    // console.log($("html").scrollTop());
     $('body').toggleClass("down", (myScroll > 200));
   });
 
