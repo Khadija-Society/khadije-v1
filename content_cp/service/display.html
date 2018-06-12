@@ -39,7 +39,7 @@
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.here}}/service'>
+  <form method="get" action='{{url.this}}'>
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search in services"%}' id="q" value="{{requestGET.q}}{{requestGET.barcode}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -77,7 +77,7 @@
             {{value.firstname}} <b>{{value.lastname}}</b>
           </a>
         </td>
-        <td><a href="{{url.here}}/service?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
+        <td><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
         <td class="s0">{{value.expertvalue}}</td>
         <td class="s0">{{value.expertyear | fitNumber(false)}}</td>
         <td class="s0">{{value.startdate | tdate | fitNumber(false)}}</td>
@@ -86,7 +86,7 @@
         <td class="s0">{{value.desc}}</td>
         <td class="s0 txtC">{%if value.arabiclang%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-times fc-mute"></span>{%endif%}</td>
         <td class="s0 collapsing">{%set myStatus = value.status | capitalize%}{%trans myStatus%}</td>
-        <td class="collapsing"><a href="{{url.here}}/service?expert={{value.expert}}">{{value.expert}}</a></td>
+        <td class="collapsing"><a href="{{url.this}}?expert={{value.expert}}">{{value.expert}}</a></td>
       </tr>
       {%endfor%}
     </tbody>
@@ -100,7 +100,7 @@
 {%block htmlFilter%}
 <p class="f fs14 alert alert-info">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.here}}/service">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -108,7 +108,7 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 alert alert-error">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.here}}/service">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
