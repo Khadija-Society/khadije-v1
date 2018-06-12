@@ -43,11 +43,13 @@ class model
 		}
 
 		$mobile = $detail['mobile'];
+		$place = $detail['expert'];
 
 		switch ($_status)
 		{
 			case 'accept':
-				$msg = "زیارت نیابتی از طرف شما انجام شد";
+				$msg = T_("Your representation request for :place is done.", ['place' => $place]);
+
 				break;
 		}
 
