@@ -13,7 +13,7 @@ class view
 		\dash\data::page_title(T_("View request detail"));
 		\dash\data::page_desc(T_("check request and update status"));
 
-		\dash\data::badge_link(\dash\url::here(). '/trip');
+		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back to request list'));
 
 		\dash\data::bodyclass('unselectable');
