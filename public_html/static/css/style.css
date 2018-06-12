@@ -793,7 +793,7 @@ body[data-sidebar] #sidebar{left:0;}
 .pageData .postListPreview img{}
 .pageData .postListPreview h3{margin-top:0;}
 
-.tagBox a{padding:0.3em 0.5em;margin:1em 0.5em 0;background-color:#eee;border-radius:3px;transition:0.3s;display:inline-block;}
+.tagBox a{padding:0.5em 0.5em;margin:0.5em 0.5em;background-color:#eee;border-radius:3px;transition:0.3s;display:inline-block;}
 .tagBox a:hover{background-color:rgba(0,0,0,0.1);}
 .tagBox a:focus{background-color:rgba(0,0,0,0.2);}
 
