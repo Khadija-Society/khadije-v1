@@ -64,7 +64,7 @@
 
     <tbody>
       {%for key, value in dataTable%}
-      <tr>
+      <tr class="{%if value.status == 'cancel' or value.status == 'draft'%} disabled{%elseif value.status == 'spam' or value.status == 'deleted' %} negative{%elseif value.status == 'unapproved' or value.status == 'reject'%} warning{%endif%}">
         <td class="s0">
           <a href="{{url.this}}/view?id={{value.id}}">{{value.id | fitNumber}}</a>
         </td>

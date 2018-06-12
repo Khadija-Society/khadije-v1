@@ -13,14 +13,14 @@
 
         <p>
 {%if travelDetail.birthday%}
-          <span class="badge">{%trans "Birthday" %}{{travelDetail.birthday}}</span>
+          <span class="badge">{%trans "Birthday" %}{{travelDetail.birthday | fitNumber(false)}}</span>
 {%endif%}
           <span class="badge success">{%set GenderS = travelDetail.gender | capitalize%} {%trans GenderS%}</span>
           <span class="badge warn">{%set MaritalS = travelDetail.married | capitalize%}{%trans MaritalS%}</span>
           <span class="badge" title='{%trans "Father name"%}'>{{travelDetail.father}}</span>
         </p>
 
-        <p>{%trans "Nationalcode" %} {{travelDetail.nationalcode |fitNumber}}</p>
+        <p>{%trans "Nationalcode" %} {{travelDetail.nationalcode |fitNumber(false)}}</p>
 
         <h5 class="mT25">{%trans "Address"%}</h5>
         <p>
@@ -29,7 +29,7 @@
           <span class="badge">{{travelDetail.city}}</span>
           <span class="badge">{{travelDetail.address}}</span>
           <br>
-          <small class="badge info fs12">{{travelDetail.mobile}}</small>
+          <small class="badge info fs12"><a href="tel:{{travelDetail.mobile}}">{{travelDetail.mobile | fitNumber('mobile')}}</a></small>
         </p>
     </div>
 
@@ -124,7 +124,7 @@
               {%endif%}
 
             </div>
-            <div class="meta"><span>{{value.nationalcode | fitNumber}}</span></div>
+            <div class="meta"><span>{{value.nationalcode | fitNumber(false)}}</span></div>
           </div>
           <div class="cauto">
 {%if value.gender == 'female'%}
@@ -136,7 +136,7 @@
           <div class="desc c12">
            <span class="badge info">{{value.nesbat}}</span>
            <span class="badge">{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</span>
-           <span class="badge success">{{value.birthday | fitNumber}}</span>
+           <span class="badge success">{{value.birthday | jdate | fitNumber(false)}}</span>
            <span class="badge" title='{%trans "Child"%}'>{{value.father}}</span>
 
           </div>
