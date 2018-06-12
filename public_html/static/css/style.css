@@ -184,10 +184,11 @@ body{
 	background-color: #020558;
 	background-image: url('../images/homepage-v3/header-pattern.png');
 	height: 120px;
-	animation: animatedBackground 60s linear infinite reverse;
 	background-position: center;
 	color: #eee;
 	user-select: none;
+	animation: animatedBackground 60s linear infinite;
+	-webkit-animation: animatedBackground 60s linear infinite;
 }
 #sHeader .cn:before{
 	content: "";
@@ -593,8 +594,13 @@ body.rtl[data-sidebar] #sidebar{left:0;}
 	background-position: bottom;
 	color: #333;
 	animation: animatedBackground 60s linear infinite;
+	-webkit-animation: animatedBackground 60s linear infinite;
 }
 @keyframes animatedBackground {
+	from { background-position: 0 bottom; }
+	to { background-position: 100% bottom; }
+}
+@-webkit-keyframes animatedBackground {
 	from { background-position: 0 bottom; }
 	to { background-position: 100% bottom; }
 }
