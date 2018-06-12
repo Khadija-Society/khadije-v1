@@ -191,9 +191,14 @@ body{
 	color: #eee;
 	user-select: none;
 	animation: animatedBackground 60s linear infinite;
-	-webkit-animation: animatedBackground 60s linear infinite;
     /* force hardware acceleration */
     -webkit-transform: translateZ(0);
+	-webkit-animation-name: animatedBackground;
+	-webkit-animation-duration: 60s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 0.01s;
 }
 #sHeader .cn:before{
 	content: "";
@@ -599,17 +604,25 @@ body.rtl[data-sidebar] #sidebar{left:0;}
 	background-position: bottom;
 	color: #333;
 	animation: animatedBackground 60s linear infinite;
-	-webkit-animation: animatedBackground 60s linear infinite;
     /* force hardware acceleration */
     -webkit-transform: translateZ(0);
+	-webkit-animation-name: animatedBackground;
+	-webkit-animation-duration: 60s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 0.01s;
 }
 @keyframes animatedBackground {
 	from { background-position: 0 bottom; }
 	to { background-position: 100% bottom; }
 }
 @-webkit-keyframes animatedBackground {
-	from { -webkit-background-position: 0 bottom; }
-	to { -webkit-background-position: 100% bottom; }
+	0% { -webkit-background-position: 0 bottom; }
+	25% { -webkit-background-position: 25% bottom; }
+	50% { -webkit-background-position: 50% bottom; }
+	75% { -webkit-background-position: 75% bottom; }
+	100% { -webkit-background-position: 100% bottom; }
 }
 #sFooter .cn{
 	overflow:hidden;
