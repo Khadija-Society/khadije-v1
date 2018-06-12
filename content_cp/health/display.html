@@ -71,7 +71,7 @@
           </a>
         </td>
         <td><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
-        <td class="s0 collapsing">{%set myStatus = value.status | capitalize%}{%trans myStatus%}</td>
+        <td class="s0 collapsing"><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status | capitalize %}{%trans myStatus%}</a></td>
         <td class="collapsing"><a href="{{url.this}}?health={{value.expert}}">{{value.expert}}</a></td>
       </tr>
       {%endfor%}
