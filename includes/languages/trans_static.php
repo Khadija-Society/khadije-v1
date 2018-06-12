@@ -94,6 +94,15 @@ class TransStatic
 	echo T_("cpHealthView");
 	echo T_("cpHealthOption");
 
+	// ----------------------------- users table
+	echo T_("married");
+	echo T_("zipcode");
+	echo T_("desc");
+	echo T_("job");
+	echo T_("iscompleteprofile");
+	echo T_("nesbat");
+
+
  }
 }
 ?>

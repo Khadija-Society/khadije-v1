@@ -66,7 +66,6 @@ class twigTransTerms
 	//-----------------------------------------------------content\health\display.html
 
 	//-------------------------------------------------------content\home\display.html
-	echo T_("Read more");                                                             // Line 147
 	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 36
 	echo T_("You also partake in salawat");                                           // Line 38
 	echo T_("Say salawat");                                                           // Line 40
@@ -90,7 +89,8 @@ class twigTransTerms
 	echo T_("Donate with register details");                                          // Line 126
 	echo T_("Latest News");                                                           // Line 137
 	echo T_("Mr.Farahzad's statement");                                               // Line 171
-	echo T_("Contact with manager");                                                  // Line 182
+	echo T_("Shahid Mahdi Imani");                                                    // Line 110
+	echo T_("Contact with manager");                                                  // Line 183
 
 	//--------------------------------------------------------content\main\layout.html
 	echo T_("If religion being in the Pleiades, people from Persia can obtainment to that");// Line 46
@@ -139,7 +139,6 @@ class twigTransTerms
 	echo T_("Buy book");                                                              // Line 25
 
 	//-----------------------------------------------------content\old\v1\display.html
-	echo T_("Shahid Mahdi Imani");                                                    // Line 110
 	echo T_("Do you know?");                                                          // Line 188
 	echo T_("Family trip signup");                                                    // Line 84
 	echo T_("Group trip signup");                                                     // Line 72
@@ -246,7 +245,7 @@ class twigTransTerms
 	echo T_("We do not provide health service yet!");                                 // Line 9
 
 	//-----------------------------------------------------content_a\home\display.html
-	echo T_("Representation");                                                        // Line 64
+	echo T_("Representation");                                                        // Line 81
 	echo T_("Health Service");                                                        // Line 90
 	echo T_("Consulting Service");                                                    // Line 10
 	echo T_("Donate product");                                                        // Line 114
@@ -365,12 +364,8 @@ class twigTransTerms
 	//----------------------------------------------content_cp\consulting\display.html
 	echo T_("Search in consulting");                                                  // Line 44
 	echo T_("firstname");                                                             // Line 57
-	echo T_("birthday");                                                              // Line 59
-	echo T_("province");                                                              // Line 60
-	echo T_("phone");                                                                 // Line 61
-	echo T_("married");                                                               // Line 62
-	echo T_("gender");                                                                // Line 63
-	echo T_("Consulting");                                                            // Line 99
+	echo T_("status");                                                                // Line 66
+	echo T_("Expert");                                                                // Line 67
 
 	//----------------------------------------content_cp\delneveshte\edit\display.html
 
@@ -405,13 +400,13 @@ class twigTransTerms
 
 	//--------------------------------------------------content_cp\health\display.html
 	echo T_("Search in health");                                                      // Line 44
-	echo T_("Health");                                                                // Line 64
 
 	//----------------------------------------------------content_cp\home\display.html
 	echo T_("Admin Contact");                                                         // Line 34
 	echo T_("Report");                                                                // Line 11
 	echo T_("Home page number");                                                      // Line 53
 	echo T_("Send SMS");                                                              // Line 72
+	echo T_("Consulting");                                                            // Line 99
 	echo T_("SMS Template");                                                          // Line 108
 	echo T_("Donate product list");                                                   // Line 119
 	echo T_("Donate list");                                                           // Line 9
@@ -437,7 +432,7 @@ class twigTransTerms
 
 	//---------------------------------------content_cp\options\cityplace\display.html
 	echo T_("List of city place");                                                    // Line 22
-	echo T_("Place");                                                                 // Line 72
+	echo T_("Place");                                                                 // Line 60
 	echo T_("Delete");                                                                // Line 28
 	echo T_("Please select one items");                                               // Line 60
 	echo T_("Enter a valid place");                                                   // Line 72
@@ -476,13 +471,13 @@ class twigTransTerms
 
 	//------------------------------------------content_cp\representation\display.html
 	echo T_("Search in representation");                                              // Line 44
-	echo T_("Action");                                                                // Line 82
+	echo T_("Action");                                                                // Line 77
 
 	//-------------------------------------content_cp\representation\view\display.html
-	echo T_("Status of representation");                                              // Line 34
+	echo T_("Status of representation");                                              // Line 27
 	echo T_("inapropirate request and spam detected");                                // Line 211
-	echo T_("Done Representation");                                                   // Line 50
-	echo T_("Representation is done");                                                // Line 50
+	echo T_("Done Representation");                                                   // Line 43
+	echo T_("Representation is done");                                                // Line 43
 	echo T_("Draft");                                                                 // Line 235
 	echo T_("try to fill request");                                                   // Line 235
 	echo T_("cancel from user");                                                      // Line 240
@@ -497,7 +492,6 @@ class twigTransTerms
 	echo T_("job");                                                                   // Line 63
 	echo T_("desc");                                                                  // Line 64
 	echo T_("arabic");                                                                // Line 65
-	echo T_("Expert");                                                                // Line 66
 
 	//---------------------------------------------------------content_cp\sidenav.html
 	echo T_("Homepage settings");                                                     // Line 2
