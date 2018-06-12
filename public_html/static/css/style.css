@@ -327,7 +327,7 @@ body.down #sHeaderNav.clone {
 }
 
 #sidebar{display: block;position: fixed;top: 0;bottom: 0;overflow-y: auto;z-index: 3;background-color: rgba(0,0,0,0.9);width:250px;left: 0;left: -250px;transition:0.3s;}
-body.rtl[data-sidebar] #sidebar{left:0;}
+body[data-sidebar] #sidebar{left:0;}
 #sidebar ul{font-size:1.4em;margin-top:50px;color:#eee;}
 #sidebar ul > li.title{background-color:#333;padding:0.5em 1em;}
 #sidebar ul > li > a{display:block;padding:1.2em 2em;color:#eee;transition:0.3s;cursor:pointer;max-width:300px;margin:0 auto;}
