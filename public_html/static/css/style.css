@@ -199,6 +199,9 @@ body{
 #sHeader .brand{
 	display: block;
 	margin-top: 4px;
+	-webkit-touch-callout:none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 #sHeader .brand h1{
 	display: none;
