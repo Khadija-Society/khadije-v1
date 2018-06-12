@@ -1266,14 +1266,14 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 		font-size: 2rem;
 	}
 	.sB3:before{
-		width: 50px;
-		right: -50px;
-		background-position: -202px -350px;
+		width: 90px;
+		right: -90px;
+		background-position: -1100px -450px;
 	}
 	.sB3:after{
-		width: 50px;
-		left: -50px;
-		background-position: -140px -350px;
+		width: 90px;
+		left: -90px;
+		background-position: -1000px -450px;
 	}
 }
 
@@ -1301,14 +1301,14 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 		font-size: 2rem;
 	}
 	.sB3:before{
-		width: 30px;
-		right: -30px;
-		background-position: -202px -350px;
+		width: 40px;
+		right: -40px;
+		background-position: -1100px -450px;
 	}
 	.sB3:after{
-		width: 30px;
-		left: -30px;
-		background-position: -170px -350px;
+		width: 40px;
+		left: -40px;
+		background-position: -1050px -450px;
 	}
 	.salavat{
 		max-width: 200px;
