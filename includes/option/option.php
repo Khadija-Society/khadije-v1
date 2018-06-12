@@ -24,7 +24,9 @@ self::$language =
 self::$url['tld']                   = 'com';
 self::$url['protocol']              = 'https';
 
-self::$config['slider_tag'][]  = "slider";
+self::$config['tagSpecial']['slider']  = "Show in main slider";
+self::$config['tagSpecial']['lottory'] = "Show in list of lottory winners";
+
 
 self::$config['notif']['image'] = '/static/images/logo.png';
 
