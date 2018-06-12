@@ -192,6 +192,8 @@ body{
 	user-select: none;
 	animation: animatedBackground 60s linear infinite;
 	-webkit-animation: animatedBackground 60s linear infinite;
+    /* force hardware acceleration */
+    -webkit-transform: translateZ(0);
 }
 #sHeader .cn:before{
 	content: "";
@@ -598,6 +600,8 @@ body.rtl[data-sidebar] #sidebar{left:0;}
 	color: #333;
 	animation: animatedBackground 60s linear infinite;
 	-webkit-animation: animatedBackground 60s linear infinite;
+    /* force hardware acceleration */
+    -webkit-transform: translateZ(0);
 }
 @keyframes animatedBackground {
 	from { background-position: 0 bottom; }
