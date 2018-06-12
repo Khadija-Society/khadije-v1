@@ -3,21 +3,13 @@
 {%block pageContent%}
 
 <div class="cbox">
-  <form method="post" class="cbox">
+  <form method="post" autocomplete="off">
+    <h2>
+      {{representationDetail.firstname}}<b>{{representationDetail.lastname}}</b>
+      <span class="badge floatRa success">{{representationDetail.expert}}</span>
+    </h2>
 
-    <h2>{{representationDetail.firstname}}<b>{{representationDetail.lastname}}</b></h2>
-    <br>
-    <h3>{{representationDetail.expert}}</h3>
-
-    <div class="f">
-      <div class="c8 s12 pRa10">{{block('iStatus')}}</div>
-      <div class="c4 s12">
-        <input type="hidden" name="edit_travel" value="edit_travel">
-        {{block ('istartdate') }}
-        {{block ('ienddate') }}
-        {{block ('iDescription') }}
-      </div>
-    </div>
+    {{block('iStatus')}}
     {{block ('iSave') }}
   </form>
 </div>
