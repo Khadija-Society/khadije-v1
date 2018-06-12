@@ -1331,3 +1331,15 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 		order:1;
 	}
 }
+
+
+@media print {
+  .wrapper{
+  	background-color: transparent;
+  	padding-bottom: 0;
+  }
+  #sFooter{
+  	background-color: transparent;
+  	padding-top:60px;
+  }
+}
