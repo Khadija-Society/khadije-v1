@@ -601,8 +601,8 @@ body.rtl[data-sidebar] #sidebar{left:0;}
 	to { background-position: 100% bottom; }
 }
 @-webkit-keyframes animatedBackground {
-	from { background-position: 0 bottom; }
-	to { background-position: 100% bottom; }
+	from { -webkit-background-position: 0 bottom; }
+	to { -webkit-background-position: 100% bottom; }
 }
 #sFooter .cn{
 	overflow:hidden;
