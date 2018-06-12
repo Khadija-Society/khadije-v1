@@ -138,7 +138,7 @@
             <a href="{{url.here}}/{{myNews.url}}">
              <img class="sp-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
             </a>
-            <p class="sp-layer sp-white sp-padding hide-medium-screen hide-small-screen" data-horizontal="20" data-vertical="5%" data-width="300" data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500" data-position="topRight">{{myNews.excerpt}}</p>
+            <p class="hide">{{myNews.excerpt}}</p>
           </div>
 {%endfor%}
         </div>
