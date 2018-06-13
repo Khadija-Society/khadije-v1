@@ -102,16 +102,21 @@ function changeToNews(_to)
 
 function runTopSlider()
 {
-    $('#topSlider').sliderPro(
-    {
-      width: 800,
-      height: 450,
-      aspectRatio: 16/9,
-      arrows: true,
-      buttons: false,
-      waitForLayers: true,
-      autoScaleLayers: false,
-    });
+  if($('#topSlider').length < 1)
+  {
+    return;
+  }
+
+  $('#topSlider').sliderPro(
+  {
+    width: 800,
+    height: 450,
+    aspectRatio: 16/9,
+    arrows: true,
+    buttons: false,
+    waitForLayers: true,
+    autoScaleLayers: false,
+  });
 }
 
 
