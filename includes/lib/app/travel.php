@@ -635,6 +635,11 @@ class travel
 		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \dash\user::id(), 'type' => \dash\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
 		if(isset($check_duplicate_travel['id']))
 		{
+			if(isset($check_duplicate_travel['status']) && $check_duplicate_travel['status'] === 'draft')
+			{
+				\dash\redirect::to(\dash\url::here(). '/trip/profile?trip='. $check_duplicate_travel['id']);
+			}
+
 			\dash\notif::error(T_("You signup to this trip before, please wait for checking status of that trip"));
 			return false;
 		}

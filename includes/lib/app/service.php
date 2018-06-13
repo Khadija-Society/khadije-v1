@@ -307,6 +307,10 @@ class service
 		$check_duplicate = \lib\db\services::get(['user_id' => \dash\user::id(), 'expert' => $args['expert'], 'status' => ["IN", "('draft','awaiting','accept','spam')"], 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
+			if(isset($check_duplicate['status']) && $check_duplicate['status'] === 'draft')
+			{
+				\dash\redirect::to(\dash\url::here(). '/'. \dash\url::module(). '/profile?id='. $check_duplicate['id']);
+			}
 			\dash\notif::error(T_("You register to this service before"));
 			return false;
 		}
