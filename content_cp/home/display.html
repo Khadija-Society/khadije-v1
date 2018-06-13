@@ -4,28 +4,34 @@
 {%block pageContent%}
 <div class="f">
 
- <div class="c3 s12">{{block ("Bdonate")}}</div>
+  <div class="c3 s6">{{block ("Bdonate")}}</div>
+  <div class="c3 s6">{{block ("Btrip")}}</div>
+  <div class="c3 s6">{{block ("BtripFamilty")}}</div>
+  <div class="c3 s6">{{block ("BNcode")}}</div>
+  <div class="c3 s6">{{block ("BService")}}</div>
 
- <div class="c3 s12 f">
-  <div class="c6 s12">{{block ("Btrip")}}</div>
-  <div class="c6 s12">{{block ("BtripFamilty")}}</div>
- </div>
-
- <div class="c3 s12">{{block ("BNcode")}}</div>
- <div class="c3 s12">{{block ("BService")}}</div>
-
- <div class="c3 s12">{{block ("bConsulting")}}</div>
- <div class="c3 s12">{{block ("bHealth")}}</div>
- <div class="c3 s12">{{block ("bNiyabat")}}</div>
- <div class="c3 s12">{{block ("bSendSMS")}}</div>
- <div class="c3 s12">{{block ("bDelneveshte")}}</div>
- <div class="c3 s12">{{block ("homePageNumber")}}</div>
- <div class="c3 s12">{{block ("Report")}}</div>
- <div class="c3 s12">{{block ("AdminComment")}}</div>
+  <div class="c3 s6">{{block ("bConsulting")}}</div>
+  <div class="c3 s6">{{block ("bHealth")}}</div>
+  <div class="c3 s6">{{block ("bNiyabat")}}</div>
+  <div class="c3 s6">{{block ("bSendSMS")}}</div>
+  <div class="c3 s6">{{block ("bDelneveshte")}}</div>
+  <div class="c3 s6">{{block ("homePageNumber")}}</div>
+  <div class="c3 s6">{{block ("Report")}}</div>
+  <div class="c3 s6">{{block ("AdminComment")}}</div>
+  <div class="c3 s6">{{block ("bHadith")}}</div>
 
 </div>
 {%endblock%}
 
+
+{%block bHadith%}
+<a class="dcard x2" href='{{url.here}}/hadith'>
+ <div class="statistic">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Hadith"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block AdminComment%}
 <a class="dcard x2" href='{{url.here}}/admincontact'>
