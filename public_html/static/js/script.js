@@ -58,7 +58,7 @@ function bindLastNews()
 	setInterval(function ()
 	{
     changeToNews();
-	}, 1000);
+	}, 3000);
 }
 
 
