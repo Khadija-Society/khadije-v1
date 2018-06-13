@@ -889,7 +889,9 @@ body[data-sidebar] #sidebar{left:0;}
 .pageData .postPreview img.thumb:hover{border-color:#333}
 .pageData .postMainContent{overflow: hidden;}
 .pageData #lightgallery{text-align:center; margin:2em 0;clear: both;}
-.pageData #lightgallery img{width:200px;max-width:45%; margin:0 auto;}
+.pageData #lightgallery a{display: inline-block;max-width:45%;width:100px;margin:0 10px;}
+.pageData #lightgallery img{margin:0 auto;border:1px solid #ddd;transition:0.3s}
+.pageData #lightgallery img:hover{border-color:#777}
 .pageData #lightgallery video{width:200px;max-width:45%; margin:0 auto;}
 .pageData #lightgallery audio{width:200px;max-width:45%; margin:0 auto;}
 
