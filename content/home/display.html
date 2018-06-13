@@ -137,11 +137,10 @@
 {%for key, myNews in lastPostsRecord%}
           <a href="{{url.here}}/{{myNews.url}}" data-index='{{key}}' class="f align-center justify-center {%if key == 0%}active{%endif%}">
             <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}">
-            <div class="meta">
-              <h2>{{myNews.title}}</h2>
-              <p>{{myNews.excerpt}}</p>
-            </div>
           </a>
+          <div class="s0">
+            <p>{{myNews.excerpt}}</p>
+          </div>
 {%endfor%}
         </div>
       </div>
