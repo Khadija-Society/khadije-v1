@@ -138,7 +138,7 @@
           <a href="{{url.here}}/{{myNews.url}}" data-index='{{key}}' class="f align-center justify-center {%if key == 0%}active{%endif%}">
             <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}">
           </a>
-          <div class="s0">
+          <div class="hide">
             <p>{{myNews.excerpt}}</p>
           </div>
 {%endfor%}
