@@ -38,7 +38,10 @@ class view
 		if(\dash\request::get('representation')) $args['services.expert'] = \dash\request::get('representation');
 		$args['services.type'] = 'representation';
 
-
+		if(!isset($args['services.status']))
+		{
+			$args['services.status']     = ["NOT IN", "('cancel', 'draft')"];
+		}
 		$search_string            = \dash\request::get('q');
 
 		if(!$search_string) $search_string = null;
@@ -65,6 +68,16 @@ class view
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/service'));
 		$filterArray = $args;
 		unset($filterArray['services.type']);
+
+		if(isset($filterArray['services.status']))
+		{
+			if(is_string($filterArray['services.status']))
+			{
+				$filterArray[T_("Status")] = $filterArray['services.status'];
+			}
+			unset($filterArray['services.status']);
+		}
+
 		if(isset($filterArray['services.expert']))
 		{
 			$filterArray[T_("Representation")] = $filterArray['services.expert'];

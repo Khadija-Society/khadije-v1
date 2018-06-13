@@ -33,6 +33,11 @@ class view
 			$args['status'] = \dash\request::get('status');
 		}
 
+		if(!isset($args['status']))
+		{
+			$args['status']     = ["NOT IN", "('cancel', 'draft', 'deleted')"];
+		}
+
 		$args['type'] = 'delneveshte';
 
 		if(\dash\request::get('unittype'))
@@ -56,6 +61,15 @@ class view
 
 		$filterArray = $args;
 		unset($filterArray['type']);
+		if(isset($filterArray['status']))
+		{
+			if(is_string($filterArray['status']))
+			{
+				$filterArray[T_("Status")] = $filterArray['status'];
+			}
+			unset($filterArray['status']);
+		}
+
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
 		\dash\data::dataFilter($dataFilter);

@@ -39,6 +39,10 @@ class view
 		if(\dash\request::get('health')) $args['services.expert'] = \dash\request::get('health');
 		$args['services.type'] = 'health';
 
+		if(!isset($args['services.status']))
+		{
+			$args['services.status']     = ["NOT IN", "('cancel', 'draft')"];
+		}
 
 		$search_string            = \dash\request::get('q');
 
@@ -67,6 +71,15 @@ class view
 
 		$filterArray = $args;
 		unset($filterArray['services.type']);
+		if(isset($filterArray['services.status']))
+		{
+			if(is_string($filterArray['services.status']))
+			{
+				$filterArray[T_("Status")] = $filterArray['services.status'];
+			}
+			unset($filterArray['services.status']);
+		}
+
 		if(isset($filterArray['services.expert']))
 		{
 			$filterArray[T_("Health")] = $filterArray['services.expert'];

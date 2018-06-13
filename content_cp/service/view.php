@@ -55,6 +55,11 @@ class view
 
 		$args['services.type'] = 'khadem';
 
+		if(!isset($args['services.status']))
+		{
+			$args['services.status']     = ["NOT IN", "('cancel', 'draft')"];
+		}
+
 		$search_string            = \dash\request::get('q');
 
 		if(!$search_string) $search_string = null;
@@ -88,6 +93,14 @@ class view
 			unset($filterArray['services.expert']);
 		}
 
+		if(isset($filterArray['services.status']))
+		{
+			if(is_string($filterArray['services.status']))
+			{
+				$filterArray[T_("Status")] = $filterArray['services.status'];
+			}
+			unset($filterArray['services.status']);
+		}
 
 		if(isset($filterArray['services.user_id']))
 		{
