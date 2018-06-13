@@ -934,7 +934,7 @@ body[data-page="donate"] #sHeaderNav .headerLine{
 }
 body[data-page="donate"] .wrapper .cbox{
 	border: 1px solid #00aaaa;
-	margin-top: 70px;
+	margin-top: 60px;
 	padding-top: 20px;
 }
 body[data-page="donate"] .wrapper .cbox h2{
@@ -944,13 +944,13 @@ body[data-page="donate"] .wrapper .cbox h2{
 
 body[data-page="donate"] .wrapper .cbox.donateForm:before{
 	content: "";
-	height:110px;
-	width: 360px;
+	height:86px;
+	width: 280px;
 	max-width: 100%;
 	position: absolute;
 	right: 0;
 	left: 0;
-	top: -68px;
+	top: -54px;
 	margin:0 auto;
 	background-image: url('../images/homepage-v3/sprite.png');
 	background-position: -950px -300px;
