@@ -65,9 +65,9 @@ function bindLastNews()
 function changeToNews(_to)
 {
   var newsBox    = $('.lastNews');
-  if(!newsBox)
+  if(newsBox.length < 1)
   {
-    return false;
+    return;
   }
   var lastActive = newsBox.find('.list .active');
 
