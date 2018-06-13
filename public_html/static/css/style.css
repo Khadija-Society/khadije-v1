@@ -531,19 +531,19 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 }
 .sprite-twitter{
-	background-position: -320px -140px;
+	background-position: -320px -300px;
 	width: 32px;
 	height: 32px;
 	margin: 0 auto;
 }
 .sprite-facebook{
-	background-position: -352px -140px;
+	background-position: -352px -300px;
 	width: 32px;
 	height: 32px;
 	margin: 0 auto;
 }
 .sprite-youtube{
-	background-position: -384px -140px;
+	background-position: -384px -300px;
 	width: 32px;
 	height: 32px;
 	margin: 0 auto;

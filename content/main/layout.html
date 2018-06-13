@@ -201,20 +201,20 @@
 
 {%block pageSocialLinks%}
 <nav class="shareC txtRa">
-{%if social.facebook%}
-  <a data-direct target='_blank' href="https://www.facebook.com/{{social.facebook}}" class="sprite-facebook">{{site.title}} facebook</a>
-{%endif%}
 {%if social.twitter%}
-  <a data-direct target='_blank' href="https://twitter.com/{{social.twitter}}" class="sprite-twitter">{{site.title}} twitter</a>
+  <a data-direct target='_blank' href="https://twitter.com/{{social.twitter}}" class="sprite-twitter" title='{%trans "Twitter"%}'>{{site.title}} twitter</a>
+{%endif%}
+{%if social.facebook%}
+  <a data-direct target='_blank' href="https://www.facebook.com/{{social.facebook}}" class="sprite-facebook" title='{%trans "Facebook"%}'>{{site.title}} facebook</a>
 {%endif%}
 {%if social.googleplus%}
   <a data-direct target='_blank' href="https://plus.google.com/{{social.googleplus}}" class="sprite-googleplus">{{site.title}} google+</a>
 {%endif%}
 {%if social.telegram%}
-  <a data-direct target='_blank' href="https://t.me/{{social.telegram}}" class="sprite-telegram" title='تلگرام'>{{site.title}} telegram</a>
+  <a data-direct target='_blank' href="https://t.me/{{social.telegram}}" class="sprite-telegram" title='{%trans "Telegram"%}'>{{site.title}} telegram</a>
 {%endif%}
 {%if social.instagram%}
-  <a data-direct target='_blank' href="https://instagram.com/{{social.instagram}}" class="sprite-instagram" title='اینستاگرام'>{{site.title}} instagram</a>
+  <a data-direct target='_blank' href="https://instagram.com/{{social.instagram}}" class="sprite-instagram" title='{%trans "Instagram"%}'>{{site.title}} instagram</a>
 {%endif%}
 {%if social.linkedin%}
   <a data-direct target='_blank' href="https://www.linkedin.com/{{social.linkedin}}" class="sprite-linkedin">{{site.title}} linkedin</a>
