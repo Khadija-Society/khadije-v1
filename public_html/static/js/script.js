@@ -65,6 +65,10 @@ function bindLastNews()
 function changeToNews(_to)
 {
   var newsBox    = $('.lastNews');
+  if(!newsBox)
+  {
+    return false;
+  }
   var lastActive = newsBox.find('.list .active');
 
   if(_to === undefined)
@@ -163,7 +167,10 @@ function typeTitles()
 
 function runLightBox()
 {
-  lightGallery(document.getElementById('lightgallery'));
+  if(document.getElementById('lightgallery'))
+  {
+    lightGallery(document.getElementById('lightgallery'));
+  }
 }
 
 
