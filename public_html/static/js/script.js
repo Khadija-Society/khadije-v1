@@ -3,8 +3,8 @@ function pushState()
 {
   runLightBox();
   runTopSlider();
-  runLastNewsSlider();
-
+  // runLastNewsSlider();
+  bindLastNews();
 }
 
 $(function()
@@ -44,6 +44,37 @@ function fixedHeader()
   // });
 }
 
+
+function bindLastNews()
+{
+  $('.lastNews .list a').off('mouseover');
+  $('.lastNews .list a').on('mouseover', function()
+  {
+    var selectedIndex = $(this).attr('data-index');
+    changeToNews(selectedIndex);
+  });
+}
+
+
+function changeToNews(_to)
+{
+  if(_to === undefined)
+  {
+    return false;
+  }
+  var newsBox = $('.lastNews');
+  newsBox.find('.list .active').removeClass('active')
+
+  // change selectedIndex news
+  if(_to)
+  {
+    newsBox.find('.list a[data-index="' + _to +'"]').addClass('active');
+    newsBox.find('.preview .active').removeClass('active')
+    newsBox.find('.preview a[data-index="' + _to +'"]').addClass('active');
+  }
+}
+
+
 function runTopSlider()
 {
     $('#topSlider').sliderPro(
@@ -59,36 +90,36 @@ function runTopSlider()
 }
 
 
-function runLastNewsSlider()
-{
-    $('#latestNewsSlider').sliderPro(
-    {
-      width: 800,
-      height: 450,
-      aspectRatio: 16/9,
-      orientation: 'vertical',
-      // arrows: true,
-      buttons: false,
-      thumbnailsPosition: 'left',
-      thumbnailPointer: true,
-      thumbnailWidth: 290,
-      breakpoints:
-      {
-        800:
-        {
-          thumbnailsPosition: 'bottom',
-          thumbnailWidth: 270,
-          thumbnailHeight: 100
-        },
-        500:
-        {
-          thumbnailsPosition: 'bottom',
-          thumbnailWidth: 120,
-          thumbnailHeight: 70
-        }
-      }
-    });
-}
+// function runLastNewsSlider()
+// {
+//     $('#latestNewsSlider').sliderPro(
+//     {
+//       width: 800,
+//       height: 450,
+//       aspectRatio: 16/9,
+//       orientation: 'vertical',
+//       // arrows: true,
+//       buttons: false,
+//       thumbnailsPosition: 'left',
+//       thumbnailPointer: true,
+//       thumbnailWidth: 290,
+//       breakpoints:
+//       {
+//         800:
+//         {
+//           thumbnailsPosition: 'bottom',
+//           thumbnailWidth: 270,
+//           thumbnailHeight: 100
+//         },
+//         500:
+//         {
+//           thumbnailsPosition: 'bottom',
+//           thumbnailWidth: 120,
+//           thumbnailHeight: 70
+//         }
+//       }
+//     });
+// }
 
 
 function typeTitles()

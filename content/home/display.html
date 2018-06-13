@@ -127,36 +127,39 @@
 {%set lastPostsRecord = posts({"limit" : 8})%}
 {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
 {%if lastPostsRecord%}
-  <section class="latestNews txtC mT25 mB50">
+  <section class="lastNews txtC mT25 mB25">
     <h3 class="sB3">{%trans "Latest News"%}</h3>
-
-    <div class="goldenB latestNewsSlider slider-pro" id='latestNewsSlider'>
-
-        <div class="sp-slides">
+    {%set lastPostsRecord = posts({"limit" : 7})%}
+    {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
+    <div class="goldenB f">
+      <div class="c8 s12">
+        <div class="preview">
 {%for key, myNews in lastPostsRecord%}
-          <div class="sp-slide">
-            <a href="{{url.here}}/{{myNews.url}}">
-             <img class="sp-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
-            </a>
-            <p class="hide">{{myNews.excerpt}}</p>
-          </div>
-{%endfor%}
-        </div>
-
-        <div class="sp-thumbnails">
-{%for key, myNews in lastPostsRecord%}
-          <div class="sp-thumbnail f">
-            <div class="cauto sp-thumbnail-image-container">
-              <img class="sp-thumbnail-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
+          <a href="{{url.here}}/{{myNews.url}}" data-index='{{key}}' class="f align-center justify-center {%if key == 0%}active{%endif%}">
+            <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}">
+            <div class="meta">
+              <h2>{{myNews.title}}</h2>
+              <p>{{myNews.excerpt}}</p>
             </div>
-            <h3 class="c sp-thumbnail-text f align-center justify-center">{{myNews.title}}</h3>
-          </div>
+          </a>
 {%endfor%}
         </div>
-
+      </div>
+      <div class="c4 s12 listBox">
+        <nav class="f f-column list">
+{%for key, myNews in lastPostsRecord%}
+          <a class="c f align-center justify-center {%if key == 0%}active{%endif%}" href="{{url.here}}/{{myNews.url}}" data-index='{{key}}'>{{myNews.title}}</a>
+{%endfor%}
+          <a class="c txtRa archiveLink" href="{{url.here}}/blog">{%trans "Archive"%}</a>
+        </nav>
+      </div>
     </div>
   </section>
 {%endif%}
+
+
+
+
 
   <section class="f justify-center picto fs09">
     <div class="c4 s">

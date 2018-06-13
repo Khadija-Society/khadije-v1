@@ -197,7 +197,7 @@ class twigTransTerms
 	//------------------------------------addons\content_cp\comments\home\display.html
 	echo T_("Search");                                                                // Line 14
 	echo T_("Detail");                                                                // Line 26
-	echo T_("Comment");                                                               // Line 89
+	echo T_("Comment");                                                               // Line 97
 	echo T_("Upvote");                                                                // Line 57
 	echo T_("Downvote");                                                              // Line 58
 	echo T_("Without name");                                                          // Line 89
@@ -208,7 +208,7 @@ class twigTransTerms
 	echo T_("Result not found!");                                                     // Line 103
 	echo T_("Search with new keywords.");                                             // Line 103
 	echo T_("Hi!");                                                                   // Line 110
-	echo T_("Try to start with add new record!");                                     // Line 94
+	echo T_("Try to start with add new record!");                                     // Line 105
 
 	//---------------------------------------addons\content_cp\email\home\display.html
 	echo T_("Your sms panel balance");                                                // Line 18
@@ -242,13 +242,14 @@ class twigTransTerms
 	echo T_("Version");                                                               // Line 21
 
 	//----------------------------------addons\content_cp\permission\add\permView.html
+	echo T_("Slug");                                                                  // Line 134
 	echo T_("The permission name should be unique and contain only alphanameric characters and underscores");// Line 14
 	echo T_("Name of your permission");                                               // Line 14
-	echo T_("Label");                                                                 // Line 17
 	echo T_("The permission label is used to represent your permission in user management");// Line 18
 	echo T_("Label of your permission");                                              // Line 18
 
 	//--------------------------------addons\content_cp\permission\delete\display.html
+	echo T_("Label");                                                                 // Line 17
 
 	//---------------------------------------addons\content_cp\permission\display.html
 	echo T_("Permission title");                                                      // Line 10
@@ -261,38 +262,49 @@ class twigTransTerms
 	echo T_("Click to show list of user by this permission");                         // Line 57
 	echo T_("User");                                                                  // Line 54
 
+	//----------------------------------------addons\content_cp\posts\add\display.html
+	echo T_("First save as draft and do all checks, then publish.");                  // Line 28
+	echo T_("Save as draft");                                                         // Line 28
+
 	//---------------------------------------addons\content_cp\posts\home\display.html
-	echo T_("Publish date");                                                          // Line 41
+	echo T_("Categories");                                                            // Line 58
+	echo T_("Publish date");                                                          // Line 40
 
 	//---------------------------------------------addons\content_cp\posts\layout.html
 	echo T_("Enter title here");                                                      // Line 4
-	echo T_("Enter a good and short title");                                          // Line 4
+	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
 	echo T_("Enter subtitle here");                                                   // Line 11
-	echo T_("Subtitle can used based on theme support");                              // Line 11
+	echo T_("Subtitle show under title and used on press websites");                  // Line 11
 	echo T_("Enter excerpt here");                                                    // Line 17
 	echo T_("Excerpt used for social media and search engines");                      // Line 17
-	echo T_("Slug");                                                                  // Line 134
+	echo T_("Url of this post.");                                                     // Line 22
+	echo T_("You can change by set slug and category or parent for this post");       // Line 22
 	echo T_("Slug used to create url");                                               // Line 28
 	echo T_("Write post ");                                                           // Line 34
-	echo T_("To add image gallery drop file here or");                                // Line 47
-	echo T_("Publish");                                                               // Line 68
-	echo T_("Draft");                                                                 // Line 73
-	echo T_("Deleted");                                                               // Line 78
+	echo T_("Allow change default publish date");                                     // Line 39
+	echo T_("Default is now");                                                        // Line 42
+	echo T_("Publish time");                                                          // Line 50
+	echo T_("To add image gallery drop file here or");                                // Line 55
+	echo T_("Publish");                                                               // Line 76
+	echo T_("Draft");                                                                 // Line 81
+	echo T_("Deleted");                                                               // Line 86
+	echo T_("You can publish in another language");                                   // Line 103
 	echo T_("Language");                                                              // Line 200
 	echo T_("Please select one item");                                                // Line 28
 	echo T_("Parent");                                                                // Line 26
-	echo T_("Master");                                                                // Line 112
-	echo T_("Choose category of post");                                               // Line 123
-	echo T_("Add tag manually to link articles togethers");                           // Line 149
-	echo T_("Tag");                                                                   // Line 151
-	echo T_("Tag keywords...");                                                       // Line 155
-	echo T_("Add tag");                                                               // Line 156
-	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 166
-	echo T_("Click to download");                                                     // Line 203
-	echo T_("Video");                                                                 // Line 193
-	echo T_("MP3");                                                                   // Line 199
-	echo T_("PDF");                                                                   // Line 201
-	echo T_("Without preview");                                                       // Line 203
+	echo T_("Master");                                                                // Line 122
+	echo T_("Choose category of post");                                               // Line 133
+	echo T_("Click on special tags to use this depending on your website design");    // Line 150
+	echo T_("Tag");                                                                   // Line 159
+	echo T_("Add tag manually to link articles togethers");                           // Line 162
+	echo T_("Tag keywords...");                                                       // Line 163
+	echo T_("Add tag");                                                               // Line 164
+	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 174
+	echo T_("Click to download");                                                     // Line 211
+	echo T_("Video");                                                                 // Line 201
+	echo T_("MP3");                                                                   // Line 207
+	echo T_("PDF");                                                                   // Line 209
+	echo T_("Without preview");                                                       // Line 211
 
 	//----------------------------------------addons\content_cp\sms\group\display.html
 	echo T_("Users mobile");                                                          // Line 13
