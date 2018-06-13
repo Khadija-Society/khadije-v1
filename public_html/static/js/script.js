@@ -12,6 +12,7 @@ $(function()
   salavat();
   typeTitles();
   fixedHeader();
+  bindLastNewsTimer();
 });
 
 
@@ -47,18 +48,26 @@ function fixedHeader()
 
 function bindLastNews()
 {
-  $('.lastNews .list a').off('mouseover');
-  $('.lastNews .list a').on('mouseover', function()
+  var myLastNews = $('.lastNews .list a');
+  myLastNews.off('mouseover');
+  if(myLastNews.length < 1)
+  {
+    return;
+  }
+  myLastNews.on('mouseover', function()
   {
     var selectedIndex = $(this).attr('data-index');
     changeToNews(selectedIndex);
   });
+}
 
 
-	setInterval(function ()
-	{
+function bindLastNewsTimer()
+{
+  var myTimer = setInterval(function ()
+  {
     changeToNews();
-	}, 3000);
+  }, 3000);
 }
 
 
