@@ -68,6 +68,7 @@ class twigTransTerms
 	//-------------------------------------------------------content\home\display.html
 	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 36
 	echo T_("You also partake in salawat");                                           // Line 38
+	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 40
 	echo T_("Say salawat");                                                           // Line 40
 	echo T_("and press here");                                                        // Line 40
 	echo T_("Servants registration");                                                 // Line 166
@@ -119,7 +120,7 @@ class twigTransTerms
 	echo T_("Individual registration");                                               // Line 10
 	echo T_("Group registration");                                                    // Line 9
 	echo T_("Consulting service");                                                    // Line 173
-	echo T_("Health service");                                                        // Line 174
+	echo T_("Health service");                                                        // Line 24
 	echo T_("Help");                                                                  // Line 179
 	echo T_("Doners");                                                                // Line 34
 	echo T_("Other Languages");                                                       // Line 186
@@ -245,14 +246,14 @@ class twigTransTerms
 	echo T_("We do not provide health service yet!");                                 // Line 9
 
 	//-----------------------------------------------------content_a\home\display.html
-	echo T_("Representation");                                                        // Line 81
-	echo T_("Health Service");                                                        // Line 90
+	echo T_("Representation");                                                        // Line 87
+	echo T_("Health Service");                                                        // Line 96
 	echo T_("Consulting Service");                                                    // Line 10
 	echo T_("Donate product");                                                        // Line 114
 
 	//------------------------------------------------------content_a\main\layout.html
 	echo T_("Dashboard");                                                             // Line 1
-	echo T_("Delneveshte");                                                           // Line 63
+	echo T_("Delneveshte");                                                           // Line 69
 	echo T_("Edit your profile");                                                     // Line 22
 	echo T_("Avatar of you");                                                         // Line 24
 	echo T_("Default Avatar");                                                        // Line 29
@@ -398,21 +399,28 @@ class twigTransTerms
 	echo T_("Maximum group count");                                                   // Line 177
 	echo T_("Maximum partner count");                                                 // Line 178
 
+	//--------------------------------------------------content_cp\hadith\display.html
+	echo T_("Hadith");                                                                // Line 31
+	echo T_("Language");                                                              // Line 93
+	echo T_("Hadith text");                                                           // Line 92
+	echo T_("Active");                                                                // Line 133
+	echo T_("Deactive");                                                              // Line 133
+
 	//--------------------------------------------------content_cp\health\display.html
 	echo T_("Search in health");                                                      // Line 44
 
 	//----------------------------------------------------content_cp\home\display.html
-	echo T_("Admin Contact");                                                         // Line 34
+	echo T_("Admin Contact");                                                         // Line 40
 	echo T_("Report");                                                                // Line 11
-	echo T_("Home page number");                                                      // Line 53
-	echo T_("Send SMS");                                                              // Line 72
-	echo T_("Consulting");                                                            // Line 99
-	echo T_("SMS Template");                                                          // Line 108
-	echo T_("Donate product list");                                                   // Line 119
+	echo T_("Home page number");                                                      // Line 59
+	echo T_("Send SMS");                                                              // Line 78
+	echo T_("Consulting");                                                            // Line 105
+	echo T_("SMS Template");                                                          // Line 114
+	echo T_("Donate product list");                                                   // Line 125
 	echo T_("Donate list");                                                           // Line 9
-	echo T_("Group trip request");                                                    // Line 139
-	echo T_("Family trip request");                                                   // Line 149
-	echo T_("request service list");                                                  // Line 159
+	echo T_("Group trip request");                                                    // Line 145
+	echo T_("Family trip request");                                                   // Line 155
+	echo T_("request service list");                                                  // Line 165
 
 	//------------------------------------------------content_cp\homepage\display.html
 
@@ -445,11 +453,8 @@ class twigTransTerms
 	echo T_("Desctiption");                                                           // Line 38
 	echo T_("Enter a valid title");                                                   // Line 109
 	echo T_("Enter a valid count");                                                   // Line 125
-	echo T_("Active");                                                                // Line 133
-	echo T_("Deactive");                                                              // Line 133
 
 	//---------------------------------------------------------content_cp\options.html
-	echo T_("Language");                                                              // Line 93
 
 	//---------------------------------content_cp\report\counttransaction\display.html
 	echo T_("Sum");                                                                   // Line 14
@@ -497,12 +502,11 @@ class twigTransTerms
 	echo T_("Homepage settings");                                                     // Line 2
 	echo T_("Delneveshteha");                                                         // Line 3
 	echo T_("Financial");                                                             // Line 7
-	echo T_("Servant list");                                                          // Line 20
+	echo T_("Servants");                                                              // Line 20
 	echo T_("Group trip");                                                            // Line 21
 	echo T_("Family trip");                                                           // Line 22
-	echo T_("consulting service list");                                               // Line 23
-	echo T_("health service list");                                                   // Line 24
-	echo T_("representation service list");                                           // Line 25
+	echo T_("consulting service");                                                    // Line 23
+	echo T_("representation service");                                                // Line 25
 	echo T_("CMS");                                                                   // Line 33
 	echo T_("Categries");                                                             // Line 36
 	echo T_("Tags");                                                                  // Line 37

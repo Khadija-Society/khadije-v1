@@ -208,7 +208,7 @@ class twigTransTerms
 	echo T_("Result not found!");                                                     // Line 103
 	echo T_("Search with new keywords.");                                             // Line 103
 	echo T_("Hi!");                                                                   // Line 110
-	echo T_("Try to start with add new record!");                                     // Line 105
+	echo T_("Try to start with add new record!");                                     // Line 107
 
 	//---------------------------------------addons\content_cp\email\home\display.html
 	echo T_("Your sms panel balance");                                                // Line 18
@@ -242,7 +242,7 @@ class twigTransTerms
 	echo T_("Version");                                                               // Line 21
 
 	//----------------------------------addons\content_cp\permission\add\permView.html
-	echo T_("Slug");                                                                  // Line 134
+	echo T_("Slug");                                                                  // Line 136
 	echo T_("The permission name should be unique and contain only alphanameric characters and underscores");// Line 14
 	echo T_("Name of your permission");                                               // Line 14
 	echo T_("The permission label is used to represent your permission in user management");// Line 18
@@ -267,8 +267,14 @@ class twigTransTerms
 	echo T_("Save as draft");                                                         // Line 28
 
 	//---------------------------------------addons\content_cp\posts\home\display.html
-	echo T_("Categories");                                                            // Line 58
+	echo T_("Categories");                                                            // Line 60
 	echo T_("Publish date");                                                          // Line 40
+	echo T_("All publish posts");                                                     // Line 118
+	echo T_("Published");                                                             // Line 121
+	echo T_("All draft posts");                                                       // Line 127
+	echo T_("Draft");                                                                 // Line 81
+	echo T_("All trash posts");                                                       // Line 136
+	echo T_("Deleted");                                                               // Line 86
 
 	//---------------------------------------------addons\content_cp\posts\layout.html
 	echo T_("Enter title here");                                                      // Line 4
@@ -286,10 +292,8 @@ class twigTransTerms
 	echo T_("Publish time");                                                          // Line 50
 	echo T_("To add image gallery drop file here or");                                // Line 55
 	echo T_("Publish");                                                               // Line 76
-	echo T_("Draft");                                                                 // Line 81
-	echo T_("Deleted");                                                               // Line 86
 	echo T_("You can publish in another language");                                   // Line 103
-	echo T_("Language");                                                              // Line 200
+	echo T_("Language");                                                              // Line 202
 	echo T_("Please select one item");                                                // Line 28
 	echo T_("Parent");                                                                // Line 26
 	echo T_("Master");                                                                // Line 122
@@ -331,13 +335,14 @@ class twigTransTerms
 	echo T_("Cancel");                                                                // Line 14
 
 	//--------------------------------------------addons\content_cp\terms\display.html
-	echo T_("Enter a valid title");                                                   // Line 126
-	echo T_("Used for url");                                                          // Line 132
-	echo T_("Enter a valid slug");                                                    // Line 134
-	echo T_("Parent Category");                                                       // Line 141
-	echo T_("Please select one itme");                                                // Line 143
-	echo T_("Excerpt");                                                               // Line 171
-	echo T_("Try to start with add new records!");                                    // Line 195
+	echo T_("Check");                                                                 // Line 105
+	echo T_("Enter a valid title");                                                   // Line 128
+	echo T_("Used for url");                                                          // Line 134
+	echo T_("Enter a valid slug");                                                    // Line 136
+	echo T_("Parent Category");                                                       // Line 143
+	echo T_("Please select one itme");                                                // Line 145
+	echo T_("Excerpt");                                                               // Line 173
+	echo T_("Try to start with add new records!");                                    // Line 197
 
 	//---------------------------------------addons\content_cp\users\home\display.html
 	echo T_("Display Name");                                                          // Line 60
