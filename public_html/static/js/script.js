@@ -53,21 +53,42 @@ function bindLastNews()
     var selectedIndex = $(this).attr('data-index');
     changeToNews(selectedIndex);
   });
+
+
+	setInterval(function ()
+	{
+    changeToNews();
+	}, 1000);
 }
 
 
 function changeToNews(_to)
 {
+  var newsBox    = $('.lastNews');
+  var lastActive = newsBox.find('.list .active');
+
   if(_to === undefined)
   {
-    return false;
+  	// if hover of slider, do nothing
+  	var isHovered = newsBox.is(":hover");
+  	if(isHovered)
+  	{
+  		return false;
+  	}
+
+  	// else get next element id
+    _to = lastActive.index() + 1;
+    var listCount = newsBox.find('.list a').length - 1;
+    if(_to >= listCount)
+    {
+    	_to = 0;
+    }
   }
-  var newsBox = $('.lastNews');
-  newsBox.find('.list .active').removeClass('active')
 
   // change selectedIndex news
-  if(_to)
+  if(_to !== undefined)
   {
+    lastActive.removeClass('active');
     newsBox.find('.list a[data-index="' + _to +'"]').addClass('active');
     newsBox.find('.preview .active').removeClass('active')
     newsBox.find('.preview a[data-index="' + _to +'"]').addClass('active');
