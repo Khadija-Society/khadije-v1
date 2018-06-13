@@ -5,20 +5,26 @@ function pushState()
   runTopSlider();
   // runLastNewsSlider();
   bindLastNews();
+  salavat();
 }
 
 $(function()
 {
-  salavat();
   typeTitles();
   fixedHeader();
-  bindLastNewsTimer();
+  bindTimer();
 });
 
 
 function salavat()
 {
-	$('.salavat a').on("ajaxify:success", function(_el, _counter)
+  var mySalavat = $('.salavat a');
+  mySalavat.off("ajaxify:success");
+  if(mySalavat.length < 1)
+  {
+    return;
+  }
+	mySalavat.on("ajaxify:success", function(_el, _counter)
 	{
 		if(_counter.result)
 		{
@@ -62,7 +68,7 @@ function bindLastNews()
 }
 
 
-function bindLastNewsTimer()
+function bindTimer()
 {
   var myTimer = setInterval(function ()
   {
