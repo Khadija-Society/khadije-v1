@@ -4,28 +4,27 @@
 {%block pageContent%}
 <div class="f">
 
-  <div class="c3 s6">{{block ("Bdonate")}}</div>
-  <div class="c3 s6">{{block ("Btrip")}}</div>
   <div class="c3 s6">{{block ("BtripFamilty")}}</div>
-  <div class="c3 s6">{{block ("BNcode")}}</div>
+  <div class="c3 s6">{{block ("Btrip")}}</div>
   <div class="c3 s6">{{block ("BService")}}</div>
+  <div class="c3 s6">{{block ("bNiyabat")}}</div>
 
   <div class="c3 s6">{{block ("bConsulting")}}</div>
   <div class="c3 s6">{{block ("bHealth")}}</div>
-  <div class="c3 s6">{{block ("bNiyabat")}}</div>
-  <div class="c3 s6">{{block ("bSendSMS")}}</div>
+  <div class="c3 s6">{{block ("BNcode")}}</div>
   <div class="c3 s6">{{block ("bDelneveshte")}}</div>
+
   <div class="c3 s6">{{block ("homePageNumber")}}</div>
+  <div class="c3 s6">{{block ("bHadith")}}</div>
   <div class="c3 s6">{{block ("Report")}}</div>
   <div class="c3 s6">{{block ("AdminComment")}}</div>
-  <div class="c3 s6">{{block ("bHadith")}}</div>
 
 </div>
 {%endblock%}
 
 
 {%block bHadith%}
-<a class="dcard x2" href='{{url.here}}/hadith'>
+<a class="dcard x1" href='{{url.here}}/hadith'>
  <div class="statistic">
   <div class="value"><i class="sf-list"></i></div>
   <div class="label">{%trans "Hadith"%}</div>
@@ -34,7 +33,7 @@
 {%endblock%}
 
 {%block AdminComment%}
-<a class="dcard x2" href='{{url.here}}/admincontact'>
+<a class="dcard x1" href='{{url.here}}/admincontact'>
  <div class="statistic">
   <div class="value"><i class="sf-user-secret"></i></div>
   <div class="label">{%trans "Admin Contact"%}</div>
@@ -44,7 +43,7 @@
 
 
 {%block Report%}
-<a class="dcard x2" href='{{url.here}}/report'>
+<a class="dcard x1" href='{{url.here}}/report'>
  <div class="statistic">
   <div class="value"><i class="sf-chart"></i></div>
   <div class="label">{%trans "Report"%}</div>
@@ -53,7 +52,7 @@
 {%endblock%}
 
 {%block homePageNumber%}
-<a class="dcard x2" href='{{url.here}}/homepage'>
+<a class="dcard x1" href='{{url.here}}/homepage'>
  <div class="statistic">
   <div class="value"><i class="sf-cog"></i></div>
   <div class="label">{%trans "Home page number"%}</div>
@@ -63,7 +62,7 @@
 
 
 {%block bDelneveshte%}
-<a class="dcard x2" href='{{url.here}}/delneveshte'>
+<a class="dcard x1" href='{{url.here}}/delneveshte'>
  <div class="statistic">
   <div class="value"><i class="sf-heart-o"></i></div>
   <div class="label">{%trans "Delneveshte"%}</div>
@@ -72,7 +71,7 @@
 {%endblock%}
 
 {%block bSendSMS%}
-<a class="dcard x2" href='{{url.here}}/sms'>
+<a class="dcard x1" href='{{url.here}}/sms'>
  <div class="statistic">
   <div class="value"><i class="sf-envelope"></i></div>
   <div class="label">{%trans "Send SMS"%}</div>
@@ -81,7 +80,7 @@
 {%endblock%}
 
 {%block bNiyabat%}
-<a class="dcard x2" href='{{url.here}}/representation'>
+<a class="dcard x1" href='{{url.here}}/representation'>
  <div class="statistic">
   <div class="value"><i class="sf-coffee"></i></div>
   <div class="label">{%trans "Representation"%}</div>
@@ -90,7 +89,7 @@
 {%endblock%}
 
 {%block bHealth%}
-<a class="dcard x2" href='{{url.here}}/health'>
+<a class="dcard x1" href='{{url.here}}/health'>
  <div class="statistic">
   <div class="value"><i class="sf-heartbeat"></i></div>
   <div class="label">{%trans "Health Service"%}</div>
@@ -99,7 +98,7 @@
 {%endblock%}
 
 {%block bConsulting%}
-<a class="dcard x2" href='{{url.here}}/consulting'>
+<a class="dcard x1" href='{{url.here}}/consulting'>
  <div class="statistic">
   <div class="value"><i class="sf-chat-alt-fill"></i></div>
   <div class="label">{%trans "Consulting"%}</div>
@@ -108,7 +107,7 @@
 {%endblock%}
 
 {%block TemplateSMS%}
-<a class="dcard x2" href='{{url.here}}/templatesms'>
+<a class="dcard x1" href='{{url.here}}/templatesms'>
  <div class="statistic">
   <div class="value"><i class="sf-bars"></i></div>
   <div class="label">{%trans "SMS Template"%}</div>
@@ -119,7 +118,7 @@
 
 
 {%block BDonateProduct%}
-<a class="dcard x2" href='{{url.here}}/donateproduct'>
+<a class="dcard x1" href='{{url.here}}/donateproduct'>
  <div class="statistic">
   <div class="value"><i class="sf-bag"></i></div>
   <div class="label">{%trans "Donate product list"%}</div>
@@ -129,7 +128,7 @@
 
 
 {%block Bdonate%}
-<a class="dcard x2" href='{{url.here}}/donate'>
+<a class="dcard x1" href='{{url.here}}/donate'>
  <div class="statistic">
   <div class="value"><i class="sf-card"></i></div>
   <div class="label">{%trans "Donate list"%}</div>
@@ -139,7 +138,7 @@
 
 
 {%block Btrip%}
-<a class="dcard x2" href='{{url.here}}/trip'>
+<a class="dcard x1" href='{{url.here}}/trip'>
  <div class="statistic">
   <div class="value"><i class="sf-pull-request"></i></div>
   <div class="label">{%trans "Group trip request"%}</div>
@@ -149,7 +148,7 @@
 
 
 {%block BtripFamilty%}
-<a class="dcard x2" href='{{url.here}}/familytrip'>
+<a class="dcard x1" href='{{url.here}}/familytrip'>
  <div class="statistic">
   <div class="value"><i class="sf-bus"></i></div>
   <div class="label">{%trans "Family trip request"%}</div>
@@ -159,7 +158,7 @@
 
 
 {%block BService%}
-<a class="dcard x2" href='{{url.here}}/service'>
+<a class="dcard x1" href='{{url.here}}/service'>
  <div class="statistic">
   <div class="value"><i class="sf-user-md"></i></div>
   <div class="label">{%trans "request service list"%}</div>
@@ -169,7 +168,7 @@
 
 
 {%block BNcode%}
-<a class="dcard x2" href='{{url.here}}/nationalcode'>
+<a class="dcard x1" href='{{url.here}}/nationalcode'>
  <div class="statistic">
   <div class="value"><i class="sf-user-5"></i></div>
   <div class="label">{%trans "National code"%}</div>
