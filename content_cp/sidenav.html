@@ -84,8 +84,11 @@
         </ul>
     </li>
 {%endif%}
+
+{%if perm('cpContactView') or perm('cpAdminContactView')%}
+
     <li>
-      <a href="#"><i class='sf-diamond'></i> <span>{% trans "Contact" %}</span></a>
+      <a href="#"><i class='sf-bell-o'></i> <span>{% trans "Contact" %}</span></a>
       <ul>
         {%if perm('cpCommentsView') and false%}
           <li><a href="{{url.here}}/comments">{% trans "Comments" %} <i class='floatRa mRa10 fc-mute sf-comments'></i></a></li>
@@ -100,6 +103,7 @@
         {%endif%}
       </ul>
     </li>
+{%endif%}
 
 
 
