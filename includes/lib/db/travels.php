@@ -115,7 +115,8 @@ class travels
 				users.father         AS `father`,
 				users.lastname       AS `lastname`,
 				users.nationalcode   AS `nationalcode`,
-				 travels.*
+				travels.*,
+				(SELECT COUNT(*) FROM travelusers WHERE travelusers.travel_id = travels.id) AS `countpartner`
 			",
 			'master_join'       =>
 			"

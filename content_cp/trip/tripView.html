@@ -13,7 +13,7 @@
 
         <p>
 {%if travelDetail.birthday%}
-          <span class="badge">{%trans "Birthday" %}{{travelDetail.birthday | fitNumber(false)}}</span>
+          <span class="badge">{%trans "Birthday" %}{{travelDetail.birthday | tdate()}}</span>
 {%endif%}
           <span class="badge success">{%set GenderS = travelDetail.gender | capitalize%} {%trans GenderS%}</span>
           <span class="badge warn">{%set MaritalS = travelDetail.married | capitalize%}{%trans MaritalS%}</span>

@@ -57,6 +57,7 @@
         <th data-sort="{{sortLink.gender.order}}" class="s0"><a href="{{sortLink.gender.link}}">{%trans "Birthdate"%}</a></th>
         <th data-sort="{{sortLink.nationalcode.order}}" class="s0"><a href="{{sortLink.nationalcode.link}}">{%trans "National code"%}</a></th>
         <th data-sort="{{sortLink.place.order}}" class=""><a href="{{sortLink.place.link}}">{%trans "City"%}</a></th>
+        <th data-sort="{{sortLink.countpartner.order}}" class=""><a href="{{sortLink.countpartner.link}}">{%trans "Partner"%}</a></th>
         <th data-sort="{{sortLink.status.order}}" class=""><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
         <th data-sort="{{sortLink.datecreated.order}}" class="s0"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
       </tr>
@@ -79,6 +80,7 @@
 
         <td class="s0">{{value.nationalcode | fitNumber(false)}}</td>
         <td>{%set my_place = value.place | capitalize%}<a href="{{url.this}}?place={{value.place}}">{%trans my_place%}</a></td>
+        <td>{%if value.countpartner%}{{value.countpartner | fitNumber}}{%else%}-{%endif%}</td>
         <td>{%set my_status = value.status | capitalize%}<a href="{{url.this}}?status={{value.status}}">{%trans my_status%}</a></td>
         <td class="s0" title="{{value.datecreated | tdate ("Y/m/d H:i")}}">{{value.datecreated | sdate ("year")}}</td>
       </tr>

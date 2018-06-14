@@ -10,6 +10,7 @@ class travel
 		'countpeople',
 		'type',
 		'status',
+		'countpartner',
 	];
 
 
