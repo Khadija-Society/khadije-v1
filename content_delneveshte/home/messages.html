@@ -1,6 +1,12 @@
 
       <section class="messages" data-xhr='messages'>
         <h2 class="txtC">{%trans "Last messages"%}</h2>
+        <div class="mTB10 txtC">
+          <a class="badge" href="{{url.this}}?sort=rand">{%trans "Random"%}</a>
+          <a class="badge" href="{{url.this}}?sort=last">{%trans "Last"%}</a>
+          <a class="badge" href="{{url.this}}?sort=maxlike">{%trans "Max like"%}</a>
+        </div>
+
 {%for key, value in dataTable%}
 
 {%set myClass%}

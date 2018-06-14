@@ -12,11 +12,42 @@ class view
 		\dash\data::include_js(false);
 
 		$args           = [];
+		$sort = \dash\request::get('sort');
+		if(!$sort)
+		{
+			$args['sort']   = 'id';
+			$args['order']  = 'DESC';
+		}
+		elseif($sort && !in_array($sort, ['last', 'maxlike', 'rand']))
+		{
+			$args['sort']   = 'id';
+			$args['order']  = 'DESC';
+		}
+		else
+		{
+			switch ($sort)
+			{
+				case 'last':
+					$args['sort']   = 'datecreated';
+					$args['order']  = 'DESC';
+					break;
+
+				case 'maxlike':
+					$args['sort']   = 'plus';
+					$args['order']  = 'DESC';
+					break;
+
+				case 'rand':
+					$args['sort']       = null;
+					$args['order_rand'] = true;
+					break;
+			}
+		}
+
+
 		$args['status'] = 'approved';
 		$args['type']   = 'delneveshte';
 		$args['limit']  = 100;
-		$args['order']  = 'DESC';
-		$args['sort']   = 'id';
 
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\comment::$sort_field, \dash\url::this()));
 
