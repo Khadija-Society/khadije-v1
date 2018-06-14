@@ -65,7 +65,7 @@
   </li>
 {%endif%}
 
-{%if perm('cpPostsView') or perm('cpCategoryView') or perm('cpPageView') or perm('cpTagView') or perm('cpCommentsView')  %}
+{%if perm('cpPostsView') or perm('cpCategoryView') or perm('cpPageView') or perm('cpTagView')  %}
     <li>
         <a href="{{url.here}}/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
         <ul>
@@ -81,12 +81,27 @@
             {%if perm('cpPageView') %}
               <li><a href="{{url.here}}/posts?type=page">{% trans "Pages" %} <i class='floatRa mRa10 fc-mute sf-files-o'></i></a></li>
             {%endif%}
-            {%if perm('cpCommentsView') %}
-              <li><a href="{{url.here}}/comments">{% trans "Comments" %} <i class='floatRa mRa10 fc-mute sf-comments'></i></a></li>
-            {%endif%}
         </ul>
     </li>
 {%endif%}
+    <li>
+      <a href="#"><i class='sf-diamond'></i> <span>{% trans "Contact" %}</span></a>
+      <ul>
+        {%if perm('cpCommentsView') and false%}
+          <li><a href="{{url.here}}/comments">{% trans "Comments" %} <i class='floatRa mRa10 fc-mute sf-comments'></i></a></li>
+        {%endif%}
+
+        {%if perm('cpContactView')%}
+          <li><a href="{{url.here}}/contact">{% trans "Contact US" %} <i class='floatRa mRa10 fc-mute sf-envelope-o'></i></a></li>
+        {%endif%}
+
+        {%if perm('cpAdminContactView')%}
+          <li><a href="{{url.here}}/admincontact">{% trans "Admin Contact" %} <i class='floatRa mRa10 fc-mute sf-user-secret'></i></a></li>
+        {%endif%}
+      </ul>
+    </li>
+
+
 
 {%if perm('cpUsersView') or perm('cpUsersAdd') or perm('cpPermissionView') %}
     <li>
