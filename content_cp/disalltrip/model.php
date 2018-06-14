@@ -14,6 +14,7 @@ class model
 		{
 			\lib\db\travels::disable_all_trip($city);
 			\dash\notif::ok(T_("All trip was set on expire status"));
+			\dash\redirect::pwd();
 		}
 		else
 		{
