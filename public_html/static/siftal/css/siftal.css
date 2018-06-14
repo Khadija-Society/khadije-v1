@@ -1655,6 +1655,33 @@ progress.xl, meter.xl {
   width: 100%;
   background-color: #66DA81; }
 
+.progress[data-percent="1"] .bar {
+  width: 1%; }
+
+.progress[data-percent="2"] .bar {
+  width: 2%; }
+
+.progress[data-percent="3"] .bar {
+  width: 3%; }
+
+.progress[data-percent="4"] .bar {
+  width: 4%; }
+
+.progress[data-percent="5"] .bar {
+  width: 5%; }
+
+.progress[data-percent="6"] .bar {
+  width: 6%; }
+
+.progress[data-percent="7"] .bar {
+  width: 7%; }
+
+.progress[data-percent="8"] .bar {
+  width: 8%; }
+
+.progress[data-percent="9"] .bar {
+  width: 9%; }
+
 .tbl {
   width: 100%;
   max-width: 100%;
