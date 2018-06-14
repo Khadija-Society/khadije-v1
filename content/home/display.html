@@ -7,11 +7,14 @@
     <div class="c8 s12 pRa10">
       <div class="slider slider-pro goldenB" id='topSlider'>
 
+{%set topSliderPostsID = [] %}
+
 {%set topSliderPosts = posts({"limit" : 3, "tag" : "slider"})%}
 {%set defaultImageTop = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
         <div class="sp-slides">
 {%if topSliderPosts%}
 {%for key, myNews in topSliderPosts%}
+{%set topSliderPostsID = topSliderPostsID | merge([myNews.id]) %}
           <div class="sp-slide">
             <img class="sp-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
 
@@ -125,29 +128,36 @@
 
 
 {%set lastPostsRecord = posts({"limit" : 8})%}
+
 {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
 {%if lastPostsRecord%}
   <section class="lastNews txtC mT25 mB25">
     <h3 class="sB3">{%trans "Latest News"%}</h3>
-    {%set lastPostsRecord = posts({"limit" : 7})%}
+
     {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
     <div class="goldenB f">
       <div class="c8 s12">
         <div class="preview">
 {%for key, myNews in lastPostsRecord%}
+  {%if myNews.id in topSliderPostsID%}
+  {%else%}
           <a href="{{url.here}}/{{myNews.url}}" data-index='{{key}}' class="f align-center justify-center {%if key == 0%}active{%endif%}">
             <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}">
           </a>
           <div class="hide">
             <p>{{myNews.excerpt}}</p>
           </div>
+  {%endif%}
 {%endfor%}
         </div>
       </div>
       <div class="c4 s12 listBox">
         <nav class="f f-column list">
 {%for key, myNews in lastPostsRecord%}
+  {%if myNews.id in topSliderPostsID%}
+  {%else%}
           <a class="c f align-center justify-center {%if key == 0%}active{%endif%}" href="{{url.here}}/{{myNews.url}}" data-index='{{key}}'>{{myNews.title}}</a>
+  {%endif%}
 {%endfor%}
           <a class="c txtRa archiveLink" href="{{url.here}}/blog">{%trans "Archive"%}</a>
         </nav>
