@@ -19,6 +19,8 @@ class view
 			]
 		));
 
+		\dash\data::hadithList(\lib\app\need::active_list('hadith'));
+
 
 		// for pushstate of main page
 		// \dash\data::template_xhr('content/main/layout-xhr.html');
