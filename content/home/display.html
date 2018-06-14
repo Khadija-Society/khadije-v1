@@ -138,25 +138,29 @@
     <div class="goldenB f">
       <div class="c8 s12">
         <div class="preview">
+{%set myI = 0 %}
 {%for key, myNews in lastPostsRecord%}
   {%if myNews.id in topSliderPostsID%}
   {%else%}
-          <a href="{{url.here}}/{{myNews.url}}" data-index='{{key}}' class="f align-center justify-center {%if key == 0%}active{%endif%}">
+          <a href="{{url.here}}/{{myNews.url}}" data-index='{{myI}}' class="f align-center justify-center {%if myI == 0%}active{%endif%}">
             <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}">
           </a>
           <div class="hide">
             <p>{{myNews.excerpt}}</p>
           </div>
+  {%set myI = myI + 1 %}
   {%endif%}
 {%endfor%}
         </div>
       </div>
       <div class="c4 s12 listBox">
         <nav class="f f-column list">
+{%set myI = 0 %}
 {%for key, myNews in lastPostsRecord%}
   {%if myNews.id in topSliderPostsID%}
   {%else%}
-          <a class="c f align-center justify-center {%if key == 0%}active{%endif%}" href="{{url.here}}/{{myNews.url}}" data-index='{{key}}'>{{myNews.title}}</a>
+          <a class="c f align-center justify-center {%if myI == 0%}active{%endif%}" href="{{url.here}}/{{myNews.url}}" data-index='{{myI}}'>{{myNews.title}}</a>
+  {%set myI = myI + 1 %}
   {%endif%}
 {%endfor%}
           <a class="c txtRa archiveLink" href="{{url.here}}/blog">{%trans "Archive"%}</a>
