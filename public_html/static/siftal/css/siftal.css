@@ -1514,7 +1514,9 @@ progress.xl, meter.xl {
   -webkit-border-radius: .28571429rem;
   -moz-border-radius: .28571429rem;
   border-radius: .28571429rem;
-  font-size: 1rem; }
+  font-size: 1rem;
+  opacity: 1;
+  transition: 0.3s; }
 
 .progress::before {
   content: attr(data-percent);
@@ -1531,6 +1533,9 @@ progress.xl, meter.xl {
   font-weight: 700;
   text-align: left;
   display: none; }
+
+.progress.shadow {
+  opacity: 0; }
 
 .progress > .bar {
   display: block;
@@ -5256,7 +5261,6 @@ img.mini {
   border-bottom-color: #fff; }
 
 .rtl .popover.bottom > .arrow:after {
-  margin-left: 0;
   margin-right: -10px; }
 
 .popover.left > .arrow {
@@ -8086,10 +8090,26 @@ body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-anima
     max-width: 96%;
     max-width: calc(100% - 20px); } }
 .dropzone {
-  padding: 5em 1em;
+  padding: 3em 1em 1em;
   border: 1px dashed #eee;
   background-color: #fcfcfc;
-  text-align: center; }
+  text-align: center;
+  transition: 0.3s; }
+
+.dropzone:hover {
+  border-color: #ccc; }
+
+.dropzone:focus {
+  border-color: #aaa; }
+
+.dropzone input[type="file"] {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  opacity: 0; }
 
 /*
  * # Semantic UI 2.3.1 - Transition
