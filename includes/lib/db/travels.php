@@ -3,6 +3,37 @@ namespace lib\db;
 
 class travels
 {
+	public static function disable_all_trip($_city)
+	{
+		$query =
+		"
+			UPDATE
+				travels
+			SET travels.status = 'admincancel'
+			WHERE
+				travels.place  = '$_city' AND
+				travels.status = 'awaiting' AND
+				travels.type   = 'family'
+		";
+		return \dash\db::query($query);
+	}
+
+	public static function show_count_trip($_type)
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				travels.place AS `place`
+			FROM
+				travels
+			WHERE
+				travels.status = 'awaiting' AND
+				travels.type   = '$_type'
+			GROUP BY travels.place
+		";
+		return \dash\db::get($query, ['place', 'count']);
+	}
 
 	public static function get_total($_where = null)
 	{

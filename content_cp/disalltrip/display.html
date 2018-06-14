@@ -1,0 +1,20 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+
+<div class="f">
+
+{%for key, value in tripCount%}
+  <div class="c4 s12">
+    <div class="dcard x2">
+     <div class="statistic">
+      <div class="value mB20">{%trans key%}<br> <span class="fc-red">{{value | fitNumber}}</span></div>
+      <div class="label"><a href="{{url.pwd}}" data-ajaxify data-data='{"city" : "{{key}}"}' data-method='post' class="badge danger">{%trans "Disable all trip from qom"%}</a></div>
+     </div>
+    </div>
+  </div>
+{%endfor%}
+
+{%endblock%}
+

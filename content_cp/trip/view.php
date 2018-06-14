@@ -92,8 +92,8 @@ class view
 
 		if(!isset($args['travels.status']))
 		{
-			$args['travels.status']     = ["NOT IN", "('cancel', 'draft')"];
-			$travel_count_arg['status'] = ["NOT IN", "('cancel', 'draft')"];
+			$args['travels.status']     = ["NOT IN", "('cancel', 'draft', 'admincancel')"];
+			$travel_count_arg['status'] = ["NOT IN", "('cancel', 'draft', 'admincancel')"];
 		}
 
 		$search_string            = \dash\request::get('q');
