@@ -1548,10 +1548,10 @@ progress.xl, meter.xl {
   -webkit-border-radius: .28571429rem;
   -moz-border-radius: .28571429rem;
   border-radius: .28571429rem;
-  -webkit-transition: width .1s ease,background-color .1s ease;
-  -o-transition: width .1s ease,background-color .1s ease;
-  -moz-transition: width .1s ease,background-color .1s ease;
-  transition: width .1s ease,background-color .1s ease; }
+  -webkit-transition: width .3s ease,background-color .3s ease;
+  -o-transition: width .3s ease,background-color .3s ease;
+  -moz-transition: width .3s ease,background-color .3s ease;
+  transition: width .3s ease,background-color .3s ease; }
 
 .progress > .bar::after {
   content: '';
