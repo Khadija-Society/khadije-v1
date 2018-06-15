@@ -168,5 +168,10 @@
     "title": "cpHealthOption",
     "cat": "Health",
     "require": []
+  },
+  "cpHadith": {
+    "title": "cpHadith",
+    "cat": "Hadith",
+    "require": []
   }
 }
