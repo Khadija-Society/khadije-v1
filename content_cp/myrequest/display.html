@@ -1,0 +1,185 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+<div class="f">
+  {%if perm('cpFamilyTripView')%}<div class="c3 s6">{{block ("BtripFamilty")}}</div>{%endif%}
+  {%if perm('cpTripView')%}<div class="c3 s6">{{block ("Btrip")}}</div>{%endif%}
+  {%if perm('cpServiceView')%}<div class="c3 s6">{{block ("BService")}}</div>{%endif%}
+  {%if perm('cpRepresentationView')%}<div class="c3 s6">{{block ("bNiyabat")}}</div>{%endif%}
+  {%if perm('cpConsultingView')%}<div class="c3 s6">{{block ("bConsulting")}}</div>{%endif%}
+  {%if perm('cpHealthView')%}<div class="c3 s6">{{block ("bHealth")}}</div>{%endif%}
+  {%if perm('cpNationalCodeView')%}<div class="c3 s6">{{block ("BNcode")}}</div>{%endif%}
+</div>
+{%endblock%}
+
+
+
+
+{%block bCMS%}
+<a class="dcard x1" href='{{url.here}}/cms'>
+ <div class="statistic">
+  <div class="value"><i class="sf-diamond"></i></div>
+  <div class="label">{%trans "CMS"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bHadith%}
+<a class="dcard x1" href='{{url.here}}/hadith'>
+ <div class="statistic">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Hadith"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block AdminComment%}
+<a class="dcard x1" href='{{url.here}}/admincontact'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-secret"></i></div>
+  <div class="label">{%trans "Admin Contact"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block Report%}
+<a class="dcard x1" href='{{url.here}}/report'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chart"></i></div>
+  <div class="label">{%trans "Report"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block homePageNumber%}
+<a class="dcard x1" href='{{url.here}}/homepage'>
+ <div class="statistic">
+  <div class="value"><i class="sf-cog"></i></div>
+  <div class="label">{%trans "Home page number"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bDelneveshte%}
+<a class="dcard x1" href='{{url.here}}/delneveshte'>
+ <div class="statistic">
+  <div class="value"><i class="sf-heart-o"></i></div>
+  <div class="label">{%trans "Delneveshte"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bSendSMS%}
+<a class="dcard x1" href='{{url.here}}/sms'>
+ <div class="statistic">
+  <div class="value"><i class="sf-envelope"></i></div>
+  <div class="label">{%trans "Send SMS"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bNiyabat%}
+<a class="dcard x1" href='{{url.here}}/representation'>
+ <div class="statistic">
+  <div class="value"><i class="sf-coffee"></i></div>
+  <div class="label">{%trans "Representation"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bHealth%}
+<a class="dcard x1" href='{{url.here}}/health'>
+ <div class="statistic">
+  <div class="value"><i class="sf-heartbeat"></i></div>
+  <div class="label">{%trans "Health Service"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bConsulting%}
+<a class="dcard x1" href='{{url.here}}/consulting'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chat-alt-fill"></i></div>
+  <div class="label">{%trans "Consulting"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block TemplateSMS%}
+<a class="dcard x1" href='{{url.here}}/sms/template'>
+ <div class="statistic">
+  <div class="value"><i class="sf-bars"></i></div>
+  <div class="label">{%trans "SMS Template"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block BDonateProduct%}
+<a class="dcard x1" href='{{url.here}}/donateproduct'>
+ <div class="statistic">
+  <div class="value"><i class="sf-bag"></i></div>
+  <div class="label">{%trans "Donate product list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block Bdonate%}
+<a class="dcard x1" href='{{url.here}}/donate'>
+ <div class="statistic">
+  <div class="value"><i class="sf-card"></i></div>
+  <div class="label">{%trans "Donate list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block Btrip%}
+<a class="dcard x1" href='{{url.here}}/trip'>
+ <div class="statistic">
+  <div class="value"><i class="sf-pull-request"></i></div>
+  <div class="label">{%trans "Group trip request"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block BtripFamilty%}
+<a class="dcard x1" href='{{url.here}}/familytrip'>
+ <div class="statistic">
+  <div class="value"><i class="sf-bus"></i></div>
+  <div class="label">{%trans "Family trip request"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block BService%}
+<a class="dcard x1" href='{{url.here}}/service'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-md"></i></div>
+  <div class="label">{%trans "request service list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block BNcode%}
+<a class="dcard x1" href='{{url.here}}/nationalcode'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-5"></i></div>
+  <div class="label">{%trans "National code"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block sidenav%}
+  {%include "content_cp/sidenav.html"%}
+{%endblock%}
