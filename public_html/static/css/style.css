@@ -1397,7 +1397,7 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 		width: 320px;
 		height: 85px;
 	}
-	#sHeader .langlist .isActive{
+	#sHeader .langlist .isActive, #sHeader .langlist .active{
 		display: none;
 	}
 	.sB2{
