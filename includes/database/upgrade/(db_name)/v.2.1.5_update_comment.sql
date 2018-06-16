@@ -1,0 +1,1 @@
+UPDATE `comments` SET comments.type = 'contact' WHERE comments.type = 'comment';
