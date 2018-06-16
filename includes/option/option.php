@@ -27,6 +27,11 @@ self::$url['protocol']              = 'https';
 self::$config['tagSpecial']['slider']  = "Show in main slider";
 self::$config['tagSpecial']['lottory'] = "Show in list of lottory winners";
 
+// self::$config['crop_size']['wide']     = [1200, 1200];
+// self::$config['crop_size']['verywide'] = [1600, 1800];
+// self::$config['crop_size']['smally']   = [16, 16];
+// self::$config['crop_size']['extera']   = [1600, 100];
+
 
 self::$config['notif']['image'] = '/static/images/logo.png';
 
