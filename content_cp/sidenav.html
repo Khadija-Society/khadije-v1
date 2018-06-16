@@ -85,7 +85,7 @@
     </li>
 {%endif%}
 
-{%if perm('cpContactView') or perm('cpAdminContactView')%}
+{%if perm('cpContactView') or perm('cpAdminContactView') or perm('cpCommentsView')%}
 
     <li>
       <a href="{{url.here}}/mycontact"><i class='sf-bell-o'></i> <span>{% trans "Contact" %}</span></a>
