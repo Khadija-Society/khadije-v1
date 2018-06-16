@@ -184,5 +184,23 @@
     "title": "cpDisableAllTrip",
     "cat": "Danger",
     "require": []
+  },
+  "cpFamilyTripView" :
+  {
+    "title" : "cpFamilyTripView",
+    "cat" : "Family Trip",
+    "require" : []
+  },
+  "cpFamilyTripEdit" :
+  {
+    "title" : "cpFamilyTripEdit",
+    "cat" : "Family Trip",
+    "require" : []
+  },
+  "cpFamilyTripOption" :
+  {
+    "title" : "cpFamilyTripOption",
+    "cat" : "Family Trip",
+    "require" : []
   }
 }

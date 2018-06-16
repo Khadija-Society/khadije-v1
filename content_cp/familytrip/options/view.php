@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpTripOption');
+		\dash\permission::access('cpFamilyTripOption');
 
 		\dash\data::page_pictogram('cogs');
 

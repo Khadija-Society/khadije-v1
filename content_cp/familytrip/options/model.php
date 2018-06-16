@@ -7,7 +7,7 @@ class model
 
 	public static function post()
 	{
-		\dash\permission::access('cpTripOption');
+		\dash\permission::access('cpFamilyTripOption');
 
 		if(\dash\request::post('type') === 'family')
 		{

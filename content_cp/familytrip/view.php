@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpTripView');
+		\dash\permission::access('cpFamilyTripView');
 
 		\dash\data::page_pictogram('bus');
 

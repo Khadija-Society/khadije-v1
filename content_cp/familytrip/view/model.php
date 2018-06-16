@@ -6,7 +6,7 @@ class model
 {
 	public static function getPost()
 	{
-		\dash\permission::access('cpTripEdit');
+		\dash\permission::access('cpFamilyTripEdit');
 
 		$post                    = [];
 		$post['firstname']       = \dash\request::post('name');

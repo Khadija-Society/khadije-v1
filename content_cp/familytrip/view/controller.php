@@ -6,7 +6,7 @@ class controller
 {
 	public static function routing()
 	{
-		\dash\permission::access('cpTripEdit');
+		\dash\permission::access('cpFamilyTripEdit');
 
 		if(\dash\request::get('id') && is_numeric(\dash\request::get('id')))
 		{

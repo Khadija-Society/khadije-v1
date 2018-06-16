@@ -109,7 +109,10 @@ class TransStatic
 	echo T_("cpHadith");
 	echo T_("Hadith");
 
-
+	echo T_("cpFamilyTripView");
+	echo T_("cpFamilyTripEdit");
+	echo T_("Family Trip");
+	echo T_("cpFamilyTripOption");
  }
 }
 ?>
