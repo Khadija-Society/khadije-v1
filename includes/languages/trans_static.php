@@ -102,6 +102,13 @@ class TransStatic
 	echo T_("iscompleteprofile");
 	echo T_("nesbat");
 
+	echo T_("cpChartCountTransaction");
+	echo T_("Report");
+	echo T_("cpDisableAllTrip");
+	echo T_("Danger");
+	echo T_("cpHadith");
+	echo T_("Hadith");
+
 
  }
 }

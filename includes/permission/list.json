@@ -173,5 +173,16 @@
     "title": "cpHadith",
     "cat": "Hadith",
     "require": []
+  },
+  "cpChartCountTransaction": {
+    "title": "cpChartCountTransaction",
+    "cat": "Report",
+    "require": []
+  }
+  ,
+  "cpDisableAllTrip": {
+    "title": "cpDisableAllTrip",
+    "cat": "Danger",
+    "require": []
   }
 }

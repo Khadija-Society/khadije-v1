@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-06-14 19:48+0430\n"
-"PO-Revision-Date: 2018-06-14 20:02+0430\n"
+"POT-Creation-Date: 2018-06-16 10:25+0430\n"
+"PO-Revision-Date: 2018-06-16 10:26+0430\n"
 "Last-Translator: Reza <rm.biqarar@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -7729,6 +7729,18 @@ msgstr "مدیریت کاربران"
 msgid "Control Panel Contact"
 msgstr "مدیریت نظرات و دیدگاه‌ها"
 
+#: dash/addons/includes/languages/trans_static.php:983
+msgid "cpContactView"
+msgstr "نمایش پیام‌های ارتباط با ما"
+
+#: dash/addons/includes/languages/trans_static.php:984
+msgid "cpContactChangeStatus"
+msgstr "تغییر وضعیت پیام‌های ارتباط با ما"
+
+#: dash/addons/includes/languages/trans_static.php:985
+msgid "cpTemplateSmsView"
+msgstr "نمایش لیست الگوهای پیام کوتاه"
+
 #: dash/addons/lib/telegram/commands/step_register.php:84
 msgid "return"
 msgstr "بازگشت"
@@ -9359,6 +9371,7 @@ msgid "Disalbel all trip"
 msgstr "غیر فعال سازی تمامی درخواست‌های سفر"
 
 #: khadije/content_cp/disalltrip/view.php:15
+#: khadije/includes/languages/trans_static.php:108
 msgid "Danger"
 msgstr "خطرناک"
 
@@ -10683,6 +10696,7 @@ msgid "Statistics"
 msgstr "آمار"
 
 #: khadije/includes/languages/trans_project.php:414
+#: khadije/includes/languages/trans_static.php:110
 msgid "Hadith"
 msgstr "حدیث"
 
@@ -10703,6 +10717,7 @@ msgid "Book transaction list"
 msgstr "لیست تراکنش‌های کتاب"
 
 #: khadije/includes/languages/trans_project.php:419
+#: khadije/includes/languages/trans_static.php:106
 msgid "Report"
 msgstr "گزارش"
 
@@ -11265,6 +11280,18 @@ msgstr "پروفایل تکمیل شده"
 #: khadije/includes/languages/trans_static.php:103
 msgid "nesbat"
 msgstr "نسبت"
+
+#: khadije/includes/languages/trans_static.php:105
+msgid "cpChartCountTransaction"
+msgstr "نمایش نمودار تعداد تراکنش ها"
+
+#: khadije/includes/languages/trans_static.php:107
+msgid "cpDisableAllTrip"
+msgstr "غیر فعال سازی تمامی درخواست‌های سفر"
+
+#: khadije/includes/languages/trans_static.php:109
+msgid "cpHadith"
+msgstr "حدیث"
 
 #: khadije/includes/lib/app/donate.php:51
 msgid "This :way is not in your list!"
@@ -11866,9 +11893,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "cotentCp"
 #~ msgstr "کنترل پنل"
-
-#~ msgid "cpTemplateSmsView"
-#~ msgstr "نمایش لیست الگوهای پیام کوتاه"
 
 #~ msgid "Text"
 #~ msgstr "متن ساده"
@@ -12805,9 +12829,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "cp:transaction:add"
 #~ msgstr "کنترل‌پنل:تراکنش:افزودن"
-
-#~ msgid "cp:transaction"
-#~ msgstr "کنترل‌پنل:تراکنش"
 
 #~ msgid "cp:user:add"
 #~ msgstr "کنترل‌پنل:کاربر:افزودن"
