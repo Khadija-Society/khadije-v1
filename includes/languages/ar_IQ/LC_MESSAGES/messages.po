@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Arabic\n"
 "POT-Creation-Date: 2018-06-09 16:46+0430\n"
-"PO-Revision-Date: 2018-06-09 16:48+0430\n"
+"PO-Revision-Date: 2018-06-17 00:11+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -117,23 +117,24 @@ msgstr "حساب المستخدم الخاص بك لتغيير تفاصيل ال
 msgid "Edit your profile"
 msgstr "تعديل ملفك الشخصي"
 
+# یمکنک تحریر ملف التعریف الخاص بک
 #: dash/addons/content_account/profile/view.php:11
 msgid "You can edit your profile."
-msgstr ""
+msgstr "يمكنك تحرير ملف التعريف الخاص بك."
 
 #: dash/addons/content_account/profile/view.php:14
 msgid "Back to dashbaord"
-msgstr ""
+msgstr "العودة إلی لوحة القیادة"
 
 #: dash/addons/content_account/profile/view.php:20
 #: dash/addons/content_cp/users/set/view.php:34 dash/lib/app/user/edit.php:60
 msgid "Invalid user id"
-msgstr ""
+msgstr "هویة مستخدم غیر صالحه"
 
 #: dash/addons/content_account/profile/view.php:27
 #: dash/addons/content_cp/users/set/view.php:40
 msgid "User id not found"
-msgstr ""
+msgstr "لم یتم العثور علی هویة المستخدم"
 
 #: dash/addons/content_account/view/model.php:35
 #: khadije/content_cp/familytrip/options/model.php:31
@@ -200,7 +201,7 @@ msgstr "تعديل التعليق"
 #: dash/addons/content_cp/comments/edit/view.php:21
 #: khadije/content_cp/admincontact/edit/view.php:21
 msgid "You can edit comments if needed."
-msgstr ""
+msgstr "يمكنك تحرير التعليقات إذا لزم الأمر."
 
 #: dash/addons/content_cp/comments/edit/view.php:21
 #: khadije/content_cp/admincontact/edit/view.php:21
@@ -209,6 +210,7 @@ msgid ""
 "This is often useful when you notice that a commenter has made a "
 "typographical error."
 msgstr ""
+"يكون هذا مفيدًا في الغالب عندما تلاحظ أن أحد المعلقين قد ارتكب خطأً مطبعيًا."
 
 #: dash/addons/content_cp/comments/edit/view.php:24
 msgid "Back to list of comments"
@@ -218,7 +220,7 @@ msgstr "العودة إلى قائمة التعليقات"
 #: khadije/content_cp/admincontact/home/model.php:13
 #: khadije/content_cp/delneveshte/home/model.php:13
 msgid "Invalid detail"
-msgstr ""
+msgstr "تفاصیل غیر صالحة"
 
 #: dash/addons/content_cp/comments/home/view.php:11
 #: dash/addons/includes/languages/trans_dash.php:180
@@ -260,48 +262,48 @@ msgstr "البحث لِ: search"
 #: dash/addons/content_cp/email/home/view.php:10
 #: dash/addons/content_cp/sms/home/view.php:10
 msgid "SMS Dashboard"
-msgstr ""
+msgstr "لوحة القیادة sms"
 
 #: dash/addons/content_cp/email/home/view.php:11
 #: dash/addons/content_cp/sms/home/view.php:11
 msgid "Check your sms setting and balance and quick navigate to every where"
-msgstr ""
+msgstr "تحقق من إعداد الرسائل القصيرة والتوازن وانتقل سريعًا إلى كل مكان"
 
 #: dash/addons/content_cp/email/send/view.php:10
 msgid "Send email to user"
-msgstr ""
+msgstr "إرسال البرید الإلکترونی إلی المستخدم"
 
 #: dash/addons/content_cp/email/send/view.php:11
 msgid "Send every email to every user"
-msgstr ""
+msgstr "إرسال کل البرید الإلکترونی إلی کل مستخدم"
 
 #: dash/addons/content_cp/permission/add/view.php:11
 msgid "Add new permissions"
-msgstr ""
+msgstr "إضافة أذونات جدیدة"
 
 #: dash/addons/content_cp/permission/add/view.php:12
 #: dash/addons/content_cp/permission/delete/view.php:12
 msgid "Set and config permission group to categorize user access."
-msgstr ""
+msgstr "مجموعة الإذن والتكوين لتصنيف وصول المستخدم."
 
 #: dash/addons/content_cp/permission/add/view.php:15
 #: dash/addons/content_cp/permission/delete/view.php:17
 msgid "Back to list of permissions"
-msgstr ""
+msgstr "العودة إلی قائمة الأذونات"
 
 #: dash/addons/content_cp/permission/add/view.php:31
 #: dash/addons/content_cp/permission/delete/view.php:26
 msgid "Invalid permission id"
-msgstr ""
+msgstr "معرف إذن غیر صالح"
 
 #: dash/addons/content_cp/permission/add/view.php:34
 #: dash/addons/content_cp/permission/delete/view.php:30
 msgid "Edit permission :name"
-msgstr ""
+msgstr "إذن تعدیل : الاسم"
 
 #: dash/addons/content_cp/permission/delete/view.php:11
 msgid "Delete a permissions"
-msgstr ""
+msgstr "حذف إذن"
 
 #: dash/addons/content_cp/permission/delete/view.php:34
 #, fuzzy
@@ -318,11 +320,11 @@ msgstr "الأذونات"
 
 #: dash/addons/content_cp/permission/view.php:12
 msgid "Set and config permission of users and allow them to do something."
-msgstr ""
+msgstr "يمكنك تعيين إذن من المستخدمين وتهيئته والسماح لهم بفعل شيء ما."
 
 #: dash/addons/content_cp/permission/view.php:17
 msgid "Add new permission"
-msgstr ""
+msgstr "إضافة إذن جدید"
 
 #: dash/addons/content_cp/posts/add/view.php:23
 msgid "Add new post"
@@ -419,15 +421,16 @@ msgstr "لم يتم إرسال أي رسالة"
 
 #: dash/addons/content_cp/sms/group/model.php:67
 msgid "No valid mobile find in your list"
-msgstr ""
+msgstr "لا یوجد بحث محمول صالح فی قائمتک"
 
 #: dash/addons/content_cp/sms/group/view.php:10
 msgid "Send Sms to group of users"
-msgstr ""
+msgstr "إرسال الرسائل القصیرة إلی مجموعة من المستخدمین"
 
 #: dash/addons/content_cp/sms/group/view.php:11
 msgid "Send every sms to every group users by mobile"
 msgstr ""
+"إرسال کل الرسائل القصیرة إلی کل مجموعة المستخدمین عن طریق الهاتف المحمول"
 
 #: dash/addons/content_cp/sms/send/model.php:40 dash/lib/app/parent/add.php:78
 msgid "Invalid mobile number"
@@ -435,43 +438,43 @@ msgstr "رقم الجوال غير صالح"
 
 #: dash/addons/content_cp/sms/send/view.php:10
 msgid "Send Sms to user"
-msgstr ""
+msgstr "إرسال الرسائل القصیرة إلی المستخدم"
 
 #: dash/addons/content_cp/sms/send/view.php:11
 msgid "Send every sms to every user by mobile"
-msgstr ""
+msgstr "إرسال کل الرسائل القصیرة إلی کل مستخدم عن طریق الهاتف المحمول"
 
 #: dash/addons/content_cp/sms/template/model.php:18
 msgid "The template successfully removed"
-msgstr ""
+msgstr "تمت إزالة النموذج بنجاح"
 
 #: dash/addons/content_cp/sms/template/model.php:41
 msgid "Sms template successfully updated"
-msgstr ""
+msgstr "تحديث قالب الرسائل القصيرة بنجاح"
 
 #: dash/addons/content_cp/sms/template/model.php:45
 msgid "Sms template successfully added"
-msgstr ""
+msgstr "تم إضافة قالب الرسائل القصيرة بنجاح"
 
 #: dash/addons/content_cp/sms/template/view.php:12
 msgid "Template SMS"
-msgstr ""
+msgstr "قالب الرسائل القصيرة"
 
 #: dash/addons/content_cp/sms/template/view.php:13
 msgid "check and update some options on template sms"
-msgstr ""
+msgstr "تحقق وتحديث بعض الخيارات على الرسائل القصيرة القالب"
 
 #: dash/addons/content_cp/sms/verify/model.php:20
 msgid "SMS was sended to :count unique mobile number"
-msgstr ""
+msgstr "تم إرسال SMS إلى: حساب رقم الجوال الفريد"
 
 #: dash/addons/content_cp/sms/verify/view.php:10
 msgid "Send Sms verify check"
-msgstr ""
+msgstr "ارسال التحقق من الرسائل القصيرة"
 
 #: dash/addons/content_cp/sms/verify/view.php:25
 msgid "Sms detail not found"
-msgstr ""
+msgstr "لم يتم العثور على تفاصيل الرسائل القصيرة"
 
 #: dash/addons/content_cp/terms/model.php:74
 msgid "Term successfully edited"
@@ -548,19 +551,20 @@ msgstr "لم يتم العثور على المعرف"
 
 #: dash/addons/content_cp/users/home/view.php:11
 msgid "List of users"
-msgstr ""
+msgstr "قائمة المستخدمين"
 
 #: dash/addons/content_cp/users/home/view.php:12
 msgid "Some detail about your users!"
-msgstr ""
+msgstr "بعض التفاصيل حول المستخدمين!"
 
 #: dash/addons/content_cp/users/home/view.php:13
 msgid "Check list of users and search or filter in them to find your user."
 msgstr ""
+"تحقق من قائمة المستخدمين والبحث أو التصفية فيها للعثور على المستخدم الخاص بك."
 
 #: dash/addons/content_cp/users/home/view.php:14
 msgid "Also add or edit specefic user."
-msgstr ""
+msgstr "إضافة أو تحرير مستخدم معين."
 
 #: dash/addons/content_cp/users/home/view.php:18
 #: dash/addons/content_cp/users/set/view.php:13
@@ -572,21 +576,23 @@ msgstr "إضافة المستخدم الجديد"
 
 #: dash/addons/content_cp/users/set/model.php:94
 msgid "Please set repassword"
-msgstr ""
+msgstr "يرجى ضبط كلمة المرور"
 
 #: dash/addons/content_cp/users/set/model.php:100
 msgid "Password not match whit repassword"
-msgstr ""
+msgstr "كلمة المرور غير متطابقة مع كلمة المرور"
 
 #: dash/addons/content_cp/users/set/view.php:14
 msgid ""
 "You can add new user and after add with minimal data, we allow you to add "
 "extra detail of user."
 msgstr ""
+"يمكنك إضافة مستخدم جديد وبعد إضافته باستخدام الحد الأدنى من البيانات ، نسمح "
+"لك بإضافة تفاصيل إضافية للمستخدم."
 
 #: dash/addons/content_cp/users/set/view.php:18
 msgid "Back to list of users"
-msgstr ""
+msgstr "العودة إلى قائمة المستخدمين"
 
 #: dash/addons/content_cp/users/set/view.php:47
 #: dash/addons/content_enter/home/model.php:45
@@ -751,11 +757,11 @@ msgstr "الجوال غير موجود"
 
 #: dash/addons/content_enter/home/model.php:103
 msgid "You hit our maximum try limit."
-msgstr ""
+msgstr "يمكنك ضرب الحد الأقصى في محاولة لدينا."
 
 #: dash/addons/content_enter/home/model.php:103
 msgid "Try again later!"
-msgstr ""
+msgstr "حاول مرة أخرى في وقت لاحق!"
 
 #: dash/addons/content_enter/home/model.php:118
 msgid "Please set the username or mobile or email"
@@ -772,7 +778,7 @@ msgstr "أوه! ربما حفظ متصفحك كلمة المرور الخاصة 
 
 #: dash/addons/content_enter/home/model.php:181
 msgid "Try again!"
-msgstr ""
+msgstr "حاول مرة أخرى!"
 
 #: dash/addons/content_enter/home/view.php:11
 msgid "Enter to :name with mobile"
@@ -856,11 +862,11 @@ msgstr "عش و تعلم"
 
 #: dash/addons/content_enter/pass/change/model.php:46
 msgid "You do not have any password!"
-msgstr ""
+msgstr "ليس لديك أي كلمة السر!"
 
 #: dash/addons/content_enter/pass/change/model.php:46
 msgid "Please logout and login again."
-msgstr ""
+msgstr "يرجى تسجيل الخروج وتسجيل الدخول مرة أخرى."
 
 #: dash/addons/content_enter/pass/model.php:12
 msgid "Please enter your password"
@@ -1505,32 +1511,32 @@ msgstr "الفواتير"
 #: dash/addons/includes/languages/trans_dash.php:54
 #: khadije/includes/languages/trans_dash.php:54
 msgid "Name and Global Details"
-msgstr ""
+msgstr "الاسم وتفاصيل العالمية"
 
 #: dash/addons/includes/languages/trans_dash.php:55
 #: khadije/includes/languages/trans_dash.php:55
 msgid "Email and Social Networks"
-msgstr ""
+msgstr "البريد الإلكتروني والشبكات الاجتماعية"
 
 #: dash/addons/includes/languages/trans_dash.php:56
 #: khadije/includes/languages/trans_dash.php:56
 msgid "Security and Enter"
-msgstr ""
+msgstr "الأمن ودخول"
 
 #: dash/addons/includes/languages/trans_dash.php:57
 #: khadije/includes/languages/trans_dash.php:57
 msgid "Improve User Experience"
-msgstr ""
+msgstr "تحسين تجربة المستخدم"
 
 #: dash/addons/includes/languages/trans_dash.php:58
 #: khadije/includes/languages/trans_dash.php:58
 msgid "Two step verification"
-msgstr ""
+msgstr "التحقق من خطوتين"
 
 #: dash/addons/includes/languages/trans_dash.php:59
 #: khadije/includes/languages/trans_dash.php:59
 msgid "Show sidebar"
-msgstr ""
+msgstr "إظهار الشريط الجانبي"
 
 #: dash/addons/includes/languages/trans_dash.php:60
 #: khadije/includes/languages/trans_dash.php:60
@@ -1548,7 +1554,7 @@ msgstr "يرجي تعيين عنصر واحد"
 #: khadije/includes/languages/trans_dash.php:62
 #: khadije/includes/languages/trans_project.php:316
 msgid "Website"
-msgstr ""
+msgstr "موقع الكتروني"
 
 #: dash/addons/includes/languages/trans_dash.php:63
 #: khadije/includes/languages/trans_dash.php:63
@@ -1559,37 +1565,37 @@ msgstr "الإعجاب"
 #: dash/addons/includes/languages/trans_dash.php:64
 #: khadije/includes/languages/trans_dash.php:64
 msgid "Enter a valid website from 3 to 40 character"
-msgstr ""
+msgstr "أدخل موقعًا صالحًا من 3 إلى 40 حرفًا"
 
 #: dash/addons/includes/languages/trans_dash.php:65
 #: khadije/includes/languages/trans_dash.php:65
 msgid "Instagram"
-msgstr ""
+msgstr "إينستاجرام"
 
 #: dash/addons/includes/languages/trans_dash.php:66
 #: khadije/includes/languages/trans_dash.php:66
 msgid "Enter a valid instagram from 3 to 40 character"
-msgstr ""
+msgstr "أدخل اینستاجرام صالح من 3 إلى 40 حرفًا"
 
 #: dash/addons/includes/languages/trans_dash.php:67
 #: khadije/includes/languages/trans_dash.php:67
 msgid "Facebook"
-msgstr ""
+msgstr "فيس بوك"
 
 #: dash/addons/includes/languages/trans_dash.php:68
 #: khadije/includes/languages/trans_dash.php:68
 msgid "Enter a valid facebook from 3 to 40 character"
-msgstr ""
+msgstr "أدخل فيس بوك صالحة من 3 إلى 40 حرف"
 
 #: dash/addons/includes/languages/trans_dash.php:69
 #: khadije/includes/languages/trans_dash.php:69
 msgid "Twitter"
-msgstr ""
+msgstr "تويتر"
 
 #: dash/addons/includes/languages/trans_dash.php:70
 #: khadije/includes/languages/trans_dash.php:70
 msgid "Enter a valid twitter from 3 to 40 character"
-msgstr ""
+msgstr "أدخل تويتر صالحًا من 3 إلى 40 حرفًا"
 
 #: dash/addons/includes/languages/trans_dash.php:71
 #: dash/addons/includes/languages/trans_static.php:254
@@ -1600,12 +1606,12 @@ msgstr "لينكدين"
 #: dash/addons/includes/languages/trans_dash.php:72
 #: khadije/includes/languages/trans_dash.php:72
 msgid "Enter a valid linkedin from 3 to 40 character"
-msgstr ""
+msgstr "أدخل رابطًا صالحًا من 3 إلى 40 حرفًا"
 
 #: dash/addons/includes/languages/trans_dash.php:73
 #: khadije/includes/languages/trans_dash.php:73
 msgid "Gmail"
-msgstr ""
+msgstr "جوجل"
 
 #: dash/addons/includes/languages/trans_dash.php:74
 #: khadije/includes/languages/trans_dash.php:74
@@ -1622,7 +1628,7 @@ msgstr "الاسم"
 #: dash/addons/includes/languages/trans_dash.php:76
 #: khadije/includes/languages/trans_dash.php:76
 msgid "Enter a valid firstname from 3 to 40 character"
-msgstr ""
+msgstr "أدخل اسمًا صالحًا من 3 إلى 40 حرفًا"
 
 #: dash/addons/includes/languages/trans_dash.php:77
 #: khadije/includes/languages/trans_dash.php:77
@@ -1633,7 +1639,7 @@ msgstr "سورينام"
 #: dash/addons/includes/languages/trans_dash.php:78
 #: khadije/includes/languages/trans_dash.php:78
 msgid "Enter a valid lastname from 3 to 40 character"
-msgstr ""
+msgstr "أدخل اسم العائلة صالحة من 3 إلى 40 حرف"
 
 #: dash/addons/includes/languages/trans_dash.php:79
 #: khadije/includes/languages/trans_dash.php:79
@@ -1643,17 +1649,17 @@ msgstr "اسم المستخدم"
 #: dash/addons/includes/languages/trans_dash.php:80
 #: khadije/includes/languages/trans_dash.php:80
 msgid "Enter a valid username from 3 to 40 character"
-msgstr ""
+msgstr "أدخل اسم مستخدم صالح من 3 إلى 40 حرف"
 
 #: dash/addons/includes/languages/trans_dash.php:81
 #: khadije/includes/languages/trans_dash.php:81
 msgid "Nick name"
-msgstr ""
+msgstr "كنية"
 
 #: dash/addons/includes/languages/trans_dash.php:82
 #: khadije/includes/languages/trans_dash.php:82
 msgid "Enter a valid title from 3 to 40 character"
-msgstr ""
+msgstr "أدخل عنوانًا صالحًا من 3 إلى 40 حرفًا"
 
 #: dash/addons/includes/languages/trans_dash.php:83
 #: khadije/content_cp/familytrip/view.php:128
@@ -1666,7 +1672,7 @@ msgstr "اكتب"
 #: dash/addons/includes/languages/trans_dash.php:84
 #: khadije/includes/languages/trans_dash.php:84
 msgid "Enter a valid type from 3 to 40 character"
-msgstr ""
+msgstr "أدخل نوعًا صالحًا من 3 إلى 40 حرفًا"
 
 #: dash/addons/includes/languages/trans_dash.php:85
 #: khadije/includes/languages/trans_dash.php:85
@@ -1683,7 +1689,7 @@ msgstr "تطلب"
 #: dash/addons/includes/languages/trans_dash.php:87
 #: khadije/includes/languages/trans_dash.php:87
 msgid "Bio"
-msgstr ""
+msgstr "السيرة الذاتية"
 
 #: dash/addons/includes/languages/trans_dash.php:88
 #: khadije/includes/languages/trans_dash.php:88
@@ -1693,7 +1699,7 @@ msgstr "إسم العرض"
 #: dash/addons/includes/languages/trans_dash.php:89
 #: khadije/includes/languages/trans_dash.php:89
 msgid "Enter a valid displayname from 3 to 40 character"
-msgstr ""
+msgstr "أدخل اسم العرض صالحة من 3 إلى 40 حرف"
 
 #: dash/addons/includes/languages/trans_dash.php:90
 #: dash/addons/includes/languages/trans_static.php:166
@@ -1757,19 +1763,18 @@ msgstr "العطل"
 
 #: dash/addons/includes/languages/trans_dash.php:99
 #: khadije/includes/languages/trans_dash.php:99
-#, fuzzy
 msgid "Removed"
-msgstr "تم حذف البريد الإلكتروني الخاص بك"
+msgstr "إزالة"
 
 #: dash/addons/includes/languages/trans_dash.php:100
 #: khadije/includes/languages/trans_dash.php:100
 msgid "Filter"
-msgstr ""
+msgstr "عامل التصفية"
 
 #: dash/addons/includes/languages/trans_dash.php:101
 #: khadije/includes/languages/trans_dash.php:101
 msgid "Unreachable"
-msgstr ""
+msgstr "Unreachable"
 
 #: dash/addons/includes/languages/trans_dash.php:102
 #: khadije/includes/languages/trans_dash.php:102
@@ -1778,9 +1783,8 @@ msgstr "الإذن"
 
 #: dash/addons/includes/languages/trans_dash.php:103
 #: khadije/includes/languages/trans_dash.php:103
-#, fuzzy
 msgid "No permission"
-msgstr "الإذن"
+msgstr "لا يوجد إذن"
 
 #: dash/addons/includes/languages/trans_dash.php:104
 #: dash/addons/includes/languages/trans_static.php:842
@@ -1792,7 +1796,7 @@ msgstr "البريد الإلكتروني"
 #: dash/addons/includes/languages/trans_dash.php:105
 #: khadije/includes/languages/trans_dash.php:105
 msgid "To change your password"
-msgstr ""
+msgstr "لتغيير كلمة المرور الخاصة بك"
 
 #: dash/addons/includes/languages/trans_dash.php:106
 #: khadije/includes/languages/trans_dash.php:106
@@ -1803,27 +1807,27 @@ msgstr "انقر هنا"
 #: dash/addons/includes/languages/trans_dash.php:107
 #: khadije/includes/languages/trans_dash.php:107
 msgid "Delete your account"
-msgstr ""
+msgstr "حذف الحساب الخاص بك"
 
 #: dash/addons/includes/languages/trans_dash.php:108
 #: khadije/includes/languages/trans_dash.php:108
 msgid "Confirm password"
-msgstr ""
+msgstr "تأكيد كلمة المرور"
 
 #: dash/addons/includes/languages/trans_dash.php:109
 #: khadije/includes/languages/trans_dash.php:109
 msgid "Require to change current password"
-msgstr ""
+msgstr "تحتاج إلى تغيير كلمة المرور الحالية"
 
 #: dash/addons/includes/languages/trans_dash.php:110
 #: khadije/includes/languages/trans_dash.php:110
 msgid "Password was set, enter to change it!"
-msgstr ""
+msgstr "تم تعيين كلمة المرور، أدخل إلى تغييره!"
 
 #: dash/addons/includes/languages/trans_dash.php:111
 #: khadije/includes/languages/trans_dash.php:111
 msgid "Password not set, enter to set it!"
-msgstr ""
+msgstr "عدم تعيين كلمة مرور، قم بإدخال لتعيين!"
 
 #: dash/addons/includes/languages/trans_dash.php:112
 #: dash/addons/includes/languages/trans_static.php:147
@@ -2102,17 +2106,17 @@ msgstr "الدخول إلى جيبرس"
 #: dash/addons/includes/languages/trans_dash.php:165
 #: khadije/includes/languages/trans_dash.php:165
 msgid "Toggle side bar"
-msgstr ""
+msgstr "تبديل الشريط الجانبي"
 
 #: dash/addons/includes/languages/trans_dash.php:166
 #: khadije/includes/languages/trans_dash.php:166
 msgid "You can save side bar status"
-msgstr ""
+msgstr "يمكنك حفظ حالة شريط جانبي"
 
 #: dash/addons/includes/languages/trans_dash.php:167
 #: khadije/includes/languages/trans_dash.php:167
 msgid "Are your need side bar?"
-msgstr ""
+msgstr "هي حاجتك الشريط الجانبي؟"
 
 #: dash/addons/includes/languages/trans_dash.php:170
 #: khadije/includes/languages/trans_dash.php:170
@@ -2175,21 +2179,19 @@ msgstr "المؤلف"
 #: khadije/includes/languages/trans_dash.php:188
 #: khadije/includes/languages/trans_project.php:317
 msgid "Submitted on"
-msgstr ""
+msgstr "المقدمة في"
 
 #: dash/addons/includes/languages/trans_dash.php:189
 #: khadije/includes/languages/trans_dash.php:189
 #: khadije/includes/languages/trans_project.php:318
-#, fuzzy
 msgid "Updated on"
-msgstr "تم تحديث التعليق بنجاح"
+msgstr "تحديث في"
 
 #: dash/addons/includes/languages/trans_dash.php:190
 #: khadije/includes/languages/trans_dash.php:190
 #: khadije/includes/languages/trans_project.php:319
-#, fuzzy
 msgid "Current status"
-msgstr "الولايات المتحدة الامريكانية"
+msgstr "الوضع الحالي"
 
 #: dash/addons/includes/languages/trans_dash.php:191
 #: khadije/includes/languages/trans_dash.php:191
@@ -2201,13 +2203,13 @@ msgstr "يوافق"
 #: khadije/includes/languages/trans_dash.php:192
 #: khadije/includes/languages/trans_project.php:323
 msgid "Unapprove"
-msgstr ""
+msgstr "غير موافق عليها"
 
 #: dash/addons/includes/languages/trans_dash.php:193
 #: khadije/includes/languages/trans_dash.php:193
 #: khadije/includes/languages/trans_project.php:324
 msgid "Trash"
-msgstr ""
+msgstr "قمامة"
 
 #: dash/addons/includes/languages/trans_dash.php:194
 #: khadije/includes/languages/trans_dash.php:194
@@ -2231,24 +2233,24 @@ msgstr "التعليق"
 #: dash/addons/includes/languages/trans_dash.php:201
 #: khadije/includes/languages/trans_dash.php:201
 msgid "Upvote"
-msgstr ""
+msgstr "يصل التصويت"
 
 #: dash/addons/includes/languages/trans_dash.php:202
 #: khadije/includes/languages/trans_dash.php:202
 msgid "Downvote"
-msgstr ""
+msgstr "أسفل التصويت"
 
 #: dash/addons/includes/languages/trans_dash.php:203
 #: khadije/includes/languages/trans_dash.php:203
 #: khadije/includes/languages/trans_project.php:333
 msgid "Without name"
-msgstr ""
+msgstr "بدون اسم"
 
 #: dash/addons/includes/languages/trans_dash.php:204
 #: khadije/includes/languages/trans_dash.php:204
 #: khadije/includes/languages/trans_project.php:334
 msgid "Visitor detail"
-msgstr ""
+msgstr "التفاصيل الزوار"
 
 #: dash/addons/includes/languages/trans_dash.php:205
 #: dash/addons/includes/languages/trans_static.php:148
@@ -2260,9 +2262,8 @@ msgstr "التصحيح"
 #: dash/addons/includes/languages/trans_dash.php:206
 #: khadije/includes/languages/trans_dash.php:206
 #: khadije/includes/languages/trans_project.php:335
-#, fuzzy
 msgid "Created on"
-msgstr "تاريخ الإنشاء"
+msgstr "تم النشر"
 
 #: dash/addons/includes/languages/trans_dash.php:207
 #: khadije/includes/languages/trans_dash.php:207
@@ -2295,7 +2296,7 @@ msgstr "حاول أن تبدأ بإضافة سجل جديد!"
 #: dash/addons/includes/languages/trans_dash.php:214
 #: khadije/includes/languages/trans_dash.php:214
 msgid "Your sms panel balance"
-msgstr ""
+msgstr "رصيد لوحة الرسائل القصيرة الخاصة بك"
 
 #: dash/addons/includes/languages/trans_dash.php:215
 #: khadije/includes/languages/trans_dash.php:215
@@ -2306,18 +2307,18 @@ msgstr "تومان"
 #: dash/addons/includes/languages/trans_dash.php:216
 #: khadije/includes/languages/trans_dash.php:216
 msgid "Send quick"
-msgstr ""
+msgstr "إرسال سريع"
 
 #: dash/addons/includes/languages/trans_dash.php:217
 #: khadije/includes/languages/trans_dash.php:217
 #: khadije/includes/languages/trans_project.php:490
 msgid "Group send"
-msgstr ""
+msgstr "إرسال المجموعة"
 
 #: dash/addons/includes/languages/trans_dash.php:218
 #: khadije/includes/languages/trans_dash.php:218
 msgid "Template"
-msgstr ""
+msgstr "قالب"
 
 #: dash/addons/includes/languages/trans_dash.php:221
 #: khadije/includes/languages/trans_dash.php:221
@@ -2357,7 +2358,7 @@ msgstr "الفئات"
 #: dash/addons/includes/languages/trans_dash.php:232
 #: khadije/includes/languages/trans_dash.php:232
 msgid "Files"
-msgstr ""
+msgstr "الملفات"
 
 #: dash/addons/includes/languages/trans_dash.php:233
 #: dash/addons/includes/languages/trans_static.php:100
@@ -2370,21 +2371,20 @@ msgstr "المستخدمين"
 #: dash/addons/includes/languages/trans_static.php:841
 #: khadije/includes/languages/trans_dash.php:236
 #: khadije/includes/languages/trans_project.php:488
-#, fuzzy
 msgid "SMS"
-msgstr "تم تسجيل المستخدم مع SMS"
+msgstr "رسالة قصيرة"
 
 #: dash/addons/includes/languages/trans_dash.php:237
 #: khadije/includes/languages/trans_dash.php:237
 #: khadije/includes/languages/trans_project.php:489
 msgid "Quick send"
-msgstr ""
+msgstr "ارسال سريع"
 
 #: dash/addons/includes/languages/trans_dash.php:238
 #: khadije/includes/languages/trans_dash.php:238
 #: khadije/includes/languages/trans_project.php:491
 msgid "Templates"
-msgstr ""
+msgstr "قوالب"
 
 #: dash/addons/includes/languages/trans_dash.php:239
 #: khadije/includes/languages/trans_dash.php:239
@@ -2415,67 +2415,68 @@ msgid ""
 "The permission name should be unique and contain only alphanameric "
 "characters and underscores"
 msgstr ""
+"يجب أن يكون اسم الإذن فريدًا ويحتوي على أحرف أبجدية أمريكية وشرطات سفلية فقط"
 
 #: dash/addons/includes/languages/trans_dash.php:246
 #: khadije/includes/languages/trans_dash.php:246
 msgid "Name of your permission"
-msgstr ""
+msgstr "اسم الإذن الخاص بك"
 
 #: dash/addons/includes/languages/trans_dash.php:247
 #: khadije/includes/languages/trans_dash.php:247
 msgid "Label"
-msgstr ""
+msgstr "التسمية"
 
 #: dash/addons/includes/languages/trans_dash.php:248
 #: khadije/includes/languages/trans_dash.php:248
 msgid ""
 "The permission label is used to represent your permission in user management"
-msgstr ""
+msgstr "إذن التسمية المستخدمة لتمثيل الإذن الخاص بك في إدارة المستخدم"
 
 #: dash/addons/includes/languages/trans_dash.php:249
 #: khadije/includes/languages/trans_dash.php:249
 msgid "Label of your permission"
-msgstr ""
+msgstr "التسمية الإذن الخاص بك"
 
 #: dash/addons/includes/languages/trans_dash.php:254
 #: khadije/includes/languages/trans_dash.php:254
 msgid "Permission title"
-msgstr ""
+msgstr "عنوان الإذن"
 
 #: dash/addons/includes/languages/trans_dash.php:255
 #: khadije/includes/languages/trans_dash.php:255
 msgid "Customized"
-msgstr ""
+msgstr "تخصيص"
 
 #: dash/addons/includes/languages/trans_dash.php:256
 #: khadije/includes/languages/trans_dash.php:256
 msgid "Need double check permission for some sensitive permissions"
-msgstr ""
+msgstr "تحتاج إلى إذن الاختيار المزدوجة لبعض الأذونات الحساسة"
 
 #: dash/addons/includes/languages/trans_dash.php:257
 #: khadije/includes/languages/trans_dash.php:257
 msgid "Do hard check and need to enter again"
-msgstr ""
+msgstr "هل الاختيار الصعب وتحتاج إلى إدخال مرة أخرى"
 
 #: dash/addons/includes/languages/trans_dash.php:258
 #: khadije/includes/languages/trans_dash.php:258
 msgid "Count of user in permission"
-msgstr ""
+msgstr "عدد المستخدمين في الإذن"
 
 #: dash/addons/includes/languages/trans_dash.php:259
 #: khadije/includes/languages/trans_dash.php:259
 msgid "Remove this permission if not need"
-msgstr ""
+msgstr "أزل هذا الإذن إذا لم يكن في حاجة"
 
 #: dash/addons/includes/languages/trans_dash.php:260
 #: khadije/includes/languages/trans_dash.php:260
 msgid "No user"
-msgstr ""
+msgstr "لا مستخدم"
 
 #: dash/addons/includes/languages/trans_dash.php:261
 #: khadije/includes/languages/trans_dash.php:261
 msgid "Click to show list of user by this permission"
-msgstr ""
+msgstr "انقر لعرض قائمة بالمستخدم من خلال هذا الإذن"
 
 #: dash/addons/includes/languages/trans_dash.php:262
 #: khadije/includes/languages/trans_dash.php:262
@@ -2622,28 +2623,27 @@ msgstr "بدون المعاينة"
 #: dash/addons/includes/languages/trans_dash.php:296
 #: khadije/includes/languages/trans_dash.php:296
 msgid "Users mobile"
-msgstr ""
+msgstr "المستخدمين المحمول"
 
 #: dash/addons/includes/languages/trans_dash.php:297
 #: khadije/includes/languages/trans_dash.php:297
 msgid "Every mobile in one line"
-msgstr ""
+msgstr "كل المحمول في سطر واحد"
 
 #: dash/addons/includes/languages/trans_dash.php:298
 #: khadije/includes/languages/trans_dash.php:298
 msgid "What do you want to send to this users?"
-msgstr ""
+msgstr "ماذا تريد أن ترسل إلى المستخدمين هذا؟"
 
 #: dash/addons/includes/languages/trans_dash.php:299
 #: khadije/includes/languages/trans_dash.php:299
 msgid "No template"
-msgstr ""
+msgstr "لا يوجد قالب"
 
 #: dash/addons/includes/languages/trans_dash.php:300
 #: khadije/includes/languages/trans_dash.php:300
-#, fuzzy
 msgid "Show"
-msgstr "عرض معلومات الخادم"
+msgstr "إظهار"
 
 #: dash/addons/includes/languages/trans_dash.php:301
 #: khadije/includes/languages/trans_dash.php:301
@@ -2653,19 +2653,18 @@ msgstr "المجموعة"
 
 #: dash/addons/includes/languages/trans_dash.php:302
 #: khadije/includes/languages/trans_dash.php:302
-#, fuzzy
 msgid "No group"
-msgstr "المجموعة"
+msgstr "لا مجموعة"
 
 #: dash/addons/includes/languages/trans_dash.php:309
 #: khadije/includes/languages/trans_dash.php:309
 msgid "List of template sms"
-msgstr ""
+msgstr "قائمة قالب الرسائل القصيرة"
 
 #: dash/addons/includes/languages/trans_dash.php:310
 #: khadije/includes/languages/trans_dash.php:310
 msgid "Template text"
-msgstr ""
+msgstr "نص القالب"
 
 #: dash/addons/includes/languages/trans_dash.php:311
 #: dash/addons/includes/languages/trans_static.php:92
@@ -2677,17 +2676,17 @@ msgstr "الحذف"
 #: dash/addons/includes/languages/trans_dash.php:312
 #: khadije/includes/languages/trans_dash.php:312
 msgid "Template name"
-msgstr ""
+msgstr "اسم القالب"
 
 #: dash/addons/includes/languages/trans_dash.php:313
 #: khadije/includes/languages/trans_dash.php:313
 msgid "Template Name"
-msgstr ""
+msgstr "اسم القالب"
 
 #: dash/addons/includes/languages/trans_dash.php:314
 #: khadije/includes/languages/trans_dash.php:314
 msgid "Template Text"
-msgstr ""
+msgstr "نص القالب"
 
 #: dash/addons/includes/languages/trans_dash.php:317
 #: dash/addons/includes/languages/trans_static.php:90
@@ -2735,18 +2734,16 @@ msgstr "حاول أن تبدأ بإضافة سجلات جديدة!"
 
 #: dash/addons/includes/languages/trans_dash.php:329
 #: khadije/includes/languages/trans_dash.php:329
-#, fuzzy
 msgid "Display Name"
-msgstr "إسم العرض"
+msgstr "اسم العرض"
 
 #: dash/addons/includes/languages/trans_dash.php:331
 #: khadije/includes/languages/trans_dash.php:331
 msgid "Created date"
-msgstr ""
+msgstr "تاريخ الإنشاء"
 
 #: dash/addons/includes/languages/trans_dash.php:332
 #: khadije/includes/languages/trans_dash.php:332
-#, fuzzy
 msgid "Last Modified"
 msgstr "آخر تعديل"
 
@@ -2754,67 +2751,67 @@ msgstr "آخر تعديل"
 #: khadije/includes/languages/trans_dash.php:333
 #: khadije/includes/languages/trans_project.php:544
 msgid "Mr"
-msgstr ""
+msgstr "السيد"
 
 #: dash/addons/includes/languages/trans_dash.php:334
 #: khadije/includes/languages/trans_dash.php:334
 msgid "Mrs"
-msgstr ""
+msgstr "السيدة"
 
 #: dash/addons/includes/languages/trans_dash.php:335
 #: khadije/includes/languages/trans_dash.php:335
 msgid "Password is set"
-msgstr ""
+msgstr "تم تعيين كلمة المرور"
 
 #: dash/addons/includes/languages/trans_dash.php:336
 #: khadije/includes/languages/trans_dash.php:336
 msgid "Password is not set!"
-msgstr ""
+msgstr "لم يتم تعيين كلمة المرور!"
 
 #: dash/addons/includes/languages/trans_dash.php:337
 #: khadije/includes/languages/trans_dash.php:337
 msgid "Two step verification in enabled"
-msgstr ""
+msgstr "التحقق بخطوتين في تمكين"
 
 #: dash/addons/includes/languages/trans_dash.php:338
 #: khadije/includes/languages/trans_dash.php:338
 msgid "Two step verification in disable"
-msgstr ""
+msgstr "التحقق بخطوتين في التعطيل"
 
 #: dash/addons/includes/languages/trans_dash.php:339
 #: khadije/includes/languages/trans_dash.php:339
 msgid "Try to start with add new user!"
-msgstr ""
+msgstr "حاول أن تبدأ بإضافة مستخدم جديد!"
 
 #: dash/addons/includes/languages/trans_dash.php:340
 #: khadije/includes/languages/trans_dash.php:340
 msgid "All :Members"
-msgstr ""
+msgstr "كل :الأعضاء"
 
 #: dash/addons/includes/languages/trans_dash.php:341
 #: khadije/includes/languages/trans_dash.php:341
 msgid ":Experts"
-msgstr ""
+msgstr ": الخبراء"
 
 #: dash/addons/includes/languages/trans_dash.php:342
 #: khadije/includes/languages/trans_dash.php:342
 msgid ":Teachers"
-msgstr ""
+msgstr ": المعلمين"
 
 #: dash/addons/includes/languages/trans_dash.php:343
 #: khadije/includes/languages/trans_dash.php:343
 msgid "Students"
-msgstr ""
+msgstr "الطلاب"
 
 #: dash/addons/includes/languages/trans_dash.php:346
 #: khadije/includes/languages/trans_dash.php:346
 msgid "Enter to change pass"
-msgstr ""
+msgstr "أدخل لتغيير المرور"
 
 #: dash/addons/includes/languages/trans_dash.php:347
 #: khadije/includes/languages/trans_dash.php:347
 msgid "Password not set, enter  to set it!"
-msgstr ""
+msgstr "لم يتم ضبط كلمة المرور ، أدخلها لتعيينها!"
 
 #: dash/addons/includes/languages/trans_dash.php:350
 #: khadije/includes/languages/trans_dash.php:350
@@ -3319,7 +3316,7 @@ msgstr "نعم"
 #: khadije/includes/languages/trans_dash.php:498
 #: khadije/includes/languages/trans_project.php:199
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 #: dash/addons/includes/languages/trans_dash.php:501
 #: khadije/includes/languages/trans_dash.php:501
@@ -3626,7 +3623,7 @@ msgstr "الترجمة"
 #: dash/addons/includes/languages/trans_dash.php:589
 #: khadije/includes/languages/trans_dash.php:589
 msgid "Extract All trans func"
-msgstr ""
+msgstr "استخراج كل Transc"
 
 #: dash/addons/includes/languages/trans_dash.php:590
 #: khadije/includes/languages/trans_dash.php:590
@@ -4092,9 +4089,8 @@ msgstr "أدخل اسم المستخدم الصالح من 4 إلى 50 حرفا�
 
 #: dash/addons/includes/languages/trans_dash.php:699
 #: khadije/includes/languages/trans_dash.php:698
-#, fuzzy
 msgid "Delete Account"
-msgstr "إزالة الحساب"
+msgstr "حذف الحساب"
 
 #: dash/addons/includes/languages/trans_dash.php:700
 #: khadije/includes/languages/trans_dash.php:699
@@ -4109,7 +4105,7 @@ msgstr "التالي"
 #: dash/addons/includes/languages/trans_dash.php:702
 #: khadije/includes/languages/trans_dash.php:701
 msgid "Sign in instead"
-msgstr ""
+msgstr "تسجيل الدخول بدلا من ذلك"
 
 #: dash/addons/includes/languages/trans_dash.php:703
 #: dash/addons/includes/languages/trans_static.php:170
@@ -4119,14 +4115,13 @@ msgstr "تسجيل الدخول"
 
 #: dash/addons/includes/languages/trans_dash.php:704
 #: khadije/includes/languages/trans_dash.php:703
-#, fuzzy
 msgid "No account?"
-msgstr "الحساب"
+msgstr "لا حساب؟"
 
 #: dash/addons/includes/languages/trans_dash.php:705
 #: khadije/includes/languages/trans_dash.php:704
 msgid "Create for yourself"
-msgstr ""
+msgstr "خلق لنفسك"
 
 #: dash/addons/includes/languages/trans_dash.php:706
 #: khadije/includes/languages/trans_dash.php:705
@@ -4212,12 +4207,12 @@ msgstr "أدخل اسم المستخدم الصالح!"
 #: dash/addons/includes/languages/trans_dash.php:726
 #: khadije/includes/languages/trans_dash.php:725
 msgid "You are supervisor!"
-msgstr ""
+msgstr "أنت المشرف!"
 
 #: dash/addons/includes/languages/trans_dash.php:727
 #: khadije/includes/languages/trans_dash.php:726
 msgid "Enter with another user"
-msgstr ""
+msgstr "أدخل مع مستخدم آخر"
 
 #: dash/addons/includes/languages/trans_static.php:8
 msgid "dash"
@@ -4478,7 +4473,7 @@ msgstr "المشرف"
 
 #: dash/addons/includes/languages/trans_static.php:78
 msgid "error in field"
-msgstr ""
+msgstr "خطأ في الميدان"
 
 #: dash/addons/includes/languages/trans_static.php:80
 msgid "cp"
@@ -4527,7 +4522,7 @@ msgstr "على محمل الجد، هل أنت متأكد؟ لا يوجد عود
 
 #: dash/addons/includes/languages/trans_static.php:91
 msgid "or"
-msgstr ""
+msgstr "أو"
 
 #: dash/addons/includes/languages/trans_static.php:97
 msgid "Attachments"
@@ -5112,7 +5107,7 @@ msgstr "الإرسال"
 
 #: dash/addons/includes/languages/trans_static.php:283
 msgid " to "
-msgstr ""
+msgstr "إلى"
 
 #: dash/addons/includes/languages/trans_static.php:284
 msgid "until"
@@ -5449,95 +5444,95 @@ msgstr " "
 
 #: dash/addons/includes/languages/trans_static.php:404
 msgid "cpPermissionAdd"
-msgstr ""
+msgstr "لوحة التحكم الإذن أضف"
 
 #: dash/addons/includes/languages/trans_static.php:405
 msgid "cpPermissionEdit"
-msgstr ""
+msgstr "لوحة التحكم إذن التحرير"
 
 #: dash/addons/includes/languages/trans_static.php:406
 msgid "cpPermissionDelete"
-msgstr ""
+msgstr "لوحة التحكم الإذن حذف"
 
 #: dash/addons/includes/languages/trans_static.php:407
 msgid "cpPermissionView"
-msgstr ""
+msgstr "لوحة التحكم عرض الإذن"
 
 #: dash/addons/includes/languages/trans_static.php:408
 msgid "cpCommentsEdit"
-msgstr ""
+msgstr "لوحة التحكم التعليقات تحرير"
 
 #: dash/addons/includes/languages/trans_static.php:409
 msgid "cpCommentsView"
-msgstr ""
+msgstr "لوحة التحكم عرض التعليقات"
 
 #: dash/addons/includes/languages/trans_static.php:410
 msgid "contentCp"
-msgstr ""
+msgstr "يحتوى لوحة التحكم"
 
 #: dash/addons/includes/languages/trans_static.php:411
 msgid "cpUsersView"
-msgstr ""
+msgstr "لوحة التحكم عرض المستخدمين"
 
 #: dash/addons/includes/languages/trans_static.php:412
 msgid "cpUsersEdit"
-msgstr ""
+msgstr "لوحة التحكم المستخدمين تحرير"
 
 #: dash/addons/includes/languages/trans_static.php:413
 msgid "cpUsersAdd"
-msgstr ""
+msgstr "لوحة التحكم إضافة المستخدم"
 
 #: dash/addons/includes/languages/trans_static.php:414
 msgid "cpCategoryView"
-msgstr ""
+msgstr "لوحة التحكم عرض الفئة"
 
 #: dash/addons/includes/languages/trans_static.php:415
 msgid "cpTagView"
-msgstr ""
+msgstr "لوحة التحكم عرض العلامة"
 
 #: dash/addons/includes/languages/trans_static.php:416
 msgid "cpCategoryEdit"
-msgstr ""
+msgstr "لوحة التحكم تحرير الفئة"
 
 #: dash/addons/includes/languages/trans_static.php:417
 msgid "cpTagEdit"
-msgstr ""
+msgstr "لوحة التحكم تحرير العلامة"
 
 #: dash/addons/includes/languages/trans_static.php:418
 msgid "cpCategoryAdd"
-msgstr ""
+msgstr "لوحة التحكم فئة إضافة"
 
 #: dash/addons/includes/languages/trans_static.php:419
 msgid "cpTagAdd"
-msgstr ""
+msgstr "لوحة التحكم إضافة علامة"
 
 #: dash/addons/includes/languages/trans_static.php:420
 msgid "cpBackup"
-msgstr ""
+msgstr "لوحة التحكم دعم"
 
 #: dash/addons/includes/languages/trans_static.php:421
 msgid "cpPageAdd"
-msgstr ""
+msgstr "لوحة التحكم إضافة صفحة"
 
 #: dash/addons/includes/languages/trans_static.php:422
 msgid "cpPostsAdd"
-msgstr ""
+msgstr "لوحة التحكم المشاركات أضف"
 
 #: dash/addons/includes/languages/trans_static.php:423
 msgid "cpPageEdit"
-msgstr ""
+msgstr "لوحة التحكم تحرير الصفحة"
 
 #: dash/addons/includes/languages/trans_static.php:424
 msgid "cpPostsEdit"
-msgstr ""
+msgstr "لوحة التحكم المشاركات تحرير"
 
 #: dash/addons/includes/languages/trans_static.php:425
 msgid "cpPageView"
-msgstr ""
+msgstr "لوحة التحكم عرض الصفحة"
 
 #: dash/addons/includes/languages/trans_static.php:426
 msgid "cpPostsView"
-msgstr ""
+msgstr "لوحة التحكم عرض المشاركات"
 
 #: dash/addons/includes/languages/trans_static.php:436
 msgid "east azerbaijan"
@@ -6794,30 +6789,27 @@ msgstr "تنتظر"
 
 #: dash/addons/includes/languages/trans_static.php:764
 msgid "block"
-msgstr ""
+msgstr "منع"
 
 #: dash/addons/includes/languages/trans_static.php:765
 msgid "filter"
-msgstr ""
+msgstr "عامل التصفية"
 
 #: dash/addons/includes/languages/trans_static.php:766
 msgid "close"
-msgstr ""
+msgstr "أغلق"
 
 #: dash/addons/includes/languages/trans_static.php:767
-#, fuzzy
 msgid "male"
-msgstr "الرجل"
+msgstr "الذكر"
 
 #: dash/addons/includes/languages/trans_static.php:768
-#, fuzzy
 msgid "female"
-msgstr "المرأة"
+msgstr "أنثى"
 
 #: dash/addons/includes/languages/trans_static.php:769
-#, fuzzy
 msgid "single"
-msgstr "غير المتزوج"
+msgstr "غير مرتبطة"
 
 #: dash/addons/includes/languages/trans_static.php:770
 #: khadije/includes/languages/trans_project.php:348
@@ -6825,30 +6817,28 @@ msgid "married"
 msgstr "المتزوج"
 
 #: dash/addons/includes/languages/trans_static.php:771
-#, fuzzy
 msgid "leave"
-msgstr "إذا كنت ترغب في تغيير كلمة المرور أدخِلها، و إلاّ أتركه فارغاً"
+msgstr "انصراف"
 
 #: dash/addons/includes/languages/trans_static.php:772
 msgid "real"
-msgstr ""
+msgstr "حقيقة"
 
 #: dash/addons/includes/languages/trans_static.php:773
 msgid "learn"
-msgstr ""
+msgstr "تعلم"
 
 #: dash/addons/includes/languages/trans_static.php:774
 msgid "requirement"
-msgstr ""
+msgstr "شرط"
 
 #: dash/addons/includes/languages/trans_static.php:775
 msgid "beside"
-msgstr ""
+msgstr "بجانب"
 
 #: dash/addons/includes/languages/trans_static.php:776
-#, fuzzy
 msgid "soon"
-msgstr "التمكين قريباً"
+msgstr "قريبا"
 
 #: dash/addons/includes/languages/trans_static.php:777
 #, fuzzy
@@ -6866,58 +6856,56 @@ msgid "deactive"
 msgstr "العطل"
 
 #: dash/addons/includes/languages/trans_static.php:780
-#, fuzzy
 msgid "full"
-msgstr "الاسم الكامل غير صالح"
+msgstr "كامل"
 
 #: dash/addons/includes/languages/trans_static.php:781
-#, fuzzy
 msgid "all"
-msgstr "كل شيء داخل هذا النظام"
+msgstr "جميع"
 
 #: dash/addons/includes/languages/trans_static.php:782
 msgid "sunday"
-msgstr ""
+msgstr "الأحد"
 
 #: dash/addons/includes/languages/trans_static.php:783
 msgid "monday"
-msgstr ""
+msgstr "الإثنين"
 
 #: dash/addons/includes/languages/trans_static.php:784
 msgid "tuesday"
-msgstr ""
+msgstr "الثلاثاء"
 
 #: dash/addons/includes/languages/trans_static.php:785
 msgid "wednesday"
-msgstr ""
+msgstr "الأربعاء"
 
 #: dash/addons/includes/languages/trans_static.php:786
 msgid "thursday"
-msgstr ""
+msgstr "الخميس"
 
 #: dash/addons/includes/languages/trans_static.php:787
 msgid "friday"
-msgstr ""
+msgstr "يوم الجمعة"
 
 #: dash/addons/includes/languages/trans_static.php:788
 msgid "saturday"
-msgstr ""
+msgstr "يوم السبت"
 
 #: dash/addons/includes/languages/trans_static.php:789
 msgid "class"
-msgstr ""
+msgstr "الفئة"
 
 #: dash/addons/includes/languages/trans_static.php:790
 msgid "exam"
-msgstr ""
+msgstr "امتحان"
 
 #: dash/addons/includes/languages/trans_static.php:791
 msgid "weekly"
-msgstr ""
+msgstr "الأسبوعية"
 
 #: dash/addons/includes/languages/trans_static.php:792
 msgid "rotational"
-msgstr ""
+msgstr "التناوب"
 
 #: dash/addons/includes/languages/trans_static.php:793
 #, fuzzy
@@ -6926,7 +6914,7 @@ msgstr "التاريخ"
 
 #: dash/addons/includes/languages/trans_static.php:794
 msgid "taken"
-msgstr ""
+msgstr "اتخذت"
 
 #: dash/addons/includes/languages/trans_static.php:795
 #, fuzzy
@@ -6940,11 +6928,11 @@ msgstr "الإضافة"
 
 #: dash/addons/includes/languages/trans_static.php:797
 msgid "removeforce"
-msgstr ""
+msgstr "إزالة القوة"
 
 #: dash/addons/includes/languages/trans_static.php:798
 msgid "removeadmin"
-msgstr ""
+msgstr "إزالة المشرف"
 
 #: dash/addons/includes/languages/trans_static.php:799
 #: khadije/includes/languages/trans_static.php:29
@@ -6953,7 +6941,7 @@ msgstr "اللغو"
 
 #: dash/addons/includes/languages/trans_static.php:800
 msgid "student"
-msgstr ""
+msgstr "طالب علم"
 
 #: dash/addons/includes/languages/trans_static.php:801
 #, fuzzy
@@ -6962,7 +6950,7 @@ msgstr "الخبير"
 
 #: dash/addons/includes/languages/trans_static.php:802
 msgid "acept"
-msgstr ""
+msgstr "قبول"
 
 #: dash/addons/includes/languages/trans_static.php:803
 #: khadije/includes/languages/trans_static.php:31
@@ -6976,7 +6964,7 @@ msgstr "المعلم"
 
 #: dash/addons/includes/languages/trans_static.php:806
 msgid "other"
-msgstr ""
+msgstr "آخر"
 
 #: dash/addons/includes/languages/trans_static.php:807
 #, fuzzy
@@ -6985,15 +6973,15 @@ msgstr "تم حذف البريد الإلكتروني الخاص بك"
 
 #: dash/addons/includes/languages/trans_static.php:808
 msgid "unreachable"
-msgstr ""
+msgstr "لا يمكن الوصول"
 
 #: dash/addons/includes/languages/trans_static.php:809
 msgid "paid"
-msgstr ""
+msgstr "دفع"
 
 #: dash/addons/includes/languages/trans_static.php:810
 msgid "skipped"
-msgstr ""
+msgstr "تخطي"
 
 #: dash/addons/includes/languages/trans_static.php:811
 #, fuzzy
@@ -7017,7 +7005,7 @@ msgstr "المنخفض"
 
 #: dash/addons/includes/languages/trans_static.php:815
 msgid "deliver"
-msgstr ""
+msgstr "ايصال"
 
 #: dash/addons/includes/languages/trans_static.php:816
 #, fuzzy
@@ -7026,11 +7014,11 @@ msgstr "المشروع"
 
 #: dash/addons/includes/languages/trans_static.php:817
 msgid "true"
-msgstr ""
+msgstr "صحيح"
 
 #: dash/addons/includes/languages/trans_static.php:818
 msgid "false"
-msgstr ""
+msgstr "خاطئة"
 
 #: dash/addons/includes/languages/trans_static.php:819
 #, fuzzy
@@ -7053,9 +7041,8 @@ msgid "transfer"
 msgstr "النقل"
 
 #: dash/addons/includes/languages/trans_static.php:823
-#, fuzzy
 msgid "promo"
-msgstr "الرمز الترويجي غير صالح"
+msgstr "الترويجي"
 
 #: dash/addons/includes/languages/trans_static.php:824
 #: khadije/includes/languages/trans_static.php:10
@@ -7064,16 +7051,15 @@ msgstr "النقود"
 
 #: dash/addons/includes/languages/trans_static.php:825
 msgid "expired"
-msgstr ""
+msgstr "منتهية الصلاحية"
 
 #: dash/addons/includes/languages/trans_static.php:826
 msgid "filtered"
-msgstr ""
+msgstr "مصفى"
 
 #: dash/addons/includes/languages/trans_static.php:827
-#, fuzzy
 msgid "blocked"
-msgstr "كنت ممنوع بسبب هذا السبب!"
+msgstr "مسدود"
 
 #: dash/addons/includes/languages/trans_static.php:828
 #: khadije/includes/languages/trans_static.php:32
@@ -7081,9 +7067,8 @@ msgid "spam"
 msgstr "المزعج"
 
 #: dash/addons/includes/languages/trans_static.php:829
-#, fuzzy
 msgid "request"
-msgstr "تحقق من الطلب و حالة التحديث في أي طلب"
+msgstr "طلب"
 
 #: dash/addons/includes/languages/trans_static.php:830
 #, fuzzy
@@ -7092,7 +7077,7 @@ msgstr "إعادة التوجيه"
 
 #: dash/addons/includes/languages/trans_static.php:831
 msgid "pending"
-msgstr ""
+msgstr "قيد الانتظار"
 
 #: dash/addons/includes/languages/trans_static.php:832
 #, fuzzy
@@ -7101,11 +7086,11 @@ msgstr "الخطأ"
 
 #: dash/addons/includes/languages/trans_static.php:833
 msgid "verify_request"
-msgstr ""
+msgstr "تحقق _ الطلب"
 
 #: dash/addons/includes/languages/trans_static.php:834
 msgid "verify_error"
-msgstr ""
+msgstr "تحقق _ الخطأ"
 
 #: dash/addons/includes/languages/trans_static.php:835
 #, fuzzy
@@ -7114,39 +7099,39 @@ msgstr "حسناً"
 
 #: dash/addons/includes/languages/trans_static.php:837
 msgid "approved"
-msgstr ""
+msgstr "وافق"
 
 #: dash/addons/includes/languages/trans_static.php:838
 msgid "unapproved"
-msgstr ""
+msgstr "غير موافق عليها"
 
 #: dash/addons/includes/languages/trans_static.php:843
 msgid "cpSmsSend"
-msgstr ""
+msgstr "لوحة التحكم ارسال الرسائل القصيرة"
 
 #: dash/addons/includes/languages/trans_static.php:844
 msgid "cpSmsTemplateView"
-msgstr ""
+msgstr "لوحة التحكم عرض قالب الرسائل القصيرة"
 
 #: dash/addons/includes/languages/trans_static.php:845
 msgid "cpSmsTemplateEdit"
-msgstr ""
+msgstr "لوحة التحكم تحرير قالب الرسائل القصيرة"
 
 #: dash/addons/includes/languages/trans_static.php:846
 msgid "cpSmsSendGroup"
-msgstr ""
+msgstr "لوحة التحكم إرسال الرسائل القصيرة المجموعة"
 
 #: dash/addons/includes/languages/trans_static.php:847
 msgid "cpSMS"
-msgstr ""
+msgstr "لوحة التحكم رسالة قصيرة"
 
 #: dash/addons/includes/languages/trans_static.php:848
 msgid "cpEmailSend"
-msgstr ""
+msgstr "لوحة التحكم إرسال البريد الإلكتروني"
 
 #: dash/addons/includes/languages/trans_static.php:849
 msgid "cpEmail"
-msgstr ""
+msgstr "لوحة التحكم البريد الإلكتروني"
 
 #: dash/addons/lib/telegram/commands/step_register.php:84
 msgid "return"
@@ -7158,7 +7143,7 @@ msgstr "يرجى فقط استخدام لوحة المفاتيح أدناه."
 
 #: dash/lib/app/comment.php:61
 msgid "Duplicate comment from you was received"
-msgstr ""
+msgstr "تم تلقي تعليق مكرر منك"
 
 #: dash/lib/app/comment.php:86
 msgid "Can not access to edit comment"
@@ -7166,7 +7151,7 @@ msgstr "لا يمكن الوصول إلى تحرير التعليق"
 
 #: dash/lib/app/comment.php:167
 msgid "Please fill the content box"
-msgstr ""
+msgstr "يرجى ملء مربع المحتوى"
 
 #: dash/lib/app/contact.php:51
 msgid "User id not set"
@@ -7355,39 +7340,39 @@ msgstr "تحديث المشاركة بنجاح"
 
 #: dash/lib/app/smsgroup.php:46
 msgid "All users"
-msgstr ""
+msgstr "جميع المستخدمين"
 
 #: dash/lib/app/smsgroup.php:47
 msgid "Active user"
-msgstr ""
+msgstr "مستخدم نشط"
 
 #: dash/lib/app/smstemplate.php:39
 msgid "Name of template is required"
-msgstr ""
+msgstr "اسم القالب مطلوب"
 
 #: dash/lib/app/smstemplate.php:45
 msgid "Text of template is required"
-msgstr ""
+msgstr "نص القالب مطلوب"
 
 #: dash/lib/app/smstemplate.php:51
 msgid "Plase fill the name of template"
-msgstr ""
+msgstr "يرجى ملء اسم القالب"
 
 #: dash/lib/app/smstemplate.php:58
 msgid "Plase fill the text of template"
-msgstr ""
+msgstr "يرجى ملء نص القالب"
 
 #: dash/lib/app/smstemplate.php:64
 msgid "You must set name of template less than 50 character"
-msgstr ""
+msgstr "يجب عليك تعيين اسم القالب أقل من 50 حرف"
 
 #: dash/lib/app/smstemplate.php:71
 msgid "This name is reserved before, try another"
-msgstr ""
+msgstr "هذا الاسم محجوز من قبل ، حاول آخر"
 
 #: dash/lib/app/smstemplate.php:77 dash/lib/app/smstemplate.php:100
 msgid "This template is not in your template list!"
-msgstr ""
+msgstr "هذا القالب ليس في قائمة القوالب الخاصة بك!"
 
 #: dash/lib/app/term.php:57
 msgid "Please set the term title"
@@ -7503,43 +7488,43 @@ msgstr "اللغة غير صحيحة"
 
 #: dash/lib/app/user.php:219
 msgid "website is out of range"
-msgstr ""
+msgstr "الموقع خارج النطاق"
 
 #: dash/lib/app/user.php:227
 msgid "facebook is out of range"
-msgstr ""
+msgstr "فيسبوك خارج النطاق"
 
 #: dash/lib/app/user.php:235
 msgid "twitter is out of range"
-msgstr ""
+msgstr "تويتر خارج النطاق"
 
 #: dash/lib/app/user.php:243
 msgid "instagram is out of range"
-msgstr ""
+msgstr "اینستاجرام خارج النطاق"
 
 #: dash/lib/app/user.php:251
 msgid "linkedin is out of range"
-msgstr ""
+msgstr "لینک خارج النطاق"
 
 #: dash/lib/app/user.php:259
 msgid "gmail is out of range"
-msgstr ""
+msgstr "بريد جوجل خارج النطاق"
 
 #: dash/lib/app/user.php:275
 msgid "firstname is out of range"
-msgstr ""
+msgstr "الاسم الأول خارج النطاق"
 
 #: dash/lib/app/user.php:283
 msgid "lastname is out of range"
-msgstr ""
+msgstr "اسم العائلة خارج النطاق"
 
 #: dash/lib/app/user.php:291
 msgid "bio is out of range"
-msgstr ""
+msgstr "الحيوية خارج النطاق"
 
 #: dash/lib/app/user/add.php:72 dash/lib/app/user/edit.php:69
 msgid "Duplicate mobile"
-msgstr ""
+msgstr "تكرار الهاتف المحمول"
 
 #: dash/lib/app/user/add.php:82
 msgid "No way to insert user"
@@ -7555,7 +7540,7 @@ msgstr "لا يمكنك الوصول إلي تحرير العاملين"
 
 #: dash/lib/app/user/edit.php:116
 msgid "User successfully updated"
-msgstr ""
+msgstr "تم تحديث المستخدم بنجاح"
 
 #: dash/lib/app/user/get.php:56
 msgid "Store id or shortname not set"
@@ -7567,11 +7552,12 @@ msgstr "المستخدم غير موجود."
 
 #: dash/lib/date.php:22
 msgid "Invalid birthdate"
-msgstr ""
+msgstr "تاريخ الميلاد غير صحيح"
 
 #: dash/lib/date.php:42
 msgid "Invalid birthdate, birthdate can not larger than date now!"
 msgstr ""
+"تاريخ الميلاد غير صالح ، لا يمكن أن يكون تاريخ الميلاد أكبر من التاريخ الآن!"
 
 #: dash/lib/db/mysql/tools/connect.php:104
 msgid "we can't find database service!"
@@ -7633,23 +7619,23 @@ msgstr "لا يمكن أن يكون معرّف وحدة المعاملة خال�
 
 #: dash/lib/engine/mvc.php:100
 msgid "Hey, Read documentation and start your project!"
-msgstr ""
+msgstr "مهلا ، قراءة الوثائق وبدء مشروعك!"
 
 #: dash/lib/engine/mvc.php:217
 msgid "We can't find the page you're looking for!"
-msgstr ""
+msgstr "لا يمكننا العثور على الصفحة التي تبحث عنها!"
 
 #: dash/lib/engine/view.php:74
 msgid "As easy as ABC is our slogan!"
-msgstr ""
+msgstr "سهلا كما ABC هو شعارنا!"
 
 #: dash/lib/engine/view.php:74
 msgid "If you are not finded a solution for your problem, call us."
-msgstr ""
+msgstr "إذا لم تجد حلًا لمشكلتك ، فاتصل بنا."
 
 #: dash/lib/engine/view.php:75 khadije/includes/languages/trans_project.php:123
 msgid "Software Solution Designer"
-msgstr ""
+msgstr "مصمم حلول البرمجيات"
 
 #: dash/lib/file.php:449
 msgid "File not exist"
@@ -7661,122 +7647,119 @@ msgstr "استمر"
 
 #: dash/lib/header.php:70
 msgid "Switching Protocols"
-msgstr ""
+msgstr "تبديل البروتوكولات"
 
 #: dash/lib/header.php:71
 msgid "Processing"
-msgstr ""
+msgstr "تحويل"
 
 #: dash/lib/header.php:74
 msgid "Created"
-msgstr ""
+msgstr "إنشاء"
 
 #: dash/lib/header.php:75
 msgid "Accepted"
-msgstr ""
+msgstr "قبول"
 
 #: dash/lib/header.php:76
 msgid "Non-Authoritative Information"
-msgstr ""
+msgstr "غير -موثوقة المعلومات"
 
 #: dash/lib/header.php:77
-#, fuzzy
 msgid "No Content"
-msgstr "المحتوي"
+msgstr "لا محتوى"
 
 #: dash/lib/header.php:78
 msgid "Reset Content"
-msgstr ""
+msgstr "إعادة تعيين المحتوى"
 
 #: dash/lib/header.php:79
 msgid "Partial Content"
-msgstr ""
+msgstr "محتوى جزئي"
 
 #: dash/lib/header.php:80
 msgid "Multi-Status"
-msgstr ""
+msgstr "متعددة -الحالة"
 
 #: dash/lib/header.php:81
 msgid "IM Used"
-msgstr ""
+msgstr "أنا استخدم"
 
 #: dash/lib/header.php:83
 msgid "Multiple Choices"
-msgstr ""
+msgstr "خيارات متعددة"
 
 #: dash/lib/header.php:84
 msgid "Moved Permanently"
-msgstr ""
+msgstr "انتقل بشكل دائم"
 
 #: dash/lib/header.php:85
 msgid "Found"
-msgstr ""
+msgstr "العثور على"
 
 #: dash/lib/header.php:86
 msgid "See Other"
-msgstr ""
+msgstr "رؤية أخرى"
 
 #: dash/lib/header.php:87
-#, fuzzy
 msgid "Not Modified"
-msgstr "آخر تعديل"
+msgstr "غير معدل"
 
 #: dash/lib/header.php:88
 msgid "Use Proxy"
-msgstr ""
+msgstr "استخدام بروكسي"
 
 #: dash/lib/header.php:89
 msgid "Reserved"
-msgstr ""
+msgstr "محجوز"
 
 #: dash/lib/header.php:90
 msgid "Temporary Redirect"
-msgstr ""
+msgstr "إعادة التوجيه المؤقتة"
 
 #: dash/lib/header.php:91
 msgid "Permanent Redirect"
-msgstr ""
+msgstr "إعادة التوجيه الدائم"
 
 #: dash/lib/header.php:93
 msgid "Bad Request"
-msgstr ""
+msgstr "اقتراح غير جيد"
 
 #: dash/lib/header.php:94
 msgid "Unauthorized"
-msgstr ""
+msgstr "غير مصرح"
 
 #: dash/lib/header.php:95
 msgid "Payment Required"
-msgstr ""
+msgstr "الدفع مطلوب"
 
 #: dash/lib/header.php:96
 msgid "Forbidden"
-msgstr ""
+msgstr "ممنوع"
 
 #: dash/lib/header.php:97
-#, fuzzy
 msgid "Not Found"
-msgstr "لم يتم العثور على المعرف"
+msgstr "غير معثور عليه"
 
 #: dash/lib/header.php:98
 msgid "Method Not Allowed"
-msgstr ""
+msgstr "الطريقة غير مسموحة"
 
 #: dash/lib/header.php:99
 msgid "Not Acceptable"
-msgstr ""
+msgstr "غير مقبول"
 
 #: dash/lib/header.php:100
 msgid "Proxy Authentication Required"
-msgstr ""
+msgstr "مصادقة الوكيل مطلوبة"
 
 #: dash/lib/header.php:101
 msgid "Request Timeout"
-msgstr ""
+msgstr "طلب المهلة"
 
 #: dash/lib/header.php:102
 msgid "Conflict"
-msgstr ""
+msgstr "نزاع"
 
 #: dash/lib/header.php:103 khadije/includes/languages/trans_project.php:524
 msgid "Gone"
@@ -7784,111 +7767,111 @@ msgstr "قد ذهب"
 
 #: dash/lib/header.php:104
 msgid "Length Required"
-msgstr ""
+msgstr "المدة المطلوبة"
 
 #: dash/lib/header.php:105
 msgid "Precondition Failed"
-msgstr ""
+msgstr "فشل الشرط المسبق"
 
 #: dash/lib/header.php:106
 msgid "Request Entity Too Large"
-msgstr ""
+msgstr "طلب الوحدة كبير جدا"
 
 #: dash/lib/header.php:107
 msgid "Request-URI Too Long"
-msgstr ""
+msgstr "اطلب URI طويل جدا"
 
 #: dash/lib/header.php:108
 msgid "Unsupported Media Type"
-msgstr ""
+msgstr "نوع الوسائط غير مدعوم"
 
 #: dash/lib/header.php:109
 msgid "Requested Range Not Satisfiable"
-msgstr ""
+msgstr "النطاق المطلوب غير مقبول"
 
 #: dash/lib/header.php:110
 msgid "Expectation Failed"
-msgstr ""
+msgstr "توقع فشل"
 
 #: dash/lib/header.php:111
 msgid "I'm a teapot"
-msgstr ""
+msgstr "أنا إبريق الشاي"
 
 #: dash/lib/header.php:112
 msgid "Misdirected Request"
-msgstr ""
+msgstr "طلب خاطئ"
 
 #: dash/lib/header.php:113
 msgid "Unprocessable Entity"
-msgstr ""
+msgstr "كيان غير قابل للمعاملة"
 
 #: dash/lib/header.php:114
 msgid "Locked"
-msgstr ""
+msgstr "مقفل"
 
 #: dash/lib/header.php:115
 msgid "Failed Dependency"
-msgstr ""
+msgstr "فشل التبعية"
 
 #: dash/lib/header.php:116
 msgid "Upgrade Required"
-msgstr ""
+msgstr "الترقية مطلوبة"
 
 #: dash/lib/header.php:117
 msgid "Precondition Required"
-msgstr ""
+msgstr "الشرط المسبق مطلوب"
 
 #: dash/lib/header.php:118
 msgid "Too Many Requests"
-msgstr ""
+msgstr "طلبات كثيرة جدا"
 
 #: dash/lib/header.php:119
 msgid "Request Header Fields Too Large"
-msgstr ""
+msgstr "طلب حقول العنوان كبيرة جدًا"
 
 #: dash/lib/header.php:120
 msgid "Unavailable For Legal Reasons"
-msgstr ""
+msgstr "غير متوفر للأسباب القانونية"
 
 #: dash/lib/header.php:122
 msgid "Internal Server Error"
-msgstr ""
+msgstr "خطأ في الخادم الداخلي"
 
 #: dash/lib/header.php:123
 msgid "Not Implemented"
-msgstr ""
+msgstr "لم تنفذ"
 
 #: dash/lib/header.php:124
 msgid "Bad Gateway"
-msgstr ""
+msgstr "مدخل خاطأ"
 
 #: dash/lib/header.php:125
 msgid "Service Unavailable"
-msgstr ""
+msgstr "الخدمة غير متوفرة"
 
 #: dash/lib/header.php:126
 msgid "Gateway Timeout"
-msgstr ""
+msgstr "غمازة"
 
 #: dash/lib/header.php:127
 msgid "HTTP Version Not Supported"
-msgstr ""
+msgstr "إصدار HTTP غير مدعوم"
 
 #: dash/lib/header.php:128
 msgid "Variant Also Negotiates"
-msgstr ""
+msgstr "البديل يتفاوض أيضا"
 
 #: dash/lib/header.php:129
 msgid "Insufficient Storage"
-msgstr ""
+msgstr "تخزين غير كاف"
 
 #: dash/lib/header.php:130
 msgid "Not Extended"
-msgstr ""
+msgstr "غير ممتدة"
 
 #: dash/lib/header.php:131
 msgid "Network Authentication Required"
-msgstr ""
+msgstr "مصادقة الشبكة المطلوبة"
 
 #: dash/lib/mail.php:45
 msgid "Mailer Error :error"
@@ -7896,63 +7879,63 @@ msgstr "خطأ في مرسل البريد الإلكتروني: error"
 
 #: dash/lib/permission.php:128
 msgid "Someone have this permission!"
-msgstr ""
+msgstr "شخص ما لديه هذا الإذن!"
 
 #: dash/lib/permission.php:128
 msgid "Can not remove it."
-msgstr ""
+msgstr "لا يمكن إزالته."
 
 #: dash/lib/permission.php:134
 msgid "Can not remove admin!"
-msgstr ""
+msgstr "لا يمكن إزالة المشرف!"
 
 #: dash/lib/permission.php:158
 msgid "Permission removed"
-msgstr ""
+msgstr "إذن إزالتها"
 
 #: dash/lib/permission.php:289
 msgid "Please set a valid name for permission"
-msgstr ""
+msgstr "يرجى تحديد اسم صالح للحصول على إذن"
 
 #: dash/lib/permission.php:301 dash/lib/permission.php:312
 msgid "This key was reserved, Try another"
-msgstr ""
+msgstr "تم حجز هذا المفتاح ، حاول آخر"
 
 #: dash/lib/permission.php:320
 msgid "Can not change admin permission"
-msgstr ""
+msgstr "لا يمكن تغيير إذن المشرف"
 
 #: dash/lib/permission.php:326
 msgid "This key was not found in your permission list!"
-msgstr ""
+msgstr "لم يتم العثور على هذا المفتاح في قائمة أذوناتك!"
 
 #: dash/lib/permission.php:333
 msgid "The title must include at least one alphabetical character"
-msgstr ""
+msgstr "يجب أن يتضمن العنوان حرفًا أبجديًا واحدًا على الأقل"
 
 #: dash/lib/permission.php:339
 msgid "Name too large, Try another"
-msgstr ""
+msgstr "اسم أكبر من اللازم ، جرب أخرى"
 
 #: dash/lib/permission.php:346
 msgid "Label too large, Try another"
-msgstr ""
+msgstr "وضع علامة كبيرة جدًا ، جرّب أخرى"
 
 #: dash/lib/permission.php:352
 msgid "Invalid contain of permission"
-msgstr ""
+msgstr "غير صالح من إذن"
 
 #: dash/lib/permission.php:362
 msgid "This item is not in your permission list!"
-msgstr ""
+msgstr "هذا البند ليس في قائمة أذوناتك!"
 
 #: dash/lib/permission.php:386
 msgid "Permission saved"
-msgstr ""
+msgstr "تم حفظ الإذن"
 
 #: dash/lib/permission.php:532
 msgid "Permission denied"
-msgstr ""
+msgstr "طلب الاذن مرفوض"
 
 #: dash/lib/utility.php:35
 msgid ""
@@ -8336,7 +8319,7 @@ msgstr "نحن نبذل قصارى جهدنا لتحسين جودة خدمة م�
 
 #: khadije/content/donate/model.php:23
 msgid "Bank id is not correct"
-msgstr ""
+msgstr "معرف البنك غير صحيح"
 
 #: khadije/content/donate/view.php:9
 #: khadije/includes/languages/trans_project.php:100
@@ -8380,27 +8363,27 @@ msgstr "قم بتسجيل طلبك للحصول على الخدمة في الأ�
 
 #: khadije/content/live/view.php:9
 msgid "Live broadcast of ahl-al bayt shrine"
-msgstr ""
+msgstr "بث مباشر لمزار أهل البيت"
 
 #: khadije/content/live/view.php:10
 msgid "View live camera of ahl-al bayt shrine and have virtual pilgrimage"
-msgstr ""
+msgstr "شاهد كاميرا حية لمزار أهل آل البيت وقم بزيارة الحج"
 
 #: khadije/content/mylovestory/model.php:68
 msgid "Please pay amount and try to download"
-msgstr ""
+msgstr "يرجى دفع المبلغ ومحاولة تحميل"
 
 #: khadije/content/mylovestory/view.php:23
 msgid "This is you and my love story"
-msgstr ""
+msgstr "هذا هو أنت وقصة حبى"
 
 #: khadije/content/mylovestory/view.php:24
 msgid "Buy and download PDF version of :title book"
-msgstr ""
+msgstr "شراء وتنزيل نسخة PDF من: كتاب العنوان"
 
 #: khadije/content/mylovestory/view.php:32
 msgid "Thanks for your buy book"
-msgstr ""
+msgstr "شكرا على كتاب الشراء الخاص بك"
 
 #: khadije/content/old/v1/view.php:12
 #: khadije/content_a/service/request/view.php:13
@@ -8417,17 +8400,17 @@ msgstr "منفذ مشروع الزيارة  الأول لأهل البيت"
 
 #: khadije/content/view.php:15
 msgid "© :year :site. All right reserved."
-msgstr ""
+msgstr "©: السنة: الموقع. جميع الحقوق محفوظة."
 
 #: khadije/content_a/advice/detail/model.php:28
 msgid "Your advice request was saved"
-msgstr ""
+msgstr "تم حفظ طلب المشورة"
 
 #: khadije/content_a/advice/detail/view.php:9
 #: khadije/content_a/advice/profile/view.php:9
 #: khadije/content_a/advice/request/view.php:9
 msgid "Register for new advice request"
-msgstr ""
+msgstr "سجل للحصول على طلب المشورة الجديدة"
 
 #: khadije/content_a/advice/detail/view.php:9
 #: khadije/content_a/group/partner/view.php:9
@@ -8469,7 +8452,7 @@ msgstr "لا يمكنك تغيير طلب خدمتك"
 
 #: khadije/content_a/advice/home/view.php:9
 msgid "List of your advice request"
-msgstr ""
+msgstr "قائمة طلب المشورة الخاصة بك"
 
 #: khadije/content_a/advice/home/view.php:10
 #: khadije/content_a/group/home/view.php:10
@@ -8483,7 +8466,7 @@ msgstr "يمكنك تغيير طلبك الأخير و إلغاؤه أو إضا�
 #: khadije/content_a/advice/home/view.php:13
 #: khadije/includes/languages/trans_project.php:207
 msgid "register for new advice request"
-msgstr ""
+msgstr "التسجيل للحصول على طلب المشورة الجديدة"
 
 #: khadije/content_a/advice/profile/model.php:33
 #: khadije/content_a/group/profile/model.php:33
@@ -8524,7 +8507,7 @@ msgstr "قم بإدخال بيانات رفيقك في الخطوة التالي
 
 #: khadije/content_a/advice/request/model.php:20
 msgid "Your advice was saved"
-msgstr ""
+msgstr "تم حفظ نصيحتك"
 
 #: khadije/content_a/advice/request/view.php:9
 #: khadije/content_a/group/request/view.php:9
@@ -8537,11 +8520,11 @@ msgstr "الخطوة 1"
 
 #: khadije/content_a/advice/request/view.php:10
 msgid "in 3 simple step register your request for have advice"
-msgstr ""
+msgstr "في 3 خطوة بسيطة سجل طلبك للحصول على المشورة"
 
 #: khadije/content_a/advice/request/view.php:13
 msgid "check your advice requests"
-msgstr ""
+msgstr "تحقق من طلبات المشورة الخاصة بك"
 
 #: khadije/content_a/controller.php:21
 msgid "Trip id not found"
@@ -8757,34 +8740,34 @@ msgstr "تحقق من طلبات مجموعتك"
 
 #: khadije/content_a/health/detail/model.php:28
 msgid "Your health request was saved"
-msgstr ""
+msgstr "تم حفظ طلب صحتك"
 
 #: khadije/content_a/health/detail/view.php:9
 #: khadije/content_a/health/profile/view.php:9
 #: khadije/content_a/health/request/view.php:9
 msgid "Register for new health request"
-msgstr ""
+msgstr "سجل للحصول على طلب صحي جديد"
 
 #: khadije/content_a/health/home/view.php:9
 msgid "List of your health request"
-msgstr ""
+msgstr "قائمة طلب صحتك"
 
 #: khadije/content_a/health/home/view.php:13
 #: khadije/includes/languages/trans_project.php:233
 msgid "register for new health request"
-msgstr ""
+msgstr "التسجيل للحصول على طلب صحي جديد"
 
 #: khadije/content_a/health/request/model.php:20
 msgid "Your health was saved"
-msgstr ""
+msgstr "تم حفظ صحتك"
 
 #: khadije/content_a/health/request/view.php:10
 msgid "in 3 simple step register your request for have health"
-msgstr ""
+msgstr "في 3 خطوة بسيطة سجل طلبك للحصول على الصحة"
 
 #: khadije/content_a/health/request/view.php:13
 msgid "check your health requests"
-msgstr ""
+msgstr "تحقق من طلباتك الصحية"
 
 #: khadije/content_a/home/view.php:9 khadije/content_a/profile/view.php:9
 #: khadije/content_cp/home/view.php:26 khadije/content_cp/home/view.php:28
@@ -8799,34 +8782,34 @@ msgstr "زوج العمة"
 
 #: khadije/content_a/representation/detail/model.php:28
 msgid "Your representation request was saved"
-msgstr ""
+msgstr "تم حفظ طلب التمثيل الخاص بك"
 
 #: khadije/content_a/representation/detail/view.php:9
 #: khadije/content_a/representation/profile/view.php:9
 #: khadije/content_a/representation/request/view.php:9
 msgid "Register for new representation request"
-msgstr ""
+msgstr "سجل للحصول على طلب تمثيل جديد"
 
 #: khadije/content_a/representation/home/view.php:9
 msgid "List of your representation request"
-msgstr ""
+msgstr "قائمة طلب التمثيل الخاص بك"
 
 #: khadije/content_a/representation/home/view.php:13
 #: khadije/includes/languages/trans_project.php:285
 msgid "register for new representation request"
-msgstr ""
+msgstr "التسجيل للحصول على طلب تمثيل جديد"
 
 #: khadije/content_a/representation/request/model.php:20
 msgid "Your representation was saved"
-msgstr ""
+msgstr "تم حفظ التمثيل الخاص بك"
 
 #: khadije/content_a/representation/request/view.php:10
 msgid "in 3 simple step register your request for have representation"
-msgstr ""
+msgstr "في 3 خطوة بسيطة سجل طلبك للحصول على تمثيل"
 
 #: khadije/content_a/representation/request/view.php:13
 msgid "check your representation requests"
-msgstr ""
+msgstr "تحقق من طلبات التمثيل الخاصة بك"
 
 #: khadije/content_a/service/detail/model.php:28
 msgid "Detail was saved"
@@ -8870,7 +8853,7 @@ msgstr "قم بتسجيل طلب الرحلة الجديدة"
 
 #: khadije/content_a/trip/profile/model.php:71
 msgid "Your trip request was saved"
-msgstr ""
+msgstr "تم حفظ طلب رحلتك"
 
 #: khadije/content_a/trip/request/view.php:10
 msgid "in 3 simple step register your request for have trip to holy places"
@@ -8882,54 +8865,56 @@ msgstr "تحقق من طلب رحلتك"
 
 #: khadije/content_cp/admincontact/edit/view.php:20
 msgid "Edit admincontact"
-msgstr ""
+msgstr "تعديل جهة اتصال المسؤول"
 
 #: khadije/content_cp/admincontact/edit/view.php:24
 msgid "Back to list of admincontact"
-msgstr ""
+msgstr "العودة إلى قائمة الاتصال المشرف"
 
 #: khadije/content_cp/admincontact/home/view.php:11
 #: khadije/includes/languages/trans_project.php:85
 msgid "Contact with manager"
-msgstr ""
+msgstr "الاتصال مع المدير"
 
 #: khadije/content_cp/admincontact/home/view.php:12
 msgid ""
 "Check list of admincontact and search or filter in them to find your "
 "admincontact."
 msgstr ""
+"تحقق من قائمة الاتصال المشرف والبحث أو التصفية فيها للعثور على جهة اتصال "
+"المسؤول."
 
 #: khadije/content_cp/admincontact/home/view.php:12
 msgid "Also add or edit specefic admincontact."
-msgstr ""
+msgstr "إضافة أو تعديل جهة اتصال مسؤول محددة."
 
 #: khadije/content_cp/advice/options/model.php:70
 msgid "Advice successfully edited"
-msgstr ""
+msgstr "نصيحة تم تحريرها بنجاح"
 
 #: khadije/content_cp/advice/options/model.php:75
 msgid "Advice successfully added"
-msgstr ""
+msgstr "نصيحة أضيفت بنجاح"
 
 #: khadije/content_cp/advice/options/view.php:12
 msgid "Advice request options"
-msgstr ""
+msgstr "خيارات طلب المشورة"
 
 #: khadije/content_cp/advice/options/view.php:13
 msgid "check advice request options and update requests"
-msgstr ""
+msgstr "تحقق من خيارات طلب المشورة وطلبات التحديث"
 
 #: khadije/content_cp/advice/options/view.php:15
 msgid "Back to advice request list"
-msgstr ""
+msgstr "العودة إلى قائمة طلب المشورة"
 
 #: khadije/content_cp/advice/view.php:13
 msgid "Advice request list"
-msgstr ""
+msgstr "قائمة طلبات المشورة"
 
 #: khadije/content_cp/advice/view.php:14
 msgid "check advice requests"
-msgstr ""
+msgstr "تحقق من طلبات المشورة"
 
 #: khadije/content_cp/advice/view.php:16 khadije/content_cp/book/view.php:15
 #: khadije/content_cp/donate/view.php:17
@@ -8945,15 +8930,15 @@ msgstr "التصدير"
 #: khadije/includes/languages/trans_project.php:350
 #: khadije/includes/languages/trans_static.php:83
 msgid "Advice"
-msgstr ""
+msgstr "النصيحة"
 
 #: khadije/content_cp/book/view.php:11
 msgid "Books transaction"
-msgstr ""
+msgstr "تجارة الكتب"
 
 #: khadije/content_cp/book/view.php:12
 msgid "check books last transactions and monitor them"
-msgstr ""
+msgstr "تحقق من آخر المعاملات ومراقبتها"
 
 #: khadije/content_cp/book/view.php:90
 #: khadije/includes/languages/trans_project.php:369
@@ -8963,43 +8948,45 @@ msgstr "الكتاب"
 
 #: khadije/content_cp/delneveshte/edit/model.php:33
 msgid "Delneveshte successfully updated"
-msgstr ""
+msgstr "السيرة الذاتية تحديثها بنجاح"
 
 #: khadije/content_cp/delneveshte/edit/view.php:20
 msgid "Edit delneveshte"
-msgstr ""
+msgstr "تحرير السيرة الذاتية"
 
 #: khadije/content_cp/delneveshte/edit/view.php:21
 msgid "You can edit delneveshte if needed."
-msgstr ""
+msgstr "يمكنك تحرير السيرة الذاتية إذا لزم الأمر."
 
 #: khadije/content_cp/delneveshte/edit/view.php:24
 msgid "Back to list of delneveshteha"
-msgstr ""
+msgstr "العودة إلى قائمة السيرة الذاتية"
 
 #: khadije/content_cp/delneveshte/home/view.php:11
 msgid "Deleneveshteha"
-msgstr ""
+msgstr "السيرة الذاتية"
 
 #: khadije/content_cp/delneveshte/home/view.php:12
 msgid ""
 "Check list of delneveshte and search or filter in them to find your "
 "delneveshte."
 msgstr ""
+"تحقق من قائمة السيرة الذاتية والبحث أو التصفية فيها للعثور على السيرة "
+"الذاتية الخاص بك."
 
 #: khadije/content_cp/delneveshte/home/view.php:12
 msgid "Also add or edit specefic delneveshte."
-msgstr ""
+msgstr "إضافة أو تحرير محددة السيرة الذاتية"
 
 #: khadije/content_cp/donate/options/model.php:72
 #: khadije/content_cp/health/options/model.php:70
 msgid "Health successfully edited"
-msgstr ""
+msgstr "الصحة تم تحريرها بنجاح"
 
 #: khadije/content_cp/donate/options/model.php:77
 #: khadije/content_cp/health/options/model.php:75
 msgid "Health successfully added"
-msgstr ""
+msgstr "الصحة المضافة بنجاح"
 
 #: khadije/content_cp/donate/options/view.php:13
 msgid "Donation options"
@@ -9040,7 +9027,7 @@ msgstr "ارجع إلي قائمة الطلب"
 
 #: khadije/content_cp/familytrip/view.php:13
 msgid "Family trip request list"
-msgstr ""
+msgstr "قائمة طلب رحلة عائلية"
 
 #: khadije/content_cp/familytrip/view.php:14
 #: khadije/content_cp/trip/view.php:14
@@ -9056,7 +9043,7 @@ msgstr "المكان"
 #: khadije/content_cp/familytrip/view.php:134
 #: khadije/content_cp/trip/view.php:135
 msgid "Birth year"
-msgstr ""
+msgstr "سنة الميلاد"
 
 #: khadije/content_cp/familytrip/view/model.php:62
 #: khadije/content_cp/trip/view/model.php:62
@@ -9100,29 +9087,29 @@ msgstr "تحقق من الطلب و حالة التحديث"
 
 #: khadije/content_cp/health/options/view.php:13
 msgid "Health request options"
-msgstr ""
+msgstr "خيارات الطلب الصحي"
 
 #: khadije/content_cp/health/options/view.php:14
 msgid "check health request options and update requests"
-msgstr ""
+msgstr "تحقق من خيارات الطلب الصحي وطلبات التحديث"
 
 #: khadije/content_cp/health/options/view.php:16
 msgid "Back to health request list"
-msgstr ""
+msgstr "العودة إلى قائمة الطلبات الصحية"
 
 #: khadije/content_cp/health/view.php:14
 msgid "Health request list"
-msgstr ""
+msgstr "قائمة طلب الصحة"
 
 #: khadije/content_cp/health/view.php:15
 msgid "check health requests"
-msgstr ""
+msgstr "تحقق من الطلبات الصحية"
 
 #: khadije/content_cp/health/view.php:72
 #: khadije/includes/languages/trans_project.php:392
 #: khadije/includes/languages/trans_static.php:84
 msgid "Health"
-msgstr ""
+msgstr "الصحة"
 
 #: khadije/content_cp/homepage/model.php:14
 msgid "Please set the qom var"
@@ -9164,7 +9151,7 @@ msgstr "للعرض في الصفحة الرئيسية"
 #: khadije/content_cp/mytransaction/view.php:15
 #: khadije/content_cp/mytransaction/view.php:16
 msgid "Khadije Transaction Dashboard"
-msgstr ""
+msgstr "الصفقة لوحة القيادة الخدیحة"
 
 #: khadije/content_cp/nationalcode/edit/model.php:18
 msgid "Invalid qom number"
@@ -9247,82 +9234,81 @@ msgstr "إضافة الحاجة الجديدة"
 #: khadije/content_cp/report/counttransaction/view.php:16
 #: khadije/content_cp/report/hazinekard/view.php:16
 msgid "Report by payment and hazinekard"
-msgstr ""
+msgstr "تقرير من الدفع وهزینه کارد"
 
 #: khadije/content_cp/report/counttransaction/view.php:19
 #: khadije/content_cp/report/daily/view.php:17
 #: khadije/content_cp/report/hazinekard/view.php:19
 #: khadije/content_cp/report/month/view.php:18
 msgid "Back to report list"
-msgstr ""
+msgstr "العودة إلى قائمة التقرير"
 
 #: khadije/content_cp/report/daily/view.php:14
 #: khadije/includes/languages/trans_project.php:439
-#, fuzzy
 msgid "Report daily"
-msgstr "البرتغال"
+msgstr "التقرير اليومي"
 
 #: khadije/content_cp/report/home/view.php:13
 msgid "Report list"
-msgstr ""
+msgstr "التقارير"
 
 #: khadije/content_cp/report/home/view.php:14
 msgid "Some financial reports for management."
-msgstr ""
+msgstr "بعض التقارير المالية للإدارة."
 
 #: khadije/content_cp/report/month/view.php:15
 msgid "Report month"
-msgstr ""
+msgstr "شهر التقرير"
 
 #: khadije/content_cp/representation/options/model.php:70
 msgid "Representation successfully edited"
-msgstr ""
+msgstr "تم تحرير التمثيل بنجاح"
 
 #: khadije/content_cp/representation/options/model.php:75
 msgid "Representation successfully added"
-msgstr ""
+msgstr "تمت إضافة التمثيل بنجاح"
 
 #: khadije/content_cp/representation/options/view.php:13
 msgid "Representation request options"
-msgstr ""
+msgstr "خيارات طلب التمثيل"
 
 #: khadije/content_cp/representation/options/view.php:14
 msgid "check representation request options and update requests"
-msgstr ""
+msgstr "تحقق من خيارات طلب التمثيل وتحديث الطلبات"
 
 #: khadije/content_cp/representation/options/view.php:16
 msgid "Back to representation request list"
-msgstr ""
+msgstr "العودة إلى قائمة طلب التمثيل"
 
 #: khadije/content_cp/representation/view.php:13
 msgid "Representation request list"
-msgstr ""
+msgstr "قائمة طلب التمثيل"
 
 #: khadije/content_cp/representation/view.php:14
 msgid "check representation requests"
-msgstr ""
+msgstr "تحقق من طلبات التمثيل"
 
 #: khadije/content_cp/representation/view.php:70
 #: khadije/includes/languages/trans_project.php:239
 #: khadije/includes/languages/trans_static.php:82
 msgid "Representation"
-msgstr ""
+msgstr "التمثيل"
 
 #: khadije/content_cp/representation/view/model.php:27
 msgid "The representation updated"
-msgstr ""
+msgstr "تم تحديث التمثيل"
 
 #: khadije/content_cp/representation/view/view.php:11
 msgid "View representation detail"
-msgstr ""
+msgstr "عرض تفاصيل التمثيل"
 
 #: khadije/content_cp/representation/view/view.php:12
 msgid "check representation and update status"
-msgstr ""
+msgstr "التحقق من تمثيل وتحديث الحالة"
 
 #: khadije/content_cp/representation/view/view.php:15
 msgid "Back to representation list"
-msgstr ""
+msgstr "العودة إلى قائمة التمثيل"
 
 #: khadije/content_cp/service/options/view.php:13
 msgid "Service request options"
@@ -9357,19 +9343,19 @@ msgstr "المحافظة"
 
 #: khadije/content_cp/trip/view.php:13
 msgid "Request group trip list"
-msgstr ""
+msgstr "طلب قائمة رحلة المجموعة"
 
 #: khadije/content_delneveshte/home/model.php:47
 msgid "Dele tangat che mikhahad bego..."
-msgstr ""
+msgstr "ما هو قلبك ليقول..."
 
 #: khadije/content_delneveshte/home/model.php:125
 msgid "Your gele vas saved and after accept you can see it in this page"
-msgstr ""
+msgstr "فاس جيلي الخاص بك المحفوظة وبعد قبول يمكنك أن ترى في هذه الصفحة"
 
 #: khadije/content_delneveshte/home/view.php:9
 msgid "Heart Writing"
-msgstr ""
+msgstr "كتابة القلب"
 
 #: khadije/includes/languages/trans_project.php:8
 msgid ""
@@ -9405,11 +9391,11 @@ msgstr "رسالتك"
 
 #: khadije/includes/languages/trans_project.php:23
 msgid "List of last success donations of yours"
-msgstr ""
+msgstr "قائمة تبرعات الماضي نجاح لك"
 
 #: khadije/includes/languages/trans_project.php:24
 msgid "Your niyat is"
-msgstr ""
+msgstr "نياتك هو"
 
 #: khadije/includes/languages/trans_project.php:26
 msgid "Untitled"
@@ -9421,7 +9407,7 @@ msgstr "المجهول"
 
 #: khadije/includes/languages/trans_project.php:28
 msgid "Thanks"
-msgstr ""
+msgstr "شكرا"
 
 #: khadije/includes/languages/trans_project.php:29
 msgid "Requested"
@@ -9459,15 +9445,18 @@ msgstr "اسمك"
 #: khadije/includes/languages/trans_project.php:38
 msgid "Enter first name and last name to show in doners list or leave it blank"
 msgstr ""
+"أدخل الاسم الأول واسم العائلة لتظهر في قائمة الجهات المانحة أو اتركه فارغًا"
 
 #: khadije/includes/languages/trans_project.php:39
 msgid "Your mobile number"
-msgstr ""
+msgstr "رقم هاتفك"
 
 #: khadije/includes/languages/trans_project.php:40
 msgid ""
 "If you enter your mobile, we send verify of payment via SMS to this number"
 msgstr ""
+"إذا قمت بإدخال هاتفك المحمول، نرسل تأكيدًا للدفع عبر الرسائل القصيرة إلى هذا "
+"الرقم"
 
 #: khadije/includes/languages/trans_project.php:41
 msgid "Enter a valid email"
@@ -9483,7 +9472,7 @@ msgstr "النية للتبرع بهذه الرسوم"
 
 #: khadije/includes/languages/trans_project.php:44
 msgid "It is optional and depending on your intention can enter it"
-msgstr ""
+msgstr "إنه اختياري ويعتمد على نيتك يمكنه إدخاله"
 
 #: khadije/includes/languages/trans_project.php:45
 msgid "Pay Amount"
@@ -9491,7 +9480,7 @@ msgstr "دفع المبلغ"
 
 #: khadije/includes/languages/trans_project.php:47
 msgid "Amount of your donation"
-msgstr ""
+msgstr "مبلغ تبرعك"
 
 #: khadije/includes/languages/trans_project.php:48
 msgid "Total Pay Amount"
@@ -9544,59 +9533,63 @@ msgstr "إقرأ المزيد"
 
 #: khadije/includes/languages/trans_project.php:65
 msgid "O Allah, let Your Peace come upon Muhammad and the family of Muhammad"
-msgstr ""
+msgstr "اللهم صل على محمد وعلى آل محمد"
 
 #: khadije/includes/languages/trans_project.php:66
 msgid "You also partake in salawat"
-msgstr ""
+msgstr "يمكنك أيضا المشاركة في الصلوات"
 
 #: khadije/includes/languages/trans_project.php:67
 msgid "Say salawat and press here"
-msgstr ""
+msgstr "قل صلوات واضغط هنا"
 
 #: khadije/includes/languages/trans_project.php:68
 msgid "Servants registration"
-msgstr ""
+msgstr "تسجيل الخدم"
 
 #: khadije/includes/languages/trans_project.php:69
 msgid "Virtual pilgrimage"
-msgstr ""
+msgstr "الحج الظاهري"
 
 #: khadije/includes/languages/trans_project.php:70
 msgid "Collective or individual travel"
-msgstr ""
+msgstr "السفر الجماعي أو الفردي"
 
 #: khadije/includes/languages/trans_project.php:71
 msgid "Deputy pilgrimage"
-msgstr ""
+msgstr "نائب الحج"
 
 #: khadije/includes/languages/trans_project.php:72
 msgid "Balloting names"
-msgstr ""
+msgstr "أسماء الاقتراع"
 
 #: khadije/includes/languages/trans_project.php:73
 msgid "Join to the charity and participate in the pilgrimage reward"
-msgstr ""
+msgstr "انضم إلى المؤسسة الخيرية وشارك في مكافأة الحج"
 
 #: khadije/includes/languages/trans_project.php:74
 msgid ""
 "The financial credibility of this project is provided by cash and non-cash "
 "donations from benefactors and lovers of Ahlul-Bayt."
 msgstr ""
+"يتم توفير المصداقية المالية لهذا المشروع من خلال التبرعات النقدية وغير "
+"النقدية من المحسنين ومحبي أهل البيت."
 
 #: khadije/includes/languages/trans_project.php:75
 msgid ""
 "Therefore, donors and people who are willing participate in the pilgrimage "
 "plans of the Ahlul-Bayt, can pay their cash through the following methods."
 msgstr ""
+"لذلك ، يمكن للمتبرعين والأشخاص الراغبين في المشاركة في خطط الحج الخاصة بأهل "
+"البيت ، دفع أموالهم من خلال الطرق التالية."
 
 #: khadije/includes/languages/trans_project.php:76
 msgid "in Resalat bank of Iran"
-msgstr ""
+msgstr "في بنك رسالت الإيراني"
 
 #: khadije/includes/languages/trans_project.php:77
 msgid "Card number"
-msgstr ""
+msgstr "رقم البطاقة"
 
 #: khadije/includes/languages/trans_project.php:78
 #, fuzzy
@@ -9605,40 +9598,40 @@ msgstr "رقم الحساب المصرفي"
 
 #: khadije/includes/languages/trans_project.php:79
 msgid "Iranian bank Shaba number"
-msgstr ""
+msgstr "البنک الإيرانية عدد شابا"
 
 #: khadije/includes/languages/trans_project.php:80
 msgid "You can change amount of your donation"
-msgstr ""
+msgstr "يمكنك تغيير مقدار تبرعك"
 
 #: khadije/includes/languages/trans_project.php:81
 msgid "Donate as anonymous"
-msgstr ""
+msgstr "تبرع مجهول"
 
 #: khadije/includes/languages/trans_project.php:82
 msgid "Donate with register details"
-msgstr ""
+msgstr "تبرع مع تفاصيل التسجيل"
 
 #: khadije/includes/languages/trans_project.php:83
 msgid "Latest News"
-msgstr ""
+msgstr "أحدث الأخبار"
 
 #: khadije/includes/languages/trans_project.php:84
 msgid "Mr.Farahzad's statement"
-msgstr ""
+msgstr "بيان السيد فرحزاد"
 
 #: khadije/includes/languages/trans_project.php:88
 msgid "Now we dont need sercants, check it later!"
-msgstr ""
+msgstr "الآن نحن لا نحتاج للخدم ، تأكد من ذلك لاحقًا!"
 
 #: khadije/includes/languages/trans_project.php:89
 msgid "Currently we need help in below categories"
-msgstr ""
+msgstr "حاليا نحن بحاجة إلى مساعدة في الفئات أدناه"
 
 #: khadije/includes/languages/trans_project.php:92
 msgid ""
 "If religion being in the Pleiades, people from Persia can obtainment to that"
-msgstr ""
+msgstr "إذا كان الدين في الثريا ، يمكن للناس من بلاد فارس الحصول على ذلك"
 
 #: khadije/includes/languages/trans_project.php:94
 msgid "About"
@@ -9646,20 +9639,19 @@ msgstr "حول"
 
 #: khadije/includes/languages/trans_project.php:96
 msgid "Khadije Wiki"
-msgstr ""
+msgstr "ويكي خديجة"
 
 #: khadije/includes/languages/trans_project.php:97
-#, fuzzy
 msgid "Services"
-msgstr "الخطأ في تحميل خدمات الويب"
+msgstr "الخدمات"
 
 #: khadije/includes/languages/trans_project.php:98
 msgid "Self expressions"
-msgstr ""
+msgstr "التعبير الذاتي"
 
 #: khadije/includes/languages/trans_project.php:99
 msgid "Festival"
-msgstr ""
+msgstr "مهرجان"
 
 #: khadije/includes/languages/trans_project.php:101
 msgid ""
@@ -9672,11 +9664,11 @@ msgstr ""
 
 #: khadije/includes/languages/trans_project.php:102
 msgid "User Panel"
-msgstr ""
+msgstr "لوحة المستخدم"
 
 #: khadije/includes/languages/trans_project.php:104
 msgid "Signup in Khadije charity"
-msgstr ""
+msgstr "التسجيل في جمعية خديجة الخيرية"
 
 #: khadije/includes/languages/trans_project.php:105
 #, fuzzy
@@ -9685,7 +9677,7 @@ msgstr "بناما"
 
 #: khadije/includes/languages/trans_project.php:106
 msgid "Mission"
-msgstr ""
+msgstr "مهمة"
 
 #: khadije/includes/languages/trans_project.php:107
 msgid "Vision"
@@ -9702,51 +9694,51 @@ msgstr "الاتصال"
 
 #: khadije/includes/languages/trans_project.php:110
 msgid "Encyclopedia of Hazrat Khadijah"
-msgstr ""
+msgstr "موسوعة حضرة خديجة"
 
 #: khadije/includes/languages/trans_project.php:111
 msgid "Biography"
-msgstr ""
+msgstr "سيرة شخصية"
 
 #: khadije/includes/languages/trans_project.php:112
 msgid "Bibliography"
-msgstr ""
+msgstr "ثبت المراجع"
 
 #: khadije/includes/languages/trans_project.php:113
 msgid "Specialized sites"
-msgstr ""
+msgstr "مواقع متخصصة"
 
 #: khadije/includes/languages/trans_project.php:114
 msgid "Pilgrimage"
-msgstr ""
+msgstr "الحج والعمرة"
 
 #: khadije/includes/languages/trans_project.php:115
 msgid "Requests"
-msgstr ""
+msgstr "طلبات"
 
 #: khadije/includes/languages/trans_project.php:116
 msgid "Individual registration"
-msgstr ""
+msgstr "التسجيل الفردي"
 
 #: khadije/includes/languages/trans_project.php:117
 msgid "Group registration"
-msgstr ""
+msgstr "تسجيل المجموعة"
 
 #: khadije/includes/languages/trans_project.php:118
 msgid "Consulting service"
-msgstr ""
+msgstr "خدمة استشارية"
 
 #: khadije/includes/languages/trans_project.php:119
 msgid "Health service"
-msgstr ""
+msgstr "الخدمات الصحية"
 
 #: khadije/includes/languages/trans_project.php:120
 msgid "Help"
-msgstr ""
+msgstr "مساعدة"
 
 #: khadije/includes/languages/trans_project.php:122
 msgid "Other Languages"
-msgstr ""
+msgstr "لغات اخرى"
 
 #: khadije/includes/languages/trans_project.php:124
 msgid "Developed by Ermile"
@@ -9754,28 +9746,29 @@ msgstr "وضعت بواسطة ارمايل"
 
 #: khadije/includes/languages/trans_project.php:126
 msgid "Eitaa"
-msgstr ""
+msgstr "ایتا"
 
 #: khadije/includes/languages/trans_project.php:127
 msgid "Soroush App"
-msgstr ""
+msgstr "سوروش التطبيق"
 
 #: khadije/includes/languages/trans_project.php:131
 msgid ""
 "You are buy this book before and now you can download book via below link"
 msgstr ""
+"أنت تشتري هذا الكتاب من قبل ، والآن يمكنك تنزيل الكتاب عبر الرابط أدناه"
 
 #: khadije/includes/languages/trans_project.php:132
 msgid "Download book"
-msgstr ""
+msgstr "تحميل الكتاب"
 
 #: khadije/includes/languages/trans_project.php:133
 msgid "Click to buy book"
-msgstr ""
+msgstr "انقر لشراء الكتاب"
 
 #: khadije/includes/languages/trans_project.php:134
 msgid "Buy book"
-msgstr ""
+msgstr "شراء الكتاب"
 
 #: khadije/includes/languages/trans_project.php:137
 msgid "Shahid Mahdi Imani"
@@ -9825,11 +9818,11 @@ msgstr "الأخبار الأخيرة"
 
 #: khadije/includes/languages/trans_project.php:153
 msgid "Click to go to download page"
-msgstr ""
+msgstr "انقر للذهاب لتنزيل الصفحة"
 
 #: khadije/includes/languages/trans_project.php:154
 msgid "Download love story book"
-msgstr ""
+msgstr "تحميل كتاب قصة حب"
 
 #: khadije/includes/languages/trans_project.php:157
 msgid "List of last success donations"
@@ -9885,19 +9878,19 @@ msgstr "انتهي"
 
 #: khadije/includes/languages/trans_project.php:181
 msgid "Latest news"
-msgstr ""
+msgstr "أحدث الأخبار"
 
 #: khadije/includes/languages/trans_project.php:184
 msgid "Your are using this advice"
-msgstr ""
+msgstr "لديك تستخدم هذه النصيحة"
 
 #: khadije/includes/languages/trans_project.php:185
 msgid "If you sure from your request complete it"
-msgstr ""
+msgstr "إذا كنت متأكدًا من طلبك أكمله"
 
 #: khadije/includes/languages/trans_project.php:186
 msgid "Else you can cancel your request"
-msgstr ""
+msgstr "آخر يمكنك إلغاء طلبك"
 
 #: khadije/includes/languages/trans_project.php:192
 msgid "Start date"
@@ -9953,7 +9946,7 @@ msgstr "يرجى اختيار عنصر واحد"
 
 #: khadije/includes/languages/trans_project.php:217
 msgid "We do not provide advice service yet!"
-msgstr ""
+msgstr "نحن لا نقدم خدمة المشورة حتى الآن!"
 
 #: khadije/includes/languages/trans_project.php:221
 msgid "Click to edit"
@@ -9973,19 +9966,19 @@ msgstr "جميع المدن معطلة الآن"
 
 #: khadije/includes/languages/trans_project.php:230
 msgid "Your are using this health"
-msgstr ""
+msgstr "تستخدم هذه الصحة"
 
 #: khadije/includes/languages/trans_project.php:236
 msgid "We do not provide health service yet!"
-msgstr ""
+msgstr "نحن لا نقدم خدمة صحية حتى الآن!"
 
 #: khadije/includes/languages/trans_project.php:240
 msgid "Health Service"
-msgstr ""
+msgstr "خدمة صحية"
 
 #: khadije/includes/languages/trans_project.php:241
 msgid "Advice Service"
-msgstr ""
+msgstr "خدمة المشورة"
 
 #: khadije/includes/languages/trans_project.php:242
 msgid "Donate product"
@@ -9994,7 +9987,7 @@ msgstr "التبرع بالمنتج"
 #: khadije/includes/languages/trans_project.php:246
 #: khadije/includes/languages/trans_static.php:80
 msgid "Delneveshte"
-msgstr ""
+msgstr "السيرة الذاتية"
 
 #: khadije/includes/languages/trans_project.php:252
 msgid "Enter a valid name from 2 to 40 character"
@@ -10058,11 +10051,11 @@ msgstr "دورة التعليم"
 
 #: khadije/includes/languages/trans_project.php:282
 msgid "Your are using this representation"
-msgstr ""
+msgstr "لديك تستخدم هذا التمثيل"
 
 #: khadije/includes/languages/trans_project.php:288
 msgid "We do not provide representation service yet!"
-msgstr ""
+msgstr "نحن لا نقدم خدمة التمثيل حتى الآن!"
 
 #: khadije/includes/languages/trans_project.php:298
 msgid ""
@@ -10105,11 +10098,11 @@ msgstr "تم تعطيل اشتراك الرحلة"
 
 #: khadije/includes/languages/trans_project.php:339
 msgid "No record exist!"
-msgstr ""
+msgstr "لا يوجد سجل!"
 
 #: khadije/includes/languages/trans_project.php:342
 msgid "Search in advice"
-msgstr ""
+msgstr "البحث في المشورة"
 
 #: khadije/includes/languages/trans_project.php:343
 msgid "firstname"
@@ -10149,19 +10142,19 @@ msgstr "أدخل رقماً صالحاً"
 
 #: khadije/includes/languages/trans_project.php:364
 msgid "Total Sale"
-msgstr ""
+msgstr "مجموع البيع"
 
 #: khadije/includes/languages/trans_project.php:365
 msgid "Today Sale"
-msgstr ""
+msgstr "اليوم بيع"
 
 #: khadije/includes/languages/trans_project.php:366
 msgid "Sale Count"
-msgstr ""
+msgstr "بيع العد"
 
 #: khadije/includes/languages/trans_project.php:367
 msgid "Search in book transaction"
-msgstr ""
+msgstr "البحث في معاملة الكتب"
 
 #: khadije/includes/languages/trans_project.php:368
 msgid "Payment"
@@ -10169,7 +10162,7 @@ msgstr "بوابة الدفع"
 
 #: khadije/includes/languages/trans_project.php:374
 msgid "Like given"
-msgstr ""
+msgstr "ونظرا لمثل"
 
 #: khadije/includes/languages/trans_project.php:377
 msgid "Total Donation"
@@ -10181,7 +10174,7 @@ msgstr "التبرع اليوم"
 
 #: khadije/includes/languages/trans_project.php:379
 msgid "Donation Count"
-msgstr ""
+msgstr "عدد التبرعات"
 
 #: khadije/includes/languages/trans_project.php:380
 msgid "Search in donations"
@@ -10209,28 +10202,28 @@ msgstr "أدخل الطريق الصحيح"
 
 #: khadije/includes/languages/trans_project.php:391
 msgid "Search in health"
-msgstr ""
+msgstr "البحث في الصحة"
 
 #: khadije/includes/languages/trans_project.php:397
 #: khadije/includes/languages/trans_static.php:81
 msgid "Admin Contact"
-msgstr ""
+msgstr "جهة اتصال المسؤول"
 
 #: khadije/includes/languages/trans_project.php:398
 msgid "Report"
-msgstr ""
+msgstr "التقرير"
 
 #: khadije/includes/languages/trans_project.php:399
 msgid "Home page number"
-msgstr ""
+msgstr "رقم الصفحة الرئيسية"
 
 #: khadije/includes/languages/trans_project.php:400
 msgid "Send SMS"
-msgstr ""
+msgstr "إرسال الرسائل القصيرة"
 
 #: khadije/includes/languages/trans_project.php:401
 msgid "SMS Template"
-msgstr ""
+msgstr "القالب رسالة قصيرة"
 
 #: khadije/includes/languages/trans_project.php:402
 msgid "Donate product list"
@@ -10250,7 +10243,7 @@ msgstr "قائمة طلب الخدمة"
 
 #: khadije/includes/languages/trans_project.php:410
 msgid "Book transaction list"
-msgstr ""
+msgstr "قائمة معاملات الكتاب"
 
 #: khadije/includes/languages/trans_project.php:413
 msgid "No nationalcode founded."
@@ -10285,33 +10278,32 @@ msgid "List of Product need"
 msgstr "قائمة المنتجات المطلوبة"
 
 #: khadije/includes/languages/trans_project.php:434
-#, fuzzy
 msgid "Sum"
-msgstr "مجموع رصيدك المحصل من الإحالات."
+msgstr "مجموع"
 
 #: khadije/includes/languages/trans_project.php:437
 msgid "Report Count transaction group by payment and hazinekard"
-msgstr ""
+msgstr "مجموعة الحركات تقرير عدد مرات الدفع هزینه کارد"
 
 #: khadije/includes/languages/trans_project.php:438
 msgid "Report sum transaction group by hazinekard"
-msgstr ""
+msgstr "تقرير مبلغ مجموعة الحركات التي هزینه کارد"
 
 #: khadije/includes/languages/trans_project.php:440
 msgid "Report Month"
-msgstr ""
+msgstr "تقرير الشهر"
 
 #: khadije/includes/languages/trans_project.php:445
 msgid "Search in representation"
-msgstr ""
+msgstr "البحث في التمثيل"
 
 #: khadije/includes/languages/trans_project.php:446
 msgid "Action"
-msgstr ""
+msgstr "عمل"
 
 #: khadije/includes/languages/trans_project.php:451
 msgid "Status of representation"
-msgstr ""
+msgstr "مركز التمثيل"
 
 #: khadije/includes/languages/trans_project.php:452
 msgid "inapropirate request and spam detected"
@@ -10319,11 +10311,11 @@ msgstr "طلب غير لائق و كشف البريد المزعج"
 
 #: khadije/includes/languages/trans_project.php:453
 msgid "Done Representation"
-msgstr ""
+msgstr "يتم تمثيل"
 
 #: khadije/includes/languages/trans_project.php:454
 msgid "Representation is done"
-msgstr ""
+msgstr "يتم التمثيل"
 
 #: khadije/includes/languages/trans_project.php:456
 msgid "try to fill request"
@@ -10367,11 +10359,11 @@ msgstr "الخبير"
 
 #: khadije/includes/languages/trans_project.php:473
 msgid "Delneveshteha"
-msgstr ""
+msgstr "دلنوشته"
 
 #: khadije/includes/languages/trans_project.php:474
 msgid "Financial"
-msgstr ""
+msgstr "المالية"
 
 #: khadije/includes/languages/trans_project.php:475
 msgid "Request service list"
@@ -10383,15 +10375,15 @@ msgstr "قائمة طلب الرحلة"
 
 #: khadije/includes/languages/trans_project.php:477
 msgid "advice service list"
-msgstr ""
+msgstr "قائمة خدمات المشورة"
 
 #: khadije/includes/languages/trans_project.php:478
 msgid "health service list"
-msgstr ""
+msgstr "قائمة الخدمات الصحية"
 
 #: khadije/includes/languages/trans_project.php:479
 msgid "representation service list"
-msgstr ""
+msgstr "قائمة خدمة التمثيل"
 
 #: khadije/includes/languages/trans_project.php:494
 msgid "Search in trips"
@@ -10524,44 +10516,43 @@ msgstr "تحرير الرفيق"
 
 #: khadije/includes/languages/trans_project.php:535
 msgid "Click and go to khadije site"
-msgstr ""
+msgstr "انقر فوق، وانتقل إلى موقع خديجة"
 
 #: khadije/includes/languages/trans_project.php:536
 msgid "Wrote your heart sounds"
-msgstr ""
+msgstr "كتب أصوات قلبك"
 
 #: khadije/includes/languages/trans_project.php:537
 msgid "optional"
-msgstr ""
+msgstr "اختياري"
 
 #: khadije/includes/languages/trans_project.php:538
-#, fuzzy
 msgid "Not require"
-msgstr "تطلب"
+msgstr "غير مطلوب"
 
 #: khadije/includes/languages/trans_project.php:539
 msgid "Mobile number is not showing on site and optional"
-msgstr ""
+msgstr "رقم الهاتف المحمول لا تظهر في الموقع واختياري"
 
 #: khadije/includes/languages/trans_project.php:540
 msgid "Press here to send"
-msgstr ""
+msgstr "اضغط هنا لإرسال"
 
 #: khadije/includes/languages/trans_project.php:543
 msgid "Last messages"
-msgstr ""
+msgstr "رسائل الماضي"
 
 #: khadije/includes/languages/trans_project.php:545
 msgid "Miss"
-msgstr ""
+msgstr "يغيب"
 
 #: khadije/includes/languages/trans_project.php:546
 msgid "I am sympathetic"
-msgstr ""
+msgstr "أنا متعاطف"
 
 #: khadije/includes/languages/trans_project.php:547
 msgid "People who sympathetic with this person"
-msgstr ""
+msgstr "الأشخاص الذين يتعاطفون مع هذا الشخص"
 
 #: khadije/includes/languages/trans_static.php:6
 msgid "Khadije"
@@ -10625,93 +10616,91 @@ msgstr "السورية"
 
 #: khadije/includes/languages/trans_static.php:46
 msgid "ControlPanel"
-msgstr ""
+msgstr "لوحة التحكم"
 
 #: khadije/includes/languages/trans_static.php:47
 msgid "cpTripEdit"
-msgstr ""
+msgstr "لوحة التحكم رحلة تحرير"
 
 #: khadije/includes/languages/trans_static.php:48
 msgid "cpTripView"
-msgstr ""
+msgstr "لوحة التحكم عرض الرحلة"
 
 #: khadije/includes/languages/trans_static.php:49
 msgid "cpTripOption"
-msgstr ""
+msgstr "لوحة التحكم خيار رحلة"
 
 #: khadije/includes/languages/trans_static.php:50
 msgid "donateManualPay"
-msgstr ""
+msgstr "التبرع بالدفع اليدوي"
 
 #: khadije/includes/languages/trans_static.php:51
 msgid "cpDonateView"
-msgstr ""
+msgstr "لوحة التحكم تبرع عرض"
 
 #: khadije/includes/languages/trans_static.php:52
 msgid "cpDonateTotalPay"
-msgstr ""
+msgstr "لوحة التحكم تبرع بإجمالي الراتب"
 
 #: khadije/includes/languages/trans_static.php:53
 msgid "cpDonateOption"
-msgstr ""
+msgstr "لوحة التحكم تبرع الخيار"
 
 #: khadije/includes/languages/trans_static.php:54
 msgid "cpNationalCodeEdit"
-msgstr ""
+msgstr "لوحة التحكم القانون الوطني"
 
 #: khadije/includes/languages/trans_static.php:55
 msgid "cpNationalCodeView"
-msgstr ""
+msgstr "لوحة التحكم عرض الرمز الوطني"
 
 #: khadije/includes/languages/trans_static.php:56
 msgid "cpNationalCodeImport"
-msgstr ""
+msgstr "لوحة التحكم استيراد الرمز الوطني"
 
 #: khadije/includes/languages/trans_static.php:57
 msgid "cpHomePageNumber"
-msgstr ""
+msgstr "لوحة التحكم رقم الصفحة الرئيسية"
 
 #: khadije/includes/languages/trans_static.php:58
 msgid "cpOptionProduct"
-msgstr ""
+msgstr "لوحة التحكم منتج الخيار"
 
 #: khadije/includes/languages/trans_static.php:59
 msgid "cpOptionCityPlace"
-msgstr ""
+msgstr "لوحة التحكم الخيار مكان المدينة"
 
 #: khadije/includes/languages/trans_static.php:60
 msgid "cpServiceView"
-msgstr ""
+msgstr "لوحة التحكم عرض الخدمة"
 
 #: khadije/includes/languages/trans_static.php:61
 msgid "cpServiceOption"
-msgstr ""
+msgstr "لوحة التحكم خيار الخدمة"
 
 #: khadije/includes/languages/trans_static.php:62
 msgid "cpTripQom"
-msgstr ""
+msgstr "لوحة التحكم رحلة قم"
 
 #: khadije/includes/languages/trans_static.php:63
 msgid "cpTripMashhad"
-msgstr ""
+msgstr "لوحة التحكم رحلة مشهد"
 
 #: khadije/includes/languages/trans_static.php:64
 msgid "cpTripKarbala"
-msgstr ""
+msgstr "لوحة التحكم رحلة كربلاء"
 
 #: khadije/includes/languages/trans_static.php:65
 msgid "Control"
-msgstr ""
+msgstr "مراقبة"
 
 #: khadije/includes/languages/trans_static.php:66
-#, fuzzy
 msgid "Trip"
-msgstr "معرف الرحلة غير موجود"
+msgstr "رحلة"
 
 #: khadije/includes/languages/trans_static.php:68
-#, fuzzy
 msgid "National"
-msgstr "تحرير رمز الوطني"
+msgstr "الوطني"
 
 #: khadije/includes/languages/trans_static.php:69
 #, fuzzy
@@ -10720,87 +10709,87 @@ msgstr "الرمز الوطني"
 
 #: khadije/includes/languages/trans_static.php:70
 msgid "Setting"
-msgstr ""
+msgstr "ضبط"
 
 #: khadije/includes/languages/trans_static.php:73
 msgid "cpBookTransactionView"
-msgstr ""
+msgstr "لوحة التحكم عرض معاملات الكتاب"
 
 #: khadije/includes/languages/trans_static.php:74
 msgid "mylovestory"
-msgstr ""
+msgstr "قصة حبي"
 
 #: khadije/includes/languages/trans_static.php:76
 msgid "cpReportDaily"
-msgstr ""
+msgstr "لوحة التحكم تقرير يوميا"
 
 #: khadije/includes/languages/trans_static.php:77
 msgid "cpReportMonth"
-msgstr ""
+msgstr "لوحة التحكم شهر التقرير"
 
 #: khadije/includes/languages/trans_static.php:78
 msgid "cpReportView"
-msgstr ""
+msgstr "لوحة التحكم عرض التقرير"
 
 #: khadije/includes/languages/trans_static.php:85
 msgid "cpDelneveshteEdit"
-msgstr ""
+msgstr "لوحة التحكم السيرة الذاتية تصحيح"
 
 #: khadije/includes/languages/trans_static.php:86
 msgid "cpDelneveshteView"
-msgstr ""
+msgstr "لوحة التحكم السيرة الذاتية رأي"
 
 #: khadije/includes/languages/trans_static.php:87
 msgid "cpAdminContactChangeStatus"
-msgstr ""
+msgstr "لوحة التحكم مسؤول تغيير حالة الاتصال"
 
 #: khadije/includes/languages/trans_static.php:88
 msgid "cpAdminContactView"
-msgstr ""
+msgstr "لوحة التحكم عرض جهة اتصال المسؤول"
 
 #: khadije/includes/languages/trans_static.php:89
 msgid "cpRepresentationChangeStatus"
-msgstr ""
+msgstr "لوحة التحكم تمثيل تغيير الحالة"
 
 #: khadije/includes/languages/trans_static.php:90
 msgid "cpRepresentationView"
-msgstr ""
+msgstr "لوحة التحكم عرض التمثيل"
 
 #: khadije/includes/languages/trans_static.php:91
 msgid "cpRepresentationOption"
-msgstr ""
+msgstr "لوحة التحكم خيار التمثيل"
 
 #: khadije/includes/languages/trans_static.php:92
 msgid "cpAdviceView"
-msgstr ""
+msgstr "لوحة التحكم عرض المشورة"
 
 #: khadije/includes/languages/trans_static.php:93
 msgid "cpAdviceOption"
-msgstr ""
+msgstr "لوحة التحكم خيار المشورة"
 
 #: khadije/includes/languages/trans_static.php:94
 msgid "cpHealthView"
-msgstr ""
+msgstr "لوحة التحكم عرض الصحة"
 
 #: khadije/includes/languages/trans_static.php:95
 msgid "cpHealthOption"
-msgstr ""
+msgstr "لوحة التحكم الخيار الصحي"
 
 #: khadije/includes/lib/app/donate.php:51
 msgid "This :way is not in your list!"
-msgstr ""
+msgstr "هذا: الطريقة ليست في قائمتك!"
 
 #: khadije/includes/lib/app/donate.php:106
 msgid "Please set :way"
-msgstr ""
+msgstr "یرجی ضبط :الطریق"
 
 #: khadije/includes/lib/app/donate.php:112
 msgid "Please set value less than 500 character"
-msgstr ""
+msgstr "یرجی تحدید قیمة اقل من 500 حرف"
 
 #: khadije/includes/lib/app/donate.php:159
 msgid "Duplicate :way"
-msgstr ""
+msgstr "مکررة : الطریق"
 
 #: khadije/includes/lib/app/donate.php:218
 msgid "Product name must be less than 500 character"
@@ -10990,7 +10979,7 @@ msgstr "يرجي تحديد عنوان صالح"
 
 #: khadije/includes/lib/app/need.php:56
 msgid "Please set title"
-msgstr ""
+msgstr "یرجی تحدید العنوان"
 
 #: khadije/includes/lib/app/need.php:67
 msgid "Please set a valid request"
@@ -11028,7 +11017,7 @@ msgstr "يرجى تعيين حالة الحاجة صحيحة"
 
 #: khadije/includes/lib/app/need.php:140
 msgid "Please set a valid language"
-msgstr ""
+msgstr "یرجی ضبط لغة صحیحة"
 
 #: khadije/includes/lib/app/need.php:253
 msgid "No way to insert need"
