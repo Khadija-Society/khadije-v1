@@ -114,6 +114,7 @@
 
 
 {%block setPostComment%}
+{%if datarow.comment == 'open'%}
 <h2>{%trans "Comment"%}</h2>
 <div class="f justify-center">
 
@@ -159,5 +160,5 @@
 
 
 </div>
-
+{%endif%}
 {%endblock%}
