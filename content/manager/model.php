@@ -114,7 +114,7 @@ class model
 		[
 			'author'  => $displayname,
 			'email'   => $email,
-			'type'    => 'comment',
+			'type'    => 'admincontact',
 			'content' => $content,
 			'mobile'  => \dash\request::post("mobile"),
 			'user_id' => $user_id
