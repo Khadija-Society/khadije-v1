@@ -42,6 +42,12 @@ class model
 		$post['status'] = \dash\request::post('status') ? 'enable' : 'disable' ;
 		$post['type']   = 'hadith';
 
+		if(!$post['desc'])
+		{
+			\dash\notif::error(T_("Please fill hadith text"), 'desc');
+			return false;
+		}
+
 		$file = self::upload_thumb();
 		if($file === false)
 		{
