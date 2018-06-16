@@ -61,8 +61,8 @@
      <a href="{{url.here}}/about">{%trans "About"%}</a>
      <a href="{{url.here}}/blog">{%trans "News"%}</a>
      <a href="{{url.here}}/wiki">{%trans "Khadije Wiki"%}</a>
-     <a href="{{url.here}}/a" data-direct>{%trans "Services"%}</a>
-     <a href="{{url.here}}/delneveshte" data-direct>{%trans "Self expressions"%}</a>
+     <a href="{{url.kingdom}}/a" data-direct>{%trans "Services"%}</a>
+     <a href="{{url.kingdom}}/delneveshte" data-direct>{%trans "Self expressions"%}</a>
     </div>
     <div class="mainNavMobile sB1 c0 sauto" id="sidenavHandler">
       <span class="sf-ellipsis-v"></span>
@@ -80,8 +80,8 @@
        <li><a tabindex='-1' href="{{url.here}}"><span class="sf-home pRa5"></span>{%trans "Homepage"%}</a></li>
        <li><a tabindex='-1' href="{{url.here}}/about">{%trans "About"%}</a></li>
        <li><a tabindex='-1' href="{{url.here}}/blog">{%trans "News"%}</a></li>
-       <li><a tabindex='-1' href="{{url.here}}/a">{%trans "Services"%}</a></li>
-       <li><a tabindex='-1' href="{{url.here}}/delneveshte" data-direct>{%trans "Self expressions"%}</a></li>
+       <li><a tabindex='-1' href="{{url.kingdom}}/a" data-direct>{%trans "Services"%}</a></li>
+       <li><a tabindex='-1' href="{{url.kingdom}}/delneveshte" data-direct>{%trans "Self expressions"%}</a></li>
        <li class="mT25"><a tabindex='-1' href="{{url.here}}/donate" class="donate"><span class="sf-gift pRa5 fs20"></span>{%trans "Donate"%}</a></li>
       </ul>
     </nav>
@@ -106,12 +106,12 @@
             </p>
 {%if login.id%}
           <div class="pLR10">
-            <a href="{{url.here}}/a" data-direct class="btn outline primary pRa10">{%trans "User Panel"%}</a>
+            <a href="{{url.kingdom}}/a" data-direct class="btn outline primary pRa10">{%trans "User Panel"%}</a>
           </div>
 {%else%}
           <div class="pLR10">
-            <a href="{{url.here}}/enter" data-direct class="btn outline primary pRa10">{%trans "Enter"%}</a>
-            <a href="{{url.here}}/enter/signup" data-direct class="btn outline primary pRa10">{%trans "Signup in Khadije charity"%}</a>
+            <a href="{{url.kingdom}}/enter" data-direct class="btn outline primary pRa10">{%trans "Enter"%}</a>
+            <a href="{{url.kingdom}}/enter/signup" data-direct class="btn outline primary pRa10">{%trans "Signup in Khadije charity"%}</a>
           </div>
 {%endif%}
 
@@ -151,7 +151,7 @@
       <div class="c s6">
         <h3>{%trans "Pilgrimage"%}</h3>
         <nav>
-          <a href="{{url.here}}/a/representation" data-direct>{%trans "Deputy pilgrimage"%}</a>
+          <a href="{{url.kingdom}}/a/representation" data-direct>{%trans "Deputy pilgrimage"%}</a>
 {% if false%}
           <a href="{{url.here}}/live">{%trans "Virtual pilgrimage"%}</a>
 {% endif%}
@@ -160,8 +160,8 @@
       <div class="c s6">
         <h3>{%trans "Requests"%}</h3>
         <nav>
-          <a href="{{url.here}}/a/trip" data-direct>{%trans "Individual registration"%}</a>
-          <a href="{{url.here}}/a/group" data-direct>{%trans "Group registration"%}</a>
+          <a href="{{url.kingdom}}/a/trip" data-direct>{%trans "Individual registration"%}</a>
+          <a href="{{url.kingdom}}/a/group" data-direct>{%trans "Group registration"%}</a>
           <a href="{{url.here}}/servant">{%trans "Servants registration"%}</a>
         </nav>
       </div>
@@ -169,8 +169,8 @@
       <div class="c s6">
         <h3>{%trans "Services"%}</h3>
         <nav>
-          <a href="{{url.here}}/consulting">{%trans "Consulting service"%}</a>
-          <a href="{{url.here}}/health">{%trans "Health service"%}</a>
+          <a href="{{url.kingdom}}a/consulting" data-direct>{%trans "Consulting service"%}</a>
+          <a href="{{url.kingdom}}a/health" data-direct>{%trans "Health service"%}</a>
         </nav>
       </div>
 {%endif%}
