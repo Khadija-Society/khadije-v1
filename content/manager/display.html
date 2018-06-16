@@ -4,35 +4,16 @@
 {%block pageData%}
 
 
-{{block ("gMapLive")}}
 
   <hr>
-  <p class="msg txtC simple">{%trans "We do our best to improve khadije's service quality. So, knowing your valuable comments will help us in this way."%}</p>
-
-   <div class="f">
-    <div class="c5 s12 pRa10">
-      {{block ("Address")}}
-    </div>
-    <div class="c7 s12">
+   <div class="f justify-center">
+    <div class="c9 s12">
       {{block ("ContactForm")}}
     </div>
    </div>
 
 {%endblock%}
 
-
-
-
-{%block gMapLive%}
-<iframe class="gMap mB25" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.8681831929307!2d50.86600886158736!3d34.632771253402424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93bb606e2a7f8f%3A0xaa7dfa711fb708b6!2z2K7bjNix24zZhyDYrdi22LHYqiDYrtiv24zYrNmH!5e0!3m2!1sen!2sae!4v1528523095280" height="400" frameborder="0" allowfullscreen></iframe>
-{%endblock%}
-
-
-{%block gMap%}
-    <a href="https://goo.gl/maps/eFG7LEZBTRp" target="_blank" class="map">
-     <img src="{{url.site}}/static/images/cert/khadije-map-wide.png">
-    </a>
-{%endblock%}
 
 
 
@@ -67,8 +48,9 @@
 {%if login and false%}
 {%else%}
     <div class="f">
-      <div class="c pRa5">{{block ("iName")}}</div>
-      <div class="c">{{block ("iMobile")}}</div>
+      <div class="c s12 mB5 pRa5">{{block ("iName")}}</div>
+      <div class="c s12 mB5 pRa5">{{block ("iEmail")}}</div>
+      <div class="c s12 mB5">{{block ("iMobile")}}</div>
       <input type="text" name="username" class="hide" value="">
     </div>
 {%endif%}
