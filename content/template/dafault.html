@@ -31,8 +31,8 @@
 
 {%if datarow.datemodified%}
     <div class='msg simple f mT20'>
-      <div class="c">{{datarow.publishdate | tdate('d F Y - H:i')}}</div>
-      <div class="cauto os">ویرایش شده در <time datetime="{{datarow.datemodified}}">{{datarow.datemodified | sdate}}</time></div>
+      <div class="c"><time datetime="{{datarow.datemodified}}">{{datarow.publishdate | tdate('d F Y - H:i')}}</time></div>
+      <div class="cauto os"><a href="{{url.base}}/n/{{datarow.id}}" title='{%trans "For share via social networks"%}'>{%trans "News Code"%} <span class="txtB">{{datarow.id}}</span></a></div>
     </div>
 {%endif%}
 
