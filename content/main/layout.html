@@ -134,7 +134,8 @@
           <a href="{{url.here}}/mission">{%trans "Mission"%}</a>
           <a href="{{url.here}}/vision">{%trans "Vision"%}</a>
           <a href="{{url.here}}/honors">{%trans "Honors"%}</a>
-          <a href="{{url.here}}/contact">{%trans "contact"%}</a>
+          <a href="{{url.here}}/blog">{%trans "News"%}</a>
+          <a href="{{url.here}}/contact">{%trans "Contact"%}</a>
         </nav>
       </div>
       <div class="c3 s6">
@@ -143,20 +144,12 @@
           <a href="{{url.here}}/wiki/biography">{%trans "Biography"%}</a>
           <a href="{{url.here}}/wiki/bibliography">{%trans "Bibliography"%}</a>
           <a href="{{url.here}}/wiki/sites">{%trans "Specialized sites"%}</a>
+          <a href="{{url.here}}/mylovestory">{%trans "My love story book"%}</a>
         </nav>
       </div>
     </div>
     <hr class="p0">
     <div class="f p0">
-      <div class="c s6">
-        <h3>{%trans "Pilgrimage"%}</h3>
-        <nav>
-          <a href="{{url.kingdom}}/a/representation" data-direct>{%trans "Deputy pilgrimage"%}</a>
-{% if false%}
-          <a href="{{url.here}}/live">{%trans "Virtual pilgrimage"%}</a>
-{% endif%}
-        </nav>
-      </div>
       <div class="c s6">
         <h3>{%trans "Requests"%}</h3>
         <nav>
@@ -169,11 +162,22 @@
       <div class="c s6">
         <h3>{%trans "Services"%}</h3>
         <nav>
-          <a href="{{url.kingdom}}a/consulting" data-direct>{%trans "Consulting service"%}</a>
-          <a href="{{url.kingdom}}a/health" data-direct>{%trans "Health service"%}</a>
+          <a href="{{url.kingdom}}/a/consulting" data-direct>{%trans "Consulting service"%}</a>
+          <a href="{{url.kingdom}}/a/health" data-direct>{%trans "Health service"%}</a>
         </nav>
       </div>
 {%endif%}
+      <div class="c s6">
+        <h3>{%trans "Other services"%}</h3>
+        <nav>
+          <a href="{{url.kingdom}}/a/representation" data-direct>{%trans "Deputy pilgrimage"%}</a>
+          <a href="{{url.kingdom}}/delneveshte" data-direct>{%trans "Delneveshteha"%}</a>
+          <a href="{{url.here}}/tag/lottory">{%trans "Balloting names"%}</a>
+{% if false%}
+          <a href="{{url.here}}/live">{%trans "Virtual pilgrimage"%}</a>
+{% endif%}
+        </nav>
+      </div>
       <div class="c s6">
         <h3>{%trans "Help"%}</h3>
         <nav>
