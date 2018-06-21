@@ -3,9 +3,6 @@
 
 {%block pageData%}
 
-   <nav class="breadcrumb block msg hide" data-xhr="breadcrumb" tabindex='-1' data-step='4' data-intro='{%trans "View your current location and navigate to parent of it"%}' data-position='bottom'>
-   {{breadcrumb(null, true) | raw}}
-   </nav>
 
 {%if datarow.type == 'post' or datarow.type == 'page'%}
   {{block('posts')}}
@@ -23,6 +20,7 @@
 {%if datarow.meta.thumb%}
      <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
 {%endif%}
+    <p class="msg">{{datarow.excerpt}}</p>
     {{datarow.content | raw}}
     </div>
     {{block('imagegallery')}}
