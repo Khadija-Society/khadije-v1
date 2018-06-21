@@ -169,7 +169,7 @@
 {%for key, myNews in lastPostsRecord%}
   {%if myNews.id in topSliderPostsID%}
   {%else%}
-          <a class="c f align-center justify-center {%if myI == 0%}active{%endif%}" href="{{url.here}}/{{myNews.url}}" data-index='{{myI}}'>{{myNews.title}}</a>
+          <a class="c f align-center justify-center {%if myI == 0%}active{%endif%}" href="{{url.here}}/{{myNews.url}}" data-index='{{myI}}'>{%if myNews.subtitle%}<span>{{myNews.subtitle}}</span> {%endif%}<span class="txtB">{{myNews.title}}</span></a>
   {%set myI = myI + 1 %}
   {%endif%}
 {%endfor%}
