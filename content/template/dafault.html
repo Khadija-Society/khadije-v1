@@ -20,6 +20,9 @@
 {%if datarow.meta.thumb%}
      <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
 {%endif%}
+{%if datarow.subtitle%}
+    <div class="txtB mB10">{{datarow.subtitle}}</div>
+{%endif%}
     <p class="msg">{{datarow.excerpt}}</p>
     {{datarow.content | raw}}
     </div>
