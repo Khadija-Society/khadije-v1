@@ -34,7 +34,7 @@
     </div>
 
     <div class="c3 s12">
-      <h2 class="alert alert-info pLRn txtC fs14">{%set StatusS = travelDetail.status | capitalize%}{%trans StatusS%}</h2>
+      <h2 class="msg warn2 pLRn txtC fs14">{%set StatusS = travelDetail.status | capitalize%}{%trans StatusS%}</h2>
       <p class="badge block">{%trans "Date created" %} {{travelDetail.datecreated | tdate("Y/m/d H:i")}}</p>
 {%if travelDetail.datemodified%}
       <p class="badge block primary">{%trans "Last modified" %} {{travelDetail.datemodified | tdate("Y/m/d H:i")}}</p>
