@@ -41,7 +41,7 @@ class view
 		}
 
 		$args['posts.type'] = 'meeting';
-		$args['limit'] = 3;
+		$args['limit']      = 3;
 
 		$search_string            = \dash\request::get('q');
 
@@ -69,7 +69,7 @@ class view
 		$default_option =
 		[
 			'search_field'      => " ( posts.title LIKE '%__string__%' ) ",
-			'public_show_field' => " posts.*, users.* ",
+			'public_show_field' => " posts.*, users.displayname, users.avatar, users.firstname, users.lastname, users.title AS `user_title`, users.mobile",
 			'master_join'       => " INNER JOIN users ON users.id = posts.user_id ",
 		];
 
@@ -89,15 +89,18 @@ class view
 
 				if(isset($value['meta']))
 				{
-					$value['meta'] = json_decode($value['meta'], true);
+					if(is_string($value['meta']))
+					{
+						$value['meta'] = json_decode($value['meta'], true);
+					}
 					if(isset($value['meta']['member']))
 					{
-						$value['meta']['member_array'] = explode(',', $value['meta']['member']);
+						$result[$key]['meta']['member_array'] = explode(',', $value['meta']['member']);
 					}
 				}
 			}
-
 		}
+
 		return $result;
 	}
 
