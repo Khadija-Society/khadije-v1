@@ -99,7 +99,7 @@
 {%block iTitle %}
 <label for="title">{%trans "Meeting Title"%}</label>
 <div class="input mB10">
-  <input type="text" name="title" id="title" placeholder='' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}">
+  <input type="text" name="title" id="title" placeholder='' value="{{dataRow.title}}" autofocus required maxlength='300'>
 </div>
 {% endblock %}
 
@@ -107,7 +107,7 @@
 {%block iOrderBefore %}
 <label for="order">{%trans "Order of meeting"%}</label>
 <div class="input mB10">
-  <input type="text" name="order" id="order" placeholder='' value="{{dataRow.subtitle}}" required maxlength='200'>
+  <input type="text" name="order" id="order" placeholder='' value="{{dataRow.subtitle}}" maxlength='400'>
 </div>
 {% endblock %}
 
@@ -132,7 +132,7 @@
 {%block galleryImporter %}
 <div class="dropzone">
   <h4>{%trans "Add gallery report"%}</h4>
-  <label for='gallery' class="btn light">{%trans "To add image gallery report drop file here or"%}</label>
+  <label for='gallery' class="btn light">{%trans "To add image or video gallery report, drop file here or press this button"%}</label>
   <input id="gallery" type="file" name="gallery" multiple>
   <div class="progress shadow" data-percent='30'>
     <div class="bar"></div>

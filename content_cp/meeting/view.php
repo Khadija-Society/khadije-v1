@@ -9,14 +9,14 @@ class view
 		\dash\permission::access('cpMeeting');
 
 
-		\dash\data::page_pictogram('home-1');
+		\dash\data::page_pictogram('gavel');
 
 		\dash\data::page_title(T_("Meeting list"));
 		\dash\data::page_desc(T_("check all meeting report"));
 
 		if(\dash\permission::check('cpMeetingAdd'))
 		{
-			\dash\data::badge_link(\dash\url::here(). '/meeting/add');
+			\dash\data::badge_link(\dash\url::this(). '/add');
 			\dash\data::badge_text(T_('Add new meeting'));
 		}
 
@@ -36,7 +36,7 @@ class view
 		}
 
 		if(\dash\request::get('status')) $args['services.status'] = \dash\request::get('status');
-		
+
 		$args['type'] = 'meeting';
 
 		$search_string            = \dash\request::get('q');
@@ -54,7 +54,7 @@ class view
 
 		$filterArray = $args;
 		unset($filterArray['type']);
-		
+
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
 		\dash\data::dataFilter($dataFilter);
