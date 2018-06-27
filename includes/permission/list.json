@@ -203,4 +203,17 @@
     "cat" : "Family Trip",
     "require" : []
   }
+  ,
+  "cpMeeting" :
+  {
+    "title" : "cpMeeting",
+    "cat" : "Meeting",
+    "require" : []
+  },
+  "cpMeetingManage" :
+  {
+    "title" : "cpMeetingManage",
+    "cat" : "Meeting",
+    "require" : []
+  }
 }

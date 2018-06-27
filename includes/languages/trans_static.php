@@ -113,6 +113,9 @@ class TransStatic
 	echo T_("cpFamilyTripEdit");
 	echo T_("Family Trip");
 	echo T_("cpFamilyTripOption");
+
+	echo T_("cpMeeting");
+	echo T_("cpMeetingManage");
  }
 }
 ?>
