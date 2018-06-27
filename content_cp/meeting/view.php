@@ -86,6 +86,15 @@ class view
 					$x = strip_tags($x);
 					$result[$key]['content_raw'] = $x;
 				}
+
+				if(isset($value['meta']))
+				{
+					$value['meta'] = json_decode($value['meta'], true);
+					if(isset($value['meta']['member']))
+					{
+						$value['meta']['member_array'] = explode(',', $value['meta']['member']);
+					}
+				}
 			}
 
 		}
