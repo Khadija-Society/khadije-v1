@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpMeetingAdd');
+		\dash\permission::access('cpMeeting');
 
 		\dash\data::page_pictogram('plus-circle');
 
@@ -30,9 +30,9 @@ class view
 
 			$load = \dash\db\posts::get(['id' => $id, 'limit' => 1]);
 
-			if(!isset($load['user_id']))
+			if(!\content_cp\meeting\add\model::check_valid_id())
 			{
-				\dash\header::status(404, T_("Id not found"));
+				\dash\header::status(403);
 			}
 
 			if(isset($load['meta']))

@@ -65,8 +65,11 @@ class model
 
 		if(intval($load['user_id']) !== intval(\dash\user::id()))
 		{
-			\dash\notif::error(T_("This meeting is not for you!"));
-			return false;
+			if(!\dash\permission::check('cpMeetingManage'))
+			{
+				\dash\notif::error(T_("This meeting is not for you!"));
+				return false;
+			}
 		}
 		return true;
 	}
@@ -74,6 +77,8 @@ class model
 
 	public static function post()
 	{
+		\dash\permission::access('cpMeeting');
+
 		if(self::upload_gallery())
 		{
 			return false;
