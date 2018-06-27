@@ -153,12 +153,41 @@ class model
 				$publishdate  = \dash\utility\jdate::to_gregorian($publishdate);
 			}
 
-			if(\dash\app::isset_request('publishdate') && !$publishdate)
+			if(!$publishdate)
 			{
 				$publishdate = date("Y-m-d");
 			}
 
-			$post['publishdate'] = $publishdate;
+
+			$publishtime = \dash\request::post('publishtime');
+			$publishtime = \dash\utility\convert::to_en_number($publishtime);
+
+			if($publishtime)
+			{
+				if(\dash\data::make_time($publishtime) === false)
+				{
+					\dash\notif::error(T_("Invalid meeting time"), 'publishtime');
+					return false;
+				}
+				elseif(!$publishtime)
+				{
+					$publishtime = date("H:i");
+				}
+			}
+			else
+			{
+				$publishtime = date("H:i");
+			}
+
+
+			if($publishtime)
+			{
+				$post['publishdate'] = $publishdate. ' '. $publishtime;
+			}
+			else
+			{
+				$post['publishdate'] = $publishdate;
+			}
 
 			if(\dash\request::get('step') === 'add' && \dash\request::get('id'))
 			{

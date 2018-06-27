@@ -22,11 +22,16 @@
 				<div class="c9">
 					{{block('iTitle')}}
 				</div>
-				<div class="c3">
+				<div class="c2">
 					<div class="mLa5">
 						{{block('iPublishdate')}}
 					</div>
 				</div>
+        <div class="c1">
+          <div class="mLa5">
+            {{block('iPublishtime')}}
+          </div>
+        </div>
 			</div>
 			{{block('iOrderBefore')}}
 			{{block('iMembers')}}
@@ -36,6 +41,13 @@
 </form>
 {%endblock%}
 
+
+{%block iPublishtime%}
+<label for="publishtime">{%trans "Meeting time"%}</label>
+<div class="input clockpicker ltr">
+  <input type="text" name="publishtime" id="publishtime" placeholder='{%trans "Time"%}' autocomplete="off" {%if dataRow.publishdate %} value="{{dataRow.publishdate | date('H:i')}}" {%endif%}>
+</div>
+{%endblock%}
 
 
 
