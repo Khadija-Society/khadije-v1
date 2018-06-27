@@ -57,13 +57,12 @@ class model
 			self::remove_gallery();
 			return false;
 		}
-		
+
 		if(\dash\request::get('step') === 'report')
 		{
 			$post =
 			[
-				'content' => \dash\request::post('content'),	
-				'meta' => \dash\request::post('content2'),	
+				'content' => \dash\request::post('content'),
 			];
 
 			$id = \dash\request::get('id');
@@ -79,13 +78,13 @@ class model
 			if(!$load || !isset($load['user_id']))
 			{
 				\dash\notif::error(T_("Id not found"));
-				return false;	
+				return false;
 			}
 
 			if(intval($load['user_id']) !== intval(\dash\user::id()))
 			{
 				\dash\notif::error(T_("This meeting is not for you!"));
-				return false;		
+				return false;
 			}
 
 			\dash\db\posts::update($post, $id);
@@ -96,8 +95,7 @@ class model
 		{
 			$post =
 			[
-				'subtitle'    => \dash\request::post('subtitle'),
-				'excerpt'     => \dash\request::post('excerpt'),
+				'subtitle'    => \dash\request::post('order'),
 				'title'       => \dash\request::post('title'),
 				'slug'        => \dash\user::id(). '_'. time(),
 				'url'         => \dash\user::id(). '_'. time(),
@@ -108,7 +106,7 @@ class model
 				'language'    => 'fa',
 
 			];
-			
+
 			$post['status'] = 'draft';
 			$post['type']   = 'meeting';
 
@@ -118,6 +116,10 @@ class model
 				return false;
 			}
 
+			$tag          = \dash\request::post('tag');
+			$tag          = preg_replace("/\n/", '-', $tag);
+			$post['meta'] = ['member' => $tag];
+			$post['meta'] = json_encode($post['meta'], JSON_UNESCAPED_UNICODE);
 
 			$publishdate = \dash\request::post('publishdate');
 			$publishdate = \dash\utility\convert::to_en_number($publishdate);
@@ -155,7 +157,7 @@ class model
 			}
 		}
 
-		
+
 	}
 }
 ?>
