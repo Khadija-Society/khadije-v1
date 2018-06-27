@@ -44,7 +44,8 @@ class model
 
 	}
 
-	public static function getPost()
+
+	public static function post()
 	{
 		if(self::upload_gallery())
 		{
@@ -56,88 +57,105 @@ class model
 			self::remove_gallery();
 			return false;
 		}
-
-		$post =
-		[
-			'id'          => \dash\request::get('id'),
-			'subtitle'    => \dash\request::post('subtitle'),
-			'excerpt'     => \dash\request::post('excerpt'),
-			'title'       => \dash\request::post('title'),
-			'tag'         => \dash\request::post('tag'),
-			'slug'        => \dash\request::post('slug'),
-			'content'     => isset($_POST['content']) ? $_POST['content'] : null,
-			'publishdate' => \dash\request::post('publishdate'),
-			'publishtime' => \dash\request::post('publishtime'),
-			'status'      => \dash\request::post('status'),
-			'comment'     => \dash\request::post('comment'),
-			'language'    => \dash\request::post('language'),
-			'parent'      => \dash\request::post('parent'),
-		];
-
-
-		if(!$post['status'])
+		
+		if(\dash\request::get('step') === 'report')
 		{
-			$post['status'] = 'draft';
-		}
+			$post =
+			[
+				'content' => \dash\request::post('content'),	
+				'meta' => \dash\request::post('content2'),	
+			];
 
-		if(!\dash\permission::check('cpPostsEditStatus'))
-		{
-			unset($post['status']);
-		}
-
-		if(\dash\request::get('type'))
-		{
-			$post['type'] = \dash\request::get('type');
-		}
-
-		$all_post = \dash\request::post();
-
-		$post['cat'] = [];
-
-		foreach ($all_post as $key => $value)
-		{
-			if(substr($key, 0, 4) === 'cat_')
+			$id = \dash\request::get('id');
+			$id = \dash\coding::decode($id);
+			if(!$id)
 			{
-				$post['cat'][] = substr($key, 4);
-			}
-		}
-
-		if(\dash\request::files('thumb'))
-		{
-			$uploaded_file = \dash\app\file::upload(['debug' => false, 'upload_name' => 'thumb']);
-
-			if(isset($uploaded_file['url']))
-			{
-				$post['thumb'] = $uploaded_file['url'];
-			}
-			// if in upload have error return
-			if(!\dash\engine\process::status())
-			{
+				\dash\notif::error(T_("Invalid id"));
 				return false;
 			}
+
+			$load = \dash\db\posts::get(['id' => $id, 'limit' => 1]);
+
+			if(!$load || !isset($load['user_id']))
+			{
+				\dash\notif::error(T_("Id not found"));
+				return false;	
+			}
+
+			if(intval($load['user_id']) !== intval(\dash\user::id()))
+			{
+				\dash\notif::error(T_("This meeting is not for you!"));
+				return false;		
+			}
+
+			\dash\db\posts::update($post, $id);
+			\dash\notif::ok(T_("Meeting report was saved"));
+			\dash\redirect::pwd();
 		}
-
-		// var_dump($post);exit();
-		return $post;
-
-	}
-
-	public static function post()
-	{
-		$posts = self::getPost();
-
-		if(!$posts || !\dash\engine\process::status())
+		else
 		{
-			return false;
+			$post =
+			[
+				'subtitle'    => \dash\request::post('subtitle'),
+				'excerpt'     => \dash\request::post('excerpt'),
+				'title'       => \dash\request::post('title'),
+				'slug'        => \dash\user::id(). '_'. time(),
+				'url'         => \dash\user::id(). '_'. time(),
+				'user_id'     => \dash\user::id(),
+				'publishdate' => \dash\request::post('publishdate'),
+				'status'      => 'draft',
+				'type'        => 'meeting',
+				'language'    => 'fa',
+
+			];
+			
+			$post['status'] = 'draft';
+			$post['type']   = 'meeting';
+
+			if(!$post['title'])
+			{
+				\dash\notif::error(T_("Please fill the title"), 'title');
+				return false;
+			}
+
+
+			$publishdate = \dash\request::post('publishdate');
+			$publishdate = \dash\utility\convert::to_en_number($publishdate);
+
+			if($publishdate && !\dash\date::db($publishdate))
+			{
+				\dash\notif::error(T_("Invalid parameter publishdate"), 'publishdate');
+				return false;
+			}
+
+			if(\dash\language::current() === 'fa' && $publishdate && \dash\utility\jdate::is_jalali($publishdate))
+			{
+				$publishdate  = \dash\utility\jdate::to_gregorian($publishdate);
+			}
+
+			if(\dash\app::isset_request('publishdate') && !$publishdate)
+			{
+				$publishdate = date("Y-m-d");
+			}
+
+			$post['publishdate'] = $publishdate;
+
+			$new_post_id = \dash\db\posts::insert($post);
+
+			if(!$new_post_id)
+			{
+				\dash\notif::error(T_("No way to add new meeting now"));
+				return false;
+			}
+
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::to(\dash\url::here(). '/meeting/add?step=report&id='. \dash\coding::encode($new_post_id));
+				return;
+			}
 		}
 
-		$post_detail = \dash\app\posts::add($posts);
-
-		if(\dash\engine\process::status() && isset($post_detail['post_id']))
-		{
-			\dash\redirect::to(\dash\url::here(). '/posts/edit?id='. $post_detail['post_id']);
-			return;
-		}
+		
 	}
 }
 ?>

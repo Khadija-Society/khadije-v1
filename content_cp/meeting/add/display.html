@@ -1,30 +1,78 @@
 {%extends display.cpMain%}
 
+
+
 {%block pageContent%}
-<form class="f justify-center" method="post" autocomplete="off">
- <div class="c12 s12 pRa10">
-  <div class="cbox">
-  	<div class="f">
-  		<div class="c9">
-   			{{block('iTitle')}}
-  		</div>
-  		<div class="c3">
-  			<div class="mLa5">
-   				{{block('iPublishdate')}}
-  			</div>
-  		</div>
-  	</div>
-	{{block('iSubtitle')}}
-	{{block('iContent_precent')}}
-  
-   {{block('iadd')}}
-</div>
- </div>
- 
-</form>
-   {{block('iGalleryShow')}}
+		
+	{%if not requestGET or requestGET.step == 'add' %}
+		{{block('add_new_meeting')}}
+	{%elseif requestGET.step == 'report'%}
+		{{block('edit_old_meeting')}}
+	{%endif%}
+
 {% endblock %}
 
+
+
+{%block add_new_meeting%}
+<form class="f justify-center" method="post" autocomplete="off">
+	<div class="c12 s12 pRa10">
+		<div class="cbox">
+			<div class="f">
+				<div class="c9">
+					{{block('iTitle')}}
+				</div>
+				<div class="c3">
+					<div class="mLa5">
+						{{block('iPublishdate')}}
+					</div>
+				</div>
+			</div>
+			{{block('iSubtitle')}}
+			{{block('iExcerpt')}}
+			{{block('iadd')}}
+		</div>
+	</div>
+</form>
+{%endblock%}
+
+
+
+
+
+{%block edit_old_meeting%}
+<form class="f justify-center" method="post" autocomplete="off">
+	<div class="c12 s12 pRa10">
+		<div class="cbox">
+			
+				<div class="msg">{{dataRow.title}}</div>
+				<div class="msg">{{dataRow.subtitle}}</div>
+				<div class="msg">{{dataRow.excerpt}}</div>
+
+				<input type="hidden" name="title" value="{{dataRow.title}}">
+			
+			{{block('iContent')}}
+			{{block('iContent2')}}
+			{{block('iadd')}}
+		</div>
+	</div>
+	<div class="cbox">
+	   {{block('galleryImporter')}}
+	   {{block('iGalleryShow')}}
+	</div>
+</form>
+{%endblock%}
+
+
+
+
+
+
+
+
+{%block iExcerpt %}
+<textarea class="txt mB10" name="excerpt" id="excerpt" placeholder='{%trans "Enter list of precent member"%} *' maxlength='300' minlength="1"  rows='3'>{{dataRow.excerpt}}</textarea>
+{% endblock %}
 
 
 {%block iPublishdate %}
@@ -50,30 +98,27 @@
 {% endblock %}
 
 
-{%block iContent_precent%}
-<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Precent list"%}' maxlength='100000' rows="6">{{dataRow.content}}</textarea>
-{%endblock%}
 
 
 {%block iContent%}
-<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Report title"%}' maxlength='100000' rows="2">{{dataRow.content}}</textarea>
+<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Report title"%}' maxlength='100000' rows="5">{{dataRow.content}}</textarea>
 {%endblock%}
 
 {%block iContent2%}
-<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Report order"%}' maxlength='100000' rows="3">{{dataRow.content}}</textarea>
+<textarea class="txt mB10" id='descInput' name="content2" placeholder='{%trans "Report order"%}' maxlength='100000' rows="10">{{dataRow.meta}}</textarea>
 {%endblock%}
 
 
 {%block iContent3%}
-<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Write result here"%}' maxlength='100000' rows="8">{{dataRow.content}}</textarea>
+<textarea class="txt mB10" id='descInput' name="content3" placeholder='{%trans "Write result here"%}' maxlength='100000' rows="8">{{dataRow.content}}</textarea>
 {%endblock%}
 
 
 
 {%block galleryImporter %}
 <div class="dropzone">
-  <h4>{%trans "Add to gallery"%}</h4>
-  <label for='gallery' class="btn light">{%trans "To add image gallery drop file here or"%}</label>
+  <h4>{%trans "Add gallery report"%}</h4>
+  <label for='gallery' class="btn light">{%trans "To add image gallery report drop file here or"%}</label>
   <input id="gallery" type="file" name="gallery" multiple>
   <div class="progress shadow" data-percent='30'>
     <div class="bar"></div>

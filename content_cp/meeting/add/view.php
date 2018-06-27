@@ -18,6 +18,26 @@ class view
 		\dash\data::bodyclass('unselectable');
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
+
+		if(\dash\request::get('id'))
+		{
+			$id = \dash\coding::decode(\dash\request::get('id'));
+			
+			if(!$id)
+			{
+				\dash\header::status(404, T_("Invalid id"));
+			}
+			
+			$load = \dash\db\posts::get(['id' => $id, 'limit' => 1]);
+
+			if(!isset($load['user_id']))
+			{
+				\dash\header::status(404, T_("Id not found"));
+			}
+
+			\dash\data::dataRow($load);
+
+		}
 	}
 
 }
