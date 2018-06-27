@@ -35,9 +35,9 @@ class view
 			$args['order'] = 'DESC';
 		}
 
-		if(\dash\request::get('status')) $args['services.status'] = \dash\request::get('status');
+		if(\dash\request::get('status')) $args['posts.status'] = \dash\request::get('status');
 
-		$args['type'] = 'meeting';
+		$args['posts.type'] = 'meeting';
 
 		$search_string            = \dash\request::get('q');
 
@@ -48,16 +48,34 @@ class view
 			\dash\data::page_title(T_('Search'). ' '.  $search_string);
 		}
 
-		\dash\data::dataTable(\dash\app\posts::list($search_string, $args));
 
-		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\posts::$sort_field, \dash\url::here(). '/meeting'));
+		\dash\data::dataTable(self::meeting_list($search_string, $args));
 
-		$filterArray = $args;
-		unset($filterArray['type']);
+		// $filterArray = $args;
+		// unset($filterArray['type']);
 
-		// set dataFilter
-		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
-		\dash\data::dataFilter($dataFilter);
+		// // set dataFilter
+		// $dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
+		// \dash\data::dataFilter($dataFilter);
+	}
+
+	public static function meeting_list($_string = null, $_options = [])
+	{
+
+		$default_option =
+		[
+			'search_field'      => " ( posts.title LIKE '%__string__%' ) ",
+			'public_show_field' => " posts.*, users.* ",
+			'master_join'       => " INNER JOIN users ON users.id = posts.user_id ",
+		];
+
+		$_options = array_merge($default_option, $_options);
+		$result = \dash\db\config::public_search('posts', $_string, $_options);
+		if(is_array($result))
+		{
+			$result = array_map(["\dash\app\user", "ready"], $result);
+		}
+		return $result;
 	}
 }
 ?>
