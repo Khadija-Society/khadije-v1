@@ -58,7 +58,7 @@
         <img alt="{{value.displayname}}" src="{{value.avatar}}">
         <div class="content">
           <div class="header"><small>{{value.firstname}}</small> <span class="fs09 txtB">{{value.lastname}}</span></div>
-          <div class="meta">{{value.title}}</div>
+          <div class="meta">{{value.user_title}}</div>
         </div>
         <div class="footer txtC"><a href="tel:{{value.mobile}}">{{value.mobile | fitNumber("mobile")}}</a></div>
       </div>
@@ -78,7 +78,7 @@
       <b class="fc-red">{%trans "Without meeting order"%}</b>
 {%endif%}
       </div>
-      <div class="fs11">
+      <div class="fs11 mB20">
 {%if dataRow.meta.member_array%}
   {%for key, value in dataRow.meta.member_array%}
             <span class="badge">{{value}}</span>
@@ -93,6 +93,7 @@
 {%else%}
       <b class="fc-red">{%trans "Subject and approvals of meeting is not set!"%}</b>
 {%endif%}
+      <div class="mT5"><a href="{{url.this}}/add?step=add&id={{value.id}}" class="btn">{%trans "Edit meeting"%}</a></div>
     </div>
   </div>
 {%endfor%}
