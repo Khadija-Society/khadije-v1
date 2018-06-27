@@ -64,11 +64,9 @@
       </div>
     </div>
     <div class="c pA10">
-      <p class="fs12"><b>{%trans "Meeting title"%}</b> {{value.title}} <span class="floatRa badge primary ltr" title='{{value.publishdate | sdate("year")}}'>{{value.publishdate | tdate(true)}}</span></p>
-      <p><b>{%trans "Meeting Order"%}</b> {{value.subtitle}}</p>
-
-
-      <div>
+      <div class="fs12 pB10"><b>{%trans "Meeting title"%}</b> {{value.title}} <span class="floatRa badge primary ltr" title='{{value.publishdate | sdate("year")}}'>{{value.publishdate | tdate(true)}}</span></div>
+      <div class="pB10"><b>{%trans "Meeting Order"%}</b> {{value.subtitle}}</div>
+      <div class="fs11">
 {%if dataRow.meta.member_array%}
   {%for key, value in dataRow.meta.member_array%}
             <span class="badge">{{value}}</span>
