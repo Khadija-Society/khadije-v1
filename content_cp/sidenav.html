@@ -65,6 +65,22 @@
   </li>
 {%endif%}
 
+
+{%if perm('cpMeeting') or perm('cpMeetingManage')%}
+  <li>
+    <a href="{{url.here}}/meeting"><i class='sf-gavel'></i> <span>{% trans "Meetings" %}</span></a>
+    <ul>
+      {%if perm('cpMeeting') %}
+        <li><a href="{{url.here}}/meeting"><i class='floatRa mRa10 fc-mute sf-gavel'></i> <span>{%trans "Meeting reports"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpMeetingManage') %}
+        <li><a href="{{url.here}}/meeting/add"><i class='floatRa mRa10 fc-mute sf-plus'></i> <span>{%trans "Add new report"%}</span></a></li>
+      {%endif%}
+    </ul>
+  </li>
+{%endif%}
+
+
 {%if perm('cpPostsView') or perm('cpCategoryView') or perm('cpPageView') or perm('cpTagView')  %}
     <li>
         <a href="{{url.here}}/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
