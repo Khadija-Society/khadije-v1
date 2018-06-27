@@ -74,8 +74,24 @@ class view
 		if(is_array($result))
 		{
 			$result = array_map(["\dash\app\user", "ready"], $result);
+			foreach ($result as $key => $value)
+			{
+				if(isset($value['content']))
+				{
+					$x = self::enter_to_space($value['content']);
+					$x = strip_tags($x);
+					$result[$key]['content_raw'] = $x;
+				}
+			}
+
 		}
 		return $result;
+	}
+
+
+	public static function enter_to_space($_data)
+	{
+		return str_replace("\n", " ", $_data);
 	}
 }
 ?>
