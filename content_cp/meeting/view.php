@@ -38,6 +38,7 @@ class view
 		if(\dash\request::get('status')) $args['posts.status'] = \dash\request::get('status');
 
 		$args['posts.type'] = 'meeting';
+		$args['limit'] = 3;
 
 		$search_string            = \dash\request::get('q');
 
