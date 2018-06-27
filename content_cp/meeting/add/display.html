@@ -1,0 +1,154 @@
+{%extends display.cpMain%}
+
+{%block pageContent%}
+<form class="f justify-center" method="post" autocomplete="off">
+ <div class="c12 s12 pRa10">
+  <div class="cbox">
+  	<div class="f">
+  		<div class="c9">
+   			{{block('iTitle')}}
+  		</div>
+  		<div class="c3">
+  			<div class="mLa5">
+   				{{block('iPublishdate')}}
+  			</div>
+  		</div>
+  	</div>
+	{{block('iSubtitle')}}
+	{{block('iContent_precent')}}
+  
+   {{block('iadd')}}
+</div>
+ </div>
+ 
+</form>
+   {{block('iGalleryShow')}}
+{% endblock %}
+
+
+
+{%block iPublishdate %}
+<div title='{%trans "Date of meeting"%}'>
+  <label for="publishdate">{%trans "Meeting date"%}</label>
+  <div class="input ltr">
+    <input class="datepicker" type="text" name="publishdate" id="publishdate" placeholder='{%trans "Meeting date"%}' value="{{dataRow.publishdate}}" maxlength='15' data-format="YYYY/MM/DD" data-initialValue='false' data-view="day">
+  </div>
+</div>
+{% endblock %}
+
+{%block iTitle %}
+<label for="title">{%trans "Meeting Title"%}</label>
+<div class="input mB10">
+  <input type="text" name="title" id="title" placeholder='{%trans "Enter title of meeting here"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}">
+</div>
+{% endblock %}
+
+
+{%block iSubtitle %}
+<textarea class="txt mB10"  name="subtitle" placeholder='{%trans "Order of meeting"%}' maxlength='100000' rows="4">{{dataRow.subtitle}}</textarea>
+
+{% endblock %}
+
+
+{%block iContent_precent%}
+<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Precent list"%}' maxlength='100000' rows="6">{{dataRow.content}}</textarea>
+{%endblock%}
+
+
+{%block iContent%}
+<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Report title"%}' maxlength='100000' rows="2">{{dataRow.content}}</textarea>
+{%endblock%}
+
+{%block iContent2%}
+<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Report order"%}' maxlength='100000' rows="3">{{dataRow.content}}</textarea>
+{%endblock%}
+
+
+{%block iContent3%}
+<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Write result here"%}' maxlength='100000' rows="8">{{dataRow.content}}</textarea>
+{%endblock%}
+
+
+
+{%block galleryImporter %}
+<div class="dropzone">
+  <h4>{%trans "Add to gallery"%}</h4>
+  <label for='gallery' class="btn light">{%trans "To add image gallery drop file here or"%}</label>
+  <input id="gallery" type="file" name="gallery" multiple>
+  <div class="progress shadow" data-percent='30'>
+    <div class="bar"></div>
+    <div class="detail"></div>
+  </div>
+</div>
+{% endblock %}
+
+
+{%block iadd%}
+<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+{%block isave%}
+<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+{%block iLanguage%}
+<div class="mB10" title='{%trans "You can publish in another language"%}'>
+  <label for="language">{%trans "Language"%}</label>
+  <select name="language" class="ui dropdown select">
+    <option value=""><i>{%trans "Please select one item"%}</i></option>
+    {%for key, value in lang.list%}
+      {%if key | length == 2%}
+      <option value="{{key}}" {%if dataRow.language == key or (not dataRow.lang and lang.current == key)  %} selected {%endif%}>{{value}}</option>
+      {%endif%}
+    {%endfor%}
+  </select>
+</div>
+{%endblock%}
+
+
+
+
+
+
+
+{%block iGalleryShow%}
+
+{%if dataRow.meta.gallery%}
+<div class="cbox">
+  <h2>{%trans "Gallery"%}</h2>
+  <div class="normal f">
+
+    {% for key, myUrl in dataRow.meta.gallery%}
+      <div class="vcard mA10">
+
+        {%if myUrl ends with '.jpg' or myUrl ends with '.png' or myUrl ends with '.gif'%}
+        <img src="{{myUrl}}">
+        <div class="content"></div>
+        {%elseif myUrl ends with '.mp4' %}
+        <video>
+          <source src="{{myUrl}}" type="video/mp4">
+        </video>
+        <div class="content"><a href="{{myUrl}}" title='{%trans "Click to download"%}'>{%trans "Video"%}</a></div>
+        <div class="content"></div>
+        {%elseif myUrl ends with '.mp3' %}
+        <audio controls>
+          <source src="{{myUrl}}" type="audio/mpeg">
+        </audio>
+        <div class="content"><a href="{{myUrl}}" title='{%trans "Click to download"%}'>{%trans "MP3"%}</a></div>
+        {%elseif myUrl ends with '.pdf' %}
+          <div class="content title"><a href="{{myUrl}}" title='{%trans "Click to download"%}'>{%trans "PDF"%}</a></div>
+        {%else%}
+        <div class="content title"><a href="{{myUrl}}" title='{%trans "Click to download"%}'>{%trans "Without preview"%}</a></div>
+        {%endif%}
+        <div class="footer f">
+          <button class="btn block secondary" data-ajaxify data-data='{"type" : "remove_gallery", "id": "{{key}}"}' data-method='post'>{%trans "Remove"%}</button>
+        </div>
+      </div>
+    {%endfor%}
+  </div>
+</div>
+{%endif%}
+
+{%endblock%}
+
+
