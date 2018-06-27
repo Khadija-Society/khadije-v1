@@ -219,7 +219,7 @@ class twigTransTerms
 	echo T_("Send");                                                                  // Line 63
 
 	//---------------------------------------------addons\content_cp\home\display.html
-	echo T_("Control Panel");                                                         // Line 109
+	echo T_("Control Panel");                                                         // Line 107
 	echo T_("CMS");                                                                   // Line 59
 
 	//---------------------------------------------------addons\content_cp\layout.html
@@ -495,10 +495,10 @@ class twigTransTerms
 	echo T_("Try to start with add new :dbtables!");                                  // Line 112
 
 	//-------------------------------------------------addons\content_su\home\chart.js
-	echo T_("CPU Usage");                                                             // Line 56
-	echo T_("Memory");                                                                // Line 65
-	echo T_("Disk usage");                                                            // Line 74
-	echo T_("percentage");                                                            // Line 121
+	echo T_("CPU Usage");                                                             // Line 77
+	echo T_("Memory");                                                                // Line 86
+	echo T_("Disk usage");                                                            // Line 95
+	echo T_("percentage");                                                            // Line 130
 
 	//---------------------------------------------addons\content_su\home\display.html
 	echo T_("Raw table");                                                             // Line 39
@@ -763,8 +763,8 @@ class twigTransTerms
 	echo T_("Enter a valid username!");                                               // Line 373
 
 	//-------------------------------------------addons\includes\html\display-mvc.html
-	echo T_("You are supervisor!");                                                   // Line 104
-	echo T_("Enter with another user");                                               // Line 111
+	echo T_("You are supervisor!");                                                   // Line 102
+	echo T_("Enter with another user");                                               // Line 109
 
 	//----------------------------------------addons\includes\html\inc_pagination.html
 
