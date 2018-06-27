@@ -71,6 +71,18 @@ class model
 				return false;
 			}
 		}
+
+		if(!isset($load['type']))
+		{
+			\dash\notif::error(T_("Invalid type of meeting"));
+			return false;
+		}
+
+		if($load['type'] !== 'meeting')
+		{
+			\dash\notif::error(T_("Invalid meeting id"));
+			return false;
+		}
 		return true;
 	}
 
