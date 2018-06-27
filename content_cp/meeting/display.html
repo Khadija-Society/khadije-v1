@@ -41,7 +41,7 @@
 <div class="cbox fs12">
   <form method="get" action='{{url.here}}/health'>
     <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search in health"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
   </form>
@@ -52,31 +52,29 @@
 {%block htmlTable%}
  <div class="cbox fs12">
 {%for key, value in dataTable%}
-  <div class="msg f pA">
-    <div class="cauto pRa10">
-      <div class="vcard max-w150">
+  <div class="msg f pA align-center">
+    <div class="cauto s12 pRa10">
+      <div class="vcard shadow max-w150">
         <img alt="{{value.displayname}}" src="{{value.avatar}}">
         <div class="content">
-          <a class="header">{{value.title}}</a>
-          <div class="meta"><span>{{value.bio}}</span></div>
+          <div class="header"><small>{{value.firstname}}</small> <span class="fs09 txtB">{{value.lastname}}</span></div>
+          <div class="meta">{{value.title}}</div>
         </div>
-        <div class="footer">{{value.mobile | fitNumber("mobile")}}</div>
+        <div class="footer txtC"><a href="tel:{{value.mobile}}">{{value.mobile | fitNumber("mobile")}}</a></div>
       </div>
     </div>
     <div class="c pA10">
-      <div>{{value.title}}</div>
-      <div>{{value.subtitle}}</div>
+      <p class="fs12"><b>{%trans "Meeting title"%}</b> {{value.title}} <span class="floatRa badge primary ltr" title='{{value.publishdate | sdate("year")}}'>{{value.publishdate | tdate(true)}}</span></p>
+      <p><b>{%trans "Meeting Order"%}</b> {{value.subtitle}}</p>
       <div>{{value.meta.member}}</div>
-      <div>{{value.content_raw}}</div>
-      <div>{{value.publishdate | tdate}}</div>
+      <div class="msg bg-white">{{value.content_raw}}</div>
+
     </div>
   </div>
 {%endfor%}
- </div>
-
   {%include display.pagination%}
-
  </div>
+
 {%endblock%}
 
 
