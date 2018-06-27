@@ -53,21 +53,16 @@
 	<div class="c12 s12 pRa10">
     <div class="cbox">
       <div class="msg info2 mB0">
-        <div class="f">
-          <div class="c">
-            <div>{{dataRow.title}}</div>
-            <div>{{dataRow.subtitle}}</div>
-            <div>
+        <div class="fs12 pB5"><b>{%trans "Meeting title"%}</b> {{value.title}} <span class="floatRa badge primary ltr" title='{{value.publishdate | sdate("year")}}'>{{value.publishdate | tdate(true)}}</span></div>
+        <div class="pB5"><b>{%trans "Meeting Order"%}</b> {{value.subtitle}}</div>
+        <div class="fs11">
 {%if dataRow.meta.member_array%}
   {%for key, value in dataRow.meta.member_array%}
-            <span class="badge">{{value}}</span>
+            <span class="badge light">{{value}}</span>
   {%endfor%}
 {%else%}
 <b>{%trans "No member registered yet!"%}</b>
 {%endif%}
-          </div>
-          </div>
-          <div class="c"></div>
         </div>
       </div>
     </div>
