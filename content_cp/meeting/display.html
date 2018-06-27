@@ -51,6 +51,30 @@
 
 {%block htmlTable%}
  <div class="cbox fs12">
+{%for key, value in dataTable%}
+  <div class="msg f pA">
+    <div class="cauto pRa10">
+      <div class="vcard max-w150">
+        <img alt="siftal" src="{{user.avatar}}">
+        <div class="content">
+          <a class="header">Ermile</a>
+          <div class="meta"><span>Joined in 2018</span></div>
+        </div>
+        <div class="footer">123 Friends</div>
+      </div>
+    </div>
+    <div class="c pA10">
+      <div>{{value.title}}</div>
+      <div>{{value.subtitle}}</div>
+      <div>{{value.meta.member}}</div>
+      <div>{{value.content}}</div>
+      <div>{{value.publishdate | tdate}}</div>
+    </div>
+  </div>
+{%endfor%}
+ </div>
+
+ <div class="cbox fs12">
   <table class="tbl">
     <thead class="primary">
       <tr>
@@ -64,7 +88,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr class="{%if value.status == 'cancel' or value.status == 'draft'%} disabled{%elseif value.status == 'spam' or value.status == 'deleted' %} negative{%elseif value.status == 'unapproved' %} warning{%endif%}">
-        
+
         <td><a href="{{url.this}}?mobile={{value.mobile}}">{{value.title}}</a></td>
         <td class="s0 collapsing"><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status | capitalize %}{%trans myStatus%}</a></td>
         <td class="collapsing"><a class="badge" href="{{url.this}}?health={{value.expert}}">{%trans "Edit"%}</a></td>
