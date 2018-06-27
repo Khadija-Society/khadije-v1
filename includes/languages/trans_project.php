@@ -96,7 +96,7 @@ class twigTransTerms
 	//--------------------------------------------------------content\main\layout.html
 	echo T_("Homepage");                                                              // Line 5
 	echo T_("About");                                                                 // Line 12
-	echo T_("News");                                                                  // Line 73
+	echo T_("News");                                                                  // Line 89
 	echo T_("Khadije Wiki");                                                          // Line 63
 	echo T_("Services");                                                              // Line 163
 	echo T_("Self expressions");                                                      // Line 84
@@ -109,7 +109,7 @@ class twigTransTerms
 	echo T_("Mission");                                                               // Line 134
 	echo T_("Vision");                                                                // Line 23
 	echo T_("Honors");                                                                // Line 24
-	echo T_("Contact");                                                               // Line 91
+	echo T_("Contact");                                                               // Line 107
 	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 142
 	echo T_("Biography");                                                             // Line 144
 	echo T_("Bibliography");                                                          // Line 145
@@ -418,8 +418,8 @@ class twigTransTerms
 
 	//----------------------------------------------------content_cp\home\display.html
 	echo T_("Meeting");                                                               // Line 40
-	echo T_("CMS");                                                                   // Line 70
-	echo T_("Admin Contact");                                                         // Line 102
+	echo T_("CMS");                                                                   // Line 86
+	echo T_("Admin Contact");                                                         // Line 118
 	echo T_("Report");                                                                // Line 33
 	echo T_("Home page number");                                                      // Line 61
 	echo T_("Send SMS");                                                              // Line 80
@@ -560,18 +560,21 @@ class twigTransTerms
 	echo T_("Family trip");                                                           // Line 50
 	echo T_("consulting service");                                                    // Line 53
 	echo T_("representation service");                                                // Line 59
-	echo T_("Categries");                                                             // Line 76
-	echo T_("Tags");                                                                  // Line 79
-	echo T_("Pages");                                                                 // Line 82
-	echo T_("Comments");                                                              // Line 94
-	echo T_("Contact US");                                                            // Line 98
-	echo T_("Users");                                                                 // Line 114
-	echo T_("Add new user");                                                          // Line 118
-	echo T_("Permissions");                                                           // Line 121
-	echo T_("SMS");                                                                   // Line 130
-	echo T_("Quick send");                                                            // Line 134
-	echo T_("Group send");                                                            // Line 137
-	echo T_("Templates");                                                             // Line 140
+	echo T_("Meetings");                                                              // Line 71
+	echo T_("Meeting reports");                                                       // Line 74
+	echo T_("Add new report");                                                        // Line 77
+	echo T_("Categries");                                                             // Line 92
+	echo T_("Tags");                                                                  // Line 95
+	echo T_("Pages");                                                                 // Line 98
+	echo T_("Comments");                                                              // Line 110
+	echo T_("Contact US");                                                            // Line 114
+	echo T_("Users");                                                                 // Line 130
+	echo T_("Add new user");                                                          // Line 134
+	echo T_("Permissions");                                                           // Line 137
+	echo T_("SMS");                                                                   // Line 146
+	echo T_("Quick send");                                                            // Line 150
+	echo T_("Group send");                                                            // Line 153
+	echo T_("Templates");                                                             // Line 156
 
 	//--------------------------------------------content_cp\trip\options\display.html
 	echo T_("Maximum people can signup as awaiting");                                 // Line 67
