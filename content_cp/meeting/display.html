@@ -66,7 +66,17 @@
     <div class="c pA10">
       <p class="fs12"><b>{%trans "Meeting title"%}</b> {{value.title}} <span class="floatRa badge primary ltr" title='{{value.publishdate | sdate("year")}}'>{{value.publishdate | tdate(true)}}</span></p>
       <p><b>{%trans "Meeting Order"%}</b> {{value.subtitle}}</p>
-      <div>{{value.meta.member}}</div>
+
+
+      <div>
+{%if dataRow.meta.member_array%}
+  {%for key, value in dataRow.meta.member_array%}
+            <span class="badge">{{value}}</span>
+  {%endfor%}
+{%else%}
+<b class="fc-red">{%trans "No member registered yet!"%}</b>
+{%endif%}
+      </div>
       <div class="msg bg-white">{{value.content_raw}}</div>
 
     </div>

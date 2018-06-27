@@ -57,7 +57,15 @@
           <div class="c">
             <div>{{dataRow.title}}</div>
             <div>{{dataRow.subtitle}}</div>
-            <div>{{dataRow.meta.member}}</div>
+            <div>
+{%if dataRow.meta.member_array%}
+  {%for key, value in dataRow.meta.member_array%}
+            <span class="badge">{{value}}</span>
+  {%endfor%}
+{%else%}
+<b>{%trans "No member registered yet!"%}</b>
+{%endif%}
+          </div>
           </div>
           <div class="c"></div>
         </div>
