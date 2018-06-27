@@ -103,7 +103,7 @@
 <div title='{%trans "Date of meeting"%}'>
   <label for="publishdate">{%trans "Meeting date"%}</label>
   <div class="input ltr">
-    <input class="datepicker" type="text" name="publishdate" id="publishdate" placeholder='{%trans "Date"%}' value="{{dataRow.publishdate}}" maxlength='15' data-format="YYYY/MM/DD" data-initialValue='false' data-view="day">
+    <input class="datepicker" type="text" name="publishdate" id="publishdate" placeholder='{%trans "Date"%}' value="{{dataRow.publishdate | date('Y/m/d')}}" maxlength='15' data-format="YYYY/MM/DD" data-initialValue='false' data-view="day">
   </div>
 </div>
 {% endblock %}
