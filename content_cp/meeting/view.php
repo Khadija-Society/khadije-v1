@@ -40,6 +40,13 @@ class view
 			$args['posts.user_id'] = \dash\user::id();
 		}
 
+		$user = \dash\request::get('user');
+
+		if($user && $user = \dash\coding::decode($user))
+		{
+			$args['posts.user_id'] = $user;
+		}
+
 		$args['posts.type'] = 'meeting';
 		$args['limit']      = 3;
 
@@ -55,12 +62,18 @@ class view
 
 		\dash\data::dataTable(self::meeting_list($search_string, $args));
 
-		// $filterArray = $args;
-		// unset($filterArray['type']);
+		$filterArray = $args;
+		unset($filterArray['posts.type']);
+		unset($filterArray['limit']);
+		if(isset($filterArray['posts.user_id']))
+		{
+			$filterArray[T_("User")] = \dash\coding::encode($filterArray['posts.user_id']);
+			unset($filterArray['posts.user_id']);
+		}
 
-		// // set dataFilter
-		// $dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
-		// \dash\data::dataFilter($dataFilter);
+		// set dataFilter
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
+		\dash\data::dataFilter($dataFilter);
 	}
 
 	public static function meeting_list($_string = null, $_options = [])

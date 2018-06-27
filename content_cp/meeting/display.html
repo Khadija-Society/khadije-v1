@@ -58,7 +58,7 @@
         <img alt="{{value.displayname}}" src="{{value.avatar}}">
         <div class="content">
           <div class="header"><small>{{value.firstname}}</small> <span class="fs09 txtB">{{value.lastname}}</span></div>
-          <div class="meta">{{value.user_title}} <a href="{{url.this}}?user={{value.user_id}}"><span class="sf-filter"></span></a></div>
+          <div class="meta">{{value.user_title}} <a href="{{url.this}}?user={{value.user_id | coding('encode')}}"><span class="sf-filter"></span></a></div>
         </div>
         <div class="footer txtC"><a href="tel:{{value.mobile}}">{{value.mobile | fitNumber("mobile")}}</a></div>
       </div>
@@ -131,7 +131,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg warn2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.here}}/health">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -139,7 +139,7 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.here}}/health">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
