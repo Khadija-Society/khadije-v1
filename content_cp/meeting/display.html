@@ -50,7 +50,7 @@
 
 
 {%block htmlTable%}
- <div class="cbox fs12">
+ <div class="cbox fs13">
 {%for key, value in dataTable%}
   <div class="msg f pA align-center">
     <div class="cauto s12 pRa10">
@@ -58,7 +58,7 @@
         <img alt="{{value.displayname}}" src="{{value.avatar}}">
         <div class="content">
           <div class="header"><small>{{value.firstname}}</small> <span class="fs09 txtB">{{value.lastname}}</span></div>
-          <div class="meta">{{value.user_title}}</div>
+          <div class="meta">{{value.user_title}} <a href="{{url.this}}?user={{value.user_id}}"><span class="sf-filter"></span></a></div>
         </div>
         <div class="footer txtC"><a href="tel:{{value.mobile}}">{{value.mobile | fitNumber("mobile")}}</a></div>
       </div>
