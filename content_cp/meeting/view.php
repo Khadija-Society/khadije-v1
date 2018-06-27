@@ -92,7 +92,11 @@ class view
 
 	public static function enter_to_space($_data)
 	{
-		return str_replace("\n", " ", $_data);
+		$_data = str_replace("</", " </", $_data);
+		$_data = str_replace("\n", " ", $_data);
+		$_data = str_replace("<br>", " ", $_data);
+		$_data = trim($_data);
+		return $_data;
 	}
 }
 ?>
