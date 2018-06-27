@@ -3,7 +3,7 @@
 
 
 {%block pageContent%}
-		
+
 	{%if not requestGET or requestGET.step == 'add' %}
 		{{block('add_new_meeting')}}
 	{%elseif requestGET.step == 'report'%}
@@ -28,8 +28,8 @@
 					</div>
 				</div>
 			</div>
-			{{block('iSubtitle')}}
-			{{block('iExcerpt')}}
+			{{block('iOrderBefore')}}
+			{{block('iMembers')}}
 			{{block('iadd')}}
 		</div>
 	</div>
@@ -44,13 +44,13 @@
 <form class="f justify-center" method="post" autocomplete="off">
 	<div class="c12 s12 pRa10">
 		<div class="cbox">
-			
+
 				<div class="msg">{{dataRow.title}}</div>
 				<div class="msg">{{dataRow.subtitle}}</div>
 				<div class="msg">{{dataRow.excerpt}}</div>
 
 				<input type="hidden" name="title" value="{{dataRow.title}}">
-			
+
 			{{block('iContent')}}
 			{{block('iContent2')}}
 			{{block('iadd')}}
@@ -70,8 +70,20 @@
 
 
 
-{%block iExcerpt %}
-<textarea class="txt mB10" name="excerpt" id="excerpt" placeholder='{%trans "Enter list of precent member"%} *' maxlength='300' minlength="1"  rows='3'>{{dataRow.excerpt}}</textarea>
+{%block iMembers %}
+<div class="tagDetector">
+  <label>{%trans "Meeting members"%}</label>
+{%set postTag = dataRow.excerpt %}
+  <div class="input mB10 hide">
+    <input type="text" class="input tagVals" name="tag" value="{{postTag}}" id="tagValues" placeholder='{%trans "Tag"%}'>
+  </div>
+
+  <div class="input" title='{%trans "add name of invited person to list of members "%} {%trans "Type name of members and add them to meeting"%}'>
+    <input type="text" class="tagInput" placeholder=''>
+    <button class="addon tagAdd">{%trans "Add member"%}</button>
+  </div>
+  <div class="tagBox"></div>
+</div>
 {% endblock %}
 
 
@@ -79,7 +91,7 @@
 <div title='{%trans "Date of meeting"%}'>
   <label for="publishdate">{%trans "Meeting date"%}</label>
   <div class="input ltr">
-    <input class="datepicker" type="text" name="publishdate" id="publishdate" placeholder='{%trans "Meeting date"%}' value="{{dataRow.publishdate}}" maxlength='15' data-format="YYYY/MM/DD" data-initialValue='false' data-view="day">
+    <input class="datepicker" type="text" name="publishdate" id="publishdate" placeholder='' value="{{dataRow.publishdate}}" maxlength='15' data-format="YYYY/MM/DD" data-initialValue='false' data-view="day">
   </div>
 </div>
 {% endblock %}
@@ -87,14 +99,16 @@
 {%block iTitle %}
 <label for="title">{%trans "Meeting Title"%}</label>
 <div class="input mB10">
-  <input type="text" name="title" id="title" placeholder='{%trans "Enter title of meeting here"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}">
+  <input type="text" name="title" id="title" placeholder='' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}">
 </div>
 {% endblock %}
 
 
-{%block iSubtitle %}
-<textarea class="txt mB10"  name="subtitle" placeholder='{%trans "Order of meeting"%}' maxlength='100000' rows="4">{{dataRow.subtitle}}</textarea>
-
+{%block iOrderBefore %}
+<label for="order">{%trans "Order of meeting"%}</label>
+<div class="input mB10">
+  <input type="text" name="order" id="order" placeholder='' value="{{dataRow.subtitle}}" required maxlength='200'>
+</div>
 {% endblock %}
 
 
