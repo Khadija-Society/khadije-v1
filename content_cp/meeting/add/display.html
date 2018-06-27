@@ -30,7 +30,7 @@
 			</div>
 			{{block('iOrderBefore')}}
 			{{block('iMembers')}}
-			{{block('iadd')}}
+			<button class="btn primary block mT20">{%trans "Save pre requirement of meeting as draft"%}</button>
 		</div>
 	</div>
 </form>
@@ -43,17 +43,21 @@
 {%block edit_old_meeting%}
 <form class="f justify-center" method="post" autocomplete="off">
 	<div class="c12 s12 pRa10">
-		<div class="cbox">
-
-				<div class="msg">{{dataRow.title}}</div>
-				<div class="msg">{{dataRow.subtitle}}</div>
-				<div class="msg">{{dataRow.excerpt}}</div>
-
-				<input type="hidden" name="title" value="{{dataRow.title}}">
-
+    <div class="cbox">
+      <div class="msg info2 mB0">
+        <div class="f">
+          <div class="c">
+            <div>{{dataRow.title}}</div>
+            <div>{{dataRow.subtitle}}</div>
+            <div>{{dataRow.excerpt}}</div>
+          </div>
+          <div class="c"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cbox">
 			{{block('iContent')}}
-			{{block('iContent2')}}
-			{{block('iadd')}}
+			<button class="btn primary block mT20">{%trans "Save and send meeting report"%}</button>
 		</div>
 	</div>
 	<div class="cbox">
@@ -115,16 +119,8 @@
 
 
 {%block iContent%}
-<textarea class="txt mB10" id='descInput' name="content" placeholder='{%trans "Report title"%}' maxlength='100000' rows="5">{{dataRow.content}}</textarea>
-{%endblock%}
-
-{%block iContent2%}
-<textarea class="txt mB10" id='descInput' name="content2" placeholder='{%trans "Report order"%}' maxlength='100000' rows="10">{{dataRow.meta}}</textarea>
-{%endblock%}
-
-
-{%block iContent3%}
-<textarea class="txt mB10" id='descInput' name="content3" placeholder='{%trans "Write result here"%}' maxlength='100000' rows="8">{{dataRow.content}}</textarea>
+<label for="descInput">{%trans "Type subject and approvals of meeting and any description you need."%}</label>
+<textarea class="txt mB10" data-editor id='descInput' name="content" placeholder='{%trans "Write post "%}' maxlength='100000' rows="15">{{dataRow.content}}</textarea>
 {%endblock%}
 
 
