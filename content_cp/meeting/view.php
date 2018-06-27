@@ -68,7 +68,13 @@ class view
 
 		$default_option =
 		[
-			'search_field'      => " ( posts.title LIKE '%__string__%' ) ",
+			'search_field'      =>
+			"
+				(
+					posts.title LIKE '%__string__%' OR
+					posts.subtitle LIKE '%__string__%'
+				)
+			 ",
 			'public_show_field' => " posts.*, users.displayname, users.avatar, users.firstname, users.lastname, users.title AS `user_title`, users.mobile",
 			'master_join'       => " INNER JOIN users ON users.id = posts.user_id ",
 		];

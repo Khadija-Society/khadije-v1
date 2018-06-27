@@ -1,9 +1,5 @@
 {
-  "ControlPanel": {
-    "title": "ControlPanel",
-    "cat": "Control Panel",
-    "require": []
-  },
+
   "cpTripEdit": {
     "title": "cpTripEdit",
     "cat": "Trip",
