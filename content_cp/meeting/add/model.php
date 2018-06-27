@@ -45,6 +45,33 @@ class model
 	}
 
 
+	public static function check_valid_id()
+	{
+		$id = \dash\request::get('id');
+		$id = \dash\coding::decode($id);
+		if(!$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$load = \dash\db\posts::get(['id' => $id, 'limit' => 1]);
+
+		if(!$load || !isset($load['user_id']))
+		{
+			\dash\notif::error(T_("Id not found"));
+			return false;
+		}
+
+		if(intval($load['user_id']) !== intval(\dash\user::id()))
+		{
+			\dash\notif::error(T_("This meeting is not for you!"));
+			return false;
+		}
+		return true;
+	}
+
+
 	public static function post()
 	{
 		if(self::upload_gallery())
@@ -65,25 +92,8 @@ class model
 				'content' => \dash\request::post('content'),
 			];
 
-			$id = \dash\request::get('id');
-			$id = \dash\coding::decode($id);
-			if(!$id)
+			if(!self::check_valid_id())
 			{
-				\dash\notif::error(T_("Invalid id"));
-				return false;
-			}
-
-			$load = \dash\db\posts::get(['id' => $id, 'limit' => 1]);
-
-			if(!$load || !isset($load['user_id']))
-			{
-				\dash\notif::error(T_("Id not found"));
-				return false;
-			}
-
-			if(intval($load['user_id']) !== intval(\dash\user::id()))
-			{
-				\dash\notif::error(T_("This meeting is not for you!"));
 				return false;
 			}
 
@@ -142,17 +152,33 @@ class model
 
 			$post['publishdate'] = $publishdate;
 
-			$new_post_id = \dash\db\posts::insert($post);
-
-			if(!$new_post_id)
+			if(\dash\request::get('step') === 'add' && \dash\request::get('id'))
 			{
-				\dash\notif::error(T_("No way to add new meeting now"));
-				return false;
+				$new_post_id = \dash\request::get('id');
+
+				if(!self::check_valid_id())
+				{
+					return false;
+				}
+				\dash\db\posts::update($post, \dash\coding::decode(\dash\request::get('id')));
+				\dash\notif::ok(T_("Meeting detail was saved"));
 			}
+			else
+			{
+				$new_post_id = \dash\db\posts::insert($post);
+				if(!$new_post_id)
+				{
+					\dash\notif::error(T_("No way to add new meeting now"));
+					return false;
+				}
+
+				$new_post_id = \dash\coding::encode($new_post_id);
+			}
+
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::to(\dash\url::here(). '/meeting/add?step=report&id='. \dash\coding::encode($new_post_id));
+				\dash\redirect::to(\dash\url::here(). '/meeting/add?step=report&id='. $new_post_id);
 				return;
 			}
 		}

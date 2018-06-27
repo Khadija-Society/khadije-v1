@@ -35,8 +35,16 @@ class view
 				\dash\header::status(404, T_("Id not found"));
 			}
 
-			\dash\data::dataRow($load);
+			if(isset($load['meta']))
+			{
+				$load['meta'] = json_decode($load['meta'], true);
+				if(isset($load['meta']['member']))
+				{
+					$load['meta']['member_array'] = explode(',', $load['meta']['member']);
+				}
+			}
 
+			\dash\data::dataRow($load);
 		}
 	}
 
