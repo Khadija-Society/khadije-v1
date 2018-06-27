@@ -4,131 +4,274 @@ class twigTransTerms
  private function transtext()
  {
 
-	//--------------------------------------addons/content_enter/sessions/display.html
-	echo T_("Terminate");                                                             // Line 11
+	//--------------------------------------addons\content_account\appkey\display.html
+	echo T_("YOUR API KEY");                                                          // Line 8
+	echo T_("GENERATE NEW API KEY");                                                  // Line 9
+	echo T_("Get new API KEY");                                                       // Line 11
 
-	//------------------------------------------addons/content_enter/home/display.html
-	echo T_("You");                                                                   // Line 5
+	//------------------------------addons\content_account\billing\detail\display.html
+	echo T_("Name");                                                                  // Line 17
+	echo T_("plan");                                                                  // Line 12
+	echo T_("Start plan");                                                            // Line 13
+	echo T_("Active member");                                                         // Line 14
+	echo T_("Usage");                                                                 // Line 79
+	echo T_("You are not have billing detail yet!");                                  // Line 39
 
-	//----------------------------------------addons/content_enter/delete/display.html
-	echo T_("Why you want to delete your account!?");                                 // Line 5
+	//-------------------------------------addons\content_account\billing\display.html
+	echo T_("Charge your account");                                                   // Line 9
+	echo T_("Choose a gateway and enter an amount to charge your account");           // Line 10
+	echo T_("Parsian");                                                               // Line 13
+	echo T_("Amount");                                                                // Line 40
+	echo T_("Checkout");                                                              // Line 41
+	echo T_("Promo code");                                                            // Line 43
+	echo T_("If you have a promo code, please enter it below to receive your credit.");// Line 49
+	echo T_("Promo Code");                                                            // Line 65
+	echo T_("Apply Code");                                                            // Line 55
+	echo T_("Your credit");                                                           // Line 70
+	echo T_("Click to check detail");                                                 // Line 73
+	echo T_("Billing History");                                                       // Line 89
+	echo T_("Title");                                                                 // Line 56
+	echo T_("Date");                                                                  // Line 65
+	echo T_("Value");                                                                 // Line 14
+	echo T_("Budget After");                                                          // Line 96
+	echo T_("Invoice");                                                               // Line 97
+	echo T_("You are not have payment history yet!");                                 // Line 139
 
-	//--------------------------------addons/content_enter/delete/request/display.html
-	echo T_("We detected two accout for you");                                        // Line 7
-	echo T_("Please remove one of them and");                                         // Line 8
-	echo T_("if you want to delete this account");                                    // Line 8
-	echo T_("click here");                                                            // Line 9
+	//-----------------------------addons\content_account\billing\invoice\display.html
+	echo T_("Factor of team");                                                        // Line 8
+	echo T_("Total");                                                                 // Line 3
+	echo T_("Price");                                                                 // Line 20
+	echo T_("Count");                                                                 // Line 91
 
-	//----------------------------------------addons/content_enter/verify/display.html
-	echo T_("Send code in your Telegram");                                            // Line 11
-	echo T_("Send code as sms to your phone");                                        // Line 18
-	echo T_("Call you to send code");                                                 // Line 25
-	echo T_("You send code to us and we check it");                                   // Line 33
-	echo T_("Send code in your email");                                               // Line 41
-	echo T_("Remembered your password?");                                             // Line 11
+	//----------------------------------------addons\content_account\home\display.html
+	echo T_("Profile");                                                               // Line 9
+	echo T_("Billing");                                                               // Line 8
 
-	//-----------------------------------addons/content_enter/verify/what/display.html
-	echo T_("We can not find eny way to send verification code to you!");             // Line 6
-	echo T_("You must set a mobile or email to continue");                            // Line 7
-	echo T_("Go back");                                                               // Line 166
+	//----------------------------------------------addons\content_account\layout.html
+	echo T_("Dashboard");                                                             // Line 70
 
-	//----------------------------------addons/content_enter/verify/email/display.html
+	//-------------------------------------addons\content_account\profile\display.html
+	echo T_("Name and Global Details");                                               // Line 12
+	echo T_("Email and Social Networks");                                             // Line 25
+	echo T_("Security and Enter");                                                    // Line 37
+	echo T_("Improve User Experience");                                               // Line 47
+	echo T_("Two step verification");                                                 // Line 68
+	echo T_("Show sidebar");                                                          // Line 74
+	echo T_("Default language");                                                      // Line 84
+	echo T_("Select one item");                                                       // Line 250
+	echo T_("Website");                                                               // Line 98
+	echo T_("like");                                                                  // Line 98
+	echo T_("Enter a valid website from 3 to 40 character");                          // Line 98
+	echo T_("Instagram");                                                             // Line 108
+	echo T_("Enter a valid instagram from 3 to 40 character");                        // Line 108
+	echo T_("Facebook");                                                              // Line 116
+	echo T_("Enter a valid facebook from 3 to 40 character");                         // Line 116
+	echo T_("Twitter");                                                               // Line 125
+	echo T_("Enter a valid twitter from 3 to 40 character");                          // Line 125
+	echo T_("Linkedin");                                                              // Line 134
+	echo T_("Enter a valid linkedin from 3 to 40 character");                         // Line 134
+	echo T_("Gmail");                                                                 // Line 141
+	echo T_("Like");                                                                  // Line 281
+	echo T_("Firstname");                                                             // Line 152
+	echo T_("Enter a valid firstname from 3 to 40 character");                        // Line 152
+	echo T_("Lastname");                                                              // Line 161
+	echo T_("Enter a valid lastname from 3 to 40 character");                         // Line 161
+	echo T_("Username");                                                              // Line 30
+	echo T_("Enter a valid username from 3 to 40 character");                         // Line 170
+	echo T_("Nick name");                                                             // Line 177
+	echo T_("Enter a valid title from 3 to 40 character");                            // Line 179
+	echo T_("Type");                                                                  // Line 158
+	echo T_("Enter a valid type from 3 to 40 character");                             // Line 189
+	echo T_("Birthday");                                                              // Line 51
+	echo T_("Require");                                                               // Line 230
+	echo T_("Bio");                                                                   // Line 204
+	echo T_("Display name");                                                          // Line 27
+	echo T_("Enter a valid displayname from 3 to 40 character");                      // Line 212
+	echo T_("Mobile");                                                                // Line 16
+	echo T_("Like 09120123456");                                                      // Line 222
+	echo T_("Gender");                                                                // Line 54
+	echo T_("Male");                                                                  // Line 57
+	echo T_("Female");                                                                // Line 61
+	echo T_("Status");                                                                // Line 28
+	echo T_("Active");                                                                // Line 251
+	echo T_("Awaiting");                                                              // Line 252
+	echo T_("Deactive");                                                              // Line 253
+	echo T_("Removed");                                                               // Line 254
+	echo T_("Filter");                                                                // Line 255
+	echo T_("Unreachable");                                                           // Line 256
+	echo T_("Permission");                                                            // Line 36
+	echo T_("No permission");                                                         // Line 269
+	echo T_("Email");                                                                 // Line 108
+	echo T_("To change your password");                                               // Line 280
+	echo T_("Click here");                                                            // Line 280
+	echo T_("Delete your account");                                                   // Line 285
+	echo T_("Confirm password");                                                      // Line 296
+	echo T_("Require to change current password");                                    // Line 296
+	echo T_("Password was set, enter to change it!");                                 // Line 298
+	echo T_("Password not set, enter to set it!");                                    // Line 294
+	echo T_("Add");                                                                   // Line 130
+	echo T_("Save");                                                                  // Line 46
+	echo T_("Save all");                                                              // Line 324
 
-	//---------------------------------addons/content_enter/pass/recovery/display.html
+	//-----------------------------------------addons\content_account\ref\display.html
+	echo T_("Referral Program");                                                      // Line 11
+	echo T_("Nobody can tell the Jibres story better than our customers.");           // Line 6
+	echo T_("Nobody can tell the Jibres story better than you;)");                    // Line 12
+	echo T_("How it works?");                                                         // Line 16
+	echo T_("Tell your friends about the Jibres story.");                             // Line 19
+	echo T_("Refer your friends through Social Media or Email.");                     // Line 20
+	echo T_("Share the referral rewards program with friends on Facebook, Twitter, or Email.");// Line 20
+	echo T_("When they click on your post, we’ll know it was you who referred them.");// Line 20
+	echo T_("If someone forget to use your link, we allow to set your ref code as promo code in billing page!");// Line 20
+	echo T_("Your friend enter to Jibres and receives credit.");                      // Line 23
+	echo T_("Your friend enter and receives $5 account credit.");                     // Line 24
+	echo T_("Anyone you refer to Jibres that enter using your unique referral link or your promo code will receive $5 in credit.");// Line 24
+	echo T_("You all get rewarded.");                                                 // Line 27
+	echo T_("Jibres rewards are charge in your account after 7 work days of confirmation.");// Line 28
+	echo T_("Amount of charge is depended on your friend total pay and after automatic calculation, system set your gift.");// Line 28
+	echo T_("We calculate your percentage until 6 month of your friend registration. Because of that it was your chance to convinced your friend to charge more!");// Line 28
+	echo T_("Share your link");                                                       // Line 34
+	echo T_("Copy your personal referral link and share it with your friends and followers.");// Line 35
+	echo T_("Link");                                                                  // Line 38
+	echo T_("Referral stats");                                                        // Line 51
+	echo T_("CLICKS");                                                                // Line 55
+	echo T_("Number of times your link has been opened.");                            // Line 56
+	echo T_("REFERRALS");                                                             // Line 60
+	echo T_("People who enter to Jibres using your link.");                           // Line 61
+	echo T_("People who connected to you with promo code.");                          // Line 66
+	echo T_("Total you refed");                                                       // Line 71
+	echo T_("Sum of people referred from you.");                                      // Line 72
+	echo T_("Active users");                                                          // Line 77
+	echo T_("People who work with their account.");                                   // Line 78
+	echo T_("You earned");                                                            // Line 120
+	echo T_("Description");                                                           // Line 51
+	echo T_("Percentage");                                                            // Line 90
+	echo T_("Level 1");                                                               // Line 96
+	echo T_("People who pay more than 25$.");                                         // Line 97
+	echo T_("Level 2");                                                               // Line 102
+	echo T_("People who pay more than 50$.");                                         // Line 103
+	echo T_("Level 3");                                                               // Line 108
+	echo T_("People who pay more than 500$.");                                        // Line 109
+	echo T_("Level 4");                                                               // Line 114
+	echo T_("People who pay more than 5000$.");                                       // Line 115
+	echo T_("Sum of your credit earned from refs.");                                  // Line 121
+	echo T_("Confirm earned");                                                        // Line 126
+	echo T_("Sum of confirmed credit earned from refs.");                             // Line 127
+	echo T_("Enter to get a unique referral link.");                                  // Line 139
+	echo T_("Use our logo to help spread the word.");                                 // Line 141
+	echo T_("Enter to Jibres");                                                       // Line 144
 
-	//------------------------------------------addons/content_enter/pass/display.html
-	echo T_("Can't access your account?");                                            // Line 12
+	//----------------------------------------addons\content_account\view\display.html
+	echo T_("Toggle side bar");                                                       // Line 10
+	echo T_("You can save side bar status");                                          // Line 11
+	echo T_("Are your need side bar?");                                               // Line 18
 
-	//--------------------------------------addons/content_enter/callback/display.html
-	echo T_("Hi");                                                                    // Line 7
-	echo T_("You must not be here!");                                                 // Line 7
-
-	//----------------------------------------addons/content_enter/google/display.html
-
-	//----------------------------------------addons/content_enter/byebye/display.html
-	echo T_("We are so sorry for losing you!");                                       // Line 7
-	echo T_("if you want you can come back to");                                      // Line 8
-	echo T_("join us");                                                               // Line 8
-	echo T_("Bye Bye :(");                                                            // Line 9
-
-	//-----------------------------------------addons/content_enter/block/display.html
-	echo T_("You are blocked becauese of some reason!");                              // Line 7
-	echo T_("If have problem");                                                       // Line 8
-	echo T_("Contact us");                                                            // Line 8
-
-	//-------------------------------------------addons/content_enter/ban/display.html
-	echo T_("What are you doing!");                                                   // Line 7
-	echo T_("If you are bot, be easy and call your mom");                             // Line 8
-	echo T_("If you are human being, what are you doing here! be personable...");     // Line 9
-
-	//----------------------------------addons/content_enter/email/change/display.html
-	echo T_("Remove my email address");                                               // Line 12
-
-	//---------------------------addons/content_enter/email/change/google/display.html
-	echo T_("We found your Google Mail that is different from your current google mail");// Line 6
-	echo T_("Would you like to change your old google mail?");                        // Line 7
-	echo T_("Change to");                                                             // Line 10
-	echo T_("Update google mail");                                                    // Line 14
-	echo T_("Don't change");                                                          // Line 16
-
-	//------------------------------------------addons/content_enter/okay/display.html
-	echo T_("You are logined ;)");                                                    // Line 8
-	echo T_("Be patient or");                                                         // Line 9
-	echo T_("click here!");                                                           // Line 9
-
-	//----------------------------------addons/content_enter/autoredirect/display.html
-	echo T_("Go");                                                                    // Line 144
-
-	//-------------------------------addons/content_enter/username/change/display.html
-	echo T_("Remove username");                                                       // Line 12
-
-	//--------------------------------------------addons/content_cp/terms/display.html
-	echo T_("Search");                                                                // Line 14
-	echo T_("Title");                                                                 // Line 19
-	echo T_("Slug");                                                                  // Line 8
-	echo T_("Type");                                                                  // Line 186
-	echo T_("Used");                                                                  // Line 92
-	echo T_("Status");                                                                // Line 245
-	echo T_("Add");                                                                   // Line 312
-	echo T_("Edit");                                                                  // Line 33
-	echo T_("Remove");                                                                // Line 101
-	echo T_("Require");                                                               // Line 227
-	echo T_("Title is used to show on website");                                      // Line 132
-	echo T_("Used for url");                                                          // Line 138
-	echo T_("Used in url for categorize addresses");                                  // Line 140
-	echo T_("Parent Category");                                                       // Line 147
-	echo T_("Please select one itme");                                                // Line 149
-	echo T_("Description");                                                           // Line 89
-	echo T_("Active");                                                                // Line 248
-	echo T_("Deactive");                                                              // Line 250
-	echo T_("Excerpt");                                                               // Line 179
-	echo T_("Clear filters");                                                         // Line 106
-	echo T_("Result not found!");                                                     // Line 105
-	echo T_("Search with new keywords.");                                             // Line 105
-	echo T_("Hi!");                                                                   // Line 112
-	echo T_("Try to start with add new records!");                                    // Line 203
-	echo T_("Language");                                                              // Line 112
-	echo T_("Please select one item");                                                // Line 28
-
-	//-------------------------------------------addons/content_cp/backup/display.html
+	//-------------------------------------------addons\content_cp\backup\display.html
 	echo T_("Backup Project");                                                        // Line 6
 	echo T_("You can create backup now");                                             // Line 33
 	echo T_("Please wait This operation may take a few minutes");                     // Line 13
 	echo T_("Backup now");                                                            // Line 34
+	echo T_("Remove");                                                                // Line 101
 	echo T_("Sise");                                                                  // Line 100
 	echo T_("Download");                                                              // Line 102
 	echo T_("No backup was found");                                                   // Line 107
 
-	//------------------------------------------addons/content_cp/visitor/display.html
+	//----------------------------------------------addons\content_cp\cms\display.html
+	echo T_("Comments");                                                              // Line 36
+	echo T_("Posts");                                                                 // Line 32
+	echo T_("Page");                                                                  // Line 43
+	echo T_("Category");                                                              // Line 54
+	echo T_("Tags");                                                                  // Line 21
+
+	//-------------------------------------addons\content_cp\contact\edit\display.html
+	echo T_("Author");                                                                // Line 54
+	echo T_("Submitted on");                                                          // Line 33
+	echo T_("Updated on");                                                            // Line 34
+	echo T_("Current status");                                                        // Line 36
+	echo T_("Approve");                                                               // Line 100
+	echo T_("Unapprove");                                                             // Line 102
+	echo T_("Trash");                                                                 // Line 103
+	echo T_("Spam");                                                                  // Line 104
+	echo T_("Update");                                                                // Line 75
+
+	//-------------------------------------addons\content_cp\contact\home\display.html
+	echo T_("Search");                                                                // Line 14
+	echo T_("Detail");                                                                // Line 26
+	echo T_("Comment");                                                               // Line 105
+	echo T_("Without name");                                                          // Line 87
+	echo T_("Visitor detail");                                                        // Line 95
+	echo T_("Edit");                                                                  // Line 128
+	echo T_("Created on");                                                            // Line 108
+	echo T_("Clear filters");                                                         // Line 104
+	echo T_("Result not found!");                                                     // Line 103
+	echo T_("Search with new keywords.");                                             // Line 103
+	echo T_("No record exist!");                                                      // Line 135
+
+	//---------------------------------------addons\content_cp\email\home\display.html
+	echo T_("Your sms panel balance");                                                // Line 18
+	echo T_("Toman");                                                                 // Line 29
+	echo T_("Send quick");                                                            // Line 27
+	echo T_("Group send");                                                            // Line 36
+	echo T_("Template");                                                              // Line 33
+
+	//---------------------------------------addons\content_cp\email\send\display.html
+	echo T_("What do you want to send to this user?");                                // Line 59
+	echo T_("Send");                                                                  // Line 63
+
+	//---------------------------------------------addons\content_cp\home\display.html
+	echo T_("Control Panel");                                                         // Line 107
 	echo T_("CMS");                                                                   // Line 59
 
-	//---------------------------------------------addons/content_cp/home/display.html
-	echo T_("Control Panel");                                                         // Line 107
+	//---------------------------------------------------addons\content_cp\layout.html
+	echo T_("News");                                                                  // Line 15
+	echo T_("Categries");                                                             // Line 18
+	echo T_("Pages");                                                                 // Line 24
+	echo T_("Contact");                                                               // Line 14
+	echo T_("Contact US");                                                            // Line 40
+	echo T_("Users");                                                                 // Line 10
+	echo T_("Add new user");                                                          // Line 6
+	echo T_("Permissions");                                                           // Line 59
+	echo T_("SMS");                                                                   // Line 68
+	echo T_("Quick send");                                                            // Line 72
+	echo T_("Templates");                                                             // Line 78
+	echo T_("Powered by");                                                            // Line 21
+	echo T_("Some right reserved");                                                   // Line 21
+	echo T_("Ermile");                                                                // Line 21
+	echo T_("Version");                                                               // Line 21
 
-	//---------------------------------------addons/content_cp/posts/home/display.html
+	//----------------------------------------addons\content_cp\mycontact\display.html
+	echo T_("Admin Contact");                                                         // Line 29
+
+	//----------------------------------addons\content_cp\permission\add\permView.html
+	echo T_("Slug");                                                                  // Line 140
+	echo T_("The permission name should be unique and contain only alphanameric characters and underscores");// Line 14
+	echo T_("Name of your permission");                                               // Line 14
+	echo T_("The permission label is used to represent your permission in user management");// Line 18
+	echo T_("Label of your permission");                                              // Line 18
+
+	//--------------------------------addons\content_cp\permission\delete\display.html
+	echo T_("Label");                                                                 // Line 17
+
+	//---------------------------------------addons\content_cp\permission\display.html
+	echo T_("Permission title");                                                      // Line 10
+	echo T_("Customized");                                                            // Line 12
+	echo T_("Need double check permission for some sensitive permissions");           // Line 33
+	echo T_("Do hard check and need to enter again");                                 // Line 34
+	echo T_("Count of user in permission");                                           // Line 51
+	echo T_("Remove this permission if not need");                                    // Line 55
+	echo T_("No user");                                                               // Line 55
+	echo T_("Click to show list of user by this permission");                         // Line 57
+	echo T_("User");                                                                  // Line 54
+
+	//----------------------------------------addons\content_cp\posts\add\display.html
+	echo T_("First save as draft and do all checks, then publish.");                  // Line 26
+	echo T_("Save as draft");                                                         // Line 26
+
+	//---------------------------------------addons\content_cp\posts\home\display.html
 	echo T_("Categories");                                                            // Line 63
 	echo T_("Publish date");                                                          // Line 40
 	echo T_("Parent");                                                                // Line 29
+	echo T_("Hi!");                                                                   // Line 110
 	echo T_("Try to start with add new record!");                                     // Line 117
 	echo T_("All publish posts");                                                     // Line 128
 	echo T_("Published");                                                             // Line 131
@@ -137,11 +280,7 @@ class twigTransTerms
 	echo T_("All trash posts");                                                       // Line 146
 	echo T_("Deleted");                                                               // Line 94
 
-	//----------------------------------------addons/content_cp/posts/add/display.html
-	echo T_("First save as draft and do all checks, then publish.");                  // Line 26
-	echo T_("Save as draft");                                                         // Line 26
-
-	//---------------------------------------------addons/content_cp/posts/layout.html
+	//---------------------------------------------addons\content_cp\posts\layout.html
 	echo T_("Enter title here");                                                      // Line 4
 	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
 	echo T_("Enter subtitle here");                                                   // Line 11
@@ -157,10 +296,10 @@ class twigTransTerms
 	echo T_("Publish time");                                                          // Line 50
 	echo T_("Add to gallery");                                                        // Line 56
 	echo T_("To add image gallery drop file here or");                                // Line 57
-	echo T_("Save");                                                                  // Line 316
 	echo T_("Publish");                                                               // Line 84
-	echo T_("Comment");                                                               // Line 42
 	echo T_("You can publish in another language");                                   // Line 111
+	echo T_("Language");                                                              // Line 209
+	echo T_("Please select one item");                                                // Line 28
 	echo T_("Choose parent for this page to create related url as tree");             // Line 127
 	echo T_("Choose Parent");                                                         // Line 130
 	echo T_("Without Parent");                                                        // Line 131
@@ -180,98 +319,7 @@ class twigTransTerms
 	echo T_("PDF");                                                                   // Line 223
 	echo T_("Without preview");                                                       // Line 225
 
-	//-------------------------------------addons/content_cp/contact/edit/display.html
-	echo T_("Author");                                                                // Line 54
-	echo T_("Mobile");                                                                // Line 217
-	echo T_("Email");                                                                 // Line 272
-	echo T_("Website");                                                               // Line 93
-	echo T_("Submitted on");                                                          // Line 33
-	echo T_("Updated on");                                                            // Line 34
-	echo T_("Current status");                                                        // Line 36
-	echo T_("Approve");                                                               // Line 100
-	echo T_("Awaiting");                                                              // Line 249
-	echo T_("Unapprove");                                                             // Line 102
-	echo T_("Trash");                                                                 // Line 103
-	echo T_("Spam");                                                                  // Line 104
-	echo T_("Update");                                                                // Line 75
-
-	//-------------------------------------addons/content_cp/contact/home/display.html
-	echo T_("Detail");                                                                // Line 26
-	echo T_("Date");                                                                  // Line 9
-	echo T_("Without name");                                                          // Line 87
-	echo T_("Visitor detail");                                                        // Line 95
-	echo T_("Created on");                                                            // Line 108
-	echo T_("No record exist!");                                                      // Line 135
-
-	//----------------------------------------------addons/content_cp/cms/display.html
-	echo T_("Comments");                                                              // Line 36
-	echo T_("Posts");                                                                 // Line 32
-	echo T_("Page");                                                                  // Line 43
-	echo T_("Category");                                                              // Line 54
-	echo T_("Tags");                                                                  // Line 21
-
-	//---------------------------------------------------addons/content_cp/layout.html
-	echo T_("Dashboard");                                                             // Line 7
-	echo T_("News");                                                                  // Line 15
-	echo T_("Categries");                                                             // Line 18
-	echo T_("Pages");                                                                 // Line 24
-	echo T_("Contact");                                                               // Line 14
-	echo T_("Contact US");                                                            // Line 40
-	echo T_("Users");                                                                 // Line 10
-	echo T_("Add new user");                                                          // Line 6
-	echo T_("Permissions");                                                           // Line 59
-	echo T_("SMS");                                                                   // Line 68
-	echo T_("Quick send");                                                            // Line 72
-	echo T_("Group send");                                                            // Line 36
-	echo T_("Templates");                                                             // Line 78
-	echo T_("Powered by");                                                            // Line 21
-	echo T_("Some right reserved");                                                   // Line 21
-	echo T_("Ermile");                                                                // Line 21
-	echo T_("Version");                                                               // Line 21
-
-	//----------------------------------------addons/content_cp/mycontact/display.html
-	echo T_("Admin Contact");                                                         // Line 29
-
-	//----------------------------------addons/content_cp/permission/add/permView.html
-	echo T_("The permission name should be unique and contain only alphanameric characters and underscores");// Line 14
-	echo T_("Name of your permission");                                               // Line 14
-	echo T_("The permission label is used to represent your permission in user management");// Line 18
-	echo T_("Label of your permission");                                              // Line 18
-
-	//---------------------------------------addons/content_cp/permission/display.html
-	echo T_("Permission title");                                                      // Line 10
-	echo T_("Customized");                                                            // Line 12
-	echo T_("Need double check permission for some sensitive permissions");           // Line 33
-	echo T_("Do hard check and need to enter again");                                 // Line 34
-	echo T_("Count of user in permission");                                           // Line 51
-	echo T_("Remove this permission if not need");                                    // Line 55
-	echo T_("No user");                                                               // Line 55
-	echo T_("Click to show list of user by this permission");                         // Line 57
-	echo T_("User");                                                                  // Line 54
-
-	//--------------------------------addons/content_cp/permission/delete/display.html
-	echo T_("Name");                                                                  // Line 10
-	echo T_("Label");                                                                 // Line 17
-
-	//-------------------------------------addons/content_cp/sms/template/display.html
-	echo T_("List of template sms");                                                  // Line 24
-	echo T_("Template text");                                                         // Line 74
-	echo T_("Delete");                                                                // Line 31
-	echo T_("Template name");                                                         // Line 66
-	echo T_("Template Name");                                                         // Line 68
-	echo T_("Template Text");                                                         // Line 76
-
-	//-----------------------------------------addons/content_cp/sms/home/display.html
-	echo T_("Your sms panel balance");                                                // Line 18
-	echo T_("Toman");                                                                 // Line 29
-	echo T_("Send quick");                                                            // Line 27
-	echo T_("Template");                                                              // Line 46
-
-	//---------------------------------------addons/content_cp/sms/verify/display.html
-	echo T_("Send");                                                                  // Line 63
-	echo T_("Cancel");                                                                // Line 14
-
-	//----------------------------------------addons/content_cp/sms/group/display.html
+	//----------------------------------------addons\content_cp\sms\group\display.html
 	echo T_("Users mobile");                                                          // Line 13
 	echo T_("Every mobile in one line");                                              // Line 13
 	echo T_("What do you want to send to this users?");                               // Line 16
@@ -280,22 +328,34 @@ class twigTransTerms
 	echo T_("Group");                                                                 // Line 60
 	echo T_("No group");                                                              // Line 62
 
-	//-----------------------------------------addons/content_cp/sms/send/display.html
-	echo T_("What do you want to send to this user?");                                // Line 59
+	//-----------------------------------------addons\content_cp\sms\home\display.html
 
-	//---------------------------------------addons/content_cp/email/home/display.html
+	//-----------------------------------------addons\content_cp\sms\send\display.html
 
-	//---------------------------------------addons/content_cp/email/send/display.html
+	//-------------------------------------addons\content_cp\sms\template\display.html
+	echo T_("List of template sms");                                                  // Line 24
+	echo T_("Template text");                                                         // Line 74
+	echo T_("Delete");                                                                // Line 31
+	echo T_("Template name");                                                         // Line 66
+	echo T_("Template Name");                                                         // Line 68
+	echo T_("Template Text");                                                         // Line 76
 
-	//---------------------------------------addons/content_cp/users/view/display.html
-	echo T_("Field");                                                                 // Line 14
-	echo T_("Value");                                                                 // Line 95
+	//---------------------------------------addons\content_cp\sms\verify\display.html
+	echo T_("Cancel");                                                                // Line 14
 
-	//---------------------------------------addons/content_cp/users/home/display.html
-	echo T_("Username");                                                              // Line 167
+	//--------------------------------------------addons\content_cp\terms\display.html
+	echo T_("Used");                                                                  // Line 92
+	echo T_("Title is used to show on website");                                      // Line 132
+	echo T_("Used for url");                                                          // Line 138
+	echo T_("Used in url for categorize addresses");                                  // Line 140
+	echo T_("Parent Category");                                                       // Line 147
+	echo T_("Please select one itme");                                                // Line 149
+	echo T_("Excerpt");                                                               // Line 179
+	echo T_("Try to start with add new records!");                                    // Line 203
+
+	//---------------------------------------addons\content_cp\users\home\display.html
 	echo T_("Display Name");                                                          // Line 60
 	echo T_("Password");                                                              // Line 36
-	echo T_("Permission");                                                            // Line 261
 	echo T_("Created date");                                                          // Line 78
 	echo T_("Last Modified");                                                         // Line 81
 	echo T_("Mr");                                                                    // Line 96
@@ -310,76 +370,95 @@ class twigTransTerms
 	echo T_(":Teachers");                                                             // Line 178
 	echo T_("Students");                                                              // Line 189
 
-	//----------------------------------------addons/content_cp/users/set/display.html
-	echo T_("Name and Global Details");                                               // Line 12
-	echo T_("Email and Social Networks");                                             // Line 25
-	echo T_("Security and Enter");                                                    // Line 37
-	echo T_("Improve User Experience");                                               // Line 45
-	echo T_("Two step verification");                                                 // Line 63
-	echo T_("Show sidebar");                                                          // Line 69
-	echo T_("Default language");                                                      // Line 79
-	echo T_("Select one item");                                                       // Line 247
-	echo T_("like");                                                                  // Line 93
-	echo T_("Enter a valid website from 3 to 40 character");                          // Line 93
-	echo T_("Instagram");                                                             // Line 103
-	echo T_("Enter a valid instagram from 3 to 40 character");                        // Line 103
-	echo T_("Facebook");                                                              // Line 111
-	echo T_("Enter a valid facebook from 3 to 40 character");                         // Line 111
-	echo T_("Twitter");                                                               // Line 120
-	echo T_("Enter a valid twitter from 3 to 40 character");                          // Line 120
-	echo T_("Linkedin");                                                              // Line 129
-	echo T_("Enter a valid linkedin from 3 to 40 character");                         // Line 129
-	echo T_("Gmail");                                                                 // Line 137
-	echo T_("Like");                                                                  // Line 274
-	echo T_("Firstname");                                                             // Line 149
-	echo T_("Enter a valid firstname from 3 to 40 character");                        // Line 149
-	echo T_("Lastname");                                                              // Line 158
-	echo T_("Enter a valid lastname from 3 to 40 character");                         // Line 158
-	echo T_("Enter a valid username from 3 to 40 character");                         // Line 167
-	echo T_("Nick name");                                                             // Line 174
-	echo T_("Enter a valid title from 3 to 40 character");                            // Line 176
-	echo T_("Enter a valid type from 3 to 40 character");                             // Line 186
-	echo T_("Birthday");                                                              // Line 191
-	echo T_("Bio");                                                                   // Line 201
-	echo T_("Display name");                                                          // Line 209
-	echo T_("Enter a valid displayname from 3 to 40 character");                      // Line 209
-	echo T_("Like 09120123456");                                                      // Line 219
-	echo T_("Gender");                                                                // Line 227
-	echo T_("Male");                                                                  // Line 231
-	echo T_("Female");                                                                // Line 236
-	echo T_("Removed");                                                               // Line 251
-	echo T_("Filter");                                                                // Line 252
-	echo T_("Unreachable");                                                           // Line 253
+	//----------------------------------------addons\content_cp\users\set\display.html
 	echo T_("This user is supervisor!");                                              // Line 264
-	echo T_("No permission");                                                         // Line 263
 	echo T_("Enter to change pass");                                                  // Line 287
-	echo T_("Password was set, enter to change it!");                                 // Line 294
 	echo T_("Password not set, enter  to set it!");                                   // Line 298
-	echo T_("Confirm password");                                                      // Line 292
-	echo T_("Require to change current password");                                    // Line 292
-	echo T_("Save all");                                                              // Line 320
 
-	//-------------------------------------------addons/content_su/update/display.html
-	echo T_("If you dont know about this page, leave it!");                           // Line 6
-	echo T_("Submit this form carefully");                                            // Line 40
-	echo T_("Dash");                                                                  // Line 62
-	echo T_("Press it if you are sure!");                                             // Line 63
-	echo T_("Update All");                                                            // Line 63
-	echo T_("Last update");                                                           // Line 113
-	echo T_("Current Version");                                                       // Line 82
-	echo T_("Commits");                                                               // Line 122
-	echo T_("Do it if you know it");                                                  // Line 124
-	echo T_("Update Dash Repository");                                                // Line 94
-	echo T_("Dash Engine Location");                                                  // Line 103
-	echo T_("Update Repository");                                                     // Line 124
-	echo T_("Project database");                                                      // Line 132
-	echo T_("Addon Database");                                                        // Line 141
-	echo T_("Upgrade");                                                               // Line 160
-	echo T_("Backup");                                                                // Line 15
-	echo T_("Backup by dump");                                                        // Line 162
-	echo T_("Submit");                                                                // Line 217
+	//---------------------------------------addons\content_cp\users\view\display.html
+	echo T_("Field");                                                                 // Line 14
 
-	//-------------------------------------------addons/content_su/backup/display.html
+	//------------------------------------------addons\content_cp\visitor\display.html
+
+	//----------------------------------addons\content_enter\autoredirect\display.html
+	echo T_("Go");                                                                    // Line 144
+
+	//-------------------------------------------addons\content_enter\ban\display.html
+	echo T_("What are you doing!");                                                   // Line 7
+	echo T_("If you are bot, be easy and call your mom");                             // Line 8
+	echo T_("If you are human being, what are you doing here! be personable...");     // Line 9
+
+	//-----------------------------------------addons\content_enter\block\display.html
+	echo T_("You are blocked becauese of some reason!");                              // Line 7
+	echo T_("If have problem");                                                       // Line 8
+	echo T_("Contact us");                                                            // Line 8
+
+	//----------------------------------------addons\content_enter\byebye\display.html
+	echo T_("We are so sorry for losing you!");                                       // Line 7
+	echo T_("if you want you can come back to");                                      // Line 8
+	echo T_("join us");                                                               // Line 8
+	echo T_("Bye Bye :(");                                                            // Line 9
+
+	//--------------------------------------addons\content_enter\callback\display.html
+	echo T_("Hi");                                                                    // Line 7
+	echo T_("You must not be here!");                                                 // Line 7
+
+	//----------------------------------------addons\content_enter\delete\display.html
+	echo T_("Why you want to delete your account!?");                                 // Line 5
+
+	//--------------------------------addons\content_enter\delete\request\display.html
+	echo T_("We detected two accout for you");                                        // Line 7
+	echo T_("Please remove one of them and");                                         // Line 8
+	echo T_("if you want to delete this account");                                    // Line 8
+	echo T_("click here");                                                            // Line 9
+
+	//----------------------------------addons\content_enter\email\change\display.html
+	echo T_("Remove my email address");                                               // Line 12
+
+	//---------------------------addons\content_enter\email\change\google\display.html
+	echo T_("We found your Google Mail that is different from your current google mail");// Line 6
+	echo T_("Would you like to change your old google mail?");                        // Line 7
+	echo T_("Change to");                                                             // Line 10
+	echo T_("Update google mail");                                                    // Line 14
+	echo T_("Don't change");                                                          // Line 16
+
+	//----------------------------------------addons\content_enter\google\display.html
+
+	//------------------------------------------addons\content_enter\home\display.html
+	echo T_("You");                                                                   // Line 5
+
+	//------------------------------------------addons\content_enter\okay\display.html
+	echo T_("You are logined ;)");                                                    // Line 8
+	echo T_("Be patient or");                                                         // Line 9
+	echo T_("click here!");                                                           // Line 9
+
+	//------------------------------------------addons\content_enter\pass\display.html
+	echo T_("Can't access your account?");                                            // Line 12
+
+	//---------------------------------addons\content_enter\pass\recovery\display.html
+	echo T_("Remembered your password?");                                             // Line 48
+
+	//--------------------------------------addons\content_enter\sessions\display.html
+	echo T_("Terminate");                                                             // Line 11
+
+	//-------------------------------addons\content_enter\username\change\display.html
+	echo T_("Remove username");                                                       // Line 12
+
+	//----------------------------------------addons\content_enter\verify\display.html
+	echo T_("Send code in your Telegram");                                            // Line 11
+	echo T_("Send code as sms to your phone");                                        // Line 18
+	echo T_("Call you to send code");                                                 // Line 25
+	echo T_("You send code to us and we check it");                                   // Line 33
+	echo T_("Send code in your email");                                               // Line 41
+
+	//----------------------------------addons\content_enter\verify\email\display.html
+	echo T_("We can not find eny way to send verification code to you!");             // Line 6
+
+	//-----------------------------------addons\content_enter\verify\what\display.html
+	echo T_("You must set a mobile or email to continue");                            // Line 7
+	echo T_("Go back");                                                               // Line 166
+
+	//-------------------------------------------addons\content_su\backup\display.html
 	echo T_("Backup database");                                                       // Line 5
 	echo T_("Back");                                                                  // Line 22
 	echo T_("File is empty");                                                         // Line 15
@@ -408,7 +487,20 @@ class twigTransTerms
 	echo T_("3 days");                                                                // Line 180
 	echo T_("5 days");                                                                // Line 181
 
-	//---------------------------------------------addons/content_su/home/display.html
+	//------------------------------------------addons\content_su\cronjob\display.html
+	echo T_("Run cronjob for this service");                                          // Line 15
+
+	//-----------------------------------------addons\content_su\dbtables\display.html
+	echo T_("Search in :dbtabless");                                                  // Line 57
+	echo T_("Try to start with add new :dbtables!");                                  // Line 112
+
+	//-------------------------------------------------addons\content_su\home\chart.js
+	echo T_("CPU Usage");                                                             // Line 77
+	echo T_("Memory");                                                                // Line 86
+	echo T_("Disk usage");                                                            // Line 95
+	echo T_("percentage");                                                            // Line 130
+
+	//---------------------------------------------addons\content_su\home\display.html
 	echo T_("Raw table");                                                             // Line 39
 	echo T_("Cronjob");                                                               // Line 49
 	echo T_("Tools");                                                                 // Line 7
@@ -420,48 +512,12 @@ class twigTransTerms
 	echo T_("Send notify");                                                           // Line 151
 	echo T_("Sample");                                                                // Line 161
 
-	//-------------------------------------------------addons/content_su/home/chart.js
-	echo T_("CPU Usage");                                                             // Line 77
-	echo T_("Memory");                                                                // Line 86
-	echo T_("Disk usage");                                                            // Line 95
-	echo T_("percentage");                                                            // Line 130
-
-	//---------------------------------------------addons/content_su/info/display.html
+	//---------------------------------------------addons\content_su\info\display.html
 	echo T_("Info");                                                                  // Line 7
 	echo T_("Show server info");                                                      // Line 9
 	echo T_("Show PHP info");                                                         // Line 10
 
-	//-----------------------------------------addons/content_su/invoices/display.html
-	echo T_("ID");                                                                    // Line 24
-	echo T_("User id");                                                               // Line 18
-	echo T_("Is Temp?");                                                              // Line 19
-	echo T_("Total");                                                                 // Line 22
-	echo T_("Total Discount");                                                        // Line 22
-	echo T_("Count Detail");                                                          // Line 24
-	echo T_("desc");                                                                  // Line 34
-	echo T_("Yes");                                                                   // Line 39
-	echo T_("No");                                                                    // Line 41
-
-	//---------------------------------------------addons/content_su/logs/display.html
-	echo T_("Log item id");                                                           // Line 18
-	echo T_("Caller");                                                                // Line 20
-	echo T_("Priority");                                                              // Line 22
-	echo T_("User_id");                                                               // Line 23
-	echo T_("Data");                                                                  // Line 24
-	echo T_("Desc");                                                                  // Line 25
-	echo T_("createdate");                                                            // Line 26
-	echo T_("Meta");                                                                  // Line 28
-
-	//---------------------------------------addons/content_su/sendnotify/display.html
-	echo T_("Send every notification from every way to user");                        // Line 6
-	echo T_("Mobile or user_id");                                                     // Line 12
-	echo T_("Find Connection way");                                                   // Line 14
-	echo T_("Inner system notification");                                             // Line 42
-
-	//------------------------------------------addons/content_su/session/display.html
-	echo T_("Show $_SERVER");                                                         // Line 6
-
-	//-----------------------------------addons/content_su/invoicedetails/display.html
+	//-----------------------------------addons\content_su\invoicedetails\display.html
 	echo T_("id");                                                                    // Line 16
 	echo T_("invoice_id");                                                            // Line 17
 	echo T_("title");                                                                 // Line 19
@@ -469,31 +525,32 @@ class twigTransTerms
 	echo T_("count");                                                                 // Line 20
 	echo T_("total");                                                                 // Line 21
 	echo T_("discount");                                                              // Line 22
+	echo T_("desc");                                                                  // Line 34
 
-	//---------------------------------------------------addons/content_su/layout.html
+	//-----------------------------------------addons\content_su\invoices\display.html
+	echo T_("ID");                                                                    // Line 24
+	echo T_("User id");                                                               // Line 18
+	echo T_("Is Temp?");                                                              // Line 19
+	echo T_("Total Discount");                                                        // Line 22
+	echo T_("Count Detail");                                                          // Line 24
+	echo T_("Yes");                                                                   // Line 39
+	echo T_("No");                                                                    // Line 41
+
+	//---------------------------------------------------addons\content_su\layout.html
 	echo T_("Send Nofity");                                                           // Line 11
 	echo T_("Sample Design");                                                         // Line 13
 
-	//---------------------------------addons/content_su/transactions/add/display.html
-	echo T_("type");                                                                  // Line 16
-	echo T_("Money");                                                                 // Line 19
-	echo T_("Gift");                                                                  // Line 20
-	echo T_("Transfer");                                                              // Line 21
-	echo T_("Prize");                                                                 // Line 22
-	echo T_("Unit");                                                                  // Line 26
-	echo T_("$");                                                                     // Line 30
-	echo T_("Minus");                                                                 // Line 59
-	echo T_("Plus");                                                                  // Line 58
+	//--------------------------------------------addons\content_su\linfo\display.html
+	echo T_("First you need to enable COM on windows");                               // Line 5
+	echo T_("Read More");                                                             // Line 7
 
-	//-------------------------------------addons/content_su/transactions/display.html
-	echo T_("Search in :transactionss");                                              // Line 41
-	echo T_("Budget before");                                                         // Line 60
-	echo T_("Budget");                                                                // Line 61
-	echo T_("Condition");                                                             // Line 63
-	echo T_("Verify");                                                                // Line 64
-	echo T_("Try to start with add new :transactions!");                              // Line 110
+	//-----------------------------------------addons\content_su\logitems\display.html
+	echo T_("Caller");                                                                // Line 20
+	echo T_("Priority");                                                              // Line 22
+	echo T_("datecreated");                                                           // Line 23
+	echo T_("Click to show all logs by this logitems");                               // Line 33
 
-	//------------------------------------addons/content_su/logitems/edit/display.html
+	//------------------------------------addons\content_su\logitems\edit\display.html
 	echo T_("logitems Detail");                                                       // Line 6
 	echo T_("caller");                                                                // Line 16
 	echo T_("priority");                                                              // Line 31
@@ -502,16 +559,15 @@ class twigTransTerms
 	echo T_("Medium");                                                                // Line 35
 	echo T_("Low");                                                                   // Line 36
 
-	//-----------------------------------------addons/content_su/logitems/display.html
-	echo T_("datecreated");                                                           // Line 23
-	echo T_("Click to show all logs by this logitems");                               // Line 33
+	//---------------------------------------------addons\content_su\logs\display.html
+	echo T_("Log item id");                                                           // Line 18
+	echo T_("User_id");                                                               // Line 23
+	echo T_("Data");                                                                  // Line 24
+	echo T_("Desc");                                                                  // Line 25
+	echo T_("createdate");                                                            // Line 26
+	echo T_("Meta");                                                                  // Line 28
 
-	//---------------------------------------addons/content_su/permission/display.html
-	echo T_("Change permission of user");                                             // Line 6
-	echo T_("Permission cat");                                                        // Line 10
-	echo T_("Save change");                                                           // Line 32
-
-	//------------------------------------addons/content_su/notifications/display.html
+	//------------------------------------addons\content_su\notifications\display.html
 	echo T_("user_id");                                                               // Line 17
 	echo T_("user_idsender");                                                         // Line 18
 	echo T_("content");                                                               // Line 20
@@ -528,52 +584,106 @@ class twigTransTerms
 	echo T_("auto");                                                                  // Line 32
 	echo T_("datemodified");                                                          // Line 33
 
-	//--------------------------------------------addons/content_su/linfo/display.html
-	echo T_("First you need to enable COM on windows");                               // Line 5
-	echo T_("Read More");                                                             // Line 7
+	//---------------------------------------addons\content_su\permission\display.html
+	echo T_("Change permission of user");                                             // Line 6
+	echo T_("Permission cat");                                                        // Line 10
+	echo T_("Save change");                                                           // Line 32
 
-	//-------------------------------------------addons/content_su/server/display.html
+	//---------------------------------------addons\content_su\sendnotify\display.html
+	echo T_("Send every notification from every way to user");                        // Line 6
+	echo T_("Mobile or user_id");                                                     // Line 12
+	echo T_("Find Connection way");                                                   // Line 14
+	echo T_("Inner system notification");                                             // Line 42
 
-	//-----------------------------------------addons/content_su/shorturl/display.html
+	//-------------------------------------------addons\content_su\server\display.html
+	echo T_("Show $_SERVER");                                                         // Line 6
+
+	//------------------------------------------addons\content_su\session\display.html
+
+	//-----------------------------------------addons\content_su\shorturl\display.html
 	echo T_("Test coding function");                                                  // Line 6
 	echo T_("String or Number");                                                      // Line 12
 	echo T_("Run");                                                                   // Line 15
 	echo T_("Encode");                                                                // Line 24
 	echo T_("Decode");                                                                // Line 28
 
-	//------------------------------------------addons/content_su/cronjob/display.html
-	echo T_("Run cronjob for this service");                                          // Line 15
+	//--------------------------------------------addons\content_su\tools\display.html
+	echo T_("You can use our tools");                                                 // Line 6
+	echo T_("If you dont know about this page, leave it!");                           // Line 38
+	echo T_("Special tools");                                                         // Line 7
+	echo T_("Backup");                                                                // Line 161
+	echo T_("Sitemap");                                                               // Line 34
+	echo T_("Server information");                                                    // Line 44
+	echo T_("Log");                                                                   // Line 54
+	echo T_("Translation tools");                                                     // Line 64
 
-	//-----------------------------------------addons/content_su/dbtables/display.html
-	echo T_("Search in :dbtabless");                                                  // Line 57
-	echo T_("Try to start with add new :dbtables!");                                  // Line 112
+	//----------------------------------------addons\content_su\tools\log\display.html
+	echo T_("MB");                                                                    // Line 31
 
-	//------------------------------------addons/content_su/tools/sitemap/display.html
+	//------------------------------------addons\content_su\tools\sitemap\display.html
 	echo T_("Create sitemap automatically by click on this page");                    // Line 6
 	echo T_("Base Sitemap");                                                          // Line 8
 	echo T_("Sitemap Detail");                                                        // Line 9
 	echo T_("Create it Again");                                                       // Line 10
 	echo T_("Create Sitemap Result");                                                 // Line 18
 
-	//--------------------------------------------addons/content_su/tools/display.html
-	echo T_("You can use our tools");                                                 // Line 6
-	echo T_("Special tools");                                                         // Line 7
-	echo T_("Sitemap");                                                               // Line 34
-	echo T_("Server information");                                                    // Line 44
-	echo T_("Log");                                                                   // Line 54
-	echo T_("Translation tools");                                                     // Line 64
-
-	//--------------------------------addons/content_su/tools/translation/display.html
+	//--------------------------------addons\content_su\tools\translation\display.html
 	echo T_("Translate");                                                             // Line 8
 	echo T_("Extract All trans func");                                                // Line 16
 	echo T_("Extract twig trans func in current project");                            // Line 25
 	echo T_("Extract twig trans func in dash addons");                                // Line 35
 	echo T_("Extract twig trans func in dash addons and update on dash addons");      // Line 44
 
-	//----------------------------------------addons/content_su/tools/log/display.html
-	echo T_("MB");                                                                    // Line 31
+	//---------------------------------addons\content_su\transactions\add\display.html
+	echo T_("type");                                                                  // Line 16
+	echo T_("Money");                                                                 // Line 19
+	echo T_("Gift");                                                                  // Line 20
+	echo T_("Transfer");                                                              // Line 21
+	echo T_("Prize");                                                                 // Line 22
+	echo T_("Unit");                                                                  // Line 26
+	echo T_("$");                                                                     // Line 30
+	echo T_("Minus");                                                                 // Line 59
+	echo T_("Plus");                                                                  // Line 58
 
-	//---------------------------------------addons/content_su/users/edit/display.html
+	//-------------------------------------addons\content_su\transactions\display.html
+	echo T_("Search in :transactionss");                                              // Line 41
+	echo T_("Budget before");                                                         // Line 60
+	echo T_("Budget");                                                                // Line 61
+	echo T_("Condition");                                                             // Line 63
+	echo T_("Verify");                                                                // Line 64
+	echo T_("Try to start with add new :transactions!");                              // Line 110
+
+	//-------------------------------------------addons\content_su\update\display.html
+	echo T_("Submit this form carefully");                                            // Line 40
+	echo T_("Dash");                                                                  // Line 62
+	echo T_("Press it if you are sure!");                                             // Line 63
+	echo T_("Update All");                                                            // Line 63
+	echo T_("Last update");                                                           // Line 113
+	echo T_("Current Version");                                                       // Line 82
+	echo T_("Commits");                                                               // Line 122
+	echo T_("Do it if you know it");                                                  // Line 124
+	echo T_("Update Dash Repository");                                                // Line 94
+	echo T_("Dash Engine Location");                                                  // Line 103
+	echo T_("Update Repository");                                                     // Line 124
+	echo T_("Project database");                                                      // Line 132
+	echo T_("Addon Database");                                                        // Line 141
+	echo T_("Upgrade");                                                               // Line 160
+	echo T_("Backup by dump");                                                        // Line 162
+	echo T_("Submit");                                                                // Line 217
+
+	//----------------------------------------addons\content_su\users\add\display.html
+
+	//-------------------------------------addons\content_su\users\detail\display.html
+	echo T_("User detail");                                                           // Line 6
+	echo T_("Key");                                                                   // Line 13
+
+	//--------------------------------------------addons\content_su\users\display.html
+	echo T_("Users list");                                                            // Line 6
+	echo T_("Add new");                                                               // Line 6
+	echo T_("Avatar");                                                                // Line 31
+	echo T_("More");                                                                  // Line 32
+
+	//---------------------------------------addons\content_su\users\edit\display.html
 	echo T_("Edit user detail");                                                      // Line 6
 	echo T_("Enter a valid name from 3 to 40 character");                             // Line 17
 	echo T_("Last name");                                                             // Line 22
@@ -594,23 +704,18 @@ class twigTransTerms
 	echo T_("Bank account number");                                                   // Line 117
 	echo T_("Last education degree");                                                 // Line 122
 
-	//-------------------------------------addons/content_su/users/detail/display.html
-	echo T_("User detail");                                                           // Line 6
-	echo T_("Key");                                                                   // Line 13
+	//------------------------------------------addons\includes\html\display-dash.html
+	echo T_("Edit your profile");                                                     // Line 54
+	echo T_("Avatar of you");                                                         // Line 56
+	echo T_("Default Avatar");                                                        // Line 58
+	echo T_("Hello");                                                                 // Line 64
+	echo T_("Click to toggle sidebar status");                                        // Line 75
+	echo T_("View website");                                                          // Line 93
+	echo T_("Work in your language");                                                 // Line 97
+	echo T_("Logout");                                                                // Line 105
+	echo T_("View your current location and navigate to parent of it");               // Line 114
 
-	//----------------------------------------addons/content_su/users/add/display.html
-
-	//--------------------------------------------addons/content_su/users/display.html
-	echo T_("Users list");                                                            // Line 6
-	echo T_("Add new");                                                               // Line 6
-	echo T_("Avatar");                                                                // Line 31
-	echo T_("More");                                                                  // Line 32
-
-	//-------------------------------------------addons/includes/html/display-mvc.html
-	echo T_("You are supervisor!");                                                   // Line 102
-	echo T_("Enter with another user");                                               // Line 109
-
-	//----------------------------------addons/includes/html/display-enter-blocks.html
+	//----------------------------------addons\includes\html\display-enter-blocks.html
 	echo T_("Please enter valid mobile number");                                      // Line 16
 	echo T_("Enter correct iranian mobile from 10 to 14 character");                  // Line 16
 	echo T_("7 to 15 characters is allowed for mobile");                              // Line 16
@@ -657,116 +762,11 @@ class twigTransTerms
 	echo T_("New username");                                                          // Line 373
 	echo T_("Enter a valid username!");                                               // Line 373
 
-	//------------------------------------------addons/includes/html/display-dash.html
-	echo T_("Edit your profile");                                                     // Line 54
-	echo T_("Avatar of you");                                                         // Line 56
-	echo T_("Default Avatar");                                                        // Line 58
-	echo T_("Hello");                                                                 // Line 64
-	echo T_("Click to toggle sidebar status");                                        // Line 75
-	echo T_("View website");                                                          // Line 93
-	echo T_("Work in your language");                                                 // Line 97
-	echo T_("Logout");                                                                // Line 105
-	echo T_("View your current location and navigate to parent of it");               // Line 114
+	//-------------------------------------------addons\includes\html\display-mvc.html
+	echo T_("You are supervisor!");                                                   // Line 102
+	echo T_("Enter with another user");                                               // Line 109
 
-	//----------------------------------------addons/includes/html/inc_pagination.html
-
-	//-----------------------------------------addons/content_account/ref/display.html
-	echo T_("Referral Program");                                                      // Line 11
-	echo T_("Nobody can tell the Jibres story better than our customers.");           // Line 6
-	echo T_("Nobody can tell the Jibres story better than you;)");                    // Line 12
-	echo T_("How it works?");                                                         // Line 16
-	echo T_("Tell your friends about the Jibres story.");                             // Line 19
-	echo T_("Refer your friends through Social Media or Email.");                     // Line 20
-	echo T_("Share the referral rewards program with friends on Facebook, Twitter, or Email.");// Line 20
-	echo T_("When they click on your post, we’ll know it was you who referred them.");// Line 20
-	echo T_("If someone forget to use your link, we allow to set your ref code as promo code in billing page!");// Line 20
-	echo T_("Your friend enter to Jibres and receives credit.");                      // Line 23
-	echo T_("Your friend enter and receives $5 account credit.");                     // Line 24
-	echo T_("Anyone you refer to Jibres that enter using your unique referral link or your promo code will receive $5 in credit.");// Line 24
-	echo T_("You all get rewarded.");                                                 // Line 27
-	echo T_("Jibres rewards are charge in your account after 7 work days of confirmation.");// Line 28
-	echo T_("Amount of charge is depended on your friend total pay and after automatic calculation, system set your gift.");// Line 28
-	echo T_("We calculate your percentage until 6 month of your friend registration. Because of that it was your chance to convinced your friend to charge more!");// Line 28
-	echo T_("Share your link");                                                       // Line 34
-	echo T_("Copy your personal referral link and share it with your friends and followers.");// Line 35
-	echo T_("Link");                                                                  // Line 38
-	echo T_("Promo code");                                                            // Line 48
-	echo T_("Referral stats");                                                        // Line 51
-	echo T_("CLICKS");                                                                // Line 55
-	echo T_("Number of times your link has been opened.");                            // Line 56
-	echo T_("REFERRALS");                                                             // Line 60
-	echo T_("People who enter to Jibres using your link.");                           // Line 61
-	echo T_("Promo Code");                                                            // Line 54
-	echo T_("People who connected to you with promo code.");                          // Line 66
-	echo T_("Total you refed");                                                       // Line 71
-	echo T_("Sum of people referred from you.");                                      // Line 72
-	echo T_("Active users");                                                          // Line 77
-	echo T_("People who work with their account.");                                   // Line 78
-	echo T_("You earned");                                                            // Line 120
-	echo T_("Percentage");                                                            // Line 90
-	echo T_("Count");                                                                 // Line 21
-	echo T_("Level 1");                                                               // Line 96
-	echo T_("People who pay more than 25$.");                                         // Line 97
-	echo T_("Level 2");                                                               // Line 102
-	echo T_("People who pay more than 50$.");                                         // Line 103
-	echo T_("Level 3");                                                               // Line 108
-	echo T_("People who pay more than 500$.");                                        // Line 109
-	echo T_("Level 4");                                                               // Line 114
-	echo T_("People who pay more than 5000$.");                                       // Line 115
-	echo T_("Sum of your credit earned from refs.");                                  // Line 121
-	echo T_("Confirm earned");                                                        // Line 126
-	echo T_("Sum of confirmed credit earned from refs.");                             // Line 127
-	echo T_("Enter to get a unique referral link.");                                  // Line 139
-	echo T_("Use our logo to help spread the word.");                                 // Line 141
-	echo T_("Enter to Jibres");                                                       // Line 144
-
-	//----------------------------------------addons/content_account/view/display.html
-	echo T_("Toggle side bar");                                                       // Line 10
-	echo T_("You can save side bar status");                                          // Line 11
-	echo T_("Are your need side bar?");                                               // Line 18
-
-	//-------------------------------------addons/content_account/profile/display.html
-	echo T_("To change your password");                                               // Line 280
-	echo T_("Click here");                                                            // Line 280
-	echo T_("Delete your account");                                                   // Line 285
-	echo T_("Password not set, enter to set it!");                                    // Line 294
-
-	//----------------------------------------addons/content_account/home/display.html
-	echo T_("Profile");                                                               // Line 9
-	echo T_("Billing");                                                               // Line 8
-
-	//--------------------------------------addons/content_account/appkey/display.html
-	echo T_("YOUR API KEY");                                                          // Line 8
-	echo T_("GENERATE NEW API KEY");                                                  // Line 9
-	echo T_("Get new API KEY");                                                       // Line 11
-
-	//----------------------------------------------addons/content_account/layout.html
-
-	//------------------------------addons/content_account/billing/detail/display.html
-	echo T_("plan");                                                                  // Line 12
-	echo T_("Start plan");                                                            // Line 13
-	echo T_("Active member");                                                         // Line 14
-	echo T_("Usage");                                                                 // Line 79
-	echo T_("You are not have billing detail yet!");                                  // Line 39
-
-	//-------------------------------------addons/content_account/billing/display.html
-	echo T_("Charge your account");                                                   // Line 9
-	echo T_("Choose a gateway and enter an amount to charge your account");           // Line 10
-	echo T_("Parsian");                                                               // Line 13
-	echo T_("Amount");                                                                // Line 40
-	echo T_("Checkout");                                                              // Line 41
-	echo T_("If you have a promo code, please enter it below to receive your credit.");// Line 49
-	echo T_("Apply Code");                                                            // Line 55
-	echo T_("Your credit");                                                           // Line 70
-	echo T_("Click to check detail");                                                 // Line 73
-	echo T_("Billing History");                                                       // Line 89
-	echo T_("Budget After");                                                          // Line 96
-	echo T_("Invoice");                                                               // Line 97
-	echo T_("You are not have payment history yet!");                                 // Line 139
-
-	//-----------------------------addons/content_account/billing/invoice/display.html
-	echo T_("Factor of team");                                                        // Line 8
-	echo T_("Price");                                                                 // Line 20
+	//----------------------------------------addons\includes\html\inc_pagination.html
 
  }
 }
