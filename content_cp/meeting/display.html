@@ -79,8 +79,8 @@
 {%endif%}
       </div>
       <div class="fs11 mB20">
-{%if dataRow.meta.member_array%}
-  {%for key, value in dataRow.meta.member_array%}
+{%if value.meta.member_array%}
+  {%for key, value in value.meta.member_array%}
             <span class="badge">{{value}}</span>
   {%endfor%}
 {%else%}
