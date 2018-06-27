@@ -92,12 +92,20 @@ class model
 				'content' => \dash\request::post('content'),
 			];
 
+			if(!$post['content'])
+			{
+				\dash\notif::ok(T_("Meeting report was saved"));
+				return true;
+			}
+
+			$post['content'] = addslashes($_POST['content']);
+
 			if(!self::check_valid_id())
 			{
 				return false;
 			}
 
-			\dash\db\posts::update($post, $id);
+			\dash\db\posts::update($post, \dash\coding::decode(\dash\request::get('id')));
 			\dash\notif::ok(T_("Meeting report was saved"));
 			\dash\redirect::pwd();
 		}
