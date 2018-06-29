@@ -1,5 +1,5 @@
 <?php
-namespace content_fp\festival\add;
+namespace content_fp\festival\general;
 
 
 class model

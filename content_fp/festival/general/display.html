@@ -1,0 +1,20 @@
+{%extends display.festivalAdd%}
+
+
+{%block pageContent%}
+
+{{block('pageSteps')}}
+
+<div class="f justify-center">
+	<div class="c8">
+		<div class="cbox">
+			<formm ethod="post" autocomplete="off">
+				{{block('ititle')}}
+				{{block('isubtitle')}}
+				{{block('islug')}}
+				{{block('isave')}}
+			</form>
+		</div>
+	</div>
+</div>
+{%endblock%}

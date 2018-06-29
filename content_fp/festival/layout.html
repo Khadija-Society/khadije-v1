@@ -202,30 +202,18 @@
 
 {%block pageSteps%}
 
-  <p class="f msg info2 txtC">
-    <span class="cauto">{%trans ":Topic Detail"%} <a href="{{url.here}}/lesson?q={{dataRow.code}}" class="txtB" title='{%trans "Code"%}'>{{dataRow.code | fitNumber(false)}}</a></span>
-    <span class="c txtB" title='{%trans ":topic"%}'><a href="{{url.here}}/topic/edit?id={{dataRow.topic_id}}">{{dataRow.topictitle}}</a></span>
-    <span class="c" title='{%trans ":semester"%}'>
-      {%if dataRaw.semestertitle%}
-        <a href="{{url.here}}/semester?q={{dataRow.semestertitle}}"><b>{{dataRow.semestertitle}}</b></a>
-      {%else%}
-      <span class="disabled">{%trans "Whitout :semester"%}</span>
-      {%endif%}
-    </span>
-    <span class="c" title='{%trans ":grade"%}'><a href="{{url.here}}/grade?q={{dataRow.gradename}}"><b>{{dataRow.gradename}}</b></a></span>
-    <span class="c" title='{%trans ":course"%}'><a href="{{url.here}}/course?q={{dataRow.coursename}}"><b>{{dataRow.coursename}}</b></a></span>
-    <span class="c" title='{%trans ":teacher"%}'><a href="{{url.here}}/member/general?id={{dataRow.teacher}}"><b>{{dataRow.teachername}}</b></a></span>
-  </p>
-
   <div class="f">
+
    <div class="c s4">
-    <a class="dcard {%if url.child == 'glance'%}active{%endif%}" href='{{url.this}}/glance?id={{requestGET.id}}' data-shortkey="53ctrlshift" title='{%trans "check detail of this festival and change status of it"%}'>
+    <a class="dcard {%if url.child == 'general'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="53ctrlshift" title='{%trans "Edit naem and slug of festival"%}'>
      <div class="statistic sm">
       <div class="value"><i class="sf-rocket"></i></div>
-      <div class="label">{%trans "Glance"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
+      <div class="label">{%trans "General"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
      </div>
     </a>
    </div>
+
+
    <div class="c s4">
     <a class="dcard {%if url.child == 'teacher'%}active{%endif%}" href='{{url.this}}/teacher?id={{requestGET.id}}' data-shortkey="49ctrlshift" title='{%trans "assign :teacher to this festival"%}'>
      <div class="statistic sm">
@@ -234,8 +222,10 @@
      </div>
     </a>
    </div>
+
+
    <div class="c s4">
-    <a class="dcard {%if url.child == 'general'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="50ctrlshift" title='{%trans "set general setting of this festival"%}'>
+    <a class="dcard {%if url.child == 'general1'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="50ctrlshift" title='{%trans "set general setting of this festival"%}'>
      <div class="statistic sm">
       <div class="value"><i class="sf-tools"></i></div>
       <div class="label">{%trans "Settings"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
