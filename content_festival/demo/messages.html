@@ -1,0 +1,56 @@
+
+      <section class="messages" data-xhr='messages'>
+        <h2 class="txtC">{%trans "Last messages"%}</h2>
+        <div class="mTB10 txtC">
+          <a class="badge{%if requestGET.sort=='rand'%} success{%endif%}" href="{{url.this}}?sort=rand">{%trans "Random"%}</a>
+          <a class="badge{%if requestGET.sort=='last'%} success{%endif%}" href="{{url.this}}?sort=last">{%trans "Last"%}</a>
+          <a class="badge{%if requestGET.sort=='maxlike'%} success{%endif%}" href="{{url.this}}?sort=maxlike">{%trans "Max like"%}</a>
+        </div>
+
+{%for key, value in dataTable%}
+
+{%set myClass%}
+{%if value.status == "awaiting"%} light
+{%elseif value.status == 'unapproved'%} warn2
+{%elseif value.status == 'spam'%} danger
+{%endif%}
+{%endset%}
+        <div class="msg{%if perm('cpDelneveshteView')%} {{myClass |trim}}{%endif%}{%if key == 0 and value.status == 'unapproved'%} lastOne{%endif%}">
+          <div class="f">
+            <div class="cauto s12 f align-center justify-center">
+{%if value.meta.gender == 'male'%}
+              <img src='{{url.site}}/static/siftal/images/avatar/man.png' alt='{%trans "Mr"%} {{value.author}}' class="mLa10">
+{%elseif value.meta.gender == 'female'%}
+              <img src='{{url.site}}/static/siftal/images/avatar/woman.png' alt='{%trans "Miss"%} {{value.author}}' class="mLa10">
+{%endif%}
+            </div>
+            <div class="c desc pLa10 f align-center justify-center">
+{%if value.author%}
+              <h3 class="txtB">{{value.author}}</h3>
+{%endif%}
+              <div>{{value.content | nl2br}}</div>
+            </div>
+            <div class="cauto os s12 f align-center justify-center">
+              <input class="loveBtn" type="checkbox" id="love{{key}}" name='love{{key}}' data-ajaxify data-data='{"like": "{{value.id}}"}' data-method='post' data-continue data-fn='checkLoves' {%if value.id in likes%}checked{%endif%}>
+              <label for="love{{key}}" title='{%trans "I am sympathetic"%}'></label>
+            </div>
+          </div>
+          <div class="meta">
+{%if perm('cpDelneveshteView')%}
+{%if value.meta.mobile%}
+            <span class="badge">{{value.meta.mobile}}</span>
+{%endif%}
+            <span class="badge primary">{%set myStatus = value.status%}{%trans myStatus%}</span>
+{%endif%}
+            <label class="badge danger" for='love{{key}}' title='{%trans "People who sympathetic with this person"%}'><span data-val='{{(value.plus - value.minus)}}'>{{(value.plus - value.minus) | fitNumber}}</span> <i class="sf-heart-o"></i></label>
+            <span class="badge" title='{{value.datecreated | tdate(true)}}'>{{value.datecreated | sdate('year')}}</span>
+          </div>
+        </div>
+{%endfor%}
+{%if pagination%}
+        <div class="msg pAn">
+         {%include display.pagination%}
+        </div>
+{%endif%}
+      </section>
+
