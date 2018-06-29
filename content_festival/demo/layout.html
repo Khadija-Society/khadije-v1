@@ -2,94 +2,12 @@
 
 
 {%block head_css%}
-<style>
-  body{background-color: #ddd;background-image:url('/static/images/delneveshte/bg2.jpg');background-position: center;background-size: cover;background-repeat: no-repeat;min-height:100%;color: #fff;background-attachment:fixed;}
-  header{position: absolute;top: 1em;right: 1em;width: 150px;text-align:center;margin:0 auto;user-select:none;z-index:1}
-  header h1{font-size: 1.2em;color:#fff}
-  header img{display: block;}
-  .inputer{font-size: 1.4em;position:relative;margin: 0 auto 3em;user-select:none;}
-  .inputer .el{background-color: rgba(255,255,255,0.4);border:1px solid transparent;transition:0.3s;color: #333;width:100%;margin-bottom:5px;height:36px;}
-  .inputer .el:hover{background-color: rgba(255,255,255,0.5);}
-  .inputer .el:focus{background-color: rgba(255,255,255,0.7);border-color: #fff;}
-  .inputer textarea.el{min-height: 160px;max-height: 400px;width:100%;padding:9px 1em;line-height: 2em;resize:none;margin:3em 0 0;}
-  .inputer button.el{padding:9px 2em;}
-  .inputer input.el{padding:9px 1em;}
-  .messages{margin:0 auto;font-size:1.3em;margin-bottom:5em;}
-  .messages h2{user-select:none;}
-  .messages .msg{line-height:2em;overflow:hidden;padding:0}
-  .messages .msg .desc{padding:10px 10px 25px 0 }
-  .messages .msg .desc h3{font-size: 1em;}
-  .ltr .messages .msg .desc{padding:10px 0 25px 10px }
-  .messages .msg:hover{opacity:0.9}
-  .messages .meta{position: absolute;bottom:0;left: 5px;width:auto;user-select:none;z-index:1}
-  .ltr .messages .meta{left: inherit;right: 5px}
-  .messages .badge{user-select:none;padding-top:0.5em;}
-  .messages .msg.lastOne{display: none;}
-  .messages img{width:50px;max-width:50px;height:50px;max-height:50px; user-select:none;display:block;}
-  .messages .meta label{cursor:pointer;}
-
-  /* love btn with animation*/
-  .loveBtn{position: absolute;width:0;height:0;font-size:0;}
-  .loveBtn + label {z-index: 1;cursor: pointer;margin: 0 auto;padding: 0;background: url(/static/images/delneveshte/love_animation.png) 0 0 no-repeat;background-size: 2900%;height: 100px;width: 100px;transition:0.3s}
-  .loveBtn:checked + label { -webkit-animation: heart-burst steps(28) 0.8s 1 both; animation: heart-burst steps(28) 0.8s 1 both; }
-  @-webkit-keyframes heart-burst { 0% { background-position: left;} 100% { background-position: right;} }
-  @keyframes heart-burst { 0% { background-position: left; } 100% { background-position: right; }}
-
-
-
-  @media all and (min-width: 768px) and (max-width: 959px) {
-    header{position:static;}
-  }
-
-  @media all and (max-width: 768px) {
-    header{position:static;}
-    .inputer .c.pRa5{padding:0;}
-    .messages img{margin:inherit!important}
-    .rtl .messages img.mLa10{margin:0 auto;}
-    .messages .msg .desc{padding:5px 10px 0}
-  }
-
-</style>
+ <link rel="stylesheet"       href="{{url.site}}/static/css/festival.css"/>
 {%endblock%}
 
 
-{%block foot_js%}
-<script>
-  function pushStateFinal()
-  {
-    showLastMessageWithEffect()
-  }
-
-  function showLastMessageWithEffect()
-  {
-    var lastOne = $('.messages .msg.lastOne');
-    if(lastOne.length > 0)
-    {
-      $('.messages .msg.lastOne').transition('zoom');
-    }
-  }
-
-  function checkLoves(_this)
-  {
-    var myCurrentStatus = $(_this).is(':checked');
-    var myEl            = $(_this).parents('.msg').find('.meta label span');
-    var myLoves         = parseInt(myEl.attr('data-val'));
-    if(myCurrentStatus)
-    {
-      myLoves +=1;
-    }
-    else
-    {
-      myLoves -=1;
-    }
-    if(myLoves < 0)
-    {
-      myLoves = 0;
-    }
-    myEl.attr('data-val', myLoves);
-    myEl.text(fitNumber(myLoves));
-  }
-</script>
+{%block js%}
+<script src="{{url.site}}/static/js/festival.js"></script>
 {%endblock%}
 
 
