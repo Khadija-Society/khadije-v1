@@ -1,0 +1,17 @@
+  <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Dashboard" %}</span></a></li>
+
+{%if perm('cpHomePageNumber') or perm('cpHadith') %}
+  <li>
+    <a href="{{url.here}}/myhomepage"><i class='sf-home'></i> <span>{% trans "Homepage" %}</span></a>
+    <ul>
+{%if perm('cpHomePageNumber') %}
+      <li><a href="{{url.here}}/homepage"><i class='floatRa mRa10 fc-mute sf-cog'></i> <span>{%trans "Statistics"%}</span></a></li>
+{%endif%}
+{%if perm('cpHadith') %}
+      <li><a href="{{url.here}}/hadith"><i class='floatRa mRa10 fc-mute sf-list'></i> <span>{%trans "Hadith"%}</span></a></li>
+{%endif%}
+    </ul>
+  </li>
+{%endif%}
+
+

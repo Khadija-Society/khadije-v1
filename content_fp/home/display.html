@@ -1,0 +1,37 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+<div class="f">
+
+  {%if perm('contentCp') %}<div class="c3 s6">{{block("iCp")}}</div>{%endif%}
+  {%if perm('festivalAdd') %}<div class="c3 s6">{{block("iFestivalList")}}</div>{%endif%}
+
+
+</div>
+{%endblock%}
+
+{%block iFestivalList%}
+<a class="dcard x1" href='{{url.this}}/festival'>
+ <div class="statistic">
+  <div class="value"><i class="sf-magic"></i></div>
+  <div class="label">{%trans "Festivals"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block iCp%}
+<a class="dcard x1" href='{{url.base}}/cp'>
+ <div class="statistic">
+  <div class="value"><i class="sf-diamond"></i></div>
+  <div class="label">{%trans "Control Panel"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block sidenav%}
+  {%include "content_fp/sidenav.html"%}
+{%endblock%}

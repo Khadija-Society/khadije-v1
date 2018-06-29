@@ -1,0 +1,174 @@
+{%extends display.cpMain%}
+
+
+{%block GlanceDetail%}
+  <div class="f">
+    <div class="c s12">
+      <div class="dcard x1">
+       <div class="statistic blue">
+        <div class="value">{{totalPaid | fitNumber}}</div>
+        <div class="label">{%trans "Total Donation"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="cauto s6">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{totalPaidDate | fitNumber}}</div>
+        <div class="label">{%trans "Today Donation"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="cauto s6">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{totalPaidCount | fitNumber}}</div>
+        <div class="label">{%trans "Donation Count"%}</div>
+       </div>
+      </div>
+    </div>
+    <div class="cauto s12">
+      <div class="dcard x1">
+       <div class="statistic brown">
+        <div class="value">{%if totalPaidCount%}{{ (totalPaid / totalPaidCount) | round(-3) | fitNumber}} {%else%}-{%endif%}</div>
+        <div class="label">{%trans "Donation Average"%}</div>
+       </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
+
+
+
+{%block pageContent%}
+{{block('GlanceDetail')}}
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.here}}/donate'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search in donations"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+ <div class="cbox fs12">
+  <table class="tbl">
+    <thead class="primary">
+      <tr>
+        <th></th>
+        <th class="s0">{%trans "Name"%}</th>
+        <th>{%trans "mobile"%}</th>
+        <th class="s0" data-sort="{{sortLink.payment.order}}"><a href="{{sortLink.payment.link}}">{%trans "Payment"%}</a></th>
+        <th data-sort="{{sortLink.plus.order}}"><a href="{{sortLink.plus.link}}">{%trans "Amount"%}</a></th>
+        <th class="s0">{%trans "Niyat"%}</th>
+        <th>{%trans "Hazinekard"%}</th>
+        <th class="s0" data-sort="{{sortLink.dateverify.order}}"><a href="{{sortLink.dateverify.link}}">{%trans "Date"%}</a></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr>
+        <td class="collapsing">
+          {%if value.doners%}{%else%}<small class="badge">{%trans "Anonymous"%}</small> {%endif%}
+        </td>
+        <td class="s0">
+{%if value.user_id%}
+          <a href="{{url.here}}/users/view?id={{value.user_id | coding('encode')}}">
+            <span class="sf-user fc-mute"></span>
+            {%if value.fullname%}
+            {{value.fullname}}
+            {%elseif value.displayname%}{{value.displayname}}
+            {%else%}
+            <small class='fc-mute'>{%trans "Without name"%}</small>
+            {%endif%}
+          </a>
+{%else%}
+            <span class="sf-chain-broken fc-mute"></span>
+            {%if value.fullname%}
+            {{value.fullname}}
+            {%elseif value.displayname%}{{value.displayname}}
+            {%else%}
+            <small class='fc-mute'>{%trans "Without name"%}</small>
+            {%endif%}
+{%endif%}
+
+        </td>
+        <td>
+            {%if value.mobile%}
+            <a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber('mobile')}}</a>
+            {%else%}
+            <small class='fc-mute'>{%trans "Without mobile"%}</small>
+            {%endif%}
+        </td>
+        <td class="s0"><a href="{{url.current}}?payment={{value.payment}}">{%set myPayment = value.payment | capitalize%}{%trans myPayment%}</a></td>
+        <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} <b>{{value.plus | fitNumber}}</b> {%set pUnit = value.unit%}{%trans pUnit%}</td>
+        <td class="s0 max-w200">{{value.niyat}}</td>
+        <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}">{{value.hazinekard}}</a></td>
+        <td class="s0" title='{{value.dateverify | date("Y-m-d H:i:s") | tdate("Y-m-d H:i:s")}}'>{{value.dateverify | date("Y-m-d H:i:s")  | sdate("year","Y/m/d") }}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+
+ </div>
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg warn2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.here}}/donate">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.here}}/donate">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
+{%endblock%}
+

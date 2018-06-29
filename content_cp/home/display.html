@@ -26,11 +26,20 @@
   {%if perm('cpTemplateSmsView')%}<div class="c3 s6">{{block("TemplateSMS")}}</div>{%endif%}
   {%if perm('cpPostsView') or perm('cpCategoryView') or perm('cpPageView') or perm('cpTagView')  %}<div class="c3 s6">{{block("bCMS")}}</div>{%endif%}
   {%if perm('cpMeeting') or perm('cpMeetingManage') %}<div class="c3 s6">{{block("iMeeting")}}</div>{%endif%}
+  {%if perm('contentFp') %}<div class="c3 s6">{{block("iFestival")}}</div>{%endif%}
 
 
 </div>
 {%endblock%}
 
+{%block iFestival%}
+<a class="dcard x1" href='{{url.base}}/fp'>
+ <div class="statistic">
+  <div class="value"><i class="sf-magic"></i></div>
+  <div class="label">{%trans "Festival"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 
 {%block iMeeting%}
