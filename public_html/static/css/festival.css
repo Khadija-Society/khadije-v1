@@ -8,5 +8,28 @@ body{
   background-attachment:fixed;
 }
 
+header{
+  text-align: center;
+  font-size: 1.4em;
+  background-color: rgba(255,255,255,0.6);
+}
+header a{
+  padding: 1em 1em;
+  display: inline-block;
+  transition:0.3s;
+}
+header a:hover{
+  background-color: rgba(0,0,0,0.1);
+}
 
+main{
+  min-height: 500px;
+}
+
+footer{
+  background-color: rgba(0,0,0, 0.7);
+  color: #eee;
+  font-size: 1.2em;
+  padding: 100px;
+}
 
