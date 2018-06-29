@@ -1,0 +1,30 @@
+{%extends display.festivalAdd%}
+
+
+{%block pageContent%}
+
+{{block('pageSteps')}}
+
+<div class="f justify-center">
+	<div class="c8">
+		<div class="cbox">
+			<form method="post" autocomplete="off">
+
+			{{block('iphone')}}
+			{{block('iaddress')}}
+			{{block('iemail')}}
+			{{block('isms')}}
+			{{block('itelegram')}}
+			{{block('ifacebook')}}
+			{{block('itwitter')}}
+			{{block('iinstagram')}}
+			{{block('ilinkedin')}}
+			{{block('iwebsite')}}
+
+				{{block('isave')}}
+			</form>
+		</div>
+	</div>
+</div>
+{%endblock%}
+

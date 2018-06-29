@@ -3,6 +3,29 @@ namespace lib\app\festival;
 
 trait add
 {
+	// not remvoe html tag and single or dbl qute from this field
+	// because get from editor
+	public static $raw_field =
+	[
+		'desc',
+		'intro',
+		'about',
+		'target',
+		'axis',
+		'view',
+		'schedule',
+		'logo',
+		'gallery',
+		'place',
+		'award',
+		'phone',
+		'address',
+		'email',
+		'poster',
+		'brochure',
+		'message',
+		'messagesms'
+	];
 
 	/**
 	 * add new festival
@@ -13,31 +36,9 @@ trait add
 	 */
 	public static function add($_args = [])
 	{
-		// not remvoe html tag and single or dbl qute from this field
-		// because get from editor
 		$raw_field =
-		[
-			'desc',
-			'intro',
-			'about',
-			'target',
-			'axis',
-			'view',
-			'schedule',
-			'logo',
-			'gallery',
-			'place',
-			'award',
-			'phone',
-			'address',
-			'email',
-			'poster',
-			'brochure',
-			'message',
-			'messagesms'
-		];
 
-		\dash\app::variable($_args, ['raw_field' => $raw_field]);
+		\dash\app::variable($_args, ['raw_field' => self::$raw_field]);
 
 		if(!\dash\user::id())
 		{

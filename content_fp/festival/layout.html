@@ -204,69 +204,56 @@
 
   <div class="f">
 
+
    <div class="c s4">
-    <a class="dcard {%if url.child == 'general'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="53ctrlshift" title='{%trans "Edit naem and slug of festival"%}'>
+    <a class="dcard {%if url.child == 'general'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="49ctrlshift" title='{%trans "Edit general setting of festival"%}'>
      <div class="statistic sm">
-      <div class="value"><i class="sf-rocket"></i></div>
-      <div class="label">{%trans "General"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
+      <div class="value"><i class="sf-cog"></i></div>
+      <div class="label">{%trans "General"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
      </div>
     </a>
    </div>
 
 
    <div class="c s4">
-    <a class="dcard {%if url.child == 'teacher'%}active{%endif%}" href='{{url.this}}/teacher?id={{requestGET.id}}' data-shortkey="49ctrlshift" title='{%trans "assign :teacher to this festival"%}'>
+    <a class="dcard {%if url.child == 'detail'%}active{%endif%}" href='{{url.this}}/detail?id={{requestGET.id}}' data-shortkey="50ctrlshift" title='{%trans "Edit sume detail of festival"%}'>
      <div class="statistic sm">
-      <div class="value"><i class="sf-user-5"></i></div>
-      <div class="label">{%trans ":teacher"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
+      <div class="value"><i class="sf-thumbnails"></i></div>
+      <div class="label">{%trans "Detail"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
      </div>
     </a>
    </div>
 
 
    <div class="c s4">
-    <a class="dcard {%if url.child == 'general1'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="50ctrlshift" title='{%trans "set general setting of this festival"%}'>
+    <a class="dcard {%if url.child == 'social'%}active{%endif%}" href='{{url.this}}/social?id={{requestGET.id}}' data-shortkey="51ctrlshift" title='{%trans "Edit sume social of festival"%}'>
      <div class="statistic sm">
-      <div class="value"><i class="sf-tools"></i></div>
-      <div class="label">{%trans "Settings"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
-     </div>
-    </a>
-   </div>
-   <div class="c s4">
-    <a class="dcard {%if url.child == 'classtime'%}active{%endif%}" href='{{url.this}}/classtime?id={{requestGET.id}}' data-shortkey="51ctrlshift" title='{%trans "set class and times of this festival"%}'>
-     <div class="statistic sm">
-      <div class="value"><i class="sf-clock-o"></i></div>
-      <div class="label">{%trans "Class Times"%}<br><kbd class="mT5">Ctrl+Shift+3</kbd></div>
-     </div>
-    </a>
-   </div>
-   <div class="c s4">
-    <a class="dcard {%if url.child == 'examtime'%}active{%endif%}" href='{{url.this}}/examtime?id={{requestGET.id}}' data-shortkey="52ctrlshift" title='{%trans "set exam times of this festival"%}'>
-     <div class="statistic sm">
-      <div class="value"><i class="sf-calendar-check-o"></i></div>
-      <div class="label">{%trans "Exam Times"%}<br><kbd class="mT5">Ctrl+Shift+4</kbd></div>
-     </div>
-    </a>
-   </div>
-
-   <div class="c s4">
-    <a class="dcard {%if dataRow.status == 'draft'%}disabled{%endif%} {%if url.child == 'student'%}active{%endif%}" {%if dataRow.status != 'draft'%} href='{{url.this}}/student?id={{requestGET.id}}{%if requestGET.q%}&q={{requestGET.q}}{%endif%}' data-shortkey="54ctrlshift" title='{%trans "check list of :students in this festival"%}' {%else%}  title='{%trans "Active festival to show list of :students!"%}' {%endif%} >
-     <div class="statistic sm">
-      <div class="value"><i class="sf-plug"></i></div>
-      <div class="label">{%trans ":takenunit"%}<br><kbd class="mT5">Ctrl+Shift+6</kbd></div>
+      <div class="value"><i class="sf-network"></i></div>
+      <div class="label">{%trans "Social Network"%}<br><kbd class="mT5">Ctrl+Shift+3</kbd></div>
      </div>
     </a>
    </div>
 
 
    <div class="c s4">
-    <a class="dcard {%if dataRow.status == 'draft'%}disabled{%endif%} {%if url.child == 'score'%}active{%endif%}" {%if dataRow.status != 'draft'%} href='{{url.this}}/score?id={{requestGET.id}}{%if requestGET.q%}&q={{requestGET.q}}{%endif%}' data-shortkey="57ctrlshift" title='{%trans "check score of :students in this festival"%}' {%else%} title='{%trans "Active festival to show list of score!"%}' {%endif%}>
+    <a class="dcard {%if url.child == 'file'%}active{%endif%}" href='{{url.this}}/file?id={{requestGET.id}}' data-shortkey="52ctrlshift" title='{%trans "Edit sume file of festival"%}'>
      <div class="statistic sm">
-      <div class="value"><i class="sf-medal"></i></div>
-      <div class="label">{%trans "Score"%}<br><kbd class="mT5">Ctrl+Shift+7</kbd></div>
+      <div class="value"><i class="sf-files-o"></i></div>
+      <div class="label">{%trans "Festival file"%}<br><kbd class="mT5">Ctrl+Shift+4</kbd></div>
      </div>
     </a>
    </div>
+
+    <div class="c s4">
+    <a class="dcard {%if url.child == 'message'%}active{%endif%}" href='{{url.this}}/message?id={{requestGET.id}}' data-shortkey="53ctrlshift" title='{%trans "Edit sume message of festival"%}'>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-envelope-o"></i></div>
+      <div class="label">{%trans "Message"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
 
   </div>
 {%endblock%}

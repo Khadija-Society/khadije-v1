@@ -9,25 +9,18 @@ class model
 		\dash\permission::access('fpFestivalAdd');
 
 		$post             = [];
+		$post['status']   = \dash\request::post('status');
 		$post['title']    = \dash\request::post('title');
 		$post['subtitle'] = \dash\request::post('subtitle');
 		$post['slug']     = \dash\request::post('slug');
-		$post['language'] = \dash\language::current();
-		$post['status']   = 'draft';
+		$post['desc']     = \dash\request::post('desc') ? $_POST['desc'] : null;
+		$post['freeuser'] = \dash\request::post('freeuser');
 
-		$result = \lib\app\festival::add($post);
+		$result           = \lib\app\festival::edit($post, \dash\request::get('id'));
 
 		if(\dash\engine\process::status())
 		{
-			if(isset($result['id']))
-			{
-				\dash\redirect::to(\dash\url::this(). '/general?id='. $result['id']);
-			}
-			else
-			{
-				\dash\redirect::to(\dash\url::this());
-			}
-
+			\dash\redirect::pwd();
 		}
 	}
 }
