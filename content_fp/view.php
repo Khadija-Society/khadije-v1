@@ -9,6 +9,8 @@ class view
 		\dash\data::bodyclass('unselectable');
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
+
+		\dash\data::include_editor(true);
 	}
 }
 ?>

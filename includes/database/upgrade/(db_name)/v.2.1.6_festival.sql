@@ -2,6 +2,7 @@ CREATE TABLE `festivals` (
 `id`          int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 `creator`     int(10) UNSIGNED NOT NULL,
 `title`       varchar(500) CHARACTER SET utf8mb4 NULL,
+`language`    char(2) NULL DEFAULT NULL,
 `subtitle`    varchar(500) CHARACTER SET utf8mb4 NULL,
 `slug`        varchar(200) CHARACTER SET utf8mb4 NULL,
 `desc`        mediumtext CHARACTER SET utf8mb4,

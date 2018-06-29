@@ -1,5 +1,5 @@
 <?php
-namespace content_fp\festival;
+namespace content_fp\festival\home;
 
 
 class view

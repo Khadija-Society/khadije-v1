@@ -10,6 +10,8 @@ class view
 
 		\dash\data::page_pictogram('plus');
 
+		\dash\data::display_festivalAdd('content_fp/festival/layout.html');
+
 		\dash\data::page_title(T_("Add new festival"));
 		\dash\data::page_desc(T_("add new festival by some data and can edit it later"));
 		\dash\data::badge_link(\dash\url::here(). '/festival');
