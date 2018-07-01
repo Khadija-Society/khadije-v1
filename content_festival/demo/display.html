@@ -1,20 +1,32 @@
 {%extends display.delneveshte%}
 
 {%block body%}
-<header>
-  <nav class="cn">
-    <a href="#about">{%trans "About"%}</a>
-    <a href="#Timeline">{%trans "Timeline"%}</a>
-    <a href="#news">{%trans "News"%}</a>
-    <a href="#faq">{%trans "FAQ"%}</a>
-    <a href="#sponsers">{%trans "Sponsers"%}</a>
-    <a href="#contact">{%trans "Contact"%}</a>
-  </nav>
-</header>
 
-<main>
 
-</main>
+<section id='landing' data-scroll>
+  <header>
+    <nav class="cn">
+      <a href="#about">{%trans "About"%}</a>
+      <a href="#Timeline">{%trans "Timeline"%}</a>
+      <a href="#news">{%trans "News"%}</a>
+      <a href="#faq">{%trans "FAQ"%}</a>
+      <a href="#sponsers">{%trans "Sponsers"%}</a>
+      <a href="#contact">{%trans "Contact"%}</a>
+    </nav>
+  </header>
+  <div class="bg"></div>
+  <div id="nodes"></div>
+
+  <div class="desc" data-xhr='desc'>
+    <div class="cn">
+      <h1>{{page.title}}</h1>
+      <h2 class="mB25">{{page.desc}}</h2>
+    </div>
+    <div class="mT10"><span class="sf-angle-down fs20"></span></div>
+  </div>
+</section>
+
+
 
 <footer>
   <div class="cn">
