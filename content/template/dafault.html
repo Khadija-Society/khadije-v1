@@ -17,6 +17,8 @@
 {%block posts%}
   <div class="postPreview">
     <div class="postMainContent">
+
+{%if datarow.type == 'post'%}
 {%if datarow.meta.thumb%}
      <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
 {%endif%}
@@ -24,6 +26,8 @@
     <div class="txtB mB10">{{datarow.subtitle}}</div>
 {%endif%}
     <p class="msg">{{datarow.excerpt}}</p>
+{%endif%}
+
     {{datarow.content | raw}}
     </div>
     {{block('imagegallery')}}
