@@ -12200,7 +12200,9 @@ body.enter.bg15 {
   margin: 0 auto;
   transition: 0.3s;
   overflow: hidden;
-  text-align: center; }
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 2px; }
 
 .enter #enter .logo span {
   display: none !important; }
@@ -15419,6 +15421,18 @@ body .w500 {
   width: 500px;
   max-width: 100%; }
 
+body .we50 {
+  min-width: 50px;
+  width: 50px; }
+
+body .we70 {
+  min-width: 70px;
+  width: 70px; }
+
+body .we80 {
+  min-width: 80px;
+  width: 80px; }
+
 body .we100 {
   min-width: 100px;
   width: 100px; }
@@ -16584,6 +16598,13 @@ body.siftal.loading-page #sidebar .avatar:before {
 
 .siftal.rtl #sidebar #ermileBadge {
   padding-left: 0; }
+
+.siftal #sidebar hr {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  border-top-color: #777;
+  border-top-color: rgba(255, 255, 255, 0.2); }
 
 /* footer */
 .siftal footer {
