@@ -73,7 +73,7 @@
       {%if perm('cpMeeting') %}
         <li><a href="{{url.here}}/meeting"><i class='floatRa mRa10 fc-mute sf-gavel'></i> <span>{%trans "Meeting reports"%}</span></a></li>
       {%endif%}
-      {%if perm('cpMeetingManage') %}
+      {%if perm('cpMeeting') %}
         <li><a href="{{url.here}}/meeting/add"><i class='floatRa mRa10 fc-mute sf-plus'></i> <span>{%trans "Add new report"%}</span></a></li>
       {%endif%}
     </ul>
