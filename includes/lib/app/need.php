@@ -141,12 +141,21 @@ class need
 			return false;
 		}
 
+		$sort = \dash\app::request('sort');
+
+		if($sort && !is_numeric($sort))
+		{
+			\dash\notif::error(T_("Please set a valid sort as a number"), 'sort');
+			return false;
+		}
+
 		if(!$lang)
 		{
 			$lang = \dash\language::current();
 		}
 
 		$args            = [];
+		$args['sort']    = $sort;
 		$args['lang']    = $lang;
 		$args['title']   = $title;
 		$args['request'] = $request;
@@ -332,11 +341,11 @@ class need
 	{
 		if($_enable)
 		{
-			$list = \lib\db\needs::get(['type' => $_type, 'status' => 'enable', 'lang' => \dash\language::current()]);
+			$list = \lib\db\needs::get_sort(['type' => $_type, 'status' => 'enable', 'lang' => \dash\language::current()]);
 		}
 		else
 		{
-			$list = \lib\db\needs::get(['type' => $_type, 'lang' => \dash\language::current()]);
+			$list = \lib\db\needs::get_sort(['type' => $_type, 'lang' => \dash\language::current()]);
 		}
 		return array_map(['self', 'ready'], $list);
 	}

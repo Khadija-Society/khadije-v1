@@ -39,6 +39,34 @@ class needs
 	}
 
 
+	public static function get_sort($_where)
+	{
+		$limit = null;
+		$only_one_value = false;
+		if(isset($_where['limit']))
+		{
+			if($_where['limit'] === 1)
+			{
+				$only_one_value = true;
+			}
+
+			$limit = " LIMIT $_where[limit] ";
+		}
+
+		unset($_where['limit']);
+
+		$where = \dash\db\config::make_where($_where);
+		if($where)
+		{
+			$query = "SELECT * FROM needs WHERE $where ORDER BY needs.sort ASC, needs.id ASC $limit";
+			$result = \dash\db::get($query, null, $only_one_value);
+			return $result;
+		}
+		return false;
+
+	}
+
+
 	/**
 	 * Searches for the first match.
 	 *

@@ -11,6 +11,9 @@
             {{block ('iThumb') }}
             {{block ('iTitle') }}
             {{block ('iDescription') }}
+            {%if url.module == 'donate'%}
+              {{block ('iSort') }}
+            {%endif%}
             {{block ('iLanguage') }}
             {{block ('iStatus') }}
 
@@ -35,7 +38,10 @@
             <tr class="fs08">
               <th>{%trans "Picture"%}</th>
               <th>{%trans "Title"%}</th>
-              <th>{%trans "Desctiption"%}</th>
+                {%if url.module == 'donate'%}
+                 <th>{%trans "Sort"%}</th>
+                {%endif%}
+              <th>{%trans "Description"%}</th>
               <th>{%trans "Status"%}</th>
               <th>{%trans "Edit"%}</th>
             </tr>
@@ -45,6 +51,9 @@
               <tr {%if value.status == 'enable'%}{%else%} class="negative" {%endif%}>
                 <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.site}}/static/siftal/images/default/image.png{%endif%}"></td>
                 <td>{{value.title}}</td>
+                {%if url.module == 'donate'%}
+                 <td>{{value.sort | fitNumber(false)}}</td>
+                {%endif%}
                 <td>{{value.desc}}</td>
                 <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
                 <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn secondary xs">{%trans "Edit"%}</button></a></td>
@@ -145,6 +154,15 @@
 <label for='famount'>{%trans "Amount"%}</label>
 <div class="input">
  <input type="number" name="amount" placeholder='{%trans "Amount"%}' value="{{productDetail.amount}}"  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount'>
+</div>
+{%endblock%}
+
+
+
+{%block iSort%}
+<label for='isort'>{%trans "Sort"%}</label>
+<div class="input">
+ <input type="number" name="sort" placeholder='{%trans "Sort"%}' value="{{productDetail.sort}}"  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid sort"%}' id='isort'>
 </div>
 {%endblock%}
 

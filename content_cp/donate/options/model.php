@@ -41,6 +41,7 @@ class model
 		$post['count']  = null;
 		$post['amount'] = null;
 		$post['desc']   = \dash\request::post('desc');
+		$post['sort']   = \dash\request::post('sort');
 		$post['status'] = \dash\request::post('status') ? 'enable' : 'disable' ;
 		$post['type']   = 'donate';
 
