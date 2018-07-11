@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-06-27 18:56+0430\n"
-"PO-Revision-Date: 2018-06-27 18:57+0430\n"
+"POT-Creation-Date: 2018-07-11 15:57+0300\n"
+"PO-Revision-Date: 2018-07-11 15:59+0300\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -112,7 +112,7 @@ msgstr "حساب‌کاربری شما برای ویرایش اطلاعات پر
 
 #: dash/addons/content_account/profile/view.php:10
 #: dash/addons/includes/languages/trans_dash.php:692
-#: khadije/includes/languages/trans_dash.php:708
+#: khadije/includes/languages/trans_dash.php:761
 #: khadije/includes/languages/trans_project.php:262
 msgid "Edit your profile"
 msgstr "پروفایل خود را ویرایش کنید"
@@ -178,6 +178,7 @@ msgstr "داشبورد سیستم مدیریت محتوا"
 #: dash/addons/content_cp/contact/edit/view.php:14
 #: dash/addons/content_cp/posts/edit/controller.php:12
 #: dash/addons/content_cp/posts/edit/view.php:31
+#: dash/addons/content_support/ticket/show/view.php:23
 #: khadije/content_cp/admincontact/edit/controller.php:15
 #: khadije/content_cp/admincontact/edit/view.php:14
 #: khadije/content_cp/delneveshte/edit/controller.php:15
@@ -189,7 +190,7 @@ msgid "Invalid id"
 msgstr "شناسه نامعتبر"
 
 #: dash/addons/content_cp/comments/edit/model.php:12
-#: dash/addons/content_cp/contact/edit/model.php:12 dash/lib/app/comment.php:223
+#: dash/addons/content_cp/contact/edit/model.php:12 dash/lib/app/comment.php:243
 #: khadije/content_cp/admincontact/edit/model.php:12
 #: khadije/content_cp/delneveshte/edit/model.php:12
 #: khadije/includes/lib/app/service.php:109
@@ -241,7 +242,7 @@ msgstr "جزئیات اشتباه است"
 #: dash/addons/includes/languages/trans_static.php:98
 #: dash/addons/includes/languages/trans_static.php:976
 #: khadije/includes/languages/trans_dash.php:180
-#: khadije/includes/languages/trans_project.php:569
+#: khadije/includes/languages/trans_project.php:572
 msgid "Comments"
 msgstr "دیدگاه‌ها"
 
@@ -270,6 +271,7 @@ msgstr "بازگشت به داشبورد"
 #: dash/addons/content_cp/users/home/view.php:23
 #: dash/addons/content_su/dbtables/view.php:20
 #: dash/addons/content_su/transactions/view.php:22
+#: dash/addons/content_support/ticket/home/view.php:23
 #: khadije/content_cp/admincontact/home/view.php:23
 #: khadije/content_cp/delneveshte/home/view.php:22
 #: khadije/content_cp/usersalavat/home/view.php:19
@@ -364,6 +366,7 @@ msgid "Delete a permissions"
 msgstr "حذف سطح دسترسی"
 
 #: dash/addons/content_cp/permission/delete/view.php:34
+#: khadije/content_fp/controller.php:15
 msgid "Id not set"
 msgstr "شناسه تنظیم نشده است"
 
@@ -372,7 +375,7 @@ msgstr "شناسه تنظیم نشده است"
 #: dash/addons/includes/languages/trans_static.php:209
 #: dash/addons/includes/languages/trans_static.php:979
 #: khadije/includes/languages/trans_dash.php:233
-#: khadije/includes/languages/trans_project.php:573
+#: khadije/includes/languages/trans_project.php:576
 msgid "Permissions"
 msgstr "سطوح‌دسترسی"
 
@@ -448,7 +451,7 @@ msgstr "همچنین افزودن یا ویرایش پست خاص"
 #: dash/addons/includes/languages/trans_static.php:95
 #: dash/addons/includes/languages/trans_static.php:974
 #: khadije/includes/languages/trans_dash.php:228
-#: khadije/includes/languages/trans_project.php:568
+#: khadije/includes/languages/trans_project.php:571
 msgid "Pages"
 msgstr "صفحات"
 
@@ -584,7 +587,7 @@ msgstr "دسته بندی ها را بررسی کنید و برخی از دست�
 #: dash/addons/includes/languages/trans_dash.php:185
 #: dash/addons/includes/languages/trans_static.php:973
 #: khadije/includes/languages/trans_dash.php:184
-#: khadije/includes/languages/trans_project.php:567
+#: khadije/includes/languages/trans_project.php:570
 msgid "Tags"
 msgstr "کلیدواژه‌ها"
 
@@ -601,6 +604,7 @@ msgstr "برچسب ها را بررسی کنید و برخی از برچسب ه�
 #: khadije/content_cp/nationalcode/view.php:35
 #: khadije/content_cp/representation/view.php:51
 #: khadije/content_cp/service/view.php:69 khadije/content_cp/trip/view.php:103
+#: khadije/content_fp/festival/home/view.php:42
 #: khadije/includes/languages/trans_dash.php:198
 #: khadije/includes/languages/trans_project.php:348
 msgid "Search"
@@ -624,8 +628,9 @@ msgstr "جستجو"
 #: khadije/content_cp/representation/view/controller.php:15
 #: khadije/content_cp/service/options/view.php:31
 #: khadije/content_cp/trip/view/controller.php:17
-#: khadije/includes/lib/app/need.php:291 khadije/includes/lib/app/need.php:298
-#: khadije/includes/lib/app/service.php:366 khadije/includes/lib/app/service.php:373
+#: khadije/content_fp/controller.php:22 khadije/includes/lib/app/need.php:300
+#: khadije/includes/lib/app/need.php:307 khadije/includes/lib/app/service.php:366
+#: khadije/includes/lib/app/service.php:373
 msgid "Id not found"
 msgstr "کد یافت نشد"
 
@@ -653,15 +658,15 @@ msgstr "همچنین کاربر خاصی را اضافه یا ویرایش کن�
 #: dash/addons/content_cp/users/set/view.php:12
 #: dash/addons/includes/languages/trans_dash.php:345
 #: khadije/includes/languages/trans_dash.php:232
-#: khadije/includes/languages/trans_project.php:572
+#: khadije/includes/languages/trans_project.php:575
 msgid "Add new user"
 msgstr "افزودن کاربر جدید"
 
-#: dash/addons/content_cp/users/set/model.php:94
+#: dash/addons/content_cp/users/set/model.php:96
 msgid "Please set repassword"
 msgstr "لطفا تکرار کلمه عبور را وارد کنید"
 
-#: dash/addons/content_cp/users/set/model.php:100
+#: dash/addons/content_cp/users/set/model.php:102
 msgid "Password not match whit repassword"
 msgstr "تکرار کلمه عبور با کلمه عبور برابر نیست"
 
@@ -685,9 +690,10 @@ msgstr "بازگشت به لیست کاربران"
 #: dash/lib/app/parent/delete.php:113 dash/lib/app/parent/get.php:35
 #: dash/lib/app/parent/get.php:44 dash/lib/app/posts/add.php:37
 #: dash/lib/app/term.php:305 dash/lib/app/user/add.php:48
+#: khadije/includes/lib/app/festival/add.php:45
 #: khadije/includes/lib/app/myuser.php:388 khadije/includes/lib/app/myuser.php:492
-#: khadije/includes/lib/app/myuser.php:572 khadije/includes/lib/app/need.php:229
-#: khadije/includes/lib/app/need.php:285 khadije/includes/lib/app/service.php:271
+#: khadije/includes/lib/app/myuser.php:572 khadije/includes/lib/app/need.php:238
+#: khadije/includes/lib/app/need.php:294 khadije/includes/lib/app/service.php:271
 #: khadije/includes/lib/app/service.php:360 khadije/includes/lib/app/travel.php:624
 msgid "User not found"
 msgstr "کاربر یافت نشد"
@@ -703,7 +709,7 @@ msgstr ""
 
 #: dash/addons/content_cp/users/view/view.php:13
 #: dash/addons/includes/languages/trans_dash.php:601
-#: khadije/includes/languages/trans_dash.php:677
+#: khadije/includes/languages/trans_dash.php:689
 msgid "User detail"
 msgstr "جزئیات‌کاربران"
 
@@ -980,7 +986,7 @@ msgstr "کلمه‌عبور جدید شما همان قدیمی‌است"
 
 #: dash/addons/content_enter/pass/recovery/model.php:27
 #: dash/addons/includes/languages/trans_dash.php:740
-#: khadije/includes/languages/trans_dash.php:750
+#: khadije/includes/languages/trans_dash.php:803
 #: khadije/includes/languages/trans_project.php:106
 msgid "Enter"
 msgstr "ورود"
@@ -993,7 +999,7 @@ msgstr "گذرواژه نامعتبر"
 #: dash/addons/includes/languages/trans_dash.php:238
 #: dash/addons/includes/languages/trans_static.php:167
 #: khadije/includes/languages/trans_dash.php:358
-#: khadije/includes/languages/trans_project.php:614
+#: khadije/includes/languages/trans_project.php:617
 msgid "Password"
 msgstr "کلمه عبور"
 
@@ -1015,7 +1021,7 @@ msgstr ""
 
 #: dash/addons/content_enter/pass/view.php:22
 #: dash/addons/includes/languages/trans_dash.php:738
-#: khadije/includes/languages/trans_dash.php:748
+#: khadije/includes/languages/trans_dash.php:801
 msgid "Set Password"
 msgstr "تنظیم گذرواژه"
 
@@ -1230,7 +1236,7 @@ msgstr "این درخواست برای تغییر گذرواژه است."
 
 #: dash/addons/content_enter/verify/view.php:96
 #: dash/addons/includes/languages/trans_dash.php:516
-#: khadije/includes/languages/trans_dash.php:653
+#: khadije/includes/languages/trans_dash.php:662
 msgid "Verify"
 msgstr "اعتبارسنجی"
 
@@ -1258,6 +1264,29 @@ msgstr "عملیات پشتیبان گیری با موفقیت به پایان �
 msgid "Auto backup schedule saved"
 msgstr "اطلاعات پشتیبان گیری خودکار ذخیر شد"
 
+#: dash/addons/content_su/command/model.php:11
+#, fuzzy
+#| msgid "Please fill the password field"
+msgid "Please fill the password"
+msgstr "لطفا گذرواژه را وارد کنید"
+
+#: dash/addons/content_su/command/model.php:33
+#, fuzzy
+#| msgid "Invalid car"
+msgid "Invalid command"
+msgstr "ماشینت اشتباهه"
+
+#: dash/addons/content_su/command/view.php:8
+#: khadije/includes/languages/trans_dash.php:621
+#, fuzzy
+#| msgid "Comment"
+msgid "Command"
+msgstr "دیدگاه"
+
+#: dash/addons/content_su/command/view.php:9
+msgid "Run some command in server"
+msgstr ""
+
 #: dash/addons/content_su/cronjob/model.php:11
 msgid "Your cronjob is actived"
 msgstr "کرون جاب فعال است"
@@ -1282,6 +1311,44 @@ msgstr "جدول‌های خام پایگاه‌داده"
 msgid "Select table"
 msgstr "انتخاب جدول"
 
+#: dash/addons/content_su/gitstatus/model.php:12
+#: dash/addons/content_su/nano/model.php:12
+#, fuzzy
+#| msgid "Please fill the content box"
+msgid "Please fill the file content"
+msgstr "لطفا باکس متن را پر کنید"
+
+#: dash/addons/content_su/gitstatus/model.php:19
+#: dash/addons/content_su/nano/model.php:19 khadije/includes/lib/app/service.php:73
+msgid "Invalid file"
+msgstr "فایل اشتباه"
+
+#: dash/addons/content_su/gitstatus/model.php:25
+#: dash/addons/content_su/nano/model.php:25
+#, fuzzy
+#| msgid "Profile successfully updated"
+msgid "File successfuly update"
+msgstr "اطلاعات با موفقیت به روزرسانی شد"
+
+#: dash/addons/content_su/gitstatus/model.php:29
+#: dash/addons/content_su/nano/model.php:29
+#, fuzzy
+#| msgid "Can not upload file"
+msgid "Can not write file"
+msgstr "ناتوان در آپلود فایل"
+
+#: dash/addons/content_su/gitstatus/view.php:8
+#, fuzzy
+#| msgid "Status"
+msgid "Git Status"
+msgstr "وضعیت"
+
+#: dash/addons/content_su/gitstatus/view.php:9
+#, fuzzy
+#| msgid "Check list of products"
+msgid "Check file status on this project"
+msgstr "لیست محصولات را چک کنید"
+
 #: dash/addons/content_su/home/view.php:8
 msgid "Supervisor dashboard"
 msgstr "داشبورد مدیر فنی سیستم"
@@ -1291,12 +1358,12 @@ msgid "Hey there!"
 msgstr "سلام رفیق"
 
 #: dash/addons/content_su/info/controller.php:29
-#: khadije/includes/languages/trans_dash.php:544
+#: khadije/includes/languages/trans_dash.php:547
 msgid "First you need to enable COM on windows"
 msgstr "در ابتدا شما باید ویژگی Com را در ویندوز فعال کنید"
 
 #: dash/addons/content_su/info/controller.php:30
-#: khadije/includes/languages/trans_dash.php:545
+#: khadije/includes/languages/trans_dash.php:548
 msgid "Read More"
 msgstr "بیشتر بخوانید"
 
@@ -1320,9 +1387,30 @@ msgstr "لیست لاگ‌ها"
 msgid "All event in this system"
 msgstr "تمامی اتفاقات درون این سیستم"
 
+#: dash/addons/content_su/nano/view.php:8
+#: khadije/includes/languages/trans_dash.php:623
+msgid "Nano"
+msgstr ""
+
+#: dash/addons/content_su/nano/view.php:9
+#, fuzzy
+#| msgid "Edit your profile"
+msgid "Edit some server file"
+msgstr "پروفایل خود را ویرایش کنید"
+
 #: dash/addons/content_su/permission/model.php:36
 msgid "Permission added to this user"
 msgstr "سطح‌دسترسی برای اضافه‌کردن این‌ کاربر"
+
+#: dash/addons/content_su/time/view.php:8
+#, fuzzy
+#| msgid "Gateway Timeout"
+msgid "Date and Time"
+msgstr "تایم‌اوت دروازه"
+
+#: dash/addons/content_su/time/view.php:9
+msgid "Check server date and time"
+msgstr ""
 
 #: dash/addons/content_su/tools/log/controller.php:145
 msgid "Do you wanna something here!?"
@@ -1330,7 +1418,7 @@ msgstr "چیز میخواهید اینجا؟"
 
 #: dash/addons/content_su/tools/sitemap/view.php:8
 #: dash/addons/includes/languages/trans_dash.php:662
-#: khadije/includes/languages/trans_dash.php:615
+#: khadije/includes/languages/trans_dash.php:620
 msgid "Sitemap"
 msgstr "نقشه‌ی سایت"
 
@@ -1414,7 +1502,13 @@ msgstr ""
 msgid "Also add or edit specefic transactions."
 msgstr "همچنین تراکنش خاصی را بیافزایید یا آن را ویرایش کنید"
 
-#: dash/addons/content_su/update/view.php:8
+#: dash/addons/content_su/update/model.php:11
+#, fuzzy
+#| msgid "Please fill the password field"
+msgid "Please fill the git password"
+msgstr "لطفا گذرواژه را وارد کنید"
+
+#: dash/addons/content_su/update/view.php:21
 #: dash/addons/includes/languages/trans_dash.php:135
 #: dash/addons/includes/languages/trans_static.php:150
 #: khadije/includes/languages/trans_dash.php:195
@@ -1422,21 +1516,130 @@ msgstr "همچنین تراکنش خاصی را بیافزایید یا آن ر�
 msgid "Update"
 msgstr "بروزرسانی"
 
-#: dash/addons/content_su/update/view.php:9
+#: dash/addons/content_su/update/view.php:22
 msgid "Check curent version of dash and update to latest version if available."
 msgstr "بررسی نسخه فعلی دش و بروزرسانی به آخرین نسخه در صورت وجود نسخه جدیدتر."
 
-#: dash/addons/content_su/update/view.php:15
+#: dash/addons/content_su/update/view.php:28
 msgid "Inside project"
 msgstr "درون پروژه"
 
-#: dash/addons/content_su/update/view.php:19
+#: dash/addons/content_su/update/view.php:32
 msgid "Global"
 msgstr "سراسری"
 
 #: dash/addons/content_su/users/add/model.php:17
 msgid "User added"
 msgstr "کاربر اضافه شد"
+
+#: dash/addons/content_support/home/view.php:9
+msgid "Ticketing System"
+msgstr ""
+
+#: dash/addons/content_support/home/view.php:10
+msgid ""
+"Easily manage your tickets and monitor or track them to get best answer until fix "
+"your problem"
+msgstr ""
+
+#: dash/addons/content_support/home/view.php:13
+#: dash/addons/content_support/ticket/home/view.php:9
+#: khadije/includes/languages/trans_dash.php:722
+msgid "Tickets"
+msgstr ""
+
+#: dash/addons/content_support/ticket/add/model.php:54
+#: dash/addons/content_support/ticket/show/model.php:133
+#, fuzzy
+#| msgid "Your request was sended"
+msgid "Your ticket was sended"
+msgstr "درخواست شما ارسال شد"
+
+#: dash/addons/content_support/ticket/add/view.php:9
+#, fuzzy
+#| msgid "Add new Store"
+msgid "Add new ticket"
+msgstr "افزودن فروشگاه جدید"
+
+#: dash/addons/content_support/ticket/add/view.php:10
+msgid "Dot worry!"
+msgstr ""
+
+#: dash/addons/content_support/ticket/add/view.php:10
+msgid "Ask your question."
+msgstr ""
+
+#: dash/addons/content_support/ticket/add/view.php:10
+msgid "We are here to answer your questions."
+msgstr ""
+
+#: dash/addons/content_support/ticket/add/view.php:13
+#: dash/addons/content_support/ticket/show/view.php:14
+#, fuzzy
+#| msgid "Back to donate list"
+msgid "Back to tickets list"
+msgstr "بازگشت به لیست کمک‌های نقدی"
+
+#: dash/addons/content_support/ticket/home/view.php:10
+#, fuzzy
+#| msgid "List of your trip request"
+msgid "See list of your tickets!"
+msgstr "لیست درخواست‌های سفر شما"
+
+#: dash/addons/content_support/ticket/home/view.php:14
+msgid "New ticket"
+msgstr ""
+
+#: dash/addons/content_support/ticket/home/view.php:17
+#, fuzzy
+#| msgid "Back to report list"
+msgid "Back to support panel"
+msgstr "بازگشت به لیست گزارشات"
+
+#: dash/addons/content_support/ticket/show/model.php:46
+#, fuzzy
+#| msgid "Detail was saved"
+msgid "Tag was saved"
+msgstr "جزئیات ذخیره شد"
+
+#: dash/addons/content_support/ticket/show/model.php:59
+#, fuzzy
+#| msgid "Report settings was changed"
+msgid "Ticket status was changed"
+msgstr "تنظیمات گزارش تغییر یافت"
+
+#: dash/addons/content_support/ticket/show/model.php:84
+#: dash/addons/content_support/ticket/show/model.php:91
+#: dash/addons/content_support/ticket/show/view.php:29
+#: dash/addons/content_support/ticket/show/view.php:39
+#, fuzzy
+#| msgid "invoice not found"
+msgid "Ticket not found"
+msgstr "فاکتوری یافت نشد"
+
+#: dash/addons/content_support/ticket/show/view.php:9
+#, fuzzy
+#| msgid "View website"
+msgid "View ticket"
+msgstr "مشاهده وب‌سایت"
+
+#: dash/addons/content_support/ticket/show/view.php:10
+#, fuzzy
+#| msgid "Check invoice and detail of it"
+msgid "Check detail of your ticket."
+msgstr "بررسی فاکتور و جزئیات آن"
+
+#: dash/addons/content_support/ticket/show/view.php:10
+#, fuzzy
+#| msgid "We try to complete help center as soon as posible"
+msgid "We try to answer to you as soon as posibble."
+msgstr "ما در تلاش برای تکمیل مرکز راهنمایی خود در کوتاه‌ترین زمان ممکن هستیم."
+
+#: dash/addons/content_support/ticket/show/view.php:51
+#, fuzzy
+#| msgid "This way is not in your list!"
+msgid "This is not your ticket!"
+msgstr "این روش مصرف در لیست شما وجود ندارد!"
 
 #: dash/addons/includes/languages/trans_dash.php:8
 #: khadije/includes/languages/trans_dash.php:403
@@ -1712,7 +1915,7 @@ msgstr "ویرایش"
 #: dash/addons/includes/languages/trans_dash.php:102
 #: dash/addons/includes/languages/trans_static.php:92
 #: khadije/includes/languages/trans_dash.php:338
-#: khadije/includes/languages/trans_project.php:493
+#: khadije/includes/languages/trans_project.php:494
 msgid "Delete"
 msgstr "حذف"
 
@@ -1788,7 +1991,7 @@ msgstr "ارسال سریع"
 
 #: dash/addons/includes/languages/trans_dash.php:120
 #: khadije/includes/languages/trans_dash.php:214
-#: khadije/includes/languages/trans_project.php:576
+#: khadije/includes/languages/trans_project.php:579
 msgid "Group send"
 msgstr "ارسال گروهی"
 
@@ -1926,6 +2129,7 @@ msgstr "هیچ داده ای وجود ندارد!"
 
 #: dash/addons/includes/languages/trans_dash.php:155
 #: khadije/includes/languages/trans_dash.php:246
+#: khadije/includes/languages/trans_project.php:664
 msgid "Slug"
 msgstr "نامک"
 
@@ -1951,7 +2155,7 @@ msgstr "نام سطح دسترسی شما"
 #: dash/addons/includes/languages/trans_dash.php:159
 #: dash/addons/includes/languages/trans_static.php:198
 #: khadije/includes/languages/trans_dash.php:33
-#: khadije/includes/languages/trans_project.php:500
+#: khadije/includes/languages/trans_project.php:501
 msgid "Title"
 msgstr "عنوان"
 
@@ -2018,7 +2222,7 @@ msgstr "برای نمایش لیست افراد با این سطح دسترسی 
 
 #: dash/addons/includes/languages/trans_dash.php:178
 #: khadije/includes/languages/trans_dash.php:223
-#: khadije/includes/languages/trans_project.php:421
+#: khadije/includes/languages/trans_project.php:422
 msgid "CMS"
 msgstr "سیستم مدیریت محتوا"
 
@@ -2170,7 +2374,7 @@ msgstr "نام خانوادگی معتبری بین ۳ و ۴۰ حرف وارد �
 
 #: dash/addons/includes/languages/trans_dash.php:216
 #: khadije/includes/languages/trans_dash.php:79
-#: khadije/includes/languages/trans_project.php:612
+#: khadije/includes/languages/trans_project.php:615
 msgid "Username"
 msgstr "نام‌کاربری"
 
@@ -2321,91 +2525,91 @@ msgstr "ذخیره همه"
 
 #: dash/addons/includes/languages/trans_dash.php:247
 #: khadije/includes/languages/trans_dash.php:357
-#: khadije/includes/languages/trans_project.php:613
+#: khadije/includes/languages/trans_project.php:616
 msgid "Display Name"
 msgstr "نام نمایشی"
 
 #: dash/addons/includes/languages/trans_dash.php:248
 #: khadije/includes/languages/trans_dash.php:359
-#: khadije/includes/languages/trans_project.php:616
+#: khadije/includes/languages/trans_project.php:619
 msgid "Created date"
 msgstr "تاریخ ایجاد"
 
 #: dash/addons/includes/languages/trans_dash.php:249
 #: khadije/includes/languages/trans_dash.php:360
-#: khadije/includes/languages/trans_project.php:617
+#: khadije/includes/languages/trans_project.php:620
 msgid "Last Modified"
 msgstr "آخرین به‌روز رسانی"
 
 #: dash/addons/includes/languages/trans_dash.php:250
 #: khadije/includes/languages/trans_dash.php:361
-#: khadije/includes/languages/trans_project.php:618
+#: khadije/includes/languages/trans_project.php:621
 msgid "Mr"
 msgstr "آقای"
 
 #: dash/addons/includes/languages/trans_dash.php:251
 #: khadije/includes/languages/trans_dash.php:362
-#: khadije/includes/languages/trans_project.php:619
+#: khadije/includes/languages/trans_project.php:622
 msgid "Mrs"
 msgstr "خانم"
 
 #: dash/addons/includes/languages/trans_dash.php:252
 #: khadije/includes/languages/trans_dash.php:363
-#: khadije/includes/languages/trans_project.php:620
+#: khadije/includes/languages/trans_project.php:623
 msgid "Password is set"
 msgstr "کلمه عبور تنظیم شده است"
 
 #: dash/addons/includes/languages/trans_dash.php:253
 #: khadije/includes/languages/trans_dash.php:364
-#: khadije/includes/languages/trans_project.php:621
+#: khadije/includes/languages/trans_project.php:624
 msgid "Password is not set!"
 msgstr "کلمه عبور تنظیم نشده است!"
 
 #: dash/addons/includes/languages/trans_dash.php:254
 #: khadije/includes/languages/trans_dash.php:365
-#: khadije/includes/languages/trans_project.php:622
+#: khadije/includes/languages/trans_project.php:625
 msgid "Two step verification in enabled"
 msgstr "ورود دو مرحله ای فعال است"
 
 #: dash/addons/includes/languages/trans_dash.php:255
 #: khadije/includes/languages/trans_dash.php:366
-#: khadije/includes/languages/trans_project.php:623
+#: khadije/includes/languages/trans_project.php:626
 msgid "Two step verification in disable"
 msgstr "ورود دو مرحله ای غیر فعال است"
 
 #: dash/addons/includes/languages/trans_dash.php:256
 #: khadije/includes/languages/trans_dash.php:274
-#: khadije/includes/languages/trans_project.php:624
+#: khadije/includes/languages/trans_project.php:627
 msgid "Hi!"
 msgstr "سلام!"
 
 #: dash/addons/includes/languages/trans_dash.php:257
 #: khadije/includes/languages/trans_dash.php:367
-#: khadije/includes/languages/trans_project.php:625
+#: khadije/includes/languages/trans_project.php:628
 msgid "Try to start with add new user!"
 msgstr "با افزودن کاربر جدید تلاشی برای شروع داشته باشید!"
 
 #: dash/addons/includes/languages/trans_dash.php:258
 #: khadije/includes/languages/trans_dash.php:368
-#: khadije/includes/languages/trans_project.php:626
+#: khadije/includes/languages/trans_project.php:629
 msgid "All :Members"
 msgstr "تمامی :Experts"
 
 #: dash/addons/includes/languages/trans_dash.php:259
 #: khadije/includes/languages/trans_dash.php:369
-#: khadije/includes/languages/trans_project.php:627
+#: khadije/includes/languages/trans_project.php:630
 msgid ":Experts"
 msgstr ":Experts"
 
 #: dash/addons/includes/languages/trans_dash.php:260
 #: khadije/includes/languages/trans_dash.php:370
-#: khadije/includes/languages/trans_project.php:628
+#: khadije/includes/languages/trans_project.php:631
 msgid ":Teachers"
 msgstr ":Teachers"
 
 #: dash/addons/includes/languages/trans_dash.php:261
 #: khadije/includes/languages/trans_dash.php:371
-#: khadije/includes/languages/trans_project.php:629
+#: khadije/includes/languages/trans_project.php:632
 msgid "Students"
 msgstr "دانش آموزان"
 
@@ -2507,6 +2711,7 @@ msgstr "هیچ فایل پشتیبانی یافت نشد"
 #: dash/addons/includes/languages/trans_dash.php:286
 #: dash/addons/includes/languages/trans_static.php:149
 #: khadije/includes/languages/trans_dash.php:222
+#: khadije/includes/languages/trans_project.php:722
 msgid "Control Panel"
 msgstr "کنترل پنل"
 
@@ -2548,7 +2753,7 @@ msgstr "تمامی خبر‌های پیش‌نویس"
 
 #: dash/addons/includes/languages/trans_dash.php:299
 #: khadije/includes/languages/trans_dash.php:279
-#: khadije/includes/languages/trans_project.php:540
+#: khadije/includes/languages/trans_project.php:543
 msgid "Draft"
 msgstr "پیش‌نویس"
 
@@ -2559,6 +2764,7 @@ msgstr "تمامی خبرهای حذف شده"
 
 #: dash/addons/includes/languages/trans_dash.php:301
 #: khadije/includes/languages/trans_dash.php:281
+#: khadije/includes/languages/trans_project.php:707
 #: khadije/includes/languages/trans_static.php:16
 msgid "Deleted"
 msgstr "حذف شده"
@@ -2618,7 +2824,7 @@ msgstr "نامک برای استفاده در آدرس به کار می رود"
 
 #: dash/addons/includes/languages/trans_dash.php:313
 #: khadije/includes/languages/trans_dash.php:293
-#: khadije/includes/languages/trans_project.php:454
+#: khadije/includes/languages/trans_project.php:455
 msgid "Write post "
 msgstr "نوشتن پست"
 
@@ -2639,23 +2845,26 @@ msgstr "زمان انتشار"
 
 #: dash/addons/includes/languages/trans_dash.php:317
 #: khadije/includes/languages/trans_dash.php:297
+#: khadije/includes/languages/trans_project.php:717
 msgid "Add to gallery"
 msgstr "افزودن به گالری تصاویر"
 
 #: dash/addons/includes/languages/trans_dash.php:318
 #: khadije/includes/languages/trans_dash.php:298
+#: khadije/includes/languages/trans_project.php:718
 msgid "To add image gallery drop file here or"
 msgstr ""
 "برای اضافه کردن فایل به گالری، عکس یا فیلم را در اینجا رها کنید یا کلیک کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:319
 #: khadije/includes/languages/trans_dash.php:299
+#: khadije/includes/languages/trans_project.php:706
 msgid "Publish"
 msgstr "انتشار"
 
 #: dash/addons/includes/languages/trans_dash.php:320
 #: khadije/includes/languages/trans_dash.php:300
-#: khadije/includes/languages/trans_project.php:457
+#: khadije/includes/languages/trans_project.php:458
 msgid "You can publish in another language"
 msgstr "شما می‌توانید در زبان دیگری آن را منتشر کنید"
 
@@ -2680,7 +2889,7 @@ msgstr "بسته به طراحی وب‌سایت با کلیک روی کلیدو
 
 #: dash/addons/includes/languages/trans_dash.php:325
 #: khadije/includes/languages/trans_dash.php:309
-#: khadije/includes/languages/trans_project.php:445
+#: khadije/includes/languages/trans_project.php:446
 msgid "Tag"
 msgstr "کلیدواژه"
 
@@ -2711,37 +2920,37 @@ msgstr "پسوند مجاز JPG، PNG حداکثر ۱۰۰۰ کیلوبایت"
 
 #: dash/addons/includes/languages/trans_dash.php:331
 #: khadije/includes/languages/trans_dash.php:315
-#: khadije/includes/languages/trans_project.php:458
+#: khadije/includes/languages/trans_project.php:459
 msgid "Gallery"
 msgstr "گالری"
 
 #: dash/addons/includes/languages/trans_dash.php:332
 #: khadije/includes/languages/trans_dash.php:316
-#: khadije/includes/languages/trans_project.php:459
+#: khadije/includes/languages/trans_project.php:460
 msgid "Click to download"
 msgstr "برای دانلود کلیک کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:333
 #: khadije/includes/languages/trans_dash.php:317
-#: khadije/includes/languages/trans_project.php:460
+#: khadije/includes/languages/trans_project.php:461
 msgid "Video"
 msgstr "ویدیو"
 
 #: dash/addons/includes/languages/trans_dash.php:334
 #: khadije/includes/languages/trans_dash.php:318
-#: khadije/includes/languages/trans_project.php:461
+#: khadije/includes/languages/trans_project.php:462
 msgid "MP3"
 msgstr "ام‌پی‌تری"
 
 #: dash/addons/includes/languages/trans_dash.php:335
 #: khadije/includes/languages/trans_dash.php:319
-#: khadije/includes/languages/trans_project.php:462
+#: khadije/includes/languages/trans_project.php:463
 msgid "PDF"
 msgstr "پی‌دی‌اف"
 
 #: dash/addons/includes/languages/trans_dash.php:336
 #: khadije/includes/languages/trans_dash.php:320
-#: khadije/includes/languages/trans_project.php:463
+#: khadije/includes/languages/trans_project.php:464
 msgid "Without preview"
 msgstr "بدون پیش‌نمایش"
 
@@ -2753,7 +2962,7 @@ msgstr "اخبار"
 
 #: dash/addons/includes/languages/trans_dash.php:341
 #: khadije/includes/languages/trans_dash.php:227
-#: khadije/includes/languages/trans_project.php:566
+#: khadije/includes/languages/trans_project.php:569
 msgid "Categries"
 msgstr "دسته‌بندی‌ها"
 
@@ -2765,7 +2974,7 @@ msgstr "فایل‌ها"
 #: dash/addons/includes/languages/trans_static.php:100
 #: dash/addons/includes/languages/trans_static.php:978
 #: khadije/includes/languages/trans_dash.php:231
-#: khadije/includes/languages/trans_project.php:571
+#: khadije/includes/languages/trans_project.php:574
 msgid "Users"
 msgstr "کاربران"
 
@@ -2773,19 +2982,19 @@ msgstr "کاربران"
 #: dash/addons/includes/languages/trans_static.php:938
 #: dash/addons/includes/languages/trans_static.php:980
 #: khadije/includes/languages/trans_dash.php:234
-#: khadije/includes/languages/trans_project.php:574
+#: khadije/includes/languages/trans_project.php:577
 msgid "SMS"
 msgstr "پیامک"
 
 #: dash/addons/includes/languages/trans_dash.php:348
 #: khadije/includes/languages/trans_dash.php:235
-#: khadije/includes/languages/trans_project.php:575
+#: khadije/includes/languages/trans_project.php:578
 msgid "Quick send"
 msgstr "ارسال سریع"
 
 #: dash/addons/includes/languages/trans_dash.php:349
 #: khadije/includes/languages/trans_dash.php:236
-#: khadije/includes/languages/trans_project.php:577
+#: khadije/includes/languages/trans_project.php:580
 msgid "Templates"
 msgstr "الگوها"
 
@@ -3007,7 +3216,7 @@ msgstr "درصد"
 
 #: dash/addons/includes/languages/trans_dash.php:389
 #: khadije/includes/languages/trans_dash.php:44
-#: khadije/includes/languages/trans_project.php:501
+#: khadije/includes/languages/trans_project.php:502
 msgid "Count"
 msgstr "تعداد"
 
@@ -3253,561 +3462,561 @@ msgid "You are not have billing detail yet!"
 msgstr "هیچ تراکنش مالی برای شما یافت نشد"
 
 #: dash/addons/includes/languages/trans_dash.php:455
-#: khadije/includes/languages/trans_dash.php:516
+#: khadije/includes/languages/trans_dash.php:519
 msgid "Info"
 msgstr "درباره"
 
 #: dash/addons/includes/languages/trans_dash.php:456
-#: khadije/includes/languages/trans_dash.php:517
+#: khadije/includes/languages/trans_dash.php:520
 msgid "Show server info"
 msgstr "نمایش اطلاعات سرور"
 
 #: dash/addons/includes/languages/trans_dash.php:457
-#: khadije/includes/languages/trans_dash.php:518
+#: khadije/includes/languages/trans_dash.php:521
 msgid "Show PHP info"
 msgstr "نمایش اطلاعات پی‌اچ‌پی"
 
 #: dash/addons/includes/languages/trans_dash.php:460
-#: khadije/includes/languages/trans_dash.php:604
+#: khadije/includes/languages/trans_dash.php:609
 msgid "Test coding function"
 msgstr "بررسی تابع کدینگ"
 
 #: dash/addons/includes/languages/trans_dash.php:461
-#: khadije/includes/languages/trans_dash.php:605
+#: khadije/includes/languages/trans_dash.php:610
 msgid "String or Number"
 msgstr "رشته یا شماره"
 
 #: dash/addons/includes/languages/trans_dash.php:462
-#: khadije/includes/languages/trans_dash.php:606
+#: khadije/includes/languages/trans_dash.php:611
 msgid "Run"
 msgstr "اجرا"
 
 #: dash/addons/includes/languages/trans_dash.php:463
-#: khadije/includes/languages/trans_dash.php:607
+#: khadije/includes/languages/trans_dash.php:612
 msgid "Encode"
 msgstr "رمزگذاری"
 
 #: dash/addons/includes/languages/trans_dash.php:464
-#: khadije/includes/languages/trans_dash.php:608
+#: khadije/includes/languages/trans_dash.php:613
 msgid "Decode"
 msgstr "رمزگشایی"
 
 #: dash/addons/includes/languages/trans_dash.php:470
-#: khadije/includes/languages/trans_dash.php:531
-#: khadije/includes/languages/trans_project.php:585
+#: khadije/includes/languages/trans_dash.php:534
+#: khadije/includes/languages/trans_project.php:588
 msgid "ID"
 msgstr "شناسه"
 
 #: dash/addons/includes/languages/trans_dash.php:471
-#: khadije/includes/languages/trans_dash.php:563
+#: khadije/includes/languages/trans_dash.php:566
 msgid "Log item id"
 msgstr "کد آیتم لاگ"
 
 #: dash/addons/includes/languages/trans_dash.php:472
-#: khadije/includes/languages/trans_dash.php:548
+#: khadije/includes/languages/trans_dash.php:551
 msgid "Caller"
 msgstr "صداکننده"
 
 #: dash/addons/includes/languages/trans_dash.php:473
-#: khadije/includes/languages/trans_dash.php:549
+#: khadije/includes/languages/trans_dash.php:552
 msgid "Priority"
 msgstr "اولویت"
 
 #: dash/addons/includes/languages/trans_dash.php:474
-#: khadije/includes/languages/trans_dash.php:564
+#: khadije/includes/languages/trans_dash.php:567
 msgid "User_id"
 msgstr "کد کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:475
-#: khadije/includes/languages/trans_dash.php:565
+#: khadije/includes/languages/trans_dash.php:568
 msgid "Data"
 msgstr "داده"
 
 #: dash/addons/includes/languages/trans_dash.php:476
-#: khadije/includes/languages/trans_dash.php:566
+#: khadije/includes/languages/trans_dash.php:569
 msgid "Desc"
 msgstr "توضیح"
 
 #: dash/addons/includes/languages/trans_dash.php:477
-#: khadije/includes/languages/trans_dash.php:567
+#: khadije/includes/languages/trans_dash.php:570
 msgid "createdate"
 msgstr "تاریخ ایجاد"
 
 #: dash/addons/includes/languages/trans_dash.php:478
-#: khadije/includes/languages/trans_dash.php:568
+#: khadije/includes/languages/trans_dash.php:571
 msgid "Meta"
 msgstr "متا"
 
 #: dash/addons/includes/languages/trans_dash.php:481
-#: khadije/includes/languages/trans_dash.php:532
+#: khadije/includes/languages/trans_dash.php:535
 msgid "User id"
 msgstr "کد کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:482
-#: khadije/includes/languages/trans_dash.php:533
+#: khadije/includes/languages/trans_dash.php:536
 msgid "Is Temp?"
 msgstr "موقتی است؟"
 
 #: dash/addons/includes/languages/trans_dash.php:483
-#: khadije/includes/languages/trans_dash.php:534
+#: khadije/includes/languages/trans_dash.php:537
 msgid "Total Discount"
 msgstr "جمع تخفیف"
 
 #: dash/addons/includes/languages/trans_dash.php:484
-#: khadije/includes/languages/trans_dash.php:535
+#: khadije/includes/languages/trans_dash.php:538
 msgid "Count Detail"
 msgstr "تعداد جزئیات"
 
 #: dash/addons/includes/languages/trans_dash.php:485
-#: khadije/includes/languages/trans_dash.php:528
-#: khadije/includes/languages/trans_project.php:552
+#: khadije/includes/languages/trans_dash.php:531
+#: khadije/includes/languages/trans_project.php:555
 #: khadije/includes/languages/trans_static.php:100
 msgid "desc"
 msgstr "توضیح"
 
 #: dash/addons/includes/languages/trans_dash.php:486
-#: khadije/includes/languages/trans_dash.php:536
+#: khadije/includes/languages/trans_dash.php:539
 #: khadije/includes/languages/trans_project.php:213
 msgid "Yes"
 msgstr "بلی"
 
 #: dash/addons/includes/languages/trans_dash.php:487
-#: khadije/includes/languages/trans_dash.php:537
+#: khadije/includes/languages/trans_dash.php:540
 #: khadije/includes/languages/trans_project.php:214
 msgid "No"
 msgstr "خیر"
 
 #: dash/addons/includes/languages/trans_dash.php:492
-#: khadije/includes/languages/trans_dash.php:494
+#: khadije/includes/languages/trans_dash.php:497
 msgid "Search in :dbtabless"
 msgstr "جستجو..."
 
 #: dash/addons/includes/languages/trans_dash.php:493
-#: khadije/includes/languages/trans_dash.php:495
+#: khadije/includes/languages/trans_dash.php:498
 msgid "Try to start with add new :dbtables!"
 msgstr "با افزودن رکورد جدید تلاشی برای شروع داشته باشید!"
 
 #: dash/addons/includes/languages/trans_dash.php:496
-#: khadije/includes/languages/trans_dash.php:588
+#: khadije/includes/languages/trans_dash.php:593
 msgid "Change permission of user"
 msgstr "تغییر سطح‌دسترسی کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:497
-#: khadije/includes/languages/trans_dash.php:589
+#: khadije/includes/languages/trans_dash.php:594
 msgid "Permission cat"
 msgstr "سطح‌دسترسی فراخوانی"
 
 #: dash/addons/includes/languages/trans_dash.php:498
-#: khadije/includes/languages/trans_dash.php:590
+#: khadije/includes/languages/trans_dash.php:595
 msgid "Save change"
 msgstr "ذخیره‌کردن تغییرات"
 
 #: dash/addons/includes/languages/trans_dash.php:501
 #: dash/addons/includes/languages/trans_static.php:414
-#: khadije/includes/languages/trans_dash.php:638
+#: khadije/includes/languages/trans_dash.php:647
 msgid "type"
 msgstr "نوع"
 
 #: dash/addons/includes/languages/trans_dash.php:502
-#: khadije/includes/languages/trans_dash.php:639
+#: khadije/includes/languages/trans_dash.php:648
 msgid "Money"
 msgstr "پول"
 
 #: dash/addons/includes/languages/trans_dash.php:503
-#: khadije/includes/languages/trans_dash.php:640
+#: khadije/includes/languages/trans_dash.php:649
 msgid "Gift"
 msgstr "هدیه"
 
 #: dash/addons/includes/languages/trans_dash.php:504
-#: khadije/includes/languages/trans_dash.php:641
+#: khadije/includes/languages/trans_dash.php:650
 msgid "Transfer"
 msgstr "انتقال"
 
 #: dash/addons/includes/languages/trans_dash.php:505
-#: khadije/includes/languages/trans_dash.php:642
+#: khadije/includes/languages/trans_dash.php:651
 msgid "Prize"
 msgstr "جایزه"
 
 #: dash/addons/includes/languages/trans_dash.php:506
-#: khadije/includes/languages/trans_dash.php:643
+#: khadije/includes/languages/trans_dash.php:652
 msgid "Unit"
 msgstr "واحد"
 
 #: dash/addons/includes/languages/trans_dash.php:507
-#: khadije/includes/languages/trans_dash.php:644
+#: khadije/includes/languages/trans_dash.php:653
 msgid "$"
 msgstr "$"
 
 #: dash/addons/includes/languages/trans_dash.php:508
-#: khadije/includes/languages/trans_dash.php:645
+#: khadije/includes/languages/trans_dash.php:654
 msgid "Minus"
 msgstr "هدر رفت"
 
 #: dash/addons/includes/languages/trans_dash.php:509
-#: khadije/includes/languages/trans_dash.php:646
+#: khadije/includes/languages/trans_dash.php:655
 msgid "Plus"
 msgstr "افزودن"
 
 #: dash/addons/includes/languages/trans_dash.php:512
-#: khadije/includes/languages/trans_dash.php:649
+#: khadije/includes/languages/trans_dash.php:658
 msgid "Search in :transactionss"
 msgstr "جستجو در تراکنش‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:513
-#: khadije/includes/languages/trans_dash.php:650
+#: khadije/includes/languages/trans_dash.php:659
 msgid "Budget before"
 msgstr "بودجه قبل"
 
 #: dash/addons/includes/languages/trans_dash.php:514
-#: khadije/includes/languages/trans_dash.php:651
+#: khadije/includes/languages/trans_dash.php:660
 msgid "Budget"
 msgstr "بودجه"
 
 #: dash/addons/includes/languages/trans_dash.php:515
-#: khadije/includes/languages/trans_dash.php:652
+#: khadije/includes/languages/trans_dash.php:661
 msgid "Condition"
 msgstr "قانون"
 
 #: dash/addons/includes/languages/trans_dash.php:517
-#: khadije/includes/languages/trans_dash.php:654
+#: khadije/includes/languages/trans_dash.php:663
 msgid "Try to start with add new :transactions!"
 msgstr "با افزودن رکورد جدید تلاشی برای شروع داشته باشید!"
 
 #: dash/addons/includes/languages/trans_dash.php:520
-#: khadije/includes/languages/trans_dash.php:554
+#: khadije/includes/languages/trans_dash.php:557
 msgid "logitems Detail"
 msgstr "جزئیات لاگ آیتم"
 
 #: dash/addons/includes/languages/trans_dash.php:521
-#: khadije/includes/languages/trans_dash.php:555
+#: khadije/includes/languages/trans_dash.php:558
 msgid "caller"
 msgstr "صدا کننده"
 
 #: dash/addons/includes/languages/trans_dash.php:522
 #: dash/addons/includes/languages/trans_static.php:228
 #: dash/addons/includes/languages/trans_static.php:405
-#: khadije/includes/languages/trans_dash.php:523
+#: khadije/includes/languages/trans_dash.php:526
 msgid "title"
 msgstr "عنوان"
 
 #: dash/addons/includes/languages/trans_dash.php:523
-#: khadije/includes/languages/trans_dash.php:556
+#: khadije/includes/languages/trans_dash.php:559
 msgid "priority"
 msgstr "اولویت"
 
 #: dash/addons/includes/languages/trans_dash.php:524
-#: khadije/includes/languages/trans_dash.php:557
+#: khadije/includes/languages/trans_dash.php:560
 msgid "Critical"
 msgstr "بحرانی"
 
 #: dash/addons/includes/languages/trans_dash.php:525
-#: khadije/includes/languages/trans_dash.php:558
+#: khadije/includes/languages/trans_dash.php:561
 msgid "High"
 msgstr "زیاد"
 
 #: dash/addons/includes/languages/trans_dash.php:526
-#: khadije/includes/languages/trans_dash.php:559
+#: khadije/includes/languages/trans_dash.php:562
 msgid "Medium"
 msgstr "متوسط"
 
 #: dash/addons/includes/languages/trans_dash.php:527
-#: khadije/includes/languages/trans_dash.php:560
+#: khadije/includes/languages/trans_dash.php:563
 msgid "Low"
 msgstr "کم"
 
 #: dash/addons/includes/languages/trans_dash.php:530
 #: dash/addons/includes/languages/trans_static.php:415
-#: khadije/includes/languages/trans_dash.php:550
+#: khadije/includes/languages/trans_dash.php:553
 msgid "datecreated"
 msgstr "تاریخ‌ایجاد"
 
 #: dash/addons/includes/languages/trans_dash.php:531
-#: khadije/includes/languages/trans_dash.php:551
+#: khadije/includes/languages/trans_dash.php:554
 msgid "Click to show all logs by this logitems"
 msgstr "کلیک کنید تا تمامی لاگ‌هایی که با این عنوان ثبت شده است نمایش داده شود"
 
 #: dash/addons/includes/languages/trans_dash.php:534
 #: dash/addons/includes/languages/trans_static.php:401
-#: khadije/includes/languages/trans_dash.php:521
+#: khadije/includes/languages/trans_dash.php:524
 msgid "id"
 msgstr "کد"
 
 #: dash/addons/includes/languages/trans_dash.php:535
-#: khadije/includes/languages/trans_dash.php:522
+#: khadije/includes/languages/trans_dash.php:525
 msgid "invoice_id"
 msgstr "کد فاکتور"
 
 #: dash/addons/includes/languages/trans_dash.php:536
-#: khadije/includes/languages/trans_dash.php:524
+#: khadije/includes/languages/trans_dash.php:527
 msgid "price"
 msgstr "قیمت"
 
 #: dash/addons/includes/languages/trans_dash.php:537
-#: khadije/includes/languages/trans_dash.php:525
+#: khadije/includes/languages/trans_dash.php:528
 msgid "count"
 msgstr "تعداد"
 
 #: dash/addons/includes/languages/trans_dash.php:538
-#: khadije/includes/languages/trans_dash.php:526
+#: khadije/includes/languages/trans_dash.php:529
 msgid "total"
 msgstr "مجموع"
 
 #: dash/addons/includes/languages/trans_dash.php:539
 #: dash/addons/includes/languages/trans_static.php:898
-#: khadije/includes/languages/trans_dash.php:527
+#: khadije/includes/languages/trans_dash.php:530
 msgid "discount"
 msgstr "تخفیف"
 
 #: dash/addons/includes/languages/trans_dash.php:542
-#: khadije/includes/languages/trans_dash.php:612
+#: khadije/includes/languages/trans_dash.php:617
 msgid "If you dont know about this page, leave it!"
 msgstr "اگر چیزی در مورد این صفحه نمی‌دانید، آن را ترک کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:543
-#: khadije/includes/languages/trans_dash.php:657
+#: khadije/includes/languages/trans_dash.php:666
 msgid "Submit this form carefully"
 msgstr "این را با احتیاط بفشارید"
 
 #: dash/addons/includes/languages/trans_dash.php:544
 #: dash/addons/includes/languages/trans_static.php:7
-#: khadije/includes/languages/trans_dash.php:658
+#: khadije/includes/languages/trans_dash.php:667
 msgid "Dash"
 msgstr "دش"
 
 #: dash/addons/includes/languages/trans_dash.php:545
-#: khadije/includes/languages/trans_dash.php:659
+#: khadije/includes/languages/trans_dash.php:669
 msgid "Press it if you are sure!"
 msgstr "اگر مطمئن هستید، بفشارید!"
 
 #: dash/addons/includes/languages/trans_dash.php:546
-#: khadije/includes/languages/trans_dash.php:660
+#: khadije/includes/languages/trans_dash.php:670
 msgid "Update All"
 msgstr "بروزرسانی همه"
 
 #: dash/addons/includes/languages/trans_dash.php:547
-#: khadije/includes/languages/trans_dash.php:661
+#: khadije/includes/languages/trans_dash.php:673
 msgid "Last update"
 msgstr "آخرین به‌روزرسانی"
 
 #: dash/addons/includes/languages/trans_dash.php:548
-#: khadije/includes/languages/trans_dash.php:662
+#: khadije/includes/languages/trans_dash.php:674
 msgid "Current Version"
 msgstr "نسخه فعلی"
 
 #: dash/addons/includes/languages/trans_dash.php:549
-#: khadije/includes/languages/trans_dash.php:663
+#: khadije/includes/languages/trans_dash.php:675
 msgid "Commits"
 msgstr "کامیت‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:550
-#: khadije/includes/languages/trans_dash.php:664
+#: khadije/includes/languages/trans_dash.php:676
 msgid "Do it if you know it"
 msgstr "اگر می‌دانید انجامش دهید"
 
 #: dash/addons/includes/languages/trans_dash.php:551
-#: khadije/includes/languages/trans_dash.php:665
+#: khadije/includes/languages/trans_dash.php:677
 msgid "Update Dash Repository"
 msgstr "بروزرسانی مخزن دش"
 
 #: dash/addons/includes/languages/trans_dash.php:552
-#: khadije/includes/languages/trans_dash.php:666
+#: khadije/includes/languages/trans_dash.php:678
 msgid "Dash Engine Location"
 msgstr "محل قرارگیری موتور دش"
 
 #: dash/addons/includes/languages/trans_dash.php:553
-#: khadije/includes/languages/trans_dash.php:667
+#: khadije/includes/languages/trans_dash.php:679
 msgid "Update Repository"
 msgstr "بروزرسانی مخزن"
 
 #: dash/addons/includes/languages/trans_dash.php:554
-#: khadije/includes/languages/trans_dash.php:668
+#: khadije/includes/languages/trans_dash.php:680
 msgid "Project database"
 msgstr "دیتابیس پروژه"
 
 #: dash/addons/includes/languages/trans_dash.php:555
-#: khadije/includes/languages/trans_dash.php:669
+#: khadije/includes/languages/trans_dash.php:681
 msgid "Addon Database"
 msgstr "دیتابیس افزونه"
 
 #: dash/addons/includes/languages/trans_dash.php:556
-#: khadije/includes/languages/trans_dash.php:670
+#: khadije/includes/languages/trans_dash.php:682
 msgid "Upgrade"
 msgstr "ارتقا"
 
 #: dash/addons/includes/languages/trans_dash.php:557
 #: dash/addons/includes/languages/trans_static.php:977
-#: khadije/includes/languages/trans_dash.php:614
+#: khadije/includes/languages/trans_dash.php:619
 msgid "Backup"
 msgstr "پشتیبان‌گیری"
 
 #: dash/addons/includes/languages/trans_dash.php:558
-#: khadije/includes/languages/trans_dash.php:671
+#: khadije/includes/languages/trans_dash.php:683
 msgid "Backup by dump"
 msgstr "پشتیبان با دامپ"
 
 #: dash/addons/includes/languages/trans_dash.php:559
-#: khadije/includes/languages/trans_dash.php:672
+#: khadije/includes/languages/trans_dash.php:684
 msgid "Submit"
 msgstr "تایید"
 
 #: dash/addons/includes/languages/trans_dash.php:562
-#: khadije/includes/languages/trans_dash.php:491
+#: khadije/includes/languages/trans_dash.php:494
 msgid "Run cronjob for this service"
 msgstr "اجرای کرون جاب برای این سرویس"
 
 #: dash/addons/includes/languages/trans_dash.php:565
 #: dash/addons/includes/languages/trans_static.php:160
-#: khadije/includes/languages/trans_dash.php:506
+#: khadije/includes/languages/trans_dash.php:509
 msgid "Tools"
 msgstr "ابزارها"
 
 #: dash/addons/includes/languages/trans_dash.php:566
-#: khadije/includes/languages/trans_dash.php:507
+#: khadije/includes/languages/trans_dash.php:510
 msgid "Transactions"
 msgstr "تراکنش‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:567
-#: khadije/includes/languages/trans_dash.php:509
+#: khadije/includes/languages/trans_dash.php:512
 msgid "Logs"
 msgstr "لاگ"
 
 #: dash/addons/includes/languages/trans_dash.php:568
-#: khadije/includes/languages/trans_dash.php:540
+#: khadije/includes/languages/trans_dash.php:543
 msgid "Send Nofity"
 msgstr "ارسال پیام"
 
 #: dash/addons/includes/languages/trans_dash.php:569
-#: khadije/includes/languages/trans_dash.php:541
+#: khadije/includes/languages/trans_dash.php:544
 msgid "Sample Design"
 msgstr "نمونه دیزاین"
 
 #: dash/addons/includes/languages/trans_dash.php:574
-#: khadije/includes/languages/trans_dash.php:687
+#: khadije/includes/languages/trans_dash.php:699
 msgid "Edit user detail"
 msgstr "ویرایش‌کردن جزئیات‌‌کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:575
-#: khadije/includes/languages/trans_dash.php:688
+#: khadije/includes/languages/trans_dash.php:700
 msgid "Enter a valid name from 3 to 40 character"
 msgstr "نام معتبری بین ۳ تا ۳۰ کاراکتر وارد کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:576
-#: khadije/includes/languages/trans_dash.php:689
+#: khadije/includes/languages/trans_dash.php:701
 #: khadije/includes/languages/trans_project.php:268
 msgid "Last name"
 msgstr "نام‌خانوادگی"
 
 #: dash/addons/includes/languages/trans_dash.php:577
-#: khadije/includes/languages/trans_dash.php:690
+#: khadije/includes/languages/trans_dash.php:702
 #: khadije/includes/languages/trans_project.php:216
 msgid "allowed extentions jpg, png (gif for bussiness plans). Max 500Kb"
 msgstr ""
 "پسوندهای مجاز jpg و png هستند‌(‌gif برای پلن‌های تجاری). حداکثر حجم مجاز ۵۰۰ کیلوبایت"
 
 #: dash/addons/includes/languages/trans_dash.php:578
-#: khadije/includes/languages/trans_dash.php:691
+#: khadije/includes/languages/trans_dash.php:703
 #: khadije/includes/languages/trans_project.php:272
 msgid "National code"
 msgstr "کد ملی"
 
 #: dash/addons/includes/languages/trans_dash.php:579
-#: khadije/includes/languages/trans_dash.php:692
+#: khadije/includes/languages/trans_dash.php:704
 #: khadije/includes/languages/trans_project.php:270
 msgid "Father name"
 msgstr "نام پدر"
 
 #: dash/addons/includes/languages/trans_dash.php:580
-#: khadije/includes/languages/trans_dash.php:693
+#: khadije/includes/languages/trans_dash.php:705
 #: khadije/includes/languages/trans_project.php:280
 msgid "Marital"
 msgstr "وضعیت تاهل"
 
 #: dash/addons/includes/languages/trans_dash.php:581
-#: khadije/includes/languages/trans_dash.php:694
+#: khadije/includes/languages/trans_dash.php:706
 #: khadije/includes/languages/trans_project.php:281
 msgid "Single"
 msgstr "مجرد"
 
 #: dash/addons/includes/languages/trans_dash.php:582
-#: khadije/includes/languages/trans_dash.php:695
+#: khadije/includes/languages/trans_dash.php:707
 #: khadije/includes/languages/trans_project.php:282
 msgid "Married"
 msgstr "متاهل"
 
 #: dash/addons/includes/languages/trans_dash.php:583
-#: khadije/includes/languages/trans_dash.php:696
+#: khadije/includes/languages/trans_dash.php:708
 msgid "Child count"
 msgstr "تعداد فرزندان"
 
 #: dash/addons/includes/languages/trans_dash.php:584
-#: khadije/includes/languages/trans_dash.php:697
+#: khadije/includes/languages/trans_dash.php:709
 msgid "Birth city"
 msgstr "شهر محل تولد"
 
 #: dash/addons/includes/languages/trans_dash.php:585
-#: khadije/includes/languages/trans_dash.php:698
+#: khadije/includes/languages/trans_dash.php:710
 msgid "Sh from"
 msgstr "محل صدور شناسنامه"
 
 #: dash/addons/includes/languages/trans_dash.php:586
-#: khadije/includes/languages/trans_dash.php:699
+#: khadije/includes/languages/trans_dash.php:711
 msgid "Sh code"
 msgstr "شماره شناسنامه"
 
 #: dash/addons/includes/languages/trans_dash.php:587
-#: khadije/includes/languages/trans_dash.php:700
+#: khadije/includes/languages/trans_dash.php:712
 msgid "Last education"
 msgstr "آخرین مدرک تحصیلی"
 
 #: dash/addons/includes/languages/trans_dash.php:588
-#: khadije/includes/languages/trans_dash.php:701
+#: khadije/includes/languages/trans_dash.php:713
 #: khadije/includes/languages/trans_project.php:205
 msgid "Job"
 msgstr "شغل"
 
 #: dash/addons/includes/languages/trans_dash.php:589
-#: khadije/includes/languages/trans_dash.php:702
+#: khadije/includes/languages/trans_dash.php:714
 msgid "Pasport code"
 msgstr "شماره گذرنامه"
 
 #: dash/addons/includes/languages/trans_dash.php:590
-#: khadije/includes/languages/trans_dash.php:703
+#: khadije/includes/languages/trans_dash.php:715
 msgid "Pasport expire"
 msgstr "تاریخ اتمام اعتبار گذرنامه"
 
 #: dash/addons/includes/languages/trans_dash.php:591
-#: khadije/includes/languages/trans_dash.php:704
+#: khadije/includes/languages/trans_dash.php:716
 msgid "Bank account number"
 msgstr "شماره حساب بانکی"
 
 #: dash/addons/includes/languages/trans_dash.php:592
-#: khadije/includes/languages/trans_dash.php:705
+#: khadije/includes/languages/trans_dash.php:717
 msgid "Last education degree"
 msgstr "معدل آخرین مدرک تحصیلی"
 
 #: dash/addons/includes/languages/trans_dash.php:595
-#: khadije/includes/languages/trans_dash.php:681
+#: khadije/includes/languages/trans_dash.php:693
 msgid "Users list"
 msgstr "لیست‌کاربران"
 
 #: dash/addons/includes/languages/trans_dash.php:596
-#: khadije/includes/languages/trans_dash.php:682
+#: khadije/includes/languages/trans_dash.php:694
 msgid "Add new"
 msgstr "افزودن جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:597
-#: khadije/includes/languages/trans_dash.php:683
+#: khadije/includes/languages/trans_dash.php:695
 msgid "Avatar"
 msgstr "آواتار"
 
 #: dash/addons/includes/languages/trans_dash.php:598
-#: khadije/includes/languages/trans_dash.php:684
+#: khadije/includes/languages/trans_dash.php:696
 msgid "More"
 msgstr "بیشتر"
 
 #: dash/addons/includes/languages/trans_dash.php:602
 #: dash/addons/includes/languages/trans_static.php:115
-#: khadije/includes/languages/trans_dash.php:678
+#: khadije/includes/languages/trans_dash.php:690
 msgid "Key"
 msgstr "کلید"
 
@@ -3953,492 +4162,492 @@ msgid "System master controll"
 msgstr "مدیریت فنی سیستم"
 
 #: dash/addons/includes/languages/trans_dash.php:635
-#: khadije/includes/languages/trans_dash.php:504
+#: khadije/includes/languages/trans_dash.php:507
 msgid "Raw table"
 msgstr "جدول‌های خام"
 
 #: dash/addons/includes/languages/trans_dash.php:636
-#: khadije/includes/languages/trans_dash.php:505
+#: khadije/includes/languages/trans_dash.php:508
 msgid "Cronjob"
 msgstr "کرون جاب"
 
 #: dash/addons/includes/languages/trans_dash.php:637
-#: khadije/includes/languages/trans_dash.php:508
+#: khadije/includes/languages/trans_dash.php:511
 msgid "Log items"
 msgstr "آیتم‌های لاگ"
 
 #: dash/addons/includes/languages/trans_dash.php:638
-#: khadije/includes/languages/trans_dash.php:510
+#: khadije/includes/languages/trans_dash.php:513
 msgid "Notifications"
 msgstr "اطلاع‌رسانی‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:639
-#: khadije/includes/languages/trans_dash.php:511
+#: khadije/includes/languages/trans_dash.php:514
 msgid "Short URL"
 msgstr "لینک کوتاه"
 
 #: dash/addons/includes/languages/trans_dash.php:640
-#: khadije/includes/languages/trans_dash.php:512
+#: khadije/includes/languages/trans_dash.php:515
 msgid "Send notify"
 msgstr "ارسال پیام"
 
 #: dash/addons/includes/languages/trans_dash.php:641
-#: khadije/includes/languages/trans_dash.php:513
+#: khadije/includes/languages/trans_dash.php:516
 msgid "Sample"
 msgstr "نمونه"
 
 #: dash/addons/includes/languages/trans_dash.php:644
-#: khadije/includes/languages/trans_dash.php:593
+#: khadije/includes/languages/trans_dash.php:598
 msgid "Send every notification from every way to user"
 msgstr "ارسال هر پیامی از هر روشی به کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:645
-#: khadije/includes/languages/trans_dash.php:594
+#: khadije/includes/languages/trans_dash.php:599
 msgid "Mobile or user_id"
 msgstr "موبایل یا کد کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:646
-#: khadije/includes/languages/trans_dash.php:595
+#: khadije/includes/languages/trans_dash.php:600
 msgid "Find Connection way"
 msgstr "یافتن روش ارتباط"
 
 #: dash/addons/includes/languages/trans_dash.php:647
-#: khadije/includes/languages/trans_dash.php:596
+#: khadije/includes/languages/trans_dash.php:601
 msgid "Inner system notification"
 msgstr "پیام داخل سیستمی"
 
 #: dash/addons/includes/languages/trans_dash.php:650
 #: dash/addons/includes/languages/trans_static.php:49 dash/lib/utility/upload.php:92
-#: khadije/includes/languages/trans_dash.php:621
+#: khadije/includes/languages/trans_dash.php:630
 msgid "MB"
 msgstr "مگابایت"
 
 #: dash/addons/includes/languages/trans_dash.php:653
-#: khadije/includes/languages/trans_dash.php:624
+#: khadije/includes/languages/trans_dash.php:633
 msgid "Create sitemap automatically by click on this page"
 msgstr "با کلیک در این صفحه نقشه‌ی سایت را بطور خودکار ایجاد کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:654
-#: khadije/includes/languages/trans_dash.php:625
+#: khadije/includes/languages/trans_dash.php:634
 msgid "Base Sitemap"
 msgstr "سایت‌مپ اصلی"
 
 #: dash/addons/includes/languages/trans_dash.php:655
-#: khadije/includes/languages/trans_dash.php:626
+#: khadije/includes/languages/trans_dash.php:635
 msgid "Sitemap Detail"
 msgstr "جزئیات سایت‌مپ"
 
 #: dash/addons/includes/languages/trans_dash.php:656
-#: khadije/includes/languages/trans_dash.php:627
+#: khadije/includes/languages/trans_dash.php:636
 msgid "Create it Again"
 msgstr "دوباره بسازش"
 
 #: dash/addons/includes/languages/trans_dash.php:657
-#: khadije/includes/languages/trans_dash.php:628
+#: khadije/includes/languages/trans_dash.php:637
 msgid "Create Sitemap Result"
 msgstr "ایجاد نتیجه نقشه سایت"
 
 #: dash/addons/includes/languages/trans_dash.php:660
-#: khadije/includes/languages/trans_dash.php:611
+#: khadije/includes/languages/trans_dash.php:616
 msgid "You can use our tools"
 msgstr "شما می‌توانید از ابزارهای ما استفاده کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:661
-#: khadije/includes/languages/trans_dash.php:613
+#: khadije/includes/languages/trans_dash.php:618
 msgid "Special tools"
 msgstr "ابزارهای خاص"
 
 #: dash/addons/includes/languages/trans_dash.php:663
-#: khadije/includes/languages/trans_dash.php:616
+#: khadije/includes/languages/trans_dash.php:625
 msgid "Server information"
 msgstr "اطلاعات سرور"
 
 #: dash/addons/includes/languages/trans_dash.php:664
-#: khadije/includes/languages/trans_dash.php:617
+#: khadije/includes/languages/trans_dash.php:626
 msgid "Log"
 msgstr "لاگ"
 
 #: dash/addons/includes/languages/trans_dash.php:665
-#: khadije/includes/languages/trans_dash.php:618
+#: khadije/includes/languages/trans_dash.php:627
 msgid "Translation tools"
 msgstr "ابزارهای ترجمه"
 
 #: dash/addons/includes/languages/trans_dash.php:668
-#: khadije/includes/languages/trans_dash.php:631
+#: khadije/includes/languages/trans_dash.php:640
 msgid "Translate"
 msgstr "ترجمه"
 
 #: dash/addons/includes/languages/trans_dash.php:669
-#: khadije/includes/languages/trans_dash.php:632
+#: khadije/includes/languages/trans_dash.php:641
 msgid "Extract All trans func"
 msgstr "استخراج توابع ترجمه  در دش و پروژه جاری"
 
 #: dash/addons/includes/languages/trans_dash.php:670
-#: khadije/includes/languages/trans_dash.php:633
+#: khadije/includes/languages/trans_dash.php:642
 msgid "Extract twig trans func in current project"
 msgstr "بیرون کشیدن متن‌های قابل ترجمه توئیگ از پروژه جاری"
 
 #: dash/addons/includes/languages/trans_dash.php:671
-#: khadije/includes/languages/trans_dash.php:634
+#: khadije/includes/languages/trans_dash.php:643
 msgid "Extract twig trans func in dash addons"
 msgstr "استخراج توابع ترجمه توییگ در دش"
 
 #: dash/addons/includes/languages/trans_dash.php:672
-#: khadije/includes/languages/trans_dash.php:635
+#: khadije/includes/languages/trans_dash.php:644
 msgid "Extract twig trans func in dash addons and update on dash addons"
 msgstr "استخراج توابع ترجمه توییگ در دش به‌همراه بروزرسانی آن در هسته"
 
 #: dash/addons/includes/languages/trans_dash.php:675
-#: khadije/includes/languages/trans_dash.php:571
+#: khadije/includes/languages/trans_dash.php:576
 msgid "user_id"
 msgstr "کد کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:676
-#: khadije/includes/languages/trans_dash.php:572
+#: khadije/includes/languages/trans_dash.php:577
 msgid "user_idsender"
 msgstr "شناسه کاربر ارسال کننده"
 
 #: dash/addons/includes/languages/trans_dash.php:677
-#: khadije/includes/languages/trans_dash.php:573
+#: khadije/includes/languages/trans_dash.php:578
 msgid "content"
 msgstr "محتوا"
 
 #: dash/addons/includes/languages/trans_dash.php:678
-#: khadije/includes/languages/trans_dash.php:574
+#: khadije/includes/languages/trans_dash.php:579
 msgid "url"
 msgstr "نشانی اینترنتی"
 
 #: dash/addons/includes/languages/trans_dash.php:679
-#: khadije/includes/languages/trans_dash.php:575
+#: khadije/includes/languages/trans_dash.php:580
 msgid "read"
 msgstr "خوانده شده"
 
 #: dash/addons/includes/languages/trans_dash.php:680
-#: khadije/includes/languages/trans_dash.php:576
+#: khadije/includes/languages/trans_dash.php:581
 msgid "star"
 msgstr "ستاره"
 
 #: dash/addons/includes/languages/trans_dash.php:681
 #: dash/addons/includes/languages/trans_static.php:410
-#: khadije/includes/languages/trans_dash.php:577
+#: khadije/includes/languages/trans_dash.php:582
 #: khadije/includes/languages/trans_project.php:372
 msgid "status"
 msgstr "وضعیت"
 
 #: dash/addons/includes/languages/trans_dash.php:682
 #: dash/addons/includes/languages/trans_static.php:137
-#: khadije/includes/languages/trans_dash.php:578
+#: khadije/includes/languages/trans_dash.php:583
 msgid "category"
 msgstr "دسته"
 
 #: dash/addons/includes/languages/trans_dash.php:683
-#: khadije/includes/languages/trans_dash.php:579
+#: khadije/includes/languages/trans_dash.php:584
 msgid "senddate"
 msgstr "تاریخ ارسال"
 
 #: dash/addons/includes/languages/trans_dash.php:684
-#: khadije/includes/languages/trans_dash.php:580
+#: khadije/includes/languages/trans_dash.php:585
 msgid "deliverdate"
 msgstr "تاریخ دلیور"
 
 #: dash/addons/includes/languages/trans_dash.php:685
-#: khadije/includes/languages/trans_dash.php:581
+#: khadije/includes/languages/trans_dash.php:586
 msgid "expiredate"
 msgstr "تاریخ انقضا"
 
 #: dash/addons/includes/languages/trans_dash.php:686
-#: khadije/includes/languages/trans_dash.php:582
+#: khadije/includes/languages/trans_dash.php:587
 msgid "readdate"
 msgstr "تاریخ مشاهده"
 
 #: dash/addons/includes/languages/trans_dash.php:687
-#: khadije/includes/languages/trans_dash.php:583
+#: khadije/includes/languages/trans_dash.php:588
 msgid "gateway"
 msgstr "ورودی"
 
 #: dash/addons/includes/languages/trans_dash.php:688
-#: khadije/includes/languages/trans_dash.php:584
+#: khadije/includes/languages/trans_dash.php:589
 msgid "auto"
 msgstr "خودکار"
 
 #: dash/addons/includes/languages/trans_dash.php:689
 #: dash/addons/includes/languages/trans_static.php:416
-#: khadije/includes/languages/trans_dash.php:585
+#: khadije/includes/languages/trans_dash.php:590
 msgid "datemodified"
 msgstr "تاریخ ویرایش"
 
 #: dash/addons/includes/languages/trans_dash.php:693
-#: khadije/includes/languages/trans_dash.php:709
+#: khadije/includes/languages/trans_dash.php:762
 #: khadije/includes/languages/trans_project.php:263
 msgid "Avatar of you"
 msgstr "آواتار شما"
 
 #: dash/addons/includes/languages/trans_dash.php:694
-#: khadije/includes/languages/trans_dash.php:710
+#: khadije/includes/languages/trans_dash.php:763
 #: khadije/includes/languages/trans_project.php:264
 msgid "Default Avatar"
 msgstr "آواتار پیش‌فرض"
 
 #: dash/addons/includes/languages/trans_dash.php:695
-#: khadije/includes/languages/trans_dash.php:711
+#: khadije/includes/languages/trans_dash.php:764
 msgid "Hello"
 msgstr "سلام"
 
 #: dash/addons/includes/languages/trans_dash.php:696
-#: khadije/includes/languages/trans_dash.php:712
+#: khadije/includes/languages/trans_dash.php:765
 msgid "Click to toggle sidebar status"
 msgstr "برای تغییر وضعیت منوی کناری کلیک کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:697
-#: khadije/includes/languages/trans_dash.php:713
+#: khadije/includes/languages/trans_dash.php:766
 msgid "View website"
 msgstr "مشاهده وب‌سایت"
 
 #: dash/addons/includes/languages/trans_dash.php:698
-#: khadije/includes/languages/trans_dash.php:714
+#: khadije/includes/languages/trans_dash.php:767
 msgid "Work in your language"
 msgstr "به زبان خود کار کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:699
 #: dash/addons/includes/languages/trans_static.php:104
-#: khadije/includes/languages/trans_dash.php:715
+#: khadije/includes/languages/trans_dash.php:768
 msgid "Logout"
 msgstr "خروج از سیستم"
 
 #: dash/addons/includes/languages/trans_dash.php:700
-#: khadije/includes/languages/trans_dash.php:716
+#: khadije/includes/languages/trans_dash.php:769
 #: khadije/includes/languages/trans_project.php:159
 msgid "View your current location and navigate to parent of it"
 msgstr "مکان فعلی خود را دیده و به مکان‌های والد آن منتقل شوید"
 
 #: dash/addons/includes/languages/trans_dash.php:703
-#: khadije/includes/languages/trans_dash.php:766
+#: khadije/includes/languages/trans_dash.php:819
 msgid "You are supervisor!"
 msgstr "شما مدیر فنی سیستم هستید!"
 
 #: dash/addons/includes/languages/trans_dash.php:704
-#: khadije/includes/languages/trans_dash.php:767
+#: khadije/includes/languages/trans_dash.php:820
 msgid "Enter with another user"
 msgstr "ورود با کاربر دیگر"
 
 #: dash/addons/includes/languages/trans_dash.php:709
-#: khadije/includes/languages/trans_dash.php:719
+#: khadije/includes/languages/trans_dash.php:772
 msgid "Please enter valid mobile number"
 msgstr "لطفا شماره موبایل معتبری وارد کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:710
-#: khadije/includes/languages/trans_dash.php:720
+#: khadije/includes/languages/trans_dash.php:773
 msgid "Enter correct iranian mobile from 10 to 14 character"
 msgstr "شماره موبایل صحیح ایران باید بین ۱۰ تا ۱۴ رقم باشد"
 
 #: dash/addons/includes/languages/trans_dash.php:711
-#: khadije/includes/languages/trans_dash.php:721
+#: khadije/includes/languages/trans_dash.php:774
 msgid "7 to 15 characters is allowed for mobile"
 msgstr "بین ۷ تا ۱۵ رقم برای موبایل مجاز است"
 
 #: dash/addons/includes/languages/trans_dash.php:712
-#: khadije/includes/languages/trans_dash.php:722
+#: khadije/includes/languages/trans_dash.php:775
 msgid "Username or Mobile or email"
 msgstr "نام‌کاربری یا موبایل یا رایانامه"
 
 #: dash/addons/includes/languages/trans_dash.php:713
-#: khadije/includes/languages/trans_dash.php:723
+#: khadije/includes/languages/trans_dash.php:776
 msgid "Username or Mobile or Email"
 msgstr "نام‌کاربری یا موبایل یا رایانامه"
 
 #: dash/addons/includes/languages/trans_dash.php:714
-#: khadije/includes/languages/trans_dash.php:724
+#: khadije/includes/languages/trans_dash.php:777
 msgid "Please enter valid mobile or username or email number"
 msgstr "لطفا نام‌کاربری یا موبایل یا رایانامه معتبری وارد کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:715
-#: khadije/includes/languages/trans_dash.php:725
+#: khadije/includes/languages/trans_dash.php:778
 msgid "Enter a valid password from 6 to 40 character"
 msgstr "گذرواژه‌ای معتبر بین ۶ تا ۴۰ کاراکتر انتخاب کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:716
 #: dash/addons/includes/languages/trans_static.php:339
-#: khadije/includes/languages/trans_dash.php:726
+#: khadije/includes/languages/trans_dash.php:779
 msgid "New Password"
 msgstr "گذرواژه جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:717
-#: khadije/includes/languages/trans_dash.php:727
+#: khadije/includes/languages/trans_dash.php:780
 msgid "Password?"
 msgstr "کلمه عبور؟"
 
 #: dash/addons/includes/languages/trans_dash.php:718
-#: khadije/includes/languages/trans_dash.php:728
+#: khadije/includes/languages/trans_dash.php:781
 msgid "Verify Code"
 msgstr "کد اعتبارسنجی"
 
 #: dash/addons/includes/languages/trans_dash.php:719
-#: khadije/includes/languages/trans_dash.php:729
+#: khadije/includes/languages/trans_dash.php:782
 msgid "Enter a valid code!"
 msgstr "کد معتبر وارد کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:720
-#: khadije/includes/languages/trans_dash.php:730
+#: khadije/includes/languages/trans_dash.php:783
 msgid "Code"
 msgstr "کد"
 
 #: dash/addons/includes/languages/trans_dash.php:721
-#: khadije/includes/languages/trans_dash.php:731
+#: khadije/includes/languages/trans_dash.php:784
 msgid "Send this code to our number!"
 msgstr "این کد را به شماره‌ی ما پیامک کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:722
-#: khadije/includes/languages/trans_dash.php:732
+#: khadije/includes/languages/trans_dash.php:785
 msgid "send to this number"
 msgstr "به این شماره پیامک کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:723
-#: khadije/includes/languages/trans_dash.php:733
+#: khadije/includes/languages/trans_dash.php:786
 msgid "Send code to this number!"
 msgstr "کد را به این شماره ارسال کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:724
-#: khadije/includes/languages/trans_dash.php:734
+#: khadije/includes/languages/trans_dash.php:787
 #: khadije/includes/languages/trans_project.php:40
 msgid "Full name"
 msgstr "نام کامل"
 
 #: dash/addons/includes/languages/trans_dash.php:725
 #: dash/addons/includes/languages/trans_static.php:408
-#: khadije/includes/languages/trans_dash.php:735
+#: khadije/includes/languages/trans_dash.php:788
 msgid "email"
 msgstr "رایانامه"
 
 #: dash/addons/includes/languages/trans_dash.php:726
-#: khadije/includes/languages/trans_dash.php:736
+#: khadije/includes/languages/trans_dash.php:789
 msgid "Enter a valid eamil!"
 msgstr "رایانامه‌ی معتبر را وارد کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:727
 #: dash/addons/includes/languages/trans_static.php:402
-#: khadije/includes/languages/trans_dash.php:737
+#: khadije/includes/languages/trans_dash.php:790
 msgid "username"
 msgstr "نام‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:728
-#: khadije/includes/languages/trans_dash.php:738
+#: khadije/includes/languages/trans_dash.php:791
 msgid "Enter a valid username from 4 to 50 character"
 msgstr "نام‌کاربری معتبری بین ۴ تا ۵۰ کاراکتر وارد کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:729
-#: khadije/includes/languages/trans_dash.php:739
+#: khadije/includes/languages/trans_dash.php:792
 msgid "Delete Account"
 msgstr "حذف حساب‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:730
-#: khadije/includes/languages/trans_dash.php:740
+#: khadije/includes/languages/trans_dash.php:793
 msgid "Go and check it"
 msgstr "برو و چک کن"
 
 #: dash/addons/includes/languages/trans_dash.php:731
-#: khadije/includes/languages/trans_dash.php:741
+#: khadije/includes/languages/trans_dash.php:794
 msgid "Next"
 msgstr "بعدی"
 
 #: dash/addons/includes/languages/trans_dash.php:732
-#: khadije/includes/languages/trans_dash.php:742
+#: khadije/includes/languages/trans_dash.php:795
 msgid "Sign in instead"
 msgstr "یا وارد شوید"
 
 #: dash/addons/includes/languages/trans_dash.php:733
 #: dash/addons/includes/languages/trans_static.php:170
-#: khadije/includes/languages/trans_dash.php:743
+#: khadije/includes/languages/trans_dash.php:796
 msgid "Login"
 msgstr "ورود به سیستم"
 
 #: dash/addons/includes/languages/trans_dash.php:734
-#: khadije/includes/languages/trans_dash.php:744
+#: khadije/includes/languages/trans_dash.php:797
 msgid "No account?"
 msgstr "حساب کاربری ندارید؟"
 
 #: dash/addons/includes/languages/trans_dash.php:735
-#: khadije/includes/languages/trans_dash.php:745
+#: khadije/includes/languages/trans_dash.php:798
 msgid "Create for yourself"
 msgstr "حساب‌کاربری خود را بسازید"
 
 #: dash/addons/includes/languages/trans_dash.php:736
-#: khadije/includes/languages/trans_dash.php:746
+#: khadije/includes/languages/trans_dash.php:799
 msgid "Create Account"
 msgstr "ساخت حساب‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:737
-#: khadije/includes/languages/trans_dash.php:747
+#: khadije/includes/languages/trans_dash.php:800
 #: khadije/includes/languages/trans_project.php:174
 msgid "Signup"
 msgstr "ثبت‌نام"
 
 #: dash/addons/includes/languages/trans_dash.php:739
-#: khadije/includes/languages/trans_dash.php:749
+#: khadije/includes/languages/trans_dash.php:802
 msgid "Recovery password"
 msgstr "بازیابی گذرواژه"
 
 #: dash/addons/includes/languages/trans_dash.php:741
-#: khadije/includes/languages/trans_dash.php:751
+#: khadije/includes/languages/trans_dash.php:804
 msgid "Enter with another methods"
 msgstr "ورود با سایر روش‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:742
-#: khadije/includes/languages/trans_dash.php:752
+#: khadije/includes/languages/trans_dash.php:805
 msgid "Log in with mobile"
 msgstr "ورود با موبایل"
 
 #: dash/addons/includes/languages/trans_dash.php:743
-#: khadije/includes/languages/trans_dash.php:753
+#: khadije/includes/languages/trans_dash.php:806
 msgid "Enter with mobile"
 msgstr "ورود با موبایل"
 
 #: dash/addons/includes/languages/trans_dash.php:744
-#: khadije/includes/languages/trans_dash.php:754
+#: khadije/includes/languages/trans_dash.php:807
 msgid "Enter with Google"
 msgstr "ورود با گوگل"
 
 #: dash/addons/includes/languages/trans_dash.php:745
-#: khadije/includes/languages/trans_dash.php:755
+#: khadije/includes/languages/trans_dash.php:808
 msgid "Enter with email"
 msgstr "ورود با رایانامه"
 
 #: dash/addons/includes/languages/trans_dash.php:746
-#: khadije/includes/languages/trans_dash.php:756
+#: khadije/includes/languages/trans_dash.php:809
 msgid "Enter with username"
 msgstr "ورود با نام‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:747
-#: khadije/includes/languages/trans_dash.php:757
+#: khadije/includes/languages/trans_dash.php:810
 msgid "Resend code"
 msgstr "ارسال دوباره‌ی کد"
 
 #: dash/addons/includes/languages/trans_dash.php:748
-#: khadije/includes/languages/trans_dash.php:758
+#: khadije/includes/languages/trans_dash.php:811
 msgid "After end timer you can request code again"
 msgstr "پس از به‌اتمام رسیدن زمان، شما امکان درخواست مجدد کد را خواهید داشت"
 
 #: dash/addons/includes/languages/trans_dash.php:749
-#: khadije/includes/languages/trans_dash.php:759
+#: khadije/includes/languages/trans_dash.php:812
 msgid "Another way?"
 msgstr "روش دیگر؟"
 
 #: dash/addons/includes/languages/trans_dash.php:750
-#: khadije/includes/languages/trans_dash.php:760
+#: khadije/includes/languages/trans_dash.php:813
 msgid "Restart with new mobile"
 msgstr "شروع دوباره با موبایل جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:751
-#: khadije/includes/languages/trans_dash.php:761
+#: khadije/includes/languages/trans_dash.php:814
 msgid "New email"
 msgstr "رایانامه‌ی جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:752
-#: khadije/includes/languages/trans_dash.php:762
+#: khadije/includes/languages/trans_dash.php:815
 msgid "New username"
 msgstr "نام کاربری جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:753
-#: khadije/includes/languages/trans_dash.php:763
+#: khadije/includes/languages/trans_dash.php:816
 msgid "Enter a valid username!"
 msgstr "نام کاربری معتبر وارد کنید!"
 
@@ -5728,22 +5937,27 @@ msgid "meta"
 msgstr "متا"
 
 #: dash/addons/includes/languages/trans_static.php:424
+#: khadije/includes/languages/trans_project.php:697
 msgid "website"
 msgstr "وب‌سایت"
 
 #: dash/addons/includes/languages/trans_static.php:425
+#: khadije/includes/languages/trans_project.php:685
 msgid "facebook"
 msgstr "فیسبوک"
 
 #: dash/addons/includes/languages/trans_static.php:426
+#: khadije/includes/languages/trans_project.php:688
 msgid "twitter"
 msgstr "توییتر"
 
 #: dash/addons/includes/languages/trans_static.php:427
+#: khadije/includes/languages/trans_project.php:691
 msgid "instagram"
 msgstr " اینستاگرام"
 
 #: dash/addons/includes/languages/trans_static.php:428
+#: khadije/includes/languages/trans_project.php:694
 msgid "linkedin"
 msgstr "لینکداین"
 
@@ -6230,7 +6444,7 @@ msgid "Conflict"
 msgstr "تداخل"
 
 #: dash/addons/includes/languages/trans_static.php:570
-#: khadije/includes/languages/trans_project.php:601
+#: khadije/includes/languages/trans_project.php:604
 msgid "Gone"
 msgstr "رفت"
 
@@ -7788,27 +8002,43 @@ msgstr "بازگشت"
 msgid "Please only use below keyboard."
 msgstr "لطفا تنها از منوی زیر استفاده کنید."
 
-#: dash/lib/app/comment.php:74
+#: dash/lib/app/comment.php:79
 msgid "Duplicate comment from you was received"
 msgstr "این دیدگاه قبلا توسط شما ثبت شده است"
 
-#: dash/lib/app/comment.php:99
+#: dash/lib/app/comment.php:91
+#, fuzzy
+#| msgid "No way to add travel"
+msgid "No way to add new data"
+msgstr "راهی برای ثبت تشرف وجود ندارد"
+
+#: dash/lib/app/comment.php:114
 msgid "Can not access to edit comment"
 msgstr "شما دسترسی لازم را برای ویرایش این نظر ندارید"
 
-#: dash/lib/app/comment.php:186
+#: dash/lib/app/comment.php:206
 msgid "Please fill the content box"
 msgstr "لطفا باکس متن را پر کنید"
 
-#: dash/lib/app/comment.php:233 dash/lib/app/comment.php:240
+#: dash/lib/app/comment.php:253 dash/lib/app/comment.php:260
 #: dash/lib/app/posts.php:20 dash/lib/app/posts.php:28
 #: khadije/content/comment/model.php:113
 msgid "Invalid post id"
 msgstr "شناسه پست اشتباه است"
 
-#: dash/lib/app/comment.php:246
+#: dash/lib/app/comment.php:266
 msgid "Comment of this post is closed!"
 msgstr "دیدگاه‌های این نوشته بسته است!"
+
+#: dash/lib/app/comment.php:278
+#, fuzzy
+#| msgid "website is out of range"
+msgid "Title is out of range!"
+msgstr "وبسایت وارد شده بسیار طولانی است"
+
+#: dash/lib/app/comment.php:287 dash/lib/app/term.php:164
+msgid "Invalid parent"
+msgstr "شناسه والد اشتباه است"
 
 #: dash/lib/app/contact.php:51
 msgid "User id not set"
@@ -8109,10 +8339,6 @@ msgstr "عبارات تکراری"
 msgid "Please set the term excerpt less than 500 character"
 msgstr "لطفا چکیده عبارات را کمتر از ۵۰۰ حرف وارد کنید"
 
-#: dash/lib/app/term.php:164
-msgid "Invalid parent"
-msgstr "شناسه والد اشتباه است"
-
 #: dash/lib/app/term.php:180
 msgid "Parent not found"
 msgstr "والد یافت نشد"
@@ -8189,23 +8415,23 @@ msgstr "کد واحد مالی نادرست است"
 msgid "Language is incorrect"
 msgstr "زبان نادرست است"
 
-#: dash/lib/app/user.php:219
+#: dash/lib/app/user.php:219 khadije/includes/lib/app/festival.php:209
 msgid "website is out of range"
 msgstr "وبسایت وارد شده بسیار طولانی است"
 
-#: dash/lib/app/user.php:227
+#: dash/lib/app/user.php:227 khadije/includes/lib/app/festival.php:181
 msgid "facebook is out of range"
 msgstr "شناسه فیس‌بوک وارد شده بسیار طولانی است"
 
-#: dash/lib/app/user.php:235
+#: dash/lib/app/user.php:235 khadije/includes/lib/app/festival.php:188
 msgid "twitter is out of range"
 msgstr "شناسه تویتر وارد شده بسیار طولانی است"
 
-#: dash/lib/app/user.php:243
+#: dash/lib/app/user.php:243 khadije/includes/lib/app/festival.php:195
 msgid "instagram is out of range"
 msgstr "شناسه اینستاگرام وارد شده بسیار طولانی است"
 
-#: dash/lib/app/user.php:251
+#: dash/lib/app/user.php:251 khadije/includes/lib/app/festival.php:202
 msgid "linkedin is out of range"
 msgstr "شناسه لینکدین وارد شده بسیار طولانی است"
 
@@ -8466,13 +8692,20 @@ msgstr "گذرواژه باید حداقل ۶ کاراکتر باشد"
 msgid "You must set less than 99 character in password"
 msgstr "گذرواژه باید کمتر از ۹۹ کاراکتر باشد"
 
-#: dash/lib/utility/git.php:118
+#: dash/lib/utility/git.php:125 dash/lib/utility/git.php:287
 msgid "Not Work!"
 msgstr "کار نمیکند!"
 
-#: dash/lib/utility/git.php:132
+#: dash/lib/utility/git.php:139 dash/lib/utility/git.php:198
+#: dash/lib/utility/git.php:247 dash/lib/utility/git.php:297
 msgid "This location is not exist!"
 msgstr "این مکان وجود ندارد!"
+
+#: dash/lib/utility/git.php:188 dash/lib/utility/git.php:237
+#, fuzzy
+#| msgid "No change"
+msgid "NO change!"
+msgstr "بدون تغییر"
 
 #: dash/lib/utility/google.php:122
 msgid "Invalid access token"
@@ -9365,6 +9598,7 @@ msgstr "بررسی لیست آخرین تراکنش‌های مربوط به ک�
 #: khadije/content_cp/health/view.php:17 khadije/content_cp/nationalcode/view.php:18
 #: khadije/content_cp/representation/view.php:16
 #: khadije/content_cp/service/view.php:16 khadije/content_cp/trip/view.php:18
+#: khadije/content_fp/festival/home/view.php:17
 msgid "Export"
 msgstr "خروجی"
 
@@ -9402,7 +9636,7 @@ msgid "check consulting requests"
 msgstr "درخواست‌های خدمات مشاوره خود را بررسی کنید"
 
 #: khadije/content_cp/consulting/view.php:85
-#: khadije/includes/languages/trans_project.php:426
+#: khadije/includes/languages/trans_project.php:427
 #: khadije/includes/languages/trans_static.php:83
 msgid "Consulting"
 msgstr "خدمات مشاوره"
@@ -9449,11 +9683,11 @@ msgstr "غیر فعال سازی تمامی درخواست‌های سفر"
 msgid "Danger"
 msgstr "خطرناک"
 
-#: khadije/content_cp/donate/options/model.php:72
+#: khadije/content_cp/donate/options/model.php:73
 msgid "Donate successfully edited"
 msgstr "نوع هزینه کرد با موفقیت ویرایش شد"
 
-#: khadije/content_cp/donate/options/model.php:77
+#: khadije/content_cp/donate/options/model.php:78
 msgid "Donate successfully added"
 msgstr "نوع هزینه کرد با موفقیت ثبت شد"
 
@@ -9503,7 +9737,7 @@ msgid "check request and update status of each request"
 msgstr "بررسی درخواست‌ها و ویرایش وضعیت هر کدام از آنان"
 
 #: khadije/content_cp/familytrip/view.php:138 khadije/content_cp/trip/view.php:137
-#: khadije/includes/languages/trans_project.php:492
+#: khadije/includes/languages/trans_project.php:493
 msgid "Place"
 msgstr "مکان"
 
@@ -9803,7 +10037,7 @@ msgid "Back to report list"
 msgstr "بازگشت به لیست گزارشات"
 
 #: khadije/content_cp/report/daily/view.php:14
-#: khadije/includes/languages/trans_project.php:522
+#: khadije/includes/languages/trans_project.php:525
 msgid "Report daily"
 msgstr "گزارش روزانه"
 
@@ -9920,16 +10154,75 @@ msgid "Your gele vas saved and after accept you can see it in this page"
 msgstr "دل‌نوشته شما با موفقیت اضافه شد و پس از تایید در همین صفحه قابل نمایش است"
 
 #: khadije/content_delneveshte/home/view.php:9
+#: khadije/content_festival/demo/view.php:9
 msgid "Heart Writing"
 msgstr "دل‌نوشته"
 
+#: khadije/content_fp/festival/add/view.php:15
+#: khadije/content_fp/festival/home/view.php:21
+#, fuzzy
+#| msgid "Add new :val"
+msgid "Add new festival"
+msgstr "افزودن :val جدید"
+
+#: khadije/content_fp/festival/add/view.php:16
+msgid "add new festival by some data and can edit it later"
+msgstr ""
+
+#: khadije/content_fp/festival/add/view.php:18
+#: khadije/content_fp/festival/detail/view.php:17
+#: khadije/content_fp/festival/file/view.php:17
+#: khadije/content_fp/festival/general/view.php:17
+#: khadije/content_fp/festival/message/view.php:17
+#: khadije/content_fp/festival/social/view.php:17
+#, fuzzy
+#| msgid "Back to request list"
+msgid "Back to festival list"
+msgstr "بازگشت به لیست درخواست‌ها"
+
+#: khadije/content_fp/festival/detail/view.php:13
+#: khadije/content_fp/festival/file/view.php:13
+#: khadije/content_fp/festival/general/view.php:13
+#: khadije/content_fp/festival/message/view.php:13
+#: khadije/content_fp/festival/social/view.php:13
+#, fuzzy
+#| msgid "Edit staff"
+msgid "Edit festival"
+msgstr "ویرایش کارمندان"
+
+#: khadije/content_fp/festival/detail/view.php:15
+#: khadije/content_fp/festival/file/view.php:15
+#: khadije/content_fp/festival/general/view.php:15
+#: khadije/content_fp/festival/message/view.php:15
+#: khadije/content_fp/festival/social/view.php:15
+msgid "Edit festival and add some detail for this"
+msgstr ""
+
+#: khadije/content_fp/festival/home/view.php:14
+#, fuzzy
+#| msgid "Festival"
+msgid "Festivals list"
+msgstr "جشنواره"
+
+#: khadije/content_fp/festival/home/view.php:15
+#, fuzzy
+#| msgid "Check tags and add or edit some new tag"
+msgid "check last festival and add or edit a festival"
+msgstr "برچسب ها را بررسی کنید و برخی از برچسب های جدید را اضافه یا ویرایش کنید"
+
+#: khadije/content_fp/home/view.php:18 khadije/content_fp/home/view.php:20
+#, fuzzy
+#| msgid "Khadije Request Dashboard"
+msgid "Khadije Festival Dashboard"
+msgstr "داشبورد درخواست‌ها"
+
 #: khadije/includes/languages/trans_dash.php:230
-#: khadije/includes/languages/trans_project.php:570
+#: khadije/includes/languages/trans_project.php:573
 msgid "Contact US"
 msgstr "تماس با ما"
 
 #: khadije/includes/languages/trans_dash.php:243
-#: khadije/includes/languages/trans_project.php:422
+#: khadije/includes/languages/trans_project.php:423
 #: khadije/includes/languages/trans_static.php:81
 msgid "Admin Contact"
 msgstr "ارتباط با مدیریت"
@@ -9954,21 +10247,211 @@ msgstr ""
 "انتخاب دسته‌بندی برای نوشته منجر به تصحیح آدرس نوشته و ساختارمند کردن آن برای "
 "یافتن بهتر می‌گردد."
 
-#: khadije/includes/languages/trans_dash.php:498
+#: khadije/includes/languages/trans_dash.php:491
+#, fuzzy
+#| msgid "Recovery password"
+msgid "Server password"
+msgstr "بازیابی گذرواژه"
+
+#: khadije/includes/languages/trans_dash.php:501
 msgid "CPU Usage"
 msgstr "مصرف پردازنده"
 
-#: khadije/includes/languages/trans_dash.php:499
+#: khadije/includes/languages/trans_dash.php:502
 msgid "Memory"
 msgstr "حافظه"
 
-#: khadije/includes/languages/trans_dash.php:500
+#: khadije/includes/languages/trans_dash.php:503
 msgid "Disk usage"
 msgstr "مصرف دیسک"
 
-#: khadije/includes/languages/trans_dash.php:501
+#: khadije/includes/languages/trans_dash.php:504
 msgid "percentage"
 msgstr "درصد"
+
+#: khadije/includes/languages/trans_dash.php:622
+#, fuzzy
+#| msgid "Date created"
+msgid "Date and time"
+msgstr "تاریخ ثبت"
+
+#: khadije/includes/languages/trans_dash.php:624
+#, fuzzy
+#| msgid "status"
+msgid "Git status"
+msgstr "وضعیت"
+
+#: khadije/includes/languages/trans_dash.php:668
+msgid "If the git password is saved on your server"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:671
+#, fuzzy
+#| msgid "password"
+msgid "Git password"
+msgstr "گذرواژه"
+
+#: khadije/includes/languages/trans_dash.php:672
+#, fuzzy
+#| msgid "Enter to change pass"
+msgid "Enter git pass"
+msgstr "برای تغییر کلمه عبور آن را وارد کنید"
+
+#: khadije/includes/languages/trans_dash.php:720
+#, fuzzy
+#| msgid "Active users"
+msgid "Active tickets"
+msgstr "کاربران فعال"
+
+#: khadije/includes/languages/trans_dash.php:721
+msgid "Open new ticket!"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:723
+#, fuzzy
+#| msgid "Suppliers"
+msgid "Replies"
+msgstr "تامین‌کنندگان"
+
+#: khadije/includes/languages/trans_dash.php:724
+#, fuzzy
+#| msgid "Archive"
+msgid "Archived"
+msgstr "بایگانی"
+
+#: khadije/includes/languages/trans_dash.php:725
+msgid "Avg. First Response"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:726
+#, fuzzy
+#| msgid "minute"
+msgid "Minute"
+msgstr "دقیقه"
+
+#: khadije/includes/languages/trans_dash.php:727
+msgid "Avg. Time to Archive"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:728
+#, fuzzy
+#| msgid "hours"
+msgid "Hours"
+msgstr "ساعات"
+
+#: khadije/includes/languages/trans_dash.php:731
+#, fuzzy
+#| msgid "Store Panel"
+msgid "Support Panel"
+msgstr "پنل فروشگاه"
+
+#: khadije/includes/languages/trans_dash.php:732
+msgid "New Ticket"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:733
+msgid "Unanswered"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:734
+msgid "Mine"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:735
+msgid "All"
+msgstr "همه"
+
+#: khadije/includes/languages/trans_dash.php:736
+#, fuzzy
+#| msgid "Label"
+msgid "Labels"
+msgstr "برچسب"
+
+#: khadije/includes/languages/trans_dash.php:737
+#, fuzzy
+#| msgid "Big"
+msgid "Bug"
+msgstr "بزرگ"
+
+#: khadije/includes/languages/trans_dash.php:738
+#, fuzzy
+#| msgid "Featured Image"
+msgid "Feature"
+msgstr "تصویر شاخص"
+
+#: khadije/includes/languages/trans_dash.php:741
+#, fuzzy
+#| msgid "reject"
+msgid "Subject"
+msgstr "رد کردن"
+
+#: khadije/includes/languages/trans_dash.php:742
+msgid "Subject of your ticket"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:743
+msgid "Set title will help us answer quickly"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:744
+#, fuzzy
+#| msgid "Attachments"
+msgid "Attachment"
+msgstr "ضمیمه‌ها"
+
+#: khadije/includes/languages/trans_dash.php:747
+#, fuzzy
+#| msgid "First name"
+msgid "First response"
+msgstr "نام"
+
+#: khadije/includes/languages/trans_dash.php:750
+msgid "Ticket No"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:751
+#, fuzzy
+#| msgid "Created date"
+msgid "Create date"
+msgstr "تاریخ ایجاد"
+
+#: khadije/includes/languages/trans_dash.php:752
+msgid "Last activity"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:753
+msgid "Submit as Solved"
+msgstr ""
+
+#: khadije/includes/languages/trans_dash.php:754
+#, fuzzy
+#| msgid "Clockpicker"
+msgid "Close ticket"
+msgstr "انتخابگر زمان"
+
+#: khadije/includes/languages/trans_dash.php:755
+#, fuzzy
+#| msgid "Created"
+msgid "Creator"
+msgstr "ساخته شده"
+
+#: khadije/includes/languages/trans_dash.php:756
+#, fuzzy
+#| msgid "Email"
+msgid "Mmail"
+msgstr "رایانامه"
+
+#: khadije/includes/languages/trans_dash.php:757
+#, fuzzy
+#| msgid "Save all"
+msgid "Save tag"
+msgstr "ذخیره همه"
+
+#: khadije/includes/languages/trans_dash.php:758
+#, fuzzy
+#| msgid "Add tag manually to link articles togethers"
+msgid "Add tag manually to link tickets togethers"
+msgstr "تگ اضافه را به صورت دستی اضافه کنید تا مقالات را در کنار هم قرار دهید"
 
 #: khadije/includes/languages/trans_project.php:8
 msgid "Now we dont need sercants, check it later!"
@@ -10869,479 +11352,764 @@ msgid "Search in health"
 msgstr "جستجو در خدمات درمانی"
 
 #: khadije/includes/languages/trans_project.php:420
+msgid "Festival"
+msgstr "جشنواره"
+
+#: khadije/includes/languages/trans_project.php:421
 msgid "Meeting"
 msgstr "جلسات"
 
-#: khadije/includes/languages/trans_project.php:423
+#: khadije/includes/languages/trans_project.php:424
 #: khadije/includes/languages/trans_static.php:106
 msgid "Report"
 msgstr "گزارش"
 
-#: khadije/includes/languages/trans_project.php:424
+#: khadije/includes/languages/trans_project.php:425
 msgid "Home page number"
 msgstr "اعداد صفحه نخست"
 
-#: khadije/includes/languages/trans_project.php:425
+#: khadije/includes/languages/trans_project.php:426
 msgid "Send SMS"
 msgstr "ارسال پیامک"
 
-#: khadije/includes/languages/trans_project.php:427
+#: khadije/includes/languages/trans_project.php:428
 msgid "SMS Template"
 msgstr "الگو‌های پیام کوتاه"
 
-#: khadije/includes/languages/trans_project.php:428
+#: khadije/includes/languages/trans_project.php:429
 msgid "Donate product list"
 msgstr "لیست نذر کالاها"
 
-#: khadije/includes/languages/trans_project.php:429
+#: khadije/includes/languages/trans_project.php:430
 msgid "Donate list"
 msgstr "لیست کمک نقدی"
 
-#: khadije/includes/languages/trans_project.php:430
+#: khadije/includes/languages/trans_project.php:431
 msgid "Group trip request"
 msgstr "درخواست تشرف کاروانی"
 
-#: khadije/includes/languages/trans_project.php:431
+#: khadije/includes/languages/trans_project.php:432
 msgid "Family trip request"
 msgstr "درخواست تشرف خانوادگی"
 
-#: khadije/includes/languages/trans_project.php:432
+#: khadije/includes/languages/trans_project.php:433
 msgid "request service list"
 msgstr "لیست درخواست‌های خادمی"
 
-#: khadije/includes/languages/trans_project.php:437
+#: khadije/includes/languages/trans_project.php:438
 msgid "Save pre requirement of meeting as draft"
 msgstr "ذخیره پیش‌نیازهای جلسه به‌صورت پیش‌نویس"
 
-#: khadije/includes/languages/trans_project.php:438
+#: khadije/includes/languages/trans_project.php:439
 msgid "Meeting time"
 msgstr "زمان جلسه"
 
-#: khadije/includes/languages/trans_project.php:439
+#: khadije/includes/languages/trans_project.php:440
 msgid "Time"
 msgstr "زمان"
 
-#: khadije/includes/languages/trans_project.php:440
+#: khadije/includes/languages/trans_project.php:441
 msgid "Meeting title"
 msgstr "عنوان جلسه"
 
-#: khadije/includes/languages/trans_project.php:441
+#: khadije/includes/languages/trans_project.php:442
 msgid "Meeting Order"
 msgstr "دستور جلسه"
 
-#: khadije/includes/languages/trans_project.php:442
+#: khadije/includes/languages/trans_project.php:443
 msgid "No member registered yet!"
 msgstr "تاکنون اعضای جلسه وارد نشده است!"
 
-#: khadije/includes/languages/trans_project.php:443
+#: khadije/includes/languages/trans_project.php:444
 msgid "Save and send meeting report"
 msgstr "ذخیره و ارسال گزارش جلسه"
 
-#: khadije/includes/languages/trans_project.php:444
+#: khadije/includes/languages/trans_project.php:445
 msgid "Meeting members"
 msgstr "حاضرین در جلسه"
 
-#: khadije/includes/languages/trans_project.php:446
+#: khadije/includes/languages/trans_project.php:447
 msgid "add name of invited person to list of members "
 msgstr "نام مدعوین محترم را در لیست اعضا وارد کنید "
 
-#: khadije/includes/languages/trans_project.php:447
+#: khadije/includes/languages/trans_project.php:448
 msgid "Type name of members and add them to meeting"
 msgstr "اسامی و عناوین اعضای حاضر در جلسه را تایپ کرده و آنان را به‌جلسه اضافه کنید"
 
-#: khadije/includes/languages/trans_project.php:448
+#: khadije/includes/languages/trans_project.php:449
 msgid "Add member"
 msgstr "افزودن اعضا"
 
-#: khadije/includes/languages/trans_project.php:449
+#: khadije/includes/languages/trans_project.php:450
 msgid "Date of meeting"
 msgstr "تاریخ جلسه"
 
-#: khadije/includes/languages/trans_project.php:450
+#: khadije/includes/languages/trans_project.php:451
 msgid "Meeting date"
 msgstr "تاریخ جلسه"
 
-#: khadije/includes/languages/trans_project.php:451
+#: khadije/includes/languages/trans_project.php:452
 msgid "Meeting Title"
 msgstr "عنوان جلسه"
 
-#: khadije/includes/languages/trans_project.php:452
+#: khadije/includes/languages/trans_project.php:453
 msgid "Order of meeting"
 msgstr "دستور جلسه"
 
-#: khadije/includes/languages/trans_project.php:453
+#: khadije/includes/languages/trans_project.php:454
 msgid "Type subject and approvals of meeting and any description you need."
 msgstr ""
 "موضوعات مورد بحث و مصوبات جلسه و هر توضیح دیگری که نیاز هست را به‌صورت مشروح "
 "بنویسید."
 
-#: khadije/includes/languages/trans_project.php:455
+#: khadije/includes/languages/trans_project.php:456
 msgid "Add gallery report"
 msgstr "افزودن گزارش تصویری"
 
-#: khadije/includes/languages/trans_project.php:456
+#: khadije/includes/languages/trans_project.php:457
 msgid "To add image or video gallery report, drop file here or press this button"
 msgstr ""
 "برای افزودن عکس یا ویدیویی از گزارش جلسه، فایل آن را در اینجا رها کرده و یا روی "
 "این دکمه کلیک کنید"
 
-#: khadije/includes/languages/trans_project.php:466
+#: khadije/includes/languages/trans_project.php:467
 msgid "Without title"
 msgstr "بدون عنوان"
 
-#: khadije/includes/languages/trans_project.php:467
+#: khadije/includes/languages/trans_project.php:468
 msgid "Without meeting order"
 msgstr "بدون دستور جلسه"
 
-#: khadije/includes/languages/trans_project.php:468
+#: khadije/includes/languages/trans_project.php:469
 msgid "Subject and approvals of meeting is not set!"
 msgstr "موضوعات و مصوبات جلسه ثبت نشده است!"
 
-#: khadije/includes/languages/trans_project.php:469
+#: khadije/includes/languages/trans_project.php:470
 msgid "Gallery report"
 msgstr "گزارش تصویری"
 
-#: khadije/includes/languages/trans_project.php:470
+#: khadije/includes/languages/trans_project.php:471
 msgid "Edit meeting"
 msgstr "ویرایش جلسات"
 
-#: khadije/includes/languages/trans_project.php:477
+#: khadije/includes/languages/trans_project.php:478
 msgid "Donations"
 msgstr "کمکهای نقدی"
 
-#: khadije/includes/languages/trans_project.php:478
+#: khadije/includes/languages/trans_project.php:479
 msgid "Book transaction list"
 msgstr "لیست تراکنش‌های کتاب"
 
-#: khadije/includes/languages/trans_project.php:481
+#: khadije/includes/languages/trans_project.php:482
 msgid "No nationalcode founded."
 msgstr "کدملی ای یافت نشد"
 
-#: khadije/includes/languages/trans_project.php:482
+#: khadije/includes/languages/trans_project.php:483
 msgid "You are not have nationalcode yet!"
 msgstr "شما هنوز کدملی ثبت‌شده‌ای ندارید!"
 
-#: khadije/includes/languages/trans_project.php:483
+#: khadije/includes/languages/trans_project.php:484
 msgid "Search in national codes"
 msgstr "جستجو در کدملی‌ها"
 
-#: khadije/includes/languages/trans_project.php:484
+#: khadije/includes/languages/trans_project.php:485
 msgid "Nationalcode"
 msgstr "کدملی"
 
-#: khadije/includes/languages/trans_project.php:491
+#: khadije/includes/languages/trans_project.php:492
 msgid "List of city place"
 msgstr "لیست محل شهرها"
 
-#: khadije/includes/languages/trans_project.php:494
+#: khadije/includes/languages/trans_project.php:495
 msgid "Please select one items"
 msgstr "لطفا یک گزینه را انتخاب کنید"
 
-#: khadije/includes/languages/trans_project.php:495
+#: khadije/includes/languages/trans_project.php:496
 msgid "Enter a valid place"
 msgstr "محل معتبری را انتخاب کنید"
 
-#: khadije/includes/languages/trans_project.php:498
+#: khadije/includes/languages/trans_project.php:499
 msgid "List of Product need"
 msgstr "لیست کالا‌های مورد نیاز"
 
-#: khadije/includes/languages/trans_project.php:499
+#: khadije/includes/languages/trans_project.php:500
 msgid "Picture"
 msgstr "تصویر"
 
-#: khadije/includes/languages/trans_project.php:502
+#: khadije/includes/languages/trans_project.php:503
 msgid "Desctiption"
 msgstr "توضیحات"
 
-#: khadije/includes/languages/trans_project.php:503
+#: khadije/includes/languages/trans_project.php:504
 msgid "Enter a valid title"
 msgstr "عنوان را وارد کنید"
 
-#: khadije/includes/languages/trans_project.php:504
+#: khadije/includes/languages/trans_project.php:505
 msgid "Enter a valid count"
 msgstr "لطفا تعداد را به صورت صحیح وارد کنید"
 
+#: khadije/includes/languages/trans_project.php:508
+#: khadije/includes/languages/trans_static.php:120
+msgid "Sort"
+msgstr "مرتب‌سازی"
+
 #: khadije/includes/languages/trans_project.php:509
+#, fuzzy
+#| msgid "Enter a valid count"
+msgid "Enter a valid sort"
+msgstr "لطفا تعداد را به صورت صحیح وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:512
 msgid "Sum"
 msgstr "جمع"
 
-#: khadije/includes/languages/trans_project.php:512
+#: khadije/includes/languages/trans_project.php:515
 msgid "Price Variation"
 msgstr "پراکندگی قیمت"
 
-#: khadije/includes/languages/trans_project.php:519
+#: khadije/includes/languages/trans_project.php:522
 msgid "Report Count transaction group by name"
 msgstr "گزارش جمع مبالغ تراکنش به تفکیک نام"
 
-#: khadije/includes/languages/trans_project.php:520
+#: khadije/includes/languages/trans_project.php:523
 msgid "Report Count transaction group by payment and hazinekard"
 msgstr "گزارش تعداد تراکنش‌ها به تفکیک درگاه و نوع هزینه کرد"
 
-#: khadije/includes/languages/trans_project.php:521
+#: khadije/includes/languages/trans_project.php:524
 msgid "Report sum transaction group by hazinekard"
 msgstr "گزارش جمع مبالغ تراکنش به تفکیک نوع هزینه کرد"
 
-#: khadije/includes/languages/trans_project.php:523
+#: khadije/includes/languages/trans_project.php:526
 msgid "Report Month"
 msgstr "گزارش به تفکیک ماه"
 
-#: khadije/includes/languages/trans_project.php:532
+#: khadije/includes/languages/trans_project.php:535
 msgid "Search in representation"
 msgstr "جستجو در زیارت نیابتی"
 
-#: khadije/includes/languages/trans_project.php:533
+#: khadije/includes/languages/trans_project.php:536
 msgid "Action"
 msgstr "عملیات"
 
-#: khadije/includes/languages/trans_project.php:536
+#: khadije/includes/languages/trans_project.php:539
 msgid "Status of representation"
 msgstr "وضعیت زیارت نیابتی"
 
-#: khadije/includes/languages/trans_project.php:537
+#: khadije/includes/languages/trans_project.php:540
 msgid "inapropirate request and spam detected"
 msgstr "درخواست نامناسب و هرزنامه شناسایی شد"
 
-#: khadije/includes/languages/trans_project.php:538
+#: khadije/includes/languages/trans_project.php:541
 msgid "Done Representation"
 msgstr "زیارت نیابتی انجام شد"
 
-#: khadije/includes/languages/trans_project.php:539
+#: khadije/includes/languages/trans_project.php:542
 msgid "Representation is done"
 msgstr "زیارت نیابتی انجام شده است"
 
-#: khadije/includes/languages/trans_project.php:541
+#: khadije/includes/languages/trans_project.php:544
 msgid "try to fill request"
 msgstr "در تلاش برای پرکردن درخواست"
 
-#: khadije/includes/languages/trans_project.php:542
+#: khadije/includes/languages/trans_project.php:545
 msgid "cancel from user"
 msgstr "انصراف از طرف متقاضی"
 
-#: khadije/includes/languages/trans_project.php:543
+#: khadije/includes/languages/trans_project.php:546
 msgid "Save changes"
 msgstr "ذخیره تغییرات"
 
-#: khadije/includes/languages/trans_project.php:546
+#: khadije/includes/languages/trans_project.php:549
 msgid "Search in services"
 msgstr "جستجو در درخواست‌های خادمین"
 
-#: khadije/includes/languages/trans_project.php:547
+#: khadije/includes/languages/trans_project.php:550
 msgid "expertvalue"
 msgstr "میزان تخصص"
 
-#: khadije/includes/languages/trans_project.php:548
+#: khadije/includes/languages/trans_project.php:551
 msgid "expertyear"
 msgstr "سابقه تخصص به سال"
 
-#: khadije/includes/languages/trans_project.php:549
+#: khadije/includes/languages/trans_project.php:552
 msgid "startdate"
 msgstr "تاریخ شروع"
 
-#: khadije/includes/languages/trans_project.php:550
+#: khadije/includes/languages/trans_project.php:553
 msgid "enddate"
 msgstr "تاریخ پایان"
 
-#: khadije/includes/languages/trans_project.php:551
+#: khadije/includes/languages/trans_project.php:554
 #: khadije/includes/languages/trans_static.php:101
 msgid "job"
 msgstr "شغل"
 
-#: khadije/includes/languages/trans_project.php:553
+#: khadije/includes/languages/trans_project.php:556
 msgid "arabic"
 msgstr "عربی"
 
-#: khadije/includes/languages/trans_project.php:556
+#: khadije/includes/languages/trans_project.php:559
 msgid "Statistics"
 msgstr "آمار"
 
-#: khadije/includes/languages/trans_project.php:557
+#: khadije/includes/languages/trans_project.php:560
 msgid "Financial"
 msgstr "مالی"
 
-#: khadije/includes/languages/trans_project.php:558
+#: khadije/includes/languages/trans_project.php:561
 msgid "Servants"
 msgstr "خادمین"
 
-#: khadije/includes/languages/trans_project.php:559
+#: khadije/includes/languages/trans_project.php:562
 msgid "Group trip"
 msgstr "تشرف کاروانی"
 
-#: khadije/includes/languages/trans_project.php:560
+#: khadije/includes/languages/trans_project.php:563
 msgid "Family trip"
 msgstr "تشرف خانوادگی"
 
-#: khadije/includes/languages/trans_project.php:561
+#: khadije/includes/languages/trans_project.php:564
 msgid "consulting service"
 msgstr "خدمات مشاوره"
 
-#: khadije/includes/languages/trans_project.php:562
+#: khadije/includes/languages/trans_project.php:565
 msgid "representation service"
 msgstr "زیارت نیابتی"
 
-#: khadije/includes/languages/trans_project.php:563
+#: khadije/includes/languages/trans_project.php:566
 msgid "Meetings"
 msgstr "جلسات"
 
-#: khadije/includes/languages/trans_project.php:564
+#: khadije/includes/languages/trans_project.php:567
 msgid "Meeting reports"
 msgstr "گزارش جلسات"
 
-#: khadije/includes/languages/trans_project.php:565
+#: khadije/includes/languages/trans_project.php:568
 msgid "Add new report"
 msgstr "ثبت گزارش جدید"
 
-#: khadije/includes/languages/trans_project.php:580
+#: khadije/includes/languages/trans_project.php:583
 msgid "Maximum people can signup as awaiting"
 msgstr "حداکثر ظرفیت قابل پذیرش برای ثبت‌نام درحال انتظار"
 
-#: khadije/includes/languages/trans_project.php:581
+#: khadije/includes/languages/trans_project.php:584
 msgid "User can set date of trip"
 msgstr "اجازه تنظیم تاریخ تشرف"
 
-#: khadije/includes/languages/trans_project.php:584
+#: khadije/includes/languages/trans_project.php:587
 msgid "Search in trips"
 msgstr "جستجو در تشرف ها"
 
-#: khadije/includes/languages/trans_project.php:586
+#: khadije/includes/languages/trans_project.php:589
 msgid "Birthdate"
 msgstr "تاریخ تولد"
 
-#: khadije/includes/languages/trans_project.php:587
+#: khadije/includes/languages/trans_project.php:590
 msgid "Partner"
 msgstr "همراهان"
 
-#: khadije/includes/languages/trans_project.php:588
+#: khadije/includes/languages/trans_project.php:591
 msgid "Date created"
 msgstr "تاریخ ثبت"
 
-#: khadije/includes/languages/trans_project.php:589
+#: khadije/includes/languages/trans_project.php:592
 msgid "Total Request"
 msgstr "تعداد کل درخواست‌ها"
 
-#: khadije/includes/languages/trans_project.php:590
+#: khadije/includes/languages/trans_project.php:593
 msgid "Today"
 msgstr "امروز"
 
-#: khadije/includes/languages/trans_project.php:593
+#: khadije/includes/languages/trans_project.php:596
 msgid "List of trip partner"
 msgstr "لیست همراهان سفر"
 
-#: khadije/includes/languages/trans_project.php:594
+#: khadije/includes/languages/trans_project.php:597
 msgid "No partner set"
 msgstr "همراهی تنظیم نشده است"
 
-#: khadije/includes/languages/trans_project.php:595
+#: khadije/includes/languages/trans_project.php:598
 msgid "Status of trip"
 msgstr "وضعیت سفر"
 
-#: khadije/includes/languages/trans_project.php:596
+#: khadije/includes/languages/trans_project.php:599
 msgid "send new complete request"
 msgstr "درخواست جدید و کامل ارسال شده"
 
-#: khadije/includes/languages/trans_project.php:597
+#: khadije/includes/languages/trans_project.php:600
 msgid "Review"
 msgstr "بررسی"
 
-#: khadije/includes/languages/trans_project.php:598
+#: khadije/includes/languages/trans_project.php:601
 msgid "after check and before accept"
 msgstr "پس از بررسی اولیه و پیش از تایید"
 
-#: khadije/includes/languages/trans_project.php:599
+#: khadije/includes/languages/trans_project.php:602
 msgid "queue"
 msgstr "صف"
 
-#: khadije/includes/languages/trans_project.php:600
+#: khadije/includes/languages/trans_project.php:603
 msgid "In queue of send"
 msgstr "در صف ارسال"
 
-#: khadije/includes/languages/trans_project.php:602
+#: khadije/includes/languages/trans_project.php:605
 msgid "successfully go to trip"
 msgstr "با موفقیت مشرف شد"
 
-#: khadije/includes/languages/trans_project.php:603
+#: khadije/includes/languages/trans_project.php:606
 #: khadije/includes/languages/trans_static.php:21
 msgid "Reject"
 msgstr "رد کردن"
 
-#: khadije/includes/languages/trans_project.php:604
+#: khadije/includes/languages/trans_project.php:607
 msgid "does not accepted for some reason"
 msgstr "بنا به دلایلی مورد قبول واقع نشد"
 
-#: khadije/includes/languages/trans_project.php:605
+#: khadije/includes/languages/trans_project.php:608
 msgid "Not Answer"
 msgstr "بدون پاسخ"
 
-#: khadije/includes/languages/trans_project.php:606
+#: khadije/includes/languages/trans_project.php:609
 msgid "not answer to call check"
 msgstr "به تماس بررسی پاسخ نداد"
 
-#: khadije/includes/languages/trans_project.php:607
+#: khadije/includes/languages/trans_project.php:610
 msgid "Admin Cancel"
 msgstr "کنسل از طرف مدیریت"
 
-#: khadije/includes/languages/trans_project.php:608
+#: khadije/includes/languages/trans_project.php:611
 msgid "delete from admin"
 msgstr "حذف از طرف مدیر"
 
-#: khadije/includes/languages/trans_project.php:609
+#: khadije/includes/languages/trans_project.php:612
 msgid "Edit partner"
 msgstr "ویرایش همراه"
 
-#: khadije/includes/languages/trans_project.php:615
+#: khadije/includes/languages/trans_project.php:618
 msgid "Salavat"
 msgstr "صلوات"
 
-#: khadije/includes/languages/trans_project.php:632
+#: khadije/includes/languages/trans_project.php:635
 msgid "Click and go to khadije site"
 msgstr "برای ناوبری به سایت حضرت خدیجه کلیک کنید"
 
-#: khadije/includes/languages/trans_project.php:633
+#: khadije/includes/languages/trans_project.php:636
 msgid "Wrote your heart sounds"
 msgstr "صدای قلبت را بنویس"
 
-#: khadije/includes/languages/trans_project.php:634
+#: khadije/includes/languages/trans_project.php:637
 msgid "optional"
 msgstr "اختیاری"
 
-#: khadije/includes/languages/trans_project.php:635
+#: khadije/includes/languages/trans_project.php:638
 msgid "Not require"
 msgstr "الزامی نیست"
 
-#: khadije/includes/languages/trans_project.php:636
+#: khadije/includes/languages/trans_project.php:639
 msgid "Mobile number is not showing on site and optional"
 msgstr "شماره موبایل روی سایت نمایش داده نشده و اختیاری است"
 
-#: khadije/includes/languages/trans_project.php:637
+#: khadije/includes/languages/trans_project.php:640
 msgid "Press here to send"
 msgstr "برای ارسال اینجا را بفشارید"
 
-#: khadije/includes/languages/trans_project.php:640
+#: khadije/includes/languages/trans_project.php:643
 msgid "Last messages"
 msgstr "آخرین پیام‌ها"
 
-#: khadije/includes/languages/trans_project.php:641
+#: khadije/includes/languages/trans_project.php:644
 msgid "Random"
 msgstr "تصادفی"
 
-#: khadije/includes/languages/trans_project.php:642
+#: khadije/includes/languages/trans_project.php:645
 msgid "Last"
 msgstr "آخرین"
 
-#: khadije/includes/languages/trans_project.php:643
+#: khadije/includes/languages/trans_project.php:646
 msgid "Max like"
 msgstr "پیشترین پسند"
 
-#: khadije/includes/languages/trans_project.php:644
+#: khadije/includes/languages/trans_project.php:647
 msgid "Miss"
 msgstr "خانم"
 
-#: khadije/includes/languages/trans_project.php:645
+#: khadije/includes/languages/trans_project.php:648
 msgid "I am sympathetic"
 msgstr "من هم همدردم"
 
-#: khadije/includes/languages/trans_project.php:646
+#: khadije/includes/languages/trans_project.php:649
 msgid "People who sympathetic with this person"
 msgstr "کسانی که با این شخص ابراز همدردی کرده‌اند"
+
+#: khadije/includes/languages/trans_project.php:652
+#, fuzzy
+#| msgid "Time"
+msgid "Timeline"
+msgstr "زمان"
+
+#: khadije/includes/languages/trans_project.php:653
+#, fuzzy
+#| msgid "Users"
+msgid "Sponsers"
+msgstr "کاربران"
+
+#: khadije/includes/languages/trans_project.php:660
+#, fuzzy
+#| msgid "Title of product"
+msgid "Title of festival"
+msgstr "عنوان محصول"
+
+#: khadije/includes/languages/trans_project.php:661
+#, fuzzy
+#| msgid "title"
+msgid "Subtitle"
+msgstr "عنوان"
+
+#: khadije/includes/languages/trans_project.php:662
+msgid "subTitle of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:663
+#, fuzzy
+#| msgid "Enter a valid title"
+msgid "Enter a valid subtitle"
+msgstr "عنوان را وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:665
+msgid "Slug of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:666
+msgid "Enter a valid slug"
+msgstr "نامک معتبری وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:667
+msgid "Write description of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:668
+msgid "Write intro of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:669
+msgid "Write about of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:670
+msgid "Write target of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:671
+msgid "Write axis of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:672
+msgid "Write view of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:673
+msgid "Write schedule of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:674
+#, fuzzy
+#| msgid "Edit profile of :val"
+msgid "Write place of festival"
+msgstr "ویرایش پروفایل :val"
+
+#: khadije/includes/languages/trans_project.php:675
+msgid "Write award of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:676
+#, fuzzy
+#| msgid "Edit profile of :val"
+msgid "Write phone of festival"
+msgstr "ویرایش پروفایل :val"
+
+#: khadije/includes/languages/trans_project.php:677
+msgid "Write address of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:678
+msgid "email of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:679
+#, fuzzy
+#| msgid "SMS service"
+msgid "SMS Service number"
+msgstr "سرویس پیامک"
+
+#: khadije/includes/languages/trans_project.php:680
+#, fuzzy
+#| msgid "Festival"
+msgid "sms of festival"
+msgstr "جشنواره"
+
+#: khadije/includes/languages/trans_project.php:681
+#, fuzzy
+#| msgid "Enter a valid slug"
+msgid "Enter a valid sms"
+msgstr "نامک معتبری وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:682
+#, fuzzy
+#| msgid "Telegram"
+msgid "telegram"
+msgstr "تلگرام"
+
+#: khadije/includes/languages/trans_project.php:683
+#, fuzzy
+#| msgid "telegram Logs"
+msgid "telegram of festival"
+msgstr "لاگ‌های تلگرام"
+
+#: khadije/includes/languages/trans_project.php:684
+#, fuzzy
+#| msgid "Enter a valid title"
+msgid "Enter a valid telegram"
+msgstr "عنوان را وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:686
+msgid "facebook of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:687
+#, fuzzy
+#| msgid "Enter a valid place"
+msgid "Enter a valid facebook"
+msgstr "محل معتبری را انتخاب کنید"
+
+#: khadije/includes/languages/trans_project.php:689
+msgid "twitter of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:690
+#, fuzzy
+#| msgid "Enter a valid title"
+msgid "Enter a valid twitter"
+msgstr "عنوان را وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:692
+#, fuzzy
+#| msgid "instagram is out of range"
+msgid "instagram of festival"
+msgstr "شناسه اینستاگرام وارد شده بسیار طولانی است"
+
+#: khadije/includes/languages/trans_project.php:693
+#, fuzzy
+#| msgid "Enter a valid name"
+msgid "Enter a valid instagram"
+msgstr "نام معتبر وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:695
+msgid "linkedin of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:696
+#, fuzzy
+#| msgid "Enter a valid name"
+msgid "Enter a valid linkedin"
+msgstr "نام معتبر وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:698
+msgid "website of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:699
+#, fuzzy
+#| msgid "Enter a valid title"
+msgid "Enter a valid website"
+msgstr "عنوان را وارد کنید"
+
+#: khadije/includes/languages/trans_project.php:700
+#, fuzzy
+#| msgid "Remote user"
+msgid "Free user"
+msgstr "کاربران ریموت"
+
+#: khadije/includes/languages/trans_project.php:701
+msgid "Every one can signup in this festival and send her project"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:702
+#, fuzzy
+#| msgid "Messages"
+msgid "messagesms"
+msgstr "پیام‌ها"
+
+#: khadije/includes/languages/trans_project.php:703
+#, fuzzy
+#| msgid "Message detail"
+msgid "messagesms of festival"
+msgstr "جزئیات پیامک"
+
+#: khadije/includes/languages/trans_project.php:704
+#, fuzzy
+#| msgid "Enter a valid eamil!"
+msgid "Enter a valid messagesms"
+msgstr "رایانامه‌ی معتبر را وارد کنید!"
+
+#: khadije/includes/languages/trans_project.php:705
+msgid "Write message of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:708
+#, fuzzy
+#| msgid "you can edit general detail of staff"
+msgid "Edit general setting of festival"
+msgstr "شما می‌توانید جزئیات عمومی کارمند را ویرایش کنید"
+
+#: khadije/includes/languages/trans_project.php:709
+#, fuzzy
+#| msgid "General Detail"
+msgid "General"
+msgstr "جزئیات عمومی"
+
+#: khadije/includes/languages/trans_project.php:710
+#, fuzzy
+#| msgid "Edit user detail"
+msgid "Edit sume detail of festival"
+msgstr "ویرایش‌کردن جزئیات‌‌کاربر"
+
+#: khadije/includes/languages/trans_project.php:711
+#, fuzzy
+#| msgid "Edit profile of :val"
+msgid "Edit sume social of festival"
+msgstr "ویرایش پروفایل :val"
+
+#: khadije/includes/languages/trans_project.php:712
+#, fuzzy
+#| msgid "Socialnetwork"
+msgid "Social Network"
+msgstr "شبکه‌های اجتماعی"
+
+#: khadije/includes/languages/trans_project.php:713
+#, fuzzy
+#| msgid "Edit profile of :val"
+msgid "Edit sume file of festival"
+msgstr "ویرایش پروفایل :val"
+
+#: khadije/includes/languages/trans_project.php:714
+#, fuzzy
+#| msgid "Festival"
+msgid "Festival file"
+msgstr "جشنواره"
+
+#: khadije/includes/languages/trans_project.php:715
+msgid "Edit sume message of festival"
+msgstr ""
+
+#: khadije/includes/languages/trans_project.php:716
+msgid "Message"
+msgstr "پیام"
+
+#: khadije/includes/languages/trans_project.php:721
+#, fuzzy
+#| msgid "Festival"
+msgid "Festivals"
+msgstr "جشنواره"
 
 #: khadije/includes/languages/trans_static.php:6
 msgid "Khadije"
@@ -11611,6 +12379,10 @@ msgstr "کنترل پنل جلسات"
 msgid "cpMeetingManage"
 msgstr "کنترل پنل مدیریت جلسات"
 
+#: khadije/includes/languages/trans_static.php:119
+msgid "sort"
+msgstr "مرتب‌سازی"
+
 #: khadije/includes/lib/app/donate.php:51
 msgid "This :way is not in your list!"
 msgstr "این :way در لیست شما وجود ندارد"
@@ -11666,6 +12438,126 @@ msgstr "تراکنش با موفقیت ثبت شد"
 #: khadije/includes/lib/app/donate.php:458
 msgid "Can not add transactions"
 msgstr "نمی‌توان تراکنش را اضافه کرد"
+
+#: khadije/includes/lib/app/festival.php:20
+#, fuzzy
+#| msgid ":dbtables id not set"
+msgid "Festival id not set"
+msgstr "شناسه تنظیم نشده است"
+
+#: khadije/includes/lib/app/festival.php:29
+#, fuzzy
+#| msgid "Invalid post id"
+msgid "Invalid festival id"
+msgstr "شناسه پست اشتباه است"
+
+#: khadije/includes/lib/app/festival.php:49
+#, fuzzy
+#| msgid "Please fill the title"
+msgid "Please fill the festival title"
+msgstr "لطفا عنوان را وارد کنید"
+
+#: khadije/includes/lib/app/festival.php:56
+#, fuzzy
+#| msgid "Please set the title less than 100 character"
+msgid "Please fill the festival title less than 500 character"
+msgstr "لطفا عنوان پست را کمتر از ۱۰۰ حرف وارد کنید"
+
+#: khadije/includes/lib/app/festival.php:72
+#, fuzzy
+#| msgid "Duplicate file in this gallery"
+msgid "Duplicate festival title"
+msgstr "این فایل در گالری تصاویر فعلی موجود است"
+
+#: khadije/includes/lib/app/festival.php:81
+#, fuzzy
+#| msgid "Invalid status of stores"
+msgid "Invalid status of festival"
+msgstr "وضعیت نادرست برای فروشگاه‌ها"
+
+#: khadije/includes/lib/app/festival.php:93
+#, fuzzy
+#| msgid "Please set the subtitle less than 300 character"
+msgid "Please fill the festival subtitle less than 500 character"
+msgstr "لطفا زیر عنوان را کمتر از ۳۰۰ حرف وارد کنید"
+
+#: khadije/includes/lib/app/festival.php:101
+#, fuzzy
+#| msgid "Please set the slug less than 100 character"
+msgid "Please fill the festival slug less than 500 character"
+msgstr "لطفا نامک را کمتر از ۱۰۰ حرف وارد کنید"
+
+#: khadije/includes/lib/app/festival.php:109
+#, fuzzy
+#| msgid "slug of store can not be null"
+msgid "slug of festival can not be null"
+msgstr "نام کوتاه فروشگاه نمی تواند خالی باشد"
+
+#: khadije/includes/lib/app/festival.php:115
+#, fuzzy
+#| msgid "Store slug must be larger than 5 character"
+msgid "festival slug must be larger than 3 character"
+msgstr "نام کوتاه فروشگاه باید بیشتر از ۵ حرف باشد"
+
+#: khadije/includes/lib/app/festival.php:121
+#, fuzzy
+#| msgid "Can not set page as parent of self!"
+msgid "Can not use 2 dash in slug"
+msgstr "نمی‌توانید صفحه‌ای را به‌عنوان والد خودش ثبت کنید!"
+
+#: khadije/includes/lib/app/festival.php:127
+#, fuzzy
+#| msgid "Only [A-Za-z0-9] can use in store slug"
+msgid "Only [A-Za-z0-9] can use in festival slug"
+msgstr "شما باید فقط از حروف و اعداد لاتین در نام کوتاه فروشگاه استفاده کنید"
+
+#: khadije/includes/lib/app/festival.php:134
+#, fuzzy
+#| msgid "Store slug must be less than 50 character"
+msgid "festival slug must be less than 500 character"
+msgstr "نام کوتاه فروشگاه باید کمتر از ۵۰ حرف باشد"
+
+#: khadije/includes/lib/app/festival.php:150
+#, fuzzy
+#| msgid "Duplicate slug"
+msgid "Duplicate festival slug"
+msgstr "نامک تکراری است"
+
+#: khadije/includes/lib/app/festival.php:160
+#, fuzzy
+#| msgid "Please fill the title"
+msgid "Please fill the festival slug"
+msgstr "لطفا عنوان را وارد کنید"
+
+#: khadije/includes/lib/app/festival.php:167
+#, fuzzy
+#| msgid "gmail is out of range"
+msgid "sms is out of range"
+msgstr "جیمیل وارد شده بسیار طولانی است"
+
+#: khadije/includes/lib/app/festival.php:174
+#, fuzzy
+#| msgid "instagram is out of range"
+msgid "telegram is out of range"
+msgstr "شناسه اینستاگرام وارد شده بسیار طولانی است"
+
+#: khadije/includes/lib/app/festival/add.php:71
+#, fuzzy
+#| msgid "No way to insert post"
+msgid "No way to insert festival"
+msgstr "هیچ راهی برای افزودن پست وجود ندارد"
+
+#: khadije/includes/lib/app/festival/add.php:79
+#, fuzzy
+#| msgid "Post successfuly added"
+msgid "Festival successfuly added"
+msgstr "پست با موفقیت اضافه شد"
+
+#: khadije/includes/lib/app/festival/edit.php:67
+#, fuzzy
+#| msgid "Post successfully updated"
+msgid "Festival successfully updated"
+msgstr "پست با موفقیت به روز رسانی شد"
 
 #: khadije/includes/lib/app/myuser.php:29
 msgid "Invalid arguments gender"
@@ -11867,7 +12759,13 @@ msgstr "لطفا وضعیت نیاز را به صورت دقیق انتخاب ک
 msgid "Please set a valid language"
 msgstr "لطفا زبان معتبری تنظیم کنید"
 
-#: khadije/includes/lib/app/need.php:252
+#: khadije/includes/lib/app/need.php:148
+#, fuzzy
+#| msgid "Please set a valid amount number"
+msgid "Please set a valid sort as a number"
+msgstr "لطفا مبلغ قابل پرداخت را به صورت صحیح وارد کنید"
+
+#: khadije/includes/lib/app/need.php:261
 msgid "No way to insert need"
 msgstr "راهی برای ثبت نیاز جدید وجود ندارد"
 
@@ -11890,10 +12788,6 @@ msgstr "شما باید سال مهارت خود را به عدد وارد کن�
 #: khadije/includes/lib/app/service.php:66
 msgid "Invalid car"
 msgstr "ماشینت اشتباهه"
-
-#: khadije/includes/lib/app/service.php:73
-msgid "Invalid file"
-msgstr "فایل اشتباه"
 
 #: khadije/includes/lib/app/service.php:85
 msgid "Invalid startdate"
@@ -11990,9 +12884,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Subtitle can used based on theme support"
 #~ msgstr "زیرنویس می تواند بر اساس پشتیبانی تم مورد استفاده قرار گیرد"
-
-#~ msgid "Enter a valid slug"
-#~ msgstr "نامک معتبری وارد کنید"
 
 #~ msgid "Check"
 #~ msgstr "بررسی"
@@ -12105,9 +12996,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "All trip"
 #~ msgstr "تمام سفرها"
 
-#~ msgid "All"
-#~ msgstr "همه"
-
 #~ msgid "Familty trip"
 #~ msgstr "تشرف خانوادگی"
 
@@ -12125,9 +13013,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Request list"
 #~ msgstr "لیست درخواست‌ها"
-
-#~ msgid "Festival"
-#~ msgstr "جشنواره"
 
 #~ msgid "List of way"
 #~ msgstr "لیست روش‌های مصرف"
@@ -13043,9 +13928,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Back to store dashboard"
 #~ msgstr "بازگشت به داشبورد فروشگاه"
 
-#~ msgid "This way is not in your list!"
-#~ msgstr "این روش مصرف در لیست شما وجود ندارد!"
-
 #~ msgid "Please set way"
 #~ msgstr "لطفا روش مصرف را انتخاب کنید"
 
@@ -13091,9 +13973,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Cronjob Logs"
 #~ msgstr "لاگ کرون جاب"
 
-#~ msgid "telegram Logs"
-#~ msgstr "لاگ‌های تلگرام"
-
 #~ msgid "telegram - Error Logs"
 #~ msgstr "تلگرام - لاگ خطاها"
 
@@ -13114,9 +13993,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Dash Repository"
 #~ msgstr "مخزن دش"
-
-#~ msgid "Profile successfully updated"
-#~ msgstr "اطلاعات با موفقیت به روزرسانی شد"
 
 #~ msgid "Ermile Dash"
 #~ msgstr "ارمایل دش"
@@ -13277,9 +14153,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Check buttons collection"
 #~ msgstr "مجموعه دکمه‌ها را بررسی کنید"
 
-#~ msgid "Messages"
-#~ msgstr "پیام‌ها"
-
 #~ msgid "This site uses cookies"
 #~ msgstr "این سایت از کوکی استفاده می‌کند"
 
@@ -13412,9 +14285,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "CEO and Founder"
 #~ msgstr "مدیر عامل و موسس"
-
-#~ msgid "Clockpicker"
-#~ msgstr "انتخابگر زمان"
 
 #~ msgid "Datepicker"
 #~ msgstr "دریافت کننده تاریخ"
@@ -14391,9 +15261,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Allow minus"
 #~ msgstr "اجازه‌ی ثبت هدررفت"
 
-#~ msgid "Remote user"
-#~ msgstr "کاربران ریموت"
-
 #~ msgid "24 hour"
 #~ msgstr "۲۴ ساعته"
 
@@ -14696,9 +15563,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "A complete box of share links to social media"
 #~ msgstr "جعبه کامل برای به‌اشتراک‌گذاری در شبکه‌های اجتماعی"
 
-#~ msgid "Sortable"
-#~ msgstr "قابل‌ مرتب‌شدن"
-
 #~ msgid "Allow to easily add sortable to projects"
 #~ msgstr "اجازه دهید به‌راحتی قابلیت مرتب‌کردن به پروژه‌هایتان اضافه‌شود"
 
@@ -14958,9 +15822,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Large"
 #~ msgstr "بزرگ"
 
-#~ msgid "Big"
-#~ msgstr "بزرگ"
-
 #~ msgid "Huge"
 #~ msgstr "عظیم"
 
@@ -15053,9 +15914,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Invalid parameter temp_token"
 #~ msgstr "پارامتر temp_token نامعتبر است"
-
-#~ msgid "invoice not found"
-#~ msgstr "فاکتوری یافت نشد"
 
 #~ msgid "You have new invoice in azvir.com"
 #~ msgstr "شما فاکتور جدیدی در azvir.com‌ دارید"
@@ -16078,9 +16936,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Proudly Made in IRAN"
 #~ msgstr "با افتخار ساخت ایران"
 
-#~ msgid "Store Panel"
-#~ msgstr "پنل فروشگاه"
-
 #~ msgid "Free"
 #~ msgstr "رایگان"
 
@@ -16129,9 +16984,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ "شرکت‌های بزرگ به آسانی شرکت‌های کوچک کار نمی‌کنند و از کانون فرهنگی حضرت خدیجه "
 #~ "نیز به همان شکل استفاده نمی‌کنند. این دلیل راه‌اندازی بخش سازمانی ماست."
 
-#~ msgid "We try to complete help center as soon as posible"
-#~ msgstr "ما در تلاش برای تکمیل مرکز راهنمایی خود در کوتاه‌ترین زمان ممکن هستیم."
-
 #~ msgid "only team admin"
 #~ msgstr "فقط مدیر تیم"
 
@@ -16153,9 +17005,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgstr ""
 #~ "آسان‌ترین راه برای یادگیری نحوه‌ی کارکرد کانون فرهنگی حضرت خدیجه ورود به آن است "
 #~ "که کمتر از ۳ دقیقه از زمان شما را برای راه‌اندازی اولیه و شروع به‌کار می‌گیرد."
-
-#~ msgid "Add new Store"
-#~ msgstr "افزودن فروشگاه جدید"
 
 #~ msgid "Store"
 #~ msgstr "فروشگاه"
@@ -16412,9 +17261,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Change mobile number of staff and parents, email and tel of home"
 #~ msgstr "تغییر شماره تلفن‌همراه، رایانامه و شماره تماس کارمند"
 
-#~ msgid "you can edit general detail of staff"
-#~ msgstr "شما می‌توانید جزئیات عمومی کارمند را ویرایش کنید"
-
 #~ msgid "List of staffs"
 #~ msgstr "لیست کارمندان"
 
@@ -16488,9 +17334,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "modified"
 #~ msgstr "آخرین زمان ویرایش"
-
-#~ msgid "hours"
-#~ msgstr "ساعات"
 
 #~ msgid "nothing"
 #~ msgstr "هیچی"
@@ -16659,9 +17502,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Birth Detail"
 #~ msgstr "جزئیات تولد"
-
-#~ msgid "General Detail"
-#~ msgstr "جزئیات عمومی"
 
 #~ msgid "Document Photo"
 #~ msgstr "مدارک تصویری"
@@ -16977,9 +17817,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Import products"
 #~ msgstr "واردکردن دسته‌ای محصولات"
-
-#~ msgid "Check list of products"
-#~ msgstr "لیست محصولات را چک کنید"
 
 #~ msgid "Product Count"
 #~ msgstr "تعداد محصولات"
@@ -17329,18 +18166,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Store website must be less than 200 character"
 #~ msgstr "آدرس وبسایت فروشگاه باید کمتر از ۲۰۰ حرف باشد"
 
-#~ msgid "slug of store can not be null"
-#~ msgstr "نام کوتاه فروشگاه نمی تواند خالی باشد"
-
-#~ msgid "Store slug must be larger than 5 character"
-#~ msgstr "نام کوتاه فروشگاه باید بیشتر از ۵ حرف باشد"
-
-#~ msgid "Only [A-Za-z0-9] can use in store slug"
-#~ msgstr "شما باید فقط از حروف و اعداد لاتین در نام کوتاه فروشگاه استفاده کنید"
-
-#~ msgid "Store slug must be less than 50 character"
-#~ msgstr "نام کوتاه فروشگاه باید کمتر از ۵۰ حرف باشد"
-
 #~ msgid "Store desc must be less than 200 character"
 #~ msgstr "توضیحات فروشگاه باید کمتر از ۲۰۰ حرف باشد"
 
@@ -17361,9 +18186,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "You must set city less than 50 character"
 #~ msgstr "شهر باید کمتر از ۵۰ کاراکتر باشد"
-
-#~ msgid "Invalid status of stores"
-#~ msgstr "وضعیت نادرست برای فروشگاه‌ها"
 
 #~ msgid ""
 #~ "To register a second store, you need to have at least 10,000 toman in "
@@ -17463,9 +18285,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Initial detail before start sell"
 #~ msgstr "مقادیر اولیه قبل از شروع فروش"
 
-#~ msgid "Title of product"
-#~ msgstr "عنوان محصول"
-
 #~ msgid "Code for quick access"
 #~ msgstr "کد برای دسترسی سریع"
 
@@ -17474,9 +18293,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Date Modified"
 #~ msgstr "تاریخ به‌روزرسانی"
-
-#~ msgid "No change"
-#~ msgstr "بدون تغییر"
 
 #~ msgid "No result founded."
 #~ msgstr "نتیجه‌ای یافت نشد."
@@ -17723,9 +18539,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "; "
 #~ msgstr "؛"
 
-#~ msgid "Message"
-#~ msgstr "پیام"
-
 #~ msgid ""
 #~ "Version 3 of Khadije released with new features and bugfixes and improvements."
 #~ msgstr ""
@@ -17885,9 +18698,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Staffs"
 #~ msgstr "کارمندان"
-
-#~ msgid "Suppliers"
-#~ msgstr "تامین‌کنندگان"
 
 #~ msgid "Customers"
 #~ msgstr "مشتریان"
@@ -18124,9 +18934,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 #~ msgid "Please enter a valid mobile number"
 #~ msgstr "لطفا شماره موبایل معتبری وارد کنید"
 
-#~ msgid "Edit staff"
-#~ msgstr "ویرایش کارمندان"
-
 #~ msgid "Staff Database"
 #~ msgstr "بانک اطلاعات کارمند"
 
@@ -18193,9 +19000,6 @@ msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
 
 #~ msgid "Invalid timed auto report time"
 #~ msgstr "مقدار اشتباه برای زمان ارسال خودکار گزارش"
-
-#~ msgid "Report settings was changed"
-#~ msgstr "تنظیمات گزارش تغییر یافت"
 
 #~ msgid ""
 #~ "Manage report, set header and footer, set automatic report and manage telegram "

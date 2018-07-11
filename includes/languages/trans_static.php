@@ -116,6 +116,8 @@ class TransStatic
 
 	echo T_("cpMeeting");
 	echo T_("cpMeetingManage");
+	echo T_("sort");
+	echo T_("Sort");
  }
 }
 ?>
