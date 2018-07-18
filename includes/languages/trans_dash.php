@@ -753,7 +753,6 @@ class twigTransTerms
 	echo T_("Submit as Solved");                                                      // Line 21
 	echo T_("Close ticket");                                                          // Line 23
 	echo T_("Creator");                                                               // Line 32
-	echo T_("Mmail");                                                                 // Line 42
 	echo T_("Save tag");                                                              // Line 49
 	echo T_("Add tag manually to link tickets togethers");                            // Line 97
 

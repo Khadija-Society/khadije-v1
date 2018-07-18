@@ -723,8 +723,6 @@ class twigTransTerms
 
 	//---------------------------------------------------------content_fp\sidenav.html
 
-	//---------------------public_html\files\1\8-eacf331f0ffc35d4b482f1d15a887d3b.html
-
 	//-----------------------------------------------public_html\static\js\festival.js
 
 	//-------------------------------------------------public_html\static\js\script.js
