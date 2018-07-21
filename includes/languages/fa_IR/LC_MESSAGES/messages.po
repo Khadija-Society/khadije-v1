@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-07-18 17:18+0430\n"
-"PO-Revision-Date: 2018-07-18 17:19+0430\n"
+"POT-Creation-Date: 2018-07-21 20:28+0430\n"
+"PO-Revision-Date: 2018-07-21 20:33+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -256,6 +256,7 @@ msgstr "همچنین نظر خاص را اضافه یا ویرایش کنید."
 
 #: dash/addons/content_cp/comments/home/view.php:16
 #: dash/addons/content_cp/contact/home/view.php:16
+#: dash/addons/content_cp/log/home/view.php:13
 #: dash/addons/content_cp/posts/home/view.php:50
 #: dash/addons/content_cp/sms/template/view.php:15
 #: dash/addons/content_cp/terms/view.php:44
@@ -267,6 +268,7 @@ msgstr "بازگشت به داشبورد"
 
 #: dash/addons/content_cp/comments/home/view.php:23
 #: dash/addons/content_cp/contact/home/view.php:23
+#: dash/addons/content_cp/log/home/view.php:24
 #: dash/addons/content_cp/posts/home/view.php:63
 #: dash/addons/content_cp/users/home/view.php:23
 #: dash/addons/content_su/dbtables/view.php:20
@@ -331,6 +333,16 @@ msgstr "ارسال ایمیل به کاربر"
 #: dash/addons/content_cp/email/send/view.php:11
 msgid "Send every email to every user"
 msgstr "ارسال هر پیامی به کاربر توسط ایمیل"
+
+#: dash/addons/content_cp/log/home/view.php:9
+#: dash/addons/includes/languages/trans_dash.php:664
+#: khadije/includes/languages/trans_dash.php:626
+msgid "Log"
+msgstr "لاگ"
+
+#: dash/addons/content_cp/log/home/view.php:10
+msgid "Check list of log and search or filter in them to find your logs."
+msgstr "بررسی لیست ردپاها و جستجو در آنها و فیلتر کردن بعضی از ردپاها."
 
 #: dash/addons/content_cp/mycontact/view.php:9
 #: dash/addons/content_cp/mycontact/view.php:10
@@ -4217,11 +4229,6 @@ msgstr "ابزارهای خاص"
 #: khadije/includes/languages/trans_dash.php:625
 msgid "Server information"
 msgstr "اطلاعات سرور"
-
-#: dash/addons/includes/languages/trans_dash.php:664
-#: khadije/includes/languages/trans_dash.php:626
-msgid "Log"
-msgstr "لاگ"
 
 #: dash/addons/includes/languages/trans_dash.php:665
 #: khadije/includes/languages/trans_dash.php:627
@@ -8644,12 +8651,12 @@ msgstr "گذرواژه باید حداقل ۶ کاراکتر باشد"
 msgid "You must set less than 99 character in password"
 msgstr "گذرواژه باید کمتر از ۹۹ کاراکتر باشد"
 
-#: dash/lib/utility/git.php:125 dash/lib/utility/git.php:287
+#: dash/lib/utility/git.php:125 dash/lib/utility/git.php:288
 msgid "Not Work!"
 msgstr "کار نمیکند!"
 
 #: dash/lib/utility/git.php:139 dash/lib/utility/git.php:198
-#: dash/lib/utility/git.php:247 dash/lib/utility/git.php:297
+#: dash/lib/utility/git.php:248 dash/lib/utility/git.php:298
 msgid "This location is not exist!"
 msgstr "این مکان وجود ندارد!"
 
@@ -9579,7 +9586,7 @@ msgstr "بازگشت به لیست درخواست‌های مشاوره"
 
 #: khadije/content_cp/consulting/view.php:13
 msgid "Consulting request list"
-msgstr "لیست ٔرخواست‌های خدمات مشاوره شما"
+msgstr "لیست درخواست‌های خدمات مشاوره شما"
 
 #: khadije/content_cp/consulting/view.php:14
 msgid "check consulting requests"
