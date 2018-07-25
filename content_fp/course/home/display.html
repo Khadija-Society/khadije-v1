@@ -57,7 +57,6 @@
         <th data-sort={{sortLink.slug.order}}><a href="{{sortLink.slug.link}}">{%trans "Slug"%}</a></th>
         <th data-sort={{sortLink.status.order}}><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
         <th data-sort={{sortLink.datecreated.order}}><a href="{{sortLink.datecreated.link}}">{%trans "Date Created"%}</a></th>
-        <th>{%trans "Operation"%}</th>
       </tr>
     </thead>
 
@@ -68,9 +67,6 @@
         <td>{{value.slug}}</td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
         <td>{{value.datecreated | tdate()}}</td>
-        <td>
-          <a class="badge" href="{{url.here}}/course?id={{value.id}}">{%trans "Course"%}</a>
-        </td>
       </tr>
       {%endfor%}
     </tbody>
