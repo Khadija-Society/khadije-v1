@@ -142,6 +142,18 @@ class model
 
 			];
 
+			if(mb_strlen($post['title']) >= 100)
+			{
+				\dash\notif::error(T_("Please set the title less than 100 character"), 'title');
+				return false;
+			}
+
+			if(mb_strlen($post['subtitle']) >= 100)
+			{
+				\dash\notif::error(T_("Please set the order less than 100 character"), 'order');
+				return false;
+			}
+
 			$post['status'] = 'draft';
 			$post['type']   = 'meeting';
 
