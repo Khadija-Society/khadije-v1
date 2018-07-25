@@ -10,6 +10,16 @@ class view
 
 		\content_fp\course\load::festival();
 
+		if(\dash\request::get('course'))
+		{
+			$load = \lib\app\festivalcourse::get(\dash\request::get('id'));
+			if(!$load)
+			{
+				\dash\header::status(404, T_("Invalid id"));
+			}
+			\dash\data::dataRow($load);
+		}
+
 		\dash\data::page_pictogram('plus');
 
 		\dash\data::display_courseAdd('content_fp/course/layout.html');
