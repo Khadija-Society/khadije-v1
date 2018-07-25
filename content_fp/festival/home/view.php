@@ -49,7 +49,9 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		\dash\data::dataTable(\dash\app\transaction::list($search_string, $args));
+		$dataTable = \lib\app\festival::list($search_string, $args);
+
+		\dash\data::dataTable($dataTable);
 
 		if($export)
 		{

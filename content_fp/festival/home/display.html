@@ -1,49 +1,11 @@
 {%extends display.cpMain%}
 
 
-{%block GlanceDetail%}
-  <div class="f">
-    <div class="c s12">
-      <div class="dcard x1">
-       <div class="statistic blue">
-        <div class="value">{{totalPaid | fitNumber}}</div>
-        <div class="label">{%trans "Total Donation"%}</div>
-       </div>
-      </div>
-    </div>
-
-    <div class="cauto s6">
-      <div class="dcard x1">
-       <div class="statistic">
-        <div class="value">{{totalPaidDate | fitNumber}}</div>
-        <div class="label">{%trans "Today Donation"%}</div>
-       </div>
-      </div>
-    </div>
-
-    <div class="cauto s6">
-      <div class="dcard x1">
-       <div class="statistic">
-        <div class="value">{{totalPaidCount | fitNumber}}</div>
-        <div class="label">{%trans "Donation Count"%}</div>
-       </div>
-      </div>
-    </div>
-    <div class="cauto s12">
-      <div class="dcard x1">
-       <div class="statistic brown">
-        <div class="value">{%if totalPaidCount%}{{ (totalPaid / totalPaidCount) | round(-3) | fitNumber}} {%else%}-{%endif%}</div>
-        <div class="label">{%trans "Donation Average"%}</div>
-       </div>
-      </div>
-    </div>
-  </div>
-{%endblock%}
 
 
 
 {%block pageContent%}
-{{block('GlanceDetail')}}
+
 {%if dataTable%}
  {%if dataFilter%}
 
@@ -76,9 +38,9 @@
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.here}}/donate'>
+  <form method="get" action='{{url.this}}'>
     <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search in donations"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
   </form>
@@ -91,57 +53,25 @@
   <table class="tbl">
     <thead class="primary">
       <tr>
-        <th></th>
-        <th class="s0">{%trans "Name"%}</th>
-        <th>{%trans "mobile"%}</th>
-        <th class="s0" data-sort="{{sortLink.payment.order}}"><a href="{{sortLink.payment.link}}">{%trans "Payment"%}</a></th>
-        <th data-sort="{{sortLink.plus.order}}"><a href="{{sortLink.plus.link}}">{%trans "Amount"%}</a></th>
-        <th class="s0">{%trans "Niyat"%}</th>
-        <th>{%trans "Hazinekard"%}</th>
-        <th class="s0" data-sort="{{sortLink.dateverify.order}}"><a href="{{sortLink.dateverify.link}}">{%trans "Date"%}</a></th>
+        <th>id</th>
+        <th>title</th>
+        <th>slug</th>
+        <th>status</th>
+        <th>freeuser</th>
+        <th>datecreated</th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-        <td class="collapsing">
-          {%if value.doners%}{%else%}<small class="badge">{%trans "Anonymous"%}</small> {%endif%}
-        </td>
-        <td class="s0">
-{%if value.user_id%}
-          <a href="{{url.here}}/users/view?id={{value.user_id | coding('encode')}}">
-            <span class="sf-user fc-mute"></span>
-            {%if value.fullname%}
-            {{value.fullname}}
-            {%elseif value.displayname%}{{value.displayname}}
-            {%else%}
-            <small class='fc-mute'>{%trans "Without name"%}</small>
-            {%endif%}
-          </a>
-{%else%}
-            <span class="sf-chain-broken fc-mute"></span>
-            {%if value.fullname%}
-            {{value.fullname}}
-            {%elseif value.displayname%}{{value.displayname}}
-            {%else%}
-            <small class='fc-mute'>{%trans "Without name"%}</small>
-            {%endif%}
-{%endif%}
+        <td>{{value.id}}</td>
+        <td>{{value.title}}</td>
+        <td>{{value.slug}}</td>
+        <td>{{value.status}}</td>
+        <td>{{value.freeuser}}</td>
+        <td>{{value.datecreated}}</td>
 
-        </td>
-        <td>
-            {%if value.mobile%}
-            <a href="{{url.current}}?mobile={{value.mobile}}">{{value.mobile |fitNumber('mobile')}}</a>
-            {%else%}
-            <small class='fc-mute'>{%trans "Without mobile"%}</small>
-            {%endif%}
-        </td>
-        <td class="s0"><a href="{{url.current}}?payment={{value.payment}}">{%set myPayment = value.payment | capitalize%}{%trans myPayment%}</a></td>
-        <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} <b>{{value.plus | fitNumber}}</b> {%set pUnit = value.unit%}{%trans pUnit%}</td>
-        <td class="s0 max-w200">{{value.niyat}}</td>
-        <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}">{{value.hazinekard}}</a></td>
-        <td class="s0" title='{{value.dateverify | date("Y-m-d H:i:s") | tdate("Y-m-d H:i:s")}}'>{{value.dateverify | date("Y-m-d H:i:s")  | sdate("year","Y/m/d") }}</td>
       </tr>
       {%endfor%}
     </tbody>
@@ -155,7 +85,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg warn2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.here}}/donate">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -163,7 +93,7 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.here}}/donate">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 

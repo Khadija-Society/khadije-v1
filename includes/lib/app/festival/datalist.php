@@ -11,26 +11,6 @@ trait datalist
 		'signup',
 	];
 
-
-	public static function active_list($_implode = false, $_retrun_all = false)
-	{
-		$result = \lib\db\festivals::get(['academy_id' => \lib\academy::query_id(), 'status' => 'enable']);
-		if(is_array($result))
-		{
-			if(!$_retrun_all)
-			{
-				$result = array_column($result, 'title');
-			}
-		}
-
-		if($_implode)
-		{
-			$result = implode(',', $result);
-		}
-
-		return $result;
-	}
-
 	/**
 	 * Gets the festival.
 	 *
@@ -40,7 +20,7 @@ trait datalist
 	 */
 	public static function list($_string = null, $_args = [])
 	{
-		if(!\dash\user::id() || !\lib\academy::id())
+		if(!\dash\user::id())
 		{
 			return false;
 		}
@@ -63,8 +43,6 @@ trait datalist
 			$_args['sort'] = null;
 		}
 
-
-		$_args['academy_id'] = \lib\academy::query_id();
 
 		$result            = \lib\db\festivals::search($_string, $_args);
 		$temp              = [];
