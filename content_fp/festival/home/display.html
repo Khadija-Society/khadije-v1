@@ -52,26 +52,21 @@
  <div class="cbox fs12">
   <table class="tbl">
     <thead class="primary">
-      <tr>
-        <th>id</th>
-        <th>title</th>
-        <th>slug</th>
-        <th>status</th>
-        <th>freeuser</th>
-        <th>datecreated</th>
+      <tr class="txtC">
+        <th data-sort={{sortLink.title.order}}><a href="{{sortLink.title.link}}">{%trans "Title"%}</a></th>
+        <th data-sort={{sortLink.slug.order}}><a href="{{sortLink.slug.link}}">{%trans "Slug"%}</a></th>
+        <th data-sort={{sortLink.status.order}}><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
+        <th data-sort={{sortLink.datecreated.order}}><a href="{{sortLink.datecreated.link}}">{%trans "Date Created"%}</a></th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in dataTable%}
-      <tr>
-        <td>{{value.id}}</td>
-        <td>{{value.title}}</td>
+      <tr class="txtC">
+        <td><a href="{{url.this}}/general?id={{value.id}}" class="txtB">{{value.title}}</a></td>
         <td>{{value.slug}}</td>
-        <td>{{value.status}}</td>
-        <td>{{value.freeuser}}</td>
-        <td>{{value.datecreated}}</td>
-
+        <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
+        <td>{{value.datecreated | tdate()}}</td>
       </tr>
       {%endfor%}
     </tbody>

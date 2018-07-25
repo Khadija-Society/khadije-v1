@@ -58,7 +58,7 @@ class view
 			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::dataTable()]);
 		}
 
-		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
+		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\festival::$sort_field, \dash\url::this()));
 
 		$filterArray = $args;
 		unset($filterArray['donate']);

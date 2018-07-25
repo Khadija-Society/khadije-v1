@@ -44,9 +44,20 @@ class festivals
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function search()
+	public static function search($_string = null, $_option = [])
 	{
-		return \dash\db\config::public_search('festivals', ...func_get_args());
+		if(!is_array($_option))
+		{
+			$_option = [];
+		}
+
+		$default_option =
+		[
+			'search_field' => "( festivals.title LIKE '%__string__%') ",
+		];
+
+		$_option = array_merge($default_option, $_option);
+		return \dash\db\config::public_search('festivals', $_string, $_option);
 	}
 
 
