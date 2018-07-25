@@ -5,19 +5,30 @@
 
 {{block('pageSteps')}}
 
+<div class=" f txtC">
+	<a class="{%if requestGET.type == 'intro' or not requestGET.type %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=intro">{%trans "Intro"%}</a>
+	<a class="{%if requestGET.type == 'about' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=about">{%trans "About"%}</a>
+	<a class="{%if requestGET.type == 'target' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=target">{%trans "Target"%}</a>
+	<a class="{%if requestGET.type == 'axis' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=axis">{%trans "Axis"%}</a>
+	<a class="{%if requestGET.type == 'view' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=view">{%trans "View"%}</a>
+	<a class="{%if requestGET.type == 'schedule' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=schedule">{%trans "Schedule"%}</a>
+	<a class="{%if requestGET.type == 'place' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=place">{%trans "Place"%}</a>
+	<a class="{%if requestGET.type == 'award' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=award">{%trans "Award"%}</a>
+</div>
+
 <div class="f justify-center">
 	<div class="c8">
 		<div class="cbox">
 			<form method="post" autocomplete="off">
 
-				{{block('iintro')}}
-				{{block('iabout')}}
-				{{block('itarget')}}
-				{{block('iaxis')}}
-				{{block('iview')}}
-				{{block('ischedule')}}
-				{{block('iplace')}}
-				{{block('iaward')}}
+				{%if requestGET.type == 'intro' or not requestGET.type%} {{block('iintro')}} {%endif%}
+				{%if requestGET.type == 'about'%} {{block('iabout')}} {%endif%}
+				{%if requestGET.type == 'target'%} {{block('itarget')}} {%endif%}
+				{%if requestGET.type == 'axis'%} {{block('iaxis')}} {%endif%}
+				{%if requestGET.type == 'view'%} {{block('iview')}} {%endif%}
+				{%if requestGET.type == 'schedule'%} {{block('ischedule')}} {%endif%}
+				{%if requestGET.type == 'place'%} {{block('iplace')}} {%endif%}
+				{%if requestGET.type == 'award'%} {{block('iaward')}} {%endif%}
 				{{block('isave')}}
 			</form>
 		</div>
