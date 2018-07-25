@@ -8,10 +8,11 @@ class view
 	{
 		\dash\permission::access('fpFestivalView');
 
+		\content_fp\course\load::festival();
 
 		\dash\data::page_pictogram('list');
 
-		\dash\data::page_title(T_("Festivals list"));
+		\dash\data::page_title(T_("Course list"). ' | '. \dash\data::currentFestival_title());
 		\dash\data::page_desc(T_("check last festival and add or edit a festival"));
 
 		\dash\data::badge_link(\dash\url::here(). '/festival');
@@ -32,6 +33,8 @@ class view
 			$args['sort'] = 'dateverify';
 		}
 
+		$args['festival_id'] = \dash\coding::decode(\dash\request::get('id'));
+
 		$search_string     = \dash\request::get('q');
 
 		if($search_string)
@@ -46,7 +49,7 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		$dataTable = \lib\app\festival::list($search_string, $args);
+		$dataTable = \lib\app\festivalcourse::list($search_string, $args);
 
 		\dash\data::dataTable($dataTable);
 
@@ -60,6 +63,7 @@ class view
 		$filterArray = $args;
 		unset($filterArray['donate']);
 		unset($filterArray['condition']);
+		unset($filterArray['festival_id']);
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
