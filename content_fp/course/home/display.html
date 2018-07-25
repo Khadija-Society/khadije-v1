@@ -26,10 +26,10 @@
   {{block('htmlFilterNoResult')}}
 
  {%else%}
-  {{block('htmlStartAddNew')}}
 
  {%endif%}
 {%endif%}
+  {{block('htmlStartAddNew')}}
 
 {%endblock%}
 
@@ -94,6 +94,6 @@
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%} <a href="{{url.this}}/add?id={{requestGET.id}}">{%trans "Try to add new course"%}</a></p>
+<p class="fs14 msg success2 pTB20"><a href="{{url.this}}/add?id={{requestGET.id}}">{%trans "Try to add new course"%}</a></p>
 {%endblock%}
 
