@@ -60,6 +60,7 @@ trait add
 		{
 			$args['status']  = 'draft';
 		}
+
 		$args['creator']  = \dash\user::id();
 
 		$args = array_filter($args);

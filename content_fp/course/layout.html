@@ -4,7 +4,7 @@
 {%block ititle %}
 <label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="title" id="title" placeholder='{%trans "Title of festival"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid title"%}'>
+  <input type="text" name="title" id="title" placeholder='{%trans "Title of festival course"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid title"%}'>
 </div>
 {% endblock %}
 
@@ -12,157 +12,66 @@
 {%block isubtitle %}
 <label for="subtitle">{%trans "Subtitle"%}</label>
 <div class="input">
-  <input type="text" name="subtitle" id="subtitle" placeholder='{%trans "subTitle of festival"%} *' value="{{dataRow.subtitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid subtitle"%}'>
+  <input type="text" name="subtitle" id="subtitle" placeholder='{%trans "Subtitle of festival course"%}' value="{{dataRow.subtitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid subtitle"%}'>
 </div>
 {% endblock %}
 
-
-{%block islug %}
-<label for="slug">{%trans "Slug"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+{%block igroup %}
+<label for="group">{%trans "Group"%} </label>
 <div class="input">
-  <input type="text" name="slug" id="slug" placeholder='{%trans "Slug of festival"%} *' value="{{dataRow.slug}}" required  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid slug"%}'>
+  <input type="text" name="group" id="group" placeholder='{%trans "Group of festival course"%}' value="{{dataRow.group}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid group"%}'>
 </div>
 {% endblock %}
+
+
+{%block istatus%}
+
+<div class="mT3">
+ <label >{%trans "Status"%}</label>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
+  <label for="r-enable">{%trans "Enable"%}</label>
+ </div>
+
+
+ <div class="radio1 red mB25">
+  <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'  %} checked{%endif%}>
+  <label for="r-disable">{%trans "Disable"%}</label>
+ </div>
+
+</div>
+{%endblock%}
+
 
 {%block idesc%}
-<textarea class="txt mB10" data-editor name="desc" placeholder='{%trans "Write description of festival"%}' rows="15">{{dataRow.desc}}</textarea>
+<textarea class="txt mB10" data-editor name="desc" placeholder='{%trans "Write description of festival course"%}' rows="3">{{dataRow.desc}}</textarea>
 {%endblock%}
 
 
-{%block iintro%}
-<textarea class="txt mB10" data-editor name="intro" placeholder='{%trans "Write intro of festival"%}' rows="15">{{dataRow.intro}}</textarea>
+{%block icondition%}
+<textarea class="txt mB10" data-editor name="condition" placeholder='{%trans "Write condition of festival course"%}' rows="3">{{dataRow.condition}}</textarea>
 {%endblock%}
 
 
-{%block iabout%}
-<textarea class="txt mB10" data-editor name="about" placeholder='{%trans "Write about of festival"%}' rows="15">{{dataRow.about}}</textarea>
+{%block iconditionsend%}
+<textarea class="txt mB10" data-editor name="conditionsend" placeholder='{%trans "Write conditionsend of festival course"%}' rows="3">{{dataRow.conditionsend}}</textarea>
 {%endblock%}
 
-
-{%block itarget%}
-<textarea class="txt mB10" data-editor name="target" placeholder='{%trans "Write target of festival"%}' rows="15">{{dataRow.target}}</textarea>
-{%endblock%}
-
-
-
-{%block iaxis%}
-<textarea class="txt mB10" data-editor name="axis" placeholder='{%trans "Write axis of festival"%}' rows="15">{{dataRow.axis}}</textarea>
-{%endblock%}
-
-
-{%block iview%}
-<textarea class="txt mB10" data-editor name="view" placeholder='{%trans "Write view of festival"%}' rows="15">{{dataRow.view}}</textarea>
-{%endblock%}
-
-
-{%block ischedule%}
-<textarea class="txt mB10" data-editor name="schedule" placeholder='{%trans "Write schedule of festival"%}' rows="15">{{dataRow.schedule}}</textarea>
-{%endblock%}
-
-
-{%block iplace%}
-<textarea class="txt mB10" data-editor name="place" placeholder='{%trans "Write place of festival"%}' rows="15">{{dataRow.place}}</textarea>
-{%endblock%}
-
-{%block iaward%}
-<textarea class="txt mB10" data-editor name="award" placeholder='{%trans "Write award of festival"%}' rows="15">{{dataRow.award}}</textarea>
-{%endblock%}
-
-
-{%block iphone%}
-<textarea class="txt mB10" data-editor name="phone" placeholder='{%trans "Write phone of festival"%}' rows="3">{{dataRow.phone}}</textarea>
-{%endblock%}
-
-
-{%block iaddress%}
-<textarea class="txt mB10" data-editor name="address" placeholder='{%trans "Write address of festival"%}' rows="3">{{dataRow.address}}</textarea>
-{%endblock%}
-
-{%block iemail %}
-<label for="email">{%trans "Email"%}</label>
+{%block iprice %}
+<label for="price">{%trans "Pirce"%} </label>
 <div class="input">
-  <input type="email" name="email" id="email" placeholder='{%trans "email of festival"%} *' value="{{dataRow.email}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid email"%}'>
+  <input type="number" name="price" id="price" placeholder='{%trans "Price of festival course"%}' value="{{dataRow.price}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid pirce"%}'>
 </div>
 {% endblock %}
 
 
-{%block isms %}
-<label for="sms">{%trans "SMS Service number"%}</label>
-<div class="input">
-  <input type="number" name="sms" id="sms" placeholder='{%trans "sms of festival"%} *' value="{{dataRow.sms}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid sms"%}'>
-</div>
-{% endblock %}
-
-
-{%block itelegram%}
-<label for="telegram">{%trans "telegram"%}</label>
-<div class="input">
-	<input type="text" name="telegram" id="telegram" placeholder='{%trans "telegram of festival"%}' value="{{dataRow.telegram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid telegram"%}'>
-</div>
-{%endblock%}
-
-
-{%block ifacebook%}
-<label for="facebook">{%trans "facebook"%}</label>
-<div class="input">
-	<input type="text" name="facebook" id="facebook" placeholder='{%trans "facebook of festival"%}' value="{{dataRow.facebook}}" maxlength="200" minlength="1" title='{%trans "Enter a valid facebook"%}'>
-</div>
-{%endblock%}
-
-
-{%block itwitter%}
-<label for="twitter">{%trans "twitter"%}</label>
-<div class="input">
-	<input type="text" name="twitter" id="twitter" placeholder='{%trans "twitter of festival"%}' value="{{dataRow.twitter}}" maxlength="200" minlength="1" title='{%trans "Enter a valid twitter"%}'>
-</div>
-{%endblock%}
-
-
-{%block iinstagram%}
-<label for="instagram">{%trans "instagram"%}</label>
-<div class="input">
-	<input type="text" name="instagram" id="instagram" placeholder='{%trans "instagram of festival"%}' value="{{dataRow.instagram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid instagram"%}'>
-</div>
-{%endblock%}
-
-
-{%block ilinkedin%}
-<label for="linkedin">{%trans "linkedin"%}</label>
-<div class="input">
-	<input type="text" name="linkedin" id="linkedin" placeholder='{%trans "linkedin of festival"%}' value="{{dataRow.linkedin}}" maxlength="200" minlength="1" title='{%trans "Enter a valid linkedin"%}'>
-</div>
-{%endblock%}
-
-
-{%block iwebsite%}
-<label for="website">{%trans "website"%}</label>
-<div class="input">
-	<input type="url" name="website" id="website" placeholder='{%trans "website of festival"%}' value="{{dataRow.website}}" maxlength="200" minlength="1" title='{%trans "Enter a valid website"%}'>
-</div>
-{%endblock%}
-
-
-
-
-{%block ifreeuser%}
+{%block imultiuse%}
 <div class="switch1 mB10">
- <input type="checkbox" name="freeuser" id="freeuser" {%if dataRow.freeuser %}checked{%endif%}>
- <label for="freeuser"></label>
- <label for="freeuser">{%trans "Free user"%} <small>{%trans "Every one can signup in this festival and send her project"%}</small></label>
+ <input type="checkbox" name="multiuse" id="multiuse" {%if dataRow.multiuse %}checked{%endif%}>
+ <label for="multiuse"></label>
+ <label for="multiuse">{%trans "Multiuse"%}</label>
 </div>
-{%endblock%}
-
-
-{%block imessagesms%}
-<label for="messagesms">{%trans "messagesms"%}</label>
-<div class="input">
-	<input type="text" name="messagesms" id="messagesms" placeholder='{%trans "messagesms of festival"%}' value="{{dataRow.messagesms}}" maxlength="200" minlength="1" title='{%trans "Enter a valid messagesms"%}'>
-</div>
-{%endblock%}
-
-
-{%block imessage%}
-<textarea class="txt mB10" data-editor name="message" placeholder='{%trans "Write message of festival"%}' rows="4">{{dataRow.message}}</textarea>
 {%endblock%}
 
 
@@ -175,138 +84,3 @@
 {%endblock%}
 
 
-{%block istatus%}
-
-<div class="mT15">
- <label >{%trans "Status"%}</label>
-
- <div class="radio1 green">
-  <input type="radio" id="r-publish" name="status" value="publish" {%if dataRow.status == 'publish' or not dataRow.status %} checked{%endif%}>
-  <label for="r-publish">{%trans "Publish"%}</label>
- </div>
-
- <div class="radio1 black">
-  <input type="radio" id="r-draft" name="status" value="draft" {%if dataRow.status == 'draft'%} checked{%endif%} >
-  <label for="r-draft">{%trans "Draft"%}</label>
- </div>
-
- <div class="radio1 red mB25">
-  <input type="radio" id="r-deleted" name="status" value="deleted" {%if dataRow.status == 'deleted'  %} checked{%endif%}>
-  <label for="r-deleted">{%trans "Deleted"%}</label>
- </div>
-
-</div>
-{%endblock%}
-
-
-
-{%block pageSteps%}
-
-  <div class="f">
-
-
-   <div class="c s4">
-    <a class="dcard {%if url.child == 'general'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="49ctrlshift" title='{%trans "Edit general setting of festival"%}'>
-     <div class="statistic sm">
-      <div class="value"><i class="sf-cog"></i></div>
-      <div class="label">{%trans "General"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s4">
-    <a class="dcard {%if url.child == 'detail'%}active{%endif%}" href='{{url.this}}/detail?id={{requestGET.id}}' data-shortkey="50ctrlshift" title='{%trans "Edit sume detail of festival"%}'>
-     <div class="statistic sm">
-      <div class="value"><i class="sf-thumbnails"></i></div>
-      <div class="label">{%trans "Detail"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s4">
-    <a class="dcard {%if url.child == 'social'%}active{%endif%}" href='{{url.this}}/social?id={{requestGET.id}}' data-shortkey="51ctrlshift" title='{%trans "Edit sume social of festival"%}'>
-     <div class="statistic sm">
-      <div class="value"><i class="sf-network"></i></div>
-      <div class="label">{%trans "Social Network"%}<br><kbd class="mT5">Ctrl+Shift+3</kbd></div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s4">
-    <a class="dcard {%if url.child == 'file'%}active{%endif%}" href='{{url.this}}/file?id={{requestGET.id}}' data-shortkey="52ctrlshift" title='{%trans "Edit sume file of festival"%}'>
-     <div class="statistic sm">
-      <div class="value"><i class="sf-files-o"></i></div>
-      <div class="label">{%trans "Festival file"%}<br><kbd class="mT5">Ctrl+Shift+4</kbd></div>
-     </div>
-    </a>
-   </div>
-
-    <div class="c s4">
-    <a class="dcard {%if url.child == 'message'%}active{%endif%}" href='{{url.this}}/message?id={{requestGET.id}}' data-shortkey="53ctrlshift" title='{%trans "Edit sume message of festival"%}'>
-     <div class="statistic sm">
-      <div class="value"><i class="sf-envelope-o"></i></div>
-      <div class="label">{%trans "Message"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
-     </div>
-    </a>
-   </div>
-
-
-
-  </div>
-{%endblock%}
-
-
-{%block galleryImporter %}
-<div class="dropzone">
-  <h4>{%trans "Add to gallery"%}</h4>
-  <label for='gallery' class="btn light">{%trans "To add image gallery drop file here or"%}</label>
-  <input id="gallery" type="file" name="gallery" multiple>
-  <div class="progress shadow" data-percent='30'>
-    <div class="bar"></div>
-    <div class="detail"></div>
-  </div>
-</div>
-{% endblock %}
-
-{%block iGalleryShow%}
-
-{%if dataRow.meta.gallery%}
-<div class="cbox">
-  <h2>{%trans "Gallery"%}</h2>
-  <div class="normal f">
-
-    {% for key, myUrl in dataRow.meta.gallery%}
-      <div class="vcard mA10">
-
-        {%if myUrl ends with '.jpg' or myUrl ends with '.png' or myUrl ends with '.gif'%}
-        <img src="{{myUrl}}">
-        <div class="content"></div>
-        {%elseif myUrl ends with '.mp4' %}
-        <video>
-          <source src="{{myUrl}}" type="video/mp4">
-        </video>
-        <div class="content"><a href="{{myUrl}}" title='{%trans "Click to download"%}'>{%trans "Video"%}</a></div>
-        <div class="content"></div>
-        {%elseif myUrl ends with '.mp3' %}
-        <audio controls>
-          <source src="{{myUrl}}" type="audio/mpeg">
-        </audio>
-        <div class="content"><a href="{{myUrl}}" title='{%trans "Click to download"%}'>{%trans "MP3"%}</a></div>
-        {%elseif myUrl ends with '.pdf' %}
-          <div class="content title"><a href="{{myUrl}}" title='{%trans "Click to download"%}'>{%trans "PDF"%}</a></div>
-        {%else%}
-        <div class="content title"><a href="{{myUrl}}" title='{%trans "Click to download"%}'>{%trans "Without preview"%}</a></div>
-        {%endif%}
-        <div class="footer f">
-          <button class="btn block secondary" data-ajaxify data-data='{"type" : "remove_gallery", "id": "{{key}}"}' data-method='post'>{%trans "Remove"%}</button>
-        </div>
-      </div>
-    {%endfor%}
-  </div>
-</div>
-{%endif%}
-
-{%endblock%}
