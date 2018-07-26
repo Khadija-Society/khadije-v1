@@ -1,5 +1,5 @@
 <?php
-namespace content_fp\organizer\home;
+namespace content_fp\supporter\home;
 
 
 class view
@@ -9,7 +9,7 @@ class view
 
 		\dash\permission::access('fpFestivalView');
 
-		\content_fp\organizer\load::festival();
+		\content_fp\supporter\load::festival();
 
 		\dash\data::page_pictogram('list');
 
@@ -35,7 +35,8 @@ class view
 		}
 
 		$args['festival_id'] = \dash\coding::decode(\dash\request::get('id'));
-		$args['type'] = 'organizer';
+		$args['type'] = 'supporter';
+
 		$search_string     = \dash\request::get('q');
 
 		if($search_string)
