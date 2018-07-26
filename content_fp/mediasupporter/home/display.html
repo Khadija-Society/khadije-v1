@@ -26,10 +26,10 @@
   {{block('htmlFilterNoResult')}}
 
  {%else%}
-  {{block('htmlStartAddNew')}}
 
  {%endif%}
 {%endif%}
+  {{block('htmlStartAddNew')}}
 
 {%endblock%}
 
@@ -54,26 +54,20 @@
     <thead class="primary">
       <tr class="txtC">
         <th data-sort={{sortLink.title.order}}><a href="{{sortLink.title.link}}">{%trans "Title"%}</a></th>
-        <th data-sort={{sortLink.slug.order}}><a href="{{sortLink.slug.link}}">{%trans "Slug"%}</a></th>
+        <th data-sort={{sortLink.desc.order}}><a href="{{sortLink.desc.link}}">{%trans "Description"%}</a></th>
         <th data-sort={{sortLink.status.order}}><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
-        <th data-sort={{sortLink.datecreated.order}}><a href="{{sortLink.datecreated.link}}">{%trans "Date Created"%}</a></th>
-        <th>{%trans "Operation"%}</th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in dataTable%}
       <tr class="txtC">
-        <td><a href="{{url.this}}/general?id={{value.id}}" class="txtB">{{value.title}}</a></td>
-        <td>{{value.slug}}</td>
+        <td><a href="{{url.this}}/add?id={{requestGET.id}}&mediasupporter={{value.id}}" class="txtB">
+          {%if value.logo%}<img src="{{value.logo}}" class="avatar">{%endif%}
+        {{value.title}}</a></td>
+        <td>{{value.desc}}</td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
-        <td>{{value.datecreated | tdate()}}</td>
-        <td>
-          <a class="badge" href="{{url.here}}/course?id={{value.id}}">{%trans "Course"%}</a>
-          <a class="badge" href="{{url.here}}/organizer?id={{value.id}}">{%trans "Organizer"%}</a>
-          <a class="badge" href="{{url.here}}/supporter?id={{value.id}}">{%trans "Supporter"%}</a>
-          <a class="badge" href="{{url.here}}/mediasupporter?id={{value.id}}">{%trans "Media Supporter"%}</a>
-        </td>
+
       </tr>
       {%endfor%}
     </tbody>
@@ -101,6 +95,6 @@
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
+<p class="fs14 msg success2 pTB20"><a href="{{url.this}}/add?id={{requestGET.id}}">{%trans "Try to add new mediasupporter"%}</a></p>
 {%endblock%}
 
