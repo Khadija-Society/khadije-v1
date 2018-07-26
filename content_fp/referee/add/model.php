@@ -36,7 +36,6 @@ class model
 	{
 		\dash\permission::access('fpDetailAdd');
 
-
 		$post                = [];
 		$post['title']       = \dash\request::post('title');
 		$post['festival_id'] = \dash\request::get('id');
@@ -45,6 +44,12 @@ class model
 		$post['type']        = 'referee';
 		$post['status']      = \dash\request::post('status');
 		$post['logo']        = self::upload_logo();
+		$post['subtitle']    = \dash\request::post('subtitle');
+		$post['telegram']    = \dash\request::post('telegram');
+		$post['facebook']    = \dash\request::post('facebook');
+		$post['twitter']     = \dash\request::post('twitter');
+		$post['instagram']   = \dash\request::post('instagram');
+		$post['linkedin']    = \dash\request::post('linkedin');
 
 		if($post['logo'] === false)
 		{
