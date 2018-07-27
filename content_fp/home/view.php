@@ -21,6 +21,9 @@ class view
 
 		// $this->data->dir['right']     = $this->global->direction == 'rtl'? 'left':  'right';
 		// $this->data->dir['left']      = $this->global->direction == 'rtl'? 'right': 'left';
+
+		$all_festival = \lib\db\festivals::get(['status' => [" IS ", " NOT NULL"]]);
+		\dash\data::festivals(array_map(['\lib\app\festival', 'ready'], $all_festival));
 	}
 }
 ?>
