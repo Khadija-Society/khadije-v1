@@ -9,8 +9,8 @@ class model
 		\dash\permission::access('fpFestivalAdd');
 
 		$post              = [];
-		$post['phone']     = \dash\request::post('phone');
-		$post['address']   = \dash\request::post('address');
+		$post['phone']     = \dash\request::post('phone') ? $_POST['phone'] : null;
+		$post['address']   = \dash\request::post('address') ? $_POST['address'] : null;
 		$post['email']     = \dash\request::post('email');
 		$post['sms']       = \dash\request::post('sms');
 		$post['telegram']  = \dash\request::post('telegram');
