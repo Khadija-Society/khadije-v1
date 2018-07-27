@@ -273,12 +273,13 @@
 
 {%block iGalleryShow%}
 
-{%if dataRow.meta.gallery%}
+{%if dataRow.gallery.gallery%}
 <div class="cbox">
   <h2>{%trans "Gallery"%}</h2>
   <div class="normal f">
 
-    {% for key, myUrl in dataRow.meta.gallery%}
+    {% for key, myUrl in dataRow.gallery.gallery%}
+
       <div class="vcard mA10">
 
         {%if myUrl ends with '.jpg' or myUrl ends with '.png' or myUrl ends with '.gif'%}
@@ -309,4 +310,15 @@
 </div>
 {%endif%}
 
+{%endblock%}
+
+
+
+{%block ilogo%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="logo" id="logo1" data-preview data-max="500">
+ <label for="logo1" title="Simple Title">
+    {%if dataRow.logo%}<img src="{{dataRow.logo}}">{%endif%}
+ </label>
+</div>
 {%endblock%}

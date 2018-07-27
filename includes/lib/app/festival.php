@@ -12,6 +12,75 @@ class festival
 	use festival\datalist;
 
 
+	public static function festival_gallery($_festival_id, $_file_index, $_type = 'add')
+	{
+		$festival_id = \dash\coding::decode($_festival_id);
+		if(!$festival_id)
+		{
+			\dash\notif::error(T_("Invalid festival id"));
+			return false;
+		}
+
+		$load_festival_gallery = \lib\db\festivals::get(['id' => $festival_id, 'limit' => 1]);
+
+		if(!array_key_exists('gallery', $load_festival_gallery))
+		{
+			\dash\notif::error(T_("Invalid festival id"));
+			return false;
+		}
+
+		$gallery = $load_festival_gallery['gallery'];
+
+		if(is_string($gallery) && (substr($gallery, 0, 1) === '{' || substr($gallery, 0, 1) === '['))
+		{
+			$gallery = json_decode($gallery, true);
+		}
+		elseif(is_array($gallery))
+		{
+			// no thing
+		}
+		else
+		{
+			$gallery = [];
+		}
+
+		if($_type === 'add')
+		{
+			if(isset($gallery['gallery']) && is_array($gallery['gallery']))
+			{
+				if(in_array($_file_index, $gallery['gallery']))
+				{
+					\dash\notif::error(T_("Duplicate file in this gallery"));
+					return false;
+				}
+				array_push($gallery['gallery'], $_file_index);
+			}
+			else
+			{
+				$gallery['gallery'] = [$_file_index];
+			}
+		}
+		else
+		{
+			if(isset($gallery['gallery']) && is_array($gallery['gallery']))
+			{
+				if(!array_key_exists($_file_index, $gallery['gallery']))
+				{
+					\dash\notif::error(T_("Invalid gallery id"));
+					return false;
+				}
+				unset($gallery['gallery'][$_file_index]);
+			}
+
+		}
+
+		$gallery = json_encode($gallery, JSON_UNESCAPED_UNICODE);
+		\dash\log::db('addFestivalGallery', ['data' => $festival_id, 'datalink' => \dash\coding::encode($festival_id)]);
+		\lib\db\festivals::update(['gallery' => $gallery], $festival_id);
+		return true;
+	}
+
+
 	public static function get($_id)
 	{
 		$id = \dash\coding::decode($_id);
@@ -284,6 +353,10 @@ class festival
 				case 'id':
 				case 'creator':
 					$result[$key] = \dash\coding::encode($value);
+					break;
+
+				case 'gallery':
+					$result[$key] = json_decode($value, true);
 					break;
 
 				default:
