@@ -65,7 +65,7 @@
       {%for key, value in dataTable%}
       <tr class="txtC">
         <td><a href="{{url.this}}/general?id={{value.id}}" class="txtB">{{value.title}}</a></td>
-        <td>{{value.slug}}</td>
+        <td><a href="{{url.site}}/f/{{value.slug}}">{{value.slug}}</a></td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
         <td>{{value.datecreated | tdate()}}</td>
         <td>
