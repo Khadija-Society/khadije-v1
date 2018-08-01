@@ -8,7 +8,7 @@ class controller
 	{
 		\dash\permission::access('fpFestivalAdd');
 
-		\content_cp\controller::check_festival_id();
+		\content_cp\festival\controller::check_festival_id();
 
 	}
 }

@@ -1,12 +1,9 @@
 <?php
-namespace content_cp;
+namespace content_cp\festival;
 
 class controller
 {
-	public static function routing()
-	{
 
-	}
 
 	public static function check_festival_id()
 	{
