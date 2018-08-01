@@ -8,63 +8,37 @@ class view
 	{
 		\dash\permission::access('fpFestivalView');
 
-
+		\dash\data::display_festivalDisplay('content_cp/festival/home/list.html');
 		\dash\data::page_pictogram('magic');
 
-		\dash\data::page_title(T_("Festivals list"));
-		\dash\data::page_desc(T_("check last festival and add or edit a festival"));
-
-
-
-		$args =
-		[
-			'order'          => \dash\request::get('order'),
-			'sort'           => \dash\request::get('sort'),
-		];
-
-		if(!$args['order'])
+		if(\dash\request::get('id'))
 		{
-			$args['order'] = 'DESC';
+			$id            = \dash\request::get('id');
+			$load_festival = \lib\app\festival::get($id);
+			if(!$load_festival)
+			{
+				\dash\header::status(403, T_("Invalid festival id"));
+			}
+			\dash\data::dataRow($load_festival);
+			\dash\data::display_festivalDisplay('content_cp/festival/home/dashboard.html');
+			\dash\data::page_title(T_("Festivals"). ' | '. \dash\data::dataRow_title());
+			\dash\data::page_desc(T_("check festival detail"));
+
 		}
-
-		if(!$args['sort'])
+		else
 		{
-			$args['sort'] = 'dateverify';
-		}
 
-		$search_string     = \dash\request::get('q');
+			\dash\data::page_title(T_("Festivals list"));
+			\dash\data::page_desc(T_("check last festival and add or edit a festival"));
 
-		if($search_string)
-		{
-			\dash\data::page_title(T_('Search'). ' '.  $search_string);
-		}
-
-		$export = false;
-		if(\dash\request::get('export') === 'true')
-		{
-			$export             = true;
+			$args               = [];
+			$args['order']      = 'DESC';
 			$args['pagenation'] = false;
+
+			$dataTable          = \lib\app\festival::list($search_string, $args);
+
+			\dash\data::dataTable($dataTable);
 		}
-
-		$dataTable = \lib\app\festival::list($search_string, $args);
-
-		\dash\data::dataTable($dataTable);
-
-		if($export)
-		{
-			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::dataTable()]);
-		}
-
-		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\festival::$sort_field, \dash\url::this()));
-
-		$filterArray = $args;
-		unset($filterArray['donate']);
-		unset($filterArray['condition']);
-
-		// set dataFilter
-		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
-		\dash\data::dataFilter($dataFilter);
-
 	}
 }
 ?>

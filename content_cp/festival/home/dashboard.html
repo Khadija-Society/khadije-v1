@@ -1,0 +1,185 @@
+{%extends display.cpMain%}
+
+
+
+{%block pageContent%}
+
+<div class="f">
+ <div class="c3 s6">{{block ("stCourse")}}</div>
+
+ <div class="c3 s6">{{block ("stTraffics")}}</div>
+ <div class="c3 s6">{{block ("stTotalHour")}}</div>
+ <div class="c3 s6">{{block ("stDayUsed")}}</div>
+</div>
+
+<div class="f">
+  <div class="c9 s12">
+    {{block ("chart_primary")}}
+  </div>
+  <div class="c3 s12">
+
+
+{{block ("lastTraffics")}}
+  </div>
+</div>
+
+
+
+<div class="f">
+ <div class="c4 s12">{{block ("prDeadline")}}</div>
+ <div class="c5 s12">{{block ("prPresentCount")}}</div>
+ <div class="c3 s12">{{block ("prDate")}}</div>
+</div>
+
+
+{%endblock%}
+
+
+
+
+
+
+
+{%block prDeadline%}
+<a class="dcard" href='{{url.here}}/setting/board?id={{requestGET.id}}'>
+ <div class="block">
+  <div class="f">
+  {%if currentTeam.event_title%}
+   <h5 class="c fc-mute">{{currentTeam.event_title}}</h5>
+  {%else%}
+   <h5 class="c fc-mute">{%trans "Add event day counter"%}</h5>
+  {%endif%}
+   <h4 class="cauto fc-danger fs30 txtra counter">{{currentTeam.event.left | number_format}}</h4>
+  </div>
+<!-- left_percent
+remain_percent -->
+  <div class="f">
+   <div class="progress" data-percent='{{currentTeam.event.left_percent}}'>
+    <div class="bar"></div>
+   </div>
+  </div>
+ </div>
+</a>
+{%endblock%}
+
+{%block prPresentCount%}
+<div class="dcard">
+ <div class="block">
+  <div class="f">
+   <h5 class="c fc-mute">{%trans "Present Members"%}</h5>
+   <h4 class="cauto fc-warn fs30 txtra counter">{{dashboardDetail.member_present | number_format}}</h4>
+  </div>
+  <div class="f">
+   <div class="progress" data-percent='{{dashboardDetail.member_percent}}'>
+    <div class="bar"></div>
+   </div>
+  </div>
+ </div>
+</div>
+{%endblock%}
+
+
+{%block prDate%}
+<div class="dcard">
+ <div class="block">
+  <div class="f">
+  {%if lang.current == 'fa'%}
+   <h5 class="c fc-mute">{{"now" | jdate('F')}}</h5>
+   <h4 class="cauto fc-info fs30 txtra">{{"now" | jdate('d')}}</h4>
+  {%else%}
+    <h5 class="c fc-mute">{{"now" | date('F')}}</h5>
+    <h4 class="cauto fc-info fs30 txtra">{{"now" | date('d')}}</h4>
+  {%endif%}
+  </div>
+  <div class="f">
+   <div class="progress" data-percent='{{dashboardDetail.month_detail.left}}'>
+    <div class="bar"></div>
+   </div>
+  </div>
+ </div>
+</div>
+{%endblock%}
+
+
+{%block stCourse%}
+<a class="dcard" href='{{url.here}}/member?id={{requestGET.id}}'>
+ <div class="statistic gray">
+  <div class="value"><i class="sf-arrows-alt"></i><span>{{dashboardDetail.member_count |number_format |fitNumber}}</span></div>
+  <div class="label">{%trans "Course"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block stTraffics%}
+<a class="dcard" href='{{url.here}}/report/last?id={{requestGET.id}}'>
+ <div class="statistic teal">
+  <div class="value"><i class="sf-retweet"></i><span class="fs08">{{dashboardDetail.traffic_count |number_format |fitNumber}}</span></div>
+  <div class="label">{%trans "Traffic Record"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block stTotalHour%}
+  <div class="dcard">
+   <div class="statistic orange">
+    <div class="value"><i class="sf-hourglass-end"></i><span>{{(dashboardDetail.hour_count/60) |round | number_format  |fitNumber}}</span></div>
+    <div class="label">{%trans "Total Hour Work"%}</div>
+   </div>
+  </div>
+{%endblock%}
+
+
+{%block stDayUsed%}
+{%if lang.current == 'fa'%}
+  <div class="dcard"  title='{%trans "Start date of using tejarak"%}: {{currentTeam.createdate |jdate("Y-m-d")}} | {{currentTeam.day_use|number_format | fitNumber}} {%trans "day ago"%}'>
+{%else%}
+  <div class="dcard"  title='{%trans "Start date of using tejarak"%}: {{currentTeam.createdate | date("Y-m-d")}} | {{currentTeam.day_use|number_format | fitNumber}} {%trans "day ago"%}'>
+{%endif%}
+   <div class="statistic blue">
+    <div class="value"><i class="sf-calendar-check-o"></i><span class="counter">{{dashboardDetail.count_day_work | number_format}}</span></div>
+    <div class="label">{%trans "Day Used"%}</div>
+   </div>
+  </div>
+{%endblock%}
+
+
+{%block chart_primary%}
+<div class="dcard x3 pA0">
+ <div class="chart" id="chartdiv" >
+ </div>
+</div>
+{%endblock%}
+
+
+{%block chart_secondary%}
+<div class="dcard x3">
+ <div class="chart" data-type='line' data-vals='[{"key":"کاردانی","value":442},{"key":"کارشناسی 234","value":1050},{"key":"کارشناسی‌ارشد","value":408},{"key":"دکتری","value":96}]'>
+
+  Chart
+ </div>
+</div>
+{%endblock%}
+
+
+{%block topMembers%}
+<div class="dcard x3">
+ <h3>{%trans "Top Members"%}</h3>
+</div>
+{%endblock%}
+
+{%block lastTraffics%}
+<div class="dcard x3">
+ <h3>{%trans "Last traffics"%}</h3>
+
+</div>
+{%endblock%}
+
+
+
+{%block foot_js%}
+<script type="text/javascript">
+  {%include 'content_a/team/home/chart.js'%}
+</script>
+{%endblock%}
