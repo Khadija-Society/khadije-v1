@@ -9,16 +9,13 @@ class view
 		\dash\permission::access('fpFestivalView');
 
 
-		\dash\data::page_pictogram('list');
+		\dash\data::page_pictogram('magic');
 
 		\dash\data::page_title(T_("Festivals list"));
 		\dash\data::page_desc(T_("check last festival and add or edit a festival"));
 
-		$export_link = ' <a href="'. \dash\url::this(). '?export=true">'. T_("Export"). '</a>';
-		\dash\data::page_desc(\dash\data::page_desc(). $export_link);
 
-		\dash\data::badge_link(\dash\url::this(). '/add');
-		\dash\data::badge_text(T_('Add new festival'));
+
 		$args =
 		[
 			'order'          => \dash\request::get('order'),

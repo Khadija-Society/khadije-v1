@@ -359,6 +359,17 @@ class festival
 					$result[$key] = json_decode($value, true);
 					break;
 
+				case 'logo':
+					if($value)
+					{
+						$result[$key] = $value;
+					}
+					else
+					{
+						$result[$key] = \dash\app::static_logo_url();
+					}
+					break;
+
 				default:
 					$result[$key] = $value;
 					break;

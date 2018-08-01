@@ -2,106 +2,32 @@
 
 
 
-
-
 {%block pageContent%}
 
-{%if dataTable%}
- {%if dataFilter%}
+<div class='middle normal f justify-center'>
 
-  {{block('htmlSearchBox')}}
-  {{block('htmlTable')}}
-  {{block('htmlFilter')}}
-
- {%else%}
-
-  {{block('htmlSearchBox')}}
-  {{block('htmlTable')}}
-
- {%endif%}
-{%else%}
- {%if dataFilter%}
-
-  {{block('htmlSearchBox')}}
-  {{block('htmlFilterNoResult')}}
-
- {%else%}
-  {{block('htmlStartAddNew')}}
-
- {%endif%}
-{%endif%}
-
-{%endblock%}
-
-
-
-
-{%block htmlSearchBox%}
-<div class="cbox fs12">
-  <form method="get" action='{{url.this}}'>
-    <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus data-default data-pass='submit' autocomplete='off'>
-      <button class="addon btn ">{%trans "Search" %}</button>
+  <div class="vcard mA10">
+    <img src="{{url.site}}/static/siftal/images/useful/plus1.png" alt="add new festival">
+    <div class="content"></div>
+    <div class="footer pAn">
+     <a class="btn block primary" href="{{url.this}}/add">{%trans "Add new festival"%}</a>
     </div>
-  </form>
+  </div>
+{%for key, value in dataTable%}
+
+{%set cardColor%}
+{%if value.status == 'enable'%}green{%else%}black{%endif%}
+{%endset%}
+
+  <a class="vcard mA10 shadow {{cardColor}}" href='{{url.here}}/festival?id={{value.id}}'>
+    <img src="{{value.logo}}" alt="{{value.title}}" class="pA10-f">
+    <div class="content">
+      <div class="header">{{value.title}}</div>
+      <div class="meta"></div>
+      <div class="footer">{{value.subtitle}}</div>
+    </div>
+  </a>
+{%endfor%}
+
 </div>
 {%endblock%}
-
-
-{%block htmlTable%}
- <div class="cbox fs12">
-  <table class="tbl">
-    <thead class="primary">
-      <tr class="txtC">
-        <th data-sort={{sortLink.title.order}}><a href="{{sortLink.title.link}}">{%trans "Title"%}</a></th>
-        <th data-sort={{sortLink.slug.order}}><a href="{{sortLink.slug.link}}">{%trans "Slug"%}</a></th>
-        <th data-sort={{sortLink.status.order}}><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
-        <th data-sort={{sortLink.datecreated.order}}><a href="{{sortLink.datecreated.link}}">{%trans "Date Created"%}</a></th>
-        <th>{%trans "Operation"%}</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {%for key, value in dataTable%}
-      <tr class="txtC">
-        <td><a href="{{url.this}}/general?id={{value.id}}" class="txtB">{{value.title}}</a></td>
-        <td><a href="{{url.site}}/f/{{value.slug}}">{{value.slug}}</a></td>
-        <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
-        <td>{{value.datecreated | tdate()}}</td>
-        <td>
-          <a class="badge" href="{{url.here}}/course?id={{value.id}}">{%trans "Course"%}</a>
-          <a class="badge" href="{{url.here}}/organizer?id={{value.id}}">{%trans "Organizer"%}</a>
-          <a class="badge" href="{{url.here}}/supporter?id={{value.id}}">{%trans "Supporter"%}</a>
-          <a class="badge" href="{{url.here}}/mediasupporter?id={{value.id}}">{%trans "Media Supporter"%}</a>
-          <a class="badge" href="{{url.here}}/referee?id={{value.id}}">{%trans "Referee"%}</a>
-        </td>
-      </tr>
-      {%endfor%}
-    </tbody>
-  </table>
-  {%include display.pagination%}
-
- </div>
-{%endblock%}
-
-
-{%block htmlFilter%}
-<p class="f fs14 msg warn2">
-  <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
-</p>
-{%endblock%}
-
-
-{%block htmlFilterNoResult%}
-<p class="f fs14 msg warn2">
-  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
-</p>
-{%endblock%}
-
-
-{%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
-{%endblock%}
-
