@@ -16,6 +16,9 @@ self::$language =
 	'default' => 'fa',
 	'list'    => ['fa', 'ar', 'en'],
 ];
+// max upload file size
+// byte
+self::$config['max_upload'] = 100 * 1024 * 1024; // 100 MB;
 
 // fix url and redirect
 // http://khadije.net
