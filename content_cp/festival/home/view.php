@@ -35,7 +35,7 @@ class view
 			$args['order']      = 'DESC';
 			$args['pagenation'] = false;
 
-			$dataTable          = \lib\app\festival::list($search_string, $args);
+			$dataTable          = \lib\app\festival::list(null, $args);
 
 			\dash\data::dataTable($dataTable);
 		}

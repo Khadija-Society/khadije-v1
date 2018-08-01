@@ -5,11 +5,11 @@
 {%block pageContent%}
 
 <div class="f">
- <div class="c3 s6">{{block ("stCourse")}}</div>
-
- <div class="c3 s6">{{block ("stTraffics")}}</div>
- <div class="c3 s6">{{block ("stTotalHour")}}</div>
- <div class="c3 s6">{{block ("stDayUsed")}}</div>
+ <div class="c s6">{{block ("stCourse")}}</div>
+ <div class="c s6">{{block ("stOrganizer")}}</div>
+ <div class="c s6">{{block ("stSupporter")}}</div>
+ <div class="c s6">{{block ("stMediasupporter")}}</div>
+ <div class="c s6">{{block ("stSetting")}}</div>
 </div>
 
 <div class="f">
@@ -19,15 +19,15 @@
   <div class="c3 s12">
 
 
-{{block ("lastTraffics")}}
+{{block ("stLogo")}}
   </div>
 </div>
 
 
 
 <div class="f">
- <div class="c4 s12">{{block ("prDeadline")}}</div>
- <div class="c5 s12">{{block ("prPresentCount")}}</div>
+ <div class="c4 s12">{{block ("stStatus")}}</div>
+ <div class="c5 s12">{{block ("stPoster")}}</div>
  <div class="c3 s12">{{block ("prDate")}}</div>
 </div>
 
@@ -40,42 +40,22 @@
 
 
 
-{%block prDeadline%}
-<a class="dcard" href='{{url.here}}/setting/board?id={{requestGET.id}}'>
- <div class="block">
-  <div class="f">
-  {%if currentTeam.event_title%}
-   <h5 class="c fc-mute">{{currentTeam.event_title}}</h5>
-  {%else%}
-   <h5 class="c fc-mute">{%trans "Add event day counter"%}</h5>
-  {%endif%}
-   <h4 class="cauto fc-danger fs30 txtra counter">{{currentTeam.event.left | number_format}}</h4>
-  </div>
-<!-- left_percent
-remain_percent -->
-  <div class="f">
-   <div class="progress" data-percent='{{currentTeam.event.left_percent}}'>
-    <div class="bar"></div>
-   </div>
-  </div>
+{%block stStatus%}
+<a class="dcard" href='{{url.here}}/status?id={{requestGET.id}}'>
+ <div class="statistic pink">
+  <div class="value"><i class="sf-tachometer"></i></div>
+  <div class="label">{%trans "Status"%}</div>
  </div>
 </a>
 {%endblock%}
 
-{%block prPresentCount%}
-<div class="dcard">
- <div class="block">
-  <div class="f">
-   <h5 class="c fc-mute">{%trans "Present Members"%}</h5>
-   <h4 class="cauto fc-warn fs30 txtra counter">{{dashboardDetail.member_present | number_format}}</h4>
-  </div>
-  <div class="f">
-   <div class="progress" data-percent='{{dashboardDetail.member_percent}}'>
-    <div class="bar"></div>
-   </div>
-  </div>
+{%block stPoster%}
+<a class="dcard" href='{{url.here}}/poster?id={{requestGET.id}}'>
+ <div class="statistic violet">
+  <div class="value"><i class="sf-picture-o"></i><span>{{dashboardDetail.poster_count |number_format |fitNumber}}</span></div>
+  <div class="label">{%trans "Poster"%}</div>
  </div>
-</div>
+</a>
 {%endblock%}
 
 
@@ -101,47 +81,54 @@ remain_percent -->
 {%endblock%}
 
 
+
+{%block stMediasupporter%}
+<a class="dcard" href='{{url.here}}/mediasupporter?id={{requestGET.id}}'>
+ <div class="statistic orange">
+  <div class="value"><i class="sf-bullhorn"></i><span>{{dashboardDetail.mediasupporter_count |number_format |fitNumber}}</span></div>
+  <div class="label">{%trans "Media supporter"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
 {%block stCourse%}
-<a class="dcard" href='{{url.here}}/member?id={{requestGET.id}}'>
- <div class="statistic gray">
-  <div class="value"><i class="sf-arrows-alt"></i><span>{{dashboardDetail.member_count |number_format |fitNumber}}</span></div>
+<a class="dcard" href='{{url.here}}/course?id={{requestGET.id}}'>
+ <div class="statistic olive">
+  <div class="value"><i class="sf-arrows-alt"></i><span>{{dashboardDetail.course_count |number_format |fitNumber}}</span></div>
   <div class="label">{%trans "Course"%}</div>
  </div>
 </a>
 {%endblock%}
 
 
-{%block stTraffics%}
-<a class="dcard" href='{{url.here}}/report/last?id={{requestGET.id}}'>
+{%block stOrganizer%}
+<a class="dcard" href='{{url.here}}/orange?id={{requestGET.id}}'>
  <div class="statistic teal">
-  <div class="value"><i class="sf-retweet"></i><span class="fs08">{{dashboardDetail.traffic_count |number_format |fitNumber}}</span></div>
-  <div class="label">{%trans "Traffic Record"%}</div>
+  <div class="value"><i class="sf-plug"></i><span class="fs08">{{dashboardDetail.organizer_count |number_format |fitNumber}}</span></div>
+  <div class="label">{%trans "Organizer"%}</div>
  </div>
 </a>
 {%endblock%}
 
 
-{%block stTotalHour%}
-  <div class="dcard">
-   <div class="statistic orange">
-    <div class="value"><i class="sf-hourglass-end"></i><span>{{(dashboardDetail.hour_count/60) |round | number_format  |fitNumber}}</span></div>
-    <div class="label">{%trans "Total Hour Work"%}</div>
-   </div>
-  </div>
+{%block stSupporter%}
+<a class="dcard" href='{{url.here}}/supporter?id={{requestGET.id}}'>
+ <div class="statistic green">
+  <div class="value"><i class="sf-crosshairs"></i><span class="fs08">{{dashboardDetail.supporter_count |number_format |fitNumber}}</span></div>
+  <div class="label">{%trans "Supporter"%}</div>
+ </div>
+</a>
 {%endblock%}
 
 
-{%block stDayUsed%}
-{%if lang.current == 'fa'%}
-  <div class="dcard"  title='{%trans "Start date of using tejarak"%}: {{currentTeam.createdate |jdate("Y-m-d")}} | {{currentTeam.day_use|number_format | fitNumber}} {%trans "day ago"%}'>
-{%else%}
-  <div class="dcard"  title='{%trans "Start date of using tejarak"%}: {{currentTeam.createdate | date("Y-m-d")}} | {{currentTeam.day_use|number_format | fitNumber}} {%trans "day ago"%}'>
-{%endif%}
-   <div class="statistic blue">
-    <div class="value"><i class="sf-calendar-check-o"></i><span class="counter">{{dashboardDetail.count_day_work | number_format}}</span></div>
-    <div class="label">{%trans "Day Used"%}</div>
-   </div>
-  </div>
+{%block stSetting%}
+<a class="dcard" href='{{url.here}}/general?id={{requestGET.id}}'>
+ <div class="statistic blue">
+  <div class="value"><i class="sf-cog"></i></div>
+  <div class="label">{%trans "Setting"%}</div>
+ </div>
+</a>
 {%endblock%}
 
 
@@ -153,33 +140,22 @@ remain_percent -->
 {%endblock%}
 
 
-{%block chart_secondary%}
-<div class="dcard x3">
- <div class="chart" data-type='line' data-vals='[{"key":"کاردانی","value":442},{"key":"کارشناسی 234","value":1050},{"key":"کارشناسی‌ارشد","value":408},{"key":"دکتری","value":96}]'>
 
-  Chart
+{%block stLogo%}
+<a class="dcard x3" href='{{url.here}}/logo?id={{requestGET.id}}'>
+ <div class="statistic gray">
+  <div class="value">
+    <img src="">
+  </div>
+  <div class="label">{%trans "Logo"%}</div>
  </div>
-</div>
-{%endblock%}
-
-
-{%block topMembers%}
-<div class="dcard x3">
- <h3>{%trans "Top Members"%}</h3>
-</div>
-{%endblock%}
-
-{%block lastTraffics%}
-<div class="dcard x3">
- <h3>{%trans "Last traffics"%}</h3>
-
-</div>
+</a>
 {%endblock%}
 
 
 
 {%block foot_js%}
 <script type="text/javascript">
-  {%include 'content_a/team/home/chart.js'%}
+  {%include 'content_cp/festival/home/chart.js'%}
 </script>
 {%endblock%}
