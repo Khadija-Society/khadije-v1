@@ -10,7 +10,22 @@
 		<div class="cbox">
 			<form method="post" autocomplete="off">
 
-			{{block('iaddress')}}
+				{{block('iaddress')}}
+
+				<div class="f">
+					<div class="c">
+						<div class="input">
+							<label for="length">{%trans "Length" %}</label>
+							<input type="text" class="ltr" name="length" id="length" placeholder='{%trans "Length"%} {%trans "For example"%} 34.6499475' value="{{dataRow.address.length}}">
+						</div>
+					</div>
+					<div class="c mLa5">
+						<div class="input">
+							<label for="width">{%trans "Width" %}</label>
+							<input type="text" class="ltr" name="width" id="width" placeholder='{%trans "Length"%} {%trans "For example"%} 50.8768872' value="{{dataRow.address.width}}">
+						</div>
+					</div>
+				</div>
 
 				{{block('isave')}}
 			</form>

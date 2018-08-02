@@ -8,13 +8,14 @@ class model
 	{
 		\dash\permission::access('fpFestivalAdd');
 
-		$post              = [];
+		$post            = [];
+		$post['address'] = \dash\request::post('address');
+		$post['length']  = \dash\request::post('length');
+		$post['width']   = \dash\request::post('width');
 
+		$update['address'] = json_encode($post, JSON_UNESCAPED_UNICODE);
 
-		$post['address']     = \dash\request::post('address');
-
-
-		$result            = \lib\app\festival::edit($post, \dash\request::get('id'));
+		$result            = \lib\app\festival::edit($update, \dash\request::get('id'));
 
 		if(\dash\engine\process::status())
 		{
