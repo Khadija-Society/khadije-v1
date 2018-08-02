@@ -10,6 +10,7 @@ class model
 
 		$post            = [];
 		$post['address'] = \dash\request::post('address');
+		$post['address1'] = \dash\request::post('address1');
 		$post['length']  = \dash\request::post('length');
 		$post['width']   = \dash\request::post('width');
 
