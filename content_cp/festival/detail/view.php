@@ -10,9 +10,9 @@ class view
 
 		\dash\data::display_festivalAdd('content_cp/festival/layout.html');
 
-		\dash\data::page_title(T_("Edit festival"). ' '. \dash\data::dataRow_title());
+		\dash\data::page_title(\dash\data::dataRow_title(). ' | '. T_("Edit festival detail"));
+		\dash\data::page_desc(T_("Edit festival detail like intro, about, award ..."));
 
-		\dash\data::page_desc(T_("Edit festival and add some detail for this"));
 		\dash\data::badge_link(\dash\url::here(). '/festival?id='. \dash\request::get('id'));
 		\dash\data::badge_text(T_('Back to festival dashboard'));
 

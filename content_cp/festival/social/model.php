@@ -9,8 +9,8 @@ class model
 		\dash\permission::access('fpFestivalAdd');
 
 		$post              = [];
-		$post['phone']     = \dash\request::post('phone') ? $_POST['phone'] : null;
-		$post['address']   = \dash\request::post('address') ? $_POST['address'] : null;
+
+		$post['address']   = \dash\request::post('address');
 		$post['email']     = \dash\request::post('email');
 		$post['sms']       = \dash\request::post('sms');
 		$post['telegram']  = \dash\request::post('telegram');
@@ -19,6 +19,12 @@ class model
 		$post['instagram'] = \dash\request::post('instagram');
 		$post['linkedin']  = \dash\request::post('linkedin');
 		$post['website']   = \dash\request::post('website');
+
+		$phone1            = \dash\request::post('phone1');
+		$phone2            = \dash\request::post('phone2');
+		$post['phone']     = ['phone1' => $phone1, 'phone2' => $phone2];
+		$post['phone']     = json_encode($post['phone'], JSON_UNESCAPED_UNICODE);
+
 		$result            = \lib\app\festival::edit($post, \dash\request::get('id'));
 
 		if(\dash\engine\process::status())
