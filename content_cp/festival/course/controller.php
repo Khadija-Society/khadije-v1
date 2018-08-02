@@ -1,10 +1,10 @@
 <?php
-namespace content_cp\course;
+namespace content_cp\festival\course;
 
 
-class load
+class controller
 {
-	public static function festival()
+	public static function routing()
 	{
 		$id   = \dash\request::get('id');
 		$load = \lib\app\festival::get($id);
