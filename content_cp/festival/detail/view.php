@@ -16,6 +16,11 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/festival?id='. \dash\request::get('id'));
 		\dash\data::badge_text(T_('Back to festival dashboard'));
 
+		if(\dash\request::get('type') && !in_array(\dash\request::get('type'), ['intro','about','target','axis','view','place','award']))
+		{
+			\dash\header::status(404, T_("Invalid type"));
+		}
+
 	}
 }
 ?>

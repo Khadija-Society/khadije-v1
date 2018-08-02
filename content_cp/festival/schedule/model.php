@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\festival\social;
+namespace content_cp\festival\schedule;
 
 
 class model

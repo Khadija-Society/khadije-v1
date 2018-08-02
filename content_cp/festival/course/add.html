@@ -37,12 +37,18 @@
 </div>
 {% endblock %}
 
-{%block igroup %}
-<label for="group">{%trans "Group"%} </label>
-<div class="input">
-  <input type="text" name="group" id="group" placeholder='{%trans "Group of festival course"%}' value="{{dataRow.group}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid group"%}'>
-</div>
-{% endblock %}
+
+{%block igroup%}
+
+<label for='group'>{%trans "Group"%}</label>
+<select name="group" class="select ui dropdown search addition"  id="group">
+  <option value="" readonly>{%trans "Select one group"%}</option>
+  {%for key, value in groupList%}
+    <option value="{{value}}"{%if value == dataRow.group %} selected{%endif%}>{{value}}</option>
+  {%endfor%}
+</select>
+
+{%endblock%}
 
 
 {%block istatus%}
@@ -67,7 +73,7 @@
 
 {%block idesc%}
 <label for="desc">{%trans "Description"%}</label>
-<textarea class="txt mB10" id="desc" data-editor name="desc" placeholder='{%trans "Write description of festival course"%}' rows="3">{{dataRow.desc}}</textarea>
+<textarea class="txt mB10" id="desc"  name="desc" placeholder='{%trans "Write description of festival course"%}' rows="3">{{dataRow.desc}}</textarea>
 {%endblock%}
 
 

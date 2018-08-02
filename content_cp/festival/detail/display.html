@@ -11,7 +11,6 @@
 	<a class="{%if requestGET.type == 'target' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=target">{%if dataRow.target%}<i class="sf-check mRa5 fs12 fc-green"></i>{%endif%}<b>{%trans "Target"%}</b></a>
 	<a class="{%if requestGET.type == 'axis' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=axis">{%if dataRow.axis%}<i class="sf-check mRa5 fs12 fc-green"></i>{%endif%}<b>{%trans "Axis"%}</b></a>
 	<a class="{%if requestGET.type == 'view' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=view">{%if dataRow.view%}<i class="sf-check mRa5 fs12 fc-green"></i>{%endif%}<b>{%trans "View"%}</b></a>
-	<a class="{%if requestGET.type == 'schedule' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=schedule">{%if dataRow.schedule%}<i class="sf-check mRa5 fs12 fc-green"></i>{%endif%}<b>{%trans "Schedule"%}</b></a>
 	<a class="{%if requestGET.type == 'place' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=place">{%if dataRow.place%}<i class="sf-check mRa5 fs12 fc-green"></i>{%endif%}<b>{%trans "Place"%}</b></a>
 	<a class="{%if requestGET.type == 'award' %}primary{%else%}primary2{%endif%} c mLa5 msg" href="{{url.this}}/detail?id={{requestGET.id}}&type=award">{%if dataRow.award%}<i class="sf-check mRa5 fs12 fc-green"></i>{%endif%}<b>{%trans "Award"%}</b></a>
 </div>
@@ -26,7 +25,6 @@
 				{%if requestGET.type == 'target'%} {{block('itarget')}} {%endif%}
 				{%if requestGET.type == 'axis'%} {{block('iaxis')}} {%endif%}
 				{%if requestGET.type == 'view'%} {{block('iview')}} {%endif%}
-				{%if requestGET.type == 'schedule'%} {{block('ischedule')}} {%endif%}
 				{%if requestGET.type == 'place'%} {{block('iplace')}} {%endif%}
 				{%if requestGET.type == 'award'%} {{block('iaward')}} {%endif%}
 				{{block('isave')}}
