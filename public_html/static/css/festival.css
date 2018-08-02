@@ -11,12 +11,16 @@ body{
   min-height:800px;
   height:100vh;
   user-select:none;
-  background-color: #c4960c;
-  background-image: url("../images/festival/light-wool.png");
+  /*background-color: #c4960c;*/
+  /*background-image: url("../images/festival/light-wool.png");*/
   overflow: hidden;
+
+  background-image: url("../images/festival/bg-sky.jpg");
+  background-size: cover;
+  background-position: center;
 }
 #landing .bg img{display:block;margin:0 auto}
-#landing .bg::after{content: "";position: absolute;top: 0;bottom: 0;right: 0;left: 0;background-color: rgba(0,0,0,0.4);}
+#landing .bg::after{content: "";position: absolute;top: 0;bottom: 0;right: 0;left: 0;background-color: rgba(0,0,0,0.4);background-color: rgba(0,0,0,0.1);}
 #landing header{
   margin: 1em auto;
   text-align: center;
