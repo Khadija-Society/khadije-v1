@@ -39,6 +39,16 @@ class festivals
 	}
 
 
+	public static function group_list($_festival_id)
+	{
+		$query = "SELECT festivalcourses.group  AS `group` FROM festivalcourses WHERE festivalcourses.festival_id = $_festival_id GROUP BY festivalcourses.group ";
+		$result = \dash\db::get($query, 'group');
+		$result = array_filter($result);
+		$result = array_unique($result);
+		return $result;
+	}
+
+
 	/**
 	 * Searches for the first match.
 	 *

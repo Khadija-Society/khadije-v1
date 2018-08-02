@@ -18,6 +18,7 @@ class view
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Add new course"));
 			\dash\data::page_desc(T_("Add new course by some detail"));
 			\dash\data::page_pictogram('plus');
+			\dash\data::groupList(\lib\app\festival::group_list(\dash\request::get('id')));
 		}
 		elseif(\dash\request::get('course'))
 		{
@@ -33,6 +34,8 @@ class view
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Edit course"));
 			\dash\data::page_desc(T_("Edit course"). '| '. \dash\data::dataRow_title());
 			\dash\data::page_pictogram('edit');
+
+			\dash\data::groupList(\lib\app\festival::group_list(\dash\request::get('id')));
 		}
 		else
 		{
@@ -54,5 +57,6 @@ class view
 			\dash\data::dataTable($dataTable);
 		}
 	}
+
 }
 ?>

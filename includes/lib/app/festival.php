@@ -11,6 +11,16 @@ class festival
 	use festival\edit;
 	use festival\datalist;
 
+	public static function group_list($_festival_id)
+	{
+		$id = \dash\coding::decode($_festival_id);
+		if(!$id)
+		{
+			return false;
+		}
+		$list = \lib\db\festivals::group_list($id);
+		return $list;
+	}
 
 	public static function festival_gallery($_festival_id, $_file_index, $_type = 'add')
 	{
