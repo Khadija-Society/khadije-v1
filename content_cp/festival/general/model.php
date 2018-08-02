@@ -12,7 +12,7 @@ class model
 		$post['title']    = \dash\request::post('title');
 		$post['subtitle'] = \dash\request::post('subtitle');
 		$post['slug']     = \dash\request::post('slug');
-		$post['desc']     = \dash\request::post('desc') ? $_POST['desc'] : null;
+		$post['desc']     = \dash\request::post('desc');
 		// $post['status']   = \dash\request::post('status');
 		// $post['freeuser'] = \dash\request::post('freeuser');
 

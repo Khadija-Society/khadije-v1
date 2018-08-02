@@ -20,73 +20,75 @@
 {%block islug %}
 <label for="slug">{%trans "Slug"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="slug" id="slug" placeholder='{%trans "Slug of festival"%} *' value="{{dataRow.slug}}" required  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid slug"%}'>
+  <label class="ltr addon btn primary" title='{%trans "Open link"%}' for="slug"><a href="{{url.site}}/{{dataRow.slug}}" target="_blank" data-direct><i class="sf-link"></i></a></label>
+  <input type="text" class="ltr" name="slug" id="slug" placeholder='{%trans "Slug of festival"%} *' value="{{dataRow.slug}}" required  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid slug"%}'>
+  <label class="ltr addon" for="slug">{{url.site}}/</label>
 </div>
 {% endblock %}
 
 {%block idesc%}
-<label>Description</label>
-<textarea class="txt mB10" data-editor name="desc" placeholder='{%trans "Write description of festival"%}' rows="15">{{dataRow.desc}}</textarea>
+<label for="desc">Description</label>
+<textarea class="txt mB10" id="desc" name="desc" placeholder='{%trans "Write description of festival"%}' rows="4">{{dataRow.desc}}</textarea>
 {%endblock%}
 
 
 {%block iintro%}
-<label>Intro</label>
-<textarea class="txt mB10" data-editor name="intro" placeholder='{%trans "Write intro of festival"%}' rows="15">{{dataRow.intro}}</textarea>
+<label for="intro">Intro</label>
+<textarea class="txt mB10" id="intro" data-editor name="intro" placeholder='{%trans "Write intro of festival"%}' rows="15">{{dataRow.intro}}</textarea>
 {%endblock%}
 
 
 {%block iabout%}
-<label>About</label>
-<textarea class="txt mB10" data-editor name="about" placeholder='{%trans "Write about of festival"%}' rows="15">{{dataRow.about}}</textarea>
+<label for="about">About</label>
+<textarea class="txt mB10" id="about" data-editor name="about" placeholder='{%trans "Write about of festival"%}' rows="15">{{dataRow.about}}</textarea>
 {%endblock%}
 
 
 {%block itarget%}
-<label>Target</label>
-<textarea class="txt mB10" data-editor name="target" placeholder='{%trans "Write target of festival"%}' rows="15">{{dataRow.target}}</textarea>
+<label for="target">Target</label>
+<textarea class="txt mB10" id="target" data-editor name="target" placeholder='{%trans "Write target of festival"%}' rows="15">{{dataRow.target}}</textarea>
 {%endblock%}
 
 
 
 {%block iaxis%}
-<label>Axis</label>
-<textarea class="txt mB10" data-editor name="axis" placeholder='{%trans "Write axis of festival"%}' rows="15">{{dataRow.axis}}</textarea>
+<label for="axis">Axis</label>
+<textarea class="txt mB10" id="axis" data-editor name="axis" placeholder='{%trans "Write axis of festival"%}' rows="15">{{dataRow.axis}}</textarea>
 {%endblock%}
 
 
 {%block iview%}
-<label>View</label>
-<textarea class="txt mB10" data-editor name="view" placeholder='{%trans "Write view of festival"%}' rows="15">{{dataRow.view}}</textarea>
+<label for="view">View</label>
+<textarea class="txt mB10" id="view" data-editor name="view" placeholder='{%trans "Write view of festival"%}' rows="15">{{dataRow.view}}</textarea>
 {%endblock%}
 
 
 {%block ischedule%}
-<label>Schedule</label>
-<textarea class="txt mB10" data-editor name="schedule" placeholder='{%trans "Write schedule of festival"%}' rows="15">{{dataRow.schedule}}</textarea>
+<label for="schedule">Schedule</label>
+<textarea class="txt mB10" id="schedule" data-editor name="schedule" placeholder='{%trans "Write schedule of festival"%}' rows="15">{{dataRow.schedule}}</textarea>
 {%endblock%}
 
 
 {%block iplace%}
-<label>Place</label>
-<textarea class="txt mB10" data-editor name="place" placeholder='{%trans "Write place of festival"%}' rows="15">{{dataRow.place}}</textarea>
+<label for="place">Place</label>
+<textarea class="txt mB10" id="place" data-editor name="place" placeholder='{%trans "Write place of festival"%}' rows="15">{{dataRow.place}}</textarea>
 {%endblock%}
 
 {%block iaward%}
-<label>Award</label>
-<textarea class="txt mB10" data-editor name="award" placeholder='{%trans "Write award of festival"%}' rows="15">{{dataRow.award}}</textarea>
+<label for="award">Award</label>
+<textarea class="txt mB10" id="award" data-editor name="award" placeholder='{%trans "Write award of festival"%}' rows="15">{{dataRow.award}}</textarea>
 {%endblock%}
 
 
 {%block iphone%}
-<label>Phone</label>
-<textarea class="txt mB10" data-editor name="phone" placeholder='{%trans "Write phone of festival"%}' rows="3">{{dataRow.phone}}</textarea>
+<label for="phone">Phone</label>
+<textarea class="txt mB10" id="phone" data-editor name="phone" placeholder='{%trans "Write phone of festival"%}' rows="3">{{dataRow.phone}}</textarea>
 {%endblock%}
 
 
 {%block iaddress%}
-<label>Address</label>
-<textarea class="txt mB10" data-editor name="address" placeholder='{%trans "Write address of festival"%}' rows="3">{{dataRow.address}}</textarea>
+<label for="address">Address</label>
+<textarea class="txt mB10" id="address" data-editor name="address" placeholder='{%trans "Write address of festival"%}' rows="3">{{dataRow.address}}</textarea>
 {%endblock%}
 
 {%block iemail %}
@@ -173,7 +175,8 @@
 
 
 {%block imessage%}
-<textarea class="txt mB10" data-editor name="message" placeholder='{%trans "Write message of festival"%}' rows="4">{{dataRow.message}}</textarea>
+<label for="message">{%trasn "Message"%}</label>
+<textarea class="txt mB10" id="message" data-editor name="message" placeholder='{%trans "Write message of festival"%}' rows="4">{{dataRow.message}}</textarea>
 {%endblock%}
 
 
