@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\festival\file;
+namespace content_cp\festival\status;
 
 
 class controller

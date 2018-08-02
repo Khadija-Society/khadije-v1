@@ -1,0 +1,22 @@
+{%extends display.festivalAdd%}
+
+
+{%block pageContent%}
+
+
+<div class="f justify-center">
+	<div class="c4">
+		<div class="cbox">
+		<h3>{%trans "Change festival status" %}</h3>
+			<form method="post" autocomplete="off">
+
+				{{block('istatus')}}
+
+
+				{{block('isave')}}
+			</form>
+		</div>
+	</div>
+</div>
+{%endblock%}
+
