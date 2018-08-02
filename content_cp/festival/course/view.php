@@ -18,8 +18,21 @@ class view
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Add new course"));
 			\dash\data::page_desc(T_("Add new course by some detail"));
 			\dash\data::page_pictogram('plus');
+		}
+		elseif(\dash\request::get('course'))
+		{
+			$dataRow = \lib\app\festivalcourse::get(\dash\request::get('course'));
+			if(!$dataRow)
+			{
+				\dash\header::status(404, T_("Invalid course id"));
+			}
+			\dash\data::dataRow($dataRow);
 
-
+			\dash\permission::access('festivalCourseAdd');
+			\dash\data::display_festivalCourseDisplay('content_cp/festival/course/add.html');
+			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Edit course"));
+			\dash\data::page_desc(T_("Edit course"). '| '. \dash\data::dataRow_title());
+			\dash\data::page_pictogram('edit');
 		}
 		else
 		{
