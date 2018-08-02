@@ -20,10 +20,6 @@ class model
 		$post['linkedin']  = \dash\request::post('linkedin');
 		$post['website']   = \dash\request::post('website');
 
-		$phone1            = \dash\request::post('phone1');
-		$phone2            = \dash\request::post('phone2');
-		$post['phone']     = ['phone1' => $phone1, 'phone2' => $phone2];
-		$post['phone']     = json_encode($post['phone'], JSON_UNESCAPED_UNICODE);
 
 		$result            = \lib\app\festival::edit($post, \dash\request::get('id'));
 
