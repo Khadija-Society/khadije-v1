@@ -18,6 +18,13 @@ class model
 		if(isset($_POST['place'])) $post['place'] = $_POST['place'];
 		if(isset($_POST['award'])) $post['award'] = $_POST['award'];
 
+		foreach ($post as $key => $value)
+		{
+			if(trim($value) === '<p><br></p>')
+			{
+				$post[$key] = null;
+			}
+		}
 		$result           = \lib\app\festival::edit($post, \dash\request::get('id'));
 
 		if(\dash\engine\process::status())

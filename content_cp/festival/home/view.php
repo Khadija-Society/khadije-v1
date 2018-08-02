@@ -24,6 +24,9 @@ class view
 			\dash\data::page_title(T_("Festivals"). ' | '. \dash\data::dataRow_title());
 			\dash\data::page_desc(T_("check festival detail"));
 
+			\dash\data::badge_link(\dash\url::here(). '/festival');
+			\dash\data::badge_text(T_('Back to festival list'));
+
 		}
 		else
 		{
