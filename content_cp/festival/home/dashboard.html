@@ -41,7 +41,7 @@
 
 
 {%block stStatus%}
-<a class="dcard" href='{{url.here}}/status?id={{requestGET.id}}'>
+<a class="dcard" href='{{url.this}}/status?id={{requestGET.id}}'>
  <div class="statistic pink">
   <div class="value"><i class="sf-tachometer"></i></div>
   <div class="label">{%trans "Status"%}</div>
@@ -50,7 +50,7 @@
 {%endblock%}
 
 {%block stPoster%}
-<a class="dcard" href='{{url.here}}/poster?id={{requestGET.id}}'>
+<a class="dcard" href='{{url.this}}/poster?id={{requestGET.id}}'>
  <div class="statistic violet">
   <div class="value"><i class="sf-picture-o"></i><span>{{dashboardDetail.poster_count |number_format |fitNumber}}</span></div>
   <div class="label">{%trans "Poster"%}</div>
@@ -83,7 +83,7 @@
 
 
 {%block stMediasupporter%}
-<a class="dcard" href='{{url.here}}/mediasupporter?id={{requestGET.id}}'>
+<a class="dcard" href='{{url.this}}/mediasupporter?id={{requestGET.id}}'>
  <div class="statistic orange">
   <div class="value"><i class="sf-bullhorn"></i><span>{{dashboardDetail.mediasupporter_count |number_format |fitNumber}}</span></div>
   <div class="label">{%trans "Media supporter"%}</div>
@@ -93,7 +93,7 @@
 
 
 {%block stCourse%}
-<a class="dcard" href='{{url.here}}/course?id={{requestGET.id}}'>
+<a class="dcard" href='{{url.this}}/course?id={{requestGET.id}}'>
  <div class="statistic olive">
   <div class="value"><i class="sf-arrows-alt"></i><span>{{dashboardDetail.course_count |number_format |fitNumber}}</span></div>
   <div class="label">{%trans "Course"%}</div>
@@ -103,7 +103,7 @@
 
 
 {%block stOrganizer%}
-<a class="dcard" href='{{url.here}}/orange?id={{requestGET.id}}'>
+<a class="dcard" href='{{url.this}}/orange?id={{requestGET.id}}'>
  <div class="statistic teal">
   <div class="value"><i class="sf-plug"></i><span class="fs08">{{dashboardDetail.organizer_count |number_format |fitNumber}}</span></div>
   <div class="label">{%trans "Organizer"%}</div>
@@ -113,7 +113,7 @@
 
 
 {%block stSupporter%}
-<a class="dcard" href='{{url.here}}/supporter?id={{requestGET.id}}'>
+<a class="dcard" href='{{url.this}}/supporter?id={{requestGET.id}}'>
  <div class="statistic green">
   <div class="value"><i class="sf-crosshairs"></i><span class="fs08">{{dashboardDetail.supporter_count |number_format |fitNumber}}</span></div>
   <div class="label">{%trans "Supporter"%}</div>
@@ -123,7 +123,7 @@
 
 
 {%block stSetting%}
-<a class="dcard" href='{{url.here}}/general?id={{requestGET.id}}'>
+<a class="dcard" href='{{url.this}}/general?id={{requestGET.id}}'>
  <div class="statistic blue">
   <div class="value"><i class="sf-cog"></i></div>
   <div class="label">{%trans "Setting"%}</div>
@@ -142,7 +142,7 @@
 
 
 {%block stLogo%}
-<a class="dcard x3" href='{{url.here}}/logo?id={{requestGET.id}}'>
+<a class="dcard x3" href='{{url.this}}/logo?id={{requestGET.id}}'>
  <div class="statistic gray">
   <div class="value">
     <img src="">
