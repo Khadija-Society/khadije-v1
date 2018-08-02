@@ -12,7 +12,7 @@ function myChart()
   am4core.useTheme(am4themes_animated);
 
   var chart = am4core.create("chartdiv", am4charts.XYChart);
-  chart.data = {{dashboardDetail.last_time_chart | raw}};
+  chart.data = null;
 
   var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
   categoryAxis.renderer.grid.template.location = 0;

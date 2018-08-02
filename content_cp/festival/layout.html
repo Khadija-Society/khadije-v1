@@ -385,3 +385,105 @@
  </label>
 </div>
 {%endblock%}
+
+
+
+{%block iposter%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="poster" id="poster" data-preview data-max="500">
+ <label for="poster" title="Simple Title">
+    {%if dataRow.gallery.poster%}<img src="{{dataRow.gallery.poster}}">{%endif%}
+ </label>
+</div>
+{%endblock%}
+
+
+
+
+{%block ibaner%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="baner" id="baner" data-preview data-max="500">
+ <label for="baner" title="Simple Title">
+    {%if dataRow.gallery.baner%}<img src="{{dataRow.gallery.baner}}">{%endif%}
+ </label>
+</div>
+{%endblock%}
+
+
+
+{%block ibrochure%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="brochure" id="brochure" data-preview data-max="500">
+ <label for="brochure" title="Simple Title">
+    {%if dataRow.gallery.brochure%}<img src="{{dataRow.gallery.brochure}}">{%endif%}
+ </label>
+</div>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+{%block pageStepsPic%}
+
+  <div class="f">
+
+
+   <div class="c s4">
+    <a class="dcard {%if url.child == 'poster'%}active{%endif%}" href='{{url.this}}/poster?id={{requestGET.id}}' data-shortkey="49ctrlshift" '>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-file-image-o"></i></div>
+      <div class="label">{%trans "Poster"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s4">
+    <a class="dcard {%if url.child == 'brochure'%}active{%endif%}" href='{{url.this}}/brochure?id={{requestGET.id}}' data-shortkey="50ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-graph"></i></div>
+      <div class="label">{%trans "Brochure"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s4">
+    <a class="dcard {%if url.child == 'logo'%}active{%endif%}" href='{{url.this}}/logo?id={{requestGET.id}}' data-shortkey="51ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-medal"></i></div>
+      <div class="label">{%trans "Logo"%}<br><kbd class="mT5">Ctrl+Shift+3</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+    <div class="c s4">
+    <a class="dcard {%if url.child == 'baner'%}active{%endif%}" href='{{url.this}}/baner?id={{requestGET.id}}' data-shortkey="52ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-picture-o"></i></div>
+      <div class="label">{%trans "Baner"%}<br><kbd class="mT5">Ctrl+Shift+4</kbd></div>
+     </div>
+    </a>
+   </div>
+
+   <div class="c s4">
+    <a class="dcard {%if url.child == 'gallery'%}active{%endif%}" href='{{url.this}}/gallery?id={{requestGET.id}}' data-shortkey="53ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-film"></i></div>
+      <div class="label">{%trans "Gallery"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
+     </div>
+    </a>
+   </div>
+>
+
+
+
+  </div>
+{%endblock%}
