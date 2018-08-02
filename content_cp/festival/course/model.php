@@ -11,20 +11,37 @@ class model
 			\dash\permission::access('fpCourseAdd');
 
 			$post                  = [];
-			$post['title']         = \dash\request::post('title');
-			$post['festival_id']   = \dash\request::get('id');
-			$post['subtitle']      = \dash\request::post('subtitle');
-			$post['group']         = \dash\request::post('group');
-			$post['desc']          = \dash\request::post('desc');
-			$post['condition']     = \dash\request::post('condition') ? $_POST['condition'] : null;
-			$post['conditionsend'] = \dash\request::post('conditionsend') ? $_POST['conditionsend'] : null;
-			$post['price']         = \dash\request::post('price');
-			$post['multiuse']      = \dash\request::post('multiuse');
-
-			if(\dash\request::get('course'))
+			if(\dash\request::get('type') === 'rules')
 			{
-				$post['status']        = \dash\request::post('status');
+				$post['condition']     = \dash\request::post('condition') ? $_POST['condition'] : null;
 			}
+			elseif(\dash\request::get('type') === 'sendrule')
+			{
+				$post['conditionsend'] = \dash\request::post('conditionsend') ? $_POST['conditionsend'] : null;
+			}
+			elseif(\dash\request::get('type') === 'setting')
+			{
+
+			}
+			elseif(\dash\request::get('type') === 'files')
+			{
+				$post['price']         = \dash\request::post('price');
+				$post['multiuse']      = \dash\request::post('multiuse');
+			}
+			else
+			{
+				$post['title']         = \dash\request::post('title');
+				$post['subtitle']      = \dash\request::post('subtitle');
+				$post['group']         = \dash\request::post('group');
+				$post['desc']          = \dash\request::post('desc');
+
+				if(\dash\request::get('course'))
+				{
+					$post['status']        = \dash\request::post('status');
+				}
+			}
+
+			$post['festival_id']   = \dash\request::get('id');
 
 			if(\dash\request::get('course'))
 			{
