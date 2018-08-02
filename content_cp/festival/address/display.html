@@ -28,13 +28,10 @@
 				</div>
 
 				{%if dataRow.address.width and dataRow.address.length%}
-				<img src="http://maps.google.com/maps/api/staticmap?size=600x400&language=fa&markers={{dataRow.address.length}},{{dataRow.address.width}}">
-				<a class="btn success2 block txtC mT10 " href="http://maps.google.com/maps?z=15&t=m&q=loc:{{dataRow.address.width}}+{{dataRow.address.length}}" target="_blank" >
-					<i class="sf-pin "></i>{%trans "Load in map"%}
-				</a>
+					<a class="btn success2 block txtC mT10 " href="http://maps.google.com/maps?z=15&t=m&q=loc:{{dataRow.address.width}}+{{dataRow.address.length}}" target="_blank" >
+						<i class="sf-pin "></i>{%trans "Load in map"%}
+					</a>
 				{%endif%}
-
-
 
 				{{block('isave')}}
 			</form>
