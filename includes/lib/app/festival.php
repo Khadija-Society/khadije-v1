@@ -358,6 +358,7 @@ class festival
 				case 'gallery':
 				case 'phone':
 				case 'address':
+				case 'schedule':
 					$result[$key] = json_decode($value, true);
 					break;
 
