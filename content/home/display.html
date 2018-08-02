@@ -9,7 +9,7 @@
 
 {%set topSliderPostsID = [] %}
 
-{%set topSliderPosts = posts({"limit" : 3, "tag" : "slider"})%}
+{%set topSliderPosts = posts({"limit" : 5, "tag" : "slider"})%}
 {%set defaultImageTop = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
         <div class="sp-slides">
 {%if topSliderPosts%}
@@ -137,7 +137,7 @@
   </section>
 
 
-{%set lastPostsRecord = posts({"limit" : 8})%}
+{%set lastPostsRecord = posts({"limit" : 10})%}
 
 {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
 {%if lastPostsRecord%}
