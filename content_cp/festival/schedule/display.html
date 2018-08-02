@@ -10,6 +10,12 @@
 		<div class="cbox">
 			<form method="post" autocomplete="off">
 
+				{{block('stDate1')}}
+				{{block('stDate2')}}
+				{{block('stDate2')}}
+				{{block('stDate2')}}
+				{{block('stDate2')}}
+				{{block('stDate2')}}
 
 
 				{{block('isave')}}
@@ -19,3 +25,57 @@
 </div>
 {%endblock%}
 
+
+{%block stDate1%}
+<h3>{%trans "Beginning"%}</h3>
+<div class="f">
+	<div class="c">
+		<label for="title">{%trans "Title"%}</label>
+		<div class="input">
+		  <input type="text" name="title" id="title" placeholder='{%trans "Title"%}' autocomplete="off">
+		</div>
+	</div>
+
+	<div class="c mLa5">
+		<label for="schedule1">{%trans "Schedule"%}</label>
+		<div class="input">
+		  <input class="datepicker" type="text" name="schedule1" id="schedule1" required placeholder='{{"now" | tdate | fitNumber}}' value="{{userdetail.schedule1}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
+		</div>
+	</div>
+
+	<div class="c mLa5">
+		<label for="time1">{%trans "Time"%}</label>
+		<div class="input clockpicker">
+		  <input type="text" name="time1" id="time1" placeholder='{%trans "Time"%}' autocomplete="off">
+		</div>
+	</div>
+</div>
+{%endblock%}
+
+
+
+{%block stDate2%}
+<h3>{%trans "Beginning"%}</h3>
+<div class="f">
+	<div class="c">
+		<label for="title">{%trans "Title"%}</label>
+		<div class="input">
+		  <input type="text" name="title" id="title" placeholder='{%trans "Title"%}' autocomplete="off">
+		</div>
+	</div>
+
+	<div class="c mLa5">
+		<label for="schedule1">{%trans "Schedule"%}</label>
+		<div class="input">
+		  <input class="datepicker" type="text" name="schedule1" id="schedule1" required placeholder='{{"now" | tdate | fitNumber}}' value="{{userdetail.schedule1}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
+		</div>
+	</div>
+
+	<div class="c mLa5">
+		<label for="time1">{%trans "Time"%}</label>
+		<div class="input clockpicker">
+		  <input type="text" name="time1" id="time1" placeholder='{%trans "Time"%}' autocomplete="off">
+		</div>
+	</div>
+</div>
+{%endblock%}
