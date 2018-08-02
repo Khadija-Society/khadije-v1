@@ -20,7 +20,11 @@ class model
 			$post['conditionsend'] = \dash\request::post('conditionsend') ? $_POST['conditionsend'] : null;
 			$post['price']         = \dash\request::post('price');
 			$post['multiuse']      = \dash\request::post('multiuse');
-			$post['status']        = \dash\request::post('status');
+
+			if(\dash\request::get('course'))
+			{
+				$post['status']        = \dash\request::post('status');
+			}
 
 			if(\dash\request::get('course'))
 			{

@@ -8,8 +8,8 @@ class view
 	{
 		\dash\data::display_festivalCourseDisplay('content_cp/festival/course/list.html');
 
-		\dash\data::badge_link(\dash\url::here(). '/festival?id='. \dash\request::get('id'));
-		\dash\data::badge_text(T_('Back to dashboard'));
+		\dash\data::badge_link(\dash\url::this(). '/course?id='. \dash\request::get('id'));
+		\dash\data::badge_text(T_('Back to course list'));
 
 		if(\dash\request::get('type') === 'add')
 		{
@@ -31,7 +31,7 @@ class view
 
 			\dash\permission::access('festivalCourseAdd');
 			\dash\data::display_festivalCourseDisplay('content_cp/festival/course/add.html');
-			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Edit course"));
+			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. \dash\data::dataRow_title(). ' | ' .T_("Edit course"));
 			\dash\data::page_desc(T_("Edit course"). '| '. \dash\data::dataRow_title());
 			\dash\data::page_pictogram('edit');
 
@@ -39,6 +39,8 @@ class view
 		}
 		else
 		{
+			\dash\data::badge_link(\dash\url::this(). '?id='. \dash\request::get('id'));
+			\dash\data::badge_text(T_('Back to dashboard'));
 
 			\dash\permission::access('fpFestivalView');
 

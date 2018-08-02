@@ -1,19 +1,29 @@
 {%extends display.cpMain%}
 
 {%block pageContent%}
+{{block('pageSteps')}}
 <div class="f justify-center">
 	<div class="c6">
 		<div class="cbox">
 			<form method="post" autocomplete="off">
-				{{block('ititle')}}
-				{{block('isubtitle')}}
-				{{block('igroup')}}
-				{{block('idesc')}}
-				{{block('icondition')}}
-				{{block('iconditionsend')}}
-				{{block('iprice')}}
-				{{block('imultiuse')}}
-				{{block('istatus')}}
+				{%if not requestGET.type or requestGET.type == 'general'%}
+					{{block('ititle')}}
+					{{block('isubtitle')}}
+					{{block('igroup')}}
+					{{block('idesc')}}
+					{%if requestGET.course%}
+						{{block('istatus')}}
+					{%endif%}
+				{%elseif requestGET.type == 'rules'%}
+					{{block('icondition')}}
+				{%elseif requestGET.type == 'sendrule'%}
+					{{block('iconditionsend')}}
+				{%elseif requestGET.type == 'setting'%}
+					{{block('iprice')}}
+				{%elseif requestGET.type == 'files'%}
+					{{block('iprice')}}
+				{%endif%}
+
 				{{block('iadd')}}
 			</form>
 		</div>
@@ -114,3 +124,63 @@
 {%endblock%}
 
 
+
+
+{%block pageSteps%}
+
+  <div class="f">
+
+
+   <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'general'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=general&id={{requestGET.id}}' data-shortkey="49ctrlshift" title='{%trans "Edit general setting of festival"%}'>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-list"></i></div>
+      <div class="label">{%trans "General"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'rules'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=rules&id={{requestGET.id}}' data-shortkey="50ctrlshift" title='{%trans "Edit sume rules of festival"%}'>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-thumbnails"></i></div>
+      <div class="label">{%trans "Rules"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'sendrule'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=sendrule&id={{requestGET.id}}' data-shortkey="51ctrlshift" title='{%trans "Edit sume sendrule of festival"%}'>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-out"></i></div>
+      <div class="label">{%trans "Send Rule"%}<br><kbd class="mT5">Ctrl+Shift+3</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+    <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'files'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=files&id={{requestGET.id}}' data-shortkey="52ctrlshift" title='{%trans "Edit sume files of festival"%}'>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-file-o"></i></div>
+      <div class="label">{%trans "File setting"%}<br><kbd class="mT5">Ctrl+Shift+4</kbd></div>
+     </div>
+    </a>
+   </div>
+
+   <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'setting'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=setting&id={{requestGET.id}}' data-shortkey="53ctrlshift" title='{%trans "Edit sume setting of festival"%}'>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-cogs"></i></div>
+      <div class="label">{%trans "Setting"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+
+  </div>
+
+{%endblock%}
