@@ -7,24 +7,8 @@ trait add
 	// because get from editor
 	public static $raw_field =
 	[
-		'desc',
-		'intro',
-		'about',
-		'target',
-		'axis',
-		'view',
-		'schedule',
-		'logo',
-		'gallery',
-		'place',
-		'award',
-		'phone',
-		'address',
-		'email',
-		'poster',
-		'brochure',
-		'message',
-		'messagesms'
+		'website',
+
 	];
 
 	/**
@@ -58,7 +42,7 @@ trait add
 
 		if(!$args['status'])
 		{
-			$args['status']  = 'draft';
+			$args['status']  = 'enable';
 		}
 
 		$args['creator']  = \dash\user::id();
