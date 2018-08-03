@@ -39,6 +39,25 @@ class festivalusers
 	}
 
 
+	public static function get_full($_where)
+	{
+		$where = \dash\db\config::make_where($_where);
+		$query =
+		"
+			SELECT
+				festivals.title AS `festival_title`,
+				festivalcourses.title AS `festivalcourse_title`,
+				festivalusers.*
+			FROM
+				festivalusers
+			INNER JOIN festivals ON festivals.id = festivalusers.festival_id
+			INNER JOIN festivalcourses ON festivalcourses.id = festivalusers.festivalcourse_id
+			WHERE $where
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	/**
 	 * Searches for the first match.
 	 *

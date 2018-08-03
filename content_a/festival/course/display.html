@@ -10,10 +10,15 @@
   <div class="msg">{{course.condition| raw}}</div>
   <div class="msg">{{course.conditionsend| raw}}</div>
   <div class="msg">{{course.price| fitNumber }} {%trans "Toman"%}</div>
+
+  {%if checkDuplicate%}
+  <a href="{{url.this}}/mycourse?id={{requestGET.id}}" class="btn success block">{%trans "You are register to this course before"%}</a>
+  {%else%}
   <form method="post">
     <input type="hidden" name="pay" value="1">
     <button class="btn primary block">{%trans "Pay & Register"%}</button>
   </form>
+  {%endif%}
 </div>
 
 </div>

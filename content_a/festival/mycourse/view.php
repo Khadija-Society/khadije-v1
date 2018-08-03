@@ -1,5 +1,5 @@
 <?php
-namespace content_a\festival\course;
+namespace content_a\festival\mycourse;
 
 
 class view
@@ -28,18 +28,8 @@ class view
 
 		$festival_id = \dash\coding::decode($id);
 
-		$course = \dash\request::get('course');
-		$course = \lib\app\festivalcourse::get($course);
-
-		if(!$course)
-		{
-			\dash\header::status(404, T_("Invalid course id"));
-		}
-
-		$check_duplicate = \content_a\festival\course\model::check_duplicate(\dash\coding::decode(\dash\request::get('course')));
-		\dash\data::checkDuplicate($check_duplicate);
-
-		\dash\data::course($course);
+		$my_course = \lib\db\festivalusers::get_full(['user_id' => \dash\user::id()]);
+		\dash\data::myCourse($my_course);
 	}
 }
 ?>
