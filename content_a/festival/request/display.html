@@ -2,56 +2,25 @@
 
 
 {%block pageContent%}
-<div class="f justify-center">
- <div class="cbox c10 s12">
 
-{%if not serviceNeedList%}
-  <p class="msg info2 txtC">در حال حاضر درخواست نیازی توسط موسسه اعلام نشده است!</p>
-{%else%}
+<div class='middle normal f justify-center'>
+
+<div class="cbox ">
+  <div class="msg">{{course.title}}</div>
+  <div class="msg">{{course.condition| raw}}</div>
+  <div class="msg">{{course.conditionsend| raw}}</div>
+  <div class="msg">{{course.price| fitNumber }} {%trans "Toman"%}</div>
+
+  {%if checkDuplicate%}
+  <a href="{{url.this}}/mycourse?id={{requestGET.id}}" class="btn success block">{%trans "You are register to this course before"%}</a>
+  {%else%}
   <form method="post">
-{{block ('iCity') }}
+    <input type="hidden" name="pay" value="1">
+    <button class="btn primary block">{%trans "Pay & Register"%}</button>
   </form>
-{%endif%}
-
- </div>
+  {%endif%}
 </div>
-{%endblock%}
 
-
-
-{%block iCity%}
-
- <div class="f justify-center txtC">
-{% for key, value in serviceNeedList %}
-  <div class="c4 s12 pA10">
-    <a class="vcard shadow" href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"need": "{{value.id}}"}'>
-     <img src="{{value.fileurl}}" alt='{{value.title}}'>
-     <div class="content">
-      <div class="header">{{value.title}}</div>
-     </div>
-     <div class="footer">{{value.desc}}</div>
-    </a>
-  </div>
-{% endfor %}
- </div>
-
+</div>
 
 {%endblock%}
-
-
-{%block iCity2%}
-<label for="city">{%trans "City Place"%}</label>
-<select name="city" class="input select">
-  <option value="">{%trans "Please select one itmes"%}</option>
-  {%for key, value in cityplaceList%}
-    <option value="{{value.id}}">{{value.city}} - {{value.place}}</option>
-  {%endfor%}
-</select>
-{%endblock%}
-
-
-{%block iNext%}
-<button class="btn primary block mT20">{%trans "Continue"%}</button>
-{%endblock%}
-
-

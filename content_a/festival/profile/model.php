@@ -1,5 +1,5 @@
 <?php
-namespace content_a\service\profile;
+namespace content_a\festival\profile;
 
 
 class model
@@ -31,7 +31,7 @@ class model
 		if(\dash\engine\process::status())
 		{
 			\dash\notif::ok(T_("Your detail was saved"));
-			\dash\redirect::to(\dash\url::here(). '/service/detail?id='. \dash\request::get('id'));
+			\dash\redirect::to(\dash\url::here(). '/festival/request?'. http_build_query(\dash\request::get()));
 		}
 
 	}

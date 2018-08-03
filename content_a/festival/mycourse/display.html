@@ -20,11 +20,9 @@
 
     <div title='{%trans "Request date"%} {{value.datecreated | tdate("Y/m/d H:i")}}'>
     {%trans myStatus%}
-{%if value.status == 'awaiting' or value.status == 'draft'%}
-     <a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"cancel"}' class="badge danger sm mA5">{%trans "Cancel"%}</a>
-{%endif%}
+
 {%if value.status == 'draft'%}
-     <a href="{{url.here}}/health/profile?id={{value.id}}" class="badge sm mA5">{%trans "Edit"%}</a>
+     <a href="{{url.here}}/festival/profile?id={{requestGET.id}}&course={{value.festivalcourse_id | coding('encode')}}" class="badge sm mA5">{%trans "Edit"%}</a>
 {%endif%}
    </div>
   </div>
@@ -32,7 +30,7 @@
 {%endfor%}
 
   <div class="icard">
-   <a href="{{url.here}}/health/request" class="btn primary block">{%trans "Register for new course"%}</a>
+   <a href="{{url.here}}/festival?id={{requestGET.id}}" class="btn primary block">{%trans "Register for new course"%}</a>
   </div>
 
  </div>

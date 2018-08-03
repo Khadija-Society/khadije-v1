@@ -50,6 +50,7 @@ class model
 				}
 
 				\dash\notif::ok(T_("You are register to this course"));
+				\dash\redirect::to(\dash\url::this(). '/request?'. http_build_query(['id' => \dash\request::get('id'), 'course' => \dash\request::get('course')]));
 				return true;
 			}
 
