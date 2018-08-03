@@ -19,9 +19,11 @@
 				{%elseif requestGET.type == 'sendrule'%}
 					{{block('iconditionsend')}}
 				{%elseif requestGET.type == 'setting'%}
-					{{block('iprice')}}
+          {{block('iprice')}}
+					{{block('ilink')}}
 				{%elseif requestGET.type == 'files'%}
-					{{block('iprice')}}
+          {{block('ifileext')}}
+					{{block('imaxinputsize')}}
 				{%endif%}
 
 				{{block('iadd')}}
@@ -38,6 +40,63 @@
   <input type="text" name="title" id="title" placeholder='{%trans "Title of festival course"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid title"%}'>
 </div>
 {% endblock %}
+
+
+{%block ifileext %}
+<div class="switch1 mT5">
+ <input type="checkbox" name="word" id="word" {%if dataRow.allowfile.word%} checked {%endif%}>
+ <label for="word"></label>
+ <label for="word">{%trans "Word"%}</label>
+</div>
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="pdf" id="pdf" {%if dataRow.allowfile.pdf%} checked {%endif%}>
+ <label for="pdf"></label>
+ <label for="pdf">{%trans "PDF"%}</label>
+</div>
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="video" id="video" {%if dataRow.allowfile.video%} checked {%endif%}>
+ <label for="video"></label>
+ <label for="video">{%trans "Video"%}</label>
+</div>
+
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="sound" id="sound" {%if dataRow.allowfile.sound%} checked {%endif%}>
+ <label for="sound"></label>
+ <label for="sound">{%trans "Sound"%}</label>
+</div>
+
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="apk" id="apk" {%if dataRow.allowfile.apk%} checked {%endif%}>
+ <label for="apk"></label>
+ <label for="apk">{%trans "APK"%}</label>
+</div>
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="zip" id="zip" {%if dataRow.allowfile.zip%} checked {%endif%}>
+ <label for="zip"></label>
+ <label for="zip">{%trans "ZIP"%}</label>
+</div>
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="other" id="other" {%if dataRow.allowfile.other%} checked {%endif%}>
+ <label for="other"></label>
+ <label for="other">{%trans "Other"%}</label>
+</div>
+
+{%endblock%}
+
+
+{% block imaxinputsize %}
+<br>
+<label for="filesize">{%trans "Maximum file size"%}</label>
+<div class="input">
+  <input type="number" name="filesize" id="filesize" placeholder='{%trans "Maximum file size"%}' value="{{dataRow.allowfile.filesize}}"  >
+</div>
+{%endblock%}
 
 
 {%block isubtitle %}
@@ -106,9 +165,22 @@
 {% endblock %}
 
 
+{%block ilink %}
+<label for="link">{%trans "Link"%} </label>
+<div class="input">
+  <input type="url" name="link" id="link" placeholder='{%trans "Link"%}' value="{{dataRow.link.link}}"  >
+</div>
+
+<label for="linktitle">{%trans "Link title"%}</label>
+<div class="input">
+  <input type="text" name="linktitle" id="linktitle" placeholder='{%trans "Subtitle of festival course"%}' value="{{dataRow.link.linktitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid linktitle"%}'>
+</div>
+{% endblock %}
+
+
 {%block imultiuse%}
 <div class="switch1 mB10">
- <input type="checkbox" name="multiuse" id="multiuse" {%if dataRow.multiuse %}checked{%endif%}>
+ <input type="checkbox"  name="multiuse" id="multiuse" {%if dataRow.multiuse %}checked{%endif%}>
  <label for="multiuse"></label>
  <label for="multiuse">{%trans "Multiuse"%}</label>
 </div>

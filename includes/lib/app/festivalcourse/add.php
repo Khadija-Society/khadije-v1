@@ -7,24 +7,12 @@ trait add
 	// because get from editor
 	public static $raw_field =
 	[
-		'desc',
-		'intro',
-		'about',
-		'target',
-		'axis',
-		'view',
-		'schedule',
-		'logo',
-		'gallery',
-		'place',
-		'award',
-		'phone',
-		'address',
-		'email',
-		'poster',
-		'brochure',
-		'message',
-		'messagesms'
+
+		'link',
+		'allowfile',
+		'condition',
+		'conditiondend',
+
 	];
 
 	/**

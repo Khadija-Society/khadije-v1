@@ -82,6 +82,7 @@ class festivalcourse
 			}
 		}
 
+
 		$status = \dash\app::request('status');
 		if($status && !in_array($status, ['draft','awaiting','enable','expire','cancel', 'deleted', 'disable']))
 		{
@@ -163,6 +164,10 @@ class festivalcourse
 					$result[$key] = \dash\coding::encode($value);
 					break;
 
+				case 'allowfile':
+				case 'link':
+					$result[$key] = json_decode($value, true);
+					break;
 				default:
 					$result[$key] = $value;
 					break;

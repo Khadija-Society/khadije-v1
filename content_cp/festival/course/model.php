@@ -21,12 +21,25 @@ class model
 			}
 			elseif(\dash\request::get('type') === 'setting')
 			{
+				$post['price']     = \dash\request::post('price');
+				$link              = [];
+				$link['link']      = \dash\request::post('link') ? $_POST['link'] : null;
+				$link['linktitle'] = \dash\request::post('linktitle');
+				$post['link']      = json_encode($link, JSON_UNESCAPED_UNICODE);
 
 			}
 			elseif(\dash\request::get('type') === 'files')
 			{
-				$post['price']         = \dash\request::post('price');
-				$post['multiuse']      = \dash\request::post('multiuse');
+				$allowfile             = [];
+				$allowfile['word']     = \dash\request::post('word') ? true : false;
+				$allowfile['pdf']      = \dash\request::post('pdf') ? true : false;
+				$allowfile['video']    = \dash\request::post('video') ? true : false;
+				$allowfile['sound']    = \dash\request::post('sound') ? true : false;
+				$allowfile['apk']      = \dash\request::post('apk') ? true : false;
+				$allowfile['zip']      = \dash\request::post('zip') ? true : false;
+				$allowfile['other']    = \dash\request::post('other') ? true : false;
+				$allowfile['filesize'] = \dash\request::post('filesize');
+				$post['allowfile']     = json_encode($allowfile, JSON_UNESCAPED_UNICODE);
 			}
 			else
 			{
