@@ -1,0 +1,34 @@
+{%extends 'content_cp/festival/festivaldetail.html'%}
+
+
+{%block pageContent%}
+
+<div class="f justify-center">
+  <div class="c6">
+    <div class="cbox">
+      <form method="post" autocomplete="off">
+    {{block('iavatar')}}
+        {{block('ititle')}}
+        {{block('isubtitle')}}
+        {{block('idesc')}}
+
+
+        {{block('itelegram')}}
+        {{block('ifacebook')}}
+        {{block('itwitter')}}
+        {{block('iinstagram')}}
+        {{block('ilinkedin')}}
+        {{block('iwebsite')}}
+
+
+        {%if requestGET.referee%}
+          {{block('istatus')}}
+
+        {%endif%}
+        {{block('iadd')}}
+      </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

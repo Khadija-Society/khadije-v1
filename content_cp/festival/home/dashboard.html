@@ -26,8 +26,9 @@
 
 
 <div class="f">
- <div class="c4 s12">{{block ("stStatus")}}</div>
- <div class="c5 s12">{{block ("stPoster")}}</div>
+ <div class="c3 s12">{{block ("stStatus")}}</div>
+ <div class="c3 s12">{{block ("stReferee")}}</div>
+ <div class="c3 s12">{{block ("stPoster")}}</div>
  <div class="c3 s12">{{block ("prDate")}}</div>
 </div>
 
@@ -38,6 +39,15 @@
 
 
 
+
+{%block stReferee%}
+<a class="dcard" href='{{url.this}}/referee?id={{requestGET.id}}'>
+ <div class="statistic ">
+  <div class="value"><i class="sf-user-md"></i></div>
+  <div class="label">{%trans "Referee"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 
 {%block stStatus%}
