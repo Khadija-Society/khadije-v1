@@ -41,6 +41,10 @@ class model
 				$allowfile['filesize'] = \dash\request::post('filesize');
 				$post['allowfile']     = json_encode($allowfile, JSON_UNESCAPED_UNICODE);
 			}
+			elseif(\dash\request::get('type') === 'add')
+			{
+				$post['title']         = \dash\request::post('title');
+			}
 			else
 			{
 				$post['title']         = \dash\request::post('title');
