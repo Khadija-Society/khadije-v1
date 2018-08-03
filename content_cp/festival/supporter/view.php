@@ -45,7 +45,7 @@ class view
 
 			\dash\permission::access('fpFestivalView');
 
-			\dash\data::page_pictogram('plug');
+			\dash\data::page_pictogram('crosshairs');
 
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Supporter list"));
 
