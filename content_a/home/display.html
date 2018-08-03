@@ -3,6 +3,9 @@
 
 {%block pageContent%}
 <div class="f">
+ {%if festivalEnable%}
+  <div class="c3 s6">{{block ("bFestival")}}</div>
+ {%endif%}
  <div class="c3 s12">{{block ("addDonate")}}</div>
  <div class="c3 s6">{{block ("addTrip")}}</div>
  <div class="c3 s6">{{block ("addTripGroup")}}</div>
@@ -13,6 +16,16 @@
 </div>
 {%endblock%}
 
+
+{%block bFestival%}
+<a class="dcard x2 fs14" href='{{url.here}}/festival?id={{festivalEnable.id | coding("encode")}}'>
+ <div class="statistic teal">
+  <div class="value"><i class="sf-magic"></i></div>
+  <div class="label">{%trans "Festival"%}</div>
+  <div class="label pT10">{{festivalEnable.title}}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block bNiyabat%}
 <a class="dcard x2" href='{{url.here}}/representation'>

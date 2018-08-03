@@ -9,6 +9,11 @@ class view
 		\dash\data::page_title(T_("Khadije Dashboard"));
 		\dash\data::page_desc(\dash\data::site_desc());
 		\dash\data::dateDetail(\dash\date::month_precent());
+
+		if($load_festival = \lib\db\festivals::get(['status' => 'enable', 'limit' => 1]))
+		{
+			\dash\data::festivalEnable($load_festival);
+		}
 	}
 }
 ?>
