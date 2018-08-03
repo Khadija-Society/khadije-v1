@@ -1,0 +1,21 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+
+<div class='middle normal f justify-center'>
+
+<div class="cbox c5">
+  <div class="msg">{{course.title}}</div>
+  <div class="msg">{{course.condition| raw}}</div>
+  <div class="msg">{{course.conditionsend| raw}}</div>
+  <div class="msg">{{course.price| fitNumber }} {%trans "Toman"%}</div>
+  <form method="post">
+    <input type="hidden" name="pay" value="1">
+    <button class="btn primary block">{%trans "Pay & Register"%}</button>
+  </form>
+</div>
+
+</div>
+
+{%endblock%}
