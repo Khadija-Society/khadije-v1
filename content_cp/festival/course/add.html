@@ -110,7 +110,7 @@
 <br>
 <label for="filesize">{%trans "Maximum file size"%}</label>
 <div class="input">
-  <input type="number" name="filesize" id="filesize" placeholder='{%trans "Maximum file size"%}' value="{{dataRow.allowfile.filesize}}"  >
+  <input type="number" name="filesize" id="filesize" placeholder='{%trans "Maximum file size"%} {%trans "Like"%} {{10 | fitNumber}} - {%trans "in MB"%}' value="{{dataRow.allowfile.filesize}}"  >
 </div>
 {%endblock%}
 

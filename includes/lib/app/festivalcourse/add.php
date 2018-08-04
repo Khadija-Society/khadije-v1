@@ -11,7 +11,7 @@ trait add
 		'link',
 		'allowfile',
 		'condition',
-		'conditiondend',
+		'conditionsend',
 
 	];
 
