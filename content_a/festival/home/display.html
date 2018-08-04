@@ -4,6 +4,14 @@
 {%block pageContent%}
 
 <div class='middle normal f justify-center'>
+  <a class="vcard mA10 shadow " href='{{url.here}}/festival/mycourse?id={{requestGET.id}}'>
+      <img src="{{url.site}}/static/siftal/images/useful/gate.png" alt='{%trans "My course"%}' class="pA10-f">
+      <div class="content">
+        <div class="header">{%trans "My course"%}</div>
+        <div class="meta"></div>
+        <div class="footer">{%trans "My course signuped"%}</div>
+      </div>
+    </a>
 
   {%for key, value in course%}
 
