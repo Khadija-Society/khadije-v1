@@ -8,7 +8,45 @@ class model
 	{
 		\dash\permission::access('fpFestivalAdd');
 
-		if(\dash\request::post('type') === 'remove')
+		if(\dash\request::post('type') === 'schedule' || \dash\request::post('type') === 'rmschedule')
+		{
+
+			$key = \dash\request::post('key');
+
+			$old = \dash\data::dataRow_schedule();
+			if(!is_array($old))
+			{
+				$old = json_decode($old, true);
+			}
+
+			if(!is_array($old))
+			{
+				$old = [];
+			}
+
+			if(array_key_exists($key, $old))
+			{
+				foreach ($old as $k => $value)
+				{
+					if(isset($value['schedule']))
+					{
+						unset($old[$k]['schedule']);
+					}
+				}
+
+				if(\dash\request::post('type') === 'schedule')
+				{
+					$old[$key]['schedule'] = true;
+				}
+			}
+			else
+			{
+				\dash\notif::error(T_("Invalid key for remove"));
+				return false;
+			}
+
+		}
+		elseif(\dash\request::post('type') === 'remove')
 		{
 
 			$key = \dash\request::post('key');

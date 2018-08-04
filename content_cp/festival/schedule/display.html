@@ -13,19 +13,30 @@
 				<table class="tbl">
 					<thead>
 						<tr class="info txtC">
+							<th title='{%trans "Show in time line"%}'>#</th>
 							<th>{%trans "Title"%}</th>
 							<th>{%trans "Date"%}</th>
 							<th>{%trans "Time"%}</th>
 							<th>{%trans "Remove"%}</th>
+							<th>{%trans "Default"%}</th>
 						</tr>
 					</thead>
 					<tbody>
 						{%for key, value in dataRow.schedule%}
-							<tr class="txtC">
+							<tr class="txtC {%if value.schedule%} positive {%endif%}">
+								<td>{%if value.schedule%}<i class="sf-check fc-green"></i>{%endif%}</td>
 								<td>{{value.title}}</td>
 								<td>{{value.date | tdate("Y/m/d")}}</td>
 								<td>{{value.time | tdate("H:i:s")}}</td>
 								<td><a href="{{url.pwd}}" class="badge danger" data-ajaxify data-method='post' data-data='{"type" : "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</a></td>
+
+								<td>
+									{%if value.schedule%}
+										<a href="{{url.pwd}}" class="badge warn" data-ajaxify data-method='post' data-data='{"type" : "rmschedule", "key" : "{{key}}"}'>{%trans "Remove schedule"%}</a>
+									{%else%}
+										<a href="{{url.pwd}}" class="badge success" data-ajaxify data-method='post' data-data='{"type" : "schedule", "key" : "{{key}}"}'>{%trans "Set schedule"%}</a>
+									{%endif%}
+								</td>
 							</tr>
 						{%endfor%}
 					</tbody>
