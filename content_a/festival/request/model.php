@@ -1,114 +1,93 @@
 <?php
-namespace content_a\festival\course;
+namespace content_a\festival\request;
 
 
 class model
 {
-	public static function post()
+	public static function upload_file($_name)
 	{
-		if(\dash\request::post('pay'))
+		if(\dash\request::files($_name))
 		{
-			$id  = \dash\request::get('id');
+			$uploaded_file = \dash\app\file::upload(['debug' => false, 'upload_name' => $_name]);
 
-			if(!$id || !is_numeric($id))
+			if(isset($uploaded_file['url']))
 			{
-				\dash\redirect::to(\dash\url::here());
+				\dash\notif::direct();
+
+				return $uploaded_file['url'];
 			}
-
-			$load = \lib\app\festival::get($id);
-
-			if(!$load)
+			// if in upload have error return
+			if(!\dash\engine\process::status())
 			{
-				\dash\header::status(403, T_("Invalid festival id"));
-			}
-
-			$festival_id = \dash\coding::decode($id);
-
-			$course = \dash\request::get('course');
-			$course_id = \dash\coding::decode($course);
-			$course = \lib\app\festivalcourse::get($course);
-
-			if(!$course || !array_key_exists('price', $course))
-			{
-				\dash\header::status(404, T_("Invalid course id"));
-			}
-
-			if(self::check_duplicate($course_id))
-			{
-				\dash\notif::error(T_("You register to this course before"));
 				return false;
 			}
+		}
+		return null;
+	}
 
-			$price = abs(intval($course['price']));
-			if(!$price || true)
+	public static function post()
+	{
+		\content_a\festival\request\view::config();
+
+		$allowfile = \dash\data::course_allowfile();
+
+		$uploaded_file = [];
+
+		foreach ($allowfile as $key => $value)
+		{
+			if($key === 'filesize')
 			{
+				continue;
+			}
 
-				if(!self::signup_course($course_id))
+			if($value === true)
+			{
+				$uploaded_file[$key] = self::upload_file($key);
+				if($uploaded_file[$key] === false)
 				{
-					\dash\notif::error(T_("We can not register you on this course"));
 					return false;
 				}
 
-				\dash\notif::ok(T_("You are register to this course"));
-				return true;
+				if($uploaded_file[$key] === null)
+				{
+					\dash\notif::error(T_("Please fill the file"), $key);
+					return false;
+				}
 			}
-
-
 		}
-	}
 
-
-	public static function signup_course($_course_id)
-	{
 		$festival_id = \dash\request::get('id');
+		$festival_id = \dash\coding::decode($festival_id);
 		if(!$festival_id || !is_numeric($festival_id))
 		{
-			return false;
-		}
-
-		$insert =
-		[
-			'festival_id'       => $festival_id,
-			'festivalcourse_id' => $_course_id,
-			'user_id'           => \dash\user::id(),
-			'status'            => 'draft',
-		];
-
-		$insert = \lib\db\festivalusers::insert($insert);
-
-		if($insert)
-		{
-			return true;
-		}
-
-		return false;
-	}
-
-
-	public static function check_duplicate($_course_id)
-	{
-		$festival_id = \dash\request::get('id');
-		if(!$festival_id || !is_numeric($festival_id))
-		{
+			\dash\notif::error(T_("Invalid festival id"));
 			return false;
 		}
 
 		$check_duplicate =
 		[
 			'festival_id'       => $festival_id,
-			'festivalcourse_id' => $_course_id,
+			'festivalcourse_id' => \dash\coding::decode(\dash\request::get('course')),
 			'user_id'           => \dash\user::id(),
 			'limit'             => 1
 		];
 
 		$check_duplicate = \lib\db\festivalusers::get($check_duplicate);
 
-		if($check_duplicate)
+		if(isset($check_duplicate['id']))
 		{
-			return $check_duplicate;
+			$file = json_encode($uploaded_file, JSON_UNESCAPED_UNICODE);
+			\lib\db\festivalusers::update(['file' => $file, 'status' => 'awaiting'], $check_duplicate['id']);
+			\dash\notif::ok(T_("File successfull send"));
+			return true;
+		}
+		else
+		{
+			\dash\notif::error(T_("You are not register to this course yet"));
+			return false;
 		}
 
-		return false;
+
 	}
 
 
