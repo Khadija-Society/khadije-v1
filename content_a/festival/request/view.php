@@ -9,8 +9,8 @@ class view
 		\dash\data::page_title(T_("Festival course list"));
 		\dash\data::page_desc(T_('You can signup in some festival course'));
 
-		\dash\data::badge_link(\dash\url::here());
-		\dash\data::badge_text(T_('Back to dashboard'));
+		\dash\data::badge_link(\dash\url::this(). '/mycourse?id='. \dash\request::get('id'));
+		\dash\data::badge_text(T_('Back to my course list'));
 
 		$id  = \dash\request::get('id');
 
