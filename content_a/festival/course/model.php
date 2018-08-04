@@ -40,7 +40,7 @@ class model
 			}
 
 			$price = abs(intval($course['price']));
-			if(!$price || true)
+			if(!$price)
 			{
 
 				if(!self::signup_course($course_id))
@@ -53,6 +53,29 @@ class model
 				\dash\redirect::to(\dash\url::this(). '/request?'. http_build_query(['id' => \dash\request::get('id'), 'course' => \dash\request::get('course')]));
 				return true;
 			}
+			else
+			{
+				if(!in_array(\dash\request::post('bank'), ['asanpardakht','payir','ZarinPal']))
+				{
+					\dash\notif::error(T_("Invalid bank"));
+					return false;
+				}
+
+				$meta =
+				[
+					'turn_back'   => \dash\url::pwd(),
+					'other_field' =>
+					[
+						'hazinekard' => $festival_id,
+						'niyat'      => $course_id,
+						'fullname'   => \dash\user::login('displayname'),
+						'donate'     => 'festival',
+						'doners'     => 0,
+					]
+				];
+
+				\dash\utility\payment\pay::start(\dash\user::id(), \dash\request::post('bank'), $price, $meta);
+			}
 
 
 		}
@@ -62,6 +85,7 @@ class model
 	public static function signup_course($_course_id)
 	{
 		$festival_id = \dash\request::get('id');
+		$festival_id = \dash\coding::decode($festival_id);
 		if(!$festival_id || !is_numeric($festival_id))
 		{
 			return false;
@@ -74,6 +98,7 @@ class model
 			'user_id'           => \dash\user::id(),
 			'status'            => 'draft',
 		];
+		// var_dump($insert);exit();
 
 		$insert = \lib\db\festivalusers::insert($insert);
 
@@ -89,6 +114,7 @@ class model
 	public static function check_duplicate($_course_id)
 	{
 		$festival_id = \dash\request::get('id');
+		$festival_id = \dash\coding::decode($festival_id);
 		if(!$festival_id || !is_numeric($festival_id))
 		{
 			return false;
