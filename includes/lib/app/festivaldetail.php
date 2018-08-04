@@ -64,9 +64,23 @@ class festivaldetail
 			return false;
 		}
 
+		$type = \dash\app::request('type');
+		if($type && mb_strlen($type) > 100)
+		{
+			\dash\notif::error(T_("Please fill festival detail type less than 500 character"), 'type');
+			return false;
+		}
+
 		if($title)
 		{
-			$check_duplicate = \lib\db\festivaldetails::get(['festival_id' => $festival_id, 'title' => $title, 'limit' => 1]);
+			if($type)
+			{
+				$check_duplicate = \lib\db\festivaldetails::get(['festival_id' => $festival_id, 'title' => $title, 'type' => $type, 'limit' => 1]);
+			}
+			else
+			{
+				$check_duplicate = \lib\db\festivaldetails::get(['festival_id' => $festival_id, 'title' => $title, 'limit' => 1]);
+			}
 
 			if(isset($check_duplicate['id']))
 			{
@@ -100,13 +114,6 @@ class festivaldetail
 		if($website && mb_strlen($website) > 500)
 		{
 			\dash\notif::error(T_("Please fill festival detail website less than 500 character"), 'website');
-			return false;
-		}
-
-		$type = \dash\app::request('type');
-		if($type && mb_strlen($type) > 100)
-		{
-			\dash\notif::error(T_("Please fill festival detail type less than 500 character"), 'type');
 			return false;
 		}
 

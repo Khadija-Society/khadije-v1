@@ -46,7 +46,7 @@ trait add
 
 		if(!$args['status'])
 		{
-			$args['status']  = 'draft';
+			$args['status']  = 'enable';
 		}
 
 		$args['creator']  = \dash\user::id();
