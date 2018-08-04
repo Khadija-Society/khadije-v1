@@ -43,6 +43,7 @@ class view
 		}
 
 		\dash\data::course($course);
+
 	}
 }
 ?>

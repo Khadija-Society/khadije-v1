@@ -10,7 +10,8 @@ class model
 
 		if(\dash\request::post('type') === 'remove')
 		{
-			$date = \dash\request::post('date');
+
+			$key = \dash\request::post('key');
 
 			$old = \dash\data::dataRow_schedule();
 			if(!is_array($old))
@@ -23,13 +24,13 @@ class model
 				$old = [];
 			}
 
-			if(array_key_exists($date, $old))
+			if(array_key_exists($key, $old))
 			{
-				unset($old[$date]);
+				unset($old[$key]);
 			}
 			else
 			{
-				\dash\notif::error(T_("Invalid date for remove"));
+				\dash\notif::error(T_("Invalid key for remove"));
 				return false;
 			}
 
@@ -93,7 +94,7 @@ class model
 				$old = [];
 			}
 
-			$old["$date $time"] = $title;
+			$old[] = ['title' => $title, 'date' => $date, 'time' => $time];
 		}
 
 		$update             = [];

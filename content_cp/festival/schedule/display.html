@@ -22,10 +22,10 @@
 					<tbody>
 						{%for key, value in dataRow.schedule%}
 							<tr class="txtC">
-								<td>{{value}}</td>
-								<td>{{key | tdate("Y-m-d")}}</td>
-								<td>{{key | tdate("H:i:s")}}</td>
-								<td><a href="{{url.pwd}}" class="badge danger" data-ajaxify data-method='post' data-data='{"type" : "remove", "date" : "{{key}}"}'>{%trans "Remove"%}</a></td>
+								<td>{{value.title}}</td>
+								<td>{{value.date | tdate("Y/m/d")}}</td>
+								<td>{{value.time | tdate("H:i:s")}}</td>
+								<td><a href="{{url.pwd}}" class="badge danger" data-ajaxify data-method='post' data-data='{"type" : "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</a></td>
 							</tr>
 						{%endfor%}
 					</tbody>
