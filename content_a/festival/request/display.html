@@ -1,7 +1,19 @@
 {%extends display.admin%}
 
-
 {%block pageContent%}
+{%if showMSG%}
+<div class='middle normal f justify-center'>
+  <div class="cbox ">
+    <div class="msg">{{showMSG |raw}}</div>
+    <a class="btn success block" href="{{url.this}}/mycourse?id={{requestGET.id}}">{%trans "Back"%}</a>
+  </div>
+</div>
+{%else%}
+{{block ('pageContentSend')}}
+{%endif%}
+{%endblock%}
+
+{%block pageContentSend%}
 
 <div class='middle normal f justify-center'>
 

@@ -6,6 +6,7 @@ class view
 {
 	public static function config()
 	{
+
 		\dash\data::page_title(T_("Festival course list"));
 		\dash\data::page_desc(T_('You can signup in some festival course'));
 
@@ -24,6 +25,15 @@ class view
 		if(!$load)
 		{
 			\dash\header::status(403, T_("Invalid festival id"));
+		}
+
+		if(\dash\session::get('userCompleteCourse'))
+		{
+			if(isset($load['message']))
+			{
+				\dash\data::showMSG($load['message']);
+			}
+			\dash\session::set('userCompleteCourse', null);
 		}
 
 		$festival_id = \dash\coding::decode($id);

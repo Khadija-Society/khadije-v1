@@ -48,12 +48,18 @@ class model
 					return false;
 				}
 
-				if($uploaded_file[$key] === null)
-				{
-					\dash\notif::error(T_("Please fill the file"), $key);
-					return false;
-				}
+				// if($uploaded_file[$key] === null)
+				// {
+				// 	\dash\notif::error(T_("Please fill the file"), $key);
+				// 	return false;
+				// }
 			}
+		}
+
+		if(empty(array_filter($uploaded_file)))
+		{
+			\dash\notif::error(T_("Please fill the file"), $key);
+			return false;
 		}
 
 		$festival_id = \dash\request::get('id');
@@ -79,6 +85,8 @@ class model
 			$file = json_encode($uploaded_file, JSON_UNESCAPED_UNICODE);
 			\lib\db\festivalusers::update(['file' => $file, 'status' => 'awaiting'], $check_duplicate['id']);
 			\dash\notif::ok(T_("File successfull send"));
+			\dash\session::set('userCompleteCourse', true);
+			\dash\redirect::pwd();
 			return true;
 		}
 		else
