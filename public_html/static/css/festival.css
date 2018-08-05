@@ -204,12 +204,6 @@ footer{
   clear: both;
 }
 
-@media only screen and (min-width: 1170px) {
-  #cd-timeline::before {
-    left: 50%;
-    margin-left: -2px;
-  }
-}
 .cd-timeline-block {
   position: relative;
   margin: 2em 0;
@@ -225,15 +219,6 @@ footer{
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 1170px) {
-  .cd-timeline-block {
-    margin: 4em 0;
-  }
-
-  .cd-timeline-block:last-child {
-    margin-bottom: 0;
-  }
-}
 .cd-timeline-img {
   position: absolute;
   top: 8px;
@@ -251,18 +236,6 @@ footer{
   background: #18bd3b;
 }
 
-@media only screen and (min-width: 1170px) {
-  .cd-timeline-img {
-    width: 30px;
-    height: 30px;
-    left: 50%;
-    margin-left: -15px;
-    margin-top: 15px;
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-  }
-}
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
@@ -286,12 +259,7 @@ footer{
   width: calc(50% - 2px);
   display: inline-block;
 }
-@media (max-width: 500px) {
-  .cd-timeline-content .timeline-content-info .timeline-content-info-title, .cd-timeline-content .timeline-content-info .timeline-content-info-date {
-    display: block;
-    width: 100%;
-  }
-}
+
 .cd-timeline-content .content-skills {
   font-size: 12px;
   padding: 0;
@@ -349,23 +317,30 @@ footer{
   border-right: 7px solid #333C42;
 }
 
-@media only screen and (min-width: 768px) {
-  .cd-timeline-content h2 {
-    font-size: 20px;
-    font-size: 1.25rem;
-  }
 
-  .cd-timeline-content p {
-    font-size: 16px;
-    font-size: 1rem;
-  }
-
-  .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
-}
 @media only screen and (min-width: 1170px) {
+  #cd-timeline::before {
+    left: 50%;
+    margin-left: -2px;
+  }
+  .cd-timeline-block {
+    margin: 4em 0;
+  }
+
+  .cd-timeline-block:last-child {
+    margin-bottom: 0;
+  }
+  .cd-timeline-img {
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: 15px;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+
   .cd-timeline-content {
     color: white;
     margin-left: 0;
@@ -413,6 +388,31 @@ footer{
   }
 }
 
+
+@media only screen and (min-width: 768px) {
+  .cd-timeline-content h2 {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+
+  .cd-timeline-content p {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .cd-timeline-content .timeline-content-info .timeline-content-info-title, .cd-timeline-content .timeline-content-info .timeline-content-info-date {
+    display: block;
+    width: 100%;
+  }
+}
 
 
 
