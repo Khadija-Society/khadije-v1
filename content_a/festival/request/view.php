@@ -42,6 +42,13 @@ class view
 			\dash\header::status(403, T_("You not register to this course!"));
 		}
 
+		if(isset($check_duplicate['file']))
+		{
+			$check_duplicate['file'] = json_decode($check_duplicate['file'], true);
+		}
+
+		\dash\data::dataRow($check_duplicate);
+
 		\dash\data::course($course);
 
 	}
