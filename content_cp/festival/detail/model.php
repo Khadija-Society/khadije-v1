@@ -19,7 +19,13 @@ class model
 
 		foreach ($post as $key => $value)
 		{
-			if(trim($value) === '<p><br></p>')
+			$test = $value;
+			$test = strip_tags($test);
+			$test = htmlspecialchars_decode($test);
+			$test = str_replace("&nbsp;"," ",$test);
+			$test = trim($test);
+
+			if(!$test)
 			{
 				$post[$key] = null;
 			}
