@@ -21,7 +21,10 @@
     <div class="cn">
       <h1>{{festival.title}}</h1>
       <h2 class="mB25">{{festival.subtitle}}</h2>
-      <div class="clock" data-aos="zoom-in" data-aos-delay="700"></div>
+      {%set myDate%}{%for key, value in festival.schedule%}{%if value.schedule%}{{value.date}}{%endif%}{%endfor%}{%endset%}
+      {%if myDate%}
+        <div class="clock" data-aos="zoom-in" data-aos-delay="700" data-date=""></div>
+      {%endif%}
       <div >
         <a href="#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
         <a href="#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
