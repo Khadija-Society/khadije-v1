@@ -224,9 +224,7 @@
 
 {%block imessagesms%}
 <label for="messagesms">{%trans "messagesms"%}</label>
-<div class="input">
-	<input type="text" name="messagesms" id="messagesms" placeholder='{%trans "messagesms of festival"%}' value="{{dataRow.messagesms}}" maxlength="200" minlength="1" title='{%trans "Enter a valid messagesms"%}'>
-</div>
+<textarea class="txt"  name="messagesms" id="messagesms" placeholder='{%trans "messagesms of festival"%}' rows="3" >{{dataRow.messagesms}}</textarea>
 {%endblock%}
 
 
