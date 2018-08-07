@@ -136,7 +136,7 @@
 
 {%for key, value in festival.schedule%}
     <div class="timeline-block">
-      <div class="timeline-bullet done" data-aos="fade-in"></div>
+      <div class="timeline-bullet {%if value.time_last%}done{%endif%}" data-aos="fade-in"></div>
       <div class="timeline-content" data-aos="fade-up-left">
         <h2>{{value.title}}</h2>
         <div class="timeline-info f">

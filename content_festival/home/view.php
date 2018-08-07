@@ -23,7 +23,16 @@ class view
 		$festival = array_map(['\lib\app\festival', 'ready'], [$festival]);
 		$festival = $festival[0];
 
-		if(!isset($festival['status']) || (isset($festival['status']) && $festival['status'] != 'enable'))
+		if(!isset($festival['status']))
+		{
+			\dash\header::status(404, T_("This festival is not enable"));
+		}
+
+		if(in_array($festival['status'], ['enable', 'expire']))
+		{
+			// no problem
+		}
+		else
 		{
 			if(!\dash\permission::supervisor())
 			{
@@ -35,13 +44,20 @@ class view
 		{
 			foreach ($festival['schedule'] as $key => $value)
 			{
+				$date = $value['date']. ' '. $value['time'];
+				$date = strtotime($date);
+				$timing = $date - time();
+
+				if($timing < 0)
+				{
+					// time last
+					$festival['schedule'][$key]['time_last'] = true;
+				}
+
 				if(isset($value['schedule']) && $value['schedule'])
 				{
-					$date = $value['date']. ' '. $value['time'];
-					$date = strtotime($date);
 					if($date)
 					{
-						$timing = $date - time();
 
 						if($timing > 0)
 						{
