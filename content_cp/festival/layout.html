@@ -4,7 +4,7 @@
 {%block ititle %}
 <label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="title" id="title" placeholder='{%trans "Title of festival"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid title"%}'>
+  <input type="text" name="title" id="title" placeholder='{%trans "Title"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid title"%}'>
 </div>
 {% endblock %}
 
@@ -12,7 +12,7 @@
 {%block isubtitle %}
 <label for="subtitle">{%trans "Subtitle"%}</label>
 <div class="input">
-  <input type="text" name="subtitle" id="subtitle" placeholder='{%trans "Subtitle of festival"%} *' value="{{dataRow.subtitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid subtitle"%}'>
+  <input type="text" name="subtitle" id="subtitle" placeholder='{%trans "Subtitle"%}' value="{{dataRow.subtitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid subtitle"%}'>
 </div>
 {% endblock %}
 
@@ -27,51 +27,51 @@
 {% endblock %}
 
 {%block idesc%}
-<label for="desc">Description</label>
-<textarea class="txt mB10" id="desc" name="desc" placeholder='{%trans "Write description of festival"%}' rows="4">{{dataRow.desc}}</textarea>
+<label for="desc">{% trans "Description" %}</label>
+<textarea class="txt mB10" id="desc" name="desc" placeholder='{%trans "Write your text"%}' rows="4">{{dataRow.desc}}</textarea>
 {%endblock%}
 
 
 {%block iintro%}
-<label for="intro">Intro</label>
-<textarea class="txt mB10" id="intro" data-editor name="intro" placeholder='{%trans "Write intro of festival"%}' rows="15">{{dataRow.intro}}</textarea>
+<label for="intro">{% trans "Intro" %}</label>
+<textarea class="txt mB10" id="intro" data-editor name="intro" placeholder='{%trans "Write your text"%}' rows="15">{{dataRow.intro}}</textarea>
 {%endblock%}
 
 
 {%block iabout%}
-<label for="about">About</label>
-<textarea class="txt mB10" id="about" data-editor name="about" placeholder='{%trans "Write about of festival"%}' rows="15">{{dataRow.about}}</textarea>
+<label for="about">{% trans "About" %}</label>
+<textarea class="txt mB10" id="about" data-editor name="about" placeholder='{%trans "Write your text"%}' rows="15">{{dataRow.about}}</textarea>
 {%endblock%}
 
 
 {%block itarget%}
-<label for="target">Target</label>
-<textarea class="txt mB10" id="target" data-editor name="target" placeholder='{%trans "Write target of festival"%}' rows="15">{{dataRow.target}}</textarea>
+<label for="target">{% trans "Target" %}</label>
+<textarea class="txt mB10" id="target" data-editor name="target" placeholder='{%trans "Write your text"%}' rows="15">{{dataRow.target}}</textarea>
 {%endblock%}
 
 
 
 {%block iaxis%}
-<label for="axis">Axis</label>
-<textarea class="txt mB10" id="axis" data-editor name="axis" placeholder='{%trans "Write axis of festival"%}' rows="15">{{dataRow.axis}}</textarea>
+<label for="axis">{% trans "Axis" %}</label>
+<textarea class="txt mB10" id="axis" data-editor name="axis" placeholder='{%trans "Write your text"%}' rows="15">{{dataRow.axis}}</textarea>
 {%endblock%}
 
 
 {%block iview%}
-<label for="view">View</label>
-<textarea class="txt mB10" id="view" data-editor name="view" placeholder='{%trans "Write view of festival"%}' rows="15">{{dataRow.view}}</textarea>
+<label for="view">{% trans "Festival view" %}</label>
+<textarea class="txt mB10" id="view" data-editor name="view" placeholder='{%trans "Write your text"%}' rows="15">{{dataRow.view}}</textarea>
 {%endblock%}
 
 
 {%block ischedule%}
-<label for="schedule">Schedule</label>
-<textarea class="txt mB10" id="schedule" data-editor name="schedule" placeholder='{%trans "Write schedule of festival"%}' rows="15">{{dataRow.schedule}}</textarea>
+<label for="schedule">{% trans "Schedule" %}</label>
+<textarea class="txt mB10" id="schedule" data-editor name="schedule" placeholder='{%trans "Write your text"%}' rows="15">{{dataRow.schedule}}</textarea>
 {%endblock%}
 
 
-{%block iplace%} <label for="place">{%trans "Rule"%}</label> <textarea
-class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
-"Write place of festival"%}' rows="15">{{dataRow.place}}</textarea>
+{%block iplace%}
+<label for="place">{%trans "Rule"%}</label>
+<textarea class="txt mB10" id="place" data-editor name="place" placeholder='{%trans "Write place of festival"%}' rows="15">{{dataRow.place}}</textarea>
 {%endblock%}
 
 {%block iaward%}
@@ -83,19 +83,17 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 {%block iphone%}
 
 
-    <label for="phone1">{%trans "Phone"%} <small>{{1 | fitNumber}}</small></label>
+    <label for="phone1">{%trans "Phone"%} <small>{%trans "Managment"%}</small></label>
     <div class="input">
       <input type="tel" name="phone1" id="phone1" placeholder='{%trans "Phone number"%}' value="{{dataRow.phone.phone1}}"  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid phone number"%}'>
     </div>
 
-
-
-    <label for="phone2">{%trans "Phone"%} <small>{{2 | fitNumber}}</small></label>
+    <label for="phone2">{%trans "Phone"%} <small>{%trans "Secretariat"%}</small></label>
     <div class="input">
       <input type="tel" name="phone2" id="phone2" placeholder='{%trans "Phone number"%}' value="{{dataRow.phone.phone2}}"  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid phone number"%}'>
     </div>
 
-    <label for="phone3">{%trans "Phone"%} <small>{{2 | fitNumber}}</small></label>
+    <label for="phone3">{%trans "Phone"%} <small>{%trans "Public relations"%}</small></label>
     <div class="input">
       <input type="tel" name="phone3" id="phone3" placeholder='{%trans "Phone number"%}' value="{{dataRow.phone.phone3}}"  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid phone number"%}'>
     </div>
@@ -105,12 +103,12 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 
 
 {%block iaddress%}
-<label for="address">Address</label>
+<label for="address">{%trans "Address" %}</label>
 <textarea class="txt mB10" id="address"  name="address" placeholder='{%trans "Festival address"%}' rows="2">{{dataRow.address.address}}</textarea>
 {%endblock%}
 
 {%block iaddress2%}
-<label for="address1">Address send</label>
+<label for="address1">{%trans "Address send" %}</label>
 <textarea class="txt mB10" id="address1"  name="address1" placeholder='{%trans "Write address1 of festival"%}' rows="2">{{dataRow.address.address1}}</textarea>
 {%endblock%}
 
@@ -133,7 +131,7 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 
 
 {%block itelegram%}
-<label for="telegram">{%trans "telegram"%}</label>
+<label for="telegram">{%trans "Telegram"%}</label>
 <div class="input">
   <input type="text" name="telegram" class="ltr" id="telegram" placeholder='{%trans "telegram of festival"%}' value="{{dataRow.social.telegram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid telegram"%}'>
   <label class="addon ltr" for="telegram">https://t.me/</label>
@@ -142,7 +140,7 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 
 
 {%block ifacebook%}
-<label for="facebook">{%trans "facebook"%}</label>
+<label for="facebook">{%trans "Facebook"%}</label>
 <div class="input">
 	<input type="text" name="facebook" class="ltr" id="facebook" placeholder='{%trans "facebook of festival"%}' value="{{dataRow.social.facebook}}" maxlength="200" minlength="1" title='{%trans "Enter a valid facebook"%}'>
   <label class="addon ltr" for="facebook">https://fb.com/</label>
@@ -151,7 +149,7 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 
 
 {%block itwitter%}
-<label for="twitter">{%trans "twitter"%}</label>
+<label for="twitter">{%trans "Twitter"%}</label>
 <div class="input">
   <input type="text" name="twitter" class="ltr" id="twitter" placeholder='{%trans "twitter of festival"%}' value="{{dataRow.social.twitter}}" maxlength="200" minlength="1" title='{%trans "Enter a valid twitter"%}'>
   <label class="addon ltr" for="twitter">https://twitter.com/</label>
@@ -160,7 +158,7 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 
 
 {%block iinstagram%}
-<label for="instagram">{%trans "instagram"%}</label>
+<label for="instagram">{%trans "Tnstagram"%}</label>
 <div class="input">
   <input type="text" name="instagram" class="ltr" id="instagram" placeholder='{%trans "instagram id"%}' value="{{dataRow.social.instagram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid instagram"%}'>
   <label class="addon ltr" for="instagram">https://instagram.com/</label>
@@ -169,7 +167,7 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 
 
 {%block ilinkedin%}
-<label for="linkedin">{%trans "linkedin"%}</label>
+<label for="linkedin">{%trans "Linkedin"%}</label>
 <div class="input">
   <input type="text" name="linkedin" class="ltr" id="linkedin" placeholder='{%trans "linkedin of festival"%}' value="{{dataRow.social.linkedin}}" maxlength="200" minlength="1" title='{%trans "Enter a valid linkedin"%}'>
   <label class="addon ltr" for="linkedin">https://linkedin.com/</label>
@@ -205,7 +203,7 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 
 
 {%block iwebsite%}
-<label for="website">{%trans "website"%}</label>
+<label for="website">{%trans "Website"%}</label>
 <div class="input">
   <input type="url" name="website" id="website" placeholder='{%trans "Festival website like http://example.com"%}' value="{{dataRow.website}}" maxlength="200" minlength="1" title='{%trans "Enter a valid website"%}'>
   <label class="addon ltr" for="website">URL</label>
