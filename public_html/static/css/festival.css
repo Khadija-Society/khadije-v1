@@ -4,6 +4,8 @@
 body{
   min-height:100%;
   background-color: #fff;
+  background-image: url("../images/festival/grid-me.png");
+  background-attachment: fixed;
   color: #777;
 }
 ::selection {background-color:#2cba94;color:#fff;}
@@ -76,14 +78,14 @@ header a:hover{
   font-size:1.4em;
   padding: 10em 0 ;
   text-align: center;
-  background-color: #fff;
+  /*background-color: #fff;*/
   color: #777;
 }
 .txtDetail#introduction{
   background-image: url("../images/festival/introduction.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #fff;
+  /*background-color: #fff;*/
   min-height: 400px;
   color: #eee;
 }
@@ -105,19 +107,29 @@ header a:hover{
 }
 
 .txtDetail#about{
-  background-image: url("../images/festival/grid-me.png");
+  /*background-image: url("../images/festival/grid-me.png");*/
+  /*background-attachment: fixed;*/
+  color: #333;
+}
+
+.txtDetail#terms{
+  background-image: url("../images/festival/escheresque.png");
   background-attachment: fixed;
+  background-color: #fff;
   color: #333;
 }
 
 .txtDetail#goals{
   background-image: url("../images/festival/goals.jpg");
   background-position: right bottom;
+  background-position: center;
   min-height: 500px;
+  background-color: #e2e0e1;
+  background-repeat: no-repeat;
 }
 .txtDetail#goals .wrapper{
   width: 70%;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   margin-right: 10%;
   color: #333;
@@ -150,7 +162,8 @@ header a:hover{
 .txtDetail#awards{
   background-image: url("../images/festival/awards.jpg");
   background-position: center;
-  color: #eee;
+  background-repeat: no-repeat;
+  color: #fff;
   min-height: 500px;
 }
 .txtDetail#awards::before{
@@ -161,6 +174,10 @@ header a:hover{
   right: 0;
   left: 0;
   background-color: rgba(0,0,0,0.3);
+}
+.txtDetail#awards .cn{
+  position: relative;
+  z-index: 2;
 }
 /*.txtDetail#awards .wrapper{
   width: 70%;
