@@ -8,11 +8,12 @@ class model
 	{
 		\dash\permission::access('fpFestivalAdd');
 
-		$post            = [];
-		$post['address'] = \dash\request::post('address');
+		$post             = [];
+		$post['address']  = \dash\request::post('address');
 		$post['address1'] = \dash\request::post('address1');
-		$post['length']  = \dash\request::post('length');
-		$post['width']   = \dash\request::post('width');
+		$post['length']   = \dash\request::post('length');
+		$post['width']    = \dash\request::post('width');
+		$post['maplink']  = \dash\request::post('maplink') ? $_POST['maplink'] : null;
 
 		$update['address'] = json_encode($post, JSON_UNESCAPED_UNICODE);
 

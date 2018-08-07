@@ -11,7 +11,10 @@
 			<form method="post" autocomplete="off">
 
 				{{block('iaddress')}}
-
+					<div class="input">
+						<label for="maplink">{%trans "Map link" %}</label>
+						<input type="text" class="ltr" name="maplink" id="maplink" placeholder='{%trans "Length"%} {%trans "For example"%} 34.6499475' value="{{dataRow.address.maplink}}">
+					</div>
 				{%if false%}
 				<div class="f">
 					<div class="c">
