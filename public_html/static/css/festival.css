@@ -207,10 +207,90 @@ main{
 footer{
   background-color: rgba(0,0,0, 0.7);
   color: #eee;
-  font-size: 1.2em;
-  padding: 100px;
+  font-size: 1.4em;
+  padding: 100px 0;
+}
+/* share links*/
+.shareC{
+  user-select: none;
+  margin: 1em auto 2em;
+}
+.shareC a{
+  position:relative;
+  display:inline-block!important;
+  overflow:hidden;
+  margin:2px;
+  width:32px;
+  height:32px;
+  padding: 0!important;
+  font-size:0!important;
+  line-height:0!important;
+  border-radius:1px;
+  background-color:rgba(0,0,0,0.02);
 }
 
+
+/* sprite*/
+[class^="sprite-"] {
+  background-image: url('../images/homepage-v3/sprite.png');
+  background-repeat: no-repeat;
+  background-position: 1000px 1000px;
+}
+/* social links*/
+.sprite-sapp{
+  background-position: 0 -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+.sprite-eitaa{
+  background-position: -32px -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+.sprite-aparat{
+  background-position: -96px -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+.sprite-telegram{
+  background-position: -160px -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+.sprite-whatsapp{
+  background-position: -192px -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+.sprite-instagram{
+  background-position: -288px -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+.sprite-twitter{
+  background-position: -320px -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+.sprite-facebook{
+  background-position: -352px -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+.sprite-youtube{
+  background-position: -384px -300px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
 
 
 
