@@ -11,6 +11,15 @@ class view
 
 		$festival = array_map(['\lib\app\festival', 'ready'], [$festival]);
 		$festival = $festival[0];
+
+		if(!isset($festival['status']) || (isset($festival['status']) && $festival['status'] != 'enable'))
+		{
+			if(!\dash\permission::supervisor())
+			{
+				\dash\header::status(403, T_("This festival is not enable"));
+			}
+		}
+
 		\dash\data::festival($festival);
 		$course = \lib\db\festivalcourses::get(['festival_id' => $festival_id]);
 		if(is_array($course))

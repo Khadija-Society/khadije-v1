@@ -79,6 +79,7 @@ class model
 			$title = \dash\request::post('title');
 			$date  = \dash\request::post('date');
 			$time  = \dash\request::post('time');
+			$desc  = \dash\request::post('desc');
 
 			if(!$title)
 			{
@@ -132,7 +133,7 @@ class model
 				$old = [];
 			}
 
-			$old[] = ['title' => $title, 'date' => $date, 'time' => $time];
+			$old[] = ['title' => $title, 'date' => $date, 'time' => $time, 'desc' => $desc];
 		}
 
 		$update             = [];

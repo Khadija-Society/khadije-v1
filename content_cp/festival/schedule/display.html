@@ -6,7 +6,7 @@
 {{block('pageSteps')}}
 
 <div class="f justify-center">
-	<div class="c8">
+	<div class="c12">
 		<div class="cbox">
 			{%if dataRow.schedule%}
 			<h3>{%trans "Saved schedule"%}</h3>
@@ -17,6 +17,7 @@
 							<th>{%trans "Title"%}</th>
 							<th>{%trans "Date"%}</th>
 							<th>{%trans "Time"%}</th>
+							<th>{%trans "Description"%}</th>
 							<th>{%trans "Remove"%}</th>
 							<th>{%trans "Default"%}</th>
 						</tr>
@@ -28,6 +29,7 @@
 								<td>{{value.title}}</td>
 								<td>{{value.date | tdate("Y/m/d")}}</td>
 								<td>{{value.time | tdate("H:i:s")}}</td>
+								<td>{{value.desc}}</td>
 								<td><a href="{{url.pwd}}" class="badge danger" data-ajaxify data-method='post' data-data='{"type" : "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</a></td>
 
 								<td>
@@ -57,24 +59,31 @@
 {%block stDate1%}
 <h3>{%trans "Add new event"%}</h3>
 <div class="f">
-	<div class="c">
+	<div class="c3">
 		<label for="title">{%trans "Title"%}</label>
 		<div class="input">
 		  <input type="text" name="title" id="title" placeholder='{%trans "Title"%}' autocomplete="off">
 		</div>
 	</div>
 
-	<div class="c mLa5">
+	<div class="c2 mLa5">
 		<label for="date">{%trans "Schedule"%}</label>
 		<div class="input">
 		  <input class="datepicker" type="text" name="date" id="date" required placeholder='{{"now" | tdate | fitNumber}}' value="{{userdetail.date}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
 		</div>
 	</div>
 
-	<div class="c mLa5">
+	<div class="c2 mLa5">
 		<label for="time">{%trans "Time"%}</label>
 		<div class="input clockpicker">
 		  <input type="text" name="time" id="time" placeholder='{%trans "Time"%}' autocomplete="off">
+		</div>
+	</div>
+
+	<div class="c mLa5">
+		<label for="desc">{%trans "Description"%}</label>
+		<div class="input clockpicker">
+		  <input type="text" name="desc" id="desc" placeholder='{%trans "Description"%}' autocomplete="off">
 		</div>
 	</div>
 </div>
