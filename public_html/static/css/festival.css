@@ -109,13 +109,27 @@ header a:hover{
   background-attachment: fixed;
   color: #333;
 }
+
 .txtDetail#goals{
-  background-image: url("../images/festival/goals2.jpg");
+  background-image: url("../images/festival/goals.jpg");
+  background-position: right bottom;
+  min-height: 500px;
+}
+.txtDetail#goals .wrapper{
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-right: 10%;
+  color: #333;
+}
+.txtDetail#topics{
+  background-image: url("../images/festival/topics.jpg");
   background-position: bottom center;
   padding-bottom: 400px;
   padding-right: 10%;
   padding-left: 10%;
 }
+
 .txtDetail#vision{
   background-image: url("../images/festival/vision.jpg");
   background-repeat: no-repeat;
@@ -134,11 +148,27 @@ header a:hover{
   margin-left: 10%;
 }
 .txtDetail#awards{
-  background-color: rgba(0,0,0,0.2);
-  background-image: url("../images/festival/light-wool.png");
-  color: #333;
+  background-image: url("../images/festival/awards.jpg");
+  background-position: center;
+  color: #eee;
+  min-height: 500px;
 }
-
+.txtDetail#awards::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+}
+/*.txtDetail#awards .wrapper{
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}*/
 
 
 
