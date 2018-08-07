@@ -28,6 +28,8 @@ body{
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   z-index: -1;
   background-image: url("../images/festival/bg-sky.jpg");
   background-position: center;
@@ -238,7 +240,7 @@ footer{
   background-color: rgba(0,0,0, 0.7);
   color: #eee;
   font-size: 1.4em;
-  padding: 100px 0;
+  padding: 100px 1em;
 }
 footer .summary{
   padding:0 0.5em;
@@ -446,6 +448,55 @@ footer .quickAccess a:focus{
 }
 
 
+@media all and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+
+@media (max-width: 767px) {
+  #landing{
+    min-height: 500px;
+    height: auto;
+  }
+  #landing .title{
+    margin-top: 5em;
+    font-size: 1.5em;
+  }
+  #landing .title h2{
+    line-height: 2em;
+  }
+  #landing .title .btn{
+    margin-bottom: 1em;
+  }
+
+  .txtDetail{
+    padding: 5em 0;
+  }
+  .txtDetail#introduction .wrapper{
+    width: 90%;
+  }
+  .supportTeam img{
+    max-width: 80px;
+    max-height: 200px;
+  }
+  .txtDetail#topics{
+    padding: 0;
+    padding-bottom:350px;
+  }
+  .txtDetail#vision{
+    background-position: left;
+  }
+  .txtDetail#vision .wrapper{
+    width: 90%;
+    margin:0 auto;
+  }
+}
+
+@media print {
+  body{
+    overflow-x: hidden;
+  }
+}
 
 
 
