@@ -173,7 +173,8 @@ header a:hover{
   background-image: url("../images/festival/vision.jpg");
   background-repeat: no-repeat;
   background-color: #a9b9ac;
-  min-height: 500px;
+  min-height: 600px;
+  padding-top: 15em;
   background-position: bottom right;
   color: #eee;
   transition:0.3s;
@@ -475,7 +476,7 @@ footer .quickAccess a:focus{
     padding: 5em 0 380px 0;
   }
   .txtDetail#vision{
-    background-position: center;
+    background-position: top center;
   }
   .txtDetail#vision .wrapper{
     width: 50%;
