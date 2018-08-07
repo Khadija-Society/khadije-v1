@@ -1,4 +1,4 @@
-{%extends display.dash%}
+{%extends display.festival%}
 
 
 {%block body%}
@@ -19,10 +19,11 @@
 
   <div class="title">
     <div class="cn">
-      <h1>{{page.title}}</h1>
-      <h2 class="mB25">{{page.desc}}</h2>
+      <h1>{{festival.title}}</h1>
+      <h2 class="mB25">{{festival.subtitle}}</h2>
       <div class="clock" data-aos="zoom-in" data-aos-delay="700"></div>
       <div >
+        <a href="#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
         <a href="#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
       </div>
     </div>
@@ -30,82 +31,101 @@
 </section>
 
 
-
+{%if festival.intro %}
 <section class="txtDetail" id='introduction'>
   <div class="wrapper" data-aos="fade-up" data-aos-delay="100">
     <h2><a href="{{url.that}}#introduction">{%trans "Introduction"%}</a></h2>
-    <p>
-    لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+    {{festival.intro | raw}}
   </div>
 </section>
+{%endif%}
 
-
+{%if festival.about or organizer or supporter or mediasupporter %}
 <section class="txtDetail" id='about'>
   <div class="cn">
-    <div data-aos="zoom-in-up" data-aos-delay="200">
-      <h2><a href="{{url.that}}#about">{%trans "About"%}</a></h2>
-      <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
-    </div>
+
+    {%if festival.about %}
+      <div data-aos="zoom-in-up" data-aos-delay="200">
+        <h2><a href="{{url.that}}#about">{%trans "About"%}</a></h2>
+        {{festival.intro | raw}}
+      </div>
+    {%endif%}
 
     <div class="supportTeam">
+    {%if organizer %}
       <div id="organizers" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#organizers">{%trans "Organizers"%}</a></h3>
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        {%for key, value in organizer%}
+          <a href="#" title="test"><img alt="{{value.title}}" src="{{value.logo}}"></a>
+        {%endfor%}
       </div>
-
+    {%endif%}
+    {%if supporter %}
       <div id="sponsors" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#sponsors">{%trans "Sponsors"%}</a></h3>
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        {%for key, value in supporter%}
+        <a href="#" title="test"><img alt="{{value.title}}" src="{{value.logo}}"></a>
+        {%endfor%}
       </div>
-
+    {%endif%}
+    {%if mediasupporter%}
       <div id="mdeiaSponsors" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#mdeiaSponsors">{%trans "Media Sponsors"%}</a></h3>
+        {%for key, value in mediasupporter %}
         <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        {%endfor%}
       </div>
+    {%endif%}
+
     </div>
   </div>
 </section>
+{%endif%}
 
+{%if festival.target%}
 <section class="txtDetail" id='goals'>
   <div class="wrapper" data-aos="zoom-out-left" data-aos-delay="300">
     <h2><a href="{{url.that}}#goals">{%trans "Goals"%}</a></h2>
-    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+    {{festival.target | raw}}
   </div>
 </section>
+{%endif%}
 
+{%if festival.axis%}
 <section class="txtDetail" id='topics'>
   <div class="cn" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom">
     <h2><a href="{{url.that}}#topics">{%trans "Conferences Topics"%}</a></h2>
-    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+    {{festival.axis | raw}}
   </div>
 </section>
+{%endif%}
 
+{%if festival.place%}
 <section class="txtDetail" id='terms'>
   <div class="cn" data-aos="fade-down" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom">
     <h2><a href="{{url.that}}#terms">{%trans "Terms and Conditions"%}</a></h2>
-    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+    {{festival.place | raw}}
   </div>
 </section>
+{%endif%}
 
+{%if festival.view%}
 <section class="txtDetail" id='vision'>
   <div class="wrapper" data-aos="zoom-out-left" data-aos-delay="300">
     <h2><a href="{{url.that}}#vision">{%trans "Vision"%}</a></h2>
-    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+    {{festival.view | raw}}
   </div>
 </section>
+{%endif%}
 
+{%if festival.award%}
 <section class="txtDetail" id='awards'>
   <div class="cn" data-aos="zoom-out">
     <h2><a href="{{url.that}}#awards">{%trans "Awards"%}</a></h2>
-    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+    {{festival.award |raw}}
   </div>
 </section>
+{%endif%}
 
 
 <section id="timeline">
