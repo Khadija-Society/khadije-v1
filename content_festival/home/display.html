@@ -26,8 +26,8 @@
         <div class="clock" data-aos="zoom-in" data-aos-delay="700" data-timer="{{timing}}"></div>
       {%endif%}
       <div >
-        <a href="#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
-        <a href="#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
+        <a href="{{url.that}}#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
+        <a href="{{url.base}}/a/festival?id={{festival.id}}" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Signup"%}</a>
       </div>
     </div>
   </div>
@@ -183,9 +183,9 @@
           <div class="tel mB20">
             <h3 class="fs10">{%trans "Telephones"%}</h3>
 
-            {%if festival.phone.phone1%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone1}}">{{festival.phone.phone1}}</a>{%endif%}
-            {%if festival.phone.phone2%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone2}}">{{festival.phone.phone2}}</a>{%endif%}
-            {%if festival.phone.phone3%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone3}}">{{festival.phone.phone3}}</a>{%endif%}
+            {%if festival.phone.phone1%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone1}}">{{festival.phone.phone1 | fitNumber(false)}}</a>{%endif%}
+            {%if festival.phone.phone2%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone2}}">{{festival.phone.phone2 | fitNumber(false)}}</a>{%endif%}
+            {%if festival.phone.phone3%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone3}}">{{festival.phone.phone3 | fitNumber(false)}}</a>{%endif%}
 
           </div>
           {%endif%}
