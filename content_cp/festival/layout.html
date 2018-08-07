@@ -20,7 +20,7 @@
 {%block islug %}
 <label for="slug">{%trans "Slug"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <label class="ltr addon btn primary" title='{%trans "Open link"%}' for="slug"><a href="{{url.site}}/festival/{{dataRow.slug}}" target="_blank" data-direct><i class="sf-link"></i></a></label>
+
   <input type="text" class="ltr" name="slug" id="slug" placeholder='{%trans "Slug of festival"%} *' value="{{dataRow.slug}}" required  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid slug"%}'>
   <label class="ltr addon" for="slug">{{url.site}}/festival/</label>
 </div>
