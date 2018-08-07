@@ -133,10 +133,19 @@ class model
 				$old = [];
 			}
 
-			$old[] = ['title' => $title, 'date' => $date, 'time' => $time, 'desc' => $desc];
+			$old[] = ['title' => $title, 'date' => $date, 'time' => $time, 'desc' => $desc, 'datetime' => strtotime("$date $time")];
 		}
 
 		$update             = [];
+
+		$sort_field = array_column($old, 'datetime');
+		arsort($sort_field);
+		if(count($sort_field) === count($old))
+		{
+			array_multisort($old, $sort_field, SORT_ASC);
+		}
+
+
 		$update['schedule'] = json_encode($old, JSON_UNESCAPED_UNICODE);
 		$result             = \lib\app\festival::edit($update, \dash\request::get('id'));
 
