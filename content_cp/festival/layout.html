@@ -158,7 +158,7 @@
 
 
 {%block iinstagram%}
-<label for="instagram">{%trans "Tnstagram"%}</label>
+<label for="instagram">{%trans "Instagram"%}</label>
 <div class="input">
   <input type="text" name="instagram" class="ltr" id="instagram" placeholder='{%trans "instagram id"%}' value="{{dataRow.social.instagram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid instagram"%}'>
   <label class="addon ltr" for="instagram">https://instagram.com/</label>
@@ -279,7 +279,7 @@
 
 
    <div class="c s4">
-    <a class="dcard {%if url.child == 'general'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="49ctrlshift" title='{%trans "Edit general setting of festival"%}'>
+    <a class="dcard {%if url.child == 'general'%}active{%endif%}" href='{{url.this}}/general?id={{requestGET.id}}' data-shortkey="49ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-cog"></i></div>
       <div class="label">{%trans "General"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
@@ -289,7 +289,7 @@
 
 
    <div class="c s4">
-    <a class="dcard {%if url.child == 'detail'%}active{%endif%}" href='{{url.this}}/detail?id={{requestGET.id}}' data-shortkey="50ctrlshift" title='{%trans "Edit sume detail of festival"%}'>
+    <a class="dcard {%if url.child == 'detail'%}active{%endif%}" href='{{url.this}}/detail?id={{requestGET.id}}' data-shortkey="50ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-thumbnails"></i></div>
       <div class="label">{%trans "Detail"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
@@ -299,7 +299,7 @@
 
 
    <div class="c s4">
-    <a class="dcard {%if url.child == 'social'%}active{%endif%}" href='{{url.this}}/social?id={{requestGET.id}}' data-shortkey="51ctrlshift" title='{%trans "Edit sume social of festival"%}'>
+    <a class="dcard {%if url.child == 'social'%}active{%endif%}" href='{{url.this}}/social?id={{requestGET.id}}' data-shortkey="51ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-network"></i></div>
       <div class="label">{%trans "Social Network"%}<br><kbd class="mT5">Ctrl+Shift+3</kbd></div>
@@ -309,7 +309,7 @@
 
 
     <div class="c s4">
-    <a class="dcard {%if url.child == 'phone'%}active{%endif%}" href='{{url.this}}/phone?id={{requestGET.id}}' data-shortkey="52ctrlshift" title='{%trans "Edit sume phone of festival"%}'>
+    <a class="dcard {%if url.child == 'phone'%}active{%endif%}" href='{{url.this}}/phone?id={{requestGET.id}}' data-shortkey="52ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-phone"></i></div>
       <div class="label">{%trans "Phone"%}<br><kbd class="mT5">Ctrl+Shift+4</kbd></div>
@@ -318,7 +318,7 @@
    </div>
 
    <div class="c s4">
-    <a class="dcard {%if url.child == 'schedule'%}active{%endif%}" href='{{url.this}}/schedule?id={{requestGET.id}}' data-shortkey="53ctrlshift" title='{%trans "Edit sume schedule of festival"%}'>
+    <a class="dcard {%if url.child == 'schedule'%}active{%endif%}" href='{{url.this}}/schedule?id={{requestGET.id}}' data-shortkey="53ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-calendar"></i></div>
       <div class="label">{%trans "Schedule"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
@@ -327,7 +327,7 @@
    </div>
 
     <div class="c s4">
-    <a class="dcard {%if url.child == 'address'%}active{%endif%}" href='{{url.this}}/address?id={{requestGET.id}}' data-shortkey="54ctrlshift" title='{%trans "Edit sume address of festival"%}'>
+    <a class="dcard {%if url.child == 'address'%}active{%endif%}" href='{{url.this}}/address?id={{requestGET.id}}' data-shortkey="54ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-pin"></i></div>
       <div class="label">{%trans "Address"%}<br><kbd class="mT5">Ctrl+Shift+6</kbd></div>
@@ -338,7 +338,7 @@
 
 
     <div class="c s4">
-    <a class="dcard {%if url.child == 'message'%}active{%endif%}" href='{{url.this}}/message?id={{requestGET.id}}' data-shortkey="55ctrlshift" title='{%trans "Edit sume message of festival"%}'>
+    <a class="dcard {%if url.child == 'message'%}active{%endif%}" href='{{url.this}}/message?id={{requestGET.id}}' data-shortkey="55ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-envelope-o"></i></div>
       <div class="label">{%trans "Message"%}<br><kbd class="mT5">Ctrl+Shift+7</kbd></div>

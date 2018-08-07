@@ -189,7 +189,7 @@
 
 <label for="linktitle">{%trans "Link title"%}</label>
 <div class="input">
-  <input type="text" name="linktitle" id="linktitle" placeholder='{%trans "Subtitle of festival course"%}' value="{{dataRow.link.linktitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid linktitle"%}'>
+  <input type="text" name="linktitle" id="linktitle" placeholder='{%trans "Subtitle of festival course"%}' value="{{dataRow.link.linktitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" >
 </div>
 {% endblock %}
 
@@ -220,7 +220,7 @@
 
 
    <div class="c s4">
-    <a class="dcard {%if requestGET.type == 'general'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=general&id={{requestGET.id}}' data-shortkey="49ctrlshift" title='{%trans "Edit general setting of festival"%}'>
+    <a class="dcard {%if requestGET.type == 'general'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=general&id={{requestGET.id}}' data-shortkey="49ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-list"></i></div>
       <div class="label">{%trans "General"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
@@ -230,7 +230,7 @@
 
 
    <div class="c s4">
-    <a class="dcard {%if requestGET.type == 'rules'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=rules&id={{requestGET.id}}' data-shortkey="50ctrlshift" title='{%trans "Edit sume rules of festival"%}'>
+    <a class="dcard {%if requestGET.type == 'rules'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=rules&id={{requestGET.id}}' data-shortkey="50ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-thumbnails"></i></div>
       <div class="label">{%trans "Rules"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
@@ -240,7 +240,7 @@
 
 
    <div class="c s4">
-    <a class="dcard {%if requestGET.type == 'sendrule'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=sendrule&id={{requestGET.id}}' data-shortkey="51ctrlshift" title='{%trans "Edit sume sendrule of festival"%}'>
+    <a class="dcard {%if requestGET.type == 'sendrule'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=sendrule&id={{requestGET.id}}' data-shortkey="51ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-out"></i></div>
       <div class="label">{%trans "Send Rule"%}<br><kbd class="mT5">Ctrl+Shift+3</kbd></div>
@@ -250,7 +250,7 @@
 
 
     <div class="c s4">
-    <a class="dcard {%if requestGET.type == 'files'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=files&id={{requestGET.id}}' data-shortkey="52ctrlshift" title='{%trans "Edit sume files of festival"%}'>
+    <a class="dcard {%if requestGET.type == 'files'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=files&id={{requestGET.id}}' data-shortkey="52ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-file-o"></i></div>
       <div class="label">{%trans "File setting"%}<br><kbd class="mT5">Ctrl+Shift+4</kbd></div>
@@ -259,7 +259,7 @@
    </div>
 
    <div class="c s4">
-    <a class="dcard {%if requestGET.type == 'setting'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=setting&id={{requestGET.id}}' data-shortkey="53ctrlshift" title='{%trans "Edit sume setting of festival"%}'>
+    <a class="dcard {%if requestGET.type == 'setting'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=setting&id={{requestGET.id}}' data-shortkey="53ctrlshift" >
      <div class="statistic sm">
       <div class="value"><i class="sf-cogs"></i></div>
       <div class="label">{%trans "Setting"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>

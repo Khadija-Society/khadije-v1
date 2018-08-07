@@ -55,9 +55,9 @@ class twigTransTerms
 	echo T_("Update");                                                                // Line 63
 
 	//---------------------------------------content_cp/report/hazinekard/display.html
-	echo T_("Payment");                                                               // Line 97
+	echo T_("Payment");                                                               // Line 93
 	echo T_("Sum");                                                                   // Line 14
-	echo T_("Toman");                                                                 // Line 126
+	echo T_("Toman");                                                                 // Line 14
 
 	//--------------------------------------------content_cp/report/daily/display.html
 
@@ -156,8 +156,8 @@ class twigTransTerms
 	echo T_("Home page number");                                                      // Line 97
 	echo T_("Delneveshte");                                                           // Line 15
 	echo T_("Send SMS");                                                              // Line 116
-	echo T_("Representation");                                                        // Line 21
-	echo T_("Health Service");                                                        // Line 30
+	echo T_("Representation");                                                        // Line 34
+	echo T_("Health Service");                                                        // Line 43
 	echo T_("Consulting");                                                            // Line 143
 	echo T_("SMS Template");                                                          // Line 152
 	echo T_("Donate product list");                                                   // Line 163
@@ -172,76 +172,77 @@ class twigTransTerms
 
 	//-------------------------------------------------content_cp/festival/layout.html
 	echo T_("Require");                                                               // Line 126
-	echo T_("Title of festival");                                                     // Line 7
 	echo T_("Subtitle");                                                              // Line 119
-	echo T_("Subtitle of festival");                                                  // Line 15
 	echo T_("Enter a valid subtitle");                                                // Line 121
 	echo T_("Slug");                                                                  // Line 21
-	echo T_("Open link");                                                             // Line 23
 	echo T_("Slug of festival");                                                      // Line 24
 	echo T_("Enter a valid slug");                                                    // Line 24
-	echo T_("Write description of festival");                                         // Line 31
-	echo T_("Write intro of festival");                                               // Line 37
-	echo T_("Write about of festival");                                               // Line 43
-	echo T_("Write target of festival");                                              // Line 49
-	echo T_("Write axis of festival");                                                // Line 56
-	echo T_("Write view of festival");                                                // Line 62
-	echo T_("Write schedule of festival");                                            // Line 68
+	echo T_("Write your text");                                                       // Line 68
+	echo T_("Intro");                                                                 // Line 9
+	echo T_("About");                                                                 // Line 210
+	echo T_("Target");                                                                // Line 11
+	echo T_("Axis");                                                                  // Line 12
+	echo T_("Festival view");                                                         // Line 61
+	echo T_("Schedule");                                                              // Line 70
+	echo T_("Rule");                                                                  // Line 14
 	echo T_("Write place of festival");                                               // Line 74
 	echo T_("Write award of festival");                                               // Line 79
 	echo T_("Phone");                                                                 // Line 224
-	echo T_("Phone number");                                                          // Line 100
-	echo T_("Enter a valid phone number");                                            // Line 100
-	echo T_("Write address of festival");                                             // Line 109
+	echo T_("Managment");                                                             // Line 86
+	echo T_("Phone number");                                                          // Line 98
+	echo T_("Enter a valid phone number");                                            // Line 98
+	echo T_("Secretariat");                                                           // Line 91
+	echo T_("Public relations");                                                      // Line 96
+	echo T_("Address");                                                               // Line 205
+	echo T_("Festival address");                                                      // Line 107
+	echo T_("Address send");                                                          // Line 111
 	echo T_("Write address1 of festival");                                            // Line 112
 	echo T_("email of festival");                                                     // Line 118
 	echo T_("Enter a valid email");                                                   // Line 179
 	echo T_("SMS Service number");                                                    // Line 58
 	echo T_("sms of festival");                                                       // Line 60
 	echo T_("Enter a valid sms");                                                     // Line 60
-	echo T_("telegram");                                                              // Line 66
+	echo T_("Telegram");                                                              // Line 237
 	echo T_("telegram of festival");                                                  // Line 68
 	echo T_("Enter a valid telegram");                                                // Line 68
-	echo T_("facebook");                                                              // Line 75
+	echo T_("Facebook");                                                              // Line 233
 	echo T_("facebook of festival");                                                  // Line 77
 	echo T_("Enter a valid facebook");                                                // Line 77
-	echo T_("twitter");                                                               // Line 84
+	echo T_("Twitter");                                                               // Line 230
 	echo T_("twitter of festival");                                                   // Line 86
 	echo T_("Enter a valid twitter");                                                 // Line 86
-	echo T_("instagram");                                                             // Line 93
-	echo T_("instagram of festival");                                                 // Line 95
+	echo T_("Instagram");                                                             // Line 240
+	echo T_("instagram id");                                                          // Line 163
 	echo T_("Enter a valid instagram");                                               // Line 95
-	echo T_("linkedin");                                                              // Line 102
+	echo T_("Linkedin");                                                              // Line 170
 	echo T_("linkedin of festival");                                                  // Line 104
 	echo T_("Enter a valid linkedin");                                                // Line 104
-	echo T_("website");                                                               // Line 111
+	echo T_("Sorosh app");                                                            // Line 180
+	echo T_("sapp of festival");                                                      // Line 182
+	echo T_("Enter a valid sapp");                                                    // Line 182
+	echo T_("Eitaa");                                                                 // Line 249
+	echo T_("eitaa of festival");                                                     // Line 190
+	echo T_("Enter a valid eitaa");                                                   // Line 190
+	echo T_("Aparat");                                                                // Line 246
+	echo T_("aparat of festival");                                                    // Line 199
+	echo T_("Enter a valid aparat");                                                  // Line 199
 	echo T_("Festival website like http://example.com");                              // Line 113
 	echo T_("Enter a valid website");                                                 // Line 113
-	echo T_("Free user");                                                             // Line 193
-	echo T_("Every one can signup in this festival and send her project");            // Line 193
-	echo T_("messagesms");                                                            // Line 199
-	echo T_("messagesms of festival");                                                // Line 201
-	echo T_("Enter a valid messagesms");                                              // Line 201
-	echo T_("Message");                                                               // Line 319
-	echo T_("Write message of festival");                                             // Line 208
+	echo T_("Free user");                                                             // Line 220
+	echo T_("Every one can signup in this festival and send her project");            // Line 220
+	echo T_("messagesms");                                                            // Line 226
+	echo T_("messagesms of festival");                                                // Line 227
+	echo T_("Message");                                                               // Line 344
+	echo T_("Write message of festival");                                             // Line 233
 	echo T_("Save");                                                                  // Line 103
 	echo T_("Enable");                                                                // Line 146
 	echo T_("Draft");                                                                 // Line 52
 	echo T_("Disable");                                                               // Line 152
-	echo T_("Deleted");                                                               // Line 243
-	echo T_("Edit general setting of festival");                                      // Line 223
+	echo T_("Deleted");                                                               // Line 268
 	echo T_("General");                                                               // Line 226
-	echo T_("Edit sume detail of festival");                                          // Line 267
-	echo T_("Edit sume social of festival");                                          // Line 277
-	echo T_("Social Network");                                                        // Line 280
-	echo T_("Edit sume phone of festival");                                           // Line 287
-	echo T_("Edit sume schedule of festival");                                        // Line 296
-	echo T_("Schedule");                                                              // Line 57
-	echo T_("Edit sume address of festival");                                         // Line 305
-	echo T_("Address");                                                               // Line 205
-	echo T_("Edit sume message of festival");                                         // Line 316
-	echo T_("Add to gallery");                                                        // Line 332
-	echo T_("To add image gallery drop file here or");                                // Line 333
+	echo T_("Social Network");                                                        // Line 305
+	echo T_("Add to gallery");                                                        // Line 357
+	echo T_("To add image gallery drop file here or");                                // Line 358
 	echo T_("Gallery");                                                               // Line 184
 	echo T_("Click to download");                                                     // Line 207
 	echo T_("Video");                                                                 // Line 197
@@ -249,18 +250,13 @@ class twigTransTerms
 	echo T_("PDF");                                                                   // Line 205
 	echo T_("Without preview");                                                       // Line 207
 	echo T_("Remove");                                                                // Line 109
-	echo T_("Poster");                                                                // Line 446
-	echo T_("Brochure");                                                              // Line 456
+	echo T_("Poster");                                                                // Line 471
+	echo T_("Brochure");                                                              // Line 481
 	echo T_("Logo");                                                                  // Line 160
-	echo T_("Baner");                                                                 // Line 476
+	echo T_("Baner");                                                                 // Line 501
 
 	//-----------------------------------------content_cp/festival/detail/display.html
-	echo T_("Intro");                                                                 // Line 9
-	echo T_("About");                                                                 // Line 10
-	echo T_("Target");                                                                // Line 11
-	echo T_("Axis");                                                                  // Line 12
-	echo T_("View");                                                                  // Line 13
-	echo T_("Place");                                                                 // Line 60
+	echo T_("Festival View");                                                         // Line 13
 	echo T_("Award");                                                                 // Line 15
 
 	//-----------------------------------------content_cp/festival/status/display.html
@@ -268,7 +264,7 @@ class twigTransTerms
 
 	//------------------------------------------------content_cp/festival/sidenav.html
 	echo T_("Dashboard");                                                             // Line 5
-	echo T_("Homepage");                                                              // Line 80
+	echo T_("Homepage");                                                              // Line 208
 	echo T_("Statistics");                                                            // Line 8
 
 	//-------------------------------------------content_cp/festival/referee/list.html
@@ -278,7 +274,7 @@ class twigTransTerms
 	echo T_("Referee");                                                               // Line 47
 	echo T_("Pictures");                                                              // Line 66
 	echo T_("Media supporter");                                                       // Line 99
-	echo T_("Course");                                                                // Line 109
+	echo T_("Course");                                                                // Line 96
 	echo T_("Organizer");                                                             // Line 119
 	echo T_("Supporter");                                                             // Line 129
 	echo T_("Setting");                                                               // Line 265
@@ -287,6 +283,8 @@ class twigTransTerms
 	echo T_("Add new festival");                                                      // Line 11
 
 	//-----------------------------------------------content_cp/festival/home/chart.js
+
+	//-------------------------------------------content_cp/festival/user/display.html
 
 	//-----------------------------------------content_cp/festival/organizer/list.html
 	echo T_("Add new organizer");                                                     // Line 13
@@ -298,17 +296,29 @@ class twigTransTerms
 	echo T_("Title of festival referee");                                             // Line 7
 	echo T_("Subtitle of festival referee");                                          // Line 15
 	echo T_("Write description of festival referee");                                 // Line 42
+	echo T_("telegram");                                                              // Line 66
+	echo T_("facebook");                                                              // Line 75
+	echo T_("twitter");                                                               // Line 84
+	echo T_("instagram");                                                             // Line 93
+	echo T_("instagram of festival");                                                 // Line 95
+	echo T_("linkedin");                                                              // Line 102
+	echo T_("website");                                                               // Line 111
 
 	//---------------------------------------content_cp/festival/schedule/display.html
-	echo T_("Saved schedule");                                                        // Line 12
+	echo T_("Saved schedule");                                                        // Line 18
+	echo T_("Show in time line");                                                     // Line 22
 	echo T_("Time");                                                                  // Line 44
-	echo T_("Add new event");                                                         // Line 47
+	echo T_("Default");                                                               // Line 28
+	echo T_("Remove schedule");                                                       // Line 43
+	echo T_("Set schedule");                                                          // Line 45
+	echo T_("Add new event");                                                         // Line 60
 
 	//----------------------------------------content_cp/festival/address/display.html
-	echo T_("Length");                                                                // Line 26
-	echo T_("For example");                                                           // Line 26
-	echo T_("Width");                                                                 // Line 25
-	echo T_("Load in map");                                                           // Line 33
+	echo T_("Map link");                                                              // Line 15
+	echo T_("Length");                                                                // Line 29
+	echo T_("For example");                                                           // Line 29
+	echo T_("Width");                                                                 // Line 28
+	echo T_("Load in map");                                                           // Line 36
 
 	//--------------------------------------------content_cp/festival/course/list.html
 	echo T_("Add new course");                                                        // Line 13
@@ -321,6 +331,8 @@ class twigTransTerms
 	echo T_("ZIP");                                                                   // Line 97
 	echo T_("Other");                                                                 // Line 103
 	echo T_("Maximum file size");                                                     // Line 113
+	echo T_("Like");                                                                  // Line 235
+	echo T_("in MB");                                                                 // Line 113
 	echo T_("Subtitle of festival course");                                           // Line 192
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Select one group");                                                      // Line 130
@@ -334,15 +346,12 @@ class twigTransTerms
 	echo T_("Enter a valid pirce");                                                   // Line 179
 	echo T_("Link");                                                                  // Line 187
 	echo T_("Link title");                                                            // Line 190
-	echo T_("Enter a valid linktitle");                                               // Line 192
 	echo T_("Multiuse");                                                              // Line 201
-	echo T_("Edit sume rules of festival");                                           // Line 233
 	echo T_("Rules");                                                                 // Line 236
-	echo T_("Edit sume sendrule of festival");                                        // Line 243
 	echo T_("Send Rule");                                                             // Line 246
-	echo T_("Edit sume files of festival");                                           // Line 253
 	echo T_("File setting");                                                          // Line 256
-	echo T_("Edit sume setting of festival");                                         // Line 262
+
+	//------------------------------------content_cp/festival/transaction/display.html
 
 	//------------------------------------------------content_cp/homepage/display.html
 	echo T_("Qom");                                                                   // Line 32
@@ -424,7 +433,6 @@ class twigTransTerms
 	echo T_("Work Address");                                                          // Line 210
 	echo T_("Start date");                                                            // Line 83
 	echo T_("End date");                                                              // Line 91
-	echo T_("Like");                                                                  // Line 235
 	echo T_("Education");                                                             // Line 274
 	echo T_("Education course");                                                      // Line 283
 	echo T_("Job");                                                                   // Line 72
@@ -446,11 +454,11 @@ class twigTransTerms
 	echo T_("Meetings");                                                              // Line 71
 	echo T_("Meeting reports");                                                       // Line 74
 	echo T_("Add new report");                                                        // Line 77
-	echo T_("News");                                                                  // Line 12
+	echo T_("News");                                                                  // Line 137
 	echo T_("Categries");                                                             // Line 92
 	echo T_("Tags");                                                                  // Line 95
 	echo T_("Pages");                                                                 // Line 98
-	echo T_("Contact");                                                               // Line 15
+	echo T_("Contact");                                                               // Line 16
 	echo T_("Comments");                                                              // Line 110
 	echo T_("Contact US");                                                            // Line 114
 	echo T_("Users");                                                                 // Line 130
@@ -474,6 +482,7 @@ class twigTransTerms
 
 	//---------------------------------------content_cp/options/cityplace/display.html
 	echo T_("List of city place");                                                    // Line 22
+	echo T_("Place");                                                                 // Line 60
 	echo T_("Delete");                                                                // Line 28
 	echo T_("Please select one items");                                               // Line 60
 	echo T_("Enter a valid place");                                                   // Line 72
@@ -493,7 +502,7 @@ class twigTransTerms
 	echo T_("Search in consulting");                                                  // Line 44
 
 	//----------------------------------------------------content_cp/home/display.html
-	echo T_("Festival");                                                              // Line 39
+	echo T_("Festival");                                                              // Line 24
 	echo T_("Meeting");                                                               // Line 49
 
 	//------------------------------------------content_cp/representation/display.html
@@ -582,14 +591,14 @@ class twigTransTerms
 	echo T_("Khadije Wiki");                                                          // Line 63
 	echo T_("Services");                                                              // Line 163
 	echo T_("Self expressions");                                                      // Line 84
-	echo T_("Donate");                                                                // Line 93
+	echo T_("Donate");                                                                // Line 106
 	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 105
 	echo T_("User Panel");                                                            // Line 109
 	echo T_("Enter");                                                                 // Line 7
 	echo T_("Signup in Khadije charity");                                             // Line 114
 	echo T_("Enamad");                                                                // Line 122
 	echo T_("Mission");                                                               // Line 134
-	echo T_("Vision");                                                                // Line 23
+	echo T_("Vision");                                                                // Line 214
 	echo T_("Honors");                                                                // Line 24
 	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 142
 	echo T_("Biography");                                                             // Line 144
@@ -609,13 +618,7 @@ class twigTransTerms
 	echo T_("Other Languages");                                                       // Line 189
 	echo T_("Software Solution Designer");                                            // Line 197
 	echo T_("Developed by Ermile");                                                   // Line 50
-	echo T_("Twitter");                                                               // Line 208
-	echo T_("Facebook");                                                              // Line 211
-	echo T_("Telegram");                                                              // Line 217
-	echo T_("Instagram");                                                             // Line 220
-	echo T_("Aparat");                                                                // Line 226
-	echo T_("Eitaa");                                                                 // Line 229
-	echo T_("Soroush App");                                                           // Line 231
+	echo T_("Soroush App");                                                           // Line 253
 
 	//--------------------------------------------------content/donate/donateForm.html
 	echo T_("List of last success donations of yours");                               // Line 95
@@ -662,9 +665,9 @@ class twigTransTerms
 	//-------------------------------------------------------content/trip/display.html
 
 	//------------------------------------------------------content/old/v2/footer.html
-	echo T_("Signup");                                                                // Line 8
+	echo T_("Signup");                                                                // Line 30
 	echo T_("Misson & Target");                                                       // Line 22
-	echo T_("FAQ");                                                                   // Line 13
+	echo T_("FAQ");                                                                   // Line 25
 	echo T_("Register for group trip");                                               // Line 42
 
 	//------------------------------------------------------content/old/v2/layout.html
@@ -737,11 +740,26 @@ class twigTransTerms
 	//-----------------------------------------------------content/health/display.html
 
 	//----------------------------------------------content_festival/demo/display.html
-	echo T_("Timeline");                                                              // Line 11
-	echo T_("Sponsers");                                                              // Line 14
-	echo T_("Read More");                                                             // Line 25
+	echo T_("Topics");                                                                // Line 212
+	echo T_("Terms and conditions");                                                  // Line 13
+	echo T_("Awards");                                                                // Line 215
+	echo T_("Timeline");                                                              // Line 216
+	echo T_("Read More");                                                             // Line 29
+	echo T_("Introduction");                                                          // Line 209
+	echo T_("Organizers");                                                            // Line 60
+	echo T_("Sponsors");                                                              // Line 68
+	echo T_("Media Sponsors");                                                        // Line 76
+	echo T_("Goals");                                                                 // Line 211
+	echo T_("Conferences Topics");                                                    // Line 100
+	echo T_("Terms and Conditions");                                                  // Line 109
+	echo T_("Contact us");                                                            // Line 176
+	echo T_("Telephones");                                                            // Line 184
+	echo T_("SMS panel");                                                             // Line 200
+	echo T_("Conditions");                                                            // Line 213
 
 	//---------------------------------------------content_festival/demo/messages.html
+
+	//----------------------------------------------content_festival/home/display.html
 
 	//-------------------------------------------content_a/service/detail/display.html
 	echo T_("Save all");                                                              // Line 78
@@ -762,10 +780,36 @@ class twigTransTerms
 	echo T_("End Date");                                                              // Line 79
 
 	//------------------------------------------------------content_a/main/layout.html
-	echo T_("Consulting Service");                                                    // Line 39
+	echo T_("Consulting Service");                                                    // Line 52
 	echo T_("Edit your profile");                                                     // Line 22
 	echo T_("Avatar of you");                                                         // Line 24
 	echo T_("Default Avatar");                                                        // Line 29
+
+	//----------------------------------------content_a/festival/mycourse/display.html
+	echo T_("Register for new course");                                               // Line 33
+
+	//------------------------------------------content_a/festival/detail/display.html
+
+	//-----------------------------------------content_a/festival/request/display.html
+	echo T_("Back");                                                                  // Line 8
+	echo T_("Word file");                                                             // Line 25
+	echo T_("pdf file");                                                              // Line 36
+	echo T_("video file");                                                            // Line 47
+	echo T_("sound file");                                                            // Line 58
+	echo T_("apk file");                                                              // Line 69
+	echo T_("zip file");                                                              // Line 80
+	echo T_("other file");                                                            // Line 91
+	echo T_("Max input size");                                                        // Line 101
+	echo T_("Open link");                                                             // Line 104
+	echo T_("Send Course detail");                                                    // Line 107
+
+	//--------------------------------------------content_a/festival/home/display.html
+	echo T_("My course");                                                             // Line 10
+	echo T_("My course signuped");                                                    // Line 12
+
+	//------------------------------------------content_a/festival/course/display.html
+	echo T_("You are register to this course before");                                // Line 17
+	echo T_("Pay & Register");                                                        // Line 37
 
 	//-----------------------------------------content_a/trip/partner/partnerForm.html
 	echo T_("List of your child");                                                    // Line 29
@@ -805,7 +849,7 @@ class twigTransTerms
 	echo T_("register for new consulting request");                                   // Line 37
 
 	//-----------------------------------------------------content_a/home/display.html
-	echo T_("Donate product");                                                        // Line 114
+	echo T_("Donate product");                                                        // Line 127
 
 	//------------------------------------content_a/representation/detail/display.html
 	echo T_("Your are using this representation");                                    // Line 9
