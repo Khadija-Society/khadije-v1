@@ -472,8 +472,7 @@ footer .quickAccess a:focus{
     width: 50%;
   }
   .txtDetail#topics{
-    padding: 0;
-    padding-bottom:380px;
+    padding: 5em 0 380px 0;
   }
   .txtDetail#vision{
     background-position: center;
