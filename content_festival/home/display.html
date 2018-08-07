@@ -4,12 +4,238 @@
 {%block body%}
 
 
-{{festival|dump}}
+<section id='landing' data-scroll>
+  <div class="bg"></div>
+  <header>
+    <nav class="cn">
+      <a href="{{url.that}}#about">{%trans "About"%}</a>
+      <a href="{{url.that}}#topics">{%trans "Topics"%}</a>
+      <a href="{{url.that}}#terms">{%trans "Terms and conditions"%}</a>
+      <a href="{{url.that}}#awards">{%trans "Awards"%}</a>
+      <a href="{{url.that}}#timeline">{%trans "Timeline"%}</a>
+      <a href="{{url.that}}#map">{%trans "Contact"%}</a>
+    </nav>
+  </header>
+
+  <div class="title">
+    <div class="cn">
+      <h1>{{page.title}}</h1>
+      <h2 class="mB25">{{page.desc}}</h2>
+      <div class="clock" data-aos="zoom-in" data-aos-delay="700"></div>
+      <div >
+        <a href="#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
+<section class="txtDetail" id='introduction'>
+  <div class="wrapper" data-aos="fade-up" data-aos-delay="100">
+    <h2><a href="{{url.that}}#introduction">{%trans "Introduction"%}</a></h2>
+    <p>
+    لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+  </div>
+</section>
 
 
+<section class="txtDetail" id='about'>
+  <div class="cn">
+    <div data-aos="zoom-in-up" data-aos-delay="200">
+      <h2><a href="{{url.that}}#about">{%trans "About"%}</a></h2>
+      <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+    </div>
+
+    <div class="supportTeam">
+      <div id="organizers" data-aos="zoom-in-up" data-aos-delay="200">
+        <h3><a href="{{url.that}}#organizers">{%trans "Organizers"%}</a></h3>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+      </div>
+
+      <div id="sponsors" data-aos="zoom-in-up" data-aos-delay="200">
+        <h3><a href="{{url.that}}#sponsors">{%trans "Sponsors"%}</a></h3>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+      </div>
+
+      <div id="mdeiaSponsors" data-aos="zoom-in-up" data-aos-delay="200">
+        <h3><a href="{{url.that}}#mdeiaSponsors">{%trans "Media Sponsors"%}</a></h3>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="txtDetail" id='goals'>
+  <div class="wrapper" data-aos="zoom-out-left" data-aos-delay="300">
+    <h2><a href="{{url.that}}#goals">{%trans "Goals"%}</a></h2>
+    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+  </div>
+</section>
+
+<section class="txtDetail" id='topics'>
+  <div class="cn" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom">
+    <h2><a href="{{url.that}}#topics">{%trans "Conferences Topics"%}</a></h2>
+    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+  </div>
+</section>
+
+<section class="txtDetail" id='terms'>
+  <div class="cn" data-aos="fade-down" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom">
+    <h2><a href="{{url.that}}#terms">{%trans "Terms and Conditions"%}</a></h2>
+    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+  </div>
+</section>
+
+<section class="txtDetail" id='vision'>
+  <div class="wrapper" data-aos="zoom-out-left" data-aos-delay="300">
+    <h2><a href="{{url.that}}#vision">{%trans "Vision"%}</a></h2>
+    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+  </div>
+</section>
+
+<section class="txtDetail" id='awards'>
+  <div class="cn" data-aos="zoom-out">
+    <h2><a href="{{url.that}}#awards">{%trans "Awards"%}</a></h2>
+    <p>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+  </div>
+</section>
+
+
+<section id="timeline">
+  <div class="myTimeline">
+    <div class="timeline-block">
+      <div class="timeline-bullet done" data-aos="fade-in"></div>
+      <div class="timeline-content" data-aos="fade-up-left">
+        <h2>Penta Consulting</h2>
+        <div class="timeline-info f">
+          <div><i class="sf-certificate" aria-hidden="true"></i> Front End Developer</div>
+          <div><i class="sf-calendar-o" aria-hidden="true"></i> June 2016 - Present</div>
+        </div>
+        <p>Working alongside the designer team implementing the designs, also developing custom solutions to address team necessities.</p>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-bullet done" data-aos="fade-in"></div>
+      <div class="timeline-content" data-aos="fade-up-right">
+        <h2>Title of section 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-bullet" data-aos="fade-in"></div>
+      <div class="timeline-content" data-aos="fade-up-left">
+        <h2>Title of section 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-bullet" data-aos="fade-in"></div>
+      <div class="timeline-content" data-aos="fade-up-right">
+        <h2>Final Section</h2>
+        <p>This is the content of the last section</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="txtDetail" id="map">
+  <iframe width="100%" height="300" src="https://maps.google.com/maps?width=100%&amp;height=300&amp;hl=en&amp;q=ermile+(Ermile)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Embed Google Map</a></iframe>
+</section>
+
+
+
+<footer>
+  <div class="cn">
+    <div class="f">
+      <div class="c4 s12 pRa10">
+        <div class="summary">
+          <h1><a href="{{url.that}}">{{page.title}}</a></h1>
+          <h2>{{page.desc}}</h2>
+          {{block("pageSocialLinks")}}
+        </div>
+      </div>
+      <div class="c5 s12 pRa10">
+        <address>
+            <h2>{%trans "Contact us"%}</h2>
+          <div class="address mB20">
+            <div>Qom, Iran</div>
+          </div>
+          <div class="tel mB20">
+            <h3 class="fs10">{%trans "Telephones"%}</h3>
+            <a class="btn outline sm mA5" href="tel:982563505460">02536505460</a>
+            <a class="btn outline sm mA5" href="tel:982563505460">02536505460</a>
+            <a class="btn outline sm mA5" href="tel:982563505460">02536505460</a>
+          </div>
+          <div class="email mB20">
+            <h3 class="fs10">{%trans "Email"%}</h3>
+            <a class="btn outline sm mA5" href="mailto:info@ermile.com">info@ermile.com</a>
+          </div>
+          <div class="sms">
+            <h3 class="fs10">{%trans "SMS panel"%}</h3>
+            <a class="btn outline sm mA5" href="tel:982563505460">02536505460</a>
+          </div>
+        </address>
+      </div>
+      <div class="c3 s12">
+        <nav class="quickAccess">
+          <a href="{{url.that}}#landing">{%trans "Homepage"%}</a>
+          <a href="{{url.that}}#introduction">{%trans "Introduction"%}</a>
+          <a href="{{url.that}}#about">{%trans "About"%}</a>
+          <a href="{{url.that}}#goals">{%trans "Goals"%}</a>
+          <a href="{{url.that}}#topics">{%trans "Topics"%}</a>
+          <a href="{{url.that}}#terms">Terms and {%trans "Conditions"%}</a>
+          <a href="{{url.that}}#vision">{%trans "Vision"%}</a>
+          <a href="{{url.that}}#awards">{%trans "Awards"%}</a>
+          <a href="{{url.that}}#timeline">{%trans "Timeline"%}</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
 {%endblock%}
 
 
+
+
+{%block pageSocialLinks%}
+<nav class="shareC txtRa" data-aos="zoom-in">
+{%if social.twitter%}
+  <a data-direct target='_blank' href="https://twitter.com/{{social.twitter}}" class="sprite-twitter" title='{%trans "Twitter"%}'>{{site.title}} twitter</a>
+{%endif%}
+{%if social.facebook%}
+  <a data-direct target='_blank' href="https://www.facebook.com/{{social.facebook}}" class="sprite-facebook" title='{%trans "Facebook"%}'>{{site.title}} facebook</a>
+{%endif%}
+{%if social.googleplus%}
+  <a data-direct target='_blank' href="https://plus.google.com/{{social.googleplus}}" class="sprite-googleplus">{{site.title}} google+</a>
+{%endif%}
+{%if social.telegram%}
+  <a data-direct target='_blank' href="https://t.me/{{social.telegram}}" class="sprite-telegram" title='{%trans "Telegram"%}'>{{site.title}} telegram</a>
+{%endif%}
+{%if social.instagram%}
+  <a data-direct target='_blank' href="https://instagram.com/{{social.instagram}}" class="sprite-instagram" title='{%trans "Instagram"%}'>{{site.title}} instagram</a>
+{%endif%}
+{%if social.linkedin%}
+  <a data-direct target='_blank' href="https://www.linkedin.com/{{social.linkedin}}" class="sprite-linkedin">{{site.title}} linkedin</a>
+{%endif%}
+{%if social.aparat%}
+  <a data-direct target='_blank' href="https://www.aparat.com/{{social.aparat}}" class="sprite-aparat" title='{%trans "Aparat"%}'>
+  </a>
+{%endif%}
+  <a data-direct target='_blank' href="https://eitaa.com/mhkhadije" class="sprite-eitaa" title='{%trans "Eitaa"%}'>
+  </a>
+  <a data-direct target='_blank' href="https://sapp.ir/mhkhadije" class="sprite-sapp" title='{%trans "Soroush App"%}'>
+  </a>
+</nav>
+{%endblock%}
