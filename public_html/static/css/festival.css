@@ -6,7 +6,7 @@ body{
   background-color: #fff;
   color: #777;
 }
-
+::selection {background-color:#2cba94;color:#fff;}
 /*landing for all pages*/
 #landing{
   position: relative;
@@ -70,8 +70,74 @@ header a:hover{
   margin: 5em auto 3em;
 }
 
+.txtDetail{
+  position: relative;
+  overflow: hidden;
+  font-size:1.4em;
+  padding: 10em 0 ;
+  text-align: center;
+  background-color: #fff;
+  color: #777;
+}
+.txtDetail#introduction{
+  background-image: url("../images/festival/introduction.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  min-height: 400px;
+  color: #eee;
+}
+.txtDetail#introduction::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+}
+.txtDetail#introduction .wrapper{
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
 
-
+.txtDetail#about{
+  background-image: url("../images/festival/grid-me.png");
+  background-attachment: fixed;
+  color: #333;
+}
+.txtDetail#goals{
+  background-image: url("../images/festival/goals2.jpg");
+  background-position: bottom center;
+  padding-bottom: 400px;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+.txtDetail#vision{
+  background-image: url("../images/festival/vision.jpg");
+  background-repeat: no-repeat;
+  background-color: #a9b9ac;
+  min-height: 500px;
+  background-position: bottom right;
+  color: #eee;
+  transition:0.3s;
+}
+.txtDetail#vision:hover{
+  color: #fff;
+}
+.txtDetail#vision .wrapper{
+  width: 40%;
+  margin-right: auto;
+  margin-left: 10%;
+}
+.txtDetail#awards{
+  background-color: rgba(0,0,0,0.2);
+  background-image: url("../images/festival/light-wool.png");
+  color: #333;
+}
 
 
 
