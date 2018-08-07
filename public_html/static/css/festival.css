@@ -186,7 +186,15 @@ header a:hover{
   z-index: 2;
   position: relative;
 }*/
+.txtDetail#map{
+  padding:0;
+}
+.txtDetail#map iframe{
+  display: block;
+}
+.txtDetail#map .wrapper{
 
+}
 
 
 
@@ -209,6 +217,13 @@ footer{
   color: #eee;
   font-size: 1.4em;
   padding: 100px 0;
+}
+footer .summary{
+  padding:0 0.5em;
+}
+footer .summary h2{
+  font-size: 1em;
+  line-height: 2em;
 }
 /* share links*/
 .shareC{
