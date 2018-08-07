@@ -17,88 +17,89 @@
 
 <div class='middle normal f justify-center'>
 
-<div class="cbox ">
+<div class="cbox  c5">
   <div class="msg">{{course.title}}</div>
 <form method="post">
 
 {%if course.allowfile.word%}
     <h6>{%trans "Word file"%}</h6>
-    <div class="input preview">
+    <div class="input preview1">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="word" id="word" data-preview data-max="500">
-     <label for="word" title="Simple Title">
+     {%if false%}<label for="word" title="Simple Title">
         {%if dataRow.file.word%}<img src="{{dataRow.file.word}}">{%endif%}
-     </label>
+     </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.pdf%}
     <h6>{%trans "pdf file"%}</h6>
-    <div class="input preview">
+    <div class="input preview1">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="pdf" id="pdf" data-preview data-max="500">
-     <label for="pdf" title="Simple Title">
+     {%if false%}<label for="pdf" title="Simple Title">
         {%if dataRow.file.pdf%}<img src="{{dataRow.file.pdf}}">{%endif%}
-     </label>
+     </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.video%}
     <h6>{%trans "video file"%}</h6>
-    <div class="input preview">
+    <div class="input preview1">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="video" id="video" data-preview data-max="500">
-     <label for="video" title="Simple Title">
+     {%if false%}<label for="video" title="Simple Title">
         {%if dataRow.file.video%}<img src="{{dataRow.file.video}}">{%endif%}
-     </label>
+     </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.sound%}
     <h6>{%trans "sound file"%}</h6>
-    <div class="input preview">
+    <div class="input preview1">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="sound" id="sound" data-preview data-max="500">
-     <label for="sound" title="Simple Title">
+     {%if false%}<label for="sound" title="Simple Title">
         {%if dataRow.file.sound%}<img src="{{dataRow.file.sound}}">{%endif%}
-     </label>
+     </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.apk%}
     <h6>{%trans "apk file"%}</h6>
-    <div class="input preview">
+    <div class="input preview1">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="apk" id="apk" data-preview data-max="500">
-     <label for="apk" title="Simple Title">
+     {%if false%}<label for="apk" title="Simple Title">
         {%if dataRow.file.apk%}<img src="{{dataRow.file.apk}}">{%endif%}
-     </label>
+     </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.zip%}
     <h6>{%trans "zip file"%}</h6>
-    <div class="input preview">
+    <div class="input preview1">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="zip" id="zip" data-preview data-max="500">
-     <label for="zip" title="Simple Title">
+     {%if false%}<label for="zip" title="Simple Title">
         {%if dataRow.file.zip%}<img src="{{dataRow.file.zip}}">{%endif%}
-     </label>
+     </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.other%}
     <h6>{%trans "other file"%}</h6>
-    <div class="input preview">
+    <div class="input preview1">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="other" id="other" data-preview data-max="500">
-     <label for="other" title="Simple Title">
+     {%if false%}<label for="other" title="Simple Title">
         {%if dataRow.file.other%}<img src="{{dataRow.file.other}}">{%endif%}
-     </label>
+     </label>{%endif%}
     </div>
   {%endif%}
 
+  {%if course.allowfile.filesize%}
   <h5 class="txtC">{%trans "Max input size"%} {{course.allowfile.filesize}} MB</h5>
-
+  {%endif%}
   {%if course.link.link%}
   <a href="{{course.link.link}}" target="_blnak" data-direct class="btn block primary">{%if course.link.linktitle%}{{course.link.linktitle}}{%else%}{%trans "Open link"%}{%endif%}</a>
   {%endif%}

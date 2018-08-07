@@ -21,7 +21,7 @@
     <div title='{%trans "Request date"%} {{value.datecreated | tdate("Y/m/d H:i")}}'>
     {%trans myStatus%}
 
-{%if value.status == 'draft'%}
+{%if value.status == 'draft' or value.status == 'awaiting'%}
      <a href="{{url.here}}/festival/profile?id={{requestGET.id}}&course={{value.festivalcourse_id | coding('encode')}}" class="badge sm mA5">{%trans "Edit"%}</a>
 {%endif%}
    </div>
