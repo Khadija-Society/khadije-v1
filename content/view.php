@@ -7,7 +7,7 @@ class view
 	{
 		\dash\data::site_title(T_("Khadije Charity"));
 		\dash\data::site_desc(T_("Executor of first pilgrimage to the Ahl al-Bayt"));
-		\dash\data::site_slogan(\dash\data::site_desc());
+		\dash\data::site_slogan(T_('Karbala'). ' - '. T_('Mashhad'). ' - '. T_('Qom'));
 
 		\dash\data::page_desc(\dash\data::site_desc(). ' | '. \dash\data::site_slogan());
 
