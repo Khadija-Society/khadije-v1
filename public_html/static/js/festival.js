@@ -48,6 +48,12 @@ $(document).ready(function() {
 
 function clockRunner()
 {
+	if($('.clock').length < 1)
+	{
+		console.log('time is not set!');
+		return false;
+	}
+
   FlipClock.Lang.Persian = {
 
     'years'   : 'سال',
@@ -66,24 +72,22 @@ function clockRunner()
   FlipClock.Lang['persian'] = FlipClock.Lang.Persian;
   var clock;
 
-  $(document).ready(function() {
+  $(document).ready(function()
+  {
+		var myClock    = $('.clock');
+		var remainTime = myClock.attr('data-timer');
+		var myLang = $('html').attr('lang');
+    if(remainTime)
+    {
+	    // Instantiate a coutdown FlipClock
+	    clock = myClock.FlipClock(remainTime,
+	    {
+	      clockFace: 'DailyCounter',
+	      language: myLang,
+	      countdown: true
+	    });
+    }
 
-    // Grab the current date
-    var currentDate = new Date();
-
-    // Set some date in the future. In this case, it's always Jan 1
-    // var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
-    var futureDate  = new Date("2018-10-1");
-
-    // Calculate the difference in seconds between the future and current date
-    var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-
-    // Instantiate a coutdown FlipClock
-    clock = $('.clock').FlipClock(diff, {
-      clockFace: 'DailyCounter',
-      language: "persian",
-      countdown: true
-    });
   });
 }
 
