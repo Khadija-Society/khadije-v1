@@ -1,0 +1,1 @@
+ALTER TABLE `festivals` ADD `social`       text CHARACTER SET utf8mb4;

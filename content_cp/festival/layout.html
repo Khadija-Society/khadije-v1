@@ -115,7 +115,7 @@
 {%block iemail %}
 <label for="email">{%trans "Email"%}</label>
 <div class="input">
-  <input type="email" name="email" id="email" placeholder='{%trans "email of festival"%} *' value="{{dataRow.email}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid email"%}'>
+  <input type="email" name="email" id="email" placeholder='{%trans "email of festival"%} *' value="{{dataRow.social.email}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid email"%}'>
   <label class="addon" for="email">Email</label>
 </div>
 {% endblock %}
@@ -124,7 +124,7 @@
 {%block isms %}
 <label for="sms">{%trans "SMS Service number"%}</label>
 <div class="input">
-  <input type="number" name="sms" id="sms" placeholder='{%trans "sms of festival"%} *' value="{{dataRow.sms}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid sms"%}'>
+  <input type="number" name="sms" id="sms" placeholder='{%trans "sms of festival"%} *' value="{{dataRow.social.sms}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid sms"%}'>
   <label class="addon ltr" for="sms">SMS</label>
 </div>
 {% endblock %}
@@ -133,7 +133,7 @@
 {%block itelegram%}
 <label for="telegram">{%trans "telegram"%}</label>
 <div class="input">
-  <input type="text" name="telegram" class="ltr" id="telegram" placeholder='{%trans "telegram of festival"%}' value="{{dataRow.telegram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid telegram"%}'>
+  <input type="text" name="telegram" class="ltr" id="telegram" placeholder='{%trans "telegram of festival"%}' value="{{dataRow.social.telegram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid telegram"%}'>
   <label class="addon ltr" for="telegram">https://t.me/</label>
 </div>
 {%endblock%}
@@ -142,7 +142,7 @@
 {%block ifacebook%}
 <label for="facebook">{%trans "facebook"%}</label>
 <div class="input">
-	<input type="text" name="facebook" class="ltr" id="facebook" placeholder='{%trans "facebook of festival"%}' value="{{dataRow.facebook}}" maxlength="200" minlength="1" title='{%trans "Enter a valid facebook"%}'>
+	<input type="text" name="facebook" class="ltr" id="facebook" placeholder='{%trans "facebook of festival"%}' value="{{dataRow.social.facebook}}" maxlength="200" minlength="1" title='{%trans "Enter a valid facebook"%}'>
   <label class="addon ltr" for="facebook">https://fb.com/</label>
 </div>
 {%endblock%}
@@ -151,7 +151,7 @@
 {%block itwitter%}
 <label for="twitter">{%trans "twitter"%}</label>
 <div class="input">
-  <input type="text" name="twitter" class="ltr" id="twitter" placeholder='{%trans "twitter of festival"%}' value="{{dataRow.twitter}}" maxlength="200" minlength="1" title='{%trans "Enter a valid twitter"%}'>
+  <input type="text" name="twitter" class="ltr" id="twitter" placeholder='{%trans "twitter of festival"%}' value="{{dataRow.social.twitter}}" maxlength="200" minlength="1" title='{%trans "Enter a valid twitter"%}'>
   <label class="addon ltr" for="twitter">https://twitter.com/</label>
 </div>
 {%endblock%}
@@ -160,7 +160,7 @@
 {%block iinstagram%}
 <label for="instagram">{%trans "instagram"%}</label>
 <div class="input">
-  <input type="text" name="instagram" class="ltr" id="instagram" placeholder='{%trans "instagram of festival"%}' value="{{dataRow.instagram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid instagram"%}'>
+  <input type="text" name="instagram" class="ltr" id="instagram" placeholder='{%trans "instagram id"%}' value="{{dataRow.social.instagram}}" maxlength="200" minlength="1" title='{%trans "Enter a valid instagram"%}'>
   <label class="addon ltr" for="instagram">https://instagram.com/</label>
 </div>
 {%endblock%}
@@ -169,8 +169,35 @@
 {%block ilinkedin%}
 <label for="linkedin">{%trans "linkedin"%}</label>
 <div class="input">
-  <input type="text" name="linkedin" class="ltr" id="linkedin" placeholder='{%trans "linkedin of festival"%}' value="{{dataRow.linkedin}}" maxlength="200" minlength="1" title='{%trans "Enter a valid linkedin"%}'>
+  <input type="text" name="linkedin" class="ltr" id="linkedin" placeholder='{%trans "linkedin of festival"%}' value="{{dataRow.social.linkedin}}" maxlength="200" minlength="1" title='{%trans "Enter a valid linkedin"%}'>
   <label class="addon ltr" for="linkedin">https://linkedin.com/</label>
+</div>
+{%endblock%}
+
+
+
+{%block isorosh%}
+<label for="sapp">{%trans "Sorosh app"%}</label>
+<div class="input">
+  <input type="text" name="sapp" class="ltr" id="sapp" placeholder='{%trans "sapp of festival"%}' value="{{dataRow.social.sapp}}" maxlength="200" minlength="1" title='{%trans "Enter a valid sapp"%}'>
+  <label class="addon ltr" for="sapp">https://sapp.ir/</label>
+</div>
+{%endblock%}
+
+{%block ieitaa%}
+<label for="eitaa">{%trans "Eitaa"%}</label>
+<div class="input">
+  <input type="text" name="eitaa" class="ltr" id="eitaa" placeholder='{%trans "eitaa of festival"%}' value="{{dataRow.social.eitaa}}" maxlength="200" minlength="1" title='{%trans "Enter a valid eitaa"%}'>
+  <label class="addon ltr" for="eitaa">https://eitaa.com/</label>
+</div>
+{%endblock%}
+
+
+{%block iaparat%}
+<label for="aparat">{%trans "Aparat"%}</label>
+<div class="input">
+  <input type="text" name="aparat" class="ltr" id="aparat" placeholder='{%trans "aparat of festival"%}' value="{{dataRow.social.aparat}}" maxlength="200" minlength="1" title='{%trans "Enter a valid aparat"%}'>
+  <label class="addon ltr" for="aparat">https://aparat.com/</label>
 </div>
 {%endblock%}
 

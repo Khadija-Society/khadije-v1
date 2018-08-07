@@ -8,6 +8,7 @@ trait add
 	public static $raw_field =
 	[
 		'desc',
+		'social',
 		'intro',
 		'about',
 		'target',

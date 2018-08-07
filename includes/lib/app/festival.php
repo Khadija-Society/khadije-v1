@@ -307,10 +307,12 @@ class festival
 		$brochure   = \dash\app::request('brochure');
 		$message    = \dash\app::request('message');
 		$messagesms = \dash\app::request('messagesms');
+		$social     = \dash\app::request('social');
 
 
 		$args               = [];
 		$args['desc']       = $desc;
+		$args['social']     = $social;
 		$args['intro']      = $intro;
 		$args['about']      = $about;
 		$args['target']     = $target;
@@ -369,6 +371,7 @@ class festival
 				case 'phone':
 				case 'address':
 				case 'schedule':
+				case 'social':
 					$result[$key] = json_decode($value, true);
 					break;
 

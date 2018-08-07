@@ -59,6 +59,7 @@ trait edit
 		if(!\dash\app::isset_request('linkedin')) unset($args['linkedin']);
 		if(!\dash\app::isset_request('website')) unset($args['website']);
 		if(!\dash\app::isset_request('language')) unset($args['language']);
+		if(!\dash\app::isset_request('social')) unset($args['social']);
 
 
 		if(!empty($args))
