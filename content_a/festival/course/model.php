@@ -84,6 +84,11 @@ class model
 
 	public static function signup_course($_course_id)
 	{
+		if(self::check_duplicate($_course_id))
+		{
+			return false;
+		}
+
 		$festival_id = \dash\request::get('id');
 		$festival_id = \dash\coding::decode($festival_id);
 		if(!$festival_id || !is_numeric($festival_id))
@@ -98,7 +103,6 @@ class model
 			'user_id'           => \dash\user::id(),
 			'status'            => 'draft',
 		];
-		// var_dump($insert);exit();
 
 		$insert = \lib\db\festivalusers::insert($insert);
 

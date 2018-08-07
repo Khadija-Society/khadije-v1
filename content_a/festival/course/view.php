@@ -14,7 +14,7 @@ class view
 				\dash\data:: paymentVerifyMsgTrue(true);
 				\dash\data:: paymentVerifyMsg(T_("You are signuped to this course"));
 
-				$course_id = \dash\coding::decode(\dash\request::get('id'));
+				$course_id = \dash\coding::decode(\dash\request::get('course'));
 
 				\dash\session::set('singup_festival_course_id', null);
 
@@ -25,8 +25,9 @@ class view
 				else
 				{
 					\dash\notif::ok(T_("You are register to this course"));
+					\dash\utility\payment\verify::clear_session();
 					\dash\redirect::to(\dash\url::this(). '/request?'. http_build_query(['id' => \dash\request::get('id'), 'course' => \dash\request::get('course')]));
-					return true;
+
 				}
 			}
 			else
