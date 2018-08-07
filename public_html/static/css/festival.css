@@ -225,6 +225,19 @@ footer .summary h2{
   font-size: 1em;
   line-height: 2em;
 }
+footer .quickAccess a{
+  display: block;
+  color: #eee;
+  padding: 10px 1em;
+  transition: 0.3s;
+}
+footer .quickAccess a:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+footer .quickAccess a:focus{
+  color: #fff;
+}
+
 /* share links*/
 .shareC{
   user-select: none;
