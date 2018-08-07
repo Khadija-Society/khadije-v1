@@ -133,12 +133,14 @@
 <footer>
   <div class="cn">
     <div class="f">
-      <div class="c4 s12 summary">
-        <h1>{{page.title}}</h1>
-        <h2>{{page.desc}}</h2>
-        {{block("pageSocialLinks")}}
+      <div class="c4 s12 pRa10">
+        <div class="summary">
+          <h1><a href="{{url.that}}">{{page.title}}</a></h1>
+          <h2>{{page.desc}}</h2>
+          {{block("pageSocialLinks")}}
+        </div>
       </div>
-      <div class="c5 s12">
+      <div class="c5 s12 pRa10">
         <address>
             <h2>{%trans "Contact us"%}</h2>
           <div class="address mB20">
