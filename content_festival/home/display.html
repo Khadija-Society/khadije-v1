@@ -21,9 +21,9 @@
     <div class="cn">
       <h1>{{festival.title}}</h1>
       <h2 class="mB25">{{festival.subtitle}}</h2>
-      {%set myDate%}{%for key, value in festival.schedule%}{%if value.schedule%}{{value.date}}{%endif%}{%endfor%}{%endset%}
-      {%if myDate%}
-        <div class="clock" data-aos="zoom-in" data-aos-delay="700" data-timer="80000"></div>
+
+      {%if timing%}
+        <div class="clock" data-aos="zoom-in" data-aos-delay="700" data-timer="{{timing}}"></div>
       {%endif%}
       <div >
         <a href="#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>

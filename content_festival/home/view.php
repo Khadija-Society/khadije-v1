@@ -31,6 +31,27 @@ class view
 			}
 		}
 
+		if(isset($festival['schedule']) && is_array($festival['schedule']))
+		{
+			foreach ($festival['schedule'] as $key => $value)
+			{
+				if(isset($value['schedule']) && $value['schedule'])
+				{
+					$date = $value['date']. ' '. $value['time'];
+					$date = strtotime($date);
+					if($date)
+					{
+						$timing = $date - time();
+
+						if($timing > 0)
+						{
+							\dash\data::timing($timing);
+						}
+					}
+				}
+			}
+		}
+
 		\dash\data::festival($festival);
 		$course = \lib\db\festivalcourses::get(['festival_id' => $festival_id]);
 		if(is_array($course))
