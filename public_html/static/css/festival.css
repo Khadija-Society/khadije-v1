@@ -84,7 +84,8 @@ header a:hover{
 .txtDetail#introduction{
   background-image: url("../images/festival/introduction.jpg");
   background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-repeat: no-repeat;*/
   /*background-color: #fff;*/
   min-height: 400px;
   color: #eee;
@@ -115,13 +116,19 @@ header a:hover{
 .supportTeam h3{
   margin-top: 1em;
 }
-.supportTeam a{
+.supportTeam div > a{
   display: inline-block;
+  border-radius: 3px;
+  transition: 0.3s;
+  padding: 5px;
+}
+.supportTeam div > a:hover{
+  background-color: rgba(0,0,0,0.1);
 }
 .supportTeam img{
   display: block;
-  max-width: 150px;
-  max-height: 400px;
+  max-width: 120px;
+  max-height: 300px;
 }
 
 .txtDetail#terms{
@@ -149,6 +156,8 @@ header a:hover{
 .txtDetail#topics{
   background-image: url("../images/festival/topics.jpg");
   background-position: bottom center;
+  background-repeat: repeat-x;
+  background-color: #e9e6eb;
   padding-bottom: 550px;
   padding-right: 10%;
   padding-left: 10%;
@@ -175,6 +184,7 @@ header a:hover{
   background-image: url("../images/festival/awards.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   min-height: 500px;
 }
