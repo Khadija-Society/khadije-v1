@@ -64,6 +64,7 @@ header a:hover{
   font-size: 1em;
   color: #ccc;
   font-weight: 100;
+  line-height: 2em;
 }
 #landing .title h3{
   font-size: 1em;
@@ -72,6 +73,9 @@ header a:hover{
   width: 625px;
   padding-top: 2em;
   margin: 5em auto 3em;
+}
+#landing .title .btn{
+  margin-bottom: 1em;
 }
 
 .txtDetail{
@@ -448,12 +452,7 @@ footer .quickAccess a:focus{
 }
 
 
-@media all and (min-width: 768px) and (max-width: 959px) {
-
-}
-
-
-@media (max-width: 767px) {
+@media all and (max-width: 959px) {
   #landing{
     min-height: 500px;
     height: auto;
@@ -462,26 +461,34 @@ footer .quickAccess a:focus{
     margin-top: 5em;
     font-size: 1.5em;
   }
-  #landing .title h2{
-    line-height: 2em;
-  }
-  #landing .title .btn{
-    margin-bottom: 1em;
-  }
-
   .txtDetail{
     padding: 5em 0;
-  }
-  .txtDetail#introduction .wrapper{
-    width: 90%;
   }
   .supportTeam img{
     max-width: 80px;
     max-height: 200px;
   }
+  .txtDetail#goals .wrapper{
+    width: 50%;
+  }
   .txtDetail#topics{
     padding: 0;
-    padding-bottom:350px;
+    padding-bottom:380px;
+  }
+  .txtDetail#vision{
+    background-position: center;
+  }
+  .txtDetail#vision .wrapper{
+    width: 50%;
+  }
+
+
+}
+
+
+@media (max-width: 767px) {
+  .txtDetail#introduction .wrapper{
+    width: 90%;
   }
   .txtDetail#vision{
     background-position: left;
