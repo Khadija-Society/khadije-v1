@@ -130,49 +130,31 @@
 
 <section id="timeline">
   <div class="myTimeline">
+
+{%for key, value in festival.schedule%}
     <div class="timeline-block">
       <div class="timeline-bullet done" data-aos="fade-in"></div>
       <div class="timeline-content" data-aos="fade-up-left">
-        <h2>Penta Consulting</h2>
+        <h2>{{value.title}}</h2>
         <div class="timeline-info f">
-          <div><i class="sf-certificate" aria-hidden="true"></i> Front End Developer</div>
-          <div><i class="sf-calendar-o" aria-hidden="true"></i> June 2016 - Present</div>
+          <div><i class="sf-calendar-o" aria-hidden="true"></i> {{value.date| tdate}}</div>
+          <div><i class="sf-clock-o" aria-hidden="true"></i> {{value.time | fitNumber}}</div>
         </div>
-        <p>Working alongside the designer team implementing the designs, also developing custom solutions to address team necessities.</p>
+        <p>{{value.desc}}</p>
       </div>
     </div>
+{%endfor%}
 
-    <div class="timeline-block">
-      <div class="timeline-bullet done" data-aos="fade-in"></div>
-      <div class="timeline-content" data-aos="fade-up-right">
-        <h2>Title of section 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-      </div>
-    </div>
 
-    <div class="timeline-block">
-      <div class="timeline-bullet" data-aos="fade-in"></div>
-      <div class="timeline-content" data-aos="fade-up-left">
-        <h2>Title of section 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-      </div>
-    </div>
-
-    <div class="timeline-block">
-      <div class="timeline-bullet" data-aos="fade-in"></div>
-      <div class="timeline-content" data-aos="fade-up-right">
-        <h2>Final Section</h2>
-        <p>This is the content of the last section</p>
-      </div>
-    </div>
   </div>
 </section>
 
 
-
+{%if festival.maplink%}
 <section class="txtDetail" id="map">
-  <iframe width="100%" height="300" src="https://maps.google.com/maps?width=100%&amp;height=300&amp;hl=en&amp;q=ermile+(Ermile)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Embed Google Map</a></iframe>
+  <iframe width="100%" height="300" src="{{festival.maplink}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Embed Google Map</a></iframe>
 </section>
+{%endif%}
 
 
 
@@ -181,8 +163,8 @@
     <div class="f">
       <div class="c4 s12 pRa10">
         <div class="summary">
-          <h1><a href="{{url.that}}">{{page.title}}</a></h1>
-          <h2>{{page.desc}}</h2>
+          <h1><a href="{{url.that}}">{{festival.title}}</a></h1>
+          <h2>{{festival.desc}}</h2>
           {{block("pageSocialLinks")}}
         </div>
       </div>

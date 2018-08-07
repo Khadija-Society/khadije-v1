@@ -80,6 +80,7 @@ class view
 		\dash\data::refree($refree);
 		\dash\data::organizer($organizer);
 
+		// var_dump(\dash\data::get());exit();
 	}
 }
 ?>
