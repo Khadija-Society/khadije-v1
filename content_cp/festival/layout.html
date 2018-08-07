@@ -106,8 +106,10 @@ class="txt mB10" id="place" data-editor name="place" placeholder='{%trans
 
 {%block iaddress%}
 <label for="address">Address</label>
-<textarea class="txt mB10" id="address"  name="address" placeholder='{%trans "Write address of festival"%}' rows="2">{{dataRow.address.address}}</textarea>
+<textarea class="txt mB10" id="address"  name="address" placeholder='{%trans "Festival address"%}' rows="2">{{dataRow.address.address}}</textarea>
+{%endblock%}
 
+{%block iaddress2%}
 <label for="address1">Address send</label>
 <textarea class="txt mB10" id="address1"  name="address1" placeholder='{%trans "Write address1 of festival"%}' rows="2">{{dataRow.address.address1}}</textarea>
 {%endblock%}

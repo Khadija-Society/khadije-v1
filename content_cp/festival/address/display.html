@@ -11,8 +11,8 @@
 			<form method="post" autocomplete="off">
 
 				{{block('iaddress')}}
-				{{block('iaddress2')}}
 
+				{%if false%}
 				<div class="f">
 					<div class="c">
 						<div class="input">
@@ -32,6 +32,7 @@
 					<a class="btn success2 block txtC mT10 " href="http://maps.google.com/maps?z=15&t=m&q=loc:{{dataRow.address.width}}+{{dataRow.address.length}}" target="_blank" >
 						<i class="sf-pin "></i>{%trans "Load in map"%}
 					</a>
+				{%endif%}
 				{%endif%}
 
 				{{block('isave')}}
