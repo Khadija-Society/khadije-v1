@@ -30,8 +30,19 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok(T_("Your detail was saved"));
-			\dash\redirect::to(\dash\url::here(). '/festival/request?'. http_build_query(\dash\request::get()));
+			\dash\data::userdetail(\dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]));
+
+			$complete_profile = \dash\data::userdetail_iscompleteprofile();
+			if(intval($complete_profile) === 0)
+			{
+				\dash\notif::error(T_("Please complete your profile to go next"), ['element' => ['gender','birthday','name','lastName','father']]);
+			}
+			else
+			{
+				\dash\notif::ok(T_("Your detail was saved"));
+				\dash\redirect::to(\dash\url::here(). '/festival/request?'. http_build_query(\dash\request::get()));
+			}
+
 		}
 
 	}

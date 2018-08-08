@@ -18,81 +18,81 @@
 <div class='middle normal f justify-center'>
 
 <div class="cbox  c5">
-  <div class="msg">{{course.title}}</div>
-<form method="post">
+  <div class="msg primary2 txtC"><b>{{course.title}}</b></div>
+<form method="post" enctype="multipart/form-data" >
 
 {%if course.allowfile.word%}
-    <h6>{%trans "Word file"%}</h6>
+    <h3>{%trans "Word file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="word" id="word" data-preview data-max="500">
-     {%if false%}<label for="word" title="Simple Title">
-        {%if dataRow.file.word%}<img src="{{dataRow.file.word}}">{%endif%}
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="word" id="word" data-preview1 data-max="500">
+     {%if true%}<label for="word" title="Simple Title">
+        {%if dataRow.file.word%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.word}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.pdf%}
-    <h6>{%trans "pdf file"%}</h6>
+    <h3>{%trans "pdf file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="pdf" id="pdf" data-preview data-max="500">
-     {%if false%}<label for="pdf" title="Simple Title">
-        {%if dataRow.file.pdf%}<img src="{{dataRow.file.pdf}}">{%endif%}
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="pdf" id="pdf" data-preview1 data-max="500">
+     {%if true%}<label for="pdf" title="Simple Title">
+        {%if dataRow.file.pdf%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.pdf}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.video%}
-    <h6>{%trans "video file"%}</h6>
+    <h3>{%trans "video file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="video" id="video" data-preview data-max="500">
-     {%if false%}<label for="video" title="Simple Title">
-        {%if dataRow.file.video%}<img src="{{dataRow.file.video}}">{%endif%}
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="video" id="video" data-preview1 data-max="500">
+     {%if true%}<label for="video" title="Simple Title">
+        {%if dataRow.file.video%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.video}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.sound%}
-    <h6>{%trans "sound file"%}</h6>
+    <h3>{%trans "sound file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="sound" id="sound" data-preview data-max="500">
-     {%if false%}<label for="sound" title="Simple Title">
-        {%if dataRow.file.sound%}<img src="{{dataRow.file.sound}}">{%endif%}
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="sound" id="sound" data-preview1 data-max="500">
+     {%if true%}<label for="sound" title="Simple Title">
+        {%if dataRow.file.sound%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.sound}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.apk%}
-    <h6>{%trans "apk file"%}</h6>
+    <h3>{%trans "apk file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="apk" id="apk" data-preview data-max="500">
-     {%if false%}<label for="apk" title="Simple Title">
-        {%if dataRow.file.apk%}<img src="{{dataRow.file.apk}}">{%endif%}
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="apk" id="apk" data-preview1 data-max="500">
+     {%if true%}<label for="apk" title="Simple Title">
+        {%if dataRow.file.apk%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.apk}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.zip%}
-    <h6>{%trans "zip file"%}</h6>
+    <h3>{%trans "zip file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="zip" id="zip" data-preview data-max="500">
-     {%if false%}<label for="zip" title="Simple Title">
-        {%if dataRow.file.zip%}<img src="{{dataRow.file.zip}}">{%endif%}
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="zip" id="zip" data-preview1 data-max="500">
+     {%if true%}<label for="zip" title="Simple Title">
+        {%if dataRow.file.zip%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.zip}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
     </div>
   {%endif%}
 
 
   {%if course.allowfile.other%}
-    <h6>{%trans "other file"%}</h6>
+    <h3>{%trans "other file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="other" id="other" data-preview data-max="500">
-     {%if false%}<label for="other" title="Simple Title">
-        {%if dataRow.file.other%}<img src="{{dataRow.file.other}}">{%endif%}
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="other" id="other" data-preview1 data-max="500">
+     {%if true%}<label for="other" title="Simple Title">
+        {%if dataRow.file.other%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.other}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
     </div>
   {%endif%}

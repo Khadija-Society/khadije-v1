@@ -30,6 +30,11 @@ class view
 
 		$my_course = \lib\db\festivalusers::get_full(['user_id' => \dash\user::id()]);
 		\dash\data::myCourse($my_course);
+
+		if(!$my_course)
+		{
+			\dash\redirect::to(\dash\url::this(). '/allcourse?id='.\dash\request::get('id'));
+		}
 	}
 }
 ?>

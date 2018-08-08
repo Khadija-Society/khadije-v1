@@ -314,7 +314,7 @@ class myuser
 		$args['avatar']          = $avatar;
 		$args['nesbat']          = $nesbat;
 
-		if($gender && $birthday && $firstname && $lastname && $father && $nationalcode)
+		if($gender && $birthday && $firstname && $lastname && $father)
 		{
 			$args['iscompleteprofile'] = 1;
 		}

@@ -6,6 +6,12 @@ class view
 {
 	public static function config()
 	{
+		\dash\data::userdetail(\dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]));
+		$complete_profile = \dash\data::userdetail_iscompleteprofile();
+		if(intval($complete_profile) === 0)
+		{
+			\dash\redirect::to(\dash\url::this(). '/profile?'. http_build_query(\dash\request::get()));
+		}
 
 		\dash\data::page_title(T_("Festival course list"));
 		\dash\data::page_desc(T_('You can signup in some festival course'));
@@ -13,9 +19,16 @@ class view
 		\dash\data::badge_link(\dash\url::this(). '/mycourse?id='. \dash\request::get('id'));
 		\dash\data::badge_text(T_('Back to my course list'));
 
+
+		self::load_course();
+	}
+
+
+	public static function load_course()
+	{
 		$id  = \dash\request::get('id');
 
-		if(!$id || !is_numeric($id))
+		if(!$id)
 		{
 			\dash\redirect::to(\dash\url::here());
 		}
@@ -60,7 +73,6 @@ class view
 		\dash\data::dataRow($check_duplicate);
 
 		\dash\data::course($course);
-
 	}
 }
 ?>

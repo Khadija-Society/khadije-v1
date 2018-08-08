@@ -27,7 +27,7 @@ class model
 
 	public static function post()
 	{
-		\content_a\festival\request\view::config();
+		\content_a\festival\request\view::load_course();
 
 		$allowfile = \dash\data::course_allowfile();
 
@@ -79,9 +79,14 @@ class model
 		];
 
 		$check_duplicate = \lib\db\festivalusers::get($check_duplicate);
-
-		if(isset($check_duplicate['id']))
+		if(isset($check_duplicate['id']) && isset($check_duplicate['status']))
 		{
+			if(!in_array($check_duplicate['status'], ['draft', 'awaiting']))
+			{
+				\dash\notif::error(T_("You can not update your file"));
+				return false;
+			}
+
 			$file = json_encode($uploaded_file, JSON_UNESCAPED_UNICODE);
 			\lib\db\festivalusers::update(['file' => $file, 'status' => 'awaiting'], $check_duplicate['id']);
 			\dash\notif::ok(T_("File successfull send"));
@@ -94,10 +99,6 @@ class model
 			\dash\notif::error(T_("You are not register to this course yet"));
 			return false;
 		}
-
-
 	}
-
-
 }
 ?>
