@@ -41,7 +41,9 @@
   <div class="title">
     <div class="cn">
       <h1><a href="{{url.that}}">{{festival.title}}</a></h1>
+{%if festival.subtitle%}
       <h2 class="mB25">{{festival.subtitle}}</h2>
+{%endif%}
 
       {%if timing%}
         <div class="clock" data-aos="zoom-in" data-aos-delay="700" data-timer="{{timing}}"></div>
@@ -179,7 +181,7 @@
 
 {%if festival.maplink%}
 <section class="txtDetail" id="map">
-  <iframe width="100%" height="300" src="{{festival.maplink}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Embed Google Map</a></iframe>
+  <iframe width="100%" height="300" src="{{festival.maplink}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 </section>
 {%endif%}
 
@@ -190,14 +192,14 @@
     <div class="f">
       <div class="c4 m12 s12 pRa10">
         <div class="summary">
-          <h1><a href="{{url.that}}">{{festival.title}}</a></h1>
-          <h2>{{festival.desc}}</h2>
+          <h2><a href="{{url.that}}">{{festival.title}}</a></h2>
+          <h3>{{festival.desc}}</h3>
           {{block("pageSocialLinks")}}
         </div>
       </div>
 {%if festival.address%}
       <div class="c5 s12 pRa10">
-        <address>
+        <div>
           {%if festival.address.address%}
             <h2>{%trans "Contact us"%}</h2>
             <div class="address mB20">
@@ -226,7 +228,7 @@
             <a class="btn outline sm mA5" href="tel:{{festival.social.sms}}">{{festival.social.sms}}</a>
           </div>
           {%endif%}
-        </address>
+        </div>
       </div>
 {%endif%}
       <div class="c3 s12">
