@@ -21,6 +21,12 @@ body{
   /*background-color: #c4960c;*/
   /*background-image: url("../images/festival/light-wool.png");*/
 }
+a:hover{
+  color: #efefef;
+}
+a:focus{
+  color: #fff;
+}
 
 #landing .bg{
   width: 100%;

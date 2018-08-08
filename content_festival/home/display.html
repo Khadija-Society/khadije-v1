@@ -8,18 +8,36 @@
   <div class="bg"></div>
   <header>
     <nav class="cn">
+{%if festival.about%}
       <a href="{{url.that}}#about">{%trans "About"%}</a>
+{%endif%}
+{%if festival.target%}
+      <a href="{{url.that}}#goals">{%trans "Goals"%}</a>
+{%endif%}
+{%if festival.axis%}
       <a href="{{url.that}}#topics">{%trans "Topics"%}</a>
+{%endif%}
+{%if festival.place%}
       <a href="{{url.that}}#terms">{%trans "Terms and conditions"%}</a>
+{%endif%}
+{%if festival.view%}
+      <a href="{{url.that}}#vision">{%trans "Vision"%}</a>
+{%endif%}
+{%if festival.award%}
       <a href="{{url.that}}#awards">{%trans "Awards"%}</a>
+{%endif%}
+{%if festival.schedule%}
       <a href="{{url.that}}#timeline">{%trans "Timeline"%}</a>
+{%endif%}
+{%if festival.maplink%}
       <a href="{{url.that}}#map">{%trans "Contact"%}</a>
+{%endif%}
     </nav>
   </header>
 
   <div class="title">
     <div class="cn">
-      <h1>{{festival.title}}</h1>
+      <h1><a href="{{url.that}}">{{festival.title}}</a></h1>
       <h2 class="mB25">{{festival.subtitle}}</h2>
 
       {%if timing%}
