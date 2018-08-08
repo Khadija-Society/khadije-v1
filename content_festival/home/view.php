@@ -6,8 +6,6 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title("جشنواره بانوی نبی پسند");
-		\dash\data::page_desc('طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. ');
 		\dash\data::include_css(false);
 		\dash\data::include_js(false);
 
@@ -16,6 +14,30 @@ class view
 		{
 			\dash\data::display_festival("content_festival/home/messages.html");
 		}
+
+		if(\dash\data::allFestivalList())
+		{
+			$festivals = \dash\data::allFestivalList();
+
+
+			$festivals = array_map(['\lib\app\festival', 'ready'], $festivals);
+
+
+			\dash\data::page_title(T_("All festival"));
+			\dash\data::page_desc(T_("All festival"));
+
+
+		}
+		else
+		{
+			self::config_festival();
+		}
+	}
+
+
+	public static function config_festival()
+	{
+
 
 		$festival = \dash\data::festival();
 		$festival_id = \dash\data::festival_id();
@@ -39,6 +61,9 @@ class view
 				\dash\header::status(403, T_("This festival is not enable"));
 			}
 		}
+
+		\dash\data::page_title(\dash\data::festival_title());
+		\dash\data::page_desc(\dash\data::festival_desc());
 
 		if(isset($festival['schedule']) && is_array($festival['schedule']))
 		{

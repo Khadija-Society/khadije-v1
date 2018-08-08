@@ -1,7 +1,37 @@
 {%extends display.festival%}
 
-
 {%block body%}
+{%if allFestivalList%}
+
+
+<div class='mT100 middle normal f justify-center'>
+
+{%for key, value in allFestivalList%}
+
+{%set cardColor%}
+{%if value.status == 'enable'%}green{%else%}black{%endif%}
+{%endset%}
+
+  <a class="vcard mA10 shadow {{cardColor}}" data-direct href='{{url.site}}/festival/{{value.slug}}'>
+    <img src="{{value.logo}}" alt="{{value.title}}" class="pA10-f">
+    <div class="content">
+      <div class="header">{{value.title}}</div>
+      <div class="meta"></div>
+      <div class="footer">{{value.subtitle}}</div>
+    </div>
+  </a>
+{%endfor%}
+
+</div>
+
+
+{%else%}
+{{block('body_festival')}}
+{%endif%}
+{%endblock%}
+
+
+{%block body_festival%}
 
 
 <section id='landing' data-scroll>
@@ -53,7 +83,7 @@
         <a href="{{url.that}}#introduction" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
 {%endif%}
 {%if course%}
-        <a href="{{url.base}}/a/festival?id={{festival.id}}" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Signup"%}</a>
+        <a href="{{url.base}}/a/festival?id={{festival.id}}" data-direct class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Signup"%}</a>
 {%endif%}
       </div>
     </div>
@@ -126,8 +156,13 @@
   <div class="cn" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom">
     <h2><a href="{{url.that}}#topics">{%trans "Conferences Topics"%}</a></h2>
     {{festival.axis | raw}}
+    {%if course%}
+        <a href="{{url.base}}/a/festival?id={{festival.id}}" data-direct class="btn lg hauto primary mT25" >{%trans "Signup"%}</a>
+    {%endif%}
   </div>
+
 </section>
+
 {%endif%}
 
 {%if festival.place%}
@@ -172,6 +207,9 @@
   <div class="cn" data-aos="zoom-out">
     <h2><a href="{{url.that}}#awards">{%trans "Awards"%}</a></h2>
     {{festival.award |raw}}
+    {%if course%}
+        <a href="{{url.base}}/a/festival?id={{festival.id}}" data-direct class="btn lg hauto primary mT25" >{%trans "Signup"%}</a>
+    {%endif%}
   </div>
 </section>
 {%endif%}
@@ -280,6 +318,9 @@
 {%if festival.maplink%}
           <a href="{{url.that}}#map">{%trans "Contact"%}</a>
 {%endif%}
+  {%if course%}
+        <a href="{{url.base}}/a/festival?id={{festival.id}}" data-direct class="btn lg hauto primary mT25" >{%trans "Signup"%}</a>
+    {%endif%}
         </nav>
       </div>
     </div>

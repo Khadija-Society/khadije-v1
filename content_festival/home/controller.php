@@ -8,17 +8,25 @@ class controller
 	{
 		if(!\dash\url::module())
 		{
-			\dash\header::status(404);
+			$festival_list = \lib\db\festivals::get(['status' => [" IN ", "('enable', 'expire')"]]);
+
+			if(!$festival_list)
+			{
+				\dash\header::status(404, T_("No festival was found"));
+			}
+			\dash\data::allFestivalList($festival_list);
 		}
-
-		$festival_slug = \dash\url::module();
-
-		$get_detail = \lib\db\festivals::get(['slug' => $festival_slug, 'limit' => 1]);
-		if($get_detail)
+		else
 		{
-			\dash\open::get();
+			$festival_slug = \dash\url::module();
+
+			$get_detail = \lib\db\festivals::get(['slug' => $festival_slug, 'limit' => 1]);
+			if($get_detail)
+			{
+				\dash\open::get();
+			}
+			\dash\data::festival($get_detail);
 		}
-		\dash\data::festival($get_detail);
 	}
 }
 ?>
