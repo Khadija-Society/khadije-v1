@@ -253,7 +253,7 @@ class twigTransTerms
 	echo T_("Remove");                                                                // Line 109
 	echo T_("Poster");                                                                // Line 476
 	echo T_("Brochure");                                                              // Line 486
-	echo T_("Logo");                                                                  // Line 187
+	echo T_("Logo");                                                                  // Line 193
 	echo T_("Baner");                                                                 // Line 506
 
 	//-----------------------------------------content_cp/festival/detail/display.html
@@ -270,9 +270,12 @@ class twigTransTerms
 
 	//-------------------------------------content_cp/festival/usercourse/display.html
 	echo T_("User");                                                                  // Line 10
-	echo T_("Course");                                                                // Line 97
+	echo T_("Festival course");                                                       // Line 11
 	echo T_("Date created");                                                          // Line 38
-	echo T_("Files");                                                                 // Line 13
+	echo T_("Files");                                                                 // Line 17
+	echo T_("Please select one itme");                                                // Line 128
+	echo T_("Checked");                                                               // Line 33
+	echo T_("Win");                                                                   // Line 35
 
 	//-------------------------------------------content_cp/festival/referee/list.html
 	echo T_("Add new referee");                                                       // Line 13
@@ -287,6 +290,7 @@ class twigTransTerms
 	echo T_("Organizer");                                                             // Line 146
 	echo T_("Sponsers");                                                              // Line 156
 	echo T_("Setting");                                                               // Line 265
+	echo T_("No user signuped to this festival yet!");                                // Line 180
 
 	//----------------------------------------------content_cp/festival/home/list.html
 	echo T_("Add new festival");                                                      // Line 11
@@ -294,6 +298,7 @@ class twigTransTerms
 	//-----------------------------------------------content_cp/festival/home/chart.js
 
 	//-------------------------------------------content_cp/festival/user/display.html
+	echo T_("Course");                                                                // Line 97
 	echo T_("File");                                                                  // Line 58
 	echo T_("Show Detail");                                                           // Line 60
 	echo T_("Show detail");                                                           // Line 74
@@ -867,7 +872,6 @@ class twigTransTerms
 	echo T_("register for new representation request");                               // Line 37
 
 	//----------------------------------------------content_a/profile/profileForm.html
-	echo T_("Please select one itme");                                                // Line 128
 	echo T_("Select province");                                                       // Line 155
 	echo T_("Select city");                                                           // Line 166
 	echo T_("Choose your country");                                                   // Line 316

@@ -1,5 +1,4 @@
 {
-
   "cpTripEdit": {
     "title": "cpTripEdit",
     "cat": "Trip",
@@ -174,42 +173,140 @@
     "title": "cpChartCountTransaction",
     "cat": "Report",
     "require": []
-  }
-  ,
+  },
   "cpDisableAllTrip": {
     "title": "cpDisableAllTrip",
     "cat": "Danger",
     "require": []
   },
-  "cpFamilyTripView" :
-  {
-    "title" : "cpFamilyTripView",
-    "cat" : "Family Trip",
-    "require" : []
+  "cpFamilyTripView": {
+    "title": "cpFamilyTripView",
+    "cat": "Family Trip",
+    "require": []
   },
-  "cpFamilyTripEdit" :
-  {
-    "title" : "cpFamilyTripEdit",
-    "cat" : "Family Trip",
-    "require" : []
+  "cpFamilyTripEdit": {
+    "title": "cpFamilyTripEdit",
+    "cat": "Family Trip",
+    "require": []
   },
-  "cpFamilyTripOption" :
-  {
-    "title" : "cpFamilyTripOption",
-    "cat" : "Family Trip",
-    "require" : []
-  }
-  ,
-  "cpMeeting" :
-  {
-    "title" : "cpMeeting",
-    "cat" : "Meeting",
-    "require" : []
+  "cpFamilyTripOption": {
+    "title": "cpFamilyTripOption",
+    "cat": "Family Trip",
+    "require": []
   },
-  "cpMeetingManage" :
-  {
-    "title" : "cpMeetingManage",
-    "cat" : "Meeting",
-    "require" : []
+  "cpMeeting": {
+    "title": "cpMeeting",
+    "cat": "Meeting",
+    "require": []
+  },
+  "cpMeetingManage": {
+    "title": "cpMeetingManage",
+    "cat": "Meeting",
+    "require": []
+  },
+  "cpFestivalEdit": {
+    "title": "cpFestivalEdit",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalMediasupporterAdd": {
+    "title": "cpFestivalMediasupporterAdd",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalMediasupporterEdit": {
+    "title": "cpFestivalMediasupporterEdit",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalMediasupporterView": {
+    "title": "cpFestivalMediasupporterView",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalAdd": {
+    "title": "cpFestivalAdd",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalUsersSignupEdit": {
+    "title": "cpFestivalUsersSignupEdit",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalRefereeAdd": {
+    "title": "cpFestivalRefereeAdd",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalRefereeEdit": {
+    "title": "cpFestivalRefereeEdit",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalRefereeView": {
+    "title": "cpFestivalRefereeView",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalView": {
+    "title": "cpFestivalView",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalUsers": {
+    "title": "cpFestivalUsers",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalOrganizerAdd": {
+    "title": "cpFestivalOrganizerAdd",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalOrganizerEdit": {
+    "title": "cpFestivalOrganizerEdit",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalOrganizerView": {
+    "title": "cpFestivalOrganizerView",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalSupporterAdd": {
+    "title": "cpFestivalSupporterAdd",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalSupporterEdit": {
+    "title": "cpFestivalSupporterEdit",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalSupporterView": {
+    "title": "cpFestivalSupporterView",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalCourseAdd": {
+    "title": "cpFestivalCourseAdd",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalCourseEdit": {
+    "title": "cpFestivalCourseEdit",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFestivalCourseView": {
+    "title": "cpFestivalCourseView",
+    "cat": "Festival",
+    "require": []
+  },
+  "cpFesitvalTransaction": {
+    "title": "cpFesitvalTransaction",
+    "cat": "Festival",
+    "require": []
   }
 }

@@ -94,6 +94,36 @@ class TransStatic
 	echo T_("cpHealthView");
 	echo T_("cpHealthOption");
 
+	echo T_("Festival");
+	echo T_("cpFestivalEdit");
+	echo T_("cpFestivalAdd");
+	echo T_("cpFestivalView");
+	echo T_("cpFestivalUsers");
+
+	echo T_("cpFestivalUsersSignupEdit");
+
+	echo T_("cpFestivalMediasupporterAdd");
+	echo T_("cpFestivalMediasupporterEdit");
+	echo T_("cpFestivalMediasupporterView");
+
+	echo T_("cpFestivalRefereeAdd");
+	echo T_("cpFestivalRefereeEdit");
+	echo T_("cpFestivalRefereeView");
+
+	echo T_("cpFestivalOrganizerAdd");
+	echo T_("cpFestivalOrganizerEdit");
+	echo T_("cpFestivalOrganizerView");
+
+	echo T_("cpFestivalSupporterAdd");
+	echo T_("cpFestivalSupporterEdit");
+	echo T_("cpFestivalSupporterView");
+
+	echo T_("cpFestivalCourseAdd");
+	echo T_("cpFestivalCourseEdit");
+	echo T_("cpFestivalCourseView");
+
+	echo T_("cpFesitvalTransaction");
+
 	// ----------------------------- users table
 	echo T_("married");
 	echo T_("zipcode");
