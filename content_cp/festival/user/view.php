@@ -70,6 +70,17 @@ class view
 
 		$filterArray = $args;
 		unset($filterArray['festivalusers.festival_id']);
+		if(isset($filterArray['festivalusers.festivalcourse_id']))
+		{
+			$filterArray[T_("Festival course")] = $filterArray['festivalusers.festivalcourse_id'];
+			unset($filterArray['festivalusers.festivalcourse_id']);
+		}
+
+		if(isset($filterArray['user_id']))
+		{
+			$filterArray[T_("Mobile")] = \dash\request::get('mobile');
+			unset($filterArray['user_id']);
+		}
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
