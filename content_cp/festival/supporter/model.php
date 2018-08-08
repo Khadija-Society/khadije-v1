@@ -29,7 +29,6 @@ class model
 	{
 		if(\dash\request::get('type') === 'add' || \dash\request::get('supporter'))
 		{
-			\dash\permission::access('fpSupporterAdd');
 
 			$post            = [];
 

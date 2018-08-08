@@ -29,7 +29,6 @@ class model
 	{
 		if(\dash\request::get('type') === 'add' || \dash\request::get('organizer'))
 		{
-			\dash\permission::access('fpOrganizerAdd');
 
 			$post            = [];
 

@@ -29,8 +29,6 @@ class model
 	{
 		if(\dash\request::get('type') === 'add' || \dash\request::get('mediasupporter'))
 		{
-			\dash\permission::access('fpMediasupporterAdd');
-
 			$post            = [];
 
 			$file = self::upload_logo();
