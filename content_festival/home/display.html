@@ -8,6 +8,9 @@
   <div class="bg"></div>
   <header>
     <nav class="cn">
+{%if festival.intro%}
+      <a href="{{url.that}}#introduction">{%trans "Introduction"%}</a>
+{%endif%}
 {%if festival.about%}
       <a href="{{url.that}}#about">{%trans "About"%}</a>
 {%endif%}
@@ -224,14 +227,33 @@
       <div class="c3 s12">
         <nav class="quickAccess">
           <a href="{{url.that}}#landing">{%trans "Homepage"%}</a>
+{%if festival.intro%}
           <a href="{{url.that}}#introduction">{%trans "Introduction"%}</a>
+{%endif%}
+{%if festival.about%}
           <a href="{{url.that}}#about">{%trans "About"%}</a>
+{%endif%}
+{%if festival.target%}
           <a href="{{url.that}}#goals">{%trans "Goals"%}</a>
+{%endif%}
+{%if festival.axis%}
           <a href="{{url.that}}#topics">{%trans "Topics"%}</a>
-          <a href="{{url.that}}#terms">Terms and {%trans "Conditions"%}</a>
+{%endif%}
+{%if festival.place%}
+          <a href="{{url.that}}#terms">{%trans "Terms and conditions"%}</a>
+{%endif%}
+{%if festival.view%}
           <a href="{{url.that}}#vision">{%trans "Vision"%}</a>
+{%endif%}
+{%if festival.award%}
           <a href="{{url.that}}#awards">{%trans "Awards"%}</a>
+{%endif%}
+{%if festival.schedule%}
           <a href="{{url.that}}#timeline">{%trans "Timeline"%}</a>
+{%endif%}
+{%if festival.maplink%}
+          <a href="{{url.that}}#map">{%trans "Contact"%}</a>
+{%endif%}
         </nav>
       </div>
     </div>
