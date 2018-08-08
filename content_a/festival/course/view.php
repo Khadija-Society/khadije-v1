@@ -39,7 +39,7 @@ class view
 			\dash\utility\payment\verify::clear_session();
 		}
 
-		\dash\data::page_title(T_("Festival course list"));
+		\dash\data::page_title(T_("Signup to festival course"));
 		\dash\data::page_desc(T_('You can signup in some festival course'));
 
 		\dash\data::badge_link(\dash\url::here());

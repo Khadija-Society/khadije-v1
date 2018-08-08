@@ -1,5 +1,5 @@
 <?php
-namespace content_a\festival\mycourse;
+namespace content_a\festival\allcourse;
 
 
 class view
@@ -28,8 +28,14 @@ class view
 
 		$festival_id = \dash\coding::decode($id);
 
-		$my_course = \lib\db\festivalusers::get_full(['user_id' => \dash\user::id()]);
-		\dash\data::myCourse($my_course);
+		$course = \lib\db\festivalcourses::get(['festival_id' => $festival_id, 'status' => 'enable']);
+		if(is_array($course))
+		{
+			$course = array_map(['\lib\app\festivalcourse', 'ready'], $course);
+		}
+
+		\dash\data::course($course);
+
 	}
 }
 ?>

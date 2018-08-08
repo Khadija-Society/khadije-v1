@@ -7,37 +7,44 @@
 <div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 {%endif%}
 <div class='middle normal f justify-center'>
-<div class="cbox c5">
-  <div class="msg">{{course.title}}</div>
-  <div class="msg">{{course.condition| raw}}</div>
-  <div class="msg">{{course.conditionsend| raw}}</div>
-  <div class="msg">{{course.price| fitNumber }} {%trans "Toman"%}</div>
+  <div class="c4">
+    <div class="cbox mA5">
+      <div class="msg primary2 txtC"><b>{{course.title}}</b></div>
+      <div class="msg">{{course.desc}}</div>
+      <div class="msg">{%trans "Signup price"%} {{course.price| fitNumber }} {%trans "Toman"%}</div>
 
-  {%if checkDuplicate%}
-  <a href="{{url.this}}/mycourse?id={{requestGET.id}}" class="btn success block">{%trans "You are register to this course before"%}</a>
-  {%else%}
-  <form method="post">
+      {%if checkDuplicate%}
+      <a href="{{url.this}}?id={{requestGET.id}}" class="btn success block">{%trans "You are register to this course before"%}</a>
+      {%else%}
+      <form method="post">
 
-    <div class="radioGateway">
-     <input type="radio" name="bank" value="asanpardakht" id="asanpardakht" checked>
-     <label for='asanpardakht' class="spay-64-asanpardakht"></label>
+        <div class="radioGateway">
+         <input type="radio" name="bank" value="asanpardakht" id="asanpardakht" checked>
+         <label for='asanpardakht' class="spay-64-asanpardakht"></label>
+        </div>
+
+        <div class="radioGateway">
+         <input type="radio" name="bank" value="payir" id="payir">
+         <label for='payir' class="spay-64-payir"></label>
+        </div>
+
+        <div class="radioGateway">
+         <input type="radio" name="bank" value="ZarinPal" id="ZarinPal">
+         <label for='ZarinPal' class="spay-64-zarinpal"></label>
+        </div>
+
+        <input type="hidden" name="pay" value="1">
+        <button class="btn primary block">{%trans "Pay & Register"%}</button>
+      </form>
+      {%endif%}
     </div>
-
-    <div class="radioGateway">
-     <input type="radio" name="bank" value="payir" id="payir">
-     <label for='payir' class="spay-64-payir"></label>
+  </div>
+  <div class="c8">
+    <div class="cbox mA5">
+      <div class="msg"><b>{%trans "Conditions"%}</b>{{course.condition| raw}}</div>
+      <div class="msg"><b>{%trans "Condition send"%}</b>{{course.conditionsend| raw}}</div>
     </div>
-
-    <div class="radioGateway">
-     <input type="radio" name="bank" value="ZarinPal" id="ZarinPal">
-     <label for='ZarinPal' class="spay-64-zarinpal"></label>
-    </div>
-
-    <input type="hidden" name="pay" value="1">
-    <button class="btn primary block">{%trans "Pay & Register"%}</button>
-  </form>
-  {%endif%}
-</div>
+  </div>
 
 </div>
 

@@ -3,33 +3,38 @@
 
 {%block pageContent%}
 
-<div class='middle normal f justify-center'>
-  <a class="vcard mA10 shadow " href='{{url.here}}/festival/mycourse?id={{requestGET.id}}'>
-      <img src="{{url.site}}/static/siftal/images/useful/gate.png" alt='{%trans "My course"%}' class="pA10-f">
-      <div class="content">
-        <div class="header">{%trans "My course"%}</div>
-        <div class="meta"></div>
-        <div class="footer">{%trans "My course signuped"%}</div>
-      </div>
-    </a>
+<div class="f justify-center fs12">
+ <div class="c8 m8 s12">
+{%for key, value in myCourse%}
 
-  {%for key, value in course%}
+{%set myStatus = value.status | capitalize %}
 
-  {%set cardColor%}
-  {%if value.status == 'enable'%}green{%else%}black{%endif%}
-  {%endset%}
+  <div class="icard size-he50">
+    <div>{{value.festival_title}}  <b class="pLR5"> {{value.festivalcourse_title}}</b></div>
 
-    <a class="vcard mA10 shadow {{cardColor}}" href='{{url.here}}/festival/course?id={{requestGET.id}}&course={{value.id}}'>
-      <img src="{{url.site}}/static/siftal/images/useful/gift-love.png" alt="{{value.title}}">
-      <!-- <img src="{{value.logo}}" alt="{{value.title}}" class="pA10-f"> -->
-      <div class="content">
-        <div class="header">{{value.title}}</div>
-        <div class="meta"></div>
-        <div class="footer">{{value.subtitle}}</div>
-      </div>
-    </a>
-  {%endfor%}
+{%if value.datemodified%}
+    <div class='s0' title='{%trans "Last modified"%}'>{{value.datemodified | tdate("Y/m/d H:i")}}</div>
+{%else%}
+    <div class='s0' title='{%trans "Request date"%}'>{{value.datecreated | tdate("Y/m/d H:i")}}</div>
+{%endif%}
 
+    <div title='{%trans "Request date"%} {{value.datecreated | tdate("Y/m/d H:i")}}'>
+    {%trans myStatus%}
+
+{%if value.status == 'draft' or value.status == 'awaiting'%}
+     <a href="{{url.here}}/festival/profile?id={{requestGET.id}}&course={{value.festivalcourse_id | coding('encode')}}" class="badge sm mA5">{%trans "Edit"%}</a>
+{%endif%}
+   </div>
+  </div>
+
+{%endfor%}
+
+  <div class="icard">
+   <a href="{{url.here}}/festival/allcourse?id={{requestGET.id}}" class="btn primary block">{%trans "Register for new course"%}</a>
+  </div>
+
+ </div>
 </div>
+
 
 {%endblock%}
