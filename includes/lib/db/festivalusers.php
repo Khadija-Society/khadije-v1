@@ -1,6 +1,7 @@
 <?php
 namespace lib\db;
 
+
 class festivalusers
 {
 
@@ -63,9 +64,22 @@ class festivalusers
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function search()
+	public static function search($_string = null, $_option = [])
 	{
-		return \dash\db\config::public_search('festivalusers', ...func_get_args());
+		if(!is_array($_option))
+		{
+			$_option = [];
+		}
+
+		$default_option =
+		[
+			'public_show_field' => " users.mobile, users.displayname, festivalcourses.title, festivalusers.* ",
+			'master_join'       => " inner join users on users.id = festivalusers.user_id inner join festivalcourses on festivalcourses.id = festivalusers.festivalcourse_id ",
+			'search_field'      => "( festivalusers.title LIKE '%__string__%') ",
+		];
+
+		$_option = array_merge($default_option, $_option);
+		return \dash\db\config::public_search('festivalusers', $_string, $_option);
 	}
 
 }

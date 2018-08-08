@@ -19,11 +19,13 @@ class view
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
 
+
 		$args =
 		[
 			'order'          => \dash\request::get('order'),
 			'sort'           => \dash\request::get('sort'),
 		];
+
 
 		if(!$args['order'])
 		{
@@ -32,64 +34,43 @@ class view
 
 		if(!$args['sort'])
 		{
-			$args['sort'] = 'dateverify';
-		}
-
-		if(\dash\request::get('payment'))
-		{
-			$args['payment'] = \dash\request::get('payment');
+			$args['sort'] = 'id';
 		}
 
 		if(\dash\request::get('mobile'))
 		{
-			$args['mobile'] = \dash\request::get('mobile');
+			$mobile = \dash\request::get('mobile');
+			$user_id = \dash\db\users::get_by_mobile($mobile);
+			if(isset($user_id['id']))
+			{
+				$args['user_id'] = $user_id['id'];
+			}
 		}
 
-		if(\dash\request::get('festival'))
+		if(\dash\request::get('course'))
 		{
-			$args['hazinekard'] = \dash\request::get('festival');
+			$args['course'] = \dash\request::get('course');
 		}
 
-		$args['donate']    = 'festival';
-		$args['condition'] = 'ok';
-		$search_string     = \dash\request::get('q');
+		$args['festivalusers.festival_id']             = \dash\coding::decode(\dash\request::get('id'));
+
+		$search_string      = \dash\request::get('q');
 
 		if($search_string)
 		{
 			\dash\data::page_title(T_('Search'). ' '.  $search_string);
 		}
 
-		$export = false;
-		if(\dash\request::get('export') === 'true')
-		{
-			$export = true;
-			$args['pagenation'] = false;
-		}
+		$dataTable = \lib\app\festivaluser::list($search_string, $args);
 
-		\dash\data::dataTable(\dash\app\transaction::list($search_string, $args));
+		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\festivaluser::$sort_field, \dash\url::this(). '/transaction'));
 
-		if($export)
-		{
-			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::dataTable()]);
-		}
+		\dash\data::dataTable($dataTable);
 
-		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/pricefestival'));
-
-		if(\dash\permission::check('cpDonateTotalPay'))
-		{
-			\dash\data::totalPaid(\lib\db\mytransactions::total_paid(['donate' => 'festival']));
-			\dash\data::totalPaidDate(\lib\db\mytransactions::total_paid(['donate' => 'festival'], true));
-			\dash\data::totalPaidCount(\lib\db\mytransactions::total_paid(['donate' => 'festival'], false, true));
-		}
 
 		$filterArray = $args;
-		unset($filterArray['donate']);
-		unset($filterArray['condition']);
-		if(isset($filterArray['hazinekard']))
-		{
-			$filterArray[T_("Book")] = $filterArray['hazinekard'];
-			unset($filterArray['hazinekard']);
-		}
+		unset($filterArray['festivalusers.festival_id']);
+
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
 		\dash\data::dataFilter($dataFilter);
