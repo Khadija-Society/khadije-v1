@@ -4,7 +4,7 @@
 {%block ititle %}
 <label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="title" id="title" placeholder='{%trans "Title of festival referee"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid title"%}'>
+  <input type="text" name="title" id="title" value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid title"%}'>
 </div>
 {% endblock %}
 
@@ -12,7 +12,7 @@
 {%block isubtitle %}
 <label for="subtitle">{%trans "Subtitle"%}</label>
 <div class="input">
-  <input type="text" name="subtitle" id="subtitle" placeholder='{%trans "Subtitle of festival referee"%}' value="{{dataRow.subtitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid subtitle"%}'>
+  <input type="text" name="subtitle" id="subtitle" value="{{dataRow.subtitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid subtitle"%}'>
 </div>
 {% endblock %}
 
@@ -39,7 +39,7 @@
 
 {%block idesc%}
 <label for="desc">{%trans "Description"%}</label>
-<textarea class="txt mB10"  name="desc" placeholder='{%trans "Write description of festival referee"%}' rows="3">{{dataRow.desc}}</textarea>
+<textarea class="txt mB10"  name="desc" rows="3">{{dataRow.desc}}</textarea>
 {%endblock%}
 
 
