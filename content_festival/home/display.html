@@ -86,7 +86,7 @@
       <div id="organizers" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#organizers">{%trans "Organizers"%}</a></h3>
         {%for key, value in organizer%}
-          <a href="#" title="test"><img alt="{{value.title}}" src="{{value.logo}}"></a>
+          <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="test"><img alt="{{value.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}"></a>
         {%endfor%}
       </div>
     {%endif%}
@@ -94,7 +94,7 @@
       <div id="sponsors" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#sponsors">{%trans "Sponsors"%}</a></h3>
         {%for key, value in supporter%}
-        <a href="#" title="test"><img alt="{{value.title}}" src="{{value.logo}}"></a>
+        <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="test"><img alt="{{value.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}"></a>
         {%endfor%}
       </div>
     {%endif%}
@@ -102,7 +102,7 @@
       <div id="mdeiaSponsors" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#mdeiaSponsors">{%trans "Media Sponsors"%}</a></h3>
         {%for key, value in mediasupporter %}
-        <a href="#" title="test"><img alt="{{site.title}}" src="{{url.base}}/static/images/logo.png"></a>
+        <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="test"><img alt="{{site.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}"></a>
         {%endfor%}
       </div>
     {%endif%}
