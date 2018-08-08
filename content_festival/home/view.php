@@ -84,7 +84,7 @@ class view
 
 		$supporter      = [];
 		$mediasupporter = [];
-		$refree         = [];
+		$referee         = [];
 		$organizer      = [];
 
 		foreach ($detail as $key => $value)
@@ -101,8 +101,8 @@ class view
 						array_push($mediasupporter, $value);
 						break;
 
-					case 'refree':
-						array_push($refree, $value);
+					case 'referee':
+						array_push($referee, $value);
 						break;
 
 					case 'organizer':
@@ -114,7 +114,7 @@ class view
 		}
 		\dash\data::supporter($supporter);
 		\dash\data::mediasupporter($mediasupporter);
-		\dash\data::refree($refree);
+		\dash\data::referee($referee);
 		\dash\data::organizer($organizer);
 
 		// var_dump(\dash\data::get());exit();
