@@ -40,14 +40,6 @@ class view
 			\dash\header::status(403, T_("Invalid festival id"));
 		}
 
-		if(\dash\session::get('userCompleteCourse'))
-		{
-			if(isset($load['message']))
-			{
-				\dash\data::showMSG($load['message']);
-			}
-			\dash\session::set('userCompleteCourse', null);
-		}
 
 		$festival_id = \dash\coding::decode($id);
 
@@ -68,6 +60,24 @@ class view
 		if(isset($check_duplicate['file']))
 		{
 			$check_duplicate['file'] = json_decode($check_duplicate['file'], true);
+		}
+
+		if(\dash\session::get('userCompleteCourse'))
+		{
+			if(array_key_exists('price', $check_duplicate) && !$check_duplicate['price'] && isset($check_duplicate['id']))
+			{
+				if(isset($load['messagesms']) && \dash\user::detail('mobile'))
+				{
+					\lib\db\festivalusers::update(['price' => 1], $check_duplicate['id']);
+					\dash\utility\sms::send(\dash\user::detail('mobile'), $load['messagesms']);
+				}
+			}
+
+			if(isset($load['message']))
+			{
+				\dash\data::showMSG($load['message']);
+			}
+			\dash\session::set('userCompleteCourse', null);
 		}
 
 		\dash\data::dataRow($check_duplicate);
