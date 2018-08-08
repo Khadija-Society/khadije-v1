@@ -26,7 +26,7 @@
   {%if perm('cpTemplateSmsView')%}<div class="c3 s6">{{block("TemplateSMS")}}</div>{%endif%}
   {%if perm('cpPostsView') or perm('cpCategoryView') or perm('cpPageView') or perm('cpTagView')  %}<div class="c3 s6">{{block("bCMS")}}</div>{%endif%}
   {%if perm('cpMeeting') or perm('cpMeetingManage') %}<div class="c3 s6">{{block("iMeeting")}}</div>{%endif%}
-  {%if false and perm('festivalView') %}<div class="c3 s6">{{block("iFestival")}}</div>{%endif%}
+  {%if perm('festivalView') %}<div class="c3 s6">{{block("iFestival")}}</div>{%endif%}
 
 
 </div>
