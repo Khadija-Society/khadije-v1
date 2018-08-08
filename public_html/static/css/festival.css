@@ -233,6 +233,8 @@ header a:hover{
   height: 300px!important;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  border: none;
 }
 .txtDetail#map .wrapper{
 
