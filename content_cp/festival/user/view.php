@@ -49,7 +49,7 @@ class view
 
 		if(\dash\request::get('course'))
 		{
-			$args['course'] = \dash\request::get('course');
+			$args['festivalusers.festivalcourse_id'] = \dash\request::get('course');
 		}
 
 		$args['festivalusers.festival_id']             = \dash\coding::decode(\dash\request::get('id'));

@@ -36,7 +36,7 @@
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.here}}/book'>
+  <form method="get" action='{{url.this}}/user?id={{requestGET.id}}'>
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -63,9 +63,10 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-        <td>{{value.displayname}}</td>
-        <td>{{value.mobile | fitNumber('mobile')}}</td>
-        <td>{{value.title}}</td>
+
+        <td><a href="{{url.here}}/users/view?id={{value.user_id | coding('encode')}}">{{value.displayname}}</a></td>
+        <td><a href="{{url.this}}/user?id={{requestGET.id}}&mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
+        <td><a href="{{url.this}}/user?id={{requestGET.id}}&course={{value.festivalcourse_id}}">{{value.title}}</a></td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
         <td>{%if value.file%}<i class="sf-check"></i>{%else%}<i class="sf-times"></i>{%endif%}</td>
         <td>{{value.datecreated | tdate("Y-m-d H:i:s")}}</td>
@@ -83,7 +84,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg warn2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.here}}/book">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}/user?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -91,7 +92,7 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.here}}/book">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}/user?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
