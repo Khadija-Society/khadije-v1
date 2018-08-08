@@ -168,7 +168,7 @@
         <h2>{{value.title}}</h2>
         <div class="timeline-info f">
           <div><i class="sf-calendar-o" aria-hidden="true"></i> {{value.date| tdate}}</div>
-          <div><i class="sf-clock-o" aria-hidden="true"></i> {{value.time | fitNumber}}</div>
+          <div><i class="sf-clock-o" aria-hidden="true"></i> {{value.time | tdate("H:i")}}</div>
         </div>
         <p>{{value.desc}}</p>
       </div>
