@@ -186,6 +186,11 @@ header a:hover{
 }
 .txtDetail#referee .list .cauto{
   padding: 1em;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.txtDetail#referee .list .cauto:hover{
+  opacity: 1;
 }
 .txtDetail#referee .list h3{
   font-size: 1.3em;
@@ -197,6 +202,7 @@ header a:hover{
   display: inline;
   max-width: 120px;
   max-height: 300px;
+  border-radius: 50%;
 }
 
 .txtDetail#vision{

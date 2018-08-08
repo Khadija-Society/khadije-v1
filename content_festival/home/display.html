@@ -147,7 +147,7 @@
     <div class="f justify-center list">
       {%for key, value in referee%}
         <div class="cauto">
-          <img src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}">
+          <img class="rounded" src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}">
           <h3>{{value.title}}</h3>
           <p>{{value.subtitle}}</p>
         </div>
