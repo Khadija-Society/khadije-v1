@@ -28,7 +28,7 @@
 <div class="f">
  <div class="c3 s12">{{block ("stStatus")}}</div>
  <div class="c3 s12">{{block ("stReferee")}}</div>
- <div class="c3 s12">{{block ("stPoster")}}</div>
+ <div class="c3 s12">{{block ("stLInk")}}</div>
  <div class="c3 s12">{{block ("prDate")}}</div>
 </div>
 
@@ -86,11 +86,11 @@
 </a>
 {%endblock%}
 
-{%block stPoster%}
-<a class="dcard" href='{{url.this}}/poster?id={{requestGET.id}}'>
+{%block stLInk%}
+<a class="dcard" data-direct target="_blank" href='{{url.site}}/festival/{{dataRow.slug}}'>
  <div class="statistic violet">
-  <div class="value"><i class="sf-picture-o"></i><span class="hide">{{dashboardDetail.poster_count |number_format |fitNumber}}</span></div>
-  <div class="label">{%trans "Pictures"%}</div>
+  <div class="value"><i class="sf-link"></i><span class="hide">{{dashboardDetail.poster_count |number_format |fitNumber}}</span></div>
+  <div class="label">{%trans "Show festival"%}</div>
  </div>
 </a>
 {%endblock%}

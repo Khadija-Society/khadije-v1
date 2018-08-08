@@ -8,11 +8,11 @@ class view
 	{
 		\dash\permission::access('cpBookTransactionView');
 
-		\dash\data::page_title(T_("Festival transaction"));
-		\dash\data::page_desc(T_("check festival last transactions and monitor them"));
+		\dash\data::page_title(T_("Festival user list"));
+		\dash\data::page_desc(T_("check festival last signuped user and monitor them"));
 		\dash\data::page_pictogram('magic');
 
-		\dash\data::badge_link(\dash\url::here());
+		\dash\data::badge_link(\dash\url::this(). '?id='. \dash\request::get('id'));
 		\dash\data::badge_text(T_('Back to dashboard'));
 
 		\dash\data::bodyclass('unselectable');
