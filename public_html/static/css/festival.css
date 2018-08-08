@@ -60,13 +60,13 @@ header a:hover{
   margin-top:10em;
   font-size: 2em;
 }
-#landing .title a{
+#landing h1 a{
   transition: 0.3s;
 }
-#landing .title a:hover{
+#landing h1 a:hover{
   color: #eee;
 }
-#landing .title a:focus{
+#landing h1 a:focus{
   color: #ddd;
 }
 #landing .title h2{
