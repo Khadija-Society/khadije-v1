@@ -21,12 +21,6 @@ body{
   /*background-color: #c4960c;*/
   /*background-image: url("../images/festival/light-wool.png");*/
 }
-a:hover{
-  color: #efefef;
-}
-a:focus{
-  color: #fff;
-}
 
 #landing .bg{
   width: 100%;
@@ -65,6 +59,15 @@ header a:hover{
   text-align: center;
   margin-top:10em;
   font-size: 2em;
+}
+#landing .title a{
+  transition: 0.3s;
+}
+#landing .title a:hover{
+  color: #eee;
+}
+#landing .title a:focus{
+  color: #ddd;
 }
 #landing .title h2{
   font-size: 1em;

@@ -46,9 +46,13 @@
       {%if timing%}
         <div class="clock" data-aos="zoom-in" data-aos-delay="700" data-timer="{{timing}}"></div>
       {%endif%}
-      <div >
+      <div>
+{%if festival.about%}
         <a href="{{url.that}}#about" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Read More"%}</a>
+{%endif%}
+{%if course%}
         <a href="{{url.base}}/a/festival?id={{festival.id}}" class="btn lg light hauto mT25" data-aos="fade-up" data-aos-delay="1200">{%trans "Signup"%}</a>
+{%endif%}
       </div>
     </div>
   </div>
@@ -152,9 +156,9 @@
 {%endif%}
 
 
+{%if festival.schedule%}
 <section id="timeline">
   <div class="myTimeline">
-
 {%for key, value in festival.schedule%}
     <div class="timeline-block">
       <div class="timeline-bullet {%if value.time_last%}done{%endif%}" data-aos="fade-in"></div>
@@ -168,10 +172,9 @@
       </div>
     </div>
 {%endfor%}
-
-
   </div>
 </section>
+{%endif%}
 
 
 {%if festival.maplink%}
@@ -192,10 +195,11 @@
           {{block("pageSocialLinks")}}
         </div>
       </div>
+{%if festival.address%}
       <div class="c5 s12 pRa10">
         <address>
-            <h2>{%trans "Contact us"%}</h2>
           {%if festival.address.address%}
+            <h2>{%trans "Contact us"%}</h2>
             <div class="address mB20">
               <div>{{festival.address.address}}</div>
             </div>
@@ -224,6 +228,7 @@
           {%endif%}
         </address>
       </div>
+{%endif%}
       <div class="c3 s12">
         <nav class="quickAccess">
           <a href="{{url.that}}#landing">{%trans "Homepage"%}</a>
