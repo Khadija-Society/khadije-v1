@@ -83,6 +83,9 @@ class festivaluser
 					$result[$key] = \dash\coding::encode($value);
 					break;
 
+				case 'file':
+					$result[$key] = json_decode($value, true);
+					break;
 
 				default:
 					$result[$key] = $value;
