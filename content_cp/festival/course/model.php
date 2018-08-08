@@ -8,7 +8,7 @@ class model
 	{
 		if(\dash\request::get('type') === 'add' || \dash\request::get('course'))
 		{
-			\dash\permission::access('fpCourseAdd');
+			\dash\permission::access('cpFestivalCourseEdit');
 
 			$post                  = [];
 			if(\dash\request::get('type') === 'rules')

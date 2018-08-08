@@ -6,7 +6,7 @@ class model
 {
 	public static function post()
 	{
-		\dash\permission::access('fpFestivalAdd');
+		\dash\permission::access('cpFestivalAdd');
 
 		$post             = [];
 		$post['title']    = \dash\request::post('title');

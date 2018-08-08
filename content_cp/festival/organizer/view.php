@@ -13,7 +13,7 @@ class view
 
 		if(\dash\request::get('type') === 'add')
 		{
-			\dash\permission::access('festivalOrganizerAdd');
+			\dash\permission::access('cpFestivalOrganizerAdd');
 			\dash\data::display_festivalOrganizerDisplay('content_cp/festival/organizer/add.html');
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Add new organizer"));
 			\dash\data::page_desc(T_("Add new organizer by some detail"));
@@ -30,7 +30,7 @@ class view
 			\dash\data::dataRow($load);
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Edit organizer"));
 
-			\dash\permission::access('festivalOrganizerAdd');
+			\dash\permission::access('cpFestivalOrganizerEdit');
 
 			\dash\data::display_festivalOrganizerDisplay('content_cp/festival/organizer/add.html');
 
@@ -43,7 +43,7 @@ class view
 			\dash\data::badge_link(\dash\url::this(). '?id='. \dash\request::get('id'));
 			\dash\data::badge_text(T_('Back to dashboard'));
 
-			\dash\permission::access('fpFestivalView');
+			\dash\permission::access('cpFestivalOrganizerView');
 
 			\dash\data::page_pictogram('plug');
 

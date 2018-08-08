@@ -28,8 +28,6 @@ class model
 
 	public static function post()
 	{
-		\dash\permission::access('fpFestivalAdd');
-
 		$file = self::upload_baner();
 		if($file === false)
 		{

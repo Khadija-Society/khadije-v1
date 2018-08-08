@@ -13,7 +13,7 @@ class view
 
 		if(\dash\request::get('type') === 'add')
 		{
-			\dash\permission::access('festivalRefereeAdd');
+			\dash\permission::access('cpFestivalRefereeAdd');
 			\dash\data::display_festivalRefereeDisplay('content_cp/festival/referee/add.html');
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Add new referee"));
 			\dash\data::page_desc(T_("Add new referee by some detail"));
@@ -30,7 +30,7 @@ class view
 			\dash\data::dataRow($load);
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Edit referee"));
 
-			\dash\permission::access('festivalRefereeAdd');
+			\dash\permission::access('cpFestivalRefereeEdit');
 
 			\dash\data::display_festivalRefereeDisplay('content_cp/festival/referee/add.html');
 
@@ -43,7 +43,7 @@ class view
 			\dash\data::badge_link(\dash\url::this(). '?id='. \dash\request::get('id'));
 			\dash\data::badge_text(T_('Back to dashboard'));
 
-			\dash\permission::access('fpFestivalView');
+			\dash\permission::access('cpFestivalRefereeView');
 
 			\dash\data::page_pictogram('user-md');
 

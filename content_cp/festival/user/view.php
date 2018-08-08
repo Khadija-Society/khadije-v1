@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpBookTransactionView');
+		\dash\permission::access('cpFestivalUsers');
 
 		\dash\data::page_title(T_("Festival user list"));
 		\dash\data::page_desc(T_("check festival last signuped user and monitor them"));

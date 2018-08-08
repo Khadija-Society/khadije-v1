@@ -13,7 +13,7 @@ class view
 
 		if(\dash\request::get('type') === 'add')
 		{
-			\dash\permission::access('festivalMediasupporterAdd');
+			\dash\permission::access('cpFestivalMediasupporterAdd');
 			\dash\data::display_festivalMediasupporterDisplay('content_cp/festival/mediasupporter/add.html');
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Add new mediasupporter"));
 			\dash\data::page_desc(T_("Add new mediasupporter by some detail"));
@@ -30,7 +30,7 @@ class view
 			\dash\data::dataRow($load);
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Edit mediasupporter"));
 
-			\dash\permission::access('festivalMediasupporterAdd');
+			\dash\permission::access('cpFestivalMediasupporterEdit');
 
 			\dash\data::display_festivalMediasupporterDisplay('content_cp/festival/mediasupporter/add.html');
 
@@ -43,7 +43,7 @@ class view
 			\dash\data::badge_link(\dash\url::this(). '?id='. \dash\request::get('id'));
 			\dash\data::badge_text(T_('Back to dashboard'));
 
-			\dash\permission::access('fpFestivalView');
+			\dash\permission::access('cpFestivalMediasupporterView');
 
 			\dash\data::page_pictogram('bullhorn');
 

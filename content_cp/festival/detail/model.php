@@ -6,7 +6,6 @@ class model
 {
 	public static function post()
 	{
-		\dash\permission::access('fpFestivalAdd');
 
 		$post             = [];
 		if(isset($_POST['intro'])) $post['intro'] = $_POST['intro'];

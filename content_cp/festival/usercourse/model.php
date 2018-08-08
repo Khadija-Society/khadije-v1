@@ -7,8 +7,6 @@ class model
 	public static function post()
 	{
 
-		\dash\permission::access('fpFestivalAdd');
-
 		$post           = [];
 		$post['status'] = \dash\request::post('status');
 		$post['desc']   = \dash\request::post('desc');

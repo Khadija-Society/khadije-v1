@@ -13,7 +13,8 @@ class view
 
 		if(\dash\request::get('type') === 'add')
 		{
-			\dash\permission::access('festivalCourseAdd');
+			\dash\permission::access('cpFestivalCourseAdd');
+
 			\dash\data::display_festivalCourseDisplay('content_cp/festival/course/add.html');
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Add new course"));
 			\dash\data::page_desc(T_("Add new course by some detail"));
@@ -29,7 +30,8 @@ class view
 			}
 			\dash\data::dataRow($dataRow);
 
-			\dash\permission::access('festivalCourseAdd');
+			\dash\permission::access('cpFestivalCourseEdit');
+
 			\dash\data::display_festivalCourseDisplay('content_cp/festival/course/add.html');
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. \dash\data::dataRow_title(). ' | ' .T_("Edit course"));
 			\dash\data::page_desc(T_("Edit course"). '| '. \dash\data::dataRow_title());
@@ -42,7 +44,7 @@ class view
 			\dash\data::badge_link(\dash\url::this(). '?id='. \dash\request::get('id'));
 			\dash\data::badge_text(T_('Back to dashboard'));
 
-			\dash\permission::access('fpFestivalView');
+			\dash\permission::access('cpFestivalCourseView');
 
 			\dash\data::page_pictogram('arrows-alt');
 

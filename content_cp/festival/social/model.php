@@ -6,8 +6,6 @@ class model
 {
 	public static function post()
 	{
-		\dash\permission::access('fpFestivalAdd');
-
 		$social              = [];
 		$social['email']     = \dash\request::post('email');
 		$social['sms']       = \dash\request::post('sms');

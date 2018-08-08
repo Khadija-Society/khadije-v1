@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('fpFestivalView');
+		\dash\permission::access('cpFestivalView');
 
 		\dash\data::display_festivalDisplay('content_cp/festival/home/list.html');
 		\dash\data::page_pictogram('magic');

@@ -6,8 +6,6 @@ class model
 {
 	public static function post()
 	{
-		\dash\permission::access('fpFestivalAdd');
-
 		if(\dash\request::post('type') === 'schedule' || \dash\request::post('type') === 'rmschedule')
 		{
 

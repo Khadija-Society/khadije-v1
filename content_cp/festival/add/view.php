@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('fpFestivalAdd');
+		\dash\permission::access('cpFestivalAdd');
 
 		\dash\data::page_pictogram('plus');
 

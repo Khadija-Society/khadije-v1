@@ -72,8 +72,6 @@ class model
 
 	public static function post()
 	{
-		\dash\permission::access('fpFestivalAdd');
-
 		if(self::upload_gallery())
 		{
 			return false;

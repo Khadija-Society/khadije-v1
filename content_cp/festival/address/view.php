@@ -6,6 +6,8 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('cpFestivalEdit');
+
 		\dash\data::page_pictogram('edit');
 
 		\dash\data::display_festivalAdd('content_cp/festival/layout.html');

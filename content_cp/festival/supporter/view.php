@@ -13,7 +13,7 @@ class view
 
 		if(\dash\request::get('type') === 'add')
 		{
-			\dash\permission::access('festivalSupporterAdd');
+			\dash\permission::access('cpFestivalSupporterAdd');
 			\dash\data::display_festivalSupporterDisplay('content_cp/festival/supporter/add.html');
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Add new supporter"));
 			\dash\data::page_desc(T_("Add new supporter by some detail"));
@@ -30,7 +30,7 @@ class view
 			\dash\data::dataRow($load);
 			\dash\data::page_title(\dash\data::currentFestival_title(). ' | '. T_("Edit supporter"));
 
-			\dash\permission::access('festivalSupporterAdd');
+			\dash\permission::access('cpFestivalSupporterEdit');
 
 			\dash\data::display_festivalSupporterDisplay('content_cp/festival/supporter/add.html');
 
@@ -43,7 +43,7 @@ class view
 			\dash\data::badge_link(\dash\url::this(). '?id='. \dash\request::get('id'));
 			\dash\data::badge_text(T_('Back to dashboard'));
 
-			\dash\permission::access('fpFestivalView');
+			\dash\permission::access('cpFestivalSupporterView');
 
 			\dash\data::page_pictogram('crosshairs');
 
