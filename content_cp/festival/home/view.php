@@ -26,6 +26,9 @@ class view
 
 			\dash\data::badge_link(\dash\url::here(). '/festival');
 			\dash\data::badge_text(T_('Back to festival list'));
+			$chart = \lib\db\festivals::chart(\dash\coding::decode($id));
+			\dash\data::chartData($chart);
+
 
 		}
 		else

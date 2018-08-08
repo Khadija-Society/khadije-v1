@@ -4,6 +4,41 @@ namespace lib\db;
 class festivals
 {
 
+	public static function chart($_festival_id)
+	{
+		if(!$_festival_id || !is_numeric($_festival_id))
+		{
+			return false;
+		}
+
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				festivalcourses.title AS `course`
+			FROM
+				festivalusers
+			INNER JOIN 	festivalcourses ON festivalcourses.id = festivalusers.festivalcourse_id
+
+			WHERE
+				festivalusers.festival_id =  $_festival_id
+
+			GROUP BY festivalcourses.title
+
+		";
+
+		$result = \dash\db::get($query, ['course', 'count']);
+		$new = [];
+		foreach ($result as $key => $value)
+		{
+			$new[] = ['key' => $key, 'value' => $value];
+		}
+		$result = json_encode($new, JSON_UNESCAPED_UNICODE);
+		return $result;
+
+
+	}
+
 	/**
 	 * insert new productprice
 	 *
