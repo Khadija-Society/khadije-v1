@@ -170,10 +170,16 @@
 
 
 {%block chart_primary%}
+{%if chartData%}
 <div class="dcard x3 pA0">
  <div class="chart" id="chartdiv" >
  </div>
 </div>
+{%else%}
+<div class="dcard x3 pA0">
+ <p class="fs18">{%trans "No user signuped to this festival yet!"%}</p>
+</div>
+{%endif%}
 {%endblock%}
 
 
