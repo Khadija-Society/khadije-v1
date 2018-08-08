@@ -177,6 +177,27 @@ header a:hover{
   padding-right: 10%;
   padding-left: 10%;
 }
+.txtDetail#referee{
+  background-color: rgba(196,222,241,0.4);
+}
+.txtDetail#referee .list{
+  font-size: 0.8em;
+  text-align: center;
+}
+.txtDetail#referee .list .cauto{
+  padding: 1em;
+}
+.txtDetail#referee .list h3{
+  font-size: 1.3em;
+}
+.txtDetail#referee .list p{
+  font-size: 1em;
+}
+.txtDetail#referee img{
+  display: inline;
+  max-width: 120px;
+  max-height: 300px;
+}
 
 .txtDetail#vision{
   background-image: url("../images/festival/vision.jpg");
