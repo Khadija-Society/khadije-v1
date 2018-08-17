@@ -262,7 +262,12 @@
 
 
 {%block iWay%}
-{%if wayList%}
+{%if waySelected%}
+<div class="msg info">
+ <span class="txtB pRa10">{{waySelected.title}}</span>
+ <span class="fs09">{{waySelected.desc}}</span>
+</div>
+{%elseif wayList%}
 <div class="donateWays">
   <label>{%trans "Spending method"%}</label>
   <div class="f justify-center">
