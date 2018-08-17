@@ -74,7 +74,7 @@
         {%elseif myUrl ends with '.mp3' %}
           <audio controls><source src="{{myUrl}}" type="audio/mpeg"></audio>
         {%elseif myUrl ends with '.pdf' %}
-        <a href="{{myUrl}}" class="btn pA25">PDF</a>
+        <a href="{{myUrl}}" class="btn lg mT25 primary">{%trans "Download"%} {%trans "PDF"%}</a>
         {%else%}
         {%endif%}
       {%endfor%}
