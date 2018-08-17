@@ -51,23 +51,22 @@
 {%endblock%}
 
 {%block iPayWay%}
-
-  <div class="radioGateway">
+<div class="txtC">
+  <div class="radioGateway pA5">
    <input type="radio" name="bank" value="asanpardakht" id="asanpardakht" checked>
    <label for='asanpardakht' class="spay-64-asanpardakht"></label>
   </div>
 
-  <div class="radioGateway">
+  <div class="radioGateway pA5">
    <input type="radio" name="bank" value="payir" id="payir">
    <label for='payir' class="spay-64-payir"></label>
   </div>
 
-  <div class="radioGateway">
+  <div class="radioGateway pA5">
    <input type="radio" name="bank" value="ZarinPal" id="ZarinPal">
    <label for='ZarinPal' class="spay-64-zarinpal"></label>
   </div>
-
-
+</div>
 {%endblock%}
 
 
@@ -166,7 +165,7 @@
 
 
 {%block ipay%}
-<button class="btn primary block mT25 mB10">{%trans "Pay"%}</button>
+<button class="btn primary block mT5">{%trans "Pay"%}</button>
 {%endblock%}
 
 
@@ -263,9 +262,15 @@
 
 {%block iWay%}
 {%if waySelected%}
-<div class="msg info">
- <span class="txtB pRa10">{{waySelected.title}}</span>
- <span class="fs09">{{waySelected.desc}}</span>
+<div class="msg info f">
+  <div class="cauto pRa10 fs20">
+    <img src="{{waySelected.fileurl}}" alt="{{waySelected.title}}" class="block avatar">
+  </div>
+  <div class="c f align-center">
+    <span class="txtB pRa10">{{waySelected.title}}</span>
+    <div class="fs09">{{waySelected.desc}}</div>
+    <input type="hidden" name="way" value="{{waySelected.title}}">
+  </div>
 </div>
 {%elseif wayList%}
 <div class="donateWays">
