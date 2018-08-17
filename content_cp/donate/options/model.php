@@ -35,15 +35,16 @@ class model
 
 		\dash\permission::access('cpDonateOption');
 
-		$post           = [];
-		$post['title']  = \dash\request::post('title');
-		$post['lang']  = \dash\request::post('language');
-		$post['count']  = null;
-		$post['amount'] = null;
-		$post['desc']   = \dash\request::post('desc');
-		$post['sort']   = \dash\request::post('sort');
-		$post['status'] = \dash\request::post('status') ? 'enable' : 'disable' ;
-		$post['type']   = 'donate';
+		$post            = [];
+		$post['title']   = \dash\request::post('title');
+		$post['linkurl'] = \dash\request::post('linkurl');
+		$post['lang']    = \dash\request::post('language');
+		$post['count']   = null;
+		$post['amount']  = null;
+		$post['desc']    = \dash\request::post('desc');
+		$post['sort']    = \dash\request::post('sort');
+		$post['status']  = \dash\request::post('status') ? 'enable' : 'disable' ;
+		$post['type']    = 'donate';
 
 		$file = self::upload_thumb();
 		if($file === false)

@@ -13,6 +13,7 @@
             {{block ('iDescription') }}
             {%if url.module == 'donate'%}
               {{block ('iSort') }}
+              {{block ('iLinkurl') }}
             {%endif%}
             {{block ('iLanguage') }}
             {{block ('iStatus') }}
@@ -40,6 +41,7 @@
               <th>{%trans "Title"%}</th>
                 {%if url.module == 'donate'%}
                  <th>{%trans "Sort"%}</th>
+                 <th>{%trans "Slug"%}</th>
                 {%endif%}
               <th>{%trans "Description"%}</th>
               <th>{%trans "Status"%}</th>
@@ -53,6 +55,7 @@
                 <td>{{value.title}}</td>
                 {%if url.module == 'donate'%}
                  <td>{{value.sort | fitNumber(false)}}</td>
+                 <td class="collapsing fs08 txtC">{%if value.linkurl%}<a href="{{url.kingdom}}/donate?nazr={{value.linkurl}}"><i class="sf-link"></i> {{value.linkurl}}</a>{%else%}-{%endif%}</td>
                 {%endif%}
                 <td>{{value.desc}}</td>
                 <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
@@ -116,6 +119,13 @@
 <label for='ftitle'>{%trans "Title"%}</label>
 <div class="input">
  <input type="text" name="title" placeholder='{%trans "Title"%}' value="{{productDetail.title}}" autofocus  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid title"%}' id='ftitle'>
+</div>
+{%endblock%}
+
+{%block iLinkurl%}
+<label for='slug'>{%trans "Slug"%}</label>
+<div class="input">
+ <input type="text" name="linkurl" placeholder='{%trans "Slug"%}' value="{{productDetail.linkurl}}" autofocus  maxlength='50' minlength="1" pattern=".{1,50}" id='slug'>
 </div>
 {%endblock%}
 

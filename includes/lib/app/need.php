@@ -125,6 +125,13 @@ class need
 			return false;
 		}
 
+		$linkurl = \dash\app::request('linkurl');
+		if($linkurl && mb_strlen($linkurl) >= 200)
+		{
+			\dash\notif::error(T_("Please set a valid linkurl"), 'linkurl');
+			return false;
+		}
+
 
 		$status = \dash\app::request('status');
 		if($status && !in_array($status, ['enable','disable']))
@@ -162,6 +169,7 @@ class need
 		$args['amount']  = $amount;
 		$args['fileurl'] = $fileurl;
 		$args['desc']    = $desc;
+		$args['linkurl']    = $linkurl;
 		$args['type']    = $type;
 		$args['status']  = $status;
 
