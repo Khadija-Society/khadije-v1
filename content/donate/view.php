@@ -14,6 +14,20 @@ class view
 		\dash\data::wayList(\lib\app\need::active_list('donate'));
 
 		\dash\data::donateArchive(\lib\db\mytransactions::user_transaction('cash'));
+		if(\dash\request::get('nazr'))
+		{
+			$list = \dash\data::wayList();
+			if(is_array($list))
+			{
+				foreach ($list as $key => $value)
+				{
+					if(isset($value['linkurl']) && $value['linkurl'] === \dash\request::get('nazr'))
+					{
+						\dash\data::waySelected($value);
+					}
+				}
+			}
+		}
 
 		if(\dash\session::get('payment_request_start'))
 		{
