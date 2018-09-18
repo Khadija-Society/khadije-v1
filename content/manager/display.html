@@ -44,6 +44,11 @@
 
 
 {%block ContactForm%}
+
+  {%if tempTicketCodeURL%}
+  <div class="msg success2 txtC"><a data-direct href="{{tempTicketCodeURL}}">{%trans "You can access the ticketing status through this link"%}</a></div>
+  {%endif%}
+
   <form method="post" data-clear autocomplete="off">
 {%if login and false%}
 {%else%}

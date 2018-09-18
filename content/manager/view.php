@@ -2,7 +2,7 @@
 namespace content\manager;
 
 
-class view
+class view extends \content_support\ticket\contact_ticket\view
 {
 
 	public static function config()
@@ -11,6 +11,7 @@ class view
 		\dash\data::page_desc(T_("We do our best to improve khadije's service quality."));
 		\dash\app\template::find();
 		\dash\data::datarow(\dash\app\template::$datarow);
+		self::codeurl();
 	}
 }
 ?>
