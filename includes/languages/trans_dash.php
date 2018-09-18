@@ -208,7 +208,7 @@ class twigTransTerms
 	echo T_("Trash");                                                                 // Line 32
 	echo T_("Spam");                                                                  // Line 209
 	echo T_("Created on");                                                            // Line 34
-	echo T_("No record exist!");                                                      // Line 72
+	echo T_("No record exist!");                                                      // Line 75
 
 	//-------------------------------------addons/content_cp/contact/edit/display.html
 	echo T_("Submitted on");                                                          // Line 33

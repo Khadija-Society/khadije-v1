@@ -13,7 +13,7 @@ class twigTransTerms
 	echo T_("Mobile");                                                                // Line 85
 	echo T_("Mobile number is not showing on site and optional");                     // Line 123
 	echo T_("Press here to send");                                                    // Line 127
-	echo T_("Send");                                                                  // Line 98
+	echo T_("Send");                                                                  // Line 103
 
 	//------------------------------------------content_delneveshte/home/messages.html
 	echo T_("Last messages");                                                         // Line 3
@@ -480,6 +480,7 @@ class twigTransTerms
 	echo T_("Quick send");                                                            // Line 150
 	echo T_("Group send");                                                            // Line 153
 	echo T_("Templates");                                                             // Line 156
+	echo T_("Support");                                                               // Line 17
 
 	//--------------------------------------content_cp/familytrip/options/display.html
 	echo T_("Maximum partner count for qom");                                         // Line 57
@@ -592,9 +593,9 @@ class twigTransTerms
 	echo T_("For share via social networks");                                         // Line 40
 	echo T_("News Code");                                                             // Line 40
 	echo T_("Download");                                                              // Line 77
-	echo T_("Full Name");                                                             // Line 70
-	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 78
-	echo T_("Your Message");                                                          // Line 92
+	echo T_("Full Name");                                                             // Line 75
+	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 83
+	echo T_("Your Message");                                                          // Line 97
 
 	//----------------------------------------------------content/servant/display.html
 	echo T_("Now we dont need sercants, check it later!");                            // Line 9
@@ -670,6 +671,7 @@ class twigTransTerms
 
 	//----------------------------------------------------content/contact/display.html
 	echo T_("We do our best to improve khadije's service quality. So, knowing your valuable comments will help us in this way.");// Line 10
+	echo T_("You can access the ticketing status through this link");                 // Line 49
 	echo T_("khadije");                                                               // Line 23
 	echo T_("Najmeh Shabestan");                                                      // Line 34
 	echo T_("Najmeh Park, Fatemi St");                                                // Line 33
@@ -797,9 +799,9 @@ class twigTransTerms
 
 	//------------------------------------------------------content_a/main/layout.html
 	echo T_("Consulting Service");                                                    // Line 52
-	echo T_("Edit your profile");                                                     // Line 22
-	echo T_("Avatar of you");                                                         // Line 24
-	echo T_("Default Avatar");                                                        // Line 29
+	echo T_("Edit your profile");                                                     // Line 24
+	echo T_("Avatar of you");                                                         // Line 26
+	echo T_("Default Avatar");                                                        // Line 31
 
 	//------------------------------------------content_a/festival/detail/display.html
 
