@@ -1,0 +1,1 @@
+UPDATE comments set comments.type = 'ticket' where comments.type = 'contact';
