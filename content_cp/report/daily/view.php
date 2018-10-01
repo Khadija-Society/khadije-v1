@@ -7,7 +7,6 @@ class view
 	public static function config()
 	{
 		\dash\permission::access('cpReportDaily');
-		\dash\data::include_chart(true);
 
 		\dash\data::page_pictogram('chart');
 
