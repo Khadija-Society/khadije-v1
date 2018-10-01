@@ -59,15 +59,18 @@ class twigTransTerms
 	echo T_("Sum");                                                                   // Line 14
 	echo T_("Toman");                                                                 // Line 14
 
+	//-------------------------------------------content_cp/report/hazinekard/chart.js
+	echo T_("Sum price");                                                             // Line 74
+
 	//--------------------------------------------content_cp/report/daily/display.html
 
 	//------------------------------------------------content_cp/report/daily/chart.js
-	echo T_("Count");                                                                 // Line 112
-	echo T_("Price Variation");                                                       // Line 42
+	echo T_("Daily report");                                                          // Line 20
 
 	//--------------------------------------------content_cp/report/month/display.html
 
 	//------------------------------------------------content_cp/report/month/chart.js
+	echo T_("Monthly report");                                                        // Line 20
 
 	//---------------------------------------------content_cp/report/home/display.html
 	echo T_("Report Count transaction group by name");                                // Line 34
@@ -78,7 +81,12 @@ class twigTransTerms
 
 	//---------------------------------content_cp/report/counttransaction/display.html
 
+	//-------------------------------------content_cp/report/counttransaction/chart.js
+	echo T_("Count transaction");                                                     // Line 20
+
 	//-----------------------------------------content_cp/report/withname/display.html
+
+	//---------------------------------------------content_cp/report/withname/chart.js
 
 	//----------------------------------------content_cp/usersalavat/home/display.html
 	echo T_("Username");                                                              // Line 57
@@ -124,6 +132,7 @@ class twigTransTerms
 	echo T_("Language");                                                              // Line 162
 	echo T_("Please select one item");                                                // Line 254
 	echo T_("Enter a valid title");                                                   // Line 96
+	echo T_("Count");                                                                 // Line 112
 	echo T_("Enter a valid count");                                                   // Line 112
 	echo T_("Active");                                                                // Line 101
 	echo T_("Deactive");                                                              // Line 101
@@ -296,6 +305,7 @@ class twigTransTerms
 	echo T_("Add new festival");                                                      // Line 11
 
 	//-----------------------------------------------content_cp/festival/home/chart.js
+	echo T_("Price Variation");                                                       // Line 42
 
 	//-------------------------------------------content_cp/festival/user/display.html
 	echo T_("Course");                                                                // Line 97
@@ -574,6 +584,8 @@ class twigTransTerms
 	//---------------------public_html/static/siftal/fonts/siftal/icons-reference.html
 
 	//--------------------------------------public_html/static/siftal/js/siftal.min.js
+
+	//-----------------------public_html/static/siftal/js/highcharts/highcharts.min.js
 
 	//-----------------------------------public_html/static/siftal/js/amcharts3.min.js
 

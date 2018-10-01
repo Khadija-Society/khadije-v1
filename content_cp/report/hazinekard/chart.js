@@ -1,41 +1,84 @@
 function chartDrawer()
 {
-  if($("#chartdiv").length == 1){myChart();}
-
-
+  if($("#chartdiv").length == 1){highChart();}
 }
 
 
-//-------------------------------------------------------------------------------------------------------
-function myChart()
+
+function highChart()
 {
-	// Set theme
-	am4core.useTheme(am4themes_animated);
 
-	// Create chart instance
-	var chart = am4core.create("chartdiv", am4charts.PieChart3D);
+Highcharts.chart('chartdiv',
+{
+  chart: {
+    zoomType: 'x',
+    style: {
+      fontFamily: 'IRANSans, Tahoma, sans-serif'
+    }
+  },
+  title: {
+    text: ''
+  },
+  xAxis: [{
+    categories: {{chartTable.categories | raw}},
+    crosshair: true
+  }],
+  yAxis: [{ // Primary yAxis
+    labels: {
+      format: '{value}',
+      style: {
+        color: Highcharts.getOptions().colors[0]
+      }
+    },
+    title: {
+      text: '{%trans "Sum price"%}',
+      useHTML: Highcharts.hasBidiBug,
+      style: {
+        color: Highcharts.getOptions().colors[0]
+      }
+    }
+  }],
+  tooltip: {
+    useHTML: true,
+    borderWidth: 0,
+    shared: true
+  },
+  exporting:
+  {
+    buttons:
+    {
+      contextButton:
+      {
+        menuItems:
+        [
+         'printChart',
+         'separator',
+         'downloadPNG',
+         'downloadJPEG',
+         'downloadSVG'
+        ]
+      }
+    }
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'left',
+    x: 120,
+    verticalAlign: 'top',
+    y: 100,
+    floating: true,
+    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(255,255,255,0.25)'
+  },
+  series: [
+  {
+    name: '{%trans "Sum price"%}',
+    type: 'column',
+    data: {{chartTable.value | raw}},
+    tooltip: {
+      valueSuffix: ' {%trans "Toman"%}'
+    }
 
-	// Let's cut a hole in our Pie chart the size of 40% the radius
-	chart.innerRadius = am4core.percent(40);
-
-	// Add data
-	chart.data = {{chartResult|raw}};
-
-	// Add and configure Series
-	var pieSeries = chart.series.push(new am4charts.PieSeries3D());
-	pieSeries.dataFields.value = "sum";
-	pieSeries.dataFields.category = "hazinekard";
-	pieSeries.slices.template.stroke = am4core.color("#fff");
-	pieSeries.slices.template.strokeWidth = 2;
-	pieSeries.slices.template.strokeOpacity = 1;
-
-	// Disabling labels and ticks on inner circle
-	pieSeries.labels.template.disabled = false;
-	pieSeries.ticks.template.disabled = false;
-
-	// Disable sliding out of slices
-	pieSeries.slices.template.states.getKey("hover").properties.shiftRadius = 0;
-	pieSeries.slices.template.states.getKey("hover").properties.scale = 1.1;
+  }
+  ]
+});
 }
-
-

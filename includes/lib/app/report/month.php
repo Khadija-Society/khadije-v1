@@ -27,12 +27,16 @@ class month
 		{
 			$temp[$value['year']. '-'. $value['month']] = $value['sum'];
 		}
-		$result = $temp;
 
-		$result = \lib\app\report::tdate_key($result, 'Y F', true);
-		$result = \lib\app\report::key_value($result, true);
+		$hi_chart               = [];
+		$categories             = array_keys($result);
+		$categories             = array_map(function ($_a){return \dash\datetime::fit($_a, 'Y F');}, $categories);
+		$hi_chart['categories'] = json_encode($categories, JSON_UNESCAPED_UNICODE);
+		$value                  = array_values($temp);
+		$value                  = array_map('intval', $value);
+		$hi_chart['value']      = json_encode($value, JSON_UNESCAPED_UNICODE);
 
-		$return['chart'] = $result;
+		$return['chart'] = $hi_chart;
 
 		return $return;
 	}

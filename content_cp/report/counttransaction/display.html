@@ -15,10 +15,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			{%for key, value in chartTable%}
+			{%for key, value in chartTable.raw%}
 			<tr>
-				<td>{{value.payment}}</td>
-				<td>{{value.sum | fitNumber}} {%trans "Toman"%}</td>
+				<td>{%set myKey = key | capitalize%}{%trans myKey%}</td>
+				<td>{{value | fitNumber}} {%trans "Toman"%}</td>
 			</tr>
 			{%endfor%}
 		</tbody>

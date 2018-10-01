@@ -24,10 +24,15 @@ class daily
 
 		$return['table'] = $result;
 
-		$result = \lib\app\report::tdate_key($result, 'Y/m/d - D', true);
-		$result = \lib\app\report::key_value($result, true);
+		$hi_chart               = [];
+		$categories             = array_keys($result);
+		$categories             = array_map(function ($_a){return \dash\datetime::fit($_a, null, 'date');}, $categories);
+		$hi_chart['categories'] = json_encode($categories, JSON_UNESCAPED_UNICODE);
+		$value                  = array_values($result);
+		$value                  = array_map('intval', $value);
+		$hi_chart['value']      = json_encode($value, JSON_UNESCAPED_UNICODE);
 
-		$return['chart'] = $result;
+		$return['chart'] = $hi_chart;
 
 		return $return;
 	}

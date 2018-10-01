@@ -28,6 +28,7 @@ class view
 			\dash\data::ReportDailyChart($result['chart']);
 		}
 
+
 		if(isset($result['table']))
 		{
 			\dash\data::ReportDailyTable($result['table']);

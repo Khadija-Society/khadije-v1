@@ -14,42 +14,40 @@ class report
 		{
 			if((string) $title === '0')
 			{
-				$temp[] = ['doners' => T_("Anonymous"), 'sum' => $xvalue];
+				$temp[] = ['doners' => T_("Anonymous"), 'sum' => intval($xvalue)];
 			}
 			elseif((string) $title === '1')
 			{
-				$temp[] = ['doners' => T_("Whit name"), 'sum' => $xvalue];
+				$temp[] = ['doners' => T_("Whit name"), 'sum' => intval($xvalue)];
 			}
 		}
 
-		return $temp;
+		$hi_chart               = [];
+		$hi_chart['raw']        = $temp;
+		$hi_chart['categories'] = json_encode(array_column($temp, 'doners'), JSON_UNESCAPED_UNICODE);
+		$hi_chart['value']      = json_encode(array_column($temp, 'sum'), JSON_UNESCAPED_UNICODE);
+		return $hi_chart;
+
 	}
 
 	public static function counttransaction()
 	{
-		$result  = [];
-		$query   = "SELECT sum(transactions.plus) AS `sum`, transactions.payment AS `payment` FROM transactions WHERE verify = 1 GROUP BY transactions.payment";
-		$payment = \dash\db::get($query, ['payment', 'sum']);
+		$result                 = [];
+		$query                  = "SELECT sum(transactions.plus) AS `sum`, transactions.payment AS `payment` FROM transactions WHERE verify = 1 GROUP BY transactions.payment";
+		$payment                = \dash\db::get($query, ['payment', 'sum']);
 
-		foreach ($payment as $key => $value)
-		{
-			// $hazine_query = "SELECT sum(transactions.plus) AS `value`, transactions.hazinekard AS `title` FROM transactions  WHERE verify = 1 AND transactions.payment = '$key' GROUP BY transactions.hazinekard";
-			// $pie          = \dash\db::get($hazine_query, ['title', 'value']);
-			// $new_pie      = [];
+		$hi_chart               = [];
+		$hi_chart['raw']        = $payment;
+		$categories             = array_keys($payment);
+		$categories             = array_map('ucfirst', $categories);
+		$categories             = array_map('T_', $categories);
+		$hi_chart['categories'] = json_encode($categories, JSON_UNESCAPED_UNICODE);
+		$value                  = array_values($payment);
+		$value                  = array_map('intval', $value);
+		$hi_chart['value']      = json_encode($value, JSON_UNESCAPED_UNICODE);
 
-			// foreach ($pie as $title => $xvalue)
-			// {
-			// 	$new_pie[] = ['title' => $title, 'value' => $xvalue];
-			// }
-			$new_pie = [];
-			$result[] =
-			[
-				'payment' => T_(ucfirst($key)),
-				'sum'     => $value,
-				'pie'     => $new_pie,
-			];
-		}
-		return $result;
+
+		return $hi_chart;
 	}
 
 	public static function hazinekard()
@@ -60,10 +58,14 @@ class report
 		$temp = [];
 		foreach ($result as $title => $xvalue)
 		{
-			$temp[] = ['hazinekard' => $title, 'sum' => $xvalue];
+			$temp[] = ['hazinekard' => $title, 'sum' => intval($xvalue)];
 		}
+		$hi_chart = [];
+		$hi_chart['raw'] = $result;
+		$hi_chart['categories'] = json_encode(array_column($temp, 'hazinekard'), JSON_UNESCAPED_UNICODE);
+		$hi_chart['value'] = json_encode(array_column($temp, 'sum'), JSON_UNESCAPED_UNICODE);
 
-		return $temp;
+		return $hi_chart;
 	}
 
 

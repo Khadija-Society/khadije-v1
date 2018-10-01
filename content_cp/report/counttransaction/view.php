@@ -21,8 +21,9 @@ class view
 
 
 		$result = \lib\app\report::counttransaction();
+
 		\dash\data::chartTable($result);
-		\dash\data::chartResult(json_encode($result, JSON_UNESCAPED_UNICODE));
+
 
 	}
 }
