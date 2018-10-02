@@ -72,7 +72,7 @@ Highcharts.chart('chartdiv',
   series: [
   {
     name: '{%trans "Sum price"%}',
-    type: 'column',
+    type: 'area',
     data: {{ReportMonthlyChart.value | raw}},
     tooltip: {
       valueSuffix: ' {%trans "Toman"%}'

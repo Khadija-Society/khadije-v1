@@ -25,11 +25,11 @@ class month
 		$temp = [];
 		foreach ($result as $key => $value)
 		{
-			$temp[$value['year']. '-'. $value['month']] = $value['sum'];
+			$temp[$value['year']. '-'. $value['month']. '-01'] = $value['sum'];
 		}
 
 		$hi_chart               = [];
-		$categories             = array_keys($result);
+		$categories             = array_keys($temp);
 		$categories             = array_map(function ($_a){return \dash\datetime::fit($_a, 'Y F');}, $categories);
 		$hi_chart['categories'] = json_encode($categories, JSON_UNESCAPED_UNICODE);
 		$value                  = array_values($temp);
