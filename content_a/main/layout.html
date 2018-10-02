@@ -20,7 +20,7 @@
 
 
 
-{%block avatar%}
+{%block avatar2%}
    <a href="{{url.base}}/a/profile" title='{%trans "Edit your profile"%}' class="avatar">
 {%if login.avatar%}
      <img src="{{login.avatar}}" alt='{%trans "Avatar of you"%}'>
@@ -35,3 +35,26 @@
 {%endblock%}
 
 
+{%block avatar%}
+  <figure>
+{%set avatarLink%}{%if dash.avatarLink is empty%}{{url.kingdom}}/a/profile{%else%}{{dash.avatarLink}}{%endif%}{%endset%}
+{%if login%}
+   <a href="{{avatarLink}}" title='{%trans "Edit your profile"%}' class="avatar" data-direct>
+{%else%}
+   <a href="{{url.kingdom}}/enter?referer={{url.pwd}}" title='{%trans "Please login to save anything"%}' class="avatar" data-direct>
+{%endif%}
+{%if login.avatar%}
+     <img src="{{login.avatar}}" alt='{%trans "Avatar of you"%} {{login.displayname}}'>
+{%elseif login%}
+     <img src="{{url.site}}/static/siftal/images/default/avatar.png" alt='{%trans "Default Avatar"%}'>
+{%else%}
+     <img src="{{url.site}}/static/siftal/images/avatar/guest.png" alt='{%trans "Default Avatar"%}'>
+{%endif%}
+   </a>
+{%if login%}
+   <figcaption>{%trans "Hello"%} <b>{{login.displayname}}</b></figcaption>
+{%else%}
+   <figcaption>{%trans "Hello "%} <b>{%trans "dear GUEST!"%}</b></figcaption>
+{%endif%}
+  </figure>
+{%endblock%}
