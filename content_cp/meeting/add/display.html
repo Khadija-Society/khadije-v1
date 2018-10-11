@@ -53,7 +53,7 @@
 	<div class="c12 s12 pRa10">
     <div class="cbox">
       <div class="msg info2 mB0">
-        <div class="fs12 pB5"><b>{%trans "Meeting title"%}</b> {{dataRow.title}} <span class="floatRa badge primary ltr" title='{{dataRow.publishdate | sdate("year")}}'>{{dataRow.publishdate  | tdate(true)}}</span></div>
+        <div class="fs12 pB5"><b>{%trans "Meeting title"%}</b> {{dataRow.title}} <span class="floatRa badge primary ltr" title='{{dataRow.publishdate | dt("human", "year")}}'>{{dataRow.publishdate  | tdate(true)}}</span></div>
         <div class="pB5"><b>{%trans "Meeting Order"%}</b> {{dataRow.subtitle}}</div>
         <div class="fs11">
 {%if dataRow.meta.member_array%}
