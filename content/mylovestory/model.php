@@ -26,7 +26,7 @@ class model
 			{
 				if(!\dash\user::login())
 				{
-					\dash\redirect::to(\dash\url::base(). '/enter?referer='. \dash\url::pwd());
+					\dash\redirect::to(\dash\url::kingdom(). '/enter?referer='. \dash\url::pwd());
 				}
 
 				$meta =

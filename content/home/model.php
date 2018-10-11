@@ -25,7 +25,7 @@ class model
 
 		$meta =
 		[
-			'turn_back'   => \dash\url::base(). '/doners',
+			'turn_back'   => \dash\url::kingdom(). '/doners',
 			'other_field' =>
 			[
 				// 'hazinekard' => $way,

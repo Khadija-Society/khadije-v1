@@ -15,7 +15,7 @@ class view
 			T_('© :year :site. All right reserved.',
 			[
 				'year' => \dash\datetime::fit("now", "Y"),
-				'site' => "<a href='". \dash\url::base(). "' title='". \dash\data::site_desc() ."'>". \dash\data::site_title(). "</a>"
+				'site' => "<a href='". \dash\url::kingdom(). "' title='". \dash\data::site_desc() ."'>". \dash\data::site_title(). "</a>"
 			]
 		));
 
