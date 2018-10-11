@@ -221,9 +221,14 @@
 {%block iAmount%}
 <label for='totalAmount'>{%trans "Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Pay Amount"%} {%trans "Toman"%}*' title='{%trans "Amount of your donation"%} {%trans "Toman"%}' id='totalAmount' required>
-  <span class="addon">{%trans "Toman"%}</span>
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%} {%trans "Rial"%}*' title='{%trans "Amount of your donation"%}' id='totalAmount' required>
+  <span class="addon">{%trans "Rial"%}</span>
 </div>
+
+{%if lang.current == 'fa'%}
+<div class="msg info2 txtB" data-response='amount' data-response-call='wordifyResponse'></div>
+{%endif%}
+
 {%endblock%}
 
 

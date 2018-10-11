@@ -14,7 +14,7 @@ class model
 			'fullname' => \dash\request::post('fullname'),
 			'email'    => \dash\request::post('email'),
 			'mobile'   => \dash\request::post('mobile'),
-			'amount'   => \dash\request::post('amount'),
+			'amount'   => intval(\dash\request::post('amount')) / 10,
 			'doners'   => \dash\request::post('doners') === 'yes' ? 1 : 0,
 		];
 
