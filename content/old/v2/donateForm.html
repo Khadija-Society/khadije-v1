@@ -89,7 +89,7 @@
   <div class="cbox c5 s12">
     <h4>{%trans "List of last success donations"%}</h4>
 {%for key, value in donateArchive%}
-    <p class="msg success2">{{value.date | tdate("Y/m/d H:i") }} <span class="floatRa">{{value.plus | number_format | fitNumber}}</span></p>
+    <p class="msg success2">{{value.date | dt(true) }} <span class="floatRa">{{value.plus | number_format | fitNumber}}</span></p>
 {%endfor%}
   </div>
 </div>

@@ -76,13 +76,13 @@
           </a>
         </td>
         <td class="s0">{%set myGender = value.gender | capitalize%}<a href="{{url.this}}?gender={{value.gender}}">{%trans myGender%}</a></td>
-        <td class="s0"><a href='{{url.this}}?birthday={{value.birthday | date("Y")}}'>{{value.birthday | tdate("Y") | fitNumber(false)}}</a>{{value.birthday | tdate("-m-d") | fitNumber(false)}}</td>
+        <td class="s0"><a href='{{url.this}}?birthday={{value.birthday | date("Y")}}'>{{value.birthday | dt("Y") }}</a>{{value.birthday | dt("-m-d") }}</td>
 
         <td class="s0">{{value.nationalcode | fitNumber(false)}}</td>
         <td>{%set my_place = value.place | capitalize%}<a href="{{url.this}}?place={{value.place}}">{%trans my_place%}</a></td>
         <td class="txtC">{%if value.countpartner%}{{value.countpartner | fitNumber}}{%else%}-{%endif%}</td>
         <td class="txtC">{%set my_status = value.status | capitalize%}<a href="{{url.this}}?status={{value.status}}">{%trans my_status%}</a></td>
-        <td class="s0" title="{{value.datecreated | tdate ("Y/m/d H:i")}}">{{value.datecreated | dt ("human", "year")}}</td>
+        <td class="s0" title="{{value.datecreated | dt}}">{{value.datecreated | dt ("human", "year")}}</td>
       </tr>
       {%endfor%}
     </tbody>

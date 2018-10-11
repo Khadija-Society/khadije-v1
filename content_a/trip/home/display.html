@@ -29,13 +29,13 @@
     </div>
 
 {%if value.datemodified%}
-    <div class='s0' title='{%trans "Last modified"%}'>{{value.datemodified | tdate("Y/m/d H:i")}}</div>
+    <div class='s0' title='{%trans "Last modified"%}'>{{value.datemodified | dt}}</div>
 {%else%}
-    <div class='s0' title='{%trans "Request date"%}'>{{value.datecreated | tdate("Y/m/d H:i")}}</div>
+    <div class='s0' title='{%trans "Request date"%}'>{{value.datecreated | dt}}</div>
 {%endif%}
 
     <div class='s0' title='{%trans "Reserve date"%}'>{{value.startdate | fitNumber}} - {{value.enddate | fitNumber}}</div>
-    <div title='{%trans "Request date"%} {{value.datecreated | tdate("Y/m/d H:i")}}'>
+    <div title='{%trans "Request date"%} {{value.datecreated | dt}}'>
     {%trans myStatus%}
 {%if value.status == 'awaiting' or value.status == 'draft'%}
      <a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"cancel"}' class="badge danger sm mA5">{%trans "Cancel"%}</a>

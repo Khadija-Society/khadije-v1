@@ -141,7 +141,7 @@
         <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} <b>{{value.plus | fitNumber}}</b> {%set pUnit = value.unit%}{%trans pUnit%}</td>
         <td class="s0 max-w200">{{value.niyat}}</td>
         <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}">{{value.hazinekard}}</a></td>
-        <td class="s0" title='{{value.dateverify | date("Y-m-d H:i:s") | tdate("Y-m-d H:i:s")}}'>{{value.dateverify | date("Y-m-d H:i:s")  | dt("human", "year") }}</td>
+        <td class="s0" title='{{value.dateverify | date("Y-m-d H:i:s") | dt}}'>{{value.dateverify | date("Y-m-d H:i:s")  | dt("human", "year") }}</td>
       </tr>
       {%endfor%}
     </tbody>

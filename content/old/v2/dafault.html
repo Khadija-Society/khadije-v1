@@ -35,7 +35,7 @@
 
 {%if datarow.datemodified%}
     <div class='msg f'>
-      <div class="c">{{datarow.publishdate | tdate('d F Y - H:i')}}</div>
+      <div class="c">{{datarow.publishdate | dt(true)}}</div>
       <div class="cauto os">ویرایش شده در <time datetime="{{datarow.datemodified}}">{{datarow.datemodified | dt('human')}}</time></div>
     </div>
 {%endif%}

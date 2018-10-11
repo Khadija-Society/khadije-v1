@@ -33,8 +33,8 @@
 							<tr class="txtC {%if value.schedule%} positive {%endif%}">
 								<td>{%if value.schedule%}<i class="sf-check fc-green"></i>{%endif%}</td>
 								<td>{{value.title}}</td>
-								<td>{{value.date | tdate("Y/m/d")}}</td>
-								<td>{{value.time | tdate("H:i:s")}}</td>
+								<td>{{value.date | dt(false, 'date')}}</td>
+								<td>{{value.time | dt(false, 'time')}}</td>
 								<td>{{value.desc}}</td>
 								<td><a href="{{url.pwd}}" class="badge danger" data-ajaxify data-method='post' data-data='{"type" : "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</a></td>
 
@@ -69,7 +69,7 @@
 	<div class="c2 mLa5">
 		<label for="date">{%trans "Schedule"%}</label>
 		<div class="input">
-		  <input class="datepicker" type="text" name="date" id="date" required placeholder='{{"now" | tdate | fitNumber}}' value="{{userdetail.date}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
+		  <input class="datepicker" type="text" name="date" id="date" required placeholder='{{"now" | dt}}' value="{{userdetail.date}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
 		</div>
 	</div>
 

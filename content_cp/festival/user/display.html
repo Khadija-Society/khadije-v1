@@ -70,7 +70,7 @@
         <td><a href="{{url.this}}/user?id={{requestGET.id}}&course={{value.festivalcourse_id}}">{{value.title}}</a></td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
         <td class="collapsing">{%if value.file%}<i class="sf-check"></i>{%else%}<i class="sf-times"></i>{%endif%}</td>
-        <td class="collapsing">{{value.datecreated | tdate("Y-m-d H:i:s")}}</td>
+        <td class="collapsing">{{value.datecreated | dt}}</td>
         <td class="collapsing"><a href="{{url.this}}/usercourse?id={{requestGET.id}}&festivaluser={{value.id}}" class="badge primary">{%trans "Show detail"%}</a></td>
       </tr>
       {%endfor%}

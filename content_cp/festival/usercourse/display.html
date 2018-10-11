@@ -11,7 +11,7 @@
 			<div class="msg txtC primary">{%trans "Festival course"%} <b>{{dataRowCourse.title}}</b></div>
 			<div class="f">
 
-			<div class="c msg">{%trans "Date created"%} <span class="ltr">{{dataRow.datecreated | tdate("Y/m/d H:i:s")}}</span></div>
+			<div class="c msg">{%trans "Date created"%} <span class="ltr">{{dataRow.datecreated | dt}}</span></div>
 			<div class="c mLa5 msg">{%trans "Status"%} {%set myStatus = dataRow.status %} <b>{%trans myStatus%}</b></div>
 			</div>
 			<div class="msg">{%trans "Files"%}

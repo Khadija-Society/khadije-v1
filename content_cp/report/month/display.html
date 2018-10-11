@@ -33,7 +33,7 @@
 		<tbody>
 			{%for key, value in ReportMonthlyTable%}
 				<tr>
-					<td>{{(value.year ~ '-' ~ value.month) | tdate("Y F")}}</td>
+					<td>{{(value.year ~ '-' ~ value.month) | dt("Y F")}}</td>
 					<td>{{value.sum | fitNumber}}</td>
 				</tr>
 			{%endfor%}

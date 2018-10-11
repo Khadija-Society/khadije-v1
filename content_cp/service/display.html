@@ -80,8 +80,8 @@
         <td><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
         <td class="s0">{{value.expertvalue}}</td>
         <td class="s0">{{value.expertyear | fitNumber(false)}}</td>
-        <td class="s0">{{value.startdate | tdate | fitNumber(false)}}</td>
-        <td class="s0">{{value.enddate | tdate | fitNumber(false)}}</td>
+        <td class="s0">{{value.startdate | dt}}</td>
+        <td class="s0">{{value.enddate | dt}}</td>
         <td class="s0">{{value.job}}</td>
         <td class="s0">{{value.desc}}</td>
         <td class="s0 txtC">{%if value.arabiclang%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-times fc-mute"></span>{%endif%}</td>

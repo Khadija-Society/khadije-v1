@@ -13,7 +13,7 @@
 
         <p>
 {%if travelDetail.birthday%}
-          <span class="badge">{%trans "Birthday" %}{{travelDetail.birthday | tdate()}}</span>
+          <span class="badge">{%trans "Birthday" %}{{travelDetail.birthday | dt}}</span>
 {%endif%}
           <span class="badge success">{%set GenderS = travelDetail.gender | capitalize%} {%trans GenderS%}</span>
           <span class="badge warn">{%set MaritalS = travelDetail.married | capitalize%}{%trans MaritalS%}</span>
@@ -35,9 +35,9 @@
 
     <div class="c3 s12">
       <h2 class="msg warn2 pLRn txtC fs14">{%set StatusS = travelDetail.status | capitalize%}{%trans StatusS%}</h2>
-      <p class="badge block">{%trans "Date created" %} {{travelDetail.datecreated | tdate("Y/m/d H:i")}}</p>
+      <p class="badge block">{%trans "Date created" %} {{travelDetail.datecreated | dt}}</p>
 {%if travelDetail.datemodified%}
-      <p class="badge block primary">{%trans "Last modified" %} {{travelDetail.datemodified | tdate("Y/m/d H:i")}}</p>
+      <p class="badge block primary">{%trans "Last modified" %} {{travelDetail.datemodified | dt}}</p>
 {%endif%}
 {%if travelDetail.startdate or true%}
       <p class="badge block info">{%trans "Reserve date" %} {{travelDetail.startdate}} - {{travelDetail.enddate}}</p>
