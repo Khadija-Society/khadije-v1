@@ -221,7 +221,7 @@
 {%block iAmount%}
 <label for='totalAmount'>{%trans "Pay Amount"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Pay Amount"%} {%trans "Rial"%}*' title='{%trans "Amount of your donation"%}' id='totalAmount' required>
+ <input type="number" name="amount" placeholder='{%trans "Pay Amount"%} {%trans "Rial"%}*' title='{%trans "Amount of your donation"%}' id='totalAmount' required data-response-realtime data-rial max="99999999999" min="1000">
   <span class="addon">{%trans "Rial"%}</span>
 </div>
 
