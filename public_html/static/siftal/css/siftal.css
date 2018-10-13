@@ -2485,7 +2485,7 @@ progress.xl, meter.xl {
 
 .cbox {
   font-size: 1.4em;
-  margin-bottom: 1.5em;
+  margin: 0 auto 1.5em;
   padding: 1em 1.5em;
   display: block;
   border-radius: 0.25rem;
@@ -2866,7 +2866,8 @@ img.avatar {
   height: 2em;
   display: inline-block;
   border-radius: 50%;
-  vertical-align: middle; }
+  vertical-align: middle;
+  overflow: hidden; }
 
 .ltr .vcard .avatar {
   margin-right: 0.3em; }
