@@ -31,10 +31,16 @@ class salavats
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function insert()
+	public static function insert($_args)
 	{
-		\dash\db\config::public_insert('salavats', ...func_get_args());
-		return \dash\db::insert_id();
+		$set = \dash\db\config::make_set($_args, ['type' => 'update']);
+		if($set)
+		{
+			$query = " INSERT INTO `salavats` SET $set ";
+			\dash\db::query($query);
+			return \dash\db::insert_id();
+		}
+
 	}
 
 
