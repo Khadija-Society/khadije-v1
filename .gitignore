@@ -6,6 +6,7 @@ desktop.ini
 *.me.*
 /public_html/files
 /content/cronjob/*.txt
+*engine/cronjob/crontab.txt
 /public_html/sitemap
 /public_html/sitemap.xml
 
@@ -16,7 +17,7 @@ desktop.ini
 /includes/smstemplate
 /includes/smstemplate/list.json
 /dash
-*includes/smstemplate/list.json
+*smstemplate/list.json
 
 *sftp-config.json
 *.me.php
