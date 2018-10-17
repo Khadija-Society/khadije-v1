@@ -16,6 +16,7 @@ desktop.ini
 /includes/smstemplate
 /includes/smstemplate/list.json
 /dash
+*includes/smstemplate/list.json
 
 *sftp-config.json
 *.me.php
