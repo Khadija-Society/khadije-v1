@@ -11,6 +11,7 @@
             {{block ('iThumb') }}
             {{block ('iTitle') }}
             {{block ('iDescription') }}
+            {{block ('iTermsAndConditions') }}
             {%if url.module == 'donate'%}
               {{block ('iSort') }}
               {{block ('iLinkurl') }}
@@ -52,7 +53,10 @@
             {%for key, value in need%}
               <tr {%if value.status == 'enable'%}{%else%} class="negative" {%endif%}>
                 <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.site}}/static/siftal/images/default/image.png{%endif%}"></td>
-                <td>{{value.title}}</td>
+                <td>
+                  {%if value.term%}<i class="sf-check fc-green" title='{%trans "This method have term and conditions"%}'></i>{%endif%}
+                  {{value.title}}
+                </td>
                 {%if url.module == 'donate'%}
                  <td>{{value.sort | fitNumber(false)}}</td>
                  <td class="collapsing fs08 txtC">{%if value.linkurl%}<a href="{{url.kingdom}}/donate?nazr={{value.linkurl}}"><i class="sf-link"></i> {{value.linkurl}}</a>{%else%}-{%endif%}</td>
@@ -134,6 +138,14 @@
 {%block iDescription%}
 <label for='fdesc'>{%trans "Description"%}</label>
 <textarea class="txt mB5" name="desc" rows="3" placeholder='{%trans "Description"%}' id='fdesc'>{{productDetail.desc}}</textarea>
+
+{%endblock%}
+
+
+
+{%block iTermsAndConditions%}
+<label for='ftemrs'>{%trans "Terms and conditions"%}</label>
+<textarea class="txt mB5" name="term" data-editor placeholder='{%trans "Terms and conditions"%}' id='ftemrs'>{{productDetail.term}}</textarea>
 
 {%endblock%}
 

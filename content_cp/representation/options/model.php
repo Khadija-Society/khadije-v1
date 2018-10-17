@@ -39,6 +39,7 @@ class model
 		$post['count']  = null;
 		$post['amount'] = null;
 		$post['desc']   = \dash\request::post('desc');
+		$post['term']   = \dash\request::post('term') ? $_POST['term'] : null;
 		$post['status'] = \dash\request::post('status') ? 'enable' : 'disable' ;
 		$post['type']   = 'representation';
 

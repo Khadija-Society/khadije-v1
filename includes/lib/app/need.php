@@ -161,8 +161,11 @@ class need
 			$lang = \dash\language::current();
 		}
 
+		$term = \dash\app::request('term');
+
 		$args            = [];
 		$args['sort']    = $sort;
+		$args['term']    = $term;
 		$args['lang']    = $lang;
 		$args['title']   = $title;
 		$args['request'] = $request;
@@ -239,7 +242,7 @@ class need
 
 		$_option = array_merge($default_option, $_option);
 
-		\dash\app::variable($_args);
+		\dash\app::variable($_args, ['raw_field' => ['term']]);
 
 		if(!\dash\user::id())
 		{
@@ -295,7 +298,7 @@ class need
 
 		$_option = array_merge($default_option, $_option);
 
-		\dash\app::variable($_args);
+		\dash\app::variable($_args, ['raw_field' => ['term']]);
 
 		if(!\dash\user::id())
 		{
@@ -324,7 +327,8 @@ class need
 			return false;
 		}
 
-		if(!\dash\app::isset_request('fileurl'))         unset($args['fileurl']);
+		if(!\dash\app::isset_request('fileurl'))    unset($args['fileurl']);
+		if(!\dash\app::isset_request('term'))       unset($args['term']);
 
 
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))

@@ -38,6 +38,7 @@ class model
 		$post['count']  = \dash\request::post('count');
 		$post['amount'] = \dash\request::post('amount');
 		$post['desc']   = \dash\request::post('desc');
+		$post['term']   = \dash\request::post('term') ? $_POST['term'] : null;
 		$post['status'] = \dash\request::post('status') ? 'enable' : 'disable' ;
 		$post['type']   = 'expertise';
 
