@@ -134,12 +134,13 @@ class twigTransTerms
 	echo T_("Save changes");                                                          // Line 71
 
 	//---------------------------------------------------------content_cp/options.html
+	echo T_("All representation from this place is done");                            // Line 25
 	echo T_("Picture");                                                               // Line 37
 	echo T_("Title");                                                                 // Line 96
-	echo T_("Sort");                                                                  // Line 187
+	echo T_("Sort");                                                                  // Line 190
 	echo T_("Slug");                                                                  // Line 21
 	echo T_("Description");                                                           // Line 64
-	echo T_("This method have term and conditions");                                  // Line 57
+	echo T_("This method have term and conditions");                                  // Line 60
 	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 147
 	echo T_("Add");                                                                   // Line 99
 	echo T_("Language");                                                              // Line 162
@@ -152,7 +153,7 @@ class twigTransTerms
 	echo T_("Deactive");                                                              // Line 101
 	echo T_("Amount");                                                                // Line 134
 	echo T_("Enter a valid amount");                                                  // Line 199
-	echo T_("Enter a valid sort");                                                    // Line 187
+	echo T_("Enter a valid sort");                                                    // Line 190
 
 	//----------------------------------------------------content_cp/book/display.html
 	echo T_("Total Sale");                                                            // Line 12

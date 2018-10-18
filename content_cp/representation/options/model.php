@@ -31,6 +31,38 @@ class model
 
 	public static function post()
 	{
+		if(\dash\request::post('representation') === 'alldone')
+		{
+			\dash\permission::access('cpRepresentationSetAllDone');
+			$id      = \dash\request::get('edit');
+			$post_id = \dash\request::post('id');
+
+			if($id !== $post_id)
+			{
+				\dash\notif::error(T_("Dont!"));
+				return false;
+			}
+
+			$update           = [];
+			$update['status'] = 'accept';
+
+			$where = ['type' => 'representation', 'status' => 'awaiting'];
+			$count = \lib\db\services::get_count($where);
+			if($count)
+			{
+				\lib\db\services::update_where($update, $where);
+				\dash\notif::info(T_("Allahouma sali ala mohamed wa ali muhammad"));
+				\dash\notif::ok(T_(":count request status changed", ['count' => \dash\utility\human::fitNumber($count)]));
+				return true;
+			}
+			else
+			{
+				\dash\notif::warn(T_("No awaiting request found!"));
+				return false;
+			}
+
+		}
+
 		\dash\permission::access('cpRepresentationOption');
 
 		$post           = [];

@@ -31,6 +31,18 @@ class services
 	}
 
 
+	public static function update_where()
+	{
+		return \dash\db\config::public_update_where('services', ...func_get_args());
+	}
+
+	public static function get_count()
+	{
+		return \dash\db\config::public_get_count('services', ...func_get_args());
+	}
+
+
+
 	/**
 	 * get productprice detail
 	 *

@@ -21,6 +21,9 @@
 
             {%if editMode%}
             {{block ('iedit')}}
+              {%if productDetail.type == 'representation' %}
+                <button class="btn danger xs floatL mT25" data-ajaxify data-data='{"representation": "alldone", "id" : "{{productDetail.id}}"}' data-method='post' href='{{url.pwd}}'>{%trans "All representation from this place is done"%}</button>
+              {%endif%}
             {%else%}
             {{block ('iadd')}}
             {%endif%}
