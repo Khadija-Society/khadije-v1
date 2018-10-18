@@ -88,7 +88,7 @@
         <td class="s0 txtC">{%if value.arabiclang%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-times fc-mute"></span>{%endif%}</td>
         <td class="s0 collapsing"><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status | capitalize %}{%trans myStatus%}</a></td>
         <td><a href="{{url.this}}?expert={{value.expert}}">{{value.expert}}</a></td>
-        <td><a href="{{url.this}}/view?id={{value.id}}" class="badge primary">{%trans "View"%}</a></td>
+        <td class="collapsing"><a href="{{url.this}}/view?id={{value.id}}" class="badge primary">{%trans "View"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
