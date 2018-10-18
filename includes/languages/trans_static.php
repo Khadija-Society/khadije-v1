@@ -148,6 +148,10 @@ class TransStatic
 	echo T_("cpMeetingManage");
 	echo T_("sort");
 	echo T_("Sort");
+
+	echo T_("cpConsultingChangeStatus");
+	echo T_("cpServiceChangeStatus");
+	echo T_("cpHealthChangeStatus");
  }
 }
 ?>

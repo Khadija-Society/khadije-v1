@@ -7,7 +7,7 @@ class model
 
 	public static function post()
 	{
-		\dash\permission::access('cpServiceChangeStatus');
+		\dash\permission::access('cpConsultingChangeStatus');
 
 		$status = \dash\request::post('status');
 

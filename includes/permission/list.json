@@ -169,6 +169,21 @@
     "cat": "Hadith",
     "require": []
   },
+  "cpConsultingChangeStatus": {
+    "title": "cpConsultingChangeStatus",
+    "cat": "Consulting",
+    "require": []
+  },
+  "cpServiceChangeStatus": {
+    "title": "cpServiceChangeStatus",
+    "cat": "Service",
+    "require": []
+  },
+  "cpHealthChangeStatus": {
+    "title": "cpHealthChangeStatus",
+    "cat": "Health",
+    "require": []
+  },
   "cpChartCountTransaction": {
     "title": "cpChartCountTransaction",
     "cat": "Report",

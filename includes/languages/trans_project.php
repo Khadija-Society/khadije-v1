@@ -120,6 +120,18 @@ class twigTransTerms
 	echo T_("arabic");                                                                // Line 65
 	echo T_("status");                                                                // Line 59
 	echo T_("Expert");                                                                // Line 60
+	echo T_("Action");                                                                // Line 61
+	echo T_("View");                                                                  // Line 77
+
+	//--------------------------------------------content_cp/service/view/display.html
+	echo T_("Status of service");                                                     // Line 27
+	echo T_("inapropirate request and spam detected");                                // Line 38
+	echo T_("Accept Service");                                                        // Line 43
+	echo T_("Draft");                                                                 // Line 52
+	echo T_("try to fill request");                                                   // Line 52
+	echo T_("Cancel");                                                                // Line 26
+	echo T_("cancel from user");                                                      // Line 57
+	echo T_("Save changes");                                                          // Line 71
 
 	//---------------------------------------------------------content_cp/options.html
 	echo T_("Picture");                                                               // Line 37
@@ -247,7 +259,6 @@ class twigTransTerms
 	echo T_("Write message of festival");                                             // Line 233
 	echo T_("Save");                                                                  // Line 103
 	echo T_("Enable");                                                                // Line 146
-	echo T_("Draft");                                                                 // Line 52
 	echo T_("Disable");                                                               // Line 152
 	echo T_("Expire");                                                                // Line 268
 	echo T_("Deleted");                                                               // Line 273
@@ -421,16 +432,12 @@ class twigTransTerms
 	echo T_("No partner set");                                                        // Line 157
 	echo T_("Status of trip");                                                        // Line 200
 	echo T_("send new complete request");                                             // Line 206
-	echo T_("inapropirate request and spam detected");                                // Line 38
 	echo T_("Review");                                                                // Line 216
 	echo T_("after check and before accept");                                         // Line 216
 	echo T_("queue");                                                                 // Line 221
 	echo T_("In queue of send");                                                      // Line 221
 	echo T_("Gone");                                                                  // Line 226
 	echo T_("successfully go to trip");                                               // Line 226
-	echo T_("try to fill request");                                                   // Line 52
-	echo T_("Cancel");                                                                // Line 26
-	echo T_("cancel from user");                                                      // Line 57
 	echo T_("Reject");                                                                // Line 35
 	echo T_("does not accepted for some reason");                                     // Line 245
 	echo T_("Not Answer");                                                            // Line 250
@@ -463,7 +470,6 @@ class twigTransTerms
 	echo T_("Job");                                                                   // Line 72
 	echo T_("Add as new partner");                                                    // Line 346
 	echo T_("Edit partner");                                                          // Line 527
-	echo T_("Save changes");                                                          // Line 71
 
 	//---------------------------------------------------------content_cp/sidenav.html
 	echo T_("Delneveshteha");                                                         // Line 174
@@ -526,13 +532,15 @@ class twigTransTerms
 	//----------------------------------------------content_cp/consulting/display.html
 	echo T_("Search in consulting");                                                  // Line 44
 
+	//-----------------------------------------content_cp/consulting/view/display.html
+	echo T_("Accept");                                                                // Line 32
+
 	//----------------------------------------------------content_cp/home/display.html
 	echo T_("Festival");                                                              // Line 24
 	echo T_("Meeting");                                                               // Line 49
 
 	//------------------------------------------content_cp/representation/display.html
 	echo T_("Search in representation");                                              // Line 44
-	echo T_("Action");                                                                // Line 77
 
 	//-------------------------------------content_cp/representation/view/display.html
 	echo T_("Status of representation");                                              // Line 27
@@ -544,6 +552,8 @@ class twigTransTerms
 
 	//--------------------------------------------------content_cp/health/display.html
 	echo T_("Search in health");                                                      // Line 44
+
+	//---------------------------------------------content_cp/health/view/display.html
 
 	//-------------------------------------content_cp/nationalcode/import/display.html
 
@@ -806,7 +816,6 @@ class twigTransTerms
 	echo T_("End Date");                                                              // Line 79
 
 	//-------------------------------------------content_a/service/verify/display.html
-	echo T_("Accept");                                                                // Line 32
 
 	//------------------------------------------------------content_a/main/layout.html
 	echo T_("Consulting Service");                                                    // Line 52
