@@ -11,6 +11,9 @@
             {{block ('iThumb') }}
             {{block ('iTitle') }}
             {{block ('iDescription') }}
+              {%if productDetail.type == 'health' %}
+                {{block ('iEveryCount') }}
+              {%endif%}
             {{block ('iTermsAndConditions') }}
             {%if url.module == 'donate'%}
               {{block ('iSort') }}
@@ -59,12 +62,18 @@
                 <td>
                   {%if value.term%}<i class="sf-check fc-green" title='{%trans "This method have term and conditions"%}'></i>{%endif%}
                   {{value.title}}
+
                 </td>
                 {%if url.module == 'donate'%}
                  <td>{{value.sort | fitNumber(false)}}</td>
                  <td class="collapsing fs08 txtC">{%if value.linkurl%}<a href="{{url.kingdom}}/donate?nazr={{value.linkurl}}"><i class="sf-link"></i> {{value.linkurl}}</a>{%else%}-{%endif%}</td>
                 {%endif%}
-                <td>{{value.desc}}</td>
+                <td>{{value.desc}}
+                {%if value.every or value.count%}
+                  <br>
+                    {%if value.every%}<span class="badge primary">{%trans "Every"%} {{value.every | fitNumber}} {%trans "Day"%}</span>{%endif%}
+                    {%if value.count%}<span class="badge success">{{value.count | fitNumber}} {%trans "Request"%}</span>{%endif%}
+                  {%endif%}</td>
                 <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
                 <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn secondary xs">{%trans "Edit"%}</button></a></td>
               </tr>
@@ -171,6 +180,29 @@
 
 
 
+
+{%block iEveryCount%}
+<h5 class="mT10">{%trans "Set max request count in period dayes"%}</h5>
+<div class="f mB20">
+
+  <div class="c pRa5">
+    <!-- <label for='ievery'>{%trans "Every day"%}</label> -->
+    <div class="input">
+      <label for='ievery' class="addon">{%trans "Every"%}</label>
+     <input type="number" name="every" placeholder='{%trans "?"%}' value="{{productDetail.every}}"   id='ievery' min="1" max="9999">
+      <label for='ievery' class="addon">{%trans "Day"%}</label>
+    </div>
+  </div>
+  <div class="c">
+    <!-- <label for='icount'>{%trans "Count"%}</label> -->
+    <div class="input">
+     <input type="number" name="count"  value="{{productDetail.count}}"  id='icount' min="1" max="9999999">
+      <label for='icount' class="addon">{%trans "Count"%}</label>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
 
 
 

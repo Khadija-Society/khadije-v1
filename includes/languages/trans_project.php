@@ -134,13 +134,16 @@ class twigTransTerms
 	echo T_("Save changes");                                                          // Line 71
 
 	//---------------------------------------------------------content_cp/options.html
-	echo T_("All representation from this place is done");                            // Line 25
+	echo T_("All representation from this place is done");                            // Line 28
 	echo T_("Picture");                                                               // Line 37
 	echo T_("Title");                                                                 // Line 96
-	echo T_("Sort");                                                                  // Line 190
+	echo T_("Sort");                                                                  // Line 222
 	echo T_("Slug");                                                                  // Line 21
 	echo T_("Description");                                                           // Line 64
-	echo T_("This method have term and conditions");                                  // Line 60
+	echo T_("This method have term and conditions");                                  // Line 63
+	echo T_("Every");                                                                 // Line 191
+	echo T_("Day");                                                                   // Line 193
+	echo T_("Request");                                                               // Line 75
 	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 147
 	echo T_("Add");                                                                   // Line 99
 	echo T_("Language");                                                              // Line 162
@@ -151,9 +154,12 @@ class twigTransTerms
 	echo T_("Enter a valid count");                                                   // Line 112
 	echo T_("Active");                                                                // Line 101
 	echo T_("Deactive");                                                              // Line 101
+	echo T_("Set max request count in period dayes");                                 // Line 185
+	echo T_("Every day");                                                             // Line 189
+	echo T_("?");                                                                     // Line 192
 	echo T_("Amount");                                                                // Line 134
 	echo T_("Enter a valid amount");                                                  // Line 199
-	echo T_("Enter a valid sort");                                                    // Line 190
+	echo T_("Enter a valid sort");                                                    // Line 222
 
 	//----------------------------------------------------content_cp/book/display.html
 	echo T_("Total Sale");                                                            // Line 12

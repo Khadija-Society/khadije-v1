@@ -156,6 +156,24 @@ class need
 			return false;
 		}
 
+
+		$count = \dash\app::request('count');
+
+		if($count && !is_numeric($count))
+		{
+			\dash\notif::error(T_("Please set a valid count as a number"), 'count');
+			return false;
+		}
+
+
+		$every = \dash\app::request('every');
+
+		if($every && !is_numeric($every))
+		{
+			\dash\notif::error(T_("Please set a valid every as a number"), 'every');
+			return false;
+		}
+
 		if(!$lang)
 		{
 			$lang = \dash\language::current();
@@ -164,6 +182,8 @@ class need
 		$term = \dash\app::request('term');
 
 		$args            = [];
+		$args['count']    = $count;
+		$args['every']    = $every;
 		$args['sort']    = $sort;
 		$args['term']    = $term;
 		$args['lang']    = $lang;
