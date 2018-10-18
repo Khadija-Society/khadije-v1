@@ -2,7 +2,7 @@
 namespace content\contact;
 
 
-class model extends \content_support\ticket\contact_ticket\model
+class controller extends \content_support\ticket\contact_ticket\controller
 {
 
 }
