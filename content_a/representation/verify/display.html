@@ -1,0 +1,51 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+<div class="f justify-center">
+ <div class="cbox c10 s12">
+
+  <div class="f">
+    <div class="c3 pRa10">
+
+      <div class="c4 s12 pA10">
+        <a class="vcard shadow ">
+         <img src="{{currentNeed.fileurl}}" alt='{{currentNeed.title}}'>
+         <div class="content">
+          <div class="header">{{currentNeed.title}}</div>
+         </div>
+         <div class="footer">{{currentNeed.desc}}</div>
+        </a>
+      </div>
+
+    </div>
+    <div class="c">
+      <h3>{%trans "Terms and conditions"%}</h3>
+      {{currentNeed.term | raw}}
+    </div>
+  </div>
+
+  <div class="f justify-center">
+    <div class="c5">
+      <div class="f">
+        <div class="c pRa10">
+          <a class="btn outline success block mT20" data-ajaxify data-method="post" data-data='{"need": "{{currentNeed.id}}"}'>{%trans "Accept"%}</a>
+        </div>
+        <div class="c">
+          <a class="btn outline  danger block mT20" href="{{url.this}}/request">{%trans "Reject"%}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ </div>
+</div>
+{%endblock%}
+
+
+
+
+{%block iNext%}
+{%endblock%}
+
+

@@ -24,7 +24,11 @@
  <div class="f justify-center txtC">
 {% for key, value in serviceNeedList %}
   <div class="c4 s12 pA10">
-    <a class="vcard shadow" href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"need": "{{value.id}}"}'>
+    {%if value.term%}
+      <a class="vcard shadow" href="{{url.this}}/verify?id={{value.id}}" >
+    {%else%}
+      <a class="vcard shadow" href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"need": "{{value.id}}"}'>
+    {%endif%}
      <img src="{{value.fileurl}}" alt='{{value.title}}'>
      <div class="content">
       <div class="header">{{value.title}}</div>
