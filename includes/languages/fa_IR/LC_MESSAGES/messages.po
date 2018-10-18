@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-10-18 14:34+0330\n"
-"PO-Revision-Date: 2018-10-18 14:35+0330\n"
+"POT-Creation-Date: 2018-10-18 15:12+0330\n"
+"PO-Revision-Date: 2018-10-18 15:13+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -796,7 +796,7 @@ msgstr "جستجو"
 #: khadije/content_cp/service/view/controller.php:15
 #: khadije/content_cp/trip/view/controller.php:17
 #: khadije/includes/lib/app/need.php:331 khadije/includes/lib/app/need.php:338
-#: khadije/includes/lib/app/service.php:366 khadije/includes/lib/app/service.php:373
+#: khadije/includes/lib/app/service.php:396 khadije/includes/lib/app/service.php:403
 msgid "Id not found"
 msgstr "کد یافت نشد"
 
@@ -862,7 +862,7 @@ msgstr "بازگشت به لیست کاربران"
 #: khadije/includes/lib/app/myuser.php:388 khadije/includes/lib/app/myuser.php:492
 #: khadije/includes/lib/app/myuser.php:572 khadije/includes/lib/app/need.php:269
 #: khadije/includes/lib/app/need.php:325 khadije/includes/lib/app/service.php:271
-#: khadije/includes/lib/app/service.php:360 khadije/includes/lib/app/travel.php:624
+#: khadije/includes/lib/app/service.php:390 khadije/includes/lib/app/travel.php:624
 msgid "User not found"
 msgstr "کاربر یافت نشد"
 
@@ -923,8 +923,8 @@ msgid "Alert!"
 msgstr "هشدار!"
 
 #: dash/addons/content_enter/alert/view.php:16
-#: dash/addons/content_enter/verify/model.php:36 dash/lib/utility/enter.php:857
-#: dash/lib/utility/enter.php:868 dash/lib/utility/enter.php:875
+#: dash/addons/content_enter/verify/model.php:36 dash/lib/utility/enter.php:865
+#: dash/lib/utility/enter.php:876 dash/lib/utility/enter.php:883
 msgid "What are you doing?"
 msgstr "اینجا چیکار می‌کنی عزیز جان!؟"
 
@@ -1362,7 +1362,7 @@ msgid "You must set less than 50 character in username"
 msgstr "شناسه‌ی کاربری باید کمتر از ۵۵ کاراکتر باشد"
 
 #: dash/addons/content_enter/username/set/model.php:41
-#: dash/lib/utility/enter.php:1042
+#: dash/lib/utility/enter.php:1050
 msgid "Your username was set"
 msgstr "نام کاربری شما ثبت شد"
 
@@ -10754,51 +10754,51 @@ msgstr "عملیات کلادفلر از طریق ای‌پی‌آی با موف
 msgid "The api Cloudflare opration faild"
 msgstr "عملیات کلادفلر از طریق ای‌پی‌آی با موفقیت ناموفق بود"
 
-#: dash/lib/utility/enter.php:795
+#: dash/lib/utility/enter.php:803
 msgid "Please fill the verification code"
 msgstr "لطفا کد اعتبارسنجی را وارد کنید"
 
-#: dash/lib/utility/enter.php:804
+#: dash/lib/utility/enter.php:812
 msgid "What happend? the code is number. you try to send string!?"
 msgstr "چی شده؟ کد باید عددی باشد. شما چطوری دارین متن وارد میکنید!؟"
 
-#: dash/lib/utility/enter.php:825
+#: dash/lib/utility/enter.php:833
 msgid "System error, try again"
 msgstr "خطای سیستم، دوباره تلاش کنید"
 
-#: dash/lib/utility/enter.php:849
+#: dash/lib/utility/enter.php:857
 msgid "Your sms not deliver to us!"
 msgstr "پیامک شما بدست ما نرسیده است!"
 
-#: dash/lib/utility/enter.php:893
+#: dash/lib/utility/enter.php:901
 msgid "Invalid code, try again"
 msgstr "کد اشتباه، دوباره تلاش کنید"
 
-#: dash/lib/utility/enter.php:954
+#: dash/lib/utility/enter.php:962
 msgid "Your username was removed"
 msgstr "نام کاربری شما حذف شد"
 
-#: dash/lib/utility/enter.php:1047
+#: dash/lib/utility/enter.php:1055
 msgid "Your username was change"
 msgstr "نام کاربری شما تغییر یافت"
 
-#: dash/lib/utility/enter.php:1110
+#: dash/lib/utility/enter.php:1118
 msgid "Your two-step verification is now active for your account"
 msgstr "ورود دو مرحله ای هم اکنون برای حساب کاربری شما فعال است"
 
-#: dash/lib/utility/enter.php:1136
+#: dash/lib/utility/enter.php:1144
 msgid "Your two-step verification is now deactive for your account"
 msgstr "ورود دو مرحله ای هم اکنون برای حساب کاربری شما غیر فعال است"
 
-#: dash/lib/utility/enter.php:1157
+#: dash/lib/utility/enter.php:1165
 msgid "Your password was changed"
 msgstr "کلمه عبور شما تغییر یافت"
 
-#: dash/lib/utility/enter.php:1322
+#: dash/lib/utility/enter.php:1330
 msgid "You must set 6 character and large in password"
 msgstr "گذرواژه باید حداقل ۶ کاراکتر باشد"
 
-#: dash/lib/utility/enter.php:1332
+#: dash/lib/utility/enter.php:1340
 msgid "You must set less than 99 character in password"
 msgstr "گذرواژه باید کمتر از ۹۹ کاراکتر باشد"
 
@@ -15623,7 +15623,15 @@ msgstr "این درخواست خادمی غیرقابل ارائه است"
 msgid "You register to this service before"
 msgstr "شما پیش از این برای این تخصص فرم پرکرده اید"
 
-#: khadije/includes/lib/app/service.php:329
+#: khadije/includes/lib/app/service.php:346
+msgid "Maximum reserve list of this item is full."
+msgstr "ظرفیت درخوا"
+
+#: khadije/includes/lib/app/service.php:346
+msgid "You can not signup this item at this time"
+msgstr "شما قادر به ثبت‌نام این مورد در حال حاضر نیستید"
+
+#: khadije/includes/lib/app/service.php:359
 msgid "No way to insert service"
 msgstr "روشی برای افزودن درخواست خادمی نیست"
 
