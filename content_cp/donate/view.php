@@ -84,7 +84,7 @@ class view
 
 		if($export)
 		{
-			\dash\utility\export::csv(['name' => 'export_trip', 'data' => \dash\data::dataTable()]);
+			\dash\utility\export::csv(['name' => 'export_donate', 'data' => \dash\data::dataTable()]);
 		}
 
 		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
