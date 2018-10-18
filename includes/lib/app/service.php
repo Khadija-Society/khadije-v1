@@ -320,6 +320,36 @@ class service
 			$args['status']  = 'draft';
 		}
 
+		if(isset($need_detail['count']) && $need_detail['count'] && is_numeric($need_detail['count']))
+		{
+			$count = intval($need_detail['count']);
+			$every = null;
+			if(isset($need_detail['every']) && $need_detail['every'] && is_numeric($need_detail['every']))
+			{
+				$every = intval($need_detail['every']);
+			}
+
+			$check_count = [];
+			$check_count['expert'] = $args['expert'];
+			$check_count['status'] = 'awaiting';
+
+			if($every)
+			{
+				$check_start_date = date("Y-m-d", strtotime("-$every days"));
+				$check_count['1.1'] = [' = 1.1', " AND IF(datemodified is null, datecreated > '$check_start_date', datemodified > '$check_start_date') "];
+			}
+
+			$check_count = \lib\db\services::get_count($check_count);
+
+			if(intval($check_count) >= $count)
+			{
+				\dash\notif::error(T_("Maximum reserve list of this item is full."). ' '. T_("You can not signup this item at this time"));
+				return false;
+			}
+
+		}
+
+
 		$return = [];
 
 		$service_id = \lib\db\services::insert($args);
