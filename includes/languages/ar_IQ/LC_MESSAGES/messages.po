@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Arabic\n"
 "POT-Creation-Date: 2018-10-19 21:27+0330\n"
-"PO-Revision-Date: 2018-10-19 21:39+0330\n"
+"PO-Revision-Date: 2018-10-19 21:40+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: ar_IQ\n"
@@ -882,7 +882,7 @@ msgstr "المستخدم غير موجود"
 
 #: dash/addons/content_cp/users/set/view.php:49
 msgid "Edit profile of :val"
-msgstr "تحرير الملف الشخصي من: val"
+msgstr "تحرير الملف الشخصي من :val"
 
 #: dash/addons/content_cp/users/set/view.php:50
 msgid "Edit user detail and change all fields of this user, be careful!"
