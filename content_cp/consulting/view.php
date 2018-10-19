@@ -36,6 +36,7 @@ class view
 
 		if(\dash\request::get('status')) $args['services.status'] = \dash\request::get('status');
 		if(\dash\request::get('consulting')) $args['services.expert'] = \dash\request::get('consulting');
+		if(\dash\request::get('userjob')) $args['users.job'] = \dash\request::get('userjob');
 		$args['services.type'] = 'consulting';
 
 		if(!isset($args['services.status']))
@@ -76,6 +77,16 @@ class view
 				$filterArray[T_("Status")] = $filterArray['services.status'];
 			}
 			unset($filterArray['services.status']);
+		}
+
+
+		if(isset($filterArray['users.job']))
+		{
+			if(is_string($filterArray['users.job']))
+			{
+				$filterArray[T_("job")] = $filterArray['users.job'];
+			}
+			unset($filterArray['users.job']);
 		}
 
 		// var_dump(\dash\data::dataTable());exit();
