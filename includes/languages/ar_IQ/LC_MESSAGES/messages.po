@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Arabic\n"
 "POT-Creation-Date: 2018-10-19 21:27+0330\n"
-"PO-Revision-Date: 2018-10-19 21:27+0330\n"
+"PO-Revision-Date: 2018-10-19 21:39+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: ar_IQ\n"
@@ -585,7 +585,7 @@ msgstr ""
 
 #: dash/addons/content_cp/posts/home/view.php:64
 msgid "Add new :val"
-msgstr "قم بإضافة جديدة: val"
+msgstr "قم بإضافة جديدة :val"
 
 #: dash/addons/content_cp/posts/home/view.php:134
 #: dash/addons/includes/languages/trans_dash.php:31
@@ -1362,7 +1362,7 @@ msgstr ""
 #: dash/addons/content_enter/verify/later/view.php:20
 #: dash/addons/content_enter/verify/sendsms/view.php:20
 msgid "Send \":code\" to :num"
-msgstr "إرسال \"code\" إلي: num"
+msgstr "إرسال \":code\" إلي :num"
 
 #: dash/addons/content_enter/verify/model.php:43
 #: dash/addons/content_enter/verify/model.php:50
@@ -1371,7 +1371,7 @@ msgstr ""
 
 #: dash/addons/content_enter/verify/model.php:56
 msgid "Verify code in local is :code"
-msgstr "يكون رمز التنشيط في النظام المحلي : code"
+msgstr "يكون رمز التنشيط في النظام المحلي :code"
 
 #: dash/addons/content_enter/verify/sms/model.php:51
 msgid "Your verification code is :code "
@@ -3582,7 +3582,7 @@ msgstr "عرض العنوان الفرعي تحت العنوان واستخدا�
 #: dash/addons/includes/languages/trans_dash.php:373
 #: khadije/includes/languages/trans_dash.php:127
 msgid "Excerpt used for social media and search engines"
-msgstr "315-\tالمقتطفات تستخدم لوسائل الإعلام الاجتماعية و محركات البحث"
+msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:374
 #: khadije/includes/languages/trans_dash.php:128
@@ -4079,19 +4079,19 @@ msgstr "حاول أن تبدأ بإضافة مستخدم جديد!"
 #: khadije/includes/languages/trans_dash.php:109
 #: khadije/includes/languages/trans_project.php:105
 msgid "All :Members"
-msgstr "كل :الأعضاء"
+msgstr "كل :Members"
 
 #: dash/addons/includes/languages/trans_dash.php:482
 #: khadije/includes/languages/trans_dash.php:110
 #: khadije/includes/languages/trans_project.php:106
 msgid ":Experts"
-msgstr ": الخبراء"
+msgstr ":Experts"
 
 #: dash/addons/includes/languages/trans_dash.php:483
 #: khadije/includes/languages/trans_dash.php:111
 #: khadije/includes/languages/trans_project.php:107
 msgid ":Teachers"
-msgstr ": المعلمين"
+msgstr ":Teachers"
 
 #: dash/addons/includes/languages/trans_dash.php:484
 #: khadije/includes/languages/trans_dash.php:112
@@ -4660,7 +4660,7 @@ msgstr "البحث في: dbtables"
 #: dash/addons/includes/languages/trans_dash.php:658
 #: khadije/includes/languages/trans_dash.php:966
 msgid "Try to start with add new :dbtables!"
-msgstr "حاول أن تبدأ مع إضافة جديد: dbtables!"
+msgstr "حاول أن تبدأ مع إضافة جديد :dbtables!"
 
 #: dash/addons/includes/languages/trans_dash.php:661
 #: khadije/includes/languages/trans_dash.php:958
@@ -5242,7 +5242,7 @@ msgstr "الاسم الكامل"
 #: khadije/includes/languages/trans_dash.php:630
 #: khadije/includes/languages/trans_project.php:622
 msgid "Please enter valid mobile number. `:val` is incorrect"
-msgstr "يرجى إدخال رقم هاتف محمول صحيح. `: val` غير صحيح"
+msgstr "يرجى إدخال رقم هاتف محمول صحيح. `:val` غير صحيح"
 
 #: dash/addons/includes/languages/trans_dash.php:828
 #: khadije/includes/languages/trans_dash.php:631
@@ -9857,7 +9857,7 @@ msgstr "لم يتم تعيين معرف الجداول"
 
 #: dash/lib/app/dbtables/add.php:20
 msgid ":user not found"
-msgstr "مستخدم غير موجود"
+msgstr ":user غير موجود"
 
 #: dash/lib/app/dbtables/add.php:31
 msgid "Record successfuly added"
@@ -9909,7 +9909,7 @@ msgstr "تم إرسال طلبك إلى المستخدم، انتظر جواب �
 
 #: dash/lib/app/parent/add.php:203
 msgid "Are you :title of this user?"
-msgstr "هل أنت: عنوان هذا المستخدم؟"
+msgstr "هل أنت :title هذا المستخدم؟"
 
 #: dash/lib/app/parent/add.php:210
 msgid "Your request was sended"
@@ -10158,7 +10158,7 @@ msgstr "الوالد ليس : بنوع"
 
 #: dash/lib/app/term.php:195
 msgid "The parent is not a :type"
-msgstr "ليس أيّ طريقة إلي وضع المصطلح"
+msgstr ""
 
 #: dash/lib/app/term.php:362
 msgid "No way to insert term"
@@ -10417,7 +10417,7 @@ msgstr "الملف غير موجود"
 
 #: dash/lib/mail.php:45
 msgid "Mailer Error :error"
-msgstr "خطأ في مرسل البريد الإلكتروني: error"
+msgstr "خطأ في مرسل البريد الإلكتروني :error"
 
 #: dash/lib/permission.php:148
 msgid "Someone have this permission!"
@@ -11350,7 +11350,7 @@ msgstr "سدد تبرعك عبر الإنترنت باستخدام النموذ�
 
 #: khadije/content/donate/view.php:38 khadije/content/doners/view.php:21
 msgid "Thanks for your holy payment, :amount sucsessfully recived"
-msgstr "شكراً على دفعتك المقدسة، : تم استلام المبلغ بنجاح"
+msgstr "شكراً على دفعتك المقدسة، تم استلام المبلغ بنجاح :amount"
 
 #: khadije/content/donate/view.php:44 khadije/content/doners/view.php:27
 #: khadije/content/mylovestory/view.php:40
@@ -11396,7 +11396,7 @@ msgstr "هذا هو أنت وقصة حبى"
 
 #: khadije/content/mylovestory/view.php:24
 msgid "Buy and download PDF version of :title book"
-msgstr "شراء وتنزيل نسخة PDF من: كتاب العنوان"
+msgstr "شراء وتنزيل نسخة PDF من كتاب العنوان :title"
 
 #: khadije/content/mylovestory/view.php:32
 msgid "Thanks for your buy book"
@@ -11448,7 +11448,7 @@ msgstr "المشهد"
 
 #: khadije/content/view.php:15
 msgid "© :year :site. All right reserved."
-msgstr "©: السنة: الموقع. جميع الحقوق محفوظة."
+msgstr ""
 
 #: khadije/content_a/consulting/detail/model.php:28
 msgid "Your consulting request was saved"
@@ -15377,11 +15377,11 @@ msgstr ""
 
 #: khadije/includes/lib/app/donate.php:51
 msgid "This :way is not in your list!"
-msgstr "هذا: الطريقة ليست في قائمتك!"
+msgstr "هذا :way ليست في قائمتك!"
 
 #: khadije/includes/lib/app/donate.php:106
 msgid "Please set :way"
-msgstr "یرجی ضبط :الطریق"
+msgstr "یرجی ضبط :way"
 
 #: khadije/includes/lib/app/donate.php:112
 msgid "Please set value less than 500 character"
@@ -15389,7 +15389,7 @@ msgstr "یرجی تحدید قیمة اقل من 500 حرف"
 
 #: khadije/includes/lib/app/donate.php:159
 msgid "Duplicate :way"
-msgstr "مکررة : الطریق"
+msgstr "مکررة :way"
 
 #: khadije/includes/lib/app/donate.php:218
 msgid "Product name must be less than 500 character"
