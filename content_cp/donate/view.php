@@ -14,11 +14,12 @@ class view
 		\dash\data::page_title(T_("Donation list"));
 		\dash\data::page_desc(T_("check last donates and monitor all donate transaction"));
 
-		$export_link = ' <a href="'. \dash\url::here(). '/donate?export=true">'. T_("Export"). '</a>';
-		\dash\data::page_desc(\dash\data::page_desc(). $export_link);
-
 		\dash\data::badge_link(\dash\url::here(). '/donate/options');
 		\dash\data::badge_text(T_('Options'));
+
+
+		\dash\data::badge2_link(\dash\url::here(). '/donate?export=true');
+		\dash\data::badge2_text(T_("Export"));
 
 		\dash\data::bodyclass('unselectable');
 		\dash\data::include_adminPanel(true);
