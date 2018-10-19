@@ -1045,7 +1045,7 @@ msgstr "اضبط البريد الإلكتروني"
 
 #: dash/addons/content_enter/email/view.php:9
 msgid "Enter to :name with email"
-msgstr "أدخل إلى: name مع البريد الإلكتروني"
+msgstr "أدخل إلى :name مع البريد الإلكتروني"
 
 #: dash/addons/content_enter/google/model.php:137
 msgid "System error! try again"
@@ -1053,7 +1053,7 @@ msgstr "خطأ في النظام! حاول مرة أخرى"
 
 #: dash/addons/content_enter/google/view.php:17
 msgid "Enter to :name with google"
-msgstr "أدخل إلى: name مع استخدام جوجل"
+msgstr "أدخل إلى :name مع استخدام جوجل"
 
 #: dash/addons/content_enter/home/model.php:27
 msgid "Mobile not found"
@@ -1262,7 +1262,7 @@ msgstr ""
 
 #: dash/addons/content_enter/signup/view.php:10
 msgid "Signup in :name"
-msgstr "التسجيل في: name"
+msgstr "التسجيل في :name"
 
 #: dash/addons/content_enter/twostep/model.php:11
 #: dash/addons/content_enter/twostep/view.php:11
@@ -1343,7 +1343,7 @@ msgstr "حدد اسم المستخدم"
 
 #: dash/addons/content_enter/username/view.php:10
 msgid "Enter to :name with username"
-msgstr "أدخل في جزء: name مع اسم المستخدم"
+msgstr "أدخل في جزء :name مع اسم المستخدم"
 
 #: dash/addons/content_enter/verify/later/model.php:20
 #: dash/addons/content_enter/verify/model.php:66
