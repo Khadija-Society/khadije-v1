@@ -152,6 +152,8 @@ class TransStatic
 	echo T_("cpConsultingChangeStatus");
 	echo T_("cpServiceChangeStatus");
 	echo T_("cpHealthChangeStatus");
+	echo T_("Student");
+	echo T_("student");
  }
 }
 ?>

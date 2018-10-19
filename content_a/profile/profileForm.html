@@ -44,6 +44,7 @@
     <div class="c8 s12 pRa5">{{block ('iAddress') }}</div>
     <div class="c4 s12">{{block ('izipcode') }}</div>
    </div>
+   {{block('iJobIsStudent')}}
 
    {{block ('iSave') }}
 
@@ -292,6 +293,16 @@
   <input type="text" name="job" id="fjob" placeholder='{%trans "Job"%}' value="{{userdetail.job}}" maxlength='50'>
 </div>
 {%endblock%}
+
+
+{%block iJobIsStudent%}
+<div class="switch1 ">
+ <input type="checkbox" name="student" id="student" {%if userdetail.job == 'student' %}checked{%endif%}>
+ <label for="student"  data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
+ <label for="student">{%trans "Are you an univercity student?"%}</label>
+</div>
+{%endblock%}
+
 
 
 

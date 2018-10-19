@@ -7,7 +7,7 @@ class service
 	[
 		'id',
 		'expert',
-		'job',
+		'users.job',
 		'expertvalue',
 		'expertyear',
 		'startdate',

@@ -66,7 +66,7 @@ class view
 			\dash\utility\export::csv(['name' => 'export_service', 'data' => \dash\data::dataTable()]);
 		}
 
-		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/service'));
+		\dash\data::sortLink(\content_cp\view::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/consulting'));
 		$filterArray = $args;
 
 		if(isset($filterArray['services.status']))
@@ -78,6 +78,7 @@ class view
 			unset($filterArray['services.status']);
 		}
 
+		// var_dump(\dash\data::dataTable());exit();
 
 		unset($filterArray['services.type']);
 		if(isset($filterArray['services.expert']))

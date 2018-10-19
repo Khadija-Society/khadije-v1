@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-10-18 15:12+0330\n"
-"PO-Revision-Date: 2018-10-18 15:13+0330\n"
+"POT-Creation-Date: 2018-10-19 19:28+0330\n"
+"PO-Revision-Date: 2018-10-19 19:29+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -401,7 +401,7 @@ msgstr ""
 #: dash/addons/content_cp/log/caller/view.php:9
 #: dash/addons/content_cp/log/home/view.php:9
 #: dash/addons/includes/languages/trans_dash.php:694
-#: khadije/includes/languages/trans_dash.php:841
+#: khadije/includes/languages/trans_dash.php:842
 msgid "Log"
 msgstr "لاگ"
 
@@ -748,7 +748,7 @@ msgstr "برچسب ها را بررسی کنید و برخی از برچسب ه�
 #: dash/addons/includes/languages/trans_dash.php:257
 #: dash/addons/includes/languages/trans_static.php:112
 #: khadije/content_cp/book/view.php:59 khadije/content_cp/consulting/view.php:52
-#: khadije/content_cp/donate/view.php:73 khadije/content_cp/familytrip/view.php:105
+#: khadije/content_cp/donate/view.php:74 khadije/content_cp/familytrip/view.php:105
 #: khadije/content_cp/festival/transaction/view.php:72
 #: khadije/content_cp/festival/user/view.php:61
 #: khadije/content_cp/health/view.php:53 khadije/content_cp/meeting/view.php:59
@@ -935,14 +935,6 @@ msgstr "اینجا چیکار می‌کنی عزیز جان!؟"
 msgid "OK"
 msgstr "تایید"
 
-#: dash/addons/content_enter/autoredirect/view.php:9
-msgid "redirecting..."
-msgstr "در حال انتقال..."
-
-#: dash/addons/content_enter/autoredirect/view.php:10
-msgid "in redirect process..."
-msgstr "در فرآیند انتقال ..."
-
 #: dash/addons/content_enter/ban/view.php:9
 msgid "You are Banned!!"
 msgstr "شما مسدود شدید!"
@@ -1083,40 +1075,6 @@ msgstr "مجددا تلاش کنید!"
 msgid "Enter to :name"
 msgstr "ورود به :name"
 
-#: dash/addons/content_enter/hook/model.php:19
-#: dash/addons/content_enter/hook/model.php:141
-msgid "Telegram id not found"
-msgstr "آی‌دی تلگرام یافت نشد"
-
-#: dash/addons/content_enter/hook/model.php:25
-#: dash/addons/content_enter/hook/model.php:147
-msgid "Invalid telegram id"
-msgstr "آی‌دی تلگرام نامعتبر است"
-
-#: dash/addons/content_enter/hook/model.php:98
-msgid "Authorization not found"
-msgstr "مجوز یافت نشد"
-
-#: dash/addons/content_enter/hook/model.php:108
-msgid "Invalid Authorization"
-msgstr "کد تایید نامعتبر است"
-
-#: dash/addons/content_enter/hook/model.php:135
-msgid "Mobile is not set"
-msgstr "تلفن همراه تنظیم نشده است"
-
-#: dash/addons/content_enter/hook/model.php:212
-msgid "System error 1"
-msgstr "خطای سیستمی‌۱"
-
-#: dash/addons/content_enter/hook/model.php:236
-msgid "System error 2"
-msgstr "خطای سیستمی‌۲"
-
-#: dash/addons/content_enter/hook/model.php:253
-msgid "System error 3"
-msgstr "خطای سیستمی‌۳"
-
 #: dash/addons/content_enter/mobile/change/model.php:13
 #: dash/addons/content_enter/pass/change/model.php:13
 msgid "Please fill the password field"
@@ -1235,10 +1193,6 @@ msgstr "تغییر گذرواژه"
 #: dash/addons/content_enter/pass/view.php:28
 msgid "Please set your old and new password to change it"
 msgstr "لطفا گذرواژه‌ی قبلی و جدید خود را برای تغییر وارد کنید"
-
-#: dash/addons/content_enter/payment/controller.php:31
-msgid "Invalid payment type"
-msgstr "خطای نوع درگاه"
 
 #: dash/addons/content_enter/signup/model.php:25
 msgid "You do not have permission to register for up to ten minutes"
@@ -1481,7 +1435,7 @@ msgstr "این درخواست برای تغییر گذرواژه است."
 
 #: dash/addons/content_enter/verify/view.php:118
 #: dash/addons/includes/languages/trans_dash.php:793
-#: khadije/includes/languages/trans_dash.php:807
+#: khadije/includes/languages/trans_dash.php:808
 msgid "Verify"
 msgstr "اعتبارسنجی"
 
@@ -1496,6 +1450,18 @@ msgstr "اعتبارسنجی با تلگرام"
 #: dash/addons/content_enter/verify/view.php:131
 msgid "verify with SMS"
 msgstr "تایید با پیامک"
+
+#: dash/addons/content_hook/autoredirect/view.php:9
+msgid "redirecting..."
+msgstr "در حال انتقال..."
+
+#: dash/addons/content_hook/autoredirect/view.php:10
+msgid "in redirect process..."
+msgstr "در فرآیند انتقال ..."
+
+#: dash/addons/content_hook/payment/controller.php:31
+msgid "Invalid payment type"
+msgstr "خطای نوع درگاه"
 
 #: dash/addons/content_su/backup/model.php:23
 msgid "Database of logs dose not exists"
@@ -1559,7 +1525,7 @@ msgstr "بررسی وضعیت فایل‌ها در این پروژه"
 
 #: dash/addons/content_su/home/view.php:8
 #: dash/addons/includes/languages/trans_dash.php:681
-#: khadije/includes/languages/trans_dash.php:829
+#: khadije/includes/languages/trans_dash.php:830
 msgid "Supervisor dashboard"
 msgstr "داشبورد مدیر فنی سیستم"
 
@@ -1569,13 +1535,13 @@ msgstr "سلام رفیق"
 
 #: dash/addons/content_su/info/controller.php:29
 #: dash/addons/includes/languages/trans_dash.php:698
-#: khadije/includes/languages/trans_dash.php:791
+#: khadije/includes/languages/trans_dash.php:792
 msgid "First you need to enable COM on windows"
 msgstr "در ابتدا شما باید ویژگی Com را در ویندوز فعال کنید"
 
 #: dash/addons/content_su/info/controller.php:30
 #: dash/addons/includes/languages/trans_dash.php:699
-#: khadije/includes/languages/trans_dash.php:792
+#: khadije/includes/languages/trans_dash.php:793
 #: khadije/includes/languages/trans_project.php:789
 msgid "Read More"
 msgstr "بیشتر بخوانید"
@@ -1602,7 +1568,7 @@ msgstr "ناتوان در نوشتن فایل"
 
 #: dash/addons/content_su/nano/view.php:8
 #: dash/addons/includes/languages/trans_dash.php:692
-#: khadije/includes/languages/trans_dash.php:839
+#: khadije/includes/languages/trans_dash.php:840
 msgid "Nano"
 msgstr "نانو"
 
@@ -1645,7 +1611,7 @@ msgstr "بازگشت به لیست ردپاها"
 
 #: dash/addons/content_su/tg/sendmessage/view.php:8
 #: dash/addons/includes/languages/trans_dash.php:725
-#: khadije/includes/languages/trans_dash.php:933
+#: khadije/includes/languages/trans_dash.php:934
 msgid "Send message"
 msgstr "ارسال پیام"
 
@@ -1665,7 +1631,7 @@ msgstr "لطفا آدرس را وارد کرده و یا فایلی انتخاب
 
 #: dash/addons/content_su/tg/sendphoto/view.php:8
 #: dash/addons/includes/languages/trans_dash.php:726
-#: khadije/includes/languages/trans_dash.php:934
+#: khadije/includes/languages/trans_dash.php:935
 msgid "Send photo"
 msgstr "ارسال عکس"
 
@@ -1911,17 +1877,17 @@ msgid "Please try type something!"
 msgstr "لطفا تلاشی برای تایپ داشته باشید!"
 
 #: dash/addons/content_support/ticket/contact_ticket/model.php:140
-#: dash/addons/content_support/ticket/contact_ticket/model.php:155
+#: dash/addons/content_support/ticket/contact_ticket/model.php:156
 msgid "You can check your contacting answer here"
 msgstr "شما می توانید پاسخ تماس خود را در اینجا بررسی کنید"
 
 #: dash/addons/content_support/ticket/contact_ticket/model.php:141
-#: dash/addons/content_support/ticket/contact_ticket/model.php:156
+#: dash/addons/content_support/ticket/contact_ticket/model.php:157
 msgid "Thank You For contacting us"
 msgstr "از تماس شما متشکریم"
 
-#: dash/addons/content_support/ticket/contact_ticket/model.php:147
-#: dash/addons/content_support/ticket/contact_ticket/model.php:163
+#: dash/addons/content_support/ticket/contact_ticket/model.php:148
+#: dash/addons/content_support/ticket/contact_ticket/model.php:164
 msgid "We could'nt save the contact"
 msgstr "مشکلی در ذخیره‌سازی مخاطب پیش آمد"
 
@@ -2053,33 +2019,33 @@ msgid "Invalid access in url"
 msgstr "دسترسی نادرست در آدرس"
 
 #: dash/addons/includes/languages/trans_dash.php:8
-#: khadije/includes/languages/trans_dash.php:760
+#: khadije/includes/languages/trans_dash.php:761
 msgid "Edit address"
 msgstr "ویرایش آدرس"
 
 #: dash/addons/includes/languages/trans_dash.php:9
-#: khadije/includes/languages/trans_dash.php:761
+#: khadije/includes/languages/trans_dash.php:762
 msgid "Add new address"
 msgstr "افزودن آدرس جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:10
-#: khadije/includes/languages/trans_dash.php:762
+#: khadije/includes/languages/trans_dash.php:763
 msgid "Saved address"
 msgstr "آدرس‌های ذخیره شده"
 
 #: dash/addons/includes/languages/trans_dash.php:11
-#: khadije/includes/languages/trans_dash.php:769
+#: khadije/includes/languages/trans_dash.php:770
 msgid "Post code"
 msgstr "کدپستی"
 
 #: dash/addons/includes/languages/trans_dash.php:12
-#: khadije/includes/languages/trans_dash.php:764
+#: khadije/includes/languages/trans_dash.php:765
 #: khadije/includes/languages/trans_project.php:220
 msgid "Phone"
 msgstr "شماره تلفن"
 
 #: dash/addons/includes/languages/trans_dash.php:13
-#: khadije/includes/languages/trans_dash.php:771
+#: khadije/includes/languages/trans_dash.php:772
 msgid "Fax"
 msgstr "فکس"
 
@@ -2113,19 +2079,19 @@ msgid "Country"
 msgstr "کشور"
 
 #: dash/addons/includes/languages/trans_dash.php:19
-#: khadije/includes/languages/trans_dash.php:766
-#: khadije/includes/languages/trans_project.php:917
+#: khadije/includes/languages/trans_dash.php:767
+#: khadije/includes/languages/trans_project.php:918
 msgid "Choose your country"
 msgstr "کشور خود را انتخاب کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:20
-#: khadije/includes/languages/trans_dash.php:767
+#: khadije/includes/languages/trans_dash.php:768
 #: khadije/includes/languages/trans_project.php:427
 msgid "City"
 msgstr "شهر"
 
 #: dash/addons/includes/languages/trans_dash.php:21
-#: khadije/includes/languages/trans_dash.php:768
+#: khadije/includes/languages/trans_dash.php:769
 #: khadije/includes/languages/trans_project.php:916
 msgid "Select city"
 msgstr "شهر را انتخاب کنید"
@@ -2154,24 +2120,24 @@ msgid "Address line 2"
 msgstr "آدرس ۲"
 
 #: dash/addons/includes/languages/trans_dash.php:26
-#: khadije/includes/languages/trans_dash.php:772
+#: khadije/includes/languages/trans_dash.php:773
 #: khadije/includes/languages/trans_project.php:462
 msgid "Yes"
 msgstr "بلی"
 
 #: dash/addons/includes/languages/trans_dash.php:27
-#: khadije/includes/languages/trans_dash.php:773
+#: khadije/includes/languages/trans_dash.php:774
 #: khadije/includes/languages/trans_project.php:463
 msgid "No"
 msgstr "خیر"
 
 #: dash/addons/includes/languages/trans_dash.php:28
-#: khadije/includes/languages/trans_dash.php:774
+#: khadije/includes/languages/trans_dash.php:775
 msgid "Is this a company's address?"
 msgstr "این آدرس شرکت است؟"
 
 #: dash/addons/includes/languages/trans_dash.php:29
-#: khadije/includes/languages/trans_dash.php:775
+#: khadije/includes/languages/trans_dash.php:776
 msgid "Company name"
 msgstr "نام شرکت"
 
@@ -2217,17 +2183,17 @@ msgid "Save"
 msgstr "ذخیره"
 
 #: dash/addons/includes/languages/trans_dash.php:40
-#: khadije/includes/languages/trans_dash.php:778
+#: khadije/includes/languages/trans_dash.php:779
 msgid "YOUR API KEY"
 msgstr "کلید اتصال شما"
 
 #: dash/addons/includes/languages/trans_dash.php:41
-#: khadije/includes/languages/trans_dash.php:779
+#: khadije/includes/languages/trans_dash.php:780
 msgid "GENERATE NEW API KEY"
 msgstr "ساخت کلید اتصال جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:42
-#: khadije/includes/languages/trans_dash.php:780
+#: khadije/includes/languages/trans_dash.php:781
 msgid "Get new API KEY"
 msgstr "دریافت کلید اتصال جدید"
 
@@ -2706,22 +2672,22 @@ msgid "Save all"
 msgstr "ذخیره همه"
 
 #: dash/addons/includes/languages/trans_dash.php:150
-#: khadije/includes/languages/trans_dash.php:754
+#: khadije/includes/languages/trans_dash.php:755
 msgid "About you"
 msgstr "درباره شما"
 
 #: dash/addons/includes/languages/trans_dash.php:151
-#: khadije/includes/languages/trans_dash.php:755
+#: khadije/includes/languages/trans_dash.php:756
 msgid "Security"
 msgstr "امنیتی"
 
 #: dash/addons/includes/languages/trans_dash.php:152
-#: khadije/includes/languages/trans_dash.php:756
+#: khadije/includes/languages/trans_dash.php:757
 msgid "Social network"
 msgstr "شبکه‌های اجتماعی"
 
 #: dash/addons/includes/languages/trans_dash.php:153
-#: khadije/includes/languages/trans_dash.php:757
+#: khadije/includes/languages/trans_dash.php:758
 msgid "Signature"
 msgstr "امضا"
 
@@ -2786,12 +2752,12 @@ msgid "Terminate"
 msgstr "مسدودسازی"
 
 #: dash/addons/includes/languages/trans_dash.php:170
-#: khadije/includes/languages/trans_dash.php:750
+#: khadije/includes/languages/trans_dash.php:751
 msgid "Your signature"
 msgstr "امضا شما"
 
 #: dash/addons/includes/languages/trans_dash.php:171
-#: khadije/includes/languages/trans_dash.php:751
+#: khadije/includes/languages/trans_dash.php:752
 msgid "Write signature"
 msgstr "نوشتن امضا"
 
@@ -3057,17 +3023,17 @@ msgid "Enter to Jibres"
 msgstr "ورود به جیبرس"
 
 #: dash/addons/includes/languages/trans_dash.php:224
-#: khadije/includes/languages/trans_dash.php:783
+#: khadije/includes/languages/trans_dash.php:784
 msgid "Toggle side bar"
 msgstr "تغییر وضعیت نوار کناری"
 
 #: dash/addons/includes/languages/trans_dash.php:225
-#: khadije/includes/languages/trans_dash.php:784
+#: khadije/includes/languages/trans_dash.php:785
 msgid "You can save side bar status"
 msgstr "شما می‌توانید وضعیت نوار کناری را تغییر دهید"
 
 #: dash/addons/includes/languages/trans_dash.php:226
-#: khadije/includes/languages/trans_dash.php:785
+#: khadije/includes/languages/trans_dash.php:786
 msgid "Are your need side bar?"
 msgstr "شما نیاز به نمایش نوار کناری دارید؟"
 
@@ -3333,7 +3299,7 @@ msgstr "برخی از حقوق محفوظ است"
 
 #: dash/addons/includes/languages/trans_dash.php:303
 #: dash/addons/includes/languages/trans_static.php:58
-#: dash/addons/includes/languages/trans_static.php:175 dash/lib/engine/view.php:77
+#: dash/addons/includes/languages/trans_static.php:175 dash/lib/engine/view.php:78
 #: dash/lib/social/telegram/commands/ermile.php:174
 #: khadije/includes/languages/trans_dash.php:26
 msgid "Ermile"
@@ -4533,376 +4499,376 @@ msgid "You must set a mobile or email to continue"
 msgstr "برای ادامه شما باید تلفن‌همراه یا رایانامه را وارد کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:622
-#: khadije/includes/languages/trans_dash.php:852
+#: khadije/includes/languages/trans_dash.php:853
 msgid "Backup database"
 msgstr "پشتیبان گیری پایگاه داده"
 
 #: dash/addons/includes/languages/trans_dash.php:623
-#: khadije/includes/languages/trans_dash.php:853
+#: khadije/includes/languages/trans_dash.php:854
 #: khadije/includes/languages/trans_project.php:840
 msgid "Back"
 msgstr "بازگشت"
 
 #: dash/addons/includes/languages/trans_dash.php:624
-#: khadije/includes/languages/trans_dash.php:854
+#: khadije/includes/languages/trans_dash.php:855
 msgid "File is empty"
 msgstr "فایل خالی است"
 
 #: dash/addons/includes/languages/trans_dash.php:625
-#: khadije/includes/languages/trans_dash.php:855
+#: khadije/includes/languages/trans_dash.php:856
 msgid "Database info"
 msgstr "اطلاعات دیتابیس"
 
 #: dash/addons/includes/languages/trans_dash.php:626
-#: khadije/includes/languages/trans_dash.php:856
+#: khadije/includes/languages/trans_dash.php:857
 msgid "Show Auto backup log file"
 msgstr "نمایش لاگ پشتیبان گیری‌های خود کار"
 
 #: dash/addons/includes/languages/trans_dash.php:627
-#: khadije/includes/languages/trans_dash.php:857
+#: khadije/includes/languages/trans_dash.php:858
 msgid "You have another database for logs"
 msgstr "شما یک دیتابیس دیگر هم برای لاگ‌ها دارید"
 
 #: dash/addons/includes/languages/trans_dash.php:628
-#: khadije/includes/languages/trans_dash.php:858
+#: khadije/includes/languages/trans_dash.php:859
 msgid "Click for create backup from log database"
 msgstr "برای پشتیبان‌گیری از دیتابیس لاگ‌ها کلیک کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:629
-#: khadije/includes/languages/trans_dash.php:859
+#: khadije/includes/languages/trans_dash.php:860
 msgid "Auto backup"
 msgstr "پشتیبان گیری خودکار"
 
 #: dash/addons/includes/languages/trans_dash.php:630
-#: khadije/includes/languages/trans_dash.php:860
+#: khadije/includes/languages/trans_dash.php:861
 msgid "Start backup every"
 msgstr "شروع عملیات پشتیبان گیری هر"
 
 #: dash/addons/includes/languages/trans_dash.php:631
-#: khadije/includes/languages/trans_dash.php:861
+#: khadije/includes/languages/trans_dash.php:862
 msgid "Year"
 msgstr "سال"
 
 #: dash/addons/includes/languages/trans_dash.php:632
-#: khadije/includes/languages/trans_dash.php:862
+#: khadije/includes/languages/trans_dash.php:863
 msgid "Month"
 msgstr "ماه"
 
 #: dash/addons/includes/languages/trans_dash.php:633
-#: khadije/includes/languages/trans_dash.php:863
+#: khadije/includes/languages/trans_dash.php:864
 msgid "Week"
 msgstr "هفته"
 
 #: dash/addons/includes/languages/trans_dash.php:634
 #: dash/addons/includes/languages/trans_static.php:528
-#: khadije/includes/languages/trans_dash.php:864
+#: khadije/includes/languages/trans_dash.php:865
 #: khadije/includes/languages/trans_project.php:145
 msgid "Day"
 msgstr "روز"
 
 #: dash/addons/includes/languages/trans_dash.php:635
 #: dash/addons/includes/languages/trans_static.php:33 dash/lib/utility/human.php:31
-#: dash/lib/utility/human.php:118 khadije/includes/languages/trans_dash.php:865
+#: dash/lib/utility/human.php:118 khadije/includes/languages/trans_dash.php:866
 msgid "hour"
 msgstr "ساعت"
 
 #: dash/addons/includes/languages/trans_dash.php:636
-#: khadije/includes/languages/trans_dash.php:866
+#: khadije/includes/languages/trans_dash.php:867
 msgid "Start backup at time"
 msgstr "شروع عملیات پشتیبان گیری در ساعت"
 
 #: dash/addons/includes/languages/trans_dash.php:637
-#: khadije/includes/languages/trans_dash.php:867
+#: khadije/includes/languages/trans_dash.php:868
 msgid "Life time of old backup"
 msgstr "طل عمر فایل های پشتیبان گیری قبلی"
 
 #: dash/addons/includes/languages/trans_dash.php:638
-#: khadije/includes/languages/trans_dash.php:868
+#: khadije/includes/languages/trans_dash.php:869
 msgid "2 years"
 msgstr "دو سال"
 
 #: dash/addons/includes/languages/trans_dash.php:639
-#: khadije/includes/languages/trans_dash.php:869
+#: khadije/includes/languages/trans_dash.php:870
 msgid "one year"
 msgstr "یک سال"
 
 #: dash/addons/includes/languages/trans_dash.php:640
-#: khadije/includes/languages/trans_dash.php:870
+#: khadije/includes/languages/trans_dash.php:871
 msgid "6 months"
 msgstr "شش ماه"
 
 #: dash/addons/includes/languages/trans_dash.php:641
-#: khadije/includes/languages/trans_dash.php:871
+#: khadije/includes/languages/trans_dash.php:872
 msgid "3 months"
 msgstr "سه ماه"
 
 #: dash/addons/includes/languages/trans_dash.php:642
-#: khadije/includes/languages/trans_dash.php:872
+#: khadije/includes/languages/trans_dash.php:873
 msgid "2 months"
 msgstr "دو ماه"
 
 #: dash/addons/includes/languages/trans_dash.php:643
-#: khadije/includes/languages/trans_dash.php:873
+#: khadije/includes/languages/trans_dash.php:874
 msgid "one month"
 msgstr "یک ماه"
 
 #: dash/addons/includes/languages/trans_dash.php:644
-#: khadije/includes/languages/trans_dash.php:874
+#: khadije/includes/languages/trans_dash.php:875
 msgid "one week"
 msgstr "یک هفته"
 
 #: dash/addons/includes/languages/trans_dash.php:645
-#: khadije/includes/languages/trans_dash.php:875
+#: khadije/includes/languages/trans_dash.php:876
 msgid "2 weeks"
 msgstr "۲ هفته"
 
 #: dash/addons/includes/languages/trans_dash.php:646
-#: khadije/includes/languages/trans_dash.php:876
+#: khadije/includes/languages/trans_dash.php:877
 msgid "one day"
 msgstr "یک روز"
 
 #: dash/addons/includes/languages/trans_dash.php:647
-#: khadije/includes/languages/trans_dash.php:877
+#: khadije/includes/languages/trans_dash.php:878
 msgid "3 days"
 msgstr "۳ روز"
 
 #: dash/addons/includes/languages/trans_dash.php:648
-#: khadije/includes/languages/trans_dash.php:878
+#: khadije/includes/languages/trans_dash.php:879
 msgid "5 days"
 msgstr "۵ روز"
 
 #: dash/addons/includes/languages/trans_dash.php:651
-#: khadije/includes/languages/trans_dash.php:788
+#: khadije/includes/languages/trans_dash.php:789
 msgid "Server password"
 msgstr "کلمه عبور سرور"
 
 #: dash/addons/includes/languages/trans_dash.php:654
-#: khadije/includes/languages/trans_dash.php:845
+#: khadije/includes/languages/trans_dash.php:846
 msgid "Run cronjob for this service"
 msgstr "اجرای کرون جاب برای این سرویس"
 
 #: dash/addons/includes/languages/trans_dash.php:657
-#: khadije/includes/languages/trans_dash.php:964
+#: khadije/includes/languages/trans_dash.php:965
 msgid "Search in :dbtabless"
 msgstr "جستجو..."
 
 #: dash/addons/includes/languages/trans_dash.php:658
-#: khadije/includes/languages/trans_dash.php:965
+#: khadije/includes/languages/trans_dash.php:966
 msgid "Try to start with add new :dbtables!"
 msgstr "با افزودن رکورد جدید تلاشی برای شروع داشته باشید!"
 
 #: dash/addons/includes/languages/trans_dash.php:661
-#: khadije/includes/languages/trans_dash.php:957
+#: khadije/includes/languages/trans_dash.php:958
 msgid "Server live resource usage"
 msgstr "نمودار زنده از منابع مورد استفاده سرور"
 
 #: dash/addons/includes/languages/trans_dash.php:662
-#: khadije/includes/languages/trans_dash.php:958
+#: khadije/includes/languages/trans_dash.php:959
 msgid "percentage"
 msgstr "درصد"
 
 #: dash/addons/includes/languages/trans_dash.php:663
-#: khadije/includes/languages/trans_dash.php:959
+#: khadije/includes/languages/trans_dash.php:960
 msgid "Disk usage"
 msgstr "مصرف دیسک"
 
 #: dash/addons/includes/languages/trans_dash.php:664
-#: khadije/includes/languages/trans_dash.php:960
+#: khadije/includes/languages/trans_dash.php:961
 msgid "CPU Usage"
 msgstr "مصرف پردازنده"
 
 #: dash/addons/includes/languages/trans_dash.php:665
-#: khadije/includes/languages/trans_dash.php:961
+#: khadije/includes/languages/trans_dash.php:962
 msgid "Memory"
 msgstr "حافظه"
 
 #: dash/addons/includes/languages/trans_dash.php:668
-#: khadije/includes/languages/trans_dash.php:948
+#: khadije/includes/languages/trans_dash.php:949
 msgid "Some code was changed!!!"
 msgstr "بخشی از کد ها دستگاری شده!!!"
 
 #: dash/addons/includes/languages/trans_dash.php:669
 #: dash/addons/includes/languages/trans_static.php:7
-#: khadije/includes/languages/trans_dash.php:949
+#: khadije/includes/languages/trans_dash.php:950
 msgid "Dash"
 msgstr "دش"
 
 #: dash/addons/includes/languages/trans_dash.php:670
-#: khadije/includes/languages/trans_dash.php:950
+#: khadije/includes/languages/trans_dash.php:951
 msgid "Last update"
 msgstr "آخرین به‌روزرسانی"
 
 #: dash/addons/includes/languages/trans_dash.php:671
-#: khadije/includes/languages/trans_dash.php:951
+#: khadije/includes/languages/trans_dash.php:952
 msgid "Uptime"
 msgstr "آپ‌تایم"
 
 #: dash/addons/includes/languages/trans_dash.php:672
-#: khadije/includes/languages/trans_dash.php:952
+#: khadije/includes/languages/trans_dash.php:953
 msgid "Ram"
 msgstr "حافظه"
 
 #: dash/addons/includes/languages/trans_dash.php:673
-#: khadije/includes/languages/trans_dash.php:953
+#: khadije/includes/languages/trans_dash.php:954
 msgid "Disk space"
 msgstr "مصرف دیسک"
 
 #: dash/addons/includes/languages/trans_dash.php:674
-#: khadije/includes/languages/trans_dash.php:954
+#: khadije/includes/languages/trans_dash.php:955
 msgid "Disk Free space"
 msgstr "فضای خالی دیسک"
 
 #: dash/addons/includes/languages/trans_dash.php:677
-#: khadije/includes/languages/trans_dash.php:848
+#: khadije/includes/languages/trans_dash.php:849
 msgid "Show server info"
 msgstr "نمایش اطلاعات سرور"
 
 #: dash/addons/includes/languages/trans_dash.php:678
-#: khadije/includes/languages/trans_dash.php:849
+#: khadije/includes/languages/trans_dash.php:850
 msgid "Show PHP info"
 msgstr "نمایش اطلاعات پی‌اچ‌پی"
 
 #: dash/addons/includes/languages/trans_dash.php:683
-#: khadije/includes/languages/trans_dash.php:830
+#: khadije/includes/languages/trans_dash.php:831
 msgid "Database"
 msgstr "پایگاه‌داده"
 
 #: dash/addons/includes/languages/trans_dash.php:684
 #: dash/addons/includes/languages/trans_static.php:983
-#: khadije/includes/languages/trans_dash.php:831
+#: khadije/includes/languages/trans_dash.php:832
 msgid "Backup"
 msgstr "پشتیبان‌گیری"
 
 #: dash/addons/includes/languages/trans_dash.php:685
-#: khadije/includes/languages/trans_dash.php:832
+#: khadije/includes/languages/trans_dash.php:833
 msgid "Raw table"
 msgstr "جدول‌های خام"
 
 #: dash/addons/includes/languages/trans_dash.php:686
-#: khadije/includes/languages/trans_dash.php:833
+#: khadije/includes/languages/trans_dash.php:834
 msgid "Server"
 msgstr "سرور"
 
 #: dash/addons/includes/languages/trans_dash.php:687
-#: khadije/includes/languages/trans_dash.php:834
+#: khadije/includes/languages/trans_dash.php:835
 msgid "Date and time"
 msgstr "تاریخ و زمان"
 
 #: dash/addons/includes/languages/trans_dash.php:688
-#: khadije/includes/languages/trans_dash.php:835
+#: khadije/includes/languages/trans_dash.php:836
 msgid "Server information"
 msgstr "اطلاعات سرور"
 
 #: dash/addons/includes/languages/trans_dash.php:689
-#: khadije/includes/languages/trans_dash.php:836
+#: khadije/includes/languages/trans_dash.php:837
 msgid "Cronjob"
 msgstr "کرون جاب"
 
 #: dash/addons/includes/languages/trans_dash.php:690
-#: khadije/includes/languages/trans_dash.php:837
+#: khadije/includes/languages/trans_dash.php:838
 msgid "Git"
 msgstr "گیت"
 
 #: dash/addons/includes/languages/trans_dash.php:691
-#: khadije/includes/languages/trans_dash.php:838
+#: khadije/includes/languages/trans_dash.php:839
 msgid "Git status"
 msgstr "وضعیت گیت"
 
 #: dash/addons/includes/languages/trans_dash.php:693
 #: dash/addons/includes/languages/trans_static.php:160
-#: khadije/includes/languages/trans_dash.php:840
+#: khadije/includes/languages/trans_dash.php:841
 msgid "Tools"
 msgstr "ابزارها"
 
 #: dash/addons/includes/languages/trans_dash.php:695
-#: khadije/includes/languages/trans_dash.php:842
+#: khadije/includes/languages/trans_dash.php:843
 msgid "Translation tools"
 msgstr "ابزارهای ترجمه"
 
 #: dash/addons/includes/languages/trans_dash.php:702
 #: dash/addons/includes/languages/trans_static.php:49 dash/lib/utility/upload.php:92
-#: khadije/includes/languages/trans_dash.php:881
+#: khadije/includes/languages/trans_dash.php:882
 msgid "MB"
 msgstr "مگابایت"
 
 #: dash/addons/includes/languages/trans_dash.php:707
-#: khadije/includes/languages/trans_dash.php:887
+#: khadije/includes/languages/trans_dash.php:888
 msgid "Send every notification from every way to user"
 msgstr "ارسال هر پیامی از هر روشی به کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:708
-#: khadije/includes/languages/trans_dash.php:888
+#: khadije/includes/languages/trans_dash.php:889
 msgid "Mobile or user_id"
 msgstr "موبایل یا کد کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:709
-#: khadije/includes/languages/trans_dash.php:889
+#: khadije/includes/languages/trans_dash.php:890
 msgid "Find Connection way"
 msgstr "یافتن روش ارتباط"
 
 #: dash/addons/includes/languages/trans_dash.php:710
-#: khadije/includes/languages/trans_dash.php:890
+#: khadije/includes/languages/trans_dash.php:891
 msgid "Inner system notification"
 msgstr "پیام داخل سیستمی"
 
 #: dash/addons/includes/languages/trans_dash.php:718
-#: khadije/includes/languages/trans_dash.php:795
+#: khadije/includes/languages/trans_dash.php:796
 msgid "Test coding function"
 msgstr "بررسی تابع کدینگ"
 
 #: dash/addons/includes/languages/trans_dash.php:719
-#: khadije/includes/languages/trans_dash.php:796
+#: khadije/includes/languages/trans_dash.php:797
 msgid "String or Number"
 msgstr "رشته یا شماره"
 
 #: dash/addons/includes/languages/trans_dash.php:720
-#: khadije/includes/languages/trans_dash.php:797
+#: khadije/includes/languages/trans_dash.php:798
 msgid "Run"
 msgstr "اجرا"
 
 #: dash/addons/includes/languages/trans_dash.php:721
-#: khadije/includes/languages/trans_dash.php:798
+#: khadije/includes/languages/trans_dash.php:799
 msgid "Encode"
 msgstr "رمزگذاری"
 
 #: dash/addons/includes/languages/trans_dash.php:724
-#: khadije/includes/languages/trans_dash.php:932
+#: khadije/includes/languages/trans_dash.php:933
 msgid "Webhook"
 msgstr "وب هوک"
 
 #: dash/addons/includes/languages/trans_dash.php:729
-#: khadije/includes/languages/trans_dash.php:909
+#: khadije/includes/languages/trans_dash.php:910
 msgid "User Detail"
 msgstr "جزئیات‌کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:730
-#: khadije/includes/languages/trans_dash.php:910
+#: khadije/includes/languages/trans_dash.php:911
 msgid "Hook"
 msgstr "هوک"
 
 #: dash/addons/includes/languages/trans_dash.php:731
-#: khadije/includes/languages/trans_dash.php:911
+#: khadije/includes/languages/trans_dash.php:912
 msgid "Step"
 msgstr "مرحله"
 
 #: dash/addons/includes/languages/trans_dash.php:732
-#: khadije/includes/languages/trans_dash.php:912
+#: khadije/includes/languages/trans_dash.php:913
 msgid "Sended message"
 msgstr "پیام ارسال شده"
 
 #: dash/addons/includes/languages/trans_dash.php:733
-#: khadije/includes/languages/trans_dash.php:913
+#: khadije/includes/languages/trans_dash.php:914
 msgid "Meta"
 msgstr "متا"
 
 #: dash/addons/includes/languages/trans_dash.php:734
-#: khadije/includes/languages/trans_dash.php:914
+#: khadije/includes/languages/trans_dash.php:915
 #: khadije/includes/languages/trans_project.php:423
 msgid "ID"
 msgstr "شناسه"
 
 #: dash/addons/includes/languages/trans_dash.php:735
-#: khadije/includes/languages/trans_dash.php:915
+#: khadije/includes/languages/trans_dash.php:916
 msgid "Telegram chatid"
 msgstr "شناسه چت تلگرام"
 
@@ -4912,332 +4878,332 @@ msgid "User last visits"
 msgstr "آخرین بازدیدهای کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:737
-#: khadije/includes/languages/trans_dash.php:916
+#: khadije/includes/languages/trans_dash.php:917
 msgid "Without hook"
 msgstr "بدون هوک"
 
 #: dash/addons/includes/languages/trans_dash.php:738
-#: khadije/includes/languages/trans_dash.php:917
+#: khadije/includes/languages/trans_dash.php:918
 msgid "With keyboard"
 msgstr "با کیبورد"
 
 #: dash/addons/includes/languages/trans_dash.php:739
-#: khadije/includes/languages/trans_dash.php:918
+#: khadije/includes/languages/trans_dash.php:919
 msgid "Without keyboard"
 msgstr "بدون کیبورد"
 
 #: dash/addons/includes/languages/trans_dash.php:740
-#: khadije/includes/languages/trans_dash.php:919
+#: khadije/includes/languages/trans_dash.php:920
 msgid "Message id"
 msgstr "شناسه پیام"
 
 #: dash/addons/includes/languages/trans_dash.php:741
-#: khadije/includes/languages/trans_dash.php:920
+#: khadije/includes/languages/trans_dash.php:921
 msgid "Check more detail"
 msgstr "بررسی جزئیات بیشتر"
 
 #: dash/addons/includes/languages/trans_dash.php:742
-#: khadije/includes/languages/trans_dash.php:921
+#: khadije/includes/languages/trans_dash.php:922
 msgid "Without response"
 msgstr "بدون پاسخ"
 
 #: dash/addons/includes/languages/trans_dash.php:743
-#: khadije/includes/languages/trans_dash.php:922
+#: khadije/includes/languages/trans_dash.php:923
 msgid "Without meta"
 msgstr "بدون متا"
 
 #: dash/addons/includes/languages/trans_dash.php:744
-#: khadije/includes/languages/trans_dash.php:923
+#: khadije/includes/languages/trans_dash.php:924
 msgid "You are not starting yet!"
 msgstr "شما هنوز شروع نکردید!"
 
 #: dash/addons/includes/languages/trans_dash.php:747
-#: khadije/includes/languages/trans_dash.php:900
+#: khadije/includes/languages/trans_dash.php:901
 msgid "Chat id or username"
 msgstr "کد گفتگو یا نام‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:748
-#: khadije/includes/languages/trans_dash.php:901
+#: khadije/includes/languages/trans_dash.php:902
 msgid ""
 "Unique identifier for the target chat or username of the target channel (in the "
 "format @channelusername)"
 msgstr "شناسه منحصربه‌فرد برای ارسال پیام به شخص یا کانال در فرمت @نام_کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:749
-#: khadije/includes/languages/trans_dash.php:937
+#: khadije/includes/languages/trans_dash.php:938
 #: khadije/includes/languages/trans_project.php:265
 msgid "Message"
 msgstr "پیام"
 
 #: dash/addons/includes/languages/trans_dash.php:750
-#: khadije/includes/languages/trans_dash.php:905
+#: khadije/includes/languages/trans_dash.php:906
 msgid "Text of the message to be sent"
 msgstr "متن پیام ارسالی"
 
 #: dash/addons/includes/languages/trans_dash.php:751
-#: khadije/includes/languages/trans_dash.php:906
+#: khadije/includes/languages/trans_dash.php:907
 msgid "Last request"
 msgstr "آخرین درخواست"
 
 #: dash/addons/includes/languages/trans_dash.php:754
-#: khadije/includes/languages/trans_dash.php:902
+#: khadije/includes/languages/trans_dash.php:903
 msgid "File URL"
 msgstr "آدرس فایل"
 
 #: dash/addons/includes/languages/trans_dash.php:755
-#: khadije/includes/languages/trans_dash.php:903
+#: khadije/includes/languages/trans_dash.php:904
 msgid "pass an HTTP URL as a String for Telegram to get a photo from the Internet"
 msgstr ""
 "برای دریافت یک عکس از اینترنت یک نشانی اینترنتی HTTP را به عنوان یک رشته برای "
 "تلگرام منتقل کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:756
-#: khadije/includes/languages/trans_dash.php:904
+#: khadije/includes/languages/trans_dash.php:905
 msgid "Caption"
 msgstr "برچسب"
 
 #: dash/addons/includes/languages/trans_dash.php:759
-#: khadije/includes/languages/trans_dash.php:926
+#: khadije/includes/languages/trans_dash.php:927
 msgid ""
 "HTTPS url to send updates to. Use an empty string to remove webhook integration"
 msgstr ""
 "آدرسی را برای به روزرسانی بفرستید. با فرستادن آدرس خالی وبهوک شما حذف خواهد شد"
 
 #: dash/addons/includes/languages/trans_dash.php:760
-#: khadije/includes/languages/trans_dash.php:927
+#: khadije/includes/languages/trans_dash.php:928
 msgid "Max Connections"
 msgstr "حداکثر اتصالات"
 
 #: dash/addons/includes/languages/trans_dash.php:761
-#: khadije/includes/languages/trans_dash.php:928
+#: khadije/includes/languages/trans_dash.php:929
 msgid "Defaults to 40"
 msgstr "پیش فرض ۴۰ است"
 
 #: dash/addons/includes/languages/trans_dash.php:762
-#: khadije/includes/languages/trans_dash.php:929
+#: khadije/includes/languages/trans_dash.php:930
 msgid "Set Webhook"
 msgstr "تنظیم وب‌هوک"
 
 #: dash/addons/includes/languages/trans_dash.php:765
-#: khadije/includes/languages/trans_dash.php:820
+#: khadije/includes/languages/trans_dash.php:821
 msgid "Time zone"
 msgstr "منطقه زمانی"
 
 #: dash/addons/includes/languages/trans_dash.php:766
-#: khadije/includes/languages/trans_dash.php:821
+#: khadije/includes/languages/trans_dash.php:822
 msgid "Automatic"
 msgstr "خودکار "
 
 #: dash/addons/includes/languages/trans_dash.php:767
-#: khadije/includes/languages/trans_dash.php:822
+#: khadije/includes/languages/trans_dash.php:823
 msgid "DateTime"
 msgstr "تاریخ و زمان"
 
 #: dash/addons/includes/languages/trans_dash.php:768
-#: khadije/includes/languages/trans_dash.php:823
+#: khadije/includes/languages/trans_dash.php:824
 #: khadije/includes/languages/trans_project.php:354
 msgid "Time"
 msgstr "زمان"
 
 #: dash/addons/includes/languages/trans_dash.php:769
-#: khadije/includes/languages/trans_dash.php:824
+#: khadije/includes/languages/trans_dash.php:825
 msgid "Force English"
 msgstr "اجبار به انگلیسی"
 
 #: dash/addons/includes/languages/trans_dash.php:770
-#: khadije/includes/languages/trans_dash.php:825
+#: khadije/includes/languages/trans_dash.php:826
 msgid "Force Persian"
 msgstr "اجبار به فارسی"
 
 #: dash/addons/includes/languages/trans_dash.php:771
-#: khadije/includes/languages/trans_dash.php:826
+#: khadije/includes/languages/trans_dash.php:827
 msgid "Human Timing"
 msgstr "زمان بندی انسانی"
 
 #: dash/addons/includes/languages/trans_dash.php:774
-#: khadije/includes/languages/trans_dash.php:944
+#: khadije/includes/languages/trans_dash.php:945
 msgid "You can use our tools"
 msgstr "شما می‌توانید از ابزارهای ما استفاده کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:775
-#: khadije/includes/languages/trans_dash.php:945
+#: khadije/includes/languages/trans_dash.php:946
 msgid "If you dont know about this page, leave it!"
 msgstr "اگر چیزی در مورد این صفحه نمی‌دانید، آن را ترک کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:778
 #: dash/addons/includes/languages/trans_static.php:415
-#: khadije/includes/languages/trans_dash.php:811
+#: khadije/includes/languages/trans_dash.php:812
 msgid "type"
 msgstr "نوع"
 
 #: dash/addons/includes/languages/trans_dash.php:779
-#: khadije/includes/languages/trans_dash.php:812
+#: khadije/includes/languages/trans_dash.php:813
 msgid "Money"
 msgstr "پول"
 
 #: dash/addons/includes/languages/trans_dash.php:780
-#: khadije/includes/languages/trans_dash.php:813
+#: khadije/includes/languages/trans_dash.php:814
 msgid "Gift"
 msgstr "هدیه"
 
 #: dash/addons/includes/languages/trans_dash.php:781
-#: khadije/includes/languages/trans_dash.php:814
+#: khadije/includes/languages/trans_dash.php:815
 msgid "Transfer"
 msgstr "انتقال"
 
 #: dash/addons/includes/languages/trans_dash.php:782
-#: khadije/includes/languages/trans_dash.php:815
+#: khadije/includes/languages/trans_dash.php:816
 msgid "Prize"
 msgstr "جایزه"
 
 #: dash/addons/includes/languages/trans_dash.php:783
-#: khadije/includes/languages/trans_dash.php:816
+#: khadije/includes/languages/trans_dash.php:817
 msgid "Unit"
 msgstr "واحد"
 
 #: dash/addons/includes/languages/trans_dash.php:784
-#: khadije/includes/languages/trans_dash.php:817
+#: khadije/includes/languages/trans_dash.php:818
 msgid "$"
 msgstr "$"
 
 #: dash/addons/includes/languages/trans_dash.php:785
-#: khadije/includes/languages/trans_dash.php:803
+#: khadije/includes/languages/trans_dash.php:804
 msgid "Minus"
 msgstr "هدر رفت"
 
 #: dash/addons/includes/languages/trans_dash.php:786
-#: khadije/includes/languages/trans_dash.php:802
+#: khadije/includes/languages/trans_dash.php:803
 msgid "Plus"
 msgstr "افزودن"
 
 #: dash/addons/includes/languages/trans_dash.php:789
-#: khadije/includes/languages/trans_dash.php:801
+#: khadije/includes/languages/trans_dash.php:802
 msgid "Search in :transactionss"
 msgstr "جستجو در تراکنش‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:790
-#: khadije/includes/languages/trans_dash.php:804
+#: khadije/includes/languages/trans_dash.php:805
 msgid "Budget before"
 msgstr "بودجه قبل"
 
 #: dash/addons/includes/languages/trans_dash.php:791
-#: khadije/includes/languages/trans_dash.php:805
+#: khadije/includes/languages/trans_dash.php:806
 msgid "Budget"
 msgstr "بودجه"
 
 #: dash/addons/includes/languages/trans_dash.php:792
-#: khadije/includes/languages/trans_dash.php:806
+#: khadije/includes/languages/trans_dash.php:807
 #: khadije/includes/languages/trans_project.php:384
 msgid "Condition"
 msgstr "قانون"
 
 #: dash/addons/includes/languages/trans_dash.php:794
-#: khadije/includes/languages/trans_dash.php:808
+#: khadije/includes/languages/trans_dash.php:809
 msgid "Try to start with add new :transactions!"
 msgstr "با افزودن رکورد جدید تلاشی برای شروع داشته باشید!"
 
 #: dash/addons/includes/languages/trans_dash.php:797
-#: khadije/includes/languages/trans_dash.php:893
+#: khadije/includes/languages/trans_dash.php:894
 msgid "Translate"
 msgstr "ترجمه"
 
 #: dash/addons/includes/languages/trans_dash.php:798
-#: khadije/includes/languages/trans_dash.php:894
+#: khadije/includes/languages/trans_dash.php:895
 msgid "Extract All trans func"
 msgstr "استخراج توابع ترجمه  در دش و پروژه جاری"
 
 #: dash/addons/includes/languages/trans_dash.php:799
-#: khadije/includes/languages/trans_dash.php:895
+#: khadije/includes/languages/trans_dash.php:896
 msgid "Extract twig trans func in current project"
 msgstr "بیرون کشیدن متن‌های قابل ترجمه توئیگ از پروژه جاری"
 
 #: dash/addons/includes/languages/trans_dash.php:800
-#: khadije/includes/languages/trans_dash.php:896
+#: khadije/includes/languages/trans_dash.php:897
 msgid "Extract twig trans func in dash addons"
 msgstr "استخراج توابع ترجمه توییگ در دش"
 
 #: dash/addons/includes/languages/trans_dash.php:801
-#: khadije/includes/languages/trans_dash.php:897
+#: khadije/includes/languages/trans_dash.php:898
 msgid "Extract twig trans func in dash addons and update on dash addons"
 msgstr "استخراج توابع ترجمه توییگ در دش به‌همراه بروزرسانی آن در هسته"
 
 #: dash/addons/includes/languages/trans_dash.php:804
-#: khadije/includes/languages/trans_dash.php:968
+#: khadije/includes/languages/trans_dash.php:969
 msgid "Submit this form carefully"
 msgstr "این را با احتیاط بفشارید"
 
 #: dash/addons/includes/languages/trans_dash.php:805
-#: khadije/includes/languages/trans_dash.php:969
+#: khadije/includes/languages/trans_dash.php:970
 msgid "If the git password is saved on your server"
 msgstr "اگر پسورد سرور گیت بر روی سیستم شما ذخیره است"
 
 #: dash/addons/includes/languages/trans_dash.php:806
-#: khadije/includes/languages/trans_dash.php:970
+#: khadije/includes/languages/trans_dash.php:971
 msgid "Press it if you are sure!"
 msgstr "اگر مطمئن هستید، بفشارید!"
 
 #: dash/addons/includes/languages/trans_dash.php:807
-#: khadije/includes/languages/trans_dash.php:971
+#: khadije/includes/languages/trans_dash.php:972
 msgid "Update All"
 msgstr "بروزرسانی همه"
 
 #: dash/addons/includes/languages/trans_dash.php:808
-#: khadije/includes/languages/trans_dash.php:972
+#: khadije/includes/languages/trans_dash.php:973
 msgid "Git password"
 msgstr "پسورد گیت"
 
 #: dash/addons/includes/languages/trans_dash.php:809
-#: khadije/includes/languages/trans_dash.php:973
+#: khadije/includes/languages/trans_dash.php:974
 msgid "Enter git pass"
 msgstr "کلمه عبور گیت را وارد کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:810
-#: khadije/includes/languages/trans_dash.php:974
+#: khadije/includes/languages/trans_dash.php:975
 msgid "Current Version"
 msgstr "نسخه فعلی"
 
 #: dash/addons/includes/languages/trans_dash.php:811
-#: khadije/includes/languages/trans_dash.php:975
+#: khadije/includes/languages/trans_dash.php:976
 msgid "Commits"
 msgstr "کامیت‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:812
-#: khadije/includes/languages/trans_dash.php:976
+#: khadije/includes/languages/trans_dash.php:977
 msgid "Do it if you know it"
 msgstr "اگر می‌دانید انجامش دهید"
 
 #: dash/addons/includes/languages/trans_dash.php:813
-#: khadije/includes/languages/trans_dash.php:977
+#: khadije/includes/languages/trans_dash.php:978
 msgid "Update Dash Repository"
 msgstr "بروزرسانی مخزن دش"
 
 #: dash/addons/includes/languages/trans_dash.php:814
-#: khadije/includes/languages/trans_dash.php:978
+#: khadije/includes/languages/trans_dash.php:979
 msgid "Dash Engine Location"
 msgstr "محل قرارگیری موتور دش"
 
 #: dash/addons/includes/languages/trans_dash.php:815
-#: khadije/includes/languages/trans_dash.php:979
+#: khadije/includes/languages/trans_dash.php:980
 msgid "Update Repository"
 msgstr "بروزرسانی مخزن"
 
 #: dash/addons/includes/languages/trans_dash.php:816
-#: khadije/includes/languages/trans_dash.php:980
+#: khadije/includes/languages/trans_dash.php:981
 msgid "Project database"
 msgstr "دیتابیس پروژه"
 
 #: dash/addons/includes/languages/trans_dash.php:817
-#: khadije/includes/languages/trans_dash.php:981
+#: khadije/includes/languages/trans_dash.php:982
 msgid "Addon Database"
 msgstr "دیتابیس افزونه"
 
 #: dash/addons/includes/languages/trans_dash.php:818
-#: khadije/includes/languages/trans_dash.php:982
+#: khadije/includes/languages/trans_dash.php:983
 msgid "Upgrade"
 msgstr "ارتقا"
 
 #: dash/addons/includes/languages/trans_dash.php:819
-#: khadije/includes/languages/trans_dash.php:983
+#: khadije/includes/languages/trans_dash.php:984
 msgid "Backup by dump"
 msgstr "پشتیبان با دامپ"
 
@@ -6169,7 +6135,7 @@ msgid "SiteContent"
 msgstr "محتوای سایت"
 
 #: dash/addons/includes/languages/trans_static.php:84
-#: khadije/content_cp/consulting/view.php:20 khadije/content_cp/donate/view.php:21
+#: khadije/content_cp/consulting/view.php:20 khadije/content_cp/donate/view.php:18
 #: khadije/content_cp/familytrip/view.php:16 khadije/content_cp/health/view.php:21
 #: khadije/content_cp/representation/view.php:20
 #: khadije/content_cp/service/view.php:20 khadije/content_cp/trip/view.php:16
@@ -9013,6 +8979,7 @@ msgid "cancel"
 msgstr "انصراف"
 
 #: dash/addons/includes/languages/trans_static.php:898
+#: khadije/includes/languages/trans_static.php:156
 msgid "student"
 msgstr "دانش آموز"
 
@@ -10386,43 +10353,43 @@ msgstr "سلام، مستندات را بخوان و پروژه خودتو شر�
 msgid "We can't find the page you're looking for!"
 msgstr "ما صفحه‌ای که به‌دنبال آن هستید را نمی‌یابیم!"
 
-#: dash/lib/engine/view.php:78
+#: dash/lib/engine/view.php:79
 msgid "As easy as ABC is our slogan!"
 msgstr "کاری نداره شعار ماست!"
 
-#: dash/lib/engine/view.php:78
+#: dash/lib/engine/view.php:79
 msgid "If you are not finded a solution for your problem, call us."
 msgstr "اگر راه‌کاری مناسب برای مشکل خود نیافته‌اید، با ما تماس بگیرید."
 
-#: dash/lib/engine/view.php:79 khadije/includes/languages/trans_project.php:658
+#: dash/lib/engine/view.php:80 khadije/includes/languages/trans_project.php:658
 msgid "Software Solution Designer"
 msgstr "ارائه‌دهنده‌ی راه‌کارهای مدرن نرم‌افزاری"
 
-#: dash/lib/engine/view.php:185
+#: dash/lib/engine/view.php:186
 msgid "Latest news"
 msgstr "آخرین اخبار"
 
-#: dash/lib/engine/view.php:234
+#: dash/lib/engine/view.php:235
 msgid "You are using Internet Explorer."
 msgstr "شما از اینترنت اکسپلورر استفاده می‌کنید."
 
-#: dash/lib/engine/view.php:234
+#: dash/lib/engine/view.php:235
 msgid "Really!!!"
 msgstr "واقعا!!!"
 
-#: dash/lib/engine/view.php:234
+#: dash/lib/engine/view.php:235
 msgid "IE is DIE!"
 msgstr "آی‌ای مرده است!"
 
-#: dash/lib/engine/view.php:238
+#: dash/lib/engine/view.php:239
 msgid "You need to update your :browser to new version."
 msgstr "شما نیازمند ارتقای :browser خود به نسخه جدید هستید."
 
-#: dash/lib/engine/view.php:238
+#: dash/lib/engine/view.php:239
 msgid "The world is changing rapidly!"
 msgstr "دنیا به‌سرعت در حال تغییر است!"
 
-#: dash/lib/engine/view.php:249
+#: dash/lib/engine/view.php:250
 msgid "Please use famous browser to have better experience!"
 msgstr "لطفا برای بهرمندی از تجربه مطلوب‌تر از مرورگرهای مطرح استفاده کنید."
 
@@ -10819,6 +10786,14 @@ msgstr "بدون تغییر!"
 msgid "Invalid access token"
 msgstr "توکن دسترسی نامعتبر است"
 
+#: dash/lib/utility/hive.php:19
+msgid "Reload page to continue!"
+msgstr "برای ادامه، صفحه را مجددا بارگذاری نمایید"
+
+#: dash/lib/utility/hive.php:24
+msgid "You wander in a labyrinth!"
+msgstr "شما در یک دخمه پرپیچ‌وخم سرگردانید!"
+
 #: dash/lib/utility/human.php:42
 msgid "In the future"
 msgstr "در آینده"
@@ -10827,11 +10802,11 @@ msgstr "در آینده"
 msgid ", :min minute"
 msgstr " و :min دقیقه"
 
-#: dash/lib/utility/payment/pay.php:50
+#: dash/lib/utility/payment/pay.php:43
 msgid "Invalid amount"
 msgstr "مقدار نامعتبر"
 
-#: dash/lib/utility/payment/pay.php:68
+#: dash/lib/utility/payment/pay.php:59
 msgid "This payment is not supported in this system"
 msgstr "این روش پرداخت در این سیستم پشتیبانی نمی‌شود"
 
@@ -10852,6 +10827,7 @@ msgstr "در حال انتقال به درگاه آسان پرداخت"
 
 #: dash/lib/utility/payment/pay/asanpardakht.php:136
 #: dash/lib/utility/payment/pay/irkish.php:125
+#: dash/lib/utility/payment/pay/mellat.php:134
 msgid "Redirect"
 msgstr "تغییر مسیر"
 
@@ -10872,6 +10848,29 @@ msgstr "پرداخت با روش پرداخت ایران کیش"
 #: dash/lib/utility/payment/pay/irkish.php:124
 msgid "Redirect to iran kish payment"
 msgstr "تغییر مسیر به روش پرداخت ایران کیش"
+
+#: dash/lib/utility/payment/pay/mellat.php:33
+#: dash/lib/utility/payment/verify/mellat.php:30
+msgid "The mellat payment on this service is locked"
+msgstr "درگاه پرداخت ملت در این سیستم تعریف نشده است"
+
+#: dash/lib/utility/payment/pay/mellat.php:40
+#: dash/lib/utility/payment/verify/mellat.php:37
+msgid "The mellat payment TerminalId not set"
+msgstr "شناسه ترمینال درگاه پرداخت ملت تنظیم نشده است"
+
+#: dash/lib/utility/payment/pay/mellat.php:47
+#: dash/lib/utility/payment/verify/mellat.php:44
+msgid "The mellat payment UserName not set"
+msgstr "نام کاربری درگاه پرداخت ملت تنظیم نشده است"
+
+#: dash/lib/utility/payment/pay/mellat.php:78
+msgid "Pay by mellat payment"
+msgstr "پرداخت با درگاه بانک ملت"
+
+#: dash/lib/utility/payment/pay/mellat.php:133
+msgid "Redirect to mellat payment"
+msgstr "در حال انتقال به درگاه پرداخت ملت"
 
 #: dash/lib/utility/payment/pay/parsian.php:34
 #: dash/lib/utility/payment/verify/parsian.php:30
@@ -10939,6 +10938,8 @@ msgstr "خطا در درگاه پرداخت - هیچ پاسخی گرفته نش�
 #: dash/lib/utility/payment/payment/asanpardakht.php:111
 #: dash/lib/utility/payment/payment/irkish.php:73
 #: dash/lib/utility/payment/payment/irkish.php:135
+#: dash/lib/utility/payment/payment/mellat.php:93
+#: dash/lib/utility/payment/payment/mellat.php:162
 #: dash/lib/utility/payment/payment/parsian.php:81
 #: dash/lib/utility/payment/payment/parsian.php:145
 #: dash/lib/utility/payment/payment/parsian.php:198
@@ -10957,10 +10958,195 @@ msgstr "خطا در اتصل به سرویس بانک"
 
 #: dash/lib/utility/payment/payment/irkish.php:188
 #: dash/lib/utility/payment/payment/irkish.php:192
+#: dash/lib/utility/payment/payment/mellat.php:230
 #: dash/lib/utility/payment/payment/parsian.php:324
 #: dash/lib/utility/payment/payment/parsian.php:329
 msgid "Unkown payment error"
 msgstr "خطای پرداخت ناشناس"
+
+#: dash/lib/utility/payment/payment/mellat.php:42
+msgid "Can not connect to mellat gateway. Install it!"
+msgstr "نمی‌توانیم به درگاه پرداخت ملت متصل شویم. آن را نصب کنید!"
+
+#: dash/lib/utility/payment/payment/mellat.php:177
+msgid "Transaction Approved"
+msgstr "تراکنش تایید شده است"
+
+#: dash/lib/utility/payment/payment/mellat.php:178
+msgid "Invalid Card Number"
+msgstr "شماره کارت نامعتبر است"
+
+#: dash/lib/utility/payment/payment/mellat.php:179
+msgid "No Sufficient Funds"
+msgstr "بدون پول کافی"
+
+#: dash/lib/utility/payment/payment/mellat.php:180
+msgid "Incorrect Pin"
+msgstr "پین نادرست"
+
+#: dash/lib/utility/payment/payment/mellat.php:181
+msgid "Allowable Number Of Pin Tries Exceeded"
+msgstr "تعداد قابل قبولی از پین تلاش می کند بیش از"
+
+#: dash/lib/utility/payment/payment/mellat.php:182
+msgid "Card Not Effective"
+msgstr "کارت موثر نیست"
+
+#: dash/lib/utility/payment/payment/mellat.php:183
+msgid "Exceeds Withdrawal Frequency Limit"
+msgstr "بیش از حد فرکانس خروج"
+
+#: dash/lib/utility/payment/payment/mellat.php:184
+msgid "Customer Cancellation"
+msgstr "لغو مشتری"
+
+#: dash/lib/utility/payment/payment/mellat.php:185
+msgid "Expired Card"
+msgstr "کارت خاتمه یافته"
+
+#: dash/lib/utility/payment/payment/mellat.php:186
+msgid "Exceeds Withdrawal Amount Limit"
+msgstr "حد مجاز بازپرداخت بیشتر است"
+
+#: dash/lib/utility/payment/payment/mellat.php:187
+msgid "No Such Issuer"
+msgstr "چنین صادر کننده ای وجود ندارد"
+
+#: dash/lib/utility/payment/payment/mellat.php:188
+msgid "Card Switch Internal Error"
+msgstr "کارت سوئیچ داخلی خطا"
+
+#: dash/lib/utility/payment/payment/mellat.php:189
+msgid "Issuer Or Switch Is Inoperative"
+msgstr "صادر کننده یا سوئیچ نامناسب است"
+
+#: dash/lib/utility/payment/payment/mellat.php:190
+msgid "Transaction Not Permitted To Card Holder"
+msgstr "تراکنش به دارنده کارت مجاز نمی باشد"
+
+#: dash/lib/utility/payment/payment/mellat.php:191
+msgid "Invalid Merchant"
+msgstr "Merchant نامعتبر است"
+
+#: dash/lib/utility/payment/payment/mellat.php:192
+msgid "Security Violation"
+msgstr "نقض امنیتی"
+
+#: dash/lib/utility/payment/payment/mellat.php:193
+msgid "Invalid User Or Password"
+msgstr "کاربر یا گذرواژه نامعتبر است"
+
+#: dash/lib/utility/payment/payment/mellat.php:194
+msgid "Invalid Amount"
+msgstr "مقدار نامعتبر"
+
+#: dash/lib/utility/payment/payment/mellat.php:195
+msgid "Invalid Response"
+msgstr "پاسخ نامعتبر"
+
+#: dash/lib/utility/payment/payment/mellat.php:196
+msgid "Format Error"
+msgstr "خطای قالب"
+
+#: dash/lib/utility/payment/payment/mellat.php:197
+msgid "No Investment Account"
+msgstr "حساب سرمایه گذاری ندارد"
+
+#: dash/lib/utility/payment/payment/mellat.php:198
+msgid "System Internal Error"
+msgstr "خطای داخلی سیستم"
+
+#: dash/lib/utility/payment/payment/mellat.php:199
+msgid "Invalid Business Date"
+msgstr "تاریخ کسب و کار نامعتبر است"
+
+#: dash/lib/utility/payment/payment/mellat.php:200
+msgid "Duplicate Order Id"
+msgstr "شناسه سفارش تکراری"
+
+#: dash/lib/utility/payment/payment/mellat.php:201
+msgid "Sale Transaction Not Found"
+msgstr "معامله فروش یافت نشد"
+
+#: dash/lib/utility/payment/payment/mellat.php:202
+msgid "Duplicate Verify"
+msgstr "تکثیر تأیید"
+
+#: dash/lib/utility/payment/payment/mellat.php:203
+msgid "Verify Transaction Not Found"
+msgstr "تأیید معامله یافت نشد"
+
+#: dash/lib/utility/payment/payment/mellat.php:204
+msgid "Transaction Has Been Settled"
+msgstr "معامله صورت گرفته است"
+
+#: dash/lib/utility/payment/payment/mellat.php:205
+msgid "Transaction Has Not Been Settled"
+msgstr "معامله انجام نشده است"
+
+#: dash/lib/utility/payment/payment/mellat.php:206
+msgid "Settle Transaction Not Found"
+msgstr "معامله معامله پیدا نشد"
+
+#: dash/lib/utility/payment/payment/mellat.php:207
+msgid "Transaction Has Been Reversed"
+msgstr "معامله معکوس شده است"
+
+#: dash/lib/utility/payment/payment/mellat.php:208
+msgid "Refund Transaction Not Found"
+msgstr "معامله بازپرداخت یافت نشد"
+
+#: dash/lib/utility/payment/payment/mellat.php:209
+msgid "Bill Digit Incorrect"
+msgstr "بیل سیگنال اشتباه است"
+
+#: dash/lib/utility/payment/payment/mellat.php:210
+msgid "Payment Digit Incorrect"
+msgstr "سیگنال پرداخت اشتباه است"
+
+#: dash/lib/utility/payment/payment/mellat.php:211
+msgid "Bill Organization Not Valid"
+msgstr "سازمان بیل معتبر نیست"
+
+#: dash/lib/utility/payment/payment/mellat.php:212
+msgid "Session Timeout"
+msgstr "مدت زمان جلسه"
+
+#: dash/lib/utility/payment/payment/mellat.php:213
+msgid "Data Access Exception"
+msgstr "استثناء دسترسی به داده ها"
+
+#: dash/lib/utility/payment/payment/mellat.php:214
+msgid "Payer Id Is Invalid"
+msgstr "شناسه پرداخت نامعتبر است"
+
+#: dash/lib/utility/payment/payment/mellat.php:215
+msgid "Customer Not Found"
+msgstr "مشتری یافت نشد"
+
+#: dash/lib/utility/payment/payment/mellat.php:216
+msgid "Try Count Exceeded"
+msgstr "سعی کنید تعداد بیش از حد"
+
+#: dash/lib/utility/payment/payment/mellat.php:217
+msgid "Invalid IP"
+msgstr "IP نامعتبر است"
+
+#: dash/lib/utility/payment/payment/mellat.php:218
+msgid "Duplicate Transmission"
+msgstr "انتقال تکراری"
+
+#: dash/lib/utility/payment/payment/mellat.php:219
+msgid "Original Transaction Not Found"
+msgstr "معامله اصلی یافت نشد"
+
+#: dash/lib/utility/payment/payment/mellat.php:220
+msgid "Invalid Transaction"
+msgstr "معامله نامعتبر"
+
+#: dash/lib/utility/payment/payment/mellat.php:221
+msgid "Error In Settle"
+msgstr "خطا در حل و فصل"
 
 #: dash/lib/utility/payment/payment/parsian.php:42
 msgid "Can not connect to parsian gateway. Install it!"
@@ -11038,6 +11224,7 @@ msgstr "عملیات پرداخت با موفقیت انجام شد و تایی�
 
 #: dash/lib/utility/payment/verify/asanpardakht.php:68
 #: dash/lib/utility/payment/verify/irkish.php:71
+#: dash/lib/utility/payment/verify/mellat.php:68
 #: dash/lib/utility/payment/verify/parsian.php:64
 #: dash/lib/utility/payment/verify/payir.php:63
 #: dash/lib/utility/payment/verify/zarinpal.php:60
@@ -11048,6 +11235,7 @@ msgstr "اطلاعات سشن از دست رفته است! ما نمی‌توا�
 #: dash/lib/utility/payment/verify/asanpardakht.php:101
 #: dash/lib/utility/payment/verify/irkish.php:91
 #: dash/lib/utility/payment/verify/irkish.php:98
+#: dash/lib/utility/payment/verify/mellat.php:90
 #: dash/lib/utility/payment/verify/parsian.php:91
 #: dash/lib/utility/payment/verify/parsian.php:98
 #: dash/lib/utility/payment/verify/payir.php:80
@@ -11063,6 +11251,10 @@ msgstr "توکن برای روش پرداخت ایران کیش تنظیم نش�
 #: dash/lib/utility/payment/verify/irkish.php:60
 msgid "The irkish payment resultCode not set"
 msgstr "کد نتیجه در روش پرداخت ایران کیش تنظیم نشده است"
+
+#: dash/lib/utility/payment/verify/mellat.php:57
+msgid "The mellat payment RefId not set"
+msgstr "ارجاع دهنده درگاه پرداخت ملت تنظیم نشده است"
 
 #: dash/lib/utility/payment/verify/payir.php:52
 msgid "The payir payment transId not set"
@@ -11317,7 +11509,7 @@ msgstr "ثبت نام برای خدمات مشاوره جدید"
 #: khadije/content_a/festival/profile/model.php:42
 #: khadije/content_a/group/profile/model.php:33
 #: khadije/content_a/health/profile/model.php:33
-#: khadije/content_a/profile/model.php:33
+#: khadije/content_a/profile/model.php:34
 #: khadije/content_a/representation/profile/model.php:33
 #: khadije/content_a/service/profile/model.php:33
 #: khadije/content_a/trip/profile/model.php:66
@@ -11693,7 +11885,7 @@ msgid "List of your health request"
 msgstr "لست خدمات درمانی شما"
 
 #: khadije/content_a/health/home/view.php:13
-#: khadije/includes/languages/trans_project.php:926
+#: khadije/includes/languages/trans_project.php:927
 msgid "register for new health request"
 msgstr "ثبت‌نام خدمات درمانی جدید"
 
@@ -11833,7 +12025,7 @@ msgid "check books last transactions and monitor them"
 msgstr "بررسی لیست آخرین تراکنش‌های مربوط به کتاب"
 
 #: khadije/content_cp/book/view.php:15 khadije/content_cp/consulting/view.php:16
-#: khadije/content_cp/donate/view.php:17 khadije/content_cp/familytrip/view.php:18
+#: khadije/content_cp/donate/view.php:22 khadije/content_cp/familytrip/view.php:18
 #: khadije/content_cp/health/view.php:17 khadije/content_cp/nationalcode/view.php:18
 #: khadije/content_cp/representation/view.php:16
 #: khadije/content_cp/service/view.php:16 khadije/content_cp/trip/view.php:18
@@ -11873,7 +12065,7 @@ msgstr "لیست درخواست‌های خدمات مشاوره شما"
 msgid "check consulting requests"
 msgstr "درخواست‌های خدمات مشاوره خود را بررسی کنید"
 
-#: khadije/content_cp/consulting/view.php:85
+#: khadije/content_cp/consulting/view.php:86
 #: khadije/includes/languages/trans_project.php:192
 #: khadije/includes/languages/trans_static.php:83
 msgid "Consulting"
@@ -12638,24 +12830,33 @@ msgstr "گزارش به تفکیک ماه"
 msgid "Report pay by name"
 msgstr "گزارش پرداخت‌ها به تفکیک نام"
 
-#: khadije/content_cp/representation/options/model.php:54
+#: khadije/content_cp/representation/options/model.php:49
+msgid "Invalid place id"
+msgstr "شناسه شهر نامعتبر است"
+
+#: khadije/content_cp/representation/options/model.php:81
+#: khadije/content_cp/representation/view/model.php:51
+msgid "Your representation request for :place is done."
+msgstr "زیارت از نیابت شما در :place به انجام رسید."
+
+#: khadije/content_cp/representation/options/model.php:85
 #: khadije/includes/languages/trans_project.php:762
 msgid "Allahouma sali ala mohamed wa ali muhammad"
 msgstr "اللهم صل علی محمد و آل محمد و عجل فرجهم"
 
-#: khadije/content_cp/representation/options/model.php:55
+#: khadije/content_cp/representation/options/model.php:86
 msgid ":count request status changed"
 msgstr ":count  درخواست وضعیتشان تغییر کرد"
 
-#: khadije/content_cp/representation/options/model.php:60
+#: khadije/content_cp/representation/options/model.php:91
 msgid "No awaiting request found!"
 msgstr "هیچ درخواست در انتظاری یافت نشد"
 
-#: khadije/content_cp/representation/options/model.php:103
+#: khadije/content_cp/representation/options/model.php:134
 msgid "Representation successfully edited"
 msgstr "زیارت نیابتی با موفقیت ویرایش شد"
 
-#: khadije/content_cp/representation/options/model.php:108
+#: khadije/content_cp/representation/options/model.php:139
 msgid "Representation successfully added"
 msgstr "زیارت نیابتی با موفقیت اضافه شد"
 
@@ -12688,10 +12889,6 @@ msgstr "زیارت نیابتی"
 #: khadije/content_cp/representation/view/model.php:27
 msgid "The representation updated"
 msgstr "زیارت نیابتی با موفقیت ویرایش شد"
-
-#: khadije/content_cp/representation/view/model.php:51
-msgid "Your representation request for :place is done."
-msgstr "زیارت از نیابت شما در :place به انجام رسید."
 
 #: khadije/content_cp/representation/view/view.php:11
 msgid "View representation detail"
@@ -12785,15 +12982,19 @@ msgstr "همه جشنواره‌ها"
 msgid "This festival is not enable"
 msgstr "این جشنواره فعال نیست"
 
-#: khadije/includes/languages/trans_dash.php:763
+#: khadije/includes/languages/trans_dash.php:748
+msgid "Your avatar"
+msgstr "تصویر شما"
+
+#: khadije/includes/languages/trans_dash.php:764
 msgid "Postal code"
 msgstr "کد پستی"
 
-#: khadije/includes/languages/trans_dash.php:765
+#: khadije/includes/languages/trans_dash.php:766
 msgid "Name of person in this address"
 msgstr "نام شخصی که در این آدرس حضور دارد"
 
-#: khadije/includes/languages/trans_dash.php:770
+#: khadije/includes/languages/trans_dash.php:771
 msgid "Title of address"
 msgstr "عنوان آدرس"
 
@@ -14767,11 +14968,15 @@ msgstr "در حال حاضر زیارت نیابتی ارائه نمی‌شود!
 msgid "Select province"
 msgstr "استان را انتخاب کنید"
 
-#: khadije/includes/languages/trans_project.php:920
+#: khadije/includes/languages/trans_project.php:917
+msgid "Are you an univercity student?"
+msgstr "آیا دانشجو هستید؟"
+
+#: khadije/includes/languages/trans_project.php:921
 msgid "Your are using this health"
 msgstr "شما از این خدمات درمانی استفاده می کنید"
 
-#: khadije/includes/languages/trans_project.php:923
+#: khadije/includes/languages/trans_project.php:924
 msgid "We do not provide health service yet!"
 msgstr "در حال حاضر خدمات درمانی ارائه نمی‌شود!"
 
@@ -15122,6 +15327,10 @@ msgstr "تغییر وضعیت درخواست‌های خادمی"
 #: khadije/includes/languages/trans_static.php:154
 msgid "cpHealthChangeStatus"
 msgstr "تغییر وضعیت درخواست‌های خدمات درمانی"
+
+#: khadije/includes/languages/trans_static.php:155
+msgid "Student"
+msgstr "دانش‌آموز"
 
 #: khadije/includes/lib/app/donate.php:51
 msgid "This :way is not in your list!"
@@ -15685,6 +15894,30 @@ msgstr "راهی برای ثبت تشرف وجود ندارد"
 #: khadije/includes/permission/permission.php:19
 msgid "Can view the admin page"
 msgstr "شما می‌توانید صفحه‌ی مدیریت را ببینید"
+
+#~ msgid "Telegram id not found"
+#~ msgstr "آی‌دی تلگرام یافت نشد"
+
+#~ msgid "Invalid telegram id"
+#~ msgstr "آی‌دی تلگرام نامعتبر است"
+
+#~ msgid "Authorization not found"
+#~ msgstr "مجوز یافت نشد"
+
+#~ msgid "Invalid Authorization"
+#~ msgstr "کد تایید نامعتبر است"
+
+#~ msgid "Mobile is not set"
+#~ msgstr "تلفن همراه تنظیم نشده است"
+
+#~ msgid "System error 1"
+#~ msgstr "خطای سیستمی‌۱"
+
+#~ msgid "System error 2"
+#~ msgstr "خطای سیستمی‌۲"
+
+#~ msgid "System error 3"
+#~ msgstr "خطای سیستمی‌۳"
 
 #~ msgid "Please set firstname less than 100 character"
 #~ msgstr "لطفا نام را کمتر از ۱۰۰ حرف وارد کنید"

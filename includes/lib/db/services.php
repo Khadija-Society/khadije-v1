@@ -95,6 +95,7 @@ class services
 				users.city           AS `city`,
 				users.country        AS `country`,
 				users.gender         AS `gender`,
+				users.job            AS `userjob`,
 				users.father         AS `father`,
 				users.lastname       AS `lastname`,
 				users.nationalcode   AS `nationalcode`,

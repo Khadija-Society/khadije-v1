@@ -88,7 +88,7 @@ class twigTransTerms
 	echo T_("Require to change current password");                                    // Line 265
 	echo T_("Add");                                                                   // Line 53
 	echo T_("Save");                                                                  // Line 13
-	echo T_("Save all");                                                              // Line 293
+	echo T_("Save all");                                                              // Line 294
 
 	//---------------------------------------addons/content_cp/users/home/display.html
 	echo T_("Search");                                                                // Line 58
@@ -114,7 +114,7 @@ class twigTransTerms
 	//---------------------------------------addons/content_cp/users/view/display.html
 	echo T_("Edit");                                                                  // Line 106
 	echo T_("Field");                                                                 // Line 14
-	echo T_("Value");                                                                 // Line 102
+	echo T_("Value");                                                                 // Line 109
 	echo T_("Decode");                                                                // Line 28
 	echo T_("Send SMS");                                                              // Line 39
 	echo T_("Enter");                                                                 // Line 209
@@ -428,7 +428,7 @@ class twigTransTerms
 	echo T_("Enter a valid eamil!");                                                  // Line 365
 	echo T_("username");                                                              // Line 119
 	echo T_("Enter a valid username from 4 to 50 character");                         // Line 119
-	echo T_("Go");                                                                    // Line 16
+	echo T_("Go");                                                                    // Line 18
 	echo T_("Delete Account");                                                        // Line 132
 	echo T_("Go and check it");                                                       // Line 137
 	echo T_("Next");                                                                  // Line 152
@@ -460,7 +460,7 @@ class twigTransTerms
 	echo T_("Total records");                                                         // Line 4
 	echo T_("Total");                                                                 // Line 22
 
-	//----------------------------------addons/content_enter/autoredirect/display.html
+	//-----------------------------------addons/content_hook/autoredirect/display.html
 
 	//-----------------------------------------addons/content_enter/block/display.html
 	echo T_("You are blocked becauese of some reason!");                              // Line 7
@@ -556,14 +556,14 @@ class twigTransTerms
 	echo T_("Archived");                                                              // Line 54
 
 	//--------------------------------------addons/content_support/ticket/addForm.html
-	echo T_("Ticket Subject");                                                        // Line 6
-	echo T_("Subject of your ticket");                                                // Line 8
-	echo T_("Set title will help us answer quickly");                                 // Line 8
-	echo T_("Attachment");                                                            // Line 20
-	echo T_("Max size");                                                              // Line 20
-	echo T_("Submit a ticket");                                                       // Line 26
-	echo T_("Send new message");                                                      // Line 38
-	echo T_("Add note");                                                              // Line 34
+	echo T_("Ticket Subject");                                                        // Line 8
+	echo T_("Subject of your ticket");                                                // Line 10
+	echo T_("Set title will help us answer quickly");                                 // Line 10
+	echo T_("Attachment");                                                            // Line 22
+	echo T_("Max size");                                                              // Line 22
+	echo T_("Submit a ticket");                                                       // Line 28
+	echo T_("Send new message");                                                      // Line 40
+	echo T_("Add note");                                                              // Line 36
 
 	//---------------------------------addons/content_support/ticket/show/display.html
 	echo T_("If your problem is solved or do not need to track, please close this ticket by press below bottom.");// Line 20
@@ -658,13 +658,13 @@ class twigTransTerms
 	echo T_("Share your link");                                                       // Line 34
 	echo T_("Copy your personal referral link and share it with your friends and followers.");// Line 35
 	echo T_("Link");                                                                  // Line 38
-	echo T_("Promo code");                                                            // Line 63
+	echo T_("Promo code");                                                            // Line 70
 	echo T_("Referral stats");                                                        // Line 51
 	echo T_("CLICKS");                                                                // Line 55
 	echo T_("Number of times your link has been opened.");                            // Line 56
 	echo T_("REFERRALS");                                                             // Line 60
 	echo T_("People who enter to Jibres using your link.");                           // Line 61
-	echo T_("Promo Code");                                                            // Line 69
+	echo T_("Promo Code");                                                            // Line 76
 	echo T_("People who connected to you with promo code.");                          // Line 66
 	echo T_("Total you refed");                                                       // Line 71
 	echo T_("Sum of people referred from you.");                                      // Line 72
@@ -707,15 +707,15 @@ class twigTransTerms
 	echo T_("Charge your account");                                                   // Line 13
 	echo T_("Choose a gateway and enter an amount to charge your account");           // Line 14
 	echo T_("Parsian");                                                               // Line 18
-	echo T_("Amount");                                                                // Line 54
-	echo T_("Checkout");                                                              // Line 55
-	echo T_("If you have a promo code, please enter it below to receive your credit.");// Line 64
-	echo T_("Apply Code");                                                            // Line 70
-	echo T_("Your credit");                                                           // Line 85
-	echo T_("Billing History");                                                       // Line 96
-	echo T_("Budget After");                                                          // Line 103
-	echo T_("Invoice");                                                               // Line 104
-	echo T_("You are not have payment history yet!");                                 // Line 142
+	echo T_("Amount");                                                                // Line 61
+	echo T_("Checkout");                                                              // Line 62
+	echo T_("If you have a promo code, please enter it below to receive your credit.");// Line 71
+	echo T_("Apply Code");                                                            // Line 77
+	echo T_("Your credit");                                                           // Line 92
+	echo T_("Billing History");                                                       // Line 103
+	echo T_("Budget After");                                                          // Line 110
+	echo T_("Invoice");                                                               // Line 111
+	echo T_("You are not have payment history yet!");                                 // Line 149
 
 	//-----------------------------addons/content_account/billing/invoice/display.html
 	echo T_("Factor of team");                                                        // Line 8
@@ -745,6 +745,7 @@ class twigTransTerms
 	//-------------------------------------addons/content_account/profile/display.html
 
 	//-------------------------------addons/content_account/profile/other/display.html
+	echo T_("Your avatar");                                                           // Line 280
 
 	//---------------------------addons/content_account/profile/signature/display.html
 	echo T_("Your signature");                                                        // Line 12
