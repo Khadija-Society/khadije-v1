@@ -2077,6 +2077,10 @@ progress.xl, meter.xl {
 .rtl .tbl1 tr th:first-of-type, .rtl .tbl1 tr td:first-of-type {
   padding-right: 3rem; }
 
+.tbl1 td a {
+  white-space: normal;
+  word-break: break-all; }
+
 /*================================================================== [ v1 ]*/
 .tbl1.v1 {
   border-radius: 1rem;
