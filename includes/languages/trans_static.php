@@ -154,6 +154,8 @@ class TransStatic
 	echo T_("cpHealthChangeStatus");
 	echo T_("Student");
 	echo T_("student");
+	echo T_("collegian");
+	echo T_("Collegian");
  }
 }
 ?>

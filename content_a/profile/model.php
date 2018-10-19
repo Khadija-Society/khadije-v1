@@ -10,7 +10,7 @@ class model
 		$post                    = [];
 		$post['gender']          = \dash\request::post('gender') ;
 		$post['email']           = \dash\request::post('email');
-		$post['job']             = \dash\request::post('student') ? 'student' : null;
+		$post['job']             = \dash\request::post('student') ? 'collegian' : null;
 		$post['birthday']        = \dash\request::post('birthday');
 		$post['firstname']       = \dash\request::post('name');
 		$post['lastname']        = \dash\request::post('lastName');
