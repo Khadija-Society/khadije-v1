@@ -65,6 +65,63 @@ class view
 			$payment_args['hazinekard'] = \dash\request::get('hazinekard');
 		}
 
+		$startdate = null;
+		$enddate   = null;
+
+		$get_date_url = [];
+		if(\dash\request::get('startdate'))
+		{
+			$startdate                 = \dash\request::get('startdate');
+			$get_date_url['startdate'] = $startdate;
+			$startdate                 = \dash\utility\convert::to_en_number($startdate);
+
+			if(\dash\utility\jdate::is_jalali($startdate))
+			{
+				$startdate = \dash\utility\jdate::to_gregorian($startdate);
+			}
+			\dash\data::startdateEn($startdate);
+
+
+		}
+
+		if(\dash\request::get('enddate'))
+		{
+			$enddate                 = \dash\request::get('enddate');
+			$get_date_url['enddate'] = $enddate;
+			$enddate                 = \dash\utility\convert::to_en_number($enddate);
+			if(\dash\utility\jdate::is_jalali($enddate))
+			{
+				$enddate = \dash\utility\jdate::to_gregorian($enddate);
+			}
+			\dash\data::enddateEn($enddate);
+
+		}
+
+
+		if($startdate && $enddate)
+		{
+			$args['1.1'] = [" = 1.1 ", " AND transactions.datecreated > '$startdate' AND transactions.datecreated < '$enddate'  "];
+			$payment_args['1.1'] = [" = 1.1 ", " AND transactions.datecreated > '$startdate' AND transactions.datecreated < '$enddate'  "];
+
+		}
+		elseif($startdate)
+		{
+			$args['transactions.datecreated'] = [">", " '$startdate' "];
+			$payment_args['transactions.datecreated'] = [">", " '$startdate' "];
+		}
+		elseif($enddate)
+		{
+			$args['transactions.datecreated'] = ["<", " '$enddate' "];
+			$payment_args['transactions.datecreated'] = ["<", " '$enddate' "];
+		}
+
+		if($get_date_url)
+		{
+			\dash\data::getDateURL('&'. http_build_query($get_date_url));
+
+		}
+
+
 		$args['donate']    = 'cash';
 		$args['condition'] = 'ok';
 		$search_string     = \dash\request::get('q');
