@@ -43,16 +43,47 @@ class model
 				return false;
 			}
 
+			$get_place = \lib\db\needs::get(['id' => $id, 'limit' => 1]);
+			if(!isset($get_place['title']))
+			{
+				\dash\notif::error(T_("Invalid place id"));
+				return false;
+			}
+
 			$update           = [];
 			$update['status'] = 'accept';
 
-			$where = ['type' => 'representation', 'status' => 'awaiting'];
-			$count = \lib\db\services::get_count($where);
+			$args            =
+			[
+				'services.type'       => 'representation',
+				'services.status'     => 'awaiting',
+				'services.expert'     => $get_place['title'],
+				'pagenation' => false,
+			];
+
+			$where            =
+			[
+				'type'       => 'representation',
+				'status'     => 'awaiting',
+				'expert'     => $get_place['title'],
+			];
+
+			$count            = \lib\db\services::search(null, $args);
+
+
 			if($count)
 			{
 				\lib\db\services::update_where($update, $where);
+
+				$mobile = array_column($count, 'mobile');
+				if(is_array($mobile))
+				{
+					$msg = T_("Your representation request for :place is done.", ['place' => $get_place['title']]);
+					\dash\utility\sms::send_array($mobile, $msg);
+				}
+
 				\dash\notif::info(T_("Allahouma sali ala mohamed wa ali muhammad"));
-				\dash\notif::ok(T_(":count request status changed", ['count' => \dash\utility\human::fitNumber($count)]));
+				\dash\notif::ok(T_(":count request status changed", ['count' => \dash\utility\human::fitNumber(count($count))]));
 				return true;
 			}
 			else
