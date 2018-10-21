@@ -32,7 +32,7 @@ class twigTransTerms
 	echo T_("Your niyat is");                                                         // Line 96
 	echo T_("Toman");                                                                 // Line 21
 	echo T_("Untitled");                                                              // Line 33
-	echo T_("Anonymous");                                                             // Line 109
+	echo T_("Anonymous");                                                             // Line 133
 	echo T_("Thanks");                                                                // Line 119
 	echo T_("Requested");                                                             // Line 118
 	echo T_("Your help");                                                             // Line 124
@@ -399,7 +399,7 @@ class twigTransTerms
 	echo T_("Search");                                                                // Line 44
 	echo T_("Detail");                                                                // Line 300
 	echo T_("Date");                                                                  // Line 29
-	echo T_("Without name");                                                          // Line 128
+	echo T_("Without name");                                                          // Line 152
 	echo T_("Visitor detail");                                                        // Line 99
 	echo T_("Created on");                                                            // Line 113
 	echo T_("Clear filters");                                                         // Line 144
@@ -446,10 +446,10 @@ class twigTransTerms
 	echo T_("Today Donation");                                                        // Line 19
 	echo T_("Donation Count");                                                        // Line 28
 	echo T_("Donation Average");                                                      // Line 36
-	echo T_("Search in donations");                                                   // Line 81
-	echo T_("Niyat");                                                                 // Line 99
-	echo T_("Hazinekard");                                                            // Line 100
-	echo T_("Without mobile");                                                        // Line 137
+	echo T_("Search in donations");                                                   // Line 85
+	echo T_("Niyat");                                                                 // Line 123
+	echo T_("Hazinekard");                                                            // Line 124
+	echo T_("Without mobile");                                                        // Line 161
 
 	//--------------------------------------content_cp\familytrip\options\display.html
 	echo T_("Family trip options");                                                   // Line 23

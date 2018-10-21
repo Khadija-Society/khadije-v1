@@ -82,7 +82,7 @@ class twigTransTerms
 
 	//----------------------------------------------addons\content_account\layout.html
 	echo T_("Dashboard");                                                             // Line 83
-	echo T_("Support");                                                               // Line 49
+	echo T_("Support");                                                               // Line 50
 
 	//--------------------------------addons\content_account\notification\display.html
 	echo T_("Content");                                                               // Line 10
@@ -302,10 +302,10 @@ class twigTransTerms
 	echo T_("Add new user");                                                          // Line 66
 	echo T_("SMS");                                                                   // Line 111
 	echo T_("Quick send");                                                            // Line 82
-	echo T_("Powered by");                                                            // Line 55
-	echo T_("Some right reserved");                                                   // Line 55
-	echo T_("Ermile");                                                                // Line 55
-	echo T_("Version");                                                               // Line 55
+	echo T_("Powered by");                                                            // Line 56
+	echo T_("Some right reserved");                                                   // Line 56
+	echo T_("Ermile");                                                                // Line 56
+	echo T_("Version");                                                               // Line 56
 
 	//-----------------------------------------addons\content_cp\log\home\display.html
 	echo T_("User");                                                                  // Line 54
@@ -316,7 +316,7 @@ class twigTransTerms
 	echo T_("Guest");                                                                 // Line 89
 	echo T_("Subdomain");                                                             // Line 103
 	echo T_("Notification");                                                          // Line 109
-	echo T_("Telegram");                                                              // Line 110
+	echo T_("Telegram");                                                              // Line 44
 	echo T_("Url");                                                                   // Line 113
 	echo T_("Send to");                                                               // Line 117
 	echo T_("Date created");                                                          // Line 136
@@ -863,11 +863,14 @@ class twigTransTerms
 	echo T_("Ticket Subject");                                                        // Line 8
 	echo T_("Subject of your ticket");                                                // Line 10
 	echo T_("Set title will help us answer quickly");                                 // Line 10
-	echo T_("Attachment");                                                            // Line 22
-	echo T_("Max size");                                                              // Line 22
-	echo T_("Submit a ticket");                                                       // Line 28
-	echo T_("Send new message");                                                      // Line 40
-	echo T_("Add note");                                                              // Line 36
+	echo T_("Attachment");                                                            // Line 21
+	echo T_("Max size");                                                              // Line 21
+	echo T_("Send notify about your answer to creator of ticket");                    // Line 30
+	echo T_("Via sms to");                                                            // Line 32
+	echo T_("Via telegram");                                                          // Line 36
+	echo T_("Submit a ticket");                                                       // Line 44
+	echo T_("Send new message");                                                      // Line 56
+	echo T_("Add note");                                                              // Line 52
 
 	//---------------------------------addons\content_support\ticket\home\display.html
 	echo T_("Active tickets");                                                        // Line 92

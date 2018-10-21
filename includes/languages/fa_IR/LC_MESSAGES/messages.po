@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-10-19 22:15+0330\n"
-"PO-Revision-Date: 2018-10-19 22:21+0330\n"
+"POT-Creation-Date: 2018-10-21 16:27+0330\n"
+"PO-Revision-Date: 2018-10-21 16:27+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -152,7 +152,7 @@ msgstr "حساب‌کاربری شما برای ویرایش اطلاعات پر
 #: dash/addons/content_account/profile/social/view.php:10
 #: dash/addons/content_account/profile/view.php:10
 #: dash/addons/includes/languages/trans_dash.php:915
-#: khadije/includes/languages/trans_dash.php:917
+#: khadije/includes/languages/trans_dash.php:920
 #: khadije/includes/languages/trans_project.php:304
 msgid "Edit your profile"
 msgstr "پروفایل خود را ویرایش کنید"
@@ -258,7 +258,7 @@ msgstr "شناسه نامعتبر"
 #: dash/addons/content_cp/comments/edit/model.php:12
 #: dash/addons/content_cp/contact/edit/model.php:12
 #: dash/addons/content_support/ticket/show/model.php:95 dash/lib/app/address.php:189
-#: dash/lib/app/comment.php:250 dash/lib/app/ticket.php:347
+#: dash/lib/app/comment.php:250 dash/lib/app/ticket.php:348
 #: khadije/content_cp/admincontact/edit/model.php:12
 #: khadije/content_cp/delneveshte/edit/model.php:12
 #: khadije/includes/lib/app/service.php:109
@@ -350,7 +350,7 @@ msgstr "جستجوی :search"
 
 #: dash/addons/content_cp/contact/edit/controller.php:11
 #: dash/addons/content_cp/contact/home/view.php:11
-#: dash/addons/content_support/ticket/contact_ticket/model.php:127
+#: dash/addons/content_support/ticket/contact_ticket/model.php:132
 #: khadije/content/contact/view.php:10
 msgid "Contact Us"
 msgstr "تماس با ما"
@@ -748,7 +748,7 @@ msgstr "برچسب ها را بررسی کنید و برخی از برچسب ه�
 #: dash/addons/includes/languages/trans_dash.php:257
 #: dash/addons/includes/languages/trans_static.php:112
 #: khadije/content_cp/book/view.php:59 khadije/content_cp/consulting/view.php:53
-#: khadije/content_cp/donate/view.php:74 khadije/content_cp/familytrip/view.php:105
+#: khadije/content_cp/donate/view.php:131 khadije/content_cp/familytrip/view.php:105
 #: khadije/content_cp/festival/transaction/view.php:72
 #: khadije/content_cp/festival/user/view.php:61
 #: khadije/content_cp/health/view.php:53 khadije/content_cp/meeting/view.php:59
@@ -1174,7 +1174,7 @@ msgstr ""
 
 #: dash/addons/content_enter/pass/view.php:22
 #: dash/addons/includes/languages/trans_dash.php:961
-#: khadije/includes/languages/trans_dash.php:966
+#: khadije/includes/languages/trans_dash.php:969
 msgid "Set Password"
 msgstr "تنظیم گذرواژه"
 
@@ -1817,13 +1817,12 @@ msgstr "بازگشت به لیست تیکت‌ها"
 #: dash/addons/content_support/ticket/show/model.php:190
 #: dash/addons/content_support/ticket/show/view.php:27
 #: dash/addons/content_support/ticket/show/view.php:55
-#: dash/addons/content_support/ticket/show/view.php:265
-#: dash/addons/content_support/ticket/show/view.php:272
+#: dash/addons/content_support/ticket/show/view.php:266
+#: dash/addons/content_support/ticket/show/view.php:273
 msgid "Ticket not found"
 msgstr "تیکتی یافت نشد"
 
 #: dash/addons/content_support/message/edit/view.php:50
-#: dash/addons/content_support/ticket/show/view.php:68
 msgid "This is not your ticket!"
 msgstr "این تیکت شما نیست!"
 
@@ -1856,6 +1855,7 @@ msgstr "تیکت شما ارسال شد"
 
 #: dash/addons/content_support/ticket/add/view.php:9
 #: dash/addons/includes/languages/trans_static.php:1091
+#: dash/lib/app/log/msg/support.php:60
 msgid "Add new ticket"
 msgstr "افزودن تیکت جدید"
 
@@ -1876,18 +1876,18 @@ msgstr "ما اینجاییم تا به سوالات شما پاسخ دهیم."
 msgid "Please try type something!"
 msgstr "لطفا تلاشی برای تایپ داشته باشید!"
 
-#: dash/addons/content_support/ticket/contact_ticket/model.php:140
-#: dash/addons/content_support/ticket/contact_ticket/model.php:156
+#: dash/addons/content_support/ticket/contact_ticket/model.php:145
+#: dash/addons/content_support/ticket/contact_ticket/model.php:161
 msgid "You can check your contacting answer here"
 msgstr "شما می توانید پاسخ تماس خود را در اینجا بررسی کنید"
 
-#: dash/addons/content_support/ticket/contact_ticket/model.php:141
-#: dash/addons/content_support/ticket/contact_ticket/model.php:157
+#: dash/addons/content_support/ticket/contact_ticket/model.php:146
+#: dash/addons/content_support/ticket/contact_ticket/model.php:162
 msgid "Thank You For contacting us"
 msgstr "از تماس شما متشکریم"
 
-#: dash/addons/content_support/ticket/contact_ticket/model.php:148
-#: dash/addons/content_support/ticket/contact_ticket/model.php:164
+#: dash/addons/content_support/ticket/contact_ticket/model.php:153
+#: dash/addons/content_support/ticket/contact_ticket/model.php:169
 msgid "We could'nt save the contact"
 msgstr "مشکلی در ذخیره‌سازی مخاطب پیش آمد"
 
@@ -1919,7 +1919,7 @@ msgstr "تیکت‌های حل نشده"
 
 #: dash/addons/content_support/ticket/home/view.php:101
 #: dash/addons/includes/languages/trans_dash.php:891
-#: khadije/includes/languages/trans_dash.php:893
+#: khadije/includes/languages/trans_dash.php:896
 msgid "Solved ticket"
 msgstr "ثبت به عنوان حل شده"
 
@@ -1979,7 +1979,7 @@ msgstr "پیام شما ذخیره شد"
 msgid "Your message has been added"
 msgstr "پیام شما اضافه شد"
 
-#: dash/addons/content_support/ticket/show/model.php:307
+#: dash/addons/content_support/ticket/show/model.php:330
 msgid "Your answer was saved"
 msgstr "پاسخ شما ذخیره شد"
 
@@ -5364,52 +5364,52 @@ msgid "Max size"
 msgstr "حداکثر اندازه"
 
 #: dash/addons/includes/languages/trans_dash.php:866
-#: khadije/includes/languages/trans_dash.php:868
+#: khadije/includes/languages/trans_dash.php:871
 msgid "Submit a ticket"
 msgstr "ارسال تیکت"
 
 #: dash/addons/includes/languages/trans_dash.php:867
-#: khadije/includes/languages/trans_dash.php:869
+#: khadije/includes/languages/trans_dash.php:872
 msgid "Send new message"
 msgstr "ارسال پیام جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:868
-#: khadije/includes/languages/trans_dash.php:870
+#: khadije/includes/languages/trans_dash.php:873
 msgid "Add note"
 msgstr "افزودن یادداشت"
 
 #: dash/addons/includes/languages/trans_dash.php:871
-#: khadije/includes/languages/trans_dash.php:873
+#: khadije/includes/languages/trans_dash.php:876
 msgid "Active tickets"
 msgstr "تیکت‌های فعال"
 
 #: dash/addons/includes/languages/trans_dash.php:872
-#: khadije/includes/languages/trans_dash.php:874
+#: khadije/includes/languages/trans_dash.php:877
 msgid "Replies"
 msgstr "پاسخ‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:873
-#: khadije/includes/languages/trans_dash.php:875
+#: khadije/includes/languages/trans_dash.php:878
 msgid "Avg. First Response"
 msgstr "میانگین اولین پاسخگویی"
 
 #: dash/addons/includes/languages/trans_dash.php:874
-#: khadije/includes/languages/trans_dash.php:876
+#: khadije/includes/languages/trans_dash.php:879
 msgid "Minute"
 msgstr "دقیقه"
 
 #: dash/addons/includes/languages/trans_dash.php:875
-#: khadije/includes/languages/trans_dash.php:877
+#: khadije/includes/languages/trans_dash.php:880
 msgid "Avg. Time to Archive"
 msgstr "میانگین زمان بایگانی‌شدن"
 
 #: dash/addons/includes/languages/trans_dash.php:876
-#: khadije/includes/languages/trans_dash.php:878
+#: khadije/includes/languages/trans_dash.php:881
 msgid "Hours"
 msgstr "ساعات"
 
 #: dash/addons/includes/languages/trans_dash.php:879
-#: khadije/includes/languages/trans_dash.php:881
+#: khadije/includes/languages/trans_dash.php:884
 msgid ""
 "If your problem is solved or do not need to track, please close this ticket by "
 "press below bottom."
@@ -5418,222 +5418,222 @@ msgstr ""
 "ببندید."
 
 #: dash/addons/includes/languages/trans_dash.php:880
-#: khadije/includes/languages/trans_dash.php:882
+#: khadije/includes/languages/trans_dash.php:885
 msgid "You can open it anytime you need."
 msgstr "شما می‌توانید تیکت را هر زمانی که مایل بودید مجدد باز کنید."
 
 #: dash/addons/includes/languages/trans_dash.php:881
-#: khadije/includes/languages/trans_dash.php:883
+#: khadije/includes/languages/trans_dash.php:886
 msgid "Close ticket"
 msgstr "بستن تیکت"
 
 #: dash/addons/includes/languages/trans_dash.php:882
-#: khadije/includes/languages/trans_dash.php:884
+#: khadije/includes/languages/trans_dash.php:887
 msgid "This ticket is closed."
 msgstr "این تیکت بسته شده است."
 
 #: dash/addons/includes/languages/trans_dash.php:883
-#: khadije/includes/languages/trans_dash.php:885
+#: khadije/includes/languages/trans_dash.php:888
 msgid "Also you can delete it if you do not need it."
 msgstr "هم‌چنین در صورت عدم نیاز می‌توانید آن را حذف کنید."
 
 #: dash/addons/includes/languages/trans_dash.php:884
-#: khadije/includes/languages/trans_dash.php:886
+#: khadije/includes/languages/trans_dash.php:889
 msgid "Delete ticket"
 msgstr "حذف تیکت"
 
 #: dash/addons/includes/languages/trans_dash.php:885
-#: khadije/includes/languages/trans_dash.php:887
+#: khadije/includes/languages/trans_dash.php:890
 msgid "Open it again"
 msgstr "دوباره بازش کن"
 
 #: dash/addons/includes/languages/trans_dash.php:886
-#: khadije/includes/languages/trans_dash.php:888
+#: khadije/includes/languages/trans_dash.php:891
 msgid "This is deleted ticket."
 msgstr "این تیکت حذف شده است."
 
 #: dash/addons/includes/languages/trans_dash.php:887
-#: khadije/includes/languages/trans_dash.php:889
+#: khadije/includes/languages/trans_dash.php:892
 msgid "You can change it to close condition if need to save it in history!"
 msgstr ""
 "شما می‌توانید برای نگهداری این تیکت در تاریخچه وضعیت آن را به بسته‌شده تغییر دهید!"
 
 #: dash/addons/includes/languages/trans_dash.php:888
-#: khadije/includes/languages/trans_dash.php:890
+#: khadije/includes/languages/trans_dash.php:893
 msgid "If your problem is not solved yet, please set this ticket as unsolved"
 msgstr ""
 "اگر مشکل مطرح شده همچنان باقی است، لطفا این تیکت را در حالت حل نشده قرار دهید"
 
 #: dash/addons/includes/languages/trans_dash.php:889
-#: khadije/includes/languages/trans_dash.php:891
+#: khadije/includes/languages/trans_dash.php:894
 msgid "Un Solved ticket"
 msgstr "ثبت به عنوان حل نشده"
 
 #: dash/addons/includes/languages/trans_dash.php:890
-#: khadije/includes/languages/trans_dash.php:892
+#: khadije/includes/languages/trans_dash.php:895
 msgid "If your problem is solved, please set this ticket as solved"
 msgstr "اگر مشکل مطرح حل شده است، لطفا این تیکت را در حالت حل شده قرار دهید"
 
 #: dash/addons/includes/languages/trans_dash.php:892
-#: khadije/includes/languages/trans_dash.php:894
+#: khadije/includes/languages/trans_dash.php:897
 msgid "Save tag"
 msgstr "ذخیره کلیدواژه"
 
 #: dash/addons/includes/languages/trans_dash.php:893
-#: khadije/includes/languages/trans_dash.php:895
+#: khadije/includes/languages/trans_dash.php:898
 msgid "Show log"
 msgstr "نمایش لاگ"
 
 #: dash/addons/includes/languages/trans_dash.php:894
-#: khadije/includes/languages/trans_dash.php:896
+#: khadije/includes/languages/trans_dash.php:899
 msgid "Last seen"
 msgstr "آخرین بازدید"
 
 #: dash/addons/includes/languages/trans_dash.php:895
-#: khadije/includes/languages/trans_dash.php:897
+#: khadije/includes/languages/trans_dash.php:900
 msgid "Ticket No"
 msgstr "شماره تیکت"
 
 #: dash/addons/includes/languages/trans_dash.php:896
-#: khadije/includes/languages/trans_dash.php:898
+#: khadije/includes/languages/trans_dash.php:901
 msgid "Last activity"
 msgstr "آخرین فعالیت‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:897
-#: khadije/includes/languages/trans_dash.php:899
+#: khadije/includes/languages/trans_dash.php:902
 msgid "User tickets"
 msgstr "تیکت‌های کاربر"
 
 #: dash/addons/includes/languages/trans_dash.php:898
-#: khadije/includes/languages/trans_dash.php:900
+#: khadije/includes/languages/trans_dash.php:903
 msgid "Before create ticket"
 msgstr "پیش از ایجاد تیکت"
 
 #: dash/addons/includes/languages/trans_dash.php:899
-#: khadije/includes/languages/trans_dash.php:901
+#: khadije/includes/languages/trans_dash.php:904
 msgid "View attachment"
 msgstr "مشاهده ضمیمه"
 
 #: dash/addons/includes/languages/trans_dash.php:900
-#: khadije/includes/languages/trans_dash.php:902
+#: khadije/includes/languages/trans_dash.php:905
 msgid "Add tag manually to link tickets togethers"
 msgstr "کلدواژه را به صورت دستی اضافه کنید تا تیکت‌ها را در کنار هم قرار دهید"
 
 #: dash/addons/includes/languages/trans_dash.php:901
-#: khadije/includes/languages/trans_dash.php:903
+#: khadije/includes/languages/trans_dash.php:906
 msgid "Current Time"
 msgstr "زمان فعلی"
 
 #: dash/addons/includes/languages/trans_dash.php:904
-#: khadije/includes/languages/trans_dash.php:906
+#: khadije/includes/languages/trans_dash.php:909
 msgid "Last active tickets"
 msgstr "آخرین تیکت‌های فعال"
 
 #: dash/addons/includes/languages/trans_dash.php:905
-#: khadije/includes/languages/trans_dash.php:907
+#: khadije/includes/languages/trans_dash.php:910
 msgid "All Tickets"
 msgstr "همه تیکت‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:906
-#: khadije/includes/languages/trans_dash.php:908
+#: khadije/includes/languages/trans_dash.php:911
 msgid "Last modified on"
 msgstr "آخرین به‌روزرسانی در"
 
 #: dash/addons/includes/languages/trans_dash.php:907
-#: khadije/includes/languages/trans_dash.php:909
+#: khadije/includes/languages/trans_dash.php:912
 msgid "Active in this ticket"
 msgstr "فعال در این تیکت"
 
 #: dash/addons/includes/languages/trans_dash.php:910
-#: khadije/includes/languages/trans_dash.php:912
+#: khadije/includes/languages/trans_dash.php:915
 msgid "My tickets"
 msgstr "تیکت‌های من"
 
 #: dash/addons/includes/languages/trans_dash.php:911
-#: khadije/includes/languages/trans_dash.php:913
+#: khadije/includes/languages/trans_dash.php:916
 msgid "Manage tickets"
 msgstr "مدیریت تیکت"
 
 #: dash/addons/includes/languages/trans_dash.php:912
-#: khadije/includes/languages/trans_dash.php:914
+#: khadije/includes/languages/trans_dash.php:917
 msgid "Manage all tickets"
 msgstr "مدیریت تمامی تیکت‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:916
-#: khadije/includes/languages/trans_dash.php:918
+#: khadije/includes/languages/trans_dash.php:921
 #: khadije/includes/languages/trans_project.php:307
 msgid "Please login to save anything"
 msgstr "لطفا برای ذخیره هر چیزی وارد شوید"
 
 #: dash/addons/includes/languages/trans_dash.php:917
-#: khadije/includes/languages/trans_dash.php:919
+#: khadije/includes/languages/trans_dash.php:922
 #: khadije/includes/languages/trans_project.php:305
 msgid "Avatar of you"
 msgstr "آواتار شما"
 
 #: dash/addons/includes/languages/trans_dash.php:918
-#: khadije/includes/languages/trans_dash.php:920
+#: khadije/includes/languages/trans_dash.php:923
 #: khadije/includes/languages/trans_project.php:306
 msgid "Default Avatar"
 msgstr "آواتار پیش‌فرض"
 
 #: dash/addons/includes/languages/trans_dash.php:919
-#: khadije/includes/languages/trans_dash.php:921
+#: khadije/includes/languages/trans_dash.php:924
 #: khadije/includes/languages/trans_project.php:308
 msgid "Hello"
 msgstr "سلام"
 
 #: dash/addons/includes/languages/trans_dash.php:920
-#: khadije/includes/languages/trans_dash.php:922
+#: khadije/includes/languages/trans_dash.php:925
 #: khadije/includes/languages/trans_project.php:309
 msgid "Hello "
 msgstr "سلام"
 
 #: dash/addons/includes/languages/trans_dash.php:921
-#: khadije/includes/languages/trans_dash.php:923
+#: khadije/includes/languages/trans_dash.php:926
 #: khadije/includes/languages/trans_project.php:310
 msgid "dear GUEST!"
 msgstr "میهمان عزیز!"
 
 #: dash/addons/includes/languages/trans_dash.php:922
-#: khadije/includes/languages/trans_dash.php:924
+#: khadije/includes/languages/trans_dash.php:927
 msgid "Click to toggle sidebar status"
 msgstr "برای تغییر وضعیت منوی کناری کلیک کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:923
-#: khadije/includes/languages/trans_dash.php:925
+#: khadije/includes/languages/trans_dash.php:928
 msgid "View website"
 msgstr "مشاهده وب‌سایت"
 
 #: dash/addons/includes/languages/trans_dash.php:924
-#: khadije/includes/languages/trans_dash.php:926
+#: khadije/includes/languages/trans_dash.php:929
 msgid "Work in your language"
 msgstr "به زبان خود کار کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:925
 #: dash/addons/includes/languages/trans_static.php:104
-#: khadije/includes/languages/trans_dash.php:927
+#: khadije/includes/languages/trans_dash.php:930
 msgid "Logout"
 msgstr "خروج از سیستم"
 
 #: dash/addons/includes/languages/trans_dash.php:926
-#: khadije/includes/languages/trans_dash.php:928
+#: khadije/includes/languages/trans_dash.php:931
 msgid "You are entered as"
 msgstr "شما به این عنوان وارد شدید"
 
 #: dash/addons/includes/languages/trans_dash.php:927
-#: khadije/includes/languages/trans_dash.php:929
+#: khadije/includes/languages/trans_dash.php:932
 msgid "You have no unread notification"
 msgstr "شما پیام خوانده نشده‌ای ندارید"
 
 #: dash/addons/includes/languages/trans_dash.php:928
-#: khadije/includes/languages/trans_dash.php:930
+#: khadije/includes/languages/trans_dash.php:933
 #: khadije/includes/languages/trans_project.php:8
 msgid "View your current location and navigate to parent of it"
 msgstr "مکان فعلی خود را دیده و به مکان‌های والد آن منتقل شوید"
 
 #: dash/addons/includes/languages/trans_dash.php:931
-#: khadije/includes/languages/trans_dash.php:933
+#: khadije/includes/languages/trans_dash.php:936
 msgid "Please enter valid mobile number"
 msgstr "لطفا شماره موبایل معتبری وارد کنید"
 
@@ -5646,17 +5646,17 @@ msgid "7 to 15 characters is allowed for mobile"
 msgstr "بین ۷ تا ۱۵ رقم برای موبایل مجاز است"
 
 #: dash/addons/includes/languages/trans_dash.php:934
-#: khadije/includes/languages/trans_dash.php:936
+#: khadije/includes/languages/trans_dash.php:939
 msgid "Username or Mobile or email"
 msgstr "نام‌کاربری یا موبایل یا رایانامه"
 
 #: dash/addons/includes/languages/trans_dash.php:935
-#: khadije/includes/languages/trans_dash.php:938
+#: khadije/includes/languages/trans_dash.php:941
 msgid "Username or Mobile or Email"
 msgstr "نام‌کاربری یا موبایل یا رایانامه"
 
 #: dash/addons/includes/languages/trans_dash.php:936
-#: khadije/includes/languages/trans_dash.php:937
+#: khadije/includes/languages/trans_dash.php:940
 msgid "Please enter valid mobile or username or email number"
 msgstr "لطفا نام‌کاربری یا موبایل یا رایانامه معتبری وارد کنید"
 
@@ -5666,207 +5666,207 @@ msgstr "گذرواژه‌ای معتبر بین ۶ تا ۴۰ کاراکتر ان
 
 #: dash/addons/includes/languages/trans_dash.php:938
 #: dash/addons/includes/languages/trans_static.php:340
-#: khadije/includes/languages/trans_dash.php:941
+#: khadije/includes/languages/trans_dash.php:944
 msgid "New Password"
 msgstr "گذرواژه جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:939
-#: khadije/includes/languages/trans_dash.php:943
+#: khadije/includes/languages/trans_dash.php:946
 msgid "Password?"
 msgstr "کلمه عبور؟"
 
 #: dash/addons/includes/languages/trans_dash.php:940
-#: khadije/includes/languages/trans_dash.php:944
+#: khadije/includes/languages/trans_dash.php:947
 msgid "Verify Code"
 msgstr "کد اعتبارسنجی"
 
 #: dash/addons/includes/languages/trans_dash.php:941
-#: khadije/includes/languages/trans_dash.php:945
+#: khadije/includes/languages/trans_dash.php:948
 msgid "Enter a valid code!"
 msgstr "کد معتبر وارد کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:942
-#: khadije/includes/languages/trans_dash.php:946
+#: khadije/includes/languages/trans_dash.php:949
 msgid "Code"
 msgstr "کد"
 
 #: dash/addons/includes/languages/trans_dash.php:943
-#: khadije/includes/languages/trans_dash.php:947
+#: khadije/includes/languages/trans_dash.php:950
 msgid "Send this code to our number!"
 msgstr "این کد را به شماره‌ی ما پیامک کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:944
-#: khadije/includes/languages/trans_dash.php:948
+#: khadije/includes/languages/trans_dash.php:951
 msgid "send to this number"
 msgstr "به این شماره پیامک کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:945
-#: khadije/includes/languages/trans_dash.php:949
+#: khadije/includes/languages/trans_dash.php:952
 msgid "Send code to this number!"
 msgstr "کد را به این شماره ارسال کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:946
-#: khadije/includes/languages/trans_dash.php:951
+#: khadije/includes/languages/trans_dash.php:954
 #: khadije/includes/languages/trans_project.php:44
 msgid "Full name"
 msgstr "نام کامل"
 
 #: dash/addons/includes/languages/trans_dash.php:947
 #: dash/addons/includes/languages/trans_static.php:409
-#: khadije/includes/languages/trans_dash.php:952
+#: khadije/includes/languages/trans_dash.php:955
 msgid "email"
 msgstr "رایانامه"
 
 #: dash/addons/includes/languages/trans_dash.php:948
-#: khadije/includes/languages/trans_dash.php:953
+#: khadije/includes/languages/trans_dash.php:956
 msgid "Enter a valid eamil!"
 msgstr "رایانامه‌ی معتبر را وارد کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:949
 #: dash/addons/includes/languages/trans_static.php:403
-#: khadije/includes/languages/trans_dash.php:954
+#: khadije/includes/languages/trans_dash.php:957
 msgid "username"
 msgstr "نام‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:950
-#: khadije/includes/languages/trans_dash.php:955
+#: khadije/includes/languages/trans_dash.php:958
 msgid "Enter a valid username from 4 to 50 character"
 msgstr "نام‌کاربری معتبری بین ۴ تا ۵۰ کاراکتر وارد کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:951
-#: khadije/includes/languages/trans_dash.php:956
+#: khadije/includes/languages/trans_dash.php:959
 msgid "Delete Account"
 msgstr "حذف حساب‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:952
-#: khadije/includes/languages/trans_dash.php:957
+#: khadije/includes/languages/trans_dash.php:960
 msgid "Go and check it"
 msgstr "برو و چک کن"
 
 #: dash/addons/includes/languages/trans_dash.php:953
-#: khadije/includes/languages/trans_dash.php:958
+#: khadije/includes/languages/trans_dash.php:961
 msgid "Next"
 msgstr "بعدی"
 
 #: dash/addons/includes/languages/trans_dash.php:954
-#: khadije/includes/languages/trans_dash.php:959
+#: khadije/includes/languages/trans_dash.php:962
 msgid "Sign in instead"
 msgstr "یا وارد شوید"
 
 #: dash/addons/includes/languages/trans_dash.php:955
 #: dash/addons/includes/languages/trans_static.php:170
-#: khadije/includes/languages/trans_dash.php:960
+#: khadije/includes/languages/trans_dash.php:963
 msgid "Login"
 msgstr "ورود به سیستم"
 
 #: dash/addons/includes/languages/trans_dash.php:956
-#: khadije/includes/languages/trans_dash.php:961
+#: khadije/includes/languages/trans_dash.php:964
 msgid "Go back"
 msgstr "برگرد"
 
 #: dash/addons/includes/languages/trans_dash.php:957
-#: khadije/includes/languages/trans_dash.php:962
+#: khadije/includes/languages/trans_dash.php:965
 msgid "No account?"
 msgstr "حساب کاربری ندارید؟"
 
 #: dash/addons/includes/languages/trans_dash.php:958
-#: khadije/includes/languages/trans_dash.php:963
+#: khadije/includes/languages/trans_dash.php:966
 msgid "Create for yourself"
 msgstr "حساب‌کاربری خود را بسازید"
 
 #: dash/addons/includes/languages/trans_dash.php:959
-#: khadije/includes/languages/trans_dash.php:964
+#: khadije/includes/languages/trans_dash.php:967
 msgid "Create Account"
 msgstr "ساخت حساب‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:960
-#: khadije/includes/languages/trans_dash.php:965
+#: khadije/includes/languages/trans_dash.php:968
 #: khadije/includes/languages/trans_project.php:181
 msgid "Signup"
 msgstr "ثبت‌نام"
 
 #: dash/addons/includes/languages/trans_dash.php:962
-#: khadije/includes/languages/trans_dash.php:967
+#: khadije/includes/languages/trans_dash.php:970
 msgid "Recovery password"
 msgstr "بازیابی گذرواژه"
 
 #: dash/addons/includes/languages/trans_dash.php:963
-#: khadije/includes/languages/trans_dash.php:968
+#: khadije/includes/languages/trans_dash.php:971
 msgid "Enter with another methods"
 msgstr "ورود با سایر روش‌ها"
 
 #: dash/addons/includes/languages/trans_dash.php:964
-#: khadije/includes/languages/trans_dash.php:969
+#: khadije/includes/languages/trans_dash.php:972
 msgid "Log in with mobile"
 msgstr "ورود با موبایل"
 
 #: dash/addons/includes/languages/trans_dash.php:965
-#: khadije/includes/languages/trans_dash.php:970
+#: khadije/includes/languages/trans_dash.php:973
 msgid "Enter with mobile"
 msgstr "ورود با موبایل"
 
 #: dash/addons/includes/languages/trans_dash.php:966
-#: khadije/includes/languages/trans_dash.php:971
+#: khadije/includes/languages/trans_dash.php:974
 msgid "Enter with Google"
 msgstr "ورود با گوگل"
 
 #: dash/addons/includes/languages/trans_dash.php:967
-#: khadije/includes/languages/trans_dash.php:972
+#: khadije/includes/languages/trans_dash.php:975
 msgid "Enter with email"
 msgstr "ورود با رایانامه"
 
 #: dash/addons/includes/languages/trans_dash.php:968
-#: khadije/includes/languages/trans_dash.php:973
+#: khadije/includes/languages/trans_dash.php:976
 msgid "Enter with username"
 msgstr "ورود با نام‌کاربری"
 
 #: dash/addons/includes/languages/trans_dash.php:969
-#: khadije/includes/languages/trans_dash.php:974
+#: khadije/includes/languages/trans_dash.php:977
 msgid "Resend code"
 msgstr "ارسال دوباره‌ی کد"
 
 #: dash/addons/includes/languages/trans_dash.php:970
-#: khadije/includes/languages/trans_dash.php:975
+#: khadije/includes/languages/trans_dash.php:978
 msgid "After end timer you can request code again"
 msgstr "پس از به‌اتمام رسیدن زمان، شما امکان درخواست مجدد کد را خواهید داشت"
 
 #: dash/addons/includes/languages/trans_dash.php:971
-#: khadije/includes/languages/trans_dash.php:976
+#: khadije/includes/languages/trans_dash.php:979
 msgid "Another way?"
 msgstr "روش دیگر؟"
 
 #: dash/addons/includes/languages/trans_dash.php:972
-#: khadije/includes/languages/trans_dash.php:977
+#: khadije/includes/languages/trans_dash.php:980
 msgid "Restart with new mobile"
 msgstr "شروع دوباره با موبایل جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:973
-#: khadije/includes/languages/trans_dash.php:978
+#: khadije/includes/languages/trans_dash.php:981
 msgid "New email"
 msgstr "رایانامه‌ی جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:974
-#: khadije/includes/languages/trans_dash.php:979
+#: khadije/includes/languages/trans_dash.php:982
 msgid "New username"
 msgstr "نام کاربری جدید"
 
 #: dash/addons/includes/languages/trans_dash.php:975
-#: khadije/includes/languages/trans_dash.php:980
+#: khadije/includes/languages/trans_dash.php:983
 msgid "Enter a valid username!"
 msgstr "نام کاربری معتبر وارد کنید!"
 
 #: dash/addons/includes/languages/trans_dash.php:978
-#: khadije/includes/languages/trans_dash.php:983
+#: khadije/includes/languages/trans_dash.php:986
 msgid "You are supervisor!"
 msgstr "شما مدیر فنی سیستم هستید!"
 
 #: dash/addons/includes/languages/trans_dash.php:979
-#: khadije/includes/languages/trans_dash.php:984
+#: khadije/includes/languages/trans_dash.php:987
 msgid "Enter with another user"
 msgstr "ورود با کاربر دیگر"
 
 #: dash/addons/includes/languages/trans_dash.php:982
-#: khadije/includes/languages/trans_dash.php:987
+#: khadije/includes/languages/trans_dash.php:990
 msgid "Total records"
 msgstr "مجموع رکوردها"
 
@@ -9648,14 +9648,17 @@ msgid "The ticket set as unsolved ticket"
 msgstr "تیکت به وضعیت حل نشده تغییر کرد"
 
 #: dash/addons/includes/languages/trans_static.php:1097
+#: dash/lib/app/log/msg/support.php:126
 msgid "Answer ticket"
 msgstr "پاسخ به تیکت"
 
 #: dash/addons/includes/languages/trans_static.php:1098
+#: dash/lib/app/log/msg/support.php:195
 msgid "Add new message to ticket"
 msgstr "افزودن پیام به تیکت"
 
 #: dash/addons/includes/languages/trans_static.php:1099
+#: dash/lib/app/log/msg/support.php:263
 msgid "Add new note to ticket"
 msgstr "افزودن یادداشت به تیکت"
 
@@ -9799,19 +9802,19 @@ msgstr "شما دسترسی لازم برای حذف این آدرس را ندا
 msgid "Address removed"
 msgstr "آدرس حذف شد"
 
-#: dash/lib/app/comment.php:79 dash/lib/app/ticket.php:148
+#: dash/lib/app/comment.php:79 dash/lib/app/ticket.php:149
 msgid "This text is duplicate and you are sended something like this before!"
 msgstr "این متن تکراری است و شما قبلا چیزی شبیه این را ارسال کردید!"
 
-#: dash/lib/app/comment.php:96 dash/lib/app/ticket.php:169
+#: dash/lib/app/comment.php:96 dash/lib/app/ticket.php:170
 msgid "No way to add new data"
 msgstr "هیچ راهی برای افزودن اطلاعات وجود ندارد"
 
-#: dash/lib/app/comment.php:120 dash/lib/app/ticket.php:217
+#: dash/lib/app/comment.php:120 dash/lib/app/ticket.php:218
 msgid "Can not access to edit comment"
 msgstr "شما دسترسی لازم را برای ویرایش این نظر ندارید"
 
-#: dash/lib/app/comment.php:213 dash/lib/app/ticket.php:310
+#: dash/lib/app/comment.php:213 dash/lib/app/ticket.php:311
 msgid "Please fill the content box"
 msgstr "لطفا باکس متن را پر کنید"
 
@@ -9825,12 +9828,12 @@ msgstr "شناسه پست اشتباه است"
 msgid "Comment of this post is closed!"
 msgstr "دیدگاه‌های این نوشته بسته است!"
 
-#: dash/lib/app/comment.php:285 dash/lib/app/ticket.php:355
+#: dash/lib/app/comment.php:285 dash/lib/app/ticket.php:356
 msgid "Title is out of range!"
 msgstr "عنوان خارج از محدوده است!"
 
 #: dash/lib/app/comment.php:294 dash/lib/app/term.php:168
-#: dash/lib/app/ticket.php:363
+#: dash/lib/app/ticket.php:364
 msgid "Invalid parent"
 msgstr "شناسه والد اشتباه است"
 
@@ -9857,6 +9860,39 @@ msgstr "ناتوان در آپلود، به دلیل نام آپلود انتخ�
 #: dash/lib/app/file.php:103
 msgid "Can not upload file. undefined error"
 msgstr "ناتوان در آپلود فایل. خطای تعریف نشده"
+
+#: dash/lib/app/log/msg/support.php:15 dash/lib/app/visitor.php:112
+#: dash/lib/app/visitor.php:141
+msgid "Unknown"
+msgstr "ناشناس"
+
+#: dash/lib/app/log/msg/support.php:61
+msgid ":val add new ticket"
+msgstr ":val یک تیکت جدید ثبت کرد"
+
+#: dash/lib/app/log/msg/support.php:127
+msgid ":val answer ticket"
+msgstr ":val تیکت را جواب داد"
+
+#: dash/lib/app/log/msg/support.php:196
+msgid ":val add new message to ticket"
+msgstr ":val یک پیام جدید به تیکت اضافه کرد"
+
+#: dash/lib/app/log/msg/support.php:264
+msgid ":val add new note to ticket"
+msgstr ":val یک یادداشت جدید به تیکت اضافه کرد"
+
+#: dash/lib/app/log/msg/support.php:310 dash/lib/app/log/msg/support.php:318
+msgid "Regards"
+msgstr "با احترام"
+
+#: dash/lib/app/log/msg/support.php:310 dash/lib/app/log/msg/support.php:319
+msgid "Ticket :val answered"
+msgstr "تیکت :val پاسخ داده شد"
+
+#: dash/lib/app/log/msg/support.php:311
+msgid ":val answer your ticket"
+msgstr ":val تیکت را جواب داد"
 
 #: dash/lib/app/parent/add.php:69
 msgid "Please set the parent mobile"
@@ -10272,10 +10308,6 @@ msgstr "کاربر با موفقیت به روزرسانی شد"
 #: dash/lib/app/user/user_id.php:51
 msgid "User not found."
 msgstr "کاربر یافت نشد."
-
-#: dash/lib/app/visitor.php:112 dash/lib/app/visitor.php:141
-msgid "Unknown"
-msgstr "ناشناس"
 
 #: dash/lib/date.php:56
 msgid "Invalid birthdate"
@@ -10939,8 +10971,8 @@ msgstr "خطا در درگاه پرداخت - هیچ پاسخی گرفته نش�
 #: dash/lib/utility/payment/payment/asanpardakht.php:111
 #: dash/lib/utility/payment/payment/irkish.php:73
 #: dash/lib/utility/payment/payment/irkish.php:135
-#: dash/lib/utility/payment/payment/mellat.php:93
-#: dash/lib/utility/payment/payment/mellat.php:162
+#: dash/lib/utility/payment/payment/mellat.php:80
+#: dash/lib/utility/payment/payment/mellat.php:140
 #: dash/lib/utility/payment/payment/parsian.php:81
 #: dash/lib/utility/payment/payment/parsian.php:145
 #: dash/lib/utility/payment/payment/parsian.php:198
@@ -10959,7 +10991,7 @@ msgstr "خطا در اتصل به سرویس بانک"
 
 #: dash/lib/utility/payment/payment/irkish.php:188
 #: dash/lib/utility/payment/payment/irkish.php:192
-#: dash/lib/utility/payment/payment/mellat.php:230
+#: dash/lib/utility/payment/payment/mellat.php:208
 #: dash/lib/utility/payment/payment/parsian.php:324
 #: dash/lib/utility/payment/payment/parsian.php:329
 msgid "Unkown payment error"
@@ -10969,183 +11001,183 @@ msgstr "خطای پرداخت ناشناس"
 msgid "Can not connect to mellat gateway. Install it!"
 msgstr "نمی‌توانیم به درگاه پرداخت ملت متصل شویم. آن را نصب کنید!"
 
-#: dash/lib/utility/payment/payment/mellat.php:177
+#: dash/lib/utility/payment/payment/mellat.php:155
 msgid "Transaction Approved"
 msgstr "تراکنش تایید شده است"
 
-#: dash/lib/utility/payment/payment/mellat.php:178
+#: dash/lib/utility/payment/payment/mellat.php:156
 msgid "Invalid Card Number"
 msgstr "شماره کارت نامعتبر است"
 
-#: dash/lib/utility/payment/payment/mellat.php:179
+#: dash/lib/utility/payment/payment/mellat.php:157
 msgid "No Sufficient Funds"
 msgstr "بدون پول کافی"
 
-#: dash/lib/utility/payment/payment/mellat.php:180
+#: dash/lib/utility/payment/payment/mellat.php:158
 msgid "Incorrect Pin"
 msgstr "پین نادرست"
 
-#: dash/lib/utility/payment/payment/mellat.php:181
+#: dash/lib/utility/payment/payment/mellat.php:159
 msgid "Allowable Number Of Pin Tries Exceeded"
 msgstr "تعداد قابل قبولی از پین تلاش می کند بیش از"
 
-#: dash/lib/utility/payment/payment/mellat.php:182
+#: dash/lib/utility/payment/payment/mellat.php:160
 msgid "Card Not Effective"
 msgstr "کارت موثر نیست"
 
-#: dash/lib/utility/payment/payment/mellat.php:183
+#: dash/lib/utility/payment/payment/mellat.php:161
 msgid "Exceeds Withdrawal Frequency Limit"
 msgstr "بیش از حد فرکانس خروج"
 
-#: dash/lib/utility/payment/payment/mellat.php:184
+#: dash/lib/utility/payment/payment/mellat.php:162
 msgid "Customer Cancellation"
 msgstr "لغو مشتری"
 
-#: dash/lib/utility/payment/payment/mellat.php:185
+#: dash/lib/utility/payment/payment/mellat.php:163
 msgid "Expired Card"
 msgstr "کارت خاتمه یافته"
 
-#: dash/lib/utility/payment/payment/mellat.php:186
+#: dash/lib/utility/payment/payment/mellat.php:164
 msgid "Exceeds Withdrawal Amount Limit"
 msgstr "حد مجاز بازپرداخت بیشتر است"
 
-#: dash/lib/utility/payment/payment/mellat.php:187
+#: dash/lib/utility/payment/payment/mellat.php:165
 msgid "No Such Issuer"
 msgstr "چنین صادر کننده ای وجود ندارد"
 
-#: dash/lib/utility/payment/payment/mellat.php:188
+#: dash/lib/utility/payment/payment/mellat.php:166
 msgid "Card Switch Internal Error"
 msgstr "کارت سوئیچ داخلی خطا"
 
-#: dash/lib/utility/payment/payment/mellat.php:189
+#: dash/lib/utility/payment/payment/mellat.php:167
 msgid "Issuer Or Switch Is Inoperative"
 msgstr "صادر کننده یا سوئیچ نامناسب است"
 
-#: dash/lib/utility/payment/payment/mellat.php:190
+#: dash/lib/utility/payment/payment/mellat.php:168
 msgid "Transaction Not Permitted To Card Holder"
 msgstr "تراکنش به دارنده کارت مجاز نمی باشد"
 
-#: dash/lib/utility/payment/payment/mellat.php:191
+#: dash/lib/utility/payment/payment/mellat.php:169
 msgid "Invalid Merchant"
 msgstr "Merchant نامعتبر است"
 
-#: dash/lib/utility/payment/payment/mellat.php:192
+#: dash/lib/utility/payment/payment/mellat.php:170
 msgid "Security Violation"
 msgstr "نقض امنیتی"
 
-#: dash/lib/utility/payment/payment/mellat.php:193
+#: dash/lib/utility/payment/payment/mellat.php:171
 msgid "Invalid User Or Password"
 msgstr "کاربر یا گذرواژه نامعتبر است"
 
-#: dash/lib/utility/payment/payment/mellat.php:194
+#: dash/lib/utility/payment/payment/mellat.php:172
 msgid "Invalid Amount"
 msgstr "مقدار نامعتبر"
 
-#: dash/lib/utility/payment/payment/mellat.php:195
+#: dash/lib/utility/payment/payment/mellat.php:173
 msgid "Invalid Response"
 msgstr "پاسخ نامعتبر"
 
-#: dash/lib/utility/payment/payment/mellat.php:196
+#: dash/lib/utility/payment/payment/mellat.php:174
 msgid "Format Error"
 msgstr "خطای قالب"
 
-#: dash/lib/utility/payment/payment/mellat.php:197
+#: dash/lib/utility/payment/payment/mellat.php:175
 msgid "No Investment Account"
 msgstr "حساب سرمایه گذاری ندارد"
 
-#: dash/lib/utility/payment/payment/mellat.php:198
+#: dash/lib/utility/payment/payment/mellat.php:176
 msgid "System Internal Error"
 msgstr "خطای داخلی سیستم"
 
-#: dash/lib/utility/payment/payment/mellat.php:199
+#: dash/lib/utility/payment/payment/mellat.php:177
 msgid "Invalid Business Date"
 msgstr "تاریخ کسب و کار نامعتبر است"
 
-#: dash/lib/utility/payment/payment/mellat.php:200
+#: dash/lib/utility/payment/payment/mellat.php:178
 msgid "Duplicate Order Id"
 msgstr "شناسه سفارش تکراری"
 
-#: dash/lib/utility/payment/payment/mellat.php:201
+#: dash/lib/utility/payment/payment/mellat.php:179
 msgid "Sale Transaction Not Found"
 msgstr "معامله فروش یافت نشد"
 
-#: dash/lib/utility/payment/payment/mellat.php:202
+#: dash/lib/utility/payment/payment/mellat.php:180
 msgid "Duplicate Verify"
 msgstr "تکثیر تأیید"
 
-#: dash/lib/utility/payment/payment/mellat.php:203
+#: dash/lib/utility/payment/payment/mellat.php:181
 msgid "Verify Transaction Not Found"
 msgstr "تأیید معامله یافت نشد"
 
-#: dash/lib/utility/payment/payment/mellat.php:204
+#: dash/lib/utility/payment/payment/mellat.php:182
 msgid "Transaction Has Been Settled"
 msgstr "معامله صورت گرفته است"
 
-#: dash/lib/utility/payment/payment/mellat.php:205
+#: dash/lib/utility/payment/payment/mellat.php:183
 msgid "Transaction Has Not Been Settled"
 msgstr "معامله انجام نشده است"
 
-#: dash/lib/utility/payment/payment/mellat.php:206
+#: dash/lib/utility/payment/payment/mellat.php:184
 msgid "Settle Transaction Not Found"
 msgstr "معامله معامله پیدا نشد"
 
-#: dash/lib/utility/payment/payment/mellat.php:207
+#: dash/lib/utility/payment/payment/mellat.php:185
 msgid "Transaction Has Been Reversed"
 msgstr "معامله معکوس شده است"
 
-#: dash/lib/utility/payment/payment/mellat.php:208
+#: dash/lib/utility/payment/payment/mellat.php:186
 msgid "Refund Transaction Not Found"
 msgstr "معامله بازپرداخت یافت نشد"
 
-#: dash/lib/utility/payment/payment/mellat.php:209
+#: dash/lib/utility/payment/payment/mellat.php:187
 msgid "Bill Digit Incorrect"
 msgstr "بیل سیگنال اشتباه است"
 
-#: dash/lib/utility/payment/payment/mellat.php:210
+#: dash/lib/utility/payment/payment/mellat.php:188
 msgid "Payment Digit Incorrect"
 msgstr "سیگنال پرداخت اشتباه است"
 
-#: dash/lib/utility/payment/payment/mellat.php:211
+#: dash/lib/utility/payment/payment/mellat.php:189
 msgid "Bill Organization Not Valid"
 msgstr "سازمان بیل معتبر نیست"
 
-#: dash/lib/utility/payment/payment/mellat.php:212
+#: dash/lib/utility/payment/payment/mellat.php:190
 msgid "Session Timeout"
 msgstr "مدت زمان جلسه"
 
-#: dash/lib/utility/payment/payment/mellat.php:213
+#: dash/lib/utility/payment/payment/mellat.php:191
 msgid "Data Access Exception"
 msgstr "استثناء دسترسی به داده ها"
 
-#: dash/lib/utility/payment/payment/mellat.php:214
+#: dash/lib/utility/payment/payment/mellat.php:192
 msgid "Payer Id Is Invalid"
 msgstr "شناسه پرداخت نامعتبر است"
 
-#: dash/lib/utility/payment/payment/mellat.php:215
+#: dash/lib/utility/payment/payment/mellat.php:193
 msgid "Customer Not Found"
 msgstr "مشتری یافت نشد"
 
-#: dash/lib/utility/payment/payment/mellat.php:216
+#: dash/lib/utility/payment/payment/mellat.php:194
 msgid "Try Count Exceeded"
 msgstr "سعی کنید تعداد بیش از حد"
 
-#: dash/lib/utility/payment/payment/mellat.php:217
+#: dash/lib/utility/payment/payment/mellat.php:195
 msgid "Invalid IP"
 msgstr "IP نامعتبر است"
 
-#: dash/lib/utility/payment/payment/mellat.php:218
+#: dash/lib/utility/payment/payment/mellat.php:196
 msgid "Duplicate Transmission"
 msgstr "انتقال تکراری"
 
-#: dash/lib/utility/payment/payment/mellat.php:219
+#: dash/lib/utility/payment/payment/mellat.php:197
 msgid "Original Transaction Not Found"
 msgstr "معامله اصلی یافت نشد"
 
-#: dash/lib/utility/payment/payment/mellat.php:220
+#: dash/lib/utility/payment/payment/mellat.php:198
 msgid "Invalid Transaction"
 msgstr "معامله نامعتبر"
 
-#: dash/lib/utility/payment/payment/mellat.php:221
+#: dash/lib/utility/payment/payment/mellat.php:199
 msgid "Error In Settle"
 msgstr "خطا در حل و فصل"
 
@@ -13005,27 +13037,39 @@ msgstr "عنوان آدرس"
 msgid "Your avatar"
 msgstr "تصویر شما"
 
-#: khadije/includes/languages/trans_dash.php:934
+#: khadije/includes/languages/trans_dash.php:868
+msgid "Send notify about your answer to creator of ticket"
+msgstr "سازنده تیکت را در جریان پاسخ شما قرار دهیم"
+
+#: khadije/includes/languages/trans_dash.php:869
+msgid "Via sms to"
+msgstr "از طریق پیامک به"
+
+#: khadije/includes/languages/trans_dash.php:870
+msgid "Via telegram"
+msgstr "از طریق تلگرام"
+
+#: khadije/includes/languages/trans_dash.php:937
 msgid "Enter correct iranian mobile starting with zero like 0935"
 msgstr "شماره موبایل ایران را همراه با صفر وارد کنید مثل 0935"
 
-#: khadije/includes/languages/trans_dash.php:935
+#: khadije/includes/languages/trans_dash.php:938
 msgid "Enter your mobile number"
 msgstr "شماره موبایل خود را وارد کنید"
 
-#: khadije/includes/languages/trans_dash.php:939
+#: khadije/includes/languages/trans_dash.php:942
 msgid "Enter a password between 7 and 40 characters"
 msgstr "گذرواژه‌ای بین ۷ تا ۴۰ کاراکتر وارد کنید"
 
-#: khadije/includes/languages/trans_dash.php:940
+#: khadije/includes/languages/trans_dash.php:943
 msgid "Click to see your password"
 msgstr "برای مشاهده گذرواژه وارد شده کلیک کنید"
 
-#: khadije/includes/languages/trans_dash.php:942
+#: khadije/includes/languages/trans_dash.php:945
 msgid "Password is password."
 msgstr "گذرواژه همان کلمه‌عبور یا رمز شماست. سعی کنیم فارسی صحبت کنیم:)"
 
-#: khadije/includes/languages/trans_dash.php:950
+#: khadije/includes/languages/trans_dash.php:953
 msgid "We will call you with this name"
 msgstr "شما را با این نام صدا خواهیم کرد"
 
