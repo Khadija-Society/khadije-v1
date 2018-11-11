@@ -52,6 +52,7 @@ self::$config['redirect']           = 'a';
 
 self::$config['favicon']['version'] = 4;
 
+self::$config['botscout']                 = 'hIenwLNiGpPOoSk';
 
 /**
  * call kavenegar template
