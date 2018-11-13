@@ -755,7 +755,7 @@ class twigTransTerms
 
 	//-------------------------------------content_cp\report\counttransaction\chart.js
 	echo T_("Count transaction");                                                     // Line 20
-	echo T_("Sum price");                                                             // Line 74
+	echo T_("Sum price");                                                             // Line 87
 
 	//---------------------------------content_cp\report\counttransaction\display.html
 	echo T_("Sum");                                                                   // Line 14
