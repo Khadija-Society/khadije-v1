@@ -134,14 +134,14 @@
 {%block iTitle%}
 <label for='ftitle'>{%trans "Title"%}</label>
 <div class="input">
- <input type="text" name="title" placeholder='{%trans "Title"%}' value="{{productDetail.title}}" autofocus  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid title"%}' id='ftitle'>
+ <input type="text" name="title" placeholder='{%trans "Title"%}' value="{{productDetail.title}}" autofocus  maxlength='50' minlength="1" title='{%trans "Enter a valid title"%}' id='ftitle'>
 </div>
 {%endblock%}
 
 {%block iLinkurl%}
 <label for='slug'>{%trans "Slug"%}</label>
-<div class="input">
- <input type="text" name="linkurl" placeholder='{%trans "Slug"%}' value="{{productDetail.linkurl}}" autofocus  maxlength='50' minlength="1" pattern=".{1,50}" id='slug'>
+<div class="input ltr">
+ <input type="text" name="linkurl" placeholder='{%trans "Slug"%}' value="{{productDetail.linkurl}}" autofocus  maxlength='50' minlength="1" id='slug'>
 </div>
 {%endblock%}
 
@@ -165,7 +165,7 @@
 {%block iCount%}
 <label for='fcount'>{%trans "Count"%}</label>
 <div class="input">
- <input type="number" name="count" placeholder='{%trans "Count"%}' value="{{productDetail.request}}" maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid count"%}' id='fcount'>
+ <input type="number" name="count" placeholder='{%trans "Count"%}' value="{{productDetail.request}}" maxlength='50' minlength="1" title='{%trans "Enter a valid count"%}' id='fcount'>
 </div>
 {%endblock%}
 
@@ -210,7 +210,7 @@
 {%block iAmount%}
 <label for='famount'>{%trans "Amount"%}</label>
 <div class="input">
- <input type="number" name="amount" placeholder='{%trans "Amount"%}' value="{{productDetail.amount}}"  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid amount"%}' id='famount'>
+ <input type="number" name="amount" placeholder='{%trans "Amount"%}' value="{{productDetail.amount}}"  maxlength='50' minlength="1" title='{%trans "Enter a valid amount"%}' id='famount'>
 </div>
 {%endblock%}
 
@@ -219,7 +219,7 @@
 {%block iSort%}
 <label for='isort'>{%trans "Sort"%}</label>
 <div class="input">
- <input type="number" name="sort" placeholder='{%trans "Sort"%}' value="{{productDetail.sort}}"  maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid sort"%}' id='isort'>
+ <input type="number" name="sort" placeholder='{%trans "Sort"%}' value="{{productDetail.sort}}" maxlength='50' minlength="1" title='{%trans "Enter a valid sort"%}' id='isort'>
 </div>
 {%endblock%}
 
