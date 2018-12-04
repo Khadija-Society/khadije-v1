@@ -24,7 +24,7 @@ self::$config['max_upload'] = 100 * 1024 * 1024; // 100 MB;
 // http://khadije.net
 // http://khadije.org
 // to https://khadije.com
-self::$url['tld']                   = 'com';
+// self::$url['tld']                   = 'com';
 self::$url['protocol']              = 'https';
 
 self::$config['tagSpecial']['slider']  = "Show in main slider";
