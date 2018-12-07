@@ -14,7 +14,7 @@ self::$config['asanpardakht']['Username']         = 'KHADIJE3482909';
 self::$config['asanpardakht']['Password']         = 'G8B6W4';
 self::$config['asanpardakht']['EncryptionKey']    = 's70xvzsS8A1JBCdTsf1lFjGbEYJ/L5Az21GH+JYrwAQ=';
 self::$config['asanpardakht']['EncryptionVector'] = 'Ln70tRn69FOW7KHBB3bDMuSRoyvuem8SiixJHeoiykM=';
-self::$config['asanpardakht']['MerchantIP']       = '37.139.2.244';
+self::$config['asanpardakht']['MerchantIP']       = '193.176.240.29';
 self::$config['asanpardakht']['MerchantName']     = 'KHYRIYE HAZRAT KHDIJE';
 
 
