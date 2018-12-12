@@ -38,10 +38,11 @@ self::$config['tagSpecial']['lottory'] = "Show in list of lottory winners";
 
 self::$config['notif']['image'] = '/static/images/logo.png';
 
-self::$config['site']['title']  = "Khadije Charity";
+self::$config['site']['title']           = "Khadije Charity";
 
-self::$config['site']['desc']   = "Executor of first pilgrimage to the Ahl al-Bayt";
-self::$config['site']['slogan'] = "Executor of first pilgrimage to the Ahl al-Bayt";
+self::$config['site']['desc']            = "Executor of first pilgrimage to the Ahl al-Bayt";
+self::$config['site']['slogan']          = "Executor of first pilgrimage to the Ahl al-Bayt";
+self::$config['site']['googleAnalytics'] = "UA-130945879-1";
 
 self::$config['visitor']              = true;
 
