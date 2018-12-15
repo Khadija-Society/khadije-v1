@@ -128,9 +128,9 @@
           </div>
           <div class="cauto">
 {%if value.gender == 'female'%}
-            <img src="{{url.site}}/static/siftal/images/avatar/woman.png" class="mini">
+            <img src="{{url.static}}/siftal/images/avatar/woman.png" class="mini">
 {%else%}
-            <img src="{{url.site}}/static/siftal/images/avatar/man.png" class="mini">
+            <img src="{{url.static}}/siftal/images/avatar/man.png" class="mini">
 {%endif%}
           </div>
           <div class="desc c12">
@@ -168,7 +168,7 @@
 {%block SCity%}
 {%set cityPlace = travelDetail.place %}
     <div class="vcard mw200">
-     <img src="{{url.site}}/static/images/place/{{travelDetail.place}}-square.jpg" alt='{%trans cityPlace%}'>
+     <img src="{{url.static}}/images/place/{{travelDetail.place}}-square.jpg" alt='{%trans cityPlace%}'>
      <div class="content">
       <div class="header">{%trans cityPlace%}</div>
      </div>

@@ -135,7 +135,7 @@
                   {%if value.fileurl%}
             <img src="{{value.fileurl}}">
           {%else%}
-            <img src="{{url.site}}/static/siftal/images/default/image.png">
+            <img src="{{url.static}}/siftal/images/default/image.png">
           {%endif%}
             <div class="content">
               <div class="header">{{value.title}}</div>
@@ -286,7 +286,7 @@
 {%if myWay.fileurl%}
       <label for="r-{{myWay.title}}"><img src="{{myWay.fileurl}}" alt="{{myWay.title}}"></label>
 {%else%}
-      <label for="r-{{myWay.title}}"><img src="{{url.site}}/static/images/logo.png" alt="{{myWay.title}}"></label>
+      <label for="r-{{myWay.title}}"><img src="{{url.static}}/images/logo.png" alt="{{myWay.title}}"></label>
 {%endif%}
       <input type="radio" id="r-{{myWay.title}}" name="way" value="{{myWay.title}}">
       <label for="r-{{myWay.title}}">{{myWay.title}}</label>

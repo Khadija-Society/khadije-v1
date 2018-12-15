@@ -14,7 +14,7 @@
 
 {%if DonersList | length > 30%}
  <a href="{{url.base}}/donate" class="vcard cauto shadow">
-   <img src="{{url.site}}/static/siftal/images/useful/care.png" alt='{%trans "Be good too"%}'>
+   <img src="{{url.static}}/siftal/images/useful/care.png" alt='{%trans "Be good too"%}'>
   <div class="content">
    <div class="btn block success fs09">{%trans "Be good too"%}</div>
   </div>
@@ -23,7 +23,7 @@
 
 {%for key, value in DonersList%}
   <div class="vcard cauto shadow" title='{{value.date | dt }}'>
-   <img src="{{url.site}}/static/siftal/images/useful/gift.png" alt='{%trans "Doner"%} {{value.firstname}} {{value.lastname}}' class="pA5-f">
+   <img src="{{url.static}}/siftal/images/useful/gift.png" alt='{%trans "Doner"%} {{value.firstname}} {{value.lastname}}' class="pA5-f">
    <div class="content">
     <div class="header fc-mute">
     {%if value.doners%}
@@ -44,7 +44,7 @@
 
 
  <a href="{{url.base}}/donate" class="vcard cauto shadow">
-   <img src="{{url.site}}/static/siftal/images/useful/care.png" alt='{%trans "Be good too"%}'>
+   <img src="{{url.static}}/siftal/images/useful/care.png" alt='{%trans "Be good too"%}'>
   <div class="content">
    <div class="btn block success fs09">{%trans "Be good too"%}</div>
   </div>

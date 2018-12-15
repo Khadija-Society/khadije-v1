@@ -7,7 +7,7 @@
 <div class='middle normal f justify-center'>
 
   <div class="vcard mA10">
-    <img src="{{url.site}}/static/siftal/images/useful/plus1.png" alt="add new course">
+    <img src="{{url.static}}/siftal/images/useful/plus1.png" alt="add new course">
     <div class="content"></div>
     <div class="footer pAn">
      <a class="btn block primary" href="{{url.this}}/course?id={{requestGET.id}}&type=add">{%trans "Add new course"%}</a>
@@ -20,7 +20,7 @@
 {%endset%}
 
   <a class="vcard mA10 shadow {{cardColor}}" href='{{url.this}}/course?id={{requestGET.id}}&course={{value.id}}'>
-    <img src="{{url.site}}/static/siftal/images/useful/gift-love.png" alt="{{value.title}}">
+    <img src="{{url.static}}/siftal/images/useful/gift-love.png" alt="{{value.title}}">
     <!-- <img src="{{value.logo}}" alt="{{value.title}}" class="pA10-f"> -->
     <div class="content">
       <div class="header">{{value.title}}</div>
