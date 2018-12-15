@@ -116,7 +116,7 @@
       <div id="organizers" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#organizers">{%trans "Organizers"%}</a></h3>
         {%for key, value in organizer%}
-          <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="{%if value.title%}{{value.title}}{%if value.desc%} | {{value.desc}}{%endif%}{%endif%}"><img alt="{{value.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}"></a>
+          <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="{%if value.title%}{{value.title}}{%if value.desc%} | {{value.desc}}{%endif%}{%endif%}"><img alt="{{value.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.static}}/images/logo.png{%endif%}"></a>
         {%endfor%}
       </div>
     {%endif%}
@@ -124,7 +124,7 @@
       <div id="sponsors" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#sponsors">{%trans "Sponsors"%}</a></h3>
         {%for key, value in supporter%}
-        <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="{%if value.title%}{{value.title}}{%if value.desc%} | {{value.desc}}{%endif%}{%endif%}"><img alt="{{value.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}"></a>
+        <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="{%if value.title%}{{value.title}}{%if value.desc%} | {{value.desc}}{%endif%}{%endif%}"><img alt="{{value.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.static}}/images/logo.png{%endif%}"></a>
         {%endfor%}
       </div>
     {%endif%}
@@ -132,7 +132,7 @@
       <div id="mdeiaSponsors" data-aos="zoom-in-up" data-aos-delay="200">
         <h3><a href="{{url.that}}#mdeiaSponsors">{%trans "Media Sponsors"%}</a></h3>
         {%for key, value in mediasupporter %}
-        <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="{%if value.title%}{{value.title}}{%if value.desc%} | {{value.desc}}{%endif%}{%endif%}"><img alt="{{site.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}"></a>
+        <a {%if value.website%} href="{{value.website}}" data-direct target="_blank" {%else%} href="#" {%endif%} title="{%if value.title%}{{value.title}}{%if value.desc%} | {{value.desc}}{%endif%}{%endif%}"><img alt="{{site.title}}" src="{%if value.logo%}{{value.logo}}{%else%}{{url.static}}/images/logo.png{%endif%}"></a>
         {%endfor%}
       </div>
     {%endif%}
@@ -182,7 +182,7 @@
     <div class="f justify-center list">
       {%for key, value in referee%}
         <div class="cauto">
-          <img class="rounded" src="{%if value.logo%}{{value.logo}}{%else%}{{url.base}}/static/images/logo.png{%endif%}">
+          <img class="rounded" src="{%if value.logo%}{{value.logo}}{%else%}{{url.static}}/images/logo.png{%endif%}">
           <h3>{{value.title}}</h3>
           <p>{{value.subtitle}}</p>
         </div>
