@@ -227,7 +227,7 @@ class need
 					}
 					else
 					{
-						$result[$key] = \dash\url::site(). '/static/images/logo.png';
+						$result[$key] = \dash\url::static(). '/images/logo.png';
 					}
 					break;
 				default:
