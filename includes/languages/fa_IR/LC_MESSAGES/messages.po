@@ -5228,7 +5228,7 @@ msgstr "آدرس"
 
 #: dash/addons/includes/languages/trans_dash.php:762
 msgid "Subject"
-msgstr "عنوان درس"
+msgstr "موضوع"
 
 #: dash/addons/includes/languages/trans_dash.php:763
 msgid "New"
