@@ -44,7 +44,7 @@ self::$config['site']['desc']            = "Executor of first pilgrimage to the 
 self::$config['site']['slogan']          = "Executor of first pilgrimage to the Ahl al-Bayt";
 self::$config['site']['googleAnalytics'] = "UA-130945879-1";
 
-self::$config['visitor']              = true;
+// self::$config['visitor']              = true;
 
 self::$config['debug']              = false;
 self::$config['coming']             = false;
