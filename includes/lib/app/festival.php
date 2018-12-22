@@ -85,7 +85,7 @@ class festival
 		}
 
 		$gallery = json_encode($gallery, JSON_UNESCAPED_UNICODE);
-		\dash\log::set('addFestivalGallery', ['data' => $festival_id, 'datalink' => \dash\coding::encode($festival_id)]);
+		\dash\log::set('addFestivalGallery', ['code' => $festival_id, 'datalink' => \dash\coding::encode($festival_id)]);
 		\lib\db\festivals::update(['gallery' => $gallery], $festival_id);
 		return true;
 	}
