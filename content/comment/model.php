@@ -54,7 +54,7 @@ class model
 				$displayname = \dash\request::post("name");
 			}
 			// get email from user login session
-			$email = \dash\db\users::get_email($user_id);
+			$email = null;
 			// user not set users email, we get email from contact form
 			if(!$email)
 			{

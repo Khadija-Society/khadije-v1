@@ -28,6 +28,7 @@
   {%if perm('cpMeeting') or perm('cpMeetingManage') %}<div class="c3 s6">{{block("iMeeting")}}</div>{%endif%}
   {%if perm('cpFestivalView') %}<div class="c3 s6">{{block("iFestival")}}</div>{%endif%}
 
+  {%if perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
 
 </div>
 {%endblock%}
@@ -40,6 +41,17 @@
  </div>
 </a>
 {%endblock%}
+
+
+{%block BTankyouMessage%}
+<a class="dcard x1" href='{{url.here}}/thankyoumessage'>
+ <div class="statistic">
+  <div class="value"><i class="sf-heart-3"></i></div>
+  <div class="label">{%trans "Tankyou message"%}</div>
+ </div>
+</a>
+{%endblock%}
+
 
 
 {%block iMeeting%}

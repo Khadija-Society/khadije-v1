@@ -450,8 +450,8 @@ class myuser
 
 
 
-		\dash\db\users::insert($args);
-		$user_id = \dash\db::insert_id();
+		$user_id = \dash\db\users::signup($args);
+
 
 		if(!$user_id)
 		{

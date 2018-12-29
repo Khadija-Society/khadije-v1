@@ -199,6 +199,11 @@
     "cat": "Family Trip",
     "require": []
   },
+  "cpSettingThankyouMessage": {
+    "title": "cpSettingThankyouMessage",
+    "cat": "Message",
+    "require": []
+  },
   "cpFamilyTripEdit": {
     "title": "cpFamilyTripEdit",
     "cat": "Family Trip",
