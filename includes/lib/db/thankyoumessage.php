@@ -1,14 +1,11 @@
 <?php
 namespace lib\db;
-function j($_a)
-{
-	\dash\code::pretty($_a, true);exit();
-}
 
 class thankyoumessage
 {
 	public static function list()
 	{
+		return false;
 		$now = date("Y-m-d", strtotime("-10 days"));
 		$now = date("Y-m-d");
 

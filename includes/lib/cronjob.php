@@ -26,16 +26,11 @@ class cronjob
 		}
 
 		$user_list = \lib\db\thankyoumessage::list();
-		if($list && is_array($list))
+		if($user_list && is_array($user_list))
 		{
 
 		}
-		var_dump($user_list);
-		// set log for all user payed 1 years ago
-		// tankyouMessage
-		// rememberdate
 
-		var_dump(1);exit();
 	}
 }
 ?>
