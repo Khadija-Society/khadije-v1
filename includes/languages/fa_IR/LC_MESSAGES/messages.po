@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2018-12-29 10:37+0330\n"
-"PO-Revision-Date: 2018-12-29 10:38+0330\n"
+"POT-Creation-Date: 2018-12-31 09:02+0330\n"
+"PO-Revision-Date: 2018-12-31 09:03+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -214,18 +214,18 @@ msgid "All other session terminated"
 msgstr "تمام دسترسی‌های دیگر مسدود شد"
 
 #: dash/addons/content_account/profile/security/model.php:80
-#: dash/addons/content_crm/member/security/model.php:41
+#: dash/addons/content_crm/member/security/model.php:58
 msgid "Session terminated"
 msgstr "این روش ورود مسدود شد"
 
 #: dash/addons/content_account/profile/security/view.php:71
-#: dash/addons/content_crm/member/security/view.php:52
+#: dash/addons/content_crm/member/security/view.php:57
 #: dash/addons/includes/languages/trans_static.php:346
 msgid "Windows"
 msgstr "ویندوز"
 
 #: dash/addons/content_account/profile/security/view.php:75
-#: dash/addons/content_crm/member/security/view.php:56
+#: dash/addons/content_crm/member/security/view.php:61
 #: dash/addons/includes/languages/trans_static.php:347
 msgid "Linux"
 msgstr "لینوکس"
@@ -848,10 +848,6 @@ msgstr "جزئیات تحصیلی اعضاء"
 msgid "set education detail and some other detail"
 msgstr "تنظیم اطلاعات تحصیلی و جزئیات بیشتر"
 
-#: dash/addons/content_crm/member/general/model.php:42
-msgid "You can not set your permission less than admin!"
-msgstr "شما نمی‌توانید سطح دسترسی خود را پایین تر از مدیریت قرار دهید!"
-
 #: dash/addons/content_crm/member/general/view.php:11
 msgid "Edit user general detail"
 msgstr "ویرایش‌کردن جزئیات‌‌کاربر"
@@ -1021,11 +1017,19 @@ msgstr "فرزند"
 msgid "Grandson"
 msgstr "نوه"
 
-#: dash/addons/content_crm/member/security/model.php:55
+#: dash/addons/content_crm/member/security/model.php:27
+msgid "You can not set your permission less than admin!"
+msgstr "شما نمی‌توانید سطح دسترسی خود را پایین تر از مدیریت قرار دهید!"
+
+#: dash/addons/content_crm/member/security/model.php:48
+msgid "Chatid removed"
+msgstr "شناسه تلگرام حذف شد"
+
+#: dash/addons/content_crm/member/security/model.php:72
 msgid "Please set repassword"
 msgstr "لطفا تکرار کلمه عبور را وارد کنید"
 
-#: dash/addons/content_crm/member/security/model.php:61
+#: dash/addons/content_crm/member/security/model.php:78
 msgid "Password not match whit repassword"
 msgstr "تکرار کلمه عبور با کلمه عبور برابر نیست"
 
@@ -11426,47 +11430,47 @@ msgstr "اجازه حذف مدیر کل وجود ندارد"
 msgid "Permission removed"
 msgstr "سطح دسترسی حذف شد"
 
-#: dash/lib/permission.php:327
+#: dash/lib/permission.php:341
 msgid "Please set a valid name for permission"
 msgstr "لطفا نام معتبری برای سطح دسترسی انتخاب کنید"
 
-#: dash/lib/permission.php:339 dash/lib/permission.php:350
+#: dash/lib/permission.php:353 dash/lib/permission.php:364
 msgid "This key was reserved, Try another"
 msgstr "این نام قبلا رزرو شده است، نامی دیگر انتخاب کنید"
 
-#: dash/lib/permission.php:358
+#: dash/lib/permission.php:372
 msgid "Can not change admin permission"
 msgstr "امکان تغییر سطح دسترسی مدیر کل وجود ندارد"
 
-#: dash/lib/permission.php:364
+#: dash/lib/permission.php:378
 msgid "This key was not found in your permission list!"
 msgstr "این آیتم در لیست سطوح دسترسی شما یافت نشد"
 
-#: dash/lib/permission.php:371
+#: dash/lib/permission.php:385
 msgid "The title must include at least one alphabetical character"
 msgstr "عنوان باید حداقل شامل یک کاراکتر الفبایی باشد"
 
-#: dash/lib/permission.php:377
+#: dash/lib/permission.php:391
 msgid "Name too large, Try another"
 msgstr "نام بسیار طولانی است،‌ آن را تغییر دهید"
 
-#: dash/lib/permission.php:384
+#: dash/lib/permission.php:398
 msgid "Label too large, Try another"
 msgstr "برچسب بسیار طولانی است، آن را تغییر دهید"
 
-#: dash/lib/permission.php:390
+#: dash/lib/permission.php:404
 msgid "Invalid contain of permission"
 msgstr "آیتم های پرمیژن اشتباه هستند"
 
-#: dash/lib/permission.php:400
+#: dash/lib/permission.php:414
 msgid "This item is not in your permission list!"
 msgstr "این گزینه در لیست سطوح دسترسی شما وجود ندارد"
 
-#: dash/lib/permission.php:426
+#: dash/lib/permission.php:440
 msgid "Permission saved"
 msgstr "سطح دسترسی ذخیره شد"
 
-#: dash/lib/permission.php:615
+#: dash/lib/permission.php:629
 msgid "Permission denied"
 msgstr "دسترسی غیر مجاز"
 
@@ -12584,6 +12588,10 @@ msgid ""
 "Payment operation was successfull and PatmentVerification of the transaction has "
 "already done"
 msgstr "عملیات پرداخت با موفقیت انجام شد و تایید پرداخت تراکنش با موفقیت انجام شد"
+
+#: dash/lib/utility/payment/payment/zarinpal.php:147
+msgid "The error code is :code"
+msgstr "خطا در درگاه پرداخت با کد :code"
 
 #: dash/lib/utility/payment/verify/asanpardakht.php:67
 #: dash/lib/utility/payment/verify/irkish.php:70
