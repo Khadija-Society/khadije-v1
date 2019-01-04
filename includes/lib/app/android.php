@@ -8,9 +8,9 @@ class android
 		$detail                                = [];
 
 		$detail['navigation']                  = [];
-		$detail['navigation'][]                = ['title' => "pay", "url" => \dash\url::kingdom(). '/donate'];
-		$detail['navigation'][]                = ['title' => "home", "url" => \dash\url::kingdom()];
-		$detail['navigation'][]                = ['title' => "trip", "url" => \dash\url::kingdom(). '/trip'];
+		$detail['navigation'][]                = ['title' => T_("Donate"), "url" => \dash\url::kingdom(). '/donate'];
+		$detail['navigation'][]                = ['title' => T_("Home"), "url" => \dash\url::kingdom()];
+		$detail['navigation'][]                = ['title' => T_("Trip"), "url" => \dash\url::kingdom(). '/trip'];
 
 		$detail['app_version']                 = [];
 		$detail['app_version']['code']         = 1;
