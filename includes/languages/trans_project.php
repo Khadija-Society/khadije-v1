@@ -661,10 +661,10 @@ class twigTransTerms
 	echo T_("Soroush App");                                                           // Line 360
 
 	//--------------------------------------------------content/donate/donateForm.html
-	echo T_("List of last success donations of yours");                               // Line 94
-	echo T_("Your niyat is");                                                         // Line 96
+	echo T_("List of last success donations of yours");                               // Line 95
+	echo T_("Your niyat is");                                                         // Line 97
 	echo T_("Untitled");                                                              // Line 33
-	echo T_("Thanks");                                                                // Line 119
+	echo T_("Thanks");                                                                // Line 120
 	echo T_("Requested");                                                             // Line 118
 	echo T_("Your help");                                                             // Line 124
 	echo T_("Enter a valid number");                                                  // Line 124
@@ -672,16 +672,16 @@ class twigTransTerms
 	echo T_("Your name");                                                             // Line 151
 	echo T_("Enter a valid name");                                                    // Line 151
 	echo T_("Full name");                                                             // Line 159
-	echo T_("Your Name");                                                             // Line 184
-	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 184
-	echo T_("Your mobile number");                                                    // Line 195
-	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 195
+	echo T_("Your Name");                                                             // Line 185
+	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 185
+	echo T_("Your mobile number");                                                    // Line 196
+	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 196
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
-	echo T_("It is optional and depending on your intention can enter it");           // Line 215
+	echo T_("It is optional and depending on your intention can enter it");           // Line 216
 	echo T_("Pay Amount");                                                            // Line 122
-	echo T_("Rial");                                                                  // Line 225
-	echo T_("Amount of your donation");                                               // Line 224
+	echo T_("Rial");                                                                  // Line 226
+	echo T_("Amount of your donation");                                               // Line 225
 	echo T_("Total Pay Amount");                                                      // Line 206
 	echo T_("Show in public doners list?");                                           // Line 214
 	echo T_("Check doners list");                                                     // Line 214

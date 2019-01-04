@@ -114,7 +114,7 @@ class twigTransTerms
 
 	//-------------------------------------addons/content_cp/contact/home/display.html
 	echo T_("Author");                                                                // Line 12
-	echo T_("Detail");                                                                // Line 60
+	echo T_("Detail");                                                                // Line 110
 	echo T_("Date");                                                                  // Line 48
 	echo T_("Without name");                                                          // Line 87
 	echo T_("Visitor detail");                                                        // Line 96
@@ -124,7 +124,7 @@ class twigTransTerms
 	echo T_("Trash");                                                                 // Line 58
 	echo T_("Spam");                                                                  // Line 64
 	echo T_("Created on");                                                            // Line 34
-	echo T_("No record exist!");                                                      // Line 79
+	echo T_("No record exist!");                                                      // Line 136
 
 	//-------------------------------------addons/content_cp/contact/edit/display.html
 	echo T_("Mobile");                                                                // Line 76
@@ -179,7 +179,7 @@ class twigTransTerms
 	echo T_("Used for url");                                                          // Line 186
 	echo T_("Used in url for categorize addresses");                                  // Line 188
 	echo T_("Parent Category");                                                       // Line 196
-	echo T_("Please select one itme");                                                // Line 178
+	echo T_("Please select one itme");                                                // Line 158
 	echo T_("Enable");                                                                // Line 234
 	echo T_("Disable");                                                               // Line 235
 	echo T_("Expired");                                                               // Line 224
@@ -278,7 +278,7 @@ class twigTransTerms
 	echo T_("Melli");                                                                 // Line 27
 	echo T_("Sepah");                                                                 // Line 33
 	echo T_("Keshavarzi");                                                            // Line 39
-	echo T_("Parsian");                                                               // Line 18
+	echo T_("Parsian");                                                               // Line 54
 	echo T_("Maskan");                                                                // Line 51
 	echo T_("Refah");                                                                 // Line 57
 	echo T_("Novin");                                                                 // Line 63
@@ -365,6 +365,16 @@ class twigTransTerms
 	echo T_("Total");                                                                 // Line 22
 
 	//-----------------------------------addons/content_hook/autoredirect/display.html
+
+	//-----------------------------------addons/content_hook/pay/redirect/display.html
+
+	//---------------------------------------addons/content_hook/pay/home/display.html
+	echo T_("Toman");                                                                 // Line 29
+	echo T_("Payed");                                                                 // Line 27
+	echo T_("Canceled");                                                              // Line 39
+	echo T_("Choose a gateway");                                                      // Line 52
+	echo T_("Pay");                                                                   // Line 98
+	echo T_("Back");                                                                  // Line 6
 
 	//-----------------------------------------addons/content_enter/block/display.html
 	echo T_("You are blocked becauese of some reason!");                              // Line 7
@@ -512,6 +522,8 @@ class twigTransTerms
 	echo T_("Manage all tickets");                                                    // Line 26
 
 	//---------------------------------addons/content_support/ticket/home/display.html
+	echo T_("No ticket was found");                                                   // Line 79
+	echo T_("Add new ticket");                                                        // Line 79
 	echo T_("Active tickets");                                                        // Line 92
 	echo T_("Replies");                                                               // Line 109
 	echo T_("Avg. First Response");                                                   // Line 120
@@ -596,14 +608,17 @@ class twigTransTerms
 	echo T_("Education Course");                                                      // Line 46
 
 	//---------------------------------addons/content_crm/member/security/display.html
-	echo T_("Security and Enter");                                                    // Line 45
+	echo T_("User have chatid");                                                      // Line 34
+	echo T_("Remove chatid");                                                         // Line 36
 	echo T_("Default language");                                                      // Line 44
 	echo T_("Select one item");                                                       // Line 46
+	echo T_("Permission");                                                            // Line 96
+	echo T_("No permission");                                                         // Line 276
 	echo T_("Username");                                                              // Line 156
 	echo T_("Enter a valid username from 3 to 40 character");                         // Line 180
-	echo T_("Enter to change pass");                                                  // Line 61
+	echo T_("Enter to change pass");                                                  // Line 94
 	echo T_("Password was set, enter to change it!");                                 // Line 307
-	echo T_("Password not set, enter  to set it!");                                   // Line 72
+	echo T_("Password not set, enter  to set it!");                                   // Line 105
 	echo T_("Confirm password");                                                      // Line 305
 	echo T_("Require to change current password");                                    // Line 305
 	echo T_("Show sidebar");                                                          // Line 34
@@ -622,10 +637,10 @@ class twigTransTerms
 	echo T_("Terminate");                                                             // Line 123
 
 	//----------------------------------addons/content_crm/member/billing/display.html
-	echo T_("Billing History");                                                       // Line 104
-	echo T_("Value");                                                                 // Line 110
-	echo T_("Budget After");                                                          // Line 111
-	echo T_("Invoice");                                                               // Line 112
+	echo T_("Billing History");                                                       // Line 64
+	echo T_("Value");                                                                 // Line 70
+	echo T_("Budget After");                                                          // Line 71
+	echo T_("Invoice");                                                               // Line 72
 	echo T_("The user have not payment history yet!");                                // Line 77
 
 	//-----------------------------------addons/content_crm/member/social/display.html
@@ -653,17 +668,15 @@ class twigTransTerms
 	//----------------------------------addons/content_crm/member/general/display.html
 	echo T_("Nick name");                                                             // Line 187
 	echo T_("Display name");                                                          // Line 222
-	echo T_("Permission");                                                            // Line 96
-	echo T_("No permission");                                                         // Line 276
-	echo T_("Last name");                                                             // Line 137
-	echo T_("Father name");                                                           // Line 148
+	echo T_("Last name");                                                             // Line 117
+	echo T_("Father name");                                                           // Line 128
 	echo T_("Birthday");                                                              // Line 56
 	echo T_("Gender");                                                                // Line 67
 	echo T_("Male");                                                                  // Line 71
 	echo T_("Female");                                                                // Line 76
-	echo T_("Marital");                                                               // Line 176
-	echo T_("Single");                                                                // Line 179
-	echo T_("Married");                                                               // Line 180
+	echo T_("Marital");                                                               // Line 156
+	echo T_("Single");                                                                // Line 159
+	echo T_("Married");                                                               // Line 160
 
 	//-------------------------------------addons/content_crm/member/home/display.html
 	echo T_("Display Name");                                                          // Line 58
@@ -722,7 +735,6 @@ class twigTransTerms
 
 	//----------------------------------------addons/content_crm/sms/home/display.html
 	echo T_("Your sms panel balance");                                                // Line 18
-	echo T_("Toman");                                                                 // Line 29
 	echo T_("Send quick");                                                            // Line 27
 	echo T_("Group send");                                                            // Line 36
 
@@ -757,53 +769,52 @@ class twigTransTerms
 	echo T_("Label");                                                                 // Line 17
 
 	//-----------------------------------------addons/content_account/ref/display.html
-	echo T_("Referral Program");                                                      // Line 11
-	echo T_("Nobody can tell the Jibres story better than our customers.");           // Line 6
-	echo T_("Nobody can tell the Jibres story better than you;)");                    // Line 12
-	echo T_("How it works?");                                                         // Line 16
-	echo T_("Tell your friends about the Jibres story.");                             // Line 19
-	echo T_("Refer your friends through Social Media or Email.");                     // Line 20
-	echo T_("Share the referral rewards program with friends on Facebook, Twitter, or Email.");// Line 20
-	echo T_("When they click on your post, we’ll know it was you who referred them.");// Line 20
-	echo T_("If someone forget to use your link, we allow to set your ref code as promo code in billing page!");// Line 20
-	echo T_("Your friend enter to Jibres and receives credit.");                      // Line 23
-	echo T_("Your friend enter and receives $5 account credit.");                     // Line 24
-	echo T_("Anyone you refer to Jibres that enter using your unique referral link or your promo code will receive $5 in credit.");// Line 24
-	echo T_("You all get rewarded.");                                                 // Line 27
-	echo T_("Jibres rewards are charge in your account after 7 work days of confirmation.");// Line 28
-	echo T_("Amount of charge is depended on your friend total pay and after automatic calculation, system set your gift.");// Line 28
-	echo T_("We calculate your percentage until 6 month of your friend registration. Because of that it was your chance to convinced your friend to charge more!");// Line 28
-	echo T_("Share your link");                                                       // Line 34
-	echo T_("Copy your personal referral link and share it with your friends and followers.");// Line 35
-	echo T_("Link");                                                                  // Line 38
-	echo T_("Promo code");                                                            // Line 70
-	echo T_("Referral stats");                                                        // Line 51
-	echo T_("CLICKS");                                                                // Line 55
-	echo T_("Number of times your link has been opened.");                            // Line 56
-	echo T_("REFERRALS");                                                             // Line 60
-	echo T_("People who enter to Jibres using your link.");                           // Line 61
-	echo T_("Promo Code");                                                            // Line 76
-	echo T_("People who connected to you with promo code.");                          // Line 66
-	echo T_("Total you refed");                                                       // Line 71
-	echo T_("Sum of people referred from you.");                                      // Line 72
-	echo T_("Active users");                                                          // Line 77
-	echo T_("People who work with their account.");                                   // Line 78
-	echo T_("You earned");                                                            // Line 120
-	echo T_("Percentage");                                                            // Line 90
-	echo T_("Level 1");                                                               // Line 96
-	echo T_("People who pay more than 25$.");                                         // Line 97
-	echo T_("Level 2");                                                               // Line 102
-	echo T_("People who pay more than 50$.");                                         // Line 103
-	echo T_("Level 3");                                                               // Line 108
-	echo T_("People who pay more than 500$.");                                        // Line 109
-	echo T_("Level 4");                                                               // Line 114
-	echo T_("People who pay more than 5000$.");                                       // Line 115
-	echo T_("Sum of your credit earned from refs.");                                  // Line 121
-	echo T_("Confirm earned");                                                        // Line 126
-	echo T_("Sum of confirmed credit earned from refs.");                             // Line 127
-	echo T_("Enter to get a unique referral link.");                                  // Line 139
-	echo T_("Use our logo to help spread the word.");                                 // Line 141
-	echo T_("Enter to Jibres");                                                       // Line 144
+	echo T_("Referral Program");                                                      // Line 6
+	echo T_("Nobody can tell the Jibres story better than you;)");                    // Line 7
+	echo T_("How it works?");                                                         // Line 11
+	echo T_("Tell your friends about the Jibres story.");                             // Line 14
+	echo T_("Refer your friends through Social Media or Email.");                     // Line 15
+	echo T_("Share the referral rewards program with friends on Facebook, Twitter, or Email.");// Line 15
+	echo T_("When they click on your post, we’ll know it was you who referred them.");// Line 15
+	echo T_("If someone forget to use your link, we allow to set your ref code as promo code in billing page!");// Line 15
+	echo T_("Your friend enter to Jibres and receives credit.");                      // Line 18
+	echo T_("Your friend enter and receives $5 account credit.");                     // Line 19
+	echo T_("Anyone you refer to Jibres that enter using your unique referral link or your promo code will receive $5 in credit.");// Line 19
+	echo T_("You all get rewarded.");                                                 // Line 22
+	echo T_("Jibres rewards are charge in your account after 7 work days of confirmation.");// Line 23
+	echo T_("Amount of charge is depended on your friend total pay and after automatic calculation, system set your gift.");// Line 23
+	echo T_("We calculate your percentage until 6 month of your friend registration. Because of that it was your chance to convinced your friend to charge more!");// Line 23
+	echo T_("Share your link");                                                       // Line 29
+	echo T_("Copy your personal referral link and share it with your friends and followers.");// Line 30
+	echo T_("Link");                                                                  // Line 33
+	echo T_("Promo code");                                                            // Line 30
+	echo T_("Referral stats");                                                        // Line 46
+	echo T_("CLICKS");                                                                // Line 50
+	echo T_("Number of times your link has been opened.");                            // Line 51
+	echo T_("REFERRALS");                                                             // Line 55
+	echo T_("People who enter to Jibres using your link.");                           // Line 56
+	echo T_("Promo Code");                                                            // Line 36
+	echo T_("People who connected to you with promo code.");                          // Line 61
+	echo T_("Total you refed");                                                       // Line 66
+	echo T_("Sum of people referred from you.");                                      // Line 67
+	echo T_("Active users");                                                          // Line 72
+	echo T_("People who work with their account.");                                   // Line 73
+	echo T_("You earned");                                                            // Line 115
+	echo T_("Percentage");                                                            // Line 85
+	echo T_("Level 1");                                                               // Line 91
+	echo T_("People who pay more than 25$.");                                         // Line 92
+	echo T_("Level 2");                                                               // Line 97
+	echo T_("People who pay more than 50$.");                                         // Line 98
+	echo T_("Level 3");                                                               // Line 103
+	echo T_("People who pay more than 500$.");                                        // Line 104
+	echo T_("Level 4");                                                               // Line 109
+	echo T_("People who pay more than 5000$.");                                       // Line 110
+	echo T_("Sum of your credit earned from refs.");                                  // Line 116
+	echo T_("Confirm earned");                                                        // Line 121
+	echo T_("Sum of confirmed credit earned from refs.");                             // Line 122
+	echo T_("Enter to get a unique referral link.");                                  // Line 134
+	echo T_("Use our logo to help spread the word.");                                 // Line 136
+	echo T_("Enter to Jibres");                                                       // Line 139
 
 	//----------------------------------------------addons/content_account/layout.html
 
@@ -823,13 +834,14 @@ class twigTransTerms
 
 	//-------------------------------------addons/content_account/billing/display.html
 	echo T_("Charge your account");                                                   // Line 13
-	echo T_("Choose a gateway and enter an amount to charge your account");           // Line 14
-	echo T_("Amount");                                                                // Line 61
-	echo T_("Checkout");                                                              // Line 62
-	echo T_("If you have a promo code, please enter it below to receive your credit.");// Line 71
-	echo T_("Apply Code");                                                            // Line 77
-	echo T_("Your credit");                                                           // Line 93
-	echo T_("You are not have payment history yet!");                                 // Line 150
+	echo T_("Enter an amount to charge your account");                                // Line 14
+	echo T_("Amount");                                                                // Line 21
+	echo T_("Checkout");                                                              // Line 22
+	echo T_("If you have a promo code, please enter it below to receive your credit.");// Line 31
+	echo T_("Apply Code");                                                            // Line 37
+	echo T_("Your credit");                                                           // Line 53
+	echo T_("Verify");                                                                // Line 64
+	echo T_("You are not have payment history yet!");                                 // Line 120
 
 	//-----------------------------addons/content_account/billing/invoice/display.html
 	echo T_("Factor of team");                                                        // Line 8
@@ -857,6 +869,7 @@ class twigTransTerms
 	//----------------------------------------addons/content_account/home/display.html
 
 	//----------------------------addons/content_account/profile/security/display.html
+	echo T_("Security and Enter");                                                    // Line 45
 	echo T_("Two step verification for your account is active");                      // Line 39
 	echo T_("To deactive it");                                                        // Line 42
 	echo T_("Click here");                                                            // Line 293
@@ -921,7 +934,6 @@ class twigTransTerms
 	echo T_("Budget before");                                                         // Line 60
 	echo T_("Budget");                                                                // Line 61
 	echo T_("Condition");                                                             // Line 63
-	echo T_("Verify");                                                                // Line 64
 	echo T_("Try to start with add new :transactions!");                              // Line 110
 
 	//---------------------------------addons/content_su/transactions/add/display.html
@@ -967,7 +979,6 @@ class twigTransTerms
 
 	//-------------------------------------------addons/content_su/backup/display.html
 	echo T_("Backup database");                                                       // Line 5
-	echo T_("Back");                                                                  // Line 6
 	echo T_("File is empty");                                                         // Line 15
 	echo T_("Database info");                                                         // Line 25
 	echo T_("Show Auto backup log file");                                             // Line 30
