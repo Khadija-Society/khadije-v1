@@ -1,5 +1,7 @@
 <?php
 
+self::$config['default_payment']                  = 'zarinpal';
+
 self::$config['zarinpal']['status']               = true;
 self::$config['zarinpal']['MerchantID']           = "6df6881c-f054-11e7-b904-000c295eb8fc";
 self::$config['zarinpal']['Description']          = "Donate";
@@ -7,7 +9,7 @@ self::$config['zarinpal']['CallbackURL']          = null;
 self::$config['zarinpal']['exchange']             = 1;
 
 
-self::$config['asanpardakht']['status']           = true;
+self::$config['asanpardakht']['status']           = false;
 self::$config['asanpardakht']['MerchantID']       = '3482909';
 self::$config['asanpardakht']['MerchantConfigID'] = '2000';
 self::$config['asanpardakht']['Username']         = 'KHADIJE3482909';
@@ -24,7 +26,7 @@ self::$config['parsian']['CallBackUrl']           = null;
 self::$config['parsian']['exchange']              = null;
 
 
-self::$config['payir']['status']                  = true;
+self::$config['payir']['status']                  = false;
 self::$config['payir']['api']                     = "2556625040aca77c877982b78b9fea93";
 self::$config['payir']['redirect']                = null;
 

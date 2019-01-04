@@ -29,23 +29,37 @@ class view
 			}
 		}
 
-		if(\dash\session::get('payment_request_start'))
-		{
-			if(\dash\utility\payment\verify::get_status())
-			{
-				$amount = \dash\utility\payment\verify::get_amount();
-				\dash\data:: paymentVerifyMsgTrue(true);
-				\dash\data:: paymentVerifyMsg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($amount)]));
-				\lib\app\donate::sms_success($amount);
-			}
-			else
-			{
-				\dash\data:: paymentVerifyMsgTrue(false);
-				\dash\data:: paymentVerifyMsg(T_("Payment unsuccessfull"));
-			}
+		// if(\dash\session::get('paymentVerifyMsgTrue'))
+		// {
+		// 	\dash\data::paymentVerifyMsgTrue(\dash\session::get('paymentVerifyMsgTrue'));
+		// }
+		// else
+		// {
+		// 	\dash\data::paymentVerifyMsg(\dash\session::get('paymentVerifyMsg'));
+		// }
 
-			\dash\utility\payment\verify::clear_session();
-		}
+		// \dash\session::set('paymentVerifyMsg', null);
+		// \dash\session::set('paymentVerifyMsgTrue', null);
+
+
+
+	}
+
+
+	public static function after_pay($_detail)
+	{
+		$amount = isset($_detail['plus']) ? $_detail['plus'] : 0;
+		\lib\app\donate::sms_success($amount);
+		// \dash\session::set('paymentVerifyMsgTrue', true);
+		// \dash\session::set('paymentVerifyMsg', T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($amount)]));
+		// if(isset($_detail['condition']) && $_detail['condition'] === 'ok')
+		// {
+		// }
+		// else
+		// {
+		// 	\dash\session::set('paymentVerifyMsgTrue', false);
+		// 	\dash\session::set('paymentVerifyMsg', T_("Payment unsuccessfull"));
+		// }
 	}
 }
 ?>

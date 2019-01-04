@@ -453,6 +453,8 @@ class donate
 				'turn_back'   => \dash\url::pwd(),
 				'user_id'     => $user_id,
 				'amount'      => \dash\app::request('amount'),
+				'final_fn'    => ['\\\content\\\donate\\\view', 'after_pay'],
+				'auto_go'     => true,
 				'other_field' =>
 				[
 					'hazinekard' => $way,

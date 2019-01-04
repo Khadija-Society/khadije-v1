@@ -25,9 +25,11 @@ class model
 
 		$meta =
 		[
-			'turn_back' => \dash\url::kingdom(). '/doners',
-			'user_id'   => \dash\user::id(),
-			'amount'    => \dash\request::post('quickpay'),
+			'turn_back'   => \dash\url::kingdom(). '/doners',
+			'user_id'     => \dash\user::id(),
+			'amount'      => \dash\request::post('quickpay'),
+			'auto_go'     => true,
+			'auto_back'   => true,
 			'other_field' =>
 			[
 				// 'hazinekard' => $way,
