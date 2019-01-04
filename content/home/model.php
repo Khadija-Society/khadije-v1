@@ -25,7 +25,9 @@ class model
 
 		$meta =
 		[
-			'turn_back'   => \dash\url::kingdom(). '/doners',
+			'turn_back' => \dash\url::kingdom(). '/doners',
+			'user_id'   => \dash\user::id(),
+			'amount'    => \dash\request::post('quickpay'),
 			'other_field' =>
 			[
 				// 'hazinekard' => $way,
@@ -36,7 +38,8 @@ class model
 			]
 		];
 
-		\dash\utility\payment\pay::start(\dash\user::id(), 'asanpardakht', \dash\request::post('quickpay'), $meta);
+		\dash\utility\pay\start::site($meta);
+
 	}
 
 }

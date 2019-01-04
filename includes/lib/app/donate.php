@@ -413,19 +413,6 @@ class donate
 		}
 
 
-		$meta =
-		[
-			'turn_back'   => \dash\url::pwd(),
-			'other_field' =>
-			[
-				'hazinekard' => $way,
-				'niyat'      => $niyat,
-				'fullname'   => $fullname,
-				'donate'     => 'cash',
-				'doners'     => $doners,
-			]
-		];
-
 		if(\dash\app::request('manuall') === 'on')
 		{
 			$transaction_set =
@@ -460,7 +447,24 @@ class donate
 		}
 		else
 		{
-			\dash\utility\payment\pay::start($user_id, \dash\app::request('bank'), \dash\app::request('amount'), $meta);
+
+			$meta =
+			[
+				'turn_back'   => \dash\url::pwd(),
+				'user_id'     => $user_id,
+				'amount'      => \dash\app::request('amount'),
+				'other_field' =>
+				[
+					'hazinekard' => $way,
+					'niyat'      => $niyat,
+					'fullname'   => $fullname,
+					'donate'     => 'cash',
+					'doners'     => $doners,
+				]
+			];
+
+			\dash\utility\pay\start::site($meta);
+
 		}
 	}
 }

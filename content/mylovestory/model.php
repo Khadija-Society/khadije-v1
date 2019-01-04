@@ -29,27 +29,22 @@ class model
 					\dash\redirect::to(\dash\url::kingdom(). '/enter?referer='. \dash\url::pwd());
 				}
 
-				$meta =
-				[
-					'turn_back' => \dash\url::pwd(),
-					'other_field' =>
-					[
-						'hazinekard' => 'mylovestory',
-						'niyat'      => null,
-						'fullname'   => \dash\user::detail('displayname'),
-						'donate'     => 'book',
-						'doners'     => null,
-					]
-				];
+				// $meta =
+				// [
+				// 	'turn_back'   => \dash\url::pwd(),
+				// 	'user_id'     => \dash\user::id(),
+				// 	'amount'      => 3000,
+				// 	'other_field' =>
+				// 	[
+				// 		'hazinekard' => 'mylovestory',
+				// 		'niyat'      => null,
+				// 		'fullname'   => \dash\user::detail('displayname'),
+				// 		'donate'     => 'book',
+				// 		'doners'     => null,
+				// 	]
+				// ];
 
-				$bank = 'asanpardakht';
-
-				if(\dash\url::isLocal())
-				{
-					$bank = 'payir';
-				}
-
-				\dash\utility\payment\pay::start(\dash\user::id(), $bank, 3000, $meta);
+				// \dash\utility\pay\start::site($meta);
 			}
 			else
 			{

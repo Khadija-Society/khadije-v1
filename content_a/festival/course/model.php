@@ -63,7 +63,11 @@ class model
 
 				$meta =
 				[
-					'turn_back'   => \dash\url::pwd(),
+					'turn_back'     => \dash\url::pwd(),
+					'user_id'       => \dash\user::id(),
+					'amount'        => \dash\request::post('bank'),
+					'final_fn'      => ['\\\content_a\\\festival\\\course\\\model','signup_course'],
+					'final_fn_args' => $course_id,
 					'other_field' =>
 					[
 						'hazinekard' => $festival_id,
@@ -73,8 +77,8 @@ class model
 						'doners'     => 0,
 					]
 				];
+				\dash\utility\pay\start::site($meta);
 
-				\dash\utility\payment\pay::start(\dash\user::id(), \dash\request::post('bank'), $price, $meta);
 			}
 
 
