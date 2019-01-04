@@ -30,6 +30,7 @@ class model
 			'amount'      => \dash\request::post('quickpay'),
 			'auto_go'     => true,
 			'auto_back'   => true,
+			'final_msg'   => true,
 			'other_field' =>
 			[
 				// 'hazinekard' => $way,

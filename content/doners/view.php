@@ -12,22 +12,25 @@ class view
 
 		\dash\data::DonersList(\lib\db\mytransactions::transaction_list());
 
-		if(\dash\session::get('payment_request_start'))
+		if(\dash\request::get('token'))
 		{
-			if(\dash\utility\payment\verify::get_status())
+			$get_msg = \dash\utility\pay\setting::final_msg(\dash\request::get('token'));
+			if($get_msg)
 			{
-				$amount = \dash\utility\payment\verify::get_amount();
-				\dash\data:: paymentVerifyMsgTrue(true);
-				\dash\data:: paymentVerifyMsg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($amount)]));
-				\lib\app\donate::sms_success($amount);
+				if(isset($get_msg['condition']) && $get_msg['condition'] === 'ok' && isset($get_msg['plus']))
+				{
+					\dash\data::paymentVerifyMsg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($get_msg['plus'])]));
+					\dash\data::paymentVerifyMsgTrue(true);
+				}
+				else
+				{
+					\dash\data::paymentVerifyMsg(T_("Payment unsuccessfull"));
+				}
 			}
 			else
 			{
-				\dash\data:: paymentVerifyMsgTrue(false);
-				\dash\data:: paymentVerifyMsg(T_("Payment unsuccessfull"));
+				\dash\redirect::to(\dash\url::this());
 			}
-
-			\dash\utility\payment\verify::clear_session();
 		}
 	}
 }

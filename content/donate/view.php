@@ -29,18 +29,26 @@ class view
 			}
 		}
 
-		// if(\dash\session::get('paymentVerifyMsgTrue'))
-		// {
-		// 	\dash\data::paymentVerifyMsgTrue(\dash\session::get('paymentVerifyMsgTrue'));
-		// }
-		// else
-		// {
-		// 	\dash\data::paymentVerifyMsg(\dash\session::get('paymentVerifyMsg'));
-		// }
-
-		// \dash\session::set('paymentVerifyMsg', null);
-		// \dash\session::set('paymentVerifyMsgTrue', null);
-
+		if(\dash\request::get('token'))
+		{
+			$get_msg = \dash\utility\pay\setting::final_msg(\dash\request::get('token'));
+			if($get_msg)
+			{
+				if(isset($get_msg['condition']) && $get_msg['condition'] === 'ok' && isset($get_msg['plus']))
+				{
+					\dash\data::paymentVerifyMsg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($get_msg['plus'])]));
+					\dash\data::paymentVerifyMsgTrue(true);
+				}
+				else
+				{
+					\dash\data::paymentVerifyMsg(T_("Payment unsuccessfull"));
+				}
+			}
+			else
+			{
+				\dash\redirect::to(\dash\url::this());
+			}
+		}
 
 
 	}
@@ -50,16 +58,6 @@ class view
 	{
 		$amount = isset($_detail['plus']) ? $_detail['plus'] : 0;
 		\lib\app\donate::sms_success($amount);
-		// \dash\session::set('paymentVerifyMsgTrue', true);
-		// \dash\session::set('paymentVerifyMsg', T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($amount)]));
-		// if(isset($_detail['condition']) && $_detail['condition'] === 'ok')
-		// {
-		// }
-		// else
-		// {
-		// 	\dash\session::set('paymentVerifyMsgTrue', false);
-		// 	\dash\session::set('paymentVerifyMsg', T_("Payment unsuccessfull"));
-		// }
 	}
 }
 ?>

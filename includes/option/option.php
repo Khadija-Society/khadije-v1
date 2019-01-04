@@ -35,7 +35,7 @@ self::$config['tagSpecial']['lottory'] = "Show in list of lottory winners";
 // self::$config['crop_size']['smally']   = [16, 16];
 // self::$config['crop_size']['extera']   = [1600, 100];
 
-
+self::$config['billing_page'] = false;
 self::$config['notif']['image'] = '/static/images/logo.png';
 
 self::$config['site']['title']           = "Khadije Charity";
