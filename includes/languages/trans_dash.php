@@ -364,8 +364,6 @@ class twigTransTerms
 	//----------------------------------------addons/includes/html/inc_pagination.html
 	echo T_("Total");                                                                 // Line 22
 
-	//-----------------------------------addons/content_hook/autoredirect/display.html
-
 	//-----------------------------------addons/content_hook/pay/redirect/display.html
 
 	//---------------------------------------addons/content_hook/pay/home/display.html
@@ -1112,6 +1110,10 @@ class twigTransTerms
 	echo T_("Addon Database");                                                        // Line 147
 	echo T_("Upgrade");                                                               // Line 166
 	echo T_("Backup by dump");                                                        // Line 168
+
+	//------------------------------------------addons/content_su/android/display.html
+	echo T_("Token");                                                                 // Line 8
+	echo T_("Revoke");                                                                // Line 11
 
  }
 }

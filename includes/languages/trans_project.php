@@ -392,7 +392,7 @@ class twigTransTerms
 	echo T_("Write description of festival course");                                  // Line 161
 	echo T_("Condition");                                                             // Line 166
 	echo T_("Write condition of festival course");                                    // Line 167
-	echo T_("Condition send");                                                        // Line 47
+	echo T_("Condition send");                                                        // Line 34
 	echo T_("Write conditionsend of festival course");                                // Line 173
 	echo T_("Pirce");                                                                 // Line 177
 	echo T_("Price of festival course");                                              // Line 179
@@ -661,10 +661,10 @@ class twigTransTerms
 	echo T_("Soroush App");                                                           // Line 360
 
 	//--------------------------------------------------content/donate/donateForm.html
-	echo T_("List of last success donations of yours");                               // Line 95
-	echo T_("Your niyat is");                                                         // Line 97
+	echo T_("List of last success donations of yours");                               // Line 74
+	echo T_("Your niyat is");                                                         // Line 76
 	echo T_("Untitled");                                                              // Line 33
-	echo T_("Thanks");                                                                // Line 120
+	echo T_("Thanks");                                                                // Line 99
 	echo T_("Requested");                                                             // Line 118
 	echo T_("Your help");                                                             // Line 124
 	echo T_("Enter a valid number");                                                  // Line 124
@@ -672,16 +672,16 @@ class twigTransTerms
 	echo T_("Your name");                                                             // Line 151
 	echo T_("Enter a valid name");                                                    // Line 151
 	echo T_("Full name");                                                             // Line 159
-	echo T_("Your Name");                                                             // Line 185
-	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 185
-	echo T_("Your mobile number");                                                    // Line 196
-	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 196
+	echo T_("Your Name");                                                             // Line 164
+	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 164
+	echo T_("Your mobile number");                                                    // Line 175
+	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 175
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
-	echo T_("It is optional and depending on your intention can enter it");           // Line 216
+	echo T_("It is optional and depending on your intention can enter it");           // Line 195
 	echo T_("Pay Amount");                                                            // Line 122
-	echo T_("Rial");                                                                  // Line 226
-	echo T_("Amount of your donation");                                               // Line 225
+	echo T_("Rial");                                                                  // Line 205
+	echo T_("Amount of your donation");                                               // Line 204
 	echo T_("Total Pay Amount");                                                      // Line 206
 	echo T_("Show in public doners list?");                                           // Line 214
 	echo T_("Check doners list");                                                     // Line 214
@@ -798,7 +798,7 @@ class twigTransTerms
 	echo T_("Contact us");                                                            // Line 261
 	echo T_("Telephones");                                                            // Line 268
 	echo T_("SMS panel");                                                             // Line 284
-	echo T_("Conditions");                                                            // Line 46
+	echo T_("Conditions");                                                            // Line 33
 
 	//---------------------------------------------content_festival/demo/messages.html
 
@@ -857,7 +857,7 @@ class twigTransTerms
 	//------------------------------------------content_a/festival/course/display.html
 	echo T_("Signup price");                                                          // Line 14
 	echo T_("You are register to this course before");                                // Line 17
-	echo T_("Pay & Register");                                                        // Line 39
+	echo T_("Pay & Register");                                                        // Line 26
 
 	//-----------------------------------------content_a/trip/partner/partnerForm.html
 	echo T_("List of your child");                                                    // Line 29
