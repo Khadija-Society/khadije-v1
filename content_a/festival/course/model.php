@@ -43,7 +43,7 @@ class model
 			if(!$price)
 			{
 
-				if(!self::signup_course($course_id))
+				if(!self::signup_course(['course_id' => $course_id, 'festival_id' => \dash\request::get('id')]))
 				{
 					\dash\notif::error(T_("We can not register you on this course"));
 					return false;
@@ -55,20 +55,17 @@ class model
 			}
 			else
 			{
-				if(!in_array(\dash\request::post('bank'), ['asanpardakht','payir','ZarinPal']))
-				{
-					\dash\notif::error(T_("Invalid bank"));
-					return false;
-				}
+
 
 				$meta =
 				[
 					'turn_back'     => \dash\url::pwd(),
 					'user_id'       => \dash\user::id(),
-					'amount'        => \dash\request::post('bank'),
+					'auto_go'       => true,
+					'amount'        => $price,
 					'final_fn'      => ['\\\content_a\\\festival\\\course\\\model','signup_course'],
-					'final_fn_args' => $course_id,
-					'other_field' =>
+					'final_fn_args' => ['course_id' => $course_id, 'festival_id' => \dash\request::get('id')],
+					'other_field'   =>
 					[
 						'hazinekard' => $festival_id,
 						'niyat'      => $course_id,
@@ -86,15 +83,34 @@ class model
 	}
 
 
-	public static function signup_course($_course_id)
+	public static function signup_course($_detail)
 	{
-		if(self::check_duplicate($_course_id))
+		if(isset($_detail['course_id']))
+		{
+			$course_id = $_detail['course_id'];
+		}
+
+		if(isset($_detail['festival_id']))
+		{
+			$festival_id = $_detail['festival_id'];
+		}
+
+		if($course_id && $festival_id)
+		{
+			// no problem
+		}
+		else
 		{
 			return false;
 		}
 
-		$festival_id = \dash\request::get('id');
+		if(self::check_duplicate($course_id))
+		{
+			return false;
+		}
+
 		$festival_id = \dash\coding::decode($festival_id);
+
 		if(!$festival_id || !is_numeric($festival_id))
 		{
 			return false;
@@ -103,7 +119,7 @@ class model
 		$insert =
 		[
 			'festival_id'       => $festival_id,
-			'festivalcourse_id' => $_course_id,
+			'festivalcourse_id' => $course_id,
 			'user_id'           => \dash\user::id(),
 			'status'            => 'draft',
 		];
