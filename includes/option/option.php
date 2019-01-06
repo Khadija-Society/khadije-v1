@@ -27,6 +27,9 @@ self::$config['max_upload'] = 100 * 1024 * 1024; // 100 MB;
 // self::$url['tld']                   = 'com';
 self::$url['protocol']              = 'https';
 
+
+self::$config['no_subdomain'] = true;
+
 self::$config['tagSpecial']['slider']  = "Show in main slider";
 self::$config['tagSpecial']['lottory'] = "Show in list of lottory winners";
 
