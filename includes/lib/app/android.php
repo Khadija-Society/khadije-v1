@@ -67,6 +67,30 @@ class android
 			'image'      => 'https://khadije.com/static/images/logo.png',
 		];
 
+		$detail['intro']['slide'][] =
+		[
+			'title'      => T_("Intro 5"),
+			'desc'       => T_("Description"). ' 5',
+			'background' => '#6062ff',
+			'image'      => 'https://khadije.com/static/images/logo.png',
+		];
+
+		$detail['intro']['slide'][] =
+		[
+			'title'      => T_("Intro 6"),
+			'desc'       => T_("Description"). ' 6',
+			'background' => '#6062ff',
+			'image'      => 'https://khadije.com/static/images/logo.png',
+		];
+
+		$detail['intro']['slide'][] =
+		[
+			'title'      => T_("Intro 7"),
+			'desc'       => T_("Description"). ' 7',
+			'background' => '#6062ff',
+			'image'      => 'https://khadije.com/static/images/logo.png',
+		];
+
 		return $detail;
 	}
 }
