@@ -27,6 +27,40 @@ class android
 		$detail['logo']                        = \dash\url::static(). '/images/logo.png';
 
 
+		$detail['intro'] = [];
+
+		$detail['intro'][] =
+		[
+			'title'      => T_("Intro 1"),
+			'desc'       => T_("Description"),
+			'background' => '#ffc960',
+			'image'      => 'https://khadije.com/static/images/logo.png',
+		];
+
+		$detail['intro'][] =
+		[
+			'title'      => T_("Intro 2"),
+			'desc'       => T_("Description"). ' 2',
+			'background' => '#6062ff',
+			'image'      => 'https://khadije.com/static/images/logo.png',
+		];
+
+		$detail['intro'][] =
+		[
+			'title'      => T_("Intro 3"),
+			'desc'       => T_("Description"). ' 3',
+			'background' => '#ff8caa',
+			'image'      => 'https://khadije.com/static/images/logo.png',
+		];
+
+		$detail['intro'][] =
+		[
+			'title'      => T_("Intro 4"),
+			'desc'       => T_("Description"). ' 4',
+			'background' => '#60ff93',
+			'image'      => 'https://khadije.com/static/images/logo.png',
+		];
+
 		return $detail;
 	}
 }
