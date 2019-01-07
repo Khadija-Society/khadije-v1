@@ -1352,6 +1352,12 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 	left: 0;
 }*/
 
+
+/* apps*/
+[data-app] #sHeader .langlist{display: none}
+
+
+
 @media (max-width: 500px) {
 /*	.latestNewsSlider .sp-thumbnail {
 		text-align: center;
