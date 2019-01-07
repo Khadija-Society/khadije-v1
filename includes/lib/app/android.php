@@ -70,13 +70,6 @@ class android
 			'image'      => 'https://khadije.com/static/images/logo.png',
 		];
 
-		$detail['intro']['slide'][] =
-		[
-			'title'      => T_("Khadije Charity"),
-			'desc'       => T_("Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom"),
-			'background' => '#020456',
-			'image'      => 'https://khadije.com/static/images/logo.png',
-		];
 
 
 
