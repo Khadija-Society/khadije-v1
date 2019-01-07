@@ -9,8 +9,10 @@ class android
 
 		$detail['navigation']                  = [];
 		$detail['navigation'][]                = ['title' => T_("Donate"), "url" => \dash\url::kingdom(). '/donate'];
-		$detail['navigation'][]                = ['title' => T_("Home"), "url" => \dash\url::kingdom()];
+		$detail['navigation'][]                = ['title' => T_("Home"), "url" => \dash\url::kingdom(). '/android'];
 		$detail['navigation'][]                = ['title' => T_("Trip"), "url" => \dash\url::kingdom(). '/trip'];
+		$detail['navigation'][]                = ['title' => T_("Delneveshte"), "url" => \dash\url::kingdom(). '/delneveshte'];
+		$detail['navigation'][]                = ['title' => T_("Setting"), "url" => 'setting'];
 
 		$detail['app_version']                 = [];
 		$detail['app_version']['code']         = 1;
@@ -37,59 +39,14 @@ class android
 		$detail['intro']['slide']        = [];
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_("Intro 1"),
-			'desc'       => T_("Description"),
-			'background' => '#ffc960',
+			'title'      => T_("Khadije Charity"),
+			'desc'       => T_("Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom"),
+			'background' => '#020456',
 			'image'      => 'https://khadije.com/static/images/logo.png',
 		];
 
-		$detail['intro']['slide'][] =
-		[
-			'title'      => T_("Intro 2"),
-			'desc'       => T_("Description"). ' 2',
-			'background' => '#6062ff',
-			'image'      => 'https://khadije.com/static/images/logo.png',
-		];
 
-		$detail['intro']['slide'][] =
-		[
-			'title'      => T_("Intro 3"),
-			'desc'       => T_("Description"). ' 3',
-			'background' => '#ff8caa',
-			'image'      => 'https://khadije.com/static/images/logo.png',
-		];
 
-		$detail['intro']['slide'][] =
-		[
-			'title'      => T_("Intro 4"),
-			'desc'       => T_("Description"). ' 4',
-			'background' => '#60ff93',
-			'image'      => 'https://khadije.com/static/images/logo.png',
-		];
-
-		$detail['intro']['slide'][] =
-		[
-			'title'      => T_("Intro 5"),
-			'desc'       => T_("Description"). ' 5',
-			'background' => '#6062ff',
-			'image'      => 'https://khadije.com/static/images/logo.png',
-		];
-
-		$detail['intro']['slide'][] =
-		[
-			'title'      => T_("Intro 6"),
-			'desc'       => T_("Description"). ' 6',
-			'background' => '#6062ff',
-			'image'      => 'https://khadije.com/static/images/logo.png',
-		];
-
-		$detail['intro']['slide'][] =
-		[
-			'title'      => T_("Intro 7"),
-			'desc'       => T_("Description"). ' 7',
-			'background' => '#6062ff',
-			'image'      => 'https://khadije.com/static/images/logo.png',
-		];
 
 		return $detail;
 	}
