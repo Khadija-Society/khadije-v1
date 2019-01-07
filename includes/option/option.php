@@ -73,7 +73,7 @@ self::$config['enter']['singup_username']     = false;
 self::$config['enter']['singup_redirect']     = 'u';
 
 
-
+self::$config['app_token']['android'] = '$2y$07$J5lyhNSfVCEVxPZvEmrXhemZpzwekNKJRPHC1kwth3yPw6U6cUBPC';
 /**
  * list of units
  */
