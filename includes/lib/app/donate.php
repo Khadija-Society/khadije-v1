@@ -447,7 +447,15 @@ class donate
 		}
 		else
 		{
-			$turn_back = \dash\url::this();
+			if(isset($_args['turn_back']))
+			{
+				$turn_back = $_args['turn_back'];
+			}
+			else
+			{
+				$turn_back = \dash\url::this();
+			}
+
 			$auto_go   = true;
 			$auto_back = true;
 
