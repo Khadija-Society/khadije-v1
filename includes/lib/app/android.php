@@ -34,12 +34,43 @@ class android
 
 	private static function navigation(&$detail)
 	{
-		$detail['navigation']                  = [];
-		$detail['navigation'][]                = ['title' => T_("Donate"), "url" => \dash\url::kingdom(). '/donate'];
-		$detail['navigation'][]                = ['title' => T_("Home"), "url" => \dash\url::kingdom(). '/app/android'];
-		$detail['navigation'][]                = ['title' => T_("Trip"), "url" => \dash\url::kingdom(). '/trip'];
-		$detail['navigation'][]                = ['title' => T_("Delneveshte"), "url" => \dash\url::kingdom(). '/delneveshte'];
-		$detail['navigation'][]                = ['title' => T_("Setting"), "url" => 'setting'];
+		$detail['navigation']   = [];
+
+		$detail['navigation'][] =
+		[
+			'title' => T_('Donate'),
+			'url'   => \dash\url::kingdom(). '/donate',
+			'icon'  => 'card',
+		];
+
+		$detail['navigation'][] =
+		[
+			'title' => T_('Home'),
+			'url'   => \dash\url::kingdom(). '/app/android',
+			'icon'  => 'home',
+		];
+
+		$detail['navigation'][] =
+		[
+			'title' => T_('Trip'),
+			'url'   => \dash\url::kingdom(). '/trip',
+			'icon'  => 'car',
+		];
+
+		$detail['navigation'][] =
+		[
+			'title' => T_('Delneveshte'),
+			'url'   => \dash\url::kingdom(). '/delneveshte',
+			'icon'  => 'heart',
+		];
+
+		$detail['navigation'][] =
+		[
+			'title' => T_('Setting'),
+			'url'   => 'setting',
+			'icon'  => 'cog',
+		];
+
 	}
 
 
@@ -47,7 +78,7 @@ class android
 	{
 		$detail['app_version']                 = [];
 		$detail['app_version']['code']         = 1;
-		$detail['app_version']['title']        = "1.0";
+		$detail['app_version']['title']        = '1.0';
 		$detail['app_version']['content_text'] = null;
 		$detail['app_version']['auto_hide']    = false;
 	}
@@ -56,41 +87,47 @@ class android
 	private static function intro(&$detail)
 	{
 		$detail['intro']                 = [];
+
 		$detail['intro']['btn']          = [];
-		$detail['intro']['btn']['next']  = T_("Next");
-		$detail['intro']['btn']['back']  = T_("Back");
-		$detail['intro']['btn']['enter'] = T_("Enter");
+		$detail['intro']['btn']['next']  = T_('Next');
+		$detail['intro']['btn']['back']  = T_('Skip');
+		$detail['intro']['btn']['enter'] = T_('Enter');
+
 
 		$detail['intro']['slide']   = [];
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_("Khadije Charity"),
-			'desc'       => T_("Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom"),
-			'background' => '#020456',
+			'title'      => T_('Khadije Charity'),
+			'desc'       => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
+			'background' => '#f9a71b',
+			'font_color' => '#ffffff',
 			'image'      => 'https://khadije.com/static/images/logo.png',
 		];
 
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_("Khadije Charity"),
-			'desc'       => T_("Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom"),
-			'background' => '#020456',
+			'title'      => T_('Khadije Charity'),
+			'desc'       => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
+			'background' => '#099ac1',
+			'font_color' => '#ffffff',
 			'image'      => 'https://khadije.com/static/images/logo.png',
 		];
 
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_("Khadije Charity"),
-			'desc'       => T_("Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom"),
-			'background' => '#020456',
+			'title'      => T_('Khadije Charity'),
+			'desc'       => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
+			'background' => '#aa6622',
+			'font_color' => '#ffffff',
 			'image'      => 'https://khadije.com/static/images/logo.png',
 		];
 
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_("Khadije Charity"),
-			'desc'       => T_("Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom"),
-			'background' => '#020456',
+			'title'      => T_('Khadije Charity'),
+			'desc'       => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
+			'background' => '#020558',
+			'font_color' => '#ffffff',
 			'image'      => 'https://khadije.com/static/images/logo.png',
 		];
 	}
