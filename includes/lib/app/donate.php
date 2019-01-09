@@ -447,14 +447,34 @@ class donate
 		}
 		else
 		{
+			$turn_back = \dash\url::this();
+			$auto_go   = true;
+			$auto_back = true;
+
+			if(\dash\request::is_android())
+			{
+				$auto_go   = false;
+				$auto_back = false;
+				$turn_back = 'khadije://'. $turn_back;
+
+				if($user_id === 'unverify')
+				{
+					$user_id = \dash\user::app_id();
+					if(!$user_id)
+					{
+						$user_id = 'unverify';
+					}
+				}
+			}
 
 			$meta =
 			[
-				'turn_back'   => \dash\url::this(),
+				'turn_back'   => $turn_back,
 				'user_id'     => $user_id,
 				'amount'      => \dash\app::request('amount'),
 				'final_fn'    => ['\\\content\\\donate\\\view', 'after_pay'],
-				'auto_go'     => true,
+				'auto_go'     => $auto_go,
+				'auto_back'   => $auto_back,
 				'final_msg'   => true,
 				'other_field' =>
 				[
