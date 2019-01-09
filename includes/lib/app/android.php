@@ -16,8 +16,10 @@ class android
 
 		self::intro($detail);
 
+
 		return $detail;
 	}
+
 
 
 	private static function master_detail(&$detail)
@@ -40,35 +42,35 @@ class android
 		[
 			'title' => T_('Donate'),
 			'url'   => \dash\url::kingdom(). '/donate',
-			'icon'  => 'card',
+			'icon'  => 'R.drawable.ic_pay',
 		];
 
 		$detail['navigation'][] =
 		[
 			'title' => T_('Home'),
 			'url'   => \dash\url::kingdom(). '/app/android',
-			'icon'  => 'home',
+			'icon'  => 'R.drawable.ic_home',
 		];
 
 		$detail['navigation'][] =
 		[
 			'title' => T_('Trip'),
 			'url'   => \dash\url::kingdom(). '/trip',
-			'icon'  => 'car',
+			'icon'  => 'R.drawable.ic_tasharof',
 		];
 
 		$detail['navigation'][] =
 		[
 			'title' => T_('Delneveshte'),
 			'url'   => \dash\url::kingdom(). '/delneveshte',
-			'icon'  => 'heart',
+			'icon'  => 'R.drawable.ic_delneveshte',
 		];
 
 		$detail['navigation'][] =
 		[
 			'title' => T_('Setting'),
 			'url'   => 'setting',
-			'icon'  => 'cog',
+			'icon'  => 'R.drawable.ic_seting',
 		];
 
 	}
@@ -97,38 +99,42 @@ class android
 		$detail['intro']['slide']   = [];
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_('Khadije Charity'),
-			'desc'       => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
-			'background' => '#f9a71b',
-			'font_color' => '#ffffff',
-			'image'      => 'https://khadije.com/static/images/logo.png',
+			'title'       => T_('Khadije Charity'),
+			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
+			'background'  => '#f9a71b',
+			'title_color' => '#ffffff',
+			'desc_color'  => '#ffffff',
+			'image'       => 'https://khadije.com/static/images/logo.png',
 		];
 
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_('Khadije Charity'),
-			'desc'       => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
-			'background' => '#099ac1',
-			'font_color' => '#ffffff',
-			'image'      => 'https://khadije.com/static/images/logo.png',
+			'title'       => T_('Khadije Charity'),
+			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
+			'background'  => '#099ac1',
+			'title_color' => '#ffffff',
+			'desc_color'  => '#ffffff',
+			'image'       => 'https://khadije.com/static/images/logo.png',
 		];
 
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_('Khadije Charity'),
-			'desc'       => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
-			'background' => '#aa6622',
-			'font_color' => '#ffffff',
-			'image'      => 'https://khadije.com/static/images/logo.png',
+			'title'       => T_('Khadije Charity'),
+			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
+			'background'  => '#aa6622',
+			'title_color' => '#ffffff',
+			'desc_color'  => '#ffffff',
+			'image'       => 'https://khadije.com/static/images/logo.png',
 		];
 
 		$detail['intro']['slide'][] =
 		[
-			'title'      => T_('Khadije Charity'),
-			'desc'       => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
-			'background' => '#020558',
-			'font_color' => '#ffffff',
-			'image'      => 'https://khadije.com/static/images/logo.png',
+			'title'       => T_('Khadije Charity'),
+			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
+			'background'  => '#020558',
+			'title_color' => '#ffffff',
+			'desc_color'  => '#ffffff',
+			'image'       => 'https://khadije.com/static/images/logo.png',
 		];
 	}
 }
