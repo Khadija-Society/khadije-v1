@@ -42,35 +42,35 @@ class android
 		[
 			'title' => T_('Donate'),
 			'url'   => \dash\url::kingdom(). '/donate',
-			'icon'  => 'R.drawable.ic_pay',
+			'icon'  => 'pay',
 		];
 
 		$detail['navigation'][] =
 		[
 			'title' => T_('Home'),
 			'url'   => \dash\url::kingdom(). '/app/android',
-			'icon'  => 'R.drawable.ic_home',
+			'icon'  => 'home',
 		];
 
 		$detail['navigation'][] =
 		[
 			'title' => T_('Trip'),
 			'url'   => \dash\url::kingdom(). '/trip',
-			'icon'  => 'R.drawable.ic_tasharof',
+			'icon'  => 'tasharof',
 		];
 
 		$detail['navigation'][] =
 		[
 			'title' => T_('Delneveshte'),
 			'url'   => \dash\url::kingdom(). '/delneveshte',
-			'icon'  => 'R.drawable.ic_delneveshte',
+			'icon'  => 'delneveshte',
 		];
 
 		$detail['navigation'][] =
 		[
 			'title' => T_('Setting'),
 			'url'   => 'setting',
-			'icon'  => 'R.drawable.ic_seting',
+			'icon'  => 'seting',
 		];
 
 	}
