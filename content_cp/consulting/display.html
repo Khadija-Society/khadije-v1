@@ -67,7 +67,7 @@
       {%for key, value in dataTable%}
       <tr class="{%if value.status == 'cancel' or value.status == 'draft'%} disabled{%elseif value.status == 'spam' or value.status == 'deleted' %} negative{%elseif value.status == 'unapproved' %} warning{%endif%}">
         <td class="collapsing">
-          <a href="{{url.here}}/users/view?id={{value.user_id | coding('encode')}}">
+          <a href="{{url.kingdom}}/crm/member/glance?id={{value.user_id | coding('encode')}}">
             <span class="sf-user fc-mute"></span>
             {{value.firstname}} <b>{{value.lastname}}</b>
           </a>

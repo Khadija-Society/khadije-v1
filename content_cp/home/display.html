@@ -28,7 +28,7 @@
   {%if perm('cpMeeting') or perm('cpMeetingManage') %}<div class="c3 s6">{{block("iMeeting")}}</div>{%endif%}
   {%if perm('cpFestivalView') %}<div class="c3 s6">{{block("iFestival")}}</div>{%endif%}
 
-  {%if 0 and perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
+  {%if perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
 
 </div>
 {%endblock%}

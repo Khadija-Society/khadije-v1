@@ -20,15 +20,24 @@ class cronjob
 
 	private static function thankyoumessage()
 	{
-		if(date("H:i") !== '08:00')
+		if(date("H:i") !== '08:00' && !\dash\permission::supervisor())
 		{
-			// return;
+			return;
 		}
 
 		$user_list = \lib\db\thankyoumessage::list();
+
 		if($user_list && is_array($user_list))
 		{
+			$user_id = array_column($user_list, 'id');
+			$user_id = array_filter($user_id);
+			$user_id = array_unique($user_id);
+			if($user_id)
+			{
+				\dash\log::set('tankyouMessage', ['to' => $user_id]);
+				\lib\db\thankyoumessage::sended(array_column($user_list, 'id'));
 
+			}
 		}
 
 	}

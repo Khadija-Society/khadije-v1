@@ -65,7 +65,7 @@
       {%for key, value in dataTable%}
       <tr>
 
-        <td><a href="{{url.here}}/users/view?id={{value.user_id | coding('encode')}}">{{value.displayname}}</a></td>
+        <td><a href="{{url.kingdom}}/crm/member/glance?id={{value.user_id | coding('encode')}}">{{value.displayname}}</a></td>
         <td><a href="{{url.this}}/user?id={{requestGET.id}}&mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
         <td><a href="{{url.this}}/user?id={{requestGET.id}}&course={{value.festivalcourse_id}}">{{value.title}}</a></td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
