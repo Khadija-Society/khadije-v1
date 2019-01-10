@@ -27,7 +27,7 @@ class thankyoumessage
 
 			GROUP BY transactions.user_id
 			HAVING
-				MAX(DATE(transactions.date)) = DATE('$lastYear') AND
+				MAX(DATE(transactions.date)) <= DATE('$lastYear') AND
 				(
 					MAX(transactions.rememberdate) IS NULL OR
 					MAX(DATE(transactions.rememberdate)) <= DATE('$lastYear')

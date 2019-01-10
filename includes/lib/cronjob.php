@@ -25,19 +25,28 @@ class cronjob
 			return;
 		}
 
-		$user_list = \lib\db\thankyoumessage::list();
+		$message = \lib\app\message::get();
 
-		if($user_list && is_array($user_list))
+		if(isset($message['active']) && $message['active'])
 		{
-			$user_id = array_column($user_list, 'id');
-			$user_id = array_filter($user_id);
-			$user_id = array_unique($user_id);
-			if($user_id)
-			{
-				\dash\log::set('tankyouMessage', ['to' => $user_id]);
-				\lib\db\thankyoumessage::sended(array_column($user_list, 'id'));
+			$user_list = \lib\db\thankyoumessage::list();
 
+			if($user_list && is_array($user_list))
+			{
+				$user_id = array_column($user_list, 'id');
+				$user_id = array_filter($user_id);
+				$user_id = array_unique($user_id);
+				if($user_id)
+				{
+					\dash\log::set('tankyouMessage', ['to' => $user_id]);
+					\lib\db\thankyoumessage::sended(array_column($user_list, 'id'));
+
+				}
 			}
+		}
+		else
+		{
+			return false;
 		}
 
 	}
