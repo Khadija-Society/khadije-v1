@@ -26,6 +26,7 @@ class view
 		\dash\data::include_css(false);
 
 		$payment_args = [];
+		$filterArgs   = [];
 		$payment_args['donate'] = 'cash';
 		$args =
 		[
@@ -121,6 +122,26 @@ class view
 
 		}
 
+		$new_query = false;
+
+		if(\dash\request::get('filter') === 'maxpay')
+		{
+			$new_query = true;
+			$args['maxpay'] = true;
+		}
+
+		if(\dash\request::get('filter') === 'usercountpay')
+		{
+			$new_query = true;
+			$args['usercountpay'] = true;
+		}
+
+		if(\dash\request::get('filter') === 'remembernotif')
+		{
+			$args['1.5'] = ["= 1.5 AND", " transactions.rememberdate IS NOT NULL"];
+			$filterArgs['Remmeber notif'] = true;
+		}
+
 
 		$args['donate']    = 'cash';
 		$args['condition'] = 'ok';
@@ -138,7 +159,23 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		\dash\data::dataTable(\dash\app\transaction::list($search_string, $args));
+		if($new_query)
+		{
+			if(isset($args['maxpay']))
+			{
+				$dataTable = \lib\db\transactions::list($search_string, $args);
+			}
+			else
+			{
+				$dataTable = \lib\db\transactions::list($search_string, $args);
+			}
+		}
+		else
+		{
+			$dataTable = \dash\app\transaction::list($search_string, $args);
+		}
+
+		\dash\data::dataTable($dataTable);
 
 		if($export)
 		{
@@ -157,6 +194,9 @@ class view
 		$filterArray = $args;
 		unset($filterArray['donate']);
 		unset($filterArray['condition']);
+		unset($filterArray['1.5']);
+
+		$filterArray = array_merge($filterArgs, $filterArray);
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);

@@ -181,13 +181,18 @@ class twigTransTerms
 	echo T_("Today Donation");                                                        // Line 19
 	echo T_("Donation Count");                                                        // Line 28
 	echo T_("Donation Average");                                                      // Line 36
-	echo T_("Search in donations");                                                   // Line 85
+	echo T_("Advance filter");                                                        // Line 85
+	echo T_("Search in donations");                                                   // Line 86
 	echo T_("Start date");                                                            // Line 83
 	echo T_("End date");                                                              // Line 91
-	echo T_("Niyat");                                                                 // Line 123
-	echo T_("Hazinekard");                                                            // Line 124
+	echo T_("Max pay");                                                               // Line 114
+	echo T_("Max count pay user");                                                    // Line 118
+	echo T_("Remember notif");                                                        // Line 123
+	echo T_("Clear filter");                                                          // Line 129
+	echo T_("Niyat");                                                                 // Line 151
+	echo T_("Hazinekard");                                                            // Line 152
 	echo T_("Anonymous");                                                             // Line 36
-	echo T_("Without mobile");                                                        // Line 161
+	echo T_("Without mobile");                                                        // Line 189
 
 	//-----------------------------------------------content_cp/myrequest/display.html
 	echo T_("CMS");                                                                   // Line 71
@@ -757,13 +762,15 @@ class twigTransTerms
 
 	//----------------------------------------------------content/manager/display.html
 
-	//-------------------------------------------------------content/home/display.html
+	//------------------------------------------------content/app/android/display.html
+	echo T_("Travel request");                                                        // Line 76
 	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 39
 	echo T_("You also partake in salawat");                                           // Line 41
 	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 43
 	echo T_("Say salawat");                                                           // Line 43
 	echo T_("and press here");                                                        // Line 43
-	echo T_("Travel request");                                                        // Line 76
+
+	//-------------------------------------------------------content/home/display.html
 	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 103
 	echo T_("Samte Khoda");                                                           // Line 105
 	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 113
