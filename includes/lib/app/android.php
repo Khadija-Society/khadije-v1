@@ -54,9 +54,9 @@ class android
 
 		$detail['navigation'][] =
 		[
-			'title' => T_('Trip'),
-			'url'   => \dash\url::kingdom(). '/trip',
-			'icon'  => 'tasharof',
+			'title' => T_('Website'),
+			'url'   => \dash\url::kingdom(),
+			'icon'  => 'world',
 		];
 
 		$detail['navigation'][] =
