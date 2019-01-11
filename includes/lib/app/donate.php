@@ -475,6 +475,11 @@ class donate
 				}
 			}
 
+			if(\dash\permission::supervisor())
+			{
+				$auto_go = false;
+			}
+
 			$meta =
 			[
 				'turn_back'   => $turn_back,
