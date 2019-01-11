@@ -38,12 +38,24 @@ class android
 	{
 		$detail['navigation']   = [];
 
-		$detail['navigation'][] =
-		[
-			'title' => T_('Donate'),
-			'url'   => \dash\url::kingdom(). '/donate',
-			'icon'  => 'pay',
-		];
+		if(\dash\language::current() === 'fa')
+		{
+			$detail['navigation'][] =
+			[
+				'title' => T_('Donate'),
+				'url'   => \dash\url::kingdom(). '/donate',
+				'icon'  => 'pay',
+			];
+		}
+		else
+		{
+			$detail['navigation'][] =
+			[
+				'title' => T_('Enter'),
+				'url'   => \dash\url::kingdom(). '/enter',
+				'icon'  => 'enter',
+			];
+		}
 
 		$detail['navigation'][] =
 		[
