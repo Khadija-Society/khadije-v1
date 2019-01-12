@@ -475,6 +475,15 @@ class donate
 				}
 			}
 
+
+			$msg_go = T_("Pay donate :price toman", ['price' => \dash\utility\human::fitNumber(\dash\app::request('amount'))]);
+
+			if($way)
+			{
+				$msg_go .= ' ('. $way. ') ';
+			}
+
+
 			if(\dash\permission::supervisor())
 			{
 				$auto_go = false;
@@ -482,13 +491,14 @@ class donate
 
 			$meta =
 			[
-				'turn_back'   => $turn_back,
-				'user_id'     => $user_id,
-				'amount'      => \dash\app::request('amount'),
-				'final_fn'    => ['\\\content\\\donate\\\view', 'after_pay'],
-				'auto_go'     => $auto_go,
-				'auto_back'   => $auto_back,
-				'final_msg'   => true,
+				'turn_back' => $turn_back,
+				'user_id'   => $user_id,
+				'amount'    => \dash\app::request('amount'),
+				'final_fn'  => ['\\\content\\\donate\\\view', 'after_pay'],
+				'auto_go'   => $auto_go,
+				'msg_go'    => $msg_go,
+				'auto_back' => $auto_back,
+				'final_msg' => true,
 				'other_field' =>
 				[
 					'hazinekard' => $way,

@@ -21,10 +21,6 @@ class twigTransTerms
 	echo T_("Support tags");                                                          // Line 58
 	echo T_("Comments");                                                              // Line 134
 	echo T_("Support");                                                               // Line 51
-	echo T_("Powered by");                                                            // Line 57
-	echo T_("Some right reserved");                                                   // Line 57
-	echo T_("Ermile");                                                                // Line 57
-	echo T_("Version");                                                               // Line 57
 
 	//---------------------------------------------addons/content_cp/posts/layout.html
 	echo T_("Enter title here");                                                      // Line 4
@@ -286,7 +282,7 @@ class twigTransTerms
 	echo T_("Melli");                                                                 // Line 27
 	echo T_("Sepah");                                                                 // Line 33
 	echo T_("Keshavarzi");                                                            // Line 39
-	echo T_("Parsian");                                                               // Line 54
+	echo T_("Parsian");                                                               // Line 148
 	echo T_("Maskan");                                                                // Line 51
 	echo T_("Refah");                                                                 // Line 57
 	echo T_("Novin");                                                                 // Line 63
@@ -372,15 +368,19 @@ class twigTransTerms
 	//----------------------------------------addons/includes/html/inc_pagination.html
 	echo T_("Total");                                                                 // Line 22
 
-	//-----------------------------------addons/content_hook/pay/redirect/display.html
+	//--------------------------------------------------addons/content_pay/layout.html
+	echo T_("CP");                                                                    // Line 7
 
-	//---------------------------------------addons/content_hook/pay/home/display.html
-	echo T_("Toman");                                                                 // Line 29
-	echo T_("Payed");                                                                 // Line 27
-	echo T_("Canceled");                                                              // Line 39
-	echo T_("Choose a gateway");                                                      // Line 52
-	echo T_("Pay");                                                                   // Line 98
+	//----------------------------------------addons/content_pay/redirect/display.html
+
+	//--------------------------------------------addons/content_pay/home/display.html
+	echo T_("Choose a gateway");                                                      // Line 25
+	echo T_("Pay");                                                                   // Line 32
+	echo T_("Cancel");                                                                // Line 9
 	echo T_("Back");                                                                  // Line 6
+	echo T_("Toman");                                                                 // Line 29
+	echo T_("Payed");                                                                 // Line 70
+	echo T_("Canceled");                                                              // Line 82
 
 	//-----------------------------------------addons/content_enter/block/display.html
 	echo T_("You are blocked becauese of some reason!");                              // Line 7
@@ -569,7 +569,6 @@ class twigTransTerms
 	//-----------------------------------------addons/content_support/tag/display.html
 
 	//--------------------------------------------------addons/content_crm/layout.html
-	echo T_("CP");                                                                    // Line 7
 	echo T_("Add new user");                                                          // Line 19
 	echo T_("SMS");                                                                   // Line 111
 	echo T_("Quick send");                                                            // Line 35
@@ -744,7 +743,6 @@ class twigTransTerms
 	echo T_("Group send");                                                            // Line 36
 
 	//--------------------------------------addons/content_crm/sms/verify/display.html
-	echo T_("Cancel");                                                                // Line 9
 
 	//--------------------------------------addons/content_crm/email/send/display.html
 
@@ -974,6 +972,10 @@ class twigTransTerms
 	echo T_("Tools");                                                                 // Line 90
 	echo T_("Log");                                                                   // Line 105
 	echo T_("Translation tools");                                                     // Line 114
+	echo T_("Powered by");                                                            // Line 57
+	echo T_("Some right reserved");                                                   // Line 57
+	echo T_("Ermile");                                                                // Line 57
+	echo T_("Version");                                                               // Line 57
 
 	//------------------------------------------addons/content_su/cronjob/display.html
 	echo T_("Run cronjob for this service");                                          // Line 15
