@@ -55,9 +55,9 @@ class message
 			return false;
 		}
 
-		if(mb_strlen($_text) > 200)
+		if(mb_strlen($_text) > 500)
 		{
-			\dash\notif::error(T_("Please set the message text less than 200 character"), 'text');
+			\dash\notif::error(T_("Please set the message text less than 500 character"), 'text');
 			return false;
 		}
 
