@@ -20,7 +20,7 @@ class cronjob
 
 	private static function thankyoumessage()
 	{
-		if(date("H:i") !== '08:00' && !\dash\permission::supervisor())
+		if(date("H:i") !== '11:00' && !\dash\permission::supervisor())
 		{
 			return;
 		}
