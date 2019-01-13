@@ -456,8 +456,8 @@ class donate
 				$turn_back = \dash\url::this();
 			}
 
-			$auto_go   = true;
-			$auto_back = true;
+			$auto_go   = false;
+			$auto_back = false;
 
 			if(\dash\request::is_android())
 			{
@@ -483,11 +483,6 @@ class donate
 				$msg_go .= ' ('. $way. ') ';
 			}
 
-
-			if(\dash\permission::supervisor())
-			{
-				$auto_go = false;
-			}
 
 			$meta =
 			[
