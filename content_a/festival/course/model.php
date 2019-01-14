@@ -63,7 +63,7 @@ class model
 					'user_id'       => \dash\user::id(),
 					'auto_go'       => true,
 					'amount'        => $price,
-					'final_fn'      => ['\\\content_a\\\festival\\\course\\\model','signup_course'],
+					'final_fn'      => ['/content_a/festival/course/model','signup_course'],
 					'final_fn_args' => ['course_id' => $course_id, 'festival_id' => \dash\request::get('id')],
 					'other_field'   =>
 					[

@@ -494,7 +494,7 @@ class donate
 				'turn_back' => $turn_back,
 				'user_id'   => $user_id,
 				'amount'    => \dash\app::request('amount'),
-				'final_fn'  => ['\\\content\\\donate\\\view', 'after_pay'],
+				'final_fn'  => ['/content/donate/view', 'after_pay'],
 				'auto_go'   => $auto_go,
 				'msg_go'    => $msg_go,
 				'auto_back' => $auto_back,
