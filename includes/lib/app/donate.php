@@ -457,6 +457,11 @@ class donate
 			}
 
 			$auto_go   = false;
+			if(array_key_exists('auto_go', $_args))
+			{
+				$auto_go   = $_args['auto_go'];
+			}
+
 			$auto_back = false;
 
 			if(\dash\request::is_android())

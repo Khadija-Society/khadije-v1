@@ -282,7 +282,7 @@ class twigTransTerms
 	echo T_("Melli");                                                                 // Line 27
 	echo T_("Sepah");                                                                 // Line 33
 	echo T_("Keshavarzi");                                                            // Line 39
-	echo T_("Parsian");                                                               // Line 148
+	echo T_("Parsian");                                                               // Line 150
 	echo T_("Maskan");                                                                // Line 51
 	echo T_("Refah");                                                                 // Line 57
 	echo T_("Novin");                                                                 // Line 63
@@ -374,13 +374,13 @@ class twigTransTerms
 	//----------------------------------------addons/content_pay/redirect/display.html
 
 	//--------------------------------------------addons/content_pay/home/display.html
-	echo T_("Choose a gateway");                                                      // Line 25
-	echo T_("Pay");                                                                   // Line 32
+	echo T_("Toman");                                                                 // Line 29
+	echo T_("Choose a gateway");                                                      // Line 95
+	echo T_("Pay");                                                                   // Line 101
 	echo T_("Cancel");                                                                // Line 9
 	echo T_("Back");                                                                  // Line 6
-	echo T_("Toman");                                                                 // Line 29
-	echo T_("Payed");                                                                 // Line 70
-	echo T_("Canceled");                                                              // Line 82
+	echo T_("Track id");                                                              // Line 129
+	echo T_("Payment");                                                               // Line 137
 
 	//-----------------------------------------addons/content_enter/block/display.html
 	echo T_("You are blocked becauese of some reason!");                              // Line 7

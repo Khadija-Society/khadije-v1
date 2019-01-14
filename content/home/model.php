@@ -35,6 +35,7 @@ class model
 			'amount'    => \dash\request::post('quickpay'),
 			'doners'    => 0,
 			'turn_back' => \dash\url::kingdom(). '/doners',
+			'auto_go'   => true,
 		];
 
 		\lib\app\donate::add($args);
