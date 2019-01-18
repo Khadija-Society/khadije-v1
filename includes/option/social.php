@@ -18,7 +18,9 @@ self::$social['list']['aparat']                        = 'mhkhadije';
 * TELEGRAM
 * t.me
 */
-self::$social['telegram']['status']                    = null;
+self::$social['telegram']['status']                    = true;
+self::$social['telegram']['tunnel']                    = true;
+
 self::$social['telegram']['name']                      = null;
 self::$social['telegram']['key']                       = null;
 self::$social['telegram']['bot']                       = null;
