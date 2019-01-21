@@ -348,7 +348,7 @@ body[data-sidebar] #sidebar{left:0;}
 	text-align: center;
 	font-size: 1.5em;
 	position: relative;
-	margin-bottom: 25px;
+	margin:0 auto 25px;
 	user-select: none;
 	background-color: #fff;
 }
@@ -392,7 +392,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-servants:hover{
+.sprite-servants:hover, .sprite-servants.fix{
 	background-position: -420px -140px;
 }
 .sprite-virtual{
@@ -402,7 +402,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-virtual:hover{
+.sprite-virtual:hover, .sprite-virtual.fix{
 	background-position: -560px -140px;
 }
 .sprite-travel{
@@ -412,7 +412,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-travel:hover{
+.sprite-travel:hover, .sprite-travel.fix{
 	background-position: -700px -140px;
 }
 .sprite-deputy{
@@ -422,7 +422,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-deputy:hover{
+.sprite-deputy:hover, .sprite-deputy.fix{
 	background-position: -280px -140px;
 }
 .sprite-lottory{
@@ -432,7 +432,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-lottory:hover{
+.sprite-lottory:hover, .sprite-lottory.fix{
 	background-position: 0 -140px;
 }
 
@@ -442,7 +442,7 @@ body[data-sidebar] #sidebar{left:0;}
 	background-position: -840px 0;
 	margin: 0 auto;
 }
-.sprite-farahzad:hover{
+.sprite-farahzad:hover, .sprite-farahzad.fix{
 	background-position: -840px -140px;
 }
 .sprite-sahargahan{
@@ -452,7 +452,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-sahargahan:hover{
+.sprite-sahargahan:hover, .sprite-sahargahan.fix{
 	background-position: -980px -140px;
 }
 .sprite-samtekhoda{
@@ -462,7 +462,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-samtekhoda:hover{
+.sprite-samtekhoda:hover, .sprite-samtekhoda.fix{
 	background-position: -1120px -140px;
 }
 .sprite-mylovestory{
@@ -472,7 +472,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-mylovestory:hover{
+.sprite-mylovestory:hover, .sprite-mylovestory.fix{
 	background-position: -1260px -140px;
 }
 .sprite-khadije{
@@ -482,7 +482,7 @@ body[data-sidebar] #sidebar{left:0;}
 	margin: 0 auto;
 	transition: 0.3s;
 }
-.sprite-khadije:hover{
+.sprite-khadije:hover, .sprite-khadije.fix{
 	box-shadow:0 0 0 5px #fff;
 	/*background-position: -1540px 0;*/
 }
@@ -492,7 +492,7 @@ body[data-sidebar] #sidebar{left:0;}
 	background-position: -800px -300px;
 	margin: 0 auto;
 }
-.sprite-imani:hover{
+.sprite-imani:hover, .sprite-imani.fix{
 	background-position: -650px -300px;
 }
 .sprite-adminContact{
@@ -501,7 +501,7 @@ body[data-sidebar] #sidebar{left:0;}
 	background-position: -140px 0;
 	margin: 0 auto;
 }
-.sprite-adminContact:hover{
+.sprite-adminContact:hover, .sprite-adminContact.fix{
 	background-position: -140px -140px;
 }
 /* social links*/
@@ -876,6 +876,9 @@ body[data-sidebar] #sidebar{left:0;}
 	position: relative;
 	margin:50px auto 70px;
 	max-width: 100%;
+}
+.pageData hr.min, hr.special.min{
+	margin:30px auto 40px;
 }
 .pageData hr:before, hr.special:before{
 	content: "";
