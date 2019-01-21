@@ -349,6 +349,7 @@ body[data-sidebar] #sidebar{left:0;}
 	font-size: 1.5em;
 	position: relative;
 	margin:0 auto 25px;
+	max-width: 300px;
 	user-select: none;
 	background-color: #fff;
 }
