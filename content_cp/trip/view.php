@@ -55,6 +55,8 @@ class view
 			$args['users.gender']           = \dash\request::get('gender');
 		}
 
+
+
 		if(\dash\request::get('birthday'))
 		{
 			$args['YEAR(users.birthday)'] = \dash\request::get('birthday');
@@ -108,6 +110,12 @@ class view
 		{
 			$export = true;
 			$args['pagenation'] = false;
+		}
+
+		if(\dash\request::get('user_id') && \dash\permission::supervisor())
+		{
+			$args                    = [];
+			$args['travels.user_id'] = \dash\request::get('user_id');
 		}
 
 		\dash\data::dataTable(\lib\app\travel::list($search_string, $args));

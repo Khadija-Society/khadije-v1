@@ -76,6 +76,13 @@ class view
 			$args['pagenation'] = false;
 		}
 
+
+		if(\dash\request::get('user_id') && \dash\permission::supervisor())
+		{
+			$args                    = [];
+			$args['services.user_id'] = \dash\request::get('user_id');
+		}
+
 		\dash\data::dataTable(\lib\app\service::list($search_string, $args));
 
 		if($export)

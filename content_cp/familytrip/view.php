@@ -39,6 +39,8 @@ class view
 			$args['order'] = 'DESC';
 		}
 
+
+
 		if(\dash\request::get('status'))
 		{
 			$args['travels.status']     = \dash\request::get('status');
@@ -110,6 +112,12 @@ class view
 		{
 			$export = true;
 			$args['pagenation'] = false;
+		}
+
+		if(\dash\request::get('user_id') && \dash\permission::supervisor())
+		{
+			$args                    = [];
+			$args['travels.user_id'] = \dash\request::get('user_id');
 		}
 
 		\dash\data::dataTable(\lib\app\travel::list($search_string, $args));

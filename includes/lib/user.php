@@ -8,17 +8,18 @@ class user
 	{
 
 		$result                = [];
+
 		$result['travels']     =
 		[
 			'count'  => \lib\db\travels::get_count(['user_id' => $_user_id]),
-			'link'   => null,
+			'link'   => \dash\url::kingdom(). '/cp/trip?user_id=',
 			'encode' => false,
 		];
 
 		$result['services']    =
 		[
 			'count'  => \lib\db\services::get_count(['user_id' => $_user_id]),
-			'link'   => null,
+			'link'   => \dash\url::kingdom(). '/cp/service?user_id=',
 			'encode' => false,
 		];
 
@@ -28,6 +29,8 @@ class user
 			'link'   => null,
 			'encode' => false,
 		];
+
+
 
 
 		return $result;
