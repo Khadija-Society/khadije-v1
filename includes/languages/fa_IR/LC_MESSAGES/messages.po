@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-01-23 13:07+0330\n"
-"PO-Revision-Date: 2019-01-23 13:08+0330\n"
+"POT-Creation-Date: 2019-01-23 13:09+0330\n"
+"PO-Revision-Date: 2019-01-23 13:10+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -16696,6 +16696,14 @@ msgstr "دانشجو"
 #: khadije/includes/languages/trans_static.php:159
 msgid "Collegian"
 msgstr "دانشجو"
+
+#: khadije/includes/languages/trans_static.php:161
+msgid "Travels"
+msgstr "سفرها"
+
+#: khadije/includes/languages/trans_static.php:162
+msgid "Travelusers"
+msgstr "همراه سفر"
 
 #: khadije/includes/lib/app/android.php:115 khadije/includes/lib/app/android.php:125
 #: khadije/includes/lib/app/android.php:135 khadije/includes/lib/app/android.php:145

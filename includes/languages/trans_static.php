@@ -157,6 +157,9 @@ class TransStatic
 	echo T_("student");
 	echo T_("collegian");
 	echo T_("Collegian");
+
+	echo T_("Travels");
+	echo T_("Travelusers");
  }
 }
 ?>
