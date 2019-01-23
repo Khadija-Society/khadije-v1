@@ -103,6 +103,12 @@ class travelusers
 	}
 
 
+	public static function get_count()
+	{
+		return \dash\db\config::public_get_count('travelusers', ...func_get_args());
+	}
+
+
 	/**
 	 * delete by where
 	 *
