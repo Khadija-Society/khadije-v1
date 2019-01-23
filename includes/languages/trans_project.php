@@ -5,14 +5,14 @@ class twigTransTerms
  {
 
 	//--------------------------------------------content_delneveshte/home/layout.html
-	echo T_("Click and go to khadije site");                                          // Line 100
-	echo T_("Wrote your heart sounds");                                               // Line 111
+	echo T_("Click and go to khadije site");                                          // Line 105
+	echo T_("Wrote your heart sounds");                                               // Line 116
 	echo T_("Name");                                                                  // Line 64
-	echo T_("optional");                                                              // Line 123
-	echo T_("Not require");                                                           // Line 120
+	echo T_("optional");                                                              // Line 128
+	echo T_("Not require");                                                           // Line 125
 	echo T_("Mobile");                                                                // Line 86
-	echo T_("Mobile number is not showing on site and optional");                     // Line 123
-	echo T_("Press here to send");                                                    // Line 127
+	echo T_("Mobile number is not showing on site and optional");                     // Line 128
+	echo T_("Press here to send");                                                    // Line 132
 	echo T_("Send");                                                                  // Line 103
 
 	//------------------------------------------content_delneveshte/home/messages.html
@@ -173,7 +173,7 @@ class twigTransTerms
 	echo T_("Total Sale");                                                            // Line 12
 	echo T_("Today Sale");                                                            // Line 21
 	echo T_("Sale Count");                                                            // Line 30
-	echo T_("Search in book transaction");                                            // Line 78
+	echo T_("Search in book transaction");                                            // Line 44
 	echo T_("Book");                                                                  // Line 96
 
 	//--------------------------------------------------content_cp/donate/display.html
@@ -546,6 +546,9 @@ class twigTransTerms
 
 	//-----------------------------------------content_cp/consulting/view/display.html
 	echo T_("Accept");                                                                // Line 32
+
+	//------------------------------------------content_cp/duplicatequery/display.html
+	echo T_("search");                                                                // Line 59
 
 	//----------------------------------------------------content_cp/home/display.html
 	echo T_("Festival");                                                              // Line 24
