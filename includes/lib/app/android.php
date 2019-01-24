@@ -155,8 +155,8 @@ class android
 			'title'       => T_('Travel to Karbala'),
 			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
 			'background'  => '#ffffff',
-			'title_color' => '#ffffff',
-			'desc_color'  => '#ffffff',
+			'title_color' => '#000000',
+			'desc_color'  => '#000000',
 			'image'       => 'https://khadije.com/files/1/92-fd6f59d2284353db98bdf32e2d6796c8.png',
 		];
 
@@ -165,8 +165,8 @@ class android
 			'title'       => T_('Travel to Qom'),
 			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
 			'background'  => '#ffffff',
-			'title_color' => '#ffffff',
-			'desc_color'  => '#ffffff',
+			'title_color' => '#000000',
+			'desc_color'  => '#000000',
 			'image'       => 'https://khadije.com/files/1/90-7de485580f96aefb3e1c70f445565028.png',
 		];
 
@@ -175,8 +175,8 @@ class android
 			'title'       => T_('Travel to Mashhad'),
 			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
 			'background'  => '#ffffff',
-			'title_color' => '#ffffff',
-			'desc_color'  => '#ffffff',
+			'title_color' => '#000000',
+			'desc_color'  => '#000000',
 			'image'       => 'https://khadije.com/files/1/91-b688f1d8b2ba6f076558b8d97bbc615e.png',
 		];
 
@@ -185,8 +185,8 @@ class android
 			'title'       => T_('Khadije Charity'),
 			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
 			'background'  => '#ffffff',
-			'title_color' => '#ffffff',
-			'desc_color'  => '#ffffff',
+			'title_color' => '#000000',
+			'desc_color'  => '#000000',
 			'image'       => 'https://khadije.com/files/1/431-22327c753b4d65d22873fc545e2dd7c1.png',
 		];
 	}
