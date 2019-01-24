@@ -78,10 +78,17 @@ class android
 
 		$detail['navigation'][] =
 		[
-			'title' => T_('Website'),
-			'url'   => \dash\url::kingdom(),
-			'icon'  => 'world',
+			'title' => T_('Home'),
+			'url'   => \dash\url::kingdom(). '/app/android',
+			'icon'  => 'home',
 		];
+
+		// $detail['navigation'][] =
+		// [
+		// 	'title' => T_('Website'),
+		// 	'url'   => \dash\url::kingdom(),
+		// 	'icon'  => 'world',
+		// ];
 
 		$detail['navigation'][] =
 		[
@@ -115,13 +122,6 @@ class android
 		// 		'icon'  => 'enter',
 		// 	];
 		// }
-
-		// $detail['navigation'][] =
-		// [
-		// 	'title' => T_('Home'),
-		// 	'url'   => \dash\url::kingdom(). '/app/android',
-		// 	'icon'  => 'home',
-		// ];
 
 
 
