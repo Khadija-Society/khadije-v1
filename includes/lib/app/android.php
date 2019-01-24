@@ -10,6 +10,8 @@ class android
 
 		self::master_detail($detail);
 
+		self::static_page($detail);
+
 		self::navigation($detail);
 
 		self::app_version($detail);
@@ -30,6 +32,42 @@ class android
 		$detail['name']                        = T_(\dash\option::config('site','title'));
 		$detail['desc']                        = T_(\dash\option::config('site','desc'));
 		$detail['logo']                        = \dash\url::static(). '/images/logo.png';
+
+	}
+
+
+	private static function static_page(&$detail)
+	{
+		$detail['android_menu']                        = [];
+		$detail['android_menu'][] =
+		[
+			'title' => T_("About"),
+			'url'   => \dash\url::kingdom(). '/api/v5/about'
+		];
+
+		$detail['android_menu'][] =
+		[
+			'title' => T_("Contact"),
+			'url'   => \dash\url::kingdom(). '/api/v5/contact'
+		];
+
+		$detail['android_menu'][] =
+		[
+			'title' => T_("Vision"),
+			'url'   => \dash\url::kingdom(). '/api/v5/vision'
+		];
+
+		$detail['android_menu'][] =
+		[
+			'title' => T_("Mission"),
+			'url'   => \dash\url::kingdom(). '/api/v5/mission'
+		];
+
+		$detail['android_menu'][] =
+		[
+			'title' => T_("Website"),
+			'url'   => \dash\url::kingdom()
+		];
 
 	}
 
