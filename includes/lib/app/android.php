@@ -152,7 +152,7 @@ class android
 		$detail['intro']['slide']   = [];
 		$detail['intro']['slide'][] =
 		[
-			'title'       => T_('Khadije Charity'),
+			'title'       => T_('Travel to Karbala'),
 			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
 			'background'  => '#f9a71b',
 			'title_color' => '#ffffff',
@@ -162,7 +162,7 @@ class android
 
 		$detail['intro']['slide'][] =
 		[
-			'title'       => T_('Khadije Charity'),
+			'title'       => T_('Travel to Qom'),
 			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
 			'background'  => '#099ac1',
 			'title_color' => '#ffffff',
@@ -172,7 +172,7 @@ class android
 
 		$detail['intro']['slide'][] =
 		[
-			'title'       => T_('Khadije Charity'),
+			'title'       => T_('Travel to Mashhad'),
 			'desc'        => T_('Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom'),
 			'background'  => '#aa6622',
 			'title_color' => '#ffffff',

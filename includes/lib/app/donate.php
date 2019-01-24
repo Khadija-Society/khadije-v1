@@ -470,6 +470,8 @@ class donate
 				$auto_back = false;
 				$turn_back = 'khadije://'. $turn_back;
 
+				\dash\redirect::to('externalweb:https://khadije.com');
+				return;
 				if($user_id === 'unverify')
 				{
 					$user_id = \dash\user::app_id();
