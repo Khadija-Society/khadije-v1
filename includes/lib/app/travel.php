@@ -708,6 +708,11 @@ class travel
 			return false;
 		}
 
+		if($force_admin)
+		{
+			\dash\log::set('AdminAddNewTrip', ['code' => $travel_id]);
+		}
+
 		return $travel_id;
 	}
 }
