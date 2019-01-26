@@ -47,11 +47,36 @@ class view
 		$countryList = \dash\utility\location\countres::$data;
 		\dash\data::countryList($countryList);
 
-		$cityList    = \dash\utility\location\cites::key_list('localname');
-		\dash\data::cityList($cityList);
+		// $cityList    = \dash\utility\location\cites::key_list('localname');
+		// \dash\data::cityList($cityList);
 
 		$proviceList = \dash\utility\location\provinces::key_list('localname');
 		\dash\data::proviceList($proviceList);
+
+		$countryList = \dash\utility\location\countres::$data;
+		\dash\data::countryList($countryList);
+
+		$cityList    = \dash\utility\location\cites::$data;
+		$proviceList = \dash\utility\location\provinces::key_list('localname');
+
+		$new = [];
+		foreach ($cityList as $key => $value)
+		{
+			$temp = '';
+
+			if(isset($value['province']) && isset($proviceList[$value['province']]))
+			{
+				$temp .= $proviceList[$value['province']]. ' - ';
+			}
+			if(isset($value['localname']))
+			{
+				$temp .= $value['localname'];
+			}
+			$new[$key] = $temp;
+		}
+		asort($new);
+
+		\dash\data::cityList($new);
 
 	}
 }

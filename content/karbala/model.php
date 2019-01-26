@@ -24,8 +24,8 @@ class model
 		$post['father']          = \dash\request::post('father');
 		// $post['pasportcode']     = \dash\request::post('passport');
 		// $post['pasportdate']     = \dash\request::post('passportexpire');
-		$post['country']         = \dash\request::post('country');
-		$post['province']        = \dash\request::post('province');
+		// $post['country']         = \dash\request::post('country');
+		// $post['province']        = \dash\request::post('province');
 		$post['city']            = \dash\request::post('city');
 		$post['homeaddress']     = \dash\request::post('homeaddress');
 		$post['phone']           = \dash\request::post('phone');

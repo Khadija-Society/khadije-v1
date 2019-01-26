@@ -275,10 +275,28 @@ class karbalauser
 			return false;
 		}
 
+		// if($city && !\dash\utility\location\cites::check($city))
+		// {
+		// 	\dash\notif::error(T_("Invalid city name"), 'city');
+		// 	return false;
+		// }
+
+
+		$city = \dash\app::request('city');
 		if($city && !\dash\utility\location\cites::check($city))
 		{
-			\dash\notif::error(T_("Invalid city name"), 'city');
+			\dash\notif::error(T_("Invalid city"), 'city');
 			return false;
+		}
+
+
+		if(!$province && $city)
+		{
+			$province = \dash\utility\location\cites::get($city, 'province', 'province');
+			if(!\dash\utility\location\provinces::check($province))
+			{
+				$province = null;
+			}
 		}
 
 
@@ -424,32 +442,32 @@ class karbalauser
 			return false;
 		}
 
-		if(!\dash\app::isset_request('avatar'))         unset($args['avatar']);
-		if(!\dash\app::isset_request('gender')) 		unset($args['gender']);
-		if(!\dash\app::isset_request('email')) 			unset($args['email']);
-		if(!\dash\app::isset_request('birthday')) 		unset($args['birthday']);
-		if(!\dash\app::isset_request('firstname')) 		unset($args['firstname']);
-		if(!\dash\app::isset_request('lastname')) 		unset($args['lastname']);
-		if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
-		if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
-		if(!\dash\app::isset_request('father')) 		unset($args['father']);
-		if(!\dash\app::isset_request('pasportcode')) 	unset($args['pasportcode']);
-		if(!\dash\app::isset_request('pasportdate')) 	unset($args['pasportdate']);
-		if(!\dash\app::isset_request('education')) 		unset($args['education']);
-		if(!\dash\app::isset_request('educationcourse')) unset($args['educationcourse']);
-		if(!\dash\app::isset_request('country')) 		unset($args['country']);
-		if(!\dash\app::isset_request('province')) 		unset($args['province']);
-		if(!\dash\app::isset_request('city')) 			unset($args['city']);
-		if(!\dash\app::isset_request('homeaddress')) 	unset($args['homeaddress']);
-		if(!\dash\app::isset_request('workaddress')) 	unset($args['workaddress']);
-		if(!\dash\app::isset_request('arabiclang')) 	unset($args['arabiclang']);
-		if(!\dash\app::isset_request('phone')) 			unset($args['phone']);
-		if(!\dash\app::isset_request('displayname')) 	unset($args['displayname']);
-		if(!\dash\app::isset_request('married')) 		unset($args['married']);
-		if(!\dash\app::isset_request('zipcode')) 		unset($args['zipcode']);
-		if(!\dash\app::isset_request('desc')) 			unset($args['desc']);
-		if(!\dash\app::isset_request('job')) 			unset($args['job']);
-		if(!\dash\app::isset_request('nesbat')) 		unset($args['nesbat']);
+		// if(!\dash\app::isset_request('avatar'))         unset($args['avatar']);
+		// if(!\dash\app::isset_request('gender')) 		unset($args['gender']);
+		// if(!\dash\app::isset_request('email')) 			unset($args['email']);
+		// if(!\dash\app::isset_request('birthday')) 		unset($args['birthday']);
+		// if(!\dash\app::isset_request('firstname')) 		unset($args['firstname']);
+		// if(!\dash\app::isset_request('lastname')) 		unset($args['lastname']);
+		// if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
+		// if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
+		// if(!\dash\app::isset_request('father')) 		unset($args['father']);
+		// if(!\dash\app::isset_request('pasportcode')) 	unset($args['pasportcode']);
+		// if(!\dash\app::isset_request('pasportdate')) 	unset($args['pasportdate']);
+		// if(!\dash\app::isset_request('education')) 		unset($args['education']);
+		// if(!\dash\app::isset_request('educationcourse')) unset($args['educationcourse']);
+		// // if(!\dash\app::isset_request('country')) 		unset($args['country']);
+		// // if(!\dash\app::isset_request('province')) 		unset($args['province']);
+		// if(!\dash\app::isset_request('city')) 			unset($args['city']);
+		// if(!\dash\app::isset_request('homeaddress')) 	unset($args['homeaddress']);
+		// if(!\dash\app::isset_request('workaddress')) 	unset($args['workaddress']);
+		// if(!\dash\app::isset_request('arabiclang')) 	unset($args['arabiclang']);
+		// if(!\dash\app::isset_request('phone')) 			unset($args['phone']);
+		// if(!\dash\app::isset_request('displayname')) 	unset($args['displayname']);
+		// if(!\dash\app::isset_request('married')) 		unset($args['married']);
+		// if(!\dash\app::isset_request('zipcode')) 		unset($args['zipcode']);
+		// if(!\dash\app::isset_request('desc')) 			unset($args['desc']);
+		// if(!\dash\app::isset_request('job')) 			unset($args['job']);
+		// if(!\dash\app::isset_request('nesbat')) 		unset($args['nesbat']);
 
 
 		$id = \lib\db\karbalausers::insert($args);
