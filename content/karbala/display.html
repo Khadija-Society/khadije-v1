@@ -46,9 +46,9 @@
 
    <div class="f">
     <div class="c8 s12 pRa5">{{block ('iAddress') }}</div>
-    <div class="c4 s12 mT10">{{block ('iPhone') }}</div>
+    <div class="c4 s12 ">{{block ('iPhone') }}</div>
    </div>
-   <div class="msg danger2">
+   <div class="msg danger2 mT10">
 
     <div class="check1 mB10">
       <input type="checkbox" id="sChk3" name="accept">
@@ -234,7 +234,7 @@
 {%block iMobileKarabala%}
 <label for="mobile">{%trans "Mobile"%} <small class="fc-red">* {%trans "Required"%}</small></label>
 <div class="input ltr">
-  <input type="tel" name="mobile" id="mobile" placeholder='{%trans "Like"%} 09121234567' value="{{userdetail.mobile}}" maxlength='50'>
+  <input type="tel" name="mobile" id="mobile" placeholder='{%trans "Like"%} 09121234567' value="{{userdetail.mobile}}" maxlength='50' required>
 </div>
 {%endblock%}
 

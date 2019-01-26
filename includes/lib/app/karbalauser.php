@@ -99,7 +99,7 @@ class karbalauser
 		{
 			if(!$nationalcode)
 			{
-				\dash\notif::error(T_("National code or pasportcode code is required"), ['nationalcode', 'pasportcode']);
+				\dash\notif::error(T_("National code is required"), 'nationalcode');
 				return false;
 			}
 
