@@ -23,6 +23,38 @@ class model
 
 	public static function post()
 	{
+
+
+		if(\dash\request::post('setdatecreated') && \dash\request::post('datecreated'))
+		{
+			$datecreated = \dash\request::post('datecreated');
+			$datecreated = \dash\utility\convert::to_en_number($datecreated);
+			if($datecreated && strtotime($datecreated) === false)
+			{
+				\dash\notif::error(T_("Invalid datecreated"), 'datecreated');
+				return false;
+			}
+
+			if(\dash\utility\jdate::is_jalali($datecreated))
+			{
+				$datecreated = \dash\utility\jdate::to_gregorian($datecreated);
+			}
+
+			if($datecreated)
+			{
+				$datecreated = date("Y-m-d", strtotime($datecreated));
+				$datecreated.= ' '. date("H:i:s");
+				\lib\db\travels::update(['datecreated' => $datecreated], \dash\request::get('id'));
+				\dash\notif::ok(T_("Date saved"));
+				\dash\redirect::pwd();
+			}
+			else
+			{
+				$datecreated = null;
+			}
+			return;
+		}
+
 		if(\dash\request::post('type') === 'remove' && \dash\request::post('key') != '' && ctype_digit(\dash\request::post('key')))
 		{
 			\lib\db\travelusers::remove(\dash\request::post('key'), \dash\request::get('id'));

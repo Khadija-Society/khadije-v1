@@ -36,11 +36,20 @@
     <div class="c3 s12">
       <h2 class="msg warn2 pLRn txtC fs14">{%set StatusS = travelDetail.status | capitalize%}{%trans StatusS%}</h2>
       <p class="badge block">{%trans "Date created" %} {{travelDetail.datecreated | dt}}</p>
+      <form method="post" autocomplete="off">
+          <input type="hidden" name="setdatecreated" value="1">
+          <label for='datecreated'>{%trans "Date created"%}</label>
+          <div class="input">
+            <input class="datepicker" type="text" name="datecreated" id="datecreated" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travelDetail.datecreated}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+            <button class="btn addon primary">{%trans "Save"%}</button>
+          </div>
+
+      </form>
 {%if travelDetail.datemodified%}
       <p class="badge block primary">{%trans "Last modified" %} {{travelDetail.datemodified | dt}}</p>
 {%endif%}
 {%if travelDetail.startdate or true%}
-      <p class="badge block info">{%trans "Reserve date" %} {{travelDetail.startdate}} - {{travelDetail.enddate}}</p>
+      <p class="badge block info">{%trans "Reserve date" %} {{travelDetail.startdate | dt(true, 'date')}} - {{travelDetail.enddate | dt(true, 'date')}}</p>
 {%endif%}
 
     </div>
