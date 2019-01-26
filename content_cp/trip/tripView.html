@@ -110,6 +110,74 @@
 
 
 {%block partnertList%}
+
+    <h3>{%trans "List of trip partner"%}</h3>
+
+{%if travelPartner%}
+<table class="tbl1 v1 fs12">
+  <thead>
+      <tr>
+        <th>{%trans "Name"%}</th>
+        <th>{%trans "Father"%}</th>
+        <th>{%trans "Marital"%}</th>
+        <th>{%trans "Nationalcode"%}</th>
+        <th>{%trans "Birthday"%}</th>
+        <th>{%trans "Travel"%}</th>
+        <th>{%trans "Action"%}</th>
+
+      </tr>
+  </thead>
+    {%for key, value in travelPartner%}
+      {% set CountTravel = value[travelDetail.place] %}
+      <tr>
+        <td>
+          {%if value.gender == 'female'%}
+            <img src="{{url.static}}/siftal/images/avatar/woman.png" class="mini">
+          {%else%}
+            <img src="{{url.static}}/siftal/images/avatar/man.png" class="mini">
+          {%endif%}
+
+          {{value.firstname}} <b>{{value.lastname}}</b></td>
+        <td>{{value.father}}</td>
+        <td>{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</td>
+        <td>{{value.nationalcode | fitNumber(false)}}</td>
+        <td>{{value.birthday | jdate | fitNumber(false)}}</td>
+        <td>
+            {%if not CountTravel%}
+                <span class="sf-check fc-green"></span>
+              {%else%}
+              <span class="badge warn ">
+                <i class="sf-cross"></i>
+                {{CountTravel| fitNumber}}
+              </span>
+            {%endif%}
+        </td>
+        <td>
+          {%if editMode%}
+              <div class="c"></div>
+            {%else%}
+              <a href="{{url.here}}/trip/view?id={{requestGET.id}}&partner={{value.id}}" class="btn xs primary c mRa5 " >{%trans "Edit"%}</a>
+            {%endif%}
+            <a href="{{url.pwd |raw}}" class="btn xs danger cauto" data-confirm data-method="post" data-data='{"key": "{{value.id}}", "type":"remove"}'>{%trans "Remove"%}</a>
+        </td>
+      </tr>
+    {%endfor%}
+  <tbody>
+
+  </tbody>
+</table>
+
+{%else%}
+   <p class="msg txtC">{%trans "No partner set"%}</p>
+{%endif%}
+
+
+{%endblock%}
+
+
+
+
+{%block partnertList2%}
   <div class="cbox">
     <h3>{%trans "List of trip partner"%}</h3>
 
