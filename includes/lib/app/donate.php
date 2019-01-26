@@ -468,7 +468,7 @@ class donate
 			{
 				$auto_go   = false;
 				$auto_back = false;
-				$turn_back = 'khadije://'. $turn_back;
+				$turn_back = "khadije://donate?status=true&amount=". \dash\app::request('amount');
 
 				if($user_id === 'unverify')
 				{
