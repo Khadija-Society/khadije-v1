@@ -462,13 +462,13 @@ class donate
 				$auto_go   = $_args['auto_go'];
 			}
 
-			$auto_back = false;
+			$auto_back = true;
 
 			if(\dash\request::is_android())
 			{
 				$auto_go   = false;
 				$auto_back = false;
-				$turn_back = "khadije://donate?status=true&amount=". \dash\app::request('amount');
+				$turn_back = "khadije://doners";
 
 				if($user_id === 'unverify')
 				{
@@ -479,7 +479,6 @@ class donate
 					}
 				}
 			}
-
 
 			$msg_go = T_("Pay donate :price toman", ['price' => \dash\utility\human::fitNumber(\dash\app::request('amount'))]);
 
