@@ -81,6 +81,11 @@ class model
 				return false;
 			}
 
+			if(\dash\utility\jdate::is_jalali($start_date))
+			{
+				$start_date = \dash\utility\jdate::to_gregorian($start_date);
+			}
+
 			if($start_date)
 			{
 				$start_date = date("Y-m-d", strtotime($start_date));
@@ -96,6 +101,11 @@ class model
 			{
 				\dash\notif::error(T_("Invalid end_date"), 'end_date');
 				return false;
+			}
+
+			if(\dash\utility\jdate::is_jalali($end_date))
+			{
+				$end_date = \dash\utility\jdate::to_gregorian($end_date);
 			}
 
 			if($end_date)
