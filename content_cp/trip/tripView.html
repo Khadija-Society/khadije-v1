@@ -38,6 +38,7 @@
       <p class="badge block">{%trans "Date created" %} {{travelDetail.datecreated | dt}}</p>
       <form method="post" autocomplete="off">
           <input type="hidden" name="setdatecreated" value="1">
+          <input type="hidden" name="olddatecreated" value="{{travelDetail.datecreated}}">
           <label for='datecreated'>{%trans "Date created"%}</label>
           <div class="input">
             <input class="datepicker" type="text" name="datecreated" id="datecreated" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travelDetail.datecreated}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">

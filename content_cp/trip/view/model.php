@@ -23,8 +23,6 @@ class model
 
 	public static function post()
 	{
-
-
 		if(\dash\request::post('setdatecreated') && \dash\request::post('datecreated'))
 		{
 			$datecreated = \dash\request::post('datecreated');
@@ -40,11 +38,14 @@ class model
 				$datecreated = \dash\utility\jdate::to_gregorian($datecreated);
 			}
 
+			$olddatecreated = \dash\request::post('olddatecreated');
+
 			if($datecreated)
 			{
 				$datecreated = date("Y-m-d", strtotime($datecreated));
 				$datecreated.= ' '. date("H:i:s");
 				\lib\db\travels::update(['datecreated' => $datecreated], \dash\request::get('id'));
+				\dash\log::set('datecreatedTripChange', ['code' => \dash\request::get('id'), 'new' => $datecreated, 'old' => $olddatecreated]);
 				\dash\notif::ok(T_("Date saved"));
 				\dash\redirect::pwd();
 			}
