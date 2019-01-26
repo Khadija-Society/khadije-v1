@@ -7,6 +7,11 @@ class model
 
 	public static function post()
 	{
+		if(!\dash\request::post('accept'))
+		{
+			\dash\notif::error("لطفا تایید کنید که این ثبت‌نام به منزله اعزام نیست", 'accept');
+			return false;
+		}
 		$post                    = [];
 		$post['mobile']          = \dash\request::post('mobile') ;
 		$post['gender']          = \dash\request::post('gender') ;

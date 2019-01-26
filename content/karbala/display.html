@@ -5,8 +5,17 @@
 
 {%block pageData%}
 
+
 <div class="f justify-center ">
  <div class="c9 s12">
+  <div class="msg txtB txtC info2">
+    با همکاری برنامه سمت خدا و موسسه حضرت خدیجه سلام الله علیها
+  </div>
+
+
+
+
+
   <form class="" method="post" autocomplete="off">
 
    <div class="f">
@@ -26,7 +35,7 @@
    </div>
 
    <div class="f">
-   	{%include display.hive%}
+    {%include display.hive%}
    </div>
 
    <div class="f">
@@ -37,11 +46,18 @@
 
    <div class="f">
     <div class="c8 s12 pRa5">{{block ('iAddress') }}</div>
-    <div class="c4 s12">{{block ('iPhone') }}</div>
+    <div class="c4 s12 mT10">{{block ('iPhone') }}</div>
+   </div>
+   <div class="msg danger2">
+
+    <div class="check1 mB10">
+      <input type="checkbox" id="sChk3" name="accept">
+      <label for="sChk3">ثبت نام به منزله اعزام نمی باشد و این ثبت‌نام تنها برای شرکت در قرعه‌کشی است</label>
+    </div>
    </div>
 
-
    {{block ('iSave') }}
+
 
   </form>
  </div>
@@ -95,7 +111,7 @@
 
 {%block ibirthday%}
 <label for="birthday">{%trans "Birthday"%}</label>
-<div class="input">
+<div class="input ltr">
   <input class="datepicker" type="text" name="birthday" id="birthday" required placeholder='{{"1369/04/15" | fitNumber}}' value="{{userdetail.birthday}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
 </div>
 {%endblock%}
@@ -312,7 +328,7 @@
 {%endblock%}
 
 {%block iSave%}
-<button class="btn primary block mT20">{%trans "Save"%}</button>
+<button class="btn primary block mT20">{%trans "Signup"%}</button>
 {%endblock%}
 
 
