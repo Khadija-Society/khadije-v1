@@ -10,7 +10,7 @@ class view
 		\dash\data::page_desc(' ');
 
 		\dash\data::badge_link(\dash\url::here(). '/trip');
-		\dash\data::badge_text(T_('check your trip requests'));
+		\dash\data::badge_text(T_('Back'));
 
 		\dash\data::cityplaceList(\lib\app\travel::active_city());
 

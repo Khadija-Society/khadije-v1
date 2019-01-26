@@ -25,6 +25,7 @@ class model
 	{
 		if(\dash\request::post('type') === 'remove' && \dash\request::post('key') != '' && ctype_digit(\dash\request::post('key')))
 		{
+			\dash\log::set('removePartnerFamilyTrip', ['code' => \dash\request::get('id')]);
 			\lib\db\travelusers::remove(\dash\request::post('key'), \dash\request::get('id'));
 			if(\dash\engine\process::status())
 			{
@@ -41,6 +42,7 @@ class model
 
 			if(\dash\engine\process::status())
 			{
+				\dash\log::set('addPartnerFamilyTrip', ['code' => \dash\request::get('id')]);
 				\dash\notif::ok(T_("Your Child was saved"));
 				\dash\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
 			}
@@ -67,6 +69,7 @@ class model
 
 			if(\dash\engine\process::status())
 			{
+				\dash\log::set('updatePartnerFamilyTrip', ['code' => \dash\request::get('id')]);
 				\dash\notif::ok(T_("The partner was updated"));
 				\dash\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
 			}
@@ -133,7 +136,7 @@ class model
 			{
 				$update['status'] = $status;
 			}
-
+			\dash\log::set('updateFamilyTrip', ['code' => \dash\request::get('id'), 'update' => $update]);
 			\lib\db\travels::update($update, \dash\request::get('id'));
 
 			self::send_sms($status);

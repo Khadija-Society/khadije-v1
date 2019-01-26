@@ -58,6 +58,7 @@ class model
 
 		if(\dash\request::post('type') === 'remove' && \dash\request::post('key') != '' && ctype_digit(\dash\request::post('key')))
 		{
+			\dash\log::set('removePartnerGroupTrip', ['code' => \dash\request::get('id')]);
 			\lib\db\travelusers::remove(\dash\request::post('key'), \dash\request::get('id'));
 			if(\dash\engine\process::status())
 			{
@@ -74,6 +75,7 @@ class model
 
 			if(\dash\engine\process::status())
 			{
+				\dash\log::set('AddPartnerGroupTrip', ['code' => \dash\request::get('id')]);
 				\dash\notif::ok(T_("Your Child was saved"));
 				\dash\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
 			}
@@ -100,6 +102,7 @@ class model
 
 			if(\dash\engine\process::status())
 			{
+				\dash\log::set('editPartnerGroupTrip', ['code' => \dash\request::get('id')]);
 				\dash\notif::ok(T_("The partner was updated"));
 				\dash\redirect::to(\dash\url::here(). '/trip/view?id='. \dash\request::get('id'));
 			}
@@ -178,7 +181,7 @@ class model
 			}
 
 			\lib\db\travels::update($update, \dash\request::get('id'));
-
+			\dash\log::set('updatePartnerGroupTrip', ['code' => \dash\request::get('id'), 'update' => $update]);
 			self::send_sms($status);
 
 			\dash\notif::ok(T_("The travel updated"));

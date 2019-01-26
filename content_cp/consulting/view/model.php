@@ -19,7 +19,7 @@ class model
 
 		$update = [];
 		$update['status'] = $status;
-
+		\dash\log::set('updateConsulting', ['code' => \dash\request::get('id'), 'newstatus' => $status]);
 		\lib\db\services::update($update, \dash\request::get('id'));
 
 		// self::send_sms($status);
