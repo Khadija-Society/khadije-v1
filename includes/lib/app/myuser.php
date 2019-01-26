@@ -30,7 +30,7 @@ class myuser
 			return false;
 		}
 
-		if(!$gender)
+		if(\dash\app::isset_request('gender') && !$gender)
 		{
 			\dash\notif::error(T_("Plese set your gender"), 'gender');
 			return false;
@@ -44,17 +44,21 @@ class myuser
 		}
 
 		$birthday = \dash\app::request('birthday');
-		if(!$birthday)
+		if(\dash\app::isset_request('birthday'))
 		{
-			\dash\notif::error(T_("Birthday is required"), 'birthday');
-			return false;
-		}
 
-		$birthday = \dash\date::birthdate($birthday, true);
+			if(!$birthday)
+			{
+				\dash\notif::error(T_("Birthday is required"), 'birthday');
+				return false;
+			}
 
-		if($birthday === false)
-		{
-			return false;
+			$birthday = \dash\date::birthdate($birthday, true);
+
+			if($birthday === false)
+			{
+				return false;
+			}
 		}
 
 		$firstname = \dash\app::request('firstname');
@@ -87,33 +91,36 @@ class myuser
 		$nationalcode = \dash\app::request('nationalcode');
 		$pasportcode = \dash\app::request('pasportcode');
 
-		if(!$nationalcode && !$pasportcode)
+		if(\dash\app::isset_request('nationalcode') || \dash\app::isset_request('pasportcode'))
 		{
-			\dash\notif::error(T_("National code or pasportcode code is required"), ['nationalcode', 'pasportcode']);
-			return false;
-		}
-
-
-		$nationalcode = \dash\utility\convert::to_en_number($nationalcode);
-
-		if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
-		{
-			\dash\notif::error(T_("Invalid arguments nationalcode"), 'nationalcode');
-			return false;
-		}
-
-		if($nationalcode)
-		{
-			if(\dash\utility\filter::nationalcode($nationalcode))
+			if(!$nationalcode && !$pasportcode)
 			{
-				\lib\db\nationalcodes::add($nationalcode);
-			}
-			else
-			{
-				\dash\notif::error(T_("Invalid nationalcode"), 'nationalcode');
+				\dash\notif::error(T_("National code or pasportcode code is required"), ['nationalcode', 'pasportcode']);
 				return false;
 			}
+
+			$nationalcode = \dash\utility\convert::to_en_number($nationalcode);
+
+			if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
+			{
+				\dash\notif::error(T_("Invalid arguments nationalcode"), 'nationalcode');
+				return false;
+			}
+
+			if($nationalcode)
+			{
+				if(\dash\utility\filter::nationalcode($nationalcode))
+				{
+					\lib\db\nationalcodes::add($nationalcode);
+				}
+				else
+				{
+					\dash\notif::error(T_("Invalid nationalcode"), 'nationalcode');
+					return false;
+				}
+			}
 		}
+
 
 		$father = \dash\app::request('father');
 		if($father && mb_strlen($father) > 50)
@@ -219,10 +226,13 @@ class myuser
 			return false;
 		}
 
-		if(!$married)
+		if(\dash\app::isset_request('married'))
 		{
-			\dash\notif::error(T_("Plese set your married"), 'married');
-			return false;
+			if(!$married)
+			{
+				\dash\notif::error(T_("Plese set your married"), 'married');
+				return false;
+			}
 		}
 
 		$zipcode = \dash\app::request('zipcode');
@@ -582,6 +592,32 @@ class myuser
 		}
 
 		if(!\dash\app::isset_request('avatar'))         unset($args['avatar']);
+		if(!\dash\app::isset_request('gender')) 		unset($args['gender']);
+		if(!\dash\app::isset_request('email')) 			unset($args['email']);
+		if(!\dash\app::isset_request('birthday')) 		unset($args['birthday']);
+		if(!\dash\app::isset_request('firstname')) 		unset($args['firstname']);
+		if(!\dash\app::isset_request('lastname')) 		unset($args['lastname']);
+		if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
+		if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
+		if(!\dash\app::isset_request('father')) 		unset($args['father']);
+		if(!\dash\app::isset_request('pasportcode')) 	unset($args['pasportcode']);
+		if(!\dash\app::isset_request('pasportdate')) 	unset($args['pasportdate']);
+		if(!\dash\app::isset_request('education')) 		unset($args['education']);
+		if(!\dash\app::isset_request('educationcourse')) unset($args['educationcourse']);
+		if(!\dash\app::isset_request('country')) 		unset($args['country']);
+		if(!\dash\app::isset_request('province')) 		unset($args['province']);
+		if(!\dash\app::isset_request('city')) 			unset($args['city']);
+		if(!\dash\app::isset_request('homeaddress')) 	unset($args['homeaddress']);
+		if(!\dash\app::isset_request('workaddress')) 	unset($args['workaddress']);
+		if(!\dash\app::isset_request('arabiclang')) 	unset($args['arabiclang']);
+		if(!\dash\app::isset_request('phone')) 			unset($args['phone']);
+		if(!\dash\app::isset_request('displayname')) 	unset($args['displayname']);
+		if(!\dash\app::isset_request('married')) 		unset($args['married']);
+		if(!\dash\app::isset_request('zipcode')) 		unset($args['zipcode']);
+		if(!\dash\app::isset_request('desc')) 			unset($args['desc']);
+		if(!\dash\app::isset_request('job')) 			unset($args['job']);
+		if(!\dash\app::isset_request('nesbat')) 		unset($args['nesbat']);
+
 
 		\dash\db\users::update($args, \dash\user::id());
 
