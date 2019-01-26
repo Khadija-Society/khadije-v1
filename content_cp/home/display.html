@@ -29,8 +29,19 @@
   {%if perm('cpFestivalView') %}<div class="c3 s6">{{block("iFestival")}}</div>{%endif%}
 
   {%if perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
+  {%if perm('cpAddNewTrip')%}<div class="c3 s6">{{block("bAddNewTrip")}}</div>{%endif%}
 
 </div>
+{%endblock%}
+
+
+{%block bAddNewTrip%}
+<a class="dcard x1" href='{{url.here}}/trip/add'>
+ <div class="statistic">
+  <div class="value"><i class="sf-rocket-1"></i></div>
+  <div class="label">{%trans "Add trip"%}</div>
+ </div>
+</a>
 {%endblock%}
 
 {%block iFestival%}

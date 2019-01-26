@@ -1,0 +1,35 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+<div class="f justify-center">
+ <div class="cbox c5 s12">
+
+
+
+  <form method="post" autocomplete="off">
+    <h3>{%trans "Add new group trip"%}</h3>
+
+    <div class="input mB20" >
+      <label>{%trans "Mobile for admin of this trip"%} <small class="fc-red">{%trans "Required"%}</small></label>
+      <input type="tel" name="mobile" required>
+    </div>
+    <h5>{%trans "Select the travel place"%}</h5>
+    {% for cityPlace, T_cityPlace in cityplaceList %}
+
+     <div class="radio1">
+        <input type="radio" name="city" value="{{cityPlace}}" id="sRd{{cityPlace}}">
+        <label for="sRd{{cityPlace}}">{%trans cityPlace%}</label>
+      </div>
+    {%endfor%}
+
+
+
+    <button class="btn primary block mT20">{%trans "Add"%}</button>
+  </form>
+
+
+ </div>
+</div>
+{%endblock%}
+

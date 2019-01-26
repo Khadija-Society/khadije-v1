@@ -160,6 +160,7 @@ class TransStatic
 
 	echo T_("Travels");
 	echo T_("Travelusers");
+	echo T_("cpAddNewTrip");
  }
 }
 ?>

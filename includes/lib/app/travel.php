@@ -512,6 +512,7 @@ class travel
 		$default_option =
 		[
 			'debug' => true,
+			'force_admin' => false,
 		];
 
 		if(!is_array($_option))
@@ -520,6 +521,8 @@ class travel
 		}
 
 		$_option = array_merge($default_option, $_option);
+
+		$force_admin = $_option['force_admin'];
 
 		$log_meta =
 		[
@@ -535,8 +538,11 @@ class travel
 		{
 			if(!$city || !in_array(T_($city), self::group_active_city()))
 			{
-				\dash\notif::error(_("Invalid city"), 'city');
-				return false;
+				if(!$force_admin)
+				{
+					\dash\notif::error(_("Invalid city"), 'city');
+					return false;
+				}
 			}
 		}
 		else
@@ -577,8 +583,16 @@ class travel
 			$enddate = date("Y-m-d", strtotime($enddate));
 		}
 
+		$status = \dash\app::request('status');
+		if($status && !in_array($status, ['awaiting','spam','cancel','reject','review','notanswer','queue','gone','delete','admincancel','draft']))
+		{
+			\dash\notif::error(T_("Invalid status"));
+			return false;
+		}
+
 		$args              = [];
 		$args['place']     = $city;
+		$args['status']    = $status;
 		$args['startdate'] = $startdate;
 		$args['enddate']   = $enddate;
 
@@ -597,7 +611,8 @@ class travel
 	{
 		$default_option =
 		[
-			'debug' => true,
+			'debug'       => true,
+			'force_admin' => false,
 		];
 
 		if(!is_array($_option))
@@ -606,6 +621,8 @@ class travel
 		}
 
 		$_option = array_merge($default_option, $_option);
+
+		$force_admin = $_option['force_admin'];
 
 		\dash\app::variable($_args);
 
@@ -633,16 +650,20 @@ class travel
 			return false;
 		}
 
-		$check_duplicate_travel = \lib\db\travels::get(['user_id' => \dash\user::id(), 'type' => \dash\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
-		if(isset($check_duplicate_travel['id']))
+		if(!$force_admin)
 		{
-			if(isset($check_duplicate_travel['status']) && $check_duplicate_travel['status'] === 'draft')
+			$check_duplicate_travel = \lib\db\travels::get(['user_id' => \dash\user::id(), 'type' => \dash\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
+			if(isset($check_duplicate_travel['id']))
 			{
-				\dash\redirect::to(\dash\url::here(). '/trip/profile?trip='. $check_duplicate_travel['id']);
+				if(isset($check_duplicate_travel['status']) && $check_duplicate_travel['status'] === 'draft')
+				{
+					\dash\redirect::to(\dash\url::here(). '/trip/profile?trip='. $check_duplicate_travel['id']);
+				}
+
+				\dash\notif::error(T_("You signup to this trip before, please wait for checking status of that trip"));
+				return false;
 			}
 
-			\dash\notif::error(T_("You signup to this trip before, please wait for checking status of that trip"));
-			return false;
 		}
 
 		if(!isset($args['status']) || (isset($args['status']) && !$args['status']))
@@ -650,7 +671,33 @@ class travel
 			$args['status']  = 'draft';
 		}
 
-		$args['user_id']     = \dash\user::id();
+		// $args['user_id']     = \dash\user::id();
+		if(!$force_admin)
+		{
+			$args['user_id']     = \dash\user::id();
+		}
+		else
+		{
+			$mobile = \dash\app::request('mobile');
+			$mobile = \dash\utility\filter::mobile($mobile);
+			if(!$mobile)
+			{
+				\dash\notif::error(T_("Mobile is required"), 'mobile');
+				return false;
+			}
+
+			$user_id = \dash\db\users::get_by_mobile($mobile);
+			if(isset($user_id['id']))
+			{
+				$args['user_id']     = $user_id['id'];
+			}
+			else
+			{
+				$args['user_id']     = \dash\db\users::signup(['mobile' => $mobile]);
+			}
+		}
+
+
 		$args['type']        = \dash\app::request('type');
 
 		$travel_id = \lib\db\travels::insert($args);

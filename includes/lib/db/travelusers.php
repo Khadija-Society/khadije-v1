@@ -16,6 +16,11 @@ class travelusers
 
 	public static function get_travel_child($_travel_id)
 	{
+		if(!$_travel_id || !is_numeric($_travel_id))
+		{
+			return [];
+		}
+
 		$query =
 		"
 			SELECT
