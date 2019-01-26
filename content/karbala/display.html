@@ -40,13 +40,13 @@
 
    <div class="f">
 
-    <div class="c6 s12 pRa5">{{block ('icity') }}</div>
-    <div class="c6 s12">{{block ('iMobileKarabala') }}</div>
+    <div class="c4 pRa5 s12">{{block ('iMobileKarabala') }}</div>
+    <div class="c4 pRa5 s12 ">{{block ('iPhone') }}</div>
+    <div class="c4 pRa5 s12 pRa5">{{block ('icity') }}</div>
    </div>
 
    <div class="f">
-    <div class="c8 s12 pRa5">{{block ('iAddress') }}</div>
-    <div class="c4 s12 ">{{block ('iPhone') }}</div>
+    <div class="c12 s12 pRa5">{{block ('iAddress') }}</div>
    </div>
    <div class="msg danger2 mT10">
 
@@ -72,7 +72,7 @@
 {%block iname%}
 <label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{userdetail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{userdetail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title2='{%trans "Enter a valid name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
@@ -80,7 +80,7 @@
 {%block ifamily%}
 <label for="lastName">{%trans "Last name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{userdetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
+  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{userdetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title2='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
@@ -88,7 +88,7 @@
 {%block ifather%}
 <label for="father">{%trans "Father name"%}</label>
 <div class="input">
-  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%} *' value="{{userdetail.father}}" maxlength='50'>
+  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%}' value="{{userdetail.father}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -214,7 +214,7 @@
 
 {%block iAddress%}
 <label for='fhomeaddress'>{%trans "Address"%}</label>
-<textarea name="homeaddress" rows="1" placeholder='{%trans "Address"%}' class="txt" id="fhomeaddress">{{userdetail.homeaddress}}</textarea>
+<textarea name="homeaddress" rows="2" placeholder='{%trans "Address"%}' class="txt" id="fhomeaddress">{{userdetail.homeaddress}}</textarea>
 {%endblock%}
 
 {%block iWorkAddress%}
@@ -232,7 +232,7 @@
 
 
 {%block iMobileKarabala%}
-<label for="mobile">{%trans "Mobile"%} <small class="fc-red">* {%trans "Required"%}</small></label>
+<label for="mobile">{%trans "Mobile"%} <small>۱۰ رقمی</small> <small class="fc-red">* {%trans "Required"%}</small></label>
 <div class="input ltr">
   <input type="tel" name="mobile" id="mobile" placeholder='{%trans "Like"%} 09121234567' value="{{userdetail.mobile}}" maxlength='50' required>
 </div>
@@ -258,7 +258,7 @@
 {%block iAvatar%}
 <div class="input preview">
  <input type="file" accept="image/gif, image/jpeg, image/png" name="avatar" id="avatar1" data-preview data-max="500">
- <label for="avatar1" title="Simple Title">
+ <label for="avatar1" title2="Simple Title">
     {%if userdetail.avatar%}<img src="{{userdetail.avatar}}">{%endif%}
  </label>
 </div>
@@ -268,7 +268,7 @@
 {%block iNationalthumb%}
 <div class="input preview">
  <input type="file" accept="image/gif, image/jpeg, image/png" name="nationalthumb" id="nationalthumb" data-preview data-max="500">
- <label for="nationalthumb" title="Simple Title">
+ <label for="nationalthumb" title2="Simple Title">
     {%if userdetail.nationalthumb%}<img src="{{userdetail.nationalthumb}}">{%endif%}
  </label>
 </div>
@@ -278,7 +278,7 @@
 {%block iShthumb%}
 <div class="input preview">
  <input type="file" accept="image/gif, image/jpeg, image/png" name="shthumb" id="shthumb" data-preview data-max="500">
- <label for="shthumb" title="Simple Title">
+ <label for="shthumb" title2="Simple Title">
     {%if userdetail.shthumb%}<img src="{{userdetail.shthumb}}">{%endif%}
  </label>
 </div>

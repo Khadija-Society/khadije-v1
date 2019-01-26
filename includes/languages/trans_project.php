@@ -25,6 +25,30 @@ class twigTransTerms
 	echo T_("I am sympathetic");                                                      // Line 35
 	echo T_("People who sympathetic with this person");                               // Line 45
 
+	//----------------------------------------content_cp/userkarbala/home/display.html
+	echo T_("Search");                                                                // Line 45
+	echo T_("Gender");                                                                // Line 115
+	echo T_("Birthday");                                                              // Line 102
+	echo T_("Firstname");                                                             // Line 60
+	echo T_("Lastname");                                                              // Line 61
+	echo T_("Nationalcode");                                                          // Line 7
+	echo T_("Father");                                                                // Line 121
+	echo T_("Province");                                                              // Line 154
+	echo T_("City");                                                                  // Line 165
+	echo T_("Address");                                                               // Line 206
+	echo T_("Phone");                                                                 // Line 225
+	echo T_("Display name");                                                          // Line 68
+	echo T_("Married");                                                               // Line 131
+	echo T_("Clear filters");                                                         // Line 142
+	echo T_("Result not found!");                                                     // Line 141
+	echo T_("Search with new keywords.");                                             // Line 141
+	echo T_("Hi!");                                                                   // Line 150
+	echo T_("Try to start with add new user!");                                       // Line 150
+	echo T_("All :Members");                                                          // Line 160
+	echo T_(":Experts");                                                              // Line 169
+	echo T_(":Teachers");                                                             // Line 179
+	echo T_("Students");                                                              // Line 190
+
 	//-----------------------------------------content_cp/thankyoumessage/display.html
 	echo T_("Message text");                                                          // Line 25
 	echo T_("Save");                                                                  // Line 103
@@ -34,7 +58,6 @@ class twigTransTerms
 	echo T_("Send thankyou message?");                                                // Line 51
 
 	//---------------------------------------content_cp/admincontact/home/display.html
-	echo T_("Search");                                                                // Line 45
 	echo T_("Author");                                                                // Line 12
 	echo T_("Detail");                                                                // Line 55
 	echo T_("Comment");                                                               // Line 123
@@ -48,9 +71,6 @@ class twigTransTerms
 	echo T_("Trash");                                                                 // Line 55
 	echo T_("Spam");                                                                  // Line 38
 	echo T_("Created on");                                                            // Line 113
-	echo T_("Clear filters");                                                         // Line 142
-	echo T_("Result not found!");                                                     // Line 141
-	echo T_("Search with new keywords.");                                             // Line 141
 	echo T_("No record exist!");                                                      // Line 148
 
 	//---------------------------------------content_cp/admincontact/edit/display.html
@@ -108,12 +128,6 @@ class twigTransTerms
 	echo T_("Password is not set!");                                                  // Line 113
 	echo T_("Two step verification in enabled");                                      // Line 114
 	echo T_("Two step verification in disable");                                      // Line 114
-	echo T_("Hi!");                                                                   // Line 150
-	echo T_("Try to start with add new user!");                                       // Line 150
-	echo T_("All :Members");                                                          // Line 160
-	echo T_(":Experts");                                                              // Line 169
-	echo T_(":Teachers");                                                             // Line 179
-	echo T_("Students");                                                              // Line 190
 
 	//-------------------------------------------------content_cp/service/display.html
 	echo T_("Search in services");                                                    // Line 44
@@ -232,13 +246,11 @@ class twigTransTerms
 	echo T_("Rule");                                                                  // Line 14
 	echo T_("Write place of festival");                                               // Line 74
 	echo T_("Write award of festival");                                               // Line 79
-	echo T_("Phone");                                                                 // Line 225
 	echo T_("Managment");                                                             // Line 86
 	echo T_("Phone number");                                                          // Line 98
 	echo T_("Enter a valid phone number");                                            // Line 98
 	echo T_("Secretariat");                                                           // Line 91
 	echo T_("Public relations");                                                      // Line 96
-	echo T_("Address");                                                               // Line 206
 	echo T_("Festival address");                                                      // Line 107
 	echo T_("Address send");                                                          // Line 111
 	echo T_("Write address1 of festival");                                            // Line 112
@@ -442,20 +454,15 @@ class twigTransTerms
 	echo T_("Search in trips");                                                       // Line 41
 	echo T_("ID");                                                                    // Line 54
 	echo T_("First name");                                                            // Line 149
-	echo T_("Gender");                                                                // Line 115
 	echo T_("Birthdate");                                                             // Line 57
-	echo T_("City");                                                                  // Line 165
 	echo T_("Partner");                                                               // Line 60
 	echo T_("Total Request");                                                         // Line 124
 
 	//---------------------------------------------------content_cp/trip/tripView.html
-	echo T_("Birthday");                                                              // Line 102
 	echo T_("Father name");                                                           // Line 80
-	echo T_("Nationalcode");                                                          // Line 7
 	echo T_("Last modified");                                                         // Line 18
 	echo T_("Reserve date");                                                          // Line 33
 	echo T_("List of trip partner");                                                  // Line 182
-	echo T_("Father");                                                                // Line 121
 	echo T_("Marital");                                                               // Line 127
 	echo T_("Travel");                                                                // Line 125
 	echo T_("No partner set");                                                        // Line 235
@@ -479,12 +486,10 @@ class twigTransTerms
 	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 72
 	echo T_("Like 09120123456");                                                      // Line 88
 	echo T_("10 digit national code");                                                // Line 96
-	echo T_("Married");                                                               // Line 131
 	echo T_("Single");                                                                // Line 130
 	echo T_("Arabic Language");                                                       // Line 137
 	echo T_("Nesbat");                                                                // Line 198
 	echo T_("Country");                                                               // Line 323
-	echo T_("Province");                                                              // Line 154
 	echo T_("Zip code");                                                              // Line 178
 	echo T_("Passport id");                                                           // Line 188
 	echo T_("Passport expire date");                                                  // Line 196
