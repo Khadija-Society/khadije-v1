@@ -72,9 +72,32 @@ class karbalausers
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function search()
+	public static function search($_string = null, $_option = [])
 	{
-		return \dash\db\config::public_search('karbalausers', ...func_get_args());
+		$default_option =
+		[
+			'search_field' =>
+			"
+				(
+					karbalausers.mobile = '__string__' OR
+					karbalausers.nationalcode = '__string__' OR
+					karbalausers.phone = '__string__' OR
+					karbalausers.firstname = '__string__' OR
+					karbalausers.lastname = '__string__%' OR
+					karbalausers.displayname = '__string__%'
+				)
+			"
+		];
+
+		if(!is_array($_option))
+		{
+			$_option = [];
+		}
+
+		$_option = array_merge($default_option, $_option);
+
+		$result = \dash\db\config::public_search('karbalausers', $_string, $_option);
+		return $result;
 	}
 
 

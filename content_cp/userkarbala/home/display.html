@@ -55,18 +55,19 @@
       <tr>
         <th>#</th>
         <th>{%trans "Mobile"%}</th>
-        <th>{%trans "Gender"%}</th>
-        <th>{%trans "Birthday"%}</th>
         <th>{%trans "Firstname"%}</th>
         <th>{%trans "Lastname"%}</th>
         <th>{%trans "Nationalcode"%}</th>
         <th>{%trans "Father"%}</th>
+        <th>{%trans "Gender"%}</th>
+        <th>{%trans "Married"%}</th>
+        <th>{%trans "Birthday"%}</th>
         <th>{%trans "Province"%}</th>
         <th>{%trans "City"%}</th>
         <th>{%trans "Address"%}</th>
         <th>{%trans "Phone"%}</th>
-        <th>{%trans "Display name"%}</th>
-        <th>{%trans "Married"%}</th>
+
+        <th>{%trans "Date created"%}</th>
 
       </tr>
     </thead>
@@ -76,6 +77,7 @@
         <td>{{value.id | fitNumber}}</td>
         <td>{{value.mobile | fitNumber('mobile')}}</td>
         <td>{%set mygender = value.gender | capitalize%}{%trans mygender%}</td>
+        <td>{%set mymarried = value.married | capitalize%}{%trans mymarried%}</td>
         <td>{{value.birthday | dt(true)}}</td>
         <td>{{value.firstname}}</td>
         <td>{{value.lastname}}</td>
@@ -85,8 +87,8 @@
         <td>{{value.city}}</td>
         <td>{{value.homeaddress}}</td>
         <td>{{value.phone | fitNumber}}</td>
-        <td>{{value.displayname}}</td>
-        <td>{%set mymarried = value.married | capitalize%}{%trans mymarried%}</td>
+        <td>{{value.datecreated | dt(true) }}</td>
+
       </tr>
       {%endfor%}
     </tbody>
