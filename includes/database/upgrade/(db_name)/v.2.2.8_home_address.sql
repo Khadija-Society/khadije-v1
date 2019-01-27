@@ -1,0 +1,3 @@
+ALTER TABLE `karbalausers` CHANGE `father` `father` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
+ALTER TABLE `karbalausers` CHANGE `homeaddress` `homeaddress` VARCHAR(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
+ALTER TABLE `karbalausers` CHANGE `workaddress` `workaddress` VARCHAR(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
