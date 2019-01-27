@@ -30,10 +30,22 @@
 
   {%if perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
   {%if perm('cpAddNewTrip')%}<div class="c3 s6">{{block("bAddNewTrip")}}</div>{%endif%}
+  {%if perm('cpKarbalaUsers')%}<div class="c3 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
 
 </div>
 {%endblock%}
 
+
+
+
+{%block bKarbalaUsers%}
+<a class="dcard x1" href='{{url.here}}/userkarbala'>
+ <div class="statistic">
+  <div class="value"><i class="sf-television-tv"></i></div>
+  <div class="label">{%trans "Signup karbala"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block bAddNewTrip%}
 <a class="dcard x1" href='{{url.here}}/trip/add'>

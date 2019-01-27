@@ -474,7 +474,24 @@ class karbalauser
 
 		if($id)
 		{
-			\dash\log::set('karbalaUserSignup', ['code' => $id]);
+			if(isset($args['mobile']) && \dash\utility\filter::mobile($args['mobile']))
+			{
+				$is_user_signup = \dash\db\users::get_by_mobile($args['mobile']);
+				$user_id = null;
+				if(isset($is_user_signup['id']))
+				{
+					$user_id = $is_user_signup['id'];
+				}
+				else
+				{
+					$user_id = \dash\db\users::signup($args);
+				}
+				\dash\log::set('karbalaUserSignup', ['code' => $id, 'to' => $user_id]);
+			}
+			else
+			{
+				\dash\log::set('karbalaUserSignupWithoutmobile', ['code' => $id]);
+			}
 		}
 
 		return true;
