@@ -10,7 +10,10 @@ class android
 
 		self::master_detail($detail);
 
+
 		self::static_page($detail);
+
+		self::transalate($detail);
 
 		self::navigation($detail);
 
@@ -33,6 +36,15 @@ class android
 		$detail['desc']                        = T_(\dash\option::config('site','desc'));
 		$detail['logo']                        = \dash\url::static(). '/images/logo.png';
 
+	}
+
+
+	private static function transalate(&$detail)
+	{
+		$detail['transalate']               = [];
+		$detail['transalate']['version']    = T_("Version");
+		$detail['transalate']['changelang'] = T_("Change language");
+		$detail['transalate']['close']      = T_("Close");
 	}
 
 
