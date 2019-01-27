@@ -11,6 +11,11 @@ class view
 
 		\dash\data::userdetail(\dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]));
 
+		if(isset($_SESSION['NEW_KARBALA_SIGNUP']))
+		{
+			\dash\data::newKarbalaSignup(true);
+			$_SESSION['NEW_KARBALA_SIGNUP'] = null;
+		}
 
 		self::static_var();
 

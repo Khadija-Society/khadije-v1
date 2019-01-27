@@ -38,6 +38,7 @@ class model
 		if(\dash\engine\process::status())
 		{
 			\dash\notif::ok(T_("Your signup complete"));
+			$_SESSION['NEW_KARBALA_SIGNUP'] = true;
 			\dash\redirect::to(\dash\url::here(). '/karbala');
 		}
 
