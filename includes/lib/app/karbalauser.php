@@ -504,6 +504,11 @@ class karbalauser
 
 		if($id)
 		{
+			if((intval($id) % 1000 ) === 0 )
+			{
+				\dash\log::set('karbalaSignupCounter', ['countall' => $id]);
+			}
+
 			if(isset($args['mobile']) && \dash\utility\filter::mobile($args['mobile']))
 			{
 				$is_user_signup = \dash\db\users::get_by_mobile($args['mobile']);
