@@ -462,7 +462,7 @@ class karbalauser
 			$check_duplicate = \lib\db\karbalausers::get($check_duplicate);
 			if(isset($check_duplicate['id']))
 			{
-				\dash\notif::error(T_("This users signup before"), 'nationalcode');
+				\dash\notif::error("ثبت‌نام با این کد‌ملی قبلا با موفقیت انجام شده است. لطفا منتظر نتایج قرعه کشی باشید", 'nationalcode');
 				return false;
 			}
 		}
