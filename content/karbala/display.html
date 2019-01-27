@@ -90,9 +90,9 @@
 
 
 {%block ifather%}
-<label for="father">{%trans "Father name"%}</label>
+<label for="father">{%trans "Father name"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%}' value="{{userdetail.father}}" maxlength='50'>
+  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%} *' value="{{userdetail.father}}" maxlength='50' required>
 </div>
 {%endblock%}
 
@@ -108,15 +108,15 @@
 {%block incode%}
 <label for="nationalcode">{%trans "National code"%} <small class="fc-red">* {%trans "Required"%}</small></label>
 <div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{userdetail.nationalcode}}" min=1000000000 max='9999999999'>
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{userdetail.nationalcode}}" min=1000000000 max='9999999999' required>
 </div>
 {%endblock%}
 
 
 {%block ibirthday%}
-<label for="birthday">{%trans "Birthday"%}</label>
+<label for="birthday">{%trans "Birthday"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input ltr">
-  <input class="datepicker" type="text" name="birthday" id="birthday" required placeholder='{{"1369/04/15" | fitNumber}}' value="{{userdetail.birthday}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
+  <input class="datepicker" type="text" name="birthday" id="birthday" required placeholder='{{"1369/04/15" | fitNumber}} *' value="{{userdetail.birthday}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
 </div>
 {%endblock%}
 
@@ -177,7 +177,7 @@
 
 
 {%block icity%}
-<label for='city'>{%trans "City"%}</label>
+<label for='city'>{%trans "City"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
 <select name="city" class="ui dropdown select search" id="city">
   <option value="" readonly>{%trans "Select city"%}</option>
   {%for key, value in cityList%}
@@ -217,7 +217,7 @@
 
 
 {%block iAddress%}
-<label for='fhomeaddress'>{%trans "Address"%}</label>
+<label for='fhomeaddress'>{%trans "Address"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
 <textarea name="homeaddress" rows="2" placeholder='{%trans "Address"%}' class="txt" id="fhomeaddress">{{userdetail.homeaddress}}</textarea>
 {%endblock%}
 
@@ -243,9 +243,9 @@
 {%endblock%}
 
 {%block iPhone%}
-<label for="phone">{%trans "Phone"%}</label>
+<label for="phone">{%trans "Phone"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input ltr">
-  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 02536505460' value="{{userdetail.phone}}" maxlength='50'>
+  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 02536505460' value="{{userdetail.phone}}" maxlength='50' required>
 </div>
 {%endblock%}
 

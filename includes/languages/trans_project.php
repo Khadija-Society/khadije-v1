@@ -209,22 +209,22 @@ class twigTransTerms
 	echo T_("Without mobile");                                                        // Line 189
 
 	//-----------------------------------------------content_cp/myrequest/display.html
-	echo T_("CMS");                                                                   // Line 82
-	echo T_("Hadith");                                                                // Line 92
-	echo T_("Admin Contact");                                                         // Line 101
+	echo T_("CMS");                                                                   // Line 94
+	echo T_("Hadith");                                                                // Line 104
+	echo T_("Admin Contact");                                                         // Line 113
 	echo T_("Report");                                                                // Line 40
-	echo T_("Home page number");                                                      // Line 120
+	echo T_("Home page number");                                                      // Line 132
 	echo T_("Delneveshte");                                                           // Line 15
-	echo T_("Send SMS");                                                              // Line 139
+	echo T_("Send SMS");                                                              // Line 151
 	echo T_("Representation");                                                        // Line 34
 	echo T_("Health Service");                                                        // Line 43
-	echo T_("Consulting");                                                            // Line 97
-	echo T_("SMS Template");                                                          // Line 175
-	echo T_("Donate product list");                                                   // Line 186
-	echo T_("Donate list");                                                           // Line 196
-	echo T_("Group trip request");                                                    // Line 206
-	echo T_("Family trip request");                                                   // Line 216
-	echo T_("request service list");                                                  // Line 226
+	echo T_("Consulting");                                                            // Line 105
+	echo T_("SMS Template");                                                          // Line 187
+	echo T_("Donate product list");                                                   // Line 198
+	echo T_("Donate list");                                                           // Line 208
+	echo T_("Group trip request");                                                    // Line 218
+	echo T_("Family trip request");                                                   // Line 228
+	echo T_("request service list");                                                  // Line 238
 	echo T_("National code");                                                         // Line 94
 
 	//------------------------------------content_cp/festival/mediasupporter/list.html
@@ -432,7 +432,7 @@ class twigTransTerms
 	//------------------------------------------------content_cp/trip/add/display.html
 	echo T_("Add new group trip");                                                    // Line 11
 	echo T_("Mobile for admin of this trip");                                         // Line 14
-	echo T_("Required");                                                              // Line 235
+	echo T_("Required");                                                              // Line 239
 	echo T_("Select the travel place");                                               // Line 17
 
 	//--------------------------------------------content_cp/trip/options/display.html
@@ -503,20 +503,20 @@ class twigTransTerms
 
 	//---------------------------------------------------------content_cp/sidenav.html
 	echo T_("CRM");                                                                   // Line 2
-	echo T_("Delneveshteha");                                                         // Line 174
+	echo T_("Delneveshteha");                                                         // Line 177
 	echo T_("Financial");                                                             // Line 25
 	echo T_("Book transaction list");                                                 // Line 30
-	echo T_("Requests");                                                              // Line 154
+	echo T_("Requests");                                                              // Line 157
 	echo T_("Servants");                                                              // Line 45
 	echo T_("Group trip");                                                            // Line 48
 	echo T_("Family trip");                                                           // Line 51
 	echo T_("consulting service");                                                    // Line 54
-	echo T_("Health service");                                                        // Line 166
+	echo T_("Health service");                                                        // Line 169
 	echo T_("representation service");                                                // Line 60
 	echo T_("Meetings");                                                              // Line 72
 	echo T_("Meeting reports");                                                       // Line 75
 	echo T_("Add new report");                                                        // Line 78
-	echo T_("News");                                                                  // Line 137
+	echo T_("News");                                                                  // Line 140
 	echo T_("Categries");                                                             // Line 93
 	echo T_("Tags");                                                                  // Line 96
 	echo T_("Pages");                                                                 // Line 99
@@ -564,10 +564,11 @@ class twigTransTerms
 	echo T_("search");                                                                // Line 59
 
 	//----------------------------------------------------content_cp/home/display.html
-	echo T_("Add trip");                                                              // Line 42
+	echo T_("Signup karbala");                                                        // Line 45
+	echo T_("Add trip");                                                              // Line 54
 	echo T_("Festival");                                                              // Line 24
-	echo T_("Tankyou message");                                                       // Line 61
-	echo T_("Meeting");                                                               // Line 72
+	echo T_("Tankyou message");                                                       // Line 73
+	echo T_("Meeting");                                                               // Line 84
 
 	//------------------------------------------content_cp/representation/display.html
 	echo T_("Search in representation");                                              // Line 44
@@ -651,34 +652,34 @@ class twigTransTerms
 
 	//--------------------------------------------------------content/main/layout.html
 	echo T_("Khadije Wiki");                                                          // Line 63
-	echo T_("Services");                                                              // Line 163
-	echo T_("Self expressions");                                                      // Line 84
+	echo T_("Services");                                                              // Line 166
+	echo T_("Self expressions");                                                      // Line 87
 	echo T_("Donate");                                                                // Line 101
-	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 105
-	echo T_("User Panel");                                                            // Line 109
+	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 108
+	echo T_("User Panel");                                                            // Line 112
 	echo T_("Enter");                                                                 // Line 7
-	echo T_("Signup in Khadije charity");                                             // Line 114
-	echo T_("Enamad");                                                                // Line 122
-	echo T_("Mission");                                                               // Line 134
+	echo T_("Signup in Khadije charity");                                             // Line 117
+	echo T_("Enamad");                                                                // Line 125
+	echo T_("Mission");                                                               // Line 137
 	echo T_("Vision");                                                                // Line 310
 	echo T_("Honors");                                                                // Line 24
-	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 142
-	echo T_("Biography");                                                             // Line 144
-	echo T_("Bibliography");                                                          // Line 145
-	echo T_("Specialized sites");                                                     // Line 146
-	echo T_("My love story book");                                                    // Line 105
+	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 145
+	echo T_("Biography");                                                             // Line 147
+	echo T_("Bibliography");                                                          // Line 148
+	echo T_("Specialized sites");                                                     // Line 149
+	echo T_("My love story book");                                                    // Line 113
 	echo T_("Individual registration");                                               // Line 10
 	echo T_("Group registration");                                                    // Line 9
-	echo T_("Servants registration");                                                 // Line 62
-	echo T_("Consulting service");                                                    // Line 165
-	echo T_("Other services");                                                        // Line 171
-	echo T_("Deputy pilgrimage");                                                     // Line 82
-	echo T_("Balloting names");                                                       // Line 89
-	echo T_("Virtual pilgrimage");                                                    // Line 69
-	echo T_("Help");                                                                  // Line 182
+	echo T_("Servants registration");                                                 // Line 68
+	echo T_("Consulting service");                                                    // Line 168
+	echo T_("Other services");                                                        // Line 174
+	echo T_("Deputy pilgrimage");                                                     // Line 90
+	echo T_("Balloting names");                                                       // Line 97
+	echo T_("Virtual pilgrimage");                                                    // Line 75
+	echo T_("Help");                                                                  // Line 185
 	echo T_("Doners");                                                                // Line 34
-	echo T_("Other Languages");                                                       // Line 189
-	echo T_("Software Solution Designer");                                            // Line 197
+	echo T_("Other Languages");                                                       // Line 192
+	echo T_("Software Solution Designer");                                            // Line 200
 	echo T_("Developed by Ermile");                                                   // Line 50
 	echo T_("Soroush App");                                                           // Line 360
 
@@ -701,7 +702,7 @@ class twigTransTerms
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
 	echo T_("It is optional and depending on your intention can enter it");           // Line 195
-	echo T_("Pay Amount");                                                            // Line 132
+	echo T_("Pay Amount");                                                            // Line 140
 	echo T_("Rial");                                                                  // Line 205
 	echo T_("Amount of your donation");                                               // Line 204
 	echo T_("Total Pay Amount");                                                      // Line 206
@@ -755,7 +756,7 @@ class twigTransTerms
 	echo T_("Group trip signup");                                                     // Line 85
 	echo T_("Click to go to download page");                                          // Line 79
 	echo T_("Download love story book");                                              // Line 80
-	echo T_("Shahid Mahdi Imani");                                                    // Line 204
+	echo T_("Shahid Mahdi Imani");                                                    // Line 212
 	echo T_("Do you know?");                                                          // Line 80
 	echo T_("license and supporters");                                                // Line 133
 	echo T_("Certificate");                                                           // Line 138
@@ -788,7 +789,7 @@ class twigTransTerms
 	//----------------------------------------------------content/manager/display.html
 
 	//------------------------------------------------content/app/android/display.html
-	echo T_("Travel request");                                                        // Line 76
+	echo T_("Travel request");                                                        // Line 83
 	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 39
 	echo T_("You also partake in salawat");                                           // Line 41
 	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 43
@@ -796,23 +797,23 @@ class twigTransTerms
 	echo T_("and press here");                                                        // Line 43
 
 	//-------------------------------------------------------content/home/display.html
-	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 113
-	echo T_("Samte Khoda");                                                           // Line 115
-	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 123
-	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 123
-	echo T_("You can change amount of your donation");                                // Line 132
-	echo T_("Donate as anonymous");                                                   // Line 135
-	echo T_("Donate with register details");                                          // Line 140
-	echo T_("Latest News");                                                           // Line 152
-	echo T_("Archive");                                                               // Line 183
-	echo T_("Mr.Farahzad's statement");                                               // Line 198
-	echo T_("Contact with manager");                                                  // Line 210
-	echo T_("in Resalat bank of Iran");                                               // Line 219
-	echo T_("Card number");                                                           // Line 257
-	echo T_("Account number");                                                        // Line 260
-	echo T_("Iranian bank Shaba number");                                             // Line 263
-	echo T_("Tejarat bank");                                                          // Line 236
-	echo T_("Bank Melli Iran");                                                       // Line 253
+	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 121
+	echo T_("Samte Khoda");                                                           // Line 123
+	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 131
+	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 131
+	echo T_("You can change amount of your donation");                                // Line 140
+	echo T_("Donate as anonymous");                                                   // Line 143
+	echo T_("Donate with register details");                                          // Line 148
+	echo T_("Latest News");                                                           // Line 160
+	echo T_("Archive");                                                               // Line 191
+	echo T_("Mr.Farahzad's statement");                                               // Line 206
+	echo T_("Contact with manager");                                                  // Line 218
+	echo T_("in Resalat bank of Iran");                                               // Line 227
+	echo T_("Card number");                                                           // Line 265
+	echo T_("Account number");                                                        // Line 268
+	echo T_("Iranian bank Shaba number");                                             // Line 271
+	echo T_("Tejarat bank");                                                          // Line 244
+	echo T_("Bank Melli Iran");                                                       // Line 261
 
 	//-----------------------------------------------------content/health/display.html
 

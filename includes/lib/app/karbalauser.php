@@ -30,7 +30,7 @@ class karbalauser
 			return false;
 		}
 
-		if(\dash\app::isset_request('gender') && !$gender)
+		if(!$gender)
 		{
 			\dash\notif::error(T_("Plese set your gender"), 'gender');
 			return false;
@@ -54,8 +54,15 @@ class karbalauser
 		}
 
 		$birthday = \dash\app::request('birthday');
+		if(!$birthday)
+		{
+			\dash\notif::error(T_("Birthday is required"), 'birthday');
+			return false;
+		}
+
 		if(\dash\app::isset_request('birthday') && $birthday)
 		{
+
 
 			$birthday = \dash\date::birthdate($birthday, true);
 
@@ -121,6 +128,11 @@ class karbalauser
 
 
 		$father = \dash\app::request('father');
+		if(!$father)
+		{
+			\dash\notif::error(T_("Father name is required"), 'father');
+			return false;
+		}
 		if($father && mb_strlen($father) > 50)
 		{
 			\dash\notif::error(T_("Invalid arguments father"), 'father');
@@ -189,6 +201,12 @@ class karbalauser
 			return false;
 		}
 
+		if(!$homeaddress)
+		{
+			\dash\notif::error(T_("Address is required"), 'homeaddress');
+			return false;
+		}
+
 		$workaddress = \dash\app::request('workaddress');
 		if($workaddress && mb_strlen($workaddress) > 700)
 		{
@@ -207,6 +225,12 @@ class karbalauser
 		if(($phone && !is_numeric($phone)) || intval($phone) > 1E+10)
 		{
 			\dash\notif::error(T_("Invalid arguments phone"), 'phone');
+			return false;
+		}
+
+		if(!$phone)
+		{
+			\dash\notif::error(T_("Phone is required"), 'phone');
 			return false;
 		}
 
@@ -286,6 +310,12 @@ class karbalauser
 		if($city && !\dash\utility\location\cites::check($city))
 		{
 			\dash\notif::error(T_("Invalid city"), 'city');
+			return false;
+		}
+
+		if(!$city)
+		{
+			\dash\notif::error(T_("City is required"), 'city');
 			return false;
 		}
 
