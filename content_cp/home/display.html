@@ -30,7 +30,7 @@
 
   {%if perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
   {%if perm('cpAddNewTrip')%}<div class="c3 s6">{{block("bAddNewTrip")}}</div>{%endif%}
-  {%if perm('cpKarbalaUsers')%}<div class="c3 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
 
 </div>
 {%endblock%}
