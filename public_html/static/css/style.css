@@ -975,7 +975,7 @@ body[data-page="donate"] .wrapper .cbox.donateForm:before, body[data-page="app_d
 	background-image: url('../images/homepage-v3/sprite.png');
 	background-position: -950px -300px;
 }
-body[data-page="donate"] .wrapper .cbox.donateLists, body[data-page="app_donate"] .cbox.donateLists{{
+body[data-page="donate"] .wrapper .cbox.donateLists, body[data-page="app_donate"] .cbox.donateLists{
 	max-height: 600px;
 	overflow-y: auto;
 }
