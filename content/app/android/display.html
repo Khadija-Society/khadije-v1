@@ -3,9 +3,8 @@
 
 {%block body%}
 {%if hadithList%}
-       <div class="hadith msg"><span class="typed"></span>
+       <div class="hadith msg fs12"><span class="typed"></span>
         <div id="typed-strings" class="hide">
-
 {%for key, myHadith in hadithList%}
           <h4>{{myHadith.desc}}</h4>
 {%endfor%}
@@ -13,9 +12,18 @@
        </div>
 {%endif%}
 
-        <a href="{{url.kingdom}}/app/karbala" data-direct>
-          <img class="" src="https://khadije.com/files/1/503-b42df374abb06a9226db84212a3f3b5a.jpg">
-        </a>
+
+  <a href="{{url.kingdom}}/app/karbala" data-direct class="block">
+    <img class="block" src="https://khadije.com/files/1/503-b42df374abb06a9226db84212a3f3b5a.jpg">
+  </a>
+
+  <nav id="sHeaderNav" class="">
+    <div class="f headerLine">
+     <div class="donate sB2 c lightPulse">
+       <a href="{{url.here}}/app/donate" data-direct>{%trans "Donate"%}</a>
+      </div>
+    </div>
+  </nav>
 
   <section class="f justify-center picto fs07">
     <div class="c6">
@@ -24,24 +32,25 @@
         <h2>ثبت‌نام کربلا برنامه سمت خدا</h2>
       </a>
     </div>
-    {%if false%}
+
     <div class="c6">
-      <a href="{{url.here}}/trip" data-direct>
-        <div class="sprite-travel fix"></div>
-        <h2>{%trans "Travel request"%}</h2>
+      <a href="{{url.here}}/a/service" data-direct>
+        <div class="sprite-servants fix"></div>
+        <h2>{%trans "Servants registration"%}</h2>
       </a>
     </div>
-    {%endif%}
+
     <div class="c6">
       <a href="{{url.here}}/a/representation" data-direct>
         <div class="sprite-deputy fix"></div>
         <h2>{%trans "Deputy pilgrimage"%}</h2>
       </a>
     </div>
+
     <div class="c6">
-      <a href="{{url.here}}/a/service" data-direct>
-        <div class="sprite-servants fix"></div>
-        <h2>{%trans "Servants registration"%}</h2>
+      <a href="{{url.here}}/a/consulting" data-direct>
+        <div class="sprite-adminContact fix"></div>
+        <h2>{%trans "Consulting"%}</h2>
       </a>
     </div>
 

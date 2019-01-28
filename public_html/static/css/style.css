@@ -80,7 +80,9 @@ body{
 	font-size: 1.5rem;
 	font-weight:bold;
 	position: relative;
+	text-align: center;
 	user-select: none;
+	max-width: 150px!important;
 }
 .sB2 a{
 	color: #ccc;
