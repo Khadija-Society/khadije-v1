@@ -30,6 +30,7 @@ class TransStatic
 	echo T_("accept");
 	echo T_("reject");
 	echo T_("spam");
+	echo T_("cpUsersKarbalaView");
 	echo T_("cpSettingThankyouMessage");
 
 	echo T_("mashhad");

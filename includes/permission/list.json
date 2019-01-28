@@ -259,6 +259,11 @@
     "cat": "Festival",
     "require": []
   },
+  "cpUsersKarbalaView": {
+    "title": "cpUsersKarbalaView",
+    "cat": "Users",
+    "require": []
+  },
   "cpFestivalRefereeAdd": {
     "title": "cpFestivalRefereeAdd",
     "cat": "Festival",

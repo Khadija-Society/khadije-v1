@@ -182,7 +182,7 @@ class twigTransTerms
 	echo T_("Violence");                                                              // Line 229
 	echo T_("Pornography");                                                           // Line 230
 	echo T_("Other");                                                                 // Line 231
-	echo T_("Excerpt");                                                               // Line 247
+	echo T_("Excerpt");                                                               // Line 18
 	echo T_("Try to start with add new records!");                                    // Line 271
 	echo T_("Category icon");                                                         // Line 294
 	echo T_("Select category icon");                                                  // Line 298
@@ -572,6 +572,8 @@ class twigTransTerms
 	echo T_("SMS");                                                                   // Line 112
 	echo T_("Quick send");                                                            // Line 35
 
+	//------------------------------------addons/content_crm/member/notif/display.html
+
 	//------------------------------addons/content_crm/member/description/display.html
 	echo T_("Write your note about user.");                                           // Line 38
 	echo T_("Something like calls, favorites, hobbits, special approach or something else.");// Line 38
@@ -605,6 +607,7 @@ class twigTransTerms
 	echo T_("Ticket");                                                                // Line 226
 	echo T_("Security");                                                              // Line 23
 	echo T_("Address");                                                               // Line 51
+	echo T_("Notification");                                                          // Line 110
 
 	//--------------------------------addons/content_crm/member/education/display.html
 	echo T_("Education detail");                                                      // Line 15
@@ -756,7 +759,6 @@ class twigTransTerms
 
 	//----------------------------------------addons/content_crm/log/home/display.html
 	echo T_("Subdomain");                                                             // Line 104
-	echo T_("Notification");                                                          // Line 110
 	echo T_("Url");                                                                   // Line 114
 	echo T_("Send to");                                                               // Line 118
 	echo T_("Date created");                                                          // Line 137
