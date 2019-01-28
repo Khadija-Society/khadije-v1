@@ -102,7 +102,7 @@
 {%block body%}
 
 <header>
-  <a href="{{url.base}}" title='{%trans "Click and go to khadije site"%}'>
+  <a href="{%if isAndroid%}khadije://home{%else%}{{url.base}}{%endif%}" title='{%trans "Click and go to khadije site"%}'>
     <img src="{{url.static}}/images/logo/khadije.png" alt='{{site.title}}'>
     <h1>{{site.title}}</h1>
   </a>
