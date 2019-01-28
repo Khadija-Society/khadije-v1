@@ -90,7 +90,7 @@ class android
 
 		$detail['navigation'][] =
 		[
-			'title' => T_('Home'),
+			'title' => T_('Menu'),
 			'url'   => \dash\url::kingdom(). '/app/android',
 			'icon'  => 'home',
 		];
@@ -111,9 +111,9 @@ class android
 
 		$detail['navigation'][] =
 		[
-			'title' => T_('Setting'),
-			'url'   => 'setting',
-			'icon'  => 'seting',
+			'title' => T_('More'),
+			'url'   => 'more',
+			'icon'  => 'more',
 		];
 
 		// if(\dash\language::current() === 'fa')
@@ -144,8 +144,8 @@ class android
 	private static function app_version(&$detail)
 	{
 		$detail['app_version']                 = [];
-		$detail['app_version']['code']         = 1;
-		$detail['app_version']['title']        = '1.0';
+		$detail['app_version']['code']         = 22;
+		// $detail['app_version']['title']        = '1.0';
 		$detail['app_version']['content_text'] = null;
 		$detail['app_version']['auto_hide']    = false;
 	}
