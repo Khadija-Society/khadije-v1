@@ -34,6 +34,11 @@
         </div>
         <input type="hidden" name="username" value="">
         {%include display.hive%}
+
+        {%if isAndroid%}
+          <input type="hidden" name="isAndroid" value="1">
+        {%endif%}
+
         {{block ('iNiyat') }}
         {{block ('iAmount') }}
         {{block ('iWay') }}

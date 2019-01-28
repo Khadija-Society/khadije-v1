@@ -464,7 +464,7 @@ class donate
 
 			$auto_back = true;
 
-			if(\dash\request::is_android())
+			if(isset($_args['isAndroid']) && $_args['isAndroid'])
 			{
 				$auto_go   = false;
 				$auto_back = false;
