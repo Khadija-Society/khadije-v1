@@ -8,47 +8,41 @@
 
 <div class="f justify-center ">
  <div class="c9 s12">
-  <div class="f">
-    <div class="c8">
-
-    <div class="msg txtB txtC info2">
-      فرم ثبت‌نام در قرعه‌کشی کربلا  - برنامه تلویزیونی سمت خدا
-    </div>
-    <div class="msg">
-  همراه گرامی برنامه سمت خدا
-  ضمن تشکر از مراجعه جهت ثبت‌نام، همانطور که در برنامه به اطلاع رسید با توجه به کثرت تقاضا، امکان اعزام تمامی عزیزان مهیا نمی‌باشد، لذا از طریق قرعه‌کشی افراد انتخاب می‌شوند.
-    </div>
 
 
-      {%if newKarbalaSignup %}
-      <div class="msg success txtB txtC">
-  زائر گرامی
-  <br>
-  ثبت نام شما انجام شد
-  <br>
-  ثبت نام به منزله اعزام نمی باشد
-  <br>
-
-        شما هم می‌توانید در کمک به اعزام زائر اولی ها سهیم باشید
-        <br>
-
-        <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
-      </div>
-      {%endif%}
-
-    </div>
-
-    <div class="c">
-
-      <div class="dcard">
-       <div class="statistic sm teal">
-        <div class="label"> تعداد افراد ثبت‌نام شده تا کنون</div>
-        <div class="value counter">{{countSingupKarbala |fitNumber}}</div>
-       </div>
-      </div>
-
-    </div>
+  <div class="msg txtB txtC info2">
+    فرم ثبت‌نام در قرعه‌کشی کربلا  - برنامه تلویزیونی سمت خدا
   </div>
+
+  <div class="dcard">
+   <div class="statistic sm teal">
+    <div class="label"> تعداد افراد ثبت‌نام شده تاکنون</div>
+    <div class="value counter">{{countSingupKarbala |fitNumber}}</div>
+   </div>
+  </div>
+
+  <div class="msg">
+    همراه گرامی برنامه سمت خدا
+    ضمن تشکر از مراجعه جهت ثبت‌نام، همانطور که در برنامه به اطلاع رسید با توجه به کثرت تقاضا، امکان اعزام تمامی عزیزان مهیا نمی‌باشد، لذا از طریق قرعه‌کشی افراد انتخاب می‌شوند.
+  </div>
+
+
+  {%if newKarbalaSignup %}
+  <div class="msg success txtB txtC">
+    زائر گرامی
+    <br>
+    ثبت نام شما انجام شد
+    <br>
+    ثبت نام به منزله اعزام نمی باشد
+    <br>
+
+    شما هم می‌توانید در کمک به اعزام زائر اولی ها سهیم باشید
+    <br>
+
+    <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
+  </div>
+  {%endif%}
+
 
 
   <form class="" method="post" autocomplete="off">
