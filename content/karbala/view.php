@@ -17,6 +17,9 @@ class view
 			$_SESSION['NEW_KARBALA_SIGNUP'] = null;
 		}
 
+		$countSingupKarbala = \lib\db\karbalausers::get_last_id();
+		\dash\data::countSingupKarbala($countSingupKarbala);
+
 		self::static_var();
 
 	}

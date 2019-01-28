@@ -26,6 +26,13 @@ class karbalausers
 		return \dash\db\config::public_update('karbalausers', ...func_get_args());
 	}
 
+	public static function get_last_id()
+	{
+		$query = "SELECT karbalausers.id AS `id` FROM karbalausers ORDER BY karbalausers.id DESC LIMIT 1";
+		$result = \dash\db::get($query, 'id', true);
+		return intval($result);
+	}
+
 
 	/**
 	 * get productprice detail
