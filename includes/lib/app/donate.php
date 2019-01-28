@@ -453,7 +453,7 @@ class donate
 			}
 			else
 			{
-				$turn_back = \dash\url::this();
+				$turn_back = \dash\url::that();
 			}
 
 			$auto_go   = false;
