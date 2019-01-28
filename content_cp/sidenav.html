@@ -1,19 +1,4 @@
-  <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Dashboard" %}</span></a></li>
-  {%if perm('contentCrm')%}<li><a href="{{url.kingdom}}/crm">{% trans "CRM" %} <i class='floatRa mRa10 fc-mute sf-users'></i></a></li>{%endif%}
-
-{%if perm('cpHomePageNumber') or perm('cpHadith') %}
-  <li>
-    <a href="{{url.here}}/myhomepage"><i class='sf-home'></i> <span>{% trans "Homepage" %}</span></a>
-    <ul>
-{%if perm('cpHomePageNumber') %}
-      <li><a href="{{url.here}}/homepage"><i class='floatRa mRa10 fc-mute sf-cog'></i> <span>{%trans "Statistics"%}</span></a></li>
-{%endif%}
-{%if perm('cpHadith') %}
-      <li><a href="{{url.here}}/hadith"><i class='floatRa mRa10 fc-mute sf-list'></i> <span>{%trans "Hadith"%}</span></a></li>
-{%endif%}
-    </ul>
-  </li>
-{%endif%}
+  <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Control Panel" %}</span></a></li>
 
 
 {%if perm('cpDelneveshteView') %}
@@ -102,27 +87,19 @@
     </li>
 {%endif%}
 
-{%if perm('cpContactView') or perm('cpAdminContactView') or perm('cpCommentsView')%}
 
-    <li>
-      <a href="{{url.here}}/mycontact"><i class='sf-bell-o'></i> <span>{% trans "Contact" %}</span></a>
-      <ul>
-        {%if perm('cpCommentsView')%}
-          <li><a href="{{url.here}}/comments">{% trans "Comments" %} <i class='floatRa mRa10 fc-mute sf-comments'></i></a></li>
-        {%endif%}
 
-        {%if perm('cpContactView')%}
-          <li><a href="{{url.here}}/contact">{% trans "Contact US" %} <i class='floatRa mRa10 fc-mute sf-envelope-o'></i></a></li>
-        {%endif%}
-
-        {%if perm('cpAdminContactView')%}
-          <li><a href="{{url.here}}/admincontact">{% trans "Admin Contact" %} <i class='floatRa mRa10 fc-mute sf-user-secret'></i></a></li>
-        {%endif%}
-
-      </ul>
-    </li>
+{%if perm('cpHomePageNumber') or perm('cpHadith') %}
+  <li>
+    <a href="{{url.here}}/myhomepage"><i class='sf-home'></i> <span>{% trans "Homepage" %}</span></a>
+    <ul>
+{%if perm('cpHomePageNumber') %}
+      <li><a href="{{url.here}}/homepage"><i class='floatRa mRa10 fc-mute sf-cog'></i> <span>{%trans "Statistics"%}</span></a></li>
 {%endif%}
-
-
-<li><a data-direct href="{{url.kingdom}}/support"><i class='sf-life-ring'></i> <span>{% trans "Support" %}</span></a></li>
+{%if perm('cpHadith') %}
+      <li><a href="{{url.here}}/hadith"><i class='floatRa mRa10 fc-mute sf-list'></i> <span>{%trans "Hadith"%}</span></a></li>
+{%endif%}
+    </ul>
+  </li>
+{%endif%}
 
