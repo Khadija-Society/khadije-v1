@@ -23,7 +23,7 @@ self::$social['telegram']['bot']        = 'KhadijeBot';
 self::$social['telegram']['hookFolder'] = 'SalamBarKhadije';
 self::$social['telegram']['token']      = '705945066:AAGU-41_2IGizkZFfozlCP7CGZAJ0MLFa7M';
 self::$social['telegram']['debug']      = true;
-self::$social['telegram']['hidden']     = true;
+// self::$social['telegram']['hidden']     = true;
 // enable tunnel
 self::$social['telegram']['tunnel']     = true;
 
