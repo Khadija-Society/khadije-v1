@@ -42,7 +42,14 @@ function fixedHeader()
   $(window).on("scroll", function()
   {
     var myScroll = $("html").scrollTop() || $("body").scrollTop();
-    $('body').toggleClass("down", (myScroll > 200));
+    if($("body").attr('data-page') === 'app_android')
+    {
+      $('body').toggleClass("down", (myScroll > 350));
+    }
+    else
+    {
+      $('body').toggleClass("down", (myScroll > 200));
+    }
   });
 
   // $(window).on("touchmove", function()
