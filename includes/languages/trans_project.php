@@ -431,7 +431,7 @@ class twigTransTerms
 	//------------------------------------------------content_cp/trip/add/display.html
 	echo T_("Add new group trip");                                                    // Line 11
 	echo T_("Mobile for admin of this trip");                                         // Line 14
-	echo T_("Required");                                                              // Line 273
+	echo T_("Required");                                                              // Line 267
 	echo T_("Select the travel place");                                               // Line 17
 
 	//--------------------------------------------content_cp/trip/options/display.html

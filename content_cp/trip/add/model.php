@@ -10,6 +10,13 @@ class model
 
 		$post           = [];
 		$post['city']   = \dash\request::post('city');
+
+		if(!$post['city'])
+		{
+			\dash\notif::error(T_("Please select city"));
+			return false;
+		}
+
 		$post['status'] = 'awaiting';
 		$post['type']   = 'group';
 		$post['mobile'] = \dash\request::post('mobile');

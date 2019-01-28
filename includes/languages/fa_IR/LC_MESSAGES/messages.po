@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-01-28 10:57+0330\n"
-"PO-Revision-Date: 2019-01-28 10:57+0330\n"
+"POT-Creation-Date: 2019-01-28 11:33+0330\n"
+"PO-Revision-Date: 2019-01-28 11:33+0330\n"
 "Last-Translator: Javad Kakroudi <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -13265,7 +13265,7 @@ msgstr "شوهر"
 
 #: khadije/content_a/group/request/model.php:20
 #: khadije/content_a/trip/request/model.php:20
-#: khadije/content_cp/trip/add/model.php:21
+#: khadije/content_cp/trip/add/model.php:28
 msgid "Your Travel was saved"
 msgstr "درخواست تشرف شما با موفقیت ذخیره شد"
 
@@ -14365,6 +14365,10 @@ msgstr "پیام ذخیره شد"
 #: khadije/content_cp/thankyoumessage/view.php:9
 msgid "Thank you message"
 msgstr "پیام تشکر"
+
+#: khadije/content_cp/trip/add/model.php:16
+msgid "Please select city"
+msgstr "لطفا شهر را انتخاب کنید"
 
 #: khadije/content_cp/trip/add/view.php:9
 msgid "Add new trip"
