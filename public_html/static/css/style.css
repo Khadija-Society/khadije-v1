@@ -87,6 +87,7 @@ body{
 .sB2 a{
 	color: #ccc;
 	transition:0.3s color;
+	display: block;
 }
 .sB2 a:hover{
 	color: #fff
