@@ -37,7 +37,8 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok(T_("Your signup complete"));
+			\dash\notif::ok('ثبت ‌نام شما با موفقیت انجام شد.'. ' '. 'لطفا منتظر اعلام نتایج قرعه‌کشی بمانید', ['alerty' => true]);
+
 			$_SESSION['NEW_KARBALA_SIGNUP'] = true;
 			\dash\redirect::to(\dash\url::here(). '/karbala');
 		}
