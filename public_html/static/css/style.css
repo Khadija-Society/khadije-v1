@@ -943,26 +943,26 @@ iframe.gMap{
 }
 
 /* donate*/
-body[data-page="donate"]{
+body[data-page="donate"], body[data-page="app_donate"]{
 	background-image: url('../images/homepage-v3/pattern-body2.png');
 }
-body[data-page="donate"] .wrapper{
+body[data-page="donate"] .wrapper, body[data-page="app_donate"]{
 	background-color: transparent;
 }
-body[data-page="donate"] #sHeaderNav .headerLine{
+body[data-page="donate"] #sHeaderNav .headerLine, body[data-page="app_donate"] #sHeaderNav .headerLine{
 	background-color: transparent;
 }
-body[data-page="donate"] .wrapper .cbox{
+body[data-page="donate"] .wrapper .cbox, body[data-page="app_donate"] .cbox{
 	border: 1px solid #00aaaa;
 	margin-top: 60px;
 	padding-top: 20px;
 }
-body[data-page="donate"] .wrapper .cbox h2{
+body[data-page="donate"] .wrapper .cbox h2, body[data-page="app_donate"] .cbox h2{
 	font-size: 1.3em;
 	margin-bottom: 1em;
 }
 
-body[data-page="donate"] .wrapper .cbox.donateForm:before{
+body[data-page="donate"] .wrapper .cbox.donateForm:before, body[data-page="app_donate"] .cbox.donateForm:before{
 	content: "";
 	height:86px;
 	width: 280px;
@@ -975,7 +975,7 @@ body[data-page="donate"] .wrapper .cbox.donateForm:before{
 	background-image: url('../images/homepage-v3/sprite.png');
 	background-position: -950px -300px;
 }
-body[data-page="donate"] .wrapper .cbox.donateLists{
+body[data-page="donate"] .wrapper .cbox.donateLists, body[data-page="app_donate"] .cbox.donateLists{{
 	max-height: 600px;
 	overflow-y: auto;
 }
