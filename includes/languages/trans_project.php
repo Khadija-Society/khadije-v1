@@ -214,7 +214,7 @@ class twigTransTerms
 	echo T_("Admin Contact");                                                         // Line 113
 	echo T_("Report");                                                                // Line 40
 	echo T_("Home page number");                                                      // Line 132
-	echo T_("Delneveshte");                                                           // Line 15
+	echo T_("Delneveshte");                                                           // Line 16
 	echo T_("Send SMS");                                                              // Line 151
 	echo T_("Representation");                                                        // Line 34
 	echo T_("Health Service");                                                        // Line 43
@@ -321,7 +321,7 @@ class twigTransTerms
 	//------------------------------------------------content_cp/festival/sidenav.html
 	echo T_("Dashboard");                                                             // Line 5
 	echo T_("Homepage");                                                              // Line 293
-	echo T_("Statistics");                                                            // Line 9
+	echo T_("Statistics");                                                            // Line 97
 
 	//-------------------------------------content_cp/festival/usercourse/display.html
 	echo T_("User");                                                                  // Line 10
@@ -501,28 +501,24 @@ class twigTransTerms
 	echo T_("Edit partner");                                                          // Line 605
 
 	//---------------------------------------------------------content_cp/sidenav.html
-	echo T_("CRM");                                                                   // Line 2
+	echo T_("Control Panel");                                                         // Line 1
 	echo T_("Delneveshteha");                                                         // Line 177
-	echo T_("Financial");                                                             // Line 25
+	echo T_("Financial");                                                             // Line 10
 	echo T_("Book transaction list");                                                 // Line 30
 	echo T_("Requests");                                                              // Line 157
-	echo T_("Servants");                                                              // Line 45
-	echo T_("Group trip");                                                            // Line 48
-	echo T_("Family trip");                                                           // Line 51
-	echo T_("consulting service");                                                    // Line 54
+	echo T_("Servants");                                                              // Line 30
+	echo T_("Group trip");                                                            // Line 33
+	echo T_("Family trip");                                                           // Line 36
+	echo T_("consulting service");                                                    // Line 39
 	echo T_("Health service");                                                        // Line 169
-	echo T_("representation service");                                                // Line 60
-	echo T_("Meetings");                                                              // Line 72
-	echo T_("Meeting reports");                                                       // Line 75
-	echo T_("Add new report");                                                        // Line 78
+	echo T_("representation service");                                                // Line 45
+	echo T_("Meetings");                                                              // Line 57
+	echo T_("Meeting reports");                                                       // Line 60
+	echo T_("Add new report");                                                        // Line 63
 	echo T_("News");                                                                  // Line 140
-	echo T_("Categries");                                                             // Line 93
-	echo T_("Tags");                                                                  // Line 96
-	echo T_("Pages");                                                                 // Line 99
-	echo T_("Contact");                                                               // Line 319
-	echo T_("Comments");                                                              // Line 111
-	echo T_("Contact US");                                                            // Line 115
-	echo T_("Support");                                                               // Line 17
+	echo T_("Categries");                                                             // Line 78
+	echo T_("Tags");                                                                  // Line 81
+	echo T_("Pages");                                                                 // Line 84
 
 	//--------------------------------------content_cp/familytrip/options/display.html
 	echo T_("Maximum partner count for qom");                                         // Line 57
@@ -662,6 +658,7 @@ class twigTransTerms
 	echo T_("Mission");                                                               // Line 137
 	echo T_("Vision");                                                                // Line 310
 	echo T_("Honors");                                                                // Line 24
+	echo T_("Contact");                                                               // Line 319
 	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 145
 	echo T_("Biography");                                                             // Line 147
 	echo T_("Bibliography");                                                          // Line 148
@@ -683,10 +680,10 @@ class twigTransTerms
 	echo T_("Soroush App");                                                           // Line 360
 
 	//--------------------------------------------------content/donate/donateForm.html
-	echo T_("List of last success donations of yours");                               // Line 74
-	echo T_("Your niyat is");                                                         // Line 76
+	echo T_("List of last success donations of yours");                               // Line 75
+	echo T_("Your niyat is");                                                         // Line 77
 	echo T_("Untitled");                                                              // Line 33
-	echo T_("Thanks");                                                                // Line 99
+	echo T_("Thanks");                                                                // Line 100
 	echo T_("Requested");                                                             // Line 118
 	echo T_("Your help");                                                             // Line 124
 	echo T_("Enter a valid number");                                                  // Line 124
@@ -694,16 +691,16 @@ class twigTransTerms
 	echo T_("Your name");                                                             // Line 151
 	echo T_("Enter a valid name");                                                    // Line 151
 	echo T_("Full name");                                                             // Line 159
-	echo T_("Your Name");                                                             // Line 164
-	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 164
-	echo T_("Your mobile number");                                                    // Line 175
-	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 175
+	echo T_("Your Name");                                                             // Line 165
+	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 165
+	echo T_("Your mobile number");                                                    // Line 176
+	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 176
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
-	echo T_("It is optional and depending on your intention can enter it");           // Line 195
+	echo T_("It is optional and depending on your intention can enter it");           // Line 196
 	echo T_("Pay Amount");                                                            // Line 143
-	echo T_("Rial");                                                                  // Line 205
-	echo T_("Amount of your donation");                                               // Line 204
+	echo T_("Rial");                                                                  // Line 206
+	echo T_("Amount of your donation");                                               // Line 205
 	echo T_("Total Pay Amount");                                                      // Line 206
 	echo T_("Show in public doners list?");                                           // Line 214
 	echo T_("Check doners list");                                                     // Line 214
@@ -788,7 +785,6 @@ class twigTransTerms
 	//----------------------------------------------------content/manager/display.html
 
 	//------------------------------------------------content/app/android/display.html
-	echo T_("Travel request");                                                        // Line 86
 	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 42
 	echo T_("You also partake in salawat");                                           // Line 44
 	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 46
@@ -796,6 +792,7 @@ class twigTransTerms
 	echo T_("and press here");                                                        // Line 46
 
 	//-------------------------------------------------------content/home/display.html
+	echo T_("Travel request");                                                        // Line 86
 	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 124
 	echo T_("Samte Khoda");                                                           // Line 126
 	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 134
