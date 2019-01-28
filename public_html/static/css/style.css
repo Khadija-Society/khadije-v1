@@ -1444,6 +1444,7 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 	}
 	.lastNews .preview{
 		height: auto;
+		min-height: 200px;
 	}
 	.lastNews .preview img{
 		height: auto;
