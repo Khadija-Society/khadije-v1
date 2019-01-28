@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-01-28 19:28+0330\n"
-"PO-Revision-Date: 2019-01-28 19:28+0330\n"
+"POT-Creation-Date: 2019-01-28 20:00+0330\n"
+"PO-Revision-Date: 2019-01-28 20:00+0330\n"
 "Last-Translator: Javad Kakroudi <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -10566,6 +10566,15 @@ msgstr "جزئیات کاربر"
 msgid "Sessions"
 msgstr "نشست‌ها"
 
+#: dash/addons/includes/languages/trans_static.php:1130
+#: khadije/includes/languages/trans_dash.php:261
+msgid "Panel"
+msgstr "پنل"
+
+#: dash/addons/includes/languages/trans_static.php:1131
+msgid "panel"
+msgstr "پنل"
+
 #: dash/lib/app/address.php:58
 msgid "Please set title less than 100 character"
 msgstr "لطفا عنوان را کمتر از ۱۰۰ حرف وارد کنید"
@@ -14471,10 +14480,6 @@ msgstr "همه جشنواره‌ها"
 #: khadije/content_festival/home/view.php:61
 msgid "This festival is not enable"
 msgstr "این جشنواره فعال نیست"
-
-#: khadije/includes/languages/trans_dash.php:261
-msgid "Panel"
-msgstr "پنل"
 
 #: khadije/includes/languages/trans_dash.php:262
 msgid "CRM Panel"
