@@ -41,7 +41,7 @@ class karbalaSignupCounter
 
 	public static function send_to()
 	{
-		return ['supervisor'];
+		return ['supervisor', 'admin'];
 	}
 
 	public static function sms()
