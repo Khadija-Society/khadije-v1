@@ -56,13 +56,24 @@ class travel
 	}
 
 
-	public static function active_city()
+	public static function active_city($_all = false)
 	{
-		$get_detail =
-		[
-			'cat'    => 'trip_city',
-			'status' => 'enable',
-		];
+		if($_all)
+		{
+			$get_detail =
+			[
+				'cat'    => 'trip_city',
+			];
+		}
+		else
+		{
+
+			$get_detail =
+			[
+				'cat'    => 'trip_city',
+				'status' => 'enable',
+			];
+		}
 
 		$get = \dash\db\options::get($get_detail);
 
