@@ -17,7 +17,7 @@ class karbalaSignupCounter
 		$result['icon']      = 'heart';
 		$result['cat']       = T_("Signup");
 		$result['iconClass'] = 'fc-green';
-		$result['txt']       = "تعداد ثبت‌نامی‌های کربلا به عدد ". \dash\utility\human::number($code). " رسید.";
+		$result['txt']       = "تعداد ثبت‌نامی‌های کربلا به عدد ". \dash\utility\human::fitNumber($code). " رسید.";
 		return $result;
 
 	}
@@ -56,7 +56,7 @@ class karbalaSignupCounter
 		$sms =
 		[
 			'mobile' => $_mobile,
-			'text'   => "تعداد ثبت‌نامی‌های کربلا به عدد ". \dash\utility\human::number($code). " رسید.",
+			'text'   => "تعداد ثبت‌نامی‌های کربلا به عدد ". \dash\utility\human::fitNumber($code). " رسید.",
 			'meta'   =>
 			[
 				'footer' => false
@@ -72,7 +72,7 @@ class karbalaSignupCounter
 		$code = isset($_args['data']['countall']) ? $_args['data']['countall'] : null;
 		$tg_msg = '';
 		$tg_msg .= "#SignupKarbala\n";
-		$tg_msg .= "تعداد ثبت‌نامی‌های کربلا به عدد ". \dash\utility\human::number($code). " رسید.";
+		$tg_msg .= "تعداد ثبت‌نامی‌های کربلا به عدد ". \dash\utility\human::fitNumber($code). " رسید.";
 		$tg_msg .= "\n⏳ ". \dash\datetime::fit(date("Y-m-d H:i:s"), true);
 
 		$tg                 = [];
