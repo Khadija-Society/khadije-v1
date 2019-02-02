@@ -83,10 +83,10 @@
         <td>{{value.lastname}}</td>
         <td>{{value.nationalcode | fitNumber(false)}}</td>
         <td>{{value.father}}</td>
-        <td>{{value.province}}</td>
-        <td>{{value.city}}</td>
+        <td>{{value.province_name}}</td>
+        <td>{{value.city_name}}</td>
         <td>{{value.homeaddress}}</td>
-        <td>{{value.phone | fitNumber}}</td>
+        <td>{{value.phone | fitNumber(false)}}</td>
         <td>{{value.datecreated | dt(true) }}</td>
 
       </tr>

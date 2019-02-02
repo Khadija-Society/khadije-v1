@@ -383,45 +383,76 @@ class karbalauser
 		return $args;
 	}
 
-
 	/**
-	 * ready data of product to load in api
+	 * ready data of user to load in api
 	 *
 	 * @param      <type>  $_data  The data
 	 */
 	public static function ready($_data)
 	{
 		$result = [];
-
-		if(!is_array($_data))
-		{
-			return null;
-		}
-
+		$result['location_string'] = [];
 		foreach ($_data as $key => $value)
 		{
 
 			switch ($key)
 			{
-				case 'id':
-				case 'creator':
-					if(isset($value))
+				// case 'id':
+				// case 'user_id':
+					// if(isset($value))
+					// {
+					// 	$result[$key] = \dash\coding::encode($value);
+					// }
+					// else
+					// {
+					// 	$result[$key] = null;
+					// }
+					// break;
+
+				case 'country':
+					$result[$key] = $value;
+					$result['country_name'] = \dash\utility\location\countres::get_localname($value, true);
+					$result['location_string'][1] = $result['country_name'];
+					break;
+
+
+				case 'province':
+					$result[$key] = $value;
+					$result['province_name'] = \dash\utility\location\provinces::get_localname($value);
+					$result['location_string'][2] = $result['province_name'];
+					break;
+
+				case 'city':
+					$result[$key] = $value;
+					$result['city_name'] = \dash\utility\location\cites::get_localname($value);
+					$result['location_string'][3] = $result['city_name'];
+					break;
+
+				case 'map':
+					if($value && is_string($value))
 					{
-						$result[$key] = \dash\coding::encode($value);
+						$result[$key] = json_decode($value, true);
 					}
 					else
 					{
-						$result[$key] = null;
+						$result[$key] = $value;
 					}
 					break;
 
 				default:
-					$result[$key] = isset($value) ? (string) $value : null;
+					$result[$key] = $value;
 					break;
 			}
 		}
+		ksort($result['location_string']);
+		$result['location_string'] = array_filter($result['location_string']);
+		$result['location_string'] = implode(T_(","). " ", $result['location_string']);
+
 		return $result;
 	}
+
+
+
 
 
 

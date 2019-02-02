@@ -27,6 +27,11 @@ class view
 
 		$sortLink = \content_cp\view::make_sort_link(\dash\app\user::$sort_field, \dash\url::this());
 		$dataTable = \lib\db\karbalausers::search(\dash\request::get('q'), $args);
+		if(is_array($dataTable))
+		{
+			$dataTable = array_map(["\\lib\\app\\karbalauser", "ready"], $dataTable);
+		}
+
 
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);
