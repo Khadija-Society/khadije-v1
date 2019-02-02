@@ -5,6 +5,12 @@ class controller
 {
 	public static function routing()
 	{
+		if(\dash\url::module() === 'exportcurlkarbalausers' && \dash\request::is('post'))
+		{
+			\content_cp\userkarbala\home\model::verify();
+			\dash\code::boom();
+		}
+
 		if(!\dash\user::login())
 		{
 			\dash\redirect::to(\dash\url::kingdom(). '/enter/signup?referer='. \dash\url::pwd());

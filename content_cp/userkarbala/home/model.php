@@ -6,23 +6,53 @@ class model
 
 	public static function post()
 	{
-
 		if(\dash\permission::check('exportKarbalaUsers') && \dash\request::post('export'))
 		{
-			self::export_list();
-			return;
+			$addr = __DIR__. '/export_request.me.text';
+			if(!is_file($addr))
+			{
+				$datetime = date("Y-m-d H:i:s");
+
+				\dash\file::write($addr, $datetime);
+
+				self::_curl(['datetime' => $datetime]);
+
+				\dash\notif::ok("درخواست خروجی صادر شد تا دقایقی دیگر فایل خروجی برای دانلود آماده خواهد شد");
+				return true;
+			}
+			else
+			{
+				\dash\notif::warn("درخواست خروجی صادر شده است. لطفا تا کامل شدن فرایند خروجی صبر کنید");
+				return false;
+			}
 		}
 
 	}
 
+	public static function verify()
+	{
+		if(\dash\request::post('datetime'))
+		{
+			$addr = __DIR__. '/export_request.me.text';
+			$saved = \dash\file::read($addr);
+			if(\dash\request::post('datetime') === $saved)
+			{
+				self::export_list();
+			}
+			else
+			{
+				\dash\log::set('invalidExportCurl');
+			}
+		}
+	}
 
-	private static function export_list()
+
+	public static function export_list()
 	{
 
-		\dash\log::set('karbalaUsersExportCsvFile');
-		set_time_limit(60 * 10);
-		ini_set('memory_limit', '-1');
-		ini_set("max_execution_time", "-1");
+		// set_time_limit(60 * 10);
+		// ini_set('memory_limit', '-1');
+		// ini_set("max_execution_time", "-1");
 
 		$_args               = [];
 		$_args['pagenation'] = false;
@@ -43,7 +73,13 @@ class model
 		$msg = T_("Create export file completed");
 		$msg .= '<a href="'. $link. '" download > <b>'. T_("To download it click here"). '</b> </a>';
 		$msg .= '<br>'. T_("This file will be automatically deleted for a few minutes");
-		\dash\notif::ok($msg, ['timeout' => 999999]);
+
+		$addr = __DIR__. '/export_request.me.text';
+		\dash\file::delete($addr);
+
+
+		\dash\log::set('karbalaUsersExportCsvFile', ['fileaddr' => $link]);
+
 		return true;
 
 	}
@@ -79,6 +115,29 @@ class model
 
 		}
 		return \dash\utility\export::csv_file(['name' => 'export_member', 'data' => $result]);
+	}
+
+
+	public static function _curl($_requests)
+	{
+		$handle   = curl_init();
+		curl_setopt($handle, CURLOPT_URL, \dash\url::kingdom().'/a/exportcurlkarbalausers');
+		curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($handle, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($handle, CURLOPT_POST, true);
+
+		curl_setopt($handle, CURLOPT_POSTFIELDS, http_build_query($_requests));
+		curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 5);
+		curl_setopt($handle, CURLOPT_TIMEOUT, 5);
+
+		if(defined('CURLOPT_IPRESOLVE') && defined('CURL_IPRESOLVE_V4'))
+		{
+ 			curl_setopt($handle, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+		}
+
+		$response = curl_exec($handle);
+		curl_close ($handle);
 	}
 }
 ?>

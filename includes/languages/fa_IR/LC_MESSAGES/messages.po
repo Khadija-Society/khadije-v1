@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-02-02 10:03+0330\n"
-"PO-Revision-Date: 2019-02-02 10:03+0330\n"
+"POT-Creation-Date: 2019-02-02 11:16+0330\n"
+"PO-Revision-Date: 2019-02-02 11:16+0330\n"
 "Last-Translator: Javad Kakroudi <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -941,7 +941,7 @@ msgstr "بازگشت به لیست اعضا"
 #: dash/addons/content_crm/member/main/view.php:42
 #: khadije/content/karbala/view.php:31 khadije/content_a/group/partner/view.php:16
 #: khadije/content_a/profile/view.php:23 khadije/content_a/trip/partner/view.php:16
-#: khadije/content_cp/userkarbala/home/model.php:67
+#: khadije/content_cp/userkarbala/home/model.php:103
 #: khadije/includes/languages/trans_project.php:34
 msgid "Father"
 msgstr "پدر"
@@ -2532,7 +2532,7 @@ msgid "Choose your country"
 msgstr "کشور خود را انتخاب کنید"
 
 #: dash/addons/includes/languages/trans_dash.php:22
-#: khadije/content_cp/userkarbala/home/model.php:73
+#: khadije/content_cp/userkarbala/home/model.php:109
 #: khadije/includes/languages/trans_dash.php:918
 #: khadije/includes/languages/trans_project.php:39
 msgid "City"
@@ -2560,7 +2560,7 @@ msgid "Fax"
 msgstr "فکس"
 
 #: dash/addons/includes/languages/trans_dash.php:27
-#: khadije/content_cp/userkarbala/home/model.php:75
+#: khadije/content_cp/userkarbala/home/model.php:111
 #: khadije/includes/languages/trans_dash.php:612
 #: khadije/includes/languages/trans_project.php:40
 msgid "Address"
@@ -8062,7 +8062,7 @@ msgid "users"
 msgstr "کاربران"
 
 #: dash/addons/includes/languages/trans_static.php:402
-#: khadije/content_cp/userkarbala/home/model.php:62
+#: khadije/content_cp/userkarbala/home/model.php:98
 msgid "id"
 msgstr "کد"
 
@@ -8071,7 +8071,7 @@ msgid "displayname"
 msgstr "نام برای نمایش عمومی"
 
 #: dash/addons/includes/languages/trans_static.php:405
-#: khadije/content_cp/userkarbala/home/model.php:68
+#: khadije/content_cp/userkarbala/home/model.php:104
 msgid "gender"
 msgstr "جنسیت"
 
@@ -8083,7 +8083,7 @@ msgstr "گذرواژه"
 #: dash/lib/social/telegram/commands/ermile.php:64
 #: dash/lib/social/telegram/commands/ermileInline.php:47
 #: dash/lib/social/telegram/step.php:329
-#: khadije/content_cp/userkarbala/home/model.php:63
+#: khadije/content_cp/userkarbala/home/model.php:99
 #: khadije/includes/languages/trans_project.php:136
 msgid "mobile"
 msgstr "موبایل"
@@ -8106,7 +8106,7 @@ msgid "permission"
 msgstr "سطح‌دسترسی"
 
 #: dash/addons/includes/languages/trans_static.php:416
-#: khadije/content_cp/userkarbala/home/model.php:77
+#: khadije/content_cp/userkarbala/home/model.php:113
 msgid "datecreated"
 msgstr "تاریخ‌ایجاد"
 
@@ -8127,7 +8127,7 @@ msgid "twostep"
 msgstr "دو مرحله"
 
 #: dash/addons/includes/languages/trans_static.php:421
-#: khadije/content_cp/userkarbala/home/model.php:70
+#: khadije/content_cp/userkarbala/home/model.php:106
 msgid "birthday"
 msgstr "تاریخ تولد"
 
@@ -8183,13 +8183,13 @@ msgid "sidebar"
 msgstr "نوار کناری"
 
 #: dash/addons/includes/languages/trans_static.php:432
-#: khadije/content_cp/userkarbala/home/model.php:64
+#: khadije/content_cp/userkarbala/home/model.php:100
 #: khadije/includes/languages/trans_project.php:135
 msgid "firstname"
 msgstr "نام"
 
 #: dash/addons/includes/languages/trans_static.php:433
-#: khadije/content_cp/userkarbala/home/model.php:65
+#: khadije/content_cp/userkarbala/home/model.php:101
 msgid "lastname"
 msgstr "نام‌خانوادگی"
 
@@ -9693,7 +9693,7 @@ msgid "single"
 msgstr "مجرد"
 
 #: dash/addons/includes/languages/trans_static.php:868
-#: khadije/content_cp/userkarbala/home/model.php:69
+#: khadije/content_cp/userkarbala/home/model.php:105
 #: khadije/includes/languages/trans_static.php:130
 msgid "married"
 msgstr "متاهل"
@@ -11907,7 +11907,7 @@ msgstr "تلفن"
 #: dash/lib/social/telegram/commands/ermile.php:65
 #: dash/lib/social/telegram/commands/ermileInline.php:48
 #: dash/lib/social/telegram/step.php:330
-#: khadije/content_cp/userkarbala/home/model.php:76
+#: khadije/content_cp/userkarbala/home/model.php:112
 msgid "phone"
 msgstr "شماره تلفن"
 
@@ -13080,7 +13080,7 @@ msgid "fill your request detail"
 msgstr "جزئیات درخواست خود را وارد کنید"
 
 #: khadije/content_a/consulting/home/model.php:17
-#: khadije/content_a/controller.php:57 khadije/content_a/health/home/model.php:17
+#: khadije/content_a/controller.php:63 khadije/content_a/health/home/model.php:17
 #: khadije/content_a/representation/home/model.php:17
 #: khadije/content_a/service/home/model.php:17
 msgid "Invalid service id"
@@ -13189,23 +13189,23 @@ msgstr "در سه مرحله ساده، درخواست خود را برای مش
 msgid "check your consulting requests"
 msgstr "درخواست‌های خدمات مشاوره خود را بررسی کنید"
 
-#: khadije/content_a/controller.php:21
+#: khadije/content_a/controller.php:27
 msgid "Trip id not found"
 msgstr "شناسه تشرف یافت نشد"
 
-#: khadije/content_a/controller.php:28 khadije/content_a/trip/home/model.php:18
+#: khadije/content_a/controller.php:34 khadije/content_a/trip/home/model.php:18
 msgid "Invalid trip id"
 msgstr "شناسه تشرف اشتباه است"
 
-#: khadije/content_a/controller.php:38
+#: khadije/content_a/controller.php:44
 msgid "Your trip is not draft. can not edit it"
 msgstr "درخواست شما در وضعیت پیش‌نویس نیست و امکان ویرایش ندارید"
 
-#: khadije/content_a/controller.php:50 khadije/includes/lib/app/service.php:286
+#: khadije/content_a/controller.php:56 khadije/includes/lib/app/service.php:286
 msgid "Service id not found"
 msgstr "شناسه درخواست خادمی یافت نشد"
 
-#: khadije/content_a/controller.php:67
+#: khadije/content_a/controller.php:73
 msgid "Your service is not draft. can not edit it"
 msgstr "درخواست خادمی شما در وضعیت پیش‌نویس نیست و امکان ویرایش ندارید"
 
@@ -13531,6 +13531,7 @@ msgstr "بررسی لیست آخرین تراکنش‌های مربوط به ک�
 #: khadije/content_cp/representation/view.php:16
 #: khadije/content_cp/service/view.php:16 khadije/content_cp/trip/view.php:18
 #: khadije/includes/languages/trans_project.php:30
+#: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:23
 msgid "Export"
 msgstr "خروجی"
 
@@ -14436,7 +14437,7 @@ msgid "Service"
 msgstr "خدمات"
 
 #: khadije/content_cp/service/view.php:120
-#: khadije/content_cp/userkarbala/home/model.php:72
+#: khadije/content_cp/userkarbala/home/model.php:108
 #: khadije/includes/languages/trans_project.php:38
 msgid "Province"
 msgstr "استان"
@@ -14485,19 +14486,25 @@ msgstr "تاریخ ایجاد اشتباه است"
 msgid "Date saved"
 msgstr "تاریخ ذخیره شد"
 
-#: khadije/content_cp/userkarbala/home/model.php:43
+#: khadije/content_cp/userkarbala/home/model.php:73
+#: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:16
+#: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:79
 msgid "Create export file completed"
 msgstr "ساخت فایل خروجی تکمیل شد"
 
-#: khadije/content_cp/userkarbala/home/model.php:44
+#: khadije/content_cp/userkarbala/home/model.php:74
+#: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:17
+#: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:80
 msgid "To download it click here"
 msgstr "برای دانلود فایل کلیک کنید"
 
-#: khadije/content_cp/userkarbala/home/model.php:45
+#: khadije/content_cp/userkarbala/home/model.php:75
+#: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:18
+#: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:81
 msgid "This file will be automatically deleted for a few minutes"
 msgstr "این فایل به صورت خودکار تا چند دقیقه دیگر حذف خواهد شد"
 
-#: khadije/content_cp/userkarbala/home/model.php:66
+#: khadije/content_cp/userkarbala/home/model.php:102
 #: khadije/includes/languages/trans_project.php:33
 msgid "Nationalcode"
 msgstr "کدملی"
@@ -17621,6 +17628,10 @@ msgstr "انتخاب شهر الزامی است"
 #: khadije/includes/lib/app/myuser.php:289
 msgid "Invalid country name"
 msgstr "کشور نامعتبر"
+
+#: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:21
+msgid "Export karbala users"
+msgstr "خروجی از لیست زائران کربلا"
 
 #: khadije/includes/lib/app/log/caller/tankyouMessage.php:16
 msgid "Thank you"
