@@ -29,7 +29,7 @@ class karbalaUsersExportCsvFile
 
 	public static function expire()
 	{
-		return date("Y-m-d H:i:s", strtotime("+365 days"));
+		return date("Y-m-d H:i:s", time() + (60*30));
 	}
 
 
