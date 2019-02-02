@@ -81,19 +81,44 @@ class karbalausers
 	 */
 	public static function search($_string = null, $_option = [])
 	{
-		$default_option =
-		[
-			'search_field' =>
+		$search_field =
+		"
+			(
+				karbalausers.nationalcode = '__string__' OR
+				karbalausers.phone = '__string__' OR
+				karbalausers.firstname LIKE '__string__%' OR
+				karbalausers.lastname LIKE '__string__%' OR
+				karbalausers.displayname = '__string__%'
+			)
+		";
+
+		$mobile = \dash\utility\filter::mobile($_string);
+		if($mobile || is_numeric($_string))
+		{
+			$search_field =
 			"
 				(
-					karbalausers.mobile = '__string__' OR
+					karbalausers.mobile = '$mobile' OR
 					karbalausers.nationalcode = '__string__' OR
-					karbalausers.phone = '__string__' OR
+					karbalausers.phone = '__string__'
+				)
+			";
+		}
+		else
+		{
+			$search_field =
+			"
+				(
 					karbalausers.firstname LIKE '__string__%' OR
 					karbalausers.lastname LIKE '__string__%' OR
 					karbalausers.displayname = '__string__%'
 				)
-			"
+			";
+		}
+
+		$default_option =
+		[
+			'search_field' => $search_field,
 		];
 
 		if(!is_array($_option))
