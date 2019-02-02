@@ -42,6 +42,9 @@
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
+      {%if perm('exportKarbalaUsers')%}
+        <button data-confirm data-data='{"export": 1}' class="btn addon primary">{%trans "Export"%}</button>
+      {%endif%}
     </div>
   </form>
 </div>
@@ -76,13 +79,13 @@
       <tr {%if value.status=='disable' or value.status=='removed' or value.status=='filter' or value.status=='unreachable'%} class='negative' {%elseif value.status=='awaiting'%} class='warning' {%endif%}>
         <td>{{value.id | fitNumber}}</td>
         <td>{{value.mobile | fitNumber('mobile')}}</td>
-        <td>{%set mygender = value.gender | capitalize%}{%trans mygender%}</td>
-        <td>{%set mymarried = value.married | capitalize%}{%trans mymarried%}</td>
-        <td>{{value.birthday | dt(true)}}</td>
         <td>{{value.firstname}}</td>
         <td>{{value.lastname}}</td>
         <td>{{value.nationalcode | fitNumber(false)}}</td>
         <td>{{value.father}}</td>
+        <td>{%set mygender = value.gender | capitalize%}{%trans mygender%}</td>
+        <td>{%set mymarried = value.married | capitalize%}{%trans mymarried%}</td>
+        <td>{{value.birthday | dt(true)}}</td>
         <td>{{value.province_name}}</td>
         <td>{{value.city_name}}</td>
         <td>{{value.homeaddress}}</td>

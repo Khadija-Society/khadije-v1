@@ -446,7 +446,7 @@ class karbalauser
 		}
 		ksort($result['location_string']);
 		$result['location_string'] = array_filter($result['location_string']);
-		$result['location_string'] = implode(T_(","). " ", $result['location_string']);
+		$result['location_string'] = implode(" - ", $result['location_string']);
 
 		return $result;
 	}

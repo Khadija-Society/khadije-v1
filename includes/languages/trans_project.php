@@ -27,8 +27,9 @@ class twigTransTerms
 
 	//----------------------------------------content_cp/userkarbala/home/display.html
 	echo T_("Search");                                                                // Line 45
-	echo T_("Firstname");                                                             // Line 58
-	echo T_("Lastname");                                                              // Line 59
+	echo T_("Export");                                                                // Line 46
+	echo T_("Firstname");                                                             // Line 61
+	echo T_("Lastname");                                                              // Line 62
 	echo T_("Nationalcode");                                                          // Line 7
 	echo T_("Father");                                                                // Line 121
 	echo T_("Gender");                                                                // Line 115
