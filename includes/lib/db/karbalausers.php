@@ -89,8 +89,8 @@ class karbalausers
 					karbalausers.mobile = '__string__' OR
 					karbalausers.nationalcode = '__string__' OR
 					karbalausers.phone = '__string__' OR
-					karbalausers.firstname = '__string__' OR
-					karbalausers.lastname = '__string__%' OR
+					karbalausers.firstname LIKE '__string__%' OR
+					karbalausers.lastname LIKE '__string__%' OR
 					karbalausers.displayname = '__string__%'
 				)
 			"
