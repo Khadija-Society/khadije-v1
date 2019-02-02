@@ -264,6 +264,11 @@
     "cat": "Users",
     "require": []
   },
+  "exportKarbalaUsers": {
+    "title": "exportKarbalaUsers",
+    "cat": "Users",
+    "require": []
+  },
   "cpFestivalRefereeAdd": {
     "title": "cpFestivalRefereeAdd",
     "cat": "Festival",

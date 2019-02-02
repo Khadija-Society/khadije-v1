@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-02-02 09:59+0330\n"
-"PO-Revision-Date: 2019-02-02 10:01+0330\n"
+"POT-Creation-Date: 2019-02-02 10:03+0330\n"
+"PO-Revision-Date: 2019-02-02 10:03+0330\n"
 "Last-Translator: Javad Kakroudi <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -369,7 +369,7 @@ msgstr "افزودن :val جدید"
 #: dash/addons/content_su/tg/users/view.php:22
 #: dash/addons/content_su/transactions/view.php:22
 #: khadije/content_cp/delneveshte/home/view.php:22
-#: khadije/content_cp/userkarbala/home/view.php:22
+#: khadije/content_cp/userkarbala/home/view.php:19
 #: khadije/content_cp/usersalavat/home/view.php:19
 msgid "Search for :search"
 msgstr "جستجوی :search"
@@ -17134,6 +17134,10 @@ msgstr "همراه سفر"
 #: khadije/includes/languages/trans_static.php:164
 msgid "cpAddNewTrip"
 msgstr "افزودن سفر جدید"
+
+#: khadije/includes/languages/trans_static.php:165
+msgid "exportKarbalaUsers"
+msgstr "تهیه خروجی از کاربران کربلا"
 
 #: khadije/includes/lib/app/android.php:46
 msgid "Change language"
