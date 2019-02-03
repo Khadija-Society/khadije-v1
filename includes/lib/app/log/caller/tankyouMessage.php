@@ -101,7 +101,7 @@ class tankyouMessage
 			$tg['chat_id']      = $_chat_id;
 			$tg['text']         = $message['text'];
 			$tg['reply_markup'] = \dash\app\log\support_tools::tg_btn2($code);
-			$tg = json_encode($tg, JSON_UNESCAPED_UNICODE);
+			// $tg = json_encode($tg, JSON_UNESCAPED_UNICODE);
 			return $tg;
 		}
 		else
