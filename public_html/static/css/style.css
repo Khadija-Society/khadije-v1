@@ -753,8 +753,10 @@ body[data-sidebar] #sidebar{left:0;}
 	display: block;
 	width: 100%;
 }
-.appBox img{
-	max-height: 400px;
+.appBox .preview{
+	max-height: 500px;
+	display: block;
+	margin: 20px auto -50px;
 }
 
 
