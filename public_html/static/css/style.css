@@ -713,7 +713,49 @@ body[data-sidebar] #sidebar{left:0;}
 	font-size: 1em;
 }
 
-
+/* app box design*/
+.appBox{
+	min-height: 400px;
+	width: 100%;
+	position: relative;
+	background-image: url('../images/homepage-v3/bg-app.jpg');
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-size:cover;
+	padding-bottom: 80px;
+	color: #fff;
+	font-size: 1.5em;
+}
+.appBox .text{
+	padding-top: 100px;
+}
+.appBox .text h2{
+	font-size: 3em;
+	font-weight: 700;
+	margin-bottom: 1em;
+}
+.appBox .text .dl{
+	text-align: center;
+}
+.appBox .text .dl a{
+	display: inline-block;
+	background-color: rgba(0,0,0,0.1);
+	border:1px solid #fff;
+	border-radius: 0.5rem;
+	max-width: 180px;
+	margin: 0.5em;
+	transition: 0.3s;
+}
+.appBox .text .dl a:hover{
+	background-color: rgba(0,0,0,0.2);
+}
+.appBox .text .dl a img{
+	display: block;
+	width: 100%;
+}
+.appBox img{
+	max-height: 400px;
+}
 
 
 
