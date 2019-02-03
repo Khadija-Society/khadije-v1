@@ -1504,6 +1504,7 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 	}
 	.pageTitle{padding-top:1em;}
 	.radioGateway{padding: 1em 0.4em; }
+	.appBox .text{text-align: center;padding-top:50px;}
 }
 
 @media (max-width: 543px) {
