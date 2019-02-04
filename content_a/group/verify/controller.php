@@ -1,5 +1,5 @@
 <?php
-namespace content_a\trip\verify;
+namespace content_a\group\verify;
 
 
 class controller
@@ -20,7 +20,7 @@ class controller
 			\dash\header::status(403, T_("City not found"));
 		}
 
-		$term = \lib\app\travel::trip_get_terms('family', $city);
+		$term = \lib\app\travel::trip_get_terms('group', $city);
 
 		if(!$term)
 		{
