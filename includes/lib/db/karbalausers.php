@@ -18,7 +18,7 @@ class karbalausers
 
 	public static function chart_province()
 	{
-		$query = "SELECT COUNT(*) AS `count`, karbalausers.province FROM karbalausers GROUP BY karbalausers.province";
+		$query = "SELECT COUNT(*) AS `count`, karbalausers.province FROM karbalausers GROUP BY karbalausers.province ORDER BY COUNT(*) DESC";
 		$result = \dash\db::get($query, ['province', 'count']);
 		return $result;
 	}

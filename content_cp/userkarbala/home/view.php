@@ -13,6 +13,11 @@ class view
 		\dash\data::page_desc(T_('Check list of users and search or filter in them to find your user.'));
 		\dash\data::page_desc(\dash\data::page_desc(). ' '. T_('Also add or edit specefic user.'));
 
+		\dash\data::badge_text(T_('Report'));
+		\dash\data::badge_link(\dash\url::this(). '/report');
+
+
+
 		$search_string            = \dash\request::get('q');
 		if($search_string)
 		{

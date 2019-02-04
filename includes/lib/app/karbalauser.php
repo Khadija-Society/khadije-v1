@@ -21,6 +21,23 @@ class karbalauser
 		return $result;
 
 	}
+
+	public static function chart_province_list()
+	{
+		$list = \lib\db\karbalausers::chart_province();
+		$result = [];
+		if(is_array($list))
+		{
+			foreach ($list as $key => $value)
+			{
+				$map_code = \dash\utility\location\provinces::get($key, null, 'localname');
+				$result[] = ['name' => $map_code, 'count' => intval($value)];
+			}
+		}
+
+		return $result;
+
+	}
 	/**
 	 * check args
 	 *

@@ -17,10 +17,26 @@ class view
 		\dash\data::badge_link(\dash\url::this());
 
 
-		\dash\data::include_highcharts(false);
-		$chartProvinceData = \lib\app\karbalauser::chart_province();
 
-		\dash\data::chartProvinceData($chartProvinceData);
+		$subchild = \dash\url::subchild();
+		switch ($subchild)
+		{
+			case 'provincelist':
+				$dataTable = \lib\app\karbalauser::chart_province_list();
+				\dash\data::dataTable($dataTable);
+
+				break;
+
+			case 'map':
+				\dash\data::include_highcharts(false);
+				$chartProvinceData = \lib\app\karbalauser::chart_province();
+				\dash\data::chartProvinceData($chartProvinceData);
+				break;
+
+			default:
+
+				break;
+		}
 
 	}
 }

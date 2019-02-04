@@ -8,6 +8,37 @@ function chartDrawer()
 
 function mapChartIran()
 {
+
+// persian translation
+if($('html').attr('lang') === 'fa')
+{
+  Highcharts.setOptions(
+  {
+    lang:
+    {
+      contextButtonTitle: "منوی نمودار",
+      decimalPoint: ",",
+      downloadCSV: "دانلود سی‌اس‌وی",
+      downloadJPEG: "دانولد تصویر جی‌پی‌جی",
+      downloadPDF: "دانلود پی‌دی‌اف",
+      downloadPNG: "دانلود تصویر پی‌ان‌جی",
+      downloadSVG: "دانلود اس‌وی‌جی",
+      downloadXLS: "دانلود اکسل",
+      drillUpText: "بازکشت به  {series.name}",
+      invalidDate: "تعریف نشده",
+      loading: "در حال  بارگذاری",
+      months: ["ژانویه", "فوریه", "مارچ", "آپریل", "می", "جون", "جولای", "آگوست", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"],
+      noData: "داده‌ای برای رسم نمودار وجود ندارد",
+      printChart: "پرینت نمودار",
+      resetZoom: "ریست ‌کردن بزرگنمایی",
+      resetZoomTitle: "ریست سطح  بزرگنمایی به ۱:۱",
+      thousandsSep: ",",
+      viewData: "مشاهده جدول اطلاعات",
+    }
+
+  });
+}
+
   // Prepare demo data
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
