@@ -3,6 +3,24 @@ namespace lib\app;
 
 class karbalauser
 {
+
+	public static function chart_province()
+	{
+		$list = \lib\db\karbalausers::chart_province();
+		$result = [];
+		if(is_array($list))
+		{
+			foreach ($list as $key => $value)
+			{
+				$map_code = \dash\utility\location\provinces::get($key, null, 'map_code');
+				$result[] = [$map_code, intval($value)];
+			}
+		}
+
+		$result = json_encode($result, JSON_UNESCAPED_UNICODE);
+		return $result;
+
+	}
 	/**
 	 * check args
 	 *

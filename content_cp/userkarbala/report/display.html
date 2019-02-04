@@ -1,0 +1,23 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+<div class="chart" id="chartdiv"></div>
+{%endblock%}
+
+
+
+{%block foot_js%}
+<script type="text/javascript">
+	{% include 'content_cp/userkarbala/report/highmaps.js' %}
+</script>
+<script type="text/javascript">
+	{% include 'content_cp/userkarbala/report/ir-all.js' %}
+</script>
+
+<script type="text/javascript">
+	{% include 'content_cp/userkarbala/report/chart.js' %}
+</script>
+{%endblock%}
+
+
