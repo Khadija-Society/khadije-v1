@@ -43,6 +43,9 @@ class view
 		\dash\data::groupMaxAwaiting(\lib\app\travel::group_max_awaiting());
 		\dash\data::groupGetdate(\lib\app\travel::group_getdate());
 
+		\dash\data::tripTermsGroup(\lib\app\travel::trip_get_terms('group', null));
+
+
 
 	}
 }

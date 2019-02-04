@@ -31,6 +31,10 @@ class view
 		\dash\data::tripCountPartner_mashhad(\lib\app\travel::trip_count_partner('get', 'mashhad'));
 		\dash\data::tripCountPartner_karbala(\lib\app\travel::trip_count_partner('get', 'karbala'));
 
+		\dash\data::tripTermsqom(\lib\app\travel::trip_get_terms('family', 'qom'));
+		\dash\data::tripTermsmashhad(\lib\app\travel::trip_get_terms('family', 'mashhad'));
+		\dash\data::tripTermskarbala(\lib\app\travel::trip_get_terms('family', 'karbala'));
+
 
 
 	}

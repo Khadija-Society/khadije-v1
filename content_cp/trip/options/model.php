@@ -22,6 +22,9 @@ class model
 			\lib\app\travel::group_city_signup_setting('karbala', \dash\request::post('karbala'));
 			\lib\app\travel::group_city_signup_setting('mashhad', \dash\request::post('mashhad'));
 			\lib\app\travel::group_city_signup_setting('qom', \dash\request::post('qom'));
+
+			\lib\app\travel::trip_set_terms('group', null, \dash\request::post('termcondition') ? $_POST['termcondition'] : null);
+
 		}
 
 		if(\dash\engine\process::status())

@@ -92,6 +92,55 @@ class travel
 	}
 
 
+	public static function trip_get_terms($_type, $_city)
+	{
+		$get =
+		[
+			'cat'   => 'trip_terms',
+			'key'   => $_type. '_'. $_city,
+			'limit' => 1
+		];
+
+		$load = \dash\db\options::get($get);
+		if(isset($load['meta']))
+		{
+			return $load['meta'];
+		}
+		return null;
+
+	}
+
+
+	public static function trip_set_terms($_type, $_city, $_text)
+	{
+		$get =
+		[
+			'cat'   => 'trip_terms',
+			'key'   => $_type. '_'. $_city,
+			'limit' => 1
+		];
+
+		$_text = \dash\safe::safe($_text, 'raw');
+
+		$load = \dash\db\options::get($get);
+		if(isset($load['id']))
+		{
+			\dash\db\options::update(['meta' => $_text], $load['id']);
+		}
+		else
+		{
+			$set =
+			[
+				'cat'  => 'trip_terms',
+				'key'  => $_type. '_'. $_city,
+				'meta' => $_text,
+			];
+			\dash\db\options::insert($set);
+		}
+
+	}
+
+
 	public static function save_option_setting($_cat, $_key, $_value, $_action)
 	{
 		if(!$_action || $_action == '')

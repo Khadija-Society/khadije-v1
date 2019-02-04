@@ -23,6 +23,12 @@ class model
 			\lib\app\travel::city_signup_setting('karbala', \dash\request::post('karbala'));
 			\lib\app\travel::city_signup_setting('mashhad', \dash\request::post('mashhad'));
 			\lib\app\travel::city_signup_setting('qom', \dash\request::post('qom'));
+
+			\lib\app\travel::trip_set_terms('family', 'qom', \dash\request::post('termconditionqom') ? $_POST['termconditionqom'] : null);
+			\lib\app\travel::trip_set_terms('family', 'mashhad', \dash\request::post('termconditionmashhad') ? $_POST['termconditionmashhad'] : null);
+			\lib\app\travel::trip_set_terms('family', 'karbala', \dash\request::post('termconditionkarbala') ? $_POST['termconditionkarbala'] : null);
+
+
 		}
 
 

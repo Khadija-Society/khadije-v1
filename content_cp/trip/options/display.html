@@ -121,11 +121,17 @@
         {{block ('imaxPartnerGroup')}}
       </div>
       <input type="hidden" name="type" value="group">
+        {{block ('groupTripTermCondition')}}
 
       {{block ('isave')}}
     </form>
 {%endblock%}
 
+
+{%block groupTripTermCondition %}
+<h3 for="termcondition">{%trans "Terms and condition"%}</h3>
+<textarea class="txt" id="termcondition" rows="15" name="termcondition" data-editor>{{tripTermsGroup | raw}}</textarea>
+{%endblock%}
 
 
 {%block iActiveMasterGroup%}

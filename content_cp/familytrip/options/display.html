@@ -13,8 +13,12 @@
       {{block ('iActiveMaster')}}
       <div class="mT10" data-response="master_active" {%if not tripMasterActive%} data-response-hide {%endif%}>
         {{block ('ikarbala')}}
+
         {{block ('imashhad')}}
+
         {{block ('iqom')}}
+
+
       </div>
       <input type="hidden" name="type" value="family">
 
@@ -26,6 +30,21 @@
 </div>
 {%endblock%}
 
+
+{%block familtyTripTermConditionqom %}
+<h3 for="termconditionqom">{%trans "Terms and condition"%}</h3>
+<textarea class="txt" id="termconditionqom" rows="15" name="termconditionqom" data-editor>{{tripTermsqom | raw}}</textarea>
+{%endblock%}
+
+{%block familtyTripTermConditionmashhad %}
+<h3 for="termconditionmashhad">{%trans "Terms and condition"%}</h3>
+<textarea class="txt" id="termconditionmashhad" rows="15" name="termconditionmashhad" data-editor>{{tripTermsmashhad | raw}}</textarea>
+{%endblock%}
+
+{%block familtyTripTermConditionkarbala %}
+<h3 for="termconditionkarbala">{%trans "Terms and condition"%}</h3>
+<textarea class="txt" id="termconditionkarbala" rows="15" name="termconditionkarbala" data-editor>{{tripTermskarbala | raw}}</textarea>
+{%endblock%}
 
 
 
@@ -43,8 +62,6 @@
 {%endblock%}
 
 
-
-
 {%block iqom%}
 <div class="switch1 mT10">
    <input type="checkbox" name="qom" id="qom" {%if activeCity.qom%} checked {%endif%}>
@@ -56,6 +73,7 @@
     <label for="countpartnerqom">{%trans "Maximum partner count for qom"%}</label>
     <input type="number" id="countpartnerqom" name="count_partner_qom" placeholder='{%trans "Maximum partner count for qom"%}'  value="{{tripCountPartner.qom}}" >
   </div>
+  {{block ('familtyTripTermConditionqom')}}
 </div>
 {%endblock%}
 
@@ -71,6 +89,7 @@
     <label for="countpartnerkarbala">{%trans "Maximum partner count for karbala"%}</label>
     <input type="number" id="countpartnerkarbala" name="count_partner_karbala" placeholder='{%trans "Maximum partner count for karbala"%}'  value="{{tripCountPartner.karbala}}" >
   </div>
+  {{block ('familtyTripTermConditionkarbala')}}
 </div>
 {%endblock%}
 
@@ -85,6 +104,7 @@
     <label for="countpartnermashhad">{%trans "Maximum partner count for mashhad"%}</label>
     <input type="number" id="countpartnermashhad" name="count_partner_mashhad" placeholder='{%trans "Maximum partner count for mashhad"%}'  value="{{tripCountPartner.mashhad}}" >
   </div>
+  {{block ('familtyTripTermConditionmashhad')}}
 </div>
 {%endblock%}
 
