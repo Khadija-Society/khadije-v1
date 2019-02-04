@@ -5,7 +5,7 @@
 
 <div class="f justify-center">
  <div class="c9 s12">
-  <form class="cbox" method="post" autocomplete="off">
+  <form class="cbox" method="post" autocomplete="off" enctype="multipart/form-data">
 
    <div class="f">
     <div class="c6 s12 pRa5">{{block ('iname') }}</div>
@@ -45,7 +45,7 @@
     <div class="c4 s12">{{block ('izipcode') }}</div>
    </div>
    {{block('iJobIsStudent')}}
-
+   {{block('iNationalCodeThumb')}}
    {{block ('iSave') }}
 
   </form>
@@ -54,6 +54,20 @@
 
 {%endblock%}
 
+
+{%block iNationalCodeThumb%}
+
+    <label for="file1">{%trans "National card photo"%}</label>
+    <div class="input ">
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="file1" id="file1" data-preview data-max="500">
+
+    </div>
+    {%if userdetail.file1%}
+      <a class="badge warn" data-confirm data-data='{"RemoveNationalThumb": 1}'>{%trans "Remove file"%}</a>
+      <a href="{{userdetail.file1}}" target="_blank"><img class="size-we200 block mLRa" src="{{userdetail.file1}}"></a>
+
+    {%endif%}
+{%endblock%}
 
 
 

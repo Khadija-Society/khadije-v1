@@ -2,7 +2,7 @@
 
 
 {%block partnertForm%}
-    <form method="post" class="cbox" autocomplete="off">
+    <form method="post" class="cbox" autocomplete="off" enctype="multipart/form-data">
 {{block ('iname') }}
 {{block ('ifamily') }}
 {{block ('incode') }}
@@ -12,6 +12,7 @@
 {{block ('iNesbat') }}
 {{block ('igenderRadio') }}
 {{block ('iMarriedRadio') }}
+{{block ('iNationalCodeThumb') }}
 
 
      {{block ('iAdd') }}
@@ -36,7 +37,7 @@
         <div class="content f">
           <div class="c">
             <div class="header"><small>{{value.firstname}}</small> {{value.lastname}}</div>
-            <div class="meta"><span>{{value.nationalcode | fitNumber}}</span></div>
+            <div class="meta"><span>{{value.nationalcode | fitNumber(false)}}</span></div>
           </div>
           <div class="cauto">
 {%if value.gender == 'female'%}
@@ -48,8 +49,9 @@
           <div class="desc c12">
            <span class="badge info">{{value.nesbat}}</span>
            <span class="badge">{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</span>
-           <span class="badge success">{{value.birthday | fitNumber}}</span>
-           <span class="badge" title="{%trans "Child"%}">{{value.father}}</span>
+           <span class="badge success">{{value.birthday | dt(true)}}</span>
+           <span class="badge" title='{%trans "Child"%}'>{{value.father}}</span>
+           {%if value.file1%}<span class="badge light" title='{%trans "Nationalcode thumb"%}'><a href="{{value.file1}}"><i class="sf-file"></i></a></span>{%endif%}
           </div>
         </div>
         <div class="footer f pAn">
@@ -76,6 +78,20 @@
 {%endblock%}
 
 
+
+{%block iNationalCodeThumb%}
+
+    <label for="file1">{%trans "National card photo"%}</label>
+    <div class="input ">
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="file1" id="file1" data-preview data-max="500">
+
+    </div>
+    {%if userdetail.file1%}
+      <a class="badge warn" data-confirm data-data='{"RemoveNationalThumb": 1}'>{%trans "Remove file"%}</a>
+      <a href="{{userdetail.file1}}" target="_blank"><img class="size-we200 block mLRa" src="{{userdetail.file1}}"></a>
+
+    {%endif%}
+{%endblock%}
 
 
 {%block ipassport%}

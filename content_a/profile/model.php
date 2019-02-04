@@ -7,8 +7,15 @@ class model
 
 	public static function post()
 	{
+		if(\dash\request::post("RemoveNationalThumb"))
+		{
+			\dash\db\users::update(['file1' => null], \dash\user::id());
+			\dash\notif::ok(T_("Picture removed"));
+			\dash\redirect::pwd();
+		}
+
 		$post                    = [];
-		$post['gender']          = \dash\request::post('gender') ;
+		$post['gender']          = \dash\request::post('gender');
 		$post['email']           = \dash\request::post('email');
 		$post['job']             = \dash\request::post('student') ? 'collegian' : null;
 		$post['birthday']        = \dash\request::post('birthday');
@@ -24,8 +31,14 @@ class model
 		$post['homeaddress']     = \dash\request::post('homeaddress');
 		$post['phone']           = \dash\request::post('phone');
 		$post['displayname']     = trim($post['firstname'] . ' '. $post['lastname']);
-		$post['married']         = \dash\request::post('Married') ;
+		$post['married']         = \dash\request::post('Married');
 		$post['zipcode']         = \dash\request::post('zipcode');
+
+		$file1 = \dash\app\file::upload_quick('file1');
+		if($file1)
+		{
+			$post['file1'] = $file1;
+		}
 
 		\lib\app\myuser::edit($post);
 

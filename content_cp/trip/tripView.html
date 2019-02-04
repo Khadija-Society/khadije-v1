@@ -20,8 +20,9 @@
           <span class="badge" title='{%trans "Father name"%}'>{{travelDetail.father}}</span>
         </p>
 
-        <p>{%trans "Nationalcode" %} {{travelDetail.nationalcode |fitNumber(false)}}</p>
-
+        <p>{%trans "Nationalcode" %} {{travelDetail.nationalcode |fitNumber(false)}}
+        {%if travelDetail.file1%}<a title='{%trans "Nationalcode thumb"%}' href="{{travelDetail.file1}}" class="badge light"><i class="sf-file"></i></a>{%endif%}
+        </p>
         <h5 class="mT25">{%trans "Address"%}</h5>
         <p>
           <span class="badge">{{travelDetail.country}}</span>
@@ -123,6 +124,7 @@
         <th>{%trans "Nationalcode"%}</th>
         <th>{%trans "Birthday"%}</th>
         <th>{%trans "Travel"%}</th>
+        <th>{%trans "Thumb"%}</th>
         <th>{%trans "Action"%}</th>
 
       </tr>
@@ -151,6 +153,14 @@
                 {{CountTravel| fitNumber}}
               </span>
             {%endif%}
+        </td>
+        <td>
+          {%if value.file1%}
+          <a title='{%trans "Nationalcode thumb"%}' href="{{value.file1}}" class="badge light"><i class="sf-file"></i></a>
+          {%else%}
+            <a title='{%trans "Whitout nationalcode thumb"%}'  class=" fc-mute"><i class="sf-file"></i></a>
+
+          {%endif%}
         </td>
         <td>
           {%if editMode%}

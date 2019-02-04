@@ -290,6 +290,8 @@ class myuser
 			return false;
 		}
 
+		$file1 = \dash\app::request('file1');
+
 		$args                    = [];
 		$args['gender']          = $gender;
 		$args['email']           = $email;
@@ -323,6 +325,7 @@ class myuser
 		$args['job']             = $job;
 		$args['avatar']          = $avatar;
 		$args['nesbat']          = $nesbat;
+		$args['file1']          = $file1;
 
 		if($gender && $birthday && $firstname && $lastname && $father)
 		{
@@ -617,6 +620,7 @@ class myuser
 		if(!\dash\app::isset_request('desc')) 			unset($args['desc']);
 		if(!\dash\app::isset_request('job')) 			unset($args['job']);
 		if(!\dash\app::isset_request('nesbat')) 		unset($args['nesbat']);
+		if(!\dash\app::isset_request('file1')) 		unset($args['file1']);
 
 
 		\dash\db\users::update($args, \dash\user::id());
@@ -625,6 +629,8 @@ class myuser
 
 		return true;
 	}
+
+
 
 }
 ?>

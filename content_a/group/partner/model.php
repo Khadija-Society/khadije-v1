@@ -66,6 +66,12 @@ class model
 
 			$post['travel_id']    = \dash\request::get('trip');
 
+			$file1 = \dash\app\file::upload_quick('file1');
+			if($file1)
+			{
+				$post['file1'] = $file1;
+			}
+
 			\lib\app\myuser::add_child($post);
 
 			if(\dash\engine\process::status())
