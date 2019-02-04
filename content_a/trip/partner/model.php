@@ -57,6 +57,13 @@ class model
 			$post['travel_id']    = \dash\request::get('trip');
 
 			$file1 = \dash\app\file::upload_quick('file1');
+
+			if(!$file1)
+			{
+				\dash\notif::error(T_("Plase set nationalcode thumb"));
+				return false;
+			}
+
 			if($file1)
 			{
 				$post['file1'] = $file1;

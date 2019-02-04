@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-02-04 12:46+0330\n"
-"PO-Revision-Date: 2019-02-04 12:48+0330\n"
+"POT-Creation-Date: 2019-02-04 13:23+0330\n"
+"PO-Revision-Date: 2019-02-04 13:25+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -13132,12 +13132,12 @@ msgstr "ثبت نام برای خدمات مشاوره جدید"
 
 #: khadije/content_a/consulting/profile/model.php:34
 #: khadije/content_a/festival/profile/model.php:42
-#: khadije/content_a/group/profile/model.php:33
-#: khadije/content_a/health/profile/model.php:33
+#: khadije/content_a/group/profile/model.php:46
+#: khadije/content_a/health/profile/model.php:46
 #: khadije/content_a/profile/model.php:47
 #: khadije/content_a/representation/profile/model.php:33
-#: khadije/content_a/service/profile/model.php:33
-#: khadije/content_a/trip/profile/model.php:66
+#: khadije/content_a/service/profile/model.php:48
+#: khadije/content_a/trip/profile/model.php:78
 msgid "Your detail was saved"
 msgstr "اطلاعات پروفایل شما ثبت شد"
 
@@ -13334,8 +13334,13 @@ msgstr "ثبت‌نام برای درخواست تشرف کاروانی"
 msgid "You must register at least :min partner"
 msgstr "شما باید حداقل :min عضو برای کاروان ثبت کنید"
 
-#: khadije/content_a/group/partner/model.php:79
-#: khadije/content_a/trip/partner/model.php:69
+#: khadije/content_a/group/partner/model.php:73
+#: khadije/content_a/trip/partner/model.php:63
+msgid "Plase set nationalcode thumb"
+msgstr "لطفا تصویر کارت ملی را ارسال نمایید"
+
+#: khadije/content_a/group/partner/model.php:86
+#: khadije/content_a/trip/partner/model.php:76
 #: khadije/content_cp/familytrip/view/model.php:46
 #: khadije/content_cp/trip/view/model.php:79
 msgid "Your Child was saved"
@@ -13368,6 +13373,14 @@ msgstr ""
 #: khadije/content_a/trip/partner/view.php:23
 msgid "Husband"
 msgstr "شوهر"
+
+#: khadije/content_a/group/profile/model.php:13
+#: khadije/content_a/health/profile/model.php:13
+#: khadije/content_a/profile/model.php:13
+#: khadije/content_a/service/profile/model.php:13
+#: khadije/content_a/trip/profile/model.php:13
+msgid "Picture removed"
+msgstr "تصویر حذف شد"
 
 #: khadije/content_a/group/request/model.php:20
 #: khadije/content_a/trip/request/model.php:20
@@ -13434,10 +13447,6 @@ msgstr "بررسی درخواست‌های خدمات درمانی شما"
 #: khadije/content_cp/options/product/view.php:9
 msgid "Khadije Dashboard"
 msgstr "داشبورد کانون فرهنگی حضرت خدیجه"
-
-#: khadije/content_a/profile/model.php:13
-msgid "Picture removed"
-msgstr "تصویر حذف شد"
 
 #: khadije/content_a/representation/detail/model.php:28
 msgid "Your representation request was saved"
@@ -13522,7 +13531,7 @@ msgstr "لیست درخواست‌های سفر شما"
 msgid "register for new trip request"
 msgstr "ثبت نام برای درخواست تشرف"
 
-#: khadije/content_a/trip/profile/model.php:71
+#: khadije/content_a/trip/profile/model.php:83
 msgid "Your trip request was saved"
 msgstr "درخواست تشرف شما ذخیره شد"
 
@@ -15706,7 +15715,7 @@ msgstr "تعداد کل درخواست‌ها"
 
 #: khadije/includes/languages/trans_project.php:463
 msgid "Nationalcode thumb"
-msgstr "تصویر کدملی"
+msgstr "تصویر کارت‌ملی"
 
 #: khadije/includes/languages/trans_project.php:464
 msgid "Last modified"
@@ -15726,7 +15735,7 @@ msgstr "سفر"
 
 #: khadije/includes/languages/trans_project.php:470
 msgid "Whitout nationalcode thumb"
-msgstr "بدون تصویر کدملی"
+msgstr "بدون تصویر کارت‌ملی"
 
 #: khadije/includes/languages/trans_project.php:471
 msgid "No partner set"
