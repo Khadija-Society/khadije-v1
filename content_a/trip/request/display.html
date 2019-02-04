@@ -29,7 +29,11 @@
  <div class="f justify-center txtC">
 {% for cityPlace, T_cityPlace in cityplaceList %}
   <div class="c4 s12 pA10">
-    <a class="vcard shadow" href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"city": "{{cityPlace}}"}'>
+    {%if tripTermsGroup[cityPlace]%}
+      <a class="vcard shadow" href="{{url.this}}/verify?city={{cityPlace}}" >
+    {%else%}
+      <a class="vcard shadow" href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"city": "{{cityPlace}}"}'>
+    {%endif%}
      <img src="{{url.static}}/images/place/{{cityPlace}}-square.jpg" alt='{%trans cityPlace%}'>
      <div class="content">
       <div class="header">{%trans cityPlace%}</div>

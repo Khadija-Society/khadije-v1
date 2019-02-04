@@ -23,7 +23,10 @@ class model
 			\lib\app\travel::group_city_signup_setting('mashhad', \dash\request::post('mashhad'));
 			\lib\app\travel::group_city_signup_setting('qom', \dash\request::post('qom'));
 
-			\lib\app\travel::trip_set_terms('group', null, \dash\request::post('termcondition') ? $_POST['termcondition'] : null);
+			\lib\app\travel::trip_set_terms('group', 'qom', \dash\request::post('termconditionqom') ? $_POST['termconditionqom'] : null);
+			\lib\app\travel::trip_set_terms('group', 'mashhad', \dash\request::post('termconditionmashhad') ? $_POST['termconditionmashhad'] : null);
+			\lib\app\travel::trip_set_terms('group', 'karbala', \dash\request::post('termconditionkarbala') ? $_POST['termconditionkarbala'] : null);
+
 
 		}
 

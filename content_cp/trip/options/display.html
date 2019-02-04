@@ -121,16 +121,28 @@
         {{block ('imaxPartnerGroup')}}
       </div>
       <input type="hidden" name="type" value="group">
-        {{block ('groupTripTermCondition')}}
+        {{block ('groupTripTermConditionqom')}}
+        {{block ('groupTripTermConditionmashhad')}}
+        {{block ('groupTripTermConditionkarbala')}}
 
       {{block ('isave')}}
     </form>
 {%endblock%}
 
 
-{%block groupTripTermCondition %}
-<h3 for="termcondition">{%trans "Terms and condition"%}</h3>
-<textarea class="txt" id="termcondition" rows="15" name="termcondition" data-editor>{{tripTermsGroup | raw}}</textarea>
+{%block groupTripTermConditionqom %}
+<h3 for="termconditionqom">{%trans "Terms and condition"%} {%trans "Qom"%}</h3>
+<textarea class="txt" id="termconditionqom" rows="15" name="termconditionqom" data-editor>{{tripTermsGroupqom | raw}}</textarea>
+{%endblock%}
+
+{%block groupTripTermConditionmashhad %}
+<h3 for="termconditionmashhad">{%trans "Terms and condition"%} {%trans "Mashhad"%}</h3>
+<textarea class="txt" id="termconditionmashhad" rows="15" name="termconditionmashhad" data-editor>{{tripTermsGroupmashhad | raw}}</textarea>
+{%endblock%}
+
+{%block groupTripTermConditionkarbala %}
+<h3 for="termconditionkarbala">{%trans "Terms and condition"%} {%trans "Karbala"%}</h3>
+<textarea class="txt" id="termconditionkarbala" rows="15" name="termconditionkarbala" data-editor>{{tripTermsGroupkarbala | raw}}</textarea>
 {%endblock%}
 
 

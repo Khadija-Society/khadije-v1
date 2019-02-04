@@ -18,6 +18,11 @@ class view
 		else
 		{
 			\dash\data::cityplaceList(\lib\app\travel::active_city());
+
+			\dash\data::tripTermsGroup_qom(\lib\app\travel::trip_get_terms('group', 'qom'));
+			\dash\data::tripTermsGroup_mashhad(\lib\app\travel::trip_get_terms('group', 'mashhad'));
+			\dash\data::tripTermsGroup_karbala(\lib\app\travel::trip_get_terms('group', 'karbala'));
+
 		}
 
 	}

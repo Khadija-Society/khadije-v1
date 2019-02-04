@@ -23,7 +23,7 @@
     <div title='{%trans "Request date"%} {{value.datecreated | dt}}'>
     {%trans myStatus%}
 {%if value.status == 'awaiting' or value.status == 'draft'%}
-     <a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"cancel"}' class="badge danger sm mA5">{%trans "Cancel"%}</a>
+     <a href="{{url.pwd}}" data-confirm data-method="post" data-data='{"key": "{{value.id}}", "type":"cancel"}' class="badge danger sm mA5">{%trans "Cancel"%}</a>
 {%endif%}
 {%if value.status == 'draft'%}
      <a href="{{url.here}}/health/profile?id={{value.id}}" class="badge sm mA5">{%trans "Edit"%}</a>
