@@ -23,14 +23,14 @@ class model
 
 				\lib\db\services::update(['status' => 'cancel'], $key);
 
-				\dash\notif::ok(T_("Your service was canceled"));
+				\dash\notif::ok(T_("Your request was canceled"));
 
 				\dash\redirect::pwd();
 
 			}
 			else
 			{
-				\dash\notif::error(T_("Can not change this service status"));
+				\dash\notif::error(T_("Can not change this request status"));
 				return false;
 			}
 		}
