@@ -90,7 +90,7 @@ Highcharts.mapChart('chartdiv', {
     },
     title: {
         useHTML: Highcharts.hasBidiBug,
-        text: '{%trans "Chart"%}'
+        text: '{%trans ""%}'
     },
 
     tooltip: {
