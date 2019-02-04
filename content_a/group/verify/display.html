@@ -27,19 +27,14 @@
     <div class="c s12">
       <h3>{%trans "Terms and conditions"%}</h3>
       {{termsAndCondition | raw}}
-    </div>
-  </div>
 
-  <div class="f justify-center">
-    <div class="c5 s9">
-      <div class="f">
-        <div class="c  pRa10">
-          <a class="btn outline success block mT20"  href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"city": "{{cityPlace}}"}'>{%trans "Accept"%}</a>
-        </div>
-        <div class="c">
-          <a class="btn outline  danger block mT20" href="{{url.this}}/request">{%trans "Reject"%}</a>
-        </div>
+      <div class="c pRa10 mT20">
+        <a class="btn outline success block mT20"  href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"city": "{{cityPlace}}"}'>{%trans "I agree term and condition"%}</a>
       </div>
+      <div class="cauto">
+        <a class="btn outline  danger block mT20" href="{{url.this}}/request">{%trans "Disagree"%}</a>
+      </div>
+
     </div>
   </div>
 
