@@ -21,74 +21,76 @@
    </div>
   </div>
 
-  <div class="msg">
-    همراه گرامی برنامه سمت خدا
-    ضمن تشکر از مراجعه جهت ثبت‌نام، همانطور که در برنامه به اطلاع رسید با توجه به کثرت تقاضا، امکان اعزام تمامی عزیزان مهیا نمی‌باشد، لذا از طریق قرعه‌کشی افراد انتخاب می‌شوند.
-  </div>
+  {%if countSingupKarbala > 214000%}
+    <p class="msg txtC danger2">مهلت ثبت‌نام به پایان رسیده است</p>
+    <p class="msg txtB success">قرعه‌کشی در تاریه ۲ بهمن   در برنامه سمت خدا برگزار خواهد شد.</p>
+  {%else%}
+
+    <div class="msg">
+      همراه گرامی برنامه سمت خدا
+      ضمن تشکر از مراجعه جهت ثبت‌نام، همانطور که در برنامه به اطلاع رسید با توجه به کثرت تقاضا، امکان اعزام تمامی عزیزان مهیا نمی‌باشد، لذا از طریق قرعه‌کشی افراد انتخاب می‌شوند.
+    </div>
 
 
-  {%if newKarbalaSignup %}
-  <div class="msg success txtB txtC">
-    زائر گرامی
-    <br>
-    ثبت نام شما انجام شد
-    <br>
-    ثبت نام به منزله اعزام نمی باشد
-    <br>
+    {%if newKarbalaSignup %}
+    <div class="msg success txtB txtC">
+      زائر گرامی
+      <br>
+      ثبت نام شما انجام شد
+      <br>
+      ثبت نام به منزله اعزام نمی باشد
+      <br>
 
-    شما هم می‌توانید در کمک به اعزام زائر اولی ها سهیم باشید
-    <br>
+      شما هم می‌توانید در کمک به اعزام زائر اولی ها سهیم باشید
+      <br>
 
-    <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
-  </div>
+      <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
+    </div>
+    {%endif%}
+
+    <form class="" method="post" autocomplete="off">
+     <div class="f">
+      <div class="c6 s12 pRa5">{{block ('iname') }}</div>
+      <div class="c6 s12">{{block ('ifamily') }}</div>
+     </div>
+
+     <div class="f mB10">
+      <div class="c6 s12">{{block ('igender') }}</div>
+      <div class="c6 s12">{{block ('iMarital') }}</div>
+     </div>
+
+     <div class="f">
+      <div class="c4 s12 pRa5">{{block ('ifather') }}</div>
+      <div class="c4 s12 pRa5">{{block ('incode') }}</div>
+      <div class="c4 s12">{{block ('ibirthday') }}</div>
+     </div>
+
+     <div class="f">
+      {%include display.hive%}
+     </div>
+
+     <div class="f">
+
+      <div class="c4 pRa5 s12">{{block ('iMobileKarabala') }}</div>
+      <div class="c4 pRa5 s12 ">{{block ('iPhone') }}</div>
+      <div class="c4 pRa5 s12 pRa5">{{block ('icity') }}</div>
+     </div>
+
+     <div class="f">
+      <div class="c12 s12 pRa5">{{block ('iAddress') }}</div>
+     </div>
+     <div class="msg warn mT10">
+
+      <div class="check1">
+        <input type="checkbox" id="sChk3" name="accept">
+        <label for="sChk3">ثبت نام به منزله اعزام نمی باشد و این ثبت‌نام تنها برای شرکت در قرعه‌کشی است</label>
+      </div>
+     </div>
+
+     {{block ('iSave') }}
+    </form>
   {%endif%}
 
-
-
-  <form class="" method="post" autocomplete="off">
-
-   <div class="f">
-    <div class="c6 s12 pRa5">{{block ('iname') }}</div>
-    <div class="c6 s12">{{block ('ifamily') }}</div>
-   </div>
-
-   <div class="f mB10">
-    <div class="c6 s12">{{block ('igender') }}</div>
-    <div class="c6 s12">{{block ('iMarital') }}</div>
-   </div>
-
-   <div class="f">
-    <div class="c4 s12 pRa5">{{block ('ifather') }}</div>
-    <div class="c4 s12 pRa5">{{block ('incode') }}</div>
-    <div class="c4 s12">{{block ('ibirthday') }}</div>
-   </div>
-
-   <div class="f">
-    {%include display.hive%}
-   </div>
-
-   <div class="f">
-
-    <div class="c4 pRa5 s12">{{block ('iMobileKarabala') }}</div>
-    <div class="c4 pRa5 s12 ">{{block ('iPhone') }}</div>
-    <div class="c4 pRa5 s12 pRa5">{{block ('icity') }}</div>
-   </div>
-
-   <div class="f">
-    <div class="c12 s12 pRa5">{{block ('iAddress') }}</div>
-   </div>
-   <div class="msg warn mT10">
-
-    <div class="check1">
-      <input type="checkbox" id="sChk3" name="accept">
-      <label for="sChk3">ثبت نام به منزله اعزام نمی باشد و این ثبت‌نام تنها برای شرکت در قرعه‌کشی است</label>
-    </div>
-   </div>
-
-   {{block ('iSave') }}
-
-
-  </form>
 
 
  </div>
