@@ -38,6 +38,28 @@ class karbalauser
 		return $result;
 
 	}
+
+	public static function daily_chart()
+	{
+		$result     = \lib\db\karbalausers::daily_chart();
+		$hi_chart   = [];
+		$categories = [];
+		$values     = [];
+
+		if(is_array($result))
+		{
+			foreach ($result as $key => $value)
+			{
+				$categories[] = \dash\datetime::fit($value['date'], null, 'date');
+				$values[] = intval($value['count']);
+			}
+		}
+
+		$hi_chart['categories'] = json_encode($categories, JSON_UNESCAPED_UNICODE);
+		$hi_chart['value'] = json_encode($values, JSON_UNESCAPED_UNICODE);
+		return $hi_chart;
+	}
+
 	/**
 	 * check args
 	 *

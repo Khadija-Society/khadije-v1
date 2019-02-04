@@ -23,6 +23,13 @@ class karbalausers
 		return $result;
 	}
 
+	public static function daily_chart()
+	{
+		$query = "SELECT COUNT(*) AS `count`, DATE(karbalausers.datecreated) AS `date` FROM karbalausers GROUP BY DATE(karbalausers.datecreated) ORDER BY DATE(karbalausers.datecreated) ASC";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 
 	/**
 	 * update productprice

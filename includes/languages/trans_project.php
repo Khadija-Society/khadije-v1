@@ -25,6 +25,26 @@ class twigTransTerms
 	echo T_("I am sympathetic");                                                      // Line 35
 	echo T_("People who sympathetic with this person");                               // Line 45
 
+	//-----------------------------------------content_cp/userkarbala/report/chart2.js
+	echo T_("Daily report");                                                          // Line 20
+	echo T_("Sum price");                                                             // Line 87
+	echo T_("Count");                                                                 // Line 112
+	echo T_("Person");                                                                // Line 98
+
+	//---------------------------------------content_cp/userkarbala/report/highmaps.js
+
+	//--------------------------------------content_cp/userkarbala/report/display.html
+	echo T_("Daily");                                                                 // Line 10
+	echo T_("Province list");                                                         // Line 17
+	echo T_("Map chart");                                                             // Line 25
+	echo T_("Province");                                                              // Line 168
+
+	//------------------------------------------content_cp/userkarbala/report/chart.js
+	echo T_("Chart");                                                                 // Line 93
+	echo T_("Registered");                                                            // Line 147
+
+	//-----------------------------------------content_cp/userkarbala/report/ir-all.js
+
 	//----------------------------------------content_cp/userkarbala/home/display.html
 	echo T_("Search");                                                                // Line 45
 	echo T_("Export");                                                                // Line 46
@@ -35,7 +55,6 @@ class twigTransTerms
 	echo T_("Gender");                                                                // Line 129
 	echo T_("Married");                                                               // Line 145
 	echo T_("Birthday");                                                              // Line 116
-	echo T_("Province");                                                              // Line 168
 	echo T_("City");                                                                  // Line 179
 	echo T_("Address");                                                               // Line 220
 	echo T_("Phone");                                                                 // Line 239
@@ -89,12 +108,10 @@ class twigTransTerms
 	echo T_("Toman");                                                                 // Line 14
 
 	//-------------------------------------------content_cp/report/hazinekard/chart.js
-	echo T_("Sum price");                                                             // Line 87
 
 	//--------------------------------------------content_cp/report/daily/display.html
 
 	//------------------------------------------------content_cp/report/daily/chart.js
-	echo T_("Daily report");                                                          // Line 20
 
 	//--------------------------------------------content_cp/report/month/display.html
 
@@ -173,7 +190,6 @@ class twigTransTerms
 	echo T_("Please select one item");                                                // Line 254
 	echo T_("Enter a valid title");                                                   // Line 96
 	echo T_("Terms and conditions");                                                  // Line 23
-	echo T_("Count");                                                                 // Line 112
 	echo T_("Enter a valid count");                                                   // Line 112
 	echo T_("Active");                                                                // Line 101
 	echo T_("Deactive");                                                              // Line 101

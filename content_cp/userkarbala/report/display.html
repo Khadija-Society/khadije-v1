@@ -45,7 +45,14 @@
 	</tbody>
 </table>
 {%endif%}
-<div class="chart" id="chartdiv"></div>
+{%if chartProvinceData%}
+	<div class="chart" id="chartdiv"></div>
+{%endif%}
+
+{%if ReportDailyChart%}
+	<div class="chart" id="chartdiv2"></div>
+{%endif%}
+
 {%endblock%}
 
 
@@ -63,6 +70,14 @@
 	{% include 'content_cp/userkarbala/report/chart.js' %}
 </script>
 {%endif%}
+
+
+{%if ReportDailyChart%}
+<script type="text/javascript">
+	{% include 'content_cp/userkarbala/report/chart2.js' %}
+</script>
+{%endif%}
+
 {%endblock%}
 
 

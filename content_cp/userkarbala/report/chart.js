@@ -1,6 +1,7 @@
 function chartDrawer()
 {
   if($("#chartdiv").length == 1){mapChartIran();}
+  if($("#chartdiv2").length == 1){highChart();}
 }
 
 

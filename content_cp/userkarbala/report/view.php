@@ -34,7 +34,8 @@ class view
 				break;
 
 			default:
-
+				$ReportDailyChart = \lib\app\karbalauser::daily_chart();
+				\dash\data::ReportDailyChart($ReportDailyChart);
 				break;
 		}
 
