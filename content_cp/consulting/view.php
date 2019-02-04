@@ -39,6 +39,19 @@ class view
 		if(\dash\request::get('userjob')) $args['users.job'] = \dash\request::get('userjob');
 		$args['services.type'] = 'consulting';
 
+		if(\dash\request::get('mobile'))
+		{
+			$mobile = \dash\utility\filter::mobile(\dash\request::get('mobile'));
+			if($mobile)
+			{
+				$user_id = \dash\db\users::get_by_mobile($mobile);
+				if(isset($user_id['id']))
+				{
+					$args['services.user_id'] = $user_id['id'];
+				}
+			}
+		}
+
 		if(!isset($args['services.status']))
 		{
 			$args['services.status']     = ["NOT IN", "('cancel', 'draft')"];
@@ -60,7 +73,8 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		\dash\data::dataTable(\lib\app\service::list($search_string, $args));
+		$dataTable = \lib\app\service::list($search_string, $args);
+		\dash\data::dataTable($dataTable);
 
 		if($export)
 		{
@@ -96,6 +110,12 @@ class view
 		{
 			$filterArray[T_("Consulting")] = $filterArray['services.expert'];
 			unset($filterArray['services.expert']);
+		}
+
+		if(isset($filterArray['services.user_id']))
+		{
+			$filterArray[T_("Mobile")] = isset($dataTable[0]['mobile']) ? $dataTable[0]['mobile'] : null;
+			unset($filterArray['services.user_id']);
 		}
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);

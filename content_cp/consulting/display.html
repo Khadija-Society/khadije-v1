@@ -59,6 +59,7 @@
         <th class="s0" data-sort="{{sortLink['users.job']['order']}}"><a href="{{sortLink['users.job']['link']}}">{%trans "Job"%}</a></th>
         <th class="s0" data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "status"%}</a></th>
         <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Expert"%}</a></th>
+        <th class="s0">{%trans "Date"%}</th>
         <th>{%trans "Action"%}</th>
       </tr>
     </thead>
@@ -75,7 +76,8 @@
         <td><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
         <td class="s0 collapsing"><a href="{{url.this}}?userjob={{value.userjob}}">{%set myJob = value.userjob | capitalize %}{%trans myJob%}</a></td>
         <td class="s0 collapsing"><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status | capitalize %}{%trans myStatus%}</a></td>
-        <td class="collapsing"><a href="{{url.this}}?health={{value.expert}}">{{value.expert}}</a></td>
+        <td class="collapsing"><a href="{{url.this}}?consulting={{value.expert}}">{{value.expert}}</a></td>
+        <td class="collapsing s0">{{value.datecreated | dt(true)}}</td>
         <td class="collapsing"><a href="{{url.this}}/view?id={{value.id}}" class="badge primary">{%trans "View"%}</a></td>
 
       </tr>
