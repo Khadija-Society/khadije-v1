@@ -717,7 +717,7 @@ class travel
 			{
 				if(isset($check_duplicate_travel['status']) && $check_duplicate_travel['status'] === 'draft')
 				{
-					\dash\redirect::to(\dash\url::here(). '/trip/profile?trip='. $check_duplicate_travel['id']);
+					\dash\redirect::to(\dash\url::this(). '/profile?trip='. $check_duplicate_travel['id']);
 				}
 
 				\dash\notif::error(T_("You signup to this trip before, please wait for checking status of that trip"));
