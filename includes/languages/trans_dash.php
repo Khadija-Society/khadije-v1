@@ -269,7 +269,7 @@ class twigTransTerms
 	echo T_("Your notifications");                                                    // Line 149
 	echo T_("Click to check your profile");                                           // Line 151
 	echo T_("Account");                                                               // Line 154
-	echo T_("Logout");                                                                // Line 155
+	echo T_("Logout");                                                                // Line 19
 	echo T_("You really want to go?");                                                // Line 156
 	echo T_("We are waiting for you to come back:)");                                 // Line 157
 	echo T_("Enter to have better experience");                                       // Line 168
@@ -423,8 +423,10 @@ class twigTransTerms
 	echo T_("Update google mail");                                                    // Line 14
 	echo T_("Don't change");                                                          // Line 16
 
-	//------------------------------------------addons/content_enter/home/display.html
+	//-------------------------------------------addons/content_enter/app/display.html
 	echo T_("You");                                                                   // Line 5
+
+	//------------------------------------------addons/content_enter/home/display.html
 
 	//---------------------------------------addons/content_enter/twostep/display.html
 	echo T_("Two-step login is now active for you.");                                 // Line 9

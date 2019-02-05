@@ -34,13 +34,12 @@ class twigTransTerms
 	//---------------------------------------content_cp/userkarbala/report/highmaps.js
 
 	//--------------------------------------content_cp/userkarbala/report/display.html
-	echo T_("Daily");                                                                 // Line 10
+	echo T_("Report daily");                                                          // Line 62
 	echo T_("Province list");                                                         // Line 17
 	echo T_("Map chart");                                                             // Line 25
 	echo T_("Province");                                                              // Line 168
 
 	//------------------------------------------content_cp/userkarbala/report/chart.js
-	echo T_("Chart");                                                                 // Line 93
 	echo T_("Registered");                                                            // Line 147
 
 	//-----------------------------------------content_cp/userkarbala/report/ir-all.js
@@ -51,7 +50,7 @@ class twigTransTerms
 	echo T_("Firstname");                                                             // Line 61
 	echo T_("Lastname");                                                              // Line 62
 	echo T_("Nationalcode");                                                          // Line 7
-	echo T_("Father");                                                                // Line 122
+	echo T_("Father");                                                                // Line 124
 	echo T_("Gender");                                                                // Line 129
 	echo T_("Married");                                                               // Line 145
 	echo T_("Birthday");                                                              // Line 116
@@ -122,7 +121,6 @@ class twigTransTerms
 	echo T_("Report Count transaction group by name");                                // Line 34
 	echo T_("Report Count transaction group by payment and hazinekard");              // Line 44
 	echo T_("Report sum transaction group by hazinekard");                            // Line 53
-	echo T_("Report daily");                                                          // Line 62
 	echo T_("Report Month");                                                          // Line 73
 
 	//---------------------------------content_cp/report/counttransaction/display.html
@@ -235,7 +233,7 @@ class twigTransTerms
 	echo T_("Send SMS");                                                              // Line 151
 	echo T_("Representation");                                                        // Line 34
 	echo T_("Health Service");                                                        // Line 43
-	echo T_("Consulting");                                                            // Line 116
+	echo T_("Consulting");                                                            // Line 114
 	echo T_("SMS Template");                                                          // Line 187
 	echo T_("Donate product list");                                                   // Line 198
 	echo T_("Donate list");                                                           // Line 208
@@ -448,7 +446,7 @@ class twigTransTerms
 	//------------------------------------------------content_cp/trip/add/display.html
 	echo T_("Add new group trip");                                                    // Line 11
 	echo T_("Mobile for admin of this trip");                                         // Line 14
-	echo T_("Required");                                                              // Line 267
+	echo T_("Required");                                                              // Line 268
 	echo T_("Select the travel place");                                               // Line 17
 
 	//--------------------------------------------content_cp/trip/options/display.html
@@ -479,27 +477,27 @@ class twigTransTerms
 	echo T_("Nationalcode thumb");                                                    // Line 54
 	echo T_("Last modified");                                                         // Line 18
 	echo T_("Reserve date");                                                          // Line 33
-	echo T_("List of trip partner");                                                  // Line 192
+	echo T_("List of trip partner");                                                  // Line 194
 	echo T_("Marital");                                                               // Line 141
-	echo T_("Travel");                                                                // Line 126
-	echo T_("Thumb");                                                                 // Line 127
-	echo T_("Whitout nationalcode thumb");                                            // Line 161
-	echo T_("No partner set");                                                        // Line 245
+	echo T_("Travel");                                                                // Line 128
+	echo T_("Thumb");                                                                 // Line 129
+	echo T_("Whitout nationalcode thumb");                                            // Line 163
+	echo T_("No partner set");                                                        // Line 247
 	echo T_("Child");                                                                 // Line 53
-	echo T_("Status of trip");                                                        // Line 288
-	echo T_("send new complete request");                                             // Line 294
-	echo T_("Review");                                                                // Line 304
-	echo T_("after check and before accept");                                         // Line 304
-	echo T_("queue");                                                                 // Line 309
-	echo T_("In queue of send");                                                      // Line 309
-	echo T_("Gone");                                                                  // Line 314
-	echo T_("successfully go to trip");                                               // Line 314
+	echo T_("Status of trip");                                                        // Line 290
+	echo T_("send new complete request");                                             // Line 296
+	echo T_("Review");                                                                // Line 306
+	echo T_("after check and before accept");                                         // Line 306
+	echo T_("queue");                                                                 // Line 311
+	echo T_("In queue of send");                                                      // Line 311
+	echo T_("Gone");                                                                  // Line 316
+	echo T_("successfully go to trip");                                               // Line 316
 	echo T_("Reject");                                                                // Line 35
-	echo T_("does not accepted for some reason");                                     // Line 333
-	echo T_("Not Answer");                                                            // Line 338
-	echo T_("not answer to call check");                                              // Line 338
-	echo T_("Admin Cancel");                                                          // Line 344
-	echo T_("delete from admin");                                                     // Line 344
+	echo T_("does not accepted for some reason");                                     // Line 335
+	echo T_("Not Answer");                                                            // Line 340
+	echo T_("not answer to call check");                                              // Line 340
+	echo T_("Admin Cancel");                                                          // Line 346
+	echo T_("delete from admin");                                                     // Line 346
 	echo T_("Enter a valid name from 2 to 40 character");                             // Line 78
 	echo T_("Last name");                                                             // Line 86
 	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 86
@@ -518,7 +516,7 @@ class twigTransTerms
 	echo T_("Education course");                                                      // Line 298
 	echo T_("Job");                                                                   // Line 72
 	echo T_("Add as new partner");                                                    // Line 362
-	echo T_("Edit partner");                                                          // Line 615
+	echo T_("Edit partner");                                                          // Line 617
 
 	//---------------------------------------------------------content_cp/sidenav.html
 	echo T_("Control Panel");                                                         // Line 1
@@ -689,15 +687,15 @@ class twigTransTerms
 	echo T_("Biography");                                                             // Line 176
 	echo T_("Bibliography");                                                          // Line 177
 	echo T_("Specialized sites");                                                     // Line 178
-	echo T_("My love story book");                                                    // Line 124
+	echo T_("My love story book");                                                    // Line 122
 	echo T_("Individual registration");                                               // Line 10
 	echo T_("Group registration");                                                    // Line 9
-	echo T_("Servants registration");                                                 // Line 79
+	echo T_("Servants registration");                                                 // Line 77
 	echo T_("Consulting service");                                                    // Line 197
 	echo T_("Other services");                                                        // Line 203
-	echo T_("Deputy pilgrimage");                                                     // Line 101
-	echo T_("Balloting names");                                                       // Line 108
-	echo T_("Virtual pilgrimage");                                                    // Line 86
+	echo T_("Deputy pilgrimage");                                                     // Line 99
+	echo T_("Balloting names");                                                       // Line 106
+	echo T_("Virtual pilgrimage");                                                    // Line 84
 	echo T_("Help");                                                                  // Line 214
 	echo T_("Doners");                                                                // Line 34
 	echo T_("Other Languages");                                                       // Line 221
@@ -724,7 +722,7 @@ class twigTransTerms
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
 	echo T_("It is optional and depending on your intention can enter it");           // Line 201
-	echo T_("Pay Amount");                                                            // Line 151
+	echo T_("Pay Amount");                                                            // Line 149
 	echo T_("Rial");                                                                  // Line 211
 	echo T_("Amount of your donation");                                               // Line 210
 	echo T_("Total Pay Amount");                                                      // Line 206
@@ -778,7 +776,7 @@ class twigTransTerms
 	echo T_("Group trip signup");                                                     // Line 85
 	echo T_("Click to go to download page");                                          // Line 79
 	echo T_("Download love story book");                                              // Line 80
-	echo T_("Shahid Mahdi Imani");                                                    // Line 223
+	echo T_("Shahid Mahdi Imani");                                                    // Line 221
 	echo T_("Do you know?");                                                          // Line 80
 	echo T_("license and supporters");                                                // Line 133
 	echo T_("Certificate");                                                           // Line 138
@@ -811,31 +809,31 @@ class twigTransTerms
 	//----------------------------------------------------content/manager/display.html
 
 	//------------------------------------------------content/app/android/display.html
-	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 42
-	echo T_("You also partake in salawat");                                           // Line 44
-	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 46
-	echo T_("Say salawat");                                                           // Line 46
-	echo T_("and press here");                                                        // Line 46
+	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 37
+	echo T_("You also partake in salawat");                                           // Line 39
+	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 41
+	echo T_("Say salawat");                                                           // Line 41
+	echo T_("and press here");                                                        // Line 41
 
 	//-------------------------------------------------------content/home/display.html
-	echo T_("Travel request");                                                        // Line 94
-	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 132
-	echo T_("Samte Khoda");                                                           // Line 134
-	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 142
-	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 142
-	echo T_("You can change amount of your donation");                                // Line 151
-	echo T_("Donate as anonymous");                                                   // Line 154
-	echo T_("Donate with register details");                                          // Line 159
-	echo T_("Latest News");                                                           // Line 171
-	echo T_("Archive");                                                               // Line 202
-	echo T_("Mr.Farahzad's statement");                                               // Line 217
-	echo T_("Contact with manager");                                                  // Line 229
-	echo T_("in Resalat bank of Iran");                                               // Line 238
-	echo T_("Card number");                                                           // Line 276
-	echo T_("Account number");                                                        // Line 279
-	echo T_("Iranian bank Shaba number");                                             // Line 282
-	echo T_("Tejarat bank");                                                          // Line 255
-	echo T_("Bank Melli Iran");                                                       // Line 272
+	echo T_("Travel request");                                                        // Line 92
+	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 130
+	echo T_("Samte Khoda");                                                           // Line 132
+	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 140
+	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 140
+	echo T_("You can change amount of your donation");                                // Line 149
+	echo T_("Donate as anonymous");                                                   // Line 152
+	echo T_("Donate with register details");                                          // Line 157
+	echo T_("Latest News");                                                           // Line 169
+	echo T_("Archive");                                                               // Line 200
+	echo T_("Mr.Farahzad's statement");                                               // Line 215
+	echo T_("Contact with manager");                                                  // Line 227
+	echo T_("in Resalat bank of Iran");                                               // Line 236
+	echo T_("Card number");                                                           // Line 274
+	echo T_("Account number");                                                        // Line 277
+	echo T_("Iranian bank Shaba number");                                             // Line 280
+	echo T_("Tejarat bank");                                                          // Line 253
+	echo T_("Bank Melli Iran");                                                       // Line 270
 
 	//-----------------------------------------------------content/health/display.html
 
