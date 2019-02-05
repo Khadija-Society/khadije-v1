@@ -17,6 +17,7 @@ class model
 		$post['gender']          = \dash\request::post('gender') ? 'female' : 'male';
 		$post['married']         = \dash\request::post('Married') ? 'married' : 'single';
 		$post['nesbat']          = \dash\request::post('nesbat');
+		$post['type']          = \dash\request::post('type');
 		return $post;
 	}
 

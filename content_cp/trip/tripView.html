@@ -98,6 +98,8 @@
 {{block ('igender') }}
 {{block ('iMarried') }}
 
+<input type="hidden" name="type" value="{{travelDetail.type}}">
+
 {%if editMode%}
   <input type="hidden" name="edit_child" value="edit_child">
   {{block ('iEdit') }}
