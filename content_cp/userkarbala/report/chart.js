@@ -82,11 +82,11 @@ var data = {{chartProvinceData |raw}};
 // Create the chart
 Highcharts.mapChart('chartdiv', {
     chart: {
-        map: 'countries/ir/ir-all'
-    },
-    zoomType: 'x',
-    style: {
-      fontFamily: 'IRANSans, Tahoma, sans-serif'
+        map: 'countries/ir/ir-all',
+        zoomType: 'x',
+        style: {
+          fontFamily: 'IRANSans, Tahoma, sans-serif'
+        }
     },
     title: {
         useHTML: Highcharts.hasBidiBug,

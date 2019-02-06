@@ -45,6 +45,15 @@ Highcharts.chart('chartdiv2',
       }
     }
   }],
+  plotOptions: {
+      column: {
+          dataLabels: {
+              enabled: true,
+              crop: false,
+              overflow: 'none'
+          }
+      }
+  },
   tooltip: {
     useHTML: true,
     borderWidth: 0,
