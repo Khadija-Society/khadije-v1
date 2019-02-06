@@ -25,8 +25,11 @@ class model
 
 		if(\dash\engine\process::status() && $travel_id)
 		{
+			$user_id = \dash\temp::get('travel_user_id');
+			$user_id = \dash\coding::encode($user_id);
+
 			\dash\notif::ok(T_("Your Travel was saved"));
-			\dash\redirect::to(\dash\url::this());
+			\dash\redirect::to(\dash\url::this(). '/profile?user='. $user_id. '&id='. $travel_id);
 		}
 	}
 }

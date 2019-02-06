@@ -568,7 +568,8 @@ class myuser
 	{
 		$default_option =
 		[
-			'debug' => true,
+			'debug'   => true,
+			'user_id' => null,
 		];
 
 		if(!is_array($_option))
@@ -580,7 +581,13 @@ class myuser
 
 		\dash\app::variable($_args);
 
-		if(!\dash\user::id())
+		$user_id = $_option['user_id'];
+		if(!$user_id)
+		{
+			$user_id = \dash\user::id();
+		}
+
+		if(!$user_id)
 		{
 			\dash\notif::error(T_("User not found"), 'user');
 			return false;
@@ -623,7 +630,7 @@ class myuser
 		if(!\dash\app::isset_request('file1')) 		unset($args['file1']);
 
 
-		\dash\db\users::update($args, \dash\user::id());
+		\dash\db\users::update($args, $user_id);
 
 		\dash\user::refresh();
 

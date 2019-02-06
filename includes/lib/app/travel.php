@@ -773,6 +773,8 @@ class travel
 			\dash\log::set('AdminAddNewTrip', ['code' => $travel_id]);
 		}
 
+		\dash\temp::set('travel_user_id', $args['user_id']);
+
 		return $travel_id;
 	}
 }
