@@ -68,11 +68,11 @@ class model
 
 			$file1 = \dash\app\file::upload_quick('file1');
 
-			if(!$file1)
-			{
-				\dash\notif::error(T_("Plase set nationalcode thumb"));
-				return false;
-			}
+			// if(!$file1)
+			// {
+			// 	\dash\notif::error(T_("Plase set nationalcode thumb"));
+			// 	return false;
+			// }
 
 			if($file1)
 			{
