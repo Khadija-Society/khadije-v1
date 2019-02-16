@@ -19,6 +19,7 @@
           <span class="badge warn">{%set MaritalS = travelDetail.married | capitalize%}{%trans MaritalS%}</span>
           <span class="badge" title='{%trans "Father name"%}'>{{travelDetail.father}}</span>
         </p>
+        <a class="btn" href="{{url.kingdom}}/crm/member/glance?id={{travelDetail.user_id | coding('encode')}}">{%trans "Profile"%}</a>
 
         <p>{%trans "Nationalcode" %} {{travelDetail.nationalcode |fitNumber(false)}}
         {%if travelDetail.file1%}<a title='{%trans "Nationalcode thumb"%}' href="{{travelDetail.file1}}" class="badge light"><i class="sf-file"></i></a>{%endif%}

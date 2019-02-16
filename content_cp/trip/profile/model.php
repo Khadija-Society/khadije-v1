@@ -39,7 +39,7 @@ class model
 			$post['file1'] = $file1;
 		}
 
-		\lib\app\myuser::edit($post, ['user_id' => \dash\coding::decode(\dash\request::get('userid'))]);
+		\lib\app\myuser::edit($post, ['user_id' => \dash\coding::decode(\dash\request::get('user'))]);
 
 		if(\dash\engine\process::status())
 		{
