@@ -10,6 +10,7 @@ class android
 
 		self::master_detail($detail);
 
+		self::deprecated($detail);
 
 		self::static_page($detail);
 
@@ -21,7 +22,6 @@ class android
 
 		self::intro($detail);
 
-
 		return $detail;
 	}
 
@@ -29,13 +29,12 @@ class android
 
 	private static function master_detail(&$detail)
 	{
-		$detail['site']                        = \dash\url::site();
-		$detail['kingdom']                     = \dash\url::kingdom();
-		$detail['domain']                      = \dash\url::domain();
-		$detail['name']                        = T_(\dash\option::config('site','title'));
-		$detail['desc']                        = T_(\dash\option::config('site','desc'));
-		$detail['logo']                        = \dash\url::static(). '/images/logo.png';
-
+		$detail['site']    = \dash\url::site();
+		$detail['kingdom'] = \dash\url::kingdom();
+		$detail['domain']  = \dash\url::domain();
+		$detail['name']    = T_(\dash\option::config('site','title'));
+		$detail['desc']    = T_(\dash\option::config('site','desc'));
+		$detail['logo']    = \dash\url::static(). '/images/logo.png';
 	}
 
 
@@ -95,13 +94,6 @@ class android
 			'icon'  => 'home',
 		];
 
-		// $detail['navigation'][] =
-		// [
-		// 	'title' => T_('Website'),
-		// 	'url'   => \dash\url::kingdom(),
-		// 	'icon'  => 'world',
-		// ];
-
 		$detail['navigation'][] =
 		[
 			'title' => T_('Delneveshte'),
@@ -115,29 +107,18 @@ class android
 			'url'   => 'more',
 			'icon'  => 'more',
 		];
-
-		// if(\dash\language::current() === 'fa')
-		// {
-		// 	$detail['navigation'][] =
-		// 	[
-		// 		'title' => T_('Donate'),
-		// 		'url'   => \dash\url::kingdom(). '/donate',
-		// 		'icon'  => 'pay',
-		// 	];
-		// }
-		// else
-		// {
-		// 	$detail['navigation'][] =
-		// 	[
-		// 		'title' => T_('Enter'),
-		// 		'url'   => \dash\url::kingdom(). '/enter',
-		// 		'icon'  => 'enter',
-		// 	];
-		// }
+	}
 
 
-
-
+	public static function deprecated(&$detail)
+	{
+		$detail['deprecated_version']                   = [];
+		$detail['deprecated_version']['reject_version'] = 0;
+		$detail['deprecated_version']['title']          = null;
+		$detail['deprecated_version']['desc']           = null;
+		$detail['deprecated_version']['btn']            = [];
+		$detail['deprecated_version']['btn']['title']   = null;
+		$detail['deprecated_version']['btn']['url']     = null;
 	}
 
 
