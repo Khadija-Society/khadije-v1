@@ -49,8 +49,11 @@ class myuser
 
 			if(!$birthday)
 			{
-				\dash\notif::error(T_("Birthday is required"), 'birthday');
-				return false;
+				if(!\dash\app::request('not_force_birthday'))
+				{
+					\dash\notif::error(T_("Birthday is required"), 'birthday');
+					return false;
+				}
 			}
 
 			$birthday = \dash\date::birthdate($birthday, true);
