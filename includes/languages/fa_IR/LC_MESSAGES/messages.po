@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-02-05 17:09+0330\n"
-"PO-Revision-Date: 2019-02-05 17:09+0330\n"
+"POT-Creation-Date: 2019-02-16 17:44+0330\n"
+"PO-Revision-Date: 2019-02-16 17:44+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -56,6 +56,7 @@ msgstr "مدیریت آدرس‌های شما"
 #: dash/addons/content_account/profile/signature/view.php:14
 #: dash/addons/content_account/profile/social/view.php:14
 #: dash/addons/content_account/profile/view.php:14
+#: dash/addons/content_crm/member/log/view.php:16
 #: dash/addons/content_crm/member/security/view.php:16
 msgid "Back to dashbaord"
 msgstr "بازگشت به داشبورد"
@@ -215,18 +216,19 @@ msgid "All other session terminated"
 msgstr "تمام دسترسی‌های دیگر مسدود شد"
 
 #: dash/addons/content_account/profile/security/model.php:80
+#: dash/addons/content_crm/member/log/model.php:95
 #: dash/addons/content_crm/member/security/model.php:95
 msgid "Session terminated"
 msgstr "این روش ورود مسدود شد"
 
 #: dash/addons/content_account/profile/security/view.php:71
-#: dash/addons/content_crm/member/security/view.php:66
+#: dash/addons/content_crm/member/security/view.php:76
 #: dash/addons/includes/languages/trans_static.php:346
 msgid "Windows"
 msgstr "ویندوز"
 
 #: dash/addons/content_account/profile/security/view.php:75
-#: dash/addons/content_crm/member/security/view.php:70
+#: dash/addons/content_crm/member/security/view.php:80
 #: dash/addons/includes/languages/trans_static.php:347
 msgid "Linux"
 msgstr "لینوکس"
@@ -269,55 +271,55 @@ msgstr "کد اعتبارسنجی یافت نشد"
 msgid "Code ok"
 msgstr "کد صحیح است"
 
-#: dash/addons/content_api/v5/enter/controller.php:229
+#: dash/addons/content_api/v5/enter/controller.php:230
 msgid "The verification code sended to phone number"
 msgstr "کد اعتبار سنجی به این شماره تلفن ارسال شد"
 
-#: dash/addons/content_api/v5/enter/controller.php:234
+#: dash/addons/content_api/v5/enter/controller.php:235
 msgid "A verification code was sended to user"
 msgstr "کد اعتبارسنجی به کاربر ارسال شده است"
 
-#: dash/addons/content_api/v5/enter/controller.php:262
+#: dash/addons/content_api/v5/enter/controller.php:263
 msgid "Invalid user_code and user_token"
 msgstr "کد شناسایی کاربر و توکن کاربر باهم تطابق ندارند"
 
-#: dash/addons/content_api/v5/enter/controller.php:268
+#: dash/addons/content_api/v5/enter/controller.php:269
 msgid "This method was not supported"
 msgstr "این متود پشتیبانی نمی‌شود"
 
-#: dash/addons/content_api/v5/enter/controller.php:323
+#: dash/addons/content_api/v5/enter/controller.php:324
 #: dash/addons/content_enter/callback/model.php:56
 #: dash/addons/content_enter/callback/model.php:139
 msgid "Mobile not set"
 msgstr "موبایل تنظیم نشده است"
 
-#: dash/addons/content_api/v5/enter/controller.php:330
+#: dash/addons/content_api/v5/enter/controller.php:331
 #: dash/addons/content_enter/app/model.php:23 dash/lib/app/address.php:161
-#: dash/lib/app/user.php:234 khadije/includes/lib/app/karbalauser.php:101
+#: dash/lib/app/user.php:271 khadije/includes/lib/app/karbalauser.php:101
 msgid "Invalid mobile"
 msgstr "شماره‌ی تلفن همراه نامعتبر است"
 
-#: dash/addons/content_api/v5/enter/controller.php:337
+#: dash/addons/content_api/v5/enter/controller.php:338
 msgid "User code not set"
 msgstr "کد کاربر ارسال نشده است"
 
-#: dash/addons/content_api/v5/enter/controller.php:344
+#: dash/addons/content_api/v5/enter/controller.php:345
 msgid "Invalid user_code"
 msgstr "کد کاربر اشتباه است"
 
-#: dash/addons/content_api/v5/enter/controller.php:352
+#: dash/addons/content_api/v5/enter/controller.php:353
 msgid "User token not set"
 msgstr "توکن کاربر ارسال نشده است"
 
-#: dash/addons/content_api/v5/enter/controller.php:358
+#: dash/addons/content_api/v5/enter/controller.php:359
 msgid "Invalid user_token"
 msgstr "توکن کاربر معتبر نیست"
 
-#: dash/addons/content_api/v5/enter/controller.php:367
+#: dash/addons/content_api/v5/enter/controller.php:368
 msgid "Invalid verify_code"
 msgstr "کد اعتبارسنجی معتبر نیست"
 
-#: dash/addons/content_api/v5/enter/controller.php:375
+#: dash/addons/content_api/v5/enter/controller.php:376
 msgid "Verification code is out of range"
 msgstr "کد اعتبارسنجی خارج از محدوده مجاز است"
 
@@ -444,7 +446,7 @@ msgstr "افزودن :val جدید"
 #: dash/addons/content_cp/comments/home/view.php:23
 #: dash/addons/content_cp/posts/home/view.php:71
 #: dash/addons/content_cp/visitor/log/view.php:23
-#: dash/addons/content_crm/log/home/view.php:27
+#: dash/addons/content_crm/log/home/view.php:34
 #: dash/addons/content_crm/member/home/view.php:24
 #: dash/addons/content_su/dbtables/view.php:22
 #: dash/addons/content_su/tg/log/view.php:22
@@ -501,7 +503,7 @@ msgstr "داشبورد سیستم مدیریت محتوا"
 #: dash/addons/content_cp/posts/edit/controller.php:12
 #: dash/addons/content_cp/posts/edit/view.php:13
 #: dash/addons/content_support/message/edit/view.php:23
-#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:153
+#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:250
 #: khadije/content_cp/admincontact/edit/view.php:14
 #: khadije/content_cp/consulting/view/controller.php:28
 #: khadije/content_cp/delneveshte/edit/controller.php:15
@@ -523,7 +525,7 @@ msgstr "شناسه نامعتبر"
 #: dash/addons/content_cp/contact/edit/model.php:12
 #: dash/addons/content_support/ticket/show/model.php:144
 #: dash/lib/app/address.php:189 dash/lib/app/comment.php:259
-#: dash/lib/app/ticket.php:486 dash/lib/app/user.php:508
+#: dash/lib/app/ticket.php:507 dash/lib/app/user.php:545
 #: dash/lib/app/user_telegram.php:96
 #: khadije/content_cp/admincontact/edit/model.php:12
 #: khadije/content_cp/delneveshte/edit/model.php:12
@@ -913,7 +915,7 @@ msgstr "تنظیم آدرس و جزئیات موقعیت فعلی دانش‌آ�
 msgid "To change the image, please re-open the new file"
 msgstr "برای ویرایش تصویر، لطفا فایل جدیدی را انتخاب کنید"
 
-#: dash/addons/content_crm/member/avatar/model.php:70 dash/lib/app/user/edit.php:183
+#: dash/addons/content_crm/member/avatar/model.php:70 dash/lib/app/user/edit.php:174
 msgid "User successfully updated"
 msgstr "کاربر با موفقیت به روزرسانی شد"
 
@@ -977,6 +979,7 @@ msgid "you can edit detail of member"
 msgstr "شما می‌توانید اطلاعات این عضو را ویرایش کنید"
 
 #: dash/addons/content_crm/member/glance/model.php:17
+#: dash/addons/content_crm/member/log/model.php:71
 #: dash/addons/content_crm/member/security/model.php:71
 msgid "User removed"
 msgstr "کاربر حذف شده"
@@ -1016,6 +1019,39 @@ msgid ""
 "set personal and birth identification detail and some other id detail like "
 "passport and etc"
 msgstr "تنظیم جزئيات اطلاعات هویتی شخصی مثل تولد، پاسپورت، کدملی،‌ شناسنامه و غیره"
+
+#: dash/addons/content_crm/member/log/model.php:36
+#: dash/addons/content_crm/member/security/model.php:36
+msgid "You can not set your permission less than admin!"
+msgstr "شما نمی‌توانید سطح دسترسی خود را پایین تر از مدیریت قرار دهید!"
+
+#: dash/addons/content_crm/member/log/model.php:60
+#: dash/addons/content_crm/member/security/model.php:60
+msgid "Chatid save"
+msgstr "شناسه چت ذخیره شد"
+
+#: dash/addons/content_crm/member/log/model.php:83
+#: dash/addons/content_crm/member/security/model.php:83
+msgid "Chatid removed"
+msgstr "شناسه تلگرام حذف شد"
+
+#: dash/addons/content_crm/member/log/model.php:109
+#: dash/addons/content_crm/member/security/model.php:109
+msgid "Please set repassword"
+msgstr "لطفا تکرار کلمه عبور را وارد کنید"
+
+#: dash/addons/content_crm/member/log/model.php:115
+#: dash/addons/content_crm/member/security/model.php:115
+msgid "Password not match whit repassword"
+msgstr "تکرار کلمه عبور با کلمه عبور برابر نیست"
+
+#: dash/addons/content_crm/member/log/view.php:12
+msgid "User log"
+msgstr "لاگ کاربر"
+
+#: dash/addons/content_crm/member/log/view.php:13
+msgid "You can see user log."
+msgstr "شما می‌توانید لاگ کاربر را مشاهده کنید"
 
 #: dash/addons/content_crm/member/main/view.php:32
 msgid "Back to list of members"
@@ -1158,26 +1194,6 @@ msgstr "آگاهسازی"
 #: dash/addons/content_crm/member/notif/view.php:12
 msgid "Allow to set notification to user"
 msgstr "اجازه تنظیم آگاه‌سازی برای کاربر"
-
-#: dash/addons/content_crm/member/security/model.php:36
-msgid "You can not set your permission less than admin!"
-msgstr "شما نمی‌توانید سطح دسترسی خود را پایین تر از مدیریت قرار دهید!"
-
-#: dash/addons/content_crm/member/security/model.php:60
-msgid "Chatid save"
-msgstr "شناسه چت ذخیره شد"
-
-#: dash/addons/content_crm/member/security/model.php:83
-msgid "Chatid removed"
-msgstr "شناسه تلگرام حذف شد"
-
-#: dash/addons/content_crm/member/security/model.php:109
-msgid "Please set repassword"
-msgstr "لطفا تکرار کلمه عبور را وارد کنید"
-
-#: dash/addons/content_crm/member/security/model.php:115
-msgid "Password not match whit repassword"
-msgstr "تکرار کلمه عبور با کلمه عبور برابر نیست"
 
 #: dash/addons/content_crm/member/security/view.php:12
 msgid "Edit user security"
@@ -1346,6 +1362,11 @@ msgstr "بعدا مجددا تلاش کنید!"
 msgid "We can not signup you"
 msgstr "ما نمی‌توانیم شما را ثبت‌نام کنیم"
 
+#: dash/addons/content_enter/app/view.php:13
+#: dash/addons/content_enter/home/view.php:11
+msgid "Enter to :name"
+msgstr "ورود به :name"
+
 #: dash/addons/content_enter/ban/view.php:9
 msgid "You are Banned!!"
 msgstr "شما مسدود شدید!"
@@ -1387,13 +1408,13 @@ msgid "User signup by sms"
 msgstr "کاربر با ارسال پیامک ثبت نام شد"
 
 #: dash/addons/content_enter/controller.php:24
-#: dash/addons/content_support/ticket/add/model.php:76
+#: dash/addons/content_support/ticket/add/model.php:77
 #: dash/addons/content_support/ticket/contact_ticket/model.php:55
 msgid "Your cookies may have been blocked"
 msgstr "احتمالا کوکی‌های شما بلاک شده است"
 
 #: dash/addons/content_enter/controller.php:24
-#: dash/addons/content_support/ticket/add/model.php:76
+#: dash/addons/content_support/ticket/add/model.php:77
 #: dash/addons/content_support/ticket/contact_ticket/model.php:55
 msgid "You need to enable cookie for usign this service"
 msgstr "برای استفاده از این سرویس شما به کوکی نیاز دارید"
@@ -1459,12 +1480,12 @@ msgstr "موبایل یافت نشد"
 #: dash/lib/app/parent/add.php:50 dash/lib/app/parent/add.php:59
 #: dash/lib/app/parent/delete.php:35 dash/lib/app/parent/delete.php:114
 #: dash/lib/app/parent/get.php:35 dash/lib/app/parent/get.php:44
-#: dash/lib/app/posts/add.php:37 dash/lib/app/term.php:338
+#: dash/lib/app/posts/add.php:37 dash/lib/app/term.php:357
 #: dash/lib/app/user/add.php:55 khadije/includes/lib/app/festival/add.php:46
 #: khadije/includes/lib/app/festivalcourse/add.php:33
 #: khadije/includes/lib/app/festivaldetail/add.php:29
 #: khadije/includes/lib/app/myuser.php:401 khadije/includes/lib/app/myuser.php:505
-#: khadije/includes/lib/app/myuser.php:585 khadije/includes/lib/app/need.php:269
+#: khadije/includes/lib/app/myuser.php:592 khadije/includes/lib/app/need.php:269
 #: khadije/includes/lib/app/need.php:325 khadije/includes/lib/app/service.php:271
 #: khadije/includes/lib/app/service.php:390 khadije/includes/lib/app/travel.php:701
 msgid "User not found"
@@ -1486,10 +1507,6 @@ msgstr "آیا می‌خواهید ثبت‌نام کنید"
 #: dash/addons/content_enter/home/model.php:158
 msgid "Click to signup"
 msgstr "برای ثبت‌نام کلیک کنید"
-
-#: dash/addons/content_enter/home/view.php:11
-msgid "Enter to :name"
-msgstr "ورود به :name"
 
 #: dash/addons/content_enter/mobile/change/model.php:13
 msgid "Please fill the password field"
@@ -1665,6 +1682,22 @@ msgstr ""
 msgid "Signup in :name"
 msgstr "ثبت‌نام در :name"
 
+#: dash/addons/content_enter/signup/view.php:17
+msgid "Terms of Service"
+msgstr "شرایط استفاده"
+
+#: dash/addons/content_enter/signup/view.php:18
+msgid "Privacy Policy"
+msgstr "حریم خصوصی"
+
+#: dash/addons/content_enter/signup/view.php:20
+msgid ""
+"By clicking Sign Up, you are indicating that you have read the :privacy and agree "
+"to the :terms."
+msgstr ""
+"با فشردن ثبت‌نام، شما تایید می‌کنید که بخش :privacy را خوانده‌اید و با :terms موافق "
+"هستید."
+
 #: dash/addons/content_enter/twostep/model.php:11
 #: dash/addons/content_enter/twostep/view.php:11
 msgid "Please login to continue"
@@ -1775,17 +1808,17 @@ msgstr "کد فعال‌سازی در سیستم محلی :code است"
 msgid "Your verification code is :code "
 msgstr "کد فعال سازی شما  :code "
 
-#: dash/addons/content_enter/verify/telegram/model.php:52
+#: dash/addons/content_enter/verify/telegram/model.php:53
 #: dash/lib/app/log/caller/enter/enter_apiverificationcode.php:92
 msgid "Your login code is :code"
 msgstr "کد ورود شما :code است"
 
-#: dash/addons/content_enter/verify/telegram/model.php:53
+#: dash/addons/content_enter/verify/telegram/model.php:54
 #: dash/lib/app/log/caller/enter/enter_apiverificationcode.php:93
 msgid "This code can be used to log in to your account. Do not give it to anyone!"
 msgstr "این کد برای ورود به حساب‌کاربری‌تان استفاده می‌شود. آن را به سایرین ندهید!"
 
-#: dash/addons/content_enter/verify/telegram/model.php:54
+#: dash/addons/content_enter/verify/telegram/model.php:55
 #: dash/lib/app/log/caller/enter/enter_apiverificationcode.php:94
 msgid "If you didn't request this code, ignore this message."
 msgstr "اگر شما درخواست کد را نداده‌اید،‌ این کد را نادیده بگیرید."
@@ -2135,7 +2168,7 @@ msgstr "موبایل نمی‌تواند خالی باشد"
 msgid "Please select one of the type items"
 msgstr "لطفا یک نوع را انتخاب کنید"
 
-#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:523
+#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:620
 #: khadije/content_cp/festival/detail/view.php:21
 msgid "Invalid type"
 msgstr "نوع نامعتبر"
@@ -2310,21 +2343,21 @@ msgstr "تگ نادرست"
 msgid "Category"
 msgstr "دسته‌بندی"
 
-#: dash/addons/content_support/ticket/add/model.php:56
+#: dash/addons/content_support/ticket/add/model.php:57
 #: dash/addons/content_support/ticket/show/model.php:259
 msgid "Your ticket was sended"
 msgstr "تیکت شما ارسال شد"
 
-#: dash/addons/content_support/ticket/add/model.php:71
+#: dash/addons/content_support/ticket/add/model.php:72
 #: dash/addons/content_support/ticket/contact_ticket/model.php:50
 msgid "It was very fast!"
 msgstr "خیلی سریع بود!"
 
-#: dash/addons/content_support/ticket/add/model.php:98
+#: dash/addons/content_support/ticket/add/model.php:99
 msgid "You try to send some html code!"
 msgstr "شما در تلاشید کد اچ‌تی‌ام‌ال ارسال کنید!"
 
-#: dash/addons/content_support/ticket/add/model.php:108
+#: dash/addons/content_support/ticket/add/model.php:109
 #: dash/addons/content_support/ticket/contact_ticket/model.php:79
 msgid "Can not set 2 link in one message!"
 msgstr "نمی‌توانید دو لینک را در یک پیام ارسال کنید"
@@ -2548,7 +2581,7 @@ msgid "Support dashboard"
 msgstr "داشبورد پشتیبانی"
 
 #: dash/addons/content_support/view.php:63
-#: dash/addons/includes/languages/trans_dash.php:556 dash/lib/app/ticket.php:173
+#: dash/addons/includes/languages/trans_dash.php:556 dash/lib/app/ticket.php:194
 #: khadije/includes/languages/trans_dash.php:612
 msgid "Ticket"
 msgstr "تیکت"
@@ -4683,14 +4716,14 @@ msgid "Last Modified"
 msgstr "آخرین به‌روز رسانی"
 
 #: dash/addons/includes/languages/trans_dash.php:524 dash/lib/app.php:359
-#: dash/lib/app.php:360 dash/lib/app/user.php:155 dash/lib/user.php:198
+#: dash/lib/app.php:360 dash/lib/app/user.php:192 dash/lib/user.php:198
 #: khadije/includes/languages/trans_dash.php:703
 #: khadije/includes/languages/trans_project.php:23
 msgid "Mr"
 msgstr "آقای"
 
 #: dash/addons/includes/languages/trans_dash.php:525 dash/lib/app.php:364
-#: dash/lib/app.php:365 dash/lib/app/user.php:159 dash/lib/user.php:202
+#: dash/lib/app.php:365 dash/lib/app/user.php:196 dash/lib/user.php:202
 #: khadije/includes/languages/trans_dash.php:704
 #: khadije/includes/languages/trans_project.php:142
 msgid "Mrs"
@@ -4763,7 +4796,7 @@ msgstr "جزئیات شناسنامه‌ای"
 msgid "Contact information"
 msgstr "اطلاعات تماس"
 
-#: dash/addons/includes/languages/trans_dash.php:542 dash/lib/app/ticket.php:182
+#: dash/addons/includes/languages/trans_dash.php:542 dash/lib/app/ticket.php:203
 #: khadije/includes/languages/trans_dash.php:593
 #: khadije/includes/languages/trans_project.php:307
 msgid "Message"
@@ -10684,6 +10717,30 @@ msgstr "پنل"
 msgid "panel"
 msgstr "پنل"
 
+#: dash/addons/includes/languages/trans_static.php:1133
+msgid "activeuser"
+msgstr "کاربران فعال"
+
+#: dash/addons/includes/languages/trans_static.php:1134
+msgid "deactiveuser"
+msgstr "کاربران غیرفعال"
+
+#: dash/addons/includes/languages/trans_static.php:1135
+msgid "user_awaiting"
+msgstr "کاربران درانتظار"
+
+#: dash/addons/includes/languages/trans_static.php:1136
+msgid "user_removed"
+msgstr "کاربران حذف شده"
+
+#: dash/addons/includes/languages/trans_static.php:1137
+msgid "user_filter"
+msgstr "کاربران فیلترشده"
+
+#: dash/addons/includes/languages/trans_static.php:1138
+msgid "news"
+msgstr "اخبار"
+
 #: dash/lib/app/address.php:58
 msgid "Please set title less than 100 character"
 msgstr "لطفا عنوان را کمتر از ۱۰۰ حرف وارد کنید"
@@ -10765,28 +10822,28 @@ msgstr "شما دسترسی لازم برای حذف این آدرس را ندا
 msgid "Address removed"
 msgstr "آدرس حذف شد"
 
-#: dash/lib/app/comment.php:79 dash/lib/app/ticket.php:286
+#: dash/lib/app/comment.php:79 dash/lib/app/ticket.php:307
 msgid "This text is duplicate and you are sended something like this before!"
 msgstr "این متن تکراری است و شما قبلا چیزی شبیه این را ارسال کردید!"
 
-#: dash/lib/app/comment.php:96 dash/lib/app/ticket.php:307
+#: dash/lib/app/comment.php:96 dash/lib/app/ticket.php:328
 msgid "No way to add new data"
 msgstr "هیچ راهی برای افزودن اطلاعات وجود ندارد"
 
-#: dash/lib/app/comment.php:120 dash/lib/app/ticket.php:355
+#: dash/lib/app/comment.php:120 dash/lib/app/ticket.php:376
 msgid "Can not access to edit comment"
 msgstr "شما دسترسی لازم را برای ویرایش این نظر ندارید"
 
-#: dash/lib/app/comment.php:214 dash/lib/app/ticket.php:449
+#: dash/lib/app/comment.php:214 dash/lib/app/ticket.php:470
 msgid "Please fill the content box"
 msgstr "لطفا باکس متن را پر کنید"
 
-#: dash/lib/app/comment.php:252 dash/lib/app/ticket.php:493
+#: dash/lib/app/comment.php:252 dash/lib/app/ticket.php:514
 msgid "Invalid via"
 msgstr "پارامتر via اشتباه است"
 
 #: dash/lib/app/comment.php:269 dash/lib/app/comment.php:276
-#: dash/lib/app/posts.php:54 dash/lib/app/posts.php:62
+#: dash/lib/app/posts.php:151 dash/lib/app/posts.php:159
 #: khadije/content/comment/model.php:113
 msgid "Invalid post id"
 msgstr "شناسه پست اشتباه است"
@@ -10795,12 +10852,12 @@ msgstr "شناسه پست اشتباه است"
 msgid "Comment of this post is closed!"
 msgstr "دیدگاه‌های این نوشته بسته است!"
 
-#: dash/lib/app/comment.php:294 dash/lib/app/ticket.php:501
+#: dash/lib/app/comment.php:294 dash/lib/app/ticket.php:522
 msgid "Title is out of range!"
 msgstr "عنوان خارج از محدوده است!"
 
-#: dash/lib/app/comment.php:303 dash/lib/app/term.php:168
-#: dash/lib/app/ticket.php:509
+#: dash/lib/app/comment.php:303 dash/lib/app/term.php:187
+#: dash/lib/app/ticket.php:530
 msgid "Invalid parent"
 msgstr "شناسه والد اشتباه است"
 
@@ -11151,120 +11208,120 @@ msgstr "والد حذف شد"
 msgid "Waiting to user accept this request"
 msgstr "در انتظار تایید درخواست توسط کاربر"
 
-#: dash/lib/app/posts.php:87 khadije/includes/lib/app/festival.php:63
+#: dash/lib/app/posts.php:184 khadije/includes/lib/app/festival.php:63
 msgid "Duplicate file in this gallery"
 msgstr "این فایل در گالری تصاویر فعلی موجود است"
 
-#: dash/lib/app/posts.php:103 khadije/includes/lib/app/festival.php:79
+#: dash/lib/app/posts.php:200 khadije/includes/lib/app/festival.php:79
 msgid "Invalid gallery id"
 msgstr "شناسه گالری تصاویر اشتباه است"
 
-#: dash/lib/app/posts.php:164
+#: dash/lib/app/posts.php:261
 msgid "This help center is published. And you can not edit it!"
 msgstr "این مقاله مرکز راهنمایی منتشر شده و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:174
+#: dash/lib/app/posts.php:271
 msgid "This post is published. And you can not edit it!"
 msgstr "این خبر منتشر شده و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:190 dash/lib/app/posts.php:200
+#: dash/lib/app/posts.php:287 dash/lib/app/posts.php:297
 msgid "This is not your post. And you can not edit it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:211 dash/lib/app/posts.php:217 dash/lib/app/term.php:91
-#: dash/lib/app/term.php:97
+#: dash/lib/app/posts.php:308 dash/lib/app/posts.php:314 dash/lib/app/term.php:110
+#: dash/lib/app/term.php:116
 msgid "Invalid parameter language"
 msgstr "پارامتر زبان نامعتبر است"
 
-#: dash/lib/app/posts.php:224
+#: dash/lib/app/posts.php:321
 msgid "Title of posts can not be null"
 msgstr "عنوان پست نمی تواند خالی باشد"
 
-#: dash/lib/app/posts.php:230 khadije/content_cp/meeting/add/model.php:147
+#: dash/lib/app/posts.php:327 khadije/content_cp/meeting/add/model.php:147
 msgid "Please set the title less than 100 character"
 msgstr "لطفا عنوان پست را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:237
+#: dash/lib/app/posts.php:334
 msgid "Please set the excerpt less than 300 character"
 msgstr "لطفا چکیده متن را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:244
+#: dash/lib/app/posts.php:341
 msgid "Please set the subtitle less than 300 character"
 msgstr "لطفا زیر عنوان را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:251
+#: dash/lib/app/posts.php:348
 msgid "Please set the slug less than 100 character"
 msgstr "لطفا نامک را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:273
+#: dash/lib/app/posts.php:370
 msgid "Duplicate slug"
 msgstr "نامک تکراری است"
 
-#: dash/lib/app/posts.php:281
+#: dash/lib/app/posts.php:378
 msgid "Please set the url less than 100 character"
 msgstr "لطفا آدرس را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:293
+#: dash/lib/app/posts.php:390
 msgid "This text is too large!"
 msgstr "متن خیلی طولانی است!"
 
-#: dash/lib/app/posts.php:299
+#: dash/lib/app/posts.php:396
 msgid "Please set the type less than 100 character"
 msgstr "لطفا نوع را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:317
+#: dash/lib/app/posts.php:414
 msgid "Invalid parameter status"
 msgstr "پارامتر وضعیت نامعتبر است"
 
-#: dash/lib/app/posts.php:328
+#: dash/lib/app/posts.php:425
 msgid "You can not delete help center"
 msgstr "شما نمی‌توانید این مقاله مرکز راهنمایی را حذف کنید"
 
-#: dash/lib/app/posts.php:336
+#: dash/lib/app/posts.php:433
 msgid "You can not delete page"
 msgstr "شما نمی‌توانید این صفحه را حذف کنید"
 
-#: dash/lib/app/posts.php:345
+#: dash/lib/app/posts.php:442
 msgid "You can not delete post"
 msgstr "شما نمی توانید خبر را حذف کنید"
 
-#: dash/lib/app/posts.php:359
+#: dash/lib/app/posts.php:456
 msgid "This is not your help center. And you can not delete it!"
 msgstr "این مقاله شما نیست و شما نمی‌توانید آن را ویرایش کنید!"
 
-#: dash/lib/app/posts.php:369
+#: dash/lib/app/posts.php:466
 msgid "This is not your post. And you can not delete it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:388
+#: dash/lib/app/posts.php:485
 msgid "Invalid parameter parent"
 msgstr "پارامتر والد نامعتبر است"
 
-#: dash/lib/app/posts.php:395
+#: dash/lib/app/posts.php:492
 msgid "Parent post not found"
 msgstr "پست والد یافت نشد"
 
-#: dash/lib/app/posts.php:403
+#: dash/lib/app/posts.php:500
 msgid "Can not set page as parent of self!"
 msgstr "نمی‌توانید صفحه‌ای را به‌عنوان والد خودش ثبت کنید!"
 
-#: dash/lib/app/posts.php:451 khadije/content_cp/meeting/add/model.php:176
+#: dash/lib/app/posts.php:548 khadije/content_cp/meeting/add/model.php:176
 msgid "Invalid parameter publishdate"
 msgstr "تاریخ انتشار پست اشتباه است"
 
-#: dash/lib/app/posts.php:472
+#: dash/lib/app/posts.php:569
 msgid "Invalid publish time"
 msgstr "تاریخ انتشار نادرست"
 
-#: dash/lib/app/posts.php:502
+#: dash/lib/app/posts.php:599
 msgid "Category setting for better access is suggested"
 msgstr "تنظیم دسته‌بندی برای دسترسی مناسب‌تر توصیه می‌شود"
 
-#: dash/lib/app/posts.php:517
+#: dash/lib/app/posts.php:614
 msgid "Invalid slug"
 msgstr "نامک اشتباه است"
 
-#: dash/lib/app/posts.php:654
+#: dash/lib/app/posts.php:751
 msgid "Some :type is wrong"
 msgstr "برخی از :type اشتباه هستند"
 
@@ -11324,240 +11381,260 @@ msgstr "این نام قبلا رزرو شده است، نام دیگری آزم
 msgid "This template is not in your template list!"
 msgstr "این الگو در لیست الگوهای شما وجود ندارد!"
 
-#: dash/lib/app/term.php:60
+#: dash/lib/app/term.php:79
 msgid "Please set the term title"
 msgstr "لطفا عنوان ترم را وارد کنید"
 
-#: dash/lib/app/term.php:66
+#: dash/lib/app/term.php:85
 msgid "Please set the term title less than 150 character"
 msgstr "لطفا عنوان ترم را کمتر از ۱۵۰ حرف وارد کنید"
 
-#: dash/lib/app/term.php:75
+#: dash/lib/app/term.php:94
 msgid "Please set the term slug less than 150 character"
 msgstr "لطفا نامک ترم را کمتر از ۱۵۰ حرف وارد کنید"
 
-#: dash/lib/app/term.php:104
+#: dash/lib/app/term.php:123
 msgid "Please set the term desc less than 500 character"
 msgstr "لطفا توضیحات ترم را کمتر از ۱۵۰ حرف وارد کنید"
 
-#: dash/lib/app/term.php:127
+#: dash/lib/app/term.php:146
 msgid "Please set the term type"
 msgstr "لطفا نوع ترم را مشخص کنید"
 
-#: dash/lib/app/term.php:136
+#: dash/lib/app/term.php:155
 msgid "Invalid status of term"
 msgstr "وضعیت ترم اشتباه است"
 
-#: dash/lib/app/term.php:153
+#: dash/lib/app/term.php:172
 msgid "Duplicate term"
 msgstr "عبارات تکراری"
 
-#: dash/lib/app/term.php:161
+#: dash/lib/app/term.php:180
 msgid "Please set the term excerpt less than 500 character"
 msgstr "لطفا چکیده عبارات را کمتر از ۵۰۰ حرف وارد کنید"
 
-#: dash/lib/app/term.php:184
+#: dash/lib/app/term.php:203
 msgid "Parent not found"
 msgstr "والد یافت نشد"
 
-#: dash/lib/app/term.php:190
+#: dash/lib/app/term.php:209
 msgid "Can not set the parent as yourself"
 msgstr "یک شیء‌ نمی تواند والد خودش باشد"
 
-#: dash/lib/app/term.php:195
+#: dash/lib/app/term.php:214
 msgid "The parent is not a :type"
 msgstr "والد یک :type نیست"
 
-#: dash/lib/app/term.php:362
+#: dash/lib/app/term.php:381
 msgid "No way to insert term"
 msgstr "هیچ راهی برای ثبت ترم وجود ندارد"
 
-#: dash/lib/app/term.php:452
+#: dash/lib/app/term.php:471
 msgid "Can not access to edit term"
 msgstr "دسترسی لازم برای ویرایش ترم وجود ندارد"
 
-#: dash/lib/app/ticket.php:171
+#: dash/lib/app/ticket.php:192
 msgid "Count ticket"
 msgstr "تعداد تیکت"
 
-#: dash/lib/app/ticket.php:180
+#: dash/lib/app/ticket.php:201
 msgid "Count message"
 msgstr "تعداد پیام"
 
-#: dash/lib/app/ticket.php:189
+#: dash/lib/app/ticket.php:210
 msgid "Answer time"
 msgstr "زمان‌ پاسخ"
 
-#: dash/lib/app/ticket.php:191
+#: dash/lib/app/ticket.php:212
 msgid "Minutes"
 msgstr "دقیقه"
 
-#: dash/lib/app/user.php:31 dash/lib/app/user.php:65 dash/lib/app/user.php:109
+#: dash/lib/app/user.php:52 dash/lib/app/user.php:90 dash/lib/app/user.php:140
 #: dash/lib/app/visitor.php:112 dash/lib/app/visitor.php:141
 msgid "Unknown"
 msgstr "ناشناس"
 
-#: dash/lib/app/user.php:226 khadije/includes/lib/app/travel.php:745
+#: dash/lib/app/user.php:263 khadije/includes/lib/app/travel.php:745
 msgid "Mobile is required"
 msgstr "موبایل الزامی است"
 
-#: dash/lib/app/user.php:246 dash/lib/app/user.php:253
+#: dash/lib/app/user.php:283 dash/lib/app/user.php:290
 msgid "Plese set firstname less than 100 character"
 msgstr "طول رشته نام باید کمتر از ۱۰۰ کاراکتر باشد"
 
-#: dash/lib/app/user.php:260
+#: dash/lib/app/user.php:297
 msgid "Invalid father"
 msgstr "نام پدر نامعتبر"
 
-#: dash/lib/app/user.php:267
+#: dash/lib/app/user.php:304
 msgid "Invalid nationality"
 msgstr "ملیت نادرست"
 
-#: dash/lib/app/user.php:274
+#: dash/lib/app/user.php:311
 msgid "Invalid nationalcode syntax"
 msgstr "ساختار کدملی نامعتبر است"
 
-#: dash/lib/app/user.php:284
+#: dash/lib/app/user.php:321
 msgid "Invalid pasportcode"
 msgstr "شماره گذرنامه نامعتبر"
 
-#: dash/lib/app/user.php:309
+#: dash/lib/app/user.php:346
 msgid "Invalid pasportdate"
 msgstr "تاریخ گذرنامه نامعتبر"
 
-#: dash/lib/app/user.php:324
+#: dash/lib/app/user.php:361
 msgid "Invalid gender"
 msgstr "جنسیت نامعتبر"
 
-#: dash/lib/app/user.php:331
+#: dash/lib/app/user.php:368
 msgid "Invalid marital"
 msgstr "وضعیت تاهل نامعتبر"
 
-#: dash/lib/app/user.php:338
+#: dash/lib/app/user.php:375
 msgid "Please set website less than 100 character"
 msgstr "لطفا آدرس را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/user.php:345
+#: dash/lib/app/user.php:382
 msgid "Please set instagram less than 100 character"
 msgstr "لطفا شناسه اینستاگرام را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/user.php:352
+#: dash/lib/app/user.php:389
 msgid "Please set linkedin less than 100 character"
 msgstr "لطفا شناسه لینک‌دین را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/user.php:359
+#: dash/lib/app/user.php:396
 msgid "Please set facebook less than 100 character"
 msgstr "لطفا شناسه فیس‌بوک را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/user.php:366
+#: dash/lib/app/user.php:403
 msgid "Please set twitter less than 100 character"
 msgstr "لطفا شناسه تویتر را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/user.php:390 dash/lib/app/user.php:396
+#: dash/lib/app/user.php:427 dash/lib/app/user.php:433
 msgid "Invalid shcode"
 msgstr "شماره شناسنامه نامعتبر"
 
-#: dash/lib/app/user.php:408
+#: dash/lib/app/user.php:445
 msgid "Invalid birthcity"
 msgstr "محل تولد نامعتبر"
 
-#: dash/lib/app/user.php:421
+#: dash/lib/app/user.php:458
 msgid "Invalid religion"
 msgstr "مذهب نامعتبر"
 
-#: dash/lib/app/user.php:434
+#: dash/lib/app/user.php:471
 msgid "Invalid avatar"
 msgstr "آواتار نامعتبر"
 
-#: dash/lib/app/user.php:441
+#: dash/lib/app/user.php:478
 msgid "Invalid education"
 msgstr "تحصیلات نامعتبر"
 
-#: dash/lib/app/user.php:454
+#: dash/lib/app/user.php:491
 msgid "Invalid educationcourse"
 msgstr "رشته تحصیلی نامعتبر"
 
-#: dash/lib/app/user.php:466
+#: dash/lib/app/user.php:503
 msgid "Invalid issue place"
 msgstr "محل صدور اشتباه"
 
-#: dash/lib/app/user.php:489
+#: dash/lib/app/user.php:526
 msgid "Invalid email"
 msgstr "رایانامه اشتباه"
 
-#: dash/lib/app/user.php:501
+#: dash/lib/app/user.php:538
 msgid "Invalid phone"
 msgstr "شماره تلفن‌همراه نامعتبر"
 
-#: dash/lib/app/user.php:535
+#: dash/lib/app/user.php:572
 msgid "Permission is incorrect"
 msgstr "مجوز نادرست است"
 
-#: dash/lib/app/user.php:573
+#: dash/lib/app/user.php:610
 msgid "Plase set password larger than 6 character"
 msgstr "لطفا کلمه‌ عبور را بزرگتر از ۶ حرف وارد کنید"
 
-#: dash/lib/app/user.php:588
+#: dash/lib/app/user.php:625
 msgid "Plase set title less than 100 character"
 msgstr "لطفا عنوان را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/user.php:595
+#: dash/lib/app/user.php:632
 msgid "Plase set bio less than 100 character"
 msgstr "لطفا زندگینامه را کمتر از ۱۰۰ کاراکتر وارد کنید"
 
-#: dash/lib/app/user.php:602
+#: dash/lib/app/user.php:639
 msgid "Plase set displayname less than 100 character"
 msgstr "لطفا نام را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/user.php:610
+#: dash/lib/app/user.php:647
 msgid "Language is incorrect"
 msgstr "زبان نادرست است"
 
-#: dash/lib/app/user.php:619
-msgid "Username must have at least 5 character"
-msgstr "شناسه‌ی کاربری باید بزرگتر از ۵ کاراکتر باشد"
+#: dash/lib/app/user.php:661
+msgid "Slug must have at least 5 character"
+msgstr "نامک باید بزرگتر از ۵ کاراکتر باشد"
 
-#: dash/lib/app/user.php:625
+#: dash/lib/app/user.php:667
 msgid "Please set the username less than 50 character"
 msgstr "شناسه‌ی کاربری جدید باید کمتر از ۵۰ کاراکتر باشد"
 
-#: dash/lib/app/user.php:631
+#: dash/lib/app/user.php:673
 msgid "Only [A-Za-z0-9_-] can use in username"
 msgstr "شما باید فقط از حروف و اعداد لاتین در نام کاربری استفاده کنید"
 
-#: dash/lib/app/user.php:637
+#: dash/lib/app/user.php:679
 msgid "You must use a one character from [A-Za-z] in the username"
 msgstr "شما باید حتما از یک حرف لاتین در نام کاربری استفاده کنید"
 
-#: dash/lib/app/user.php:653
+#: dash/lib/app/user.php:685
+msgid "Slug should contain a Latin letter"
+msgstr "نامک باید شامل حداقل یک حرف لاتین باشد"
+
+#: dash/lib/app/user.php:691
+msgid "The username must begin with latin letters"
+msgstr "نام کاربری باید با حرف لاتین شروع شود"
+
+#: dash/lib/app/user.php:697
+msgid "Only [A-Za-z0-9] can use in username"
+msgstr "شما باید فقط از حروف و اعداد لاتین در نام کاربری استفاده کنید"
+
+#: dash/lib/app/user.php:704
+msgid "Username must be less than 50 character"
+msgstr "شناسه‌ی کاربری جدید باید کمتر از ۵۰ کاراکتر باشد"
+
+#: dash/lib/app/user.php:712
+msgid "You can not choose this username"
+msgstr "شما نمی توانید نام کاربری را انتخاب دهید"
+
+#: dash/lib/app/user.php:725
 msgid "Duplicate username"
 msgstr "نام کاربری تکراری است! لطفا یک نام کاربری دیگر انتخاب کنید"
 
-#: dash/lib/app/user.php:678
+#: dash/lib/app/user.php:750
 msgid "You must set the type less than 50 character"
 msgstr "نوع باید کمتر از 50 کاراکتر باشد"
 
-#: dash/lib/app/user.php:687
+#: dash/lib/app/user.php:759
 msgid "Parent is incorrect"
 msgstr "والدین نادرست است"
 
-#: dash/lib/app/user.php:702
+#: dash/lib/app/user.php:774
 msgid "Pin is incorrect"
 msgstr "پین نادرست است"
 
-#: dash/lib/app/user.php:710
+#: dash/lib/app/user.php:782
 msgid "Ref is incorrect"
 msgstr "مرجع نادرست است"
 
-#: dash/lib/app/user.php:718
+#: dash/lib/app/user.php:790
 msgid "Unit id is incorrect"
 msgstr "کد واحد مالی نادرست است"
 
-#: dash/lib/app/user.php:1025
+#: dash/lib/app/user.php:1097
 msgid "Can not remove user by permission"
 msgstr "نمی‌توانید کاربری که داری سطح دسترسی هست را حذف کنید"
 
-#: dash/lib/app/user.php:1031
+#: dash/lib/app/user.php:1103
 msgid "This user was removed"
 msgstr "این کاربر قبلا حذف شده است"
 
@@ -11565,7 +11642,7 @@ msgstr "این کاربر قبلا حذف شده است"
 msgid "Duplicate mobile"
 msgstr "تلفن همراه تکراری"
 
-#: dash/lib/app/user/add.php:102 dash/lib/app/user/edit.php:117
+#: dash/lib/app/user/add.php:102 dash/lib/app/user/edit.php:108
 msgid "Duplicate nationalcode or pasportcode in your user list"
 msgstr "این کدملی یا شماره گذرنامه در لیست اعضا شما تکراری است"
 
@@ -11584,10 +11661,6 @@ msgstr "شما دسترسی لازم برای ویرایش این کاربر ر�
 #: dash/lib/app/user/edit.php:81
 msgid "Duplicate email"
 msgstr "ایمیل تکراری است"
-
-#: dash/lib/app/user/edit.php:91 dash/lib/app/user_telegram.php:213
-msgid "Duplicate chatid"
-msgstr "شناسه تلگرام تکراری است"
 
 #: dash/lib/app/user/user_id.php:51
 msgid "User not found."
@@ -11612,6 +11685,10 @@ msgstr "مقدار رشته زبان اشتباه است"
 #: dash/lib/app/user_telegram.php:160
 msgid "This user have not this chatid"
 msgstr "این کاربر این شناسه چت را ندارد"
+
+#: dash/lib/app/user_telegram.php:213
+msgid "Duplicate chatid"
+msgstr "شناسه تلگرام تکراری است"
 
 #: dash/lib/app/user_telegram.php:222
 msgid "No way to insert user_telegram"
@@ -13224,6 +13301,7 @@ msgstr "ثبت نام برای خدمات مشاوره جدید"
 #: khadije/content_a/representation/profile/model.php:33
 #: khadije/content_a/service/profile/model.php:48
 #: khadije/content_a/trip/profile/model.php:78
+#: khadije/content_cp/trip/profile/model.php:46
 msgid "Your detail was saved"
 msgstr "اطلاعات پروفایل شما ثبت شد"
 
@@ -13420,11 +13498,6 @@ msgstr "ثبت‌نام برای درخواست تشرف کاروانی"
 msgid "You must register at least :min partner"
 msgstr "شما باید حداقل :min عضو برای کاروان ثبت کنید"
 
-#: khadije/content_a/group/partner/model.php:73
-#: khadije/content_a/trip/partner/model.php:63
-msgid "Plase set nationalcode thumb"
-msgstr "لطفا تصویر کارت ملی را ارسال نمایید"
-
 #: khadije/content_a/group/partner/model.php:86
 #: khadije/content_a/trip/partner/model.php:76
 #: khadije/content_cp/familytrip/view/model.php:46
@@ -13465,12 +13538,13 @@ msgstr "شوهر"
 #: khadije/content_a/profile/model.php:13
 #: khadije/content_a/service/profile/model.php:13
 #: khadije/content_a/trip/profile/model.php:13
+#: khadije/content_cp/trip/profile/model.php:13
 msgid "Picture removed"
 msgstr "تصویر حذف شد"
 
 #: khadije/content_a/group/request/model.php:20
 #: khadije/content_a/trip/request/model.php:20
-#: khadije/content_cp/trip/add/model.php:28
+#: khadije/content_cp/trip/add/model.php:31
 msgid "Your Travel was saved"
 msgstr "درخواست تشرف شما با موفقیت ذخیره شد"
 
@@ -13722,15 +13796,15 @@ msgstr "اطلاعات به‌روزرسانی شد"
 msgid "Your service request for :place is done."
 msgstr "زیارت از نیابت شما در :place به انجام رسید."
 
-#: khadije/content_cp/consulting/view/view.php:11
+#: khadije/content_cp/consulting/view/view.php:12
 msgid "View consulting detail"
 msgstr "مشاهده جزئیات درخواست"
 
-#: khadije/content_cp/consulting/view/view.php:12
+#: khadije/content_cp/consulting/view/view.php:13
 msgid "check consulting and update status"
 msgstr "بررسی درخواست و بروزرسانی وضعیت"
 
-#: khadije/content_cp/consulting/view/view.php:15
+#: khadije/content_cp/consulting/view/view.php:16
 msgid "Back to consulting list"
 msgstr "بازگشت به لیست درخواست‌های مشاوره"
 
@@ -14605,6 +14679,10 @@ msgstr "لطفا شهر را انتخاب کنید"
 #: khadije/content_cp/trip/add/view.php:9
 msgid "Add new trip"
 msgstr "افزودن سفر جدید"
+
+#: khadije/content_cp/trip/profile/view.php:9
+msgid "Set user profile"
+msgstr "تنظیم پروفایل کاربر"
 
 #: khadije/content_cp/trip/view.php:13
 msgid "Request group trip list"
@@ -18015,6 +18093,12 @@ msgstr ""
 msgid "No way to add travel"
 msgstr "راهی برای ثبت تشرف وجود ندارد"
 
+#~ msgid "Username must have at least 5 character"
+#~ msgstr "شناسه‌ی کاربری باید بزرگتر از ۵ کاراکتر باشد"
+
+#~ msgid "Plase set nationalcode thumb"
+#~ msgstr "لطفا تصویر کارت ملی را ارسال نمایید"
+
 #~ msgid "Daily"
 #~ msgstr "روزانه"
 
@@ -18059,9 +18143,6 @@ msgstr "راهی برای ثبت تشرف وجود ندارد"
 
 #~ msgid "This users signup before"
 #~ msgstr "این کاربر قبلا ثبت‌نام کرده است"
-
-#~ msgid "Only [A-Za-z0-9] can use in username"
-#~ msgstr "شما باید فقط از حروف و اعداد لاتین در نام کاربری استفاده کنید"
 
 #~ msgid "Show log"
 #~ msgstr "نمایش لاگ"
@@ -22056,9 +22137,6 @@ msgstr "راهی برای ثبت تشرف وجود ندارد"
 #~ "کانون فرهنگی حضرت خدیجه مطابق قوانین بین‌الملل و وابسته به کشورهای دریافت‌کننده "
 #~ "خدمات بوده و در این چارچوب فعالیت می‌نماید."
 
-#~ msgid "Privacy Policy"
-#~ msgstr "حریم خصوصی"
-
 #~ msgid ""
 #~ "We wish to assure you that our main concern is to secure your privacy and "
 #~ "protect your information against impermissible access."
@@ -22205,9 +22283,6 @@ msgstr "راهی برای ثبت تشرف وجود ندارد"
 
 #~ msgid "Learn More"
 #~ msgstr "بیشتر بدانید"
-
-#~ msgid "Terms of Service"
-#~ msgstr "شرایط استفاده"
 
 #~ msgid ""
 #~ "Advancement of technology and development of Web-based business Cause Need new "

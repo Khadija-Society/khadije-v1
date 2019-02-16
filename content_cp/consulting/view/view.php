@@ -6,7 +6,8 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpRepresentationChangeStatus');
+		\dash\permission::access('cpConsultingChangeStatus');
+
 
 		\dash\data::page_title(T_("View consulting detail"));
 		\dash\data::page_desc(T_("check consulting and update status"));
