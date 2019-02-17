@@ -69,6 +69,7 @@ class model
 		elseif(\dash\request::post('save_child') === 'save_child')
 		{
 			$post = self::getPost();
+			$post['not_force_birthday'] = true;
 
 			$post['travel_id']       = \dash\request::get('id');
 
