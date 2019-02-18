@@ -22,8 +22,23 @@ class model
 			}
 			else
 			{
-				\dash\notif::warn("فرایند تهیه خروجی از لیست زائران کربلا در حال انجام است. <br> پایان فرایند از طریق بخش اطلاع رسانی به شما اعلام خواهد شد");
-				return false;
+				$get = \dash\file::read($addr);
+				if(time() - strtotime($get) > (60*60*2))
+				{
+					$datetime = date("Y-m-d H:i:s");
+
+					\dash\file::write($addr, $datetime);
+
+					self::_curl(['datetime' => $datetime]);
+
+					\dash\notif::ok("درخواست خروجی صادر شد. تا دقایقی دیگر فایل خروجی برای دانلود آماده خواهد شد <br> پایان فرایند از طریق بخش اطلاع رسانی به شما اعلام خواهد شد");
+					return true;
+				}
+				else
+				{
+					\dash\notif::warn("فرایند تهیه خروجی از لیست زائران کربلا در حال انجام است. <br> پایان فرایند از طریق بخش اطلاع رسانی به شما اعلام خواهد شد");
+					return false;
+				}
 			}
 		}
 
@@ -56,18 +71,27 @@ class model
 
 		$_args               = [];
 		$_args['pagenation'] = false;
-		$_args['limit']      = 1000;
-		$my_limit            = 1000;
+
+		$id                  = 1;
+		$id_end              = $id + 1000;
+
+		$_args['id']         = ['>', "$id AND id <= $id_end"];
+		$_args['order']      = 'asc';
+		$_args['sort']       = 'id';
+
 		$link                = null;
 		$result              = \lib\db\karbalausers::search(null, $_args);
+
 		while ($result)
 		{
 			$result = array_map(["\\lib\\app\\karbalauser", "ready"], $result);
 			$link = self::csv($result);
-			$_args['start_limit'] = $my_limit;
-			$_args['end_limit']   = 1000;
+			$id = $id + 1000;
+			$id_end = $id_end + 1000;
+			$_args['id']         = ['>', "$id AND id <= $id_end"];
+
 			$result               = \lib\db\karbalausers::search(null, $_args);
-			$my_limit             = $my_limit + 1000;
+
 		}
 
 		$msg = T_("Create export file completed");
@@ -95,22 +119,22 @@ class model
 		foreach ($_data as $key => $value)
 		{
 			$temp                           = [];
-			$temp[T_('id')]                 = $value['id'];
-			$temp[T_('mobile')]             = $value['mobile'];
-			$temp[T_('firstname')]          = $value['firstname'];
-			$temp[T_('lastname')]           = $value['lastname'];
-			$temp[T_('Nationalcode')]       = $value['nationalcode'];
-			$temp[T_('Father')]             = $value['father'];
-			$temp[T_('gender')]             = T_($value['gender']);
-			$temp[T_('married')]            = T_($value['married']);
-			$temp[T_('birthday')]           = \dash\datetime::fit($value['birthday'], false, 'date');
-			// $temp[T_('province')]        = $value['province'];
-			$temp[T_('Province')]           = $value['province_name'];
-			$temp[T_('City')]               = $value['city_name'];
-			// $temp[T_('location_string')] = $value['location_string'];
-			$temp[T_('Address')]            = $value['homeaddress'];
-			$temp[T_('phone')]              = $value['phone'];
-			$temp[T_('datecreated')]        = \dash\datetime::fit($value['datecreated'], 'shortDate', 'datetime');
+			$temp[T_('id')]                 = @$value['id'];
+			$temp[T_('mobile')]             = @$value['mobile'];
+			$temp[T_('firstname')]          = @$value['firstname'];
+			$temp[T_('lastname')]           = @$value['lastname'];
+			$temp[T_('Nationalcode')]       = @$value['nationalcode'];
+			$temp[T_('Father')]             = @$value['father'];
+			$temp[T_('gender')]             = T_(@$value['gender']);
+			$temp[T_('married')]            = T_(@$value['married']);
+			$temp[T_('birthday')]           = \dash\utility\convert::to_en_number(\dash\datetime::fit(@$value['birthday'], false, 'date'));
+			// $temp[T_('province')]        = @$value['province'];
+			$temp[T_('Province')]           = @$value['province_name'];
+			$temp[T_('City')]               = @$value['city_name'];
+			// $temp[T_('location_string')] = @$value['location_string'];
+			$temp[T_('Address')]            = @$value['homeaddress'];
+			$temp[T_('phone')]              = @$value['phone'];
+			$temp[T_('datecreated')]        = \dash\utility\convert::to_en_number(\dash\datetime::fit(@$value['datecreated'], 'shortDate', 'datetime'));
 			$result[]                       = $temp;
 
 		}
