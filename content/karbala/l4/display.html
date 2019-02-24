@@ -49,7 +49,7 @@
     <tbody>
       {%for key, value in okList%}
 
-        <tr>
+        <tr title="کد ثبت‌نامی {{value['کد'] | fitNumber}}">
           <td>{{(key + 1) | fitNumber}}</td>
           <td>{{value['نام برای نمایش عمومی']}}</td>
           <td class="fs09">{{value['father']}}</td>
