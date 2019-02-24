@@ -9,13 +9,14 @@
 
 <div class="f justify-center ">
  <div class="c9 s12">
-  
+  <a href="{{url.this}}/l4" class="btn  block mB20">بازگشت</a>
   <table class="tbl1 v6">
     <thead>
       <tr>
         <th>#</th>
         <th>نام و نام خانوادگی</th>
         <th>نام پدر</th>
+        <th>شهر</th>
       </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@
           <td>{{(key + 1) | fitNumber}}</td>
           <td>{{value['نام برای نمایش عمومی']}}</td>
           <td>{{value['father']}}</td>
+          <td>{{value['city_name']}}</td>
         </tr>  
       {%endfor%}
     </tbody>

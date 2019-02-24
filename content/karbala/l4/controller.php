@@ -15,6 +15,7 @@ class controller
 			if(is_file($addr))
 			{
 				$load = \dash\utility\import::csv($addr);
+				$load = array_map(["\\lib\\app\\karbalauser", "ready"], $load);
 				\dash\data::okList($load);
 				\dash\open::get();
 			}
