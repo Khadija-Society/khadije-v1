@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Signup karbala"));
+		\dash\data::page_title("اعلام نتایج قرعه‌کشی کربلا");
 		\dash\data::page_desc(\dash\data::site_desc());
 
 		$countSingupKarbala = \lib\db\karbalausers::get_last_id();
