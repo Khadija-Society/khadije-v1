@@ -1,0 +1,63 @@
+{%extends display.main%}
+
+
+
+
+{%block pageData%}
+
+{%if okList%}
+
+<div class="f justify-center ">
+ <div class="c9 s12">
+  
+  <table class="tbl1 v6">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>نام و نام خانوادگی</th>
+        <th>نام پدر</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for key, value in okList%}
+      
+        <tr>
+          <td>{{(key + 1) | fitNumber}}</td>
+          <td>{{value['نام برای نمایش عمومی']}}</td>
+          <td>{{value['father']}}</td>
+        </tr>  
+      {%endfor%}
+    </tbody>
+  </table>  
+    
+  
+
+
+ </div>
+
+</div>
+{%else%}
+
+<div class="f justify-center ">
+ <div class="c9 s12">
+  <div class="f">
+    
+  {%for key, value in proviceListL%}
+    <div class="mLa5 c3 s12 ">
+      <a href="{{url.that}}/{{value.code}}">
+        <div class="msg">{{value.name}}</div>
+      </a>
+    </div>
+  {%endfor%}
+  </div>
+
+
+ </div>
+
+</div>
+{%endif%}
+
+{%endblock%}
+
+
+
