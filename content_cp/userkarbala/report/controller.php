@@ -6,7 +6,7 @@ class controller
 {
 	public static function routing()
 	{
-		self::qom('IR-13');
+		
 		\dash\permission::access('cpUsersKarbalaView');
 
 		$subchild = \dash\url::subchild();
