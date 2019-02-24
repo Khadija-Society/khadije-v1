@@ -34,13 +34,16 @@
     </div>
   </div>
 
-  <table class="tbl1 v10">
+<div class="tblBox">
+
+  <table class="tbl1 v10 fs09">
     <thead>
-      <tr>
+      <tr class="fs07">
         <th>#</th>
         <th>نام و نام خانوادگی</th>
         <th>نام پدر</th>
-        <th>شهر</th>
+        <th class="s0">شهر</th>
+        <th>موبایل</th>
       </tr>
     </thead>
     <tbody>
@@ -49,12 +52,14 @@
         <tr>
           <td>{{(key + 1) | fitNumber}}</td>
           <td>{{value['نام برای نمایش عمومی']}}</td>
-          <td>{{value['father']}}</td>
-          <td>{{value['city_name']}}</td>
+          <td class="fs09">{{value['father']}}</td>
+          <td class="fs09 s0">{{value['city_name']}}</td>
+          <td class="ltr txtL">{{value['موبایل'] | fitNumber('mobile') | slice(0, 3)}} *** {{value['موبایل'] | fitNumber('mobile') | slice(8, 4)}}</td>
         </tr>
       {%endfor%}
     </tbody>
   </table>
+</div>
 
 
 
