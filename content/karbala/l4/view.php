@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title("اعلام نتایج قرعه‌کشی کربلا");
+		\dash\data::page_title("نتایج قرعه‌کشی کربلای سمت خدا- اسفند ۱۳۹۷");
 		\dash\data::page_desc(\dash\data::site_desc());
 
 		$countSingupKarbala = \lib\db\karbalausers::get_last_id();
@@ -15,7 +15,7 @@ class view
 
 		self::static_var();
 
-		$province = 
+		$province =
 		[
 			'IR-02',
 			'IR-07',
@@ -32,7 +32,7 @@ class view
 		];
 
 		$proviceList = [];
-		foreach ($province as $key => $value) 
+		foreach ($province as $key => $value)
 		{
 			$map_code = \dash\utility\location\provinces::get($value, null, 'localname');
 			$proviceList[] = ['code' => $value, 'name' => $map_code];
