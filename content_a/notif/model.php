@@ -7,7 +7,7 @@ class model
 	public static function post()
 	{
 
-		$user_id                     = \dash\coding::decode('3yZh');
+		$user_id                     = \dash\user::id();
 		$request                     = [];
 		$request["notif_title"]      = \dash\request::post('title');
 		$request["notif_small"]      = \dash\request::post('small');
