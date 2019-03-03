@@ -3,6 +3,28 @@ namespace lib\app;
 
 class android
 {
+	public static function detail_v6()
+	{
+
+		$detail = [];
+
+		self::master_detail($detail);
+
+		self::deprecated($detail);
+
+		self::static_page_v6($detail);
+
+		self::transalate($detail);
+
+		self::navigation($detail);
+
+		self::app_version($detail);
+
+		self::intro($detail);
+
+		return $detail;
+	}
+
 
 	public static function detail()
 	{
@@ -46,6 +68,41 @@ class android
 		$detail['transalate']['close']      = T_("Close");
 	}
 
+
+	private static function static_page_v6(&$detail)
+	{
+		$detail['android_menu']                        = [];
+		$detail['android_menu'][] =
+		[
+			'title' => T_("About"),
+			'url'   => \dash\url::kingdom(). '/api/v6/about'
+		];
+
+		$detail['android_menu'][] =
+		[
+			'title' => T_("Contact"),
+			'url'   => \dash\url::kingdom(). '/api/v6/contact'
+		];
+
+		$detail['android_menu'][] =
+		[
+			'title' => T_("Vision"),
+			'url'   => \dash\url::kingdom(). '/api/v6/vision'
+		];
+
+		$detail['android_menu'][] =
+		[
+			'title' => T_("Mission"),
+			'url'   => \dash\url::kingdom(). '/api/v6/mission'
+		];
+
+		$detail['android_menu'][] =
+		[
+			'title' => T_("Website"),
+			'url'   => \dash\url::kingdom()
+		];
+
+	}
 
 	private static function static_page(&$detail)
 	{
