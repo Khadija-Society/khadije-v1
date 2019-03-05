@@ -170,8 +170,8 @@ class android
 	public static function deprecated(&$detail)
 	{
 		$detail['deprecated_version']                   = [];
-		$detail['deprecated_version']['reject_version'] = 32;
-		$detail['deprecated_version']['title']          = "This version is rejected";
+		$detail['deprecated_version']['reject_version'] = 31;
+		$detail['deprecated_version']['title']          = "This version is deprecated";
 		$detail['deprecated_version']['desc']           = "To download new version of this app click blow link";
 		$detail['deprecated_version']['btn']            = [];
 		$detail['deprecated_version']['btn']['title']   = "Site";
@@ -182,8 +182,8 @@ class android
 	private static function app_version(&$detail)
 	{
 		$detail['app_version']                 = [];
-		$detail['app_version']['code']         = 22;
-		// $detail['app_version']['title']        = '1.0';
+		$detail['app_version']['code']         = 32;
+		$detail['app_version']['title']        = '32.0';
 		$detail['app_version']['content_text'] = null;
 		$detail['app_version']['auto_hide']    = false;
 	}
