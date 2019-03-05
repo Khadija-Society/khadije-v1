@@ -170,12 +170,12 @@ class android
 	public static function deprecated(&$detail)
 	{
 		$detail['deprecated_version']                   = [];
-		$detail['deprecated_version']['reject_version'] = 31;
-		$detail['deprecated_version']['title']          = null;
-		$detail['deprecated_version']['desc']           = null;
+		$detail['deprecated_version']['reject_version'] = 32;
+		$detail['deprecated_version']['title']          = "This version is rejected";
+		$detail['deprecated_version']['desc']           = "To download new version of this app click blow link";
 		$detail['deprecated_version']['btn']            = [];
-		$detail['deprecated_version']['btn']['title']   = null;
-		$detail['deprecated_version']['btn']['url']     = null;
+		$detail['deprecated_version']['btn']['title']   = "Site";
+		$detail['deprecated_version']['btn']['url']     = \dash\url::kingdom(). '/app';
 	}
 
 
