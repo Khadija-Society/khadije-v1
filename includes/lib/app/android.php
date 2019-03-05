@@ -170,7 +170,7 @@ class android
 	public static function deprecated(&$detail)
 	{
 		$detail['deprecated_version']                   = [];
-		$detail['deprecated_version']['reject_version'] = 0;
+		$detail['deprecated_version']['reject_version'] = 31;
 		$detail['deprecated_version']['title']          = null;
 		$detail['deprecated_version']['desc']           = null;
 		$detail['deprecated_version']['btn']            = [];
