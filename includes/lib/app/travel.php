@@ -712,7 +712,17 @@ class travel
 
 		if(!$force_admin)
 		{
-			$check_duplicate_travel = \lib\db\travels::get(['user_id' => \dash\user::id(), 'type' => \dash\app::request('type'), 'place' => $args['place'], 'status' => ["IN", "('draft', 'awaiting')"], 'limit' => 1]);
+			$get_travel =
+			[
+				'user_id' => \dash\user::id(),
+				'type'    => \dash\app::request('type'),
+				'place'   => $args['place'],
+				// 'status'  => ["IN", "('draft', 'awaiting')"],
+				'status'  => ["IN", "('draft')"],
+				'limit'   => 1
+			];
+
+			$check_duplicate_travel = \lib\db\travels::get($get_travel);
 			if(isset($check_duplicate_travel['id']))
 			{
 				if(isset($check_duplicate_travel['status']) && $check_duplicate_travel['status'] === 'draft')
