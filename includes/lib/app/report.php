@@ -4,6 +4,53 @@ namespace lib\app;
 
 class report
 {
+	public static function travel()
+	{
+		$query =  "SELECT COUNT(*) AS `count`, travels.type, travels.place, travels.status FROM travels GROUP BY travels.type, travels.place, travels.status";
+		$result = \dash\db::get($query);
+		if(!is_array($result))
+		{
+			$result = [];
+		}
+
+		$a = [];
+		foreach ($result as $key => $value)
+		{
+			$myPlacekey = $value['type']. "_". $value['place'];
+			$myStatus = $value['place']. "_". $value['status'];
+
+			if(!isset($a[$myPlacekey]))
+			{
+				$a[$myPlacekey] = 0;
+			}
+
+			$a[$myPlacekey] += intval($value['count']);
+
+
+			if(!isset($a[$myStatus]))
+			{
+				$a[$myStatus] = 0;
+			}
+
+			$a[$myStatus] += intval($value['count']);
+		}
+
+		$result = [];
+
+
+		foreach ($a as $key => $value)
+		{
+			$x = explode('_', $key);
+			$result[] = [T_($x[0]), T_($x[1]), $value];
+		}
+
+		$hi_chart               = [];
+		$hi_chart['raw']        = $result;
+		$hi_chart['value']      = json_encode($result, JSON_UNESCAPED_UNICODE);
+		return $hi_chart;
+
+	}
+
 	public static function whitname()
 	{
 		$query  = "SELECT sum(transactions.plus) AS `sum`, transactions.doners AS `doners` FROM transactions WHERE verify = 1 GROUP BY transactions.doners ORDER BY sum DESC";

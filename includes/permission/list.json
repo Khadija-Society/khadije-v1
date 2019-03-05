@@ -99,6 +99,11 @@
     "cat": "Donate",
     "require": []
   },
+  "cpChartTravel": {
+    "title": "cpChartTravel",
+    "cat": "Report",
+    "require": []
+  },
   "cpReportDaily": {
     "title": "cpReportDaily",
     "cat": "Report",
