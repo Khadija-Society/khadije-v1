@@ -19,8 +19,8 @@ class month
 					transactions
 				WHERE
 					transactions.verify = 1 AND
-					DATE(transactions.date) <= DATE('$date_now')
-				GROUP BY MONTH(transactions.date), YEAR(transactions.date)
+					DATE(transactions.datecreated) <= DATE('$date_now')
+				GROUP BY MONTH(transactions.datecreated), YEAR(transactions.datecreated)
 			) AS `mycount`
 		";
 		$totla_rows = \dash\db::get($limit_query, 'totla_rows', true);
@@ -46,7 +46,7 @@ class month
 
 		if($_sort === 'date')
 		{
-			$_sort = "YEAR(transactions.date) $_order , MONTH(transactions.date) $_order ";
+			$_sort = "YEAR(transactions.datecreated) $_order , MONTH(transactions.datecreated) $_order ";
 			$_order = null;
 		}
 		else
@@ -57,17 +57,17 @@ class month
 		$query =
 		"
 			SELECT
-				MONTH(transactions.date) AS `month`,
-				YEAR(transactions.date) AS `year`,
+				MONTH(transactions.datecreated) AS `month`,
+				YEAR(transactions.datecreated) AS `year`,
 				SUM(transactions.plus) AS `sum`
 			FROM
 				transactions
 			WHERE
 				transactions.verify = 1 AND
-				YEAR(transactions.date) <= YEAR('$date_start') AND
-				YEAR(transactions.date) > YEAR('$date_end')
+				YEAR(transactions.datecreated) <= YEAR('$date_start') AND
+				YEAR(transactions.datecreated) > YEAR('$date_end')
 
-			GROUP BY MONTH(transactions.date), YEAR(transactions.date)
+			GROUP BY MONTH(transactions.datecreated), YEAR(transactions.datecreated)
 			ORDER BY $_sort $_order
 		";
 

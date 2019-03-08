@@ -20,8 +20,8 @@ class daily
 				WHERE
 					transactions.verify = 1 AND
 
-					DATE(transactions.date) <= DATE('$date_now')
-				GROUP BY DATE(transactions.date)
+					DATE(transactions.datecreated) <= DATE('$date_now')
+				GROUP BY DATE(transactions.datecreated)
 			) AS `mycount`
 		";
 		$totla_rows = \dash\db::get($limit_query, 'totla_rows', true);
@@ -48,7 +48,7 @@ class daily
 		$query =
 		"
 			SELECT
-				DATE(transactions.date) AS `date`,
+				DATE(transactions.datecreated) AS `date`,
 				SUM(transactions.plus) AS `sum`
 			FROM
 				transactions
@@ -56,11 +56,11 @@ class daily
 				transactions.verify = 1 AND
 
 				(
-					DATE(transactions.date) <= DATE('$date_start') AND
-					DATE(transactions.date) > DATE('$date_end')
+					DATE(transactions.datecreated) <= DATE('$date_start') AND
+					DATE(transactions.datecreated) > DATE('$date_end')
 
 				)
-			GROUP BY DATE(transactions.date)
+			GROUP BY DATE(transactions.datecreated)
 			ORDER BY `$_sort` $_order
 		";
 
