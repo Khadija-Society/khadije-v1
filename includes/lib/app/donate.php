@@ -339,6 +339,12 @@ class donate
 			return false;
 		}
 
+		if(intval($amount) > 9000000000)
+		{
+			\dash\notif::error(T_("Amout is out of range"), 'amount');
+			return false;
+		}
+
 		$user_id = \dash\user::id();
 
 		if(!\dash\user::id())
