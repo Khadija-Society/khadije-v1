@@ -44,19 +44,15 @@
     <label for="r-queue">{%trans "queue"%} <small>{%trans "In queue of send"%}</small><i class="sf-mobile fs12"></i></label>
    </div>
 
-   <div class="radio1 green">
-    <input type="radio" id="r-gone" name="status" value="gone" {%if travelDetail.status == 'gone' %} checked{%endif%}>
-    <label for="r-gone">{%trans "Gone"%} <small>{%trans "successfully go to trip"%}</small></label>
+   <div class="radio1 black">
+    <input type="radio" id="r-draft" name="status" value="draft" {%if travelDetail.status == 'draft' or not travelDetail.status %} checked{%endif%}>
+    <label for="r-draft">{%trans "Draft"%} <small>{%trans "try to fill request"%}</small></label>
    </div>
 
 
   </div>
   <div class="c6 s12">
 
-   <div class="radio1 black">
-    <input type="radio" id="r-draft" name="status" value="draft" {%if travelDetail.status == 'draft' or not travelDetail.status %} checked{%endif%}>
-    <label for="r-draft">{%trans "Draft"%} <small>{%trans "try to fill request"%}</small></label>
-   </div>
 
    <div class="radio1 yellow">
     <input type="radio" id="r-cancel" name="status" value="cancel" {%if travelDetail.status == 'cancel' %} checked{%endif%}>
@@ -81,6 +77,21 @@
   </div>
  </div>
 
+ <div class="msg warn2 mT10">
+  <div class="f">
+    <div class="c s12">
+      <p class="pA10">
+        {%trans "If you change the travel status to gone mode the system set all nationalcode of this partner as gone to this place"%}
+      </p>
+    </div>
+    <div class="c s12">
+      <div class="radio1 green">
+        <input type="radio" id="r-gone" name="status" value="gone" {%if travelDetail.status == 'gone' %} checked{%endif%}>
+        <label for="r-gone">{%trans "Gone"%} <small>{%trans "successfully go to trip"%}</small></label>
+      </div>
+    </div>
+  </div>
+ </div>
 
 
 

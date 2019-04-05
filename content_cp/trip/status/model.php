@@ -26,8 +26,15 @@ class model
 		}
 
 		\lib\db\travels::update($update, \dash\request::get('id'));
+
 		\dash\log::set('updatePartnerGroupTrip', ['code' => \dash\request::get('id'), 'update' => $update]);
+
 		self::send_sms($status);
+
+		if($status === 'gone')
+		{
+			\lib\app\travel::trip_gone_to_place(\dash\request::get('id'));
+		}
 
 		\dash\notif::ok(T_("The travel updated"));
 

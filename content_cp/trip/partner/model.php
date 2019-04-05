@@ -8,16 +8,17 @@ class model
 	{
 		\dash\permission::access('cpTripEdit');
 
-		$post                    = [];
-		$post['firstname']       = \dash\request::post('name');
-		$post['lastname']        = \dash\request::post('lastName');
-		$post['father']          = \dash\request::post('father');
-		$post['nationalcode']    = \dash\request::post('nationalcode');
-		$post['birthday']        = \dash\request::post('birthday');
-		$post['gender']          = \dash\request::post('gender') ? 'female' : 'male';
-		$post['married']         = \dash\request::post('Married') ? 'married' : 'single';
-		$post['nesbat']          = \dash\request::post('nesbat');
-		$post['type']          = \dash\request::post('type');
+		$post                 = [];
+		$post['firstname']    = \dash\request::post('name');
+		$post['lastname']     = \dash\request::post('lastName');
+		$post['father']       = \dash\request::post('father');
+		$post['mobile2']      = \dash\request::post('mobile');
+		$post['nationalcode'] = \dash\request::post('nationalcode');
+		$post['birthday']     = \dash\request::post('birthday');
+		$post['gender']       = \dash\request::post('gender') ? 'female' : 'male';
+		$post['married']      = \dash\request::post('Married') ? 'married' : 'single';
+		$post['nesbat']       = \dash\request::post('nesbat');
+		$post['type']         = \dash\request::post('type');
 		return $post;
 	}
 

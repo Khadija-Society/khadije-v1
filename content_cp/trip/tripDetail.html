@@ -47,8 +47,8 @@
 
 
 {%block htmlTable%}
- <div class="cbox fs12">
- <table class="tbl">
+
+ <table class="tbl1 v1 fs12">
     <thead class="primary">
       <tr>
         <th data-sort="{{sortLink.id.order}}" class="collapsing"><a href="{{sortLink.id.link}}">{%trans "ID"%}</a></th>
@@ -65,7 +65,7 @@
 
     <tbody>
       {%for key, value in dataTable%}
-      <tr class="{%if value.status == 'cancel' or value.status == 'draft'%} disabled{%elseif value.status == 'spam' or value.status == 'deleted' %} negative{%elseif value.status == 'unapproved' or value.status == 'reject'%} warning{%endif%}">
+      <tr class="{%if value.status == 'gone'%} positive{%elseif value.status == 'draft' or value.status == 'awaiting' %} warning{%else%} negative{%endif%}">
         <td class="txtC">
           <a href="{{url.this}}/view?id={{value.id}}">{{value.id | fitNumber}}</a>
         </td>
@@ -89,7 +89,6 @@
   </table>
   {%include display.pagination%}
 
- </div>
 {%endblock%}
 
 

@@ -20,6 +20,7 @@
 {%block partnertForm%}
     <form autocomplete="off" method="post" class="cbox">
 <h3>{%trans "Add or edit partner"%}</h3>
+{{block ('imobile') }}
 {{block ('iname') }}
 {{block ('ifamily') }}
 {{block ('ibirthday') }}
@@ -45,15 +46,17 @@
 
 
 {%if travelPartner%}
+{%set cityPlace = travelDetail.place %}
 <table class="tbl1 v1 fs12">
   <thead>
       <tr>
         <th>{%trans "Name"%}</th>
+        <th>{%trans "Mobile"%}</th>
         <th>{%trans "Father"%}</th>
         <th>{%trans "Marital"%}</th>
         <th>{%trans "Nationalcode"%}</th>
         <th>{%trans "Birthday"%}</th>
-        <th>{%trans "Travel"%}</th>
+        <th>{%trans "Travel to"%} {%trans cityPlace%}</th>
         <th>{%trans "Thumb"%}</th>
         <th>{%trans "Action"%}</th>
 
@@ -70,17 +73,18 @@
           {%endif%}
 
           {{value.firstname}} <b>{{value.lastname}}</b></td>
+        <td>{{value.mobile2 | fitNumber(false)}}</td>
         <td>{{value.father}}</td>
         <td>{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</td>
         <td>{{value.nationalcode | fitNumber(false)}}</td>
         <td>{{value.birthday | jdate | fitNumber(false)}}</td>
         <td>
-            {%if not CountTravel%}
-                <span class="sf-check fc-green"></span>
+            {%if not CountTravel %}
+              <span class="fc-mute sm">{%trans "First travel to"%} {%trans cityPlace%}</span>
+
               {%else%}
               <span class="badge warn ">
-                <i class="sf-cross"></i>
-                {{CountTravel| fitNumber}}
+                {{CountTravel| fitNumber}} {%trans "Travel to"%} {%trans cityPlace%}
               </span>
             {%endif%}
         </td>
@@ -133,7 +137,7 @@
 {%block iname%}
 <label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{partnerDetail.firstname}}" maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{partnerDetail.firstname}}" maxlength='40' minlength="2" pattern=".{2,40}" required>
 </div>
 {%endblock%}
 
@@ -151,7 +155,7 @@
 {%block imobile%}
 <label for="mobile">{%trans "Mobile"%}</label>
 <div class="input">
-  <input type="text" readonly id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{partnerDetail.mobile}}" maxlength='30'>
+  <input type="text" autofocus name="mobile" id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{partnerDetail.mobile2}}" maxlength='30'>
 </div>
 {%endblock%}
 

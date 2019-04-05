@@ -453,12 +453,12 @@ class twigTransTerms
 	//--------------------------------------------content_cp/trip/partner/display.html
 	echo T_("Add or edit partner");                                                   // Line 22
 	echo T_("Marital");                                                               // Line 141
-	echo T_("Travel");                                                                // Line 129
+	echo T_("Travel to");                                                             // Line 87
 	echo T_("Thumb");                                                                 // Line 130
+	echo T_("First travel to");                                                       // Line 83
 	echo T_("Nationalcode thumb");                                                    // Line 56
 	echo T_("Whitout nationalcode thumb");                                            // Line 164
 	echo T_("No partner set");                                                        // Line 248
-	echo T_("Enter a valid name from 2 to 40 character");                             // Line 78
 	echo T_("Last name");                                                             // Line 86
 	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 86
 	echo T_("Like 09120123456");                                                      // Line 102
@@ -498,14 +498,15 @@ class twigTransTerms
 	echo T_("after check and before accept");                                         // Line 307
 	echo T_("queue");                                                                 // Line 312
 	echo T_("In queue of send");                                                      // Line 312
-	echo T_("Gone");                                                                  // Line 317
-	echo T_("successfully go to trip");                                               // Line 317
 	echo T_("Reject");                                                                // Line 35
 	echo T_("does not accepted for some reason");                                     // Line 336
 	echo T_("Not Answer");                                                            // Line 341
 	echo T_("not answer to call check");                                              // Line 341
 	echo T_("Admin Cancel");                                                          // Line 347
 	echo T_("delete from admin");                                                     // Line 347
+	echo T_("If you change the travel status to gone mode the system set all nationalcode of this partner as gone to this place");// Line 84
+	echo T_("Gone");                                                                  // Line 317
+	echo T_("successfully go to trip");                                               // Line 317
 
 	//------------------------------------------------content_cp/trip/add/display.html
 	echo T_("Add new group trip");                                                    // Line 11
@@ -538,7 +539,9 @@ class twigTransTerms
 	//---------------------------------------------------content_cp/trip/tripView.html
 	echo T_("Profile");                                                               // Line 22
 	echo T_("List of trip partner");                                                  // Line 195
+	echo T_("Travel");                                                                // Line 129
 	echo T_("Child");                                                                 // Line 55
+	echo T_("Enter a valid name from 2 to 40 character");                             // Line 78
 
 	//--------------------------------------------content_cp/trip/profile/display.html
 

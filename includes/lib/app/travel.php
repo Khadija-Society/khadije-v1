@@ -787,5 +787,86 @@ class travel
 
 		return $travel_id;
 	}
+
+
+	public static function trip_gone_to_place($_trip)
+	{
+		if(!$_trip || !is_numeric($_trip))
+		{
+			return false;
+		}
+
+		$all_user   = [];
+		$load_admin = \lib\db\travels::get(['id' => $_trip, 'limit' => 1]);
+
+		$travel_meta = [];
+
+		if(isset($load_admin['meta']) && $load_admin['meta'])
+		{
+			$travel_meta = json_decode($load_admin['meta'], true);
+		}
+
+		if(!is_array($travel_meta))
+		{
+			$travel_meta = [];
+		}
+
+		if(isset($travel_meta['set_all_nationalcode_partner']) && $travel_meta['set_all_nationalcode_partner'])
+		{
+			return false;
+		}
+
+		if(isset($load_admin['place']))
+		{
+			$place = $load_admin['place'];
+		}
+		else
+		{
+			return false;
+		}
+
+		if(isset($load_admin['user_id']))
+		{
+			$all_user[] = $load_admin['user_id'];
+		}
+
+		$load_partner = \lib\db\travelusers::get(['travel_id' => $_trip]);
+
+		if(is_array($load_partner))
+		{
+			$all_user     = array_merge($all_user, array_column($load_partner, 'user_id'));
+		}
+
+		$all_user = array_unique($all_user);
+		$all_user = array_filter($all_user);
+		if(empty($all_user))
+		{
+			return false;
+		}
+
+		$all_user = implode(',', $all_user);
+
+		$get_national_code = \dash\db\users::get(['id' => ["IN", "($all_user)"]]);
+		if(!is_array($get_national_code))
+		{
+			return false;
+		}
+
+		$get_national_code = array_column($get_national_code, 'nationalcode');
+		$get_national_code = array_filter($get_national_code);
+		$get_national_code = array_unique($get_national_code);
+
+		if(empty($get_national_code))
+		{
+			return false;
+		}
+
+		\lib\db\nationalcodes::set_travel($get_national_code, $place);
+
+		$travel_meta['set_all_nationalcode_partner'] = true;
+
+		\lib\db\travels::update(['meta' => json_encode($travel_meta, JSON_UNESCAPED_UNICODE)], $_trip);
+
+	}
 }
 ?>
