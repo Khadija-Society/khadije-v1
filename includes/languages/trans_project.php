@@ -443,7 +443,7 @@ class twigTransTerms
 	echo T_("File setting");                                                          // Line 256
 
 	//------------------------------------content_cp/festival/transaction/display.html
-	echo T_("Today");                                                                 // Line 132
+	echo T_("Today");                                                                 // Line 137
 
 	//------------------------------------------------content_cp/homepage/display.html
 	echo T_("Qom");                                                                   // Line 32
@@ -502,12 +502,14 @@ class twigTransTerms
 
 	//----------------------------------------------content_cp/trip/tripViewGroup.html
 	echo T_("Admin");                                                                 // Line 27
-	echo T_("Glance");                                                                // Line 48
+	echo T_("Admin detail");                                                          // Line 8
 	echo T_("Partner");                                                               // Line 60
 	echo T_("Settings");                                                              // Line 66
 	echo T_("Copy");                                                                  // Line 84
 
 	//---------------------------------------------content_cp/trip/status/display.html
+	echo T_("Send result sms to admin trip?");                                        // Line 13
+	echo T_("For some status, see it with this icon");                                // Line 13
 	echo T_("Status of trip");                                                        // Line 291
 	echo T_("send new complete request");                                             // Line 297
 	echo T_("Review");                                                                // Line 307
@@ -520,7 +522,7 @@ class twigTransTerms
 	echo T_("not answer to call check");                                              // Line 341
 	echo T_("Admin Cancel");                                                          // Line 347
 	echo T_("delete from admin");                                                     // Line 347
-	echo T_("If you change the travel status to gone mode the system set all nationalcode of this partner as gone to this place");// Line 84
+	echo T_("If you change the travel status to gone mode the system set all nationalcode of this partner as gone to this place");// Line 90
 	echo T_("Gone");                                                                  // Line 317
 	echo T_("successfully go to trip");                                               // Line 317
 
@@ -550,7 +552,7 @@ class twigTransTerms
 	echo T_("ID");                                                                    // Line 54
 	echo T_("First name");                                                            // Line 149
 	echo T_("Birthdate");                                                             // Line 57
-	echo T_("Total Request");                                                         // Line 123
+	echo T_("Total Request");                                                         // Line 128
 
 	//---------------------------------------------------content_cp/trip/tripView.html
 	echo T_("Profile");                                                               // Line 22
@@ -562,7 +564,6 @@ class twigTransTerms
 	//--------------------------------------------content_cp/trip/profile/display.html
 
 	//-----------------------------------------------content_cp/trip/view/display.html
-	echo T_("Admin detail");                                                          // Line 8
 	echo T_("View full Profile");                                                     // Line 33
 
 	//---------------------------------------------------------content_cp/sidenav.html
