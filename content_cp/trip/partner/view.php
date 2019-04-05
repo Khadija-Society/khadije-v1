@@ -18,6 +18,11 @@ class view
 
 		\dash\data::travelPartner(\lib\db\travelusers::get_travel_child(\dash\request::get('id')));
 
+		if(\dash\request::get('export') === 'export_partner')
+		{
+			\dash\utility\export::csv(['name' => 'export_trip_'. \dash\request::get('id'), 'data' => \dash\data::travelPartner()]);
+			return;
+		}
 		// load partner detail
 		if(\dash\request::get('partner') && is_numeric(\dash\request::get('partner')))
 		{

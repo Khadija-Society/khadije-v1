@@ -25,7 +25,13 @@ class model
 
 	public static function post()
 	{
+		if(\dash\request::post('export') === 'export_partner')
+		{
 
+			\dash\utility\export::csv(['name' => 'export_trip_'. \dash\request::get('id'), 'data' => \dash\data::travelPartner()]);
+
+			return;
+		}
 
 		if(\dash\request::post('type') === 'remove' && \dash\request::post('key') != '' && ctype_digit(\dash\request::post('key')))
 		{

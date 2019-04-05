@@ -40,6 +40,12 @@
   {{block ('iAdd') }}
 {%endif%}
     </form>
+
+
+<div class="cbox">
+  <div>{%trans "Make export from list of partner"%}</div>
+<a class="btn mT10 outline block primary" href="{{url.that}}?id={{requestGET.id}}&export=export_partner">{%trans "Export"%}</a>
+</div>
 {%endblock%}
 
 {%block partnertList%}
