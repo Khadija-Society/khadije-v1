@@ -62,7 +62,7 @@
         <th>{%trans "Marital"%}</th>
         <th>{%trans "Nationalcode"%}</th>
         <th>{%trans "Birthday"%}</th>
-        <th>{%trans "Travel to"%} {%trans cityPlace%}</th>
+        <th>{%trans "Status"%} {%trans "Travel"%} </th>
         <th>{%trans "Thumb"%}</th>
         <th>{%trans "Action"%}</th>
 
@@ -85,12 +85,27 @@
         <td>{{value.nationalcode | fitNumber(false)}}</td>
         <td>{{value.birthday | jdate | fitNumber(false)}}</td>
         <td>
-            {%if not CountTravel %}
-              <span class="fc-mute sm">{%trans "First travel to"%} {%trans cityPlace%}</span>
-
+            {%if not value['qom'] %}
+              <span class="fc-mute sm">{%trans "First travel to"%} {%trans "Qom"%}</span>
               {%else%}
               <span class="badge warn ">
-                {{CountTravel| fitNumber}} {%trans "Travel to"%} {%trans cityPlace%}
+                {{value['qom']| fitNumber}} {%trans "Travel to"%} {%trans "Qom"%}
+              </span>
+            {%endif%}
+            <br>
+            {%if not value['mashhad'] %}
+              <span class="fc-mute sm">{%trans "First travel to"%} {%trans "Mashhad"%}</span>
+              {%else%}
+              <span class="badge warn ">
+                {{value['mashhad']| fitNumber}} {%trans "Travel to"%} {%trans "Mashhad"%}
+              </span>
+            {%endif%}
+            <br>
+            {%if not value['karbala'] %}
+              <span class="fc-mute sm">{%trans "First travel to"%} {%trans "Karbala"%}</span>
+              {%else%}
+              <span class="badge warn ">
+                {{value['karbala']| fitNumber}} {%trans "Travel to"%} {%trans "Karbala"%}
               </span>
             {%endif%}
         </td>
