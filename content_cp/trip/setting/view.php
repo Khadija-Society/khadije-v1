@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\trip\view;
+namespace content_cp\trip\setting;
 
 
 class view
@@ -8,13 +8,14 @@ class view
 	{
 		\dash\permission::access('cpTripView');
 
-		\dash\data::page_pictogram('rocket');
+		\dash\data::page_pictogram('cogs');
 
-		\dash\data::page_title(T_("View request detail"));
+		\dash\data::page_title(T_("Travel setting"));
 		\dash\data::page_desc(' ');
 
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back to request list'));
+
 	}
 }
 ?>

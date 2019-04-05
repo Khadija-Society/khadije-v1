@@ -1,0 +1,89 @@
+{%extends "content_cp/trip/tripViewGroup.html"%}
+
+
+{%block myTropPageBody%}
+
+<div class="cbox">
+<form method="post">
+
+  {{block('iStatus')}}
+  <button class="btn block mT20 primary">{%trans "Save"%}</button>
+</form>
+</div>
+{%endblock%}
+
+
+
+
+
+
+{%block iStatus%}
+
+<div>
+ <label >{%trans "Status of trip"%}</label>
+ <div class="f">
+  <div class="c6 s12">
+
+   <div class="radio1 blue">
+    <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if travelDetail.status == 'awaiting' or not travelDetail.status %} checked{%endif%}>
+    <label for="r-awaiting">{%trans "Awaiting"%} <small>{%trans "send new complete request"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+   <div class="radio1 red">
+    <input type="radio" id="r-spam" name="status" value="spam" {%if travelDetail.status == 'spam' %} checked{%endif%}>
+    <label for="r-spam">{%trans "Spam"%} <small>{%trans "inapropirate request and spam detected"%}</small></label>
+   </div>
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-review" name="status" value="review" {%if travelDetail.status == 'review' %} checked{%endif%}>
+    <label for="r-review">{%trans "Review"%} <small>{%trans "after check and before accept"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+   <div class="radio1 blue">
+    <input type="radio" id="r-queue" name="status" value="queue" {%if travelDetail.status == 'queue' %} checked{%endif%}>
+    <label for="r-queue">{%trans "queue"%} <small>{%trans "In queue of send"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+   <div class="radio1 green">
+    <input type="radio" id="r-gone" name="status" value="gone" {%if travelDetail.status == 'gone' %} checked{%endif%}>
+    <label for="r-gone">{%trans "Gone"%} <small>{%trans "successfully go to trip"%}</small></label>
+   </div>
+
+
+  </div>
+  <div class="c6 s12">
+
+   <div class="radio1 black">
+    <input type="radio" id="r-draft" name="status" value="draft" {%if travelDetail.status == 'draft' or not travelDetail.status %} checked{%endif%}>
+    <label for="r-draft">{%trans "Draft"%} <small>{%trans "try to fill request"%}</small></label>
+   </div>
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-cancel" name="status" value="cancel" {%if travelDetail.status == 'cancel' %} checked{%endif%}>
+    <label for="r-cancel">{%trans "Cancel"%} <small>{%trans "cancel from user"%}</small></label>
+   </div>
+
+   <div class="radio1 red">
+    <input type="radio" id="r-reject" name="status" value="reject" {%if travelDetail.status == 'reject' %} checked{%endif%}>
+    <label for="r-reject">{%trans "Reject"%} <small>{%trans "does not accepted for some reason"%}</small></label>
+   </div>
+
+   <div class="radio1 black">
+    <input type="radio" id="r-notanswer" name="status" value="notanswer" {%if travelDetail.status == 'notanswer'%} checked{%endif%} >
+    <label for="r-notanswer">{%trans "Not Answer"%} <small>{%trans "not answer to call check"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-admincancel" name="status" value="admincancel" {%if travelDetail.status == 'admincancel'%} checked{%endif%} >
+    <label for="r-admincancel">{%trans "Admin Cancel"%} <small>{%trans "delete from admin"%}</small></label>
+   </div>
+  </div>
+ </div>
+
+
+
+
+
+</div>
+{%endblock%}

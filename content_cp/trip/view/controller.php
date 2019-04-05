@@ -54,7 +54,6 @@ class controller
 		{
 			\dash\data::travelDetail($travelDetail[0]);
 		}
-
 	}
 }
 ?>
