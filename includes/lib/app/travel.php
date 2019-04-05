@@ -10,6 +10,8 @@ class travel
 		'countpeople',
 		'type',
 		'status',
+		'startdate',
+		'enddate',
 		'countpartner',
 	];
 

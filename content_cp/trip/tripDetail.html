@@ -59,6 +59,8 @@
         <th data-sort="{{sortLink.place.order}}" class=""><a href="{{sortLink.place.link}}">{%trans "City"%}</a></th>
         <th data-sort="{{sortLink.countpartner.order}}" class="collapsing fs07"><a href="{{sortLink.countpartner.link}}">{%trans "Partner"%}</a></th>
         <th data-sort="{{sortLink.status.order}}" class=""><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
+        <th data-sort="{{sortLink.startdate.order}}" class="s0"><a href="{{sortLink.startdate.link}}">{%trans "Start date"%}</a></th>
+        <th data-sort="{{sortLink.enddate.order}}" class="s0"><a href="{{sortLink.enddate.link}}">{%trans "End date"%}</a></th>
         <th data-sort="{{sortLink.datecreated.order}}" class="s0"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
       </tr>
     </thead>
@@ -82,7 +84,10 @@
         <td>{%set my_place = value.place | capitalize%}<a href="{{url.this}}?place={{value.place}}">{%trans my_place%}</a></td>
         <td class="txtC">{%if value.countpartner%}{{value.countpartner | fitNumber}}{%else%}-{%endif%}</td>
         <td class="txtC">{%set my_status = value.status | capitalize%}<a href="{{url.this}}?status={{value.status}}">{%trans my_status%}</a></td>
-        <td class="s0" title="{{value.datecreated | dt}}">{{value.datecreated | dt ("human", "year")}}</td>
+        <td class="s0 collapsing">{{value.startdate | dt(null, 'date')}}</td>
+        <td class="s0 collapsing">{{value.enddate | dt(null, 'date')}}</td>
+
+        <td class="s0 collapsing" title="{{value.datecreated | dt}}">{{value.datecreated | dt ("human", "year")}}</td>
       </tr>
       {%endfor%}
     </tbody>
