@@ -8,7 +8,7 @@ class view
 	{
 		\dash\permission::access('cpTripView');
 
-		\dash\data::page_pictogram('rocket');
+		\dash\data::page_pictogram('user-secret');
 
 		\dash\data::page_title(T_("View request detail"));
 		\dash\data::page_desc(' ');

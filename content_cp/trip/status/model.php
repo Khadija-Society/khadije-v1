@@ -29,7 +29,10 @@ class model
 
 		\dash\log::set('updatePartnerGroupTrip', ['code' => \dash\request::get('id'), 'update' => $update]);
 
-		self::send_sms($status);
+		if(\dash\request::post('sendnotif'))
+		{
+			self::send_sms($status);
+		}
 
 		if($status === 'gone')
 		{

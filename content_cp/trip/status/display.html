@@ -7,6 +7,12 @@
 <form method="post">
 
   {{block('iStatus')}}
+
+  <div class="check1 blue">
+    <input type="checkbox" id="r-sendnotif" name="sendnotif" >
+    <label for="r-sendnotif">{%trans "Send result sms to admin trip?"%} <small>{%trans "For some status, see it with this icon"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
   <button class="btn block mT20 primary">{%trans "Save"%}</button>
 </form>
 </div>
