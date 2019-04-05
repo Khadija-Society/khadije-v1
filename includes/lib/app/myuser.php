@@ -43,6 +43,13 @@ class myuser
 			return false;
 		}
 
+		$mobile2 = \dash\app::request('mobile2');
+		if($mobile2 && !\dash\utility\filter::mobile($mobile2))
+		{
+			\dash\notif::error(T_("Invalid mobile"), 'mobile');
+			return false;
+		}
+
 		$birthday = \dash\app::request('birthday');
 		if(\dash\app::isset_request('birthday'))
 		{
@@ -297,6 +304,7 @@ class myuser
 
 		$args                    = [];
 		$args['gender']          = $gender;
+		$args['mobile2']          = $mobile2;
 		$args['email']           = $email;
 		$args['birthday']        = $birthday;
 		$args['firstname']       = $firstname;
@@ -487,7 +495,8 @@ class myuser
 		return $result;
 	}
 
-		public static function edit_child($_args, $_id, $_option = [])
+
+	public static function edit_child($_args, $_id, $_option = [])
 	{
 		$default_option =
 		[
@@ -604,6 +613,7 @@ class myuser
 			return false;
 		}
 
+		if(!\dash\app::isset_request('mobile2'))         unset($args['mobile2']);
 		if(!\dash\app::isset_request('avatar'))         unset($args['avatar']);
 		if(!\dash\app::isset_request('gender')) 		unset($args['gender']);
 		if(!\dash\app::isset_request('email')) 			unset($args['email']);

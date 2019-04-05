@@ -3,6 +3,7 @@
 
 {%block partnertForm%}
     <form method="post" class="cbox" autocomplete="off" enctype="multipart/form-data">
+{{block ('imobile') }}
 {{block ('iname') }}
 {{block ('ifamily') }}
 {{block ('incode') }}
@@ -47,7 +48,8 @@
 {%endif%}
           </div>
           <div class="desc c12">
-           <span class="badge info">{{value.nesbat}}</span>
+           {%if value.nesbat%}<span class="badge info">{{value.nesbat}}</span>{%endif%}
+           {%if value.mobile2%}<span class="badge info" title='{%trans "Mobile"%}'>{{value.mobile2 | fitNumber('mobile')}}</span>{%endif%}
            <span class="badge">{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</span>
            <span class="badge success">{{value.birthday | dt(true)}}</span>
            <span class="badge" title='{%trans "Child"%}'>{{value.father}}</span>
@@ -106,7 +108,7 @@
 {%block iname%}
 <label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{childDetail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{childDetail.firstname}}"  maxlength='40' minlength="2" pattern=".{2,40}"  required>
 </div>
 {%endblock%}
 
@@ -114,7 +116,7 @@
 {%block ifamily%}
 <label for="lastName">{%trans "Last name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{childDetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
+  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{childDetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}"  required>
 </div>
 {%endblock%}
 
@@ -152,7 +154,7 @@
 {%block imobile%}
 <label for="mobile">{%trans "Mobile"%}</label>
 <div class="input">
-  <input type="text" readonly id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{childDetail.mobile}}" maxlength='30'>
+  <input type="text" id="mobile" name="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{childDetail.mobile}}" maxlength='30' autofocus>
 </div>
 {%endblock%}
 

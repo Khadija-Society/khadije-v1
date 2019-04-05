@@ -51,6 +51,7 @@ class model
 			$post['gender']       = \dash\request::post('gender') ;
 			$post['pasportcode']  = \dash\request::post('passport') ;
 
+			$post['mobile2']      = \dash\request::post('mobile');
 			$post['married']      = \dash\request::post('Married');
 			$post['nesbat']       = \dash\request::post('nesbat');
 
