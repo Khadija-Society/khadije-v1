@@ -131,5 +131,32 @@ class travelusers
 		}
 		return false;
 	}
+
+
+	public static function make_duplicate($_new_travel_id, $_old_id)
+	{
+
+		$query =
+		"
+			INSERT INTO travelusers
+			(
+				`travel_id`,
+				`user_id`,
+				`status`,
+				`desc`,
+				`meta`
+			)
+			SELECT
+				'$_new_travel_id',
+				travelusers.user_id,
+				travelusers.status,
+				travelusers.desc,
+				travelusers.meta
+			FROM travelusers
+			WHERE travelusers.travel_id = $_old_id
+		";
+		return \dash\db::query($query);
+
+	}
 }
 ?>

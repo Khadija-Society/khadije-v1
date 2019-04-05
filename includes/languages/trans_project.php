@@ -443,7 +443,7 @@ class twigTransTerms
 	echo T_("File setting");                                                          // Line 256
 
 	//------------------------------------content_cp/festival/transaction/display.html
-	echo T_("Today");                                                                 // Line 133
+	echo T_("Today");                                                                 // Line 132
 
 	//------------------------------------------------content_cp/homepage/display.html
 	echo T_("Qom");                                                                   // Line 32
@@ -485,11 +485,27 @@ class twigTransTerms
 	echo T_("Reserve date");                                                          // Line 33
 	echo T_("Save reserve date and description");                                     // Line 43
 
+	//------------------------------------------content_cp/trip/duplicate/display.html
+	echo T_("This travel was copied from another place, can not duplicate it again!");// Line 10
+	echo T_("Click to show master trip");                                             // Line 13
+	echo T_("You can create duplicate of this trip to another palce");                // Line 18
+	echo T_("This trip is to");                                                       // Line 21
+	echo T_("Copied to mashhad");                                                     // Line 52
+	echo T_("Click to show it");                                                      // Line 93
+	echo T_("Copied on");                                                             // Line 95
+	echo T_("Copy for");                                                              // Line 98
+	echo T_("mashhad");                                                               // Line 62
+	echo T_("Copied to karbala");                                                     // Line 71
+	echo T_("karbala");                                                               // Line 81
+	echo T_("Copied to qom");                                                         // Line 90
+	echo T_("qom");                                                                   // Line 100
+
 	//----------------------------------------------content_cp/trip/tripViewGroup.html
 	echo T_("Admin");                                                                 // Line 27
 	echo T_("Glance");                                                                // Line 48
 	echo T_("Partner");                                                               // Line 60
 	echo T_("Settings");                                                              // Line 66
+	echo T_("Copy");                                                                  // Line 84
 
 	//---------------------------------------------content_cp/trip/status/display.html
 	echo T_("Status of trip");                                                        // Line 291
@@ -534,7 +550,7 @@ class twigTransTerms
 	echo T_("ID");                                                                    // Line 54
 	echo T_("First name");                                                            // Line 149
 	echo T_("Birthdate");                                                             // Line 57
-	echo T_("Total Request");                                                         // Line 124
+	echo T_("Total Request");                                                         // Line 123
 
 	//---------------------------------------------------content_cp/trip/tripView.html
 	echo T_("Profile");                                                               // Line 22

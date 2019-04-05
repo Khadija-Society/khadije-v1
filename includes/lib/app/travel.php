@@ -868,5 +868,83 @@ class travel
 		\lib\db\travels::update(['meta' => json_encode($travel_meta, JSON_UNESCAPED_UNICODE)], $_trip);
 
 	}
+
+
+	public static function make_duplicate($_id, $_new_place)
+	{
+		if(!$_id || !is_numeric($_id))
+		{
+			return false;
+		}
+
+		$all_user   = [];
+		$load_admin = \lib\db\travels::get(['id' => $_id, 'limit' => 1]);
+
+		$travel_meta = [];
+
+		if(isset($load_admin['meta']) && $load_admin['meta'])
+		{
+			$travel_meta = json_decode($load_admin['meta'], true);
+		}
+
+		if(!is_array($travel_meta))
+		{
+			$travel_meta = [];
+		}
+
+		if(isset($load_admin['place']))
+		{
+			$place = $load_admin['place'];
+		}
+		else
+		{
+			return false;
+		}
+
+		if($place === $_new_place)
+		{
+			\dash\notif::error(T_("Can not create duplicate of trip from one place"));
+			return false;
+		}
+
+		$myKey = 'duplicate_travel_to_'. $_new_place;
+
+		if(isset($travel_meta[$myKey]))
+		{
+			\dash\notif::error(T_("A copy of this trip has already been prepared"));
+			return false;
+		}
+
+		if(isset($travel_meta['duplicate_from']))
+		{
+			\dash\notif::error(T_("This is a duplicate trip, can not duplicate again it!"));
+			return false;
+		}
+
+		\dash\db::transaction();
+
+		$new_travel_id = \lib\db\travels::make_duplicate($_id, $_new_place, ['key' => 'duplicate_from', 'old_place' => $place, 'old_id' => $_id, 'user_id' => \dash\user::id(), 'status' => 'copied from '. $place]);
+		if($new_travel_id)
+		{
+			$copy_travelusers = \lib\db\travelusers::make_duplicate($new_travel_id, $_id);
+			if($copy_travelusers)
+			{
+				$travel_meta[$myKey] =
+				[
+					'status'     => 'copied for '. $_new_place,
+					'new_travel' => $new_travel_id,
+					'user_id'    => \dash\user::id(),
+					'date'       => date("Y-m-d H:i:s"),
+				];
+
+				\lib\db\travels::update(['meta' => json_encode($travel_meta, JSON_UNESCAPED_UNICODE)], $_id);
+				\dash\db::commit();
+				return true;
+			}
+		}
+
+		\dash\db::rollback();
+		return false;
+	}
 }
 ?>

@@ -1,0 +1,104 @@
+{%extends "content_cp/trip/tripViewGroup.html"%}
+
+
+{%block myTropPageBody%}
+<div class="f justify-center">
+    <div class="c4 s12">
+      <div class="cbox">
+        {%if travelMeta.duplicate_from%}
+        <div class="msg danger txtB txtC">
+          {%trans "This travel was copied from another place, can not duplicate it again!"%}
+        </div>
+
+        <a class="btn block primary outline" href="{{url.this}}/view?id={{travelMeta.duplicate_from.old_id}}">{%trans "Click to show master trip"%}</a>
+
+
+        {%else%}
+
+        <h3>{%trans "You can create duplicate of this trip to another palce"%}</h3>
+        <table class="tbl1 v4">
+          <tr>
+            <td class="">{%trans "This trip is to" %}</td>
+            <td>{%set myPlaceTrans = travelDetail.place%}{%trans myPlaceTrans%}</td>
+          </tr>
+
+          {%if travelDetail.place == 'qom'%}
+            {{block('copymashhad')}}
+            {{block('copykarbala')}}
+          {%endif%}
+
+          {%if travelDetail.place == 'mashhad'%}
+            {{block('copyqom')}}
+            {{block('copykarbala')}}
+          {%endif%}
+
+          {%if travelDetail.place == 'karbala'%}
+            {{block('copyqom')}}
+            {{block('copymashhad')}}
+          {%endif%}
+        </table>
+
+        {%endif%}
+      </div>
+    </div>
+</div>
+{%endblock%}
+
+
+
+{%block copymashhad%}
+<tr>
+    {%if travelMeta.duplicate_travel_to_mashhad%}
+    <td class="">{%trans "Copied to mashhad" %}</td>
+    <td>
+      <div>
+        <a class="btn primary outline" href="{{url.this}}/view?id={{travelMeta.duplicate_travel_to_mashhad.new_travel}}">{%trans "Click to show it"%}</a>
+      </div>
+      <div class="badge">{%trans "Copied on"%} {{travelMeta.duplicate_travel_to_mashhad.date | dt(true)}}</div>
+    </td>
+    {%else%}
+    <td class="">{%trans "Copy for" %}</td>
+    <td>
+      <div data-confirm data-data='{"copy" : "mashhad", "id": "{{requestGET.id}}"}' class="btn warn block">{%trans "mashhad"%}</div>
+    </td>
+    {%endif%}
+</tr>
+{%endblock%}
+
+{%block copykarbala%}
+<tr>
+    {%if travelMeta.duplicate_travel_to_karbala%}
+    <td class="">{%trans "Copied to karbala" %}</td>
+    <td>
+      <div>
+        <a class="btn primary outline" href="{{url.this}}/view?id={{travelMeta.duplicate_travel_to_karbala.new_travel}}">{%trans "Click to show it"%}</a>
+      </div>
+      <div class="badge">{%trans "Copied on"%} {{travelMeta.duplicate_travel_to_karbala.date | dt(true)}}</div>
+    </td>
+    {%else%}
+    <td class="">{%trans "Copy for" %}</td>
+    <td>
+      <div data-confirm data-data='{"copy" : "karbala", "id": "{{requestGET.id}}"}' class="btn warn block">{%trans "karbala"%}</div>
+    </td>
+    {%endif%}
+</tr>
+{%endblock%}
+
+{%block copyqom%}
+<tr>
+    {%if travelMeta.duplicate_travel_to_qom%}
+    <td class="">{%trans "Copied to qom" %}</td>
+    <td>
+      <div>
+        <a class="btn primary outline" href="{{url.this}}/view?id={{travelMeta.duplicate_travel_to_qom.new_travel}}">{%trans "Click to show it"%}</a>
+      </div>
+      <div class="badge">{%trans "Copied on"%} {{travelMeta.duplicate_travel_to_qom.date | dt(true)}}</div>
+    </td>
+    {%else%}
+    <td class="">{%trans "Copy for" %}</td>
+    <td>
+      <div data-confirm data-data='{"copy" : "qom", "id": "{{requestGET.id}}"}' class="btn warn block">{%trans "qom"%}</div>
+    </td>
+    {%endif%}
+</tr>
+{%endblock%}

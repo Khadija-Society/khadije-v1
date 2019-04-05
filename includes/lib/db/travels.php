@@ -184,5 +184,46 @@ class travels
 		}
 		return false;
 	}
+
+
+	public static function make_duplicate($_id, $_new_place, $_meta)
+	{
+		$meta = [$_meta['key'] => $_meta];
+		$meta = json_encode($meta, JSON_UNESCAPED_UNICODE);
+		$meta = addslashes($meta);
+
+		$query =
+		"
+			INSERT INTO travels
+			(
+				`user_id`,
+				`place`,
+				`hotel`,
+				`countpeople`,
+				`startdate`,
+				`enddate`,
+				`type`,
+				`status`,
+				`desc`,
+				`meta`
+			)
+			SELECT
+				travels.user_id,
+				'$_new_place',
+				travels.hotel,
+				travels.countpeople,
+				null,
+				null,
+				travels.type,
+				'awaiting',
+				travels.desc,
+				'$meta'
+			FROM travels
+			WHERE travels.id = $_id
+			LIMIT 1
+		";
+		\dash\db::query($query);
+		return \dash\db::insert_id();
+	}
 }
 ?>
