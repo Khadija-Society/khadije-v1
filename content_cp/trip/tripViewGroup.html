@@ -19,16 +19,16 @@
 
 <div class="msg primary2 fs14">
   <div class="f">
-    <div class="c">
+    <div class="c s6">
         <img class="avatar" src="{{url.static}}/images/place/{{travelDetail.place}}-square.jpg" alt='{%trans cityPlace%}'>
     </div>
-    <div class="c">{%trans cityPlace%}</div>
-    <div class="c">
+    <div class="c s6">{%trans cityPlace%}</div>
+    <div class="c s6">
       <span class="fc-mute">{%trans "Admin"%}</span>
       {{travelDetail.firstname}}
       <b>{{travelDetail.lastname}}</b>
     </div>
-    <div class="c">
+    <div class="c s6">
       {%trans "Status"%} <b>{%set StatusS = travelDetail.status | capitalize%}{%trans StatusS%}</b>
     </div>
   </div>
@@ -41,7 +41,7 @@
 {%block bPageSteps%}
   <div class="f">
 
-   <div class="c">
+   <div class="c s6">
     <a class="dcard {%if url.child == 'view' %}active{%endif%}" href='{{url.this}}/view?id={{requestGET.id}}' data-shortkey="49ctrlshift">
      <div class="statistic">
       <div class="value"><i class="sf-rocket"></i></div>
@@ -50,7 +50,7 @@
     </a>
    </div>
 
-   <div class="c">
+   <div class="c s6">
     <a class="dcard {%if url.child == 'partner' %}active{%endif%}" href='{{url.this}}/partner?id={{requestGET.id}}' data-shortkey="50ctrlshift">
      <div class="statistic">
       <div class="value"><i class="sf-users"></i></div>
@@ -59,7 +59,7 @@
     </a>
    </div>
 
-   <div class="c">
+   <div class="c s6">
     <a class="dcard {%if url.child == 'setting' %}active{%endif%}" href='{{url.this}}/setting?id={{requestGET.id}}' data-shortkey="51ctrlshift">
      <div class="statistic">
       <div class="value"><i class="sf-cogs"></i></div>
@@ -68,7 +68,7 @@
     </a>
    </div>
 
-   <div class="c">
+   <div class="c s6">
     <a class="dcard {%if url.child == 'status' %}active{%endif%}" href='{{url.this}}/status?id={{requestGET.id}}' data-shortkey="51ctrlshift">
      <div class="statistic">
       <div class="value"><i class="sf-magic"></i></div>

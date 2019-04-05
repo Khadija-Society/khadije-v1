@@ -8,11 +8,11 @@
 
         <table class="tbl1 v4">
           <tr>
-            <td class="collapsing">{%trans "Date created" %}</td>
+            <td class="">{%trans "Date created" %}</td>
             <td>{{travelDetail.datecreated | dt}}</td>
           </tr>
           <tr>
-            <td class="collapsing">{%trans "Reset datecreate to" %}</td>
+            <td class="">{%trans "Reset datecreate to" %}</td>
             <td>
 
               <form method="post" autocomplete="off">
@@ -30,13 +30,13 @@
 
          {%if travelDetail.datemodified%}
          <tr>
-            <td class="collapsing">{%trans "Last modified" %}</td>
+            <td class="">{%trans "Last modified" %}</td>
             <td>{{travelDetail.datemodified | dt}}</td>
           </tr>
          {%endif%}
 
          <tr>
-            <td class="collapsing">{%trans "Reserve date" %}</td>
+            <td class="">{%trans "Reserve date" %}</td>
             <td>{{travelDetail.startdate | dt(true, 'date')}} - {{travelDetail.enddate | dt(true, 'date')}}</td>
           </tr>
         </table>
@@ -45,17 +45,17 @@
           <table class="tbl1 v4">
 
             <tr>
-              <td class="collapsing">{%trans "Start date"%}</td>
+              <td class="">{%trans "Start date"%}</td>
               <td>{{block ('istartdate') }}</td>
             </tr>
 
             <tr>
-              <td class="collapsing">{%trans "End date"%}</td>
+              <td class="">{%trans "End date"%}</td>
               <td>{{block ('ienddate') }}</td>
             </tr>
 
             <tr>
-              <td class="collapsing">{%trans "Description"%}</td>
+              <td class="">{%trans "Description"%}</td>
               <td>{{block ('iDescription') }}</td>
             </tr>
 
