@@ -46,7 +46,7 @@ class twigTransTerms
 
 	//----------------------------------------content_cp/userkarbala/home/display.html
 	echo T_("Search");                                                                // Line 45
-	echo T_("Export");                                                                // Line 46
+	echo T_("Export");                                                                // Line 47
 	echo T_("Firstname");                                                             // Line 61
 	echo T_("Lastname");                                                              // Line 62
 	echo T_("Nationalcode");                                                          // Line 7
@@ -452,10 +452,11 @@ class twigTransTerms
 
 	//--------------------------------------------content_cp/trip/partner/display.html
 	echo T_("Add or edit partner");                                                   // Line 22
+	echo T_("Make export from list of partner");                                      // Line 46
 	echo T_("Marital");                                                               // Line 141
-	echo T_("Travel to");                                                             // Line 87
+	echo T_("Travel to");                                                             // Line 93
 	echo T_("Thumb");                                                                 // Line 130
-	echo T_("First travel to");                                                       // Line 83
+	echo T_("First travel to");                                                       // Line 89
 	echo T_("Nationalcode thumb");                                                    // Line 56
 	echo T_("Whitout nationalcode thumb");                                            // Line 164
 	echo T_("No partner set");                                                        // Line 248
