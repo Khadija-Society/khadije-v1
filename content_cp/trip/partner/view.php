@@ -20,7 +20,7 @@ class view
 
 		if(\dash\request::get('export') === 'export_partner')
 		{
-			\dash\utility\export::csv(['name' => 'export_trip_'. \dash\request::get('id'), 'data' => \dash\data::travelPartner()]);
+			\dash\utility\export::csv(['name' => 'export_trip_'. \dash\request::get('id'), 'data' => self::myList()]);
 			return;
 		}
 		// load partner detail
@@ -40,6 +40,51 @@ class view
 				}
 			}
 		}
+	}
+
+
+	private static function myList()
+	{
+		$list = \dash\data::travelPartner();
+		$new_list = [];
+		if(!is_array($list))
+		{
+			return [];
+		}
+
+		foreach ($list as $key => $value)
+		{
+			$new_list[$key]['id']                 = $value['id'];
+			$new_list[$key]['displayname']        = $value['displayname'];
+			$new_list[$key]['gender']             = $value['gender'];
+			$new_list[$key]['mobile']             = $value['mobile'];
+			$new_list[$key]['email']              = $value['email'];
+			$new_list[$key]['avatar']             = $value['avatar'];
+			$new_list[$key]['birthday']           = $value['birthday'];
+			$new_list[$key]['firstname']          = $value['firstname'];
+			$new_list[$key]['lastname']           = $value['lastname'];
+			$new_list[$key]['father']             = $value['father'];
+			$new_list[$key]['nationalcode']       = $value['nationalcode'];
+			$new_list[$key]['pasportcode']        = $value['pasportcode'];
+			$new_list[$key]['pasportdate']        = $value['pasportdate'];
+			$new_list[$key]['education']          = $value['education'];
+			$new_list[$key]['city']               = $value['city'];
+			$new_list[$key]['province']           = $value['province'];
+			$new_list[$key]['country']            = $value['country'];
+			$new_list[$key]['phone']              = $value['phone'];
+			$new_list[$key]['married']            = $value['married'];
+			$new_list[$key]['zipcode']            = $value['zipcode'];
+			$new_list[$key]['desc']               = $value['desc'];
+			$new_list[$key]['job']                = $value['job'];
+			$new_list[$key]['nationality']        = $value['nationality'];
+			$new_list[$key]['marital']            = $value['marital'];
+			$new_list[$key]['foreign']            = $value['foreign'];
+			$new_list[$key]['mobile2']            = $value['mobile2'];
+			$new_list[$key]['qom']                = $value['qom'];
+			$new_list[$key]['mashhad']            = $value['mashhad'];
+			$new_list[$key]['karbala']            = $value['karbala'];
+		}
+		return $new_list;
 	}
 }
 ?>
