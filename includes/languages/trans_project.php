@@ -224,7 +224,7 @@ class twigTransTerms
 	echo T_("Max pay");                                                               // Line 114
 	echo T_("Max count pay user");                                                    // Line 118
 	echo T_("Remember notif");                                                        // Line 123
-	echo T_("Clear filter");                                                          // Line 129
+	echo T_("Clear filter");                                                          // Line 76
 	echo T_("Niyat");                                                                 // Line 151
 	echo T_("Hazinekard");                                                            // Line 152
 	echo T_("Anonymous");                                                             // Line 36
@@ -443,7 +443,7 @@ class twigTransTerms
 	echo T_("File setting");                                                          // Line 256
 
 	//------------------------------------content_cp/festival/transaction/display.html
-	echo T_("Today");                                                                 // Line 137
+	echo T_("Today");                                                                 // Line 187
 
 	//------------------------------------------------content_cp/homepage/display.html
 	echo T_("Qom");                                                                   // Line 32
@@ -454,9 +454,10 @@ class twigTransTerms
 	echo T_("Add or edit partner");                                                   // Line 22
 	echo T_("Make export from list of partner");                                      // Line 46
 	echo T_("Marital");                                                               // Line 141
-	echo T_("Travel to");                                                             // Line 93
+	echo T_("Travel");                                                                // Line 129
 	echo T_("Thumb");                                                                 // Line 130
-	echo T_("First travel to");                                                       // Line 89
+	echo T_("First travel to");                                                       // Line 54
+	echo T_("Travel to");                                                             // Line 57
 	echo T_("Nationalcode thumb");                                                    // Line 56
 	echo T_("Whitout nationalcode thumb");                                            // Line 164
 	echo T_("No partner set");                                                        // Line 248
@@ -504,7 +505,7 @@ class twigTransTerms
 	//----------------------------------------------content_cp/trip/tripViewGroup.html
 	echo T_("Admin");                                                                 // Line 27
 	echo T_("Admin detail");                                                          // Line 8
-	echo T_("Partner");                                                               // Line 60
+	echo T_("Partner");                                                               // Line 110
 	echo T_("Settings");                                                              // Line 66
 	echo T_("Copy");                                                                  // Line 84
 
@@ -549,23 +550,26 @@ class twigTransTerms
 	echo T_("Maximum group count");                                                   // Line 185
 
 	//-------------------------------------------------content_cp/trip/tripDetail.html
-	echo T_("Search in trips");                                                       // Line 41
-	echo T_("ID");                                                                    // Line 54
+	echo T_("Filter by start date and end date");                                     // Line 37
+	echo T_("Filter by place");                                                       // Line 54
+	echo T_("Apply");                                                                 // Line 77
+	echo T_("Advance");                                                               // Line 88
+	echo T_("Search in trips");                                                       // Line 89
+	echo T_("ID");                                                                    // Line 104
 	echo T_("First name");                                                            // Line 149
-	echo T_("Birthdate");                                                             // Line 57
-	echo T_("Total Request");                                                         // Line 128
+	echo T_("Birthdate");                                                             // Line 107
+	echo T_("Total Request");                                                         // Line 178
 
 	//---------------------------------------------------content_cp/trip/tripView.html
 	echo T_("Profile");                                                               // Line 22
 	echo T_("List of trip partner");                                                  // Line 195
-	echo T_("Travel");                                                                // Line 129
 	echo T_("Child");                                                                 // Line 55
 	echo T_("Enter a valid name from 2 to 40 character");                             // Line 78
 
 	//--------------------------------------------content_cp/trip/profile/display.html
 
 	//-----------------------------------------------content_cp/trip/view/display.html
-	echo T_("View full Profile");                                                     // Line 33
+	echo T_("View full Profile");                                                     // Line 66
 
 	//---------------------------------------------------------content_cp/sidenav.html
 	echo T_("Control Panel");                                                         // Line 1

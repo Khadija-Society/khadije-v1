@@ -31,6 +31,53 @@
 
 {%endblock%}
 
+{%block iKerkere%}
+
+<div class="advanceSearch" {%if requestGET.place or requestGET.startdate or requestGET.enddate %} {%else%}data-kerkere-content='hide' {%endif%}>
+  <h6 class="mT10">{%trans "Filter by start date and end date"%}</h6>
+  <div class="f">
+
+     <div class="cauto s12 mB5 pRa5">
+      <div class="input ltr">
+        <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+      </div>
+    </div>
+
+    <div class="cauto s12 mB5 pRa5">
+      <div class="input ltr">
+        <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+      </div>
+    </div>
+
+  </div>
+
+  <h6 class="mT10">{%trans "Filter by place"%}</h6>
+  <div class="f ">
+        <div class="c">
+          <div class="radio3 mB5">
+            <input type="radio" name="place" value="qom" id="placeqom" {%if requestGET.place == 'qom' %} checked {%endif%}>
+            <label for="placeqom">{%trans "Qom"%}</label>
+          </div>
+        </div>
+        <div class="c">
+          <div class="radio3 mB5">
+            <input type="radio" name="place" value="mashhad" id="placemashhad" {%if requestGET.place == 'mashhad' %} checked {%endif%}>
+            <label for="placemashhad">{%trans "Mashhad"%}</label>
+          </div>
+        </div>
+         <div class="c">
+          <div class="radio3 mB5">
+            <input type="radio" name="place" value="karbala" id="placekarbala" {%if requestGET.place == 'karbala' %} checked {%endif%}>
+            <label for="placekarbala">{%trans "Karbala"%}</label>
+          </div>
+        </div>
+      </div>
+
+  <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
+  <button class="btn primary2">{%trans "Apply"%}</button>
+
+</div>
+{%endblock%}
 
 
 
@@ -38,9 +85,12 @@
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
     <div class="input">
+      <label class="addon" data-kerkere='.advanceSearch' data-kerkere-icon>{%trans "Advance"%}</label>
       <input type="search" name="q" placeholder='{%trans "Search in trips"%}' id="q" value="{{requestGET.q}}{{requestGET.barcode}}" autofocus autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
+
     </div>
+    {{block('iKerkere')}}
   </form>
 </div>
 {%endblock%}

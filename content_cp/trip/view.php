@@ -56,6 +56,50 @@ class view
 		}
 
 
+		$startdate = null;
+		$enddate   = null;
+
+		$get_date_url = [];
+		if(\dash\request::get('startdate'))
+		{
+			$startdate                 = \dash\request::get('startdate');
+			$get_date_url['startdate'] = $startdate;
+			$startdate                 = \dash\utility\convert::to_en_number($startdate);
+
+			if(\dash\utility\jdate::is_jalali($startdate))
+			{
+				$startdate = \dash\utility\jdate::to_gregorian($startdate);
+			}
+			\dash\data::startdateEn($startdate);
+		}
+
+
+		if(\dash\request::get('enddate'))
+		{
+			$enddate                 = \dash\request::get('enddate');
+			$get_date_url['enddate'] = $enddate;
+			$enddate                 = \dash\utility\convert::to_en_number($enddate);
+			if(\dash\utility\jdate::is_jalali($enddate))
+			{
+				$enddate = \dash\utility\jdate::to_gregorian($enddate);
+			}
+			\dash\data::enddateEn($enddate);
+		}
+
+
+		if($startdate && $enddate)
+		{
+			$args['1.1'] = [" = 1.1 ", " AND travels.startdate >= '$startdate' AND travels.enddate <= '$enddate'  "];
+		}
+		elseif($startdate)
+		{
+			$args['travels.startdate'] = [">=", " '$startdate' "];
+		}
+		elseif($enddate)
+		{
+			$args['travels.enddate'] = ["<=", " '$enddate' "];
+		}
+
 
 		if(\dash\request::get('birthday'))
 		{
