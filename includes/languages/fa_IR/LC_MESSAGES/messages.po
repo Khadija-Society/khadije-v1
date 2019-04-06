@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-04-05 20:28+0430\n"
-"PO-Revision-Date: 2019-04-05 20:29+0430\n"
+"POT-Creation-Date: 2019-04-06 13:37+0430\n"
+"PO-Revision-Date: 2019-04-06 13:37+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -3011,6 +3011,7 @@ msgstr "انتشار"
 #: dash/addons/includes/languages/trans_dash.php:45
 #: khadije/includes/languages/trans_dash.php:45
 #: khadije/includes/languages/trans_project.php:175
+#: khadije/includes/languages/trans_static.php:189
 msgid "Draft"
 msgstr "پیش‌نویس"
 
@@ -3347,6 +3348,7 @@ msgstr "زباله‌دان"
 #: khadije/includes/languages/trans_dash.php:120
 #: khadije/includes/languages/trans_project.php:91
 #: khadije/includes/languages/trans_static.php:22
+#: khadije/includes/languages/trans_static.php:180
 msgid "Spam"
 msgstr "هرزنامه"
 
@@ -3394,6 +3396,7 @@ msgstr "وضعیت فعلی"
 #: khadije/includes/languages/trans_dash.php:131
 #: khadije/includes/languages/trans_project.php:101
 #: khadije/includes/languages/trans_static.php:18
+#: khadije/includes/languages/trans_static.php:179
 msgid "Awaiting"
 msgstr "در انتظار"
 
@@ -5180,6 +5183,7 @@ msgstr "درگاه پرداخت را انتخاب کنید"
 #: khadije/includes/languages/trans_dash.php:539
 #: khadije/includes/languages/trans_project.php:177
 #: khadije/includes/languages/trans_static.php:19
+#: khadije/includes/languages/trans_static.php:181
 msgid "Cancel"
 msgstr "انصراف"
 
@@ -6078,6 +6082,7 @@ msgstr "آیا از حذف این کاربر اطمینان دارید؟"
 #: dash/addons/includes/languages/trans_static.php:92
 #: khadije/includes/languages/trans_dash.php:797
 #: khadije/includes/languages/trans_project.php:604
+#: khadije/includes/languages/trans_static.php:187
 msgid "Delete"
 msgstr "حذف"
 
@@ -10036,6 +10041,7 @@ msgstr "تداخل"
 
 #: dash/addons/includes/languages/trans_static.php:574
 #: khadije/includes/languages/trans_project.php:527
+#: khadije/includes/languages/trans_static.php:186
 msgid "Gone"
 msgstr "رفت"
 
@@ -11149,6 +11155,7 @@ msgstr "حذف شده"
 #: dash/addons/includes/languages/trans_static.php:861
 #: dash/addons/includes/languages/trans_static.php:936
 #: khadije/includes/languages/trans_static.php:28
+#: khadije/includes/languages/trans_static.php:167
 msgid "awaiting"
 msgstr "در انتظار"
 
@@ -11297,6 +11304,7 @@ msgstr "حذف مدیریت"
 #: dash/addons/includes/languages/trans_static.php:897
 #: dash/lib/social/telegram/step.php:211
 #: khadije/includes/languages/trans_static.php:29
+#: khadije/includes/languages/trans_static.php:169
 msgid "cancel"
 msgstr "انصراف"
 
@@ -11315,6 +11323,7 @@ msgstr "قبول کردن"
 
 #: dash/addons/includes/languages/trans_static.php:901
 #: khadije/includes/languages/trans_static.php:31
+#: khadije/includes/languages/trans_static.php:170
 msgid "reject"
 msgstr "رد کردن"
 
@@ -11371,6 +11380,7 @@ msgid "deliver"
 msgstr "تحویل‌داده‌شده"
 
 #: dash/addons/includes/languages/trans_static.php:916
+#: khadije/includes/languages/trans_static.php:177
 msgid "draft"
 msgstr "پیش‌نویس"
 
@@ -11421,6 +11431,7 @@ msgstr "قفل شده"
 
 #: dash/addons/includes/languages/trans_static.php:928
 #: khadije/includes/languages/trans_static.php:32
+#: khadije/includes/languages/trans_static.php:168
 msgid "spam"
 msgstr "هرزنامه"
 
@@ -16085,6 +16096,10 @@ msgstr "تغییر وضعیت سفر"
 msgid "Request group trip list"
 msgstr "لیست درخواست‌های تشرف کاروانی"
 
+#: khadije/content_cp/trip/view/controller.php:103
+msgid "-"
+msgstr "-"
+
 #: khadije/content_cp/userkarbala/home/model.php:97
 #: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:16
 #: khadije/includes/lib/app/log/caller/karbalaUsersExportCsvFile.php:79
@@ -16997,7 +17012,7 @@ msgstr "سفر به"
 
 #: khadije/includes/languages/trans_project.php:459
 msgid "First travel to"
-msgstr "زائر اولی به"
+msgstr "زائر اولی"
 
 #: khadije/includes/languages/trans_project.php:460
 msgid "Nationalcode thumb"
@@ -17142,6 +17157,7 @@ msgid "send new complete request"
 msgstr "درخواست جدید و کامل ارسال شده"
 
 #: khadije/includes/languages/trans_project.php:516
+#: khadije/includes/languages/trans_static.php:183
 msgid "Review"
 msgstr "بررسی"
 
@@ -17150,6 +17166,7 @@ msgid "after check and before accept"
 msgstr "پس از بررسی اولیه و پیش از تایید"
 
 #: khadije/includes/languages/trans_project.php:518
+#: khadije/includes/languages/trans_static.php:173
 msgid "queue"
 msgstr "صف"
 
@@ -17159,6 +17176,7 @@ msgstr "در صف ارسال"
 
 #: khadije/includes/languages/trans_project.php:520
 #: khadije/includes/languages/trans_static.php:21
+#: khadije/includes/languages/trans_static.php:182
 msgid "Reject"
 msgstr "رد کردن"
 
@@ -18663,6 +18681,38 @@ msgstr "افزودن سفر جدید"
 #: khadije/includes/languages/trans_static.php:165
 msgid "exportKarbalaUsers"
 msgstr "تهیه خروجی از کاربران کربلا"
+
+#: khadije/includes/languages/trans_static.php:171
+msgid "review"
+msgstr "بررسی"
+
+#: khadije/includes/languages/trans_static.php:172
+msgid "notanswer"
+msgstr "بدون پاسخ"
+
+#: khadije/includes/languages/trans_static.php:174
+msgid "gone"
+msgstr "رفتم"
+
+#: khadije/includes/languages/trans_static.php:175
+msgid "delete"
+msgstr "حذف"
+
+#: khadije/includes/languages/trans_static.php:176
+msgid "admincancel"
+msgstr "لغو از طرف مدیر"
+
+#: khadije/includes/languages/trans_static.php:184
+msgid "Notanswer"
+msgstr "بدون پاسخ"
+
+#: khadije/includes/languages/trans_static.php:185
+msgid "Queue"
+msgstr "صف"
+
+#: khadije/includes/languages/trans_static.php:188
+msgid "Admincancel"
+msgstr "لغو از طرف مدیر"
 
 #: khadije/includes/lib/app/android.php:67
 msgid "Change language"
@@ -21435,9 +21485,6 @@ msgstr "این یک سفر کپی شده است. نمی‌توانید آن را
 #~ msgid "+"
 #~ msgstr "+"
 
-#~ msgid "-"
-#~ msgstr "-"
-
 #~ msgid "Textarea"
 #~ msgstr "تکست اریا"
 
@@ -23314,9 +23361,6 @@ msgstr "این یک سفر کپی شده است. نمی‌توانید آن را
 
 #~ msgid "Does not exist!"
 #~ msgstr "هیچ داده ای موجود نیست!"
-
-#~ msgid "delete"
-#~ msgstr "حذف"
 
 #~ msgid "Back up database complete"
 #~ msgstr "پشتیبان‌گیری از پایگاه داده کامل شد"

@@ -163,6 +163,30 @@ class TransStatic
 	echo T_("Travelusers");
 	echo T_("cpAddNewTrip");
 	echo T_("exportKarbalaUsers");
+
+	echo T_("awaiting");
+	echo T_("spam");
+	echo T_("cancel");
+	echo T_("reject");
+	echo T_("review");
+	echo T_("notanswer");
+	echo T_("queue");
+	echo T_("gone");
+	echo T_("delete");
+	echo T_("admincancel");
+	echo T_("draft");
+
+	echo T_("Awaiting");
+	echo T_("Spam");
+	echo T_("Cancel");
+	echo T_("Reject");
+	echo T_("Review");
+	echo T_("Notanswer");
+	echo T_("Queue");
+	echo T_("Gone");
+	echo T_("Delete");
+	echo T_("Admincancel");
+	echo T_("Draft");
  }
 }
 ?>

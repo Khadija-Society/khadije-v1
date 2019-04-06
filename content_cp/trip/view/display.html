@@ -23,10 +23,43 @@
             {%if travelDetail.gender%}<tr><td class="collapsing">{%trans "Gender"%}</td><td>{%set GenderS = travelDetail.gender | capitalize%} {%trans GenderS%}</td></tr>{%endif%}
             {%if travelDetail.married%}<tr><td class="collapsing">{%trans "Marital"%}</td><td>{%set MaritalS = travelDetail.married | capitalize%}{%trans MaritalS%}</td></tr>{%endif%}
             {%if travelDetail.file1%}<tr><td class="collapsing">{%trans "Nationalcode thumb"%}</td><td><a href="{{travelDetail.file1}}" class="badge light"><img src="{{travelDetail.file1}}" class="avatar"></a></td></tr>{%endif%}
-            {%if travelDetail.country%}<tr><td class="collapsing">{%trans "Country"%}</td><td>{{travelDetail.country}}</td></tr>{%endif%}
+            {%if travelDetail.country%}<tr><td class="collapsing">{%trans "Country"%}</td><td>{{travelDetail.country_name}}</td></tr>{%endif%}
 
 
-            {%if travelDetail.address%}<tr><td class="collapsing">{%trans "Address"%}</td><td> {{travelDetail.city}} {{travelDetail.address}}</td></tr>{%endif%}
+            {%if travelDetail.address%}<tr><td class="collapsing">{%trans "Address"%}</td><td> {{travelDetail.location_string}} {{travelDetail.address}}</td></tr>{%endif%}
+            <tr>
+              <td class="collapsing">{%trans "Status"%}</td>
+              <td class="f">
+
+                <div class="c">
+                {%if not travelDetail['qom'] %}
+                <span class="fc-mute sm">{%trans "First travel to"%} {%trans "Qom"%}</span>
+                {%else%}
+                <span class="badge warn ">
+                  {{travelDetail['qom']| fitNumber}} {%trans "Travel to"%} {%trans "Qom"%}
+                </span>
+              {%endif%}
+              </div>
+              <div class="c">
+              {%if not travelDetail['mashhad'] %}
+                <span class="fc-mute sm">{%trans "First travel to"%} {%trans "Mashhad"%}</span>
+                {%else%}
+                <span class="badge warn ">
+                  {{travelDetail['mashhad']| fitNumber}} {%trans "Travel to"%} {%trans "Mashhad"%}
+                </span>
+              {%endif%}
+              </div>
+              <div class="c">
+              {%if not travelDetail['karbala'] %}
+                <span class="fc-mute sm">{%trans "First travel to"%} {%trans "Karbala"%}</span>
+                {%else%}
+                <span class="badge warn ">
+                  {{travelDetail['karbala']| fitNumber}} {%trans "Travel to"%} {%trans "Karbala"%}
+                </span>
+              {%endif%}
+              </div>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
