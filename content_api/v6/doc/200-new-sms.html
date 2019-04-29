@@ -12,6 +12,36 @@
       <span>{{apiURL}}<b>sms/new</b></span>
     </div>
 
+       <div class="tblBox">
+      <h3>{%trans "Parameters on header"%}</h3>
+      <table class="tbl1 v3">
+        <thead>
+          <tr>
+            <th>{%trans "Name"%} <small>{%trans "type"%}</small></th>
+            <th>{%trans "Description"%} <small>{%trans "example"%}</small></th>
+            <th>{%trans "Constraints"%}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="txtB">appkey</div>
+              <i>String</i>
+            </td>
+            <td>
+              <p>
+                {%trans "Get from system administrator"%}
+              </p>
+            </td>
+            <td>
+              <div class="fc-red"><i>{%trans "Required"%}</i></div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
 
     <div class="tblBox">
       <h3>{%trans "Parameters"%}</h3>
@@ -100,6 +130,7 @@
 <pre>
 curl -X POST \
   {{apiURL}}sms/new \
+  -H appkey='sample' \
   -F fromgateway=989123334455 \
   -F from=989124442211 \
   -F text=Hi \
