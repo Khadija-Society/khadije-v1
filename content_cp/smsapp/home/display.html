@@ -1,0 +1,51 @@
+{%extends display.cpMain%}
+
+{%block pageContent%}
+<div class="f">
+  <div class="c">{{block('iSmsGroupAdd')}}</div>
+  <div class="c">{{block('iSmsList')}}</div>
+  <div class="c">{{block('iSmsGroup')}}</div>
+  <div class="c">{{block('iSmsGroupFilter')}}</div>
+</div>
+{%endblock%}
+
+
+{%block iSmsGroupAdd%}
+<a class="dcard x1" href='{{url.here}}/smsapp/addgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-plus"></i></div>
+  <div class="label">{%trans "Add group"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block iSmsGroup%}
+<a class="dcard x1" href='{{url.here}}/smsapp/group'>
+ <div class="statistic">
+  <div class="value"><i class="sf-mail"></i></div>
+  <div class="label">{%trans "Sms group"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block iSmsGroupFilter%}
+<a class="dcard x1" href='{{url.here}}/smsapp/groupfilter'>
+ <div class="statistic">
+  <div class="value"><i class="sf-mail"></i></div>
+  <div class="label">{%trans "Sms group filter"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block iSmsList%}
+<a class="dcard x1" href='{{url.here}}/smsapp/smslist'>
+ <div class="statistic">
+  <div class="value"><i class="sf-mail"></i></div>
+  <div class="label">{%trans "Sms list"%}</div>
+ </div>
+</a>
+{%endblock%}
