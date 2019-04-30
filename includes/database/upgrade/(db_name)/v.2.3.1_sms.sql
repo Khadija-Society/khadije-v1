@@ -44,9 +44,10 @@ CREATE TABLE `s_sms` (
 `sendstatus` enum('awaiting', 'sendtodevice', 'send', 'deliver') NULL DEFAULT NULL,
 `amount` int(10) UNSIGNED NULL DEFAULT NULL,
 `answertext`       text CHARACTER SET utf8mb4,
-`groupfilter_id` int(10) UNSIGNED NULL DEFAULT NULL,
+`group_id` int(10) UNSIGNED NULL DEFAULT NULL,
 `recomand_id` int(10) UNSIGNED NULL DEFAULT NULL,
 PRIMARY KEY (`id`),
 CONSTRAINT `s_sms_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `s_sms_smsgroup_id` FOREIGN KEY (`groupfilter_id`) REFERENCES `s_groupfilter` (`id`) ON UPDATE CASCADE
+CONSTRAINT `s_sms_smsgroup_id` FOREIGN KEY (`group_id`) REFERENCES `s_group` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `s_sms_smsrecomand_id` FOREIGN KEY (`recomand_id`) REFERENCES `s_group` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

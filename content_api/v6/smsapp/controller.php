@@ -104,8 +104,10 @@ class controller
 		$insert['sendstatus']     = null;
 		$insert['amount']         = null;
 		$insert['answertext']     = null;
-		$insert['groupfilter_id'] = null;
+		$insert['group_id'] = null;
 		$insert['recomand_id']    = null;
+
+		self::check_need_analyze($insert);
 
 		$id = \lib\db\sms::insert($insert);
 		if($id)
@@ -113,6 +115,42 @@ class controller
 			return ['smsid' => \dash\coding::encode($id)];
 		}
 		return false;
+	}
+
+
+	private static function check_need_analyze(&$insert)
+	{
+		$number       = $insert['fromnumber'];
+		$mobileNumber = \dash\utility\filter::mobile($number);
+
+		if($mobileNumber)
+		{
+			$get = \lib\db\smsgroupfilter::get(['1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$mobileNumber') "], 'limit' => 1]);
+		}
+		else
+		{
+			$get = \lib\db\smsgroupfilter::get(['number' => $number, 'limit' => 1]);
+		}
+
+
+		// this number not found in any filter
+		if(!isset($get['group_id']))
+		{
+			return;
+		}
+
+		$insert['group_id'] = $get['group_id'];
+
+		$get_group = \lib\db\smsgroup::get(['id' => $get['group_id'], 'limit' => 1]);
+
+		if(isset($get_group['status']) && $get_group['status'] === 'enable')
+		{
+			if(array_key_exists('analyze', $get_group) && !$get_group['analyze'])
+			{
+				$insert['reseivestatus']  = 'block';
+			}
+		}
+
 	}
 }
 ?>
