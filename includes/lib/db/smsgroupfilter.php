@@ -34,6 +34,11 @@ class smsgroupfilter
 		return \dash\db\config::public_get_count('s_groupfilter', ...func_get_args());
 	}
 
+	public static function delete($_id)
+	{
+		return \dash\db::query("DELETE FROM s_groupfilter WHERE s_groupfilter.id = $_id LIMIT 1");
+	}
+
 
 	public static function search()
 	{

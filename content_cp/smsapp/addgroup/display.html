@@ -41,7 +41,7 @@
   <option value="blacklist" {%if dataRow.type == 'blacklist' %} selected {%endif%}>{%trans "Black list"%}</option>
   <option value="family" {%if dataRow.type == 'family' %} selected {%endif%}>{%trans "Family"%}</option>
   <option value="bank" {%if dataRow.type == 'bank' %} selected {%endif%}>{%trans "Bank"%}</option>
-  <option value="other" {%if dataRow.type == 'other' %} selected {%endif%}>{%trans "Other"%}</option>
+  <option value="other" {%if dataRow.type == 'other' or not dataRow.type%} selected {%endif%}>{%trans "Other"%}</option>
 </select>
 {% endblock %}
 
