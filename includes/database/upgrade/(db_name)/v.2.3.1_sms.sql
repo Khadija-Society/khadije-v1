@@ -33,6 +33,7 @@ CREATE TABLE `s_sms` (
 `fromnumber` varchar(100) CHARACTER SET utf8mb4  NULL DEFAULT NULL,
 `togateway` varchar(100) CHARACTER SET utf8mb4  NULL DEFAULT NULL,
 `fromgateway` varchar(100) CHARACTER SET utf8mb4  NULL DEFAULT NULL,
+`text`       text CHARACTER SET utf8mb4,
 `tonumber` varchar(100) CHARACTER SET utf8mb4  NULL DEFAULT NULL,
 `user_id`     int(10) UNSIGNED NULL,
 `date` datetime NULL DEFAULT NULL,

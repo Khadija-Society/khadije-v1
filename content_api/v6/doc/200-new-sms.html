@@ -9,7 +9,7 @@
     <p>{%trans "Every sms you need to send to server to save it"%}</p>
     <div class="msg url">
       <i class="method">POST</i>
-      <span>{{apiURL}}<b>sms/new</b></span>
+      <span>{{apiURL}}<b>smsapp/new</b></span>
     </div>
 
        <div class="tblBox">
@@ -25,7 +25,7 @@
         <tbody>
           <tr>
             <td>
-              <div class="txtB">appkey</div>
+              <div class="txtB">smsappkey</div>
               <i>String</i>
             </td>
             <td>
@@ -56,7 +56,7 @@
         <tbody>
           <tr>
             <td>
-              <div class="txtB">fromgateway</div>
+              <div class="txtB">gateway</div>
               <i>String</i>
             </td>
             <td>
@@ -129,9 +129,9 @@
     <h3>{%trans "cURL"%} <small>{%trans "example"%}</small></h3>
 <pre>
 curl -X POST \
-  {{apiURL}}sms/new \
-  -H appkey='sample' \
-  -F fromgateway=989123334455 \
+  {{apiURL}}smsapp/new \
+  -H smsappkey='sample' \
+  -F gateway=989123334455 \
   -F from=989124442211 \
   -F text=Hi \
   -F 'date=2019-04-28 21:24:14'

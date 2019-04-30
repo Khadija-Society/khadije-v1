@@ -1,5 +1,5 @@
 <?php
-namespace dash\db;
+namespace lib\db;
 
 
 class smsgroup
@@ -7,7 +7,8 @@ class smsgroup
 
 	public static function insert()
 	{
-		return \dash\db\config::public_insert('s_group', ...func_get_args());
+		\dash\db\config::public_insert('s_group', ...func_get_args());
+		return \dash\db::insert_id();
 	}
 
 
