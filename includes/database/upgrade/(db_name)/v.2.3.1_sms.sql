@@ -5,6 +5,7 @@ CREATE TABLE `s_group` (
 `status`     enum('enable', 'deleted', 'disable') NULL DEFAULT 'enable',
 `analyze`    bit(1) NULL DEFAULT NULL,
 `ismoney`    bit(1) NULL DEFAULT NULL,
+`count`    int(10) UNSIGNED NULL DEFAULT NULL,
 `answer`     mediumtext CHARACTER SET utf8mb4,
 `creator`     int(10) UNSIGNED NOT NULL,
 `datecreated` timestamp DEFAULT CURRENT_TIMESTAMP,

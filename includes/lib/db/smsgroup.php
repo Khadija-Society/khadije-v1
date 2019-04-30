@@ -41,5 +41,11 @@ class smsgroup
 		return $result;
 	}
 
+
+	public static function update_group_count($_id)
+	{
+		$query = "UPDATE s_group SET s_group.count = (SELECT COUNT(*) FROM s_sms WHERE s_sms.group_id = $_id) WHERE s_group.id = $_id LIMIT 1";
+		\dash\db::query($query);
+	}
 }
 ?>

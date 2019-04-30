@@ -52,6 +52,10 @@ class view
 		\dash\data::dataFilter($dataFilter);
 
 
+		$smsgroup = \lib\db\smsgroup::get(['count' => ["IS NOT", "NULL AND `count` > 0 "]]);
+
+		\dash\data::groupList($smsgroup);
+
 	}
 }
 ?>

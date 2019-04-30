@@ -110,6 +110,12 @@ class controller
 		self::check_need_analyze($insert);
 
 		$id = \lib\db\sms::insert($insert);
+
+		if($insert['group_id'])
+		{
+			\lib\db\smsgroup::update_group_count($insert['group_id']);
+		}
+
 		if($id)
 		{
 			return ['smsid' => \dash\coding::encode($id)];

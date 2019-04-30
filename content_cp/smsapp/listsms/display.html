@@ -4,7 +4,7 @@
 
 
 {%block pageContent%}
-
+{{block('groupList')}}
 {%if dataTable%}
  {%if dataFilter%}
 
@@ -49,28 +49,45 @@
 
 {%block htmlTable%}
 
+
   <table class="tbl1 v9">
     <thead class="primary">
       <tr>
+        <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "From number"%}</a></th>
         <th data-sort="{{sortLink.text.order}}"><a href="{{sortLink.text.link}}">{%trans "Text"%}</a></th>
-        <th data-sort="{{sortLink.type.order}}"><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
-        <th data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
-        <th data-sort="{{sortLink.analyze.order}}"><a href="{{sortLink.analyze.link}}">{%trans "Analyze"%}</a></th>
-        <th data-sort="{{sortLink.ismoney.order}}"><a href="{{sortLink.ismoney.link}}">{%trans "Is Money"%}</a></th>
-        <th class="collapsing">{%trans "Show numbers"%}</th>
+        <th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th>
+        <th data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
+        <th data-sort="{{sortLink.reseivestatus.order}}"><a href="{{sortLink.reseivestatus.link}}">{%trans "Reseive status"%}</a></th>
+        <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
+        <th data-sort="{{sortLink.amount.order}}"><a href="{{sortLink.amount.link}}">{%trans "Amount"%}</a></th>
+        <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
+        <th class="collapsing">{%trans "Action"%}</th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in dataTable%}
       <tr class="{%if value.status == 'deleted' or value.status == 'disabled'%} danger2 {%endif%}">
-        <td class=""><a href="{{url.this}}/editgroup?id={{value.id}}"><i class="sf-edit"></i> {{value.text}}</a></td>
-        <td class=""><a href="{{url.that}}?type={{value.type}}">{%set mytype = value.type | capitalize %}{%trans mytype%}</a></td>
-        <td class=""><a href="{{url.that}}?status={{value.status}}">{%set mystatus = value.status | capitalize %}{%trans mystatus%}</a></td>
-        <td class="">{%if value.analyze%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
-        <td class="">{%if value.ismoney%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
+        <td>
+          {{value.fromnumber | fitNumber(false)}}
+          {%if false and value.togateway or value.fromgateway or value.tonumber%}
+          <i class="sf-plus " data-kerkere='.myDetail{{value.id}}'></i>
+          <span class="myDetail{{value.id}}" data-kerkere-content='hide'>
+            {%if value.togateway%}<div class="badge">{%trans "togateway"%} {{value.togateway | fitNumber(false)}}</div>{%endif%}
+            {%if value.fromgateway%}<div class="badge">{%trans "fromgateway"%} {{value.fromgateway | fitNumber(false)}}</div>{%endif%}
+            {%if value.tonumber%}<div class="badge">{%trans "tonumber"%} {{value.tonumber | fitNumber(false)}}</div>{%endif%}
+          </span>
+          {%endif%}
+        </td>
+        <td>{{value.text}}</td>
+        <td>{{value.date | dt}}</td>
+        <td>{{value.datecreated | dt}}</td>
+        <td>{%set myreseivestatus = value.reseivestatus%}{%trans myreseivestatus%}</td>
+        <td>{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</td>
+        <td>{{value.amount}}</td>
+        <td>{{value.group_title}}</td>
 
-        <td class="txtC"><a href="{{url.this}}/filtergroup?id={{value.id}}" class="badge primary">{%trans "Numbers"%}</a></td>
+        <td class="txtC"><a href="{{url.this}}/filtergroup?id={{value.id}}" class="badge primary">{%trans "View"%}</a></td>
 
       </tr>
       {%endfor%}

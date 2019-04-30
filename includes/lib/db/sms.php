@@ -35,9 +35,21 @@ class sms
 	}
 
 
-	public static function search()
+	public static function search($_string = null, $_option = [])
 	{
-		$result = \dash\db\config::public_search('s_sms', ...func_get_args());
+		$default =
+		[
+			'master_join' => "LEFT JOIN s_group ON s_sms.group_id = s_group.id",
+			'public_show_field' => "s_sms.*, s_group.title AS `group_title`",
+		];
+
+		if(!is_array($_option))
+		{
+			$_option = [];
+		}
+
+		$_option = array_merge($default, $_option);
+		$result = \dash\db\config::public_search('s_sms', $_string, $_option);
 		return $result;
 	}
 
