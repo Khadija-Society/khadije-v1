@@ -31,11 +31,20 @@
   {%if perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
   {%if perm('cpAddNewTrip')%}<div class="c3 s6">{{block("bAddNewTrip")}}</div>{%endif%}
   {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
+  {%if perm('smsAppSetting')%}<div class="c3 s6">{{block("bSmsAppDashboard")}}</div>{%endif%}
 
 </div>
 {%endblock%}
 
 
+{%block bSmsAppDashboard%}
+<a class="dcard x1" href='{{url.here}}/smsapp'>
+ <div class="statistic">
+  <div class="value"><i class="sf-atom"></i></div>
+  <div class="label">{%trans "Sms management"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 
 {%block bKarbalaUsers%}

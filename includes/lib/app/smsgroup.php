@@ -17,9 +17,10 @@ class smsgroup
 	public static $sort_field =
 	[
 		'title',
-		'slug',
+		'type',
 		'status',
-		'datecreated',
+		'analyze',
+		'ismoney',
 	];
 
 
