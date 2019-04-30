@@ -53,5 +53,13 @@ class sms
 		return $result;
 	}
 
+
+	public static function status_count()
+	{
+		$query = "SELECT COUNT(*) AS `count`, reseivestatus FROM s_sms GROUP BY reseivestatus";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 }
 ?>

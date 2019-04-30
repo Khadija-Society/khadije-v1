@@ -29,10 +29,10 @@ class view
 			$args['order'] = 'DESC';
 		}
 
-		if(\dash\request::get('status'))
+		if(\dash\request::get('reseivestatus'))
 		{
-			$args['status']     = \dash\request::get('status');
-			$filterArray['status'] = \dash\request::get('status');
+			$args['reseivestatus']     = \dash\request::get('reseivestatus');
+			$filterArray['reseivestatus'] = \dash\request::get('reseivestatus');
 		}
 
 		if(\dash\request::get('type'))
@@ -55,6 +55,10 @@ class view
 		$smsgroup = \lib\db\smsgroup::get(['count' => ["IS NOT", "NULL AND `count` > 0 "]]);
 
 		\dash\data::groupList($smsgroup);
+
+		$status_count = \lib\db\sms::status_count();
+		\dash\data::statusCount($status_count);
+
 
 	}
 }
