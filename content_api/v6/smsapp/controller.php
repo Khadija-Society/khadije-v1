@@ -110,7 +110,7 @@ class controller
 		$id = \lib\db\sms::insert($insert);
 		if($id)
 		{
-			return ['smsid' => $id];
+			return ['smsid' => \dash\coding::encode($id)];
 		}
 		return false;
 	}
