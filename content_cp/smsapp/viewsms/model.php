@@ -6,14 +6,12 @@ class model
 {
 	public static function post()
 	{
-		$post            = [];
-		$post['title']   = \dash\request::post('title');
-		$post['type']    = \dash\request::post('type');
-		$post['analyze'] = \dash\request::post('analyze');
-		$post['ismoney'] = \dash\request::post('ismoney');
-		$post['status']  = \dash\request::post('status');
+		$post               = [];
+		$post['group_id']   = \dash\request::post('group_id');
+		$post['answertext'] = \dash\request::post('answertext');
+		$post['sendstatus'] = 'awaiting';
 
-		$result = \lib\app\smsgroup::edit($post, \dash\request::get('id'));
+		$result = \lib\app\sms::edit($post, \dash\request::get('id'));
 
 		if(\dash\engine\process::status())
 		{

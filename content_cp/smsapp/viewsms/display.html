@@ -34,15 +34,15 @@
       </div>
 
       <hr>
-      <form method="post" autocomplete="off">
+      <form method="post" autocomplete="off" {%if dataRow.answertext %} disabled {%endif%}>
 
         <h5>{%trans "Select group"%}</h5>
 
        <div class="f mB10">
         {%for key,value in groupList%}
           <div class="c">
-            <div class="radio3 mB5 mRa5">
-              <input type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == 'static' %} checked {%endif%}>
+            <div class="radio3 mB5 mRa5" >
+              <input {%if dataRow.answertext %} disabled {%endif%} type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == value.id  %} checked {%endif%}>
               <label for="group_{{value.id}}">{{value.title}}</label>
             </div>
           </div>
@@ -58,8 +58,8 @@
         {%endfor%}
 
         <label for="itxt mT20">{%trans "Answer text"%}</label>
-        <textarea class="txt" rows="5" name="answertext"  id="ianswertxt"></textarea>
-        <button class="btn block primary mT20">{%trans "Send"%}</button>
+        <textarea class="txt" rows="5" name="answertext"  id="ianswertxt" {%if dataRow.answertext %} disabled {%endif%}>{{dataRow.answertext}}</textarea>
+        <button class="btn block {%if dataRow.answertext %} disabled {%else%} primary {%endif%}  mT20" {%if dataRow.answertext %} disabled {%endif%}>{%trans "Send"%}</button>
       </form>
 
 

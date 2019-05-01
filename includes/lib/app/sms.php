@@ -53,12 +53,6 @@ class sms
 
 		$return = [];
 
-		if(!$args['status'])
-		{
-			$args['status']  = 'enable';
-		}
-
-		$args['creator']  = \dash\user::id();
 
 		$args = array_filter($args);
 
@@ -157,12 +151,13 @@ class sms
 			return false;
 		}
 
-		if(!\dash\app::isset_request('title')) unset($args['title']);
-		if(!\dash\app::isset_request('type')) unset($args['type']);
-		if(!\dash\app::isset_request('status')) unset($args['status']);
-		if(!\dash\app::isset_request('analyze')) unset($args['analyze']);
-		if(!\dash\app::isset_request('ismoney')) unset($args['ismoney']);
-		if(!\dash\app::isset_request('answer')) unset($args['answer']);
+		if(!\dash\app::isset_request('fromgateway')) unset($args['fromgateway']);
+		if(!\dash\app::isset_request('tonumber')) unset($args['tonumber']);
+		if(!\dash\app::isset_request('reseivestatus')) unset($args['reseivestatus']);
+		if(!\dash\app::isset_request('sendstatus')) unset($args['sendstatus']);
+		if(!\dash\app::isset_request('amount')) unset($args['amount']);
+		if(!\dash\app::isset_request('answertext')) unset($args['answertext']);
+		if(!\dash\app::isset_request('group_id')) unset($args['group_id']);
 
 		if(!empty($args))
 		{
@@ -204,62 +199,73 @@ class sms
 	 */
 	private static function check($_id = null)
 	{
-		$title = \dash\app::request('title');
-		if(!$title && \dash\app::isset_request('title'))
+
+		// $fromnumber = \dash\app::request('fromnumber');
+		// $togateway = \dash\app::request('togateway');
+		// $text = \dash\app::request('text');
+		// $user_id = \dash\app::request('user_id');
+		// $date = \dash\app::request('date');
+		// $datecreated = \dash\app::request('datecreated');
+		// $datemodified = \dash\app::request('datemodified');
+		// $uniquecode = \dash\app::request('uniquecode');
+		// $recomand_id = \dash\app::request('recomand_id');
+
+		$fromgateway = \dash\app::request('fromgateway');
+		$tonumber    = \dash\app::request('tonumber');
+
+		$reseivestatus = \dash\app::request('reseivestatus');
+		if($reseivestatus && !in_array($reseivestatus, ['block', 'awaiting', 'analyze', 'answerready']))
 		{
-			\dash\notif::error(T_("Please fill course title"), 'title');
+			\dash\notif::error(T_("Invalid status"));
 			return false;
 		}
 
-		if($title && mb_strlen($title) > 500)
+		$sendstatus = \dash\app::request('sendstatus');
+		if($reseivestatus && !in_array($reseivestatus, ['awaiting', 'sendtodevice', 'send', 'deliver']))
 		{
-			\dash\notif::error(T_("Please fill course title less than 500 character"), 'title');
+			\dash\notif::error(T_("Invalid status"));
 			return false;
 		}
 
-		if($title)
+		$amount = \dash\app::request('amount');
+		$amount = \dash\utility\convert::to_en_number($amount);
+		if($amount && !is_numeric($amount))
 		{
-			$check_duplicate = \lib\db\sms::get(['title' => $title, 'limit' => 1]);
+			\dash\notif::error(T_("Please set amount as a number"), 'amount');
+			return false;
+		}
 
-			if(isset($check_duplicate['id']))
+
+		if($amount && intval($amount) > 99999999)
+		{
+			\dash\notif::error(T_("Amount is out of range"));
+			return false;
+		}
+
+
+		$answertext = \dash\app::request('answertext');
+
+		$group_id = \dash\app::request('group_id');
+		// $group_id = \dash\coding::decode($group_id);
+		if($group_id)
+		{
+			$get = \lib\db\smsgroup::get(['id' => $group_id, 'limit' => 1]);
+			if(!isset($get['id']))
 			{
-				if(intval($_id) === intval($check_duplicate['id']))
-				{
-					// no problem to edit it
-				}
-				else
-				{
-					\dash\notif::error(T_("Duplicate sms title"), 'title');
-					return false;
-				}
+				\dash\notif::error(T_("Invalid id"));
+				return false;
 			}
 		}
 
-		$status = \dash\app::request('status');
-		if($status && !in_array($status, ['enable', 'deleted', 'disable']))
-		{
-			\dash\notif::error(T_("Invalid status of sms"), 'status');
-			return false;
-		}
+		$args                  = [];
+		$args['fromgateway']   = $fromgateway;
+		$args['tonumber']      = $tonumber;
+		$args['reseivestatus'] = $reseivestatus;
+		$args['sendstatus']    = $sendstatus;
+		$args['amount']        = $amount;
+		$args['answertext']    = $answertext;
+		$args['group_id']      = $group_id;
 
-		$type = \dash\app::request('type');
-		if($type && !in_array($type, ['blacklist','family','bank','other','auto']))
-		{
-			\dash\notif::error(T_("Invalid type of sms"), 'type');
-			return false;
-		}
-
-		$analyze = \dash\app::request('analyze') ? 1 : null;
-		$ismoney = \dash\app::request('ismoney') ? 1 : null;
-		$answer  = \dash\app::request('answer');
-
-		$args            = [];
-		$args['title']   = $title;
-		$args['status']  = $status;
-		$args['type']    = $type;
-		$args['analyze'] = $analyze;
-		$args['ismoney'] = $ismoney;
-		$args['answer']  = $answer;
 
 		return $args;
 	}
