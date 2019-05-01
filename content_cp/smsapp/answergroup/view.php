@@ -16,6 +16,7 @@ class view
 		$args =
 		[
 			'pagenation' => false,
+			'type'       => 'answer',
 			'group_id'   => \dash\coding::decode(\dash\request::get('id')),
 		];
 

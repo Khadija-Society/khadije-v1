@@ -17,7 +17,8 @@ class model
 		}
 
 		$post             = [];
-		$post['answer']   = \dash\request::post('answer');
+		$post['text']     = \dash\request::post('text');
+		$post['type']     = 'answer';
 		$post['group_id'] = \dash\request::get('id');
 
 		$result = \lib\app\smsgroupfilter::add($post);

@@ -247,6 +247,19 @@ class smsgroupfilter
 		$exactly = \dash\app::request('exactly') ? 1 : null;
 		$contain = \dash\app::request('contain') ? 1 : null;
 
+		if(!$number && $type === 'number')
+		{
+			\dash\notif::error(T_("Please fill the number"), 'number');
+			return false;
+		}
+
+
+		if(!$text && $type === 'answer')
+		{
+			\dash\notif::error(T_("Please fill the answer"), 'text');
+			return false;
+		}
+
 		$args             = [];
 		$args['group_id'] = $group_id;
 		$args['number']   = $number;

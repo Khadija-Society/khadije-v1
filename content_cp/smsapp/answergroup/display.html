@@ -9,7 +9,7 @@
 
     <div class="cbox">
       <form method="post" autocomplete="off">
-        {{block('inumber')}}
+        {{block('itext')}}
 
         {{block('iadd')}}
       </form>
@@ -23,7 +23,7 @@
         {%for key, value in dataTable%}
         <div class="msg">
           <div class="f">
-            <span class="c">{{value.number | fitNumber('mobile')}}</span>
+            <span class="c">{{value.text}}</span>
             <div class="cauto">
               <span class="badge danger" data-confirm data-data='{"type":"remove", "deleteid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove"%}</span>
             </div>
@@ -31,7 +31,7 @@
         </div>
         {%endfor%}
         {%else%}
-        <div class="msg warn2 txtB txtC">{%trans "No filter founded"%}</div>
+        <div class="msg warn2 txtB txtC">{%trans "No answer founded"%}</div>
         {%endif%}
 
       </div>
@@ -45,9 +45,9 @@
 
 
 
-{%block inumber %}
-<label for="number">{%trans "Number"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-<div class="input">
-  <input type="text" name="number" id="number" value="{{dataRow.number}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" >
-</div>
+{%block itext %}
+
+<label for="itxt">{%trans "Answer text"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<textarea class="txt" rows="5" name="text" required autofocus id="itxt"></textarea>
+
 {% endblock %}
