@@ -1,0 +1,61 @@
+{%extends display.cpMain%}
+
+
+{%block pageContent%}
+
+
+<span class="btn mRa5">{%trans "id"%} {{dataRow.id}}</span>
+<span class="btn mRa5">{%trans "fromnumber"%} {{dataRow.fromnumber}}</span>
+<span class="btn mRa5">{%trans "togateway"%} {{dataRow.togateway}}</span>
+<span class="btn mRa5">{%trans "fromgateway"%} {{dataRow.fromgateway}}</span>
+<span class="btn mRa5">{%trans "text"%} {{dataRow.text}}</span>
+<span class="btn mRa5">{%trans "tonumber"%} {{dataRow.tonumber}}</span>
+<span class="btn mRa5">{%trans "user_id"%} {{dataRow.user_id}}</span>
+<span class="btn mRa5">{%trans "date"%} {{dataRow.date}}</span>
+<span class="btn mRa5">{%trans "datecreated"%} {{dataRow.datecreated}}</span>
+<span class="btn mRa5">{%trans "datemodified"%} {{dataRow.datemodified}}</span>
+<span class="btn mRa5">{%trans "uniquecode"%} {{dataRow.uniquecode}}</span>
+<span class="btn mRa5">{%trans "reseivestatus"%} {{dataRow.reseivestatus}}</span>
+<span class="btn mRa5">{%trans "sendstatus"%} {{dataRow.sendstatus}}</span>
+<span class="btn mRa5">{%trans "amount"%} {{dataRow.amount}}</span>
+<span class="btn mRa5">{%trans "answertext"%} {{dataRow.answertext}}</span>
+<span class="btn mRa5">{%trans "group_id"%} {{dataRow.group_id}}</span>
+<span class="btn mRa5">{%trans "recomand_id"%} {{dataRow.recomand_id}}</span>
+
+
+{%endblock%}
+
+
+
+
+
+
+{%block pageSteps%}
+
+  <div class="f">
+
+
+   <div class="c s4">
+    <a class="dcard {%if url.child == 'editgroup'%}active{%endif%}" href='{{url.this}}/editgroup?id={{requestGET.id}}' data-shortkey="49ctrlshift" '>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-edit"></i></div>
+      <div class="label">{%trans "Edit"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s4">
+    <a class="dcard {%if url.child == 'filtergroup'%}active{%endif%}" href='{{url.this}}/filtergroup?id={{requestGET.id}}' data-shortkey="50ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-list"></i></div>
+      <div class="label">{%trans "Filters of this group"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+
+
+  </div>
+{%endblock%}
