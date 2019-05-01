@@ -12,6 +12,11 @@ class view
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back to dashboard'));
 
+
+		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
+
+		\dash\data::groupList($smsgroup);
+
 	}
 }
 ?>

@@ -1,21 +1,64 @@
 {%extends display.cpMain%}
 
-
 {%block pageContent%}
+<div class="cbox">
+  <div class="f">
+
+    <div class="c8 s12">
+      <div class="msg mL10 txtB txtC ">
+        <h4 class="">{%trans "Sms text"%}</h4>
+        <p>
+
+        {{dataRow.text}} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+
+    <div class="c4 s12 pRa5">
+
+      <div class="msg">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b></div>
+      <div class="msg">{%trans "togateway"%} <b>{{dataRow.togateway | fitNumber(false)}}</b></div>
+      <div class="msg">{%trans "date"%} <b>{{dataRow.date | dt(true)}}</b></div>
+      <div class="msg">{%trans "datecreated"%} <b>{{dataRow.datecreated | dt(true)}}</b></div>
+      <div class="msg">{%trans "Reseive status"%} <b>{%set mydataRowreseivestatus = dataRow.reseivestatus%}{%trans mydataRowreseivestatus%}</b></div>
+    </div>
+
+  </div>
+
+  <hr>
+    <h5>{%trans "Select group"%}</h5>
+   <div class="f mB10">
+    {%for key,value in groupList%}
+      <div class="c">
+        <div class="radio3 mB5 mRa5">
+          <input type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == 'static' %} checked {%endif%}>
+          <label for="group_{{value.id}}">{{value.title}}</label>
+        </div>
+      </div>
+    {%endfor%}
+    </div>
+    <hr>
 
 
-<span class="btn mRa5">{%trans "id"%} {{dataRow.id}}</span>
-<span class="btn mRa5">{%trans "fromnumber"%} {{dataRow.fromnumber}}</span>
-<span class="btn mRa5">{%trans "togateway"%} {{dataRow.togateway}}</span>
-<span class="btn mRa5">{%trans "fromgateway"%} {{dataRow.fromgateway}}</span>
-<span class="btn mRa5">{%trans "text"%} {{dataRow.text}}</span>
-<span class="btn mRa5">{%trans "tonumber"%} {{dataRow.tonumber}}</span>
-<span class="btn mRa5">{%trans "user_id"%} {{dataRow.user_id}}</span>
-<span class="btn mRa5">{%trans "date"%} {{dataRow.date}}</span>
-<span class="btn mRa5">{%trans "datecreated"%} {{dataRow.datecreated}}</span>
-<span class="btn mRa5">{%trans "datemodified"%} {{dataRow.datemodified}}</span>
-<span class="btn mRa5">{%trans "uniquecode"%} {{dataRow.uniquecode}}</span>
-<span class="btn mRa5">{%trans "reseivestatus"%} {{dataRow.reseivestatus}}</span>
+</div>
+
+{%endblock%}
+
+
+{%block pageContent2%}
+
+
+
+      <div class="msg">{%trans "fromgateway"%} {{dataRow.fromgateway}}</div>
+      <span class="btn mRa5">{%trans "tonumber"%} {{dataRow.tonumber}}</span>
+
+
+
 <span class="btn mRa5">{%trans "sendstatus"%} {{dataRow.sendstatus}}</span>
 <span class="btn mRa5">{%trans "amount"%} {{dataRow.amount}}</span>
 <span class="btn mRa5">{%trans "answertext"%} {{dataRow.answertext}}</span>
