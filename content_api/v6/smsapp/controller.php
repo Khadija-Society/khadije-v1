@@ -50,7 +50,6 @@ class controller
 
 	}
 
-
 	private static function check_smsappkey()
 	{
 		$smsappkey = \dash\header::get('smsappkey');
@@ -70,6 +69,29 @@ class controller
 		}
 
 	}
+
+	public static function check_allow_gateway($_mobile)
+	{
+		$_mobile = \dash\utility\filter::mobile($_mobile);
+
+		$check_allow_gateway =
+		[
+			'989109610612', // reza
+			'989357269759', // javad
+			'sobati', // sobati need to get mobile
+			'khalili', // khalili need to get mobile
+		];
+
+		if(in_array($_mobile, $check_allow_gateway))
+		{
+			return true;
+		}
+		else
+		{
+			\content_api\v6::no(400, T_("Invalid mobile for gateway"));
+		}
+	}
+
 
 	public static function status($_set = null)
 	{
