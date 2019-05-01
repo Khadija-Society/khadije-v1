@@ -7,7 +7,7 @@ class status
 	public static function set()
 	{
 		$status = \dash\request::post('status');
-
+		$status = mb_strtolower($status);
 		if($status === 'true')
 		{
 			\content_api\v6\smsapp\controller::status(true);
