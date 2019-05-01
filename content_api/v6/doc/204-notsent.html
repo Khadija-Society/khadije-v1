@@ -1,0 +1,91 @@
+{%if perm('smsApiDoc')%}
+<div class="cbox" id='sms-notsent'>
+
+  <h2 class="f" data-kerkere='#sms-notsent-detail' data-kerkere-icon='open'>
+    <div class="cauto pRa10"><span class="badge primary">POST</span></div>
+    <div>{%trans "Get not sent of sms"%}</div>
+  </h2>
+  <div id="sms-notsent-detail">
+    <p>{%trans "If you get some sms but you not set there sms as a sent sms this list is full"%}</p>
+
+
+    <div class="msg url">
+      <i class="method">POST</i>
+      <span>{{apiURL}}<b>smsapp/notsent</b></span>
+    </div>
+
+    {%include "/content_api/v6/header.html"%}
+
+
+
+    <h3>{%trans "cURL"%} <small>{%trans "example"%}</small></h3>
+<pre>
+curl -X POST \
+  {{apiURL}}smsapp/notsent \
+  -H 'gateway: 09109610612' \
+  -H 'smsappkey: sample'
+</pre>
+
+<h3><span class="mRa5 badge xs rounded success">&nbsp;</span>{%trans "Response"%} <small>{%trans "When all bets is ok"%}</small></h3>
+<pre>
+{
+  "ok": true,
+  "result": [
+    {
+      "id": "h",
+      "fromnumber": "0912453056",
+      "togateway": "9109610612",
+      "fromgateway": null,
+      "text": "Hi",
+      "tonumber": null,
+      "user_id": null,
+      "date": "2019-04-28 21:24:14",
+      "datecreated": "2019-04-30 18:32:10",
+      "datemodified": "2019-05-01 15:29:22",
+      "uniquecode": null,
+      "reseivestatus": "awaiting",
+      "sendstatus": "awaiting",
+      "amount": null,
+      "answertext": "sfsdfdsfsdf",
+      "group_id": "3",
+      "recomand_id": null
+    }
+  ]
+}
+</pre>
+
+
+<h3><span class="mRa5 badge xs rounded danger">&nbsp;</span>{%trans "Response"%} <small>{%trans "Whene status of system is off"%}</small></h3>
+<pre>
+{
+  "ok": true,
+  "msg": [
+    {
+      "type": "warn",
+      "text": "The system is off"
+    }
+  ],
+  "result": null
+}
+</pre>
+
+
+<h3><span class="mRa5 badge xs rounded danger">&nbsp;</span>{%trans "Response"%} <small>{%trans "When have not sent message"%}</small></h3>
+<pre>
+{
+  "ok": true,
+  "msg": [
+    {
+      "type": "warn",
+      "text": "No not sent message"
+    }
+  ],
+  "result": null
+}
+</pre>
+
+  </div>
+</div>
+
+
+{%endif%}
