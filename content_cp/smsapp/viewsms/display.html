@@ -1,71 +1,77 @@
 {%extends display.cpMain%}
 
 {%block pageContent%}
-<div class="cbox">
-  <div class="f">
+<div class="f justify-center">
 
-    <div class="c8 s12">
-      <div class="msg mL10 txtB txtC ">
-        <h4 class="">{%trans "Sms text"%}</h4>
-        <p>
+  <div class="c8">
+    <div class="cbox">
+      <div class="f">
 
-        {{dataRow.text}} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <div class="c8 s12">
+          <div class="msg mL10 txtB txtC ">
+            <h4 class="">{%trans "Sms text"%}</h4>
+            <p>
+
+            {{dataRow.text}} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+
+        <div class="c4 s12 pRa5">
+
+          <div class="msg">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b></div>
+          <div class="msg">{%trans "togateway"%} <b>{{dataRow.togateway | fitNumber(false)}}</b></div>
+          <div class="msg">{%trans "date"%} <b>{{dataRow.date | dt(true)}}</b></div>
+          <div class="msg">{%trans "datecreated"%} <b>{{dataRow.datecreated | dt(true)}}</b></div>
+          <div class="msg">{%trans "Reseive status"%} <b>{%set mydataRowreseivestatus = dataRow.reseivestatus%}{%trans mydataRowreseivestatus%}</b></div>
+        </div>
+
       </div>
-    </div>
 
-    <div class="c4 s12 pRa5">
+      <hr>
+      <form method="post" autocomplete="off">
 
-      <div class="msg">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b></div>
-      <div class="msg">{%trans "togateway"%} <b>{{dataRow.togateway | fitNumber(false)}}</b></div>
-      <div class="msg">{%trans "date"%} <b>{{dataRow.date | dt(true)}}</b></div>
-      <div class="msg">{%trans "datecreated"%} <b>{{dataRow.datecreated | dt(true)}}</b></div>
-      <div class="msg">{%trans "Reseive status"%} <b>{%set mydataRowreseivestatus = dataRow.reseivestatus%}{%trans mydataRowreseivestatus%}</b></div>
+        <h5>{%trans "Select group"%}</h5>
+
+       <div class="f mB10">
+        {%for key,value in groupList%}
+          <div class="c">
+            <div class="radio3 mB5 mRa5">
+              <input type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == 'static' %} checked {%endif%}>
+              <label for="group_{{value.id}}">{{value.title}}</label>
+            </div>
+          </div>
+        {%endfor%}
+        </div>
+
+        {%for group_id, answers in dataAnswer%}
+        <div data-response='group_id' data-response-effect='slide' data-response-where='{{group_id}}' data-response-hide>
+          {%for key, value in answers %}
+          <div class="btn outline primary" onclick="setAnswerText('{{value.text  | url_encode}}');">{{value.text}}</div>
+          {%endfor%}
+        </div>
+        {%endfor%}
+
+        <label for="itxt mT20">{%trans "Answer text"%}</label>
+        <textarea class="txt" rows="5" name="answertext"  id="ianswertxt"></textarea>
+        <button class="btn block primary mT20">{%trans "Send"%}</button>
+      </form>
+
+
     </div>
 
   </div>
-
-  <hr>
-  <form method="post" autocomplete="off">
-
-    <h5>{%trans "Select group"%}</h5>
-
-   <div class="f mB10">
-    {%for key,value in groupList%}
-      <div class="c">
-        <div class="radio3 mB5 mRa5">
-          <input type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == 'static' %} checked {%endif%}>
-          <label for="group_{{value.id}}">{{value.title}}</label>
-        </div>
-      </div>
-    {%endfor%}
-    </div>
-
-    {%for group_id, answers in dataAnswer%}
-    <div data-response='group_id' data-response-effect='slide' data-response-where='{{group_id}}' data-response-hide>
-      {%for key, value in answers %}
-      <div class="btn outline primary" onclick="setAnswerText('{{value.text}}');">{{value.text}}</div>
-      {%endfor%}
-    </div>
-    {%endfor%}
-
-    <label for="itxt mT20">{%trans "Answer text"%}</label>
-    <textarea class="txt" rows="5" name="answertext"  id="ianswertxt"></textarea>
-    <button class="btn block primary mT20">{%trans "Send"%}</button>
-  </form>
-
-
 </div>
 
 <script type="text/javascript">
   function setAnswerText($_text)
   {
-    $('#ianswertxt').val($_text);
+    $('#ianswertxt').val(decodeURIComponent($_text));
   }
 </script>
 
