@@ -7,10 +7,6 @@ class newsms
 
 	public static function add_new_sms()
 	{
-		// check gateway to not run this application in other device
-		$gateway = \dash\request::post('gateway');
-		\content_api\v6\smsapp\controller::check_allow_gateway($gateway);
-
 
 		// check from is not block or family
 		$from        = \dash\request::post('from');

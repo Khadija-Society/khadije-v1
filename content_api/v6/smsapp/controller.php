@@ -13,6 +13,9 @@ class controller
 
 		self::check_smsappkey();
 
+		self::check_allow_gateway();
+
+
 		$detail    = [];
 
 		$directory = \dash\url::directory();
@@ -70,9 +73,11 @@ class controller
 
 	}
 
-	public static function check_allow_gateway($_mobile)
+	public static function check_allow_gateway()
 	{
-		$_mobile = \dash\utility\filter::mobile($_mobile);
+		// check gateway to not run this application in other device
+		$gateway = \dash\header::get('gateway');
+		$gateway = \dash\utility\filter::mobile($gateway);
 
 		$check_allow_gateway =
 		[
@@ -82,13 +87,14 @@ class controller
 			'khalili', // khalili need to get mobile
 		];
 
-		if(in_array($_mobile, $check_allow_gateway))
+		if(in_array($gateway, $check_allow_gateway))
 		{
 			return true;
 		}
 		else
 		{
 			\content_api\v6::no(400, T_("Invalid mobile for gateway"));
+			return false;
 		}
 	}
 
