@@ -152,6 +152,7 @@ class smsgroupfilter
 		if(!\dash\app::isset_request('number')) unset($args['number']);
 		if(!\dash\app::isset_request('group_id')) unset($args['group_id']);
 		if(!\dash\app::isset_request('text')) unset($args['text']);
+		if(!\dash\app::isset_request('type')) unset($args['type']);
 		if(!\dash\app::isset_request('exactly')) unset($args['exactly']);
 		if(!\dash\app::isset_request('contain')) unset($args['contain']);
 
@@ -235,16 +236,22 @@ class smsgroupfilter
 			}
 		}
 
+		$type = \dash\app::request('type');
+		if($type && !in_array($type, ['number','answer','analyze','other']))
+		{
+			\dash\notif::error(T_("Invalid type"), 'type');
+			return false;
+		}
 
-
-		$text = \dash\app::request('text');
+		$text    = \dash\app::request('text');
 		$exactly = \dash\app::request('exactly') ? 1 : null;
-		$contain  = \dash\app::request('contain') ? 1 : null;
+		$contain = \dash\app::request('contain') ? 1 : null;
 
 		$args             = [];
 		$args['group_id'] = $group_id;
 		$args['number']   = $number;
 		$args['text']     = $text;
+		$args['type']     = $type;
 		$args['exactly']  = $exactly;
 		$args['contain']  = $contain;
 

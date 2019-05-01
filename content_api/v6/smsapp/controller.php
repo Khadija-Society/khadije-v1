@@ -131,11 +131,11 @@ class controller
 
 		if($mobileNumber)
 		{
-			$get = \lib\db\smsgroupfilter::get(['1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$mobileNumber') "], 'limit' => 1]);
+			$get = \lib\db\smsgroupfilter::get(['type' => 'number', '1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$mobileNumber') "], 'limit' => 1]);
 		}
 		else
 		{
-			$get = \lib\db\smsgroupfilter::get(['number' => $number, 'limit' => 1]);
+			$get = \lib\db\smsgroupfilter::get(['type' => 'number', 'number' => $number, 'limit' => 1]);
 		}
 
 

@@ -1,5 +1,5 @@
 <?php
-namespace content_cp\smsapp\filtergroup;
+namespace content_cp\smsapp\answergroup;
 
 
 class model
@@ -17,8 +17,7 @@ class model
 		}
 
 		$post             = [];
-		$post['number']   = \dash\request::post('number');
-		$post['type']     = 'number';
+		$post['answer']   = \dash\request::post('answer');
 		$post['group_id'] = \dash\request::get('id');
 
 		$result = \lib\app\smsgroupfilter::add($post);

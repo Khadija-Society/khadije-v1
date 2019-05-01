@@ -17,6 +17,7 @@ CONSTRAINT `s_group_creator` FOREIGN KEY (`creator`) REFERENCES `users` (`id`) O
 
 CREATE TABLE `s_groupfilter` (
 `id`         int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+`type`       enum('number','answer','analyze','other') NULL DEFAULT NULL,
 `number`      varchar(100) CHARACTER SET utf8mb4 NULL,
 `group_id`     int(10) UNSIGNED NOT NULL,
 `text`      varchar(100) CHARACTER SET utf8mb4 NULL,
