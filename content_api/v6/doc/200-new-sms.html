@@ -12,36 +12,7 @@
       <span>{{apiURL}}<b>smsapp/new</b></span>
     </div>
 
-       <div class="tblBox">
-      <h3>{%trans "Parameters on header"%}</h3>
-      <table class="tbl1 v3">
-        <thead>
-          <tr>
-            <th>{%trans "Name"%} <small>{%trans "type"%}</small></th>
-            <th>{%trans "Description"%} <small>{%trans "example"%}</small></th>
-            <th>{%trans "Constraints"%}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="txtB">smsappkey</div>
-              <i>String</i>
-            </td>
-            <td>
-              <p>
-                {%trans "Get from system administrator"%}
-              </p>
-            </td>
-            <td>
-              <div class="fc-red"><i>{%trans "Required"%}</i></div>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-
+    {%include "/content_api/v6/header.html"%}
 
     <div class="tblBox">
       <h3>{%trans "Parameters"%}</h3>
@@ -54,22 +25,6 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <div class="txtB">gateway</div>
-              <i>String</i>
-            </td>
-            <td>
-              <div class="fc-mute">{%trans "example"%}</div>
-              <code>989123334455</code>
-              <p>
-                {%trans "Mobile number of the device owner"%}
-              </p>
-            </td>
-            <td>
-              <div class="fc-red"><i>{%trans "Required"%}</i></div>
-            </td>
-          </tr>
 
           <tr>
             <td>
@@ -130,10 +85,10 @@
 <pre>
 curl -X POST \
   {{apiURL}}smsapp/new \
-  -H smsappkey='sample' \
-  -F gateway=989123334455 \
-  -F from=989124442211 \
-  -F text=Hi \
+  -H 'gateway: 09109610612' \
+  -H 'smsappkey: sample' \
+  -F from=0912453056 \
+  -F 'text=hi' \
   -F 'date=2019-04-28 21:24:14'
 </pre>
 
@@ -141,8 +96,14 @@ curl -X POST \
 <pre>
 {
   "ok": true,
+  "msg": [
+    {
+      "type": "ok",
+      "text": "Message saved"
+    }
+  ],
   "result": {
-    "smsid": "j"
+    "smsid": "Q"
   }
 }
 </pre>

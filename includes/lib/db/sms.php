@@ -23,6 +23,11 @@ class sms
 		return \dash\db\config::public_update('s_sms', ...func_get_args());
 	}
 
+	public static function update_where()
+	{
+		return \dash\db\config::public_update_where('s_sms', ...func_get_args());
+	}
+
 
 	public static function get()
 	{

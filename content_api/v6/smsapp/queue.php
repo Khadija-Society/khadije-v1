@@ -41,6 +41,12 @@ class queue
 
 		if($get)
 		{
+			// set all record as sent to device
+			$id = array_column($get, 'id');
+			$id = implode(',', $id);
+			\lib\db\sms::update_where(['sendstatus' => 'sendtodevice'], ['id' => ["IN", "($id)"]]);
+
+			// ready to return
 			$get = array_map(["\\lib\\app\\sms", "ready"], $get);
 			return $get;
 		}

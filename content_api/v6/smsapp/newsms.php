@@ -26,22 +26,33 @@ class newsms
 			return false;
 		}
 
+		$from = \dash\header::get('from');
+		$from = \dash\utility\filter::mobile($from);
+		$user_id = null;
+		if($from)
+		{
+			$get_user_id = \dash\db\users::get_by_mobile($from);
+			if(isset($get_user_id['id']))
+			{
+				$user_id = $get_user_id['id'];
+			}
+		}
 
-		$insert                   = [];
-		$insert['fromnumber']     = $from;
-		$insert['togateway']      = $gateway;
-		$insert['fromgateway']    = null;
-		$insert['tonumber']       = null;
-		$insert['user_id']        = null;
-		$insert['date']           = date("Y-m-d H:i:s", strtotime($date));
-		$insert['text']           = $text;
-		$insert['uniquecode']     = null;
-		$insert['reseivestatus']  = 'awaiting';
-		$insert['sendstatus']     = null;
-		$insert['amount']         = null;
-		$insert['answertext']     = null;
-		$insert['group_id'] = null;
-		$insert['recomand_id']    = null;
+		$insert                  = [];
+		$insert['fromnumber']    = $from;
+		$insert['togateway']     = \dash\header::get('gateway');
+		$insert['fromgateway']   = null;
+		$insert['tonumber']      = null;
+		$insert['user_id']       = $user_id;
+		$insert['date']          = date("Y-m-d H:i:s", strtotime($date));
+		$insert['text']          = $text;
+		$insert['uniquecode']    = null;
+		$insert['reseivestatus'] = 'awaiting';
+		$insert['sendstatus']    = null;
+		$insert['amount']        = null;
+		$insert['answertext']    = null;
+		$insert['group_id']      = null;
+		$insert['recomand_id']   = null;
 
 		self::check_need_analyze($insert);
 
@@ -54,6 +65,7 @@ class newsms
 
 		if($id)
 		{
+			\dash\notif::ok(T_("Message saved"));
 			return ['smsid' => \dash\coding::encode($id)];
 		}
 		return false;
