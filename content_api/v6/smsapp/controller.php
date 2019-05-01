@@ -71,6 +71,38 @@ class controller
 
 	}
 
+	public static function status()
+	{
+		$addr = root.'includes/lib/app/smsapp.me.txt';
+		$addr = \autoload::fix_os_path($addr);
+		if(is_file($addr))
+		{
+			$get = \dash\file::read($addr);
+			$get = json_decode($get, true);
+			if(isset($get['status']) && $get['status'])
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			$status =
+			[
+				'status' => true,
+			];
+
+			$status = json_encode($status, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+
+			\dash\file::write($addr, $status);
+			return true;
+		}
+
+	}
+
 
 }
 ?>
