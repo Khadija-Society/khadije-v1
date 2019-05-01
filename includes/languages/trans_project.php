@@ -161,19 +161,31 @@ class twigTransTerms
 	echo T_("Numbers");                                                               // Line 73
 
 	//----------------------------------------content_cp/smsapp/editgroup/display.html
-	echo T_("Filters of this group");                                                 // Line 35
+	echo T_("Filters of this group");                                                 // Line 123
+	echo T_("Answers");                                                               // Line 45
+
+	//------------------------------------------content_cp/smsapp/viewsms/display.html
+	echo T_("Sms text");                                                              // Line 75
+	echo T_("From number");                                                           // Line 74
+	echo T_("togateway");                                                             // Line 94
+	echo T_("date");                                                                  // Line 29
+	echo T_("datecreated");                                                           // Line 30
+	echo T_("Reseive status");                                                        // Line 78
+	echo T_("Select group");                                                          // Line 39
+	echo T_("Answer text");                                                           // Line 50
+	echo T_("fromgateway");                                                           // Line 95
+	echo T_("tonumber");                                                              // Line 96
+	echo T_("sendstatus");                                                            // Line 90
+	echo T_("amount");                                                                // Line 91
+	echo T_("answertext");                                                            // Line 92
+	echo T_("group_id");                                                              // Line 93
+	echo T_("recomand_id");                                                           // Line 94
 
 	//------------------------------------------content_cp/smsapp/listsms/display.html
-	echo T_("From number");                                                           // Line 56
-	echo T_("Text");                                                                  // Line 57
-	echo T_("Reseive status");                                                        // Line 60
-	echo T_("Send status");                                                           // Line 61
+	echo T_("Send status");                                                           // Line 79
 	echo T_("Amount");                                                                // Line 134
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Action");                                                                // Line 61
-	echo T_("togateway");                                                             // Line 76
-	echo T_("fromgateway");                                                           // Line 77
-	echo T_("tonumber");                                                              // Line 78
 	echo T_("View");                                                                  // Line 77
 
 	//---------------------------------------------content_cp/smsapp/home/display.html
@@ -199,6 +211,9 @@ class twigTransTerms
 	echo T_("Disable");                                                               // Line 152
 	echo T_("Deleted");                                                               // Line 273
 	echo T_("Description");                                                           // Line 64
+
+	//--------------------------------------content_cp/smsapp/answergroup/display.html
+	echo T_("No answer founded");                                                     // Line 34
 
 	//-------------------------------------------------content_cp/service/display.html
 	echo T_("Search in services");                                                    // Line 44
@@ -726,25 +741,65 @@ class twigTransTerms
 	echo T_("To add image or video gallery report, drop file here or press this button");// Line 142
 	echo T_("You can publish in another language");                                   // Line 161
 
+	//------------------------------------------------------content_api/v6/header.html
+	echo T_("Parameters on header");                                                  // Line 2
+	echo T_("type");                                                                  // Line 22
+	echo T_("example");                                                               // Line 21
+	echo T_("Constraints");                                                           // Line 24
+	echo T_("Get from system administrator");                                         // Line 19
+	echo T_("Mobile number of the device owner");                                     // Line 34
+
 	//---------------------------------------------content_api/v6/doc/200-new-sms.html
 	echo T_("Add new sms from aplication");                                           // Line 6
-	echo T_("Every sms you need to send to server to save it");                       // Line 9
-	echo T_("Parameters on header");                                                  // Line 16
-	echo T_("type");                                                                  // Line 51
-	echo T_("example");                                                               // Line 140
-	echo T_("Constraints");                                                           // Line 53
-	echo T_("Get from system administrator");                                         // Line 33
-	echo T_("Parameters");                                                            // Line 47
-	echo T_("Mobile number of the device owner");                                     // Line 66
-	echo T_("The sender mobile");                                                     // Line 83
-	echo T_("The message text");                                                      // Line 98
-	echo T_("The message date");                                                      // Line 115
-	echo T_("Optional");                                                              // Line 119
-	echo T_("cURL");                                                                  // Line 129
-	echo T_("Response");                                                              // Line 140
+	echo T_("Every sms you must be send to server for save");                         // Line 9
+	echo T_("Parameters");                                                            // Line 18
+	echo T_("The sender mobile");                                                     // Line 38
+	echo T_("The message text");                                                      // Line 53
+	echo T_("The message date");                                                      // Line 70
+	echo T_("Optional");                                                              // Line 74
+	echo T_("cURL");                                                                  // Line 21
+	echo T_("Response");                                                              // Line 73
+
+	//------------------------------------------------content_api/v6/doc/205-sent.html
+	echo T_("Set sms as sent sms");                                                   // Line 6
+	echo T_("Anyone you send SMS should notify the server of the SMS");               // Line 9
+	echo T_("Get from list of sms");                                                  // Line 38
+	echo T_("Whene the status of message is changed");                                // Line 61
+	echo T_("When the sms not ready to save as sent");                                // Line 76
+
+	//------------------------------------------content_api/v6/doc/203-sms-status.html
+	echo T_("Set master status of system on or off");                                 // Line 6
+	echo T_("To change system status");                                               // Line 9
+	echo T_("Or");                                                                    // Line 37
+	echo T_("When set on");                                                           // Line 62
+	echo T_("Whene set off");                                                         // Line 76
+
+	//---------------------------------------content_api/v6/doc/202-dashboard-sms.html
+	echo T_("Get sms dashbord detail");                                               // Line 6
+	echo T_("Get sms dashboard detail");                                              // Line 9
+	echo T_("Example");                                                               // Line 29
+
+	//--------------------------------------------content_api/v6/doc/201-sms-list.html
+	echo T_("Get a list of SMS in the queue");                                        // Line 6
+	echo T_("Receive SMS messages in order to send");                                 // Line 9
+	echo T_("Each time this list will return you ten items, You should first send these ten items and inform the server of the send message so you can get ten more SMS permissions.");// Line 10
+	echo T_("When all bets is ok");                                                   // Line 29
+	echo T_("Whene status of system is off");                                         // Line 58
+	echo T_("When have some sms as not sent sms");                                    // Line 74
+	echo T_("When have not new message");                                             // Line 88
+
+	//---------------------------------------------content_api/v6/doc/204-notsent.html
+	echo T_("Get not sent of sms");                                                   // Line 6
+	echo T_("If you have received some SMS messages and have not been notified to the system, you can receive unsubscribed messages.");// Line 9
+	echo T_("When have not sent message");                                            // Line 73
 
 	//-------------------------------------------------content_api/v6/doc/sidebar.html
 	echo T_("New sms");                                                               // Line 3
+	echo T_("Get queue sms");                                                         // Line 4
+	echo T_("Get dashboard sms");                                                     // Line 5
+	echo T_("Set sms status");                                                        // Line 6
+	echo T_("Get not sent sms");                                                      // Line 7
+	echo T_("Set sms as sent");                                                       // Line 8
 
 	//---------------------public_html/static/siftal/fonts/siftal/icons-reference.html
 
