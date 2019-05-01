@@ -1,11 +1,11 @@
 {%if perm('smsApiDoc')%}
-<div class="cbox" id='list-sms'>
+<div class="cbox" id='sms-queue'>
 
-  <h2 class="f" data-kerkere='#list-sms-detail' data-kerkere-icon='open'>
+  <h2 class="f" data-kerkere='#sms-queue-detail' data-kerkere-icon='open'>
     <div class="cauto pRa10"><span class="badge primary">POST</span></div>
     <div>{%trans "Get list queue sms"%}</div>
   </h2>
-  <div id="list-sms-detail">
+  <div id="sms-queue-detail">
     <p>{%trans "Get the list of sms not sended"%}</p>
     <div class="msg url">
       <i class="method">POST</i>
