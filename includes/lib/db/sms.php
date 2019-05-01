@@ -44,6 +44,8 @@ class sms
 	{
 		$default =
 		[
+			'search_field' => "(s_sms.text LIKE '%__string__%')",
+
 			'master_join' => "LEFT JOIN s_group ON s_sms.group_id = s_group.id",
 			'public_show_field' => "s_sms.*, s_group.title AS `group_title`",
 		];

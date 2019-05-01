@@ -8,7 +8,7 @@ class view
 	{
 		\dash\data::page_pictogram('server');
 
-		\dash\data::page_title(T_("Edit filter sms group"));
+		\dash\data::page_title(T_("Sms group list"));
 		\dash\data::page_desc(T_("You cat set some filter to group"));
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Dashboard'));

@@ -34,12 +34,23 @@ class smsgroup
 		return \dash\db\config::public_get_count('s_group', ...func_get_args());
 	}
 
-
-	public static function search()
+	public static function search($_string = null, $_option = [])
 	{
-		$result = \dash\db\config::public_search('s_group', ...func_get_args());
+		$default =
+		[
+			'search_field' => "(s_group.title LIKE '%__string__%')",
+		];
+
+		if(!is_array($_option))
+		{
+			$_option = [];
+		}
+
+		$_option = array_merge($default, $_option);
+		$result = \dash\db\config::public_search('s_group', $_string, $_option);
 		return $result;
 	}
+
 
 
 	public static function update_group_count($_id)

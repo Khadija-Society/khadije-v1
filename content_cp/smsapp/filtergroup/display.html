@@ -3,12 +3,15 @@
 
 {%block pageContent%}
 {{block('pageSteps')}}
-
+<div class="msg fs14 txtB txtC ">
+  {%trans "You can add numbers to this filter so that if a text message from one of these numbers was received, enter this group directly."%}
+</div>
 <div class="f justify-center">
   <div class="c4">
 
     <div class="cbox">
       <form method="post" autocomplete="off">
+        <h5>{%trans "Add new number to filter"%}</h5>
         {{block('inumber')}}
 
         {{block('iadd')}}
@@ -18,10 +21,10 @@
   <div class="c8">
     <div class="mLa5">
       <div class="cbox">
-        <div class="msg success2 txtB txtC">{{dataRow.title}}</div>
+        <div class="msg txtB txtC">{%trans "Group title"%} {{dataRow.title}}</div>
         {%if dataTable%}
         {%for key, value in dataTable%}
-        <div class="msg">
+        <div class="msg info2">
           <div class="f">
             <span class="c">{{value.number | fitNumber('mobile')}}</span>
             <div class="cauto">
@@ -31,7 +34,7 @@
         </div>
         {%endfor%}
         {%else%}
-        <div class="msg warn2 txtB txtC">{%trans "No filter founded"%}</div>
+        <div class="msg warn2 txtB txtC">{%trans "No number in filterd in this group"%}</div>
         {%endif%}
 
       </div>

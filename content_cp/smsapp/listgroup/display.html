@@ -4,7 +4,14 @@
 
 
 {%block pageContent%}
-
+<div class="c s4">
+    <a class="dcard" href='{{url.this}}/addgroup'>
+     <div class="statistic sm blue">
+      <div class="value"><i class="sf-plus"></i></div>
+      <div class="label">{%trans "Add new group"%}</div>
+     </div>
+    </a>
+   </div>
 {%if dataTable%}
  {%if dataFilter%}
 
@@ -49,7 +56,7 @@
 
 {%block htmlTable%}
 
-  <table class="tbl1 v9">
+  <table class="tbl1 v9 cbox">
     <thead class="primary">
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href="{{sortLink.title.link}}">{%trans "Title"%}</a></th>
@@ -57,7 +64,7 @@
         <th data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
         <th data-sort="{{sortLink.analyze.order}}"><a href="{{sortLink.analyze.link}}">{%trans "Analyze"%}</a></th>
         <th data-sort="{{sortLink.ismoney.order}}"><a href="{{sortLink.ismoney.link}}">{%trans "Is Money"%}</a></th>
-        <th class="collapsing">{%trans "Show numbers"%}</th>
+        <th class="txtC">{%trans "View"%}</th>
       </tr>
     </thead>
 
@@ -70,7 +77,10 @@
         <td class="">{%if value.analyze%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
         <td class="">{%if value.ismoney%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
 
-        <td class="txtC"><a href="{{url.this}}/filtergroup?id={{value.id}}" class="badge primary">{%trans "Numbers"%}</a></td>
+        <td class="txtC collapsing">
+          <a href="{{url.this}}/filtergroup?id={{value.id}}" class="badge">{%trans "Numbers"%}</a>
+          <a href="{{url.this}}/answergroup?id={{value.id}}" class="badge primary">{%trans "Answers"%}</a>
+        </td>
 
       </tr>
       {%endfor%}
