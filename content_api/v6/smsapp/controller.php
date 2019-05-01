@@ -62,7 +62,7 @@ class controller
 			\content_api\v6::no(400, T_("Appkey not set"));
 		}
 
-		if($smsappkey === '1233')
+		if($smsappkey === 'e2c998bbb48931f40a0f7d1cba53434f')
 		{
 			return true;
 		}
