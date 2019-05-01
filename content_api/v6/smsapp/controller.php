@@ -6,22 +6,47 @@ class controller
 {
 	public static function routing()
 	{
+		if(!\dash\request::is('post'))
+		{
+			\content_api\v6::no(404);
+		}
+
 		self::check_smsappkey();
 
-		if(\dash\url::directory() === 'v6/smsapp/new' && \dash\request::is('post'))
+		$detail    = [];
+
+		$directory = \dash\url::directory();
+
+		if($directory === 'v6/smsapp/dashboard')
+		{
+			$detail = \content_api\v6\smsapp\dashboard::get();
+		}
+		elseif($directory === 'v6/smsapp/new')
 		{
 			$detail = \content_api\v6\smsapp\newsms::add_new_sms();
-			\content_api\v6::bye($detail);
 		}
-		elseif(\dash\url::directory() === 'v6/smsapp/queue' && \dash\request::is('post'))
+		elseif($directory === 'v6/smsapp/notsent')
 		{
-			$detail = self::queue();
-			\content_api\v6::bye($detail);
+			$detail = \content_api\v6\smsapp\notsent::get();
+		}
+		elseif($directory === 'v6/smsapp/queue')
+		{
+			$detail = \content_api\v6\smsapp\queue::get();
+		}
+		elseif($directory === 'v6/smsapp/sent')
+		{
+			$detail = \content_api\v6\smsapp\sent::set();
+		}
+		elseif($directory === 'v6/smsapp/status')
+		{
+			$detail = \content_api\v6\smsapp\status::set();
 		}
 		else
 		{
 			\content_api\v6::no(404);
 		}
+
+		\content_api\v6::bye($detail);
 
 	}
 
