@@ -26,16 +26,25 @@ class newsms
 			return false;
 		}
 
-		$from = \dash\header::get('from');
-		$from = \dash\utility\filter::mobile($from);
-		$user_id = null;
-		if($from)
+
+		$from_mobile = \dash\utility\filter::mobile($from);
+		$user_id     = null;
+
+		if($from_mobile)
 		{
-			$get_user_id = \dash\db\users::get_by_mobile($from);
+			$from        = $from_mobile;
+			$get_user_id = \dash\db\users::get_by_mobile($from_mobile);
+
 			if(isset($get_user_id['id']))
 			{
 				$user_id = $get_user_id['id'];
 			}
+		}
+
+		if(!$from)
+		{
+			\dash\notif::error(T_("From number is required"));
+			return false;
 		}
 
 		$insert                  = [];
