@@ -4,6 +4,17 @@ namespace lib\db;
 
 class sms
 {
+	private static $master_join =
+	"
+		LEFT JOIN s_group ON s_sms.group_id = s_group.id
+		LEFT JOIN s_group as `recommendGroup` ON s_sms.recommend_id = recommendGroup.id
+	";
+
+	private static $public_show_field =
+	"
+		s_sms.*, s_group.title AS `group_title`, recommendGroup.title AS `recommend_title`
+	";
+
 
 	public static function get_chart()
 	{
@@ -36,9 +47,16 @@ class sms
 	}
 
 
-	public static function get()
+	public static function get($_args)
 	{
-		return \dash\db\config::public_get('s_sms', ...func_get_args());
+		$option =
+		[
+			'master_join' => self::$master_join,
+
+			'public_show_field' => self::$public_show_field,
+		];
+
+		return \dash\db\config::public_get('s_sms', $_args, $option);
 	}
 
 	public static function get_count()
@@ -53,8 +71,9 @@ class sms
 		[
 			'search_field' => "(s_sms.text LIKE '%__string__%')",
 
-			'master_join' => "LEFT JOIN s_group ON s_sms.group_id = s_group.id",
-			'public_show_field' => "s_sms.*, s_group.title AS `group_title`",
+			'master_join' => self::$master_join,
+
+			'public_show_field' => self::$public_show_field,
 		];
 
 		if(!is_array($_option))
@@ -64,6 +83,7 @@ class sms
 
 		$_option = array_merge($default, $_option);
 		$result = \dash\db\config::public_search('s_sms', $_string, $_option);
+
 		return $result;
 	}
 
@@ -87,6 +107,7 @@ class sms
 			}
 		}
 
+		$master_join = self::$master_join;
 		$query =
 		"
 			SELECT
@@ -94,7 +115,7 @@ class sms
 				reseivestatus
 			FROM
 				s_sms
-			LEFT JOIN s_group ON s_sms.group_id = s_group.id
+			$master_join
 			$where
 			GROUP BY
 				reseivestatus

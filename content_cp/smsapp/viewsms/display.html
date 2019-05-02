@@ -66,7 +66,7 @@
       <form method="post" autocomplete="off" {%if dataRow.answertext %} disabled {%endif%}>
 
         <h5>{%trans "Select group"%} <a href="{{url.this}}/listgroup" class="badge info">{%trans "Manage group"%}</a></h5>
-
+        {%if dataRow.recommend_id%}<div class="btn success2 mTB20">{%trans "Recommend"%} {{dataRow.recommend_title}}</div>{%endif%}
        <div class="f mB10">
         {%for key,value in groupList%}
           <div class="c">
@@ -102,6 +102,7 @@
   {
     $('#ianswertxt').val(decodeURIComponent($_text));
   }
+
 </script>
 
 {%endblock%}
@@ -120,7 +121,7 @@
 <span class="btn mRa5">{%trans "amount"%} {{dataRow.amount}}</span>
 <span class="btn mRa5">{%trans "answertext"%} {{dataRow.answertext}}</span>
 <span class="btn mRa5">{%trans "group_id"%} {{dataRow.group_id}}</span>
-<span class="btn mRa5">{%trans "recomand_id"%} {{dataRow.recomand_id}}</span>
+<span class="btn mRa5">{%trans "recommend_id"%} {{dataRow.recommend_id}}</span>
 
 
 {%endblock%}

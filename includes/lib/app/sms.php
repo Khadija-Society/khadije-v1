@@ -26,6 +26,7 @@ class sms
 		'sendstatus',
 		'amount',
 		'group_id',
+		'recommend_id',
 
 	];
 
@@ -197,7 +198,7 @@ class sms
 		}
 
 
-		$get = \lib\db\sms::get(['id' => $id, 'limit' => 1]);
+		$get = \lib\db\sms::get(['s_sms.id' => $id, 'limit' => 1]);
 
 		if(!$get)
 		{
@@ -227,7 +228,7 @@ class sms
 		// $datecreated = \dash\app::request('datecreated');
 		// $datemodified = \dash\app::request('datemodified');
 		// $uniquecode = \dash\app::request('uniquecode');
-		// $recomand_id = \dash\app::request('recomand_id');
+		// $recommend_id = \dash\app::request('recommend_id');
 
 		$fromgateway = \dash\app::request('fromgateway');
 		$tonumber    = \dash\app::request('tonumber');

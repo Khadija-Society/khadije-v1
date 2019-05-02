@@ -61,7 +61,7 @@ class newsms
 		$insert['amount']        = null;
 		$insert['answertext']    = null;
 		$insert['group_id']      = null;
-		$insert['recomand_id']   = null;
+		$insert['recommend_id']   = null;
 
 		self::check_need_analyze($insert);
 
@@ -97,20 +97,32 @@ class newsms
 
 
 		// this number not found in any filter
-		if(!isset($get['group_id']))
+		if(isset($get['group_id']))
 		{
-			return;
+
+			$insert['group_id'] = $get['group_id'];
+
+			$get_group = \lib\db\smsgroup::get(['id' => $get['group_id'], 'limit' => 1]);
+
+			if(isset($get_group['status']) && $get_group['status'] === 'enable')
+			{
+				if(array_key_exists('analyze', $get_group) && !$get_group['analyze'])
+				{
+					$insert['reseivestatus']  = 'block';
+				}
+			}
 		}
 
-		$insert['group_id'] = $get['group_id'];
+		$text = $insert['text'];
 
-		$get_group = \lib\db\smsgroup::get(['id' => $get['group_id'], 'limit' => 1]);
-
-		if(isset($get_group['status']) && $get_group['status'] === 'enable')
+		$split_text = explode(" ", $text);
+		if($split_text && is_array($split_text))
 		{
-			if(array_key_exists('analyze', $get_group) && !$get_group['analyze'])
+			$sql_text = "('". implode("','", $split_text). "')";
+			$get_recommend = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'text' => ["IN", $sql_text], 'limit' => 1]);
+			if(isset($get_recommend['id']))
 			{
-				$insert['reseivestatus']  = 'block';
+				$insert['recommend_id'] = $get_recommend['group_id'];
 			}
 		}
 

@@ -79,7 +79,9 @@
         <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
         <th>{%trans "Answer"%}</th>
         <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
+        <th data-sort="{{sortLink.recommend_id.order}}"><a href="{{sortLink.recommend_id.link}}">{%trans "Recommend"%}</a></th>
         <th class="collapsing">{%trans "Action"%}</th>
+
       </tr>
     </thead>
 
@@ -104,6 +106,7 @@
         <td>{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</td>
         <td>{{value.answertext}}</td>
         <td>{{value.group_title}}</td>
+        <td>{{value.recommend_title}}</td>
 
         <td class="txtC"><a href="{{url.this}}/viewsms?id={{value.id}}" class="badge primary">{%trans "View"%}</a></td>
 
