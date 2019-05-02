@@ -163,33 +163,44 @@ class twigTransTerms
 	echo T_("Answers");                                                               // Line 45
 
 	//----------------------------------------content_cp/smsapp/editgroup/display.html
-	echo T_("Filters of this group");                                                 // Line 152
+	echo T_("Filters of this group");                                                 // Line 153
+	echo T_("Recomment text");                                                        // Line 55
 
 	//------------------------------------------content_cp/smsapp/viewsms/display.html
 	echo T_("Prev");                                                                  // Line 15
 	echo T_("Next");                                                                  // Line 25
 	echo T_("Sms text");                                                              // Line 75
 	echo T_("From number");                                                           // Line 74
-	echo T_("togateway");                                                             // Line 94
+	echo T_("togateway");                                                             // Line 96
 	echo T_("date");                                                                  // Line 58
 	echo T_("datecreated");                                                           // Line 59
 	echo T_("Reseive status");                                                        // Line 78
 	echo T_("Select group");                                                          // Line 68
 	echo T_("Manage group");                                                          // Line 68
+	echo T_("Recommend");                                                             // Line 82
 	echo T_("Answer text");                                                           // Line 53
-	echo T_("fromgateway");                                                           // Line 95
-	echo T_("tonumber");                                                              // Line 96
-	echo T_("sendstatus");                                                            // Line 119
-	echo T_("amount");                                                                // Line 120
-	echo T_("answertext");                                                            // Line 121
-	echo T_("group_id");                                                              // Line 122
-	echo T_("recomand_id");                                                           // Line 123
+	echo T_("fromgateway");                                                           // Line 97
+	echo T_("tonumber");                                                              // Line 98
+	echo T_("sendstatus");                                                            // Line 120
+	echo T_("amount");                                                                // Line 121
+	echo T_("answertext");                                                            // Line 122
+	echo T_("group_id");                                                              // Line 123
+	echo T_("recommend_id");                                                          // Line 124
 
 	//------------------------------------------content_cp/smsapp/listsms/display.html
 	echo T_("Send status");                                                           // Line 79
 	echo T_("Answer");                                                                // Line 80
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Action");                                                                // Line 61
+
+	//-----------------------------------content_cp/smsapp/recommendgroup/display.html
+	echo T_("You can register some recommend text to this group to help you.");       // Line 7
+	echo T_("Add new recommend text to filter");                                      // Line 14
+	echo T_("Group title");                                                           // Line 24
+	echo T_("Remove");                                                                // Line 109
+	echo T_("No recommend text founded");                                             // Line 37
+	echo T_("Recommend Text");                                                        // Line 53
+	echo T_("Require");                                                               // Line 141
 
 	//---------------------------------------------content_cp/smsapp/home/display.html
 	echo T_("Add group");                                                             // Line 32
@@ -203,11 +214,8 @@ class twigTransTerms
 	//--------------------------------------content_cp/smsapp/filtergroup/display.html
 	echo T_("You can add numbers to this filter so that if a text message from one of these numbers was received, enter this group directly.");// Line 7
 	echo T_("Add new number to filter");                                              // Line 14
-	echo T_("Group title");                                                           // Line 24
-	echo T_("Remove");                                                                // Line 109
 	echo T_("No number in filterd in this group");                                    // Line 37
 	echo T_("Number");                                                                // Line 52
-	echo T_("Require");                                                               // Line 141
 
 	//-----------------------------------------content_cp/smsapp/addgroup/display.html
 	echo T_("Please select one item");                                                // Line 254
