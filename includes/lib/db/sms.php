@@ -68,9 +68,37 @@ class sms
 	}
 
 
-	public static function status_count()
+	public static function status_count($_args = [])
 	{
-		$query = "SELECT COUNT(*) AS `count`, reseivestatus FROM s_sms GROUP BY reseivestatus";
+
+		$where = null;
+		if($_args)
+		{
+			unset($_args['order']);
+			unset($_args['sort']);
+			$where = \dash\db\config::make_where($_args);
+			if($where)
+			{
+				$where = "WHERE $where";
+			}
+			else
+			{
+				$where = "";
+			}
+		}
+
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				reseivestatus
+			FROM
+				s_sms
+			LEFT JOIN s_group ON s_sms.group_id = s_group.id
+			$where
+			GROUP BY
+				reseivestatus
+		";
 		$result = \dash\db::get($query);
 		return $result;
 	}

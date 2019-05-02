@@ -20,7 +20,13 @@ class view
 		[
 			'order' => \dash\request::get('order'),
 			'sort'  => \dash\request::get('sort'),
+			's_group.type' => ['!=', "'family'"],
 		];
+
+		if(\dash\permission::supervisor())
+		{
+			unset($args['s_group.type']);
+		}
 
 		$search_string = \dash\request::get('q');
 
@@ -33,6 +39,24 @@ class view
 		{
 			$args['reseivestatus']     = \dash\request::get('reseivestatus');
 			$filterArray['reseivestatus'] = \dash\request::get('reseivestatus');
+		}
+
+		if(\dash\request::get('fromnumber'))
+		{
+			$args['fromnumber']     = \dash\request::get('fromnumber');
+			$filterArray['fromnumber'] = \dash\request::get('fromnumber');
+		}
+
+		if(\dash\request::get('togateway'))
+		{
+			$args['togateway']     = \dash\request::get('togateway');
+			$filterArray['togateway'] = \dash\request::get('togateway');
+		}
+
+		if(\dash\request::get('fromgateway'))
+		{
+			$args['fromgateway']     = \dash\request::get('fromgateway');
+			$filterArray['fromgateway'] = \dash\request::get('fromgateway');
 		}
 
 		if(\dash\request::get('type'))
@@ -56,7 +80,7 @@ class view
 
 		\dash\data::groupList($smsgroup);
 
-		$status_count = \lib\db\sms::status_count();
+		$status_count = \lib\db\sms::status_count($args);
 		\dash\data::statusCount($status_count);
 
 

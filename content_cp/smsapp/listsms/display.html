@@ -72,12 +72,12 @@
     <thead class="primary">
       <tr>
         <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "From number"%}</a></th>
-        <th data-sort="{{sortLink.text.order}}"><a href="{{sortLink.text.link}}">{%trans "Sms text"%}</a></th>
-        <th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th>
+        <th>{%trans "Sms text"%}</th>
+        <!-- <th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th> -->
         <th data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
         <th data-sort="{{sortLink.reseivestatus.order}}"><a href="{{sortLink.reseivestatus.link}}">{%trans "Reseive status"%}</a></th>
         <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
-        <th data-sort="{{sortLink.amount.order}}"><a href="{{sortLink.amount.link}}">{%trans "Amount"%}</a></th>
+        <th>{%trans "Answer"%}</th>
         <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
         <th class="collapsing">{%trans "Action"%}</th>
       </tr>
@@ -85,9 +85,9 @@
 
     <tbody>
       {%for key, value in dataTable%}
-      <tr class="{%if value.status == 'deleted' or value.status == 'disabled'%} danger2 {%endif%}">
+      <tr class="{%if value.reseivestatus == 'awaiting' %} active {%endif%}">
         <td>
-          {{value.fromnumber | fitNumber(false)}}
+          <a href="{{url.that}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
           {%if false and value.togateway or value.fromgateway or value.tonumber%}
           <i class="sf-plus " data-kerkere='.myDetail{{value.id}}'></i>
           <span class="myDetail{{value.id}}" data-kerkere-content='hide'>
@@ -98,11 +98,11 @@
           {%endif%}
         </td>
         <td>{{value.text}}</td>
-        <td>{{value.date | dt}}</td>
+        <!-- <td>{{value.date | dt}}</td> -->
         <td>{{value.datecreated | dt}}</td>
         <td>{%set myreseivestatus = value.reseivestatus%}{%trans myreseivestatus%}</td>
         <td>{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</td>
-        <td>{{value.amount}}</td>
+        <td>{{value.answertext}}</td>
         <td>{{value.group_title}}</td>
 
         <td class="txtC"><a href="{{url.this}}/viewsms?id={{value.id}}" class="badge primary">{%trans "View"%}</a></td>

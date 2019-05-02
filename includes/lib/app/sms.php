@@ -16,11 +16,17 @@ class sms
 
 	public static $sort_field =
 	[
-		'title',
-		'type',
-		'status',
-		'analyze',
-		'ismoney',
+		'fromnumber',
+		'togateway',
+		'fromgateway',
+		'tonumber',
+		'date',
+		'datecreated',
+		'reseivestatus',
+		'sendstatus',
+		'amount',
+		'group_id',
+
 	];
 
 	public static function chart()
@@ -81,7 +87,7 @@ class sms
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok(T_("Sms group successfuly added"));
+			\dash\notif::ok(T_("Sms successfuly added"));
 		}
 
 		return $return;
@@ -175,7 +181,7 @@ class sms
 		if(!empty($args))
 		{
 			$update = \lib\db\sms::update($args, $id);
-			\dash\notif::ok(T_("Sms group successfully updated"));
+			\dash\notif::ok(T_("Sms successfully updated"));
 
 		}
 	}
