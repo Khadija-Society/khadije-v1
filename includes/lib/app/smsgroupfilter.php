@@ -66,7 +66,7 @@ class smsgroupfilter
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok(T_("Sms group filter successfuly added"));
+			\dash\notif::ok(T_("Sms filter successfuly added"));
 		}
 
 		return $return;
@@ -160,7 +160,7 @@ class smsgroupfilter
 		if(!empty($args))
 		{
 			$update = \lib\db\smsgroupfilter::update($args, $id);
-			\dash\notif::ok(T_("Sms group filter successfully updated"));
+			\dash\notif::ok(T_("Sms filter successfully updated"));
 
 		}
 	}

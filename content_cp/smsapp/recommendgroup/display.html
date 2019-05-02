@@ -50,7 +50,8 @@
 
 {%block itext %}
 
-<label for="itxt">{%trans "Answer text"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-<textarea class="txt" rows="5" name="text" required autofocus id="itxt"></textarea>
-
+<label for="itxt">{%trans "Recommend Text"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="text" id="text" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" >
+</div>
 {% endblock %}
