@@ -10,6 +10,9 @@ class view
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_('Back to dashboard'));
 
+		$chart = \lib\app\sms::chart();
+
+
 	}
 }
 ?>

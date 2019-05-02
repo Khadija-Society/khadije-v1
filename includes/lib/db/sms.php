@@ -5,6 +5,13 @@ namespace lib\db;
 class sms
 {
 
+	public static function get_chart()
+	{
+		$query  = "SELECT COUNT(*) AS `count`, s_sms.reseivestatus FROM s_sms GROUP BY s_sms.reseivestatus";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	public static function insert()
 	{
 		\dash\db\config::public_insert('s_sms', ...func_get_args());

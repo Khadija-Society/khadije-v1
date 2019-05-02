@@ -7,6 +7,21 @@
   <div class="c">{{block('iSmsList')}}</div>
 
 </div>
+<div class="f justify-center">
+	<div class="c12">
+		<div id="chartdiv" class="chart"></div>
+	</div>
+</div>
+{%endblock%}
+
+
+
+
+
+{%block foot_js%}
+<script>
+{%include 'content_cp/smsapp/home/chart.js'%}
+</script>
 {%endblock%}
 
 

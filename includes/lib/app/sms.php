@@ -23,6 +23,19 @@ class sms
 		'ismoney',
 	];
 
+	public static function chart()
+	{
+		$get = \lib\db\sms::get_chart();
+		if(!is_array($get))
+		{
+			$get = [];
+		}
+
+		foreach ($get as $key => $value)
+		{
+
+		}
+	}
 
 	/**
 	 * add new sms
