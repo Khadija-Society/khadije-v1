@@ -23,6 +23,16 @@ class sms
 	}
 
 
+	public static function set_group($_smsid, $_group_id)
+	{
+		$smsid = \dash\coding::decode($_smsid);
+		if($smsid && $_group_id)
+		{
+			\lib\db\sms::update(['group_id' => $_group_id], $smsid);
+		}
+	}
+
+
 	// not remvoe html tag and single or dbl qute from this field
 	// because get from editor
 	public static $raw_field =
