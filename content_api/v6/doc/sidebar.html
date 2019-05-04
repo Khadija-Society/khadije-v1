@@ -1,12 +1,12 @@
 {%if perm('smsApiDoc') or user.mobile == '989195191378' %}
 
 <ul>
+  <li><a href="{{url.that}}#sms-dashboard"><i class='sf-code'></i> <span>{%trans "Get dashboard sms"%}</span></a></li>
   <li><a href="{{url.that}}#new-sms"><i class='sf-code'></i> <span>{%trans "New sms"%}</span></a></li>
   <li><a href="{{url.that}}#sms-queue"><i class='sf-code'></i> <span>{%trans "Get queue sms"%}</span></a></li>
-  <li><a href="{{url.that}}#sms-dashboard"><i class='sf-code'></i> <span>{%trans "Get dashboard sms"%}</span></a></li>
-  <li><a href="{{url.that}}#sms-status"><i class='sf-code'></i> <span>{%trans "Set sms status"%}</span></a></li>
-  <li><a href="{{url.that}}#sms-notsent"><i class='sf-code'></i> <span>{%trans "Get not sent sms"%}</span></a></li>
   <li><a href="{{url.that}}#sms-sent"><i class='sf-code'></i> <span>{%trans "Set sms as sent"%}</span></a></li>
+  <li><a href="{{url.that}}#sms-notsent"><i class='sf-code'></i> <span>{%trans "Get not sent sms"%}</span></a></li>
+  <li><a href="{{url.that}}#sms-status"><i class='sf-code'></i> <span>{%trans "Set sms status"%}</span></a></li>
 
 </ul>
 
