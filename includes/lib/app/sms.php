@@ -65,6 +65,7 @@ class sms
 			$post['answertext'] = $load['text'];
 			$post['sendstatus'] = 'awaiting';
 			$result             = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+			\dash\notif::clean();
 		}
 
 	}
