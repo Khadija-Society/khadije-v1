@@ -7,7 +7,6 @@ class newsms
 
 	public static function add_new_sms()
 	{
-
 		// check from is not block or family
 		$from        = \dash\request::post('from');
 		if($from && mb_strlen($from) > 90)
@@ -84,6 +83,7 @@ class newsms
 		if($id)
 		{
 			$log['myid'] = $id;
+			$log['code'] = $id;
 			\dash\log::set('smsappNew', $log);
 			\dash\notif::ok(T_("Message saved"));
 			return ['smsid' => \dash\coding::encode($id)];
