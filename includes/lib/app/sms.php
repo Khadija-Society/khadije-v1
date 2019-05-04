@@ -70,7 +70,7 @@ class sms
 		if(isset($load['text']))
 		{
 			$load_sms = self::get_tg_text(1, $_smsid);
-			if(isset($load_sms['group_id']))
+			if(isset($load_sms['answertext']))
 			{
 				\dash\notif::error(T_("This message was answered"));
 			}
