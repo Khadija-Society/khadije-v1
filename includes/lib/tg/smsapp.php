@@ -3,6 +3,7 @@ namespace lib\tg;
 // use telegram class as bot
 use \dash\social\telegram\tg as bot;
 use \dash\social\telegram\step;
+use \dash\social\telegram\hook;
 use \dash\social\telegram\keyboard as kbd;
 
 class smsapp
@@ -146,7 +147,14 @@ class smsapp
 				bot::answerCallbackQuery($callbackResult);
 			}
 
-			bot::sendMessage($result);
+			if(hook::message_id())
+			{
+				bot::editMessageReplyMarkup($result);
+			}
+			else
+			{
+				bot::sendMessage($result);
+			}
 		}
 		else
 		{
@@ -182,7 +190,7 @@ class smsapp
 
 			$result =
 			[
-				'text' => 'zzzzzzz',
+				'text' => 'zzzzzzz'. hook::text(),
 				'reply_markup' => kbd::draw($answerArr, null, 'inline_keyboard', 'id', 'text')
 			];
 
@@ -197,7 +205,15 @@ class smsapp
 				bot::answerCallbackQuery($callbackResult);
 			}
 
-			bot::sendMessage($result);
+
+			if(hook::message_id())
+			{
+				bot::editMessageText($result);
+			}
+			else
+			{
+				bot::sendMessage($result);
+			}
 		}
 		else
 		{
