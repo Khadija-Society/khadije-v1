@@ -8,7 +8,7 @@ class sms
 {
 	public static function get_tg_text($_chat_id, $_smsid)
 	{
-		$load = \dash\db\log::get(['caller' => 'smsappNew', 'code' => $_smsid, 'limit' => 1]);
+		$load = \dash\db\logs::get(['caller' => 'smsappNew', 'code' => $_smsid, 'limit' => 1]);
 		if($load)
 		{
 			$load = \dash\app\log::ready($load);
