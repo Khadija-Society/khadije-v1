@@ -11,6 +11,7 @@ class sms
 		$load = \dash\db\log::get(['caller' => 'smsappNew', 'code' => $_smsid, 'limit' => 1]);
 		if($load)
 		{
+			$load = \dash\app\log::ready($load);
 			$result = \lib\app\log\caller\smsappNew::telegram_text($load, $_chat_id);
 			return $result;
 		}
