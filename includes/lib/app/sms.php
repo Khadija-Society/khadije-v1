@@ -6,6 +6,21 @@ namespace lib\app;
  */
 class sms
 {
+	public static function group_list()
+	{
+		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
+		return $smsgroup;
+	}
+
+	public static function answer_list($_group_id)
+	{
+		if($_group_id && is_numeric($_group_id))
+		{
+			$answers = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $_group_id]);
+			return $answers;
+		}
+	}
+
 
 	// not remvoe html tag and single or dbl qute from this field
 	// because get from editor
