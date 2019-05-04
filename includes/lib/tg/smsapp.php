@@ -107,10 +107,7 @@ class smsapp
 			return self::s1_fillGroups($smsNo);
 		}
 	}
-		// var_dump($groupList);
-		// $answers = \lib\app\sms::answer_list(3);
-		// var_dump($answers);
-		// exit();
+
 
 
 	public static function s1_fillGroups($_smsNo)
@@ -168,6 +165,7 @@ class smsapp
 	}
 
 
+
 	public static function s2_fillAnswers($_smsNo, $_group)
 	{
 		bot::ok();
@@ -190,7 +188,7 @@ class smsapp
 
 			$result =
 			[
-				'text' => 'zzzzzzz'. hook::text(),
+				'text' => \lib\app\sms::get_tg_text(hook::chat('id'), $_smsNo),
 				'reply_markup' => kbd::draw($answerArr, null, 'inline_keyboard', 'id', 'text')
 			];
 
@@ -204,7 +202,6 @@ class smsapp
 				];
 				bot::answerCallbackQuery($callbackResult);
 			}
-
 
 			if(hook::message_id())
 			{
@@ -231,6 +228,7 @@ class smsapp
 	}
 
 
+
 	public static function finishMsg($_smsNo, $_group, $_answer)
 	{
 		bot::ok();
@@ -242,7 +240,7 @@ class smsapp
 			// remove keyboard of old messages
 			$result =
 			[
-				'text' => 'vvvv',
+				'text' => \lib\app\sms::get_tg_text(hook::chat('id'), $_smsNo),
 				'reply_markup' =>
 				[
 					'inline_keyboard' => []
@@ -260,7 +258,16 @@ class smsapp
 				bot::answerCallbackQuery($callbackResult);
 			}
 
-			bot::sendMessage($result);
+
+			if(hook::message_id())
+			{
+				bot::editMessageText($result);
+			}
+			else
+			{
+				// for debug
+				bot::sendMessage($result);
+			}
 		}
 		else
 		{
@@ -275,6 +282,8 @@ class smsapp
 			}
 		}
 	}
+
+
 
 	public static function requireCode()
 	{
