@@ -23,6 +23,7 @@ class smsappNew
 		$var['mydate']        = isset($_args['data']['mydate']) ? $_args['data']['mydate'] : null;
 		$var['myuser_id']     = isset($_args['data']['myuser_id']) ? $_args['data']['myuser_id'] : null;
 		$var['mytext']        = isset($_args['data']['mytext']) ? $_args['data']['mytext'] : null;
+		$var['myid']          = isset($_args['data']['myid']) ? $_args['data']['myid'] : null;
 		return $var;
 	}
 
@@ -69,7 +70,8 @@ class smsappNew
 
 	public static function send_to()
 	{
-		return ['answerSmsApp', 'admin', 'supervisor'];
+		return ['supervisor'];
+		// return ['answerSmsApp', 'admin', 'supervisor'];
 	}
 
 
@@ -99,15 +101,15 @@ class smsappNew
 
 	public static function telegram_text($_args, $_chat_id)
 	{
-		$fileaddr = isset($_args['data']['fileaddr']) ? $_args['data']['fileaddr'] : null;
 
-		$msg = T_("Create export file completed");
-		$msg .= '<a href="'. $fileaddr. '" download > <b>'. T_("To download it click here"). '</b> </a>';
-		$msg .= T_("This file will be automatically deleted for a few minutes");
+		$var = self::myVar($_args);
 
-		$tg_msg = '';
-		$tg_msg .= "#ExportKarbalaUsers\n";
-		$tg_msg .= $msg;
+		$tg_msg = "#NewSms\n";
+		$tg_msg .= T_("New message");
+		$tg_msg .= " ";
+		$tg_msg .= T_("From"). ' '. \dash\utility\human::fitNumber($var['fromnumber'], false);
+		$tg_msg .= " <br>";
+		$tg_msg .= $var['mytext'];
 		$tg_msg .= "\n⏳ ". \dash\datetime::fit(date("Y-m-d H:i:s"), true);
 
 		$tg                 = [];
@@ -120,7 +122,7 @@ class smsappNew
 				[
 					[
 						'text'          => 	T_("Check ticket"),
-						'callback_data' => 'smsai '. 1233,
+						'callback_data' => 'smsai '. $var['myid'],
 					],
 				],
 			],

@@ -83,6 +83,7 @@ class newsms
 
 		if($id)
 		{
+			$log['myid'] = $id;
 			\dash\log::set('smsappNew', $log);
 			\dash\notif::ok(T_("Message saved"));
 			return ['smsid' => \dash\coding::encode($id)];
