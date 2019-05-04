@@ -186,9 +186,18 @@ class smsapp
 				];
 			}
 
+			$updatedText = hook::message('text');
+			$updatedText .= "\n";
+			$groupDetail = \lib\app\sms::get_group($_group);
+			if(isset($groupDetail['title']))
+			{
+				$updatedText .= T_("Selected group ");
+				$updatedText .= "<b>". $groupDetail['title'] ."</b>";
+			}
+
 			$result =
 			[
-				'text' => \lib\app\sms::get_tg_text(hook::chat('id'), $_smsNo),
+				'text' => $updatedText,
 				'reply_markup' => kbd::draw($answerArr, null, 'inline_keyboard', 'id', 'text')
 			];
 
