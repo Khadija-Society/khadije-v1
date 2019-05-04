@@ -419,8 +419,8 @@ class twigTransTerms
 	//------------------------------------------addons/includes/html/display-dash.html
 	echo T_("Edit your profile");                                                     // Line 61
 	echo T_("Please login to save anything");                                         // Line 63
-	echo T_("Avatar of you");                                                         // Line 163
-	echo T_("Default Avatar");                                                        // Line 167
+	echo T_("Avatar of you");                                                         // Line 166
+	echo T_("Default Avatar");                                                        // Line 170
 	echo T_("Hello");                                                                 // Line 74
 	echo T_("Hello ");                                                                // Line 76
 	echo T_("dear GUEST!");                                                           // Line 76
@@ -429,18 +429,18 @@ class twigTransTerms
 	echo T_("Panel");                                                                 // Line 47
 	echo T_("CRM Panel");                                                             // Line 55
 	echo T_("Supervisor Panel");                                                      // Line 59
-	echo T_("My Account");                                                            // Line 111
+	echo T_("My Account");                                                            // Line 114
 	echo T_("Help Center");                                                           // Line 66
-	echo T_("Click to toggle sidebar status");                                        // Line 123
-	echo T_("View website");                                                          // Line 141
-	echo T_("Your notifications");                                                    // Line 152
-	echo T_("Click to check your profile");                                           // Line 154
-	echo T_("Account");                                                               // Line 157
+	echo T_("Click to toggle sidebar status");                                        // Line 126
+	echo T_("View website");                                                          // Line 144
+	echo T_("Your notifications");                                                    // Line 155
+	echo T_("Click to check your profile");                                           // Line 157
+	echo T_("Account");                                                               // Line 160
 	echo T_("Logout");                                                                // Line 19
-	echo T_("You really want to go?");                                                // Line 159
-	echo T_("We are waiting for you to come back:)");                                 // Line 160
-	echo T_("Enter to have better experience");                                       // Line 171
-	echo T_("View your current location and navigate to parent of it");               // Line 182
+	echo T_("You really want to go?");                                                // Line 162
+	echo T_("We are waiting for you to come back:)");                                 // Line 163
+	echo T_("Enter to have better experience");                                       // Line 174
+	echo T_("View your current location and navigate to parent of it");               // Line 185
 
 	//----------------------------------------------addons/includes/html/inc_spay.html
 	echo T_("Please choose bank");                                                    // Line 4
