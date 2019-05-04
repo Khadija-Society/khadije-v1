@@ -191,8 +191,7 @@ class smsapp
 			$groupDetail = \lib\app\sms::get_group($_group);
 			if(isset($groupDetail['title']))
 			{
-				$updatedText .= T_("Selected group ");
-				$updatedText .= "<b>". $groupDetail['title'] ."</b>";
+				$updatedText .= "🚩 <b>". $groupDetail['title'] ."</b>";
 			}
 
 			$result =
@@ -246,6 +245,16 @@ class smsapp
 
 		if($_smsNo)
 		{
+
+			$updatedText  = hook::message('text');
+			$updatedText  .= "\n";
+			$answerDetail = \lib\app\sms::get_answer($_answer);
+			if(isset($answerDetail['text']))
+			{
+				$updatedText .= "📣 <b>". $answerDetail['text'] ."</b>";
+			}
+
+
 			// remove keyboard of old messages
 			$result =
 			[
