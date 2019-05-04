@@ -6,42 +6,44 @@ namespace lib\app\log\caller;
 class smsappNew
 {
 
+	public static function myVar($_args)
+	{
+		$var                  = [];
+		$var['fromnumber']    = isset($_args['data']['fromnumber']) ? $_args['data']['fromnumber'] : null;
+		$var['togateway']     = isset($_args['data']['togateway']) ? $_args['data']['togateway'] : null;
+		$var['fromgateway']   = isset($_args['data']['fromgateway']) ? $_args['data']['fromgateway'] : null;
+		$var['tonumber']      = isset($_args['data']['tonumber']) ? $_args['data']['tonumber'] : null;
+		$var['uniquecode']    = isset($_args['data']['uniquecode']) ? $_args['data']['uniquecode'] : null;
+		$var['reseivestatus'] = isset($_args['data']['reseivestatus']) ? $_args['data']['reseivestatus'] : null;
+		$var['sendstatus']    = isset($_args['data']['sendstatus']) ? $_args['data']['sendstatus'] : null;
+		$var['amount']        = isset($_args['data']['amount']) ? $_args['data']['amount'] : null;
+		$var['answertext']    = isset($_args['data']['answertext']) ? $_args['data']['answertext'] : null;
+		$var['group_id']      = isset($_args['data']['group_id']) ? $_args['data']['group_id'] : null;
+		$var['recommend_id']  = isset($_args['data']['recommend_id']) ? $_args['data']['recommend_id'] : null;
+		$var['mydate']        = isset($_args['data']['mydate']) ? $_args['data']['mydate'] : null;
+		$var['myuser_id']     = isset($_args['data']['myuser_id']) ? $_args['data']['myuser_id'] : null;
+		$var['mytext']        = isset($_args['data']['mytext']) ? $_args['data']['mytext'] : null;
+		return $var;
+	}
 
 
 	public static function site($_args = [])
 	{
 
-		// $insert['fromnumber'] = $from;
-		// $insert['togateway']     = \dash\header::get('gateway');
-		// $insert['fromgateway']   = null;
-		// $insert['tonumber']      = null;
-		// $insert['user_id']       = $user_id;
-		// $insert['date']          = date("Y-m-d H:i:s", strtotime($date));
-		// $insert['text']          = $text;
-		// $insert['uniquecode']    = null;
-		// $insert['reseivestatus'] = 'awaiting';
-		// $insert['sendstatus']    = null;
-		// $insert['amount']        = null;
-		// $insert['answertext']    = null;
-		// $insert['group_id']      = null;
-		// $insert['recommend_id']   = null;
+		$var = self::myVar($_args);
 
-		// $log = $insert;
-		// $log['mydate']    = $log['date'];
-		// $log['myuser_id'] = $log['user_id'];
-		// $log['mytext']    = $log['text'];
+		$msg = T_("New message");
+		$msg .= " ";
+		$msg .= T_("From"). ' '. \dash\utility\human::fitNumber($var['fromnumber'], false);
+		$msg .= " <br>";
+		$msg .= $var['mytext'];
 
-		$fileaddr = isset($_args['data']['fileaddr']) ? $_args['data']['fileaddr'] : null;
-
-		$msg = T_("Create export file completed");
-		$msg .= '<a href="'. $fileaddr. '" download > <b>'. T_("To download it click here"). '</b> </a>';
-		$msg .= '<br>'. T_("This file will be automatically deleted for a few minutes");
 
 		$result              = [];
-		$result['title']     = T_("Export karbala users");
-		$result['icon']      = 'file';
-		$result['cat']       = T_("Export");
-		$result['iconClass'] = 'fc-blue';
+		$result['title']     = T_("New message");
+		$result['icon']      = 'email';
+		$result['cat']       = T_("Sms");
+		$result['iconClass'] = 'fc-red';
 		$result['txt']       = $msg;
 		return $result;
 
