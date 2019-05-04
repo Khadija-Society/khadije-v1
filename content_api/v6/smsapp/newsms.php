@@ -47,8 +47,8 @@ class newsms
 			return false;
 		}
 
-		$insert                  = [];
-		$insert['fromnumber']    = $from;
+		$insert               = [];
+		$insert['fromnumber'] = $from;
 		$insert['togateway']     = \dash\header::get('gateway');
 		$insert['fromgateway']   = null;
 		$insert['tonumber']      = null;
@@ -63,6 +63,15 @@ class newsms
 		$insert['group_id']      = null;
 		$insert['recommend_id']   = null;
 
+		$log = $insert;
+		$log['mydate']    = $log['date'];
+		$log['myuser_id'] = $log['user_id'];
+		$log['mytext']    = $log['text'];
+
+		unset($log['date']);
+		unset($log['user_id']);
+		unset($log['text']);
+
 		self::check_need_analyze($insert);
 
 		$id = \lib\db\sms::insert($insert);
@@ -74,6 +83,7 @@ class newsms
 
 		if($id)
 		{
+			\dash\log::set('smsappNew', $log);
 			\dash\notif::ok(T_("Message saved"));
 			return ['smsid' => \dash\coding::encode($id)];
 		}
