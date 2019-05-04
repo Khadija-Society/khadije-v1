@@ -33,6 +33,18 @@ class sms
 	}
 
 
+	public static function set_answer($_smsid, $_answer_id)
+	{
+		$load = \lib\db\smsgroupfilter::get(['id' => $_answer_id, 'limit' => 1]);
+		if(isset($load['text']))
+		{
+			$post['answertext'] = $load['text']
+			$post['sendstatus'] = 'awaiting';
+			$result = \lib\app\sms::edit($post, $_smsid);
+		}
+
+	}
+
 	// not remvoe html tag and single or dbl qute from this field
 	// because get from editor
 	public static $raw_field =
