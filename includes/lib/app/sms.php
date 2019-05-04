@@ -53,7 +53,7 @@ class sms
 		if(isset($load['text']))
 		{
 			$post               = [];
-			$post['answertext'] = $load['text']
+			$post['answertext'] = $load['text'];
 			$post['sendstatus'] = 'awaiting';
 			$result             = \lib\app\sms::edit($post, $_smsid);
 		}
