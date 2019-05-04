@@ -14,6 +14,7 @@ class sms
 
 	public static function answer_list($_group_id)
 	{
+		$_group_id = \dash\coding::decode($_group_id);
 		if($_group_id && is_numeric($_group_id))
 		{
 			$answers = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $_group_id]);
