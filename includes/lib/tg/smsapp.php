@@ -214,55 +214,29 @@ class smsapp
 	}
 
 
-	public static function finishMsg($_surveyId)
+	public static function finishMsg($_smsNo)
 	{
 		bot::ok();
 
-		$surveyTxt = \lib\app\tg\survey::get($_surveyId, 'thankyou');
-
-		if($surveyTxt)
+		if($_smsNo)
 		{
+			// remove keyboard of old messages
 			$result =
 			[
-				'text'         => $surveyTxt,
-				// 'reply_markup' =>
-				// [
-				// 	'inline_keyboard' =>
-				// 	[
-				// 		[
-				// 			[
-				// 				'text' => T_("Sarshomar website"),
-				// 				'url'  => bot::website(),
-				// 			],
-				// 		]
-				// 	]
-				// ]
+				'text' => 'vvvv',
+				'reply_markup' =>
+				[
+					'inline_keyboard' => []
+				]
 			];
-			// // remove keyboard of old messages
-			// $newMsg =
-			// [
-			// 	'reply_markup' =>
-			// 	[
-			// 		'inline_keyboard' =>
-			// 		[
-			// 			[
-			// 				[
-			// 					'text' => T_("Sarshomar website"),
-			// 					'url'  => bot::website(),
-			// 				],
-			// 			]
-			// 		]
-			// 	]
-			// ];
-			// bot::editMessageReplyMarkup($newMsg);
-			$result['reply_markup'] = \lib\tg\detect::mainmenu(true);
+
 
 			// if start with callback answer callback
 			if(bot::isCallback())
 			{
 				$callbackResult =
 				[
-					'text' => T_("Survey"). ' '. $_surveyId,
+					'text' => T_("SMS"). ' '. $_smsNo,
 				];
 				bot::answerCallbackQuery($callbackResult);
 			}
@@ -275,7 +249,7 @@ class smsapp
 			{
 				$callbackResult =
 				[
-					'text' => T_("We can't find detail of this survey!"),
+					'text' => T_("We can't find detail of this sms!"),
 					'show_alert' => true,
 				];
 				bot::answerCallbackQuery($callbackResult);
@@ -331,7 +305,8 @@ class smsapp
 
 	public static function sms()
 	{
-		$surveyListTxt = \lib\app\tg\survey::list();
+		// get list of unanswered sms
+		// $surveyListTxt = \lib\app\tg\survey::list();
 
 		if($surveyListTxt)
 		{
