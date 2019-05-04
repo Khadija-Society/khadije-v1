@@ -58,11 +58,11 @@ class smsapp
 			return false;
 		}
 		// if code is not valid show related message
-		if(!\dash\coding::is($smsNo))
-		{
-			self::requireCode();
-			return false;
-		}
+		// if(!\dash\coding::is($smsNo))
+		// {
+		// 	self::requireCode();
+		// 	return false;
+		// }
 		// detect opt
 		$myGroup = null;
 		if(isset($_cmd['optionalRaw']) && $_cmd['optionalRaw'])
