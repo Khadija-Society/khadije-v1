@@ -97,7 +97,7 @@ class smsapp
 		{
 			// step2
 			// show answer btn
-			return self::fillAnswers($smsNo, $myCat);
+			return self::s2_fillAnswers($smsNo, $myCat);
 		}
 		elseif($myCat === null)
 		{
@@ -145,6 +145,47 @@ class smsapp
 				$callbackResult =
 				[
 					'text' => T_("Please define some group!"),
+					'show_alert' => true,
+				];
+				bot::answerCallbackQuery($callbackResult);
+			}
+		}
+	}
+
+
+	public static function s2_fillAnswers($_smsNo, $_cat)
+	{
+		bot::ok();
+		$answerList  = \lib\app\sms::answer_list($_cat);
+
+		if($answerList)
+		{
+			$result =
+			[
+				'text' => 'zzzzzzz',
+				'reply_markup' => kbd::draw($answerList, null, 'inline_keyboard', 'id', 'text')
+			];
+
+
+			// if start with callback answer callback
+			if(bot::isCallback())
+			{
+				$callbackResult =
+				[
+					'text' => 'SMS '. $_smsNo,
+				];
+				bot::answerCallbackQuery($callbackResult);
+			}
+
+			bot::sendMessage($result);
+		}
+		else
+		{
+			if(bot::isCallback())
+			{
+				$callbackResult =
+				[
+					'text' => T_("Please define some answer!"),
 					'show_alert' => true,
 				];
 				bot::answerCallbackQuery($callbackResult);
