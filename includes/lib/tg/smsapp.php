@@ -3,6 +3,7 @@ namespace lib\tg;
 // use telegram class as bot
 use \dash\social\telegram\tg as bot;
 use \dash\social\telegram\step;
+use \dash\social\telegram\keyboard as kbd;
 
 class smsapp
 {
@@ -121,23 +122,8 @@ class smsapp
 			$result =
 			[
 				'text' => 'sss',
-				'reply_markup' => []
+				'reply_markup' => kbd::draw($groupList, null, 'inline_keyboard')
 			];
-
-
-			foreach ($groupList as $myKey => $myGrp)
-			{
-				// if($myGrp['status'] == 'enable')
-				{
-					$result['reply_markup']['inline_keyboard'][] =
-					[
-						[
-							'text'     => $myGrp['title'],
-							'callback_data' => 'smsapp_'. $_smsNo. ' '. $myGrp['id']
-						],
-					];
-				}
-			}
 
 
 			// if start with callback answer callback
