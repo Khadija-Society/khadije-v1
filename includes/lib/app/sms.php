@@ -44,7 +44,15 @@ class sms
 	{
 		if($_smsid && $_group_id)
 		{
-			\lib\db\sms::update(['group_id' => $_group_id], $_smsid);
+			$load_sms = self::get_tg_text($_smsid);
+			if(isset($load_sms['group_id']))
+			{
+				// nothing
+			}
+			else
+			{
+				\lib\db\sms::update(['group_id' => $_group_id], $_smsid);
+			}
 		}
 	}
 
@@ -61,11 +69,19 @@ class sms
 
 		if(isset($load['text']))
 		{
-			$post               = [];
-			$post['answertext'] = $load['text'];
-			$post['sendstatus'] = 'awaiting';
-			$result             = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
-			\dash\notif::clean();
+			$load_sms = self::get_tg_text($_smsid);
+			if(isset($load_sms['group_id']))
+			{
+				\dash\notif::error(T_("This message was answered"));
+			}
+			else
+			{
+				$post               = [];
+				$post['answertext'] = $load['text'];
+				$post['sendstatus'] = 'awaiting';
+				$result             = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+				\dash\notif::clean();
+			}
 		}
 
 	}
