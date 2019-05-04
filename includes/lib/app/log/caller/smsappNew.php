@@ -108,7 +108,7 @@ class smsappNew
 		$tg_msg .= ' | '. $var['fromnumber'];
 		$tg_msg .= "\n";
 		$tg_msg .= $var['mytext'];
-		$tg_msg .= "\n🕗 ". \dash\datetime::fit(date("Y-m-d H:i:s"), true);
+		$tg_msg .= "\n\n🕗 ". \dash\datetime::fit(date("Y-m-d H:i:s"), true);
 
 		$tg                 = [];
 		$tg['chat_id']      = $_chat_id;
@@ -120,7 +120,7 @@ class smsappNew
 				[
 					[
 						'text'          => 	T_("Review"),
-						'callback_data' => 'smsapp '. $var['myid'],
+						'callback_data' => 'smsapp_'. $var['myid'],
 					],
 				],
 			],

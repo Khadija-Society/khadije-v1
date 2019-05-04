@@ -13,7 +13,7 @@ class detect
 		}
 		else
 		{
-			// survey::detector($_cmd);
+			smsapp::detector($_cmd);
 		}
 	}
 }
