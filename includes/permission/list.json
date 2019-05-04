@@ -348,5 +348,10 @@
     "title": "cpFesitvalTransaction",
     "cat": "Festival",
     "require": []
+  },
+  "smsApiDoc": {
+    "title": "smsApiDoc",
+    "cat": "SMS",
+    "require": []
   }
 }
