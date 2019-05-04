@@ -6,6 +6,20 @@ namespace lib\app;
  */
 class sms
 {
+	public static function get_tg_text($_chat_id, $_smsid)
+	{
+		$id = \dash\coding::decode($_id);
+		if($id)
+		{
+			$load = \lib\db\sms::get(['id' => $id, 'limit' => 1]);
+			if($load)
+			{
+				$result = \lib\app\log\caller\smsappNew::telegram_text($load, $_chat_id);
+				return $result;
+			}
+		}
+	}
+
 	public static function group_list()
 	{
 		$smsgroup = \lib\db\smsgroup::get(['analyze' => 1]);
