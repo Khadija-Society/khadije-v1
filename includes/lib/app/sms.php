@@ -8,7 +8,7 @@ class sms
 {
 	public static function group_list()
 	{
-		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
+		$smsgroup = \lib\db\smsgroup::get(['analyze' => 1]);
 		return $smsgroup;
 	}
 
