@@ -104,13 +104,11 @@ class smsappNew
 
 		$var = self::myVar($_args);
 
-		$tg_msg = "#NewSms\n";
-		$tg_msg .= T_("New message");
-		$tg_msg .= " ";
-		$tg_msg .= T_("From"). ' '. \dash\utility\human::fitNumber($var['fromnumber'], false);
-		$tg_msg .= " <br>";
+		$tg_msg = "#SMS ". $var['myid'];
+		$tg_msg .= ' | '. $var['fromnumber'];
+		$tg_msg .= "\n";
 		$tg_msg .= $var['mytext'];
-		$tg_msg .= "\n⏳ ". \dash\datetime::fit(date("Y-m-d H:i:s"), true);
+		$tg_msg .= "\n🕗 ". \dash\datetime::fit(date("Y-m-d H:i:s"), true);
 
 		$tg                 = [];
 		$tg['chat_id']      = $_chat_id;
@@ -121,8 +119,8 @@ class smsappNew
 			[
 				[
 					[
-						'text'          => 	T_("Check ticket"),
-						'callback_data' => 'smsai '. $var['myid'],
+						'text'          => 	T_("Review"),
+						'callback_data' => 'smsapp '. $var['myid'],
 					],
 				],
 			],
