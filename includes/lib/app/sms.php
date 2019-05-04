@@ -52,9 +52,10 @@ class sms
 		$load = \lib\db\smsgroupfilter::get(['id' => $_answer_id, 'limit' => 1]);
 		if(isset($load['text']))
 		{
+			$post               = [];
 			$post['answertext'] = $load['text']
 			$post['sendstatus'] = 'awaiting';
-			$result = \lib\app\sms::edit($post, $_smsid);
+			$result             = \lib\app\sms::edit($post, $_smsid);
 		}
 
 	}
