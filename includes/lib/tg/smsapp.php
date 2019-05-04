@@ -254,17 +254,15 @@ class smsapp
 				$updatedText .= "📣 <b>". $answerDetail['text'] ."</b>";
 			}
 
-
 			// remove keyboard of old messages
 			$result =
 			[
-				'text' => \lib\app\sms::get_tg_text(hook::chat('id'), $_smsNo),
+				'text' => $updatedText,
 				'reply_markup' =>
 				[
 					'inline_keyboard' => []
 				]
 			];
-
 
 			// if start with callback answer callback
 			if(bot::isCallback())
