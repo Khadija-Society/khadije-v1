@@ -119,10 +119,20 @@ class smsapp
 
 		if($groupList)
 		{
+			$groupArr = [];
+			foreach ($groupList as $gKey => $gValue)
+			{
+				$groupArr[] =
+				[
+					'text'          => $gValue['title'],
+					'callback_data' => 'smsapp_'. $_smsNo . ' '. $gValue['id']
+				];
+			}
+
 			$result =
 			[
 				'text' => 'sss',
-				'reply_markup' => kbd::draw($groupList, null, 'inline_keyboard')
+				'reply_markup' => kbd::draw($groupArr, null, 'inline_keyboard')
 			];
 
 
@@ -156,14 +166,24 @@ class smsapp
 	public static function s2_fillAnswers($_smsNo, $_cat)
 	{
 		bot::ok();
-		$answerList  = \lib\app\sms::answer_list($_cat);
+		$answerList = \lib\app\sms::answer_list($_cat);
 
 		if($answerList)
 		{
+			$answerArr = [];
+			foreach ($answerList as $gKey => $gValue)
+			{
+				$answerArr[] =
+				[
+					'text'          => $gValue['text'],
+					'callback_data' => 'smsapp_'. $_smsNo . ' '. $_cat. ' '. $gValue['id']
+				];
+			}
+
 			$result =
 			[
 				'text' => 'zzzzzzz',
-				'reply_markup' => kbd::draw($answerList, null, 'inline_keyboard', 'id', 'text')
+				'reply_markup' => kbd::draw($answerArr, null, 'inline_keyboard', 'id', 'text')
 			];
 
 
