@@ -22,6 +22,13 @@ class sms
 		return $smsgroup;
 	}
 
+
+	public static function get_group($_group_id)
+	{
+		return \lib\db\smsgroup::get(['id' => $_group_id, 'limit' => 1]);
+	}
+
+
 	public static function answer_list($_group_id)
 	{
 		// $_group_id = \dash\coding::decode($_group_id);
