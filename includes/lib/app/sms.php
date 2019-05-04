@@ -8,16 +8,13 @@ class sms
 {
 	public static function get_tg_text($_chat_id, $_smsid)
 	{
-		$id = \dash\coding::decode($_id);
-		if($id)
+		$load = \lib\db\sms::get(['id' => $id, 'limit' => 1]);
+		if($load)
 		{
-			$load = \lib\db\sms::get(['id' => $id, 'limit' => 1]);
-			if($load)
-			{
-				$result = \lib\app\log\caller\smsappNew::telegram_text($load, $_chat_id);
-				return $result;
-			}
+			$result = \lib\app\log\caller\smsappNew::telegram_text($load, $_chat_id);
+			return $result;
 		}
+
 	}
 
 	public static function group_list()
@@ -39,10 +36,9 @@ class sms
 
 	public static function set_group($_smsid, $_group_id)
 	{
-		$smsid = \dash\coding::decode($_smsid);
-		if($smsid && $_group_id)
+		if($_smsid && $_group_id)
 		{
-			\lib\db\sms::update(['group_id' => $_group_id], $smsid);
+			\lib\db\sms::update(['group_id' => $_group_id], $_smsid);
 		}
 	}
 
@@ -55,7 +51,7 @@ class sms
 			$post               = [];
 			$post['answertext'] = $load['text'];
 			$post['sendstatus'] = 'awaiting';
-			$result             = \lib\app\sms::edit($post, $_smsid);
+			$result             = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
 		}
 
 	}
