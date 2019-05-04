@@ -64,10 +64,10 @@ class smsapp
 			return false;
 		}
 		// detect opt
-		$myCat = null;
+		$myGroup = null;
 		if(isset($_cmd['optionalRaw']) && $_cmd['optionalRaw'])
 		{
-			$myCat = $_cmd['optionalRaw'];
+			$myGroup = $_cmd['optionalRaw'];
 		}
 		// detect arg
 		$myAnswer = null;
@@ -88,23 +88,23 @@ class smsapp
 		}
 
 
-		if($myCat && $myAnswer)
+		if($myGroup && $myAnswer)
 		{
 			// step3
 			// remove all keyboard
-			return self::finishMsg($smsNo, $myCat, $myAnswer);
+			return self::finishMsg($smsNo, $myGroup, $myAnswer);
 		}
-		elseif($myCat)
+		elseif($myGroup)
 		{
 			// step2
 			// show answer btn
-			return self::s2_fillAnswers($smsNo, $myCat);
+			return self::s2_fillAnswers($smsNo, $myGroup);
 		}
-		elseif($myCat === null)
+		elseif($myGroup === null)
 		{
 			// step1
-			// show cat btn
-			return self::s1_fillCats($smsNo);
+			// show group btn
+			return self::s1_fillGroups($smsNo);
 		}
 	}
 		// var_dump($groupList);
@@ -113,7 +113,7 @@ class smsapp
 		// exit();
 
 
-	public static function s1_fillCats($_smsNo)
+	public static function s1_fillGroups($_smsNo)
 	{
 		bot::ok();
 		$groupList  = \lib\app\sms::group_list();
@@ -130,11 +130,7 @@ class smsapp
 				];
 			}
 
-			$result =
-			[
-				'text' => 'sss',
-				'reply_markup' => kbd::draw($groupArr, null, 'inline_keyboard')
-			];
+			$result = [ 'reply_markup' => kbd::draw($groupArr, null, 'inline_keyboard') ];
 
 
 			// if start with callback answer callback
@@ -153,6 +149,7 @@ class smsapp
 			}
 			else
 			{
+				// for debug
 				bot::sendMessage($result);
 			}
 		}
@@ -171,10 +168,13 @@ class smsapp
 	}
 
 
-	public static function s2_fillAnswers($_smsNo, $_cat)
+	public static function s2_fillAnswers($_smsNo, $_group)
 	{
 		bot::ok();
-		$answerList = \lib\app\sms::answer_list($_cat);
+		// try to save selected group
+		\lib\app\sms::set_group($_smsNo, $_group);
+
+		$answerList = \lib\app\sms::answer_list($_group);
 
 		if($answerList)
 		{
@@ -184,7 +184,7 @@ class smsapp
 				$answerArr[] =
 				[
 					'text'          => $gValue['text'],
-					'callback_data' => 'smsapp_'. $_smsNo . ' '. $_cat. ' '. $gValue['id']
+					'callback_data' => 'smsapp_'. $_smsNo . ' '. $_group. ' '. $gValue['id']
 				];
 			}
 
@@ -212,6 +212,7 @@ class smsapp
 			}
 			else
 			{
+				// for debug
 				bot::sendMessage($result);
 			}
 		}
@@ -230,9 +231,11 @@ class smsapp
 	}
 
 
-	public static function finishMsg($_smsNo)
+	public static function finishMsg($_smsNo, $_group, $_answer)
 	{
 		bot::ok();
+		// try to save selected answer
+		\lib\app\sms::set_answer($_smsNo, $_answer, $_group);
 
 		if($_smsNo)
 		{
@@ -342,6 +345,5 @@ class smsapp
 			// self::howto();
 		}
 	}
-
 }
 ?>
