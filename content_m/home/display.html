@@ -1,0 +1,265 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+<div class="f">
+
+  {%if perm('cpDonateView')%}<div class="c3 s6">{{block("Bdonate")}}</div>{%endif%}
+
+  {%if perm('cpFamilyTripView')%}<div class="c3 s6">{{block ("BtripFamilty")}}</div>{%endif%}
+  {%if perm('cpTripView')%}<div class="c3 s6">{{block ("Btrip")}}</div>{%endif%}
+  {%if perm('cpServiceView')%}<div class="c3 s6">{{block ("BService")}}</div>{%endif%}
+  {%if perm('cpRepresentationView')%}<div class="c3 s6">{{block ("bNiyabat")}}</div>{%endif%}
+
+  {%if perm('cpConsultingView')%}<div class="c3 s6">{{block ("bConsulting")}}</div>{%endif%}
+  {%if perm('cpHealthView')%}<div class="c3 s6">{{block ("bHealth")}}</div>{%endif%}
+  {%if perm('cpNationalCodeView')%}<div class="c3 s6">{{block ("BNcode")}}</div>{%endif%}
+  {%if perm('cpDelneveshteView')%}<div class="c3 s6">{{block ("bDelneveshte")}}</div>{%endif%}
+
+  {%if perm('cpHomePageNumber')%}<div class="c3 s6">{{block ("homePageNumber")}}</div>{%endif%}
+  {%if perm('cpHadith')%}<div class="c3 s6">{{block ("bHadith")}}</div>{%endif%}
+
+  {%if perm('cpReportDaily') or perm('cpReportMonth') or perm('cpReportView') %}<div class="c3 s6">{{block ("Report")}}</div>{%endif%}
+  {%if perm('cpAdminContactView')%}<div class="c3 s6">{{block ("AdminComment")}}</div>{%endif%}
+
+  {%if perm('cpSMS')%}<div class="c3 s6">{{block("bSendSMS")}}</div>{%endif%}
+  {%if perm('cpTemplateSmsView')%}<div class="c3 s6">{{block("TemplateSMS")}}</div>{%endif%}
+  {%if perm('cpPostsView') or perm('cpCategoryView') or perm('cpPageView') or perm('cpTagView')  %}<div class="c3 s6">{{block("bCMS")}}</div>{%endif%}
+  {%if perm('cpMeeting') or perm('cpMeetingManage') %}<div class="c3 s6">{{block("iMeeting")}}</div>{%endif%}
+  {%if perm('cpFestivalView') %}<div class="c3 s6">{{block("iFestival")}}</div>{%endif%}
+
+  {%if perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
+  {%if perm('cpAddNewTrip')%}<div class="c3 s6">{{block("bAddNewTrip")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
+  {%if perm('smsAppSetting')%}<div class="c3 s6">{{block("bSmsAppDashboard")}}</div>{%endif%}
+
+</div>
+{%endblock%}
+
+
+{%block bSmsAppDashboard%}
+<a class="dcard x1" href='{{url.here}}/smsapp'>
+ <div class="statistic">
+  <div class="value"><i class="sf-atom"></i></div>
+  <div class="label">{%trans "Sms management"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bKarbalaUsers%}
+<a class="dcard x1" href='{{url.here}}/userkarbala'>
+ <div class="statistic">
+  <div class="value"><i class="sf-television-tv"></i></div>
+  <div class="label">{%trans "Signup karbala"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bAddNewTrip%}
+<a class="dcard x1" href='{{url.here}}/trip/add'>
+ <div class="statistic">
+  <div class="value"><i class="sf-rocket-1"></i></div>
+  <div class="label">{%trans "Add trip"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block iFestival%}
+<a class="dcard x1" href='{{url.here}}/festival'>
+ <div class="statistic">
+  <div class="value"><i class="sf-magic"></i></div>
+  <div class="label">{%trans "Festival"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block BTankyouMessage%}
+<a class="dcard x1" href='{{url.here}}/thankyoumessage'>
+ <div class="statistic">
+  <div class="value"><i class="sf-heart-3"></i></div>
+  <div class="label">{%trans "Tankyou message"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block iMeeting%}
+<a class="dcard x1" href='{{url.here}}/meeting'>
+ <div class="statistic">
+  <div class="value"><i class="sf-gavel"></i></div>
+  <div class="label">{%trans "Meeting"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bCMS%}
+<a class="dcard x1" href='{{url.kingdom}}/cp/cms'>
+ <div class="statistic">
+  <div class="value"><i class="sf-diamond"></i></div>
+  <div class="label">{%trans "CMS"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bHadith%}
+<a class="dcard x1" href='{{url.here}}/hadith'>
+ <div class="statistic">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Hadith"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block AdminComment%}
+<a class="dcard x1" href='{{url.here}}/admincontact'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-secret"></i></div>
+  <div class="label">{%trans "Admin Contact"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block Report%}
+<a class="dcard x1" href='{{url.here}}/report'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chart"></i></div>
+  <div class="label">{%trans "Report"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block homePageNumber%}
+<a class="dcard x1" href='{{url.here}}/homepage'>
+ <div class="statistic">
+  <div class="value"><i class="sf-cog"></i></div>
+  <div class="label">{%trans "Home page number"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bDelneveshte%}
+<a class="dcard x1" href='{{url.here}}/delneveshte'>
+ <div class="statistic">
+  <div class="value"><i class="sf-heart-o"></i></div>
+  <div class="label">{%trans "Delneveshte"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bSendSMS%}
+<a class="dcard x1" href='{{url.kingdom}}/crm/sms'>
+ <div class="statistic">
+  <div class="value"><i class="sf-envelope"></i></div>
+  <div class="label">{%trans "Send SMS"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bNiyabat%}
+<a class="dcard x1" href='{{url.here}}/representation'>
+ <div class="statistic">
+  <div class="value"><i class="sf-coffee"></i></div>
+  <div class="label">{%trans "Representation"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bHealth%}
+<a class="dcard x1" href='{{url.here}}/health'>
+ <div class="statistic">
+  <div class="value"><i class="sf-heartbeat"></i></div>
+  <div class="label">{%trans "Health Service"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bConsulting%}
+<a class="dcard x1" href='{{url.here}}/consulting'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chat-alt-fill"></i></div>
+  <div class="label">{%trans "Consulting"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block TemplateSMS%}
+<a class="dcard x1" href='{{url.kingdom}}/crm/sms/template'>
+ <div class="statistic">
+  <div class="value"><i class="sf-bars"></i></div>
+  <div class="label">{%trans "SMS Template"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block BDonateProduct%}
+<a class="dcard x1" href='{{url.here}}/donateproduct'>
+ <div class="statistic">
+  <div class="value"><i class="sf-bag"></i></div>
+  <div class="label">{%trans "Donate product list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block Bdonate%}
+<a class="dcard x1" href='{{url.here}}/donate'>
+ <div class="statistic">
+  <div class="value"><i class="sf-card"></i></div>
+  <div class="label">{%trans "Donate list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block Btrip%}
+<a class="dcard x1" href='{{url.here}}/trip'>
+ <div class="statistic">
+  <div class="value"><i class="sf-pull-request"></i></div>
+  <div class="label">{%trans "Group trip request"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block BtripFamilty%}
+<a class="dcard x1" href='{{url.here}}/familytrip'>
+ <div class="statistic">
+  <div class="value"><i class="sf-bus"></i></div>
+  <div class="label">{%trans "Family trip request"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block BService%}
+<a class="dcard x1" href='{{url.here}}/service'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-md"></i></div>
+  <div class="label">{%trans "request service list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block BNcode%}
+<a class="dcard x1" href='{{url.here}}/nationalcode'>
+ <div class="statistic">
+  <div class="value"><i class="sf-user-5"></i></div>
+  <div class="label">{%trans "National code"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block sidenav%}
+  {%include "content_m/sidenav.html"%}
+{%endblock%}

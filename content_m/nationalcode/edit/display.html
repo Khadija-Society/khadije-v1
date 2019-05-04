@@ -1,0 +1,50 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+<div class="">
+
+  <p class="msg warn2 fs18 txtC">{%trans "Nationalcode" %} <b>{{nationalcodeDetail.nationalcode | fitNumber}}</b></p>
+<form method="post" class="f">
+
+  <div class="c4 s12">
+    <div class="dcard x2">
+     <div class="statistic">
+      <div class="value mB20">{%trans "Qom"%}
+        <small class="badge ">{{nationalcodeDetail.qom| fitNumber}}</small>
+      </div>
+      <div class="label input "><input type="number" name="qom" id="qom" value="{{nationalcodeDetail.qom}}"></div>
+     </div>
+    </div>
+  </div>
+
+  <div class="c4 s12">
+    <div class="dcard x2">
+     <div class="statistic">
+      <div class="value mB20">{%trans "Mashhad"%}
+        <small class="badge ">{{nationalcodeDetail.mashhad| fitNumber}}</small>
+      </div>
+      <div class="label input "><input type="number" name="mashhad" id="mashhad" value="{{nationalcodeDetail.mashhad}}"></div>
+     </div>
+    </div>
+  </div>
+
+  <div class="c4 s12">
+    <div class="dcard x2">
+     <div class="statistic">
+      <div class="value mB20">{%trans "Karbala"%}
+        <small class="badge ">{{nationalcodeDetail.karbala| fitNumber}}</small>
+      </div>
+      <div class="label input "><input type="number" name="karbala" id="karbala" value="{{nationalcodeDetail.karbala}}"></div>
+     </div>
+    </div>
+  </div>
+
+  <div class="cbox">
+    <button class="btn success block">{%trans "Save"%}</button>
+  </div>
+</form>
+
+</div>
+{%endblock%}
+

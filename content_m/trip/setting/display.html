@@ -1,0 +1,101 @@
+{%extends "content_m/trip/tripViewGroup.html"%}
+
+
+{%block myTropPageBody%}
+<div class="f justify-center">
+    <div class="c6 s12">
+      <div class="cbox">
+
+        <table class="tbl1 v4">
+          <tr>
+            <td class="">{%trans "Date created" %}</td>
+            <td>{{travelDetail.datecreated | dt}}</td>
+          </tr>
+          <tr>
+            <td class="">{%trans "Reset datecreate to" %}</td>
+            <td>
+
+              <form method="post" autocomplete="off">
+                  <input type="hidden" name="setdatecreated" value="1">
+                  <input type="hidden" name="olddatecreated" value="{{travelDetail.datecreated}}">
+
+                  <div class="input">
+                    <input class="datepicker" type="text" name="datecreated" id="datecreated" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travelDetail.datecreated}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+                    <button class="btn addon primary">{%trans "Save"%}</button>
+                  </div>
+              </form>
+
+            </td>
+          </tr>
+
+         {%if travelDetail.datemodified%}
+         <tr>
+            <td class="">{%trans "Last modified" %}</td>
+            <td>{{travelDetail.datemodified | dt}}</td>
+          </tr>
+         {%endif%}
+
+         <tr>
+            <td class="">{%trans "Reserve date" %}</td>
+            <td>{{travelDetail.startdate | dt(true, 'date')}} - {{travelDetail.enddate | dt(true, 'date')}}</td>
+          </tr>
+        </table>
+        <h3>{%trans "Save reserve date and description"%}</h3>
+        <form method="post" autocomplete="off">
+          <table class="tbl1 v4">
+
+            <tr>
+              <td class="">{%trans "Start date"%}</td>
+              <td>{{block ('istartdate') }}</td>
+            </tr>
+
+            <tr>
+              <td class="">{%trans "End date"%}</td>
+              <td>{{block ('ienddate') }}</td>
+            </tr>
+
+            <tr>
+              <td class="">{%trans "Description"%}</td>
+              <td>{{block ('iDescription') }}</td>
+            </tr>
+
+          </table>
+
+          <input type="hidden" name="edit_travel" value="edit_travel">
+          <button type="submit" class="btn primary block">{%trans "Save"%}</button>
+        </form>
+
+      </div>
+    </div>
+</div>
+{%endblock%}
+
+
+
+
+
+
+{%block iDescription%}
+<label for='fdesc'></label>
+<textarea name="desc" rows="5" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{travelDetail.desc}}</textarea>
+{%endblock%}
+
+
+
+
+{%block istartdate%}
+
+<div class="input">
+  <input class="datepicker" type="text" name="startdate" id="startdate" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travelDetail.startdate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+
+
+
+{%block ienddate%}
+
+<div class="input">
+  <input class="datepicker" type="text" name="enddate" id="enddate" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travelDetail.enddate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+

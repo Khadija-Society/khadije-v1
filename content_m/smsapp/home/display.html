@@ -1,0 +1,60 @@
+{%extends 'content_m/layout.html'%}
+
+{%block pageContent%}
+<div class="f">
+
+  <div class="c">{{block('iSmsGroupList')}}</div>
+  <div class="c">{{block('iSmsList')}}</div>
+
+</div>
+<div class="f justify-center">
+	<div class="c12">
+		<div id="chartdiv" class="chart"></div>
+	</div>
+</div>
+{%endblock%}
+
+
+
+
+
+{%block foot_js%}
+<script>
+{%include 'content_m/smsapp/home/chart.js'%}
+</script>
+{%endblock%}
+
+
+{%block iSmsGroupAdd%}
+<a class="dcard x1" href='{{url.here}}/smsapp/addgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-plus"></i></div>
+  <div class="label">{%trans "Add group"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+
+
+{%block iSmsGroupList%}
+<a class="dcard x1" href='{{url.here}}/smsapp/listgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-th-list"></i></div>
+  <div class="label">{%trans "Sms group list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+
+{%block iSmsList%}
+<a class="dcard x1" href='{{url.here}}/smsapp/listsms'>
+ <div class="statistic">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Sms list"%}</div>
+ </div>
+</a>
+{%endblock%}

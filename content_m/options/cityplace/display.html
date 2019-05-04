@@ -1,0 +1,76 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+
+
+<div class="f justify-center">
+  <div class="cbox c5">
+    <form method="post">
+      {{block ('iCity') }}
+      {{block ('iPlace') }}
+      {{block ('iadd')}}
+    </form>
+  </div>
+</div>
+
+<div class="f justify-center">
+<div class="cbox c5">
+
+{%if wayList%}
+    <br>
+    <h2>{%trans "List of city place"%}</h2>
+    <table class="tbl">
+      <thead>
+        <tr class="primary">
+          <th>{%trans "City"%}</th>
+          <th>{%trans "Place"%}</th>
+          <th>{%trans "Delete"%}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for key, value in wayList%}
+          <tr>
+            <td>{%set myCityName = value.city %}{%trans myCityName%}</td>
+            <td>{{value.place}}</td>
+            <td class="collapsing"><a href="{{url.pwd}}" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"delete"}'><button class="btn danger xs">{%trans "Remove"%}</button></a></td>
+          </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+{%endif%}
+  </div>
+</div>
+
+{%endblock%}
+
+
+
+
+
+{%block iadd%}
+<button class="btn primary block mT25">{%trans "Add"%}</button>
+{%endblock%}
+
+
+
+{%block iCity%}
+<label for='city'>{%trans "City"%}</label>
+<select name="city" class="input select">
+  <option value="">{%trans "Please select one items"%}</option>
+  {%for key, value in cityList %}
+    <option value="{{value}}">{%set myNameCity = value %}{%trans value%}</option>
+  {%endfor%}
+</select>
+{%endblock%}
+
+
+
+{%block iPlace%}
+<label for='fplace'>{%trans "Place"%}</label>
+<div class="input">
+ <input type="text" name="place" placeholder='{%trans "Place"%}'   maxlength='50' minlength="1" pattern=".{1,50}" title='{%trans "Enter a valid place"%}' id='fplace'>
+</div>
+{%endblock%}
+
+

@@ -1,0 +1,105 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{%block pageContent%}
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.this}}/user?id={{requestGET.id}}'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+ <div class="cbox fs12">
+   <table class="tbl">
+    <thead class="primary">
+      <tr>
+        <th>{%trans "Name"%}</th>
+        <th>{%trans "mobile"%}</th>
+        <th>{%trans "Course"%}</th>
+        <th>{%trans "Status"%}</th>
+        <th class="collapsing">{%trans "File"%}</th>
+        <th class="collapsing">{%trans "Date"%}</th>
+        <th class="collapsing">{%trans "Show Detail"%}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr>
+
+        <td><a href="{{url.kingdom}}/crm/member/glance?id={{value.user_id | coding('encode')}}">{{value.displayname}}</a></td>
+        <td><a href="{{url.this}}/user?id={{requestGET.id}}&mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
+        <td><a href="{{url.this}}/user?id={{requestGET.id}}&course={{value.festivalcourse_id}}">{{value.title}}</a></td>
+        <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
+        <td class="collapsing">{%if value.file%}<i class="sf-check"></i>{%else%}<i class="sf-times"></i>{%endif%}</td>
+        <td class="collapsing">{{value.datecreated | dt}}</td>
+        <td class="collapsing"><a href="{{url.this}}/usercourse?id={{requestGET.id}}&festivaluser={{value.id}}" class="badge primary">{%trans "Show detail"%}</a></td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  </table>
+  {%include display.pagination%}
+
+ </div>
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg warn2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.this}}/user?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.this}}/user?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
+{%endblock%}
+

@@ -1,0 +1,67 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+
+
+{%if nationalcodeList%}
+{{block('searchblock')}}
+<div class="cbox fs12">
+{{block('datatable')}}
+</div>
+
+
+{%elseif requestGET.q %}
+{{block('searchblock')}}
+<div class="fs14 msg warn2 pA25">
+ {%trans "No nationalcode founded."%} {%trans "Search with new keywords."%}
+</div>
+
+
+{%else%}
+<div class="cbox fs12">
+ <h3>{%trans "You are not have nationalcode yet!"%}</h3>
+</div>
+{%endif%}
+
+{%endblock%}
+
+
+{%block searchblock%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.here}}/nationalcode'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search in national codes"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block datatable%}
+
+  <table class="tbl">
+    <thead class="txtC">
+      <tr>
+        <th data-sort="{{sortLink.nationalcode.order}}" class=""><a href="{{sortLink.nationalcode.link}}">{%trans "Nationalcode"%}</a></th>
+        <th data-sort="{{sortLink.qom.order}}" class=""><a href="{{sortLink.qom.link}}">{%trans "Qom"%}</a></th>
+        <th data-sort="{{sortLink.mashhad.order}}" class=""><a href="{{sortLink.mashhad.link}}">{%trans "Mashhad"%}</a></th>
+        <th data-sort="{{sortLink.karbala.order}}" class=""><a href="{{sortLink.karbala.link}}">{%trans "Karbala"%}</a></th>
+      </tr>
+    </thead>
+
+    <tbody class="txtC">
+      {%for key, value in nationalcodeList%}
+      <tr>
+        <td><a href="{{url.here}}/nationalcode/edit?id={{value.id}}">{{value.nationalcode | fitNumber(false)}}</a></td>
+        <td><span class="badge danger fs09">{{value.qom | fitNumber}}</span></td>
+        <td><span class="badge danger fs09">{{value.mashhad | fitNumber}}</span></td>
+        <td><span class="badge danger fs09">{{value.karbala | fitNumber}}</span></td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+{%endblock%}
+

@@ -1,0 +1,101 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+
+
+
+{%block pageContent%}
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.here}}/book'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search in book transaction"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+ <div class="cbox fs12">
+   <table class="tbl">
+    <thead class="primary">
+      <tr>
+        <th class="s0">{%trans "Name"%}</th>
+        <th>{%trans "mobile"%}</th>
+        <th>{%trans "search"%}</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr>
+        <td class="s0"><a href="{{url.kingdom}}/crm/member/glance?id={{value.id | coding('encode')}}&showlog=1">{%if value.fullname%}{{value.fullname}}{%else%}{{value.displayname}}{%endif%}</a></td>
+        <td><a href="{{url.kingdom}}/crm/member/glance?id={{value.id | coding('encode')}}&showlog=1">{{value.mobile |fitNumber(false)}}</a></td>
+        <td><a href="{{url.kingdom}}/crm/member?findmobile={{value.mobile}}&showlog=1">{{value.mobile |fitNumber(false)}}</a></td>
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  </table>
+  {%include display.pagination%}
+
+ </div>
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg warn2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.here}}/book">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.here}}/book">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
+{%endblock%}
+

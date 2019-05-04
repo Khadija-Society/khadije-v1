@@ -1,0 +1,635 @@
+{%extends 'content_m/layout.html'%}
+
+{%block pageContent%}
+
+<div class="cbox">
+  <div class="f">
+    <div class="c3 s12 pRa10 txtC">
+    {{block ('SCity') }}
+    </div>
+
+    <div class="c6 s12">
+        <h2>{{travelDetail.firstname}} <b>{{travelDetail.lastname}}</b></h2>
+
+        <p>
+{%if travelDetail.birthday%}
+          <span class="badge">{%trans "Birthday" %}{{travelDetail.birthday | dt}}</span>
+{%endif%}
+          <span class="badge success">{%set GenderS = travelDetail.gender | capitalize%} {%trans GenderS%}</span>
+          <span class="badge warn">{%set MaritalS = travelDetail.married | capitalize%}{%trans MaritalS%}</span>
+          <span class="badge" title='{%trans "Father name"%}'>{{travelDetail.father}}</span>
+        </p>
+        <a class="btn" href="{{url.kingdom}}/crm/member/glance?id={{travelDetail.user_id | coding('encode')}}">{%trans "Profile"%}</a>
+
+        <p>{%trans "Nationalcode" %} {{travelDetail.nationalcode |fitNumber(false)}}
+        {%if travelDetail.file1%}<a title='{%trans "Nationalcode thumb"%}' href="{{travelDetail.file1}}" class="badge light"><i class="sf-file"></i></a>{%endif%}
+        </p>
+        <h5 class="mT25">{%trans "Address"%}</h5>
+        <p>
+          <span class="badge">{{travelDetail.country}}</span>
+          <span class="badge">{{travelDetail.province}}</span>
+          <span class="badge">{{travelDetail.city}}</span>
+          <span class="badge">{{travelDetail.address}}</span>
+          <br>
+          <small class="badge info fs12"><a href="tel:{{travelDetail.mobile}}">{{travelDetail.mobile | fitNumber('mobile')}}</a></small>
+        </p>
+    </div>
+
+    <div class="c3 s12">
+      <h2 class="msg warn2 pLRn txtC fs14">{%set StatusS = travelDetail.status | capitalize%}{%trans StatusS%}</h2>
+      <p class="badge block">{%trans "Date created" %} {{travelDetail.datecreated | dt}}</p>
+      <form method="post" autocomplete="off">
+          <input type="hidden" name="setdatecreated" value="1">
+          <input type="hidden" name="olddatecreated" value="{{travelDetail.datecreated}}">
+          <label for='datecreated'>{%trans "Date created"%}</label>
+          <div class="input">
+            <input class="datepicker" type="text" name="datecreated" id="datecreated" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travelDetail.datecreated}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+            <button class="btn addon primary">{%trans "Save"%}</button>
+          </div>
+
+      </form>
+{%if travelDetail.datemodified%}
+      <p class="badge block primary">{%trans "Last modified" %} {{travelDetail.datemodified | dt}}</p>
+{%endif%}
+{%if travelDetail.startdate or true%}
+      <p class="badge block info">{%trans "Reserve date" %} {{travelDetail.startdate | dt(true, 'date')}} - {{travelDetail.enddate | dt(true, 'date')}}</p>
+{%endif%}
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<form method="post" class="cbox" autocomplete="off">
+  <div class="f">
+
+    <div class="c8 s12 pRa10">{{block('iStatus')}}</div>
+    <div class="c4 s12">
+      <input type="hidden" name="edit_travel" value="edit_travel">
+      {{block ('istartdate') }}
+      {{block ('ienddate') }}
+      {{block ('iDescription') }}
+    </div>
+  </div>
+  {{block ('iSave') }}
+</form>
+
+
+<div class="f">
+ <div class="c3 s12 pRa10">
+{{block ('partnertForm') }}
+  </div>
+  <div class="c9 s12">
+{{block ('partnertList') }}
+  </div>
+ </div>
+{%endblock%}
+
+
+{%block partnertForm%}
+    <form method="post" class="cbox">
+{{block ('iname') }}
+{{block ('ifamily') }}
+{{block ('ibirthday') }}
+{{block ('ifather') }}
+{{block ('iNesbat') }}
+{{block ('incode') }}
+{{block ('igender') }}
+{{block ('iMarried') }}
+
+<input type="hidden" name="type" value="{{travelDetail.type}}">
+
+{%if editMode%}
+  <input type="hidden" name="edit_child" value="edit_child">
+  {{block ('iEdit') }}
+{%else%}
+  <input type="hidden" name="save_child" value="save_child">
+  {{block ('iAdd') }}
+{%endif%}
+    </form>
+
+{%endblock%}
+
+
+{%block partnertList%}
+
+    <h3>{%trans "List of trip partner"%}</h3>
+
+{%if travelPartner%}
+<table class="tbl1 v1 fs12">
+  <thead>
+      <tr>
+        <th>{%trans "Name"%}</th>
+        <th>{%trans "Father"%}</th>
+        <th>{%trans "Marital"%}</th>
+        <th>{%trans "Nationalcode"%}</th>
+        <th>{%trans "Birthday"%}</th>
+        <th>{%trans "Travel"%}</th>
+        <th>{%trans "Thumb"%}</th>
+        <th>{%trans "Action"%}</th>
+
+      </tr>
+  </thead>
+    {%for key, value in travelPartner%}
+      {% set CountTravel = value[travelDetail.place] %}
+      <tr>
+        <td>
+          {%if value.gender == 'female'%}
+            <img src="{{url.static}}/siftal/images/avatar/woman.png" class="mini">
+          {%else%}
+            <img src="{{url.static}}/siftal/images/avatar/man.png" class="mini">
+          {%endif%}
+
+          {{value.firstname}} <b>{{value.lastname}}</b></td>
+        <td>{{value.father}}</td>
+        <td>{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</td>
+        <td>{{value.nationalcode | fitNumber(false)}}</td>
+        <td>{{value.birthday | jdate | fitNumber(false)}}</td>
+        <td>
+            {%if not CountTravel%}
+                <span class="sf-check fc-green"></span>
+              {%else%}
+              <span class="badge warn ">
+                <i class="sf-cross"></i>
+                {{CountTravel| fitNumber}}
+              </span>
+            {%endif%}
+        </td>
+        <td>
+          {%if value.file1%}
+          <a title='{%trans "Nationalcode thumb"%}' href="{{value.file1}}" class="badge light"><i class="sf-file"></i></a>
+          {%else%}
+            <a title='{%trans "Whitout nationalcode thumb"%}'  class=" fc-mute"><i class="sf-file"></i></a>
+
+          {%endif%}
+        </td>
+        <td>
+          {%if editMode%}
+              <div class="c"></div>
+            {%else%}
+              <a href="{{url.here}}/trip/view?id={{requestGET.id}}&partner={{value.id}}" class="btn xs primary c mRa5 " >{%trans "Edit"%}</a>
+            {%endif%}
+            <a href="{{url.pwd |raw}}" class="btn xs danger cauto" data-confirm data-method="post" data-data='{"key": "{{value.id}}", "type":"remove"}'>{%trans "Remove"%}</a>
+        </td>
+      </tr>
+    {%endfor%}
+  <tbody>
+
+  </tbody>
+</table>
+
+{%else%}
+   <p class="msg txtC">{%trans "No partner set"%}</p>
+{%endif%}
+
+
+{%endblock%}
+
+
+
+
+{%block partnertList2%}
+  <div class="cbox">
+    <h3>{%trans "List of trip partner"%}</h3>
+
+{%if travelPartner%}
+    <div class="f">
+{%for key, value in travelPartner%}
+{% set CountTravel = value[travelDetail.place] %}
+     <div class="c4 s12">
+      <div class="vcard mA5">
+        <div class="content f">
+          <div class="c">
+            <div class="header">
+              <small>{{value.firstname}}</small> {{value.lastname}}
+              {%if not CountTravel%}
+                <span class="sf-check fc-green"></span>
+              {%else%}
+              <span class="badge warn ">
+                <i class="sf-cross"></i>
+                {{CountTravel| fitNumber}}
+              </span>
+
+              {%endif%}
+
+            </div>
+            <div class="meta"><span>{{value.nationalcode | fitNumber(false)}}</span></div>
+          </div>
+          <div class="cauto">
+{%if value.gender == 'female'%}
+            <img src="{{url.static}}/siftal/images/avatar/woman.png" class="mini">
+{%else%}
+            <img src="{{url.static}}/siftal/images/avatar/man.png" class="mini">
+{%endif%}
+          </div>
+          <div class="desc c12">
+           <span class="badge info">{{value.nesbat}}</span>
+           <span class="badge">{%set marryStatus = value.married | capitalize%}{%trans marryStatus%}</span>
+           <span class="badge success">{{value.birthday | jdate | fitNumber(false)}}</span>
+           <span class="badge" title='{%trans "Child"%}'>{{value.father}}</span>
+
+          </div>
+        </div>
+        <div class="footer f pAn">
+            {%if editMode%}
+              <div class="c"></div>
+            {%else%}
+              <a href="{{url.here}}/trip/view?id={{requestGET.id}}&partner={{value.id}}" class="btn primary c mRa5 " >{%trans "Edit"%}</a>
+            {%endif%}
+            <a href="{{url.pwd |raw}}" class="btn danger cauto" data-ajaxify data-method="post" data-data='{"key": "{{value.id}}", "type":"remove"}'>{%trans "Remove"%}</a>
+        </div>
+      </div>
+     </div>
+{%endfor%}
+    </div>
+{%else%}
+   <p class="msg txtC">{%trans "No partner set"%}</p>
+{%endif%}
+  </div>
+
+{%endblock%}
+
+
+
+
+
+
+{%block SCity%}
+{%set cityPlace = travelDetail.place %}
+    <div class="vcard mw200">
+     <img src="{{url.static}}/images/place/{{travelDetail.place}}-square.jpg" alt='{%trans cityPlace%}'>
+     <div class="content">
+      <div class="header">{%trans cityPlace%}</div>
+     </div>
+      <div class="footer">{{block("SCheckHistory")}}</div>
+    </div>
+{%endblock%}
+
+
+
+{%block SCheckHistory%}
+{%if not travelDetail[travelDetail.place] %}
+<span class="sf-check fc-green"></span>
+{%else%}
+<span class="badge warn ">
+ <i class="sf-cross"></i>
+  {{travelDetail[travelDetail.place]| fitNumber}}
+</span>
+{%endif%}
+{%endblock%}
+
+
+
+
+
+
+{%block iStatus%}
+
+<div>
+ <label >{%trans "Status of trip"%}</label>
+ <div class="f">
+  <div class="c6 s12">
+
+   <div class="radio1 blue">
+    <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if travelDetail.status == 'awaiting' or not travelDetail.status %} checked{%endif%}>
+    <label for="r-awaiting">{%trans "Awaiting"%} <small>{%trans "send new complete request"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+   <div class="radio1 red">
+    <input type="radio" id="r-spam" name="status" value="spam" {%if travelDetail.status == 'spam' %} checked{%endif%}>
+    <label for="r-spam">{%trans "Spam"%} <small>{%trans "inapropirate request and spam detected"%}</small></label>
+   </div>
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-review" name="status" value="review" {%if travelDetail.status == 'review' %} checked{%endif%}>
+    <label for="r-review">{%trans "Review"%} <small>{%trans "after check and before accept"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+   <div class="radio1 blue">
+    <input type="radio" id="r-queue" name="status" value="queue" {%if travelDetail.status == 'queue' %} checked{%endif%}>
+    <label for="r-queue">{%trans "queue"%} <small>{%trans "In queue of send"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+   <div class="radio1 green">
+    <input type="radio" id="r-gone" name="status" value="gone" {%if travelDetail.status == 'gone' %} checked{%endif%}>
+    <label for="r-gone">{%trans "Gone"%} <small>{%trans "successfully go to trip"%}</small></label>
+   </div>
+
+
+  </div>
+  <div class="c6 s12">
+
+   <div class="radio1 black">
+    <input type="radio" id="r-draft" name="status" value="draft" {%if travelDetail.status == 'draft' or not travelDetail.status %} checked{%endif%}>
+    <label for="r-draft">{%trans "Draft"%} <small>{%trans "try to fill request"%}</small></label>
+   </div>
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-cancel" name="status" value="cancel" {%if travelDetail.status == 'cancel' %} checked{%endif%}>
+    <label for="r-cancel">{%trans "Cancel"%} <small>{%trans "cancel from user"%}</small></label>
+   </div>
+
+   <div class="radio1 red">
+    <input type="radio" id="r-reject" name="status" value="reject" {%if travelDetail.status == 'reject' %} checked{%endif%}>
+    <label for="r-reject">{%trans "Reject"%} <small>{%trans "does not accepted for some reason"%}</small></label>
+   </div>
+
+   <div class="radio1 black">
+    <input type="radio" id="r-notanswer" name="status" value="notanswer" {%if travelDetail.status == 'notanswer'%} checked{%endif%} >
+    <label for="r-notanswer">{%trans "Not Answer"%} <small>{%trans "not answer to call check"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-admincancel" name="status" value="admincancel" {%if travelDetail.status == 'admincancel'%} checked{%endif%} >
+    <label for="r-admincancel">{%trans "Admin Cancel"%} <small>{%trans "delete from admin"%}</small></label>
+   </div>
+  </div>
+ </div>
+
+
+
+
+
+</div>
+{%endblock%}
+
+
+
+{%block iname%}
+<label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{partnerDetail.firstname}}" maxlength='40' minlength="2" pattern=".{2,40}" title='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+</div>
+{%endblock%}
+
+
+{%block ifamily%}
+<label for="lastName">{%trans "Last name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{partnerDetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
+</div>
+{%endblock%}
+
+
+
+
+{%block imobile%}
+<label for="mobile">{%trans "Mobile"%}</label>
+<div class="input">
+  <input type="text" readonly id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{partnerDetail.mobile}}" maxlength='30'>
+</div>
+{%endblock%}
+
+
+{%block incode%}
+<label for="nationalcode">{%trans "National code"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{partnerDetail.nationalcode}}" min=0 max=9999999999 required>
+</div>
+{%endblock%}
+
+
+{%block ifather%}
+<label for="father">{%trans "Father name"%}</label>
+<div class="input">
+  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%}' value="{{partnerDetail.father}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+{%block ibirthday%}
+<label for="birthday">{%trans "Birthday"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="birthday" id="birthday" placeholder='{{"1369/04/15" | fitNumber}}' value="{{partnerDetail.birthday}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+
+
+{%block igender%}
+<div class="switch1 mT10 gender">
+ <input type="checkbox" name="gender" id="gender" {%if userdetail.gender == 'female' %}checked{%endif%}>
+ <label for="gender" ></label>
+ <label for="gender">{%trans "Gender"%}</label>
+</div>
+{%endblock%}
+
+
+{%block iMarried%}
+<div class="switch1 mT10">
+ <input type="checkbox" name="Married" id="Married" {%if userdetail.married == 'married' %}checked{%endif%}>
+ <label for="Married"  data-on='{%trans "Married"%}' data-off='{%trans "Single"%}'></label>
+ <label for="Married">{%trans "Marital"%}</label>
+</div>
+
+{%endblock%}
+
+{%block iArabicLang%}
+<div class="switch1 mT10">
+ <input type="checkbox" name="ArabicLang" id="ArabicLang" {%if userdetail.arabiclang == 'yes' %}checked{%endif%}>
+ <label for="ArabicLang"  data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
+ <label for="ArabicLang">{%trans "Arabic Language"%}</label>
+</div>
+
+{%endblock%}
+
+
+
+{%block iNesbat%}
+<label for='nesbat'>{%trans "Nesbat"%}</label>
+<div class="input">
+ <input type='text' class="awesomplete" name='nesbat' id='nesbat' data-minchars="1"  value="{{partnerDetail.nesbat}}" />
+</div>
+{%endblock%}
+
+
+{%block icountry%}
+<label for='country'>{%trans "Country"%}</label>
+<div class="input">
+ <input type='text' class="awesomplete" name='country' id='country' data-minchars="1" data-autofirst data-list="{{country_list}}" value="{{partnerDetail.country}}" />
+</div>
+{%endblock%}
+
+
+{%block iprovince%}
+<label for='province'>{%trans "Province"%}</label>
+<div class="input">
+ <input type='text' class="awesomplete" name='province' id='province' data-minchars="1" data-autofirst data-list="{{provice_list}}" value="{{partnerDetail.province}}" />
+</div>
+{%endblock%}
+
+
+{%block icity%}
+<label for='city'>{%trans "City"%}</label>
+<div class="input">
+ <input type='text' class="awesomplete" name='city' id='city' data-minchars="1" data-autofirst data-list="{{cityList}}" value="{{partnerDetail.city}}" />
+</div>
+{%endblock%}
+
+
+{%block izipcode%}
+<label for='zipcode'>{%trans "Zip code"%}</label>
+<div class="input">
+ <input type='tel' name='zipcode' id='zipcode' min="0" max="9999999999" value="{{partnerDetail.zipcode}}"/>
+</div>
+{%endblock%}
+
+
+
+
+{%block ipassport%}
+<label for='passport'>{%trans "Passport id"%}</label>
+<div class="input ltr">
+ <input type="text" name='passport' id='passport' value="{{partnerDetail.pasportcode}}" />
+</div>
+{%endblock%}
+
+
+{%block ipassportexpire%}
+<label for='passportexpire'>{%trans "Passport expire date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="passportexpire" id="passportexpire" placeholder='{{"1397/03/30" | fitNumber}}' value="{{partnerDetail.pasportdate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+
+
+
+{%block iHomeAddress%}
+<label for='fhomeaddress'>{%trans "Home Address"%}</label>
+<textarea name="homeaddress" rows="3" placeholder='{%trans "Home Address"%}' class="txt" id="fhomeaddress">{{userdetail.homeaddress}}</textarea>
+{%endblock%}
+
+{%block iWorkAddress%}
+<label for='fworkaddress'>{%trans "Work Address"%}</label>
+<textarea name="workaddress" rows="3" placeholder='{%trans "Work Address"%}' class="txt" id="fworkaddress">{{userdetail.workaddress}}</textarea>
+{%endblock%}
+
+
+
+{%block iDescription%}
+<label for='fdesc'>{%trans "Description"%}</label>
+<textarea name="desc" rows="5" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{userdetail.desc}}</textarea>
+{%endblock%}
+
+
+
+
+{%block istartdate%}
+<label for='startdate'>{%trans "Start date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="startdate" id="startdate" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travelDetail.startdate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+
+
+
+{%block ienddate%}
+<label for='enddate'>{%trans "End date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="enddate" id="enddate" placeholder='{{"1397/03/30" | fitNumber}}' value="{{travelDetail.enddate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+
+
+
+{%block iPhone%}
+<label for="phone">{%trans "Phone"%}</label>
+<div class="input">
+  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 025 3650 5281' value="{{partnerDetail.phone}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+
+{%block iEmail%}
+<label for="email">{%trans "Email"%}</label>
+<div class="input">
+  <input type="email" name="email" id="email" placeholder='{%trans "Like"%} abc@example.com' value="{{partnerDetail.email}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+{%block iAvatar%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="avatar" id="avatar1" data-preview data-max="500">
+ <label for="avatar1" title="Simple Title">
+
+ </label>
+</div>
+{%endblock%}
+
+
+{%block iNationalthumb%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="nationalthumb" id="nationalthumb" data-preview data-max="500">
+ <label for="nationalthumb" title="Simple Title">
+    {%if userdetail.nationalthumb%}<img src="{{userdetail.nationalthumb}}">{%endif%}
+ </label>
+</div>
+{%endblock%}
+
+
+{%block iShthumb%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="shthumb" id="shthumb" data-preview data-max="500">
+ <label for="shthumb" title="Simple Title">
+    {%if userdetail.shthumb%}<img src="{{userdetail.shthumb}}">{%endif%}
+ </label>
+</div>
+{%endblock%}
+
+
+
+{%block iEducation%}
+<label for="feducation">{%trans "Education"%}</label>
+<div class="input">
+  <input type="text" name="education" id="feducation" placeholder='{%trans "Education"%}' value="{{partnerDetail.education}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+
+{%block iEducationCourse%}
+<label for="feducationcourse">{%trans "Education course"%}</label>
+<div class="input">
+  <input type="text" name="educationcourse" id="feducationcourse" placeholder='{%trans "Education course"%}' value="{{partnerDetail.education}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+
+{%block iJob%}
+<label for="fjob">{%trans "Job"%}</label>
+<div class="input">
+  <input type="text" name="job" id="fjob" placeholder='{%trans "Job"%}' value="{{partnerDetail.job}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+
+{%block iAdd%}
+<button class="btn primary block mT20">{%trans "Add as new partner"%}</button>
+{%endblock%}
+
+
+{%block iEdit%}
+<button class="btn primary block mT20">{%trans "Edit partner"%}</button>
+{%endblock%}
+
+
+
+{%block iSave%}
+<button class="btn success block mT20">{%trans "Save changes"%}</button>
+{%endblock%}
+
+
+{%block iremove%}
+<input type="hidden" name="remove" value="{{requestGET.edit}}">
+<button class="btn danger block mT20">{%trans "Remove"%}</button>
+{%endblock%}
+
+
+
+

@@ -1,0 +1,56 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+
+{{block('reportLast30Month')}}
+{{block('reportLast30MonthTable')}}
+
+{%endblock%}
+
+
+
+{%block reportLast30Month%}
+<div class="dcard x3 pA0">
+ <div class="chart"  id="chartdiv">
+ </div>
+</div>
+  {%include display.pagination%}
+{%endblock%}
+
+
+
+{%block reportLast30MonthTable%}
+
+<div class="cbox fs12 pA0">
+	<table class="tbl">
+		<thead class="primary">
+			<tr>
+				<th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th>
+				<th data-sort="{{sortLink.sum.order}}"><a href="{{sortLink.sum.link}}">{%trans "Sum"%}</a></th>
+			</tr>
+		</thead>
+		<tbody>
+			{%for key, value in ReportMonthlyTable%}
+				<tr>
+					<td>{{(value.year ~ '-' ~ value.month) | dt("Y F")}}</td>
+					<td>{{value.sum | fitNumber}}</td>
+				</tr>
+			{%endfor%}
+		</tbody>
+	</table>
+ </div>
+</div>
+
+{%endblock%}
+
+
+
+
+{%block foot_js%}
+<script type="text/javascript">
+	{% include 'content_m/report/month/chart.js' %}
+</script>
+{%endblock%}
+
+

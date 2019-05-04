@@ -1,0 +1,53 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{%block pageContent%}
+
+<div class="f justify-center">
+  <div class="c5">
+    <div class="cbox">
+      <form method="post">
+        {{block('iActive')}}
+        <div data-response='active' {%if dataRow.active%}{%else%} data-response-hide {%endif%}>
+          {{block('iText')}}
+          {{block('iSms')}}
+        </div>
+        {{block('isave')}}
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+{%block iText%}
+<label for="itext">{%trans "Message text"%}</label>
+<textarea class="txt mB10" id='itext' name="text" maxlength='300' rows="5">{{dataRow.text}}</textarea>
+{%endblock%}
+
+
+{%block isave%}
+<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+
+
+{%block iSms%}
+<div class="switch1">
+ <input type="checkbox" name="sms" id="sms" {%if dataRow.sms%} checked {%endif%}>
+ <label for="sms" data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
+ <label for="sms">{%trans "Send sms?"%}</label>
+</div>
+{%endblock%}
+
+
+
+
+{%block iActive%}
+<div class="switch1">
+ <input type="checkbox" name="active" id="active" {%if dataRow.active%} checked {%endif%}>
+ <label for="active" data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
+ <label for="active">{%trans "Send thankyou message?"%}</label>
+</div>
+{%endblock%}

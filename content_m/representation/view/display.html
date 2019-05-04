@@ -1,0 +1,76 @@
+{%extends 'content_m/layout.html'%}
+
+{%block pageContent%}
+
+<div class="cbox">
+  <form method="post" autocomplete="off">
+    <h2>
+      {{representationDetail.firstname}}<b>{{representationDetail.lastname}}</b>
+      <span class="badge mRa5">{{representationDetail.mobile}}</span>
+      <span class="badge floatRa success mRa5">{{representationDetail.expert}}</span>
+    </h2>
+
+    {{block('iStatus')}}
+    {{block ('iSave') }}
+  </form>
+</div>
+
+{%endblock%}
+
+
+
+
+
+{%block iStatus%}
+
+<div>
+ <label >{%trans "Status of representation"%}</label>
+ <div class="f">
+  <div class="c6 s12">
+
+   <div class="radio1 blue">
+    <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if representationDetail.status == 'awaiting' or not representationDetail.status %} checked{%endif%}>
+    <label for="r-awaiting">{%trans "Awaiting"%}</label>
+   </div>
+
+   <div class="radio1 red">
+    <input type="radio" id="r-spam" name="status" value="spam" {%if representationDetail.status == 'spam' %} checked{%endif%}>
+    <label for="r-spam">{%trans "Spam"%} <small>{%trans "inapropirate request and spam detected"%}</small></label>
+   </div>
+
+   <div class="radio1 green">
+    <input type="radio" id="r-accept" name="status" value="accept" {%if representationDetail.status == 'accept' %} checked{%endif%}>
+    <label for="r-accept">{%trans "Done Representation"%} <small>{%trans "Representation is done"%}</small><i class="sf-mobile fs12"></i></label>
+   </div>
+
+
+  </div>
+  <div class="c6 s12">
+
+   <div class="radio1 black">
+    <input type="radio" id="r-draft" name="status" value="draft" {%if representationDetail.status == 'draft' or not representationDetail.status %} checked{%endif%}>
+    <label for="r-draft">{%trans "Draft"%} <small>{%trans "try to fill request"%}</small></label>
+   </div>
+
+   <div class="radio1 yellow">
+    <input type="radio" id="r-cancel" name="status" value="cancel" {%if representationDetail.status == 'cancel' %} checked{%endif%}>
+    <label for="r-cancel">{%trans "Cancel"%} <small>{%trans "cancel from user"%}</small></label>
+   </div>
+
+
+  </div>
+ </div>
+
+
+</div>
+{%endblock%}
+
+
+
+{%block iSave%}
+<button class="btn success block mT20">{%trans "Save changes"%}</button>
+{%endblock%}
+
+
+
+

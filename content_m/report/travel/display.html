@@ -1,0 +1,40 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+<div class="cbox">
+
+	<div id="chartdiv" class="chart size-he400"></div>
+</div>
+
+<div class="cbox hide">
+	<table class="tbl">
+		<thead>
+			<tr class="primary">
+				<th>{%trans "Payment"%}</th>
+				<th>{%trans "Sum"%}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{%for key, value in chartTable.raw%}
+			<tr>
+				<td>{{key}}</td>
+				<td>{{value | fitNumber}} {%trans "Toman"%}</td>
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table>
+</div>
+{%endblock%}
+
+
+{%block foot_js%}
+<script type="text/javascript">
+	{% include 'content_m/report/travel/sankey.js' %}
+
+</script>
+<script type="text/javascript">
+	{% include 'content_m/report/travel/chart.js' %}
+</script>
+{%endblock%}
+

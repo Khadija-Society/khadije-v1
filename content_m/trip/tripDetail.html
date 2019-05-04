@@ -1,0 +1,193 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+  {{block('GlanceDetail')}}
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+{%block iKerkere%}
+
+<div class="advanceSearch" {%if requestGET.place or requestGET.startdate or requestGET.enddate %} {%else%}data-kerkere-content='hide' {%endif%}>
+  <h6 class="mT10">{%trans "Filter by start date and end date"%}</h6>
+  <div class="f">
+
+     <div class="cauto s12 mB5 pRa5">
+      <div class="input ltr">
+        <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+      </div>
+    </div>
+
+    <div class="cauto s12 mB5 pRa5">
+      <div class="input ltr">
+        <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+      </div>
+    </div>
+
+  </div>
+
+  <h6 class="mT10">{%trans "Filter by place"%}</h6>
+  <div class="f ">
+        <div class="c">
+          <div class="radio3 mB5">
+            <input type="radio" name="place" value="qom" id="placeqom" {%if requestGET.place == 'qom' %} checked {%endif%}>
+            <label for="placeqom">{%trans "Qom"%}</label>
+          </div>
+        </div>
+        <div class="c">
+          <div class="radio3 mB5">
+            <input type="radio" name="place" value="mashhad" id="placemashhad" {%if requestGET.place == 'mashhad' %} checked {%endif%}>
+            <label for="placemashhad">{%trans "Mashhad"%}</label>
+          </div>
+        </div>
+         <div class="c">
+          <div class="radio3 mB5">
+            <input type="radio" name="place" value="karbala" id="placekarbala" {%if requestGET.place == 'karbala' %} checked {%endif%}>
+            <label for="placekarbala">{%trans "Karbala"%}</label>
+          </div>
+        </div>
+      </div>
+
+  <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
+  <button class="btn primary2">{%trans "Apply"%}</button>
+
+</div>
+{%endblock%}
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.this}}'>
+    <div class="input">
+      <label class="addon" data-kerkere='.advanceSearch' data-kerkere-icon>{%trans "Advance"%}</label>
+      <input type="search" name="q" placeholder='{%trans "Search in trips"%}' id="q" value="{{requestGET.q}}{{requestGET.barcode}}" autofocus autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+
+    </div>
+    {{block('iKerkere')}}
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+
+ <table class="tbl1 v1 fs12">
+    <thead class="primary">
+      <tr>
+        <th data-sort="{{sortLink.id.order}}" class="collapsing"><a href="{{sortLink.id.link}}">{%trans "ID"%}</a></th>
+        <th data-sort="{{sortLink.firstname.order}}" class=""><a href="{{sortLink.firstname.link}}">{%trans "First name"%}</a></th>
+        <th data-sort="{{sortLink.gender.order}}" class="s0"><a href="{{sortLink.gender.link}}">{%trans "Gender"%}</a></th>
+        <th data-sort="{{sortLink.gender.order}}" class="s0"><a href="{{sortLink.gender.link}}">{%trans "Birthdate"%}</a></th>
+        <th data-sort="{{sortLink.nationalcode.order}}" class="s0"><a href="{{sortLink.nationalcode.link}}">{%trans "National code"%}</a></th>
+        <th data-sort="{{sortLink.place.order}}" class=""><a href="{{sortLink.place.link}}">{%trans "City"%}</a></th>
+        <th data-sort="{{sortLink.countpartner.order}}" class="collapsing fs07"><a href="{{sortLink.countpartner.link}}">{%trans "Partner"%}</a></th>
+        <th data-sort="{{sortLink.status.order}}" class=""><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
+        <th data-sort="{{sortLink.startdate.order}}" class="s0"><a href="{{sortLink.startdate.link}}">{%trans "Start date"%}</a></th>
+        <th data-sort="{{sortLink.enddate.order}}" class="s0"><a href="{{sortLink.enddate.link}}">{%trans "End date"%}</a></th>
+        <th data-sort="{{sortLink.datecreated.order}}" class="s0"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr class="{%if value.status == 'gone'%} positive{%elseif value.status == 'draft' or value.status == 'awaiting' %} warning{%else%} negative{%endif%}">
+        <td class="txtC">
+          <a href="{{url.this}}/view?id={{value.id}}">{{value.id | fitNumber}}</a>
+        </td>
+        <td>
+          <a href="{{url.kingdom}}/crm/member/glance?id={{value.user_id | coding('encode')}}">
+            <span class="sf-user fc-mute"></span>
+            {{value.firstname}} <b>{{value.lastname}}</b>
+          </a>
+        </td>
+        <td class="s0">{%set myGender = value.gender | capitalize%}<a href="{{url.this}}?gender={{value.gender}}">{%trans myGender%}</a></td>
+        <td class="s0"><a href='{{url.this}}?birthday={{value.birthday | date("Y")}}'>{{value.birthday | dt("Y") }}</a>{{value.birthday | dt("-m-d") }}</td>
+
+        <td class="s0">{{value.nationalcode | fitNumber(false)}}</td>
+        <td>{%set my_place = value.place | capitalize%}<a href="{{url.this}}?place={{value.place}}">{%trans my_place%}</a></td>
+        <td class="txtC">{%if value.countpartner%}{{value.countpartner | fitNumber}}{%else%}-{%endif%}</td>
+        <td class="txtC">{%set my_status = value.status | capitalize%}<a href="{{url.this}}?status={{value.status}}">{%trans my_status%}</a></td>
+        <td class="s0 collapsing">{{value.startdate | dt(null, 'date')}}</td>
+        <td class="s0 collapsing">{{value.enddate | dt(null, 'date')}}</td>
+
+        <td class="s0 collapsing" title="{{value.datecreated | dt}}">{{value.datecreated | dt ("human", "year")}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg warn2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
+{%endblock%}
+
+
+
+{%block GlanceDetail%}
+  <div class="f">
+    <div class="c8 s6">
+      <div class="dcard x1">
+       <div class="statistic blue">
+        <div class="value">{{totalRequest | fitNumber}}</div>
+        <div class="label">{%trans "Total Request"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="c4 s6">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{todayRequest | fitNumber}}</div>
+        <div class="label">{%trans "Today"%}</div>
+       </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
+

@@ -1,0 +1,47 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+<div class="f">
+
+ <div class="c12 s12">
+  <div class="dcard x2">
+   <div class="statistic xl blue">
+    <div class="value "><i class="sf-rocket"></i></div>
+    <div class="label">{{totalPaid | fitNumber}} <small>{%trans "Toman"%}</small></div>
+   </div>
+  </div>
+
+ </div>
+
+<div class="c4 s6">
+    <a class="dcard x2" href='{{url.here}}/donate'>
+       <div class="statistic">
+        <div class="value"><i class="sf-card"></i></div>
+        <div class="label">{%trans "Donations"%}</div>
+      </div>
+    </a>
+</div>
+
+ <div class="c4 s6">
+  <a class="dcard x2" href='{{url.here}}/book'>
+       <div class="statistic">
+        <div class="value"><i class="sf-book"></i></div>
+        <div class="label">{%trans "Book transaction list"%}</div>
+      </div>
+    </a>
+ </div>
+
+
+ <div class="c4 s12">
+  <a class="dcard x2" href='{{url.here}}/report'>
+       <div class="statistic">
+        <div class="value"><i class="sf-chart"></i></div>
+        <div class="label">{%trans "Report"%}</div>
+      </div>
+    </a>
+ </div>
+
+</div>
+{%endblock%}
+

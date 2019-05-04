@@ -1,0 +1,274 @@
+{%extends 'content_m/layout.html'%}
+
+{%block pageContent%}
+{%if requestGET.type == 'add' %}
+<div class="f justify-center">
+  <div class="c6">
+    <div class="cbox">
+      <form method="post" autocomplete="off">
+
+        {{block('ititle')}}
+
+        {{block('iadd')}}
+      </form>
+    </div>
+  </div>
+</div>
+{%else%}
+
+{{block('pageSteps')}}
+<div class="f justify-center">
+	<div class="c6">
+		<div class="cbox">
+			<form method="post" autocomplete="off">
+				{%if not requestGET.type or requestGET.type == 'general'%}
+					{{block('ititle')}}
+					{{block('isubtitle')}}
+					{{block('igroup')}}
+					{{block('idesc')}}
+					{%if requestGET.course%}
+						{{block('istatus')}}
+					{%endif%}
+				{%elseif requestGET.type == 'rules'%}
+					{{block('icondition')}}
+				{%elseif requestGET.type == 'sendrule'%}
+					{{block('iconditionsend')}}
+				{%elseif requestGET.type == 'setting'%}
+          {{block('iprice')}}
+					{{block('ilink')}}
+				{%elseif requestGET.type == 'files'%}
+          {{block('ifileext')}}
+					{{block('imaxinputsize')}}
+				{%endif%}
+
+				{{block('iadd')}}
+			</form>
+		</div>
+	</div>
+</div>
+{%endif%}
+{%endblock%}
+
+
+{%block ititle %}
+<label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="title" id="title" placeholder='{%trans "Title of festival course"%} *' value="{{dataRow.title}}" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid title"%}'>
+</div>
+{% endblock %}
+
+
+{%block ifileext %}
+<div class="switch1 mT5">
+ <input type="checkbox" name="word" id="word" {%if dataRow.allowfile.word%} checked {%endif%}>
+ <label for="word"></label>
+ <label for="word">{%trans "Word"%}</label>
+</div>
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="pdf" id="pdf" {%if dataRow.allowfile.pdf%} checked {%endif%}>
+ <label for="pdf"></label>
+ <label for="pdf">{%trans "PDF"%}</label>
+</div>
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="video" id="video" {%if dataRow.allowfile.video%} checked {%endif%}>
+ <label for="video"></label>
+ <label for="video">{%trans "Video"%}</label>
+</div>
+
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="sound" id="sound" {%if dataRow.allowfile.sound%} checked {%endif%}>
+ <label for="sound"></label>
+ <label for="sound">{%trans "Sound"%}</label>
+</div>
+
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="apk" id="apk" {%if dataRow.allowfile.apk%} checked {%endif%}>
+ <label for="apk"></label>
+ <label for="apk">{%trans "APK"%}</label>
+</div>
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="zip" id="zip" {%if dataRow.allowfile.zip%} checked {%endif%}>
+ <label for="zip"></label>
+ <label for="zip">{%trans "ZIP"%}</label>
+</div>
+
+<div class="switch1 mT5">
+ <input type="checkbox" name="other" id="other" {%if dataRow.allowfile.other%} checked {%endif%}>
+ <label for="other"></label>
+ <label for="other">{%trans "Other"%}</label>
+</div>
+
+{%endblock%}
+
+
+{% block imaxinputsize %}
+<br>
+<label for="filesize">{%trans "Maximum file size"%}</label>
+<div class="input">
+  <input type="number" name="filesize" id="filesize" placeholder='{%trans "Maximum file size"%} {%trans "Like"%} {{10 | fitNumber}} - {%trans "in MB"%}' value="{{dataRow.allowfile.filesize}}"  >
+</div>
+{%endblock%}
+
+
+{%block isubtitle %}
+<label for="subtitle">{%trans "Subtitle"%}</label>
+<div class="input">
+  <input type="text" name="subtitle" id="subtitle" placeholder='{%trans "Subtitle of festival course"%}' value="{{dataRow.subtitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid subtitle"%}'>
+</div>
+{% endblock %}
+
+
+{%block igroup%}
+
+<label for='group'>{%trans "Group"%}</label>
+<select name="group" class="select ui dropdown search addition"  id="group">
+  <option value="" readonly>{%trans "Select one group"%}</option>
+  {%for key, value in groupList%}
+    <option value="{{value}}"{%if value == dataRow.group %} selected{%endif%}>{{value}}</option>
+  {%endfor%}
+</select>
+
+{%endblock%}
+
+
+{%block istatus%}
+
+<div class="mT3">
+ <label >{%trans "Status"%}</label>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
+  <label for="r-enable">{%trans "Enable"%}</label>
+ </div>
+
+
+ <div class="radio1 red mB25">
+  <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'  %} checked{%endif%}>
+  <label for="r-disable">{%trans "Disable"%}</label>
+ </div>
+
+</div>
+{%endblock%}
+
+
+{%block idesc%}
+<label for="desc">{%trans "Description"%}</label>
+<textarea class="txt mB10" id="desc"  name="desc" placeholder='{%trans "Write description of festival course"%}' rows="3">{{dataRow.desc}}</textarea>
+{%endblock%}
+
+
+{%block icondition%}
+<label for="condition">{%trans "Condition"%}</label>
+<textarea class="txt mB10" id="condition" data-editor name="condition" placeholder='{%trans "Write condition of festival course"%}' rows="3">{{dataRow.condition}}</textarea>
+{%endblock%}
+
+
+{%block iconditionsend%}
+<label for="conditionsend">{%trans "Condition send"%}</label>
+<textarea class="txt mB10" id="conditionsend" data-editor name="conditionsend" placeholder='{%trans "Write conditionsend of festival course"%}' rows="3">{{dataRow.conditionsend}}</textarea>
+{%endblock%}
+
+{%block iprice %}
+<label for="price">{%trans "Pirce"%} </label>
+<div class="input">
+  <input type="number" name="price" id="price" placeholder='{%trans "Price of festival course"%}' value="{{dataRow.price}}"  maxlength='200' minlength="1" pattern=".{1,200}" title='{%trans "Enter a valid pirce"%}'>
+</div>
+{% endblock %}
+
+
+{%block ilink %}
+<label for="link">{%trans "Link"%} </label>
+<div class="input">
+  <input type="url" name="link" id="link" placeholder='{%trans "Link"%}' value="{{dataRow.link.link}}"  >
+</div>
+
+<label for="linktitle">{%trans "Link title"%}</label>
+<div class="input">
+  <input type="text" name="linktitle" id="linktitle" placeholder='{%trans "Subtitle of festival course"%}' value="{{dataRow.link.linktitle}}"  maxlength='200' minlength="1" pattern=".{1,200}" >
+</div>
+{% endblock %}
+
+
+{%block imultiuse%}
+<div class="switch1 mB10">
+ <input type="checkbox"  name="multiuse" id="multiuse" {%if dataRow.multiuse %}checked{%endif%}>
+ <label for="multiuse"></label>
+ <label for="multiuse">{%trans "Multiuse"%}</label>
+</div>
+{%endblock%}
+
+
+{%block iadd%}
+<button class="btn primary block mT20">{%trans "Add"%}</button>
+{%endblock%}
+
+{%block isave%}
+<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+
+
+
+{%block pageSteps%}
+
+  <div class="f">
+
+
+   <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'general'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=general&id={{requestGET.id}}' data-shortkey="49ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-list"></i></div>
+      <div class="label">{%trans "General"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'rules'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=rules&id={{requestGET.id}}' data-shortkey="50ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-thumbnails"></i></div>
+      <div class="label">{%trans "Rules"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'sendrule'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=sendrule&id={{requestGET.id}}' data-shortkey="51ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-out"></i></div>
+      <div class="label">{%trans "Send Rule"%}<br><kbd class="mT5">Ctrl+Shift+3</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+    <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'files'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=files&id={{requestGET.id}}' data-shortkey="52ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-file-o"></i></div>
+      <div class="label">{%trans "File setting"%}<br><kbd class="mT5">Ctrl+Shift+4</kbd></div>
+     </div>
+    </a>
+   </div>
+
+   <div class="c s4">
+    <a class="dcard {%if requestGET.type == 'setting'%}active{%endif%}" href='{{url.this}}/course?course={{requestGET.course}}&type=setting&id={{requestGET.id}}' data-shortkey="53ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-cogs"></i></div>
+      <div class="label">{%trans "Setting"%}<br><kbd class="mT5">Ctrl+Shift+5</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+
+  </div>
+
+{%endblock%}

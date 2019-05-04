@@ -1,0 +1,35 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+<div class="cbox">
+	<div id="chartdiv" class="chart size-he500"></div>
+</div>
+
+<div class="cbox">
+	<table class="tbl">
+		<thead>
+			<tr class="primary">
+				<th>{%trans "Payment"%}</th>
+				<th>{%trans "Sum"%}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{%for key, value in chartTable.raw%}
+			<tr>
+				<td>{{value.doners}}</td>
+				<td>{{value.sum | fitNumber}} {%trans "Toman"%}</td>
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table>
+</div>
+{%endblock%}
+
+
+{%block foot_js%}
+<script type="text/javascript">
+	{% include 'content_m/report/withname/chart.js' %}
+</script>
+{%endblock%}
+
