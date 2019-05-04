@@ -119,20 +119,8 @@ class smsappNew
 			[
 				[
 					[
-						'text' => 	T_("Visit in site"),
-						'url'  => \dash\url::base(). '/!'. 1233,
-					],
-				],
-				[
-					[
 						'text'          => 	T_("Check ticket"),
-						'callback_data' => 'ticket '. 1233,
-					],
-				],
-				[
-					[
-						'text'          => 	T_("Answer"),
-						'callback_data' => 'ticket 1233 answer',
+						'callback_data' => 'smsai '. 1233,
 					],
 				],
 			],
