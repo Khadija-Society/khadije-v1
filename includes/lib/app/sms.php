@@ -48,10 +48,17 @@ class sms
 		}
 	}
 
+	public static function get_answer($_answer_id)
+	{
+		$load = \lib\db\smsgroupfilter::get(['id' => $_answer_id, 'limit' => 1]);
+		return $load;
+	}
+
 
 	public static function set_answer($_smsid, $_answer_id)
 	{
-		$load = \lib\db\smsgroupfilter::get(['id' => $_answer_id, 'limit' => 1]);
+		$load = self::get_answer($_answer_id);
+
 		if(isset($load['text']))
 		{
 			$post               = [];
