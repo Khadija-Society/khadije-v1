@@ -102,73 +102,50 @@ class smsapp
 		{
 			// step1
 			// show cat btn
-			return self::fillCats($smsNo);
+			return self::s1_fillCats($smsNo);
 		}
 	}
+		// var_dump($groupList);
+		// $answers = \lib\app\sms::answer_list(3);
+		// var_dump($answers);
+		// exit();
 
 
-
-	public static function fillCats($_surveyId)
+	public static function s1_fillCats($_smsNo)
 	{
 		bot::ok();
+		$groupList  = \lib\app\sms::group_list();
 
-		$surveyTxt    = \lib\app\tg\survey::get($_surveyId);
-		$surveyStatus = \lib\app\tg\survey::$status;
-
-		if($surveyTxt)
+		if($groupList)
 		{
 			$result =
 			[
-				'text'         => $surveyTxt,
-				'reply_markup' =>
-				[
-					'inline_keyboard' =>
-					[
-						[
-							[
-								'text'          => 	T_("Share"),
-								'switch_inline_query' => $_surveyId,
-							],
-						],
-						[
-							[
-								'text' => T_("Answer via site"),
-								'url'  => \dash\url::base(). '/s/'. $_surveyId,
-							],
-						],
-						[
-							[
-								'text'          => 	T_("Start"),
-								'callback_data' => 'survey_'. $_surveyId. ' start',
-							],
-						],
-					]
-				]
+				'text' => 'sss',
+				'reply_markup' => []
 			];
 
-			if($surveyStatus !== 'publish')
+
+			foreach ($groupList as $myKey => $myGrp)
 			{
-				// remove first keyboard to share survey if its not published
-				unset($result['reply_markup']['inline_keyboard'][0][0]);
+				// if($myGrp['status'] == 'enable')
+				{
+					$result['reply_markup']['inline_keyboard'][] =
+					[
+						[
+							'text'     => $myGrp['title'],
+							'callback_data' => 'smsapp_'. $_smsNo. ' '. $myGrp['id']
+						],
+					];
+				}
 			}
 
-			if(!bot::isPrivate())
-			{
-				$result['reply_markup']['inline_keyboard'][1] =
-				[
-					[
-						'text' => T_("Answer via bot"),
-						'url'  => bot::deepLink('survey_'. $_surveyId)
-					],
-				];
-			}
 
 			// if start with callback answer callback
 			if(bot::isCallback())
 			{
 				$callbackResult =
 				[
-					'text' => T_("Survey"). ' '. $_surveyId,
+					'text' => 'SMS '. $_smsNo,
 				];
 				bot::answerCallbackQuery($callbackResult);
 			}
@@ -181,7 +158,7 @@ class smsapp
 			{
 				$callbackResult =
 				[
-					'text' => T_("We can't find detail of this survey!"),
+					'text' => T_("Please define some group!"),
 					'show_alert' => true,
 				];
 				bot::answerCallbackQuery($callbackResult);
