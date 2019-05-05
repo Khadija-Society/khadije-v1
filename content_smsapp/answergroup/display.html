@@ -3,28 +3,27 @@
 
 {%block pageContent%}
 {{block('pageSteps')}}
-<div class="msg fs14 txtB txtC ">
+<div class="msg fs12 txtB txtC info2">
   {%trans "You can register a answer of responses to this group to help you respond."%}
 </div>
 <div class="f justify-center">
-  <div class="c4">
+  <div class="c4 s12">
 
     <div class="cbox">
       <form method="post" autocomplete="off">
-        <h5>{%trans "Add new answer to filter"%}</h5>
         {{block('itext')}}
 
         {{block('iadd')}}
       </form>
     </div>
   </div>
-  <div class="c8">
+  <div class="c8 s12">
     <div class="mLa5">
       <div class="cbox">
         <div class="msg txtB txtC">{%trans "Group title"%} {{dataRow.title}}</div>
         {%if dataTable%}
         {%for key, value in dataTable%}
-        <div class="msg success2">
+        <div class="msg primary2">
           <div class="f">
             <span class="c">{{value.text}}</span>
             <div class="cauto">

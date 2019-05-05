@@ -3,22 +3,22 @@
 
 {%block pageContent%}
 {{block('pageSteps')}}
-<div class="msg fs14 txtB txtC ">
+<div class="msg fs12 txtB txtC info2">
   {%trans "You can register some recommend text to this group to help you."%}
 </div>
 <div class="f justify-center">
-  <div class="c4">
+  <div class="c4 s12">
 
     <div class="cbox">
       <form method="post" autocomplete="off">
-        <h5>{%trans "Add new recommend text to filter"%}</h5>
+        <div class="msg">{%trans "Add new recommend text to filter"%}</div>
         {{block('itext')}}
 
         {{block('iadd')}}
       </form>
     </div>
   </div>
-  <div class="c8">
+  <div class="c8 s12">
     <div class="mLa5">
       <div class="cbox">
         <div class="msg txtB txtC">{%trans "Group title"%} {{dataRow.title}}</div>
