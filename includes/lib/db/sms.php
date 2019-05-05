@@ -16,10 +16,44 @@ class sms
 	";
 
 
-	public static function get_chart()
+	public static function get_chart_receive($_startdate, $_enddate)
 	{
-		$query  = "SELECT COUNT(*) AS `count`, s_sms.reseivestatus FROM s_sms GROUP BY s_sms.reseivestatus";
-		$result = \dash\db::get($query);
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				DATE(s_sms.datecreated) AS `date`
+			FROM
+				s_sms
+			WHERE
+				DATE(s_sms.datecreated) <= DATE('$_startdate')  AND
+				DATE(s_sms.datecreated) >= DATE('$_enddate')
+			GROUP BY
+				DATE(s_sms.datecreated)
+			ORDER BY DATE(s_sms.datecreated) ASC
+		";
+		$result = \dash\db::get($query, ['date', 'count']);
+		return $result;
+	}
+
+	public static function get_chart_send($_startdate, $_enddate)
+	{
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				DATE(s_sms.datemodified) AS `date`
+			FROM
+				s_sms
+			WHERE
+				s_sms.answertext IS NOT NULL AND
+				DATE(s_sms.datemodified) <= DATE('$_startdate')  AND
+				DATE(s_sms.datemodified) >= DATE('$_enddate')
+			GROUP BY
+				DATE(s_sms.datemodified)
+			ORDER BY DATE(s_sms.datemodified) ASC
+		";
+		$result = \dash\db::get($query, ['date', 'count']);
 		return $result;
 	}
 

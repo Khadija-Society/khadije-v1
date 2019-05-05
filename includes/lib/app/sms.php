@@ -111,16 +111,58 @@ class sms
 
 	public static function chart()
 	{
-		$get = \lib\db\sms::get_chart();
-		if(!is_array($get))
+		$now = date("Y-m-d");
+		$lastYear = date("Y-m-d", strtotime("-1 year"));
+
+		$get_chart_receive = \lib\db\sms::get_chart_receive($now, $lastYear);
+		$get_chart_send    = \lib\db\sms::get_chart_send($now, $lastYear);
+
+		if(!is_array($get_chart_receive) || !is_array($get_chart_send))
 		{
-			$get = [];
+			return false;
 		}
 
-		foreach ($get as $key => $value)
+		// find max count
+		$max_array = $get_chart_receive;
+		if(count($get_chart_send) > count($get_chart_receive))
 		{
-
+			$max_array = $get_chart_receive;
 		}
+
+		$date = array_keys($max_array);
+
+		$hi_chart               = [];
+		$hi_chart['categories'] = [];
+		$hi_chart['send']       = [];
+		$hi_chart['receive']    = [];
+
+		foreach ($date as $key => $value)
+		{
+			array_push($hi_chart['categories'], \dash\datetime::fit($value, null, 'date'));
+
+			if(isset($get_chart_receive[$value]))
+			{
+				array_push($hi_chart['receive'], intval($get_chart_receive[$value]));
+			}
+			else
+			{
+				array_push($hi_chart['receive'], 0);
+			}
+
+			if(isset($get_chart_send[$value]))
+			{
+				array_push($hi_chart['send'], intval($get_chart_send[$value]));
+			}
+			else
+			{
+				array_push($hi_chart['send'], 0);
+			}
+		}
+
+		$hi_chart['categories'] = json_encode($hi_chart['categories'], JSON_UNESCAPED_UNICODE);
+		$hi_chart['send']       = json_encode($hi_chart['send'], JSON_UNESCAPED_UNICODE);
+		$hi_chart['receive']    = json_encode($hi_chart['receive'], JSON_UNESCAPED_UNICODE);
+		return $hi_chart;
 	}
 
 	/**

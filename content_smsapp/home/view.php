@@ -10,6 +10,7 @@ class view
 
 
 		$chart = \lib\app\sms::chart();
+		\dash\data::masterChart($chart);
 
 		$args =
 		[
