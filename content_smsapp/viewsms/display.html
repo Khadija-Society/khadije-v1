@@ -1,0 +1,162 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block nextPrev%}
+<div class="f justify-center">
+  <div class="c8">
+
+    <div class="f">
+
+
+     <div class="c s4">
+      <a class="dcard {%if url.child == 'editgroup'%}active{%endif%}" href='{{myPrevUrl}}' data-shortkey="49ctrlshift" >
+       <div class="statistic sm">
+        <div class="value"><i class="sf-arrow-circle-right"></i></div>
+        <div class="label">{%trans "Prev"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
+       </div>
+      </a>
+     </div>
+
+
+     <div class="c s4">
+      <a class="dcard {%if url.child == 'filtergroup'%}active{%endif%}" href='{{myNextUrl}}' data-shortkey="50ctrlshift" >
+       <div class="statistic sm">
+        <div class="value"><i class="sf-arrow-circle-left"></i></div>
+        <div class="label">{%trans "Next"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
+       </div>
+      </a>
+     </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+{%block pageContent%}
+
+<div class="f justify-center">
+
+  <div class="c8">
+    <div class="cbox">
+      <div class="f">
+
+        <div class="c8 s12">
+          <div class="msg mL10 txtB txtC ">
+            <h4 class="">{%trans "Sms text"%}</h4>
+            <p>{{dataRow.text}}</p>
+          </div>
+        </div>
+
+        <div class="c4 s12 pRa5">
+
+          <div class="msg">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b></div>
+          <div class="msg">{%trans "togateway"%} <b>{{dataRow.togateway | fitNumber(false)}}</b></div>
+          <div class="msg">{%trans "date"%} <b>{{dataRow.date | dt(true)}}</b></div>
+          <div class="msg">{%trans "datecreated"%} <b>{{dataRow.datecreated | dt(true)}}</b></div>
+          <div class="msg">{%trans "Reseive status"%} <b>{%set mydataRowreseivestatus = dataRow.reseivestatus%}{%trans mydataRowreseivestatus%}</b></div>
+        </div>
+
+      </div>
+
+      <hr>
+      <form method="post" autocomplete="off" {%if dataRow.answertext %} disabled {%endif%}>
+
+        <h5>{%trans "Select group"%} <a href="{{url.here}}/listgroup" class="badge info">{%trans "Manage group"%}</a></h5>
+        {%if dataRow.recommend_id%}<div class="btn success2 mTB20">{%trans "Recommend"%} {{dataRow.recommend_title}}</div>{%endif%}
+       <div class="f mB10">
+        {%for key,value in groupList%}
+          <div class="c">
+            <div class="radio3 mB5 mRa5" >
+              <input {%if dataRow.answertext %} disabled {%endif%} type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == value.id  %} checked {%endif%}>
+              <label for="group_{{value.id}}">{{value.title}}</label>
+            </div>
+          </div>
+        {%endfor%}
+        </div>
+
+        {%for group_id, answers in dataAnswer%}
+        <div data-response='group_id' data-response-effect='slide' data-response-where='{{group_id}}' data-response-hide>
+          {%for key, value in answers %}
+          <div class="btn outline primary" onclick="setAnswerText('{{value.text  | url_encode}}');">{{value.text}}</div>
+          {%endfor%}
+        </div>
+        {%endfor%}
+
+        <label for="itxt mT20">{%trans "Answer text"%}</label>
+        <textarea class="txt" rows="5" name="answertext"  id="ianswertxt" {%if dataRow.answertext %} disabled {%endif%}>{{dataRow.answertext}}</textarea>
+        <button class="btn block {%if dataRow.answertext %} disabled {%else%} primary {%endif%}  mT20" {%if dataRow.answertext %} disabled {%endif%}>{%trans "Send"%}</button>
+      </form>
+
+
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  function setAnswerText($_text)
+  {
+    $('#ianswertxt').val(decodeURIComponent($_text));
+  }
+
+</script>
+
+{%endblock%}
+
+
+{%block pageContent2%}
+
+
+
+      <div class="msg">{%trans "fromgateway"%} {{dataRow.fromgateway}}</div>
+      <span class="btn mRa5">{%trans "tonumber"%} {{dataRow.tonumber}}</span>
+
+
+
+<span class="btn mRa5">{%trans "sendstatus"%} {{dataRow.sendstatus}}</span>
+<span class="btn mRa5">{%trans "amount"%} {{dataRow.amount}}</span>
+<span class="btn mRa5">{%trans "answertext"%} {{dataRow.answertext}}</span>
+<span class="btn mRa5">{%trans "group_id"%} {{dataRow.group_id}}</span>
+<span class="btn mRa5">{%trans "recommend_id"%} {{dataRow.recommend_id}}</span>
+
+
+{%endblock%}
+
+
+
+
+
+
+{%block pageSteps%}
+
+  <div class="f">
+
+
+   <div class="c s4">
+    <a class="dcard {%if url.child == 'editgroup'%}active{%endif%}" href='{{url.this}}/editgroup?id={{requestGET.id}}' data-shortkey="49ctrlshift" '>
+     <div class="statistic sm">
+      <div class="value"><i class="sf-edit"></i></div>
+      <div class="label">{%trans "Edit"%}<br><kbd class="mT5">Ctrl+Shift+1</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s4">
+    <a class="dcard {%if url.child == 'filtergroup'%}active{%endif%}" href='{{url.this}}/filtergroup?id={{requestGET.id}}' data-shortkey="50ctrlshift" >
+     <div class="statistic sm">
+      <div class="value"><i class="sf-list"></i></div>
+      <div class="label">{%trans "Filters of this group"%}<br><kbd class="mT5">Ctrl+Shift+2</kbd></div>
+     </div>
+    </a>
+   </div>
+
+
+
+
+  </div>
+{%endblock%}

@@ -1,0 +1,105 @@
+  <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Control Panel" %}</span></a></li>
+
+
+{%if perm('cpDelneveshteView') %}
+  <li><a href="{{url.here}}/delneveshte"><i class='sf-heart-o'></i> <span>{%trans "Delneveshteha"%}</span></a></li>
+{%endif%}
+
+{%if perm('cpDonateView') or perm('cpBookTransactionView') or perm('cpReportView') %}
+  <li>
+    <a href="{{url.here}}/mytransaction"><i class='sf-money'></i> <span>{% trans "Financial" %}</span></a>
+    <ul>
+      {%if perm('cpDonateView') %}
+        <li><a href="{{url.here}}/donate"><i class='floatRa mRa10 fc-mute sf-card'></i> <span>{%trans "Donate list"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpBookTransactionView') %}
+        <li><a href="{{url.here}}/book"><i class='floatRa mRa10 fc-mute sf-book'></i> <span>{%trans "Book transaction list"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpReportView') %}
+        <li><a href="{{url.here}}/report"><i class='floatRa mRa10 fc-mute sf-bar-chart'></i> <span>{%trans "Report"%}</span></a></li>
+      {%endif%}
+    </ul>
+  </li>
+{%endif%}
+
+{% if perm('cpServiceView') or perm('cpTripView') or perm('cpConsultingView') or perm('cpHealthView') or perm('cpRepresentationView') or perm('cpNationalCodeView') %}
+  <li>
+    <a href="{{url.here}}/myrequest"><i class='sf-umbrella'></i> <span>{% trans "Requests" %}</span></a>
+    <ul>
+      {%if perm('cpServiceView') %}
+        <li><a href="{{url.here}}/service"><i class='floatRa mRa10 fc-mute sf-user-md'></i> <span>{%trans "Servants"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpTripView') %}
+        <li><a href="{{url.here}}/trip"><i class='floatRa mRa10 fc-mute sf-bus'></i> <span>{%trans "Group trip"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpTripView') %}
+        <li><a href="{{url.here}}/familytrip"><i class='floatRa mRa10 fc-mute sf-pull-request'></i> <span>{%trans "Family trip"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpConsultingView') %}
+        <li><a href="{{url.here}}/consulting"><i class='floatRa mRa10 fc-mute sf-chat-alt-fill'></i> <span>{%trans "consulting service"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpHealthView') %}
+        <li><a href="{{url.here}}/health"><i class='floatRa mRa10 fc-mute sf-heartbeat'></i> <span>{%trans "Health service"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpRepresentationView') %}
+        <li><a href="{{url.here}}/representation"><i class='floatRa mRa10 fc-mute sf-coffee'></i> <span>{%trans "representation service"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpNationalCodeView') %}
+        <li><a href="{{url.here}}/nationalcode"><i class='floatRa mRa10 fc-mute sf-user-5'></i> <span>{%trans "National code"%}</span></a></li>
+      {%endif%}
+    </ul>
+  </li>
+{%endif%}
+
+
+{%if perm('cpMeeting') or perm('cpMeetingManage')%}
+  <li>
+    <a href="{{url.here}}/meeting"><i class='sf-gavel'></i> <span>{% trans "Meetings" %}</span></a>
+    <ul>
+      {%if perm('cpMeeting') %}
+        <li><a href="{{url.here}}/meeting"><i class='floatRa mRa10 fc-mute sf-gavel'></i> <span>{%trans "Meeting reports"%}</span></a></li>
+      {%endif%}
+      {%if perm('cpMeeting') %}
+        <li><a href="{{url.here}}/meeting/add"><i class='floatRa mRa10 fc-mute sf-plus'></i> <span>{%trans "Add new report"%}</span></a></li>
+      {%endif%}
+    </ul>
+  </li>
+{%endif%}
+
+
+{%if perm('cpPostsView') or perm('cpCategoryView') or perm('cpPageView') or perm('cpTagView')  %}
+    <li>
+        <a href="{{url.kingdom}}/cms/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
+        <ul>
+            {%if perm('cpPostsView') %}
+              <li><a href="{{url.kingdom}}/cms/posts">{% trans "News" %} <i class='floatRa mRa10 fc-mute sf-pinboard'></i></a></li>
+            {%endif%}
+            {%if perm('cpCategoryView') %}
+              <li><a href="{{url.kingdom}}/cms/terms?type=cat">{% trans "Categries" %} <i class='floatRa mRa10 fc-mute sf-grid'></i></a></li>
+            {%endif%}
+            {%if perm('cpTagView') %}
+              <li><a href="{{url.kingdom}}/cms/terms?type=tag">{% trans "Tags" %} <i class='floatRa mRa10 fc-mute sf-tags'></i></a></li>
+            {%endif%}
+            {%if perm('cpPageView') %}
+              <li><a href="{{url.kingdom}}/cms/posts?type=page">{% trans "Pages" %} <i class='floatRa mRa10 fc-mute sf-files-o'></i></a></li>
+            {%endif%}
+        </ul>
+    </li>
+{%endif%}
+
+
+
+{%if perm('cpHomePageNumber') or perm('cpHadith') %}
+  <li>
+    <a href="{{url.here}}/myhomepage"><i class='sf-home'></i> <span>{% trans "Homepage" %}</span></a>
+    <ul>
+{%if perm('cpHomePageNumber') %}
+      <li><a href="{{url.here}}/homepage"><i class='floatRa mRa10 fc-mute sf-cog'></i> <span>{%trans "Statistics"%}</span></a></li>
+{%endif%}
+{%if perm('cpHadith') %}
+      <li><a href="{{url.here}}/hadith"><i class='floatRa mRa10 fc-mute sf-list'></i> <span>{%trans "Hadith"%}</span></a></li>
+{%endif%}
+    </ul>
+  </li>
+{%endif%}
+

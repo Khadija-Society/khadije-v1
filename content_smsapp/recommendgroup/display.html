@@ -1,0 +1,57 @@
+{%extends 'content_smsapp/editgroup/display.html'%}
+
+
+{%block pageContent%}
+{{block('pageSteps')}}
+<div class="msg fs14 txtB txtC ">
+  {%trans "You can register some recommend text to this group to help you."%}
+</div>
+<div class="f justify-center">
+  <div class="c4">
+
+    <div class="cbox">
+      <form method="post" autocomplete="off">
+        <h5>{%trans "Add new recommend text to filter"%}</h5>
+        {{block('itext')}}
+
+        {{block('iadd')}}
+      </form>
+    </div>
+  </div>
+  <div class="c8">
+    <div class="mLa5">
+      <div class="cbox">
+        <div class="msg txtB txtC">{%trans "Group title"%} {{dataRow.title}}</div>
+        {%if dataTable%}
+        {%for key, value in dataTable%}
+        <div class="msg primary2">
+          <div class="f">
+            <span class="c">{{value.text}}</span>
+            <div class="cauto">
+              <span class="badge danger" data-confirm data-data='{"type":"remove", "deleteid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove"%}</span>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+        {%else%}
+        <div class="msg warn2 txtB txtC">{%trans "No recommend text founded"%}</div>
+        {%endif%}
+
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+
+
+
+
+{%block itext %}
+
+<label for="itxt">{%trans "Recommend Text"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="text" id="text" autofocus required maxlength='200' minlength="1" pattern=".{1,200}" >
+</div>
+{% endblock %}
