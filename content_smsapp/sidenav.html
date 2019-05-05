@@ -1,6 +1,9 @@
-  <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Manage sms" %}</span></a></li>
+  <li><a href="{{url.here}}"><i class='sf-mail'></i> <span>{% trans "Manage sms" %}</span></a></li>
+
+  <li><a href="{{url.here}}/listgroup"><i class='sf-cog'></i> <span>{% trans "Setting" %}</span></a></li>
 
 
-{%if perm('contentCp') %}
-  <li><a href="{{url.kingdom}}/m"><i class='sf-heart-o'></i> <span>{%trans "Manage"%}</span></a></li>
-{%endif%}
+  <li><a href="{{url.here}}/listsms"><i class='sf-mailbox'></i> <span>{% trans "SMS List" %}</span></a></li>
+
+
+  <li><a href="{{url.here}}/reports"><i class='sf-chart'></i> <span>{% trans "Reports" %}</span></a></li>
