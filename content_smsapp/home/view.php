@@ -7,10 +7,21 @@ class view
 	{
 		\dash\data::page_title(T_("Sms Analyzer"));
 		\dash\data::page_desc(T_("System for check and management sms"));
-		\dash\data::badge_link(\dash\url::here());
-		\dash\data::badge_text(T_('Back to dashboard'));
+
 
 		$chart = \lib\app\sms::chart();
+
+		$args =
+		[
+			'order' => 's_sms.id',
+			'sort'  => 'desc',
+			's_group.type' => ['!=', "'family'"],
+			'limit' => 6
+		];
+
+		$lastSms = \lib\app\sms::list(null, $args);
+
+		\dash\data::lastSms($lastSms);
 
 
 	}

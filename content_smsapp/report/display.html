@@ -1,21 +1,13 @@
 {%extends 'content_smsapp/layout.html'%}
 
 {%block pageContent%}
-<div class="f">
-
-  <div class="c">{{block('iSmsList')}}</div>
-  <div class="c">{{block('iSmsReport')}}</div>
-  <div class="c">{{block('iSettings')}}</div>
-
-</div>
+>
 
 <div class="f">
-	<div class="c8">
+	<div class="c12">
 		<div id="chartdiv" class="chart"></div>
 	</div>
-  <div class="c4 pLa5">
-    {{block('l10sms')}}
-  </div>
+
 </div>
 
 
@@ -46,10 +38,9 @@
 {%block l10sms%}
 <div class="cbox fs11 mB10">
   <h2>{%trans "Last sms"%}</h2>
-  {%for key, value in lastSms%}
+  {%for key, value in dashboardDetail.latesHelp%}
     <a class="msg f">
-      <div class="c6">{%if value.text%}{{value.text}}{%else%}{%trans "Without text"%}{%endif%}</div>
-      <span class="c">{{value.fromnumber | fitNumber('mobile')}}</span>
+      <div>{%if value.title%}{{value.title}}{%else%}{%trans "Without title"%}{%endif%}</div>
       <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
     </a>
   {%endfor%}

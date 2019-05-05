@@ -21,12 +21,14 @@ class view
 			'order' => \dash\request::get('order'),
 			'sort'  => \dash\request::get('sort'),
 			's_group.type' => ['!=', "'family'"],
+			// 's_sms.reseivestatus' => ['!=', "'block'"],
+
 		];
 
-		if(\dash\permission::supervisor())
-		{
-			unset($args['s_group.type']);
-		}
+		// if(\dash\permission::supervisor())
+		// {
+		// 	unset($args['s_group.type']);
+		// }
 
 		$search_string = \dash\request::get('q');
 
