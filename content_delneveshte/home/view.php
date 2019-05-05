@@ -49,7 +49,7 @@ class view
 		$args['type']   = 'delneveshte';
 		$args['limit']  = 100;
 
-		\dash\data::sortLink(\content_cp\view::make_sort_link(\dash\app\comment::$sort_field, \dash\url::this()));
+		\dash\data::sortLink(\content_cms\view::make_sort_link(\dash\app\comment::$sort_field, \dash\url::this()));
 
 		$list = \dash\app\comment::list(null, $args);
 

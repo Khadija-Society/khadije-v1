@@ -7,7 +7,7 @@ class controller
 	{
 		if(\dash\url::module() === 'exportcurlkarbalausers' && \dash\request::is('post'))
 		{
-			\content_cp\userkarbala\home\model::verify();
+			\content_cms\userkarbala\home\model::verify();
 			\dash\code::boom();
 		}
 
