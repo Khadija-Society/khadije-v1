@@ -6,6 +6,37 @@ namespace lib\app;
  */
 class sms
 {
+	public static function dashboard_detail()
+	{
+
+		$result           = [];
+		$result['status'] = \content_api\v6\smsapp\controller::status();
+
+		$day              = [];
+		$day['send']      = rand(1,1000);
+		$day['receive']   = rand(1,1000);
+
+		$week             = [];
+		$week['send']     = rand(1,1000);
+		$week['receive']  = rand(1,1000);
+
+		$month            = [];
+		$month['send']    = rand(1,1000);
+		$month['receive'] = rand(1,1000);
+
+		$total            = [];
+		$total['send']    = rand(1,1000);
+		$total['receive'] = rand(1,1000);
+
+
+		$result['day']    = $day;
+		$result['week']   = $week;
+		$result['month']  = $month;
+		$result['total']  = $total;
+		return $result;
+	}
+
+
 	public static function get_tg_text($_chat_id, $_smsid)
 	{
 		$load = \lib\db\sms::get(['s_sms.id' => $_smsid, 'limit' => 1]);

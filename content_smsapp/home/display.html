@@ -17,10 +17,111 @@
     {{block('l10sms')}}
   </div>
 </div>
-
+{{block('iNumbers')}}
 
 {%endblock%}
 
+
+
+{%block iNumbers%}
+<div class="f">
+
+  <div class="c1">
+    <a class="dcard xs">
+     <div class="statistic sm teal">
+      <div class="label mB10"></div>
+      <div class="value ">{%trans "Send"%}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
+      <div class="value counter">{{dashboardDetail.total.send | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
+      <div class="value">{{dashboardDetail.month.send | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
+      <div class="value">{{dashboardDetail.week.send | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
+      <div class="value">{{dashboardDetail.day.send | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+</div>
+
+<div class="f">
+
+<div class="c1">
+    <a class="dcard xs">
+     <div class="statistic sm blue">
+      <div class="label mB10"></div>
+      <div class="value ">{%trans "Receive"%}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
+      <div class="value counter">{{dashboardDetail.total.receive | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
+      <div class="value">{{dashboardDetail.month.receive | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
+      <div class="value">{{dashboardDetail.week.receive | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
+      <div class="value">{{dashboardDetail.day.receive | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+</div>
+
+{%endblock%}
 
 
 

@@ -24,6 +24,9 @@ class view
 
 		\dash\data::lastSms($lastSms);
 
+		$dashboardDetail = \lib\app\sms::dashboard_detail();
+		\dash\data::dashboardDetail($dashboardDetail);
+
 
 	}
 }

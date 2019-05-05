@@ -51,7 +51,7 @@ function myChartProductPrice()
         }
       },
       title: {
-        text: '{%trans "Price"%}',
+        text: '{%trans "Count"%}',
         useHTML: Highcharts.hasBidiBug,
         style: {
           color: Highcharts.getOptions().colors[0]
