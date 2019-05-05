@@ -1,5 +1,5 @@
 <?php
-namespace content_smsapp\listgroup;
+namespace content_smsapp\settings;
 
 
 class view
@@ -10,8 +10,9 @@ class view
 
 		\dash\data::page_title(T_("Sms group list"));
 		\dash\data::page_desc(T_("You cat set some filter to group"));
-		\dash\data::badge_link(\dash\url::here());
-		\dash\data::badge_text(T_('Dashboard'));
+
+		\dash\data::badge_link(\dash\url::here(). '/addgroup');
+		\dash\data::badge_text(T_('Add new group'));
 
 
 		$filterArray = [];

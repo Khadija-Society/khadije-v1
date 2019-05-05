@@ -1,5 +1,5 @@
 <?php
-namespace content_smsapp\listgroup;
+namespace content_smsapp\settings;
 
 
 class controller

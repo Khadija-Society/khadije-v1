@@ -4,14 +4,7 @@
 
 
 {%block pageContent%}
-<div class="c s4">
-    <a class="dcard" href='{{url.here}}/addgroup'>
-     <div class="statistic sm blue">
-      <div class="value"><i class="sf-plus"></i></div>
-      <div class="label">{%trans "Add new group"%}</div>
-     </div>
-    </a>
-   </div>
+
 {%if dataTable%}
  {%if dataFilter%}
 
@@ -56,15 +49,14 @@
 
 {%block htmlTable%}
 
-  <table class="tbl1 v9 cbox">
-    <thead class="primary">
+  <table class="tbl1 v9">
+    <thead>
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href="{{sortLink.title.link}}">{%trans "Title"%}</a></th>
-        <th data-sort="{{sortLink.type.order}}"><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
-        <th data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
-        <th data-sort="{{sortLink.analyze.order}}"><a href="{{sortLink.analyze.link}}">{%trans "Analyze"%}</a></th>
-        <th data-sort="{{sortLink.ismoney.order}}"><a href="{{sortLink.ismoney.link}}">{%trans "Is Money"%}</a></th>
-        <th class="txtC">{%trans "View"%}</th>
+        <th class="collapsing" data-sort="{{sortLink.type.order}}"><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
+        <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
+        <th class="collapsing s0" data-sort="{{sortLink.analyze.order}}"><a href="{{sortLink.analyze.link}}">{%trans "Analyze"%}</a></th>
+        <th class="collapsing s0" data-sort="{{sortLink.ismoney.order}}"><a href="{{sortLink.ismoney.link}}">{%trans "Is Money"%}</a></th>
       </tr>
     </thead>
 
@@ -74,13 +66,8 @@
         <td class=""><a href="{{url.here}}/editgroup?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
         <td class=""><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type | capitalize %}{%trans mytype%}</a></td>
         <td class=""><a href="{{url.this}}?status={{value.status}}">{%set mystatus = value.status | capitalize %}{%trans mystatus%}</a></td>
-        <td class="">{%if value.analyze%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
-        <td class="">{%if value.ismoney%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
-
-        <td class="txtC collapsing">
-          <a href="{{url.here}}/filtergroup?id={{value.id}}" class="badge">{%trans "Numbers"%}</a>
-          <a href="{{url.here}}/answergroup?id={{value.id}}" class="badge primary">{%trans "Answers"%}</a>
-        </td>
+        <td class="s0">{%if value.analyze%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
+        <td class="s0">{%if value.ismoney%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
 
       </tr>
       {%endfor%}
