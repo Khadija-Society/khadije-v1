@@ -4,6 +4,17 @@
 </li>
 {%endif%}
 
+
+{%if perm('smsAppSetting') %}
+  <li><a href="{{url.kingdom}}/smsapp"><i class='sf-mail'></i> <span>{%trans "Manage SMS"%}</span></a></li>
+{%endif%}
+
+
+{%if perm('cpFestivalView') %}
+        <li><a href="{{url.kingdom}}/m/festival" {%if url.content == "m" and url.module == "festival"%} class="activeContent"{%endif%}><i class='sf-magic'></i> <span>{% trans "Manage Festival"%}</span></a></li>
+{%endif%}
+
+
 {%if login%}
-        <li><a href="{{url.kingdom}}/a" {%if url.content == "a"%} class="activeContent"{%endif%}><i class='sf-gauge'></i> <span>{% trans "User panel"%}</span></a></li>
+        <li><a href="{{url.kingdom}}/a" {%if url.content == "a"%} class="activeContent"{%endif%}><i class='sf-gauge'></i> <span>{% trans "Users Panel"%}</span></a></li>
 {%endif%}

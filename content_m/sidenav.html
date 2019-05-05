@@ -1,8 +1,4 @@
-  <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Control Panel" %}</span></a></li>
-
-{%if perm('smsAppSetting') %}
-  <li><a href="{{url.kingdom}}/smsapp"><i class='sf-mail'></i> <span>{%trans "Manage sms"%}</span></a></li>
-{%endif%}
+  <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Manage Panel" %}</span></a></li>
 
 
 {%if perm('cpDelneveshteView') %}
@@ -70,26 +66,6 @@
   </li>
 {%endif%}
 
-
-{%if perm('cpPostsView') or perm('cpCategoryView') or perm('cpPageView') or perm('cpTagView')  %}
-    <li>
-        <a href="{{url.kingdom}}/cms/cms"><i class='sf-diamond'></i> <span>{% trans "CMS" %}</span></a>
-        <ul>
-            {%if perm('cpPostsView') %}
-              <li><a href="{{url.kingdom}}/cms/posts">{% trans "News" %} <i class='floatRa mRa10 fc-mute sf-pinboard'></i></a></li>
-            {%endif%}
-            {%if perm('cpCategoryView') %}
-              <li><a href="{{url.kingdom}}/cms/terms?type=cat">{% trans "Categries" %} <i class='floatRa mRa10 fc-mute sf-grid'></i></a></li>
-            {%endif%}
-            {%if perm('cpTagView') %}
-              <li><a href="{{url.kingdom}}/cms/terms?type=tag">{% trans "Tags" %} <i class='floatRa mRa10 fc-mute sf-tags'></i></a></li>
-            {%endif%}
-            {%if perm('cpPageView') %}
-              <li><a href="{{url.kingdom}}/cms/posts?type=page">{% trans "Pages" %} <i class='floatRa mRa10 fc-mute sf-files-o'></i></a></li>
-            {%endif%}
-        </ul>
-    </li>
-{%endif%}
 
 
 
