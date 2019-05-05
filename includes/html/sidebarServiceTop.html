@@ -3,3 +3,7 @@
 	<a href="{{url.kingdom}}/m" {%if url.content == "m"%} class="activeContent"{%endif%}><i class='sf-gauge'></i> <span>{% trans "Manage"%}</span></a>
 </li>
 {%endif%}
+
+{%if login%}
+        <li><a href="{{url.kingdom}}/a" {%if url.content == "a"%} class="activeContent"{%endif%}><i class='sf-gauge'></i> <span>{% trans "User panel"%}</span></a></li>
+{%endif%}

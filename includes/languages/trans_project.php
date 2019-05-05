@@ -68,7 +68,7 @@ class twigTransTerms
 	echo T_("recommend_id");                                                          // Line 124
 
 	//-----------------------------------------------------content_smsapp/sidenav.html
-	echo T_("Control Panel");                                                         // Line 1
+	echo T_("Manage sms");                                                            // Line 4
 	echo T_("Manage");                                                                // Line 3
 
 	//---------------------------------------------content_smsapp/listsms/display.html
@@ -437,6 +437,7 @@ class twigTransTerms
 	//-----------------------------------------------------content/health/display.html
 
 	//--------------------------------------------includes/html/sidebarServiceTop.html
+	echo T_("User panel");                                                            // Line 8
 
 	//------------------------------------------content_m/userkarbala/report/chart2.js
 	echo T_("Daily report");                                                          // Line 20
@@ -912,7 +913,7 @@ class twigTransTerms
 	echo T_("View full Profile");                                                     // Line 66
 
 	//----------------------------------------------------------content_m/sidenav.html
-	echo T_("Manage sms");                                                            // Line 4
+	echo T_("Control Panel");                                                         // Line 1
 	echo T_("Financial");                                                             // Line 14
 	echo T_("Book transaction list");                                                 // Line 30
 	echo T_("Servants");                                                              // Line 34

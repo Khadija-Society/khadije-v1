@@ -167,32 +167,31 @@ class twigTransTerms
 	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 107
 
 	//------------------------------------------addons/includes/html/display-dash.html
-	echo T_("Edit your profile");                                                     // Line 61
-	echo T_("Please login to save anything");                                         // Line 63
-	echo T_("Avatar of you");                                                         // Line 164
-	echo T_("Default Avatar");                                                        // Line 168
-	echo T_("Hello");                                                                 // Line 74
-	echo T_("Hello ");                                                                // Line 76
-	echo T_("dear GUEST!");                                                           // Line 76
-	echo T_("Dashboard");                                                             // Line 40
-	echo T_("Quick Access");                                                          // Line 44
-	echo T_("Panel");                                                                 // Line 55
-	echo T_("Shortkey");                                                              // Line 74
-	echo T_("CMS");                                                                   // Line 11
-	echo T_("CRM Panel");                                                             // Line 63
-	echo T_("Supervisor Panel");                                                      // Line 67
-	echo T_("My Account");                                                            // Line 71
-	echo T_("Help Center");                                                           // Line 74
-	echo T_("Click to toggle sidebar status");                                        // Line 124
-	echo T_("View website");                                                          // Line 142
-	echo T_("Your notifications");                                                    // Line 153
-	echo T_("Click to check your profile");                                           // Line 155
-	echo T_("Account");                                                               // Line 158
+	echo T_("Edit your profile");                                                     // Line 67
+	echo T_("Please login to save anything");                                         // Line 69
+	echo T_("Avatar of you");                                                         // Line 166
+	echo T_("Default Avatar");                                                        // Line 170
+	echo T_("Hello");                                                                 // Line 80
+	echo T_("Hello ");                                                                // Line 82
+	echo T_("dear GUEST!");                                                           // Line 82
+	echo T_("Dashboard");                                                             // Line 46
+	echo T_("Quick Access");                                                          // Line 50
+	echo T_("Shortkey");                                                              // Line 76
+	echo T_("CMS");                                                                   // Line 61
+	echo T_("CRM Panel");                                                             // Line 65
+	echo T_("Supervisor Panel");                                                      // Line 69
+	echo T_("My Account");                                                            // Line 73
+	echo T_("Help Center");                                                           // Line 76
+	echo T_("Click to toggle sidebar status");                                        // Line 126
+	echo T_("View website");                                                          // Line 144
+	echo T_("Your notifications");                                                    // Line 155
+	echo T_("Click to check your profile");                                           // Line 157
+	echo T_("Account");                                                               // Line 160
 	echo T_("Logout");                                                                // Line 19
-	echo T_("You really want to go?");                                                // Line 160
-	echo T_("We are waiting for you to come back:)");                                 // Line 161
-	echo T_("Enter to have better experience");                                       // Line 172
-	echo T_("View your current location and navigate to parent of it");               // Line 183
+	echo T_("You really want to go?");                                                // Line 162
+	echo T_("We are waiting for you to come back:)");                                 // Line 163
+	echo T_("Enter to have better experience");                                       // Line 174
+	echo T_("View your current location and navigate to parent of it");               // Line 185
 
 	//----------------------------------------------addons/includes/html/inc_spay.html
 	echo T_("Please choose bank");                                                    // Line 4
@@ -308,14 +307,19 @@ class twigTransTerms
 	echo T_("Count");                                                                 // Line 62
 
 	//--------------------------------------------------addons/content_cms/layout.html
+	echo T_("Content");                                                               // Line 10
 	echo T_("News");                                                                  // Line 88
-	echo T_("Categries");                                                             // Line 18
+	echo T_("Categories");                                                            // Line 62
 	echo T_("Tags");                                                                  // Line 69
 	echo T_("Pages");                                                                 // Line 118
+	echo T_("Comments");                                                              // Line 33
+	echo T_("Support");                                                               // Line 38
 	echo T_("Help center");                                                           // Line 43
 	echo T_("Help tags");                                                             // Line 173
 	echo T_("Support tags");                                                          // Line 183
-	echo T_("Comments");                                                              // Line 33
+	echo T_("Files");                                                                 // Line 59
+	echo T_("Library");                                                               // Line 63
+	echo T_("Add new file");                                                          // Line 66
 
 	//--------------------------------------------addons/content_cms/posts/layout.html
 	echo T_("Enter title here");                                                      // Line 4
@@ -373,7 +377,6 @@ class twigTransTerms
 	//--------------------------------------addons/content_cms/posts/home/display.html
 	echo T_("Search");                                                                // Line 58
 	echo T_("Title");                                                                 // Line 12
-	echo T_("Categories");                                                            // Line 62
 	echo T_("Clear filters");                                                         // Line 106
 	echo T_("Result not found!");                                                     // Line 105
 	echo T_("Search with new keywords.");                                             // Line 105
@@ -733,7 +736,6 @@ class twigTransTerms
 	echo T_("Open new ticket!");                                                      // Line 31
 
 	//--------------------------------addons/content_support/message/edit/display.html
-	echo T_("Content");                                                               // Line 10
 
 	//-----------------------------------------addons/content_support/tag/display.html
 
