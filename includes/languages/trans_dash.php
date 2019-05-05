@@ -4,260 +4,6 @@ class twigTransTerms
  private function transtext()
  {
 
-	//---------------------------------------------addons/content_cp/dayevent/chart.js
-	echo T_("Day Event");                                                             // Line 27
-	echo T_("Count");                                                                 // Line 62
-
-	//---------------------------------------------------addons/content_cp/layout.html
-	echo T_("Control Panel");                                                         // Line 51
-	echo T_("CMS");                                                                   // Line 11
-	echo T_("News");                                                                  // Line 88
-	echo T_("Categries");                                                             // Line 18
-	echo T_("Tags");                                                                  // Line 69
-	echo T_("Pages");                                                                 // Line 118
-	echo T_("Help center");                                                           // Line 43
-	echo T_("Help tags");                                                             // Line 173
-	echo T_("Support tags");                                                          // Line 183
-	echo T_("Comments");                                                              // Line 33
-
-	//---------------------------------------------addons/content_cp/posts/layout.html
-	echo T_("Enter title here");                                                      // Line 4
-	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
-	echo T_("Enter subtitle here");                                                   // Line 12
-	echo T_("Subtitle show under title and used on press websites");                  // Line 12
-	echo T_("Excerpt used for social media and search engines");                      // Line 19
-	echo T_("If leave it empty we are generate it automatically");                    // Line 19
-	echo T_("Url of this post.");                                                     // Line 27
-	echo T_("You can change by set slug and category or parent for this post");       // Line 27
-	echo T_("Slug");                                                                  // Line 8
-	echo T_("Slug used to create url");                                               // Line 33
-	echo T_("Write post ");                                                           // Line 39
-	echo T_("Allow change default publish date");                                     // Line 44
-	echo T_("Publish date");                                                          // Line 45
-	echo T_("Default is now");                                                        // Line 47
-	echo T_("Publish time");                                                          // Line 55
-	echo T_("Add to gallery");                                                        // Line 61
-	echo T_("To add image gallery drop file here or");                                // Line 11
-	echo T_("Maximum file size");                                                     // Line 17
-	echo T_("Save");                                                                  // Line 13
-	echo T_("Status");                                                                // Line 62
-	echo T_("Publish");                                                               // Line 90
-	echo T_("Draft");                                                                 // Line 74
-	echo T_("Deleted");                                                               // Line 83
-	echo T_("Comment");                                                               // Line 131
-	echo T_("You can publish in another language");                                   // Line 117
-	echo T_("Language");                                                              // Line 118
-	echo T_("Please select one item");                                                // Line 28
-	echo T_("Choose parent for this page to create related url as tree");             // Line 133
-	echo T_("Parent");                                                                // Line 134
-	echo T_("Choose Parent");                                                         // Line 136
-	echo T_("Without Parent");                                                        // Line 137
-	echo T_("Choose category for posts is fix url of post relative and help people find it better.");// Line 153
-	echo T_("Choose category of post");                                               // Line 155
-	echo T_("Add new category");                                                      // Line 165
-	echo T_("Click on special tags to use this depending on your website design");    // Line 183
-	echo T_("Tag");                                                                   // Line 365
-	echo T_("Add tag manually to link articles togethers");                           // Line 195
-	echo T_("Tag keywords...");                                                       // Line 375
-	echo T_("Add tag");                                                               // Line 197
-	echo T_("Featured Image");                                                        // Line 205
-	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 208
-	echo T_("Gallery");                                                               // Line 223
-	echo T_("Click to download");                                                     // Line 66
-	echo T_("Video");                                                                 // Line 236
-	echo T_("MP3");                                                                   // Line 242
-	echo T_("PDF");                                                                   // Line 88
-	echo T_("Without preview");                                                       // Line 246
-	echo T_("Remove");                                                                // Line 43
-
-	//----------------------------------------addons/content_cp/posts/add/display.html
-	echo T_("First save as draft and do all checks, then publish.");                  // Line 26
-	echo T_("Save as draft");                                                         // Line 26
-
-	//---------------------------------------addons/content_cp/posts/home/display.html
-	echo T_("Search");                                                                // Line 58
-	echo T_("Title");                                                                 // Line 12
-	echo T_("Categories");                                                            // Line 62
-	echo T_("Clear filters");                                                         // Line 106
-	echo T_("Result not found!");                                                     // Line 105
-	echo T_("Search with new keywords.");                                             // Line 105
-	echo T_("Hi!");                                                                   // Line 112
-	echo T_("Try to start with add new record!");                                     // Line 131
-	echo T_("All publish posts");                                                     // Line 129
-	echo T_("Published");                                                             // Line 65
-	echo T_("All draft posts");                                                       // Line 138
-	echo T_("All trash posts");                                                       // Line 147
-
-	//---------------------------------------addons/content_cp/posts/edit/display.html
-	echo T_("Icon");                                                                  // Line 45
-	echo T_("Choose icon");                                                           // Line 75
-
-	//-------------------------------------------addons/content_cp/backup/display.html
-	echo T_("Backup Project");                                                        // Line 6
-	echo T_("You can create backup now");                                             // Line 33
-	echo T_("Please wait This operation may take a few minutes");                     // Line 13
-	echo T_("Backup now");                                                            // Line 34
-	echo T_("Sise");                                                                  // Line 36
-	echo T_("Download");                                                              // Line 88
-	echo T_("No backup was found");                                                   // Line 76
-
-	//----------------------------------------------addons/content_cp/cms/display.html
-	echo T_("Attachment");                                                            // Line 27
-	echo T_("Posts");                                                                 // Line 54
-	echo T_("Page");                                                                  // Line 34
-	echo T_("Category");                                                              // Line 23
-
-	//-------------------------------------addons/content_cp/contact/home/display.html
-	echo T_("Author");                                                                // Line 12
-	echo T_("Detail");                                                                // Line 110
-	echo T_("Date");                                                                  // Line 48
-	echo T_("Without name");                                                          // Line 87
-	echo T_("Visitor detail");                                                        // Line 96
-	echo T_("Approve");                                                               // Line 43
-	echo T_("Edit");                                                                  // Line 86
-	echo T_("Unapprove");                                                             // Line 51
-	echo T_("Trash");                                                                 // Line 55
-	echo T_("Spam");                                                                  // Line 68
-	echo T_("Created on");                                                            // Line 34
-	echo T_("No record exist!");                                                      // Line 136
-
-	//-------------------------------------addons/content_cp/contact/edit/display.html
-	echo T_("Mobile");                                                                // Line 75
-	echo T_("Email");                                                                 // Line 285
-	echo T_("Website");                                                               // Line 106
-	echo T_("Submitted on");                                                          // Line 33
-	echo T_("Updated on");                                                            // Line 34
-	echo T_("Current status");                                                        // Line 36
-	echo T_("Awaiting");                                                              // Line 262
-	echo T_("Update");                                                                // Line 83
-
-	//---------------------------------------------addons/content_cp/home/wordcloud.js
-
-	//---------------------------------------------addons/content_cp/home/display.html
-	echo T_("Latest News");                                                           // Line 32
-	echo T_("Without title");                                                         // Line 65
-	echo T_("Latest Help center");                                                    // Line 46
-	echo T_("Latest tag");                                                            // Line 62
-	echo T_("Help Center Article");                                                   // Line 162
-	echo T_("Tickets");                                                               // Line 42
-	echo T_("Visitor");                                                               // Line 112
-
-	//-------------------------------------------------addons/content_cp/home/chart.js
-	echo T_("Word cloud");                                                            // Line 63
-	echo T_("Post count");                                                            // Line 84
-	echo T_("Post");                                                                  // Line 93
-	echo T_("post");                                                                  // Line 107
-
-	//------------------------------------------addons/content_cp/sitemap/display.html
-	echo T_("Create sitemap automatically by click on this page");                    // Line 6
-	echo T_("Base Sitemap");                                                          // Line 7
-	echo T_("Sitemap Detail");                                                        // Line 8
-	echo T_("Create it Again");                                                       // Line 9
-	echo T_("Create Sitemap Result");                                                 // Line 16
-
-	//--------------------------------------------addons/content_cp/terms/display.html
-	echo T_("Tag color");                                                             // Line 73
-	echo T_("Select tag color");                                                      // Line 77
-	echo T_("Primary");                                                               // Line 80
-	echo T_("Secondary");                                                             // Line 81
-	echo T_("Success");                                                               // Line 82
-	echo T_("Danger");                                                                // Line 83
-	echo T_("Warning");                                                               // Line 84
-	echo T_("Info");                                                                  // Line 7
-	echo T_("Light");                                                                 // Line 86
-	echo T_("Dark");                                                                  // Line 87
-	echo T_("Pain");                                                                  // Line 88
-	echo T_("Type");                                                                  // Line 164
-	echo T_("Description");                                                           // Line 51
-	echo T_("Used");                                                                  // Line 119
-	echo T_("Add");                                                                   // Line 36
-	echo T_("Require");                                                               // Line 67
-	echo T_("Title is used to show on website");                                      // Line 180
-	echo T_("Used for url");                                                          // Line 186
-	echo T_("Used in url for categorize addresses");                                  // Line 188
-	echo T_("Parent Category");                                                       // Line 196
-	echo T_("Please select one itme");                                                // Line 158
-	echo T_("Enable");                                                                // Line 234
-	echo T_("Disable");                                                               // Line 235
-	echo T_("Expired");                                                               // Line 224
-	echo T_("Filtered");                                                              // Line 226
-	echo T_("Blocked");                                                               // Line 227
-	echo T_("Violence");                                                              // Line 229
-	echo T_("Pornography");                                                           // Line 230
-	echo T_("Other");                                                                 // Line 231
-	echo T_("Excerpt");                                                               // Line 247
-	echo T_("Try to start with add new records!");                                    // Line 271
-	echo T_("Category icon");                                                         // Line 294
-	echo T_("Select category icon");                                                  // Line 298
-
-	//--------------------------------------addons/content_cp/visitor/log/display.html
-	echo T_("User");                                                                  // Line 59
-	echo T_("Agent");                                                                 // Line 60
-	echo T_("URL");                                                                   // Line 62
-	echo T_("User id");                                                               // Line 76
-	echo T_("User logs");                                                             // Line 82
-	echo T_("User Profile");                                                          // Line 83
-	echo T_("Search by user session id");                                             // Line 36
-	echo T_("Guest");                                                                 // Line 41
-	echo T_("Avg time");                                                              // Line 104
-	echo T_("Status code");                                                           // Line 116
-	echo T_("Method");                                                                // Line 114
-	echo T_("Country");                                                               // Line 125
-	echo T_("IP");                                                                    // Line 22
-	echo T_("Domain");                                                                // Line 125
-	echo T_("Referer url");                                                           // Line 134
-	echo T_("All publish visitor");                                                   // Line 176
-	echo T_("All draft visitor");                                                     // Line 185
-	echo T_("All trash visitor");                                                     // Line 194
-
-	//------------------------------------addons/content_cp/visitor/chart/display.html
-	echo T_("Last 24 hours");                                                         // Line 46
-	echo T_("Last week");                                                             // Line 47
-	echo T_("Last month");                                                            // Line 131
-	echo T_("Group by Browser");                                                      // Line 15
-	echo T_("Group by os");                                                           // Line 16
-	echo T_("Group by device");                                                       // Line 17
-	echo T_("Group by country");                                                      // Line 18
-
-	//----------------------------------------addons/content_cp/visitor/chart/chart.js
-
-	//-------------------------------------addons/content_cp/visitor/home/display.html
-	echo T_("Max trafic time");                                                       // Line 19
-	echo T_("Visited pages log");                                                     // Line 43
-	echo T_("Extra chart");                                                           // Line 44
-	echo T_("Visit");                                                                 // Line 56
-	echo T_("Pageviews");                                                             // Line 66
-	echo T_("Pages/Visit");                                                           // Line 76
-	echo T_("Avg. Time on Site");                                                     // Line 86
-	echo T_("Bounce Rate");                                                           // Line 97
-	echo T_("New Visits %");                                                          // Line 107
-	echo T_("Alexa rank");                                                            // Line 116
-	echo T_("Top Pages");                                                             // Line 131
-	echo T_("Top Referrers");                                                         // Line 143
-
-	//-----------------------------------------addons/content_cp/visitor/home/chart.js
-	echo T_("Website analytics");                                                     // Line 20
-	echo T_("Person");                                                                // Line 252
-	echo T_("Page view");                                                             // Line 103
-	echo T_("page");                                                                  // Line 107
-	echo T_("person");                                                                // Line 117
-
-	//----------------------------------------addons/content_cp/attachment/layout.html
-
-	//-----------------------------------addons/content_cp/attachment/add/display.html
-	echo T_("Add file");                                                              // Line 10
-
-	//----------------------------------addons/content_cp/attachment/home/display.html
-	echo T_("File Name");                                                             // Line 59
-	echo T_("Size");                                                                  // Line 61
-	echo T_("View");                                                                  // Line 82
-	echo T_("Delete");                                                                // Line 253
-	echo T_("Block");                                                                 // Line 86
-
-	//----------------------------------------addons/content_cp/mycontact/display.html
-	echo T_("Contact");                                                               // Line 14
-	echo T_("Admin Contact");                                                         // Line 26
-
 	//---------------------------------------addons/content_api/v6/doc/60-android.html
 	echo T_("Get android detail");                                                    // Line 71
 	echo T_("Get details like pages, language list, translations, and more.");        // Line 10
@@ -270,6 +16,7 @@ class twigTransTerms
 	echo T_("Any tool that is fluent in HTTP can communicate with the API simply by requesting the correct URI.");// Line 6
 	echo T_("Requests should be made using the HTTPS protocol so that traffic is encrypted.");// Line 6
 	echo T_("The interface responds to different methods depending on the action required.");// Line 6
+	echo T_("Method");                                                                // Line 114
 	echo T_("Usage");                                                                 // Line 15
 	echo T_("For simple retrieval of information about your something you should use the GET method.");// Line 20
 	echo T_("The information you request will be returned to you as a JSON object."); // Line 20
@@ -301,6 +48,7 @@ class twigTransTerms
 	echo T_("on header");                                                             // Line 15
 	echo T_("Name");                                                                  // Line 55
 	echo T_("type");                                                                  // Line 16
+	echo T_("Description");                                                           // Line 51
 	echo T_("Constraints");                                                           // Line 51
 	echo T_("Your temporary token");                                                  // Line 31
 	echo T_("Required");                                                              // Line 107
@@ -395,6 +143,7 @@ class twigTransTerms
 	echo T_("HTTP response codes");                                                   // Line 52
 	echo T_("The status of a response can be determined from the HTTP status code."); // Line 53
 	echo T_("Code");                                                                  // Line 79
+	echo T_("Status");                                                                // Line 62
 	echo T_("request successful");                                                    // Line 73
 	echo T_("request was invalid");                                                   // Line 79
 	echo T_("user does not have permission");                                         // Line 85
@@ -413,34 +162,37 @@ class twigTransTerms
 
 	//-------------------------------------------addons/includes/html/display-mvc.html
 	echo T_("You are supervisor!");                                                   // Line 87
+	echo T_("Control Panel");                                                         // Line 6
 	echo T_("JavaScript is required to use our service.");                            // Line 106
 	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 107
 
 	//------------------------------------------addons/includes/html/display-dash.html
 	echo T_("Edit your profile");                                                     // Line 61
 	echo T_("Please login to save anything");                                         // Line 63
-	echo T_("Avatar of you");                                                         // Line 166
-	echo T_("Default Avatar");                                                        // Line 170
+	echo T_("Avatar of you");                                                         // Line 164
+	echo T_("Default Avatar");                                                        // Line 168
 	echo T_("Hello");                                                                 // Line 74
 	echo T_("Hello ");                                                                // Line 76
 	echo T_("dear GUEST!");                                                           // Line 76
-	echo T_("Dashboard");                                                             // Line 83
-	echo T_("Quick Access");                                                          // Line 91
-	echo T_("Panel");                                                                 // Line 47
-	echo T_("CRM Panel");                                                             // Line 55
-	echo T_("Supervisor Panel");                                                      // Line 59
-	echo T_("My Account");                                                            // Line 114
-	echo T_("Help Center");                                                           // Line 66
-	echo T_("Click to toggle sidebar status");                                        // Line 126
-	echo T_("View website");                                                          // Line 144
-	echo T_("Your notifications");                                                    // Line 155
-	echo T_("Click to check your profile");                                           // Line 157
-	echo T_("Account");                                                               // Line 160
+	echo T_("Dashboard");                                                             // Line 40
+	echo T_("Quick Access");                                                          // Line 44
+	echo T_("Panel");                                                                 // Line 55
+	echo T_("Shortkey");                                                              // Line 74
+	echo T_("CMS");                                                                   // Line 11
+	echo T_("CRM Panel");                                                             // Line 63
+	echo T_("Supervisor Panel");                                                      // Line 67
+	echo T_("My Account");                                                            // Line 71
+	echo T_("Help Center");                                                           // Line 74
+	echo T_("Click to toggle sidebar status");                                        // Line 124
+	echo T_("View website");                                                          // Line 142
+	echo T_("Your notifications");                                                    // Line 153
+	echo T_("Click to check your profile");                                           // Line 155
+	echo T_("Account");                                                               // Line 158
 	echo T_("Logout");                                                                // Line 19
-	echo T_("You really want to go?");                                                // Line 162
-	echo T_("We are waiting for you to come back:)");                                 // Line 163
-	echo T_("Enter to have better experience");                                       // Line 174
-	echo T_("View your current location and navigate to parent of it");               // Line 185
+	echo T_("You really want to go?");                                                // Line 160
+	echo T_("We are waiting for you to come back:)");                                 // Line 161
+	echo T_("Enter to have better experience");                                       // Line 172
+	echo T_("View your current location and navigate to parent of it");               // Line 183
 
 	//----------------------------------------------addons/includes/html/inc_spay.html
 	echo T_("Please choose bank");                                                    // Line 4
@@ -458,6 +210,7 @@ class twigTransTerms
 	echo T_("Pasargad");                                                              // Line 75
 	echo T_("Saman");                                                                 // Line 81
 	echo T_("Sina");                                                                  // Line 87
+	echo T_("Post");                                                                  // Line 95
 	echo T_("Ghavamin");                                                              // Line 99
 	echo T_("Taavon");                                                                // Line 105
 	echo T_("Shahr");                                                                 // Line 111
@@ -478,6 +231,7 @@ class twigTransTerms
 	echo T_("Payir");                                                                 // Line 201
 
 	//----------------------------------addons/includes/html/display-enter-blocks.html
+	echo T_("Mobile");                                                                // Line 75
 	echo T_("Please enter valid mobile number");                                      // Line 16
 	echo T_("Enter correct iranian mobile starting with zero like 0935");             // Line 16
 	echo T_("Enter your mobile number");                                              // Line 16
@@ -497,6 +251,7 @@ class twigTransTerms
 	echo T_("Send code to this number!");                                             // Line 86
 	echo T_("We will call you with this name");                                       // Line 95
 	echo T_("Full name");                                                             // Line 102
+	echo T_("Email");                                                                 // Line 285
 	echo T_("email");                                                                 // Line 109
 	echo T_("Enter a valid eamil!");                                                  // Line 365
 	echo T_("username");                                                              // Line 119
@@ -531,7 +286,6 @@ class twigTransTerms
 	echo T_("Enter a valid username!");                                               // Line 373
 
 	//--------------------------------------addons/includes/html/display-dash-xhr.html
-	echo T_("Your Account");                                                          // Line 63
 
 	//----------------------------------------addons/includes/html/inc_pagination.html
 	echo T_("Total");                                                                 // Line 22
@@ -545,7 +299,253 @@ class twigTransTerms
 	echo T_("Cancel");                                                                // Line 9
 	echo T_("Back");                                                                  // Line 6
 	echo T_("Track id");                                                              // Line 139
+	echo T_("Date");                                                                  // Line 48
 	echo T_("Payment");                                                               // Line 147
+	echo T_("Detail");                                                                // Line 110
+
+	//--------------------------------------------addons/content_cms/dayevent/chart.js
+	echo T_("Day Event");                                                             // Line 27
+	echo T_("Count");                                                                 // Line 62
+
+	//--------------------------------------------------addons/content_cms/layout.html
+	echo T_("News");                                                                  // Line 88
+	echo T_("Categries");                                                             // Line 18
+	echo T_("Tags");                                                                  // Line 69
+	echo T_("Pages");                                                                 // Line 118
+	echo T_("Help center");                                                           // Line 43
+	echo T_("Help tags");                                                             // Line 173
+	echo T_("Support tags");                                                          // Line 183
+	echo T_("Comments");                                                              // Line 33
+
+	//--------------------------------------------addons/content_cms/posts/layout.html
+	echo T_("Enter title here");                                                      // Line 4
+	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
+	echo T_("Enter subtitle here");                                                   // Line 12
+	echo T_("Subtitle show under title and used on press websites");                  // Line 12
+	echo T_("Excerpt used for social media and search engines");                      // Line 19
+	echo T_("If leave it empty we are generate it automatically");                    // Line 19
+	echo T_("Url of this post.");                                                     // Line 27
+	echo T_("You can change by set slug and category or parent for this post");       // Line 27
+	echo T_("Slug");                                                                  // Line 8
+	echo T_("Slug used to create url");                                               // Line 33
+	echo T_("Write post ");                                                           // Line 39
+	echo T_("Allow change default publish date");                                     // Line 44
+	echo T_("Publish date");                                                          // Line 45
+	echo T_("Default is now");                                                        // Line 47
+	echo T_("Publish time");                                                          // Line 55
+	echo T_("Add to gallery");                                                        // Line 61
+	echo T_("To add image gallery drop file here or");                                // Line 11
+	echo T_("Maximum file size");                                                     // Line 17
+	echo T_("Save");                                                                  // Line 13
+	echo T_("Publish");                                                               // Line 90
+	echo T_("Draft");                                                                 // Line 74
+	echo T_("Deleted");                                                               // Line 83
+	echo T_("Comment");                                                               // Line 131
+	echo T_("You can publish in another language");                                   // Line 117
+	echo T_("Language");                                                              // Line 118
+	echo T_("Please select one item");                                                // Line 28
+	echo T_("Choose parent for this page to create related url as tree");             // Line 133
+	echo T_("Parent");                                                                // Line 134
+	echo T_("Choose Parent");                                                         // Line 136
+	echo T_("Without Parent");                                                        // Line 137
+	echo T_("Choose category for posts is fix url of post relative and help people find it better.");// Line 153
+	echo T_("Choose category of post");                                               // Line 155
+	echo T_("Add new category");                                                      // Line 165
+	echo T_("Click on special tags to use this depending on your website design");    // Line 183
+	echo T_("Tag");                                                                   // Line 365
+	echo T_("Add tag manually to link articles togethers");                           // Line 195
+	echo T_("Tag keywords...");                                                       // Line 375
+	echo T_("Add tag");                                                               // Line 197
+	echo T_("Featured Image");                                                        // Line 205
+	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 208
+	echo T_("Gallery");                                                               // Line 223
+	echo T_("Click to download");                                                     // Line 66
+	echo T_("Video");                                                                 // Line 236
+	echo T_("MP3");                                                                   // Line 242
+	echo T_("PDF");                                                                   // Line 88
+	echo T_("Without preview");                                                       // Line 246
+	echo T_("Remove");                                                                // Line 43
+
+	//---------------------------------------addons/content_cms/posts/add/display.html
+	echo T_("First save as draft and do all checks, then publish.");                  // Line 26
+	echo T_("Save as draft");                                                         // Line 26
+
+	//--------------------------------------addons/content_cms/posts/home/display.html
+	echo T_("Search");                                                                // Line 58
+	echo T_("Title");                                                                 // Line 12
+	echo T_("Categories");                                                            // Line 62
+	echo T_("Clear filters");                                                         // Line 106
+	echo T_("Result not found!");                                                     // Line 105
+	echo T_("Search with new keywords.");                                             // Line 105
+	echo T_("Hi!");                                                                   // Line 112
+	echo T_("Try to start with add new record!");                                     // Line 131
+	echo T_("All publish posts");                                                     // Line 129
+	echo T_("Published");                                                             // Line 65
+	echo T_("All draft posts");                                                       // Line 138
+	echo T_("All trash posts");                                                       // Line 147
+
+	//--------------------------------------addons/content_cms/posts/edit/display.html
+	echo T_("Icon");                                                                  // Line 45
+	echo T_("Choose icon");                                                           // Line 75
+
+	//------------------------------------------addons/content_cms/backup/display.html
+	echo T_("Backup Project");                                                        // Line 6
+	echo T_("You can create backup now");                                             // Line 33
+	echo T_("Please wait This operation may take a few minutes");                     // Line 13
+	echo T_("Backup now");                                                            // Line 34
+	echo T_("Sise");                                                                  // Line 36
+	echo T_("Download");                                                              // Line 88
+	echo T_("No backup was found");                                                   // Line 76
+
+	//---------------------------------------------addons/content_cms/cms/display.html
+	echo T_("Attachment");                                                            // Line 27
+	echo T_("Posts");                                                                 // Line 54
+	echo T_("Page");                                                                  // Line 34
+	echo T_("Category");                                                              // Line 23
+
+	//------------------------------------addons/content_cms/contact/home/display.html
+	echo T_("Author");                                                                // Line 12
+	echo T_("Without name");                                                          // Line 87
+	echo T_("Visitor detail");                                                        // Line 96
+	echo T_("Approve");                                                               // Line 43
+	echo T_("Edit");                                                                  // Line 86
+	echo T_("Unapprove");                                                             // Line 51
+	echo T_("Trash");                                                                 // Line 55
+	echo T_("Spam");                                                                  // Line 68
+	echo T_("Created on");                                                            // Line 34
+	echo T_("No record exist!");                                                      // Line 136
+
+	//------------------------------------addons/content_cms/contact/edit/display.html
+	echo T_("Website");                                                               // Line 106
+	echo T_("Submitted on");                                                          // Line 33
+	echo T_("Updated on");                                                            // Line 34
+	echo T_("Current status");                                                        // Line 36
+	echo T_("Awaiting");                                                              // Line 262
+	echo T_("Update");                                                                // Line 83
+
+	//--------------------------------------------addons/content_cms/home/wordcloud.js
+
+	//--------------------------------------------addons/content_cms/home/display.html
+	echo T_("Latest News");                                                           // Line 32
+	echo T_("Without title");                                                         // Line 65
+	echo T_("Latest Help center");                                                    // Line 46
+	echo T_("Latest tag");                                                            // Line 62
+	echo T_("Help Center Article");                                                   // Line 162
+	echo T_("Tickets");                                                               // Line 42
+	echo T_("Visitor");                                                               // Line 112
+
+	//------------------------------------------------addons/content_cms/home/chart.js
+	echo T_("Word cloud");                                                            // Line 63
+	echo T_("Post count");                                                            // Line 84
+	echo T_("post");                                                                  // Line 107
+
+	//-----------------------------------------addons/content_cms/sitemap/display.html
+	echo T_("Create sitemap automatically by click on this page");                    // Line 6
+	echo T_("Base Sitemap");                                                          // Line 7
+	echo T_("Sitemap Detail");                                                        // Line 8
+	echo T_("Create it Again");                                                       // Line 9
+	echo T_("Create Sitemap Result");                                                 // Line 16
+
+	//-------------------------------------------addons/content_cms/terms/display.html
+	echo T_("Tag color");                                                             // Line 73
+	echo T_("Select tag color");                                                      // Line 77
+	echo T_("Primary");                                                               // Line 80
+	echo T_("Secondary");                                                             // Line 81
+	echo T_("Success");                                                               // Line 82
+	echo T_("Danger");                                                                // Line 83
+	echo T_("Warning");                                                               // Line 84
+	echo T_("Info");                                                                  // Line 7
+	echo T_("Light");                                                                 // Line 86
+	echo T_("Dark");                                                                  // Line 87
+	echo T_("Pain");                                                                  // Line 88
+	echo T_("Type");                                                                  // Line 164
+	echo T_("Used");                                                                  // Line 119
+	echo T_("Add");                                                                   // Line 36
+	echo T_("Require");                                                               // Line 67
+	echo T_("Title is used to show on website");                                      // Line 180
+	echo T_("Used for url");                                                          // Line 186
+	echo T_("Used in url for categorize addresses");                                  // Line 188
+	echo T_("Parent Category");                                                       // Line 196
+	echo T_("Please select one itme");                                                // Line 158
+	echo T_("Enable");                                                                // Line 234
+	echo T_("Disable");                                                               // Line 235
+	echo T_("Expired");                                                               // Line 224
+	echo T_("Filtered");                                                              // Line 226
+	echo T_("Blocked");                                                               // Line 227
+	echo T_("Violence");                                                              // Line 229
+	echo T_("Pornography");                                                           // Line 230
+	echo T_("Other");                                                                 // Line 231
+	echo T_("Excerpt");                                                               // Line 247
+	echo T_("Try to start with add new records!");                                    // Line 271
+	echo T_("Category icon");                                                         // Line 294
+	echo T_("Select category icon");                                                  // Line 298
+
+	//-------------------------------------addons/content_cms/visitor/log/display.html
+	echo T_("User");                                                                  // Line 59
+	echo T_("Agent");                                                                 // Line 60
+	echo T_("URL");                                                                   // Line 62
+	echo T_("User id");                                                               // Line 76
+	echo T_("User logs");                                                             // Line 82
+	echo T_("User Profile");                                                          // Line 83
+	echo T_("Search by user session id");                                             // Line 36
+	echo T_("Guest");                                                                 // Line 41
+	echo T_("Avg time");                                                              // Line 104
+	echo T_("Status code");                                                           // Line 116
+	echo T_("Country");                                                               // Line 125
+	echo T_("IP");                                                                    // Line 22
+	echo T_("Domain");                                                                // Line 125
+	echo T_("Referer url");                                                           // Line 134
+	echo T_("All publish visitor");                                                   // Line 176
+	echo T_("All draft visitor");                                                     // Line 185
+	echo T_("All trash visitor");                                                     // Line 194
+
+	//-----------------------------------addons/content_cms/visitor/chart/display.html
+	echo T_("Last 24 hours");                                                         // Line 46
+	echo T_("Last week");                                                             // Line 47
+	echo T_("Last month");                                                            // Line 131
+	echo T_("Group by Browser");                                                      // Line 15
+	echo T_("Group by os");                                                           // Line 16
+	echo T_("Group by device");                                                       // Line 17
+	echo T_("Group by country");                                                      // Line 18
+
+	//---------------------------------------addons/content_cms/visitor/chart/chart.js
+
+	//------------------------------------addons/content_cms/visitor/home/display.html
+	echo T_("Max trafic time");                                                       // Line 19
+	echo T_("Visited pages log");                                                     // Line 43
+	echo T_("Extra chart");                                                           // Line 44
+	echo T_("Visit");                                                                 // Line 56
+	echo T_("Pageviews");                                                             // Line 66
+	echo T_("Pages/Visit");                                                           // Line 76
+	echo T_("Avg. Time on Site");                                                     // Line 86
+	echo T_("Bounce Rate");                                                           // Line 97
+	echo T_("New Visits %");                                                          // Line 107
+	echo T_("Alexa rank");                                                            // Line 116
+	echo T_("Top Pages");                                                             // Line 131
+	echo T_("Top Referrers");                                                         // Line 143
+
+	//----------------------------------------addons/content_cms/visitor/home/chart.js
+	echo T_("Website analytics");                                                     // Line 20
+	echo T_("Person");                                                                // Line 252
+	echo T_("Page view");                                                             // Line 103
+	echo T_("page");                                                                  // Line 107
+	echo T_("person");                                                                // Line 117
+
+	//---------------------------------------addons/content_cms/attachment/layout.html
+
+	//----------------------------------addons/content_cms/attachment/add/display.html
+	echo T_("Add file");                                                              // Line 10
+
+	//---------------------------------addons/content_cms/attachment/home/display.html
+	echo T_("File Name");                                                             // Line 59
+	echo T_("Size");                                                                  // Line 61
+	echo T_("View");                                                                  // Line 82
+	echo T_("Delete");                                                                // Line 253
+	echo T_("Block");                                                                 // Line 86
+
+	//---------------------------------------addons/content_cms/mycontact/display.html
+	echo T_("Contact");                                                               // Line 14
+	echo T_("Admin Contact");                                                         // Line 26
 
 	//-----------------------------------------addons/content_enter/block/display.html
 	echo T_("You are blocked becauese of some reason!");                              // Line 7
