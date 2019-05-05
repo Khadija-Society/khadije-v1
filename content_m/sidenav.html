@@ -1,5 +1,9 @@
   <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Control Panel" %}</span></a></li>
 
+{%if perm('smsAppSetting') %}
+  <li><a href="{{url.kingdom}}/smsapp"><i class='sf-mail'></i> <span>{%trans "Manage sms"%}</span></a></li>
+{%endif%}
+
 
 {%if perm('cpDelneveshteView') %}
   <li><a href="{{url.here}}/delneveshte"><i class='sf-heart-o'></i> <span>{%trans "Delneveshteha"%}</span></a></li>
