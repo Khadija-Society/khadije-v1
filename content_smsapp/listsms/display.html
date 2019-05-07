@@ -35,35 +35,66 @@
 
 
 {%block istatusCount%}
-{%if statusCount%}
-  <h4>{%trans "Recerive status"%}</h4>
- <div class="f">
-    {%for key, value in statusCount.receive%}
-      <div class="c s6">
-        <a class="dcard x1" href="{{url.this}}?receivestatus={{value.receivestatus}}">
-         <div class="statistic sm">
-          <div class="value mB10">{{value.count | fitNumber}}</div>
-          <div class="label">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</div>
-         </div>
-        </a>
-      </div>
-    {%endfor%}
+
+<div class="f">
+
+  <div class="c s6">
+    <a class="dcard x1" href="{{url.this}}?receivestatus=awaiting">
+     <div class="statistic sm">
+      <div class="value mB10">{{statusCount.receive.awaiting | fitNumber}}</div>
+      <div class="label">{%trans "Awaiting"%}</div>
+     </div>
+    </a>
   </div>
-  <hr>
-  <h4>{%trans "Send status"%}</h4>
-  <div class="f">
-    {%for key, value in statusCount.send%}
-      <div class="c s6">
-        <a class="dcard x1" href="{{url.this}}?sendstatus={{value.sendstatus}}">
-         <div class="statistic sm">
-          <div class="value mB10">{{value.count | fitNumber}}</div>
-          <div class="label">{%if value.sendstatus%}{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}{%else%}{%endif%}</div>
-         </div>
-        </a>
-      </div>
-    {%endfor%}
+
+  <div class="c s6">
+    <a class="dcard x1" href="{{url.this}}?receivestatus=block">
+     <div class="statistic sm">
+      <div class="value mB10">{{statusCount.receive.block | fitNumber}}</div>
+      <div class="label">{%trans "Block"%}</div>
+     </div>
+    </a>
   </div>
-{%endif%}
+
+  <div class="c s6">
+    <a class="dcard x1" href="{{url.this}}?receivestatus=answerready">
+     <div class="statistic sm">
+      <div class="value mB10">{{statusCount.receive.answerready | fitNumber}}</div>
+      <div class="label">{%trans "Answer ready"%}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
+    <a class="dcard x1" href="{{url.this}}?sendstatus=awaiting">
+     <div class="statistic sm">
+      <div class="value mB10">{{statusCount.send.awaiting | fitNumber}}</div>
+      <div class="label">{%trans "Awaiting to send to device"%}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
+    <a class="dcard x1" href="{{url.this}}?sendstatus=sendtodevice">
+     <div class="statistic sm">
+      <div class="value mB10">{{statusCount.send.sendtodevice | fitNumber}}</div>
+      <div class="label">{%trans "Send to device"%}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
+    <a class="dcard x1" href="{{url.this}}?sendstatus=send">
+     <div class="statistic sm">
+      <div class="value mB10">{{statusCount.send.send | fitNumber}}</div>
+      <div class="label">{%trans "Sent"%}</div>
+     </div>
+    </a>
+  </div>
+
+</div>
+
+
 {%endblock%}
 
 
@@ -83,18 +114,18 @@
 {%block htmlTable%}
 
 
-  <table class="tbl1 v6 cbox">
+  <table class="tbl1 v6">
     <thead class="primary">
       <tr>
-        <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "From number"%}</a></th>
         <th>{%trans "Sms text"%}</th>
+        <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "From number"%}</a></th>
         <!-- <th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th> -->
         <th data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
         <th data-sort="{{sortLink.receivestatus.order}}"><a href="{{sortLink.receivestatus.link}}">{%trans "Reseive status"%}</a></th>
         <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
         <th>{%trans "Answer"%}</th>
         <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
-        <th data-sort="{{sortLink.recommend_id.order}}"><a href="{{sortLink.recommend_id.link}}">{%trans "Recommend"%}</a></th>
+
         <th class="collapsing">{%trans "Action"%}</th>
 
       </tr>
@@ -104,6 +135,13 @@
       {%for key, value in dataTable%}
       <tr class="{%if value.receivestatus == 'awaiting' %} active {%endif%}">
         <td>
+          {% if value.group_type == 'family' %}
+            <small class="fc-mute">{%trans "Private"%}</small>
+          {%else%}
+            {{value.text}}
+          {%endif%}
+        </td>
+        <td class="ltr txtL collapsing">
           <a href="{{url.this}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
           {%if false and value.togateway or value.fromgateway or value.tonumber%}
           <i class="sf-plus " data-kerkere='.myDetail{{value.id}}'></i>
@@ -114,16 +152,14 @@
           </span>
           {%endif%}
         </td>
-        <td>{{value.text}}</td>
-        <!-- <td>{{value.date | dt}}</td> -->
-        <td>{{value.datecreated | dt}}</td>
-        <td>{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</td>
-        <td>{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</td>
-        <td>{{value.answertext}}</td>
-        <td>{{value.group_title}}</td>
-        <td>{{value.recommend_title}}</td>
 
-        <td class="txtC"><a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "View"%}</a></td>
+        <td class="ltr txtL collapsing">{{value.datecreated | dt}}</td>
+        <td class="collapsing"><a href="{{url.this}}?receivestatus={{value.receivestatus}}">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</a></td>
+        <td class="collapsing"><a href="{{url.this}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></td>
+        <td>{{value.answertext}}</td>
+        <td class="collapsing"><a href="{{url.this}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
+
+        <td class="txtC"><a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "Detail"%}</a></td>
 
       </tr>
       {%endfor%}

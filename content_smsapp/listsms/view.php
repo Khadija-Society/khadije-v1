@@ -88,8 +88,8 @@ class view
 
 		\dash\data::groupList($smsgroup);
 
-		$status_count1 = \lib\db\sms::status_count($args, 'receivestatus');
-		$status_count2 = \lib\db\sms::status_count($args, 'sendstatus');
+		$status_count1 = \lib\db\sms::status_count([], 'receivestatus');
+		$status_count2 = \lib\db\sms::status_count([], 'sendstatus');
 
 		\dash\data::statusCount_receive($status_count1);
 		\dash\data::statusCount_send($status_count2);

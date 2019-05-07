@@ -12,7 +12,7 @@ class sms
 
 	private static $public_show_field =
 	"
-		s_sms.*, s_group.title AS `group_title`, recommendGroup.title AS `recommend_title`
+		s_sms.*, s_group.title AS `group_title`,s_group.type AS `group_type`, recommendGroup.title AS `recommend_title`
 	";
 
 
@@ -246,7 +246,7 @@ class sms
 		$query =
 		"
 			SELECT
-				COUNT(*) AS `count`,
+				IFNULL(COUNT(*),0) AS `count`,
 				$_field
 			FROM
 				s_sms
@@ -255,7 +255,7 @@ class sms
 			GROUP BY
 				$_field
 		";
-		$result = \dash\db::get($query);
+		$result = \dash\db::get($query, [$_field, 'count']);
 		return $result;
 	}
 
