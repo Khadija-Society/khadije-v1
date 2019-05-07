@@ -170,7 +170,7 @@ class sms
 		}
 	}
 
-	private static function send_tg_notif($_sms = null)
+	public static function send_tg_notif($_sms = null)
 	{
 
 		if($_sms === null)
