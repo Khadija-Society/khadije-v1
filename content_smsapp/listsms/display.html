@@ -40,9 +40,9 @@
 
   <div class="c s6">
     <a class="dcard x1" href="{{url.this}}?receivestatus=awaiting">
-     <div class="statistic sm">
+     <div class="statistic sm teal">
       <div class="value mB10">{{statusCount.receive.awaiting | fitNumber}}</div>
-      <div class="label">{%trans "Awaiting"%}</div>
+      <div class="label">{%trans "New"%} <small>{%trans "Awaiting"%}</small></div>
      </div>
     </a>
   </div>
@@ -51,7 +51,7 @@
     <a class="dcard x1" href="{{url.this}}?receivestatus=block">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.receive.block | fitNumber}}</div>
-      <div class="label">{%trans "Block"%}</div>
+      <div class="label">{%trans "Needless to answer"%}</div>
      </div>
     </a>
   </div>
@@ -60,7 +60,7 @@
     <a class="dcard x1" href="{{url.this}}?receivestatus=answerready">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.receive.answerready | fitNumber}}</div>
-      <div class="label">{%trans "Answer ready"%}</div>
+      <div class="label">{%trans "Answered"%}</div>
      </div>
     </a>
   </div>
@@ -87,7 +87,7 @@
     <a class="dcard x1" href="{{url.this}}?sendstatus=send">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.send.send | fitNumber}}</div>
-      <div class="label">{%trans "Sent"%}</div>
+      <div class="label">{%trans "Sended"%}</div>
      </div>
     </a>
   </div>
