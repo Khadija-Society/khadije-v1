@@ -28,11 +28,23 @@ class sms
 	{
 		$query =
 		"
-			SELECT *
-			FROM s_sms
-			WHERE s_sms.receivestatus = 'awaiting'
-
+			SELECT
+				s_sms.*,
+				s_group.title AS `group_title`,
+				recommendGroup.title AS `recommend_title`
+			FROM
+				s_sms
+			LEFT JOIN s_group ON s_sms.group_id = s_group.id
+			LEFT JOIN s_group as `recommendGroup` ON s_sms.recommend_id = recommendGroup.id
+			WHERE
+				s_sms.receivestatus = 'awaiting'
+			ORDER BY
+				s_sms.id ASC
+			LIMIT 1
 		";
+
+		$result = \dash\db::get($query, null, true);
+		return $result;
 
 	}
 
@@ -166,13 +178,13 @@ class sms
 		"
 			SELECT
 				COUNT(*) AS `count`,
-				reseivestatus
+				receivestatus
 			FROM
 				s_sms
 			$master_join
 			$where
 			GROUP BY
-				reseivestatus
+				receivestatus
 		";
 		$result = \dash\db::get($query);
 		return $result;

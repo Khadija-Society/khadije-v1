@@ -42,7 +42,7 @@ CREATE TABLE `s_sms` (
 `datecreated` timestamp DEFAULT CURRENT_TIMESTAMP,
 `datemodified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 `uniquecode` varchar(100) NULL DEFAULT NULL,
-`reseivestatus` enum('block', 'awaiting', 'analyze', 'answerready') NULL DEFAULT NULL,
+`receivestatus` enum('block', 'awaiting', 'analyze', 'answerready') NULL DEFAULT NULL,
 `sendstatus` enum('awaiting', 'sendtodevice', 'send', 'deliver') NULL DEFAULT NULL,
 `amount` int(10) UNSIGNED NULL DEFAULT NULL,
 `answertext`       text CHARACTER SET utf8mb4,
@@ -53,3 +53,5 @@ CONSTRAINT `s_sms_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON 
 CONSTRAINT `s_sms_smsgroup_id` FOREIGN KEY (`group_id`) REFERENCES `s_group` (`id`) ON UPDATE CASCADE,
 CONSTRAINT `s_sms_smsrecommend_id` FOREIGN KEY (`recommend_id`) REFERENCES `s_group` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+

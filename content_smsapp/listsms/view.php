@@ -21,7 +21,7 @@ class view
 			'order' => \dash\request::get('order'),
 			'sort'  => \dash\request::get('sort'),
 			's_group.type' => ['!=', "'family'"],
-			// 's_sms.reseivestatus' => ['!=', "'block'"],
+			// 's_sms.receivestatus' => ['!=', "'block'"],
 
 		];
 
@@ -37,10 +37,10 @@ class view
 			$args['order'] = 'DESC';
 		}
 
-		if(\dash\request::get('reseivestatus'))
+		if(\dash\request::get('receivestatus'))
 		{
-			$args['reseivestatus']     = \dash\request::get('reseivestatus');
-			$filterArray['reseivestatus'] = \dash\request::get('reseivestatus');
+			$args['receivestatus']     = \dash\request::get('receivestatus');
+			$filterArray['receivestatus'] = \dash\request::get('receivestatus');
 		}
 
 		if(\dash\request::get('fromnumber'))

@@ -55,7 +55,7 @@ class newsms
 		$insert['date']          = date("Y-m-d H:i:s", strtotime($date));
 		$insert['text']          = $text;
 		$insert['uniquecode']    = null;
-		$insert['reseivestatus'] = 'awaiting';
+		$insert['receivestatus'] = 'awaiting';
 		$insert['sendstatus']    = null;
 		$insert['amount']        = null;
 		$insert['answertext']    = null;
@@ -156,7 +156,7 @@ class newsms
 			{
 				if(array_key_exists('analyze', $get_group) && !$get_group['analyze'])
 				{
-					$insert['reseivestatus']  = 'block';
+					$insert['receivestatus']  = 'block';
 				}
 			}
 		}

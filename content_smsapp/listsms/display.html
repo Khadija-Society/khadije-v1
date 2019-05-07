@@ -39,10 +39,10 @@
  <div class="f">
     {%for key, value in statusCount%}
       <div class="c s6">
-        <a class="dcard x1" href="{{url.this}}?reseivestatus={{value.reseivestatus}}">
+        <a class="dcard x1" href="{{url.this}}?receivestatus={{value.receivestatus}}">
          <div class="statistic sm">
           <div class="value mB10">{{value.count | fitNumber}}</div>
-          <div class="label">{%set myreseivestatus = value.reseivestatus%}{%trans myreseivestatus%}</div>
+          <div class="label">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</div>
          </div>
         </a>
       </div>
@@ -75,7 +75,7 @@
         <th>{%trans "Sms text"%}</th>
         <!-- <th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th> -->
         <th data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
-        <th data-sort="{{sortLink.reseivestatus.order}}"><a href="{{sortLink.reseivestatus.link}}">{%trans "Reseive status"%}</a></th>
+        <th data-sort="{{sortLink.receivestatus.order}}"><a href="{{sortLink.receivestatus.link}}">{%trans "Reseive status"%}</a></th>
         <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
         <th>{%trans "Answer"%}</th>
         <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
@@ -87,7 +87,7 @@
 
     <tbody>
       {%for key, value in dataTable%}
-      <tr class="{%if value.reseivestatus == 'awaiting' %} active {%endif%}">
+      <tr class="{%if value.receivestatus == 'awaiting' %} active {%endif%}">
         <td>
           <a href="{{url.this}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
           {%if false and value.togateway or value.fromgateway or value.tonumber%}
@@ -102,7 +102,7 @@
         <td>{{value.text}}</td>
         <!-- <td>{{value.date | dt}}</td> -->
         <td>{{value.datecreated | dt}}</td>
-        <td>{%set myreseivestatus = value.reseivestatus%}{%trans myreseivestatus%}</td>
+        <td>{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</td>
         <td>{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</td>
         <td>{{value.answertext}}</td>
         <td>{{value.group_title}}</td>

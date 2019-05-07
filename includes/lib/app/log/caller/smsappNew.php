@@ -14,7 +14,7 @@ class smsappNew
 		$var['fromgateway']   = isset($_args['data']['fromgateway']) ? $_args['data']['fromgateway'] : null;
 		$var['tonumber']      = isset($_args['data']['tonumber']) ? $_args['data']['tonumber'] : null;
 		$var['uniquecode']    = isset($_args['data']['uniquecode']) ? $_args['data']['uniquecode'] : null;
-		$var['reseivestatus'] = isset($_args['data']['reseivestatus']) ? $_args['data']['reseivestatus'] : null;
+		$var['receivestatus'] = isset($_args['data']['receivestatus']) ? $_args['data']['receivestatus'] : null;
 		$var['sendstatus']    = isset($_args['data']['sendstatus']) ? $_args['data']['sendstatus'] : null;
 		$var['amount']        = isset($_args['data']['amount']) ? $_args['data']['amount'] : null;
 		$var['answertext']    = isset($_args['data']['answertext']) ? $_args['data']['answertext'] : null;

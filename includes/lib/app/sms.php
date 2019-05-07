@@ -37,10 +37,165 @@ class sms
 	}
 
 
+	public static function setting_file($_set = [])
+	{
+		$get  = [];
+		$addr = root.'includes/lib/app/smsapp.me.txt';
+		$addr = \autoload::fix_os_path($addr);
+
+		if(is_file($addr))
+		{
+			$get = \dash\file::read($addr);
+			$get = json_decode($get, true);
+		}
+		else
+		{
+			$get = ['status' => true];
+			\dash\file::write($addr, $get);
+		}
+
+		if(!is_array($get))
+		{
+			$get = [];
+		}
+
+		if($_set && is_array($_set))
+		{
+			$get = array_merge($get, $_set);
+			$get = json_encode($get, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+			\dash\file::write($addr, $get);
+		}
+
+		return $get;
+	}
+
+
+	public static function status($_set = null)
+	{
+		$setting_file = self::setting_file();
+		if($_set === false)
+		{
+			$status =
+			[
+				'status' => false,
+			];
+			self::setting_file($status);
+			return true;
+		}
+		elseif($_set === true)
+		{
+			$status =
+			[
+				'status' => true,
+			];
+			self::setting_file($status);
+			return true;
+		}
+
+		if(isset($setting_file['status']) && $setting_file['status'])
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+
+	}
+
 	public static function send_notif()
 	{
-		$list = \lib\db\sms::need_send_notif();
-		j($list);
+		$setting_file = self::setting_file();
+		$last_update  = null;
+		$last_send_id = null;
+		$update_file  = [];
+
+		if(isset($setting_file['last_update']))
+		{
+			$last_update = $setting_file['last_update'];
+		}
+
+		if(isset($setting_file['last_send_id']))
+		{
+			$last_send_id = $setting_file['last_send_id'];
+		}
+
+		if(!$last_update && !$last_send_id)
+		{
+			$get_sms = \lib\db\sms::need_send_notif();
+			$update_file['last_update'] = date("Y-m-d H:i:s");
+			if(isset($get_sms['id']))
+			{
+				$update_file['last_send_id'] = $get_sms['id'];
+			}
+			self::setting_file($update_file);
+
+			if(isset($get_sms['id']))
+			{
+				self::send_tg_notif($get_sms);
+				return;
+			}
+		}
+
+		if($last_update)
+		{
+			if(time() - strtotime($last_update) < (60*5))
+			{
+				// nothing
+				return;
+			}
+		}
+
+		$get_sms = \lib\db\sms::need_send_notif();
+
+		if(isset($get_sms['id']))
+		{
+			if(intval($get_sms['id']) === intval($last_send_id))
+			{
+				return;
+			}
+			else
+			{
+				$update_file['last_update'] = date("Y-m-d H:i:s");
+				$update_file['last_send_id'] = $get_sms['id'];
+				self::setting_file($update_file);
+				self::send_tg_notif($get_sms);
+			}
+		}
+		else
+		{
+			// no new sms
+			return;
+		}
+	}
+
+	private static function send_tg_notif($_sms)
+	{
+		$tg_msg = "#SMS ". $_sms['id'];
+		$tg_msg .= ' | '. $_sms['fromnumber'];
+		$tg_msg .= "\n";
+		$tg_msg .= $_sms['text'];
+		$tg_msg .= "\n\n🕗 ". \dash\datetime::fit($_sms['datecreated'], true);
+
+		$tg                 = [];
+		$tg['chat_id']      = 33263188;
+		$tg['text']         = $tg_msg;
+		$tg['reply_markup'] =
+		[
+			'inline_keyboard'    =>
+			[
+				[
+					[
+						'text'          => 	T_("Review"),
+						'callback_data' => 'smsapp_'. $_sms['id'],
+					],
+				],
+			],
+		];
+
+		$result = \dash\social\telegram\tg::sendMessage($tg);
+
 	}
 
 
@@ -114,10 +269,17 @@ class sms
 			}
 			else
 			{
-				$post               = [];
-				$post['answertext'] = $load['text'];
-				$post['sendstatus'] = 'awaiting';
-				$result             = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+				$post                        = [];
+				$post['answertext']          = $load['text'];
+				$post['receivestatus']       = 'answerready';
+				$post['sendstatus']          = 'awaiting';
+				$result                      = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+
+				$update_file                 = [];
+				$update_file['last_update']  = date("Y-m-d H:i:s");
+				$update_file['last_send_id'] = $_smsid;
+				self::setting_file($update_file);
+
 				\dash\notif::clean();
 			}
 		}
@@ -139,7 +301,7 @@ class sms
 		'tonumber',
 		'date',
 		'datecreated',
-		'reseivestatus',
+		'receivestatus',
 		'sendstatus',
 		'amount',
 		'group_id',
@@ -332,7 +494,7 @@ class sms
 
 		if(!\dash\app::isset_request('fromgateway')) unset($args['fromgateway']);
 		if(!\dash\app::isset_request('tonumber')) unset($args['tonumber']);
-		if(!\dash\app::isset_request('reseivestatus')) unset($args['reseivestatus']);
+		if(!\dash\app::isset_request('receivestatus')) unset($args['receivestatus']);
 		if(!\dash\app::isset_request('sendstatus')) unset($args['sendstatus']);
 		if(!\dash\app::isset_request('amount')) unset($args['amount']);
 		if(!\dash\app::isset_request('answertext')) unset($args['answertext']);
@@ -392,15 +554,15 @@ class sms
 		$fromgateway = \dash\app::request('fromgateway');
 		$tonumber    = \dash\app::request('tonumber');
 
-		$reseivestatus = \dash\app::request('reseivestatus');
-		if($reseivestatus && !in_array($reseivestatus, ['block', 'awaiting', 'analyze', 'answerready']))
+		$receivestatus = \dash\app::request('receivestatus');
+		if($receivestatus && !in_array($receivestatus, ['block', 'awaiting', 'analyze', 'answerready']))
 		{
 			\dash\notif::error(T_("Invalid status"));
 			return false;
 		}
 
 		$sendstatus = \dash\app::request('sendstatus');
-		if($reseivestatus && !in_array($reseivestatus, ['awaiting', 'sendtodevice', 'send', 'deliver']))
+		if($sendstatus && !in_array($sendstatus, ['awaiting', 'sendtodevice', 'send', 'deliver']))
 		{
 			\dash\notif::error(T_("Invalid status"));
 			return false;
@@ -439,7 +601,7 @@ class sms
 		$args                  = [];
 		$args['fromgateway']   = $fromgateway;
 		$args['tonumber']      = $tonumber;
-		$args['reseivestatus'] = $reseivestatus;
+		$args['receivestatus'] = $receivestatus;
 		$args['sendstatus']    = $sendstatus;
 		$args['amount']        = $amount;
 		$args['answertext']    = $answertext;
