@@ -36,6 +36,7 @@ class queue
 		if(self::check_max_limit())
 		{
 			\dash\notif::warn(T_("Maximum limit"));
+			\dash\log::set('apiSmsAppMaxLimit');
 			return null;
 		}
 

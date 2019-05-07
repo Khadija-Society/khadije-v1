@@ -7,11 +7,13 @@ class newsms
 
 	public static function add_new_sms()
 	{
+
 		// check from is not block or family
 		$from        = \dash\request::post('from');
 		if($from && mb_strlen($from) > 90)
 		{
 			\dash\notif::error(T_("Invalid from"));
+			\dash\log::set('apiSmsAppInvalidFrom');
 			return false;
 		}
 
@@ -22,6 +24,7 @@ class newsms
 		if($date && !strtotime($date))
 		{
 			\dash\notif::error(T_("Invalid date"));
+			\dash\log::set('apiSmsAppInvalidDate');
 			return false;
 		}
 
@@ -43,6 +46,7 @@ class newsms
 		if(!$from)
 		{
 			\dash\notif::error(T_("From number is required"));
+			\dash\log::set('apiSmsAppFromIsNull');
 			return false;
 		}
 
@@ -83,12 +87,12 @@ class newsms
 
 		if($id)
 		{
-			$log['myid'] = $id;
-			$log['code'] = $id;
-			\dash\log::set('smsappNew', $log);
+			\dash\log::set('apiSmsAppNewSaved', ['code' => $id]);
 			\dash\notif::ok(T_("Message saved"));
 			return ['smsid' => \dash\coding::encode($id)];
 		}
+
+		\dash\log::set('apiSmsAppCanNotSave');
 		return false;
 	}
 
