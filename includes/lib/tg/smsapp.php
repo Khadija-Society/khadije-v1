@@ -240,11 +240,11 @@ class smsapp
 	public static function finishMsg($_smsNo, $_group, $_answer)
 	{
 		bot::ok();
-		// try to save selected answer
-		\lib\app\sms::set_answer($_smsNo, $_answer, $_group);
 
 		if($_smsNo)
 		{
+			// try to save selected answer
+			\lib\app\sms::set_answer($_smsNo, $_answer, $_group);
 
 			$updatedText  = hook::message('text');
 			$updatedText  .= "\n";
@@ -284,6 +284,9 @@ class smsapp
 				// for debug
 				bot::sendMessage($result);
 			}
+
+			// send another notif at end
+			\lib\app\sms::send_tg_notif();
 		}
 		else
 		{
