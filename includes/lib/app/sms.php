@@ -190,7 +190,12 @@ class sms
 		$tg_msg  .= $_sms['text'];
 		$tg_msg  .= "\n\n🕗 ". \dash\datetime::fit($_sms['datecreated'], true);
 
-		$chat_id = [33263188,46898544];
+		$chat_id =
+		[
+			33263188, // reza
+			46898544, // javad
+			// 106601863, // khalili
+		];
 
 		foreach ($chat_id as $key => $value)
 		{
