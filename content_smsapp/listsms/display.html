@@ -37,12 +37,25 @@
 {%block istatusCount%}
 {%if statusCount%}
  <div class="f">
-    {%for key, value in statusCount%}
+    {%for key, value in statusCount.receive%}
       <div class="c s6">
         <a class="dcard x1" href="{{url.this}}?receivestatus={{value.receivestatus}}">
          <div class="statistic sm">
           <div class="value mB10">{{value.count | fitNumber}}</div>
           <div class="label">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</div>
+         </div>
+        </a>
+      </div>
+    {%endfor%}
+  </div>
+
+  <div class="f">
+    {%for key, value in statusCount.send%}
+      <div class="c s6">
+        <a class="dcard x1" href="{{url.this}}?sendstatus={{value.sendstatus}}">
+         <div class="statistic sm">
+          <div class="value mB10">{{value.count | fitNumber}}</div>
+          <div class="label">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</div>
          </div>
         </a>
       </div>

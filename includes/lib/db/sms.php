@@ -223,7 +223,7 @@ class sms
 	}
 
 
-	public static function status_count($_args = [])
+	public static function status_count($_args = [], $_field)
 	{
 
 		$where = null;
@@ -247,13 +247,13 @@ class sms
 		"
 			SELECT
 				COUNT(*) AS `count`,
-				receivestatus
+				$_field
 			FROM
 				s_sms
 			$master_join
 			$where
 			GROUP BY
-				receivestatus
+				$_field
 		";
 		$result = \dash\db::get($query);
 		return $result;

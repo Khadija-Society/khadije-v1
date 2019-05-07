@@ -43,6 +43,12 @@ class view
 			$filterArray['receivestatus'] = \dash\request::get('receivestatus');
 		}
 
+		if(\dash\request::get('sendstatus'))
+		{
+			$args['sendstatus']     = \dash\request::get('sendstatus');
+			$filterArray['sendstatus'] = \dash\request::get('sendstatus');
+		}
+
 		if(\dash\request::get('fromnumber'))
 		{
 			$args['fromnumber']     = \dash\request::get('fromnumber');
@@ -82,8 +88,11 @@ class view
 
 		\dash\data::groupList($smsgroup);
 
-		$status_count = \lib\db\sms::status_count($args);
-		\dash\data::statusCount($status_count);
+		$status_count1 = \lib\db\sms::status_count($args, 'receivestatus');
+		$status_count2 = \lib\db\sms::status_count($args, 'sendstatus');
+
+		\dash\data::statusCount_receive($status_count1);
+		\dash\data::statusCount_send($status_count2);
 
 
 	}
