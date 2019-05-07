@@ -352,6 +352,8 @@ class smsapp
 
 	public static function sms()
 	{
+		bot::ok();
+
 		// get list of unanswered sms
 		\lib\app\sms::send_tg_notif();
 	}
