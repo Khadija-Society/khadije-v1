@@ -194,7 +194,7 @@ class sms
 		[
 			33263188, // reza
 			46898544, // javad
-			// 106601863, // khalili
+			106601863, // khalili
 		];
 
 		foreach ($chat_id as $key => $value)
