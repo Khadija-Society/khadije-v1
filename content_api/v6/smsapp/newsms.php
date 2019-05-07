@@ -57,12 +57,13 @@ class newsms
 		$userdata       = \dash\request::post('userdata');
 
 
-		$insert               = [];
-		$insert['fromnumber'] = $from;
+		$insert                  = [];
+		$insert['fromnumber']    = $from;
 		$insert['togateway']     = \dash\header::get('gateway');
 		$insert['fromgateway']   = null;
 		$insert['tonumber']      = null;
 		$insert['user_id']       = $user_id;
+		$insert['datereceive']   = date("Y-m-d H:i:s");
 		$insert['date']          = date("Y-m-d H:i:s", strtotime($date));
 		$insert['text']          = $text;
 		$insert['uniquecode']    = null;

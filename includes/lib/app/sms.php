@@ -291,11 +291,12 @@ class sms
 			}
 			else
 			{
-				$post                        = [];
-				$post['answertext']          = $load['text'];
-				$post['receivestatus']       = 'answerready';
-				$post['sendstatus']          = 'awaiting';
-				$result                      = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+				$post                  = [];
+				$post['answertext']    = $load['text'];
+				$post['receivestatus'] = 'answerready';
+				$post['dateanswer']    = date("Y-m-d H:i:s");
+				$post['sendstatus']    = 'awaiting';
+				$result                = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
 
 				$update_file                 = [];
 				$update_file['last_update']  = date("Y-m-d H:i:s");

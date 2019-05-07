@@ -10,6 +10,7 @@ class model
 		$post['group_id']      = \dash\request::post('group_id');
 		$post['answertext']    = \dash\request::post('answertext');
 		$post['sendstatus']    = 'awaiting';
+		$post['dateanswer']    = date("Y-m-d H:i:s");
 		$post['receivestatus'] = 'answerready';
 
 		$result = \lib\app\sms::edit($post, \dash\request::get('id'));

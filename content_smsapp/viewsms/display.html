@@ -56,7 +56,9 @@
           <div class="msg">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b></div>
           <div class="msg">{%trans "togateway"%} <b>{{dataRow.togateway | fitNumber(false)}}</b></div>
           <div class="msg">{%trans "date"%} <b>{{dataRow.date | dt(true)}}</b></div>
-          <div class="msg">{%trans "datecreated"%} <b>{{dataRow.datecreated | dt(true)}}</b></div>
+          <div class="msg">{%trans "Date receive"%} <b>{{dataRow.datereceive | dt(true)}}</b></div>
+          <div class="msg">{%trans "Date answer"%} <b>{{dataRow.dateanswer | dt(true)}}</b></div>
+          <div class="msg">{%trans "Date send"%} <b>{{dataRow.datesend | dt(true)}}</b></div>
           <div class="msg">{%trans "Reseive status"%} <b>{%set mydataRowreceivestatus = dataRow.receivestatus%}{%trans mydataRowreceivestatus%}</b></div>
         </div>
 
