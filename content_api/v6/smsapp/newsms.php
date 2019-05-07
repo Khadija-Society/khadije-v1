@@ -106,7 +106,7 @@ class newsms
 			{
 				$id             = $get_last_sms['id'];
 				$text           = $get_last_sms['text'];
-				$new_text       = $text. ' '. $_insert['text'];
+				$new_text       = $text. $_insert['text'];
 
 				$update         = [];
 				$update['text'] = $new_text;
