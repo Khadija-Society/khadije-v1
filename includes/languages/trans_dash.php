@@ -162,7 +162,7 @@ class twigTransTerms
 
 	//-------------------------------------------addons/includes/html/display-mvc.html
 	echo T_("You are supervisor!");                                                   // Line 87
-	echo T_("Control Panel");                                                         // Line 6
+	echo T_("Control Panel");                                                         // Line 92
 	echo T_("JavaScript is required to use our service.");                            // Line 106
 	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 107
 
@@ -209,7 +209,7 @@ class twigTransTerms
 	echo T_("Pasargad");                                                              // Line 75
 	echo T_("Saman");                                                                 // Line 81
 	echo T_("Sina");                                                                  // Line 87
-	echo T_("Post");                                                                  // Line 95
+	echo T_("Post");                                                                  // Line 106
 	echo T_("Ghavamin");                                                              // Line 99
 	echo T_("Taavon");                                                                // Line 105
 	echo T_("Shahr");                                                                 // Line 111
@@ -307,6 +307,7 @@ class twigTransTerms
 	echo T_("Count");                                                                 // Line 62
 
 	//--------------------------------------------------addons/content_cms/layout.html
+	echo T_("CMS Dashboard");                                                         // Line 6
 	echo T_("Content");                                                               // Line 10
 	echo T_("News");                                                                  // Line 88
 	echo T_("Categories");                                                            // Line 62
@@ -438,9 +439,9 @@ class twigTransTerms
 	echo T_("Visitor");                                                               // Line 112
 
 	//------------------------------------------------addons/content_cms/home/chart.js
-	echo T_("Word cloud");                                                            // Line 63
-	echo T_("Post count");                                                            // Line 84
-	echo T_("post");                                                                  // Line 107
+	echo T_("Word cloud");                                                            // Line 74
+	echo T_("Post count");                                                            // Line 95
+	echo T_("post");                                                                  // Line 118
 
 	//-----------------------------------------addons/content_cms/sitemap/display.html
 	echo T_("Create sitemap automatically by click on this page");                    // Line 6
