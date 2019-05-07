@@ -87,8 +87,9 @@ class controller
 		[
 			'989109610612', // reza
 			'989357269759', // javad
-			'sobati', // sobati need to get mobile
-			'khalili', // khalili need to get mobile
+			'989127522690', // sobati
+			'989127510991', // khalili
+			'989195191378', // my son
 		];
 
 		if(in_array($gateway, $check_allow_gateway))
