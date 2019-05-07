@@ -36,6 +36,7 @@
 
 {%block istatusCount%}
 {%if statusCount%}
+  <h4>{%trans "Recerive status"%}</h4>
  <div class="f">
     {%for key, value in statusCount.receive%}
       <div class="c s6">
@@ -48,14 +49,15 @@
       </div>
     {%endfor%}
   </div>
-
+  <hr>
+  <h4>{%trans "Send status"%}</h4>
   <div class="f">
     {%for key, value in statusCount.send%}
       <div class="c s6">
         <a class="dcard x1" href="{{url.this}}?sendstatus={{value.sendstatus}}">
          <div class="statistic sm">
           <div class="value mB10">{{value.count | fitNumber}}</div>
-          <div class="label">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</div>
+          <div class="label">{%if value.sendstatus%}{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}{%else%}{%endif%}</div>
          </div>
         </a>
       </div>
