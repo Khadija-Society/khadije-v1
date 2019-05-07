@@ -109,6 +109,16 @@ class newsms
 				$update         = [];
 				$update['text'] = $new_text;
 
+				if(!$get_last_sms['group_id'] && $_insert['group_id'])
+				{
+					$update['group_id'] = $_insert['group_id'];
+				}
+
+				if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
+				{
+					$update['recommend_id'] = $_insert['recommend_id'];
+				}
+
 				\lib\db\sms::update($update, $get_last_sms['id']);
 				return intval($get_last_sms['id']);
 			}
