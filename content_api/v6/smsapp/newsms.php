@@ -50,6 +50,13 @@ class newsms
 			return false;
 		}
 
+		$brand          = \dash\request::post('brand');
+		$model          = \dash\request::post('model');
+		$simcart_serial = \dash\request::post('simcart-serial');
+		$smsMessage_id  = \dash\request::post('smsMessage-id');
+		$userdata       = \dash\request::post('userdata');
+
+
 		$insert               = [];
 		$insert['fromnumber'] = $from;
 		$insert['togateway']     = \dash\header::get('gateway');
@@ -65,15 +72,6 @@ class newsms
 		$insert['answertext']    = null;
 		$insert['group_id']      = null;
 		$insert['recommend_id']   = null;
-
-		$log = $insert;
-		$log['mydate']    = $log['date'];
-		$log['myuser_id'] = $log['user_id'];
-		$log['mytext']    = $log['text'];
-
-		unset($log['date']);
-		unset($log['user_id']);
-		unset($log['text']);
 
 		self::check_need_analyze($insert);
 
@@ -101,10 +99,10 @@ class newsms
 	{
 		$fromnumber = $_insert['fromnumber'];
 		$get_last_sms = \lib\db\sms::get_last_sms($fromnumber);
-		if(isset($get_last_sms['datecreated']))
+		if(isset($get_last_sms['date']))
 		{
-			$datecreated = $get_last_sms['datecreated'];
-			if(time() - strtotime($datecreated) < 60)
+			$date = $get_last_sms['date'];
+			if(strtotime($_insert['date']) - strtotime($date) < 30)
 			{
 				$id             = $get_last_sms['id'];
 				$text           = $get_last_sms['text'];
