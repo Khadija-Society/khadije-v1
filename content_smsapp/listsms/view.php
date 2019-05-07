@@ -94,6 +94,7 @@ class view
 		\dash\data::statusCount_receive($status_count1);
 		\dash\data::statusCount_send($status_count2);
 
+		\dash\data::sysStatus(\lib\app\sms::status());
 
 	}
 }
