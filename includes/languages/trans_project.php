@@ -60,7 +60,7 @@ class twigTransTerms
 	echo T_("Send status");                                                           // Line 125
 	echo T_("Answer");                                                                // Line 126
 	echo T_("Group");                                                                 // Line 128
-	echo T_("Recommend");                                                             // Line 71
+	echo T_("Recommend");                                                             // Line 77
 	echo T_("Action");                                                                // Line 61
 	echo T_("togateway");                                                             // Line 149
 	echo T_("fromgateway");                                                           // Line 150
@@ -69,7 +69,7 @@ class twigTransTerms
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
 	echo T_("Edit");                                                                  // Line 29
-	echo T_("Filters of this group");                                                 // Line 155
+	echo T_("Filters of this group");                                                 // Line 161
 	echo T_("Answers");                                                               // Line 45
 	echo T_("Recomment text");                                                        // Line 55
 
@@ -80,14 +80,19 @@ class twigTransTerms
 	echo T_("Date receive");                                                          // Line 59
 	echo T_("Date answer");                                                           // Line 60
 	echo T_("Date send");                                                             // Line 61
-	echo T_("Select group");                                                          // Line 70
-	echo T_("Manage group");                                                          // Line 70
+	echo T_("Brand");                                                                 // Line 65
+	echo T_("Model");                                                                 // Line 66
+	echo T_("Simcart serial");                                                        // Line 67
+	echo T_("sms message id");                                                        // Line 68
+	echo T_("user data");                                                             // Line 69
+	echo T_("Select group");                                                          // Line 76
+	echo T_("Manage group");                                                          // Line 76
 	echo T_("Answer text");                                                           // Line 52
-	echo T_("sendstatus");                                                            // Line 122
-	echo T_("amount");                                                                // Line 123
-	echo T_("answertext");                                                            // Line 124
-	echo T_("group_id");                                                              // Line 125
-	echo T_("recommend_id");                                                          // Line 126
+	echo T_("sendstatus");                                                            // Line 128
+	echo T_("amount");                                                                // Line 129
+	echo T_("answertext");                                                            // Line 130
+	echo T_("group_id");                                                              // Line 131
+	echo T_("recommend_id");                                                          // Line 132
 
 	//-----------------------------------------------------content_smsapp/sidenav.html
 	echo T_("Manage sms");                                                            // Line 1
