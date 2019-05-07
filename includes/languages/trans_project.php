@@ -92,12 +92,13 @@ class twigTransTerms
 	echo T_("SMS List");                                                              // Line 6
 
 	//---------------------------------------------content_smsapp/listsms/display.html
+	echo T_("New");                                                                   // Line 45
 	echo T_("Awaiting");                                                              // Line 33
-	echo T_("Block");                                                                 // Line 54
-	echo T_("Answer ready");                                                          // Line 63
+	echo T_("Needless to answer");                                                    // Line 54
+	echo T_("Answered");                                                              // Line 63
 	echo T_("Awaiting to send to device");                                            // Line 72
-	echo T_("Send to device");                                                        // Line 81
-	echo T_("Sent");                                                                  // Line 90
+	echo T_("Waiting for sending by device");                                         // Line 81
+	echo T_("Sended");                                                                // Line 90
 	echo T_("Private");                                                               // Line 152
 	echo T_("Detail");                                                                // Line 55
 
