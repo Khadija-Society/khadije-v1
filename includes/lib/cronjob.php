@@ -11,10 +11,19 @@ class cronjob
 				self::thankyoumessage();
 				break;
 
+			case 'smsapp':
+				self::smsapp();
+				break;
+
 			default:
 				# code...
 				break;
 		}
+	}
+
+	private static function smsapp()
+	{
+		\lib\app\sms::send_notif();
 	}
 
 

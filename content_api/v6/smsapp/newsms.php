@@ -73,7 +73,8 @@ class newsms
 
 		self::check_need_analyze($insert);
 
-		$id = \lib\db\sms::insert($insert);
+		$id = self::check_add_update($insert);
+
 
 		if($insert['group_id'])
 		{
@@ -89,6 +90,32 @@ class newsms
 			return ['smsid' => \dash\coding::encode($id)];
 		}
 		return false;
+	}
+
+
+	private static function check_add_update($_insert)
+	{
+		$fromnumber = $_insert['fromnumber'];
+		$get_last_sms = \lib\db\sms::get_last_sms($fromnumber);
+		if(isset($get_last_sms['datecreated']))
+		{
+			$datecreated = $get_last_sms['datecreated'];
+			if(time() - strtotime($datecreated) < 60)
+			{
+				$id             = $get_last_sms['id'];
+				$text           = $get_last_sms['text'];
+				$new_text       = $text. ' '. $_insert['text'];
+
+				$update         = [];
+				$update['text'] = $new_text;
+
+				\lib\db\sms::update($update, $get_last_sms['id']);
+				return intval($get_last_sms['id']);
+			}
+		}
+
+		$id = \lib\db\sms::insert($_insert);
+		return $id;
 	}
 
 

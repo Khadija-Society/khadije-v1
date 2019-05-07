@@ -37,6 +37,13 @@ class sms
 	}
 
 
+	public static function send_notif()
+	{
+		$list = \lib\db\sms::need_send_notif();
+		j($list);
+	}
+
+
 	public static function get_tg_text($_chat_id, $_smsid)
 	{
 		$load = \lib\db\sms::get(['s_sms.id' => $_smsid, 'limit' => 1]);

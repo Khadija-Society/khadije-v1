@@ -16,6 +16,26 @@ class sms
 	";
 
 
+	public static function get_last_sms($_fromnumber)
+	{
+		$query = "SELECT * FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' ORDER BY s_sms.id DESC LIMIT 1";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
+	public static function need_send_notif()
+	{
+		$query =
+		"
+			SELECT *
+			FROM s_sms
+			WHERE s_sms.receivestatus = 'awaiting'
+
+		";
+
+	}
+
 	public static function get_chart_receive($_startdate, $_enddate)
 	{
 		$query  =
