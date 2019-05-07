@@ -138,7 +138,7 @@
           {% if value.group_type == 'family' %}
             <small class="fc-mute">{%trans "Private"%}</small>
           {%else%}
-            {{value.text}}
+            {{value.text |raw}}
           {%endif%}
         </td>
         <td class="ltr txtL collapsing">
