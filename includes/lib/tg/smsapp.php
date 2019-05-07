@@ -353,25 +353,7 @@ class smsapp
 	public static function sms()
 	{
 		// get list of unanswered sms
-		// $surveyListTxt = \lib\app\tg\survey::list();
-
-		if($surveyListTxt)
-		{
-			bot::ok();
-
-			// if start with callback answer callback
-			if(bot::isCallback())
-			{
-				bot::answerCallbackQuery(T_("List of your survey in Sarshomar"));
-			}
-
-			bot::sendMessage($surveyListTxt);
-			return true;
-		}
-		else
-		{
-			// self::howto();
-		}
+		\lib\app\sms::send_tg_notif();
 	}
 }
 ?>
