@@ -170,8 +170,20 @@ class sms
 		}
 	}
 
-	private static function send_tg_notif($_sms)
+	private static function send_tg_notif($_sms = null)
 	{
+
+		if($_sms === null)
+		{
+			$_sms = \lib\db\sms::need_send_notif();
+		}
+
+		if(!$_sms)
+		{
+			\dash\notif::info(T_("No new message"));
+			return false;
+		}
+
 		$tg_msg  = "#SMS ". $_sms['id'];
 		$tg_msg  .= ' | '. $_sms['fromnumber'];
 		$tg_msg  .= "\n";
