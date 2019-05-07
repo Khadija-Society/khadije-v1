@@ -546,6 +546,9 @@ class sms
 		if(!\dash\app::isset_request('amount')) unset($args['amount']);
 		if(!\dash\app::isset_request('answertext')) unset($args['answertext']);
 		if(!\dash\app::isset_request('group_id')) unset($args['group_id']);
+		if(!\dash\app::isset_request('dateanswer')) unset($args['dateanswer']);
+
+
 
 		if(!empty($args))
 		{
@@ -645,6 +648,8 @@ class sms
 			}
 		}
 
+		$dateanswer = \dash\app::request('dateanswer');
+
 		$args                  = [];
 		$args['fromgateway']   = $fromgateway;
 		$args['tonumber']      = $tonumber;
@@ -653,6 +658,7 @@ class sms
 		$args['amount']        = $amount;
 		$args['answertext']    = $answertext;
 		$args['group_id']      = $group_id;
+		$args['dateanswer']    = $dateanswer;
 
 
 		return $args;

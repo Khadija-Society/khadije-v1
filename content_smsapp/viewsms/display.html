@@ -62,13 +62,14 @@
           <div class="msg">{%trans "Reseive status"%} <b>{%set mydataRowreceivestatus = dataRow.receivestatus%}{%trans mydataRowreceivestatus%}</b></div>
         </div>
 
-      {% if dataRow.brand%}<span class="badge">{%trans "Brand"%} <b>{{dataRow.brand}}</b></span>{%endif%}
-      {% if dataRow.model%}<span class="badge">{%trans "Model"%} <b>{{dataRow.model}}</b></span>{%endif%}
-      {% if dataRow.simcartserial%}<span class="badge">{%trans "Simcart serial"%} <b>{{dataRow.simcartserial}}</b></span>{%endif%}
-      {% if dataRow.smsmessageid%}<span class="badge">{%trans "sms message id"%} <b>{{dataRow.smsmessageid}}</b></span>{%endif%}
-      {% if dataRow.userdata%}<span class="badge">{%trans "user data"%} <b>{{dataRow.userdata}}</b></span>{%endif%}
 
       </div>
+
+      {% if dataRow.brand%}<span class="badge mA5">{%trans "Brand"%} <b>{{dataRow.brand}}</b></span>{%endif%}
+      {% if dataRow.model%}<span class="badge mA5">{%trans "Model"%} <b>{{dataRow.model}}</b></span>{%endif%}
+      {% if dataRow.simcartserial%}<span class="badge mA5">{%trans "Simcart serial"%} <b>{{dataRow.simcartserial}}</b></span>{%endif%}
+      {% if dataRow.smsmessageid%}<span class="badge mA5">{%trans "sms message id"%} <b>{{dataRow.smsmessageid}}</b></span>{%endif%}
+      {% if dataRow.userdata%}<span class="badge mA5">{%trans "user data"%} <b>{{dataRow.userdata}}</b></span>{%endif%}
 
       <hr>
       <form method="post" autocomplete="off" {%if dataRow.answertext %} disabled {%endif%}>
