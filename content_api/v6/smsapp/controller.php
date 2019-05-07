@@ -44,6 +44,10 @@ class controller
 		{
 			$detail = \content_api\v6\smsapp\status::set();
 		}
+		elseif($directory === 'v6/smsapp/setting')
+		{
+			$detail = \content_api\v6\smsapp\setting::get();
+		}
 		else
 		{
 			\content_api\v6::no(404);
