@@ -50,14 +50,18 @@ class newsms
 			return false;
 		}
 
-		$brand          = \dash\request::post('brand');
-		$model          = \dash\request::post('model');
-		$simcart_serial = \dash\request::post('simcart-serial');
-		$smsMessage_id  = \dash\request::post('smsMessage-id');
-		$userdata       = \dash\request::post('userdata');
-
+		$brand         = \dash\request::post('brand');
+		$model         = \dash\request::post('model');
+		$simcartserial = \dash\request::post('simcart-serial');
+		$smsmessageid  = \dash\request::post('smsMessage-id');
+		$userdata      = \dash\request::post('userdata');
 
 		$insert                  = [];
+		$insert['brand']         = substr($brand, 0, 99);
+		$insert['model']         = substr($model, 0, 99);
+		$insert['simcartserial'] = substr($simcartserial, 0, 99);
+		$insert['smsmessageid']  = substr($smsmessageid, 0, 99);
+		$insert['userdata']      = substr($userdata, 0, 99);
 		$insert['fromnumber']    = $from;
 		$insert['togateway']     = \dash\header::get('gateway');
 		$insert['fromgateway']   = null;
@@ -72,7 +76,7 @@ class newsms
 		$insert['amount']        = null;
 		$insert['answertext']    = null;
 		$insert['group_id']      = null;
-		$insert['recommend_id']   = null;
+		$insert['recommend_id']  = null;
 
 		self::check_need_analyze($insert);
 
