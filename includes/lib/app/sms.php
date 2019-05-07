@@ -172,29 +172,34 @@ class sms
 
 	private static function send_tg_notif($_sms)
 	{
-		$tg_msg = "#SMS ". $_sms['id'];
-		$tg_msg .= ' | '. $_sms['fromnumber'];
-		$tg_msg .= "\n";
-		$tg_msg .= $_sms['text'];
-		$tg_msg .= "\n\n🕗 ". \dash\datetime::fit($_sms['datecreated'], true);
+		$tg_msg  = "#SMS ". $_sms['id'];
+		$tg_msg  .= ' | '. $_sms['fromnumber'];
+		$tg_msg  .= "\n";
+		$tg_msg  .= $_sms['text'];
+		$tg_msg  .= "\n\n🕗 ". \dash\datetime::fit($_sms['datecreated'], true);
 
-		$tg                 = [];
-		$tg['chat_id']      = 33263188;
-		$tg['text']         = $tg_msg;
-		$tg['reply_markup'] =
-		[
-			'inline_keyboard'    =>
+		$chat_id = [33263188,46898544];
+
+		foreach ($chat_id as $key => $value)
+		{
+			$tg                 = [];
+			$tg['chat_id']      = $value;
+			$tg['text']         = $tg_msg;
+			$tg['reply_markup'] =
 			[
+				'inline_keyboard'    =>
 				[
 					[
-						'text'          => 	T_("Review"),
-						'callback_data' => 'smsapp_'. $_sms['id'],
+						[
+							'text'          => 	T_("Review"),
+							'callback_data' => 'smsapp_'. $_sms['id'],
+						],
 					],
 				],
-			],
-		];
+			];
 
-		$result = \dash\social\telegram\tg::sendMessage($tg);
+			$result = \dash\social\telegram\tg::sendMessage($tg);
+		}
 
 	}
 
