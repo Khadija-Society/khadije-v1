@@ -149,7 +149,7 @@
   <h2>{%trans "Last sms"%}</h2>
   {%for key, value in lastSms%}
     <a class="msg f">
-      <div class="c6">{%if value.text%}{{value.text}}{%else%}{%trans "Without text"%}{%endif%}</div>
+      <div class="c6">{%if value.group_type != 'family' %}{%if value.text%}{{value.text}}{%else%}{%trans "Without text"%}{%endif%}{%else%}<small class="fc-mute">{%trans "Private"%}</small>{%endif%}</div>
       <span class="c">{{value.fromnumber | fitNumber('mobile')}}</span>
       <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
     </a>

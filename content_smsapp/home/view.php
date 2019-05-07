@@ -16,7 +16,7 @@ class view
 		[
 			'order' => 's_sms.id',
 			'sort'  => 'desc',
-			's_group.type' => ['!=', "'family'"],
+
 			'limit' => 6
 		];
 
