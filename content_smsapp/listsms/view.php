@@ -20,7 +20,7 @@ class view
 		[
 			'order' => \dash\request::get('order'),
 			'sort'  => \dash\request::get('sort'),
-			's_group.type' => ['!=', "'family'"],
+			// 's_group.type' => ['!=', "'family'"],
 			// 's_sms.receivestatus' => ['!=', "'block'"],
 
 		];
