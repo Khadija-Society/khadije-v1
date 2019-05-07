@@ -16,6 +16,75 @@ class sms
 	";
 
 
+	public static function get_last_message_text($_fromnumber)
+	{
+
+		$query =
+		"
+			SELECT
+				s_sms.text AS `text`,
+				s_sms.answertext AS `answertext`,
+				s_sms.fromnumber
+			FROM
+				s_sms
+			WHERE
+				s_sms.fromnumber IN ($_fromnumber)
+			ORDER BY s_sms.id DESC
+
+
+		";
+		j($query);
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
+
+
+
+
+
+
+	public static function get_chat_list()
+	{
+		$p_query =
+		"
+			SELECT
+				COUNT(*) AS `count`
+			FROM
+				s_sms
+			GROUP BY
+				s_sms.fromnumber
+		";
+
+		$pagination = \dash\db::pagination_query($p_query);
+
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				-- (select s_sms.text FROM s_sms where s_sms.id = MAX(s_sms.id)) AS `last_msg`,
+				s_sms.fromnumber
+			FROM
+				s_sms
+
+			GROUP BY s_sms.fromnumber
+			ORDER BY max(s_sms.id) DESC
+			$pagination
+		";
+
+		$result = \dash\db::get($query);
+
+		return $result;
+	}
+
+
+
+
+
+
+
 	public static function get_last_sms($_fromnumber)
 	{
 		$query = "SELECT * FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' ORDER BY s_sms.id DESC LIMIT 1";

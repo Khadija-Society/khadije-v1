@@ -1,0 +1,141 @@
+{%extends 'content_smsapp/layout.html'%}
+
+
+
+
+{%block pageContent%}
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+{%block istatusCount%}
+{%if statusCount%}
+ <div class="f">
+    {%for key, value in statusCount%}
+      <div class="c s6">
+        <a class="dcard x1" href="{{url.this}}?receivestatus={{value.receivestatus}}">
+         <div class="statistic sm">
+          <div class="value mB10">{{value.count | fitNumber}}</div>
+          <div class="label">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</div>
+         </div>
+        </a>
+      </div>
+    {%endfor%}
+  </div>
+{%endif%}
+{%endblock%}
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.this}}' autocomplete="off">
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+
+
+  <table class="tbl1 v6 cbox">
+    <thead class="primary">
+      <tr>
+        <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "From number"%}</a></th>
+        <th>{%trans "Sms text"%}</th>
+        <!-- <th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th> -->
+        <th data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
+        <th data-sort="{{sortLink.receivestatus.order}}"><a href="{{sortLink.receivestatus.link}}">{%trans "Reseive status"%}</a></th>
+        <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
+        <th>{%trans "Answer"%}</th>
+        <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
+        <th data-sort="{{sortLink.recommend_id.order}}"><a href="{{sortLink.recommend_id.link}}">{%trans "Recommend"%}</a></th>
+        <th class="collapsing">{%trans "Action"%}</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr class="{%if value.receivestatus == 'awaiting' %} active {%endif%}">
+        <td>
+          <a href="{{url.this}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
+          {%if false and value.togateway or value.fromgateway or value.tonumber%}
+          <i class="sf-plus " data-kerkere='.myDetail{{value.id}}'></i>
+          <span class="myDetail{{value.id}}" data-kerkere-content='hide'>
+            {%if value.togateway%}<div class="badge">{%trans "togateway"%} {{value.togateway | fitNumber(false)}}</div>{%endif%}
+            {%if value.fromgateway%}<div class="badge">{%trans "fromgateway"%} {{value.fromgateway | fitNumber(false)}}</div>{%endif%}
+            {%if value.tonumber%}<div class="badge">{%trans "tonumber"%} {{value.tonumber | fitNumber(false)}}</div>{%endif%}
+          </span>
+          {%endif%}
+        </td>
+        <td>{{value.text}}</td>
+        <!-- <td>{{value.date | dt}}</td> -->
+        <td>{{value.datecreated | dt}}</td>
+        <td>{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</td>
+        <td>{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</td>
+        <td>{{value.answertext}}</td>
+        <td>{{value.group_title}}</td>
+        <td>{{value.recommend_title}}</td>
+
+        <td class="txtC"><a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "View"%}</a></td>
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg warn2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
+{%endblock%}
+

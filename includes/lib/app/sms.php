@@ -433,6 +433,30 @@ class sms
 	}
 
 
+	public static function chat_list()
+	{
+		$list = \lib\db\sms::get_chat_list();
+		$list = self::chat_last_message($list);
+		return $list;
+	}
+
+
+	public static function chat_last_message($_data)
+	{
+		if(!is_array($_data))
+		{
+			return false;
+		}
+
+		$fromnumber = array_column($_data, 'fromnumber');
+		if($fromnumber)
+		{
+			$fromnumber   = implode(',', $fromnumber);
+			$get_last_sms = \lib\db\sms::get_last_message_text($fromnumber);
+			j($get_last_sms);
+		}
+	}
+
 
 
 	/**
