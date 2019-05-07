@@ -259,5 +259,49 @@ class sms
 		return $result;
 	}
 
+
+	public static function get_count_sms($_type, $_field)
+	{
+		$to = date("Y-m-d");
+		$from = null;
+		switch ($_type)
+		{
+			case 'day':
+				$from = date("Y-m-d", strtotime("-1 day"));
+				break;
+
+			case 'week':
+				$from = date("Y-m-d", strtotime("-7 day"));
+				break;
+
+			case 'month':
+				$from = date("Y-m-d", strtotime("-30 day"));
+				break;
+
+			case 'total':
+				$from = null;
+				$to   = null;
+				break;
+		}
+
+		$where = null;
+		if($from && $to)
+		{
+			$where = "AND DATE(s_sms.datecreated) >= DATE('$from') AND DATE(s_sms.datecreated) <= DATE('$to') ";
+		}
+
+		if($_field === 'send')
+		{
+			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.answertext IS NOT NULL $where";
+		}
+		else
+		{
+			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE 1 $where";
+		}
+
+		$result = \dash\db::get($query, 'count', true);
+		return intval($result);
+	}
+
 }
 ?>

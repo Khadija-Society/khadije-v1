@@ -13,20 +13,20 @@ class sms
 		$result['status'] = \content_api\v6\smsapp\controller::status();
 
 		$day              = [];
-		$day['send']      = rand(1,1000);
-		$day['receive']   = rand(1,1000);
+		$day['send']      = \lib\db\sms::get_count_sms('day', 'send');
+		$day['receive']   = \lib\db\sms::get_count_sms('day', 'receive');
 
 		$week             = [];
-		$week['send']     = rand(1,1000);
-		$week['receive']  = rand(1,1000);
+		$week['send']     = \lib\db\sms::get_count_sms('week', 'send');
+		$week['receive']  = \lib\db\sms::get_count_sms('week', 'receive');
 
 		$month            = [];
-		$month['send']    = rand(1,1000);
-		$month['receive'] = rand(1,1000);
+		$month['send']    = \lib\db\sms::get_count_sms('month', 'send');
+		$month['receive'] = \lib\db\sms::get_count_sms('month', 'receive');
 
 		$total            = [];
-		$total['send']    = rand(1,1000);
-		$total['receive'] = rand(1,1000);
+		$total['send']    = \lib\db\sms::get_count_sms('total', 'send');
+		$total['receive'] = \lib\db\sms::get_count_sms('total', 'receive');
 
 
 		$result['day']    = $day;
