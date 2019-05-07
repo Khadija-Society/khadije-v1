@@ -65,7 +65,7 @@
       <hr>
       <form method="post" autocomplete="off" {%if dataRow.answertext %} disabled {%endif%}>
 
-        <h5>{%trans "Select group"%} <a href="{{url.here}}/listgroup" class="badge info">{%trans "Manage group"%}</a></h5>
+        <h5>{%trans "Select group"%} <a href="{{url.here}}/settings" class="badge info">{%trans "Manage group"%}</a></h5>
         {%if dataRow.recommend_id%}<div class="btn success2 mTB20">{%trans "Recommend"%} {{dataRow.recommend_title}}</div>{%endif%}
        <div class="f mB10">
         {%for key,value in groupList%}
