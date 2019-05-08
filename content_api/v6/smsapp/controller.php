@@ -6,6 +6,8 @@ class controller
 {
 	public static function routing()
 	{
+		self::save_log();
+
 		if(!\dash\request::is('post'))
 		{
 			\content_api\v6::no(404);
@@ -56,6 +58,22 @@ class controller
 		\content_api\v6::bye($detail);
 
 	}
+
+
+	private static function save_log()
+	{
+		$log =
+		[
+			'gateway'   => \dash\header::get('gateway'),
+			'smsappkey' => \dash\header::get('smsappkey'),
+			'post'      => \dash\request::post(),
+			'get'       => \dash\request::get(),
+			'url'       => \dash\url::pwd(),
+		];
+
+		\dash\log::file(json_encode($log, JSON_UNESCAPED_UNICODE), 'smsapp.log', 'api');
+	}
+
 
 	private static function check_smsappkey()
 	{
