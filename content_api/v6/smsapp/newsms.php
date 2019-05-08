@@ -151,7 +151,8 @@ class newsms
 		}
 		else
 		{
-			$get = \lib\db\smsgroupfilter::get(['type' => 'number', 'number' => $number, 'limit' => 1]);
+			$number_no_plus = str_replace("+", '', $number);
+			$get = \lib\db\smsgroupfilter::get(['type' => 'number', '1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$number_no_plus') "], 'limit' => 1]);
 		}
 
 
