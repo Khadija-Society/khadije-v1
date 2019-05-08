@@ -84,8 +84,8 @@ class queue
 
 	private static function must_be_send()
 	{
-		$get = \lib\db\sms::get(['sendstatus' => 'awaiting', 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')), 'limit' => 10]);
-		// $get = \lib\db\sms::get(['sendstatus' => 'awaiting', 'limit' => 10]);
+		// $get = \lib\db\sms::get(['sendstatus' => 'awaiting', 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')), 'limit' => 10]);
+		$get = \lib\db\sms::get(['sendstatus' => 'awaiting', 'limit' => 10]);
 
 		if($get)
 		{
@@ -106,8 +106,8 @@ class queue
 
 	private static function not_sent_sms()
 	{
-		$get = \lib\db\sms::get(['sendstatus' => 'sendtodevice', 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')), 'limit' => 1]);
-		// $get = \lib\db\sms::get(['sendstatus' => 'sendtodevice',  'limit' => 1]);
+		// $get = \lib\db\sms::get(['sendstatus' => 'sendtodevice', 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')), 'limit' => 1]);
+		$get = \lib\db\sms::get(['sendstatus' => 'sendtodevice',  'limit' => 1]);
 
 		if($get)
 		{
