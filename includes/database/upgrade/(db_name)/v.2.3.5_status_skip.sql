@@ -1,0 +1,1 @@
+ALTER TABLE `s_sms` CHANGE `receivestatus` `receivestatus` enum('block', 'awaiting', 'analyze', 'answerready', 'skip') NULL DEFAULT NULL;

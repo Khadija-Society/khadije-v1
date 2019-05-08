@@ -15,6 +15,15 @@ class view
 
 		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
 
+		$skip =
+		[
+			'id' =>  "0",
+			'title' =>  T_("Skip this message"),
+
+		];
+
+		$smsgroup[] = $skip;
+
 		\dash\data::groupList($smsgroup);
 
 		$answers = \lib\db\smsgroupfilter::get(['type' => 'answer']);

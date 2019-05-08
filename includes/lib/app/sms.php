@@ -268,6 +268,15 @@ class sms
 		if($_group_id && is_numeric($_group_id))
 		{
 			$answers = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $_group_id]);
+
+			$skip =
+			[
+				'id'    =>  "0",
+				'title' =>  T_("Skip this message"),
+			];
+
+
+			$answers = array_merge($answers, $skip);
 			return $answers;
 		}
 	}
@@ -298,30 +307,49 @@ class sms
 
 	public static function set_answer($_smsid, $_answer_id)
 	{
-		$load = self::get_answer($_answer_id);
-
-		if(isset($load['text']))
+		if((string) $_answer_id === '0')
 		{
-			$load_sms = self::get_tg_text(1, $_smsid);
-			if(isset($load_sms['answertext']))
-			{
-				\dash\notif::error(T_("This message was answered"));
-			}
-			else
-			{
-				$post                  = [];
-				$post['answertext']    = $load['text'];
-				$post['receivestatus'] = 'answerready';
-				$post['dateanswer']    = date("Y-m-d H:i:s");
-				$post['sendstatus']    = 'awaiting';
-				$result                = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+			$post                  = [];
+			$post['answertext']    = null;
+			$post['receivestatus'] = 'skip';
+			$post['dateanswer']    = date("Y-m-d H:i:s");
+			$post['sendstatus']    = null;
+			$result                = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
 
-				$update_file                 = [];
-				$update_file['last_update']  = date("Y-m-d H:i:s");
-				$update_file['last_send_id'] = $_smsid;
-				self::setting_file($update_file);
+			$update_file                 = [];
+			$update_file['last_update']  = date("Y-m-d H:i:s");
+			$update_file['last_send_id'] = $_smsid;
+			self::setting_file($update_file);
 
-				\dash\notif::clean();
+			\dash\notif::clean();
+		}
+		else
+		{
+			$load = self::get_answer($_answer_id);
+
+			if(isset($load['text']))
+			{
+				$load_sms = self::get_tg_text(1, $_smsid);
+				if(isset($load_sms['answertext']))
+				{
+					\dash\notif::error(T_("This message was answered"));
+				}
+				else
+				{
+					$post                  = [];
+					$post['answertext']    = $load['text'];
+					$post['receivestatus'] = 'answerready';
+					$post['dateanswer']    = date("Y-m-d H:i:s");
+					$post['sendstatus']    = 'awaiting';
+					$result                = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+
+					$update_file                 = [];
+					$update_file['last_update']  = date("Y-m-d H:i:s");
+					$update_file['last_send_id'] = $_smsid;
+					self::setting_file($update_file);
+
+					\dash\notif::clean();
+				}
 			}
 		}
 
@@ -623,7 +651,7 @@ class sms
 		$tonumber    = \dash\app::request('tonumber');
 
 		$receivestatus = \dash\app::request('receivestatus');
-		if($receivestatus && !in_array($receivestatus, ['block', 'awaiting', 'analyze', 'answerready']))
+		if($receivestatus && !in_array($receivestatus, ['block', 'awaiting', 'analyze', 'answerready', 'skip']))
 		{
 			\dash\notif::error(T_("Invalid status"));
 			return false;

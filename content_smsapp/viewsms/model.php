@@ -6,14 +6,33 @@ class model
 {
 	public static function post()
 	{
-		$post                  = [];
-		$post['group_id']      = \dash\request::post('group_id');
-		$post['answertext']    = \dash\request::post('answertext');
-		$post['sendstatus']    = 'awaiting';
-		$post['dateanswer']    = date("Y-m-d H:i:s");
-		$post['receivestatus'] = 'answerready';
+		$group_id = \dash\request::post('group_id');
 
-		$result = \lib\app\sms::edit($post, \dash\request::get('id'));
+		if((string) $group_id === '0')
+		{
+
+			$post                  = [];
+			$post['group_id']      = null;
+			$post['answertext']    = null;
+			$post['sendstatus']    = null;
+			$post['dateanswer']    = date("Y-m-d H:i:s");
+			$post['receivestatus'] = 'skip';
+
+			$result = \lib\app\sms::edit($post, \dash\request::get('id'));
+		}
+		else
+		{
+
+			$post                  = [];
+			$post['group_id']      = $group_id;
+			$post['answertext']    = \dash\request::post('answertext');
+			$post['sendstatus']    = 'awaiting';
+			$post['dateanswer']    = date("Y-m-d H:i:s");
+			$post['receivestatus'] = 'answerready';
+
+			$result = \lib\app\sms::edit($post, \dash\request::get('id'));
+
+		}
 
 		if(\dash\engine\process::status())
 		{

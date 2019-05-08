@@ -80,7 +80,7 @@
         {%for key,value in groupList%}
           <div class="c">
             <div class="radio3 mB5 mRa5" >
-              <input {%if dataRow.answertext %} disabled {%endif%} type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == value.id  %} checked {%endif%}>
+              <input {%if dataRow.answertext %} disabled {%endif%} type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == value.id or (not dataRow.group_id and not value.id)  %} checked {%endif%}>
               <label for="group_{{value.id}}">{{value.title}}</label>
             </div>
           </div>
