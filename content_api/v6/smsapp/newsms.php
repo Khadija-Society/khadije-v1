@@ -41,6 +41,10 @@ class newsms
 			{
 				$user_id = $get_user_id['id'];
 			}
+			else
+			{
+				$user_id = \lib\db\users::signup(['mobile' => $from_mobile]);
+			}
 		}
 
 		if(!$from)

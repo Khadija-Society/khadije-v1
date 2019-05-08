@@ -185,6 +185,9 @@ class sms
 		}
 
 		$tg_msg  = "#SMS ". $_sms['id'];
+		$tg_msg  .= " | ". $_sms['togateway'];
+		$tg_msg  .= "\n";
+		$tg_msg  .= '#user'. $_sms['user_id'];
 		$tg_msg  .= ' | '. $_sms['fromnumber'];
 		$tg_msg  .= "\n";
 		$tg_msg  .= $_sms['text'];
