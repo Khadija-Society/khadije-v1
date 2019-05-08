@@ -55,6 +55,13 @@ class view
 			$filterArray['fromnumber'] = \dash\request::get('fromnumber');
 		}
 
+
+		if(\dash\request::get('togateway'))
+		{
+			$args['togateway']     = \dash\request::get('togateway');
+			$filterArray['togateway'] = \dash\request::get('togateway');
+		}
+
 		if(\dash\request::get('togateway'))
 		{
 			$args['togateway']     = \dash\request::get('togateway');

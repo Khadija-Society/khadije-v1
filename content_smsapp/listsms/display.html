@@ -128,6 +128,7 @@
       <tr>
         <th>{%trans "Sms text"%}</th>
         <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "From number"%}</a></th>
+        <th data-sort="{{sortLink.togateway.order}}"><a href="{{sortLink.togateway.link}}">{%trans "To gateway"%}</a></th>
         <!-- <th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th> -->
         <th data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
         <th data-sort="{{sortLink.receivestatus.order}}"><a href="{{sortLink.receivestatus.link}}">{%trans "Reseive status"%}</a></th>
@@ -152,6 +153,7 @@
         </td>
         <td class="ltr txtL collapsing">
           <a href="{{url.this}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
+
           {%if false and value.togateway or value.fromgateway or value.tonumber%}
           <i class="sf-plus " data-kerkere='.myDetail{{value.id}}'></i>
           <span class="myDetail{{value.id}}" data-kerkere-content='hide'>
@@ -160,6 +162,9 @@
             {%if value.tonumber%}<div class="badge">{%trans "tonumber"%} {{value.tonumber | fitNumber(false)}}</div>{%endif%}
           </span>
           {%endif%}
+        </td>
+        <td class="ltr txtL collapsing">
+          <a href="{{url.this}}?togateway={{value.togateway}}">{{value.togateway | fitNumber(false)}}</a>
         </td>
 
         <td class="ltr txtL collapsing">{{value.datecreated | dt}}</td>
