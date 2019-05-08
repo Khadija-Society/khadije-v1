@@ -192,10 +192,23 @@ class sms
 
 		$chat_id =
 		[
-			33263188, // reza
-			46898544, // javad
-			106601863, // khalili
+			'reza'    => 33263188, // reza
+			'javad'   => 46898544, // javad
+			'khalili' => 106601863, // khalili
 		];
+
+		$boys =
+		[
+			'989109610612', // reza
+			'989357269759', // javad
+			'989195191378', // my son
+		];
+
+		// to test and debug ;)
+		if(isset($_sms['togateway']) && in_array($_sms['togateway'], $boys))
+		{
+			unset($chat_id['khalili']);
+		}
 
 		foreach ($chat_id as $key => $value)
 		{
