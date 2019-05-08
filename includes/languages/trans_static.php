@@ -187,6 +187,21 @@ class TransStatic
 	echo T_("Delete");
 	echo T_("Admincancel");
 	echo T_("Draft");
+
+	echo T_("block");
+	echo T_("Block");
+	echo T_("Awaiting");
+	echo T_("awaiting");
+	echo T_("Analyze");
+	echo T_("analyze");
+	echo T_("Answerready");
+	echo T_("answerready");
+	echo T_("Sendtodevice");
+	echo T_("sendtodevice");
+	echo T_("send");
+	echo T_("send");
+	echo T_("Deliver");
+	echo T_("deliver");
  }
 }
 ?>
