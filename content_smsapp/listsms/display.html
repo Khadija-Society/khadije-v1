@@ -190,7 +190,12 @@
         </td>
         <td class="collapsing"><a href="{{url.this}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
 
-        <td class="txtC"><a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "Detail"%}</a></td>
+        <td class="txtC">
+          {%if value.receivestatus != 'answerready' and value.receivestatus != 'skip' %}
+            <div class="badge danger" data-confirm data-data='{"skip": "skip", "id": "{{value.id}}"}'>{%trans "Skip"%}</div>
+          {%endif%}
+          <a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "Detail"%}</a>
+        </td>
 
       </tr>
       {%endfor%}
