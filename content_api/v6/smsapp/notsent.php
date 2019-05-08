@@ -30,7 +30,7 @@ class notsent
 
 	private static function not_sent()
 	{
-		$get = \lib\db\sms::get(['sendstatus' => 'sendtodevice', 'limit' => 10]);
+		$get = \lib\db\sms::get(['sendstatus' => 'sendtodevice', 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')), 'limit' => 10]);
 
 		if($get)
 		{
