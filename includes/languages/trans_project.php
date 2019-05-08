@@ -52,19 +52,19 @@ class twigTransTerms
 	echo T_("Receive");                                                               // Line 93
 
 	//------------------------------------------------content_smsapp/chat/display.html
-	echo T_("From number");                                                           // Line 130
-	echo T_("Sms text");                                                              // Line 129
+	echo T_("From number");                                                           // Line 139
+	echo T_("Sms text");                                                              // Line 138
 	echo T_("Date");                                                                  // Line 109
 	echo T_("Date created");                                                          // Line 44
-	echo T_("Reseive status");                                                        // Line 133
-	echo T_("Send status");                                                           // Line 134
-	echo T_("Answer");                                                                // Line 135
+	echo T_("Reseive status");                                                        // Line 143
+	echo T_("Send status");                                                           // Line 144
+	echo T_("Answer");                                                                // Line 145
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Recommend");                                                             // Line 78
 	echo T_("Action");                                                                // Line 61
-	echo T_("togateway");                                                             // Line 158
-	echo T_("fromgateway");                                                           // Line 159
-	echo T_("tonumber");                                                              // Line 160
+	echo T_("togateway");                                                             // Line 171
+	echo T_("fromgateway");                                                           // Line 172
+	echo T_("tonumber");                                                              // Line 173
 	echo T_("View");                                                                  // Line 77
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
@@ -102,13 +102,17 @@ class twigTransTerms
 	echo T_("New");                                                                   // Line 45
 	echo T_("Awaiting");                                                              // Line 33
 	echo T_("Needless to answer");                                                    // Line 54
-	echo T_("Answered");                                                              // Line 63
-	echo T_("Awaiting to send to device");                                            // Line 72
-	echo T_("Waiting for sending by device");                                         // Line 81
-	echo T_("Sended");                                                                // Line 90
-	echo T_("On");                                                                    // Line 98
-	echo T_("Off");                                                                   // Line 98
-	echo T_("System status");                                                         // Line 99
+	echo T_("Skip message");                                                          // Line 63
+	echo T_("Answered");                                                              // Line 72
+	echo T_("Awaiting to send to device");                                            // Line 81
+	echo T_("Waiting for sending by device");                                         // Line 90
+	echo T_("Sended");                                                                // Line 99
+	echo T_("On");                                                                    // Line 107
+	echo T_("Off");                                                                   // Line 107
+	echo T_("System status");                                                         // Line 108
+	echo T_("To gateway");                                                            // Line 140
+	echo T_("From gateway");                                                          // Line 146
+	echo T_("To number");                                                             // Line 147
 	echo T_("Private");                                                               // Line 152
 	echo T_("Detail");                                                                // Line 55
 
