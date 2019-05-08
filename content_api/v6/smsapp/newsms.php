@@ -43,7 +43,7 @@ class newsms
 			}
 			else
 			{
-				$user_id = \lib\db\users::signup(['mobile' => $from_mobile]);
+				$user_id = \dash\db\users::signup(['mobile' => $from_mobile]);
 			}
 		}
 
