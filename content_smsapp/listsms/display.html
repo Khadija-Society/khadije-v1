@@ -134,6 +134,8 @@
         <th data-sort="{{sortLink.receivestatus.order}}"><a href="{{sortLink.receivestatus.link}}">{%trans "Reseive status"%}</a></th>
         <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
         <th>{%trans "Answer"%}</th>
+        <th data-sort="{{sortLink.fromgateway.order}}"><a href="{{sortLink.fromgateway.link}}">{%trans "From gateway"%}</a></th>
+        <th data-sort="{{sortLink.tonumber.order}}"><a href="{{sortLink.tonumber.link}}">{%trans "To number"%}</a></th>
         <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
 
         <th class="collapsing">{%trans "Action"%}</th>
@@ -171,6 +173,12 @@
         <td class="collapsing"><a href="{{url.this}}?receivestatus={{value.receivestatus}}">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</a></td>
         <td class="collapsing"><a href="{{url.this}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></td>
         <td>{{value.answertext}}</td>
+        <td class="ltr txtL collapsing">
+          <a href="{{url.this}}?fromgateway={{value.fromgateway}}">{{value.fromgateway | fitNumber(false)}}</a>
+        </td>
+        <td class="ltr txtL collapsing">
+          <a href="{{url.this}}?tonumber={{value.tonumber}}">{{value.tonumber | fitNumber(false)}}</a>
+        </td>
         <td class="collapsing"><a href="{{url.this}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
 
         <td class="txtC"><a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "Detail"%}</a></td>
