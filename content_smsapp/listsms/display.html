@@ -39,6 +39,15 @@
 <div class="f">
 
   <div class="c s6">
+    <a class="dcard x1" href="{{url.this}}">
+     <div class="statistic sm teal">
+      <div class="value mB10">{{statusCount.all | fitNumber}}</div>
+      <div class="label">{%trans "All"%}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
     <a class="dcard x1" href="{{url.this}}?receivestatus=awaiting">
      <div class="statistic sm teal">
       <div class="value mB10">{{statusCount.receive.awaiting | fitNumber}}</div>
@@ -175,7 +184,11 @@
           {%endif%}
         </td>
         <td class="ltr txtL collapsing">
+          {%if value.togateway == '989127522690' %}
+          <span class="badge warn">&nbsp;</span>
+          {%endif%}
           <a href="{{url.this}}?togateway={{value.togateway}}">{{value.togateway | fitNumber(false)}}</a>
+
         </td>
 
         <td class="ltr txtL collapsing">{{value.datecreated | dt}}</td>
