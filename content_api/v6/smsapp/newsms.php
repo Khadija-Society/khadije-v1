@@ -63,7 +63,7 @@ class newsms
 		$insert['smsmessageid']  = substr($smsmessageid, 0, 99);
 		$insert['userdata']      = substr($userdata, 0, 99);
 		$insert['fromnumber']    = $from;
-		$insert['togateway']     = \dash\header::get('gateway');
+		$insert['togateway']     = \dash\utility\filter::mobile(\dash\header::get('gateway'));
 		$insert['fromgateway']   = null;
 		$insert['tonumber']      = null;
 		$insert['user_id']       = $user_id;
