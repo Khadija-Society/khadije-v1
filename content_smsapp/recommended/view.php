@@ -94,6 +94,12 @@ class view
 
 		\dash\data::groupList($smsgroup);
 
+		if(\dash\request::get('recommend_id'))
+		{
+			$answer_list = \lib\app\sms::answer_list(\dash\request::get('recommend_id'));
+			\dash\data::answerList($answer_list);
+		}
+
 
 		$status_count1 = \lib\db\sms::status_count(['s_sms.recommend_id' => ["IS NOT", "NULL"]], 'receivestatus');
 		$status_count2 = \lib\db\sms::status_count(['s_sms.recommend_id' => ["IS NOT", "NULL"]], 'sendstatus');

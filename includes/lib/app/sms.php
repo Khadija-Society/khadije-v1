@@ -268,19 +268,39 @@ class sms
 		if($_group_id && is_numeric($_group_id))
 		{
 			$answers = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $_group_id]);
-
-			$skip =
-			[
-				'id'    =>  "0",
-				'title' =>  T_("Skip this message"),
-			];
-
-
-			$answers = array_merge($answers, $skip);
 			return $answers;
 		}
 	}
 
+
+	public static function recommend_answer($_recommand_id, $_answer_id)
+	{
+		$load = self::get_answer($_answer_id);
+
+		if(isset($load['text']))
+		{
+
+			$where =
+			[
+				'recommend_id'  => $_recommand_id,
+				'receivestatus' => 'awaiting',
+				'sendstatus'    => null,
+			];
+
+			$set =
+			[
+				'answertext'    => $load['text'],
+				'receivestatus' => 'answerready',
+				'dateanswer'    => date("Y-m-d H:i:s"),
+				'sendstatus'    => 'awaiting',
+			];
+
+			$result = \lib\db\sms::update_where($set, $where);
+
+			return $result;
+
+		}
+	}
 
 	public static function set_group($_smsid, $_group_id)
 	{

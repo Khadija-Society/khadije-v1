@@ -26,7 +26,7 @@ class sms
 				s_sms.recommend_id AS `id`
 			FROM s_sms
 			RIGHT JOIN s_group ON s_sms.recommend_id = s_group.id
-			WHERE s_sms.recommend_id IS NOT NULL
+			WHERE s_sms.recommend_id IS NOT NULL AND s_sms.receivestatus = 'awaiting' AND s_sms.sendstatus IS NULL
 			GROUP BY s_sms.recommend_id
 		";
 

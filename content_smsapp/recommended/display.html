@@ -128,17 +128,33 @@
 
 
 {%block igroupList%}
+<div class="f">
 {%if groupList%}
-<div class="cbox">
-
-    <h6  >{%trans "Recommend message group sorted"%}</h6>
-  <div class="f">
-    {%for key, value in groupList%}
-    <a href="{{url.this}}?recommend_id={{value.id}}" class="cauto btn info outline mA5">{{value.title}} <b>{{value.count | fitNumber}}</b></a>
-    {%endfor%}
+<div class="c s12">
+  <div class="cbox">
+    <h6>{%trans "Recommend message group sorted"%}</h6>
+    <div class="f">
+      {%for key, value in groupList%}
+      <a href="{{url.this}}?recommend_id={{value.id}}&receivestatus=awaiting" class="cauto btn info outline mA5">{{value.title}} <b>{{value.count | fitNumber}}</b></a>
+      {%endfor%}
+    </div>
   </div>
 </div>
 {%endif%}
+{%if answerList%}
+<div class="c6 s12">
+  <div class="cbox mLa5">
+    <h6>{%trans "What answer send to this group?"%}</h6>
+    <div class="f">
+      {%for key, value in answerList%}
+      <div data-confirm data-data='{"type":"setAnswer","answer_id": "{{value.id}}", "recommend_id": "{{requestGET.recommend_id}}"}' class="cauto btn info outline mA5">{{value.text}} <b>{{value.count | fitNumber}}</b></div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+{%endif%}
+</div>
+
 {%endblock%}
 
 
