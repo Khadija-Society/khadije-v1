@@ -592,6 +592,7 @@ class sms
 		if(!\dash\app::isset_request('amount')) unset($args['amount']);
 		if(!\dash\app::isset_request('answertext')) unset($args['answertext']);
 		if(!\dash\app::isset_request('group_id')) unset($args['group_id']);
+		if(!\dash\app::isset_request('recommend_id')) unset($args['recommend_id']);
 		if(!\dash\app::isset_request('dateanswer')) unset($args['dateanswer']);
 
 
@@ -694,6 +695,18 @@ class sms
 			}
 		}
 
+		$recommend_id = \dash\app::request('recommend_id');
+		// $recommend_id = \dash\coding::decode($recommend_id);
+		if($recommend_id)
+		{
+			$get = \lib\db\smsgroup::get(['id' => $recommend_id, 'limit' => 1]);
+			if(!isset($get['id']))
+			{
+				\dash\notif::error(T_("Invalid id"));
+				return false;
+			}
+		}
+
 		$dateanswer = \dash\app::request('dateanswer');
 
 		$args                  = [];
@@ -704,6 +717,7 @@ class sms
 		$args['amount']        = $amount;
 		$args['answertext']    = $answertext;
 		$args['group_id']      = $group_id;
+		$args['recommend_id']  = $recommend_id;
 		$args['dateanswer']    = $dateanswer;
 
 
