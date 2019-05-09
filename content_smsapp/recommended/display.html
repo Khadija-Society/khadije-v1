@@ -238,8 +238,9 @@
         <td class="collapsing"><a href="{{url.this}}?recommend_id={{value.recommend_id}}">{{value.recommend_title}}</a></td>
 
         <td class="txtC collapsing">
-
-          <div class="badge danger" data-confirm data-data='{"recommend": "invalid", "id": "{{value.id}}"}'>{%trans "Send to analyze"%}</div>
+          {%if not value.sendstatus%}
+            <div class="badge danger" data-confirm data-data='{"recommend": "invalid", "id": "{{value.id}}"}'>{%trans "Send to analyze"%}</div>
+          {%endif%}
           <a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "Detail"%}</a>
         </td>
 
