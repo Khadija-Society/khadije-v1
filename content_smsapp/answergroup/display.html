@@ -26,6 +26,7 @@
         <div class="msg primary2">
           <div class="f">
             <span class="c">{{value.text}}</span>
+            <span class="cauto mRa20 txtB">{{value.text | length | fitNumber}} {%trans "Character"%}</span>
             <div class="cauto">
               <span class="badge danger" data-confirm data-data='{"type":"remove", "deleteid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove"%}</span>
             </div>
