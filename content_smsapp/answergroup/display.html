@@ -23,7 +23,7 @@
         <div class="msg txtB txtC">{%trans "Group title"%} {{dataRow.title}}</div>
         {%if dataTable%}
         {%for key, value in dataTable%}
-        <div class="msg primary2">
+        <div class="msg {%if value.text | length > 70%} warn2 {%else%} primary2 {%endif%}">
           <div class="f">
             <span class="c">{{value.text}}</span>
             <span class="cauto mRa20 txtB">{{value.text | length | fitNumber}} {%trans "Character"%}</span>

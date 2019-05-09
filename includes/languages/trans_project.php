@@ -95,7 +95,7 @@ class twigTransTerms
 	echo T_("user data");                                                             // Line 75
 	echo T_("Select group");                                                          // Line 80
 	echo T_("Manage group");                                                          // Line 80
-	echo T_("Answer text");                                                           // Line 52
+	echo T_("Answer text");                                                           // Line 53
 	echo T_("Skip");                                                                  // Line 38
 	echo T_("sendstatus");                                                            // Line 140
 	echo T_("amount");                                                                // Line 141
@@ -132,8 +132,8 @@ class twigTransTerms
 	echo T_("Add new recommend text to filter");                                      // Line 14
 	echo T_("Group title");                                                           // Line 23
 	echo T_("Remove");                                                                // Line 109
-	echo T_("No recommend text founded");                                             // Line 37
-	echo T_("Recommend Text");                                                        // Line 53
+	echo T_("No recommend text founded");                                             // Line 38
+	echo T_("Recommend Text");                                                        // Line 54
 	echo T_("Require");                                                               // Line 141
 
 	//------------------------------------------------content_smsapp/home/display.html
@@ -175,7 +175,8 @@ class twigTransTerms
 
 	//-----------------------------------------content_smsapp/answergroup/display.html
 	echo T_("You can register a answer of responses to this group to help you respond.");// Line 7
-	echo T_("No answer founded");                                                     // Line 36
+	echo T_("Character");                                                             // Line 29
+	echo T_("No answer founded");                                                     // Line 37
 
 	//------------------------------------------------------content_api/v6/header.html
 	echo T_("Parameters on header");                                                  // Line 2
