@@ -2,6 +2,7 @@
 
 
 {%block changeStatus%}
+{%if perm_su()%}
   <div class="msg mL10">
     <form method="post">
       <input type="hidden" name="changeStatus" value="receivestatus">
@@ -32,7 +33,7 @@
       <button class="btn">{%trans "Save"%}</button>
     </form>
   </div>
-
+{%endif%}
 {%endblock%}
 
 {%block pageContent%}
