@@ -40,44 +40,44 @@ class view
 		if(\dash\request::get('receivestatus'))
 		{
 			$args['receivestatus']     = \dash\request::get('receivestatus');
-			$filterArray['receivestatus'] = \dash\request::get('receivestatus');
+			$filterArray[T_('receivestatus')] = \dash\request::get('receivestatus');
 		}
 
 		if(\dash\request::get('sendstatus'))
 		{
 			$args['sendstatus']     = \dash\request::get('sendstatus');
-			$filterArray['sendstatus'] = \dash\request::get('sendstatus');
+			$filterArray[T_('sendstatus')] = \dash\request::get('sendstatus');
 		}
 
 		if(\dash\request::get('fromnumber'))
 		{
 			$args['fromnumber']     = \dash\request::get('fromnumber');
-			$filterArray['fromnumber'] = \dash\request::get('fromnumber');
+			$filterArray[T_('fromnumber')] = \dash\request::get('fromnumber');
 		}
 
 
 		if(\dash\request::get('togateway'))
 		{
 			$args['togateway']     = \dash\request::get('togateway');
-			$filterArray['togateway'] = \dash\request::get('togateway');
+			$filterArray[T_('togateway')] = \dash\request::get('togateway');
 		}
 
 		if(\dash\request::get('togateway'))
 		{
 			$args['togateway']     = \dash\request::get('togateway');
-			$filterArray['togateway'] = \dash\request::get('togateway');
+			$filterArray[T_('togateway')] = \dash\request::get('togateway');
 		}
 
 		if(\dash\request::get('fromgateway'))
 		{
 			$args['fromgateway']     = \dash\request::get('fromgateway');
-			$filterArray['fromgateway'] = \dash\request::get('fromgateway');
+			$filterArray[T_('fromgateway')] = \dash\request::get('fromgateway');
 		}
 
 		if(\dash\request::get('type'))
 		{
 			$args['type']     = \dash\request::get('type');
-			$filterArray['type'] = \dash\request::get('type');
+			$filterArray[T_('type')] = \dash\request::get('type');
 		}
 
 		$dataTable = \lib\app\sms::list($search_string, $args);
