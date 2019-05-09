@@ -156,7 +156,7 @@
         <th data-sort="{{sortLink.tonumber.order}}"><a href="{{sortLink.tonumber.link}}">{%trans "To number"%}</a></th>
         <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
 
-        <th class="collapsing">{%trans "Action"%}</th>
+        <th class="">{%trans "Action"%}</th>
 
       </tr>
     </thead>
@@ -203,7 +203,7 @@
         </td>
         <td class="collapsing"><a href="{{url.this}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
 
-        <td class="txtC">
+        <td class="txtC collapsing">
           {%if value.receivestatus != 'answerready' and value.receivestatus != 'skip' %}
             <div class="badge danger" data-confirm data-data='{"skip": "skip", "id": "{{value.id}}"}'>{%trans "Skip"%}</div>
           {%endif%}
