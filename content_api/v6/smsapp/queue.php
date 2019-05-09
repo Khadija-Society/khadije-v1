@@ -84,7 +84,16 @@ class queue
 
 	private static function must_be_send()
 	{
-		$get = \lib\db\sms::get(['sendstatus' => 'awaiting', 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')), 'limit' => 10]);
+		// get just not recommended message
+		$get_args =
+		[
+			'recommend_id' => null,
+			'sendstatus'   => 'awaiting',
+			'togateway'    => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			'limit'        => 10,
+		];
+
+		$get = \lib\db\sms::get($get_args);
 		// $get = \lib\db\sms::get(['sendstatus' => 'awaiting', 'limit' => 10]);
 
 		if($get)

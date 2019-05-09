@@ -43,7 +43,17 @@ class sent
 				$value = intval($value);
 			}
 
-			$value++;
+			$sms_text = isset($load['answertext']) ? $load['answertext'] : null;
+
+			if($sms_text)
+			{
+				$value += ceil(mb_strlen($sms_text) / 70);
+			}
+			else
+			{
+				$value++;
+			}
+
 			if(isset($get_option['id']))
 			{
 				\dash\db\options::update(['value' => $value], $get_option['id']);

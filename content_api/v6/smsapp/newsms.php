@@ -144,14 +144,14 @@ class newsms
 	{
 		$number       = $insert['fromnumber'];
 		$mobileNumber = \dash\utility\filter::mobile($number);
+		$number_no_plus = str_replace("+", '', $number);
 
 		if($mobileNumber)
 		{
-			$get = \lib\db\smsgroupfilter::get(['type' => 'number', '1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$mobileNumber') "], 'limit' => 1]);
+			$get = \lib\db\smsgroupfilter::get(['type' => 'number', '1.1' => ["= 1.1", "AND (`number` = '$number' OR `number` = '$number_no_plus' OR `number` = '$mobileNumber')"], 'limit' => 1]);
 		}
 		else
 		{
-			$number_no_plus = str_replace("+", '', $number);
 			$get = \lib\db\smsgroupfilter::get(['type' => 'number', '1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$number_no_plus') "], 'limit' => 1]);
 		}
 
