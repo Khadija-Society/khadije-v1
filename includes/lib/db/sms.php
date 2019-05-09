@@ -16,6 +16,24 @@ class sms
 	";
 
 
+	public static function get_recommend_group()
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				MAX(s_group.title) AS `title`,
+				s_sms.recommend_id AS `id`
+			FROM s_sms
+			RIGHT JOIN s_group ON s_sms.recommend_id = s_group.id
+			WHERE s_sms.recommend_id IS NOT NULL
+			GROUP BY s_sms.recommend_id
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	public static function get_last_message_text($_fromnumber)
 	{
 

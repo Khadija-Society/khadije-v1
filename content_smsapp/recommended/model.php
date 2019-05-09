@@ -9,7 +9,7 @@ class model
 		if(\dash\request::post('recommend') === 'invalid')
 		{
 			$post                 = [];
-			$post['recommand_id'] = null;
+			$post['recommend_id'] = null;
 			$result               = \lib\app\sms::edit($post, \dash\request::post('id'));
 			\dash\redirect::pwd();
 			return;

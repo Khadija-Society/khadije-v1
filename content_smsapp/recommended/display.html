@@ -9,12 +9,14 @@
  {%if dataFilter%}
 
   {{block('htmlSearchBox')}}
+  {{block('igroupList')}}
   {{block('htmlTable')}}
   {{block('htmlFilter')}}
 
  {%else%}
 
   {{block('htmlSearchBox')}}
+  {{block('igroupList')}}
   {{block('htmlTable')}}
 
  {%endif%}
@@ -125,6 +127,20 @@
 {%endblock%}
 
 
+{%block igroupList%}
+{%if groupList%}
+<div class="cbox">
+
+    <h6  >{%trans "Recommend message group sorted"%}</h6>
+  <div class="f">
+    {%for key, value in groupList%}
+    <a href="{{url.this}}?recommend_id={{value.id}}" class="cauto btn info outline mA5">{{value.title}} <b>{{value.count | fitNumber}}</b></a>
+    {%endfor%}
+  </div>
+</div>
+{%endif%}
+{%endblock%}
+
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
@@ -206,9 +222,8 @@
         <td class="collapsing"><a href="{{url.this}}?recommend_id={{value.recommend_id}}">{{value.recommend_title}}</a></td>
 
         <td class="txtC collapsing">
-          {%if value.receivestatus != 'answerready' and value.receivestatus != 'skip' %}
-            <div class="badge danger" data-confirm data-data='{"recommend": "invalid", "id": "{{value.id}}"}'>{%trans "Send to analyze"%}</div>
-          {%endif%}
+
+          <div class="badge danger" data-confirm data-data='{"recommend": "invalid", "id": "{{value.id}}"}'>{%trans "Send to analyze"%}</div>
           <a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "Detail"%}</a>
         </td>
 

@@ -596,7 +596,6 @@ class sms
 		if(!\dash\app::isset_request('dateanswer')) unset($args['dateanswer']);
 
 
-
 		if(!empty($args))
 		{
 			$update = \lib\db\sms::update($args, $id);

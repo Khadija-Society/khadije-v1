@@ -67,6 +67,12 @@ class view
 			$filterArray[T_('fromgateway')] = \dash\request::get('fromgateway');
 		}
 
+		if(\dash\request::get('recommend_id'))
+		{
+			$args['recommend_id']     = \dash\request::get('recommend_id');
+			$filterArray[T_('recommend_id')] = \dash\request::get('recommend_id');
+		}
+
 		if(\dash\request::get('type'))
 		{
 			$args['type']     = \dash\request::get('type');
@@ -84,15 +90,13 @@ class view
 		\dash\data::dataFilter($dataFilter);
 
 
-		$smsgroup = \lib\db\smsgroup::get(['1.1' => 1.1]);
+		$smsgroup = \lib\db\sms::get_recommend_group();
 
 		\dash\data::groupList($smsgroup);
 
 
 		$status_count1 = \lib\db\sms::status_count(['s_sms.recommend_id' => ["IS NOT", "NULL"]], 'receivestatus');
-
 		$status_count2 = \lib\db\sms::status_count(['s_sms.recommend_id' => ["IS NOT", "NULL"]], 'sendstatus');
-
 		\dash\data::statusCount_receive($status_count1);
 		\dash\data::statusCount_send($status_count2);
 
