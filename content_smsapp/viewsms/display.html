@@ -1,7 +1,39 @@
 {%extends 'content_smsapp/layout.html'%}
 
 
+{%block changeStatus%}
+  <div class="msg mL10">
+    <form method="post">
+      <input type="hidden" name="changeStatus" value="receivestatus">
+      <label for="receivestatus">{%trans "Reseive status"%}</label>
+      <select name="receivestatus" class="select ui dropdown search mB10" id="receivestatus">
+      <option value="" readonly>{%trans "Please select one item"%} *</option>
+        <option value="block" {%if dataRow.receivestatus == 'block' %} selected {%endif%}>{%trans "block"%}</option>
+        <option value="awaiting" {%if dataRow.receivestatus == 'awaiting' %} selected {%endif%}>{%trans "awaiting"%}</option>
+        <option value="analyze" {%if dataRow.receivestatus == 'analyze' %} selected {%endif%}>{%trans "analyze"%}</option>
+        <option value="answerready" {%if dataRow.receivestatus == 'answerready' %} selected {%endif%}>{%trans "answerready"%}</option>
+        <option value="skip" {%if dataRow.receivestatus == 'skip' %} selected {%endif%}>{%trans "skip"%}</option>
+      </select>
+      <button class="btn">{%trans "Save"%}</button>
+    </form>
+  </div>
 
+  <div class="msg mL10">
+    <form method="post">
+      <input type="hidden" name="changeStatus" value="sendstatus">
+      <label for="sendstatus">{%trans "Send status"%}</label>
+      <select name="sendstatus" class="select ui dropdown search mB10" id="sendstatus">
+      <option value="" readonly>{%trans "Please select one item"%} *</option>
+        <option value="awaiting" {%if dataRow.sendstatus == 'awaiting' %} selected {%endif%}>{%trans "awaiting"%}</option>
+        <option value="sendtodevice" {%if dataRow.sendstatus == 'sendtodevice' %} selected {%endif%}>{%trans "sendtodevice"%}</option>
+        <option value="send" {%if dataRow.sendstatus == 'send' %} selected {%endif%}>{%trans "send"%}</option>
+        <option value="deliver" {%if dataRow.sendstatus == 'deliver' %} selected {%endif%}>{%trans "deliver"%}</option>
+      </select>
+      <button class="btn">{%trans "Save"%}</button>
+    </form>
+  </div>
+
+{%endblock%}
 
 {%block pageContent%}
 
@@ -16,6 +48,7 @@
             <h4 class="">{%trans "Sms text"%}</h4>
             <p>{{dataRow.text}}</p>
           </div>
+          {{block('changeStatus')}}
         </div>
 
         <div class="c4 s12 pRa5">
@@ -27,6 +60,8 @@
           <div class="msg">{%trans "Date answer"%} <b>{{dataRow.dateanswer | dt(true)}}</b></div>
           <div class="msg">{%trans "Date send"%} <b>{{dataRow.datesend | dt(true)}}</b></div>
           <div class="msg">{%trans "Reseive status"%} <b>{%set mydataRowreceivestatus = dataRow.receivestatus%}{%trans mydataRowreceivestatus%}</b></div>
+          <div class="msg">{%trans "Send status"%} <b>{%set mydataRowsendstatus = dataRow.sendstatus%}{%trans mydataRowsendstatus%}</b></div>
+
         </div>
 
 
