@@ -106,7 +106,8 @@ class sms
 			LEFT JOIN s_group ON s_sms.group_id = s_group.id
 			LEFT JOIN s_group as `recommendGroup` ON s_sms.recommend_id = recommendGroup.id
 			WHERE
-				s_sms.receivestatus = 'awaiting'
+				s_sms.receivestatus = 'awaiting' AND
+				s_sms.recommend_id IS NULL
 			ORDER BY
 				s_sms.id ASC
 			LIMIT 1
