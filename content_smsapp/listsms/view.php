@@ -74,6 +74,12 @@ class view
 			$filterArray[T_('fromgateway')] = \dash\request::get('fromgateway');
 		}
 
+		if(\dash\request::get('group_id'))
+		{
+			$args['group_id']     = \dash\request::get('group_id');
+			$filterArray[T_('group_id')] = \dash\request::get('group_id');
+		}
+
 		if(\dash\request::get('type'))
 		{
 			$args['type']     = \dash\request::get('type');
