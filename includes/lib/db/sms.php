@@ -311,7 +311,7 @@ class sms
 
 		if($_field === 'send')
 		{
-			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.answertext IS NOT NULL $where";
+			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where";
 		}
 		else
 		{
