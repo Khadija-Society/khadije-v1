@@ -301,8 +301,9 @@ class sms
 	}
 
 
-	public static function get_count_sms($_type, $_field)
+	public static function get_count_sms($_type, $_field, $_gateway)
 	{
+
 		$to = date("Y-m-d");
 		$from = null;
 		switch ($_type)
@@ -325,6 +326,12 @@ class sms
 				break;
 		}
 
+		$gateway = null;
+		if($_gateway)
+		{
+			$gateway = " ANS s_sms.togateway = '$_gateway' ";
+		}
+
 		$where = null;
 		if($from && $to)
 		{
@@ -333,11 +340,11 @@ class sms
 
 		if($_field === 'send')
 		{
-			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where";
+			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where $gateway";
 		}
 		else
 		{
-			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE 1 $where";
+			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE 1 $where $gateway";
 		}
 
 		$result = \dash\db::get($query, 'count', true);

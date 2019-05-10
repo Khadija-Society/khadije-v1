@@ -6,27 +6,27 @@ namespace lib\app;
  */
 class sms
 {
-	public static function dashboard_detail()
+	public static function dashboard_detail($_gateway = null)
 	{
 
 		$result           = [];
 		$result['status'] = \content_api\v6\smsapp\controller::status();
 
 		$day              = [];
-		$day['send']      = \lib\db\sms::get_count_sms('day', 'send');
-		$day['receive']   = \lib\db\sms::get_count_sms('day', 'receive');
+		$day['send']      = \lib\db\sms::get_count_sms('day', 'send', $_gateway);
+		$day['receive']   = \lib\db\sms::get_count_sms('day', 'receive', $_gateway);
 
 		$week             = [];
-		$week['send']     = \lib\db\sms::get_count_sms('week', 'send');
-		$week['receive']  = \lib\db\sms::get_count_sms('week', 'receive');
+		$week['send']     = \lib\db\sms::get_count_sms('week', 'send', $_gateway);
+		$week['receive']  = \lib\db\sms::get_count_sms('week', 'receive', $_gateway);
 
 		$month            = [];
-		$month['send']    = \lib\db\sms::get_count_sms('month', 'send');
-		$month['receive'] = \lib\db\sms::get_count_sms('month', 'receive');
+		$month['send']    = \lib\db\sms::get_count_sms('month', 'send', $_gateway);
+		$month['receive'] = \lib\db\sms::get_count_sms('month', 'receive', $_gateway);
 
 		$total            = [];
-		$total['send']    = \lib\db\sms::get_count_sms('total', 'send');
-		$total['receive'] = \lib\db\sms::get_count_sms('total', 'receive');
+		$total['send']    = \lib\db\sms::get_count_sms('total', 'send', $_gateway);
+		$total['receive'] = \lib\db\sms::get_count_sms('total', 'receive', $_gateway);
 
 
 		$result['day']    = $day;

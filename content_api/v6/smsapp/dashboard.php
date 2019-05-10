@@ -6,7 +6,8 @@ class dashboard
 {
 	public static function get()
 	{
-		return \lib\app\sms::dashboard_detail();
+		$gateway = \dash\utility\filter::mobile(\dash\header::get('gateway'));
+		return \lib\app\sms::dashboard_detail($gateway);
 	}
 }
 ?>
