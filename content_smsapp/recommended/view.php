@@ -15,6 +15,7 @@ class view
 
 
 		$filterArray = [];
+		$countArgs   = [];
 
 		$args =
 		[
@@ -22,6 +23,15 @@ class view
 			'sort'  => \dash\request::get('sort'),
 			's_sms.recommend_id' => ['IS NOT', "NULL"],
 		];
+
+		$child = \dash\url::child();
+
+		if($child && \dash\utility\filter::mobile($child))
+		{
+			$args['s_sms.togateway'] = $child;
+			$countArgs['s_sms.togateway'] = $child;
+		}
+
 
 		$search_string = \dash\request::get('q');
 
@@ -106,9 +116,10 @@ class view
 			\dash\data::answerList($answer_list);
 		}
 
+		$countArgs['s_sms.recommend_id'] = ["IS NOT", "NULL"];
 
-		$status_count1 = \lib\db\sms::status_count(['s_sms.recommend_id' => ["IS NOT", "NULL"]], 'receivestatus');
-		$status_count2 = \lib\db\sms::status_count(['s_sms.recommend_id' => ["IS NOT", "NULL"]], 'sendstatus');
+		$status_count1 = \lib\db\sms::status_count($countArgs, 'receivestatus');
+		$status_count2 = \lib\db\sms::status_count($countArgs, 'sendstatus');
 		\dash\data::statusCount_receive($status_count1);
 		\dash\data::statusCount_send($status_count2);
 

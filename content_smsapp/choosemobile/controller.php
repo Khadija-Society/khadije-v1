@@ -8,16 +8,30 @@ class controller
 	{
 		\dash\permission::access('smsAppSetting');
 
+		$child = \dash\url::child();
+
+		if($child && in_array($child, ['recommended', 'listsms']))
+		{
+			\dash\open::get();
+		}
+
+		if(!$child)
+		{
+			$child = 'listsms';
+		}
+
+		\dash\data::myUrlChild($child);
+
 		$data = \lib\db\sms::group_by_togateway();
 
 		if(!$data)
 		{
-			\dash\redirect::to(\dash\url::here(). '/listsms');
+			\dash\redirect::to(\dash\url::here(). '/'. $child);
 		}
 
 		if(count($data) === 1 && isset($data[0]['togateway']))
 		{
-			\dash\redirect::to(\dash\url::here(). '/listsms/'. $data[0]['togateway']);
+			\dash\redirect::to(\dash\url::here(). '/'. $child. '/'. $data[0]['togateway']);
 		}
 
 		\dash\data::togateway($data);
