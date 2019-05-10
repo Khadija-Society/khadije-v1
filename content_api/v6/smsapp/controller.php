@@ -6,10 +6,10 @@ class controller
 {
 	public static function routing()
 	{
-		self::save_log();
 
 		if(!\dash\request::is('post'))
 		{
+			self::save_log();
 			\content_api\v6::no(404);
 		}
 
@@ -94,6 +94,7 @@ class controller
 
 		if(!trim($smsappkey))
 		{
+			self::save_log();
 			\content_api\v6::no(400, T_("Appkey not set"));
 		}
 
@@ -103,6 +104,7 @@ class controller
 		}
 		else
 		{
+			self::save_log();
 			\content_api\v6::no(400, T_("Invalid app key"));
 		}
 
@@ -129,6 +131,7 @@ class controller
 		}
 		else
 		{
+			self::save_log();
 			\content_api\v6::no(400, T_("Invalid mobile for gateway"));
 			return false;
 		}
