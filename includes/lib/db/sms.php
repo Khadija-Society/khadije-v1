@@ -217,6 +217,12 @@ class sms
 	}
 
 
+
+	public static function get_raw($_args)
+	{
+		return \dash\db\config::public_get('s_sms', $_args);
+	}
+
 	public static function get($_args)
 	{
 		$option =

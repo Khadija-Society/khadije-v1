@@ -80,6 +80,7 @@ class controller
 				'post'      => \dash\request::post(),
 				'get'       => \dash\request::get(),
 				'url'       => \dash\url::pwd(),
+				'msg'       => \dash\notif::get(),
 			];
 		}
 
