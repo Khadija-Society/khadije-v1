@@ -329,7 +329,7 @@ class sms
 		$gateway = null;
 		if($_gateway)
 		{
-			$gateway = " ANS s_sms.togateway = '$_gateway' ";
+			$gateway = " AND s_sms.togateway = '$_gateway' ";
 		}
 
 		$where = null;
