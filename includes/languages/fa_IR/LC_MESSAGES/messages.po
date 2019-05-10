@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-05-09 18:21+0430\n"
-"PO-Revision-Date: 2019-05-09 18:21+0430\n"
+"POT-Creation-Date: 2019-05-10 16:27+0430\n"
+"PO-Revision-Date: 2019-05-10 16:27+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -512,8 +512,8 @@ msgstr "سخت‌افزار"
 #: dash/addons/content_api/v6/android/user/add.php:135
 #: dash/addons/includes/languages/trans_dash.php:298
 #: dash/addons/includes/languages/trans_static.php:415
-#: khadije/content_smsapp/listsms/view.php:80
-#: khadije/content_smsapp/recommended/view.php:79
+#: khadije/content_smsapp/listsms/view.php:86
+#: khadije/content_smsapp/recommended/view.php:85
 #: khadije/includes/languages/trans_dash.php:50
 #: khadije/includes/languages/trans_project.php:183
 msgid "type"
@@ -16453,6 +16453,12 @@ msgstr "به درگاه"
 msgid "fromgateway"
 msgstr "از درگاه"
 
+#: khadije/content_smsapp/listsms/view.php:80
+#: khadije/content_smsapp/recommended/view.php:79
+#: khadije/includes/languages/trans_project.php:103
+msgid "group_id"
+msgstr "شناسه گروه"
+
 #: khadije/content_smsapp/recommended/model.php:14
 msgid "All message group saved"
 msgstr "پیام‌های این گروه ذخیره شد"
@@ -16721,10 +16727,6 @@ msgstr "میزان"
 #: khadije/includes/languages/trans_project.php:102
 msgid "answertext"
 msgstr "متن پاسخ"
-
-#: khadije/includes/languages/trans_project.php:103
-msgid "group_id"
-msgstr "شناسه گروه"
 
 #: khadije/includes/languages/trans_project.php:107
 msgid "Manage sms"
@@ -19557,6 +19559,14 @@ msgstr "ارسال شده به دستگاه"
 #: khadije/includes/languages/trans_static.php:203
 msgid "Deliver"
 msgstr "تحویل‌داده‌شده"
+
+#: khadije/includes/languages/trans_static.php:206
+msgid "Blacklist"
+msgstr "لیست سیاه"
+
+#: khadije/includes/languages/trans_static.php:207
+msgid "blacklist"
+msgstr "لیست سیاه"
 
 #: khadije/includes/lib/app/android.php:67
 msgid "Change language"
