@@ -64,24 +64,19 @@ class controller
 
 	private static function save_log($_data = null)
 	{
+		$log =
+		[
+			'gateway'   => \dash\header::get('gateway'),
+			'smsappkey' => \dash\header::get('smsappkey'),
+			'post'      => \dash\request::post(),
+			'get'       => \dash\request::get(),
+			'url'       => \dash\url::pwd(),
+			'msg'       => \dash\notif::get(),
+		];
+
 		if($_data)
 		{
-			$log =
-			[
-				'result'   => $_data,
-			];
-		}
-		else
-		{
-			$log =
-			[
-				'gateway'   => \dash\header::get('gateway'),
-				'smsappkey' => \dash\header::get('smsappkey'),
-				'post'      => \dash\request::post(),
-				'get'       => \dash\request::get(),
-				'url'       => \dash\url::pwd(),
-				'msg'       => \dash\notif::get(),
-			];
+			$log['result'] = $_data;
 		}
 
 		\dash\log::file(json_encode($log, JSON_UNESCAPED_UNICODE), 'smsapp.log', 'api');
