@@ -126,21 +126,14 @@
 
   <table class="tbl1 v6 responsive">
     <thead class="s0">
-      <tr>
+      <tr class="fs08">
         <th>{%trans "Sms text"%}</th>
-        <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "From number"%}</a></th>
-        <th data-sort="{{sortLink.togateway.order}}"><a href="{{sortLink.togateway.link}}">{%trans "To gateway"%}</a></th>
-        <!-- <th data-sort="{{sortLink.date.order}}"><a href="{{sortLink.date.link}}">{%trans "Date"%}</a></th> -->
+        <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "Numbers"%}</a></th>
         <th data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date created"%}</a></th>
         <th data-sort="{{sortLink.receivestatus.order}}"><a href="{{sortLink.receivestatus.link}}">{%trans "Reseive status"%}</a></th>
-        <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
         <th>{%trans "Answer"%}</th>
-        <th data-sort="{{sortLink.fromgateway.order}}"><a href="{{sortLink.fromgateway.link}}">{%trans "From gateway"%}</a></th>
-        <th data-sort="{{sortLink.tonumber.order}}"><a href="{{sortLink.tonumber.link}}">{%trans "To number"%}</a></th>
+        <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
         <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
-
-        <th class="">{%trans "Action"%}</th>
-
       </tr>
     </thead>
 
@@ -148,51 +141,38 @@
       {%for key, value in dataTable%}
       <tr class="{%if value.receivestatus == 'awaiting' %} active {%endif%}">
         <td>
+          <a href="{{url.here}}/viewsms?id={{value.id}}">
+            <span class="badge primary">{%trans "Detail"%}</span>
           {% if value.group_type == 'family' %}
             <small class="fc-mute">{%trans "Private"%}</small>
           {%else%}
-            {{value.text |raw}}
+            {{value.text |raw | nl2br}}
           {%endif%}
         </td>
-        <td class="ltr txtL collapsing">
-          <a href="{{url.that}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
+        <td class="collapsing">
+          <div>
+            {%trans "fromnumber"%}
+            <a href="{{url.that}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
+          </div>
 
-          {%if false and value.togateway or value.fromgateway or value.tonumber%}
-          <i class="sf-plus " data-kerkere='.myDetail{{value.id}}'></i>
-          <span class="myDetail{{value.id}}" data-kerkere-content='hide'>
-            {%if value.togateway%}<div class="badge">{%trans "togateway"%} {{value.togateway | fitNumber(false)}}</div>{%endif%}
-            {%if value.fromgateway%}<div class="badge">{%trans "fromgateway"%} {{value.fromgateway | fitNumber(false)}}</div>{%endif%}
-            {%if value.tonumber%}<div class="badge">{%trans "tonumber"%} {{value.tonumber | fitNumber(false)}}</div>{%endif%}
-          </span>
-          {%endif%}
-        </td>
-        <td class="ltr txtL collapsing">
-          {%if value.togateway == '989127522690' %}
-          <span class="badge warn">&nbsp;</span>
-          {%endif%}
-          <a href="{{url.that}}?togateway={{value.togateway}}">{{value.togateway | fitNumber(false)}}</a>
+            {%if value.togateway%}
+            <div>{%trans "togateway"%} <span {%if value.togateway == '989127522690' %}class='compact badge light'{%endif%}>{{value.togateway | fitNumber(false)}}</span></div>
+            {%endif%}
 
+            {%if value.fromgateway%}
+            <hr>
+            <div>{%trans "fromgateway"%} <span>{{value.fromgateway | fitNumber(false)}}</span></div>
+            {%endif%}
+            {%if value.tonumber%}
+            <div>{%trans "tonumber"%} <span>{{value.tonumber | fitNumber(false)}}</span></div>
+            {%endif%}
         </td>
 
         <td class="ltr txtL collapsing">{{value.datecreated | dt}}</td>
         <td class="collapsing"><a href="{{url.that}}?receivestatus={{value.receivestatus}}">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</a></td>
+        <td>{{value.answertext | raw | nl2br}}</td>
         <td class="collapsing"><a href="{{url.that}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></td>
-        <td>{{value.answertext}}</td>
-        <td class="ltr txtL collapsing">
-          <a href="{{url.that}}?fromgateway={{value.fromgateway}}">{{value.fromgateway | fitNumber(false)}}</a>
-        </td>
-        <td class="ltr txtL collapsing">
-          <a href="{{url.that}}?tonumber={{value.tonumber}}">{{value.tonumber | fitNumber(false)}}</a>
-        </td>
         <td class="collapsing"><a href="{{url.that}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
-
-        <td class="txtC collapsing">
-          {%if value.receivestatus != 'answerready' and value.receivestatus != 'skip' %}
-            <div class="badge danger" data-confirm data-data='{"skip": "skip", "id": "{{value.id}}"}'>{%trans "Skip"%}</div>
-          {%endif%}
-          <a href="{{url.here}}/viewsms?id={{value.id}}" class="badge primary">{%trans "Detail"%}</a>
-        </td>
-
       </tr>
       {%endfor%}
     </tbody>
@@ -205,7 +185,7 @@
 
 {%block htmlFilter%}
 <p class="f fs14 msg warn2">
-  <span class="c">{{dataFilter | raw}}</span>
+  <span class="c">{{dataFilter | raw }}</span>
   <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
