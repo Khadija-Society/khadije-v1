@@ -16,6 +16,22 @@ class sms
 	";
 
 
+	public static function group_by_togateway()
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				s_sms.togateway
+			FROM
+				s_sms
+			GROUP BY s_sms.togateway
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 	public static function get_recommend_group()
 	{
 		$query =

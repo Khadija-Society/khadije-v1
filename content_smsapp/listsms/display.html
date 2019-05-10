@@ -39,7 +39,7 @@
 <div class="f">
 
   <div class="c s6">
-    <a class="dcard x1" href="{{url.this}}">
+    <a class="dcard x1" href="{{url.that}}">
      <div class="statistic sm teal">
       <div class="value mB10">{{statusCount.all | fitNumber}}</div>
       <div class="label">{%trans "All"%}</div>
@@ -48,7 +48,7 @@
   </div>
 
   <div class="c s6">
-    <a class="dcard x1" href="{{url.this}}?receivestatus=awaiting">
+    <a class="dcard x1" href="{{url.that}}?receivestatus=awaiting">
      <div class="statistic sm teal">
       <div class="value mB10">{{statusCount.receive.awaiting | fitNumber}}</div>
       <div class="label">{%trans "New"%} <small>{%trans "Awaiting"%}</small></div>
@@ -57,7 +57,7 @@
   </div>
 
   <div class="c s6">
-    <a class="dcard x1" href="{{url.this}}?receivestatus=block">
+    <a class="dcard x1" href="{{url.that}}?receivestatus=block">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.receive.block | fitNumber}}</div>
       <div class="label">{%trans "Needless to answer"%}</div>
@@ -66,7 +66,7 @@
   </div>
 
    <div class="c s6">
-    <a class="dcard x1" href="{{url.this}}?receivestatus=skip">
+    <a class="dcard x1" href="{{url.that}}?receivestatus=skip">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.receive.skip | fitNumber}}</div>
       <div class="label">{%trans "Skip message"%}</div>
@@ -75,7 +75,7 @@
   </div>
 
   <div class="c s6">
-    <a class="dcard x1" href="{{url.this}}?receivestatus=answerready">
+    <a class="dcard x1" href="{{url.that}}?receivestatus=answerready">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.receive.answerready | fitNumber}}</div>
       <div class="label">{%trans "Answered"%}</div>
@@ -84,7 +84,7 @@
   </div>
 
   <div class="c s6">
-    <a class="dcard x1" href="{{url.this}}?sendstatus=awaiting">
+    <a class="dcard x1" href="{{url.that}}?sendstatus=awaiting">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.send.awaiting | fitNumber}}</div>
       <div class="label">{%trans "Awaiting to send to device"%}</div>
@@ -93,7 +93,7 @@
   </div>
 
   <div class="c s6">
-    <a class="dcard x1" href="{{url.this}}?sendstatus=sendtodevice">
+    <a class="dcard x1" href="{{url.that}}?sendstatus=sendtodevice">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.send.sendtodevice | fitNumber}}</div>
       <div class="label">{%trans "Waiting for sending by device"%}</div>
@@ -102,7 +102,7 @@
   </div>
 
   <div class="c s6">
-    <a class="dcard x1" href="{{url.this}}?sendstatus=send">
+    <a class="dcard x1" href="{{url.that}}?sendstatus=send">
      <div class="statistic sm">
       <div class="value mB10">{{statusCount.send.send | fitNumber}}</div>
       <div class="label">{%trans "Sended"%}</div>
@@ -128,7 +128,7 @@
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.this}}' autocomplete="off">
+  <form method="get" action='{{url.that}}' autocomplete="off">
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -172,7 +172,7 @@
           {%endif%}
         </td>
         <td class="ltr txtL collapsing">
-          <a href="{{url.this}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
+          <a href="{{url.that}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
 
           {%if false and value.togateway or value.fromgateway or value.tonumber%}
           <i class="sf-plus " data-kerkere='.myDetail{{value.id}}'></i>
@@ -187,21 +187,21 @@
           {%if value.togateway == '989127522690' %}
           <span class="badge warn">&nbsp;</span>
           {%endif%}
-          <a href="{{url.this}}?togateway={{value.togateway}}">{{value.togateway | fitNumber(false)}}</a>
+          <a href="{{url.that}}?togateway={{value.togateway}}">{{value.togateway | fitNumber(false)}}</a>
 
         </td>
 
         <td class="ltr txtL collapsing">{{value.datecreated | dt}}</td>
-        <td class="collapsing"><a href="{{url.this}}?receivestatus={{value.receivestatus}}">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</a></td>
-        <td class="collapsing"><a href="{{url.this}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></td>
+        <td class="collapsing"><a href="{{url.that}}?receivestatus={{value.receivestatus}}">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</a></td>
+        <td class="collapsing"><a href="{{url.that}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></td>
         <td>{{value.answertext}}</td>
         <td class="ltr txtL collapsing">
-          <a href="{{url.this}}?fromgateway={{value.fromgateway}}">{{value.fromgateway | fitNumber(false)}}</a>
+          <a href="{{url.that}}?fromgateway={{value.fromgateway}}">{{value.fromgateway | fitNumber(false)}}</a>
         </td>
         <td class="ltr txtL collapsing">
-          <a href="{{url.this}}?tonumber={{value.tonumber}}">{{value.tonumber | fitNumber(false)}}</a>
+          <a href="{{url.that}}?tonumber={{value.tonumber}}">{{value.tonumber | fitNumber(false)}}</a>
         </td>
-        <td class="collapsing"><a href="{{url.this}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
+        <td class="collapsing"><a href="{{url.that}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
 
         <td class="txtC collapsing">
           {%if value.receivestatus != 'answerready' and value.receivestatus != 'skip' %}
@@ -222,7 +222,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg warn2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -230,7 +230,7 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 

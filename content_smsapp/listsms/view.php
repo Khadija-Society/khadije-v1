@@ -15,6 +15,7 @@ class view
 
 
 		$filterArray = [];
+		$countArgs   = [];
 
 		$args =
 		[
@@ -24,6 +25,15 @@ class view
 			// 's_sms.receivestatus' => ['!=', "'block'"],
 
 		];
+
+		$child = \dash\url::child();
+
+		if($child && \dash\utility\filter::mobile($child))
+		{
+			$args['s_sms.togateway'] = $child;
+			$countArgs['s_sms.togateway'] = $child;
+		}
+
 
 		// if(\dash\permission::supervisor())
 		// {
@@ -102,9 +112,9 @@ class view
 		\dash\data::groupList($smsgroup);
 
 
-		$status_count1 = \lib\db\sms::status_count([], 'receivestatus');
+		$status_count1 = \lib\db\sms::status_count($countArgs, 'receivestatus');
 
-		$status_count2 = \lib\db\sms::status_count([], 'sendstatus');
+		$status_count2 = \lib\db\sms::status_count($countArgs, 'sendstatus');
 
 		\dash\data::statusCount_receive($status_count1);
 		\dash\data::statusCount_send($status_count2);
