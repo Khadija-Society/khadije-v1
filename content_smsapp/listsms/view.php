@@ -34,6 +34,10 @@ class view
 			$countArgs['s_sms.togateway'] = $child;
 		}
 
+		if(!\dash\request::get('status') && !\dash\request::get('sendstatus') && !\dash\request::get('receivestatus'))
+		{
+			$args['s_sms.receivestatus'] = 'awaiting';
+		}
 
 		// if(\dash\permission::supervisor())
 		// {

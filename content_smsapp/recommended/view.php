@@ -33,6 +33,12 @@ class view
 		}
 
 
+		if(!\dash\request::get('status') && !\dash\request::get('sendstatus') && !\dash\request::get('receivestatus'))
+		{
+			$args['s_sms.receivestatus'] = 'awaiting';
+		}
+
+
 		$search_string = \dash\request::get('q');
 
 		if(!$args['order'])
