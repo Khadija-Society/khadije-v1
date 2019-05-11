@@ -223,19 +223,23 @@
           </div>
 
             {%if value.togateway%}
-            <div>{%trans "togateway"%} <span {%if value.togateway == '989127522690' %}class='compact badge light'{%endif%}>{{value.togateway | fitNumber(false)}}</span></div>
+            <div>{%trans "togateway"%} <a href="{{url.that}}?togateway={{value.togateway}}" {%if value.togateway == '989127522690' %}class='compact badge light'{%endif%}>{{value.togateway | fitNumber(false)}}</a></div>
             {%endif%}
 
             {%if value.fromgateway%}
             <hr>
-            <div>{%trans "fromgateway"%} <span>{{value.fromgateway | fitNumber(false)}}</span></div>
+            <div>{%trans "fromgateway"%} <a href="{{url.that}}?fromgateway={{value.fromgateway}}">{{value.fromgateway | fitNumber(false)}}</a></div>
             {%endif%}
             {%if value.tonumber%}
-            <div>{%trans "tonumber"%} <span>{{value.tonumber | fitNumber(false)}}</span></div>
+            <div>{%trans "tonumber"%} <a href="{{url.that}}?tonumber={{value.tonumber}}">{{value.tonumber | fitNumber(false)}}</a></div>
             {%endif%}
         </td>
 
-        <td class="ltr txtL collapsing">{{value.datecreated | dt}}</td>
+        <td class="ltr txtL collapsing">
+          <div>{{value.datecreated | dt('human', 'year')}}</div>
+          <div>{{value.datecreated | dt}}</div>
+
+        </td>
         <td class="collapsing"><a href="{{url.that}}?receivestatus={{value.receivestatus}}">{%set myreceivestatus = value.receivestatus%}{%trans myreceivestatus%}</a></td>
         <td>{{value.answertext | raw | nl2br}}</td>
         <td class="collapsing"><a href="{{url.that}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></td>

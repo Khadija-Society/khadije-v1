@@ -346,6 +346,7 @@ class sms
 				'receivestatus' => 'answerready',
 				'dateanswer'    => date("Y-m-d H:i:s"),
 				'sendstatus'    => 'awaiting',
+				'group_id'      => $load['group_id'],
 			];
 
 			// from_smspanel
