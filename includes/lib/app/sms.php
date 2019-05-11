@@ -216,8 +216,8 @@ class sms
 
 		foreach ($list as $key => $value)
 		{
-			\dash\utility\sms::send($value['tonumber'], $value['answertext']);
-			\lib\db\sms::update(['sendstatus' => 'sendbypanel'], $value['id']);
+			\dash\utility\sms::send($value['fromnumber'], $value['answertext']);
+			\lib\db\sms::update(['sendstatus' => 'sendbypanel', 'tonumber' => $value['fromnumber']], $value['id']);
 		}
 	}
 

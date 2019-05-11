@@ -110,6 +110,12 @@ class view
 			$filterArray[T_('recommend_id')] = \dash\request::get('recommend_id');
 		}
 
+		if(\dash\request::get('tonumber'))
+		{
+			$args['tonumber']     = \dash\request::get('tonumber');
+			$filterArray[T_('tonumber')] = \dash\request::get('tonumber');
+		}
+
 		if(\dash\request::get('type'))
 		{
 			$args['type']     = \dash\request::get('type');

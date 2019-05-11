@@ -6,7 +6,8 @@ class model
 {
 	public static function post()
 	{
-		if(\dash\request::post('changeStatus') === 'receivestatus')
+		// just su can edit it
+		if(\dash\request::post('changeStatus') === 'receivestatus' && \dash\permission::supervisor())
 		{
 			$post                  = [];
 			$post['receivestatus'] = \dash\request::post('receivestatus');
@@ -14,7 +15,7 @@ class model
 			\dash\redirect::pwd();
 		}
 
-		if(\dash\request::post('changeStatus') === 'sendstatus')
+		if(\dash\request::post('changeStatus') === 'sendstatus' && \dash\permission::supervisor())
 		{
 			$post                  = [];
 			$post['sendstatus'] = \dash\request::post('sendstatus');
