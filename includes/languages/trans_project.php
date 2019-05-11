@@ -52,19 +52,19 @@ class twigTransTerms
 	echo T_("Receive");                                                               // Line 93
 
 	//------------------------------------------------content_smsapp/chat/display.html
-	echo T_("From number");                                                           // Line 193
-	echo T_("Sms text");                                                              // Line 192
+	echo T_("From number");                                                           // Line 57
+	echo T_("Sms text");                                                              // Line 193
 	echo T_("Date");                                                                  // Line 109
 	echo T_("Date created");                                                          // Line 44
-	echo T_("Reseive status");                                                        // Line 197
+	echo T_("Reseive status");                                                        // Line 196
 	echo T_("Send status");                                                           // Line 198
-	echo T_("Answer");                                                                // Line 199
+	echo T_("Answer");                                                                // Line 197
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Recommend");                                                             // Line 81
 	echo T_("Action");                                                                // Line 61
 	echo T_("togateway");                                                             // Line 226
-	echo T_("fromgateway");                                                           // Line 227
-	echo T_("tonumber");                                                              // Line 228
+	echo T_("fromgateway");                                                           // Line 231
+	echo T_("tonumber");                                                              // Line 234
 	echo T_("View");                                                                  // Line 77
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
@@ -97,9 +97,9 @@ class twigTransTerms
 	echo T_("Manage group");                                                          // Line 80
 	echo T_("Answer text");                                                           // Line 53
 	echo T_("Skip");                                                                  // Line 38
-	echo T_("Send by gateway");                                                       // Line 164
-	echo T_("From the sender");                                                       // Line 167
-	echo T_("From the sms panel");                                                    // Line 168
+	echo T_("Send by gateway");                                                       // Line 82
+	echo T_("From the sender");                                                       // Line 85
+	echo T_("From the sms panel");                                                    // Line 86
 	echo T_("sendstatus");                                                            // Line 155
 	echo T_("amount");                                                                // Line 156
 	echo T_("answertext");                                                            // Line 157
@@ -109,25 +109,28 @@ class twigTransTerms
 	//-----------------------------------------------------content_smsapp/sidenav.html
 	echo T_("Manage sms");                                                            // Line 1
 	echo T_("SMS List");                                                              // Line 6
-	echo T_("Recommended");                                                           // Line 203
 
 	//---------------------------------------------content_smsapp/listsms/display.html
-	echo T_("All");                                                                   // Line 46
-	echo T_("New");                                                                   // Line 53
+	echo T_("Recommend message group sorted");                                        // Line 44
+	echo T_("What answer send to this group?");                                       // Line 55
+	echo T_("All");                                                                   // Line 100
+	echo T_("Recommended");                                                           // Line 200
+	echo T_("New");                                                                   // Line 114
 	echo T_("Awaiting");                                                              // Line 33
-	echo T_("Needless to answer");                                                    // Line 60
-	echo T_("Skip message");                                                          // Line 67
-	echo T_("Answered");                                                              // Line 74
-	echo T_("Awaiting to send to device");                                            // Line 81
-	echo T_("Waiting for sending by device");                                         // Line 88
-	echo T_("Sended");                                                                // Line 95
-	echo T_("On");                                                                    // Line 101
-	echo T_("Off");                                                                   // Line 101
-	echo T_("System status");                                                         // Line 102
-	echo T_("Numbers");                                                               // Line 131
+	echo T_("Needless to answer");                                                    // Line 121
+	echo T_("Skip message");                                                          // Line 128
+	echo T_("Answered");                                                              // Line 135
+	echo T_("Awaiting to send to device");                                            // Line 142
+	echo T_("Waiting for sending by device");                                         // Line 149
+	echo T_("Sended");                                                                // Line 156
+	echo T_("On");                                                                    // Line 162
+	echo T_("Off");                                                                   // Line 162
+	echo T_("System status");                                                         // Line 163
+	echo T_("Numbers");                                                               // Line 194
+	echo T_("Send to analyze");                                                       // Line 209
 	echo T_("Detail");                                                                // Line 55
-	echo T_("Private");                                                               // Line 215
-	echo T_("fromnumber");                                                            // Line 154
+	echo T_("Private");                                                               // Line 152
+	echo T_("fromnumber");                                                            // Line 221
 
 	//--------------------------------------content_smsapp/recommendgroup/display.html
 	echo T_("You can register some recommend text to this group to help you.");       // Line 7
@@ -172,14 +175,6 @@ class twigTransTerms
 	echo T_("Deleted");                                                               // Line 273
 	echo T_("Description");                                                           // Line 64
 	echo T_("Add");                                                                   // Line 99
-
-	//-----------------------------------------content_smsapp/recommended/display.html
-	echo T_("Recommend message group sorted");                                        // Line 119
-	echo T_("What answer send to this group?");                                       // Line 135
-	echo T_("To gateway");                                                            // Line 194
-	echo T_("From gateway");                                                          // Line 200
-	echo T_("To number");                                                             // Line 201
-	echo T_("Send to analyze");                                                       // Line 255
 
 	//-----------------------------------------content_smsapp/answergroup/display.html
 	echo T_("You can register a answer of responses to this group to help you respond.");// Line 7
@@ -457,10 +452,10 @@ class twigTransTerms
 	//-------------------------------------------------content/consulting/display.html
 
 	//------------------------------------------------content/mylovestory/display.html
-	echo T_("Download book");                                                         // Line 26
-	echo T_("You are buy this book before and now you can download book via below link");// Line 25
-	echo T_("Click to buy book");                                                     // Line 28
-	echo T_("Buy book");                                                              // Line 30
+	echo T_("Download book");                                                         // Line 27
+	echo T_("You are buy this book before and now you can download book via below link");// Line 26
+	echo T_("Click to buy book");                                                     // Line 29
+	echo T_("Buy book");                                                              // Line 31
 
 	//----------------------------------------------------content/manager/display.html
 	echo T_("Najmeh Shabestan");                                                      // Line 34
