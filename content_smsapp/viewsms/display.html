@@ -100,6 +100,7 @@
 
         <label for="itxt mT20">{%trans "Answer text"%}</label>
         <textarea class="txt" rows="5" name="answertext"  id="ianswertxt" {%if dataRow.answertext %} disabled {%endif%}>{{dataRow.answertext}}</textarea>
+        {{block('fromGatewayForm')}}
         <div class="f mT20">
           <div class="c">
             <button class="btn block {%if dataRow.answertext %} disabled {%else%} primary {%endif%}  " {%if dataRow.answertext %} disabled {%endif%}>{%trans "Send"%}</button>
@@ -126,6 +127,20 @@
 </script>
 
 {%endblock%}
+
+
+
+{%block fromGatewayForm%}
+  <label for="fromgateway">{%trans "Send by gateway"%}</label>
+  <select name="fromgateway" class="select ui dropdown search mB10" id="fromgateway">
+  <option value="" readonly>{%trans "Please select one item"%} *</option>
+    <option value="{{dataRow.togateway}}" {%if dataRow.fromgateway == dataRow.togateway or not dataRow.fromgateway%} selected {%endif%}>{{dataRow.togateway | fitNumber('mobile')}} <small>{%trans "From the sender"%}</small></option>
+    <option value="{{10006660066600 | fitNumber(false)}}" {%if dataRow.fromgateway == '10006660066600' %} selected {%endif%}>{{10006660066600 | fitNumber(false)}} <small>{%trans "From the sms panel"%}</small></option>
+
+  </select>
+
+{%endblock%}
+
 
 
 {%block pageContent2%}

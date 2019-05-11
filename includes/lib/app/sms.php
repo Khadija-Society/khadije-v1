@@ -358,6 +358,7 @@ class sms
 				{
 					$post                  = [];
 					$post['answertext']    = $load['text'];
+					$post['fromgateway']   = $load['togateway'];
 					$post['receivestatus'] = 'answerready';
 					$post['dateanswer']    = date("Y-m-d H:i:s");
 					$post['sendstatus']    = 'awaiting';
@@ -668,6 +669,19 @@ class sms
 		// $recommend_id = \dash\app::request('recommend_id');
 
 		$fromgateway = \dash\app::request('fromgateway');
+		if($fromgateway)
+		{
+			$fromgateway = \dash\utility\convert::to_en_number($fromgateway);
+			if(!\dash\utility\filter::mobile($fromgateway))
+			{
+				if(!in_array(intval($fromgateway), [10006660066600]))
+				{
+					\dash\notif::error(T_("Invalid gateway"));
+					return false;
+				}
+			}
+
+		}
 		$tonumber    = \dash\app::request('tonumber');
 
 		$receivestatus = \dash\app::request('receivestatus');
