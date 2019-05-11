@@ -19,8 +19,9 @@ class view
 
 		$args =
 		[
-			'order' => \dash\request::get('order'),
-			'sort'  => \dash\request::get('sort'),
+			'order'              => \dash\request::get('order'),
+			'sort'               => \dash\request::get('sort'),
+			's_sms.recommend_id' => null,
 			// 's_group.type' => ['!=', "'family'"],
 			// 's_sms.receivestatus' => ['!=', "'block'"],
 
@@ -30,8 +31,9 @@ class view
 
 		if($child && \dash\utility\filter::mobile($child))
 		{
-			$args['s_sms.togateway'] = $child;
-			$countArgs['s_sms.togateway'] = $child;
+			$args['s_sms.togateway']         = $child;
+			$countArgs['s_sms.togateway']    = $child;
+			$countArgs['s_sms.recommend_id'] = null;
 		}
 
 		if(!\dash\request::get('status') && !\dash\request::get('sendstatus') && !\dash\request::get('receivestatus'))
