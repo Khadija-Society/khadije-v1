@@ -10,7 +10,7 @@ class controller
 
 		$child = \dash\url::child();
 
-		if($child && in_array($child, ['recommended', 'listsms']))
+		if($child && in_array($child, ['listsms']))
 		{
 			\dash\open::get();
 		}
