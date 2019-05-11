@@ -111,6 +111,7 @@
 
 
 {%block igroupList%}
+<form method="post">
 <div class="f">
 {%if groupList%}
 <div class="c s12">
@@ -125,21 +126,50 @@
 </div>
 {%endif%}
 {%if answerList%}
-<div class="c6 s12">
+<div class="c4 s12">
+
+  <input type="hidden" name="type" value="setAnswer">
+  <input type="hidden" name="recommend_id" value="{{requestGET.recommend_id}}">
+
   <div class="cbox mLa5">
     <h6>{%trans "What answer send to this group?"%}</h6>
     <div class="f">
       {%for key, value in answerList%}
-      <div data-confirm data-data='{"type":"setAnswer","answer_id": "{{value.id}}", "recommend_id": "{{requestGET.recommend_id}}"}' class="cauto btn info outline mA5">{{value.text}} <b>{{value.count | fitNumber}}</b></div>
+        <div class="radio3 c pRa5">
+          <input type="radio" id="ianswer{{value.id}}" name="answer_id" value="{{value.id}}">
+          <label for="ianswer{{value.id}}">{{value.text}} <b>{{value.count | fitNumber}}</b></label>
+        </div>
       {%endfor%}
     </div>
   </div>
+
 </div>
+
+<div class="c s12">
+  <div class="cbox mLa5">
+    {{block('fromGatewayForm')}}
+    <button class="btn block primary">{%trans "Send"%}</button>
+  </div>
+</div>
+
 {%endif%}
 </div>
+</form>
 
 {%endblock%}
 
+
+
+{%block fromGatewayForm%}
+  <label for="fromgateway">{%trans "Send by gateway"%}</label>
+  <select name="fromgateway" class="select ui dropdown search mB10" id="fromgateway">
+  <option value="" readonly>{%trans "Please select one item"%} *</option>
+    <option value="from_sender" selected>{%trans "From the sender"%}</option>
+    <option value="from_smspanel">{%trans "From the sms panel"%}</option>
+
+  </select>
+
+{%endblock%}
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">

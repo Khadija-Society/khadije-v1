@@ -273,9 +273,11 @@ class sms
 	}
 
 
-	public static function recommend_answer($_recommand_id, $_answer_id)
+	public static function recommend_answer($_recommand_id, $_answer_id, $_fromgateway)
 	{
 		$load = self::get_answer($_answer_id);
+
+
 
 		if(isset($load['text']))
 		{
@@ -295,7 +297,17 @@ class sms
 				'sendstatus'    => 'awaiting',
 			];
 
-			$result = \lib\db\sms::update_where($set, $where);
+			// from_smspanel
+			if($_fromgateway === 'from_sender')
+			{
+				$result = \lib\db\sms::update_where_sender($set, $where);
+			}
+			else
+			{
+				$set['fromgateway'] = '10006660066600';
+				$result = \lib\db\sms::update_where($set, $where);
+			}
+
 
 			return $result;
 

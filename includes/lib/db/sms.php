@@ -16,6 +16,20 @@ class sms
 	";
 
 
+	public static function update_where_sender($_set, $_where)
+	{
+		$where = \dash\db\config::make_where($_where);
+		$set   = \dash\db\config::make_set($_set);
+		$query =
+		"
+			UPDATE s_sms
+			SET $set, s_sms.fromgateway = s_sms.togateway
+			WHERE $where
+		";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
 	public static function group_by_togateway()
 	{
 		$query =
