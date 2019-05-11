@@ -89,7 +89,8 @@ class queue
 		[
 			'recommend_id' => null,
 			'sendstatus'   => 'awaiting',
-			'togateway'    => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			// 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			'fromgateway'  => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			'limit'        => 10,
 		];
 
@@ -115,7 +116,15 @@ class queue
 
 	private static function not_sent_sms()
 	{
-		$get = \lib\db\sms::get_raw(['sendstatus' => 'sendtodevice', 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')), 'limit' => 1]);
+		$get_args =
+		[
+			'sendstatus'   => 'sendtodevice',
+			// 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			'fromgateway'  => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			'limit'        => 1,
+		];
+
+		$get = \lib\db\sms::get_raw($get_args);
 		// $get = \lib\db\sms::get(['sendstatus' => 'sendtodevice',  'limit' => 1]);
 
 		if($get)
