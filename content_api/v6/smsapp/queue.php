@@ -87,7 +87,7 @@ class queue
 		// get just not recommended message
 		$get_args =
 		[
-			'recommend_id' => null,
+			// 'recommend_id' => null,
 			'sendstatus'   => 'awaiting',
 			// 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			// 'fromgateway'  => \dash\utility\filter::mobile(\dash\header::get('gateway')),
