@@ -1,0 +1,2 @@
+ALTER TABLE `s_sms` CHANGE `sendstatus` `sendstatus` enum('awaiting', 'sendtodevice', 'send', 'deliver', 'sendbypanel') NULL DEFAULT NULL;
+ALTER TABLE `s_sms` CHANGE `receivestatus` `receivestatus` enum('block', 'awaiting', 'analyze', 'answerready', 'skip', 'sendtopanel') NULL DEFAULT NULL;

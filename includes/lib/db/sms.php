@@ -15,6 +15,13 @@ class sms
 		s_sms.*, s_group.title AS `group_title`,s_group.type AS `group_type`, recommendGroup.title AS `recommend_title`
 	";
 
+	public static function get_sms_panel_not_send()
+	{
+		$query = "SELECT * FROM s_sms WHERE s_sms.receivestatus = 'sendtopanel' AND s_sms.sendstatus = 'awaiting' ";
+		$result = \dash\db::get($query);
+
+		return $result;
+	}
 
 	public static function update_where_sender($_set, $_where)
 	{

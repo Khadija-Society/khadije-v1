@@ -205,6 +205,11 @@ class TransStatic
 
 	echo T_("Blacklist");
 	echo T_("blacklist");
+
+	echo T_("sendbypanel");
+	echo T_("sendtopanel");
+	echo T_("Sendbypanel");
+	echo T_("Sendtopanel");
  }
 }
 ?>

@@ -170,6 +170,18 @@ class sms
 		}
 	}
 
+
+	public static function send_sms_panel()
+	{
+		$list = \lib\db\sms::get_sms_panel_not_send();
+
+		foreach ($list as $key => $value)
+		{
+			\dash\utility\sms::send($value['tonumber'], $value['answertext']);
+			\lib\db\sms::update(['sendstatus' => 'sendbypanel'], $value['id']);
+		}
+	}
+
 	public static function send_tg_notif($_sms = null)
 	{
 
@@ -304,7 +316,7 @@ class sms
 			}
 			else
 			{
-				$set['fromgateway'] = '10006660066600';
+				$set['receivestatus'] = 'sendtopanel';
 				$result = \lib\db\sms::update_where($set, $where);
 			}
 
@@ -697,14 +709,14 @@ class sms
 		$tonumber    = \dash\app::request('tonumber');
 
 		$receivestatus = \dash\app::request('receivestatus');
-		if($receivestatus && !in_array($receivestatus, ['block', 'awaiting', 'analyze', 'answerready', 'skip']))
+		if($receivestatus && !in_array($receivestatus, ['block', 'awaiting', 'analyze', 'answerready', 'skip', 'sendtopanel']))
 		{
 			\dash\notif::error(T_("Invalid status"));
 			return false;
 		}
 
 		$sendstatus = \dash\app::request('sendstatus');
-		if($sendstatus && !in_array($sendstatus, ['awaiting', 'sendtodevice', 'send', 'deliver']))
+		if($sendstatus && !in_array($sendstatus, ['awaiting', 'sendtodevice', 'send', 'deliver', 'sendbypanel']))
 		{
 			\dash\notif::error(T_("Invalid status"));
 			return false;
