@@ -32,8 +32,14 @@ class sms
 	}
 
 
-	public static function get_recommend_group()
+	public static function get_recommend_group($_where = null)
 	{
+		$where = null;
+		if($_where)
+		{
+			$where = " AND ". \dash\db\config::make_where($_where);
+		}
+
 		$query =
 		"
 			SELECT
@@ -42,7 +48,7 @@ class sms
 				s_sms.recommend_id AS `id`
 			FROM s_sms
 			RIGHT JOIN s_group ON s_sms.recommend_id = s_group.id
-			WHERE s_sms.recommend_id IS NOT NULL AND s_sms.receivestatus = 'awaiting' AND s_sms.sendstatus IS NULL
+			WHERE s_sms.recommend_id IS NOT NULL AND s_sms.receivestatus = 'awaiting' AND s_sms.sendstatus IS NULL $where
 			GROUP BY s_sms.recommend_id
 		";
 

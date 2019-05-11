@@ -112,7 +112,7 @@ class view
 		\dash\data::dataFilter($dataFilter);
 
 
-		$smsgroup = \lib\db\sms::get_recommend_group();
+		$smsgroup = \lib\db\sms::get_recommend_group($countArgs);
 
 		\dash\data::groupList($smsgroup);
 
