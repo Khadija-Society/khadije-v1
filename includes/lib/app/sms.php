@@ -37,6 +37,45 @@ class sms
 	}
 
 
+	public static function status_sms_count($_args = [])
+	{
+		$result              = [];
+		$result['all']       = 0;
+		$result['recommend'] = 0;
+		$result['send']      = [];
+		$result['receive']   = [];
+
+		$count_receivestatus = \lib\db\sms::count_receivestatus($_args);
+		if(is_array($count_receivestatus))
+		{
+			foreach ($count_receivestatus as $key => $value)
+			{
+				$result['receive'][$value['receivestatus']] = intval($value['count']);
+			}
+		}
+		$count_sendstatus    = \lib\db\sms::count_sendstatus($_args);
+		if(is_array($count_sendstatus))
+		{
+			foreach ($count_sendstatus as $key => $value)
+			{
+				$result['send'][$value['sendstatus']] = intval($value['count']);
+			}
+		}
+		$count_recommend     = \lib\db\sms::count_recommend($_args);
+
+		if(is_array($count_recommend))
+		{
+			foreach ($count_recommend as $key => $value)
+			{
+				$result['recommend'] = intval($value['count']);
+			}
+		}
+		$count_all     = \lib\db\sms::get_count($_args);
+		$result['all'] = $count_all;
+		return $result;
+
+	}
+
 	public static function setting_file($_set = [])
 	{
 		$get  = [];

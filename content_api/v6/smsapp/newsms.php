@@ -32,6 +32,7 @@ class newsms
 		$from_mobile = \dash\utility\filter::mobile($from);
 		$user_id     = null;
 
+		// if from is mobile signup it
 		if($from_mobile)
 		{
 			$from        = $from_mobile;
@@ -59,6 +60,7 @@ class newsms
 		$simcartserial = \dash\request::post('simcart-serial');
 		$smsmessageid  = \dash\request::post('smsMessage-id');
 		$userdata      = \dash\request::post('userdata');
+
 
 		$insert                  = [];
 		$insert['brand']         = substr($brand, 0, 99);
@@ -169,6 +171,8 @@ class newsms
 				if(array_key_exists('analyze', $get_group) && !$get_group['analyze'])
 				{
 					$insert['receivestatus']  = 'block';
+					// if the message is block not check recommend
+					return;
 				}
 			}
 		}

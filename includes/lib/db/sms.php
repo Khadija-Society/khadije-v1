@@ -290,6 +290,43 @@ class sms
 		return $result;
 	}
 
+	public static function count_receivestatus($_args = [])
+	{
+		$where = null;
+		if($_args)
+		{
+			$where = " WHERE ". \dash\db\config::make_where($_args);
+		}
+		$query  = "SELECT IFNULL(COUNT(*),0) AS `count`, s_sms.receivestatus FROM s_sms $where GROUP BY s_sms.receivestatus";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+	public static function count_sendstatus($_args = [])
+	{
+		$where = null;
+		if($_args)
+		{
+			$where = " WHERE ". \dash\db\config::make_where($_args);
+		}
+		$query  = "SELECT IFNULL(COUNT(*),0) AS `count`, s_sms.sendstatus FROM s_sms $where GROUP BY s_sms.sendstatus";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+	public static function count_recommend($_args = [])
+	{
+		$where = null;
+		if($_args)
+		{
+			$where = "AND ". \dash\db\config::make_where($_args);
+		}
+		$query  = "SELECT IFNULL(COUNT(*),0) AS `count` FROM s_sms WHERE recommend_id IS NOT NULL AND sendstatus IS NULL $where";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 
 	public static function status_count($_args = [], $_field)
 	{

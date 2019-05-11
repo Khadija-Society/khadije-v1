@@ -7,13 +7,13 @@
 {{block('istatusCount')}}
 {%if dataTable%}
  {%if dataFilter%}
-
+  {{block('igroupList')}}
   {{block('htmlSearchBox')}}
   {{block('htmlTable')}}
   {{block('htmlFilter')}}
 
  {%else%}
-
+  {{block('igroupList')}}
   {{block('htmlSearchBox')}}
   {{block('htmlTable')}}
 
@@ -34,6 +34,62 @@
 
 
 
+{%block igroupList%}
+<form method="post">
+<div class="f">
+{%if groupList%}
+<div class="cbox">
+
+  <div class="mT10">
+    <h6>{%trans "Recommend message group sorted"%}</h6>
+    <div class="f">
+      {%for key, value in groupList%}
+      <a href="{{url.that}}?recommend_id={{value.id}}&recommend=yes" class="cauto btn info {%if requestGET.recommend_id == value.id%} {%else%}outline {%endif%} mA5">{{value.title}} <b>{{value.count | fitNumber}}</b></a>
+      {%endfor%}
+    </div>
+  </div>
+  {%if answerList%}
+  <div class="mT10">
+    <input type="hidden" name="type" value="setAnswer">
+    <input type="hidden" name="recommend_id" value="{{requestGET.recommend_id}}">
+    <h6>{%trans "What answer send to this group?"%}</h6>
+    <div class="f">
+      {%for key, value in answerList%}
+        <div class="radio3 c6 pRa5">
+          <input type="radio" id="ianswer{{value.id}}" name="answer_id" value="{{value.id}}">
+          <label for="ianswer{{value.id}}">{{value.text}} <b>{{value.count | fitNumber}}</b></label>
+        </div>
+      {%endfor%}
+    </div>
+  </div>
+
+  <div class="mT10">
+    {{block('fromGatewayForm')}}
+    <button class="btn block primary">{%trans "Send"%}</button>
+  </div>
+  {%endif%}
+
+</div>
+{%endif%}
+</div>
+</form>
+
+{%endblock%}
+
+
+
+{%block fromGatewayForm%}
+  <label for="fromgateway">{%trans "Send by gateway"%}</label>
+  <select name="fromgateway" class="select ui dropdown search mB10" id="fromgateway">
+  <option value="" readonly>{%trans "Please select one item"%} *</option>
+    <option value="from_sender" selected>{%trans "From the sender"%}</option>
+    <option value="from_smspanel">{%trans "From the sms panel"%}</option>
+
+  </select>
+
+{%endblock%}
+
+
 {%block istatusCount%}
 
 <div class="f">
@@ -46,7 +102,14 @@
   </div>
 
   <div class="c m3 s6">
-    <a class="dcard x07 {%if not requestGET.status and not requestGET.sendstatus and not requestGET.receivestatus%}active{%endif%}" href="{{url.that}}">
+    <a class="dcard x07 {%if requestGET.recommend == 'yes'%}active{%endif%}" href="{{url.that}}?recommend=yes">
+      <div class="value">{{statusCount.recommend | fitNumber(false)}}</div>
+      <div class="label">{%trans "Recommended"%} <small>{%trans "New"%}</small></div>
+    </a>
+  </div>
+
+  <div class="c m3 s6">
+    <a class="dcard x07 {%if not requestGET%}active{%endif%}" href="{{url.that}}">
       <div class="value">{{statusCount.receive.awaiting | fitNumber(false)}}</div>
       <div class="label">{%trans "New"%} <small>{%trans "Awaiting"%}</small></div>
     </a>
@@ -134,6 +197,7 @@
         <th>{%trans "Answer"%}</th>
         <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Send status"%}</a></th>
         <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
+        <th data-sort="{{sortLink.recommend_id.order}}"><a href="{{sortLink.recommend_id.link}}">{%trans "Recommended"%}</a></th>
       </tr>
     </thead>
 
@@ -141,6 +205,9 @@
       {%for key, value in dataTable%}
       <tr class="{%if value.receivestatus == 'awaiting' %} active {%endif%}">
         <td>
+          {%if not value.sendstatus and requestGET.recommend == 'yes'%}
+            <div class="badge danger" data-confirm data-data='{"recommend": "invalid", "id": "{{value.id}}"}'>{%trans "Send to analyze"%}</div>
+          {%endif%}
           <a href="{{url.here}}/viewsms?id={{value.id}}">
             <span class="badge primary">{%trans "Detail"%}</span>
           {% if value.group_type == 'family' %}
@@ -173,6 +240,7 @@
         <td>{{value.answertext | raw | nl2br}}</td>
         <td class="collapsing"><a href="{{url.that}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></td>
         <td class="collapsing"><a href="{{url.that}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
+        <td class="collapsing"><a href="{{url.that}}?recommend_id={{value.recommend_id}}">{{value.recommend_title}}</a></td>
       </tr>
       {%endfor%}
     </tbody>

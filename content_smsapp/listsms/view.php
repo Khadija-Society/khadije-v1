@@ -21,10 +21,6 @@ class view
 		[
 			'order'              => \dash\request::get('order'),
 			'sort'               => \dash\request::get('sort'),
-			's_sms.recommend_id' => null,
-			// 's_group.type' => ['!=', "'family'"],
-			// 's_sms.receivestatus' => ['!=', "'block'"],
-
 		];
 
 		$child = \dash\url::child();
@@ -33,18 +29,30 @@ class view
 		{
 			$args['s_sms.togateway']         = $child;
 			$countArgs['s_sms.togateway']    = $child;
-			$countArgs['s_sms.recommend_id'] = null;
 		}
 
-		if(!\dash\request::get('status') && !\dash\request::get('sendstatus') && !\dash\request::get('receivestatus'))
+		if(\dash\request::get('recommend') === 'yes')
+		{
+			$args['s_sms.recommend_id'] = ['IS NOT ', 'NULL'];
+			$args['s_sms.sendstatus']   = ['IS ', 'NULL'];
+
+			$smsgroup = \lib\db\sms::get_recommend_group($countArgs);
+
+			\dash\data::groupList($smsgroup);
+
+			if(\dash\request::get('recommend_id'))
+			{
+				$answer_list = \lib\app\sms::answer_list(\dash\request::get('recommend_id'));
+				\dash\data::answerList($answer_list);
+			}
+
+		}
+
+
+		if(!\dash\request::get())
 		{
 			$args['s_sms.receivestatus'] = 'awaiting';
 		}
-
-		// if(\dash\permission::supervisor())
-		// {
-		// 	unset($args['s_group.type']);
-		// }
 
 		$search_string = \dash\request::get('q');
 
@@ -96,6 +104,12 @@ class view
 			$filterArray[T_('group_id')] = \dash\request::get('group_id');
 		}
 
+		if(\dash\request::get('recommend_id'))
+		{
+			$args['recommend_id']     = \dash\request::get('recommend_id');
+			$filterArray[T_('recommend_id')] = \dash\request::get('recommend_id');
+		}
+
 		if(\dash\request::get('type'))
 		{
 			$args['type']     = \dash\request::get('type');
@@ -112,18 +126,8 @@ class view
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
 		\dash\data::dataFilter($dataFilter);
 
-
-		$smsgroup = \lib\db\smsgroup::get(['count' => ["IS NOT", "NULL AND `count` > 0 "]]);
-
-		\dash\data::groupList($smsgroup);
-
-
-		$status_count1 = \lib\db\sms::status_count($countArgs, 'receivestatus');
-
-		$status_count2 = \lib\db\sms::status_count($countArgs, 'sendstatus');
-
-		\dash\data::statusCount_receive($status_count1);
-		\dash\data::statusCount_send($status_count2);
+		$status_count = \lib\app\sms::status_sms_count($countArgs);
+		\dash\data::statusCount($status_count);
 
 		\dash\data::sysStatus(\lib\app\sms::status());
 
