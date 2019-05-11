@@ -67,7 +67,7 @@ class sent
 
 
 
-			\lib\db\sms::update(['sendstatus' => 'send', 'datesend' => date("Y-m-d H:i:s")], $smsid);
+			\lib\db\sms::update(['sendstatus' => 'send', 'datesend' => date("Y-m-d H:i:s"), 'tonumber' => $load['fromnumber']], $smsid);
 			\dash\notif::ok(T_("The message set as sent message"));
 			return true;
 		}
