@@ -89,7 +89,7 @@ class queue
 		[
 			'recommend_id' => null,
 			'sendstatus'   => 'awaiting',
-			'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			// 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			// 'fromgateway'  => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			'limit'        => 10,
 		];
@@ -119,7 +119,7 @@ class queue
 		$get_args =
 		[
 			'sendstatus'   => 'sendtodevice',
-			'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			// 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			// 'fromgateway'  => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			'limit'        => 1,
 		];
