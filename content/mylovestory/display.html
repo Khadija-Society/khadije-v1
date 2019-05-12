@@ -15,22 +15,16 @@
 				<div class="msg primary2 fs08">
 					<h2 class="txtB">کتاب این تو  و این ماجرای عشق من اثر  انیسه سادات هاشمی</h2>
 				</div>
-{%if downloaLink and false %}
-				<p class="txtB fs12 msg">{%trans "Price"%} {{"3000" | fitNumber}} {%trans "Toman"%}</p>
-{%endif%}
-
 				<a class="btn success xl" data-action target="_blank" href="{{url.static}}/pdf/mylovestory.pdf">{%trans "Download book"%}</a>
 				<div class="msg pain mT50">روند شرکت در مسابقه مسابقه به‌زودی اطلاع رسانی خواهد شد</div>
-
-{%if downloaLink and false %}
+{%if false %}
+				<p class="txtB fs12 msg">{%trans "Price"%} {{"3000" | fitNumber}} {%trans "Toman"%}</p>
 				<p class="txtB msg success2">{%trans "You are buy this book before and now you can download book via below link"%}</p>
 				<a class="btn success" data-ajaxify data-data='{"download": 1}' data-method='post'>{%trans "Download book"%}</a>
-{%elseif false%}
 				<div class="btn primary lg" data-ajaxify data-data='{"pay": 1}' data-method='post' title='{%trans "Click to buy book"%}'>{%trans "Buy book"%} <span>{{"3000" | fitNumber}} {%trans "Toman"%}</span></div>
-{%elseif false%}
 				<a class="btn secondary lg" href="http://samtekhoda.org/518984-این-تو-و-این-ماجرای-عشق-من" target="_blank" rel="external nofollow">{%trans "Buy book"%}</a>
-
 {%endif%}
+
 			</div>
 		</div>
 		<div class="mT25 msg simple">
