@@ -52,6 +52,61 @@ class report
 	}
 
 
+	public static function chart_recommend($_gateway = null)
+	{
+		$gateway = null;
+		if($_gateway)
+		{
+			$gateway = " WHERE s_sms.togateway = '$_gateway' ";
+		}
+
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				s_sms.recommend_id,
+				MAX(s_group.title) AS `recommend_title`
+			FROM
+				s_sms
+			LEFT JOIN s_group ON s_sms.recommend_id = s_group.id
+				$gateway
+			GROUP BY
+				s_sms.recommend_id
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+	public static function chart_group($_gateway = null)
+	{
+		$gateway = null;
+		if($_gateway)
+		{
+			$gateway = " WHERE s_sms.togateway = '$_gateway' ";
+		}
+
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				s_sms.group_id,
+				MAX(s_group.title) AS `group_title`
+			FROM
+				s_sms
+			LEFT JOIN s_group ON s_sms.group_id = s_group.id
+				$gateway
+			GROUP BY
+				s_sms.group_id
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
+
+
 	public static function count_sms_day($_gateway = null)
 	{
 		$gateway = null;

@@ -112,5 +112,83 @@ class report
 
 		return $hi_chart;
 	}
+
+	public static function chart_recommend()
+	{
+		$result     = \lib\db\sms\report::chart_recommend();
+		$hi_chart   = [];
+
+		if(!is_array($result))
+		{
+			$result = [];
+		}
+
+		foreach ($result as $key => $value)
+		{
+			$name  = null;
+			$count = 0;
+
+			if(array_key_exists('recommend_title', $value))
+			{
+				$name = $value['recommend_title'] ? T_($value['recommend_title']) : T_("Null");
+			}
+
+			if(array_key_exists('count', $value))
+			{
+				$count = intval($value['count']);
+			}
+			$newValue = ['name' => $name, 'y' => $count];
+			if(!$value['recommend_title'])
+			{
+				$newValue['visible'] = false;
+			}
+			$hi_chart[] = $newValue;
+		}
+
+		$hi_chart = json_encode($hi_chart, JSON_UNESCAPED_UNICODE);
+
+		return $hi_chart;
+	}
+
+	public static function chart_group()
+	{
+		$result     = \lib\db\sms\report::chart_group();
+		$hi_chart   = [];
+
+		if(!is_array($result))
+		{
+			$result = [];
+		}
+
+		foreach ($result as $key => $value)
+		{
+			$name  = null;
+			$count = 0;
+
+			if(array_key_exists('group_title', $value))
+			{
+				$name = $value['group_title'] ? T_($value['group_title']) : T_("Null");
+			}
+
+			if(array_key_exists('count', $value))
+			{
+				$count = intval($value['count']);
+			}
+			$newValue = ['name' => $name, 'y' => $count];
+			if(!$value['group_title'])
+			{
+				$newValue['visible'] = false;
+			}
+			$hi_chart[] = $newValue;
+		}
+
+		$hi_chart = json_encode($hi_chart, JSON_UNESCAPED_UNICODE);
+
+		return $hi_chart;
+	}
+
+
+
+
 }
 ?>

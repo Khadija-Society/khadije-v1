@@ -3,6 +3,9 @@ function chartDrawer()
   if($("#chartdiv").length == 1){myChartProductPrice();}
   if($("#sendstatuschart").length == 1){sendstatuschart();}
   if($("#receivestatuschart").length == 1){receivestatuschart();}
+
+  if($("#recommendchart").length == 1){recommendchart();}
+  if($("#groupchart").length == 1){groupchart();}
 }
 
 
@@ -143,6 +146,152 @@ function receivestatuschart()
       name: '{%trans "Receive status"%}',
       allowPointSelect: true,
       data: {{myChart.receive | raw}},
+      tooltip: {
+        valueSuffix: ' {%trans "Count"%}'
+      },
+      showInLegend: true
+    }]
+  }, function(_chart)
+  {
+    _chart.renderer.image('{{service.logo}}', 10, 5, 30, 30).attr({class: 'chartServiceLogo'}).add();
+  });
+}
+
+
+
+
+function recommendchart()
+{
+  Highcharts.chart('recommendchart',
+  {
+    chart: {
+      zoomType: 'x',
+      style: {
+        fontFamily: 'IRANSans, Tahoma, sans-serif'
+      },
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: 'pie'
+    },
+    title: {
+      text: '{%trans "Sms count group by recommend title"%}'
+    },
+    tooltip: {
+      useHTML: true,
+      borderWidth: 0,
+      shared: true,
+      pointFormat: '{point.y}<br><b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        dataLabels: {
+          enabled: true,
+          // format: '<b>{point.name}</b><br> {point.percentage:.1f} %',
+          useHTML: true,
+          style: {
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+          }
+        }
+      }
+    },
+    exporting:
+    {
+      enabled: false
+    },
+    credits:
+    {
+        text: '{{service.title}}',
+        href: '{{service.url}}',
+        position:
+        {
+            x: -35,
+            y: -7
+        },
+        style: {
+            fontWeight: 'bold'
+        }
+    },
+    series:
+    [
+    {
+      name: '{%trans "Recommended"%}',
+      allowPointSelect: true,
+      data: {{myChart.recommend | raw}},
+      tooltip: {
+        valueSuffix: ' {%trans "Count"%}'
+      },
+      showInLegend: true
+    }]
+  }, function(_chart)
+  {
+    _chart.renderer.image('{{service.logo}}', 10, 5, 30, 30).attr({class: 'chartServiceLogo'}).add();
+  });
+}
+
+
+function groupchart()
+{
+  Highcharts.chart('groupchart',
+  {
+    chart: {
+      zoomType: 'x',
+      style: {
+        fontFamily: 'IRANSans, Tahoma, sans-serif'
+      },
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: 'pie'
+    },
+    title: {
+      text: '{%trans "Sms count group by group title"%}'
+    },
+    tooltip: {
+      useHTML: true,
+      borderWidth: 0,
+      shared: true,
+      pointFormat: '{point.y}<br><b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        dataLabels: {
+          enabled: true,
+          // format: '<b>{point.name}</b><br> {point.percentage:.1f} %',
+          useHTML: true,
+          style: {
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+          }
+        }
+      }
+    },
+    exporting:
+    {
+      enabled: false
+    },
+    credits:
+    {
+        text: '{{service.title}}',
+        href: '{{service.url}}',
+        position:
+        {
+            x: -35,
+            y: -7
+        },
+        style: {
+            fontWeight: 'bold'
+        }
+    },
+    series:
+    [
+    {
+      name: '{%trans "Group chart"%}',
+      allowPointSelect: true,
+      data: {{myChart.group | raw}},
       tooltip: {
         valueSuffix: ' {%trans "Count"%}'
       },
