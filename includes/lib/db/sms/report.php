@@ -63,6 +63,7 @@ class report
 		$query  =
 		"
 			SELECT
+				SUM(CEIL(s_sms.answertextcount / 70)) AS `sms`,
 				SUM(s_sms.answertextcount) AS `sum`,
 				DATE(s_sms.datesend) AS `date`
 			FROM

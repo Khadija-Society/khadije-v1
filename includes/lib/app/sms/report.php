@@ -14,12 +14,12 @@ class report
 		$new = [];
 		foreach ($result as $key => $value)
 		{
-			$temp          = [];
-			$temp['date']  = $value['date'];
-			$temp['tdate'] = \dash\datetime::fit($value['date'], true);
+			$temp           = [];
+			$temp['date']   = $value['date'];
+			$temp['tdate']  = \dash\datetime::fit($value['date'], true);
 			$temp['thdate'] = \dash\datetime::fit($value['date'], 'human', 'year');
-			$temp['sum']   = $value['sum'];
-			$temp['sms']   = ceil(intval($value['sum']) / 70);
+			$temp['sum']    = $value['sum'];
+			$temp['sms']    = intval($value['sms']);
 			$new[] = $temp;
 		}
 

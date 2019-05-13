@@ -74,7 +74,7 @@ class queue
 		$gateway   = \dash\utility\filter::mobile($gateway);
 
 		$get       = \lib\db\sms::get_count_gateway_send(date("Y-m-d"), $gateway);
-		$get       = ceil(intval($get) / 70);
+		$get       = intval($get);
 
 		if($get >= $max_limit)
 		{

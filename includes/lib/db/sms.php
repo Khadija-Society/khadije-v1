@@ -20,7 +20,7 @@ class sms
 		$query  =
 		"
 			SELECT
-				SUM(s_sms.answertextcount) AS `sum`
+				SUM(CEIL(s_sms.answertextcount / 70)) AS `sum`
 			FROM
 				s_sms
 			WHERE
