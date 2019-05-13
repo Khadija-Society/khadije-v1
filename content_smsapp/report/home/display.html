@@ -1,7 +1,10 @@
 {%extends 'content_smsapp/layout.html'%}
 
 {%block pageContent%}
->
+
+<div class="f">
+  <div class="c4 s12">{{block('icountsmsday')}}</div>
+</div>
 
 <div class="f">
 	<div class="c12">
@@ -11,10 +14,19 @@
 </div>
 
 
+
 {%endblock%}
 
 
 
+{%block icountsmsday%}
+<a class="dcard x1" href='{{url.this}}/countsmsday'>
+ <div class="statistic">
+  <div class="value"><i class="sf-cardiac-pulse"></i></div>
+  <div class="label">{%trans "Cont send sms per day"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 
 {%block foot_js%}

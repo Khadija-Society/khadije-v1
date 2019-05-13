@@ -1,0 +1,38 @@
+{%extends 'content_smsapp/layout.html'%}
+
+{%block pageContent%}
+
+
+<div class="f justify-center">
+  <div class="c6">
+
+
+        <table class="tbl1 v6 fs12">
+          <thead>
+            <tr>
+              <th>{%trans "Date"%}</th>
+              <th>{%trans "Count send character"%}</th>
+              <th>{%trans "Count send SMS"%}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for key, value in dataTable%}
+            <tr>
+              <td>
+              {{value.tdate}}
+              <br>
+              <small>{{value.thdate}}</small>
+              </td>
+              <td>{{value.sum | fitNumber}} <small>{%trans "Character"%}</small></td>
+              <td>{{value.sms | fitNumber}} <small>{%trans "SMS"%}</small></td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+
+  </div>
+</div>
+
+
+{%endblock%}
+
