@@ -192,8 +192,10 @@ class newsms
 		$split_text = explode(" ", $text);
 		if($split_text && is_array($split_text))
 		{
-			$sql_text = "('". implode("','", $split_text). "')";
+			$split_text    = array_map(['self', 'fixText'], $split_text);
+			$sql_text      = "('". implode("','", $split_text). "')";
 			$get_recommend = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'text' => ["IN", $sql_text], 'limit' => 1]);
+
 			if(isset($get_recommend['id']))
 			{
 				// check not contain another filter grop for example ramezan and karbala
@@ -225,6 +227,36 @@ class newsms
 			}
 		}
 
+	}
+
+	private static function fixText($_text)
+	{
+		$_text = strip_tags($_text);
+		$_text = str_replace('[', ' ', $_text);
+		$_text = str_replace(']', ' ', $_text);
+		$_text = str_replace('{', ' ', $_text);
+		$_text = str_replace('}', ' ', $_text);
+		$_text = str_replace('"', ' ', $_text);
+		$_text = str_replace('؛', ' ', $_text);
+		$_text = str_replace("'", ' ', $_text);
+		$_text = str_replace('(', ' ', $_text);
+		$_text = str_replace(')', ' ', $_text);
+		$_text = str_replace(':', ' ', $_text);
+		$_text = str_replace(',', ' ', $_text);
+		$_text = str_replace('،', ' ', $_text);
+		$_text = str_replace('-', ' ', $_text);
+		$_text = str_replace('_', ' ', $_text);
+		$_text = str_replace('?', ' ', $_text);
+		$_text = str_replace('؟', ' ', $_text);
+		$_text = str_replace('.', ' ', $_text);
+		$_text = str_replace('=', ' ', $_text);
+		$_text = str_replace('
+', ' ', $_text);
+
+		$_text = str_replace("\n", ' ', $_text);
+		$_text = str_replace('!', ' ', $_text);
+		$_text = str_replace('&nbsp;', ' ', $_text);
+		return trim($_text);
 	}
 }
 ?>
