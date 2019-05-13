@@ -48,8 +48,9 @@ class view
 
 		}
 
-
-		if(!\dash\request::get())
+		$get = \dash\request::get();
+		unset($get['page']);
+		if(!$get)
 		{
 			$args['s_sms.receivestatus'] = 'awaiting';
 			$args['s_sms.recommend_id'] = null;
