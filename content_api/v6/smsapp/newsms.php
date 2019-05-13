@@ -113,7 +113,7 @@ class newsms
 		if(isset($get_last_sms['date']))
 		{
 			$date = $get_last_sms['date'];
-			if(strtotime($_insert['date']) - strtotime($date) < 5)
+			if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
 			{
 				$id             = $get_last_sms['id'];
 				$text           = $get_last_sms['text'];
@@ -196,21 +196,31 @@ class newsms
 			$get_recommend = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'text' => ["IN", $sql_text], 'limit' => 1]);
 			if(isset($get_recommend['id']))
 			{
-				$insert['recommend_id'] = $get_recommend['group_id'];
+				// check not contain another filter grop for example ramezan and karbala
+				$not_in_another = \lib\db\smsgroupfilter::not_in_another($sql_text, $get_recommend['group_id']);
 
-
-				// ready to auto answer
-				$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['group_id'], 'isdefault' => 1, 'limit' => 1]);
-				if(isset($load_default_answer['text']))
+				if(!$not_in_another)
 				{
-					$insert['sendstatus']    = 'waitingtoautosend';
-					$insert['answertext']    = $load_default_answer['text'];
-					$insert['answertextcount']    = mb_strlen($load_default_answer['text']);
-					$insert['receivestatus'] = 'answerready';
-					$insert['fromgateway']   = $insert['togateway'];
-					$insert['tonumber']      = $insert['fromnumber'];
-					$insert['group_id']      = $insert['recommend_id'];
-					$insert['dateanswer']    = date("Y-m-d H:i:s");
+
+					$insert['recommend_id'] = $get_recommend['group_id'];
+
+					// ready to auto answer
+					$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['group_id'], 'isdefault' => 1, 'limit' => 1]);
+					if(isset($load_default_answer['text']))
+					{
+						$insert['sendstatus']      = 'waitingtoautosend';
+						$insert['answertext']      = $load_default_answer['text'];
+						$insert['answertextcount'] = mb_strlen($load_default_answer['text']);
+						$insert['receivestatus']   = 'answerready';
+						$insert['fromgateway']     = $insert['togateway'];
+						$insert['tonumber']        = $insert['fromnumber'];
+						$insert['group_id']        = $insert['recommend_id'];
+						$insert['dateanswer']      = date("Y-m-d H:i:s");
+					}
+				}
+				else
+				{
+					\dash\log::set('apiSmsAppRecommendConflict', ['conflict' => $text]);
 				}
 			}
 		}

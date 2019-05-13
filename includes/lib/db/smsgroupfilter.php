@@ -4,6 +4,23 @@ namespace lib\db;
 
 class smsgroupfilter
 {
+	public static function not_in_another($_text, $_group_id)
+	{
+		$query  =
+		"
+			SELECT
+				*
+			FROM
+				s_groupfilter
+			WHERE
+				s_groupfilter.type = 'analyze' AND
+				s_groupfilter.group_id != $_group_id AND
+				s_groupfilter.text IN $_text
+			LIMIT 1
+		";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
 
 	public static function remove_all_default($_type, $_group_id)
 	{
