@@ -197,6 +197,20 @@ class newsms
 			if(isset($get_recommend['id']))
 			{
 				$insert['recommend_id'] = $get_recommend['group_id'];
+
+
+				// ready to auto answer
+				$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['group_id'], 'isdefault' => 1, 'limit' => 1]);
+				if(isset($load_default_answer['text']))
+				{
+					$insert['sendstatus']    = 'waitingtoautosend';
+					$insert['answertext']    = $load_default_answer['text'];
+					$insert['receivestatus'] = 'answerready';
+					$insert['fromgateway']   = $insert['togateway'];
+					$insert['tonumber']      = $insert['fromnumber'];
+					$insert['group_id']      = $insert['recommend_id'];
+					$insert['dateanswer']    = date("Y-m-d H:i:s");
+				}
 			}
 		}
 
