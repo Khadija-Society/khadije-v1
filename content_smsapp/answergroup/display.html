@@ -30,12 +30,12 @@
             <span class="cauto mRa20 txtB">{{value.text | length | fitNumber}} {%trans "Character"%}</span>
             {%if not value.isdefault%}
             <div class="cauto mRa20">
-              <span class="badge success" data-confirm data-data='{"type":"isdefault", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Set as default"%}</span>
+              <span class="badge light" data-confirm data-data='{"type":"isdefault", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Set as default"%}</span>
             </div>
             {%else%}
 
             <div class="cauto mRa20">
-              <span class="badge warn" data-confirm data-data='{"type":"removedefault", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove default"%}</span>
+              <span class="badge success" data-confirm data-data='{"type":"removedefault", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove default"%}</span>
             </div>
             {%endif%}
             <div class="cauto">
