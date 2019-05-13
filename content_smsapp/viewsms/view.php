@@ -42,6 +42,12 @@ class view
 		}
 
 		\dash\data::dataAnswer($dataAnswer);
+
+		if(\dash\data::dataRow_fromnumber())
+		{
+			$get_count = \lib\db\sms::get_count(['fromnumber' => \dash\data::dataRow_fromnumber()]);
+			\dash\data::countSmsFromThis($get_count);
+		}
 	}
 }
 ?>

@@ -54,7 +54,12 @@
 
         <div class="c4 s12 pRa5">
 
-          <div class="msg">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b></div>
+          <div class="msg">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b>
+          </div>
+          {%if countSmsFromThis %}
+            <div class="msg warn2">{%trans "All sms from this number"%} <b>{{countSmsFromThis | fitNumber}}</b>
+              <a  class="badge" href="{{url.here}}/listsms?fromnumber={{dataRow.fromnumber}}">{%trans "Show"%}</a></div>
+          {%endif%}
           <div class="msg">{%trans "togateway"%} <b>{{dataRow.togateway | fitNumber(false)}}</b></div>
           <div class="msg">{%trans "date"%} <b>{{dataRow.date | dt(true)}}</b></div>
           <div class="msg">{%trans "Date receive"%} <b>{{dataRow.datereceive | dt(true)}}</b></div>

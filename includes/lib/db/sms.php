@@ -307,7 +307,15 @@ class sms
 	{
 		$default =
 		[
-			'search_field' => "(s_sms.text LIKE '%__string__%')",
+			'search_field' =>
+			"
+				(
+					s_sms.text LIKE '%__string__%' OR
+					s_sms.fromnumber LIKE '%__string__%' OR
+					s_sms.tonumber LIKE '%__string__%'
+
+				)
+			",
 
 			'master_join' => self::$master_join,
 
