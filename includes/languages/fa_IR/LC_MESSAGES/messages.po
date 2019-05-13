@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-05-13 16:38+0430\n"
-"PO-Revision-Date: 2019-05-13 16:39+0430\n"
+"POT-Creation-Date: 2019-05-13 17:11+0430\n"
+"PO-Revision-Date: 2019-05-13 17:11+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -759,8 +759,8 @@ msgstr "داشبورد سیستم مدیریت محتوا"
 #: khadije/content_m/representation/view/controller.php:28
 #: khadije/content_m/service/view/controller.php:28
 #: khadije/includes/lib/app/sms.php:809 khadije/includes/lib/app/sms.php:821
-#: khadije/includes/lib/app/smsgroupfilter.php:281
-#: khadije/includes/lib/app/smsgroupfilter.php:297
+#: khadije/includes/lib/app/smsgroupfilter.php:293
+#: khadije/includes/lib/app/smsgroupfilter.php:309
 msgid "Invalid id"
 msgstr "شناسه نامعتبر"
 
@@ -2476,7 +2476,7 @@ msgstr "لطفا یک نوع را انتخاب کنید"
 
 #: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:660
 #: khadije/content_m/festival/detail/view.php:21
-#: khadije/includes/lib/app/smsgroupfilter.php:242
+#: khadije/includes/lib/app/smsgroupfilter.php:254
 msgid "Invalid type"
 msgstr "نوع نامعتبر"
 
@@ -14972,7 +14972,7 @@ msgid "You not register to this course!"
 msgstr "شما در این رشته ثبت‌نام نکرده اید"
 
 #: khadije/content_a/group/home/model.php:18
-#: khadije/includes/lib/app/smsgroupfilter.php:204
+#: khadije/includes/lib/app/smsgroupfilter.php:216
 msgid "Invalid group id"
 msgstr "کد کاروان اشتباه"
 
@@ -20390,39 +20390,43 @@ msgstr "نوع در گروه پیامکی اشتباه است"
 msgid "No way to insert smsgroupfilter"
 msgstr "هیچ راهی برای افزودن گروه پیامک نیست"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:69
+#: khadije/includes/lib/app/smsgroupfilter.php:75
+msgid "Auto update old message by new filter :val"
+msgstr "تعداد :val پیامک به صورت خودکار با این فیلتر دسته بندی‌ شدند"
+
+#: khadije/includes/lib/app/smsgroupfilter.php:81
 msgid "Sms filter successfuly added"
 msgstr "فیلتر گروه پیامکی با موفقیت ثبت شد"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:163
+#: khadije/includes/lib/app/smsgroupfilter.php:175
 msgid "Sms filter successfully updated"
 msgstr "فیلتر گروه پیامکی با موفقیت به‌روزرسانی شد"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:174
+#: khadije/includes/lib/app/smsgroupfilter.php:186
 msgid "Sms group filter id not set"
 msgstr "شناسه گروه پیامک تنظیم نشده است"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:183
+#: khadije/includes/lib/app/smsgroupfilter.php:195
 msgid "Invalid smsgroupfilter id"
 msgstr "شناسه گروه پیامک اشتباه است"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:211
+#: khadije/includes/lib/app/smsgroupfilter.php:223
 msgid "Please fill number"
 msgstr "لطفا شماره را وارد کنید"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:217
+#: khadije/includes/lib/app/smsgroupfilter.php:229
 msgid "Please fill number less than 100 character"
 msgstr "لطفا عدد را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:233
+#: khadije/includes/lib/app/smsgroupfilter.php:245
 msgid "Duplicate smsgroupfilter number"
 msgstr "این شماره در این لیست فیلترها تکراری است"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:252
+#: khadije/includes/lib/app/smsgroupfilter.php:264
 msgid "Please fill the number"
 msgstr "لطفا شماره را وارد کنید"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:259
+#: khadije/includes/lib/app/smsgroupfilter.php:271
 msgid "Please fill the answer"
 msgstr "لطفا پاسخ را وارد کنید"
 
