@@ -357,11 +357,12 @@ class sms
 
 			$set =
 			[
-				'answertext'    => $load['text'],
-				'receivestatus' => 'answerready',
-				'dateanswer'    => date("Y-m-d H:i:s"),
-				'sendstatus'    => 'awaiting',
-				'group_id'      => $load['group_id'],
+				'answertext'      => $load['text'],
+				'answertextcount' => mb_strlen($load['text']),
+				'receivestatus'   => 'answerready',
+				'dateanswer'      => date("Y-m-d H:i:s"),
+				'sendstatus'      => 'awaiting',
+				'group_id'        => $load['group_id'],
 			];
 
 			// from_smspanel
@@ -435,13 +436,14 @@ class sms
 				}
 				else
 				{
-					$post                  = [];
-					$post['answertext']    = $load['text'];
-					$post['fromgateway']   = $load['togateway'];
-					$post['receivestatus'] = 'answerready';
-					$post['dateanswer']    = date("Y-m-d H:i:s");
-					$post['sendstatus']    = 'awaiting';
-					$result                = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+					$post                    = [];
+					$post['answertext']      = $load['text'];
+					$post['answertextcount'] = mb_strlen($load['text']);
+					$post['fromgateway']     = $load['togateway'];
+					$post['receivestatus']   = 'answerready';
+					$post['dateanswer']      = date("Y-m-d H:i:s");
+					$post['sendstatus']      = 'awaiting';
+					$result                  = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
 
 					$update_file                 = [];
 					$update_file['last_update']  = date("Y-m-d H:i:s");
@@ -691,6 +693,7 @@ class sms
 		if(!\dash\app::isset_request('sendstatus')) unset($args['sendstatus']);
 		if(!\dash\app::isset_request('amount')) unset($args['amount']);
 		if(!\dash\app::isset_request('answertext')) unset($args['answertext']);
+		if(!\dash\app::isset_request('answertextcount')) unset($args['answertextcount']);
 		if(!\dash\app::isset_request('group_id')) unset($args['group_id']);
 		if(!\dash\app::isset_request('recommend_id')) unset($args['recommend_id']);
 		if(!\dash\app::isset_request('dateanswer')) unset($args['dateanswer']);
@@ -794,6 +797,7 @@ class sms
 
 
 		$answertext = \dash\app::request('answertext');
+		$answertextcount = \dash\app::request('answertextcount');
 
 		$group_id = \dash\app::request('group_id');
 		// $group_id = \dash\coding::decode($group_id);
@@ -828,6 +832,7 @@ class sms
 		$args['sendstatus']    = $sendstatus;
 		$args['amount']        = $amount;
 		$args['answertext']    = $answertext;
+		$args['answertextcount']    = $answertextcount;
 		$args['group_id']      = $group_id;
 		$args['recommend_id']  = $recommend_id;
 		$args['dateanswer']    = $dateanswer;

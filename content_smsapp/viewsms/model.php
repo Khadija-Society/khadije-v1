@@ -41,13 +41,14 @@ class model
 		$group_id    = \dash\request::post('group_id');
 		$fromgateway = \dash\request::post('fromgateway');
 
-		$post                  = [];
-		$post['group_id']      = $group_id;
-		$post['answertext']    = \dash\request::post('answertext');
-		$post['fromgateway']   = $fromgateway;
-		$post['sendstatus']    = 'awaiting';
-		$post['dateanswer']    = date("Y-m-d H:i:s");
-		$post['receivestatus'] = 'answerready';
+		$post                    = [];
+		$post['group_id']        = $group_id;
+		$post['answertext']      = \dash\request::post('answertext');
+		$post['answertextcount'] = mb_strlen(\dash\request::post('answertext'));
+		$post['fromgateway']     = $fromgateway;
+		$post['sendstatus']      = 'awaiting';
+		$post['dateanswer']      = date("Y-m-d H:i:s");
+		$post['receivestatus']   = 'answerready';
 
 		if($fromgateway === '10006660066600')
 		{

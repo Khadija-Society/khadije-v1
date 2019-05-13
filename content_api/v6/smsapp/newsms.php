@@ -205,6 +205,7 @@ class newsms
 				{
 					$insert['sendstatus']    = 'waitingtoautosend';
 					$insert['answertext']    = $load_default_answer['text'];
+					$insert['answertextcount']    = mb_strlen($load_default_answer['text']);
 					$insert['receivestatus'] = 'answerready';
 					$insert['fromgateway']   = $insert['togateway'];
 					$insert['tonumber']      = $insert['fromnumber'];
