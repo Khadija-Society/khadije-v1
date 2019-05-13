@@ -37,7 +37,15 @@ class twigTransTerms
 	echo T_("Search with new keywords.");                                             // Line 141
 	echo T_("No record exist!");                                                      // Line 148
 
-	//----------------------------------------------content_smsapp/report/display.html
+	//----------------------------------content_smsapp/report/countsmsday/display.html
+	echo T_("Date");                                                                  // Line 109
+	echo T_("Count send character");                                                  // Line 14
+	echo T_("Count send SMS");                                                        // Line 15
+	echo T_("Character");                                                             // Line 30
+	echo T_("SMS");                                                                   // Line 27
+
+	//-----------------------------------------content_smsapp/report/home/display.html
+	echo T_("Cont send sms per day");                                                 // Line 26
 	echo T_("Add group");                                                             // Line 140
 	echo T_("Last sms");                                                              // Line 149
 	echo T_("Without title");                                                         // Line 71
@@ -46,7 +54,7 @@ class twigTransTerms
 	echo T_("Sms group list");                                                        // Line 188
 	echo T_("Sms list");                                                              // Line 200
 
-	//--------------------------------------------------content_smsapp/report/chart.js
+	//---------------------------------------------content_smsapp/report/home/chart.js
 	echo T_("Count Send and Receive sms per day");                                    // Line 26
 	echo T_("Price");                                                                 // Line 22
 	echo T_("Receive");                                                               // Line 93
@@ -54,7 +62,6 @@ class twigTransTerms
 	//------------------------------------------------content_smsapp/chat/display.html
 	echo T_("From number");                                                           // Line 57
 	echo T_("Sms text");                                                              // Line 198
-	echo T_("Date");                                                                  // Line 109
 	echo T_("Date created");                                                          // Line 44
 	echo T_("Reseive status");                                                        // Line 201
 	echo T_("Send status");                                                           // Line 203
@@ -178,7 +185,6 @@ class twigTransTerms
 
 	//-----------------------------------------content_smsapp/answergroup/display.html
 	echo T_("You can register a answer of responses to this group to help you respond.");// Line 7
-	echo T_("Character");                                                             // Line 30
 	echo T_("Set as default");                                                        // Line 33
 	echo T_("Remove default");                                                        // Line 38
 	echo T_("No answer founded");                                                     // Line 48
