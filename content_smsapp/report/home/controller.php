@@ -1,5 +1,5 @@
 <?php
-namespace content_smsapp\home;
+namespace content_smsapp\report\home;
 
 class controller
 {
