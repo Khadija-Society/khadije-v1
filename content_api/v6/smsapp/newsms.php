@@ -117,6 +117,16 @@ class newsms
 			{
 				$id             = $get_last_sms['id'];
 				$text           = $get_last_sms['text'];
+
+				if($_insert['text'] === $text)
+				{
+					// duplicate message
+					// my son is send some request in one time
+					// we check it to not save duplicate message :|
+					\dash\log::set('apiSmsAppDuplicateNewMessage');
+					return intval($get_last_sms['id']);
+				}
+
 				$new_text       = $text. $_insert['text'];
 
 				$update         = [];
