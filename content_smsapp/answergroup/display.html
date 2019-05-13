@@ -25,8 +25,19 @@
         {%for key, value in dataTable%}
         <div class="msg {%if value.text | length > 70%} warn2 {%else%} primary2 {%endif%}">
           <div class="f">
-            <span class="c">{{value.text}}</span>
+
+            <span class="c {%if value.isdefault%} fs12 txtB {%endif%}">{{value.text}}</span>
             <span class="cauto mRa20 txtB">{{value.text | length | fitNumber}} {%trans "Character"%}</span>
+            {%if not value.isdefault%}
+            <div class="cauto mRa20">
+              <span class="badge success" data-confirm data-data='{"type":"isdefault", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Set as default"%}</span>
+            </div>
+            {%else%}
+
+            <div class="cauto mRa20">
+              <span class="badge warn" data-confirm data-data='{"type":"removedefault", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove default"%}</span>
+            </div>
+            {%endif%}
             <div class="cauto">
               <span class="badge danger" data-confirm data-data='{"type":"remove", "deleteid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove"%}</span>
             </div>

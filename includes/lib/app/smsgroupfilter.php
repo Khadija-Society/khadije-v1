@@ -272,6 +272,37 @@ class smsgroupfilter
 	}
 
 
+	public static function set_answer_default($_id, $_group_id)
+	{
+		$id       = \dash\coding::decode($_id);
+		$group_id = \dash\coding::decode($_group_id);
+		if(!$id || !$group_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$remove_all_default = \lib\db\smsgroupfilter::remove_all_default('answer', $group_id);
+		$set_default        = \lib\db\smsgroupfilter::set_default($id);
+		return $set_default;
+	}
+
+
+	public static function remove_answer_default($_id, $_group_id)
+	{
+		$id       = \dash\coding::decode($_id);
+		$group_id = \dash\coding::decode($_group_id);
+		if(!$id || !$group_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$remove_all_default = \lib\db\smsgroupfilter::remove_all_default('answer', $group_id);
+		return $remove_all_default;
+	}
+
+
 	public static function remove($_id)
 	{
 		$id = \dash\coding::decode($_id);
