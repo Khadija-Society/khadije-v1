@@ -62,6 +62,7 @@ class view
 
 		$get = \dash\request::get();
 		unset($get['page']);
+		\dash\data::myUrlGet($get);
 		if(!$get)
 		{
 			$args['s_sms.receivestatus'] = 'awaiting';

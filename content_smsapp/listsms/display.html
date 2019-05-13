@@ -114,7 +114,7 @@
   </div>
 
   <div class="c m3 s6">
-    <a class="dcard x07 {%if not requestGET%}active{%endif%}" href="{{url.that}}">
+    <a class="dcard x07 {%if not myUrlGet%}active{%endif%}" href="{{url.that}}">
       <div class="value">{{statusCount.receive.awaiting | fitNumber(false)}}</div>
       <div class="label">{%trans "New"%} <small>{%trans "Awaiting"%}</small></div>
     </a>
