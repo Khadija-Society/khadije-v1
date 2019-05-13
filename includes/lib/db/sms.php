@@ -15,11 +15,30 @@ class sms
 		s_sms.*, s_group.title AS `group_title`,s_group.type AS `group_type`, recommendGroup.title AS `recommend_title`
 	";
 
+
+	// change status of some sms has set on waitingtoautosend by check dateanswer is left 60 min
+	public static function send_auto_answered($_date)
+	{
+		$query  =
+		"
+			UPDATE
+				s_sms
+			SET
+				s_sms.sendstatus = 'awaiting'
+			WHERE
+				s_sms.sendstatus = 'waitingtoautosend' AND
+				s_sms.dateanswer < '$_date'
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 	public static function get_sms_panel_not_send()
 	{
-		$query = "SELECT * FROM s_sms WHERE s_sms.receivestatus = 'sendtopanel' AND s_sms.sendstatus = 'awaiting' ";
+		$query  = "SELECT * FROM s_sms WHERE s_sms.receivestatus = 'sendtopanel' AND s_sms.sendstatus = 'awaiting' ";
 		$result = \dash\db::get($query);
-
 		return $result;
 	}
 

@@ -25,6 +25,8 @@ class cronjob
 	{
 		\lib\app\sms::send_notif();
 		\lib\app\sms::send_sms_panel();
+		\lib\app\sms::send_auto_answered();
+
 	}
 
 
