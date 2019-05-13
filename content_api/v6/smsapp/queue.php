@@ -16,6 +16,13 @@ class queue
 			return null;
 		}
 
+		if(self::bad_time())
+		{
+			\dash\notif::warn(T_("People are sleeping now!"));
+			return null;
+		}
+
+
 		// if no not sent sms
 		if(self::not_sent_sms())
 		{
@@ -47,6 +54,18 @@ class queue
 
 	}
 
+	private static function bad_time()
+	{
+		$hour = intval(date("H"));
+		if(in_array($hour, [23,0,1,2,3,4,5,6,7]))
+		{
+			// this time is a bad time
+			return true;
+		}
+
+		return false;
+
+	}
 
 	private static function check_max_limit()
 	{
