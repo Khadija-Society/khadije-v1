@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-05-13 07:28+0430\n"
-"PO-Revision-Date: 2019-05-13 07:28+0430\n"
+"POT-Creation-Date: 2019-05-13 08:12+0430\n"
+"PO-Revision-Date: 2019-05-13 08:12+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -757,7 +757,7 @@ msgstr "داشبورد سیستم مدیریت محتوا"
 #: khadije/content_m/meeting/add/view.php:28
 #: khadije/content_m/representation/view/controller.php:28
 #: khadije/content_m/service/view/controller.php:28
-#: khadije/includes/lib/app/sms.php:797 khadije/includes/lib/app/sms.php:809
+#: khadije/includes/lib/app/sms.php:805 khadije/includes/lib/app/sms.php:817
 #: khadije/includes/lib/app/smsgroupfilter.php:281
 #: khadije/includes/lib/app/smsgroupfilter.php:297
 msgid "Invalid id"
@@ -771,8 +771,8 @@ msgstr "شناسه نامعتبر"
 #: dash/lib/app/user_telegram.php:96 khadije/content_api/v6/smsapp/status.php:25
 #: khadije/content_m/admincontact/edit/model.php:12
 #: khadije/content_m/delneveshte/edit/model.php:12
-#: khadije/includes/lib/app/service.php:109 khadije/includes/lib/app/sms.php:761
-#: khadije/includes/lib/app/sms.php:768 khadije/includes/lib/app/travel.php:651
+#: khadije/includes/lib/app/service.php:109 khadije/includes/lib/app/sms.php:769
+#: khadije/includes/lib/app/sms.php:776 khadije/includes/lib/app/travel.php:651
 msgid "Invalid status"
 msgstr "وضعیت نامعتبر است"
 
@@ -1794,7 +1794,7 @@ msgstr "موبایل یافت نشد"
 #: khadije/includes/lib/app/myuser.php:412 khadije/includes/lib/app/myuser.php:517
 #: khadije/includes/lib/app/myuser.php:604 khadije/includes/lib/app/need.php:269
 #: khadije/includes/lib/app/need.php:325 khadije/includes/lib/app/service.php:271
-#: khadije/includes/lib/app/service.php:390 khadije/includes/lib/app/sms.php:544
+#: khadije/includes/lib/app/service.php:390 khadije/includes/lib/app/sms.php:552
 #: khadije/includes/lib/app/smsgroup.php:42
 #: khadije/includes/lib/app/smsgroupfilter.php:41
 #: khadije/includes/lib/app/travel.php:703
@@ -15239,7 +15239,7 @@ msgstr "هیچ پیام ارسال نشده‌ای وجود ندارد"
 msgid "You have some not sent sms, please send it before"
 msgstr "شما تعدادی پیام ارسال نشده دارد. لطفا ابتدا آن‌ها را ارسال کنید"
 
-#: khadije/content_api/v6/smsapp/queue.php:31 khadije/includes/lib/app/sms.php:241
+#: khadije/content_api/v6/smsapp/queue.php:31 khadije/includes/lib/app/sms.php:249
 msgid "No new message"
 msgstr "هیچ پیام جدیدی وجود ندارد"
 
@@ -15247,7 +15247,7 @@ msgstr "هیچ پیام جدیدی وجود ندارد"
 msgid "Maximum limit"
 msgstr "حداکثر محدوده مجاز"
 
-#: khadije/content_api/v6/smsapp/sent.php:13 khadije/includes/lib/app/sms.php:714
+#: khadije/content_api/v6/smsapp/sent.php:13 khadije/includes/lib/app/sms.php:722
 msgid "Invalid sms id"
 msgstr "شناسه پیامک اشتباه است"
 
@@ -18530,7 +18530,7 @@ msgstr "درخواست جدید و کامل ارسال شده"
 #: khadije/includes/languages/trans_project.php:917
 #: khadije/includes/languages/trans_static.php:183
 #: khadije/includes/lib/app/log/caller/smsappNew.php:122
-#: khadije/includes/lib/app/sms.php:287
+#: khadije/includes/lib/app/sms.php:295
 msgid "Review"
 msgstr "بررسی"
 
@@ -19608,6 +19608,14 @@ msgstr "ارسال توسط پنل پیامک"
 msgid "Sendtopanel"
 msgstr "ارسال به پنل پیامک"
 
+#: khadije/includes/languages/trans_static.php:214
+msgid "waitingtoautosend"
+msgstr "در انتظار ارسال خودکار"
+
+#: khadije/includes/languages/trans_static.php:215
+msgid "Waitingtoautosend"
+msgstr "در انتظار ارسال خودکار"
+
 #: khadije/includes/lib/app/android.php:67
 msgid "Change language"
 msgstr "تغییر زبان"
@@ -20266,35 +20274,35 @@ msgstr "شما قادر به ثبت‌نام این مورد در حال حاض�
 msgid "No way to insert service"
 msgstr "روشی برای افزودن درخواست خادمی نیست"
 
-#: khadije/includes/lib/app/sms.php:426
+#: khadije/includes/lib/app/sms.php:434
 msgid "This message was answered"
 msgstr "این پیام قبلا پاسخ داده شده است"
 
-#: khadije/includes/lib/app/sms.php:565
+#: khadije/includes/lib/app/sms.php:573
 msgid "No way to insert sms"
 msgstr "هیچ راهی برای ثبت اطلاعات نیست"
 
-#: khadije/includes/lib/app/sms.php:573
+#: khadije/includes/lib/app/sms.php:581
 msgid "Sms successfuly added"
 msgstr "پیامک با موفقیت ثبت شد"
 
-#: khadije/includes/lib/app/sms.php:694
+#: khadije/includes/lib/app/sms.php:702
 msgid "Sms successfully updated"
 msgstr "پیامک با موفقیت به‌روزرسانی شد"
 
-#: khadije/includes/lib/app/sms.php:705 khadije/includes/lib/app/smsgroup.php:181
+#: khadije/includes/lib/app/sms.php:713 khadije/includes/lib/app/smsgroup.php:181
 msgid "Sms group id not set"
 msgstr "شناسه گروه پیامک تنظیم نشده است"
 
-#: khadije/includes/lib/app/sms.php:750
+#: khadije/includes/lib/app/sms.php:758
 msgid "Invalid gateway"
 msgstr "درگاه اشتباه است"
 
-#: khadije/includes/lib/app/sms.php:776
+#: khadije/includes/lib/app/sms.php:784
 msgid "Please set amount as a number"
 msgstr "لطفا مبلغ چک را به صورت عددی وارد کنید"
 
-#: khadije/includes/lib/app/sms.php:783
+#: khadije/includes/lib/app/sms.php:791
 msgid "Amount is out of range"
 msgstr "مبلغ خارج از محدوده مجاز است"
 

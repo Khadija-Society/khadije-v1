@@ -210,6 +210,9 @@ class TransStatic
 	echo T_("sendtopanel");
 	echo T_("Sendbypanel");
 	echo T_("Sendtopanel");
+
+	echo T_("waitingtoautosend");
+	echo T_("Waitingtoautosend");
  }
 }
 ?>
