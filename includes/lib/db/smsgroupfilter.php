@@ -4,6 +4,41 @@ namespace lib\db;
 
 class smsgroupfilter
 {
+	public static function have_old_record_filter($_group_id)
+	{
+		$query  =
+		"
+			SELECT
+				s_sms.id
+			FROM
+				s_sms
+			WHERE
+				s_sms.group_id IS NULL AND
+				s_sms.fromnumber IN (SELECT s_groupfilter.number FROM s_groupfilter WHERE s_groupfilter.group_id = $_group_id)
+		";
+		$result = \dash\db::get($query, 'id');
+
+		return $result;
+	}
+
+	public static function update_old_record_filter($_id, $_group_id)
+	{
+		$query  =
+		"
+			UPDATE
+				s_sms
+			SET
+				s_sms.group_id = $_group_id,
+				s_sms.receivestatus = 'block'
+			WHERE
+				s_sms.id IN ($_id)
+		";
+
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
+
 	public static function not_in_another($_text, $_group_id)
 	{
 		$query  =

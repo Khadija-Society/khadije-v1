@@ -66,6 +66,18 @@ class smsgroupfilter
 
 		if(\dash\engine\process::status())
 		{
+			if(isset($args['type']) && $args['type'] === 'number' && isset($args['group_id']))
+			{
+				$result = \lib\db\smsgroupfilter::have_old_record_filter($args['group_id']);
+				if($result && is_array($result))
+				{
+					$count = count($result);
+					$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
+					$result = implode(',', $result);
+					\lib\db\smsgroupfilter::update_old_record_filter($result, $args['group_id']);
+					\dash\notif::info($msg);
+				}
+			}
 			\dash\notif::ok(T_("Sms filter successfuly added"));
 		}
 
