@@ -20,7 +20,7 @@ class sms
 		$query  =
 		"
 			SELECT
-				COUNT(*) AS `count`
+				SUM(s_sms.answertextcount) AS `sum`
 			FROM
 				s_sms
 			WHERE
@@ -28,7 +28,7 @@ class sms
 				DATE(s_sms.datesend) = DATE('$_date')
 		";
 
-		$result = \dash\db::get($query, 'count', true);
+		$result = \dash\db::get($query, 'sum', true);
 		return $result;
 	}
 
