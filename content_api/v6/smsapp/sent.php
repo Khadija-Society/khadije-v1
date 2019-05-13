@@ -40,7 +40,7 @@ class sent
 
 			if(isset($get_option['value']))
 			{
-				$value = intval($value);
+				$value = intval($get_option['value']);
 			}
 
 			$sms_text = isset($load['answertext']) ? $load['answertext'] : null;
