@@ -15,6 +15,22 @@ class sms
 		s_sms.*, s_group.title AS `group_title`,s_group.type AS `group_type`, recommendGroup.title AS `recommend_title`
 	";
 
+	public static function get_count_gateway_send($_date, $_gateway)
+	{
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`
+			FROM
+				s_sms
+			WHERE
+				s_sms.sendstatus = 'send' AND
+				DATE(s_sms.datesend) = DATE('$_date')
+		";
+
+		$result = \dash\db::get($query, 'count', true);
+		return $result;
+	}
 
 	// change status of some sms has set on waitingtoautosend by check dateanswer is left 60 min
 	public static function send_auto_answered($_date)
@@ -30,7 +46,7 @@ class sms
 				s_sms.dateanswer < '$_date'
 		";
 
-		$result = \dash\db::get($query);
+		$result = \dash\db::query($query);
 		return $result;
 	}
 

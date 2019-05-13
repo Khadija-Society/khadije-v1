@@ -70,21 +70,12 @@ class queue
 	private static function check_max_limit()
 	{
 		$max_limit = 450; // every day
-		$gateway = \dash\header::get('gateway');
-		$gateway = \dash\utility\filter::mobile($gateway);
+		$gateway   = \dash\header::get('gateway');
+		$gateway   = \dash\utility\filter::mobile($gateway);
 
+		$get       = \lib\db\sms::get_count_gateway_send(date("Y-m-d"), $gateway);
 
-		$get =
-		[
-			'cat'   => 'smsapp',
-			'key'   => 'limit_'. date("Y-m-d"). '_'. $gateway,
-			'limit' => 1,
-		];
-
-		$get = \dash\db\options::get($get);
-
-
-		if(isset($get['value']) && intval($get['value']) >= $max_limit)
+		if(intval($get) >= $max_limit)
 		{
 			return true;
 		}

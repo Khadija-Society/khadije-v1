@@ -24,49 +24,6 @@ class sent
 
 		if($load['sendstatus'] === 'sendtodevice')
 		{
-			$gateway = \dash\header::get('gateway');
-			$gateway = \dash\utility\filter::mobile($gateway);
-
-			$get_args =
-			[
-				'cat'   => 'smsapp',
-				'key'   => 'limit_'. date("Y-m-d"). '_'. $gateway,
-				'limit' => 1,
-			];
-
-			$get_option = \dash\db\options::get($get_args);
-
-			$value = 0;
-
-			if(isset($get_option['value']))
-			{
-				$value = intval($get_option['value']);
-			}
-
-			$sms_text = isset($load['answertext']) ? $load['answertext'] : null;
-
-			if($sms_text)
-			{
-				$value += ceil(mb_strlen($sms_text) / 70);
-			}
-			else
-			{
-				$value++;
-			}
-
-			if(isset($get_option['id']))
-			{
-				\dash\db\options::update(['value' => $value], $get_option['id']);
-			}
-			else
-			{
-				unset($get_args['limit']);
-				$get_args['value'] = $value;
-				\dash\db\options::insert($get_args);
-			}
-
-
-
 			\lib\db\sms::update(['sendstatus' => 'send', 'datesend' => date("Y-m-d H:i:s"), 'tonumber' => $load['fromnumber']], $smsid);
 			\dash\notif::ok(T_("The message set as sent message"));
 			return true;
