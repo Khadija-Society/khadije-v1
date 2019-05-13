@@ -44,7 +44,12 @@
     <h6>{%trans "Recommend message group sorted"%}</h6>
     <div class="f">
       {%for key, value in groupList%}
-      <a href="{{url.that}}?recommend_id={{value.id}}&recommend=yes" class="cauto btn info {%if requestGET.recommend_id == value.id%} {%else%}outline {%endif%} mA5">{{value.title}} <b>{{value.count | fitNumber}}</b></a>
+      <div class="c2 m3 s6">
+        <a class="dcard x07 {%if requestGET.recommend_id == value.id%}active{%endif%}" href="{{url.that}}?recommend_id={{value.id}}&recommend=yes">
+          <div class="value">{{value.count | fitNumber}}</div>
+          <div class="label">{{value.title}}</div>
+        </a>
+      </div>
       {%endfor%}
     </div>
   </div>
