@@ -10,15 +10,16 @@ class view
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_('Back to dashboard'));
 
-
-		$chart = \lib\app\sms::chart();
-		\dash\data::masterChart($chart);
-
-
-
 		$answer_time = \lib\app\sms\report::answer_time();
 		\dash\data::answerTime($answer_time);
 
+
+		$chart            = [];
+		$chart['master']  = \lib\app\sms::chart();
+		$chart['receive'] = \lib\app\sms\report::chart_receivestatus();
+		$chart['send']    = \lib\app\sms\report::chart_sendstatus();
+
+		\dash\data::myChart($chart);
 
 	}
 }

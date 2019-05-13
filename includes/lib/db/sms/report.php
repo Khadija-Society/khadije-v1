@@ -3,6 +3,55 @@ namespace lib\db\sms;
 
 class report
 {
+	public static function chart_sendstatus($_gateway = null)
+	{
+		$gateway = null;
+		if($_gateway)
+		{
+			$gateway = " WHERE s_sms.togateway = '$_gateway' ";
+		}
+
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				s_sms.sendstatus
+			FROM
+				s_sms
+				$gateway
+			GROUP BY
+				s_sms.sendstatus
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+	public static function chart_receivestatus($_gateway = null)
+	{
+		$gateway = null;
+		if($_gateway)
+		{
+			$gateway = " WHERE s_sms.togateway = '$_gateway' ";
+		}
+
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				s_sms.receivestatus
+			FROM
+				s_sms
+				$gateway
+			GROUP BY
+				s_sms.receivestatus
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 	public static function count_sms_day($_gateway = null)
 	{
 		$gateway = null;
