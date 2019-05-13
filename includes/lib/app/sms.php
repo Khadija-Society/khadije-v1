@@ -45,12 +45,28 @@ class sms
 		$result['send']      = [];
 		$result['receive']   = [];
 
+		$count_recommend     = \lib\db\sms::count_recommend($_args);
+
+		if(is_array($count_recommend))
+		{
+			foreach ($count_recommend as $key => $value)
+			{
+				$result['recommend'] = intval($value['count']);
+			}
+		}
 		$count_receivestatus = \lib\db\sms::count_receivestatus($_args);
 		if(is_array($count_receivestatus))
 		{
 			foreach ($count_receivestatus as $key => $value)
 			{
-				$result['receive'][$value['receivestatus']] = intval($value['count']);
+				if($value['receivestatus'] === 'awaiting')
+				{
+					$result['receive'][$value['receivestatus']] = intval($value['count']) - intval($result['recommend']);
+				}
+				else
+				{
+					$result['receive'][$value['receivestatus']] = intval($value['count']);
+				}
 			}
 		}
 		$count_sendstatus    = \lib\db\sms::count_sendstatus($_args);
@@ -59,15 +75,6 @@ class sms
 			foreach ($count_sendstatus as $key => $value)
 			{
 				$result['send'][$value['sendstatus']] = intval($value['count']);
-			}
-		}
-		$count_recommend     = \lib\db\sms::count_recommend($_args);
-
-		if(is_array($count_recommend))
-		{
-			foreach ($count_recommend as $key => $value)
-			{
-				$result['recommend'] = intval($value['count']);
 			}
 		}
 		$count_all     = \lib\db\sms::get_count($_args);

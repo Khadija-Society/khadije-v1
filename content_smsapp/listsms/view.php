@@ -52,6 +52,8 @@ class view
 		if(!\dash\request::get())
 		{
 			$args['s_sms.receivestatus'] = 'awaiting';
+			$args['s_sms.recommend_id'] = null;
+
 		}
 
 		$search_string = \dash\request::get('q');
