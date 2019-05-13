@@ -13,6 +13,18 @@ class view
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_('Dashboard'));
 
+		if(\dash\request::get())
+		{
+			$export = '&export=1';
+		}
+		else
+		{
+			$export = '?export=1';
+		}
+
+		\dash\data::badge2_link(\dash\url::pwd(). $export);
+		\dash\data::badge2_text(T_('Export CSV'));
+
 
 		$filterArray = [];
 		$countArgs   = [];
@@ -125,7 +137,21 @@ class view
 			$filterArray[T_('type')] = \dash\request::get('type');
 		}
 
+		$export = false;
+		if(\dash\request::get('export') === '1')
+		{
+			$export = true;
+			$args['pagenation'] = false;
+		}
+
+
 		$dataTable = \lib\app\sms::list($search_string, $args);
+
+		if($export)
+		{
+			\dash\utility\export::csv(['name' => 'export_sms', 'data' => $dataTable]);
+		}
+
 
 		\dash\data::dataTable($dataTable);
 
