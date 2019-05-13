@@ -25,5 +25,17 @@ class report
 
 		return $new;
 	}
+
+
+	public static function answer_time()
+	{
+		$result      = \lib\db\sms\report::answer_time();
+		$result      = intval($result);
+		$new         = [];
+		$new['sec']  = round(intval($result), 2);
+		$new['min']  = round(intval($result) / 60, 2);
+		$new['hour'] = round(intval($result) / 60 / 60, 2);
+		return $new;
+	}
 }
 ?>

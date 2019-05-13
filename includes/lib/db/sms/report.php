@@ -30,5 +30,19 @@ class report
 
 		return $result;
 	}
+
+
+	public static function answer_time($_gateway = null)
+	{
+		$gateway = null;
+		if($_gateway)
+		{
+			$gateway = " AND s_sms.togateway = '$_gateway' ";
+		}
+
+		$query  = "SELECT AVG(TIMESTAMPDIFF(SECOND,s_sms.datecreated, s_sms.dateanswer)) AS `average` FROM s_sms WHERE  s_sms.dateanswer IS NOT NULL $gateway ";
+		$result = \dash\db::get($query, 'average', true);
+		return $result;
+	}
 }
 ?>

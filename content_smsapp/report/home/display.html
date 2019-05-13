@@ -4,6 +4,7 @@
 
 <div class="f">
   <div class="c4 s12">{{block('icountsmsday')}}</div>
+  <div class="c4 s12">{{block('ianswerTime')}}</div>
 </div>
 
 <div class="f">
@@ -16,6 +17,17 @@
 
 
 {%endblock%}
+
+{%block ianswerTime%}
+
+<a class="dcard x1">
+ <div class="statistic">
+  <div class="label">{%trans "Answer time per min"%}</div>
+  <div class="value">{{answerTime.min | fitNumber(false)}}</div>
+ </div>
+</a>
+{%endblock%}
+
 
 
 

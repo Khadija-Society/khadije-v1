@@ -14,6 +14,12 @@ class view
 		$chart = \lib\app\sms::chart();
 		\dash\data::masterChart($chart);
 
+
+
+		$answer_time = \lib\app\sms\report::answer_time();
+		\dash\data::answerTime($answer_time);
+
+
 	}
 }
 ?>
