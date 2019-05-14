@@ -209,7 +209,7 @@ class smsapp
 				$result =
 				[
 					'text' => $updatedText,
-					'reply_markup' => null
+					'reply_markup' => ''
 				];
 			}
 
