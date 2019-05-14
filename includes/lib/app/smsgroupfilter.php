@@ -108,11 +108,14 @@ class smsgroupfilter
 			$get_not_words = array_column($get_not_words, 'text');
 
 			$get_sms_id = \lib\db\sms::analyze_word($get_words, $get_not_words);
-			$count = count($get_sms_id);
-			$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
-			$result = implode(',', $get_sms_id);
-			\lib\db\smsgroupfilter::update_old_record_filter_recommend($result, $_group_id);
-			\dash\notif::info($msg);
+			if($get_sms_id)
+			{
+				$count = count($get_sms_id);
+				$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
+				$result = implode(',', $get_sms_id);
+				\lib\db\smsgroupfilter::update_old_record_filter_recommend($result, $_group_id);
+				\dash\notif::info($msg);
+			}
 		}
 
 	}
