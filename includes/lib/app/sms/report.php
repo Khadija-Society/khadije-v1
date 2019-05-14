@@ -55,7 +55,7 @@ class report
 
 			if(array_key_exists('sendstatus', $value))
 			{
-				$name = $value['sendstatus'] ? T_($value['sendstatus']) : T_("Null");
+				$name = $value['sendstatus'] ? T_($value['sendstatus']) : T_("Waiting to answer");
 			}
 
 			if(array_key_exists('count', $value))
@@ -130,7 +130,7 @@ class report
 
 			if(array_key_exists('recommend_title', $value))
 			{
-				$name = $value['recommend_title'] ? T_($value['recommend_title']) : T_("Null");
+				$name = $value['recommend_title'] ? T_($value['recommend_title']) : T_("Not detected");
 			}
 
 			if(array_key_exists('count', $value))
@@ -167,7 +167,7 @@ class report
 
 			if(array_key_exists('group_title', $value))
 			{
-				$name = $value['group_title'] ? T_($value['group_title']) : T_("Null");
+				$name = $value['group_title'] ? T_($value['group_title']) : T_("No group");
 			}
 
 			if(array_key_exists('count', $value))
