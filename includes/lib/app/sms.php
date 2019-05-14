@@ -370,7 +370,14 @@ class sms
 
 	public static function group_list()
 	{
+
 		$smsgroup = \lib\db\smsgroup::get(['analyze' => 1]);
+		$skip =
+		[
+			'id'    =>  "0",
+			'title' =>  T_("Skip this message"),
+		];
+		$smsgroup[] = $skip;
 		return $smsgroup;
 	}
 
@@ -387,6 +394,12 @@ class sms
 		if($_group_id && is_numeric($_group_id))
 		{
 			$answers = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $_group_id]);
+			$skip =
+			[
+				'id'    =>  "0",
+				'title' =>  T_("Skip this message"),
+			];
+			$answers[] = $skip;
 			return $answers;
 		}
 	}
@@ -437,6 +450,24 @@ class sms
 
 	public static function set_group($_smsid, $_group_id)
 	{
+		if((string) $_group_id === '0')
+		{
+			$post                  = [];
+			$post['answertext']    = null;
+			$post['receivestatus'] = 'skip';
+			$post['dateanswer']    = date("Y-m-d H:i:s");
+			$post['sendstatus']    = null;
+			$result                = \lib\app\sms::edit($post, \dash\coding::encode($_smsid));
+
+			$update_file                 = [];
+			$update_file['last_update']  = date("Y-m-d H:i:s");
+			$update_file['last_send_id'] = $_smsid;
+			self::setting_file($update_file);
+
+			\dash\notif::clean();
+			return;
+		}
+
 		if($_smsid && $_group_id)
 		{
 			$load_sms = self::get_tg_text(1, $_smsid);
