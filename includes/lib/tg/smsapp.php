@@ -181,11 +181,14 @@ class smsapp
 			{
 				foreach ($answerList as $gKey => $gValue)
 				{
-					$answerArr[] =
-					[
-						'text'          => $gValue['text'],
-						'callback_data' => 'smsapp_'. $_smsNo . ' '. $_group. ' '. $gValue['id']
-					];
+					if($gValue)
+					{
+						$answerArr[] =
+						[
+							'text'          => $gValue['text'],
+							'callback_data' => 'smsapp_'. $_smsNo . ' '. $_group. ' '. $gValue['id']
+						];
+					}
 				}
 			}
 
