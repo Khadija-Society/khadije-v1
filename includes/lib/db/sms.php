@@ -263,7 +263,7 @@ class sms
 		$query  =
 		"
 			SELECT
-				COUNT(*) AS `count`,
+				SUM(CEIL(s_sms.answertextcount / 70)) AS `count`,
 				DATE(s_sms.datesend) AS `date`
 			FROM
 				s_sms
