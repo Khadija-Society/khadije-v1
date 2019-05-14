@@ -174,31 +174,45 @@ class smsapp
 
 		$answerList = \lib\app\sms::answer_list($_group);
 
-		if($answerList)
+		if($answerList || $_group === 'skip')
 		{
 			$answerArr = [];
-			foreach ($answerList as $gKey => $gValue)
+			if($answerList)
 			{
-				$answerArr[] =
-				[
-					'text'          => $gValue['text'],
-					'callback_data' => 'smsapp_'. $_smsNo . ' '. $_group. ' '. $gValue['id']
-				];
+				foreach ($answerList as $gKey => $gValue)
+				{
+					$answerArr[] =
+					[
+						'text'          => $gValue['text'],
+						'callback_data' => 'smsapp_'. $_smsNo . ' '. $_group. ' '. $gValue['id']
+					];
+				}
 			}
 
 			$updatedText = hook::message('text');
 			$updatedText .= "\n";
-			$groupDetail = \lib\app\sms::get_group($_group);
-			if(isset($groupDetail['title']))
+			if($answerList)
 			{
-				$updatedText .= "🚩 <b>". $groupDetail['title'] ."</b>";
+				$groupDetail = \lib\app\sms::get_group($_group);
+				if(isset($groupDetail['title']))
+				{
+					$updatedText .= "🚩 <b>". $groupDetail['title'] ."</b>";
+				}
+				$result =
+				[
+					'text' => $updatedText,
+					'reply_markup' => kbd::draw($answerArr, null, 'inline_keyboard', 'id', 'text')
+				];
+			}
+			else
+			{
+				$result =
+				[
+					'text' => $updatedText,
+					'reply_markup' => null
+				];
 			}
 
-			$result =
-			[
-				'text' => $updatedText,
-				'reply_markup' => kbd::draw($answerArr, null, 'inline_keyboard', 'id', 'text')
-			];
 
 
 			// if start with callback answer callback
