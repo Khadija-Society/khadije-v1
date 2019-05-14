@@ -44,7 +44,7 @@
     <h6>{%trans "Recommend message group sorted"%}</h6>
     <div class="f">
       {%for key, value in groupList%}
-      <div class="c2 m3 s6">
+      <div class="c2 m3 s12">
         <a class="dcard x07 {%if requestGET.recommend_id == value.id%}active{%endif%}" href="{{url.that}}?recommend_id={{value.id}}&recommend=yes">
           <div class="value">{{value.count | fitNumber}}</div>
           <div class="label">{{value.title}}</div>
@@ -60,7 +60,7 @@
     <h6>{%trans "What answer send to this group?"%}</h6>
     <div class="f">
       {%for key, value in answerList%}
-        <div class="radio3 c6 pRa5">
+        <div class="radio3 c6 s12 pRa5">
           <input type="radio" id="ianswer{{value.id}}" name="answer_id" value="{{value.id}}">
           <label for="ianswer{{value.id}}">{{value.text}} <b>{{value.count | fitNumber}}</b></label>
         </div>
@@ -120,21 +120,21 @@
     </a>
   </div>
 
-  <div class="c m3 s4">
+  <div class="c m3 s6">
     <a class="dcard x07 {%if requestGET.receivestatus == 'block'%}active{%endif%}" href="{{url.that}}?receivestatus=block">
       <div class="value">{{statusCount.receive.block | fitNumber(false)}}</div>
       <div class="label">{%trans "Needless to answer"%}</div>
     </a>
   </div>
 
-   <div class="c m3 s4">
+   <div class="c m3 s6">
     <a class="dcard x07 {%if requestGET.receivestatus == 'skip'%}active{%endif%}" href="{{url.that}}?receivestatus=skip">
       <div class="value">{{statusCount.receive.skip | fitNumber(false)}}</div>
       <div class="label">{%trans "Skip message"%}</div>
     </a>
   </div>
 
-  <div class="c m4 s4">
+  <div class="c m4 s6">
     <a class="dcard x07 {%if requestGET.receivestatus == 'answerready'%}active{%endif%}" href="{{url.that}}?receivestatus=answerready">
       <div class="value">{{statusCount.receive.answerready | fitNumber(false)}}</div>
       <div class="label">{%trans "Answered"%}</div>
@@ -180,7 +180,7 @@
 <div class="cbox fs12">
   <form method="get" action='{{url.that}}' autocomplete="off">
     <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
   </form>
