@@ -163,7 +163,7 @@
   </div>
 
   <div class="c m6 s6">
-    <div class="dcard x07" href="{{url.pwd}}" data-confirm data-data='{"status" : "change"}'>
+    <div class="dcard x07" data-confirm data-data='{"status" : "change"}'>
       <div class="value {% if sysStatus %} fc-green {%else%} fc-red {%endif%}">{% if sysStatus %} {%trans "On"%} {%else%} {%trans "Off"%} {%endif%}</div>
       <div class="label">{% trans "System status"%}</div>
     </div>
@@ -215,6 +215,8 @@
           {%endif%}
           <a href="{{url.here}}/viewsms?id={{value.id}}">
             <span class="badge primary">{%trans "Detail"%}</span>
+          </a>
+          <div class="badge danger" data-confirm data-data='{"skip": "skip", "id": "{{value.id}}"}'>{%trans "Skip"%}</div>
           {% if value.group_type == 'family' %}
             <small class="fc-mute">{%trans "Private"%}</small>
           {%else%}
