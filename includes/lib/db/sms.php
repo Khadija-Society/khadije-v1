@@ -15,6 +15,30 @@ class sms
 		s_sms.*, s_group.title AS `group_title`,s_group.type AS `group_type`, recommendGroup.title AS `recommend_title`
 	";
 
+
+	public static function analyze_word($_words, $_not_words)
+	{
+		$words = implode("%' OR s_sms.text LIKE '%", $_words);
+		$notwords = implode("%' OR s_sms.text NOT LIKE '%", $_not_words);
+		$query =
+		"
+			SELECT
+				s_sms.id
+			FROM
+				s_sms
+			WHERE
+				s_sms.sendstatus IS NULL AND
+				s_sms.group_id IS NULL AND
+				(s_sms.text LIKE '%$words%')
+				AND
+				(s_sms.text NOT LIKE '%$notwords%')
+		";
+
+		$result = \dash\db::get($query, 'id');
+		return $result;
+
+	}
+
 	public static function get_count_gateway_send($_date, $_gateway)
 	{
 		$query  =

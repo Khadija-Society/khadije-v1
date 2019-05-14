@@ -78,6 +78,19 @@ class smsgroupfilter
 					\dash\notif::info($msg);
 				}
 			}
+
+			if(isset($args['type']) && $args['type'] === 'analyze' && isset($args['group_id']))
+			{
+				$result = self::add_new_filter($args['group_id']);
+				if($result && is_array($result))
+				{
+					$count = count($result);
+					$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
+					$result = implode(',', $result);
+					\lib\db\smsgroupfilter::update_old_record_filter($result, $args['group_id']);
+					\dash\notif::info($msg);
+				}
+			}
 			\dash\notif::ok(T_("Sms filter successfuly added"));
 		}
 
@@ -85,6 +98,24 @@ class smsgroupfilter
 	}
 
 
+	private static function add_new_filter($_group_id)
+	{
+		$get_words = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'group_id' => $_group_id]);
+		$get_not_words = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'group_id' => [" != ", " $_group_id " ]]);
+		if(is_array($get_words) && is_array($get_not_words))
+		{
+			$get_words     = array_column($get_words, 'text');
+			$get_not_words = array_column($get_not_words, 'text');
+
+			$get_sms_id = \lib\db\sms::analyze_word($get_words, $get_not_words);
+			$count = count($get_sms_id);
+			$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
+			$result = implode(',', $get_sms_id);
+			\lib\db\smsgroupfilter::update_old_record_filter_recommend($result, $_group_id);
+			\dash\notif::info($msg);
+		}
+
+	}
 
 
 	/**

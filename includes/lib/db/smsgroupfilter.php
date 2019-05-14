@@ -60,6 +60,22 @@ class smsgroupfilter
 		return $result;
 	}
 
+	public static function update_old_record_filter_recommend($_id, $_group_id)
+	{
+		$query  =
+		"
+			UPDATE
+				s_sms
+			SET
+				s_sms.recommend_id = $_group_id
+			WHERE
+				s_sms.id IN ($_id)
+		";
+
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
 
 	public static function not_in_another($_text, $_group_id)
 	{
