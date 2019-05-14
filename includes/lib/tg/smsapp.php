@@ -234,6 +234,12 @@ class smsapp
 				// for debug
 				bot::sendMessage($result);
 			}
+
+			if($_group === 'skip')
+			{
+				self::sms();
+				return true;
+			}
 		}
 		else
 		{
