@@ -13,7 +13,11 @@ class model
 			$fromgateway  = \dash\request::post('fromgateway');
 			// from_sender
 			// from_smspanel
-
+			if(!$answer_id)
+			{
+				\dash\notif::error(T_("Please choose one answer"));
+				return false;
+			}
 			\lib\app\sms::recommend_answer($recommend_id, $answer_id, $fromgateway);
 			\dash\notif::ok(T_("All message group saved"));
 			\dash\redirect::pwd();
