@@ -377,7 +377,7 @@ class sms
 			$skip =
 			[
 				'id'    =>  "skip",
-				'title' =>  T_("Skip this message"),
+				'title' =>  '⚠️ '. T_("Skip"),
 			];
 			$smsgroup[] = $skip;
 		}
@@ -402,7 +402,7 @@ class sms
 				$skip =
 				[
 					'id'    =>  "skip",
-					'text'  =>  T_("Skip"),
+					'text'  =>  '⚠️ '. T_("Skip"),
 				];
 				$answers[] = $skip;
 			}
