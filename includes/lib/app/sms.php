@@ -263,7 +263,7 @@ class sms
 		[
 			'reza'    => 33263188, // reza
 			'javad'   => 46898544, // javad
-			'khalili' => 106601863, // khalili
+			// 'khalili' => 106601863, // khalili
 			'sobati'  => 638670211, // sobati
 		];
 
