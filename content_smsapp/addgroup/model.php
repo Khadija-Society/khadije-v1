@@ -17,7 +17,7 @@ class model
 
 		if(\dash\engine\process::status() && isset($result['id']))
 		{
-			\dash\redirect::to(\dash\url::this(). '/editgroup?id='. $result['id']);
+			\dash\redirect::to(\dash\url::here(). '/editgroup?id='. $result['id']);
 		}
 	}
 }
