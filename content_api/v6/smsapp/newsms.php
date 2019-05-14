@@ -141,7 +141,17 @@ class newsms
 
 				if(!$get_recommend)
 				{
-					$update['recommend_id'] = null;
+					// reset
+					$update['recommend_id']    = null;
+					$update['sendstatus']      = null;
+					$update['answertext']      = null;
+					$update['answertextcount'] = null;
+					$update['receivestatus']   = 'awaiting';
+					$update['fromgateway']     = null;
+					$update['tonumber']        = null;
+					$update['group_id']        = null;
+					$update['dateanswer']      = null;
+
 				}
 				else
 				{
