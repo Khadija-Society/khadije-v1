@@ -376,7 +376,7 @@ class sms
 		{
 			$skip =
 			[
-				'id'    =>  "0",
+				'id'    =>  "skip",
 				'title' =>  T_("Skip this message"),
 			];
 			$smsgroup[] = $skip;
@@ -401,7 +401,7 @@ class sms
 			{
 				$skip =
 				[
-					'id'    =>  "0",
+					'id'    =>  "skip",
 					'title' =>  T_("Skip this message"),
 				];
 				$answers[] = $skip;
@@ -456,7 +456,7 @@ class sms
 
 	public static function set_group($_smsid, $_group_id)
 	{
-		if((string) $_group_id === '0')
+		if((string) $_group_id === 'skip')
 		{
 			$post                  = [];
 			$post['answertext']    = null;
@@ -497,7 +497,7 @@ class sms
 
 	public static function set_answer($_smsid, $_answer_id)
 	{
-		if((string) $_answer_id === '0')
+		if((string) $_answer_id === 'skip')
 		{
 			$post                  = [];
 			$post['answertext']    = null;
