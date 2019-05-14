@@ -137,9 +137,18 @@ class newsms
 					$update['group_id'] = $_insert['group_id'];
 				}
 
-				if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
+				$get_recommend = \lib\app\sms::analyze_text($new_text);
+
+				if(!$get_recommend)
 				{
-					$update['recommend_id'] = $_insert['recommend_id'];
+					$update['recommend_id'] = null;
+				}
+				else
+				{
+					if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
+					{
+						$update['recommend_id'] = $_insert['recommend_id'];
+					}
 				}
 
 				\lib\db\sms::update($update, $get_last_sms['id']);
