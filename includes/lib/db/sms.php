@@ -264,18 +264,20 @@ class sms
 		"
 			SELECT
 				COUNT(*) AS `count`,
-				DATE(s_sms.datemodified) AS `date`
+				DATE(s_sms.datesend) AS `date`
 			FROM
 				s_sms
 			WHERE
-				s_sms.answertext IS NOT NULL AND
-				DATE(s_sms.datemodified) <= DATE('$_startdate')  AND
-				DATE(s_sms.datemodified) >= DATE('$_enddate')
+				s_sms.sendstatus = 'send' AND
+				s_sms.datesend IS NOT NULL AND
+				DATE(s_sms.datesend) <= DATE('$_startdate')  AND
+				DATE(s_sms.datesend) >= DATE('$_enddate')
 			GROUP BY
-				DATE(s_sms.datemodified)
-			ORDER BY DATE(s_sms.datemodified) ASC
+				DATE(s_sms.datesend)
+			ORDER BY DATE(s_sms.datesend) ASC
 		";
 		$result = \dash\db::get($query, ['date', 'count']);
+
 		return $result;
 	}
 
