@@ -402,7 +402,7 @@ class sms
 				$skip =
 				[
 					'id'    =>  "skip",
-					'title' =>  T_("Skip this message"),
+					'text'  =>  T_("Skip"),
 				];
 				$answers[] = $skip;
 			}
