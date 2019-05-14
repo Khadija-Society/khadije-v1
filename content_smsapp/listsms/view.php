@@ -167,6 +167,41 @@ class view
 
 		\dash\data::sysStatus(\lib\app\sms::status());
 
+		\dash\data::maxLimit(self::check_max_limit($child));
+		\dash\data::badTime(self::bad_time());
+	}
+
+	public static function check_max_limit($_gateway)
+	{
+		$max_limit = 450; // every day
+		if($_gateway)
+		{
+
+			$gateway   = \dash\utility\filter::mobile($_gateway);
+
+			$get       = \lib\db\sms::get_count_gateway_send(date("Y-m-d"), $gateway);
+			$get       = intval($get);
+
+			if($get >= $max_limit)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	private static function bad_time()
+	{
+		$hour = intval(date("H"));
+		if(in_array($hour, [23,0,1,2,3,4,5,6,7]))
+		{
+			// this time is a bad time
+			return true;
+		}
+
+		return false;
+
 	}
 }
 ?>

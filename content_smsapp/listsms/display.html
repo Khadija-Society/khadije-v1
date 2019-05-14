@@ -4,6 +4,8 @@
 
 
 {%block pageContent%}
+
+{{block('iAlerting')}}
 {{block('istatusCount')}}
 {%if dataTable%}
  {%if dataFilter%}
@@ -33,6 +35,14 @@
 {%endblock%}
 
 
+{%block iAlerting%}
+{%if maxLimit%}
+<div class="msg danger2 txtC txtB">{%trans "Maximum allowed to send today has been completed"%}</div>
+{%endif%}
+{%if badTime%}
+<div class="msg warn2 txtC txtB">{%trans "This time is a bad time, send sms in another time"%}</div>
+{%endif%}
+{%endblock%}
 
 {%block igroupList%}
 <form method="post">
