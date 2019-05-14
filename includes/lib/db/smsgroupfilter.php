@@ -4,6 +4,28 @@ namespace lib\db;
 
 class smsgroupfilter
 {
+	public static function list_analyze_word()
+	{
+		$query  =
+		"
+			SELECT
+				s_groupfilter.text,
+				s_groupfilter.group_id
+			FROM
+				s_groupfilter
+			INNER JOIN s_group ON s_group.id = s_groupfilter.group_id
+			WHERE
+				s_group.analyze    = 1 AND
+				s_group.status     = 'enable' AND
+				s_group.type       = 'other' AND
+				s_groupfilter.type = 'analyze'
+			ORDER BY s_groupfilter.group_id
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	public static function have_old_record_filter($_group_id)
 	{
 		$query  =

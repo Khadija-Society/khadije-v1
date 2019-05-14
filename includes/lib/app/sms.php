@@ -6,6 +6,59 @@ namespace lib\app;
  */
 class sms
 {
+	public static function analyze_text($_text)
+	{
+		$all_group_text = \lib\db\smsgroupfilter::list_analyze_word();
+		if(!is_array($all_group_text))
+		{
+			return false;
+		}
+
+		$text_group = [];
+
+		foreach ($all_group_text as $key => $value)
+		{
+			if(!isset($text_group[$value['group_id']]))
+			{
+				$text_group[$value['group_id']] = [];
+			}
+
+			$text_group[$value['group_id']][] = $value['text'];
+		}
+
+		$find = null;
+		foreach ($text_group as $group_id => $words)
+		{
+			foreach ($words as $word)
+			{
+				if(strpos($_text, $word) !== false)
+				{
+					$find   = $group_id;
+					$not_in = $text_group;
+					unset($not_in[$group_id]);
+					foreach ($not_in as $not_group_id => $not_words)
+					{
+						foreach ($not_words as  $not_word)
+						{
+							if(strpos($_text, $not_word))
+							{
+								return false;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		if($find)
+		{
+			$load = \lib\db\smsgroup::get(['id' => $find, 'limit' => 1]);
+			return $load;
+		}
+
+		return false;
+	}
+
 	// change status of some sms has set on waitingtoautosend by check dateanswer is left 60 min
 	public static function send_auto_answered()
 	{

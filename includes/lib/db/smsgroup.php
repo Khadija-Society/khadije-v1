@@ -4,6 +4,12 @@ namespace lib\db;
 
 class smsgroup
 {
+	public static function list_analyze_group()
+	{
+		$query  = "SELECT * FROM s_group WHERE s_group.analyze = 1 AND s_group.status = 'enable' AND s_group.type = 'other' ";
+		$result = \dash\db::get($query);
+		return $result;
+	}
 
 	public static function insert()
 	{
