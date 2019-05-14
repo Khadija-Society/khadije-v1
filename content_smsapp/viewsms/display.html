@@ -2,7 +2,7 @@
 
 
 {%block changeStatus%}
-{%if perm_su()%}
+{%if perm_su() and false%}
   <div class="msg mL10">
     <form method="post">
       <input type="hidden" name="changeStatus" value="receivestatus">
@@ -38,60 +38,94 @@
 
 {%block pageContent%}
 
+<div class="f">
+  <div class="c6">
+    <div class="dcard x1">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b>
+    {%if countSmsFromThis %}
+    <br>
+      <small>{%trans "All sms from this number"%} <b>{{countSmsFromThis | fitNumber}}</b> {%trans "Sms"%}
+        <a  class="badge primary" href="{{url.here}}/listsms?fromnumber={{dataRow.fromnumber}}">{%trans "Show"%}</a>
+      </small>
+    {%endif%}
+    </div>
+  </div>
+  <div class="c6">
+    <div class="dcard x1">{%trans "togateway"%} <b>{{dataRow.togateway | fitNumber(false)}}</b></div>
+  </div>
+</div>
+
+<div class="f fs08">
+  <div class="c3 s6">
+    <div class="dcard x07">
+      <div class="value">{{dataRow.date | dt(false)}}</div>
+      <div class="label">{%trans "date"%} </div>
+    </div>
+  </div>
+  <div class="c3 s6">
+    <div class="dcard x07">
+       <div class="value">{{dataRow.datereceive | dt(false)}}</div>
+      <div class="label">{%trans "Date receive"%}</div>
+    </div>
+  </div>
+  <div class="c3 s6">
+    <div class="dcard x07">
+       <div class="value">{{dataRow.dateanswer | dt(false)}}</div>
+      <div class="label">{%trans "Date answer"%}</div>
+    </div>
+  </div>
+  <div class="c3 s6">
+    <div class="dcard x07">
+       <div class="value">{{dataRow.datesend | dt(false)}}</div>
+      <div class="label">{%trans "Date send"%}</div>
+    </div>
+  </div>
+</div>
+
+<div class="f">
+  <div class="c6">
+    <div class="dcard x07">
+      <div class="value">{%set mydataRowreceivestatus = dataRow.receivestatus%}{%trans mydataRowreceivestatus%}</div>
+      <div class="label">{%trans "Reseive status"%} </div>
+    </div>
+  </div>
+  <div class="c6">
+    <div class="dcard x07">
+      <div class="value">{%set mydataRowsendstatus = dataRow.sendstatus%}{%trans mydataRowsendstatus%}</div>
+      <div class="label">{%trans "Send status"%} </div>
+    </div>
+  </div>
+</div>
+
+<div class="msg info2 fs14">
+  {% if dataRow.brand%}<span class="badge light mA5">{%trans "Brand"%} <b>{{dataRow.brand}}</b></span>{%endif%}
+  {% if dataRow.model%}<span class="badge light mA5">{%trans "Model"%} <b>{{dataRow.model}}</b></span>{%endif%}
+  {% if dataRow.simcartserial%}<span class="badge light mA5">{%trans "Simcart serial"%} <b>{{dataRow.simcartserial}}</b></span>{%endif%}
+  {% if dataRow.smsmessageid%}<span class="badge light mA5">{%trans "sms message id"%} <b>{{dataRow.smsmessageid}}</b></span>{%endif%}
+  {% if dataRow.userdata%}<span class="badge light mA5">{%trans "user data"%} <b>{{dataRow.userdata}}</b></span>{%endif%}
+
+</div>
+
+
 <div class="f justify-center">
 
-  <div class="c8">
+  <div class="c5 s12 pRa10">
     <div class="cbox">
-      <div class="f">
-
-        <div class="c8 s12">
-          <div class="msg mL10 txtB txtC ">
-            <h4 class="">{%trans "Sms text"%}</h4>
-            <p>{{dataRow.text}}</p>
-          </div>
-          {{block('changeStatus')}}
-        </div>
-
-        <div class="c4 s12 pRa5">
-
-          <div class="msg">{%trans "From number"%} <b>{{dataRow.fromnumber | fitNumber(false)}}</b>
-          {%if countSmsFromThis %}
-          <br>
-            <small>{%trans "All sms from this number"%} <b>{{countSmsFromThis | fitNumber}}</b> {%trans "Sms"%}
-              <a  class="badge primary" href="{{url.here}}/listsms?fromnumber={{dataRow.fromnumber}}">{%trans "Show"%}</a>
-            </small>
-
-          {%endif%}
-          </div>
-          <div class="msg">{%trans "togateway"%} <b>{{dataRow.togateway | fitNumber(false)}}</b></div>
-          <div class="msg">{%trans "date"%} <b>{{dataRow.date | dt(true)}}</b></div>
-          <div class="msg">{%trans "Date receive"%} <b>{{dataRow.datereceive | dt(true)}}</b></div>
-          <div class="msg">{%trans "Date answer"%} <b>{{dataRow.dateanswer | dt(true)}}</b></div>
-          <div class="msg">{%trans "Date send"%} <b>{{dataRow.datesend | dt(true)}}</b></div>
-          <div class="msg">{%trans "Reseive status"%} <b>{%set mydataRowreceivestatus = dataRow.receivestatus%}{%trans mydataRowreceivestatus%}</b></div>
-          <div class="msg">{%trans "Send status"%} <b>{%set mydataRowsendstatus = dataRow.sendstatus%}{%trans mydataRowsendstatus%}</b></div>
-
-        </div>
-
-
-      </div>
-
-      {% if dataRow.brand%}<span class="badge mA5">{%trans "Brand"%} <b>{{dataRow.brand}}</b></span>{%endif%}
-      {% if dataRow.model%}<span class="badge mA5">{%trans "Model"%} <b>{{dataRow.model}}</b></span>{%endif%}
-      {% if dataRow.simcartserial%}<span class="badge mA5">{%trans "Simcart serial"%} <b>{{dataRow.simcartserial}}</b></span>{%endif%}
-      {% if dataRow.smsmessageid%}<span class="badge mA5">{%trans "sms message id"%} <b>{{dataRow.smsmessageid}}</b></span>{%endif%}
-      {% if dataRow.userdata%}<span class="badge mA5">{%trans "user data"%} <b>{{dataRow.userdata}}</b></span>{%endif%}
-
-      <hr>
+      <p>{{dataRow.text | raw | nl2br}}</p>
+    </div>
+    <div class="c8 s12">
+      {{block('changeStatus')}}
+    </div>
+  </div>
+  <div class="c7 s12">
+    <div class="cbox">
       <form method="post" autocomplete="off" {%if dataRow.answertext %} disabled {%endif%}>
 
-        <h5>{%trans "Select group"%} <a href="{{url.here}}/settings" class="badge info">{%trans "Manage group"%}</a></h5>
         {%if dataRow.recommend_id%}<div class="btn success2 mTB20">{%trans "Recommend"%} {{dataRow.recommend_title}}</div>{%endif%}
        <div class="f mB10">
         {%for key,value in groupList%}
           <div class="c">
             <div class="radio3 mB5 mRa5" >
-              <input {%if dataRow.answertext %} disabled {%endif%} type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == value.id or (not dataRow.group_id and not value.id)  %} checked {%endif%}>
+              <input {%if dataRow.answertext %} disabled {%endif%} type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == value.id or (not dataRow.group_id and not value.id)  %} checked {%endif%} onclick="clearAnswerTxt(this);">
               <label for="group_{{value.id}}">{{value.title}}</label>
             </div>
           </div>
@@ -101,29 +135,28 @@
         {%for group_id, answers in dataAnswer%}
         <div data-response='group_id' data-response-effect='slide' data-response-where='{{group_id}}' data-response-hide>
           {%for key, value in answers %}
-          <div class="btn outline primary" onclick="setAnswerText('{{value.text  | url_encode}}');">{{value.text}}</div>
+          <div class="btn outline primary mA5" onclick="setAnswerText('{{value.text  | url_encode}}');">{{value.text}}</div>
           {%endfor%}
         </div>
         {%endfor%}
 
         <label for="itxt mT20">{%trans "Answer text"%}</label>
-        <textarea class="txt" rows="5" name="answertext"  id="ianswertxt" {%if dataRow.answertext %} disabled {%endif%}>{{dataRow.answertext}}</textarea>
+        <textarea class="txt mB10" rows="5" name="answertext"  id="ianswertxt" {%if dataRow.answertext %} disabled {%endif%}>{{dataRow.answertext}}</textarea>
         {{block('fromGatewayForm')}}
         <div class="f mT20">
           <div class="c">
-            <button class="btn block {%if dataRow.answertext %} disabled {%else%} primary {%endif%}  " {%if dataRow.answertext %} disabled {%endif%}>{%trans "Send"%}</button>
+            <button class="btn block {%if dataRow.answertext %} disabled {%else%} success {%endif%}" {%if dataRow.answertext %} disabled {%endif%}>{%trans "Send"%}</button>
           </div>
+          {%if not dataRow.answertext %}
           <div class="cauto mLa5">
-
-            <div data-ajaxify data-data='{"skip" : "skip", "id": "{{dataRow.id}}"}' data-method='post'  class="btn">{%trans "Skip"%}</div>
+            <div data-ajaxify data-data='{"skip" : "skip", "id": "{{dataRow.id}}"}' data-method='post' class="btn warn">{%trans "Skip"%}</div>
           </div>
+          {%endif%}
         </div>
       </form>
-
-
     </div>
-
   </div>
+
 </div>
 
 <script type="text/javascript">
@@ -131,7 +164,10 @@
   {
     $('#ianswertxt').val(decodeURIComponent($_text));
   }
-
+  function clearAnswerTxt()
+  {
+    $('#ianswertxt').val('');
+  }
 </script>
 
 {%endblock%}
@@ -140,7 +176,7 @@
 
 {%block fromGatewayForm%}
   <label for="fromgateway">{%trans "Send by gateway"%}</label>
-  <select name="fromgateway" class="select ui dropdown search mB10" id="fromgateway">
+  <select name="fromgateway" class="select ui dropdown search mB10" id="fromgateway" {%if dataRow.answertext %} disabled {%endif%}>
   <option value="" readonly>{%trans "Please select one item"%} *</option>
     <option value="{{dataRow.togateway}}" {%if dataRow.fromgateway == dataRow.togateway or not dataRow.fromgateway%} selected {%endif%}>{{dataRow.togateway | fitNumber('mobile')}} <small>{%trans "From the sender"%}</small></option>
     <option value="{{10006660066600}}" {%if dataRow.fromgateway == '10006660066600' %} selected {%endif%}>{{10006660066600 | fitNumber(false)}} <small>{%trans "From the sms panel"%}</small></option>
