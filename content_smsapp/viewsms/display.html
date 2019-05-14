@@ -110,6 +110,7 @@
 
   <div class="c5 s12 pRa10">
     <div class="cbox">
+      <h4>{%trans "Sms text"%} <small class="floatRa">{{dataRow.text | length | fitNumber}} {%trans "Character"%}</small></h4>
       <p>{{dataRow.text | raw | nl2br}}</p>
     </div>
     <div class="c8 s12">
@@ -120,7 +121,9 @@
     <div class="cbox">
       <form method="post" autocomplete="off" {%if dataRow.answertext %} disabled {%endif%}>
 
-        {%if dataRow.recommend_id%}<div class="btn success2 mTB20">{%trans "Recommend"%} {{dataRow.recommend_title}}</div>{%endif%}
+        {%if dataRow.recommend_id%}
+        <div class="msg pain fs12 txtB txtC mB20">{%trans "Recommend"%} {{dataRow.recommend_title}}</div>
+        {%endif%}
        <div class="f mB10">
         {%for key,value in groupList%}
           <div class="c">
