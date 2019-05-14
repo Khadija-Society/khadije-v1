@@ -4,20 +4,16 @@
 
 {%if togateway%}
 <div class="f justify-center">
-  <div class="c6 m12 s12">
-    <div class="f">
-      {%for key, value in togateway%}
-      <div class="c s12">
-        <a class="dcard x1" href="{{url.that}}?gateway={{value.togateway}}">
+  {%for key, value in togateway%}
+    <div class="c6 m12 s12 pRa10">
+        <a class="dcard x1{%if requestGET.gateway == value.togateway%} active{%endif%}" href="{{url.that}}?gateway={{value.togateway}}">
          <div class="statistic sm teal">
           <div class="value mB10">{{value.togateway | fitNumber('mobile')}}</div>
           <div class="label">{{value.count | fitNumber }} {%trans "Sms"%}</div>
          </div>
         </a>
-      </div>
-      {%endfor%}
     </div>
-  </div>
+  {%endfor%}
 </div>
 {%endif%}
 
@@ -25,24 +21,27 @@
   <div class="c6 s12">
 
 
-        <table class="tbl1 v6 fs12">
+        <table class="tbl1 v6 fs11">
           <thead>
-            <tr>
+            <tr class="fs08">
               <th>{%trans "Date"%}</th>
-              <th>{%trans "Count send character"%}</th>
-              <th>{%trans "Count send SMS"%}</th>
+              <th>
+                <div>{%trans "Count send SMS"%}</div>
+                <div><small>{%trans "Count send character"%}</small></div>
+              </th>
             </tr>
           </thead>
           <tbody>
             {%for key, value in dataTable%}
             <tr>
               <td>
-              {{value.tdate}}
-              <br>
-              <small>{{value.thdate}}</small>
+              <div class="fs09">{{value.tdate}}</div>
+              <div>{{value.thdate}}</div>
               </td>
-              <td>{{value.sum | fitNumber}} <small>{%trans "Character"%}</small></td>
-              <td>{{value.sms | fitNumber}} <small>{%trans "SMS"%}</small></td>
+              <td>
+                <div class="fs12">{{value.sms | fitNumber}} <small>{%trans "SMS"%}</small></div>
+                <div class="fs09">{{value.sum | fitNumber}} <small>{%trans "Character"%}</small></div>
+              </td>
             </tr>
             {%endfor%}
           </tbody>
