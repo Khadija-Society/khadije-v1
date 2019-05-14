@@ -48,13 +48,13 @@
 <form method="post">
 <div class="f">
 {%if groupList%}
-<div class="cbox">
+<div class="cbox2">
 
   <div class="mT10">
-    <h6>{%trans "Recommend message group sorted"%}</h6>
+    <div class="msg info2 fs11">{%trans "Recommend message group sorted"%}</div>
     <div class="f">
       {%for key, value in groupList%}
-      <div class="c2 m3 s12">
+      <div class="c2 m3 s4">
         <a class="dcard x07 {%if requestGET.recommend_id == value.id%}active{%endif%}" href="{{url.that}}?recommend_id={{value.id}}&recommend=yes">
           <div class="value">{{value.count | fitNumber}}</div>
           <div class="label">{{value.title}}</div>
@@ -63,24 +63,27 @@
       {%endfor%}
     </div>
   </div>
-  {%if answerList%}
-  <div class="mT10">
-    <input type="hidden" name="type" value="setAnswer">
-    <input type="hidden" name="recommend_id" value="{{requestGET.recommend_id}}">
-    <h6>{%trans "What answer send to this group?"%}</h6>
-    <div class="f">
-      {%for key, value in answerList%}
-        <div class="radio3 c6 s12 pRa5">
-          <input type="radio" id="ianswer{{value.id}}" name="answer_id" value="{{value.id}}">
-          <label for="ianswer{{value.id}}">{{value.text}} <b>{{value.count | fitNumber}}</b></label>
-        </div>
-      {%endfor%}
-    </div>
-  </div>
 
-  <div class="mT10">
-    {{block('fromGatewayForm')}}
-    <button class="btn block primary">{%trans "Send"%}</button>
+  {%if answerList%}
+  <div class="cbox fs11">
+    <div class="mT10">
+      <input type="hidden" name="type" value="setAnswer">
+      <input type="hidden" name="recommend_id" value="{{requestGET.recommend_id}}">
+      <h4 class="fs11">{%trans "What answer send to this group?"%}</h4>
+      <div class="f">
+        {%for key, value in answerList%}
+          <div class="radio3 c6 s12 pRa5 ovh">
+            <input type="radio" id="ianswer{{value.id}}" name="answer_id" value="{{value.id}}">
+            <label for="ianswer{{value.id}}">{{value.text}}</label>
+          </div>
+        {%endfor%}
+      </div>
+    </div>
+
+    <div class="mT10">
+      {{block('fromGatewayForm')}}
+      <button class="btn block success">{%trans "Send"%}</button>
+    </div>
   </div>
   {%endif%}
 
@@ -109,56 +112,56 @@
 
 <div class="f">
 
-  <div class="c m3 s6">
+  <div class="c m3 s8">
     <a class="dcard x07 {%if requestGET.status == 'all'%}active{%endif%}" href="{{url.that}}?status=all">
       <div class="value">{{statusCount.all | fitNumber(false)}}</div>
       <div class="label">{%trans "All"%}</div>
     </a>
   </div>
 
-  <div class="c m3 s6">
+  <div class="c m3 s4">
     <a class="dcard x07 {%if requestGET.recommend == 'yes'%}active{%endif%}" href="{{url.that}}?recommend=yes">
       <div class="value">{{statusCount.recommend | fitNumber(false)}}</div>
       <div class="label">{%trans "Recommended"%} <small>{%trans "New"%}</small></div>
     </a>
   </div>
 
-  <div class="c m3 s6">
+  <div class="c m3 s4">
     <a class="dcard x07 {%if not myUrlGet%}active{%endif%}" href="{{url.that}}">
       <div class="value">{{statusCount.receive.awaiting | fitNumber(false)}}</div>
       <div class="label">{%trans "New"%} <small>{%trans "Awaiting"%}</small></div>
     </a>
   </div>
 
-  <div class="c m3 s6">
+  <div class="c m3 s4">
     <a class="dcard x07 {%if requestGET.receivestatus == 'block'%}active{%endif%}" href="{{url.that}}?receivestatus=block">
       <div class="value">{{statusCount.receive.block | fitNumber(false)}}</div>
       <div class="label">{%trans "Needless to answer"%}</div>
     </a>
   </div>
 
-   <div class="c m4 s6">
+   <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.receivestatus == 'skip'%}active{%endif%}" href="{{url.that}}?receivestatus=skip">
       <div class="value">{{statusCount.receive.skip | fitNumber(false)}}</div>
       <div class="label">{%trans "Skip message"%}</div>
     </a>
   </div>
 
-  <div class="c m4 s6">
+  <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.receivestatus == 'answerready'%}active{%endif%}" href="{{url.that}}?receivestatus=answerready">
       <div class="value">{{statusCount.receive.answerready | fitNumber(false)}}</div>
       <div class="label">{%trans "Answered"%}</div>
     </a>
   </div>
 
-  <div class="c m4 s6">
+  <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.sendstatus == 'awaiting'%}active{%endif%}" href="{{url.that}}?sendstatus=awaiting">
       <div class="value">{{statusCount.send.awaiting | fitNumber(false)}}</div>
       <div class="label">{%trans "Awaiting to send to device"%}</div>
     </a>
   </div>
 
-  <div class="c m4 s6">
+  <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.sendstatus == 'sendtodevice'%}active{%endif%}" href="{{url.that}}?sendstatus=sendtodevice">
       <div class="value">{{statusCount.send.sendtodevice | fitNumber(false)}}</div>
       <div class="label">{%trans "Waiting for sending by device"%}</div>
@@ -173,8 +176,8 @@
   </div>
 
   <div class="c m3 s6">
-    <div class="dcard x07" data-confirm data-data='{"status" : "change"}'>
-      <div class="value {% if sysStatus %} fc-green {%else%} fc-red {%endif%}">{% if sysStatus %} {%trans "On"%} {%else%} {%trans "Off"%} {%endif%}</div>
+    <div class="dcard x07 {% if sysStatus %} bg-graylight{%else%} bg-yellow {%endif%}" data-confirm data-data='{"status" : "change"}'>
+      <div class="value">{% if sysStatus %} {%trans "On"%} {%else%} {%trans "Off"%} {%endif%}</div>
       <div class="label">{% trans "System status"%}</div>
     </div>
   </div>
