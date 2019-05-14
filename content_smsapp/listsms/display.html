@@ -137,7 +137,7 @@
     </a>
   </div>
 
-   <div class="c m3 s6">
+   <div class="c m4 s6">
     <a class="dcard x07 {%if requestGET.receivestatus == 'skip'%}active{%endif%}" href="{{url.that}}?receivestatus=skip">
       <div class="value">{{statusCount.receive.skip | fitNumber(false)}}</div>
       <div class="label">{%trans "Skip message"%}</div>
@@ -165,14 +165,14 @@
     </a>
   </div>
 
-  <div class="c m6 s6">
+  <div class="c m5 s6">
     <a class="dcard x07 {%if requestGET.sendstatus == 'send'%}active{%endif%}" href="{{url.that}}?sendstatus=send">
       <div class="value">{{statusCount.send.send | fitNumber(false)}}</div>
       <div class="label">{%trans "Sended"%}</div>
     </a>
   </div>
 
-  <div class="c m6 s6">
+  <div class="c m3 s6">
     <div class="dcard x07" data-confirm data-data='{"status" : "change"}'>
       <div class="value {% if sysStatus %} fc-green {%else%} fc-red {%endif%}">{% if sysStatus %} {%trans "On"%} {%else%} {%trans "Off"%} {%endif%}</div>
       <div class="label">{% trans "System status"%}</div>
