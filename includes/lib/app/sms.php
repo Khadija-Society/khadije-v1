@@ -372,12 +372,15 @@ class sms
 	{
 
 		$smsgroup = \lib\db\smsgroup::get(['analyze' => 1]);
-		$skip =
-		[
-			'id'    =>  "0",
-			'title' =>  T_("Skip this message"),
-		];
-		$smsgroup[] = $skip;
+		if(\dash\url::content() === 'hook')
+		{
+			$skip =
+			[
+				'id'    =>  "0",
+				'title' =>  T_("Skip this message"),
+			];
+			$smsgroup[] = $skip;
+		}
 		return $smsgroup;
 	}
 
@@ -394,12 +397,15 @@ class sms
 		if($_group_id && is_numeric($_group_id))
 		{
 			$answers = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $_group_id]);
-			$skip =
-			[
-				'id'    =>  "0",
-				'title' =>  T_("Skip this message"),
-			];
-			$answers[] = $skip;
+			if(\dash\url::content() === 'hook')
+			{
+				$skip =
+				[
+					'id'    =>  "0",
+					'title' =>  T_("Skip this message"),
+				];
+				$answers[] = $skip;
+			}
 			return $answers;
 		}
 	}
