@@ -59,12 +59,12 @@ class twigTransTerms
 
 	//---------------------------------------------content_smsapp/report/home/chart.js
 	echo T_("Send status chart");                                                     // Line 32
-	echo T_("Send status");                                                           // Line 216
+	echo T_("Send status");                                                           // Line 255
 	echo T_("Count");                                                                 // Line 112
 	echo T_("Receive status chart");                                                  // Line 104
 	echo T_("Receive status");                                                        // Line 146
 	echo T_("Sms count group by recommend title");                                    // Line 178
-	echo T_("Recommended");                                                           // Line 218
+	echo T_("Recommended");                                                           // Line 257
 	echo T_("Sms count group by group title");                                        // Line 250
 	echo T_("Group chart");                                                           // Line 292
 	echo T_("Count Send and Receive sms per day");                                    // Line 26
@@ -73,16 +73,16 @@ class twigTransTerms
 
 	//------------------------------------------------content_smsapp/chat/display.html
 	echo T_("From number");                                                           // Line 43
-	echo T_("Sms text");                                                              // Line 211
+	echo T_("Sms text");                                                              // Line 250
 	echo T_("Date created");                                                          // Line 44
-	echo T_("Reseive status");                                                        // Line 214
-	echo T_("Answer");                                                                // Line 215
+	echo T_("Reseive status");                                                        // Line 253
+	echo T_("Answer");                                                                // Line 254
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Recommend");                                                             // Line 125
 	echo T_("Action");                                                                // Line 61
-	echo T_("togateway");                                                             // Line 242
-	echo T_("fromgateway");                                                           // Line 247
-	echo T_("tonumber");                                                              // Line 250
+	echo T_("togateway");                                                             // Line 281
+	echo T_("fromgateway");                                                           // Line 286
+	echo T_("tonumber");                                                              // Line 289
 	echo T_("View");                                                                  // Line 77
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
@@ -145,11 +145,18 @@ class twigTransTerms
 	echo T_("On");                                                                    // Line 180
 	echo T_("Off");                                                                   // Line 180
 	echo T_("System status");                                                         // Line 181
-	echo T_("Numbers");                                                               // Line 212
+	echo T_("Filter by start date and end date of sms");                              // Line 193
+	echo T_("Start date");                                                            // Line 83
+	echo T_("End date");                                                              // Line 91
+	echo T_("Filter by group");                                                       // Line 210
+	echo T_("Clear filter");                                                          // Line 76
+	echo T_("Apply");                                                                 // Line 77
+	echo T_("Advance");                                                               // Line 88
+	echo T_("Numbers");                                                               // Line 251
 	echo T_("Detail");                                                                // Line 55
 	echo T_("Private");                                                               // Line 152
-	echo T_("fromnumber");                                                            // Line 237
-	echo T_("Send to analyze");                                                       // Line 263
+	echo T_("fromnumber");                                                            // Line 276
+	echo T_("Send to analyze");                                                       // Line 302
 
 	//--------------------------------------content_smsapp/recommendgroup/display.html
 	echo T_("You can register some recommend text to this group to help you.");       // Line 7
@@ -677,12 +684,9 @@ class twigTransTerms
 	echo T_("Donation Average");                                                      // Line 36
 	echo T_("Advance filter");                                                        // Line 85
 	echo T_("Search in donations");                                                   // Line 86
-	echo T_("Start date");                                                            // Line 83
-	echo T_("End date");                                                              // Line 91
 	echo T_("Max pay");                                                               // Line 114
 	echo T_("Max count pay user");                                                    // Line 118
 	echo T_("Remember notif");                                                        // Line 123
-	echo T_("Clear filter");                                                          // Line 76
 	echo T_("Niyat");                                                                 // Line 151
 	echo T_("Hazinekard");                                                            // Line 152
 	echo T_("Without mobile");                                                        // Line 189
@@ -967,8 +971,6 @@ class twigTransTerms
 	//--------------------------------------------------content_m/trip/tripDetail.html
 	echo T_("Filter by start date and end date");                                     // Line 37
 	echo T_("Filter by place");                                                       // Line 54
-	echo T_("Apply");                                                                 // Line 77
-	echo T_("Advance");                                                               // Line 88
 	echo T_("Search in trips");                                                       // Line 89
 	echo T_("ID");                                                                    // Line 104
 	echo T_("Birthdate");                                                             // Line 107
