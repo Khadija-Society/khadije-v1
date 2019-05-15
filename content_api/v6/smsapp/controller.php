@@ -9,7 +9,6 @@ class controller
 
 		if(!\dash\request::is('post'))
 		{
-			self::save_log();
 			\content_api\v6::no(404);
 		}
 
@@ -55,32 +54,11 @@ class controller
 			\content_api\v6::no(404);
 		}
 
-		self::save_log($detail);
 
 		\content_api\v6::bye($detail);
 
 	}
 
-
-	private static function save_log($_data = null)
-	{
-		$log =
-		[
-			'gateway'   => \dash\header::get('gateway'),
-			'smsappkey' => \dash\header::get('smsappkey'),
-			'post'      => \dash\request::post(),
-			'get'       => \dash\request::get(),
-			'url'       => \dash\url::pwd(),
-			'msg'       => \dash\notif::get(),
-		];
-
-		if($_data)
-		{
-			$log['result'] = $_data;
-		}
-
-		\dash\log::file(json_encode($log, JSON_UNESCAPED_UNICODE), 'smsapp.log', 'api');
-	}
 
 
 	private static function check_smsappkey()
@@ -89,7 +67,6 @@ class controller
 
 		if(!trim($smsappkey))
 		{
-			self::save_log();
 			\content_api\v6::no(400, T_("Appkey not set"));
 		}
 
@@ -99,7 +76,6 @@ class controller
 		}
 		else
 		{
-			self::save_log();
 			\content_api\v6::no(400, T_("Invalid app key"));
 		}
 
@@ -126,7 +102,6 @@ class controller
 		}
 		else
 		{
-			self::save_log();
 			\content_api\v6::no(400, T_("Invalid mobile for gateway"));
 			return false;
 		}
