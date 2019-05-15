@@ -70,6 +70,51 @@ class view
 
 		}
 
+		$startdate = null;
+		$enddate   = null;
+
+		$get_date_url = [];
+		if(\dash\request::get('startdate'))
+		{
+			$startdate                 = \dash\request::get('startdate');
+			$get_date_url['startdate'] = $startdate;
+			$startdate                 = \dash\utility\convert::to_en_number($startdate);
+
+			if(\dash\utility\jdate::is_jalali($startdate))
+			{
+				$startdate = \dash\utility\jdate::to_gregorian($startdate);
+			}
+			\dash\data::startdateEn($startdate);
+		}
+
+
+		if(\dash\request::get('enddate'))
+		{
+			$enddate                 = \dash\request::get('enddate');
+			$get_date_url['enddate'] = $enddate;
+			$enddate                 = \dash\utility\convert::to_en_number($enddate);
+			if(\dash\utility\jdate::is_jalali($enddate))
+			{
+				$enddate = \dash\utility\jdate::to_gregorian($enddate);
+			}
+			\dash\data::enddateEn($enddate);
+		}
+
+
+		if($startdate && $enddate)
+		{
+			$args['1.1'] = [" = 1.1 ", " AND DATE(s_sms.datecreated) >= DATE('$startdate') AND DATE(s_sms.datecreated) <= DATE('$enddate')  "];
+		}
+		elseif($startdate)
+		{
+			$args['DATE(s_sms.datecreated)'] = [">=", " DATE('$startdate') "];
+		}
+		elseif($enddate)
+		{
+			$args['DATE(s_sms.datecreated)'] = ["<=", " DATE('$enddate') "];
+		}
+
+
 		$search_string = \dash\request::get('q');
 
 		if(!$args['order'])
@@ -169,6 +214,9 @@ class view
 
 		\dash\data::maxLimit(self::check_max_limit($child));
 		\dash\data::badTime(self::bad_time());
+
+		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
+		\dash\data::allGroupList($smsgroup);
 	}
 
 	public static function check_max_limit($_gateway)
