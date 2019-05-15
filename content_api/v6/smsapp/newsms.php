@@ -108,8 +108,9 @@ class newsms
 
 	private static function check_add_update($_insert)
 	{
-		$fromnumber = $_insert['fromnumber'];
+		$fromnumber   = $_insert['fromnumber'];
 		$get_last_sms = \lib\db\sms::get_last_sms($fromnumber);
+
 		if(isset($get_last_sms['date']))
 		{
 			$date = $get_last_sms['date'];
@@ -137,29 +138,35 @@ class newsms
 					$update['group_id'] = $_insert['group_id'];
 				}
 
-				$get_recommend = \lib\app\sms::analyze_text($new_text);
-
-				if(!$get_recommend)
+				if($get_last_sms['receivestatus'] === 'block')
 				{
-					// reset
-					$update['recommend_id']    = null;
-					$update['sendstatus']      = null;
-					$update['answertext']      = null;
-					$update['answertextcount'] = null;
-					$update['receivestatus']   = 'awaiting';
-					$update['fromgateway']     = null;
-					$update['tonumber']        = null;
-					$update['group_id']        = null;
-					$update['dateanswer']      = null;
-
+					// nothing
 				}
 				else
 				{
-					if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
+					$get_recommend = \lib\app\sms::analyze_text($new_text);
+
+					if(!$get_recommend)
 					{
-						$update['recommend_id'] = $_insert['recommend_id'];
+						// reset
+						$update['recommend_id']    = null;
+						$update['sendstatus']      = null;
+						$update['answertext']      = null;
+						$update['answertextcount'] = null;
+						$update['receivestatus']   = 'awaiting';
+						$update['fromgateway']     = null;
+						$update['tonumber']        = null;
+						$update['dateanswer']      = null;
+					}
+					else
+					{
+						if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
+						{
+							$update['recommend_id'] = $_insert['recommend_id'];
+						}
 					}
 				}
+
 
 				\lib\db\sms::update($update, $get_last_sms['id']);
 				return intval($get_last_sms['id']);
