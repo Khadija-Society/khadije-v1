@@ -62,7 +62,7 @@ class sms
 	// change status of some sms has set on waitingtoautosend by check dateanswer is left 60 min
 	public static function send_auto_answered()
 	{
-		$date = date("Y-m-d H:i:s", time() - (60*60));
+		$date = date("Y-m-d H:i:s", time() - (60*30));
 		\lib\db\sms::send_auto_answered($date);
 	}
 
