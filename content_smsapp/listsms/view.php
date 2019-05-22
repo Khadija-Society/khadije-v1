@@ -183,6 +183,13 @@ class view
 			$filterArray[T_('type')] = \dash\request::get('type');
 		}
 
+		if(\dash\request::get('grouprecommend') && is_numeric(\dash\request::get('grouprecommend')))
+		{
+			$grouprecommend = intval(\dash\request::get('grouprecommend'));
+
+			$args['3.3'] = ['= 3.3 AND ', " (s_sms.group_id = $grouprecommend OR s_sms.recommend_id = $grouprecommend) "];
+		}
+
 		$export = false;
 		if(\dash\request::get('export') === '1')
 		{

@@ -57,6 +57,7 @@
         <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
         <th class="collapsing s0" data-sort="{{sortLink.analyze.order}}"><a href="{{sortLink.analyze.link}}">{%trans "Analyze"%}</a></th>
         <th class="collapsing s0" data-sort="{{sortLink.ismoney.order}}"><a href="{{sortLink.ismoney.link}}">{%trans "Is Money"%}</a></th>
+        <th class="collapsing">{%trans "View"%}</th>
       </tr>
     </thead>
 
@@ -68,6 +69,9 @@
         <td class=""><a href="{{url.this}}?status={{value.status}}">{%set mystatus = value.status | capitalize %}{%trans mystatus%}</a></td>
         <td class="s0">{%if value.analyze%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
         <td class="s0">{%if value.ismoney%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
+        <td class="collapsing">
+          <a href="{{url.here}}/listsms?grouprecommend={{value.id | coding('decode')}}" class="badge info">{%trans "View"%} {%trans "Sms"%}</a>
+        </td>
 
       </tr>
       {%endfor%}
