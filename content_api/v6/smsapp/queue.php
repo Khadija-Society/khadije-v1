@@ -23,12 +23,12 @@ class queue
 		}
 
 
-		// if no not sent sms
-		if(self::not_sent_sms())
-		{
-			\dash\notif::warn(T_("You have some not sent sms, please send it before"));
-			return null;
-		}
+		// // if no not sent sms
+		// if(self::not_sent_sms())
+		// {
+		// 	\dash\notif::warn(T_("You have some not sent sms, please send it before"));
+		// 	return null;
+		// }
 
 		// if have sms
 		$must_be_send = self::must_be_send();
