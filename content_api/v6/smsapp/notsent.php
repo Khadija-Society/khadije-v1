@@ -13,6 +13,11 @@ class notsent
 			return null;
 		}
 
+		// not check not send  :|
+		\dash\notif::warn(T_("Please check queue!"), ['code' => 10]);
+		return null;
+
+
 		// if have sms
 		$not_sent = self::not_sent();
 
