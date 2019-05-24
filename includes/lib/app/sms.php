@@ -140,6 +140,7 @@ class sms
 		}
 		$count_all     = \lib\db\sms::get_count($_args);
 		$result['all'] = $count_all;
+
 		return $result;
 
 	}

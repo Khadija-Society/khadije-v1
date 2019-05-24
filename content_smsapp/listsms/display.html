@@ -155,6 +155,13 @@
   </div>
 
   <div class="c m4 s4">
+    <a class="dcard x07 {%if requestGET.sendstatus == 'waitingtoautosend'%}active{%endif%}" href="{{url.that}}?sendstatus=waitingtoautosend">
+      <div class="value">{{statusCount.send.waitingtoautosend | fitNumber(false)}}</div>
+      <div class="label">{%trans "Waiting to auto send"%}</div>
+    </a>
+  </div>
+
+  <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.sendstatus == 'awaiting'%}active{%endif%}" href="{{url.that}}?sendstatus=awaiting">
       <div class="value">{{statusCount.send.awaiting | fitNumber(false)}}</div>
       <div class="label">{%trans "Awaiting to send to device"%}</div>
@@ -265,6 +272,13 @@
           <a href="{{url.here}}/viewsms?id={{value.id}}">
             <span class="badge primary">{%trans "Detail"%}</span>
           </a>
+
+          {%if value.sendstatus == 'waitingtoautosend'%}
+          <span data-confirm data-data='{"skip" : "skip", "id" : "{{value.id}}"}'>
+            <span class="badge warn">{%trans "Skip"%}</span>
+          </span>
+          {%endif%}
+
           {% if value.group_type == 'family' %}
             <small class="fc-mute">{%trans "Private"%}</small>
           {%else%}

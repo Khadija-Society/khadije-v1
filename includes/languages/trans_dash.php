@@ -300,7 +300,7 @@ class twigTransTerms
 	echo T_("Track id");                                                              // Line 139
 	echo T_("Date");                                                                  // Line 48
 	echo T_("Payment");                                                               // Line 147
-	echo T_("Detail");                                                                // Line 110
+	echo T_("Detail");                                                                // Line 36
 
 	//--------------------------------------------addons/content_cms/dayevent/chart.js
 	echo T_("Day Event");                                                             // Line 27
@@ -382,7 +382,7 @@ class twigTransTerms
 	echo T_("Result not found!");                                                     // Line 105
 	echo T_("Search with new keywords.");                                             // Line 105
 	echo T_("Hi!");                                                                   // Line 112
-	echo T_("Try to start with add new record!");                                     // Line 129
+	echo T_("Try to start with add new record!");                                     // Line 131
 	echo T_("All publish posts");                                                     // Line 129
 	echo T_("Published");                                                             // Line 67
 	echo T_("All draft posts");                                                       // Line 138
@@ -876,7 +876,7 @@ class twigTransTerms
 
 	//-------------------------------------addons/content_crm/member/home/display.html
 	echo T_("Advance result");                                                        // Line 41
-	echo T_("Show");                                                                  // Line 58
+	echo T_("Show");                                                                  // Line 9
 	echo T_("Display Name");                                                          // Line 83
 	echo T_("Created date");                                                          // Line 101
 	echo T_("Last Modified");                                                         // Line 104
@@ -935,7 +935,7 @@ class twigTransTerms
 	echo T_("Telegrams");                                                             // Line 158
 	echo T_("Join at");                                                               // Line 183
 	echo T_("Android");                                                               // Line 179
-	echo T_("Version");                                                               // Line 12
+	echo T_("Version");                                                               // Line 13
 	echo T_("Manufacturer");                                                          // Line 181
 	echo T_("Serial");                                                                // Line 182
 
@@ -951,8 +951,8 @@ class twigTransTerms
 	echo T_("All trash log");                                                         // Line 82
 
 	//---------------------------------------addons/content_crm/log/home/logTable.html
-	echo T_("Subdomain");                                                             // Line 11
-	echo T_("Url");                                                                   // Line 13
+	echo T_("Subdomain");                                                             // Line 12
+	echo T_("Url");                                                                   // Line 14
 	echo T_("Send to");                                                               // Line 67
 	echo T_("Date created");                                                          // Line 86
 	echo T_("Date modified");                                                         // Line 92
@@ -1275,19 +1275,19 @@ class twigTransTerms
 	//--------------------------------------addons/content_su/apilog/home/display.html
 
 	//-------------------------------------addons/content_su/apilog/home/logTable.html
-	echo T_("Auth");                                                                  // Line 9
-	echo T_("Header");                                                                // Line 15
-	echo T_("Header len");                                                            // Line 16
-	echo T_("Body");                                                                  // Line 17
-	echo T_("Bodylen");                                                               // Line 18
-	echo T_("Date send");                                                             // Line 19
-	echo T_("Page status");                                                           // Line 20
-	echo T_("Result status");                                                         // Line 21
-	echo T_("Response header");                                                       // Line 22
-	echo T_("Response body");                                                         // Line 23
-	echo T_("Datere sponse");                                                         // Line 24
-	echo T_("Notif");                                                                 // Line 25
-	echo T_("Response len");                                                          // Line 26
+	echo T_("Auth");                                                                  // Line 10
+	echo T_("Header");                                                                // Line 16
+	echo T_("Header len");                                                            // Line 17
+	echo T_("Body");                                                                  // Line 18
+	echo T_("Bodylen");                                                               // Line 19
+	echo T_("Date send");                                                             // Line 20
+	echo T_("Page status");                                                           // Line 21
+	echo T_("Result status");                                                         // Line 22
+	echo T_("Response header");                                                       // Line 23
+	echo T_("Response body");                                                         // Line 24
+	echo T_("Datere sponse");                                                         // Line 25
+	echo T_("Notif");                                                                 // Line 26
+	echo T_("Response len");                                                          // Line 27
 
 	//----------------------------------------------addons/content_su/log/display.html
 	echo T_("Show archived");                                                         // Line 40
