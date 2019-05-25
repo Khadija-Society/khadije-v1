@@ -301,6 +301,25 @@ class myuser
 		}
 
 		$file1 = \dash\app::request('file1');
+		$file2 = \dash\app::request('file2');
+		$hawzahcode = \dash\app::request('hawzahcode');
+		if($hawzahcode && !is_numeric($hawzahcode))
+		{
+			\dash\notif::error(T_("Invalid hawzahcode"), 'hawzahcode');
+			return false;
+		}
+
+		if($hawzahcode)
+		{
+			$hawzahcode = intval($hawzahcode);
+			if($hawzahcode > 9999999)
+			{
+				\dash\notif::error(T_("hawzahcode is out of range"), 'hawzahcode');
+				return false;
+			}
+		}
+
+
 
 		$args                    = [];
 		$args['gender']          = $gender;
@@ -337,6 +356,8 @@ class myuser
 		$args['avatar']          = $avatar;
 		$args['nesbat']          = $nesbat;
 		$args['file1']          = $file1;
+		$args['file2']          = $file2;
+		$args['hawzahcode']          = $hawzahcode;
 
 		if($gender && $birthday && $firstname && $lastname && $father)
 		{
@@ -641,6 +662,8 @@ class myuser
 		if(!\dash\app::isset_request('job')) 			unset($args['job']);
 		if(!\dash\app::isset_request('nesbat')) 		unset($args['nesbat']);
 		if(!\dash\app::isset_request('file1')) 		unset($args['file1']);
+		if(!\dash\app::isset_request('file2')) 		unset($args['file2']);
+		if(!\dash\app::isset_request('hawzahcode')) 		unset($args['hawzahcode']);
 
 
 		\dash\db\users::update($args, $user_id);

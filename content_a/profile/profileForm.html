@@ -26,8 +26,11 @@
 
    <div class="f">
     <div class="c4 s12 pRa5">{{block ('icountry') }}</div>
+
+   {%if tripDetail.place == 'karbala'  %}
     <div class="c4 s12 pRa5">{{block ('ipassport') }}</div>
     <div class="c4 s12">{{block ('ipassportexpire') }}</div>
+   {%endif%}
    </div>
 
    <div class="f">
@@ -44,7 +47,12 @@
     <div class="c8 s12 pRa5">{{block ('iAddress') }}</div>
     <div class="c4 s12">{{block ('izipcode') }}</div>
    </div>
-   {{block('iJobIsStudent')}}
+
+   {%if tripDetail.place == 'mashhad'  %}
+    {{block('iHawzahCode')}}
+    {{block('iMashhadMoarefiName')}}
+   {%endif%}
+
    {{block('iNationalCodeThumb')}}
    {{block ('iSave') }}
 
@@ -53,6 +61,27 @@
 </div>
 
 {%endblock%}
+
+
+{%block iHawzahCode%}
+<label for="hawzahcode">{%trans "Hawzah code"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="number" name="hawzahcode" id="hawzahcode" placeholder='{%trans "hawzahcode"%} *' value="{{userdetail.hawzahcode}}" min="999" max="9999999999"  required>
+</div>
+{%endblock%}
+
+
+{%block iMashhadMoarefiName%}
+  <label for="file2">{%trans "Verify leter"%}</label>
+  <div class="input ">
+   <input type="file" accept="image/gif, image/jpeg, image/png" name="file2" id="file2" data-preview data-max="500">
+  </div>
+  {%if userdetail.file2%}
+    <a class="badge warn" data-confirm data-data='{"removeVerifyLeter": 1}'>{%trans "Remove file"%}</a>
+    <a href="{{userdetail.file2}}" target="_blank"><img class="size-we200 block mLRa" src="{{userdetail.file2}}"></a>
+  {%endif%}
+{%endblock%}
+
 
 
 {%block iNationalCodeThumb%}

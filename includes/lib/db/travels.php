@@ -152,6 +152,9 @@ class travels
 				users.father         AS `father`,
 				users.lastname       AS `lastname`,
 				users.nationalcode   AS `nationalcode`,
+				users.hawzahcode   AS `hawzahcode`,
+				users.file1   AS `file1`,
+				users.file2   AS `file2`,
 				travels.*,
 				(SELECT COUNT(*) FROM travelusers WHERE travelusers.travel_id = travels.id) AS `countpartner`
 			",
