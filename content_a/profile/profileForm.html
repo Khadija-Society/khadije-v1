@@ -6,6 +6,8 @@
 <div class="f justify-center">
  <div class="c9 s12">
   <form class="cbox" method="post" autocomplete="off" enctype="multipart/form-data">
+   <div class="msg warn txtC txtB">در این مرحله اطلاعات خود را به‌عنوان مسئول کاروان وارد کنید.<br>
+بعد از اتمام این مرحله شما وارد مرحله ثبت‌نام اعضای کاروان خواهید شد.</div>
 
    <div class="f">
     <div class="c6 s12 pRa5">{{block ('iname') }}</div>
@@ -54,7 +56,7 @@
    {%endif%}
 
    {{block('iNationalCodeThumb')}}
-   {{block ('iSave') }}
+   {{block ('iNext') }}
 
   </form>
  </div>
@@ -76,6 +78,7 @@
   <div class="input ">
    <input type="file" accept="image/gif, image/jpeg, image/png" name="file2" id="file2" data-preview data-max="500">
   </div>
+  <div class="msg info2">معرفی نامه باید از طرف امام جمعه یا روحانی مسجد محل یا سایر مراکز فرهنگی معتبر باشد.</div>
   {%if userdetail.file2%}
     <a class="badge warn" data-confirm data-data='{"removeVerifyLeter": 1}'>{%trans "Remove file"%}</a>
     <a href="{{userdetail.file2}}" target="_blank"><img class="size-we200 block mLRa" src="{{userdetail.file2}}"></a>
@@ -85,8 +88,7 @@
 
 
 {%block iNationalCodeThumb%}
-
-    <label for="file1">{%trans "National card photo"%}</label>
+    <label for="file1">تصویر کارت ملی مسئول کاروان</label>
     <div class="input ">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="file1" id="file1" data-preview data-max="500">
 
@@ -357,6 +359,9 @@
 <button class="btn primary block mT20">{%trans "Save"%}</button>
 {%endblock%}
 
+{%block iNext%}
+<button class="btn primary block mT20">ذخیره و بعدی</button>
+{%endblock%}
 
 
 
