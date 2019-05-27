@@ -26,7 +26,7 @@
         <div class="msg fs09 {%if value.text | length > 70%} warn2 {%else%} primary2 {%endif%}">
           <div class="f">
 
-            <span class="c s12 {%if value.isdefault%} fs12 txtB {%endif%}">{{value.text}}</span>
+            <span class="c s12 {%if value.isdefault%} fs12 txtB {%endif%}">{{value.text | raw | nl2br}}</span>
             <span class="cauto s12 mRa20 txtB">{{value.text | length | fitNumber}} {%trans "Character"%}</span>
             {%if not value.isdefault%}
             <div class="cauto s12 mRa20">
