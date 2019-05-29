@@ -307,6 +307,17 @@ class smsgroup
 					$result[$key] = \dash\coding::encode($value);
 					break;
 
+				case 'number':
+				case 'analyze':
+				case 'answer':
+					$result[$key] = $value;
+					if($value)
+					{
+						$split = explode(',', $value);
+						$result['array_'. $key] = $split;
+					}
+					break;
+
 				case 'answer':
 					$result[$key] = json_decode($value, true);
 					break;

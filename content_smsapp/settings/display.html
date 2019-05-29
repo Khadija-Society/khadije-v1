@@ -64,7 +64,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr class="{%if value.status == 'deleted' or value.status == 'disabled'%} danger2 {%endif%}">
-        <td class=""><a href="{{url.here}}/editgroup?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
+        <td class=""><a href="{{url.here}}/editgroup?id={{value.id}}"><i class="sf-edit"></i> <b class="fs12">{{value.title}}</b></a></td>
         <td class=""><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type | capitalize %}{%trans mytype%}</a></td>
         <td class=""><a href="{{url.this}}?status={{value.status}}">{%set mystatus = value.status | capitalize %}{%trans mystatus%}</a></td>
         <td class="s0">{%if value.analyze%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
@@ -73,6 +73,27 @@
           <a href="{{url.here}}/listsms?grouprecommend={{value.id | coding('decode')}}" class="badge info">{%trans "View"%} {%trans "Sms"%}</a>
         </td>
 
+      </tr>
+      <tr>
+
+        <td colspan="7">
+          <div class="mLa50">
+            <a href="{{url.here}}/filtergroup?id={{value.id}}">{%trans "Numbers"%}</a>
+            {%for k,v in value.array_number%}
+            <span class="badge light">{{v | fitNumber(false)}}</span>
+            {%endfor%}
+            <br>
+            <a href="{{url.here}}/recommendgroup?id={{value.id}}">{%trans "Analyze"%}</a>
+            {%for k,v in value.array_analyze%}
+            <span class="badge light">{{v}}</span>
+            {%endfor%}
+            <br>
+            <a href="{{url.here}}/answergroup?id={{value.id}}">{%trans "Answer"%}</a>
+            {%for k,v in value.array_answer%}
+            <span class="badge light">{{v}}</span>
+            {%endfor%}
+          </div>
+        </td>
       </tr>
       {%endfor%}
     </tbody>

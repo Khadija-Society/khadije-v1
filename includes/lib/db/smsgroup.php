@@ -45,6 +45,15 @@ class smsgroup
 		$default =
 		[
 			'search_field' => "(s_group.title LIKE '%__string__%')",
+			'public_show_field' =>
+			"
+				s_group.*,
+				(SELECT GROUP_CONCAT(s_groupfilter.number) FROM s_groupfilter WHERE s_groupfilter.group_id = s_group.id AND s_groupfilter.type = 'number') AS `number`,
+				(SELECT GROUP_CONCAT(s_groupfilter.text) FROM s_groupfilter WHERE s_groupfilter.group_id = s_group.id AND s_groupfilter.type = 'analyze') AS `analyze`,
+				(SELECT GROUP_CONCAT(s_groupfilter.text) FROM s_groupfilter WHERE s_groupfilter.group_id = s_group.id AND s_groupfilter.type = 'answer') AS `answer`
+
+			",
+			"master_join" => "",
 		];
 
 		if(!is_array($_option))
