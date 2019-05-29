@@ -16,7 +16,7 @@
 				{%if url.module == 'addgroup'%}
 					{{block('iadd')}}
 				{%else%}
-					{%if perm_su()%}
+					{%if perm_su() and dataRow.status == 'deleted'%}
 						<div class="f">
 							<div class="c">{{block('isave')}}</div>
 							<div class="cauto"><div class="btn mT20 danger mLa5" data-confirm data-data='{"delete": "delete"}'>{%trans "Remove"%}</div></div>
