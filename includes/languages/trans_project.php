@@ -7,10 +7,10 @@ class twigTransTerms
 	//--------------------------------------------content_delneveshte/home/layout.html
 	echo T_("Click and go to khadije site");                                          // Line 105
 	echo T_("Wrote your heart sounds");                                               // Line 116
-	echo T_("Name");                                                                  // Line 107
+	echo T_("Name");                                                                  // Line 109
 	echo T_("optional");                                                              // Line 128
 	echo T_("Not require");                                                           // Line 125
-	echo T_("Mobile");                                                                // Line 129
+	echo T_("Mobile");                                                                // Line 131
 	echo T_("Mobile number is not showing on site and optional");                     // Line 128
 	echo T_("Press here to send");                                                    // Line 132
 	echo T_("Send");                                                                  // Line 103
@@ -28,12 +28,14 @@ class twigTransTerms
 	//--------------------------------------------content_smsapp/settings/display.html
 	echo T_("Search");                                                                // Line 45
 	echo T_("Title");                                                                 // Line 96
-	echo T_("Type");                                                                  // Line 38
+	echo T_("Type");                                                                  // Line 49
 	echo T_("Status");                                                                // Line 40
-	echo T_("Analyze");                                                               // Line 58
+	echo T_("Analyze");                                                               // Line 86
 	echo T_("Is Money");                                                              // Line 59
 	echo T_("View");                                                                  // Line 77
 	echo T_("Sms");                                                                   // Line 14
+	echo T_("Numbers");                                                               // Line 258
+	echo T_("Answer");                                                                // Line 261
 	echo T_("Clear filters");                                                         // Line 142
 	echo T_("Result not found!");                                                     // Line 141
 	echo T_("Search with new keywords.");                                             // Line 141
@@ -77,7 +79,6 @@ class twigTransTerms
 	echo T_("Sms text");                                                              // Line 257
 	echo T_("Date created");                                                          // Line 44
 	echo T_("Reseive status");                                                        // Line 260
-	echo T_("Answer");                                                                // Line 261
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Recommend");                                                             // Line 125
 	echo T_("Action");                                                                // Line 61
@@ -137,7 +138,7 @@ class twigTransTerms
 	echo T_("New");                                                                   // Line 132
 	echo T_("Awaiting");                                                              // Line 33
 	echo T_("Needless to answer");                                                    // Line 139
-	echo T_("Skip message");                                                          // Line 146
+	echo T_("Archived message");                                                      // Line 146
 	echo T_("Answered");                                                              // Line 153
 	echo T_("Waiting to auto send");                                                  // Line 160
 	echo T_("Awaiting to send to device");                                            // Line 167
@@ -153,11 +154,11 @@ class twigTransTerms
 	echo T_("Clear filter");                                                          // Line 76
 	echo T_("Apply");                                                                 // Line 77
 	echo T_("Advance");                                                               // Line 88
-	echo T_("Numbers");                                                               // Line 258
 	echo T_("Detail");                                                                // Line 55
 	echo T_("Private");                                                               // Line 152
 	echo T_("fromnumber");                                                            // Line 290
 	echo T_("Send to analyze");                                                       // Line 316
+	echo T_("Archive");                                                               // Line 208
 
 	//--------------------------------------content_smsapp/recommendgroup/display.html
 	echo T_("You can register some recommend text to this group to help you.");       // Line 7
@@ -166,7 +167,7 @@ class twigTransTerms
 	echo T_("Remove");                                                                // Line 109
 	echo T_("No recommend text founded");                                             // Line 38
 	echo T_("Recommend Text");                                                        // Line 54
-	echo T_("Require");                                                               // Line 170
+	echo T_("Require");                                                               // Line 172
 
 	//------------------------------------------------content_smsapp/home/display.html
 	echo T_("Total");                                                                 // Line 90
@@ -185,16 +186,16 @@ class twigTransTerms
 	echo T_("Number");                                                                // Line 51
 
 	//--------------------------------------------content_smsapp/addgroup/display.html
-	echo T_("Black list");                                                            // Line 41
-	echo T_("Family");                                                                // Line 42
-	echo T_("Bank");                                                                  // Line 43
+	echo T_("Black list");                                                            // Line 52
+	echo T_("Family");                                                                // Line 53
+	echo T_("Bank");                                                                  // Line 54
 	echo T_("Other");                                                                 // Line 103
 	echo T_("Yes");                                                                   // Line 136
 	echo T_("No");                                                                    // Line 136
-	echo T_("Need to analyze?");                                                      // Line 54
-	echo T_("If enable, Send message to operator to get answer");                     // Line 56
-	echo T_("Is money?");                                                             // Line 63
-	echo T_("If has money, get it form operator");                                    // Line 65
+	echo T_("Need to analyze?");                                                      // Line 65
+	echo T_("If enable, Send message to operator to get answer");                     // Line 67
+	echo T_("Is money?");                                                             // Line 74
+	echo T_("If has money, get it form operator");                                    // Line 76
 	echo T_("Enable");                                                                // Line 146
 	echo T_("Disable");                                                               // Line 152
 	echo T_("Deleted");                                                               // Line 273
@@ -365,7 +366,7 @@ class twigTransTerms
 	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 170
 	echo T_("Your mobile number");                                                    // Line 181
 	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 181
-	echo T_("Email");                                                                 // Line 277
+	echo T_("Email");                                                                 // Line 279
 	echo T_("Enter a valid email");                                                   // Line 118
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
@@ -384,40 +385,40 @@ class twigTransTerms
 	echo T_("Spending method");                                                       // Line 239
 
 	//----------------------------------------------------content/karbala/display.html
-	echo T_("Enter a valid name from 2 to 40 character");                             // Line 107
-	echo T_("Last name");                                                             // Line 115
-	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 115
-	echo T_("Father name");                                                           // Line 123
-	echo T_("Like 09120123456");                                                      // Line 131
-	echo T_("National code");                                                         // Line 137
-	echo T_("10 digit national code");                                                // Line 139
-	echo T_("Birthday");                                                              // Line 145
-	echo T_("Gender");                                                                // Line 158
-	echo T_("Please select one itme");                                                // Line 172
-	echo T_("Male");                                                                  // Line 161
-	echo T_("Female");                                                                // Line 162
-	echo T_("Marital");                                                               // Line 170
-	echo T_("Single");                                                                // Line 173
-	echo T_("Married");                                                               // Line 174
+	echo T_("Enter a valid name from 2 to 40 character");                             // Line 109
+	echo T_("Last name");                                                             // Line 117
+	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 117
+	echo T_("Father name");                                                           // Line 125
+	echo T_("Like 09120123456");                                                      // Line 133
+	echo T_("National code");                                                         // Line 139
+	echo T_("10 digit national code");                                                // Line 141
+	echo T_("Birthday");                                                              // Line 147
+	echo T_("Gender");                                                                // Line 160
+	echo T_("Please select one itme");                                                // Line 174
+	echo T_("Male");                                                                  // Line 163
+	echo T_("Female");                                                                // Line 164
+	echo T_("Marital");                                                               // Line 172
+	echo T_("Single");                                                                // Line 175
+	echo T_("Married");                                                               // Line 176
 	echo T_("Arabic Language");                                                       // Line 137
-	echo T_("Province");                                                              // Line 197
-	echo T_("Select province");                                                       // Line 199
-	echo T_("City");                                                                  // Line 208
-	echo T_("Select city");                                                           // Line 210
-	echo T_("Zip code");                                                              // Line 221
-	echo T_("Passport id");                                                           // Line 231
-	echo T_("Passport expire date");                                                  // Line 239
-	echo T_("Address");                                                               // Line 249
-	echo T_("Work Address");                                                          // Line 254
-	echo T_("Like");                                                                  // Line 279
-	echo T_("Phone");                                                                 // Line 268
-	echo T_("Education");                                                             // Line 318
-	echo T_("Education course");                                                      // Line 327
+	echo T_("Province");                                                              // Line 199
+	echo T_("Select province");                                                       // Line 201
+	echo T_("City");                                                                  // Line 210
+	echo T_("Select city");                                                           // Line 212
+	echo T_("Zip code");                                                              // Line 223
+	echo T_("Passport id");                                                           // Line 233
+	echo T_("Passport expire date");                                                  // Line 241
+	echo T_("Address");                                                               // Line 251
+	echo T_("Work Address");                                                          // Line 256
+	echo T_("Like");                                                                  // Line 281
+	echo T_("Phone");                                                                 // Line 270
+	echo T_("Education");                                                             // Line 320
+	echo T_("Education course");                                                      // Line 329
 	echo T_("Job");                                                                   // Line 72
-	echo T_("Are you an univercity student?");                                        // Line 345
+	echo T_("Are you an univercity student?");                                        // Line 347
 	echo T_("Signup");                                                                // Line 322
-	echo T_("Country");                                                               // Line 366
-	echo T_("Choose your country");                                                   // Line 370
+	echo T_("Country");                                                               // Line 371
+	echo T_("Choose your country");                                                   // Line 375
 
 	//-----------------------------------------------------content/doners/display.html
 	echo T_("Be good too");                                                           // Line 49
@@ -505,7 +506,6 @@ class twigTransTerms
 	echo T_("Donate as anonymous");                                                   // Line 160
 	echo T_("Donate with register details");                                          // Line 165
 	echo T_("Latest News");                                                           // Line 177
-	echo T_("Archive");                                                               // Line 208
 	echo T_("Mr.Farahzad's statement");                                               // Line 223
 	echo T_("Contact with manager");                                                  // Line 235
 	echo T_("in Resalat bank of Iran");                                               // Line 244
@@ -988,7 +988,7 @@ class twigTransTerms
 	echo T_("National code thumb");                                                   // Line 65
 	echo T_("Open file");                                                             // Line 91
 	echo T_("Verify leter thumb");                                                    // Line 83
-	echo T_("Hawzah code");                                                           // Line 67
+	echo T_("Hawzah code");                                                           // Line 69
 	echo T_("View full Profile");                                                     // Line 109
 
 	//----------------------------------------------------------content_m/sidenav.html
@@ -1182,10 +1182,10 @@ class twigTransTerms
 	echo T_("List of your child");                                                    // Line 31
 	echo T_("You are not registered partner yet");                                    // Line 67
 	echo T_("you can send a single person request without partner on press below button");// Line 68
-	echo T_("National card photo");                                                   // Line 89
-	echo T_("Remove file");                                                           // Line 95
-	echo T_("Foreigners must fill");                                                  // Line 231
-	echo T_("Iranian must fill");                                                     // Line 137
+	echo T_("National card photo");                                                   // Line 86
+	echo T_("Remove file");                                                           // Line 97
+	echo T_("Foreigners must fill");                                                  // Line 233
+	echo T_("Iranian must fill");                                                     // Line 139
 	echo T_("Final register in trip request");                                        // Line 370
 
 	//---------------------------------------------content_a/trip/request/display.html
@@ -1242,8 +1242,8 @@ class twigTransTerms
 	//------------------------------------content_a/representation/verify/display.html
 
 	//----------------------------------------------content_a/profile/profileForm.html
-	echo T_("hawzahcode");                                                            // Line 69
-	echo T_("Verify leter");                                                          // Line 75
+	echo T_("hawzahcode");                                                            // Line 71
+	echo T_("Verify leter");                                                          // Line 77
 
 	//--------------------------------------------content_a/health/detail/display.html
 	echo T_("Your are using this health");                                            // Line 9
