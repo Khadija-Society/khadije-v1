@@ -956,6 +956,18 @@ class sms
 					$result[$key] = json_decode($value, true);
 					break;
 
+
+				case 'receivestatus':
+					$tvalue = T_(ucfirst($value));
+					if($value === 'skip')
+					{
+						$tvalue = T_('Archive');
+					}
+
+					$result[$key]      = $value;
+					$result['t'. $key] = $tvalue;
+					break;
+
 				default:
 					$result[$key] = $value;
 					break;

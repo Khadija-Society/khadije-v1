@@ -126,7 +126,7 @@ class view
 		if(\dash\request::get('receivestatus'))
 		{
 			$args['receivestatus']     = \dash\request::get('receivestatus');
-			$filterArray[T_('receivestatus')] = \dash\request::get('receivestatus');
+			$filterArray[T_('receivestatus')] = \dash\request::get('receivestatus') === 'skip' ? 'archive' : \dash\request::get('receivestatus');
 		}
 
 		if(\dash\request::get('sendstatus'))
