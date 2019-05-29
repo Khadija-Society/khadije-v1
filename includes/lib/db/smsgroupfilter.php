@@ -50,8 +50,9 @@ class smsgroupfilter
 			UPDATE
 				s_sms
 			SET
-				s_sms.group_id = $_group_id,
-				s_sms.receivestatus = 'block'
+				s_sms.group_id      = $_group_id,
+				s_sms.receivestatus = 'block',
+				s_sms.recommend_id  = NULL
 			WHERE
 				s_sms.id IN ($_id)
 		";
