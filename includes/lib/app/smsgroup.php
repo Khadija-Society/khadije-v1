@@ -24,6 +24,29 @@ class smsgroup
 	];
 
 
+	public static function remove($_id)
+	{
+		$id = \dash\coding::decode($_id);
+		if(!$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$load = \lib\db\smsgroup::get(['id' => $id, 'limit' => 1]);
+		if(!isset($load['id']))
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		\lib\db\smsgroup::remvoe_all_filter($id);
+		\lib\db\smsgroup::delete($id);
+		\dash\notif::ok(T_("Group was removed"));
+		return true;
+	}
+
+
 	/**
 	 * add new smsgroup
 	 *

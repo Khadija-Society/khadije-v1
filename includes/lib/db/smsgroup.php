@@ -58,6 +58,31 @@ class smsgroup
 	}
 
 
+	public static function remvoe_all_filter($_id)
+	{
+		$query =
+		"
+			UPDATE
+				s_sms
+			SET
+				s_sms.group_id = NULL
+			WHERE s_sms.group_id = $_id
+		";
+
+		\dash\db::query($query);
+		$query = "UPDATE s_sms SET s_sms.recommend_id = NULL WHERE s_sms.recommend_id = $_id ";
+		\dash\db::query($query);
+		$query = "DELETE FROM s_groupfilter WHERE s_groupfilter.group_id = $_id ";
+		\dash\db::query($query);
+	}
+
+
+	public static function delete($_id)
+	{
+		$query = "DELETE FROM s_group WHERE s_group.id = $_id LIMIT 1";
+		return \dash\db::query($query);
+	}
+
 
 	public static function update_group_count($_id)
 	{
