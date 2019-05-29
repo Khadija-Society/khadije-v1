@@ -31,8 +31,9 @@ class view
 
 		$args =
 		[
-			'order'              => \dash\request::get('order'),
-			'sort'               => \dash\request::get('sort'),
+			'order' => \dash\request::get('order'),
+			'sort'  => \dash\request::get('sort'),
+			'limit' => 25,
 		];
 
 		$child = \dash\url::child();
