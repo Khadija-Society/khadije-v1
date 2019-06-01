@@ -71,7 +71,7 @@ class twigTransTerms
 	echo T_("Sms count group by group title");                                        // Line 250
 	echo T_("Group chart");                                                           // Line 292
 	echo T_("Count Send and Receive sms per day");                                    // Line 26
-	echo T_("Price");                                                                 // Line 22
+	echo T_("Price");                                                                 // Line 288
 	echo T_("Receive");                                                               // Line 93
 
 	//------------------------------------------------content_smsapp/chat/display.html
@@ -650,14 +650,15 @@ class twigTransTerms
 	echo T_("Save changes");                                                          // Line 71
 
 	//----------------------------------------------------------content_m/options.html
-	echo T_("All representation from this place is done");                            // Line 28
+	echo T_("All representation from this place is done");                            // Line 36
 	echo T_("Picture");                                                               // Line 37
-	echo T_("Sort");                                                                  // Line 222
+	echo T_("Sort");                                                                  // Line 242
 	echo T_("Slug");                                                                  // Line 21
-	echo T_("This method have term and conditions");                                  // Line 63
-	echo T_("Every");                                                                 // Line 191
-	echo T_("Day");                                                                   // Line 193
-	echo T_("Request");                                                               // Line 75
+	echo T_("Allow price");                                                           // Line 60
+	echo T_("This method have term and conditions");                                  // Line 73
+	echo T_("Every");                                                                 // Line 211
+	echo T_("Day");                                                                   // Line 213
+	echo T_("Request");                                                               // Line 94
 	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 147
 	echo T_("Language");                                                              // Line 162
 	echo T_("Enter a valid title");                                                   // Line 96
@@ -665,11 +666,14 @@ class twigTransTerms
 	echo T_("Enter a valid count");                                                   // Line 112
 	echo T_("Active");                                                                // Line 101
 	echo T_("Deactive");                                                              // Line 101
-	echo T_("Set max request count in period dayes");                                 // Line 185
-	echo T_("Every day");                                                             // Line 189
-	echo T_("?");                                                                     // Line 192
+	echo T_("Set max request count in period dayes");                                 // Line 205
+	echo T_("Every day");                                                             // Line 209
+	echo T_("?");                                                                     // Line 212
 	echo T_("Amount");                                                                // Line 134
-	echo T_("Enter a valid sort");                                                    // Line 222
+	echo T_("Enter a valid sort");                                                    // Line 242
+	echo T_("Range type");                                                            // Line 250
+	echo T_("Is active?");                                                            // Line 303
+	echo T_("Allow to custom price?");                                                // Line 312
 
 	//-----------------------------------------------------content_m/book/display.html
 	echo T_("Total Sale");                                                            // Line 12

@@ -181,24 +181,89 @@ class need
 
 		$term = \dash\app::request('term');
 
-		$args            = [];
-		$args['count']    = $count;
-		$args['every']    = $every;
-		$args['sort']    = $sort;
-		$args['term']    = $term;
-		$args['lang']    = $lang;
-		$args['title']   = $title;
-		$args['request'] = $request;
-		$args['amount']  = $amount;
-		$args['fileurl'] = $fileurl;
-		$args['desc']    = $desc;
+		$allowpirce = \dash\app::request('allowpirce') ? 1 : null;
+		$iactive = \dash\app::request('iactive') ? 1 : null;
+
+		$price1 = self::check_price('price1');
+		$price2 = self::check_price('price2');
+		$price3 = self::check_price('price3');
+		$title1 = self::check_title('title1');
+		$title2 = self::check_title('title2');
+		$title3 = self::check_title('title3');
+
+		if(!\dash\engine\process::status())
+		{
+			return false;
+		}
+
+		$args               = [];
+		$args['count']      = $count;
+		$args['every']      = $every;
+		$args['sort']       = $sort;
+		$args['term']       = $term;
+		$args['lang']       = $lang;
+		$args['title']      = $title;
+		$args['request']    = $request;
+		$args['amount']     = $amount;
+		$args['fileurl']    = $fileurl;
+		$args['desc']       = $desc;
 		$args['linkurl']    = $linkurl;
-		$args['type']    = $type;
-		$args['status']  = $status;
+		$args['type']       = $type;
+		$args['status']     = $status;
+		$args['allowpirce'] = $allowpirce;
+		$args['iactive']    = $iactive;
+		$args['price1']     = $price1;
+		$args['price2']     = $price2;
+		$args['price3']     = $price3;
+		$args['title1']     = $title1;
+		$args['title2']     = $title2;
+		$args['title3']     = $title3;
 
 		return $args;
 	}
 
+
+	private static function check_price($_price)
+	{
+		$price = \dash\app::request($_price);
+		if(!$price)
+		{
+			return null;
+		}
+
+		if($price && !is_numeric($price))
+		{
+			\dash\notif::error(T_("Invalid price"), $_price);
+			return false;
+		}
+
+		$price = intval($price);
+		if($price > 1E+9)
+		{
+			\dash\notif::error(T_("Price is out of range"), $_price);
+			return false;
+		}
+
+		return $price;
+	}
+
+
+	private static function check_title($_title)
+	{
+		$title = \dash\app::request($_title);
+		if(!$title)
+		{
+			return null;
+		}
+
+		if($title && mb_strlen($title) > 100)
+		{
+			\dash\notif::error(T_("Please set title less than 100 character"), $_title);
+			return false;
+		}
+
+		return $title;
+	}
 
 	/**
 	 * ready data of product to load in api

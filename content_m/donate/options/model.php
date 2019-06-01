@@ -35,16 +35,25 @@ class model
 
 		\dash\permission::access('cpDonateOption');
 
-		$post            = [];
-		$post['title']   = \dash\request::post('title');
-		$post['linkurl'] = \dash\request::post('linkurl');
-		$post['lang']    = \dash\request::post('language');
-		$post['count']   = null;
-		$post['amount']  = null;
-		$post['desc']    = \dash\request::post('desc');
-		$post['sort']    = \dash\request::post('sort');
-		$post['status']  = \dash\request::post('status') ? 'enable' : 'disable' ;
-		$post['type']    = 'donate';
+		$post               = [];
+		$post['title']      = \dash\request::post('title');
+		$post['linkurl']    = \dash\request::post('linkurl');
+		$post['lang']       = \dash\request::post('language');
+		$post['count']      = null;
+		$post['amount']     = null;
+		$post['desc']       = \dash\request::post('desc');
+		$post['sort']       = \dash\request::post('sort');
+		$post['status']     = \dash\request::post('status') ? 'enable' : 'disable' ;
+		$post['type']       = 'donate';
+
+		$post['allowpirce'] = \dash\request::post('allowpirce');
+		$post['iactive']    = \dash\request::post('iactive');
+		$post['price1']     = \dash\request::post('price1');
+		$post['price2']     = \dash\request::post('price2');
+		$post['price3']     = \dash\request::post('price3');
+		$post['title1']     = \dash\request::post('title1');
+		$post['title2']     = \dash\request::post('title2');
+		$post['title3']     = \dash\request::post('title3');
 
 		$file = self::upload_thumb();
 		if($file === false)

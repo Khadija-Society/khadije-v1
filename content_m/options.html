@@ -14,11 +14,19 @@
               {%if productDetail.type == 'health' %}
                 {{block ('iEveryCount') }}
               {%endif%}
-            {{block ('iTermsAndConditions') }}
+
+            {%if url.module != 'donate'%}
+              {{block ('iTermsAndConditions') }}
+            {%endif%}
+
             {%if url.module == 'donate'%}
+              {{block ('iAllowPrice') }}
+              {{block ('iRangeType') }}
+              {{block ('iIsDefault') }}
               {{block ('iSort') }}
               {{block ('iLinkurl') }}
             {%endif%}
+
             {{block ('iLanguage') }}
             {{block ('iStatus') }}
 
@@ -39,9 +47,9 @@
   <div class="c s12">
 
     <div class="f justify-center">
-      <div class="cbox">
 
-        <table class="tbl">
+
+        <table class="tbl1 v1 fs12">
           <thead>
             <tr class="fs08">
               <th>{%trans "Picture"%}</th>
@@ -49,6 +57,8 @@
                 {%if url.module == 'donate'%}
                  <th>{%trans "Sort"%}</th>
                  <th>{%trans "Slug"%}</th>
+                 <th>{%trans "Allow price"%}</th>
+
                 {%endif%}
               <th>{%trans "Description"%}</th>
               <th>{%trans "Status"%}</th>
@@ -67,13 +77,23 @@
                 {%if url.module == 'donate'%}
                  <td>{{value.sort | fitNumber(false)}}</td>
                  <td class="collapsing fs08 txtC">{%if value.linkurl%}<a href="{{url.kingdom}}/donate?nazr={{value.linkurl}}"><i class="sf-link"></i> {{value.linkurl}}</a>{%else%}-{%endif%}</td>
+                <td>{%if value.allowpirce%}<i class="sf-check fc-green"></i>{%else%}<i class="sf-times fc-red"></i>{%endif%}</td>
+
+
                 {%endif%}
-                <td>{{value.desc}}
-                {%if value.every or value.count%}
+                <td>
+                  {{value.desc}}
+                  {%if url.module == 'donate'%}
+                      {%if value.price1%}<span class="badge">{{value.title1}} {{value.price1 | fitNumber}}</span>{%endif%}
+                      {%if value.price2%}<span class="badge">{{value.title2}} {{value.price2 | fitNumber}}</span>{%endif%}
+                      {%if value.price3%}<span class="badge">{{value.title3}} {{value.price3 | fitNumber}}</span>{%endif%}
+                  {%endif%}
+                  {%if value.every or value.count%}
                   <br>
                     {%if value.every%}<span class="badge primary">{%trans "Every"%} {{value.every | fitNumber}} {%trans "Day"%}</span>{%endif%}
                     {%if value.count%}<span class="badge success">{{value.count | fitNumber}} {%trans "Request"%}</span>{%endif%}
-                  {%endif%}</td>
+                  {%endif%}
+                </td>
                 <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
                 <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn secondary xs">{%trans "Edit"%}</button></a></td>
               </tr>
@@ -81,7 +101,7 @@
           </tbody>
         </table>
       </div>
-    </div>
+
 
   </div>
 {%endif%}
@@ -221,5 +241,75 @@
 <div class="input">
  <input type="number" name="sort" placeholder='{%trans "Sort"%}' value="{{productDetail.sort}}" maxlength='50' minlength="1" title='{%trans "Enter a valid sort"%}' id='isort'>
 </div>
+{%endblock%}
+
+
+
+
+{%block iRangeType %}
+<h4 data-kerkere='.showRangeType'>{%trans "Range type"%}</h4>
+<div class="showRangeType mB10" {%if productDetail.title1 or productDetail.title2 or productDetail.title3%} {%else%}data-kerkere-content='hide' {%endif%}>
+  <div class="f">
+    <div class="c s12">
+      <label for='ftitle1'>{{1 | fitNumber}}.{%trans "Title"%}</label>
+      <div class="input">
+       <input type="text" name="title1" value="{{productDetail.title1}}" minlength="2" maxlength="100" id='ftitle1'>
+      </div>
+    </div>
+    <div class="c s12 mLa5">
+      <label for='fprice1'>{%trans "Price"%}</label>
+      <div class="input">
+       <input type="number" name="price1" value="{{productDetail.price1}}" min=0 max="999999999" id='fprice1'>
+      </div>
+    </div>
+  </div>
+  <div class="f">
+    <div class="c s12">
+      <label for='ftitle2'>{{2 | fitNumber}}.{%trans "Title"%}</label>
+      <div class="input">
+       <input type="text" name="title2" value="{{productDetail.title2}}" minlength="2" maxlength="200" id='ftitle2'>
+      </div>
+    </div>
+    <div class="c s12 mLa5">
+      <label for='fprice2'>{%trans "Price"%}</label>
+      <div class="input">
+       <input type="number" name="price2" value="{{productDetail.price2}}" min=0 max="999999999" id='fprice2'>
+      </div>
+    </div>
+  </div>
+  <div class="f">
+    <div class="c s12">
+      <label for='ftitle3'>{{3 | fitNumber}}.{%trans "Title"%}</label>
+      <div class="input">
+       <input type="text" name="title3" value="{{productDetail.title3}}" minlength="3" maxlength="300" id='ftitle3'>
+      </div>
+    </div>
+    <div class="c s12 mLa5">
+      <label for='fprice3'>{%trans "Price"%}</label>
+      <div class="input">
+       <input type="number" name="price3" value="{{productDetail.price3}}" min=0 max="999999999" id='fprice3'>
+      </div>
+    </div>
+  </div>
+
+</div>
+{%endblock%}
+
+
+{%block iIsDefault %}
+<div class="switch1 mT10">
+  <input type="checkbox" name="iactive" id="switch120" {%if productDetail.iactive  %} checked {%endif%}>
+  <label for="switch120" data-on='{%trans "Active"%}' data-off='{%trans "Deactive"%}'></label>
+  <label for="switch120">{%trans "Is active?"%}</label>
+ </div>
+{%endblock%}
+
+
+{%block iAllowPrice %}
+<div class="switch1 mT10">
+  <input type="checkbox" name="allowpirce" id="switch130" {%if productDetail.allowpirce  %} checked {%endif%}>
+  <label for="switch130" data-on='{%trans "Active"%}' data-off='{%trans "Deactive"%}'></label>
+  <label for="switch130">{%trans "Allow to custom price?"%}</label>
+ </div>
 {%endblock%}
 
