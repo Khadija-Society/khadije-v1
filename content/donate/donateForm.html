@@ -276,6 +276,8 @@
 {%endif%}
       <input type="radio" id="r-{{myWay.title}}" name="way" value="{{myWay.title}}">
       <label for="r-{{myWay.title}}">{{myWay.title}}</label>
+      {# @javad @check #}
+      {%if myWay.iactive%}<i class="sf-check fc-green"></i>{%endif%}
     </div>
 {%endfor%}
   </div>
