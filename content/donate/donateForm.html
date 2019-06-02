@@ -300,11 +300,11 @@
 {%endfor%}
   </div>
 
-  <div class="donateOptions">
+  <div class="donateOptions mB5">
 {%for key, myWay in wayList%}
 {%if myWay.title1 or myWay.title2 or myWay.title3%}
    <div data-way='{{myWay.title}}' style="display: none;">
-    <div class="donateOptions msg pTB0 mT5 mB0">
+    <div class="donateOpt msg pTB0 mT5 mB0">
     {%if myWay.allowpirce%}
        <div class="radio1 pA0-f">
         <input type="radio" name="wayOpt" value="custom-{{myWay.title}}" id="r-{{myWay.title}}-custom" data-custom>

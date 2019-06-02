@@ -30,7 +30,7 @@ function bindCustomWay()
         $('.donateForm .donateOptions [data-way]').not(myValOptEl).slideUp('fast');
         myValOptEl.slideDown('fast');
         // check first item
-        myValOptEl.find('.donateOptions input[type=radio]').eq(0).prop("checked", true).trigger('change');
+        myValOptEl.find('.donateOpt input[type=radio]').eq(0).prop("checked", true).trigger('change');
       }
       else
       {
@@ -39,7 +39,7 @@ function bindCustomWay()
         // hide count
         $('.donateForm .countSelector').slideUp('fast');
         // disable readonly of amount
-        $('.donateForm input[name="amount"]').prop('disabled', false);
+        $('.donateForm input[name="amount"]').prop('disabled', false).val('');
       }
 
     }
@@ -56,18 +56,30 @@ function bindCustomWay()
     {
         // hide count
         $('.donateForm .countSelector').slideUp('fast');
+        $('.donateForm .countSelector input').attr('data-price', null);
         // disable readonly of amount
-        $('.donateForm input[name="amount"]').prop('disabled', false);
+        $('.donateForm input[name="amount"]').prop('disabled', false).val('');
     }
     else
     {
         // hide count
         $('.donateForm .countSelector').slideDown('fast');
-        $('.donateForm .countSelector input').val(1);
+        $('.donateForm .countSelector input').attr('data-price', myValPrice).val(1).trigger('change');
+      console.log('changed');
         // disable readonly of amount
         $('.donateForm input[name="amount"]').prop('disabled', true);
     }
   });
+
+  $('.donateForm input[name="totalCount"]').on('change', function()
+  {
+    console.log('changed');
+    var myCount = $(this).val();
+    var myPrice = $(this).attr('data-price');
+
+    $('.donateForm input[name="amount"]').val(myCount * myPrice).trigger('input');
+  });
+
 
 }
 
