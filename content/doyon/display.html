@@ -40,7 +40,7 @@
 		{%endfor%}
 	</tbody>
 </table>
-<div class="btn xl block mTB20 success">پرداخت {{mySum | fitNumber }} تومان</div>
+<div data-confirm data-data='{"type" : "pay"}' class="btn xl block mTB20 success">پرداخت {{mySum | fitNumber }} تومان</div>
 <hr>
 {%endif%}
 {%endblock%}

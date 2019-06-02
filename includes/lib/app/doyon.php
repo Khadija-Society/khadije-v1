@@ -84,11 +84,85 @@ class doyon
 			case 'remove':
 				return self::remove();
 				break;
+
+
+			case 'pay':
+				return self::pay();
+				break;
+
 			default:
 				\dash\notif::error(T_("Invalid type"));
 				return false;
 				break;
 		}
+	}
+
+
+	public static function after_pay($_ids)
+	{
+		if(is_array($_ids))
+		{
+			\lib\db\doyon::set_pay($_ids);
+		}
+	}
+
+
+	private static function pay()
+	{
+		$list = self::get_my_list();
+		$insert = [];
+		foreach ($list as $key => $value)
+		{
+			if(isset($value['db']))
+			{
+				$insert[] = $value['db'];
+			}
+		}
+
+		if(empty($insert))
+		{
+			\dash\notif::error(T_("No record founded"));
+			return false;
+		}
+
+		$sumprice = array_sum(array_column($insert, 'price'));
+
+		if(!$sumprice)
+		{
+			\dash\notif::error(T_("No record founded"));
+			return false;
+		}
+
+		\lib\db\doyon::multi_insert($insert);
+		$final_fn_args = \dash\db\config::multi_insert_id($insert);
+
+		\dash\session::set('doyon_list', null);
+
+		$turn_back = \dash\url::that();
+
+		$auto_go   = false;
+		$auto_back = false;
+
+		$msg_go = T_("Pay doyon :price toman", ['price' => \dash\utility\human::fitNumber($sumprice)]);
+
+		$meta =
+		[
+			'turn_back'     => $turn_back,
+			'user_id'       => \dash\user::id() ? \dash\user::id() : 'unverify',
+			'amount'        => $sumprice,
+			'final_fn'      => ['/lib/app/doyon', 'after_pay'],
+			'final_fn_args' => $final_fn_args,
+			'auto_go'       => $auto_go,
+			'msg_go'        => $msg_go,
+			'auto_back'     => $auto_back,
+			'final_msg'     => true,
+			'other_field'   =>
+			[
+				'hazinekard' => 'doyon',
+			]
+		];
+
+		\dash\utility\pay\start::site($meta);
 	}
 
 
@@ -166,15 +240,30 @@ class doyon
 			$qotqaleb_title = $setting['fetriye'][$qotqaleb]['title'];
 		}
 
+		$sumprice = $count * $price;
+
+		$myTitle = 'پرداخت فطریه';
+
 		$add =
 		[
-			'cat'      => 'پرداخت فطریه',
+			'db' =>
+			[
+				'seyyed'   => $seyyed === 'aam' ? null : 1,
+				'title'    => $myTitle,
+				'type'     => __FUNCTION__,
+				'count'    => $count,
+				'priceone' => $price,
+				'price'    => $sumprice,
+				'status'   => 'draft',
+				'user_id'  => \dash\user::id(),
+			],
+			'cat'      => $myTitle,
 			'cat2'     => $seyyed === 'aam' ? '' : 'به سادات',
 			'cat3'     => ' با قوت قالب ' . $qotqaleb_title,
 			'count'    => ' برای  '.\dash\utility\human::fitNumber($count) . ' نفر',
 			'price'    => ' هر نفر '. \dash\utility\human::fitNumber($price). ' تومان',
-			'sum'      => $count * $price,
-			'sumtitle' => 'مجموع '.  \dash\utility\human::fitNumber($count * $price). ' تومان ',
+			'sum'      => $sumprice,
+			'sumtitle' => 'مجموع '.  \dash\utility\human::fitNumber($sumprice). ' تومان ',
 		];
 
 		return self::add_record($add);
@@ -203,11 +292,24 @@ class doyon
 			return false;
 		}
 
+		$myTitle = 'پرداخت صدقه';
+
 		$add =
 		[
-			'cat'      => 'پرداخت صدقه',
+			'db' =>
+			[
+				'seyyed'   => null,
+				'title'    => $myTitle,
+				'type'     => __FUNCTION__,
+				'count'    => null,
+				'priceone' => null,
+				'price'    => $price,
+				'status'   => 'draft',
+				'user_id'  => \dash\user::id(),
+			],
+			'cat'      => $myTitle,
 			'sum'      => $price,
-			'sumtitle'    => ' به مبلغ '. \dash\utility\human::fitNumber($price). ' تومان',
+			'sumtitle' => ' به مبلغ '. \dash\utility\human::fitNumber($price). ' تومان',
 		];
 
 		return self::add_record($add);
@@ -236,11 +338,24 @@ class doyon
 			return false;
 		}
 
+		$myTitle = 'پرداخت رد مظالم';
+
 		$add =
 		[
-			'cat'      => 'پرداخت رد مظالم',
+			'db' =>
+			[
+				'seyyed'   => null,
+				'title'    => $myTitle,
+				'type'     => __FUNCTION__,
+				'count'    => null,
+				'priceone' => null,
+				'price'    => $price,
+				'status'   => 'draft',
+				'user_id'  => \dash\user::id(),
+			],
+			'cat'      => $myTitle,
 			'sum'      => $price,
-			'sumtitle'    => ' به مبلغ '. \dash\utility\human::fitNumber($price). ' تومان',
+			'sumtitle' => ' به مبلغ '. \dash\utility\human::fitNumber($price). ' تومان',
 		];
 
 		return self::add_record($add);
