@@ -266,20 +266,27 @@
 {%elseif wayList%}
 <div class="donateWays">
   <label>{%trans "Spending method"%}</label>
-  <div class="f justify-center">
+  <div class="f justify-center txtC">
+
+
 {%for key, myWay in wayList%}
-    <div class="radio2 cauto" {%if myWay.desc%}title="{{myWay.desc}}"{%endif%}>
+<div class="cauto">
+
+  <div class="radioGateway{%if myWay.iactive%} blink{%endif%}" {%if myWay.desc%}title="{{myWay.desc}}"{%endif%}>
+    <input type="radio" name="way" value="{{myWay.title}}" id="r-{{myWay.title}}">
+    <label for="r-{{myWay.title}}">
 {%if myWay.fileurl%}
-      <label for="r-{{myWay.title}}"><img src="{{myWay.fileurl}}" alt="{{myWay.title}}"></label>
+      <img src="{{myWay.fileurl}}" alt="{{myWay.title}}">
 {%else%}
-      <label for="r-{{myWay.title}}"><img src="{{url.static}}/images/logo.png" alt="{{myWay.title}}"></label>
+      <img src="{{url.static}}/images/logo.png" alt="{{site.title}}">
 {%endif%}
-      <input type="radio" id="r-{{myWay.title}}" name="way" value="{{myWay.title}}">
-      <label for="r-{{myWay.title}}">{{myWay.title}}</label>
-      {# @javad @check #}
-      {%if myWay.iactive%}<i class="sf-check fc-green"></i>{%endif%}
-    </div>
+    </label>
+  </div>
+  <div><label for="r-{{myWay.title}}">{{myWay.title}}</label></div>
+</div>
 {%endfor%}
+
+
   </div>
 </div>
 {%endif%}
