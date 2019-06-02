@@ -131,12 +131,12 @@
 
 		<form method="post" class="cbox fs09">
 			<input type="hidden" name="type" value="sadaqe">
-			<div class="msg">مبلغ دلخواهی را برای صدقه وارد کنید</div>
+			<div class="msg">مبلغ دلخواهی را برای صدقه وارد کنید. این صدقه عام خواهد بود.</div>
 
 		 	<div class="input">
 				<label>مبلغ</label>
-				<input type="number" name="price"  required>
-				<label class="addon">تومان</label>
+				<input type="number" name="price" required>
+				<label class="addon">{%trans "Toman"%}</label>
 			</div>
 
 			<button class="btn success block mT10">مرحله بعد</button>
@@ -156,6 +156,7 @@
 		<form method="post" class="cbox fs09">
 			<input type="hidden" name="type" value="mazalem">
 			<div class="msg">مبلغ دلخواهی را برای مظالم وارد کنید</div>
+			<div class="msg info2">مصرف «رد مظالم» منحصر است به «فقرای شیعه»؛ بنابراین، صرف آن در امور خیریه مانند پل‌سازى و مسجد و نظایر این‌ها جایز نیست.</div>
 
 		 	<div class="input">
 				<label>مبلغ</label>

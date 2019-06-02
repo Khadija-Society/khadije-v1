@@ -16,7 +16,7 @@
     },
     {
       "title": "مظالم",
-      "desc": "",
+      "desc": "رد مظالم",
       "slug": "mazalem",
       "visible": true,
       "class": ""
@@ -25,7 +25,7 @@
       "title": "کفارات",
       "desc": "",
       "slug": "kafarat",
-      "visible": false,
+      "visible": true,
       "class": ""
     },
     {
