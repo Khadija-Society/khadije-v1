@@ -6,23 +6,12 @@ class model
 	public static function post()
 	{
 
-		// type: fetriye
-		// type: sadaqe
-		// type: mazalem
-		// type: kafarat
-		// type: namazqaza
+		\lib\app\doyon::add(\dash\request::post());
 
-		// type
-		// seyyed
-		// qotqaleb
-		// count
-		// price
-		// kafare
-		// namaz_roze_qaza
-
-
-
-
+		if(\dash\engine\process::status())
+		{
+			\dash\redirect::pwd();
+		}
 
 	}
 }

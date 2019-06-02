@@ -4,6 +4,8 @@
 
 {%block pageData%}
 
+{{block('mySavedList')}}
+
 {%for doyonKey, deyn in doyonList.list%}
 <div class="msg {{deyn.class}} outline txtB fs12" data-kerkere=".showDoyon{{doyonKey}}" data-kerkere-icon data-kerkere-single>{{deyn.title}}</div>
 <div class="showDoyon{{doyonKey}} mB20" data-kerkere-content='hide' >
@@ -15,7 +17,29 @@
 
 
 
-
+{%block mySavedList%}
+{%if myList%}
+<h3>لیست پرداخت</h3>
+<table class="tbl1 v9">
+	<tbody>
+		{%for key, value in myList%}
+		<tr>
+			<td class="collapsing">{{loop.index | fitNumber}}.</td>
+			<td>{{value.cat | fitNumber}}</td>
+			<td>{{value.cat2 | fitNumber}}</td>
+			<td>{{value.cat3 | fitNumber}}</td>
+			<td>{{value.count | fitNumber}}</td>
+			<td>{{value.price | fitNumber}}</td>
+			<td>{{value.sum | fitNumber}}</td>
+			<td class="collapsing"><div class="btn danger" data-confirm data-data='{"type": "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</div></td>
+		</tr>
+		{%endfor%}
+	</tbody>
+</table>
+<div class="btn xl block mTB20 success">پرداخت</div>
+<hr>
+{%endif%}
+{%endblock%}
 
 
 
@@ -30,7 +54,7 @@
 				<div class="cauto">
 
 				    <div class="radio1">
-				     <input type="radio" name="seyyed" id="aam" checked>
+				     <input type="radio" name="seyyed" id="aam" value="aam" checked>
 				     <label for="aam">عام</label>
 				    </div>
 
@@ -39,7 +63,7 @@
 				<div class="cauto mLa20">
 
 					<div class="radio1 green">
-				     <input type="radio" name="seyyed" id="seyyed" >
+				     <input type="radio" name="seyyed" id="seyyed" value="seyyed" >
 				     <label for="seyyed">سید</label>
 				    </div>
 

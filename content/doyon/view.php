@@ -12,6 +12,9 @@ class view
 
 		$list = \lib\app\doyon::get_raw_list();
 		\dash\data::doyonList($list);
+
+		$my_list = \lib\app\doyon::get_my_list();
+		\dash\data::myList($my_list);
 	}
 }
 ?>
