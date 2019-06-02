@@ -27,6 +27,16 @@ class doyon
 		return $list;
 	}
 
+	private static function setting()
+	{
+		$setting = self::get_file();
+		if(isset($setting['setting']))
+		{
+			return $setting['setting'];
+		}
+		return false;
+	}
+
 
 	public static function get_my_list()
 	{
@@ -143,14 +153,28 @@ class doyon
 			return false;
 		}
 
+		$setting = self::setting();
+		$price = 0;
+		if(isset($setting['fetriye'][$qotqaleb]['price']))
+		{
+			$price = intval($setting['fetriye'][$qotqaleb]['price']);
+		}
+
+		$qotqaleb_title = $qotqaleb;
+		if(isset($setting['fetriye'][$qotqaleb]['title']))
+		{
+			$qotqaleb_title = $setting['fetriye'][$qotqaleb]['title'];
+		}
+
 		$add =
 		[
-			'cat'   => 'فطریه',
-			'cat2'  => $seyyed,
-			'cat3'  => $qotqaleb,
-			'count' => $count,
-			'price' => $count,
-			'sum'   => $count,
+			'cat'      => 'پرداخت فطریه',
+			'cat2'     => $seyyed === 'aam' ? '' : 'به سادات',
+			'cat3'     => ' با قوت قالب ' . $qotqaleb_title,
+			'count'    => ' برای  '.\dash\utility\human::fitNumber($count) . ' نفر',
+			'price'    => ' هر نفر '. \dash\utility\human::fitNumber($price). ' تومان',
+			'sum'      => $count * $price,
+			'sumtitle' => 'مجموع '.  \dash\utility\human::fitNumber($count * $price). ' تومان ',
 		];
 
 		return self::add_record($add);
@@ -173,13 +197,20 @@ class doyon
 		}
 
 		$price = abs(intval($price));
-		if($price > 100)
+		if($price > 1E+9)
 		{
-			\dash\notif::error(T_("Count is out of range, maximum 100"), 'price');
+			\dash\notif::error(T_("Count is out of range"), 'price');
 			return false;
 		}
 
+		$add =
+		[
+			'cat'      => 'پرداخت صدقه',
+			'sum'      => $price,
+			'sumtitle'    => ' به مبلغ '. \dash\utility\human::fitNumber($price). ' تومان',
+		];
 
+		return self::add_record($add);
 	}
 
 
@@ -199,11 +230,20 @@ class doyon
 		}
 
 		$price = abs(intval($price));
-		if($price > 100)
+		if($price > 1E+9)
 		{
-			\dash\notif::error(T_("Count is out of range, maximum 100"), 'price');
+			\dash\notif::error(T_("Count is out of range"), 'price');
 			return false;
 		}
+
+		$add =
+		[
+			'cat'      => 'پرداخت رد مظالم',
+			'sum'      => $price,
+			'sumtitle'    => ' به مبلغ '. \dash\utility\human::fitNumber($price). ' تومان',
+		];
+
+		return self::add_record($add);
 
 	}
 

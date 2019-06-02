@@ -3,32 +3,44 @@
     {
       "title": "فطریه",
       "slug": "fetriye",
-      "class" : "primary"
+      "visible": true,
+      "class": "primary"
     },
     {
       "title": "صدقات",
       "slug": "sadaqe",
-      "class" : "primary"
+      "visible": true,
+      "class": "primary"
     },
     {
       "title": "مظالم",
       "slug": "mazalem",
-      "class" : "primary"
+      "visible": true,
+      "class": "primary"
     },
     {
       "title": "کفارات",
       "slug": "kafarat",
-      "class" : "primary"
+      "visible": false,
+      "class": "primary"
     },
     {
       "title": "نماز و روزه قضا",
       "slug": "namazqaza",
-      "class" : "primary"
+      "visible": false,
+      "class": "primary"
     }
   ],
   "setting": {
-    "fetriye_gandom": {
-      "price": 2555
+    "fetriye": {
+      "berenj": {
+        "title": "برنج",
+        "price": 30000
+      },
+      "gandom": {
+        "title": "گندم",
+        "price": 18000
+      }
     }
   }
 }

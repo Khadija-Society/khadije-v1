@@ -7,10 +7,12 @@
 {{block('mySavedList')}}
 
 {%for doyonKey, deyn in doyonList.list%}
+{%if deyn.visible%}
 <div class="msg {{deyn.class}} outline txtB fs12" data-kerkere=".showDoyon{{doyonKey}}" data-kerkere-icon data-kerkere-single>{{deyn.title}}</div>
 <div class="showDoyon{{doyonKey}} mB20" data-kerkere-content='hide' >
 	{{block(deyn.slug)}}
 </div>
+{%endif%}
 {%endfor%}
 
 {%endblock%}
@@ -19,6 +21,7 @@
 
 {%block mySavedList%}
 {%if myList%}
+{%set mySum = 0%}
 <h3>لیست پرداخت</h3>
 <table class="tbl1 v9">
 	<tbody>
@@ -30,13 +33,14 @@
 			<td>{{value.cat3 | fitNumber}}</td>
 			<td>{{value.count | fitNumber}}</td>
 			<td>{{value.price | fitNumber}}</td>
-			<td>{{value.sum | fitNumber}}</td>
-			<td class="collapsing"><div class="btn danger" data-confirm data-data='{"type": "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</div></td>
+			<td>{{value.sumtitle | fitNumber}}</td>
+			<td class="collapsing"><div class="btn danger xs" data-confirm data-data='{"type": "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</div></td>
+			{%set mySum = mySum + value.sum%}
 		</tr>
 		{%endfor%}
 	</tbody>
 </table>
-<div class="btn xl block mTB20 success">پرداخت</div>
+<div class="btn xl block mTB20 success">پرداخت {{mySum | fitNumber }} تومان</div>
 <hr>
 {%endif%}
 {%endblock%}
