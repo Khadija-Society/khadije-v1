@@ -18,7 +18,7 @@ $(function()
 
 function bindCustomWay()
 {
-  $('input[type=radio][name=way]').on('change', function()
+  $('input[type=radio][name="way"]').on('change', function()
   {
     var myVal = $(this).val();
     if(myVal)
@@ -29,6 +29,13 @@ function bindCustomWay()
         // hide all ways options except selected
         $('.donateOptions [data-way]').not(myValOptEl).slideUp('fast');
         myValOptEl.slideDown('fast');
+        // check custom value
+        var customVal = myValOptEl.find('.donateOptions [value="custom-'+ myVal + '"]');
+        console.log(customVal);
+        if(customVal.length > 0)
+        {
+          customVal.prop("checked", true);
+        }
 
       }
       else
@@ -40,8 +47,14 @@ function bindCustomWay()
         // disable readonly of amount
         $('input [name="amount"]').attr('disabled', null);
       }
-      console.log(myValOptEl);
+
     }
+  });
+
+  // on change opt
+  $('input[type=radio][name="wayOpt"]').on('change', function()
+  {
+
   });
 
 }
