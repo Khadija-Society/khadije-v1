@@ -29,6 +29,7 @@ function bindCustomWay()
         // hide all ways options except selected
         $('.donateOptions [data-way]').not(myValOptEl).slideUp('fast');
         myValOptEl.slideDown('fast');
+
       }
       else
       {

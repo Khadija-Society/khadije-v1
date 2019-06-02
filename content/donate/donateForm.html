@@ -228,7 +228,7 @@
 
 
 {%block iCount%}
-<div class="countSelector">
+<div class="countSelector" style="display: none;">
   <label for='totalCount'>{%trans "Count"%}</label>
   <div class="input">
    <input type="number" name="amount" id='totalCount' required max="999" min="1">
@@ -303,11 +303,11 @@
   <div class="donateOptions">
 {%for key, myWay in wayList%}
 {%if myWay.title1 or myWay.title2 or myWay.title3%}
-   <div class="hide2" data-way='{{myWay.title}}'>
+   <div data-way='{{myWay.title}}' style="display: none;">
     <div class="donateOptions msg pTB0 mT5 mB0">
     {%if myWay.allowpirce%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt-{{myWay.title}}" value="custom" id="r-{{myWay.title}}-custom">
+        <input type="radio" name="wayOpt-{{myWay.title}}" value="custom" id="r-{{myWay.title}}-custom" checked>
         <label for="r-{{myWay.title}}-custom">{%trans "Custom Amount"%}</label>
       </div>
     {%endif%}
