@@ -1,0 +1,262 @@
+{%extends display.main%}
+
+
+
+{%block pageData%}
+
+{%for doyonKey, deyn in doyonList.list%}
+<div class="msg {{deyn.class}} outline txtB fs12" data-kerkere=".showDoyon{{doyonKey}}" data-kerkere-icon data-kerkere-single>{{deyn.title}}</div>
+<div class="showDoyon{{doyonKey}} mB20" data-kerkere-content='hide' >
+	{{block(deyn.slug)}}
+</div>
+{%endfor%}
+
+{%endblock%}
+
+
+
+
+
+
+
+
+{%block fetriye%}
+<div class="f justify-center">
+	<div class="c6 s12">
+
+		<form method="post" class="cbox fs09">
+			<input type="hidden" name="type" value="fetriye">
+			<div class="f">
+				<div class="cauto">
+
+				    <div class="radio1">
+				     <input type="radio" name="seyyed" id="aam" checked>
+				     <label for="aam">عام</label>
+				    </div>
+
+				</div>
+
+				<div class="cauto mLa20">
+
+					<div class="radio1 green">
+				     <input type="radio" name="seyyed" id="seyyed" >
+				     <label for="seyyed">سید</label>
+				    </div>
+
+				</div>
+			</div>
+
+		    <h5 class="mT10">قوت قالب</h5>
+			<div class="ui selection dropdown" tabindex="0">
+			    <input type="hidden" name="qotqaleb" value="0">
+			    <i class="dropdown icon"></i>
+			    <div class="text">{%trans "Please select one itme"%}</div>
+			    <div class="menu transition hidden" tabindex="-1">
+
+			    <div class="item" data-value="gandom">گندم</div>
+			    <div class="item" data-value="berenj">برنج</div>
+
+			    </div>
+		 	</div>
+
+		 	<div class="input">
+				<label>تعداد افراد تحت تکفل</label>
+				<input type="number" name="count"  required>
+				<label class="addon">نفر</label>
+			</div>
+
+			<button class="btn success block mT10">مرحله بعد</button>
+		</form>
+	</div>
+</div>
+{%endblock%}
+
+
+
+
+
+{%block sadaqe%}
+<div class="f justify-center">
+	<div class="c6 s12">
+
+		<form method="post" class="cbox fs09">
+			<input type="hidden" name="type" value="sadaqe">
+			<div class="msg">مبلغ دلخواهی را برای صدقه وارد کنید</div>
+
+		 	<div class="input">
+				<label>مبلغ</label>
+				<input type="number" name="price"  required>
+				<label class="addon">تومان</label>
+			</div>
+
+			<button class="btn success block mT10">مرحله بعد</button>
+		</form>
+	</div>
+</div>
+{%endblock%}
+
+
+
+
+
+{%block mazalem%}
+<div class="f justify-center">
+	<div class="c6 s12">
+
+		<form method="post" class="cbox fs09">
+			<input type="hidden" name="type" value="mazalem">
+			<div class="msg">مبلغ دلخواهی را برای مظالم وارد کنید</div>
+
+		 	<div class="input">
+				<label>مبلغ</label>
+				<input type="number" name="price"  required>
+				<label class="addon">تومان</label>
+			</div>
+
+			<button class="btn success block mT10">مرحله بعد</button>
+		</form>
+	</div>
+</div>
+{%endblock%}
+
+
+
+
+
+{%block kafarat%}
+<div class="f justify-center">
+	<div class="c6 s12">
+
+		<form method="post" class="cbox fs09">
+
+			<input type="hidden" name="type" value="kafarat">
+		    <h5 class="mT10">کفاره</h5>
+			<div class="ui selection dropdown" tabindex="0">
+			    <input type="hidden" name="kafare" value="0">
+			    <i class="dropdown icon"></i>
+			    <div class="text">{%trans "Please select one itme"%}</div>
+			    <div class="menu transition hidden" tabindex="-1">
+
+			    <div class="item" data-value="roze_amd">روزه عمد</div>
+			    <div class="item" data-value="roze_ozr">روزه عذر</div>
+			    <div class="item" data-value="nazr">نذر</div>
+			    <div class="item" data-value="ahd">عهد</div>
+			    <div class="item" data-value="qasam">قسم</div>
+
+
+			    </div>
+		 	</div>
+
+		 	<div class="input">
+				<label>تعداد</label>
+				<input type="number" name="count"  required>
+				<label class="addon">مورد</label>
+			</div>
+
+			<button class="btn success block mT10">مرحله بعد</button>
+		</form>
+	</div>
+</div>
+{%endblock%}
+
+
+
+
+
+{%block namazqaza%}
+<div class="f justify-center">
+	<div class="c6 s12">
+
+		<form method="post" class="cbox fs09">
+			<input type="hidden" name="type" value="namazqaza">
+
+		    <h5 class="mT10">نماز و یا روزه قضا</h5>
+			<div class="ui selection dropdown" tabindex="0">
+			    <input type="hidden" name="namaz_roze_qaza" value="0">
+			    <i class="dropdown icon"></i>
+			    <div class="text">{%trans "Please select one itme"%}</div>
+			    <div class="menu transition hidden" tabindex="-1">
+
+			    <div class="item" data-value="namazqaza">نماز قضا</div>
+			    <div class="item" data-value="rozeqaza">روزه قضا</div>
+
+
+
+			    </div>
+		 	</div>
+
+		 	<div class="input">
+				<label>تعداد</label>
+				<input type="number" name="count"  required>
+				<label class="addon">مورد</label>
+			</div>
+
+			<button class="btn success block mT10">مرحله بعد</button>
+		</form>
+	</div>
+</div>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%block pageData_ooooooold%}
+
+{%for doyonKey, deyn in doyonList%}
+<h3 data-kerkere=".showDoyon{{doyonKey}}" data-kerkere-single>{{deyn.title}}</h3>
+<div class="showDoyon{{doyonKey}}" data-kerkere-content='hide' >
+	{%if deyn.cat%}
+		{%for i, deyn_cat in deyn.cat%}
+			{%if deyn_cat.subcat%}
+					<div class="ui selection dropdown" tabindex="0">
+			        <input type="hidden" name="gender" value="0">
+			        <i class="dropdown icon"></i>
+			        <div class="text">{%trans "Please select one itme"%}</div>
+			        <div class="menu transition hidden" tabindex="-1">
+					{%for j, deyn_subcat in deyn_cat.subcat%}
+			        	<div class="item" data-value="{{deyn_subcat.title}}">{{deyn_subcat.title}}</div>
+					{%endfor%}
+			        </div>
+			      </div>
+			{%else%}
+				{%if deyn_cat.get_price%}
+				<div class="input">
+					<label>{{deyn_cat.title}}</label>
+					<input type="number" name="{{i}}">
+				</div>
+				{%endif%}
+			{%endif%}
+
+		{%endfor%}
+	{%endif%}
+	{%if deyn.get_price%}
+		<div class="input">
+			<label>{{deyn.title}}</label>
+			<input type="number" name="{{doyonKey}}">
+		</div>
+	{%endif%}
+</div>
+
+{%endfor%}
+
+{%endblock%}
+

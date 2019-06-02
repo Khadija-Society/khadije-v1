@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "title": "فطریه",
+      "slug": "fetriye",
+      "class" : "primary"
+    },
+    {
+      "title": "صدقات",
+      "slug": "sadaqe",
+      "class" : "primary"
+    },
+    {
+      "title": "مظالم",
+      "slug": "mazalem",
+      "class" : "primary"
+    },
+    {
+      "title": "کفارات",
+      "slug": "kafarat",
+      "class" : "primary"
+    },
+    {
+      "title": "نماز و روزه قضا",
+      "slug": "namazqaza",
+      "class" : "primary"
+    }
+  ],
+  "setting": {
+    "fetriye_gandom": {
+      "price": 2555
+    }
+  }
+}
