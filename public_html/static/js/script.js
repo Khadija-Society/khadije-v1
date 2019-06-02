@@ -29,14 +29,8 @@ function bindCustomWay()
         // hide all ways options except selected
         $('.donateOptions [data-way]').not(myValOptEl).slideUp('fast');
         myValOptEl.slideDown('fast');
-        // check custom value
-        var customVal = myValOptEl.find('.donateOptions [value="custom-'+ myVal + '"]');
-        console.log(customVal);
-        if(customVal.length > 0)
-        {
-          customVal.prop("checked", true);
-        }
-
+        // check first item
+        myValOptEl.find('.donateOptions input[type=radio]').eq(0).prop("checked", true).trigger('change');
       }
       else
       {
@@ -54,7 +48,13 @@ function bindCustomWay()
   // on change opt
   $('input[type=radio][name="wayOpt"]').on('change', function()
   {
+    var myVal = $(this).val();
+    var isCustom = $(this).attr('data-custom') !== undefined? true: false;
+    var myValPrice = $(this).attr('data-val');
 
+    console.log('checked ' + myVal);
+    console.log(isCustom);
+    console.log(myValPrice);
   });
 
 }
