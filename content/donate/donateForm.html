@@ -231,9 +231,9 @@
 <div class="countSelector" style="display: none;">
   <label for='totalCount'>{%trans "Count"%}</label>
   <div class="input">
+    <span class="addon btn" data-connect='totalCount' data-val="1">+</span>
    <input type="number" name="totalCount" id='totalCount' max="999" min="1">
-    <span class="addon">+</span>
-    <span class="addon">-</span>
+    <span class="addon btn" data-connect='totalCount' data-val="-1">-</span>
   </div>
 </div>
 {%endblock%}

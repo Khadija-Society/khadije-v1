@@ -39,7 +39,7 @@ function bindCustomWay()
         // hide count
         $('.donateForm .countSelector').slideUp('fast');
         // disable readonly of amount
-        $('.donateForm input[name="amount"]').prop('disabled', false).val('');
+        $('.donateForm input[name="amount"]').prop('readonly', false).val('').parents('.input').removeClass('disabled');
       }
 
     }
@@ -58,20 +58,20 @@ function bindCustomWay()
         $('.donateForm .countSelector').slideUp('fast');
         $('.donateForm .countSelector input').attr('data-price', null);
         // disable readonly of amount
-        $('.donateForm input[name="amount"]').prop('disabled', false).val('');
+        $('.donateForm input[name="amount"]').prop('readonly', false).parents('.input').removeClass('disabled');
     }
     else
     {
         // hide count
         $('.donateForm .countSelector').slideDown('fast');
-        $('.donateForm .countSelector input').attr('data-price', myValPrice).val(1).trigger('change');
+        $('.donateForm .countSelector input').attr('data-price', myValPrice).val(1).trigger('input');
       console.log('changed');
         // disable readonly of amount
-        $('.donateForm input[name="amount"]').prop('disabled', true);
+        $('.donateForm input[name="amount"]').prop('readonly', true).parents('.input').addClass('disabled');
     }
   });
 
-  $('.donateForm input[name="totalCount"]').on('change', function()
+  $('.donateForm input[name="totalCount"]').on('input', function()
   {
     console.log('changed');
     var myCount = $(this).val();
@@ -80,8 +80,82 @@ function bindCustomWay()
     $('.donateForm input[name="amount"]').val(myCount * myPrice).trigger('input');
   });
 
-
+  $('.donateForm [data-connect]').on('click', function()
+  {
+    if($('body').hasClass('loading-form'))
+    {
+      return false;
+    }
+    var myInput = $(this).parent().find('input');
+    var extra   = parseInt($(this).attr('data-val')) || 0;
+    // add this value to target
+    setExtra(myInput, extra);
+  });
 }
+
+
+
+/**
+ * [setExtra description]
+ * @param {[type]} _target [description]
+ * @param {[type]} _extra  [description]
+ * @param {[type]} _exact  [description]
+ */
+function setExtra(_target, _extra, _exact)
+{
+  var newVal  = parseInt(_target.val()) || 0;
+  if(_extra === true)
+  {
+    _extra = 5;
+  }
+  else if(_extra === false)
+  {
+    _extra = -5;
+  }
+  else if(_extra === null)
+  {
+    _extra = 0;
+    _exact = true;
+  }
+  //  if exact copy value else plus it
+  if(_exact)
+  {
+    newVal = parseInt(_extra);
+  }
+  else
+  {
+    newVal += parseInt(_extra);
+  }
+  if(_target.attr('min') && newVal < parseInt(_target.attr('min')))
+  {
+    // do nothing
+    setExtraInvalid(_target);
+  }
+  else if(_target.attr('max') && newVal > parseInt(_target.attr('max')))
+  {
+    // do nothing
+    setExtraInvalid(_target);
+  }
+  else
+  {
+    _target.val(newVal);
+    _target.trigger('change');
+  }
+
+  /**
+   * [setExtraInvalid description]
+   * @param {[type]} _target [description]
+   */
+  function setExtraInvalid(_target)
+  {
+    $(_target).addClass('error');
+    setTimeout(function()
+    {
+      $(_target).removeClass('error');
+    }, 300);
+  }
+}
+
 
 function salavat()
 {
