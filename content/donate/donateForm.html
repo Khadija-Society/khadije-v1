@@ -41,6 +41,7 @@
 
         {{block ('iNiyat') }}
         {{block ('iWay') }}
+        {{block ('iCount') }}
         {{block ('iAmount') }}
         {{block ('iDonersList')}}
         {{block ('iDirectPay')}}
@@ -226,6 +227,16 @@
 {%endblock%}
 
 
+{%block iCount%}
+<label for='totalCount'>{%trans "Count"%}</label>
+<div class="input">
+ <input type="number" name="amount" id='totalCount' required max="999" min="1">
+  <span class="addon">+</span>
+  <span class="addon">-</span>
+</div>
+{%endblock%}
+
+
 {%block iDonersList%}
 <label class="mT10">{%trans "Show in public doners list?"%} <a href="{{urlRaw}}/doners" target="_blank">{%trans "Check doners list"%}</a></label>
  <div class="c radio1">
@@ -301,19 +312,19 @@
 
     {%if myWay.price1 and myWay.title1%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt-{{myWay.title}}" value="op1" id="r-{{myWay.title}}-op1">
+        <input type="radio" name="wayOpt-{{myWay.title}}" value="op1" id="r-{{myWay.title}}-op1" data-val='{{myWay.price1}}'>
         <label for="r-{{myWay.title}}-op1">{{myWay.title1}} <span class="badge light fs10">{{myWay.price1 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}
     {%if myWay.price2 and myWay.title2%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt-{{myWay.title}}" value="op2" id="r-{{myWay.title}}-op2">
+        <input type="radio" name="wayOpt-{{myWay.title}}" value="op2" id="r-{{myWay.title}}-op2" data-val='{{myWay.price2}}'>
         <label for="r-{{myWay.title}}-op2">{{myWay.title2}} <span class="badge light fs10">{{myWay.price2 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}
     {%if myWay.price3 and myWay.title3%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt-{{myWay.title}}" value="op3" id="r-{{myWay.title}}-op3">
+        <input type="radio" name="wayOpt-{{myWay.title}}" value="op3" id="r-{{myWay.title}}-op3" data-val='{{myWay.price3}}'>
         <label for="r-{{myWay.title}}-op3">{{myWay.title3}} <span class="badge light fs10">{{myWay.price3 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}

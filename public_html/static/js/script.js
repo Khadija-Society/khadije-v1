@@ -6,6 +6,7 @@ function pushState()
   // runLastNewsSlider();
   bindLastNews();
   salavat();
+  bindCustomWay();
 }
 
 $(function()
@@ -15,6 +16,10 @@ $(function()
   bindTimer();
 });
 
+function bindCustomWay()
+{
+
+}
 
 function salavat()
 {
