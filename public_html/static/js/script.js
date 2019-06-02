@@ -18,16 +18,16 @@ $(function()
 
 function bindCustomWay()
 {
-  $('input[type=radio][name="way"]').on('change', function()
+  $('.donateForm input[type=radio][name="way"]').on('change', function()
   {
     var myVal = $(this).val();
     if(myVal)
     {
-      var myValOptEl = $('.donateOptions [data-way="' + myVal + '"]');
+      var myValOptEl = $('.donateForm .donateOptions [data-way="' + myVal + '"]');
       if(myValOptEl.length > 0)
       {
         // hide all ways options except selected
-        $('.donateOptions [data-way]').not(myValOptEl).slideUp('fast');
+        $('.donateForm .donateOptions [data-way]').not(myValOptEl).slideUp('fast');
         myValOptEl.slideDown('fast');
         // check first item
         myValOptEl.find('.donateOptions input[type=radio]').eq(0).prop("checked", true).trigger('change');
@@ -35,26 +35,38 @@ function bindCustomWay()
       else
       {
         // hide all opt
-        $('.donateOptions [data-way]').slideUp('fast');
+        $('.donateForm .donateOptions [data-way]').slideUp('fast');
         // hide count
-        $('.countSelector').slideUp('fast');
+        $('.donateForm .countSelector').slideUp('fast');
         // disable readonly of amount
-        $('input [name="amount"]').attr('disabled', null);
+        $('.donateForm input[name="amount"]').prop('disabled', false);
       }
 
     }
   });
 
   // on change opt
-  $('input[type=radio][name="wayOpt"]').on('change', function()
+  $('.donateForm input[type=radio][name="wayOpt"]').on('change', function()
   {
     var myVal = $(this).val();
     var isCustom = $(this).attr('data-custom') !== undefined? true: false;
     var myValPrice = $(this).attr('data-val');
 
-    console.log('checked ' + myVal);
-    console.log(isCustom);
-    console.log(myValPrice);
+    if(isCustom)
+    {
+        // hide count
+        $('.donateForm .countSelector').slideUp('fast');
+        // disable readonly of amount
+        $('.donateForm input[name="amount"]').prop('disabled', false);
+    }
+    else
+    {
+        // hide count
+        $('.donateForm .countSelector').slideDown('fast');
+        $('.donateForm .countSelector input').val(1);
+        // disable readonly of amount
+        $('.donateForm input[name="amount"]').prop('disabled', true);
+    }
   });
 
 }
