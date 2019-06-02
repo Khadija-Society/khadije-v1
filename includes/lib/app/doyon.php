@@ -69,13 +69,39 @@ class doyon
 			case 'kafarat':
 			case 'namazqaza':
 				return self::$type();
-			break;
+				break;
 
-
+			case 'remove':
+				return self::remove();
+				break;
 			default:
 				\dash\notif::error(T_("Invalid type"));
 				return false;
 				break;
+		}
+	}
+
+
+	private static function remove()
+	{
+		$key = \dash\app::request('key');
+		if(!$key)
+		{
+			\dash\notif::error(T_("Invalid key"));
+			return false;
+		}
+
+		$list = self::get_my_list();
+		if(array_key_exists($key, $list))
+		{
+			unset($list[$key]);
+			\dash\session::set('doyon_list', $list);
+			\dash\notif::ok(T_("Record removed"));
+		}
+		else
+		{
+			\dash\notif::error(T_("Key not found"));
+			return false;
 		}
 	}
 
