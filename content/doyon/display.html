@@ -4,17 +4,37 @@
 
 {%block pageData%}
 
-{{block('mySavedList')}}
+<p class="msg danger2 txtC txtB mTB0">شما می‌توانید مبلغ محاسبه شده را به‌حساب مرجع  تقلید خود نیز واریز کنید.</p>
 
+<label>{%trans "Please Choose one type of deyn"%}</label>
+<div class="doyonList f fs07">
 {%for doyonKey, deyn in doyonList.list%}
 {%if deyn.visible%}
-<div class="msg {{deyn.class}} outline txtB fs12" data-kerkere=".showDoyon{{doyonKey}}" data-kerkere-icon data-kerkere-single>{{deyn.title}}</div>
-<div class="showDoyon{{doyonKey}} mB20" data-kerkere-content='hide' >
-	{{block(deyn.slug)}}
-</div>
+	<div class="c s6">
+		<div class="dcard x07 {{deyn.class}}" data-kerkere=".showDoyon{{doyonKey}}" data-kerkere-single>
+			<div class="value">{{deyn.title}}</div>
+			<div class="label">{{deyn.desc}}</div>
+		</div>
+	</div>
+
 {%endif%}
 {%endfor%}
+</div>
 
+
+<div class="deynDetail">
+{%for doyonKey, deyn in doyonList.list%}
+{%if deyn.visible%}
+	<div class="showDoyon{{doyonKey}} mB20" data-kerkere-content='hide'>
+	{{block(deyn.slug)}}
+	</div>
+{%endif%}
+{%endfor%}
+</div>
+
+<hr>
+
+{{block('mySavedList')}}
 {%endblock%}
 
 
@@ -41,7 +61,7 @@
 	</tbody>
 </table>
 <div data-confirm data-data='{"type" : "pay"}' class="btn xl block mTB20 success">پرداخت {{mySum | fitNumber }} تومان</div>
-<hr>
+
 {%endif%}
 {%endblock%}
 
