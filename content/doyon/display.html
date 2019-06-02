@@ -12,7 +12,7 @@
 {%if deyn.visible%}
 	<div class="c s6">
 		<div class="dcard x07 {{deyn.class}}" data-kerkere=".showDoyon{{doyonKey}}" data-kerkere-single>
-			<div class="value">{{deyn.title}}</div>
+			<div class="value txtB">{{deyn.title}}</div>
 			<div class="label">{{deyn.desc}}</div>
 		</div>
 	</div>
@@ -32,8 +32,6 @@
 {%endfor%}
 </div>
 
-<hr>
-
 {{block('mySavedList')}}
 {%endblock%}
 
@@ -41,6 +39,7 @@
 
 {%block mySavedList%}
 {%if myList%}
+<hr>
 {%set mySum = 0%}
 <h3>لیست پرداخت</h3>
 <table class="tbl1 v9">
@@ -74,46 +73,49 @@
 
 		<form method="post" class="cbox fs09">
 			<input type="hidden" name="type" value="fetriye">
-			<div class="f">
-				<div class="cauto">
 
-				    <div class="radio1">
-				     <input type="radio" name="seyyed" id="aam" value="aam" checked>
-				     <label for="aam">عام</label>
-				    </div>
+			<div class="mB10">
+			  <label>قوت قالب</label>
+		    <div class="radio1">
+		     <input type="radio" name="qotqaleb" id="qotqaleb-gandom" value="gandom">
+		     <label for="qotqaleb-gandom">گندم <span class="badge mLa10 light fs11">{{9000 | fitNumber}} {%trans "Toman"%}</span></label>
+		    </div>
 
-				</div>
+		    <div class="radio1">
+		     <input type="radio" name="qotqaleb" id="qotqaleb-berenjkhareji" value="berenjkhareji">
+		     <label for="qotqaleb-berenjkhareji">برنج  خارجی<span class="badge mLa10 light fs11">{{24000 | fitNumber}} {%trans "Toman"%}</span></label>
+		    </div>
 
-				<div class="cauto mLa20">
-
-					<div class="radio1 green">
-				     <input type="radio" name="seyyed" id="seyyed" value="seyyed" >
-				     <label for="seyyed">سید</label>
-				    </div>
-
-				</div>
+		    <div class="radio1">
+		     <input type="radio" name="qotqaleb" id="qotqaleb-berenj" value="berenj">
+		     <label for="qotqaleb-berenj">برنج ایرانی<span class="badge mLa10 light fs11">{{60000 | fitNumber}} {%trans "Toman"%}</span></label>
+		    </div>
 			</div>
 
-		    <h5 class="mT10">قوت قالب</h5>
-			<div class="ui selection dropdown" tabindex="0">
-			    <input type="hidden" name="qotqaleb" value="0">
-			    <i class="dropdown icon"></i>
-			    <div class="text">{%trans "Please select one itme"%}</div>
-			    <div class="menu transition hidden" tabindex="-1">
-
-			    <div class="item" data-value="gandom">گندم</div>
-			    <div class="item" data-value="berenj">برنج</div>
-
-			    </div>
-		 	</div>
-
+			<label>تعداد افراد تحت تکفل</label>
 		 	<div class="input">
-				<label>تعداد افراد تحت تکفل</label>
 				<input type="number" name="count"  required>
 				<label class="addon">نفر</label>
 			</div>
 
-			<button class="btn success block mT10">مرحله بعد</button>
+			<div class="msg">لطفا  نوع فطریه را مشخص کنید.  فطریه سید به سید و غیر سید می‌رسد ولی اگر سرپرست خانوار یعنی دهنده فطریه سید نباشد نمی‌تواند به سید بدهد.</div>
+			<div class="f mB10">
+				<div class="cauto">
+				    <div class="radio1">
+				     <input type="radio" name="seyyed" id="aam" value="aam" checked>
+				     <label for="aam">عام</label>
+				    </div>
+				</div>
+
+				<div class="c mLa20">
+					<div class="radio1 green">
+				     <input type="radio" name="seyyed" id="seyyed" value="seyyed" >
+				     <label for="seyyed">سید هستم</label>
+				    </div>
+				</div>
+			</div>
+
+			<button class="btn success block mT20">مرحله بعد</button>
 		</form>
 	</div>
 </div>
