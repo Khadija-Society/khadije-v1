@@ -12,6 +12,18 @@ class model
 		// type: kafarat
 		// type: namazqaza
 
+		// type
+		// seyyed
+		// qotqaleb
+		// count
+		// price
+		// kafare
+		// namaz_roze_qaza
+
+
+
+
+
 	}
 }
 ?>
