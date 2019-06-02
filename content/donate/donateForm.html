@@ -272,7 +272,7 @@
 {%for key, myWay in wayList%}
 <div class="cauto">
 
-  <div class="radioGateway{%if myWay.iactive%} blink{%endif%}" {%if myWay.desc%}title="{{myWay.desc}}"{%endif%}>
+  <div class="radioGateway{%if myWay.iactive%} blink{%endif%}" {%if myWay.desc%}title="{{myWay.desc}}"{%endif%} {%if myWay.allowpirce%}data-customprice{%endif%}>
     <input type="radio" name="way" value="{{myWay.title}}" id="r-{{myWay.title}}">
     <label for="r-{{myWay.title}}">
 {%if myWay.fileurl%}
