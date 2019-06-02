@@ -290,8 +290,15 @@
   <div class="donateOptions">
 {%for key, myWay in wayList%}
 {%if myWay.title1 or myWay.title2 or myWay.title3%}
-   <div data-response='way' data-response-where='{{myWay.title}}' data-response-effect='slide' data-response-hide>
+   <div class="hide2">
     <div class="donateOptions msg pTB0 mT5 mB0">
+    {%if myWay.allowpirce%}
+       <div class="radio1 pA0-f">
+        <input type="radio" name="wayOpt-{{myWay.title}}" value="custom" id="r-{{myWay.title}}-custom">
+        <label for="r-{{myWay.title}}-custom">{%trans "Custom Amount"%}</label>
+      </div>
+    {%endif%}
+
     {%if myWay.price1 and myWay.title1%}
        <div class="radio1 pA0-f">
         <input type="radio" name="wayOpt-{{myWay.title}}" value="op1" id="r-{{myWay.title}}-op1">
