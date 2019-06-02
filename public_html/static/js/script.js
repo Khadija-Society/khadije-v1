@@ -18,6 +18,30 @@ $(function()
 
 function bindCustomWay()
 {
+  $('input[type=radio][name=way]').on('change', function()
+  {
+    var myVal = $(this).val();
+    if(myVal)
+    {
+      var myValOptEl = $('.donateOptions [data-way="' + myVal + '"]');
+      if(myValOptEl.length > 0)
+      {
+        // hide all ways options except selected
+        $('.donateOptions [data-way]').not(myValOptEl).slideUp('fast');
+        myValOptEl.slideDown('fast');
+      }
+      else
+      {
+        // hide all opt
+        $('.donateOptions [data-way]').slideUp('fast');
+        // hide count
+        $('.countSelector').slideUp('fast');
+        // disable readonly of amount
+        $('input [name="amount"]').attr('disabled', null);
+      }
+      console.log(myValOptEl);
+    }
+  });
 
 }
 

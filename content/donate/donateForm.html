@@ -228,11 +228,13 @@
 
 
 {%block iCount%}
-<label for='totalCount'>{%trans "Count"%}</label>
-<div class="input">
- <input type="number" name="amount" id='totalCount' required max="999" min="1">
-  <span class="addon">+</span>
-  <span class="addon">-</span>
+<div class="countSelector">
+  <label for='totalCount'>{%trans "Count"%}</label>
+  <div class="input">
+   <input type="number" name="amount" id='totalCount' required max="999" min="1">
+    <span class="addon">+</span>
+    <span class="addon">-</span>
+  </div>
 </div>
 {%endblock%}
 
@@ -301,7 +303,7 @@
   <div class="donateOptions">
 {%for key, myWay in wayList%}
 {%if myWay.title1 or myWay.title2 or myWay.title3%}
-   <div class="hide2">
+   <div class="hide2" data-way='{{myWay.title}}'>
     <div class="donateOptions msg pTB0 mT5 mB0">
     {%if myWay.allowpirce%}
        <div class="radio1 pA0-f">
