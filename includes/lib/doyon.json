@@ -2,33 +2,38 @@
   "list": [
     {
       "title": "فطریه",
+      "desc": "برای ماه مبارک رمضان",
       "slug": "fetriye",
       "visible": true,
-      "class": "primary"
+      "class": ""
     },
     {
       "title": "صدقات",
+      "desc": "",
       "slug": "sadaqe",
       "visible": true,
-      "class": "primary"
+      "class": ""
     },
     {
       "title": "مظالم",
+      "desc": "",
       "slug": "mazalem",
       "visible": true,
-      "class": "primary"
+      "class": ""
     },
     {
       "title": "کفارات",
+      "desc": "",
       "slug": "kafarat",
       "visible": false,
-      "class": "primary"
+      "class": ""
     },
     {
       "title": "نماز و روزه قضا",
+      "desc": "",
       "slug": "namazqaza",
       "visible": false,
-      "class": "primary"
+      "class": ""
     }
   ],
   "setting": {
