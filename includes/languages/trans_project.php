@@ -281,6 +281,9 @@ class twigTransTerms
 
 	//-----------------------------------------------public_html/static/js/festival.js
 
+	//------------------------------------------------------content/doyon/display.html
+	echo T_("Please select one itme");                                                // Line 174
+
 	//---------------------------------------------------content/template/dafault.html
 	echo T_("For share via social networks");                                         // Line 40
 	echo T_("News Code");                                                             // Line 40
@@ -394,7 +397,6 @@ class twigTransTerms
 	echo T_("10 digit national code");                                                // Line 141
 	echo T_("Birthday");                                                              // Line 147
 	echo T_("Gender");                                                                // Line 160
-	echo T_("Please select one itme");                                                // Line 174
 	echo T_("Male");                                                                  // Line 163
 	echo T_("Female");                                                                // Line 164
 	echo T_("Marital");                                                               // Line 172
@@ -672,7 +674,7 @@ class twigTransTerms
 	echo T_("Amount");                                                                // Line 134
 	echo T_("Enter a valid sort");                                                    // Line 242
 	echo T_("Range type");                                                            // Line 250
-	echo T_("Is active?");                                                            // Line 303
+	echo T_("Show by active icon");                                                   // Line 303
 	echo T_("Allow to custom price?");                                                // Line 312
 
 	//-----------------------------------------------------content_m/book/display.html
