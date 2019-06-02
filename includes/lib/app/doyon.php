@@ -103,6 +103,7 @@ class doyon
 		if(is_array($_ids))
 		{
 			\lib\db\doyon::set_pay($_ids);
+			\dash\session::set('doyon_list', null);
 		}
 	}
 
@@ -135,8 +136,6 @@ class doyon
 
 		\lib\db\doyon::multi_insert($insert);
 		$final_fn_args = \dash\db\config::multi_insert_id($insert);
-
-		\dash\session::set('doyon_list', null);
 
 		$turn_back = \dash\url::that();
 
