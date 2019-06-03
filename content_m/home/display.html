@@ -5,6 +5,7 @@
 <div class="f">
 
   {%if perm('cpDonateView')%}<div class="c3 s6">{{block("Bdonate")}}</div>{%endif%}
+  {%if perm('cpDonateView')%}<div class="c3 s6">{{block("bDoyon")}}</div>{%endif%}
   {%if perm('cpReportDaily') or perm('cpReportMonth') or perm('cpReportView') %}<div class="c3 s6">{{block ("Report")}}</div>{%endif%}
 </div>
 
@@ -214,6 +215,16 @@
  <div class="statistic">
   <div class="value"><i class="sf-card"></i></div>
   <div class="label">{%trans "Donate list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bDoyon%}
+<a class="dcard x1" href='{{url.here}}/doyon'>
+ <div class="statistic">
+  <div class="value"><i class="sf-lock"></i></div>
+  <div class="label">{%trans "Doyon"%}</div>
  </div>
 </a>
 {%endblock%}
