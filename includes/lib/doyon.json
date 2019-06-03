@@ -38,13 +38,17 @@
   ],
   "setting": {
     "fetriye": {
+      "berenjkhareji": {
+        "title": "برنج خارجی",
+        "price": 24000
+      },
       "berenj": {
         "title": "برنج",
-        "price": 30000
+        "price": 60000
       },
       "gandom": {
         "title": "گندم",
-        "price": 18000
+        "price": 9000
       }
     }
   }

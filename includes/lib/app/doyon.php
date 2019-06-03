@@ -200,7 +200,7 @@ class doyon
 
 		$qotqaleb = \dash\app::request('qotqaleb');
 
-		if(!in_array($qotqaleb, ['gandom','berenj']))
+		if(!in_array($qotqaleb, ['gandom','berenj', 'berenjkhareji']))
 		{
 			\dash\notif::error(T_("Plese select one item of qotqaleb"));
 			return false;
