@@ -78,17 +78,17 @@
 			  <label>قوت قالب</label>
 		    <div class="radio1">
 		     <input type="radio" name="qotqaleb" id="qotqaleb-gandom" value="gandom">
-		     <label for="qotqaleb-gandom">گندم <span class="badge mLa10 light fs11">{{9000 | fitNumber}} {%trans "Toman"%}</span></label>
+		     <label for="qotqaleb-gandom">{{doyonList.setting.fetriye.gandom.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.fetriye.gandom.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
 
 		    <div class="radio1">
 		     <input type="radio" name="qotqaleb" id="qotqaleb-berenjkhareji" value="berenjkhareji">
-		     <label for="qotqaleb-berenjkhareji">برنج  خارجی<span class="badge mLa10 light fs11">{{24000 | fitNumber}} {%trans "Toman"%}</span></label>
+		     <label for="qotqaleb-berenjkhareji">{{doyonList.setting.fetriye.berenjkhareji.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.fetriye.berenjkhareji.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
 
 		    <div class="radio1">
 		     <input type="radio" name="qotqaleb" id="qotqaleb-berenj" value="berenj">
-		     <label for="qotqaleb-berenj">برنج ایرانی<span class="badge mLa10 light fs11">{{60000 | fitNumber}} {%trans "Toman"%}</span></label>
+		     <label for="qotqaleb-berenj">{{doyonList.setting.fetriye.berenj.title}}<span class="badge mLa10 light fs11">{{doyonList.setting.fetriye.berenj.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
 			</div>
 
@@ -186,12 +186,12 @@
 			  <label>نماز یا روزه قضا</label>
 		    <div class="radio1">
 		     <input type="radio" name="kafare" id="kafare-roze_amd" value="roze_amd">
-		     <label for="kafare-roze_amd">روزه عمد <span class="badge mLa10 light fs11">{{150000 | fitNumber}} {%trans "Toman"%}</span></label>
+		     <label for="kafare-roze_amd">{{doyonList.setting.kafarat.roze_amd.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.kafarat.roze_amd.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
 
 		    <div class="radio1">
 		     <input type="radio" name="kafare" id="kafare-roze_ozr" value="roze_ozr">
-		     <label for="kafare-roze_ozr">روزه عذر <span class="badge mLa10 light fs11">{{2500 | fitNumber}} {%trans "Toman"%}</span></label>
+		     <label for="kafare-roze_ozr">{{doyonList.setting.kafarat.roze_ozr.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.kafarat.roze_ozr.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
 
 			</div>
@@ -219,20 +219,22 @@
 
 				<div class="mB10">
 			  <label>کفاره نذر،‌ عده و قسم</label>
-		    <div class="radio1">
+
+			   <div class="radio1">
 		     <input type="radio" name="kafare" id="kafare-nazr" value="nazr">
-		     <label for="kafare-nazr">نذر <span class="badge mLa10 light fs11">{{150000 | fitNumber}} {%trans "Toman"%}</span></label>
+		     <label for="kafare-nazr">{{doyonList.setting.kafarat.nazr.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.kafarat.nazr.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
 
 		    <div class="radio1">
 		     <input type="radio" name="kafare" id="kafare-ahd" value="ahd">
-		     <label for="kafare-ahd">عهد <span class="badge mLa10 light fs11">{{2500 | fitNumber}} {%trans "Toman"%}</span></label>
+		     <label for="kafare-ahd">{{doyonList.setting.kafarat.ahd.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.kafarat.ahd.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
 
-		    <div class="radio1">
+		     <div class="radio1">
 		     <input type="radio" name="kafare" id="kafare-qasam" value="qasam">
-		     <label for="kafare-qasam">قسم <span class="badge mLa10 light fs11">{{2500 | fitNumber}} {%trans "Toman"%}</span></label>
+		     <label for="kafare-qasam">{{doyonList.setting.kafarat.qasam.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.kafarat.qasam.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
+
 
 			</div>
 
