@@ -3,6 +3,13 @@ namespace lib\app;
 
 class doyon
 {
+	public static function list($_string, $_args)
+	{
+		$search = \lib\db\doyon::search($_string, $_args);
+		return $search;
+	}
+
+
 	private static function get_file()
 	{
 		$get = [];

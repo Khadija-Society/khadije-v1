@@ -34,9 +34,22 @@ class doyon
 	}
 
 
-	public static function search()
+	public static function search($_string, $_option)
 	{
-		$result = \dash\db\config::public_search('doyon', ...func_get_args());
+		$default =
+		[
+			'master_join' => "LEFT JOIN users ON users.id = doyon.user_id",
+			'public_show_field' => 'doyon.*, users.displayname, users.avatar, users.mobile'
+		];
+
+		if(!is_array($_option))
+		{
+			$_option = [];
+		}
+
+		$_option = array_merge($default, $_option);
+
+		$result = \dash\db\config::public_search('doyon', $_string, $_option);
 		return $result;
 	}
 
