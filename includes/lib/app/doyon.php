@@ -78,7 +78,6 @@ class doyon
 			case 'mazalem':
 			case 'kafarat':
 			case 'namazqaza':
-			case 'rozeqaza':
 				return self::$type();
 				break;
 
@@ -445,15 +444,79 @@ class doyon
 
 	private static function namazqaza()
 	{
-		// namaz_roze_qaza
+		// kafare
+		$namazqaza = \dash\app::request('namazqaza');
+		if(!in_array($namazqaza, ['namazqaza','rozeqaza']))
+		{
+			\dash\notif::error(T_("Invalid type"));
+			return false;
+		}
+
+
+		$count    = \dash\app::request('count');
+		if(!$count)
+		{
+			\dash\notif::error(T_("Plese set count"), 'count');
+			return false;
+		}
+
+		if(!is_numeric($count))
+		{
+			\dash\notif::error(T_("Plese set count as a number"), 'count');
+			return false;
+		}
+
+		$count = abs(intval($count));
+		if($count > 1E+9)
+		{
+			\dash\notif::error(T_("Count is out of range"), 'count');
+			return false;
+		}
+
+		$myTitle = 'کفاره';
+		$setting = self::setting();
+		if(isset($setting['namazqaza'][$namazqaza]['title']))
+		{
+			$myTitle = $setting['namazqaza'][$namazqaza]['title'];
+		}
+
+
+		$myUnit = 'مورد';
+
+		if(isset($setting['namazqaza'][$namazqaza]['unit']))
+		{
+			$myUnit = $setting['namazqaza'][$namazqaza]['unit'];
+		}
+
+		$price = 0;
+		if(isset($setting['namazqaza'][$namazqaza]['price']))
+		{
+			$price = intval($setting['namazqaza'][$namazqaza]['price']);
+		}
+
+		$mysum = $count * $price;
+
+		$add =
+		[
+			'db' =>
+			[
+				'seyyed'   => null,
+				'title'    => $myTitle,
+				'type'     => __FUNCTION__,
+				'count'    => $count,
+				'priceone' => $price,
+				'price'    => $mysum,
+				'status'   => 'draft',
+				'user_id'  => \dash\user::id(),
+			],
+			'cat'      => $myTitle,
+			'count'    => ' به تعداد  '.\dash\utility\human::fitNumber($count) . ' '. $myUnit,
+			'price'    => ' هر '.  $myUnit. ' '.\dash\utility\human::fitNumber($price) . ' تومان',
+			'sum'      => $mysum,
+			'sumtitle' => ' به مبلغ '. \dash\utility\human::fitNumber($mysum). ' تومان',
+		];
+
+		return self::add_record($add);
 	}
-
-
-	private static function rozeqaza()
-	{
-		//
-	}
-
-
 }
 ?>

@@ -264,13 +264,34 @@
 		<form method="post" class="cbox fs09">
 			<input type="hidden" name="type" value="namazqaza">
 
-		    <h5 class="mT10">نماز قضا</h5>
+
+		   <div class="mB10">
+			<label>نماز و روزه قضا</label>
+
+			<div class="radio1">
+		     <input type="radio" name="namazqaza" id="namazqaza-namazqaza" value="namazqaza">
+		     <label for="namazqaza-namazqaza">{{doyonList.setting.namazqaza.namazqaza.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.namazqaza.namazqaza.price | fitNumber}} {%trans "Toman"%}</span></label>
+		    </div>
+
+		    <div class="radio1">
+		     <input type="radio" name="namazqaza" id="namazqaza-rozeqaza" value="rozeqaza">
+		     <label for="namazqaza-rozeqaza">{{doyonList.setting.namazqaza.rozeqaza.title}} <span class="badge mLa10 light fs11">{{doyonList.setting.namazqaza.rozeqaza.price | fitNumber}} {%trans "Toman"%}</span></label>
+		    </div>
 
 
-		 	<div class="input">
-				<label>تعداد</label>
-				<input type="number" name="count"  required>
-				<label class="addon">سال</label>
+			<div class="input">
+			<label>تعداد</label>
+
+			<input type="number" name="count"  required>
+
+			    <div data-response='namazqaza' data-response-where='namazqaza'>
+					<label class="addon">سال</label>
+			    </div>
+
+			    <div data-response='namazqaza' data-response-where='rozeqaza' data-response-hide>
+					<label class="addon">ماه</label>
+			    </div>
+
 			</div>
 
 			<button class="btn success block mT10">مرحله بعد</button>
