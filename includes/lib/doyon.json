@@ -29,9 +29,16 @@
       "class": ""
     },
     {
-      "title": "مظالم",
+      "title": "رد مظالم",
       "desc": "رد مظالم",
       "slug": "mazalem",
+      "visible": true,
+      "class": ""
+    },
+     {
+      "title": "نماز و روزه",
+      "desc": "نماز و ورزه قضا",
+      "slug": "namazqaza",
       "visible": true,
       "class": ""
     },
@@ -39,14 +46,14 @@
       "title": "نماز قضا",
       "desc": "",
       "slug": "namazqaza",
-      "visible": true,
+      "visible": false,
       "class": ""
     },
     {
       "title": "روزه قضا",
       "desc": "",
       "slug": "rozeqaza",
-      "visible": true,
+      "visible": false,
       "class": ""
     }
   ],
