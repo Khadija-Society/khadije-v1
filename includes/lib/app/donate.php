@@ -345,6 +345,26 @@ class donate
 			return false;
 		}
 
+		$wayopt = \dash\app::request('wayopt');
+		if($wayopt && mb_strlen($wayopt) > 200)
+		{
+			\dash\notif::error(T_("Invalid option"));
+			return false;
+		}
+
+		$totalcount = \dash\app::request('totalcount');
+		if($totalcount && !is_numeric($totalcount))
+		{
+			\dash\notif::error(T_("total count must be a number"), 'totalCount');
+			return false;
+		}
+
+		if($totalcount && intval($totalcount) > 1E+9)
+		{
+			\dash\notif::error(T_("Count if out of range"), 'totalCount');
+			return false;
+		}
+
 		$user_id = \dash\user::id();
 
 		if(!\dash\user::id())
@@ -511,6 +531,8 @@ class donate
 					'fullname'   => $fullname,
 					'donate'     => 'cash',
 					'doners'     => $doners,
+					'wayopt'     => $wayopt,
+					'totalcount' => $totalcount,
 				]
 			];
 

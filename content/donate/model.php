@@ -7,16 +7,18 @@ class model
 	{
 		$args =
 		[
-			'username'  => \dash\request::post('username'),
-			'bank'      => mb_strtolower(\dash\request::post('bank')),
-			'niyat'     => \dash\request::post('niyat'),
-			'way'       => \dash\request::post('way'),
-			'fullname'  => \dash\request::post('fullname'),
-			'email'     => \dash\request::post('email'),
-			'isAndroid' => \dash\request::post('isAndroid'),
-			'mobile'    => \dash\request::post('mobile'),
-			'amount'    => intval(\dash\request::post('amount')) / 10,
-			'doners'    => \dash\request::post('doners') === 'yes' ? 1 : 0,
+			'username'   => \dash\request::post('username'),
+			'bank'       => mb_strtolower(\dash\request::post('bank')),
+			'niyat'      => \dash\request::post('niyat'),
+			'way'        => \dash\request::post('way'),
+			'fullname'   => \dash\request::post('fullname'),
+			'email'      => \dash\request::post('email'),
+			'isAndroid'  => \dash\request::post('isAndroid'),
+			'mobile'     => \dash\request::post('mobile'),
+			'amount'     => intval(\dash\request::post('amount')) / 10,
+			'doners'     => \dash\request::post('doners') === 'yes' ? 1 : 0,
+			'wayopt'     => \dash\request::post('wayOpt'),
+			'totalcount' => \dash\request::post('totalCount'),
 		];
 
 		$redirect = false;

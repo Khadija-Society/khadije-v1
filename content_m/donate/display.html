@@ -192,7 +192,15 @@
         <td class="s0"><a href="{{url.current}}?payment={{value.payment}}{{getDateURL}}">{%set myPayment = value.payment | capitalize%}{%trans myPayment%}</a></td>
         <td>{%if value.condition == 'ok'%}<span class="sf-check fc-green"></span>{%else%}<span class="sf-frown-o fc-mute"></span>{%endif%} <b>{{value.plus | fitNumber}}</b> {%set pUnit = value.unit%}{%trans pUnit%}</td>
         <td class="s0 max-w200">{{value.niyat}}</td>
-        <td><a href="{{url.current}}?hazinekard={{value.hazinekard}}{{getDateURL}}">{{value.hazinekard}}</a></td>
+        <td>
+          <a href="{{url.current}}?hazinekard={{value.hazinekard}}{{getDateURL}}">{{value.hazinekard}}</a>
+          {%if value.wayopt%}
+          <span class="badge light">{{value.wayopt}}</span>
+          {%endif%}
+          {%if value.totalcount%}
+          <span class="badge light">{{value.totalcount | fitNumber}} {%trans "Item"%}</span>
+          {%endif%}
+        </td>
         <td class="s0" title='{{value.dateverify | date("Y-m-d H:i:s") | dt}}'>{{value.dateverify | date("Y-m-d H:i:s")  | dt("human", "year") }}</td>
       </tr>
       {%endfor%}
