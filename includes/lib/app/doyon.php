@@ -3,6 +3,22 @@ namespace lib\app;
 
 class doyon
 {
+	public static $sort_field =
+	[
+		'title',
+		'type',
+		'count',
+		'price',
+		'status',
+		'datecreated',
+	];
+
+	public static function type_count()
+	{
+		return \lib\db\doyon::type_count();
+	}
+
+
 	public static function list($_string, $_args)
 	{
 		$search = \lib\db\doyon::search($_string, $_args);

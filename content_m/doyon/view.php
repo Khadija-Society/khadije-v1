@@ -41,6 +41,41 @@ class view
 			}
 		}
 
+		if(!\dash\permission::supervisor())
+		{
+			$args['doyon.status'] = 'pay';
+		}
+
+
+		if(\dash\request::get('title'))
+		{
+			$args['doyon.title'] = \dash\request::get('title');
+			$filterArgs['title'] = \dash\request::get('title');
+		}
+
+		if(\dash\request::get('type'))
+		{
+			$args['doyon.type'] = \dash\request::get('type');
+			$filterArgs['type'] = \dash\request::get('type');
+		}
+
+		if(\dash\request::get('count'))
+		{
+			$args['doyon.count'] = \dash\request::get('count');
+			$filterArgs['count'] = \dash\request::get('count');
+		}
+
+		if(\dash\request::get('price'))
+		{
+			$args['doyon.price'] = \dash\request::get('price');
+			$filterArgs['price'] = \dash\request::get('price');
+		}
+
+		if(\dash\request::get('status'))
+		{
+			$args['doyon.status'] = \dash\request::get('status');
+			$filterArgs['status'] = \dash\request::get('status');
+		}
 
 
 		$search_string     = \dash\request::get('q');
@@ -56,17 +91,12 @@ class view
 
 		\dash\data::dataTable($dataTable);
 
-		// \dash\data::sortLink(\content_m\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
-
-		$filterArray = $args;
-		unset($filterArray['donate']);
-		unset($filterArray['condition']);
-		unset($filterArray['1.5']);
-
-		$filterArray = array_merge($filterArgs, $filterArray);
+		\dash\data::sortLink(\content_m\view::make_sort_link(\lib\app\doyon::$sort_field, \dash\url::this()));
+		$type_count = \lib\app\doyon::type_count();
+		\dash\data::typeCount($type_count);
 
 		// set dataFilter
-		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);
 		\dash\data::dataFilter($dataFilter);
 
 	}

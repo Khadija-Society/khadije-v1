@@ -213,6 +213,49 @@ class TransStatic
 
 	echo T_("waitingtoautosend");
 	echo T_("Waitingtoautosend");
+
+	echo T_("fetriye");
+	echo T_("Fetriye");
+	echo T_("kafarat");
+	echo T_("Kafarat");
+	echo T_("otherkafarat");
+	echo T_("Otherkafarat");
+	echo T_("sadaqe");
+	echo T_("Sadaqe");
+	echo T_("mazalem");
+	echo T_("Mazalem");
+	echo T_("namazqaza");
+	echo T_("Namazqaza");
+	echo T_("namazqaza");
+	echo T_("Namazqaza");
+	echo T_("rozeqaza");
+	echo T_("Rozeqaza");
+	echo T_("fetriye");
+	echo T_("Fetriye");
+	echo T_("berenjkhareji");
+	echo T_("Berenjkhareji");
+	echo T_("berenj");
+	echo T_("Berenj");
+	echo T_("gandom");
+	echo T_("Gandom");
+	echo T_("kafarat");
+	echo T_("Kafarat");
+	echo T_("roze_amd");
+	echo T_("Roze_amd");
+	echo T_("roze_ozr");
+	echo T_("Roze_ozr");
+	echo T_("nazr");
+	echo T_("Nazr");
+	echo T_("ahd");
+	echo T_("Ahd");
+	echo T_("qasam");
+	echo T_("Qasam");
+	echo T_("namazqaza");
+	echo T_("Namazqaza");
+	echo T_("rozeqaza");
+	echo T_("Rozeqaza");
+	echo T_("pay");
+	echo T_("Pay");
  }
 }
 ?>

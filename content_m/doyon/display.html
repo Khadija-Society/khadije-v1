@@ -2,9 +2,61 @@
 
 
 
+{%block GlanceDetail%}
+
+  <div class="f">
+    <div class="c s12">
+      <a href="{{url.this}}?type=fetriye" class="dcard x1 {%if requestGET.type == 'fetriye'%} active {%endif%}">
+       <div class="statistic">
+        <div class="value">{{typeCount.fetriye | fitNumber}}</div>
+        <div class="label">{%trans "fetriye"%}</div>
+       </div>
+      </a>
+    </div>
+
+    <div class="c s12">
+      <a href="{{url.this}}?type=kafarat" class="dcard x1 {%if requestGET.type == 'kafarat'%} active {%endif%}">
+       <div class="statistic">
+        <div class="value">{{typeCount.kafarat | fitNumber}}</div>
+        <div class="label">{%trans "kafarat"%}</div>
+       </div>
+      </a>
+    </div>
+
+    <div class="c s12">
+      <a href="{{url.this}}?type=mazalem" class="dcard x1 {%if requestGET.type == 'mazalem'%} active {%endif%}">
+       <div class="statistic">
+        <div class="value">{{typeCount.mazalem | fitNumber}}</div>
+        <div class="label">{%trans "mazalem"%}</div>
+       </div>
+      </a>
+    </div>
+
+    <div class="c s12">
+      <a href="{{url.this}}?type=namazqaza" class="dcard x1 {%if requestGET.type == 'namazqaza'%} active {%endif%}">
+       <div class="statistic">
+        <div class="value">{{typeCount.namazqaza | fitNumber}}</div>
+        <div class="label">{%trans "namazqaza"%}</div>
+       </div>
+      </a>
+    </div>
+
+    <div class="c s12">
+      <a href="{{url.this}}?type=sadaqe" class="dcard x1 {%if requestGET.type == 'sadaqe'%} active {%endif%}">
+       <div class="statistic">
+        <div class="value">{{typeCount.sadaqe | fitNumber}}</div>
+        <div class="label">{%trans "sadaqe"%}</div>
+       </div>
+      </a>
+    </div>
+
+  </div>
+{%endblock%}
+
 
 
 {%block pageContent%}
+{{block('GlanceDetail')}}
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -107,14 +159,14 @@
     <thead class="primary">
       <tr>
 
-        <th>{%trans "mobile"%}</th>
-        <th>{%trans "title"%}</th>
-        <th>{%trans "type"%}</th>
-        <th>{%trans "count"%}</th>
-        <th>{%trans "price"%}</th>
-        <th>{%trans "status"%}</th>
-        <th>{%trans "fullname"%}</th>
-        <th>{%trans "saheb"%}</th>
+        <th>{%trans "Mobile"%}</th>
+        <th>{%trans "Title"%}</th>
+        <th>{%trans "Type"%}</th>
+        <th>{%trans "Count"%}</th>
+        <th>{%trans "Price"%}</th>
+        <th>{%trans "Status"%}</th>
+        <th>{%trans "Fullname"%}</th>
+        <th>{%trans "Saheb"%}</th>
         <th class="s0" data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date"%}</a></th>
       </tr>
     </thead>
@@ -123,12 +175,12 @@
       {%for key, value in dataTable%}
       <tr>
 
-        <td>{{value.mobile}}</td>
-        <td>{{value.title}}</td>
-        <td>{{value.type}}</td>
-        <td>{{value.count}}</td>
-        <td>{{value.price}}</td>
-        <td>{{value.status}}</td>
+        <td><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
+        <td><a href="{{url.this}}?title={{value.title}}">{{value.title}}</a></td>
+        <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
+        <td><a href="{{url.this}}?count={{value.count}}">{{value.count |fitNumber}}</a></td>
+        <td><a href="{{url.this}}?price={{value.price}}">{{value.price | fitNumber}}</a></td>
+        <td><a href="{{url.this}}?status={{value.status}}">{%set mystatus = value.status%}{%trans mystatus%}</a></td>
         <td>{{value.fullname}}</td>
         <td>{{value.saheb}}</td>
         <td class="s0" title='{{value.datecreated | date("Y-m-d H:i:s") | dt}}'>{{value.datecreated | date("Y-m-d H:i:s")  | dt("human", "year") }}</td>
@@ -145,7 +197,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg warn2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.here}}/donate">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -153,7 +205,7 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.here}}/donate">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
