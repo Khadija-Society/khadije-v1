@@ -57,6 +57,46 @@ class doyon
 			$record = [];
 		}
 
+		$fullname = \dash\app::request('fullname');
+		if($fullname && mb_strlen($fullname) > 100)
+		{
+			$fullname = substr($fullname, 0, 99);
+		}
+
+		$mobile = \dash\app::request('mobile');
+
+		$user_id = \dash\user::id();
+
+		if($mobile)
+		{
+			$mobile = \dash\utility\filter::mobile($mobile);
+			if(!$mobile)
+			{
+				\dash\notif::error(T_("Invalid mobile"), 'mobile');
+				return false;
+			}
+
+			$user_detail = \dash\db\users::get_by_mobile($mobile);
+			if(isset($user_detail['id']))
+			{
+				$user_id = $user_detail['id'];
+			}
+			else
+			{
+				$user_id = \dash\db\users::signup(['mobile' => $mobile, 'displayname' => $fullname]);
+			}
+		}
+
+		$saheb = \dash\app::request('saheb');
+		if($saheb && mb_strlen($saheb) > 100)
+		{
+			$saheb = substr($saheb, 0, 99);
+		}
+
+		$_args['db']['user_id']  = $user_id;
+		$_args['db']['fullname'] = $fullname;
+		$_args['db']['saheb']    = $saheb;
+
 		$my_key = md5(json_encode($_args). '_'. rand(). '_'. time());
 
 		$record[$my_key] = $_args;
@@ -254,7 +294,6 @@ class doyon
 				'priceone' => $price,
 				'price'    => $sumprice,
 				'status'   => 'draft',
-				'user_id'  => \dash\user::id(),
 			],
 			'cat'      => $myTitle,
 			'cat2'     => $seyyed === 'aam' ? '' : 'به سادات',
@@ -304,7 +343,6 @@ class doyon
 				'priceone' => null,
 				'price'    => $price,
 				'status'   => 'draft',
-				'user_id'  => \dash\user::id(),
 			],
 			'cat'      => $myTitle,
 			'sum'      => $price,
@@ -350,7 +388,6 @@ class doyon
 				'priceone' => null,
 				'price'    => $price,
 				'status'   => 'draft',
-				'user_id'  => \dash\user::id(),
 			],
 			'cat'      => $myTitle,
 			'sum'      => $price,
@@ -427,7 +464,6 @@ class doyon
 				'priceone' => $price,
 				'price'    => $mysum,
 				'status'   => 'draft',
-				'user_id'  => \dash\user::id(),
 			],
 			'cat'      => $myTitle,
 			'count'    => ' به تعداد  '.\dash\utility\human::fitNumber($count) . ' '. $myUnit,
@@ -507,7 +543,6 @@ class doyon
 				'priceone' => $price,
 				'price'    => $mysum,
 				'status'   => 'draft',
-				'user_id'  => \dash\user::id(),
 			],
 			'cat'      => $myTitle,
 			'count'    => ' به تعداد  '.\dash\utility\human::fitNumber($count) . ' '. $myUnit,

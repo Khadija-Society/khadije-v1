@@ -1,5 +1,30 @@
 {%extends display.main%}
 
+{%block iFullNameMobile%}
+<div class="f">
+  <div class="c s12 pRa5">{{block ('iFullname')}}</div>
+  <div class="c s12">{{block ('iMobile')}}</div>
+</div>
+{%endblock%}
+
+{%block iFullname%}
+<label for='ffamily'>{%trans "Full name"%}</label>
+<div class="input">
+ <input type="text" name="fullname" value="{{user.displayname}}" placeholder='{%trans "Your Name"%}' maxlength='50' pattern=".{1,50}"  id='ffamily' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.displayname}}'{%endif%}>
+</div>
+{%endblock%}
+
+
+
+
+
+{%block iMobile%}
+<label for='fmobile'>{%trans "Mobile"%}</label>
+<div class="input">
+ <input type="tel" name="mobile" value="{{user.mobile}}" placeholder='{%trans "Your mobile number"%}' maxlength='50' minlength="1" pattern=".{1,50}"  id='fmobile' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.mobile}}'{%endif%}>
+</div>
+{%endblock%}
+
 
 
 {%block pageData%}
@@ -66,7 +91,7 @@
 		{%endfor%}
 	</tbody>
 </table>
-<div data-confirm data-data='{"type" : "pay"}' class="btn xl block mTB20 success">پرداخت {{mySum | fitNumber }} تومان</div>
+<div data-confirm data-data='{"type" : "pay"}' class="btn xl block mTB20 success">پرداخت مبلغ {{mySum | fitNumber }} تومان</div>
 
 {%endif%}
 {%endblock%}
@@ -78,7 +103,8 @@
 <div class="f justify-center">
 	<div class="c6 s12">
 
-		<form method="post" class="cbox fs09">
+		<form method="post" autocomplete="off"  class="cbox fs09">
+			{{block('iFullNameMobile')}}
 			<input type="hidden" name="type" value="fetriye">
 
 			<div class="mB10">
@@ -136,7 +162,8 @@
 <div class="f justify-center">
 	<div class="c6 s12">
 
-		<form method="post" class="cbox fs09">
+		<form method="post" autocomplete="off" class="cbox fs09">
+			{{block('iFullNameMobile')}}
 			<input type="hidden" name="type" value="sadaqe">
 			<div class="msg">مبلغ دلخواهی را برای صدقه وارد کنید. این صدقه عام خواهد بود.</div>
 
@@ -160,7 +187,8 @@
 <div class="f justify-center">
 	<div class="c6 s12">
 
-		<form method="post" class="cbox fs09">
+		<form method="post" autocomplete="off" class="cbox fs09">
+			{{block('iFullNameMobile')}}
 			<input type="hidden" name="type" value="mazalem">
 			<div class="msg">مبلغ دلخواهی را برای مظالم وارد کنید</div>
 			<div class="msg info2">مصرف «رد مظالم» منحصر است به «فقرای شیعه»؛ بنابراین، صرف آن در امور خیریه مانند پل‌سازى و مسجد و نظایر این‌ها جایز نیست.</div>
@@ -185,7 +213,8 @@
 <div class="f justify-center">
 	<div class="c6 s12">
 
-		<form method="post" class="cbox fs09">
+		<form method="post" autocomplete="off" class="cbox fs09">
+			{{block('iFullNameMobile')}}
 
 			<input type="hidden" name="type" value="kafarat">
 
@@ -220,7 +249,8 @@
 <div class="f justify-center">
 	<div class="c6 s12">
 
-		<form method="post" class="cbox fs09">
+		<form method="post" autocomplete="off" class="cbox fs09">
+			{{block('iFullNameMobile')}}
 
 			<input type="hidden" name="type" value="kafarat">
 
@@ -268,9 +298,15 @@
 <div class="f justify-center">
 	<div class="c6 s12">
 
-		<form method="post" class="cbox fs09">
+		<form method="post" autocomplete="off" class="cbox fs09">
+			{{block('iFullNameMobile')}}
 			<input type="hidden" name="type" value="namazqaza">
 
+
+			<label for='saheb'>نام صاحب نماز و روزه قضا</label>
+			<div class="input">
+			 <input type="text" name="saheb"  maxlength='50' pattern=".{1,50}"  id='saheb' >
+			</div>
 
 		   <div class="mB10">
 			<label>نماز و روزه قضا</label>
@@ -314,7 +350,8 @@
 <div class="f justify-center">
 	<div class="c6 s12">
 
-		<form method="post" class="cbox fs09">
+		<form method="post" autocomplete="off" class="cbox fs09">
+			{{block('iFullNameMobile')}}
 			<input type="hidden" name="type" value="rozeqaza">
 
 		    <h5 class="mT10">روزه قضا</h5>
