@@ -179,7 +179,7 @@ class doyon
 		{
 			unset($list[$key]);
 			\dash\session::set('doyon_list', $list);
-			\dash\notif::ok(T_("Record removed"));
+			\dash\notif::ok(T_("Item deleted"));
 		}
 		else
 		{
@@ -262,7 +262,7 @@ class doyon
 			'count'    => ' برای  '.\dash\utility\human::fitNumber($count) . ' نفر',
 			'price'    => ' هر نفر '. \dash\utility\human::fitNumber($price). ' تومان',
 			'sum'      => $sumprice,
-			'sumtitle' => 'مجموع '.  \dash\utility\human::fitNumber($sumprice). ' تومان ',
+			'sumtitle' => \dash\utility\human::fitNumber($sumprice). ' تومان ',
 		];
 
 		return self::add_record($add);

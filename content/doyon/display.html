@@ -46,14 +46,21 @@
 	<tbody>
 		{%for key, value in myList%}
 		<tr>
-			<td class="collapsing">{{loop.index | fitNumber}}.</td>
-			<td>{{value.cat | fitNumber}}</td>
-			<td>{{value.cat2 | fitNumber}}</td>
-			<td>{{value.cat3 | fitNumber}}</td>
+
+			<td>
+				{{loop.index | fitNumber}}.
+				{{value.cat | fitNumber}}
+				<span>{{value.cat2 | fitNumber}}</span>
+				<div class="fs08">{{value.cat3 | fitNumber}}</div>
+				<div class="fs08">{{value.price | fitNumber}}</div>
+			</td>
+
 			<td>{{value.count | fitNumber}}</td>
-			<td>{{value.price | fitNumber}}</td>
-			<td>{{value.sumtitle | fitNumber}}</td>
-			<td class="collapsing"><div class="btn danger xs" data-confirm data-data='{"type": "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</div></td>
+
+			<td class="collapsing">
+				<div>{{value.sumtitle | fitNumber}}</div>
+				<div class="btn danger xs" data-ajaxify data-method='post'  data-data='{"type": "remove", "key" : "{{key}}"}'>{%trans "Remove"%}</div>
+			</td>
 			{%set mySum = mySum + value.sum%}
 		</tr>
 		{%endfor%}
