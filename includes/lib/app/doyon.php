@@ -78,6 +78,7 @@ class doyon
 			case 'mazalem':
 			case 'kafarat':
 			case 'namazqaza':
+			case 'rozeqaza':
 				return self::$type();
 				break;
 
@@ -365,12 +366,92 @@ class doyon
 	private static function kafarat()
 	{
 		// kafare
+		$kafare = \dash\app::request('kafare');
+		if(!in_array($kafare, ['roze_amd','roze_ozr','nazr','ahd','qasam']))
+		{
+			\dash\notif::error(T_("Invalid type"));
+			return false;
+		}
+
+
+		$count    = \dash\app::request('count');
+		if(!$count)
+		{
+			\dash\notif::error(T_("Plese set count"), 'count');
+			return false;
+		}
+
+		if(!is_numeric($count))
+		{
+			\dash\notif::error(T_("Plese set count as a number"), 'count');
+			return false;
+		}
+
+		$count = abs(intval($count));
+		if($count > 1E+9)
+		{
+			\dash\notif::error(T_("Count is out of range"), 'count');
+			return false;
+		}
+
+		$myTitle = 'کفاره';
+		$setting = self::setting();
+		if(isset($setting['kafarat'][$kafare]['title']))
+		{
+			$myTitle = $setting['kafarat'][$kafare]['title'];
+		}
+
+
+		$myUnit = 'مورد';
+
+		if(isset($setting['kafarat'][$kafare]['unit']))
+		{
+			$myUnit = $setting['kafarat'][$kafare]['unit'];
+		}
+
+		$price = 0;
+		if(isset($setting['kafarat'][$kafare]['price']))
+		{
+			$price = intval($setting['kafarat'][$kafare]['price']);
+		}
+
+		$mysum = $count * $price;
+
+		$add =
+		[
+			'db' =>
+			[
+				'seyyed'   => null,
+				'title'    => $myTitle,
+				'type'     => __FUNCTION__,
+				'count'    => $count,
+				'priceone' => $price,
+				'price'    => $mysum,
+				'status'   => 'draft',
+				'user_id'  => \dash\user::id(),
+			],
+			'cat'      => $myTitle,
+			'count'    => ' به تعداد  '.\dash\utility\human::fitNumber($count) . ' '. $myUnit,
+			'price'    => ' هر '.  $myUnit. ' '.\dash\utility\human::fitNumber($price) . ' تومان',
+			'sum'      => $mysum,
+			'sumtitle' => ' به مبلغ '. \dash\utility\human::fitNumber($mysum). ' تومان',
+		];
+
+		return self::add_record($add);
+
+
 	}
 
 
 	private static function namazqaza()
 	{
 		// namaz_roze_qaza
+	}
+
+
+	private static function rozeqaza()
+	{
+		//
 	}
 
 
