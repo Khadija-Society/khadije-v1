@@ -71,7 +71,7 @@ class twigTransTerms
 	echo T_("Sms count group by group title");                                        // Line 250
 	echo T_("Group chart");                                                           // Line 292
 	echo T_("Count Send and Receive sms per day");                                    // Line 26
-	echo T_("Price");                                                                 // Line 288
+	echo T_("Price");                                                                 // Line 292
 	echo T_("Receive");                                                               // Line 93
 
 	//------------------------------------------------content_smsapp/chat/display.html
@@ -282,6 +282,8 @@ class twigTransTerms
 	//-----------------------------------------------public_html/static/js/festival.js
 
 	//------------------------------------------------------content/doyon/display.html
+	echo T_("Please Choose one type of deyn");                                        // Line 9
+	echo T_("Toman");                                                                 // Line 14
 	echo T_("Please select one itme");                                                // Line 174
 
 	//---------------------------------------------------content/template/dafault.html
@@ -351,12 +353,11 @@ class twigTransTerms
 	echo T_("Soroush App");                                                           // Line 360
 
 	//--------------------------------------------------content/donate/donateForm.html
-	echo T_("List of last success donations of yours");                               // Line 80
-	echo T_("Your niyat is");                                                         // Line 82
-	echo T_("Toman");                                                                 // Line 14
+	echo T_("List of last success donations of yours");                               // Line 81
+	echo T_("Your niyat is");                                                         // Line 83
 	echo T_("Untitled");                                                              // Line 33
 	echo T_("Anonymous");                                                             // Line 161
-	echo T_("Thanks");                                                                // Line 105
+	echo T_("Thanks");                                                                // Line 106
 	echo T_("Requested");                                                             // Line 118
 	echo T_("Your help");                                                             // Line 124
 	echo T_("Enter a valid number");                                                  // Line 124
@@ -365,18 +366,18 @@ class twigTransTerms
 	echo T_("Your name");                                                             // Line 151
 	echo T_("Enter a valid name");                                                    // Line 151
 	echo T_("Full name");                                                             // Line 159
-	echo T_("Your Name");                                                             // Line 170
-	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 170
-	echo T_("Your mobile number");                                                    // Line 181
-	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 181
+	echo T_("Your Name");                                                             // Line 171
+	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 171
+	echo T_("Your mobile number");                                                    // Line 182
+	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 182
 	echo T_("Email");                                                                 // Line 279
 	echo T_("Enter a valid email");                                                   // Line 118
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
-	echo T_("It is optional and depending on your intention can enter it");           // Line 201
+	echo T_("It is optional and depending on your intention can enter it");           // Line 202
 	echo T_("Pay Amount");                                                            // Line 157
-	echo T_("Rial");                                                                  // Line 211
-	echo T_("Amount of your donation");                                               // Line 210
+	echo T_("Rial");                                                                  // Line 330
+	echo T_("Amount of your donation");                                               // Line 211
 	echo T_("Total Pay Amount");                                                      // Line 206
 	echo T_("Show in public doners list?");                                           // Line 214
 	echo T_("Check doners list");                                                     // Line 214
@@ -386,6 +387,7 @@ class twigTransTerms
 	echo T_("Normal");                                                                // Line 231
 	echo T_("Admin direct pay");                                                      // Line 232
 	echo T_("Spending method");                                                       // Line 239
+	echo T_("Custom Amount");                                                         // Line 311
 
 	//----------------------------------------------------content/karbala/display.html
 	echo T_("Enter a valid name from 2 to 40 character");                             // Line 109
@@ -654,13 +656,13 @@ class twigTransTerms
 	//----------------------------------------------------------content_m/options.html
 	echo T_("All representation from this place is done");                            // Line 36
 	echo T_("Picture");                                                               // Line 37
-	echo T_("Sort");                                                                  // Line 242
+	echo T_("Sort");                                                                  // Line 245
 	echo T_("Slug");                                                                  // Line 21
 	echo T_("Allow price");                                                           // Line 60
 	echo T_("This method have term and conditions");                                  // Line 73
-	echo T_("Every");                                                                 // Line 211
-	echo T_("Day");                                                                   // Line 213
-	echo T_("Request");                                                               // Line 94
+	echo T_("Every");                                                                 // Line 214
+	echo T_("Day");                                                                   // Line 216
+	echo T_("Request");                                                               // Line 97
 	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 147
 	echo T_("Language");                                                              // Line 162
 	echo T_("Enter a valid title");                                                   // Line 96
@@ -668,14 +670,14 @@ class twigTransTerms
 	echo T_("Enter a valid count");                                                   // Line 112
 	echo T_("Active");                                                                // Line 101
 	echo T_("Deactive");                                                              // Line 101
-	echo T_("Set max request count in period dayes");                                 // Line 205
-	echo T_("Every day");                                                             // Line 209
-	echo T_("?");                                                                     // Line 212
+	echo T_("Set max request count in period dayes");                                 // Line 208
+	echo T_("Every day");                                                             // Line 212
+	echo T_("?");                                                                     // Line 215
 	echo T_("Amount");                                                                // Line 134
-	echo T_("Enter a valid sort");                                                    // Line 242
-	echo T_("Range type");                                                            // Line 250
-	echo T_("Show by active icon");                                                   // Line 303
-	echo T_("Allow to custom price?");                                                // Line 312
+	echo T_("Enter a valid sort");                                                    // Line 245
+	echo T_("Custom Choice");                                                         // Line 253
+	echo T_("blink and different display");                                           // Line 307
+	echo T_("Allow to custom price?");                                                // Line 316
 
 	//-----------------------------------------------------content_m/book/display.html
 	echo T_("Total Sale");                                                            // Line 12
@@ -697,6 +699,7 @@ class twigTransTerms
 	echo T_("Niyat");                                                                 // Line 151
 	echo T_("Hazinekard");                                                            // Line 152
 	echo T_("Without mobile");                                                        // Line 189
+	echo T_("Item");                                                                  // Line 201
 
 	//------------------------------------------------content_m/myrequest/display.html
 	echo T_("CMS");                                                                   // Line 102
