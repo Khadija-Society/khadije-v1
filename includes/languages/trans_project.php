@@ -282,9 +282,11 @@ class twigTransTerms
 	//-----------------------------------------------public_html/static/js/festival.js
 
 	//------------------------------------------------------content/doyon/display.html
-	echo T_("Please Choose one type of deyn");                                        // Line 9
+	echo T_("Full name");                                                             // Line 159
+	echo T_("Your Name");                                                             // Line 171
+	echo T_("Your mobile number");                                                    // Line 182
+	echo T_("Please Choose one type of deyn");                                        // Line 34
 	echo T_("Toman");                                                                 // Line 14
-	echo T_("Please select one itme");                                                // Line 174
 
 	//---------------------------------------------------content/template/dafault.html
 	echo T_("For share via social networks");                                         // Line 40
@@ -365,10 +367,7 @@ class twigTransTerms
 	echo T_("First name");                                                            // Line 105
 	echo T_("Your name");                                                             // Line 151
 	echo T_("Enter a valid name");                                                    // Line 151
-	echo T_("Full name");                                                             // Line 159
-	echo T_("Your Name");                                                             // Line 171
 	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 171
-	echo T_("Your mobile number");                                                    // Line 182
 	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 182
 	echo T_("Email");                                                                 // Line 279
 	echo T_("Enter a valid email");                                                   // Line 118
@@ -399,6 +398,7 @@ class twigTransTerms
 	echo T_("10 digit national code");                                                // Line 141
 	echo T_("Birthday");                                                              // Line 147
 	echo T_("Gender");                                                                // Line 160
+	echo T_("Please select one itme");                                                // Line 174
 	echo T_("Male");                                                                  // Line 163
 	echo T_("Female");                                                                // Line 164
 	echo T_("Marital");                                                               // Line 172
