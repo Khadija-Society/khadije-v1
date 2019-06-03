@@ -8,6 +8,20 @@
       "class": ""
     },
     {
+      "title": "کفاره روزه",
+      "desc": "روزه عمد و غیر عمد",
+      "slug": "kafarat",
+      "visible": true,
+      "class": ""
+    },
+    {
+      "title": "سایر کفارات",
+      "desc": "نذر و عهد و قسم",
+      "slug": "otherkafarat",
+      "visible": true,
+      "class": ""
+    },
+    {
       "title": "صدقه",
       "desc": "دفع بلا",
       "slug": "sadaqe",
@@ -22,17 +36,17 @@
       "class": ""
     },
     {
-      "title": "کفارات",
+      "title": "نماز قضا",
       "desc": "",
-      "slug": "kafarat",
+      "slug": "namazqaza",
       "visible": true,
       "class": ""
     },
     {
-      "title": "نماز و روزه قضا",
+      "title": "روزه قضا",
       "desc": "",
-      "slug": "namazqaza",
-      "visible": false,
+      "slug": "rozeqaza",
+      "visible": true,
       "class": ""
     }
   ],
@@ -43,12 +57,12 @@
         "price": 24000
       },
       "berenj": {
-        "title": "برنج",
+        "title": "برنج ایرانی",
         "price": 60000
       },
       "gandom": {
         "title": "گندم",
-        "price": 9000
+        "price": 10000
       }
     },
     "kafarat": {

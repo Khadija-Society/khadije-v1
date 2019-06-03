@@ -190,6 +190,38 @@
 
 			    <div class="item" data-value="roze_amd">روزه عمد</div>
 			    <div class="item" data-value="roze_ozr">روزه عذر</div>
+
+			    </div>
+		 	</div>
+
+		 	<div class="input">
+				<label>تعداد</label>
+				<input type="number" name="count"  required>
+				<label class="addon">مورد</label>
+			</div>
+
+			<button class="btn success block mT10">مرحله بعد</button>
+		</form>
+	</div>
+</div>
+{%endblock%}
+
+
+{%block otherkafarat%}
+<div class="f justify-center">
+	<div class="c6 s12">
+
+		<form method="post" class="cbox fs09">
+
+			<input type="hidden" name="type" value="kafarat">
+		    <h5 class="mT10">کفاره</h5>
+			<div class="ui selection dropdown" tabindex="0">
+			    <input type="hidden" name="kafare" value="0">
+			    <i class="dropdown icon"></i>
+			    <div class="text">{%trans "Please select one itme"%}</div>
+			    <div class="menu transition hidden" tabindex="-1">
+
+
 			    <div class="item" data-value="nazr">نذر</div>
 			    <div class="item" data-value="ahd">عهد</div>
 			    <div class="item" data-value="qasam">قسم</div>
@@ -214,6 +246,8 @@
 
 
 
+
+
 {%block namazqaza%}
 <div class="f justify-center">
 	<div class="c6 s12">
@@ -221,25 +255,37 @@
 		<form method="post" class="cbox fs09">
 			<input type="hidden" name="type" value="namazqaza">
 
-		    <h5 class="mT10">نماز و یا روزه قضا</h5>
-			<div class="ui selection dropdown" tabindex="0">
-			    <input type="hidden" name="namaz_roze_qaza" value="0">
-			    <i class="dropdown icon"></i>
-			    <div class="text">{%trans "Please select one itme"%}</div>
-			    <div class="menu transition hidden" tabindex="-1">
+		    <h5 class="mT10">نماز قضا</h5>
 
-			    <div class="item" data-value="namazqaza">نماز قضا</div>
-			    <div class="item" data-value="rozeqaza">روزه قضا</div>
-
-
-
-			    </div>
-		 	</div>
 
 		 	<div class="input">
 				<label>تعداد</label>
 				<input type="number" name="count"  required>
-				<label class="addon">مورد</label>
+				<label class="addon">سال</label>
+			</div>
+
+			<button class="btn success block mT10">مرحله بعد</button>
+		</form>
+	</div>
+</div>
+{%endblock%}
+
+
+
+
+{%block rozeqaza%}
+<div class="f justify-center">
+	<div class="c6 s12">
+
+		<form method="post" class="cbox fs09">
+			<input type="hidden" name="type" value="rozeqaza">
+
+		    <h5 class="mT10">روزه قضا</h5>
+
+		 	<div class="input">
+				<label>تعداد</label>
+				<input type="number" name="count"  required>
+				<label class="addon">ماه</label>
 			</div>
 
 			<button class="btn success block mT10">مرحله بعد</button>
