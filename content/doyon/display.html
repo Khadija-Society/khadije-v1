@@ -46,7 +46,6 @@
 {%endfor%}
 </div>
 
-
 <div class="deynDetail">
 {%for doyonKey, deyn in doyonList.list%}
 {%if deyn.visible%}
@@ -58,6 +57,27 @@
 </div>
 
 {{block('mySavedList')}}
+
+<hr>
+<div class="f justify-center">
+	<div class="c5 s12 fs08">
+		<h3 class="fs14">جدول مبالغ وجوهات به شرح زیر است</h3>
+		<table class="tbl1 v7">
+			<tbody>
+				{%for key, value in doyonList.setting%}
+				<tr><td colspan="2" class="txtB fs10">{%trans key%}</td></tr>
+					{%for k, v in value%}
+					<tr>
+						<td>{{v.title}}</td>
+						<td>{{v.price | fitNumber}} <small>{%trans "Toman"%}</small></td>
+					</tr>
+					{%endfor%}
+				{%endfor%}
+			</tbody>
+		</table>
+	</div>
+</div>
+
 {%endblock%}
 
 
