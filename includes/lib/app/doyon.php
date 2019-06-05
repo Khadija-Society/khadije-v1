@@ -263,34 +263,63 @@ class doyon
 
 		$qotqaleb = \dash\app::request('qotqaleb');
 
-		if(!in_array($qotqaleb, ['gandom','berenj', 'berenjkhareji']))
+		if(!in_array($qotqaleb, ['gandom','berenj', 'berenjkhareji', 'other']))
 		{
 			\dash\notif::error(T_("Plese select one item of qotqaleb"));
 			return false;
 		}
-
-		$count    = \dash\app::request('count');
-		if(!$count)
+		$is_other = false;
+		$price = 0;
+		if($qotqaleb === 'other')
 		{
-			\dash\notif::error(T_("Plese set count"), 'count');
-			return false;
+			$is_other = true;
+			$price    = \dash\app::request('price');
+			if(!$price)
+			{
+				\dash\notif::error(T_("Plese set price"), 'price');
+				return false;
+			}
+
+			if(!is_numeric($price))
+			{
+				\dash\notif::error(T_("Plese set price as a number"), 'price');
+				return false;
+			}
+
+			$price = abs(intval($price));
+			if($price > 1E+9)
+			{
+				\dash\notif::error(T_("price is out of range"), 'price');
+				return false;
+			}
+			$count = 1;
 		}
-
-		if(!is_numeric($count))
+		else
 		{
-			\dash\notif::error(T_("Plese set count as a number"), 'count');
-			return false;
-		}
 
-		$count = abs(intval($count));
-		if($count > 100)
-		{
-			\dash\notif::error(T_("Count is out of range, maximum 100"), 'count');
-			return false;
+
+			$count    = \dash\app::request('count');
+			if(!$count)
+			{
+				\dash\notif::error(T_("Plese set count"), 'count');
+				return false;
+			}
+
+			if(!is_numeric($count))
+			{
+				\dash\notif::error(T_("Plese set count as a number"), 'count');
+				return false;
+			}
+
+			$count = abs(intval($count));
+			if($count > 100)
+			{
+				\dash\notif::error(T_("Count is out of range, maximum 100"), 'count');
+				return false;
+			}
 		}
 
 		$setting = self::setting();
-		$price = 0;
 		if(isset($setting['fetriye'][$qotqaleb]['price']))
 		{
 			$price = intval($setting['fetriye'][$qotqaleb]['price']);
@@ -320,9 +349,9 @@ class doyon
 			],
 			'cat'      => $myTitle,
 			'cat2'     => $seyyed === 'aam' ? '' : 'به سادات',
-			'cat3'     => ' با قوت قالب ' . $qotqaleb_title,
-			'count'    => ' برای  '.\dash\utility\human::fitNumber($count) . ' نفر',
-			'price'    => ' هر نفر '. \dash\utility\human::fitNumber($price). ' تومان',
+			'cat3'     => $is_other ? null : ' با قوت قالب ' . $qotqaleb_title,
+			'count'    => $is_other ? null : ' برای  '.\dash\utility\human::fitNumber($count) . ' نفر',
+			'price'    => $is_other ? null : ' هر نفر '. \dash\utility\human::fitNumber($price). ' تومان',
 			'sum'      => $sumprice,
 			'sumtitle' => \dash\utility\human::fitNumber($sumprice). ' تومان ',
 		];

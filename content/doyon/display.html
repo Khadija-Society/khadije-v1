@@ -123,12 +123,32 @@
 		     <input type="radio" name="qotqaleb" id="qotqaleb-berenj" value="berenj">
 		     <label for="qotqaleb-berenj">{{doyonList.setting.fetriye.berenj.title}}<span class="badge mLa10 light fs11">{{doyonList.setting.fetriye.berenj.price | fitNumber}} {%trans "Toman"%}</span></label>
 		    </div>
+
+
+		    <div class="radio1">
+		     <input type="radio" name="qotqaleb" id="qotqaleb-other" value="other">
+		     <label for="qotqaleb-other">مبلغ درخواه</label>
+		    </div>
+
 			</div>
 
-			<label>تعداد افراد تحت تکفل</label>
-		 	<div class="input">
-				<input type="number" name="count"  required>
-				<label class="addon">نفر</label>
+			<div data-response='qotqaleb' data-response-where-not='other'>
+
+				<label>تعداد افراد تحت تکفل</label>
+			 	<div class="input">
+					<input type="number" name="count"  >
+					<label class="addon">نفر</label>
+				</div>
+			</div>
+
+
+			<div data-response='qotqaleb' data-response-where='other' data-response-hide>
+
+				<label>مبلغ فطریه مورد نظر</label>
+			 	<div class="input">
+					<input type="number" name="price"  >
+					<label class="addon">تومان</label>
+				</div>
 			</div>
 
 			<div class="msg">لطفا  نوع فطریه را مشخص کنید.  فطریه سید به سید و غیر سید می‌رسد ولی اگر سرپرست خانوار یعنی دهنده فطریه سید نباشد نمی‌تواند به سید بدهد.</div>
