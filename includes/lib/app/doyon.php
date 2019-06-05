@@ -22,7 +22,33 @@ class doyon
 	public static function list($_string, $_args)
 	{
 		$search = \lib\db\doyon::search($_string, $_args);
+		if(is_array($search))
+		{
+			$search = array_map(['self', 'ready'], $search);
+		}
 		return $search;
+	}
+
+	private static function ready($_data)
+	{
+		$result = [];
+		if(!is_array($_data))
+		{
+			$_data = [];
+		}
+
+		foreach ($_data as $key => $value)
+		{
+			switch ($key)
+			{
+
+				default:
+					$result[$key] = $value;
+					break;
+			}
+		}
+
+		return $result;
 	}
 
 

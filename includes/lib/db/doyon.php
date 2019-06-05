@@ -64,7 +64,7 @@ class doyon
 
 	public static function type_count()
 	{
-		$query = "SELECT doyon.type AS `type`, COUNT(*) AS `count` FROM doyon WHERE doyon.status = 'pay' GROUP BY doyon.type";
+		$query = "SELECT doyon.type AS `type`, SUM(doyon.price) AS `count` FROM doyon WHERE doyon.status = 'pay' GROUP BY doyon.type";
 		$result = \dash\db::get($query, ['type', 'count']);
 		return $result;
 	}

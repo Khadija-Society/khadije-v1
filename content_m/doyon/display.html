@@ -164,6 +164,7 @@
         <th>{%trans "Type"%}</th>
         <th>{%trans "Count"%}</th>
         <th>{%trans "Price"%}</th>
+        <th>{%trans "Sum"%}</th>
         <th>{%trans "Status"%}</th>
         <th>{%trans "Fullname"%}</th>
         <th>{%trans "Saheb"%}</th>
@@ -179,7 +180,8 @@
         <td><a href="{{url.this}}?title={{value.title}}">{{value.title}}</a></td>
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
         <td><a href="{{url.this}}?count={{value.count}}">{{value.count |fitNumber}}</a></td>
-        <td><a href="{{url.this}}?price={{value.price}}">{{value.price | fitNumber}}</a></td>
+        <td><a href="{{url.this}}?priceone={{value.priceone}}">{{value.priceone | fitNumber}}</a></td>
+        <td>{{value.price |fitNumber}} <small>{%trans "Toman"%}</small></td>
         <td><a href="{{url.this}}?status={{value.status}}">{%set mystatus = value.status%}{%trans mystatus%}</a></td>
         <td>{{value.fullname}}</td>
         <td>{{value.saheb}}</td>

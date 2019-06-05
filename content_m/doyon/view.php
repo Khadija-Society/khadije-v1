@@ -41,10 +41,8 @@ class view
 			}
 		}
 
-		if(!\dash\permission::supervisor())
-		{
-			$args['doyon.status'] = 'pay';
-		}
+
+		$args['doyon.status'] = 'pay';
 
 
 		if(\dash\request::get('title'))
