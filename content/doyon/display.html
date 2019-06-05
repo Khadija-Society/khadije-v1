@@ -10,7 +10,7 @@
 {%block iFullname%}
 <label for='ffamily'>{%trans "Full name"%}</label>
 <div class="input">
- <input type="text" name="fullname" value="{{user.displayname}}" placeholder='{%trans "Your Name"%}' maxlength='50' pattern=".{1,50}"  id='ffamily' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.displayname}}'{%endif%}>
+ <input type="text" name="fullname"  {%if user.displayname%}value="{{user.displayname}}"{%endif%} placeholder='{%trans "Your Name"%}' maxlength='50' pattern=".{1,50}"  id='ffamily' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.displayname}}'{%endif%}>
 </div>
 {%endblock%}
 
@@ -21,7 +21,7 @@
 {%block iMobile%}
 <label for='fmobile'>{%trans "Mobile"%}</label>
 <div class="input">
- <input type="tel" name="mobile" value="{{user.mobile}}" placeholder='{%trans "Your mobile number"%}' maxlength='50' minlength="1" pattern=".{1,50}"  id='fmobile' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.mobile}}'{%endif%}>
+ <input type="tel" name="mobile" {% if user.mobile%}value="{{user.mobile}}"{%endif%} placeholder='{%trans "Your mobile number"%}' maxlength='50' minlength="1" pattern=".{1,50}"  id='fmobile' {%if user.permission == 'admin' or user.permission == 'supervisor'%}{%else%} value='{{user.mobile}}'{%endif%}>
 </div>
 {%endblock%}
 
@@ -310,7 +310,7 @@
 			 <input type="text" name="saheb"  maxlength='50' pattern=".{1,50}"  id='saheb' >
 			</div>
 
-		   <div class="mB10">
+
 			<label>نماز و روزه قضا</label>
 
 			<div class="radio1">
