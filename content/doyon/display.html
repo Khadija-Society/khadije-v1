@@ -65,7 +65,7 @@
 		<table class="tbl1 v7">
 			<tbody>
 				{%for key, value in doyonList.setting%}
-				<tr><td colspan="2" class="txtB fs10">{%trans key%}</td></tr>
+				<tr><td colspan="2" class="txtB fs10">{%if key == 'namazqaza'%}نماز و روزه قضا{%else%}{%trans key%}{%endif%}</td></tr>
 					{%for k, v in value%}
 					<tr>
 						<td>{{v.title}}</td>
