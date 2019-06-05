@@ -177,7 +177,7 @@
       <tr>
 
         <td><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
-        <td><a href="{{url.this}}?title={{value.title}}">{{value.title}}</a></td>
+        <td><a href="{{url.this}}?title={{value.title}}">{%if value.seyyed%} <i title="سید" class="sf-user fc-green"></i> {%endif%} {{value.title}}</a></td>
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
         <td><a href="{{url.this}}?count={{value.count}}">{{value.count |fitNumber}}</a></td>
         <td><a href="{{url.this}}?priceone={{value.priceone}}">{{value.priceone | fitNumber}}</a></td>
