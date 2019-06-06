@@ -70,6 +70,12 @@ class view
 			$filterArgs['count'] = \dash\request::get('count');
 		}
 
+		if(\dash\request::get('seyyed'))
+		{
+			$args['doyon.seyyed'] = 1;
+			$filterArgs['seyyed'] = T_("Yes");
+		}
+
 		if(\dash\request::get('price'))
 		{
 			$args['doyon.price'] = \dash\request::get('price');
