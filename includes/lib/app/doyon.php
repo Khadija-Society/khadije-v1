@@ -32,8 +32,11 @@ class doyon
 
 		foreach ($get_chart as $key => $value)
 		{
-
-			array_push($categories, \dash\datetime::fit($value['date'], null, 'date'));
+			$myDate = \dash\datetime::fit($value['date'], null, 'date');
+			if(!in_array($myDate, $categories))
+			{
+				array_push($categories, $myDate);
+			}
 
 
 
