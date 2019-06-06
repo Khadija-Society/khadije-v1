@@ -5,6 +5,18 @@ class donate
 {
 	public static $way_key = 'hazinekard_list';
 
+
+	public static function export($_string, $_args)
+	{
+		$result = \lib\db\donate::export($_string, $_args);
+		if(!is_array($result))
+		{
+			$result = [];
+		}
+
+		return $result;
+	}
+
 	public static function option_key_type($_type)
 	{
 		if($_type === 'donate')

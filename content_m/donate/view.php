@@ -159,28 +159,35 @@ class view
 			$args['pagenation'] = false;
 		}
 
-		if($new_query)
+		if($export)
 		{
-			if(isset($args['maxpay']))
-			{
-				$dataTable = \lib\db\transactions::list($search_string, $args);
-			}
-			else
-			{
-				$dataTable = \lib\db\transactions::list($search_string, $args);
-			}
+			$dataTable = \lib\app\donate::export($search_string, $args);
+			\dash\utility\export::csv(['name' => 'export_donate', 'data' => $dataTable]);
 		}
 		else
 		{
-			$dataTable = \dash\app\transaction::list($search_string, $args);
+
+			if($new_query)
+			{
+				if(isset($args['maxpay']))
+				{
+					$dataTable = \lib\db\transactions::list($search_string, $args);
+				}
+				else
+				{
+					$dataTable = \lib\db\transactions::list($search_string, $args);
+				}
+			}
+			else
+			{
+				$dataTable = \dash\app\transaction::list($search_string, $args);
+			}
+
+			\dash\data::dataTable($dataTable);
+
 		}
 
-		\dash\data::dataTable($dataTable);
 
-		if($export)
-		{
-			\dash\utility\export::csv(['name' => 'export_donate', 'data' => \dash\data::dataTable()]);
-		}
 
 		\dash\data::sortLink(\content_m\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
 
