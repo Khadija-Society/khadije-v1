@@ -14,6 +14,50 @@ class doyon
 		'datecreated',
 	];
 
+	public static function chart()
+	{
+		$now = date("Y-m-d");
+		$lastYear = date("Y-m-d", strtotime("-1 year"));
+
+		$get_chart = \lib\db\doyon::get_chart($now, $lastYear);
+
+		if(!is_array($get_chart))
+		{
+			return false;
+		}
+
+
+		$data       = [];
+		$categories = [];
+
+		foreach ($get_chart as $key => $value)
+		{
+
+			array_push($categories, \dash\datetime::fit($value['date'], null, 'date'));
+
+
+
+			$temp = null;
+			if(isset($value['sumprice']))
+			{
+				$temp = floatval($value['sumprice']);
+			}
+
+			if(!isset($data[$value['type']]))
+			{
+				$data[$value['type']] = ['name' => T_($value['type']), 'data' => []];
+			}
+
+			$data[$value['type']]['data'][] = $temp;
+
+		}
+		$data                 = array_values($data);
+		$result               = [];
+		$result['categories'] = json_encode($categories, JSON_UNESCAPED_UNICODE);
+		$result['data']       = json_encode($data, JSON_UNESCAPED_UNICODE);
+		return $result;
+	}
+
 	public static function type_count()
 	{
 		return \lib\db\doyon::type_count();

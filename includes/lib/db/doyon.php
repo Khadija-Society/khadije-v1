@@ -5,6 +5,29 @@ namespace lib\db;
 class doyon
 {
 
+	public static function get_chart($_startdate, $_enddate)
+	{
+		$query  =
+		"
+			SELECT
+				SUM(doyon.price) AS `sumprice`,
+				DATE(doyon.datecreated) AS `date`,
+				doyon.type
+			FROM
+				doyon
+			WHERE
+				DATE(doyon.datecreated) <= DATE('$_startdate')  AND
+				DATE(doyon.datecreated) >= DATE('$_enddate') AND
+				doyon.status = 'pay'
+
+			GROUP BY
+				DATE(doyon.datecreated), doyon.type
+			ORDER BY DATE(doyon.datecreated) ASC
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	public static function insert()
 	{
 		return \dash\db\config::public_insert('doyon', ...func_get_args());

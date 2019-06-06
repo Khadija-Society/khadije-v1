@@ -13,6 +13,10 @@ class view
 
 		\dash\data::page_title(T_("Doyon list"));
 
+		\dash\data::badge_link(\dash\url::this(). '/report');
+		\dash\data::badge_text(T_("Report"));
+
+
 		\dash\data::badge2_link(\dash\url::this(). '?export=true');
 		\dash\data::badge2_text(T_("Export"));
 
