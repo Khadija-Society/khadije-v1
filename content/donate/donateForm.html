@@ -314,19 +314,19 @@
 
     {%if myWay.price1 and myWay.title1%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title1}}" id="r-{{myWay.id}}-op1" data-val='{{myWay.price1}}'>
+        <input type="radio" name="wayOpt" value="{{myWay.title1}}" id="r-{{myWay.id}}-op1" data-val='{{myWay.price1}}'>
         <label for="r-{{myWay.id}}-op1">{{myWay.title1}} <span class="badge light fs10">{{myWay.price1 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}
     {%if myWay.price2 and myWay.title2%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title2}}" id="r-{{myWay.id}}-op2" data-val='{{myWay.price2}}'>
+        <input type="radio" name="wayOpt" value="{{myWay.title2}}" id="r-{{myWay.id}}-op2" data-val='{{myWay.price2}}'>
         <label for="r-{{myWay.id}}-op2">{{myWay.title2}} <span class="badge light fs10">{{myWay.price2 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}
     {%if myWay.price3 and myWay.title3%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title3}}" id="r-{{myWay.id}}-op3" data-val='{{myWay.price3}}'>
+        <input type="radio" name="wayOpt" value="{{myWay.title3}}" id="r-{{myWay.id}}-op3" data-val='{{myWay.price3}}'>
         <label for="r-{{myWay.id}}-op3">{{myWay.title3}} <span class="badge light fs10">{{myWay.price3 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}

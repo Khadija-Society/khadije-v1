@@ -303,12 +303,36 @@ class donate
 			return false;
 		}
 
-		$way = \dash\app::request('way');
-		$way = trim($way);
-		if($way && !in_array($way, \lib\app\donate::way_list()))
+		$myWayList = \lib\app\donate::way_list();
+		$way       = \dash\app::request('way');
+		$way       = trim($way);
+
+		if($way && !in_array($way, $myWayList))
 		{
 			\dash\notif::error(T_("Please set a valid way"), 'way');
 			return false;
+		}
+
+		$wayopt = \dash\app::request('wayopt');
+		if($wayopt && mb_strlen($wayopt) > 200)
+		{
+			\dash\notif::error(T_("Invalid option"));
+			return false;
+		}
+
+		// check way opt is true
+		if(!$way)
+		{
+			$wayopt = null;
+		}
+
+		if($wayopt && $way)
+		{
+			$check_way_opt = \lib\db\donate::check_way_opt($way, $wayopt);
+			if(!$check_way_opt)
+			{
+				$wayopt = null;
+			}
 		}
 
 		$fullname = \dash\app::request('fullname');
@@ -357,12 +381,7 @@ class donate
 			return false;
 		}
 
-		$wayopt = \dash\app::request('wayopt');
-		if($wayopt && mb_strlen($wayopt) > 200)
-		{
-			\dash\notif::error(T_("Invalid option"));
-			return false;
-		}
+
 
 		$totalcount = \dash\app::request('totalcount');
 		if($totalcount && !is_numeric($totalcount))

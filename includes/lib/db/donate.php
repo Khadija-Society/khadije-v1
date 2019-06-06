@@ -4,6 +4,31 @@ namespace lib\db;
 
 class donate
 {
+	public static function check_way_opt($_way, $_wayopt)
+	{
+		$query =
+		"
+			SELECT
+				needs.id
+			FROM
+				needs
+			WHERE
+				needs.type = 'donate' AND
+				needs.title = '$_way' AND
+				(
+					needs.title1 = '$_wayopt' OR
+					needs.title2 = '$_wayopt' OR
+					needs.title3 = '$_wayopt'
+				)
+			LIMIT 1
+		";
+
+		$result = \dash\db::get($query, 'id', true);
+
+		return $result;
+	}
+
+
 	public static function export($_string, $_option)
 	{
 		$default =
