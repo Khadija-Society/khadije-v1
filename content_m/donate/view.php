@@ -27,7 +27,6 @@ class view
 
 		$payment_args = [];
 		$filterArgs   = [];
-		$payment_args['donate'] = 'cash';
 		$args =
 		[
 			'order'          => \dash\request::get('order'),
@@ -101,19 +100,19 @@ class view
 
 		if($startdate && $enddate)
 		{
-			$args['1.1'] = [" = 1.1 ", " AND transactions.datecreated > '$startdate' AND transactions.datecreated < '$enddate'  "];
-			$payment_args['1.1'] = [" = 1.1 ", " AND transactions.datecreated > '$startdate' AND transactions.datecreated < '$enddate'  "];
+			$args['1.1'] = [" = 1.1 ", " AND DATE(transactions.datecreated) >= '$startdate' AND DATE(transactions.datecreated) <= '$enddate'  "];
+			$payment_args['1.1'] = [" = 1.1 ", " AND DATE(transactions.datecreated) >= '$startdate' AND DATE(transactions.datecreated) <= '$enddate'  "];
 
 		}
 		elseif($startdate)
 		{
-			$args['transactions.datecreated'] = [">", " '$startdate' "];
-			$payment_args['transactions.datecreated'] = [">", " '$startdate' "];
+			$args['DATE(transactions.datecreated)'] = [">=", " '$startdate' "];
+			$payment_args['DATE(transactions.datecreated)'] = [">=", " '$startdate' "];
 		}
 		elseif($enddate)
 		{
-			$args['transactions.datecreated'] = ["<", " '$enddate' "];
-			$payment_args['transactions.datecreated'] = ["<", " '$enddate' "];
+			$args['DATE(transactions.datecreated)'] = ["<=", " '$enddate' "];
+			$payment_args['DATE(transactions.datecreated)'] = ["<=", " '$enddate' "];
 		}
 
 		if($get_date_url)
@@ -143,8 +142,12 @@ class view
 		}
 
 
-		$args['donate']    = 'cash';
-		$args['condition'] = 'ok';
+		$args['donate']            = 'cash';
+		$args['condition']         = 'ok';
+
+		$payment_args['donate']    = 'cash';
+		$payment_args['condition'] = 'ok';
+
 		$search_string     = \dash\request::get('q');
 
 		if($search_string)
