@@ -160,14 +160,14 @@
       <tr>
 
         <th>{%trans "Mobile"%}</th>
-        <th>{%trans "Title"%}</th>
-        <th>{%trans "Type"%}</th>
-        <th>{%trans "Count"%}</th>
-        <th>{%trans "Price"%}</th>
-        <th>{%trans "Sum"%}</th>
-        <th>{%trans "Status"%}</th>
+        <th data-sort="{{sortLink.title.order}}"><a href="{{sortLink.title.link}}">{%trans "Title"%}</a></th>
+        <th data-sort="{{sortLink.type.order}}"><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
+        <th data-sort="{{sortLink.count.order}}"><a href="{{sortLink.count.link}}">{%trans "Count"%}</a></th>
+        <th data-sort="{{sortLink.priceone.order}}"><a href="{{sortLink.priceone.link}}">{%trans "Price"%}</a></th>
+        <th data-sort="{{sortLink.price.order}}"><a href="{{sortLink.price.link}}">{%trans "Sum"%}</a></th>
+        <th data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
         <th>{%trans "Fullname"%}</th>
-        <th>{%trans "Saheb"%}</th>
+        <th data-sort="{{sortLink.saheb.order}}"><a href="{{sortLink.saheb.link}}">{%trans "Saheb"%}</a></th>
         <th class="s0" data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date"%}</a></th>
       </tr>
     </thead>

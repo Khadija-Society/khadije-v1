@@ -13,6 +13,9 @@ class view
 
 		\dash\data::page_title(T_("Doyon list"));
 
+		\dash\data::badge2_link(\dash\url::this(). '?export=true');
+		\dash\data::badge2_text(T_("Export"));
+
 		\dash\data::bodyclass('unselectable');
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
@@ -83,9 +86,20 @@ class view
 			\dash\data::page_title(T_('Search'). ' '.  $search_string);
 		}
 
+		$export = false;
+		if(\dash\request::get('export') === 'true')
+		{
+			$export = true;
+			$args['pagenation'] = false;
+		}
+
 
 		$dataTable = \lib\app\doyon::list($search_string, $args);
 
+		if($export)
+		{
+			\dash\utility\export::csv(['name' => 'export_doyon', 'data' => $dataTable]);
+		}
 
 		\dash\data::dataTable($dataTable);
 

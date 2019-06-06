@@ -9,6 +9,7 @@ class doyon
 		'type',
 		'count',
 		'price',
+		'priceone',
 		'status',
 		'datecreated',
 	];
