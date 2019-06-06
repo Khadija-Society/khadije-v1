@@ -82,6 +82,61 @@ class view
 			$filterArgs['status'] = \dash\request::get('status');
 		}
 
+		$startdate = null;
+		$enddate   = null;
+
+		$get_date_url = [];
+		if(\dash\request::get('startdate'))
+		{
+			$startdate                 = \dash\request::get('startdate');
+			$get_date_url['startdate'] = $startdate;
+			$startdate                 = \dash\utility\convert::to_en_number($startdate);
+
+			if(\dash\utility\jdate::is_jalali($startdate))
+			{
+				$startdate = \dash\utility\jdate::to_gregorian($startdate);
+			}
+			\dash\data::startdateEn($startdate);
+
+
+		}
+
+		if(\dash\request::get('enddate'))
+		{
+			$enddate                 = \dash\request::get('enddate');
+			$get_date_url['enddate'] = $enddate;
+			$enddate                 = \dash\utility\convert::to_en_number($enddate);
+			if(\dash\utility\jdate::is_jalali($enddate))
+			{
+				$enddate = \dash\utility\jdate::to_gregorian($enddate);
+			}
+			\dash\data::enddateEn($enddate);
+
+		}
+
+
+		if($startdate && $enddate)
+		{
+			$args['1.1'] = [" = 1.1 ", " AND doyon.datecreated > '$startdate' AND doyon.datecreated < '$enddate'  "];
+			$payment_args['1.1'] = [" = 1.1 ", " AND doyon.datecreated > '$startdate' AND doyon.datecreated < '$enddate'  "];
+
+		}
+		elseif($startdate)
+		{
+			$args['doyon.datecreated'] = [">", " '$startdate' "];
+			$payment_args['doyon.datecreated'] = [">", " '$startdate' "];
+		}
+		elseif($enddate)
+		{
+			$args['doyon.datecreated'] = ["<", " '$enddate' "];
+			$payment_args['doyon.datecreated'] = ["<", " '$enddate' "];
+		}
+
+		if($get_date_url)
+		{
+			\dash\data::getDateURL('&'. http_build_query($get_date_url));
+
+		}
 
 		$search_string     = \dash\request::get('q');
 
@@ -108,7 +163,7 @@ class view
 		\dash\data::dataTable($dataTable);
 
 		\dash\data::sortLink(\content_m\view::make_sort_link(\lib\app\doyon::$sort_field, \dash\url::this()));
-		$type_count = \lib\app\doyon::type_count();
+		$type_count = \lib\app\doyon::type_count($args);
 		\dash\data::typeCount($type_count);
 
 		// set dataFilter

@@ -62,7 +62,11 @@ class doyon
 		$default =
 		[
 			'master_join' => "LEFT JOIN users ON users.id = doyon.user_id",
-			'public_show_field' => 'doyon.*, users.displayname, users.avatar, users.mobile'
+			'public_show_field' => 'doyon.*, users.displayname, users.avatar, users.mobile',
+			'search_field' =>
+			"
+				(doyon.title LIKE '%__string__%')
+			"
 		];
 
 		if(!is_array($_option))
@@ -85,10 +89,24 @@ class doyon
 	}
 
 
-	public static function type_count()
+	public static function type_count($_args)
 	{
-		$query = "SELECT doyon.type AS `type`, SUM(doyon.price) AS `count` FROM doyon WHERE doyon.status = 'pay' GROUP BY doyon.type";
+		$where = null;
+		if($_args)
+		{
+			unset($_args['order']);
+			unset($_args['sort']);
+			if($_args)
+			{
+
+				$where = \dash\db\config::make_where($_args);
+				$where = 'AND '. $where;
+			}
+		}
+
+		$query = "SELECT doyon.type AS `type`, SUM(doyon.price) AS `count` FROM doyon WHERE doyon.status = 'pay' $where GROUP BY doyon.type";
 		$result = \dash\db::get($query, ['type', 'count']);
+
 		return $result;
 	}
 

@@ -88,7 +88,7 @@
 
 
 
-{%block htmlSearchBox2%}
+{%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get"  autocomplete="off" action="{{url.this}}">
 
@@ -96,8 +96,8 @@
 
       <div class="c s12 mB5 pRa5">
         <div class="input">
-          <label data-kerkere=".showAdvanceFilter" data-kerkere-icon class="addon">{%trans "Advance filter"%}</label>
-          <input type="search" name="q" placeholder='{%trans "Search in donations"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+
+          <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
         </div>
       </div>
 
@@ -120,33 +120,7 @@
 
     </div>
 
-    <div class="showAdvanceFilter" {%if requestGET.filter%} {%else%}  data-kerkere-content='hide'  {%endif%}>
 
-        <div class=" f pT10">
-          {%if false%}
-            <a class="{%if requestGET.filter == 'maxpay'%}primary {%else%} primary2 {%endif%} c mLa5 msg txtC" href="{{url.this}}?filter=maxpay{{ifGetType}}">
-              <i class="mRa5"></i><b>{%trans "Max pay"%}</b>
-            </a>
-
-            <a class="{%if requestGET.filter == 'usercountpay'%}primary {%else%} primary2 {%endif%} c mLa5 msg txtC" href="{{url.this}}?filter=usercountpay{{ifGetType}}">
-              <i class="mRa5"></i><b>{%trans "Max count pay user"%}</b>
-            </a>
-            {%endif%}
-
-            <a class="{%if requestGET.filter == 'remembernotif'%}primary {%else%} primary2 {%endif%} c mLa5 msg txtC" href="{{url.this}}?filter=remembernotif{{ifGetType}}">
-              <i class="mRa5"></i><b>{%trans "Remember notif"%}</b>
-            </a>
-
-
-          {%if requestGET.filter%}
-          <a class="cauto floatL mLa5 msg txtC" href="{{url.this}}">
-            <i class="mRa5"></i><b>{%trans "Clear filter"%}</b>
-          </a>
-          {%endif%}
-
-        </div>
-
-    </div>
   </form>
 </div>
 {%endblock%}

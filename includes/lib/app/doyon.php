@@ -58,9 +58,9 @@ class doyon
 		return $result;
 	}
 
-	public static function type_count()
+	public static function type_count($_args = null)
 	{
-		return \lib\db\doyon::type_count();
+		return \lib\db\doyon::type_count($_args);
 	}
 
 
