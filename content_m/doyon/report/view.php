@@ -6,8 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpDonateOption');
-
+		\dash\permission::access('cpDoyonView');
 		\dash\data::page_pictogram('chart');
 
 		\dash\data::page_title(T_("Doyon report"));

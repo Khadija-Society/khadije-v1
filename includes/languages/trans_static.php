@@ -256,6 +256,8 @@ class TransStatic
 	echo T_("Rozeqaza");
 	echo T_("pay");
 	echo T_("Pay");
+	echo T_("cpDoyonView");
+
  }
 }
 ?>

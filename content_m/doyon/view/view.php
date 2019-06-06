@@ -6,8 +6,6 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpDonateView');
-
 
 		\dash\data::page_title(T_("View doyon detail"));
 		\dash\data::page_desc(T_("check doyon and update status"));

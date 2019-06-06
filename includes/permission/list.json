@@ -353,5 +353,10 @@
     "title": "smsApiDoc",
     "cat": "SMS",
     "require": []
+  },
+  "cpDoyonView": {
+    "title": "cpDoyonView",
+    "cat": "Doyon",
+    "require": []
   }
 }

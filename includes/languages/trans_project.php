@@ -635,10 +635,12 @@ class twigTransTerms
 	echo T_("mazalem");                                                               // Line 30
 	echo T_("namazqaza");                                                             // Line 39
 	echo T_("sadaqe");                                                                // Line 48
-	echo T_("Fullname");                                                              // Line 143
+	echo T_("Done status");                                                           // Line 143
+	echo T_("Fullname");                                                              // Line 144
 	echo T_("Saheb");                                                                 // Line 38
 
 	//-----------------------------------------------content_m/doyon/view/display.html
+	echo T_("OK");                                                                    // Line 14
 	echo T_("Save changes");                                                          // Line 71
 
 	//--------------------------------------------------content_m/service/display.html
@@ -1234,7 +1236,6 @@ class twigTransTerms
 	echo T_("Your are using this consulting");                                        // Line 9
 	echo T_("If you sure from your request complete it");                             // Line 10
 	echo T_("Else you can cancel your request");                                      // Line 11
-	echo T_("OK");                                                                    // Line 14
 
 	//---------------------------------------content_a/consulting/request/display.html
 	echo T_("We do not provide consulting service yet!");                             // Line 9

@@ -13,7 +13,7 @@ class model
 
 		if(!in_array($donestatus, ['awaiting','ok','cancel']))
 		{
-			\dash\notif::error(T_("Invalid donestatus of trip"), 'donestatus');
+			\dash\notif::error(T_("Invalid status"), 'donestatus');
 			return false;
 		}
 

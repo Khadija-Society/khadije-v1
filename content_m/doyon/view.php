@@ -6,8 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('cpDonateView');
-
+		\dash\permission::access('cpDoyonView');
 
 		\dash\data::page_pictogram('lock');
 
