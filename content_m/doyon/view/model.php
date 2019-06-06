@@ -1,5 +1,5 @@
 <?php
-namespace content_m\consulting\view;
+namespace content_m\doyon\view;
 
 
 class model
@@ -7,24 +7,26 @@ class model
 
 	public static function post()
 	{
-		\dash\permission::access('cpConsultingChangeStatus');
 
-		$status = \dash\request::post('status');
 
-		if(!in_array($status, ['draft','awaiting','accept','reject','cancel','spam']))
+		$donestatus = \dash\request::post('donestatus');
+
+		if(!in_array($donestatus, ['awaiting','ok','cancel']))
 		{
-			\dash\notif::error(_T("Invalid status of trip"), 'status');
+			\dash\notif::error(T_("Invalid donestatus of trip"), 'donestatus');
 			return false;
 		}
 
-		$update = [];
-		$update['status'] = $status;
-		\dash\log::set('updateConsulting', ['code' => \dash\request::get('id'), 'newstatus' => $status]);
-		\lib\db\services::update($update, \dash\request::get('id'));
+		$desc                 = \dash\request::post('desc');
+		$update               = [];
+		$update['donestatus'] = $donestatus;
+		$update['desc']       = $desc;
+		\dash\log::set('updatedonate', ['code' => \dash\request::get('id'), 'newdonestatus' => $donestatus, 'newdesc' => $desc]);
+		\lib\db\doyon::update($update, \dash\request::get('id'));
 
 		// self::send_sms($status);
 
-		\dash\notif::ok(T_("The consulting updated"));
+		\dash\notif::ok(T_("Doyon updated"));
 
 		\dash\redirect::pwd();
 

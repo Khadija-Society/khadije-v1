@@ -88,6 +88,12 @@ class view
 			$filterArgs['status'] = \dash\request::get('status');
 		}
 
+		if(\dash\request::get('donestatus'))
+		{
+			$args['doyon.donestatus'] = \dash\request::get('donestatus');
+			$filterArgs['donestatus'] = \dash\request::get('donestatus');
+		}
+
 		$startdate = null;
 		$enddate   = null;
 

@@ -2,7 +2,7 @@
 
 {%block pageContent%}
 <div class="f justify-center">
-  <div class="c5 s12">
+  <div class="c6 s12">
 
     <div class="cbox">
       <form method="post" autocomplete="off">
@@ -13,19 +13,19 @@
 
         </h2>
 
-        {%if doyonDetail.type == 'fetriye'%}<div class="msg {%if doyonDetail.seyyed%}success2{%else%}{%endif%} mA10"> <b>  {%if doyonDetail.seyyed%}ایشان سید هستند {%else%} ایشان سید نیستند و عام هستند {%endif%}</b></div>{%endif%}
-        <div class="msg mA10">
+        {%if doyonDetail.type == 'fetriye'%}<div class="msg {%if doyonDetail.seyyed%}success2{%else%}{%endif%} "> <b>  {%if doyonDetail.seyyed%}ایشان سید هستند {%else%} ایشان سید نیستند و عام هستند {%endif%}</b></div>{%endif%}
+        <div class="msg ">
           <b>{{doyonDetail.title}}</b>
           {%if doyonDetail.subtitle%}<span>{{doyonDetail.subtitle}}</span>{%endif%}
         </div>
 
-        <div class="msg mA10">{%trans "Count"%} <b class="floatL">{{doyonDetail.count | fitNumber}}</b></div>
-        <div class="msg mA10">{%trans "Price"%} <b class="floatL">{{doyonDetail.priceone | fitNumber}}</b></div>
-        <div class="msg mA10">{%trans "Sum"%} <b class="floatL">{{doyonDetail.price | fitNumber}}</b></div>
-        <div class="msg mA10">{%trans "Status"%} <b class="floatL">{%set myStatus = doyonDetail.status%}{%trans myStatus%}</b></div>
+        {%if doyonDetail.count%}<div class="msg ">{%trans "Count"%} <b class="floatL">{{doyonDetail.count | fitNumber}}</b></div>{%endif%}
+        {%if doyonDetail.priceone%}<div class="msg ">{%trans "Price"%} <b class="floatL">{{doyonDetail.priceone | fitNumber}}</b></div>{%endif%}
+        <div class="msg ">{%trans "Sum"%} <b class="floatL">{{doyonDetail.price | fitNumber}}</b></div>
+        <div class="msg ">{%trans "Status"%} <b class="floatL">{%set myStatus = doyonDetail.status%}{%trans myStatus%}</b></div>
 
 
-        <div class="msg mA10">
+        <div class="msg ">
           <div class="f">
 
             <div class="c">{%trans "Date"%}</div>
@@ -35,9 +35,14 @@
 
         </div>
 
-        {%if doyonDetail.saheb%}<div class="msg mA10">{%trans "Saheb"%} <b class="floatL">{{doyonDetail.saheb}}</b></div>{%endif%}
+        {%if doyonDetail.saheb%}<div class="msg ">{%trans "Saheb"%} <b class="floatL">{{doyonDetail.saheb}}</b></div>{%endif%}
 
+        <label for="fdesc">{%trans "Description"%}</label>
+        <textarea class="txt" rows="5" id="fdesc" name="desc" placeholder="درصورتی که این پرداخت نیاز به ثبت توضیحات دارد اینجا وارد کنید. برای مثال شخص ادا کننده نماز و روزه قضا و ...">{{doyonDetail.desc}}</textarea>
 
+        {{block('iStatus')}}
+
+        <button class="btn block mT10 success">{%trans "Save"%}</button>
       </form>
     </div>
   </div>
@@ -47,6 +52,37 @@
 
 
 
+
+
+{%block iStatus%}
+
+<div>
+ <label >{%trans "Status"%}</label>
+ <div class="f">
+
+
+   <div class="radio1 s12 c12 blue">
+    <input type="radio" id="r-awaiting" name="donestatus" value="awaiting" {%if doyonDetail.donestatus == 'awaiting' or not doyonDetail.donestatus %} checked{%endif%}>
+    <label for="r-awaiting">{%trans "Awaiting"%} <small>وضعیت اولیه پس از پرداخت</small></label>
+   </div>
+
+   <div class="radio1 s12 c12 red">
+    <input type="radio" id="r-cancel" name="donestatus" value="cancel" {%if doyonDetail.donestatus == 'cancel' %} checked{%endif%}>
+    <label for="r-cancel">لغو <small>به هر دلیل اگر این پرداخت مورد تایید شما نمی‌باشد</small></label>
+   </div>
+
+   <div class="radio1 s12 c12 green">
+    <input type="radio" id="r-ok" name="donestatus" value="ok" {%if doyonDetail.donestatus == 'ok' %} checked{%endif%}>
+    <label for="r-ok">{%trans "OK"%} <small>این حالت یعنی پرداخت دیون توسط موسسه انجام شده است. پرداخت و واگذاری دیون به صاحبان اصلی انجام شده است</small></label>
+   </div>
+
+
+
+ </div>
+
+
+</div>
+{%endblock%}
 
 
 

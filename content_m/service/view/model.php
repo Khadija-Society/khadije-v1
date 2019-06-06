@@ -13,7 +13,7 @@ class model
 
 		if(!in_array($status, ['draft','awaiting','accept','reject','cancel','spam']))
 		{
-			\dash\notif::error(_T("Invalid status of trip"), 'status');
+			\dash\notif::error(T_("Invalid status of trip"), 'status');
 			return false;
 		}
 
