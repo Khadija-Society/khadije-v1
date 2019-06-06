@@ -286,8 +286,8 @@
 <div class="cauto">
 
   <div class="radioGateway{%if myWay.iactive%} blink{%endif%}" {%if myWay.desc%}title="{{myWay.desc}}"{%endif%} {%if myWay.allowpirce%}data-customprice{%endif%}>
-    <input type="radio" name="way" value="{{myWay.title}}" id="r-{{myWay.title}}">
-    <label for="r-{{myWay.title}}">
+    <input type="radio" name="way" value="{{myWay.title}}" id="r-{{myWay.id}}">
+    <label for="r-{{myWay.id}}">
 {%if myWay.fileurl%}
       <img src="{{myWay.fileurl}}" alt="{{myWay.title}}">
 {%else%}
@@ -295,7 +295,7 @@
 {%endif%}
     </label>
   </div>
-  <div><label for="r-{{myWay.title}}">{{myWay.title}}</label></div>
+  <div><label for="r-{{myWay.id}}">{{myWay.title}}</label></div>
 </div>
 {%endfor%}
   </div>
@@ -307,27 +307,27 @@
     <div class="donateOpt msg pTB0 mT5 mB0">
     {%if myWay.allowpirce%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt" value="custom-{{myWay.title}}" id="r-{{myWay.title}}-custom" data-custom>
-        <label for="r-{{myWay.title}}-custom">{%trans "Custom Amount"%}</label>
+        <input type="radio" name="wayOpt" value="custom-{{myWay.title}}" id="r-{{myWay.id}}-custom" data-custom>
+        <label for="r-{{myWay.id}}-custom">{%trans "Custom Amount"%}</label>
       </div>
     {%endif%}
 
     {%if myWay.price1 and myWay.title1%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title1}}" id="r-{{myWay.title}}-op1" data-val='{{myWay.price1}}'>
-        <label for="r-{{myWay.title}}-op1">{{myWay.title1}} <span class="badge light fs10">{{myWay.price1 | fitNumber}} {%trans "Rial"%}</span></label>
+        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title1}}" id="r-{{myWay.id}}-op1" data-val='{{myWay.price1}}'>
+        <label for="r-{{myWay.id}}-op1">{{myWay.title1}} <span class="badge light fs10">{{myWay.price1 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}
     {%if myWay.price2 and myWay.title2%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title2}}" id="r-{{myWay.title}}-op2" data-val='{{myWay.price2}}'>
-        <label for="r-{{myWay.title}}-op2">{{myWay.title2}} <span class="badge light fs10">{{myWay.price2 | fitNumber}} {%trans "Rial"%}</span></label>
+        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title2}}" id="r-{{myWay.id}}-op2" data-val='{{myWay.price2}}'>
+        <label for="r-{{myWay.id}}-op2">{{myWay.title2}} <span class="badge light fs10">{{myWay.price2 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}
     {%if myWay.price3 and myWay.title3%}
        <div class="radio1 pA0-f">
-        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title3}}" id="r-{{myWay.title}}-op3" data-val='{{myWay.price3}}'>
-        <label for="r-{{myWay.title}}-op3">{{myWay.title3}} <span class="badge light fs10">{{myWay.price3 | fitNumber}} {%trans "Rial"%}</span></label>
+        <input type="radio" name="wayOpt" value="{{myWay.title}}-{{myWay.title3}}" id="r-{{myWay.id}}-op3" data-val='{{myWay.price3}}'>
+        <label for="r-{{myWay.id}}-op3">{{myWay.title3}} <span class="badge light fs10">{{myWay.price3 | fitNumber}} {%trans "Rial"%}</span></label>
       </div>
     {%endif%}
     </div>

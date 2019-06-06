@@ -11,7 +11,8 @@ class view
 
 
 		\dash\data::bodyclass('unselectable');
-		\dash\data::wayList(\lib\app\need::active_list('donate'));
+		$wayList = \lib\app\need::active_list('donate');
+		\dash\data::wayList($wayList);
 
 		\dash\data::donateArchive(\lib\db\mytransactions::user_transaction('cash'));
 		if(\dash\request::get('nazr'))
