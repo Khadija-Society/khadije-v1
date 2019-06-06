@@ -143,6 +143,7 @@
         <th>{%trans "Fullname"%}</th>
         <th data-sort="{{sortLink.saheb.order}}"><a href="{{sortLink.saheb.link}}">{%trans "Saheb"%}</a></th>
         <th class="s0" data-sort="{{sortLink.datecreated.order}}"><a href="{{sortLink.datecreated.link}}">{%trans "Date"%}</a></th>
+        <th>{%trans "Action"%}</th>
       </tr>
     </thead>
 
@@ -160,6 +161,7 @@
         <td>{{value.fullname}}</td>
         <td>{{value.saheb}}</td>
         <td class="s0" title='{{value.datecreated | date("Y-m-d H:i:s") | dt}}'>{{value.datecreated | date("Y-m-d H:i:s")  | dt("human", "year") }}</td>
+        <td><a href="{{url.this}}/view?id={{value.id}}" class="btn xs success">{%trans "Detail"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>

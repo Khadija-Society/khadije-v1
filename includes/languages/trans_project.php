@@ -28,7 +28,7 @@ class twigTransTerms
 	//--------------------------------------------content_smsapp/settings/display.html
 	echo T_("Search");                                                                // Line 45
 	echo T_("Title");                                                                 // Line 96
-	echo T_("Type");                                                                  // Line 164
+	echo T_("Type");                                                                  // Line 138
 	echo T_("Status");                                                                // Line 40
 	echo T_("Analyze");                                                               // Line 86
 	echo T_("Is Money");                                                              // Line 59
@@ -581,7 +581,7 @@ class twigTransTerms
 
 	//----------------------------------------content_m/report/hazinekard/display.html
 	echo T_("Payment");                                                               // Line 94
-	echo T_("Sum");                                                                   // Line 167
+	echo T_("Sum");                                                                   // Line 24
 
 	//--------------------------------------------content_m/report/hazinekard/chart.js
 
@@ -635,13 +635,11 @@ class twigTransTerms
 	echo T_("mazalem");                                                               // Line 30
 	echo T_("namazqaza");                                                             // Line 39
 	echo T_("sadaqe");                                                                // Line 48
-	echo T_("Advance filter");                                                        // Line 85
-	echo T_("Search in donations");                                                   // Line 86
-	echo T_("Max pay");                                                               // Line 114
-	echo T_("Max count pay user");                                                    // Line 118
-	echo T_("Remember notif");                                                        // Line 123
-	echo T_("Fullname");                                                              // Line 169
-	echo T_("Saheb");                                                                 // Line 170
+	echo T_("Fullname");                                                              // Line 143
+	echo T_("Saheb");                                                                 // Line 38
+
+	//-----------------------------------------------content_m/doyon/view/display.html
+	echo T_("Save changes");                                                          // Line 71
 
 	//--------------------------------------------------content_m/service/display.html
 	echo T_("Search in services");                                                    // Line 44
@@ -665,7 +663,6 @@ class twigTransTerms
 	echo T_("try to fill request");                                                   // Line 52
 	echo T_("Cancel");                                                                // Line 26
 	echo T_("cancel from user");                                                      // Line 57
-	echo T_("Save changes");                                                          // Line 71
 
 	//----------------------------------------------------------content_m/options.html
 	echo T_("All representation from this place is done");                            // Line 36
@@ -705,6 +702,11 @@ class twigTransTerms
 	echo T_("Today Donation");                                                        // Line 19
 	echo T_("Donation Count");                                                        // Line 28
 	echo T_("Donation Average");                                                      // Line 36
+	echo T_("Advance filter");                                                        // Line 85
+	echo T_("Search in donations");                                                   // Line 86
+	echo T_("Max pay");                                                               // Line 114
+	echo T_("Max count pay user");                                                    // Line 118
+	echo T_("Remember notif");                                                        // Line 123
 	echo T_("Niyat");                                                                 // Line 151
 	echo T_("Hazinekard");                                                            // Line 152
 	echo T_("Without mobile");                                                        // Line 189

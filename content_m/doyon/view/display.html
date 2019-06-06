@@ -1,0 +1,59 @@
+{%extends 'content_m/layout.html'%}
+
+{%block pageContent%}
+<div class="f justify-center">
+  <div class="c5 s12">
+
+    <div class="cbox">
+      <form method="post" autocomplete="off">
+        <h2>
+          {%if doyonDetail.avatar%}<img src="{{doyonDetail.avatar}}" class="avatar">{%endif%}
+          {{doyonDetail.displayname}}
+          <div class="msg mRa5">{{doyonDetail.mobile |fitNumber('mobile')}}</div>
+
+        </h2>
+
+        {%if doyonDetail.type == 'fetriye'%}<div class="msg {%if doyonDetail.seyyed%}success2{%else%}{%endif%} mA10"> <b>  {%if doyonDetail.seyyed%}ایشان سید هستند {%else%} ایشان سید نیستند و عام هستند {%endif%}</b></div>{%endif%}
+        <div class="msg mA10">
+          <b>{{doyonDetail.title}}</b>
+          {%if doyonDetail.subtitle%}<span>{{doyonDetail.subtitle}}</span>{%endif%}
+        </div>
+
+        <div class="msg mA10">{%trans "Count"%} <b class="floatL">{{doyonDetail.count | fitNumber}}</b></div>
+        <div class="msg mA10">{%trans "Price"%} <b class="floatL">{{doyonDetail.priceone | fitNumber}}</b></div>
+        <div class="msg mA10">{%trans "Sum"%} <b class="floatL">{{doyonDetail.price | fitNumber}}</b></div>
+        <div class="msg mA10">{%trans "Status"%} <b class="floatL">{%set myStatus = doyonDetail.status%}{%trans myStatus%}</b></div>
+
+
+        <div class="msg mA10">
+          <div class="f">
+
+            <div class="c">{%trans "Date"%}</div>
+            <div class="c"><small>{{doyonDetail.datecreated | dt('human', 'year')}}</small></div>
+            <div class="c txtB">{{doyonDetail.datecreated | dt(true)}}</div>
+          </div>
+
+        </div>
+
+        {%if doyonDetail.saheb%}<div class="msg mA10">{%trans "Saheb"%} <b class="floatL">{{doyonDetail.saheb}}</b></div>{%endif%}
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
+
+
+
+
+
+
+{%block iSave%}
+<button class="btn success block mT20">{%trans "Save changes"%}</button>
+{%endblock%}
+
+
+
+
