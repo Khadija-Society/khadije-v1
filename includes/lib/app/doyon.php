@@ -240,10 +240,43 @@ class doyon
 		if(is_array($_ids))
 		{
 			\lib\db\doyon::set_pay($_ids);
+			self::set_notif($_ids);
 			\dash\session::set('doyon_list', null);
 		}
 	}
 
+
+	private static function set_notif($_ids)
+	{
+		foreach ($_ids as $key => $value)
+		{
+			$load = \lib\db\doyon::get(['id' => $value, 'limit' => 1]);
+
+			if(isset($load['type']))
+			{
+				if(!$load['user_id'])
+				{
+					continue;
+				}
+
+				switch ($load['type'])
+				{
+
+					case 'fetriye':
+					case 'sadaqe':
+					case 'mazalem':
+					case 'kafarat':
+					case 'namazqaza':
+						\dash\log::set('doyon_'. $load['type'], ['to' => $load['user_id'], 'detail' => $load]);
+						break;
+
+					default:
+						// nothing
+						break;
+				}
+			}
+		}
+	}
 
 	private static function pay()
 	{
