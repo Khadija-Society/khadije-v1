@@ -49,6 +49,11 @@ class model
 			$post['file1'] = $file1;
 		}
 
+		if(!\dash\user::detail('file1') && !$file1)
+		{
+			\dash\notif::error(T_("Plase upload your nationalcode thumb"), 'file1');
+			return false;
+		}
 
 		$file2 = \dash\app\file::upload_quick('file2');
 		if($file2)

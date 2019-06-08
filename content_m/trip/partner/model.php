@@ -19,6 +19,12 @@ class model
 		$post['married']      = \dash\request::post('Married') ? 'married' : 'single';
 		$post['nesbat']       = \dash\request::post('nesbat');
 		$post['type']         = \dash\request::post('type');
+		$file1 = \dash\app\file::upload_quick('file1');
+		if($file1)
+		{
+			$post['file1'] = $file1;
+		}
+
 		return $post;
 	}
 

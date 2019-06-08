@@ -29,6 +29,7 @@
 {{block ('incode') }}
 {{block ('igender') }}
 {{block ('iMarried') }}
+{{block ('iNationalCodeThumb')}}
 
 <input type="hidden" name="type" value="{{travelDetail.type}}">
 
@@ -150,6 +151,20 @@
 
 
 
+
+{%block iNationalCodeThumb%}
+
+    <label for="file1">{%trans "National card photo"%}</label>
+    <div class="input ">
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="file1" id="file1" data-preview data-max="500">
+
+    </div>
+    {%if userdetail.file1%}
+      <a class="badge warn" data-confirm data-data='{"RemoveNationalThumb": 1}'>{%trans "Remove file"%}</a>
+      <a href="{{userdetail.file1}}" target="_blank"><img class="size-we200 block mLRa" src="{{userdetail.file1}}"></a>
+
+    {%endif%}
+{%endblock%}
 
 
 
