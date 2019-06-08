@@ -69,10 +69,18 @@ class view
 			$filterArgs['count'] = \dash\request::get('count');
 		}
 
-		if(\dash\request::get('seyyed'))
+		if(array_key_exists('seyyed', $_GET))
 		{
-			$args['doyon.seyyed'] = 1;
-			$filterArgs['seyyed'] = T_("Yes");
+			if(\dash\request::get('seyyed'))
+			{
+				$args['doyon.seyyed'] = 1;
+				$filterArgs['seyyed'] = T_("Yes");
+			}
+			else
+			{
+				$args['doyon.seyyed'] = null;
+				$filterArgs['seyyed'] = T_("No");
+			}
 		}
 
 		if(\dash\request::get('price'))

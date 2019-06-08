@@ -153,7 +153,16 @@
       <tr>
 
         <td><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
-        <td><a href="{{url.this}}?title={{value.title}}">{%if value.seyyed%} <a href="{{url.this}}?seyyed=1"><i title="سید" class="sf-user fc-green"></i></a> {%endif%} {{value.title}}</a></td>
+        <td><a href="{{url.this}}?title={{value.title}}">
+          {%if value.type == 'fetriye'%}
+          {%if value.seyyed%}
+            <a href="{{url.this}}?seyyed=1"><i title="سید" class="sf-user fc-green"></i></a>
+          {%else%}
+            <a href="{{url.this}}?seyyed=0"><i title="عام" class="sf-user"></i></a>
+          {%endif%}
+          {%endif%}
+           {{value.title}}</a></td>
+
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
         <td><a href="{{url.this}}?count={{value.count}}">{{value.count |fitNumber}}</a></td>
         <td><a href="{{url.this}}?priceone={{value.priceone}}">{{value.priceone | fitNumber}}</a></td>
