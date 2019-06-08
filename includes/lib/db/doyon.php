@@ -107,6 +107,19 @@ class doyon
 		$query = "SELECT doyon.type AS `type`, SUM(doyon.price) AS `count` FROM doyon WHERE doyon.status = 'pay' $where GROUP BY doyon.type";
 		$result = \dash\db::get($query, ['type', 'count']);
 
+		$query_fetriye = "SELECT IF(doyon.seyyed,'seyyed', 'aam') as `type` , SUM(doyon.price) AS `count` FROM doyon WHERE doyon.status = 'pay' AND doyon.type = 'fetriye' $where GROUP BY doyon.seyyed";
+		$result_fetriye = \dash\db::get($query_fetriye, ['type', 'count']);
+
+		if(isset($result_fetriye['seyyed']))
+		{
+			$result['fetriye_seyyed'] = $result_fetriye['seyyed'];
+		}
+
+		if(isset($result_fetriye['aam']))
+		{
+			$result['fetriye_aam'] = $result_fetriye['aam'];
+		}
+
 		return $result;
 	}
 

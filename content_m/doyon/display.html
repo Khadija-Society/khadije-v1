@@ -15,6 +15,23 @@
     </div>
 
     <div class="c s12">
+      <a href="{{url.this}}?type=fetriye&seyyed=1" class="dcard x1 {%if requestGET.type == 'fetriye' and requestGET.seyyed%} active {%endif%}">
+       <div class="statistic">
+        <div class="value">{{typeCount.fetriye_seyyed | fitNumber}}</div>
+        <div class="label">فطریه سید</div>
+       </div>
+      </a>
+    </div>
+    <div class="c s12">
+      <a href="{{url.this}}?type=fetriye&seyyed=0" class="dcard x1 {%if requestGET.type == 'fetriye' and requestGET.seyyed is null%} active {%endif%}">
+       <div class="statistic">
+        <div class="value">{{typeCount.fetriye_aam | fitNumber}}</div>
+        <div class="label">فطریه عام</div>
+       </div>
+      </a>
+    </div>
+
+    <div class="c s12">
       <a href="{{url.this}}?type=kafarat" class="dcard x1 {%if requestGET.type == 'kafarat'%} active {%endif%}">
        <div class="statistic">
         <div class="value">{{typeCount.kafarat | fitNumber}}</div>
