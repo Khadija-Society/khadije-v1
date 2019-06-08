@@ -2,12 +2,17 @@
 
 
 {%block profileForm%}
+{%if url.module in ['group']%}
+{%set GroupMode = true%}
+{%endif%}
 
 <div class="f justify-center">
  <div class="c9 s12">
   <form class="cbox" method="post" autocomplete="off" enctype="multipart/form-data">
+    {%if GroupMode%}
    <div class="msg warn txtC txtB">در این مرحله اطلاعات خود را به‌عنوان مسئول کاروان وارد کنید.<br>
 بعد از اتمام این مرحله شما وارد مرحله ثبت‌نام اعضای کاروان خواهید شد.</div>
+    {%endif%}
 
    <div class="f">
     <div class="c6 s12 pRa5">{{block ('iname') }}</div>
@@ -88,7 +93,7 @@
 
 
 {%block iNationalCodeThumb%}
-    <label for="file1">تصویر کارت ملی مسئول کاروان</label>
+    <label for="file1">{%if GroupMode%}تصویر کارت ملی مسئول کاروان{%else%}{%trans "Nationalcode thumb"%}{%endif%}</label>
     <div class="input ">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="file1" id="file1" data-preview data-max="500">
 
