@@ -2,7 +2,7 @@
 
 
 {%block pageContent%}
-  {{block('GlanceDetail')}}
+  {{block('GlanceDetailPlace')}}
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -72,6 +72,72 @@
           </div>
         </div>
       </div>
+
+  <h6 class="mT10" data-kerkere='.showFilterStatus' data-kerkere-icon>{%trans "Filter by status"%}</h6>
+  <div class="showFilterStatus" {%if not requestGET.status%} data-kerkere-content='hide' {%endif%}>
+
+    <div class="f">
+      <div class="c6 s12">
+
+       <div class="radio1 blue">
+        <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if requestGET.status == 'awaiting'  %} checked{%endif%}>
+        <label for="r-awaiting">{%trans "Awaiting"%} <small>{%trans "send new complete request"%}</small></label>
+       </div>
+
+       <div class="radio1 red">
+        <input type="radio" id="r-spam" name="status" value="spam" {%if requestGET.status == 'spam' %} checked{%endif%}>
+        <label for="r-spam">{%trans "Spam"%} <small>{%trans "inapropirate request and spam detected"%}</small></label>
+       </div>
+
+       <div class="radio1 yellow">
+        <input type="radio" id="r-review" name="status" value="review" {%if requestGET.status == 'review' %} checked{%endif%}>
+        <label for="r-review">{%trans "Review"%} <small>{%trans "after check and before accept"%}</small></label>
+       </div>
+
+       <div class="radio1 blue">
+        <input type="radio" id="r-queue" name="status" value="queue" {%if requestGET.status == 'queue' %} checked{%endif%}>
+        <label for="r-queue">{%trans "queue"%} <small>{%trans "In queue of send"%}</small></label>
+       </div>
+
+       <div class="radio1 green">
+        <input type="radio" id="r-gone" name="status" value="gone" {%if requestGET.status == 'gone' %} checked{%endif%}>
+        <label for="r-gone">{%trans "Gone"%} <small>{%trans "successfully go to trip"%}</small></label>
+       </div>
+
+
+      </div>
+      <div class="c6 s12">
+
+       <div class="radio1 black">
+        <input type="radio" id="r-draft" name="status" value="draft" {%if requestGET.status == 'draft'  %} checked{%endif%}>
+        <label for="r-draft">{%trans "Draft"%} <small>{%trans "try to fill request"%}</small></label>
+       </div>
+
+       <div class="radio1 yellow">
+        <input type="radio" id="r-cancel" name="status" value="cancel" {%if requestGET.status == 'cancel' %} checked{%endif%}>
+        <label for="r-cancel">{%trans "Cancel"%} <small>{%trans "cancel from user"%}</small></label>
+       </div>
+
+       <div class="radio1 red">
+        <input type="radio" id="r-reject" name="status" value="reject" {%if requestGET.status == 'reject' %} checked{%endif%}>
+        <label for="r-reject">{%trans "Reject"%} <small>{%trans "does not accepted for some reason"%}</small></label>
+       </div>
+
+       <div class="radio1 black">
+        <input type="radio" id="r-notanswer" name="status" value="notanswer" {%if requestGET.status == 'notanswer'%} checked{%endif%} >
+        <label for="r-notanswer">{%trans "Not Answer"%} <small>{%trans "not answer to call check"%}</small></label>
+       </div>
+
+
+       <div class="radio1 yellow">
+        <input type="radio" id="r-admincancel" name="status" value="admincancel" {%if requestGET.status == 'admincancel'%} checked{%endif%} >
+        <label for="r-admincancel">{%trans "Admin Cancel"%} <small>{%trans "delete from admin"%}</small></label>
+       </div>
+      </div>
+     </div>
+
+  </div>
+
 
   <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
   <button class="btn primary2">{%trans "Apply"%}</button>
@@ -188,6 +254,50 @@
        </div>
       </div>
     </div>
+  </div>
+{%endblock%}
+
+
+
+{%block GlanceDetailPlace%}
+  <div class="f">
+
+    <div class="c3 s6">
+      <a href="{{url.this}}" class="dcard x1">
+       <div class="statistic blue">
+        <div class="value">{{totalRequest | fitNumber}}</div>
+        <div class="label">{%trans "Total Request"%}</div>
+       </div>
+      </a>
+    </div>
+
+    <div class="c3 s6">
+      <a href="{{url.this}}?place=qom&status=gone" class="dcard x1">
+       <div class="statistic blue">
+        <div class="value">{{requestCount.qom | fitNumber}}</div>
+        <div class="label">{%trans "Qom"%}</div>
+       </div>
+      </a>
+    </div>
+
+    <div class="c3 s6">
+      <a href="{{url.this}}?place=mashhad&status=gone" class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{requestCount.mashhad | fitNumber}}</div>
+        <div class="label">{%trans "Mashhad"%}</div>
+       </div>
+      </a>
+    </div>
+
+     <div class="c3 s6">
+      <a href="{{url.this}}?place=karbala&status=gone" class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{requestCount.karbala | fitNumber}}</div>
+        <div class="label">{%trans "Karbala"%}</div>
+       </div>
+      </a>
+    </div>
+
   </div>
 {%endblock%}
 

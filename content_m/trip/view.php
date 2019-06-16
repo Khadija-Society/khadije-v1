@@ -223,6 +223,7 @@ class view
 		\dash\data::totalRequest(\lib\db\travels::get_total($travel_count_arg));
 		\dash\data::todayRequest(\lib\db\travels::get_total_today($travel_count_arg));
 
+		\dash\data::requestCount(\lib\db\travels::get_count_place_gone());
 
 	}
 }

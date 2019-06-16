@@ -18,6 +18,23 @@ class travels
 		return \dash\db::query($query);
 	}
 
+	public static function get_count_place_gone()
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				travels.place
+			FROM travelusers
+			INNER JOIN travels ON travels.id = travelusers.travel_id
+			WHERE travels.status = 'gone'
+			GROUP BY travels.place
+		";
+		$result = \dash\db::get($query, ['place', 'count']);
+		return $result;
+
+	}
+
 	public static function show_count_trip($_type)
 	{
 		$query =
