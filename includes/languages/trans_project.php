@@ -13,7 +13,7 @@ class twigTransTerms
 	echo T_("Mobile");                                                                // Line 136
 	echo T_("Mobile number is not showing on site and optional");                     // Line 128
 	echo T_("Press here to send");                                                    // Line 132
-	echo T_("Send");                                                                  // Line 103
+	echo T_("Send");                                                                  // Line 152
 
 	//------------------------------------------content_delneveshte/home/messages.html
 	echo T_("Last messages");                                                         // Line 3
@@ -151,9 +151,9 @@ class twigTransTerms
 	echo T_("Start date");                                                            // Line 83
 	echo T_("End date");                                                              // Line 91
 	echo T_("Filter by group");                                                       // Line 217
-	echo T_("Clear filter");                                                          // Line 146
-	echo T_("Apply");                                                                 // Line 147
-	echo T_("Advance");                                                               // Line 158
+	echo T_("Clear filter");                                                          // Line 153
+	echo T_("Apply");                                                                 // Line 154
+	echo T_("Advance");                                                               // Line 165
 	echo T_("Detail");                                                                // Line 55
 	echo T_("Private");                                                               // Line 152
 	echo T_("fromnumber");                                                            // Line 290
@@ -364,7 +364,7 @@ class twigTransTerms
 	echo T_("Your help");                                                             // Line 124
 	echo T_("Enter a valid number");                                                  // Line 124
 	echo T_("Pay");                                                                   // Line 143
-	echo T_("First name");                                                            // Line 175
+	echo T_("First name");                                                            // Line 182
 	echo T_("Your name");                                                             // Line 151
 	echo T_("Enter a valid name");                                                    // Line 151
 	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 171
@@ -905,7 +905,7 @@ class twigTransTerms
 	echo T_("File setting");                                                          // Line 256
 
 	//-------------------------------------content_m/festival/transaction/display.html
-	echo T_("Today");                                                                 // Line 257
+	echo T_("Today");                                                                 // Line 264
 
 	//-------------------------------------------------content_m/homepage/display.html
 
@@ -918,6 +918,7 @@ class twigTransTerms
 	echo T_("Travel to");                                                             // Line 57
 	echo T_("Nationalcode thumb");                                                    // Line 96
 	echo T_("Whitout nationalcode thumb");                                            // Line 164
+	echo T_("You can upload partner list");                                           // Line 149
 	echo T_("No partner set");                                                        // Line 248
 	echo T_("National card photo");                                                   // Line 86
 	echo T_("Remove file");                                                           // Line 102
@@ -950,7 +951,7 @@ class twigTransTerms
 	//-----------------------------------------------content_m/trip/tripViewGroup.html
 	echo T_("Admin");                                                                 // Line 27
 	echo T_("Admin detail");                                                          // Line 8
-	echo T_("Partner");                                                               // Line 180
+	echo T_("Partner");                                                               // Line 187
 	echo T_("Settings");                                                              // Line 66
 	echo T_("Copy");                                                                  // Line 84
 
@@ -969,7 +970,8 @@ class twigTransTerms
 	echo T_("not answer to call check");                                              // Line 341
 	echo T_("Admin Cancel");                                                          // Line 347
 	echo T_("delete from admin");                                                     // Line 347
-	echo T_("If you change the travel status to gone mode the system set all nationalcode of this partner as gone to this place");// Line 90
+	echo T_("Delete");                                                                // Line 28
+	echo T_("If you change the travel status to gone mode the system set all nationalcode of this partner as gone to this place");// Line 96
 	echo T_("Gone");                                                                  // Line 317
 	echo T_("successfully go to trip");                                               // Line 317
 
@@ -997,10 +999,10 @@ class twigTransTerms
 	echo T_("Filter by start date and end date");                                     // Line 41
 	echo T_("Filter by place");                                                       // Line 58
 	echo T_("Filter by status");                                                      // Line 80
-	echo T_("Search in trips");                                                       // Line 159
-	echo T_("ID");                                                                    // Line 174
-	echo T_("Birthdate");                                                             // Line 177
-	echo T_("Total Request");                                                         // Line 273
+	echo T_("Search in trips");                                                       // Line 166
+	echo T_("ID");                                                                    // Line 181
+	echo T_("Birthdate");                                                             // Line 184
+	echo T_("Total Request");                                                         // Line 280
 
 	//----------------------------------------------------content_m/trip/tripView.html
 	echo T_("Profile");                                                               // Line 22
@@ -1043,7 +1045,6 @@ class twigTransTerms
 	//----------------------------------------content_m/options/cityplace/display.html
 	echo T_("List of city place");                                                    // Line 22
 	echo T_("Place");                                                                 // Line 60
-	echo T_("Delete");                                                                // Line 28
 	echo T_("Please select one items");                                               // Line 60
 	echo T_("Enter a valid place");                                                   // Line 72
 
