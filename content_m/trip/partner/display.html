@@ -49,6 +49,17 @@
 </div>
 {%endblock%}
 
+
+
+
+{%block iImportPartner%}
+<div class="input ">
+ <input type="file" accept=".csv" name="partnerFile" id="partnerFile" >
+ <label for="partnerFile" title="Partner file">
+ </label>
+</div>
+{%endblock%}
+
 {%block partnertList%}
 
 
@@ -134,6 +145,13 @@
 </table>
 
 {%else%}
+   <div class="msg">
+      <h5>{%trans "You can upload partner list"%}</h5>
+      <form method="post" enctype="multipart/form-data">
+        {{block('iImportPartner')}}
+        <button class="btn success2 block">{%trans "Send"%}</button>
+      </form>
+   </div>
    <p class="msg txtC">{%trans "No partner set"%}</p>
 {%endif%}
 

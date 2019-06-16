@@ -31,6 +31,27 @@ class model
 
 	public static function post()
 	{
+		$file = \dash\app\file::upload_quick('partnerFile');
+		if($file)
+		{
+			$travelPartner = \lib\db\travelusers::get_travel_child(\dash\request::get('id'));
+			if($travelPartner)
+			{
+				\dash\notif::error(T_("You can not add any partner to this trip"));
+				\dash\redirect::pwd();
+				return;
+			}
+
+			self::import($file);
+
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::pwd();
+			}
+
+			return;
+		}
+
 		if(\dash\request::post('export') === 'export_partner')
 		{
 
@@ -161,5 +182,60 @@ class model
 		}
 	}
 
+
+
+	private static function import($_addr)
+	{
+		$get = \dash\utility\import::csv($_addr);
+		if(!is_array($get))
+		{
+			\dash\notif::error(T_("File is not valid"));
+			return false;
+		}
+
+		$check = self::check_import($get);
+
+		if(!$check)
+		{
+			return false;
+		}
+
+		$i = 0;
+		foreach ($check as $key => $value)
+		{
+			$i++;
+			$add_new                       = $value;
+			$add_new['not_force_birthday'] = true;
+			$add_new['travel_id']          = \dash\request::get('id');
+			\lib\app\myuser::add_child($add_new);
+		}
+
+		\dash\notif::ok(T_("Import successfully"). ', '. T_(":val rows imported", ['val' => \dash\utility\human::fitNumber($i)]));
+		return true;
+	}
+
+
+	private static function check_import($_array)
+	{
+		$is_ok = true;
+		$new_value = [];
+		foreach ($_array as $key => $value)
+		{
+			\dash\app::variable($value);
+			$temp = \lib\app\myuser::check();
+
+			if($temp === false || !\dash\engine\process::status())
+			{
+				\dash\notif::info(T_("Error in line :line", ['line' => $key + 1]));
+				return false;
+			}
+			$new_value[] = $temp;
+
+
+
+		}
+
+		return $new_value;
+	}
 }
 ?>
