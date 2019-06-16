@@ -445,10 +445,13 @@ class twigTransTerms
 
 	//-----------------------------------------addons/content_cms/sitemap/display.html
 	echo T_("Create sitemap automatically by click on this page");                    // Line 6
-	echo T_("Base Sitemap");                                                          // Line 7
-	echo T_("Sitemap Detail");                                                        // Line 8
-	echo T_("Create it Again");                                                       // Line 9
-	echo T_("Create Sitemap Result");                                                 // Line 16
+	echo T_("Base Sitemap");                                                          // Line 9
+	echo T_("Sitemap Directory");                                                     // Line 13
+	echo T_("Create sitemap now!");                                                   // Line 17
+	echo T_("Create it Again");                                                       // Line 19
+	echo T_("Remove all  sitemap files");                                             // Line 25
+	echo T_("Sitemap Result");                                                        // Line 37
+	echo T_("Item");                                                                  // Line 57
 
 	//-------------------------------------------addons/content_cms/terms/display.html
 	echo T_("Tag color");                                                             // Line 73
