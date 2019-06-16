@@ -28,6 +28,7 @@ class travels
 			FROM travelusers
 			INNER JOIN travels ON travels.id = travelusers.travel_id
 			WHERE travels.status = 'gone'
+			AND travels.type = 'group'
 			GROUP BY travels.place
 		";
 		$result = \dash\db::get($query, ['place', 'count']);

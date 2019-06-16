@@ -2,7 +2,11 @@
 
 
 {%block pageContent%}
+{%if url.module == 'trip'%}
   {{block('GlanceDetailPlace')}}
+{%else%}
+  {{block('GlanceDetail')}}
+{%endif%}
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -263,7 +267,7 @@
   <div class="f">
 
     <div class="c3 s6">
-      <a href="{{url.this}}" class="dcard x1">
+      <a href="{{url.this}}" class="dcard x1 {%if not requestGET.place and not requestGET.status %} active {%endif%}">
        <div class="statistic blue">
         <div class="value">{{totalRequest | fitNumber}}</div>
         <div class="label">{%trans "Total Request"%}</div>
@@ -272,7 +276,7 @@
     </div>
 
     <div class="c3 s6">
-      <a href="{{url.this}}?place=qom&status=gone" class="dcard x1">
+      <a href="{{url.this}}?place=qom&status=gone" class="dcard x1 {%if requestGET.place == 'qom' and requestGET.status == 'gone'%} active {%endif%}">
        <div class="statistic blue">
         <div class="value">{{requestCount.qom | fitNumber}}</div>
         <div class="label">{%trans "Qom"%}</div>
@@ -281,7 +285,7 @@
     </div>
 
     <div class="c3 s6">
-      <a href="{{url.this}}?place=mashhad&status=gone" class="dcard x1">
+      <a href="{{url.this}}?place=mashhad&status=gone" class="dcard x1 {%if requestGET.place == 'mashhad' and requestGET.status == 'gone'%} active {%endif%}">
        <div class="statistic">
         <div class="value">{{requestCount.mashhad | fitNumber}}</div>
         <div class="label">{%trans "Mashhad"%}</div>
@@ -290,7 +294,7 @@
     </div>
 
      <div class="c3 s6">
-      <a href="{{url.this}}?place=karbala&status=gone" class="dcard x1">
+      <a href="{{url.this}}?place=karbala&status=gone" class="dcard x1 {%if requestGET.place == 'karbala' and requestGET.status == 'gone'%} active {%endif%}">
        <div class="statistic">
         <div class="value">{{requestCount.karbala | fitNumber}}</div>
         <div class="label">{%trans "Karbala"%}</div>
