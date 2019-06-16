@@ -137,6 +137,13 @@
         <input type="radio" id="r-admincancel" name="status" value="admincancel" {%if requestGET.status == 'admincancel'%} checked{%endif%} >
         <label for="r-admincancel">{%trans "Admin Cancel"%} <small>{%trans "delete from admin"%}</small></label>
        </div>
+
+       <div class="radio1 red">
+        <input type="radio" id="r-delete" name="status" value="delete" {%if requestGET.status == 'delete'%} checked{%endif%} >
+        <label for="r-delete">{%trans "Delete"%}</label>
+       </div>
+
+
       </div>
      </div>
 
