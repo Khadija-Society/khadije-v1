@@ -27,9 +27,31 @@ class travelusers
 				users.*,
 				travelusers.id AS `id`,
 				travelusers.user_id AS `user_id`,
-				nationalcodes.qom AS `qom`,
-				nationalcodes.mashhad AS `mashhad`,
-				nationalcodes.karbala AS `karbala`
+				(
+					SELECT COUNT(*)
+					FROM travelusers
+					INNER JOIN travels ON travels.id = travelusers.travel_id
+					WHERE travelusers.user_id = users.id
+					AND travels.place = 'qom'
+					AND travels.status = 'gone'
+				) AS `qom`,
+				(
+					SELECT COUNT(*)
+					FROM travelusers
+					INNER JOIN travels ON travels.id = travelusers.travel_id
+					WHERE travelusers.user_id = users.id
+					AND travels.place = 'mashhad'
+					AND travels.status = 'gone'
+				) AS `mashhad`,
+				(
+					SELECT COUNT(*)
+					FROM travelusers
+					INNER JOIN travels ON travels.id = travelusers.travel_id
+					WHERE travelusers.user_id = users.id
+					AND travels.place = 'karbala'
+					AND travels.status = 'gone'
+				) AS `karbala`
+
 			FROM users
 			INNER JOIN travelusers ON travelusers.user_id = users.id
 			LEFT JOIN nationalcodes ON nationalcodes.nationalcode = users.nationalcode
@@ -37,6 +59,7 @@ class travelusers
 			travelusers.travel_id = $_travel_id
 		";
 		$result = \dash\db::get($query);
+		// j($result);
 		return $result;
 	}
 

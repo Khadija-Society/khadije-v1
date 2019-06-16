@@ -132,9 +132,9 @@ class travels
 			",
 			'public_show_field' =>
 			"
-				nationalcodes.qom    AS `qom`,
-				nationalcodes.mashhad AS `mashhad`,
-				nationalcodes.karbala AS `karbala`,
+				(SELECT COUNT(*) FROM travels AS `qomTravel` WHERE qomTravel.user_id = travels.user_id AND qomTravel.place = 'qom' AND qomTravel.status = 'gone' ) AS `qom`,
+				(SELECT COUNT(*) FROM travels AS `mashhadTravel` WHERE mashhadTravel.user_id = travels.user_id AND mashhadTravel.place = 'mashhad' AND mashhadTravel.status = 'gone' ) AS `mashhad`,
+				(SELECT COUNT(*) FROM travels AS `karbalaTravel` WHERE karbalaTravel.user_id = travels.user_id AND karbalaTravel.place = 'karbala' AND karbalaTravel.status = 'gone' ) AS `karbala`,
 				users.firstname      AS `firstname`,
 				users.mobile         AS `mobile`,
 				users.birthday       AS `birthday`,
@@ -161,12 +161,13 @@ class travels
 			'master_join'       =>
 			"
 				INNER JOIN users ON users.id = travels.user_id
-				LEFT JOIN nationalcodes ON nationalcodes.nationalcode = users.nationalcode
 			",
 		];
 
 		$_options = array_merge($default_option, $_options);
-		return \dash\db\config::public_search('travels', $_string, $_options);
+		$result = \dash\db\config::public_search('travels', $_string, $_options);
+		// j($result);
+		return $result;
 	}
 
 
@@ -218,7 +219,7 @@ class travels
 				null,
 				null,
 				travels.type,
-				'awaiting',
+				travels.status,
 				travels.desc,
 				'$meta'
 			FROM travels
