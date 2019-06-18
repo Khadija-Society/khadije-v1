@@ -80,10 +80,14 @@ class model
 				$post['file1'] = $file1;
 			}
 
-			if(!$file1)
+			if(\dash\data::tripDetail_place() === 'mashhad')
 			{
-				\dash\notif::error(T_("Pleas upload partner nationalcode thumb"), 'file1');
-				return false;
+				if(!$file1)
+				{
+					\dash\notif::error(T_("Pleas upload partner nationalcode thumb"), 'file1');
+					return false;
+				}
+
 			}
 
 			\lib\app\myuser::add_child($post);
