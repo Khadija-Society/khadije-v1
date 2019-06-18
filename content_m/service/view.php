@@ -19,6 +19,9 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/service/options');
 		\dash\data::badge_text(T_('Options'));
 
+		\dash\data::badge2_link(\dash\url::this(). '?'. http_build_query(array_merge($_GET, ['export' => 'true'])));
+		\dash\data::badge2_text(T_('Export'));
+
 		\dash\data::bodyclass('unselectable');
 		\dash\data::include_adminPanel(true);
 		\dash\data::include_css(false);
