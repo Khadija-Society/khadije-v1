@@ -76,6 +76,7 @@ class sms
 		$day              = [];
 		$day['send']      = \lib\db\sms::get_count_sms('day', 'send', $_gateway);
 		$day['receive']   = \lib\db\sms::get_count_sms('day', 'receive', $_gateway);
+		$day['date']      = \dash\datetime::fit(null, true, 'date');
 
 		$week             = [];
 		$week['send']     = \lib\db\sms::get_count_sms('week', 'send', $_gateway);
