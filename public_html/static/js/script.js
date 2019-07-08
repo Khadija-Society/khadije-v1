@@ -39,7 +39,7 @@ function bindCustomWay()
         // hide count
         $('.donateForm .countSelector').slideUp('fast');
         // disable readonly of amount
-        $('.donateForm input[name="amount"]').prop('readonly', false).val('').parents('.input').removeClass('disabled');
+        $('.donateForm input[name="amount"]').prop('readonly', false).val('').trigger('input').parents('.input').removeClass('disabled');
       }
 
     }
@@ -65,7 +65,6 @@ function bindCustomWay()
         // hide count
         $('.donateForm .countSelector').slideDown('fast');
         $('.donateForm .countSelector input').attr('data-price', myValPrice).val(1).trigger('input');
-      console.log('changed');
         // disable readonly of amount
         $('.donateForm input[name="amount"]').prop('readonly', true).parents('.input').addClass('disabled');
     }
@@ -73,7 +72,6 @@ function bindCustomWay()
 
   $('.donateForm input[name="totalCount"]').on('input', function()
   {
-    console.log('changed');
     var myCount = $(this).val();
     var myPrice = $(this).attr('data-price');
 
