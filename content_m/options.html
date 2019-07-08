@@ -68,7 +68,7 @@
           <tbody>
             {%for key, value in need%}
               <tr {%if value.status == 'enable'%}{%else%} class="negative" {%endif%}>
-                <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}"></td>
+                <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}" alt="default image"></td>
                 <td>
                   {%if value.term%}<i class="sf-check fc-green" title='{%trans "This method have term and conditions"%}'></i>{%endif%}
                   {{value.title}}
@@ -98,7 +98,7 @@
                   {%endif%}
                 </td>
                 <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
-                <td class="collapsing"><a href="{{url.this}}/options?edit={{value.id}}" ><button class="btn secondary xs">{%trans "Edit"%}</button></a></td>
+                <td class="collapsing"><a class="btn secondary xs" href="{{url.this}}/options?edit={{value.id}}">{%trans "Edit"%}</a></td>
               </tr>
             {%endfor%}
           </tbody>
@@ -141,9 +141,9 @@
 
 
 {%block iLanguage%}
-<label for="language">{%trans "Language"%}</label>
-<select name="language" class="select">
-  <option value=""><i>{%trans "Please select one item"%}</i></option>
+<label for="languageIn">{%trans "Language"%}</label>
+<select name="language" id='languageIn' class="select">
+  <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in lang.list%}
     {%if key | length == 2%}
     <option value="{{key}}" {%if productDetail.lang == key or (not productDetail and lang.current == key) %} selected {%endif%}>{{value}}</option>
@@ -157,14 +157,14 @@
 {%block iTitle%}
 <label for='ftitle'>{%trans "Title"%}</label>
 <div class="input">
- <input type="text" name="title" placeholder='{%trans "Title"%}' value="{{productDetail.title}}" autofocus  maxlength='50' minlength="1" title='{%trans "Enter a valid title"%}' id='ftitle'>
+ <input type="text" name="title" placeholder='{%trans "Title"%}' value="{{productDetail.title}}" autofocus maxlength='50' minlength="1" title='{%trans "Enter a valid title"%}' id='ftitle'>
 </div>
 {%endblock%}
 
 {%block iLinkurl%}
 <label for='slug'>{%trans "Slug"%}</label>
 <div class="input ltr">
- <input type="text" name="linkurl" placeholder='{%trans "Slug"%}' value="{{productDetail.linkurl}}" autofocus  maxlength='50' minlength="1" id='slug'>
+ <input type="text" name="linkurl" placeholder='{%trans "Slug"%}' value="{{productDetail.linkurl}}" maxlength='50' minlength="1" id='slug'>
 </div>
 {%endblock%}
 
@@ -242,7 +242,7 @@
 {%block iSort%}
 <label for='isort'>{%trans "Sort"%}</label>
 <div class="input">
- <input type="number" name="sort" placeholder='{%trans "Sort"%}' value="{{productDetail.sort}}" maxlength='50' minlength="1" title='{%trans "Enter a valid sort"%}' id='isort'>
+ <input type="number" name="sort" placeholder='{%trans "Sort"%}' value="{{productDetail.sort}}" max='9999' min="1" title='{%trans "Enter a valid sort"%}' id='isort'>
 </div>
 {%endblock%}
 
