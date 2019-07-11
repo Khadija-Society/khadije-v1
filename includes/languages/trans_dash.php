@@ -4,15 +4,27 @@ class twigTransTerms
  private function transtext()
  {
 
-	//---------------------------------------addons/content_api/v6/doc/60-android.html
-	echo T_("Get android detail");                                                    // Line 71
-	echo T_("Get details like pages, language list, translations, and more.");        // Line 10
-	echo T_("cURL");                                                                  // Line 220
+	//-----------------------------------addons/content_api/v6/doc/21-get-profile.html
+	echo T_("Get profile detail");                                                    // Line 59
+	echo T_("Required parameters");                                                   // Line 18
+	echo T_("on header");                                                             // Line 18
+	echo T_("Name");                                                                  // Line 55
+	echo T_("type");                                                                  // Line 16
+	echo T_("Description");                                                           // Line 51
 	echo T_("example");                                                               // Line 37
-	echo T_("Response");                                                              // Line 238
+	echo T_("Constraints");                                                           // Line 24
+	echo T_("Your apikey");                                                           // Line 35
+	echo T_("Required");                                                              // Line 39
+	echo T_("length");                                                                // Line 40
+	echo T_("cURL");                                                                  // Line 48
+	echo T_("Response");                                                              // Line 51
+
+	//---------------------------------------addons/content_api/v6/doc/60-android.html
+	echo T_("Get android detail");                                                    // Line 83
+	echo T_("Get details like pages, language list, translations, and more.");        // Line 10
 
 	//--------------------------------------addons/content_api/v6/doc/03-requests.html
-	echo T_("Requests");                                                              // Line 45
+	echo T_("Requests");                                                              // Line 51
 	echo T_("Any tool that is fluent in HTTP can communicate with the API simply by requesting the correct URI.");// Line 6
 	echo T_("Requests should be made using the HTTPS protocol so that traffic is encrypted.");// Line 6
 	echo T_("The interface responds to different methods depending on the action required.");// Line 6
@@ -42,17 +54,9 @@ class twigTransTerms
 	echo T_("It also contains metrics about the total number of objects found, pagination information, and the total content length.");// Line 69
 
 	//------------------------------------addons/content_api/v6/doc/40-user-login.html
-	echo T_("Login user");                                                            // Line 53
+	echo T_("Login user");                                                            // Line 65
 	echo T_("Login user and get new apikey for this user");                           // Line 8
-	echo T_("Required parameters");                                                   // Line 45
-	echo T_("on header");                                                             // Line 15
-	echo T_("Name");                                                                  // Line 55
-	echo T_("type");                                                                  // Line 16
-	echo T_("Description");                                                           // Line 51
-	echo T_("Constraints");                                                           // Line 51
 	echo T_("Your temporary token");                                                  // Line 31
-	echo T_("Required");                                                              // Line 107
-	echo T_("length");                                                                // Line 36
 	echo T_("To get this token see");                                                 // Line 37
 	echo T_("Read more");                                                             // Line 53
 	echo T_("Your temporary apikey");                                                 // Line 47
@@ -61,29 +65,48 @@ class twigTransTerms
 	echo T_("Min length");                                                            // Line 84
 
 	//-----------------------------------------addons/content_api/v6/doc/55-notif.html
-	echo T_("Get notification list");                                                 // Line 69
+	echo T_("Get notification list");                                                 // Line 81
 	echo T_("Get list of your notification");                                         // Line 8
-	echo T_("Your apikey");                                                           // Line 32
-	echo T_("Get from your account profile");                                         // Line 38
-	echo T_("Parameters");                                                            // Line 47
+	echo T_("Get from your account profile");                                         // Line 41
+	echo T_("Parameters");                                                            // Line 45
 	echo T_("If you want to set all notif of this user as read notif set this parameters as true");// Line 66
 	echo T_("Optional");                                                              // Line 210
 	echo T_("If user not read this notif, this response is null else see read date of this notif");// Line 107
 
+	//-----------------------------addons/content_api/v6/doc/71-session-terminate.html
+	echo T_("Terminate session");                                                     // Line 89
+	echo T_("Terminate one session or all session");                                  // Line 8
+	echo T_("Or");                                                                    // Line 141
+	echo T_("If type is `terminate` the id is require");                              // Line 79
+
+	//--------------------------------addons/content_api/v6/doc/23-update-profile.html
+	echo T_("Update your profile");                                                   // Line 5
+	echo T_("Update profile detail");                                                 // Line 8
+	echo T_("Example");                                                               // Line 240
+	echo T_("Your account username in");                                              // Line 215
+	echo T_("instagram");                                                             // Line 179
+	echo T_("linkedin");                                                              // Line 191
+	echo T_("facebook");                                                              // Line 203
+	echo T_("twitter");                                                               // Line 215
+
 	//------------------------------------------addons/content_api/v6/doc/display.html
-	echo T_("API");                                                                   // Line 39
-	echo T_("Introduction");                                                          // Line 41
+	echo T_("API");                                                                   // Line 45
+	echo T_("Introduction");                                                          // Line 47
 	echo T_("Endpoints");                                                             // Line 3
 	echo T_("Responses");                                                             // Line 3
 	echo T_("Token");                                                                 // Line 8
 	echo T_("Sign Up User");                                                          // Line 5
+	echo T_("Update profile");                                                        // Line 61
+	echo T_("Upload avatar");                                                         // Line 63
 	echo T_("Verify user");                                                           // Line 5
 	echo T_("Get language list");                                                     // Line 5
-	echo T_("Get about");                                                             // Line 59
-	echo T_("Get mission");                                                           // Line 61
-	echo T_("Get vision");                                                            // Line 63
-	echo T_("Get contact");                                                           // Line 65
-	echo T_("Check new notification");                                                // Line 67
+	echo T_("Get about");                                                             // Line 71
+	echo T_("Get mission");                                                           // Line 73
+	echo T_("Get vision");                                                            // Line 75
+	echo T_("Get contact");                                                           // Line 77
+	echo T_("Check new notification");                                                // Line 79
+	echo T_("Get app detail");                                                        // Line 85
+	echo T_("Session list");                                                          // Line 87
 
 	//---------------------------------------addons/content_api/v6/doc/33-contact.html
 	echo T_("Get contact text");                                                      // Line 5
@@ -103,6 +126,9 @@ class twigTransTerms
 	echo T_("Customers");                                                             // Line 17
 	echo T_("Developers");                                                            // Line 18
 	echo T_("The API documentation will start with a general overview about the design and technology that has been implemented, followed by reference information about specific endpoints.");// Line 22
+
+	//------------------------------------addons/content_api/v6/doc/61-app-detail.html
+	echo T_("Get application detail");                                                // Line 5
 
 	//---------------------------------------addons/content_api/v6/doc/31-mission.html
 	echo T_("Get mission text");                                                      // Line 5
@@ -128,8 +154,17 @@ class twigTransTerms
 	echo T_("Get access token of new connection from server");                        // Line 8
 	echo T_("APP key generated on the user panel");                                   // Line 31
 
+	//--------------------------------addons/content_api/v6/doc/22-upload-profile.html
+	echo T_("Update avatar");                                                         // Line 5
+	echo T_("Upload your avatar to change it");                                       // Line 8
+	echo T_("You file location to upload");                                           // Line 60
+
 	//--------------------------------------addons/content_api/v6/doc/20-user-add.html
 	echo T_("Add new user to service");                                               // Line 8
+
+	//----------------------------------addons/content_api/v6/doc/70-session-list.html
+	echo T_("Get session list");                                                      // Line 5
+	echo T_("Get your active session detail.");                                       // Line 10
 
 	//-------------------------------------addons/content_api/v6/doc/04-responses.html
 	echo T_("Each response is a JSON object.");                                       // Line 6
@@ -181,7 +216,7 @@ class twigTransTerms
 	echo T_("CRM Panel");                                                             // Line 65
 	echo T_("Supervisor Panel");                                                      // Line 69
 	echo T_("My Account");                                                            // Line 73
-	echo T_("Help Center");                                                           // Line 76
+	echo T_("Help Center");                                                           // Line 37
 	echo T_("Click to toggle sidebar status");                                        // Line 130
 	echo T_("View website");                                                          // Line 148
 	echo T_("Your notifications");                                                    // Line 159
@@ -238,13 +273,12 @@ class twigTransTerms
 	echo T_("Please enter valid mobile or username or email number");                 // Line 24
 	echo T_("Username or Mobile or Email");                                           // Line 24
 	echo T_("Password");                                                              // Line 160
-	echo T_("Enter a password between 7 and 40 characters");                          // Line 53
 	echo T_("Click to see your password");                                            // Line 52
 	echo T_("New Password");                                                          // Line 53
+	echo T_("Enter a password between 7 and 40 characters");                          // Line 53
 	echo T_("Password is password.");                                                 // Line 53
 	echo T_("Password?");                                                             // Line 62
 	echo T_("Verify Code");                                                           // Line 71
-	echo T_("Enter a valid code!");                                                   // Line 71
 	echo T_("Send this code to our number!");                                         // Line 79
 	echo T_("send to this number");                                                   // Line 86
 	echo T_("Send code to this number!");                                             // Line 86
@@ -268,7 +302,7 @@ class twigTransTerms
 	echo T_("Sign Up");                                                               // Line 181
 	echo T_("Set Password");                                                          // Line 188
 	echo T_("Recovery password");                                                     // Line 195
-	echo T_("Enter");                                                                 // Line 62
+	echo T_("Enter");                                                                 // Line 68
 	echo T_("Submit");                                                                // Line 171
 	echo T_("Enter with another methods");                                            // Line 228
 	echo T_("Log in with mobile");                                                    // Line 244
@@ -308,72 +342,79 @@ class twigTransTerms
 
 	//--------------------------------------------------addons/content_cms/layout.html
 	echo T_("CMS Dashboard");                                                         // Line 6
-	echo T_("Content");                                                               // Line 10
+	echo T_("Website Contents");                                                      // Line 9
 	echo T_("News");                                                                  // Line 88
 	echo T_("Categories");                                                            // Line 62
-	echo T_("Tags");                                                                  // Line 69
-	echo T_("Pages");                                                                 // Line 118
+	echo T_("Keywords");                                                              // Line 145
+	echo T_("Static Pages");                                                          // Line 22
+	echo T_("Support");                                                               // Line 33
+	echo T_("Help Center Keywords");                                                  // Line 40
+	echo T_("Ticket Topics");                                                         // Line 43
 	echo T_("Comments");                                                              // Line 33
-	echo T_("Support");                                                               // Line 38
-	echo T_("Help center");                                                           // Line 43
-	echo T_("Help tags");                                                             // Line 173
-	echo T_("Support tags");                                                          // Line 183
-	echo T_("Files");                                                                 // Line 59
-	echo T_("Library");                                                               // Line 63
-	echo T_("Add new file");                                                          // Line 66
+	echo T_("All Comments");                                                          // Line 57
+	echo T_("Awaiting");                                                              // Line 262
+	echo T_("Approved");                                                              // Line 59
+	echo T_("Spam");                                                                  // Line 68
+	echo T_("Files");                                                                 // Line 71
+	echo T_("Library");                                                               // Line 75
+	echo T_("Add new file");                                                          // Line 78
 
 	//--------------------------------------------addons/content_cms/posts/layout.html
 	echo T_("Enter title here");                                                      // Line 4
-	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
-	echo T_("Enter subtitle here");                                                   // Line 12
+	echo T_("Add Subtitle");                                                          // Line 6
+	echo T_("Subtitle");                                                              // Line 12
 	echo T_("Subtitle show under title and used on press websites");                  // Line 12
-	echo T_("Excerpt used for social media and search engines");                      // Line 19
-	echo T_("If leave it empty we are generate it automatically");                    // Line 19
-	echo T_("Url of this post.");                                                     // Line 27
-	echo T_("You can change by set slug and category or parent for this post");       // Line 27
-	echo T_("Slug");                                                                  // Line 8
-	echo T_("Slug used to create url");                                               // Line 33
+	echo T_("Enter subtitle here");                                                   // Line 12
 	echo T_("Write post ");                                                           // Line 39
-	echo T_("Allow change default publish date");                                     // Line 44
-	echo T_("Publish date");                                                          // Line 45
-	echo T_("Default is now");                                                        // Line 47
-	echo T_("Publish time");                                                          // Line 55
-	echo T_("Add to gallery");                                                        // Line 61
-	echo T_("To add image gallery drop file here or");                                // Line 11
-	echo T_("Maximum file size");                                                     // Line 17
-	echo T_("Save");                                                                  // Line 13
-	echo T_("Publish");                                                               // Line 90
-	echo T_("Draft");                                                                 // Line 76
-	echo T_("Deleted");                                                               // Line 85
-	echo T_("Comment");                                                               // Line 131
-	echo T_("You can publish in another language");                                   // Line 117
-	echo T_("Language");                                                              // Line 118
+	echo T_("Featured Image");                                                        // Line 205
+	echo T_("Remove");                                                                // Line 43
+	echo T_("Special mode");                                                          // Line 58
+	echo T_("Use Special mode");                                                      // Line 60
 	echo T_("Please select one item");                                                // Line 28
-	echo T_("Choose parent for this page to create related url as tree");             // Line 133
-	echo T_("Parent");                                                                // Line 134
-	echo T_("Choose Parent");                                                         // Line 136
-	echo T_("Without Parent");                                                        // Line 137
+	echo T_("Non");                                                                   // Line 591
+	echo T_("Category");                                                              // Line 23
 	echo T_("Choose category for posts is fix url of post relative and help people find it better.");// Line 153
-	echo T_("Choose category of post");                                               // Line 155
 	echo T_("Add new category");                                                      // Line 165
 	echo T_("Click on special tags to use this depending on your website design");    // Line 183
 	echo T_("Tag");                                                                   // Line 365
-	echo T_("Add tag manually to link articles togethers");                           // Line 195
-	echo T_("Tag keywords...");                                                       // Line 375
-	echo T_("Add tag");                                                               // Line 197
-	echo T_("Featured Image");                                                        // Line 205
-	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 208
+	echo T_("Add tag to link articles");                                              // Line 143
+	echo T_("Add");                                                                   // Line 36
+	echo T_("Allow Comments");                                                        // Line 166
+	echo T_("Publish Date");                                                          // Line 178
+	echo T_("Publish date");                                                          // Line 45
+	echo T_("Default is now");                                                        // Line 47
+	echo T_("Publish time");                                                          // Line 55
+	echo T_("Publish");                                                               // Line 90
+	echo T_("Draft");                                                                 // Line 76
+	echo T_("Deleted");                                                               // Line 85
+	echo T_("Language");                                                              // Line 118
+	echo T_("You can publish in another language");                                   // Line 117
+	echo T_("Add to gallery");                                                        // Line 61
+	echo T_("Choose or Drop file here");                                              // Line 251
+	echo T_("Maximum file size");                                                     // Line 17
+	echo T_("Google");                                                                // Line 288
+	echo T_("Customize for SEO");                                                     // Line 293
+	echo T_("SEO Title");                                                             // Line 299
+	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
+	echo T_("Parent");                                                                // Line 134
+	echo T_("Choose parent for this page to create related url as tree");             // Line 133
+	echo T_("Choose Parent");                                                         // Line 136
+	echo T_("Without Parent");                                                        // Line 137
+	echo T_("Slug");                                                                  // Line 8
+	echo T_("End part of your post url.");                                            // Line 323
+	echo T_("SEO Description");                                                       // Line 330
+	echo T_("If leave it empty we are generate it automatically");                    // Line 19
+	echo T_("Excerpt used for social media and search engines");                      // Line 19
 	echo T_("Gallery");                                                               // Line 223
 	echo T_("Click to download");                                                     // Line 66
 	echo T_("Video");                                                                 // Line 236
 	echo T_("MP3");                                                                   // Line 242
 	echo T_("PDF");                                                                   // Line 88
 	echo T_("Without preview");                                                       // Line 246
-	echo T_("Remove");                                                                // Line 43
 
 	//---------------------------------------addons/content_cms/posts/add/display.html
-	echo T_("First save as draft and do all checks, then publish.");                  // Line 26
-	echo T_("Save as draft");                                                         // Line 26
+	echo T_("First type main text and save as draft, then complete and publish it."); // Line 12
+	echo T_("Save as draft");                                                         // Line 23
 
 	//--------------------------------------addons/content_cms/posts/home/display.html
 	echo T_("Search");                                                                // Line 58
@@ -389,8 +430,9 @@ class twigTransTerms
 	echo T_("All trash posts");                                                       // Line 147
 
 	//--------------------------------------addons/content_cms/posts/edit/display.html
+	echo T_("Save");                                                                  // Line 13
 	echo T_("Icon");                                                                  // Line 45
-	echo T_("Choose icon");                                                           // Line 75
+	echo T_("Choose icon");                                                           // Line 61
 
 	//------------------------------------------addons/content_cms/backup/display.html
 	echo T_("Backup Project");                                                        // Line 6
@@ -403,19 +445,20 @@ class twigTransTerms
 
 	//---------------------------------------------addons/content_cms/cms/display.html
 	echo T_("Attachment");                                                            // Line 27
+	echo T_("Help center");                                                           // Line 43
 	echo T_("Posts");                                                                 // Line 54
 	echo T_("Page");                                                                  // Line 34
-	echo T_("Category");                                                              // Line 23
+	echo T_("Tags");                                                                  // Line 69
 
 	//------------------------------------addons/content_cms/contact/home/display.html
 	echo T_("Author");                                                                // Line 12
+	echo T_("Comment");                                                               // Line 131
 	echo T_("Without name");                                                          // Line 87
 	echo T_("Visitor detail");                                                        // Line 96
 	echo T_("Approve");                                                               // Line 43
 	echo T_("Edit");                                                                  // Line 86
 	echo T_("Unapprove");                                                             // Line 51
 	echo T_("Trash");                                                                 // Line 55
-	echo T_("Spam");                                                                  // Line 68
 	echo T_("Created on");                                                            // Line 34
 	echo T_("No record exist!");                                                      // Line 136
 
@@ -424,7 +467,6 @@ class twigTransTerms
 	echo T_("Submitted on");                                                          // Line 33
 	echo T_("Updated on");                                                            // Line 34
 	echo T_("Current status");                                                        // Line 36
-	echo T_("Awaiting");                                                              // Line 262
 	echo T_("Update");                                                                // Line 83
 
 	//--------------------------------------------addons/content_cms/home/wordcloud.js
@@ -434,7 +476,10 @@ class twigTransTerms
 	echo T_("Without title");                                                         // Line 65
 	echo T_("Latest Help center");                                                    // Line 46
 	echo T_("Latest tag");                                                            // Line 62
+	echo T_("Pages");                                                                 // Line 118
 	echo T_("Help Center Article");                                                   // Line 162
+	echo T_("Help tags");                                                             // Line 173
+	echo T_("Support tags");                                                          // Line 183
 	echo T_("Tickets");                                                               // Line 42
 	echo T_("Visitor");                                                               // Line 112
 
@@ -467,7 +512,6 @@ class twigTransTerms
 	echo T_("Pain");                                                                  // Line 88
 	echo T_("Type");                                                                  // Line 164
 	echo T_("Used");                                                                  // Line 119
-	echo T_("Add");                                                                   // Line 36
 	echo T_("Require");                                                               // Line 67
 	echo T_("Title is used to show on website");                                      // Line 180
 	echo T_("Used for url");                                                          // Line 186
@@ -539,6 +583,16 @@ class twigTransTerms
 	echo T_("person");                                                                // Line 117
 
 	//---------------------------------------addons/content_cms/attachment/layout.html
+	echo T_("Url of this post.");                                                     // Line 27
+	echo T_("You can change by set slug and category or parent for this post");       // Line 27
+	echo T_("Slug used to create url");                                               // Line 33
+	echo T_("Allow change default publish date");                                     // Line 44
+	echo T_("To add image gallery drop file here or");                                // Line 11
+	echo T_("Choose category of post");                                               // Line 155
+	echo T_("Add tag manually to link articles togethers");                           // Line 195
+	echo T_("Tag keywords...");                                                       // Line 375
+	echo T_("Add tag");                                                               // Line 197
+	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 208
 
 	//----------------------------------addons/content_cms/attachment/add/display.html
 	echo T_("Add file");                                                              // Line 10
@@ -553,6 +607,24 @@ class twigTransTerms
 	//---------------------------------------addons/content_cms/mycontact/display.html
 	echo T_("Contact");                                                               // Line 14
 	echo T_("Admin Contact");                                                         // Line 26
+
+	//------------------------------------------addons/content_mag/home/dashboard.html
+	echo T_("Search result");                                                         // Line 33
+	echo T_("No result found!");                                                      // Line 47
+	echo T_("Search our knowledge base...");                                          // Line 61
+	echo T_("Frequently Asked Questions");                                            // Line 89
+	echo T_("Random Articles");                                                       // Line 108
+	echo T_("Can't find what you're looking for?");                                   // Line 126
+	echo T_("Contact the legendary support team right now.");                         // Line 127
+
+	//--------------------------------------------addons/content_mag/home/article.html
+	echo T_("In this section");                                                       // Line 24
+	echo T_("For share via social networks");                                         // Line 55
+	echo T_("Short link");                                                            // Line 55
+	echo T_("Full Name");                                                             // Line 144
+	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 151
+	echo T_("Your Message");                                                          // Line 160
+	echo T_("Send");                                                                  // Line 18
 
 	//-----------------------------------------addons/content_enter/block/display.html
 	echo T_("You are blocked becauese of some reason!");                              // Line 7
@@ -613,7 +685,7 @@ class twigTransTerms
 	echo T_("click here!");                                                           // Line 9
 
 	//---------------------------------addons/content_enter/pass/recovery/display.html
-	echo T_("Remembered your password?");                                             // Line 56
+	echo T_("Remembered your password?");                                             // Line 58
 
 	//------------------------------------------addons/content_enter/pass/display.html
 	echo T_("Can't access your account?");                                            // Line 12
@@ -621,14 +693,14 @@ class twigTransTerms
 	//----------------------------------addons/content_enter/verify/later/display.html
 	echo T_("You must confirm your mobile in the future");                            // Line 7
 	echo T_("Verify now");                                                            // Line 10
-	echo T_("Verify later");                                                          // Line 49
+	echo T_("Verify later");                                                          // Line 50
 
 	//----------------------------------------addons/content_enter/verify/display.html
-	echo T_("Send code in your Telegram");                                            // Line 11
-	echo T_("Send code as sms to your phone");                                        // Line 18
-	echo T_("Call you to send code");                                                 // Line 25
-	echo T_("You send code to us and we check it");                                   // Line 33
-	echo T_("Send code in your email");                                               // Line 41
+	echo T_("Send code in your Telegram");                                            // Line 12
+	echo T_("Send code as sms to your phone");                                        // Line 19
+	echo T_("Call you to send code");                                                 // Line 26
+	echo T_("You send code to us and we check it");                                   // Line 34
+	echo T_("Send code in your email");                                               // Line 42
 
 	//----------------------------------addons/content_enter/verify/email/display.html
 	echo T_("We can not find any way to send verification code to you!");             // Line 6
@@ -693,7 +765,6 @@ class twigTransTerms
 	echo T_("Telegram");                                                              // Line 44
 	echo T_("Do you know you can connect your account with our Telegram bot");        // Line 426
 	echo T_("Just need to start bot in Telegram and sync your account via /sync.");   // Line 426
-	echo T_("Short link");                                                            // Line 55
 
 	//----------------------------------addons/content_support/ticket/add/display.html
 	echo T_("Please log in if you need to store this ticket and track it in the future");// Line 9
@@ -720,26 +791,14 @@ class twigTransTerms
 	echo T_("Active in this ticket");                                                 // Line 54
 
 	//--------------------------------------addons/content_support/home/dashboard.html
-	echo T_("Search result");                                                         // Line 33
-	echo T_("No result found!");                                                      // Line 47
-	echo T_("Search our knowledge base...");                                          // Line 61
-	echo T_("Frequently Asked Questions");                                            // Line 89
-	echo T_("Random Articles");                                                       // Line 108
-	echo T_("Can't find what you're looking for?");                                   // Line 126
-	echo T_("Contact the legendary support team right now.");                         // Line 127
 
 	//----------------------------------------addons/content_support/home/article.html
-	echo T_("In this section");                                                       // Line 24
-	echo T_("For share via social networks");                                         // Line 55
-	echo T_("Full Name");                                                             // Line 144
-	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 151
-	echo T_("Your Message");                                                          // Line 160
-	echo T_("Send");                                                                  // Line 18
 
 	//-------------------------------------addons/content_support/message/display.html
 	echo T_("Open new ticket!");                                                      // Line 31
 
 	//--------------------------------addons/content_support/message/edit/display.html
+	echo T_("Content");                                                               // Line 10
 
 	//-----------------------------------------addons/content_support/tag/display.html
 
@@ -805,7 +864,7 @@ class twigTransTerms
 
 	//---------------------------------addons/content_crm/member/security/display.html
 	echo T_("Delete user");                                                           // Line 35
-	echo T_("Are you sure to delete this user?");                                     // Line 141
+	echo T_("Are you sure to delete this user?");                                     // Line 147
 	echo T_("User have chatid");                                                      // Line 52
 	echo T_("Remove chatid");                                                         // Line 56
 	echo T_("chatid");                                                                // Line 64
@@ -912,7 +971,6 @@ class twigTransTerms
 	echo T_("Have duplicate email");                                                  // Line 304
 	echo T_("Have duplicate username");                                               // Line 311
 	echo T_("Have android_uniquecode");                                               // Line 325
-	echo T_("Non");                                                                   // Line 591
 	echo T_("Have language");                                                         // Line 344
 	echo T_("Have not language");                                                     // Line 351
 	echo T_("Have permission");                                                       // Line 390
@@ -933,14 +991,14 @@ class twigTransTerms
 	//-----------------------------------addons/content_crm/member/glance/display.html
 	echo T_("Field");                                                                 // Line 26
 	echo T_("Decode");                                                                // Line 26
-	echo T_("Copy mobile");                                                           // Line 54
-	echo T_("Send SMS");                                                              // Line 59
-	echo T_("Telegrams");                                                             // Line 158
-	echo T_("Join at");                                                               // Line 183
-	echo T_("Android");                                                               // Line 179
+	echo T_("Copy mobile");                                                           // Line 59
+	echo T_("Send SMS");                                                              // Line 65
+	echo T_("Telegrams");                                                             // Line 164
+	echo T_("Join at");                                                               // Line 189
+	echo T_("Android");                                                               // Line 185
 	echo T_("Version");                                                               // Line 13
-	echo T_("Manufacturer");                                                          // Line 181
-	echo T_("Serial");                                                                // Line 182
+	echo T_("Manufacturer");                                                          // Line 187
+	echo T_("Serial");                                                                // Line 188
 
 	//---------------------------addons/content_crm/member/identification/display.html
 	echo T_("ID Cards");                                                              // Line 17

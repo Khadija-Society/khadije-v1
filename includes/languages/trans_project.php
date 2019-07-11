@@ -158,7 +158,7 @@ class twigTransTerms
 	echo T_("Private");                                                               // Line 152
 	echo T_("fromnumber");                                                            // Line 290
 	echo T_("Send to analyze");                                                       // Line 316
-	echo T_("Archive");                                                               // Line 235
+	echo T_("Archive");                                                               // Line 229
 
 	//--------------------------------------content_smsapp/recommendgroup/display.html
 	echo T_("You can register some recommend text to this group to help you.");       // Line 7
@@ -329,18 +329,18 @@ class twigTransTerms
 	echo T_("Biography");                                                             // Line 181
 	echo T_("Bibliography");                                                          // Line 182
 	echo T_("Specialized sites");                                                     // Line 183
-	echo T_("My love story book");                                                    // Line 157
+	echo T_("My love story book");                                                    // Line 151
 	echo T_("Requests");                                                              // Line 27
 	echo T_("Individual registration");                                               // Line 10
 	echo T_("Group registration");                                                    // Line 9
-	echo T_("Servants registration");                                                 // Line 112
+	echo T_("Servants registration");                                                 // Line 106
 	echo T_("Consulting service");                                                    // Line 202
 	echo T_("Health service");                                                        // Line 42
 	echo T_("Other services");                                                        // Line 208
-	echo T_("Deputy pilgrimage");                                                     // Line 134
+	echo T_("Deputy pilgrimage");                                                     // Line 128
 	echo T_("Delneveshteha");                                                         // Line 5
-	echo T_("Balloting names");                                                       // Line 141
-	echo T_("Virtual pilgrimage");                                                    // Line 119
+	echo T_("Balloting names");                                                       // Line 135
+	echo T_("Virtual pilgrimage");                                                    // Line 113
 	echo T_("Help");                                                                  // Line 219
 	echo T_("Doners");                                                                // Line 34
 	echo T_("Other Languages");                                                       // Line 226
@@ -374,7 +374,7 @@ class twigTransTerms
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
 	echo T_("It is optional and depending on your intention can enter it");           // Line 202
-	echo T_("Pay Amount");                                                            // Line 184
+	echo T_("Pay Amount");                                                            // Line 178
 	echo T_("Rial");                                                                  // Line 330
 	echo T_("Amount of your donation");                                               // Line 211
 	echo T_("Total Pay Amount");                                                      // Line 206
@@ -456,7 +456,7 @@ class twigTransTerms
 	echo T_("Group trip signup");                                                     // Line 85
 	echo T_("Click to go to download page");                                          // Line 79
 	echo T_("Download love story book");                                              // Line 80
-	echo T_("Shahid Mahdi Imani");                                                    // Line 256
+	echo T_("Shahid Mahdi Imani");                                                    // Line 250
 	echo T_("Do you know?");                                                          // Line 80
 	echo T_("Mashhad");                                                               // Line 24
 	echo T_("Karbala");                                                               // Line 35
@@ -494,30 +494,30 @@ class twigTransTerms
 
 	//------------------------------------------------content/app/android/display.html
 	echo T_("Consulting");                                                            // Line 187
-	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 54
-	echo T_("You also partake in salawat");                                           // Line 56
-	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 58
-	echo T_("Say salawat");                                                           // Line 58
-	echo T_("and press here");                                                        // Line 58
+	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 49
+	echo T_("You also partake in salawat");                                           // Line 51
+	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 53
+	echo T_("Say salawat");                                                           // Line 53
+	echo T_("and press here");                                                        // Line 53
 
 	//-------------------------------------------------------content/home/display.html
-	echo T_("Travel request");                                                        // Line 127
-	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 165
-	echo T_("Samte Khoda");                                                           // Line 167
-	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 175
-	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 175
-	echo T_("You can change amount of your donation");                                // Line 184
-	echo T_("Donate as anonymous");                                                   // Line 187
-	echo T_("Donate with register details");                                          // Line 192
-	echo T_("Latest News");                                                           // Line 204
-	echo T_("Mr.Farahzad's statement");                                               // Line 250
-	echo T_("Contact with manager");                                                  // Line 262
-	echo T_("in Resalat bank of Iran");                                               // Line 271
-	echo T_("Card number");                                                           // Line 309
-	echo T_("Account number");                                                        // Line 312
-	echo T_("Iranian bank Shaba number");                                             // Line 315
-	echo T_("Tejarat bank");                                                          // Line 288
-	echo T_("Bank Melli Iran");                                                       // Line 305
+	echo T_("Travel request");                                                        // Line 121
+	echo T_("Join to the charity and participate in the pilgrimage reward");          // Line 159
+	echo T_("Samte Khoda");                                                           // Line 161
+	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 169
+	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 169
+	echo T_("You can change amount of your donation");                                // Line 178
+	echo T_("Donate as anonymous");                                                   // Line 181
+	echo T_("Donate with register details");                                          // Line 186
+	echo T_("Latest News");                                                           // Line 198
+	echo T_("Mr.Farahzad's statement");                                               // Line 244
+	echo T_("Contact with manager");                                                  // Line 256
+	echo T_("in Resalat bank of Iran");                                               // Line 265
+	echo T_("Card number");                                                           // Line 303
+	echo T_("Account number");                                                        // Line 306
+	echo T_("Iranian bank Shaba number");                                             // Line 309
+	echo T_("Tejarat bank");                                                          // Line 282
+	echo T_("Bank Melli Iran");                                                       // Line 299
 
 	//-----------------------------------------------------content/health/display.html
 
