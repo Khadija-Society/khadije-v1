@@ -244,7 +244,7 @@ class twigTransTerms
 	echo T_("Pasargad");                                                              // Line 75
 	echo T_("Saman");                                                                 // Line 81
 	echo T_("Sina");                                                                  // Line 87
-	echo T_("Post");                                                                  // Line 106
+	echo T_("Post");                                                                  // Line 93
 	echo T_("Ghavamin");                                                              // Line 99
 	echo T_("Taavon");                                                                // Line 105
 	echo T_("Shahr");                                                                 // Line 111
@@ -345,7 +345,7 @@ class twigTransTerms
 	echo T_("Website Contents");                                                      // Line 9
 	echo T_("News");                                                                  // Line 88
 	echo T_("Categories");                                                            // Line 87
-	echo T_("Keywords");                                                              // Line 145
+	echo T_("Keywords");                                                              // Line 175
 	echo T_("Static Pages");                                                          // Line 22
 	echo T_("Support");                                                               // Line 33
 	echo T_("Help Center Keywords");                                                  // Line 40
@@ -372,15 +372,20 @@ class twigTransTerms
 	echo T_("Use Special mode");                                                      // Line 60
 	echo T_("Please select one item");                                                // Line 28
 	echo T_("Non");                                                                   // Line 591
+	echo T_("Writer");                                                                // Line 84
+	echo T_("Change post writer");                                                    // Line 86
+	echo T_("Choose new post writer");                                                // Line 88
 	echo T_("Category");                                                              // Line 23
 	echo T_("Choose category for posts is fix url of post relative and help people find it better.");// Line 153
 	echo T_("Add new category");                                                      // Line 165
 	echo T_("Click on special tags to use this depending on your website design");    // Line 183
 	echo T_("Tag");                                                                   // Line 365
-	echo T_("Add tag to link articles");                                              // Line 143
+	echo T_("Add tag to link articles");                                              // Line 173
 	echo T_("Add");                                                                   // Line 36
-	echo T_("Allow Comments");                                                        // Line 166
-	echo T_("Publish Date");                                                          // Line 178
+	echo T_("Allow Comments");                                                        // Line 196
+	echo T_("Publish Date");                                                          // Line 208
+	echo T_("When published");                                                        // Line 215
+	echo T_("At special date");                                                       // Line 220
 	echo T_("Publish date");                                                          // Line 45
 	echo T_("Default is now");                                                        // Line 47
 	echo T_("Publish time");                                                          // Line 55
@@ -390,19 +395,19 @@ class twigTransTerms
 	echo T_("Language");                                                              // Line 118
 	echo T_("You can publish in another language");                                   // Line 117
 	echo T_("Add to gallery");                                                        // Line 61
-	echo T_("Choose or Drop file here");                                              // Line 251
+	echo T_("Choose or Drop file here");                                              // Line 315
 	echo T_("Maximum file size");                                                     // Line 17
-	echo T_("Google");                                                                // Line 288
-	echo T_("Customize for SEO");                                                     // Line 293
-	echo T_("SEO Title");                                                             // Line 299
+	echo T_("Google");                                                                // Line 352
+	echo T_("Customize for SEO");                                                     // Line 357
+	echo T_("SEO Title");                                                             // Line 363
 	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
 	echo T_("Parent");                                                                // Line 134
 	echo T_("Choose parent for this page to create related url as tree");             // Line 133
 	echo T_("Choose Parent");                                                         // Line 136
 	echo T_("Without Parent");                                                        // Line 137
 	echo T_("Slug");                                                                  // Line 8
-	echo T_("End part of your post url.");                                            // Line 323
-	echo T_("SEO Description");                                                       // Line 330
+	echo T_("End part of your post url.");                                            // Line 387
+	echo T_("SEO Description");                                                       // Line 394
 	echo T_("If leave it empty we are generate it automatically");                    // Line 19
 	echo T_("Excerpt used for social media and search engines");                      // Line 19
 	echo T_("Gallery");                                                               // Line 223
@@ -414,7 +419,7 @@ class twigTransTerms
 
 	//---------------------------------------addons/content_cms/posts/add/display.html
 	echo T_("First type main text and save as draft, then complete and publish it."); // Line 12
-	echo T_("Save as draft");                                                         // Line 20
+	echo T_("Save as draft");                                                         // Line 36
 
 	//--------------------------------------addons/content_cms/posts/home/display.html
 	echo T_("Advance search");                                                        // Line 50
@@ -428,6 +433,7 @@ class twigTransTerms
 	echo T_("Hi!");                                                                   // Line 112
 	echo T_("Try to start with add new record!");                                     // Line 131
 	echo T_("All publish posts");                                                     // Line 129
+	echo T_("All");                                                                   // Line 231
 	echo T_("Published");                                                             // Line 67
 	echo T_("All draft posts");                                                       // Line 138
 	echo T_("All trash posts");                                                       // Line 147
@@ -435,7 +441,7 @@ class twigTransTerms
 	//--------------------------------------addons/content_cms/posts/edit/display.html
 	echo T_("Save");                                                                  // Line 13
 	echo T_("Icon");                                                                  // Line 45
-	echo T_("Choose icon");                                                           // Line 62
+	echo T_("Choose icon");                                                           // Line 81
 
 	//------------------------------------------addons/content_cms/backup/display.html
 	echo T_("Backup Project");                                                        // Line 6
@@ -479,17 +485,18 @@ class twigTransTerms
 	echo T_("Without title");                                                         // Line 65
 	echo T_("Latest Help center");                                                    // Line 46
 	echo T_("Latest tag");                                                            // Line 62
+	echo T_("Item in all language");                                                  // Line 210
 	echo T_("Pages");                                                                 // Line 118
-	echo T_("Help Center Article");                                                   // Line 162
-	echo T_("Help tags");                                                             // Line 173
-	echo T_("Support tags");                                                          // Line 183
+	echo T_("Help Center Article");                                                   // Line 168
+	echo T_("Help tags");                                                             // Line 179
+	echo T_("Support tags");                                                          // Line 189
 	echo T_("Tickets");                                                               // Line 42
 	echo T_("Visitor");                                                               // Line 112
 
 	//------------------------------------------------addons/content_cms/home/chart.js
-	echo T_("Word cloud");                                                            // Line 74
-	echo T_("Post count");                                                            // Line 95
-	echo T_("post");                                                                  // Line 118
+	echo T_("Word cloud");                                                            // Line 61
+	echo T_("Post count");                                                            // Line 82
+	echo T_("post");                                                                  // Line 105
 
 	//-----------------------------------------addons/content_cms/sitemap/display.html
 	echo T_("Create sitemap automatically by click on this page");                    // Line 6
@@ -611,24 +618,6 @@ class twigTransTerms
 	echo T_("Contact");                                                               // Line 14
 	echo T_("Admin Contact");                                                         // Line 26
 
-	//------------------------------------------addons/content_mag/home/dashboard.html
-	echo T_("Search result");                                                         // Line 33
-	echo T_("No result found!");                                                      // Line 47
-	echo T_("Search our knowledge base...");                                          // Line 61
-	echo T_("Frequently Asked Questions");                                            // Line 89
-	echo T_("Random Articles");                                                       // Line 108
-	echo T_("Can't find what you're looking for?");                                   // Line 126
-	echo T_("Contact the legendary support team right now.");                         // Line 127
-
-	//--------------------------------------------addons/content_mag/home/article.html
-	echo T_("In this section");                                                       // Line 24
-	echo T_("For share via social networks");                                         // Line 55
-	echo T_("Short link");                                                            // Line 55
-	echo T_("Full Name");                                                             // Line 144
-	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 151
-	echo T_("Your Message");                                                          // Line 160
-	echo T_("Send");                                                                  // Line 18
-
 	//-----------------------------------------addons/content_enter/block/display.html
 	echo T_("You are blocked becauese of some reason!");                              // Line 7
 	echo T_("If have problem");                                                       // Line 8
@@ -718,7 +707,6 @@ class twigTransTerms
 	//----------------------------------------------addons/content_support/layout.html
 	echo T_("Support Dashboard");                                                     // Line 8
 	echo T_("New Ticket");                                                            // Line 14
-	echo T_("All");                                                                   // Line 231
 	echo T_("Awaiting answer");                                                       // Line 20
 	echo T_("Answered");                                                              // Line 24
 	echo T_("Unsolved");                                                              // Line 33
@@ -768,6 +756,7 @@ class twigTransTerms
 	echo T_("Telegram");                                                              // Line 44
 	echo T_("Do you know you can connect your account with our Telegram bot");        // Line 426
 	echo T_("Just need to start bot in Telegram and sync your account via /sync.");   // Line 426
+	echo T_("Short link");                                                            // Line 55
 
 	//----------------------------------addons/content_support/ticket/add/display.html
 	echo T_("Please log in if you need to store this ticket and track it in the future");// Line 9
@@ -794,8 +783,21 @@ class twigTransTerms
 	echo T_("Active in this ticket");                                                 // Line 54
 
 	//--------------------------------------addons/content_support/home/dashboard.html
+	echo T_("Search result");                                                         // Line 33
+	echo T_("No result found!");                                                      // Line 47
+	echo T_("Search our knowledge base...");                                          // Line 61
+	echo T_("Frequently Asked Questions");                                            // Line 89
+	echo T_("Random Articles");                                                       // Line 108
+	echo T_("Can't find what you're looking for?");                                   // Line 126
+	echo T_("Contact the legendary support team right now.");                         // Line 127
 
 	//----------------------------------------addons/content_support/home/article.html
+	echo T_("In this section");                                                       // Line 24
+	echo T_("For share via social networks");                                         // Line 55
+	echo T_("Full Name");                                                             // Line 144
+	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 151
+	echo T_("Your Message");                                                          // Line 160
+	echo T_("Send");                                                                  // Line 18
 
 	//-------------------------------------addons/content_support/message/display.html
 	echo T_("Open new ticket!");                                                      // Line 31
