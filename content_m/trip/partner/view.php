@@ -61,6 +61,7 @@ class view
 			$new_list[$key]['email']              = $value['email'];
 			$new_list[$key]['avatar']             = $value['avatar'];
 			$new_list[$key]['birthday']           = $value['birthday'];
+			$new_list[$key]['birthday_jalaly']    = \dash\datetime::fit($value['birthday'], null, 'date');
 			$new_list[$key]['firstname']          = $value['firstname'];
 			$new_list[$key]['lastname']           = $value['lastname'];
 			$new_list[$key]['father']             = $value['father'];
