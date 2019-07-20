@@ -107,15 +107,17 @@ class sms
 		$result['send']      = [];
 		$result['receive']   = [];
 
+
 		$count_recommend     = \lib\db\sms::count_recommend($_args);
 
 		if(is_array($count_recommend))
 		{
 			foreach ($count_recommend as $key => $value)
 			{
-				$result['recommend'] = intval($value['count']);
+				$result['recommend'] += intval($value['count']);
 			}
 		}
+
 		$count_receivestatus = \lib\db\sms::count_receivestatus($_args);
 		if(is_array($count_receivestatus))
 		{
@@ -123,7 +125,7 @@ class sms
 			{
 				if($value['receivestatus'] === 'awaiting')
 				{
-					$result['receive'][$value['receivestatus']] = intval($value['count']) - intval($result['recommend']);
+					$result['receive'][$value['receivestatus']] = intval($value['count']);
 				}
 				else
 				{

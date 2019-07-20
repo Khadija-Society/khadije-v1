@@ -150,6 +150,7 @@ class newsms
 					{
 						// reset
 						$update['recommend_id']    = null;
+						$update['group_id']        = null;
 						$update['sendstatus']      = null;
 						$update['answertext']      = null;
 						$update['answertextcount'] = null;
