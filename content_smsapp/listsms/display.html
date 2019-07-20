@@ -309,7 +309,10 @@
           <div class="ltr">{{value.datecreated | dt}}</div>
         </td>
         <td class="collapsing"><a href="{{url.that}}?receivestatus={{value.receivestatus}}">{{value.treceivestatus}}</a></td>
-        <td>{{value.answertext | raw | nl2br}}</td>
+        <td>{{value.answertext | raw | nl2br}}
+
+          <div class="ltr fc-mute">{{value.dateanswer | dt}}</div>
+        </td>
         <td class="collapsing">
           <div><a href="{{url.that}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></div>
           {%if not value.sendstatus and requestGET.recommend == 'yes'%}
