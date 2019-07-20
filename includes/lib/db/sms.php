@@ -66,9 +66,7 @@ class sms
 			SET
 				s_sms.sendstatus = 'awaiting'
 			WHERE
-				s_sms.sendstatus = 'waitingtoautosend' AND
-				DATE(s_sms.dateanswer) < DATE('$_date') AND
-				TIME(s_sms.dateanswer) < TIME('$_date')
+				s_sms.sendstatus = 'waitingtoautosend'
 		";
 
 		$result = \dash\db::query($query);
