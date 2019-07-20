@@ -23,9 +23,9 @@ class cronjob
 
 	private static function smsapp()
 	{
+		\lib\app\sms::send_auto_answered();
 		\lib\app\sms::send_notif();
 		\lib\app\sms::send_sms_panel();
-		\lib\app\sms::send_auto_answered();
 
 	}
 
