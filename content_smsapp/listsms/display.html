@@ -240,6 +240,7 @@
       <label class="addon" data-kerkere='.advanceSearch' data-kerkere-icon>{%trans "Advance"%}</label>
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
+      {%if perm_su()%}<a href="{{url.here}}/apilog" class="btn addon warn">{%trans "Log"%}</a>{%endif%}
     </div>
     {{block('iKerkere')}}
   </form>
