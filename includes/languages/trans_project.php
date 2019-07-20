@@ -157,7 +157,7 @@ class twigTransTerms
 	echo T_("Detail");                                                                // Line 55
 	echo T_("Private");                                                               // Line 152
 	echo T_("fromnumber");                                                            // Line 290
-	echo T_("Send to analyze");                                                       // Line 316
+	echo T_("Send to analyze");                                                       // Line 319
 	echo T_("Archive");                                                               // Line 229
 
 	//--------------------------------------content_smsapp/recommendgroup/display.html
