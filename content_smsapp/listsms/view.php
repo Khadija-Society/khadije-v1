@@ -46,8 +46,12 @@ class view
 
 		if(\dash\request::get('recommend') === 'yes')
 		{
-			$args['s_sms.recommend_id'] = ['IS NOT ', 'NULL'];
-			$args['s_sms.sendstatus']   = ['IS ', 'NULL'];
+			$args['s_sms.recommend_id']  = ['IS NOT ', 'NULL'];
+			$args['s_sms.receivestatus'] = 'awaiting';
+			$args['s_sms.answertext']    = ['IS ', 'NULL'];
+			$args['s_group.analyze']     = 1;
+
+			// s_group.analyze = 1 AND
 
 			$smsgroup = \lib\db\sms::get_recommend_group($countArgs);
 

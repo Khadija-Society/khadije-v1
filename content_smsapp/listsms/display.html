@@ -119,16 +119,19 @@
     </a>
   </div>
 
+
+
+
   <div class="c m3 s4">
     <a class="dcard x07 {%if requestGET.recommend == 'yes'%}active{%endif%}" href="{{url.that}}?recommend=yes">
-      <div class="value">{{statusCount.recommend | fitNumber(false)}}</div>
+      <div class="value">{{statusCount.shenasaee_shode | fitNumber(false)}}</div>
       <div class="label">{%trans "Recommended"%} <small>{%trans "New"%}</small></div>
     </a>
   </div>
 
   <div class="c m3 s4">
     <a class="dcard x07 {%if not myUrlGet%}active{%endif%}" href="{{url.that}}">
-      <div class="value">{{statusCount.receive.awaiting | fitNumber(false)}}</div>
+      <div class="value">{{statusCount.shenasaee_nashode | fitNumber(false)}}</div>
       <div class="label">{%trans "New"%} <small>{%trans "Awaiting"%}</small></div>
     </a>
   </div>

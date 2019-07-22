@@ -107,6 +107,8 @@ class sms
 		$result['send']      = [];
 		$result['receive']   = [];
 
+		$result['shenasaee_shode']   = intval(\lib\db\sms::count_shenasaee_shode());
+		$result['shenasaee_nashode'] = intval(\lib\db\sms::count_shenasaee_nashode());
 
 		$count_recommend     = \lib\db\sms::count_recommend($_args);
 

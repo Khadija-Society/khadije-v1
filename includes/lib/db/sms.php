@@ -15,6 +15,44 @@ class sms
 		s_sms.*, s_group.title AS `group_title`,s_group.type AS `group_type`, recommendGroup.title AS `recommend_title`
 	";
 
+	public static function count_shenasaee_shode()
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`
+			FROM
+				s_sms
+			INNER JOIN s_group ON s_group.id = s_sms.recommend_id
+			WHERE
+				s_sms.recommend_id IS NOT NULL AND
+				s_group.analyze = 1 AND
+				s_sms.answertext IS NULL AND
+				s_sms.receivestatus = 'awaiting'
+		";
+		$result = \dash\db::get($query, 'count', true);
+		return $result;
+	}
+
+	public static function count_shenasaee_nashode()
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`
+			FROM
+				s_sms
+			WHERE
+				s_sms.recommend_id IS NULL AND
+				s_sms.group_id IS NULL AND
+				s_sms.answertext IS NULL AND
+				s_sms.receivestatus = 'awaiting'
+		";
+		$result = \dash\db::get($query, 'count', true);
+		return $result;
+	}
+
+
 
 	public static function analyze_word($_words, $_not_words)
 	{
