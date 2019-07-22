@@ -200,10 +200,10 @@ class twigTransTerms
 	echo T_("The stable base URL for all Version 6 HTTPS endpoints is");              // Line 10
 
 	//-------------------------------------------addons/includes/html/display-mvc.html
-	echo T_("You are supervisor!");                                                   // Line 87
-	echo T_("Control Panel");                                                         // Line 92
-	echo T_("JavaScript is required to use our service.");                            // Line 106
-	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 107
+	echo T_("You are supervisor!");                                                   // Line 98
+	echo T_("Control Panel");                                                         // Line 103
+	echo T_("JavaScript is required to use our service.");                            // Line 117
+	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 118
 
 	//------------------------------------------addons/includes/html/display-dash.html
 	echo T_("Edit your profile");                                                     // Line 71
@@ -330,8 +330,8 @@ class twigTransTerms
 	//----------------------------------------addons/includes/html/inc_commentadd.html
 	echo T_("Full Name");                                                             // Line 155
 	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 162
-	echo T_("Your rate");                                                             // Line 29
-	echo T_("Write your comment...");                                                 // Line 46
+	echo T_("Your rate");                                                             // Line 27
+	echo T_("Write your comment...");                                                 // Line 44
 	echo T_("Send");                                                                  // Line 18
 
 	//----------------------------------------addons/content_pay/redirect/display.html

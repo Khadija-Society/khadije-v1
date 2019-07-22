@@ -70,31 +70,40 @@ class sms
 	public static function dashboard_detail($_gateway = null)
 	{
 
-		$result           = [];
-		$result['status'] = \content_api\v6\smsapp\controller::status();
+		$result             = [];
+		$result['status']   = \content_api\v6\smsapp\controller::status();
 
-		$day              = [];
-		$day['send']      = \lib\db\sms::get_count_sms('day', 'send', $_gateway);
-		$day['receive']   = \lib\db\sms::get_count_sms('day', 'receive', $_gateway);
-		$day['date']      = \dash\datetime::fit(null, true, 'date');
+		$day                = [];
+		$day['send']        = \lib\db\sms::get_count_sms('day', 'send', $_gateway);
+		$day['send_bulk']   = \lib\db\sms::get_count_sms('day', 'send', $_gateway, true);
 
-		$week             = [];
-		$week['send']     = \lib\db\sms::get_count_sms('week', 'send', $_gateway);
-		$week['receive']  = \lib\db\sms::get_count_sms('week', 'receive', $_gateway);
+		$day['receive']     = \lib\db\sms::get_count_sms('day', 'receive', $_gateway);
+		$day['date']        = \dash\datetime::fit(null, true, 'date');
 
-		$month            = [];
-		$month['send']    = \lib\db\sms::get_count_sms('month', 'send', $_gateway);
-		$month['receive'] = \lib\db\sms::get_count_sms('month', 'receive', $_gateway);
+		$week               = [];
+		$week['send']       = \lib\db\sms::get_count_sms('week', 'send', $_gateway);
+		$week['send_bulk']  = \lib\db\sms::get_count_sms('week', 'send', $_gateway, true);
 
-		$total            = [];
-		$total['send']    = \lib\db\sms::get_count_sms('total', 'send', $_gateway);
-		$total['receive'] = \lib\db\sms::get_count_sms('total', 'receive', $_gateway);
+		$week['receive']    = \lib\db\sms::get_count_sms('week', 'receive', $_gateway);
+
+		$month              = [];
+		$month['send']      = \lib\db\sms::get_count_sms('month', 'send', $_gateway);
+		$month['send_bulk'] = \lib\db\sms::get_count_sms('month', 'send', $_gateway, true);
+
+		$month['receive']   = \lib\db\sms::get_count_sms('month', 'receive', $_gateway);
+
+		$total              = [];
+		$total['send']      = \lib\db\sms::get_count_sms('total', 'send', $_gateway);
+		$total['send_bulk'] = \lib\db\sms::get_count_sms('total', 'send', $_gateway, true);
+
+		$total['receive']   = \lib\db\sms::get_count_sms('total', 'receive', $_gateway);
 
 
-		$result['day']    = $day;
-		$result['week']   = $week;
-		$result['month']  = $month;
-		$result['total']  = $total;
+		$result['day']      = $day;
+		$result['week']     = $week;
+		$result['month']    = $month;
+		$result['total']    = $total;
+
 		return $result;
 	}
 

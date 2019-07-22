@@ -503,7 +503,7 @@ class sms
 	}
 
 
-	public static function get_count_sms($_type, $_field, $_gateway)
+	public static function get_count_sms($_type, $_field, $_gateway, $_bulk = false)
 	{
 
 		$to = date("Y-m-d");
@@ -542,7 +542,14 @@ class sms
 
 		if($_field === 'send')
 		{
-			$query = "SELECT SUM(CEIL(s_sms.answertextcount / 70)) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where $gateway";
+			if($_bulk)
+			{
+				$query = "SELECT SUM(IF( s_sms.answertextcount < 70, 1, CEIL(s_sms.answertextcount / 70))) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where $gateway";
+			}
+			else
+			{
+				$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where $gateway";
+			}
 		}
 		else
 		{

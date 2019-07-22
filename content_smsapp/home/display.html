@@ -30,6 +30,54 @@
     <a class="dcard xs">
      <div class="statistic sm teal">
       <div class="label mB10"></div>
+      <div class="value ">{%trans "Send"%} <small>{%trans "Bulk"%}</small></div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
+      <div class="value counter">{{dashboardDetail.total.send_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
+      <div class="value">{{dashboardDetail.month.send_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
+      <div class="value">{{dashboardDetail.week.send_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s12">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
+      <div class="value">{{dashboardDetail.day.send_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+</div>
+<div class="f">
+
+  <div class="c1 s6">
+    <a class="dcard xs">
+     <div class="statistic sm teal">
+      <div class="label mB10"></div>
       <div class="value ">{%trans "Send"%}</div>
      </div>
     </a>

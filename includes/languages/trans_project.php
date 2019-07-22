@@ -34,12 +34,17 @@ class twigTransTerms
 	echo T_("Is Money");                                                              // Line 59
 	echo T_("View");                                                                  // Line 77
 	echo T_("Sms");                                                                   // Line 14
-	echo T_("Numbers");                                                               // Line 258
-	echo T_("Answer");                                                                // Line 261
+	echo T_("Numbers");                                                               // Line 262
+	echo T_("Answer");                                                                // Line 265
 	echo T_("Clear filters");                                                         // Line 142
 	echo T_("Result not found!");                                                     // Line 141
 	echo T_("Search with new keywords.");                                             // Line 141
 	echo T_("No record exist!");                                                      // Line 148
+
+	//--------------------------------------content_smsapp/report/groupby/display.html
+	echo T_("Send status");                                                           // Line 266
+	echo T_("Count");                                                                 // Line 112
+	echo T_("Receive status");                                                        // Line 146
 
 	//----------------------------------content_smsapp/report/countsmsday/display.html
 	echo T_("Date");                                                                  // Line 109
@@ -52,22 +57,19 @@ class twigTransTerms
 	echo T_("Answer time per min");                                                   // Line 56
 	echo T_("Answer time per hour");                                                  // Line 67
 	echo T_("Cont send sms per day");                                                 // Line 80
-	echo T_("Add group");                                                             // Line 140
-	echo T_("Last sms");                                                              // Line 149
+	echo T_("Add group");                                                             // Line 188
+	echo T_("Last sms");                                                              // Line 197
 	echo T_("Without title");                                                         // Line 71
 	echo T_("Setting");                                                               // Line 265
-	echo T_("Reports");                                                               // Line 177
-	echo T_("Sms group list");                                                        // Line 188
-	echo T_("Sms list");                                                              // Line 200
+	echo T_("Reports");                                                               // Line 225
+	echo T_("Sms group list");                                                        // Line 236
+	echo T_("Sms list");                                                              // Line 248
 
 	//---------------------------------------------content_smsapp/report/home/chart.js
 	echo T_("Send status chart");                                                     // Line 32
-	echo T_("Send status");                                                           // Line 262
-	echo T_("Count");                                                                 // Line 112
 	echo T_("Receive status chart");                                                  // Line 104
-	echo T_("Receive status");                                                        // Line 146
 	echo T_("Sms count group by recommend title");                                    // Line 178
-	echo T_("Recommended");                                                           // Line 264
+	echo T_("Recommended");                                                           // Line 268
 	echo T_("Sms count group by group title");                                        // Line 250
 	echo T_("Group chart");                                                           // Line 292
 	echo T_("Count Send and Receive sms per day");                                    // Line 26
@@ -76,15 +78,45 @@ class twigTransTerms
 
 	//------------------------------------------------content_smsapp/chat/display.html
 	echo T_("From number");                                                           // Line 43
-	echo T_("Sms text");                                                              // Line 257
+	echo T_("Sms text");                                                              // Line 261
 	echo T_("Date created");                                                          // Line 44
-	echo T_("Reseive status");                                                        // Line 260
+	echo T_("Reseive status");                                                        // Line 264
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Recommend");                                                             // Line 125
 	echo T_("Action");                                                                // Line 61
-	echo T_("togateway");                                                             // Line 295
-	echo T_("fromgateway");                                                           // Line 300
-	echo T_("tonumber");                                                              // Line 303
+	echo T_("togateway");                                                             // Line 299
+	echo T_("fromgateway");                                                           // Line 304
+	echo T_("tonumber");                                                              // Line 307
+
+	//-----------------------------------------content_smsapp/apilog/home/display.html
+	echo T_("All publish log");                                                       // Line 64
+	echo T_("Published");                                                             // Line 67
+	echo T_("All draft log");                                                         // Line 73
+	echo T_("Draft");                                                                 // Line 52
+	echo T_("All trash log");                                                         // Line 82
+	echo T_("Deleted");                                                               // Line 273
+
+	//----------------------------------------content_smsapp/apilog/home/logTable.html
+	echo T_("Show");                                                                  // Line 47
+	echo T_("Auth");                                                                  // Line 10
+	echo T_("Subdomain");                                                             // Line 12
+	echo T_("Version");                                                               // Line 13
+	echo T_("Url");                                                                   // Line 14
+	echo T_("Method");                                                                // Line 15
+	echo T_("Header");                                                                // Line 16
+	echo T_("Header len");                                                            // Line 17
+	echo T_("Body");                                                                  // Line 18
+	echo T_("Bodylen");                                                               // Line 19
+	echo T_("Date send");                                                             // Line 79
+	echo T_("Page status");                                                           // Line 21
+	echo T_("Result status");                                                         // Line 22
+	echo T_("Response header");                                                       // Line 23
+	echo T_("Response body");                                                         // Line 24
+	echo T_("Datere sponse");                                                         // Line 25
+	echo T_("Notif");                                                                 // Line 26
+	echo T_("Response len");                                                          // Line 27
+	echo T_("Detail");                                                                // Line 55
+	echo T_("Hi!");                                                                   // Line 150
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
 	echo T_("Edit");                                                                  // Line 29
@@ -104,11 +136,9 @@ class twigTransTerms
 	echo T_("send");                                                                  // Line 30
 	echo T_("deliver");                                                               // Line 31
 	echo T_("All sms from this number");                                              // Line 46
-	echo T_("Show");                                                                  // Line 47
 	echo T_("date");                                                                  // Line 61
 	echo T_("Date receive");                                                          // Line 67
 	echo T_("Date answer");                                                           // Line 73
-	echo T_("Date send");                                                             // Line 79
 	echo T_("Brand");                                                                 // Line 100
 	echo T_("Model");                                                                 // Line 101
 	echo T_("Simcart serial");                                                        // Line 102
@@ -135,29 +165,29 @@ class twigTransTerms
 	echo T_("Recommend message group sorted");                                        // Line 54
 	echo T_("What answer send to this group?");                                       // Line 72
 	echo T_("All");                                                                   // Line 118
-	echo T_("New");                                                                   // Line 132
+	echo T_("New");                                                                   // Line 135
 	echo T_("Awaiting");                                                              // Line 33
-	echo T_("Needless to answer");                                                    // Line 139
-	echo T_("Archived message");                                                      // Line 146
-	echo T_("Answered");                                                              // Line 153
-	echo T_("Waiting to auto send");                                                  // Line 160
-	echo T_("Awaiting to send to device");                                            // Line 167
-	echo T_("Waiting for sending by device");                                         // Line 174
-	echo T_("Sended");                                                                // Line 181
-	echo T_("On");                                                                    // Line 187
-	echo T_("Off");                                                                   // Line 187
-	echo T_("System status");                                                         // Line 188
-	echo T_("Filter by start date and end date of sms");                              // Line 200
+	echo T_("Needless to answer");                                                    // Line 142
+	echo T_("Archived message");                                                      // Line 149
+	echo T_("Answered");                                                              // Line 156
+	echo T_("Waiting to auto send");                                                  // Line 163
+	echo T_("Awaiting to send to device");                                            // Line 170
+	echo T_("Waiting for sending by device");                                         // Line 177
+	echo T_("Sended");                                                                // Line 184
+	echo T_("On");                                                                    // Line 190
+	echo T_("Off");                                                                   // Line 190
+	echo T_("System status");                                                         // Line 191
+	echo T_("Filter by start date and end date of sms");                              // Line 203
 	echo T_("Start date");                                                            // Line 83
 	echo T_("End date");                                                              // Line 91
-	echo T_("Filter by group");                                                       // Line 217
+	echo T_("Filter by group");                                                       // Line 220
 	echo T_("Clear filter");                                                          // Line 153
 	echo T_("Apply");                                                                 // Line 154
 	echo T_("Advance");                                                               // Line 165
-	echo T_("Detail");                                                                // Line 55
-	echo T_("Private");                                                               // Line 152
-	echo T_("fromnumber");                                                            // Line 290
-	echo T_("Send to analyze");                                                       // Line 319
+	echo T_("Log");                                                                   // Line 246
+	echo T_("Private");                                                               // Line 200
+	echo T_("fromnumber");                                                            // Line 294
+	echo T_("Send to analyze");                                                       // Line 323
 	echo T_("Archive");                                                               // Line 229
 
 	//--------------------------------------content_smsapp/recommendgroup/display.html
@@ -170,11 +200,12 @@ class twigTransTerms
 	echo T_("Require");                                                               // Line 177
 
 	//------------------------------------------------content_smsapp/home/display.html
-	echo T_("Total");                                                                 // Line 90
-	echo T_("month");                                                                 // Line 99
-	echo T_("week");                                                                  // Line 108
-	echo T_("day");                                                                   // Line 117
-	echo T_("Without text");                                                          // Line 152
+	echo T_("Bulk");                                                                  // Line 33
+	echo T_("Total");                                                                 // Line 138
+	echo T_("month");                                                                 // Line 147
+	echo T_("week");                                                                  // Line 156
+	echo T_("day");                                                                   // Line 165
+	echo T_("Without text");                                                          // Line 200
 
 	//----------------------------------------------------content_smsapp/home/chart.js
 
@@ -198,7 +229,6 @@ class twigTransTerms
 	echo T_("If has money, get it form operator");                                    // Line 76
 	echo T_("Enable");                                                                // Line 146
 	echo T_("Disable");                                                               // Line 152
-	echo T_("Deleted");                                                               // Line 273
 	echo T_("Description");                                                           // Line 64
 	echo T_("Add");                                                                   // Line 99
 
@@ -550,7 +580,6 @@ class twigTransTerms
 	echo T_("Lastname");                                                              // Line 62
 	echo T_("Nationalcode");                                                          // Line 7
 	echo T_("Father");                                                                // Line 125
-	echo T_("Hi!");                                                                   // Line 150
 	echo T_("Try to start with add new user!");                                       // Line 150
 	echo T_("All :Members");                                                          // Line 160
 	echo T_(":Experts");                                                              // Line 169
@@ -661,7 +690,6 @@ class twigTransTerms
 	echo T_("Status of service");                                                     // Line 27
 	echo T_("inapropirate request and spam detected");                                // Line 38
 	echo T_("Accept Service");                                                        // Line 43
-	echo T_("Draft");                                                                 // Line 52
 	echo T_("try to fill request");                                                   // Line 52
 	echo T_("Cancel");                                                                // Line 26
 	echo T_("cancel from user");                                                      // Line 57
