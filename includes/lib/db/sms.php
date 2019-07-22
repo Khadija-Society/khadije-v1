@@ -441,7 +441,7 @@ class sms
 		switch ($_type)
 		{
 			case 'day':
-				$from = date("Y-m-d", strtotime("-1 day"));
+				$from = date("Y-m-d");
 				break;
 
 			case 'week':
@@ -472,7 +472,7 @@ class sms
 
 		if($_field === 'send')
 		{
-			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where $gateway";
+			$query = "SELECT SUM(CEIL(s_sms.answertextcount / 70)) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where $gateway";
 		}
 		else
 		{
