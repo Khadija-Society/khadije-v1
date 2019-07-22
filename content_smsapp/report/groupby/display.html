@@ -1,0 +1,67 @@
+{%extends 'content_smsapp/layout.html'%}
+
+{%block pageContent%}
+
+{%if togateway%}
+<div class="f justify-center">
+  {%for key, value in togateway%}
+    <div class="c6 m12 s12 pRa10">
+        <a class="dcard x1{%if requestGET.gateway == value.togateway%} active{%endif%}" href="{{url.that}}?gateway={{value.togateway}}">
+         <div class="statistic sm teal">
+          <div class="value mB10">{{value.togateway | fitNumber('mobile')}}</div>
+          <div class="label">{{value.count | fitNumber }} {%trans "Sms"%}</div>
+         </div>
+        </a>
+    </div>
+  {%endfor%}
+</div>
+{%endif%}
+
+<div class="f justify-center">
+  <h2>{%trans "Send status"%}</h2>
+  <div class="c6 s12">
+      <table class="tbl1 v6 fs11">
+        <thead>
+          <tr class="fs08">
+            <th>{%trans "Status"%}</th>
+            <th>{%trans "Count"%}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for key, value in dataTable.send%}
+          <tr>
+            <td>{{value.sendstatus}}</td>
+            <td>{{value.count | fitNumber}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+  </div>
+</div>
+
+
+<div class="f justify-center">
+  <h2>{%trans "Receive status"%}</h2>
+  <div class="c6 s12">
+      <table class="tbl1 v6 fs11">
+        <thead>
+          <tr class="fs08">
+            <th>{%trans "Status"%}</th>
+            <th>{%trans "Count"%}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for key, value in dataTable.receive%}
+          <tr>
+            <td>{{value.receivestatus}}</td>
+            <td>{{value.count | fitNumber}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+  </div>
+</div>
+
+
+{%endblock%}
+

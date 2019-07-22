@@ -53,6 +53,38 @@ class sms
 	}
 
 
+	public static function get_groupby_send()
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				s_sms.sendstatus
+			FROM
+				s_sms
+			GROUP BY s_sms.sendstatus
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
+	public static function get_groupby_receive()
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				s_sms.receivestatus
+			FROM
+				s_sms
+			GROUP BY s_sms.receivestatus
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 
 	public static function analyze_word($_words, $_not_words)
 	{

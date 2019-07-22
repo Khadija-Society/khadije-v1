@@ -3,6 +3,16 @@ namespace lib\app\sms;
 
 class report
 {
+
+	public static function get_groupby()
+	{
+		$result            = [];
+		$result['send']    = \lib\db\sms::get_groupby_send();
+		$result['receive'] = \lib\db\sms::get_groupby_receive();
+
+		return $result;
+	}
+
 	public static function count_sms_day($_gateway = null)
 	{
 		$result = \lib\db\sms\report::count_sms_day($_gateway);
