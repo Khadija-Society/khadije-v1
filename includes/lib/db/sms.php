@@ -15,8 +15,13 @@ class sms
 		s_sms.*, s_group.title AS `group_title`,s_group.type AS `group_type`, recommendGroup.title AS `recommend_title`
 	";
 
-	public static function count_shenasaee_shode()
+	public static function count_shenasaee_shode($_where = null)
 	{
+		$q = null;
+		if($_where)
+		{
+			$q = ' AND '. \dash\db\config::make_where($_where);
+		}
 		$query =
 		"
 			SELECT
@@ -29,13 +34,19 @@ class sms
 				s_group.analyze = 1 AND
 				s_sms.answertext IS NULL AND
 				s_sms.receivestatus = 'awaiting'
+				$q
 		";
 		$result = \dash\db::get($query, 'count', true);
 		return $result;
 	}
 
-	public static function count_shenasaee_nashode()
+	public static function count_shenasaee_nashode($_where = null)
 	{
+		$q = null;
+		if($_where)
+		{
+			$q = ' AND '. \dash\db\config::make_where($_where);
+		}
 		$query =
 		"
 			SELECT
@@ -47,6 +58,7 @@ class sms
 				s_sms.group_id IS NULL AND
 				s_sms.answertext IS NULL AND
 				s_sms.receivestatus = 'awaiting'
+				$q
 		";
 		$result = \dash\db::get($query, 'count', true);
 		return $result;
@@ -549,7 +561,14 @@ class sms
 		$where = null;
 		if($from && $to)
 		{
-			$where = "AND DATE(s_sms.datecreated) >= DATE('$from') AND DATE(s_sms.datecreated) <= DATE('$to') ";
+			if($_field === 'send')
+			{
+				$where = "AND DATE(s_sms.datesend) >= DATE('$from') AND DATE(s_sms.datesend) <= DATE('$to') ";
+			}
+			else
+			{
+				$where = "AND DATE(s_sms.datecreated) >= DATE('$from') AND DATE(s_sms.datecreated) <= DATE('$to') ";
+			}
 		}
 
 		if($_field === 'send')

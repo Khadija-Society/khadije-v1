@@ -71,8 +71,9 @@ class view
 		if(!$get)
 		{
 			$args['s_sms.receivestatus'] = 'awaiting';
-			// $args['s_sms.recommend_id'] = null;
-			// $args['s_sms.group_id'] = null;
+			$args['s_sms.recommend_id']  = null;
+			$args['s_sms.group_id']      = null;
+			$args['s_sms.answertext']    = null;
 		}
 
 		$startdate = null;
