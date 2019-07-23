@@ -3,9 +3,10 @@
 {%block pageContent%}
 
 <div class="f">
-  <div class="c4 s12">{{block('icountsmsday')}}</div>
-  <div class="c4 s12">{{block('ianswerTime')}}</div>
-  <div class="c4 s12">{{block('ianswerTimeHour')}}</div>
+  <div class="c3 s12">{{block('icountsmsday')}}</div>
+  <div class="c3 s12">{{block('igroupby')}}</div>
+  <div class="c3 s12">{{block('ianswerTime')}}</div>
+  <div class="c3 s12">{{block('ianswerTimeHour')}}</div>
 </div>
 
 <div class="f mB10">
@@ -72,6 +73,15 @@
 
 
 
+
+{%block igroupby%}
+<a class="dcard x1" href='{{url.this}}/groupby'>
+ <div class="statistic">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Group by status"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block icountsmsday%}
 <a class="dcard x1" href='{{url.this}}/countsmsday'>

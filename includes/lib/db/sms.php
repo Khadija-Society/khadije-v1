@@ -53,8 +53,13 @@ class sms
 	}
 
 
-	public static function get_groupby_send()
+	public static function get_groupby_send($_gateway)
 	{
+		$q = null;
+		if($_gateway)
+		{
+			$q = "WHERE s_sms.togateway = '$_gateway' ";
+		}
 		$query =
 		"
 			SELECT
@@ -62,6 +67,7 @@ class sms
 				s_sms.sendstatus
 			FROM
 				s_sms
+			$q
 			GROUP BY s_sms.sendstatus
 		";
 		$result = \dash\db::get($query);
@@ -69,8 +75,13 @@ class sms
 	}
 
 
-	public static function get_groupby_receive()
+	public static function get_groupby_receive($_gateway)
 	{
+		$q = null;
+		if($_gateway)
+		{
+			$q = "WHERE s_sms.togateway = '$_gateway' ";
+		}
 		$query =
 		"
 			SELECT
@@ -78,6 +89,7 @@ class sms
 				s_sms.receivestatus
 			FROM
 				s_sms
+			$q
 			GROUP BY s_sms.receivestatus
 		";
 		$result = \dash\db::get($query);

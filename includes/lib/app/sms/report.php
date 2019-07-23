@@ -4,11 +4,11 @@ namespace lib\app\sms;
 class report
 {
 
-	public static function get_groupby()
+	public static function get_groupby($_gateway)
 	{
 		$result            = [];
-		$result['send']    = \lib\db\sms::get_groupby_send();
-		$result['receive'] = \lib\db\sms::get_groupby_receive();
+		$result['send']    = \lib\db\sms::get_groupby_send($_gateway);
+		$result['receive'] = \lib\db\sms::get_groupby_receive($_gateway);
 
 		return $result;
 	}
