@@ -45,8 +45,8 @@ class view
 		}
 
 
-		$args['status'] = 'approved';
-		$args['type']   = 'delneveshte';
+		$args['comments.status'] = 'approved';
+		$args['comments.type']   = 'delneveshte';
 		$args['limit']  = 100;
 
 		\dash\data::sortLink(\content_cms\view::make_sort_link(\dash\app\comment::$sort_field, \dash\url::this()));
