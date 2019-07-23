@@ -51,7 +51,7 @@ class view
 
 		\dash\data::sortLink(\content_cms\view::make_sort_link(\dash\app\comment::$sort_field, \dash\url::this()));
 
-		$list = \dash\app\comment::list(null, $args);
+		$list = \lib\app\delneveshte::list(null, $args);
 
 		$delneveshte = [];
 		if(isset($_SESSION['delneveshte']))
