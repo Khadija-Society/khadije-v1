@@ -22,8 +22,10 @@ class run
 		}
 
 		$response = curl_exec($handle);
-
+		$mycode   = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 		curl_close ($handle);
+
+		$this->log($mycode);
 	}
 
 
@@ -88,6 +90,19 @@ class run
 		return $requests;
 	}
 
+	public function log($_data)
+	{
+		if(!is_dir(__DIR__. '/includes/log/cronjob'))
+		{
+			@mkdir(__DIR__. '/includes/log/cronjob', 0775, true);
+		}
+
+		$_data = date("Y-m-d H:i:s"). ' --- '. $_data;
+
+		file_put_contents(__DIR__. '/includes/log/cronjob/execute.log', $_data. PHP_EOL, FILE_APPEND);
+
+	}
+
 
 	public function exec()
 	{
@@ -97,14 +112,8 @@ class run
 			foreach ($requests as $key => $value)
 			{
 
-				if(!is_dir(__DIR__. '/includes/log/cronjob'))
-				{
-					@mkdir(__DIR__. '/includes/log/cronjob', 0775, true);
-				}
-
-				$log = date("Y-m-d H:i:s"). ' --- ';
-				$log .= json_encode($value, JSON_UNESCAPED_UNICODE);
-				file_put_contents(__DIR__. '/includes/log/cronjob/execute.log', $log. PHP_EOL, FILE_APPEND);
+				$log = json_encode($value, JSON_UNESCAPED_UNICODE);
+				$this->log($log);
 
 				$this->_curl($value);
 			}
