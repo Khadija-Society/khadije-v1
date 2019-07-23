@@ -97,6 +97,16 @@ class run
 		{
 			foreach ($requests as $key => $value)
 			{
+
+				if(!is_dir(__DIR__. '/includes/log/cronjob'))
+				{
+					@mkdir(__DIR__. '/includes/log/cronjob', 0775, true);
+				}
+
+				$log = date("Y-m-d H:i:s"). ' --- ';
+				$log .= json_encode($value, JSON_UNESCAPED_UNICODE);
+				file_put_contents(__DIR__. '/includes/log/cronjob/execute.log', $log. PHP_EOL, FILE_APPEND);
+
 				$this->_curl($value);
 			}
 		}
