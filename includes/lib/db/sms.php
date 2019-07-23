@@ -553,7 +553,14 @@ class sms
 		}
 		else
 		{
-			$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE 1 $where $gateway";
+			if($_bulk)
+			{
+				$query = "SELECT SUM(IF( s_sms.smscount < 70, 1, CEIL(s_sms.smscount / 70))) AS `count` FROM s_sms WHERE 1 $where $gateway";
+			}
+			else
+			{
+				$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE 1 $where $gateway";
+			}
 		}
 
 		$result = \dash\db::get($query, 'count', true);
