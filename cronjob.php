@@ -22,8 +22,7 @@ class run
 		}
 
 		$response = curl_exec($handle);
-		$mycode   = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-		echo "$mycode \n";
+
 		curl_close ($handle);
 	}
 
