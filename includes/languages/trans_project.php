@@ -54,16 +54,17 @@ class twigTransTerms
 	echo T_("Character");                                                             // Line 30
 
 	//-----------------------------------------content_smsapp/report/home/display.html
-	echo T_("Answer time per min");                                                   // Line 56
-	echo T_("Answer time per hour");                                                  // Line 67
-	echo T_("Cont send sms per day");                                                 // Line 80
-	echo T_("Add group");                                                             // Line 188
-	echo T_("Last sms");                                                              // Line 197
+	echo T_("Answer time per min");                                                   // Line 57
+	echo T_("Answer time per hour");                                                  // Line 68
+	echo T_("Group by status");                                                       // Line 81
+	echo T_("Cont send sms per day");                                                 // Line 90
+	echo T_("Add group");                                                             // Line 236
+	echo T_("Last sms");                                                              // Line 245
 	echo T_("Without title");                                                         // Line 71
 	echo T_("Setting");                                                               // Line 265
-	echo T_("Reports");                                                               // Line 225
-	echo T_("Sms group list");                                                        // Line 236
-	echo T_("Sms list");                                                              // Line 248
+	echo T_("Reports");                                                               // Line 273
+	echo T_("Sms group list");                                                        // Line 284
+	echo T_("Sms list");                                                              // Line 296
 
 	//---------------------------------------------content_smsapp/report/home/chart.js
 	echo T_("Send status chart");                                                     // Line 32
@@ -185,7 +186,7 @@ class twigTransTerms
 	echo T_("Apply");                                                                 // Line 154
 	echo T_("Advance");                                                               // Line 165
 	echo T_("Log");                                                                   // Line 246
-	echo T_("Private");                                                               // Line 200
+	echo T_("Private");                                                               // Line 248
 	echo T_("fromnumber");                                                            // Line 294
 	echo T_("Send to analyze");                                                       // Line 323
 	echo T_("Archive");                                                               // Line 229
@@ -200,12 +201,12 @@ class twigTransTerms
 	echo T_("Require");                                                               // Line 177
 
 	//------------------------------------------------content_smsapp/home/display.html
-	echo T_("Bulk");                                                                  // Line 33
-	echo T_("Total");                                                                 // Line 138
-	echo T_("month");                                                                 // Line 147
-	echo T_("week");                                                                  // Line 156
-	echo T_("day");                                                                   // Line 165
-	echo T_("Without text");                                                          // Line 200
+	echo T_("Bulk");                                                                  // Line 130
+	echo T_("Total");                                                                 // Line 186
+	echo T_("month");                                                                 // Line 195
+	echo T_("week");                                                                  // Line 204
+	echo T_("day");                                                                   // Line 213
+	echo T_("Without text");                                                          // Line 248
 
 	//----------------------------------------------------content_smsapp/home/chart.js
 
