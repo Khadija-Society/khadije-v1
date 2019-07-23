@@ -4,6 +4,9 @@ namespace content_api\v6\smsapp;
 
 class newsms
 {
+	private static $update_insert = 'insert';
+	private static $sms_id        = null;
+
 
 	public static function add_new_sms()
 	{
@@ -76,6 +79,7 @@ class newsms
 		$insert['datereceive']   = date("Y-m-d H:i:s");
 		$insert['date']          = date("Y-m-d H:i:s", strtotime($date));
 		$insert['text']          = $text;
+		$insert['smscount']      = mb_strlen($text);
 		$insert['uniquecode']    = null;
 		$insert['receivestatus'] = 'awaiting';
 		$insert['sendstatus']    = null;
@@ -84,9 +88,11 @@ class newsms
 		$insert['group_id']      = null;
 		$insert['recommend_id']  = null;
 
+		self::ready_to_update_or_insert($insert);
+
 		self::check_need_analyze($insert);
 
-		$id = self::check_add_update($insert);
+		$id = self::add_update($insert);
 
 
 		if($insert['group_id'])
@@ -106,7 +112,7 @@ class newsms
 	}
 
 
-	private static function check_add_update($_insert)
+	private static function ready_to_update_or_insert(&$_insert)
 	{
 		$fromnumber   = $_insert['fromnumber'];
 		$get_last_sms = \lib\db\sms::get_last_sms($fromnumber);
@@ -114,6 +120,7 @@ class newsms
 		if(isset($get_last_sms['date']))
 		{
 			$date = $get_last_sms['date'];
+
 			if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
 			{
 				$id             = $get_last_sms['id'];
@@ -125,17 +132,20 @@ class newsms
 					// my son is send some request in one time
 					// we check it to not save duplicate message :|
 					\dash\log::set('apiSmsAppDuplicateNewMessage');
-					return intval($get_last_sms['id']);
+					self::$sms_id = intval($get_last_sms['id']);
+					self::$update_insert = 'non';
+					return;
 				}
 
-				$new_text       = $text. $_insert['text'];
+				$new_text           = $text. $_insert['text'];
 
-				$update         = [];
-				$update['text'] = $new_text;
+				// $update             = [];
+				$_insert['text']     = $new_text;
+				$_insert['smscount'] = mb_strlen($new_text);
 
 				if(!$get_last_sms['group_id'] && $_insert['group_id'])
 				{
-					$update['group_id'] = $_insert['group_id'];
+					$_insert['group_id'] = $_insert['group_id'];
 				}
 
 				if($get_last_sms['receivestatus'] === 'block')
@@ -149,34 +159,120 @@ class newsms
 					if(!$get_recommend)
 					{
 						// reset
-						$update['recommend_id']    = null;
-						$update['group_id']        = null;
-						$update['sendstatus']      = null;
-						$update['answertext']      = null;
-						$update['answertextcount'] = null;
-						$update['receivestatus']   = 'awaiting';
-						$update['fromgateway']     = null;
-						$update['tonumber']        = null;
-						$update['dateanswer']      = null;
+						$_insert['recommend_id']    = null;
+						$_insert['group_id']        = null;
+						$_insert['sendstatus']      = null;
+						$_insert['answertext']      = null;
+						$_insert['answertextcount'] = null;
+						$_insert['receivestatus']   = 'awaiting';
+						$_insert['fromgateway']     = null;
+						$_insert['tonumber']        = null;
+						$_insert['dateanswer']      = null;
 					}
 					else
 					{
 						if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
 						{
-							$update['recommend_id'] = $_insert['recommend_id'];
+							$_insert['recommend_id'] = $_insert['recommend_id'];
 						}
 					}
 				}
 
-
-				\lib\db\sms::update($update, $get_last_sms['id']);
-				return intval($get_last_sms['id']);
+				self::$update_insert = 'update';
+				self::$sms_id = $get_last_sms['id'];
+				return;
 			}
 		}
-
-		$id = \lib\db\sms::insert($_insert);
-		return $id;
 	}
+
+
+	private static function add_update($_insert)
+	{
+		if(self::$update_insert === 'update' && self::$sms_id)
+		{
+			\lib\db\sms::update($_insert, self::$sms_id);
+			return intval(self::$sms_id);
+		}
+		elseif(self::$update_insert === 'insert')
+		{
+			$id = \lib\db\sms::insert($_insert);
+			return $id;
+		}
+	}
+
+
+	// private static function check_add_update($_insert)
+	// {
+	// 	$fromnumber   = $_insert['fromnumber'];
+	// 	$get_last_sms = \lib\db\sms::get_last_sms($fromnumber);
+
+	// 	if(isset($get_last_sms['date']))
+	// 	{
+	// 		$date = $get_last_sms['date'];
+	// 		if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
+	// 		{
+	// 			$id             = $get_last_sms['id'];
+	// 			$text           = $get_last_sms['text'];
+
+	// 			if($_insert['text'] === $text)
+	// 			{
+	// 				// duplicate message
+	// 				// my son is send some request in one time
+	// 				// we check it to not save duplicate message :|
+	// 				\dash\log::set('apiSmsAppDuplicateNewMessage');
+	// 				return intval($get_last_sms['id']);
+	// 			}
+
+	// 			$new_text           = $text. $_insert['text'];
+
+	// 			$update             = [];
+	// 			$update['text']     = $new_text;
+	// 			$update['smscount'] = mb_strlen($new_text);
+
+	// 			if(!$get_last_sms['group_id'] && $_insert['group_id'])
+	// 			{
+	// 				$update['group_id'] = $_insert['group_id'];
+	// 			}
+
+	// 			if($get_last_sms['receivestatus'] === 'block')
+	// 			{
+	// 				// nothing
+	// 			}
+	// 			else
+	// 			{
+	// 				$get_recommend = \lib\app\sms::analyze_text($new_text);
+
+	// 				if(!$get_recommend)
+	// 				{
+	// 					// reset
+	// 					$update['recommend_id']    = null;
+	// 					$update['group_id']        = null;
+	// 					$update['sendstatus']      = null;
+	// 					$update['answertext']      = null;
+	// 					$update['answertextcount'] = null;
+	// 					$update['receivestatus']   = 'awaiting';
+	// 					$update['fromgateway']     = null;
+	// 					$update['tonumber']        = null;
+	// 					$update['dateanswer']      = null;
+	// 				}
+	// 				else
+	// 				{
+	// 					if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
+	// 					{
+	// 						$update['recommend_id'] = $_insert['recommend_id'];
+	// 					}
+	// 				}
+	// 			}
+
+
+	// 			\lib\db\sms::update($update, $get_last_sms['id']);
+	// 			return intval($get_last_sms['id']);
+	// 		}
+	// 	}
+
+	// 	$id = \lib\db\sms::insert($_insert);
+	// 	return $id;
+	// }
 
 
 	private static function check_need_analyze(&$insert)
