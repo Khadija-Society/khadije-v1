@@ -90,7 +90,12 @@ class newsms
 
 		self::ready_to_update_or_insert($insert);
 
-		self::check_need_analyze($insert);
+		if(!self::ad_number($insert))
+		{
+
+			self::check_need_analyze($insert);
+		}
+
 
 		$id = self::add_update($insert);
 
@@ -108,6 +113,19 @@ class newsms
 		}
 
 		\dash\log::set('apiSmsAppCanNotSave');
+		return false;
+	}
+
+
+	private static function ad_number(&$insert)
+	{
+		$fromnumber = $insert['fromnumber'];
+
+		if(in_array(substr($fromnumber, 0, 3), ['981', '982', '983', '985']))
+		{
+			$insert['receivestatus'] = 'block';
+			return true;
+		}
 		return false;
 	}
 
