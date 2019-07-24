@@ -6,13 +6,15 @@ class sms
 {
 	private static $master_join =
 	"
-		LEFT JOIN s_group ON s_sms.group_id = s_group.id
-		LEFT JOIN s_group as `recommendGroup` ON s_sms.recommend_id = recommendGroup.id
+		LEFT JOIN s_group ON s_sms.recommend_id = s_group.id
 	";
 
 	private static $public_show_field =
 	"
-		s_sms.*, s_group.title AS `group_title`,s_group.type AS `group_type`, recommendGroup.title AS `recommend_title`
+		s_sms.*,
+		(SELECT recommendGroup1.title FROM s_group AS `recommendGroup1` WHERE recommendGroup1.id = s_sms.group_id LIMIT 1) AS `group_title`,
+		(SELECT recommendGroup2.type FROM s_group AS `recommendGroup2` WHERE recommendGroup2.id = s_sms.group_id LIMIT 1) AS `group_type`,
+		(SELECT recommendGroup.title FROM s_group AS `recommendGroup` WHERE recommendGroup.id = s_sms.recommend_id LIMIT 1) AS `recommend_title`
 	";
 
 	public static function count_shenasaee_shode($_where = null)
@@ -35,6 +37,7 @@ class sms
 				s_sms.answertext IS NULL AND
 				s_sms.receivestatus = 'awaiting'
 				$q
+				-- shenasaee_shode
 		";
 		$result = \dash\db::get($query, 'count', true);
 		return $result;
@@ -59,6 +62,7 @@ class sms
 				s_sms.answertext IS NULL AND
 				s_sms.receivestatus = 'awaiting'
 				$q
+				 -- shenasaee_nashode
 		";
 		$result = \dash\db::get($query, 'count', true);
 		return $result;
