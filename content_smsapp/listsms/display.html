@@ -179,7 +179,7 @@
   </div>
 
   <div class="c m5 s6">
-    <a class="dcard x07 {%if requestGET.sendstatus == 'send'%}active{%endif%}" href="{{url.that}}?sendstatus=send">
+    <a class="dcard x07 {%if requestGET.sendstatus == 'send'%}active{%endif%} {% if statusCount.send.send != statusCount.receive.answerready%} bg-yellow {%endif%}" href="{{url.that}}?sendstatus=send">
       <div class="value">{{statusCount.send.send | fitNumber(false)}}</div>
       <div class="label">{%trans "Sended"%}</div>
     </a>
