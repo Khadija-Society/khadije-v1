@@ -30,15 +30,15 @@ class view
 
 		if(\dash\request::get('status'))
 		{
-			$args['status'] = \dash\request::get('status');
+			$args['comments.status'] = \dash\request::get('status');
 		}
 
 		if(!isset($args['status']))
 		{
-			$args['status']     = ["NOT IN", "('cancel', 'draft', 'deleted')"];
+			$args['comments.status']     = ["NOT IN", "('cancel', 'draft', 'deleted')"];
 		}
 
-		$args['type'] = 'delneveshte';
+		$args['comments.type'] = 'delneveshte';
 
 		if(\dash\request::get('unittype'))
 		{
@@ -55,19 +55,18 @@ class view
 			$args['sort'] = 'id';
 		}
 
-
 		\dash\data::sortLink(\content_m\view::make_sort_link(\dash\app\comment::$sort_field, \dash\url::this()));
 		\dash\data::dataTable(\dash\app\comment::list(\dash\request::get('q'), $args));
 
 		$filterArray = $args;
-		unset($filterArray['type']);
-		if(isset($filterArray['status']))
+		unset($filterArray['comments.type']);
+		if(isset($filterArray['comments.status']))
 		{
-			if(is_string($filterArray['status']))
+			if(is_string($filterArray['comments.status']))
 			{
-				$filterArray[T_("Status")] = $filterArray['status'];
+				$filterArray[T_("Status")] = $filterArray['comments.status'];
 			}
-			unset($filterArray['status']);
+			unset($filterArray['comments.status']);
 		}
 
 		// set dataFilter
