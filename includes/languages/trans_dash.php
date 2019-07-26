@@ -429,7 +429,7 @@ class twigTransTerms
 
 	//---------------------------------------addons/content_cms/posts/add/display.html
 	echo T_("First type main text and save as draft, then complete and publish it."); // Line 12
-	echo T_("Save as draft");                                                         // Line 36
+	echo T_("Save as draft");                                                         // Line 40
 
 	//--------------------------------------addons/content_cms/posts/home/display.html
 	echo T_("Advance search");                                                        // Line 50
@@ -449,9 +449,10 @@ class twigTransTerms
 	echo T_("All trash posts");                                                       // Line 147
 
 	//--------------------------------------addons/content_cms/posts/edit/display.html
+	echo T_("Preview");                                                               // Line 53
 	echo T_("Save");                                                                  // Line 13
 	echo T_("Icon");                                                                  // Line 45
-	echo T_("Choose icon");                                                           // Line 81
+	echo T_("Choose icon");                                                           // Line 90
 
 	//------------------------------------------addons/content_cms/backup/display.html
 	echo T_("Backup Project");                                                        // Line 6
