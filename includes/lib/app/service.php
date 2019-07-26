@@ -57,6 +57,12 @@ class service
 			return false;
 		}
 
+		if($expertyear && intval($expertyear) > 999)
+		{
+			\dash\notif::error(T_("Plase set expert year less than 999"), 'expertyear');
+			return false;
+		}
+
 		$arabiclang = \dash\app::request('arabiclang');
 		$arabiclang  = $arabiclang ? 1 : 0;
 
@@ -103,16 +109,9 @@ class service
 			$enddate = \dash\date::force_gregorian($enddate);
 		}
 
-		$status = \dash\app::request('status');
-		if($status && mb_strlen($status) > 200)
-		{
-			\dash\notif::error(T_("Invalid status"), 'status');
-			return false;
-		}
-
 		$desc = \dash\app::request('desc');
 		$desc = trim($desc);
-		if($desc && mb_strlen($desc) >= 200)
+		if($desc && mb_strlen($desc) >= 2000)
 		{
 			\dash\notif::error(T_("Please set a valid desc"), 'desc');
 			return false;
@@ -126,7 +125,11 @@ class service
 		}
 
 		$type = \dash\app::request('type');
-
+		if($type && mb_strlen($type) > 49)
+		{
+			\dash\notif::error(T_("Invalid type"));
+			return false;
+		}
 
 		$args                = [];
 
