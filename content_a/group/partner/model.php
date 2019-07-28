@@ -69,6 +69,11 @@ class model
 
 			$file1 = \dash\app\file::upload_quick('file1');
 
+			if(\dash\data::tripDetail_place() === 'qom')
+			{
+				$post['not_force_birthday'] = true;
+			}
+
 			// if(!$file1)
 			// {
 			// 	\dash\notif::error(T_("Plase set nationalcode thumb"));

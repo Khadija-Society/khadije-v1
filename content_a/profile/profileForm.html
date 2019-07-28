@@ -93,7 +93,9 @@
 
 
 {%block iNationalCodeThumb%}
-    <label for="file1">{%if GroupMode%}تصویر کارت ملی مسئول کاروان{%else%}{%trans "Nationalcode thumb"%}{%endif%}</label>
+    <label for="file1">{%if GroupMode%}تصویر کارت ملی مسئول کاروان{%else%}{%trans "Nationalcode thumb"%}{%endif%}
+      {%if tripDetail.place == 'qom'%}<small class="fc-red">{%trans "Required"%}</small>{%endif%}
+    </label>
     <div class="input ">
      <input type="file" accept="image/gif, image/jpeg, image/png" name="file1" id="file1" data-preview data-max="500">
 
