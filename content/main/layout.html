@@ -271,26 +271,3 @@
 {%endblock%}
 
 
-
-{%block facebook%}
- <meta property ="og:title"                content="{{page.title}}"/>
- <meta property ="og:description"          content="{{page.desc}}"/>
- <meta property ="og:url"                  content="{{url.pwd}}"/>
- <meta property ="og:type"                 content="website"/>
-{%block facebookImages%}
-{%if lang.current == 'fa'%}
- <meta property ='og:locale'               content='fa_IR'/>
-{%endif%}
-{%if lang.current == 'fa'%}
- <meta property ="og:image"                content="{{url.static}}/images/share/og-wide-fa.png"/>
-{%else%}
- <meta property ="og:image"                content="{{url.static}}/images/share/og-wide-en.png"/>
-{%endif%}
- <meta property ="og:image:width"          content="525"/>
- <meta property ="og:image:height"         content="275"/>
- <meta property ="og:image"                content="{{url.static}}/images/share/og-square.png"/>
- <meta property ="og:image:width"          content="512"/>
- <meta property ="og:image:height"         content="512"/>
-{%endblock%}
-{%endblock%}
-

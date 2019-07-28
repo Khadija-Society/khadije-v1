@@ -8,6 +8,9 @@ class view
 	{
 		\dash\data::page_title(T_("Heart Writing"));
 		\dash\data::page_desc(\dash\data::site_desc());
+
+		\dash\data::page_cover(\dash\url::static(). '/images/delneveshte/bg1.jpg');
+
 		\dash\data::include_css(false);
 		\dash\data::include_js(false);
 
