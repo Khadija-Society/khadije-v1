@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 		\dash\data::page_title(T_("Donate"));
-		\dash\data::page_desc(T_("Pay your donate online with below form"));
+		\dash\data::page_desc(T_("Join to the charity and participate in the pilgrimage reward"). '. '. \dash\data::site_slogan());
 
 
 		\dash\data::bodyclass('unselectable');
