@@ -9,6 +9,8 @@ class view
 		\dash\data::page_title(T_("Donate"));
 		\dash\data::page_desc(T_("Join to the charity and participate in the pilgrimage reward"). '. '. \dash\data::site_slogan());
 
+		// add special cover
+		\dash\data::page_cover(\dash\url::static(). '/images/karbala/karbala-1.jpg');
 
 		\dash\data::bodyclass('unselectable');
 		$wayList = \lib\app\need::active_list('donate');
