@@ -273,7 +273,7 @@
   <div class="c f align-center">
     <span class="txtB pRa10">{{waySelected.title}}</span>
     <div class="fs09">{{waySelected.desc}}</div>
-    <input type="hidden" name="way" value="{{waySelected.title}}">
+    <input type="radio" name="way" value="{{waySelected.title}}" checked class="hide">
   </div>
 </div>
 {%elseif wayList%}
@@ -299,6 +299,10 @@
 </div>
 {%endfor%}
   </div>
+
+
+</div>
+{%endif%}
 
   <div class="donateOptions mB5">
 {%for key, myWay in wayList%}
@@ -335,9 +339,6 @@
 {%endif%}
 {%endfor%}
   </div>
-
-</div>
-{%endif%}
 
 {%endblock%}
 

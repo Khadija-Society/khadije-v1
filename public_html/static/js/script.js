@@ -45,6 +45,8 @@ function bindCustomWay()
     }
   });
 
+  $('.donateForm input[type=radio][name="way"]').trigger('change');
+
   // on change opt
   $('.donateForm input[type=radio][name="wayOpt"]').on('change', function()
   {
