@@ -174,7 +174,7 @@ class sms
 
 	public static function get_sms_panel_not_send()
 	{
-		$query  = "SELECT * FROM s_sms WHERE s_sms.receivestatus = 'sendtopanel' AND s_sms.sendstatus = 'awaiting' ";
+		$query  = "SELECT * FROM s_sms WHERE s_sms.receivestatus = 'sendtopanel' AND s_sms.sendstatus = 'awaiting' LIMIT 30";
 		$result = \dash\db::get($query);
 		return $result;
 	}
