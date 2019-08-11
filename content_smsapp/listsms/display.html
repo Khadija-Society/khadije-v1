@@ -157,6 +157,13 @@
     </a>
   </div>
 
+   <div class="c m4 s4">
+    <a class="dcard x07 {%if requestGET.receivestatus == 'sendtopanel'%}active{%endif%}" href="{{url.that}}?receivestatus=sendtopanel">
+      <div class="value">{{statusCount.receive.sendtopanel | fitNumber(false)}}</div>
+      <div class="label">{%trans "Send to panel"%}</div>
+    </a>
+  </div>
+
   <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.sendstatus == 'waitingtoautosend'%}active{%endif%}" href="{{url.that}}?sendstatus=waitingtoautosend">
       <div class="value">{{statusCount.send.waitingtoautosend | fitNumber(false)}}</div>
@@ -178,12 +185,21 @@
     </a>
   </div>
 
+    <div class="c m4 s4">
+    <a class="dcard x07 {%if requestGET.sendstatus == 'sendbypanel'%}active{%endif%}" href="{{url.that}}?sendstatus=sendbypanel">
+      <div class="value">{{statusCount.send.sendbypanel | fitNumber(false)}}</div>
+      <div class="label">{%trans "Send by panel"%}</div>
+    </a>
+  </div>
+
   <div class="c m5 s6">
     <a class="dcard x07 {%if requestGET.sendstatus == 'send'%}active{%endif%} {% if statusCount.send.send != statusCount.receive.answerready%} bg-yellow {%endif%}" href="{{url.that}}?sendstatus=send">
       <div class="value">{{statusCount.send.send | fitNumber(false)}}</div>
       <div class="label">{%trans "Sended"%}</div>
     </a>
   </div>
+
+
 
   <div class="c m3 s6">
     <div class="dcard x07 {% if sysStatus %} bg-graylight{%else%} bg-yellow {%endif%}" data-confirm data-data='{"status" : "change"}'>
