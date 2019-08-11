@@ -1,0 +1,1 @@
+UPDATE s_sms SET s_sms.sendstatus = 'awaiting'  where s_sms.sendstatus = 'sendbypanel' and s_sms.receivestatus = 'sendtopanel';
