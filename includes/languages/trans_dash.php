@@ -200,10 +200,10 @@ class twigTransTerms
 	echo T_("The stable base URL for all Version 6 HTTPS endpoints is");              // Line 10
 
 	//-------------------------------------------addons/includes/html/display-mvc.html
-	echo T_("You are supervisor!");                                                   // Line 98
-	echo T_("Control Panel");                                                         // Line 103
-	echo T_("JavaScript is required to use our service.");                            // Line 117
-	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 118
+	echo T_("You are supervisor!");                                                   // Line 91
+	echo T_("Control Panel");                                                         // Line 96
+	echo T_("JavaScript is required to use our service.");                            // Line 110
+	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 111
 
 	//------------------------------------------addons/includes/html/display-dash.html
 	echo T_("Edit your profile");                                                     // Line 71
@@ -381,7 +381,7 @@ class twigTransTerms
 	echo T_("Special mode");                                                          // Line 58
 	echo T_("Use Special mode");                                                      // Line 60
 	echo T_("Please select one item");                                                // Line 28
-	echo T_("Non");                                                                   // Line 591
+	echo T_("Non");                                                                   // Line 599
 	echo T_("Writer");                                                                // Line 110
 	echo T_("Change post writer");                                                    // Line 92
 	echo T_("Choose new post writer");                                                // Line 94
@@ -434,8 +434,8 @@ class twigTransTerms
 	//--------------------------------------addons/content_cms/posts/home/display.html
 	echo T_("Advance search");                                                        // Line 50
 	echo T_("Search");                                                                // Line 58
-	echo T_("Clear filter");                                                          // Line 283
-	echo T_("Apply");                                                                 // Line 284
+	echo T_("Clear filter");                                                          // Line 291
+	echo T_("Apply");                                                                 // Line 292
 	echo T_("Title");                                                                 // Line 12
 	echo T_("Clear filters");                                                         // Line 106
 	echo T_("Result not found!");                                                     // Line 105
@@ -736,6 +736,7 @@ class twigTransTerms
 	echo T_("Set title will help us answer quickly");                                 // Line 11
 	echo T_("Please write your message");                                             // Line 17
 	echo T_("Max size");                                                              // Line 27
+	echo T_("MB");                                                                    // Line 69
 	echo T_("Send notify about your answer to creator of ticket");                    // Line 36
 	echo T_("Via sms to");                                                            // Line 38
 	echo T_("Via telegram");                                                          // Line 42
@@ -822,6 +823,25 @@ class twigTransTerms
 
 	//-----------------------------------------addons/content_support/tag/display.html
 
+	//------------------------------------addons/content_crm/transactions/display.html
+	echo T_("Search in :transactionss");                                              // Line 41
+	echo T_("Budget");                                                                // Line 61
+	echo T_("Condition");                                                             // Line 63
+	echo T_("Verify");                                                                // Line 64
+	echo T_("Anonymous");                                                             // Line 73
+	echo T_("Budget before");                                                         // Line 60
+	echo T_("Try to start with add new :transactions!");                              // Line 110
+
+	//--------------------------------addons/content_crm/transactions/add/display.html
+	echo T_("Money");                                                                 // Line 19
+	echo T_("Gift");                                                                  // Line 20
+	echo T_("Transfer");                                                              // Line 21
+	echo T_("Prize");                                                                 // Line 22
+	echo T_("Unit");                                                                  // Line 26
+	echo T_("$");                                                                     // Line 30
+	echo T_("Minus");                                                                 // Line 41
+	echo T_("Plus");                                                                  // Line 46
+
 	//--------------------------------------------------addons/content_crm/layout.html
 	echo T_("CRM");                                                                   // Line 6
 	echo T_("Users");                                                                 // Line 27
@@ -829,6 +849,8 @@ class twigTransTerms
 	echo T_("Permissions");                                                           // Line 73
 	echo T_("SMS");                                                                   // Line 61
 	echo T_("Quick send");                                                            // Line 32
+	echo T_("Transactions");                                                          // Line 41
+	echo T_("Add new transaction");                                                   // Line 45
 
 	//------------------------------------addons/content_crm/member/notif/display.html
 	echo T_("Small");                                                                 // Line 20
@@ -959,52 +981,53 @@ class twigTransTerms
 	//-------------------------------------addons/content_crm/member/home/display.html
 	echo T_("Advance result");                                                        // Line 41
 	echo T_("Show");                                                                  // Line 9
-	echo T_("Display Name");                                                          // Line 83
-	echo T_("Created date");                                                          // Line 101
-	echo T_("Last Modified");                                                         // Line 104
-	echo T_("Mr");                                                                    // Line 122
-	echo T_("Mrs");                                                                   // Line 122
-	echo T_("Password is set");                                                       // Line 138
-	echo T_("Password is not set!");                                                  // Line 138
-	echo T_("Two step verification in enabled");                                      // Line 139
-	echo T_("Two step verification in disable");                                      // Line 139
-	echo T_("Have chatid");                                                           // Line 370
-	echo T_("Have not chatid");                                                       // Line 140
-	echo T_("Have email");                                                            // Line 470
-	echo T_("Have not email");                                                        // Line 477
+	echo T_("Display Name");                                                          // Line 88
+	echo T_("Created date");                                                          // Line 106
+	echo T_("Last Modified");                                                         // Line 109
+	echo T_("Mr");                                                                    // Line 127
+	echo T_("Mrs");                                                                   // Line 127
+	echo T_("Password is set");                                                       // Line 143
+	echo T_("Password is not set!");                                                  // Line 143
+	echo T_("Two step verification in enabled");                                      // Line 144
+	echo T_("Two step verification in disable");                                      // Line 144
+	echo T_("Have chatid");                                                           // Line 378
+	echo T_("Have not chatid");                                                       // Line 145
+	echo T_("Have android_uniquecode");                                               // Line 333
+	echo T_("Have not android uniquecode");                                           // Line 147
+	echo T_("Have email");                                                            // Line 478
+	echo T_("Have not email");                                                        // Line 485
 	echo T_("Try to start with add new user!");                                       // Line 143
-	echo T_("Filter by mobile");                                                      // Line 217
-	echo T_("Filter by username");                                                    // Line 222
-	echo T_("Filter by email");                                                       // Line 227
-	echo T_("Filter by chatid");                                                      // Line 232
-	echo T_("Filter by android_uniquecode");                                          // Line 237
-	echo T_("Filter by avatar");                                                      // Line 242
-	echo T_("Filter by displayname");                                                 // Line 247
-	echo T_("Filter by password");                                                    // Line 252
-	echo T_("Filter by twostep");                                                     // Line 257
-	echo T_("Filter by permission");                                                  // Line 262
-	echo T_("Filter by language");                                                    // Line 267
-	echo T_("Filter by duplicate");                                                   // Line 274
-	echo T_("Have duplicate mobile");                                                 // Line 297
-	echo T_("Have duplicate email");                                                  // Line 304
-	echo T_("Have duplicate username");                                               // Line 311
-	echo T_("Have android_uniquecode");                                               // Line 325
-	echo T_("Have language");                                                         // Line 344
-	echo T_("Have not language");                                                     // Line 351
-	echo T_("Have permission");                                                       // Line 390
-	echo T_("Have not permission");                                                   // Line 397
-	echo T_("Have twostep");                                                          // Line 416
-	echo T_("Have not twostep");                                                      // Line 423
-	echo T_("Have password");                                                         // Line 443
-	echo T_("Have not password");                                                     // Line 450
-	echo T_("Have mobile");                                                           // Line 497
-	echo T_("Have not mobile");                                                       // Line 504
-	echo T_("Have displayname");                                                      // Line 523
-	echo T_("Have not displayname");                                                  // Line 530
-	echo T_("Have avatar");                                                           // Line 549
-	echo T_("Have not avatar");                                                       // Line 556
-	echo T_("Have username");                                                         // Line 577
-	echo T_("Have not username");                                                     // Line 584
+	echo T_("Filter by mobile");                                                      // Line 225
+	echo T_("Filter by username");                                                    // Line 230
+	echo T_("Filter by email");                                                       // Line 235
+	echo T_("Filter by chatid");                                                      // Line 240
+	echo T_("Filter by android_uniquecode");                                          // Line 245
+	echo T_("Filter by avatar");                                                      // Line 250
+	echo T_("Filter by displayname");                                                 // Line 255
+	echo T_("Filter by password");                                                    // Line 260
+	echo T_("Filter by twostep");                                                     // Line 265
+	echo T_("Filter by permission");                                                  // Line 270
+	echo T_("Filter by language");                                                    // Line 275
+	echo T_("Filter by duplicate");                                                   // Line 282
+	echo T_("Have duplicate mobile");                                                 // Line 305
+	echo T_("Have duplicate email");                                                  // Line 312
+	echo T_("Have duplicate username");                                               // Line 319
+	echo T_("Have language");                                                         // Line 352
+	echo T_("Have not language");                                                     // Line 359
+	echo T_("Have permission");                                                       // Line 398
+	echo T_("Have not permission");                                                   // Line 405
+	echo T_("Have twostep");                                                          // Line 424
+	echo T_("Have not twostep");                                                      // Line 431
+	echo T_("Have password");                                                         // Line 451
+	echo T_("Have not password");                                                     // Line 458
+	echo T_("Have mobile");                                                           // Line 505
+	echo T_("Have not mobile");                                                       // Line 512
+	echo T_("Have displayname");                                                      // Line 531
+	echo T_("Have not displayname");                                                  // Line 538
+	echo T_("Have avatar");                                                           // Line 557
+	echo T_("Have not avatar");                                                       // Line 564
+	echo T_("Have username");                                                         // Line 585
+	echo T_("Have not username");                                                     // Line 592
 
 	//-----------------------------------addons/content_crm/member/glance/display.html
 	echo T_("Field");                                                                 // Line 26
@@ -1180,7 +1203,6 @@ class twigTransTerms
 	echo T_("If you have a promo code, please enter it below to receive your credit.");// Line 31
 	echo T_("Apply Code");                                                            // Line 37
 	echo T_("Your credit");                                                           // Line 53
-	echo T_("Verify");                                                                // Line 64
 	echo T_("You are not have payment history yet!");                                 // Line 120
 
 	//-----------------------------addons/content_account/billing/invoice/display.html
@@ -1274,21 +1296,8 @@ class twigTransTerms
 	echo T_("Encode");                                                                // Line 22
 
 	//-------------------------------------addons/content_su/transactions/display.html
-	echo T_("Search in :transactionss");                                              // Line 41
-	echo T_("Plus");                                                                  // Line 46
-	echo T_("Minus");                                                                 // Line 41
-	echo T_("Budget before");                                                         // Line 60
-	echo T_("Budget");                                                                // Line 61
-	echo T_("Condition");                                                             // Line 63
-	echo T_("Try to start with add new :transactions!");                              // Line 110
 
 	//---------------------------------addons/content_su/transactions/add/display.html
-	echo T_("Money");                                                                 // Line 19
-	echo T_("Gift");                                                                  // Line 20
-	echo T_("Transfer");                                                              // Line 21
-	echo T_("Prize");                                                                 // Line 22
-	echo T_("Unit");                                                                  // Line 26
-	echo T_("$");                                                                     // Line 30
 
 	//---------------------------------------------addons/content_su/time/display.html
 	echo T_("Time zone");                                                             // Line 4
@@ -1330,7 +1339,6 @@ class twigTransTerms
 	echo T_("You have another database for logs");                                    // Line 38
 	echo T_("Click for create backup from log database");                             // Line 38
 	echo T_("Auto backup");                                                           // Line 51
-	echo T_("MB");                                                                    // Line 69
 	echo T_("Start backup every");                                                    // Line 131
 	echo T_("Year");                                                                  // Line 133
 	echo T_("Month");                                                                 // Line 134
