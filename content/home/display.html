@@ -11,25 +11,6 @@
 {%set topSliderPostsID = [] %}
 {%set topSliderPosts = posts({"limit" : 5, "special" : "slider"})%}
 
-{%set topSliderPosts = topSliderPosts | merge([{
-  "id": "d",
-  "language": "fa",
-  "url": "donate?nazr=qurban",
-  "meta": {
-    "thumb": "https://khadije.com/static/images/homepage-v3/slider-ghorban3.jpg"
-  },
-  "title": "قربانی عید قربان",
-  "slug": "qorbani",
-  "slug_raw": "qorbani",
-  "type": "post",
-  "status": "publish",
-  "publishdate": "2019-07-14 12:39:00",
-  "datemodified": "2019-07-14 13:02:03",
-  "datecreated": "2019-07-14 12:39:17",
-  "excerpt": "مشارکت در قربانی عید قربان"
-}])%}
-
-
 {%set defaultImageTop = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
         <div class="sp-slides">
 {%if topSliderPosts%}
