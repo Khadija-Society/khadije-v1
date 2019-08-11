@@ -99,10 +99,11 @@ class queue
 		$get_args =
 		[
 			// 'recommend_id' => null,
-			'sendstatus'   => 'awaiting',
-			// 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
-			'fromgateway'  => \dash\utility\filter::mobile(\dash\header::get('gateway')),
-			'limit'        => 10,
+			'sendstatus'      => 'awaiting',
+			'receivestatus'   => [' != ', 'sendtopanel'],
+			// 'togateway'    => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			'fromgateway'     => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			'limit'           => 10,
 		];
 
 		$get = \lib\db\sms::get_raw($get_args);
