@@ -100,7 +100,7 @@ class queue
 		[
 			// 'recommend_id' => null,
 			'sendstatus'      => 'awaiting',
-			'receivestatus'   => [' != ', 'sendtopanel'],
+			'receivestatus'   => [' != ', " 'sendtopanel'"],
 			// 'togateway'    => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			'fromgateway'     => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			'limit'           => 10,
