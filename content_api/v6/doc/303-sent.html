@@ -62,13 +62,19 @@ curl -X POST \
 <pre>
 {
   "ok": true,
-  "msg": [
-    {
-      "type": "ok",
-      "text": "The message set as sent message"
+  "result": {
+    "dashboard": {
+      "status": true,
+      "day": {
+        "send": 0,
+        "receive": 1
+      },
+      "total": {
+        "send": 0,
+        "receive": 1
+      }
     }
-  ],
-  "result": true
+  }
 }
 </pre>
 

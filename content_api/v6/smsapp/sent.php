@@ -26,7 +26,7 @@ class sent
 		{
 			\lib\db\sms::update(['sendstatus' => 'send', 'datesend' => date("Y-m-d H:i:s"), 'tonumber' => $load['fromnumber']], $smsid);
 			\dash\notif::ok(T_("The message set as sent message"));
-			return true;
+			return ['dashboard' => \lib\app\sms::dashboard_quick(\dash\utility\filter::mobile(\dash\header::get('gateway')))];
 		}
 		else
 		{
