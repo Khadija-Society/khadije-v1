@@ -112,6 +112,28 @@ class sms
 	}
 
 
+	public static function dashboard_quick($_gateway = null)
+	{
+
+		$result                = [];
+		$result['status']      = \content_api\v6\smsapp\controller::status();
+		$day['date']           = \dash\datetime::fit(null, true, 'date');
+
+		$day                   = [];
+		$day['send']           = \lib\db\sms::get_count_sms('day', 'send', $_gateway);
+		$day['receive']        = \lib\db\sms::get_count_sms('day', 'receive', $_gateway);
+
+		$total                 = [];
+		$total['send']         = \lib\db\sms::get_count_sms('total', 'send', $_gateway);
+		$total['receive']      = \lib\db\sms::get_count_sms('total', 'receive', $_gateway);
+
+		$result['day']      = $day;
+		$result['total']    = $total;
+
+		return $result;
+	}
+
+
 	public static function status_sms_count($_args = [])
 	{
 		$result              = [];

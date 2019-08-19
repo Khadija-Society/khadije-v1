@@ -109,7 +109,11 @@ class newsms
 		{
 			\dash\log::set('apiSmsAppNewSaved', ['code' => $id]);
 			\dash\notif::ok(T_("Message saved"));
-			return ['smsid' => \dash\coding::encode($id)];
+			return
+			[
+				'smsid'     => \dash\coding::encode($id),
+				'dashboard' => \lib\app\sms::dashboard_quick(\dash\utility\filter::mobile(\dash\header::get('gateway')))
+			];
 		}
 
 		\dash\log::set('apiSmsAppCanNotSave');
