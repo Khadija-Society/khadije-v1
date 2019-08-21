@@ -112,6 +112,8 @@ class newsms
 			return
 			[
 				'smsid'     => \dash\coding::encode($id),
+				'date'      => date("Y-m-d H:i:s"),
+				'jdate'     => \dash\datetime::fit(date("Y-m-d H:i:s")),
 				'dashboard' => \lib\app\sms::dashboard_quick(\dash\utility\filter::mobile(\dash\header::get('gateway')))
 			];
 		}
