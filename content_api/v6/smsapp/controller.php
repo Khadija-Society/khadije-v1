@@ -49,7 +49,12 @@ class controller
 		{
 			$detail = \content_api\v6\smsapp\setting::get();
 		}
+		elseif($directory === 'v6/smsapp/sync')
+		{
+			$detail = \content_api\v6\smsapp\sync::fire();
+		}
 		else
+
 		{
 			\content_api\v6::no(404);
 		}

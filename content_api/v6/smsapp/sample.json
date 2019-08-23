@@ -1,0 +1,99 @@
+{
+  "from_androin": {
+    "status": true,
+    "detail": {
+      "number": 989109610612,
+      "userdata": "abc"
+    },
+    "smsnew": [
+      {
+        "from": "989109610612",
+        "text": "salam",
+        "date": "2018-02-01 14:25:10",
+        "localid": 12,
+        "smsid": "ad2kf25",
+        "userdata": "abc"
+      },
+      {
+        "from": "989109610612",
+        "text": "salam2",
+        "date": "2018-02-01 15:25:10",
+        "localid": 15,
+        "smsid": "afwk5e5",
+        "userdata": "abc"
+      }
+    ],
+    "sentsms": [
+      {
+        "localid": 12,
+        "smsid": "ad2kf25",
+        "serverid": "2kf"
+      },
+      {
+        "localid": 12,
+        "smsid": "ad2kf25",
+        "serverid": "2kf"
+      }
+    ]
+  },
+  "to_android": {
+    "status": true,
+    "date": "2019-08-21 16:19:35",
+    "jdate": "۱۳۹۸-۰۵-۳۰ ۱۶:۱۹",
+    "dashboard": {
+      "status": true,
+      "day": {
+        "send": 96,
+        "receive": 181
+      },
+      "week": {
+        "send": 411,
+        "receive": 534
+      },
+      "month": {
+        "send": 686,
+        "receive": 295
+      },
+      "total": {
+        "send": 684,
+        "receive": 255
+      }
+    },
+    "smsnewsaved": [
+      {
+        "smsid": "ad2kf25",
+        "localid": 12,
+        "serverid": "2kf"
+      }
+    ],
+    "sentsmssaved": [
+      {
+        "localid": 12,
+        "smsid": "ad2kf25",
+        "serverid": "2kf",
+        "status": true
+      }
+    ],
+    "queue": [
+      {
+        "id": "h",
+        "fromnumber": "0912453056",
+        "togateway": "9109610612",
+        "fromgateway": null,
+        "text": "Hi",
+        "tonumber": null,
+        "user_id": null,
+        "date": "2019-04-28 21:24:14",
+        "datecreated": "2019-04-30 18:32:10",
+        "datemodified": "2019-05-01 15:29:22",
+        "uniquecode": null,
+        "receivestatus": "awaiting",
+        "sendstatus": "awaiting",
+        "amount": null,
+        "answertext": "sfsdfdsfsdf",
+        "group_id": "3",
+        "recommend_id": null
+      }
+    ]
+  }
+}

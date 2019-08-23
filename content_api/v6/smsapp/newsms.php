@@ -7,6 +7,112 @@ class newsms
 	private static $update_insert = 'insert';
 	private static $sms_id        = null;
 
+	public static function multi_add_new_sms($_args)
+	{
+		\dash\app::variable($_args);
+
+		// check from is not block or family
+		$from        = \dash\app::request('from');
+		if($from && mb_strlen($from) > 90)
+		{
+			\dash\notif::error(T_("Invalid from"));
+			\dash\log::set('apiSmsAppInvalidFrom');
+			return false;
+		}
+
+		$text        = \dash\app::request('text');
+
+		$date        = \dash\app::request('date');
+
+		if($date && !strtotime($date))
+		{
+			\dash\notif::error(T_("Invalid date"));
+			\dash\log::set('apiSmsAppInvalidDate');
+			return false;
+		}
+
+
+		$from_mobile = \dash\utility\filter::mobile($from);
+		$user_id     = null;
+
+		// if from is mobile signup it
+		if($from_mobile)
+		{
+			$from        = $from_mobile;
+			$get_user_id = \dash\db\users::get_by_mobile($from_mobile);
+
+			if(isset($get_user_id['id']))
+			{
+				$user_id = $get_user_id['id'];
+			}
+			else
+			{
+				$user_id = \dash\db\users::signup(['mobile' => $from_mobile]);
+			}
+		}
+
+		if(!$from)
+		{
+			\dash\notif::error(T_("From number is required"));
+			\dash\log::set('apiSmsAppFromIsNull');
+			return false;
+		}
+
+		$brand         = \dash\app::request('brand');
+		$model         = \dash\app::request('model');
+		$simcartserial = \dash\app::request('simcart-serial');
+		$smsmessageid  = \dash\app::request('smsMessage-id');
+		$userdata      = \dash\app::request('userdata');
+
+
+		$insert                  = [];
+		$insert['brand']         = substr($brand, 0, 99);
+		$insert['model']         = substr($model, 0, 99);
+		$insert['simcartserial'] = substr($simcartserial, 0, 99);
+		$insert['smsmessageid']  = substr($smsmessageid, 0, 99);
+		$insert['userdata']      = substr($userdata, 0, 99);
+		$insert['fromnumber']    = $from;
+		$insert['togateway']     = \dash\utility\filter::mobile(\dash\header::get('gateway'));
+		$insert['fromgateway']   = null;
+		$insert['tonumber']      = null;
+		$insert['user_id']       = $user_id;
+		$insert['datereceive']   = date("Y-m-d H:i:s");
+		$insert['date']          = date("Y-m-d H:i:s", strtotime($date));
+		$insert['text']          = $text;
+		$insert['smscount']      = mb_strlen($text);
+		$insert['uniquecode']    = null;
+		$insert['receivestatus'] = 'awaiting';
+		$insert['sendstatus']    = null;
+		$insert['amount']        = null;
+		$insert['answertext']    = null;
+		$insert['group_id']      = null;
+		$insert['recommend_id']  = null;
+
+		self::ready_to_update_or_insert($insert);
+
+		if(!self::ad_number($insert))
+		{
+
+			self::check_need_analyze($insert);
+		}
+
+
+		$id = self::add_update($insert);
+
+
+		if($insert['group_id'])
+		{
+			\lib\db\smsgroup::update_group_count($insert['group_id']);
+		}
+
+		if($id)
+		{
+			return \dash\coding::encode($id);
+		}
+
+		return false;
+	}
+
 
 	public static function add_new_sms()
 	{
