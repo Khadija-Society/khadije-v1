@@ -261,6 +261,8 @@ class twigTransTerms
 	echo T_("cURL");                                                                  // Line 21
 	echo T_("Response");                                                              // Line 29
 
+	//--------------------------------------------content_api/v6/doc/305-sms-sync.html
+
 	//---------------------------------------------content_api/v6/doc/304-notsent.html
 	echo T_("Get not sent of sms");                                                   // Line 6
 	echo T_("If you have received some SMS messages and have not been notified to the system, you can receive unsubscribed messages.");// Line 9
@@ -287,7 +289,7 @@ class twigTransTerms
 	echo T_("Anyone you send SMS should notify the server of the SMS");               // Line 9
 	echo T_("Get from list of sms");                                                  // Line 38
 	echo T_("Whene the status of message is changed");                                // Line 61
-	echo T_("When the sms not ready to save as sent");                                // Line 82
+	echo T_("When the sms not ready to save as sent");                                // Line 84
 
 	//---------------------------------------content_api/v6/doc/300-dashboard-sms.html
 	echo T_("Get sms dashbord detail");                                               // Line 6
@@ -421,7 +423,9 @@ class twigTransTerms
 	echo T_("Spending method");                                                       // Line 239
 	echo T_("Custom Amount");                                                         // Line 315
 
-	//----------------------------------------------------content/karbala/display.html
+	//---------------------------------------------------content/ghadir98/display.html
+	echo T_("You can access the ticketing status through this link");                 // Line 49
+	echo T_("Select city");                                                           // Line 219
 	echo T_("Enter a valid name from 2 to 40 character");                             // Line 116
 	echo T_("Last name");                                                             // Line 124
 	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 124
@@ -441,7 +445,6 @@ class twigTransTerms
 	echo T_("Province");                                                              // Line 206
 	echo T_("Select province");                                                       // Line 208
 	echo T_("City");                                                                  // Line 217
-	echo T_("Select city");                                                           // Line 219
 	echo T_("Zip code");                                                              // Line 230
 	echo T_("Passport id");                                                           // Line 240
 	echo T_("Passport expire date");                                                  // Line 248
@@ -457,13 +460,14 @@ class twigTransTerms
 	echo T_("Country");                                                               // Line 378
 	echo T_("Choose your country");                                                   // Line 382
 
+	//----------------------------------------------------content/karbala/display.html
+
 	//-----------------------------------------------------content/doners/display.html
 	echo T_("Be good too");                                                           // Line 49
 	echo T_("Doner");                                                                 // Line 26
 
 	//----------------------------------------------------content/contact/display.html
 	echo T_("We do our best to improve khadije's service quality. So, knowing your valuable comments will help us in this way.");// Line 10
-	echo T_("You can access the ticketing status through this link");                 // Line 49
 	echo T_("khadije");                                                               // Line 23
 	echo T_("Alley 4, block 13");                                                     // Line 56
 	echo T_("Mosalla St");                                                            // Line 55
