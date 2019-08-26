@@ -51,14 +51,6 @@
      <input type="email" name="email" value="{{user.email}}" id="email" placeholder='mail@example.com' maxlength='40'>
     </div>
 
-
-    <div class="input mB10">
-     <label class="addon" for="jobtitle">عنوان فعالیت</label>
-     <input type="text" name="jobtitle" required  id="jobtitle"  maxlength='100'>
-    </div>
-
-
-
     <select name="city" class="ui dropdown select search mB10" id="city">
       <option value="" readonly>{%trans "Select city"%}</option>
       {%for key, value in cityList%}
@@ -68,8 +60,64 @@
 
 
 
+    <div class="msg f">
+      <div class="cauto">
+        <div class="check1 mRa10">
+          <input type="checkbox" id="sChk3" name="etam">
+          <label for="sChk3">اطعام</label>
+        </div>
+      </div>
+      <div class="c">
+      <div data-response='etam' data-response-hide>
+        <div class="input mT5">
+          <label class="addon" for="countetam">تعداد نفرات</label>
+         <input type="number" name="countetam" required  id="countetam"  max='99999' min="1">
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="msg f">
+      <div class="cauto">
+        <div class="check1 mRa10">
+          <input type="checkbox" id="sChk4" name="bargozari">
+          <label for="sChk4">برگزاری مراسم</label>
+        </div>
+      </div>
+      <div class="c">
+      <div data-response='bargozari' data-response-hide>
+        <div class="input mT5">
+          <label class="addon" for="mahal">محل برگزاری</label>
+         <input type="text" name="mahal" required  id="mahal"  maxlength="100">
+        </div>
+      </div>
+      </div>
+    </div>
+
+      <div class="msg f">
+      <div class="cauto">
+        <div class="check1 mRa10">
+          <input type="checkbox" id="sChk5" name="shadibox">
+          <label for="sChk5">کاروان شادی</label>
+        </div>
+      </div>
+      <div class="c">
+      <div data-response='shadibox' data-response-hide>
+        <div class="input mT5">
+          <label class="addon" for="shadi">مکان و محله</label>
+         <input type="text" name="shadi" required  id="shadi"  maxlength="100">
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+
     <div class="">
-     <textarea class="c txt" name="content" required placeholder='گزارش فعالیت دهه ولایت' rows=50 minlength="5" maxlength="100000" data-resizable></textarea>
+     <textarea class="c txt" name="content" required placeholder='سایر فعالیت‌های انجام شده' rows=50 minlength="5" maxlength="100000" data-resizable></textarea>
     </div>
 
     <div class="txtRa  mTB25">

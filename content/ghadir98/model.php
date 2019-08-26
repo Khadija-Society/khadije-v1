@@ -24,12 +24,12 @@ class model extends \content_support\ticket\contact_ticket\model
 		$email        = \dash\request::post('email');
 
 
-		$jobtitle  = \dash\request::post('jobtitle');
-		if(!$jobtitle)
-		{
-			\dash\notif::error("لطفا عنوان فعالیت را وارد کنید", 'jobtitle');
-			return false;
-		}
+		// $jobtitle  = \dash\request::post('jobtitle');
+		// if(!$jobtitle)
+		// {
+		// 	\dash\notif::error("لطفا عنوان فعالیت را وارد کنید", 'jobtitle');
+		// 	return false;
+		// }
 
 
 		$city         = \dash\request::post('city');
@@ -43,12 +43,22 @@ class model extends \content_support\ticket\contact_ticket\model
 
 		$content      = \dash\request::post('content');
 
+		$countetam = \dash\request::post('countetam');
+		$mahal = \dash\request::post('mahal');
+		$shadi = \dash\request::post('shadi');
+
+		\dash\temp::set('tempTicketTitle', 'گزارش فعالیت غدیر');
+
 		$content_raw = '';
 		$content_raw .= T_('name') . ' '. $name. "\n";
 		$content_raw .= T_('mobile') . ' '. $mobile. "\n";
 		$content_raw .= T_('email') . ' '. $email. "\n";
-		$content_raw .= ' عنوان فعالیت'. $jobtitle. "\n";
+		$content_raw .= ' تعداد اطعام '. $countetam. "\n";
+		$content_raw .= ' مکان برگزاری مراسم '. $mahal. "\n";
+		$content_raw .= ' محله کاروان شادی غدیر '. $shadi. "\n";
+		// $content_raw .= ' عنوان فعالیت'. $jobtitle. "\n";
 		$content_raw .= T_('City') . ' '. $city. "\n";
+		$content_raw .= ' سایر فعالیت‌ها '. "\n";
 		$content_raw .= "\n --- \n". $content;
 
 		return parent::post($content_raw);
