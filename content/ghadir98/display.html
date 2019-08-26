@@ -26,13 +26,17 @@
 
     </div>
 
+    <div class="msg primary2">
+      لطفا گزارش فعالیت‌های خود را در دهه ولایت به صورت دقیق و کامل ذکر کنید
+    </div>
+
 
 
 
 
      <form method="post" data-clear1 autocomplete='off'>
     {%include display.hive%}
-
+    <h5>مشخصات شما</h5>
     <div class="input mB10">
      <label class="addon" for="name">{%trans "Name"%}</label>
      <input type="text" name="name" value="{{user.displayname}}" id="name" placeholder='{%trans "Full Name"%}' maxlength='40'>
@@ -60,6 +64,7 @@
 
 
 
+    <h5>محور‌های فعالیت</h5>
     <div class="msg f">
       <div class="cauto">
         <div class="check1 mRa10">
@@ -115,9 +120,9 @@
 
 
 
-
+    <h5>سایر فعالیت‌های انجام شده</h5>
     <div class="">
-     <textarea class="c txt" name="content" required placeholder='سایر فعالیت‌های انجام شده' rows=50 minlength="5" maxlength="100000" data-resizable></textarea>
+     <textarea class="c txt" name="content" required placeholder='گزارش سایر فعالیت‌های انجام شده را در این قسمت وارد کنید... ' rows=50 minlength="5" maxlength="100000" data-resizable></textarea>
     </div>
 
     <div class="txtRa  mTB25">

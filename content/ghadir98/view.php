@@ -7,7 +7,7 @@ class view extends \content_support\ticket\contact_ticket\view
 	public static function config()
 	{
 
-		\dash\data::page_title("غدیر");
+		\dash\data::page_title("ارائه گزارش عملکرد دهه ولایت");
 		\dash\data::page_desc(\dash\data::site_desc());
 
 		$cityList    = \dash\utility\location\cites::$data;
