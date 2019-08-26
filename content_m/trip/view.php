@@ -136,13 +136,14 @@ class view
 			$args['travels.place'] = ["IN", $implode_in];
 		}
 
-		if(!isset($args['travels.status']))
+		$search_string            = \dash\request::get('q');
+
+		if(!isset($args['travels.status']) && !$search_string)
 		{
 			$args['travels.status']     = ["NOT IN", "('cancel', 'draft', 'admincancel')"];
 			$travel_count_arg['status'] = ["NOT IN", "('cancel', 'draft', 'admincancel')"];
 		}
 
-		$search_string            = \dash\request::get('q');
 
 		if($search_string)
 		{

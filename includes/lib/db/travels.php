@@ -143,6 +143,7 @@ class travels
 					users.firstname LIKE '%__string__%' OR
 					users.lastname LIKE '%__string__%' OR
 					users.nationalcode LIKE '%__string__%' OR
+					users.mobile LIKE '%__string__%' OR
 					travels.id = '__string__' OR
 					travels.place = '__string__'
 
