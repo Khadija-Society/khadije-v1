@@ -5,20 +5,9 @@ class cronjob
 {
 	public static function run()
 	{
-		switch (\dash\request::get('type'))
-		{
-			case 'thankyoumessage':
-				self::thankyoumessage();
-				break;
+		self::thankyoumessage();
 
-			case 'smsapp':
-				self::smsapp();
-				break;
-
-			default:
-				# code...
-				break;
-		}
+		self::smsapp();
 	}
 
 	private static function smsapp()
