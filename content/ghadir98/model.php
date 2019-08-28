@@ -50,9 +50,9 @@ class model extends \content_support\ticket\contact_ticket\model
 		\dash\temp::set('tempTicketTitle', 'گزارش فعالیت غدیر');
 
 		$content_raw = '';
-		$content_raw .= T_('name') . ' '. $name. "\n";
-		$content_raw .= T_('mobile') . ' '. $mobile. "\n";
-		$content_raw .= T_('email') . ' '. $email. "\n";
+		// $content_raw .= T_('name') . ' '. $name. "\n";
+		// $content_raw .= T_('mobile') . ' '. $mobile. "\n";
+		// $content_raw .= T_('email') . ' '. $email. "\n";
 		$content_raw .= ' تعداد اطعام '. $countetam. "\n";
 		$content_raw .= ' مکان برگزاری مراسم '. $mahal. "\n";
 		$content_raw .= ' محله کاروان شادی غدیر '. $shadi. "\n";
