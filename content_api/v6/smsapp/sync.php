@@ -17,6 +17,7 @@ class sync
 		$result['status']      = \content_api\v6\smsapp\controller::status();
 		$result['dashboard']   = \content_api\v6\smsapp\dashboard::get();
 		$result['queue']       = \content_api\v6\smsapp\queue::get();
+		$result['notsend']       = \content_api\v6\smsapp\notsend::get();
 		$result['smsnewsaved'] = [];
 
 		if(isset($input['smsnew']) && is_array($input['smsnew']))
