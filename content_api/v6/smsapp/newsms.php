@@ -328,6 +328,10 @@ class newsms
 			$id = \lib\db\sms::insert($_insert);
 			return $id;
 		}
+		elseif(self::$update_insert === 'non')
+		{
+			return intval(self::$sms_id);
+		}
 	}
 
 
