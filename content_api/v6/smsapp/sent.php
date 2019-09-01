@@ -8,7 +8,7 @@ class sent
 	{
 		\dash\app::variable($_args);
 
-		$smsid = \dash\app::request('smsid');
+		$smsid = \dash\app::request('serverid');
 		$smsid = \dash\coding::decode($smsid);
 		if(!$smsid)
 		{
