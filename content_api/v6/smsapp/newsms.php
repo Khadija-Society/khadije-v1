@@ -9,6 +9,10 @@ class newsms
 
 	public static function multi_add_new_sms($_args)
 	{
+		self::$update_insert = 'insert';
+		self::$sms_id        = null;
+
+		\dash\app::variable([]);
 		\dash\app::variable($_args);
 
 		// check from is not block or family
