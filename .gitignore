@@ -19,6 +19,7 @@ desktop.ini
 /dash
 *smstemplate/list.json
 *crontab.txt
+*crontab.json
 
 *sftp-config.json
 *.me.php
