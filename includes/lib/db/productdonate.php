@@ -4,7 +4,30 @@ namespace lib\db;
 class productdonate
 {
 
+	public static function summary($_args)
+	{
+		$where = null;
+		if($_args)
+		{
+			$WHERE = \dash\db\config::make_where($_args);
+			$where = " WHERE ". $WHERE;
+		}
 
+		$query =
+		"
+			SELECT
+				COUNT(DISTINCT productdonate.product_id) AS `product`,
+				SUM(productdonate.count) AS `product_count`,
+				SUM(productdonate.total) AS `total`
+			FROM
+				productdonate
+			$where
+
+		";
+
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
 
 	/**
 	 * insert new productdonateprice

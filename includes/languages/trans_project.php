@@ -26,7 +26,7 @@ class twigTransTerms
 	echo T_("People who sympathetic with this person");                               // Line 45
 
 	//--------------------------------------------content_smsapp/settings/display.html
-	echo T_("Search");                                                                // Line 43
+	echo T_("Search");                                                                // Line 80
 	echo T_("Title");                                                                 // Line 55
 	echo T_("Type");                                                                  // Line 155
 	echo T_("Status");                                                                // Line 60
@@ -36,18 +36,18 @@ class twigTransTerms
 	echo T_("Sms");                                                                   // Line 14
 	echo T_("Numbers");                                                               // Line 278
 	echo T_("Answer");                                                                // Line 281
-	echo T_("Clear filters");                                                         // Line 110
-	echo T_("Result not found!");                                                     // Line 109
-	echo T_("Search with new keywords.");                                             // Line 109
+	echo T_("Clear filters");                                                         // Line 147
+	echo T_("Result not found!");                                                     // Line 146
+	echo T_("Search with new keywords.");                                             // Line 146
 	echo T_("No record exist!");                                                      // Line 148
 
 	//--------------------------------------content_smsapp/report/groupby/display.html
 	echo T_("Send status");                                                           // Line 282
-	echo T_("Count");                                                                 // Line 58
+	echo T_("Count");                                                                 // Line 95
 	echo T_("Receive status");                                                        // Line 146
 
 	//----------------------------------content_smsapp/report/countsmsday/display.html
-	echo T_("Date");                                                                  // Line 60
+	echo T_("Date");                                                                  // Line 97
 	echo T_("Count send SMS");                                                        // Line 29
 	echo T_("Count send character");                                                  // Line 30
 	echo T_("SMS");                                                                   // Line 42
@@ -74,7 +74,7 @@ class twigTransTerms
 	echo T_("Sms count group by group title");                                        // Line 250
 	echo T_("Group chart");                                                           // Line 292
 	echo T_("Count Send and Receive sms per day");                                    // Line 26
-	echo T_("Price");                                                                 // Line 57
+	echo T_("Price");                                                                 // Line 94
 	echo T_("Receive");                                                               // Line 93
 
 	//------------------------------------------------content_smsapp/chat/display.html
@@ -117,7 +117,7 @@ class twigTransTerms
 	echo T_("Notif");                                                                 // Line 26
 	echo T_("Response len");                                                          // Line 27
 	echo T_("Detail");                                                                // Line 55
-	echo T_("Hi!");                                                                   // Line 116
+	echo T_("Hi!");                                                                   // Line 153
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
 	echo T_("Edit");                                                                  // Line 29
@@ -204,7 +204,7 @@ class twigTransTerms
 
 	//------------------------------------------------content_smsapp/home/display.html
 	echo T_("Bulk");                                                                  // Line 130
-	echo T_("Total");                                                                 // Line 59
+	echo T_("Total");                                                                 // Line 96
 	echo T_("month");                                                                 // Line 195
 	echo T_("week");                                                                  // Line 204
 	echo T_("day");                                                                   // Line 213
@@ -393,7 +393,7 @@ class twigTransTerms
 	echo T_("List of last success donations of yours");                               // Line 70
 	echo T_("Your niyat is");                                                         // Line 72
 	echo T_("Untitled");                                                              // Line 33
-	echo T_("Anonymous");                                                             // Line 161
+	echo T_("Anonymous");                                                             // Line 162
 	echo T_("Thanks");                                                                // Line 95
 	echo T_("Requested");                                                             // Line 118
 	echo T_("Your help");                                                             // Line 124
@@ -746,10 +746,11 @@ class twigTransTerms
 	echo T_("Max pay");                                                               // Line 114
 	echo T_("Max count pay user");                                                    // Line 118
 	echo T_("Remember notif");                                                        // Line 123
-	echo T_("Niyat");                                                                 // Line 151
-	echo T_("Hazinekard");                                                            // Line 152
-	echo T_("Without mobile");                                                        // Line 189
-	echo T_("Item");                                                                  // Line 201
+	echo T_("Niyat");                                                                 // Line 152
+	echo T_("Hazinekard");                                                            // Line 153
+	echo T_("Product donate");                                                        // Line 241
+	echo T_("Without mobile");                                                        // Line 191
+	echo T_("Item");                                                                  // Line 203
 
 	//------------------------------------------------content_m/myrequest/display.html
 	echo T_("CMS");                                                                   // Line 105
@@ -850,7 +851,7 @@ class twigTransTerms
 	echo T_("Statistics");                                                            // Line 77
 
 	//--------------------------------------content_m/festival/usercourse/display.html
-	echo T_("User");                                                                  // Line 55
+	echo T_("User");                                                                  // Line 92
 	echo T_("Festival course");                                                       // Line 11
 	echo T_("Files");                                                                 // Line 17
 	echo T_("Checked");                                                               // Line 33
@@ -1113,7 +1114,6 @@ class twigTransTerms
 	echo T_("Tankyou message");                                                       // Line 84
 	echo T_("Meeting");                                                               // Line 95
 	echo T_("Products");                                                              // Line 230
-	echo T_("Product donate");                                                        // Line 241
 	echo T_("Doyon");                                                                 // Line 251
 
 	//---------------------------------------------------content_m/product/layout.html
@@ -1124,7 +1124,7 @@ class twigTransTerms
 
 	//---------------------------------------------content_m/product/home/display.html
 	echo T_("Search in products");                                                    // Line 42
-	echo T_("Try to start with add new product!");                                    // Line 116
+	echo T_("Try to start with add new product!");                                    // Line 153
 
 	//-------------------------------------------content_m/representation/display.html
 	echo T_("Search in representation");                                              // Line 44
@@ -1180,8 +1180,10 @@ class twigTransTerms
 	echo T_("You can publish in another language");                                   // Line 161
 
 	//---------------------------------------content_m/productdonate/home/display.html
-	echo T_("Product");                                                               // Line 56
-	echo T_("Transaction");                                                           // Line 84
+	echo T_("Product");                                                               // Line 93
+	echo T_("Product count");                                                         // Line 20
+	echo T_("Total price");                                                           // Line 29
+	echo T_("Transaction");                                                           // Line 121
 
 	//----------------------------------------------content_festival/demo/display.html
 	echo T_("Awards");                                                                // Line 313

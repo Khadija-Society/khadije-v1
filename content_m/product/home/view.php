@@ -10,7 +10,7 @@ class view
 
 		\dash\data::page_title(T_("products list"));
 
-		\dash\data::page_pictogram('broadcast');
+		\dash\data::page_pictogram('box');
 
 		if(\dash\permission::check('mProductAdd'))
 		{

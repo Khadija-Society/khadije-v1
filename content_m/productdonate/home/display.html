@@ -1,8 +1,45 @@
 {%extends 'content_m/layout.html'%}
 
 
+{%block GlanceDetail%}
+
+  <div class="f">
+    <div class="c s12">
+      <div class="dcard x1">
+       <div class="statistic blue">
+        <div class="value">{{productdonateSummary.product | fitNumber}}</div>
+        <div class="label">{%trans "Product"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="c s6">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{productdonateSummary.product_count | fitNumber}}</div>
+        <div class="label">{%trans "Product count"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="c s6">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{productdonateSummary.total | fitNumber}}</div>
+        <div class="label">{%trans "Total price"%}</div>
+       </div>
+      </div>
+    </div>
+
+  </div>
+{%endblock%}
+
+
+
+
 
 {%block pageContent%}
+  {{block('GlanceDetail')}}
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -58,7 +95,7 @@
         <th data-sort="{{sortLink.count.order}}"><a href='{{sortLink.count.link}}'>{%trans "Count"%}</a></th>
         <th data-sort="{{sortLink.total.order}}"><a href='{{sortLink.total.link}}'>{%trans "Total"%}</a></th>
         <th>{%trans "Date"%}</th>
-        <th>{%trans "Transaction"%}</th>
+        <th class="collapsing">{%trans "Transaction"%}</th>
 
 
       </tr>
@@ -73,12 +110,12 @@
           <div>{{value.mobile | fitNumber('mobile')}}</div>
         </td>
         <td>
-          <div>{{value.title}}</div>
-          <div>{{value.subtitle}}</div>
+          <div><a href="{{url.this}}?product={{value.product_id}}">{{value.title}}</a></div>
+          <div><a href="{{url.this}}?product={{value.product_id}}">{{value.subtitle}}</a></div>
         </td>
-        <td>{{value.price | fitNumber}}</td>
+        <td>{{value.price | fitNumber}} <small>{%trans "Toman"%}</small></td>
         <td>{{value.count | fitNumber}}</td>
-        <td>{{value.total | fitNumber}}</td>
+        <td>{{value.total | fitNumber}}  <small>{%trans "Toman"%}</small></td>
         <td>{{value.datecreated | dt('human', 'year')}}</td>
         <td>
           <a class="badge" href="{{url.here}}/donate?id={{value.transaction_id}}">{%trans "Transaction"%}</a>

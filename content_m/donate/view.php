@@ -51,7 +51,7 @@ class view
 
 		if(\dash\request::get('id'))
 		{
-			$args['transactions.id'] = \dash\request::get('id');
+			$args['transactions.id'] = \dash\coding::decode(\dash\request::get('id'));
 			$payment_args['transactions.id'] = \dash\request::get('id');
 		}
 

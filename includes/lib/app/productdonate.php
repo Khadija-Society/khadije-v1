@@ -26,6 +26,15 @@ class productdonate
 		return $list;
 	}
 
+
+
+	public static function summary($_args)
+	{
+		$result = \lib\db\productdonate::summary($_args);
+		return $result;
+	}
+
+
 	/**
 	 * Gets the product.
 	 *
@@ -84,6 +93,9 @@ class productdonate
 			switch ($key)
 			{
 				case 'id':
+				case 'transaction_id':
+				case 'product_id':
+				case 'user_id':
 					$result[$key] = \dash\coding::encode($value);
 					break;
 

@@ -12,14 +12,17 @@ class view
 
 		\dash\data::page_pictogram('broadcast');
 
-
+		\dash\data::badge_text(T_("Back"));
+		\dash\data::badge_link(\dash\url::here());
 		$search_string            = \dash\request::get('q');
 		if($search_string)
 		{
 			\dash\data::page_title(\dash\data::page_title(). ' | '. T_('Search for :search', ['search' => $search_string]));
 		}
 
-		$filterArgs = [];
+		$filterArgs   = [];
+		$summary_args = [];
+
 		$args =
 		[
 			'sort'  => \dash\request::get('sort'),
@@ -31,17 +34,24 @@ class view
 			$args['order'] = 'desc';
 		}
 
-		if(\dash\request::get('status'))
-		{
-			$args['status'] = \dash\request::get('status');
-		}
 
 		if(\dash\request::get('transaction'))
 		{
 			$args['transaction_id'] = \dash\coding::decode(\dash\request::get('transaction'));
+
 			$filterArgs['transaction'] = \dash\request::get('transaction');
 		}
 
+		if(\dash\request::get('product'))
+		{
+			$args['product_id']         = \dash\coding::decode(\dash\request::get('product'));
+			$summary_args['product_id'] = $args['product_id'];
+			$filterArgs['product']      = \dash\request::get('product');
+		}
+
+
+		$summary = \lib\app\productdonate::summary($summary_args);
+		\dash\data::productdonateSummary($summary);
 
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\productdonate::$sort_field, \dash\url::this());
 		$dataTable = \lib\app\productdonate::list(\dash\request::get('q'), $args);
