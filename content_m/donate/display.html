@@ -1,7 +1,7 @@
 {%extends 'content_m/layout.html'%}
 
 
-{%block GlanceDetail2%}
+{%block GlanceDetail%}
   <div class="f">
     <div class="c s12">
       <div class="dcard x1">
@@ -43,7 +43,7 @@
 
 
 {%block pageContent%}
-{{block('GlanceDetail')}}
+
 {%if dataTable%}
  {%if dataFilter%}
 
@@ -132,6 +132,7 @@
 
         </div>
 
+    {{block('GlanceDetail')}}
     </div>
   </form>
 </div>
@@ -159,6 +160,7 @@
       <tr>
         <td class="collapsing">
           {%if value.doners%}{%else%}<small class="badge">{%trans "Anonymous"%}</small> {%endif%}
+          {%if value.isproduct%}<a href="{{url.here}}/productdonate?transaction={{value.id}}"><small class="badge success">{%trans "Product donate"%}</small></a> {%endif%}
         </td>
         <td class="s0">
 {%if value.user_id%}
