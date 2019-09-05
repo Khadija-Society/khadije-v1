@@ -4,6 +4,13 @@ namespace lib\db;
 class product
 {
 
+	public static function check_product_status($_ids)
+	{
+		$query  = "SELECT product.* FROM product WHERE product.id IN ($_ids) AND product.status = 'enable' ";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	/**
 	 * insert new productprice
 	 *

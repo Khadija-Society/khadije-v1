@@ -289,6 +289,8 @@ class donate
 	{
 		\dash\app::variable($_args);
 
+		$final_fn_args = [];
+
 		if(\dash\app::request('username'))
 		{
 			\dash\notif::error(T_("Whate are you doing?"));
@@ -369,16 +371,28 @@ class donate
 		}
 
 		$amount = \dash\app::request('amount');
-		if(!$amount || !is_numeric($amount))
-		{
-			\dash\notif::error(T_("Please set a valid amount number"), 'amount');
-			return false;
-		}
 
-		if(intval($amount) > 9000000000)
+		//check product donate
+		$product = \dash\app::request('product');
+
+		if($product)
 		{
-			\dash\notif::error(T_("Amout is out of range"), 'amount');
-			return false;
+			// check product price and set amount
+			$amount = 0;
+		}
+		else
+		{
+			if(!$amount || !is_numeric($amount))
+			{
+				\dash\notif::error(T_("Please set a valid amount number"), 'amount');
+				return false;
+			}
+
+			if(intval($amount) > 9000000000)
+			{
+				\dash\notif::error(T_("Amout is out of range"), 'amount');
+				return false;
+			}
 		}
 
 
@@ -460,6 +474,84 @@ class donate
 			}
 		}
 
+		if($product)
+		{
+			if(!is_array($product))
+			{
+				\dash\notif::error(T_("Invalid product"));
+				return false;
+			}
+			$allProductId    = [];
+			$allProductCount = [];
+			$allProductFN    = [];
+
+			foreach ($product as $product_id => $product_count)
+			{
+				$productElement = 'product_'. $product_id;
+				if(!$product_count)
+				{
+					continue;
+				}
+
+				if(!is_numeric($product_count))
+				{
+					\dash\notif::error(T_("Plase set count of product donate as a number"), $productElement);
+					return false;
+				}
+
+				$decode_product_id = \dash\coding::decode($product_id);
+				if(!$decode_product_id)
+				{
+					\dash\notif::error(T_("Invalid product id"), $productElement);
+					return false;
+				}
+
+				$allProductId[] = $decode_product_id;
+				$allProductCount[$decode_product_id] = intval($product_count);
+			}
+
+			if(!$allProductId)
+			{
+				\dash\notif::error(T_("Plese set product count to pay donate"));
+				return false;
+			}
+
+			$check_product = \lib\db\product::check_product_status(implode(',', $allProductId));
+			if(!$check_product || count($check_product) !== count($allProductId))
+			{
+				\dash\notif::error(T_("Some detail of product is invalid"));
+				return false;
+			}
+
+			$amount = 0;
+			foreach ($check_product as $product_detail)
+			{
+				if(isset($allProductCount[$product_detail['id']]))
+				{
+					if(isset($product_detail['price']))
+					{
+						$total = intval($product_detail['price']) * intval($allProductCount[$product_detail['id']]);
+						$amount += $total;
+						$allProductFN[$product_detail['id']] =
+						[
+							'count' => intval($allProductCount[$product_detail['id']]),
+							'price' => intval($product_detail['price']),
+							'total' => $total
+						];
+					}
+				}
+			}
+
+			if(!$amount)
+			{
+				\dash\notif::error(T_("No price to pay!"));
+				return false;
+			}
+
+			$final_fn_args['product'] = $allProductFN;
+		}
+
+
 		if($mobile && \dash\utility\filter::mobile($mobile))
 		{
 			\dash\session::set('temp_mobile_sms_verify_payment', $mobile);
@@ -478,7 +570,7 @@ class donate
 				'title'      => T_("Pay donate"),
 				'user_id'    => $user_id,
 				'minus'      => null,
-				'plus'       => \dash\app::request('amount'),
+				'plus'       => $amount,
 				'verify'     => 1,
 				'dateverify' => time(),
 				'type'       => 'money',
@@ -537,7 +629,7 @@ class donate
 				}
 			}
 
-			$msg_go = T_("Pay donate :price toman", ['price' => \dash\utility\human::fitNumber(\dash\app::request('amount'))]);
+			$msg_go = T_("Pay donate :price toman", ['price' => \dash\utility\human::fitNumber($amount)]);
 
 			if($way)
 			{
@@ -547,15 +639,16 @@ class donate
 
 			$meta =
 			[
-				'turn_back' => $turn_back,
-				'user_id'   => $user_id,
-				'amount'    => \dash\app::request('amount'),
-				'final_fn'  => ['/content/donate/view', 'after_pay'],
-				'auto_go'   => $auto_go,
-				'msg_go'    => $msg_go,
-				'auto_back' => $auto_back,
-				'final_msg' => true,
-				'other_field' =>
+				'turn_back'     => $turn_back,
+				'user_id'       => $user_id,
+				'amount'        => $amount,
+				'final_fn'      => ['/lib/app/donate', 'after_pay'],
+				'final_fn_args' => $final_fn_args,
+				'auto_go'       => $auto_go,
+				'msg_go'        => $msg_go,
+				'auto_back'     => $auto_back,
+				'final_msg'     => true,
+				'other_field'   =>
 				[
 					'hazinekard' => $way,
 					'niyat'      => $niyat,
@@ -567,8 +660,44 @@ class donate
 				]
 			];
 
+
 			\dash\utility\pay\start::site($meta);
 
+		}
+	}
+
+
+
+	public static function after_pay($_detail, $_raw = [])
+	{
+		$amount = isset($_detail['plus']) ? $_detail['plus'] : 0;
+		\lib\app\donate::sms_success($amount);
+
+		if(isset($_detail['product']) && is_array($_detail['product']))
+		{
+			$user_id = isset($_raw['user_id']) ? $_raw['user_id'] : null;
+			$date = date("Y-m-d H:i:s");
+			$transaction_id = isset($_raw['id']) ? $_raw['id'] : null;
+
+			$multi_insert = [];
+			foreach ($_detail['product'] as $product_id => $value)
+			{
+				$multi_insert[] =
+				[
+					'user_id'        => $user_id,
+					'product_id'     => $product_id,
+					'transaction_id' => $transaction_id,
+					'count'          => isset($value['count']) ? $value['count'] : null,
+					'price'          => isset($value['price']) ? $value['price'] : null,
+					'total'          => isset($value['total']) ? $value['total'] : null,
+					'datecreated'    => $date,
+				];
+			}
+
+			if(!empty($multi_insert))
+			{
+				\lib\db\productdonate::multi_insert($multi_insert);
+			}
 		}
 	}
 }

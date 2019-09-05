@@ -164,6 +164,17 @@ class product
 					$result[$key] = \dash\coding::encode($value);
 					break;
 
+				case 'file':
+					if(!\dash\url::content())
+					{
+						if(!$value)
+						{
+							$value = \dash\app::static_logo_url();
+						}
+					}
+					$result[$key] = $value;
+					break;
+
 
 				default:
 					$result[$key] = $value;

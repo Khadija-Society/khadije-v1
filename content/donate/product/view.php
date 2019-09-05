@@ -1,36 +1,23 @@
 <?php
-namespace content\donate;
+namespace content\donate\product;
 
 
 class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Donate"));
+		\dash\data::page_title(T_("Donate product"));
 		\dash\data::page_desc(T_("Join to the charity and participate in the pilgrimage reward"). '. '. \dash\data::site_slogan());
 
-		// add special cover
-		\dash\data::page_cover(\dash\url::static(). '/images/karbala/karbala-1.jpg');
+		// // add special cover
+		// \dash\data::page_cover(\dash\url::static(). '/images/karbala/karbala-1.jpg');
 
 		\dash\data::bodyclass('unselectable');
-		$wayList = \lib\app\need::active_list('donate');
-		\dash\data::wayList($wayList);
+		$productList = \lib\app\product::active_list('donate');
+		\dash\data::productList($productList);
 
 		\dash\data::donateArchive(\lib\db\mytransactions::user_transaction('cash'));
-		if(\dash\request::get('nazr'))
-		{
-			$list = \dash\data::wayList();
-			if(is_array($list))
-			{
-				foreach ($list as $key => $value)
-				{
-					if(isset($value['linkurl']) && $value['linkurl'] === \dash\request::get('nazr'))
-					{
-						\dash\data::waySelected($value);
-					}
-				}
-			}
-		}
+
 
 		if(\dash\request::get('token'))
 		{
@@ -52,10 +39,6 @@ class view
 				\dash\redirect::to(\dash\url::this());
 			}
 		}
-
-
 	}
-
-
 }
 ?>

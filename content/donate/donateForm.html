@@ -26,28 +26,17 @@
 {%if  paymentVerifyMsg %}
       <div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
 {%endif%}
+  {%block donateMasterForm%}
       <form method="post" autocomplete="off">
-
-        <div class="f">
-          <div class="c s12 pRa5">{{block ('iFullname')}}</div>
-          <div class="c s12">{{block ('iMobile')}}</div>
-        </div>
-        <input type="hidden" name="username" value="">
-        {%include display.hive%}
-
-        {%if isAndroid%}
-          <input type="hidden" name="isAndroid" value="1">
-        {%endif%}
 
         {{block ('iNiyat') }}
         {{block ('iWay') }}
         {{block ('iCount') }}
         {{block ('iAmount') }}
         {{block ('iDonersList')}}
-        {{block ('iDirectPay')}}
-        {{block ('iPayWay')}}
         {{block ('ipay')}}
       </form>
+    {%endblock%}
     </div>
   </div>
 

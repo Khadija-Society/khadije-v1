@@ -1,0 +1,80 @@
+{%extends display.main%}
+
+
+{%block pageData%}
+{%use "content/donate/donateForm.html"%}
+
+
+{%block donateFormPay%}
+
+
+<div class="f justify-center">
+  <div class="c6 s12">
+    <div class="cbox fs10 donateForm">
+      <h2 class="pageTitle"><a href="{{url.pwd}}">{{page.title}}</a></h2>
+
+{%if  paymentVerifyMsg %}
+      <div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
+{%endif%}
+  <form method="post" autocomplete="off">
+		  <div class="f">
+	        <div class="c s12 pRa5">{{block ('iFullname')}}</div>
+	        <div class="c s12">{{block ('iMobile')}}</div>
+	      </div>
+	        <input type="hidden" name="username" value="">
+	        {%include display.hive%}
+
+	        {%if isAndroid%}
+	          <input type="hidden" name="isAndroid" value="1">
+	        {%endif%}
+
+ 		{{block ('iNiyat') }}
+        {{block ('iProductList') }}
+
+        {{block ('iDonersList')}}
+
+        {{block ('iPayWay')}}
+        {{block ('ipay')}}
+	</form>
+    </div>
+  </div>
+
+{{block ('donateArchive')}}
+</div>
+
+{%endblock%}
+
+
+{%endblock%}
+
+
+{%block pageTitle%}{%endblock%}
+
+
+
+
+{%block iProductList%}
+<div class="f justify-center live">
+{%for key, value in productList%}
+    <div class="c4 s6 pA5">
+      <div class="vcard shadow" data-live="on">
+        <img alt='siftal' src="{%if value.file%}{{value.file}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}">
+        <div class="content">
+          <div class="header">{{value.title}}</div>
+          <div class="meta"><div>{{value.subtitle | fitNumber}}</div></div>
+          <div class="meta"><span class="txtB">{{value.price | fitNumber}} {%trans "Toman"%}</span></div>
+        </div>
+        <div class="footer">
+          <div class="input">
+            <input type="number" name="product_{{value.id}}" placeholder='{%trans "Count"%}' autofocus>
+          </div>
+        </div>
+    </div>
+  </div>
+{%endfor%}
+</div>
+{%endblock%}
+
+
+
+
