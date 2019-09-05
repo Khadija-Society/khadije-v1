@@ -230,8 +230,8 @@ class twigTransTerms
 	echo T_("If enable, Send message to operator to get answer");                     // Line 67
 	echo T_("Is money?");                                                             // Line 74
 	echo T_("If has money, get it form operator");                                    // Line 76
-	echo T_("Enable");                                                                // Line 81
-	echo T_("Disable");                                                               // Line 87
+	echo T_("Enable");                                                                // Line 87
+	echo T_("Disable");                                                               // Line 93
 	echo T_("Description");                                                           // Line 64
 	echo T_("Add");                                                                   // Line 99
 
@@ -318,8 +318,8 @@ class twigTransTerms
 
 	//------------------------------------------------------content/doyon/display.html
 	echo T_("Full name");                                                             // Line 159
-	echo T_("Your Name");                                                             // Line 171
-	echo T_("Your mobile number");                                                    // Line 182
+	echo T_("Your Name");                                                             // Line 160
+	echo T_("Your mobile number");                                                    // Line 171
 	echo T_("Please Choose one type of deyn");                                        // Line 34
 	echo T_("Toman");                                                                 // Line 14
 
@@ -390,11 +390,11 @@ class twigTransTerms
 	echo T_("Soroush App");                                                           // Line 360
 
 	//--------------------------------------------------content/donate/donateForm.html
-	echo T_("List of last success donations of yours");                               // Line 81
-	echo T_("Your niyat is");                                                         // Line 83
+	echo T_("List of last success donations of yours");                               // Line 70
+	echo T_("Your niyat is");                                                         // Line 72
 	echo T_("Untitled");                                                              // Line 33
 	echo T_("Anonymous");                                                             // Line 161
-	echo T_("Thanks");                                                                // Line 106
+	echo T_("Thanks");                                                                // Line 95
 	echo T_("Requested");                                                             // Line 118
 	echo T_("Your help");                                                             // Line 124
 	echo T_("Enter a valid number");                                                  // Line 124
@@ -402,16 +402,16 @@ class twigTransTerms
 	echo T_("First name");                                                            // Line 182
 	echo T_("Your name");                                                             // Line 151
 	echo T_("Enter a valid name");                                                    // Line 151
-	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 171
-	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 182
+	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 160
+	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 171
 	echo T_("Email");                                                                 // Line 286
 	echo T_("Enter a valid email");                                                   // Line 118
 	echo T_("Intent");                                                                // Line 188
 	echo T_("Intention to donate this fee");                                          // Line 190
-	echo T_("It is optional and depending on your intention can enter it");           // Line 202
+	echo T_("It is optional and depending on your intention can enter it");           // Line 191
 	echo T_("Pay Amount");                                                            // Line 180
-	echo T_("Rial");                                                                  // Line 334
-	echo T_("Amount of your donation");                                               // Line 211
+	echo T_("Rial");                                                                  // Line 323
+	echo T_("Amount of your donation");                                               // Line 200
 	echo T_("Total Pay Amount");                                                      // Line 206
 	echo T_("Show in public doners list?");                                           // Line 214
 	echo T_("Check doners list");                                                     // Line 214
@@ -421,7 +421,9 @@ class twigTransTerms
 	echo T_("Normal");                                                                // Line 231
 	echo T_("Admin direct pay");                                                      // Line 232
 	echo T_("Spending method");                                                       // Line 239
-	echo T_("Custom Amount");                                                         // Line 315
+	echo T_("Custom Amount");                                                         // Line 304
+
+	//---------------------------------------------content/donate/product/display.html
 
 	//---------------------------------------------------content/ghadir98/display.html
 	echo T_("You can access the ticketing status through this link");                 // Line 49
@@ -1115,9 +1117,9 @@ class twigTransTerms
 
 	//---------------------------------------------------content_m/product/layout.html
 	echo T_("Title of product");                                                      // Line 8
-	echo T_("Description of product to show in website");                             // Line 52
-	echo T_("Access in :students online registeration");                              // Line 60
-	echo T_("Status of product");                                                     // Line 77
+	echo T_("Description of product to show in website");                             // Line 58
+	echo T_("Access in :students online registeration");                              // Line 66
+	echo T_("Status of product");                                                     // Line 83
 
 	//---------------------------------------------content_m/product/home/display.html
 	echo T_("Search in products");                                                    // Line 42
