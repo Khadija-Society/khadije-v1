@@ -20,9 +20,15 @@
 {%block iPrice%}
 <label for="iprice">{%trans "Price"%}</label>
 <div class="input">
-  <input type="number" name="price" id="iprice" value="{{dataRow.price}}" min="0" max="9999999999" >
+  <input type="number" name="price" id="iprice" value="{{dataRow.price}}" min="0" max="9999999999"  data-response-realtime>
   <label class="addon">{%trans "Toman"%}</label>
 </div>
+
+
+{%if lang.current == 'fa'%}
+<div class="msg info2 txtB" data-response='price' data-response-call='wordifyResponse'></div>
+{%endif%}
+
 {%endblock%}
 
 
