@@ -113,6 +113,14 @@ class product
 			return false;
 		}
 
+		$unit = \dash\app::request('unit');
+
+		if($unit && mb_strlen($unit) > 150)
+		{
+			\dash\notif::error(T_("Please fill the product unit less than 150 character"), 'unit');
+			return false;
+		}
+
 		$file = \dash\app::request('file');
 
 		$price = \dash\app::request('price');
@@ -137,6 +145,7 @@ class product
 		$args             = [];
 		$args['title']    = $title;
 		$args['status']   = $status;
+		$args['unit']     = $unit;
 		$args['desc']     = $desc;
 		$args['sort']     = $sort;
 		$args['subtitle'] = $subtitle;

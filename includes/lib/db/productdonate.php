@@ -84,6 +84,7 @@ class productdonate
 				productdonate.*,
 				product.title,
 				product.subtitle,
+				product.unit,
 				users.displayname,
 				users.avatar,
 				users.gender,

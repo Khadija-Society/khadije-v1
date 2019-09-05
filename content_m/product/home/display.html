@@ -55,10 +55,12 @@
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
         <th data-sort="{{sortLink.subtitle.order}}"><a href='{{sortLink.subtitle.link}}'>{%trans "Subtitle"%}</a></th>
         <th data-sort="{{sortLink.price.order}}"><a href='{{sortLink.price.link}}'>{%trans "Price"%}</a></th>
+        <th data-sort="{{sortLink.unit.order}}"><a href='{{sortLink.unit.link}}'>{%trans "Unit"%}</a></th>
 
         <th>{%trans "Description"%}</th>
         <th data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
         <th class="collapsing" data-sort="{{sortLink.sort.order}}"><a href='{{sortLink.sort.link}}'>{%trans "Sort"%}</a></th>
+        <th class="collapsing">{%trans "Product donate"%}</th>
 
       </tr>
     </thead>
@@ -73,10 +75,12 @@
         {%endif%}
         <td>{{value.subtitle}}</td>
         <td>{%if value.price%}{{value.price | fitNumber}} <small>{%trans "Toman"%}</small>{%endif%}</td>
+        <td>{{value.unit}}</td>
 
         <td char="s0">{{value.desc}}</td>
         <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
         <td>{{value.sort|fitNumber}}</td>
+        <td><a class="badge info" href="{{url.here}}/productdonate?product={{value.id}}">{%trans "Show"%}</a></td>
 
       </tr>
       {%endfor%}

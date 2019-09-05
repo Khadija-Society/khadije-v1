@@ -16,6 +16,13 @@
 </div>
 {%endblock%}
 
+{%block iUnit%}
+<label for="unit">{%trans "Unit"%}</label>
+<div class="input">
+  <input type="text" name="unit" id="unit"  value="{{dataRow.unit}}"  maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+{%endblock%}
+
 
 {%block iPrice%}
 <label for="iprice">{%trans "Price"%}</label>

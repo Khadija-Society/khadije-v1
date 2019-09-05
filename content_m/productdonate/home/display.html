@@ -110,7 +110,7 @@
           <select name="product" id="iproduct" class="ui selection dropdown search">
               <option value="" >{%trans "Please select one itme"%}</option>
             {%for key, value in productList%}
-              <option value="{{value.id}}" >{{value.title}}</option>
+              <option value="{{value.id}}" {%if value.id == requestGET.product%} selected {%endif%} >{{value.title}}</option>
             {%endfor%}
           </select>
 
@@ -169,7 +169,7 @@
           <div><a href="{{url.this}}?product={{value.product_id}}">{{value.subtitle}}</a></div>
         </td>
         <td>{{value.price | fitNumber}} <small>{%trans "Toman"%}</small></td>
-        <td>{{value.count | fitNumber}}</td>
+        <td>{{value.count | fitNumber}} <small>{{value.unit}}</small></td>
         <td>{{value.total | fitNumber}}  <small>{%trans "Toman"%}</small></td>
         <td>{{value.datecreated | dt('human', 'year')}}</td>
         <td>

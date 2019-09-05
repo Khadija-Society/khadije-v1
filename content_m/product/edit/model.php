@@ -13,6 +13,7 @@ class model
 			'title'    => \dash\request::post('title'),
 			'subtitle' => \dash\request::post('subtitle'),
 			'status'   => \dash\request::post('status'),
+			'unit'   => \dash\request::post('unit'),
 			'sort'     => \dash\request::post('sort'),
 			'desc'     => \dash\request::post('desc'),
 			'price'    => \dash\request::post('price'),

@@ -8,6 +8,7 @@ trait datalist
 	[
 		'title',
 		'status',
+		'unit',
 		'subtitle',
 		'price',
 		'sort',
