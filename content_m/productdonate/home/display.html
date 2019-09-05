@@ -1,0 +1,118 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{%block pageContent%}
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.this}}'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+
+ <table class="tbl1 v1 cbox fs12">
+    <thead>
+      <tr>
+        <th>{%trans "User"%}</th>
+        <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Product"%}</a></th>
+        <th data-sort="{{sortLink.price.order}}"><a href='{{sortLink.price.link}}'>{%trans "Price"%}</a></th>
+        <th data-sort="{{sortLink.count.order}}"><a href='{{sortLink.count.link}}'>{%trans "Count"%}</a></th>
+        <th data-sort="{{sortLink.total.order}}"><a href='{{sortLink.total.link}}'>{%trans "Total"%}</a></th>
+        <th>{%trans "Date"%}</th>
+        <th>{%trans "Transaction"%}</th>
+
+
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr {%if value.status=='disable'%} class='negative'{%endif%}>
+        <td>
+          <img class="avatar" src="{{value.avatar}}">
+          <span>{{value.displayname}}</span>
+          <div>{{value.mobile | fitNumber('mobile')}}</div>
+        </td>
+        <td>
+          <div>{{value.title}}</div>
+          <div>{{value.subtitle}}</div>
+        </td>
+        <td>{{value.price | fitNumber}}</td>
+        <td>{{value.count | fitNumber}}</td>
+        <td>{{value.total | fitNumber}}</td>
+        <td>{{value.datecreated | dt('human', 'year')}}</td>
+        <td>
+          <a class="badge" href="{{url.here}}/donate?id={{value.transaction_id}}">{%trans "Transaction"%}</a>
+        </td>
+
+
+
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg info2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new product!"%}</a></p>
+{%endblock%}
+

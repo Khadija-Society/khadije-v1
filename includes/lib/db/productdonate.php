@@ -56,10 +56,27 @@ class productdonate
 		$default_option =
 		[
 			'search_field'      =>" (productdonate.title LIKE '%__string__%' OR productdonate.subtitle LIKE '%__string__%') ",
+			'public_show_field' =>
+			"
+				productdonate.*,
+				product.title,
+				product.subtitle,
+				users.displayname,
+				users.avatar,
+				users.gender,
+				users.mobile
+			",
+			"master_join" =>
+			"
+				LEFT JOIN users ON users.id = productdonate.user_id
+				LEFT JOIN product ON product.id = productdonate.product_id
+			",
 		];
 
 		$_options = array_merge($default_option, $_options);
-		return \dash\db\config::public_search('productdonate', $_string, $_options);
+		$result = \dash\db\config::public_search('productdonate', $_string, $_options);
+
+		return $result;
 	}
 
 

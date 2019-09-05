@@ -49,6 +49,12 @@ class view
 			$payment_args['payment'] = \dash\request::get('payment');
 		}
 
+		if(\dash\request::get('id'))
+		{
+			$args['transactions.id'] = \dash\request::get('id');
+			$payment_args['transactions.id'] = \dash\request::get('id');
+		}
+
 		if(\dash\request::get('mobile'))
 		{
 			$args['mobile'] = \dash\request::get('mobile');
