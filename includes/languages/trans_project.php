@@ -27,9 +27,9 @@ class twigTransTerms
 
 	//--------------------------------------------content_smsapp/settings/display.html
 	echo T_("Search");                                                                // Line 45
-	echo T_("Title");                                                                 // Line 96
+	echo T_("Title");                                                                 // Line 55
 	echo T_("Type");                                                                  // Line 155
-	echo T_("Status");                                                                // Line 40
+	echo T_("Status");                                                                // Line 60
 	echo T_("Analyze");                                                               // Line 86
 	echo T_("Is Money");                                                              // Line 59
 	echo T_("View");                                                                  // Line 77
@@ -74,7 +74,7 @@ class twigTransTerms
 	echo T_("Sms count group by group title");                                        // Line 250
 	echo T_("Group chart");                                                           // Line 292
 	echo T_("Count Send and Receive sms per day");                                    // Line 26
-	echo T_("Price");                                                                 // Line 292
+	echo T_("Price");                                                                 // Line 57
 	echo T_("Receive");                                                               // Line 93
 
 	//------------------------------------------------content_smsapp/chat/display.html
@@ -117,7 +117,7 @@ class twigTransTerms
 	echo T_("Notif");                                                                 // Line 26
 	echo T_("Response len");                                                          // Line 27
 	echo T_("Detail");                                                                // Line 55
-	echo T_("Hi!");                                                                   // Line 150
+	echo T_("Hi!");                                                                   // Line 107
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
 	echo T_("Edit");                                                                  // Line 29
@@ -230,8 +230,8 @@ class twigTransTerms
 	echo T_("If enable, Send message to operator to get answer");                     // Line 67
 	echo T_("Is money?");                                                             // Line 74
 	echo T_("If has money, get it form operator");                                    // Line 76
-	echo T_("Enable");                                                                // Line 146
-	echo T_("Disable");                                                               // Line 152
+	echo T_("Enable");                                                                // Line 81
+	echo T_("Disable");                                                               // Line 87
 	echo T_("Description");                                                           // Line 64
 	echo T_("Add");                                                                   // Line 99
 
@@ -530,7 +530,7 @@ class twigTransTerms
 	echo T_("Najmeh Park, Fatemi St");                                                // Line 33
 
 	//------------------------------------------------content/app/android/display.html
-	echo T_("Consulting");                                                            // Line 187
+	echo T_("Consulting");                                                            // Line 188
 	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 51
 	echo T_("You also partake in salawat");                                           // Line 53
 	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 55
@@ -572,7 +572,7 @@ class twigTransTerms
 	//----------------------------------------content_m/userkarbala/report/highmaps.js
 
 	//---------------------------------------content_m/userkarbala/report/display.html
-	echo T_("Report daily");                                                          // Line 77
+	echo T_("Report daily");                                                          // Line 119
 	echo T_("Province list");                                                         // Line 17
 	echo T_("Map chart");                                                             // Line 25
 
@@ -637,11 +637,15 @@ class twigTransTerms
 	echo T_("Monthly report");                                                        // Line 20
 
 	//----------------------------------------------content_m/report/home/display.html
-	echo T_("Report travel");                                                         // Line 39
-	echo T_("Report Count transaction group by name");                                // Line 49
-	echo T_("Report Count transaction group by payment and hazinekard");              // Line 59
-	echo T_("Report sum transaction group by hazinekard");                            // Line 68
-	echo T_("Report Month");                                                          // Line 88
+	echo T_("Total Donation");                                                        // Line 10
+	echo T_("Today Donation");                                                        // Line 19
+	echo T_("Donation Count");                                                        // Line 28
+	echo T_("Donation Average");                                                      // Line 36
+	echo T_("Report travel");                                                         // Line 81
+	echo T_("Report Count transaction group by name");                                // Line 91
+	echo T_("Report Count transaction group by payment and hazinekard");              // Line 101
+	echo T_("Report sum transaction group by hazinekard");                            // Line 110
+	echo T_("Report Month");                                                          // Line 130
 
 	//----------------------------------content_m/report/counttransaction/display.html
 
@@ -704,7 +708,7 @@ class twigTransTerms
 	//----------------------------------------------------------content_m/options.html
 	echo T_("All representation from this place is done");                            // Line 36
 	echo T_("Picture");                                                               // Line 37
-	echo T_("Sort");                                                                  // Line 245
+	echo T_("Sort");                                                                  // Line 61
 	echo T_("Slug");                                                                  // Line 21
 	echo T_("Allow price");                                                           // Line 60
 	echo T_("This method have term and conditions");                                  // Line 73
@@ -713,7 +717,7 @@ class twigTransTerms
 	echo T_("Request");                                                               // Line 97
 	echo T_("allowed extentions jpg, png (gif for bussiness plans). Max 500Kb");      // Line 147
 	echo T_("Language");                                                              // Line 162
-	echo T_("Enter a valid title");                                                   // Line 96
+	echo T_("Enter a valid title");                                                   // Line 8
 	echo T_("Terms and conditions");                                                  // Line 23
 	echo T_("Enter a valid count");                                                   // Line 112
 	echo T_("Active");                                                                // Line 101
@@ -735,10 +739,6 @@ class twigTransTerms
 	echo T_("Book");                                                                  // Line 96
 
 	//---------------------------------------------------content_m/donate/display.html
-	echo T_("Total Donation");                                                        // Line 10
-	echo T_("Today Donation");                                                        // Line 19
-	echo T_("Donation Count");                                                        // Line 28
-	echo T_("Donation Average");                                                      // Line 36
 	echo T_("Advance filter");                                                        // Line 85
 	echo T_("Search in donations");                                                   // Line 86
 	echo T_("Max pay");                                                               // Line 114
@@ -750,27 +750,27 @@ class twigTransTerms
 	echo T_("Item");                                                                  // Line 201
 
 	//------------------------------------------------content_m/myrequest/display.html
-	echo T_("CMS");                                                                   // Line 103
-	echo T_("Hadith");                                                                // Line 113
-	echo T_("Admin Contact");                                                         // Line 122
+	echo T_("CMS");                                                                   // Line 104
+	echo T_("Hadith");                                                                // Line 114
+	echo T_("Admin Contact");                                                         // Line 123
 	echo T_("Report");                                                                // Line 40
-	echo T_("Home page number");                                                      // Line 141
+	echo T_("Home page number");                                                      // Line 142
 	echo T_("Delneveshte");                                                           // Line 16
-	echo T_("Send SMS");                                                              // Line 160
+	echo T_("Send SMS");                                                              // Line 161
 	echo T_("Representation");                                                        // Line 34
 	echo T_("Health Service");                                                        // Line 43
-	echo T_("SMS Template");                                                          // Line 196
-	echo T_("Donate product list");                                                   // Line 207
-	echo T_("Donate list");                                                           // Line 217
-	echo T_("Group trip request");                                                    // Line 237
-	echo T_("Family trip request");                                                   // Line 247
-	echo T_("request service list");                                                  // Line 257
+	echo T_("SMS Template");                                                          // Line 197
+	echo T_("Donate product list");                                                   // Line 208
+	echo T_("Donate list");                                                           // Line 218
+	echo T_("Group trip request");                                                    // Line 249
+	echo T_("Family trip request");                                                   // Line 259
+	echo T_("request service list");                                                  // Line 269
 
 	//-------------------------------------content_m/festival/mediasupporter/list.html
 	echo T_("Add new mediasupporter");                                                // Line 13
 
 	//--------------------------------------------------content_m/festival/layout.html
-	echo T_("Subtitle");                                                              // Line 119
+	echo T_("Subtitle");                                                              // Line 56
 	echo T_("Enter a valid subtitle");                                                // Line 121
 	echo T_("Slug of festival");                                                      // Line 24
 	echo T_("Enter a valid slug");                                                    // Line 24
@@ -1104,13 +1104,24 @@ class twigTransTerms
 	echo T_("search");                                                                // Line 59
 
 	//-----------------------------------------------------content_m/home/display.html
-	echo T_("Sms management");                                                        // Line 44
-	echo T_("Signup karbala");                                                        // Line 54
-	echo T_("Add trip");                                                              // Line 63
+	echo T_("Sms management");                                                        // Line 45
+	echo T_("Signup karbala");                                                        // Line 55
+	echo T_("Add trip");                                                              // Line 64
 	echo T_("Festival");                                                              // Line 24
-	echo T_("Tankyou message");                                                       // Line 82
-	echo T_("Meeting");                                                               // Line 93
-	echo T_("Doyon");                                                                 // Line 227
+	echo T_("Tankyou message");                                                       // Line 83
+	echo T_("Meeting");                                                               // Line 94
+	echo T_("Product donate");                                                        // Line 229
+	echo T_("Doyon");                                                                 // Line 239
+
+	//---------------------------------------------------content_m/product/layout.html
+	echo T_("Title of product");                                                      // Line 8
+	echo T_("Description of product to show in website");                             // Line 52
+	echo T_("Access in :students online registeration");                              // Line 60
+	echo T_("Status of product");                                                     // Line 77
+
+	//---------------------------------------------content_m/product/home/display.html
+	echo T_("Search in products");                                                    // Line 42
+	echo T_("Try to start with add new product!");                                    // Line 107
 
 	//-------------------------------------------content_m/representation/display.html
 	echo T_("Search in representation");                                              // Line 44

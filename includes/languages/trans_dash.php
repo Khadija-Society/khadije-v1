@@ -1430,6 +1430,7 @@ class twigTransTerms
 
 	//------------------------------------------addons/content_su/cronjob/display.html
 	echo T_("Run cronjob for this service");                                          // Line 15
+	echo T_("Manual execute");                                                        // Line 47
 
 	//---------------------------------------------addons/content_su/info/display.html
 	echo T_("Show server info");                                                      // Line 8
