@@ -194,12 +194,12 @@ class view
 
 		\dash\data::sortLink(\content_m\view::make_sort_link(\dash\app\transaction::$sort_field, \dash\url::here(). '/donate'));
 
-		if(\dash\permission::check('cpDonateTotalPay'))
-		{
-			\dash\data::totalPaid(\dash\app\transaction::total_paid($payment_args));
-			\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d"), $payment_args));
-			\dash\data::totalPaidCount(\dash\app\transaction::total_paid_count($payment_args));
-		}
+		// if(\dash\permission::check('cpDonateTotalPay'))
+		// {
+		// 	\dash\data::totalPaid(\dash\app\transaction::total_paid($payment_args));
+		// 	\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d"), $payment_args));
+		// 	\dash\data::totalPaidCount(\dash\app\transaction::total_paid_count($payment_args));
+		// }
 
 		$filterArray = $args;
 		unset($filterArray['donate']);

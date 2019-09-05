@@ -1,7 +1,49 @@
 {%extends 'content_m/layout.html'%}
 
 
+
+{%block GlanceDetail%}
+  <div class="f">
+    <div class="c s12">
+      <div class="dcard x1">
+       <div class="statistic blue">
+        <div class="value">{{totalPaid | fitNumber}}</div>
+        <div class="label">{%trans "Total Donation"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="cauto s6">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{totalPaidDate | fitNumber}}</div>
+        <div class="label">{%trans "Today Donation"%}</div>
+       </div>
+      </div>
+    </div>
+
+    <div class="cauto s6">
+      <div class="dcard x1">
+       <div class="statistic">
+        <div class="value">{{totalPaidCount | fitNumber}}</div>
+        <div class="label">{%trans "Donation Count"%}</div>
+       </div>
+      </div>
+    </div>
+    <div class="cauto s12">
+      <div class="dcard x1">
+       <div class="statistic brown">
+        <div class="value">{%if totalPaidCount%}{{ (totalPaid / totalPaidCount) | round(-3) | fitNumber}} {%else%}-{%endif%}</div>
+        <div class="label">{%trans "Donation Average"%}</div>
+       </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
+
+
 {%block pageContent%}
+{{block('GlanceDetail')}}
 <div class="f">
 	<div class="c6">
 		{{block('rDaily')}}

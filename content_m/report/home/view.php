@@ -15,6 +15,17 @@ class view
 
 		\dash\data::badge_text(T_('Back to dashboard'));
 		\dash\data::badge_link(\dash\url::here());
+
+		if(\dash\permission::check('cpDonateTotalPay'))
+		{
+			$payment_args              = [];
+			$payment_args['donate']    = 'cash';
+			$payment_args['condition'] = 'ok';
+
+			\dash\data::totalPaid(\dash\app\transaction::total_paid($payment_args));
+			\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d"), $payment_args));
+			\dash\data::totalPaidCount(\dash\app\transaction::total_paid_count($payment_args));
+		}
 	}
 }
 ?>
