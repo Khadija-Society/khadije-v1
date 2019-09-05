@@ -71,8 +71,63 @@
 
 
 
-
 {%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get"  autocomplete="off" action="{{url.this}}">
+
+    <div class="f">
+
+      <div class="c s12 mB5 pRa5">
+        <div class="input">
+          <label data-kerkere=".showAdvanceFilter" data-kerkere-icon class="addon">{%trans "Advance filter"%}</label>
+          <input type="search" name="q" placeholder='{%trans "Search in donations"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
+        </div>
+      </div>
+
+      <div class="cauto s12 mB5 pRa5">
+        <div class="input ltr">
+          <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+        </div>
+      </div>
+
+
+      <div class="cauto s12 mB5 pRa5">
+        <div class="input ltr">
+          <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+        </div>
+      </div>
+
+      <div class="cauto s12 mB5">
+          <button class="btn block">{%trans "Search" %}</button>
+      </div>
+
+    </div>
+
+    <div class="showAdvanceFilter" {%if requestGET.product%} {%else%}  data-kerkere-content='hide'  {%endif%}>
+
+        <div class=" f pT10">
+          <label for="iproduct">{%trans "Product"%}</label>
+          <select name="product" id="iproduct" class="ui selection dropdown search">
+              <option value="" >{%trans "Please select one itme"%}</option>
+            {%for key, value in productList%}
+              <option value="{{value.id}}" >{{value.title}}</option>
+            {%endfor%}
+          </select>
+
+
+        </div>
+        {%if requestGET%}
+        <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
+        {%endif%}
+        <button class="btn primary2">{%trans "Apply"%}</button>
+
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlSearchBox2%}
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
     <div class="input">
@@ -150,6 +205,6 @@
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new product!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} {%trans "No result founded"%}</p>
 {%endblock%}
 

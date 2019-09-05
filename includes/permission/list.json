@@ -358,5 +358,50 @@
     "title": "cpDoyonView",
     "cat": "Doyon",
     "require": []
+  },
+  "smsAppSetting": {
+    "title": "smsAppSetting",
+    "cat": "sms",
+    "require": []
+  },
+  "contentCp": {
+    "title": "contentCp",
+    "cat": "Control Panel",
+    "require": []
+  },
+  "aSettingSmsEdit": {
+    "title": "aSettingSmsEdit",
+    "cat": "sms",
+    "require": []
+  },
+  "cpUsersView": {
+    "title": "cpUsersView",
+    "cat": "CRM",
+    "require": []
+  },
+  "cpProductView": {
+    "title": "cpProductView",
+    "cat": "Donate product",
+    "require": []
+  },
+  "mProductAdd": {
+    "title": "mProductAdd",
+    "cat": "Donate product",
+    "require": []
+  },
+  "mProductView": {
+    "title": "mProductView",
+    "cat": "Donate product",
+    "require": []
+  },
+  "mProductEdit": {
+    "title": "mProductEdit",
+    "cat": "Donate product",
+    "require": []
+  },
+  "cpRepresentationSetAllDone": {
+    "title": "cpRepresentationSetAllDone",
+    "cat": "Danger",
+    "require": []
   }
 }

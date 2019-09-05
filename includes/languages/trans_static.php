@@ -258,6 +258,18 @@ class TransStatic
 	echo T_("Pay");
 	echo T_("cpDoyonView");
 
+	echo T_("smsAppSetting");
+	echo T_("contentCp");
+	echo T_("aSettingSmsEdit");
+	echo T_("cpUsersView");
+	echo T_("cpProductView");
+	echo T_("mProductAdd");
+	echo T_("mProductView");
+	echo T_("mProductEdit");
+	echo T_("cpRepresentationSetAllDone");
+	echo T_("Control Panel");
+	echo T_("Donate product");
+
  }
 }
 ?>

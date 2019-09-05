@@ -13,18 +13,32 @@ trait datalist
 		'sort',
 	];
 
-	public static function active_list()
+	public static function all_list()
 	{
 		$args =
 		[
-			'order'  => 'asc',
-			'sort'   => 'sort',
-			'status' => 'enable',
+			'order'      => 'asc',
+			'sort'       => 'sort',
 			'pagenation' => false,
 		];
 		$list = self::list(null, $args);
 		return $list;
 	}
+
+
+	public static function active_list()
+	{
+		$args =
+		[
+			'order'      => 'asc',
+			'sort'       => 'sort',
+			'status'     => 'enable',
+			'pagenation' => false,
+		];
+		$list = self::list(null, $args);
+		return $list;
+	}
+
 
 	/**
 	 * Gets the product.
