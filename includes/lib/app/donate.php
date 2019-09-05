@@ -657,6 +657,7 @@ class donate
 					'doners'     => $doners,
 					'wayopt'     => $wayopt,
 					'totalcount' => $totalcount,
+					'isproduct'  => $product ? 1 : null,
 				]
 			];
 

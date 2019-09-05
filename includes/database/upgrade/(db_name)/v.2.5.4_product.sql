@@ -27,3 +27,6 @@ CONSTRAINT `productdoante_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`
 CONSTRAINT `productdoante_transaction_id` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`) ON UPDATE CASCADE,
 CONSTRAINT `productdoante_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `transactions` ADD `isproduct` bit(1)  NULL DEFAULT NULL;
