@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Donate product"));
+		\dash\data::page_title('نذر کالای اربعین');
 		\dash\data::page_desc(T_("Join to the charity and participate in the pilgrimage reward"). '. '. \dash\data::site_slogan());
 
 		// // add special cover
