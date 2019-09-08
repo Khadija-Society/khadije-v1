@@ -9,7 +9,7 @@
 
 
 <div class="f justify-center">
-  <div class="c6 s12">
+  <div class="c9 s12">
     <div class="cbox fs10 donateForm">
       <h2 class="pageTitle"><a href="{{url.pwd}}">{{page.title}}</a></h2>
 
@@ -56,15 +56,14 @@
 {%block iProductList%}
 <div class="f justify-center live">
 {%for key, value in productList%}
-    <div class="c4 s6 pA5">
+    <div class="c2 m3 s4 pA5">
       <div class="vcard shadow" data-live="on">
         <img alt='siftal' src="{%if value.file%}{{value.file}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}">
         <div class="content">
-          <div class="header">{{value.title}}</div>
-          <div class="meta"><div>{{value.subtitle | fitNumber}}</div></div>
-          <div class="meta"><span class="txtB">{{value.price | fitNumber}} {%trans "Toman"%}</span></div>
+          <div class="meta">{{value.subtitle | fitNumber}}</div>
+          <div class="meta"><span class="txtB fs08">{{value.price | fitNumber}} {%trans "Toman"%}</span></div>
         </div>
-        <div class="footer">
+        <div class="footer pA5-f">
           <div class="input">
             <input type="number" name="product_{{value.id}}" placeholder='{%trans "Count"%}' autofocus>
           </div>

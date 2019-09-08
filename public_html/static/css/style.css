@@ -997,17 +997,17 @@ body[data-page="donate"] .wrapper, body[data-page="app_donate"]{
 body[data-page="donate"] #sHeaderNav .headerLine, body[data-page="app_donate"] #sHeaderNav .headerLine{
 	background-color: transparent;
 }
-body[data-page="donate"] .wrapper .cbox, body[data-page="app_donate"] .cbox{
+.cbox.donateForm{
 	border: 1px solid #00aaaa;
 	margin-top: 60px;
 	padding-top: 20px;
 }
-body[data-page="donate"] .wrapper .cbox h2, body[data-page="app_donate"] .cbox h2{
+.cbox.donateForm h2{
 	font-size: 1.3em;
 	margin-bottom: 1em;
 }
 
-body[data-page="donate"] .wrapper .cbox.donateForm:before, body[data-page="app_donate"] .cbox.donateForm:before{
+.cbox.donateForm:before{
 	content: "";
 	height:86px;
 	width: 280px;
@@ -1020,7 +1020,7 @@ body[data-page="donate"] .wrapper .cbox.donateForm:before, body[data-page="app_d
 	background-image: url('../images/homepage-v3/sprite.png');
 	background-position: -950px -300px;
 }
-body[data-page="donate"] .wrapper .cbox.donateLists, body[data-page="app_donate"] .cbox.donateLists{
+.cbox.donateLists{
 	max-height: 600px;
 	overflow-y: auto;
 }
