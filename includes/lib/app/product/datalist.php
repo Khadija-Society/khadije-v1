@@ -50,10 +50,10 @@ trait datalist
 	 */
 	public static function list($_string = null, $_args = [])
 	{
-		if(!\dash\user::id())
-		{
-			return false;
-		}
+		// if(!\dash\user::id())
+		// {
+		// 	return false;
+		// }
 
 		$default_meta =
 		[
