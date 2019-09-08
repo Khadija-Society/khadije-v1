@@ -1040,6 +1040,9 @@ body[data-page="donate"] #sHeaderNav .headerLine, body[data-page="app_donate"] #
 	background-color: #eee;
 }
 
+.donateProductList > .cauto{
+	max-width: 150px;
+}
 
 
 /* ***************************************************** components*/

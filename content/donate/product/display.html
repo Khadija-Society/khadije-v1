@@ -54,14 +54,16 @@
 
 
 {%block iProductList%}
-<div class="f justify-center live">
+<div class="f justify-center donateProductList">
 {%for key, value in productList%}
-    <div class="c2 m3 s4 pA5">
-      <div class="vcard shadow" data-live="on">
+    <div class="cauto m4 s6 pA5">
+      <div class="vcard shadow">
         <img alt='siftal' src="{%if value.file%}{{value.file}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}">
         <div class="content">
-          <div class="meta">{{value.subtitle | fitNumber}}</div>
-          <div class="meta"><span class="txtB fs08">{{value.price | fitNumber}} {%trans "Toman"%}</span></div>
+{%if value.subtitle%}
+          <div class="meta mB5">{{value.subtitle | fitNumber}}</div>
+{%endif%}
+          <div class="txtC fs08 txtB">{{value.price | fitNumber}} {%trans "Toman"%}</div>
         </div>
         <div class="footer pA5-f">
           <div class="input">
