@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="c s6">
+    <div class="c s12">
       <div class="dcard x1">
        <div class="statistic">
         <div class="value">{{productdonateSummary.product_count | fitNumber}}</div>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="c s6">
+    <div class="c s12">
       <div class="dcard x1">
        <div class="statistic">
         <div class="value">{{productdonateSummary.total | fitNumber}}</div>
@@ -140,6 +140,7 @@
 
 
 {%block htmlTable%}
+<div class="tblBox">
 
  <table class="tbl1 v1 cbox fs12">
     <thead>
@@ -183,6 +184,7 @@
       {%endfor%}
     </tbody>
   </table>
+</div>
   {%include display.pagination%}
 
 {%endblock%}
