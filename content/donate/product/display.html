@@ -60,6 +60,9 @@
       <div class="vcard shadow">
         <img alt='siftal' src="{%if value.file%}{{value.file}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}">
         <div class="content">
+{%if value.unit%}
+          <div class="txtC mB5">{{value.unit}}</div>
+{%endif%}
 {%if value.subtitle%}
           <div class="meta mB5">{{value.subtitle | fitNumber}}</div>
 {%endif%}
