@@ -4,6 +4,12 @@ namespace content_api\v6\smsapp;
 
 class sync
 {
+	public static function fire2()
+	{
+		sleep(20);
+		return self::fire();
+	}
+
 
 	public static function fire()
 	{
