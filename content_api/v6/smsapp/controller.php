@@ -53,6 +53,10 @@ class controller
 		{
 			$detail = \content_api\v6\smsapp\sync::fire();
 		}
+		elseif($directory === 'v6/smsapp/sync2')
+		{
+			$detail = \content_api\v6\smsapp\sync::fire2();
+		}
 		else
 
 		{
