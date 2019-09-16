@@ -22,6 +22,7 @@ class view
 			'order'      => \dash\request::get('order'),
 			'sort'       => \dash\request::get('sort'),
 			'pagenation' => false,
+			'status'     => ['!=', "'deleted'"],
 		];
 
 		$search_string = \dash\request::get('q');
