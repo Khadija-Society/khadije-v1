@@ -163,6 +163,8 @@
       <div class="label">{%trans "Send to panel"%}</div>
     </a>
   </div>
+</div>
+<div class="f">
 
   <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.sendstatus == 'waitingtoautosend'%}active{%endif%}" href="{{url.that}}?sendstatus=waitingtoautosend">
@@ -192,6 +194,7 @@
     </a>
   </div>
 
+
   <div class="c m5 s6">
     <a class="dcard x07 {%if requestGET.sendstatus == 'send'%}active{%endif%} {% if statusCount.send.send != statusCount.receive.answerready%} bg-yellow {%endif%}" href="{{url.that}}?sendstatus=send">
       <div class="value">{{statusCount.send.send | fitNumber(false)}}</div>
@@ -199,6 +202,13 @@
     </a>
   </div>
 
+
+    <div class="c m4 s4">
+    <div class="dcard x07" title='{{statusCount.lastconnected | date | dt}}'>
+      <div class="value">{{statusCount.lastconnected | date | dt('human', 'year')}}</div>
+      <div class="label">{%trans "Last connected"%}</div>
+    </div>
+  </div>
 
 
   <div class="c m3 s6">

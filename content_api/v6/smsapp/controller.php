@@ -16,6 +16,7 @@ class controller
 
 		self::check_allow_gateway();
 
+		\lib\app\sms::lastconnected(true);
 
 		$detail    = [];
 
@@ -58,7 +59,6 @@ class controller
 			$detail = \content_api\v6\smsapp\sync::fire2();
 		}
 		else
-
 		{
 			\content_api\v6::no(404);
 		}

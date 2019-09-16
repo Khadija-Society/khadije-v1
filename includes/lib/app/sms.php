@@ -180,8 +180,34 @@ class sms
 		}
 		$count_all     = \lib\db\sms::get_count($_args);
 		$result['all'] = $count_all;
+		$result['lastconnected'] = \lib\app\sms::lastconnected();
 
 		return $result;
+
+	}
+
+	public static function lastconnected($_time = null)
+	{
+		$setting_file = self::setting_file();
+		if($_time)
+		{
+			$time =
+			[
+				'lastconnected' => time(),
+			];
+			self::setting_file($time);
+			return true;
+		}
+
+
+		if(isset($setting_file['lastconnected']) && $setting_file['lastconnected'])
+		{
+			return $setting_file['lastconnected'];
+		}
+		else
+		{
+			return null;
+		}
 
 	}
 
