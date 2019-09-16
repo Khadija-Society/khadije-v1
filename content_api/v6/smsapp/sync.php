@@ -6,8 +6,62 @@ class sync
 {
 	public static function fire2()
 	{
-		sleep(20);
-		return self::fire();
+		$input = self::get_input();
+		if($input === false)
+		{
+			return false;
+		}
+
+		$result                = [];
+		$result['status']      = \content_api\v6\smsapp\controller::status();
+		$result['dashboard']   = \content_api\v6\smsapp\dashboard::get();
+		$result['queue']       = \content_api\v6\smsapp\queue::get();
+		$result['notsent']     = \content_api\v6\smsapp\notsent::get();
+		$result['smsnewsaved'] = [];
+
+		if(isset($input['smsnew']) && is_array($input['smsnew']))
+		{
+			foreach ($input['smsnew'] as $key => $value)
+			{
+				$temp             = [];
+				$temp['smsid']    = isset($value['smsid']) ? $value['smsid'] : null;
+				$temp['localid']  = isset($value['localid']) ? $value['localid'] : null;
+				$temp['md5']      = isset($value['md5']) ? $value['md5'] : null;
+				$temp['serverid'] = \content_api\v6\smsapp\newsms::multi_add_new_sms($value);
+
+				$result['smsnewsaved'][] = $temp;
+			}
+		}
+
+		if(isset($input['sentsms']) && is_array($input['sentsms']))
+		{
+			foreach ($input['sentsms'] as $key => $value)
+			{
+				$temp             = [];
+				$temp['smsid']    = isset($value['smsid']) ? $value['smsid'] : null;
+				$temp['localid']  = isset($value['localid']) ? $value['localid'] : null;
+				$temp['md5']      = isset($value['md5']) ? $value['md5'] : null;
+				$temp['serverid'] = isset($value['serverid']) ? $value['serverid'] : null;
+				$temp['status']   = \content_api\v6\smsapp\sent::multi_set($value);
+
+				$result['sentsmssaved'][] = $temp;
+			}
+		}
+
+		if(isset($input['lost']) && is_array($input['lost']))
+		{
+			foreach ($input['lost'] as $key => $value)
+			{
+				$temp                   = [];
+				$temp['smsid']          = isset($value['smsid']) ? $value['smsid'] : null;
+				$temp['localid']        = isset($value['localid']) ? $value['localid'] : null;
+				$temp['md5']            = isset($value['md5']) ? $value['md5'] : null;
+				$temp['serverid']       = \content_api\v6\smsapp\newsms::lost($value);
+				$result['lostresult'][] = $temp;
+			}
+		}
+
+		return $result;
 	}
 
 

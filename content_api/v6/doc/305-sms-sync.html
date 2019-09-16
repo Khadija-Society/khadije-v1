@@ -29,7 +29,8 @@
       "date": "2018-02-01 14:25:10",
       "localid": 12,
       "smsid": "ad2kf25",
-      "userdata": "abc"
+      "userdata": "abc",
+      "md5": "20e43b79d8e1f2c9424239455e3aed01"
     },
     {
       "from": "989109610612",
@@ -37,19 +38,42 @@
       "date": "2018-02-01 15:25:10",
       "localid": 15,
       "smsid": "afwk5e5",
-      "userdata": "abc"
+      "userdata": "abc",
+      "md5": "86318e52f5ed4801abe1d13d509443de"
+    }
+  ],
+  "lost": [
+    {
+      "from": "989109610612",
+      "text": "salam",
+      "date": "2018-02-01 14:25:10",
+      "localid": 12,
+      "smsid": "ad2kf25",
+      "userdata": "abc",
+      "md5": "f9c24b8f961d48841a9838cca5274d8d"
+    },
+    {
+      "from": "989109610612",
+      "text": "salam2",
+      "date": "2018-02-01 15:25:10",
+      "localid": 15,
+      "smsid": "afwk5e5",
+      "userdata": "abc",
+      "md5": "c20ad4d76fe97759aa27a0c99bff6710"
     }
   ],
   "sentsms": [
     {
       "localid": 12,
       "smsid": "ad2kf25",
-      "serverid": "2kf"
+      "serverid": "2kf",
+      "md5": "d5f7450822cab6832183ee006668a122"
     },
     {
       "localid": 12,
       "smsid": "ad2kf25",
-      "serverid": "2kf"
+      "serverid": "2kf",
+      "md5": "fc3f318fba8b3c1502bece62a27712df"
     }
   ]
 }
@@ -77,7 +101,8 @@ curl -X POST \
       "date": "2018-02-01 14:25:10",
       "localid": 12,
       "smsid": "ad2kf25",
-      "userdata": "abc"
+      "userdata": "abc",
+      "md5": "20e43b79d8e1f2c9424239455e3aed01"
     },
     {
       "from": "989109610612",
@@ -85,19 +110,42 @@ curl -X POST \
       "date": "2018-02-01 15:25:10",
       "localid": 15,
       "smsid": "afwk5e5",
-      "userdata": "abc"
+      "userdata": "abc",
+      "md5": "86318e52f5ed4801abe1d13d509443de"
+    }
+  ],
+  "lost": [
+    {
+      "from": "989109610612",
+      "text": "salam",
+      "date": "2018-02-01 14:25:10",
+      "localid": 12,
+      "smsid": "ad2kf25",
+      "userdata": "abc",
+      "md5": "f9c24b8f961d48841a9838cca5274d8d"
+    },
+    {
+      "from": "989109610612",
+      "text": "salam2",
+      "date": "2018-02-01 15:25:10",
+      "localid": 15,
+      "smsid": "afwk5e5",
+      "userdata": "abc",
+      "md5": "c20ad4d76fe97759aa27a0c99bff6710"
     }
   ],
   "sentsms": [
     {
       "localid": 12,
       "smsid": "ad2kf25",
-      "serverid": "2kf"
+      "serverid": "2kf",
+      "md5": "d5f7450822cab6832183ee006668a122"
     },
     {
       "localid": 12,
       "smsid": "ad2kf25",
-      "serverid": "2kf"
+      "serverid": "2kf",
+      "md5": "fc3f318fba8b3c1502bece62a27712df"
     }
   ]
 }'
@@ -106,99 +154,102 @@ curl -X POST \
 <h3>{%trans "Response"%}</h3>
 <pre>
 {
-  "ok": false,
-  "msg": [
-    {
-      "type": "warn",
-      "text": "No new message"
-    },
-    {
-      "type": "error",
-      "text": "Invalid sms id"
-    },
-    {
-      "type": "error",
-      "text": "Invalid sms id"
+    "ok": false,
+    "msg": [
+        {
+            "type": "warn",
+            "text": "هیچ پیام جدیدی وجود ندارد"
+        },
+        {
+            "type": "warn",
+            "text": "هیچ پیام ارسال نشده‌ای وجود ندارد"
+        },
+        {
+            "type": "error",
+            "text": "شناسه پیامک یافت نشد"
+        },
+        {
+            "type": "error",
+            "text": "شناسه پیامک یافت نشد"
+        }
+    ],
+    "result": {
+        "status": true,
+        "dashboard": {
+            "status": true,
+            "day": {
+                "send": 0,
+                "send_bulk": 0,
+                "receive": 8,
+                "receive_bulk": 8,
+                "date": "دوشنبه ۲۵ شهریور ۱۳۹۸"
+            },
+            "week": {
+                "send": 0,
+                "send_bulk": 0,
+                "receive": 8,
+                "receive_bulk": 8
+            },
+            "month": {
+                "send": 178,
+                "send_bulk": 179,
+                "receive": 278,
+                "receive_bulk": 326
+            },
+            "total": {
+                "send": 229,
+                "send_bulk": 230,
+                "receive": 347,
+                "receive_bulk": 403
+            }
+        },
+        "queue": null,
+        "notsent": null,
+        "smsnewsaved": [
+            {
+                "smsid": "ad2kf25",
+                "localid": 12,
+                "md5": "20e43b79d8e1f2c9424239455e3aed01",
+                "serverid": "qwf"
+            },
+            {
+                "smsid": "afwk5e5",
+                "localid": 15,
+                "md5": "86318e52f5ed4801abe1d13d509443de",
+                "serverid": "qwg"
+            }
+        ],
+        "sentsmssaved": [
+            {
+                "smsid": "ad2kf25",
+                "localid": 12,
+                "md5": "d5f7450822cab6832183ee006668a122",
+                "serverid": "2kf",
+                "status": false
+            },
+            {
+                "smsid": "ad2kf25",
+                "localid": 12,
+                "md5": "fc3f318fba8b3c1502bece62a27712df",
+                "serverid": "2kf",
+                "status": false
+            }
+        ],
+        "lostresult": [
+            {
+                "smsid": "ad2kf25",
+                "localid": 12,
+                "md5": "f9c24b8f961d48841a9838cca5274d8d",
+                "serverid": "qw9"
+            },
+            {
+                "smsid": "afwk5e5",
+                "localid": 15,
+                "md5": "c20ad4d76fe97759aa27a0c99bff6710",
+                "serverid": "qwb"
+            }
+        ]
     }
-  ],
-  "result": {
-    "status": true,
-    "dashboard": {
-      "status": true,
-      "day": {
-        "send": 0,
-        "send_bulk": 0,
-        "receive": 4,
-        "receive_bulk": 4,
-        "date": "Friday 23 August 2019"
-      },
-      "week": {
-        "send": 0,
-        "send_bulk": 0,
-        "receive": 5,
-        "receive_bulk": 5
-      },
-      "month": {
-        "send": 0,
-        "send_bulk": 0,
-        "receive": 5,
-        "receive_bulk": 5
-      },
-      "total": {
-        "send": 0,
-        "send_bulk": 0,
-        "receive": 5,
-        "receive_bulk": 5
-      }
-    },
-    "queue": [
-      {
-        "id": "h",
-        "fromnumber": "0912453056",
-        "togateway": "9109610612",
-        "fromgateway": null,
-        "text": "Hi",
-        "tonumber": null,
-        "user_id": null,
-        "date": "2019-04-28 21:24:14",
-        "datecreated": "2019-04-30 18:32:10",
-        "datemodified": "2019-05-01 15:29:22",
-        "uniquecode": null,
-        "receivestatus": "awaiting",
-        "sendstatus": "awaiting",
-        "amount": null,
-        "answertext": "sfsdfdsfsdf",
-        "group_id": "3",
-        "recommend_id": null
-      }
-    ],
-    "smsnewsaved": [
-      {
-        "smsid": "ad2kf25",
-        "localid": 12,
-        "serverid": "dBT"
-      },
-      {
-        "smsid": "afwk5e5",
-        "localid": 15,
-        "serverid": "dBV"
-      }
-    ],
-    "sentsmssaved": [
-      {
-        "smsid": "ad2kf25",
-        "localid": 12,
-        "serverid": "2kf",
-        "status": false
-      },
-      {
-        "smsid": "ad2kf25",
-        "localid": 12,
-        "serverid": "2kf",
-        "status": false
-      }
-    ]
-  }
 }
 </pre>
 

@@ -7,6 +7,31 @@ class newsms
 	private static $update_insert = 'insert';
 	private static $sms_id        = null;
 
+
+	public static function lost($_args)
+	{
+		\dash\app::variable([]);
+		\dash\app::variable($_args);
+
+		$md5 = \dash\app::request('md5');
+
+		if(!$md5 || mb_strlen($md5) !== 32)
+		{
+			\dash\notif::warn('Invalid md5 - not set or len is not 32');
+			return false;
+		}
+
+		$get = \lib\db\sms::get(['md5' => $md5, 'limit' => 1]);
+		if(isset($get['id']))
+		{
+			return \dash\coding::encode($get['id']);
+		}
+		else
+		{
+			return self::multi_add_new_sms($_args);
+		}
+	}
+
 	public static function multi_add_new_sms($_args)
 	{
 		self::$update_insert = 'insert';
@@ -63,6 +88,7 @@ class newsms
 		}
 
 		$brand         = \dash\app::request('brand');
+		$md5           = \dash\app::request('md5');
 		$model         = \dash\app::request('model');
 		$simcartserial = \dash\app::request('simcart-serial');
 		$smsmessageid  = \dash\app::request('smsMessage-id');
@@ -71,6 +97,7 @@ class newsms
 
 		$insert                  = [];
 		$insert['brand']         = substr($brand, 0, 99);
+		$insert['md5']           = substr($md5, 0, 32);
 		$insert['model']         = substr($model, 0, 99);
 		$insert['simcartserial'] = substr($simcartserial, 0, 99);
 		$insert['smsmessageid']  = substr($smsmessageid, 0, 99);
