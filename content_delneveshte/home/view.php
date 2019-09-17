@@ -14,6 +14,34 @@ class view
 		\dash\data::include_css(false);
 		\dash\data::include_js(false);
 
+		$list = self::delneveshte_list();
+
+		$delneveshte = [];
+		if(isset($_SESSION['delneveshte']))
+		{
+			$delneveshte = $_SESSION['delneveshte'];
+			$delneveshte = array_reverse($delneveshte);
+		}
+
+		\dash\data::dataTable(array_merge($delneveshte, $list));
+
+
+		\dash\data::display_delneveshte("content_delneveshte/home/layout.html");
+		if(\dash\request::ajax())
+		{
+			\dash\data::display_delneveshte("content_delneveshte/home/messages.html");
+		}
+
+		if(isset($_SESSION['delneveshte_like']))
+		{
+			\dash\data::likes($_SESSION['delneveshte_like']);
+		}
+
+	}
+
+	public static function delneveshte_list()
+	{
+
 		$args           = [];
 		$sort = \dash\request::get('sort');
 		if(!$sort)
@@ -55,28 +83,7 @@ class view
 		\dash\data::sortLink(\content_cms\view::make_sort_link(\dash\app\comment::$sort_field, \dash\url::this()));
 
 		$list = \lib\app\delneveshte::list(null, $args);
-
-		$delneveshte = [];
-		if(isset($_SESSION['delneveshte']))
-		{
-			$delneveshte = $_SESSION['delneveshte'];
-			$delneveshte = array_reverse($delneveshte);
-		}
-
-		\dash\data::dataTable(array_merge($delneveshte, $list));
-
-
-		\dash\data::display_delneveshte("content_delneveshte/home/layout.html");
-		if(\dash\request::ajax())
-		{
-			\dash\data::display_delneveshte("content_delneveshte/home/messages.html");
-		}
-
-		if(isset($_SESSION['delneveshte_like']))
-		{
-			\dash\data::likes($_SESSION['delneveshte_like']);
-		}
-
+		return $list;
 	}
 }
 ?>
