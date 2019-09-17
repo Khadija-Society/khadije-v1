@@ -126,10 +126,10 @@ class application
 
 	private static function salawat()
 	{
-		$link          = [];
-		$link['type']  = 'salawat';
-		$link['count'] = 46546454;
-		return $link;
+		$salawat          = [];
+		$salawat['type']  = 'salawat';
+		$salawat['count'] = \lib\db\salavats::shomar();
+		return $salawat;
 	}
 
 	private static function hr()
