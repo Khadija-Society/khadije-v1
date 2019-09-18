@@ -6,8 +6,9 @@ class application
 
 	public static function detail_v6()
 	{
-		$detail              = [];
+		$detail             = [];
 		$detail['homepage'] = self::homepage();
+
 		return $detail;
 	}
 
@@ -15,22 +16,122 @@ class application
 	private static function homepage()
 	{
 		$homepage              = [];
-		$homepage[]            = self::link1();
-		$homepage[]            = self::link2();
-		$homepage[]            = self::hr();
-		$homepage[]            = self::link4();
-		$homepage[]            = self::titlelink();
-		$homepage[]            = self::link1();
-		$homepage[]            = self::title();
-		$homepage[]            = self::hr();
+		$homepage[]            = self::karbala_signup_link();
 		$homepage[]            = self::slider();
-		$homepage[]            = self::linkdesc();
-		$homepage[]            = self::salawat();
 		$homepage[]            = self::hr();
+		$homepage[]            = self::title(T_("News"));
 		$homepage[]            = self::news();
 		$homepage[]            = self::hr();
+		$homepage[]            = self::salawat();
+		$homepage[]            = self::link2_donate();
+
+
+		// $homepage[]            = self::link2();
+		// $homepage[]            = self::link1();
+		// $homepage[]            = self::title();
+		// $homepage[]            = self::hr();
+		// $homepage[]            = self::linkdesc();
+		// $homepage[]            = self::hr();
+		// $homepage[]            = self::hr();
+
 		return $homepage;
 	}
+
+
+	private static function karbala_signup_link()
+	{
+		$link          = [];
+		$link['type']  = 'link1';
+		$link['image'] = 'https://khadije.com/files/1/503-b42df374abb06a9226db84212a3f3b5a.jpg';
+		$link['url']   = \dash\url::kingdom(). '/app/karbala2';
+		return $link;
+	}
+
+
+	private static function slider()
+	{
+		$link            = [];
+
+		$link['type']    = 'slider';
+		$posts           = \dash\app\posts::get_post_list(['special' => 'slider', 'limit' => 5]);
+		$link['slider'] = $posts;
+
+		// // special slider limit 5
+		// $link['slider'][0]['title']   = T_("News title");
+		// $link['slider'][0]['content'] = T_("News content");
+		// $link['slider'][0]['image']   = \dash\url::site(). '/static/images/logo.png';
+		// $link['slider'][0]['url']     = \dash\url::kingdom();
+
+		// $link['slider'][1]['title']   = T_("News title");
+		// $link['slider'][1]['content'] = T_("News content");
+		// $link['slider'][1]['image']   = \dash\url::site(). '/static/images/logo.png';
+		// $link['slider'][1]['url']     = \dash\url::kingdom();
+
+
+		return $link;
+	}
+
+
+	private static function news()
+	{
+		$link         = [];
+
+		$link['type'] = 'news';
+		$posts        = \dash\app\posts::get_post_list(['limit' => 10]);
+		$link['news'] = $posts;
+
+		// $link['news'][0]['title']   = T_("News title");
+		// $link['news'][0]['content'] = T_("News content");
+		// $link['news'][0]['image']   = \dash\url::site(). '/static/images/logo.png';
+		// $link['news'][0]['url']     = \dash\url::kingdom();
+
+		// $link['news'][1]['title']   = T_("News title");
+		// $link['news'][1]['content'] = T_("News content");
+		// $link['news'][1]['image']   = \dash\url::site(). '/static/images/logo.png';
+		// $link['news'][1]['url']     = \dash\url::kingdom();
+
+
+		return $link;
+	}
+
+	private static function hr()
+	{
+		$link          = [];
+		$link['type']  = 'hr';
+		return $link;
+	}
+
+
+	private static function title($_title = null)
+	{
+		$link          = [];
+		$link['type']  = 'title';
+		$link['title'] = $_title ? $_title : T_("Hi!");
+		return $link;
+	}
+
+	private static function link2_donate()
+	{
+		$link                     = [];
+
+		$link['type']             = 'link2';
+
+		$link['link'][0]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][0]['url']   = \dash\url::kingdom(). '/donate';
+
+		$link['link'][1]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
+
+		return $link;
+	}
+
+
+
+
+
+
+
+
 
 
 	private static function link1()
@@ -56,47 +157,8 @@ class application
 	}
 
 
-	private static function link4()
-	{
-		$link                     = [];
-
-		$link['type']             = 'link4';
-
-		$link['link'][0]['image'] = \dash\url::site(). '/static/images/logo.png';
-		$link['link'][0]['url']   = \dash\url::kingdom();
-
-		$link['link'][1]['image'] = \dash\url::site(). '/static/images/logo.png';
-		$link['link'][1]['url']   = \dash\url::kingdom();
-
-		$link['link'][2]['image'] = \dash\url::site(). '/static/images/logo.png';
-		$link['link'][2]['url']   = \dash\url::kingdom();
-
-		$link['link'][3]['image'] = \dash\url::site(). '/static/images/logo.png';
-		$link['link'][3]['url']   = \dash\url::kingdom();
-
-		return $link;
-	}
 
 
-	private static function slider()
-	{
-		$link                     = [];
-
-		$link['type']             = 'slider';
-
-		$link['slider'][0]['title']   = T_("News title");
-		$link['slider'][0]['content'] = T_("News content");
-		$link['slider'][0]['image']   = \dash\url::site(). '/static/images/logo.png';
-		$link['slider'][0]['url']     = \dash\url::kingdom();
-
-		$link['slider'][1]['title']   = T_("News title");
-		$link['slider'][1]['content'] = T_("News content");
-		$link['slider'][1]['image']   = \dash\url::site(). '/static/images/logo.png';
-		$link['slider'][1]['url']     = \dash\url::kingdom();
-
-
-		return $link;
-	}
 
 
 	private static function titlelink()
@@ -122,14 +184,6 @@ class application
 	}
 
 
-	private static function title()
-	{
-		$link          = [];
-		$link['type']  = 'title';
-		$link['title']  = T_("Your static title");
-		return $link;
-	}
-
 
 	private static function salawat()
 	{
@@ -139,31 +193,7 @@ class application
 		return $salawat;
 	}
 
-	private static function hr()
-	{
-		$link          = [];
-		$link['type']  = 'hr';
-		return $link;
-	}
-
-	private static function news()
-	{
-		$link                     = [];
-
-		$link['type']             = 'news';
-
-		$link['news'][0]['title']   = T_("News title");
-		$link['news'][0]['content'] = T_("News content");
-		$link['news'][0]['image']   = \dash\url::site(). '/static/images/logo.png';
-		$link['news'][0]['url']     = \dash\url::kingdom();
-
-		$link['news'][1]['title']   = T_("News title");
-		$link['news'][1]['content'] = T_("News content");
-		$link['news'][1]['image']   = \dash\url::site(). '/static/images/logo.png';
-		$link['news'][1]['url']     = \dash\url::kingdom();
 
 
-		return $link;
-	}
 }
 ?>
