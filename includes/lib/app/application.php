@@ -6,6 +6,14 @@ class application
 
 	public static function detail_v6()
 	{
+		$detail              = [];
+		$detail['homepage'] = self::homepage();
+		return $detail;
+	}
+
+
+	private static function homepage()
+	{
 		$homepage              = [];
 		$homepage[]            = self::link1();
 		$homepage[]            = self::link2();
@@ -21,8 +29,7 @@ class application
 		$homepage[]            = self::hr();
 		$homepage[]            = self::news();
 		$homepage[]            = self::hr();
-
-		return ['homepage' => $homepage];
+		return $homepage;
 	}
 
 
