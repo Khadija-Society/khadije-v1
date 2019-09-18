@@ -4,37 +4,39 @@ namespace content_delneveshte\home;
 
 class model
 {
+
 	public static function post()
 	{
 
 		if(\dash\request::post('like'))
 		{
-			if(!isset($_SESSION['delneveshte_like']))
-			{
-				$_SESSION['delneveshte_like'] = [];
-			}
-
-			$like = \dash\request::post('like');
-			$like_id = \dash\coding::decode($like);
-
-			if(!$like_id)
-			{
-				return;
-			}
-
-			if(!in_array($like, $_SESSION['delneveshte_like']))
-			{
-				$_SESSION['delneveshte_like'][] = $like;
-				\dash\db\comments::set_comment_data($like_id, 'plus');
-			}
-			else
-			{
-				unset($_SESSION['delneveshte_like'][array_search($like, $_SESSION['delneveshte_like'])]);
-				\dash\db\comments::set_comment_data($like_id, 'minus');
-			}
-
+			self::like_delneveshte();
 			return;
 		}
+
+		$result = self::add_delneveshte();
+
+		if($result)
+		{
+			\dash\notif::ok(T_("Your gele vas saved and after accept you can see it in this page"));
+
+			if(!isset($_SESSION['delneveshte']))
+			{
+				$_SESSION['delneveshte'] = [];
+			}
+
+			$_SESSION['delneveshte'][] = \dash\safe::safe(array_merge($args, ['id' => 251, 'status' => 'awaiting', 'datecreated' => date("Y-m-d H:i:s")]), 'sqlinjection');
+			\dash\redirect::pwd();
+		}
+		else
+		{
+			// \dash\notif::error(T_("We could not save the contact"));
+		}
+	}
+
+
+	public static function add_delneveshte()
+	{
 
 		$desc       = \dash\request::post('desc');
 		$title      = \dash\request::post('title');
@@ -120,22 +122,38 @@ class model
 
 		// insert comments
 		$result = \dash\app\comment::add($args);
-		if($result)
+		return $result;
+	}
+
+
+	public static function like_delneveshte()
+	{
+		if(!isset($_SESSION['delneveshte_like']))
 		{
-			\dash\notif::ok(T_("Your gele vas saved and after accept you can see it in this page"));
+			$_SESSION['delneveshte_like'] = [];
+		}
 
-			if(!isset($_SESSION['delneveshte']))
-			{
-				$_SESSION['delneveshte'] = [];
-			}
+		$like = \dash\request::post('like');
+		$like_id = \dash\coding::decode($like);
 
-			$_SESSION['delneveshte'][] = \dash\safe::safe(array_merge($args, ['id' => 251, 'status' => 'awaiting', 'datecreated' => date("Y-m-d H:i:s")]), 'sqlinjection');
-			\dash\redirect::pwd();
+		if(!$like_id)
+		{
+			return;
+		}
+
+		if(!in_array($like, $_SESSION['delneveshte_like']))
+		{
+			$_SESSION['delneveshte_like'][] = $like;
+			\dash\db\comments::set_comment_data($like_id, 'plus');
 		}
 		else
 		{
-			// \dash\notif::error(T_("We could not save the contact"));
+			unset($_SESSION['delneveshte_like'][array_search($like, $_SESSION['delneveshte_like'])]);
+			\dash\db\comments::set_comment_data($like_id, 'minus');
 		}
+
+		return true;
+
 	}
 }
 ?>

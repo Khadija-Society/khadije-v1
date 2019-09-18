@@ -6,17 +6,46 @@ class controller
 {
 	public static function routing()
 	{
-		if(!\dash\request::is('get'))
+		\content_api\v6::check_appkey();
+
+		$directory = \dash\url::directory();
+
+		if($directory === 'v6/delneveshte')
+		{
+
+			if(!\dash\request::is('get'))
+			{
+				\content_api\v6::no(404);
+			}
+
+			$detail = self::delneveshte();
+		}
+		elseif($directory === 'v6/delneveshte/add')
+		{
+			if(!\dash\request::is('post'))
+			{
+				\content_api\v6::no(404);
+			}
+
+			$detail = self::add();
+		}
+		elseif($directory === 'v6/delneveshte/like')
+		{
+			if(!\dash\request::is('post'))
+			{
+				\content_api\v6::no(404);
+			}
+
+			$detail = self::like();
+		}
+		else
 		{
 			\content_api\v6::no(404);
 		}
 
-		\content_api\v6::check_appkey();
-
-		$list = self::delneveshte();
-
-		\content_api\v6::bye($list);
+		\content_api\v6::bye($detail);
 	}
+
 
 	private static function delneveshte()
 	{
@@ -36,5 +65,34 @@ class controller
 
 		return $new;
 	}
+
+
+	private static function like()
+	{
+		$result = \content_delneveshte\home\model::like_delneveshte();
+
+		if($result)
+		{
+			\dash\notif::ok(T_("Your like was saved"));
+		}
+
+		return $result;
+	}
+
+
+	private static function add()
+	{
+		$result = \content_delneveshte\home\model::add_delneveshte();
+
+		if($result)
+		{
+			\dash\notif::ok(T_("Your message was saved"));
+		}
+		// desc
+		// mobile
+		// switchGender : male, female
+		return $result;
+	}
+
 }
 ?>
