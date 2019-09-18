@@ -22,6 +22,40 @@ class view
 
 		self::static_var();
 
+		self::check_nationalcode();
+
+	}
+
+
+	private static function check_nationalcode()
+	{
+		$nationalcode = \dash\request::get('cnationalcode');
+		if(!$nationalcode)
+		{
+			return;
+		}
+
+		$status = null;
+		if(!\dash\utility\filter::nationalcode($nationalcode))
+		{
+			\dash\notif::error('کد ملی اشتباه است');
+			$status = 'invalid';
+			\dash\data::checkNationalcode($status);
+			return;
+		}
+
+		$check = \lib\db\karbala2users::get(['nationalcode' => $nationalcode, 'limit' => 1]);
+		if(isset($check['id']))
+		{
+			$status = 'signuped';
+		}
+		else
+		{
+			$status = 'not-signuped';
+		}
+		\dash\data::checkNationalcode($status);
+
+
 	}
 
 	public static function static_var()

@@ -23,6 +23,40 @@
   </div>
 
 
+  <div class="cbox fs09">
+    <p>
+      زائر گرامی!
+      <br>
+      در صورتی که می‌خواهید از وضعیت ثبت‌نام خود مطلع شوید کد ملی خود را در قسمت پایین وارد کرده و گزینه بررسی را بزنید
+    </p>
+    <form method="get" action="{{url.this}}">
+      <div class="input">
+        <input type="number" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder="لطفا کد ملی خود را جهت بررسی وضعیت ثبت‌نام وارد کنید" max="9999999999" min="1111111111">
+        <button class="addon btn success">بررسی</button>
+      </div>
+    </form>
+    {%if checkNationalcode%}
+      <div class="mA10 fs14">
+
+      {%if checkNationalcode == 'invalid'%}
+        <div class="msg warn">کد ملی وارد شده صحیح نیست. لطفا کد ملی خود را به صورت صحیح وارد کنید</div>
+      {%endif%}
+
+      {%if checkNationalcode == 'signuped'%}
+        <div class="msg success">شما ثبت‌نام شده‌اید. لطفا منتظر اعلام نتایج قرعه‌کشی باشید.</div>
+      {%endif%}
+
+
+      {%if checkNationalcode == 'not-signuped'%}
+        <div class="msg info">شما هنوز ثبت‌نام نشده‌اید. در صورتی که فرصت ثبت‌نام باقی است لطفا نست به ثبت‌نام از طریق فرم زیر اقدام کنید.</div>
+      {%endif%}
+
+      </div>
+
+    {%endif%}
+  </div>
+
+
 
   {%if perm_su()%}
     <div class="msg">
