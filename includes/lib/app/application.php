@@ -17,23 +17,11 @@ class application
 	{
 		$homepage              = [];
 		$homepage[]            = self::karbala_signup_link();
-		// $homepage[]            = self::slider();
-		// $homepage[]            = self::hr();
 		$homepage[]            = self::link2_donate();
-		$homepage[]            = self::title(T_("News"));
-		$homepage[]            = self::news();
+		$homepage[]            = self::inapplink('news', T_("News"));
+		$homepage[]            = self::link4();
 		$homepage[]            = self::hr();
 		$homepage[]            = self::salawat();
-
-
-		// $homepage[]            = self::link2();
-		// $homepage[]            = self::link1();
-		// $homepage[]            = self::title();
-		// $homepage[]            = self::hr();
-		// $homepage[]            = self::linkdesc();
-		// $homepage[]            = self::hr();
-		// $homepage[]            = self::hr();
-
 		return $homepage;
 	}
 
@@ -50,24 +38,10 @@ class application
 
 	private static function slider()
 	{
-		$link            = [];
-
-		$link['type']    = 'slider';
-		$posts           = \dash\app\posts::get_post_list(['special' => 'slider', 'limit' => 5]);
+		$link           = [];
+		$link['type']   = 'slider';
+		$posts          = \dash\app\posts::get_post_list(['special' => 'slider', 'limit' => 5]);
 		$link['slider'] = $posts;
-
-		// // special slider limit 5
-		// $link['slider'][0]['title']   = T_("News title");
-		// $link['slider'][0]['content'] = T_("News content");
-		// $link['slider'][0]['image']   = \dash\url::site(). '/static/images/logo.png';
-		// $link['slider'][0]['url']     = \dash\url::kingdom();
-
-		// $link['slider'][1]['title']   = T_("News title");
-		// $link['slider'][1]['content'] = T_("News content");
-		// $link['slider'][1]['image']   = \dash\url::site(). '/static/images/logo.png';
-		// $link['slider'][1]['url']     = \dash\url::kingdom();
-
-
 		return $link;
 	}
 
@@ -75,29 +49,26 @@ class application
 	private static function news()
 	{
 		$link         = [];
-
 		$link['type'] = 'news';
 		$posts        = \dash\app\posts::get_post_list(['limit' => 10]);
 		$link['news'] = $posts;
-
-		// $link['news'][0]['title']   = T_("News title");
-		// $link['news'][0]['content'] = T_("News content");
-		// $link['news'][0]['image']   = \dash\url::site(). '/static/images/logo.png';
-		// $link['news'][0]['url']     = \dash\url::kingdom();
-
-		// $link['news'][1]['title']   = T_("News title");
-		// $link['news'][1]['content'] = T_("News content");
-		// $link['news'][1]['image']   = \dash\url::site(). '/static/images/logo.png';
-		// $link['news'][1]['url']     = \dash\url::kingdom();
-
-
 		return $link;
 	}
+
 
 	private static function hr()
 	{
 		$link          = [];
 		$link['type']  = 'hr';
+		return $link;
+	}
+
+	private static function inapplink($_link, $_title)
+	{
+		$link          = [];
+		$link['type']  = 'inapplink';
+		$link['title'] = $_title;
+		$link['link']  = $_link;
 		return $link;
 	}
 
@@ -110,10 +81,10 @@ class application
 		return $link;
 	}
 
+
 	private static function link2_donate()
 	{
 		$link                     = [];
-
 		$link['type']             = 'link2';
 
 		$link['link'][0]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
@@ -126,6 +97,37 @@ class application
 	}
 
 
+	private static function link4()
+	{
+		$link                     = [];
+		$link['type']             = 'link4';
+
+		$link['link'][0]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][0]['url']   = 'about';
+
+		$link['link'][1]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][1]['url']   = 'mission';
+
+		$link['link'][2]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][2]['url']   = 'vision';
+
+		$link['link'][3]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][3]['url']   = 'lang';
+
+		return $link;
+	}
+
+
+
+	private static function titlelink_news()
+	{
+		$link          = [];
+		$link['type']  = 'titlelink';
+		$link['title']  = T_("News");
+		$link['image'] = \dash\url::site(). '/static/images/logo.png';
+		$link['url']   = \dash\url::kingdom();
+		return $link;
+	}
 
 
 
@@ -155,10 +157,6 @@ class application
 
 		return $link;
 	}
-
-
-
-
 
 
 	private static function titlelink()
