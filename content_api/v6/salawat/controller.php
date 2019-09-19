@@ -17,9 +17,12 @@ class controller
 
 		\dash\notif::info(T_("Allahouma sali ala mohamed wa ali muhammad"));
 
-		$result =  ['count' => $count];
 
-		\content_api\v6::bye($result);
+		$salawat              =  [];;
+		$salawat['count']     = $count;
+		$salawat['fit_count'] = \dash\utility\human::fitNumber($count);
+
+		\content_api\v6::bye($salawat);
 	}
 }
 ?>

@@ -185,9 +185,11 @@ class application
 
 	private static function salawat()
 	{
-		$salawat          = [];
-		$salawat['type']  = 'salawat';
-		$salawat['count'] = \lib\db\salavats::shomar();
+		$salawatCount         = \lib\db\salavats::shomar();
+		$salawat              = [];
+		$salawat['type']      = 'salawat';
+		$salawat['count']     = $salawatCount;
+		$salawat['fit_count'] = \dash\utility\human::fitNumber($salawatCount);
 		return $salawat;
 	}
 
