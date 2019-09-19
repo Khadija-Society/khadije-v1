@@ -17,13 +17,13 @@ class application
 	{
 		$homepage              = [];
 		$homepage[]            = self::karbala_signup_link();
-		$homepage[]            = self::slider();
-		$homepage[]            = self::hr();
+		// $homepage[]            = self::slider();
+		// $homepage[]            = self::hr();
+		$homepage[]            = self::link2_donate();
 		$homepage[]            = self::title(T_("News"));
 		$homepage[]            = self::news();
 		$homepage[]            = self::hr();
 		$homepage[]            = self::salawat();
-		$homepage[]            = self::link2_donate();
 
 
 		// $homepage[]            = self::link2();
@@ -117,7 +117,7 @@ class application
 		$link['type']             = 'link2';
 
 		$link['link'][0]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
-		$link['link'][0]['url']   = \dash\url::kingdom(). '/donate';
+		$link['link'][0]['url']   = \dash\url::kingdom(). '/app/donate';
 
 		$link['link'][1]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
 		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
