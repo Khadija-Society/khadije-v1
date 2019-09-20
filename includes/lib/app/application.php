@@ -22,6 +22,7 @@ class application
 		$homepage[]            = self::linksServicesLine();
 		$homepage[]            = self::salawat();
 		$homepage[]            = self::linksAboutLine();
+		$homepage[]            = self::linksWebsiteLine();
 		// $homepage[]            = self::hr();
 		return $homepage;
 	}
@@ -138,7 +139,7 @@ class application
 		$link['link'][0]['type']  = 'browser';
 		$link['link'][0]['text']  = T_("Website");
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/logo/khadije.png';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/services.jpg';
 		$link['link'][1]['url']   = \dash\url::kingdom().'/a';
 		$link['link'][1]['text']  = T_("Service Panel");
 
