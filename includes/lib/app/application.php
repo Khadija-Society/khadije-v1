@@ -30,7 +30,7 @@ class application
 	{
 		$link          = [];
 		$link['type']  = 'banner';
-		$link['image'] = \dash\url::static(). '/images/app/app-banner.jpg';
+		$link['image'] = \dash\url::static(). '/images/app/karbala201909.jpg.jpg';
 		$link['url']   = \dash\url::kingdom(). '/app/karbala2';
 		return $link;
 	}
@@ -87,11 +87,13 @@ class application
 		$link                     = [];
 		$link['type']             = 'link2';
 
-		$link['link'][0]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][0]['image'] = \dash\url::static(). '/siftal/images/useful/care.png';
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/app/donate';
+		$link['link'][0]['text']  = T_('Donate');
 
-		$link['link'][1]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][1]['image'] = \dash\url::static(). '/siftal/images/useful/care.png';
 		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
+		$link['link'][1]['text']  = T_('Donate Product Arbaeen');
 
 		return $link;
 	}
@@ -102,17 +104,21 @@ class application
 		$link                     = [];
 		$link['type']             = 'link4';
 
-		$link['link'][0]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][0]['image'] = \dash\url::static(). '/images/logo/khadije.png';
 		$link['link'][0]['url']   = 'about';
+		$link['link'][3]['text']   = T_("About");
 
-		$link['link'][1]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/mission.jpg';
 		$link['link'][1]['url']   = 'mission';
+		$link['link'][3]['text']   = T_("Mission");
 
-		$link['link'][2]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/vision.jpg';
 		$link['link'][2]['url']   = 'vision';
+		$link['link'][3]['text']   = T_("Vision");
 
-		$link['link'][3]['image'] = 'https://khadije.com/static/siftal/images/useful/care.png';
+		$link['link'][3]['image'] = \dash\url::static(). '/images/app/language.jpg';
 		$link['link'][3]['url']   = 'lang';
+		$link['link'][3]['text']   = T_("Languages");
 
 		return $link;
 	}
