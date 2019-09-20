@@ -29,8 +29,8 @@ class application
 	private static function karbala_signup_link()
 	{
 		$link          = [];
-		$link['type']  = 'link1';
-		$link['image'] = 'https://khadije.com/files/1/503-b42df374abb06a9226db84212a3f3b5a.jpg';
+		$link['type']  = 'banner';
+		$link['image'] = \dash\url::static(). '/images/app/app-banner.jpg';
 		$link['url']   = \dash\url::kingdom(). '/app/karbala2';
 		return $link;
 	}
