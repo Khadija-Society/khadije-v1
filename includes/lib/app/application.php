@@ -19,9 +19,9 @@ class application
 		$homepage[]            = self::karbala_signup_link();
 		$homepage[]            = self::link2_donate();
 		$homepage[]            = self::inapplink('news', T_("News"));
-		$homepage[]            = self::link4();
-		$homepage[]            = self::hr();
 		$homepage[]            = self::salawat();
+		$homepage[]            = self::link4();
+		// $homepage[]            = self::hr();
 		return $homepage;
 	}
 
@@ -92,7 +92,7 @@ class application
 		$link['link'][0]['text']  = T_('Donate');
 
 		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct.jpg';
-		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
+		$link['link'][1]['url']   = \dash\url::kingdom(). '/app/donateproduct';
 		$link['link'][1]['text']  = T_('Donate Product Arbaeen');
 
 		return $link;
