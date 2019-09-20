@@ -111,7 +111,7 @@ class application
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/a/representation';
 		$link['link'][0]['text']  = T_("Deputy pilgrimage");
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/contact.jpg';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/contact.png';
 		$link['link'][1]['url']   = \dash\url::kingdom().'/a/consulting';
 		$link['link'][1]['text']  = T_("Consulting");
 
