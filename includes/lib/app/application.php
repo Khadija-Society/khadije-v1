@@ -19,8 +19,9 @@ class application
 		$homepage[]            = self::karbala_signup_link();
 		$homepage[]            = self::link2_donate();
 		$homepage[]            = self::inapplink('news', T_("News"));
+		$homepage[]            = self::linksServicesLine();
 		$homepage[]            = self::salawat();
-		$homepage[]            = self::link4();
+		$homepage[]            = self::linksAboutLine();
 		// $homepage[]            = self::hr();
 		return $homepage;
 	}
@@ -99,22 +100,77 @@ class application
 	}
 
 
-	private static function link4()
+
+	private static function linksServicesLine()
+	{
+		$link                     = [];
+		$link['type']             = 'link4';
+
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/deputy.png';
+		$link['link'][0]['url']   = \dash\url::kingdom(). '/a/representation';
+		$link['link'][0]['text']  = T_("Deputy pilgrimage");
+
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/contact.jpg';
+		$link['link'][1]['url']   = \dash\url::kingdom().'/a/consulting';
+		$link['link'][1]['text']  = T_("Consulting");
+
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/delneveshte.jpg';
+		$link['link'][2]['url']   = 'delneveshte';
+		$link['link'][2]['text']  = T_("Delneveshteha");
+
+		$link['link'][3]['image'] = \dash\url::static(). '/images/app/contact.png';
+		$link['link'][3]['url']   = \dash\url::kingdom(). 'contact';
+		$link['link'][3]['text']  = T_("Contact Us");
+
+		return $link;
+	}
+
+
+
+
+	private static function linksWebsiteLine()
+	{
+		$link                     = [];
+		$link['type']             = 'link4';
+
+		$link['link'][0]['image'] = \dash\url::static(). '/images/logo/khadije.png';
+		$link['link'][0]['url']   = \dash\url::kingdom();
+		$link['link'][0]['type']  = 'browser';
+		$link['link'][0]['text']  = T_("Website");
+
+		$link['link'][1]['image'] = \dash\url::static(). '/images/logo/khadije.png';
+		$link['link'][1]['url']   = \dash\url::kingdom().'/a';
+		$link['link'][1]['text']  = T_("Service Panel");
+
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/travel.png';
+		$link['link'][2]['url']   = \dash\url::kingdom(). '/a/group';
+		$link['link'][2]['text']  = 'ثبت‌نام کاروانی ';
+
+		$link['link'][3]['image'] = \dash\url::static(). '/images/logo/khadije.png';
+		$link['link'][3]['url']   = \dash\url::kingdom(). 'contact';
+		$link['link'][3]['text']  = T_("Contact Us");
+
+		return $link;
+	}
+
+
+
+	private static function linksAboutLine()
 	{
 		$link                     = [];
 		$link['type']             = 'link4';
 
 		$link['link'][0]['image'] = \dash\url::static(). '/images/logo/khadije.png';
 		$link['link'][0]['url']   = 'about';
-		$link['link'][3]['text']   = T_("About");
+		$link['link'][0]['text']   = T_("About");
 
 		$link['link'][1]['image'] = \dash\url::static(). '/images/app/mission.jpg';
 		$link['link'][1]['url']   = 'mission';
-		$link['link'][3]['text']   = T_("Mission");
+		$link['link'][1]['text']   = T_("Mission");
 
 		$link['link'][2]['image'] = \dash\url::static(). '/images/app/vision.jpg';
 		$link['link'][2]['url']   = 'vision';
-		$link['link'][3]['text']   = T_("Vision");
+		$link['link'][2]['text']   = T_("Vision");
 
 		$link['link'][3]['image'] = \dash\url::static(). '/images/app/language.jpg';
 		$link['link'][3]['url']   = 'lang';
