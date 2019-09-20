@@ -87,11 +87,11 @@ class application
 		$link                     = [];
 		$link['type']             = 'link2';
 
-		$link['link'][0]['image'] = \dash\url::static(). '/siftal/images/useful/care.png';
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/donate.jpg';
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/app/donate';
 		$link['link'][0]['text']  = T_('Donate');
 
-		$link['link'][1]['image'] = \dash\url::static(). '/siftal/images/useful/care.png';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct.jpg';
 		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
 		$link['link'][1]['text']  = T_('Donate Product Arbaeen');
 
