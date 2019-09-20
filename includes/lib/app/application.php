@@ -115,9 +115,9 @@ class application
 		$link['link'][1]['url']   = \dash\url::kingdom().'/a/consulting';
 		$link['link'][1]['text']  = T_("Consulting");
 
-		$link['link'][2]['image'] = \dash\url::static(). '/images/app/delneveshte.jpg';
-		$link['link'][2]['url']   = 'delneveshte';
-		$link['link'][2]['text']  = T_("Delneveshteha");
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/travel.png';
+		$link['link'][2]['url']   = \dash\url::kingdom(). '/a/group';
+		$link['link'][2]['text']  = 'ثبت‌نام کاروانی ';
 
 		$link['link'][3]['image'] = \dash\url::static(). '/images/app/contact.png';
 		$link['link'][3]['url']   = \dash\url::kingdom(). 'contact';
@@ -143,9 +143,9 @@ class application
 		$link['link'][1]['url']   = \dash\url::kingdom().'/a';
 		$link['link'][1]['text']  = T_("Service Panel");
 
-		$link['link'][2]['image'] = \dash\url::static(). '/images/app/travel.png';
-		$link['link'][2]['url']   = \dash\url::kingdom(). '/a/group';
-		$link['link'][2]['text']  = 'ثبت‌نام کاروانی ';
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/delneveshte.jpg';
+		$link['link'][2]['url']   = 'delneveshte';
+		$link['link'][2]['text']  = T_("Delneveshteha");
 
 		$link['link'][3]['image'] = \dash\url::static(). '/images/logo/khadije.png';
 		$link['link'][3]['url']   = \dash\url::kingdom(). 'contact';
