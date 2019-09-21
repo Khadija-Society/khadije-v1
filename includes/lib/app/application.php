@@ -53,7 +53,7 @@ class application
 	{
 		$link         = [];
 		$link['type'] = 'news';
-		$posts        = \dash\app\posts::get_post_list(['limit' => 10]);
+		$posts        = \dash\app\posts::get_post_list(['limit' => 3]);
 		$link['news'] = $posts;
 		return $link;
 	}
