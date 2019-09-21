@@ -34,7 +34,7 @@ class application
 		$link          = [];
 		$link['type']  = 'banner';
 		$link['image'] = \dash\url::static(). '/images/app/karbala201909.jpg';
-		$link['url']   = \dash\url::kingdom(). '/app/karbala2';
+		$link['url']   = \dash\url::kingdom(). '/karbala2';
 		return $link;
 	}
 
@@ -91,11 +91,11 @@ class application
 		$link['type']             = 'link2';
 
 		$link['link'][0]['image'] = \dash\url::static(). '/images/app/donate-wide.jpg';
-		$link['link'][0]['url']   = \dash\url::kingdom(). '/app/donate';
+		$link['link'][0]['url']   = \dash\url::kingdom(). '/donate';
 		$link['link'][0]['text']  = T_('Donate');
 
 		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct-wide.jpg';
-		$link['link'][1]['url']   = \dash\url::kingdom(). '/app/donateproduct';
+		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
 		$link['link'][1]['text']  = T_('Donate Product Arbaeen');
 
 		return $link;
@@ -118,7 +118,7 @@ class application
 
 		$link['link'][2]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-travel.png';
 		$link['link'][2]['url']   = \dash\url::kingdom(). '/a/group';
-		$link['link'][2]['text']  = 'ثبت‌نام کاروانی ';
+		$link['link'][2]['text']  = T_("Group travel");
 
 		$link['link'][3]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-consulting.png';
 		$link['link'][3]['url']   = \dash\url::kingdom(). 'contact';
