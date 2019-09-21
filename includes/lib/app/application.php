@@ -108,19 +108,19 @@ class application
 		$link                     = [];
 		$link['type']             = 'link4';
 
-		$link['link'][0]['image'] = \dash\url::static(). '/images/app/deputy.png';
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-deputy.png';
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/a/representation';
 		$link['link'][0]['text']  = T_("Deputy pilgrimage");
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/consulting.png';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-consulting.png';
 		$link['link'][1]['url']   = \dash\url::kingdom().'/a/consulting';
 		$link['link'][1]['text']  = T_("Consulting");
 
-		$link['link'][2]['image'] = \dash\url::static(). '/images/app/travel.png';
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-travel.png';
 		$link['link'][2]['url']   = \dash\url::kingdom(). '/a/group';
 		$link['link'][2]['text']  = 'ثبت‌نام کاروانی ';
 
-		$link['link'][3]['image'] = \dash\url::static(). '/images/app/consulting.png';
+		$link['link'][3]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-consulting.png';
 		$link['link'][3]['url']   = \dash\url::kingdom(). 'contact';
 		$link['link'][3]['text']  = T_("Contact Us");
 
@@ -135,20 +135,20 @@ class application
 		$link                     = [];
 		$link['type']             = 'link4';
 
-		$link['link'][0]['image'] = \dash\url::static(). '/images/app/website.jpg';
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/LastLine-website.jpg';
 		$link['link'][0]['url']   = \dash\url::kingdom();
 		$link['link'][0]['type']  = 'browser';
 		$link['link'][0]['text']  = T_("Website");
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/services.jpg';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/LastLine-services.jpg';
 		$link['link'][1]['url']   = \dash\url::kingdom().'/a';
 		$link['link'][1]['text']  = T_("Service Panel");
 
-		$link['link'][2]['image'] = \dash\url::static(). '/images/app/delneveshte.jpg';
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/LastLine-delneveshte.jpg';
 		$link['link'][2]['url']   = 'delneveshte';
 		$link['link'][2]['text']  = T_("Delneveshteha");
 
-		$link['link'][3]['image'] = \dash\url::static(). '/images/app/honors.jpg';
+		$link['link'][3]['image'] = \dash\url::static(). '/images/app/LastLine-honors.jpg';
 		$link['link'][3]['url']   = \dash\url::kingdom(). '/honors';
 		$link['link'][3]['text']  = T_("Honors");
 
@@ -162,19 +162,19 @@ class application
 		$link                     = [];
 		$link['type']             = 'link4';
 
-		$link['link'][0]['image'] = \dash\url::static(). '/images/app/about3.jpg';
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/KhadijeLine-about.jpg';
 		$link['link'][0]['url']   = 'about';
 		$link['link'][0]['text']   = T_("About");
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/mission3.jpg';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/KhadijeLine-mission.jpg';
 		$link['link'][1]['url']   = 'mission';
 		$link['link'][1]['text']   = T_("Mission");
 
-		$link['link'][2]['image'] = \dash\url::static(). '/images/app/vision3.jpg';
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/KhadijeLine-vision.jpg';
 		$link['link'][2]['url']   = 'vision';
 		$link['link'][2]['text']   = T_("Vision");
 
-		$link['link'][3]['image'] = \dash\url::static(). '/images/app/language3.jpg';
+		$link['link'][3]['image'] = \dash\url::static(). '/images/app/KhadijeLine-language.jpg';
 		$link['link'][3]['url']   = 'lang';
 		$link['link'][3]['text']   = T_("Languages");
 
