@@ -162,19 +162,19 @@ class application
 		$link                     = [];
 		$link['type']             = 'link4';
 
-		$link['link'][0]['image'] = \dash\url::static(). '/images/app/test3.jpg';
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/about3.jpg';
 		$link['link'][0]['url']   = 'about';
 		$link['link'][0]['text']   = T_("About");
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/mission2.jpg';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/mission3.jpg';
 		$link['link'][1]['url']   = 'mission';
 		$link['link'][1]['text']   = T_("Mission");
 
-		$link['link'][2]['image'] = \dash\url::static(). '/images/app/vision2.jpg';
+		$link['link'][2]['image'] = \dash\url::static(). '/images/app/vision3.jpg';
 		$link['link'][2]['url']   = 'vision';
 		$link['link'][2]['text']   = T_("Vision");
 
-		$link['link'][3]['image'] = \dash\url::static(). '/images/app/language2.jpg';
+		$link['link'][3]['image'] = \dash\url::static(). '/images/app/language3.jpg';
 		$link['link'][3]['url']   = 'lang';
 		$link['link'][3]['text']   = T_("Languages");
 
