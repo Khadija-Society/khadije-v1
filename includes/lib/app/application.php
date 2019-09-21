@@ -32,7 +32,7 @@ class application
 	{
 		$link          = [];
 		$link['type']  = 'banner';
-		$link['image'] = \dash\url::static(). '/images/app/karbala201909.jpg.jpg';
+		$link['image'] = \dash\url::static(). '/images/app/karbala201909.jpg';
 		$link['url']   = \dash\url::kingdom(). '/app/karbala2';
 		return $link;
 	}
@@ -147,7 +147,7 @@ class application
 		$link['link'][2]['url']   = 'delneveshte';
 		$link['link'][2]['text']  = T_("Delneveshteha");
 
-		$link['link'][3]['image'] = \dash\url::static(). '/images/logo/honors.jpg';
+		$link['link'][3]['image'] = \dash\url::static(). '/images/app/honors.jpg';
 		$link['link'][3]['url']   = \dash\url::kingdom(). 'honors';
 		$link['link'][3]['text']  = T_("Honors");
 
