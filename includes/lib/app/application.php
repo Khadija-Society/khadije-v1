@@ -19,9 +19,9 @@ class application
 		$homepage[]            = self::karbala_signup_link();
 		$homepage[]            = self::link2_donate();
 		$homepage[]            = self::linksServicesLine();
+		$homepage[]            = self::salawat();
 		$homepage[]            = self::inapplink('news', T_("News"));
 		$homepage[]            = self::news();
-		$homepage[]            = self::salawat();
 		$homepage[]            = self::linksAboutLine();
 		$homepage[]            = self::linksWebsiteLine();
 		// $homepage[]            = self::hr();
