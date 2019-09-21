@@ -7,7 +7,7 @@ class controller
 	{
 		if(!\dash\url::child())
 		{
-			\dash\redirect::to(\dash\url::this(). '/v35');
+			\dash\redirect::to(\dash\url::static(). '/app/khadije-v33.apk');
 		}
 	}
 }
