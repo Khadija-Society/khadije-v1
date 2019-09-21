@@ -119,7 +119,7 @@ class application
 		$link['link'][2]['url']   = \dash\url::kingdom(). '/a/group';
 		$link['link'][2]['text']  = 'ثبت‌نام کاروانی ';
 
-		$link['link'][3]['image'] = \dash\url::static(). '/images/app/contact.jpg';
+		$link['link'][3]['image'] = \dash\url::static(). '/images/app/consulting.png';
 		$link['link'][3]['url']   = \dash\url::kingdom(). 'contact';
 		$link['link'][3]['text']  = T_("Contact Us");
 
