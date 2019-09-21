@@ -89,11 +89,11 @@ class application
 		$link                     = [];
 		$link['type']             = 'link2';
 
-		$link['link'][0]['image'] = \dash\url::static(). '/images/app/donate.jpg';
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/donate-wide.jpg';
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/app/donate';
 		$link['link'][0]['text']  = T_('Donate');
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct.jpg';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct-wide.jpg';
 		$link['link'][1]['url']   = \dash\url::kingdom(). '/app/donateproduct';
 		$link['link'][1]['text']  = T_('Donate Product Arbaeen');
 
@@ -148,7 +148,7 @@ class application
 		$link['link'][2]['text']  = T_("Delneveshteha");
 
 		$link['link'][3]['image'] = \dash\url::static(). '/images/app/honors.jpg';
-		$link['link'][3]['url']   = \dash\url::kingdom(). 'honors';
+		$link['link'][3]['url']   = \dash\url::kingdom(). '/honors';
 		$link['link'][3]['text']  = T_("Honors");
 
 		return $link;
