@@ -162,7 +162,7 @@ class application
 		$link                     = [];
 		$link['type']             = 'link4';
 
-		$link['link'][0]['image'] = \dash\url::static(). '/images/logo/test2.png';
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/test2.png';
 		$link['link'][0]['url']   = 'about';
 		$link['link'][0]['text']   = T_("About");
 
