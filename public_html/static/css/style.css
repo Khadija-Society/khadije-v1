@@ -1545,3 +1545,11 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 		padding-top:60px;
 	}
 }
+
+
+html[data-app] #sHeader{display:none;}
+html[data-app] #sHeaderNav{display:none;}
+html[data-app] .appBox{display:none;}
+html[data-app] #sFooter{display:none;}
+html[data-app] .wrapper{padding-bottom: 10px;}
+
