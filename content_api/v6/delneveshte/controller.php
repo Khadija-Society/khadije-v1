@@ -51,6 +51,7 @@ class controller
 	{
 		$new = [];
 		$list = \content_delneveshte\home\view::delneveshte_list();
+
 		if(is_array($list))
 		{
 			foreach ($list as $key => $value)
@@ -58,8 +59,10 @@ class controller
 				$temp            = [];
 				$temp['id']      = isset($value['id']) ? $value['id'] : null;
 				$temp['content'] = isset($value['content']) ? $value['content'] : null;
+				$temp['name']    = isset($value['meta']['name']) ? $value['meta']['name'] : null;
+				$temp['gender']    = isset($value['meta']['gender']) ? T_($value['meta']['gender']) : null;
 				$temp['plus']    = isset($value['plus']) ? $value['plus'] : null;
-				$new[] = $temp;
+				$new[]           = $temp;
 			}
 		}
 
