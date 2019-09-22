@@ -121,7 +121,7 @@ class application
 		$link['link'][2]['text']  = T_("Group travel");
 
 		$link['link'][3]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-consulting.png';
-		$link['link'][3]['url']   = \dash\url::kingdom(). 'contact';
+		$link['link'][3]['url']   = \dash\url::kingdom(). '/contact';
 		$link['link'][3]['text']  = T_("Contact Us");
 
 		return $link;
