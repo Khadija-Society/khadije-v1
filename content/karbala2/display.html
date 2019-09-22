@@ -31,8 +31,9 @@
     </p>
     <form method="get" action="{{url.this}}">
       <div class="input">
-        <input type="number" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder="لطفا کد ملی خود را جهت بررسی وضعیت ثبت‌نام وارد کنید" max="9999999999" min="1111111111">
-        <button class="addon btn success">بررسی</button>
+        <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='{%trans "10 digit national code"%} *' max="9999999999" min="1000000000" required>
+
+        <button class="addon btn success">{%trans "Check"%}</button>
       </div>
     </form>
     {%if checkNationalcode%}
@@ -58,7 +59,7 @@
 
 
 
-  {%if perm_su()%}
+  {%if not checkNationalcode%}
     <div class="msg">
       همراه گرامی برنامه کوی محبت
       ضمن تشکر از مراجعه جهت ثبت‌نام، همانطور که در برنامه به اطلاع رسید با توجه به کثرت تقاضا، امکان اعزام تمامی عزیزان مهیا نمی‌باشد، لذا از طریق قرعه‌کشی افراد انتخاب می‌شوند.
@@ -170,7 +171,7 @@
 {%block incode%}
 <label for="nationalcode">{%trans "National code"%} <small class="fc-red">* {%trans "Required"%}</small></label>
 <div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{userdetail.nationalcode}}" min=1000000000 max='9999999999' required>
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{userdetail.nationalcode}}" min='1000000000' max='9999999999' required>
 </div>
 {%endblock%}
 

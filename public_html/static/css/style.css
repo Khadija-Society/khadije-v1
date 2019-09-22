@@ -1474,6 +1474,7 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 	#sHeader .langlist .isActive, #sHeader .langlist .active{
 		display: none;
 	}
+	.wrapper{padding-bottom: 50px;}
 	.sB2{
 		margin:0 auto;
 	}
