@@ -59,7 +59,6 @@
 
 
 
-  {%if not checkNationalcode%}
     <div class="msg">
       همراه گرامی برنامه کوی محبت
       ضمن تشکر از مراجعه جهت ثبت‌نام، همانطور که در برنامه به اطلاع رسید با توجه به کثرت تقاضا، امکان اعزام تمامی عزیزان مهیا نمی‌باشد، لذا از طریق قرعه‌کشی افراد انتخاب می‌شوند.
@@ -123,7 +122,6 @@
 
      {{block ('iSave') }}
     </form>
-  {%endif%}
 
 
  </div>
@@ -139,7 +137,7 @@
 {%block iname%}
 <label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{userdetail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title2='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{userdetail.firstname}}" maxlength='40' minlength="2" pattern=".{2,40}" title2='{%trans "Enter a valid name from 2 to 40 character"%}' required>
 </div>
 {%endblock%}
 
