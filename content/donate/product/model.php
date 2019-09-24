@@ -41,9 +41,21 @@ class model
 			return false;
 		}
 
-		$args['product'] = $productList;
+		$args['product']    = $productList;
+		if(\dash\request::post('forcepay'))
+		{
+			\dash\session::set('product_donate_factor', null);
+		}
+		else
+		{
+			$args['showFactor'] = true;
+		}
 
-		\lib\app\donate::add($args);
+		$result = \lib\app\donate::add($args);
+		if($result)
+		{
+			\dash\redirect::pwd();
+		}
 
 
 	}

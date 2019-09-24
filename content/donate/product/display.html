@@ -34,7 +34,10 @@
         {{block ('iDonersList')}}
 
         {{block ('iPayWay')}}
-        {{block ('ipay')}}
+
+        {{block ('ipay_factor')}}
+        {{block('factorSessionList')}}
+
 	</form>
     </div>
   </div>
@@ -51,6 +54,48 @@
 {%block pageTitle%}{%endblock%}
 
 
+{%block factorSessionList%}
+{%if factorSession%}
+<table class="tbl1 v4">
+  <thead>
+    <tr>
+      <th class="collapsing"></th>
+      <th>{%trans "Title"%}</th>
+      <th>{%trans "Price"%}</th>
+      <th>{%trans "Count"%}</th>
+      <th>{%trans "Total"%}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for key, value in factorSession%}
+    <tr>
+      <td class="collapsing">{{loop.index | fitNumber}}</td>
+      <td>{{value.title}}</td>
+      <td>{{value.price | fitNumber}}</td>
+      <td>{{value.count | fitNumber}}</td>
+      <td>{{value.total | fitNumber}}</td>
+    </tr>
+    {%endfor%}
+    <tr class="positive txtC txtB">
+      <td class="txtB" colspan="3">{%trans "Sum"%}</td>
+      <td class="txtB" colspan="2">{{factorSessionSum | fitNumber}} <small>{%trans "Toman"%}</small></td>
+    </tr>
+  </tbody>
+</table>
+{{block ('ipay2')}}
+{%endif%}
+
+{%endblock%}
+
+{%block ipay2%}
+<button class="btn success block mT5" name="forcepay" value="1">{%trans "Pay"%}</button>
+{%endblock%}
+
+
+
+{%block ipay_factor%}
+<button class="btn primary block mT5">{%trans "Calculate price"%}</button>
+{%endblock%}
 
 
 {%block iProductList%}
@@ -70,7 +115,7 @@
         </div>
         <div class="footer pA5-f">
           <div class="input">
-            <input type="number" name="product_{{value.id}}" placeholder='{%trans "Count"%}'>
+            <input type="number" name="product_{{value.id}}" placeholder='{%trans "Count"%}' value="{{factorSession[value.id | coding('decode')]['count']}}">
           </div>
         </div>
     </div>

@@ -39,6 +39,17 @@ class view
 				\dash\redirect::to(\dash\url::this());
 			}
 		}
+
+		$session = \dash\session::get('product_donate_factor');
+		if($session)
+		{
+
+			if(is_array($session))
+			{
+				\dash\data::factorSessionSum(array_sum(array_column($session, 'total')));
+			}
+			\dash\data::factorSession($session);
+		}
 	}
 }
 ?>

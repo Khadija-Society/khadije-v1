@@ -291,6 +291,8 @@ class donate
 
 		$final_fn_args = [];
 
+		$showFactor = \dash\app::request('showFactor');
+
 		if(\dash\app::request('username'))
 		{
 			\dash\notif::error(T_("Whate are you doing?"));
@@ -481,9 +483,11 @@ class donate
 				\dash\notif::error(T_("Invalid product"));
 				return false;
 			}
-			$allProductId    = [];
-			$allProductCount = [];
-			$allProductFN    = [];
+
+			$allProductId       = [];
+			$allProductCount    = [];
+			$allProductFN       = [];
+			$allProductFNFactor = [];
 
 			foreach ($product as $product_id => $product_count)
 			{
@@ -536,6 +540,14 @@ class donate
 						[
 							'count' => intval($allProductCount[$product_detail['id']]),
 							'price' => intval($product_detail['price']),
+							'total' => $total
+						];
+
+						$allProductFNFactor[$product_detail['id']] =
+						[
+							'count' => intval($allProductCount[$product_detail['id']]),
+							'price' => intval($product_detail['price']),
+							'title' => $product_detail['title'],
 							'total' => $total
 						];
 					}
@@ -660,6 +672,13 @@ class donate
 					'isproduct'  => $product ? 1 : null,
 				]
 			];
+
+
+			if($showFactor)
+			{
+				\dash\session::set('product_donate_factor', $allProductFNFactor);
+				return true;
+			}
 
 
 			\dash\utility\pay\start::site($meta);
