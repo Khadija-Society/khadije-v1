@@ -7,7 +7,21 @@ class application
 	public static function detail_v6()
 	{
 		$detail             = [];
+		$detail['version']  = self::version();
 		$detail['homepage'] = self::homepage();
+		return $detail;
+	}
+
+
+	private static function version()
+	{
+		$detail                     = [];
+		$detail['last']             = 35;
+		$detail['deprecated']       = 34;
+		$detail['deprecated_title'] = T_("This version is deprecated");
+		$detail['deprecated_desc']  = T_("To download new version of this app click blow link");
+		$detail['update_title']     = T_("New version is released");
+		$detail['update_desc']      = T_("To download new version of this app click blow link");
 
 		return $detail;
 	}
