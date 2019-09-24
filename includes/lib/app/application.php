@@ -17,7 +17,7 @@ class application
 	{
 		$homepage              = [];
 		$homepage[]            = self::karbala_signup_link();
-		$homepage[]            = self::link2_donate();
+		// $homepage[]            = self::link2_donate();
 		$homepage[]            = self::linksServicesLine();
 		$homepage[]            = self::linksWebsiteLine();
 		$homepage[]            = self::salawat();
@@ -94,7 +94,7 @@ class application
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/donate';
 		$link['link'][0]['text']  = T_('Donate');
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct-wide.jpg';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct-wide2.jpg';
 		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
 		$link['link'][1]['text']  = T_('Donate Product Arbaeen');
 
@@ -112,9 +112,9 @@ class application
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/a/representation';
 		$link['link'][0]['text']  = T_("Deputy pilgrimage");
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-consulting.png';
-		$link['link'][1]['url']   = \dash\url::kingdom().'/a/consulting';
-		$link['link'][1]['text']  = T_("Consulting");
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-Encyclopedia.png';
+		$link['link'][1]['url']   = \dash\url::kingdom().'/wiki';
+		$link['link'][1]['text']  = T_("Encyclopedia");
 
 		$link['link'][2]['image'] = \dash\url::static(). '/images/app/KhadijeBadge-travel.png';
 		$link['link'][2]['url']   = \dash\url::kingdom(). '/a/group';
