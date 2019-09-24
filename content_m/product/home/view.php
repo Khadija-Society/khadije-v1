@@ -27,8 +27,9 @@ class view
 
 		$args =
 		[
-			'sort'  => \dash\request::get('sort'),
-			'order' => \dash\request::get('order'),
+			'sort'       => \dash\request::get('sort'),
+			'order'      => \dash\request::get('order'),
+			'pagenation' => false,
 		];
 
 		if(!$args['order'])
@@ -51,6 +52,7 @@ class view
 		$check_empty_datatable = $args;
 		unset($check_empty_datatable['sort']);
 		unset($check_empty_datatable['order']);
+		unset($check_empty_datatable['pagenation']);
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $check_empty_datatable);
