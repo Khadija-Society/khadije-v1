@@ -15,11 +15,11 @@
                 {{block ('iEveryCount') }}
               {%endif%}
 
-            {%if url.module != 'donate'%}
+            {%if url.module != 'donate' and url.module != 'arbaeen' %}
               {{block ('iTermsAndConditions') }}
             {%endif%}
 
-            {%if url.module == 'donate'%}
+            {%if url.module == 'donate' or url.module == 'arbaeen' %}
               {{block ('iRangeType') }}
               {{block ('iAllowPrice') }}
               {{block ('iIsDefault') }}
@@ -54,7 +54,7 @@
             <tr class="fs08">
               <th>{%trans "Picture"%}</th>
               <th>{%trans "Title"%}</th>
-                {%if url.module == 'donate'%}
+                {%if url.module == 'donate' or url.module == 'arbaeen' %}
                  <th>{%trans "Sort"%}</th>
                  <th>{%trans "Slug"%}</th>
                  <th>{%trans "Allow price"%}</th>
@@ -74,7 +74,7 @@
                   {{value.title}}
 
                 </td>
-                {%if url.module == 'donate'%}
+                {%if url.module == 'donate' or url.module == 'arbaeen' %}
                  <td>{{value.sort | fitNumber(false)}}</td>
                  <td class="collapsing fs08 txtC">{%if value.linkurl%}<a href="{{url.kingdom}}/donate?nazr={{value.linkurl}}"><i class="sf-link"></i> {{value.linkurl}}</a>{%else%}-{%endif%}</td>
                 <td>{%if value.allowpirce%}<i class="sf-check fc-green"></i>{%else%}<i class="sf-times fc-red"></i>{%endif%}</td>
@@ -83,7 +83,7 @@
                 {%endif%}
                 <td>
                   {{value.desc}}
-                  {%if url.module == 'donate'%}
+                  {%if url.module == 'donate' or url.module == 'arbaeen' %}
                   <div>
 
                       {%if value.price1%}<span class="badge">{{value.title1}} {{value.price1 | fitNumber}}</span>{%endif%}
@@ -98,7 +98,11 @@
                   {%endif%}
                 </td>
                 <td>{%set vStatus = value.status%}{%trans vStatus%}</td>
-                <td class="collapsing"><a class="btn secondary xs" href="{{url.this}}/options?edit={{value.id}}">{%trans "Edit"%}</a></td>
+                {%if url.module == 'arbaeen'%}
+                  <td class="collapsing"><a class="btn secondary xs" href="{{url.this}}?edit={{value.id}}">{%trans "Edit"%}</a></td>
+                {%else%}
+                  <td class="collapsing"><a class="btn secondary xs" href="{{url.this}}/options?edit={{value.id}}">{%trans "Edit"%}</a></td>
+                {%endif%}
               </tr>
             {%endfor%}
           </tbody>

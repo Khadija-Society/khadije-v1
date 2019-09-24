@@ -6,6 +6,7 @@
 
   {%if perm('cpDonateView')%}<div class="c3 s6">{{block("Bdonate")}}</div>{%endif%}
   {%if perm('cpProductView')%}<div class="c3 s6">{{block("BproductDonate")}}</div>{%endif%}
+  {%if perm('cpProductView')%}<div class="c3 s6">{{block("BproductDonateArbaeen")}}</div>{%endif%}
   {%if perm('cpProductView')%}<div class="c3 s6">{{block("Bproduct")}}</div>{%endif%}
   {%if perm('cpDoyonView')%}<div class="c3 s6">{{block("bDoyon")}}</div>{%endif%}
   {%if perm('cpReportDaily') or perm('cpReportMonth') or perm('cpReportView') %}<div class="c3 s6">{{block ("Report")}}</div>{%endif%}
@@ -253,13 +254,20 @@
 </a>
 {%endblock%}
 
-
-
 {%block BproductDonate%}
 <a class="dcard x1" href='{{url.here}}/productdonate'>
  <div class="statistic">
   <div class="value"><i class="sf-basket"></i></div>
   <div class="label">{%trans "Product donate"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block BproductDonateArbaeen%}
+<a class="dcard x1" href='{{url.here}}/arbaeen'>
+ <div class="statistic">
+  <div class="value"><i class="sf-flag"></i></div>
+  <div class="label">نذر اربعین</div>
  </div>
 </a>
 {%endblock%}
