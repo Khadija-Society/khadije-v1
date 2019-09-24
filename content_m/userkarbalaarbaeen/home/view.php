@@ -1,5 +1,5 @@
 <?php
-namespace content_m\userkarbala2\home;
+namespace content_m\userkarbalaarbaeen\home;
 
 class view
 {
@@ -8,7 +8,7 @@ class view
 	{
 		\dash\permission::access('cpUsersKarbalaView');
 		\dash\data::page_pictogram('users');
-		\dash\data::page_title('ثبت‌نامی‌های کربلا - برنامه کوی محبت');
+		\dash\data::page_title('ثبت‌نامی‌های کربلا ویژه اربعین');
 		\dash\data::page_desc(T_('Some detail about your users!'));
 		\dash\data::page_desc(T_('Check list of users and search or filter in them to find your user.'));
 		\dash\data::page_desc(\dash\data::page_desc(). ' '. T_('Also add or edit specefic user.'));
@@ -31,10 +31,10 @@ class view
 		];
 
 		$sortLink = \content_m\view::make_sort_link(\dash\app\user::$sort_field, \dash\url::this());
-		$dataTable = \lib\db\karbala2users::search(\dash\request::get('q'), $args);
+		$dataTable = \lib\db\karbalaarbaeenusers::search(\dash\request::get('q'), $args);
 		if(is_array($dataTable))
 		{
-			$dataTable = array_map(["\\lib\\app\\karbala2user", "ready"], $dataTable);
+			$dataTable = array_map(["\\lib\\app\\karbalaarbaeenuser", "ready"], $dataTable);
 		}
 
 

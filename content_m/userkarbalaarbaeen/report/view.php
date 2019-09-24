@@ -1,5 +1,5 @@
 <?php
-namespace content_m\userkarbala2\report;
+namespace content_m\userkarbalaarbaeen\report;
 
 
 class view
@@ -10,7 +10,7 @@ class view
 
 		\dash\data::page_pictogram('chart');
 
-		\dash\data::page_title('ثبت‌نامی‌های کربلا - برنامه کوی محبت');
+		\dash\data::page_title('ثبت‌نامی‌های کربلا ویژه اربعین');
 		// \dash\data::page_desc(T_('Sale your product via Jibres and enjoy using integrated web base platform.'));
 
 		\dash\data::badge_text(T_('Back'));
@@ -22,19 +22,19 @@ class view
 		switch ($subchild)
 		{
 			case 'provincelist':
-				$dataTable = \lib\app\karbala2user::chart_province_list();
+				$dataTable = \lib\app\karbalaarbaeenuser::chart_province_list();
 				\dash\data::dataTable($dataTable);
 
 				break;
 
 			case 'map':
 				\dash\data::include_highcharts(false);
-				$chartProvinceData = \lib\app\karbala2user::chart_province();
+				$chartProvinceData = \lib\app\karbalaarbaeenuser::chart_province();
 				\dash\data::chartProvinceData($chartProvinceData);
 				break;
 
 			default:
-				$ReportDailyChart = \lib\app\karbala2user::daily_chart();
+				$ReportDailyChart = \lib\app\karbalaarbaeenuser::daily_chart();
 				\dash\data::ReportDailyChart($ReportDailyChart);
 				break;
 		}

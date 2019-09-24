@@ -27,6 +27,8 @@
 <div class="f">
   {%if perm('cpDelneveshteView')%}<div class="c3 s6">{{block ("bDelneveshte")}}</div>{%endif%}
   {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsers2")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsersarbaeen")}}</div>{%endif%}
 </div>
 
 <div class="f">
@@ -53,7 +55,26 @@
 <a class="dcard x1" href='{{url.here}}/userkarbala'>
  <div class="statistic">
   <div class="value"><i class="sf-television-tv"></i></div>
-  <div class="label">{%trans "Signup karbala"%}</div>
+  <div class="label">ثبت‌نام کربلا - سمت خدا</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bKarbalaUsers2%}
+<a class="dcard x1" href='{{url.here}}/userkarbala2'>
+ <div class="statistic">
+  <div class="value"><i class="sf-television-tv"></i></div>
+  <div class="label">ثبت‌نام کربلا - کوی محبت</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bKarbalaUsersarbaeen%}
+<a class="dcard x1" href='{{url.here}}/userkarbalaarbaeen'>
+ <div class="statistic">
+  <div class="value"><i class="sf-television-tv"></i></div>
+  <div class="label">ثبت‌نام کربلا - ویژه اربعین</div>
  </div>
 </a>
 {%endblock%}
