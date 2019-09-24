@@ -17,6 +17,13 @@ class sms
 		(SELECT recommendGroup.title FROM s_group AS `recommendGroup` WHERE recommendGroup.id = s_sms.recommend_id LIMIT 1) AS `recommend_title`
 	";
 
+	public static function removeAll($_gateway)
+	{
+		$query = "DELETE FROM s_sms WHERE s_sms.togateway = '$_gateway' ";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
 	public static function count_shenasaee_shode($_where = null)
 	{
 		$q = null;
