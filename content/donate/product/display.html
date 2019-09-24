@@ -56,32 +56,35 @@
 
 {%block factorSessionList%}
 {%if factorSession%}
-<table class="tbl1 v4">
-  <thead>
-    <tr>
-      <th class="collapsing"></th>
-      <th>{%trans "Title"%}</th>
-      <th>{%trans "Price"%}</th>
-      <th>{%trans "Count"%}</th>
-      <th>{%trans "Total"%}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {%for key, value in factorSession%}
-    <tr>
-      <td class="collapsing">{{loop.index | fitNumber}}</td>
-      <td>{{value.title}}</td>
-      <td>{{value.price | fitNumber}}</td>
-      <td>{{value.count | fitNumber}}</td>
-      <td>{{value.total | fitNumber}}</td>
-    </tr>
-    {%endfor%}
-    <tr class="positive txtC txtB">
-      <td class="txtB" colspan="3">{%trans "Sum"%}</td>
-      <td class="txtB" colspan="2">{{factorSessionSum | fitNumber}} <small>{%trans "Toman"%}</small></td>
-    </tr>
-  </tbody>
-</table>
+<div class="tblBox pT50">
+
+  <table class="tbl1 v10">
+    <thead>
+      <tr>
+        <th class="collapsing"></th>
+        <th>{%trans "Title"%}</th>
+        <th>{%trans "Price"%}</th>
+        <th>{%trans "Count"%}</th>
+        <th>{%trans "Total"%}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for key, value in factorSession%}
+      <tr>
+        <td class="collapsing">{{loop.index | fitNumber}}</td>
+        <td>{{value.title}}</td>
+        <td>{{value.price | fitNumber}}</td>
+        <td>{{value.count | fitNumber}}</td>
+        <td>{{value.total | fitNumber}}</td>
+      </tr>
+      {%endfor%}
+      <tr class="negative txtC txtB">
+        <td class="txtB" colspan="3">{%trans "Sum"%}</td>
+        <td class="txtB" colspan="2">{{factorSessionSum | fitNumber}} <small>{%trans "Toman"%}</small></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 {{block ('ipay2')}}
 {%endif%}
 
@@ -94,7 +97,7 @@
 
 
 {%block ipay_factor%}
-<button class="btn primary block mT5">{%trans "Calculate price"%}</button>
+<button class="btn primary block mT5" {%if factorSession%}  data-scroll {%endif%}>{%trans "Calculate price"%}</button>
 {%endblock%}
 
 
