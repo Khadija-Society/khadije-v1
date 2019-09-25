@@ -7,6 +7,14 @@ class model
 
 	public static function post()
 	{
+
+		if(!\lib\app\karbalasetting::check('koyemohebbat'));
+		{
+			\dash\notif::error('ثبت‌نام موقتا غیر فعال است');
+			\dash\redirect::pwd();
+			return;
+		}
+
 		if(!\dash\request::post('accept'))
 		{
 			\dash\notif::error("لطفا تایید کنید که این ثبت‌نام به منزله اعزام نیست", 'accept');

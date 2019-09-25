@@ -2,41 +2,50 @@
 
 
 {%block pageContent%}
+<h3>نذورات</h3>
 <div class="f">
 
-  {%if perm('cpDonateView')%}<div class="c3 s6">{{block("Bdonate")}}</div>{%endif%}
-  {%if perm('cpProductView')%}<div class="c3 s6">{{block("BproductDonate")}}</div>{%endif%}
-  {%if perm('cpProductView')%}<div class="c3 s6">{{block("BproductDonateArbaeen")}}</div>{%endif%}
-  {%if perm('cpProductView')%}<div class="c3 s6">{{block("Bproduct")}}</div>{%endif%}
-  {%if perm('cpDoyonView')%}<div class="c3 s6">{{block("bDoyon")}}</div>{%endif%}
-  {%if perm('cpReportDaily') or perm('cpReportMonth') or perm('cpReportView') %}<div class="c3 s6">{{block ("Report")}}</div>{%endif%}
+  {%if perm('cpDonateView')%}<div class="c2 s6">{{block("Bdonate")}}</div>{%endif%}
+  {%if perm('cpProductView')%}<div class="c2 s6">{{block("BproductDonate")}}</div>{%endif%}
+  {%if perm('cpProductView')%}<div class="c2 s6">{{block("BproductDonateArbaeen")}}</div>{%endif%}
+  {%if perm('cpProductView')%}<div class="c2 s6">{{block("Bproduct")}}</div>{%endif%}
 </div>
 
+<h3>تشرفات</h3>
 <div class="f">
-  {%if perm('cpFamilyTripView')%}<div class="c3 s6">{{block ("BtripFamilty")}}</div>{%endif%}
-  {%if perm('cpTripView')%}<div class="c3 s6">{{block ("Btrip")}}</div>{%endif%}
-  {%if perm('cpRepresentationView')%}<div class="c3 s6">{{block ("bNiyabat")}}</div>{%endif%}
-  {%if perm('cpAddNewTrip')%}<div class="c3 s6">{{block("bAddNewTrip")}}</div>{%endif%}
+  {%if perm('cpFamilyTripView')%}<div class="c2 s6">{{block ("BtripFamilty")}}</div>{%endif%}
+  {%if perm('cpTripView')%}<div class="c2 s6">{{block ("Btrip")}}</div>{%endif%}
+  {%if perm('cpAddNewTrip')%}<div class="c2 s6">{{block("bAddNewTrip")}}</div>{%endif%}
 </div>
 
-<div class="f">
-  {%if perm('cpServiceView')%}<div class="c3 s6">{{block ("BService")}}</div>{%endif%}
-  {%if perm('cpConsultingView')%}<div class="c3 s6">{{block ("bConsulting")}}</div>{%endif%}
-  {%if perm('cpHealthView')%}<div class="c3 s6">{{block ("bHealth")}}</div>{%endif%}
-</div>
+<h3>خدمات</h3>
 
 <div class="f">
-  {%if perm('cpDelneveshteView')%}<div class="c3 s6">{{block ("bDelneveshte")}}</div>{%endif%}
-  {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
-  {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsers2")}}</div>{%endif%}
-  {%if perm('cpUsersKarbalaView')%}<div class="c3 s6">{{block("bKarbalaUsersarbaeen")}}</div>{%endif%}
+  {%if perm('cpRepresentationView')%}<div class="c2 s6">{{block ("bNiyabat")}}</div>{%endif%}
+  {%if perm('cpServiceView')%}<div class="c2 s6">{{block ("BService")}}</div>{%endif%}
+  {%if perm('cpConsultingView')%}<div class="c2 s6">{{block ("bConsulting")}}</div>{%endif%}
+  {%if perm('cpHealthView')%}<div class="c2 s6">{{block ("bHealth")}}</div>{%endif%}
 </div>
 
+<h3>ثبت‌نام کربلا</h3>
 <div class="f">
-  {%if perm('cpHomePageNumber')%}<div class="c3 s6">{{block ("homePageNumber")}}</div>{%endif%}
-  {%if perm('cpHadith')%}<div class="c3 s6">{{block ("bHadith")}}</div>{%endif%}
-  {%if perm('cpNationalCodeView')%}<div class="c3 s6">{{block ("BNcode")}}</div>{%endif%}
-  {%if perm('cpSettingThankyouMessage')%}<div class="c3 s6">{{block("BTankyouMessage")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsers2")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsersarbaeen")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsersarsetting")}}</div>{%endif%}
+</div>
+
+<h3>سایر بخش‌ها</h3>
+<div class="f">
+
+  {%if perm('cpDelneveshteView')%}<div class="c2 s6">{{block ("bDelneveshte")}}</div>{%endif%}
+  {%if perm('cpDoyonView')%}<div class="c2 s6">{{block("bDoyon")}}</div>{%endif%}
+  {%if perm('cpReportDaily') or perm('cpReportMonth') or perm('cpReportView') %}<div class="c2 s6">{{block ("Report")}}</div>{%endif%}
+
+  {%if perm('cpHomePageNumber')%}<div class="c2 s6">{{block ("homePageNumber")}}</div>{%endif%}
+  {%if perm('cpHadith')%}<div class="c2 s6">{{block ("bHadith")}}</div>{%endif%}
+  {%if perm('cpNationalCodeView')%}<div class="c2 s6">{{block ("BNcode")}}</div>{%endif%}
+  {%if perm('cpSettingThankyouMessage')%}<div class="c2 s6">{{block("BTankyouMessage")}}</div>{%endif%}
 </div>
 
 {%endblock%}
@@ -47,6 +56,16 @@
  <div class="statistic">
   <div class="value"><i class="sf-atom"></i></div>
   <div class="label">{%trans "Sms management"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bKarbalaUsersarsetting%}
+<a class="dcard x1" href='{{url.here}}/karbalasetting'>
+ <div class="statistic">
+  <div class="value"><i class="sf-cogs"></i></div>
+  <div class="label">تنظیمات ثبت‌نام کربلا</div>
  </div>
 </a>
 {%endblock%}
@@ -249,7 +268,7 @@
 <a class="dcard x1" href='{{url.here}}/product'>
  <div class="statistic">
   <div class="value"><i class="sf-box"></i></div>
-  <div class="label">{%trans "Products"%}</div>
+  <div class="label">نذر کالایی اربعین</div>
  </div>
 </a>
 {%endblock%}

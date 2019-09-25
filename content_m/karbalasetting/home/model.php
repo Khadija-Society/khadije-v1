@@ -8,8 +8,9 @@ class model
 	{
 
 		\dash\permission::access('mKarbalaSetting');
-		\dash\notif::warn('not now!');
 
+		\lib\app\karbalasetting::set(\dash\request::post());
+		\dash\redirect::pwd();
 
 	}
 }

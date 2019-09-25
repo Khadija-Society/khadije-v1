@@ -24,6 +24,8 @@ class view
 
 		self::check_nationalcode();
 
+		\dash\data::karbalasettingSaved(\lib\app\karbalasetting::get());
+
 	}
 
 

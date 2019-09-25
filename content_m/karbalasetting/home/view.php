@@ -16,7 +16,7 @@ class view
 
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_('Back to dashboard'));
-
+		\dash\data::karbalasettingSaved(\lib\app\karbalasetting::get());
 
 	}
 }
