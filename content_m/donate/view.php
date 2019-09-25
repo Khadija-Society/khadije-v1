@@ -49,6 +49,13 @@ class view
 			$payment_args['payment'] = \dash\request::get('payment');
 		}
 
+
+		if(\dash\request::get('paygateway'))
+		{
+			$args['paygateway'] = \dash\request::get('paygateway');
+			$payment_args['paygateway'] = \dash\request::get('paygateway');
+		}
+
 		if(\dash\request::get('id'))
 		{
 			$args['transactions.id'] = \dash\coding::decode(\dash\request::get('id'));

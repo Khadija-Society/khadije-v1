@@ -161,6 +161,7 @@
         <td class="collapsing">
           {%if value.doners%}{%else%}<small class="badge">{%trans "Anonymous"%}</small> {%endif%}
           {%if value.isproduct%}<a href="{{url.here}}/productdonate?transaction={{value.id}}"><small class="badge success">{%trans "Product donate"%}</small></a> {%endif%}
+          {%if value.paygateway == 'android' %}<a title='{%trans "Pay with android application"%}' href="{{url.this}}?paygateway=android"><i class="sf-android fc-green"></i></a>{%endif%}
         </td>
         <td class="s0">
 {%if value.user_id%}

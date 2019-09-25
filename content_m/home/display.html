@@ -2,7 +2,7 @@
 
 
 {%block pageContent%}
-<h3>نذورات</h3>
+<h3>{%trans "Donate"%}</h3>
 <div class="f">
 
   {%if perm('cpDonateView')%}<div class="c2 s6">{{block("Bdonate")}}</div>{%endif%}
@@ -11,14 +11,14 @@
   {%if perm('cpProductView')%}<div class="c2 s6">{{block("Bproduct")}}</div>{%endif%}
 </div>
 
-<h3>تشرفات</h3>
+<h3>{%trans "Trip"%}</h3>
 <div class="f">
   {%if perm('cpFamilyTripView')%}<div class="c2 s6">{{block ("BtripFamilty")}}</div>{%endif%}
   {%if perm('cpTripView')%}<div class="c2 s6">{{block ("Btrip")}}</div>{%endif%}
   {%if perm('cpAddNewTrip')%}<div class="c2 s6">{{block("bAddNewTrip")}}</div>{%endif%}
 </div>
 
-<h3>خدمات</h3>
+<h3>{%trans "Service"%}</h3>
 
 <div class="f">
   {%if perm('cpRepresentationView')%}<div class="c2 s6">{{block ("bNiyabat")}}</div>{%endif%}
@@ -27,7 +27,7 @@
   {%if perm('cpHealthView')%}<div class="c2 s6">{{block ("bHealth")}}</div>{%endif%}
 </div>
 
-<h3>ثبت‌نام کربلا</h3>
+<h3>{%trans "Signup karbala"%}</h3>
 <div class="f">
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsers2")}}</div>{%endif%}
@@ -35,7 +35,7 @@
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsersarsetting")}}</div>{%endif%}
 </div>
 
-<h3>سایر بخش‌ها</h3>
+<h3>{%trans "Other"%}</h3>
 <div class="f">
 
   {%if perm('cpDelneveshteView')%}<div class="c2 s6">{{block ("bDelneveshte")}}</div>{%endif%}
