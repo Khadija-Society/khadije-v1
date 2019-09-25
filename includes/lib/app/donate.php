@@ -624,9 +624,11 @@ class donate
 			}
 
 			$auto_back = true;
+			$paygateway = null;
 
 			if(isset($_args['isAndroid']) && $_args['isAndroid'])
 			{
+				$paygateway = 'android';
 				$auto_go   = false;
 				$auto_back = false;
 				$turn_back = "khadije://doners";
@@ -649,6 +651,7 @@ class donate
 			}
 
 
+
 			$meta =
 			[
 				'turn_back'     => $turn_back,
@@ -669,6 +672,7 @@ class donate
 					'doners'     => $doners,
 					'wayopt'     => $wayopt,
 					'totalcount' => $totalcount,
+					'paygateway' => $paygateway,
 					'isproduct'  => $product ? 1 : null,
 				]
 			];
