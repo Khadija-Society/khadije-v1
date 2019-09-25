@@ -1021,7 +1021,7 @@ body[data-page="donate"] #sHeaderNav .headerLine, body[data-page="app_donate"] #
 	background-position: -950px -300px;
 }
 .cbox.donateLists{
-	max-height: 700px;
+	/*max-height: 700px;*/
 	/*overflow-y: auto;*/
 }
 .donateWays .radio2{
