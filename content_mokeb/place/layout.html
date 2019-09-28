@@ -53,7 +53,7 @@
 <label for="iactivetime">{%trans "Active time"%}</label>
 <div class="input">
   <input type="number" name="activetime" id="iactivetime" value="{{dataRow.activetime}}" min="0" max="9999999999"  >
-  <label class="addon">{%trans "Minutes"%}</label>
+  <label class="addon">{%trans "Hour"%}</label>
 </div>
 {%endblock%}
 
@@ -63,6 +63,21 @@
 <div class="input">
   <input type="number" name="capacity" id="icapacity" value="{{dataRow.capacity}}" min="0" max="9999999999"  >
   <label class="addon">{%trans "Person"%}</label>
+</div>
+{%endblock%}
+
+
+{%block iFrom%}
+<label for="ifrom">{%trans "From number"%}</label>
+<div class="input">
+  <input type="number" name="from" id="ifrom" value="{{dataRow.from}}" min="0" max="9999999999"  >
+</div>
+{%endblock%}
+
+{%block iTo%}
+<label for="ito">{%trans "To number"%}</label>
+<div class="input">
+  <input type="number" name="to" id="ito" value="{{dataRow.to}}" min="0" max="9999999999"  >
 </div>
 {%endblock%}
 

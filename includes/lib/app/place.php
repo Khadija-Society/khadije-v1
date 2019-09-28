@@ -177,6 +177,46 @@ class place
 			return false;
 		}
 
+		$from = \dash\app::request('from');
+		if($from && !is_numeric($from))
+		{
+			\dash\notif::error(T_("Invalid data"), 'from');
+			return false;
+		}
+
+		if($from)
+		{
+			$from = abs(intval($from));
+		}
+
+		if($from && $from > 999999999)
+		{
+			\dash\notif::error(T_("Invalid data"), 'from');
+			return false;
+		}
+
+		$to = \dash\app::request('to');
+		if($to && !is_numeric($to))
+		{
+			\dash\notif::error(T_("Invlid data"), 'to');
+			return false;
+		}
+
+		if($to)
+		{
+			$to = abs(intval($to));
+		}
+
+		if($to && $to > 999999999)
+		{
+			\dash\notif::error(T_("Invalid data"), 'to');
+			return false;
+		}
+
+		if($from && $to)
+		{
+			$capacity = $to - $from;
+		}
 
 		$args               = [];
 
@@ -192,6 +232,8 @@ class place
 		$args['file']       = $file;
 		$args['cleantime']  = $cleantime;
 		$args['gender']     = $gender;
+		$args['from']       = $from;
+		$args['to']         = $to;
 
 		return $args;
 	}
@@ -380,6 +422,8 @@ class place
 		if(!\dash\app::isset_request('status')) unset($args['status']);
 		if(!\dash\app::isset_request('cleantime')) unset($args['cleantime']);
 		if(!\dash\app::isset_request('gender')) unset($args['gender']);
+		if(!\dash\app::isset_request('from')) unset($args['from']);
+		if(!\dash\app::isset_request('to')) unset($args['to']);
 
 		if(!empty($args))
 		{
