@@ -1,5 +1,5 @@
 <?php
-namespace content_mokeb\home;
+namespace content_mokeb\add;
 
 
 class model

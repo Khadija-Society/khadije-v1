@@ -1,6 +1,10 @@
 {%extends display.dash%}
 
 
+
 {%block sidenav%}
+    <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Manage Panel" %}</span></a></li>
+    <li><a href="{{url.here}}/place"><i class='sf-pin'></i> <span>{% trans "Place" %}</span></a></li>
+
 
 {%endblock%}
