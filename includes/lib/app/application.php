@@ -149,14 +149,14 @@ class application
 		$link                     = [];
 		$link['type']             = 'link4';
 
-		$link['link'][0]['image'] = \dash\url::static(). '/images/app/LastLine-website.jpg';
-		$link['link'][0]['url']   = \dash\url::kingdom();
-		$link['link'][0]['type']  = 'browser';
-		$link['link'][0]['text']  = T_("Website");
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/LastLine-services.jpg';
+		$link['link'][0]['url']   = \dash\url::kingdom().'/support';
+		$link['link'][0]['text']  = T_("Help Center");
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/LastLine-services.jpg';
-		$link['link'][1]['url']   = \dash\url::kingdom().'/a';
-		$link['link'][1]['text']  = T_("Service Panel");
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/LastLine-website.jpg';
+		$link['link'][1]['url']   = \dash\url::kingdom();
+		$link['link'][1]['type']  = 'browser';
+		$link['link'][1]['text']  = T_("Website");
 
 		$link['link'][2]['image'] = \dash\url::static(). '/images/app/LastLine-delneveshte.jpg';
 		$link['link'][2]['url']   = 'delneveshte';
