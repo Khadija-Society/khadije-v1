@@ -55,6 +55,7 @@
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
         <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
+        <th data-sort="{{sortLink.gender.order}}"><a href='{{sortLink.gender.link}}'>{%trans "Gender"%}</a></th>
         <th data-sort="{{sortLink.subtitle.order}}"><a href='{{sortLink.subtitle.link}}'>{%trans "Subtitle"%}</a></th>
         <th data-sort="{{sortLink.capacity.order}}"><a href='{{sortLink.capacity.link}}'>{%trans "Capacity"%}</a></th>
         <th data-sort="{{sortLink.activetime.order}}"><a href='{{sortLink.activetime.link}}'>{%trans "Active time"%}</a></th>
@@ -73,6 +74,7 @@
         <td>{{value.title}}</td>
         {%endif%}
         <td>{%set myCity = value.city%}{%trans myCity%}</td>
+        <td>{%set myGender = value.gender%}{%trans myGender%}</td>
         <td>{{value.subtitle}}</td>
         <td>{%if value.capacity%}{{value.capacity | fitNumber}} <small>{%trans "Person"%}</small>{%endif%}</td>
         <td>{%if value.activetime%}{{value.activetime | fitNumber}} <small>{%trans "Minutes"%}</small>{%endif%}</td>

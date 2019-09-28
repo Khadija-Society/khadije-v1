@@ -8,6 +8,7 @@ CREATE TABLE `place` (
 `desc` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `file` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `capacity` int(10) UNSIGNED NULL DEFAULT NULL,
+`gender` enum('male', 'female', 'all') NULL DEFAULT NULL,
 `city` enum('qom', 'mashhad', 'karbala', 'other') NULL DEFAULT NULL,
 `sort` int(10) UNSIGNED NULL DEFAULT NULL,
 `status` enum('enable', 'disable', 'deleted', 'publish')  NULL DEFAULT NULL,

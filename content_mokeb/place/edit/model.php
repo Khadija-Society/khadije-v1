@@ -21,6 +21,7 @@ class model
 			'address'    => \dash\request::post('address'),
 			'status'     => \dash\request::post('status'),
 			'cleantime'  => \dash\request::post('cleantime'),
+			'gender'     => \dash\request::post('gender'),
 
 		];
 

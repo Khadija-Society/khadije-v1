@@ -96,11 +96,11 @@ class mokebuser
 		$mobile = \dash\app::request('mobile');
 		$mobile = \dash\utility\filter::mobile($mobile);
 
-		if(!$mobile)
-		{
-			\dash\notif::error(T_("Invalid mobile"), 'mobile');
-			return false;
-		}
+		// if(!$mobile)
+		// {
+		// 	\dash\notif::error(T_("Invalid mobile"), 'mobile');
+		// 	return false;
+		// }
 
 
 		$email = \dash\app::request('email');
@@ -111,11 +111,11 @@ class mokebuser
 		}
 
 		$birthday = \dash\app::request('birthday');
-		if(!$birthday)
-		{
-			\dash\notif::error(T_("Birthday is required"), 'birthday');
-			return false;
-		}
+		// if(!$birthday)
+		// {
+		// 	\dash\notif::error(T_("Birthday is required"), 'birthday');
+		// 	return false;
+		// }
 
 		if(\dash\app::isset_request('birthday') && $birthday)
 		{
@@ -131,11 +131,11 @@ class mokebuser
 
 		$firstname = \dash\app::request('firstname');
 
-		if(!$firstname)
-		{
-			\dash\notif::error(T_("First name is required"), 'name');
-			return false;
-		}
+		// if(!$firstname)
+		// {
+		// 	\dash\notif::error(T_("First name is required"), 'name');
+		// 	return false;
+		// }
 
 		if($firstname && mb_strlen($firstname) > 50)
 		{
@@ -150,11 +150,11 @@ class mokebuser
 			return false;
 		}
 
-		if(!$lastname)
-		{
-			\dash\notif::error(T_("Last name is required"), 'lastName');
-			return false;
-		}
+		// if(!$lastname)
+		// {
+		// 	\dash\notif::error(T_("Last name is required"), 'lastName');
+		// 	return false;
+		// }
 
 		$nationalcode = \dash\app::request('nationalcode');
 		$pasportcode = \dash\app::request('pasportcode');
@@ -185,11 +185,11 @@ class mokebuser
 
 
 		$father = \dash\app::request('father');
-		if(!$father)
-		{
-			\dash\notif::error(T_("Father name is required"), 'father');
-			return false;
-		}
+		// if(!$father)
+		// {
+		// 	\dash\notif::error(T_("Father name is required"), 'father');
+		// 	return false;
+		// }
 		if($father && mb_strlen($father) > 50)
 		{
 			\dash\notif::error(T_("Invalid arguments father"), 'father');
@@ -258,11 +258,11 @@ class mokebuser
 			return false;
 		}
 
-		if(!$homeaddress)
-		{
-			\dash\notif::error(T_("Address is required"), 'homeaddress');
-			return false;
-		}
+		// if(!$homeaddress)
+		// {
+		// 	\dash\notif::error(T_("Address is required"), 'homeaddress');
+		// 	return false;
+		// }
 
 		$workaddress = \dash\app::request('workaddress');
 		if($workaddress && mb_strlen($workaddress) > 700)
@@ -285,11 +285,11 @@ class mokebuser
 			return false;
 		}
 
-		if(!$phone)
-		{
-			\dash\notif::error(T_("Phone is required"), 'phone');
-			return false;
-		}
+		// if(!$phone)
+		// {
+		// 	\dash\notif::error(T_("Phone is required"), 'phone');
+		// 	return false;
+		// }
 
 		$displayname = \dash\app::request('displayname');
 		if($displayname && mb_strlen($displayname) > 90)
@@ -305,14 +305,14 @@ class mokebuser
 			return false;
 		}
 
-		if(\dash\app::isset_request('married'))
-		{
-			if(!$married)
-			{
-				\dash\notif::error(T_("Plese set your married"), 'married');
-				return false;
-			}
-		}
+		// if(\dash\app::isset_request('married'))
+		// {
+		// 	if(!$married)
+		// 	{
+		// 		\dash\notif::error(T_("Plese set your married"), 'married');
+		// 		return false;
+		// 	}
+		// }
 
 		$zipcode = \dash\app::request('zipcode');
 		$zipcode = \dash\utility\convert::to_en_number($zipcode);
@@ -370,11 +370,11 @@ class mokebuser
 			return false;
 		}
 
-		if(!$city)
-		{
-			\dash\notif::error(T_("City is required"), 'city');
-			return false;
-		}
+		// if(!$city)
+		// {
+		// 	\dash\notif::error(T_("City is required"), 'city');
+		// 	return false;
+		// }
 
 
 		if(!$province && $city)

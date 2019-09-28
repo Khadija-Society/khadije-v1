@@ -99,6 +99,14 @@ class place
 		}
 
 
+		$gender = \dash\app::request('gender');
+		if($gender && !in_array($gender, ['male', 'female', 'all']))
+		{
+			\dash\notif::error(T_("Invalid gender"));
+			return false;
+		}
+
+
 		$status = \dash\app::request('status');
 		if($status && !in_array($status, ['enable', 'disable']))
 		{
@@ -182,7 +190,8 @@ class place
 		$args['desc']       = $desc;
 		$args['subtitle']   = $subtitle;
 		$args['file']       = $file;
-		$args['cleantime']       = $cleantime;
+		$args['cleantime']  = $cleantime;
+		$args['gender']     = $gender;
 
 		return $args;
 	}
@@ -370,6 +379,7 @@ class place
 		if(!\dash\app::isset_request('sort')) unset($args['sort']);
 		if(!\dash\app::isset_request('status')) unset($args['status']);
 		if(!\dash\app::isset_request('cleantime')) unset($args['cleantime']);
+		if(!\dash\app::isset_request('gender')) unset($args['gender']);
 
 		if(!empty($args))
 		{
