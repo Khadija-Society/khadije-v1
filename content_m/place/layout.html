@@ -1,0 +1,138 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{% block ititle %}
+<label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="title" id="title" placeholder='{%trans "Title of place"%} *' value="{{dataRow.title}}" autofocus required maxlength='150' minlength="1" pattern=".{1,150}" title='{%trans "Enter a valid title"%}'>
+</div>
+{% endblock %}
+
+{%block iSubtitle%}
+<label for="subtitle">{%trans "Subtitle"%}</label>
+<div class="input">
+  <input type="text" name="subtitle" id="subtitle"  value="{{dataRow.subtitle}}"  maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+{%endblock%}
+
+{%block iUnit%}
+<label for="unit">{%trans "Unit"%}</label>
+<div class="input">
+  <input type="text" name="unit" id="unit"  value="{{dataRow.unit}}"  maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+{%endblock%}
+
+
+{%block iCity%}
+<div class="pRa5">
+  <label for="city">{%trans "City"%}</label>
+  <select name="city" class="ui dropdown select">
+    <option value="" readonly>{%trans "Please select one itme"%}</option>
+    <option value="qom" {%if dataRow.city == 'qom'  %}selected {%endif%}>{%trans "Qom"%}</option>
+    <option value="mashhad" {%if dataRow.city == 'mashhad'  %}selected {%endif%}>{%trans "Mashhad"%}</option>
+    <option value="karbala" {%if dataRow.city == 'karbala'  %}selected {%endif%}>{%trans "Karbala"%}</option>
+  </select>
+</div>
+{%endblock%}
+
+{%block iActiveTime%}
+<label for="iactivetime">{%trans "Active time"%}</label>
+<div class="input">
+  <input type="number" name="activetime" id="iactivetime" value="{{dataRow.activetime}}" min="0" max="9999999999"  >
+  <label class="addon">{%trans "Minutes"%}</label>
+</div>
+{%endblock%}
+
+
+{%block iCapacity%}
+<label for="icapacity">{%trans "Capacity"%}</label>
+<div class="input">
+  <input type="number" name="capacity" id="icapacity" value="{{dataRow.capacity}}" min="0" max="9999999999"  >
+  <label class="addon">{%trans "Person"%}</label>
+</div>
+{%endblock%}
+
+{%block iPrice%}
+<label for="iprice">{%trans "Price"%}</label>
+<div class="input">
+  <input type="number" name="price" id="iprice" value="{{dataRow.price}}" min="0" max="9999999999"  data-response-realtime>
+  <label class="addon">{%trans "Toman"%}</label>
+</div>
+
+
+{%if lang.current == 'fa'%}
+<div class="msg info2 txtB" data-response='price' data-response-call='wordifyResponse'></div>
+{%endif%}
+
+{%endblock%}
+
+
+{%block iFile%}
+
+<div class="input mT10">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="file" id="file1"  data-max="500">
+ <label for="file1"></label>
+</div>
+{%if dataRow.file%}
+<img src="{{dataRow.file}}">
+{%endif%}
+
+{%endblock%}
+
+
+{% block isort %}
+<label for="isort">{%trans "Sort"%}</label>
+<div class="input">
+  <input type="number" name="sort" id="isort" value="{{dataRow.sort}}" min="0" max="9999" >
+</div>
+{% endblock %}
+
+
+{%block idesc%}
+<label for="desc">{%trans "Description"%}</label>
+<textarea class="txt mB10" id='desc' name="desc" placeholder='{%trans "Description of place to show in website"%}' maxlength='500' rows="5">{{dataRow.desc}}</textarea>
+{%endblock%}
+
+
+{%block iAddress%}
+<label for="address">{%trans "Address"%}</label>
+<textarea class="txt mB10" id='address' name="address" placeholder='{%trans "Address"%}' maxlength='500' rows="5">{{dataRow.address}}</textarea>
+{%endblock%}
+
+
+{%block iSignup%}
+<div class="switch1">
+ <input type="checkbox" name="signup" id="signup" {%if dataRow|length == 0 or dataRow.signup %}checked{%endif%}>
+ <label for="signup"></label>
+ <label for="signup">{%trans "Access in :students online registeration"%}</label>
+</div>
+{%endblock%}
+
+
+{%block iadd%}
+<button class="btn primary block mT20">{%trans "Add"%}</button>
+{%endblock%}
+
+{%block isave%}
+<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+
+
+{%block iStatus%}
+<div class="mT15">
+ <label >{%trans "Status of place"%}</label>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
+  <label for="r-enable">{%trans "Enable"%}</label>
+ </div>
+
+
+ <div class="radio1 black mB25">
+  <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'%} checked{%endif%} >
+  <label for="r-disable">{%trans "Disable"%}</label>
+ </div>
+</div>
+{%endblock%}
