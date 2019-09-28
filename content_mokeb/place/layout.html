@@ -1,4 +1,4 @@
-{%extends 'content_m/layout.html'%}
+{%extends 'content_mokeb/layout.html'%}
 
 
 
@@ -52,6 +52,16 @@
   <label class="addon">{%trans "Person"%}</label>
 </div>
 {%endblock%}
+
+
+{%block iCleantime%}
+<label for="cleantime">{%trans "Exit time"%}</label>
+<div class="input clockpicker ltr">
+  <input type="text" name="cleantime" id="cleantime" placeholder='{{now | dt("false", "time") | fitNumber(false)}}' value='{%if dataRow.cleantime %}{{dataRow.cleantime}}{%endif%}' autocomplete="off">
+</div>
+{%endblock%}
+
+
 
 {%block iPrice%}
 <label for="iprice">{%trans "Price"%}</label>

@@ -1,5 +1,5 @@
 <?php
-namespace content_m\place\edit;
+namespace content_mokeb\place\edit;
 
 
 class controller

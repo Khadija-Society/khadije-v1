@@ -3,6 +3,7 @@ CREATE TABLE `place` (
 `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `subtitle` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `activetime` int(10) NULL DEFAULT NULL,
+`cleantime` time NULL DEFAULT NULL,
 `address` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `desc` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `file` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,

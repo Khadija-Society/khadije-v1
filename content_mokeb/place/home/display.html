@@ -1,4 +1,4 @@
-{%extends 'content_m/layout.html'%}
+{%extends 'content_mokeb/layout.html'%}
 
 
 
@@ -53,29 +53,31 @@
  <table class="tbl1 v1 cbox fs12">
     <thead>
       <tr>
-        <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
+        <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
         <th data-sort="{{sortLink.subtitle.order}}"><a href='{{sortLink.subtitle.link}}'>{%trans "Subtitle"%}</a></th>
         <th data-sort="{{sortLink.capacity.order}}"><a href='{{sortLink.capacity.link}}'>{%trans "Capacity"%}</a></th>
         <th data-sort="{{sortLink.activetime.order}}"><a href='{{sortLink.activetime.link}}'>{%trans "Active time"%}</a></th>
-        <th>{%trans "Description"%}</th>
-        <th data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
+        <th data-sort="{{sortLink.cleantime.order}}"><a href='{{sortLink.cleantime.link}}'>{%trans "Clean time"%}</a></th>
+        <th class="s0">{%trans "Description"%}</th>
+        <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative'{%endif%}>
-        <td>{%set myCity = value.city%}{%trans myCity%}</td>
         {%if perm('mPlaceEdit')%}
-        <td><a href="{{url.this}}/edit?id={{value.id}}">{{value.title}}</a></td>
+        <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
         {%else%}
         <td>{{value.title}}</td>
         {%endif%}
+        <td>{%set myCity = value.city%}{%trans myCity%}</td>
         <td>{{value.subtitle}}</td>
         <td>{%if value.capacity%}{{value.capacity | fitNumber}} <small>{%trans "Person"%}</small>{%endif%}</td>
         <td>{%if value.activetime%}{{value.activetime | fitNumber}} <small>{%trans "Minutes"%}</small>{%endif%}</td>
-        <td char="s0">{{value.desc}}</td>
+        <td>{%if value.cleantime%}{{value.cleantime | fitNumber}}{%endif%}</td>
+        <td class="s0" >{{value.desc}}</td>
         <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}

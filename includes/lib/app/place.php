@@ -7,11 +7,6 @@ namespace lib\app;
 class place
 {
 
-	use place\add;
-	use place\edit;
-	use place\datalist;
-
-
 	public static function get($_id)
 	{
 		$id = \dash\coding::decode($_id);
@@ -71,6 +66,13 @@ class place
 		}
 
 
+
+		$cleantime = \dash\app::request('cleantime');
+		if($cleantime && !\dash\date::make_time($cleantime))
+		{
+			\dash\notif::error(T_("Invalid time"));
+			return false;
+		}
 
 		$activetime = \dash\app::request('activetime');
 		if($activetime && !is_numeric($activetime))
@@ -180,10 +182,207 @@ class place
 		$args['desc']       = $desc;
 		$args['subtitle']   = $subtitle;
 		$args['file']       = $file;
+		$args['cleantime']       = $cleantime;
 
 		return $args;
 	}
 
+
+	/**
+	 * add new place
+	 *
+	 * @param      array          $_args  The arguments
+	 *
+	 * @return     array|boolean  ( description_of_the_return_value )
+	 */
+	public static function add($_args = [])
+	{
+		\dash\app::variable($_args);
+
+		if(!\dash\user::id())
+		{
+			\dash\notif::error(T_("user not found"), 'user');
+			return false;
+		}
+
+
+		// check args
+		$args = self::check();
+
+		if($args === false || !\dash\engine\process::status())
+		{
+			return false;
+		}
+
+		$return = [];
+
+		if(!$args['status'])
+		{
+			$args['status']  = 'enable';
+		}
+
+		$place_id = \lib\db\place::insert($args);
+
+		if(!$place_id)
+		{
+			\dash\log::set('apiPlace:no:way:to:insertPlace');
+			\dash\notif::error(T_("No way to insert place"), 'db', 'system');
+			return false;
+		}
+
+		$return['id'] = \dash\coding::encode($place_id);
+
+		if(\dash\engine\process::status())
+		{
+			\dash\log::set('addNewPlace', ['code' => $place_id]);
+			\dash\notif::ok(T_("Place successfuly added"));
+		}
+
+		return $return;
+	}
+
+
+		public static $sort_field =
+	[
+		'title',
+		'subtitle',
+		'activetime',
+		'address',
+		'desc',
+		'file',
+		'capacity',
+		'city',
+		'sort',
+		'status',
+	];
+
+	public static function all_list()
+	{
+		$args =
+		[
+			'order'      => 'asc',
+			'sort'       => 'sort',
+			'pagenation' => false,
+		];
+		$list = self::list(null, $args);
+		return $list;
+	}
+
+
+	public static function active_list()
+	{
+		$args =
+		[
+			'order'      => 'asc',
+			'sort'       => 'sort',
+			'status'     => 'enable',
+			'pagenation' => false,
+		];
+		$list = self::list(null, $args);
+		return $list;
+	}
+
+
+	/**
+	 * Gets the place.
+	 *
+	 * @param      <type>  $_args  The arguments
+	 *
+	 * @return     <type>  The place.
+	 */
+	public static function list($_string = null, $_args = [])
+	{
+		// if(!\dash\user::id())
+		// {
+		// 	return false;
+		// }
+
+		$default_meta =
+		[
+			'sort'  => null,
+			'order' => null,
+		];
+
+		if(!is_array($_args))
+		{
+			$_args = [];
+		}
+
+		$_args = array_merge($default_meta, $_args);
+
+		if($_args['sort'] && !in_array($_args['sort'], self::$sort_field))
+		{
+			$_args['sort'] = null;
+		}
+
+		$result            = \lib\db\place::search($_string, $_args);
+		$temp              = [];
+
+		foreach ($result as $key => $value)
+		{
+			$check = self::ready($value);
+			if($check)
+			{
+				$temp[] = $check;
+			}
+		}
+
+		return $temp;
+	}
+
+
+	/**
+	 * edit a place
+	 *
+	 * @param      <type>   $_args  The arguments
+	 *
+	 * @return     boolean  ( description_of_the_return_value )
+	 */
+	public static function edit($_args, $_id)
+	{
+		\dash\app::variable($_args);
+
+		$result = self::get($_id);
+
+		if(!$result)
+		{
+			return false;
+		}
+
+		$id = \dash\coding::decode($_id);
+
+		$args = self::check($id);
+
+		if($args === false || !\dash\engine\process::status())
+		{
+			return false;
+		}
+
+
+		if(!\dash\app::isset_request('title')) unset($args['title']);
+		if(!\dash\app::isset_request('subtitle')) unset($args['subtitle']);
+		if(!\dash\app::isset_request('activetime')) unset($args['activetime']);
+		if(!\dash\app::isset_request('address')) unset($args['address']);
+		if(!\dash\app::isset_request('desc')) unset($args['desc']);
+		if(!\dash\app::isset_request('file')) unset($args['file']);
+		if(!\dash\app::isset_request('capacity')) unset($args['capacity']);
+		if(!\dash\app::isset_request('city')) unset($args['city']);
+		if(!\dash\app::isset_request('sort')) unset($args['sort']);
+		if(!\dash\app::isset_request('status')) unset($args['status']);
+		if(!\dash\app::isset_request('cleantime')) unset($args['cleantime']);
+
+		if(!empty($args))
+		{
+			$update = \lib\db\place::update($args, $id);
+			\dash\log::set('editPlace', ['code' => $id]);
+
+			$title = isset($args['title']) ? $args['title'] : T_("Data");
+			if(\dash\engine\process::status())
+			{
+				\dash\notif::ok(T_(":title successfully updated", ['title' => $title]));
+			}
+		}
+	}
 
 	/**
 	 * ready data of place to load in api

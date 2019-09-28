@@ -1,5 +1,5 @@
 <?php
-namespace content_m\place\edit;
+namespace content_mokeb\place\edit;
 
 
 class model
@@ -20,6 +20,8 @@ class model
 			'desc'       => \dash\request::post('desc'),
 			'address'    => \dash\request::post('address'),
 			'status'     => \dash\request::post('status'),
+			'cleantime'  => \dash\request::post('cleantime'),
+
 		];
 
 		$file = \dash\app\file::upload_quick('file');

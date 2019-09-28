@@ -1,5 +1,5 @@
 <?php
-namespace content_m\place\home;
+namespace content_mokeb\place\home;
 
 
 class view
