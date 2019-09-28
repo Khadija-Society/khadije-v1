@@ -37,7 +37,7 @@ class model
 			\dash\notif::ok('پذیرش انجام شد.', ['alerty' => true]);
 
 
-			\dash\redirect::to(\dash\url::here(). '/check?nationalcode='. \dash\request::get('cnationalcode'));
+			\dash\redirect::to(\dash\url::here(). '/detail?nationalcode='. \dash\request::get('cnationalcode'));
 		}
 
 	}
