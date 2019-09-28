@@ -10,7 +10,7 @@
   <small>{{mokebDetail.subtitle}}</small>
   <div class="f">
     <div class="c"><small>{%trans "Capacity"%} </small>{{mokebDetail.capacity | fitNumber}}</div>
-    <div class="c"><small>{%trans "Active time"%} </small>{{((mokebDetail.activetime) * 60) |  dt('humanTime')}}</div>
+    <div class="c"><small>{%trans "Active time"%} </small>{{mokebDetail.activetime |  fitNumber}} <small>{%trans "Hour"%}</small></div>
     <div class="c"><small>{%trans "Clean time"%} </small>{{mokebDetail.cleantime | fitNumber}}</div>
   </div>
 </div>
@@ -79,8 +79,11 @@
 
 
 
+     <div class="f">
+       <div class="c">{{block ('iSave') }}</div>
+       <div class="cauto"><a href="{{url.that}}" class="btn mT20 mLa5">انصراف</a></div>
+     </div>
 
-     {{block ('iSave') }}
     </form>
 </div>
 {%endblock%}

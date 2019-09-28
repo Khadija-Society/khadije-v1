@@ -79,7 +79,7 @@
         <td>{%if value.capacity%}{{value.capacity | fitNumber}} <small>{%trans "Person"%}</small>{%endif%}
           <div>{%trans "Number"%} {{value.from | fitNumber }} - {{value.to | fitNumber}}</div>
         </td>
-        <td>{%if value.activetime%}{{value.activetime | fitNumber}} <small>{%trans "Minutes"%}</small>{%endif%}</td>
+        <td>{%if value.activetime%}{{value.activetime | fitNumber}} <small>{%trans "Hour"%}</small>{%endif%}</td>
         <td>{%if value.cleantime%}{{value.cleantime | fitNumber}}{%endif%}</td>
 
         <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
