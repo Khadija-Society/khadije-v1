@@ -6,7 +6,13 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title("ثبت‌نام زائرین ". \dash\data::mokebDetail_title());
+		$myTitle = "موکب  ". \dash\data::mokebDetail_title();
+		$myTitle .= " / ظرفیت". \dash\data::mokebDetail_capacity();
+		$myTitle .= " / پر". \dash\data::mokebDetail_capacity();
+		$myTitle .= " / خالی". \dash\data::mokebDetail_capacity();
+		$myTitle .= " / تخلیه". \dash\data::mokebDetail_capacity();
+
+		\dash\data::page_title($myTitle);
 
 		self::static_var();
 

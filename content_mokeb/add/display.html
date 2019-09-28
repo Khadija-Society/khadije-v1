@@ -5,53 +5,60 @@
 
 {%block pageContent%}
 
-<div class="msg success2 fs20 txtB txtC">
-  {{mokebDetail.title}}
-  <small>{{mokebDetail.subtitle}}</small>
-  <div class="f">
-    <div class="c"><small>{%trans "Capacity"%} </small>{{mokebDetail.capacity | fitNumber}}</div>
-    <div class="c"><small>{%trans "Active time"%} </small>{{mokebDetail.activetime |  fitNumber}} <small>{%trans "Hour"%}</small></div>
-    <div class="c"><small>{%trans "Clean time"%} </small>{{mokebDetail.cleantime | fitNumber}}</div>
-  </div>
+
+<div class="msg light dots txtC mB10">
+{% for i in 0..100 %}
+    <span class="fc-red">0</span>
+{% endfor %}
 </div>
-<div class="f justify-center">
-  <div class="c8 s12">
-      <div class="cbox">
-          <div class="msg">
-            جهت بررسی وضعیت کد ملی را وارد کنید
-          </div>
-          <form method="get" action="{{url.that}}" autocomplete="off">
-            <div class="input">
-              <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='{%trans "10 digit national code"%}' maxlength="10"  minlength="1"  >
-              <button class="addon btn success">{%trans "Check"%}</button>
-            </div>
-          </form>
 
-          {%if checkNationalcode%}
-            <div class="mA10 fs14">
 
-            {%if checkNationalcode == 'invalid'%}
-              <div class="msg warn txtC txtB">کد ملی اشتباه است</div>
-            {%endif%}
+<div class="f justify-center fs14">
+  <div class="c4 s12 fs12 pRa10">
+    <form method="get" action="{{url.that}}" autocomplete="off" class="panel">
+      <div class="pad">
+        <div class="input">
+          <img src="{{url.static}}/images/mokeb/labbayk.jpg" class="mB10">
+          <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
+          <button class="addon btn">{%trans "Check"%}</button>
+        </div>
+
+        {%if checkNationalcode%}
+          <br>
+        {%endif%}
+
+        {%if checkNationalcode == 'invalid'%}
+          <div class="msg mB0 danger txtC txtB">کد ملی اشتباه است</div>
+        {%elseif checkNationalcode == 'signuped'%}
+          <div class="msg mB0 success txtC txtB">ثبت شده و مجاز به ورود</div>
+        {%elseif checkNationalcode == 'not-signuped'%}
+          <div class="msg mB0 info txtC txtB mB20">پذیرش جدید</div>
+        {%endif%}
+      </div>
+    </form>
+  </div>
+
+{%if checkNationalcode == 'signuped' or checkNationalcode == 'not-signuped'%}
+  <div class="c8 s12 pLa10">
+      <div class="panel">
+          <div class="pad fs14">
+
 
             {%if checkNationalcode == 'signuped'%}
-              <div class="msg success txtC txtB">این کد ملی قبلا در سیستم ثبت شده است.
-                <br>
-                <a class="btn  primary" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">نمایش جزئیات</a>
-              </div>
+              <a class="btn  primary" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">نمایش جزئیات</a>
             {%endif%}
 
             {%if checkNationalcode == 'not-signuped'%}
-              <div class="msg info txtC txtB">پذیرش جدید</div>
+              <div class="msg mB0 info txtC txtB mB20">پذیرش جدید</div>
               {{block('newSignup')}}
             {%endif%}
 
-            </div>
-
-          {%endif%}
+          </div>
 
       </div>
   </div>
+{%endif%}
+
 </div>
 
 
@@ -62,15 +69,17 @@
 <div class="fs08">
 
     <form class="" method="post" autocomplete="off">
+
+     <div class="f">
+      <div class="c6 pRa5 s12 ">{{block ('iMobileKarabala') }}</div>
+      <div class="c6 pRa5 s12 pRa5">{{block ('icity') }}</div>
+     </div>
+
      <div class="f">
       <div class="c6 s12 pRa5">{{block ('iname') }}</div>
       <div class="c6 s12">{{block ('ifamily') }}</div>
      </div>
 
-     <div class="f">
-      <div class="c6 pRa5 s12 ">{{block ('icity') }}</div>
-      <div class="c6 pRa5 s12 pRa5">{{block ('iMobileKarabala') }}</div>
-     </div>
 
      <div class="f mB10">
       <div class="c6 s12 pRa5">{{block ('iMarital') }}</div>
@@ -255,14 +264,14 @@
 {%block iMobileKarabala%}
 <label for="mobile">{%trans "Mobile"%} <small>۱۰ رقمی</small> </label>
 <div class="input ltr">
-  <input type="tel" name="mobile" id="mobile" placeholder='{%trans "Like"%} 09121234567' value="{{userdetail.mobile}}" maxlength='50' >
+  <input type="tel" name="mobile" id="mobile" value="{{userdetail.mobile}}" maxlength='50' autofocus>
 </div>
 {%endblock%}
 
 {%block iPhone%}
 <label for="phone">{%trans "Phone"%}  </label>
 <div class="input ltr">
-  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 02536505460' value="{{userdetail.phone}}" maxlength='50' >
+  <input type="tel" name="phone" id="phone" value="{{userdetail.phone}}" maxlength='50' >
 </div>
 {%endblock%}
 
