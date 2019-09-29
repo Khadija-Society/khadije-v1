@@ -245,6 +245,8 @@ class mokebusers
 		$default_option =
 		[
 			'search_field' => $search_field,
+			'public_show_field' => "mokebusers.*, place.title AS `place_title`",
+			'master_join' => "LEFT JOIN place ON place.id = mokebusers.place_id"
 		];
 
 		if(!is_array($_option))

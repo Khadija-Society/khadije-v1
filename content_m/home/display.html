@@ -32,6 +32,7 @@
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsers2")}}</div>{%endif%}
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsersarbaeen")}}</div>{%endif%}
+  {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsersarbaeenMokeb")}}</div>{%endif%}
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsersarsetting")}}</div>{%endif%}
 </div>
 
@@ -95,6 +96,15 @@
  <div class="statistic">
   <div class="value"><i class="sf-television-tv"></i></div>
   <div class="label">ثبت‌نام کربلا - ویژه اربعین</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block bKarbalaUsersarbaeenMokeb%}
+<a class="dcard x1" href='{{url.here}}/mokebuser'>
+ <div class="statistic">
+  <div class="value"><i class="sf-television-tv"></i></div>
+  <div class="label">ثبت‌نام موکب کربلا</div>
  </div>
 </a>
 {%endblock%}
