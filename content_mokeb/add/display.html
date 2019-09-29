@@ -47,19 +47,12 @@
       <div class="panel">
           <div class="pad fs14">
 
-
             {%if checkNationalcode == 'signuped'%}
-              <div class="cbox">
-                <div class="msg txtB txtC">
-                  {%trans "Number"%} {{mokebuserDetail.position | fitNumber(false)}}
-                  <br>
-                  <span>{%trans "Enter"%} {{mokebuserDetail.datecreated | dt()}}</span>
-                  <br>
-                  <span>{%trans "Expire"%} {{mokebuserDetail.expire  | dt()}}</span>
-                </div>
 
-              </div>
+              {{block('a6_chap_detail')}}
+
               <a class="btn  primary" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
+
             {%endif%}
 
             {%if checkNationalcode == 'not-signuped'%}
@@ -78,6 +71,49 @@
 
 
 {%endblock%}
+
+
+
+
+
+
+{%block a6_chap_detail%}
+
+<div class="cbox">
+  <div class="example">
+
+  <div class="msg txtC">
+    <div class="txtB">{%trans "Number"%} {{mokebuserDetail.position | fitNumber(false)}}</div>
+    <hr>
+    <div class="fs08">
+      {%trans "National code"%} {{mokebuserDetail.nationalcode | fitNumber(false)}}
+      {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
+        <div class="fs08">{{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b></div>
+      {%endif%}
+    </div>
+  </div>
+
+  <div class="msg fs08">
+    <div>{%trans "Enter"%} <span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
+    <div>تاریخ اعتبار <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
+  </div>
+
+  <div class="msg fs08">
+    <div>{{mokebDetail.title}}</div>
+    {%if mokebDetail.address%}<div>آدرس: {{mokebDetail.address}}</div>{%endif%}
+    {%if mokebDetail.desc%}<div>توضیحات: {{mokebDetail.desc}}</div>{%endif%}
+  </div>
+
+  </div>
+</div>
+
+
+{%endblock%}
+
+
+
+
+
 
 {%block newSignup%}
 <div class="fs08">
