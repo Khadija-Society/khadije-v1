@@ -27,6 +27,10 @@ class sync
 				$temp['smsid']    = isset($value['smsid']) ? $value['smsid'] : null;
 				$temp['localid']  = isset($value['localid']) ? $value['localid'] : null;
 				$temp['md5']      = isset($value['md5']) ? $value['md5'] : null;
+				if(!$temp['md5'])
+				{
+					$temp['md5']      = isset($value['MD5']) ? $value['MD5'] : null;
+				}
 				$temp['serverid'] = \content_api\v6\smsapp\newsms::multi_add_new_sms($value);
 
 				$result['smsnewsaved'][] = $temp;
@@ -41,6 +45,10 @@ class sync
 				$temp['smsid']    = isset($value['smsid']) ? $value['smsid'] : null;
 				$temp['localid']  = isset($value['localid']) ? $value['localid'] : null;
 				$temp['md5']      = isset($value['md5']) ? $value['md5'] : null;
+				if(!$temp['md5'])
+				{
+					$temp['md5']      = isset($value['MD5']) ? $value['MD5'] : null;
+				}
 				$temp['serverid'] = isset($value['serverid']) ? $value['serverid'] : null;
 				$temp['status']   = \content_api\v6\smsapp\sent::multi_set($value);
 
@@ -56,6 +64,10 @@ class sync
 				$temp['smsid']          = isset($value['smsid']) ? $value['smsid'] : null;
 				$temp['localid']        = isset($value['localid']) ? $value['localid'] : null;
 				$temp['md5']            = isset($value['md5']) ? $value['md5'] : null;
+				if(!$temp['md5'])
+				{
+					$temp['md5']      = isset($value['MD5']) ? $value['MD5'] : null;
+				}
 				$temp['serverid']       = \content_api\v6\smsapp\newsms::lost($value);
 				$result['lostresult'][] = $temp;
 			}

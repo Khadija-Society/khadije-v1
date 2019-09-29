@@ -14,10 +14,19 @@ class newsms
 		\dash\app::variable($_args);
 
 		$md5 = \dash\app::request('md5');
-
-		if(!$md5 || mb_strlen($md5) !== 32)
+		if(!$md5)
 		{
-			\dash\notif::warn('Invalid md5 - not set or len is not 32');
+			$md5           = \dash\app::request('MD5');
+		}
+
+		if(!$md5)
+		{
+			\dash\notif::warn('md5 not set');
+			return false;
+		}
+		if(mb_strlen($md5) !== 32)
+		{
+			\dash\notif::warn('Invalid md5 - len is not 32');
 			return false;
 		}
 
@@ -89,6 +98,10 @@ class newsms
 
 		$brand         = \dash\app::request('brand');
 		$md5           = \dash\app::request('md5');
+		if(!$md5)
+		{
+			$md5           = \dash\app::request('MD5');
+		}
 		$model         = \dash\app::request('model');
 		$simcartserial = \dash\app::request('simcart-serial');
 		$smsmessageid  = \dash\app::request('smsMessage-id');
