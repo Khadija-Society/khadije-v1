@@ -773,34 +773,15 @@ class mokebuser
 		$args['place_id'] = \dash\coding::decode($_option['place']);
 		$args['expire']   = $expire;
 
+		if(!$args['position'])
+		{
+			\dash\notif::error('ظرفیت تکمیل است امکان ثبت‌نام وجود ندارد.', ['alerty' => true]);
+			return false;
+		}
+
 		$id = \lib\db\mokebusers::insert($args);
 
-		if($id)
-		{
-			if((intval($id) % 1000 ) === 0 )
-			{
-				\dash\log::set('karbala2SignupCounter', ['countall' => $id]);
-			}
 
-			if(isset($args['mobile']) && \dash\utility\filter::mobile($args['mobile']))
-			{
-				$is_user_signup = \dash\db\users::get_by_mobile($args['mobile']);
-				$user_id = null;
-				if(isset($is_user_signup['id']))
-				{
-					$user_id = $is_user_signup['id'];
-				}
-				else
-				{
-					$user_id = \dash\db\users::signup($args);
-				}
-				\dash\log::set('karbalaarbaeenUserSignup', ['code' => $id, 'to' => $user_id]);
-			}
-			else
-			{
-				\dash\log::set('karbalaarbaeenUserSignupWithoutmobile', ['code' => $id]);
-			}
-		}
 
 		return true;
 	}
