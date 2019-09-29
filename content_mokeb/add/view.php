@@ -59,7 +59,16 @@ class view
 		if(isset($check['id']))
 		{
 			\dash\data::mokebuserDetail($check);
-			$status = 'signuped';
+			$expire = \dash\data::mokebuserDetail_expire();
+
+			if(time() - strtotime(\dash\data::mokebuserDetail_expire()) > intval(\dash\data::mokebDetail_activetime() * 60 * 60))
+			{
+				$status = 'expire';
+			}
+			else
+			{
+				$status = 'signuped';
+			}
 		}
 		else
 		{

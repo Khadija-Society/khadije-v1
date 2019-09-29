@@ -40,6 +40,8 @@
 
         {%if checkNationalcode == 'invalid'%}
           <div class="msg mB0-f danger txtC txtB">کد ملی اشتباه است</div>
+        {%elseif checkNationalcode == 'expire'%}
+          <div class="msg mB0-f danger txtC txtB">منقضی شده</div>
         {%elseif checkNationalcode == 'signuped'%}
           <div class="msg mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
           <a class="btn secondary fs07 mT10" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
@@ -50,7 +52,7 @@
     </form>
   </div>
 
-{%if checkNationalcode == 'signuped'%}
+{%if checkNationalcode == 'signuped' or checkNationalcode == 'expire'  %}
   <div class="c8 s12 pLa10">
     {{block('a6_chap_detail')}}
   </div>
