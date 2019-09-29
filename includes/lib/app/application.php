@@ -78,7 +78,7 @@ class application
 			'bg_to'       => '#ffffff',
 			'title_color' => '#000000',
 			'desc_color'  => '#000000',
-			'image'       => \dash\url::static(). '/images/',
+			'image'       => \dash\url::static(). '/images/app/app-splash-4.jpg',
 			'btn'         =>
 			[
 				[
