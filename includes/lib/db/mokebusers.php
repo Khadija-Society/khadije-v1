@@ -3,6 +3,57 @@ namespace lib\db;
 
 class mokebusers
 {
+	public static function get_ids()
+	{
+		$query =
+		"
+			SELECT
+				mokebusers.id AS `id`
+			FROM mokebusers
+		";
+		$result = \dash\db::get($query, 'id');
+		return $result;
+	}
+
+	public static function all_user()
+	{
+		$query =
+		"
+			SELECT
+				mokebusers.id,
+				mokebusers.firstname,
+				mokebusers.lastname,
+				mokebusers.nationalcode,
+				mokebusers.mobile,
+				mokebusers.gender,
+				mokebusers.married,
+				mokebusers.place_id,
+				mokebusers.position,
+				mokebusers.expire,
+				mokebusers.datecreated,
+				mokebusers.displayname,
+				mokebusers.birthday,
+				mokebusers.father,
+				mokebusers.city,
+				mokebusers.province,
+				mokebusers.country
+			FROM mokebusers
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+	public static function all_place()
+	{
+		$query =
+		"
+			SELECT
+				*
+			FROM place
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
 
 	public static function all_full($_place_id, $_date)
 	{
@@ -68,6 +119,11 @@ class mokebusers
 	{
 		\dash\db\config::public_insert('mokebusers', ...func_get_args());
 		return \dash\db::insert_id();
+	}
+
+	public static function multi_insert()
+	{
+		return \dash\db\config::public_multi_insert('mokebusers', ...func_get_args());
 	}
 
 
