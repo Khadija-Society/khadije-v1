@@ -56,7 +56,8 @@
             {%endif%}
 
             {%if checkNationalcode == 'not-signuped'%}
-              <div class="msg mB0 info txtC txtB mB20">پذیرش جدید</div>
+              <div class="msg mB0 info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr> <small> شهر {{nationalCity}} </small>{%endif%}</div>
+
               {{block('newSignup')}}
             {%endif%}
 

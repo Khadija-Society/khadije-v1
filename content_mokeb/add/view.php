@@ -61,6 +61,8 @@ class view
 			\dash\data::freePosition($list);
 			$status = 'not-signuped';
 		}
+
+		\dash\data::nationalCity(\dash\app\nationalcode\city::get($nationalcode));
 		\dash\data::checkNationalcode($status);
 
 
