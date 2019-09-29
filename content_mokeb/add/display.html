@@ -13,9 +13,15 @@
         <img src="{{url.static}}/images/mokeb/labbayk.jpg" class="mB10">
 
         <div class="msg light dots txtC mB10 fs05 pLR5">
+          {%set nextDot = null%}
           {%for key, value in fullFree%}
           {%if value.type == 'free'%}
+{%if nextDot is null%}
+{%set nextDot = value.number%}
+            <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded success">&nbsp;</span>
+{%else%}
             <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded primary">&nbsp;</span>
+{%endif%}
           {%else%}
             <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded danger">&nbsp;</span>
           {%endif%}
@@ -89,21 +95,26 @@
       </div>
     </div>
 
+    <div class="msg">
+      {%if mokebuserDetail.gender == 'male'%}آقای {%elseif mokebuserDetail.gender == 'female'%}خانم{%endif%}
 
-  <div class="msg txtC">
-    <div class="txtB">{%trans "Number"%} {{mokebuserDetail.position | fitNumber(false)}}</div>
-    <hr>
-    <div class="fs08">
-      {%trans "National code"%} {{mokebuserDetail.nationalcode | fitNumber(false)}}
       {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
-        <div class="fs08">{{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b></div>
+        {{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b>
       {%endif%}
     </div>
-  </div>
+
+    <div class="f fs08">
+      <div class="c">
+        <div class="msg">کد ملی <span class="compact pLa10">{{mokebuserDetail.nationalcode | fitNumber(false)}}</span></div>
+      </div>
+      <div class="c">
+        <div class="msg">موبایل <span class="compact pLa10">{{mokebuserDetail.mobile | fitNumber(false)}}</span></div>
+      </div>
+    </div>
 
   <div class="msg fs08">
-    <div>{%trans "Enter"%} <span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
-    <div>تاریخ اعتبار <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
+    <div>تاریخ پذیرش  در موکب<span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
+    <div>اتمام زمان پذیرش <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
   </div>
 
   <div class="msg fs08">
@@ -123,7 +134,7 @@
 }
 
 body .printA6 div{color:#000!important;}
-.printA6 .logo{display:block;margin:0; max-height: 50px;}
+.printA6 .logo{display:block;margin:0; max-height: 100px;}
 .printA6 h3{font-weight: 900;font-size: 1.2em;margin-bottom: 0}
 .printA6 .placeNumber{font-size: 50px;line-height: 50px;}
 
@@ -169,7 +180,7 @@ body .printA6 div{color:#000!important;}
 {%block iname%}
 <label for="name">{%trans "Name"%} </label>
 <div class="input">
-  <input type="text" name="name" id="name" value="{{userdetail.firstname}}" maxlength='40' minlength="2" autocomplete="new-password">
+  <input type="text" name="name" id="name" value="{{userdetail.firstname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
 </div>
 {%endblock%}
 
@@ -177,7 +188,7 @@ body .printA6 div{color:#000!important;}
 {%block ifamily%}
 <label for="lastName">{%trans "Last name"%} </label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" value="{{userdetail.lastname}}" maxlength='40' minlength="2" autocomplete="new-password">
+  <input type="text" name="lastName" id="lastName" value="{{userdetail.lastname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
 </div>
 {%endblock%}
 
@@ -193,7 +204,7 @@ body .printA6 div{color:#000!important;}
 {%block imobile%}
 <label for="mobile" class="disabled">{%trans "Mobile"%}</label>
 <div class="input disabled">
-  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{userdetail.mobile}}" maxlength='30'>
+  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{userdetail.mobile}}" maxlength='30' required>
 </div>
 {%endblock%}
 
