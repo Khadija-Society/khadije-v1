@@ -142,7 +142,7 @@
 {%block iname%}
 <label for="name">{%trans "Name"%} </label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%}' value="{{userdetail.firstname}}" maxlength='40' minlength="2" pattern=".{2,40}" title2='{%trans "Enter a valid name from 2 to 40 character"%}' >
+  <input type="text" name="name" id="name" value="{{userdetail.firstname}}" maxlength='40' minlength="2" autocomplete="new-password">
 </div>
 {%endblock%}
 
@@ -150,7 +150,7 @@
 {%block ifamily%}
 <label for="lastName">{%trans "Last name"%} </label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%}' value="{{userdetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title2='{%trans "Enter a valid last name from 2 to 40 character"%}' >
+  <input type="text" name="lastName" id="lastName" value="{{userdetail.lastname}}" maxlength='40' minlength="2" autocomplete="new-password">
 </div>
 {%endblock%}
 
@@ -207,7 +207,7 @@
 <div class="">
   <label for="married">{%trans "Marital"%} </label>
   <select name="Married" class="ui dropdown select">
-    <option value="" readonly>{%trans "Please select one itme"%}</option>
+    <option value="" readonly>مجرد یا متاهل</option>
     <option value="single" {%if userdetail.married == 'single' %}selected {%endif%}>{%trans "Single"%}</option>
     <option value="married" {%if userdetail.married == 'married' %}selected{%endif%}>{%trans "Married"%}</option>
   </select>
@@ -244,8 +244,8 @@
 
 {%block icity%}
 <label for='city'>{%trans "City"%}  </label>
-<select name="city" class="ui dropdown select search" id="city">
-  <option value="" readonly>{%trans "Select city"%}</option>
+<select name="city" class="ui dropdown select search" id="city" autocomplete="new-password">
+  <option value="" readonly></option>
   {%for key, value in cityList%}
     <option value="{{key}}" {% if userdetail.city == key %} selected {%endif%}>{{value}}</option>
   {%endfor%}
@@ -304,7 +304,7 @@
 {%block iMobileKarabala%}
 <label for="mobile">{%trans "Mobile"%} <small>۱۰ رقمی</small> </label>
 <div class="input ltr">
-  <input type="tel" name="mobile" id="mobile" value="{{userdetail.mobile}}" maxlength='50' autofocus>
+  <input type="tel" name="mobile" id="mobile" value="{{userdetail.mobile}}" maxlength='50' autofocus autocomplete="new-password">
 </div>
 {%endblock%}
 
