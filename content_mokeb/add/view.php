@@ -48,6 +48,8 @@ class view
 		}
 		else
 		{
+			$list = \lib\app\mokebuser::list_of_free(\dash\url::child());
+			\dash\data::freePosition($list);
 			$status = 'not-signuped';
 		}
 		\dash\data::checkNationalcode($status);

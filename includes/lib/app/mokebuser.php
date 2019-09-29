@@ -3,6 +3,101 @@ namespace lib\app;
 
 class mokebuser
 {
+	public static function get_expire($_place)
+	{
+		$place_detail = \lib\app\place::get($_place);
+		if(!$place_detail || !isset($place_detail['id']))
+		{
+			return false;
+		}
+
+		if(!$place_detail['activetime'])
+		{
+			return false;
+		}
+
+		$activetime = intval($place_detail['activetime']);
+
+		if(!$place_detail['cleantime'])
+		{
+			return false;
+		}
+
+		$cleantime = $place_detail['cleantime'];
+		$cleantime = str_replace(':', '', $cleantime);
+		$cleantime = intval($cleantime);
+
+		if($activetime > 24)
+		{
+			if(intval(date("His")) < $cleantime)
+			{
+				$activetime = $activetime - 24;
+			}
+		}
+
+		$expire = $activetime * 60 * 60;
+		$expire = date("Y-m-d ". $place_detail['cleantime'], time() + $expire);
+
+ 		return $expire;
+
+	}
+
+	public static function list_of_free($_place)
+	{
+
+		$place_detail = \lib\app\place::get($_place);
+		if(!$place_detail || !isset($place_detail['id']))
+		{
+			return false;
+		}
+
+		$place_id = $place_detail['id'];
+		$place_id = \dash\coding::decode($place_id);
+
+		$now = date("Y-m-d H:i:s");
+
+		$all_full = \lib\db\mokebusers::all_full($place_id, $now);
+
+		if(is_array($all_full))
+		{
+			$all_full = array_map('intval', $all_full);
+		}
+
+		if(isset($place_detail['from']) && $place_detail['from'] && isset($place_detail['to']) && $place_detail['to'])
+		{
+			$from = intval($place_detail['from']);
+			$to   = intval($place_detail['to']);
+		}
+		else
+		{
+			return false;
+		}
+
+		$all_free = [];
+		for ($i= $from; $i <= $to ; $i++)
+		{
+			if(!in_array($i, $all_full))
+			{
+				$all_free[] = $i;
+				break;
+			}
+
+		}
+
+		return $all_free;
+	}
+
+
+	public static function get_position($_place)
+	{
+		$position = self::list_of_free($_place);
+		if(isset($position[0]))
+		{
+			return $position[0];
+		}
+		return null;
+	}
+
 
 	public static function chart_province()
 	{
@@ -526,6 +621,7 @@ class mokebuser
 		$default_option =
 		[
 			'debug' => true,
+			'place' => null,
 		];
 
 		if(!is_array($_option))
@@ -560,33 +656,11 @@ class mokebuser
 			return false;
 		}
 
-		// if(!\dash\app::isset_request('avatar'))         unset($args['avatar']);
-		// if(!\dash\app::isset_request('gender')) 		unset($args['gender']);
-		// if(!\dash\app::isset_request('email')) 			unset($args['email']);
-		// if(!\dash\app::isset_request('birthday')) 		unset($args['birthday']);
-		// if(!\dash\app::isset_request('firstname')) 		unset($args['firstname']);
-		// if(!\dash\app::isset_request('lastname')) 		unset($args['lastname']);
-		// if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
-		// if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
-		// if(!\dash\app::isset_request('father')) 		unset($args['father']);
-		// if(!\dash\app::isset_request('pasportcode')) 	unset($args['pasportcode']);
-		// if(!\dash\app::isset_request('pasportdate')) 	unset($args['pasportdate']);
-		// if(!\dash\app::isset_request('education')) 		unset($args['education']);
-		// if(!\dash\app::isset_request('educationcourse')) unset($args['educationcourse']);
-		// // if(!\dash\app::isset_request('country')) 		unset($args['country']);
-		// // if(!\dash\app::isset_request('province')) 		unset($args['province']);
-		// if(!\dash\app::isset_request('city')) 			unset($args['city']);
-		// if(!\dash\app::isset_request('homeaddress')) 	unset($args['homeaddress']);
-		// if(!\dash\app::isset_request('workaddress')) 	unset($args['workaddress']);
-		// if(!\dash\app::isset_request('arabiclang')) 	unset($args['arabiclang']);
-		// if(!\dash\app::isset_request('phone')) 			unset($args['phone']);
-		// if(!\dash\app::isset_request('displayname')) 	unset($args['displayname']);
-		// if(!\dash\app::isset_request('married')) 		unset($args['married']);
-		// if(!\dash\app::isset_request('zipcode')) 		unset($args['zipcode']);
-		// if(!\dash\app::isset_request('desc')) 			unset($args['desc']);
-		// if(!\dash\app::isset_request('job')) 			unset($args['job']);
-		// if(!\dash\app::isset_request('nesbat')) 		unset($args['nesbat']);
+		$expire = self::get_expire($_option['place']);
 
+		$args['position'] = self::get_position($_option['place']);
+		$args['place_id'] = \dash\coding::decode($_option['place']);
+		$args['expire']   = $expire;
 
 		$id = \lib\db\mokebusers::insert($args);
 

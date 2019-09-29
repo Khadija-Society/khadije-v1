@@ -9,11 +9,11 @@
   <div class="c8 s12">
     <div class="cbox">
       <div class="msg txtB txtC fs20">
-        {%trans "Number"%} {{18 | fitNumber}}
+        {%trans "Number"%} {{mokebuserDetail.position | fitNumber(false)}}
         <br>
-        <span>{%trans "Enter"%} {{now | date | dt()}}</span>
+        <span>{%trans "Enter"%} {{mokebuserDetail.datecreated | dt()}}</span>
         <br>
-        <span>{%trans "Expire"%} {{now | date | dt()}}</span>
+        <span>{%trans "Expire"%} {{mokebuserDetail.expire  | dt()}}</span>
       </div>
 
     </div>

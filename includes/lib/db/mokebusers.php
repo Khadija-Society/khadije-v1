@@ -4,6 +4,22 @@ namespace lib\db;
 class mokebusers
 {
 
+	public static function all_full($_place_id, $_date)
+	{
+		$query =
+		"
+			SELECT
+				mokebusers.position
+			FROM
+				mokebusers
+			WHERE
+				mokebusers.place_id = $_place_id AND
+				mokebusers.expire > '$_date'
+		";
+		$result = \dash\db::get($query, 'position');
+		return $result;
+	}
+
 	/**
 	 * insert new productprice
 	 *

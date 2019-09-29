@@ -30,7 +30,7 @@ class model
 		$post['married']         = \dash\request::post('Married') ;
 		// $post['zipcode']         = \dash\request::post('zipcode');
 
-		\lib\app\mokebuser::add($post);
+		\lib\app\mokebuser::add($post, ['place' => \dash\url::child()]);
 
 		if(\dash\engine\process::status())
 		{
