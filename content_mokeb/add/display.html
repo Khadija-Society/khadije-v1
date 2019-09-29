@@ -103,16 +103,10 @@
       {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
         {{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b>
       {%endif%}
+      {{mokebuserDetail.mobile | fitNumber(false)}}
     </div>
 
-    <div class="f fs08">
-      <div class="c">
-        <div class="msg">کد ملی <span class="compact pLa10">{{mokebuserDetail.nationalcode | fitNumber(false)}}</span></div>
-      </div>
-      <div class="c">
-        <div class="msg">موبایل <span class="compact pLa10">{{mokebuserDetail.mobile | fitNumber(false)}}</span></div>
-      </div>
-    </div>
+    <div class="msg">کد ملی <span class="compact pLa10">{{mokebuserDetail.nationalcode | fitNumber(false)}}</span></div>
 
   <div class="msg fs08">
     <div>تاریخ پذیرش  در موکب<span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
@@ -122,7 +116,7 @@
   <div class="msg fs08">
     <div>موکب {{mokebDetail.title}}</div>
     {%if mokebDetail.address%}<div>آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
-    {%if mokebDetail.desc%}<div class="mT10">{{mokebDetail.desc}}</div>{%endif%}
+    {%if mokebDetail.desc%}<div class="mT10 fs09">{{mokebDetail.desc}}</div>{%endif%}
   </div>
 
   </div>
