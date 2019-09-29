@@ -62,9 +62,10 @@
 
 </div>
 
-
-
 {%endblock%}
+
+
+
 
 
 
@@ -73,8 +74,21 @@
 
 {%block a6_chap_detail%}
 
-<div class="cbox">
-  <div class="example">
+<div class="panel printA6">
+  <div class="pad">
+
+    <div class="f align-center mB5">
+      <div class="cauto pRa10">
+        <img src="{{url.static}}/images/logo/khadije.png" class="logo">
+      </div>
+      <div class="c">
+        <h3>{{site.title}}</h3>
+      </div>
+      <div class="c4 txtRa">
+        <div class="placeNumber"><small class="fs05">#</small><b>{{mokebuserDetail.position}}</b></div>
+      </div>
+    </div>
+
 
   <div class="msg txtC">
     <div class="txtB">{%trans "Number"%} {{mokebuserDetail.position | fitNumber(false)}}</div>
@@ -93,14 +107,27 @@
   </div>
 
   <div class="msg fs08">
-    <div>{{mokebDetail.title}}</div>
-    {%if mokebDetail.address%}<div>آدرس: {{mokebDetail.address}}</div>{%endif%}
-    {%if mokebDetail.desc%}<div>توضیحات: {{mokebDetail.desc}}</div>{%endif%}
+    <div>موکب {{mokebDetail.title}}</div>
+    {%if mokebDetail.address%}<div>آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
+    {%if mokebDetail.desc%}<div class="mT10">{{mokebDetail.desc}}</div>{%endif%}
   </div>
 
   </div>
 </div>
 
+<style>
+@media print {
+  .tbox{display:none;}
+  .siftal #main #content{padding: 0}
+  .c8.s12.pLa10{padding:0!important}
+}
+
+body .printA6 div{color:#000!important;}
+.printA6 .logo{display:block;margin:0; max-height: 50px;}
+.printA6 h3{font-weight: 900;font-size: 1.2em;margin-bottom: 0}
+.printA6 .placeNumber{font-size: 50px;line-height: 50px;}
+
+</style>
 
 {%endblock%}
 
