@@ -42,6 +42,7 @@
           <div class="msg mB0-f danger txtC txtB">کد ملی اشتباه است</div>
         {%elseif checkNationalcode == 'expire'%}
           <div class="msg mB0-f danger txtC txtB">منقضی شده</div>
+          <a class="btn secondary fs07 mT10" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
         {%elseif checkNationalcode == 'signuped'%}
           <div class="msg mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
           <a class="btn secondary fs07 mT10" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
@@ -112,18 +113,20 @@
       {{mokebuserDetail.mobile | fitNumber(false)}}
     </div>
 
-    <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%}">کد ملی <span class="compact pLa10">{{mokebuserDetail.nationalcode | fitNumber(false)}}</span></div>
+    <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
+      <div>تاریخ پذیرش  در موکب<span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
+      <div>اتمام زمان پذیرش <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
+    </div>
 
-  <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
-    <div>تاریخ پذیرش  در موکب<span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
-    <div>اتمام زمان پذیرش <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
-  </div>
+    <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
+      <div>موکب {{mokebDetail.title}}</div>
+      {%if mokebDetail.address%}<div>آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
+      {%if mokebDetail.desc%}<div class="mT10 fs09">{{mokebDetail.desc}}</div>{%endif%}
+    </div>
 
-  <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
-    <div>موکب {{mokebDetail.title}}</div>
-    {%if mokebDetail.address%}<div>آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
-    {%if mokebDetail.desc%}<div class="mT10 fs09">{{mokebDetail.desc}}</div>{%endif%}
-  </div>
+    <div class="pTB5 txtC">
+        <svg id="barcode" data-val='{{mokebuserDetail.nationalcode}}'></svg>
+    </div>
 
   </div>
 </div>
