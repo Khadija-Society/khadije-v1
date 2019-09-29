@@ -7,9 +7,13 @@
 
 
 <div class="msg light dots txtC mB10">
-{% for i in 0..100 %}
-    <span class="fc-red">0</span>
-{% endfor %}
+  {%for key, value in fullFree%}
+  {%if value.type == 'free'%}
+    <span title="{{value.number | fitNumber}}" class="badge rounded primary">&nbsp;</span>
+  {%else%}
+    <span title="{{value.number | fitNumber}}" class="badge rounded danger">&nbsp;</span>
+  {%endif%}
+  {%endfor%}
 </div>
 
 
@@ -45,7 +49,17 @@
 
 
             {%if checkNationalcode == 'signuped'%}
-              <a class="btn  primary" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">نمایش جزئیات</a>
+              <div class="cbox">
+                <div class="msg txtB txtC">
+                  {%trans "Number"%} {{mokebuserDetail.position | fitNumber(false)}}
+                  <br>
+                  <span>{%trans "Enter"%} {{mokebuserDetail.datecreated | dt()}}</span>
+                  <br>
+                  <span>{%trans "Expire"%} {{mokebuserDetail.expire  | dt()}}</span>
+                </div>
+
+              </div>
+              <a class="btn  primary" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
             {%endif%}
 
             {%if checkNationalcode == 'not-signuped'%}

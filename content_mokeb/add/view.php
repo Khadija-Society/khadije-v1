@@ -6,13 +6,21 @@ class view
 {
 	public static function config()
 	{
+
+		$capacity = \dash\data::mokebDetail_capacity();
+		$full = count(\lib\app\mokebuser::list_of_free(\dash\url::child(), true));
+		$free = intval($capacity) - $full;
+
 		$myTitle = "موکب  ". \dash\data::mokebDetail_title();
-		$myTitle .= " / ظرفیت". \dash\data::mokebDetail_capacity();
-		$myTitle .= " / پر". \dash\data::mokebDetail_capacity();
-		$myTitle .= " / خالی". \dash\data::mokebDetail_capacity();
-		$myTitle .= " / تخلیه". \dash\data::mokebDetail_capacity();
+		$myTitle .= " / ظرفیت ". \dash\utility\human::fitNumber($capacity);
+		$myTitle .= " / پر ". \dash\utility\human::fitNumber($free);
+		$myTitle .= " / خالی ". \dash\utility\human::fitNumber($full);
+		$myTitle .= " / تخلیه ". \dash\utility\human::fitNumber(\dash\data::mokebDetail_cleantime());
 
 		\dash\data::page_title($myTitle);
+
+		$full_free = \lib\app\mokebuser::full_free(\dash\url::child());
+		\dash\data::fullFree($full_free);
 
 		self::static_var();
 
@@ -44,6 +52,7 @@ class view
 		$check = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1]);
 		if(isset($check['id']))
 		{
+			\dash\data::mokebuserDetail($check);
 			$status = 'signuped';
 		}
 		else

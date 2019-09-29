@@ -42,7 +42,7 @@ class mokebuser
 
 	}
 
-	public static function list_of_free($_place)
+	public static function list_of_free($_place, $_all = false)
 	{
 
 		$place_detail = \lib\app\place::get($_place);
@@ -79,12 +79,62 @@ class mokebuser
 			if(!in_array($i, $all_full))
 			{
 				$all_free[] = $i;
-				break;
+				if(!$_all)
+				{
+					break;
+				}
 			}
 
 		}
 
 		return $all_free;
+	}
+
+	public static function full_free($_place)
+	{
+
+		$place_detail = \lib\app\place::get($_place);
+		if(!$place_detail || !isset($place_detail['id']))
+		{
+			return false;
+		}
+
+		$place_id = $place_detail['id'];
+		$place_id = \dash\coding::decode($place_id);
+
+		$now = date("Y-m-d H:i:s");
+
+		$all_full = \lib\db\mokebusers::all_full($place_id, $now);
+
+		if(is_array($all_full))
+		{
+			$all_full = array_map('intval', $all_full);
+		}
+
+		if(isset($place_detail['from']) && $place_detail['from'] && isset($place_detail['to']) && $place_detail['to'])
+		{
+			$from = intval($place_detail['from']);
+			$to   = intval($place_detail['to']);
+		}
+		else
+		{
+			return false;
+		}
+
+		$all = [];
+		for ($i= $from; $i <= $to ; $i++)
+		{
+			if(!in_array($i, $all_full))
+			{
+				$all[] = ['type' => 'free', 'number' => $i];
+			}
+			else
+			{
+				$all[] = ['type' => 'full', 'number' => $i];
+			}
+		}
+
+		return $all;
 	}
 
 
