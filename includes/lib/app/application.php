@@ -9,6 +9,7 @@ class application
 		$detail             = [];
 		$detail['version']  = self::version();
 		$detail['homepage'] = self::homepage();
+		$detail['intro']    = self::intro();
 		return $detail;
 	}
 
@@ -25,6 +26,93 @@ class application
 
 		return $detail;
 	}
+
+	private static function intro()
+	{
+		$intro   = [];
+		$intro[] =
+		[
+			'title'       => T_(\dash\option::config('site','title')),
+			'desc'        => 'تمام خدمات موسسه در یک اپلیکیشن',
+			'bg_from'     => '#ffffff',
+			'bg_to'       => '#ffffff',
+			'title_color' => '#000000',
+			'desc_color'  => '#000000',
+			'image'       => \dash\url::static(). '/images/app/app-splash-1.jpg',
+			'btn'         =>
+			[
+				[
+					'title'  => T_("Next"),
+					'action' => 'next',
+				],
+			],
+		];
+
+		$intro[] =
+		[
+			'title'       => T_('Easy'),
+			'desc'        => 'روشی ساده برای پرداخت کمک‌های شما به زايرین',
+			'bg_from'     => '#ffffff',
+			'bg_to'       => '#ffffff',
+			'title_color' => '#000000',
+			'desc_color'  => '#000000',
+			'image'       => \dash\url::static(). '/images/app/app-splash-2.jpg',
+			'btn'         =>
+			[
+				[
+					'title'  => T_("Prev"),
+					'action' => 'prev',
+				],
+				[
+					'title'  => T_("Next"),
+					'action' => 'next',
+				],
+			],
+		];
+
+		$intro[] =
+		[
+			'title'       => 'ثبت‌نام کربلا',
+			'desc'        => 'توانایی ثبت‌نام کربلا ویژه برنامه‌های تلویزیونی',
+			'bg_from'     => '#ffffff',
+			'bg_to'       => '#ffffff',
+			'title_color' => '#000000',
+			'desc_color'  => '#000000',
+			'image'       => \dash\url::static(). '/images/',
+			'btn'         =>
+			[
+				[
+					'title'  => T_("Prev"),
+					'action' => 'prev',
+				],
+				[
+					'title'  => T_("Next"),
+					'action' => 'next',
+				],
+			],
+		];
+
+		$intro[] =
+		[
+			'title'       => T_(\dash\option::config('site','title')),
+			'desc'        => 'مجری طرح زاير اولی‌های اهل بیت علیه اسلام',
+			'bg_from'     => '#ffffff',
+			'bg_to'       => '#ffffff',
+			'title_color' => '#000000',
+			'desc_color'  => '#000000',
+			'image'       => \dash\url::static(). '/images/logo.png',
+			'btn' =>
+			[
+				[
+					'title'  => T_("Start"),
+					'action' => 'start',
+				],
+			],
+		];
+
+		return $intro;
+	}
+
 
 
 	private static function homepage()
