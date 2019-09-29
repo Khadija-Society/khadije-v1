@@ -6,7 +6,7 @@
 {%block pageContent%}
 
 <div class="f justify-center fs14">
-  <div class="c4 s12 fs12 pRa10">
+  <div class="c4 s12 fs12 pRa10 p0">
     <form method="get" action="{{url.that}}" autocomplete="off" class="panel">
       <div class="pad">
 
@@ -33,38 +33,30 @@
         {%endif%}
 
         {%if checkNationalcode == 'invalid'%}
-          <div class="msg mB0 danger txtC txtB">کد ملی اشتباه است</div>
+          <div class="msg mB0-f danger txtC txtB">کد ملی اشتباه است</div>
         {%elseif checkNationalcode == 'signuped'%}
-          <div class="msg mB0 success txtC txtB">ثبت شده و مجاز به ورود</div>
+          <div class="msg mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
+          <a class="btn secondary fs07 mT10" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
         {%elseif checkNationalcode == 'not-signuped'%}
-          <div class="msg mB0 info txtC txtB mB20">پذیرش جدید</div>
+          <div class="msg mB0-f info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr class="mTB5-f"><div class="fs07">صادره از  <b>{{nationalCity}}</b></div>{%endif%}</div>
         {%endif%}
       </div>
     </form>
   </div>
 
-{%if checkNationalcode == 'signuped' or checkNationalcode == 'not-signuped'%}
+{%if checkNationalcode == 'signuped'%}
   <div class="c8 s12 pLa10">
-      <div class="panel">
-          <div class="pad fs14">
+    {{block('a6_chap_detail')}}
+  </div>
+{%endif%}
 
-            {%if checkNationalcode == 'signuped'%}
-
-              {{block('a6_chap_detail')}}
-
-              <a class="btn  primary" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
-
-            {%endif%}
-
-            {%if checkNationalcode == 'not-signuped'%}
-              <div class="msg mB0 info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr> <small> شهر {{nationalCity}} </small>{%endif%}</div>
-
-              {{block('newSignup')}}
-            {%endif%}
-
-          </div>
-
+{%if checkNationalcode == 'not-signuped'%}
+  <div class="c6 s12 pLa10">
+    <div class="panel">
+      <div class="pad">
+          {{block('newSignup')}}
       </div>
+    </div>
   </div>
 {%endif%}
 
@@ -118,39 +110,31 @@
 
 
 {%block newSignup%}
-<div class="fs08">
 
     <form class="" method="post" autocomplete="off">
 
-     <div class="f">
-      <div class="c6 pRa5 s12 ">{{block ('iMobileKarabala') }}</div>
-      <div class="c6 pRa5 s12 pRa5">{{block ('icity') }}</div>
-     </div>
+{{block ('iMobileKarabala') }}
 
-     <div class="f">
-      <div class="c6 s12 pRa5">{{block ('iname') }}</div>
-      <div class="c6 s12">{{block ('ifamily') }}</div>
-     </div>
+{{block ('iname') }}
+{{block ('ifamily') }}
+
+{{block ('icity') }}
+{{block ('iMarital') }}
+{{block ('igender') }}
 
 
-     <div class="f mB10">
-      <div class="c6 s12 pRa5">{{block ('iMarital') }}</div>
-      <div class="c6 s12">{{block ('igender') }}</div>
-     </div>
-
-     <div class="hide msg f txtB fs14">
-       <div class="c">شماره جایگاه</div>
+     <div class="msg hide f txtB">
+       <div class="c">جایگاه پذیرش</div>
        <div class="c">{{freePosition[0] | fitNumber(false)}}</div>
      </div>
 
 
-     <div class="f">
+     <div class="f mT20">
        <div class="c">{{block ('iSave') }}</div>
        <div class="cauto"><a href="{{url.that}}" class="btn mT20 mLa5">انصراف</a></div>
      </div>
 
     </form>
-</div>
 {%endblock%}
 
 
@@ -208,7 +192,7 @@
 
 
 {%block igender%}
-<div class="pRa5">
+<div class="">
   <label for="gender">{%trans "Gender"%} </label>
   <select name="gender" class="ui dropdown select">
     <option value="" readonly>{%trans "Please select one itme"%}</option>
