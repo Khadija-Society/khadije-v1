@@ -73,6 +73,10 @@
 {%endblock%}
 
 
+{%block foot_js%}
+<script src="{{url.static}}/js/barcode.all.min.js"></script>
+
+{%endblock%}
 
 
 
@@ -97,9 +101,9 @@
       </div>
     </div>
     {%if checkNationalcode == 'expire'%}
-    <div class="msg warn txtC txtB">منقضی شده</div>
+    <div class="msg pTB5 warn txtC txtB">منقضی شده</div>
     {%endif%}
-    <div class="msg {%if checkNationalcode == 'expire'%} danger2 {%endif%}">
+    <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%}">
       {%if mokebuserDetail.gender == 'male'%}آقای {%elseif mokebuserDetail.gender == 'female'%}خانم{%endif%}
 
       {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
@@ -108,14 +112,14 @@
       {{mokebuserDetail.mobile | fitNumber(false)}}
     </div>
 
-    <div class="msg {%if checkNationalcode == 'expire'%} danger2 {%endif%}">کد ملی <span class="compact pLa10">{{mokebuserDetail.nationalcode | fitNumber(false)}}</span></div>
+    <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%}">کد ملی <span class="compact pLa10">{{mokebuserDetail.nationalcode | fitNumber(false)}}</span></div>
 
-  <div class="msg {%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
+  <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
     <div>تاریخ پذیرش  در موکب<span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
     <div>اتمام زمان پذیرش <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
   </div>
 
-  <div class="msg {%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
+  <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
     <div>موکب {{mokebDetail.title}}</div>
     {%if mokebDetail.address%}<div>آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
     {%if mokebDetail.desc%}<div class="mT10 fs09">{{mokebDetail.desc}}</div>{%endif%}
