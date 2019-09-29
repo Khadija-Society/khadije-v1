@@ -3,6 +3,67 @@ namespace lib\app;
 
 class mokebuser
 {
+
+	public static function place_dashboard($_data)
+	{
+		if(!is_array($_data))
+		{
+			return $_data;
+		}
+
+		$ids_raw = array_column($_data, 'id');
+
+		$result             = [];
+		$get_all_full       = [];
+		$get_all_full_today = [];
+
+		$ids = array_map(['\\dash\\coding', 'decode'], $ids_raw);
+		$ids = array_filter($ids);
+		$ids = array_unique($ids);
+
+		if($ids)
+		{
+			$get_all_full = \lib\db\mokebusers::all_full_place(implode(',', $ids));
+			$get_all_full_today = \lib\db\mokebusers::all_full_place_date(implode(',', $ids), date("Y-m-d"));
+		}
+
+		foreach ($_data as $key => $value)
+		{
+			$myId = \dash\coding::decode($value['id']);
+
+
+
+			$full_free = self::full_free($value['id']);
+			$full = 0;
+			$free = 0;
+			if(is_array($full_free))
+			{
+				foreach ($full_free as $k => $v)
+				{
+					if(isset($v['type']) && $v['type'] === 'free')
+					{
+						$free++;
+					}
+					else
+					{
+						$full++;
+					}
+				}
+
+			}
+
+			$_data[$key]['free']  = $free;
+			$_data[$key]['full']  = $full;
+
+			$_data[$key]['all']   = isset($get_all_full[$myId]) ? $get_all_full[$myId] : 0;
+			$_data[$key]['today'] = isset($get_all_full_today[$myId]) ? $get_all_full_today[$myId] : 0;
+
+		}
+
+		return $_data;
+
+	}
+
 	public static function get_expire($_place)
 	{
 		$place_detail = \lib\app\place::get($_place);

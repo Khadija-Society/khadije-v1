@@ -20,6 +20,45 @@ class mokebusers
 		return $result;
 	}
 
+
+	public static function all_full_place($_place_ids)
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				mokebusers.place_id
+			FROM
+				mokebusers
+			WHERE
+				mokebusers.place_id IN ($_place_ids)
+			GROUP BY mokebusers.place_id
+		";
+		$result = \dash\db::get($query, ['place_id', 'count']);
+		return $result;
+	}
+
+	public static function all_full_place_date($_place_ids, $_date)
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				mokebusers.place_id
+			FROM
+				mokebusers
+			WHERE
+				date(mokebusers.datecreated) = date('$_date') AND
+				mokebusers.place_id IN ($_place_ids)
+			GROUP BY mokebusers.place_id
+		";
+		$result = \dash\db::get($query, ['place_id', 'count']);
+		return $result;
+	}
+
+
+
+
 	/**
 	 * insert new productprice
 	 *

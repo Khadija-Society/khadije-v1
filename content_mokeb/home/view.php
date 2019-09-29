@@ -15,6 +15,7 @@ class view
 
 		];
 		$list = \lib\app\place::list(null, $args);
+		$list = \lib\app\mokebuser::place_dashboard($list);
 		\dash\data::mokebList($list);
 	}
 }

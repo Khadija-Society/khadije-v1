@@ -13,10 +13,10 @@
 	 <div class="statistic">
 	  <a class="value mB25 fcWhite900" href='{{url.here}}/add/{{value.id}}'>{{value.title}}</a>
 	  <div class="f">
-	  	<div class="c6 pA5"><div class="grShadow pA10">کل پذیرش <span class="floatRa">1200</span></div></div>
-	  	<div class="c6 pA5"><div class="grShadow pA10">پذیرش امروز <span class="floatRa">1200</span></div></div>
-	  	<div class="c6 pA5"><div class="grShadow pA10">تکمیل الان <span class="floatRa">1200</span></div></div>
-	  	<div class="c6 pA5"><div class="grShadow pA10">خالی الان <span class="floatRa fcWhite900">1200</span></div></div>
+	  	<div class="c6 pA5"><div class="grShadow pA10">کل پذیرش <span class="floatRa">{{value.all | fitNumber}}</span></div></div>
+	  	<div class="c6 pA5"><div class="grShadow pA10">پذیرش امروز <span class="floatRa">{{value.today | fitNumber}}</span></div></div>
+	  	<div class="c6 pA5"><div class="grShadow pA10">تکمیل الان <span class="floatRa">{{value.full | fitNumber}}</span></div></div>
+	  	<div class="c6 pA5"><div class="grShadow pA10">خالی الان <span class="floatRa fcWhite900">{{value.free | fitNumber}}</span></div></div>
 	  </div>
 	 </div>
 	</div>
