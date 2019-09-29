@@ -11,6 +11,22 @@ class controller
 			\content_api\v6::no(404);
 		}
 
+		$mokebkey = \dash\header::get('mokebkey');
+
+		if(!trim($mokebkey))
+		{
+			\content_api\v6::no(400, T_("Appkey not set"));
+		}
+
+		if($mokebkey === '551d7fd1c0e112e181791e257e35e9c6')
+		{
+			// no thing
+		}
+		else
+		{
+			\content_api\v6::no(400, T_("Invalid app key"));
+		}
+
 		$input = self::get_input();
 
 		if(isset($input['users']) && is_array($input['users']) && $input['users'])
