@@ -7,9 +7,15 @@ class view
 	public static function config()
 	{
 
+		$full = 0;
+		$free = 0;
+
 		$capacity = \dash\data::mokebDetail_capacity();
-		$full = count(\lib\app\mokebuser::list_of_free(\dash\url::child(), true));
-		$free = intval($capacity) - $full;
+		if($capacity)
+		{
+			$full = count(\lib\app\mokebuser::list_of_free(\dash\url::child(), true));
+			$free = intval($capacity) - $full;
+		}
 
 		$myTitle = "موکب  ". \dash\data::mokebDetail_title();
 		$myTitle .= " / ظرفیت ". \dash\utility\human::fitNumber($capacity);
