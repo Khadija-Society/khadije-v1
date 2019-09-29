@@ -5,24 +5,25 @@
 
 {%block pageContent%}
 
-
-<div class="msg light dots txtC mB10">
-  {%for key, value in fullFree%}
-  {%if value.type == 'free'%}
-    <span title="{{value.number | fitNumber}}" class="badge rounded primary">&nbsp;</span>
-  {%else%}
-    <span title="{{value.number | fitNumber}}" class="badge rounded danger">&nbsp;</span>
-  {%endif%}
-  {%endfor%}
-</div>
-
-
 <div class="f justify-center fs14">
   <div class="c4 s12 fs12 pRa10">
     <form method="get" action="{{url.that}}" autocomplete="off" class="panel">
       <div class="pad">
+
+        <img src="{{url.static}}/images/mokeb/labbayk.jpg" class="mB10">
+
+        <div class="msg light dots txtC mB10 fs05 pLR5">
+          {%for key, value in fullFree%}
+          {%if value.type == 'free'%}
+            <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded primary">&nbsp;</span>
+          {%else%}
+            <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded danger">&nbsp;</span>
+          {%endif%}
+          {%endfor%}
+        </div>
+
+
         <div class="input">
-          <img src="{{url.static}}/images/mokeb/labbayk.jpg" class="mB10">
           <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
           <button class="addon btn">{%trans "Check"%}</button>
         </div>
