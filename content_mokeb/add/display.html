@@ -65,7 +65,9 @@
         {%elseif checkNationalcode == 'signuped'%}
           <div class="msg mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
           <div data-kerkere='.showEditProfile' data-kerkere-icon class="btn secondary fs07 mT10">ویرایش اطلاعات</div>
-          <div class="btn danger fs07 mT10 floatL" data-confirm data-data='{"forceexit": true}'>ثبت خروج</div>
+          {%if not mokebuserDetail.noposition%}
+            <div class="btn danger fs07 mT10 floatL" data-confirm data-data='{"forceexit": true}'>ثبت خروج</div>
+          {%endif%}
         {%elseif checkNationalcode == 'not-signuped'%}
           <div class="msg mB0-f info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr class="mTB5-f"><div class="fs07">صادره از  <b>{{nationalCity}}</b></div>{%endif%}</div>
         {%endif%}
@@ -73,7 +75,7 @@
     </div>
   </div>
 
-{%if checkNationalcode == 'signuped' or checkNationalcode == 'expire'  %}
+{%if checkNationalcode == 'signuped' or checkNationalcode == 'expire' or checkNationalcode == 'noposition'  %}
   <div class="c8 s12 pLa10">
     {{block('a6_chap_detail')}}
     <div class="showEditProfile" data-kerkere-content='hide'>
@@ -134,6 +136,9 @@
         {%endif%}
       </div>
     </div>
+    {%if mokebuserDetail.noposition%}
+    <div class="msg pTB5 success txtC txtB">بدون جایگاه</div>
+    {%endif%}
     {%if checkNationalcode == 'expire'%}
     <div class="msg pTB5 warn txtC txtB">منقضی شده</div>
     {%endif%}
@@ -187,7 +192,9 @@ body .printA6 div{color:#000!important;}
 
 {%block newSignup%}
 
+
     <form class="" method="post" autocomplete="off">
+
       {%if requestGET.position%}
         <div class="msg txtB txtC primary2">
           جایگاه <b>{{requestGET.position | fitNumber}}</b>
@@ -205,6 +212,12 @@ body .printA6 div{color:#000!important;}
 {{block ('iMarital') }}
 {{block ('igender') }}
 
+      <div class="msg ">
+        <div class="check1">
+         <input type="checkbox" name="noposition" id="noposition" >
+         <label for="noposition">ثبت به عنوان همراه، کودک یا اقامت در حیاط موکب - بدون نیاز به رزرو موقعیت</label>
+        </div>
+      </div>
 
      <div class="msg hide f txtB">
        <div class="c">جایگاه پذیرش</div>

@@ -63,7 +63,7 @@ class view
 			\dash\data::mokebuserDetail($check);
 			$expire = \dash\data::mokebuserDetail_expire();
 
-			if((time() - strtotime(\dash\data::mokebuserDetail_expire()) > intval(\dash\data::mokebDetail_activetime() * 60 * 60)) || \dash\data::mokebuserDetail_forceexit())
+			if(((time() - strtotime(\dash\data::mokebuserDetail_expire()) > intval(\dash\data::mokebDetail_activetime() * 60 * 60)) || \dash\data::mokebuserDetail_forceexit()) && !\dash\data::mokebuserDetail_noposition())
 			{
 				$status = 'expire';
 			}
@@ -79,6 +79,10 @@ class view
 			$status = 'not-signuped';
 		}
 
+		if(\dash\data::mokebuserDetail_noposition())
+		{
+			$status = 'noposition';
+		}
 
 		\dash\data::checkNationalcode($status);
 
@@ -107,7 +111,7 @@ class view
 			\dash\data::mokebuserDetail($check);
 			$expire = \dash\data::mokebuserDetail_expire();
 
-			if((time() - strtotime(\dash\data::mokebuserDetail_expire()) > intval(\dash\data::mokebDetail_activetime() * 60 * 60)) || \dash\data::mokebuserDetail_forceexit())
+			if(((time() - strtotime(\dash\data::mokebuserDetail_expire()) > intval(\dash\data::mokebDetail_activetime() * 60 * 60)) || \dash\data::mokebuserDetail_forceexit()) && !\dash\data::mokebuserDetail_noposition())
 			{
 				$status = 'expire';
 			}
@@ -121,6 +125,11 @@ class view
 			$list = \lib\app\mokebuser::list_of_free(\dash\url::child());
 			\dash\data::freePosition($list);
 			$status = 'not-signuped';
+		}
+
+		if(\dash\data::mokebuserDetail_noposition())
+		{
+			$status = 'noposition';
 		}
 
 		\dash\data::nationalCity(\dash\app\nationalcode\city::get($nationalcode));

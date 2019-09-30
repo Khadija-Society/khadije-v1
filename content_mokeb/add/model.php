@@ -49,6 +49,7 @@ class model
 		$post['married']         = \dash\request::post('Married') ;
 		// $post['zipcode']         = \dash\request::post('zipcode');
 		$post['position']         = \dash\request::get('position');
+		$post['noposition']         = \dash\request::post('noposition') ;
 
 		if(\dash\request::post('updateuser'))
 		{

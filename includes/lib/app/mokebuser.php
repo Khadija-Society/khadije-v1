@@ -836,31 +836,43 @@ class mokebuser
 			return false;
 		}
 
-		$expire = self::get_expire($_option['place']);
-		$custom_postion = \dash\app::request('position');
-		if($custom_postion && is_numeric($custom_postion))
+
+		$noposition = \dash\app::request('noposition') ? true : false;
+
+		if($noposition)
 		{
-			$list_of_free = self::list_of_free($_option['place'], true);
-			if(!in_array($custom_postion, $list_of_free))
-			{
-				\dash\notif::error('شماره جایگاه نامعتر است یا رزرو شده است');
-				return false;
-			}
+			$args['noposition'] = 1;
 		}
 		else
 		{
-			$custom_postion = self::get_position($_option['place']);
+
+			$expire = self::get_expire($_option['place']);
+			$custom_postion = \dash\app::request('position');
+			if($custom_postion && is_numeric($custom_postion))
+			{
+				$list_of_free = self::list_of_free($_option['place'], true);
+				if(!in_array($custom_postion, $list_of_free))
+				{
+					\dash\notif::error('شماره جایگاه نامعتر است یا رزرو شده است');
+					return false;
+				}
+			}
+			else
+			{
+				$custom_postion = self::get_position($_option['place']);
+			}
+
+			$args['position'] = $custom_postion;
+			$args['expire']   = $expire;
+			if(!$args['position'])
+			{
+				\dash\notif::error('ظرفیت تکمیل است امکان ثبت‌نام وجود ندارد.', ['alerty' => true]);
+				return false;
+			}
 		}
 
-		$args['position'] = $custom_postion;
 		$args['place_id'] = \dash\coding::decode($_option['place']);
-		$args['expire']   = $expire;
 
-		if(!$args['position'])
-		{
-			\dash\notif::error('ظرفیت تکمیل است امکان ثبت‌نام وجود ندارد.', ['alerty' => true]);
-			return false;
-		}
 
 		$id = \lib\db\mokebusers::insert($args);
 
