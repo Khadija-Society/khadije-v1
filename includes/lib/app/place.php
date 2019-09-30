@@ -215,7 +215,7 @@ class place
 
 		if($from && $to)
 		{
-			$capacity = $to - $from;
+			$capacity = $to - $from + 1;
 		}
 
 		$args               = [];
