@@ -874,7 +874,25 @@ class mokebuser
 		$args['place_id'] = \dash\coding::decode($_option['place']);
 
 
+		if(is_callable(['\\lib\\app\\autoid', 'get']))
+		{
+			$args['id'] = \lib\app\autoid::get();
+
+			if(!$args['id'])
+			{
+				return false;
+			}
+		}
+
 		$id = \lib\db\mokebusers::insert($args);
+
+		if(!$id && is_callable(['\\lib\\app\\autoid', 'bug_fix']))
+		{
+			$args['id'] = \lib\app\autoid::bug_fix();
+
+			$id = \lib\db\mokebusers::insert($args);
+
+		}
 
 
 
