@@ -34,10 +34,10 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok('پذیرش انجام شد.', ['alerty' => true]);
+			\dash\notif::ok('پذیرش انجام شد.');
 
 
-			\dash\redirect::pwd(\dash\url::here(). '/detail?nationalcode='. \dash\request::get('cnationalcode'));
+			\dash\redirect::to(\dash\url::that(). '?print=auto&cnationalcode='. \dash\request::get('cnationalcode'));
 		}
 
 	}
