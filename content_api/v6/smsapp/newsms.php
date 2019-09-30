@@ -495,18 +495,37 @@ class newsms
 		{
 			$insert['recommend_id'] = $get_recommend['id'];
 
-			// ready to auto answer
-			$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['id'], 'isdefault' => 1, 'limit' => 1]);
-			if(isset($load_default_answer['text']))
+			if(\lib\app\sms::is_auto_panel_answer())
 			{
-				$insert['sendstatus']      = 'waitingtoautosend';
-				$insert['answertext']      = $load_default_answer['text'];
-				$insert['answertextcount'] = mb_strlen($load_default_answer['text']);
-				$insert['receivestatus']   = 'answerready';
-				$insert['fromgateway']     = $insert['togateway'];
-				$insert['tonumber']        = $insert['fromnumber'];
-				$insert['group_id']        = $insert['recommend_id'];
-				$insert['dateanswer']      = date("Y-m-d H:i:s");
+				// ready to auto answer
+				$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['id'], 'isdefaultpanel' => 1, 'limit' => 1]);
+				if(isset($load_default_answer['text']))
+				{
+					$insert['sendstatus']      = 'sendtopanel';
+					$insert['answertext']      = $load_default_answer['text'];
+					$insert['answertextcount'] = mb_strlen($load_default_answer['text']);
+					$insert['receivestatus']   = 'awaiting';
+					$insert['fromgateway']     = $insert['togateway'];
+					$insert['tonumber']        = $insert['fromnumber'];
+					$insert['group_id']        = $insert['recommend_id'];
+					$insert['dateanswer']      = date("Y-m-d H:i:s");
+				}
+			}
+			else
+			{
+				// ready to auto answer
+				$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['id'], 'isdefault' => 1, 'limit' => 1]);
+				if(isset($load_default_answer['text']))
+				{
+					$insert['sendstatus']      = 'waitingtoautosend';
+					$insert['answertext']      = $load_default_answer['text'];
+					$insert['answertextcount'] = mb_strlen($load_default_answer['text']);
+					$insert['receivestatus']   = 'answerready';
+					$insert['fromgateway']     = $insert['togateway'];
+					$insert['tonumber']        = $insert['fromnumber'];
+					$insert['group_id']        = $insert['recommend_id'];
+					$insert['dateanswer']      = date("Y-m-d H:i:s");
+				}
 			}
 		}
 	}

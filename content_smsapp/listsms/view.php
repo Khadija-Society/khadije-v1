@@ -225,6 +225,7 @@ class view
 
 		\dash\data::sysStatus(\lib\app\sms::status());
 
+		\dash\data::autoPanelAnswer(\lib\app\sms::is_auto_panel_answer());
 		\dash\data::maxLimit(self::check_max_limit($child));
 		// \dash\data::badTime(self::bad_time());
 

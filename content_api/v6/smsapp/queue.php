@@ -42,10 +42,13 @@ class queue
 
 		if(self::check_max_limit())
 		{
+			\lib\app\sms::set_auto_panel_answer();
 			\dash\notif::warn(T_("Maximum limit"));
 			\dash\log::set('apiSmsAppMaxLimit');
 			return null;
 		}
+
+		\lib\app\sms::unset_auto_panel_answer();
 
 		self::set_status_as_sendtodevice();
 

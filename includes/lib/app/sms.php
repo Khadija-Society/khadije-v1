@@ -6,6 +6,36 @@ namespace lib\app;
  */
 class sms
 {
+	private static function panel_answer_file()
+	{
+		return __DIR__.'/autopanelanswer.me.json';
+	}
+
+
+	public static function is_auto_panel_answer()
+	{
+		return is_file(self::panel_answer_file());
+	}
+
+
+	public static function set_auto_panel_answer()
+	{
+		if(!self::is_auto_panel_answer())
+		{
+			\dash\file::write(self::panel_answer_file(), date("Y-m-d H:i:s"));
+		}
+	}
+
+
+	public static function unset_auto_panel_answer()
+	{
+		if(self::is_auto_panel_answer())
+		{
+			\dash\file::delete(self::panel_answer_file());
+		}
+	}
+
+
 	public static function analyze_text($_text)
 	{
 		$all_group_text = \lib\db\smsgroupfilter::list_analyze_word();

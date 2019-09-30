@@ -42,6 +42,10 @@
 {%if badTime%}
 <div class="msg warn2 txtC txtB">{%trans "This time is a bad time, send sms in another time"%}</div>
 {%endif%}
+
+{%if autoPanelAnswer%}
+<div class="msg warn2 txtC txtB">ظرفیت ارسال پیامک توسط خط شما تکمیل است. تمامی پیامک ها توسط پنل پیامک به صورت خودکا پاسخ داده خواهند شد</div>
+{%endif%}
 {%endblock%}
 
 {%block igroupList%}
