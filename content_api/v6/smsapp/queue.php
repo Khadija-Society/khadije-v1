@@ -16,11 +16,11 @@ class queue
 			return null;
 		}
 
-		if(self::bad_time())
-		{
-			\dash\notif::warn(T_("People are sleeping now!"));
-			return null;
-		}
+		// if(self::bad_time())
+		// {
+		// 	\dash\notif::warn(T_("People are sleeping now!"));
+		// 	return null;
+		// }
 
 
 		// // if no not sent sms

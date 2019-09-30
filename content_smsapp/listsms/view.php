@@ -226,7 +226,7 @@ class view
 		\dash\data::sysStatus(\lib\app\sms::status());
 
 		\dash\data::maxLimit(self::check_max_limit($child));
-		\dash\data::badTime(self::bad_time());
+		// \dash\data::badTime(self::bad_time());
 
 		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
 		\dash\data::allGroupList($smsgroup);
