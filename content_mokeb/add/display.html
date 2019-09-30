@@ -7,7 +7,7 @@
 
 <div class="f justify-center fs14">
   <div class="c4 s12 fs12 pRa10 p0">
-    <form method="get" action="{{url.that}}" autocomplete="off" class="panel">
+    <div method="get" action="{{url.that}}" autocomplete="off" class="panel">
       <div class="pad">
 
         <img src="{{url.static}}/images/mokeb/labbayk.jpg" class="mB10">
@@ -23,19 +23,35 @@
             <a href="{{url.that}}?position={{value.number}}"><span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded primary">&nbsp;</span></a>
 {%endif%}
           {%else%}
-            <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded danger">&nbsp;</span>
+            <a href="{{url.that}}?position={{value.number}}"><span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded danger">&nbsp;</span></a>
           {%endif%}
           {%endfor%}
         </div>
 
 
-        <div class="input">
-          {%if requestGET.cnationalcode%}
-          <a href="{{url.that}}" class="addon btn danger2"><i class="sf-eraser"></i></a>
-          {%endif%}
-          <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
-          <button class="addon btn">{%trans "Check"%}</button>
+        <form method="get" action="{{url.that}}" autocomplete="off">
+          <div class="input">
+            {%if requestGET.cnationalcode%}
+            <a href="{{url.that}}" class="addon btn"><i class="sf-eraser"></i></a>
+            {%endif%}
+            <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
+            <button class="addon btn">{%trans "Check"%}</button>
+          </div>
+        </form>
+        <span data-kerkere-icon data-kerkere='.myPositionShow' class="badge success mTB20">جستجو با جایگاه</span>
+        <div {%if requestGET.position%} {%else%} data-kerkere-content='hide' {%endif%} class="myPositionShow mB20">
+
+          <form method="get" action="{{url.that}}" autocomplete="off">
+            <div class="input mT10">
+              {%if requestGET.position%}
+              <a href="{{url.that}}" class="addon btn"><i class="sf-eraser"></i></a>
+              {%endif%}
+              <input type="tel" name="position" value="{{requestGET.position}}" placeholder='جایگاه' maxlength="10"  minlength="1" >
+              <button class="addon btn">نمایش جایگاه</button>
+            </div>
+          </form>
         </div>
+
 
         {%if checkNationalcode%}
           <br>
@@ -54,7 +70,7 @@
           <div class="msg mB0-f info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr class="mTB5-f"><div class="fs07">صادره از  <b>{{nationalCity}}</b></div>{%endif%}</div>
         {%endif%}
       </div>
-    </form>
+    </div>
   </div>
 
 {%if checkNationalcode == 'signuped' or checkNationalcode == 'expire'  %}
@@ -163,8 +179,15 @@ body .printA6 div{color:#000!important;}
 {%block newSignup%}
 
     <form class="" method="post" autocomplete="off">
-
+      {%if requestGET.position%}
+        <div class="msg txtB txtC primary2">
+          جایگاه <b>{{requestGET.position | fitNumber}}</b>
+        </div>
+      {%endif%}
 {{block ('iMobileKarabala') }}
+      {%if requrestGET.cnationalcode%}
+        {{block('incode')}}
+      {%endif%}
 
 {{block ('iname') }}
 {{block ('ifamily') }}
@@ -225,7 +248,7 @@ body .printA6 div{color:#000!important;}
 {%block incode%}
 <label for="nationalcode">{%trans "National code"%} </label>
 <div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%}' value="{{userdetail.nationalcode}}" min='1000000000' max='9999999999' >
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%}' value="{{userdetail.nationalcode}}" min='1' max='9999999999' required >
 </div>
 {%endblock%}
 
@@ -353,9 +376,9 @@ body .printA6 div{color:#000!important;}
 
 
 {%block iMobileKarabala%}
-<label for="mobile">{%trans "Mobile"%} <small>۱۰ رقمی</small> </label>
+<label for="mobile">{%trans "Mobile"%} <small>۱۰ رقمی - الزامی</small>  </label>
 <div class="input ltr">
-  <input type="tel" name="mobile" id="mobile" value="{{userdetail.mobile}}" maxlength='50' autofocus autocomplete="new-password">
+  <input type="tel" name="mobile" id="mobile" value="{{userdetail.mobile}}" maxlength='50' autofocus autocomplete="new-password" required>
 </div>
 {%endblock%}
 

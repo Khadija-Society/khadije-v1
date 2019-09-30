@@ -32,9 +32,58 @@ class view
 
 		self::check_nationalcode();
 
+		self::check_position();
+
+
+
 	}
 
 
+
+	private static function check_position()
+	{
+		$position = \dash\request::get('position');
+		if(!$position)
+		{
+			return;
+		}
+
+		$status = null;
+		if(!is_numeric($position))
+		{
+			\dash\notif::error('جایگاه اشتباه است');
+			$status = 'invalid';
+			\dash\data::checkposition($status);
+			return;
+		}
+
+		$check = \lib\db\mokebusers::get_by_position($position);
+		if(isset($check['id']))
+		{
+			\dash\data::mokebuserDetail($check);
+			$expire = \dash\data::mokebuserDetail_expire();
+
+			if((time() - strtotime(\dash\data::mokebuserDetail_expire()) > intval(\dash\data::mokebDetail_activetime() * 60 * 60)) || \dash\data::mokebuserDetail_forceexit())
+			{
+				$status = 'expire';
+			}
+			else
+			{
+				$status = 'signuped';
+			}
+		}
+		else
+		{
+			$list = \lib\app\mokebuser::list_of_free(\dash\url::child());
+			\dash\data::freePosition($list);
+			$status = 'not-signuped';
+		}
+
+
+		\dash\data::checkNationalcode($status);
+
+
+	}
 	private static function check_nationalcode()
 	{
 		$nationalcode = \dash\request::get('cnationalcode');

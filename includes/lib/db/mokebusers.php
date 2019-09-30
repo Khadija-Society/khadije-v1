@@ -3,6 +3,26 @@ namespace lib\db;
 
 class mokebusers
 {
+	public static function get_by_position($_position)
+	{
+		$now = date("Y-m-d H:i:s");
+		$query =
+		"
+			SELECT
+				*
+			FROM mokebusers
+			WHERE
+				mokebusers.position = '$_position' AND
+				mokebusers.forceexit IS NULL AND
+				mokebusers.expire > '$now'
+			ORDER BY mokebusers.id DESC
+			LIMIT 1
+		";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
 	public static function get_ids()
 	{
 		$query =

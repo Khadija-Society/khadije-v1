@@ -3,31 +3,73 @@ namespace lib\app;
 
 class mokebuser
 {
-	public static function forceexit($_nationalcode)
+
+	public static function forceexit($_nationalcode, $_position)
 	{
-		$nationalcode = $_nationalcode;
-		if($nationalcode && \dash\utility\filter::nationalcode($nationalcode))
+		if($_nationalcode)
 		{
-			$loadUser = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1]);
-			if($loadUser && isset($loadUser['id']))
+
+			$nationalcode = $_nationalcode;
+			if($nationalcode && \dash\utility\filter::nationalcode($nationalcode))
 			{
-				$update                = [];
-				$update['forceexit']   = 1;
-				$update['position']    = null;
-				$update['oldposition'] = $loadUser['position'];
-				// $update['expire']      = $loadUser['datecreated'];
-				\lib\db\mokebusers::update($update, $loadUser['id']);
+				$loadUser = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1]);
+				if($loadUser && isset($loadUser['id']))
+				{
+					$update                = [];
+					$update['forceexit']   = 1;
+					$update['position']    = null;
+					$update['forceexitdate']   = date("Y-m-d H:i:s");
+					$update['oldposition'] = $loadUser['position'];
+					// $update['expire']      = $loadUser['datecreated'];
+					\lib\db\mokebusers::update($update, $loadUser['id']);
+				}
+				else
+				{
+					\dash\notif::error('کاربر یافت نشد');
+					return false;
+				}
 			}
 			else
 			{
-				\dash\notif::error('کاربر یافت نشد');
+				\dash\notif::error('کد ملی اشتباه است');
 				return false;
 			}
+
 		}
-		else
+		elseif($_position)
 		{
-			\dash\notif::error('کد ملی اشتباه است');
-			return false;
+			$position = $_position;
+			if(!$position)
+			{
+				return;
+			}
+
+			$status = null;
+			if(!is_numeric($position))
+			{
+				\dash\notif::error('جایگاه اشتباه است');
+				$status = 'invalid';
+				\dash\data::checkposition($status);
+				return;
+			}
+
+			$check = \lib\db\mokebusers::get_by_position($position);
+			if(isset($check['id']))
+			{
+				$update                = [];
+				$update['forceexit']   = 1;
+				$update['forceexitdate']   = date("Y-m-d H:i:s");
+				$update['position']    = null;
+				$update['oldposition'] = $check['position'];
+				// $update['expire']      = $loadUser['datecreated'];
+				\lib\db\mokebusers::update($update, $check['id']);
+			}
+			else
+			{
+					\dash\notif::error('کاربر یافت نشد');
+					return false;
+
+			}
 		}
 	}
 
@@ -795,8 +837,22 @@ class mokebuser
 		}
 
 		$expire = self::get_expire($_option['place']);
+		$custom_postion = \dash\app::request('position');
+		if($custom_postion && is_numeric($custom_postion))
+		{
+			$list_of_free = self::list_of_free($_option['place'], true);
+			if(!in_array($custom_postion, $list_of_free))
+			{
+				\dash\notif::error('شماره جایگاه نامعتر است یا رزرو شده است');
+				return false;
+			}
+		}
+		else
+		{
+			$custom_postion = self::get_position($_option['place']);
+		}
 
-		$args['position'] = self::get_position($_option['place']);
+		$args['position'] = $custom_postion;
 		$args['place_id'] = \dash\coding::decode($_option['place']);
 		$args['expire']   = $expire;
 

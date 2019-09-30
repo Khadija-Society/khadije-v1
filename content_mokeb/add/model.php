@@ -7,10 +7,17 @@ class model
 
 	public static function post()
 	{
-		if(\dash\request::post('forceexit') && \dash\request::get('cnationalcode'))
+		if(\dash\request::post('forceexit'))
 		{
-			\lib\app\mokebuser::forceexit(\dash\request::get('cnationalcode'));
-			\dash\redirect::pwd();
+			\lib\app\mokebuser::forceexit(\dash\request::get('cnationalcode'), \dash\request::get('position'));
+			if(\dash\request::get('cnationalcode'))
+			{
+				\dash\redirect::pwd();
+			}
+			else
+			{
+				\dash\redirect::to(\dash\url::that());
+			}
 			return;
 		}
 
@@ -22,7 +29,14 @@ class model
 		// $post['birthday']        = \dash\request::post('birthday');
 		$post['firstname']       = \dash\request::post('name');
 		$post['lastname']        = \dash\request::post('lastName');
-		$post['nationalcode']    = \dash\request::get('cnationalcode');
+		if(\dash\request::get('cnationalcode'))
+		{
+			$post['nationalcode']    = \dash\request::get('cnationalcode');
+		}
+		else
+		{
+			$post['nationalcode']    = \dash\request::post('nationalcode');
+		}
 		// $post['father']          = \dash\request::post('father');
 		// $post['pasportcode']     = \dash\request::post('passport');
 		// $post['pasportdate']     = \dash\request::post('passportexpire');
@@ -34,6 +48,7 @@ class model
 		$post['displayname']     = trim($post['firstname'] . ' '. $post['lastname']);
 		$post['married']         = \dash\request::post('Married') ;
 		// $post['zipcode']         = \dash\request::post('zipcode');
+		$post['position']         = \dash\request::get('position');
 
 		\lib\app\mokebuser::add($post, ['place' => \dash\url::child()]);
 
