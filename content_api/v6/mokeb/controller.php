@@ -33,15 +33,70 @@ class controller
 		{
 			self::sync_users($input['users']);
 		}
+		if(isset($input['forceexit']) && is_array($input['forceexit']) && $input['forceexit'])
+		{
+			self::setforceexit($input['forceexit']);
+		}
 
-		$all_users = \lib\db\mokebusers::all_user();
 		$all_place = \lib\db\mokebusers::all_place();
+		$all_users = \lib\db\mokebusers::all_user();
 
 		$result = [];
+
+		$result['setforceexit'] = self::forceexit();
 		$result['all_users'] = $all_users;
 		$result['all_place'] = $all_place;
 
 		\content_api\v6::bye($result);
+	}
+
+
+	private static function setforceexit($_data)
+	{
+		$q = [];
+		foreach ($_data as $key => $value)
+		{
+			if(isset($value['id']))
+			{
+				$temp = $value;
+				unset($temp['id']);
+				unset($temp['forceexit']);
+				$temp['forceexit'] = 1;
+				$set = \dash\db\config::make_set($temp);
+				if($set)
+				{
+					$q[] = " UPDATE mokebusers SET $set WHERE mokebusers.id = '$value[id]' LIMIT 1 ";
+				}
+
+			}
+		}
+
+		if(!empty($q))
+		{
+			$q = implode(';', $q);
+			\dash\db::query($q, true, ['multi_query' => true]);
+		}
+	}
+
+
+	private static function forceexit()
+	{
+
+		$query =
+		"
+			SELECT
+				mokebusers.id,
+				mokebusers.forceexit,
+				mokebusers.forceexitdate,
+				mokebusers.oldposition,
+				mokebusers.position
+			FROM mokebusers
+			WHERE
+				mokebusers.forceexit = 1
+		";
+		$result = \dash\db::get($query);
+		return $result;
+
 	}
 
 
