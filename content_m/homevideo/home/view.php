@@ -9,7 +9,7 @@ class view
 
 		\dash\permission::access('mhomevideo');
 
-		\dash\data::page_title('فعال یا غیر فعال سازی ثبت‌نام کربلا');
+		\dash\data::page_title('تنظیمات نمایش ویدئو در صفحه اول');
 
 		\dash\data::page_pictogram('cogs');
 
