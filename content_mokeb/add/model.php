@@ -65,9 +65,17 @@ class model
 			if(\dash\engine\process::status())
 			{
 				\dash\notif::ok('پذیرش انجام شد.');
+				$nationalcode = null;
+				if(\dash\request::get('cnationalcode'))
+				{
+					$nationalcode = \dash\request::get('cnationalcode');
+				}
+				elseif(\dash\request::post('nationalcode'))
+				{
+					$nationalcode = \dash\request::post('nationalcode');
+				}
 
-
-				\dash\redirect::to(\dash\url::that(). '?print=auto&cnationalcode='. \dash\request::get('cnationalcode'));
+				\dash\redirect::to(\dash\url::that(). '?print=auto&cnationalcode='. $nationalcode);
 			}
 		}
 
