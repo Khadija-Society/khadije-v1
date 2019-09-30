@@ -501,10 +501,10 @@ class newsms
 				$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['id'], 'isdefaultpanel' => 1, 'limit' => 1]);
 				if(isset($load_default_answer['text']))
 				{
-					$insert['sendstatus']      = 'sendtopanel';
+					$insert['sendstatus']      = 'awaiting';
 					$insert['answertext']      = $load_default_answer['text'];
 					$insert['answertextcount'] = mb_strlen($load_default_answer['text']);
-					$insert['receivestatus']   = 'awaiting';
+					$insert['receivestatus']   = 'sendtopanel';
 					$insert['fromgateway']     = $insert['togateway'];
 					$insert['tonumber']        = $insert['fromnumber'];
 					$insert['group_id']        = $insert['recommend_id'];
