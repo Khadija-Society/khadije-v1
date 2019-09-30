@@ -194,7 +194,7 @@ body .printA6 div{color:#000!important;}
         </div>
       {%endif%}
 {{block ('iMobileKarabala') }}
-      {%if requrestGET.cnationalcode%}
+      {%if not requestGET.cnationalcode%}
         {{block('incode')}}
       {%endif%}
 
