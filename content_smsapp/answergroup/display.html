@@ -38,6 +38,17 @@
               <span class="badge success" data-confirm data-data='{"type":"removedefault", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove default"%}</span>
             </div>
             {%endif%}
+
+            {%if not value.isdefaultpanel%}
+            <div class="cauto s12 mRa20">
+              <span class="badge light" data-confirm data-data='{"type":"isdefaultpanel", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Set as default panel"%}</span>
+            </div>
+            {%else%}
+
+            <div class="cauto mRa20">
+              <span class="badge success" data-confirm data-data='{"type":"removedefaultpanel", "defaultid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove default panel"%}</span>
+            </div>
+            {%endif%}
             <div class="cauto">
               <span class="badge danger" data-confirm data-data='{"type":"remove", "deleteid" :"{{value.id}}", "group_id" : "{{requestGET.id}}"}'>{%trans "Remove"%}</span>
             </div>

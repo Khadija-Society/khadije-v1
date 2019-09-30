@@ -318,7 +318,7 @@ class smsgroupfilter
 	}
 
 
-	public static function set_answer_default($_id, $_group_id)
+	public static function set_answer_default($_id, $_group_id, $_panel = false)
 	{
 		$id       = \dash\coding::decode($_id);
 		$group_id = \dash\coding::decode($_group_id);
@@ -328,13 +328,13 @@ class smsgroupfilter
 			return false;
 		}
 
-		$remove_all_default = \lib\db\smsgroupfilter::remove_all_default('answer', $group_id);
-		$set_default        = \lib\db\smsgroupfilter::set_default($id);
+		$remove_all_default = \lib\db\smsgroupfilter::remove_all_default('answer', $group_id, $_panel);
+		$set_default        = \lib\db\smsgroupfilter::set_default($id, $_panel);
 		return $set_default;
 	}
 
 
-	public static function remove_answer_default($_id, $_group_id)
+	public static function remove_answer_default($_id, $_group_id, $_panel = null)
 	{
 		$id       = \dash\coding::decode($_id);
 		$group_id = \dash\coding::decode($_group_id);
@@ -344,7 +344,7 @@ class smsgroupfilter
 			return false;
 		}
 
-		$remove_all_default = \lib\db\smsgroupfilter::remove_all_default('answer', $group_id);
+		$remove_all_default = \lib\db\smsgroupfilter::remove_all_default('answer', $group_id, $_panel);
 		return $remove_all_default;
 	}
 

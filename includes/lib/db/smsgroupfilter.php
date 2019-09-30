@@ -96,17 +96,31 @@ class smsgroupfilter
 		return $result;
 	}
 
-	public static function remove_all_default($_type, $_group_id)
+	public static function remove_all_default($_type, $_group_id, $_panel = null)
 	{
-		$query  = "UPDATE s_groupfilter SET s_groupfilter.isdefault = NULL WHERE s_groupfilter.type = '$_type' AND s_groupfilter.group_id = $_group_id ";
+		if($_panel)
+		{
+			$query  = "UPDATE s_groupfilter SET s_groupfilter.isdefaultpanel = NULL WHERE s_groupfilter.type = '$_type' AND s_groupfilter.group_id = $_group_id ";
+		}
+		else
+		{
+			$query  = "UPDATE s_groupfilter SET s_groupfilter.isdefault = NULL WHERE s_groupfilter.type = '$_type' AND s_groupfilter.group_id = $_group_id ";
+		}
 		$result = \dash\db::query($query);
 		return $result;
 	}
 
 
-	public static function set_default($_id)
+	public static function set_default($_id, $_panel = null)
 	{
-		$query  = "UPDATE s_groupfilter SET s_groupfilter.isdefault = 1 WHERE s_groupfilter.id = $_id LIMIT 1 ";
+		if($_panel)
+		{
+			$query  = "UPDATE s_groupfilter SET s_groupfilter.isdefaultpanel = 1 WHERE s_groupfilter.id = $_id LIMIT 1 ";
+		}
+		else
+		{
+			$query  = "UPDATE s_groupfilter SET s_groupfilter.isdefault = 1 WHERE s_groupfilter.id = $_id LIMIT 1 ";
+		}
 		$result = \dash\db::query($query);
 		return $result;
 	}
