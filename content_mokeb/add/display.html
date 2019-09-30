@@ -31,7 +31,7 @@
 
         <div class="input">
           {%if requestGET.cnationalcode%}
-          <a href="{{url.that}}" class="addon btn"><i class="sf-eraser"></i></a>
+          <a href="{{url.that}}" class="addon btn danger2"><i class="sf-eraser"></i></a>
           {%endif%}
           <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
           <button class="addon btn">{%trans "Check"%}</button>
