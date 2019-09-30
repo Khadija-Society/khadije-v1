@@ -171,12 +171,13 @@
     {%endif%}
   </section>
 
-
+  {%if homevideoSaved.status and homevideoSaved.code%}
   <div class="introVideo">
     <div id="videoBox">
-      <script type="text/JavaScript" src="https://www.aparat.com/embed/FdOX8?data[rnddiv]=videoBox&data[responsive]=yes" async></script>
+      <script type="text/JavaScript" src="https://www.aparat.com/embed/{{homevideoSaved.code}}?data[rnddiv]=videoBox&data[responsive]=yes" async></script>
     </div>
   </div>
+  {%endif%}
 
 
 

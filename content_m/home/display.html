@@ -44,6 +44,7 @@
   {%if perm('cpReportDaily') or perm('cpReportMonth') or perm('cpReportView') %}<div class="c2 s6">{{block ("Report")}}</div>{%endif%}
 
   {%if perm('cpHomePageNumber')%}<div class="c2 s6">{{block ("homePageNumber")}}</div>{%endif%}
+  {%if perm('cpHomePageNumber')%}<div class="c2 s6">{{block ("homePageVideo")}}</div>{%endif%}
   {%if perm('cpHadith')%}<div class="c2 s6">{{block ("bHadith")}}</div>{%endif%}
   {%if perm('cpNationalCodeView')%}<div class="c2 s6">{{block ("BNcode")}}</div>{%endif%}
   {%if perm('cpSettingThankyouMessage')%}<div class="c2 s6">{{block("BTankyouMessage")}}</div>{%endif%}
@@ -192,6 +193,17 @@
  <div class="statistic">
   <div class="value"><i class="sf-cog"></i></div>
   <div class="label">{%trans "Home page number"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block homePageVideo%}
+<a class="dcard x1" href='{{url.here}}/homevideo'>
+ <div class="statistic">
+  <div class="value"><i class="sf-video-camera"></i></div>
+  <div class="label">ویدیئو صفحه اول</div>
  </div>
 </a>
 {%endblock%}

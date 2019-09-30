@@ -23,6 +23,8 @@ class view
 		\dash\data::staticvar($temp);
 
 		\dash\data::salavatShomar(\lib\db\salavats::shomar());
+
+		\dash\data::homevideoSaved(\lib\app\homevideo::get());
 	}
 }
 ?>
