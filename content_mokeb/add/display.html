@@ -61,10 +61,10 @@
           <div class="msg mB0-f danger txtC txtB">کد ملی اشتباه است</div>
         {%elseif checkNationalcode == 'expire'%}
           <div class="msg mB0-f danger txtC txtB">منقضی شده</div>
-          <a class="btn secondary fs07 mT10" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
+          <div data-kerkere='.showEditProfile' data-kerkere-icon class="btn secondary fs07 mT10">ویرایش اطلاعات</div>
         {%elseif checkNationalcode == 'signuped'%}
           <div class="msg mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
-          <a class="btn secondary fs07 mT10" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
+          <div data-kerkere='.showEditProfile' data-kerkere-icon class="btn secondary fs07 mT10">ویرایش اطلاعات</div>
           <div class="btn danger fs07 mT10 floatL" data-confirm data-data='{"forceexit": true}'>ثبت خروج</div>
         {%elseif checkNationalcode == 'not-signuped'%}
           <div class="msg mB0-f info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr class="mTB5-f"><div class="fs07">صادره از  <b>{{nationalCity}}</b></div>{%endif%}</div>
@@ -76,8 +76,16 @@
 {%if checkNationalcode == 'signuped' or checkNationalcode == 'expire'  %}
   <div class="c8 s12 pLa10">
     {{block('a6_chap_detail')}}
+    <div class="showEditProfile" data-kerkere-content='hide'>
+        <div class="panel">
+          <div class="pad">
+              {{block('newSignupUpdate')}}
+          </div>
+        </div>
+    </div>
   </div>
 {%endif%}
+
 
 {%if checkNationalcode == 'not-signuped'%}
   <div class="c6 s12 pLa10">
@@ -88,6 +96,7 @@
     </div>
   </div>
 {%endif%}
+
 
 </div>
 
@@ -213,10 +222,39 @@ body .printA6 div{color:#000!important;}
 
 
 
+
+{%block newSignupUpdate%}
+
+    <form class="" method="post" autocomplete="off">
+      <input type="hidden" name="updateuser" value="1">
+      <input type="hidden" name="id" value="{{mokebuserDetail.id}}">
+      {%if requestGET.position%}
+        <div class="msg txtB txtC primary2">
+          جایگاه <b>{{requestGET.position | fitNumber}}</b>
+        </div>
+      {%endif%}
+{{block ('iMobileKarabala') }}
+
+
+{{block ('iname') }}
+{{block ('ifamily') }}
+
+{{block ('icity') }}
+{{block ('iMarital') }}
+{{block ('igender') }}
+
+
+<button class="btn mT10">به روزرسانی</button>
+
+    </form>
+{%endblock%}
+
+
+
 {%block iname%}
 <label for="name">{%trans "Name"%} </label>
 <div class="input">
-  <input type="text" name="name" id="name" value="{{userdetail.firstname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
+  <input type="text" name="name" id="name" value="{{mokebuserDetail.firstname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
 </div>
 {%endblock%}
 
@@ -224,7 +262,7 @@ body .printA6 div{color:#000!important;}
 {%block ifamily%}
 <label for="lastName">{%trans "Last name"%} </label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" value="{{userdetail.lastname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
+  <input type="text" name="lastName" id="lastName" value="{{mokebuserDetail.lastname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
 </div>
 {%endblock%}
 
@@ -232,7 +270,7 @@ body .printA6 div{color:#000!important;}
 {%block ifather%}
 <label for="father">{%trans "Father name"%}  </label>
 <div class="input">
-  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%}' value="{{userdetail.father}}" maxlength='50' >
+  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%}' value="{{mokebuserDetail.father}}" maxlength='50' >
 </div>
 {%endblock%}
 
@@ -240,7 +278,7 @@ body .printA6 div{color:#000!important;}
 {%block imobile%}
 <label for="mobile" class="disabled">{%trans "Mobile"%}</label>
 <div class="input disabled">
-  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{userdetail.mobile}}" maxlength='30' required>
+  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{mokebuserDetail.mobile}}" maxlength='30' required>
 </div>
 {%endblock%}
 
@@ -248,7 +286,7 @@ body .printA6 div{color:#000!important;}
 {%block incode%}
 <label for="nationalcode">{%trans "National code"%} </label>
 <div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%}' value="{{userdetail.nationalcode}}" min='1' max='9999999999' required >
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%}' value="{{mokebuserDetail.nationalcode}}" min='1' max='9999999999' required >
 </div>
 {%endblock%}
 
@@ -256,7 +294,7 @@ body .printA6 div{color:#000!important;}
 {%block ibirthday%}
 <label for="birthday">{%trans "Birthday"%}  </label>
 <div class="input ltr">
-  <input class="datepicker" type="text" name="birthday" id="birthday"  placeholder='{{"1369/04/15" | fitNumber}}' value="{{userdetail.birthday}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
+  <input class="datepicker" type="text" name="birthday" id="birthday"  placeholder='{{"1369/04/15" | fitNumber}}' value="{{mokebuserDetail.birthday}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
 </div>
 {%endblock%}
 
@@ -270,8 +308,8 @@ body .printA6 div{color:#000!important;}
   <label for="gender">{%trans "Gender"%} </label>
   <select name="gender" class="ui dropdown select">
     <option value="" readonly>{%trans "Please select one itme"%}</option>
-    <option value="male" {%if userdetail.gender == 'male' or ( not userdetail.gender and mokebDetail.gender == 'male') %}selected {%endif%}>{%trans "Male"%}</option>
-    <option value="female" {%if userdetail.gender == 'female' or ( not userdetail.gender and mokebDetail.gender == 'female') %}selected{%endif%}>{%trans "Female"%}</option>
+    <option value="male" {%if mokebuserDetail.gender == 'male' or ( not mokebuserDetail.gender and mokebDetail.gender == 'male') %}selected {%endif%}>{%trans "Male"%}</option>
+    <option value="female" {%if mokebuserDetail.gender == 'female' or ( not mokebuserDetail.gender and mokebDetail.gender == 'female') %}selected{%endif%}>{%trans "Female"%}</option>
   </select>
 </div>
 {%endblock%}
@@ -282,8 +320,8 @@ body .printA6 div{color:#000!important;}
   <label for="married">{%trans "Marital"%} </label>
   <select name="Married" class="ui dropdown select">
     <option value="" readonly>مجرد یا متاهل</option>
-    <option value="single" {%if userdetail.married == 'single' %}selected {%endif%}>{%trans "Single"%}</option>
-    <option value="married" {%if userdetail.married == 'married' %}selected{%endif%}>{%trans "Married"%}</option>
+    <option value="single" {%if mokebuserDetail.married == 'single' %}selected {%endif%}>{%trans "Single"%}</option>
+    <option value="married" {%if mokebuserDetail.married == 'married' %}selected{%endif%}>{%trans "Married"%}</option>
   </select>
 </div>
 {%endblock%}
@@ -294,7 +332,7 @@ body .printA6 div{color:#000!important;}
 
 {%block iArabicLang%}
 <div class="switch1 pA5">
- <input type="checkbox" name="ArabicLang" id="ArabicLang" {%if userdetail.arabiclang == 'yes' %}checked{%endif%}>
+ <input type="checkbox" name="ArabicLang" id="ArabicLang" {%if mokebuserDetail.arabiclang == 'yes' %}checked{%endif%}>
  <label for="ArabicLang"  data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
  <label for="ArabicLang">{%trans "Arabic Language"%}</label>
 </div>
@@ -310,7 +348,7 @@ body .printA6 div{color:#000!important;}
 <select name="province" class="ui dropdown select search" id="province">
   <option value="" readonly>{%trans "Select province"%}</option>
   {%for key, value in proviceList%}
-    <option value="{{key}}" {% if userdetail.province == key %} selected {%endif%}>{{value}}</option>
+    <option value="{{key}}" {% if mokebuserDetail.province == key %} selected {%endif%}>{{value}}</option>
   {%endfor%}
 </select>
 {%endblock%}
@@ -321,7 +359,7 @@ body .printA6 div{color:#000!important;}
 <select name="city" class="ui dropdown select search" id="city" autocomplete="new-password">
   <option value="" readonly></option>
   {%for key, value in cityList%}
-    <option value="{{key}}" {% if userdetail.city == key %} selected {%endif%}>{{value}}</option>
+    <option value="{{key}}" {% if mokebuserDetail.city == key %} selected {%endif%}>{{value}}</option>
   {%endfor%}
 </select>
 {%endblock%}
@@ -332,7 +370,7 @@ body .printA6 div{color:#000!important;}
 {%block izipcode%}
 <label for='zipcode'>{%trans "Zip code"%}</label>
 <div class="input">
- <input type='tel' name='zipcode' id='zipcode' min="0" max="9999999999" value="{{userdetail.zipcode}}"/>
+ <input type='tel' name='zipcode' id='zipcode' min="0" max="9999999999" value="{{mokebuserDetail.zipcode}}"/>
 </div>
 {%endblock%}
 
@@ -342,7 +380,7 @@ body .printA6 div{color:#000!important;}
 {%block ipassport%}
 <label for='passport'>{%trans "Passport id"%} </label>
 <div class="input ltr">
- <input type="text" name='passport' id='passport' value="{{userdetail.pasportcode}}" />
+ <input type="text" name='passport' id='passport' value="{{mokebuserDetail.pasportcode}}" />
 </div>
 {%endblock%}
 
@@ -350,7 +388,7 @@ body .printA6 div{color:#000!important;}
 {%block ipassportexpire%}
 <label for='passportexpire'>{%trans "Passport expire date"%}</label>
 <div class="input">
-  <input class="datepicker" type="text" name="passportexpire" id="passportexpire" placeholder='{{"1397/03/30" | fitNumber}}' value="{{userdetail.pasportdate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+  <input class="datepicker" type="text" name="passportexpire" id="passportexpire" placeholder='{{"1397/03/30" | fitNumber}}' value="{{mokebuserDetail.pasportdate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
 </div>
 {%endblock%}
 
@@ -358,19 +396,19 @@ body .printA6 div{color:#000!important;}
 
 {%block iAddress%}
 <label for='fhomeaddress'>{%trans "Address"%}  </label>
-<textarea name="homeaddress" rows="2" placeholder='{%trans "Address"%}' class="txt" id="fhomeaddress">{{userdetail.homeaddress}}</textarea>
+<textarea name="homeaddress" rows="2" placeholder='{%trans "Address"%}' class="txt" id="fhomeaddress">{{mokebuserDetail.homeaddress}}</textarea>
 {%endblock%}
 
 {%block iWorkAddress%}
 <label for='fworkaddress'>{%trans "Work Address"%}</label>
-<textarea name="workaddress" rows="3" placeholder='{%trans "Work Address"%}' class="txt" id="fworkaddress">{{userdetail.workaddress}}</textarea>
+<textarea name="workaddress" rows="3" placeholder='{%trans "Work Address"%}' class="txt" id="fworkaddress">{{mokebuserDetail.workaddress}}</textarea>
 {%endblock%}
 
 
 
 {%block iDescription%}
 <label for='fdesc'>{%trans "Description"%}</label>
-<textarea name="desc" rows="3" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{userdetail.desc}}</textarea>
+<textarea name="desc" rows="3" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{mokebuserDetail.desc}}</textarea>
 {%endblock%}
 
 
@@ -378,14 +416,14 @@ body .printA6 div{color:#000!important;}
 {%block iMobileKarabala%}
 <label for="mobile">{%trans "Mobile"%} <small>۱۰ رقمی - الزامی</small>  </label>
 <div class="input ltr">
-  <input type="tel" name="mobile" id="mobile" value="{{userdetail.mobile}}" maxlength='50' autofocus autocomplete="new-password" required>
+  <input type="tel" name="mobile" id="mobile" value="{{mokebuserDetail.mobile}}" maxlength='50' autofocus autocomplete="new-password" required>
 </div>
 {%endblock%}
 
 {%block iPhone%}
 <label for="phone">{%trans "Phone"%}  </label>
 <div class="input ltr">
-  <input type="tel" name="phone" id="phone" value="{{userdetail.phone}}" maxlength='50' >
+  <input type="tel" name="phone" id="phone" value="{{mokebuserDetail.phone}}" maxlength='50' >
 </div>
 {%endblock%}
 
@@ -394,7 +432,7 @@ body .printA6 div{color:#000!important;}
 {%block iEmail%}
 <label for="email">{%trans "Email"%}</label>
 <div class="input">
-  <input type="email" name="email" id="email" placeholder='{%trans "Like"%} abc@example.com' value="{{userdetail.email}}" maxlength='50'>
+  <input type="email" name="email" id="email" placeholder='{%trans "Like"%} abc@example.com' value="{{mokebuserDetail.email}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -403,7 +441,7 @@ body .printA6 div{color:#000!important;}
 <div class="input preview">
  <input type="file" accept="image/gif, image/jpeg, image/png" name="avatar" id="avatar1" data-preview data-max="500">
  <label for="avatar1" title2="Simple Title">
-    {%if userdetail.avatar%}<img src="{{userdetail.avatar}}">{%endif%}
+    {%if mokebuserDetail.avatar%}<img src="{{mokebuserDetail.avatar}}">{%endif%}
  </label>
 </div>
 {%endblock%}
@@ -413,7 +451,7 @@ body .printA6 div{color:#000!important;}
 <div class="input preview">
  <input type="file" accept="image/gif, image/jpeg, image/png" name="nationalthumb" id="nationalthumb" data-preview data-max="500">
  <label for="nationalthumb" title2="Simple Title">
-    {%if userdetail.nationalthumb%}<img src="{{userdetail.nationalthumb}}">{%endif%}
+    {%if mokebuserDetail.nationalthumb%}<img src="{{mokebuserDetail.nationalthumb}}">{%endif%}
  </label>
 </div>
 {%endblock%}
@@ -423,7 +461,7 @@ body .printA6 div{color:#000!important;}
 <div class="input preview">
  <input type="file" accept="image/gif, image/jpeg, image/png" name="shthumb" id="shthumb" data-preview data-max="500">
  <label for="shthumb" title2="Simple Title">
-    {%if userdetail.shthumb%}<img src="{{userdetail.shthumb}}">{%endif%}
+    {%if mokebuserDetail.shthumb%}<img src="{{mokebuserDetail.shthumb}}">{%endif%}
  </label>
 </div>
 {%endblock%}
@@ -433,7 +471,7 @@ body .printA6 div{color:#000!important;}
 {%block iEducation%}
 <label for="feducation">{%trans "Education"%}</label>
 <div class="input">
-  <input type="text" name="education" id="feducation" placeholder='{%trans "Education"%}' value="{{userdetail.education}}" maxlength='50'>
+  <input type="text" name="education" id="feducation" placeholder='{%trans "Education"%}' value="{{mokebuserDetail.education}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -442,7 +480,7 @@ body .printA6 div{color:#000!important;}
 {%block iEducationCourse%}
 <label for="feducationcourse">{%trans "Education course"%}</label>
 <div class="input">
-  <input type="text" name="educationcourse" id="feducationcourse" placeholder='{%trans "Education course"%}' value="{{userdetail.education}}" maxlength='50'>
+  <input type="text" name="educationcourse" id="feducationcourse" placeholder='{%trans "Education course"%}' value="{{mokebuserDetail.education}}" maxlength='50'>
 </div>
 {%endblock%}
 
@@ -451,14 +489,14 @@ body .printA6 div{color:#000!important;}
 {%block iJob%}
 <label for="fjob">{%trans "Job"%}</label>
 <div class="input">
-  <input type="text" name="job" id="fjob" placeholder='{%trans "Job"%}' value="{{userdetail.job}}" maxlength='50'>
+  <input type="text" name="job" id="fjob" placeholder='{%trans "Job"%}' value="{{mokebuserDetail.job}}" maxlength='50'>
 </div>
 {%endblock%}
 
 
 {%block iJobIsStudent%}
 <div class="switch1 ">
- <input type="checkbox" name="student" id="student" {%if userdetail.job == 'student' %}checked{%endif%}>
+ <input type="checkbox" name="student" id="student" {%if mokebuserDetail.job == 'student' %}checked{%endif%}>
  <label for="student"  data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
  <label for="student">{%trans "Are you an univercity student?"%}</label>
 </div>
@@ -483,7 +521,7 @@ body .printA6 div{color:#000!important;}
 <div class="mB10">
   <label for='country'>{%trans "Country"%}</label>
   <div class="ui fluid search selection dropdown">
-    <input type="hidden" name="country" value="{{userdetail.country}}">
+    <input type="hidden" name="country" value="{{mokebuserDetail.country}}">
     <i class="dropdown icon"></i>
     <div class="default text">{%trans "Choose your country"%}</div>
     <div class="menu">

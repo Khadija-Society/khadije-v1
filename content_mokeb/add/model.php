@@ -50,15 +50,26 @@ class model
 		// $post['zipcode']         = \dash\request::post('zipcode');
 		$post['position']         = \dash\request::get('position');
 
-		\lib\app\mokebuser::add($post, ['place' => \dash\url::child()]);
-
-		if(\dash\engine\process::status())
+		if(\dash\request::post('updateuser'))
 		{
-			\dash\notif::ok('پذیرش انجام شد.');
-
-
-			\dash\redirect::to(\dash\url::that(). '?print=auto&cnationalcode='. \dash\request::get('cnationalcode'));
+			unset($post['nationalcode']);
+			$id = \dash\request::post('id');
+			$id = \dash\coding::encode($id);
+			\lib\app\mokebuser::edit($post, $id);
+			\dash\redirect::pwd();
 		}
+		else
+		{
+			\lib\app\mokebuser::add($post, ['place' => \dash\url::child()]);
+			if(\dash\engine\process::status())
+			{
+				\dash\notif::ok('پذیرش انجام شد.');
+
+
+				\dash\redirect::to(\dash\url::that(). '?print=auto&cnationalcode='. \dash\request::get('cnationalcode'));
+			}
+		}
+
 
 	}
 }

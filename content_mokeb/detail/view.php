@@ -10,7 +10,6 @@ class view
 
 		self::static_var();
 
-		\dash\data::karbalasettingSaved(\lib\app\karbalasetting::get());
 
 
 	}
