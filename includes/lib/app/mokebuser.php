@@ -826,7 +826,7 @@ class mokebuser
 			$check_duplicate = \lib\db\mokebusers::get($check_duplicate);
 			if(isset($check_duplicate['id']))
 			{
-				\dash\notif::error("ثبت‌نام با این کد‌ملی قبلا با موفقیت انجام شده است. لطفا منتظر نتایج قرعه کشی باشید", 'nationalcode');
+				\dash\notif::error("ثبت‌نام با این کد‌ملی قبلا با موفقیت انجام شده است", 'nationalcode');
 				return false;
 			}
 		}
