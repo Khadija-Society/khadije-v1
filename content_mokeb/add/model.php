@@ -7,7 +7,12 @@ class model
 
 	public static function post()
 	{
-
+		if(\dash\request::post('forceexit') && \dash\request::get('cnationalcode'))
+		{
+			\lib\app\mokebuser::forceexit(\dash\request::get('cnationalcode'));
+			\dash\redirect::pwd();
+			return;
+		}
 
 		$post                    = [];
 		$post['mobile']          = \dash\request::post('mobile') ;

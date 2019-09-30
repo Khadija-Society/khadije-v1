@@ -18,9 +18,9 @@
           {%if value.type == 'free'%}
 {%if nextDot is null%}
 {%set nextDot = value.number%}
-            <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded success">&nbsp;</span>
+            <a href="{{url.that}}?position={{value.number}}"><span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded success">&nbsp;</span></a>
 {%else%}
-            <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded primary">&nbsp;</span>
+            <a href="{{url.that}}?position={{value.number}}"><span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded primary">&nbsp;</span></a>
 {%endif%}
           {%else%}
             <span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded danger">&nbsp;</span>
@@ -49,6 +49,7 @@
         {%elseif checkNationalcode == 'signuped'%}
           <div class="msg mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
           <a class="btn secondary fs07 mT10" href="{{url.here}}/detail?nationalcode={{requestGET.cnationalcode}}">ویرایش اطلاعات</a>
+          <div class="btn danger fs07 mT10 floatL" data-confirm data-data='{"forceexit": true}'>ثبت خروج</div>
         {%elseif checkNationalcode == 'not-signuped'%}
           <div class="msg mB0-f info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr class="mTB5-f"><div class="fs07">صادره از  <b>{{nationalCity}}</b></div>{%endif%}</div>
         {%endif%}
@@ -101,7 +102,11 @@
         <h3>{{site.title}}</h3>
       </div>
       <div class="cauto os txtRa">
+        {%if mokebuserDetail.position%}
         <div class="placeNumber"><small class="fs05">#</small><b>{{mokebuserDetail.position}}</b></div>
+        {%elseif mokebuserDetail.oldposition%}
+        <div class="placeNumber"><small class="fs05 fc-mute">#</small><b class="fc-mute">{{mokebuserDetail.oldposition}}</b></div>
+        {%endif%}
       </div>
     </div>
     {%if checkNationalcode == 'expire'%}

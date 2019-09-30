@@ -58,7 +58,7 @@ class view
 			\dash\data::mokebuserDetail($check);
 			$expire = \dash\data::mokebuserDetail_expire();
 
-			if(time() - strtotime(\dash\data::mokebuserDetail_expire()) > intval(\dash\data::mokebDetail_activetime() * 60 * 60))
+			if((time() - strtotime(\dash\data::mokebuserDetail_expire()) > intval(\dash\data::mokebDetail_activetime() * 60 * 60)) || \dash\data::mokebuserDetail_forceexit())
 			{
 				$status = 'expire';
 			}

@@ -3,6 +3,33 @@ namespace lib\app;
 
 class mokebuser
 {
+	public static function forceexit($_nationalcode)
+	{
+		$nationalcode = $_nationalcode;
+		if($nationalcode && \dash\utility\filter::nationalcode($nationalcode))
+		{
+			$loadUser = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1]);
+			if($loadUser && isset($loadUser['id']))
+			{
+				$update                = [];
+				$update['forceexit']   = 1;
+				$update['position']    = null;
+				$update['oldposition'] = $loadUser['position'];
+				// $update['expire']      = $loadUser['datecreated'];
+				\lib\db\mokebusers::update($update, $loadUser['id']);
+			}
+			else
+			{
+				\dash\notif::error('کاربر یافت نشد');
+				return false;
+			}
+		}
+		else
+		{
+			\dash\notif::error('کد ملی اشتباه است');
+			return false;
+		}
+	}
 
 	public static function place_dashboard($_data)
 	{
