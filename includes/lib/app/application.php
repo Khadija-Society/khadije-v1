@@ -17,7 +17,7 @@ class application
 	private static function version()
 	{
 		$detail                     = [];
-		$detail['last']             = 35;
+		$detail['last']             = 43;
 		$detail['deprecated']       = 34;
 		$detail['deprecated_title'] = T_("This version is deprecated");
 		$detail['deprecated_desc']  = T_("To download new version of this app click blow link");
