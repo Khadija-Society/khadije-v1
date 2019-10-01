@@ -403,5 +403,35 @@
     "title": "cpRepresentationSetAllDone",
     "cat": "Danger",
     "require": []
+  },
+  "mPlaceAdd": {
+    "title": "mPlaceAdd",
+    "cat": "Mokeb",
+    "require": []
+  },
+  "mPlaceView": {
+    "title": "mPlaceView",
+    "cat": "Mokeb",
+    "require": []
+  },
+  "mPlaceEdit": {
+    "title": "mPlaceEdit",
+    "cat": "Mokeb",
+    "require": []
+  },
+  "ContentMokeb": {
+    "title": "ContentMokeb",
+    "cat": "Mokeb",
+    "require": []
+  },
+  "mKarbalaSetting": {
+    "title": "mKarbalaSetting",
+    "cat": "Mokeb",
+    "require": []
+  },
+  "mhomevideo": {
+    "title": "mhomevideo",
+    "cat": "Mokeb",
+    "require": []
   }
 }

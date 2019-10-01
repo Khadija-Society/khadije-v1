@@ -403,7 +403,7 @@ class twigTransTerms
 	echo T_("Gallery");                                                               // Line 223
 	echo T_("Video");                                                                 // Line 236
 	echo T_("Audio");                                                                 // Line 248
-	echo T_("Download");                                                              // Line 99
+	echo T_("Download");                                                              // Line 37
 	echo T_("Button title");                                                          // Line 273
 	echo T_("URL");                                                                   // Line 62
 	echo T_("Open in new tab");                                                       // Line 285

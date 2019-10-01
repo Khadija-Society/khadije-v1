@@ -270,6 +270,12 @@ class TransStatic
 	echo T_("Control Panel");
 	echo T_("Donate product");
 
+	echo T_("mPlaceAdd");
+	echo T_("mPlaceView");
+	echo T_("mPlaceEdit");
+	echo T_("ContentMokeb");
+	echo T_("mKarbalaSetting");
+	echo T_("mhomevideo");
  }
 }
 ?>
