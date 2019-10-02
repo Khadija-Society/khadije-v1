@@ -18,7 +18,7 @@ class controller
 			\content_api\v6::no(400, T_("Appkey not set"));
 		}
 
-		if($mokebkey === '551d7fd1c0e112e181791e257e35e9c6')
+		if($mokebkey === '078c6e1158437f0b3ba0f52e705ec698')
 		{
 			// no thing
 		}
