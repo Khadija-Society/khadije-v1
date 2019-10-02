@@ -35,14 +35,14 @@
             <a href="{{url.that}}" class="addon btn"><i class="sf-eraser"></i></a>
             {%endif%}
             <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
-            <button class="addon btn">{%trans "Check"%}</button>
+            <button class="addon btn fs08">{%trans "Check"%}</button>
           </div>
         </form>
         <span data-kerkere-icon data-kerkere='.myPositionShow' class="badge success mTB20">جستجو با جایگاه</span>
         <div {%if requestGET.position%} {%else%} data-kerkere-content='hide' {%endif%} class="myPositionShow mB20">
 
           <form method="get" action="{{url.that}}" autocomplete="off">
-            <div class="input mT10">
+            <div class="input mT10 fs08">
               {%if requestGET.position%}
               <a href="{{url.that}}" class="addon btn"><i class="sf-eraser"></i></a>
               {%endif%}
@@ -265,7 +265,7 @@ body .printA6 div{color:#000!important;}
 
 
 {%block iname%}
-<label for="name">{%trans "Name"%} </label>
+<label for="name">{%trans "Name"%} <small class="fc-red">* الزامی</small></label>
 <div class="input">
   <input type="text" name="name" id="name" value="{{mokebuserDetail.firstname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
 </div>
@@ -273,7 +273,7 @@ body .printA6 div{color:#000!important;}
 
 
 {%block ifamily%}
-<label for="lastName">{%trans "Last name"%} </label>
+<label for="lastName">{%trans "Last name"%} <small class="fc-red">* الزامی</small></label>
 <div class="input">
   <input type="text" name="lastName" id="lastName" value="{{mokebuserDetail.lastname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
 </div>
@@ -297,9 +297,9 @@ body .printA6 div{color:#000!important;}
 
 
 {%block incode%}
-<label for="nationalcode">{%trans "National code"%} </label>
+<label for="nationalcode">{%trans "National code"%} <small class="fc-red">* الزامی</small></label>
 <div class="input">
-  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%}' value="{{mokebuserDetail.nationalcode}}" min='1' max='9999999999' required >
+  <input type="tel" name="nationalcode" id="nationalcode" value="{{mokebuserDetail.nationalcode}}" min='1' max='9999999999' required >
 </div>
 {%endblock%}
 
@@ -427,7 +427,7 @@ body .printA6 div{color:#000!important;}
 
 
 {%block iMobileKarabala%}
-<label for="mobile">{%trans "Mobile"%} <small>۱۰ رقمی - الزامی</small>  </label>
+<label for="mobile">{%trans "Mobile"%} <small class="fc-red">* الزامی</small></label>
 <div class="input ltr">
   <input type="tel" name="mobile" id="mobile" value="{{mokebuserDetail.mobile}}" maxlength='50' autofocus autocomplete="new-password" required>
 </div>
