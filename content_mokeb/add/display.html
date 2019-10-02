@@ -118,17 +118,25 @@
 
 {%block a6_chap_detail%}
 
-<div class="panel printA6">
-  <div class="pad">
+<div class="printA6">
+  <div class="printArea pA15" data-size='A6'>
 
-    <div class="f align-center mB5">
-      <div class="cauto pRa10">
-        <img src="{{url.static}}/images/logo/khadije.png" class="logo">
-      </div>
+    {%if mokebuserDetail.noposition%}
+    <div class="msg mB5 pTB2 success txtC txtB">بدون جایگاه</div>
+    {%endif%}
+    {%if checkNationalcode == 'expire'%}
+    <div class="msg mB5 pTB2 warn txtC txtB">منقضی شده</div>
+    {%endif%}
+
+    <div class="f msg mB5 pTB2">
       <div class="c">
-        <h3>{{site.title}}</h3>
+        {%if mokebuserDetail.gender == 'male'%}آقای {%elseif mokebuserDetail.gender == 'female'%}خانم{%endif%}
+
+        {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
+          {{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b>
+        {%endif%}
       </div>
-      <div class="cauto os txtRa">
+      <div class="cauto txtRa">
         {%if mokebuserDetail.position%}
         <div class="placeNumber"><small class="fs05">#</small><b>{{mokebuserDetail.position}}</b></div>
         {%elseif mokebuserDetail.oldposition%}
@@ -136,33 +144,19 @@
         {%endif%}
       </div>
     </div>
-    {%if mokebuserDetail.noposition%}
-    <div class="msg pTB5 success txtC txtB">بدون جایگاه</div>
-    {%endif%}
-    {%if checkNationalcode == 'expire'%}
-    <div class="msg pTB5 warn txtC txtB">منقضی شده</div>
-    {%endif%}
-    <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%}">
-      {%if mokebuserDetail.gender == 'male'%}آقای {%elseif mokebuserDetail.gender == 'female'%}خانم{%endif%}
 
-      {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
-        {{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b>
-      {%endif%}
-      {{mokebuserDetail.mobile | fitNumber(false)}}
-    </div>
-
-    <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
+    <div class="msg mB5 pTB2{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
       <div>تاریخ پذیرش  در موکب<span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
       <div>اتمام زمان پذیرش <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
     </div>
 
-    <div class="msg pTB5{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
-      <div>موکب {{mokebDetail.title}}</div>
-      {%if mokebDetail.address%}<div>آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
-      {%if mokebDetail.desc%}<div class="mT10 fs09">{{mokebDetail.desc}}</div>{%endif%}
+    <div class="msg mB5 pTB2{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
+
+      {%if mokebDetail.address%}<div class="fs09">موکب {{mokebDetail.title}} به آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
+      {%if mokebDetail.desc%}<div class="mT5 fs08">{{mokebDetail.desc}}</div>{%endif%}
     </div>
 
-    <div class="pTB5 txtC">
+    <div class="txtC">
         <svg id="barcode" data-val='{{mokebuserDetail.nationalcode}}'></svg>
     </div>
 
@@ -179,7 +173,8 @@
 body .printA6 div{color:#000!important;}
 .printA6 .logo{display:block;margin:0; max-height: 75px;}
 .printA6 h3{font-weight: 900;font-size: 1em;margin-bottom: 0}
-.printA6 .placeNumber{font-size: 50px;line-height: 50px;}
+.printA6 .placeNumber{font-size: 28px;line-height: 28px;}
+.printA6 .printArea{padding-top: 180px;padding-left: 40px;padding-right: 40px;}
 
 </style>
 
