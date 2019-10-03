@@ -19,7 +19,7 @@ body .printA6 div{color:#000!important;}
 .printA6 .printArea{padding-top: 180px;padding-left: 40px;padding-right: 40px;}
 
 .dots{font-size: 1.4em;padding: 10px 10px 0}
-.dots a{display: inline-block;width:30px;height:30px;line-height:30px;text-align:center;font-weight: 100;border-radius:50%; margin-bottom: 5px;overflow: hidden;}
+.dots a{display: inline-block;width:30px;height:30px;line-height:30px;text-align:center;font-weight: 100;border-radius:50%; margin-bottom: 5px;overflow: hidden;border:1px solid transparent;}
 .panel{overflow: initial;}
 
 </style>
@@ -33,12 +33,12 @@ body .printA6 div{color:#000!important;}
       {%if value.type == 'free'%}
 {%if nextDot is null%}
 {%set nextDot = value.number%}
-        <a href="{{url.that}}?position={{value.number}}" class="success" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی">{{value.number}}</a>
+        <a href="{{url.that}}?position={{value.number}}" class="primary outline" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی">{{value.number}}</a>
 {%else%}
-        <a href="{{url.that}}?position={{value.number}}" class="primary" title="جایگاه  {{value.number | fitNumber}} - خالی">{{value.number}}</a>
+        <a href="{{url.that}}?position={{value.number}}" class="light" title="جایگاه  {{value.number | fitNumber}} - خالی">{{value.number}}</a>
 {%endif%}
       {%else%}
-        <a href="{{url.that}}?position={{value.number}}" class="danger" title="جایگاه  {{value.number | fitNumber}} - پر">{{value.number}}</a>
+        <a href="{{url.that}}?position={{value.number}}" class="success" title="جایگاه  {{value.number | fitNumber}} - پر">{{value.number}}</a>
       {%endif%}
       {%endfor%}
     </div>
@@ -83,7 +83,7 @@ body .printA6 div{color:#000!important;}
 
     {%if checkNationalcode == 'signuped' and not mokebuserDetail.noposition%}
       <div class="cauto pLa10">
-        <div class="btn danger" data-confirm data-data='{"forceexit": true}'>ثبت خروج  قبل از موعد</div>
+        <div class="btn danger outline" data-confirm data-data='{"forceexit": true}'>ثبت خروج  قبل از موعد</div>
       </div>
     {%endif%}
 
@@ -222,7 +222,7 @@ body .printA6 div{color:#000!important;}
   </div>
 </div>
 
-      <div class="msg pTB0">
+      <div class="msg pTB0 mB10">
         <div class="check1">
          <input type="checkbox" name="noposition" id="noposition" >
          <label for="noposition">ثبت به عنوان همراه، کودک یا اقامت در حیاط موکب - بدون نیاز به رزرو موقعیت</label>
