@@ -29,15 +29,15 @@
       <br>
       در صورتی که می‌خواهید از وضعیت ثبت‌نام خود مطلع شوید کد ملی خود را در قسمت پایین وارد کرده و گزینه بررسی را بزنید
     </p>
-    <form method="get" action="{{url.this}}">
+    <form method="get" action="{{url.this}}" autocomplete="off">
       <div class="input">
-        <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='{%trans "10 digit national code"%} *' maxlength="10"  minlength="1"  required>
+        <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='{%trans "10 digit national code"%} *' maxlength="10"  minlength="1"  required autocomplete="new-password">
 
         <button class="addon btn success">{%trans "Check"%}</button>
       </div>
     </form>
     {%if checkNationalcode%}
-      <div class="mA10 fs14">
+      <div class="mTB10 fs14">
 
       {%if checkNationalcode == 'invalid'%}
         <div class="msg warn">کد ملی وارد شده صحیح نیست. لطفا کد ملی خود را به صورت صحیح وارد کنید</div>
@@ -49,7 +49,7 @@
 
 
       {%if checkNationalcode == 'not-signuped'%}
-        <div class="msg info">شما هنوز ثبت‌نام نشده‌اید. در صورتی که فرصت ثبت‌نام باقی است لطفا نست به ثبت‌نام از طریق فرم زیر اقدام کنید.</div>
+        <div class="msg info">شما هنوز ثبت‌نام نشده‌اید. در صورتی که فرصت ثبت‌نام باقی است لطفا نسبت به ثبت‌نام از طریق فرم زیر اقدام کنید.</div>
       {%endif%}
 
       </div>
@@ -79,6 +79,8 @@
 
       <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
     </div>
+    {%else%}
+    <div class="msg pain txtC txtB fs20">ثبت نام در حال حاضر فعال نیست</div>
     {%endif%}
 
     {%if karbalasettingSaved.koyemohebbat%}
@@ -138,7 +140,7 @@
 {%block iname%}
 <label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{userdetail.firstname}}" maxlength='40' minlength="2" pattern=".{2,40}" title2='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{userdetail.firstname}}" maxlength='40' minlength="2" pattern=".{2,40}" title2='{%trans "Enter a valid name from 2 to 40 character"%}' required autocomplete="new-password">
 </div>
 {%endblock%}
 
@@ -146,7 +148,7 @@
 {%block ifamily%}
 <label for="lastName">{%trans "Last name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{userdetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title2='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
+  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{userdetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title2='{%trans "Enter a valid last name from 2 to 40 character"%}' required autocomplete="new-password">
 </div>
 {%endblock%}
 
@@ -307,7 +309,7 @@
 {%block iPhone%}
 <label for="phone">{%trans "Phone"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input ltr">
-  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 02536505460' value="{{userdetail.phone}}" maxlength='50' required>
+  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 02536505460' value="{{userdetail.phone}}" maxlength='50' required autocomplete="new-password">
 </div>
 {%endblock%}
 
