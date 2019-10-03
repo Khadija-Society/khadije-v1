@@ -20,6 +20,7 @@ body .printA6 div{color:#000!important;}
 
 .dots{font-size: 1.4em;padding: 10px 10px 0}
 .dots a{display: inline-block;width:30px;height:30px;line-height:30px;text-align:center;font-weight: 100;border-radius:50%; margin-bottom: 5px;overflow: hidden;}
+.panel{overflow: initial;}
 
 </style>
 
@@ -76,7 +77,7 @@ body .printA6 div{color:#000!important;}
     {%elseif checkNationalcode == 'signuped'%}
       <div class="msg pTB3 mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
     {%elseif checkNationalcode == 'not-signuped'%}
-      <div class="msg pTB3 mB0-f info txtC txtB mB20">پذیرش جدید </div>
+      <div class="msg pTB3 mB0-f info txtC txtB mB20">پذیرش جدید  {%if requestGET.position%}در جایگاه  <b>{{requestGET.position | fitNumber}}</b>{%endif%}</div>
     {%endif%}
   </div>
 
@@ -190,24 +191,38 @@ body .printA6 div{color:#000!important;}
 
     <form class="" method="post" autocomplete="off">
 
-      {%if requestGET.position%}
-        <div class="msg txtB txtC primary2">
-          جایگاه <b>{{requestGET.position | fitNumber}}</b>
-        </div>
-      {%endif%}
-{{block ('iMobileKarabala') }}
-      {%if not requestGET.cnationalcode%}
-        {{block('incode')}}
-      {%endif%}
+<div class="f">
+  <div class="c">
+    {{block ('iMobileKarabala') }}
+  </div>
+{%if not requestGET.cnationalcode%}
+  <div class="c6 pLa5">
+    {{block('incode')}}
+  </div>
+{%endif%}
+</div>
 
-{{block ('iname') }}
-{{block ('ifamily') }}
 
+<div class="f">
+  <div class="c6">
+    {{block ('iname') }}
+  </div>
+  <div class="c6 pLa5">
+    {{block ('ifamily') }}
+  </div>
+</div>
 {{block ('icity') }}
-{{block ('iMarital') }}
-{{block ('igender') }}
 
-      <div class="msg ">
+<div class="f">
+  <div class="c6 ">
+    {{block ('iMarital') }}
+  </div>
+  <div class="c6 pLa5">
+    {{block ('igender') }}
+  </div>
+</div>
+
+      <div class="msg pTB0">
         <div class="check1">
          <input type="checkbox" name="noposition" id="noposition" >
          <label for="noposition">ثبت به عنوان همراه، کودک یا اقامت در حیاط موکب - بدون نیاز به رزرو موقعیت</label>
@@ -220,9 +235,9 @@ body .printA6 div{color:#000!important;}
      </div>
 
 
-     <div class="f mT20">
+     <div class="f">
        <div class="c">{{block ('iSave') }}</div>
-       <div class="cauto"><a href="{{url.that}}" class="btn mT20 mLa5">انصراف</a></div>
+       <div class="cauto"><a href="{{url.that}}" class="btn mLa5">انصراف</a></div>
      </div>
 
     </form>
@@ -527,11 +542,11 @@ body .printA6 div{color:#000!important;}
 
 
 {%block iadd%}
-<button class="btn primary block mT20">{%trans "Add"%}</button>
+<button class="btn primary block">{%trans "Add"%}</button>
 {%endblock%}
 
 {%block iSave%}
-<button class="btn primary block mT20">{%trans "Signup"%}</button>
+<button class="btn primary block">{%trans "Signup"%}</button>
 {%endblock%}
 
 
