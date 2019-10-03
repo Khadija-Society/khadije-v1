@@ -136,7 +136,7 @@ class application
 		$link          = [];
 		$link['type']  = 'banner';
 		$link['image'] = \dash\url::static(). '/images/app/karbala201909.jpg';
-		$link['url']   = \dash\url::kingdom(). '/karbala2';
+		$link['url']   = \dash\url::kingdom(). '/arbaeen98';
 		return $link;
 	}
 
