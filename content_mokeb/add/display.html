@@ -60,7 +60,7 @@ body .printA6 div{color:#000!important;}
 
   <div class="c5 s12">
     {%if fullFree%}
-    <div class="panel mB10 p0">
+    <div class="panel mB10 {%if requestGET.cnationalcode or mokebuserDetail.nationalcode or requestGET.position%}p0{%endif%}">
         <div class="dots">
           {%set nextDot = null%}
           {%for key, value in fullFree%}
