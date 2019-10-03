@@ -25,30 +25,9 @@ body .printA6 div{color:#000!important;}
 </style>
 
 
-{%if fullFree%}
-<div class="panel mB10 p0">
-    <div class="dots">
-      {%set nextDot = null%}
-      {%for key, value in fullFree%}
-      {%if value.type == 'free'%}
-{%if nextDot is null%}
-{%set nextDot = value.number%}
-        <a href="{{url.that}}?position={{value.number}}" class="primary outline" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی">{{value.number}}</a>
-{%else%}
-        <a href="{{url.that}}?position={{value.number}}" class="light" title="جایگاه  {{value.number | fitNumber}} - خالی">{{value.number}}</a>
-{%endif%}
-      {%else%}
-        <a href="{{url.that}}?position={{value.number}}" class="success" title="جایگاه  {{value.number | fitNumber}} - پر">{{value.number}}</a>
-      {%endif%}
-      {%endfor%}
-    </div>
-</div>
-{%else%}
-<p class="msg danger fs30">جایگاه تعریف نشده است!</p>
-{%endif%}
 
-<div class="f fs14 mB10 p0">
-  <div class="c4 pRa10">
+<div class="f justify-center fs14 mB10 p0">
+  <div class="c5">
       <form method="get" action="{{url.that}}" autocomplete="off">
         <div class="input">
           <button class="addon btn light fs08">{%trans "Check"%}</button>
@@ -57,29 +36,17 @@ body .printA6 div{color:#000!important;}
       </form>
   </div>
 
-{%if requestGET.cnationalcode or mokebuserDetail.nationalcode%}
-  <div class="cauto pRa10">
-    <a href="{{url.that}}" class="addon btn secondary"><i class="sf-eraser pRa5"></i><span>خالی کن</span></a>
+{%if requestGET.cnationalcode or mokebuserDetail.nationalcode or requestGET.position%}
+  <div class="c pLa10">
+    <a href="{{url.that}}" class="addon btn secondary block"><i class="sf-eraser pRa5"></i><span>خالی کن</span></a>
   </div>
 {%endif%}
 
 {%if checkNationalcode == 'expire' or checkNationalcode == 'signuped'%}
-  <div class="cauto pRa10">
+  <div class="cauto pLa10">
     <div data-kerkere='.showEditProfile' data-kerkere-icon class="btn">ویرایش اطلاعات</div>
   </div>
 {%endif%}
-
-  <div class="c">
-    {%if checkNationalcode == 'invalid'%}
-      <div class="msg pTB3 mB0-f danger txtC txtB">کد ملی اشتباه است</div>
-    {%elseif checkNationalcode == 'expire'%}
-      <div class="msg pTB3 mB0-f danger txtC txtB">منقضی شده</div>
-    {%elseif checkNationalcode == 'signuped'%}
-      <div class="msg pTB3 mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
-    {%elseif checkNationalcode == 'not-signuped'%}
-      <div class="msg pTB3 mB0-f info txtC txtB mB20">پذیرش جدید  {%if requestGET.position%}در جایگاه  <b>{{requestGET.position | fitNumber}}</b>{%endif%}</div>
-    {%endif%}
-  </div>
 
     {%if checkNationalcode == 'signuped' and not mokebuserDetail.noposition%}
       <div class="cauto pLa10">
@@ -89,31 +56,66 @@ body .printA6 div{color:#000!important;}
 
 </div>
 
-<div class="f justify-center fs14">
+<div class="f justify-center">
 
-{%if checkNationalcode == 'signuped' or checkNationalcode == 'expire' or checkNationalcode == 'noposition'  %}
-  <div class="c8 s12 pLa10">
-    <div class="showEditProfile" data-kerkere-content='hide'>
+  <div class="c5 s12">
+    {%if fullFree%}
+    <div class="panel mB10 p0">
+        <div class="dots">
+          {%set nextDot = null%}
+          {%for key, value in fullFree%}
+          {%if value.type == 'free'%}
+    {%if nextDot is null%}
+    {%set nextDot = value.number%}
+            <a href="{{url.that}}?position={{value.number}}" class="primary outline" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی">{{value.number}}</a>
+    {%else%}
+            <a href="{{url.that}}?position={{value.number}}" class="light" title="جایگاه  {{value.number | fitNumber}} - خالی">{{value.number}}</a>
+    {%endif%}
+          {%else%}
+            <a href="{{url.that}}?position={{value.number}}" class="success" title="جایگاه  {{value.number | fitNumber}} - پر">{{value.number}}</a>
+          {%endif%}
+          {%endfor%}
+        </div>
+    </div>
+    {%else%}
+    <p class="msg danger fs30">جایگاه تعریف نشده است!</p>
+    {%endif%}
+  </div>
+
+  {%if checkNationalcode%}
+  <div class="c s12 pLa10 fs14 ">
+    <div class="mB10 p0">
+      {%if checkNationalcode == 'invalid'%}
+        <div class="msg pTB3 mB0-f danger txtC txtB">کد ملی اشتباه است</div>
+      {%elseif checkNationalcode == 'expire'%}
+        <div class="msg pTB3 mB0-f danger txtC txtB">منقضی شده</div>
+      {%elseif checkNationalcode == 'signuped'%}
+        <div class="msg pTB3 mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
+      {%elseif checkNationalcode == 'not-signuped'%}
+        <div class="msg pTB3 mB0-f info txtC txtB mB20">پذیرش جدید  {%if requestGET.position%}در جایگاه  <b>{{requestGET.position | fitNumber}}</b>{%endif%}</div>
+      {%endif%}
+    </div>
+
+{%if checkNationalcode == 'signuped' or checkNationalcode == 'expire' or checkNationalcode == 'noposition' %}
+    <div class="showEditProfile mB10 p0" data-kerkere-content='hide'>
         <div class="panel">
-          <div class="pad">
+          <div class="pad p0">
               {{block('newSignupUpdate')}}
           </div>
         </div>
     </div>
     {{block('a6_chap_detail')}}
-  </div>
 {%endif%}
 
-
 {%if checkNationalcode == 'not-signuped'%}
-  <div class="c6 s12 pLa10">
-    <div class="panel">
+    <div class="panel p0">
       <div class="pad">
           {{block('newSignup')}}
       </div>
     </div>
-  </div>
 {%endif%}
+  </div>
+  {%endif%}
 
 
 </div>
