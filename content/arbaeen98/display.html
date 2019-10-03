@@ -79,8 +79,6 @@
 
       <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
     </div>
-    {%else%}
-    <div class="msg pain txtC txtB fs20">ثبت نام در حال حاضر فعال نیست</div>
     {%endif%}
 
     {%if karbalasettingSaved.koyemohebbat%}
@@ -125,7 +123,8 @@
 
      {{block ('iSave') }}
     </form>
-
+    {%else%}
+    <div class="msg pain txtC txtB fs20">ثبت نام در حال حاضر فعال نیست</div>
     {%endif%}
  </div>
 
