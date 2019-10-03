@@ -24,6 +24,7 @@ body .printA6 div{color:#000!important;}
 </style>
 
 
+{%if fullFree%}
 <div class="panel mB10">
     <div class="dots">
       {%set nextDot = null%}
@@ -41,6 +42,9 @@ body .printA6 div{color:#000!important;}
       {%endfor%}
     </div>
 </div>
+{%else%}
+<p class="msg danger fs30">جایگاه تعریف نشده است!</p>
+{%endif%}
 
 
 <div class="f justify-center fs14">
@@ -57,6 +61,7 @@ body .printA6 div{color:#000!important;}
             <button class="addon btn fs08">{%trans "Check"%}</button>
           </div>
         </form>
+
 {%if false%}
         <span data-kerkere-icon data-kerkere='.myPositionShow' class="badge success mTB20">جستجو با جایگاه</span>
         <div {%if requestGET.position%} {%else%} data-kerkere-content='hide' {%endif%} class="myPositionShow mB20">
@@ -95,6 +100,7 @@ body .printA6 div{color:#000!important;}
       </div>
     </div>
   </div>
+
 
 {%if checkNationalcode == 'signuped' or checkNationalcode == 'expire' or checkNationalcode == 'noposition'  %}
   <div class="c8 s12 pLa10">

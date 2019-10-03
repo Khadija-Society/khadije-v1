@@ -18,6 +18,18 @@ class view
 		\dash\data::badge2_shortkey(121);
 
 		\dash\data::maxUploadSize(\dash\utility\upload::max_file_upload_size(true));
+
+
+		$args =
+		[
+			'pagenation' => false,
+			'status' => 'enable',
+
+		];
+		$list = \lib\app\place::list(null, $args);
+		$list = \lib\app\mokebuser::place_dashboard($list);
+		\dash\data::mokebList($list);
+
 	}
 }
 ?>

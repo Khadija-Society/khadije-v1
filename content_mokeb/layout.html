@@ -6,5 +6,11 @@
     <li><a href="{{url.here}}"><i class='sf-gauge'></i> <span>{% trans "Manage Panel" %}</span></a></li>
     <li><a href="{{url.here}}/place"><i class='sf-pin'></i> <span>{% trans "Place" %}</span></a></li>
 
+    <li class="hr"></li>
+
+
+{%for key, value in mokebList%}
+	<li><a class="" href='{{url.here}}/add/{{value.id}}'><i class='sf-home'></i> <span>{{value.title}}</span></a></li>
+{%endfor%}
 
 {%endblock%}

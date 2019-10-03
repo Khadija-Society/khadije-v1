@@ -21,7 +21,7 @@ class view
 		$myTitle .= " / ظرفیت ". \dash\utility\human::fitNumber($capacity);
 		$myTitle .= " / پر ". \dash\utility\human::fitNumber($free);
 		$myTitle .= " / خالی ". \dash\utility\human::fitNumber($full);
-		$myTitle .= " / تخلیه ". \dash\utility\human::fitNumber(\dash\data::mokebDetail_cleantime());
+		// $myTitle .= " / تخلیه ". \dash\utility\human::fitNumber(\dash\data::mokebDetail_cleantime());
 
 		\dash\data::page_title($myTitle);
 
