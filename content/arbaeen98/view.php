@@ -9,6 +9,8 @@ class view
 		\dash\data::page_title("ثبت‌نام کربلا برنامه کوی محبت");
 		\dash\data::page_desc(\dash\data::site_desc());
 
+		\dash\data::page_cover(\dash\url::static(). '/images/app/arbaeen2019.jpg');
+
 		\dash\data::userdetail(\dash\db\users::get(['id' => \dash\user::id(), 'limit' => 1]));
 
 		if(isset($_SESSION['NEW_KARBALA_SIGNUP']))
