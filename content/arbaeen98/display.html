@@ -15,6 +15,22 @@
   </div>
 
 
+    {%if newKarbalaSignup%}
+    <div class="msg success txtB txtC">
+      زائر گرامی
+      <br>
+      ثبت نام شما انجام شد
+      <br>
+      ثبت نام به منزله اعزام نمی باشد
+      <br>
+
+      شما هم می‌توانید در کمک به اعزام زائر اولی ها سهیم باشید
+      <br>
+
+      <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
+    </div>
+    {%endif%}
+
   <div class="dcard">
    <div class="statistic sm teal">
     <div class="label mB10"> تعداد افراد ثبت‌نام شده تاکنون</div>
@@ -64,22 +80,6 @@
       ضمن تشکر از مراجعه جهت ثبت‌نام، همانطور که در برنامه به اطلاع رسید با توجه به کثرت تقاضا، امکان اعزام تمامی عزیزان مهیا نمی‌باشد، لذا از طریق قرعه‌کشی افراد انتخاب می‌شوند.
     </div>
 
-
-    {%if newKarbalaSignup%}
-    <div class="msg success txtB txtC">
-      زائر گرامی
-      <br>
-      ثبت نام شما انجام شد
-      <br>
-      ثبت نام به منزله اعزام نمی باشد
-      <br>
-
-      شما هم می‌توانید در کمک به اعزام زائر اولی ها سهیم باشید
-      <br>
-
-      <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
-    </div>
-    {%endif%}
 
     {%if karbalasettingSaved.koyemohebbat%}
     <form  method="post" autocomplete="off">
