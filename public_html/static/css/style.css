@@ -848,6 +848,11 @@ body[data-sidebar] #sidebar{left:0;}
 	display: block;
 	margin: 5px auto;
 }
+#sFooter .shamad{
+	max-width: 100px;
+	display: block;
+	margin: 5px auto;
+}
 #sFooter .brand{
 	width: 140px;
 	height: 140px;
