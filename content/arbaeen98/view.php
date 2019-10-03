@@ -1,5 +1,5 @@
 <?php
-namespace content\karbala2;
+namespace content\arbaeen98;
 
 
 class view

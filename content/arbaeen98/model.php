@@ -1,5 +1,5 @@
 <?php
-namespace content\karbala2;
+namespace content\arbaeen98;
 
 
 class model
@@ -48,7 +48,7 @@ class model
 			\dash\notif::ok('ثبت ‌نام شما با موفقیت انجام شد.'. ' '. 'لطفا منتظر اعلام نتایج قرعه‌کشی بمانید', ['alerty' => true]);
 
 			$_SESSION['NEW_KARBALA_SIGNUP'] = true;
-			\dash\redirect::to(\dash\url::here(). '/karbala2');
+			\dash\redirect::to(\dash\url::this());
 		}
 
 	}
