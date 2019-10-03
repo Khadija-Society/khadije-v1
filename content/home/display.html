@@ -3,6 +3,17 @@
 
 {%block content%}
 
+<div class="f">
+  <div class="c12 s12 pA5">
+  <a href="{{url.kingdom}}/arbaeen98" class="specialBanner">
+    <img src="{{url.static}}/images/app/arbaeen2019.jpg" alt="{{site.title}}">
+  </a>
+  </div>
+</div>
+
+
+
+
 <div class="f mB10">
   <div class="c6 s12 pA5">
     <a href="{{url.kingdom}}/donate?nazr=arbaeen">
@@ -16,6 +27,7 @@
   </div>
 </div>
 
+
   <div class="f justify-center mB25">
     <div class="c8 s12 pRa10">
 
@@ -26,7 +38,7 @@
 
 {%set defaultImageTop = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
         <div class="sp-slides">
-{%if topSliderPosts%}
+{%if topSliderPosts %}
 {%for key, myNews in topSliderPosts%}
 {%set topSliderPostsID = topSliderPostsID | merge([myNews.id]) %}
           <div class="sp-slide">
@@ -46,6 +58,7 @@
 {%endif%}
         </div>
       </div>
+
     </div>
 
 {%if false%}
@@ -71,8 +84,6 @@
     </div>
 
   </div>
-
-
 
 
   <section class="f justify-center picto fs07">

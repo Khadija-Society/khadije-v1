@@ -386,6 +386,16 @@ body[data-sidebar] #sidebar{left:0;}
 	display: block;
 }
 
+
+.specialBanner{
+	display: block;
+	margin: 0 auto;
+	/*padding: 10px;*/
+	/*max-width: 500px;*/
+}
+
+
+
 /* sprite*/
 [class^="sprite-"] {
 	background-image: url('../images/homepage-v3/sprite.png');
