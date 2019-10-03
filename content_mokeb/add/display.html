@@ -18,8 +18,8 @@ body .printA6 div{color:#000!important;}
 .printA6 h3{font-weight: 900;font-size: 1em;margin-bottom: 0}
 .printA6 .placeNumber{font-size: 28px;line-height: 28px;}
 
-.dots{font-size: 1.4em;padding: 10px 10px 0}
-.dots a{display: inline-block;width:30px;height:30px;line-height:30px;text-align:center;font-weight: 100;border-radius:50%; margin-bottom: 5px;overflow: hidden;border:1px solid transparent;}
+.dots{font-size: 1.3em;padding: 10px 10px 0}
+.dots a{display: inline-block;width:26px;height:26px;line-height:26px;text-align:center;font-weight: 100;border-radius:50%; margin-bottom: 5px;overflow: hidden;border:1px solid transparent;}
 .panel{overflow: initial;}
 
 </style>
@@ -67,12 +67,12 @@ body .printA6 div{color:#000!important;}
           {%if value.type == 'free'%}
     {%if nextDot is null%}
     {%set nextDot = value.number%}
-            <a href="{{url.that}}?position={{value.number}}" class="primary outline" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی">{{value.number}}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}primary outline{%endif%}" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی">{{value.number}}</a>
     {%else%}
-            <a href="{{url.that}}?position={{value.number}}" class="light" title="جایگاه  {{value.number | fitNumber}} - خالی">{{value.number}}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}light{%endif%}" title="جایگاه  {{value.number | fitNumber}} - خالی">{{value.number}}</a>
     {%endif%}
           {%else%}
-            <a href="{{url.that}}?position={{value.number}}" class="success" title="جایگاه  {{value.number | fitNumber}} - پر">{{value.number}}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}success{%endif%}" title="جایگاه  {{value.number | fitNumber}} - پر">{{value.number}}</a>
           {%endif%}
           {%endfor%}
         </div>
