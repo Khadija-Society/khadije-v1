@@ -12,11 +12,11 @@
   .c8.s12.pLa10{padding:0!important}
 }
 
+.printA6 .printFitArea {max-width: 8cm; margin: 0 auto;padding-top: 4cm;}
 body .printA6 div{color:#000!important;}
 .printA6 .logo{display:block;margin:0; max-height: 75px;}
 .printA6 h3{font-weight: 900;font-size: 1em;margin-bottom: 0}
 .printA6 .placeNumber{font-size: 28px;line-height: 28px;}
-.printA6 .printArea{padding-top: 180px;padding-left: 40px;padding-right: 40px;}
 
 .dots{font-size: 1.4em;padding: 10px 10px 0}
 .dots a{display: inline-block;width:30px;height:30px;line-height:30px;text-align:center;font-weight: 100;border-radius:50%; margin-bottom: 5px;overflow: hidden;border:1px solid transparent;}
@@ -26,7 +26,7 @@ body .printA6 div{color:#000!important;}
 
 
 {%if fullFree%}
-<div class="panel mB10">
+<div class="panel mB10 p0">
     <div class="dots">
       {%set nextDot = null%}
       {%for key, value in fullFree%}
@@ -47,7 +47,7 @@ body .printA6 div{color:#000!important;}
 <p class="msg danger fs30">جایگاه تعریف نشده است!</p>
 {%endif%}
 
-<div class="f fs14 mB10">
+<div class="f fs14 mB10 p0">
   <div class="c4 pRa10">
       <form method="get" action="{{url.that}}" autocomplete="off">
         <div class="input">
@@ -136,44 +136,45 @@ body .printA6 div{color:#000!important;}
 
 <div class="printA6">
   <div class="printArea pA15" data-size='A6'>
+    <div class="printFitArea">
+      {%if mokebuserDetail.noposition%}
+      <div class="msg mB5 pTB2 success txtC txtB">بدون جایگاه</div>
+      {%endif%}
+      {%if checkNationalcode == 'expire'%}
+      <div class="msg mB5 pTB2 warn txtC txtB">منقضی شده</div>
+      {%endif%}
 
-    {%if mokebuserDetail.noposition%}
-    <div class="msg mB5 pTB2 success txtC txtB">بدون جایگاه</div>
-    {%endif%}
-    {%if checkNationalcode == 'expire'%}
-    <div class="msg mB5 pTB2 warn txtC txtB">منقضی شده</div>
-    {%endif%}
+      <div class="f msg mB5 pTB2">
+        <div class="c">
+          {%if mokebuserDetail.gender == 'male'%}آقای {%elseif mokebuserDetail.gender == 'female'%}خانم{%endif%}
 
-    <div class="f msg mB5 pTB2">
-      <div class="c">
-        {%if mokebuserDetail.gender == 'male'%}آقای {%elseif mokebuserDetail.gender == 'female'%}خانم{%endif%}
-
-        {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
-          {{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b>
-        {%endif%}
+          {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
+            {{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b>
+          {%endif%}
+        </div>
+        <div class="cauto txtRa">
+          {%if mokebuserDetail.position%}
+          <div class="placeNumber"><small class="fs05">#</small><b>{{mokebuserDetail.position}}</b></div>
+          {%elseif mokebuserDetail.oldposition%}
+          <div class="placeNumber"><small class="fs05 fc-mute">#</small><b class="fc-mute">{{mokebuserDetail.oldposition}}</b></div>
+          {%endif%}
+        </div>
       </div>
-      <div class="cauto txtRa">
-        {%if mokebuserDetail.position%}
-        <div class="placeNumber"><small class="fs05">#</small><b>{{mokebuserDetail.position}}</b></div>
-        {%elseif mokebuserDetail.oldposition%}
-        <div class="placeNumber"><small class="fs05 fc-mute">#</small><b class="fc-mute">{{mokebuserDetail.oldposition}}</b></div>
-        {%endif%}
+
+      <div class="msg mB5 pTB2{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
+        <div>تاریخ پذیرش  در موکب<span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
+        <div>اتمام زمان پذیرش <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
       </div>
-    </div>
 
-    <div class="msg mB5 pTB2{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
-      <div>تاریخ پذیرش  در موکب<span class="floatL ltr">{{mokebuserDetail.datecreated | dt}}</span></div>
-      <div>اتمام زمان پذیرش <span class="floatL ltr">{{mokebuserDetail.expire | dt}}</span></div>
-    </div>
+      <div class="msg mB5 pTB2{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
 
-    <div class="msg mB5 pTB2{%if checkNationalcode == 'expire'%} danger2 {%endif%} fs08">
+        {%if mokebDetail.address%}<div class="fs09">موکب {{mokebDetail.title}} به آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
+        {%if mokebDetail.desc%}<div class="mT5 fs08">{{mokebDetail.desc}}</div>{%endif%}
+      </div>
 
-      {%if mokebDetail.address%}<div class="fs09">موکب {{mokebDetail.title}} به آدرس <b>{{mokebDetail.address}}</b></div>{%endif%}
-      {%if mokebDetail.desc%}<div class="mT5 fs08">{{mokebDetail.desc}}</div>{%endif%}
-    </div>
-
-    <div class="txtC">
-        <svg id="barcode" data-val='{{mokebuserDetail.nationalcode}}'></svg>
+      <div class="txtC">
+          <svg id="barcode" data-val='{{mokebuserDetail.nationalcode}}'></svg>
+      </div>
     </div>
 
   </div>
