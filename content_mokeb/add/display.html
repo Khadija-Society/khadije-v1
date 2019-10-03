@@ -46,61 +46,41 @@ body .printA6 div{color:#000!important;}
 <p class="msg danger fs30">جایگاه تعریف نشده است!</p>
 {%endif%}
 
-
-<div class="f justify-center fs14">
-  <div class="c4 s12 fs12 pRa10 p0">
-
-    <div method="get" action="{{url.that}}" autocomplete="off" class="panel">
-      <div class="pad">
-        <form method="get" action="{{url.that}}" autocomplete="off">
-          <div class="input">
-            {%if requestGET.cnationalcode%}
-            <a href="{{url.that}}" class="addon btn"><i class="sf-eraser"></i></a>
-            {%endif%}
-            <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
-            <button class="addon btn fs08">{%trans "Check"%}</button>
-          </div>
-        </form>
-
-{%if false%}
-        <span data-kerkere-icon data-kerkere='.myPositionShow' class="badge success mTB20">جستجو با جایگاه</span>
-        <div {%if requestGET.position%} {%else%} data-kerkere-content='hide' {%endif%} class="myPositionShow mB20">
-
-          <form method="get" action="{{url.that}}" autocomplete="off">
-            <div class="input mT10 fs08">
-              {%if requestGET.position%}
-              <a href="{{url.that}}" class="addon btn"><i class="sf-eraser"></i></a>
-              {%endif%}
-              <input type="tel" name="position" value="{{requestGET.position}}" placeholder='جایگاه' maxlength="10"  minlength="1" >
-              <button class="addon btn">نمایش جایگاه</button>
-            </div>
-          </form>
+<div class="f fs14 mB10">
+  <div class="c4 pRa10">
+      <form method="get" action="{{url.that}}" autocomplete="off">
+        <div class="input">
+          <button class="addon btn light fs08">{%trans "Check"%}</button>
+          <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
+          {%if requestGET.cnationalcode%}
+          <a href="{{url.that}}" class="addon btn secondary"><i class="sf-eraser pRa5"></i><span>خالی</span></a>
+          {%endif%}
         </div>
+      </form>
+  </div>
+{%if checkNationalcode == 'expire' or checkNationalcode == 'signuped'%}
+  <div class="cauto pRa10">
+    <div data-kerkere='.showEditProfile' data-kerkere-icon class="btn">ویرایش اطلاعات</div>
+  </div>
 {%endif%}
 
-
-        {%if checkNationalcode%}
-          <br>
-        {%endif%}
-
-        {%if checkNationalcode == 'invalid'%}
-          <div class="msg mB0-f danger txtC txtB">کد ملی اشتباه است</div>
-        {%elseif checkNationalcode == 'expire'%}
-          <div class="msg mB0-f danger txtC txtB">منقضی شده</div>
-          <div data-kerkere='.showEditProfile' data-kerkere-icon class="btn secondary fs07 mT10">ویرایش اطلاعات</div>
-        {%elseif checkNationalcode == 'signuped'%}
-          <div class="msg mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
-          <div data-kerkere='.showEditProfile' data-kerkere-icon class="btn secondary fs07 mT10">ویرایش اطلاعات</div>
-          {%if not mokebuserDetail.noposition%}
-            <div class="btn danger fs07 mT10 floatL" data-confirm data-data='{"forceexit": true}'>ثبت خروج</div>
-          {%endif%}
-        {%elseif checkNationalcode == 'not-signuped'%}
-          <div class="msg mB0-f info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr class="mTB5-f"><div class="fs07">صادره از  <b>{{nationalCity}}</b></div>{%endif%}</div>
-        {%endif%}
-      </div>
-    </div>
+  <div class="c">
+    {%if checkNationalcode == 'invalid'%}
+      <div class="msg pTB3 mB0-f danger txtC txtB">کد ملی اشتباه است</div>
+    {%elseif checkNationalcode == 'expire'%}
+      <div class="msg pTB3 mB0-f danger txtC txtB">منقضی شده</div>
+    {%elseif checkNationalcode == 'signuped'%}
+      <div class="msg pTB3 mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
+      {%if not mokebuserDetail.noposition%}
+        <div class="btn danger fs07 mT10 floatL" data-confirm data-data='{"forceexit": true}'>ثبت خروج</div>
+      {%endif%}
+    {%elseif checkNationalcode == 'not-signuped'%}
+      <div class="msg pTB3 mB0-f info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr class="mTB5-f"><div class="fs07">صادره از  <b>{{nationalCity}}</b></div>{%endif%}</div>
+    {%endif%}
   </div>
+</div>
 
+<div class="f justify-center fs14">
 
 {%if checkNationalcode == 'signuped' or checkNationalcode == 'expire' or checkNationalcode == 'noposition'  %}
   <div class="c8 s12 pLa10">
