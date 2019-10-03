@@ -5,30 +5,49 @@
 
 {%block pageContent%}
 
-<div class="f justify-center fs14">
-  <div class="c4 s12 fs12 pRa10 p0">
-    <div method="get" action="{{url.that}}" autocomplete="off" class="panel">
-      <div class="pad">
+<style>
+@media print {
+  .tbox{display:none;}
+  .siftal #main #content{padding: 0}
+  .c8.s12.pLa10{padding:0!important}
+}
 
-        <img src="{{url.static}}/images/mokeb/labbayk.jpg" class="mB10">
+body .printA6 div{color:#000!important;}
+.printA6 .logo{display:block;margin:0; max-height: 75px;}
+.printA6 h3{font-weight: 900;font-size: 1em;margin-bottom: 0}
+.printA6 .placeNumber{font-size: 28px;line-height: 28px;}
+.printA6 .printArea{padding-top: 180px;padding-left: 40px;padding-right: 40px;}
 
-        <div class="msg light dots txtC mB10 fs05 pLR5">
-          {%set nextDot = null%}
-          {%for key, value in fullFree%}
-          {%if value.type == 'free'%}
+.dots{font-size: 1.4em;padding: 10px 10px}
+.dots a{display: inline-block;width:30px;height:30px;line-height:30px;text-align:center;font-weight: 100;border-radius:50%; margin-bottom: 5px;overflow: hidden;}
+
+</style>
+
+
+<div class="panel mB10">
+    <div class="dots">
+      {%set nextDot = null%}
+      {%for key, value in fullFree%}
+      {%if value.type == 'free'%}
 {%if nextDot is null%}
 {%set nextDot = value.number%}
-            <a href="{{url.that}}?position={{value.number}}"><span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded success">&nbsp;</span></a>
+        <a href="{{url.that}}?position={{value.number}}" class="success" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی">{{value.number}}</a>
 {%else%}
-            <a href="{{url.that}}?position={{value.number}}"><span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded primary">&nbsp;</span></a>
+        <a href="{{url.that}}?position={{value.number}}" class="primary" title="جایگاه  {{value.number | fitNumber}} - خالی">{{value.number}}</a>
 {%endif%}
-          {%else%}
-            <a href="{{url.that}}?position={{value.number}}"><span title="جایگاه  {{value.number | fitNumber}}" class="badge rounded danger">&nbsp;</span></a>
-          {%endif%}
-          {%endfor%}
-        </div>
+      {%else%}
+        <a href="{{url.that}}?position={{value.number}}" class="danger" title="جایگاه  {{value.number | fitNumber}} - پر">{{value.number}}</a>
+      {%endif%}
+      {%endfor%}
+    </div>
+</div>
 
 
+<div class="f justify-center fs14">
+  <div class="c4 s12 fs12 pRa10 p0">
+
+    <div method="get" action="{{url.that}}" autocomplete="off" class="panel">
+      <div class="pad">
         <form method="get" action="{{url.that}}" autocomplete="off">
           <div class="input">
             {%if requestGET.cnationalcode%}
@@ -38,6 +57,7 @@
             <button class="addon btn fs08">{%trans "Check"%}</button>
           </div>
         </form>
+{%if false%}
         <span data-kerkere-icon data-kerkere='.myPositionShow' class="badge success mTB20">جستجو با جایگاه</span>
         <div {%if requestGET.position%} {%else%} data-kerkere-content='hide' {%endif%} class="myPositionShow mB20">
 
@@ -51,6 +71,7 @@
             </div>
           </form>
         </div>
+{%endif%}
 
 
         {%if checkNationalcode%}
@@ -162,21 +183,6 @@
 
   </div>
 </div>
-
-<style>
-@media print {
-  .tbox{display:none;}
-  .siftal #main #content{padding: 0}
-  .c8.s12.pLa10{padding:0!important}
-}
-
-body .printA6 div{color:#000!important;}
-.printA6 .logo{display:block;margin:0; max-height: 75px;}
-.printA6 h3{font-weight: 900;font-size: 1em;margin-bottom: 0}
-.printA6 .placeNumber{font-size: 28px;line-height: 28px;}
-.printA6 .printArea{padding-top: 180px;padding-left: 40px;padding-right: 40px;}
-
-</style>
 
 {%endblock%}
 
