@@ -7,7 +7,7 @@ class model
 
 	public static function post()
 	{
-		if(!\lib\app\karbalasetting::check('arbaeen'));
+		if(!\lib\app\karbalasetting::check('arbaeen'))
 		{
 			\dash\notif::error('ثبت‌نام موقتا غیر فعال است');
 			\dash\redirect::pwd();
