@@ -10,9 +10,9 @@
   .tbox{display:none;}
   .siftal #main #content{padding: 0}
   .c8.s12.pLa10{padding:0!important}
+  .printA6 .printFitArea {max-width: 8cm; margin: 0 auto;padding-top: 4cm;}
 }
 
-.printA6 .printFitArea {max-width: 8cm; margin: 0 auto;padding-top: 4cm;}
 body .printA6 div{color:#000!important;}
 .printA6 .logo{display:block;margin:0; max-height: 75px;}
 .printA6 h3{font-weight: 900;font-size: 1em;margin-bottom: 0}
@@ -137,7 +137,7 @@ body .printA6 div{color:#000!important;}
 {%block a6_chap_detail%}
 
 <div class="printA6">
-  <div class="printArea pA15" data-size='A6'>
+  <div class="printArea pA15" data-size='A6' data-height='auto'>
     <div class="printFitArea">
       {%if mokebuserDetail.noposition%}
       <div class="msg mB5 pTB2 success txtC txtB">بدون جایگاه</div>
