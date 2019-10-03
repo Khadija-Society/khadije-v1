@@ -18,7 +18,7 @@ body .printA6 div{color:#000!important;}
 .printA6 .placeNumber{font-size: 28px;line-height: 28px;}
 .printA6 .printArea{padding-top: 180px;padding-left: 40px;padding-right: 40px;}
 
-.dots{font-size: 1.4em;padding: 10px 10px}
+.dots{font-size: 1.4em;padding: 10px 10px 0}
 .dots a{display: inline-block;width:30px;height:30px;line-height:30px;text-align:center;font-weight: 100;border-radius:50%; margin-bottom: 5px;overflow: hidden;}
 
 </style>
@@ -51,13 +51,17 @@ body .printA6 div{color:#000!important;}
       <form method="get" action="{{url.that}}" autocomplete="off">
         <div class="input">
           <button class="addon btn light fs08">{%trans "Check"%}</button>
-          <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='کد ملی' maxlength="10"  minlength="1" {%if not checkNationalcode%}autofocus {%endif%}>
-          {%if requestGET.cnationalcode%}
-          <a href="{{url.that}}" class="addon btn secondary"><i class="sf-eraser pRa5"></i><span>خالی</span></a>
-          {%endif%}
+          <input type="tel" name="cnationalcode" class="barCode" data-default data-pass="submit" value="{{requestGET.cnationalcode}}" placeholder='کد ملی {{mokebuserDetail.nationalcode}}' maxlength="10"  minlength="1" {%if not checkNationalcode or checkNationalcode == 'invalid'%}autofocus {%endif%}>
         </div>
       </form>
   </div>
+
+{%if requestGET.cnationalcode or mokebuserDetail.nationalcode%}
+  <div class="cauto pRa10">
+    <a href="{{url.that}}" class="addon btn secondary"><i class="sf-eraser pRa5"></i><span>خالی کن</span></a>
+  </div>
+{%endif%}
+
 {%if checkNationalcode == 'expire' or checkNationalcode == 'signuped'%}
   <div class="cauto pRa10">
     <div data-kerkere='.showEditProfile' data-kerkere-icon class="btn">ویرایش اطلاعات</div>
@@ -71,20 +75,23 @@ body .printA6 div{color:#000!important;}
       <div class="msg pTB3 mB0-f danger txtC txtB">منقضی شده</div>
     {%elseif checkNationalcode == 'signuped'%}
       <div class="msg pTB3 mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
-      {%if not mokebuserDetail.noposition%}
-        <div class="btn danger fs07 mT10 floatL" data-confirm data-data='{"forceexit": true}'>ثبت خروج</div>
-      {%endif%}
     {%elseif checkNationalcode == 'not-signuped'%}
-      <div class="msg pTB3 mB0-f info txtC txtB mB20">پذیرش جدید {%if nationalCity%}<hr class="mTB5-f"><div class="fs07">صادره از  <b>{{nationalCity}}</b></div>{%endif%}</div>
+      <div class="msg pTB3 mB0-f info txtC txtB mB20">پذیرش جدید </div>
     {%endif%}
   </div>
+
+    {%if checkNationalcode == 'signuped' and not mokebuserDetail.noposition%}
+      <div class="cauto pLa10">
+        <div class="btn danger" data-confirm data-data='{"forceexit": true}'>ثبت خروج  قبل از موعد</div>
+      </div>
+    {%endif%}
+
 </div>
 
 <div class="f justify-center fs14">
 
 {%if checkNationalcode == 'signuped' or checkNationalcode == 'expire' or checkNationalcode == 'noposition'  %}
   <div class="c8 s12 pLa10">
-    {{block('a6_chap_detail')}}
     <div class="showEditProfile" data-kerkere-content='hide'>
         <div class="panel">
           <div class="pad">
@@ -92,6 +99,7 @@ body .printA6 div{color:#000!important;}
           </div>
         </div>
     </div>
+    {{block('a6_chap_detail')}}
   </div>
 {%endif%}
 
@@ -236,12 +244,25 @@ body .printA6 div{color:#000!important;}
 {{block ('iMobileKarabala') }}
 
 
-{{block ('iname') }}
-{{block ('ifamily') }}
+<div class="f">
+  <div class="c6 pRa10">
+    {{block ('iname') }}
+  </div>
+  <div class="c6">
+    {{block ('ifamily') }}
+  </div>
+</div>
 
 {{block ('icity') }}
-{{block ('iMarital') }}
-{{block ('igender') }}
+
+<div class="f">
+  <div class="c6 pRa10">
+    {{block ('iMarital') }}
+  </div>
+  <div class="c6">
+    {{block ('igender') }}
+  </div>
+</div>
 
 
 <button class="btn mT10">به روزرسانی</button>
@@ -355,7 +376,7 @@ body .printA6 div{color:#000!important;}
 
 
 {%block icity%}
-<label for='city'>{%trans "City"%}  </label>
+<label for='city'>{%trans "City"%} {%if nationalCity%}<span class="fc-green">صادره از  <b>{{nationalCity}}</b></span>{%endif%}</label>
 <select name="city" class="ui dropdown select search" id="city" autocomplete="new-password">
   <option value="" readonly></option>
   {%for key, value in cityList%}
