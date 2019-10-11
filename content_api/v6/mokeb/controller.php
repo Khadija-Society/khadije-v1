@@ -110,6 +110,11 @@ class controller
 			{
 				if(!in_array($value['id'], $server_ids))
 				{
+					if(isset($value['forceexit']) && $value['forceexit'] === '1')
+					{
+						$value['forceexit'] = 1;
+					}
+
 					$inset[] = $value;
 				}
 			}
