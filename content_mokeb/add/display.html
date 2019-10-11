@@ -62,21 +62,23 @@ body .printA6 div{color:#000!important;}
   <div class="c5 s12">
     {%if fullFreeName%}
     <div class="cbox mB10 {%if requestGET.cnationalcode or mokebuserDetail.nationalcode or requestGET.position%}p0{%endif%}">
-        <div class="">
+        <div class="f">
           {%set nextDot = null%}
           {%for key, value in fullFreeName%}
           {%if value.detail%}
             {%set myDetailName = value.detail.firstname ~ ' ' ~ value.detail.lastname%}
+          {%else%}
+            {%set myDetailName = null%}
           {%endif%}
           {%if value.type == 'free'%}
     {%if nextDot is null%}
     {%set nextDot = value.number%}
-            <a href="{{url.that}}?position={{value.number}}" class="msg mA10 {%if requestGET.position == value.number%}danger{%else%}primary outline{%endif%}" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="msg block c4 pA5 {%if requestGET.position == value.number%}danger{%else%}primary outline{%endif%}" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
     {%else%}
-            <a href="{{url.that}}?position={{value.number}}" class="msg mA10 {%if requestGET.position == value.number%}danger{%else%}light{%endif%}" title="جایگاه  {{value.number | fitNumber}} - خالی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="msg block c4 pA5 {%if requestGET.position == value.number%}danger{%else%}light{%endif%}" title="جایگاه  {{value.number | fitNumber}} - خالی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
     {%endif%}
           {%else%}
-            <a href="{{url.that}}?position={{value.number}}" class="msg mA10 {%if requestGET.position == value.number%}danger{%else%}success{%endif%}" title="جایگاه  {{value.number | fitNumber}} - پر {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="msg block c4 pA5 {%if requestGET.position == value.number%}danger{%else%}success{%endif%}" title="جایگاه  {{value.number | fitNumber}} - پر {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
           {%endif%}
           {%endfor%}
         </div>
