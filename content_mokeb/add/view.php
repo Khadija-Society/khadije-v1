@@ -25,8 +25,8 @@ class view
 
 		\dash\data::page_title($myTitle);
 
-		// $full_free = \lib\app\mokebuser::full_free(\dash\url::child());
-		// \dash\data::fullFree($full_free);
+		$full_free = \lib\app\mokebuser::full_free_name(\dash\url::child());
+		\dash\data::fullFree($full_free);
 
 		self::static_var();
 
@@ -34,13 +34,13 @@ class view
 
 		self::check_position();
 
-		// \dash\data::badge_link(\dash\url::that(). '?showname=1');
-		// \dash\data::badge_text('نمایش نام افراد');
+		\dash\data::badge_link(\dash\url::that(). '?showname=1');
+		\dash\data::badge_text('نمایش نام افراد');
 
-		// if(\dash\request::get('showname'))
+		if(\dash\request::get('showname'))
 		{
 			$full_free = \lib\app\mokebuser::full_free_name(\dash\url::child());
-			\dash\data::fullFree($full_free);
+			\dash\data::fullFreeName($full_free);
 		}
 
 	}
