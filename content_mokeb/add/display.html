@@ -98,6 +98,8 @@ body .printA6 div{color:#000!important;}
           {%for key, value in fullFree%}
           {%if value.detail%}
             {%set myDetailName = value.detail.firstname ~ ' ' ~ value.detail.lastname%}
+          {%else%}
+            {%set myDetailName = null%}
           {%endif%}
           {%if value.type == 'free'%}
     {%if nextDot is null%}
@@ -107,7 +109,7 @@ body .printA6 div{color:#000!important;}
             <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}light{%endif%}" title="جایگاه  {{value.number | fitNumber}} - خالی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
     {%endif%}
           {%else%}
-            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}success{%endif%}" title="جایگاه  {{value.number | fitNumber}} - پر {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}success{%endif%}" title="جایگاه  {{value.number | fitNumber}} - پر - {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
           {%endif%}
           {%endfor%}
         </div>
