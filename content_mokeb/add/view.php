@@ -34,7 +34,14 @@ class view
 
 		self::check_position();
 
+		\dash\data::badge_link(\dash\url::that(). '?showname=1');
+		\dash\data::badge_text('نمایش نام افراد');
 
+		if(\dash\request::get('showname'))
+		{
+			$full_free = \lib\app\mokebuser::full_free_name(\dash\url::child());
+			\dash\data::fullFreeName($full_free);
+		}
 
 	}
 

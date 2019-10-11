@@ -58,21 +58,25 @@ body .printA6 div{color:#000!important;}
 
 <div class="f justify-center">
 
+{%if fullFreeName%}
   <div class="c5 s12">
-    {%if fullFree%}
-    <div class="panel mB10 {%if requestGET.cnationalcode or mokebuserDetail.nationalcode or requestGET.position%}p0{%endif%}">
-        <div class="dots">
+    {%if fullFreeName%}
+    <div class="cbox mB10 {%if requestGET.cnationalcode or mokebuserDetail.nationalcode or requestGET.position%}p0{%endif%}">
+        <div class="">
           {%set nextDot = null%}
-          {%for key, value in fullFree%}
+          {%for key, value in fullFreeName%}
+          {%if value.detail%}
+            {%set myDetailName = value.detail.firstname ~ ' ' ~ value.detail.lastname%}
+          {%endif%}
           {%if value.type == 'free'%}
     {%if nextDot is null%}
     {%set nextDot = value.number%}
-            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}primary outline{%endif%}" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی">{{value.number}}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="msg mA10 {%if requestGET.position == value.number%}danger{%else%}primary outline{%endif%}" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
     {%else%}
-            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}light{%endif%}" title="جایگاه  {{value.number | fitNumber}} - خالی">{{value.number}}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="msg mA10 {%if requestGET.position == value.number%}danger{%else%}light{%endif%}" title="جایگاه  {{value.number | fitNumber}} - خالی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
     {%endif%}
           {%else%}
-            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}success{%endif%}" title="جایگاه  {{value.number | fitNumber}} - پر">{{value.number}}</a>
+            <a href="{{url.that}}?position={{value.number}}" class="msg mA10 {%if requestGET.position == value.number%}danger{%else%}success{%endif%}" title="جایگاه  {{value.number | fitNumber}} - پر {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
           {%endif%}
           {%endfor%}
         </div>
@@ -81,6 +85,37 @@ body .printA6 div{color:#000!important;}
     <p class="msg danger fs30">جایگاه تعریف نشده است!</p>
     {%endif%}
   </div>
+
+
+  {%elseif fullFree%}
+   <div class="c5 s12">
+    {%if fullFree%}
+    <div class="panel mB10 {%if requestGET.cnationalcode or mokebuserDetail.nationalcode or requestGET.position%}p0{%endif%}">
+        <div class="dots">
+          {%set nextDot = null%}
+          {%for key, value in fullFree%}
+          {%if value.detail%}
+            {%set myDetailName = value.detail.firstname ~ ' ' ~ value.detail.lastname%}
+          {%endif%}
+          {%if value.type == 'free'%}
+    {%if nextDot is null%}
+    {%set nextDot = value.number%}
+            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}primary outline{%endif%}" title="جایگاه  {{value.number | fitNumber}} - شماره بعدی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
+    {%else%}
+            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}light{%endif%}" title="جایگاه  {{value.number | fitNumber}} - خالی {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
+    {%endif%}
+          {%else%}
+            <a href="{{url.that}}?position={{value.number}}" class="{%if requestGET.position == value.number%}danger{%else%}success{%endif%}" title="جایگاه  {{value.number | fitNumber}} - پر {{myDetailName}}">{{value.number}} {%if value.detail%}{{myDetailName}}{%endif%}</a>
+          {%endif%}
+          {%endfor%}
+        </div>
+    </div>
+    {%else%}
+    <p class="msg danger fs30">جایگاه تعریف نشده است!</p>
+    {%endif%}
+  </div>
+  {%endif%}
+
 
   {%if checkNationalcode%}
   <div class="c s12 pLa10 fs14 ">

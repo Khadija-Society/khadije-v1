@@ -268,6 +268,66 @@ class mokebuser
 	}
 
 
+	public static function full_free_name($_place)
+	{
+
+		$place_detail = \lib\app\place::get($_place);
+		if(!$place_detail || !isset($place_detail['id']))
+		{
+			return false;
+		}
+
+		$place_id = $place_detail['id'];
+		$place_id = \dash\coding::decode($place_id);
+
+		$now = date("Y-m-d H:i:s");
+
+		$all_full = \lib\db\mokebusers::all_full_name($place_id, $now);
+
+		$allPosition = [];
+		if(is_array($all_full))
+		{
+			$allPosition = array_column($all_full, 'position');
+			$allPosition = array_map('intval', $allPosition);
+		}
+
+		if(isset($place_detail['from']) && $place_detail['from'] && isset($place_detail['to']) && $place_detail['to'])
+		{
+			$from = intval($place_detail['from']);
+			$to   = intval($place_detail['to']);
+		}
+		else
+		{
+			return false;
+		}
+
+		$all = [];
+		for ($i= $from; $i <= $to ; $i++)
+		{
+			$detail = null;
+			foreach ($all_full as $key => $value)
+			{
+				if(isset($value['position']) && intval($value['position']) === $i)
+				{
+					$detail = $value;
+					break;
+				}
+			}
+
+			if(!in_array($i, $allPosition))
+			{
+				$all[] = ['type' => 'free', 'number' => $i, 'detail' => $detail];
+			}
+			else
+			{
+				$all[] = ['type' => 'full', 'number' => $i, 'detail' => $detail];
+			}
+		}
+
+		return $all;
+	}
+
+
 	public static function get_position($_place)
 	{
 		$position = self::list_of_free($_place);

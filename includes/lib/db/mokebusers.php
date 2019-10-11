@@ -96,6 +96,26 @@ class mokebusers
 	}
 
 
+	public static function all_full_name($_place_id, $_date)
+	{
+		$query =
+		"
+			SELECT
+				mokebusers.position,
+				mokebusers.firstname,
+				mokebusers.lastname,
+				mokebusers.nationalcode
+			FROM
+				mokebusers
+			WHERE
+				mokebusers.place_id = $_place_id AND
+				mokebusers.expire > '$_date'
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 	public static function all_full_place($_place_ids)
 	{
 		$query =
