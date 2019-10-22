@@ -1,6 +1,8 @@
 {%extends display.main%}
 
 {%block pageData%}
+
+{%if false%}
 <div class="f mB10">
 	<div class="c6 s12 pA5">
 		<a href="{{url.kingdom}}/donate?nazr=arbaeen">
@@ -13,6 +15,7 @@
 		</a>
 	</div>
 </div>
+{%endif%}
 
 {%use "content/donate/donateForm.html"%}
 {{block("donateFormPay")}}
