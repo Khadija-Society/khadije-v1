@@ -119,7 +119,7 @@ class application
 	{
 		$homepage              = [];
 		$homepage[]            = self::karbala_signup_link();
-		$homepage[]            = self::link2_donate();
+		// $homepage[]            = self::link2_donate();
 		$homepage[]            = self::linksServicesLine();
 		$homepage[]            = self::linksWebsiteLine();
 		$homepage[]            = self::salawat();
@@ -190,16 +190,15 @@ class application
 	private static function link2_donate()
 	{
 		$link                     = [];
-		// $link['type']             = 'link2';
-		$link['type']             = 'link1';
+		$link['type']             = 'link2';
 
 		$link['link'][0]['image'] = \dash\url::static(). '/images/app/donate-wide.jpg';
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/donate';
 		$link['link'][0]['text']  = T_('Donate');
 
-		// $link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct-wide2.jpg';
-		// $link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
-		// $link['link'][1]['text']  = T_('Donate Product Arbaeen');
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct-wide2.jpg';
+		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
+		$link['link'][1]['text']  = T_('Donate Product Arbaeen');
 
 		return $link;
 	}
