@@ -43,7 +43,7 @@
     <p>
       زائر گرامی!
       <br>
-      در صورتی که می‌خواهید از وضعیت ثبت‌نام خود مطلع شوید کد ملی خود را در قسمت پایین وارد کرده و گزینه بررسی را بزنید
+      در صورتی که قبلا ثبت‌نام کرده‌اید و می‌خواهید از وضعیت ثبت‌نام خود مطلع شوید کد ملی خود را در قسمت پایین وارد کرده و گزینه بررسی را بزنید
     </p>
     <form method="get" action="{{url.this}}" autocomplete="off">
       <div class="input">
@@ -191,7 +191,7 @@
 {%block igender%}
 <div class="pRa5">
   <label for="gender">{%trans "Gender"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-  <select name="gender" class="ui dropdown select">
+  <select name="gender" class="select">
     <option value="" readonly>{%trans "Please select one itme"%}</option>
     <option value="male" {%if userdetail.gender == 'male' or ( not userdetail.gender and defaultDenderExpert == 'male') %}selected {%endif%}>{%trans "Male"%}</option>
     <option value="female" {%if userdetail.gender == 'female' or ( not userdetail.gender and defaultDenderExpert == 'female') %}selected{%endif%}>{%trans "Female"%}</option>
@@ -203,7 +203,7 @@
 {%block iMarital%}
 <div class="">
   <label for="married">{%trans "Marital"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-  <select name="Married" class="ui dropdown select">
+  <select name="Married" class="select">
     <option value="" readonly>{%trans "Please select one itme"%}</option>
     <option value="single" {%if userdetail.married == 'single' %}selected {%endif%}>{%trans "Single"%}</option>
     <option value="married" {%if userdetail.married == 'married' %}selected{%endif%}>{%trans "Married"%}</option>
@@ -230,7 +230,7 @@
 
 {%block iprovince%}
 <label for='province'>{%trans "Province"%}</label>
-<select name="province" class="ui dropdown select search" id="province">
+<select name="province" class="select" id="province">
   <option value="" readonly>{%trans "Select province"%}</option>
   {%for key, value in proviceList%}
     <option value="{{key}}" {% if userdetail.province == key %} selected {%endif%}>{{value}}</option>
@@ -241,7 +241,7 @@
 
 {%block icity%}
 <label for='city'>{%trans "City"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
-<select name="city" class="ui dropdown select search" id="city">
+<select name="city" class="select" id="city">
   <option value="" readonly>{%trans "Select city"%}</option>
   {%for key, value in cityList%}
     <option value="{{key}}" {% if userdetail.city == key %} selected {%endif%}>{{value}}</option>
