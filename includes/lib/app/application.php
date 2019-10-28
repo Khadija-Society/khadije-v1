@@ -196,9 +196,9 @@ class application
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/donate';
 		$link['link'][0]['text']  = T_('Donate');
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct-wide2.jpg';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donateproduct-wide.jpg';
 		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate/product';
-		$link['link'][1]['text']  = T_('Donate Product Arbaeen');
+		$link['link'][1]['text']  = T_('Donate Product');
 
 		return $link;
 	}
