@@ -81,7 +81,7 @@
     </div>
 
 
-    {%if karbalasettingSaved.koyemohebbat%}
+    {%if karbalasettingSaved.koyemohebbat or 1%}
     <form  method="post" autocomplete="off">
      <div class="f">
       <div class="c6 s12 pRa5">{{block ('iname') }}</div>
@@ -395,7 +395,7 @@
 {%endblock%}
 
 {%block iSave%}
-<button class="btn primary block mT20">{%trans "Signup"%}</button>
+<button class="btn primary block mT20 mB50">{%trans "Signup"%}</button>
 {%endblock%}
 
 
