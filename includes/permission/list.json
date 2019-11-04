@@ -424,6 +424,48 @@
     "cat": "Mokeb",
     "require": []
   },
+  "ContentMokebAddPlace": {
+    "title": "ContentMokebAddPlace",
+    "cat": "Mokeb",
+    "require": [
+      "ContentMokeb"
+    ]
+  },
+  "ContentMokebEditPlace": {
+    "title": "ContentMokebEditPlace",
+    "cat": "Mokeb",
+    "require": [
+      "ContentMokeb"
+    ]
+  },
+  "ContentMokebForceExit": {
+    "title": "ContentMokebForceExit",
+    "cat": "Mokeb",
+    "require": [
+      "ContentMokeb"
+    ]
+  },
+  "ContentMokebUpdateDetail": {
+    "title": "ContentMokebUpdateDetail",
+    "cat": "Mokeb",
+    "require": [
+      "ContentMokeb"
+    ]
+  },
+  "ContentMokebAddUser": {
+    "title": "ContentMokebAddUser",
+    "cat": "Mokeb",
+    "require": [
+      "ContentMokeb"
+    ]
+  },
+  "ContentMokebOpen": {
+    "title": "ContentMokebOpen",
+    "cat": "Mokeb",
+    "require": [
+      "ContentMokeb"
+    ]
+  },
   "mKarbalaSetting": {
     "title": "mKarbalaSetting",
     "cat": "Mokeb",

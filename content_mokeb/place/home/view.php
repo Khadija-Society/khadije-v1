@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('mPlaceView');
+		\dash\permission::access('ContentMokebAddPlace');
 
 		\dash\data::page_title(T_("places list"));
 

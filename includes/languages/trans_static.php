@@ -276,6 +276,13 @@ class TransStatic
 	echo T_("ContentMokeb");
 	echo T_("mKarbalaSetting");
 	echo T_("mhomevideo");
+
+	echo T_("ContentMokebAddPlace");
+	echo T_("ContentMokebEditPlace");
+	echo T_("ContentMokebForceExit");
+	echo T_("ContentMokebUpdateDetail");
+	echo T_("ContentMokebAddUser");
+	echo T_("ContentMokebOpen");
  }
 }
 ?>

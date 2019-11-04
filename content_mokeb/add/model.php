@@ -9,6 +9,8 @@ class model
 	{
 		if(\dash\request::post('forceexit'))
 		{
+			\dash\permission::access('ContentMokebForceExit');
+
 			\lib\app\mokebuser::forceexit(\dash\request::get('cnationalcode'), \dash\request::get('position'));
 			if(\dash\request::get('cnationalcode'))
 			{
@@ -53,6 +55,7 @@ class model
 
 		if(\dash\request::post('updateuser'))
 		{
+			\dash\permission::access('ContentMokebUpdateDetail');
 			unset($post['nationalcode']);
 			$id = \dash\request::post('id');
 			$id = \dash\coding::encode($id);
@@ -81,7 +84,7 @@ class model
 					return false;
 				}
 			}
-
+			\dash\permission::access('ContentMokebAddUser');
 			\lib\app\mokebuser::add($post, ['place' => \dash\url::child()]);
 			if(\dash\engine\process::status())
 			{
