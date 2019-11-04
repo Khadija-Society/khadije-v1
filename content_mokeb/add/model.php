@@ -61,6 +61,27 @@ class model
 		}
 		else
 		{
+			if(isset($post['nationalcode']) && !\dash\request::get('isduplicate'))
+			{
+				$check_duplicate =
+				[
+					'nationalcode' => $post['nationalcode'],
+					'limit'        => 1,
+				];
+
+				$check_duplicate = \lib\db\mokebusers::get($check_duplicate, ['order' => ' ORDER BY mokebusers.id DESC ']);
+
+				if(isset($check_duplicate['id']))
+				{
+					\dash\notif::warn("ثبت‌نام با این کد‌ملی قبلا با موفقیت انجام شده است", 'nationalcode');
+					$requestGET = \dash\request::get();
+					$requestGET['isduplicate'] = $post['nationalcode'];
+					$requestGET = '?'. http_build_query($requestGET);
+					\dash\redirect::to(\dash\url::that(). $requestGET);
+					return false;
+				}
+			}
+
 			\lib\app\mokebuser::add($post, ['place' => \dash\url::child()]);
 			if(\dash\engine\process::status())
 			{

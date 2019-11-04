@@ -876,20 +876,20 @@ class mokebuser
 		// check args
 		$args = self::check($_option);
 
-		if(isset($args['nationalcode']))
-		{
-			$check_duplicate =
-			[
-				'nationalcode' => $args['nationalcode'],
-				'limit'        => 1,
-			];
-			$check_duplicate = \lib\db\mokebusers::get($check_duplicate);
-			if(isset($check_duplicate['id']))
-			{
-				\dash\notif::error("ثبت‌نام با این کد‌ملی قبلا با موفقیت انجام شده است", 'nationalcode');
-				return false;
-			}
-		}
+		// if(isset($args['nationalcode']))
+		// {
+		// 	$check_duplicate =
+		// 	[
+		// 		'nationalcode' => $args['nationalcode'],
+		// 		'limit'        => 1,
+		// 	];
+		// 	$check_duplicate = \lib\db\mokebusers::get($check_duplicate);
+		// 	if(isset($check_duplicate['id']))
+		// 	{
+		// 		\dash\notif::error("ثبت‌نام با این کد‌ملی قبلا با موفقیت انجام شده است", 'nationalcode');
+		// 		return false;
+		// 	}
+		// }
 
 		if($args === false || !\dash\engine\process::status())
 		{

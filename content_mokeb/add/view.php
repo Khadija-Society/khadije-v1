@@ -32,6 +32,8 @@ class view
 
 		self::check_nationalcode();
 
+		self::check_isduplicate();
+
 		self::check_position();
 
 		\dash\data::badge_link(\dash\url::that(). '?showname=1');
@@ -92,9 +94,9 @@ class view
 		}
 
 		\dash\data::checkNationalcode($status);
-
-
 	}
+
+
 	private static function check_nationalcode()
 	{
 		$nationalcode = \dash\request::get('cnationalcode');
@@ -112,7 +114,7 @@ class view
 			return;
 		}
 
-		$check = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1]);
+		$check = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1], ['order' => ' ORDER BY mokebusers.id DESC ']);
 		if(isset($check['id']))
 		{
 			\dash\data::mokebuserDetail($check);
@@ -141,9 +143,34 @@ class view
 
 		\dash\data::nationalCity(\dash\app\nationalcode\city::get($nationalcode));
 		\dash\data::checkNationalcode($status);
-
-
 	}
+
+
+	private static function check_isduplicate()
+	{
+		$nationalcode = \dash\request::get('isduplicate');
+		if(!$nationalcode)
+		{
+			return;
+		}
+
+		$status = null;
+		if(!\dash\utility\filter::nationalcode($nationalcode))
+		{
+			\dash\notif::error('کد ملی اشتباه است');
+			$status = 'invalid';
+			\dash\data::checkNationalcode($status);
+			return;
+		}
+
+		$check = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1], ['order' => ' ORDER BY mokebusers.id DESC ']);
+
+		if(isset($check['id']))
+		{
+			\dash\data::mokebuserDetail($check);
+		}
+	}
+
 
 	public static function static_var()
 	{
