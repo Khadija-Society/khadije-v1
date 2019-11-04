@@ -19,6 +19,7 @@
      {{block('iAddress')}}
      {{block('iFile')}}
      {{block('iStatus')}}
+     {{block('permissionMokebAdd')}}
      {{block('isave')}}
    	</div>
    </form>
@@ -26,3 +27,19 @@
 
 {%endblock%}
 
+
+
+
+{%block permissionMokebAdd%}
+{%if whoHavePerm%}
+<h4>افرادی که می‌توانند به این موکب دسترسی داشته باشند <br><small>درصورتی که شخصی را انتخاب نکنید همه افراد زیر امکان دسترسی را دارند</small></h4>
+
+{%for key, value in whoHavePerm%}
+<div class="switch1">
+ <input type="checkbox" name="perm_{{value.id}}" id="perm_{{value.id}}" {%if value.id in dataRow.perm%}checked{%endif%}>
+ <label for="perm_{{value.id}}"></label>
+ <label for="perm_{{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></label>
+</div>
+{%endfor%}
+{%endif%}
+{%endblock%}

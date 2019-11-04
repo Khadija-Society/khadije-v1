@@ -39,7 +39,24 @@ class controller
 		}
 		else
 		{
-			\dash\redirect::to(\dash\url::here(). '/choose');
+			\dash\redirect::to(\dash\url::here());
+		}
+
+		if(!\dash\permission::supervisor())
+		{
+
+			$mokebDetail = \dash\data::mokebDetail();
+
+			if(isset($mokebDetail['perm']) && is_array($mokebDetail['perm']) && $mokebDetail['perm'])
+			{
+
+				if(!in_array(\dash\coding::encode(\dash\user::id()), $mokebDetail['perm']))
+				{
+					\dash\header::status(403, 'شما دسترسی لازم را برای ثبت افراد در این موکب ندارید');
+					return false;
+				}
+			}
+
 		}
 	}
 }

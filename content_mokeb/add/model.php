@@ -64,6 +64,8 @@ class model
 		}
 		else
 		{
+			\dash\permission::access('ContentMokebAddUser');
+
 			if(isset($post['nationalcode']) && !\dash\request::get('isduplicate'))
 			{
 				$check_duplicate =
@@ -84,7 +86,6 @@ class model
 					return false;
 				}
 			}
-			\dash\permission::access('ContentMokebAddUser');
 			\lib\app\mokebuser::add($post, ['place' => \dash\url::child()]);
 			if(\dash\engine\process::status())
 			{

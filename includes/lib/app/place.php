@@ -218,9 +218,27 @@ class place
 			$capacity = $to - $from + 1;
 		}
 
+		$perm = \dash\app::request('perm');
+		$new_perm = [];
+		if($perm && is_array($perm))
+		{
+			foreach ($perm as $key => $value)
+			{
+				$perm_user_id = \dash\coding::decode($value);
+				if(!$perm_user_id)
+				{
+					\dash\notif::error(T_("Invalid user id"));
+					return false;
+				}
+
+				$new_perm[] = $perm_user_id;
+			}
+		}
+
 		$args               = [];
 
 		$args['title']      = $title;
+		$args['perm']      = json_encode($new_perm, JSON_UNESCAPED_UNICODE);
 		$args['activetime'] = $activetime;
 		$args['address']    = $address;
 		$args['capacity']   = $capacity;
@@ -424,6 +442,7 @@ class place
 		if(!\dash\app::isset_request('gender')) unset($args['gender']);
 		if(!\dash\app::isset_request('from')) unset($args['from']);
 		if(!\dash\app::isset_request('to')) unset($args['to']);
+		if(!\dash\app::isset_request('perm')) unset($args['perm']);
 
 		if(!empty($args))
 		{
@@ -455,6 +474,22 @@ class place
 					$result[$key] = \dash\coding::encode($value);
 					break;
 
+				case 'perm':
+					if(is_string($value))
+					{
+						$result['perm'] = json_decode($value, true);
+						if(is_array($result['perm']))
+						{
+							$result['perm'] = array_map(['\\dash\\coding', 'encode'], $result['perm']);
+						}
+					}
+					else
+					{
+						$result[$key] = $value;
+					}
+					break;
+
+
 				case 'file':
 					if(!\dash\url::content())
 					{
@@ -463,6 +498,7 @@ class place
 							$value = \dash\app::static_logo_url();
 						}
 					}
+					$result[$key] = $value;
 					$result[$key] = $value;
 					break;
 

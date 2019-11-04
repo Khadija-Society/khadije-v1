@@ -27,6 +27,18 @@ class model
 
 		];
 
+		$perm    = [];
+		$allpost = \dash\request::post();
+		foreach ($allpost as $key => $value)
+		{
+			if(substr($key, 0, 5) === 'perm_')
+			{
+				$perm[] = substr($key, 5);
+			}
+		}
+
+		$post['perm'] = $perm;
+
 		$file = \dash\app\file::upload_quick('file');
 		if($file)
 		{

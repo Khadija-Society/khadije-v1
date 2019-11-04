@@ -23,6 +23,15 @@ class view
 
 		\dash\data::dataRow($result);
 
+		$who_have = \dash\permission::who_have('ContentMokebAddUser');
+		if($who_have)
+		{
+			$who_have = implode("','", $who_have);
+			$get_users = \dash\db\users::get(['permission' => ["IN", "('$who_have')"]]);
+			$get_users = array_map(['\\dash\\app\\user', 'ready'], $get_users);
+			\dash\data::whoHavePerm($get_users);
+		}
+
 	}
 }
 ?>
