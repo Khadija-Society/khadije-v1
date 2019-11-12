@@ -59,11 +59,10 @@ body{
 	right: 0;
 	left: 0;
 	text-align: left;
-	min-height: 100px;
-	position: fixed;
+	min-height: 60px;
 	font-size: 1.5em;
 	color: #ddd;
-	padding: 25px 5%;
+	padding: 10px 25px 25px;
 }
 
 .numbers{
@@ -86,7 +85,7 @@ body{
 }
 
 .winners{
-	padding: 25px 5%;
+	padding: 25px 20px;
 }
 .winners .person {
 	border-radius: 1rem;
@@ -95,7 +94,6 @@ body{
 	height: 50px;
 	line-height: 50px;
 	margin: 5px;
-
 	color: #fff;
 	text-align: center;
 }
@@ -105,10 +103,15 @@ body{
 }
 .winners .person .name{
 	vertical-align: middle;
+	font-size: 0.9em;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .winners .person .value{
 	letter-spacing: 5px;
-	font-size: 1.2em;
+	font-size: 1em;
 	direction: ltr;
 	padding: 0 1em;
 }
