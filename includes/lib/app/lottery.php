@@ -1,0 +1,138 @@
+<?php
+namespace lib\app;
+
+class lottery
+{
+	public static function check()
+	{
+
+		// `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+		// `table` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+		// `date` datetime  NULL DEFAULT NULL,
+		// `countall` int(10) NULL DEFAULT NULL,
+		// `win` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+		// `status` enum('enable', 'disable', 'deleted', 'publish')  NULL DEFAULT NULL,
+		// `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+
+		$title = \dash\app::request('title');
+		if($title && mb_strlen($title) > 100)
+		{
+			\dash\notif::error(T_("Invalid title"), 'title');
+			return false;
+		}
+
+		if(!$title)
+		{
+			\dash\notif::error(T_("Title is required"), 'title');
+			return false;
+		}
+
+
+		$table = \dash\app::request('table');
+		if($table && mb_strlen($table) > 100)
+		{
+			\dash\notif::error(T_("Invalid table"), 'table');
+			return false;
+		}
+
+
+		$date = \dash\app::request('date');
+		if($date && mb_strlen($date) > 100)
+		{
+			\dash\notif::error(T_("Invalid date"), 'date');
+			return false;
+		}
+
+		$date = \dash\date::db($date);
+		if($date === false)
+		{
+			\dash\notif::error(T_("Invalid date date of :semester"), 'date');
+			return false;
+		}
+
+		$date = \dash\date::force_gregorian($date);
+		$date = \dash\date::db($date);
+
+
+		if(!$date)
+		{
+			\dash\notif::error(T_("Date is required"), 'date');
+			return false;
+		}
+
+		$countall = \dash\app::request('countall');
+		if($countall && !is_numeric($countall))
+		{
+			\dash\notif::error(T_("Invalid countall"), 'countall');
+			return false;
+		}
+
+		if(!$countall)
+		{
+			\dash\notif::error(T_("Count is required"), 'countall');
+			return false;
+		}
+
+		$args             = [];
+		$args['title']    = $title;
+		$args['table']    = $table;
+		$args['date']     = $date;
+		$args['countall'] = $countall;
+
+		return $args;
+	}
+
+	public static function get_list($_table)
+	{
+		$result = \lib\db\lottery::get(['table' => $_table, 'status' => 'enable']);
+		return $result;
+	}
+
+
+	public static function remove($_id)
+	{
+		if($_id && is_numeric($_id))
+		{
+			\lib\db\karbala2users::remove_lottery_id($_id);
+			\lib\db\lottery::update(['status' => 'deleted'], $_id);
+			\dash\notif::ok(T_("Data was removed"));
+			return true;
+		}
+
+		return false;
+	}
+
+
+	public static function add($_args)
+	{
+		\dash\app::variable($_args);
+
+		$args = self::check();
+
+		if(!$args)
+		{
+			return false;
+		}
+
+		$args['status'] = 'enable';
+		$args['url'] = md5(json_encode($args). '_'. time(). '_'. rand());
+
+		$id = \lib\db\lottery::insert($args);
+
+		if($id)
+		{
+			$win = \lib\db\karbala2users::get_rand($args['countall']);
+			if($win && is_array($win))
+			{
+				$update['win'] = json_encode($win);
+				\lib\db\lottery::update($update, $id);
+
+				\lib\db\karbala2users::update_win(implode(',', $win), $id);
+			}
+		}
+
+		return $id;
+	}
+}
+?>

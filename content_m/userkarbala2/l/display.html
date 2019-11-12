@@ -1,0 +1,61 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{%block pageContent%}
+
+<div class="f justify-center">
+  <div class="c6 s12">
+    <div class="cbox">
+
+      <form method="post" autocomplete="off">
+          <h3>ثبت قرعه‌کشی جدید</h3>
+          <label>عنوان دلخواه برای این مرحله از قرعه‌کشی</label>
+          <div class="input">
+            <input type="text" name="title" placeholder="عنوان قرعه‌کشی" maxlength="100" >
+          </div>
+
+          <div class="">
+            <label for="datel">تاریخ قرعه کشی</label>
+            <div class="input ltr">
+              <input class="datepicker" type="text" name="date"  placeholder='{%trans "Date"%}' id="datel"  value="{{dateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+            </div>
+          </div>
+          <label>تعداد کل افرادی که می‌خواهید از قرعه کشی استخراج کنید</label>
+          <div class="input">
+            <input type="number" name="countall" placeholder="تعداد افراد" max="9999999999">
+          </div>
+          <div class="txtRa">
+
+            <button class="btn success">آماده سازی جهت قرعه کشی</button>
+          </div>
+      </form>
+    </div>
+    {%if lotteryList%}
+    <div class="cbox">
+      {%for key, value in lotteryList%}
+        <div class="msg">
+          <h4>{{value.title}}</h4>
+          <div class="f">
+            <div class="c">{%trans "Date"%} {{value.date| dt(null, 'date')}}</div>
+            <div class="c">{%trans "Count"%} {{value.countall| fitNumber}}</div>
+
+          </div>
+          <div class="txtRa">
+            {%if perm_su()%}
+              <div class="btn danger xs" data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}'>حذف</div>
+            {%endif%}
+            <a class="btn pain outline" href="{{url.kingdom}}/userkarbala2/lottery?level={{value.url}}">نمایش قرعه‌کشی</a>
+          </div>
+        </div>
+      {%endfor%}
+    </div>
+    {%endif%}
+
+  </div>
+</div>
+
+{%endblock%}
+
+
+

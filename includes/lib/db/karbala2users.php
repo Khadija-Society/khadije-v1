@@ -4,6 +4,29 @@ namespace lib\db;
 class karbala2users
 {
 
+	public static function get_rand($_limit)
+	{
+		$query = "SELECT karbala2users.id AS `id` FROM karbala2users WHERE karbala2users.lottery_id IS NULL ORDER BY RAND() LIMIT $_limit";
+		$result = \dash\db::get($query, 'id');
+		return $result;
+	}
+
+	public static function update_win($_ids, $_lottery_id)
+	{
+		$query = "UPDATE karbala2users SET karbala2users.lottery_id = $_lottery_id WHERE karbala2users.id IN ($_ids) ";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
+	public static function remove_lottery_id($_lottery_id)
+	{
+		$query = "UPDATE karbala2users SET karbala2users.lottery_id = NULL WHERE karbala2users.lottery_id = $_lottery_id ";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
+
+
 	/**
 	 * insert new productprice
 	 *
