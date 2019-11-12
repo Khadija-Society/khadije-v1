@@ -267,6 +267,24 @@ body .printA6 div{color:#000!important;}
   </div>
 </div>
 
+<div class="f">
+  <div class="c12">
+
+      <label for="activetime">{%trans "Active time"%} </label>
+      <select name="activetime" class="ui dropdown select">
+        <option value="" readonly>{%trans "Please select one itme"%}</option>
+        <option value="12" {%if mokebDetail.activetime == '12' %}selected {%endif%}>{{12 | fitNumber}} {%trans "Hour"%} - نصف روز</option>
+        <option value="24" {%if mokebDetail.activetime == '24' %}selected {%endif%}>{{24 | fitNumber}} {%trans "Hour"%} - یک روز</option>
+        <option value="48" {%if mokebDetail.activetime == '48' %}selected {%endif%}>{{48 | fitNumber}} {%trans "Hour"%} - دو روز</option>
+        <option value="72" {%if mokebDetail.activetime == '72' %}selected {%endif%}>{{72 | fitNumber}} {%trans "Hour"%} - سه روز</option>
+        <option value="96" {%if mokebDetail.activetime == '96' %}selected {%endif%}>{{96 | fitNumber}} {%trans "Hour"%} - چهار روز</option>
+
+
+      </select>
+
+  </div>
+</div>
+
       <div class="msg pTB0 mB10">
         <div class="check1">
          <input type="checkbox" name="noposition" id="noposition" >

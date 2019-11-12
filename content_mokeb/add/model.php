@@ -52,6 +52,7 @@ class model
 		// $post['zipcode']         = \dash\request::post('zipcode');
 		$post['position']         = \dash\request::get('position');
 		$post['noposition']         = \dash\request::post('noposition') ;
+		$post['activetime']         = \dash\request::post('activetime') ;
 
 		if(\dash\request::post('updateuser'))
 		{

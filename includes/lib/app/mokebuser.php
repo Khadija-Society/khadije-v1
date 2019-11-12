@@ -133,7 +133,7 @@ class mokebuser
 
 	}
 
-	public static function get_expire($_place)
+	public static function get_expire($_place, $_active_time = null)
 	{
 		$place_detail = \lib\app\place::get($_place);
 		if(!$place_detail || !isset($place_detail['id']))
@@ -141,12 +141,19 @@ class mokebuser
 			return false;
 		}
 
-		if(!$place_detail['activetime'])
+		if($_active_time)
 		{
-			return false;
+			$activetime = intval($_active_time);
 		}
+		else
+		{
+			if(!$place_detail['activetime'])
+			{
+				return false;
+			}
 
-		$activetime = intval($place_detail['activetime']);
+			$activetime = intval($place_detail['activetime']);
+		}
 
 		if(!$place_detail['cleantime'])
 		{
@@ -705,6 +712,14 @@ class mokebuser
 			return false;
 		}
 
+
+		$activetime = \dash\app::request('activetime');
+		if($activetime && !in_array($activetime, ['12','24', '48', '72', '96']))
+		{
+			\dash\notif::error(T_("Invalid activetime"), 'activetime');
+			return false;
+		}
+
 		// if(!$city)
 		// {
 		// 	\dash\notif::error(T_("City is required"), 'city');
@@ -735,6 +750,7 @@ class mokebuser
 		$args['birthday']        = $birthday;
 		$args['firstname']       = $firstname;
 		$args['lastname']        = $lastname;
+		$args['activetime']      = $activetime;
 		if($nationalcode)
 		{
 			$args['nationalcode']    = "$nationalcode";
@@ -906,7 +922,7 @@ class mokebuser
 		else
 		{
 
-			$expire = self::get_expire($_option['place']);
+			$expire = self::get_expire($_option['place'], $_args['activetime']);
 			$custom_postion = \dash\app::request('position');
 			if($custom_postion && is_numeric($custom_postion))
 			{
@@ -930,6 +946,7 @@ class mokebuser
 				return false;
 			}
 		}
+		unset($args['activetime']);
 
 		$args['place_id'] = \dash\coding::decode($_option['place']);
 
