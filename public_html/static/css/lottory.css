@@ -94,6 +94,8 @@ body{
 	background: linear-gradient(to right, #999966, #666600);
 	height: 50px;
 	line-height: 50px;
+	margin: 5px;
+
 	color: #fff;
 	text-align: center;
 }
