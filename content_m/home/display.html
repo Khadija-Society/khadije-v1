@@ -48,9 +48,22 @@
   {%if perm('cpHadith')%}<div class="c2 s6">{{block ("bHadith")}}</div>{%endif%}
   {%if perm('cpNationalCodeView')%}<div class="c2 s6">{{block ("BNcode")}}</div>{%endif%}
   {%if perm('cpSettingThankyouMessage')%}<div class="c2 s6">{{block("BTankyouMessage")}}</div>{%endif%}
+  {%if perm('cpKarbalaUserCount')%}<div class="c2 s6">{{block("BnumberKarbalaAll")}}</div>{%endif%}
 </div>
 
 {%endblock%}
+
+
+
+{%block BnumberKarbalaAll%}
+<a class="dcard x1" href='{{url.here}}/karbalauser'>
+ <div class="statistic">
+  <div class="value"><i class="sf-atom"></i></div>
+  <div class="label">آمار زائران کربلا</div>
+ </div>
+</a>
+{%endblock%}
+
 
 
 {%block bSmsAppDashboard%}

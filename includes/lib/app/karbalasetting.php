@@ -3,6 +3,59 @@ namespace lib\app;
 
 class karbalasetting
 {
+
+	public static function stat()
+	{
+
+		$signup   = 0;
+		$awaiting = 0;
+		$gone     = 0;
+
+		// gone group trip
+		$gone_group_trip = \lib\db\karbalasetting::gone_group_trip();
+		if(is_numeric($gone_group_trip))
+		{
+			$gone += intval($gone_group_trip);
+		}
+
+		// samte khoda qore keshi
+		// 12 province in every province 40 person
+		$gone += (12 * 40);
+		// koye mohebbat qore keshi
+		$gone += 0;
+		// static number from khalili
+		$gone += 0;
+
+
+		$signup_group_trip = \lib\db\karbalasetting::signup_group_trip();
+		if(is_numeric($signup_group_trip))
+		{
+			$signup += intval($signup_group_trip);
+		}
+
+		$count_signup_samtekhoda = \lib\db\karbalasetting::count_signup_samtekhoda();
+		if(is_numeric($count_signup_samtekhoda))
+		{
+			$signup += intval($count_signup_samtekhoda);
+		}
+
+		$count_signup_koyemohebbat = \lib\db\karbalasetting::count_signup_koyemohebbat();
+		if(is_numeric($count_signup_koyemohebbat))
+		{
+			$signup += intval($count_signup_koyemohebbat);
+		}
+
+		$result =
+		[
+			'gone'     => $gone,
+			'signup'   => $signup,
+			'awaiting' => $signup - $gone,
+		];
+		// j($result);
+		return $result;
+	}
+
+
 	private static function addr()
 	{
 		return __DIR__.'/karbalasetting.me.json';

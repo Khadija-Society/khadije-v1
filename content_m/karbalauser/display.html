@@ -1,0 +1,30 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+<div class="f justify-center txtC">
+  <div class="c9 s12">
+
+    <div class="cbox">
+      <div class="msg fs20">
+        <h3>مشرف شده‌ها</h3>
+        <div class="counter fs14" data-val="{{karbalauser.gone}}">{{karbalauser.gone | fitNumber}}</div>
+      </div>
+
+      <div class="msg fs20">
+        <h3>ثبت‌نامی‌ها</h3>
+        <div class="counter fs14" data-val="{{karbalauser.signup}}">{{karbalauser.signup | fitNumber}}</div>
+      </div>
+
+      <div class="msg fs20">
+        <h3>چشم انتظاران</h3>
+        <div class="counter fs14" data-val="{{karbalauser.awaiting}}">{{karbalauser.awaiting | fitNumber}}</div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+{%endblock%}
+

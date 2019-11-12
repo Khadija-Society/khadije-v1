@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-11-04 19:56+0330\n"
-"PO-Revision-Date: 2019-11-04 19:58+0330\n"
+"POT-Creation-Date: 2019-11-12 17:46+0330\n"
+"PO-Revision-Date: 2019-11-12 17:46+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -159,7 +159,7 @@ msgstr "بازگشت به حساب کاربری"
 #: dash/addons/content_crm/member/main/view.php:18
 #: dash/addons/content_crm/member/main/view.php:25 dash/lib/app/address.php:198
 #: dash/lib/app/user/edit.php:53 dash/lib/app/user_telegram.php:80
-#: dash/lib/app/user_telegram.php:87
+#: dash/lib/app/user_telegram.php:87 khadije/includes/lib/app/place.php:230
 msgid "Invalid user id"
 msgstr "شناسه کاربر نامعتبر است"
 
@@ -21734,6 +21734,10 @@ msgstr "افزودن زائر به موکب"
 msgid "ContentMokebOpen"
 msgstr "باز شدن بخش موکب"
 
+#: khadije/includes/languages/trans_static.php:287
+msgid "cpKarbalaUserCount"
+msgstr "نمایش آمار زائران کربلا"
+
 #: khadije/includes/lib/app/android.php:149
 msgid "Menu"
 msgstr "منو"
@@ -22447,7 +22451,7 @@ msgstr "انتخاب شهر الزامی است"
 msgid "Invalid country name"
 msgstr "کشور نامعتبر"
 
-#: khadije/includes/lib/app/karbalasetting.php:22
+#: khadije/includes/lib/app/karbalasetting.php:75
 msgid "Status changed"
 msgstr "وضعیت تغییر یافت"
 
@@ -22646,25 +22650,25 @@ msgstr "داده‌ی نامعتبر"
 msgid "Invlid data"
 msgstr "داده نامعتبر است!"
 
-#: khadije/includes/lib/app/place.php:255
+#: khadije/includes/lib/app/place.php:273
 #: khadije/includes/lib/app/product/add.php:20
 msgid "user not found"
 msgstr "کاربر یافت نشد"
 
-#: khadije/includes/lib/app/place.php:280
+#: khadije/includes/lib/app/place.php:298
 msgid "No way to insert place"
 msgstr "هیچ راهی برای افزودن مکان نیست"
 
-#: khadije/includes/lib/app/place.php:289
+#: khadije/includes/lib/app/place.php:307
 msgid "Place successfuly added"
 msgstr "مکان با موفقیت اضافه شد"
 
-#: khadije/includes/lib/app/place.php:433
+#: khadije/includes/lib/app/place.php:452
 #: khadije/includes/lib/app/product/edit.php:47
 msgid "Data"
 msgstr "داده"
 
-#: khadije/includes/lib/app/place.php:436
+#: khadije/includes/lib/app/place.php:455
 #: khadije/includes/lib/app/product/edit.php:50
 msgid ":title successfully updated"
 msgstr ":title با موفقیت بروز شد"

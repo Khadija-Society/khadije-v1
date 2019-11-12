@@ -283,6 +283,8 @@ class TransStatic
 	echo T_("ContentMokebUpdateDetail");
 	echo T_("ContentMokebAddUser");
 	echo T_("ContentMokebOpen");
+
+	echo T_("cpKarbalaUserCount");
  }
 }
 ?>
