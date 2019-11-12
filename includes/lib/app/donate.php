@@ -573,6 +573,9 @@ class donate
 			\dash\session::set('temp_mobile_sms_verify_payment', \dash\user::detail('mobile'));
 		}
 
+		$childname = \dash\app::request('childname');
+		$fathername = \dash\app::request('fathername');
+
 
 		if(\dash\app::request('manuall') === 'on')
 		{
@@ -650,6 +653,11 @@ class donate
 				$msg_go .= ' ('. $way. ') ';
 			}
 
+			$desc = null;
+			if($fathername || $childname)
+			{
+				$desc = " نام فرزند $childname - نام پدر $fathername";
+			}
 
 
 			$meta =
@@ -674,9 +682,10 @@ class donate
 					'totalcount' => $totalcount,
 					'paygateway' => $paygateway,
 					'isproduct'  => $product ? 1 : null,
+					'desc'  => $desc,
+
 				]
 			];
-
 
 			if($showFactor)
 			{

@@ -19,7 +19,37 @@ class model
 			'doners'     => \dash\request::post('doners') === 'yes' ? 1 : 0,
 			'wayopt'     => \dash\request::post('wayOpt'),
 			'totalcount' => \dash\request::post('totalCount'),
+			'childname' => \dash\request::post('childname'),
+			'fathername' => \dash\request::post('fathername'),
 		];
+
+		if(strpos($args['way'], 'عقیقه') !== false)
+		{
+			if(!$args['childname'])
+			{
+				\dash\notif::error("برای اجرای عقیقه لطفا نام فرزند را وارد کنید", 'childname');
+				return false;
+			}
+
+			if(!$args['fathername'])
+			{
+				\dash\notif::error("برای اجرای عقیقه لطفا نام پدر را وارد کنید", 'fathername');
+				return false;
+			}
+
+			if(mb_strlen($args['childname']) > 50)
+			{
+				\dash\notif::error("لطفا نام فرزند را زیر ۵۰ حرف وارد کنید", 'childname');
+				return false;
+			}
+
+			if(mb_strlen($args['fathername']) > 50)
+			{
+				\dash\notif::error("لطفا نام پدر را زیر ۵۰ حرف وارد کنید", 'fathername');
+				return false;
+			}
+		}
+
 
 		$redirect = false;
 		if(\dash\permission::check('donateManualPay'))

@@ -42,6 +42,7 @@
         {{block ('iWay') }}
         {{block ('iCount') }}
         {{block ('iAmount') }}
+        {{block ('iFatherName') }}
         {{block ('iDonersList')}}
         {{block ('iDirectPay')}}
         {{block ('iPayWay')}}
@@ -217,6 +218,35 @@
 {%endif%}
 
 {%endblock%}
+
+
+
+
+
+{%block iFatherName%}
+<div data-response='way' data-response-where='{{aqiqeWay}}' data-response-hide>
+
+  <div class="f">
+    <div class="c6">
+        <label for='childName'>نام فرزند <small class="fc-red">* {%trans "Require"%}</small></label>
+        <div class="input">
+         <input type="text" name="childname" id='childName' maxlength="50">
+        </div>
+    </div>
+    <div class="c6">
+      <div class="mLa5">
+
+        <label for='fatherName'>نام پدر <small class="fc-red">* {%trans "Require"%}</small></label>
+        <div class="input">
+         <input type="text" name="fathername" maxlength="50" >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
 
 
 {%block iAmountLock%}

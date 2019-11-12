@@ -32,6 +32,19 @@ class view
 			}
 		}
 
+		$aqiqeWay = [];
+		if(is_array($wayList))
+		{
+			foreach ($wayList as $key => $value)
+			{
+				if(isset($value['title']) && strpos($value['title'], 'عقیقه') !== false)
+				{
+					$aqiqeWay[] = $value['title'];
+				}
+			}
+		}
+		\dash\data::aqiqeWay(implode('|', $aqiqeWay));
+
 		if(\dash\request::get('token'))
 		{
 			$get_msg = \dash\utility\pay\setting::final_msg(\dash\request::get('token'));

@@ -197,6 +197,7 @@
         <td class="s0 max-w200">{{value.niyat}}</td>
         <td>
           <a href="{{url.current}}?hazinekard={{value.hazinekard}}{{getDateURL}}">{{value.hazinekard}}</a>
+           {%if value.desc%} {{value.desc}} {%endif%}
           {%if value.wayopt%}
           <span class="badge light">{{value.wayopt}}</span>
           {%endif%}
