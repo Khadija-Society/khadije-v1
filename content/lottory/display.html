@@ -1,0 +1,44 @@
+{%extends display.mvc%}
+
+
+{%block body%}
+
+<video class="videobg" autoplay="" loop="" width="100%" height="100%">
+	<source src="{{url.static}}/video/bg.mp4" type="video/mp4">
+</video>
+
+<div class="lottory">
+	<header>
+		<h1>قرعه‌کشی برگزیدگان زیارت اولی عتبات عالیات در برنامه کوی محبت شبکه دو سیما</h1>
+	</header>
+
+
+
+	<div class="numbers">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>5</span>
+		<span>6</span>
+		<span>7</span>
+		<span>8</span>
+		<span>9</span>
+		<span>0</span>
+	</div>
+
+
+برندگان قرعه‌کشی زیارت اولی عتبات عالیات
+
+	<footer>
+			{{"now" |dt(true, 'date')}}
+	</footer>
+</div>
+{%endblock%}
+
+
+
+{%block foot_js%}
+
+	<link rel="stylesheet" href="{{url.static}}/css/lottory.css">
+{%endblock%}
