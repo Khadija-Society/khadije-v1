@@ -551,6 +551,10 @@ function startChoosenLoop()
     function fillWinnerDigit(_index)
     {
         var nextWinner   = $('.winners .person:not([data-ok])').first();
+        if(!nextWinner)
+        {
+            return false
+        }
         var nextId       = nextWinner.attr('data-id');
         var currentDigit = nextId.substr(_index, 1).toFarsi();
         var thisDigitEl  = $('.numbers span').eq(_index);
@@ -577,9 +581,12 @@ function startChoosenLoop()
 
     function turnWinnerItemOn()
     {
-        var nextWinner   = $('.winners .person:not([data-ok])').first();
-        nextWinner.attr('data-ok', '');
-        nextWinner.transition('drop');
+        var nextWinner = $('.winners .person:not([data-ok])').first();
+        if(nextWinner)
+        {
+            nextWinner.attr('data-ok', '');
+            nextWinner.transition('drop');
+        }
     }
 
 
