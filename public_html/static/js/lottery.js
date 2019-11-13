@@ -504,12 +504,15 @@ function startLottery()
 
 function showPlaceholders()
 {
-    $('.numbers span')
-      .transition({
-        animation : 'drop',
-        reverse   : 'auto', // default setting
-        interval  : 200
-      });
+    if($('.winners .person[data-status="run"]').length > 0)
+    {
+        $('.numbers span')
+          .transition({
+            animation : 'drop',
+            reverse   : 'auto', // default setting
+            interval  : 200
+          });
+    }
 }
 
 
