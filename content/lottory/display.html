@@ -33,7 +33,7 @@
 		<div class="winners f" data-winners='{{winners | raw}}' data-count='{{winnersList |length}}'>
 	{% for key, elected in winnersList %}
 			<div class="c3">
-				<div class="person{%if elected.run%} run{%endif%}" data-id='{{elected.id}}' data-index='{{elected.index}}' {%if elected.skip%}data-ok{%endif%}>
+				<div class="person" data-id='{{elected.id}}' data-index='{{elected.index}}' {%if elected.skip%}data-ok{%endif%} data-status='{{elected.status}}'>
 					<div class="f">
 						<div class="cauto key">{{elected.index | fitNumber}}</div>
 						<div class="c name">{{elected.name}}</div>

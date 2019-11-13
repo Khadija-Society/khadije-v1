@@ -133,10 +133,10 @@ main{
     overflow: hidden;
 }
 .winners .person .value{
-	letter-spacing: 5px;
+	letter-spacing: 2px;
 	font-size: 1em;
 	direction: ltr;
-	padding: 0 1em;
+	padding: 0 0.5em;
 }
 
 

@@ -477,35 +477,20 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
 
 
 
-$( document ).ready(function()
-{
-    console.log( "ready!" );
-});
-
-
 function startLottery()
 {
-    // 0. hide startBtn element
+    // 1. hide startBtn element
     $('.startBtn').fadeOut('fast');
 
-    // 1. show each buttons
+    // 2. show each buttons
     showPlaceholders();
 
-    // 2. show old winners if exist
+    // 3. show old winners if exist
     setTimeout(showOldWinners, 2500);
 
-    // 3. start loop
+    // 4. start loop
     var startLoopDimmer = 2500 + (5 * 200)
     setTimeout(startChoosenLoop, startLoopDimmer);
-
-
-    // 4. set each number of new winner
-
-
-
-    // 5. show in list of winner
-
-    // 6. if we need more go to step 4
 }
 
 
@@ -527,7 +512,7 @@ function showOldWinners()
     var myWinners = $('.winners').attr('data-winners');
     var myWinnersList = JSON.parse(myWinners);
 
-    $('.winners .person[data-ok]')
+    $('.winners .person[data-status="ok"]')
       .transition({
         animation : 'fade up',
         reverse   : 'auto', // default setting
@@ -550,7 +535,7 @@ function startChoosenLoop()
 
     function fillWinnerDigit(_index)
     {
-        var nextWinner   = $('.winners .person.run:not([data-ok])').first();
+        var nextWinner   = $('.winners .person[data-status="run"]').first();
         if(nextWinner.length === 0)
         {
             return false
@@ -583,10 +568,10 @@ function startChoosenLoop()
 
     function turnWinnerItemOn()
     {
-        var nextWinner = $('.winners .person.run:not([data-ok])').first();
+        var nextWinner = $('.winners .person[data-status="run"]').first();
         if(nextWinner.length)
         {
-            nextWinner.attr('data-ok', '');
+            nextWinner.attr('data-status', 'ok');
             nextWinner.transition('drop');
         }
     }
