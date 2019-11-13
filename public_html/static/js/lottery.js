@@ -576,31 +576,37 @@ function startChoosenLoop()
         }
     }
 
+    // clear digits
     $('.numbers span').removeClass('yes');
+    $('.numbers span').text('');
 
-    for (var i = 0; i <= 10; i++)
-    {
-        var randomDimmer = Math.floor(100 + Math.random() * 300);
-        var myInterval   = setInterval(fillGeneratedDigit, randomDimmer, i);
-        $('.numbers span').eq(i).attr('myInterval', myInterval);
-    }
+    var winnerInQuee = $('.winners .person[data-status="run"]').length;
 
-    setTimeout(function()
+    if(winnerInQuee > 0)
     {
         for (var i = 0; i <= 10; i++)
         {
-            setTimeout(fillWinnerDigit, i*500, i);
+            var randomDimmer = Math.floor(100 + Math.random() * 300);
+            var myInterval   = setInterval(fillGeneratedDigit, randomDimmer, i);
+            $('.numbers span').eq(i).attr('myInterval', myInterval);
         }
 
-        // flash winner number
-        setTimeout(flashWinnerNumbers, 6000);
-        // turn card on
-        setTimeout(turnWinnerItemOn, 7000);
-        // go to next person
-        setTimeout(startChoosenLoop, 10000);
+        setTimeout(function()
+        {
+            for (var i = 0; i <= 10; i++)
+            {
+                setTimeout(fillWinnerDigit, i*500, i);
+            }
 
-    }, 2000);
+            // flash winner number
+            setTimeout(flashWinnerNumbers, 6000);
+            // turn card on
+            setTimeout(turnWinnerItemOn, 7000);
+            // go to next person
+            setTimeout(startChoosenLoop, 10000);
 
+        }, 2000);
+    }
 }
 
 

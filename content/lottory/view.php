@@ -27,7 +27,7 @@ class view
 		'[
 			{"index":1,"name":"جواد ادیب","mobile":"989109610612","id":"444**32109","nationalcode":"4440032109","father":"احمد","province":"قم","status":"ok"},
 			{"index":2,"name":"جواد ادیب","mobile":"989131881682","id":"127**75702","nationalcode":"1277775702","father":"بهرام","province":"اصفهان","status":"ok"},
-			{"index":3,"name":"جواد ادیب","mobile":"989309216163","id":"005**49138","nationalcode":"0055149138","father":"احمد","province":"تهران","status":"run"},
+			{"index":3,"name":"جواد ادیب","mobile":"989309216163","id":"005**49138","nationalcode":"0055149138","father":"احمد","province":"تهران","status":"ok"},
 			{"index":4,"name":"جواد ادیب","mobile":"989038925304","id":"092**39041","nationalcode":"0925539041","father":"حسین","province":"خراسانرضوی","status":"run"},
 			{"index":5,"name":"جواد ادیب","mobile":"989300978323","id":"106**27253","nationalcode":"1064027253","father":"لطفاله","province":"خراسانرضوی","status":"run"},
 			{"index":6,"name":"جواد ادیب","mobile":"989371795377","id":"006**53896","nationalcode":"0069453896","father":"مرتضی","province":"تهران","status":"none"},
