@@ -9,50 +9,56 @@ class view
 		\dash\data::page_title(T_("Signup karbala"));
 		\dash\data::page_desc(\dash\data::site_desc());
 
-		$winers = self::winers();
-		\dash\data::winers($winers);
+		\dash\data::winners(json_encode(self::winners() , JSON_UNESCAPED_UNICODE));
 	}
 
 
 
-	private static function winers()
+	private static function winners()
 	{
-		$winers = [];
-		$winers[] =
+		$winners = [];
+		$winners[] =
 		[
+			'index'  => 1,
+			'id'     => 4440032109,
+			'name'   => 'رضا محیطی',
+			'mobile' => '989109610612',
+			'skip'   => true,
+		];
+
+		$winners[] =
+		[
+			'index'  => 2,
+			'id'     => 4440032109,
+			'name'   => 'رضا محیطی',
+			'mobile' => '989109610612',
+			'skip'   => true,
+		];
+
+		$winners[] =
+		[
+			'index'  => 3,
 			'id'     => 4440032109,
 			'name'   => 'رضا محیطی',
 			'mobile' => '989109610612',
 		];
 
-		$winers[] =
+		$winners[] =
 		[
+			'index'  => 4,
 			'id'     => 4440032109,
 			'name'   => 'رضا محیطی',
 			'mobile' => '989109610612',
 		];
 
-		$winers[] =
+		$winners[] =
 		[
+			'index'  => 5,
 			'id'     => 4440032109,
 			'name'   => 'رضا محیطی',
 			'mobile' => '989109610612',
 		];
-
-		$winers[] =
-		[
-			'id'     => 4440032109,
-			'name'   => 'رضا محیطی',
-			'mobile' => '989109610612',
-		];
-
-		$winers[] =
-		[
-			'id'     => 4440032109,
-			'name'   => 'رضا محیطی',
-			'mobile' => '989109610612',
-		];
-		return $winers;
+		return $winners;
 	}
 }
 ?>

@@ -3,7 +3,7 @@
 
 {%block body%}
 
-<video class="videobg" autoplay="" loop="" width="100%" height="100%">
+<video class="videobg" autoplay loop width="100%" height="100%">
 	<source src="{{url.static}}/video/bg.mp4" type="video/mp4">
 </video>
 
@@ -27,14 +27,16 @@
 		<span>0</span>
 	</div>
 
-	<div class="winners f">
+	<div class="winners f" data-winners='{{winners | raw}}'>
 
 {% for i in 1..20 %}
 		<div class="c3">
-			<div class="person f">
-				<div class="cauto key">{{i | fitNumber}}</div>
-				<div class="c name">جواد ادیب </div>
-				<div class="cauto value">{{"219**53994" | fitNumber}}</div>
+			<div class="person" data-hide data-index='{{i}}'>
+				<div class="f">
+					<div class="cauto key">{{i | fitNumber}}</div>
+					<div class="c name">جواد ادیب </div>
+					<div class="cauto value">{{"219**53994" | fitNumber}}</div>
+				</div>
 			</div>
 		</div>
 {% endfor %}
@@ -52,5 +54,29 @@
 
 {%block foot_js%}
 
-	<link rel="stylesheet" href="{{url.static}}/css/lottory.css">
+	<link rel="stylesheet" href="{{url.static}}/css/lottery.css">
+
+	<script>
+		var myWinners = $('.winners').attr('data-winners');
+		var myWinnersList = JSON.parse(myWinners);
+
+
+		myWinnersList.forEach(function(_myPerson)
+		{
+			console.log(_myPerson);
+			if(_myPerson.index && _myPerson.id && _myPerson.name)
+			{
+				var currentPerson = $('.winners .person[data-index="' + _myPerson.index + '"]');
+				console.log(currentPerson);
+				if(_myPerson.skip)
+				{
+					console.log('skip');
+					currentPerson.fadeIn().attr('data-hide', null);
+				}
+			}
+		});
+		// console.log(myWinners);
+
+
+	</script>
 {%endblock%}

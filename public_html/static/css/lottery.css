@@ -66,10 +66,9 @@ body{
 }
 
 .numbers{
-	height: 200px;
-	margin-bottom: 50px;
+	height: 150px;
+	margin: 50px 20px 25px;
 	font-size: 3em;
-	margin-top: 1em;
 	text-align: center;
 }
 .numbers span{
@@ -97,6 +96,7 @@ body{
 	margin: 5px;
 	color: #fff;
 	text-align: center;
+	transition: 0.3s;
 }
 .winners .person .key{
 	width: 50px;
@@ -115,5 +115,8 @@ body{
 	font-size: 1em;
 	direction: ltr;
 	padding: 0 1em;
+}
+.winners .person[data-hide]{
+	display: none;
 }
 
