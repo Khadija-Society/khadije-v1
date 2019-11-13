@@ -12,7 +12,7 @@ body{
 main{
 	position: relative;
 	overflow:hidden;
-	min-height: 470px;
+	min-height: 450px;
 }
 
 .videobg {
@@ -30,7 +30,7 @@ main{
     z-index: 0
 }
 
-.lottory{
+.lottery{
 	font-family: 'IRANYekan';
 	min-height: 100%;
 	font-size: 1.4em;
@@ -38,7 +38,7 @@ main{
 	z-index: 1;
 	position: relative;
 }
-.lottory header{
+.lottery header{
 	height: 160px;
 	overflow: hidden;
 	font-weight: 800;
@@ -58,13 +58,13 @@ main{
 	-webkit-animation-delay: 0.01s;
 	box-shadow: 0 2px 10px #000;
 }
-.lottory header h1{
+.lottery header h1{
 	line-height: 40px;
 	margin: 0;
 	font-size: 1.7em;
 }
 
-.lottory footer{
+.lottery footer{
 	position: fixed;
 	bottom: 0;
 	right: 0;
