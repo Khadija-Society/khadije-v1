@@ -494,20 +494,17 @@ function startLottery()
     // 2. show old winners if exist
     setTimeout(showOldWinners, 2500);
 
-    // 3. start randowm number
-    setTimeout(generateRandomDigit, 5000);
+    // 3. start loop
+    setTimeout(startChoosenLoop, 5000);
+
 
     // 4. set each number of new winner
-    setTimeout(setEachNumberOfNewWinner, 7000);
 
-    // 5. flash on winners number
-    // flashWinnerNumbers();
 
-    // 6. show in list of winner
 
-    // 7. if we need more go to step 4
+    // 5. show in list of winner
 
-    // 8.
+    // 6. if we need more go to step 4
 }
 
 
@@ -520,37 +517,6 @@ function showPlaceholders()
         reverse   : 'auto', // default setting
         interval  : 200
       });
-}
-
-
-function flashWinnerNumbers()
-{
-    $('.numbers span').transition('flash');
-    // $('.numbers span')
-    //   .transition({
-    //     animation : 'pulse',
-    //     reverse   : 'auto', // default setting
-    //     interval  : 200
-    //   });
-}
-
-
-function generateRandomDigit()
-{
-    for (var i = 0; i <= 10; i++)
-    {
-        var randomDimmer = Math.floor(100 + Math.random() * 300);
-        var myInterval   = setInterval(fillGeneratedDigit, randomDimmer, i);
-        $('.numbers span').eq(i).attr('myInterval', myInterval);
-    }
-
-    function fillGeneratedDigit(_index)
-    {
-        // generate number for this one
-        var myNumbersEl = $('.numbers span');
-        var myDigit = Math.floor(Math.random() * 10).toString().toFarsi();
-        myNumbersEl.eq(_index).text(myDigit);
-    }
 }
 
 
@@ -568,11 +534,21 @@ function showOldWinners()
 }
 
 
-function setEachNumberOfNewWinner()
+function startChoosenLoop()
 {
     for (var i = 0; i <= 10; i++)
     {
-        setTimeout(fillWinnerDigit, i*500, i);
+        var randomDimmer = Math.floor(100 + Math.random() * 300);
+        var myInterval   = setInterval(fillGeneratedDigit, randomDimmer, i);
+        $('.numbers span').eq(i).attr('myInterval', myInterval);
+    }
+
+    function fillGeneratedDigit(_index)
+    {
+        // generate number for this one
+        var myNumbersEl = $('.numbers span');
+        var myDigit = Math.floor(Math.random() * 10).toString().toFarsi();
+        myNumbersEl.eq(_index).text(myDigit);
     }
 
     function fillWinnerDigit(_index)
@@ -588,7 +564,33 @@ function setEachNumberOfNewWinner()
         thisDigitEl.text(currentDigit);
         thisDigitEl.transition('pulse');
     }
+
+
+    function flashWinnerNumbers()
+    {
+        $('.numbers span').transition('flash', "2000ms");
+        // $('.numbers span')
+        //   .transition({
+        //     animation : 'pulse',
+        //     reverse   : 'auto', // default setting
+        //     interval  : 200
+        //   });
+    }
+
+    setTimeout(function()
+    {
+        for (var i = 0; i <= 10; i++)
+        {
+            setTimeout(fillWinnerDigit, i*500, i);
+        }
+
+        // flash winner number
+        setTimeout(flashWinnerNumbers, 6000);
+    }, 2000);
+
 }
+
+
 
 
 
