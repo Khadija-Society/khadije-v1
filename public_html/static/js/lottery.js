@@ -439,6 +439,7 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
                     scale: [0,1]
                 });
                 // bttnBack.style.pointerEvents = 'auto';
+                startLottery();
             }
         };
         const particles = new Particles(bttn, particlesOpts);
@@ -476,34 +477,73 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
 
 
 
+$( document ).ready(function()
+{
+    console.log( "ready!" );
+});
 
 
+function startLottery()
+{
+    // 0. hide startBtn element
+    $('.startBtn').fadeOut('fast');
 
+    // 1. show each buttons
+    showPlaceholders();
+
+    // 2. start randowm number
+
+    // 3. show old winners if exist
+
+    // 4. set each number of new winner
+
+    // 5. flash on winners number
+
+    // 6. show in list of winner
+
+    // 7. if we need more go to step 4
+
+    // 8.
+}
+
+
+function showPlaceholders()
+{
+    $('.numbers span')
+      .transition({
+        animation : 'drop',
+        reverse   : 'auto', // default setting
+        interval  : 200
+      })
+    ;
+    // for (var i = 0; i <= 10; i++)
+    // {
+    //     $('.numbers span').eq(i).slideDown();
+    // }
+}
 
 
 var myWinners = $('.winners').attr('data-winners');
 var myWinnersList = JSON.parse(myWinners);
 
 
-myWinnersList.forEach(function(_myPerson)
-{
-	// console.log(_myPerson);
-	if(_myPerson.index && _myPerson.id && _myPerson.name)
-	{
-		var currentPerson = $('.winners .person[data-index="' + _myPerson.index + '"]');
-		// console.log(currentPerson);
-		if(_myPerson.skip)
-		{
-			// console.log('skip');
-			currentPerson.fadeIn().attr('data-hide', null);
-		}
-	}
-});
-// console.log(myWinners);
+// myWinnersList.forEach(function(_myPerson)
+// {
+// 	// console.log(_myPerson);
+// 	if(_myPerson.index && _myPerson.id && _myPerson.name)
+// 	{
+// 		var currentPerson = $('.winners .person[data-index="' + _myPerson.index + '"]');
+// 		// console.log(currentPerson);
+// 		if(_myPerson.skip)
+// 		{
+// 			// console.log('skip');
+// 			currentPerson.fadeIn().attr('data-hide', null);
+// 		}
+// 	}
+// });
 
-setInterval(generateRandomNumber, 500);
+// setInterval(generateRandomNumber, 500);
 
-// generateRandomNumber();
 
 function generateRandomNumber()
 {
