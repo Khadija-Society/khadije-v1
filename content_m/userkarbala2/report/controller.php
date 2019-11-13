@@ -7,7 +7,7 @@ class controller
 	public static function routing()
 	{
 
-		\dash\permission::access('cpUsersKarbalaView');
+		\dash\permission::access('koyeMohebbat');
 
 		$subchild = \dash\url::subchild();
 		if(in_array($subchild, ['provincelist', 'map']))

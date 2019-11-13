@@ -2,30 +2,7 @@
 
 
 {%block pageContent%}
-<div class="f">
-
-<a class="dcard c" href='{{url.this}}/report'>
- <div class="statistic orange">
-  <div class="value"><i class="sf-clock"></i></div>
-  <div class="label">{%trans "Report daily"%}</div>
- </div>
-</a>
-
-<a class="dcard c" href='{{url.this}}/report/provincelist'>
- <div class="statistic blue">
-  <div class="value"><i class="sf-list"></i></div>
-  <div class="label">{%trans "Province list"%}</div>
- </div>
-</a>
-
-
-<a class="dcard c" href='{{url.this}}/report/map' data-direct>
- <div class="statistic green">
-  <div class="value"><i class="sf-map"></i></div>
-  <div class="label">{%trans "Map chart"%}</div>
- </div>
-</a>
-</div>
+{%include 'content_m/userkarbala2/nav.html'%}
 
 {%if dataTable%}
 <table class="tbl1 v6">

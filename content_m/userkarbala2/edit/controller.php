@@ -6,6 +6,7 @@ class controller
 
 	public static function routing()
 	{
+		\dash\permission::access('koyeMohebbat');
 		$nationalcode = \dash\request::get('nationalcode');
 		if($nationalcode && \dash\utility\filter::nationalcode($nationalcode))
 		{

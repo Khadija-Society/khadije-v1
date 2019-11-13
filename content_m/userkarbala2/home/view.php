@@ -6,7 +6,7 @@ class view
 
 	public static function config()
 	{
-		\dash\permission::access('cpUsersKarbalaView');
+		\dash\permission::access('koyeMohebbat');
 		\dash\data::page_pictogram('users');
 		\dash\data::page_title('ثبت‌نامی‌های کربلا - برنامه کوی محبت');
 		\dash\data::page_desc(T_('Some detail about your users!'));

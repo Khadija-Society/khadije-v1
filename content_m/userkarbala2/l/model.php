@@ -14,7 +14,7 @@ class model
 			return;
 		}
 
-
+		\dash\permission::access('koyeMohebbatAddLottery');
 		$post                  = [];
 		$post['title']         = \dash\request::post('title');
 		$post['date']          = \dash\request::post('date');
