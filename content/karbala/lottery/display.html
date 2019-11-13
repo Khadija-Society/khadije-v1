@@ -32,7 +32,7 @@
 
 		<div class="winners f" data-winners='{{winners | raw}}' data-count='{{winnersList |length}}'>
 {% for key, elected in winnersList %}
-			<div class="c3">
+			<div class="c3 m6 s12">
 				<div class="person" data-id='{{elected.id}}' data-index='{{elected.index}}' {%if elected.skip%}data-ok{%endif%} data-status='{{elected.status}}'>
 					<div class="f">
 						<div class="cauto key">{{elected.index | fitNumber}}</div>
@@ -60,6 +60,6 @@
 
 {%block foot_js%}
 
-	<link rel="stylesheet" href="{{url.static}}/css/lottery.css?v=7">
-	<script src="{{url.static}}/js/lottery.js?v=7"></script>
+	<link rel="stylesheet" href="{{url.static}}/css/lottery.css?v=8">
+	<script src="{{url.static}}/js/lottery.js?v=8"></script>
 {%endblock%}

@@ -244,3 +244,12 @@ main{
 .no-js .particles-button {
 	grid-area: 1 / 1 / 2 / 2;
 }
+
+
+@media (max-width: 1024px) {
+	.lottery{display: none!important;}
+}
+
+@media screen and (max-height: 700px) {
+	.lottery{display: none!important;}
+}
