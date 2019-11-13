@@ -21,14 +21,20 @@ class controller
 					{
 						if(!in_array($child, $place_access))
 						{
-							\dash\header::status(403);
+							if(!self::is_admin())
+							{
+								\dash\header::status(403);
+							}
 						}
 					}
 					elseif(is_string($place_access))
 					{
 						if($child != $place_access)
 						{
-							\dash\header::status(403);
+							if(!self::is_admin())
+							{
+								\dash\header::status(403);
+							}
 						}
 					}
 				}
@@ -52,11 +58,26 @@ class controller
 
 				if(!in_array(\dash\coding::encode(\dash\user::id()), $mokebDetail['perm']))
 				{
-					\dash\header::status(403, 'شما دسترسی لازم را برای ثبت افراد در این موکب ندارید');
-					return false;
+					if(!self::is_admin())
+					{
+						\dash\header::status(403, 'شما دسترسی لازم را برای ثبت افراد در این موکب ندارید');
+						return false;
+					}
 				}
 			}
 
+		}
+	}
+
+	private static function is_admin()
+	{
+		if(\dash\permission::check(md5(rand())))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}
 }
