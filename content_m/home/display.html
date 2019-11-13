@@ -2,7 +2,7 @@
 
 
 {%block pageContent%}
-<h3>{%trans "Donate"%}</h3>
+{% if perm('cpDonateView') or perm('cpProductView') or perm('cpProductView') or perm('cpProductView') %}<h3>{%trans "Donate"%}</h3>
 <div class="f">
 
   {%if perm('cpDonateView')%}<div class="c2 s6">{{block("Bdonate")}}</div>{%endif%}
@@ -10,14 +10,19 @@
   {%if perm('cpProductView')%}<div class="c2 s6">{{block("BproductDonateArbaeen")}}</div>{%endif%}
   {%if perm('cpProductView')%}<div class="c2 s6">{{block("Bproduct")}}</div>{%endif%}
 </div>
+{%endif%}
 
+
+{%if perm('cpFamilyTripView') or perm('cpTripView') or perm('cpAddNewTrip')   %}
 <h3>{%trans "Trip"%}</h3>
 <div class="f">
   {%if perm('cpFamilyTripView')%}<div class="c2 s6">{{block ("BtripFamilty")}}</div>{%endif%}
   {%if perm('cpTripView')%}<div class="c2 s6">{{block ("Btrip")}}</div>{%endif%}
   {%if perm('cpAddNewTrip')%}<div class="c2 s6">{{block("bAddNewTrip")}}</div>{%endif%}
 </div>
+{%endif%}
 
+{% if perm('cpRepresentationView') or perm('cpServiceView') or perm('cpConsultingView') or perm('cpHealthView')   %}
 <h3>{%trans "Service"%}</h3>
 
 <div class="f">
@@ -26,7 +31,9 @@
   {%if perm('cpConsultingView')%}<div class="c2 s6">{{block ("bConsulting")}}</div>{%endif%}
   {%if perm('cpHealthView')%}<div class="c2 s6">{{block ("bHealth")}}</div>{%endif%}
 </div>
+{%endif%}
 
+{%if perm('cpUsersKarbalaView') or  perm('koyeMohebbat') or perm('ContentMokeb')  %}
 <h3>{%trans "Signup karbala"%}</h3>
 <div class="f">
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsers")}}</div>{%endif%}
@@ -35,7 +42,9 @@
   {%if perm('ContentMokeb')%}<div class="c2 s6">{{block("bKarbalaUsersarbaeenMokeb")}}</div>{%endif%}
   {%if perm('cpUsersKarbalaView')%}<div class="c2 s6">{{block("bKarbalaUsersarsetting")}}</div>{%endif%}
 </div>
+{%endif%}
 
+{%if perm('cpDelneveshteView') or perm('cpDoyonView') or perm('cpReportDaily') or perm('cpHomePageNumber') or perm('cpHomePageNumber') or perm('cpHadith') or perm('cpNationalCodeView') or perm('cpSettingThankyouMessage') or perm('cpKarbalaUserCount') %}
 <h3>{%trans "Other"%}</h3>
 <div class="f">
 
@@ -50,7 +59,7 @@
   {%if perm('cpSettingThankyouMessage')%}<div class="c2 s6">{{block("BTankyouMessage")}}</div>{%endif%}
   {%if perm('cpKarbalaUserCount')%}<div class="c2 s6">{{block("BnumberKarbalaAll")}}</div>{%endif%}
 </div>
-
+{%endif%}
 {%endblock%}
 
 
