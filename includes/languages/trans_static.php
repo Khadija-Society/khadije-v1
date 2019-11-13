@@ -285,6 +285,10 @@ class TransStatic
 	echo T_("ContentMokebOpen");
 
 	echo T_("cpKarbalaUserCount");
+
+	echo T_("koyeMohebbat");
+	echo T_("Koye Mohebbat");
+	echo T_("koyeMohebbatAddLottery");
  }
 }
 ?>

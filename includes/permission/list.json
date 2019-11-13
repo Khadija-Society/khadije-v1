@@ -479,5 +479,19 @@
   "cpKarbalaUserCount": {
     "title": "cpKarbalaUserCount",
     "cat": []
+  },
+  "koyeMohebbat": {
+    "title": "koyeMohebbat",
+    "cat": "Koye Mohebbat",
+    "require": [
+      "contentCp"
+    ]
+  },
+  "koyeMohebbatAddLottery": {
+    "title": "koyeMohebbatAddLottery",
+    "cat": "Koye Mohebbat",
+    "require": [
+      "contentCp"
+    ]
   }
 }
