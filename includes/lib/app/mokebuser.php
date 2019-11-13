@@ -12,7 +12,7 @@ class mokebuser
 			$nationalcode = $_nationalcode;
 			if($nationalcode && \dash\utility\filter::nationalcode($nationalcode))
 			{
-				$loadUser = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1]);
+				$loadUser = \lib\db\mokebusers::get(['nationalcode' => $nationalcode, 'limit' => 1], ['order' => " ORDER BY id DESC"]);
 				if($loadUser && isset($loadUser['id']))
 				{
 					$update                = [];

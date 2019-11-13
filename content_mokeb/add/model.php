@@ -14,7 +14,8 @@ class model
 			\lib\app\mokebuser::forceexit(\dash\request::get('cnationalcode'), \dash\request::get('position'));
 			if(\dash\request::get('cnationalcode'))
 			{
-				\dash\redirect::pwd();
+				\dash\redirect::to(\dash\url::that(). '?cnationalcode='. \dash\request::get('cnationalcode'));
+
 			}
 			else
 			{
@@ -67,26 +68,34 @@ class model
 		{
 			\dash\permission::access('ContentMokebAddUser');
 
-			if(isset($post['nationalcode']) && !\dash\request::get('isduplicate'))
+			if(\dash\request::post('forcesignup') == 1)
 			{
-				$check_duplicate =
-				[
-					'nationalcode' => $post['nationalcode'],
-					'limit'        => 1,
-				];
-
-				$check_duplicate = \lib\db\mokebusers::get($check_duplicate, ['order' => ' ORDER BY mokebusers.id DESC ']);
-
-				if(isset($check_duplicate['id']))
+				// force signup
+			}
+			else
+			{
+				if(isset($post['nationalcode']) && !\dash\request::get('isduplicate'))
 				{
-					\dash\notif::warn("ثبت‌نام با این کد‌ملی قبلا با موفقیت انجام شده است", 'nationalcode');
-					$requestGET = \dash\request::get();
-					$requestGET['isduplicate'] = $post['nationalcode'];
-					$requestGET = '?'. http_build_query($requestGET);
-					\dash\redirect::to(\dash\url::that(). $requestGET);
-					return false;
+					$check_duplicate =
+					[
+						'nationalcode' => $post['nationalcode'],
+						'limit'        => 1,
+					];
+
+					$check_duplicate = \lib\db\mokebusers::get($check_duplicate, ['order' => ' ORDER BY mokebusers.id DESC ']);
+
+					if(isset($check_duplicate['id']))
+					{
+						\dash\notif::warn("ثبت‌نام با این کد‌ملی قبلا با موفقیت انجام شده است", 'nationalcode');
+						$requestGET = \dash\request::get();
+						$requestGET['isduplicate'] = $post['nationalcode'];
+						$requestGET = '?'. http_build_query($requestGET);
+						\dash\redirect::to(\dash\url::that(). $requestGET);
+						return false;
+					}
 				}
 			}
+
 			\lib\app\mokebuser::add($post, ['place' => \dash\url::child()]);
 			if(\dash\engine\process::status())
 			{

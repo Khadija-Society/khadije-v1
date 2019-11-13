@@ -130,6 +130,7 @@ body .printA6 div{color:#000!important;}
         <div class="msg pTB3 mB0-f danger txtC txtB">کد ملی اشتباه است</div>
       {%elseif checkNationalcode == 'expire'%}
         <div class="msg pTB3 mB0-f danger txtC txtB">منقضی شده</div>
+
       {%elseif checkNationalcode == 'signuped'%}
         <div class="msg pTB3 mB0-f success txtC txtB">ثبت شده و مجاز به ورود</div>
       {%elseif checkNationalcode == 'not-signuped'%}
@@ -147,6 +148,11 @@ body .printA6 div{color:#000!important;}
         </div>
     </div>
     {{block('a6_chap_detail')}}
+
+{%if checkNationalcode == 'expire'%}
+   {{block('newSignupExpire')}}
+{%endif%}
+
 {%endif%}
 
 {%if checkNationalcode == 'not-signuped'%}
@@ -172,7 +178,20 @@ body .printA6 div{color:#000!important;}
 
 
 
+{%block newSignupExpire%}
+<div class="f justify-center">
+<div class="btn warn" data-kerkere=".showExpireSignup">پذیرش مجدد</div>
+</div>
+<div class="showExpireSignup" data-kerkere-content='hide'>
+    <div class="panel p0">
+    <div class="pad">
+        {{block('newSignup')}}
 
+    </div>
+  </div>
+
+</div>
+{%endblock%}
 
 
 
@@ -278,8 +297,6 @@ body .printA6 div{color:#000!important;}
         <option value="48" {%if mokebDetail.activetime == '48' %}selected {%endif%}>{{48 | fitNumber}} {%trans "Hour"%} - دو روز</option>
         <option value="72" {%if mokebDetail.activetime == '72' %}selected {%endif%}>{{72 | fitNumber}} {%trans "Hour"%} - سه روز</option>
         <option value="96" {%if mokebDetail.activetime == '96' %}selected {%endif%}>{{96 | fitNumber}} {%trans "Hour"%} - چهار روز</option>
-
-
       </select>
 
   </div>
@@ -299,13 +316,17 @@ body .printA6 div{color:#000!important;}
 
 
 
-    {%if requestGET.isduplicate and mokebuserDetail%}
+    {%if requestGET.isduplicate and mokebuserDetail or checkNationalcode == 'expire'%}
     <div class="c12">
       <div class="pA10 msg warn txtC txtB">این شخص قبلا در سامانه ثبت‌نام کرده است. در صورتی که می‌خواهید ایشان را مجددا پذیرش کنید کلیک کنید
 
       </div>
 
     </div>
+
+    {%if checkNationalcode == 'expire'%}
+      <input type="hidden" name="forcesignup" value="1">
+    {%endif%}
 
     <div class="f">
        <div class="c"><button class="btn success block" >پذیرش مجدد</button></div>

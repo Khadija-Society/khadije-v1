@@ -50,11 +50,24 @@
 {%endblock%}
 
 {%block iActiveTime%}
+{%if false%}
 <label for="iactivetime">{%trans "Active time"%}</label>
 <div class="input">
   <input type="number" name="activetime" id="iactivetime" value="{{dataRow.activetime}}" min="0" max="9999999999"  >
   <label class="addon">{%trans "Hour"%}</label>
 </div>
+{%endif%}
+
+      <label for="activetime">{%trans "Active time"%} </label>
+      <select name="activetime" class="ui dropdown select">
+        <option value="" readonly>{%trans "Please select one itme"%}</option>
+        <option value="12" {%if dataRow.activetime == '12' %}selected {%endif%}>{{12 | fitNumber}} {%trans "Hour"%} - نصف روز</option>
+        <option value="24" {%if dataRow.activetime == '24' %}selected {%endif%}>{{24 | fitNumber}} {%trans "Hour"%} - یک روز</option>
+        <option value="48" {%if dataRow.activetime == '48' %}selected {%endif%}>{{48 | fitNumber}} {%trans "Hour"%} - دو روز</option>
+        <option value="72" {%if dataRow.activetime == '72' %}selected {%endif%}>{{72 | fitNumber}} {%trans "Hour"%} - سه روز</option>
+        <option value="96" {%if dataRow.activetime == '96' %}selected {%endif%}>{{96 | fitNumber}} {%trans "Hour"%} - چهار روز</option>
+      </select>
+
 {%endblock%}
 
 
