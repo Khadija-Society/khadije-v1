@@ -478,7 +478,8 @@
   },
   "cpKarbalaUserCount": {
     "title": "cpKarbalaUserCount",
-    "cat": []
+    "cat": null,
+    "require": []
   },
   "koyeMohebbat": {
     "title": "koyeMohebbat",
