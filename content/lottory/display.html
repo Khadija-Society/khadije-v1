@@ -15,16 +15,16 @@
 
 
 	<div class="numbers">
-		<span>1</span>
-		<span>2</span>
-		<span>3</span>
+		<span>*</span>
+		<span>*</span>
+		<span>*</span>
 		<span class="disabled">*</span>
 		<span class="disabled">*</span>
-		<span>6</span>
-		<span>7</span>
-		<span>8</span>
-		<span>9</span>
-		<span>0</span>
+		<span>*</span>
+		<span>*</span>
+		<span>*</span>
+		<span>*</span>
+		<span>*</span>
 	</div>
 
 	<div class="winners f" data-winners='{{winners | raw}}'>
@@ -63,19 +63,33 @@
 
 		myWinnersList.forEach(function(_myPerson)
 		{
-			console.log(_myPerson);
+			// console.log(_myPerson);
 			if(_myPerson.index && _myPerson.id && _myPerson.name)
 			{
 				var currentPerson = $('.winners .person[data-index="' + _myPerson.index + '"]');
-				console.log(currentPerson);
+				// console.log(currentPerson);
 				if(_myPerson.skip)
 				{
-					console.log('skip');
+					// console.log('skip');
 					currentPerson.fadeIn().attr('data-hide', null);
 				}
 			}
 		});
 		// console.log(myWinners);
+
+		setInterval(generateRandomNumber, 50);
+
+		// generateRandomNumber();
+
+		function generateRandomNumber()
+		{
+			var myRand = Math.floor(1000000000 + Math.random() * 9000000000).toString();
+			var myNumbersEl = $('.numbers span');
+			for (var i = 0; i <= 10; i++)
+			{
+				myNumbersEl.eq(i).text(myRand.substr(i, 1));
+			}
+		}
 
 
 	</script>
