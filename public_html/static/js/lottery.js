@@ -574,11 +574,14 @@ function startChoosenLoop()
         //   });
     }
 
+
     function turnWinnerItemOn()
     {
         var nextWinner   = $('.winners .person:not([data-ok])').first();
+        nextWinner.attr('data-ok', '');
         nextWinner.transition('drop');
     }
+
 
     for (var i = 0; i <= 10; i++)
     {
@@ -598,6 +601,8 @@ function startChoosenLoop()
         setTimeout(flashWinnerNumbers, 6000);
         // turn card on
         setTimeout(turnWinnerItemOn, 7000);
+        // go to next person
+        setTimeout(startChoosenLoop, 10000);
 
     }, 2000);
 
