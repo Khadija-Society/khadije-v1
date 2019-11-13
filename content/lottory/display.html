@@ -18,8 +18,8 @@
 		<span>1</span>
 		<span>2</span>
 		<span>3</span>
-		<span>4</span>
-		<span>5</span>
+		<span class="disabled">*</span>
+		<span class="disabled">*</span>
 		<span>6</span>
 		<span>7</span>
 		<span>8</span>
@@ -40,8 +40,10 @@
 {% endfor %}
 
 	</div>
-	<footer>
-			{{"now" |dt(true, 'date')}}
+	<footer class="f">
+		<div class="c">جهت شرکت در قرعه کشی اپلیکیشن موسسه حضرت خدیجه را از وب‌سایت koyemohabat.ir دریافت کرده و ثبت‌نام کنید.</div>
+		<div class="cauto os txtB">{{"now" |dt(true, 'date')}}</div>
+
 	</footer>
 </div>
 {%endblock%}
