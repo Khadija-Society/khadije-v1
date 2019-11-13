@@ -197,13 +197,13 @@ class lottery
 			$temp['nationalcode'] = $value['nationalcode'];
 			$temp['father']       = $value['father'];
 			$temp['province']     = \dash\utility\location\provinces::get($value['province'], null, 'localname');
+			$temp['city']     = \dash\utility\location\cites::get($value['city'], null, 'localname');
 
 			$temp['status'] = $status; // run
 
 
 			$result[] = $temp;
 		}
-
 
 		return $result;
 	}
