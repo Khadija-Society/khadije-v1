@@ -61,7 +61,7 @@ class view
 			$md5  = substr($level, 0, 32);
 			$step = substr($level, 32);
 
-			if(!is_numeric($step))
+			if($step && !is_numeric($step))
 			{
 				\dash\header::status(404, T_("Invalid step"));
 				return false;

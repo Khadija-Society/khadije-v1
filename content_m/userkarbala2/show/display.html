@@ -1,0 +1,61 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{%block pageContent%}
+
+<div class="f justify-center">
+  <div class="c12 s12">
+
+    <div class="cbox">
+       <div class="msg">
+        <h4>{{lotteryDetail.title}}</h4>
+        <div class="f">
+          <div class="c">{%trans "Date"%} {{lotteryDetail.date| dt(null, 'date')}}</div>
+          <div class="c">{%trans "Count All"%} {{lotteryDetail.countall| fitNumber}}</div>
+          <div class="c">{%trans "Count per level"%} {{lotteryDetail.countperlevel| fitNumber}}</div>
+        </div>
+        <h4>مراحل جهت اجرای زده قرعه‌کشی</h4>
+          {%for i in 1..lotteryDetail.countlevel%}
+            <a class="btn pain outline mT10" href="{{url.kingdom}}/lottory?level={{lotteryDetail.url}}{{i}}">مرحله {{i | fitNumber}}</a>
+          {%endfor%}
+      </div>
+    </div>
+
+
+
+      <div class="tblBox fs14">
+        <table class='tbl1 v10'>
+          <thead>
+            <th class="collapsing">#</th>
+            <th>{%trans "Name"%}</th>
+            <th>{%trans "Mobile"%}</th>
+            <th>{%trans "Nationalcode"%}</th>
+            <th>{%trans "Father"%}</th>
+            <th>{%trans "Province"%}</th>
+            <th>{%trans "Update"%}</th>
+          </thead>
+          <tbody>
+            {%for key, value in allList%}
+              <tr>
+
+                <td class="collapsing">{{value.index | fitNumber(false)}}</td>
+                <td>{{value.name}}</td>
+                <td>{{value.mobile | fitNumber('mobile')}}</td>
+                <td>{{value.id | fitNumber(false)}}</td>
+                <td>{{value.father}}</td>
+                <td>{{value.province}}</td>
+                <td><a href="{{url.this}}/edit?nationalcode={{value.id}}" class="badge">{%trans "Edit"%}</a></td>
+              </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+      </div>
+
+</div>
+</div>
+
+{%endblock%}
+
+
+

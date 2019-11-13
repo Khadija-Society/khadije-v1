@@ -122,6 +122,8 @@ class lottery
 			return null;
 		}
 
+		\dash\temp::set('myLotteryDetail', $lottery);
+
 		$step = null;
 		$countperlevel = intval($lottery['countperlevel']);
 

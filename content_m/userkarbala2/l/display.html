@@ -53,10 +53,13 @@
             {%if perm_su()%}
               <div class="btn danger xs" data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}'>حذف</div>
             {%endif%}
-            {%for i in 1..value.countlevel%}
-              <a class="btn pain outline" href="{{url.kingdom}}/lottory?level={{value.url}}{{i}}">مرحله {{i | fitNumber}}</a>
-            {%endfor%}
+              <a class="btn success" href="{{url.this}}/show?level={{value.url}}">بررسی لیست</a>
           </div>
+          <h4>مراحل جهت اجرای زده قرعه‌کشی</h4>
+
+            {%for i in 1..value.countlevel%}
+              <a class="btn pain outline mT10" href="{{url.kingdom}}/lottory?level={{value.url}}{{i}}">مرحله {{i | fitNumber}}</a>
+            {%endfor%}
         </div>
       {%endfor%}
     </div>
