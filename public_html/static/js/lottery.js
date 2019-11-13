@@ -550,7 +550,7 @@ function startChoosenLoop()
 
     function fillWinnerDigit(_index)
     {
-        var nextWinner   = $('.winners .person:not([data-ok])').first();
+        var nextWinner   = $('.winners .person.run:not([data-ok])').first();
         if(nextWinner.length === 0)
         {
             return false
@@ -583,7 +583,7 @@ function startChoosenLoop()
 
     function turnWinnerItemOn()
     {
-        var nextWinner = $('.winners .person:not([data-ok])').first();
+        var nextWinner = $('.winners .person.run:not([data-ok])').first();
         if(nextWinner.length)
         {
             nextWinner.attr('data-ok', '');
