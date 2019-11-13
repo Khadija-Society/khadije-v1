@@ -42,10 +42,10 @@
                 <td class="collapsing">{{value.index | fitNumber(false)}}</td>
                 <td>{{value.name}}</td>
                 <td>{{value.mobile | fitNumber('mobile')}}</td>
-                <td>{{value.id | fitNumber(false)}}</td>
+                <td>{{value.nationalcode | fitNumber(false)}}</td>
                 <td>{{value.father}}</td>
                 <td>{{value.province}}</td>
-                <td><a href="{{url.this}}/edit?nationalcode={{value.id}}" class="badge">{%trans "Edit"%}</a></td>
+                <td><a href="{{url.this}}/edit?nationalcode={{value.nationalcode}}" class="badge">{%trans "Edit"%}</a></td>
               </tr>
             {%endfor%}
           </tbody>

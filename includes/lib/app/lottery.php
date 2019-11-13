@@ -155,27 +155,55 @@ class lottery
 		$result = [];
 		foreach ($load_user as $key => $value)
 		{
-			$isSkip = false;
-			if($step)
+			$ok    = false;
+			$run   = false;
+
+			$start = ($step - 1) * $countperlevel;
+			if(!$start)
 			{
-				$skip = $step * $countperlevel;
-				if($key < $skip)
-				{
-					$isSkip = true;
-				}
+				$start = 0;
 			}
 
-			$temp             = [];
-			$temp['index']    = $key + 1;
-			$temp['name']     = $value['displayname'];
-			$temp['mobile']   = $value['mobile'];
-			$temp['id']       = $value['nationalcode'];
-			$temp['father']   = $value['father'];
-			$temp['province'] = \dash\utility\location\provinces::get($value['province'], null, 'localname');
-			$temp['skip']     = $isSkip;
+			$end = $start + $countperlevel;
+
+			$myKey = $key + 1;
+
+			if($myKey <= $start)
+			{
+				$ok = true;
+			}
+
+
+			$status = 'non';
+			if($ok)
+			{
+				$status = 'ok';
+			}
+			else
+			{
+				if($myKey >= $start && $myKey <= $end)
+				{
+					$status = 'run';
+				}
+
+			}
+
+
+			$temp                 = [];
+			$temp['index']        = $key + 1;
+			$temp['name']         = $value['displayname'];
+			$temp['mobile']       = $value['mobile'];
+			$temp['id']           = substr($value['nationalcode'], 0, 3). '**'. substr($value['nationalcode'], 5);
+			$temp['nationalcode'] = $value['nationalcode'];
+			$temp['father']       = $value['father'];
+			$temp['province']     = \dash\utility\location\provinces::get($value['province'], null, 'localname');
+
+			$temp['status'] = $status; // run
+
 
 			$result[] = $temp;
 		}
+
 
 		return $result;
 	}
