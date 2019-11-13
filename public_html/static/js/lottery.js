@@ -492,12 +492,14 @@ function startLottery()
     showPlaceholders();
 
     // 2. start randowm number
+    setTimeout(generateRandomDigit, 1700);
 
     // 3. show old winners if exist
 
     // 4. set each number of new winner
 
     // 5. flash on winners number
+    // flashWinnerNumbers();
 
     // 6. show in list of winner
 
@@ -514,13 +516,20 @@ function showPlaceholders()
         animation : 'drop',
         reverse   : 'auto', // default setting
         interval  : 200
-      })
-    ;
-    // for (var i = 0; i <= 10; i++)
-    // {
-    //     $('.numbers span').eq(i).slideDown();
-    // }
+      });
 }
+
+function flashWinnerNumbers()
+{
+    $('.numbers span').transition('flash');
+    // $('.numbers span')
+    //   .transition({
+    //     animation : 'pulse',
+    //     reverse   : 'auto', // default setting
+    //     interval  : 200
+    //   });
+}
+
 
 
 var myWinners = $('.winners').attr('data-winners');
@@ -545,15 +554,32 @@ var myWinnersList = JSON.parse(myWinners);
 // setInterval(generateRandomNumber, 500);
 
 
-function generateRandomNumber()
+// function generateRandomNumber()
+// {
+// 	var myRand = Math.floor(1000000000 + Math.random() * 9000000000).toString().toFarsi();
+// 	var myNumbersEl = $('.numbers span');
+// 	for (var i = 0; i <= 10; i++)
+// 	{
+// 		myNumbersEl.eq(i).text(myRand.substr(i, 1));
+// 	}
+// }
+
+
+
+function generateRandomDigit()
 {
-	var myRand = Math.floor(1000000000 + Math.random() * 9000000000).toString().toFarsi();
-	var myNumbersEl = $('.numbers span');
-	for (var i = 0; i <= 10; i++)
-	{
-		myNumbersEl.eq(i).text(myRand.substr(i, 1));
-	}
+    for (var i = 0; i <= 10; i++)
+    {
+        var randomDimmer = Math.floor(100 + Math.random() * 300);
+        setInterval(fillGeneratedDigit, randomDimmer, i);
+    }
 }
 
-
+function fillGeneratedDigit(_index)
+{
+    // generate number for this one
+    var myNumbersEl = $('.numbers span');
+    var myDigit = Math.floor(Math.random() * 10).toString().toFarsi();
+    myNumbersEl.eq(_index).text(myDigit);
+}
 
