@@ -551,7 +551,7 @@ function startChoosenLoop()
     function fillWinnerDigit(_index)
     {
         var nextWinner   = $('.winners .person:not([data-ok])').first();
-        if(!nextWinner)
+        if(nextWinner.length === 0)
         {
             return false
         }
@@ -559,6 +559,8 @@ function startChoosenLoop()
         var currentDigit = nextId.substr(_index, 1).toFarsi();
         var thisDigitEl  = $('.numbers span').eq(_index);
 
+        // add yes effect
+        thisDigitEl.addClass('yes');
         // clear interval
         clearInterval(thisDigitEl.attr('myInterval'));
         // fill digit
@@ -582,13 +584,14 @@ function startChoosenLoop()
     function turnWinnerItemOn()
     {
         var nextWinner = $('.winners .person:not([data-ok])').first();
-        if(nextWinner)
+        if(nextWinner.length)
         {
             nextWinner.attr('data-ok', '');
             nextWinner.transition('drop');
         }
     }
 
+    $('.numbers span').removeClass('yes');
 
     for (var i = 0; i <= 10; i++)
     {

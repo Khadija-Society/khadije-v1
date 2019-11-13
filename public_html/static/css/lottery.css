@@ -74,7 +74,7 @@ main{
 
 .numbers{
 	height: 100px;
-	margin: 50px auto 40px;
+	margin: 50px auto 30px;
 	text-align: center;
 	position: relative;
 	direction: ltr;
@@ -92,12 +92,15 @@ main{
 	border-radius: 10px;
 	overflow: hidden;
 	background-color: rgba(0,0,0,0.1);
+	transition: 0.3s;
 	color: #fff;
 	text-align: center;
 	float: left;
 	display: none;
 }
-
+.numbers span.yes{
+	background-color: rgba(0,0,0,0.5);
+}
 .winners{
 	padding: 25px 20px;
 }
