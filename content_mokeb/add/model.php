@@ -54,6 +54,7 @@ class model
 		$post['position']         = \dash\request::get('position');
 		$post['noposition']         = \dash\request::post('noposition') ;
 		$post['activetime']         = \dash\request::post('activetime') ;
+		$post['datecreated']         = \dash\request::post('datecreated') ;
 
 		if(\dash\request::post('updateuser'))
 		{

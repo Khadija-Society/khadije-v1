@@ -133,7 +133,7 @@ class mokebuser
 
 	}
 
-	public static function get_expire($_place, $_active_time = null)
+	public static function get_expire($_place, $_active_time = null, $_datecreated = null)
 	{
 		$place_detail = \lib\app\place::get($_place);
 		if(!$place_detail || !isset($place_detail['id']))
@@ -173,7 +173,14 @@ class mokebuser
 		}
 
 		$expire = $activetime * 60 * 60;
-		$expire = date("Y-m-d ". $place_detail['cleantime'], time() + $expire);
+		if($_datecreated && strtotime($_datecreated))
+		{
+			$expire = date("Y-m-d ". $place_detail['cleantime'], strtotime($_datecreated) + $expire);
+		}
+		else
+		{
+			$expire = date("Y-m-d ". $place_detail['cleantime'], time() + $expire);
+		}
 
  		return $expire;
 
@@ -743,6 +750,28 @@ class mokebuser
 			return false;
 		}
 
+		$datecreated = \dash\app::request('datecreated');
+		if(!$datecreated)
+		{
+			$datecreated = date("Y-m-d H:i:s");
+		}
+		else
+		{
+
+			$datecreated = \dash\date::db($datecreated);
+			if($datecreated === false)
+			{
+				\dash\notif::error(T_("Invalid date"), 'date');
+				return false;
+			}
+
+			$datecreated = \dash\date::force_gregorian($datecreated);
+			$datecreated = \dash\date::db($datecreated);
+			$datecreated = $datecreated . ' '. date("H:i:s");
+		}
+
+
+
 		$args                    = [];
 		$args['mobile']          = $mobile;
 		$args['gender']          = $gender;
@@ -778,6 +807,7 @@ class mokebuser
 		$args['job']             = $job;
 		$args['avatar']          = $avatar;
 		$args['nesbat']          = $nesbat;
+		$args['datecreated']          = $datecreated;
 
 		if($gender && $birthday && $firstname && $lastname && $father)
 		{
@@ -922,7 +952,7 @@ class mokebuser
 		else
 		{
 
-			$expire = self::get_expire($_option['place'], $_args['activetime']);
+			$expire = self::get_expire($_option['place'], $_args['activetime'], $args['datecreated']);
 			$custom_postion = \dash\app::request('position');
 			if($custom_postion && is_numeric($custom_postion))
 			{
