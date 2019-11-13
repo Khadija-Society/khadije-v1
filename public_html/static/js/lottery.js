@@ -492,10 +492,10 @@ function startLottery()
     showPlaceholders();
 
     // 2. start randowm number
-    setTimeout(generateRandomDigit, 1900);
+    setTimeout(generateRandomDigit, 5000);
 
     // 3. show old winners if exist
-    showOldWinners();
+    setTimeout(showOldWinners, 2500);
 
     // 4. set each number of new winner
 
@@ -557,9 +557,9 @@ function showOldWinners()
     var myWinners = $('.winners').attr('data-winners');
     var myWinnersList = JSON.parse(myWinners);
 
-    $('.winners .person')
+    $('.winners .person[data-skip]')
       .transition({
-        animation : 'drop',
+        animation : 'fade up',
         reverse   : 'auto', // default setting
         interval  : 200
       });

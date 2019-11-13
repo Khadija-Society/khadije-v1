@@ -18,22 +18,22 @@
 		</div>
 
 		<div class="numbers">
-			<span>*</span>
-			<span>*</span>
-			<span>*</span>
-			<span>*</span>
-			<span>*</span>
-			<span>*</span>
-			<span>*</span>
-			<span>*</span>
-			<span>*</span>
-			<span>*</span>
+			<span>-</span>
+			<span>-</span>
+			<span>-</span>
+			<span>-</span>
+			<span>-</span>
+			<span>-</span>
+			<span>-</span>
+			<span>-</span>
+			<span>-</span>
+			<span>-</span>
 		</div>
 
 		<div class="winners f" data-winners='{{winners | raw}}'>
 	{% for key, elected in winnersList %}
 			<div class="c3">
-				<div class="person" data-hide data-index='{{elected.index}}' data-skip=>
+				<div class="person" data-hide data-index='{{elected.index}}' {%if elected.skip%}data-skip{%endif%}>
 					<div class="f">
 						<div class="cauto key">{{elected.index | fitNumber}}</div>
 						<div class="c name">{{elected.name}}</div>
