@@ -507,7 +507,7 @@ setInterval(generateRandomNumber, 500);
 
 function generateRandomNumber()
 {
-	var myRand = Math.floor(1000000000 + Math.random() * 9000000000).toString();
+	var myRand = Math.floor(1000000000 + Math.random() * 9000000000).toString().toFarsi();
 	var myNumbersEl = $('.numbers span');
 	for (var i = 0; i <= 10; i++)
 	{
