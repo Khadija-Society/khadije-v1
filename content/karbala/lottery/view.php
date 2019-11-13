@@ -181,7 +181,7 @@ class view
 				return false;
 			}
 
-			$load_level = \lib\app\lottery::load_lottery('karbala2users', $md5, $step);
+			$load_level = \lib\app\lottery::load_lottery('karbala2users', $md5, $step, \dash\request::get('final'));
 			return $load_level;
 
 		}

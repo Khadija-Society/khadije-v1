@@ -106,7 +106,7 @@ class lottery
 
 
 
-	public static function load_lottery($_table, $_md5, $_step)
+	public static function load_lottery($_table, $_md5, $_step, $_final = false)
 	{
 		$get =
 		[
@@ -173,20 +173,28 @@ class lottery
 				$ok = true;
 			}
 
-
-			$status = 'none';
-			if($ok)
+			if($_final)
 			{
 				$status = 'ok';
 			}
 			else
 			{
-				if($myKey >= $start && $myKey <= $end)
-				{
-					$status = 'run';
-				}
 
+				$status = 'none';
+				if($ok)
+				{
+					$status = 'ok';
+				}
+				else
+				{
+					if($myKey >= $start && $myKey <= $end)
+					{
+						$status = 'run';
+					}
+
+				}
 			}
+
 
 
 			$temp                 = [];
