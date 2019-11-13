@@ -7,17 +7,17 @@
 <div class="f justify-center">
   <div class="c12 s12">
 
-    <div class="cbox">
-       <div class="msg">
+    <div class="cbox p0">
+       <div class="">
+        <div class="f hide">
         <h4>{{lotteryDetail.title}}</h4>
-        <div class="f">
           <div class="c">{%trans "Date"%} {{lotteryDetail.date| dt(null, 'date')}}</div>
           <div class="c">{%trans "Count All"%} {{lotteryDetail.countall| fitNumber}}</div>
           <div class="c">{%trans "Count per level"%} {{lotteryDetail.countperlevel| fitNumber}}</div>
         </div>
         <h4>مراحل جهت اجرای زده قرعه‌کشی</h4>
           {%for i in 1..lotteryDetail.countlevel%}
-            <a class="btn pain outline mT10" href="{{url.kingdom}}/lottory?level={{lotteryDetail.url}}{{i}}">مرحله {{i | fitNumber}}</a>
+            <a class="btn pain outline mT10" target="_blank" data-direct href="{{url.kingdom}}/lottory?level={{lotteryDetail.url}}{{i}}">مرحله {{i | fitNumber}}</a>
           {%endfor%}
       </div>
     </div>
@@ -33,7 +33,7 @@
             <th>{%trans "Nationalcode"%}</th>
             <th>{%trans "Father"%}</th>
             <th>{%trans "Province"%}</th>
-            <th>{%trans "Update"%}</th>
+            <th class="p0 collapsing">{%trans "Update"%}</th>
           </thead>
           <tbody>
             {%for key, value in allList%}
@@ -44,8 +44,9 @@
                 <td>{{value.mobile | fitNumber('mobile')}}</td>
                 <td>{{value.nationalcode | fitNumber(false)}}</td>
                 <td>{{value.father}}</td>
-                <td>{{value.province}}</td>
-                <td><a href="{{url.this}}/edit?nationalcode={{value.nationalcode}}" class="badge">{%trans "Edit"%}</a></td>
+                <td>{{value.province}} - {{value.city}}</td>
+
+                <td class="p0 collapsing"><a href="{{url.this}}/edit?nationalcode={{value.nationalcode}}&level={{requestGET.level}}" class="badge">{%trans "Edit"%}</a></td>
               </tr>
             {%endfor%}
           </tbody>

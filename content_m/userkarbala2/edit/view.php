@@ -12,7 +12,8 @@ class view
 
 
 		\dash\data::badge_text(T_('Back'));
-		\dash\data::badge_link(\dash\url::this(). '/l');
+
+		\dash\data::badge_link(\dash\url::this(). '/show?level='. \dash\request::get('level'));
 
 
 	}
