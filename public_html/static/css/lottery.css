@@ -73,13 +73,12 @@ main{
 }
 
 .numbers{
-	height: 150px;
-	margin: 50px auto 25px;
+	height: 100px;
+	margin: 50px auto 40px;
 	text-align: center;
 	position: relative;
 	direction: ltr;
 	width: 900px;
-	padding-top: 30px;
 }
 .numbers span{
 	width: 80px;
