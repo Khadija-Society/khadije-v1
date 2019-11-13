@@ -475,6 +475,13 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
 })();
 
 
+$(document).ready(function()
+{
+    if($('.lottory').attr('data-final') !== undefined)
+    {
+        startLottery();
+    }
+});
 
 
 function startLottery()
