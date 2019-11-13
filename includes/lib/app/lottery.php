@@ -174,7 +174,7 @@ class lottery
 			}
 
 
-			$status = 'non';
+			$status = 'none';
 			if($ok)
 			{
 				$status = 'ok';

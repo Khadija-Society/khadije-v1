@@ -489,7 +489,7 @@ function startLottery()
     setTimeout(showOldWinners, 2500);
 
     // 4. start loop
-    var startLoopDimmer = 2500 + (5 * 200)
+    var startLoopDimmer = 2500 + (($('.winners .person[data-status="ok"]').length) * 200)
     setTimeout(startChoosenLoop, startLoopDimmer);
 }
 
@@ -556,7 +556,7 @@ function startChoosenLoop()
 
     function flashWinnerNumbers()
     {
-        $('.numbers span').transition('flash', "2000ms");
+        $('.numbers span').transition('flash', "1000ms");
         // $('.numbers span')
         //   .transition({
         //     animation : 'pulse',
