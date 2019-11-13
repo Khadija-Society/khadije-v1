@@ -1,0 +1,32 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{%block pageContent%}
+
+<div class="f justify-center">
+  <div class="c8 s12">
+    <div class="cbox">
+
+    <form method="post" autocomplete="off">
+        <h3>شما می‌توانید نام و نام خانوادگی شخص را ویرایش کنید</h3>
+          <label>نام و نام خانوادگی</label>
+          <div class="input">
+            <input type="text" name="displayname" placeholder="{{myUser.displayname}}" value="{{myUser.displayname}}" maxlength="100" >
+          </div>
+
+          <div class="txtRa">
+            <button class="btn primary">{%trans "Edit"%}</button>
+          </div>
+
+    </form>
+
+    </div>
+
+  </div>
+</div>
+
+{%endblock%}
+
+
+
