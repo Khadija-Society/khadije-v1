@@ -18,22 +18,22 @@
 		</div>
 
 		<div class="numbers">
-			<span>-</span>
-			<span>-</span>
-			<span>-</span>
-			<span>-</span>
-			<span>-</span>
-			<span>-</span>
-			<span>-</span>
-			<span>-</span>
-			<span>-</span>
-			<span>-</span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
 		</div>
 
-		<div class="winners f" data-winners='{{winners | raw}}'>
+		<div class="winners f" data-winners='{{winners | raw}}' data-count='{{winnersList |length}}'>
 	{% for key, elected in winnersList %}
 			<div class="c3">
-				<div class="person" data-hide data-index='{{elected.index}}' {%if elected.skip%}data-skip{%endif%}>
+				<div class="person" data-id='{{elected.id}}' data-index='{{elected.index}}' {%if elected.skip%}data-ok{%endif%}>
 					<div class="f">
 						<div class="cauto key">{{elected.index | fitNumber}}</div>
 						<div class="c name">{{elected.name}}</div>
@@ -43,14 +43,14 @@
 			</div>
 	{% endfor %}
 		</div>
-
 	</main>
 
 
-
-	<footer class="f">
-		<div class="c">جهت شرکت در قرعه کشی اپلیکیشن موسسه حضرت خدیجه را از وب‌سایت koyemohabat.ir دریافت کرده و ثبت‌نام کنید.</div>
-		<div class="cauto os txtB">{{"now" |dt(true, 'date')}}</div>
+	<footer>
+		<div class="f">
+			<div class="c">جهت شرکت در قرعه کشی اپلیکیشن موسسه حضرت خدیجه را از وب‌سایت koyemohabat.ir دریافت کرده و ثبت‌نام کنید.</div>
+			<div class="cauto os txtB">{{"now" |dt(true, 'date')}}</div>
+		</div>
 
 	</footer>
 </div>

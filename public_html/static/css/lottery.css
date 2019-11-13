@@ -79,6 +79,7 @@ main{
 	position: relative;
 	direction: ltr;
 	width: 900px;
+	padding-top: 30px;
 }
 .numbers span{
 	width: 80px;
@@ -101,6 +102,9 @@ main{
 .winners{
 	padding: 25px 20px;
 }
+.winners .c3{
+	min-height: 60px;
+}
 .winners .person {
 	border-radius: 1rem;
 	overflow: hidden;
@@ -112,6 +116,7 @@ main{
 	color: #fff;
 	text-align: center;
 	transition: 0.3s;
+	display: none;
 }
 .winners .person .key{
 	width: 50px;
@@ -131,10 +136,6 @@ main{
 	direction: ltr;
 	padding: 0 1em;
 }
-.winners .person[data-hide]{
-	display: none;
-}
-
 
 
 

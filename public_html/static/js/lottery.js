@@ -491,13 +491,14 @@ function startLottery()
     // 1. show each buttons
     showPlaceholders();
 
-    // 2. start randowm number
-    setTimeout(generateRandomDigit, 5000);
-
-    // 3. show old winners if exist
+    // 2. show old winners if exist
     setTimeout(showOldWinners, 2500);
 
+    // 3. start randowm number
+    setTimeout(generateRandomDigit, 5000);
+
     // 4. set each number of new winner
+    setTimeout(setEachNumberOfNewWinner, 7000);
 
     // 5. flash on winners number
     // flashWinnerNumbers();
@@ -510,6 +511,7 @@ function startLottery()
 }
 
 
+
 function showPlaceholders()
 {
     $('.numbers span')
@@ -519,6 +521,7 @@ function showPlaceholders()
         interval  : 200
       });
 }
+
 
 function flashWinnerNumbers()
 {
@@ -530,7 +533,6 @@ function flashWinnerNumbers()
     //     interval  : 200
     //   });
 }
-
 
 
 function generateRandomDigit()
@@ -557,35 +559,38 @@ function showOldWinners()
     var myWinners = $('.winners').attr('data-winners');
     var myWinnersList = JSON.parse(myWinners);
 
-    $('.winners .person[data-skip]')
+    $('.winners .person[data-ok]')
       .transition({
         animation : 'fade up',
         reverse   : 'auto', // default setting
         interval  : 200
       });
-
-    // myWinnersList.forEach(function(_myPerson)
-    // {
-    // 	// console.log(_myPerson);
-    // 	if(_myPerson.index && _myPerson.id && _myPerson.name)
-    // 	{
-    // 		var currentPerson = $('.winners .person[data-index="' + _myPerson.index + '"]');
-    // 		// console.log(currentPerson);
-    // 		if(_myPerson.skip)
-    // 		{
-    // 			// console.log('skip');
-    // 			currentPerson.fadeIn().attr('data-hide', null);
-    // 		}
-    // 	}
-    // });
-
 }
 
 
 function setEachNumberOfNewWinner()
 {
-    clearInterval($('.numbers span').eq(0).attr('myInterval'));
+    for (var i = 0; i <= 10; i++)
+    {
+        setTimeout(fillWinnerDigit, i*500, i);
+    }
+
+    function fillWinnerDigit(_index)
+    {
+        var nextWinner   = $('.winners .person:not([data-ok])').first();
+        var nextId       = nextWinner.attr('data-id');
+        var currentDigit = nextId.substr(_index, 1).toFarsi();
+        var thisDigitEl  = $('.numbers span').eq(_index);
+
+        // clear interval
+        clearInterval(thisDigitEl.attr('myInterval'));
+        // fill digit
+        thisDigitEl.text(currentDigit);
+        thisDigitEl.transition('pulse');
+    }
 }
+
+
 
 
 
