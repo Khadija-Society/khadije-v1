@@ -5,6 +5,8 @@ CREATE TABLE `lottery` (
 `url` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `date` datetime  NULL DEFAULT NULL,
 `countall` int(10) NULL DEFAULT NULL,
+`countperlevel` int(10) NULL DEFAULT NULL,
+`countlevel` int(10) NULL DEFAULT NULL,
 `win` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `status` enum('enable', 'disable', 'deleted', 'publish')  NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,

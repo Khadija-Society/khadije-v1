@@ -74,11 +74,26 @@ class lottery
 			return false;
 		}
 
-		$args             = [];
-		$args['title']    = $title;
-		$args['table']    = $table;
-		$args['date']     = $date;
-		$args['countall'] = $countall;
+		$countperlevel = \dash\app::request('countperlevel');
+		if($countperlevel && !is_numeric($countperlevel))
+		{
+			\dash\notif::error(T_("Invalid countperlevel"), 'countperlevel');
+			return false;
+		}
+
+		if(!$countperlevel)
+		{
+			\dash\notif::error(T_("Countperlevel is required"), 'countperlevel');
+			return false;
+		}
+
+
+		$args                  = [];
+		$args['title']         = $title;
+		$args['table']         = $table;
+		$args['date']          = $date;
+		$args['countall']      = $countall;
+		$args['countperlevel'] = $countperlevel;
 
 		return $args;
 	}
@@ -117,6 +132,15 @@ class lottery
 
 		$args['status'] = 'enable';
 		$args['url'] = md5(json_encode($args). '_'. time(). '_'. rand());
+
+		$countlevel = 0;
+		if($args['countall'] && $args['countperlevel'])
+		{
+			$countlevel = intval($args['countall']) / intval($args['countperlevel']);
+			$countlevel = ceil($countlevel);
+		}
+
+		$args['countlevel'] = $countlevel;
 
 		$id = \lib\db\lottery::insert($args);
 

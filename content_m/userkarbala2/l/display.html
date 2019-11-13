@@ -24,6 +24,13 @@
           <label>تعداد کل افرادی که می‌خواهید از قرعه کشی استخراج کنید</label>
           <div class="input">
             <input type="number" name="countall" placeholder="تعداد افراد" max="9999999999">
+            <label for="countall" class="addon">نفر</label>
+          </div>
+
+          <label>تعداد نمایش افراد در هر مرحله</label>
+          <div class="input">
+            <input type="number" name="countperlevel" placeholder="تعداد افراد" max="9999999999">
+            <label for="countperlevel" class="addon">نفر</label>
           </div>
           <div class="txtRa">
 
@@ -38,14 +45,17 @@
           <h4>{{value.title}}</h4>
           <div class="f">
             <div class="c">{%trans "Date"%} {{value.date| dt(null, 'date')}}</div>
-            <div class="c">{%trans "Count"%} {{value.countall| fitNumber}}</div>
+            <div class="c">{%trans "Count All"%} {{value.countall| fitNumber}}</div>
+            <div class="c">{%trans "Count per level"%} {{value.countperlevel| fitNumber}}</div>
 
           </div>
           <div class="txtRa">
             {%if perm_su()%}
               <div class="btn danger xs" data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}'>حذف</div>
             {%endif%}
-            <a class="btn pain outline" href="{{url.kingdom}}/userkarbala2/lottery?level={{value.url}}">نمایش قرعه‌کشی</a>
+            {%for i in 1..value.countlevel%}
+              <a class="btn pain outline" href="{{url.kingdom}}/lottory?level={{value.url}}{{i}}">مرحله {{i | fitNumber}}</a>
+            {%endfor%}
           </div>
         </div>
       {%endfor%}

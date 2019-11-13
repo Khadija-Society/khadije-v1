@@ -15,11 +15,12 @@ class model
 		}
 
 
-		$post             = [];
-		$post['title']    = \dash\request::post('title');
-		$post['date']     = \dash\request::post('date');
-		$post['countall'] = \dash\request::post('countall');
-		$post['table']    = 'karbala2users';
+		$post                  = [];
+		$post['title']         = \dash\request::post('title');
+		$post['date']          = \dash\request::post('date');
+		$post['countall']      = \dash\request::post('countall');
+		$post['countperlevel'] = \dash\request::post('countperlevel');
+		$post['table']         = 'karbala2users';
 
 		$add_new_lottery = \lib\app\lottery::add($post);
 
