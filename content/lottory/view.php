@@ -16,6 +16,7 @@ class view
 		}
 
 		\dash\data::winners(json_encode($winners , JSON_UNESCAPED_UNICODE));
+		\dash\data::winnersList($winners);
 	}
 
 

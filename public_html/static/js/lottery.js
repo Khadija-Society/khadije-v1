@@ -492,9 +492,10 @@ function startLottery()
     showPlaceholders();
 
     // 2. start randowm number
-    setTimeout(generateRandomDigit, 1700);
+    setTimeout(generateRandomDigit, 1900);
 
     // 3. show old winners if exist
+    showOldWinners();
 
     // 4. set each number of new winner
 
@@ -532,24 +533,61 @@ function flashWinnerNumbers()
 
 
 
-var myWinners = $('.winners').attr('data-winners');
-var myWinnersList = JSON.parse(myWinners);
+function generateRandomDigit()
+{
+    for (var i = 0; i <= 10; i++)
+    {
+        var randomDimmer = Math.floor(100 + Math.random() * 300);
+        var myInterval   = setInterval(fillGeneratedDigit, randomDimmer, i);
+        $('.numbers span').eq(i).attr('myInterval', myInterval);
+    }
+
+    function fillGeneratedDigit(_index)
+    {
+        // generate number for this one
+        var myNumbersEl = $('.numbers span');
+        var myDigit = Math.floor(Math.random() * 10).toString().toFarsi();
+        myNumbersEl.eq(_index).text(myDigit);
+    }
+}
 
 
-// myWinnersList.forEach(function(_myPerson)
-// {
-// 	// console.log(_myPerson);
-// 	if(_myPerson.index && _myPerson.id && _myPerson.name)
-// 	{
-// 		var currentPerson = $('.winners .person[data-index="' + _myPerson.index + '"]');
-// 		// console.log(currentPerson);
-// 		if(_myPerson.skip)
-// 		{
-// 			// console.log('skip');
-// 			currentPerson.fadeIn().attr('data-hide', null);
-// 		}
-// 	}
-// });
+function showOldWinners()
+{
+    var myWinners = $('.winners').attr('data-winners');
+    var myWinnersList = JSON.parse(myWinners);
+
+    $('.winners .person')
+      .transition({
+        animation : 'drop',
+        reverse   : 'auto', // default setting
+        interval  : 200
+      });
+
+    // myWinnersList.forEach(function(_myPerson)
+    // {
+    // 	// console.log(_myPerson);
+    // 	if(_myPerson.index && _myPerson.id && _myPerson.name)
+    // 	{
+    // 		var currentPerson = $('.winners .person[data-index="' + _myPerson.index + '"]');
+    // 		// console.log(currentPerson);
+    // 		if(_myPerson.skip)
+    // 		{
+    // 			// console.log('skip');
+    // 			currentPerson.fadeIn().attr('data-hide', null);
+    // 		}
+    // 	}
+    // });
+
+}
+
+
+function setEachNumberOfNewWinner()
+{
+    clearInterval($('.numbers span').eq(0).attr('myInterval'));
+}
+
+
 
 // setInterval(generateRandomNumber, 500);
 
@@ -565,21 +603,4 @@ var myWinnersList = JSON.parse(myWinners);
 // }
 
 
-
-function generateRandomDigit()
-{
-    for (var i = 0; i <= 10; i++)
-    {
-        var randomDimmer = Math.floor(100 + Math.random() * 300);
-        setInterval(fillGeneratedDigit, randomDimmer, i);
-    }
-}
-
-function fillGeneratedDigit(_index)
-{
-    // generate number for this one
-    var myNumbersEl = $('.numbers span');
-    var myDigit = Math.floor(Math.random() * 10).toString().toFarsi();
-    myNumbersEl.eq(_index).text(myDigit);
-}
 

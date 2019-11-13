@@ -31,13 +31,13 @@
 		</div>
 
 		<div class="winners f" data-winners='{{winners | raw}}'>
-	{% for i in 1..20 %}
+	{% for key, elected in winnersList %}
 			<div class="c3">
-				<div class="person" data-hide data-index='{{i}}'>
+				<div class="person" data-hide data-index='{{elected.index}}' data-skip=>
 					<div class="f">
-						<div class="cauto key">{{i | fitNumber}}</div>
-						<div class="c name">جواد ادیب </div>
-						<div class="cauto value">{{"219**53994" | fitNumber}}</div>
+						<div class="cauto key">{{elected.index | fitNumber}}</div>
+						<div class="c name">{{elected.name}}</div>
+						<div class="cauto value">{{elected.id | fitNumber(false)}}</div>
 					</div>
 				</div>
 			</div>
