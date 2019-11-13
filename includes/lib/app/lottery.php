@@ -105,6 +105,80 @@ class lottery
 	}
 
 
+
+	public static function load_lottery($_table, $_md5, $_step)
+	{
+		$get =
+		[
+			'table'  => $_table,
+			'url'    => $_md5,
+			'status' => 'enable',
+			'limit'  => 1,
+		];
+
+		$lottery = \lib\db\lottery::get($get);
+		if(!$lottery || !is_array($lottery) || !isset($lottery['win']) || !isset($lottery['countlevel']) || !isset($lottery['countperlevel']))
+		{
+			return null;
+		}
+
+		$step = null;
+		$countperlevel = intval($lottery['countperlevel']);
+
+		if($_step && is_numeric($lottery['countlevel']))
+		{
+			if(intval($_step) <= 0 || intval($_step) > intval($lottery['countlevel']))
+			{
+				return false;
+			}
+			$step = intval($_step);
+		}
+
+		$win = $lottery['win'];
+		$win = json_decode($win, true);
+		if(!is_array($win))
+		{
+			return null;
+		}
+
+		$ids = implode($win, ",");
+
+		$load_user = \lib\db\karbala2users::get(['id' => [" IN ", " ($ids)"]]);
+
+		if(!$load_user)
+		{
+			return false;
+		}
+
+		$result = [];
+		foreach ($load_user as $key => $value)
+		{
+			$isSkip = false;
+			if($step)
+			{
+				$skip = $step * $countperlevel;
+				if($key < $skip)
+				{
+					$isSkip = true;
+				}
+			}
+
+			$temp             = [];
+			$temp['index']    = $key + 1;
+			$temp['name']     = $value['displayname'];
+			$temp['mobile']   = $value['mobile'];
+			$temp['id']       = $value['nationalcode'];
+			$temp['father']   = $value['father'];
+			$temp['province'] = \dash\utility\location\provinces::get($value['province'], null, 'localname');
+			$temp['skip']     = $isSkip;
+
+			$result[] = $temp;
+		}
+
+		return $result;
+	}
+
+
 	public static function remove($_id)
 	{
 		if($_id && is_numeric($_id))
