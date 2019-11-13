@@ -108,7 +108,7 @@ main{
 	padding: 10px 20px;
 }
 .winners .c3{
-	min-height: 70px;
+	/*min-height: 70px;*/
 }
 .winners .person {
 	border-radius: 1rem;
