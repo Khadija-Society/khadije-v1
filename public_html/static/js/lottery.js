@@ -495,7 +495,8 @@ function startLottery()
     setTimeout(showOldWinners, 2500);
 
     // 3. start loop
-    setTimeout(startChoosenLoop, 5000);
+    var startLoopDimmer = 2500 + (5 * 200)
+    setTimeout(startChoosenLoop, startLoopDimmer);
 
 
     // 4. set each number of new winner
@@ -520,6 +521,7 @@ function showPlaceholders()
 }
 
 
+
 function showOldWinners()
 {
     var myWinners = $('.winners').attr('data-winners');
@@ -534,15 +536,9 @@ function showOldWinners()
 }
 
 
+
 function startChoosenLoop()
 {
-    for (var i = 0; i <= 10; i++)
-    {
-        var randomDimmer = Math.floor(100 + Math.random() * 300);
-        var myInterval   = setInterval(fillGeneratedDigit, randomDimmer, i);
-        $('.numbers span').eq(i).attr('myInterval', myInterval);
-    }
-
     function fillGeneratedDigit(_index)
     {
         // generate number for this one
@@ -550,6 +546,7 @@ function startChoosenLoop()
         var myDigit = Math.floor(Math.random() * 10).toString().toFarsi();
         myNumbersEl.eq(_index).text(myDigit);
     }
+
 
     function fillWinnerDigit(_index)
     {
@@ -577,6 +574,19 @@ function startChoosenLoop()
         //   });
     }
 
+    function turnWinnerItemOn()
+    {
+        var nextWinner   = $('.winners .person:not([data-ok])').first();
+        nextWinner.transition('drop');
+    }
+
+    for (var i = 0; i <= 10; i++)
+    {
+        var randomDimmer = Math.floor(100 + Math.random() * 300);
+        var myInterval   = setInterval(fillGeneratedDigit, randomDimmer, i);
+        $('.numbers span').eq(i).attr('myInterval', myInterval);
+    }
+
     setTimeout(function()
     {
         for (var i = 0; i <= 10; i++)
@@ -586,6 +596,9 @@ function startChoosenLoop()
 
         // flash winner number
         setTimeout(flashWinnerNumbers, 6000);
+        // turn card on
+        setTimeout(turnWinnerItemOn, 7000);
+
     }, 2000);
 
 }
