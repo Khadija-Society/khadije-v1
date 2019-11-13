@@ -12,39 +12,41 @@
 		<h1>قرعه‌کشی برگزیدگان زیارت اولی عتبات عالیات در برنامه کوی محبت شبکه دو سیما</h1>
 	</header>
 
-	<div class="startBtn theme-6">
-		<button class="particles-button">شروع</button>
-	</div>
+	<main>
+			<div class="startBtn theme-6">
+				<button class="particles-button">شروع</button>
+			</div>
+		<div class="numbers">
+			<span>*</span>
+			<span>*</span>
+			<span>*</span>
+			<span class="disabled">*</span>
+			<span class="disabled">*</span>
+			<span>*</span>
+			<span>*</span>
+			<span>*</span>
+			<span>*</span>
+			<span>*</span>
+		</div>
 
-
-	<div class="numbers">
-		<span>*</span>
-		<span>*</span>
-		<span>*</span>
-		<span class="disabled">*</span>
-		<span class="disabled">*</span>
-		<span>*</span>
-		<span>*</span>
-		<span>*</span>
-		<span>*</span>
-		<span>*</span>
-	</div>
-
-	<div class="winners f" data-winners='{{winners | raw}}'>
-
-{% for i in 1..20 %}
-		<div class="c3">
-			<div class="person" data-hide data-index='{{i}}'>
-				<div class="f">
-					<div class="cauto key">{{i | fitNumber}}</div>
-					<div class="c name">جواد ادیب </div>
-					<div class="cauto value">{{"219**53994" | fitNumber}}</div>
+		<div class="winners f" data-winners='{{winners | raw}}'>
+	{% for i in 1..20 %}
+			<div class="c3">
+				<div class="person" data-hide data-index='{{i}}'>
+					<div class="f">
+						<div class="cauto key">{{i | fitNumber}}</div>
+						<div class="c name">جواد ادیب </div>
+						<div class="cauto value">{{"219**53994" | fitNumber}}</div>
+					</div>
 				</div>
 			</div>
+	{% endfor %}
 		</div>
-{% endfor %}
 
-	</div>
+	</main>
+
+
+
 	<footer class="f">
 		<div class="c">جهت شرکت در قرعه کشی اپلیکیشن موسسه حضرت خدیجه را از وب‌سایت koyemohabat.ir دریافت کرده و ثبت‌نام کنید.</div>
 		<div class="cauto os txtB">{{"now" |dt(true, 'date')}}</div>

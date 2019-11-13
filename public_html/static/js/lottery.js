@@ -501,7 +501,7 @@ myWinnersList.forEach(function(_myPerson)
 });
 // console.log(myWinners);
 
-setInterval(generateRandomNumber, 100);
+setInterval(generateRandomNumber, 500);
 
 // generateRandomNumber();
 

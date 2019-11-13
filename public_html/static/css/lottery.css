@@ -9,6 +9,11 @@ body{
     user-select: none;
 }
 
+main{
+	position: relative;
+	overflow:hidden;
+}
+
 .videobg {
     opacity: .4;
     min-width: 100%;
@@ -36,8 +41,8 @@ body{
 	height: 150px;
 	line-height: 100px;
 	font-size: 1.7em;
+	margin: 0;
 	font-weight: 800;
-	margin-bottom: 50px;
 	padding: 25px 5%;
 	color: #fff;
 	text-align: center;
@@ -56,6 +61,7 @@ body{
 }
 
 .lottory footer{
+	position: fixed;
 	bottom: 0;
 	right: 0;
 	left: 0;
@@ -68,13 +74,15 @@ body{
 .numbers{
 	height: 150px;
 	margin: 50px 20px 25px;
-	font-size: 3.5em;
 	text-align: center;
+	position: relative;
+	direction: ltr;
 }
 .numbers span{
 	width: 80px;
 	height: 80px;
 	line-height: 90px;
+	font-size: 3.5em;
 	display: inline-block;
 	border-radius: 10px;
 	overflow: hidden;
@@ -134,6 +142,17 @@ body{
 	justify-items: center;
 	overflow: hidden;
 	padding: 4rem 1.5rem;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,1);
+	z-index: 2;
+
+	text-align: center;
+
 }
 .theme-6 {
 	--color-item-bg: linear-gradient(120deg,#9C27B0,#090772);
