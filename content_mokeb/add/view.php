@@ -36,8 +36,17 @@ class view
 
 		self::check_position();
 
-		\dash\data::badge_link(\dash\url::that(). '?showname=1');
-		\dash\data::badge_text('نمایش نام افراد');
+		if(\dash\request::get('showname'))
+		{
+			\dash\data::badge_link(\dash\url::that());
+			\dash\data::badge_text('نمایش جایگاه');
+		}
+		else
+		{
+			\dash\data::badge_link(\dash\url::that(). '?showname=1');
+			\dash\data::badge_text('نمایش نام افراد');
+		}
+
 
 		if(\dash\request::get('showname'))
 		{
