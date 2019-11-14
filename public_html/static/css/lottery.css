@@ -250,6 +250,6 @@ main{
 	.lottery{display: none!important;}
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 500px) {
 	.lottery{display: none!important;}
 }

@@ -477,8 +477,10 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
 
 $(document).ready(function()
 {
+    console.log('In the name of GOD.');
     if($('.lottery').attr('data-final') !== undefined)
     {
+        console.log('Auto mode');
         startLottery();
     }
 });
@@ -490,7 +492,7 @@ function startLottery()
     $('.startBtn').fadeOut('fast');
 
     // 2. show each buttons
-    showPlaceholders();
+    showDigitPlaceholders();
 
     // 3. show old winners if exist
     setTimeout(showOldWinners, 2500);
@@ -502,8 +504,9 @@ function startLottery()
 
 
 
-function showPlaceholders()
+function showDigitPlaceholders()
 {
+    console.log('showDigitPlaceholders.');
     if($('.winners .person[data-status="run"]').length > 0)
     {
         $('.numbers span')
@@ -513,21 +516,33 @@ function showPlaceholders()
             interval  : 200
           });
     }
+    else
+    {
+        console.log('No person exist to run digits!');
+    }
 }
 
 
 
 function showOldWinners()
 {
+    console.log('showOldWinners.');
     var myWinners = $('.winners').attr('data-winners');
     var myWinnersList = JSON.parse(myWinners);
 
-    $('.winners .person[data-status="ok"]')
-      .transition({
-        animation : 'fade up',
-        reverse   : 'auto', // default setting
-        interval  : 200
-      });
+    if($('.winners .person[data-status="ok"]').length > 0)
+    {
+        $('.winners .person[data-status="ok"]')
+          .transition({
+            animation : 'fade up',
+            reverse   : 'auto', // default setting
+            interval  : 200
+          });
+    }
+    else
+    {
+        console.log('No one is win before this step!');
+    }
 }
 
 
@@ -548,6 +563,7 @@ function startChoosenLoop()
         var nextWinner   = $('.winners .person[data-status="run"]').first();
         if(nextWinner.length === 0)
         {
+            console.log('Next winner is not exist');
             return false
         }
         var nextId       = nextWinner.attr('data-id');
@@ -581,6 +597,7 @@ function startChoosenLoop()
         var nextWinner = $('.winners .person[data-status="run"]').first();
         if(nextWinner.length)
         {
+            console.log('Status of this winner is okay.!');
             nextWinner.attr('data-status', 'ok');
             nextWinner.transition('drop');
         }
@@ -594,6 +611,8 @@ function startChoosenLoop()
 
     if(winnerInQuee > 0)
     {
+        console.log('Go to show next Winner. ' + winnerInQuee + " is remain!");
+
         for (var i = 0; i <= 10; i++)
         {
             var randomDimmer = Math.floor(100 + Math.random() * 300);
@@ -616,6 +635,10 @@ function startChoosenLoop()
             setTimeout(startChoosenLoop, 10000);
 
         }, 2000);
+    }
+    else
+    {
+        console.log('We dont have another winner');
     }
 }
 
