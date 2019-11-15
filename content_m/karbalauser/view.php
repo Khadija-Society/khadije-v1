@@ -11,10 +11,13 @@ class view
 
 		\dash\data::page_pictogram('atom');
 
-		\dash\data::page_title("آمار زائران کربلا");
+		\dash\data::page_title("آمار زائران");
 
 		$karbalauser = \lib\app\karbalasetting::stat();
 		\dash\data::karbalauser($karbalauser);
+
+		\dash\data::badge_link(\dash\url::this(). '/numbers');
+		\dash\data::badge_text(T_('Setting'));
 
 	}
 }

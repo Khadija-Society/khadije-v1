@@ -1,0 +1,98 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+<div class="f justify-center">
+  <div class="c4">
+    <div class="cbox">
+      <form method="post" autocomplete="off">
+        <h3>افزودن آمار غیر سیستمی به جمع آمار زائران</h3>
+        <label>شهر</label>
+        <div class="f">
+
+          <div class="radio1 green c">
+            <input type="radio" name="city" value="qom" id="qomc">
+            <label for="qomc">{%trans "Qom"%}</label>
+          </div>
+
+          <div class="radio1 c">
+            <input type="radio" name="city" value="mashhad" id="mashhadc">
+            <label for="mashhadc">{%trans "Mashhad"%}</label>
+          </div>
+
+          <div class="radio1 red c">
+            <input type="radio" name="city" value="karbala" id="karbalac">
+            <label for="karbalac">{%trans "Karbala"%}</label>
+          </div>
+
+        </div>
+
+
+
+        <label>وضعیت</label>
+        <div class="f">
+
+          <div class="radio1 c">
+            <input type="radio" name="status" value="signup" id="signupc">
+            <label for="signupc">ثبت‌نام کرده</label>
+          </div>
+
+          <div class="radio1 green c">
+            <input type="radio" name="status" value="gone" id="gonec">
+            <label for="gonec">مشرف شده</label>
+          </div>
+        </div>
+
+
+        <label>تعداد افراد</label>
+        <div class="input">
+          <input type="number" name="count" required>
+        </div>
+
+
+
+
+        <label>یادداشت <small>توضیحاتی برای خودتان جهت یادآوری در آینده</small></label>
+        <div class="input">
+          <input type="text" name="desc" maxlength="500">
+        </div>
+
+        <div class="txtRa">
+          <button class="btn success">{%trans "Save"%}</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  {%if manualResult%}
+    <div class="c8">
+
+      <div class="tblBox mLa5 fs12">
+        <table class="tbl1 v4">
+          <thead>
+            <tr>
+              <th>شهر</th>
+              <th>وضعیت</th>
+              <th>تعداد</th>
+              <th>توضیحات</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for key, value in manualResult%}
+            <tr>
+              <td><span title="حذف این مورد" class="mL10" data-confirm data-data='{"type" : "remove", "id" : "{{value.id}}"}'><i class="sf-times fc-red"></i></span>{{value.city}}</td>
+              <td>{{value.status}}</td>
+              <td>{{value.count | fitNumber}}</td>
+              <td>{{value.desc}}</td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {%endif%}
+
+</div>
+{%endblock%}
+
