@@ -41,7 +41,7 @@ class view
 		[
 			'sort'   => \dash\request::get('sort'),
 			'order'  => \dash\request::get('order'),
-			'urlmd5' => ["IN", "('fd8d5ca88d7b4b2da40e6eb4520e8a17', 'afe31e33293521d1fa5361aeaaec13bc', '7a9dd4d851cc1cff7241e67dfc813dde', '6eb8850fd8a4d0005d5053511d9f8ba0')"],
+			// 'urlmd5' => ["IN", "('fd8d5ca88d7b4b2da40e6eb4520e8a17', 'afe31e33293521d1fa5361aeaaec13bc', '7a9dd4d851cc1cff7241e67dfc813dde', '6eb8850fd8a4d0005d5053511d9f8ba0')"],
 		];
 
 		if($_args && is_array($_args))
