@@ -122,7 +122,6 @@ main{
 	text-align: center;
 	transition: 0.3s;
 	display: none;
-	font-size: 1.2em;
 }
 .winners .person .key{
 	width: 40px;
