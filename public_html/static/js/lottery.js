@@ -634,7 +634,7 @@ function startChoosenLoop()
             // go to next person
             setTimeout(startChoosenLoop, 10000);
 
-        }, 2000);
+        }, 20000);
     }
     else
     {
