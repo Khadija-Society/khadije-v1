@@ -92,7 +92,7 @@ class twigTransTerms
 	echo T_("Black list");                                                            // Line 52
 	echo T_("Family");                                                                // Line 53
 	echo T_("Bank");                                                                  // Line 54
-	echo T_("Other");                                                                 // Line 39
+	echo T_("Other");                                                                 // Line 48
 	echo T_("Yes");                                                                   // Line 432
 	echo T_("No");                                                                    // Line 432
 	echo T_("Need to analyze?");                                                      // Line 65
@@ -623,7 +623,7 @@ class twigTransTerms
 	echo T_("We do not provide consulting service yet!");                             // Line 9
 
 	//-----------------------------------------------------content_a/home/display.html
-	echo T_("Festival");                                                              // Line 139
+	echo T_("Festival");                                                              // Line 148
 	echo T_("Representation");                                                        // Line 85
 	echo T_("Health Service");                                                        // Line 94
 	echo T_("Consulting Service");                                                    // Line 11
@@ -881,7 +881,7 @@ class twigTransTerms
 	echo T_("Submitted on");                                                          // Line 33
 	echo T_("Updated on");                                                            // Line 34
 	echo T_("Current status");                                                        // Line 36
-	echo T_("Update");                                                                // Line 36
+	echo T_("Update");                                                                // Line 37
 
 	//----------------------------------------------------------content_m/sidenav.html
 	echo T_("Financial");                                                             // Line 10
@@ -954,7 +954,7 @@ class twigTransTerms
 
 	//---------------------------------------------content_m/product/home/display.html
 	echo T_("Search in products");                                                    // Line 42
-	echo T_("Product donate");                                                        // Line 315
+	echo T_("Product donate");                                                        // Line 324
 	echo T_("Try to start with add new product!");                                    // Line 113
 
 	//---------------------------------------------------content_m/product/layout.html
@@ -1196,14 +1196,14 @@ class twigTransTerms
 	echo T_("Search in consulting");                                                  // Line 44
 
 	//-----------------------------------------------------content_m/home/display.html
-	echo T_("Trip");                                                                  // Line 14
-	echo T_("Service");                                                               // Line 21
-	echo T_("Signup karbala");                                                        // Line 30
-	echo T_("Sms management");                                                        // Line 73
-	echo T_("Add trip");                                                              // Line 130
-	echo T_("Tankyou message");                                                       // Line 149
-	echo T_("Meeting");                                                               // Line 160
-	echo T_("Doyon");                                                                 // Line 334
+	echo T_("Trip");                                                                  // Line 17
+	echo T_("Service");                                                               // Line 26
+	echo T_("Signup karbala");                                                        // Line 37
+	echo T_("Sms management");                                                        // Line 82
+	echo T_("Add trip");                                                              // Line 139
+	echo T_("Tankyou message");                                                       // Line 158
+	echo T_("Meeting");                                                               // Line 169
+	echo T_("Doyon");                                                                 // Line 343
 
 	//----------------------------------------content_m/options/cityplace/display.html
 	echo T_("List of city place");                                                    // Line 22
@@ -1286,6 +1286,8 @@ class twigTransTerms
 	//-----------------------------------------------content_m/myhomepage/display.html
 
 	//-------------------------------------------------content_m/homepage/display.html
+
+	//--------------------------------------content_m/karbalauser/numbers/display.html
 
 	//----------------------------------------------------------content_m/options.html
 	echo T_("All representation from this place is done");                            // Line 36

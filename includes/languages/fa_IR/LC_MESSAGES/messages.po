@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2019-11-13 21:37+0330\n"
-"PO-Revision-Date: 2019-11-13 21:37+0330\n"
+"POT-Creation-Date: 2019-11-15 13:34+0330\n"
+"PO-Revision-Date: 2019-11-15 13:35+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -253,7 +253,7 @@ msgstr "پروفایل شما با موفقیت بروز شد"
 #: dash/addons/includes/languages/trans_static.php:103
 #: dash/addons/includes/languages/trans_static.php:386
 #: khadije/includes/languages/trans_dash.php:744
-#: khadije/includes/languages/trans_project.php:1358
+#: khadije/includes/languages/trans_project.php:1360
 msgid "Profile"
 msgstr "پروفایل"
 
@@ -708,6 +708,7 @@ msgstr "بستن"
 #: dash/addons/content_su/smsclient/edit/view.php:9
 #: dash/addons/content_su/smsclient/home/view.php:9
 #: dash/addons/includes/languages/trans_dash.php:342
+#: khadije/content_m/karbalauser/numbers/view.php:17
 #: khadije/content_m/mokebuser/report/view.php:16
 #: khadije/content_m/product/add/view.php:13
 #: khadije/content_m/productdonate/home/view.php:15
@@ -807,6 +808,7 @@ msgid "Website"
 msgstr "وب‌سایت"
 
 #: dash/addons/content_api/v6/app/controller.php:234
+#: khadije/content_m/karbalauser/view.php:20
 #: khadije/includes/languages/trans_project.php:72
 #: khadije/includes/languages/trans_static.php:72
 msgid "Setting"
@@ -7678,7 +7680,7 @@ msgstr "کارت‌های شناسایی"
 
 #: dash/addons/includes/languages/trans_dash.php:1067
 #: khadije/includes/languages/trans_dash.php:587
-#: khadije/includes/languages/trans_project.php:1309
+#: khadije/includes/languages/trans_project.php:1311
 msgid "Thumb"
 msgstr "تصویر"
 
@@ -9133,7 +9135,7 @@ msgstr "هفته"
 #: dash/addons/includes/languages/trans_dash.php:1451
 #: dash/addons/includes/languages/trans_static.php:529
 #: khadije/includes/languages/trans_dash.php:1416
-#: khadije/includes/languages/trans_project.php:1295
+#: khadije/includes/languages/trans_project.php:1297
 msgid "Day"
 msgstr "روز"
 
@@ -9422,7 +9424,7 @@ msgstr "متا"
 
 #: dash/addons/includes/languages/trans_dash.php:1524
 #: khadije/includes/languages/trans_dash.php:1466
-#: khadije/includes/languages/trans_project.php:1334
+#: khadije/includes/languages/trans_project.php:1336
 msgid "ID"
 msgstr "شناسه"
 
@@ -9922,7 +9924,7 @@ msgstr "قم"
 
 #: dash/addons/includes/languages/trans_static.php:65
 #: dash/addons/includes/languages/trans_static.php:494
-#: khadije/includes/languages/trans_project.php:1384
+#: khadije/includes/languages/trans_project.php:1386
 #: khadije/includes/languages/trans_static.php:38
 msgid "qom"
 msgstr "قم"
@@ -10067,7 +10069,7 @@ msgid "Fantastic"
 msgstr "خارق العاده"
 
 #: dash/addons/includes/languages/trans_static.php:112
-#: khadije/includes/languages/trans_project.php:1347
+#: khadije/includes/languages/trans_project.php:1349
 msgid "Copy"
 msgstr "کپی"
 
@@ -10194,7 +10196,7 @@ msgstr "ویراستار"
 
 #: dash/addons/includes/languages/trans_static.php:155
 #: dash/addons/includes/languages/trans_static.php:469
-#: khadije/includes/languages/trans_project.php:1344
+#: khadije/includes/languages/trans_project.php:1346
 msgid "Admin"
 msgstr "مدیریت"
 
@@ -11419,7 +11421,7 @@ msgid "Conflict"
 msgstr "تداخل"
 
 #: dash/addons/includes/languages/trans_static.php:575
-#: khadije/includes/languages/trans_project.php:1326
+#: khadije/includes/languages/trans_project.php:1328
 #: khadije/includes/languages/trans_static.php:186
 msgid "Gone"
 msgstr "رفت"
@@ -16152,7 +16154,7 @@ msgstr "درخواست عضویت"
 msgid "Signup karbala"
 msgstr "ثبت‌نام کربلا"
 
-#: khadije/content/karbala/lottery/view.php:154
+#: khadije/content/karbala/lottery/view.php:180
 #: khadije/content_m/userkarbala2/show/view.php:29
 msgid "Invalid step"
 msgstr "مرحله نامعتبر است"
@@ -17565,6 +17567,7 @@ msgid "Please set the number of karbala"
 msgstr "لطفا عدد مربوط به مشهد را وارد کنید"
 
 #: khadije/content_m/homepage/model.php:81
+#: khadije/content_m/karbalauser/numbers/model.php:78
 msgid "Data saved"
 msgstr "ذخیره شد"
 
@@ -18013,7 +18016,7 @@ msgid "Error in line :line"
 msgstr "خطا در ردیف :line"
 
 #: khadije/content_m/trip/partner/view.php:13
-#: khadije/includes/languages/trans_project.php:1359
+#: khadije/includes/languages/trans_project.php:1361
 msgid "List of trip partner"
 msgstr "لیست همراهان سفر"
 
@@ -18083,7 +18086,7 @@ msgstr "شما می‌توانید تعدادی گروه برای پیامک‌�
 #: khadije/content_smsapp/editgroup/view.php:14
 #: khadije/content_smsapp/filtergroup/view.php:15
 #: khadije/content_smsapp/recommendgroup/view.php:15
-#: khadije/includes/languages/trans_project.php:1346
+#: khadije/includes/languages/trans_project.php:1348
 msgid "Settings"
 msgstr "تنظیمات"
 
@@ -20781,191 +20784,191 @@ msgstr "ارسال پیام کوتاه؟"
 msgid "Send thankyou message?"
 msgstr "ارسال پیام تشکر؟"
 
-#: khadije/includes/languages/trans_project.php:1291
+#: khadije/includes/languages/trans_project.php:1293
 msgid "All representation from this place is done"
 msgstr "تمامی زیارت‌های نیابتی از این مکان انجام شد"
 
-#: khadije/includes/languages/trans_project.php:1292
+#: khadije/includes/languages/trans_project.php:1294
 msgid "Allow price"
 msgstr "اجازه مبلغ دلخواه"
 
-#: khadije/includes/languages/trans_project.php:1293
+#: khadije/includes/languages/trans_project.php:1295
 msgid "This method have term and conditions"
 msgstr "این آیتم دارای صفحه شرایط و قوانین است"
 
-#: khadije/includes/languages/trans_project.php:1294
+#: khadije/includes/languages/trans_project.php:1296
 msgid "Every"
 msgstr "هر"
 
-#: khadije/includes/languages/trans_project.php:1296
+#: khadije/includes/languages/trans_project.php:1298
 msgid "Request"
 msgstr "درخواست"
 
-#: khadije/includes/languages/trans_project.php:1297
+#: khadije/includes/languages/trans_project.php:1299
 msgid "Set max request count in period dayes"
 msgstr "تنظیم حداکثر درخواست‌ها در بازه‌های زمانی"
 
-#: khadije/includes/languages/trans_project.php:1298
+#: khadije/includes/languages/trans_project.php:1300
 msgid "Every day"
 msgstr "هر روز"
 
-#: khadije/includes/languages/trans_project.php:1299
+#: khadije/includes/languages/trans_project.php:1301
 msgid "?"
 msgstr "؟"
 
-#: khadije/includes/languages/trans_project.php:1300
+#: khadije/includes/languages/trans_project.php:1302
 msgid "Enter a valid sort"
 msgstr "عدد مربوط به مرتب سازی معتبری را وارد کنید"
 
-#: khadije/includes/languages/trans_project.php:1301
+#: khadije/includes/languages/trans_project.php:1303
 msgid "Custom Choice"
 msgstr "گزینه دلخواه"
 
-#: khadije/includes/languages/trans_project.php:1302
+#: khadije/includes/languages/trans_project.php:1304
 msgid "blink and different display"
 msgstr "چشمک زدن و نمایش متفاوت"
 
-#: khadije/includes/languages/trans_project.php:1303
+#: khadije/includes/languages/trans_project.php:1305
 msgid "Allow to custom price?"
 msgstr "اجازه وارد کردن مبلغ دلخواه"
 
-#: khadije/includes/languages/trans_project.php:1306
+#: khadije/includes/languages/trans_project.php:1308
 msgid "Add or edit partner"
 msgstr "افزودن یا ویرایش همراه"
 
-#: khadije/includes/languages/trans_project.php:1307
+#: khadije/includes/languages/trans_project.php:1309
 msgid "Make export from list of partner"
 msgstr "تهیه فایل خروجی از لیست همراهان"
 
-#: khadije/includes/languages/trans_project.php:1308
+#: khadije/includes/languages/trans_project.php:1310
 msgid "Travel"
 msgstr "سفر"
 
-#: khadije/includes/languages/trans_project.php:1310
+#: khadije/includes/languages/trans_project.php:1312
 msgid "First travel to"
 msgstr "زائر اولی"
 
-#: khadije/includes/languages/trans_project.php:1311
+#: khadije/includes/languages/trans_project.php:1313
 msgid "Travel to"
 msgstr "سفر به"
 
-#: khadije/includes/languages/trans_project.php:1312
+#: khadije/includes/languages/trans_project.php:1314
 msgid "Whitout nationalcode thumb"
 msgstr "بدون تصویر کارت‌ملی"
 
-#: khadije/includes/languages/trans_project.php:1313
+#: khadije/includes/languages/trans_project.php:1315
 msgid "You can upload partner list"
 msgstr "شما می‌توانید فایل همراهان را آپلود کنید"
 
-#: khadije/includes/languages/trans_project.php:1314
+#: khadije/includes/languages/trans_project.php:1316
 msgid "No partner set"
 msgstr "همراهی تنظیم نشده است"
 
-#: khadije/includes/languages/trans_project.php:1315
+#: khadije/includes/languages/trans_project.php:1317
 msgid "Edit partner"
 msgstr "ویرایش همراه"
 
-#: khadije/includes/languages/trans_project.php:1318
+#: khadije/includes/languages/trans_project.php:1320
 msgid "Filter by start date and end date"
 msgstr "فیلتر بر اساس بازه زمانی شروع و پایان سفر"
 
-#: khadije/includes/languages/trans_project.php:1319
+#: khadije/includes/languages/trans_project.php:1321
 msgid "Filter by place"
 msgstr " فیلتر بر اساس شهر محل زیارت"
 
-#: khadije/includes/languages/trans_project.php:1320
+#: khadije/includes/languages/trans_project.php:1322
 msgid "Filter by status"
 msgstr "فیلتر بر اساس وضعیت"
 
-#: khadije/includes/languages/trans_project.php:1321
+#: khadije/includes/languages/trans_project.php:1323
 msgid "send new complete request"
 msgstr "درخواست جدید و کامل ارسال شده"
 
-#: khadije/includes/languages/trans_project.php:1322
+#: khadije/includes/languages/trans_project.php:1324
 #: khadije/includes/languages/trans_static.php:183
 #: khadije/includes/lib/app/log/caller/smsappNew.php:122
 #: khadije/includes/lib/app/sms.php:445
 msgid "Review"
 msgstr "بررسی"
 
-#: khadije/includes/languages/trans_project.php:1323
+#: khadije/includes/languages/trans_project.php:1325
 msgid "after check and before accept"
 msgstr "پس از بررسی اولیه و پیش از تایید"
 
-#: khadije/includes/languages/trans_project.php:1324
+#: khadije/includes/languages/trans_project.php:1326
 #: khadije/includes/languages/trans_static.php:173
 msgid "queue"
 msgstr "صف"
 
-#: khadije/includes/languages/trans_project.php:1325
+#: khadije/includes/languages/trans_project.php:1327
 msgid "In queue of send"
 msgstr "در صف ارسال"
 
-#: khadije/includes/languages/trans_project.php:1327
+#: khadije/includes/languages/trans_project.php:1329
 msgid "successfully go to trip"
 msgstr "با موفقیت مشرف شد"
 
-#: khadije/includes/languages/trans_project.php:1328
+#: khadije/includes/languages/trans_project.php:1330
 msgid "does not accepted for some reason"
 msgstr "بنا به دلایلی مورد قبول واقع نشد"
 
-#: khadije/includes/languages/trans_project.php:1329
+#: khadije/includes/languages/trans_project.php:1331
 msgid "Not Answer"
 msgstr "بدون پاسخ"
 
-#: khadije/includes/languages/trans_project.php:1330
+#: khadije/includes/languages/trans_project.php:1332
 msgid "not answer to call check"
 msgstr "به تماس بررسی پاسخ نداد"
 
-#: khadije/includes/languages/trans_project.php:1331
+#: khadije/includes/languages/trans_project.php:1333
 msgid "Admin Cancel"
 msgstr "کنسل از طرف مدیریت"
 
-#: khadije/includes/languages/trans_project.php:1332
+#: khadije/includes/languages/trans_project.php:1334
 msgid "delete from admin"
 msgstr "حذف از طرف مدیر"
 
-#: khadije/includes/languages/trans_project.php:1333
+#: khadije/includes/languages/trans_project.php:1335
 msgid "Search in trips"
 msgstr "جستجو در تشرف ها"
 
-#: khadije/includes/languages/trans_project.php:1335
+#: khadije/includes/languages/trans_project.php:1337
 msgid "Birthdate"
 msgstr "تاریخ تولد"
 
-#: khadije/includes/languages/trans_project.php:1336
+#: khadije/includes/languages/trans_project.php:1338
 msgid "Partner"
 msgstr "همراهان"
 
-#: khadije/includes/languages/trans_project.php:1337
+#: khadije/includes/languages/trans_project.php:1339
 msgid "Total Request"
 msgstr "تعداد کل درخواست‌ها"
 
-#: khadije/includes/languages/trans_project.php:1340
+#: khadije/includes/languages/trans_project.php:1342
 msgid "Reset datecreate to"
 msgstr "تنظیم مجدد تاریخ ثبت به"
 
-#: khadije/includes/languages/trans_project.php:1341
+#: khadije/includes/languages/trans_project.php:1343
 msgid "Save reserve date and description"
 msgstr "ذخیره تاریخ رزرو و توضیحات"
 
-#: khadije/includes/languages/trans_project.php:1345
+#: khadije/includes/languages/trans_project.php:1347
 msgid "Admin detail"
 msgstr "مشخصات مدیر"
 
-#: khadije/includes/languages/trans_project.php:1352
+#: khadije/includes/languages/trans_project.php:1354
 msgid "Send result sms to admin trip?"
 msgstr "پیام اعلام وضعیت به مدیر کاروان ارسال شود؟"
 
-#: khadije/includes/languages/trans_project.php:1353
+#: khadije/includes/languages/trans_project.php:1355
 msgid "For some status, see it with this icon"
 msgstr "برای برخی از حالت‌ها که با این آیکون نمایش داده شده است"
 
-#: khadije/includes/languages/trans_project.php:1354
+#: khadije/includes/languages/trans_project.php:1356
 msgid "Status of trip"
 msgstr "وضعیت سفر"
 
-#: khadije/includes/languages/trans_project.php:1355
+#: khadije/includes/languages/trans_project.php:1357
 msgid ""
 "If you change the travel status to gone mode the system set all nationalcode of "
 "this partner as gone to this place"
@@ -20973,153 +20976,153 @@ msgstr ""
 "اگر وضعیت سفر را به حالت «رفته»‌ تغیر دهید،‌کدملی تمام افرادی که به عنوان همراه در "
 "این سفر قرار دارند به عنوان سفر کرده به این مقصد تنظیم خواهد شد"
 
-#: khadije/includes/languages/trans_project.php:1362
+#: khadije/includes/languages/trans_project.php:1364
 msgid "National code thumb"
 msgstr "تصویر کارت ملی"
 
-#: khadije/includes/languages/trans_project.php:1363
+#: khadije/includes/languages/trans_project.php:1365
 msgid "Open file"
 msgstr "بازکردن فایل"
 
-#: khadije/includes/languages/trans_project.php:1364
+#: khadije/includes/languages/trans_project.php:1366
 msgid "Verify leter thumb"
 msgstr "تصویر معرفی‌نامه"
 
-#: khadije/includes/languages/trans_project.php:1365
+#: khadije/includes/languages/trans_project.php:1367
 msgid "View full Profile"
 msgstr "نمایش پروفایل کامل"
 
-#: khadije/includes/languages/trans_project.php:1368
+#: khadije/includes/languages/trans_project.php:1370
 msgid "Maximum people can signup as awaiting"
 msgstr "حداکثر ظرفیت قابل پذیرش برای ثبت‌نام درحال انتظار"
 
-#: khadije/includes/languages/trans_project.php:1369
+#: khadije/includes/languages/trans_project.php:1371
 msgid "User can set date of trip"
 msgstr "اجازه تنظیم تاریخ تشرف"
 
-#: khadije/includes/languages/trans_project.php:1372
+#: khadije/includes/languages/trans_project.php:1374
 msgid "This travel was copied from another place, can not duplicate it again!"
 msgstr "این سفر خود از مقصد دیگری کپی شده است. امکان کپی مجدد آن وجود ندارد!"
 
-#: khadije/includes/languages/trans_project.php:1373
+#: khadije/includes/languages/trans_project.php:1375
 msgid "Click to show master trip"
 msgstr "برای نمایش سفر اصلی کلیک کنید"
 
-#: khadije/includes/languages/trans_project.php:1374
+#: khadije/includes/languages/trans_project.php:1376
 msgid "You can create duplicate of this trip to another palce"
 msgstr "شما می‌توانید از این سفر برای مکان دیگری کپی تهیه کنید"
 
-#: khadije/includes/languages/trans_project.php:1375
+#: khadije/includes/languages/trans_project.php:1377
 msgid "This trip is to"
 msgstr "این سفر به این مقصد است"
 
-#: khadije/includes/languages/trans_project.php:1376
+#: khadije/includes/languages/trans_project.php:1378
 msgid "Copied to mashhad"
 msgstr "کپی شده برای مشهد"
 
-#: khadije/includes/languages/trans_project.php:1377
+#: khadije/includes/languages/trans_project.php:1379
 msgid "Click to show it"
 msgstr "برای نمایش کلیک کنید"
 
-#: khadije/includes/languages/trans_project.php:1378
+#: khadije/includes/languages/trans_project.php:1380
 msgid "Copied on"
 msgstr "کپی شده در"
 
-#: khadije/includes/languages/trans_project.php:1379
+#: khadije/includes/languages/trans_project.php:1381
 msgid "Copy for"
 msgstr "کپی برای"
 
-#: khadije/includes/languages/trans_project.php:1380
+#: khadije/includes/languages/trans_project.php:1382
 #: khadije/includes/languages/trans_static.php:36
 msgid "mashhad"
 msgstr "مشهد"
 
-#: khadije/includes/languages/trans_project.php:1381
+#: khadije/includes/languages/trans_project.php:1383
 msgid "Copied to karbala"
 msgstr "کپی شده برای کربلا"
 
-#: khadije/includes/languages/trans_project.php:1382
+#: khadije/includes/languages/trans_project.php:1384
 #: khadije/includes/languages/trans_static.php:37
 msgid "karbala"
 msgstr "کربلا"
 
-#: khadije/includes/languages/trans_project.php:1383
+#: khadije/includes/languages/trans_project.php:1385
 msgid "Copied to qom"
 msgstr "کپی شده برای قم"
 
-#: khadije/includes/languages/trans_project.php:1387
+#: khadije/includes/languages/trans_project.php:1389
 msgid "Add new group trip"
 msgstr "افزودن سفر کاروانی جدید"
 
-#: khadije/includes/languages/trans_project.php:1388
+#: khadije/includes/languages/trans_project.php:1390
 msgid "Mobile for admin of this trip"
 msgstr "تلفن همراه مدیر کاروان"
 
-#: khadije/includes/languages/trans_project.php:1389
+#: khadije/includes/languages/trans_project.php:1391
 msgid "Select the travel place"
 msgstr "مکان سفر را انتخاب کنید"
 
-#: khadije/includes/languages/trans_project.php:1392
+#: khadije/includes/languages/trans_project.php:1394
 msgid "Product"
 msgstr "محصول"
 
-#: khadije/includes/languages/trans_project.php:1393
+#: khadije/includes/languages/trans_project.php:1395
 msgid "Product count"
 msgstr "تعداد محصولات"
 
-#: khadije/includes/languages/trans_project.php:1394
+#: khadije/includes/languages/trans_project.php:1396
 msgid "Total price"
 msgstr "قیمت کل"
 
-#: khadije/includes/languages/trans_project.php:1395
+#: khadije/includes/languages/trans_project.php:1397
 msgid "Transaction"
 msgstr "تراکنش"
 
-#: khadije/includes/languages/trans_project.php:1396
+#: khadije/includes/languages/trans_project.php:1398
 msgid "No result founded"
 msgstr "نتیجه‌ای یافت نشد!"
 
-#: khadije/includes/languages/trans_project.php:1399
+#: khadije/includes/languages/trans_project.php:1401
 msgid "Hadith text"
 msgstr "متن حدیث"
 
-#: khadije/includes/languages/trans_project.php:1402
+#: khadije/includes/languages/trans_project.php:1404
 msgid "Count All"
 msgstr "تعداد همه"
 
-#: khadije/includes/languages/trans_project.php:1403
+#: khadije/includes/languages/trans_project.php:1405
 msgid "Count per level"
 msgstr "تعداد در هر مرحله"
 
-#: khadije/includes/languages/trans_project.php:1408
+#: khadije/includes/languages/trans_project.php:1410
 msgid "List"
 msgstr "لیست"
 
-#: khadije/includes/languages/trans_project.php:1409
+#: khadije/includes/languages/trans_project.php:1411
 msgid "Lottery"
 msgstr "قرعه‌کشی"
 
-#: khadije/includes/languages/trans_project.php:1428
+#: khadije/includes/languages/trans_project.php:1430
 msgid "Click and go to khadije site"
 msgstr "برای ناوبری به سایت حضرت خدیجه کلیک کنید"
 
-#: khadije/includes/languages/trans_project.php:1429
+#: khadije/includes/languages/trans_project.php:1431
 msgid "Wrote your heart sounds"
 msgstr "صدای قلبت را بنویس"
 
-#: khadije/includes/languages/trans_project.php:1430
+#: khadije/includes/languages/trans_project.php:1432
 msgid "optional"
 msgstr "اختیاری"
 
-#: khadije/includes/languages/trans_project.php:1431
+#: khadije/includes/languages/trans_project.php:1433
 msgid "Not require"
 msgstr "الزامی نیست"
 
-#: khadije/includes/languages/trans_project.php:1432
+#: khadije/includes/languages/trans_project.php:1434
 msgid "Mobile number is not showing on site and optional"
 msgstr "شماره موبایل روی سایت نمایش داده نشده و اختیاری است"
 
-#: khadije/includes/languages/trans_project.php:1433
+#: khadije/includes/languages/trans_project.php:1435
 msgid "Press here to send"
 msgstr "برای ارسال اینجا را بفشارید"
 
@@ -21764,6 +21767,10 @@ msgstr "باز شدن بخش موکب"
 #: khadije/includes/languages/trans_static.php:287
 msgid "cpKarbalaUserCount"
 msgstr "نمایش آمار زائران کربلا"
+
+#: khadije/includes/languages/trans_static.php:288
+msgid "cpKarbalaUserCountAdd"
+msgstr "تنظیمات آمار زائران کربلا"
 
 #: khadije/includes/languages/trans_static.php:289
 msgid "koyeMohebbat"
@@ -22490,7 +22497,7 @@ msgstr "انتخاب شهر الزامی است"
 msgid "Invalid country name"
 msgstr "کشور نامعتبر"
 
-#: khadije/includes/lib/app/karbalasetting.php:75
+#: khadije/includes/lib/app/karbalasetting.php:191
 msgid "Status changed"
 msgstr "وضعیت تغییر یافت"
 
@@ -22543,7 +22550,7 @@ msgstr "تعداد در هر مرحله نامعتبر است"
 msgid "Countperlevel is required"
 msgstr "تعداد در هر مرحله الزامی است"
 
-#: khadije/includes/lib/app/lottery.php:218
+#: khadije/includes/lib/app/lottery.php:226
 msgid "Data was removed"
 msgstr "اطلاعات با موفقیت حذف شد"
 
