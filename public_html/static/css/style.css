@@ -600,21 +600,21 @@ body[data-sidebar] #sidebar{left:0;}
 .t733{
 	letter-spacing: 3px;
 }
-.billingInfo .msg{
+.billingInfo .payInfo .msg{
 	min-height: 125px;
 	padding:14px 1.5em;
 }
-.billingInfo .msg.bank{
+.billingInfo .payInfo .msg.bank{
 	font-size: 0.9em;
 	line-height: 30px;
 }
-.billingInfo .msg.bank .spay-64-resalat{
+.billingInfo .payInfo .msg.bank .spay-64-resalat{
 	margin: 0 auto;
 }
-.billingInfo .msg.bank [class^="spay-64-"]{
+.billingInfo .payInfo .msg.bank [class^="spay-64-"]{
 	margin: 0 auto;
 }
-.billingInfo .msg.donateLink .btn{
+.billingInfo .payInfo .msg.donateLink .btn{
 	height:95px;
 	line-height:83px;
 }
