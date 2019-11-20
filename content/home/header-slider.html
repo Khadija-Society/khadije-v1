@@ -1,0 +1,57 @@
+
+  <div class="f justify-center mB25">
+    <div class="c8 s12 pRa10">
+
+
+      <div class="slider slider-pro goldenB" id='topSlider'>
+{%set topSliderPostsID = [] %}
+{%set topSliderPosts = posts({"limit" : 5, "special" : "slider"})%}
+
+{%set defaultImageTop = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
+        <div class="sp-slides">
+{%if topSliderPosts %}
+{%for key, myNews in topSliderPosts%}
+{%set topSliderPostsID = topSliderPostsID | merge([myNews.id]) %}
+          <div class="sp-slide">
+            <img class="sp-image" src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImageTop}}{%endif%}" alt="{{myNews.title}}">
+
+            <h3 class="sp-layer sp-black sp-padding" data-position="topRight" data-horizontal="10" data-vertical="5%" data-show-transition="down" data-hide-transition="right">
+              <a href="{{url.here}}/{{myNews.url}}">{{myNews.title}}</a>
+            </h3>
+
+            <p class="sp-layer sp-black sp-padding s0" data-position="bottomRight" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="up" data-show-delay="400" data-hide-transition="down">{{myNews.excerpt}}</p>
+          </div>
+{%endfor%}
+{%else%}
+          <div class="sp-slide">
+            <img class="sp-image" src="{{defaultImageTop}}" alt="{{site.title}}">
+          </div>
+{%endif%}
+        </div>
+      </div>
+
+    </div>
+
+{%if false%}
+    <div class="c3 sauto salavatBox">
+      <div class="salavat goldenB">
+        <img src="https://khadije.com/files/2/492-964dc31889034b86391888c36927d43a.jpg" alt='اطلاعیه'>
+        <div class="Allah sB1">
+          <a href="https://khadije.com/etelaeyekarbala">مشاهده اطلاعیه</a>
+        </div>
+      </div>
+    </div>
+{%endif%}
+
+    <div class="c3 sauto salavatBox">
+      <div class="salavat goldenB">
+        <img src="{{url.static}}/images/homepage-v3/salavat.jpg" alt='{%trans "O Allah, let Your Peace come upon Muhammad and the family of Muhammad"%}'>
+        <div class="counter" data-salavat="{{salavatShomar}}">{{salavatShomar | fitNumber}}</div>
+        <div class="mB25 fs08">{%trans "You also partake in salawat"%}</div>
+        <div class="Allah sB1">
+          <a href="{{url.pwd}}" data-ajaxify data-data='{"salavat" : true}' data-method='post' data-notif='{%trans "Allahouma sali ala mohamed wa ali muhammad"%}' data-notif-pos="bottomCenter" data-notif-icon='sf-heart' data-notif-image='{{url.static}}/images/logo/khadije.png'>{%trans "Say salawat"%} <span class="s0 m0 c0 xauto">{%trans "and press here"%}</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
