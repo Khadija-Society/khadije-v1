@@ -1,5 +1,5 @@
 <?php
-namespace content\karbala\lottery;
+namespace content\karbala\lottery2;
 
 
 class view

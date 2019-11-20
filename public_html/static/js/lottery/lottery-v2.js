@@ -530,7 +530,7 @@ function showOldWinners()
     var myWinners = $('.winners').attr('data-winners');
     if(!myWinners)
     {
-        console.error('Error! We need data from server!');
+        console.warn('Error! We need data from server!');
         return false;
     }
     var myWinnersList = JSON.parse(myWinners);
@@ -546,7 +546,7 @@ function showOldWinners()
     }
     else
     {
-        console.log('No one is win before this step!');
+        console.warn('No one is win before this step!');
     }
 }
 
@@ -639,7 +639,7 @@ function startChoosenLoop()
             // go to next person
             setTimeout(startChoosenLoop, 10000);
 
-        }, 20000);
+        }, 5000);
     }
     else
     {

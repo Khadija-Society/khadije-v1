@@ -16,7 +16,7 @@ main{
 }
 
 .videobg {
-    opacity: .4;
+    opacity: .6;
     min-width: 100%;
     left: 0;
     bottom: 0;
@@ -38,7 +38,7 @@ main{
 	z-index: 1;
 	position: relative;
 }
-.lottery header{
+.lottery footer{
 	height: 160px;
 	overflow: hidden;
 	font-weight: 800;
@@ -57,23 +57,16 @@ main{
 	-webkit-animation-fill-mode: forwards;
 	-webkit-animation-delay: 0.01s;
 	box-shadow: 0 2px 10px #000;
-}
-.lottery header h1{
-	line-height: 40px;
-	margin: 0;
-	font-size: 1.7em;
-}
-
-.lottery footer{
 	position: fixed;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	min-height: 60px;
-	font-size: 1.7em;
-	color: #ddd;
-	padding: 10px 25px 25px;
 }
+.lottery footer h1{
+	line-height: 40px;
+	margin: 0;
+}
+
 
 .numbers{
 	height: 100px;
@@ -192,7 +185,6 @@ main{
 	--color-action: #f7d337;
 	--color-button-bg: #f7d337;
 	--color-button-text: #000000;
-	--button-padding: 1em 3em;
 	--radius-button: 200px;
 	--border-button: 0;
 	font-size: 2em;
@@ -234,9 +226,10 @@ main{
 	border: 0;
 	border: var(--border-button);
 	margin: 0;
-	padding: 1.5rem 3rem;
-	padding: var(--button-padding);
+	padding: 1em 3em;
+	font-size: 1.5em;
 	will-change: transform;
+	font-weight: 900;
 }
 
 .particles-button:focus {
