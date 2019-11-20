@@ -98,6 +98,22 @@ main{
 .numbers span.yes{
 	background-color: rgba(0,0,0,0.9);
 }
+.numbers .khadije{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	text-align: center;
+	font-size: 1.25em;
+	line-height: 100px;
+	height: 100px;
+	z-index: 2;
+	border-radius: 10px;
+	direction: rtl;
+	background-color: #fff;
+	display: none;
+}
 .winners{
 	padding: 10px 0px;
 	font-size: 1.5em;
@@ -152,8 +168,13 @@ main{
 }
 
 .winners .person.credit{
-	line-height: 40px;
-	font-size: 0.8em;
+    font-size: 2em;
+    line-height: 80px;
+    text-align: center;
+}
+.winners .person.credit b{
+    letter-spacing: 3px;
+    direction: ltr;
 }
 
 

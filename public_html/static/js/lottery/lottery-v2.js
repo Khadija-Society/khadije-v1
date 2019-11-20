@@ -620,7 +620,7 @@ function startChoosenLoop()
 
         for (var i = 0; i <= 10; i++)
         {
-            var randomDimmer = Math.floor(100 + Math.random() * 300);
+            var randomDimmer = Math.floor(50 + Math.random() * 200);
             var myInterval   = setInterval(fillGeneratedDigit, randomDimmer, i);
             $('.numbers span').eq(i).attr('myInterval', myInterval);
         }
@@ -645,6 +645,7 @@ function startChoosenLoop()
     {
         console.log('We dont have another winner');
         $('.winners .person.credit').fadeIn();
+        $('.numbers .khadije').fadeIn();
     }
 }
 
