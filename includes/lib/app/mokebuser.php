@@ -952,7 +952,7 @@ class mokebuser
 		else
 		{
 
-			$expire = self::get_expire($_option['place'], $_args['activetime'], $args['datecreated']);
+			$expire = self::get_expire($_option['place'], $args['activetime'], $args['datecreated']);
 			$custom_postion = \dash\app::request('position');
 			if($custom_postion && is_numeric($custom_postion))
 			{
@@ -1060,6 +1060,8 @@ class mokebuser
 		{
 			return false;
 		}
+
+		unset($args['activetime']);
 
 		if(!\dash\app::isset_request('mobile')) unset($args['mobile']);
 		if(!\dash\app::isset_request('gender')) unset($args['gender']);
