@@ -152,6 +152,9 @@ class lottery
 			return false;
 		}
 
+		$start = null;
+		$end   = null;
+
 		$result = [];
 		foreach ($load_user as $key => $value)
 		{
@@ -211,6 +214,23 @@ class lottery
 
 
 			$result[] = $temp;
+		}
+
+		if($start === 0)
+		{
+			$start = 1;
+		}
+
+		if($start > 0)
+		{
+			$msg = "قرعه کشی نفرات ". \dash\utility\human::fitNumber($start). " تا ". \dash\utility\human::fitNumber($end);
+
+			\dash\temp::set('lotteryLevelMessage', $msg);
+		}
+		else
+		{
+			\dash\temp::set('lotteryEndLevel', true);
+
 		}
 
 		return $result;

@@ -10,6 +10,7 @@ class view
 		\dash\data::page_desc(\dash\data::site_desc());
 
 		$winners = self::load_level();
+
 		if(!$winners && \dash\request::get('sample'))
 		{
 			$winners = self::winners(\dash\request::get('sample')); // test or sample
@@ -182,6 +183,12 @@ class view
 			}
 
 			$load_level = \lib\app\lottery::load_lottery('karbala2users', $md5, $step, \dash\request::get('final'));
+			$msg = \dash\temp::get('lotteryLevelMessage');
+			\dash\data::lotteryLevelMessage($msg);
+
+			$msg = \dash\temp::get('lotteryEndLevel');
+			\dash\data::lotteryEndLevel($msg);
+
 			return $load_level;
 
 		}
