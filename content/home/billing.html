@@ -1,0 +1,33 @@
+  <section class="billingInfo">
+    <h3 class="sB3">{%trans "Join to the charity and participate in the pilgrimage reward"%}</h3>
+{%if lang.current == 'fa'%}
+    <a href='http://samtekhoda.tv3.ir' target="_blank"><div class="sprite-samtekhoda"></div><span class="hide">{%trans "Samte Khoda"%}</span></a>
+    <p>موسسه حضرت خدیجه س با همکاری برنامه سمت خدا؛</p>
+    <p>در فراق حرم یار جگر سوز شَوَد 🔸 هرکسی در دل خود شوق زیارت دارد</p>
+    <p>به همت شما همه مشتاقان زیارت را به حرمهای اهل بیت علیهم السلام میرسانیم. شما هم میتوانید با هر توان مالی در ثواب زائرین قم ،مشهد،کربلا شریک باشید.</p>
+    <p>جهت مشارکت هدایای خود رابه شماره کارت 5859837000064010 یا با شماره گیری کد پرداخت ازطریق تلفن همراه  <a class="btn ltr" href="tel:*733*55#">*733*55#</a> به نام  کانون فرهنگی حضرت خدیجه سلام الله علیها واریز نمایید.  لطفا بعد از واریز به شماره 09127522690 پیامک بدهید و حتما بنویسید مربوط به زیارت کربلا، قم یا مشهد.</p>
+{%else%}
+    <p>{%trans "The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt."%} {%trans "Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods."%}</p>
+{%endif%}
+    <div class="f justify-center">
+      <div class="cauto m12 s12 pRa10">
+{%include "content/home/bank-tejarat.html" %}
+      </div>
+      <div class="c m6 pRa10">
+        <form class="msg success2 quickpay f align-center" method="post">
+          <div class="input">
+           <input type="number" name="quickpay" placeholder='{%trans "Pay Amount"%} {%trans "Toman"%}*' title='{%trans "You can change amount of your donation"%}' id='totalAmount' required step="1000" max="9000000000">
+            <span class="addon">{%trans "Toman"%}</span>
+          </div>
+          <button class="btn success block">{%trans "Donate as anonymous"%}</button>
+        </form>
+      </div>
+      <div class="c m6">
+        <div class="msg simple donateLink f align-center">
+          <a href="{{url.here}}/donate" class="btn primary">{%trans "Donate with register details"%}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
