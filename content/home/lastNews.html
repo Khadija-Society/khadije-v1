@@ -1,8 +1,10 @@
 
 {%set lastPostsRecord = posts({"limit" : 10})%}
 {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
-<section class="txtC mB10">
-  <h3 class="sB3">{%trans "Latest News"%}</h3>
+<section class="mB10">
+  <div class="txtC">
+    <h3 class="sB3">{%trans "Latest News"%}</h3>
+  </div>
 
 {%if lastPostsRecord%}
   <div class="f roundedBox lastNews10">
