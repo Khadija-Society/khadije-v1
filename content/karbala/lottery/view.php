@@ -176,13 +176,13 @@ class view
 			$md5  = substr($level, 0, 32);
 			$step = substr($level, 32);
 
-			if($step && !is_numeric($step))
+			if(!$step)
 			{
 				\dash\header::status(404, T_("Invalid step"));
 				return false;
 			}
 
-			$load_level = \lib\app\lottery::load_lottery('karbala2users', $md5, $step, \dash\request::get('final'));
+			$load_level = \lib\app\lottery::load_lottery('karbala2users', $md5, $step);
 			$msg = \dash\temp::get('lotteryLevelMessage');
 			\dash\data::lotteryLevelMessage($msg);
 

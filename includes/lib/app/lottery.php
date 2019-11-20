@@ -106,7 +106,7 @@ class lottery
 
 
 
-	public static function load_lottery($_table, $_md5, $_step, $_final = false)
+	public static function load_lottery($_table, $_md5, $_step)
 	{
 		$get =
 		[
@@ -124,16 +124,25 @@ class lottery
 
 		\dash\temp::set('myLotteryDetail', $lottery);
 
-		$step = null;
-		$countperlevel = intval($lottery['countperlevel']);
+		$final = null;
+		$step  = null;
 
-		if($_step && is_numeric($lottery['countlevel']))
+		$countperlevel = intval($lottery['countperlevel']);
+		if($_step === 'a')
 		{
-			if(intval($_step) <= 0 || intval($_step) > intval($lottery['countlevel']))
+			$final = true;
+			$step = null;
+		}
+		else
+		{
+			if($_step && is_numeric($lottery['countlevel']))
 			{
-				return false;
+				if(intval($_step) <= 0 || intval($_step) > intval($lottery['countlevel']))
+				{
+					return false;
+				}
+				$step = intval($_step);
 			}
-			$step = intval($_step);
 		}
 
 		$win = $lottery['win'];
@@ -176,7 +185,9 @@ class lottery
 				$ok = true;
 			}
 
-			if($_final)
+			$continue = false;
+
+			if($final)
 			{
 				$status = 'ok';
 			}
@@ -193,11 +204,16 @@ class lottery
 					if($myKey >= $start && $myKey <= $end)
 					{
 						$status = 'run';
+						$continue = true;
 					}
 
 				}
 			}
 
+			if(!$continue && !$final)
+			{
+				continue;
+			}
 
 
 			$temp                 = [];
@@ -227,11 +243,12 @@ class lottery
 
 			\dash\temp::set('lotteryLevelMessage', $msg);
 		}
-		else
+
+		if($final)
 		{
 			\dash\temp::set('lotteryEndLevel', true);
-
 		}
+
 
 		return $result;
 	}
