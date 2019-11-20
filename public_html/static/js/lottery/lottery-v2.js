@@ -644,6 +644,7 @@ function startChoosenLoop()
     else
     {
         console.log('We dont have another winner');
+        $('.winners .person.credit').fadeIn();
     }
 }
 

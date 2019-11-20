@@ -65,6 +65,7 @@ main{
 .lottery footer h1{
 	line-height: 40px;
 	margin: 0;
+	font-size: 1.6em;
 }
 
 
@@ -110,12 +111,12 @@ main{
 	border-radius: 1rem;
 	overflow: hidden;
 	background-color: rgba(255,255,255,0.1);
-	border: 1px solid #fff;
-	margin: 5px 5px;
+	margin: 5px 5px 10px;
 	color: #fff;
 	transition: 0.3s;
-	padding: 10px;
+	padding: 10px 1em;
 	display: none;
+	min-height: 100px;
 }
 .winners .person .key{
 	width: 50px;
@@ -131,7 +132,7 @@ main{
     overflow: hidden;
     font-weight: 700;
 	font-size: 1.5em;
-	line-height: 1.5em;
+	line-height: 50px;
 }
 .winners .person .more{
 
@@ -150,7 +151,10 @@ main{
 	direction: ltr;
 }
 
-
+.winners .person.credit{
+	line-height: 40px;
+	font-size: 0.8em;
+}
 
 
 
