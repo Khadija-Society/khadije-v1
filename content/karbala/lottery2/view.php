@@ -31,11 +31,11 @@ class view
 			case '15':
 				$winners =
 				'[
-					{"index":1,"name":"تست","mobile":"989109610612","id":"444**32109","nationalcode":"4440032109","father":"احمد","province":"قم","city":"قم","status":"ok"},
-					{"index":2,"name":"تست","mobile":"989131881682","id":"127**75702","nationalcode":"1277775702","father":"بهرام","province":"اصفهان","city":"اصفهان","status":"ok"},
-					{"index":3,"name":"تست","mobile":"989309216163","id":"005**49138","nationalcode":"0055149138","father":"احمد","province":"تهران","city":"تهران","status":"ok"},
-					{"index":4,"name":"تست","mobile":"989038925304","id":"092**39041","nationalcode":"0925539041","father":"حسین","province":"خراسان رضوی","city":"مشهد","status":"ok"},
-					{"index":5,"name":"تست","mobile":"989300978323","id":"106**27253","nationalcode":"1064027253","father":"لطف اله","province":"خراسان رضوی","city":"نیشابور","status":"ok"},
+					{"index":1,"name":"آقای تست بشماره یک","mobile":"989109610612","id":"444**32109","nationalcode":"4440032109","father":"احمد","province":"قم","city":"قم","status":"ok"},
+					{"index":2,"name":"خانم تست شماره دو","mobile":"989131881682","id":"127**75702","nationalcode":"1277775702","father":"بهرام","province":"اصفهان","city":"اصفهان","status":"ok"},
+					{"index":3,"name":"اقای تست تست شماره سه","mobile":"989309216163","id":"005**49138","nationalcode":"0055149138","father":"احمد","province":"تهران","city":"تهران","status":"ok"},
+					{"index":4,"name":"آقای تست شماره چهارتست","mobile":"989038925304","id":"092**39041","nationalcode":"0925539041","father":"حسین","province":"خراسان رضوی","city":"مشهد","status":"ok"},
+					{"index":5,"name":"آقای تست شماره پنج","mobile":"989300978323","id":"106**27253","nationalcode":"1064027253","father":"لطف اله","province":"خراسان رضوی","city":"نیشابور","status":"ok"},
 					{"index":6,"name":"تست","mobile":"989371795377","id":"006**53896","nationalcode":"0069453896","father":"مرتضی","province":"تهران","city":"تهران","status":"ok"},
 					{"index":7,"name":"تست","mobile":"989221548993","id":"212**50570","nationalcode":"2121850570","father":"مراد علی","province":"گلستان","city":"گرگان","status":"ok"},
 					{"index":8,"name":"تست","mobile":"989011643508","id":"001**19170","nationalcode":"0018919170","father":"نصراله","province":"تهران","city":"تهران","status":"ok"},
@@ -137,11 +137,11 @@ class view
 			default:
 				$winners =
 				'[
-					{"index":1,"name":"تست","mobile":"989109610612","id":"444**32109","nationalcode":"4440032109","father":"احمد","province":"قم","city":"قم","status":"run"},
-					{"index":2,"name":"تست","mobile":"989131881682","id":"127**75702","nationalcode":"1277775702","father":"بهرام","province":"اصفهان","city":"اصفهان","status":"run"},
-					{"index":3,"name":"تست","mobile":"989309216163","id":"005**49138","nationalcode":"0055149138","father":"احمد","province":"تهران","city":"تهران","status":"run"},
-					{"index":4,"name":"تست","mobile":"989038925304","id":"092**39041","nationalcode":"0925539041","father":"حسین","province":"خراسان رضوی","city":"مشهد","status":"run"},
-					{"index":5,"name":"تست","mobile":"989300978323","id":"106**27253","nationalcode":"1064027253","father":"لطف اله","province":"خراسان رضوی","city":"نیشابور","status":"run"}
+					{"index":1,"name":"آقای محترم تست به شماره یک","mobile":"989109610612","id":"444**32109","nationalcode":"4440032109","father":"احمد","province":"قم","city":"قم","status":"run"},
+					{"index":2,"name":"خانم تست شماره دو","mobile":"989131881682","id":"127**75702","nationalcode":"1277775702","father":"بهرام","province":"اصفهان","city":"اصفهان","status":"run"},
+					{"index":3,"name":"آقای تست شماره سه ","mobile":"989309216163","id":"005**49138","nationalcode":"0055149138","father":"احمد","province":"تهران","city":"تهران","status":"run"},
+					{"index":4,"name":"آقای تست شماره چهار","mobile":"989038925304","id":"092**39041","nationalcode":"0925539041","father":"حسین","province":"خراسان رضوی","city":"مشهد","status":"run"},
+					{"index":5,"name":"آقای تست شمارهتست","mobile":"989300978323","id":"106**27253","nationalcode":"1064027253","father":"لطف اله","province":"خراسان رضوی","city":"نیشابور","status":"run"}
 				]';
 
 					// {"index":6,"name":"تست","mobile":"989371795377","id":"006**53896","nationalcode":"0069453896","father":"مرتضی","province":"تهران","city":"تهران","status":"none"},
