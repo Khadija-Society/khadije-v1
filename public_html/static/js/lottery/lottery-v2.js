@@ -645,7 +645,9 @@ function startChoosenLoop()
     {
         console.log('We dont have another winner');
         $('.winners .person.credit').transition('drop');
-        $('.numbers .khadije').transition('fly down');
+        setTimeout(function(){
+            $('.numbers .khadije').transition('fly down');
+        }, 2000);
     }
 }
 
