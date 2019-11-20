@@ -1,0 +1,40 @@
+
+{%set lastPostsRecord = posts({"limit" : 10})%}
+{%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
+<section class="txtC mB10">
+  <h3 class="sB3">{%trans "Latest News"%}</h3>
+
+{%if lastPostsRecord%}
+  <div class="f roundedBox lastNews10">
+  {%for key, value in lastPostsRecord%}
+{%if key == 0 or key == 1%}
+    <div class="c6 m12 s12 pRa10 mB10">
+      <a class="ovelay" href="{{value.link}}">
+        <figure>
+          <img src="{%if value.file.normal%}{{value.file.normal}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
+          <figcaption>
+            <h2>{{value.title}}</h2>
+            <p class="s0 m0">{{value.excerpt}}</p>
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+{%else%}
+
+    <div class="c3 m6 s12 pRa10 mB10">
+      <a class="ovelay" href="{{value.link}}">
+        <figure>
+          <img src="{%if value.file.normal%}{{value.file.normal}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
+          <figcaption>
+            <h2>{{value.title}}</h2>
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+{%endif%}
+
+  {%endfor%}
+  </div>
+{%endif%}
+
+</section>

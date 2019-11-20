@@ -201,9 +201,7 @@
     <p>موسسه حضرت خدیجه س با همکاری برنامه سمت خدا؛</p>
     <p>در فراق حرم یار جگر سوز شَوَد 🔸 هرکسی در دل خود شوق زیارت دارد</p>
     <p>به همت شما همه مشتاقان زیارت را به حرمهای اهل بیت علیهم السلام میرسانیم. شما هم میتوانید با هر توان مالی در ثواب زائرین قم ،مشهد،کربلا شریک باشید.</p>
-    <p>قم و مشهد سیصد هزارتومان؛ کربلا یک میلیون و پانصد هزار تومان</p>
-    <p>جهت مشارکت هدایای خود رابه شماره کارت 5859837000064010 یا با شماره گیری کد پرداخت ازطریق تلفن همراه  <a class="btn ltr" href="tel:*733*55#">*733*55#</a> به نام  کانون فرهنگی حضرت خدیجه سلام الله علیها واریز نمایید.</p>
-    <p> لطفا بعد از واریز به شماره 09127522690 پیامک بدهید و حتما بنویسید مربوط به زیارت کربلا، قم یا مشهد.</p>
+    <p>جهت مشارکت هدایای خود رابه شماره کارت 5859837000064010 یا با شماره گیری کد پرداخت ازطریق تلفن همراه  <a class="btn ltr" href="tel:*733*55#">*733*55#</a> به نام  کانون فرهنگی حضرت خدیجه سلام الله علیها واریز نمایید.  لطفا بعد از واریز به شماره 09127522690 پیامک بدهید و حتما بنویسید مربوط به زیارت کربلا، قم یا مشهد.</p>
 {%else%}
     <p>{%trans "The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt."%} {%trans "Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods."%}</p>
 {%endif%}
@@ -229,50 +227,7 @@
   </section>
 
 
-{%set lastPostsRecord = posts({"limit" : 10})%}
-
-{%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
-{%if lastPostsRecord%}
-  <section class="lastNews txtC mT25 mB25">
-    <h3 class="sB3">{%trans "Latest News"%}</h3>
-
-    {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
-    <div class="goldenB f">
-      <div class="c8 s12">
-        <div class="preview">
-{%set myI = 0 %}
-{%for key, myNews in lastPostsRecord%}
-  {%if myNews.id in topSliderPostsID%}
-  {%else%}
-          <a href="{{url.here}}/{{myNews.url}}" data-index='{{myI}}' class="f align-center justify-center {%if myI == 0%}active{%endif%}">
-            <img src="{%if myNews.meta.thumb%}{{myNews.meta.thumb}}{%else%}{{defaultImage}}{%endif%}" alt="{{myNews.title}}">
-          </a>
-          <div class="hide">
-            <p>{{myNews.excerpt}}</p>
-          </div>
-  {%set myI = myI + 1 %}
-  {%endif%}
-{%endfor%}
-        </div>
-      </div>
-      <div class="c4 s12 listBox">
-        <nav class="f f-column list">
-{%set myI = 0 %}
-{%for key, myNews in lastPostsRecord%}
-  {%if myNews.id in topSliderPostsID%}
-  {%else%}
-          <a class="c f align-center justify-center {%if myI == 0%}active{%endif%}" href="{{url.here}}/{{myNews.url}}" data-index='{{myI}}'>{%if myNews.subtitle%}<span>{{myNews.subtitle}}</span> {%endif%}<span class="txtB">{{myNews.title}}</span></a>
-  {%set myI = myI + 1 %}
-  {%endif%}
-{%endfor%}
-          <a class="c txtRa archiveLink" href="{{url.here}}/blog">{%trans "Archive"%}</a>
-        </nav>
-      </div>
-    </div>
-  </section>
-{%endif%}
-
-
+{%include "content/home/lastNews.html" %}
 
 
 
@@ -319,8 +274,8 @@
 
 {%block bank_tejarat%}
         <div class="f msg simple bank" title='{%trans "Tejarat bank"%}' data-tippy-placement='bottom'>
-          <div class="cauto f align-center pRa10"><span class="spay-64-tejarat"></span></div>
-          <div class="c">
+          <div class="cauto s12 f align-center pRa10"><span class="spay-64-tejarat"></span></div>
+          <div class="c s12">
             <div class="mT5">
               {%trans "Card number"%} <span class="ltr compact txtB">{{"5859-8370-0006-4010" | fitNumber(false)}}</span>
             </div>
