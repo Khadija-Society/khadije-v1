@@ -528,6 +528,11 @@ function showOldWinners()
 {
     console.log('showOldWinners.');
     var myWinners = $('.winners').attr('data-winners');
+    if(!myWinners)
+    {
+        console.error('Error! We need data from server!');
+        return false;
+    }
     var myWinnersList = JSON.parse(myWinners);
 
     if($('.winners .person[data-status="ok"]').length > 0)
