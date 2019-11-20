@@ -30,7 +30,7 @@ class view
 				return false;
 			}
 
-			$load_level = \lib\app\lottery::load_lottery('karbala2users', $md5, $step);
+			$load_level = \lib\app\lottery::load_lottery('karbala2users', $md5, 'a');
 			\dash\data::allList($load_level);
 
 			$lottery_detail = \dash\temp::get('myLotteryDetail');
