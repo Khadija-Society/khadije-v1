@@ -647,7 +647,7 @@ function startChoosenLoop()
         $('.winners .person.credit').transition('drop');
         setTimeout(function(){
             $('.numbers .khadije').transition('fly down');
-        }, 2000);
+        }, 3000);
     }
 }
 
