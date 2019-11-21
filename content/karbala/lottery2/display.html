@@ -38,7 +38,7 @@
 {% for key, elected in winnersList %}
 			<div class="c6 s12">
 				<div class="person" data-id='{{elected.id}}' data-index='{{elected.index}}' {%if elected.skip%}data-ok{%endif%} data-status='{{elected.status}}'>
-					<div class="name">{{elected.name}}</div>
+					<div class="name">{{elected.index | fitNumber}}. {{elected.name}}</div>
 					<div class="f more">
 						<div class="c province">استان {{elected.province}}{%if elected.city and elected.city != elected.province%} - {{elected.city}}{%endif%}</div>
 						<div class="cauto os value">{{elected.id | fitNumber(false)}}</div>
