@@ -39,39 +39,6 @@
   </div>
 
 
-  <div class="cbox fs09">
-    <p>
-      زائر گرامی!
-      <br>
-      در صورتی که قبلا ثبت‌نام کرده‌اید و می‌خواهید از وضعیت ثبت‌نام خود مطلع شوید کد ملی خود را در قسمت پایین وارد کرده و گزینه بررسی را بزنید
-    </p>
-    <form method="get" action="{{url.this}}" autocomplete="off">
-      <div class="input">
-        <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='{%trans "10 digit national code"%} *' maxlength="10"  minlength="1"  required autocomplete="new-password">
-
-        <button class="addon btn success">{%trans "Check"%}</button>
-      </div>
-    </form>
-    {%if checkNationalcode%}
-      <div class="mTB10 fs14">
-
-      {%if checkNationalcode == 'invalid'%}
-        <div class="msg warn">کد ملی وارد شده صحیح نیست. لطفا کد ملی خود را به صورت صحیح وارد کنید</div>
-      {%endif%}
-
-      {%if checkNationalcode == 'signuped'%}
-        <div class="msg success">شما ثبت‌نام شده‌اید. لطفا منتظر اعلام نتایج قرعه‌کشی باشید.</div>
-      {%endif%}
-
-
-      {%if checkNationalcode == 'not-signuped'%}
-        <div class="msg info">شما هنوز ثبت‌نام نشده‌اید. در صورتی که فرصت ثبت‌نام باقی است لطفا نسبت به ثبت‌نام از طریق فرم زیر اقدام کنید.</div>
-      {%endif%}
-
-      </div>
-
-    {%endif%}
-  </div>
 
 
 
@@ -126,7 +93,45 @@
     {%else%}
     <div class="msg pain txtC txtB fs20">ثبت نام در حال حاضر فعال نیست</div>
     {%endif%}
+
+
+    <div class="cbox fs09 mTB20">
+    <p>
+      زائر گرامی!
+      <br>
+      در صورتی که قبلا ثبت‌نام کرده‌اید و می‌خواهید از وضعیت ثبت‌نام خود مطلع شوید کد ملی خود را در قسمت پایین وارد کرده و گزینه بررسی را بزنید
+    </p>
+    <form method="get" action="{{url.this}}" autocomplete="off">
+      <div class="input">
+        <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='{%trans "10 digit national code"%} *' maxlength="10"  minlength="1"  required autocomplete="new-password">
+
+        <button class="addon btn success">{%trans "Check"%}</button>
+      </div>
+    </form>
+    {%if checkNationalcode%}
+      <div class="mTB10 fs14">
+
+      {%if checkNationalcode == 'invalid'%}
+        <div class="msg warn">کد ملی وارد شده صحیح نیست. لطفا کد ملی خود را به صورت صحیح وارد کنید</div>
+      {%endif%}
+
+      {%if checkNationalcode == 'signuped'%}
+        <div class="msg success">شما ثبت‌نام شده‌اید. لطفا منتظر اعلام نتایج قرعه‌کشی باشید.</div>
+      {%endif%}
+
+
+      {%if checkNationalcode == 'not-signuped'%}
+        <div class="msg info">شما هنوز ثبت‌نام نشده‌اید. در صورتی که فرصت ثبت‌نام باقی است لطفا نسبت به ثبت‌نام از طریق فرم زیر اقدام کنید.</div>
+      {%endif%}
+
+      </div>
+
+    {%endif%}
+  </div>
+
  </div>
+
+
 
 </div>
 
