@@ -134,8 +134,8 @@ class application
 	private static function karbala_signup_link()
 	{
 		$link          = [];
-		// $link['type']  = 'banner';
-		$link['type']  = 'browser';
+		$link['type']  = 'banner';
+		// $link['type']  = 'browser';
 		$link['image'] = \dash\url::static(). '/images/app/karbala201909.jpg';
 		$link['url']   = \dash\url::kingdom(). '/arbaeen98';
 		return $link;
