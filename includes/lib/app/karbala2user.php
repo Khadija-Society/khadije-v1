@@ -185,11 +185,11 @@ class karbala2user
 
 
 		$father = \dash\app::request('father');
-		if(!$father)
-		{
-			\dash\notif::error(T_("Father name is required"), 'father');
-			return false;
-		}
+		// if(!$father)
+		// {
+		// 	\dash\notif::error(T_("Father name is required"), 'father');
+		// 	return false;
+		// }
 		if($father && mb_strlen($father) > 50)
 		{
 			\dash\notif::error(T_("Invalid arguments father"), 'father');
