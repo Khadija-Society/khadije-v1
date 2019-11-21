@@ -258,11 +258,11 @@ class karbala2user
 			return false;
 		}
 
-		if(!$homeaddress)
-		{
-			\dash\notif::error(T_("Address is required"), 'homeaddress');
-			return false;
-		}
+		// if(!$homeaddress)
+		// {
+		// 	\dash\notif::error(T_("Address is required"), 'homeaddress');
+		// 	return false;
+		// }
 
 		$workaddress = \dash\app::request('workaddress');
 		if($workaddress && mb_strlen($workaddress) > 700)
@@ -285,11 +285,11 @@ class karbala2user
 			return false;
 		}
 
-		if(!$phone)
-		{
-			\dash\notif::error(T_("Phone is required"), 'phone');
-			return false;
-		}
+		// if(!$phone)
+		// {
+		// 	\dash\notif::error(T_("Phone is required"), 'phone');
+		// 	return false;
+		// }
 
 		$displayname = \dash\app::request('displayname');
 		if($displayname && mb_strlen($displayname) > 90)
