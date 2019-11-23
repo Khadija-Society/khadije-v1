@@ -356,7 +356,7 @@ body[data-sidebar] #sidebar{left:0;}
 	position: relative;
 	margin:0 auto 25px;
 	max-width: 300px;
-	height: calc(100% - 33px);
+	/*height: calc(100% - 33px);*/
 	user-select: none;
 	background-color: #fff;
 	border-top-left-radius:10px;
