@@ -213,6 +213,8 @@ body .printA6 div{color:#000!important;}
 
           {%if mokebuserDetail.firstname or mokebuserDetail.lastname%}
             {{mokebuserDetail.firstname}} <b>{{mokebuserDetail.lastname}}</b>
+          {%else%}
+          <small class="fc-mute">بدون نام</small>
           {%endif%}
         </div>
         <div class="cauto txtRa">
@@ -396,7 +398,7 @@ body .printA6 div{color:#000!important;}
 {%block iname%}
 <label for="name">{%trans "Name"%} <small class="fc-red">* الزامی</small></label>
 <div class="input">
-  <input type="text" name="name" id="name" value="{{mokebuserDetail.firstname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
+  <input type="text" name="name" id="name" value="{{mokebuserDetail.firstname}}" maxlength='40' minlength="2" autocomplete="new-password" >
 </div>
 {%endblock%}
 
@@ -404,7 +406,7 @@ body .printA6 div{color:#000!important;}
 {%block ifamily%}
 <label for="lastName">{%trans "Last name"%} <small class="fc-red">* الزامی</small></label>
 <div class="input">
-  <input type="text" name="lastName" id="lastName" value="{{mokebuserDetail.lastname}}" maxlength='40' minlength="2" autocomplete="new-password" required>
+  <input type="text" name="lastName" id="lastName" value="{{mokebuserDetail.lastname}}" maxlength='40' minlength="2" autocomplete="new-password" >
 </div>
 {%endblock%}
 
@@ -420,7 +422,7 @@ body .printA6 div{color:#000!important;}
 {%block imobile%}
 <label for="mobile" class="disabled">{%trans "Mobile"%}</label>
 <div class="input disabled">
-  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{mokebuserDetail.mobile}}" maxlength='30' required>
+  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%}' value="{{mokebuserDetail.mobile}}" maxlength='30' >
 </div>
 {%endblock%}
 
@@ -566,7 +568,7 @@ body .printA6 div{color:#000!important;}
 {%block iMobileKarabala%}
 <label for="mobile">{%trans "Mobile"%} <small class="fc-red">* الزامی</small></label>
 <div class="input ltr">
-  <input type="tel" name="mobile" id="mobile" value="{{mokebuserDetail.mobile}}" maxlength='50' autofocus autocomplete="new-password" required>
+  <input type="tel" name="mobile" id="mobile" value="{{mokebuserDetail.mobile}}" maxlength='50' autofocus autocomplete="new-password">
 </div>
 {%endblock%}
 
