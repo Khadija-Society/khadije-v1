@@ -436,11 +436,11 @@ class mokebuser
 			return false;
 		}
 
-		if(!$gender)
-		{
-			\dash\notif::error(T_("Plese set your gender"), 'gender');
-			return false;
-		}
+		// if(!$gender)
+		// {
+		// 	\dash\notif::error(T_("Plese set your gender"), 'gender');
+		// 	return false;
+		// }
 
 		$mobile = \dash\app::request('mobile');
 		$mobile = \dash\utility\filter::mobile($mobile);
