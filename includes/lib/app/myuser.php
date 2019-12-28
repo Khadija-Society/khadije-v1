@@ -236,12 +236,23 @@ class myuser
 			return false;
 		}
 
-		if(\dash\app::isset_request('married'))
+
+		/**
+		 * In mashad trip not required married
+		 */
+		if(\dash\data::tripDetail_place() === 'mashhad')
 		{
-			if(!$married)
+			// no required marride
+		}
+		else
+		{
+			if(\dash\app::isset_request('married'))
 			{
-				\dash\notif::error(T_("Plese set your married"), 'married');
-				return false;
+				if(!$married)
+				{
+					\dash\notif::error(T_("Plese set your married"), 'married');
+					return false;
+				}
 			}
 		}
 

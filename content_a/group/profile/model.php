@@ -61,6 +61,16 @@ class model
 			$post['file2'] = $file2;
 		}
 
+
+		if(\dash\data::tripDetail_place() === 'mashhad')
+		{
+			if(!$post['father'])
+			{
+				\dash\notif::error(T_("Plase fill father name"), 'father');
+				return false;
+			}
+		}
+
 		\lib\app\myuser::edit($post);
 
 		if(\dash\engine\process::status())
