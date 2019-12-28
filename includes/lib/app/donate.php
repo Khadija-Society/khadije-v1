@@ -408,7 +408,7 @@ class donate
 
 		if($totalcount && intval($totalcount) > 1E+9)
 		{
-			\dash\notif::error(T_("Count if out of range"), 'totalCount');
+			\dash\notif::error(T_("Count is out of range"), 'totalCount');
 			return false;
 		}
 

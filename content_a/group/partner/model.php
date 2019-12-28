@@ -93,6 +93,18 @@ class model
 					return false;
 				}
 
+				if(!$post['mobile2'])
+				{
+					\dash\notif::error(T_("Pleas fill mobile"), 'mobile');
+					return false;
+				}
+
+				if(!$post['father'])
+				{
+					\dash\notif::error(T_("Pleas fill father name"), 'father');
+					return false;
+				}
+
 			}
 
 			\lib\app\myuser::add_child($post);

@@ -51,7 +51,7 @@ class model
 
 		if(!\dash\user::detail('file1') && !$file1)
 		{
-			\dash\notif::error(T_("Plase upload your nationalcode thumb"), 'file1');
+			\dash\notif::error(T_("Please upload your nationalcode thumb"), 'file1');
 			return false;
 		}
 
@@ -66,7 +66,7 @@ class model
 		{
 			if(!$post['father'])
 			{
-				\dash\notif::error(T_("Plase fill father name"), 'father');
+				\dash\notif::error(T_("Please fill father name"), 'father');
 				return false;
 			}
 		}
