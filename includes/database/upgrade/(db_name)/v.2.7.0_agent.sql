@@ -10,18 +10,18 @@ ALTER TABLE `users` ADD `card` varchar(200)  NULL DEFAULT NULL;
 
 
 -- khadem
-CREATE TABLE `servant` (
+CREATE TABLE `agent_servant` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `user_id` int(10) UNSIGNED NOT NULL,
-`job` enum('rohani', 'admin', 'missionary', 'servant') NULL,
+`job` enum('clergy', 'admin', 'missionary', 'servant') NULL,
 `city` enum('qom', 'mashhad', 'karbala') NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `servant_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+CONSTRAINT `agent_servant_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- takhasos
-CREATE TABLE `specialty` (
+CREATE TABLE `agent_skills` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `title` varchar(100)  NOT NULL,
 `status` enum('enable', 'disable', 'deleted') NULL,
@@ -30,35 +30,35 @@ PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `userspecialty` (
+CREATE TABLE `agent_user_skills` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `specialty_id` int(10) UNSIGNED  NOT NULL,
 `user_id` int(10) UNSIGNED  NOT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `userspecialty_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `userspecialty_specialty_id` FOREIGN KEY (`specialty_id`) REFERENCES `specialty` (`id`) ON UPDATE CASCADE
+CONSTRAINT `agent_userspecialty_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_userspecialty_specialty_id` FOREIGN KEY (`specialty_id`) REFERENCES `agent_skills` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `workhistory` (
+CREATE TABLE `agent_resume` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `user_id` int(10) UNSIGNED NOT NULL,
 `creator` int(10) UNSIGNED  NULL DEFAULT NULL,
-`organ` varchar(100)   NULL DEFAULT NULL,
-`type` varchar(100)   NULL DEFAULT NULL,
-`startdate` datetime  NULL DEFAULT NULL,
-`enddate` datetime  NULL DEFAULT NULL,
-`admin` varchar(100)   NULL DEFAULT NULL,
+`company` varchar(100) NULL DEFAULT NULL,
+`type` varchar(100) NULL DEFAULT NULL,
+`startdate` vatchat(50) NULL DEFAULT NULL,
+`enddate` vatchat(50) NULL DEFAULT NULL,
+`ceo` varchar(100) NULL DEFAULT NULL,
 `desc` text   NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `workhistory_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `workhistory_creator` FOREIGN KEY (`creator`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+CONSTRAINT `agent_resume_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_resume_creator` FOREIGN KEY (`creator`) REFERENCES `users` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- place
-CREATE TABLE `dispatchplace` (
+CREATE TABLE `agent_place` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `subtitle` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -77,35 +77,44 @@ PRIMARY KEY (`id`)
 
 
 -- ezam
-CREATE TABLE `dispatch` (
+CREATE TABLE `agent_send` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `user_id` int(10) UNSIGNED NOT NULL,
 `creator` int(10) UNSIGNED  NULL DEFAULT NULL,
 `dispatchplace_id` int(10) UNSIGNED  NULL DEFAULT NULL,
-`job` enum('rohani', 'admin', 'missionary', 'servant') NULL,
+`job` enum('clergy', 'admin', 'missionary', 'servant') NULL,
 `city` enum('qom', 'mashhad', 'karbala') NULL,
 `startdate` datetime  NULL DEFAULT NULL,
 `enddate` datetime  NULL DEFAULT NULL,
+
+`assessmentdate` datetime  NULL DEFAULT NULL,
+`assessmentor` int(10) UNSIGNED  NULL DEFAULT NULL,
+`assessmentdesc` text   NULL DEFAULT NULL,
+`score` int(10) NULL DEFAULT NULL,
+
+`paydate` datetime  NULL DEFAULT NULL,
 `payamount` int(10) NULL DEFAULT NULL,
 `paybank` varchar(100)   NULL DEFAULT NULL,
 `paytype` varchar(100)   NULL DEFAULT NULL,
-`payvalue` varchar(100)   NULL DEFAULT NULL,
+`paynumber` varchar(100)   NULL DEFAULT NULL,
 `gift` text   NULL DEFAULT NULL,
 `desc` text   NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `dispatch_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `dispatch_dispatchplace_id` FOREIGN KEY (`dispatchplace_id`) REFERENCES `dispatchplace` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `dispatch_creator` FOREIGN KEY (`creator`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+CONSTRAINT `agent_send_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_send_dispatchplace_id` FOREIGN KEY (`dispatchplace_id`) REFERENCES `agent_place` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_send_creator` FOREIGN KEY (`creator`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_send_assessmentor` FOREIGN KEY (`assessmentor`) REFERENCES `users` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+
 -- item feedback
-CREATE TABLE `assessmentitem` (
+CREATE TABLE `agent_assessmentitem` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `rate` int(10) NULL DEFAULT NULL,
-`job` enum('rohani', 'admin', 'missionary', 'servant') NULL,
+`job` enum('clergy', 'admin', 'missionary', 'servant') NULL,
 `city` enum('qom', 'mashhad', 'karbala') NULL,
 `sort` int(10) UNSIGNED NULL DEFAULT NULL,
 `status` enum('enable', 'disable', 'deleted')  NULL DEFAULT NULL,
@@ -114,29 +123,15 @@ PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- feedback
-CREATE TABLE `assessment` (
-`id` int(10) UNSIGNED NOT NULL auto_increment,
-`dispatch_id` int(10) UNSIGNED NOT NULL,
-`assessmentor` int(10) UNSIGNED  NULL DEFAULT NULL,
-`avgrate` int(10) NULL DEFAULT NULL,
-`desc` text   NULL DEFAULT NULL,
-`status` enum('enable', 'disable', 'deleted')  NULL DEFAULT NULL,
-`datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
-PRIMARY KEY (`id`),
-CONSTRAINT `assessment_dispatchplace_id` FOREIGN KEY (`dispatch_id`) REFERENCES `dispatch` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `assessment_assessmentor` FOREIGN KEY (`assessmentor`) REFERENCES `users` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 -- feedback detail
-CREATE TABLE `assessmentdetail` (
+CREATE TABLE `agent_assessmentdetail` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
-`assessment_id` int(10) UNSIGNED NOT NULL,
+`agent_send_id` int(10) UNSIGNED NOT NULL,
 `assessmentitem_id` int(10) UNSIGNED NOT NULL,
 `star` int(10) UNSIGNED  NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `assessmentdetail_assessment_id` FOREIGN KEY (`assessment_id`) REFERENCES `assessment` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `assessmentdetail_assessmentitem_id` FOREIGN KEY (`assessmentitem_id`) REFERENCES `assessmentitem` (`id`) ON UPDATE CASCADE
+CONSTRAINT `agent_assessmentdetail_agent_send_id` FOREIGN KEY (`agent_send_id`) REFERENCES `agent_send` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_assessmentdetail_assessmentitem_id` FOREIGN KEY (`assessmentitem_id`) REFERENCES `agent_assessmentitem` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
