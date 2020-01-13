@@ -1,0 +1,70 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+  <div class="justify-center f">
+   <form method="post" class="c5 m6 s12" autocomplete="off">
+    <div class="cbox">
+     {{block('iMemberList')}}
+     {{block('iCity')}}
+     {{block('iJob')}}
+
+
+     {{block('iedit')}}
+    </div>
+   </form>
+  </div>
+{%endblock%}
+
+
+
+
+{%block iMemberList%}
+<div class="msg">
+  <img src="{{dataRow.avatar}}" class="avatar">
+{{dataRow.displayname}}
+<div class="badge primary">{{dataRow.mobile | fitNumber('mobile')}}</div>
+</div>
+{%endblock%}
+
+
+
+{%block iCity%}
+<div class="pRa5">
+  <label for="city">{%trans "City"%}</label>
+  <select name="city" class="ui dropdown select">
+    <option value="" readonly>{%trans "For all city"%}</option>
+    <option value="qom" {%if dataRow.city == 'qom'  %}selected {%endif%}>{%trans "Qom"%}</option>
+    <option value="mashhad" {%if dataRow.city == 'mashhad'  %}selected {%endif%}>{%trans "Mashhad"%}</option>
+    <option value="karbala" {%if dataRow.city == 'karbala'  %}selected {%endif%}>{%trans "Karbala"%}</option>
+  </select>
+</div>
+{%endblock%}
+
+
+{%block iJob%}
+<div class="pRa5">
+  <label for="job">{%trans "Job"%}</label>
+  <select name="job" class="ui dropdown select">
+    <option value="" readonly>{%trans "For all jobs"%}</option>
+    <option value="clergy" {%if dataRow.job == 'clergy'  %}selected {%endif%}>{%trans "clergy"%}</option>
+    <option value="admin" {%if dataRow.job == 'admin'  %}selected {%endif%}>{%trans "admin"%}</option>
+    <option value="missionary" {%if dataRow.job == 'missionary'  %}selected {%endif%}>{%trans "missionary"%}</option>
+    <option value="servant" {%if dataRow.job == 'servant'  %}selected {%endif%}>{%trans "servant"%}</option>
+
+
+  </select>
+</div>
+{%endblock%}
+
+
+
+
+{%block iedit%}
+<div class="f">
+  <div class="c mRa5"><button class="btn primary block mT20">{%trans "Edit"%}</button></div>
+  <div class="cauto"><div data-confirm data-data='{"type": "remove"}' class="btn danger  mT20">{%trans "Remove"%}</div></div>
+</div>
+
+{%endblock%}
+
