@@ -1,0 +1,23 @@
+{%extends 'content_agent/assessmentitem/layout.html'%}
+
+{%block pageContent%}
+
+  <div class="justify-center f">
+   <form method="post" class="c5 m6 s12" autocomplete="off">
+   	<div class="cbox">
+     {{block('ititle')}}
+     {{block('iRate')}}
+     {{block('iJob')}}
+     {{block('iCity')}}
+     {{block('iSort')}}
+     {{block('iStatus')}}
+
+     {{block('isave')}}
+   	</div>
+   </form>
+  </div>
+
+{%endblock%}
+
+
+
