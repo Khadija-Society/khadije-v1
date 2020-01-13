@@ -1,0 +1,84 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%include 'content_agent/servant/pageStep.html'%}
+
+
+<div class="f justify-center">
+  <div class="c8 s12">
+    <div class="cbox">
+      <h3>{%trans "Servant detail"%}</h3>
+      <div class="f">
+        <div class="c6 s12 m12">
+          <table class="tbl1 v4">
+            {%if userDetail.mobile%}<tr><td class="collapsing">{%trans "Mobile"%}</td><td><a href="tel:{{userDetail.mobile}}">{{userDetail.mobile | fitNumber('mobile')}}</a></td></tr>{%endif%}
+            {%if userDetail.firstname or userDetail.lastname %}<tr class="positive"><td class="collapsing">{%trans "Name"%}</td><td>{{userDetail.firstname}} <b>{{userDetail.lastname}}</b></td></tr>{%endif%}
+            {%if userDetail.father%}<tr><td class="collapsing">{%trans "Father name"%}</td><td>{{userDetail.father}}</td></tr>{%endif%}
+            {%if userDetail.nationalcode%}<tr><td class="collapsing">{%trans "Nationalcode"%}</td><td>{{userDetail.nationalcode | fitNumber(false)}}</td></tr>{%endif%}
+            {%if userDetail.birthday%}<tr><td class="collapsing">{%trans "Birthday"%}</td><td>{{userDetail.birthday | dt(null, 'date')}}</td></tr>{%endif%}
+
+          </table>
+        </div>
+
+        <div class="c6 s12 m12">
+          <table class="tbl1 v4">
+            {%if userDetail.gender%}<tr><td class="collapsing">{%trans "Gender"%}</td><td>{%set GenderS = userDetail.gender | capitalize%} {%trans GenderS%}</td></tr>{%endif%}
+            {%if userDetail.married%}<tr><td class="collapsing">{%trans "Marital"%}</td><td>{%set MaritalS = userDetail.married | capitalize%}{%trans MaritalS%}</td></tr>{%endif%}
+            {%if userDetail.file1%}<tr><td class="collapsing">{%trans "Nationalcode thumb"%}</td><td><a href="{{userDetail.file1}}" class="badge light"><img src="{{userDetail.file1}}" class="avatar"></a></td></tr>{%endif%}
+            {%if userDetail.country%}<tr><td class="collapsing">{%trans "Country"%}</td><td>{{userDetail.country_name}}</td></tr>{%endif%}
+
+
+              {%if userDetail.file1%}
+              <tr>
+                <td>{%trans "National code thumb"%}</td>
+                <td>
+                  <div class="f">
+                    <div class="c">
+                      <img src="{{userDetail.file1}}" class="avatar">
+
+                    </div>
+                    <div class="c">
+                      <a href="{{userDetail.file1}}" class="btn">{%trans "Open file"%}</a>
+                    </div>
+                  </div>
+
+                </td>
+              </tr>
+              {%endif%}
+
+              {%if userDetail.file2%}
+              <tr>
+                <td>{%trans "Verify leter thumb"%}</td>
+                <td>
+                  <div class="f">
+                    <div class="c">
+                      <img src="{{userDetail.file2}}" class="avatar">
+
+                    </div>
+                    <div class="c">
+                      <a href="{{userDetail.file2}}" class="btn">{%trans "Open file"%}</a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              {%endif%}
+
+              {%if userDetail.hawzahcode%}
+              <tr>
+                <td>{%trans "Hawzah code"%}</td>
+                <td>
+                  {{userDetail.hawzahcode | fitNumber}}
+                </td>
+              </tr>
+              {%endif%}
+          </table>
+        </div>
+      </div>
+      <a class="btn block" href="{{url.kingdom}}/crm/member/glance?id={{userDetail.id}}">{%trans "View full Profile"%}</a>
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+

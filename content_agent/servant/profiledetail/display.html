@@ -1,0 +1,403 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%include 'content_agent/servant/pageStep.html'%}
+
+{{block('profileForm')}}
+
+
+
+
+
+
+{%endblock%}
+
+
+
+
+
+
+
+
+
+{%block profileForm%}
+
+
+<div class="f justify-center">
+ <div class="c9 s12">
+  <form class="cbox" method="post" autocomplete="off" enctype="multipart/form-data">
+
+
+   <div class="f">
+    <div class="c6 s12 pRa5">{{block ('iname') }}</div>
+    <div class="c6 s12">{{block ('ifamily') }}</div>
+   </div>
+
+   <div class="f mB10">
+    <div class="c6 s12">{{block ('igender') }}</div>
+    <div class="c6 s12">{{block ('iMarital') }}</div>
+   </div>
+
+   <div class="f">
+    <div class="c4 s12 pRa5">{{block ('ifather') }}</div>
+    <div class="c4 s12 pRa5">{{block ('incode') }}</div>
+    <div class="c4 s12">{{block ('ibirthday') }}</div>
+   </div>
+
+
+   <div class="f">
+    <div class="c4 s12 pRa5">{{block ('icountry') }}</div>
+
+    <div class="c4 s12 pRa5">{{block ('ipassport') }}</div>
+    <div class="c4 s12">{{block ('ipassportexpire') }}</div>
+
+   </div>
+
+   <div class="f">
+
+   </div>
+
+   <div class="f">
+    <div class="c4 s12 pRa5">{{block ('iprovince') }}</div>
+    <div class="c4 s12 pRa5">{{block ('icity') }}</div>
+    <div class="c4 s12">{{block ('iPhone') }}</div>
+   </div>
+
+   <div class="f">
+    <div class="c8 s12 pRa5">{{block ('iAddress') }}</div>
+    <div class="c4 s12">{{block ('izipcode') }}</div>
+   </div>
+
+
+     <div class="f">
+    <div class="c3 s12 pRa5">{{block ('ibirthcity') }}</div>
+    <div class="c3 s12 pRa5">{{block ('iFrom') }}</div>
+    <div class="c3 s12 pRa5">{{block ('iShcode') }}</div>
+    <div class="c3 s12 pRa5">{{block ('iChild') }}</div>
+   </div>
+
+
+
+   <div class="txtRa">
+    <button class="btn success">{%trans "Save"%}</button>
+   </div>
+
+  </form>
+ </div>
+</div>
+
+{%endblock%}
+
+
+{%block iShcode%}
+<label for="shcode">{%trans "Sh code"%}</label>
+<div class="input">
+  <input type="number" name="shcode" id="shcode"  value="{{userdetail.shcode}}" min="999" max="9999999999" >
+</div>
+{%endblock%}
+
+
+{%block iChild%}
+<label for="child">{%trans "Children"%}</label>
+<div class="input">
+  <input type="number" name="child" id="child"  value="{{userdetail.child}}" min="0" max="20" >
+</div>
+{%endblock%}
+
+
+
+{%block iFrom%}
+<label for="shfrom">{%trans "Export From"%}</label>
+<div class="input">
+  <input type="text" name="shfrom" id="shfrom"  value="{{userdetail.shfrom}}" maxlength="50" >
+</div>
+{%endblock%}
+
+
+{%block ibirthcity%}
+<label for="birthcity">{%trans "Birth city"%}</label>
+<div class="input">
+  <input type="text" name="birthcity" id="birthcity"  value="{{userdetail.birthcity}}" maxlength="50" >
+</div>
+{%endblock%}
+
+
+{%block iHawzahCode%}
+<label for="hawzahcode">{%trans "Hawzah code"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="number" name="hawzahcode" id="hawzahcode" placeholder='{%trans "hawzahcode"%} *' value="{{userdetail.hawzahcode}}" min="0" max="9999999999"  required>
+</div>
+{%endblock%}
+
+
+
+{%block iNationalCodeThumb%}
+    <label for="file1"><small class="fc-red">{%trans "Required"%}</small>
+    </label>
+    <div class="input ">
+     <input type="file" accept="image/gif, image/jpeg, image/png" name="file1" id="file1" data-preview data-max="500">
+
+    </div>
+    {%if userdetail.file1%}
+      <a class="badge warn" data-confirm data-data='{"RemoveNationalThumb": 1}'>{%trans "Remove file"%}</a>
+      <a href="{{userdetail.file1}}" target="_blank"><img class="size-we200 block mLRa" src="{{userdetail.file1}}"></a>
+
+    {%endif%}
+{%endblock%}
+
+
+
+
+{%block iname%}
+<label for="name">{%trans "Name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="name" id="name" placeholder='{%trans "Name"%} *' value="{{userdetail.firstname}}" autofocus maxlength='40' minlength="2" pattern=".{2,40}" title2='{%trans "Enter a valid name from 2 to 40 character"%}' required>
+</div>
+{%endblock%}
+
+
+{%block ifamily%}
+<label for="lastName">{%trans "Last name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="lastName" id="lastName" placeholder='{%trans "Last name"%} *' value="{{userdetail.lastname}}" maxlength='40' minlength="2" pattern=".{1,40}" title2='{%trans "Enter a valid last name from 2 to 40 character"%}' required>
+</div>
+{%endblock%}
+
+
+{%block ifather%}
+<label for="father">{%trans "Father name"%}</label>
+<div class="input">
+  <input type="text" name="father" id="father" placeholder='{%trans "Father name"%} *' value="{{userdetail.father}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+{%block imobile%}
+<label for="mobile" class="disabled">{%trans "Mobile"%}</label>
+<div class="input disabled">
+  <input type="text" readonly disabled id="mobile" placeholder='{%trans "Like 09120123456"%} *' value="{{userdetail.mobile}}" maxlength='30'>
+</div>
+{%endblock%}
+
+
+{%block incode%}
+<label for="nationalcode">{%trans "National code"%} <small class="fc-red">* {%trans "Iranian must fill"%}</small></label>
+<div class="input">
+  <input type="tel" name="nationalcode" id="nationalcode" placeholder='{%trans "10 digit national code"%} *' value="{{userdetail.nationalcode}}" min=1000000000 max='9999999999'>
+</div>
+{%endblock%}
+
+
+{%block ibirthday%}
+<label for="birthday">{%trans "Birthday"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input class="datepicker" type="text" name="birthday" id="birthday" required placeholder='{{"1369/04/15" | fitNumber}} *' value="{{userdetail.birthday}}" maxlength='20' data-format="YYYY/MM/DD"data-view="year">
+</div>
+{%endblock%}
+
+
+
+
+
+
+{%block igender%}
+<div class="pRa5">
+  <label for="gender">{%trans "Gender"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+  <select name="gender" class="ui dropdown select">
+    <option value="" readonly>{%trans "Please select one itme"%}</option>
+    <option value="male" {%if userdetail.gender == 'male' or ( not userdetail.gender and defaultDenderExpert == 'male') %}selected {%endif%}>{%trans "Male"%}</option>
+    <option value="female" {%if userdetail.gender == 'female' or ( not userdetail.gender and defaultDenderExpert == 'female') %}selected{%endif%}>{%trans "Female"%}</option>
+  </select>
+</div>
+{%endblock%}
+
+
+{%block iMarital%}
+<div class="">
+  <label for="married">{%trans "Marital"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+  <select name="Married" class="ui dropdown select">
+    <option value="" readonly>{%trans "Please select one itme"%}</option>
+    <option value="single" {%if userdetail.married == 'single' %}selected {%endif%}>{%trans "Single"%}</option>
+    <option value="married" {%if userdetail.married == 'married' %}selected{%endif%}>{%trans "Married"%}</option>
+    <option value="leave" {%if userdetail.married == 'leave' %}selected{%endif%}>{%trans "Leave"%}</option>
+    <option value="dead" {%if userdetail.married == 'dead' %}selected{%endif%}>{%trans "Dead"%}</option>
+  </select>
+</div>
+{%endblock%}
+
+
+
+
+
+{%block iArabicLang%}
+<div class="switch1 pA5">
+ <input type="checkbox" name="ArabicLang" id="ArabicLang" {%if userdetail.arabiclang == 'yes' %}checked{%endif%}>
+ <label for="ArabicLang"  data-on='{%trans "Yes"%}' data-off='{%trans "No"%}'></label>
+ <label for="ArabicLang">{%trans "Arabic Language"%}</label>
+</div>
+
+{%endblock%}
+
+
+
+
+
+{%block iprovince%}
+<label for='province'>{%trans "Province"%}</label>
+<select name="province" class="ui dropdown select search" id="province">
+  <option value="" readonly>{%trans "Select province"%}</option>
+  {%for key, value in proviceList%}
+    <option value="{{key}}" {% if userdetail.province == key %} selected {%endif%}>{{value}}</option>
+  {%endfor%}
+</select>
+{%endblock%}
+
+
+{%block icity%}
+<label for='city'>{%trans "City"%}</label>
+<select name="city" class="ui dropdown select search" id="city">
+  <option value="" readonly>{%trans "Select city"%}</option>
+  {%for key, value in cityList%}
+    <option value="{{key}}" {% if userdetail.city == key %} selected {%endif%}>{{value}}</option>
+  {%endfor%}
+</select>
+{%endblock%}
+
+
+
+{%block izipcode%}
+<label for='zipcode'>{%trans "Zip code"%}</label>
+<div class="input">
+ <input type='tel' name='zipcode' id='zipcode' min="0" max="9999999999" value="{{userdetail.zipcode}}"/>
+</div>
+{%endblock%}
+
+
+
+
+{%block ipassport%}
+<label for='passport'>{%trans "Passport id"%} <small class="fc-red">* {%trans "Foreigners must fill"%}</small></label>
+<div class="input ltr">
+ <input type="text" name='passport' id='passport' value="{{userdetail.pasportcode}}" />
+</div>
+{%endblock%}
+
+
+{%block ipassportexpire%}
+<label for='passportexpire'>{%trans "Passport expire date"%}</label>
+<div class="input">
+  <input class="datepicker" type="text" name="passportexpire" id="passportexpire" placeholder='{{"1397/03/30" | fitNumber}}' value="{{userdetail.pasportdate}}" maxlength='20' data-format="YYYY/MM/DD" data-view="year">
+</div>
+{%endblock%}
+
+
+
+{%block iAddress%}
+<label for='fhomeaddress'>{%trans "Address"%}</label>
+<textarea name="homeaddress" rows="1" placeholder='{%trans "Address"%}' class="txt" id="fhomeaddress">{{userdetail.homeaddress}}</textarea>
+{%endblock%}
+
+{%block iWorkAddress%}
+<label for='fworkaddress'>{%trans "Work Address"%}</label>
+<textarea name="workaddress" rows="3" placeholder='{%trans "Work Address"%}' class="txt" id="fworkaddress">{{userdetail.workaddress}}</textarea>
+{%endblock%}
+
+
+
+{%block iDescription%}
+<label for='fdesc'>{%trans "Description"%}</label>
+<textarea name="desc" rows="3" placeholder='{%trans "Description"%}' class="txt" id="fdesc">{{userdetail.desc}}</textarea>
+{%endblock%}
+
+
+
+
+{%block iPhone%}
+<label for="phone">{%trans "Phone"%}</label>
+<div class="input ltr">
+  <input type="tel" name="phone" id="phone" placeholder='{%trans "Like"%} 02536505460' value="{{userdetail.phone}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+
+{%block iEmail%}
+<label for="email">{%trans "Email"%}</label>
+<div class="input">
+  <input type="email" name="email" id="email" placeholder='{%trans "Like"%} abc@example.com' value="{{userdetail.email}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+{%block iAvatar%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="avatar" id="avatar1" data-preview data-max="500">
+ <label for="avatar1" title="Simple Title">
+    {%if userdetail.avatar%}<img src="{{userdetail.avatar}}">{%endif%}
+ </label>
+</div>
+{%endblock%}
+
+
+{%block iNationalthumb%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="nationalthumb" id="nationalthumb" data-preview data-max="500">
+ <label for="nationalthumb" title="Simple Title">
+    {%if userdetail.nationalthumb%}<img src="{{userdetail.nationalthumb}}">{%endif%}
+ </label>
+</div>
+{%endblock%}
+
+
+{%block iShthumb%}
+<div class="input preview">
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="shthumb" id="shthumb" data-preview data-max="500">
+ <label for="shthumb" title="Simple Title">
+    {%if userdetail.shthumb%}<img src="{{userdetail.shthumb}}">{%endif%}
+ </label>
+</div>
+{%endblock%}
+
+
+
+{%block iEducation%}
+<label for="feducation">{%trans "Education"%}</label>
+<div class="input">
+  <input type="text" name="education" id="feducation" placeholder='{%trans "Education"%}' value="{{userdetail.education}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+
+{%block iEducationCourse%}
+<label for="feducationcourse">{%trans "Education course"%}</label>
+<div class="input">
+  <input type="text" name="educationcourse" id="feducationcourse" placeholder='{%trans "Education course"%}' value="{{userdetail.education}}" maxlength='50'>
+</div>
+{%endblock%}
+
+
+
+
+
+
+
+{%block icountry%}
+<div class="mB10">
+  <label for='country'>{%trans "Country"%}</label>
+  <div class="ui fluid search selection dropdown">
+    <input type="hidden" name="country" value="{{userdetail.country}}">
+    <i class="dropdown icon"></i>
+    <div class="default text">{%trans "Choose your country"%}</div>
+    <div class="menu">
+{%for key, value in countryList%}
+      <div class="item" data-value="{{key}}">
+        <i class="{{value.iso2 | lower }} flag"></i>{%set myCountry = value.name%} {%trans myCountry%}
+        <small class="description">{{value.name | capitalize}}</small>
+      </div>
+{%endfor%}
+    </div>
+  </div>
+</div>
+{%endblock%}

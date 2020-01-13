@@ -1,0 +1,43 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%include 'content_agent/servant/pageStep.html'%}
+<div class="f justify-center">
+ <div class="c6 s12">
+
+    <div class="cbox ">
+      <h2>{%trans "User account number detail"%}</h2>
+      <form method="post" class="mLa10 m6 s12" autocomplete="off">
+
+        <label for="bank">{%trans "Bank"%}</label>
+        <div class="input">
+          <input type="text" name="bank" id="bank" placeholder='{%trans "Enter bank name"%}' value="{{userDetail.bank}}" autofocus  maxlength='200' minlength="1">
+        </div>
+
+        <label for="accountnumber">{%trans "Account Number"%}</label>
+        <div class="input">
+          <input type="number" name="accountnumber" id="accountnumber" placeholder='{%trans "Enter account number"%}' value="{{userDetail.hesab}}"   max=99999999999999999999999999999999999 min="1">
+        </div>
+
+        <label for="cardnumber">{%trans "Card Number"%}</label>
+        <div class="input">
+          <input type="number" name="cardnumber" id="cardnumber" placeholder='{%trans "Enter cardnumber number"%}' value="{{userDetail.card}}"   max=99999999999999999999999999999999999 min="1">
+        </div>
+
+        <label for="shaba">{%trans "Shaba Number"%}</label>
+        <div class="input">
+          <input type="number" name="shaba" id="shaba" placeholder='{%trans "Enter shaba number"%}' value="{{userDetail.shaba}}"   max=99999999999999999999999999999999999 min="1">
+        </div>
+
+        <button class="btn primary block mT20">{%trans "Save"%}</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+
+

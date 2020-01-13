@@ -58,6 +58,7 @@
         <th data-sort="{{sortLink.user_id.order}}"><a href='{{sortLink.user_id.link}}'>{%trans "Mobile"%}</a></th>
         <th data-sort="{{sortLink.job.order}}"><a href='{{sortLink.job.link}}'>{%trans "Job"%}</a></th>
         <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
+        <th class="collapsing">{%trans "Profile"%}</th>
       </tr>
     </thead>
 
@@ -69,7 +70,7 @@
         <td>{{value.mobile| fitNumber('mobile')}}</td>
         <td >{%set myJob = value.job | capitalize %}<a href="{{url.this}}?job={{value.job}}">{%trans myJob%}</a></td>
         <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>
-
+        <td class="collapsing"><a class="badge" href="{{url.this}}/profile?user={{value.user_id}}">{%trans "Profile"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>

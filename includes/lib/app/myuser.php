@@ -230,7 +230,7 @@ class myuser
 		}
 
 		$married = \dash\app::request('married');
-		if($married && !in_array($married, ['single', 'married']))
+		if($married && !in_array($married, ['single', 'married', 'dead', 'leave']))
 		{
 			\dash\notif::error(T_("Invalid arguments married"), 'married');
 			return false;
@@ -331,6 +331,48 @@ class myuser
 		}
 
 
+		$shcode = \dash\app::request('shcode');
+		if($shcode && !is_numeric($shcode))
+		{
+			\dash\notif::error(T_("Please set data as a number"), 'shcode');
+			return false;
+		}
+
+		if($shcode && mb_strlen($shcode) > 50)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'shcode');
+			return false;
+		}
+
+		$child = \dash\app::request('child');
+		if($shcode && !is_numeric($child))
+		{
+			\dash\notif::error(T_("Please set data as a number"), 'child');
+			return false;
+		}
+
+		if($child && mb_strlen($child) > 50)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'child');
+			return false;
+		}
+
+		$shfrom = \dash\app::request('shfrom');
+		if($shfrom && mb_strlen($shfrom) > 50)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'shfrom');
+			return false;
+		}
+
+		$birthcity = \dash\app::request('birthcity');
+		if($birthcity && mb_strlen($birthcity) > 50)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'birthcity');
+			return false;
+		}
+
+
+
 
 		$args                    = [];
 		$args['gender']          = $gender;
@@ -339,6 +381,12 @@ class myuser
 		$args['birthday']        = $birthday;
 		$args['firstname']       = $firstname;
 		$args['lastname']        = $lastname;
+
+
+		$args['shcode']       = $shcode;
+		$args['child']        = $child;
+		$args['shfrom']       = $shfrom;
+		$args['birthcity']    = $birthcity;
 		if($nationalcode)
 		{
 			$args['nationalcode']    = "$nationalcode";
@@ -601,6 +649,79 @@ class myuser
 	}
 
 
+	public static function edit_accountnumber($_args, $_user_code)
+	{
+		\dash\app::variable($_args);
+
+		$bank = \dash\app::request('bank');
+		if($bank && mb_strlen($bank) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'bank');
+			return false;
+		}
+
+		$accountnumber = \dash\app::request('accountnumber');
+		if($accountnumber && !is_numeric($accountnumber))
+		{
+			\dash\notif::error(T_("Plese set data as a number"), 'accountnumber');
+			return false;
+		}
+
+		if($accountnumber && mb_strlen($accountnumber) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'accountnumber');
+			return false;
+		}
+
+		$cardnumber = \dash\app::request('cardnumber');
+		if($cardnumber && !is_numeric($cardnumber))
+		{
+			\dash\notif::error(T_("Plese set data as a number"), 'cardnumber');
+			return false;
+		}
+
+		if($cardnumber && mb_strlen($cardnumber) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'cardnumber');
+			return false;
+		}
+
+		$shaba = \dash\app::request('shaba');
+		if($shaba && !is_numeric($shaba))
+		{
+			\dash\notif::error(T_("Plese set data as a number"), 'shaba');
+			return false;
+		}
+
+		if($shaba && mb_strlen($shaba) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'shaba');
+			return false;
+		}
+
+		$update =
+		[
+			'bank'  => $bank,
+			'hesab' => $accountnumber,
+			'card'  => $cardnumber,
+			'shaba' => $shaba,
+		];
+
+		$user_id = \dash\coding::decode($_user_code);
+		if(!$user_id)
+		{
+			\dash\notif::error(T_("User not found"));
+			return false;
+		}
+
+		\dash\db\users::update($update, $user_id);
+		\dash\notif::ok(T_("Data saved"));
+
+		return true;
+	}
+
+
+
 	/**
 	 * add new product
 	 *
@@ -675,6 +796,16 @@ class myuser
 		if(!\dash\app::isset_request('file1')) 		unset($args['file1']);
 		if(!\dash\app::isset_request('file2')) 		unset($args['file2']);
 		if(!\dash\app::isset_request('hawzahcode')) 		unset($args['hawzahcode']);
+
+		if(!\dash\app::isset_request('shcode')) 		unset($args['shcode']);
+		if(!\dash\app::isset_request('child')) 		unset($args['child']);
+		if(!\dash\app::isset_request('shfrom')) 		unset($args['shfrom']);
+		if(!\dash\app::isset_request('birthcity')) 		unset($args['birthcity']);
+
+
+
+
+
 
 
 		\dash\db\users::update($args, $user_id);
