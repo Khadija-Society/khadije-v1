@@ -1,0 +1,27 @@
+{%extends 'content_agent/place/layout.html'%}
+
+{%block pageContent%}
+
+  <div class="justify-center f">
+   <form method="post" class="c5 m6 s12" autocomplete="off">
+   	<div class="cbox">
+     {{block('ititle')}}
+     {{block('iSubtitle')}}
+     {{block('iCity')}}
+     {{block('iGender')}}
+
+
+     {{block('idesc')}}
+     {{block('iAddress')}}
+     {{block('iFile')}}
+     {{block('iStatus')}}
+
+     {{block('isave')}}
+   	</div>
+   </form>
+  </div>
+
+{%endblock%}
+
+
+

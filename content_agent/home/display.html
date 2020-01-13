@@ -2,18 +2,10 @@
 
 
 {%block pageContent%}
-  <div class="f">
-    <div class="c7 s12">
-
-      <div class="f">
-        <div class="c8 s6">{{block('bSkills')}}</div>
-
-
-      </div>
-    </div>
-    <div class="c5 s12">{{block('bLastTraffic')}}</div>
-
-  </div>
+<div class="f">
+  <div class="c s6">{{block('bSkills')}}</div>
+  <div class="c s6">{{block('bPlace')}}</div>
+</div>
 {%endblock%}
 
 
@@ -24,6 +16,17 @@
  <div class="statistic teal">
   <div class="label"><i class="fs20 mRa5 sf-tools"></i></div>
   <div class="label mT10">{%trans "Skills"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block bPlace%}
+<a class="dcard x1" href='{{url.here}}/place'>
+ <div class="statistic teal">
+  <div class="label"><i class="fs20 mRa5 sf-pin"></i></div>
+  <div class="label mT10">{%trans "Place"%}</div>
  </div>
 </a>
 {%endblock%}
