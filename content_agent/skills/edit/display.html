@@ -1,0 +1,43 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+  <div class="justify-center f">
+   <form method="post" class="c5 m6 s12" autocomplete="off">
+    <div class="cbox">
+      {{block('ititle')}}
+
+      {{block('iStatus')}}
+      <button class="btn block primary">{%trans "Edit"%}</button>
+    </div>
+   </form>
+  </div>
+{%endblock%}
+
+
+
+
+
+{%block iStatus%}
+<div class="mT15">
+ <label >{%trans "Status"%}</label>
+ <div class="radio1 green">
+  <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
+  <label for="r-enable">{%trans "Enable"%}</label>
+ </div>
+ <div class="radio1 black mB25">
+  <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'%} checked{%endif%} >
+  <label for="r-disable">{%trans "Disable"%}</label>
+ </div>
+</div>
+{%endblock%}
+
+
+
+
+{% block ititle %}
+<label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="title" id="title" placeholder='{%trans "Skills title"%} *' value="{{dataRow.title}}" autofocus required maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+{% endblock %}
