@@ -30,14 +30,14 @@ PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `agent_user_skills` (
+CREATE TABLE `agent_userskills` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
-`specialty_id` int(10) UNSIGNED  NOT NULL,
+`skills_id` int(10) UNSIGNED  NOT NULL,
 `user_id` int(10) UNSIGNED  NOT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `agent_userspecialty_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `agent_userspecialty_specialty_id` FOREIGN KEY (`specialty_id`) REFERENCES `agent_skills` (`id`) ON UPDATE CASCADE
+CONSTRAINT `agent_userskills_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_userskills_skills_id` FOREIGN KEY (`skills_id`) REFERENCES `agent_skills` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -47,8 +47,8 @@ CREATE TABLE `agent_resume` (
 `creator` int(10) UNSIGNED  NULL DEFAULT NULL,
 `company` varchar(100) NULL DEFAULT NULL,
 `type` varchar(100) NULL DEFAULT NULL,
-`startdate` vatchat(50) NULL DEFAULT NULL,
-`enddate` vatchat(50) NULL DEFAULT NULL,
+`startdate` varchar(50) NULL DEFAULT NULL,
+`enddate` varchar(50) NULL DEFAULT NULL,
 `ceo` varchar(100) NULL DEFAULT NULL,
 `desc` text   NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
