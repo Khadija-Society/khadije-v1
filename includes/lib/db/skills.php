@@ -4,6 +4,11 @@ namespace lib\db;
 
 class skills
 {
+	public static function insert_user_skills()
+	{
+		\dash\db\config::public_insert('agent_userskills', ...func_get_args());
+		return \dash\db::insert_id();
+	}
 
 	public static function insert()
 	{

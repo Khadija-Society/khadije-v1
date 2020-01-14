@@ -11,6 +11,78 @@ class skills
 		'title',
 		'status',
 	];
+	public static function remove_user_skills($_skills)
+	{
+		if(!$_skills || !is_numeric($_skills))
+		{
+			\dash\notif::error(T_("Please choose skills"), 'skills');
+			return false;
+		}
+
+		\lib\db\userskills::delete($_skills);
+
+		\dash\notif::ok(T_("Data removed"));
+
+		return true;
+	}
+
+
+	public static function add_user_skills($_user_code, $_skills)
+	{
+		if(!$_skills)
+		{
+			\dash\notif::error(T_("Please choose skills"), 'skills');
+			return false;
+		}
+
+		$user_id = \dash\coding::decode($_user_code);
+		if(!$user_id)
+		{
+			\dash\notif::error(T_("User not found"));
+			return false;
+		}
+
+		$skills_id = \dash\coding::decode($_skills);
+		if($skills_id)
+		{
+			$load_skills = \lib\db\skills::get(['id' => $skills_id, 'limit' => 1]);
+
+			if(!$load_skills)
+			{
+				\dash\notif::error(T_("Please choose a valid skills"), 'skills');
+				return false;
+			}
+		}
+		else
+		{
+			$add_skills = self::add(['title' => $_skills]);
+			if(!$add_skills || !isset($add_skills['id_raw']))
+			{
+				return false;
+			}
+
+			$skills_id = $add_skills['id_raw'];
+		}
+
+		$load_user = \dash\db\users::get_by_id($user_id);
+		if(!isset($load_user['id']))
+		{
+			\dash\notif::error(T_("User not found"));
+			return false;
+		}
+		$check_duplicate = \lib\db\userskills::get(['user_id' => $user_id, 'skills_id' => $skills_id, 'limit' => 1]);
+		if(isset($check_duplicate['id']))
+		{
+			\dash\notif::error(T_("This skills already added to this user"), 'skills');
+			return false;
+		}
+
+		\lib\db\userskills::insert(['user_id' => $user_id, 'skills_id' => $skills_id]);
+
+		\dash\notif::ok(T_("Data saved"));
+
+		return true;
+	}
 
 
 	public static function add($_args = [])
@@ -48,6 +120,7 @@ class skills
 		}
 
 		$return['id'] = \dash\coding::encode($skills_id);
+		$return['id_raw'] = $skills_id;
 
 		if(\dash\engine\process::status())
 		{

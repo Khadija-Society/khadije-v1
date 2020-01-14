@@ -1,5 +1,5 @@
 <?php
-namespace content_agent\servant\profile;
+namespace content_agent\servant\skills;
 
 
 class controller
