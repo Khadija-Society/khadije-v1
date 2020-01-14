@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2020-01-14 11:59+0330\n"
-"PO-Revision-Date: 2020-01-14 11:59+0330\n"
+"POT-Creation-Date: 2020-01-14 12:01+0330\n"
+"PO-Revision-Date: 2020-01-14 12:02+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -18427,14 +18427,17 @@ msgid "For all jobs"
 msgstr "برای همه سمت‌ها"
 
 #: khadije/includes/languages/trans_project.php:31
+#: khadije/includes/languages/trans_static.php:293
 msgid "clergy"
 msgstr "روحانی"
 
 #: khadije/includes/languages/trans_project.php:33
+#: khadije/includes/languages/trans_static.php:296
 msgid "missionary"
 msgstr "مبلغ"
 
 #: khadije/includes/languages/trans_project.php:34
+#: khadije/includes/languages/trans_static.php:298
 msgid "servant"
 msgstr "خادم"
 
@@ -18684,6 +18687,7 @@ msgid "Assessment Item"
 msgstr "آیتم‌های ارزیابی"
 
 #: khadije/includes/languages/trans_project.php:172
+#: khadije/includes/languages/trans_static.php:297
 #: khadije/includes/lib/app/servant.php:82
 msgid "Servant"
 msgstr "خادم"
@@ -22097,6 +22101,14 @@ msgstr "برنامه کوی محبت"
 #: khadije/includes/languages/trans_static.php:291
 msgid "koyeMohebbatAddLottery"
 msgstr "افزودن قرعه‌کشی کوی محبت"
+
+#: khadije/includes/languages/trans_static.php:294
+msgid "Clergy"
+msgstr "روحانی"
+
+#: khadije/includes/languages/trans_static.php:295
+msgid "Missionary"
+msgstr "مبلغ"
 
 #: khadije/includes/lib/app/agentplace.php:15 khadije/includes/lib/app/place.php:15
 msgid "place id not set"
