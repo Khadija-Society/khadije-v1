@@ -37,7 +37,7 @@ class send
 	{
 		$options =
 		[
-			'public_show_field' => "agent_send.*, users.displayname, users.avatar, users.mobile",
+			'public_show_field' => "agent_send.*, agent_send.id as `xid`, users.displayname, users.avatar, users.mobile",
 			'master_join' => "INNER JOIN users ON users.id = agent_send.user_id",
 		];
 		$result = \dash\db\config::public_get('agent_send', $_args, $options);
@@ -51,7 +51,7 @@ class send
 
 		$default =
 		[
-			'public_show_field' => "agent_send.*, users.displayname, users.avatar, users.mobile",
+			'public_show_field' => "agent_send.*, agent_send.id as `xid`, users.displayname, users.avatar, users.mobile",
 			'master_join' => "INNER JOIN users ON users.id = agent_send.user_id",
 			'search_field' => " ( users.mobile LIKE '%__string__%' or users.displayname LIKE '%__string__%' ) ",
 		];

@@ -190,10 +190,62 @@ class send
 		$score          = \dash\app::request('score');
 
 		$paydate        = \dash\app::request('paydate');
+
+		if(\dash\app::isset_request('paydate'))
+		{
+
+			$paydate                 = \dash\utility\convert::to_en_number($paydate);
+			if(\dash\utility\jdate::is_jalali($paydate))
+			{
+				$paydate = \dash\utility\jdate::to_gregorian($paydate);
+			}
+
+			if(!$paydate)
+			{
+				\dash\notif::error(T_("Pay date is required"), 'paydate');
+				return false;
+			}
+
+		}
+
 		$payamount      = \dash\app::request('payamount');
+
+		if(\dash\app::isset_request('payamount'))
+		{
+			$payamount                 = \dash\utility\convert::to_en_number($payamount);
+			if(!is_numeric($payamount))
+			{
+				\dash\notif::error(T_("Please set amount as a number"), 'payamount');
+				return false;
+			}
+
+			if(intval($payamount) > 999999999)
+			{
+				\dash\notif::error(T_("Amount is out of range"), 'payamount');
+				return false;
+			}
+		}
+
 		$paybank        = \dash\app::request('paybank');
+
+		if($paybank && mb_strlen($paybank) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'paybank');
+			return false;
+		}
+
 		$paytype        = \dash\app::request('paytype');
+		if($paytype && mb_strlen($paytype) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'paytype');
+			return false;
+		}
 		$paynumber      = \dash\app::request('paynumber');
+		if($paynumber && mb_strlen($paynumber) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'paynumber');
+			return false;
+		}
 
 		$gift           = \dash\app::request('gift');
 		$desc           = \dash\app::request('desc');
@@ -420,9 +472,6 @@ class send
 
 			switch ($key)
 			{
-				case 'id':
-					$result[$key] = \dash\coding::encode($value);
-					break;
 
 				default:
 					$result[$key] = $value;

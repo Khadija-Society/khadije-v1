@@ -1,5 +1,5 @@
 <?php
-namespace content_agent\send\view;
+namespace content_agent\send\assessment;
 
 
 class controller
@@ -7,15 +7,14 @@ class controller
 	public static function routing()
 	{
 		$id     = \dash\request::get('id');
-		$user_detail = \lib\app\send::get($id);
+		$send = \lib\app\send::get($id);
 
-		if(!$user_detail)
+		if(!$send)
 		{
 			\dash\header::status(404, T_("Detail not found"));
 		}
 
-		\dash\data::sendDetail($user_detail);
-
+		\dash\data::sendDetail($send);
 	}
 }
 ?>

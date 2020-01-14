@@ -22,15 +22,52 @@
 
           <div class="mB5">
            <div class="input ltr">
-            <input class="datepicker" type="text" name="paydate" placeholder='{%trans "Start date"%}' id="paydate"  value="{{sendDetail.paydate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
+            <input class="datepicker" type="text" name="paydate" placeholder='{%trans "Pay date"%}' id="paydate"  value="{{sendDetail.paydate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
             </div>
           </div>
 
+          {%if not sendDetail.paybank and not sendDetail.paynumber and not sendDetail.paytype %}
+            <h3>واریز به</h3>
+            {%if userDetail.bank and (userDetail.hesab or userDetail.shaba or userDetail.card)%}
+              {%if userDetail.hesab%}
+              <div class="radio3 mB10">
+                <input type="radio" name="bank" value="{{userDetail.bank}}_حساب_{{userDetail.hesab}}" id="bank1">
+                <label for="bank1">{%trans "Bank"%} {{userDetail.bank}} - {%trans "Hesab"%} {{userDetail.hesab | fitNumber(false)}}</label>
+              </div>
+              {%endif%}
+
+              {%if userDetail.shaba%}
+              <div class="radio3 mB10">
+                <input type="radio" name="bank" value="{{userDetail.bank}}_شبا_{{userDetail.shaba}}" id="bank2">
+                <label for="bank2">{%trans "Bank"%} {{userDetail.bank}} - {%trans "Shaba"%} IR-{{userDetail.shaba | fitNumber(false)}}</label>
+              </div>
+              {%endif%}
 
 
-paybank
-paytype
-paynumber
+              {%if userDetail.card%}
+              <div class="radio3 mB10">
+                <input type="radio" name="bank" value="{{userDetail.bank}}_کارت_{{userDetail.card}}" id="bank3">
+                <label for="bank3">{%trans "Bank"%} {{userDetail.bank}} - {%trans "Card"%} {{userDetail.card | fitNumber(false)}}</label>
+              </div>
+              {%endif%}
+
+              <div class="radio3 mB10">
+                <input type="radio" name="bank" value="bankother" id="bankother">
+                <label for="bankother">{%trans "Other"%}</label>
+              </div>
+
+              <div data-response='bank' data-response-where='bankother' data-response-hide>
+                {{block('addNew')}}
+              </div>
+            {%else%}
+                {{block('addNew')}}
+            {%endif%}
+          {%else%}
+              {{block('addNew')}}
+          {%endif%}
+
+
+
 
           <label for="desc">{%trans "Gift"%}</label>
           <textarea class="txt mB10" id='desc' name="desc" placeholder='اگر پرداخت غیر نقدی صورت گرفته است یا هدیه‌ای پرداخت شده است ذکر کنید' maxlength='500' rows="5">{{sendDetail.gift}}</textarea>
@@ -40,8 +77,36 @@ paynumber
           </div>
 
         </form>
+        {%if tempText%}
+        <div class="mT50">
+
+          <label>متن آماده برای کپی در شرح تراکنش‌ها</label>
+          <textarea class="txt" id='desc' name="tempText"  maxlength='500' rows="5" readonly>{{tempText}}</textarea>
+        </div>
+        {%endif%}
     </div>
   </div>
 </div>
 
+{%endblock%}
+
+
+{%block addNew%}
+<label for="paybank">{%trans "Bank"%}</label>
+<div class="input">
+  <input type="text" name="paybank" id="paybank" placeholder='{%trans "Enter bank name"%}' value="{{sendDetail.paybank}}" autofocus  maxlength='200' minlength="1">
+</div>
+
+<label for="paytype">{%trans "Pay type"%}</label>
+<div class="input">
+  <input type="text" name="paytype" id="paytype" placeholder='{%trans "Enter bank name"%}' value="{{sendDetail.paytype}}" autofocus  maxlength='200' minlength="1">
+</div>
+
+
+
+
+<label for="paynumber">{%trans "Account Number"%}/ {%trans "Card Number"%}/{%trans "Shaba"%}</label>
+<div class="input">
+  <input type="number" name="paynumber" id="paynumber" placeholder='{%trans "Enter account number"%}' value="{{sendDetail.paynumber}}"   max=99999999999999999999999999999999999 min="1">
+</div>
 {%endblock%}

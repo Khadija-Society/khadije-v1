@@ -61,8 +61,6 @@ class view
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);
 
-
-
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);
 		\dash\data::dataFilter($dataFilter);

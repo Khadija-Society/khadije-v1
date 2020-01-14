@@ -1,5 +1,5 @@
 <?php
-namespace content_agent\send\assessment;
+namespace content_agent\send\billing;
 
 
 class model
@@ -7,65 +7,61 @@ class model
 	public static function post()
 	{
 
-		$post = \dash\request::post();
+		$paybank   = \dash\request::post('paybank');
+		$paytype   = \dash\request::post('paytype');
+		$paynumber = \dash\request::post('paynumber');
 
-		$star = [];
-		$item = [];
-		$score = 0;
-		foreach ($post as $key => $value)
-		{
-			if(substr($key, 0, 5) === 'star_')
-			{
-				if(!is_numeric(substr($key, 5)))
-				{
-					continue;
-				}
+        $bank = \dash\request::post('bank');
+        if($bank == 'otherbank')
+        {
+        }
+        else
+        {
+        	$split = explode('_', $bank);
+        	if(count($split) === 3)
+        	{
+	        	if(isset($split[0]))
+	        	{
+	        		$paybank  = $split[0];
+	        	}
 
-				$myStar = (5 - intval($value)) + 1;
-				$score += $myStar;
-				$star[substr($key, 5)] = $myStar;
-			}
+	        	if(isset($split[1]))
+	        	{
+	        		$paytype  = $split[1];
+	        	}
 
-			if(substr($key, 0, 5) === 'item_')
-			{
-				$item[substr($key, 5)] = $value;
-			}
-		}
+	        	if(isset($split[2]))
+	        	{
+	        		$paynumber  = $split[2];
+	        	}
+        	}
+
+        }
 
 		$send_id = \dash\coding::decode(\dash\request::get('id'));
 
-		foreach ($star as $key => $value)
-		{
-			$get =
-			[
-				'agent_send_id'     => $send_id,
-				'assessmentitem_id' => $key,
-				'limit'             => 1
-			];
-			$get = \lib\db\assessmentdetail::get($get);
-			if(!isset($get['id']))
-			{
-				$insert =
-				[
-					'agent_send_id'     => $send_id,
-					'assessmentitem_id' => $key,
-					'star'             => $value,
-				];
-				\lib\db\assessmentdetail::insert($insert);
-			}
-			else
-			{
-				\lib\db\assessmentdetail::update(['star' => $value], $get['id']);
-			}
-		}
 
 		$update_send =
 		[
-			'assessmentdate' => date("Y-m-d H:i:s"),
-			'assessmentor'   => \dash\user::id(),
-			'assessmentdesc' => \dash\request::post('desc'),
-			'score'          => $score,
+			'payamount' => \dash\request::post('payamount'),
+			'paydate'   => \dash\request::post('paydate'),
+			'gift'      => \dash\request::post('desc'),
+
 		];
+		if($paybank !== false)
+		{
+			$update_send['paybank'] = $paybank;
+		}
+
+		if($paytype !== false)
+		{
+			$update_send['paytype'] = $paytype;
+		}
+
+		if($paynumber !== false)
+		{
+			$update_send['paynumber'] = $paynumber;
+		}
 
 		\lib\app\send::edit($update_send, \dash\request::get('id'));
 
