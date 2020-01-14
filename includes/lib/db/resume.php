@@ -2,36 +2,36 @@
 namespace lib\db;
 
 
-class skills
+class resume
 {
 
 	public static function insert()
 	{
-		\dash\db\config::public_insert('agent_skills', ...func_get_args());
+		\dash\db\config::public_insert('agent_resume', ...func_get_args());
 		return \dash\db::insert_id();
 	}
 
 
 	public static function multi_insert()
 	{
-		return \dash\db\config::public_multi_insert('agent_skills', ...func_get_args());
+		return \dash\db\config::public_multi_insert('agent_resume', ...func_get_args());
 	}
 
 
 	public static function update()
 	{
-		return \dash\db\config::public_update('agent_skills', ...func_get_args());
+		return \dash\db\config::public_update('agent_resume', ...func_get_args());
 	}
 
 
 	public static function get()
 	{
-		return \dash\db\config::public_get('agent_skills', ...func_get_args());
+		return \dash\db\config::public_get('agent_resume', ...func_get_args());
 	}
 
 	public static function get_count()
 	{
-		return \dash\db\config::public_get_count('agent_skills', ...func_get_args());
+		return \dash\db\config::public_get_count('agent_resume', ...func_get_args());
 	}
 
 
@@ -50,7 +50,7 @@ class skills
 
 		$_args = array_merge($default, $_args);
 
-		$result = \dash\db\config::public_search('agent_skills', $_string, $_args);
+		$result = \dash\db\config::public_search('agent_resume', $_string, $_args);
 		return $result;
 	}
 
