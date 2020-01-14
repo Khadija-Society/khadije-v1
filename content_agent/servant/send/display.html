@@ -1,0 +1,41 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%include 'content_agent/servant/pageStepSend.html'%}
+
+
+<div class="f justify-center">
+  <div class="c8 s12">
+    <div class="cbox">
+        <form method="post" autocomplete="off">
+          <label for='skills'>{%trans "Skills"%}</label>
+          <select name="skills" class="select ui dropdown search addition" id="skills">
+            <option value="">{%trans "Skills"%}</option>
+            {%for key, value in listSkills%}
+              <option value="{{value.id}}">{{value.title}}</option>
+            {%endfor%}
+          </select>
+          <div class="txtRa">
+            <button class="btn success">{%trans "Add"%}</button>
+          </div>
+
+        </form>
+        <div class="mT20">
+
+          {%for key, value in userSkills%}
+          <div class="f msg primary2">
+            <div class=" c"><span class="mL10">{{loop.index | fitNumber}}</span> {{value.title}}</div>
+            <div class="cauto">
+              <div class="badge danger" data-confirm data-data='{"type" : "remove", "id" : "{{value.id}}"}'>{%trans "Remove"%}</div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+

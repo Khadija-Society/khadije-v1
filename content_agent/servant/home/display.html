@@ -70,7 +70,10 @@
         <td>{{value.mobile| fitNumber('mobile')}}</td>
         <td >{%set myJob = value.job | capitalize %}<a href="{{url.this}}?job={{value.job}}">{%trans myJob%}</a></td>
         <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>
-        <td class="collapsing"><a class="badge" href="{{url.this}}/profile?user={{value.user_id}}">{%trans "Profile"%}</a></td>
+        <td class="collapsing">
+          <a class="badge" href="{{url.this}}/profile?user={{value.user_id}}">{%trans "Profile"%}</a>
+          <a class="badge primary" href="{{url.this}}/send?user={{value.user_id}}">{%trans "Dispatch"%}</a>
+        </td>
       </tr>
       {%endfor%}
     </tbody>

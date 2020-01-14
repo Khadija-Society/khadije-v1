@@ -1,5 +1,5 @@
 <?php
-namespace content_agent\servant\skills;
+namespace content_agent\servant\send;
 
 
 class view
@@ -11,7 +11,7 @@ class view
 
 		\dash\data::page_pictogram('tools');
 
-		\dash\data::listSkills(\lib\app\skills::list(null, ['status' => 'enable', 'pagenation' => false]));
+		\dash\data::listSkills(\lib\app\skills::list(null, ['pagenation' => false]));
 
 		$userid = \dash\coding::decode(\dash\request::get('user'));
 		if($userid)

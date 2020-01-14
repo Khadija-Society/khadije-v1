@@ -229,6 +229,7 @@ class agentplace
 		'city',
 		'sort',
 		'status',
+		'gender',
 	];
 
 	public static function all_list()

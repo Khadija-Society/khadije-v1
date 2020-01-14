@@ -46,4 +46,14 @@
    </div>
 
 
+   <div class="c s6">
+    <a class="dcard {%if url.child == 'send' %}active{%endif%}" href='{{url.this}}/send?user={{requestGET.user}}'>
+     <div class="statistic">
+      <div class="value"><i class="sf-paper-plane"></i></div>
+      <div class="label">{%trans "Dispatch"%}</div>
+     </div>
+    </a>
+   </div>
+
+
   </div>

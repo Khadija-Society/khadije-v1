@@ -81,7 +81,7 @@ CREATE TABLE `agent_send` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `user_id` int(10) UNSIGNED NOT NULL,
 `creator` int(10) UNSIGNED  NULL DEFAULT NULL,
-`dispatchplace_id` int(10) UNSIGNED  NULL DEFAULT NULL,
+`place_id` int(10) UNSIGNED  NULL DEFAULT NULL,
 `job` enum('clergy', 'admin', 'missionary', 'servant') NULL,
 `city` enum('qom', 'mashhad', 'karbala') NULL,
 `startdate` datetime  NULL DEFAULT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE `agent_send` (
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
 CONSTRAINT `agent_send_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `agent_send_dispatchplace_id` FOREIGN KEY (`dispatchplace_id`) REFERENCES `agent_place` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_send_place_id` FOREIGN KEY (`place_id`) REFERENCES `agent_place` (`id`) ON UPDATE CASCADE,
 CONSTRAINT `agent_send_creator` FOREIGN KEY (`creator`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
 CONSTRAINT `agent_send_assessmentor` FOREIGN KEY (`assessmentor`) REFERENCES `users` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
