@@ -32,7 +32,7 @@ class myuser
 
 		if(\dash\app::isset_request('gender') && !$gender)
 		{
-			\dash\notif::error(T_("Plese set your gender"), 'gender');
+			\dash\notif::error(T_("Please set your gender"), 'gender');
 			return false;
 		}
 
