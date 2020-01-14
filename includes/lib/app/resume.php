@@ -180,6 +180,8 @@ class resume
 			return false;
 		}
 
+		$args['creator'] = \dash\user::id();
+
 		$return  = [];
 
 

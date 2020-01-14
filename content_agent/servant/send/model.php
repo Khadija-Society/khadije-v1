@@ -1,20 +1,23 @@
 <?php
-namespace content_agent\servant\skills;
+namespace content_agent\servant\send;
 
 
 class model
 {
 	public static function post()
 	{
-		if(\dash\request::post('type') === 'remove')
-		{
-			\lib\app\skills::remove_user_skills(\dash\request::post('id'));
-		}
-		else
-		{
-			\lib\app\skills::add_user_skills(\dash\request::get('user'), \dash\request::post('skills'));
-		}
 
+		$post =
+		[
+			'place_id'  => \dash\request::post('place'),
+			'startdate' => \dash\request::post('startdate'),
+			'enddate'   => \dash\request::post('enddate'),
+			'job'       => \dash\request::get('job'),
+			'city'      => \dash\request::get('city'),
+			'user_id'   => \dash\request::get('user'),
+		];
+
+		\lib\app\send::add($post);
 
 		if(\dash\engine\process::status())
 		{

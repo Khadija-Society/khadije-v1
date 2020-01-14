@@ -2,36 +2,67 @@
 
 
 {%block pageContent%}
-{%include 'content_agent/servant/pageStepSend.html'%}
-
 
 <div class="f justify-center">
   <div class="c8 s12">
     <div class="cbox">
+        <h2>فرایند ثبت اعزام شخص</h2>
+        <div class="msg primary2">
+          <div class="f">
+            <div class="cauto s6">
+                <img class="avatar" src="{{userDetail.avatar}}" >
+            </div>
+            <div class="cauto mLR10 s6">{%trans cityPlace%}</div>
+            <div class="c s6">
+              {%set myJob = requestGET.job | capitalize%}
+              {%set myCity = requestGET.city%}
+              <span class="fc-mute">{%trans myJob%}</span>
+              {{userDetail.firstname}}
+              <b>{{userDetail.lastname}}</b>
+            </div>
+            <div class="c">{{userDetail.mobile  | fitNumber('mobile')}}</div>
+            <div class="c s6">{%trans "To city"%} <b>{%trans myCity%}</b></div>
+          </div>
+        </div>
+
         <form method="post" autocomplete="off">
-          <label for='skills'>{%trans "Skills"%}</label>
-          <select name="skills" class="select ui dropdown search addition" id="skills">
-            <option value="">{%trans "Skills"%}</option>
-            {%for key, value in listSkills%}
+          {%if placeList%}
+          <label for='place'>{%trans "Agent Place"%}</label>
+          <select name="place" class="select ui dropdown search" id="place">
+            <option value="">{%trans "Please select one item"%}</option>
+            {%for key, value in placeList%}
               <option value="{{value.id}}">{{value.title}}</option>
             {%endfor%}
           </select>
-          <div class="txtRa">
-            <button class="btn success">{%trans "Add"%}</button>
+          {%else%}
+          <div class="msg warn2">هیچ مکانی متناسب با شرایط اعزام ایشان یافت نشد!</div>
+          {%endif%}
+
+          <div class="f">
+
+            <div class="c6 s12 mB5">
+              <div class="input ltr">
+                <input class="datepicker" type="text" name="startdate" placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="day">
+              </div>
+            </div>
+
+
+            <div class="c6 s12 mB5 pLa5">
+              <div class="input ltr">
+                <input class="datepicker" type="text" name="enddate" placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="day">
+              </div>
+            </div>
+
           </div>
+          <div class="txtRa">
+            <button class="btn success mT10">{%trans "Saver dispatch servant"%}</button>
+          </div>
+
+
+
 
         </form>
-        <div class="mT20">
 
-          {%for key, value in userSkills%}
-          <div class="f msg primary2">
-            <div class=" c"><span class="mL10">{{loop.index | fitNumber}}</span> {{value.title}}</div>
-            <div class="cauto">
-              <div class="badge danger" data-confirm data-data='{"type" : "remove", "id" : "{{value.id}}"}'>{%trans "Remove"%}</div>
-            </div>
-          </div>
-          {%endfor%}
-        </div>
     </div>
   </div>
 </div>

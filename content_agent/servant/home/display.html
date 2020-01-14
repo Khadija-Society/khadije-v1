@@ -72,7 +72,7 @@
         <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>
         <td class="collapsing">
           <a class="badge" href="{{url.this}}/profile?user={{value.user_id}}">{%trans "Profile"%}</a>
-          <a class="badge primary" href="{{url.this}}/send?user={{value.user_id}}">{%trans "Dispatch"%}</a>
+          <a class="badge primary" href="{{url.this}}/send?user={{value.user_id}}&city={{value.city}}&job={{value.job}}">{%trans "Dispatch"%}</a>
         </td>
       </tr>
       {%endfor%}
