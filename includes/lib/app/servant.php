@@ -102,7 +102,8 @@ class servant
 			return false;
 		}
 
-		\lib\db\servant::update(['status' => 'disable'] ,\dash\coding::decode($_id));
+		// \lib\db\servant::update(['status' => 'disable'] ,\dash\coding::decode($_id));
+		\lib\db\servant::delete(\dash\coding::decode($_id));
 		\dash\notif::ok(T_("Servant removed"));
 		return true;
 	}

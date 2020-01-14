@@ -392,6 +392,8 @@ class send
 			}
 		}
 
+		$result = \dash\app::ready($result);
+
 		return $result;
 	}
 

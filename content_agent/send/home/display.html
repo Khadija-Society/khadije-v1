@@ -50,6 +50,7 @@
 
 {%block htmlTable%}
 
+
   <table class="tbl1 v1 cbox fs12">
     <thead>
       <tr>
@@ -58,8 +59,9 @@
         <th data-sort="{{sortLink.user_id.order}}"><a href='{{sortLink.user_id.link}}'>{%trans "Mobile"%}</a></th>
         <th data-sort="{{sortLink.job.order}}"><a href='{{sortLink.job.link}}'>{%trans "Job"%}</a></th>
         <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
-        <th data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
-        <th class="collapsing">{%trans "Profile"%}</th>
+        <th>{%trans "Date"%}</th>
+        <th>{%trans "Score"%}</th>
+        <th class="collapsing">{%trans "Detail"%}</th>
       </tr>
     </thead>
 
@@ -71,10 +73,10 @@
         <td>{{value.mobile| fitNumber('mobile')}}</td>
         <td >{%set myJob = value.job | capitalize %}<a href="{{url.this}}?job={{value.job}}">{%trans myJob%}</a></td>
         <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>
-        <td >{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
+        <td >{{value.startdate | dt(null, 'date')}}-{{value.enddate | dt(null, 'date')}}</td>
+        <td>{{value.score| fitNumber}}</td>
         <td class="collapsing">
-          <a class="badge" href="{{url.this}}/profile?user={{value.user_id}}">{%trans "Profile"%}</a>
-          <a class="badge primary" href="{{url.here}}/send/add?user={{value.user_id}}&city={{value.city}}&job={{value.job}}">{%trans "Dispatch"%}</a>
+          <a class="badge info" href="{{url.this}}/view?id={{value.id}}">{%trans "Detail"%}</a>
         </td>
       </tr>
       {%endfor%}

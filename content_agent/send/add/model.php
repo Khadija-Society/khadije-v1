@@ -1,5 +1,5 @@
 <?php
-namespace content_agent\servant\send;
+namespace content_agent\send\add;
 
 
 class model
@@ -21,7 +21,7 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::pwd());
+			\dash\redirect::to(\dash\url::this());
 		}
 
 	}

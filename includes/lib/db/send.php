@@ -33,29 +33,39 @@ class send
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function get()
+	public static function get($_args)
 	{
-		$result = \dash\db\config::public_get('agent_send', ...func_get_args());
+		$options =
+		[
+			'public_show_field' => "agent_send.*, users.displayname, users.avatar, users.mobile",
+			'master_join' => "INNER JOIN users ON users.id = agent_send.user_id",
+		];
+		$result = \dash\db\config::public_get('agent_send', $_args, $options);
+
 		return $result;
 	}
 
 
-	public static function search($_string = null, $_options = [])
+	public static function search($_string = null, $_args = [])
 	{
-		if(!is_array($_options))
-		{
-			$_options = [];
-		}
 
-		$default_option =
+		$default =
 		[
-			'search_field'      =>" (agent_send.title LIKE '%__string__%' OR agent_send.subtitle LIKE '%__string__%') ",
+			'public_show_field' => "agent_send.*, users.displayname, users.avatar, users.mobile",
+			'master_join' => "INNER JOIN users ON users.id = agent_send.user_id",
+			'search_field' => " ( users.mobile LIKE '%__string__%' or users.displayname LIKE '%__string__%' ) ",
 		];
 
-		$_options = array_merge($default_option, $_options);
-		return \dash\db\config::public_search('agent_send', $_string, $_options);
-	}
+		if(!is_array($_args))
+		{
+			$_args = [];
+		}
 
+		$_args = array_merge($default, $_args);
+
+		$result = \dash\db\config::public_search('agent_send', $_string, $_args);
+		return $result;
+	}
 
 }
 ?>

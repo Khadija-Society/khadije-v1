@@ -1,5 +1,5 @@
 <?php
-namespace content_agent\servant\send;
+namespace content_agent\send\add;
 
 
 class controller
