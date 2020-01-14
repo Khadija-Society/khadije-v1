@@ -138,40 +138,49 @@ class send
 
 
 		$startdate      = \dash\app::request('startdate');
-		$startdate                 = \dash\utility\convert::to_en_number($startdate);
-		if(\dash\utility\jdate::is_jalali($startdate))
+		if(\dash\app::isset_request('startdate'))
 		{
-			$startdate = \dash\utility\jdate::to_gregorian($startdate);
-		}
 
-		if(!$startdate)
-		{
-			\dash\notif::error(T_("Start date is required"), 'startdate');
-			return false;
-		}
-
-
-		$enddate        = \dash\app::request('enddate');
-		$enddate                 = \dash\utility\convert::to_en_number($enddate);
-		if(\dash\utility\jdate::is_jalali($enddate))
-		{
-			$enddate = \dash\utility\jdate::to_gregorian($enddate);
-		}
-
-		if(!$enddate)
-		{
-			\dash\notif::error(T_("End date is required"), 'enddate');
-			return false;
-		}
-
-		if($startdate && $enddate)
-		{
-			if(intval(strtotime($startdate)) > intval(strtotime($enddate)))
+			$startdate                 = \dash\utility\convert::to_en_number($startdate);
+			if(\dash\utility\jdate::is_jalali($startdate))
 			{
-				\dash\notif::error(T_("Start date must before end date"), ['element' => ['startdate', 'enddate']]);
+				$startdate = \dash\utility\jdate::to_gregorian($startdate);
+			}
+
+			if(!$startdate)
+			{
+				\dash\notif::error(T_("Start date is required"), 'startdate');
 				return false;
 			}
+
 		}
+
+		$enddate        = \dash\app::request('enddate');
+		if(\dash\app::isset_request('enddate'))
+		{
+			$enddate                 = \dash\utility\convert::to_en_number($enddate);
+			if(\dash\utility\jdate::is_jalali($enddate))
+			{
+				$enddate = \dash\utility\jdate::to_gregorian($enddate);
+			}
+
+			if(!$enddate)
+			{
+				\dash\notif::error(T_("End date is required"), 'enddate');
+				return false;
+			}
+
+			if($startdate && $enddate)
+			{
+				if(intval(strtotime($startdate)) > intval(strtotime($enddate)))
+				{
+					\dash\notif::error(T_("Start date must before end date"), ['element' => ['startdate', 'enddate']]);
+					return false;
+				}
+			}
+
+		}
+
 
 
 		$assessmentdate = \dash\app::request('assessmentdate');
