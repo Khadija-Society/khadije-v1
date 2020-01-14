@@ -1,0 +1,73 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%include 'content_agent/send/pageStep.html'%}
+
+<div class="f justify-center">
+  <div class="c8 s12">
+    <div class="cbox">
+        <h2>ویرایش اطلاعات اعزام</h2>
+        <div class="msg primary2">
+          <div class="f">
+            <div class="cauto s6">
+                <img class="avatar" src="{{sendDetail.avatar}}" >
+            </div>
+            <div class="cauto mLR10 s6">{%trans cityPlace%}</div>
+            <div class="c s6">
+              {%set myJob = sendDetail.job | capitalize%}
+              {%set myCity = sendDetail.city%}
+              <span class="fc-mute">{%trans myJob%}</span>
+              {{sendDetail.firstname}}
+              <b>{{sendDetail.lastname}}</b>
+            </div>
+            <div class="c">{{sendDetail.mobile  | fitNumber('mobile')}}</div>
+            <div class="c s6">{%trans "To city"%} <b>{%trans myCity%}</b></div>
+          </div>
+        </div>
+
+        <form method="post" autocomplete="off">
+          {%if placeList%}
+          <label for='place'>{%trans "Agent Place"%}</label>
+          <select name="place" class="select ui dropdown search" id="place" disabled="">
+            <option value="">{%trans "Please select one item"%}</option>
+            {%for key, value in placeList%}
+              <option value="{{value.id}}" {%if value.id == sendDetail.place_id%} selected {%endif%}>{{value.title}}</option>
+            {%endfor%}
+          </select>
+          {%else%}
+          <div class="msg warn2">هیچ مکانی متناسب با شرایط اعزام ایشان یافت نشد!</div>
+          {%endif%}
+
+          <div class="f">
+
+            <div class="c6 s12 mB5">
+              <div class="input ltr">
+                <input class="datepicker" type="text" name="startdate" placeholder='{%trans "Start date"%}' id="startdate"  value="{{sendDetail.startdate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
+              </div>
+            </div>
+
+
+            <div class="c6 s12 mB5 pLa5">
+              <div class="input ltr">
+                <input class="datepicker" type="text" name="enddate" placeholder='{%trans "End date"%}' id="enddate"  value="{{sendDetail.enddate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
+              </div>
+            </div>
+
+          </div>
+          <div class="txtRa">
+            <button class="btn primary mT10">{%trans "Edit"%}</button>
+          </div>
+
+
+
+
+        </form>
+
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+

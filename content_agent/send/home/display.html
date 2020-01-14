@@ -60,7 +60,7 @@
         <th data-sort="{{sortLink.job.order}}"><a href='{{sortLink.job.link}}'>{%trans "Job"%}</a></th>
         <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
         <th>{%trans "Date"%}</th>
-        <th>{%trans "Score"%}</th>
+
         <th class="collapsing">{%trans "Detail"%}</th>
       </tr>
     </thead>
@@ -74,7 +74,6 @@
         <td >{%set myJob = value.job | capitalize %}<a href="{{url.this}}?job={{value.job}}">{%trans myJob%}</a></td>
         <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>
         <td >{{value.startdate | dt(null, 'date')}}-{{value.enddate | dt(null, 'date')}}</td>
-        <td>{{value.score| fitNumber}}</td>
         <td class="collapsing">
           <a class="badge info" href="{{url.this}}/view?id={{value.id}}">{%trans "Detail"%}</a>
         </td>

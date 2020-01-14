@@ -16,7 +16,7 @@ class send
 			return false;
 		}
 
-		$get = \lib\db\send::get(['id' => $id, 'limit' => 1]);
+		$get = \lib\db\send::get(['agent_send.id' => $id, 'limit' => 1]);
 
 		if(!$get)
 		{
@@ -38,83 +38,103 @@ class send
 	private static function check($_id = null)
 	{
 
+
 		$user_id        = \dash\app::request('user_id');
-		if(!$user_id)
+		if(\dash\app::isset_request('user_id'))
 		{
-			\dash\notif::error(T_("Please select member"), 'member');
-			return false;
-		}
 
-		$user_id = \dash\coding::decode($user_id);
-		if(!$user_id)
-		{
-			\dash\notif::error(T_("Invalid user id"), 'member');
-			return false;
-		}
+			if(!$user_id)
+			{
+				\dash\notif::error(T_("Please select member"), 'member');
+				return false;
+			}
 
-		$check_user = \dash\db\users::get_by_id($user_id);
-		if(!isset($check_user['id']))
-		{
-			\dash\notif::error(T_("Member not found"), 'member');
-			return false;
+			$user_id = \dash\coding::decode($user_id);
+			if(!$user_id)
+			{
+				\dash\notif::error(T_("Invalid user id"), 'member');
+				return false;
+			}
+
+			$check_user = \dash\db\users::get_by_id($user_id);
+			if(!isset($check_user['id']))
+			{
+				\dash\notif::error(T_("Member not found"), 'member');
+				return false;
+			}
 		}
 
 
 		$place_id       = \dash\app::request('place_id');
-		$place_id = \dash\coding::decode($place_id);
-		if(!$place_id)
+		if(\dash\app::isset_request('place_id'))
 		{
-			\dash\notif::error(T_("Invalid place id"), 'palce');
-			return false;
-		}
 
-		$check_place = \lib\db\agentplace::get(['id' => $place_id, 'limit' => 1]);
-		if(!isset($check_place['id']))
-		{
-			\dash\notif::error(T_("Place not found"), 'member');
-			return false;
+			$place_id = \dash\coding::decode($place_id);
+			if(!$place_id)
+			{
+				\dash\notif::error(T_("Invalid place id"), 'palce');
+				return false;
+			}
+
+			$check_place = \lib\db\agentplace::get(['id' => $place_id, 'limit' => 1]);
+			if(!isset($check_place['id']))
+			{
+				\dash\notif::error(T_("Place not found"), 'member');
+				return false;
+			}
 		}
 
 
 		$city = \dash\app::request('city');
-		if(!$city)
+		if(\dash\app::isset_request('city'))
 		{
-			\dash\notif::error(T_("Please choose city"), 'city');
-			return false;
-		}
+			if(!$city)
+			{
+				\dash\notif::error(T_("Please choose city"), 'city');
+				return false;
+			}
 
-		if($city && !in_array($city, ['qom', 'mashhad', 'karbala']))
-		{
-			\dash\notif::error(T_("Invalid city"));
-			return false;
+			if($city && !in_array($city, ['qom', 'mashhad', 'karbala']))
+			{
+				\dash\notif::error(T_("Invalid city"));
+				return false;
+			}
 		}
 
 
 		$job = \dash\app::request('job');
-		if(!$job)
+		if(\dash\app::isset_request('job'))
 		{
-			\dash\notif::error(T_("Please choose job"), 'job');
-			return false;
+			if(!$job)
+			{
+				\dash\notif::error(T_("Please choose job"), 'job');
+				return false;
+			}
+
+			if($job && !in_array($job, ['clergy', 'admin', 'missionary', 'servant']))
+			{
+				\dash\notif::error(T_("Invalid job"));
+				return false;
+			}
 		}
 
-		if($job && !in_array($job, ['clergy', 'admin', 'missionary', 'servant']))
+
+		if($user_id || $city || $job)
 		{
-			\dash\notif::error(T_("Invalid job"));
-			return false;
+
+			$check_access = \lib\db\servant::get(['agent_servant.user_id' => $user_id, 'agent_servant.city' => $city, 'agent_servant.job' => $job, 'limit' => 1]);
+			if(isset($check_access['id']))
+			{
+				// no problem to send it
+			}
+			else
+			{
+				$msg = T_("It is not possible to send this user to this city");
+				\dash\notif::error($msg, 'member');
+				return false;
+			}
 		}
 
-
-		$check_access = \lib\db\servant::get(['agent_servant.user_id' => $user_id, 'agent_servant.city' => $city, 'agent_servant.job' => $job, 'limit' => 1]);
-		if(isset($check_access['id']))
-		{
-			// no problem to send it
-		}
-		else
-		{
-			$msg = T_("It is not possible to send this user to this city");
-			\dash\notif::error($msg, 'member');
-			return false;
-		}
 
 
 		$startdate      = \dash\app::request('startdate');
@@ -142,6 +162,15 @@ class send
 		{
 			\dash\notif::error(T_("End date is required"), 'enddate');
 			return false;
+		}
+
+		if($startdate && $enddate)
+		{
+			if(intval(strtotime($startdate)) > intval(strtotime($enddate)))
+			{
+				\dash\notif::error(T_("Start date must before end date"), ['element' => ['startdate', 'enddate']]);
+				return false;
+			}
 		}
 
 
