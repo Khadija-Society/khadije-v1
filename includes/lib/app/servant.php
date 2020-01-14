@@ -31,6 +31,7 @@ class servant
 			return false;
 		}
 
+		$args['status'] = 'enable';
 		$return = [];
 
 		$servant_id = \lib\db\servant::insert($args);
@@ -101,7 +102,7 @@ class servant
 			return false;
 		}
 
-		\lib\db\servant::delete(\dash\coding::decode($_id));
+		\lib\db\servant::update(['status' => 'disable'] ,\dash\coding::decode($_id));
 		\dash\notif::ok(T_("Servant removed"));
 		return true;
 	}
@@ -229,6 +230,19 @@ class servant
 			return false;
 		}
 
+
+
+		$status = \dash\app::request('status');
+
+
+		if($status && !in_array($status, ['enable', 'disable']))
+		{
+			\dash\notif::error(T_("Invalid status"));
+			return false;
+		}
+
+
+
 		if($user_id)
 		{
 			$check_duplicate = \lib\db\servant::get(['agent_servant.user_id' => $user_id, 'agent_servant.city' => $city, 'agent_servant.job' => $job, 'limit' => 1]);
@@ -254,6 +268,7 @@ class servant
 		$args['user_id'] = $user_id;
 		$args['job']     = $job;
 		$args['city']    = $city;
+		$args['status']  = $status;
 
 		return $args;
 	}

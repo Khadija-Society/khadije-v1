@@ -73,10 +73,10 @@
         {%else%}
         <td>{{value.title}}</td>
         {%endif%}
-        <td>{%set myCity = value.city%}{%trans myCity%}</td>
-        <td>{%set myGender = value.job%}{%trans myGender%}</td>
-        <td>{{value.rate | fitNumber}}</td>
-        <td>{{value.sort | fitNumber}}</td>
+        <td>{%if value.city%}{%set myCity = value.city%}{%trans myCity%}{%else%}<small class="fc08 fc-mute">{%trans "For all city"%}</small>{%endif%}</td>
+        <td>{%if value.job%}{%set myGender = value.job%}{%trans myGender%}{%else%}<small class="fc08 fc-mute">{%trans "For all jobs"%}</small>{%endif%}</td>
+        <td>{%if value.rate%}{{value.rate | fitNumber}}{%else%}-{%endif%}</td>
+        <td>{%if value.sort%}{{value.sort | fitNumber}}{%else%}-{%endif%}</td>
 
 
 

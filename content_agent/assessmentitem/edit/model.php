@@ -11,9 +11,9 @@ class model
 		$post =
 		[
 			'title'  => \dash\request::post('title'),
-			'city'   => \dash\request::post('city'),
+			'city'   => \dash\request::post('city') == '0' ? null : \dash\request::post('city'),
 			'rate'   => \dash\request::post('rate'),
-			'job'    => \dash\request::post('job'),
+			'job'    => \dash\request::post('job') == '0' ? null : \dash\request::post('job'),
 			'sort'   => \dash\request::post('sort'),
 			'status' => \dash\request::post('status'),
 		];

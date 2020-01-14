@@ -8,15 +8,33 @@
      {{block('iMemberList')}}
      {{block('iCity')}}
      {{block('iJob')}}
+     {{block('iStatus')}}
 
 
-     {{block('iedit')}}
+     <button class="btn primary block mT20">{%trans "Edit"%}</button>
     </div>
    </form>
   </div>
 {%endblock%}
 
 
+
+{%block iStatus%}
+<div class="mT15">
+ <label >{%trans "Status of place"%}</label>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
+  <label for="r-enable">{%trans "Enable"%}</label>
+ </div>
+
+
+ <div class="radio1 black mB25">
+  <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'%} checked{%endif%} >
+  <label for="r-disable">{%trans "Disable"%}</label>
+ </div>
+</div>
+{%endblock%}
 
 
 {%block iMemberList%}
@@ -48,7 +66,7 @@
   <select name="job" class="ui dropdown select">
     <option value="" readonly>{%trans "For all jobs"%}</option>
     <option value="clergy" {%if dataRow.job == 'clergy'  %}selected {%endif%}>{%trans "clergy"%}</option>
-    <option value="admin" {%if dataRow.job == 'admin'  %}selected {%endif%}>{%trans "admin"%}</option>
+    <option value="admin" {%if dataRow.job == 'admin'  %}selected {%endif%}>{%trans "Admin"%}</option>
     <option value="missionary" {%if dataRow.job == 'missionary'  %}selected {%endif%}>{%trans "missionary"%}</option>
     <option value="servant" {%if dataRow.job == 'servant'  %}selected {%endif%}>{%trans "servant"%}</option>
 

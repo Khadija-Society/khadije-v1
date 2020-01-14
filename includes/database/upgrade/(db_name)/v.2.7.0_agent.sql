@@ -15,6 +15,7 @@ CREATE TABLE `agent_servant` (
 `user_id` int(10) UNSIGNED NOT NULL,
 `job` enum('clergy', 'admin', 'missionary', 'servant') NULL,
 `city` enum('qom', 'mashhad', 'karbala') NULL,
+`status` enum('enable', 'disable') NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
 CONSTRAINT `agent_servant_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE

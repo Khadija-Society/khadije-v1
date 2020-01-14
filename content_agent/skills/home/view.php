@@ -43,6 +43,9 @@ class view
 			$args['status'] = \dash\request::get('status');
 		}
 
+		// $args['pagenation'] = false;
+		$args['limit'] = 20;
+
 
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\skills::$sort_field, \dash\url::this());
 		$dataTable = \lib\app\skills::list(\dash\request::get('q'), $args);
@@ -52,6 +55,8 @@ class view
 
 		$check_empty_datatable = $args;
 		unset($check_empty_datatable['sort']);
+		unset($check_empty_datatable['pagenation']);
+		unset($check_empty_datatable['limit']);
 		unset($check_empty_datatable['order']);
 
 		// set dataFilter

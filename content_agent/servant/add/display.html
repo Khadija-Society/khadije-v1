@@ -30,7 +30,7 @@
 <div class="pRa5">
   <label for="city">{%trans "City"%}</label>
   <select name="city" class="ui dropdown select">
-    <option value="" readonly>{%trans "For all city"%}</option>
+    <option value="" readonly>{%trans "Please choose city"%}</option>
     <option value="qom" {%if dataRow.city == 'qom'  %}selected {%endif%}>{%trans "Qom"%}</option>
     <option value="mashhad" {%if dataRow.city == 'mashhad'  %}selected {%endif%}>{%trans "Mashhad"%}</option>
     <option value="karbala" {%if dataRow.city == 'karbala'  %}selected {%endif%}>{%trans "Karbala"%}</option>
@@ -43,7 +43,7 @@
 <div class="pRa5">
   <label for="job">{%trans "Job"%}</label>
   <select name="job" class="ui dropdown select">
-    <option value="" readonly>{%trans "For all jobs"%}</option>
+    <option value="" readonly>{%trans "Please choose job"%}</option>
     <option value="clergy" {%if dataRow.job == 'clergy'  %}selected {%endif%}>{%trans "clergy"%}</option>
     <option value="admin" {%if dataRow.job == 'admin'  %}selected {%endif%}>{%trans "admin"%}</option>
     <option value="missionary" {%if dataRow.job == 'missionary'  %}selected {%endif%}>{%trans "missionary"%}</option>

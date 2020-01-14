@@ -20,6 +20,7 @@ class model
 		[
 			'job'    => \dash\request::post('job'),
 			'city'   => \dash\request::post('city'),
+			'status' => \dash\request::post('status'),
 		];
 
 		$file = \dash\app\file::upload_quick('file1');
