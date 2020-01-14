@@ -35,6 +35,14 @@ class resume
 	}
 
 
+	public static function delete($_id)
+	{
+		$query  = "DELETE FROM agent_resume WHERE agent_resume.id = $_id LIMIT 1";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
+
 
 	public static function search($_string = null, $_args = [])
 	{

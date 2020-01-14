@@ -17,6 +17,13 @@ class view
 			\dash\data::dataTable(\lib\app\resume::list(null,['user_id' => $userid, 'pagenation' => false]));
 		}
 
+
+		if(\dash\request::get('id'))
+		{
+			$detail = \lib\app\resume::get(\dash\request::get('id'));
+			\dash\data::dataRow($detail);
+		}
+
 	}
 }
 ?>

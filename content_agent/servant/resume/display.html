@@ -77,9 +77,20 @@
   </div>
 
 
+  {%if requestGET.id%}
+  <div class="f">
+    <button class="c btn block primary mT10">{%trans "Edit"%}</button>
+    <div data-confirm data-data='{"mod" : "remove"}' class="cauto mLa5 btn block danger mT10">{%trans "Remove"%}</div>
+
+  </div>
 
 
-  <button class="btn block success mT10">{%trans "Add"%}</button>
+  {%else%}
+    <button class="btn block success mT10">{%trans "Add"%}</button>
+  {%endif%}
+
+
+
  </form>
 </div>
 {%endblock%}
@@ -97,6 +108,7 @@
   <table class="tbl1 v1 txtC cbox fs12">
     <thead>
       <tr class="fs09">
+        <th class="collapsing" ></th>
         <th>{%trans "Company"%}</th>
         <th>{%trans "Action Type"%}</th>
         <th>{%trans "Year"%}</th>
@@ -108,9 +120,10 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr>
+          <td class="collapsing"><a href="{{url.that}}?user={{requestGET.user}}&id={{value.id}}"><i class="sf-edit"></i></a></td>
           <td>{{value.company}}</td>
           <td>{{value.type}}</td>
-          <td>{{value.startdate}}-{{value.enddate}}</td>
+          <td>{{value.startdate | fitNumber(false)}}-{{value.enddate | fitNumber(false)}}</td>
           <td>{{value.ceo}}</td>
           <td>{{value.desc}}</td>
       </tr>
