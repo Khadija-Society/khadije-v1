@@ -13,6 +13,8 @@ class twigTransTerms
 	echo T_("Rate");                                                                  // Line 52
 	echo T_("Sort");                                                                  // Line 249
 	echo T_("Status");                                                                // Line 102
+	echo T_("For all city");                                                          // Line 54
+	echo T_("For all jobs");                                                          // Line 67
 	echo T_("Clear filters");                                                         // Line 119
 	echo T_("Result not found!");                                                     // Line 118
 	echo T_("Search with new keywords.");                                             // Line 118
@@ -23,11 +25,9 @@ class twigTransTerms
 	echo T_("Require");                                                               // Line 388
 	echo T_("Title of assessmentitem");                                               // Line 8
 	echo T_("Enter a valid title");                                                   // Line 164
-	echo T_("For all city");                                                          // Line 33
 	echo T_("Qom");                                                                   // Line 162
 	echo T_("Mashhad");                                                               // Line 180
 	echo T_("Karbala");                                                               // Line 171
-	echo T_("For all jobs");                                                          // Line 46
 	echo T_("clergy");                                                                // Line 47
 	echo T_("admin");                                                                 // Line 48
 	echo T_("missionary");                                                            // Line 49
@@ -105,14 +105,21 @@ class twigTransTerms
 	echo T_("Enter shaba number");                                                    // Line 30
 
 	//-----------------------------------------content_agent/servant/send/display.html
+	echo T_("To city");                                                               // Line 24
+	echo T_("Agent Place");                                                           // Line 6
+	echo T_("Please select one item");                                                // Line 79
+	echo T_("Start date");                                                            // Line 89
+	echo T_("End date");                                                              // Line 96
+	echo T_("Save dispatch servant");                                                 // Line 58
 
 	//-----------------------------------------content_agent/servant/home/display.html
 	echo T_("User");                                                                  // Line 148
 	echo T_("Profile");                                                               // Line 22
-	echo T_("Dispatch");                                                              // Line 53
-	echo T_("Try to start with add new servant!");                                    // Line 103
+	echo T_("Dispatch");                                                              // Line 18
+	echo T_("Try to start with add new servant!");                                    // Line 105
 
 	//-----------------------------------------content_agent/servant/edit/display.html
+	echo T_("Admin");                                                                 // Line 27
 
 	//-----------------------------------------content_agent/servant/pageStepSend.html
 	echo T_("User detail");                                                           // Line 7
@@ -165,18 +172,19 @@ class twigTransTerms
 	//------------------------------------------content_agent/servant/add/display.html
 	echo T_("Choose user and to set as servant");                                     // Line 21
 	echo T_("Please choose user");                                                    // Line 23
+	echo T_("Please choose city");                                                    // Line 33
+	echo T_("Please choose job");                                                     // Line 46
 
 	//-------------------------------------------------content_agent/home/display.html
-	echo T_("Agent Place");                                                           // Line 6
 	echo T_("Assessment Item");                                                       // Line 7
 	echo T_("Servant");                                                               // Line 53
 
 	//-------------------------------------------------------content_agent/layout.html
 	echo T_("Agent Panel");                                                           // Line 4
+	echo T_("Servants");                                                              // Line 30
 
 	//---------------------------------------------content_smsapp/viewsms/display.html
 	echo T_("Reseive status");                                                        // Line 294
-	echo T_("Please select one item");                                                // Line 79
 	echo T_("block");                                                                 // Line 12
 	echo T_("awaiting");                                                              // Line 28
 	echo T_("analyze");                                                               // Line 14
@@ -359,8 +367,6 @@ class twigTransTerms
 	echo T_("Off");                                                                   // Line 220
 	echo T_("System status");                                                         // Line 221
 	echo T_("Filter by start date and end date of sms");                              // Line 233
-	echo T_("Start date");                                                            // Line 89
-	echo T_("End date");                                                              // Line 96
 	echo T_("Filter by group");                                                       // Line 250
 	echo T_("Clear filter");                                                          // Line 120
 	echo T_("Apply");                                                                 // Line 122
@@ -997,7 +1003,6 @@ class twigTransTerms
 	//----------------------------------------------------------content_m/sidenav.html
 	echo T_("Financial");                                                             // Line 10
 	echo T_("Book transaction list");                                                 // Line 30
-	echo T_("Servants");                                                              // Line 30
 	echo T_("Group trip");                                                            // Line 33
 	echo T_("Family trip");                                                           // Line 36
 	echo T_("consulting service");                                                    // Line 39
@@ -1452,7 +1457,6 @@ class twigTransTerms
 	echo T_("Save reserve date and description");                                     // Line 43
 
 	//-----------------------------------------------content_m/trip/tripViewGroup.html
-	echo T_("Admin");                                                                 // Line 27
 	echo T_("Admin detail");                                                          // Line 8
 	echo T_("Settings");                                                              // Line 66
 	echo T_("Copy");                                                                  // Line 84

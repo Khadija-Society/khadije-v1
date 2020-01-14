@@ -64,7 +64,7 @@ class send
 		$place_id = \dash\coding::decode($place_id);
 		if(!$place_id)
 		{
-			\dash\notif::error(T_("Invalid pace id"), 'palce');
+			\dash\notif::error(T_("Invalid place id"), 'palce');
 			return false;
 		}
 
