@@ -92,6 +92,7 @@ CREATE TABLE `agent_send` (
 `assessmentor` int(10) UNSIGNED  NULL DEFAULT NULL,
 `assessmentdesc` text   NULL DEFAULT NULL,
 `score` int(10) NULL DEFAULT NULL,
+`percent` int(10) NULL DEFAULT NULL,
 
 `paydate` datetime  NULL DEFAULT NULL,
 `payamount` int(10) NULL DEFAULT NULL,
@@ -129,6 +130,7 @@ CREATE TABLE `agent_assessmentdetail` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `agent_send_id` int(10) UNSIGNED NOT NULL,
 `assessmentitem_id` int(10) UNSIGNED NOT NULL,
+`rate` int(10) UNSIGNED  NULL DEFAULT NULL,
 `star` int(10) UNSIGNED  NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),

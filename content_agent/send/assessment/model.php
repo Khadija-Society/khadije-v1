@@ -14,13 +14,13 @@ class model
 		$score = 0;
 		foreach ($post as $key => $value)
 		{
+			if(!is_numeric(substr($key, 5)))
+			{
+				continue;
+			}
+
 			if(substr($key, 0, 5) === 'star_')
 			{
-				if(!is_numeric(substr($key, 5)))
-				{
-					continue;
-				}
-
 				$myStar = (5 - intval($value)) + 1;
 				$score += $myStar;
 				$star[substr($key, 5)] = $myStar;
@@ -32,10 +32,36 @@ class model
 			}
 		}
 
+		foreach ($item as $key => $value)
+		{
+			$item_detail = \lib\db\assessmentitem::get(['id' => $key, 'limit' => 1]);
+			$item[$key] = $item_detail;
+		}
+
+
 		$send_id = \dash\coding::decode(\dash\request::get('id'));
 
-		foreach ($star as $key => $value)
+		$percent = 0;
+		$div = 0;
+
+		foreach ($item as $key => $value)
 		{
+			$rate = 1;
+			$myStar = 0;
+
+			if(isset($star[$key]) && is_numeric($star[$key]) && $star[$key])
+			{
+				$myStar = intval($star[$key]);
+			}
+
+			if(isset($item[$key]['rate']) && is_numeric($item[$key]['rate']) && $item[$key]['rate'])
+			{
+				$rate = intval($item[$key]['rate']);
+			}
+			$div += ($rate * 5);
+
+			$percent += intval($rate) * intval($myStar);
+
 			$get =
 			[
 				'agent_send_id'     => $send_id,
@@ -49,15 +75,23 @@ class model
 				[
 					'agent_send_id'     => $send_id,
 					'assessmentitem_id' => $key,
-					'star'             => $value,
+					'star'             => $myStar,
+					'rate'             => $rate,
 				];
 				\lib\db\assessmentdetail::insert($insert);
 			}
 			else
 			{
-				\lib\db\assessmentdetail::update(['star' => $value], $get['id']);
+				\lib\db\assessmentdetail::update(['star' => $myStar, 'rate' => $rate], $get['id']);
 			}
 		}
+
+		if(!$div)
+		{
+			$div = 1;
+		}
+		$score = $percent;
+		$percent = round(($percent * 100) / $div);
 
 		$update_send =
 		[
@@ -65,6 +99,7 @@ class model
 			'assessmentor'   => \dash\user::id(),
 			'assessmentdesc' => \dash\request::post('desc'),
 			'score'          => $score,
+			'percent'        => $percent,
 		];
 
 		\lib\app\send::edit($update_send, \dash\request::get('id'));

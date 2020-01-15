@@ -8,13 +8,21 @@
 <div class="f justify-center">
   <div class="c8 s12">
     <div class="cbox">
-      {%if sendDetail.score%}
+
       <div class="msg txtC">
         مجموع امتیازات کسب شده در این ارزشیابی
+        <b class="fs12">{{sendDetail.score | fitNumber}} <small>{%trans "Score"%}</small></b>
         <br>
-        <b class="fs12">{{sendDetail.score | fitNumber}}</b>
+
+        <b class="fs12">{{sendDetail.percent | fitNumber}} {%trans "%"%}</b>
+
+        <div class="f">
+         <div class="progress" data-percent='{{sendDetail.percent}}'>
+          <div class="bar"></div>
+         </div>
+        </div>
       </div>
-      {%endif%}
+
         <form method="post" autocomplete="off">
           <table class="tbl1 v4">
             <thead>

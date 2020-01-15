@@ -188,6 +188,7 @@ class send
 		$assessmentdesc = \dash\app::request('assessmentdesc');
 
 		$score          = \dash\app::request('score');
+		$percent          = \dash\app::request('percent');
 
 		$paydate        = \dash\app::request('paydate');
 
@@ -265,6 +266,7 @@ class send
 		$args['assessmentor']   = $assessmentor;
 		$args['assessmentdesc'] = $assessmentdesc;
 		$args['score']          = $score;
+		$args['percent']          = $percent;
 		$args['paydate']        = $paydate;
 		$args['payamount']      = $payamount;
 		$args['paybank']        = $paybank;
@@ -442,6 +444,7 @@ class send
 		if(!\dash\app::isset_request('payamount')) unset($args['payamount']);
 		if(!\dash\app::isset_request('paybank')) unset($args['paybank']);
 		if(!\dash\app::isset_request('paytype')) unset($args['paytype']);
+		if(!\dash\app::isset_request('percent')) unset($args['percent']);
 		if(!\dash\app::isset_request('paynumber')) unset($args['paynumber']);
 		if(!\dash\app::isset_request('gift')) unset($args['gift']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
