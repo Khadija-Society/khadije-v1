@@ -225,7 +225,7 @@ class servant
 			return false;
 		}
 
-		if($job && !in_array($job, ['clergy', 'admin', 'missionary', 'servant']))
+		if($job && !in_array($job, ['clergy', 'adminoffice', 'admin', 'missionary', 'servant']))
 		{
 			\dash\notif::error(T_("Invalid job"));
 			return false;

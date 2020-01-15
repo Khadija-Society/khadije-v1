@@ -13,7 +13,7 @@ class view
 
 
 		$job = \dash\request::get('job');
-		if(!$job || !in_array($job, ['clergy', 'admin', 'missionary', 'servant']))
+		if(!$job || !in_array($job, ['clergy', 'admin', 'missionary', 'servant', 'adminoffice']))
 		{
 			\dash\header::status(403, T_("Job"));
 		}

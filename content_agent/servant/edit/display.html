@@ -67,6 +67,7 @@
   <select name="job" class="ui dropdown select">
     <option value="" readonly>{%trans "For all jobs"%}</option>
     <option value="clergy" {%if dataRow.job == 'clergy'  %}selected {%endif%}>{%trans "clergy"%}</option>
+    <option value="adminoffice" {%if dataRow.job == 'adminoffice'  %}selected {%endif%}>{%trans "adminoffice"%}</option>
     <option value="admin" {%if dataRow.job == 'admin'  %}selected {%endif%}>{%trans "Admin"%}</option>
     <option value="missionary" {%if dataRow.job == 'missionary'  %}selected {%endif%}>{%trans "missionary"%}</option>
     <option value="servant" {%if dataRow.job == 'servant'  %}selected {%endif%}>{%trans "servant"%}</option>

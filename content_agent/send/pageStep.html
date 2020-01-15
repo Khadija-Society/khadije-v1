@@ -1,3 +1,22 @@
+<div class="msg primary2 fs16">
+  <div class="f">
+    <div class="cauto s6">
+        <img class="avatar" src="{{sendDetail.avatar}}" >
+    </div>
+    <div class="cauto mLR10 s6">{%trans cityPlace%}</div>
+    <div class="c s6">
+      {%set myJob = sendDetail.job | capitalize%}
+      {%set myCity = sendDetail.city%}
+      <span class="fc-mute">{%trans myJob%}</span>
+      {{sendDetail.firstname}}
+      <b>{{sendDetail.lastname}}</b>
+    </div>
+    <div class="c">{{sendDetail.mobile  | fitNumber('mobile')}}</div>
+    <div class="c s6">{%trans "To city"%} <b>{%trans myCity%}</b></div>
+  </div>
+</div>
+
+
   <div class="f">
 
    <div class="c s6">
