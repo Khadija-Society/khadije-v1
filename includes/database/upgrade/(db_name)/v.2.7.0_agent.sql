@@ -13,7 +13,7 @@ ALTER TABLE `users` ADD `card` varchar(200)  NULL DEFAULT NULL;
 CREATE TABLE `agent_servant` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `user_id` int(10) UNSIGNED NOT NULL,
-`job` enum('clergy', 'admin', 'missionary', 'servant') NULL,
+`job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant') NULL,
 `city` enum('qom', 'mashhad', 'karbala') NULL,
 `status` enum('enable', 'disable') NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -83,7 +83,7 @@ CREATE TABLE `agent_send` (
 `user_id` int(10) UNSIGNED NOT NULL,
 `creator` int(10) UNSIGNED  NULL DEFAULT NULL,
 `place_id` int(10) UNSIGNED  NULL DEFAULT NULL,
-`job` enum('clergy', 'admin', 'missionary', 'servant') NULL,
+`job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant') NULL,
 `city` enum('qom', 'mashhad', 'karbala') NULL,
 `startdate` datetime  NULL DEFAULT NULL,
 `enddate` datetime  NULL DEFAULT NULL,
@@ -111,12 +111,37 @@ CONSTRAINT `agent_send_assessmentor` FOREIGN KEY (`assessmentor`) REFERENCES `us
 
 
 
+
+-- assessment
+CREATE TABLE `agent_assessment` (
+`id` int(10) UNSIGNED NOT NULL auto_increment,
+`send_id` int(10) UNSIGNED NOT NULL,
+
+`assessmentor` int(10) UNSIGNED  NULL DEFAULT NULL,
+
+`job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant') NULL,
+`forjob` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant') NULL,
+
+`assessmentdate` datetime  NULL DEFAULT NULL,
+`assessmentdesc` text   NULL DEFAULT NULL,
+
+`score` int(10) NULL DEFAULT NULL,
+`percent` int(10) NULL DEFAULT NULL,
+
+`datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`),
+CONSTRAINT `agent_assessment_send_id` FOREIGN KEY (`send_id`) REFERENCES `agent_send` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_assessment_assessmentor` FOREIGN KEY (`assessmentor`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 -- item feedback
 CREATE TABLE `agent_assessmentitem` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `rate` int(10) NULL DEFAULT NULL,
-`job` enum('clergy', 'admin', 'missionary', 'servant') NULL,
+`job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant') NULL,
 `city` enum('qom', 'mashhad', 'karbala') NULL,
 `sort` int(10) UNSIGNED NULL DEFAULT NULL,
 `status` enum('enable', 'disable', 'deleted')  NULL DEFAULT NULL,
@@ -129,12 +154,14 @@ PRIMARY KEY (`id`)
 CREATE TABLE `agent_assessmentdetail` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `agent_send_id` int(10) UNSIGNED NOT NULL,
+`assessment_id` int(10) UNSIGNED NOT NULL,
 `assessmentitem_id` int(10) UNSIGNED NOT NULL,
 `rate` int(10) UNSIGNED  NULL DEFAULT NULL,
 `star` int(10) UNSIGNED  NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
 CONSTRAINT `agent_assessmentdetail_agent_send_id` FOREIGN KEY (`agent_send_id`) REFERENCES `agent_send` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_assessmentdetail_agent_assessment_id` FOREIGN KEY (`assessment_id`) REFERENCES `agent_assessment` (`id`) ON UPDATE CASCADE,
 CONSTRAINT `agent_assessmentdetail_assessmentitem_id` FOREIGN KEY (`assessmentitem_id`) REFERENCES `agent_assessmentitem` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
