@@ -8,23 +8,7 @@
   <div class="c8 s12">
     <div class="cbox">
         <h2>ویرایش اطلاعات اعزام</h2>
-        <div class="msg primary2">
-          <div class="f">
-            <div class="cauto s6">
-                <img class="avatar" src="{{sendDetail.avatar}}" >
-            </div>
-            <div class="cauto mLR10 s6">{%trans cityPlace%}</div>
-            <div class="c s6">
-              {%set myJob = sendDetail.job | capitalize%}
-              {%set myCity = sendDetail.city%}
-              <span class="fc-mute">{%trans myJob%}</span>
-              {{sendDetail.firstname}}
-              <b>{{sendDetail.lastname}}</b>
-            </div>
-            <div class="c">{{sendDetail.mobile  | fitNumber('mobile')}}</div>
-            <div class="c s6">{%trans "To city"%} <b>{%trans myCity%}</b></div>
-          </div>
-        </div>
+
 
         <form method="post" autocomplete="off">
           {%if placeList%}

@@ -119,22 +119,6 @@ class send
 		}
 
 
-		if($user_id || $city || $job)
-		{
-
-			$check_access = \lib\db\servant::get(['agent_servant.user_id' => $user_id, 'agent_servant.city' => $city, 'agent_servant.job' => $job, 'limit' => 1]);
-			if(isset($check_access['id']))
-			{
-				// no problem to send it
-			}
-			else
-			{
-				$msg = T_("It is not possible to send this user to this city");
-				\dash\notif::error($msg, 'member');
-				return false;
-			}
-		}
-
 
 
 		$startdate      = \dash\app::request('startdate');
@@ -180,6 +164,48 @@ class send
 			}
 
 		}
+
+
+
+		if($user_id || $city || $job)
+		{
+
+			$check_access = \lib\db\servant::get(['agent_servant.user_id' => $user_id, 'agent_servant.city' => $city, 'agent_servant.job' => $job, 'limit' => 1]);
+			if(isset($check_access['id']))
+			{
+				// no problem to send it
+			}
+			else
+			{
+				$msg = T_("It is not possible to send this user to this city");
+				\dash\notif::error($msg, 'member');
+				return false;
+			}
+
+
+			if($user_id && $city && $job && $startdate && $enddate)
+			{
+				$check_duplicate =
+				[
+					'agent_send.user_id'   => $user_id,
+					'agent_send.city'      => $city,
+					'agent_send.job'       => $job,
+					'agent_send.startdate' => $startdate,
+					'agent_send.enddate'   => $enddate,
+					'limit'                 => 1
+				];
+
+				$check_duplicate = \lib\db\send::get($check_duplicate);
+				if(isset($check_duplicate['id']))
+				{
+					$msg = T_("Duplicate dispatch");
+					\dash\notif::error($msg, ['element' => ['startdate', 'enddate']]);
+					return false;
+				}
+
+			}
+		}
+
 
 
 

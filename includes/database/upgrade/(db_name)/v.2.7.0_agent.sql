@@ -101,6 +101,7 @@ CREATE TABLE `agent_send` (
 `paynumber` varchar(100)   NULL DEFAULT NULL,
 `gift` text   NULL DEFAULT NULL,
 `desc` text   NULL DEFAULT NULL,
+`status` enum('enable', 'disable', 'deleted', 'expire', 'lock', 'draft') NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
 CONSTRAINT `agent_send_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
