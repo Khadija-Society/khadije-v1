@@ -291,9 +291,71 @@ class servant
 
 	public static function ready($_data)
 	{
-		$result = \dash\app::ready($_data);
+		$result = [];
+		foreach ($_data as $key => $value)
+		{
+
+			switch ($key)
+			{
+				case 'id':
+				case 'user_id':
+				case 'clergy_id':
+				case 'admin_id':
+				case 'missionary_id':
+				case 'adminoffice_id':
+				case 'servant_id':
+					if($value)
+					{
+						$value = \dash\coding::encode($value);
+					}
+					$result[$key] = $value;
+					break;
+
+		   		case 'displayname':
+					if(!$value && $value != '0')
+					{
+						$value = T_("Whitout name");
+					}
+					$result[$key] = $value;
+					break;
+
+				case 'avatar':
+					if($value)
+					{
+						$avatar = $value;
+					}
+					else
+					{
+						if(isset($_data['gender']))
+						{
+							if($_data['gender'] === 'male')
+							{
+								$avatar = \dash\app::static_avatar_url('male');
+							}
+							else
+							{
+								$avatar = \dash\app::static_avatar_url('female');
+							}
+						}
+						else
+						{
+							$avatar = \dash\app::static_avatar_url();
+						}
+					}
+					$result[$key] = $avatar;
+					break;
+
+
+
+				default:
+					$result[$key] = $value;
+					break;
+			}
+		}
+
 
 		return $result;
 	}
+
 }
 ?>

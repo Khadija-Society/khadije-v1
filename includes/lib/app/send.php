@@ -39,51 +39,6 @@ class send
 	{
 
 
-		$user_id        = \dash\app::request('user_id');
-		if(\dash\app::isset_request('user_id'))
-		{
-
-			if(!$user_id)
-			{
-				\dash\notif::error(T_("Please select member"), 'member');
-				return false;
-			}
-
-			$user_id = \dash\coding::decode($user_id);
-			if(!$user_id)
-			{
-				\dash\notif::error(T_("Invalid user id"), 'member');
-				return false;
-			}
-
-			$check_user = \dash\db\users::get_by_id($user_id);
-			if(!isset($check_user['id']))
-			{
-				\dash\notif::error(T_("Member not found"), 'member');
-				return false;
-			}
-		}
-
-
-		$place_id       = \dash\app::request('place_id');
-		if(\dash\app::isset_request('place_id'))
-		{
-
-			$place_id = \dash\coding::decode($place_id);
-			if(!$place_id)
-			{
-				\dash\notif::error(T_("Invalid place id"), 'palce');
-				return false;
-			}
-
-			$check_place = \lib\db\agentplace::get(['id' => $place_id, 'limit' => 1]);
-			if(!isset($check_place['id']))
-			{
-				\dash\notif::error(T_("Place not found"), 'member');
-				return false;
-			}
-		}
-
 
 		$city = \dash\app::request('city');
 		if(\dash\app::isset_request('city'))
@@ -102,19 +57,173 @@ class send
 		}
 
 
-		$job = \dash\app::request('job');
-		if(\dash\app::isset_request('job'))
+		$clergy        = \dash\app::request('clergy');
+		if(\dash\app::isset_request('clergy') && $clergy)
 		{
-			if(!$job)
+			$clergy = \dash\coding::decode($clergy);
+			if(!$clergy)
 			{
-				\dash\notif::error(T_("Please choose job"), 'job');
+				\dash\notif::error(T_("Invalid clergy"), 'clergy');
 				return false;
 			}
 
-			if($job && !in_array($job, ['clergy', 'adminoffice', 'admin', 'missionary', 'servant']))
+
+			$check_clergy = \dash\db\users::get_by_id($clergy);
+
+			if(!isset($check_clergy['id']))
 			{
-				\dash\notif::error(T_("Invalid job"));
+				\dash\notif::error(T_("Clergy not found"), 'clergy');
 				return false;
+			}
+
+			if($city)
+			{
+				$check_access_clergy = \lib\db\servant::get(['agent_servant.user_id' => $clergy, 'agent_servant.city' => $city, 'agent_servant.job' => 'clergy', 'limit' => 1]);
+
+				if(!isset($check_access_clergy['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set clergy of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$clergy = null;
+		}
+
+
+
+		$admin        = \dash\app::request('admin');
+		if(\dash\app::isset_request('admin') && $admin)
+		{
+			$admin = \dash\coding::decode($admin);
+			if(!$admin)
+			{
+				\dash\notif::error(T_("Invalid admin"), 'admin');
+				return false;
+			}
+
+			$check_admin = \dash\db\users::get_by_id($admin);
+			if(!isset($check_admin['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'admin');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_admin = \lib\db\servant::get(['agent_servant.user_id' => $admin, 'agent_servant.city' => $city, 'agent_servant.job' => 'admin', 'limit' => 1]);
+				if(!isset($check_access_admin['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set admin of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$admin = null;
+		}
+
+
+
+		$adminoffice        = \dash\app::request('adminoffice');
+		if(\dash\app::isset_request('adminoffice') && $adminoffice)
+		{
+			$adminoffice = \dash\coding::decode($adminoffice);
+			if(!$adminoffice)
+			{
+				\dash\notif::error(T_("Invalid adminoffice"), 'adminoffice');
+				return false;
+			}
+
+			$check_adminoffice = \dash\db\users::get_by_id($adminoffice);
+			if(!isset($check_adminoffice['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'adminoffice');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_adminoffice = \lib\db\servant::get(['agent_servant.user_id' => $adminoffice, 'agent_servant.city' => $city, 'agent_servant.job' => 'adminoffice', 'limit' => 1]);
+				if(!isset($check_access_adminoffice['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set adminoffice of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$adminoffice = null;
+		}
+
+
+
+
+
+		$missionary        = \dash\app::request('missionary');
+		if(\dash\app::isset_request('missionary') && $missionary)
+		{
+			$missionary = \dash\coding::decode($missionary);
+			if(!$missionary)
+			{
+				\dash\notif::error(T_("Invalid missionary"), 'missionary');
+				return false;
+			}
+
+			$check_missionary = \dash\db\users::get_by_id($missionary);
+			if(!isset($check_missionary['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'missionary');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_missionary = \lib\db\servant::get(['agent_servant.user_id' => $missionary, 'agent_servant.city' => $city, 'agent_servant.job' => 'missionary', 'limit' => 1]);
+				if(!isset($check_access_missionary['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set missionary of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$missionary = null;
+		}
+
+
+		$place_id       = \dash\app::request('place_id');
+		if(\dash\app::isset_request('place_id'))
+		{
+
+			$place_id = \dash\coding::decode($place_id);
+			if(!$place_id)
+			{
+				\dash\notif::error(T_("Invalid place id"), 'palce');
+				return false;
+			}
+
+			$check_place = \lib\db\agentplace::get(['id' => $place_id, 'limit' => 1]);
+			if(!isset($check_place['id']))
+			{
+				\dash\notif::error(T_("Place not found"), 'palce');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_place_city = \lib\db\agentplace::get(['id' => $place_id, '1.1' => [' = 1.1 AND ', " (city IS NULL OR  city = '$city') "], 'limit' => 1]);
+				if(!isset($check_place_city['id']))
+				{
+					\dash\notif::error(T_("Place and city not mathc"), 'city');
+					return false;
+				}
+
 			}
 		}
 
@@ -165,56 +274,6 @@ class send
 
 		}
 
-
-
-		if($user_id || $city || $job)
-		{
-
-			$check_access = \lib\db\servant::get(['agent_servant.user_id' => $user_id, 'agent_servant.city' => $city, 'agent_servant.job' => $job, 'limit' => 1]);
-			if(isset($check_access['id']))
-			{
-				// no problem to send it
-			}
-			else
-			{
-				$msg = T_("It is not possible to send this user to this city");
-				\dash\notif::error($msg, 'member');
-				return false;
-			}
-
-
-			if($user_id && $city && $job && $startdate && $enddate)
-			{
-				$check_duplicate =
-				[
-					'agent_send.user_id'   => $user_id,
-					'agent_send.city'      => $city,
-					'agent_send.job'       => $job,
-					'agent_send.startdate' => $startdate,
-					'agent_send.enddate'   => $enddate,
-					'limit'                 => 1
-				];
-
-				$check_duplicate = \lib\db\send::get($check_duplicate);
-				if(isset($check_duplicate['id']))
-				{
-					$msg = T_("Duplicate dispatch");
-					\dash\notif::error($msg, ['element' => ['startdate', 'enddate']]);
-					return false;
-				}
-
-			}
-		}
-
-
-
-
-		$assessmentdate = \dash\app::request('assessmentdate');
-		$assessmentor   = \dash\app::request('assessmentor');
-		$assessmentdesc = \dash\app::request('assessmentdesc');
-
-		$score          = \dash\app::request('score');
-		$percent          = \dash\app::request('percent');
 
 		$paydate        = \dash\app::request('paydate');
 
@@ -282,17 +341,18 @@ class send
 
 		$args                   = [];
 
-		$args['user_id']        = $user_id;
+		$args['clergy_id']      = $clergy;
+		$args['admin_id']       = $admin;
+		$args['adminoffice_id'] = $adminoffice;
+		$args['missionary_id']  = $missionary;
+
 		$args['place_id']       = $place_id;
+
 		$args['city']           = $city;
-		$args['job']            = $job;
+
 		$args['startdate']      = $startdate;
 		$args['enddate']        = $enddate;
-		$args['assessmentdate'] = $assessmentdate;
-		$args['assessmentor']   = $assessmentor;
-		$args['assessmentdesc'] = $assessmentdesc;
-		$args['score']          = $score;
-		$args['percent']          = $percent;
+
 		$args['paydate']        = $paydate;
 		$args['payamount']      = $payamount;
 		$args['paybank']        = $paybank;
@@ -315,7 +375,6 @@ class send
 	 */
 	public static function add($_args = [])
 	{
-		\dash\app::variable($_args);
 
 		if(!\dash\user::id())
 		{
@@ -323,9 +382,21 @@ class send
 			return false;
 		}
 
+		if(isset($_args['mobile']) && $_args['mobile'])
+		{
+
+			$user_id = \dash\app\user::add($_args);
+			if(isset($user_id['id']))
+			{
+				$_args['admin_id'] = $user_id['id'];
+			}
+		}
+
+		\dash\app::variable($_args);
 
 		// check args
 		$args = self::check();
+
 
 		if($args === false || !\dash\engine\process::status())
 		{
@@ -501,6 +572,65 @@ class send
 
 			switch ($key)
 			{
+				case 'id':
+				case 'user_id':
+				case 'clergy_id':
+				case 'admin_id':
+				case 'missionary_id':
+				case 'adminoffice_id':
+				case 'servant_id':
+					if($value)
+					{
+						$value = \dash\coding::encode($value);
+					}
+					$result[$key] = $value;
+					break;
+
+		   		case 'displayname':
+		   		case 'clergy_displayname':
+		   		case 'admin_displayname':
+		   		case 'adminoffice_displayname':
+		   		case 'missionary_displayname':
+		   		case 'servant_displayname':
+					if(!$value && $value != '0')
+					{
+						$value = T_("Whitout name");
+					}
+					$result[$key] = $value;
+					break;
+
+				case 'avatar':
+				case 'clergy_avatar':
+		   		case 'admin_avatar':
+		   		case 'adminoffice_avatar':
+		   		case 'missionary_avatar':
+		   		case 'servant_avatar':
+					if($value)
+					{
+						$avatar = $value;
+					}
+					else
+					{
+						if(isset($_data['gender']))
+						{
+							if($_data['gender'] === 'male')
+							{
+								$avatar = \dash\app::static_avatar_url('male');
+							}
+							else
+							{
+								$avatar = \dash\app::static_avatar_url('female');
+							}
+						}
+						else
+						{
+							$avatar = \dash\app::static_avatar_url();
+						}
+					}
+					$result[$key] = $avatar;
+					break;
+
+
 
 				default:
 					$result[$key] = $value;
@@ -508,7 +638,6 @@ class send
 			}
 		}
 
-		$result = \dash\app::ready($result);
 
 		return $result;
 	}

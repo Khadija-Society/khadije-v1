@@ -4,41 +4,26 @@
 {%block pageContent%}
 
 <div class="f justify-center">
-  <div class="c8 s12">
+  <div class="c6 s12">
     <div class="cbox">
-        <h2>فرایند ثبت اعزام شخص</h2>
-        <div class="msg primary2">
-          <div class="f">
-            <div class="cauto s6">
-                <img class="avatar" src="{{userDetail.avatar}}" >
-            </div>
-            <div class="cauto mLR10 s6">{%trans cityPlace%}</div>
-            <div class="c s6">
-              {%set myJob = requestGET.job | capitalize%}
-              {%set myCity = requestGET.city%}
-              <span class="fc-mute">{%trans myJob%}</span>
-              {{userDetail.firstname}}
-              <b>{{userDetail.lastname}}</b>
-            </div>
-            <div class="c">{{userDetail.mobile  | fitNumber('mobile')}}</div>
-            <div class="c s6">{%trans "To city"%} <b>{%trans myCity%}</b></div>
-          </div>
-        </div>
+        <h2>ثبت اعزام جدید</h2>
 
         <form method="post" autocomplete="off">
-          {%if placeList%}
-          <label for='place'>{%trans "Agent Place"%}</label>
-          <select name="place" class="select ui dropdown search" id="place">
-            <option value="">{%trans "Please select one item"%}</option>
-            {%for key, value in placeList%}
-              <option value="{{value.id}}">{{value.title}}</option>
-            {%endfor%}
-          </select>
-          {%else%}
-          <div class="msg warn2">هیچ مکانی متناسب با شرایط اعزام ایشان یافت نشد!</div>
-          {%endif%}
 
+
+          {{block('iCity')}}
+          {{block('iZaerSara')}}
+
+          {{block('iRohani')}}
           <div class="f">
+            <div class="c">{{block('imodir')}}</div>
+            <div class="cauto mLa5 mT20"><span data-kerkere='.addUserForm' class="btn outline mT15"><span class="fs18">+</span></span></div>
+          </div>
+          {{block('iAddUserForm')}}
+
+          {{block('inegahban')}}
+          {{block('imoballeqe')}}
+          <div class="f mT20">
 
             <div class="c6 s12 mB5">
               <div class="input ltr">
@@ -55,7 +40,7 @@
 
           </div>
           <div class="txtRa">
-            <button class="btn success mT10">{%trans "Save dispatch servant"%}</button>
+            <button class="btn success mT10">ثبت اعزام جدید</button>
           </div>
 
 
@@ -68,5 +53,154 @@
 </div>
 {%endblock%}
 
+
+
+{%block iAddUserForm%}
+<div class="addUserForm example" data-kerkere-content='hide'>
+  <h6>افزودن سریع مدیر کاروان</h6>
+  <div class="input mT5">
+    <input type="tel" name="memberTl" id="memberTl" placeholder='{%trans "Mobile"%} {%trans "Like"%} {{"09120123456" | fitNumber("mobile")}}' autofocus value="{{dataRow.mobile}}" maxlength='30' data-response-realtime>
+  </div>
+
+    <select name="memberGender" id="memberGender" class="ui dropdown select mT5">
+      <option value="" disabled>{%trans "Gender"%}</option>
+      <option value="0">-</option>
+      <option value="male" {%if dataRow.gender == 'male' %}selected {%endif%}>{%trans "Mr"%}</option>
+      <option value="female" {%if dataRow.gender == 'female' %}selected{%endif%}>{%trans "Mrs"%}</option>
+    </select>
+
+  <div class="input mT5">
+    <input type="text" name="memberN" id="memberN" placeholder='{%trans "Name"%}' value="{{dataRow.displayname}}" maxlength='40' minlength="1">
+  </div>
+
+</div>
+{%endblock%}
+
+
+{%block iCity%}
+<div class="f">
+  <div class="c">
+    <div class="radio3">
+      <input type="radio" name="city" value="qom" id="qom">
+      <label for="qom">{%trans "Qom"%}</label>
+    </div>
+  </div>
+
+  <div class="c mLa5">
+    <div class="radio3">
+      <input type="radio" name="city" value="mashhad" id="mashhad">
+      <label for="mashhad">{%trans "Mashhad"%}</label>
+    </div>
+  </div>
+
+  <div class="c mLa5">
+    <div class="radio3">
+      <input type="radio" name="city" value="karbala" id="karbala">
+      <label for="karbala">{%trans "Karbala"%}</label>
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+
+{%block iZaerSara%}
+<h6 class='mT10'>زائر سرا</h6>
+
+{%if placeList%}
+<select name="place" class="select ui dropdown search" id="place">
+  <option value="">{%trans "Please select one item"%}</option>
+  {%for key, value in placeList%}
+    <option value="{{value.id}}">{{value.title}}</option>
+  {%endfor%}
+</select>
+{%else%}
+<div class="msg warn2">هیچ مکانی متناسب با شرایط اعزام ایشان یافت نشد!</div>
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block iRohani%}
+<h6 class="mT10">روحانی کاروان</h6>
+
+{%if RohaniList%}
+
+<select name="rohani" class="select ui dropdown search" id="rohani">
+  <option value="">{%trans "Please select one item"%}</option>
+  {%for key, value in RohaniList%}
+    <option value="{{value.user_id}}">{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+  {%endfor%}
+</select>
+{%else%}
+<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+{%endif%}
+
+{%endblock%}
+
+
+
+
+
+{%block imodir%}
+<h6 class="mT10">مدیر کاروان</h6>
+
+{%if modirList%}
+
+<select name="modir" class="select ui dropdown search" id="modir">
+  <option value="">{%trans "Please select one item"%}</option>
+  {%for key, value in modirList%}
+    <option value="{{value.user_id}}">{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+  {%endfor%}
+</select>
+{%else%}
+<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block inegahban%}
+<h6 class="mT10">نگهبان زائرسرا</h6>
+
+{%if negahbanList%}
+
+<select name="negahban" class="select ui dropdown search" id="negahban">
+  <option value="">{%trans "Please select one item"%}</option>
+  {%for key, value in negahbanList%}
+    <option value="{{value.user_id}}">{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+  {%endfor%}
+</select>
+{%else%}
+<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+{%endif%}
+
+{%endblock%}
+
+
+
+
+
+
+{%block imoballeqe%}
+<h6 class="mT10">مبلغ کاروان</h6>
+
+{%if moballeqeList%}
+
+<select name="moballeq" class="select ui dropdown search" id="moballeq">
+  <option value="">{%trans "Please select one item"%}</option>
+  {%for key, value in moballeqeList%}
+    <option value="{{value.user_id}}">{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+  {%endfor%}
+</select>
+{%else%}
+<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+{%endif%}
+
+{%endblock%}
 
 

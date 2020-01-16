@@ -12,7 +12,7 @@ class view
 
 		\dash\data::page_pictogram('tools');
 
-		\dash\data::badge_link(\dash\url::here(). '/servant');
+		\dash\data::badge_link(\dash\url::this(). '/add');
 		\dash\data::badge_text(T_('Add new send'));
 
 		$search_string            = \dash\request::get('q');
@@ -60,6 +60,7 @@ class view
 
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);
+
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);
