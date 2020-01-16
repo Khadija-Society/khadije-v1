@@ -8,9 +8,12 @@ class model
 	{
 		$post =
 		[
-			'member' => \dash\request::post('member'),
-			'job'    => \dash\request::post('job'),
-			'city'   => \dash\request::post('city'),
+			'member'      => \dash\request::post('member'),
+			'job'         => \dash\request::post('job'),
+			'city'        => \dash\request::post('city'),
+			'mobile'      => \dash\request::post('memberTl'),
+			'gender'      => \dash\request::post('memberGender'),
+			'displayname' => \dash\request::post('memberN'),
 		];
 
 		$result = \lib\app\servant::add($post);

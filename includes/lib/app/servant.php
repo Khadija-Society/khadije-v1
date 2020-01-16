@@ -15,13 +15,25 @@ class servant
 
 	public static function add($_args = [])
 	{
-		\dash\app::variable($_args);
 
 		if(!\dash\user::id())
 		{
 			\dash\notif::error(T_("User not found"), 'user');
 			return false;
 		}
+
+
+		if(isset($_args['mobile']) && $_args['mobile'])
+		{
+
+			$user_id = \dash\app\user::add($_args);
+			if(isset($user_id['id']))
+			{
+				$_args['member'] = $user_id['id'];
+			}
+		}
+
+		\dash\app::variable($_args);
 
 		// check args
 		$args = self::check();

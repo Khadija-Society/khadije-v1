@@ -5,7 +5,13 @@
   <div class="justify-center f">
    <form method="post" class="c5 m6 s12" autocomplete="off">
     <div class="cbox">
-     {{block('iMemberList')}}
+      <div class="f">
+        <div class="c">{{block('iMemberList')}}</div>
+        <div class="cauto mLa5 mT20"><span data-kerkere='.addUserForm' class="btn outline"><span class="fs18">+</span></span></div>
+      </div>
+
+
+     {{block('iAddUserForm')}}
      {{block('iCity')}}
      {{block('iJob')}}
      {{block('iadd')}}
@@ -14,6 +20,27 @@
   </div>
 {%endblock%}
 
+
+{%block iAddUserForm%}
+<div class="addUserForm example" data-kerkere-content='hide'>
+  <h6>{%trans "Add new user"%}</h6>
+  <div class="input mT5">
+    <input type="tel" name="memberTl" id="memberTl" placeholder='{%trans "Mobile"%} {%trans "Like"%} {{"09120123456" | fitNumber("mobile")}}' autofocus value="{{dataRow.mobile}}" maxlength='30' data-response-realtime>
+  </div>
+
+    <select name="memberGender" id="memberGender" class="ui dropdown select mT5">
+      <option value="" disabled>{%trans "Gender"%}</option>
+      <option value="0">-</option>
+      <option value="male" {%if dataRow.gender == 'male' %}selected {%endif%}>{%trans "Mr"%}</option>
+      <option value="female" {%if dataRow.gender == 'female' %}selected{%endif%}>{%trans "Mrs"%}</option>
+    </select>
+
+  <div class="input mT5">
+    <input type="text" name="memberN" id="memberN" placeholder='{%trans "Name"%}' value="{{dataRow.displayname}}" maxlength='40' minlength="1">
+  </div>
+
+</div>
+{%endblock%}
 
 
 
@@ -61,4 +88,8 @@
 {%block iadd%}
 <button class="btn primary block mT20">{%trans "Add"%}</button>
 {%endblock%}
+
+
+
+
 
