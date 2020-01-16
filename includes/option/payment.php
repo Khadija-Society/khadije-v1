@@ -1,6 +1,6 @@
 <?php
 
-self::$config['default_payment']                  = 'parsian';
+self::$config['default_payment']                  = 'asanpardakht';
 
 self::$config['zarinpal']['status']               = true;
 self::$config['zarinpal']['MerchantID']           = "6df6881c-f054-11e7-b904-000c295eb8fc";
