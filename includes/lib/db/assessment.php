@@ -4,6 +4,32 @@ namespace lib\db;
 class assessment
 {
 
+	public static function get_avg_group($_send_id)
+	{
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				AVG(agent_assessment.percent) AS `avg`,
+				SUM(agent_assessment.score) AS `score`,
+				MAX(agent_assessment.job_for) AS `job`,
+				agent_assessment.assessment_for,
+				users.displayname,
+				users.mobile,
+				users.avatar
+
+			FROM
+				agent_assessment
+			LEFT JOIN users ON users.id = agent_assessment.assessment_for
+			WHERE
+				agent_assessment.send_id = $_send_id
+			GROUP BY agent_assessment.assessment_for
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 	public static function get_list($_job, $_city)
 	{
 		$query  =

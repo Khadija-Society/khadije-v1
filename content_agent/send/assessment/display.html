@@ -9,102 +9,49 @@
   <div class="c8 s12">
     <div class="cbox">
 
+
         <table class="tbl1 v4">
           <thead>
             <tr>
-              <th>نوع ارزیابی</th>
+              <th colspan="2" class="collapsing">ارزیابی</th>
+
               <th>امتیاز کسب شده</th>
               <th>درصد</th>
-              <th>جزئیات</th>
+              <th class="collapsing">جزئیات</th>
             </tr>
           </thead>
           <tbody>
 
-
+            {%for key ,value in assessmentList%}
             <tr>
-              <td>ارزیابی <b class="mLR10">مدیر زائرسرا</b> از <b class="mLR10">مدیر کاروان</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn success xs" href="{{url.this}}/assessmentadd?id={{requestGET.id}}&job=adminoffice&forjob=admin">ثبت ارزیابی</a></td>
+               <td class="collapsing" rowspan="4"><b class="mLR10">{{value.title}}</b> از</td>
             </tr>
-
+              {%for k, v in value.list%}
+                <tr>
+                  <td><b class="mLR10">{{v.job_for}}</b></td>
+                  <td>{%if v.data.score%}{{v.data.score | fitNumber}}{%else%}-{%endif%}</td>
+                  <td>{%if v.data.percent%}{{v.data.percent | fitNumber}}{%trans "%"%}{%else%}-{%endif%}</td>
+                  <td class="collapsing">
+                    {%if v.data.id%}
+                      <a class="btn success xs" href="{{url.this}}/assessmentadd?id={{requestGET.id}}&assessment_id={{v.data.id | coding('encode')}}">نمایش ارزیابی</a>
+                    {%else%}
+                      <a class="btn primary xs" href="{{url.this}}/assessmentadd?id={{requestGET.id}}&job={{v.ejob}}&forjob={{v.ejob_for}}">ثبت ارزیابی</a>
+                    {%endif%}
+                  </td>
+                </tr>
+              {%endfor%}
               <tr>
-              <td>ارزیابی <b class="mLR10">مدیر زائرسرا</b> از <b class="mLR10">مبلغ</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
+                <td colspan="5"></td>
+              </tr>
+              {%if false%}
+                <tr>
+                  <td></td>
+                  <td colspan="2" >میانگین درصد کسب شده <b>17%</b></td>
+                  <td colspan="2" >مجموع امتیاز کسب شده <b>12</b></td>
+                </tr>
+              {%endif%}
 
-              <tr>
-              <td>ارزیابی <b class="mLR10">مدیر زائرسرا</b> از <b class="mLR10">نگهبان</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-             <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر کاروان</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-              <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر زائرسرا</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-              <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">نگهبان</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-              <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر کاروان</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-              <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر زائرسرا</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-              <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">نگهبان</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-              <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر کاروان</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-              <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر زائرسرا</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
-              <tr>
-              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">نگهبان</b></td>
-              <td>امتیاز 45</td>
-              <td>70٪</td>
-              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
-            </tr>
-
+            {%endfor%}
 
 
           </tbody>

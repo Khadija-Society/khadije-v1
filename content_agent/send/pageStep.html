@@ -39,11 +39,21 @@
     </a>
    </div>
 
+
+     <div class="c s6">
+    <a class="dcard {%if url.child == 'summary' %}active{%endif%}" href='{{url.this}}/summary?id={{requestGET.id}}'>
+     <div class="statistic">
+      <div class="value"><i class="sf-atom"></i></div>
+      <div class="label">خلاصه ارزیابی</div>
+     </div>
+    </a>
+   </div>
+
     <div class="c s6">
     <a class="dcard {%if url.child == 'assessment' %}active{%endif%}" href='{{url.this}}/assessment?id={{requestGET.id}}'>
      <div class="statistic">
       <div class="value"><i class="sf-search"></i></div>
-      <div class="label">{%trans "Assessment"%}</div>
+      <div class="label">جزئیات ارزیابی</div>
      </div>
     </a>
    </div>

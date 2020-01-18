@@ -89,6 +89,18 @@ class model
 				return false;
 			}
 
+			if(!$assessment['job'])
+			{
+				\dash\notif::error(T_("job not found"));
+				return false;
+			}
+
+			if(!$assessment['job_for'])
+			{
+				\dash\notif::error(T_("for job not found"));
+				return false;
+			}
+
 			$check_assessment_detail =
 			[
 				'assessmentor'   => $assessment['assessmentor'],
@@ -172,9 +184,8 @@ class model
 
 		$update_assessment =
 		[
-			'assessmentdate' => $assessment['assessmentdate'],
-			'assessmentor'   => $assessment['assessmentor'],
-			'assessmentdesc' => $assessment['assessmentdesc'],
+			'assessmentdate' => date("Y-m-d H:i:s"),
+			'assessmentdesc' => \dash\request::post('desc'),
 			'score'          => $score,
 			'percent'        => $percent,
 		];
@@ -184,7 +195,7 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-
+			\dash\notif::ok(T_("Data saved"));
 			\dash\redirect::to(\dash\url::that(). '?id='. \dash\request::get('id'). '&assessment_id='. \dash\coding::encode($assessment_id));
 		}
 	}

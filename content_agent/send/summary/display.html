@@ -1,0 +1,47 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%include 'content_agent/send/pageStep.html'%}
+
+
+<div class="f justify-center">
+  <div class="c8 s12">
+    <div class="cbox">
+
+        {%for key, value in summaryList%}
+          <div class="msg">
+            <div class="f txtC">
+              <div class="c12">
+                <h6>خلاصه عملکرد {{value.job}} {{value.displayname}}</h6>
+
+              </div>
+            </div>
+            <div class="f">
+              <div class="cauto">
+                <img src="{{value.avatar}}" class="avatar fs20">
+
+              </div>
+              <div class="c mLa5">
+                <div class="block">تعداد ارزیابی‌ها  <span class="txtB">{{value.count | fitNumber}}</span></div>
+                <div class="block">جمع امتیازات <span class="txtB">{{value.score | fitNumber}}</span></div>
+                <div class="block">میانگین درصد امتیاز کسب شده  <span class="txtB">{{value.avg | fitNumber}}٪</span></div>
+              </div>
+
+            </div>
+
+             <div class="f">
+               <div class="progress" data-percent='{{value.avg}}'>
+                <div class="bar"></div>
+               </div>
+              </div>
+          </div>
+        {%endfor%}
+
+
+
+    </div>
+  </div>
+</div>
+
+{%endblock%}
