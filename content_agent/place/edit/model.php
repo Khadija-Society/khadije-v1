@@ -6,7 +6,7 @@ class model
 {
 	public static function post()
 	{
-		\dash\permission::access('mPlaceEdit');
+		// \dash\permission::access('mPlaceEdit');
 
 		$post =
 		[

@@ -8,7 +8,7 @@ class view extends \content_agent\send\add\view
 	{
 		parent::config();
 
-		\dash\permission::access('agentServantProfileView');
+		// \dash\permission::access('agentServantProfileView');
 		\dash\data::page_title(T_("Servant Profile"));
 
 		\dash\data::page_pictogram('tools');

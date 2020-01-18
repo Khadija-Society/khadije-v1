@@ -6,13 +6,13 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('ContentMokebAddPlace');
+		// \dash\permission::access('ContentMokebAddPlace');
 
 		\dash\data::page_title(T_("places list"));
 
 		\dash\data::page_pictogram('box');
 
-		if(\dash\permission::check('mPlaceAdd'))
+		if(// \dash\permission::check('mPlaceAdd'))
 		{
 			\dash\data::badge_link(\dash\url::this(). '/add');
 			\dash\data::badge_text(T_('Add new place'));

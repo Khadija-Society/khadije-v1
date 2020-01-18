@@ -6,7 +6,7 @@ class controller
 {
 	public static function routing()
 	{
-		\dash\permission::access('aSkillsEdit');
+		// \dash\permission::access('aSkillsEdit');
 	}
 }
 ?>

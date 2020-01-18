@@ -6,7 +6,7 @@ class controller
 {
 	public static function routing()
 	{
-		\dash\permission::access('ContentMokebEditAssessmentitem');
+		// \dash\permission::access('ContentMokebEditAssessmentitem');
 
 		$id = \dash\request::get('id');
 

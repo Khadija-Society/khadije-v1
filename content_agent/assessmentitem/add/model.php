@@ -6,7 +6,7 @@ class model
 {
 	public static function post()
 	{
-		\dash\permission::access('mAssessmentitemAdd');
+		// \dash\permission::access('mAssessmentitemAdd');
 
 		$post =
 		[

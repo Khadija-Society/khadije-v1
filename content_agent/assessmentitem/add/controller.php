@@ -6,7 +6,7 @@ class controller
 {
 	public static function routing()
 	{
-		\dash\permission::access('ContentMokebAddAssessmentitem');
+		// \dash\permission::access('ContentMokebAddAssessmentitem');
 	}
 }
 ?>
