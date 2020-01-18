@@ -499,5 +499,10 @@
     "require": [
       "contentCp"
     ]
+  },
+  "contentAgent": {
+    "title": "contentAgent",
+    "cat": "Agent",
+    "require": []
   }
 }
