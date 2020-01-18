@@ -11,13 +11,13 @@
 
       <div class="msg txtC">
         مجموع امتیازات کسب شده در این ارزشیابی
-        <b class="fs12">{{sendDetail.score | fitNumber}} <small>{%trans "Score"%}</small></b>
+        <b class="fs12">{{dataRow.score | fitNumber}} <small>{%trans "Score"%}</small></b>
         <br>
 
-        <b class="fs12">{{sendDetail.percent | fitNumber}} {%trans "%"%}</b>
+        <b class="fs12">{{dataRow.percent | fitNumber}} {%trans "%"%}</b>
 
         <div class="f">
-         <div class="progress" data-percent='{{sendDetail.percent}}'>
+         <div class="progress" data-percent='{{dataRow.percent}}'>
           <div class="bar"></div>
          </div>
         </div>
@@ -65,7 +65,7 @@
           </table>
 
           <label for="desc">{%trans "Description"%}</label>
-          <textarea class="txt mB10" id='desc' name="desc" placeholder='{%trans "Description"%}' maxlength='500' rows="5">{{sendDetail.assessmentdesc}}</textarea>
+          <textarea class="txt mB10" id='desc' name="desc" placeholder='{%trans "Description"%}' maxlength='500' rows="5">{{dataRow.assessmentdesc}}</textarea>
 
           <div class="txtRa">
             <button class="btn pain">{%trans "Save"%}</button>

@@ -38,9 +38,6 @@ class model
 
         }
 
-		$send_id = \dash\coding::decode(\dash\request::get('id'));
-
-
 		$update_send =
 		[
 			'payamount' => \dash\request::post('payamount'),

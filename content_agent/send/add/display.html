@@ -137,7 +137,7 @@
 <select name="rohani" class="select ui dropdown search" id="rohani">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in RohaniList%}
-    <option value="{{value.user_id}}" {%if dataRow.clergy_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.clergy_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
@@ -158,7 +158,7 @@
 <select name="modir" class="select ui dropdown search" id="modir">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in modirList%}
-    <option value="{{value.user_id}}" {%if dataRow.admin_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.admin_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
@@ -179,7 +179,7 @@
 <select name="servant" class="select ui dropdown search" id="servant">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in servantList%}
-    <option value="{{value.user_id}}" {%if dataRow.servant_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.servant_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
@@ -199,7 +199,7 @@
 <select name="negahban" class="select ui dropdown search" id="negahban">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in negahbanList%}
-    <option value="{{value.user_id}}" {%if dataRow.adminoffice_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.adminoffice_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
@@ -221,7 +221,7 @@
 <select name="moballeq" class="select ui dropdown search" id="moballeq">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in moballeqeList%}
-    <option value="{{value.user_id}}" {%if dataRow.missionary_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.missionary_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}

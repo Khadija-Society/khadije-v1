@@ -11,10 +11,11 @@ class view
 
 		\dash\data::page_pictogram('magic');
 
-		$user_id = \dash\data::sendDetail_user_id();
-		if($user_id)
+		$missionary_id = \dash\data::dataRow_missionary_id();
+
+		if($missionary_id)
 		{
-			$userDetail = \dash\app\user::get($user_id);
+			$userDetail = \dash\app\user::get($missionary_id);
 			\dash\data::userDetail($userDetail);
 
 		}
@@ -25,20 +26,20 @@ class view
 
 	private static function tempText()
 	{
-		$payamount = \dash\data::sendDetail_payamount();
+		$payamount = \dash\data::dataRow_payamount();
 
 		if(!$payamount)
 		{
 			return;
 		}
 
-		$displayname = \dash\data::sendDetail_displayname() ? \dash\data::sendDetail_displayname() : '';
-		$firstname   = \dash\data::sendDetail_firstname() ? \dash\data::sendDetail_firstname() : '';
-		$lastname    = \dash\data::sendDetail_lastname() ? \dash\data::sendDetail_lastname() : '';
-		$paydate     = \dash\data::sendDetail_paydate() ? \dash\data::sendDetail_paydate() : '';
-		$paybank     = \dash\data::sendDetail_paybank() ? \dash\data::sendDetail_paybank() : '';
-		$paytype     = \dash\data::sendDetail_paytype() ? \dash\data::sendDetail_paytype() : '';
-		$paynumber   = \dash\data::sendDetail_paynumber() ? \dash\data::sendDetail_paynumber() : '';
+		$displayname = \dash\data::dataRow_missionary_displayname() ? \dash\data::dataRow_missionary_displayname() : '';
+		$firstname   = \dash\data::dataRow_missionary_firstname() ? \dash\data::dataRow_missionary_firstname() : '';
+		$lastname    = \dash\data::dataRow_missionary_lastname() ? \dash\data::dataRow_missionary_lastname() : '';
+		$paydate     = \dash\data::dataRow_paydate() ? \dash\data::dataRow_paydate() : '';
+		$paybank     = \dash\data::dataRow_paybank() ? \dash\data::dataRow_paybank() : '';
+		$paytype     = \dash\data::dataRow_paytype() ? \dash\data::dataRow_paytype() : '';
+		$paynumber   = \dash\data::dataRow_paynumber() ? \dash\data::dataRow_paynumber() : '';
 
 		$payamount = \dash\utility\human::fitNumber($payamount);
 		$paynumber = \dash\utility\human::fitNumber($paynumber, false);
@@ -48,23 +49,44 @@ class view
 		$tempText .= " مبلغ ";
 		$tempText .= $payamount;
 		$tempText .= " تومان ";
-		$tempText .= " در تاریخ ";
-		$tempText .= \dash\utility\jdate::date("l j F Y", $paydate);
-		$tempText .= " به ";
-		$tempText .= $paytype;
-		$tempText .= " شماره ";
-		$tempText .= $paynumber;
-		$tempText .= " نزد بانک ";
-		$tempText .= $paybank;
-		$tempText .= " واریز شد. ";
-		$tempText .= " نام صاحب حساب ";
-		if($firstname || $lastname)
+
+		if($paydate)
 		{
-			$tempText .= $firstname. ' '. $lastname;
+			$tempText .= " در تاریخ ";
+			$tempText .= \dash\utility\jdate::date("l j F Y", $paydate);
 		}
-		else
+
+		if($paybank || $paynumber)
 		{
-			$tempText .= $displayname;
+			$tempText .= " به ";
+		}
+
+		$tempText .= $paytype;
+		if($paynumber)
+		{
+			$tempText .= " شماره ";
+			$tempText .= $paynumber;
+		}
+
+		if($paybank)
+		{
+			$tempText .= " نزد بانک ";
+			$tempText .= $paybank;
+		}
+		$tempText .= " پراخت شد. ";
+
+		if($paynumber && $paybank)
+		{
+
+			$tempText .= " نام صاحب حساب ";
+			if($firstname || $lastname)
+			{
+				$tempText .= $firstname. ' '. $lastname;
+			}
+			else
+			{
+				$tempText .= $displayname;
+			}
 		}
 
 		\dash\data::tempText($tempText);

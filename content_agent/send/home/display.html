@@ -77,27 +77,27 @@
          <td class="collapsing">
           <img src="{{value.adminoffice_avatar}}" class="avatar">
           <b>{{value.adminoffice_displayname}}<b>
-          <span class="badge light">{{value.adminoffice_mobile | fitNumber('mobile')}}</span>
+          <span class="badge light">{{value.adminoffice_mobile | fitNumber(false)}}</span>
         </td>
 
          <td class="collapsing">
           <img src="{{value.admin_avatar}}" class="avatar">
           <b>{{value.admin_displayname}}<b>
-          <span class="badge light">{{value.admin_mobile | fitNumber('mobile')}}</span>
+          <span class="badge light">{{value.admin_mobile | fitNumber(false)}}</span>
         </td>
 
 
          <td class="collapsing">
           <img src="{{value.missionary_avatar}}" class="avatar">
           <b>{{value.missionary_displayname}}<b>
-          <span class="badge light">{{value.missionary_mobile | fitNumber('mobile')}}</span>
+          <span class="badge light">{{value.missionary_mobile | fitNumber(false)}}</span>
         </td>
 
 
         <td class="collapsing">
           <img src="{{value.servant_avatar}}" class="avatar">
           <b>{{value.servant_displayname}}<b>
-          <span class="badge light">{{value.servant_mobile | fitNumber('mobile')}}</span>
+          <span class="badge light">{{value.servant_mobile | fitNumber(false)}}</span>
         </td>
 
         <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>

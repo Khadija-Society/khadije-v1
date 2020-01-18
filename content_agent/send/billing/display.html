@@ -9,11 +9,14 @@
   <div class="c8 s12">
     <div class="cbox">
 
+          {%if userDetail.displayname%}
+          <h2> ثبت پرداخت تبرکی به {{userDetail.displayname}}</h2>
+          {%endif%}
         <form method="post" autocomplete="off">
 
           <label for="payamount">{%trans "Pay amount"%}</label>
           <div class="input">
-            <input type="number" name="payamount" id="payamount" placeholder='{%trans "Pay amount"%} | {%trans "Toman"%} * ' autofocus value="{{sendDetail.payamount}}" required max='999999999' min="0" pattern=".{1,150}"  data-response-realtime>
+            <input type="number" name="payamount" id="payamount" placeholder='{%trans "Pay amount"%} | {%trans "Toman"%} * ' autofocus value="{{dataRow.payamount}}"  max='999999999' min="0" pattern=".{1,150}"  data-response-realtime>
           </div>
           {%if lang.current == 'fa'%}
           <div class="msg info2 txtB" data-response='payamount' data-response-call='wordifyResponse'></div>
@@ -22,11 +25,12 @@
 
           <div class="mB5">
            <div class="input ltr">
-            <input class="datepicker" type="text" name="paydate" placeholder='{%trans "Pay date"%}' id="paydate"  value="{{sendDetail.paydate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
+            <input class="datepicker" type="text" name="paydate" placeholder='{%trans "Pay date"%}' id="paydate"  value="{{dataRow.paydate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
             </div>
           </div>
 
-          {%if not sendDetail.paybank and not sendDetail.paynumber and not sendDetail.paytype %}
+
+          {%if not dataRow.paybank and not dataRow.paynumber and not dataRow.paytype %}
             <h3>واریز به</h3>
             {%if userDetail.bank and (userDetail.hesab or userDetail.shaba or userDetail.card)%}
               {%if userDetail.hesab%}
@@ -51,6 +55,11 @@
               </div>
               {%endif%}
 
+               <div class="radio3 mB10">
+                <input type="radio" name="bank" value="_نقدی_" id="naqdi">
+                <label for="naqdi">پرداخت نقدی</label>
+              </div>
+
               <div class="radio3 mB10">
                 <input type="radio" name="bank" value="bankother" id="bankother">
                 <label for="bankother">{%trans "Other"%}</label>
@@ -70,7 +79,7 @@
 
 
           <label for="desc">{%trans "Gift"%}</label>
-          <textarea class="txt mB10" id='desc' name="desc" placeholder='اگر پرداخت غیر نقدی صورت گرفته است یا هدیه‌ای پرداخت شده است ذکر کنید' maxlength='500' rows="5">{{sendDetail.gift}}</textarea>
+          <textarea class="txt mB10" id='desc' name="desc" placeholder='اگر پرداخت غیر نقدی صورت گرفته است یا هدیه‌ای پرداخت شده است ذکر کنید' maxlength='500' rows="5">{{dataRow.gift}}</textarea>
 
           <div class="txtRa">
             <button class="btn pain">{%trans "Save"%}</button>
@@ -81,7 +90,7 @@
         <div class="mT50">
 
           <label>متن آماده برای کپی در شرح تراکنش‌ها</label>
-          <textarea class="txt" id='desc' name="tempText"  maxlength='500' rows="5" readonly>{{tempText}}</textarea>
+          <textarea class="txt" id='desc' name="tempText"  maxlength='500' rows="2" readonly>{{tempText}}</textarea>
         </div>
         {%endif%}
     </div>
@@ -94,12 +103,12 @@
 {%block addNew%}
 <label for="paybank">{%trans "Bank"%}</label>
 <div class="input">
-  <input type="text" name="paybank" id="paybank" placeholder='{%trans "Enter bank name"%}' value="{{sendDetail.paybank}}" autofocus  maxlength='200' minlength="1">
+  <input type="text" name="paybank" id="paybank" placeholder='{%trans "Enter bank name"%}' value="{{dataRow.paybank}}" autofocus  maxlength='200' minlength="1">
 </div>
 
 <label for="paytype">{%trans "Pay type"%}</label>
 <div class="input">
-  <input type="text" name="paytype" id="paytype" placeholder='{%trans "Enter bank name"%}' value="{{sendDetail.paytype}}" autofocus  maxlength='200' minlength="1">
+  <input type="text" name="paytype" id="paytype" placeholder='{%trans "Enter bank name"%}' value="{{dataRow.paytype}}" autofocus  maxlength='200' minlength="1">
 </div>
 
 
@@ -107,6 +116,6 @@
 
 <label for="paynumber">{%trans "Account Number"%}/ {%trans "Card Number"%}/{%trans "Shaba"%}</label>
 <div class="input">
-  <input type="number" name="paynumber" id="paynumber" placeholder='{%trans "Enter account number"%}' value="{{sendDetail.paynumber}}"   max=99999999999999999999999999999999999 min="1">
+  <input type="number" name="paynumber" id="paynumber" placeholder='{%trans "Enter account number"%}' value="{{dataRow.paynumber}}"   max=99999999999999999999999999999999999 min="1">
 </div>
 {%endblock%}

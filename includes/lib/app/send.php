@@ -323,11 +323,11 @@ class send
 				$paydate = \dash\utility\jdate::to_gregorian($paydate);
 			}
 
-			if(!$paydate)
-			{
-				\dash\notif::error(T_("Pay date is required"), 'paydate');
-				return false;
-			}
+			// if(!$paydate)
+			// {
+			// 	\dash\notif::error(T_("Pay date is required"), 'paydate');
+			// 	return false;
+			// }
 
 		}
 
@@ -336,9 +336,9 @@ class send
 		if(\dash\app::isset_request('payamount'))
 		{
 			$payamount                 = \dash\utility\convert::to_en_number($payamount);
-			if(!is_numeric($payamount))
+			if($payamount && !is_numeric($payamount))
 			{
-				\dash\notif::error(T_("Please set amount as a number"), 'payamount');
+				\dash\notif::error(T_("Please set data as a number"), 'payamount');
 				return false;
 			}
 
@@ -579,10 +579,8 @@ class send
 		if(!\dash\app::isset_request('job')) unset($args['job']);
 		if(!\dash\app::isset_request('startdate')) unset($args['startdate']);
 		if(!\dash\app::isset_request('enddate')) unset($args['enddate']);
-		if(!\dash\app::isset_request('assessmentdate')) unset($args['assessmentdate']);
-		if(!\dash\app::isset_request('assessmentor')) unset($args['assessmentor']);
-		if(!\dash\app::isset_request('assessmentdesc')) unset($args['assessmentdesc']);
-		if(!\dash\app::isset_request('score')) unset($args['score']);
+
+
 		if(!\dash\app::isset_request('paydate')) unset($args['paydate']);
 		if(!\dash\app::isset_request('payamount')) unset($args['payamount']);
 		if(!\dash\app::isset_request('paybank')) unset($args['paybank']);
