@@ -61,8 +61,12 @@ CREATE TABLE `agent_place` (
 `city` enum('qom', 'mashhad', 'karbala', 'other') NULL DEFAULT NULL,
 `sort` int(10) UNSIGNED NULL DEFAULT NULL,
 `status` enum('enable', 'disable', 'deleted')  NULL DEFAULT NULL,
+`adminoffice_id` int(10) UNSIGNED NULL DEFAULT NULL,
+`servant_id` int(10) UNSIGNED NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
-PRIMARY KEY (`id`)
+PRIMARY KEY (`id`),
+CONSTRAINT `agent_place_adminoffice_id` FOREIGN KEY (`adminoffice_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_place_servant_id` FOREIGN KEY (`servant_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
