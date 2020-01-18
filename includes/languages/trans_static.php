@@ -293,6 +293,8 @@ class TransStatic
 	echo T_("clergy");
 	echo T_("Clergy");
 	echo T_("Missionary");
+	echo T_("Adminoffice");
+	echo T_("adminoffice");
 	echo T_("missionary");
 	echo T_("Servant");
 	echo T_("servant");
