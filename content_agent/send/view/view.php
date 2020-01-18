@@ -11,6 +11,9 @@ class view
 
 		\dash\data::page_pictogram('magic');
 
+		\content_agent\send\billing\view::tempText();
+
+
 	}
 }
 ?>

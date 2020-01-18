@@ -24,7 +24,7 @@ class view
 	}
 
 
-	private static function tempText()
+	public static function tempText()
 	{
 		$payamount = \dash\data::dataRow_payamount();
 

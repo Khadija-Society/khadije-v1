@@ -3,10 +3,88 @@
 
 {%block pageContent%}
 {%include 'content_agent/send/pageStep.html'%}
-<pre>
 
-{{dataRow |dump}}
-</pre>
+<div class="f justify-center">
+	<div class="c9">
+		<div class="cbox">
+			<table class="tbl1 v4">
+				<tbody>
+
+					<tr>
+						<td>زائرسرا</td>
+						<td>{{dataRow.place_title}}</td>
+					</tr>
+
+					<tr>
+						<td>مدیرکاروان</td>
+						<td>
+							<div class="f">
+								<div class="cauto"><img src="{{dataRow.admin_avatar}}" class="avatar"></div>
+								<div class="c mLa5">{{dataRow.admin_displayname}}</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>مبلغ</td>
+						<td>
+							<div class="f">
+								<div class="cauto"><img src="{{dataRow.missionary_avatar}}" class="avatar"></div>
+								<div class="c mLa5">{{dataRow.missionary_displayname}}</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>مسئول زائرسرا</td>
+						<td>
+							<div class="f">
+								<div class="cauto"><img src="{{dataRow.adminoffice_avatar}}" class="avatar"></div>
+								<div class="c mLa5">{{dataRow.adminoffice_displayname}}</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>نگهبان</td>
+						<td>
+							<div class="f">
+								<div class="cauto"><img src="{{dataRow.servant_avatar}}" class="avatar"></div>
+								<div class="c mLa5">{{dataRow.servant_displayname}}</div>
+							</div>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>شهر</td>
+						<td>{%set myCity = dataRow.city %}{%trans myCity%}</td>
+					</tr>
+
+
+					<tr>
+						<td>تاریخ شروع</td>
+						<td>{{dataRow.startdate | dt(null, 'date')}}</td>
+					</tr>
+
+					<tr>
+						<td>تاذیخ پایان</td>
+						<td>{{dataRow.enddate | dt(null, 'date')}}</td>
+					</tr>
+
+
+					{%if tempText%}
+					<tr>
+						<td><div class="link" data-copy='#paytext'> <i class="sf-link"></i> پرداخت وجه</div></td>
+						<td><textarea type="text" id="paytext" class="txt" readonly  rows="2">{{tempText}}</textarea></td>
+					</tr>
+					{%endif%}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 
 
 {%endblock%}

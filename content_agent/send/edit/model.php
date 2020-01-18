@@ -23,10 +23,10 @@ class model
 			'gender'      => \dash\request::post('memberGender'),
 			'displayname' => \dash\request::post('memberN'),
 
-			'clergy'      => \dash\request::post('rohani'),
-			'admin'       => \dash\request::post('modir'),
-			'adminoffice'    => \dash\request::post('negahban'),
-			'missionary'    => \dash\request::post('moballeq'),
+			'clergy'      => \dash\request::post('clergy'),
+			'admin'       => \dash\request::post('admin'),
+			'adminoffice'    => \dash\request::post('adminoffice'),
+			'missionary'    => \dash\request::post('missionary'),
 			'servant'    => \dash\request::post('servant'),
 		];
 
