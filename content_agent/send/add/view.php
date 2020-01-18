@@ -64,6 +64,9 @@ class view
 
 		$moballeqeList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'missionary']));
 		\dash\data::moballeqeList($moballeqeList);
+
+		$servantList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'servant']));
+		\dash\data::servantList($servantList);
 	}
 }
 ?>

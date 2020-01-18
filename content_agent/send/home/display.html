@@ -55,10 +55,11 @@
     <thead>
       <tr>
 
-        <th class="collapsing" data-sort="{{sortLink.clergy_id.order}}"><a href='{{sortLink.clergy_id.link}}'>{%trans "Clergy"%}</a></th>
-        <th class="collapsing" data-sort="{{sortLink.admin_id.order}}"><a href='{{sortLink.admin_id.link}}'>{%trans "Admin"%}</a></th>
-        <th class="collapsing" data-sort="{{sortLink.adminoffice_id.order}}"><a href='{{sortLink.adminoffice_id.link}}'>نگهبان</a></th>
-        <th class="collapsing" data-sort="{{sortLink.missionary_id.order}}"><a href='{{sortLink.missionary_id.link}}'>{%trans "Missionary"%}</a></th>
+
+        <th class="collapsing" data-sort="{{sortLink.adminoffice_id.order}}"><a href='{{sortLink.adminoffice_id.link}}'>مدیر زائر سرا</a></th>
+        <th class="collapsing" data-sort="{{sortLink.admin_id.order}}"><a href='{{sortLink.admin_id.link}}'>مدیر کاروان</a></th>
+        <th class="collapsing" data-sort="{{sortLink.missionary_id.order}}"><a href='{{sortLink.missionary_id.link}}'>مبلغ</a></th>
+        <th class="collapsing" data-sort="{{sortLink.servant_id.order}}"><a href='{{sortLink.servant_id.link}}'>نگهبان</a></th>
 
 
         <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
@@ -72,10 +73,10 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
 
-        <td class="collapsing">
-          <img src="{{value.clergy_avatar}}" class="avatar">
-          <b>{{value.clergy_displayname}}<b>
-          <span class="badge light">{{value.clergy_mobile | fitNumber('mobile')}}</span>
+         <td class="collapsing">
+          <img src="{{value.adminoffice_avatar}}" class="avatar">
+          <b>{{value.adminoffice_displayname}}<b>
+          <span class="badge light">{{value.adminoffice_mobile | fitNumber('mobile')}}</span>
         </td>
 
          <td class="collapsing">
@@ -84,16 +85,18 @@
           <span class="badge light">{{value.admin_mobile | fitNumber('mobile')}}</span>
         </td>
 
-         <td class="collapsing">
-          <img src="{{value.adminoffice_avatar}}" class="avatar">
-          <b>{{value.adminoffice_displayname}}<b>
-          <span class="badge light">{{value.adminoffice_mobile | fitNumber('mobile')}}</span>
-        </td>
 
          <td class="collapsing">
           <img src="{{value.missionary_avatar}}" class="avatar">
           <b>{{value.missionary_displayname}}<b>
           <span class="badge light">{{value.missionary_mobile | fitNumber('mobile')}}</span>
+        </td>
+
+
+        <td class="collapsing">
+          <img src="{{value.servant_avatar}}" class="avatar">
+          <b>{{value.servant_displayname}}<b>
+          <span class="badge light">{{value.servant_mobile | fitNumber('mobile')}}</span>
         </td>
 
         <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>

@@ -96,6 +96,7 @@ class send
 		$_args = array_merge($default, $_args);
 
 		$result = \dash\db\config::public_search('agent_send', $_string, $_args);
+
 		return $result;
 	}
 

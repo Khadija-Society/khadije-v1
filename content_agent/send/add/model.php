@@ -26,6 +26,7 @@ class model
 			'admin'       => \dash\request::post('modir'),
 			'adminoffice'    => \dash\request::post('negahban'),
 			'missionary'    => \dash\request::post('moballeq'),
+			'servant'    => \dash\request::post('servant'),
 		];
 
 		\lib\app\send::add($post);

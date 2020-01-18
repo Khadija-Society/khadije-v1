@@ -13,15 +13,15 @@
 
           {{block('iCity')}}
           {{block('iZaerSara')}}
+          {{block('imodirZaerSara')}}
+          {{block('inegahban')}}
 
-          {{block('iRohani')}}
           <div class="f">
             <div class="c">{{block('imodir')}}</div>
             <div class="cauto mLa5 mT20"><span data-kerkere='.addUserForm' class="btn outline mT15"><span class="fs18">+</span></span></div>
           </div>
           {{block('iAddUserForm')}}
 
-          {{block('inegahban')}}
           {{block('imoballeqe')}}
           <div class="f mT20">
 
@@ -152,6 +152,27 @@
 <select name="modir" class="select ui dropdown search" id="modir">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in modirList%}
+    <option value="{{value.user_id}}">{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
+  {%endfor%}
+</select>
+{%else%}
+<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+{%endif%}
+
+{%endblock%}
+
+
+
+
+
+{%block imodirZaerSara%}
+<h6 class="mT10">مدیر زائرسرا</h6>
+
+{%if servantList%}
+
+<select name="servant" class="select ui dropdown search" id="servant">
+  <option value="">{%trans "Please select one item"%}</option>
+  {%for key, value in servantList%}
     <option value="{{value.user_id}}">{{value.displayname}} - {{value.mobile |fitNumber('mobile')}}</option>
   {%endfor%}
 </select>

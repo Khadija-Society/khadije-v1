@@ -94,6 +94,43 @@ class send
 
 
 
+		$servant        = \dash\app::request('servant');
+		if(\dash\app::isset_request('servant') && $servant)
+		{
+			$servant = \dash\coding::decode($servant);
+			if(!$servant)
+			{
+				\dash\notif::error(T_("Invalid servant"), 'servant');
+				return false;
+			}
+
+
+			$check_servant = \dash\db\users::get_by_id($servant);
+
+			if(!isset($check_servant['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'servant');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_servant = \lib\db\servant::get(['agent_servant.user_id' => $servant, 'agent_servant.city' => $city, 'agent_servant.job' => 'servant', 'limit' => 1]);
+
+				if(!isset($check_access_servant['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set servant of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$servant = null;
+		}
+
+
+
 		$admin        = \dash\app::request('admin');
 		if(\dash\app::isset_request('admin') && $admin)
 		{
@@ -345,6 +382,7 @@ class send
 		$args['admin_id']       = $admin;
 		$args['adminoffice_id'] = $adminoffice;
 		$args['missionary_id']  = $missionary;
+		$args['servant_id']  = $servant;
 
 		$args['place_id']       = $place_id;
 
