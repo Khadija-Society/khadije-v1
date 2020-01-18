@@ -1,0 +1,84 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%include 'content_agent/send/pageStep.html'%}
+
+
+<div class="f justify-center">
+  <div class="c8 s12">
+    <div class="cbox">
+      <div class="msg primary2 txtC">{{msgTxt | raw}}</div>
+      <div class="msg txtC">
+        مجموع امتیازات کسب شده در این ارزشیابی
+        <b class="fs12">{{assessmenDetail.score | fitNumber}} <small>امتیاز</small></b>
+        <br>
+
+        <b class="fs12">{{assessmenDetail.percent | fitNumber}} {%trans "%"%}</b>
+
+        <div class="f">
+         <div class="progress" data-percent='{{assessmenDetail.percent}}'>
+          <div class="bar"></div>
+         </div>
+        </div>
+      </div>
+
+        <form method="post" autocomplete="off">
+
+          {%for key, value in inputHidden%}
+            <input type="hidden" name="{{key}}" value="{{value}}">
+          {%endfor%}
+
+          <table class="tbl1 v4">
+            <thead>
+              <tr>
+                <th class="collapsing"></th>
+                <th>{%trans "Item"%}</th>
+                <th>{%trans "Star"%}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%for key, value in assessmentIem%}
+              <tr>
+                <td class="collapsing">{{loop.index | fitNumber}}</td>
+                <td>{{value.title}}</td>
+
+                <td class="fs06">
+
+                  <input type="hidden" name="item_{{value.id}}" value="{{value.id}}">
+
+
+                  <div class="radioRating togglable">
+                    <div class="rateBox">
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-1" value="1" {%if savedScore[value.id]['star'] == 5%} checked {%endif%}>
+                      <label for="star_{{value.id}}-1"></label>
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-2" value="2" {%if savedScore[value.id]['star'] == 4%} checked {%endif%}>
+                      <label for="star_{{value.id}}-2"></label>
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-3" value="3" {%if savedScore[value.id]['star'] == 3%} checked {%endif%}>
+                      <label for="star_{{value.id}}-3"></label>
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-4" value="4" {%if savedScore[value.id]['star'] == 2%} checked {%endif%}>
+                      <label for="star_{{value.id}}-4"></label>
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-5" value="5" {%if savedScore[value.id]['star'] == 1%} checked {%endif%}>
+                      <label for="star_{{value.id}}-5"></label>
+                    </div>
+                  </div>
+
+                </td>
+              </tr>
+              {%endfor%}
+            </tbody>
+          </table>
+
+          <label for="desc">{%trans "Description"%}</label>
+          <textarea class="txt mB10" id='desc' name="desc" placeholder='{%trans "Description"%}' maxlength='500' rows="5">{{assessmenDetail.assessmentdesc}}</textarea>
+
+          <div class="txtRa">
+            <button class="btn pain">{%trans "Save"%}</button>
+          </div>
+
+        </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

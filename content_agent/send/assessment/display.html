@@ -9,69 +9,109 @@
   <div class="c8 s12">
     <div class="cbox">
 
-      <div class="msg txtC">
-        مجموع امتیازات کسب شده در این ارزشیابی
-        <b class="fs12">{{dataRow.score | fitNumber}} <small>{%trans "Score"%}</small></b>
-        <br>
+        <table class="tbl1 v4">
+          <thead>
+            <tr>
+              <th>نوع ارزیابی</th>
+              <th>امتیاز کسب شده</th>
+              <th>درصد</th>
+              <th>جزئیات</th>
+            </tr>
+          </thead>
+          <tbody>
 
-        <b class="fs12">{{dataRow.percent | fitNumber}} {%trans "%"%}</b>
 
-        <div class="f">
-         <div class="progress" data-percent='{{dataRow.percent}}'>
-          <div class="bar"></div>
-         </div>
-        </div>
-      </div>
+            <tr>
+              <td>ارزیابی <b class="mLR10">مدیر زائرسرا</b> از <b class="mLR10">مدیر کاروان</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn success xs" href="{{url.this}}/assessmentadd?id={{requestGET.id}}&job=adminoffice&forjob=admin">ثبت ارزیابی</a></td>
+            </tr>
 
-        <form method="post" autocomplete="off">
-          <table class="tbl1 v4">
-            <thead>
               <tr>
-                <th class="collapsing"></th>
-                <th>{%trans "Item"%}</th>
-                <th>{%trans "Star"%}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {%for key, value in assessmentIem%}
+              <td>ارزیابی <b class="mLR10">مدیر زائرسرا</b> از <b class="mLR10">مبلغ</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
+
               <tr>
-                <td class="collapsing">{{loop.index | fitNumber}}</td>
-                <td>{{value.title}}</td>
+              <td>ارزیابی <b class="mLR10">مدیر زائرسرا</b> از <b class="mLR10">نگهبان</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
 
-                <td class="fs06">
+             <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر کاروان</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
 
-                  <input type="hidden" name="item_{{value.id}}" value="{{value.id}}">
+              <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر زائرسرا</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
+
+              <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">نگهبان</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
+
+              <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر کاروان</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
+
+              <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر زائرسرا</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
+
+              <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">نگهبان</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
+
+              <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر کاروان</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
+
+              <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">مدیر زائرسرا</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
+
+              <tr>
+              <td>ارزیابی <b class="mLR10">مبلغ</b> از <b class="mLR10">نگهبان</b></td>
+              <td>امتیاز 45</td>
+              <td>70٪</td>
+              <td class="collapsing"><a class="btn xs" href="{{url.this}}">نمایش جزئیات</a></td>
+            </tr>
 
 
-                  <div class="radioRating togglable">
-                    <div class="rateBox">
-                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-1" value="1" {%if savedScore[value.id]['star'] == 5%} checked {%endif%}>
-                      <label for="star_{{value.id}}-1"></label>
-                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-2" value="2" {%if savedScore[value.id]['star'] == 4%} checked {%endif%}>
-                      <label for="star_{{value.id}}-2"></label>
-                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-3" value="3" {%if savedScore[value.id]['star'] == 3%} checked {%endif%}>
-                      <label for="star_{{value.id}}-3"></label>
-                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-4" value="4" {%if savedScore[value.id]['star'] == 2%} checked {%endif%}>
-                      <label for="star_{{value.id}}-4"></label>
-                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-5" value="5" {%if savedScore[value.id]['star'] == 1%} checked {%endif%}>
-                      <label for="star_{{value.id}}-5"></label>
-                    </div>
-                  </div>
 
-                </td>
-              </tr>
-              {%endfor%}
-            </tbody>
-          </table>
+          </tbody>
+        </table>
 
-          <label for="desc">{%trans "Description"%}</label>
-          <textarea class="txt mB10" id='desc' name="desc" placeholder='{%trans "Description"%}' maxlength='500' rows="5">{{dataRow.assessmentdesc}}</textarea>
 
-          <div class="txtRa">
-            <button class="btn pain">{%trans "Save"%}</button>
-          </div>
 
-        </form>
     </div>
   </div>
 </div>
