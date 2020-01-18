@@ -51,7 +51,7 @@ class view
 		$servant_args = ['pagenation' => false];
 		if($city)
 		{
-			$servant_args['city'] = $city;
+			$servant_args['agent_servant.city'] = $city;
 		}
 		$RohaniList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'clergy']));
 		\dash\data::RohaniList($RohaniList);

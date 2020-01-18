@@ -146,18 +146,37 @@ class agentplace
 		}
 
 
+		$adminoffice = \dash\app::request('adminoffice');
+		$adminoffice = \dash\coding::decode($adminoffice);
+		if(\dash\app::isset_request('adminoffice') && !$adminoffice && \dash\app::request('adminoffice'))
+		{
+			\dash\notif::error(T_("Invalid data"), 'adminoffice');
+			return false;
+		}
 
-		$args               = [];
-		$args['title']      = $title;
-		$args['address']    = $address;
-		$args['capacity']   = $capacity;
-		$args['city']       = $city;
-		$args['status']     = $status;
-		$args['sort']       = $sort;
-		$args['desc']       = $desc;
-		$args['subtitle']   = $subtitle;
-		$args['file']       = $file;
-		$args['gender']     = $gender;
+		$servant = \dash\app::request('servant');
+		$servant = \dash\coding::decode($servant);
+		if(\dash\app::isset_request('servant') && !$servant && \dash\app::request('servant'))
+		{
+			\dash\notif::error(T_("Invalid data"), 'servant');
+			return false;
+		}
+
+
+
+		$args                   = [];
+		$args['title']          = $title;
+		$args['address']        = $address;
+		$args['capacity']       = $capacity;
+		$args['city']           = $city;
+		$args['status']         = $status;
+		$args['sort']           = $sort;
+		$args['desc']           = $desc;
+		$args['subtitle']       = $subtitle;
+		$args['file']           = $file;
+		$args['gender']         = $gender;
+		$args['adminoffice_id'] = $adminoffice;
+		$args['servant_id']     = $servant;
 
 		return $args;
 	}
@@ -374,6 +393,8 @@ class agentplace
 			switch ($key)
 			{
 				case 'id':
+				case 'adminoffice_id':
+				case 'servant_id':
 					$result[$key] = \dash\coding::encode($value);
 					break;
 

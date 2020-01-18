@@ -13,17 +13,18 @@ class model
 			'title'       => \dash\request::post('title'),
 			'subtitle'    => \dash\request::post('subtitle'),
 			'city'        => \dash\request::post('city'),
-			'activetime'  => \dash\request::post('activetime'),
-			'capacity' => \dash\request::post('capacity'),
-			'file'        => \dash\request::post('file'),
+
+			'capacity'    => \dash\request::post('capacity'),
+
 			'sort'        => \dash\request::post('sort'),
 			'desc'        => \dash\request::post('desc'),
 			'address'     => \dash\request::post('address'),
 			'status'      => \dash\request::post('status'),
-			'cleantime'   => \dash\request::post('cleantime'),
+
 			'gender'      => \dash\request::post('gender'),
-			'from'        => \dash\request::post('from'),
-			'to'          => \dash\request::post('to'),
+
+			'adminoffice' => \dash\request::post('adminoffice'),
+			'servant'     => \dash\request::post('servant'),
 
 		];
 
