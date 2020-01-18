@@ -52,7 +52,9 @@ class send
 
 			servant.displayname AS `servant_displayname`,
 			servant.avatar AS `servant_avatar`,
-			servant.mobile AS `servant_mobile`
+			servant.mobile AS `servant_mobile`,
+
+			agent_place.title As `place_title`
 		",
 
 		'master_join' =>
@@ -62,6 +64,8 @@ class send
 			LEFT JOIN users AS `adminoffice` 	ON adminoffice.id = agent_send.adminoffice_id
 			LEFT JOIN users AS `missionary` 	ON missionary.id  = agent_send.missionary_id
 			LEFT JOIN users AS `servant` 		ON servant.id     = agent_send.servant_id
+			LEFT JOIN agent_place ON agent_place.id     = agent_send.place_id
+
 		",
 	];
 

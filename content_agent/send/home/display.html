@@ -63,6 +63,7 @@
 
 
         <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
+        <th>زائرسرا</th>
         <th>{%trans "Date"%}</th>
 
         <th class="collapsing">{%trans "Detail"%}</th>
@@ -100,6 +101,7 @@
         </td>
 
         <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>
+        <td>{{value.place_title}}</td>
         <td >{{value.startdate | dt(null, 'date')}}-{{value.enddate | dt(null, 'date')}}</td>
         <td class="collapsing">
           <a class="badge info" href="{{url.this}}/view?id={{value.id}}">{%trans "Detail"%}</a>

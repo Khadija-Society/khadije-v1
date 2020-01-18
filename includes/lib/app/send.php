@@ -241,7 +241,7 @@ class send
 			$place_id = \dash\coding::decode($place_id);
 			if(!$place_id)
 			{
-				\dash\notif::error(T_("Invalid place id"), 'palce');
+				\dash\notif::error("لطفا زائرسرا را انتخاب کنید", 'palce');
 				return false;
 			}
 
@@ -566,6 +566,14 @@ class send
 
 
 		if(!\dash\app::isset_request('user_id')) unset($args['user_id']);
+
+		if(!\dash\app::isset_request('clergy')) unset($args['clergy_id']);
+		if(!\dash\app::isset_request('admin')) unset($args['admin_id']);
+		if(!\dash\app::isset_request('adminoffice')) unset($args['adminoffice_id']);
+		if(!\dash\app::isset_request('servant')) unset($args['servant_id']);
+		if(!\dash\app::isset_request('missionary')) unset($args['missionary_id']);
+
+
 		if(!\dash\app::isset_request('place_id')) unset($args['place_id']);
 		if(!\dash\app::isset_request('city')) unset($args['city']);
 		if(!\dash\app::isset_request('job')) unset($args['job']);
@@ -611,6 +619,7 @@ class send
 			switch ($key)
 			{
 				case 'id':
+				case 'place_id':
 				case 'user_id':
 				case 'clergy_id':
 				case 'admin_id':

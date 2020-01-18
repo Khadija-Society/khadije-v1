@@ -25,7 +25,7 @@ class assessment
 			return false;
 		}
 
-		$job = $send_detail['job'];
+		$job = $send_detail['job'] = null;
 		$city = $send_detail['city'];
 
 		$item_list = \lib\db\assessment::get_list($job, $city);
