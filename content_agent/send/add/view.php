@@ -46,6 +46,13 @@ class view
 
 		$place_list = \lib\app\agentplace::list(null, $args_place);
 
+
+		if(\dash\request::get('place'))
+		{
+			$default_place = \lib\app\agentplace::get(\dash\request::get('place'));
+			\dash\data::defaultPlace($default_place);
+		}
+
 		\dash\data::placeList($place_list);
 
 		$servant_args = ['pagenation' => false];
@@ -59,13 +66,14 @@ class view
 		$modirList  = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'admin']));;
 		\dash\data::modirList($modirList);
 
-		$negahbanList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'adminoffice']));;
+		$negahbanList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'servant']));;
 		\dash\data::negahbanList($negahbanList);
+
 
 		$moballeqeList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'missionary']));
 		\dash\data::moballeqeList($moballeqeList);
 
-		$servantList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'servant']));
+		$servantList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'adminoffice']));
 		\dash\data::servantList($servantList);
 	}
 }

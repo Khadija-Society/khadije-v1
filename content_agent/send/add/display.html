@@ -2,6 +2,60 @@
 
 
 {%block pageContent%}
+{%if requestGET.place or url.child == 'edit'%}
+{{block('step2')}}
+{%else%}
+{{block('step1')}}
+{%endif%}
+
+
+{%endblock%}
+
+
+
+
+{%block step1%}
+
+<div class="f justify-center">
+  <div class="c6 s12">
+    <div class="cbox">
+      {%if url.child == 'edit'%}
+        <h2>ویرایش اطلاعات اعزام</h2>
+      {%else%}
+        <h2>ثبت اعزام جدید</h2>
+      {%endif%}
+
+        <form method="get" autocomplete="off" action="{{url.that}}">
+          <input type="hidden" name="city" value="{{requestGET.city}}">
+          <input type="hidden" name="job" value="{{requestGET.job}}">
+          <input type="hidden" name="user" value="{{requestGET.user}}">
+
+
+          {{block('iZaerSara')}}
+
+
+          {{block('imoballeqe')}}
+
+          <div class="txtRa">
+            <button class="btn primary mT10">مرحله بعد</button>
+          </div>
+
+
+
+
+        </form>
+
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+
+
+
+
+{%block step2%}
 
 <div class="f justify-center">
   <div class="c6 s12">
@@ -14,13 +68,19 @@
 
         <form method="post" autocomplete="off">
 
+          <input type="hidden" name="city" value="{{requestGET.city}}">
+          <input type="hidden" name="job" value="{{requestGET.job}}">
+          <input type="hidden" name="user" value="{{requestGET.user}}">
 
-          {%if url.child == 'add'%}
+          {%if url.child == 'add' and not requestGET.city%}
             {{block('iCity')}}
           {%endif%}
             {{block('iZaerSara')}}
-          {{block('imodirZaerSara')}}
-          {{block('inegahban')}}
+
+
+              {{block('imodirZaerSara')}}
+              {{block('inegahban')}}
+
 
           <div class="f">
             <div class="c">{{block('imodir')}}</div>
@@ -46,7 +106,12 @@
 
           </div>
           <div class="txtRa">
+          {%if url.child == 'add'%}
             <button class="btn success mT10">ثبت اعزام جدید</button>
+          {%else%}
+            <button class="btn primary mT10">ویرایش اطلاعات</button>
+          {%endif%}
+
           </div>
 
 
@@ -117,7 +182,7 @@
 <select name="place" class="select ui dropdown search" id="place">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in placeList%}
-    <option value="{{value.id}}" {%if dataRow.place_id == value.id%} selected {%endif%}>{{value.title}}</option>
+    <option value="{{value.id}}" {%if dataRow.place_id == value.id or requestGET.place == value.id%} selected {%endif%}>{{value.title}}</option>
   {%endfor%}
 </select>
 {%else%}
@@ -173,13 +238,12 @@
 
 {%block imodirZaerSara%}
 <h6 class="mT10">مدیر زائرسرا</h6>
-
 {%if servantList%}
 
 <select name="adminoffice" class="select ui dropdown search" id="servant">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in servantList%}
-    <option value="{{value.user_id}}" {%if dataRow.adminoffice_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.adminoffice_id == value.user_id or defaultPlace.adminoffice_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
@@ -199,7 +263,7 @@
 <select name="servant" class="select ui dropdown search" id="negahban">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in negahbanList%}
-    <option value="{{value.user_id}}" {%if dataRow.servant_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.servant_id == value.user_id or defaultPlace.servant_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
@@ -221,7 +285,7 @@
 <select name="missionary" class="select ui dropdown search" id="moballeq">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in moballeqeList%}
-    <option value="{{value.user_id}}" {%if dataRow.missionary_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.missionary_id == value.user_id or requestGET.user == value.user_id %} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
