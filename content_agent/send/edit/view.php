@@ -9,9 +9,9 @@ class view extends \content_agent\send\add\view
 		parent::config();
 
 		// \dash\permission::access('agentServantProfileView');
-		\dash\data::page_title(T_("Servant Profile"));
+		\dash\data::page_title("ویرایش اطلاعات اعزام");
 
-		\dash\data::page_pictogram('tools');
+		\dash\data::page_pictogram('edit');
 
 
 		$args_place = [];
