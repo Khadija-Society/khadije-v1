@@ -55,16 +55,16 @@
   <table class="tbl1 v4 cbox fs12">
     <thead>
       <tr>
-        <th>{%trans "Title"%}</th>
-
-        <th class="collapsing" data-sort="{{sortLink.adminoffice_id.order}}"><a href='{{sortLink.adminoffice_id.link}}'>مدیر زائر سرا</a></th>
-        <th class="collapsing" data-sort="{{sortLink.admin_id.order}}"><a href='{{sortLink.admin_id.link}}'>مدیر کاروان</a></th>
-        <th class="collapsing" data-sort="{{sortLink.missionary_id.order}}"><a href='{{sortLink.missionary_id.link}}'>مبلغ</a></th>
-        <th class="collapsing" data-sort="{{sortLink.servant_id.order}}"><a href='{{sortLink.servant_id.link}}'>نگهبان</a></th>
-
-
         <th>زائرسرا</th>
-        <th>{%trans "Date"%}</th>
+
+
+        <th class="collapsing" data-sort="{{sortLink.missionary_id.order}}"><a href='{{sortLink.missionary_id.link}}'>مبلغ</a></th>
+        <th class="collapsing" data-sort="{{sortLink.admin_id.order}}"><a href='{{sortLink.admin_id.link}}'>مدیر کاروان</a></th>
+
+
+
+        <th class="collapsing">{%trans "Date"%}</th>
+        <th class="collapsing">{%trans "Title"%}</th>
 
         <th class="collapsing">{%trans "Detail"%}</th>
       </tr>
@@ -73,11 +73,13 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
-        <td>{{value.title}}</td>
+        <td>{{value.place_title}}</td>
+
+
          <td class="collapsing">
-          <img src="{{value.adminoffice_avatar}}" class="avatar">
-          <b>{{value.adminoffice_displayname}}<b>
-          <span class="badge light">{{value.adminoffice_mobile | fitNumber(false)}}</span>
+          <img src="{{value.missionary_avatar}}" class="avatar">
+          <b>{{value.missionary_displayname}}<b>
+          <span class="badge light">{{value.missionary_mobile | fitNumber(false)}}</span>
         </td>
 
          <td class="collapsing">
@@ -87,22 +89,11 @@
         </td>
 
 
-         <td class="collapsing">
-          <img src="{{value.missionary_avatar}}" class="avatar">
-          <b>{{value.missionary_displayname}}<b>
-          <span class="badge light">{{value.missionary_mobile | fitNumber(false)}}</span>
-        </td>
 
 
-        <td class="collapsing">
-          <img src="{{value.servant_avatar}}" class="avatar">
-          <b>{{value.servant_displayname}}<b>
-          <span class="badge light">{{value.servant_mobile | fitNumber(false)}}</span>
-        </td>
 
-
-        <td>{{value.place_title}}</td>
         <td >{{value.startdate | dt(null, 'date')}}-{{value.enddate | dt(null, 'date')}}</td>
+        <td class="collapsing">{{value.title}}</td>
         <td class="collapsing">
           <a class="btn info" href="{{url.this}}/view?id={{value.id}}{{xCityAnd}}">{%trans "Detail"%}</a>
         </td>

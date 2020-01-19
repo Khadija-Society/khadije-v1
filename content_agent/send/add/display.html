@@ -18,8 +18,15 @@
     <div class="f justify-center">
       <div class="c9 m12 s12">
         <div class="cbox">
-          <div class="msg success2">شما در حال اعزام مبلغ <b>{{userDetail.displayname}}</b> به شهر <b>{{xCityTitle}}</b> هستید</div>
-          <div class="msg primary2">لطفا زائرسرا را انتخبا کنید</div>
+          <div class="msg success2">شما در حال اعزام مبلغ <b>{{userDetail.displayname}}</b> به شهر <b>{{xCityTitle}}</b> هستید. شماره موبایل <span class="ltr compact txtB">{{userDetail.mobile | fitNumber('mobile')}}</span></div>
+          <div class="msg primary2">
+            <div class="f align-center">
+              <div class="c">لطفا زائرسرا را انتخاب کنید</div>
+              <div class="cauto pRa10">sdfsdf</div>
+              <div class="cauto "><div class="btn danger">عدم تمایل به اعزام</div></div>
+            </div>
+          </div>
+
 
           {%if placeList%}
             <div class="f">
@@ -50,7 +57,7 @@
 {%block step2%}
 
 <div class="f justify-center">
-  <div class="c6 s12">
+  <div class="c6 m10 s12">
     <div class="cbox">
       {%if url.child == 'edit'%}
         <h2>ویرایش اطلاعات اعزام</h2>
@@ -66,6 +73,7 @@
 
               {{block('imodirZaerSara')}}
               {{block('inegahban')}}
+              {{block('inegahban')}}
 
           </div>
           <label for="titlex">عنوان یا شناسه اعزام</label>
@@ -78,6 +86,11 @@
           <input type="hidden" name="user" value="{{requestGET.user}}">
           <input type="hidden" name="missionary" value="{{requestGET.user}}">
 
+          {{block('imodir')}}
+          {{block('imodir')}}
+          {{block('imodir')}}
+          {{block('imodir')}}
+          {{block('imodir')}}
           {{block('imodir')}}
 
 
@@ -194,7 +207,7 @@
 
 
 {%block iRohani%}
-<h6 class="mT10">روحانی کاروان</h6>
+<label>روحانی کاروان</label>
 
 {%if RohaniList%}
 
@@ -215,7 +228,7 @@
 
 
 {%block imodir%}
-<h6 class="mT10">مدیر کاروان</h6>
+<label>مدیر کاروان</label>
 
 {%if modirList%}
 
@@ -236,7 +249,7 @@
 
 
 {%block imodirZaerSara%}
-<h6 class="mT10">مدیر زائرسرا</h6>
+<label>مدیر زائرسرا</label>
           <input type="hidden" name="adminoffice" value="{{defaultPlace.adminoffice_id}}">
 
 {%if servantList%}
@@ -257,7 +270,7 @@
 
 
 {%block inegahban%}
-<h6 class="mT10">نگهبان زائرسرا</h6>
+<label>نگهبان زائرسرا</label>
 
   <input type="hidden" name="servant" value="{{defaultPlace.servant_id}}">
 {%if negahbanList%}
@@ -280,7 +293,7 @@
 
 
 {%block imoballeqe%}
-<h6 class="mT10">مبلغ کاروان</h6>
+<label>مبلغ کاروان</label>
 
 {%if moballeqeList%}
 

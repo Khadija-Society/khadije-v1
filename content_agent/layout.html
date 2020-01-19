@@ -1,14 +1,17 @@
 {%extends display.dash%}
 
 {%block sidenav%}
-  <li class="title"><a href="{{url.here}}/city">{%if xCity%} {%trans "City"%} {{xCityTitle}} {%else%} {%trans "Select city"%}{%endif%}</a></li>
-  <li><a href="{{url.here}}{{xCityStart}}"><i class='sf-gauge'></i> {% trans "Agent Panel" %}</a></li>
-  <li><a href="{{url.here}}/servant{{xCityStart}}"><i class='sf-users'></i> {% trans "Servants" %}</a></li>
-  <li><a href="{{url.here}}/servant/sortlist{{xCityStart}}"><i class='sf-list'></i> نوبت اعزام</a></li>
-  <li><a href="{{url.here}}/send{{xCityStart}}"><i class='sf-list'></i> اعزام خادم</a></li>
+  <li><a href="{{url.here}}">{%trans "Select city"%}</a></li>
+  {%if requestGET.city%}
+  <li class="txtB"><a href="{{url.here}}{{xCityStart}}">{%trans "Dashboard"%} {%trans "City"%} {{xCityTitle}}</a></li>
+
+  <li><a href="{{url.here}}/servant{{xCityStart}}">{% trans "Servants" %}</a></li>
+  <li><a href="{{url.here}}/servant/sortlist{{xCityStart}}">نوبت اعزام</a></li>
+  <li><a href="{{url.here}}/send{{xCityStart}}">تاریخچه اعزام</a></li>
   <li class="hr"></li>
-  <li><a href="{{url.here}}/skills{{xCityStart}}"><i class='sf-tools'></i> {% trans "Skills" %}</a></li>
-  <li><a href="{{url.here}}/place{{xCityStart}}"><i class='sf-pin'></i> {% trans "Agent Place" %}</a></li>
-  <li><a href="{{url.here}}/assessmentitem{{xCityStart}}"><i class='sf-lamp'></i> {% trans "Assessment Item" %}</a></li>
+  <li><a href="{{url.here}}/assessmentitem{{xCityStart}}">{% trans "Assessment Item" %}</a></li>
+  <li><a href="{{url.here}}/skills{{xCityStart}}">{% trans "Skills" %}</a></li>
+  <li><a href="{{url.here}}/place{{xCityStart}}">{% trans "Agent Place" %}</a></li>
+  {%endif%}
 
 {%endblock%}
