@@ -55,9 +55,10 @@ class servant
 
 		$default =
 		[
+			'sort_join'         => false,
 			'public_show_field' => "agent_servant.*, users.displayname, users.avatar, users.mobile",
-			'master_join' => "INNER JOIN users ON users.id = agent_servant.user_id",
-			'search_field' => " ( users.mobile LIKE '%__string__%' or users.displayname LIKE '%__string__%' ) ",
+			'master_join'       => "INNER JOIN users ON users.id = agent_servant.user_id",
+			'search_field'      => " ( users.mobile LIKE '%__string__%' or users.displayname LIKE '%__string__%' ) ",
 		];
 
 		if(!is_array($_args))
@@ -67,7 +68,23 @@ class servant
 
 		$_args = array_merge($default, $_args);
 
+		if($_args['sort_join'])
+		{
+			$_args['public_show_field'] =
+			"
+				agent_servant.*, users.displayname, users.avatar, users.mobile,
+				(SELECT COUNT(*) FROM agent_send WHERE agent_send.missionary_id = agent_servant.user_id) AS `send_count`,
+				(SELECT AVG(agent_assessment.percent) FROM agent_send INNER JOIN agent_assessment ON agent_assessment.send_id = agent_send.id WHERE agent_send.missionary_id = agent_servant.user_id) AS `send_avg`,
+				(SELECT MAX(agent_send.startdate) FROM agent_send WHERE agent_send.missionary_id = agent_servant.user_id) AS `max_startdate`
+
+			";
+			$_args['master_join']       = "INNER JOIN users ON users.id = agent_servant.user_id";
+			$_args['order_raw'] = ' `max_startdate` DESC';
+		}
+
+		unset($_args['sort_join']);
 		$result = \dash\db\config::public_search('agent_servant', $_string, $_args);
+
 		return $result;
 	}
 

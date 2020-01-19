@@ -1,0 +1,150 @@
+{%extends display.admin%}
+
+
+
+{%block pageContent%}
+  <div class="f">
+
+   <div class="c s6">
+    <a class="dcard {%if requestGET.city == 'qom' %}active{%endif%}" href='{{url.that}}?city=qom{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
+     <div class="statistic">
+      <div class="value">{%trans "Qom"%}</div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s6">
+    <a class="dcard {%if requestGET.city == 'mashhad' %}active{%endif%}" href='{{url.that}}?city=mashhad{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
+     <div class="statistic">
+      <div class="value">{%trans "Mashhad"%}</div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s6">
+    <a class="dcard {%if requestGET.city == 'karbala' %}active{%endif%}" href='{{url.that}}?city=karbala{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
+     <div class="statistic">
+      <div class="value">{%trans "Karbala"%}</div>
+     </div>
+    </a>
+   </div>
+
+  </div>
+
+
+
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.that}}'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+
+  <table class="tbl1 v1 cbox fs12">
+    <thead>
+      <tr>
+        <th class="collapsing">&nbsp;</th>
+        <th data-sort="{{sortLink.user_id.order}}"><a href='{{sortLink.user_id.link}}'>{%trans "User"%}</a></th>
+        <th data-sort="{{sortLink.user_id.order}}"><a href='{{sortLink.user_id.link}}'>{%trans "Mobile"%}</a></th>
+
+        <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
+        <th>تعداد اعزام</th>
+        <th>میانگین امتیاز</th>
+        <th>آخریه اعزام</th>
+        <th class="collapsing">{%trans "Profile"%}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
+        <td class="collapsing"><img src="{{value.avatar}}" class="avatar"></td>
+
+        <td><a href="{{url.that}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.displayname}}</a></td>
+        <td>{{value.mobile| fitNumber('mobile')}}</td>
+
+        <td >{%set myCity = value.city | capitalize %}<a href="{{url.that}}?city={{value.city}}">{%trans myCity%}</a></td>
+
+        <td>{{value.send_count | fitNumber}}</td>
+        <td>{{value.send_avg | fitNumber}} {%trans "%"%}</td>
+
+
+        <td>{{value.max_startdate |dt(null, 'date')}} <br><b>{{value.max_startdate |dt('human', 'year')}}</b> </td>
+
+
+        <td class="collapsing">
+          <a class="badge" href="{{url.that}}/profile?user={{value.user_id}}">{%trans "Profile"%}</a>
+          {%if value.job == 'missionary'%}
+          <a class="badge primary" href="{{url.here}}/send/add?user={{value.user_id}}&city={{value.city}}&job={{value.job}}">{%trans "Dispatch"%}</a>
+          {%endif%}
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg info2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.that}}/add">{%trans "Try to start with add new servant!"%}</a></p>
+{%endblock%}
+
