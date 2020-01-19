@@ -12,7 +12,7 @@ class view
 
 		\dash\data::page_pictogram('tools');
 
-		\dash\data::badge_link(\dash\url::here());
+		\dash\data::badge_link(\dash\url::here(). \dash\data::xCityStart());
 		\dash\data::badge_text(T_('Back'));
 
 		$search_string            = \dash\request::get('q');
@@ -47,7 +47,7 @@ class view
 		if(\dash\request::get('city'))
 		{
 			$args['agent_servant.city'] = \dash\request::get('city');
-			$filterArgs['City'] = \dash\request::get('city');
+
 		}
 
 

@@ -36,3 +36,5 @@ ALTER TABLE `agent_send` ADD CONSTRAINT `agent_place_khadem_id` FOREIGN KEY (`kh
 ALTER TABLE `agent_send` ADD `khadem2_id` int(10) UNSIGNED NULL DEFAULT NULL AFTER `servant_id`;
 ALTER TABLE `agent_send` ADD CONSTRAINT `agent_place_khadem2_id` FOREIGN KEY (`khadem2_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
+
+ALTER TABLE `agent_send` ADD `title` varchar(200)  NULL DEFAULT NULL AFTER `id`;
