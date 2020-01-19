@@ -17,7 +17,9 @@ class userskills
 		"
 			SELECT
 				agent_skills.title,
-				agent_userskills.id
+				agent_userskills.id,
+				agent_userskills.rate,
+				agent_userskills.desc
 			FROM agent_userskills
 			INNER JOIN agent_skills ON agent_skills.id = agent_userskills.skills_id
 			WHERE

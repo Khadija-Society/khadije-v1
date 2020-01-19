@@ -27,7 +27,7 @@ class skills
 	}
 
 
-	public static function add_user_skills($_user_code, $_skills)
+	public static function add_user_skills($_user_code, $_skills, $_rate, $_desc)
 	{
 		if(!$_skills)
 		{
@@ -77,7 +77,22 @@ class skills
 			return false;
 		}
 
-		\lib\db\userskills::insert(['user_id' => $user_id, 'skills_id' => $skills_id]);
+		if($_rate && !is_numeric($_rate))
+		{
+			$_rate = null;
+		}
+
+		if(intval($_rate) > 5)
+		{
+			$_rate = 5;
+		}
+
+		if(intval($_rate) < 0)
+		{
+			$_rate = 0;
+		}
+
+		\lib\db\userskills::insert(['user_id' => $user_id, 'skills_id' => $skills_id, 'desc' => $_desc, 'rate' => $_rate]);
 
 		\dash\notif::ok(T_("Data saved"));
 

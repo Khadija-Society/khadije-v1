@@ -12,7 +12,7 @@ class model
 		}
 		else
 		{
-			\lib\app\skills::add_user_skills(\dash\request::get('user'), \dash\request::post('skills'));
+			\lib\app\skills::add_user_skills(\dash\request::get('user'), \dash\request::post('skills'), \dash\request::post('rate'), \dash\request::post('desc'));
 		}
 
 

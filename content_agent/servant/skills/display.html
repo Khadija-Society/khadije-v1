@@ -16,8 +16,17 @@
               <option value="{{value.id}}">{{value.title}}</option>
             {%endfor%}
           </select>
+          <div class="f">
+            <label>میزان تخصص</label>
+            <div class="c"><div class="radio3"><input type="radio" name="rate" value="1" id="rate1"><label for="rate1">کم</label></div></div>
+            <div class="c mLa5"><div class="radio3"><input type="radio" name="rate" value="2" id="rate2"><label for="rate2">متوسط</label></div></div>
+            <div class="c mLa5"><div class="radio3"><input type="radio" name="rate" value="3" id="rate3"><label for="rate3">خوب</label></div></div>
+          </div>
+          <div class="input mT10">
+            <input type="text" name="desc" placeholder="توضیحات">
+          </div>
           <div class="txtRa">
-            <button class="btn success">{%trans "Add"%}</button>
+            <button class="btn mT20 success">{%trans "Add"%}</button>
           </div>
 
         </form>
@@ -25,7 +34,9 @@
 
           {%for key, value in userSkills%}
           <div class="f msg primary2">
-            <div class=" c"><span class="mL10">{{loop.index | fitNumber}}</span> {{value.title}}</div>
+            <div class="c"><span class="mL10">{{loop.index | fitNumber}}</span> {{value.title}}</div>
+            <div class="c">{%if value.rate == 1%}کم{%elseif value.rate == 2%}متوسط{%elseif value.rate == 3%}خوب{%else%}{{value.rate | fitNumber}}{%endif%}</div>
+            <div class="c">{{value.desc}}</div>
             <div class="cauto">
               <div class="badge danger" data-confirm data-data='{"type" : "remove", "id" : "{{value.id}}"}'>{%trans "Remove"%}</div>
             </div>
