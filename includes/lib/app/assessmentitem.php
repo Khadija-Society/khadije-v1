@@ -76,9 +76,15 @@ class assessmentitem
 
 
 		$job = \dash\app::request('job');
-		if($job && !in_array($job, ['clergy', 'adminoffice', 'admin', 'missionary', 'servant']))
+		if($job && !in_array($job, ['clergy', 'admin', 'missionary', 'servant', 'adminoffice','maddah', 'khadem', 'nazer']))
 		{
 			\dash\notif::error(T_("Invalid job"));
+			return false;
+		}
+
+		if(!$job)
+		{
+			\dash\notif::error("لطفا سمت را انتخاب کنید", 'job');
 			return false;
 		}
 

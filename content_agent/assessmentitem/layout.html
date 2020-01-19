@@ -28,12 +28,16 @@
   <label for="job">{%trans "Job"%}</label>
   <select name="job" class="ui dropdown select">
     {%if false%}<option value="0" >{%trans "For all jobs"%}</option>{%endif%}
-    {%if false%}<option value="clergy" {%if dataRow.job == 'clergy'  %}selected {%endif%}>{%trans "clergy"%}</option>{%endif%}
     <option value="" >{%trans "Please select one item"%}</option>
+    <option value="clergy" {%if dataRow.job == 'clergy'  %}selected {%endif%}>روحانی کاروان</option>
     <option value="adminoffice" {%if dataRow.job == 'adminoffice'  %}selected {%endif%}>مدیر زائرسرا</option>
     <option value="admin" {%if dataRow.job == 'admin'  %}selected {%endif%}>مدیر کاروان</option>
     <option value="missionary" {%if dataRow.job == 'missionary'  %}selected {%endif%}>مبلغ</option>
     <option value="servant" {%if dataRow.job == 'servant'  %}selected {%endif%}>نگهبان</option>
+    <option value="maddah" {%if dataRow.job == 'maddah'  %}selected {%endif%}>مداح</option>
+    <option value="nazer" {%if dataRow.job == 'nazer'  %}selected {%endif%}>ناظر</option>
+    <option value="khadem" {%if dataRow.job == 'khadem'  %}selected {%endif%}>خادم</option>
+
 
 
   </select>
