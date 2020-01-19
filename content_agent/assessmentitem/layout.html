@@ -27,8 +27,9 @@
 <div class="pRa5">
   <label for="job">{%trans "Job"%}</label>
   <select name="job" class="ui dropdown select">
-    <option value="0" >{%trans "For all jobs"%}</option>
+    {%if false%}<option value="0" >{%trans "For all jobs"%}</option>{%endif%}
     {%if false%}<option value="clergy" {%if dataRow.job == 'clergy'  %}selected {%endif%}>{%trans "clergy"%}</option>{%endif%}
+    <option value="" >{%trans "Please select one item"%}</option>
     <option value="adminoffice" {%if dataRow.job == 'adminoffice'  %}selected {%endif%}>مدیر زائرسرا</option>
     <option value="admin" {%if dataRow.job == 'admin'  %}selected {%endif%}>مدیر کاروان</option>
     <option value="missionary" {%if dataRow.job == 'missionary'  %}selected {%endif%}>مبلغ</option>

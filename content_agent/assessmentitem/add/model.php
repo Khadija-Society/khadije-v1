@@ -10,7 +10,9 @@ class model
 
 		$post =
 		[
-			'title'  => \dash\request::post('title'),
+			'title' => \dash\request::post('title'),
+			'job'   => \dash\request::post('job'),
+			'city'  => \dash\request::get('city'),
 		];
 
 		$result = \lib\app\assessmentitem::add($post);
@@ -19,11 +21,11 @@ class model
 		{
 			if(isset($result['id']))
 			{
-				\dash\redirect::to(\dash\url::this(). '/edit?id='. $result['id']);
+				\dash\redirect::to(\dash\url::this(). '/edit?id='. $result['id']. \dash\data::xCityAnd());
 			}
 			else
 			{
-				\dash\redirect::to(\dash\url::this());
+				\dash\redirect::to(\dash\url::this(). \dash\data::xCityStart());
 			}
 		}
 

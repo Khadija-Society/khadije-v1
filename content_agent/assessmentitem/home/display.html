@@ -5,39 +5,12 @@
 {%block pageContent%}
 <div class="f">
 
-   <div class="c s6">
-    <a class="dcard {%if requestGET.city == 'qom' %}active{%endif%}" href='{{url.this}}?city=qom{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
-     <div class="statistic">
-      <div class="value">{%trans "Qom"%}</div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s6">
-    <a class="dcard {%if requestGET.city == 'mashhad' %}active{%endif%}" href='{{url.this}}?city=mashhad{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
-     <div class="statistic">
-      <div class="value">{%trans "Mashhad"%}</div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s6">
-    <a class="dcard {%if requestGET.city == 'karbala' %}active{%endif%}" href='{{url.this}}?city=karbala{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
-     <div class="statistic">
-      <div class="value">{%trans "Karbala"%}</div>
-     </div>
-    </a>
-   </div>
-
-
 
 
 
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'adminoffice' %}active{%endif%}" href='{{url.this}}?job=adminoffice{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard {%if requestGET.job == 'adminoffice' or not requestGET.job %}active{%endif%}" href='{{url.this}}?job=adminoffice{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
       <div class="label">مدیر زائرسرا</div>
      </div>
@@ -103,6 +76,7 @@
 {%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
+    <input type="hidden" name="city" value="{{requestGET.city}}">
     <div class="input">
       <input type="search" name="q" assessmentitemholder='{%trans "Search in assessmentitems"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -119,7 +93,7 @@
     <thead>
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
-        <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
+
         <th data-sort="{{sortLink.job.order}}"><a href='{{sortLink.job.link}}'>{%trans "Job"%}</a></th>
         <th data-sort="{{sortLink.rate.order}}"><a href='{{sortLink.rate.link}}'>{%trans "Rate"%}</a></th>
         <th data-sort="{{sortLink.sort.order}}"><a href='{{sortLink.sort.link}}'>{%trans "Sort"%}</a></th>
@@ -134,18 +108,18 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative'{%endif%}>
         {%if perm('mAssessmentitemEdit')%}
-        <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
+        <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i> {{value.title}}</a></td>
         {%else%}
         <td>{{value.title}}</td>
         {%endif%}
-        <td>{%if value.city%}{%set myCity = value.city%}{%trans myCity%}{%else%}<small class="fc08 fc-mute">{%trans "For all city"%}</small>{%endif%}</td>
+
         <td>{%if value.job%}{%set myGender = value.job%}{%trans myGender%}{%else%}<small class="fc08 fc-mute">{%trans "For all jobs"%}</small>{%endif%}</td>
         <td>{%if value.rate%}{{value.rate | fitNumber}}{%else%}-{%endif%}</td>
         <td>{%if value.sort%}{{value.sort | fitNumber}}{%else%}-{%endif%}</td>
 
 
 
-        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
+        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}">{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
@@ -159,7 +133,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -167,12 +141,12 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new assessmentitem!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add{{xCityStart}}">{%trans "Try to start with add new assessmentitem!"%}</a></p>
 {%endblock%}
 

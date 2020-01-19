@@ -11,7 +11,7 @@ class model
 		$post =
 		[
 			'title'  => \dash\request::post('title'),
-			'city'   => \dash\request::post('city') == '0' ? null : \dash\request::post('city'),
+			'city'   => \dash\request::get('city'),
 			'rate'   => \dash\request::post('rate'),
 			'job'    => \dash\request::post('job') == '0' ? null : \dash\request::post('job'),
 			'sort'   => \dash\request::post('sort'),
@@ -23,7 +23,7 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::here(). '/assessmentitem');
+			\dash\redirect::to(\dash\url::here(). '/assessmentitem'. \dash\data::xCityStart());
 		}
 
 	}

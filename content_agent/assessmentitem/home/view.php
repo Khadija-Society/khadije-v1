@@ -14,7 +14,7 @@ class view
 
 		if(\dash\permission::check('mAssessmentitemAdd'))
 		{
-			\dash\data::badge_link(\dash\url::this(). '/add');
+			\dash\data::badge_link(\dash\url::this(). '/add'. \dash\data::xCityStart());
 			\dash\data::badge_text(T_('Add new assessmentitem'));
 		}
 
@@ -44,12 +44,21 @@ class view
 			$args['1.1'] =[' = 1.1 ', " AND ( city is null or city = '$city')"];
 		}
 
-		if(\dash\request::get('job'))
+		if(\dash\request::get('status'))
 		{
-			$job = \dash\request::get('job');
+			$status = \dash\request::get('status');
 
-			$args['2.2'] =[' = 2.2 ', " AND ( job is null or job = '$job')"];
+			$args['status'] = $status;
 		}
+
+		$job = \dash\request::get('job');
+		if(!$job)
+		{
+			$job = 'adminoffice';
+		}
+
+		$args['2.2'] =[' = 2.2 ', " AND ( job is null or job = '$job')"];
+
 
 
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\assessmentitem::$sort_field, \dash\url::this());
