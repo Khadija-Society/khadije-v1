@@ -43,6 +43,7 @@ class assessment
 				( agent_assessmentitem.job IS NULL OR   agent_assessmentitem.job = '$_job' )
 				AND
 				agent_assessmentitem.status = 'enable'
+			ORDER BY agent_assessmentitem.sort ASC
 		";
 		$result = \dash\db::get($query);
 		return $result;
