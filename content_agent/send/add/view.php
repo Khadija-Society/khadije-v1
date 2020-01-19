@@ -51,7 +51,13 @@ class view
 		{
 			$default_place = \lib\app\agentplace::get(\dash\request::get('place'));
 			\dash\data::defaultPlace($default_place);
+			if(!$city && \dash\data::defaultPlace_city())
+			{
+				$city = \dash\data::defaultPlace_city();
+			}
 		}
+
+		\dash\data::myCity($city);
 
 		\dash\data::placeList($place_list);
 

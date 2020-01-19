@@ -11,6 +11,7 @@ class model
 		$post =
 		[
 			'title'  => \dash\request::post('title'),
+			'city'  => \dash\request::post('city'),
 		];
 
 		$result = \lib\app\agentplace::add($post);

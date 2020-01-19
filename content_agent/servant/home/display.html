@@ -146,7 +146,9 @@
         <td >{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
         <td class="collapsing">
           <a class="badge" href="{{url.this}}/profile?user={{value.user_id}}">{%trans "Profile"%}</a>
+          {%if value.job == 'missionary'%}
           <a class="badge primary" href="{{url.here}}/send/add?user={{value.user_id}}&city={{value.city}}&job={{value.job}}">{%trans "Dispatch"%}</a>
+          {%endif%}
         </td>
       </tr>
       {%endfor%}

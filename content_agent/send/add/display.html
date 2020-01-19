@@ -72,7 +72,7 @@
           <input type="hidden" name="job" value="{{requestGET.job}}">
           <input type="hidden" name="user" value="{{requestGET.user}}">
 
-          {%if url.child == 'add' and not requestGET.city%}
+          {%if url.child == 'add' and not myCity%}
             {{block('iCity')}}
           {%endif%}
             {{block('iZaerSara')}}
@@ -285,7 +285,7 @@
 <select name="missionary" class="select ui dropdown search" id="moballeq">
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in moballeqeList%}
-    <option value="{{value.user_id}}" {%if dataRow.missionary_id == value.user_id or requestGET.user == value.user_id %} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+    <option value="{{value.user_id}}" {%if dataRow.missionary_id == value.user_id or requestGET.user == value.user_id or requestGET.missionary == value.user_id %} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}

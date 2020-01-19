@@ -12,7 +12,7 @@ class view
 
 		\dash\data::page_pictogram('box');
 
-		if(// \dash\permission::check('mAssessmentitemAdd'))
+		if(\dash\permission::check('mAssessmentitemAdd'))
 		{
 			\dash\data::badge_link(\dash\url::this(). '/add');
 			\dash\data::badge_text(T_('Add new assessmentitem'));
