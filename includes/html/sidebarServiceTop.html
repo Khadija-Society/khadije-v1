@@ -15,6 +15,10 @@
 {%endif%}
 
 
+{%if perm('contentAgent') %}
+        <li><a href="{{url.kingdom}}/agent" {%if url.content == "agent" %} class="activeContent"{%endif%}><i class='sf-paper-plane'></i> <span>{% trans "Agent servant"%}</span></a></li>
+{%endif%}
+
 
 {%if perm('cpFestivalView') %}
         <li><a href="{{url.kingdom}}/m/festival" {%if url.content == "m" and url.module == "festival"%} class="activeContent"{%endif%}><i class='sf-magic'></i> <span>{% trans "Manage Festival"%}</span></a></li>
