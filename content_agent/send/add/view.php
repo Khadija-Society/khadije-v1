@@ -11,7 +11,7 @@ class view
 
 		\dash\data::page_pictogram('tools');
 
-		\dash\data::badge_link(\dash\url::this());
+		\dash\data::badge_link(\dash\url::this(). \dash\data::xCityStart());
 		\dash\data::badge_text(T_('Back'));
 
 

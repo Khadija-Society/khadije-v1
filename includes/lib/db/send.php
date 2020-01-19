@@ -89,7 +89,7 @@ class send
 	{
 
 		$default = self::$options;
-		$default['search_field'] = " ( users.mobile LIKE '%__string__%' or users.displayname LIKE '%__string__%' ) ";
+		$default['search_field'] = " ( agent_send.title LIKE '%__string__%' ) ";
 
 
 		if(!is_array($_args))

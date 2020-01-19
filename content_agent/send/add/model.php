@@ -9,9 +9,9 @@ class model
 
 		$post =
 		[
-			'city'        => \dash\request::post('city'),
+			'city'        => \dash\request::get('city'),
 
-			'place_id'    => \dash\request::post('place'),
+			'place_id'    => \dash\request::get('place'),
 
 			'startdate'   => \dash\request::post('startdate'),
 			'enddate'     => \dash\request::post('enddate'),
@@ -33,7 +33,7 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::this());
+			\dash\redirect::to(\dash\url::this(). \dash\data::xCityStart());
 		}
 
 	}

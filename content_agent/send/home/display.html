@@ -39,6 +39,7 @@
 {%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
+    <input type="hidden" name="city" value="{{requestGET.city}}">
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -54,7 +55,7 @@
   <table class="tbl1 v4 cbox fs12">
     <thead>
       <tr>
-
+        <th>{%trans "Title"%}</th>
 
         <th class="collapsing" data-sort="{{sortLink.adminoffice_id.order}}"><a href='{{sortLink.adminoffice_id.link}}'>مدیر زائر سرا</a></th>
         <th class="collapsing" data-sort="{{sortLink.admin_id.order}}"><a href='{{sortLink.admin_id.link}}'>مدیر کاروان</a></th>
@@ -62,7 +63,6 @@
         <th class="collapsing" data-sort="{{sortLink.servant_id.order}}"><a href='{{sortLink.servant_id.link}}'>نگهبان</a></th>
 
 
-        <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
         <th>زائرسرا</th>
         <th>{%trans "Date"%}</th>
 
@@ -73,7 +73,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
-
+        <td>{{value.title}}</td>
          <td class="collapsing">
           <img src="{{value.adminoffice_avatar}}" class="avatar">
           <b>{{value.adminoffice_displayname}}<b>
@@ -100,11 +100,11 @@
           <span class="badge light">{{value.servant_mobile | fitNumber(false)}}</span>
         </td>
 
-        <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>
+
         <td>{{value.place_title}}</td>
         <td >{{value.startdate | dt(null, 'date')}}-{{value.enddate | dt(null, 'date')}}</td>
         <td class="collapsing">
-          <a class="badge info" href="{{url.this}}/view?id={{value.id}}">{%trans "Detail"%}</a>
+          <a class="btn info" href="{{url.this}}/view?id={{value.id}}{{xCityAnd}}">{%trans "Detail"%}</a>
         </td>
       </tr>
       {%endfor%}
@@ -118,7 +118,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -126,12 +126,12 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new servant!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.here}}/servant/sortlist{{xCityStart}}">{%trans "Try to start with add new servant!"%}</a></p>
 {%endblock%}
 

@@ -16,38 +16,22 @@
 
 {%block step1%}
 
-<div class="f justify-center">
-  <div class="c6 s12">
-    <div class="cbox">
-      {%if url.child == 'edit'%}
-        <h2>ویرایش اطلاعات اعزام</h2>
-      {%else%}
-        <h2>ثبت اعزام جدید</h2>
-      {%endif%}
-
-        <form method="get" autocomplete="off" action="{{url.that}}">
-          <input type="hidden" name="city" value="{{requestGET.city}}">
-          <input type="hidden" name="job" value="{{requestGET.job}}">
-          <input type="hidden" name="user" value="{{requestGET.user}}">
-
-
-          {{block('iZaerSara')}}
-
-
-          {{block('imoballeqe')}}
-
-          <div class="txtRa">
-            <button class="btn primary mT10">مرحله بعد</button>
+    {%if placeList%}
+      <div class="f">
+        {%for key, value in placeList%}
+          <div class="c4 s12 pA10">
+            <a class="dcard grShadow grGreen2 x3 op100" href='{{url.that}}?city={{requestGET.city}}&job={{requestGET.job}}&user={{requestGET.user}}&place={{value.id}}&missionary={{requestGET.user}}'>
+              <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
+            </a>
           </div>
+        {%endfor%}
+      </div>
+
+    {%else%}
+    <div class="msg warn2">هیچ مکانی متناسب با شرایط اعزام ایشان یافت نشد!</div>
+    {%endif%}
 
 
-
-
-        </form>
-
-    </div>
-  </div>
-</div>
 {%endblock%}
 
 
@@ -71,10 +55,10 @@
           <input type="hidden" name="city" value="{{myCity}}">
           <input type="hidden" name="job" value="{{requestGET.job}}">
           <input type="hidden" name="user" value="{{requestGET.user}}">
+          <input type="hidden" name="missionary" value="{{requestGET.user}}">
 
-          {%if url.child == 'add' and not myCity%}
-            {{block('iCity')}}
-          {%endif%}
+
+
             {{block('iZaerSara')}}
 
 
@@ -174,8 +158,10 @@
 {%block iZaerSara%}
 <h6 class='mT10'>زائر سرا</h6>
 
+          <input type="hidden" name="place" value="{{requestGET.place}}">
+
 {%if placeList%}
-<select name="place" class="select ui dropdown search" id="place">
+<select name="place" class="select ui dropdown search" id="place" disabled  >
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in placeList%}
     <option value="{{value.id}}" {%if dataRow.place_id == value.id or requestGET.place == value.id%} selected {%endif%}>{{value.title}}</option>
@@ -234,9 +220,11 @@
 
 {%block imodirZaerSara%}
 <h6 class="mT10">مدیر زائرسرا</h6>
+          <input type="hidden" name="adminoffice" value="{{defaultPlace.adminoffice_id}}">
+
 {%if servantList%}
 
-<select name="adminoffice" class="select ui dropdown search" id="servant">
+<select name="adminoffice" class="select ui dropdown search" id="servant" disabled >
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in servantList%}
     <option value="{{value.user_id}}" {%if dataRow.adminoffice_id == value.user_id or defaultPlace.adminoffice_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
@@ -254,9 +242,10 @@
 {%block inegahban%}
 <h6 class="mT10">نگهبان زائرسرا</h6>
 
+  <input type="hidden" name="servant" value="{{defaultPlace.servant_id}}">
 {%if negahbanList%}
 
-<select name="servant" class="select ui dropdown search" id="negahban">
+<select name="servant" class="select ui dropdown search" id="negahban" disabled >
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in negahbanList%}
     <option value="{{value.user_id}}" {%if dataRow.servant_id == value.user_id or defaultPlace.servant_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
@@ -278,7 +267,7 @@
 
 {%if moballeqeList%}
 
-<select name="missionary" class="select ui dropdown search" id="moballeq">
+<select name="missionary" class="select ui dropdown search" id="moballeq" disabled >
   <option value="">{%trans "Please select one item"%}</option>
   {%for key, value in moballeqeList%}
     <option value="{{value.user_id}}" {%if dataRow.missionary_id == value.user_id or requestGET.user == value.user_id or requestGET.missionary == value.user_id %} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
