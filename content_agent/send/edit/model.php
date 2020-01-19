@@ -8,26 +8,24 @@ class model
 	{
 
 
+
 		$post =
 		[
 
+			'title'       => \dash\request::post('title'),
 
-			'place_id'    => \dash\request::post('place'),
+			'starttime'   => \dash\request::post('starttime'),
+			'endtime'     => \dash\request::post('endtime'),
 
 			'startdate'   => \dash\request::post('startdate'),
 			'enddate'     => \dash\request::post('enddate'),
 
 
-
-			'mobile'      => \dash\request::post('memberTl'),
-			'gender'      => \dash\request::post('memberGender'),
-			'displayname' => \dash\request::post('memberN'),
-
 			'clergy'      => \dash\request::post('clergy'),
 			'admin'       => \dash\request::post('admin'),
-			'adminoffice'    => \dash\request::post('adminoffice'),
-			'missionary'    => \dash\request::post('missionary'),
-			'servant'    => \dash\request::post('servant'),
+			'adminoffice' => \dash\request::post('adminoffice'),
+			'missionary'  => \dash\request::post('missionary'),
+			'servant'     => \dash\request::post('servant'),
 		];
 
 		\lib\app\send::edit($post, \dash\request::get('id'));

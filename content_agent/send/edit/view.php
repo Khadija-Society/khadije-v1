@@ -14,6 +14,14 @@ class view extends \content_agent\send\add\view
 		\dash\data::page_pictogram('edit');
 
 
+		if(\dash\data::dataRow_place_id())
+		{
+			$default_place = \lib\app\agentplace::get(\dash\data::dataRow_place_id());
+			\dash\data::defaultPlace($default_place);
+
+		}
+
+
 		$args_place = [];
 		$args_place['pagenation'] = false;
 
