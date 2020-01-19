@@ -23,8 +23,9 @@ class model
 
 			'gender'      => \dash\request::post('gender'),
 
-			'adminoffice' => \dash\request::post('adminoffice'),
-			'servant'     => \dash\request::post('servant'),
+			'adminoffice' => \dash\request::post('adminoffice') === '0' ? null : \dash\request::post('adminoffice'),
+			'servant'     => \dash\request::post('servant') === '0' ? null : \dash\request::post('servant'),
+			'servant2'    => \dash\request::post('servant2') === '0' ? null : \dash\request::post('servant2'),
 
 		];
 

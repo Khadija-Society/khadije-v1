@@ -162,6 +162,14 @@ class agentplace
 			return false;
 		}
 
+		$servant2 = \dash\app::request('servant2');
+		$servant2 = \dash\coding::decode($servant2);
+		if(\dash\app::isset_request('servant2') && !$servant2 && \dash\app::request('servant2'))
+		{
+			\dash\notif::error(T_("Invalid data"), 'servant2');
+			return false;
+		}
+
 
 
 		$args                   = [];
@@ -177,6 +185,7 @@ class agentplace
 		$args['gender']         = $gender;
 		$args['adminoffice_id'] = $adminoffice;
 		$args['servant_id']     = $servant;
+		$args['servant2_id']     = $servant2;
 
 		return $args;
 	}
@@ -395,6 +404,7 @@ class agentplace
 				case 'id':
 				case 'adminoffice_id':
 				case 'servant_id':
+				case 'servant2_id':
 					$result[$key] = \dash\coding::encode($value);
 					break;
 
