@@ -14,7 +14,7 @@ class view
 
 		if(\dash\permission::check('mPlaceAdd'))
 		{
-			\dash\data::badge_link(\dash\url::this(). '/add');
+			\dash\data::badge_link(\dash\url::this(). '/add' . \dash\data::xCityStart());
 			\dash\data::badge_text(T_('Add new place'));
 		}
 
@@ -42,6 +42,11 @@ class view
 			$args['status'] = \dash\request::get('status');
 		}
 
+		if(\dash\request::get('city'))
+		{
+			$args['city'] = \dash\request::get('city');
+		}
+
 
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\agentplace::$sort_field, \dash\url::this());
 		$dataTable = \lib\app\agentplace::list(\dash\request::get('q'), $args);
@@ -53,6 +58,7 @@ class view
 		unset($check_empty_datatable['sort']);
 		unset($check_empty_datatable['order']);
 		unset($check_empty_datatable['pagenation']);
+		unset($check_empty_datatable['city']);
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $check_empty_datatable);

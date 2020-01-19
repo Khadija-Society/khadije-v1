@@ -38,6 +38,7 @@
 {%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
+    <input type="hidden" name="city" value="{{requestGET.city}}">
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search in places"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -54,7 +55,7 @@
     <thead>
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
-        <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
+
         <th data-sort="{{sortLink.gender.order}}"><a href='{{sortLink.gender.link}}'>{%trans "Gender"%}</a></th>
 
 
@@ -66,17 +67,15 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative'{%endif%}>
-        {%if perm('mPlaceEdit')%}
-        <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a> <small>{{value.subtitle}}</small></td>
-        {%else%}
-        <td>{{value.title}}</td>
-        {%endif%}
-        <td>{%set myCity = value.city%}{%trans myCity%}</td>
+
+        <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i> {{value.title}}</a> <small>{{value.subtitle}}</small></td>
+
+
         <td>{%set myGender = value.gender%}{%trans myGender%}</td>
 
 
 
-        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
+        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}">{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
@@ -90,7 +89,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -98,12 +97,12 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new place!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add{{xCityStart}}">{%trans "Try to start with add new place!"%}</a></p>
 {%endblock%}
 

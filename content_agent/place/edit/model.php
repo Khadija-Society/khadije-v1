@@ -12,7 +12,7 @@ class model
 		[
 			'title'       => \dash\request::post('title'),
 			'subtitle'    => \dash\request::post('subtitle'),
-			'city'        => \dash\request::post('city'),
+			'city'        => \dash\request::get('city'),
 
 			'capacity'    => \dash\request::post('capacity'),
 
@@ -50,7 +50,7 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::here(). '/place');
+			\dash\redirect::to(\dash\url::here(). '/place'. \dash\data::xCityStart());
 		}
 
 	}
