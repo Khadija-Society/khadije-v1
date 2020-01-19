@@ -13,6 +13,7 @@ class controller
 		{
 			if(\dash\url::module() === 'city')
 			{
+				return;
 				// too many redirect!
 			}
 			else
@@ -39,6 +40,11 @@ class controller
 		}
 
 		\dash\data::xCity($start. 'city='. $xCity);
+		\dash\data::xCityStart('?city='. $xCity);
+		\dash\data::xCityAnd('&city='. $xCity);
+
+		\dash\data::xCityTitle(T_($xCity));
+		\dash\data::xCityTitlePage(' | '. \dash\data::xCityTitle());
 	}
 }
 ?>
