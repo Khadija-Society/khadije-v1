@@ -7,9 +7,13 @@ class view
 	public static function config()
 	{
 		// \dash\permission::access('agentServantProfileView');
-		\dash\data::page_title(T_("Servant Profile"));
+		\dash\data::page_title("ثبت ارزیابی");
 
-		\dash\data::page_pictogram('magic');
+		\dash\data::page_pictogram('plus');
+
+		\dash\data::badge_link(\dash\url::this(). '/assessment?id='. \dash\request::get('id'). \dash\data::xCityAnd());
+		\dash\data::badge_text(T_('Back'));
+
 
 
 		$assessment_id = \dash\coding::decode(\dash\request::get('assessment_id'));

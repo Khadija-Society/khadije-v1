@@ -33,9 +33,9 @@
                   <td>{%if v.data.percent%}{{v.data.percent | fitNumber}}{%trans "%"%}{%else%}-{%endif%}</td>
                   <td class="collapsing">
                     {%if v.data.id%}
-                      <a class="btn success xs" href="{{url.this}}/assessmentadd?id={{requestGET.id}}&assessment_id={{v.data.id | coding('encode')}}">نمایش ارزیابی</a>
+                      <a class="btn success xs" href="{{url.this}}/assessmentadd?id={{requestGET.id}}&assessment_id={{v.data.id | coding('encode')}}{{xCityAnd}}">نمایش ارزیابی</a>
                     {%else%}
-                      <a class="btn primary xs" href="{{url.this}}/assessmentadd?id={{requestGET.id}}&job={{v.ejob}}&forjob={{v.ejob_for}}">ثبت ارزیابی</a>
+                      <a class="btn primary xs" href="{{url.this}}/assessmentadd?id={{requestGET.id}}&job={{v.ejob}}&forjob={{v.ejob_for}}{{xCityAnd}}">ثبت ارزیابی</a>
                     {%endif%}
                   </td>
                 </tr>

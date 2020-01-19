@@ -196,7 +196,7 @@ class model
 		if(\dash\engine\process::status())
 		{
 			\dash\notif::ok(T_("Data saved"));
-			\dash\redirect::to(\dash\url::that(). '?id='. \dash\request::get('id'). '&assessment_id='. \dash\coding::encode($assessment_id));
+			\dash\redirect::to(\dash\url::that(). '?id='. \dash\request::get('id'). '&assessment_id='. \dash\coding::encode($assessment_id). \dash\data::xCityAnd());
 		}
 	}
 }

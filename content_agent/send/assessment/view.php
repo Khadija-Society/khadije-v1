@@ -14,6 +14,9 @@ class view
 		\dash\data::badge_link(\dash\url::this(). \dash\data::xCityStart());
 		\dash\data::badge_text(T_('Back'));
 
+		\dash\data::badge_link(\dash\url::this(). \dash\data::xCityStart());
+		\dash\data::badge_text(T_('Back'));
+
 
 		self::load_assessment_list();
 
