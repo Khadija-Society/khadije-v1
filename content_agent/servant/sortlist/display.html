@@ -94,7 +94,9 @@
         <th>تعداد اعزام</th>
         <th>میانگین امتیاز</th>
         <th>آخرین اعزام</th>
-        <th class="collapsing">{%trans "Profile"%}</th>
+        <th>دفعات اعلام عدم تمایل</th>
+        <th>عدم تمایل</th>
+        <th class="collapsing">ثبت اعزام</th>
       </tr>
     </thead>
 
@@ -113,11 +115,21 @@
 
 
         <td>{{value.max_startdate |dt(null, 'date')}} <br><b>{{value.max_startdate |dt('human', 'year')}}</b> </td>
+        <td><b>{{value.reject_count | fitNumber}}</b> <br> {{value.reject_date | dt}}</td>
+        <td>
+          {%if value.reject_count > 1%}
+            <div data-confirm data-data='{"reject": "reject", "servant_id" : "{{value.id}}"}' class="btn danger sm">عدم تمایل برای اعزام برای بار چندم</div>
+          {%elseif value.reject_count == 1%}
+            <div data-confirm data-data='{"reject": "reject", "servant_id" : "{{value.id}}"}' class="btn danger2 sm">عدم تمایل برای اعزام برای بار دوم</div>
+          {%else%}
+            <div data-confirm data-data='{"reject": "reject", "servant_id" : "{{value.id}}"}' class="btn warn sm">عدم تمایل برای اعزام</div>
+          {%endif%}
 
 
+        </td>
         <td class="collapsing">
 
-          <a class="btn primary" href="{{url.here}}/send/add?user={{value.user_id}}&city={{value.city}}&job={{value.job}}">{%trans "Dispatch"%}</a>
+          <a class="btn success" href="{{url.here}}/send/add?user={{value.user_id}}&city={{value.city}}&job={{value.job}}">{%trans "Dispatch"%}</a>
 
         </td>
       </tr>

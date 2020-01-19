@@ -38,3 +38,9 @@ ALTER TABLE `agent_send` ADD CONSTRAINT `agent_place_khadem2_id` FOREIGN KEY (`k
 
 
 ALTER TABLE `agent_send` ADD `title` varchar(200)  NULL DEFAULT NULL AFTER `id`;
+
+
+
+
+ALTER TABLE `agent_servant` ADD `reject_count` int(10)   NULL DEFAULT NULL AFTER `status`;
+ALTER TABLE `agent_servant` ADD `reject_date` datetime   NULL DEFAULT NULL AFTER `status`;
