@@ -28,7 +28,7 @@ class servant
 	{
 		$options =
 		[
-			'public_show_field' => "agent_servant.*, users.displayname, users.avatar, users.mobile",
+			'public_show_field' => "agent_servant.*, IFNULL(users.displayname, CONCAT(users.firstname, ' ', users.lastname)) AS `displayname`, users.avatar, users.mobile",
 			'master_join' => "INNER JOIN users ON users.id = agent_servant.user_id",
 		];
 		$result = \dash\db\config::public_get('agent_servant', $_args, $options);
@@ -56,7 +56,7 @@ class servant
 		$default =
 		[
 			'sort_join'         => false,
-			'public_show_field' => "agent_servant.*, users.displayname, users.avatar, users.mobile",
+			'public_show_field' => "agent_servant.*, IFNULL(users.displayname, CONCAT(users.firstname, ' ', users.lastname)) AS `displayname`, users.avatar, users.mobile",
 			'master_join'       => "INNER JOIN users ON users.id = agent_servant.user_id",
 			'search_field'      => " ( users.mobile LIKE '%__string__%' or users.displayname LIKE '%__string__%' ) ",
 		];
@@ -72,7 +72,7 @@ class servant
 		{
 			$_args['public_show_field'] =
 			"
-				agent_servant.*, users.displayname, users.avatar, users.mobile,
+				agent_servant.*, IFNULL(users.displayname, CONCAT(users.firstname, ' ', users.lastname)) AS `displayname`, users.avatar, users.mobile,
 				(SELECT COUNT(*) FROM agent_send WHERE agent_send.missionary_id = agent_servant.user_id) AS `send_count`,
 				(SELECT AVG(agent_assessment.percent) FROM agent_send INNER JOIN agent_assessment ON agent_assessment.send_id = agent_send.id WHERE agent_send.missionary_id = agent_servant.user_id) AS `send_avg`,
 				(SELECT MAX(agent_send.startdate) FROM agent_send WHERE agent_send.missionary_id = agent_servant.user_id) AS `max_startdate`

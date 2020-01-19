@@ -12,8 +12,8 @@ class view
 
 		\dash\data::page_pictogram('tools');
 
-		\dash\data::badge_link(\dash\url::this(). '/add');
-		\dash\data::badge_text(T_('Add new servant'));
+		\dash\data::badge_link(\dash\url::here());
+		\dash\data::badge_text(T_('Back'));
 
 		$search_string            = \dash\request::get('q');
 		if($search_string)

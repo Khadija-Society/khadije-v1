@@ -34,23 +34,23 @@ class send
 		"
 			agent_send.*,
 
-			clergy.displayname AS `clergy_displayname`,
+			IFNULL(clergy.displayname, CONCAT(clergy.firstname, ' ', clergy.lastname)) AS `clergy_displayname`,
 			clergy.avatar AS `clergy_avatar`,
 			clergy.mobile AS `clergy_mobile`,
 
-			admin.displayname AS `admin_displayname`,
+			IFNULL(admin.displayname, CONCAT(admin.firstname, ' ', admin.lastname)) AS `admin_displayname`,
 			admin.avatar AS `admin_avatar`,
 			admin.mobile AS `admin_mobile`,
 
-			adminoffice.displayname AS `adminoffice_displayname`,
+			IFNULL(adminoffice.displayname, CONCAT(adminoffice.firstname, ' ', adminoffice.lastname)) AS `adminoffice_displayname`,
 			adminoffice.avatar AS `adminoffice_avatar`,
 			adminoffice.mobile AS `adminoffice_mobile`,
 
-			missionary.displayname AS `missionary_displayname`,
+			IFNULL(missionary.displayname, CONCAT(missionary.firstname, ' ', missionary.lastname)) AS `missionary_displayname`,
 			missionary.avatar AS `missionary_avatar`,
 			missionary.mobile AS `missionary_mobile`,
 
-			servant.displayname AS `servant_displayname`,
+			IFNULL(servant.displayname, CONCAT(servant.firstname, ' ', servant.lastname)) AS `servant_displayname`,
 			servant.avatar AS `servant_avatar`,
 			servant.mobile AS `servant_mobile`,
 

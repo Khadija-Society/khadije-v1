@@ -68,7 +68,7 @@
 
         <form method="post" autocomplete="off">
 
-          <input type="hidden" name="city" value="{{requestGET.city}}">
+          <input type="hidden" name="city" value="{{myCity}}">
           <input type="hidden" name="job" value="{{requestGET.job}}">
           <input type="hidden" name="user" value="{{requestGET.user}}">
 
@@ -81,12 +81,8 @@
               {{block('imodirZaerSara')}}
               {{block('inegahban')}}
 
+              {{block('imodir')}}
 
-          <div class="f">
-            <div class="c">{{block('imodir')}}</div>
-            <div class="cauto mLa5 mT20"><span data-kerkere='.addUserForm' class="btn outline mT15"><span class="fs18">+</span></span></div>
-          </div>
-          {{block('iAddUserForm')}}
 
           {{block('imoballeqe')}}
           <div class="f mT20">
