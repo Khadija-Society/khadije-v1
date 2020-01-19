@@ -3,7 +3,72 @@
 
 
 {%block pageContent%}
+<div class="f">
 
+   <div class="c s6">
+    <a class="dcard {%if requestGET.city == 'qom' %}active{%endif%}" href='{{url.this}}?city=qom{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
+     <div class="statistic">
+      <div class="value">{%trans "Qom"%}</div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s6">
+    <a class="dcard {%if requestGET.city == 'mashhad' %}active{%endif%}" href='{{url.this}}?city=mashhad{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
+     <div class="statistic">
+      <div class="value">{%trans "Mashhad"%}</div>
+     </div>
+    </a>
+   </div>
+
+
+   <div class="c s6">
+    <a class="dcard {%if requestGET.city == 'karbala' %}active{%endif%}" href='{{url.this}}?city=karbala{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
+     <div class="statistic">
+      <div class="value">{%trans "Karbala"%}</div>
+     </div>
+    </a>
+   </div>
+
+
+
+
+
+
+    <div class="c s6">
+    <a class="dcard {%if requestGET.job == 'adminoffice' %}active{%endif%}" href='{{url.this}}?job=adminoffice{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+     <div class="statistic">
+      <div class="label">مدیر زائرسرا</div>
+     </div>
+    </a>
+   </div>
+
+
+    <div class="c s6">
+    <a class="dcard {%if requestGET.job == 'admin' %}active{%endif%}" href='{{url.this}}?job=admin{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+     <div class="statistic">
+      <div class="label">مدیر کاروان</div>
+     </div>
+    </a>
+   </div>
+
+    <div class="c s6">
+    <a class="dcard {%if requestGET.job == 'missionary' %}active{%endif%}" href='{{url.this}}?job=missionary{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+     <div class="statistic">
+      <div class="label">مبلغ</div>
+     </div>
+    </a>
+   </div>
+
+    <div class="c s6">
+    <a class="dcard {%if requestGET.job == 'servant' %}active{%endif%}" href='{{url.this}}?job=servant{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+     <div class="statistic">
+      <div class="label">نگهبان</div>
+     </div>
+    </a>
+   </div>
+  </div>
 {%if dataTable%}
  {%if dataFilter%}
 

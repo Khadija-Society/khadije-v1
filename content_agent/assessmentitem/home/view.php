@@ -37,9 +37,18 @@ class view
 			$args['order'] = 'desc';
 		}
 
-		if(\dash\request::get('status'))
+		if(\dash\request::get('city'))
 		{
-			$args['status'] = \dash\request::get('status');
+			$city = \dash\request::get('city');
+
+			$args['1.1'] =[' = 1.1 ', " AND ( city is null or city = '$city')"];
+		}
+
+		if(\dash\request::get('job'))
+		{
+			$job = \dash\request::get('job');
+
+			$args['2.2'] =[' = 2.2 ', " AND ( job is null or job = '$job')"];
 		}
 
 
@@ -51,6 +60,8 @@ class view
 
 		$check_empty_datatable = $args;
 		unset($check_empty_datatable['sort']);
+		unset($check_empty_datatable['1.1']);
+		unset($check_empty_datatable['2.2']);
 		unset($check_empty_datatable['order']);
 		unset($check_empty_datatable['pagenation']);
 

@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 		// \dash\permission::access('agentServantView');
-		\dash\data::page_title(T_("Servant list"));
+		\dash\data::page_title("لیست خادمین اعزام شده");
 
 
 		\dash\data::page_pictogram('tools');
