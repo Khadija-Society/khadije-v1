@@ -2,9 +2,12 @@
 
 {%block sidenav%}
   <li><a href="{{url.here}}"><i class='sf-gauge'></i> {% trans "Agent Panel" %}</a></li>
+  <li><a href="{{url.here}}/servant"><i class='sf-users'></i> {% trans "Servants" %}</a></li>
+  <li><a href="{{url.here}}/servant/sortlist"><i class='sf-list'></i> نوبت اعزام</a></li>
+  <li><a href="{{url.here}}/send"><i class='sf-list'></i> اعزام خادم</a></li>
+  <li class="hr"></li>
   <li><a href="{{url.here}}/skills"><i class='sf-tools'></i> {% trans "Skills" %}</a></li>
   <li><a href="{{url.here}}/place"><i class='sf-pin'></i> {% trans "Agent Place" %}</a></li>
   <li><a href="{{url.here}}/assessmentitem"><i class='sf-lamp'></i> {% trans "Assessment Item" %}</a></li>
-  <li><a href="{{url.here}}/servant"><i class='sf-users'></i> {% trans "Servants" %}</a></li>
 
 {%endblock%}
