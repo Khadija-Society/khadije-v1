@@ -12,7 +12,7 @@ class view
 
 		\dash\data::page_pictogram('tools');
 
-		\dash\data::badge_link(\dash\url::this(). '/add');
+		\dash\data::badge_link(\dash\url::this(). '/add'. \dash\data::xCityStart());
 		\dash\data::badge_text(T_('Add new servant'));
 
 		$search_string            = \dash\request::get('q');
@@ -31,7 +31,7 @@ class view
 
 		if(!$args['order'])
 		{
-			$args['order'] = 'ASC';
+			$args['order'] = 'DESC';
 		}
 
 
@@ -50,7 +50,7 @@ class view
 		if(\dash\request::get('city'))
 		{
 			$args['agent_servant.city'] = \dash\request::get('city');
-			$filterArgs['City'] = \dash\request::get('city');
+
 		}
 
 

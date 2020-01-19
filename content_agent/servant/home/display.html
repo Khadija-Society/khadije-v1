@@ -3,47 +3,25 @@
 
 
 {%block pageContent%}
-  <div class="f">
-
-   <div class="c s6">
-    <a class="dcard {%if requestGET.city == 'qom' %}active{%endif%}" href='{{url.this}}?city=qom{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
-     <div class="statistic">
-      <div class="value">{%trans "Qom"%}</div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s6">
-    <a class="dcard {%if requestGET.city == 'mashhad' %}active{%endif%}" href='{{url.this}}?city=mashhad{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
-     <div class="statistic">
-      <div class="value">{%trans "Mashhad"%}</div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s6">
-    <a class="dcard {%if requestGET.city == 'karbala' %}active{%endif%}" href='{{url.this}}?city=karbala{%if requestGET.job%}&job={{requestGET.job}}{%endif%}'>
-     <div class="statistic">
-      <div class="value">{%trans "Karbala"%}</div>
-     </div>
-    </a>
-   </div>
-
-  </div>
 
 
   <div class="f">
 
 
 
+   <div class="c s6">
+    <a class="dcard {%if not requestGET.job  %}active{%endif%}" href='{{url.this}}{{xCityStart}}'>
+     <div class="statistic">
+      <div class="label">همه</div>
+     </div>
+    </a>
+   </div>
 
 
 
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'adminoffice' %}active{%endif%}" href='{{url.this}}?job=adminoffice{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard {%if requestGET.job == 'adminoffice' %}active{%endif%}" href='{{url.this}}?job=adminoffice{{xCityAnd}}'>
      <div class="statistic">
       <div class="label">مدیر زائرسرا</div>
      </div>
@@ -52,7 +30,7 @@
 
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'admin' %}active{%endif%}" href='{{url.this}}?job=admin{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard {%if requestGET.job == 'admin' %}active{%endif%}" href='{{url.this}}?job=admin{{xCityAnd}}'>
      <div class="statistic">
       <div class="label">مدیر کاروان</div>
      </div>
@@ -60,7 +38,7 @@
    </div>
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'missionary' %}active{%endif%}" href='{{url.this}}?job=missionary{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard {%if requestGET.job == 'missionary' %}active{%endif%}" href='{{url.this}}?job=missionary{{xCityAnd}}'>
      <div class="statistic">
       <div class="label">مبلغ</div>
      </div>
@@ -68,7 +46,7 @@
    </div>
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'servant' %}active{%endif%}" href='{{url.this}}?job=servant{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard {%if requestGET.job == 'servant' %}active{%endif%}" href='{{url.this}}?job=servant{{xCityAnd}}'>
      <div class="statistic">
       <div class="label">نگهبان</div>
      </div>
@@ -111,6 +89,7 @@
 {%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
+    <input type="hidden" name="city" value="{{requestGET.city}}">
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -129,7 +108,7 @@
         <th data-sort="{{sortLink.user_id.order}}"><a href='{{sortLink.user_id.link}}'>{%trans "User"%}</a></th>
         <th data-sort="{{sortLink.user_id.order}}"><a href='{{sortLink.user_id.link}}'>{%trans "Mobile"%}</a></th>
         <th data-sort="{{sortLink.job.order}}"><a href='{{sortLink.job.link}}'>{%trans "Job"%}</a></th>
-        <th data-sort="{{sortLink.city.order}}"><a href='{{sortLink.city.link}}'>{%trans "City"%}</a></th>
+
         <th data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
         <th class="collapsing">{%trans "Profile"%}</th>
       </tr>
@@ -139,16 +118,14 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
         <td class="collapsing"><img src="{{value.avatar}}" class="avatar"></td>
-        <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.displayname}}</a></td>
+        <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i> {{value.displayname}}</a></td>
         <td>{{value.mobile| fitNumber('mobile')}}</td>
-        <td >{%set myJob = value.job | capitalize %}<a href="{{url.this}}?job={{value.job}}">{%trans myJob%}</a></td>
-        <td >{%set myCity = value.city | capitalize %}<a href="{{url.this}}?city={{value.city}}">{%trans myCity%}</a></td>
-        <td >{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
+        <td >{%set myJob = value.job | capitalize %}<a href="{{url.this}}?job={{value.job}}{{xCityAnd}}">{%trans myJob%}</a></td>
+
+        <td >{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}">{%trans myStatus%}</a></td>
         <td class="collapsing">
-          <a class="badge" href="{{url.this}}/profile?user={{value.user_id}}">{%trans "Profile"%}</a>
-          {%if value.job == 'missionary'%}
-          <a class="badge primary" href="{{url.here}}/send/add?user={{value.user_id}}&city={{value.city}}&job={{value.job}}">{%trans "Dispatch"%}</a>
-          {%endif%}
+          <a class="btn success" href="{{url.this}}/profile?user={{value.user_id}}{{xCityAnd}}">{%trans "Profile"%}</a>
+
         </td>
       </tr>
       {%endfor%}
@@ -162,7 +139,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -170,12 +147,12 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new servant!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add{{xCityStart}}">{%trans "Try to start with add new servant!"%}</a></p>
 {%endblock%}
 

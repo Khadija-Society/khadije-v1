@@ -10,7 +10,7 @@ class model
 		[
 			'member'      => \dash\request::post('member'),
 			'job'         => \dash\request::post('job'),
-			'city'        => \dash\request::post('city'),
+			'city'        => \dash\request::get('city'),
 			'mobile'      => \dash\request::post('memberTl'),
 			'gender'      => \dash\request::post('memberGender'),
 			'displayname' => \dash\request::post('memberN'),
@@ -20,7 +20,7 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::this());
+			\dash\redirect::to(\dash\url::this(). \dash\data::xCityStart());
 		}
 
 	}

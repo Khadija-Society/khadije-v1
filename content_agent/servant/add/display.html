@@ -12,7 +12,7 @@
 
 
      {{block('iAddUserForm')}}
-     {{block('iCity')}}
+
      {{block('iJob')}}
      {{block('iadd')}}
     </div>
@@ -46,7 +46,7 @@
 
 {%block iMemberList%}
 <label for="member">{%trans "Choose user and to set as servant"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-<select name="member" class="ui dropdown search" id="member" data-source='{{url.here}}/servant?list=member&q={query}'>
+<select name="member" class="ui dropdown search" id="member" data-source='{{url.here}}/servant?list=member{{xCityAnd}}&q={query}'>
   <option value="" readonly>{%trans "Please choose user"%} *</option>
 </select>
 {%endblock%}

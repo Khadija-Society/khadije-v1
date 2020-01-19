@@ -12,14 +12,14 @@ class model
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::to(\dash\url::this());
+				\dash\redirect::to(\dash\url::this(). \dash\data::xCityStart());
 			}
 		}
 
 		$post =
 		[
 			'job'    => \dash\request::post('job'),
-			'city'   => \dash\request::post('city'),
+			'city'   => \dash\request::get('city'),
 			'status' => \dash\request::post('status'),
 		];
 
@@ -35,7 +35,7 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::this());
+			\dash\redirect::to(\dash\url::this(). \dash\data::xCityStart());
 		}
 
 	}
