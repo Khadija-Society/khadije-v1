@@ -15,21 +15,29 @@
 
 
 {%block step1%}
+    <div class="f justify-center">
+      <div class="c9 m12 s12">
+        <div class="cbox">
+          <div class="msg success2">شما در حال اعزام مبلغ <b>{{userDetail.displayname}}</b> به شهر <b>{{xCityTitle}}</b> هستید</div>
+          <div class="msg primary2">لطفا زائرسرا را انتخبا کنید</div>
 
-    {%if placeList%}
-      <div class="f">
-        {%for key, value in placeList%}
-          <div class="c4 s12 pA10">
-            <a class="dcard grShadow grGreen2 x3 op100" href='{{url.that}}?city={{requestGET.city}}&job={{requestGET.job}}&user={{requestGET.user}}&place={{value.id}}&missionary={{requestGET.user}}'>
-              <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
-            </a>
-          </div>
-        {%endfor%}
+          {%if placeList%}
+            <div class="f">
+              {%for key, value in placeList%}
+                <div class="c4 m6 s12 pA10">
+                  <a class="dcard grShadow grGreen2 x3 op100" href='{{url.that}}?city={{requestGET.city}}&job={{requestGET.job}}&user={{requestGET.user}}&place={{value.id}}&missionary={{requestGET.user}}'>
+                    <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
+                  </a>
+                </div>
+              {%endfor%}
+            </div>
+
+          {%else%}
+          <div class="msg warn2">هیچ مکانی متناسب با شرایط اعزام ایشان یافت نشد!</div>
+          {%endif%}
+        </div>
       </div>
-
-    {%else%}
-    <div class="msg warn2">هیچ مکانی متناسب با شرایط اعزام ایشان یافت نشد!</div>
-    {%endif%}
+    </div>
 
 
 {%endblock%}
@@ -52,28 +60,36 @@
 
         <form method="post" autocomplete="off">
 
+          <div class="msg success2">شما در حال اعزام مبلغ <b>{{userDetail.displayname}}</b> به شهر <b>{{xCityTitle}}</b> هستید</div>
+          <div class="msg primary2">
+            زائرسرا <b>{{defaultPlace.title}}</b>
+
+              {{block('imodirZaerSara')}}
+              {{block('inegahban')}}
+
+          </div>
+          <label for="titlex">عنوان یا شناسه اعزام</label>
+          <div class="input">
+            <input type="text" name="title" id="titlex">
+          </div>
+
           <input type="hidden" name="city" value="{{myCity}}">
           <input type="hidden" name="job" value="{{requestGET.job}}">
           <input type="hidden" name="user" value="{{requestGET.user}}">
           <input type="hidden" name="missionary" value="{{requestGET.user}}">
 
+          {{block('imodir')}}
 
 
-            {{block('iZaerSara')}}
-
-
-              {{block('imodirZaerSara')}}
-              {{block('inegahban')}}
-
-              {{block('imodir')}}
-
-
-          {{block('imoballeqe')}}
           <div class="f mT20">
 
             <div class="c6 s12 mB5">
               <div class="input ltr">
                 <input class="datepicker" type="text" name="startdate" placeholder='{%trans "Start date"%}' id="startdate"  value="{{dataRow.startdate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
+              </div>
+              <label for="starttime"></label>
+              <div class="input clockpicker" data-placement="top" data-align="left">
+                <input type="text" name="starttime" id="starttime" placeholder='{%trans "Start time"%}' autocomplete="off">
               </div>
             </div>
 
@@ -81,6 +97,10 @@
             <div class="c6 s12 mB5 pLa5">
               <div class="input ltr">
                 <input class="datepicker" type="text" name="enddate" placeholder='{%trans "End date"%}' id="enddate"  value="{{dataRow.enddate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
+              </div>
+               <label for="endtime"></label>
+              <div class="input clockpicker" data-placement="top" data-align="left">
+                <input type="text" name="endtime" id="endtime" placeholder='{%trans "End time"%}' autocomplete="off">
               </div>
             </div>
 
@@ -93,9 +113,6 @@
           {%endif%}
 
           </div>
-
-
-
 
         </form>
 

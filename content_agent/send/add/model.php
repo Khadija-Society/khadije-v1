@@ -13,6 +13,11 @@ class model
 
 			'place_id'    => \dash\request::get('place'),
 
+			'title'       => \dash\request::post('title'),
+
+			'starttime'   => \dash\request::post('starttime'),
+			'endtime'     => \dash\request::post('endtime'),
+
 			'startdate'   => \dash\request::post('startdate'),
 			'enddate'     => \dash\request::post('enddate'),
 
@@ -24,9 +29,9 @@ class model
 
 			'clergy'      => \dash\request::post('clergy'),
 			'admin'       => \dash\request::post('admin'),
-			'adminoffice'    => \dash\request::post('adminoffice'),
-			'missionary'    => \dash\request::post('missionary'),
-			'servant'    => \dash\request::post('servant'),
+			'adminoffice' => \dash\request::post('adminoffice'),
+			'missionary'  => \dash\request::post('missionary'),
+			'servant'     => \dash\request::post('servant'),
 		];
 
 		\lib\app\send::add($post);

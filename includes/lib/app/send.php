@@ -267,10 +267,11 @@ class send
 
 
 
+		$starttime      = \dash\date::make_time(\dash\app::request('starttime'));
 		$startdate      = \dash\app::request('startdate');
 		if(\dash\app::isset_request('startdate'))
 		{
-
+			$startdate = $startdate . ' '. $starttime;
 			$startdate                 = \dash\utility\convert::to_en_number($startdate);
 			if(\dash\utility\jdate::is_jalali($startdate))
 			{
@@ -282,12 +283,15 @@ class send
 				\dash\notif::error(T_("Start date is required"), 'startdate');
 				return false;
 			}
+			$startdate = $startdate . ' '. $starttime;
 
 		}
 
+		$endtime      = \dash\date::make_time(\dash\app::request('endtime'));
 		$enddate        = \dash\app::request('enddate');
 		if(\dash\app::isset_request('enddate'))
 		{
+			$enddate = $enddate . ' '. $endtime;
 			$enddate                 = \dash\utility\convert::to_en_number($enddate);
 			if(\dash\utility\jdate::is_jalali($enddate))
 			{
@@ -300,11 +304,13 @@ class send
 				return false;
 			}
 
+			$enddate = $enddate . ' '. $endtime;
+
 			if($startdate && $enddate)
 			{
 				if(intval(strtotime($startdate)) > intval(strtotime($enddate)))
 				{
-					\dash\notif::error(T_("Start date must before end date"), ['element' => ['startdate', 'enddate']]);
+					\dash\notif::error(T_("Start date must before end date"), ['element' => ['startdate', 'enddate', 'starttime', 'endtime']]);
 					return false;
 				}
 			}
@@ -373,7 +379,12 @@ class send
 		$gift           = \dash\app::request('gift');
 		$desc           = \dash\app::request('desc');
 
-
+		$title           = \dash\app::request('title');
+		if($title && mb_strlen($title) > 100)
+		{
+			\dash\notif::error("لطفا عنوان را کمتر از ۱۰۰ کاراکتر وارد کنید", 'title');
+			return false;
+		}
 
 
 		$args                   = [];
@@ -382,9 +393,10 @@ class send
 		$args['admin_id']       = $admin;
 		$args['adminoffice_id'] = $adminoffice;
 		$args['missionary_id']  = $missionary;
-		$args['servant_id']  = $servant;
+		$args['servant_id']     = $servant;
 
 		$args['place_id']       = $place_id;
+		$args['title']          = $title;
 
 		$args['city']           = $city;
 
@@ -589,6 +601,7 @@ class send
 		if(!\dash\app::isset_request('paynumber')) unset($args['paynumber']);
 		if(!\dash\app::isset_request('gift')) unset($args['gift']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
+		if(!\dash\app::isset_request('title')) unset($args['title']);
 
 		if(!empty($args))
 		{
