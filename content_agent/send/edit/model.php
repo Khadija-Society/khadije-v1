@@ -12,24 +12,23 @@ class model
 		$post =
 		[
 
+			'title'          => \dash\request::post('title'),
 
-			'title'       => \dash\request::post('title'),
+			'starttime'      => \dash\request::post('starttime'),
+			'endtime'        => \dash\request::post('endtime'),
 
-			'starttime'   => \dash\request::post('starttime'),
-			'endtime'     => \dash\request::post('endtime'),
+			'startdate'      => \dash\request::post('startdate'),
+			'enddate'        => \dash\request::post('enddate'),
 
-			'startdate'   => \dash\request::post('startdate'),
-			'enddate'     => \dash\request::post('enddate'),
+			'clergy'         => \dash\request::post('clergy'),
+			'admin'          => \dash\request::post('admin'),
 
-			'clergy'      => \dash\request::post('clergy'),
-			'admin'       => \dash\request::post('admin'),
-			// 'adminoffice' => \dash\request::post('adminoffice'),
-			// 'missionary'  => \dash\request::post('missionary'),
-			'servant'     => \dash\request::post('servant'),
-			'maddah'      => \dash\request::post('maddah_id'),
-			'nazer'       => \dash\request::post('nazer_id'),
-			'khadem'      => \dash\request::post('khadem_id'),
-			'khadem2'     => \dash\request::post('khadem2_id'),
+			'servant'        => \dash\request::post('servant'),
+			'maddah'         => \dash\request::post('maddah_id'),
+			'nazer'          => \dash\request::post('nazer_id'),
+			'khadem'         => \dash\request::post('khadem_id'),
+			'khadem2'        => \dash\request::post('khadem2_id'),
+			'status'         => \dash\request::post('status'),
 		];
 
 

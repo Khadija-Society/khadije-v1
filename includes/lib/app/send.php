@@ -57,6 +57,19 @@ class send
 		}
 
 
+		$status = \dash\app::request('status');
+		if(\dash\app::isset_request('status'))
+		{
+
+
+			if($status && !in_array($status, ['enable', 'disable', 'deleted', 'expire', 'lock', 'draft']))
+			{
+				\dash\notif::error(T_("Invalid status"));
+				return false;
+			}
+		}
+
+
 		$clergy        = \dash\app::request('clergy');
 		if(\dash\app::isset_request('clergy') && $clergy)
 		{
@@ -594,6 +607,7 @@ class send
 		$args['paynumber']      = $paynumber;
 		$args['gift']           = $gift;
 		$args['desc']           = $desc;
+		$args['status']           = $status;
 
 
 		return $args;
@@ -762,6 +776,7 @@ class send
 
 
 		if(!\dash\app::isset_request('user_id')) unset($args['user_id']);
+		if(!\dash\app::isset_request('status')) unset($args['status']);
 
 		if(!\dash\app::isset_request('clergy')) unset($args['clergy_id']);
 		if(!\dash\app::isset_request('admin')) unset($args['admin_id']);

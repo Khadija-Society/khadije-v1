@@ -100,6 +100,10 @@
             </div>
 
           </div>
+
+          {{block('iStatus')}}
+
+
           <div class="txtRa">
           {%if url.child == 'add'%}
             <button class="btn success mT10">ثبت اعزام جدید</button>
@@ -118,6 +122,17 @@
 
 
 
+{%block iStatus%}
+<label for="status">{%trans "Status"%}</label>
+<select name="status" class="select ui dropdown " id="status"  >
+  <option value="enable" {%if dataRow.status == 'enable'%} selected {%endif%}>{%trans "enable"%}</option>
+  <option value="disable" {%if dataRow.status == 'disable'%} selected {%endif%}>{%trans "disable"%}</option>
+  <option value="deleted" {%if dataRow.status == 'deleted'%} selected {%endif%}>{%trans "deleted"%}</option>
+  <option value="expire" {%if dataRow.status == 'expire'%} selected {%endif%}>{%trans "expire"%}</option>
+  <option value="lock" {%if dataRow.status == 'lock'%} selected {%endif%}>قفل شده</option>
+  <option value="draft" {%if dataRow.status == 'draft'%} selected {%endif%}>{%trans "draft"%}</option>
+</select>
+{%endblock%}
 
 
 {%block iZaerSara%}
