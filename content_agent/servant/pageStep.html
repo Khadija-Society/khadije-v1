@@ -46,7 +46,7 @@
    </div>
 
 
-
+   {%if requestGET.sid%}
    <div class="c s6">
     <a class="dcard {%if url.child == 'edit' %}active{%endif%}" href='{{url.this}}/edit?user={{requestGET.user}}{%if requestGET.sid%}&sid={{requestGET.sid}}{%endif%}{{xCityAnd}}'>
      <div class="statistic">
@@ -55,6 +55,7 @@
      </div>
     </a>
    </div>
+   {%endif%}
 
 
 
