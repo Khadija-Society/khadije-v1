@@ -11,7 +11,7 @@ class view
 
 		\dash\data::page_pictogram('tools');
 
-		\dash\data::badge_link(\dash\url::this(). \dash\data::xCityStart());
+		\dash\data::badge_link(\dash\url::here(). '/servant/sortlist'. \dash\data::xCityStart());
 		\dash\data::badge_text(T_('Back'));
 
 
@@ -30,6 +30,13 @@ class view
 
 		$userDetail = \dash\app\user::get(\dash\request::get('user'));
 		\dash\data::userDetail($userDetail);
+
+		$sid = \dash\request::get('sid');
+		if($sid)
+		{
+			$servantDetail = \lib\app\servant::get($sid);
+			\dash\data::servantDetail($servantDetail);
+		}
 
 		$args_place = [];
 		$args_place['pagenation'] = false;

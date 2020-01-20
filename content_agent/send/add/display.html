@@ -22,8 +22,9 @@
           <div class="msg primary2">
             <div class="f align-center">
               <div class="c">لطفا زائرسرا را انتخاب کنید</div>
-              <div class="cauto pRa10">sdfsdf</div>
-              <div class="cauto "><div class="btn danger">عدم تمایل به اعزام</div></div>
+              {%if servantDetail.reject_count%}<div class="cauto pRa10">تعداد دفعات اعلام عدم تمایل <b>{{servantDetail.reject_count | fitNumber}}</b> بار</div>{%endif%}
+              {%if servantDetail.reject_date%}<div class="cauto pRa10">{{servantDetail.reject_date | dt}}</div>{%endif%}
+              <div class="cauto "><div class="btn danger" data-confirm data-data='{"reject" : "reject", "servant_id" : "{{servantDetail.id}}"}'>عدم تمایل به اعزام</div></div>
             </div>
           </div>
 
