@@ -29,6 +29,7 @@ class model
 			'khadem'         => \dash\request::post('khadem_id'),
 			'khadem2'        => \dash\request::post('khadem2_id'),
 			'status'         => \dash\request::post('status'),
+			'desc'         => \dash\request::post('desc'),
 		];
 
 

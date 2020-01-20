@@ -102,6 +102,7 @@
           </div>
 
           {{block('iStatus')}}
+          {{block('IDesc')}}
 
 
           <div class="txtRa">
@@ -121,6 +122,11 @@
 {%endblock%}
 
 
+{%block IDesc%}
+<label for="desc">{%trans "Description"%}</label>
+<textarea class="txt" rows="2" name="desc" id="desc"  placeholder="توضیحات">{{dataRow.desc}}</textarea>
+
+{%endblock%}
 
 {%block iStatus%}
 <label for="status">{%trans "Status"%}</label>
