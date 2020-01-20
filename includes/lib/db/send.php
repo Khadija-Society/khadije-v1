@@ -54,6 +54,10 @@ class send
 			servant.avatar AS `servant_avatar`,
 			servant.mobile AS `servant_mobile`,
 
+			IFNULL(servant2.displayname, CONCAT(servant2.firstname, ' ', servant2.lastname)) AS `servant2_displayname`,
+			servant2.avatar AS `servant2_avatar`,
+			servant2.mobile AS `servant2_mobile`,
+
 			IFNULL(maddah.displayname, CONCAT(maddah.firstname, ' ', maddah.lastname)) AS `maddah_displayname`,
 			maddah.avatar AS `maddah_avatar`,
 			maddah.mobile AS `maddah_mobile`,
@@ -80,6 +84,7 @@ class send
 			LEFT JOIN users AS `adminoffice` 	ON adminoffice.id = agent_send.adminoffice_id
 			LEFT JOIN users AS `missionary` 	ON missionary.id  = agent_send.missionary_id
 			LEFT JOIN users AS `servant` 		ON servant.id     = agent_send.servant_id
+			LEFT JOIN users AS `servant2` 		ON servant2.id     = agent_send.servant2_id
 
 			LEFT JOIN users AS `maddah` 		ON maddah.id      = agent_send.maddah_id
 			LEFT JOIN users AS `nazer` 			ON nazer.id       = agent_send.nazer_id

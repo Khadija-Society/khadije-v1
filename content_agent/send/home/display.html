@@ -92,7 +92,7 @@
 
 
 
-        <td >{{value.startdate | dt(null, 'date')}}-{{value.enddate | dt(null, 'date')}}</td>
+        <td >{{value.startdate | dt(null, 'date')}}<br>{{value.enddate | dt(null, 'date')}}</td>
         <td class="collapsing">{{value.title}}</td>
         <td class="collapsing">
           <a class="btn info" href="{{url.this}}/view?id={{value.id}}{{xCityAnd}}">{%trans "Detail"%}</a>

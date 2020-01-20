@@ -17,6 +17,23 @@ class view
 		\dash\data::badge_text(T_('Back'));
 
 
+		$myUsers =
+		[
+			'clergy'      => ['title' => "روحانی کاروان"],
+			'admin'       => ['title' => "مدیر کاروان"],
+			'adminoffice' => ['title' => "مدیر زائر سرا"],
+			'missionary'  => ['title' => "مبلغ"],
+			'servant'     => ['title' => "نگهبان"],
+			'servant2'     => ['title' => "نگهبان ۲"],
+			'maddah'      => ['title' => "مداح"],
+			'nazer'       => ['title' => "ناظر"],
+			'khadem'      => ['title' => "خادم"],
+			'khadem2'     => ['title' => "خادم ۲"],
+
+		];
+		\dash\data::myUsers($myUsers);
+
+
 	}
 }
 ?>

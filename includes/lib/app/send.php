@@ -272,6 +272,41 @@ class send
 			$servant = null;
 		}
 
+		$servant2        = \dash\app::request('servant2');
+		if(\dash\app::isset_request('servant2') && $servant2)
+		{
+			$servant2 = \dash\coding::decode($servant2);
+			if(!$servant2)
+			{
+				\dash\notif::error(T_("Invalid servant2"), 'servant2');
+				return false;
+			}
+
+
+			$check_servant2 = \dash\db\users::get_by_id($servant2);
+
+			if(!isset($check_servant2['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'servant2');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_servant2 = \lib\db\servant::get(['agent_servant.user_id' => $servant2, 'agent_servant.city' => $city, 'agent_servant.job' => 'servant', 'limit' => 1]);
+
+				if(!isset($check_access_servant2['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set servant2 of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$servant2 = null;
+		}
+
 
 
 		$admin        = \dash\app::request('admin');
@@ -537,6 +572,7 @@ class send
 		$args['adminoffice_id'] = $adminoffice;
 		$args['missionary_id']  = $missionary;
 		$args['servant_id']     = $servant;
+		$args['servant2_id']     = $servant2;
 
 		$args['maddah_id']     = $maddah;
 		$args['nazer_id']     = $nazer;
@@ -548,8 +584,8 @@ class send
 
 		$args['city']           = $city;
 
-		$args['startdate']      = $startdate;
-		$args['enddate']        = $enddate;
+		$args['startdate']      = trim($startdate);
+		$args['enddate']        = trim($enddate);
 
 		$args['paydate']        = $paydate;
 		$args['payamount']      = $payamount;
@@ -731,6 +767,7 @@ class send
 		if(!\dash\app::isset_request('admin')) unset($args['admin_id']);
 		if(!\dash\app::isset_request('adminoffice')) unset($args['adminoffice_id']);
 		if(!\dash\app::isset_request('servant')) unset($args['servant_id']);
+		if(!\dash\app::isset_request('servant2')) unset($args['servant2_id']);
 		if(!\dash\app::isset_request('missionary')) unset($args['missionary_id']);
 
 		if(!\dash\app::isset_request('maddah')) unset($args['maddah_id']);
@@ -790,6 +827,7 @@ class send
 				case 'missionary_id':
 				case 'adminoffice_id':
 				case 'servant_id':
+				case 'servant2_id':
 				case 'maddah_id':
 				case 'nazer_id':
 				case 'khadem_id':
@@ -807,6 +845,7 @@ class send
 		   		case 'adminoffice_displayname':
 		   		case 'missionary_displayname':
 		   		case 'servant_displayname':
+		   		case 'servant2_displayname':
 		   		case 'maddah_displayname':
 		   		case 'nazer_displayname':
 		   		case 'khadem_displayname':
@@ -824,6 +863,7 @@ class send
 		   		case 'adminoffice_avatar':
 		   		case 'missionary_avatar':
 		   		case 'servant_avatar':
+		   		case 'servant2_avatar':
 		   		case 'maddah_avatar':
 		   		case 'nazer_avatar':
 		   		case 'khadem_avatar':

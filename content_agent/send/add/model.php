@@ -63,6 +63,7 @@ class model
 			'adminoffice' => \dash\request::post('adminoffice'),
 			'missionary'  => \dash\request::post('missionary'),
 			'servant'     => \dash\request::post('servant'),
+			'servant2'     => \dash\request::post('servant2'),
 			'maddah'      => \dash\request::post('maddah_id'),
 			'nazer'       => \dash\request::post('nazer_id'),
 			'khadem'      => \dash\request::post('khadem_id'),

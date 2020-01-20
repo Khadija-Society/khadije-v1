@@ -12,6 +12,7 @@ class model
 		$post =
 		[
 
+
 			'title'       => \dash\request::post('title'),
 
 			'starttime'   => \dash\request::post('starttime'),
@@ -20,13 +21,17 @@ class model
 			'startdate'   => \dash\request::post('startdate'),
 			'enddate'     => \dash\request::post('enddate'),
 
-
 			'clergy'      => \dash\request::post('clergy'),
 			'admin'       => \dash\request::post('admin'),
-			'adminoffice' => \dash\request::post('adminoffice'),
-			'missionary'  => \dash\request::post('missionary'),
+			// 'adminoffice' => \dash\request::post('adminoffice'),
+			// 'missionary'  => \dash\request::post('missionary'),
 			'servant'     => \dash\request::post('servant'),
+			'maddah'      => \dash\request::post('maddah_id'),
+			'nazer'       => \dash\request::post('nazer_id'),
+			'khadem'      => \dash\request::post('khadem_id'),
+			'khadem2'     => \dash\request::post('khadem2_id'),
 		];
+
 
 		\lib\app\send::edit($post, \dash\request::get('id'));
 

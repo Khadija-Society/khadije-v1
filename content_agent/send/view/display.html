@@ -19,45 +19,21 @@
 						<td>{{dataRow.place_title}}</td>
 					</tr>
 
-					<tr>
-						<td>مدیرکاروان</td>
-						<td>
-							<div class="f">
-								<div class="cauto"><img src="{{dataRow.admin_avatar}}" class="avatar"></div>
-								<div class="c mLa5">{{dataRow.admin_displayname}}</div>
-							</div>
-						</td>
-					</tr>
 
-					<tr>
-						<td>مبلغ</td>
-						<td>
-							<div class="f">
-								<div class="cauto"><img src="{{dataRow.missionary_avatar}}" class="avatar"></div>
-								<div class="c mLa5">{{dataRow.missionary_displayname}}</div>
-							</div>
-						</td>
-					</tr>
+					{%for key, value in myUsers%}
+						{%if dataRow[key ~ '_id']%}
+						<tr>
+							<td>{{value.title}}</td>
+							<td>
+								<div class="f">
+									<div class="cauto"><img src="{{dataRow[key ~ '_avatar']}}" class="avatar"></div>
+									<div class="c mLa5">{{dataRow[key ~ '_displayname']}}</div>
+								</div>
+							</td>
+						</tr>
+						{%endif%}
+					{%endfor%}
 
-					<tr>
-						<td>مسئول زائرسرا</td>
-						<td>
-							<div class="f">
-								<div class="cauto"><img src="{{dataRow.adminoffice_avatar}}" class="avatar"></div>
-								<div class="c mLa5">{{dataRow.adminoffice_displayname}}</div>
-							</div>
-						</td>
-					</tr>
-
-					<tr>
-						<td>نگهبان</td>
-						<td>
-							<div class="f">
-								<div class="cauto"><img src="{{dataRow.servant_avatar}}" class="avatar"></div>
-								<div class="c mLa5">{{dataRow.servant_displayname}}</div>
-							</div>
-						</td>
-					</tr>
 
 
 					<tr>

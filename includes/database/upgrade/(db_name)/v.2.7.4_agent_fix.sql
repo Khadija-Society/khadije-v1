@@ -20,21 +20,26 @@ ALTER TABLE `agent_assessmentitem` CHANGE `job` `job` enum('clergy', 'admin', 'a
 
 
 ALTER TABLE `agent_send` ADD `maddah_id` int(10) UNSIGNED NULL DEFAULT NULL AFTER `servant_id`;
-ALTER TABLE `agent_send` ADD CONSTRAINT `agent_place_maddah_id` FOREIGN KEY (`maddah_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `agent_send` ADD CONSTRAINT `agent_sendxn_maddah_id` FOREIGN KEY (`maddah_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 
 
 ALTER TABLE `agent_send` ADD `nazer_id` int(10) UNSIGNED NULL DEFAULT NULL AFTER `servant_id`;
-ALTER TABLE `agent_send` ADD CONSTRAINT `agent_place_nazer_id` FOREIGN KEY (`nazer_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `agent_send` ADD CONSTRAINT `agent_sendxn_nazer_id` FOREIGN KEY (`nazer_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 
 
 ALTER TABLE `agent_send` ADD `khadem_id` int(10) UNSIGNED NULL DEFAULT NULL AFTER `servant_id`;
-ALTER TABLE `agent_send` ADD CONSTRAINT `agent_place_khadem_id` FOREIGN KEY (`khadem_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `agent_send` ADD CONSTRAINT `agent_sendxn_khadem_id` FOREIGN KEY (`khadem_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 
 ALTER TABLE `agent_send` ADD `khadem2_id` int(10) UNSIGNED NULL DEFAULT NULL AFTER `servant_id`;
-ALTER TABLE `agent_send` ADD CONSTRAINT `agent_place_khadem2_id` FOREIGN KEY (`khadem2_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `agent_send` ADD CONSTRAINT `agent_sendxn_khadem2_id` FOREIGN KEY (`khadem2_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+
+
+
+ALTER TABLE `agent_send` ADD `servant2_id` int(10) UNSIGNED NULL DEFAULT NULL AFTER `servant_id`;
+ALTER TABLE `agent_send` ADD CONSTRAINT `agent_sendxn_servant2_id` FOREIGN KEY (`servant2_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 
 ALTER TABLE `agent_send` ADD `title` varchar(200)  NULL DEFAULT NULL AFTER `id`;
