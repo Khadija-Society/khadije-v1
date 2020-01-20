@@ -24,7 +24,7 @@
 
             {%for key ,value in assessmentList%}
             <tr>
-               <td class="collapsing" rowspan="4"><b class="mLR10">{{value.title}}</b> از</td>
+               <td class="collapsing" rowspan="{{(value.list | length) +1}}"><b class="mLR10">{{value.title}}</b> از</td>
             </tr>
               {%for k, v in value.list%}
                 <tr>

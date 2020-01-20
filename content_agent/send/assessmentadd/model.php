@@ -50,6 +50,20 @@ class model
 		$job = \dash\request::post('job');
 		$job_for = \dash\request::post('job_for');
 
+
+		if($job && !in_array($job, ['clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2']))
+		{
+			\dash\notif::error(T_("Invalid data"));
+			return false;
+		}
+
+		if($job_for && !in_array($job_for, ['clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2']))
+		{
+			\dash\notif::error(T_("Invalid data"));
+			return false;
+		}
+
+
 		$assessment                   = [];
 		$assessment['send_id']        = $send_id;
 		$assessment['creator']        = \dash\user::id();
@@ -62,6 +76,7 @@ class model
 		$assessment['assessment_for'] = $assessment_for;
 		$assessment['job']            = $job;
 		$assessment['job_for']        = $job_for;
+
 
 		$assessment_id = null;
 

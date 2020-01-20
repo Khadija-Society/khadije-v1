@@ -10,11 +10,11 @@ ALTER TABLE `agent_userskills` ADD `desc` text  NULL DEFAULT NULL;
 
 
 
-ALTER TABLE `agent_servant` CHANGE `job` `job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem') NULL;
-ALTER TABLE `agent_assessment` CHANGE `job` `job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem') NULL;
-ALTER TABLE `agent_assessment` CHANGE `job_for` `job_for` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem') NULL;
+ALTER TABLE `agent_servant` CHANGE `job` `job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2') NULL;
+ALTER TABLE `agent_assessment` CHANGE `job` `job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2') NULL;
+ALTER TABLE `agent_assessment` CHANGE `job_for` `job_for` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2') NULL;
 
-ALTER TABLE `agent_assessmentitem` CHANGE `job` `job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem') NULL;
+ALTER TABLE `agent_assessmentitem` CHANGE `job` `job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2') NULL;
 
 
 

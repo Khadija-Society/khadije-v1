@@ -85,6 +85,7 @@ class view
 			\dash\data::msgTxt($msgTxt);
 		}
 
+
 		\dash\data::inputHidden($inputHidden);
 
 
@@ -105,6 +106,11 @@ class view
 			'servant' => 'نگهبان',
 			'clergy' => 'روحانی',
 			'missionary' => 'مبلغ',
+			'khadem' => 'خادم',
+			'khadem2' => 'خادم',
+			'nazer' => 'ناضر',
+			'maddah' => 'مداح',
+
 
 		];
 
