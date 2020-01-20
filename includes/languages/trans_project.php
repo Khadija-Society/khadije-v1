@@ -5,33 +5,33 @@ class twigTransTerms
  {
 
 	//----------------------------------content_agent/assessmentitem/home/display.html
-	echo T_("Search in assessmentitems");                                             // Line 42
+	echo T_("Search in assessmentitems");                                             // Line 119
 	echo T_("Search");                                                                // Line 44
 	echo T_("Title");                                                                 // Line 62
-	echo T_("City");                                                                  // Line 72
 	echo T_("Job");                                                                   // Line 606
-	echo T_("Rate");                                                                  // Line 53
+	echo T_("Rate");                                                                  // Line 58
 	echo T_("Sort");                                                                  // Line 249
 	echo T_("Status");                                                                // Line 102
-	echo T_("For all city");                                                          // Line 55
-	echo T_("For all jobs");                                                          // Line 68
+	echo T_("For all jobs");                                                          // Line 30
 	echo T_("Clear filters");                                                         // Line 119
 	echo T_("Result not found!");                                                     // Line 118
 	echo T_("Search with new keywords.");                                             // Line 118
 	echo T_("Hi!");                                                                   // Line 125
-	echo T_("Try to start with add new assessmentitem!");                             // Line 111
+	echo T_("Try to start with add new assessmentitem!");                             // Line 188
 
 	//----------------------------------------content_agent/assessmentitem/layout.html
 	echo T_("Require");                                                               // Line 388
 	echo T_("Title of assessmentitem");                                               // Line 8
 	echo T_("Enter a valid title");                                                   // Line 164
+	echo T_("City");                                                                  // Line 72
+	echo T_("For all city");                                                          // Line 57
 	echo T_("Qom");                                                                   // Line 162
 	echo T_("Mashhad");                                                               // Line 180
 	echo T_("Karbala");                                                               // Line 171
-	echo T_("clergy");                                                                // Line 74
+	echo T_("Please select one item");                                                // Line 79
 	echo T_("Add");                                                                   // Line 65
 	echo T_("Save");                                                                  // Line 43
-	echo T_("Status of assessmentitem");                                              // Line 73
+	echo T_("Status of assessmentitem");                                              // Line 78
 	echo T_("Enable");                                                                // Line 27
 	echo T_("Disable");                                                               // Line 33
 
@@ -52,8 +52,10 @@ class twigTransTerms
 	echo T_("Address");                                                               // Line 73
 	echo T_("Status of place");                                                       // Line 176
 
+	//-------------------------------------------content_agent/place/edit/display.html
+
 	//------------------------------------------content_agent/skills/home/display.html
-	echo T_("Try to start with add new skills!");                                     // Line 92
+	echo T_("Try to start with add new skills!");                                     // Line 93
 
 	//------------------------------------------content_agent/skills/edit/display.html
 	echo T_("Edit");                                                                  // Line 19
@@ -82,16 +84,23 @@ class twigTransTerms
 	//--------------------------------------------content_agent/send/home/display.html
 	echo T_("Date");                                                                  // Line 63
 	echo T_("Detail");                                                                // Line 55
-	echo T_("Try to start with add new servant!");                                    // Line 177
+	echo T_("Try to start with add new servant!");                                    // Line 194
 
 	//-----------------------------------content_agent/send/assessmentadd/display.html
-	echo T_("%");                                                                     // Line 33
+	echo T_("%");                                                                     // Line 114
 	echo T_("Item");                                                                  // Line 205
 	echo T_("Star");                                                                  // Line 32
 
+	//--------------------------------------------content_agent/send/edit/display.html
+	echo T_("Start date");                                                            // Line 89
+	echo T_("Start time");                                                            // Line 106
+	echo T_("End date");                                                              // Line 96
+	echo T_("End time");                                                              // Line 117
+	echo T_("Nobody");                                                                // Line 348
+
 	//------------------------------------------------content_agent/send/pageStep.html
 	echo T_("To city");                                                               // Line 16
-	echo T_("Billing");                                                               // Line 67
+	echo T_("Billing");                                                               // Line 59
 
 	//----------------------------------content_agent/send/assessment/display-old.html
 	echo T_("Score");                                                                 // Line 14
@@ -99,14 +108,6 @@ class twigTransTerms
 	//--------------------------------------content_agent/send/assessment/display.html
 
 	//---------------------------------------------content_agent/send/add/display.html
-	echo T_("Start date");                                                            // Line 89
-	echo T_("End date");                                                              // Line 96
-	echo T_("Mobile");                                                                // Line 128
-	echo T_("Like");                                                                  // Line 549
-	echo T_("Mr");                                                                    // Line 22
-	echo T_("Mrs");                                                                   // Line 97
-	echo T_("Name");                                                                  // Line 125
-	echo T_("Please select one item");                                                // Line 79
 
 	//---------------------------------------content_agent/servant/resume/display.html
 	echo T_("Add new work history");                                                  // Line 33
@@ -118,8 +119,14 @@ class twigTransTerms
 	echo T_("Remove");                                                                // Line 630
 	echo T_("Year");                                                                  // Line 114
 
+	//-------------------------------------content_agent/servant/sortlist/display.html
+	echo T_("User");                                                                  // Line 148
+	echo T_("Mobile");                                                                // Line 128
+	echo T_("Dispatch");                                                              // Line 125
+
 	//--------------------------------------content_agent/servant/profile/display.html
 	echo T_("Servant detail");                                                        // Line 11
+	echo T_("Name");                                                                  // Line 125
 	echo T_("Father name");                                                           // Line 14
 	echo T_("Nationalcode");                                                          // Line 66
 	echo T_("Birthday");                                                              // Line 70
@@ -133,7 +140,7 @@ class twigTransTerms
 	echo T_("View full Profile");                                                     // Line 109
 
 	//---------------------------------------content_agent/servant/skills/display.html
-	echo T_("Skills");                                                                // Line 5
+	echo T_("Skills");                                                                // Line 13
 
 	//--------------------------------content_agent/servant/accountnumber/display.html
 	echo T_("User account number detail");                                            // Line 10
@@ -142,9 +149,7 @@ class twigTransTerms
 	echo T_("Enter shaba number");                                                    // Line 30
 
 	//-----------------------------------------content_agent/servant/home/display.html
-	echo T_("User");                                                                  // Line 148
 	echo T_("Profile");                                                               // Line 22
-	echo T_("Dispatch");                                                              // Line 149
 
 	//-----------------------------------------content_agent/servant/edit/display.html
 
@@ -185,6 +190,7 @@ class twigTransTerms
 	echo T_("Passport expire date");                                                  // Line 491
 	echo T_("Work Address");                                                          // Line 506
 	echo T_("Phone");                                                                 // Line 74
+	echo T_("Like");                                                                  // Line 549
 	echo T_("Email");                                                                 // Line 547
 	echo T_("Education");                                                             // Line 588
 	echo T_("Education course");                                                      // Line 597
@@ -192,19 +198,20 @@ class twigTransTerms
 
 	//------------------------------------------content_agent/servant/add/display.html
 	echo T_("Add new user");                                                          // Line 26
+	echo T_("Mr");                                                                    // Line 22
+	echo T_("Mrs");                                                                   // Line 97
 	echo T_("Choose user and to set as servant");                                     // Line 48
 	echo T_("Please choose user");                                                    // Line 50
 	echo T_("Please choose city");                                                    // Line 60
-	echo T_("Please choose job");                                                     // Line 73
 
 	//-------------------------------------------------content_agent/home/display.html
-	echo T_("Agent Place");                                                           // Line 6
-	echo T_("Assessment Item");                                                       // Line 7
-	echo T_("Servant");                                                               // Line 54
-	echo T_("Dispathc servant");                                                      // Line 65
+	echo T_("Agent Place");                                                           // Line 14
+	echo T_("Assessment Item");                                                       // Line 12
+	echo T_("Servant");                                                               // Line 56
+	echo T_("Dispathc servant");                                                      // Line 78
 
 	//-------------------------------------------------------content_agent/layout.html
-	echo T_("Agent Panel");                                                           // Line 4
+	echo T_("Dashboard");                                                             // Line 1
 	echo T_("Servants");                                                              // Line 30
 
 	//---------------------------------------------content_smsapp/viewsms/display.html
@@ -444,16 +451,16 @@ class twigTransTerms
 	echo T_("Spending method");                                                       // Line 311
 
 	//------------------------------------------------------content/old/v2/footer.html
-	echo T_("Enter");                                                                 // Line 126
+	echo T_("Enter");                                                                 // Line 138
 	echo T_("Signup");                                                                // Line 665
 	echo T_("Misson & Target");                                                       // Line 22
 	echo T_("Vision");                                                                // Line 310
-	echo T_("Honors");                                                                // Line 161
+	echo T_("Honors");                                                                // Line 173
 	echo T_("FAQ");                                                                   // Line 25
 	echo T_("Contact");                                                               // Line 319
-	echo T_("Doners");                                                                // Line 198
+	echo T_("Doners");                                                                // Line 210
 	echo T_("Register for group trip");                                               // Line 42
-	echo T_("Developed by Ermile");                                                   // Line 210
+	echo T_("Developed by Ermile");                                                   // Line 222
 
 	//-----------------------------------------------------content/old/v2/dafault.html
 	echo T_("View your current location and navigate to parent of it");               // Line 7
@@ -531,13 +538,13 @@ class twigTransTerms
 	echo T_("Iranian bank Shaba number");                                             // Line 11
 
 	//-------------------------------------------------content/home/header-badges.html
-	echo T_("Servants registration");                                                 // Line 183
+	echo T_("Servants registration");                                                 // Line 195
 	echo T_("Virtual pilgrimage");                                                    // Line 54
 	echo T_("Travel request");                                                        // Line 62
-	echo T_("Deputy pilgrimage");                                                     // Line 189
-	echo T_("Balloting names");                                                       // Line 191
+	echo T_("Deputy pilgrimage");                                                     // Line 201
+	echo T_("Balloting names");                                                       // Line 203
 	echo T_("Consulting");                                                            // Line 103
-	echo T_("My love story book");                                                    // Line 172
+	echo T_("My love story book");                                                    // Line 184
 
 	//----------------------------------------------------content/home/bank-melli.html
 	echo T_("Bank Melli Iran");                                                       // Line 1
@@ -595,27 +602,30 @@ class twigTransTerms
 	//--------------------------------------------------------content/main/layout.html
 	echo T_("Website header");                                                        // Line 39
 	echo T_("Homepage");                                                              // Line 5
-	echo T_("News");                                                                  // Line 162
+	echo T_("News");                                                                  // Line 174
 	echo T_("Khadije Wiki");                                                          // Line 66
-	echo T_("Services");                                                              // Line 187
-	echo T_("Self expressions");                                                      // Line 97
-	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 118
-	echo T_("User Panel");                                                            // Line 122
-	echo T_("Signup in Khadije charity");                                             // Line 127
-	echo T_("Enamad");                                                                // Line 135
-	echo T_("Samandehi");                                                             // Line 147
-	echo T_("Mission");                                                               // Line 159
-	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 167
-	echo T_("Biography");                                                             // Line 169
-	echo T_("Bibliography");                                                          // Line 170
-	echo T_("Specialized sites");                                                     // Line 171
+	echo T_("Self expressions");                                                      // Line 109
+	echo T_("Admin panel");                                                           // Line 77
+	echo T_("Panel");                                                                 // Line 79
+	echo T_("Login");                                                                 // Line 83
+	echo T_("Services");                                                              // Line 199
+	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 130
+	echo T_("User Panel");                                                            // Line 134
+	echo T_("Signup in Khadije charity");                                             // Line 139
+	echo T_("Enamad");                                                                // Line 147
+	echo T_("Samandehi");                                                             // Line 159
+	echo T_("Mission");                                                               // Line 171
+	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 179
+	echo T_("Biography");                                                             // Line 181
+	echo T_("Bibliography");                                                          // Line 182
+	echo T_("Specialized sites");                                                     // Line 183
 	echo T_("Requests");                                                              // Line 27
 	echo T_("Individual registration");                                               // Line 10
 	echo T_("Group registration");                                                    // Line 9
 	echo T_("Delneveshteha");                                                         // Line 5
-	echo T_("Help");                                                                  // Line 195
-	echo T_("Other Languages");                                                       // Line 202
-	echo T_("Software Solution Designer");                                            // Line 210
+	echo T_("Help");                                                                  // Line 207
+	echo T_("Other Languages");                                                       // Line 214
+	echo T_("Software Solution Designer");                                            // Line 222
 	echo T_("Twitter");                                                               // Line 152
 	echo T_("Facebook");                                                              // Line 143
 	echo T_("Telegram");                                                              // Line 134
@@ -663,8 +673,9 @@ class twigTransTerms
 	//--------------------------------------------includes/html/sidebarServiceTop.html
 	echo T_("Manage");                                                                // Line 3
 	echo T_("Manage SMS");                                                            // Line 9
-	echo T_("Manage Festival");                                                       // Line 20
-	echo T_("Users Panel");                                                           // Line 25
+	echo T_("Agent servant");                                                         // Line 19
+	echo T_("Manage Festival");                                                       // Line 24
+	echo T_("Users Panel");                                                           // Line 29
 
 	//---------------------public_html/static/siftal/fonts/siftal/icons-reference.html
 
@@ -798,7 +809,6 @@ class twigTransTerms
 	echo T_("All cities are disabled now");                                           // Line 18
 
 	//------------------------------------------------------content_a/main/layout.html
-	echo T_("Dashboard");                                                             // Line 1
 	echo T_("Delneveshte");                                                           // Line 67
 	echo T_("Edit your profile");                                                     // Line 42
 	echo T_("Avatar of you");                                                         // Line 47
