@@ -49,3 +49,21 @@ ALTER TABLE `agent_send` ADD `title` varchar(200)  NULL DEFAULT NULL AFTER `id`;
 
 ALTER TABLE `agent_servant` ADD `reject_count` int(10)   NULL DEFAULT NULL AFTER `status`;
 ALTER TABLE `agent_servant` ADD `reject_date` datetime   NULL DEFAULT NULL AFTER `status`;
+
+
+
+CREATE TABLE `agent_file` (
+`id` int(10) UNSIGNED NOT NULL auto_increment,
+`send_id` int(10) UNSIGNED NOT NULL,
+`creator` int(10) UNSIGNED  NULL DEFAULT NULL,
+
+`job` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2') NULL,
+
+`file` varchar(500) NULL DEFAULT NULL,
+`desc` text NULL DEFAULT NULL,
+
+`datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`),
+CONSTRAINT `agent_send_file_send_id` FOREIGN KEY (`send_id`) REFERENCES `agent_send` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `agent_send_file_creator` FOREIGN KEY (`creator`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

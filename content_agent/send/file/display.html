@@ -1,0 +1,51 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%include 'content_agent/send/pageStep.html'%}
+
+
+<div class="f justify-center">
+  <div class="c8 s12">
+    <div class="cbox">
+      <form method="post" autocomplete="off">
+
+
+
+        <div class="dropzone">
+          <h4>{%trans "Add to gallery"%}</h4>
+          <label for='gallery' class="btn light">{%trans "Choose or Drop file here"%}</label>
+          <input id="gallery" type="file" name="image" multiple>
+          <div class="progress shadow" data-percent='30'>
+            <div class="bar"></div>
+            <div class="detail"></div>
+          </div>
+        </div>
+
+      </form>
+
+
+
+    </div>
+  </div>
+</div>
+{%if dataTable%}
+<div class="f">
+
+  {%for key, value in dataTable%}
+    <div class="vcard green mA10 c2 s12">
+      <a href="{{value.file}}" target="_blank">
+
+      <img alt="file" src="{{value.file}}">
+      </a>
+      <div class="content">
+        <a class="header">{{value.displayname}}</a>
+        <div class="meta"><span>{{value.datecreated | dt}}</span></div>
+        <div class="desc"><span>{{value.datecreated | dt('human', 'year')}}</span></div>
+      </div>
+      <div class="footer"><div class="btn sm danger " data-confirm data-data='{"remove" : "remove", "id" : "{{value.id}}"}'>حذف فایل</div></div>
+    </div>
+  {%endfor%}
+</div>
+{%endif%}
+{%endblock%}
