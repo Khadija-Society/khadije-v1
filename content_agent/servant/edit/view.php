@@ -13,7 +13,7 @@ class view
 		\dash\data::badge_link(\dash\url::this(). \dash\data::xCityStart());
 		\dash\data::badge_text(T_('Back to list of servants'));
 
-		$id     = \dash\request::get('id');
+		$id     = \dash\request::get('sid');
 		$result = \lib\app\servant::get($id);
 		if(!$result)
 		{

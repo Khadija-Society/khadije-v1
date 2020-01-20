@@ -49,8 +49,13 @@ class skills
 
 			if(!$load_skills)
 			{
-				\dash\notif::error(T_("Please choose a valid skills"), 'skills');
-				return false;
+				$add_skills = self::add(['title' => $_skills]);
+				if(!$add_skills || !isset($add_skills['id_raw']))
+				{
+					return false;
+				}
+
+				$skills_id = $add_skills['id_raw'];
 			}
 		}
 		else

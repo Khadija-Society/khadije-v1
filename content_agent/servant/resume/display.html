@@ -120,7 +120,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-          <td class="collapsing"><a href="{{url.that}}?user={{requestGET.user}}&id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i></a></td>
+          <td class="collapsing"><a href="{{url.that}}?user={{requestGET.user}}&id={{value.id}}&sid={{requestGET.sid}}{{xCityAnd}}"><i class="sf-edit"></i></a></td>
           <td>{{value.company}}</td>
           <td>{{value.type}}</td>
           <td>{{value.startdate | fitNumber(false)}}-{{value.enddate | fitNumber(false)}}</td>

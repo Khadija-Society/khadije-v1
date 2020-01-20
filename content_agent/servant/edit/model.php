@@ -8,7 +8,7 @@ class model
 	{
 		if(\dash\request::post('type') === 'remove')
 		{
-			\lib\app\servant::remove(\dash\request::get('id'));
+			\lib\app\servant::remove(\dash\request::get('sid'));
 
 			if(\dash\engine\process::status())
 			{
@@ -31,11 +31,11 @@ class model
 		}
 
 
-		\lib\app\servant::edit($post, \dash\request::get('id'));
+		\lib\app\servant::edit($post, \dash\request::get('sid'));
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::this(). \dash\data::xCityStart());
+			\dash\redirect::pwd();
 		}
 
 	}

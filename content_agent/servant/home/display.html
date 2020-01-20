@@ -156,13 +156,13 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
         <td class="collapsing"><img src="{{value.avatar}}" class="avatar"></td>
-        <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i> {{value.displayname}}</a></td>
+        <td>{{value.displayname}}</td>
         <td>{{value.mobile| fitNumber('mobile')}}</td>
         <td >{%set myJob = value.job | capitalize %}<a href="{{url.this}}?job={{value.job}}{{xCityAnd}}">{%trans myJob%}</a></td>
 
         <td >{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}">{%trans myStatus%}</a></td>
         <td class="collapsing">
-          <a class="btn success" href="{{url.this}}/profile?user={{value.user_id}}{{xCityAnd}}">{%trans "Profile"%}</a>
+          <a class="btn success" href="{{url.this}}/profile?user={{value.user_id}}&sid={{value.id}}{{xCityAnd}}">{%trans "Profile"%}</a>
 
         </td>
       </tr>

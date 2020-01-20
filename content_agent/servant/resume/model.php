@@ -10,7 +10,10 @@ class model
 		if(\dash\request::post('mod') === 'remove')
 		{
 			\lib\app\resume::remove(\dash\request::get('id'));
-			\dash\redirect::to(\dash\url::that(). '?user='. \dash\request::get('user'). \dash\data::xCityAnd());
+			$get = \dash\request::get();
+			unset($get['id']);
+			$get = '?'. http_build_query($get);
+			\dash\redirect::to(\dash\url::that(). $get);
 		}
 		else
 		{
@@ -33,7 +36,10 @@ class model
 				if(\dash\engine\process::status())
 				{
 					\dash\notif::ok(T_("Data saved"));
-					\dash\redirect::to(\dash\url::that(). '?user='. \dash\request::get('user'). \dash\data::xCityAnd());
+					$get = \dash\request::get();
+					unset($get['id']);
+					$get = '?'. http_build_query($get);
+					\dash\redirect::to(\dash\url::that(). $get);
 				}
 			}
 			else
