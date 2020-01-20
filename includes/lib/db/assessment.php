@@ -30,6 +30,39 @@ class assessment
 	}
 
 
+	public static function get_avg_group_detail($_send_id)
+	{
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				AVG(agent_assessmentdetail.star) AS `star`,
+				SUM(agent_assessmentdetail.rate) AS `rate`,
+
+				agent_assessmentitem.title AS `title`,
+				agent_assessment.assessment_for,
+				users.displayname,
+				users.mobile,
+				users.avatar
+
+
+			FROM
+				agent_assessment
+			INNER JOIN agent_assessmentdetail ON agent_assessmentdetail.assessment_id = agent_assessment.id
+			INNER JOIN agent_assessmentitem ON agent_assessmentitem.id = agent_assessmentdetail.assessmentitem_id
+			LEFT JOIN users ON users.id = agent_assessment.assessment_for
+
+
+			WHERE
+				agent_assessment.send_id = $_send_id
+			GROUP BY agent_assessment.assessment_for, agent_assessmentdetail.assessmentitem_id
+		";
+		$result = \dash\db::get($query);
+
+		return $result;
+	}
+
+
 	public static function get_list($_job, $_city)
 	{
 		$query  =

@@ -33,20 +33,34 @@ class view
 
 
 		$load_assessment = \lib\db\assessment::get_avg_group($send_id);
+		$load_assessment_detail = \lib\db\assessment::get_avg_group_detail($send_id);
 		if(!is_array($load_assessment))
 		{
 			$load_assessment = [];
 		}
 
 		$load_assessment = array_map(['\\dash\\app', 'ready'], $load_assessment);
+		$load_assessment = array_combine(array_column($load_assessment, 'assessment_for'), $load_assessment);
+
+		$load_assessment_detail = array_map(['\\dash\\app', 'ready'], $load_assessment_detail);
+
+		foreach ($load_assessment_detail as $key => $value)
+		{
+			if(!isset($load_assessment[$value['assessment_for']]['detail']))
+			{
+				$load_assessment[$value['assessment_for']]['detail'] = [];
+			}
+
+			$load_assessment[$value['assessment_for']]['detail'][] = $value;
+		}
 
 		$jobList =
 		[
-			'admin' => 'مدیر کاروان',
+			'admin'       => 'مدیر کاروان',
 			'adminoffice' => 'مسئول زائرسرا',
-			'servant' => 'نگهبان',
-			'clergy' => 'روحانی',
-			'missionary' => 'مبلغ',
+			'servant'     => 'نگهبان',
+			'clergy'      => 'روحانی',
+			'missionary'  => 'مبلغ',
 
 		];
 

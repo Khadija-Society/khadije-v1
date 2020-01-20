@@ -36,6 +36,22 @@
                     <div class="bar"></div>
                    </div>
                   </div>
+
+                  <div class="">
+                  {%for k, v in value.detail%}
+                      {%set starClass = 'fc-green'%}
+                      <div class="f">
+                        {%if v.star >= 3%} {%set starClass = 'fc-green'%}
+                        {%elseif v.star >= 2%} {%set starClass = 'fc-blue'%}
+                        {%elseif v.star > 0%} {%set starClass = 'fc-red'%}
+                        {%endif%}
+                        <div class="cauto mRa5">{{(loop.index ) | fitNumber}}.</div>
+                        <div class="c"><span class="{{starClass}}">{{v.title}}</span></div>
+                        <div class="cauto"><span class="{{starClass}}">{{v.star | round(2) | fitNumber(false)}}</span></div>
+                      </div>
+
+                  {%endfor%}
+                  </div>
               </div>
             {%endfor%}
         {%else%}
