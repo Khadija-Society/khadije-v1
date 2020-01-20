@@ -53,7 +53,6 @@ class model
 			'startdate'   => \dash\request::post('startdate'),
 			'enddate'     => \dash\request::post('enddate'),
 
-			'user_id'     => \dash\request::get('user'),
 
 			'mobile'      => \dash\request::post('memberTl'),
 			'gender'      => \dash\request::post('memberGender'),
@@ -64,6 +63,10 @@ class model
 			'adminoffice' => \dash\request::post('adminoffice'),
 			'missionary'  => \dash\request::post('missionary'),
 			'servant'     => \dash\request::post('servant'),
+			'maddah'      => \dash\request::post('maddah_id'),
+			'nazer'       => \dash\request::post('nazer_id'),
+			'khadem'      => \dash\request::post('khadem_id'),
+			'khadem2'     => \dash\request::post('khadem2_id'),
 		];
 
 		\lib\app\send::add($post);

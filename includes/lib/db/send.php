@@ -54,6 +54,22 @@ class send
 			servant.avatar AS `servant_avatar`,
 			servant.mobile AS `servant_mobile`,
 
+			IFNULL(maddah.displayname, CONCAT(maddah.firstname, ' ', maddah.lastname)) AS `maddah_displayname`,
+			maddah.avatar AS `maddah_avatar`,
+			maddah.mobile AS `maddah_mobile`,
+
+			IFNULL(nazer.displayname, CONCAT(nazer.firstname, ' ', nazer.lastname)) AS `nazer_displayname`,
+			nazer.avatar AS `nazer_avatar`,
+			nazer.mobile AS `nazer_mobile`,
+
+			IFNULL(khadem.displayname, CONCAT(khadem.firstname, ' ', khadem.lastname)) AS `khadem_displayname`,
+			khadem.avatar AS `khadem_avatar`,
+			khadem.mobile AS `khadem_mobile`,
+
+			IFNULL(khadem2.displayname, CONCAT(khadem2.firstname, ' ', khadem2.lastname)) AS `khadem2_displayname`,
+			khadem2.avatar AS `khadem2_avatar`,
+			khadem2.mobile AS `khadem2_mobile`,
+
 			agent_place.title As `place_title`
 		",
 
@@ -64,6 +80,12 @@ class send
 			LEFT JOIN users AS `adminoffice` 	ON adminoffice.id = agent_send.adminoffice_id
 			LEFT JOIN users AS `missionary` 	ON missionary.id  = agent_send.missionary_id
 			LEFT JOIN users AS `servant` 		ON servant.id     = agent_send.servant_id
+
+			LEFT JOIN users AS `maddah` 		ON maddah.id      = agent_send.maddah_id
+			LEFT JOIN users AS `nazer` 			ON nazer.id       = agent_send.nazer_id
+			LEFT JOIN users AS `khadem` 		ON khadem.id      = agent_send.khadem_id
+			LEFT JOIN users AS `khadem2` 		ON khadem2.id     = agent_send.khadem2_id
+
 			LEFT JOIN agent_place ON agent_place.id     = agent_send.place_id
 
 		",

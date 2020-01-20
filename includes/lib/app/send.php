@@ -93,6 +93,149 @@ class send
 		}
 
 
+		$maddah        = \dash\app::request('maddah');
+		if(\dash\app::isset_request('maddah') && $maddah)
+		{
+			$maddah = \dash\coding::decode($maddah);
+			if(!$maddah)
+			{
+				\dash\notif::error(T_("Invalid maddah"), 'maddah');
+				return false;
+			}
+
+
+			$check_maddah = \dash\db\users::get_by_id($maddah);
+
+			if(!isset($check_maddah['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'maddah');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_maddah = \lib\db\servant::get(['agent_servant.user_id' => $maddah, 'agent_servant.city' => $city, 'agent_servant.job' => 'maddah', 'limit' => 1]);
+
+				if(!isset($check_access_maddah['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set maddah of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$maddah = null;
+		}
+
+		$nazer        = \dash\app::request('nazer');
+		if(\dash\app::isset_request('nazer') && $nazer)
+		{
+			$nazer = \dash\coding::decode($nazer);
+			if(!$nazer)
+			{
+				\dash\notif::error(T_("Invalid nazer"), 'nazer');
+				return false;
+			}
+
+
+			$check_nazer = \dash\db\users::get_by_id($nazer);
+
+			if(!isset($check_nazer['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'nazer');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_nazer = \lib\db\servant::get(['agent_servant.user_id' => $nazer, 'agent_servant.city' => $city, 'agent_servant.job' => 'nazer', 'limit' => 1]);
+
+				if(!isset($check_access_nazer['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set nazer of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$nazer = null;
+		}
+
+
+		$khadem        = \dash\app::request('khadem');
+		if(\dash\app::isset_request('khadem') && $khadem)
+		{
+			$khadem = \dash\coding::decode($khadem);
+			if(!$khadem)
+			{
+				\dash\notif::error(T_("Invalid khadem"), 'khadem');
+				return false;
+			}
+
+
+			$check_khadem = \dash\db\users::get_by_id($khadem);
+
+			if(!isset($check_khadem['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'khadem');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_khadem = \lib\db\servant::get(['agent_servant.user_id' => $khadem, 'agent_servant.city' => $city, 'agent_servant.job' => 'khadem', 'limit' => 1]);
+
+				if(!isset($check_access_khadem['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set khadem of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$khadem = null;
+		}
+
+
+		$khadem2        = \dash\app::request('khadem2');
+		if(\dash\app::isset_request('khadem2') && $khadem2)
+		{
+			$khadem2 = \dash\coding::decode($khadem2);
+			if(!$khadem2)
+			{
+				\dash\notif::error(T_("Invalid khadem"), 'khadem2');
+				return false;
+			}
+
+
+			$check_khadem2 = \dash\db\users::get_by_id($khadem2);
+
+			if(!isset($check_khadem2['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'khadem2');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_khadem2 = \lib\db\servant::get(['agent_servant.user_id' => $khadem2, 'agent_servant.city' => $city, 'agent_servant.job' => 'khadem', 'limit' => 1]);
+
+				if(!isset($check_access_khadem2['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set khadem2 of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$khadem2 = null;
+		}
+
+
 
 		$servant        = \dash\app::request('servant');
 		if(\dash\app::isset_request('servant') && $servant)
@@ -395,6 +538,11 @@ class send
 		$args['missionary_id']  = $missionary;
 		$args['servant_id']     = $servant;
 
+		$args['maddah_id']     = $maddah;
+		$args['nazer_id']     = $nazer;
+		$args['khadem_id']     = $khadem;
+		$args['khadem2_id']     = $khadem2;
+
 		$args['place_id']       = $place_id;
 		$args['title']          = $title;
 
@@ -585,6 +733,11 @@ class send
 		if(!\dash\app::isset_request('servant')) unset($args['servant_id']);
 		if(!\dash\app::isset_request('missionary')) unset($args['missionary_id']);
 
+		if(!\dash\app::isset_request('maddah')) unset($args['maddah_id']);
+		if(!\dash\app::isset_request('nazer')) unset($args['nazer_id']);
+		if(!\dash\app::isset_request('khadem')) unset($args['khadem_id']);
+		if(!\dash\app::isset_request('khadem2')) unset($args['khadem2_id']);
+
 
 		if(!\dash\app::isset_request('place_id')) unset($args['place_id']);
 		if(!\dash\app::isset_request('city')) unset($args['city']);
@@ -637,6 +790,10 @@ class send
 				case 'missionary_id':
 				case 'adminoffice_id':
 				case 'servant_id':
+				case 'maddah_id':
+				case 'nazer_id':
+				case 'khadem_id':
+				case 'khadem2_id':
 					if($value)
 					{
 						$value = \dash\coding::encode($value);
@@ -650,6 +807,10 @@ class send
 		   		case 'adminoffice_displayname':
 		   		case 'missionary_displayname':
 		   		case 'servant_displayname':
+		   		case 'maddah_displayname':
+		   		case 'nazer_displayname':
+		   		case 'khadem_displayname':
+		   		case 'khadem2_displayname':
 					if(!$value && $value != '0')
 					{
 						$value = T_("Whitout name");
@@ -663,6 +824,10 @@ class send
 		   		case 'adminoffice_avatar':
 		   		case 'missionary_avatar':
 		   		case 'servant_avatar':
+		   		case 'maddah_avatar':
+		   		case 'nazer_avatar':
+		   		case 'khadem_avatar':
+		   		case 'khadem2_avatar':
 					if($value)
 					{
 						$avatar = $value;
@@ -695,7 +860,6 @@ class send
 					break;
 			}
 		}
-
 
 		return $result;
 	}

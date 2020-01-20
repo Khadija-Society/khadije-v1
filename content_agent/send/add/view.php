@@ -73,6 +73,7 @@ class view
 		{
 			$servant_args['agent_servant.city'] = $city;
 		}
+
 		$RohaniList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'clergy']));
 		\dash\data::RohaniList($RohaniList);
 
@@ -88,6 +89,18 @@ class view
 
 		$servantList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'adminoffice']));
 		\dash\data::servantList($servantList);
+
+
+		$maddahList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'maddah']));
+		\dash\data::maddahList($maddahList);
+
+		$nazerList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'nazer']));
+		\dash\data::nazerList($nazerList);
+
+
+		$khademList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'khadem']));
+		\dash\data::khademList($khademList);
+
 	}
 }
 ?>

@@ -31,7 +31,7 @@ class view
 
 		if(!$args['order'])
 		{
-			$args['order'] = 'ASC';
+			$args['order'] = 'desc';
 		}
 
 

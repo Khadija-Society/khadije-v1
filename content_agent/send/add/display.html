@@ -71,10 +71,10 @@
           <div class="msg success2">شما در حال اعزام مبلغ <b>{{userDetail.displayname}}</b> به شهر <b>{{xCityTitle}}</b> هستید</div>
           <div class="msg primary2">
             زائرسرا <b>{{defaultPlace.title}}</b>
-
+            <br>
               {{block('imodirZaerSara')}}
               {{block('inegahban')}}
-              {{block('inegahban')}}
+              {{block('inegahban2')}}
 
           </div>
           <label for="titlex">عنوان یا شناسه اعزام</label>
@@ -88,11 +88,11 @@
           <input type="hidden" name="missionary" value="{{requestGET.user}}">
 
           {{block('imodir')}}
-          {{block('imodir')}}
-          {{block('imodir')}}
-          {{block('imodir')}}
-          {{block('imodir')}}
-          {{block('imodir')}}
+          {{block('imaddahList')}}
+          {{block('inazerList')}}
+          {{block('ikhademList')}}
+          {{block('ikhadem2List')}}
+
 
 
           <div class="f mT20">
@@ -137,53 +137,6 @@
 
 
 
-{%block iAddUserForm%}
-<div class="addUserForm example" data-kerkere-content='hide'>
-  <h6>افزودن سریع مدیر کاروان</h6>
-  <div class="input mT5">
-    <input type="tel" name="memberTl" id="memberTl" placeholder='{%trans "Mobile"%} {%trans "Like"%} {{"09120123456" | fitNumber("mobile")}}' autofocus value="{{dataRow.mobile}}" maxlength='30' data-response-realtime>
-  </div>
-
-    <select name="memberGender" id="memberGender" class="ui dropdown select mT5">
-      <option value="" disabled>{%trans "Gender"%}</option>
-      <option value="0">-</option>
-      <option value="male" {%if dataRow.gender == 'male' %}selected {%endif%}>{%trans "Mr"%}</option>
-      <option value="female" {%if dataRow.gender == 'female' %}selected{%endif%}>{%trans "Mrs"%}</option>
-    </select>
-
-  <div class="input mT5">
-    <input type="text" name="memberN" id="memberN" placeholder='{%trans "Name"%}' value="{{dataRow.displayname}}" maxlength='40' minlength="1">
-  </div>
-
-</div>
-{%endblock%}
-
-
-{%block iCity%}
-<div class="f">
-  <div class="c">
-    <div class="radio3">
-      <input type="radio" name="city" value="qom" id="qom">
-      <label for="qom">{%trans "Qom"%}</label>
-    </div>
-  </div>
-
-  <div class="c mLa5">
-    <div class="radio3">
-      <input type="radio" name="city" value="mashhad" id="mashhad">
-      <label for="mashhad">{%trans "Mashhad"%}</label>
-    </div>
-  </div>
-
-  <div class="c mLa5">
-    <div class="radio3">
-      <input type="radio" name="city" value="karbala" id="karbala">
-      <label for="karbala">{%trans "Karbala"%}</label>
-    </div>
-  </div>
-</div>
-{%endblock%}
-
 
 
 {%block iZaerSara%}
@@ -194,6 +147,7 @@
 {%if placeList%}
 <select name="place" class="select ui dropdown search" id="place" disabled  >
   <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
   {%for key, value in placeList%}
     <option value="{{value.id}}" {%if dataRow.place_id == value.id or requestGET.place == value.id%} selected {%endif%}>{{value.title}}</option>
   {%endfor%}
@@ -208,18 +162,19 @@
 
 
 {%block iRohani%}
-<label>روحانی کاروان</label>
 
 {%if RohaniList%}
 
+<label>روحانی کاروان</label>
 <select name="rohani" class="select ui dropdown search" id="rohani">
   <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
   {%for key, value in RohaniList%}
     <option value="{{value.user_id}}" {%if dataRow.clergy_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
-<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+
 {%endif%}
 
 {%endblock%}
@@ -229,18 +184,84 @@
 
 
 {%block imodir%}
-<label>مدیر کاروان</label>
-
 {%if modirList%}
-
+<label>مدیر کاروان</label>
 <select name="admin" class="select ui dropdown search" id="modir">
   <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
   {%for key, value in modirList%}
     <option value="{{value.user_id}}" {%if dataRow.admin_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
-<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+
+{%endif%}
+
+{%endblock%}
+
+{%block imaddahList %}
+{%if maddahList%}
+<label>مداح کاروان</label>
+<select name="maddah_id" class="select ui dropdown search" id="modir">
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
+  {%for key, value in maddahList%}
+    <option value="{{value.user_id}}" {%if dataRow.maddah_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+{%else%}
+
+{%endif%}
+
+{%endblock%}
+
+
+{%block inazerList %}
+{%if nazerList%}
+<label>ناظر کاروان</label>
+<select name="nazer_id" class="select ui dropdown search" id="modir">
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
+  {%for key, value in nazerList%}
+    <option value="{{value.user_id}}" {%if dataRow.nazer_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+{%else%}
+
+{%endif%}
+
+{%endblock%}
+
+
+{%block ikhademList %}
+{%if khademList%}
+<label>خادم کاروان</label>
+<select name="khadem_id" class="select ui dropdown search" id="modir">
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
+  {%for key, value in khademList%}
+    <option value="{{value.user_id}}" {%if dataRow.khadem_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+{%else%}
+
+{%endif%}
+
+{%endblock%}
+
+
+{%block ikhadem2List %}
+{%if khademList%}
+<label>خادم ۲ کاروان</label>
+<select name="khadem2_id" class="select ui dropdown search" id="modir">
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
+  {%for key, value in khademList%}
+    <option value="{{value.user_id}}" {%if dataRow.khadem2_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+{%else%}
+
 {%endif%}
 
 {%endblock%}
@@ -250,19 +271,20 @@
 
 
 {%block imodirZaerSara%}
-<label>مدیر زائرسرا</label>
-          <input type="hidden" name="adminoffice" value="{{defaultPlace.adminoffice_id}}">
+
+<input type="hidden" name="adminoffice" value="{{defaultPlace.adminoffice_id}}">
 
 {%if servantList%}
-
+<label>مدیر زائرسرا</label>
 <select name="adminoffice" class="select ui dropdown search" id="servant" disabled >
   <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
   {%for key, value in servantList%}
     <option value="{{value.user_id}}" {%if dataRow.adminoffice_id == value.user_id or defaultPlace.adminoffice_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
-<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+
 {%endif%}
 
 {%endblock%}
@@ -271,19 +293,43 @@
 
 
 {%block inegahban%}
-<label>نگهبان زائرسرا</label>
 
-  <input type="hidden" name="servant" value="{{defaultPlace.servant_id}}">
+<input type="hidden" name="servant" value="{{defaultPlace.servant_id}}">
 {%if negahbanList%}
 
+<label>نگهبان زائرسرا</label>
 <select name="servant" class="select ui dropdown search" id="negahban" disabled >
   <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
   {%for key, value in negahbanList%}
     <option value="{{value.user_id}}" {%if dataRow.servant_id == value.user_id or defaultPlace.servant_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
-<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+
+{%endif%}
+
+{%endblock%}
+
+
+
+
+
+{%block inegahban2%}
+
+<input type="hidden" name="servant" value="{{defaultPlace.servant2_id}}">
+{%if negahbanList%}
+
+<label>نگهبان زائرسرا ۲</label>
+<select name="servant2" class="select ui dropdown search" id="negahban" disabled >
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
+  {%for key, value in negahbanList%}
+    <option value="{{value.user_id}}" {%if dataRow.servant2_id == value.user_id or defaultPlace.servant2_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+{%else%}
+
 {%endif%}
 
 {%endblock%}
@@ -294,18 +340,18 @@
 
 
 {%block imoballeqe%}
-<label>مبلغ کاروان</label>
 
 {%if moballeqeList%}
-
+<label>مبلغ کاروان</label>
 <select name="missionary" class="select ui dropdown search" id="moballeq" disabled >
   <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
   {%for key, value in moballeqeList%}
     <option value="{{value.user_id}}" {%if dataRow.missionary_id == value.user_id or requestGET.user == value.user_id or requestGET.missionary == value.user_id %} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}
-<div class="msg warn2">هیچ کاربری یافت نشد!</div>
+
 {%endif%}
 
 {%endblock%}
