@@ -17,7 +17,7 @@ class view
 		$send_id = \dash\coding::decode(\dash\request::get('id'));
 		if($send_id)
 		{
-			$data = \lib\db\agentfile::get(['send_id' => $send_id]);
+			$data = \lib\db\agentfile::get(['send_id' => $send_id, 'creator' => \dash\user::id()]);
 			if($data)
 			{
 				$data = array_map(['\\dash\\app', 'ready'], $data);

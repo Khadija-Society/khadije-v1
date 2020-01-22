@@ -28,7 +28,7 @@ class model
 				'creator' => \dash\user::id(),
 			];
 
-			$check = ['send_id' => \dash\coding::decode(\dash\request::get('id')), 'file'    => $file, 'limit' => 1];
+			$check = ['send_id' => \dash\coding::decode(\dash\request::get('id')),'creator' => \dash\user::id(),  'file'    => $file, 'limit' => 1];
 			if(\lib\db\agentfile::get($check))
 			{
 				return;
