@@ -1,5 +1,5 @@
 <?php
-namespace content_agent\servant\resume;
+namespace content_agent\send\view;
 
 
 class model
@@ -7,46 +7,49 @@ class model
 	public static function post()
 	{
 
-		if(\dash\request::post('mod') === 'remove')
+		if(\dash\request::post('xtime'))
 		{
-			\lib\app\resume::remove(\dash\request::get('id'));
-			\dash\redirect::to(\dash\url::that(). '?user='. \dash\request::get('user'));
-		}
-		else
-		{
+			$xtime = \dash\request::post('xtime');
+			$xtime = \dash\date::make_time($xtime);
 
-			$post  =
-			[
-				'company'   => \dash\request::post('company'),
-				'type'      => \dash\request::post('type'),
-				'ceo'       => \dash\request::post('ceo'),
-				'startdate' => \dash\request::post('startdate'),
-				'enddate'   => \dash\request::post('enddate'),
-				'desc'      => \dash\request::post('desc'),
-				'user_id'   => \dash\request::get('user'),
-			];
-
-			if(\dash\request::get('id'))
+			if(!$xtime)
 			{
-				\lib\app\resume::edit($post, \dash\request::get('id'));
+				\dash\notif::error("لطفا ساعت را به صورت صحیح وارد کنید", 'xtime');
+				return false;
+			}
 
-				if(\dash\engine\process::status())
-				{
-					\dash\notif::ok(T_("Data saved"));
-					\dash\redirect::to(\dash\url::that(). '?user='. \dash\request::get('user'));
-				}
+			$min = substr($xtime, 3, 2);
+			if($min == '00')
+			{
+				$myTime = substr($xtime, 0, 2);
 			}
 			else
 			{
-				\lib\app\resume::add($post);
+				$myTime = substr($xtime, 0, 5);
 			}
-		}
 
+			$myTime = \dash\utility\human::fitNumber($myTime);
+			\content_agent\send\billing\view::tempText($myTime);
+			$text = \dash\data::smsText();
 
-		if(\dash\engine\process::status())
-		{
-			\dash\notif::ok(T_("Data saved"));
-			\dash\redirect::to(\dash\url::pwd());
+			$mobile = \dash\data::dataRow_missionary_mobile();
+
+			if(!$mobile)
+			{
+				\dash\notif::error("مبلغ یافت نشد");
+				return false;
+			}
+
+			$id = \dash\request::get('id');
+			$id = \dash\coding::decode($id);
+			if($id)
+			{
+				\dash\notif::ok('پیامک یادآوری ارسال شد');
+				\lib\db\send::update(['alertsms' => $text, 'alertsmsdate' => date("Y-m-d H:i:s")], $id);
+				\dash\utility\sms::send($mobile, $text);
+			}
+			\dash\redirect::pwd();
+
 		}
 	}
 }

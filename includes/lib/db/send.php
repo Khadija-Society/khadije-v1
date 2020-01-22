@@ -94,7 +94,8 @@ class send
 			khadem2.nationalcode AS `khadem2_nationalcode`,
 			khadem2.gender AS `khadem2_gender`,
 
-			agent_place.title As `place_title`
+			agent_place.title As `place_title`,
+			agent_place.address As `place_address`
 		",
 
 		'master_join' =>

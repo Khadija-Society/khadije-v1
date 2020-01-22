@@ -61,6 +61,36 @@
 					</tr>
 					{%endif%}
 
+					{%if dataRow.alertsms%}
+						<tr class="positive">
+							<td class="collapsing">پیامک یادآوری
+								<br>
+								در تاریخ
+								{{dataRow.alertsmsdate | dt()}}
+								<br>
+								ارسال شده است
+							</td>
+							<td><textarea type="text" id="paytext" class="txt" readonly  rows="4">{{dataRow.alertsms}}</textarea></td>
+
+						</tr>
+					{%else%}
+						<tr class="">
+							<td>پیامک یادآوری</td>
+							<td>
+								<textarea type="text" id="paytext" class="txt" readonly  rows="4">{{smsText}}</textarea>
+								<form method="post" autocomplete="off" class="mT10">
+									<div class="input clockpicker" data-placement="top" data-align="left">
+										<label class="addon">ساعت شروع جلسه</label>
+						                <input type="text" name="xtime" id="xtime"  autocomplete="off">
+										<button class="addon btn success">ارسال پیامک به مبلغ</button>
+						              </div>
+
+								</form>
+							</td>
+
+						</tr>
+					{%endif%}
+
 				</tbody>
 			</table>
 		</div>

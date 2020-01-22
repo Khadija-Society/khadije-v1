@@ -303,6 +303,15 @@ class TransStatic
 	echo T_("AgentQom");
 	echo T_("AgentMashhad");
 	echo T_("AgentKarbala");
+
+	echo T_("maddah");
+	echo T_("Maddah");
+	echo T_("nazer");
+	echo T_("Nazer");
+	echo T_("Khadem");
+	echo T_("khadem");
+	echo T_("Khadem2");
+	echo T_("khadem2");
  }
 }
 ?>

@@ -22,6 +22,7 @@ class model
 			'status'      => \dash\request::post('status'),
 
 			'gender'      => \dash\request::post('gender'),
+			'address'      => \dash\request::post('address'),
 
 			'adminoffice' => \dash\request::post('adminoffice') === '0' ? null : \dash\request::post('adminoffice'),
 			'servant'     => \dash\request::post('servant') === '0' ? null : \dash\request::post('servant'),
