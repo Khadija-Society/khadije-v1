@@ -89,7 +89,7 @@ class twigTransTerms
 	//-----------------------------------content_agent/send/assessmentadd/display.html
 	echo T_("%");                                                                     // Line 114
 	echo T_("Item");                                                                  // Line 205
-	echo T_("Star");                                                                  // Line 32
+	echo T_("Star");                                                                  // Line 25
 
 	//--------------------------------------------content_agent/send/edit/display.html
 	echo T_("Start date");                                                            // Line 89
@@ -149,7 +149,7 @@ class twigTransTerms
 	echo T_("View full Profile");                                                     // Line 109
 
 	//---------------------------------------content_agent/servant/skills/display.html
-	echo T_("Skills");                                                                // Line 13
+	echo T_("Skills");                                                                // Line 15
 
 	//--------------------------------content_agent/servant/accountnumber/display.html
 	echo T_("User account number detail");                                            // Line 10
@@ -214,8 +214,8 @@ class twigTransTerms
 	echo T_("Please choose city");                                                    // Line 60
 
 	//-------------------------------------------------content_agent/home/display.html
-	echo T_("Agent Place");                                                           // Line 14
-	echo T_("Assessment Item");                                                       // Line 12
+	echo T_("Agent Place");                                                           // Line 16
+	echo T_("Assessment Item");                                                       // Line 14
 	echo T_("Servant");                                                               // Line 56
 	echo T_("Dispathc servant");                                                      // Line 78
 
@@ -304,6 +304,8 @@ class twigTransTerms
 	echo T_("Is money?");                                                             // Line 74
 	echo T_("If has money, get it form operator");                                    // Line 76
 	echo T_("Deleted");                                                               // Line 273
+
+	//----------------------------------------------content_smsapp/export/display.html
 
 	//----------------------------------------content_smsapp/choosemobile/display.html
 
@@ -786,12 +788,18 @@ class twigTransTerms
 	//---------------------------------------content_a/consulting/request/display.html
 	echo T_("We do not provide consulting service yet!");                             // Line 9
 
+	//------------------------------------content_a/servant/assessmentadd/display.html
+
+	//-------------------------------------------content_a/servant/report/display.html
+
 	//-----------------------------------------------------content_a/home/display.html
+	echo T_("Servand dashboard");                                                     // Line 27
+	echo T_("Detail, Assessment, ...");                                               // Line 28
 	echo T_("Festival");                                                              // Line 148
 	echo T_("Representation");                                                        // Line 85
 	echo T_("Health Service");                                                        // Line 94
 	echo T_("Consulting Service");                                                    // Line 11
-	echo T_("Donate product");                                                        // Line 122
+	echo T_("Donate product");                                                        // Line 136
 
 	//--------------------------------------------content_a/health/detail/display.html
 	echo T_("Your are using this health");                                            // Line 9
