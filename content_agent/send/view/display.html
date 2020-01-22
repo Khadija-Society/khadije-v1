@@ -91,6 +91,41 @@
 						</tr>
 					{%endif%}
 
+
+
+
+					{%if dataRow.alertassessment_date%}
+						<tr class="positive">
+							<td colspan="2"  class="collapsing">اطلاع رسانی
+
+								تکمیل ارزشیابی
+
+								در تاریخ
+								{{dataRow.alertassessment_date | dt()}}
+
+								ارسال شده است
+							</td>
+
+
+						</tr>
+					{%else%}
+						<tr class="">
+							<td>اطلاع رسانی تکمیل ارزشیابی</td>
+							<td>
+								<p>
+									با فشردن دکمه پیامکی حاوی لینک ارزشیابی به همه عوامل این سفر ارسال خواهد شد
+								</p>
+								<form method="post" autocomplete="off" class="mT10">
+									<input type="hidden" name="alert" value="alert">
+
+									<button class="addon btn success">اطلاع رسانی تکمیل ارزشیابی</button>
+
+								</form>
+							</td>
+
+						</tr>
+					{%endif%}
+
 				</tbody>
 			</table>
 		</div>
