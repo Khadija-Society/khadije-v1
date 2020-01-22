@@ -152,5 +152,41 @@ class send
 		return $result;
 	}
 
+
+
+	public static function get_my_list($_user_id)
+	{
+		$public_show_field = self::$options['public_show_field'];
+		$master_join = self::$options['master_join'];
+
+
+		$query =
+		"
+			SELECT
+				$public_show_field
+			FROM
+				agent_send
+				$master_join
+			WHERE
+			(   agent_send.status != 'lock' OR agent_send.status IS NULL )
+			AND
+			(
+				agent_send.clergy_id      = $_user_id OR
+				agent_send.admin_id       = $_user_id OR
+				agent_send.adminoffice_id = $_user_id OR
+				agent_send.missionary_id  = $_user_id OR
+				agent_send.servant_id     = $_user_id OR
+				agent_send.servant2_id    = $_user_id OR
+				agent_send.maddah_id      = $_user_id OR
+				agent_send.nazer_id       = $_user_id OR
+				agent_send.khadem_id      = $_user_id OR
+				agent_send.khadem2_id     = $_user_id
+			)
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 }
 ?>

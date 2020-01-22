@@ -3,6 +3,10 @@
 
 {%block pageContent%}
 <div class="f">
+  {%if isAgentServant%}
+    <div class="c12 s12">{{block ("bIsAgetnServant")}}</div>
+  {%endif%}
+
  {%if festivalEnable%}
   <div class="c4 s6">{{block ("bFestival")}}</div>
  {%endif%}
@@ -16,6 +20,16 @@
 </div>
 {%endblock%}
 
+{%block bIsAgetnServant%}
+<a class="dcard x2 fs14" href='{{url.here}}/servant'>
+ <div class="statistic teal">
+  <div class="value"><i class="sf-atom"></i></div>
+  <div class="label">{%trans "Servand dashboard"%}</div>
+  <div class="label pT10">{%trans "Detail, Assessment, ..."%}</div>
+
+ </div>
+</a>
+{%endblock%}
 
 {%block bFestival%}
 <a class="dcard fs14" data-direct href='{{url.base}}/festival'>

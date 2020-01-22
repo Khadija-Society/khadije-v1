@@ -1,0 +1,79 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+
+
+
+<div class="f justify-center">
+  <div class="c8 s12">
+    <div class="cbox">
+      <div class="msg primary2 txtC">{{msgTxt | raw}}</div>
+
+
+        <form method="post" autocomplete="off">
+
+          {%for key, value in inputHidden%}
+            <input type="hidden" name="{{key}}" value="{{value}}">
+          {%endfor%}
+
+          <table class="tbl1 v4">
+            <thead>
+              <tr>
+                <th class="collapsing"></th>
+                <th>{%trans "Item"%}</th>
+                <th>{%trans "Star"%}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%for key, value in assessmentIem%}
+              <tr>
+                <td class="collapsing">{{loop.index | fitNumber}}</td>
+                <td>{{value.title}}</td>
+
+                <td class="fs06">
+
+                  <input type="hidden" name="item_{{value.id}}" value="{{value.id}}">
+
+
+                  <div class="radioRating togglable">
+                    <div class="rateBox">
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-1" value="1" {%if savedScore[value.id]['star'] == 5%} checked {%endif%}>
+                      <label for="star_{{value.id}}-1"></label>
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-2" value="2" {%if savedScore[value.id]['star'] == 4%} checked {%endif%}>
+                      <label for="star_{{value.id}}-2"></label>
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-3" value="3" {%if savedScore[value.id]['star'] == 3%} checked {%endif%}>
+                      <label for="star_{{value.id}}-3"></label>
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-4" value="4" {%if savedScore[value.id]['star'] == 2%} checked {%endif%}>
+                      <label for="star_{{value.id}}-4"></label>
+                      <input type="radio" name="star_{{value.id}}" id="star_{{value.id}}-5" value="5" {%if savedScore[value.id]['star'] == 1%} checked {%endif%}>
+                      <label for="star_{{value.id}}-5"></label>
+                    </div>
+                  </div>
+
+                </td>
+              </tr>
+              {%endfor%}
+            </tbody>
+          </table>
+
+          <label for="desc">{%trans "Description"%}</label>
+          <textarea class="txt mB10" id='desc' name="desc" placeholder='اگر توضیح، انتقاد یا پیشنهادی مد نظر شماست ذکر کنید.' maxlength='500' rows="5">{{assessmenDetail.assessmentdesc}}</textarea>
+
+          <div class="msg warn2">
+            <div class="check1">
+              <input type="checkbox" name="iagree" id="iagree">
+              <label for="iagree">اینجانب صحت اطلاعات فوق را تایید می کنم. اطلاعات پس از ثبت قابل ویرایش نخواهد بود</label>
+            </div>
+          </div>
+
+          <div class="txtRa" data-response='iagree' data-response-hide>
+            <button class="btn pain">{%trans "Save"%}</button>
+          </div>
+
+        </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

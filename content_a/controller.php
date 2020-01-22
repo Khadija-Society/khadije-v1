@@ -16,6 +16,18 @@ class controller
 			\dash\redirect::to(\dash\url::kingdom(). '/enter?referer='. \dash\url::pwd());
 			return;
 		}
+
+		if(!\dash\session::get('CheckisAgentServant'))
+		{
+			$check = \lib\db\servant::get(['agent_servant.user_id' => \dash\user::id(), 'agent_servant.status' => 'enable', 'limit' => 1]);
+			\dash\session::set('CheckisAgentServant', true);
+			if($check)
+			{
+				\dash\session::set('isAgentServant', true);
+			}
+		}
+
+		\dash\data::isAgentServant(\dash\session::get('isAgentServant'));
 	}
 
 

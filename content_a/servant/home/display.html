@@ -1,0 +1,74 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+
+  <div class="f">
+
+   <div class="c s6">
+    <a class="dcard {%if not requestGET.type %}active{%endif%}" href='{{url.this}}'>
+     <div class="statistic">
+      <div class="value"><i class="sf-search"></i></div>
+      <div class="label">ارزیابی عوامل کاروان</div>
+     </div>
+    </a>
+   </div>
+
+   <div class="c s6">
+    <a class="dcard {%if requestGET.type == 'report' %}active{%endif%}" href='{{url.this}}?type=report'>
+     <div class="statistic">
+      <div class="value"><i class="sf-picture"></i></div>
+      <div class="label">ارسال گزارش تصویری</div>
+     </div>
+    </a>
+   </div>
+
+
+
+
+
+
+  </div>
+<div class="cbox">
+	{%if not requestGET.type%}
+		{%if myList%}
+			{%for key, value in myList%}
+
+				<div class="msg primary2">
+					<div class="f align-center">
+						<div class="cauto"><b>{{loop.index | fitNumber}}</b>. &nbsp;</div>
+						<div class="c s12 m12">{{value.title | raw}}</div>
+						<div class="c s12 m12">{{value.place_title | raw}}</div>
+						<div class="c s12 m12">{{value.startdate | dt(null, 'date')}} - {{value.enddate | dt(null, 'date')}}</div>
+						<div class="cauto"><a href="{{url.this}}/assessmentadd?id={{value.id}}&job={{value.job}}&forjob={{value.job_for}}" class="btn success">ثبت ارزیابی</a></div>
+					</div>
+
+				</div>
+			{%endfor%}
+		{%else%}
+		<div class="msg warn2 txtB txtC">هیچ ارزیابی فعالی یافت نشد</div>
+		{%endif%}
+
+	{%endif%}
+
+	{%if requestGET.type == 'report'%}
+		{%if myListReport%}
+			{%for key, value in myListReport%}
+
+				<div class="msg info2">
+					<div class="f align-center">
+						<div class="cauto"><b>{{loop.index | fitNumber}}</b>. &nbsp;</div>
+						<div class="c s12 m12">ثبت گزارش تصویزی</div>
+						<div class="c s12 m12">{{value.place_title | raw}}</div>
+						<div class="c s12 m12">{{value.startdate | dt(null, 'date')}} - {{value.enddate | dt(null, 'date')}}</div>
+						<div class="cauto"><a href="{{url.this}}/report?id={{value.id}}" class="btn secondary">ثبت گزارش تصویری</a></div>
+					</div>
+
+				</div>
+			{%endfor%}
+		{%else%}
+		<div class="msg warn2 txtB txtC">هیچ ارزیابی فعالی یافت نشد</div>
+		{%endif%}
+	{%endif%}
+</div>
+{%endblock%}

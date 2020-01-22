@@ -697,6 +697,189 @@ class send
 		'desc',
 	];
 
+	public static function myListReport($_user_id)
+	{
+		if(!$_user_id || !is_numeric($_user_id))
+		{
+			return false;
+		}
+
+		$result = \lib\db\send::get_my_list($_user_id);
+
+		$temp              = [];
+
+		foreach ($result as $key => $value)
+		{
+			$check = self::ready($value);
+			if($check)
+			{
+				$temp[] = $check;
+			}
+		}
+
+		return $temp;
+	}
+
+	public static function myList($_user_id)
+	{
+		if(!$_user_id || !is_numeric($_user_id))
+		{
+			return false;
+		}
+
+		$user_code = \dash\coding::encode($_user_id);
+
+		$result = \lib\db\send::get_my_list($_user_id);
+
+		$temp              = [];
+
+		foreach ($result as $key => $value)
+		{
+			$check = self::ready($value);
+			if($check)
+			{
+				$temp[] = $check;
+			}
+		}
+
+		$new = [];
+		foreach ($temp as $key => $value)
+		{
+			if(isset($value['clergy_id']) && $value['clergy_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'clergy');
+			}
+
+			if(isset($value['admin_id']) && $value['admin_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'admin');
+			}
+
+			if(isset($value['adminoffice_id']) && $value['adminoffice_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'adminoffice');
+			}
+
+			if(isset($value['missionary_id']) && $value['missionary_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'missionary');
+			}
+
+			if(isset($value['servant_id']) && $value['servant_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'servant');
+			}
+
+			if(isset($value['servant2_id']) && $value['servant2_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'servant2');
+			}
+
+			if(isset($value['maddah_id']) && $value['maddah_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'maddah');
+			}
+
+			if(isset($value['nazer_id']) && $value['nazer_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'nazer');
+			}
+
+			if(isset($value['khadem_id']) && $value['khadem_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'khadem');
+			}
+
+			if(isset($value['khadem2_id']) && $value['khadem2_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'khadem2');
+			}
+		}
+		return $new;
+	}
+
+
+	private static function make_my_record(&$new, $_data, $_job)
+	{
+
+		$myJobDetail =
+		[
+			'clergy'      => ['title' => "روحانی کاروان"],
+			'admin'       => ['title' => "مدیر کاروان"],
+			'adminoffice' => ['title' => "مدیر زائر سرا"],
+			'missionary'  => ['title' => "مبلغ"],
+			'servant'     => ['title' => "نگهبان"],
+			'servant2'    => ['title' => "نگهبان ۲"],
+			'maddah'      => ['title' => "مداح"],
+			'nazer'       => ['title' => "ناظر"],
+			'khadem'      => ['title' => "خادم"],
+			'khadem2'     => ['title' => "خادم ۲"],
+		];
+
+		$myJobTitle = null;
+		if(isset($myJobDetail[$_job]['title']))
+		{
+			$myJobTitle = $myJobDetail[$_job]['title'];
+		}
+
+		$otherJob = $myJobDetail;
+		unset($otherJob[$_job]);
+
+		$job_for = [];
+		foreach ($otherJob as $oj => $value)
+		{
+			if(isset($_data[$oj. '_id']) && $_data[$oj. '_id'])
+			{
+				$job_for[] = $oj;
+			}
+		}
+
+		foreach ($job_for as $oj)
+		{
+			$myJobForTitle = null;
+			if(isset($myJobDetail[$oj]['title']))
+			{
+				$myJobForTitle = $myJobDetail[$oj]['title'];
+			}
+
+			$displayname = null;
+
+			if(isset($_data[$oj. '_displayname']))
+			{
+				$displayname = $_data[$oj. '_displayname'];
+			}
+			elseif(isset($_data[$oj. '_firstname']) || isset($_data[$oj. '_lastname']))
+			{
+				$displayname = trim($_data[$oj. '_firstname'] . ' '. $_data[$oj. '_lastname']);
+			}
+
+			$result                = [];
+			$result['title']       = 'ارزیابی شما به عنوان <b>'. $myJobTitle. '</b> از <b>'. $displayname. '</b> به عنوان <b>'. $myJobForTitle. '</b>';
+			$result['job']         = $_job;
+			$result['job_for']     = $oj;
+
+			$get_assessment =
+			[
+				'send_id' => \dash\coding::decode($_data['id']),
+				'job'     => $_job,
+				'job_for' => $oj,
+				'limit'   => 1,
+			];
+			$check_complete = \lib\db\assessment::get($get_assessment);
+			if($check_complete)
+			{
+				continue;
+			}
+			$result['place_title'] = $_data['place_title'];
+			$result['startdate']   = $_data['startdate'];
+			$result['enddate']     = $_data['enddate'];
+			$result['id']          = $_data['id'];
+
+			$new[] = $result;
+		}
+
+
+	}
 
 
 	/**

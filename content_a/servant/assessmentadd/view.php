@@ -1,5 +1,5 @@
 <?php
-namespace content_agent\send\assessmentadd;
+namespace content_a\servant\assessmentadd;
 
 
 class view
@@ -11,7 +11,7 @@ class view
 
 		\dash\data::page_pictogram('plus');
 
-		\dash\data::badge_link(\dash\url::this(). '/assessment?id='. \dash\request::get('id'). \dash\data::xCityAnd());
+		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back'));
 
 
@@ -101,15 +101,15 @@ class view
 	{
 		$jobList =
 		[
-			'admin' => 'مدیر کاروان',
+			'admin'       => 'مدیر کاروان',
 			'adminoffice' => 'مسئول زائرسرا',
-			'servant' => 'نگهبان',
-			'clergy' => 'روحانی',
-			'missionary' => 'مبلغ',
-			'khadem' => 'خادم',
-			'khadem2' => 'خادم',
-			'nazer' => 'ناظر',
-			'maddah' => 'مداح',
+			'servant'     => 'نگهبان',
+			'clergy'      => 'روحانی',
+			'missionary'  => 'مبلغ',
+			'khadem'      => 'خادم',
+			'khadem2'     => 'خادم',
+			'nazer'       => 'ناظر',
+			'maddah'      => 'مداح',
 
 
 		];
