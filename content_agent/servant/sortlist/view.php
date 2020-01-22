@@ -52,7 +52,7 @@ class view
 
 
 
-		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\servant::$sort_field, \dash\url::this());
+		$sortLink  = \dash\app\sort::make_sortLink(['date', 'avg', 'count'], \dash\url::that());
 		$dataTable = \lib\app\servant::list(\dash\request::get('q'), $args);
 
 		\dash\data::sortLink($sortLink);

@@ -90,7 +90,28 @@ class servant
 
 			";
 			$_args['master_join']       = "INNER JOIN users ON users.id = agent_servant.user_id";
-			$_args['order_raw'] = ' `max_startdate` ASC';
+
+			if(isset($_args['sort']) && in_array($_args['sort'], ['date', 'avg', 'count']))
+			{
+				$order = (isset($_args['order']) && in_array($_args['order'], ['asc', 'desc'])) ? $_args['order'] : 'ASC';
+				if($_args['sort'] === 'date')
+				{
+					$_args['order_raw'] = " `max_startdate` $order ";
+				}
+				elseif($_args['sort'] === 'avg')
+				{
+					$_args['order_raw'] = " `send_avg` $order ";
+				}
+				elseif($_args['sort'] === 'count')
+				{
+					$_args['order_raw'] = " `send_count` $order ";
+				}
+			}
+			else
+			{
+				$_args['order_raw'] = ' `max_startdate` ASC';
+			}
+
 		}
 
 		unset($_args['sort_join']);

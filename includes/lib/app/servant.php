@@ -10,6 +10,9 @@ class servant
 	[
 		'title',
 		'status',
+		'date',
+		'avg',
+		'count',
 	];
 
 
