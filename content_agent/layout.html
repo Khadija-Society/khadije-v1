@@ -1,8 +1,10 @@
 {%extends display.dash%}
 
 {%block sidenav%}
+{%if not oneCity%}
   <li><a href="{{url.here}}">{%trans "Select city"%}</a></li>
-  {%if requestGET.city%}
+{%endif%}
+  {%if xCity%}
   <li class="txtB"><a href="{{url.here}}{{xCityStart}}">{%trans "Dashboard"%} {%trans "City"%} {{xCityTitle}}</a></li>
 
   <li><a href="{{url.here}}/servant{{xCityStart}}">{% trans "Servants" %}</a></li>

@@ -298,6 +298,11 @@ class TransStatic
 	echo T_("missionary");
 	echo T_("Servant");
 	echo T_("servant");
+
+	echo T_("contentAgent");
+	echo T_("AgentQom");
+	echo T_("AgentMashhad");
+	echo T_("AgentKarbala");
  }
 }
 ?>

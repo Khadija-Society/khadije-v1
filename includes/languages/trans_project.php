@@ -96,11 +96,20 @@ class twigTransTerms
 	echo T_("Start time");                                                            // Line 106
 	echo T_("End date");                                                              // Line 96
 	echo T_("End time");                                                              // Line 117
+	echo T_("enable");                                                                // Line 134
+	echo T_("disable");                                                               // Line 135
+	echo T_("deleted");                                                               // Line 136
+	echo T_("expire");                                                                // Line 137
+	echo T_("draft");                                                                 // Line 139
 	echo T_("Nobody");                                                                // Line 348
 
 	//------------------------------------------------content_agent/send/pageStep.html
 	echo T_("To city");                                                               // Line 16
 	echo T_("Billing");                                                               // Line 59
+
+	//--------------------------------------------content_agent/send/file/display.html
+	echo T_("Add to gallery");                                                        // Line 362
+	echo T_("Choose or Drop file here");                                              // Line 17
 
 	//----------------------------------content_agent/send/assessment/display-old.html
 	echo T_("Score");                                                                 // Line 14
@@ -1279,7 +1288,6 @@ class twigTransTerms
 	echo T_("Write message of festival");                                             // Line 233
 	echo T_("Expire");                                                                // Line 268
 	echo T_("Social Network");                                                        // Line 310
-	echo T_("Add to gallery");                                                        // Line 362
 	echo T_("To add image gallery drop file here or");                                // Line 363
 	echo T_("Poster");                                                                // Line 476
 	echo T_("Brochure");                                                              // Line 486

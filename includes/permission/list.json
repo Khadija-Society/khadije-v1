@@ -504,5 +504,26 @@
     "title": "contentAgent",
     "cat": "Agent",
     "require": []
+  },
+  "AgentQom": {
+    "title": "AgentQom",
+    "cat": "Agent",
+    "require": [
+      "contentAgent"
+    ]
+  },
+  "AgentMashhad": {
+    "title": "AgentMashhad",
+    "cat": "Agent",
+    "require": [
+      "contentAgent"
+    ]
+  },
+  "AgentKarbala": {
+    "title": "AgentKarbala",
+    "cat": "Agent",
+    "require": [
+      "contentAgent"
+    ]
   }
 }
