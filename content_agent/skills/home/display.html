@@ -63,7 +63,7 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
         <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i> {{value.title}}</a></td>
-        <td class="s0 collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}">{%trans myStatus%}</a></td>
+        <td class=" collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}">{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
