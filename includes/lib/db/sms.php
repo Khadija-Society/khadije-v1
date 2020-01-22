@@ -17,6 +17,27 @@ class sms
 		(SELECT recommendGroup.title FROM s_group AS `recommendGroup` WHERE recommendGroup.id = s_sms.recommend_id LIMIT 1) AS `recommend_title`
 	";
 
+
+
+	public static function export_mobile($_startdate, $_enddate)
+	{
+		$start = null;
+		if($_startdate)
+		{
+			$start = "AND s_sms.datecreated >= '$_startdate' ";
+		}
+
+		$end = null;
+		if($_enddate)
+		{
+			$end = "AND s_sms.datecreated <= '$_enddate' ";
+		}
+
+		$query = " SELECT DISTINCT s_sms.fromnumber AS `mobile` FROM s_sms WHERE s_sms.receivestatus != 'block' $start $end ";
+		$result = \dash\db::get($query, 'mobile');
+		return $result;
+	}
+
 	public static function removeAll($_gateway)
 	{
 		$query = "DELETE FROM s_sms WHERE s_sms.togateway = '$_gateway' ";

@@ -1,0 +1,51 @@
+{%extends 'content_smsapp/layout.html'%}
+
+
+
+
+{%block pageContent%}
+
+<div class="f justify-center">
+  <div class="c6 s12">
+    <div class="cbox">
+      <form method="get" autocomplete="off" action="{{url.this}}" data-action>
+        <input type="hidden" name="export" value="1">
+        <h3>خروج از شماره تلفن‌های پیامک‌ها در بازه زمانی خاص</h3>
+             <div class="f mT20">
+
+            <div class="c6 s12 mB5">
+              <div class="input ltr">
+                <input class="datepicker" type="text" name="startdate" placeholder='{%trans "Start date"%}' id="startdate"  value="{{dataRow.startdate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
+              </div>
+              <label for="starttime"></label>
+              <div class="input clockpicker" data-placement="top" data-align="left">
+                <input type="text" name="starttime" id="starttime" value="{%if dataRow.startdate%}{{dataRow.startdate | date('H:i')}}{%endif%}" placeholder='زمان شروع' autocomplete="off">
+              </div>
+            </div>
+
+
+            <div class="c6 s12 mB5 pLa5">
+              <div class="input ltr">
+                <input class="datepicker" type="text" name="enddate" placeholder='{%trans "End date"%}' id="enddate"  value="{{dataRow.enddate}}" maxlength='20' data-format="YYYY/MM/DD"data-view="day">
+              </div>
+               <label for="endtime"></label>
+              <div class="input clockpicker" data-placement="top" data-align="left">
+                <input type="text" name="endtime" id="endtime" value="{%if dataRow.enddate%}{{dataRow.enddate | date('H:i')}}{%endif%}" placeholder='زمان پایان' autocomplete="off">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="txtRa">
+            <button class="btn success">دریافت فایل خروجی</button>
+          </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
+
+
+

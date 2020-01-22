@@ -22,7 +22,7 @@ class view
 			$export = '?export=1';
 		}
 
-		\dash\data::badge2_link(\dash\url::pwd(). $export);
+		\dash\data::badge2_link(\dash\url::here().'/export');
 		\dash\data::badge2_text(T_('Export CSV'));
 
 
