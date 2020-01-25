@@ -345,7 +345,7 @@ class myuser
 		}
 
 		$child = \dash\app::request('child');
-		if($shcode && !is_numeric($child))
+		if($child && !is_numeric($child))
 		{
 			\dash\notif::error(T_("Please set data as a number"), 'child');
 			return false;

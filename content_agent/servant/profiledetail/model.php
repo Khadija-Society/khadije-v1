@@ -30,7 +30,7 @@ class model
 		$post['zipcode']      = \dash\request::post('zipcode');
 
 		$post['shcode']       = \dash\request::post('shcode');
-		$post['child']        = \dash\request::post('child');
+		$post['child']        = \dash\request::post('child') ? \dash\request::post('child') : null;
 		$post['shfrom']       = \dash\request::post('shfrom');
 		$post['birthcity']    = \dash\request::post('birthcity');
 
