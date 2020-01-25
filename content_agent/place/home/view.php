@@ -12,11 +12,10 @@ class view
 
 		\dash\data::page_pictogram('box');
 
-		if(\dash\permission::check('mPlaceAdd'))
-		{
-			\dash\data::badge_link(\dash\url::this(). '/add' . \dash\data::xCityStart());
-			\dash\data::badge_text(T_('Add new place'));
-		}
+
+		\dash\data::badge_link(\dash\url::this(). '/add' . \dash\data::xCityStart());
+		\dash\data::badge_text(T_('Add new place'));
+
 
 
 		$search_string            = \dash\request::get('q');
