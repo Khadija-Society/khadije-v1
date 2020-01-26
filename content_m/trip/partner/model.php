@@ -205,9 +205,11 @@ class model
 		{
 			$i++;
 			$add_new                       = $value;
+
+
 			$add_new['not_force_birthday'] = true;
 			$add_new['travel_id']          = \dash\request::get('id');
-			\lib\app\myuser::add_child($add_new);
+			\lib\app\myuser::add_child($add_new, ['import_mode' => true]);
 		}
 
 		\dash\notif::ok(T_("Import successfully"). ', '. T_(":val rows imported", ['val' => \dash\utility\human::fitNumber($i)]));
@@ -222,7 +224,7 @@ class model
 		foreach ($_array as $key => $value)
 		{
 			\dash\app::variable($value);
-			$temp = \lib\app\myuser::check();
+			$temp = \lib\app\myuser::check(['import_mode' => true]);
 
 			if($temp === false || !\dash\engine\process::status())
 			{

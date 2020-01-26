@@ -13,6 +13,7 @@ class myuser
 		$default_option =
 		[
 			'debug' => true,
+			'import_mode' => false,
 		];
 
 		if(!is_array($_option))
@@ -22,8 +23,11 @@ class myuser
 
 		$_option = array_merge($default_option, $_option);
 
+		$import_mode = $_option['import_mode'];
+
 
 		$gender = \dash\app::request('gender');
+
 		if($gender && !in_array($gender, ['male', 'female']))
 		{
 			\dash\notif::error(T_("Invalid arguments gender"), 'gender');
@@ -32,8 +36,11 @@ class myuser
 
 		if(\dash\app::isset_request('gender') && !$gender)
 		{
-			\dash\notif::error(T_("Please set your gender"), 'gender');
-			return false;
+			if(!$import_mode)
+			{
+				\dash\notif::error(T_("Please set your gender"), 'gender');
+				return false;
+			}
 		}
 
 		$email = \dash\app::request('email');
@@ -75,8 +82,11 @@ class myuser
 
 		if(!$firstname)
 		{
-			\dash\notif::error(T_("First name is required"), 'name');
-			return false;
+			if(!$import_mode)
+			{
+				\dash\notif::error(T_("First name is required"), 'name');
+				return false;
+			}
 		}
 
 		if($firstname && mb_strlen($firstname) > 50)
@@ -94,8 +104,11 @@ class myuser
 
 		if(!$lastname)
 		{
-			\dash\notif::error(T_("Last name is required"), 'lastName');
-			return false;
+			if(!$import_mode)
+			{
+				\dash\notif::error(T_("Last name is required"), 'lastName');
+				return false;
+			}
 		}
 
 		$nationalcode = \dash\app::request('nationalcode');
@@ -250,8 +263,11 @@ class myuser
 			{
 				if(!$married)
 				{
-					\dash\notif::error(T_("Plese set your married"), 'married');
-					return false;
+					if(!$import_mode)
+					{
+						\dash\notif::error(T_("Plese set your married"), 'married');
+						return false;
+					}
 				}
 			}
 		}
@@ -545,12 +561,27 @@ class myuser
 			$max_count_partner = 0;
 		}
 
-		$count_partner     = \lib\db\travelusers::get_travel_child(\dash\request::get('trip'));
-		if((count($count_partner) + 1) > intval($max_count_partner) )
+		$myTripId = null;
+		if(\dash\request::get('trip'))
 		{
-			\dash\notif::error(T_("Maximum partner added. can not add another"));
-			return false;
+			$myTripId = \dash\request::get('trip');
 		}
+		elseif(\dash\request::get('id'))
+		{
+			$myTripId = \dash\request::get('id');
+		}
+
+		if($myTripId && $max_count_partner)
+		{
+
+			$count_partner     = \lib\db\travelusers::get_travel_child($myTripId);
+			if((count($count_partner) + 1) > intval($max_count_partner) )
+			{
+				\dash\notif::error(T_("Maximum partner added. can not add another"));
+				return false;
+			}
+		}
+
 
 
 
