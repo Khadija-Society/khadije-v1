@@ -48,6 +48,11 @@ class model
 				$user_id[] = \dash\coding::decode($data['maddah_id']);
 			}
 
+			if(isset($data['rabet_id']) && $data['rabet_id'])
+			{
+				$user_id[] = \dash\coding::decode($data['rabet_id']);
+			}
+
 			if(isset($data['nazer_id']) && $data['nazer_id'])
 			{
 				$user_id[] = \dash\coding::decode($data['nazer_id']);

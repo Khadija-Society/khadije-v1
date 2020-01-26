@@ -97,6 +97,7 @@ class find
 				agent_send.khadem2_id     = $_user_id OR
 				agent_send.khadem_id      = $_user_id OR
 				agent_send.nazer_id       = $_user_id OR
+				agent_send.rabet_id       = $_user_id OR
 				agent_send.maddah_id      = $_user_id
 			)
 		";

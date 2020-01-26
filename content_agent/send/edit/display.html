@@ -70,6 +70,7 @@
 
           {{block('imodir')}}
           {{block('imaddahList')}}
+          {{block('iRabetList')}}
           {{block('inazerList')}}
           {{block('ikhademList')}}
           {{block('ikhadem2List')}}
@@ -209,6 +210,22 @@
   <option value="0">{%trans "Nobody"%}</option>
   {%for key, value in maddahList%}
     <option value="{{value.user_id}}" {%if dataRow.maddah_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+{%else%}
+
+{%endif%}
+
+{%endblock%}
+
+{%block iRabetList %}
+{%if rabetList%}
+<label>رابط کاروان</label>
+<select name="rabet_id" class="select ui dropdown search" id="modir">
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">{%trans "Nobody"%}</option>
+  {%for key, value in rabetList%}
+    <option value="{{value.user_id}}" {%if dataRow.rabet_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
   {%endfor%}
 </select>
 {%else%}

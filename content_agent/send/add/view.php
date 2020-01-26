@@ -16,7 +16,7 @@ class view
 
 
 		$job = \dash\request::get('job');
-		if($job && !in_array($job, ['clergy', 'admin', 'missionary', 'servant', 'adminoffice','maddah', 'khadem', 'nazer']))
+		if($job && !in_array($job, ['clergy', 'admin', 'missionary', 'servant', 'adminoffice','maddah','rabet', 'khadem', 'nazer']))
 		{
 			\dash\header::status(403, T_("Job"));
 		}
@@ -93,6 +93,9 @@ class view
 
 		$maddahList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'maddah']));
 		\dash\data::maddahList($maddahList);
+
+		$rabetList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'rabet']));
+		\dash\data::rabetList($rabetList);
 
 		$nazerList = \lib\app\servant::list(null, array_merge($servant_args, ['agent_servant.job' => 'nazer']));
 		\dash\data::nazerList($nazerList);

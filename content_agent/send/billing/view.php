@@ -45,11 +45,11 @@ class view
 		$paytype                 = \dash\data::dataRow_paytype() ? \dash\data::dataRow_paytype() : '';
 		$paynumber               = \dash\data::dataRow_paynumber() ? \dash\data::dataRow_paynumber() : '';
 
-		$displayname_adminoffice = \dash\data::dataRow_adminoffice_displayname() ? \dash\data::dataRow_adminoffice_displayname() : '';
-		$firstname_adminoffice   = \dash\data::dataRow_adminoffice_firstname() ? \dash\data::dataRow_adminoffice_firstname() : '';
-		$gender_adminoffice      = \dash\data::dataRow_adminoffice_gender() ? \dash\data::dataRow_adminoffice_gender() : '';
-		$lastname_adminoffice    = \dash\data::dataRow_adminoffice_lastname() ? \dash\data::dataRow_adminoffice_lastname() : '';
-		$mobile_adminoffice      = \dash\data::dataRow_adminoffice_mobile() ? \dash\data::dataRow_adminoffice_mobile() : '';
+		$displayname_rabet = \dash\data::dataRow_rabet_displayname() ? \dash\data::dataRow_rabet_displayname() : '';
+		$firstname_rabet   = \dash\data::dataRow_rabet_firstname() ? \dash\data::dataRow_rabet_firstname() : '';
+		$gender_rabet      = \dash\data::dataRow_rabet_gender() ? \dash\data::dataRow_rabet_gender() : '';
+		$lastname_rabet    = \dash\data::dataRow_rabet_lastname() ? \dash\data::dataRow_rabet_lastname() : '';
+		$mobile_rabet      = \dash\data::dataRow_rabet_mobile() ? \dash\data::dataRow_rabet_mobile() : '';
 
 		$payamount               = \dash\utility\human::fitNumber($payamount);
 		$paynumber               = \dash\utility\human::fitNumber($paynumber, false);
@@ -71,28 +71,28 @@ class view
 		}
 
 
-		if($firstname_adminoffice || $lastname_adminoffice)
+		if($firstname_rabet || $lastname_rabet)
 		{
-			$myName_adminoffice = $firstname_adminoffice. ' '. $lastname_adminoffice;
+			$myName_rabet = $firstname_rabet. ' '. $lastname_rabet;
 		}
 		else
 		{
-			$myName_adminoffice = $displayname_adminoffice;
+			$myName_rabet = $displayname_rabet;
 		}
 
-		$myGender_adminoffice = null;
-		if($gender_adminoffice === 'male')
+		$myGender_rabet = null;
+		if($gender_rabet === 'male')
 		{
-			$myGender_adminoffice = 'جناب آقای';
+			$myGender_rabet = 'جناب آقای';
 		}
-		elseif($gender_adminoffice === 'female')
+		elseif($gender_rabet === 'female')
 		{
-			$myGender_adminoffice = 'سرکار خانم';
+			$myGender_rabet = 'سرکار خانم';
 		}
 
 
 		$mobile = \dash\utility\human::fitNumber($mobile, false);
-		$mobile_adminoffice = \dash\utility\human::fitNumber($mobile_adminoffice, false);
+		$mobile_rabet = \dash\utility\human::fitNumber($mobile_rabet, false);
 		$nationalcode = \dash\utility\human::fitNumber($nationalcode, false);
 
 		$myGender = null;
@@ -119,7 +119,7 @@ class view
 
 		$smsText = "سلام و ادب و احترام
 یادآوری
-امروز ساعت $_xtime $place_title واقع در $place_address شماره رابط $mobile_adminoffice $myGender_adminoffice $myName_adminoffice
+امروز ساعت $_xtime $place_title واقع در $place_address شماره رابط $mobile_rabet $myGender_rabet $myName_rabet
 جسارتا هزینه ایاب و ذهاب واریز گردید.سپاس فراوان";
 		\dash\data::smsText($smsText);
 		return;

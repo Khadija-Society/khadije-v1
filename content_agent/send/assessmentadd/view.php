@@ -110,6 +110,7 @@ class view
 			'khadem2' => 'خادم',
 			'nazer' => 'ناظر',
 			'maddah' => 'مداح',
+			'rabet' => 'رابط',
 
 
 		];

@@ -312,6 +312,8 @@ class TransStatic
 	echo T_("khadem");
 	echo T_("Khadem2");
 	echo T_("khadem2");
+	echo T_("Rabet");
+	echo T_("rabet");
  }
 }
 ?>

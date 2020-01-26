@@ -76,7 +76,7 @@ class assessmentitem
 
 
 		$job = \dash\app::request('job');
-		if($job && !in_array($job, ['clergy', 'admin', 'missionary', 'servant', 'adminoffice','maddah', 'khadem', 'nazer']))
+		if($job && !in_array($job, ['clergy', 'admin', 'missionary', 'servant', 'adminoffice','maddah', 'khadem', 'nazer', 'rabet']))
 		{
 			\dash\notif::error(T_("Invalid job"));
 			return false;

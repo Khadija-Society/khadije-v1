@@ -82,6 +82,12 @@ class send
 			nazer.nationalcode AS `nazer_nationalcode`,
 			nazer.gender AS `nazer_gender`,
 
+			IFNULL(rabet.displayname, CONCAT(rabet.firstname, ' ', rabet.lastname)) AS `rabet_displayname`,
+			rabet.avatar AS `rabet_avatar`,
+			rabet.mobile AS `rabet_mobile`,
+			rabet.nationalcode AS `rabet_nationalcode`,
+			rabet.gender AS `rabet_gender`,
+
 			IFNULL(khadem.displayname, CONCAT(khadem.firstname, ' ', khadem.lastname)) AS `khadem_displayname`,
 			khadem.avatar AS `khadem_avatar`,
 			khadem.mobile AS `khadem_mobile`,
@@ -109,6 +115,7 @@ class send
 
 			LEFT JOIN users AS `maddah` 		ON maddah.id      = agent_send.maddah_id
 			LEFT JOIN users AS `nazer` 			ON nazer.id       = agent_send.nazer_id
+			LEFT JOIN users AS `rabet` 			ON rabet.id       = agent_send.rabet_id
 			LEFT JOIN users AS `khadem` 		ON khadem.id      = agent_send.khadem_id
 			LEFT JOIN users AS `khadem2` 		ON khadem2.id     = agent_send.khadem2_id
 

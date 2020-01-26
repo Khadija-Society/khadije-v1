@@ -26,6 +26,7 @@ class view
 			'servant'     => ['title' => "نگهبان"],
 			'servant2'     => ['title' => "نگهبان ۲"],
 			'maddah'      => ['title' => "مداح"],
+			'rabet'      => ['title' => "رابط"],
 			'nazer'       => ['title' => "ناظر"],
 			'khadem'      => ['title' => "خادم"],
 			'khadem2'     => ['title' => "خادم ۲"],

@@ -51,13 +51,13 @@ class model
 		$job_for = \dash\request::post('job_for');
 
 
-		if($job && !in_array($job, ['clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2']))
+		if($job && !in_array($job, ['clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah','rabet', 'nazer', 'khadem', 'khadem2']))
 		{
 			\dash\notif::error(T_("Invalid data"));
 			return false;
 		}
 
-		if($job_for && !in_array($job_for, ['clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2']))
+		if($job_for && !in_array($job_for, ['clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah','rabet', 'nazer', 'khadem', 'khadem2']))
 		{
 			\dash\notif::error(T_("Invalid data"));
 			return false;

@@ -25,6 +25,7 @@ class model
 
 			'servant'        => \dash\request::post('servant'),
 			'maddah'         => \dash\request::post('maddah_id'),
+			'rabet'         => \dash\request::post('rabet_id'),
 			'nazer'          => \dash\request::post('nazer_id'),
 			'khadem'         => \dash\request::post('khadem_id'),
 			'khadem2'        => \dash\request::post('khadem2_id'),

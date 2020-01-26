@@ -176,6 +176,41 @@ class send
 			$nazer = null;
 		}
 
+		$rabet        = \dash\app::request('rabet');
+		if(\dash\app::isset_request('rabet') && $rabet)
+		{
+			$rabet = \dash\coding::decode($rabet);
+			if(!$rabet)
+			{
+				\dash\notif::error(T_("Invalid rabet"), 'rabet');
+				return false;
+			}
+
+
+			$check_rabet = \dash\db\users::get_by_id($rabet);
+
+			if(!isset($check_rabet['id']))
+			{
+				\dash\notif::error(T_("Clergy not found"), 'rabet');
+				return false;
+			}
+
+			if($city)
+			{
+				$check_access_rabet = \lib\db\servant::get(['agent_servant.user_id' => $rabet, 'agent_servant.city' => $city, 'agent_servant.job' => 'rabet', 'limit' => 1]);
+
+				if(!isset($check_access_rabet['id']))
+				{
+					\dash\notif::error(T_("This user have not access to set rabet of this city"));
+					return false;
+				}
+			}
+		}
+		else
+		{
+			$rabet = null;
+		}
+
 
 		$khadem        = \dash\app::request('khadem');
 		if(\dash\app::isset_request('khadem') && $khadem)
@@ -589,6 +624,7 @@ class send
 
 		$args['maddah_id']     = $maddah;
 		$args['nazer_id']     = $nazer;
+		$args['rabet_id']     = $rabet;
 		$args['khadem_id']     = $khadem;
 		$args['khadem2_id']     = $khadem2;
 
@@ -785,6 +821,11 @@ class send
 				self::make_my_record($new, $value, 'nazer');
 			}
 
+			if(isset($value['rabet_id']) && $value['rabet_id'] === $user_code)
+			{
+				self::make_my_record($new, $value, 'rabet');
+			}
+
 			if(isset($value['khadem_id']) && $value['khadem_id'] === $user_code)
 			{
 				self::make_my_record($new, $value, 'khadem');
@@ -812,6 +853,7 @@ class send
 			'servant2'    => ['title' => "نگهبان ۲"],
 			'maddah'      => ['title' => "مداح"],
 			'nazer'       => ['title' => "ناظر"],
+			'rabet'       => ['title' => "ناظر"],
 			'khadem'      => ['title' => "خادم"],
 			'khadem2'     => ['title' => "خادم ۲"],
 		];
@@ -970,6 +1012,7 @@ class send
 
 		if(!\dash\app::isset_request('maddah')) unset($args['maddah_id']);
 		if(!\dash\app::isset_request('nazer')) unset($args['nazer_id']);
+		if(!\dash\app::isset_request('rabet')) unset($args['rabet_id']);
 		if(!\dash\app::isset_request('khadem')) unset($args['khadem_id']);
 		if(!\dash\app::isset_request('khadem2')) unset($args['khadem2_id']);
 
@@ -1028,6 +1071,7 @@ class send
 				case 'servant2_id':
 				case 'maddah_id':
 				case 'nazer_id':
+				case 'rabet_id':
 				case 'khadem_id':
 				case 'khadem2_id':
 					if($value)
@@ -1046,6 +1090,7 @@ class send
 		   		case 'servant2_displayname':
 		   		case 'maddah_displayname':
 		   		case 'nazer_displayname':
+		   		case 'rabet_displayname':
 		   		case 'khadem_displayname':
 		   		case 'khadem2_displayname':
 					if(!$value && $value != '0')
@@ -1064,6 +1109,7 @@ class send
 		   		case 'servant2_avatar':
 		   		case 'maddah_avatar':
 		   		case 'nazer_avatar':
+		   		case 'rabet_avatar':
 		   		case 'khadem_avatar':
 		   		case 'khadem2_avatar':
 					if($value)
