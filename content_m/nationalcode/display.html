@@ -6,7 +6,7 @@
 
 {%if nationalcodeList%}
 {{block('searchblock')}}
-<div class="cbox fs12">
+<div class="tblBox">
 {{block('datatable')}}
 </div>
 
@@ -41,7 +41,7 @@
 
 {%block datatable%}
 
-  <table class="tbl">
+  <table class="tbl1 v1">
     <thead class="txtC">
       <tr>
         <th data-sort="{{sortLink.nationalcode.order}}" class=""><a href="{{sortLink.nationalcode.link}}">{%trans "Nationalcode"%}</a></th>

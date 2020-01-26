@@ -1,0 +1,226 @@
+{%extends 'content_m/layout.html'%}
+
+
+{%block pageContent%}
+<div class="f justify-center">
+  <div class="c6 m12 s12">
+    <div class="cbox">
+      <form method="get" autocomplete="off" action="{{url.this}}">
+          <label for="q">کد ملی یا شماره تلفن همراه</label>
+        <div class="input">
+            <input type="number" name="q" value="{{requestGET.q}}" min="0" max="9999999999999" autofocus>
+        </div>
+        <div class="txtRa">
+          <button class="btn success">یافتن</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{%if myList%}
+{{block('xmyList')}}
+ {%endif%}
+{%endblock%}
+
+
+
+{%block xmyList%}
+
+
+{%if myList.karevani %}                     <div class="cbox">{{block('xx_karevani')}}</div>                   {%endif%}
+{%if myList.karevani_admin %}               <div class="cbox">{{block('xx_karevani_admin')}}</div>             {%endif%}
+{%if myList.nationalcode %}                 {{block('xx_nationalcode')}}                                       {%endif%}
+{%if myList.mokeb_nationalcode %}           <div class="cbox">{{block('xx_mokeb_nationalcode')}}</div>         {%endif%}
+{%if myList.koyemohabbat_nationalcode %}    <div class="cbox">{{block('xx_koyemohabbat_nationalcode')}}</div>  {%endif%}
+{%if myList.samtekhoda_nationalcode %}      <div class="cbox">{{block('xx_samtekhoda_nationalcode')}}</div>    {%endif%}
+{%if myList.mokeb_mobile %}                 <div class="cbox">{{block('xx_mokeb_mobile')}}</div>               {%endif%}
+{%if myList.koyemohabbat_mobile %}          <div class="cbox">{{block('xx_koyemohabbat_mobile')}}</div>        {%endif%}
+{%if myList.samtekhoda_mobile %}            <div class="cbox">{{block('xx_samtekhoda_mobile')}}</div>          {%endif%}
+{%if myList.agent %}                        <div class="cbox">{{block('xx_agent')}}</div>                      {%endif%}
+
+{%endblock%}
+
+
+
+{%block xx_karevani %}
+<h4>تشرف کاروانی به عنوان مسافر</h4>
+
+{%for key, value in myList.karevani%}
+<div class="f msg">
+  <div class="c">{{value.id | fitNumber}}</div>
+  <div class="c">{%set myplace = value.place | capitalize%}{%trans  myplace%}</div>
+  <div class="c">{%set mytype = value.type | capitalize%}{%trans  mytype%}</div>
+  <div class="c">{%set mystatus = value.status | capitalize%}{%trans mystatus%}</div>
+  <div class="c">{{value.datecreated | dt}}</div>
+</div>
+{%endfor%}
+{%endblock%}
+
+
+{%block xx_karevani_admin %}
+<h4>تشرف کاروانی به عنوان مدیر کاروان</h4>
+{%for key, value in myList.karevani_admin%}
+<div class="f msg">
+  <div class="c">{{value.id | fitNumber}}</div>
+  <div class="c">{%set myplace = value.place | capitalize%}{%trans  myplace%}</div>
+  <div class="c">{%set mytype = value.type | capitalize%}{%trans  mytype%}</div>
+  <div class="c">{%set mystatus = value.status | capitalize%}{%trans mystatus%}</div>
+  <div class="c">{{value.datecreated | dt}}</div>
+</div>
+{%endfor%}
+
+
+{%endblock%}
+
+
+
+
+{%block xx_nationalcode %}
+{%if myList.nationalcode.qom or myList.nationalcode.mashhad or myList.nationalcode.karbala%}
+<div class="cbox">
+  <h4>تعداد سفر های ثبت شده به صورت دستی برای این کد ملی</h4>
+  <div class="f msg">
+    {%if myList.nationalcode.qom%}<div class="c">قم <b>{{myList.nationalcode.qom | fitNumber}}</b> بار</div>{%endif%}
+    {%if myList.nationalcode.mashhad%}<div class="c">مشهد <b>{{myList.nationalcode.mashhad | fitNumber}}</b> بار</div>{%endif%}
+    {%if myList.nationalcode.karbala%}<div class="c">کربلا <b>{{myList.nationalcode.karbala | fitNumber}}</b> بار</div>{%endif%}
+  </div>
+</div>
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block xx_mokeb_nationalcode %}
+<h4>سفر‌های ثبت شده با این کد ملی در موکب</h4>
+{%for key, value in myList.mokeb_nationalcode%}
+<div class="f msg">
+  <div class="c">{{value.id | fitNumber}}</div>
+  <div class="c">{{value.firstname}}</div>
+  <div class="c">{{value.lastname}}</div>
+  <div class="c">{{value.mobile | fitNumber(false)}}</div>
+
+  <div class="c">{{value.datecreated | dt}}</div>
+</div>
+{%endfor%}
+
+
+{%endblock%}
+
+
+
+
+{%block xx_koyemohabbat_nationalcode %}
+<h4>ثبت‌نام ثبت شده در کوی محبت با این کد ملی</h4>
+
+
+<div class="f msg">
+  <div class="c">{{myList.koyemohabbat_nationalcode.id | fitNumber}}</div>
+  <div class="c">{{myList.koyemohabbat_nationalcode.firstname}}</div>
+  <div class="c">{{myList.koyemohabbat_nationalcode.lastname}}</div>
+  <div class="c">{{myList.koyemohabbat_nationalcode.mobile | fitNumber(false)}}</div>
+
+  <div class="c">{{myList.koyemohabbat_nationalcode.datecreated | dt}}</div>
+</div>
+
+
+{%endblock%}
+
+
+
+
+{%block xx_samtekhoda_nationalcode %}
+<h4>ثبت‌نام ثبت شده با این کد ملی در سمت خدا</h4>
+
+
+<div class="f msg">
+  <div class="c">{{myList.samtekhoda_nationalcode.id | fitNumber}}</div>
+  <div class="c">{{myList.samtekhoda_nationalcode.firstname}}</div>
+  <div class="c">{{myList.samtekhoda_nationalcode.lastname}}</div>
+  <div class="c">{{myList.samtekhoda_nationalcode.mobile | fitNumber(false)}}</div>
+
+  <div class="c">{{myList.samtekhoda_nationalcode.datecreated | dt}}</div>
+</div>
+
+
+
+{%endblock%}
+
+
+
+
+{%block xx_mokeb_mobile %}
+<h4>ثبت‌نام ثبت شده با این موبایل در موکب</h4>
+{%for key, value in myList.mokeb_mobile%}
+<div class="f msg">
+  <div class="c">{{value.id | fitNumber}}</div>
+  <div class="c">{{value.firstname}}</div>
+  <div class="c">{{value.lastname}}</div>
+  <div class="c">{{value.mobile | fitNumber(false)}}</div>
+
+  <div class="c">{{value.datecreated | dt}}</div>
+</div>
+{%endfor%}
+
+
+
+{%endblock%}
+
+
+
+
+{%block xx_koyemohabbat_mobile %}
+<h4>ثبت‌نام ثبت شده با این موبایل در کوی محبت</h4>
+
+<div class="f msg">
+  <div class="c">{{myList.koyemohabbat_mobile.id | fitNumber}}</div>
+  <div class="c">{{myList.koyemohabbat_mobile.firstname}}</div>
+  <div class="c">{{myList.koyemohabbat_mobile.lastname}}</div>
+  <div class="c">{{myList.koyemohabbat_mobile.mobile | fitNumber(false)}}</div>
+
+  <div class="c">{{myList.koyemohabbat_mobile.datecreated | dt}}</div>
+</div>
+
+
+{%endblock%}
+
+
+
+
+{%block xx_samtekhoda_mobile %}
+<h4>ثبت‌نام ثبت شده با این موبایل در سمت خدا</h4>
+
+
+<div class="f msg">
+  <div class="c">{{myList.samtekhoda_mobile.id | fitNumber}}</div>
+  <div class="c">{{myList.samtekhoda_mobile.firstname}}</div>
+  <div class="c">{{myList.samtekhoda_mobile.lastname}}</div>
+  <div class="c">{{myList.samtekhoda_mobile.mobile | fitNumber(false)}}</div>
+
+  <div class="c">{{myList.samtekhoda_mobile.datecreated | dt}}</div>
+</div>
+
+
+
+{%endblock%}
+
+
+
+
+{%block xx_agent %}
+<h4>اعزام‌های ثبت شده برای این شهص</h4>
+
+
+{{myList.agent  |dump}}
+
+{%endblock%}
+
+
+
+
+
+
+
