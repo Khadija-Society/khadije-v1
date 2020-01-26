@@ -74,6 +74,7 @@ class karbalasetting
 		$mokeb = \lib\db\karbalasetting::count_signup_mokeb();
 		foreach ($mokeb as $key => $value)
 		{
+			$result['signup']["موکب خدیجه"][$key] = $value;
 			$result['gone']["موکب خدیجه"][$key] = $value;
 		}
 
@@ -104,8 +105,23 @@ class karbalasetting
 
 
 		$result['awaiting']['qom']            = intval($result['signup']['مجموع']['qom']) - intval($result['gone']['مجموع']['qom']);
+		if(intval($result['awaiting']['qom']) < 0)
+		{
+			$result['awaiting']['qom'] = 0;
+		}
+
 		$result['awaiting']['mashhad']        = intval($result['signup']['مجموع']['mashhad']) - intval($result['gone']['مجموع']['mashhad']);
+		if(intval($result['awaiting']['mashhad']) < 0)
+		{
+			$result['awaiting']['mashhad'] = 0;
+		}
+
 		$result['awaiting']['karbala']        = intval($result['signup']['مجموع']['karbala']) - intval($result['gone']['مجموع']['karbala']);
+		if(intval($result['awaiting']['karbala']) < 0)
+		{
+			$result['awaiting']['karbala'] = 0;
+		}
+
 
 
 		return $result;
