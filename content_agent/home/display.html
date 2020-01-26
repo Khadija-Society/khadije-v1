@@ -8,9 +8,10 @@
         <div class="c6 s12">{{block('bServant')}}</div>
         <div class="c6 s12">{{block('bServantSort')}}</div>
         <div class="c12 s12">{{block('bSend')}}</div>
-        <div class="c4 s12">{{block('bPlace')}}</div>
-        <div class="c4 s12">{{block('bSkills')}}</div>
-        <div class="c4 s12">{{block('bAssessmentitem')}}</div>
+        <div class="c3 s12">{{block('bPlace')}}</div>
+        <div class="c3 s12">{{block('bSkills')}}</div>
+        <div class="c3 s12">{{block('bAssessmentitem')}}</div>
+        <div class="c3 s12">{{block('bReport')}}</div>
       </div>
   </div>
   <div class="c4">
@@ -30,6 +31,14 @@
 
 
 
+{%block bReport%}
+<a class="dcard x1" href='{{url.here}}/report{{xCity}}'>
+ <div class="statistic teal">
+  <div class="label"><i class="fs20 mRa5 sf-chart"></i></div>
+  <div class="label mT10">{%trans "Reports"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block bSkills%}
 <a class="dcard x1" href='{{url.here}}/skills{{xCity}}'>

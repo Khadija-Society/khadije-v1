@@ -9,6 +9,8 @@ class view
 		// \dash\data::include_css(true);
 		// \dash\data::include_js(true);
 		\dash\data::include_adminPanel(true);
+		\dash\data::include_highcharts(true);
+
 		\dash\data::display_admin('content_agent/layout.html');
 	}
 }

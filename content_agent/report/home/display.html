@@ -1,0 +1,155 @@
+{%extends 'content_agent/layout.html'%}
+
+{%block pageContent%}
+
+{%if false%}
+<div class="f">
+  <div class="c3 s12">{{block('icountsmsday')}}</div>
+  <div class="c3 s12">{{block('igroupby')}}</div>
+  <div class="c3 s12">{{block('ianswerTime')}}</div>
+  <div class="c3 s12">{{block('ianswerTimeHour')}}</div>
+</div>
+{%endif%}
+
+<div class="f mB10">
+
+  <div class="c6 s12 pRa10">
+    <div id="servantType" class="chart"></div>
+  </div>
+
+  <div class="c6 s12">
+    <div id="placeSend" class="chart"></div>
+  </div>
+
+</div>
+
+
+<div class="f">
+	<div class="c12">
+		<div id="xxx" class="chart"></div>
+	</div>
+
+</div>
+
+
+
+
+{%endblock%}
+
+{%block ianswerTime%}
+
+<a class="dcard x1">
+ <div class="statistic">
+  <div class="label mB10">{%trans "Answer time per min"%}</div>
+  <div class="value">{{answerTime.min | fitNumber}}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block ianswerTimeHour%}
+
+<a class="dcard x1">
+ <div class="statistic">
+  <div class="label mB10">{%trans "Answer time per hour"%}</div>
+  <div class="value">{{answerTime.hour | fitNumber(false)}}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+
+{%block igroupby%}
+<a class="dcard x1" href='{{url.this}}/groupby'>
+ <div class="statistic">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Group by status"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+{%block icountsmsday%}
+<a class="dcard x1" href='{{url.this}}/countsmsday'>
+ <div class="statistic">
+  <div class="value"><i class="sf-cardiac-pulse"></i></div>
+  <div class="label">{%trans "Cont send sms per day"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block foot_js%}
+<script>
+{%include 'content_agent/report/home/chart.js'%}
+</script>
+{%endblock%}
+
+
+{%block iSmsGroupAdd%}
+<a class="dcard x1" href='{{url.here}}/addgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-plus"></i></div>
+  <div class="label">{%trans "Add group"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block l10sms%}
+<div class="cbox fs11 mB10">
+  <h2>{%trans "Last sms"%}</h2>
+  {%for key, value in dashboardDetail.latesHelp%}
+    <a class="msg f">
+      <div>{%if value.title%}{{value.title}}{%else%}{%trans "Without title"%}{%endif%}</div>
+      <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
+    </a>
+  {%endfor%}
+</div>
+{%endblock%}
+
+
+
+{%block iSettings%}
+<a class="dcard x1" href='{{url.here}}/listgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-cogs"></i></div>
+  <div class="label">{%trans "Setting"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block iSmsReport%}
+<a class="dcard x1" href='{{url.here}}/report'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chart"></i></div>
+  <div class="label">{%trans "Reports"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block iSmsGroupList%}
+<a class="dcard x1" href='{{url.here}}/listgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-th-list"></i></div>
+  <div class="label">{%trans "Sms group list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+
+{%block iSmsList%}
+<a class="dcard x1" href='{{url.here}}/listsms'>
+ <div class="statistic">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Sms list"%}</div>
+ </div>
+</a>
+{%endblock%}
