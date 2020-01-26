@@ -29,23 +29,87 @@
 {%block xmyList%}
 
 
-{%if myList.karevani %}                     <div class="cbox">{{block('xx_karevani')}}</div>                   {%endif%}
-{%if myList.karevani_admin %}               <div class="cbox">{{block('xx_karevani_admin')}}</div>             {%endif%}
-{%if myList.nationalcode %}                 {{block('xx_nationalcode')}}                                       {%endif%}
-{%if myList.mokeb_nationalcode %}           <div class="cbox">{{block('xx_mokeb_nationalcode')}}</div>         {%endif%}
-{%if myList.koyemohabbat_nationalcode %}    <div class="cbox">{{block('xx_koyemohabbat_nationalcode')}}</div>  {%endif%}
-{%if myList.samtekhoda_nationalcode %}      <div class="cbox">{{block('xx_samtekhoda_nationalcode')}}</div>    {%endif%}
-{%if myList.mokeb_mobile %}                 <div class="cbox">{{block('xx_mokeb_mobile')}}</div>               {%endif%}
-{%if myList.koyemohabbat_mobile %}          <div class="cbox">{{block('xx_koyemohabbat_mobile')}}</div>        {%endif%}
-{%if myList.samtekhoda_mobile %}            <div class="cbox">{{block('xx_samtekhoda_mobile')}}</div>          {%endif%}
-{%if myList.agent %}                        <div class="cbox">{{block('xx_agent')}}</div>                      {%endif%}
+{%if myList.karevani %}
+  <div class="cbox">
+    <h4 data-kerkere='.xx_karevani_kerkere' data-kerkere-icon>تشرف کاروانی به عنوان مسافر</h4>
+    <div class="xx_karevani_kerkere" data-kerkere-content='hide'>
+      {{block('xx_karevani')}}
+    </div>
+  </div>
+{%endif%}
+
+
+{%if myList.karevani_admin %}
+<div class="cbox">
+  <h4 data-kerkere='.xx_karevani_admin_kerkere' data-kerkere-icon>تشرف کاروانی به عنوان مدیر کاروان <small class="badge primary">{{myList.karevani_admin | length | fitNumber}} مورد</small></h4>
+  <div class="xx_karevani_admin_kerkere" data-kerkere-content='hide'>
+    {{block('xx_karevani_admin')}}
+  </div>
+</div>
+{%endif%}
+
+
+{%if myList.nationalcode %}
+  {{block('xx_nationalcode')}}
+{%endif%}
+
+
+{%if myList.mokeb_nationalcode %}
+  <div class="cbox">
+    {{block('xx_mokeb_nationalcode')}}
+  </div>
+{%endif%}
+
+
+{%if myList.koyemohabbat_nationalcode %}
+  <div class="cbox">
+    {{block('xx_koyemohabbat_nationalcode')}}
+  </div>
+{%endif%}
+
+
+{%if myList.samtekhoda_nationalcode %}
+  <div class="cbox">
+    {{block('xx_samtekhoda_nationalcode')}}
+  </div>
+{%endif%}
+
+
+{%if myList.mokeb_mobile %}
+  <div class="cbox">
+    {{block('xx_mokeb_mobile')}}
+  </div>
+{%endif%}
+
+
+{%if myList.koyemohabbat_mobile %}
+  <div class="cbox">
+    {{block('xx_koyemohabbat_mobile')}}
+  </div>
+{%endif%}
+
+
+{%if myList.samtekhoda_mobile %}
+  <div class="cbox">
+    {{block('xx_samtekhoda_mobile')}}
+  </div>
+{%endif%}
+
+
+{%if myList.agent %}
+  <div class="cbox">
+    {{block('xx_agent')}}
+  </div>
+{%endif%}
+
+
 
 {%endblock%}
 
 
 
 {%block xx_karevani %}
-<h4>تشرف کاروانی به عنوان مسافر</h4>
+
 
 {%for key, value in myList.karevani%}
 <div class="f msg">
@@ -60,7 +124,7 @@
 
 
 {%block xx_karevani_admin %}
-<h4>تشرف کاروانی به عنوان مدیر کاروان</h4>
+
 {%for key, value in myList.karevani_admin%}
 <div class="f msg">
   <div class="c">{{value.id | fitNumber}}</div>

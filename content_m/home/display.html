@@ -58,11 +58,21 @@
   {%if perm('cpNationalCodeView')%}<div class="c2 s6">{{block ("BNcode")}}</div>{%endif%}
   {%if perm('cpSettingThankyouMessage')%}<div class="c2 s6">{{block("BTankyouMessage")}}</div>{%endif%}
   {%if perm('cpKarbalaUserCount')%}<div class="c2 s6">{{block("BnumberKarbalaAll")}}</div>{%endif%}
+  {%if perm('contentCrm')%}<div class="c2 s6">{{block("bFind")}}</div>{%endif%}
 </div>
 {%endif%}
 {%endblock%}
 
 
+
+{%block bFind%}
+<a class="dcard x1" href='{{url.here}}/find'>
+ <div class="statistic">
+  <div class="value"><i class="sf-search"></i></div>
+  <div class="label">جستجو افراد</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block BnumberKarbalaAll%}
 <a class="dcard x1" href='{{url.here}}/karbalauser'>
