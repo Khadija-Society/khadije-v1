@@ -145,7 +145,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative'{%endif%}>
-        {%if perm('mAssessmentitemEdit')%}
+        {%if perm('mAssessmentitemEdit') or 1%}
         <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i> {{value.title}}</a></td>
         {%else%}
         <td>{{value.title}}</td>
