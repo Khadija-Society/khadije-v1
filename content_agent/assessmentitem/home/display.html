@@ -145,11 +145,9 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative'{%endif%}>
-        {%if perm('mAssessmentitemEdit') or 1%}
+
         <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i> {{value.title}}</a></td>
-        {%else%}
-        <td>{{value.title}}</td>
-        {%endif%}
+
 
         <td>{%if value.job%}{%set myGender = value.job%}{%trans myGender%}{%else%}<small class="fc08 fc-mute">{%trans "For all jobs"%}</small>{%endif%}</td>
         <td>{%if value.rate%}{{value.rate | fitNumber}}{%else%}-{%endif%}</td>
