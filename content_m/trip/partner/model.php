@@ -203,13 +203,19 @@ class model
 		$i = 0;
 		foreach ($check as $key => $value)
 		{
-			$i++;
-			$add_new                       = $value;
+			if($value)
+			{
+				$i++;
+				$add_new                       = $value;
 
 
-			$add_new['not_force_birthday'] = true;
-			$add_new['travel_id']          = \dash\request::get('id');
-			\lib\app\myuser::add_child($add_new, ['import_mode' => true]);
+				$add_new['not_force_birthday'] = true;
+				$add_new['travel_id']          = \dash\request::get('id');
+
+				\lib\app\myuser::add_child($add_new, ['import_mode' => true]);
+
+				\dash\engine\process::continue();
+			}
 		}
 
 		\dash\notif::ok(T_("Import successfully"). ', '. T_(":val rows imported", ['val' => \dash\utility\human::fitNumber($i)]));
@@ -223,13 +229,20 @@ class model
 		$new_value = [];
 		foreach ($_array as $key => $value)
 		{
+			\dash\engine\process::continue();
 			\dash\app::variable($value);
+
 			$temp = \lib\app\myuser::check(['import_mode' => true]);
+
 
 			if($temp === false || !\dash\engine\process::status())
 			{
-				\dash\notif::info(T_("Error in line :line", ['line' => $key + 1]));
-				return false;
+				if($is_ok)
+				{
+					$is_ok = false;
+					\dash\notif::info(T_("Error in line :line", ['line' => $key + 1]));
+				}
+				// return false;
 			}
 			$new_value[] = $temp;
 

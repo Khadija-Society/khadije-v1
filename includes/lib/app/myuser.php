@@ -126,7 +126,10 @@ class myuser
 
 			if(($nationalcode && !is_numeric($nationalcode)) || ($nationalcode && mb_strlen($nationalcode) <> 10))
 			{
-				\dash\notif::error(T_("Invalid arguments nationalcode"), 'nationalcode');
+				if(!$import_mode)
+				{
+					\dash\notif::error(T_("Invalid arguments nationalcode"), 'nationalcode');
+				}
 				return false;
 			}
 
