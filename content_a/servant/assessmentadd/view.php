@@ -32,12 +32,14 @@ class view
 			}
 		}
 
-		$assessment_item = \lib\app\assessment::get_item_by_send(\dash\request::get('id'));
-		\dash\data::assessmentIem($assessment_item);
-
-
 		$job = \dash\request::get('job');
 		$job_for = \dash\request::get('forjob');
+
+		$xjob = $job_for;
+
+		$assessment_item = \lib\app\assessment::get_item_by_send(\dash\request::get('id'), $xjob);
+		\dash\data::assessmentIem($assessment_item);
+
 
 		$dataRow = \dash\data::dataRow();
 

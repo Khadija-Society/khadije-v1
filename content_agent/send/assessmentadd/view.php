@@ -15,7 +15,6 @@ class view
 		\dash\data::badge_text(T_('Back'));
 
 
-
 		$assessment_id = \dash\coding::decode(\dash\request::get('assessment_id'));
 
 		if($assessment_id)
@@ -32,12 +31,20 @@ class view
 			}
 		}
 
-		$assessment_item = \lib\app\assessment::get_item_by_send(\dash\request::get('id'));
+		$job = \dash\request::get('job');
+		$job_for = \dash\request::get('forjob');
+
+		$xjob = $job_for;
+		if(isset($assessmenDetail['job_for']))
+		{
+			$xjob = $assessmenDetail['job_for'];
+		}
+
+		$assessment_item = \lib\app\assessment::get_item_by_send(\dash\request::get('id'), $xjob);
+
 		\dash\data::assessmentIem($assessment_item);
 
 
-		$job = \dash\request::get('job');
-		$job_for = \dash\request::get('forjob');
 
 		$dataRow = \dash\data::dataRow();
 
@@ -87,6 +94,7 @@ class view
 
 
 		\dash\data::inputHidden($inputHidden);
+
 
 
 	}
