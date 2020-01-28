@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2020-01-22 13:53+0330\n"
-"PO-Revision-Date: 2020-01-22 13:54+0330\n"
+"POT-Creation-Date: 2020-01-28 08:31+0330\n"
+"PO-Revision-Date: 2020-01-28 08:31+0330\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -160,7 +160,7 @@ msgstr "بازگشت به حساب کاربری"
 #: dash/addons/content_crm/member/main/view.php:25 dash/lib/app/address.php:198
 #: dash/lib/app/user/edit.php:53 dash/lib/app/user_telegram.php:80
 #: dash/lib/app/user_telegram.php:87 khadije/includes/lib/app/place.php:230
-#: khadije/includes/lib/app/resume.php:91 khadije/includes/lib/app/servant.php:202
+#: khadije/includes/lib/app/resume.php:91 khadije/includes/lib/app/servant.php:205
 msgid "Invalid user id"
 msgstr "شناسه کاربر نامعتبر است"
 
@@ -533,7 +533,7 @@ msgstr "موبایل تنظیم نشده است"
 #: khadije/includes/lib/app/karbala2user.php:101
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:101
 #: khadije/includes/lib/app/karbalauser.php:101
-#: khadije/includes/lib/app/myuser.php:49
+#: khadije/includes/lib/app/myuser.php:56
 msgid "Invalid mobile"
 msgstr "شماره‌ی تلفن همراه نامعتبر است"
 
@@ -723,6 +723,7 @@ msgstr "بستن"
 #: khadije/content_agent/send/summary/view.php:15
 #: khadije/content_agent/send/view/view.php:17
 #: khadije/content_agent/servant/sortlist/view.php:16
+#: khadije/content_m/find/view.php:16
 #: khadije/content_m/karbalauser/numbers/view.php:17
 #: khadije/content_m/mokebuser/report/view.php:16
 #: khadije/content_m/product/add/view.php:13
@@ -933,8 +934,8 @@ msgstr "شناسه نشست ارسال نشده است یا نادرست است"
 #: dash/addons/content_api/v6/session/controller.php:138
 #: dash/addons/content_crm/transactions/add/model.php:64
 #: dash/addons/content_crm/transactions/minus/model.php:64
-#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:863
-#: dash/lib/app/posts.php:896 khadije/content_m/festival/detail/view.php:21
+#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:864
+#: dash/lib/app/posts.php:897 khadije/content_m/festival/detail/view.php:21
 #: khadije/includes/lib/app/doyon.php:231 khadije/includes/lib/app/doyon.php:570
 #: khadije/includes/lib/app/doyon.php:650 khadije/includes/lib/app/service.php:130
 #: khadije/includes/lib/app/smsgroupfilter.php:288
@@ -987,8 +988,8 @@ msgstr "افزودن فایل ضمیمه جدید"
 #: dash/addons/content_su/tg/system/view.php:22
 #: dash/addons/content_su/tg/users/view.php:22
 #: dash/addons/content_su/transactions/view.php:22
-#: khadije/content_agent/assessmentitem/home/view.php:25
-#: khadije/content_agent/place/home/view.php:25
+#: khadije/content_agent/assessmentitem/home/view.php:23
+#: khadije/content_agent/place/home/view.php:24
 #: khadije/content_agent/send/home/view.php:21
 #: khadije/content_agent/servant/home/view.php:21
 #: khadije/content_agent/servant/sortlist/view.php:21
@@ -1076,7 +1077,7 @@ msgstr "شناسه نامعتبر"
 #: khadije/content_m/admincontact/edit/model.php:12
 #: khadije/content_m/delneveshte/edit/model.php:12
 #: khadije/content_m/doyon/view/model.php:16 khadije/includes/lib/app/send.php:67
-#: khadije/includes/lib/app/servant.php:253 khadije/includes/lib/app/skills.php:297
+#: khadije/includes/lib/app/servant.php:256 khadije/includes/lib/app/skills.php:297
 #: khadije/includes/lib/app/sms.php:959 khadije/includes/lib/app/sms.php:966
 #: khadije/includes/lib/app/travel.php:651
 msgid "Invalid status"
@@ -1153,6 +1154,7 @@ msgstr "همچنین نظر خاص را اضافه یا ویرایش کنید."
 #: khadije/content_a/festival/allcourse/view.php:13
 #: khadije/content_a/festival/course/view.php:14
 #: khadije/content_a/festival/home/view.php:13
+#: khadije/content_agent/report/home/view.php:11
 #: khadije/content_m/delneveshte/home/view.php:16
 #: khadije/content_m/festival/course/view.php:45
 #: khadije/content_m/festival/mediasupporter/view.php:44
@@ -2349,10 +2351,11 @@ msgstr "موبایل یافت نشد"
 #: khadije/includes/lib/app/festival/add.php:46
 #: khadije/includes/lib/app/festivalcourse/add.php:33
 #: khadije/includes/lib/app/festivaldetail/add.php:29
-#: khadije/includes/lib/app/myuser.php:492 khadije/includes/lib/app/myuser.php:597
-#: khadije/includes/lib/app/myuser.php:713 khadije/includes/lib/app/myuser.php:757
+#: khadije/includes/lib/app/find.php:51 khadije/includes/lib/app/find.php:72
+#: khadije/includes/lib/app/myuser.php:511 khadije/includes/lib/app/myuser.php:631
+#: khadije/includes/lib/app/myuser.php:747 khadije/includes/lib/app/myuser.php:791
 #: khadije/includes/lib/app/need.php:334 khadije/includes/lib/app/need.php:390
-#: khadije/includes/lib/app/resume.php:171 khadije/includes/lib/app/servant.php:21
+#: khadije/includes/lib/app/resume.php:171 khadije/includes/lib/app/servant.php:24
 #: khadije/includes/lib/app/service.php:274 khadije/includes/lib/app/service.php:393
 #: khadije/includes/lib/app/skills.php:41 khadije/includes/lib/app/skills.php:75
 #: khadije/includes/lib/app/skills.php:114 khadije/includes/lib/app/sms.php:741
@@ -13587,8 +13590,8 @@ msgstr "تغییر نویسنده مطالب"
 msgid "Contributor"
 msgstr "مشارکت کننده"
 
-#: dash/lib/app.php:250 khadije/includes/lib/app/send.php:1053
-#: khadije/includes/lib/app/servant.php:317
+#: dash/lib/app.php:250 khadije/includes/lib/app/send.php:1098
+#: khadije/includes/lib/app/servant.php:320
 msgid "Whitout name"
 msgstr "بدون نام"
 
@@ -14121,111 +14124,111 @@ msgstr "لطفا زیر عنوان را کمتر از ۳۰۰ حرف وارد ک�
 msgid "Please set the slug less than 100 character"
 msgstr "لطفا نامک را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:512
+#: dash/lib/app/posts.php:513
 msgid "Duplicate slug"
 msgstr "نامک تکراری است"
 
-#: dash/lib/app/posts.php:520
+#: dash/lib/app/posts.php:521
 msgid "Please set the url less than 100 character"
 msgstr "لطفا آدرس را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:532
+#: dash/lib/app/posts.php:533
 msgid "This text is too large!"
 msgstr "متن خیلی طولانی است!"
 
-#: dash/lib/app/posts.php:538
+#: dash/lib/app/posts.php:539
 msgid "Please set the type less than 100 character"
 msgstr "لطفا نوع را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:559
+#: dash/lib/app/posts.php:560
 msgid "Invalid parameter special"
 msgstr "پارامتر کاربردخاص اشتباه است"
 
-#: dash/lib/app/posts.php:568
+#: dash/lib/app/posts.php:569
 msgid "Invalid parameter status"
 msgstr "پارامتر وضعیت نامعتبر است"
 
-#: dash/lib/app/posts.php:579
+#: dash/lib/app/posts.php:580
 msgid "You can not delete help center"
 msgstr "شما نمی‌توانید این مقاله مرکز راهنمایی را حذف کنید"
 
-#: dash/lib/app/posts.php:587
+#: dash/lib/app/posts.php:588
 msgid "You can not delete page"
 msgstr "شما نمی‌توانید این صفحه را حذف کنید"
 
-#: dash/lib/app/posts.php:596
+#: dash/lib/app/posts.php:597
 msgid "You can not delete post"
 msgstr "شما نمی توانید خبر را حذف کنید"
 
-#: dash/lib/app/posts.php:609
+#: dash/lib/app/posts.php:610
 msgid "This is not your help center. And you can not delete it!"
 msgstr "این مقاله شما نیست و شما نمی‌توانید آن را ویرایش کنید!"
 
-#: dash/lib/app/posts.php:619
+#: dash/lib/app/posts.php:620
 msgid "This is not your post. And you can not delete it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:637
+#: dash/lib/app/posts.php:638
 msgid "Invalid parameter parent"
 msgstr "پارامتر والد نامعتبر است"
 
-#: dash/lib/app/posts.php:644
+#: dash/lib/app/posts.php:645
 msgid "Parent post not found"
 msgstr "پست والد یافت نشد"
 
-#: dash/lib/app/posts.php:652
+#: dash/lib/app/posts.php:653
 msgid "Can not set page as parent of self!"
 msgstr "نمی‌توانید صفحه‌ای را به‌عنوان والد خودش ثبت کنید!"
 
-#: dash/lib/app/posts.php:700 khadije/content_m/meeting/add/model.php:176
+#: dash/lib/app/posts.php:701 khadije/content_m/meeting/add/model.php:176
 msgid "Invalid parameter publishdate"
 msgstr "تاریخ انتشار پست اشتباه است"
 
-#: dash/lib/app/posts.php:721
+#: dash/lib/app/posts.php:722
 msgid "Invalid publish time"
 msgstr "تاریخ انتشار نادرست"
 
-#: dash/lib/app/posts.php:751
+#: dash/lib/app/posts.php:752
 msgid "Category setting for better access is suggested"
 msgstr "تنظیم دسته‌بندی برای دسترسی مناسب‌تر توصیه می‌شود"
 
-#: dash/lib/app/posts.php:765
+#: dash/lib/app/posts.php:766
 msgid "Button title is out of range"
 msgstr "عنوان دکمه دانلود خارج از محدوده تعداد کاراکتر مجاز است"
 
-#: dash/lib/app/posts.php:773
+#: dash/lib/app/posts.php:774
 msgid "Button url is out of range"
 msgstr "آدرس دانلود خارج از محدوده تعداد کاراکتر مجاز است"
 
-#: dash/lib/app/posts.php:787
+#: dash/lib/app/posts.php:788
 msgid "Invalid button color"
 msgstr "رنگ دکمه دانلود نامعتبر است"
 
-#: dash/lib/app/posts.php:795
+#: dash/lib/app/posts.php:796
 msgid "Sourse title is out of range"
 msgstr "عنوان منبع خارج از محدوده تعداد کاراکتر مجاز است"
 
-#: dash/lib/app/posts.php:803 dash/lib/app/posts.php:817
+#: dash/lib/app/posts.php:804 dash/lib/app/posts.php:818
 msgid "Sourse url is out of range"
 msgstr "آدرس منبع خارج از محدوده تعداد کاراکتر مجاز است"
 
-#: dash/lib/app/posts.php:849
+#: dash/lib/app/posts.php:850
 msgid "Invalid slug"
 msgstr "نامک اشتباه است"
 
-#: dash/lib/app/posts.php:883 dash/lib/utility/pay/start.php:158
+#: dash/lib/app/posts.php:884 dash/lib/utility/pay/start.php:158
 msgid "Invalid user"
 msgstr "کاربر نامعتبر"
 
-#: dash/lib/app/posts.php:1058
+#: dash/lib/app/posts.php:1059
 msgid "Some :type is wrong"
 msgstr "برخی از :type اشتباه هستند"
 
-#: dash/lib/app/posts.php:1357
+#: dash/lib/app/posts.php:1358
 msgid "Post not found"
 msgstr "پست یافت نشد"
 
-#: dash/lib/app/posts.php:1382
+#: dash/lib/app/posts.php:1383
 msgid "The Featured Image removed"
 msgstr "تصویر شاخص حذف شد"
 
@@ -14685,7 +14688,7 @@ msgid "Amount must be a number"
 msgstr "مبلغ باید به صورت عددی وارد شود"
 
 #: dash/lib/db/transactions/set.php:188 dash/lib/db/transactions/set.php:205
-#: dash/lib/utility/pay/start.php:212 khadije/includes/lib/app/send.php:544
+#: dash/lib/utility/pay/start.php:212 khadije/includes/lib/app/send.php:579
 #: khadije/includes/lib/app/sms.php:981
 msgid "Amount is out of range"
 msgstr "مبلغ خارج از محدوده مجاز است"
@@ -16788,14 +16791,15 @@ msgstr "توانایی افزودن ارزیابی وجود ندارد"
 #: khadije/content_agent/servant/sortlist/model.php:36
 #: khadije/content_m/homepage/model.php:81
 #: khadije/content_m/karbalauser/numbers/model.php:78
-#: khadije/includes/lib/app/myuser.php:718 khadije/includes/lib/app/skills.php:102
+#: khadije/includes/lib/app/myuser.php:752 khadije/includes/lib/app/skills.php:102
 msgid "Data saved"
 msgstr "ذخیره شد"
 
 #: khadije/content_a/servant/home/view.php:11
 #: khadije/includes/languages/trans_project.php:219
 #: khadije/includes/languages/trans_static.php:299
-#: khadije/includes/lib/app/servant.php:95
+#: khadije/includes/lib/app/log/caller/servantAssessment.php:13
+#: khadije/includes/lib/app/servant.php:98
 msgid "Servant"
 msgstr "خادم"
 
@@ -16867,7 +16871,7 @@ msgstr ""
 "در سه مرحله ساده، درخواست خود را برای تشرف به عتبات عالیات و اماکن مقدس ثبت کنید"
 
 #: khadije/content_agent/assessmentitem/add/view.php:10
-#: khadije/content_agent/assessmentitem/home/view.php:18
+#: khadije/content_agent/assessmentitem/home/view.php:16
 msgid "Add new assessmentitem"
 msgstr "افزودن آیتم ارزیابی جدید"
 
@@ -16893,7 +16897,7 @@ msgid "assessmentitems list"
 msgstr "لیست آیتم‌های ارزیابی"
 
 #: khadije/content_agent/place/add/view.php:10
-#: khadije/content_agent/place/home/view.php:18
+#: khadije/content_agent/place/home/view.php:17
 #: khadije/content_mokeb/place/add/view.php:10
 #: khadije/content_mokeb/place/home/view.php:18
 msgid "Add new place"
@@ -16920,6 +16924,25 @@ msgstr "شناسه شهر نامعتبر است"
 #: khadije/content_mokeb/place/home/view.php:11
 msgid "places list"
 msgstr "لیست مکان‌ها"
+
+#: khadije/content_agent/report/home/view.php:8 khadije/content_m/doyon/view.php:16
+#: khadije/content_m/mokebuser/home/view.php:16
+#: khadije/content_m/mokebuser/report/view.php:13
+#: khadije/content_m/userkarbala/home/view.php:16
+#: khadije/content_m/userkarbala/report/view.php:13
+#: khadije/content_m/userkarbala2/home/view.php:16
+#: khadije/content_m/userkarbalaarbaeen/home/view.php:16
+#: khadije/content_smsapp/report/home/view.php:8
+#: khadije/includes/languages/trans_project.php:986
+#: khadije/includes/languages/trans_static.php:138
+msgid "Report"
+msgstr "گزارش"
+
+#: khadije/content_agent/report/home/view.php:9
+#: khadije/content_smsapp/home/view.php:9
+#: khadije/content_smsapp/report/home/view.php:9
+msgid "System for check and management sms"
+msgstr "سیستمی جهت مدیریت پیامک‌ها"
 
 #: khadije/content_agent/send/add/model.php:14
 #: khadije/content_agent/servant/sortlist/model.php:14
@@ -16959,7 +16982,7 @@ msgid "Edit servant"
 msgstr "ویرایش خادم"
 
 #: khadije/content_agent/servant/edit/view.php:20
-#: khadije/includes/lib/app/servant.php:137
+#: khadije/includes/lib/app/servant.php:140
 msgid "Invalid servant id"
 msgstr "شناسه خادم نامعتبر است"
 
@@ -17317,18 +17340,6 @@ msgstr "بازگشت به لیست دیون شرعی"
 #: khadije/content_m/doyon/view.php:13
 msgid "Doyon list"
 msgstr "لیست دیون شرعی"
-
-#: khadije/content_m/doyon/view.php:16 khadije/content_m/mokebuser/home/view.php:16
-#: khadije/content_m/mokebuser/report/view.php:13
-#: khadije/content_m/userkarbala/home/view.php:16
-#: khadije/content_m/userkarbala/report/view.php:13
-#: khadije/content_m/userkarbala2/home/view.php:16
-#: khadije/content_m/userkarbalaarbaeen/home/view.php:16
-#: khadije/content_smsapp/report/home/view.php:8
-#: khadije/includes/languages/trans_project.php:986
-#: khadije/includes/languages/trans_static.php:138
-msgid "Report"
-msgstr "گزارش"
 
 #: khadije/content_m/doyon/view/model.php:29
 msgid "Doyon updated"
@@ -17734,6 +17745,10 @@ msgstr "اطلاعات پروفایل به‌روزرسانی شد"
 #: khadije/content_m/festival/usercourse/view.php:26
 msgid "Festival user detail not found"
 msgstr "جزئیات کاربر جشنواره یافت نشد"
+
+#: khadije/content_m/find/view.php:13
+msgid "Find"
+msgstr "یافتن"
 
 #: khadije/content_m/hadith/model.php:47
 msgid "Please fill hadith text"
@@ -18255,15 +18270,15 @@ msgstr "همراه با موفقیت حذف شد"
 msgid "File is not valid"
 msgstr "فایل معتبر نیست"
 
-#: khadije/content_m/trip/partner/model.php:213
+#: khadije/content_m/trip/partner/model.php:221
 msgid "Import successfully"
 msgstr "عملیات واردسازی با موفقیت انجام شد"
 
-#: khadije/content_m/trip/partner/model.php:213
+#: khadije/content_m/trip/partner/model.php:221
 msgid ":val rows imported"
 msgstr ":val رکورد اضافه شد"
 
-#: khadije/content_m/trip/partner/model.php:229
+#: khadije/content_m/trip/partner/model.php:243
 msgid "Error in line :line"
 msgstr "خطا در ردیف :line"
 
@@ -18361,15 +18376,15 @@ msgstr "انتخاب درگاه ورودی پیامک‌ها"
 msgid "Edit sms group"
 msgstr "ویرایش گروه پیامکی"
 
-#: khadije/content_smsapp/export/view.php:30 khadije/includes/lib/app/send.php:474
+#: khadije/content_smsapp/export/view.php:30 khadije/includes/lib/app/send.php:509
 msgid "Start date is required"
 msgstr "تاریخ شروع الزامی است"
 
-#: khadije/content_smsapp/export/view.php:50 khadije/includes/lib/app/send.php:494
+#: khadije/content_smsapp/export/view.php:50 khadije/includes/lib/app/send.php:529
 msgid "End date is required"
 msgstr "تاریخ پایان الزامی است"
 
-#: khadije/content_smsapp/export/view.php:60 khadije/includes/lib/app/send.php:504
+#: khadije/content_smsapp/export/view.php:60 khadije/includes/lib/app/send.php:539
 msgid "Start date must before end date"
 msgstr "تاریخ شروع باید کوچک‌تر از تاریخ پایان باشد"
 
@@ -18385,11 +18400,6 @@ msgstr "شما می‌توانید تعدادی فیلتر به این گروه 
 #: khadije/content_smsapp/home/view.php:8
 msgid "Sms Analyzer"
 msgstr "تحلیل پیامک"
-
-#: khadije/content_smsapp/home/view.php:9
-#: khadije/content_smsapp/report/home/view.php:9
-msgid "System for check and management sms"
-msgstr "سیستمی جهت مدیریت پیامک‌ها"
 
 #: khadije/content_smsapp/listsms/model.php:18
 msgid "Please choose one answer"
@@ -18820,7 +18830,7 @@ msgid "Please choose user"
 msgstr "لطفا کاربر را انتخاب کنید"
 
 #: khadije/includes/languages/trans_project.php:214
-#: khadije/includes/lib/app/send.php:48 khadije/includes/lib/app/servant.php:222
+#: khadije/includes/lib/app/send.php:48 khadije/includes/lib/app/servant.php:225
 msgid "Please choose city"
 msgstr "لطفا شهر را انتخاب کنید"
 
@@ -22326,6 +22336,14 @@ msgstr "خادم"
 msgid "khadem2"
 msgstr "خادم"
 
+#: khadije/includes/languages/trans_static.php:315
+msgid "Rabet"
+msgstr "رابط"
+
+#: khadije/includes/languages/trans_static.php:316
+msgid "rabet"
+msgstr "رابط"
+
 #: khadije/includes/lib/app/agentplace.php:15 khadije/includes/lib/app/place.php:15
 msgid "place id not set"
 msgstr "شناسه مکان ثبت نشده است"
@@ -22352,7 +22370,7 @@ msgstr "ظرفیت نامعتبر است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:369
 #: khadije/includes/lib/app/karbalauser.php:369
 #: khadije/includes/lib/app/mokebuser.php:718 khadije/includes/lib/app/place.php:97
-#: khadije/includes/lib/app/send.php:54 khadije/includes/lib/app/servant.php:228
+#: khadije/includes/lib/app/send.php:54 khadije/includes/lib/app/servant.php:231
 #: khadije/includes/lib/app/travel.php:219 khadije/includes/lib/app/travel.php:287
 #: khadije/includes/lib/app/travel.php:605 khadije/includes/lib/app/travel.php:614
 msgid "Invalid city"
@@ -22393,7 +22411,7 @@ msgstr "لطفا مبلغ را به صورت عددی وارد کنید"
 #: khadije/includes/lib/app/agentplace.php:207
 #: khadije/includes/lib/app/assessmentitem.php:165
 #: khadije/includes/lib/app/place.php:273
-#: khadije/includes/lib/app/product/add.php:20 khadije/includes/lib/app/send.php:629
+#: khadije/includes/lib/app/product/add.php:20 khadije/includes/lib/app/send.php:665
 msgid "user not found"
 msgstr "کاربر یافت نشد"
 
@@ -22411,7 +22429,7 @@ msgstr "مکان با موفقیت اضافه شد"
 #: khadije/includes/lib/app/assessmentitem.php:308
 #: khadije/includes/lib/app/place.php:452
 #: khadije/includes/lib/app/product/edit.php:47
-#: khadije/includes/lib/app/send.php:999
+#: khadije/includes/lib/app/send.php:1042
 msgid "Data"
 msgstr "داده"
 
@@ -22419,7 +22437,7 @@ msgstr "داده"
 #: khadije/includes/lib/app/assessmentitem.php:311
 #: khadije/includes/lib/app/place.php:455
 #: khadije/includes/lib/app/product/edit.php:50
-#: khadije/includes/lib/app/send.php:1002
+#: khadije/includes/lib/app/send.php:1045
 msgid ":title successfully updated"
 msgstr ":title با موفقیت بروز شد"
 
@@ -22507,7 +22525,7 @@ msgid "Duplicate assessmentitem title"
 msgstr "عنوان آیتم ارزیابی تکراری است"
 
 #: khadije/includes/lib/app/assessmentitem.php:81
-#: khadije/includes/lib/app/servant.php:242
+#: khadije/includes/lib/app/servant.php:245
 msgid "Invalid job"
 msgstr "سمت نامعتبر است"
 
@@ -22894,7 +22912,7 @@ msgstr "اطلاعات تغییر یافت"
 #: khadije/includes/lib/app/karbala2user.php:86
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:86
 #: khadije/includes/lib/app/karbalauser.php:86
-#: khadije/includes/lib/app/mokebuser.php:435 khadije/includes/lib/app/myuser.php:29
+#: khadije/includes/lib/app/mokebuser.php:435 khadije/includes/lib/app/myuser.php:33
 msgid "Invalid arguments gender"
 msgstr "اطلاعات مربوط به جنسیت اشتباه است"
 
@@ -22907,42 +22925,43 @@ msgstr "لطفا جنسیت خود را انتخاب کنید"
 #: khadije/includes/lib/app/karbala2user.php:109
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:109
 #: khadije/includes/lib/app/karbalauser.php:109
-#: khadije/includes/lib/app/mokebuser.php:458 khadije/includes/lib/app/myuser.php:42
+#: khadije/includes/lib/app/mokebuser.php:458 khadije/includes/lib/app/myuser.php:49
 msgid "Invalid arguments email"
 msgstr "اطلاعات مربوط به ایمیل اشتباه است"
 
 #: khadije/includes/lib/app/karbala2user.php:116
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:116
 #: khadije/includes/lib/app/karbalauser.php:116
-#: khadije/includes/lib/app/myuser.php:61
+#: khadije/includes/lib/app/myuser.php:68
 msgid "Birthday is required"
 msgstr "تاریخ تولد الزامی است"
 
 #: khadije/includes/lib/app/karbala2user.php:136
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:136
 #: khadije/includes/lib/app/karbalauser.php:136
-#: khadije/includes/lib/app/myuser.php:78
+#: khadije/includes/lib/app/myuser.php:87
 msgid "First name is required"
 msgstr "ورود نام الزامی است"
 
 #: khadije/includes/lib/app/karbala2user.php:142
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:142
 #: khadije/includes/lib/app/karbalauser.php:142
-#: khadije/includes/lib/app/mokebuser.php:491 khadije/includes/lib/app/myuser.php:84
+#: khadije/includes/lib/app/mokebuser.php:491 khadije/includes/lib/app/myuser.php:94
 msgid "Invalid arguments firstname"
 msgstr "اطلاعات مربوط به نام اشتباه است"
 
 #: khadije/includes/lib/app/karbala2user.php:149
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:149
 #: khadije/includes/lib/app/karbalauser.php:149
-#: khadije/includes/lib/app/mokebuser.php:498 khadije/includes/lib/app/myuser.php:91
+#: khadije/includes/lib/app/mokebuser.php:498
+#: khadije/includes/lib/app/myuser.php:101
 msgid "Invalid arguments lastname"
 msgstr "اطلاعات مربوط به نام خانوادگی اشتباه است"
 
 #: khadije/includes/lib/app/karbala2user.php:155
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:155
 #: khadije/includes/lib/app/karbalauser.php:155
-#: khadije/includes/lib/app/myuser.php:97
+#: khadije/includes/lib/app/myuser.php:109
 msgid "Last name is required"
 msgstr "ورود نام‌خانوادگی الزامی است"
 
@@ -22957,7 +22976,7 @@ msgstr "کدملی الزامی است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:174
 #: khadije/includes/lib/app/karbalauser.php:174
 #: khadije/includes/lib/app/mokebuser.php:523
-#: khadije/includes/lib/app/myuser.php:116
+#: khadije/includes/lib/app/myuser.php:131
 msgid "Invalid arguments nationalcode"
 msgstr "کد ملی وارد شده صحیح نیست"
 
@@ -22965,7 +22984,7 @@ msgstr "کد ملی وارد شده صحیح نیست"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:180
 #: khadije/includes/lib/app/karbalauser.php:180
 #: khadije/includes/lib/app/mokebuser.php:529
-#: khadije/includes/lib/app/myuser.php:128
+#: khadije/includes/lib/app/myuser.php:144
 msgid "Invalid nationalcode"
 msgstr "کدملی نامعتبر"
 
@@ -22973,7 +22992,7 @@ msgstr "کدملی نامعتبر"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:195
 #: khadije/includes/lib/app/karbalauser.php:195
 #: khadije/includes/lib/app/mokebuser.php:544
-#: khadije/includes/lib/app/myuser.php:138
+#: khadije/includes/lib/app/myuser.php:154
 msgid "Invalid arguments father"
 msgstr "اطلاعات مربوط به نام پدر اشتباه است"
 
@@ -22981,7 +23000,7 @@ msgstr "اطلاعات مربوط به نام پدر اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:201
 #: khadije/includes/lib/app/karbalauser.php:201
 #: khadije/includes/lib/app/mokebuser.php:550
-#: khadije/includes/lib/app/myuser.php:144
+#: khadije/includes/lib/app/myuser.php:160
 msgid "Invalid arguments pasportcode"
 msgstr "اطلاعات مربوط به شماره گذرنامه اشتباه است"
 
@@ -22989,7 +23008,7 @@ msgstr "اطلاعات مربوط به شماره گذرنامه اشتباه ا
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:209
 #: khadije/includes/lib/app/karbalauser.php:209
 #: khadije/includes/lib/app/mokebuser.php:558
-#: khadije/includes/lib/app/myuser.php:152
+#: khadije/includes/lib/app/myuser.php:168
 msgid "Invalid arguments pasportdate"
 msgstr "اطلاعات مربوط به تاریخ اتمام اعتبار گذر نامه اشتباه است"
 
@@ -22997,7 +23016,7 @@ msgstr "اطلاعات مربوط به تاریخ اتمام اعتبار گذر
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:222
 #: khadije/includes/lib/app/karbalauser.php:222
 #: khadije/includes/lib/app/mokebuser.php:571
-#: khadije/includes/lib/app/myuser.php:165
+#: khadije/includes/lib/app/myuser.php:181
 msgid "Invalid arguments education"
 msgstr "اطلاعات مربوط به تحصیلات اشتباه است"
 
@@ -23005,7 +23024,7 @@ msgstr "اطلاعات مربوط به تحصیلات اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:229
 #: khadije/includes/lib/app/karbalauser.php:229
 #: khadije/includes/lib/app/mokebuser.php:578
-#: khadije/includes/lib/app/myuser.php:172
+#: khadije/includes/lib/app/myuser.php:188
 msgid "Invalid arguments educationcourse"
 msgstr "اطلاعات مربوط به رشته تحصیلی اشتباه است"
 
@@ -23013,7 +23032,7 @@ msgstr "اطلاعات مربوط به رشته تحصیلی اشتباه است
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:236
 #: khadije/includes/lib/app/karbalauser.php:236
 #: khadije/includes/lib/app/mokebuser.php:585
-#: khadije/includes/lib/app/myuser.php:179
+#: khadije/includes/lib/app/myuser.php:195
 msgid "Invalid arguments country"
 msgstr "اطلاعات مربوط به رشته تحصیلی اشتباه است"
 
@@ -23021,7 +23040,7 @@ msgstr "اطلاعات مربوط به رشته تحصیلی اشتباه است
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:243
 #: khadije/includes/lib/app/karbalauser.php:243
 #: khadije/includes/lib/app/mokebuser.php:592
-#: khadije/includes/lib/app/myuser.php:186
+#: khadije/includes/lib/app/myuser.php:202
 msgid "Invalid arguments province"
 msgstr "اطلاعات مربوط به استان اشتباه است"
 
@@ -23029,7 +23048,7 @@ msgstr "اطلاعات مربوط به استان اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:250
 #: khadije/includes/lib/app/karbalauser.php:250
 #: khadije/includes/lib/app/mokebuser.php:599
-#: khadije/includes/lib/app/myuser.php:193
+#: khadije/includes/lib/app/myuser.php:209
 msgid "Invalid arguments city"
 msgstr "اطلاعات مربوط به شهر اشتباه است"
 
@@ -23037,7 +23056,7 @@ msgstr "اطلاعات مربوط به شهر اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:257
 #: khadije/includes/lib/app/karbalauser.php:257
 #: khadije/includes/lib/app/mokebuser.php:606
-#: khadije/includes/lib/app/myuser.php:200
+#: khadije/includes/lib/app/myuser.php:216
 msgid "Invalid arguments homeaddress"
 msgstr "اطلاعات مربوط به آدرس محل سکونت اشتباه است"
 
@@ -23045,7 +23064,7 @@ msgstr "اطلاعات مربوط به آدرس محل سکونت اشتباه �
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:270
 #: khadije/includes/lib/app/karbalauser.php:270
 #: khadije/includes/lib/app/mokebuser.php:619
-#: khadije/includes/lib/app/myuser.php:207
+#: khadije/includes/lib/app/myuser.php:223
 msgid "Invalid arguments workaddress"
 msgstr "اطلاعات مربوط به آدرس محل کار اشتباه است"
 
@@ -23053,7 +23072,7 @@ msgstr "اطلاعات مربوط به آدرس محل کار اشتباه اس�
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:277
 #: khadije/includes/lib/app/karbalauser.php:277
 #: khadije/includes/lib/app/mokebuser.php:626
-#: khadije/includes/lib/app/myuser.php:214
+#: khadije/includes/lib/app/myuser.php:230
 msgid "Invalid arguments arabiclang"
 msgstr "اطلاعات مربوط به آشنایی با زبان عربی اشتباه است"
 
@@ -23061,7 +23080,7 @@ msgstr "اطلاعات مربوط به آشنایی با زبان عربی اش�
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:284
 #: khadije/includes/lib/app/karbalauser.php:284
 #: khadije/includes/lib/app/mokebuser.php:633
-#: khadije/includes/lib/app/myuser.php:221
+#: khadije/includes/lib/app/myuser.php:237
 msgid "Invalid arguments phone"
 msgstr "اطلاعات مربوط به تلفن ثابت اشتباه است"
 
@@ -23069,7 +23088,7 @@ msgstr "اطلاعات مربوط به تلفن ثابت اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:297
 #: khadije/includes/lib/app/karbalauser.php:297
 #: khadije/includes/lib/app/mokebuser.php:646
-#: khadije/includes/lib/app/myuser.php:228
+#: khadije/includes/lib/app/myuser.php:244
 msgid "Invalid arguments displayname"
 msgstr "اطلاعات مربوط به نام کامل شما اشتباه است"
 
@@ -23077,14 +23096,14 @@ msgstr "اطلاعات مربوط به نام کامل شما اشتباه اس�
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:304
 #: khadije/includes/lib/app/karbalauser.php:304
 #: khadije/includes/lib/app/mokebuser.php:653
-#: khadije/includes/lib/app/myuser.php:235
+#: khadije/includes/lib/app/myuser.php:251
 msgid "Invalid arguments married"
 msgstr "اطلاعات مربوط به وضعیت تاهل اشتباه است"
 
 #: khadije/includes/lib/app/karbala2user.php:312
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:312
 #: khadije/includes/lib/app/karbalauser.php:312
-#: khadije/includes/lib/app/myuser.php:253
+#: khadije/includes/lib/app/myuser.php:271
 msgid "Plese set your married"
 msgstr "لطفا وضعیت تاهل خود را انتخاب کنید"
 
@@ -23092,7 +23111,7 @@ msgstr "لطفا وضعیت تاهل خود را انتخاب کنید"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:321
 #: khadije/includes/lib/app/karbalauser.php:321
 #: khadije/includes/lib/app/mokebuser.php:670
-#: khadije/includes/lib/app/myuser.php:263
+#: khadije/includes/lib/app/myuser.php:282
 msgid "Invalid arguments zipcode"
 msgstr "اطلاعات مربوط به کد پستی اشتباه است"
 
@@ -23100,7 +23119,7 @@ msgstr "اطلاعات مربوط به کد پستی اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:328
 #: khadije/includes/lib/app/karbalauser.php:328
 #: khadije/includes/lib/app/mokebuser.php:677
-#: khadije/includes/lib/app/myuser.php:270
+#: khadije/includes/lib/app/myuser.php:289
 msgid "Invalid arguments desc"
 msgstr "اطلاعات مربوط به توضیحات اشتباه است"
 
@@ -23108,7 +23127,7 @@ msgstr "اطلاعات مربوط به توضیحات اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:335
 #: khadije/includes/lib/app/karbalauser.php:335
 #: khadije/includes/lib/app/mokebuser.php:684
-#: khadije/includes/lib/app/myuser.php:277
+#: khadije/includes/lib/app/myuser.php:296
 msgid "Invalid arguments job"
 msgstr "اطلاعات مربوط به شغل اشتباه است"
 
@@ -23116,7 +23135,7 @@ msgstr "اطلاعات مربوط به شغل اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:342
 #: khadije/includes/lib/app/karbalauser.php:342
 #: khadije/includes/lib/app/mokebuser.php:691
-#: khadije/includes/lib/app/myuser.php:284
+#: khadije/includes/lib/app/myuser.php:303
 msgid "Invalid arguments avatar"
 msgstr "اطلاعات مربوط به آواتار اشتباه است"
 
@@ -23124,7 +23143,7 @@ msgstr "اطلاعات مربوط به آواتار اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:349
 #: khadije/includes/lib/app/karbalauser.php:349
 #: khadije/includes/lib/app/mokebuser.php:698
-#: khadije/includes/lib/app/myuser.php:291
+#: khadije/includes/lib/app/myuser.php:310
 msgid "Invalid arguments nesbat"
 msgstr "اطلاعات مربوط به نسبت اشتباه است"
 
@@ -23132,7 +23151,7 @@ msgstr "اطلاعات مربوط به نسبت اشتباه است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:355
 #: khadije/includes/lib/app/karbalauser.php:355
 #: khadije/includes/lib/app/mokebuser.php:704
-#: khadije/includes/lib/app/myuser.php:297
+#: khadije/includes/lib/app/myuser.php:316
 msgid "Invalid province name"
 msgstr "اسم استان اشتباه است"
 
@@ -23146,7 +23165,7 @@ msgstr "انتخاب شهر الزامی است"
 #: khadije/includes/lib/app/karbalaarbaeenuser.php:392
 #: khadije/includes/lib/app/karbalauser.php:392
 #: khadije/includes/lib/app/mokebuser.php:749
-#: khadije/includes/lib/app/myuser.php:310
+#: khadije/includes/lib/app/myuser.php:329
 msgid "Invalid country name"
 msgstr "کشور نامعتبر"
 
@@ -23165,7 +23184,7 @@ msgstr "آدرس الزامی است"
 msgid "Phone is required"
 msgstr "شماره تلفن ثابت الزامی است"
 
-#: khadije/includes/lib/app/karbalasetting.php:191
+#: khadije/includes/lib/app/karbalasetting.php:207
 msgid "Status changed"
 msgstr "وضعیت تغییر یافت"
 
@@ -23234,62 +23253,62 @@ msgstr "لطفا متن پیام را کمتر از ۵۰۰ حرف وارد کن�
 msgid "Invalid activetime"
 msgstr "زمان فعالیت نامعتبر"
 
-#: khadije/includes/lib/app/myuser.php:35
+#: khadije/includes/lib/app/myuser.php:41
 msgid "Please set your gender"
 msgstr "لطفا جنسیت خود را انتخاب کنید"
 
-#: khadije/includes/lib/app/myuser.php:108
+#: khadije/includes/lib/app/myuser.php:121
 msgid "National code or pasportcode code is required"
 msgstr "کدملی یا شماره گذرنامه الزامی است"
 
-#: khadije/includes/lib/app/myuser.php:303
+#: khadije/includes/lib/app/myuser.php:322
 msgid "Invalid city name"
 msgstr "اطلاعات شهر اشتباه است"
 
-#: khadije/includes/lib/app/myuser.php:319
+#: khadije/includes/lib/app/myuser.php:338
 msgid "Invalid hawzahcode"
 msgstr "شماره پرونده حوزه علمیه اشتباه است"
 
-#: khadije/includes/lib/app/myuser.php:328
+#: khadije/includes/lib/app/myuser.php:347
 msgid "hawzahcode is out of range"
 msgstr "شماره پرونده حوزه علمیه خارج از محدوده مجاز است"
 
-#: khadije/includes/lib/app/myuser.php:337 khadije/includes/lib/app/myuser.php:350
-#: khadije/includes/lib/app/send.php:538
+#: khadije/includes/lib/app/myuser.php:356 khadije/includes/lib/app/myuser.php:369
+#: khadije/includes/lib/app/send.php:573
 msgid "Please set data as a number"
 msgstr "لطفا اطلاعات را به صورت عددی وارد کنید"
 
-#: khadije/includes/lib/app/myuser.php:343 khadije/includes/lib/app/myuser.php:356
-#: khadije/includes/lib/app/myuser.php:363 khadije/includes/lib/app/myuser.php:370
-#: khadije/includes/lib/app/myuser.php:659 khadije/includes/lib/app/myuser.php:672
-#: khadije/includes/lib/app/myuser.php:685 khadije/includes/lib/app/myuser.php:698
-#: khadije/includes/lib/app/send.php:553 khadije/includes/lib/app/send.php:560
-#: khadije/includes/lib/app/send.php:566
+#: khadije/includes/lib/app/myuser.php:362 khadije/includes/lib/app/myuser.php:375
+#: khadije/includes/lib/app/myuser.php:382 khadije/includes/lib/app/myuser.php:389
+#: khadije/includes/lib/app/myuser.php:693 khadije/includes/lib/app/myuser.php:706
+#: khadije/includes/lib/app/myuser.php:719 khadije/includes/lib/app/myuser.php:732
+#: khadije/includes/lib/app/send.php:588 khadije/includes/lib/app/send.php:595
+#: khadije/includes/lib/app/send.php:601
 msgid "Data is out of range"
 msgstr "اطلاعات وارد شده خارج از محدوده مجاز است"
 
-#: khadije/includes/lib/app/myuser.php:498
+#: khadije/includes/lib/app/myuser.php:517
 msgid "Travel id not found"
 msgstr "شناسه تشرف یافت نشد"
 
-#: khadije/includes/lib/app/myuser.php:515 khadije/includes/lib/app/myuser.php:626
+#: khadije/includes/lib/app/myuser.php:534 khadije/includes/lib/app/myuser.php:660
 msgid "This nationalcode is for your!"
 msgstr "این کد ملی مربوط به خود شماست!"
 
-#: khadije/includes/lib/app/myuser.php:522 khadije/includes/lib/app/myuser.php:639
+#: khadije/includes/lib/app/myuser.php:541 khadije/includes/lib/app/myuser.php:673
 msgid "Duplicate national code in your child list"
 msgstr "کدملی تکراری در لیست وارد کرده‌اید"
 
-#: khadije/includes/lib/app/myuser.php:551
+#: khadije/includes/lib/app/myuser.php:583
 msgid "Maximum partner added. can not add another"
 msgstr "حداکثر تعداد همراهان مجاز ثبت شده و امکان ثبت بیشتر وجود ندارد"
 
-#: khadije/includes/lib/app/myuser.php:562
+#: khadije/includes/lib/app/myuser.php:596
 msgid "Can not add partner"
 msgstr "توانایی افزودن همراه وجود ندارد"
 
-#: khadije/includes/lib/app/myuser.php:666 khadije/includes/lib/app/myuser.php:679
-#: khadije/includes/lib/app/myuser.php:692
+#: khadije/includes/lib/app/myuser.php:700 khadije/includes/lib/app/myuser.php:713
+#: khadije/includes/lib/app/myuser.php:726
 msgid "Plese set data as a number"
 msgstr "لطفا اطلاعات را به صورت عددی وارد کنید"
 
@@ -23467,10 +23486,11 @@ msgid "Invalid clergy"
 msgstr "کاربری روحانی اشتباه استی"
 
 #: khadije/includes/lib/app/send.php:88 khadije/includes/lib/app/send.php:124
-#: khadije/includes/lib/app/send.php:159 khadije/includes/lib/app/send.php:195
-#: khadije/includes/lib/app/send.php:231 khadije/includes/lib/app/send.php:268
+#: khadije/includes/lib/app/send.php:159 khadije/includes/lib/app/send.php:194
+#: khadije/includes/lib/app/send.php:230 khadije/includes/lib/app/send.php:266
 #: khadije/includes/lib/app/send.php:303 khadije/includes/lib/app/send.php:338
-#: khadije/includes/lib/app/send.php:372 khadije/includes/lib/app/send.php:408
+#: khadije/includes/lib/app/send.php:373 khadije/includes/lib/app/send.php:407
+#: khadije/includes/lib/app/send.php:443
 msgid "Clergy not found"
 msgstr "کاربری روحانی یافت نشد"
 
@@ -23494,111 +23514,124 @@ msgstr "کد شناسه ناظر اشتباه است"
 msgid "This user have not access to set nazer of this city"
 msgstr "این کاربر امکان ثبت به عنوان ناظر برای این شهر را ندارد"
 
-#: khadije/includes/lib/app/send.php:186 khadije/includes/lib/app/send.php:222
+#: khadije/includes/lib/app/send.php:185
+msgid "Invalid rabet"
+msgstr "شناسه رابط اشتباه است"
+
+#: khadije/includes/lib/app/send.php:204
+msgid "This user have not access to set rabet of this city"
+msgstr "این کاربر امکان ثبت به عنوان رابط برای این شهر را ندارد"
+
+#: khadije/includes/lib/app/send.php:221 khadije/includes/lib/app/send.php:257
 msgid "Invalid khadem"
 msgstr "شناسه خادم اشتباه است!"
 
-#: khadije/includes/lib/app/send.php:205
+#: khadije/includes/lib/app/send.php:240
 msgid "This user have not access to set khadem of this city"
 msgstr "این کاربر امکان ثبت به عنوان خادم برای این شهر را ندارد"
 
-#: khadije/includes/lib/app/send.php:241
+#: khadije/includes/lib/app/send.php:276
 msgid "This user have not access to set khadem2 of this city"
 msgstr "این کاربر امکان ثبت به عنوان خادم برای این شهر را ندارد"
 
-#: khadije/includes/lib/app/send.php:259
+#: khadije/includes/lib/app/send.php:294
 msgid "Invalid servant"
 msgstr "شناسه خادم نامعتبر است"
 
-#: khadije/includes/lib/app/send.php:278
+#: khadije/includes/lib/app/send.php:313
 msgid "This user have not access to set servant of this city"
 msgstr "این کاربر امکان ثبت به عنوان نگهبان برای این شهر را ندارد"
 
-#: khadije/includes/lib/app/send.php:294
+#: khadije/includes/lib/app/send.php:329
 msgid "Invalid servant2"
 msgstr "شناسه خادم نامعتبر است"
 
-#: khadije/includes/lib/app/send.php:313
+#: khadije/includes/lib/app/send.php:348
 msgid "This user have not access to set servant2 of this city"
 msgstr "این کاربر امکان ثبت به عنوان نگهبان برای این شهر را ندارد"
 
-#: khadije/includes/lib/app/send.php:331
+#: khadije/includes/lib/app/send.php:366
 msgid "Invalid admin"
 msgstr "شناسه مدیر اشتباه است"
 
-#: khadije/includes/lib/app/send.php:347
+#: khadije/includes/lib/app/send.php:382
 msgid "This user have not access to set admin of this city"
 msgstr "این کاربر امکان ثبت به عنوان مدیر کاروان برای این شهر را ندارد"
 
-#: khadije/includes/lib/app/send.php:365
+#: khadije/includes/lib/app/send.php:400
 msgid "Invalid adminoffice"
 msgstr "مدیر زائرسرا نامعتبر است"
 
-#: khadije/includes/lib/app/send.php:381
+#: khadije/includes/lib/app/send.php:416
 msgid "This user have not access to set adminoffice of this city"
 msgstr "این کاربر امکان ثبت به عنوان مدیر زائرسرا برای این شهر را ندارد"
 
-#: khadije/includes/lib/app/send.php:401
+#: khadije/includes/lib/app/send.php:436
 msgid "Invalid missionary"
 msgstr "شناسه مبلغ اشتباه است"
 
-#: khadije/includes/lib/app/send.php:417
+#: khadije/includes/lib/app/send.php:452
 msgid "This user have not access to set missionary of this city"
 msgstr "این کاربر امکان ثبت به عنوان مبلغ برای این شهر را ندارد"
 
-#: khadije/includes/lib/app/send.php:442
+#: khadije/includes/lib/app/send.php:477
 msgid "Place not found"
 msgstr "مکان یافت نشد"
 
-#: khadije/includes/lib/app/send.php:451
+#: khadije/includes/lib/app/send.php:486
 msgid "Place and city not mathc"
 msgstr "شهر و زائرسرا باهم تطابق ندارند"
 
-#: khadije/includes/lib/app/send.php:663
+#: khadije/includes/lib/app/send.php:699
 msgid "No way to insert send"
 msgstr "روشی برای افزودن دیتا نیست"
 
-#: khadije/includes/lib/app/send.php:672
+#: khadije/includes/lib/app/send.php:708
 msgid "Send successfuly added"
 msgstr "اعزام با موفقیت ثبت شد"
 
-#: khadije/includes/lib/app/servant.php:53 khadije/includes/lib/app/skills.php:138
+#: khadije/includes/lib/app/send/report.php:24
+#: khadije/includes/lib/app/send/report.php:64
+msgid "No name"
+msgstr "بدون نام"
+
+#: khadije/includes/lib/app/servant.php:56 khadije/includes/lib/app/skills.php:138
 msgid "No way to insert data"
 msgstr "هیچ راهی برای افزودن اطلاعات نیست"
 
-#: khadije/includes/lib/app/servant.php:62
+#: khadije/includes/lib/app/servant.php:65
 msgid "Servant successfuly added"
 msgstr "خادم با موفقیت اضافه شد"
 
-#: khadije/includes/lib/app/servant.php:101 khadije/includes/lib/app/skills.php:188
+#: khadije/includes/lib/app/servant.php:104 khadije/includes/lib/app/skills.php:188
 msgid ":val successfully updated"
 msgstr ":val با موفقیت به‌روزرسانی شد"
 
-#: khadije/includes/lib/app/servant.php:119
+#: khadije/includes/lib/app/servant.php:122
 msgid "Servant removed"
 msgstr "خادم حذف شد"
 
-#: khadije/includes/lib/app/servant.php:129
+#: khadije/includes/lib/app/servant.php:132
 msgid "servant id not set"
 msgstr "شناسه خادمی تعیین نشده است"
 
-#: khadije/includes/lib/app/servant.php:195
+#: khadije/includes/lib/app/servant.php:198
 msgid "Please select member"
 msgstr "لطفا یک عضو را انتخاب کنید"
 
-#: khadije/includes/lib/app/servant.php:209
+#: khadije/includes/lib/app/servant.php:212
 msgid "Member not found"
 msgstr "کاربر یافت نشد"
 
-#: khadije/includes/lib/app/servant.php:236
+#: khadije/includes/lib/app/servant.php:239
 msgid "Please choose job"
 msgstr "لطفا سمت را انتخاب کنید"
 
-#: khadije/includes/lib/app/servant.php:271
+#: khadije/includes/lib/app/servant.php:274
 msgid "This servant is already exist in your list"
 msgstr "این خادم هم‌ اکنون در لیست خادمین شما وجود دارد"
 
-#: khadije/includes/lib/app/servant.php:272 khadije/includes/lib/app/skills.php:287
+#: khadije/includes/lib/app/servant.php:275 khadije/includes/lib/app/skills.php:287
 msgid "Click here to edit it"
 msgstr "برای ویرایش آن اینجا کلیک کنید"
 
@@ -30781,9 +30814,6 @@ msgstr "شماره پیامک اشتباه است!"
 
 #~ msgid "List of observer"
 #~ msgstr "لیست ناظرین"
-
-#~ msgid "No name"
-#~ msgstr "بدون نام"
 
 #~ msgid "traffic"
 #~ msgstr "تردد"
