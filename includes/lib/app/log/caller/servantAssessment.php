@@ -8,7 +8,9 @@ class servantAssessment
 	{
 
 		$result              = [];
-		$result['title']     = "جهت تکمیل ارزیابی خادمین کلیک کنید";
+		$result['title']     = "سلام و ادب و احترام
+با آرزوی قبولی زیارت؛ لطفا جهت تکمیل فرم های ارزشیابی به لینک زیر مراجعه فرمائید.
+سپاس بیکران";
 		$result['icon']      = 'search';
 		$result['cat']       = T_("Servant");
 		$result['iconClass'] = 'fc-green';
@@ -16,7 +18,7 @@ class servantAssessment
 
 		$excerpt = '';
 		$excerpt .=	'<a href="'.\dash\url::kingdom(). '/a/servant">';
-		$excerpt .= "ارزیابی خادمنی";
+		$excerpt .= "ارزیابی خادمی";
 		$excerpt .= '</a>';
 
 		$result['txt'] = $excerpt;
@@ -47,7 +49,9 @@ class servantAssessment
 
 	public static function sms_text($_args, $_mobile)
 	{
-		$title = "خادم گرام. جهت تکمیل ارزیابی به لینک زیر مراجعه فرمایید";
+		$title = "سلام و ادب و احترام
+با آرزوی قبولی زیارت؛ لطفا جهت تکمیل فرم های ارزشیابی به لینک زیر مراجعه فرمائید.
+سپاس بیکران";
 		$title .= "\n";
 		$title .= \dash\url::kingdom(). '/a/servant';
 
@@ -69,7 +73,12 @@ class servantAssessment
 	public static function telegram_text($_args, $_chat_id)
 	{
 
-		$title = "جهت تکمیل ارزیابی خادم کلیک کنید";
+		$title = "سلام و ادب و احترام
+با آرزوی قبولی زیارت؛ لطفا جهت تکمیل فرم های ارزشیابی به لینک زیر مراجعه فرمائید.
+سپاس بیکران";
+		$title .= "\n";
+		$title .= \dash\url::kingdom(). '/a/servant';
+
 
 		$tg_msg = '';
 		$tg_msg .= "#servant";
