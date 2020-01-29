@@ -33,7 +33,6 @@ class view
 		$payamount = \dash\data::dataRow_payamount();
 
 
-
 		$displayname             = \dash\data::dataRow_missionary_displayname() ? \dash\data::dataRow_missionary_displayname() : '';
 		$mobile                  = \dash\data::dataRow_missionary_mobile() ? \dash\data::dataRow_missionary_mobile() : '';
 		$gender                  = \dash\data::dataRow_missionary_gender() ? \dash\data::dataRow_missionary_gender() : '';
@@ -107,6 +106,7 @@ class view
 
 		$tempText = "هزینه ایاب و ذهاب جلسه سخنرانی در زائر سرای $place_title در تاریخ $paydate $myGender $myName به کد ملی $nationalcode شماره تماس  $mobile";
 
+
 		if($payamount)
 		{
 			\dash\data::tempText($tempText);
@@ -117,10 +117,52 @@ class view
 			$_xtime = '؟؟';
 		}
 
+		if(\dash\data::dataRow_city() === 'mashhad')
+		{
+			$startDate = \dash\data::dataRow_startdate();
+			if($startDate)
+			{
+				$startTime = date("H:i", strtotime($startDate));
+				if($startTime !== '00:00')
+				{
+					$startTime = ' ساعت '. \dash\utility\human::fitNumber($startTime, false);
+				}
+				else
+				{
+					$startTime = null;
+				}
+				$startDate = \dash\utility\jdate::date("Y/m/d", $startDate);
+			}
+
+			$endDate = \dash\data::dataRow_enddate();
+			if($endDate)
+			{
+				$endTime = date("H:i", strtotime($endDate));
+				if($endTime !== '00:00')
+				{
+					$endTime = ' ساعت '. \dash\utility\human::fitNumber($endTime, false);
+				}
+				else
+				{
+					$endTime = null;
+				}
+				$endDate = \dash\utility\jdate::date("Y/m/d", $endDate);
+			}
+
+			$smsText = "با سلام و تقدیم احترام
+با تشکر از همراهی شما سرور گرامی؛ مدت زمان ماموریت به مشهد مقدس از تاریخ $startDate $startTime لغایت تاریخ $endDate $endTime می باشد.";
+
+
+		}
+		else
+		{
+
 		$smsText = "سلام و ادب و احترام
 یادآوری
 امروز ساعت $_xtime $place_title واقع در $place_address شماره رابط $mobile_rabet $myGender_rabet $myName_rabet
 جسارتا هزینه ایاب و ذهاب واریز گردید.سپاس فراوان";
+		}
+
 		\dash\data::smsText($smsText);
 		return;
 
