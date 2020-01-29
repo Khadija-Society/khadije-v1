@@ -38,6 +38,12 @@ class model
 			$item[$key] = $item_detail;
 		}
 
+		if(count($star) !== count($item))
+		{
+			\dash\notif::error("لطفا به همه گزینه‌ها پاسخ دهید");
+			return false;
+		}
+
 
 		$send_id = \dash\coding::decode(\dash\request::get('id'));
 
