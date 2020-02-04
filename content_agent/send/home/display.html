@@ -67,13 +67,14 @@
         <th class="collapsing">{%trans "Date"%}</th>
         <th class="collapsing">{%trans "Title"%}</th>
 
+        <th class="collapsing">{%trans "Status"%}</th>
         <th class="collapsing">{%trans "Detail"%}</th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in dataTable%}
-      <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
+      <tr class='positive'>
         <td>{{value.place_title}}</td>
 
 
@@ -95,8 +96,9 @@
 
         <td >{{value.startdate | dt(null, 'date')}}<br>{{value.enddate | dt(null, 'date')}}</td>
         <td class="collapsing">{{value.title}}</td>
+        <td class="collapsing">{%set myStatus = value.status | capitalize%}{%trans myStatus%}</td>
         <td class="collapsing">
-          <a class="btn info" href="{{url.this}}/view?id={{value.id}}{{xCityAnd}}">{%trans "Detail"%}</a>
+          <a class="btn {%if value.status == 'lock'%} {%else%} info{%endif%}" href="{{url.this}}/view?id={{value.id}}{{xCityAnd}}">{%trans "Detail"%}</a>
         </td>
       </tr>
       {%endfor%}

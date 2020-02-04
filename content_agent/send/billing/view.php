@@ -104,7 +104,7 @@ class view
 			$myGender = 'سرکار خانم';
 		}
 
-		$tempText = "هزینه ایاب و ذهاب جلسه سخنرانی در زائر سرای $place_title در تاریخ $paydate $myGender $myName به کد ملی $nationalcode شماره تماس  $mobile";
+		$tempText = trim("هزینه ایاب و ذهاب جلسه سخنرانی در $place_title در تاریخ $paydate $myGender $myName به کد ملی $nationalcode شماره تماس  $mobile");
 
 
 		if($payamount)
@@ -114,7 +114,7 @@ class view
 
 		if(!$_xtime)
 		{
-			$_xtime = '؟؟';
+			$_xtime = '--';
 		}
 
 		if(\dash\data::dataRow_city() === 'mashhad')
@@ -149,18 +149,18 @@ class view
 				$endDate = \dash\utility\jdate::date("Y/m/d", $endDate);
 			}
 
-			$smsText = "با سلام و تقدیم احترام
-با تشکر از همراهی شما سرور گرامی؛ مدت زمان ماموریت به مشهد مقدس از تاریخ $startDate $startTime لغایت تاریخ $endDate $endTime می باشد.";
+			$smsText = trim("با سلام و تقدیم احترام
+با تشکر از همراهی شما سرور گرامی؛ مدت زمان ماموریت به مشهد مقدس از تاریخ $startDate $startTime لغایت تاریخ $endDate $endTime می باشد.");
 
 
 		}
 		else
 		{
 
-		$smsText = "سلام و ادب و احترام
+		$smsText = trim("سلام و ادب و احترام
 یادآوری
 امروز ساعت $_xtime $place_title واقع در $place_address شماره رابط $mobile_rabet $myGender_rabet $myName_rabet
-جسارتا هزینه ایاب و ذهاب واریز گردید.سپاس فراوان";
+جسارتا هزینه ایاب و ذهاب واریز گردید.سپاس فراوان");
 		}
 
 		\dash\data::smsText($smsText);
