@@ -33,15 +33,15 @@ class model
 				$user_id[] = \dash\coding::decode($data['missionary_id']);
 			}
 
-			if(isset($data['servant_id']) && $data['servant_id'])
-			{
-				$user_id[] = \dash\coding::decode($data['servant_id']);
-			}
+			// if(isset($data['servant_id']) && $data['servant_id'])
+			// {
+			// 	$user_id[] = \dash\coding::decode($data['servant_id']);
+			// }
 
-			if(isset($data['servant2_id']) && $data['servant2_id'])
-			{
-				$user_id[] = \dash\coding::decode($data['servant2_id']);
-			}
+			// if(isset($data['servant2_id']) && $data['servant2_id'])
+			// {
+			// 	$user_id[] = \dash\coding::decode($data['servant2_id']);
+			// }
 
 			if(isset($data['maddah_id']) && $data['maddah_id'])
 			{
