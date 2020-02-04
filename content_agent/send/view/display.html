@@ -27,7 +27,8 @@
 							<td>
 								<div class="f">
 									<div class="cauto"><img src="{{dataRow[key ~ '_avatar']}}" class="avatar"></div>
-									<div class="c mLa5">{{dataRow[key ~ '_displayname']}}</div>
+									<div class="c s12 mLa5">{{dataRow[key ~ '_displayname']}}</div>
+									<div class="cauto mRa20 ltr">{{dataRow[key ~ '_mobile'] | fitNumber('mobile')}}</div>
 									<div class="cauto"><a href="{{url.here}}/servant/profile?user={{dataRow[key ~ '_id']}}{{xCityAnd}}" class="">ویرایش پروفایل</a></div>
 								</div>
 							</td>
