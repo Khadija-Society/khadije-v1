@@ -37,7 +37,7 @@ class view
 
 		$xjob = $job_for;
 
-		$assessment_item = \lib\app\assessment::get_item_by_send(\dash\request::get('id'), $xjob);
+		$assessment_item = \lib\app\assessment::get_item_by_send(\dash\request::get('id'), $xjob, $job);
 		\dash\data::assessmentIem($assessment_item);
 
 

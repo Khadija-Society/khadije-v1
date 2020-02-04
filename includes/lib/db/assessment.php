@@ -63,7 +63,7 @@ class assessment
 	}
 
 
-	public static function get_list($_job, $_city)
+	public static function get_list($_job, $_city, $_job_2)
 	{
 		$query  =
 		"
@@ -74,6 +74,8 @@ class assessment
 				( agent_assessmentitem.city IS NULL OR   agent_assessmentitem.city = '$_city' )
 				AND
 				( agent_assessmentitem.job IS NULL OR   agent_assessmentitem.job = '$_job' )
+				AND
+				( agent_assessmentitem.job_for IS NULL OR   agent_assessmentitem.job_for = '$_job_2' )
 				AND
 				agent_assessmentitem.status = 'enable'
 			ORDER BY agent_assessmentitem.sort ASC

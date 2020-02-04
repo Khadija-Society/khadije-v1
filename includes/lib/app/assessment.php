@@ -7,7 +7,7 @@ namespace lib\app;
 class assessment
 {
 
-	public static function get_item_by_send($_id, $_job)
+	public static function get_item_by_send($_id, $_job, $_job_2)
 	{
 		$id = \dash\coding::decode($_id);
 
@@ -28,7 +28,7 @@ class assessment
 		$job = $_job;
 		$city = $send_detail['city'];
 
-		$item_list = \lib\db\assessment::get_list($job, $city);
+		$item_list = \lib\db\assessment::get_list($job, $city, $_job_2);
 
 
 		return $item_list;

@@ -32,6 +32,12 @@ class view
 		}
 
 		$job = \dash\request::get('job');
+		$xjob2 = $job;
+		if(isset($assessmenDetail['job']))
+		{
+			$xjob2 = $assessmenDetail['job'];
+		}
+
 		$job_for = \dash\request::get('forjob');
 
 		$xjob = $job_for;
@@ -40,7 +46,8 @@ class view
 			$xjob = $assessmenDetail['job_for'];
 		}
 
-		$assessment_item = \lib\app\assessment::get_item_by_send(\dash\request::get('id'), $xjob);
+
+		$assessment_item = \lib\app\assessment::get_item_by_send(\dash\request::get('id'), $xjob, $xjob2);
 
 		\dash\data::assessmentIem($assessment_item);
 
