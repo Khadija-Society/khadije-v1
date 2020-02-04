@@ -50,8 +50,8 @@
 <div class="pRa5">
   <label for="job_for">برای ارزیابی توسط</label>
   <select name="job_for" class="ui dropdown select">
-    {%if false%}<option value="0" >{%trans "For all jobs"%}</option>{%endif%}
     <option value="" >{%trans "Please select one item"%}</option>
+    <option value="0" >{%trans "For all jobs"%}</option>
     <option value="clergy" {%if dataRow.job_for == 'clergy'  %}selected {%endif%}>روحانی کاروان</option>
     <option value="adminoffice" {%if dataRow.job_for == 'adminoffice'  %}selected {%endif%}>مدیر زائرسرا</option>
     <option value="admin" {%if dataRow.job_for == 'admin'  %}selected {%endif%}>مدیر کاروان</option>
