@@ -46,6 +46,29 @@
 {%endblock%}
 
 
+{%block iJobFor%}
+<div class="pRa5">
+  <label for="job_for">برای ارزیابی از</label>
+  <select name="job_for" class="ui dropdown select">
+    {%if false%}<option value="0" >{%trans "For all jobs"%}</option>{%endif%}
+    <option value="" >{%trans "Please select one item"%}</option>
+    <option value="clergy" {%if dataRow.job_for == 'clergy'  %}selected {%endif%}>روحانی کاروان</option>
+    <option value="adminoffice" {%if dataRow.job_for == 'adminoffice'  %}selected {%endif%}>مدیر زائرسرا</option>
+    <option value="admin" {%if dataRow.job_for == 'admin'  %}selected {%endif%}>مدیر کاروان</option>
+    <option value="missionary" {%if dataRow.job_for == 'missionary'  %}selected {%endif%}>مبلغ</option>
+    <option value="servant" {%if dataRow.job_for == 'servant'  %}selected {%endif%}>نگهبان</option>
+    <option value="maddah" {%if dataRow.job_for == 'maddah'  %}selected {%endif%}>مداح</option>
+    <option value="rabet" {%if dataRow.job_for == 'rabet'  %}selected {%endif%}>رابط</option>
+    <option value="nazer" {%if dataRow.job_for == 'nazer'  %}selected {%endif%}>ناظر</option>
+    <option value="khadem" {%if dataRow.job_for == 'khadem'  %}selected {%endif%}>خادم</option>
+
+
+
+  </select>
+</div>
+{%endblock%}
+
+
 
 {% block iSort %}
 <label for="isort">{%trans "Sort"%}</label>

@@ -5,11 +5,11 @@ class twigTransTerms
  {
 
 	//----------------------------------content_agent/assessmentitem/home/display.html
-	echo T_("Search in assessmentitems");                                             // Line 119
+	echo T_("Search in assessmentitems");                                             // Line 127
 	echo T_("Search");                                                                // Line 44
 	echo T_("Title");                                                                 // Line 62
 	echo T_("Job");                                                                   // Line 606
-	echo T_("Rate");                                                                  // Line 58
+	echo T_("Rate");                                                                  // Line 59
 	echo T_("Sort");                                                                  // Line 249
 	echo T_("Status");                                                                // Line 102
 	echo T_("For all jobs");                                                          // Line 30
@@ -17,7 +17,7 @@ class twigTransTerms
 	echo T_("Result not found!");                                                     // Line 118
 	echo T_("Search with new keywords.");                                             // Line 118
 	echo T_("Hi!");                                                                   // Line 125
-	echo T_("Try to start with add new assessmentitem!");                             // Line 188
+	echo T_("Try to start with add new assessmentitem!");                             // Line 194
 
 	//----------------------------------------content_agent/assessmentitem/layout.html
 	echo T_("Require");                                                               // Line 388
@@ -31,7 +31,7 @@ class twigTransTerms
 	echo T_("Please select one item");                                                // Line 79
 	echo T_("Add");                                                                   // Line 65
 	echo T_("Save");                                                                  // Line 43
-	echo T_("Status of assessmentitem");                                              // Line 78
+	echo T_("Status of assessmentitem");                                              // Line 79
 	echo T_("Enable");                                                                // Line 27
 	echo T_("Disable");                                                               // Line 33
 
@@ -84,24 +84,24 @@ class twigTransTerms
 	//--------------------------------------------content_agent/send/home/display.html
 	echo T_("Date");                                                                  // Line 63
 	echo T_("Detail");                                                                // Line 55
-	echo T_("Try to start with add new servant!");                                    // Line 194
+	echo T_("Try to start with add new servant!");                                    // Line 204
 
 	//-----------------------------------content_agent/send/assessmentadd/display.html
-	echo T_("%");                                                                     // Line 114
+	echo T_("%");                                                                     // Line 115
 	echo T_("Item");                                                                  // Line 205
 	echo T_("Star");                                                                  // Line 25
 
 	//--------------------------------------------content_agent/send/edit/display.html
 	echo T_("Start date");                                                            // Line 89
-	echo T_("Start time");                                                            // Line 106
+	echo T_("Start time");                                                            // Line 107
 	echo T_("End date");                                                              // Line 96
-	echo T_("End time");                                                              // Line 117
-	echo T_("enable");                                                                // Line 134
-	echo T_("disable");                                                               // Line 135
-	echo T_("deleted");                                                               // Line 136
-	echo T_("expire");                                                                // Line 137
-	echo T_("draft");                                                                 // Line 139
-	echo T_("Nobody");                                                                // Line 348
+	echo T_("End time");                                                              // Line 118
+	echo T_("enable");                                                                // Line 135
+	echo T_("disable");                                                               // Line 136
+	echo T_("deleted");                                                               // Line 137
+	echo T_("expire");                                                                // Line 138
+	echo T_("draft");                                                                 // Line 140
+	echo T_("Nobody");                                                                // Line 366
 
 	//------------------------------------------------content_agent/send/pageStep.html
 	echo T_("To city");                                                               // Line 16
@@ -120,18 +120,18 @@ class twigTransTerms
 
 	//---------------------------------------content_agent/servant/resume/display.html
 	echo T_("Add new work history");                                                  // Line 33
-	echo T_("Company");                                                               // Line 112
-	echo T_("Action Type");                                                           // Line 113
-	echo T_("CEO");                                                                   // Line 115
+	echo T_("Company");                                                               // Line 113
+	echo T_("Action Type");                                                           // Line 114
+	echo T_("CEO");                                                                   // Line 116
 	echo T_("startdate");                                                             // Line 61
 	echo T_("enddate");                                                               // Line 62
 	echo T_("Remove");                                                                // Line 630
-	echo T_("Year");                                                                  // Line 114
+	echo T_("Year");                                                                  // Line 115
 
 	//-------------------------------------content_agent/servant/sortlist/display.html
 	echo T_("User");                                                                  // Line 148
 	echo T_("Mobile");                                                                // Line 128
-	echo T_("Dispatch");                                                              // Line 125
+	echo T_("Dispatch");                                                              // Line 126
 
 	//--------------------------------------content_agent/servant/profile/display.html
 	echo T_("Servant detail");                                                        // Line 11
@@ -214,14 +214,30 @@ class twigTransTerms
 	echo T_("Please choose city");                                                    // Line 60
 
 	//-------------------------------------------------content_agent/home/display.html
+	echo T_("Reports");                                                               // Line 143
 	echo T_("Agent Place");                                                           // Line 16
 	echo T_("Assessment Item");                                                       // Line 14
-	echo T_("Servant");                                                               // Line 56
-	echo T_("Dispathc servant");                                                      // Line 78
+	echo T_("Servant");                                                               // Line 80
+	echo T_("Dispathc servant");                                                      // Line 102
 
 	//-------------------------------------------------------content_agent/layout.html
 	echo T_("Dashboard");                                                             // Line 1
 	echo T_("Servants");                                                              // Line 30
+
+	//----------------------------------------------content_agent/report/home/chart.js
+	echo T_("Count");                                                                 // Line 12
+
+	//------------------------------------------content_agent/report/home/display.html
+	echo T_("Answer time per min");                                                   // Line 57
+	echo T_("Answer time per hour");                                                  // Line 68
+	echo T_("Group by status");                                                       // Line 81
+	echo T_("Cont send sms per day");                                                 // Line 90
+	echo T_("Add group");                                                             // Line 107
+	echo T_("Last sms");                                                              // Line 116
+	echo T_("Without title");                                                         // Line 71
+	echo T_("Setting");                                                               // Line 166
+	echo T_("Sms group list");                                                        // Line 154
+	echo T_("Sms list");                                                              // Line 166
 
 	//---------------------------------------------content_smsapp/viewsms/display.html
 	echo T_("Reseive status");                                                        // Line 294
@@ -283,9 +299,7 @@ class twigTransTerms
 
 	//-----------------------------------------------------content_smsapp/sidenav.html
 	echo T_("Manage sms");                                                            // Line 1
-	echo T_("Setting");                                                               // Line 166
 	echo T_("SMS List");                                                              // Line 6
-	echo T_("Reports");                                                               // Line 143
 
 	//--------------------------------------------content_smsapp/settings/display.html
 	echo T_("Type");                                                                  // Line 155
@@ -336,7 +350,6 @@ class twigTransTerms
 
 	//----------------------------------------------------content_smsapp/home/chart.js
 	echo T_("Count Send and Receive sms per day");                                    // Line 323
-	echo T_("Count");                                                                 // Line 12
 	echo T_("Receive");                                                               // Line 390
 
 	//------------------------------------------------content_smsapp/home/display.html
@@ -345,12 +358,8 @@ class twigTransTerms
 	echo T_("month");                                                                 // Line 195
 	echo T_("week");                                                                  // Line 204
 	echo T_("day");                                                                   // Line 213
-	echo T_("Add group");                                                             // Line 107
-	echo T_("Last sms");                                                              // Line 116
 	echo T_("Without text");                                                          // Line 248
 	echo T_("Private");                                                               // Line 317
-	echo T_("Sms group list");                                                        // Line 154
-	echo T_("Sms list");                                                              // Line 166
 
 	//----------------------------------content_smsapp/report/countsmsday/display.html
 	echo T_("Count send SMS");                                                        // Line 29
@@ -370,11 +379,6 @@ class twigTransTerms
 	echo T_("Price");                                                                 // Line 150
 
 	//-----------------------------------------content_smsapp/report/home/display.html
-	echo T_("Answer time per min");                                                   // Line 57
-	echo T_("Answer time per hour");                                                  // Line 68
-	echo T_("Group by status");                                                       // Line 81
-	echo T_("Cont send sms per day");                                                 // Line 90
-	echo T_("Without title");                                                         // Line 71
 
 	//------------------------------------------------content_smsapp/chat/display.html
 	echo T_("Date created");                                                          // Line 76
@@ -795,7 +799,7 @@ class twigTransTerms
 	//-----------------------------------------------------content_a/home/display.html
 	echo T_("Servand dashboard");                                                     // Line 27
 	echo T_("Detail, Assessment, ...");                                               // Line 28
-	echo T_("Festival");                                                              // Line 148
+	echo T_("Festival");                                                              // Line 158
 	echo T_("Representation");                                                        // Line 85
 	echo T_("Health Service");                                                        // Line 94
 	echo T_("Consulting Service");                                                    // Line 11
@@ -1115,7 +1119,7 @@ class twigTransTerms
 
 	//---------------------------------------------content_m/product/home/display.html
 	echo T_("Search in products");                                                    // Line 42
-	echo T_("Product donate");                                                        // Line 324
+	echo T_("Product donate");                                                        // Line 334
 	echo T_("Try to start with add new product!");                                    // Line 113
 
 	//---------------------------------------------------content_m/product/layout.html
@@ -1356,11 +1360,11 @@ class twigTransTerms
 	echo T_("Trip");                                                                  // Line 17
 	echo T_("Service");                                                               // Line 26
 	echo T_("Signup karbala");                                                        // Line 37
-	echo T_("Sms management");                                                        // Line 82
-	echo T_("Add trip");                                                              // Line 139
-	echo T_("Tankyou message");                                                       // Line 158
-	echo T_("Meeting");                                                               // Line 169
-	echo T_("Doyon");                                                                 // Line 343
+	echo T_("Sms management");                                                        // Line 92
+	echo T_("Add trip");                                                              // Line 149
+	echo T_("Tankyou message");                                                       // Line 168
+	echo T_("Meeting");                                                               // Line 179
+	echo T_("Doyon");                                                                 // Line 353
 
 	//----------------------------------------content_m/options/cityplace/display.html
 	echo T_("List of city place");                                                    // Line 22
@@ -1460,6 +1464,8 @@ class twigTransTerms
 	echo T_("Custom Choice");                                                         // Line 257
 	echo T_("blink and different display");                                           // Line 311
 	echo T_("Allow to custom price?");                                                // Line 320
+
+	//-----------------------------------------------------content_m/find/display.html
 
 	//---------------------------------------------content_m/trip/partner/display.html
 	echo T_("Add or edit partner");                                                   // Line 22

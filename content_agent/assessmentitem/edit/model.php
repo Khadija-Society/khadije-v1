@@ -10,12 +10,13 @@ class model
 
 		$post =
 		[
-			'title'  => \dash\request::post('title'),
-			'city'   => \dash\request::get('city'),
-			'rate'   => \dash\request::post('rate'),
-			'job'    => \dash\request::post('job') == '0' ? null : \dash\request::post('job'),
-			'sort'   => \dash\request::post('sort'),
-			'status' => \dash\request::post('status'),
+			'title'   => \dash\request::post('title'),
+			'city'    => \dash\request::get('city'),
+			'rate'    => \dash\request::post('rate'),
+			'job'     => \dash\request::post('job') == '0' ? null : \dash\request::post('job'),
+			'job_for' => \dash\request::post('job_for') == '0' ? null : \dash\request::post('job_for'),
+			'sort'    => \dash\request::post('sort'),
+			'status'  => \dash\request::post('status'),
 		];
 
 

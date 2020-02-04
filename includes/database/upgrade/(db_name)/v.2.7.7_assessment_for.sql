@@ -1,0 +1,1 @@
+ALTER TABLE `agent_assessmentitem` ADD `job_for` enum('clergy', 'admin', 'adminoffice', 'missionary', 'servant', 'maddah', 'nazer', 'khadem', 'khadem2', 'rabet') NULL;

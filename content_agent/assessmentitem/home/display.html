@@ -88,6 +88,27 @@
 
 
   </div>
+  <div class="f msg primary2">
+    <p>ارزیابی از</p>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'adminoffice' %}active{%endif%}" href='{{url.this}}?job_for=adminoffice{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مدیر زائرسرا</a>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'admin' %}active{%endif%}" href='{{url.this}}?job_for=admin{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مدیر کاروان</a>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'missionary' %}active{%endif%}" href='{{url.this}}?job_for=missionary{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مبلغ</a>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'servant' %}active{%endif%}" href='{{url.this}}?job_for=servant{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>نگهبان</a>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'maddah' %}active{%endif%}" href='{{url.this}}?job_for=maddah{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مداح</a>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'rabet' %}active{%endif%}" href='{{url.this}}?job_for=rabet{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>رابط</a>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'nazer' %}active{%endif%}" href='{{url.this}}?job_for=nazer{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>ناظر</a>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'khadem' %}active{%endif%}" href='{{url.this}}?job_for=khadem{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>خادم</a>
+    <a class="btn c mLa5 primary {%if requestGET.job_for == 'clergy' %}active{%endif%}" href='{{url.this}}?job_for=clergy{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>روحانی کاروان</a>
+
+
+
+
+
+
+
+
+
+  </div>
 {%if dataTable%}
  {%if dataFilter%}
 
@@ -141,6 +162,7 @@
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
 
         <th data-sort="{{sortLink.job.order}}"><a href='{{sortLink.job.link}}'>{%trans "Job"%}</a></th>
+        <th data-sort="{{sortLink.job_for.order}}"><a href='{{sortLink.job_for.link}}'>ارزیابی از</a></th>
         <th data-sort="{{sortLink.rate.order}}"><a href='{{sortLink.rate.link}}'>{%trans "Rate"%}</a></th>
         <th data-sort="{{sortLink.sort.order}}"><a href='{{sortLink.sort.link}}'>{%trans "Sort"%}</a></th>
 
@@ -158,6 +180,7 @@
 
 
         <td>{%if value.job%}{%set myGender = value.job%}{%trans myGender%}{%else%}<small class="fc08 fc-mute">{%trans "For all jobs"%}</small>{%endif%}</td>
+        <td>{%if value.job_for%}{%set myGender = value.job_for%}{%trans myGender%}{%else%}<small class="fc08 fc-mute">{%trans "For all jobs"%}</small>{%endif%}</td>
         <td>{%if value.rate%}{{value.rate | fitNumber}}{%else%}-{%endif%}</td>
         <td>{%if value.sort%}{{value.sort | fitNumber}}{%else%}-{%endif%}</td>
 

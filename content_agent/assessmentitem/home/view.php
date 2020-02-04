@@ -49,14 +49,17 @@ class view
 			$args['status'] = $status;
 		}
 
+
 		$job = \dash\request::get('job');
 		if(!$job)
 		{
 			$job = 'adminoffice';
 		}
 
-		$args['2.2'] =[' = 2.2 ', " AND ( job is null or job = '$job')"];
+		$job_for = \dash\request::get('job_for');
 
+		$args['2.2'] = [' = 2.2 ', " AND ( job is null or job = '$job')"];
+		$args['3.3'] = [' = 3.3 ', " AND ( job_for is null or job_for = '$job_for')"];
 
 
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\assessmentitem::$sort_field, \dash\url::this());
@@ -69,6 +72,7 @@ class view
 		unset($check_empty_datatable['sort']);
 		unset($check_empty_datatable['1.1']);
 		unset($check_empty_datatable['2.2']);
+		unset($check_empty_datatable['3.3']);
 		unset($check_empty_datatable['order']);
 		unset($check_empty_datatable['pagenation']);
 

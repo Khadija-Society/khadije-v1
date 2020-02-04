@@ -88,6 +88,13 @@ class assessmentitem
 			return false;
 		}
 
+		$job_for = \dash\app::request('job_for');
+		if($job_for && !in_array($job_for, ['clergy', 'admin', 'missionary', 'servant', 'adminoffice','maddah', 'khadem', 'nazer', 'rabet']))
+		{
+			\dash\notif::error(T_("Invalid job"));
+			return false;
+		}
+
 
 		$status = \dash\app::request('status');
 		if($status && !in_array($status, ['enable', 'disable']))
@@ -140,6 +147,7 @@ class assessmentitem
 		$args               = [];
 		$args['title']      = $title;
 		$args['job']    = $job;
+		$args['job_for']    = $job_for;
 		$args['city']       = $city;
 		$args['status']     = $status;
 		$args['sort']       = $sort;
@@ -294,6 +302,7 @@ class assessmentitem
 		if(!\dash\app::isset_request('rate')) unset($args['rate']);
 
 		if(!\dash\app::isset_request('job')) unset($args['job']);
+		if(!\dash\app::isset_request('job_for')) unset($args['job_for']);
 
 		if(!\dash\app::isset_request('city')) unset($args['city']);
 		if(!\dash\app::isset_request('sort')) unset($args['sort']);
