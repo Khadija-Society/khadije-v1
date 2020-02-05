@@ -57,7 +57,7 @@ class view
 
 		if($paydate)
 		{
-			$paydate = \dash\utility\jdate::date("l j F Y", $paydate);
+			$paydate = \dash\utility\jdate::date("Y/m/d", $paydate);
 		}
 
 		if($firstname || $lastname)
@@ -175,7 +175,7 @@ class view
 		if($paydate)
 		{
 			$tempText .= " در تاریخ ";
-			$tempText .= \dash\utility\jdate::date("l j F Y", $paydate);
+			$tempText .= \dash\utility\jdate::date("Y/m/d", $paydate);
 		}
 
 		if($paybank || $paynumber)
