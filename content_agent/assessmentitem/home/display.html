@@ -5,108 +5,96 @@
 {%block pageContent%}
 <div class="f">
 
-
-
-
-
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'adminoffice' or not requestGET.job %}active{%endif%}" href='{{url.this}}?job=adminoffice{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'adminoffice' or not requestGET.job %}active{%endif%}" href='{{url.this}}?job=adminoffice{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">مدیر زائرسرا</div>
+      <div class="value">مدیر زائرسرا</div>
      </div>
     </a>
    </div>
 
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'admin' %}active{%endif%}" href='{{url.this}}?job=admin{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'admin' %}active{%endif%}" href='{{url.this}}?job=admin{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">مدیر کاروان</div>
+      <div class="value">مدیر کاروان</div>
      </div>
     </a>
    </div>
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'missionary' %}active{%endif%}" href='{{url.this}}?job=missionary{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'missionary' %}active{%endif%}" href='{{url.this}}?job=missionary{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">مبلغ</div>
+      <div class="value">مبلغ</div>
      </div>
     </a>
    </div>
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'servant' %}active{%endif%}" href='{{url.this}}?job=servant{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'servant' %}active{%endif%}" href='{{url.this}}?job=servant{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">نگهبان</div>
+      <div class="value">نگهبان</div>
      </div>
     </a>
    </div>
 
 
    <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'maddah' %}active{%endif%}" href='{{url.this}}?job=maddah{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'maddah' %}active{%endif%}" href='{{url.this}}?job=maddah{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">مداح</div>
+      <div class="value">مداح</div>
      </div>
     </a>
    </div>
 
     <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'rabet' %}active{%endif%}" href='{{url.this}}?job=rabet{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'rabet' %}active{%endif%}" href='{{url.this}}?job=rabet{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">رابط</div>
+      <div class="value">رابط</div>
      </div>
     </a>
    </div>
 
 
    <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'nazer' %}active{%endif%}" href='{{url.this}}?job=nazer{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'nazer' %}active{%endif%}" href='{{url.this}}?job=nazer{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">ناظر</div>
+      <div class="value">ناظر</div>
      </div>
     </a>
    </div>
 
 
    <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'khadem' %}active{%endif%}" href='{{url.this}}?job=khadem{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'khadem' %}active{%endif%}" href='{{url.this}}?job=khadem{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">خادم</div>
+      <div class="value">خادم</div>
      </div>
     </a>
    </div>
 
 
    <div class="c s6">
-    <a class="dcard {%if requestGET.job == 'clergy' %}active{%endif%}" href='{{url.this}}?job=clergy{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
+    <a class="dcard x07 {%if requestGET.job == 'clergy' %}active{%endif%}" href='{{url.this}}?job=clergy{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>
      <div class="statistic">
-      <div class="label">روحانی کاروان</div>
+      <div class="value">روحانی کاروان</div>
      </div>
     </a>
    </div>
 
 
   </div>
-  <div class="f msg primary2">
+  <div class="f msg">
     <p>ارزیابی توسط</p>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'adminoffice' %}active{%endif%}" href='{{url.this}}?job_for=adminoffice{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مدیر زائرسرا</a>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'admin' %}active{%endif%}" href='{{url.this}}?job_for=admin{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مدیر کاروان</a>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'missionary' %}active{%endif%}" href='{{url.this}}?job_for=missionary{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مبلغ</a>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'servant' %}active{%endif%}" href='{{url.this}}?job_for=servant{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>نگهبان</a>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'maddah' %}active{%endif%}" href='{{url.this}}?job_for=maddah{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مداح</a>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'rabet' %}active{%endif%}" href='{{url.this}}?job_for=rabet{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>رابط</a>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'nazer' %}active{%endif%}" href='{{url.this}}?job_for=nazer{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>ناظر</a>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'khadem' %}active{%endif%}" href='{{url.this}}?job_for=khadem{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>خادم</a>
-    <a class="btn c mLa5 primary {%if requestGET.job_for == 'clergy' %}active{%endif%}" href='{{url.this}}?job_for=clergy{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>روحانی کاروان</a>
-
-
-
-
-
-
-
-
+    <a class="btn c mLa5 {%if requestGET.job_for == 'adminoffice'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=adminoffice{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مدیر زائرسرا</a>
+    <a class="btn c mLa5 {%if requestGET.job_for == 'admin'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=admin{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مدیر کاروان</a>
+    <a class="btn c mLa5 {%if requestGET.job_for == 'missionary'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=missionary{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مبلغ</a>
+    <a class="btn c mLa5 {%if requestGET.job_for == 'servant'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=servant{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>نگهبان</a>
+    <a class="btn c mLa5 {%if requestGET.job_for == 'maddah'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=maddah{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>مداح</a>
+    <a class="btn c mLa5 {%if requestGET.job_for == 'rabet'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=rabet{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>رابط</a>
+    <a class="btn c mLa5 {%if requestGET.job_for == 'nazer'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=nazer{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>ناظر</a>
+    <a class="btn c mLa5 {%if requestGET.job_for == 'khadem'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=khadem{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>خادم</a>
+    <a class="btn c mLa5 {%if requestGET.job_for == 'clergy'%} active primary {%else%} primary2 {%endif%} " href='{{url.this}}?job_for=clergy{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.city%}&city={{requestGET.city}}{%endif%}'>روحانی کاروان</a>
 
   </div>
 {%if dataTable%}
@@ -176,7 +164,7 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative'{%endif%}>
 
-        <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}"><i class="sf-edit"></i> {{value.title}}</a></td>
+        <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}"><i class="sf-edit"></i> {{value.title}}</a></td>
 
 
         <td>{%if value.job%}{%set myGender = value.job%}{%trans myGender%}{%else%}<small class="fc08 fc-mute">{%trans "For all jobs"%}</small>{%endif%}</td>
@@ -186,7 +174,7 @@
 
 
 
-        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}">{%trans myStatus%}</a></td>
+        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}">{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
     </tbody>

@@ -21,7 +21,13 @@ class model
 		{
 			if(isset($result['id']))
 			{
-				\dash\redirect::to(\dash\url::this(). '/edit?id='. $result['id']. \dash\data::xCityAnd());
+				$url_get            = [];
+				$url_get['id']      = $result['id'];
+				$url_get['city']    = \dash\request::get('city');
+				$url_get['job']     = \dash\request::get('job');
+				$url_get['job_for'] = \dash\request::get('job_for');
+
+				\dash\redirect::to(\dash\url::this(). '/edit?'. http_build_query($url_get));
 			}
 			else
 			{

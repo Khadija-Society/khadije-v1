@@ -12,7 +12,12 @@ class view
 
 		\dash\data::page_pictogram('box');
 
-		\dash\data::badge_link(\dash\url::this(). '/add'. \dash\data::xCityStart());
+		$url_get            = [];
+		$url_get['city']    = \dash\request::get('city');
+		$url_get['job']     = \dash\request::get('job');
+		$url_get['job_for'] = \dash\request::get('job_for');
+
+		\dash\data::badge_link(\dash\url::this(). '/add?'. http_build_query($url_get));
 		\dash\data::badge_text(T_('Add new assessmentitem'));
 
 
@@ -41,6 +46,8 @@ class view
 
 			$args['1.1'] =[' = 1.1 ', " AND ( city is null or city = '$city')"];
 		}
+
+		$args['4.4'] = [' = 4.4 ', " AND status != 'deleted' "];
 
 		if(\dash\request::get('status'))
 		{
@@ -73,6 +80,7 @@ class view
 		unset($check_empty_datatable['1.1']);
 		unset($check_empty_datatable['2.2']);
 		unset($check_empty_datatable['3.3']);
+		unset($check_empty_datatable['4.4']);
 		unset($check_empty_datatable['order']);
 		unset($check_empty_datatable['pagenation']);
 

@@ -10,7 +10,13 @@ class view
 		\dash\data::page_desc(T_('Edit name or description of this assessmentitem or change status of it.'));
 		\dash\data::page_pictogram('edit');
 
-		\dash\data::badge_link(\dash\url::this(). \dash\data::xCityStart());
+				$url_get            = [];
+		$url_get['city']    = \dash\request::get('city');
+		$url_get['job']     = \dash\request::get('job');
+		$url_get['job_for'] = \dash\request::get('job_for');
+
+		\dash\data::badge_link(\dash\url::this(). '?'. http_build_query($url_get));
+
 		\dash\data::badge_text(T_('Back to list of Assessmentitems'));
 
 		$id     = \dash\request::get('id');

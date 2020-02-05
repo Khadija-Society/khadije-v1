@@ -24,7 +24,12 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::here(). '/assessmentitem'. \dash\data::xCityStart());
+			$url_get            = [];
+			$url_get['city']    = \dash\request::get('city');
+			$url_get['job']     = \dash\request::get('job');
+			$url_get['job_for'] = \dash\request::get('job_for');
+
+			\dash\redirect::to(\dash\url::here(). '/assessmentitem?'. http_build_query($url_get));
 		}
 
 	}

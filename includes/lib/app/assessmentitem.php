@@ -97,7 +97,7 @@ class assessmentitem
 
 
 		$status = \dash\app::request('status');
-		if($status && !in_array($status, ['enable', 'disable']))
+		if($status && !in_array($status, ['enable', 'disable', 'deleted']))
 		{
 			\dash\notif::error(T_("Invalid status of assessmentitem"), 'status');
 			return false;
