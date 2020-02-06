@@ -27,6 +27,7 @@ class view
 		[
 			'sort'  => \dash\request::get('sort'),
 			'order' => \dash\request::get('order'),
+			'limit' => 20
 		];
 
 		if(!$args['order'])
@@ -37,7 +38,7 @@ class view
 
 		if(!$args['sort'])
 		{
-			$args['sort'] = 'sort';
+			$args['sort'] = 'startdate';
 		}
 
 		if(\dash\request::get('job'))

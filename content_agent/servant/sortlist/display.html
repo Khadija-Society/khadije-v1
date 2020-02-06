@@ -106,7 +106,7 @@
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
         <td class="collapsing"><img src="{{value.avatar}}" class="avatar"></td>
 
-        <td><a href="{{url.here}}/send/add?user={{value.user_id}}&sid={{value.id}}&city={{value.city}}&job={{value.job}}"><i class="sf-out"></i> {{value.displayname}}</a></td>
+        <td><a href="{{url.here}}/send/add?user={{value.user_id}}&sid={{value.id}}&city={{value.city}}&job={{value.job}}">{{value.displayname}}</a></td>
         <td>{{value.mobile| fitNumber('mobile')}}</td>
 
 
