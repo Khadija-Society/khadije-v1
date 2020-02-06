@@ -836,6 +836,7 @@ class send
 				self::make_my_record($new, $value, 'khadem2');
 			}
 		}
+
 		return $new;
 	}
 
@@ -850,7 +851,7 @@ class send
 			'adminoffice' => ['title' => "مدیر زائر سرا"],
 			'missionary'  => ['title' => "مبلغ"],
 			'servant'     => ['title' => "نگهبان"],
-			'servant2'    => ['title' => "نگهبان ۲"],
+			// 'servant2'    => ['title' => "نگهبان ۲"],
 			'maddah'      => ['title' => "مداح"],
 			'nazer'       => ['title' => "ناظر"],
 			'rabet'       => ['title' => "ناظر"],

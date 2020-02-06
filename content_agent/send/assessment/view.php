@@ -197,7 +197,6 @@ class view
 
 		$load_assessment = \lib\db\assessment::get(['agent_assessment.send_id' => $send_id]);
 
-
 		$send_detail = \dash\data::dataRow();
 		foreach ($load_assessment as $key => $value)
 		{
@@ -233,7 +232,6 @@ class view
 				}
 			}
 		}
-
 
 		\dash\data::assessmentList($sort);
 
