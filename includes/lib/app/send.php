@@ -801,15 +801,15 @@ class send
 				self::make_my_record($new, $value, 'missionary');
 			}
 
-			if(isset($value['servant_id']) && $value['servant_id'] === $user_code)
-			{
-				self::make_my_record($new, $value, 'servant');
-			}
+			// if(isset($value['servant_id']) && $value['servant_id'] === $user_code)
+			// {
+			// 	self::make_my_record($new, $value, 'servant');
+			// }
 
-			if(isset($value['servant2_id']) && $value['servant2_id'] === $user_code)
-			{
-				self::make_my_record($new, $value, 'servant2');
-			}
+			// if(isset($value['servant2_id']) && $value['servant2_id'] === $user_code)
+			// {
+			// 	self::make_my_record($new, $value, 'servant2');
+			// }
 
 			if(isset($value['maddah_id']) && $value['maddah_id'] === $user_code)
 			{
