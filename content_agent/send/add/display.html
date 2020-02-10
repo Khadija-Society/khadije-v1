@@ -87,12 +87,7 @@
           <input type="hidden" name="user" value="{{requestGET.user}}">
           <input type="hidden" name="missionary" value="{{requestGET.user}}">
 
-          {{block('imodir')}}
-          {{block('imaddahList')}}
-          {{block('iRabetList')}}
-          {{block('inazerList')}}
-          {{block('ikhademList')}}
-          {{block('ikhadem2List')}}
+
 
 
 
@@ -120,6 +115,14 @@
             </div>
 
           </div>
+
+          {{block('imodir')}}
+          {{block('imaddahList')}}
+          {{block('iRabetList')}}
+          {{block('inazerList')}}
+          {{block('ikhademList')}}
+          {{block('ikhadem2List')}}
+
           <div class="txtRa">
           {%if url.child == 'add'%}
             <button class="btn success mT10">ثبت اعزام جدید</button>
