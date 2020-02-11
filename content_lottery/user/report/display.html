@@ -1,0 +1,60 @@
+{%extends 'content_lottery/layout.html'%}
+
+
+{%block pageContent%}
+{%include 'content_lottery/user/nav.html'%}
+
+{%if dataTable%}
+<table class="tbl1 v6">
+	<thead>
+		<th>#</th>
+		<th>{%trans "Province"%}</th>
+		<th>{%trans "Count"%}</th>
+	</thead>
+	<tbody>
+		{%for key, value in dataTable%}
+		<tr>
+			<td class="collapsing">{{(key + 1) | fitNumber}}</td>
+			<td>{{value.name}}</td>
+			<td>{{value.count | fitNumber}}</td>
+		</tr>
+		{%endfor%}
+	</tbody>
+</table>
+{%endif%}
+{%if chartProvinceData%}
+	<div class="chart" id="chartdiv" style="height:650px;max-height:650px"></div>
+{%endif%}
+
+{%if ReportDailyChart%}
+	<div class="chart" id="chartdiv2"></div>
+{%endif%}
+
+{%endblock%}
+
+
+
+{%block foot_js%}
+{%if chartProvinceData%}
+<script type="text/javascript">
+	{% include 'content_lottery/user/report/highmaps.js' %}
+</script>
+<script type="text/javascript">
+	{% include 'content_lottery/user/report/ir-all.js' %}
+</script>
+
+<script type="text/javascript">
+	{% include 'content_lottery/user/report/chart.js' %}
+</script>
+{%endif%}
+
+
+{%if ReportDailyChart%}
+<script type="text/javascript">
+	{% include 'content_lottery/user/report/chart2.js' %}
+</script>
+{%endif%}
+
+{%endblock%}
+
+

@@ -20,6 +20,12 @@
 {%endif%}
 
 
+
+{%if perm('contentLottery') %}
+        <li><a href="{{url.kingdom}}/lottery" {%if url.content == "lottery" %} class="activeContent"{%endif%}><i class='sf-atom'></i> <span>{% trans "Lottery system"%}</span></a></li>
+{%endif%}
+
+
 {%if perm('cpFestivalView') %}
         <li><a href="{{url.kingdom}}/m/festival" {%if url.content == "m" and url.module == "festival"%} class="activeContent"{%endif%}><i class='sf-magic'></i> <span>{% trans "Manage Festival"%}</span></a></li>
 {%endif%}

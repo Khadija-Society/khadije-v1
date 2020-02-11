@@ -59,6 +59,7 @@
 
 
         <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
+        <th class="collapsing">{%trans "Action"%}</th>
       </tr>
     </thead>
 
@@ -73,6 +74,7 @@
 
 
         <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xTypeAnd}}">{%trans myStatus%}</a></td>
+        <td class="collapsing"><a href="{{url.here}}/user?lid={{value.id}}" class="btn success">{%trans "Manage"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>

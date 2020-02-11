@@ -1,0 +1,169 @@
+{%extends 'content_lottery/layout.html'%}
+
+
+
+{%block pageContent%}
+
+{%include 'content_lottery/user/nav.html'%}
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.this}}' data-action>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+
+      {%if false and perm('exportKarbalaUsers') and perm_su() %}
+        <button data-timeout=0 data-confirm data-data='{"export": 1}' class="btn addon primary">{%trans "Export"%}</button>
+      {%endif%}
+    </div>
+  </form>
+</div>
+
+{%endblock%}
+
+
+{%block htmlTable%}
+<div class="tblBox">
+
+  <table class="tbl1 v6">
+    <thead class="primary fs09">
+      <tr>
+        <th>#</th>
+        <th>{%trans "Mobile"%}</th>
+        <th>{%trans "Firstname"%}</th>
+        <th>{%trans "Lastname"%}</th>
+        <th>{%trans "Nationalcode"%}</th>
+        <th>{%trans "Father"%}</th>
+        <th>{%trans "Gender"%}</th>
+        <th>{%trans "Married"%}</th>
+        <th>{%trans "Birthday"%}</th>
+        <th>{%trans "Province"%}</th>
+        <th>{%trans "City"%}</th>
+        <th>{%trans "Address"%}</th>
+        <th>{%trans "Phone"%}</th>
+
+        <th>{%trans "Date created"%}</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr {%if value.status=='disable' or value.status=='removed' or value.status=='filter' or value.status=='unreachable'%} class='negative' {%elseif value.status=='awaiting'%} class='warning' {%endif%}>
+        <td>{{value.id | fitNumber}}</td>
+        <td>{{value.mobile | fitNumber('mobile')}}</td>
+        <td>{{value.firstname}}</td>
+        <td>{{value.lastname}}</td>
+        <td>{{value.nationalcode | fitNumber(false)}}</td>
+        <td>{{value.father}}</td>
+        <td>{%set mygender = value.gender | capitalize%}{%trans mygender%}</td>
+        <td>{%set mymarried = value.married | capitalize%}{%trans mymarried%}</td>
+        <td>{{value.birthday | dt(true)}}</td>
+        <td>{{value.province_name}}</td>
+        <td>{{value.city_name}}</td>
+        <td>{{value.homeaddress}}</td>
+        <td>{{value.phone | fitNumber(false)}}</td>
+        <td>{{value.datecreated | dt(true) }}</td>
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+  {%include display.pagination%}
+
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg warn2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new user!"%}</a></p>
+{%endblock%}
+
+
+
+
+{%block stAll%}
+<a class="dcard {%if requestGET.type%}{%else%}active{%endif%}" href='{{url.this}}' data-shortkey="49shift">
+ <div class="statistic gray">
+  <div class="value"><i class="sf-users"></i><span>{{dashboardData.customer_count | fitNumber}}</span></div>
+  <div class="label">{%trans "All :Members"%} <kbd>Shift+1</kbd></div>
+ </div>
+</a>
+{%endblock%}
+
+{%block stExpert%}
+<a class="dcard {%if requestGET.type == 'expert'%}active{%endif%}" href='{{url.this}}?type=expert' data-shortkey="50shift">
+ <div class="statistic gray">
+  <div class="value"><i class="sf-user-md"></i><span>{{dashboardData.customer_count | fitNumber}}</span></div>
+  <div class="label">{%trans ":Experts"%} <kbd>Shift+2</kbd></div>
+ </div>
+</a>
+{%endblock%}
+
+
+{%block stTeacher%}
+<a class="dcard {%if requestGET.type == 'teacher'%}active{%endif%}" href='{{url.this}}?type=teacher' data-shortkey="51shift">
+ <div class="statistic orange">
+  <div class="value"><i class="sf-user-5"></i><span>{{dashboardData.staff_count | fitNumber}}</span></div>
+  <div class="label">{%trans ":Teachers"%} <kbd>Shift+3</kbd></div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block stStudent%}
+<a class="dcard {%if requestGET.type == 'student'%}active{%endif%}" href='{{url.this}}?type=student' data-shortkey="52shift">
+ <div class="statistic teal">
+  <div class="value"><i class="sf-user-4"></i><span class="fs08">{{dashboardData.supplier_count | fitNumber}}</span></div>
+  <div class="label">{%trans "Students"%} <kbd>Shift+4</kbd></div>
+ </div>
+</a>
+{%endblock%}
+
