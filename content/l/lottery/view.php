@@ -6,10 +6,11 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Signup karbala"));
-		\dash\data::page_desc(\dash\data::site_desc());
 
 		$winners = self::load_level();
+
+		\dash\data::page_title(\dash\data::myLottery_title());
+		\dash\data::page_desc(\dash\data::site_desc());
 
 		if(!$winners && \dash\request::get('sample'))
 		{
@@ -183,6 +184,16 @@ class view
 				\dash\header::status(404, T_("Invalid step"));
 				return false;
 			}
+
+			$load_lottery = \lib\app\syslottery::get_by_md5($md5);
+			if(!$load_lottery)
+			{
+				\dash\header::status(404);
+			}
+
+			\dash\data::myLottery($load_lottery);
+
+
 
 			$load_level = \lib\app\lotterywin::load_lottery('karbala2users', $md5, $step);
 			$msg = \dash\temp::get('lotteryLevelMessage');

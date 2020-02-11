@@ -7,6 +7,16 @@ namespace lib\app;
 class syslottery
 {
 
+	public static function get_by_md5($_md5)
+	{
+		$load = \lib\db\lottery::get(['url' => $_md5, 'limit' => 1]);
+		if(isset($load['table']))
+		{
+			$lottery_list = \lib\db\syslottery::get(['id' => $load['table'], 'limit' => 1]);
+			return $lottery_list;
+		}
+	}
+
 	public static function get($_id)
 	{
 		$id = \dash\coding::decode($_id);

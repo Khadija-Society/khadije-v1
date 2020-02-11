@@ -6,10 +6,12 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Signup karbala"));
+		$winners = self::load_level();
+
+
+		\dash\data::page_title(\dash\data::myLottery_title());
 		\dash\data::page_desc(\dash\data::site_desc());
 
-		$winners = self::load_level();
 
 		if(!$winners && \dash\request::get('sample'))
 		{
@@ -177,6 +179,16 @@ class view
 		{
 			$md5  = substr($level, 0, 32);
 			$step = substr($level, 32);
+
+
+			$load_lottery = \lib\app\syslottery::get_by_md5($md5);
+			if(!$load_lottery)
+			{
+				\dash\header::status(404);
+			}
+
+			\dash\data::myLottery($load_lottery);
+
 
 			if(!$step)
 			{
