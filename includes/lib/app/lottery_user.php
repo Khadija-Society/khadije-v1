@@ -97,7 +97,31 @@ class lottery_user
 
 		$lottery_id = \dash\coding::decode($lottery_id);
 
+		$isRequired =
+		[
+			'firstname'    => true,
+			'lastname'     => true,
+			'nationalcode' => true,
+			'mobile'       => true,
+			'gender'       => true,
 
+			'father'       => false,
+			'marital'      => false,
+			'birthdate'    => false,
+			'phone'        => false,
+			'city'         => false,
+			'address'      => false,
+		];
+		if(isset($load_lottery['requiredfield']))
+		{
+			$isRequired_temp = json_decode($load_lottery['requiredfield'], true);
+			if(!is_array($isRequired_temp))
+			{
+				$isRequired_temp = [];
+			}
+
+			$isRequired = array_merge($isRequired, $isRequired_temp);
+		}
 
 		$gender = \dash\app::request('gender');
 		if($gender && !in_array($gender, ['male', 'female']))
@@ -106,19 +130,25 @@ class lottery_user
 			return false;
 		}
 
-		if(!$gender)
+		if($isRequired['gender'])
 		{
-			\dash\notif::error(T_("Plese set your gender"), 'gender');
-			return false;
+			if(!$gender)
+			{
+				\dash\notif::error(T_("Plese set your gender"), 'gender');
+				return false;
+			}
 		}
 
 		$mobile = \dash\app::request('mobile');
 		$mobile = \dash\utility\filter::mobile($mobile);
 
-		if(!$mobile)
+		if($isRequired['mobile'])
 		{
-			\dash\notif::error(T_("Invalid mobile"), 'mobile');
-			return false;
+			if(!$mobile)
+			{
+				\dash\notif::error(T_("Invalid mobile"), 'mobile');
+				return false;
+			}
 		}
 
 
@@ -130,10 +160,13 @@ class lottery_user
 		}
 
 		$birthday = \dash\app::request('birthday');
-		if(!$birthday)
+		if($isRequired['birthdate'])
 		{
-			\dash\notif::error(T_("Birthday is required"), 'birthday');
-			return false;
+			if(!$birthday)
+			{
+				\dash\notif::error(T_("Birthday is required"), 'birthday');
+				return false;
+			}
 		}
 
 		if(\dash\app::isset_request('birthday') && $birthday)
@@ -204,11 +237,15 @@ class lottery_user
 
 
 		$father = \dash\app::request('father');
-		// if(!$father)
-		// {
-		// 	\dash\notif::error(T_("Father name is required"), 'father');
-		// 	return false;
-		// }
+		if($isRequired['father'])
+		{
+			if(!$father)
+			{
+				\dash\notif::error(T_("Father name is required"), 'father');
+				return false;
+			}
+		}
+
 		if($father && mb_strlen($father) > 50)
 		{
 			\dash\notif::error(T_("Invalid arguments father"), 'father');
@@ -277,11 +314,14 @@ class lottery_user
 			return false;
 		}
 
-		// if(!$homeaddress)
-		// {
-		// 	\dash\notif::error(T_("Address is required"), 'homeaddress');
-		// 	return false;
-		// }
+		if($isRequired['address'])
+		{
+			if(!$homeaddress)
+			{
+				\dash\notif::error(T_("Address is required"), 'homeaddress');
+				return false;
+			}
+		}
 
 		$workaddress = \dash\app::request('workaddress');
 		if($workaddress && mb_strlen($workaddress) > 700)
@@ -304,11 +344,14 @@ class lottery_user
 			return false;
 		}
 
-		// if(!$phone)
-		// {
-		// 	\dash\notif::error(T_("Phone is required"), 'phone');
-		// 	return false;
-		// }
+		if($isRequired['phone'])
+		{
+			if(!$phone)
+			{
+				\dash\notif::error(T_("Phone is required"), 'phone');
+				return false;
+			}
+		}
 
 		$displayname = \dash\app::request('displayname');
 		if($displayname && mb_strlen($displayname) > 90)
@@ -324,7 +367,7 @@ class lottery_user
 			return false;
 		}
 
-		if(\dash\app::isset_request('married'))
+		if($isRequired['marital'])
 		{
 			if(!$married)
 			{
@@ -389,10 +432,15 @@ class lottery_user
 			return false;
 		}
 
-		if(!$city)
+		if($isRequired['city'])
 		{
-			\dash\notif::error(T_("City is required"), 'city');
-			return false;
+
+			if(!$city)
+			{
+				\dash\notif::error(T_("City is required"), 'city');
+				return false;
+			}
+
 		}
 
 

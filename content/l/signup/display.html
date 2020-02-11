@@ -111,35 +111,56 @@
     {%if not disableLottery%}
     <form class="" method="post" autocomplete="off">
      <div class="f">
-      <div class="c6 s12 pRa5">{{block ('iname') }}</div>
-      <div class="c6 s12">{{block ('ifamily') }}</div>
+      <div class="c4 s12 pRa5">{{block ('iname') }}</div>
+      <div class="c4 s12 pRa5">{{block ('ifamily') }}</div>
+      <div class="c4 s12 pRa5">{{block ('igender') }}</div>
      </div>
 
      <div class="f mB10">
-      <div class="c6 s12">{{block ('igender') }}</div>
-      <div class="c6 s12">{{block ('iMarital') }}</div>
+      <div class="c6 s12">{{block ('incode') }}</div>
+      <div class="c6 s12"><div class="mLa5">{{block ('iMobileKarabala') }}</div></div>
+
      </div>
 
      <div class="f">
-      <div class="c4 s12 pRa5">{{block ('ifather') }}</div>
-      <div class="c4 s12 pRa5">{{block ('incode') }}</div>
-      <div class="c4 s12">{{block ('ibirthday') }}</div>
+
+     {%if myRequired.marital%}
+      <div class="c6 s12 pRa5">{{block ('iMarital') }}</div>
+     {%endif%}
+
+     {%if myRequired.father%}
+      <div class="c6 s12 pRa5">{{block ('ifather') }}</div>
+     {%endif%}
+
+
+     {%if myRequired.birthdate%}
+      <div class="c6 s12 pRa5">{{block ('ibirthday') }}</div>
+     {%endif%}
+
+
+     {%if myRequired.phone%}
+      <div class="c6 s12 pRa5">{{block ('iPhone') }}</div>
+     {%endif%}
+
+      {%if myRequired.city%}
+      <div class="c6 s12 pRa5">{{block ('icity') }}</div>
+     {%endif%}
+
+
+      {%if myRequired.address%}
+      {{block ('iAddress') }}
+     {%endif%}
      </div>
+
+
+
+
+
 
      <div class="f">
       {%include display.hive%}
      </div>
 
-     <div class="f">
-
-      <div class="c4 pRa5 s12">{{block ('iMobileKarabala') }}</div>
-      <div class="c4 pRa5 s12 ">{{block ('iPhone') }}</div>
-      <div class="c4 pRa5 s12 pRa5">{{block ('icity') }}</div>
-     </div>
-
-     <div class="f">
-      <div class="c12 s12 pRa5">{{block ('iAddress') }}</div>
-     </div>
 
       {%if myLottery.agreemessage%}
        <div class="msg warn mT10">

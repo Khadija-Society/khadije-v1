@@ -23,8 +23,13 @@ class controller
 		}
 
 		\dash\data::myLottery($load);
+
 		\dash\data::lotteryId($lottery_id);
 
+		if(isset($load['requiredfield']))
+		{
+			\dash\data::myRequired(json_decode($load['requiredfield'], true));
+		}
 		\dash\open::get();
 		\dash\open::post();
 
