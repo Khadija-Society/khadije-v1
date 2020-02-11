@@ -5,18 +5,81 @@
   <div class="justify-center f">
    <form method="post" class="c5 m6 s12" autocomplete="off">
    	<div class="cbox">
-     {{block('ititle')}}
-     {{block('iSubtitle')}}
+      <h4>{%trans "Required field"%}</h4>
 
-     {{block('idesc')}}
+      <div class="switch1">
+      <input type="checkbox" name="firstname" id="firstname" checked disabled>
+      <label for="firstname"></label>
+      <label for="firstname">{%trans "First name"%}</label>
+    </div>
 
-      {{block('termsAndCondition')}}
-      {{block('iagreemessage')}}
-      {{block('isignupmessage')}}
-      {{block('ilotterytitle')}}
-      {{block('ilotteryfooter')}}
+    <div class="switch1 mT10">
+      <input type="checkbox" name="lastname" id="lastname" checked disabled>
+      <label for="lastname"></label>
+      <label for="lastname">{%trans "Last name"%}</label>
+    </div>
 
-     {{block('iStatus')}}
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="nationalcode" id="nationalcode" checked disabled>
+      <label for="nationalcode"></label>
+      <label for="nationalcode">{%trans "National code"%}</label>
+    </div>
+
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="mobile" id="mobile" checked disabled>
+      <label for="mobile"></label>
+      <label for="mobile">{%trans "Mobile"%}</label>
+    </div>
+
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="father" id="father" {% if requiredfield.father %} checked {%endif%} >
+      <label for="father"></label>
+      <label for="father">{%trans "Father name"%}</label>
+    </div>
+
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="gender" id="gender" {% if requiredfield.gender %} checked {%endif%} >
+      <label for="gender"></label>
+      <label for="gender">{%trans "Gender"%}</label>
+    </div>
+
+
+      <div class="switch1 mT10">
+      <input type="checkbox" name="marital" id="marital" {% if requiredfield.marital %} checked {%endif%} >
+      <label for="marital"></label>
+      <label for="marital">{%trans "Marital"%}</label>
+    </div>
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="birthdate" id="birthdate" {% if requiredfield.birthdate %} checked {%endif%} >
+      <label for="birthdate"></label>
+      <label for="birthdate">{%trans "Birthdate"%}</label>
+    </div>
+
+      <div class="switch1 mT10">
+      <input type="checkbox" name="phone" id="phone" {% if requiredfield.phone %} checked {%endif%} >
+      <label for="phone"></label>
+      <label for="phone">{%trans "Phone"%}</label>
+    </div>
+
+      <div class="switch1 mT10">
+      <input type="checkbox" name="city" id="city" {% if requiredfield.city %} checked {%endif%} >
+      <label for="city"></label>
+      <label for="city">{%trans "City"%}</label>
+    </div>
+
+
+  <div class="switch1 mT10">
+      <input type="checkbox" name="address" id="address" {% if requiredfield.address %} checked {%endif%} >
+      <label for="address"></label>
+      <label for="address">{%trans "Address"%}</label>
+    </div>
+
+
 
      {{block('isave')}}
    	</div>
@@ -25,42 +88,3 @@
 
 {%endblock%}
 
-
-
-{%block termsAndCondition%}
-<label for="termandcondition">{%trans "Terms and condition"%}</label>
-<textarea class="txt mB10" id='termandcondition' name="termandcondition"  maxlength='5000' rows="5">{{dataRow.termandcondition}}</textarea>
-{%endblock%}
-
-
-
-
-
-{% block iagreemessage %}
-<label for="agreemessage">{%trans "Agree message"%}</label>
-<div class="input">
-  <input type="text" name="agreemessage" id="agreemessage" value="{{dataRow.agreemessage}}"  maxlength='200' minlength="1" >
-</div>
-{% endblock %}
-
-
-{% block isignupmessage %}
-<label for="signupmessage">{%trans "Signup message"%}</label>
-<div class="input">
-  <input type="text" name="signupmessage" id="signupmessage" value="{{dataRow.signupmessage}}"  maxlength='200' minlength="1" >
-</div>
-{% endblock %}
-
-{% block ilotterytitle %}
-<label for="lotterytitle">{%trans "Lottery public live page title"%}</label>
-<div class="input">
-  <input type="text" name="lotterytitle" id="lotterytitle" value="{{dataRow.lotterytitle}}"  maxlength='200' minlength="1" >
-</div>
-{% endblock %}
-
-{% block ilotteryfooter %}
-<label for="lotteryfooter">{%trans "Lotter public live page footer"%}</label>
-<div class="input">
-  <input type="text" name="lotteryfooter" id="lotteryfooter" value="{{dataRow.lotteryfooter}}"  maxlength='200' minlength="1" >
-</div>
-{% endblock %}

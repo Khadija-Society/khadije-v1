@@ -22,6 +22,10 @@ class view
 		}
 
 		\dash\data::dataRow($result);
+		if(isset($result['requiredfield']))
+		{
+			\dash\data::requiredfield(json_decode($result['requiredfield'], true));
+		}
 
 	}
 }
