@@ -44,6 +44,8 @@
   </a>
 </div>
 
+{%if perm('AddEditLottery')%}
+
 <div class="cauto s6">
   <a class="dcard " href='{{url.here}}/item/edit?id={{requestGET.lid}}' data-direct>
    <div class="statistic">
@@ -52,4 +54,5 @@
    </div>
   </a>
 </div>
+{%endif%}
 </div>

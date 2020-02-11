@@ -33,6 +33,37 @@ class controller
 		{
 			self::lottery_id();
 
+			if(\dash\permission::check(md5(rand())))
+			{
+				// is admin. nothing
+			}
+			else
+			{
+
+				$permission = \dash\data::myLottery_permission();
+				if($permission && is_string($permission))
+				{
+					$permission = json_decode($permission, true);
+				}
+				$is_ok = false;
+
+				if(is_array($permission))
+				{
+					$myUserCode = \dash\user::id();
+					$myUserCode = \dash\coding::encode($myUserCode);
+					if(in_array($myUserCode, $permission))
+					{
+						$is_ok = true;
+					}
+				}
+
+				if(!$is_ok)
+				{
+					\dash\header::status(403);
+				}
+
+			}
+
 			$xLid = \dash\request::get('lid');
 
 			$get = \dash\request::get();
