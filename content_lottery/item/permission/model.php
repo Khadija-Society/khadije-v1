@@ -6,31 +6,18 @@ class model
 {
 	public static function post()
 	{
-		// \dash\permission::access('mPlaceEdit');
-
-		$post =
-		[
-			'title'       => \dash\request::post('title'),
-			'subtitle'    => \dash\request::post('subtitle'),
-			'desc'        => \dash\request::post('desc'),
-			'status'      => \dash\request::post('status'),
-
-
-			'termandcondition' => \dash\request::post('termandcondition'),
-			'agreemessage' => \dash\request::post('agreemessage'),
-			// 'requiredfield' => \dash\request::post('requiredfield'),
-			// 'permission' => \dash\request::post('permission'),
-			'signupmessage' => \dash\request::post('signupmessage'),
-			'lotterytitle' => \dash\request::post('lotterytitle'),
-			'lotteryfooter' => \dash\request::post('lotteryfooter'),
-		];
-
-
-		$file = \dash\app\file::upload_quick('file');
-		if($file)
+		$perm    = [];
+		$allpost = \dash\request::post();
+		foreach ($allpost as $key => $value)
 		{
-			$post['file'] = $file;
+			if(substr($key, 0, 5) === 'perm_')
+			{
+				$perm[] = substr($key, 5);
+			}
 		}
+
+		$post['permission'] = json_encode($perm, JSON_UNESCAPED_UNICODE);
+
 
 		\lib\app\syslottery::edit($post, \dash\request::get('id'));
 
