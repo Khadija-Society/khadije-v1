@@ -7,6 +7,7 @@
    	<div class="cbox">
 
   {%if whoHavePerm%}
+
   <h4>افرادی که می‌توانند به این قرعه‌کشی دسترسی داشته باشند <br><small>درصورتی که شخصی را انتخاب نکنید همه افراد زیر امکان دسترسی را دارند</small></h4>
 
   {%for key, value in whoHavePerm%}
@@ -15,10 +16,14 @@
    <label for="perm_{{value.id}}"></label>
    <label for="perm_{{value.id}}">{{value.firstname}} <b>{{value.lastname}}</b></label>
   </div>
+     {{block('isave')}}
   {%endfor%}
+  {%else%}
+  <p>هیچ شخصی با سطح دسترسی قرعه‌کشی یافت نشد
+
+  </p>
   {%endif%}
 
-     {{block('isave')}}
    	</div>
    </form>
   </div>

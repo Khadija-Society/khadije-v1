@@ -28,6 +28,12 @@
 
 
     <div class="switch1 mT10">
+      <input type="checkbox" name="gender" id="gender" checked disabled >
+      <label for="gender"></label>
+      <label for="gender">{%trans "Gender"%}</label>
+    </div>
+
+    <div class="switch1 mT10">
       <input type="checkbox" name="mobile" id="mobile" checked disabled>
       <label for="mobile"></label>
       <label for="mobile">{%trans "Mobile"%}</label>
@@ -41,11 +47,6 @@
     </div>
 
 
-    <div class="switch1 mT10">
-      <input type="checkbox" name="gender" id="gender" {% if requiredfield.gender %} checked {%endif%} >
-      <label for="gender"></label>
-      <label for="gender">{%trans "Gender"%}</label>
-    </div>
 
 
       <div class="switch1 mT10">

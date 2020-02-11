@@ -15,7 +15,7 @@ class model
 			// 'nationalcode' => \dash\request::post('nationalcode') ? true : false,
 			// 'mobile'       => \dash\request::post('mobile') ? true : false,
 			'father'       => \dash\request::post('father') ? true : false,
-			'gender'       => \dash\request::post('gender') ? true : false,
+			// 'gender'       => \dash\request::post('gender') ? true : false,
 			'marital'      => \dash\request::post('marital') ? true : false,
 			'birthdate'    => \dash\request::post('birthdate') ? true : false,
 			'phone'        => \dash\request::post('phone') ? true : false,

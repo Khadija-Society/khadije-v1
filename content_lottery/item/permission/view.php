@@ -23,7 +23,8 @@ class view
 
 		\dash\data::dataRow($result);
 
-		$who_have = \dash\permission::who_have('ContentLottery');
+		$who_have = \dash\permission::who_have('ContentLottery', false);
+
 		if($who_have)
 		{
 			$who_have = implode("','", $who_have);
