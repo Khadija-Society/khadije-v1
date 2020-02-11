@@ -24,6 +24,11 @@ class controller
 
 		\dash\permission::access('contentLottery');
 
+		if(\dash\url::module() === 'item')
+		{
+			\dash\permission::access('AddEditLottery');
+		}
+
 		if(\dash\url::module() === 'user')
 		{
 			self::lottery_id();

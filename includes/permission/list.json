@@ -536,6 +536,11 @@
     "cat": "Lottery",
     "require": []
   },
+  "AddEditLottery": {
+    "title": "AddEditLottery",
+    "cat": "Lottery",
+    "require": []
+  },
   "contentCrm": {
     "title": "contentCrm",
     "cat": "Manage customer",

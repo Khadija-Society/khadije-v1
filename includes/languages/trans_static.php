@@ -322,6 +322,7 @@ class TransStatic
 	echo T_("contentLottery");
 	echo T_("contentCrm");
 	echo T_("Manage customer");
+	echo T_("AddEditLottery");
  }
 }
 ?>
