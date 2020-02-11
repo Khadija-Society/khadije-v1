@@ -1,0 +1,28 @@
+{%extends display.main%}
+
+
+{%block pageData%}
+<div class="f justify-center">
+ <div class="c10 s12">
+
+ 		{%if myList%}
+			<div class="f">
+
+			{%for key, value in myList%}
+			<div class="c6 s12 pA10">
+				<div class="dcard grShadow grGreen2 x3 op100">
+				  <a class="mB25 fcWhite900 fs20" href='{{url.this}}/signup/{{value.id}}'>{{value.title}}</a>
+				  <p>{{value.subtitle}}</p>
+				</div>
+			</div>
+			{%endfor%}
+			</div>
+			{%else%}
+			<div class="msg warn txtB txtC fs50">هیچ موکب فعالی یافت نشد</div>
+			{%endif%}
+
+ </div>
+</div>
+{%endblock%}
+
+

@@ -64,10 +64,10 @@ class lottery_user
 		return \dash\db\config::public_update('lottery_user', ...func_get_args());
 	}
 
-	public static function get_last_id()
+	public static function count_signup($_lottery_id)
 	{
-		$query = "SELECT lottery_user.id AS `id` FROM lottery_user ORDER BY lottery_user.id DESC LIMIT 1";
-		$result = \dash\db::get($query, 'id', true);
+		$query = "SELECT COUNT(*) AS `count` FROM lottery_user WHERE lottery_user.lottery_id = $_lottery_id";
+		$result = \dash\db::get($query, 'count', true);
 		return intval($result);
 	}
 

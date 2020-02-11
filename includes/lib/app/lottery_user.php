@@ -79,6 +79,25 @@ class lottery_user
 
 		$_option = array_merge($default_option, $_option);
 
+		$lottery_id = \dash\app::request('lottery_id');
+		$load_lottery = \lib\app\syslottery::get($lottery_id);
+
+
+		if(!$load_lottery || !isset($load_lottery['id']) || !isset($load_lottery['status']))
+		{
+			\dash\notif::error(T_("Invalid lottery"));
+			return false;
+		}
+
+		if($load_lottery['status'] !== 'enable')
+		{
+			\dash\notif::error(T_("This lottery is not enable!"));
+			return false;
+		}
+
+		$lottery_id = \dash\coding::decode($lottery_id);
+
+
 
 		$gender = \dash\app::request('gender');
 		if($gender && !in_array($gender, ['male', 'female']))
@@ -409,6 +428,7 @@ class lottery_user
 			$args['nationalcode']    = null;
 		}
 		$args['father']          = $father;
+		$args['lottery_id']          = $lottery_id;
 		$args['pasportcode']     = $pasportcode;
 		$args['pasportdate']     = $pasportdate;
 		$args['education']       = $education;
@@ -545,6 +565,7 @@ class lottery_user
 			$check_duplicate =
 			[
 				'nationalcode' => $args['nationalcode'],
+				'lottery_id'   => $args['lottery_id'],
 				'limit'        => 1,
 			];
 			$check_duplicate = \lib\db\lottery_user::get($check_duplicate);
@@ -560,32 +581,6 @@ class lottery_user
 			return false;
 		}
 
-		// if(!\dash\app::isset_request('avatar'))         unset($args['avatar']);
-		// if(!\dash\app::isset_request('gender')) 		unset($args['gender']);
-		// if(!\dash\app::isset_request('email')) 			unset($args['email']);
-		// if(!\dash\app::isset_request('birthday')) 		unset($args['birthday']);
-		// if(!\dash\app::isset_request('firstname')) 		unset($args['firstname']);
-		// if(!\dash\app::isset_request('lastname')) 		unset($args['lastname']);
-		// if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
-		// if(!\dash\app::isset_request('nationalcode')) 	unset($args['nationalcode']);
-		// if(!\dash\app::isset_request('father')) 		unset($args['father']);
-		// if(!\dash\app::isset_request('pasportcode')) 	unset($args['pasportcode']);
-		// if(!\dash\app::isset_request('pasportdate')) 	unset($args['pasportdate']);
-		// if(!\dash\app::isset_request('education')) 		unset($args['education']);
-		// if(!\dash\app::isset_request('educationcourse')) unset($args['educationcourse']);
-		// // if(!\dash\app::isset_request('country')) 		unset($args['country']);
-		// // if(!\dash\app::isset_request('province')) 		unset($args['province']);
-		// if(!\dash\app::isset_request('city')) 			unset($args['city']);
-		// if(!\dash\app::isset_request('homeaddress')) 	unset($args['homeaddress']);
-		// if(!\dash\app::isset_request('workaddress')) 	unset($args['workaddress']);
-		// if(!\dash\app::isset_request('arabiclang')) 	unset($args['arabiclang']);
-		// if(!\dash\app::isset_request('phone')) 			unset($args['phone']);
-		// if(!\dash\app::isset_request('displayname')) 	unset($args['displayname']);
-		// if(!\dash\app::isset_request('married')) 		unset($args['married']);
-		// if(!\dash\app::isset_request('zipcode')) 		unset($args['zipcode']);
-		// if(!\dash\app::isset_request('desc')) 			unset($args['desc']);
-		// if(!\dash\app::isset_request('job')) 			unset($args['job']);
-		// if(!\dash\app::isset_request('nesbat')) 		unset($args['nesbat']);
 
 
 		$id = \lib\db\lottery_user::insert($args);
@@ -607,13 +602,14 @@ class lottery_user
 				}
 				else
 				{
+					unset($args['lottery_id']);
 					$user_id = \dash\db\users::signup($args);
 				}
-				\dash\log::set('karbala2UserSignup', ['code' => $id, 'to' => $user_id]);
+				\dash\log::set('lotetry', ['code' => $id, 'to' => $user_id]);
 			}
 			else
 			{
-				\dash\log::set('karbala2UserSignupWithoutmobile', ['code' => $id]);
+				\dash\log::set('lotetryWithoutmobile', ['code' => $id]);
 			}
 		}
 
