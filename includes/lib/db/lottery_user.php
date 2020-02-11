@@ -39,16 +39,16 @@ class lottery_user
 	}
 
 
-	public static function chart_province()
+	public static function chart_province($_lottery_id)
 	{
-		$query = "SELECT COUNT(*) AS `count`, lottery_user.province FROM lottery_user GROUP BY lottery_user.province ORDER BY COUNT(*) DESC";
+		$query = "SELECT COUNT(*) AS `count`, lottery_user.province FROM lottery_user WHERE lottery_user.lottery_id = $_lottery_id GROUP BY lottery_user.province ORDER BY COUNT(*) DESC";
 		$result = \dash\db::get($query, ['province', 'count']);
 		return $result;
 	}
 
-	public static function daily_chart()
+	public static function daily_chart($_lottery_id)
 	{
-		$query = "SELECT COUNT(*) AS `count`, DATE(lottery_user.datecreated) AS `date` FROM lottery_user GROUP BY DATE(lottery_user.datecreated) ORDER BY DATE(lottery_user.datecreated) ASC";
+		$query = "SELECT COUNT(*) AS `count`, DATE(lottery_user.datecreated) AS `date` FROM lottery_user WHERE lottery_user.lottery_id = $_lottery_id GROUP BY DATE(lottery_user.datecreated) ORDER BY DATE(lottery_user.datecreated) ASC";
 		$result = \dash\db::get($query);
 		return $result;
 	}

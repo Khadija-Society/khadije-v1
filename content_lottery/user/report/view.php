@@ -6,11 +6,11 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('koyeMohebbat');
+
 
 		\dash\data::page_pictogram('chart');
 
-		\dash\data::page_title('ثبت‌نامی‌های کربلا - برنامه کوی محبت');
+		\dash\data::page_title('ثبت‌نامی‌های '. \dash\data::myLottery_title());
 		// \dash\data::page_desc(T_('Sale your product via Jibres and enjoy using integrated web base platform.'));
 
 		\dash\data::badge_text(T_('Back'));
@@ -22,19 +22,19 @@ class view
 		switch ($subchild)
 		{
 			case 'provincelist':
-				$dataTable = \lib\app\karbala2user::chart_province_list();
+				$dataTable = \lib\app\lottery_user::chart_province_list(\dash\data::myLotteryId());
 				\dash\data::dataTable($dataTable);
 
 				break;
 
 			case 'map':
 				\dash\data::include_highcharts(false);
-				$chartProvinceData = \lib\app\karbala2user::chart_province();
+				$chartProvinceData = \lib\app\lottery_user::chart_province(\dash\data::myLotteryId());
 				\dash\data::chartProvinceData($chartProvinceData);
 				break;
 
 			default:
-				$ReportDailyChart = \lib\app\karbala2user::daily_chart();
+				$ReportDailyChart = \lib\app\lottery_user::daily_chart(\dash\data::myLotteryId());
 				\dash\data::ReportDailyChart($ReportDailyChart);
 				break;
 		}

@@ -6,7 +6,6 @@ class view
 
 	public static function config()
 	{
-		\dash\permission::access('koyeMohebbat');
 		\dash\data::page_pictogram('atom');
 		\dash\data::page_title('نفرات انتخاب شده در این مرحله');
 

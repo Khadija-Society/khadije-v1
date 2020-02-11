@@ -4,76 +4,52 @@ namespace content_lottery;
 
 class controller
 {
+	public static function lottery_id()
+	{
+		$lottery_id = \dash\request::get('lid');
+		$load = \lib\app\syslottery::get($lottery_id);
+		if(!$load)
+		{
+			\dash\header::status(404, T_("Invalid id"));
+
+		}
+		\dash\data::myLottery($load);
+		\dash\data::myLotteryId(\dash\coding::decode($lottery_id));
+
+	}
+
+
 	public static function routing()
 	{
 
-		\dash\permission::access('contentAgent');
+		\dash\permission::access('contentLottery');
 
-		$allow_type = [];
+		if(\dash\url::module() === 'user')
+		{
+			self::lottery_id();
 
-		if(\dash\permission::check('AgentQom'))
-		{
-			$allow_type[] = 'qom';
-		}
+			$xLid = \dash\request::get('lid');
 
-		if(\dash\permission::check('AgentMashhad'))
-		{
-			$allow_type[] = 'mashhad';
-		}
+			$get = \dash\request::get();
+			unset($get['lid']);
 
-		if(\dash\permission::check('AgentKarbala'))
-		{
-			$allow_type[] = 'karbala';
-		}
-
-		if(count($allow_type) === 1)
-		{
-			\dash\data::oneType(true);
-			$xType = $allow_type[0];
-		}
-		else
-		{
-			$xType = \dash\request::get('type');
-		}
-
-		if(!$xType)
-		{
-			if(\dash\url::module() === 'type')
+			if($get)
 			{
-				return;
-				// too many redirect!
+				$start = '&';
 			}
 			else
 			{
-				// \dash\redirect::to(\dash\url::here(). '/type');
+				$start = '?';
 			}
+
+			\dash\data::xLid($start. 'lid='. $xLid);
+			\dash\data::xLidStart('?lid='. $xLid);
+			\dash\data::xLidAnd('&lid='. $xLid);
 		}
 
 
-		if(!in_array($xType, $allow_type))
-		{
-			// \dash\header::status(403, 'شما دسترسی لازم برای مدیریت این شهر را ندارید');
-		}
 
 
-		$get = \dash\request::get();
-		unset($get['type']);
-
-		if($get)
-		{
-			$start = '&';
-		}
-		else
-		{
-			$start = '?';
-		}
-
-		\dash\data::xType($start. 'type='. $xType);
-		\dash\data::xTypeStart('?type='. $xType);
-		\dash\data::xTypeAnd('&type='. $xType);
-
-		\dash\data::xTypeTitle(T_($xType));
-		\dash\data::xTypeTitlePage(' | '. \dash\data::xTypeTitle());
 	}
 }
 ?>

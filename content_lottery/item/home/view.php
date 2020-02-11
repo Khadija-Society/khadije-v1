@@ -6,7 +6,6 @@ class view
 {
 	public static function config()
 	{
-		// \dash\permission::access('ContentMokebAddPlace');
 
 		\dash\data::page_title(T_("Lottery list"));
 

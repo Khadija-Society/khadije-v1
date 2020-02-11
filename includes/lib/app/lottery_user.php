@@ -4,9 +4,9 @@ namespace lib\app;
 class lottery_user
 {
 
-	public static function chart_province()
+	public static function chart_province($_lottery_id)
 	{
-		$list = \lib\db\lottery_user::chart_province();
+		$list = \lib\db\lottery_user::chart_province($_lottery_id);
 		$result = [];
 		if(is_array($list))
 		{
@@ -22,9 +22,9 @@ class lottery_user
 
 	}
 
-	public static function chart_province_list()
+	public static function chart_province_list($_lottery_id)
 	{
-		$list = \lib\db\lottery_user::chart_province();
+		$list = \lib\db\lottery_user::chart_province($_lottery_id);
 		$result = [];
 		if(is_array($list))
 		{
@@ -39,9 +39,9 @@ class lottery_user
 
 	}
 
-	public static function daily_chart()
+	public static function daily_chart($_lottery_id)
 	{
-		$result     = \lib\db\lottery_user::daily_chart();
+		$result     = \lib\db\lottery_user::daily_chart($_lottery_id);
 		$hi_chart   = [];
 		$categories = [];
 		$values     = [];
