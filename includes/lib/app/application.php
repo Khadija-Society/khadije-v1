@@ -119,6 +119,12 @@ class application
 	{
 		$homepage              = [];
 		$homepage[]            = self::karbala_signup_link();
+
+		if(\lib\app\syslottery::any_active())
+		{
+			$homepage[]            = self::lottery_link();
+		}
+
 		$homepage[]            = self::link2_donate();
 		$homepage[]            = self::linksServicesLine();
 		$homepage[]            = self::linksWebsiteLine();
@@ -129,6 +135,18 @@ class application
 		// $homepage[]            = self::hr();
 
 		return $homepage;
+	}
+
+
+	private static function lottery_link()
+	{
+		// @javad check the baner of lottery link
+		$link          = [];
+		$link['type']  = 'banner';
+		// $link['type']  = 'browser';
+		$link['image'] = \dash\url::static(). '/images/app/karbala201909.jpg';
+		$link['url']   = \dash\url::kingdom(). '/l';
+		return $link;
 	}
 
 

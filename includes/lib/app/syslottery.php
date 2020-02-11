@@ -245,6 +245,14 @@ class syslottery
 	}
 
 
+	public static function any_active()
+	{
+		$any_active = \lib\db\syslottery::any_active();
+		return $any_active ? true : false;
+
+	}
+
+
 	public static function active_list()
 	{
 		$args =

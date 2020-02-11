@@ -23,6 +23,16 @@ class syslottery
 	}
 
 
+
+
+	public static function any_active()
+	{
+		$query  = "SELECT lottery_list.id FROM lottery_list WHERE lottery_list.status = 'enable' LIMIT 1";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
 	/**
 	 * update lottery_listprice
 	 *
