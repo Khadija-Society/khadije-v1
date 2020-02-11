@@ -6,6 +6,17 @@ namespace lib\app;
  */
 class syslottery
 {
+	private static $raw_field =
+	[
+		'setting',
+		'signupmessage',
+		'termandcondition',
+		'requiredfield',
+		'permission',
+
+	];
+
+
 
 	public static function get_by_md5($_md5)
 	{
@@ -49,29 +60,32 @@ class syslottery
 	{
 		$title = \dash\app::request('title');
 		$title = trim($title);
-		if(!$title)
+		if(\dash\app::isset_request('title'))
 		{
-			\dash\notif::error(T_("Please fill the lottery title"), 'title');
-			return false;
-		}
-
-		if(mb_strlen($title) > 200)
-		{
-			\dash\notif::error(T_("Please fill the lottery title less than 200 character"), 'title');
-			return false;
-		}
-
-		$check_duplicate = \lib\db\syslottery::get(['title' => $title, 'limit' => 1]);
-		if(isset($check_duplicate['id']))
-		{
-			if(intval($_id) === intval($check_duplicate['id']))
+			if(!$title)
 			{
-				// no problem to edit it
-			}
-			else
-			{
-				\dash\notif::error(T_("Duplicate lottery title"), 'title');
+				\dash\notif::error(T_("Please fill the lottery title"), 'title');
 				return false;
+			}
+
+			if(mb_strlen($title) > 200)
+			{
+				\dash\notif::error(T_("Please fill the lottery title less than 200 character"), 'title');
+				return false;
+			}
+
+			$check_duplicate = \lib\db\syslottery::get(['title' => $title, 'limit' => 1]);
+			if(isset($check_duplicate['id']))
+			{
+				if(intval($_id) === intval($check_duplicate['id']))
+				{
+					// no problem to edit it
+				}
+				else
+				{
+					\dash\notif::error(T_("Duplicate lottery title"), 'title');
+					return false;
+				}
 			}
 		}
 
@@ -86,12 +100,39 @@ class syslottery
 			return false;
 		}
 
-		$file = \dash\app::request('file');
-		$setting = \dash\app::request('setting');
-		$desc = \dash\app::request('desc');
+		$file             = \dash\app::request('file');
+		$setting          = \dash\app::request('setting');
+		$desc             = \dash\app::request('desc');
 
 
+		$termandcondition = \dash\app::request('termandcondition');
+		$agreemessage     = \dash\app::request('agreemessage');
+		$requiredfield    = \dash\app::request('requiredfield');
 
+		$permission       = \dash\app::request('permission');
+		$signupmessage    = \dash\app::request('signupmessage');
+
+		$lotterytitle     = \dash\app::request('lotterytitle');
+		$lotteryfooter    = \dash\app::request('lotteryfooter');
+
+
+		if($lotterytitle && mb_strlen($lotterytitle) > 200)
+		{
+			\dash\notif::error(T_("Please fill the lottery data less than 200 character"), 'lotterytitle');
+			return false;
+		}
+
+		if($lotteryfooter && mb_strlen($lotteryfooter) > 200)
+		{
+			\dash\notif::error(T_("Please fill the lottery data less than 200 character"), 'lotteryfooter');
+			return false;
+		}
+
+		if($agreemessage && mb_strlen($agreemessage) > 200)
+		{
+			\dash\notif::error(T_("Please fill the lottery data less than 200 character"), 'agreemessage');
+			return false;
+		}
 
 
 		$status = \dash\app::request('status');
@@ -102,16 +143,24 @@ class syslottery
 		}
 
 
+		$args                     = [];
+
+		$args['title']            = $title;
+		$args['subtitle']         = $subtitle;
+		$args['file']             = $file;
+		$args['setting']          = $setting;
+		$args['desc']             = $desc;
+		$args['status']           = $status;
+		$args['termandcondition'] = $termandcondition;
+		$args['agreemessage']     = $agreemessage;
+		$args['requiredfield']    = $requiredfield;
+		$args['permission']       = $permission;
+		$args['signupmessage']       = $signupmessage;
+		$args['lotterytitle']       = $lotterytitle;
+		$args['lotteryfooter']       = $lotteryfooter;
 
 
-		$args             = [];
 
-		$args['title']    = $title;
-		$args['subtitle'] = $subtitle;
-		$args['file']     = $file;
-		$args['setting']  = $setting;
-		$args['desc']     = $desc;
-		$args['status']   = $status;
 
 		return $args;
 	}
@@ -126,7 +175,7 @@ class syslottery
 	 */
 	public static function add($_args = [])
 	{
-		\dash\app::variable($_args);
+		\dash\app::variable($_args, ['raw_field' => self::$raw_field]);
 
 		if(!\dash\user::id())
 		{
@@ -267,7 +316,7 @@ class syslottery
 	 */
 	public static function edit($_args, $_id)
 	{
-		\dash\app::variable($_args);
+		\dash\app::variable($_args, ['raw_field' => self::$raw_field]);
 
 		$result = self::get($_id);
 
@@ -292,6 +341,16 @@ class syslottery
 		if(!\dash\app::isset_request('setting')) unset($args['setting']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
 		if(!\dash\app::isset_request('status')) unset($args['status']);
+		if(!\dash\app::isset_request('termandcondition')) unset($args['termandcondition']);
+		if(!\dash\app::isset_request('agreemessage')) unset($args['agreemessage']);
+		if(!\dash\app::isset_request('requiredfield')) unset($args['requiredfield']);
+		if(!\dash\app::isset_request('permission')) unset($args['permission']);
+		if(!\dash\app::isset_request('signupmessage')) unset($args['signupmessage']);
+
+		if(!\dash\app::isset_request('lotterytitle')) unset($args['lotterytitle']);
+		if(!\dash\app::isset_request('lotteryfooter')) unset($args['lotteryfooter']);
+
+
 
 
 		if(!empty($args))

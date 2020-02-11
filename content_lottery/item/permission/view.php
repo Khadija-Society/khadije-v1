@@ -1,12 +1,12 @@
 <?php
-namespace content_lottery\item\edit;
+namespace content_lottery\item\permission;
 
 
 class view
 {
 	public static function config()
 	{
-		\dash\data::page_title("Edit lottery");
+		\dash\data::page_title("Edit lottery access");
 		\dash\data::page_desc(T_('Edit name or description of this item or change status of it.'));
 		\dash\data::page_pictogram('edit');
 

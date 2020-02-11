@@ -1,0 +1,66 @@
+{%extends 'content_lottery/item/layout.html'%}
+
+{%block pageContent%}
+{%include 'content_lottery/item/pageStep.html'%}
+  <div class="justify-center f">
+   <form method="post" class="c5 m6 s12" autocomplete="off">
+   	<div class="cbox">
+     {{block('ititle')}}
+     {{block('iSubtitle')}}
+
+     {{block('idesc')}}
+
+      {{block('termsAndCondition')}}
+      {{block('iagreemessage')}}
+      {{block('isignupmessage')}}
+      {{block('ilotterytitle')}}
+      {{block('ilotteryfooter')}}
+
+     {{block('iStatus')}}
+
+     {{block('isave')}}
+   	</div>
+   </form>
+  </div>
+
+{%endblock%}
+
+
+
+{%block termsAndCondition%}
+<label for="termandcondition">{%trans "Terms and condition"%}</label>
+<textarea class="txt mB10" id='termandcondition' name="termandcondition"  maxlength='5000' rows="5">{{dataRow.termandcondition}}</textarea>
+{%endblock%}
+
+
+
+
+
+{% block iagreemessage %}
+<label for="agreemessage">{%trans "Agree message"%}</label>
+<div class="input">
+  <input type="text" name="agreemessage" id="agreemessage" value="{{dataRow.agreemessage}}"  maxlength='200' minlength="1" >
+</div>
+{% endblock %}
+
+
+{% block isignupmessage %}
+<label for="signupmessage">{%trans "Signup message"%}</label>
+<div class="input">
+  <input type="text" name="signupmessage" id="signupmessage" value="{{dataRow.signupmessage}}"  maxlength='200' minlength="1" >
+</div>
+{% endblock %}
+
+{% block ilotterytitle %}
+<label for="lotterytitle">{%trans "Lottery public live page title"%}</label>
+<div class="input">
+  <input type="text" name="lotterytitle" id="lotterytitle" value="{{dataRow.lotterytitle}}"  maxlength='200' minlength="1" >
+</div>
+{% endblock %}
+
+{% block ilotteryfooter %}
+<label for="lotteryfooter">{%trans "Lotter public live page footer"%}</label>
+<div class="input">
+  <input type="text" name="lotteryfooter" id="lotteryfooter" value="{{dataRow.lotteryfooter}}"  maxlength='200' minlength="1" >
+</div>
+{% endblock %}

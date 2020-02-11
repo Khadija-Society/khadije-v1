@@ -1,10 +1,12 @@
 
--- khadem
 CREATE TABLE `lottery_list` (
 `id` int(10) UNSIGNED NOT NULL auto_increment,
 `title` varchar(500) NULL DEFAULT NULL,
 `subtitle` varchar(500) NULL DEFAULT NULL,
+`lotterytitle` varchar(500) NULL DEFAULT NULL,
+`lotteryfooter` varchar(500) NULL DEFAULT NULL,
 `termandcondition` text NULL DEFAULT NULL,
+`signupmessage` text NULL DEFAULT NULL,
 `agreemessage` varchar(500) NULL DEFAULT NULL,
 `requiredfield` text NULL DEFAULT NULL,
 `permission` text NULL DEFAULT NULL,

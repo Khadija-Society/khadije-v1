@@ -6,14 +6,12 @@ class model
 {
 	public static function post()
 	{
-		// \dash\permission::access('mPlaceEdit');
-
 		$post =
 		[
-			'title'       => \dash\request::post('title'),
-			'subtitle'    => \dash\request::post('subtitle'),
-			'desc'        => \dash\request::post('desc'),
-			'status'      => \dash\request::post('status'),
+			'title'    => \dash\request::post('title'),
+			'subtitle' => \dash\request::post('subtitle'),
+			'desc'     => \dash\request::post('desc'),
+			'status'   => \dash\request::post('status'),
 		];
 
 
@@ -27,7 +25,8 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			\dash\redirect::to(\dash\url::here(). '/item'. \dash\data::xTypeStart());
+			\dash\redirect::pwd();
+
 		}
 
 	}

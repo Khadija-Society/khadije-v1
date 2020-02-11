@@ -93,9 +93,31 @@
 <div class="mT15">
  <label >{%trans "Status of item"%}</label>
 
+
+<div class="radio1 black">
+  <input type="radio" id="r-draft" name="status" value="draft" {%if dataRow.status == 'draft' or not dataRow.status %} checked{%endif%}>
+  <label for="r-draft">{%trans "Draft"%}</label>
+ </div>
+
+
  <div class="radio1 green">
   <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
   <label for="r-enable">{%trans "Enable"%}</label>
+ </div>
+
+<div class="radio1 blue">
+  <input type="radio" id="r-expire" name="status" value="expire" {%if dataRow.status == 'expire' or not dataRow.status %} checked{%endif%}>
+  <label for="r-expire">{%trans "Expire"%}</label>
+ </div>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-done" name="status" value="done" {%if dataRow.status == 'done' or not dataRow.status %} checked{%endif%}>
+  <label for="r-done">{%trans "Done"%}</label>
+ </div>
+
+<div class="radio1 red">
+  <input type="radio" id="r-deleted" name="status" value="deleted" {%if dataRow.status == 'deleted' or not dataRow.status %} checked{%endif%}>
+  <label for="r-deleted">{%trans "Deleted"%}</label>
  </div>
 
 

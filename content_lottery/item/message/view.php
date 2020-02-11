@@ -1,14 +1,15 @@
 <?php
-namespace content_lottery\item\edit;
+namespace content_lottery\item\message;
 
 
 class view
 {
 	public static function config()
 	{
-		\dash\data::page_title("Edit lottery");
+		\dash\data::page_title("Edit lottery message");
 		\dash\data::page_desc(T_('Edit name or description of this item or change status of it.'));
 		\dash\data::page_pictogram('edit');
+
 
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back'));
