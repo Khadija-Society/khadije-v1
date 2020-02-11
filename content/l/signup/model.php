@@ -10,7 +10,7 @@ class model
 
 		if(!\dash\request::post('accept'))
 		{
-			\dash\notif::error("لطفا تایید کنید که این ثبت‌نام به منزله اعزام نیست", 'accept');
+			\dash\notif::error("لطفا شرایط و قوانین را تایید کنید", 'accept');
 			return false;
 		}
 

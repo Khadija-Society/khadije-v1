@@ -12,7 +12,7 @@ class view
 
 
 		\dash\data::badge_text(T_('Back'));
-		\dash\data::badge_link(\dash\url::this(). \dash\data::xLidStart());
+		\dash\data::badge_link(\dash\url::here());
 
 
 		$lottery_list = \lib\app\lotterywin::get_list(\dash\data::myLotteryId());

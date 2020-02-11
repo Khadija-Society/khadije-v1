@@ -13,6 +13,15 @@ class controller
 			\dash\header::status(404);
 		}
 
+		if(isset($load['status']) && $load['status'] === 'enable')
+		{
+
+		}
+		else
+		{
+			\dash\data::disableLottery(true);
+		}
+
 		\dash\data::myLottery($load);
 		\dash\data::lotteryId($lottery_id);
 

@@ -74,7 +74,7 @@
 
 
         <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xTypeAnd}}">{%trans myStatus%}</a></td>
-        <td class="collapsing"><a href="{{url.here}}/user?lid={{value.id}}" class="btn success">{%trans "Manage"%}</a></td>
+        <td class="collapsing"><a href="{{url.here}}/user?lid={{value.id}}" class="btn success">{%trans "Manage"%}</a><a href="{{url.here}}/item/edit?id={{value.id}}" class="btn primary mLa10">{%trans "Edit"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
