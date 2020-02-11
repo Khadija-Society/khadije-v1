@@ -11,7 +11,7 @@ class controller
 		if($nationalcode && \dash\utility\filter::nationalcode($nationalcode))
 		{
 
-			$load_detail = \lib\db\karbala2users::get(['nationalcode' => $nationalcode, 'limit' => 1]);
+			$load_detail = \lib\db\lottery_user::get(['nationalcode' => $nationalcode, 'lottery_id' => \dash\data::myLotteryId(), 'limit' => 1]);
 			if(!$load_detail)
 			{
 				\dash\header::status(403);

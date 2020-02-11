@@ -22,7 +22,7 @@ class model
 				return false;
 			}
 
-			\lib\db\karbala2users::update(['displayname' => $displayname], $id);
+			\lib\db\lottery_user::update(['displayname' => $displayname], $id);
 			\dash\notif::ok('کاربر ویرایش شد');
 			\dash\redirect::pwd();
 		}

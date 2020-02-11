@@ -47,7 +47,7 @@
                 <td>{{value.father}}</td>
                 <td>{{value.province}} - {{value.city}}</td>
 
-                <td class="p0 collapsing"><a href="{{url.this}}/edit?nationalcode={{value.nationalcode}}&level={{requestGET.level}}" class="badge">{%trans "Edit"%}</a></td>
+                <td class="p0 collapsing"><a href="{{url.this}}/edit?nationalcode={{value.nationalcode}}&level={{requestGET.level}}{{xLidAnd}}" class="badge">{%trans "Edit"%}</a></td>
               </tr>
             {%endfor%}
           </tbody>
