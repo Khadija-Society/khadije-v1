@@ -178,6 +178,7 @@ class syslottery
 		[
 			'order'      => 'asc',
 			'sort'       => 'sort',
+			'status'     => [' != ', " 'deleted' "],
 			'pagenation' => false,
 		];
 		$list = self::list(null, $args);

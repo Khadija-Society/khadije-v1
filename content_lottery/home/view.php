@@ -8,16 +8,8 @@ class view
 	{
 		\dash\data::page_title("سیستم مدیریت قرعه‌کشی");
 
-		$args = [];
-
-		if(\dash\request::get('type'))
-		{
-			$args['agent_send.type'] = \dash\request::get('type');
-		}
-
-		$dataTable = \lib\app\send::list(null, $args);
-		\dash\data::lastAgent($dataTable);
-
+		$active_lottery = \lib\app\syslottery::all_list();
+		\dash\data::myList($active_lottery);
 
 	}
 

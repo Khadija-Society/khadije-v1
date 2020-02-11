@@ -10,10 +10,10 @@
 
 			{%for key, value in myList%}
 			<div class="c6 s12 pA10">
-				<div class="dcard grShadow grGreen2 x3 op100">
-				  <a class="mB25 fcWhite900 fs20" href='{{url.this}}/signup/{{value.id}}'>{{value.title}}</a>
+				<a class="dcard grShadow grGreen2 x3 op100" href='{{url.this}}/signup/{{value.id}}'>
+				  <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
 				  <p>{{value.subtitle}}</p>
-				</div>
+				</a>
 			</div>
 			{%endfor%}
 			</div>

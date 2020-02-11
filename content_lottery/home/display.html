@@ -8,14 +8,32 @@
 
 </div>
 
+	{%if myList%}
+	<div class="f">
+
+	{%for key, value in myList%}
+	<div class="c6 s12 pA10">
+		<a class="dcard grShadow grBlue2 x2 op100" href='{{url.here}}/user?lid={{value.id}}'>
+		  <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
+		  <p>{{value.subtitle}}</p>
+		  <p>{%trans "Status"%} {%set myStatus = value.status | capitalize%}<b>{%trans myStatus%}</b></p>
+
+
+		</a>
+	</div>
+	{%endfor%}
+	</div>
+	{%else%}
+	<div class="msg warn txtB txtC fs50">هیچ موکب فعالی یافت نشد</div>
+	{%endif%}
 {%endblock%}
 
 
 
 
 {%block bAddNewLottery%}
-<a class="dcard x2" href='{{url.here}}/item/add'>
- <div class="statistic">
+<a class="dcard x1" href='{{url.here}}/item/add'>
+ <div class="statistic teal">
   <div class="label"><i class="fs20 mRa5 sf-plus"></i></div>
   <div class="label mT10">{%trans "Add new lottery"%}</div>
  </div>
@@ -27,8 +45,8 @@
 
 
 {%block bListLottery%}
-<a class="dcard x2" href='{{url.here}}/item'>
- <div class="statistic">
+<a class="dcard x1" href='{{url.here}}/item'>
+ <div class="statistic teal">
   <div class="label"><i class="fs20 mRa5 sf-list"></i></div>
   <div class="label mT10">{%trans "List of lottery"%}</div>
  </div>

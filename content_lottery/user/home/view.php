@@ -13,8 +13,8 @@ class view
 
 		\dash\data::page_desc(\dash\data::page_desc(). ' '. T_('Also add or edit specefic user.'));
 
-		\dash\data::badge_text(T_('Report'));
-		\dash\data::badge_link(\dash\url::this(). '/report');
+		\dash\data::badge_text(T_('Back'));
+		\dash\data::badge_link(\dash\url::here());
 
 
 
