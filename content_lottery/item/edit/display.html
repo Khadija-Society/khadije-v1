@@ -1,0 +1,98 @@
+{%extends 'content_lottery/item/layout.html'%}
+
+{%block pageContent%}
+
+  <div class="justify-center f">
+   <form method="post" class="c5 m6 s12" autocomplete="off">
+   	<div class="cbox">
+     {{block('ititle')}}
+     {{block('iSubtitle')}}
+
+     {{block('iGender')}}
+
+     {{block('iDefultAdminOffice')}}
+     {{block('iDefaultServant')}}
+     {{block('iDefaultServant2')}}
+
+     {{block('iAddress')}}
+     {{block('idesc')}}
+
+     {{block('iStatus')}}
+
+     {{block('isave')}}
+   	</div>
+   </form>
+  </div>
+
+{%endblock%}
+
+
+
+
+
+
+{%block iDefultAdminOffice%}
+{%if adminOfficeList%}
+<h6 class="mT10">مدیر زائرسرا</h6>
+
+
+<select name="adminoffice" class="mB10 select ui dropdown search" id="adminoffice">
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">بدون نگهبان</option>
+  {%for key, value in adminOfficeList%}
+    <option value="{{value.user_id}}" {%if dataRow.adminoffice_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+
+
+{%endif%}
+
+{%endblock%}
+
+
+
+
+
+
+
+
+{%block iDefaultServant%}
+{%if servantList%}
+<h6 class="mT10">نگهبان زائر سرا</h6>
+
+
+<select name="servant" class="mB10 select ui dropdown search" id="servant">
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">بدون نگهبان</option>
+  {%for key, value in servantList%}
+    <option value="{{value.user_id}}" {%if dataRow.servant_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+
+
+{%endif%}
+
+{%endblock%}
+
+
+
+
+
+
+{%block iDefaultServant2%}
+{%if servantList%}
+<h6 class="mT10">نگهبان زائر سرا ۲</h6>
+
+
+<select name="servant2" class="mB10 select ui dropdown search" id="servant">
+  <option value="">{%trans "Please select one item"%}</option>
+  <option value="0">بدون نگهبان</option>
+  {%for key, value in servantList%}
+    <option value="{{value.user_id}}" {%if dataRow.servant2_id == value.user_id%} selected {%endif%}>{{value.displayname}} - {{value.mobile |fitNumber(false)}}</option>
+  {%endfor%}
+</select>
+
+
+{%endif%}
+
+{%endblock%}
