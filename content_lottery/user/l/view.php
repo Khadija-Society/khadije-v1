@@ -15,7 +15,7 @@ class view
 		\dash\data::badge_link(\dash\url::this(). \dash\data::xLidStart());
 
 
-		$lottery_list = \lib\app\lottery::get_list('karbala2users');
+		$lottery_list = \lib\app\lotterywin::get_list(\dash\data::myLotteryId());
 		\dash\data::lotteryList($lottery_list);
 
 	}

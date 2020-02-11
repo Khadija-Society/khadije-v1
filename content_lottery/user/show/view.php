@@ -11,7 +11,7 @@ class view
 
 
 		\dash\data::badge_text(T_('Back'));
-		\dash\data::badge_link(\dash\url::this(). '/l');
+		\dash\data::badge_link(\dash\url::this(). '/l'. \dash\data::xLidStart());
 
 
 
@@ -29,7 +29,7 @@ class view
 				return false;
 			}
 
-			$load_level = \lib\app\lottery::load_lottery('karbala2users', $md5, 'a');
+			$load_level = \lib\app\lotterywin::load_lottery(\dash\data::myLotteryId(), $md5, 'a');
 			\dash\data::allList($load_level);
 
 			$lottery_detail = \dash\temp::get('myLotteryDetail');

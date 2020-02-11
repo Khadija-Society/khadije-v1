@@ -22,6 +22,7 @@ CONSTRAINT `lottery_list_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`i
 CREATE TABLE `lottery_user` (
 `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 `lottery_id` int(10) UNSIGNED NOT NULL,
+`lotterywin` int(10) UNSIGNED NOT NULL,
 `username` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
 `displayname` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
 `gender` enum('male','female') DEFAULT NULL,

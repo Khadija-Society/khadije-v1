@@ -4,23 +4,23 @@ namespace lib\db;
 class lottery_user
 {
 
-	public static function get_rand($_limit)
+	public static function get_rand($_limit, $_lottery_id)
 	{
-		$query = "SELECT lottery_user.id AS `id` FROM lottery_user WHERE lottery_user.lottery_id IS NULL ORDER BY RAND() LIMIT $_limit";
+		$query = "SELECT lottery_user.id AS `id` FROM lottery_user WHERE lottery_user.lottery_id = $_lottery_id AND lottery_user.lotterywin IS NULL ORDER BY RAND() LIMIT $_limit";
 		$result = \dash\db::get($query, 'id');
 		return $result;
 	}
 
 	public static function update_win($_ids, $_lottery_id)
 	{
-		$query = "UPDATE lottery_user SET lottery_user.lottery_id = $_lottery_id WHERE lottery_user.id IN ($_ids) ";
+		$query = "UPDATE lottery_user SET lottery_user.lotterywin = $_lottery_id WHERE lottery_user.id IN ($_ids) ";
 		$result = \dash\db::query($query);
 		return $result;
 	}
 
 	public static function remove_lottery_id($_lottery_id)
 	{
-		$query = "UPDATE lottery_user SET lottery_user.lottery_id = NULL WHERE lottery_user.lottery_id = $_lottery_id ";
+		$query = "UPDATE lottery_user SET lottery_user.lotterywin = NULL WHERE lottery_user.lotterywin = $_lottery_id ";
 		$result = \dash\db::query($query);
 		return $result;
 	}

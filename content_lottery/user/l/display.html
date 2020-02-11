@@ -75,7 +75,7 @@
                 <td>{{value.countall| fitNumber}} <small>{%trans "Person"%}</small></td>
                 <td>{{value.countperlevel| fitNumber}} <small>{%trans "Person"%}</small></td>
                 <td>
-                  <a class="btn success xs" href="{{url.this}}/show?level={{value.url}}">بررسی لیست</a>
+                  <a class="btn success xs" href="{{url.this}}/show?level={{value.url}}{{xLidAnd}}">بررسی لیست</a>
                   {%if perm_su()%}
                     <div class="btn danger xs" data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}'>حذف</div>
                   {%endif%}
