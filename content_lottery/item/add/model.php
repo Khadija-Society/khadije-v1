@@ -6,15 +6,13 @@ class model
 {
 	public static function post()
 	{
-		// \dash\permission::access('mPlaceAdd');
 
 		$post =
 		[
 			'title'  => \dash\request::post('title'),
-			'type'  => \dash\request::get('type'),
 		];
 
-		$result = \lib\app\agentitem::add($post);
+		$result = \lib\app\syslottery::add($post);
 
 		if(\dash\engine\process::status())
 		{

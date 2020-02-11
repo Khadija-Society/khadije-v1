@@ -8,13 +8,13 @@ class view
 	{
 		// \dash\permission::access('ContentMokebAddPlace');
 
-		\dash\data::page_title(T_("items list"));
+		\dash\data::page_title(T_("Lottery list"));
 
 		\dash\data::page_pictogram('box');
 
 
 		\dash\data::badge_link(\dash\url::this(). '/add' . \dash\data::xTypeStart());
-		\dash\data::badge_text(T_('Add new item'));
+		\dash\data::badge_text(T_('Add new Lottery'));
 
 
 
@@ -47,8 +47,8 @@ class view
 		}
 
 
-		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\agentitem::$sort_field, \dash\url::this());
-		$dataTable = \lib\app\agentitem::list(\dash\request::get('q'), $args);
+		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\syslottery::$sort_field, \dash\url::this());
+		$dataTable = \lib\app\syslottery::list(\dash\request::get('q'), $args);
 
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);

@@ -56,8 +56,6 @@
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
 
-        <th data-sort="{{sortLink.gender.order}}"><a href='{{sortLink.gender.link}}'>{%trans "Gender"%}</a></th>
-
 
 
         <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
@@ -71,7 +69,6 @@
         <td><a href="{{url.this}}/edit?id={{value.id}}{{xTypeAnd}}"><i class="sf-edit"></i> {{value.title}}</a> <small>{{value.subtitle}}</small></td>
 
 
-        <td>{%set myGender = value.gender%}{%trans myGender%}</td>
 
 
 
