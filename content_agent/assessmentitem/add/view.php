@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		// \dash\permission::access('mAssessmentitemAdd');
+
 		\dash\data::page_title(T_("Add new assessmentitem"));
 		\dash\data::page_pictogram('plus-circle');
 

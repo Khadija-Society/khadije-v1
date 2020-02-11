@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		// \dash\permission::access('agentServantProfileView');
+
 		\dash\data::page_title("تخصص‌های خادم");
 
 		\dash\data::badge_link(\dash\url::this(). \dash\data::xCityStart());

@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		// \dash\permission::access('ContentMokebAddAssessmentitem');
+
 
 		\dash\data::page_title(T_("assessmentitems list"));
 

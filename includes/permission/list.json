@@ -525,5 +525,20 @@
     "require": [
       "contentAgent"
     ]
+  },
+  "contentM": {
+    "title": "contentM",
+    "cat": "Mangagement dashboard",
+    "require": []
+  },
+  "contentLottery": {
+    "title": "contentLottery",
+    "cat": "Lottery",
+    "require": []
+  },
+  "contentCrm": {
+    "title": "contentCrm",
+    "cat": "Manage customer",
+    "require": []
   }
 }

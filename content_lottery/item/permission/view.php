@@ -23,7 +23,7 @@ class view
 
 		\dash\data::dataRow($result);
 
-		$who_have = \dash\permission::who_have('ContentLottery', false);
+		$who_have = \dash\permission::who_have('contentLottery', false);
 
 		if($who_have)
 		{

@@ -5,51 +5,52 @@ class twigTransTerms
  {
 
 	//----------------------------------content_agent/assessmentitem/home/display.html
-	echo T_("Search in assessmentitems");                                             // Line 127
-	echo T_("Search");                                                                // Line 44
+	echo T_("Search in assessmentitems");                                             // Line 136
+	echo T_("Search");                                                                // Line 45
 	echo T_("Title");                                                                 // Line 62
 	echo T_("Job");                                                                   // Line 606
-	echo T_("Rate");                                                                  // Line 59
-	echo T_("Sort");                                                                  // Line 249
-	echo T_("Status");                                                                // Line 102
-	echo T_("For all jobs");                                                          // Line 30
-	echo T_("Clear filters");                                                         // Line 119
-	echo T_("Result not found!");                                                     // Line 118
-	echo T_("Search with new keywords.");                                             // Line 118
-	echo T_("Hi!");                                                                   // Line 125
-	echo T_("Try to start with add new assessmentitem!");                             // Line 194
+	echo T_("Rate");                                                                  // Line 82
+	echo T_("Sort");                                                                  // Line 61
+	echo T_("Status");                                                                // Line 19
+	echo T_("For all jobs");                                                          // Line 54
+	echo T_("Clear filters");                                                         // Line 120
+	echo T_("Result not found!");                                                     // Line 119
+	echo T_("Search with new keywords.");                                             // Line 119
+	echo T_("Hi!");                                                                   // Line 105
+	echo T_("Try to start with add new assessmentitem!");                             // Line 205
 
 	//----------------------------------------content_agent/assessmentitem/layout.html
-	echo T_("Require");                                                               // Line 388
+	echo T_("Require");                                                               // Line 6
 	echo T_("Title of assessmentitem");                                               // Line 8
-	echo T_("Enter a valid title");                                                   // Line 164
-	echo T_("City");                                                                  // Line 72
+	echo T_("Enter a valid title");                                                   // Line 8
+	echo T_("City");                                                                  // Line 73
 	echo T_("For all city");                                                          // Line 57
-	echo T_("Qom");                                                                   // Line 162
-	echo T_("Mashhad");                                                               // Line 180
-	echo T_("Karbala");                                                               // Line 171
+	echo T_("Qom");                                                                   // Line 25
+	echo T_("Mashhad");                                                               // Line 26
+	echo T_("Karbala");                                                               // Line 27
 	echo T_("Please select one item");                                                // Line 79
-	echo T_("Add");                                                                   // Line 65
-	echo T_("Save");                                                                  // Line 43
-	echo T_("Status of assessmentitem");                                              // Line 79
-	echo T_("Enable");                                                                // Line 27
-	echo T_("Disable");                                                               // Line 33
+	echo T_("Add");                                                                   // Line 83
+	echo T_("Save");                                                                  // Line 87
+	echo T_("Status of assessmentitem");                                              // Line 102
+	echo T_("Enable");                                                                // Line 105
+	echo T_("Disable");                                                               // Line 126
+	echo T_("Deleted");                                                               // Line 120
 
 	//-------------------------------------------content_agent/place/home/display.html
 	echo T_("Search in places");                                                      // Line 42
-	echo T_("Gender");                                                                // Line 68
+	echo T_("Gender");                                                                // Line 69
 	echo T_("Try to start with add new place!");                                      // Line 113
 
 	//-------------------------------------------------content_agent/place/layout.html
 	echo T_("Title of place");                                                        // Line 8
 	echo T_("Subtitle");                                                              // Line 13
-	echo T_("Please select one itme");                                                // Line 111
-	echo T_("Male");                                                                  // Line 463
-	echo T_("Female");                                                                // Line 464
-	echo T_("All");                                                                   // Line 47
-	echo T_("Description");                                                           // Line 513
+	echo T_("Please select one itme");                                                // Line 37
+	echo T_("Male");                                                                  // Line 38
+	echo T_("Female");                                                                // Line 39
+	echo T_("All");                                                                   // Line 40
+	echo T_("Description");                                                           // Line 69
 	echo T_("Description of place");                                                  // Line 70
-	echo T_("Address");                                                               // Line 73
+	echo T_("Address");                                                               // Line 74
 	echo T_("Status of place");                                                       // Line 176
 
 	//-------------------------------------------content_agent/place/edit/display.html
@@ -93,15 +94,15 @@ class twigTransTerms
 
 	//--------------------------------------------content_agent/send/edit/display.html
 	echo T_("Start date");                                                            // Line 89
-	echo T_("Start time");                                                            // Line 107
+	echo T_("Start time");                                                            // Line 102
 	echo T_("End date");                                                              // Line 96
-	echo T_("End time");                                                              // Line 118
+	echo T_("End time");                                                              // Line 113
 	echo T_("enable");                                                                // Line 135
 	echo T_("disable");                                                               // Line 136
 	echo T_("deleted");                                                               // Line 137
 	echo T_("expire");                                                                // Line 138
 	echo T_("draft");                                                                 // Line 140
-	echo T_("Nobody");                                                                // Line 366
+	echo T_("Nobody");                                                                // Line 369
 
 	//------------------------------------------------content_agent/send/pageStep.html
 	echo T_("To city");                                                               // Line 16
@@ -130,16 +131,16 @@ class twigTransTerms
 
 	//-------------------------------------content_agent/servant/sortlist/display.html
 	echo T_("User");                                                                  // Line 148
-	echo T_("Mobile");                                                                // Line 128
+	echo T_("Mobile");                                                                // Line 64
 	echo T_("Dispatch");                                                              // Line 126
 
 	//--------------------------------------content_agent/servant/profile/display.html
 	echo T_("Servant detail");                                                        // Line 11
-	echo T_("Name");                                                                  // Line 125
-	echo T_("Father name");                                                           // Line 14
-	echo T_("Nationalcode");                                                          // Line 66
-	echo T_("Birthday");                                                              // Line 70
-	echo T_("Marital");                                                               // Line 24
+	echo T_("Name");                                                                  // Line 32
+	echo T_("Father name");                                                           // Line 46
+	echo T_("Nationalcode");                                                          // Line 67
+	echo T_("Birthday");                                                              // Line 71
+	echo T_("Marital");                                                               // Line 55
 	echo T_("Nationalcode thumb");                                                    // Line 25
 	echo T_("Country");                                                               // Line 26
 	echo T_("National code thumb");                                                   // Line 65
@@ -177,14 +178,14 @@ class twigTransTerms
 	echo T_("Required");                                                              // Line 14
 	echo T_("Remove file");                                                           // Line 181
 	echo T_("Enter a valid name from 2 to 40 character");                             // Line 364
-	echo T_("Last name");                                                             // Line 372
+	echo T_("Last name");                                                             // Line 19
 	echo T_("Enter a valid last name from 2 to 40 character");                        // Line 372
 	echo T_("Like 09120123456");                                                      // Line 382
-	echo T_("National code");                                                         // Line 388
+	echo T_("National code");                                                         // Line 26
 	echo T_("Iranian must fill");                                                     // Line 163
 	echo T_("10 digit national code");                                                // Line 390
 	echo T_("Single");                                                                // Line 423
-	echo T_("Married");                                                               // Line 69
+	echo T_("Married");                                                               // Line 70
 	echo T_("Leave");                                                                 // Line 223
 	echo T_("Dead");                                                                  // Line 224
 	echo T_("Yes");                                                                   // Line 432
@@ -198,7 +199,7 @@ class twigTransTerms
 	echo T_("Foreigners must fill");                                                  // Line 100
 	echo T_("Passport expire date");                                                  // Line 491
 	echo T_("Work Address");                                                          // Line 506
-	echo T_("Phone");                                                                 // Line 74
+	echo T_("Phone");                                                                 // Line 75
 	echo T_("Like");                                                                  // Line 549
 	echo T_("Email");                                                                 // Line 547
 	echo T_("Education");                                                             // Line 588
@@ -221,7 +222,7 @@ class twigTransTerms
 	echo T_("Dispathc servant");                                                      // Line 102
 
 	//-------------------------------------------------------content_agent/layout.html
-	echo T_("Dashboard");                                                             // Line 1
+	echo T_("Dashboard");                                                             // Line 6
 	echo T_("Servants");                                                              // Line 30
 
 	//----------------------------------------------content_agent/report/home/chart.js
@@ -302,7 +303,7 @@ class twigTransTerms
 	echo T_("SMS List");                                                              // Line 6
 
 	//--------------------------------------------content_smsapp/settings/display.html
-	echo T_("Type");                                                                  // Line 155
+	echo T_("Type");                                                                  // Line 22
 	echo T_("Analyze");                                                               // Line 86
 	echo T_("Is Money");                                                              // Line 59
 	echo T_("View");                                                                  // Line 77
@@ -317,7 +318,6 @@ class twigTransTerms
 	echo T_("If enable, Send message to operator to get answer");                     // Line 67
 	echo T_("Is money?");                                                             // Line 74
 	echo T_("If has money, get it form operator");                                    // Line 76
-	echo T_("Deleted");                                                               // Line 273
 
 	//----------------------------------------------content_smsapp/export/display.html
 
@@ -345,7 +345,7 @@ class twigTransTerms
 	echo T_("All publish log");                                                       // Line 64
 	echo T_("Published");                                                             // Line 67
 	echo T_("All draft log");                                                         // Line 73
-	echo T_("Draft");                                                                 // Line 326
+	echo T_("Draft");                                                                 // Line 99
 	echo T_("All trash log");                                                         // Line 82
 
 	//----------------------------------------------------content_smsapp/home/chart.js
@@ -381,7 +381,7 @@ class twigTransTerms
 	//-----------------------------------------content_smsapp/report/home/display.html
 
 	//------------------------------------------------content_smsapp/chat/display.html
-	echo T_("Date created");                                                          // Line 76
+	echo T_("Date created");                                                          // Line 77
 	echo T_("Group");                                                                 // Line 128
 	echo T_("Action");                                                                // Line 66
 
@@ -443,7 +443,7 @@ class twigTransTerms
 	echo T_("Your help");                                                             // Line 137
 	echo T_("Enter a valid number");                                                  // Line 137
 	echo T_("Pay");                                                                   // Line 94
-	echo T_("First name");                                                            // Line 182
+	echo T_("First name");                                                            // Line 13
 	echo T_("Your name");                                                             // Line 164
 	echo T_("Enter a valid name");                                                    // Line 164
 	echo T_("Full name");                                                             // Line 170
@@ -485,7 +485,7 @@ class twigTransTerms
 	//------------------------------------------------------content/old/v2/layout.html
 	echo T_("Next →");                                                                // Line 38
 	echo T_("← Back");                                                                // Line 38
-	echo T_("Done");                                                                  // Line 38
+	echo T_("Done");                                                                  // Line 115
 
 	//-----------------------------------------------------content/old/v2/display.html
 	echo T_("Click to go to download page");                                          // Line 79
@@ -649,6 +649,12 @@ class twigTransTerms
 	echo T_("Eitaa");                                                                 // Line 188
 	echo T_("Soroush App");                                                           // Line 360
 
+	//----------------------------------------------------------content/l/display.html
+	echo T_("No enable lotter founded");                                              // Line 21
+
+	//---------------------------------------------------content/l/signup/display.html
+	echo T_("This lottery is expired");                                               // Line 13
+
 	//-------------------------------------------------------content/trip/display.html
 
 	//---------------------------------------------------content/ghadir98/display.html
@@ -686,11 +692,12 @@ class twigTransTerms
 	echo T_("Referee Committee");                                                     // Line 181
 
 	//--------------------------------------------includes/html/sidebarServiceTop.html
-	echo T_("Manage");                                                                // Line 3
+	echo T_("Manage");                                                                // Line 77
 	echo T_("Manage SMS");                                                            // Line 9
 	echo T_("Agent servant");                                                         // Line 19
-	echo T_("Manage Festival");                                                       // Line 24
-	echo T_("Users Panel");                                                           // Line 29
+	echo T_("Lottery system");                                                        // Line 25
+	echo T_("Manage Festival");                                                       // Line 30
+	echo T_("Users Panel");                                                           // Line 35
 
 	//---------------------public_html/static/siftal/fonts/siftal/icons-reference.html
 
@@ -1006,9 +1013,9 @@ class twigTransTerms
 	echo T_("Book");                                                                  // Line 96
 
 	//-------------------------------------------content_m/mokebuser/home/display.html
-	echo T_("Export");                                                                // Line 47
-	echo T_("Firstname");                                                             // Line 64
-	echo T_("Lastname");                                                              // Line 65
+	echo T_("Export");                                                                // Line 48
+	echo T_("Firstname");                                                             // Line 65
+	echo T_("Lastname");                                                              // Line 66
 	echo T_("Position");                                                              // Line 71
 	echo T_("Try to start with add new user!");                                       // Line 125
 	echo T_("All :Members");                                                          // Line 135
@@ -1140,7 +1147,7 @@ class twigTransTerms
 	echo T_("Fullname");                                                              // Line 161
 
 	//-----------------------------------------content_m/userkarbala/home/display.html
-	echo T_("Father");                                                                // Line 67
+	echo T_("Father");                                                                // Line 68
 
 	//-------------------------------------------content_m/userkarbala/report/chart.js
 
@@ -1296,9 +1303,9 @@ class twigTransTerms
 	echo T_("Every one can signup in this festival and send her project");            // Line 220
 	echo T_("messagesms");                                                            // Line 226
 	echo T_("messagesms of festival");                                                // Line 227
-	echo T_("Message");                                                               // Line 349
+	echo T_("Message");                                                               // Line 41
 	echo T_("Write message of festival");                                             // Line 233
-	echo T_("Expire");                                                                // Line 268
+	echo T_("Expire");                                                                // Line 110
 	echo T_("Social Network");                                                        // Line 310
 	echo T_("To add image gallery drop file here or");                                // Line 363
 	echo T_("Poster");                                                                // Line 476
@@ -1497,7 +1504,7 @@ class twigTransTerms
 	echo T_("delete from admin");                                                     // Line 347
 	echo T_("Search in trips");                                                       // Line 166
 	echo T_("ID");                                                                    // Line 181
-	echo T_("Birthdate");                                                             // Line 184
+	echo T_("Birthdate");                                                             // Line 61
 	echo T_("Partner");                                                               // Line 57
 	echo T_("Total Request");                                                         // Line 280
 
@@ -1566,7 +1573,7 @@ class twigTransTerms
 
 	//-------------------------------------------------content_m/userkarbala2/nav.html
 	echo T_("List");                                                                  // Line 7
-	echo T_("Lottery");                                                               // Line 16
+	echo T_("Lottery");                                                               // Line 6
 
 	//------------------------------------------content_m/userkarbala2/report/chart.js
 
@@ -1591,6 +1598,58 @@ class twigTransTerms
 	echo T_("Not require");                                                           // Line 125
 	echo T_("Mobile number is not showing on site and optional");                     // Line 128
 	echo T_("Press here to send");                                                    // Line 132
+
+	//--------------------------------------content_lottery/item/required/display.html
+	echo T_("Required field");                                                        // Line 22
+
+	//---------------------------------------content_lottery/item/message/display.html
+	echo T_("Terms and condition");                                                   // Line 25
+	echo T_("Agree message");                                                         // Line 34
+	echo T_("Signup message");                                                        // Line 42
+	echo T_("Lottery public live page title");                                        // Line 49
+	echo T_("Lotter public live page footer");                                        // Line 56
+
+	//------------------------------------------content_lottery/item/home/display.html
+	echo T_("Search in items");                                                       // Line 43
+	echo T_("Try to start with add new item!");                                       // Line 105
+
+	//------------------------------------------------content_lottery/item/layout.html
+	echo T_("Title of item");                                                         // Line 8
+	echo T_("Description of item");                                                   // Line 70
+	echo T_("Status of item");                                                        // Line 94
+
+	//----------------------------------------------content_lottery/item/pageStep.html
+	echo T_("Permission");                                                            // Line 31
+	echo T_("Signuped users");                                                        // Line 51
+
+	//------------------------------------------content_lottery/user/show/display.html
+
+	//------------------------------------------content_lottery/user/home/display.html
+	echo T_("Nobody signuped!");                                                      // Line 126
+
+	//---------------------------------------------------content_lottery/user/nav.html
+
+	//--------------------------------------------content_lottery/user/report/chart.js
+
+	//-------------------------------------------content_lottery/user/report/ir-all.js
+
+	//-------------------------------------------content_lottery/user/report/chart2.js
+
+	//-----------------------------------------content_lottery/user/report/highmaps.js
+
+	//----------------------------------------content_lottery/user/report/display.html
+
+	//------------------------------------------content_lottery/user/edit/display.html
+
+	//---------------------------------------------content_lottery/user/l/display.html
+
+	//-----------------------------------------------content_lottery/home/display.html
+	echo T_("Add new lottery");                                                       // Line 7
+	echo T_("List of lottery");                                                       // Line 51
+
+	//-----------------------------------------------------content_lottery/layout.html
+	echo T_("Lottery list");                                                          // Line 8
+	echo T_("Live show");                                                             // Line 10
 
  }
 }

@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		// \dash\permission::access('agentSkillsView');
+
 		\dash\data::page_title(T_("Skills list"));
 
 

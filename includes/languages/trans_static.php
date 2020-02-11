@@ -314,6 +314,14 @@ class TransStatic
 	echo T_("khadem2");
 	echo T_("Rabet");
 	echo T_("rabet");
+
+
+
+	echo T_("contentM");
+	echo T_("Mangagement dashboard");
+	echo T_("contentLottery");
+	echo T_("contentCrm");
+	echo T_("Manage customer");
  }
 }
 ?>

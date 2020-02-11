@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		// \dash\permission::access('agentServantProfileView');
+
 		\dash\data::page_title("افزودن اعزام جدید". \dash\data::xCityTitlePage());
 
 		\dash\data::page_pictogram('tools');

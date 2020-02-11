@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		// \dash\permission::access('agentServantProfileView');
+
 		\dash\data::page_title("جزئیات ارزیابی");
 
 		\dash\data::page_pictogram('search');

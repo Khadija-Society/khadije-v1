@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		// \dash\permission::access('agentServantView');
+
 		\dash\data::page_title("لیست نوبت مبلغین");
 
 
