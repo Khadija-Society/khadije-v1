@@ -2,15 +2,15 @@
 
 
 {%block pageData%}
-<div class="f justify-center">
- <div class="c10 s12">
+<div class="f justify-center txtC">
+
 
  		{%if myList%}
 			<div class="f">
 
 			{%for key, value in myList%}
-			<div class="c6 s12 pA10">
-				<a class="dcard grShadow grGreen2 x3 op100" href='{{url.this}}/signup/{{value.id}}'>
+			<div class="c s12 pA10">
+				<a class="dcard grShadow grGreen2 x2 op100" href='{{url.this}}/signup/{{value.id}}'>
 				  <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
 				  <p>{{value.subtitle}}</p>
 				</a>
@@ -21,7 +21,7 @@
 			<div class="msg warn txtB txtC">{%trans "No enable lotter founded"%}</div>
 			{%endif%}
 
- </div>
+
 </div>
 {%endblock%}
 

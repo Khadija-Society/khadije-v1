@@ -76,6 +76,8 @@
     {%if myLottery.signupmessage%}
       <div class="msg success txtB txtC">
         {{myLottery.signupmessage | raw}}
+        <br>
+        <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
       </div>
 
     {%else%}
@@ -138,14 +140,15 @@
      <div class="f">
       <div class="c12 s12 pRa5">{{block ('iAddress') }}</div>
      </div>
-     <div class="msg warn mT10">
 
       {%if myLottery.agreemessage%}
-      <div class="check1">
-        <input type="checkbox" id="sChk3" name="accept">
-        <label for="sChk3">{{myLottery.agreemessage}}</label>
-      </div>
-     </div>
+       <div class="msg warn mT10">
+
+        <div class="check1">
+          <input type="checkbox" id="sChk3" name="accept">
+          <label for="sChk3">{{myLottery.agreemessage}}</label>
+        </div>
+       </div>
      {%endif%}
 
      {{block ('iSave') }}

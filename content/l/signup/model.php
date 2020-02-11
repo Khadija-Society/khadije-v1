@@ -7,11 +7,13 @@ class model
 
 	public static function post()
 	{
-
-		if(!\dash\request::post('accept'))
+		if(\dash\data::myLottery_agreemessage())
 		{
-			\dash\notif::error("لطفا شرایط و قوانین را تایید کنید", 'accept');
-			return false;
+			if(!\dash\request::post('accept'))
+			{
+				\dash\notif::error("لطفا شرایط و قوانین را تایید کنید", 'accept');
+				return false;
+			}
 		}
 
 		$post                    = [];

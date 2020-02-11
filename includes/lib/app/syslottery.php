@@ -196,7 +196,7 @@ class syslottery
 
 		if(!$args['status'])
 		{
-			$args['status']  = 'enable';
+			$args['status']  = 'draft';
 		}
 
 		$args['datecreated'] = date("Y-m-d H:i:s");

@@ -15,7 +15,7 @@ class controller
 
 		if(isset($load['status']) && $load['status'] === 'enable')
 		{
-
+			// nothing
 		}
 		else
 		{
