@@ -110,7 +110,6 @@ class lotterywin
 	{
 		$get =
 		[
-			'table'  => $_table,
 			'url'    => $_md5,
 			'status' => 'enable',
 			'limit'  => 1,

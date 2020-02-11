@@ -1,0 +1,69 @@
+{%extends display.mvc%}
+
+
+{%block body%}
+
+<video class="videobg" loop="true" autoplay="autoplay" preload="none" muted width="100%" height="100%">
+	<source src="{{url.static}}/video/bg.mp4" type="video/mp4">
+</video>
+
+<div class="lottery">
+	<header>
+		<h1>قرعه‌کشی برگزیدگان زیارت اولی عتبات عالیات در برنامه کوی محبت شبکه دو سیما</h1>
+	</header>
+
+	<main>
+		<div class="startBtn theme-6">
+			{%if lotteryEndLevel%}
+				<button class="particles-button">نمایش برگزیدگان</button>
+			{%else%}
+				<button class="particles-button">شروع <br><small>{{lotteryLevelMessage}}</small> </button>
+			{%endif%}
+		</div>
+
+		<div class="numbers">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<div class="winners f" data-winners='{{winners | raw}}' data-count='{{winnersList |length}}'>
+{% for key, elected in winnersList %}
+			<div class="c4 s12">
+				<div class="person" data-id='{{elected.id}}' data-index='{{elected.index}}' {%if elected.skip%}data-ok{%endif%} data-status='{{elected.status}}'>
+					<div class="f">
+						<div class="cauto key">{{elected.index | fitNumber}}</div>
+						<div class="c name"><b>{{elected.name}}</b><abbr>{{elected.province}}{%if elected.city and elected.city != elected.province%} - {{elected.city}}{%endif%}</abbr></div>
+						<div class="cauto value">{{elected.id | fitNumber(false)}}</div>
+					</div>
+				</div>
+			</div>
+{% endfor %}
+		</div>
+	</main>
+
+
+	<footer>
+		<div class="f">
+			<div class="c s12 fs08">جهت شرکت در قرعه کشی <b>اپلیکیشن موسسه حضرت خدیجه سلام الله علیها</b> را از وب‌سایت Khadije.com دریافت کرده و رایگان ثبت‌نام کنید.</div>
+			<div class="cauto os s12 txtB txtL"><b class="block mB10">Khadije.com</b>{{"now" |dt(true, 'date')}}</div>
+		</div>
+
+	</footer>
+</div>
+{%endblock%}
+
+
+
+{%block foot_js%}
+
+	<link rel="stylesheet" href="{{url.static}}/css/lottery/lottery-v1.css?v=11">
+	<script src="{{url.static}}/js/lottery/lottery-v1.js?v=11"></script>
+{%endblock%}
