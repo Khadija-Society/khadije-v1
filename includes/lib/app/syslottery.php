@@ -244,6 +244,19 @@ class syslottery
 		return $list;
 	}
 
+	public static function boy_list()
+	{
+		$args =
+		[
+			'order'      => 'asc',
+			'sort'       => 'sort',
+			'status'     => [' IN ', " ('enable', 'draft') "],
+			'pagenation' => false,
+		];
+		$list = self::list(null, $args);
+		return $list;
+	}
+
 
 	public static function any_active()
 	{

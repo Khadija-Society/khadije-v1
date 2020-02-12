@@ -8,7 +8,7 @@ class view
 	{
 		\dash\data::page_title("سیستم مدیریت قرعه‌کشی");
 
-		$active_lottery = \lib\app\syslottery::active_list();
+		$active_lottery = \lib\app\syslottery::boy_list();
 		\dash\data::myList($active_lottery);
 
 	}
