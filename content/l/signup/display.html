@@ -25,14 +25,6 @@
   </div>
 
 
-  <div class="dcard x2">
-   <div class="statistic sm teal">
-    <div class="label mB10"> تعداد افراد ثبت‌نام شده تاکنون</div>
-    <div class="value counter">{{countSignup |fitNumber}}</div>
-   </div>
-  </div>
-
-
     {%if newSignup%}
     {%if myLottery.signupmessage%}
       <div class="msg success txtB txtC">
@@ -70,7 +62,7 @@
 
 
     {%if not disableLottery%}
-    <form class="" method="post" autocomplete="off">
+    <form class="cbox fs10" method="post" autocomplete="off">
      <div class="f">
       <div class="c4 s12 pRa5">{{block ('iname') }}</div>
       <div class="c4 s12 pRa5">{{block ('ifamily') }}</div>
@@ -136,6 +128,16 @@
      {{block ('iSave') }}
     </form>
     {%endif%}
+
+
+
+  <div class="dcard x2">
+   <div class="statistic sm teal">
+    <div class="label mB10"> تعداد افراد ثبت‌نام شده تاکنون</div>
+    <div class="value counter">{{countSignup |fitNumber}}</div>
+   </div>
+  </div>
+
 
   <div class="cbox fs09 pTB25-f">
     <p>
@@ -441,11 +443,11 @@
 
 
 {%block iadd%}
-<button class="btn primary block mT20">{%trans "Add"%}</button>
+<button class="btn primary block mTB20">{%trans "Add"%}</button>
 {%endblock%}
 
 {%block iSave%}
-<button class="btn primary block mT20">{%trans "Signup"%}</button>
+<button class="btn primary block mTB20">{%trans "Signup"%}</button>
 {%endblock%}
 
 
