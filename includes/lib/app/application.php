@@ -118,9 +118,9 @@ class application
 	private static function homepage()
 	{
 		$homepage              = [];
-		$homepage[]            = self::karbala_signup_link();
+		// $homepage[]            = self::karbala_signup_link();
 
-		if(\lib\app\syslottery::any_active())
+		// if(\lib\app\syslottery::any_active())
 		{
 			$homepage[]            = self::lottery_link();
 		}
@@ -144,7 +144,7 @@ class application
 		$link          = [];
 		$link['type']  = 'banner';
 		// $link['type']  = 'browser';
-		$link['image'] = \dash\url::static(). '/images/app/karbala201909.jpg';
+		$link['image'] = \dash\url::static(). '/images/app/app-lottery.jpg';
 		$link['url']   = \dash\url::kingdom(). '/l';
 		return $link;
 	}
