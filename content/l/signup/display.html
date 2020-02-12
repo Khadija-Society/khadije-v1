@@ -7,7 +7,7 @@
 
 
 <div class="f justify-center ">
- <div class="c9 s12">
+ <div class="c9 m10 s12">
 
   {%if disableLottery%}
   <div class="msg warn txtC txtB fs20">{%trans "This lottery is expired"%}</div>
@@ -15,62 +15,23 @@
   {%endif%}
 
   {%if myLottery.subtitle%}
-    <div class="msg txtB txtC info2">
+    <div class="msg">
       {{myLottery.subtitle}}
     </div>
   {%endif%}
 
-  <div class="msg">
+  <div class="msg txtB">
     {{myLottery.desc | raw}}
   </div>
 
 
-  <div class="dcard">
+  <div class="dcard x2">
    <div class="statistic sm teal">
     <div class="label mB10"> تعداد افراد ثبت‌نام شده تاکنون</div>
     <div class="value counter">{{countSignup |fitNumber}}</div>
    </div>
   </div>
 
-
-  <div class="cbox fs09">
-    <p>
-      زائر گرامی
-      <br>
-      در صورتی که می‌خواهید از وضعیت ثبت‌نام خود مطلع شوید کد ملی خود را در قسمت پایین وارد کرده و گزینه بررسی را بزنید
-    </p>
-    <form method="get" action="{{url.current}}">
-      <div class="input">
-        <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='{%trans "10 digit national code"%} *' maxlength="10"  minlength="1"  required>
-
-        <button class="addon btn success">{%trans "Check"%}</button>
-      </div>
-    </form>
-    {%if checkNationalcode%}
-      <div class="mT10 fs14">
-
-      {%if checkNationalcode == 'invalid'%}
-        <div class="msg warn">کد ملی وارد شده صحیح نیست. لطفا کد ملی خود را به صورت صحیح وارد کنید</div>
-      {%endif%}
-
-      {%if checkNationalcode == 'signuped'%}
-        <div class="msg success">شما ثبت‌نام شده‌اید. لطفا منتظر اعلام نتایج قرعه‌کشی باشید.</div>
-      {%endif%}
-
-
-      {%if checkNationalcode == 'not-signuped'%}
-        <div class="msg info">شما هنوز ثبت‌نام نشده‌اید.
-        {%if not disableLottery%}
-        در صورتی که فرصت ثبت‌نام باقی است لطفا نست به ثبت‌نام از طریق فرم زیر اقدام کنید.
-        {%endif%}
-        </div>
-
-      {%endif%}
-
-      </div>
-
-    {%endif%}
-  </div>
 
     {%if newSignup%}
     {%if myLottery.signupmessage%}
@@ -176,6 +137,44 @@
     </form>
     {%endif%}
 
+  <div class="cbox fs09 pTB25-f">
+    <p>
+      زائر گرامی
+      <br>
+      در صورتی که می‌خواهید از وضعیت ثبت‌نام خود مطلع شوید کد ملی خود را در قسمت پایین وارد کرده و گزینه بررسی را بزنید
+    </p>
+    <form method="get" action="{{url.current}}">
+      <div class="input">
+        <input type="tel" name="cnationalcode" value="{{requestGET.cnationalcode}}" placeholder='{%trans "10 digit national code"%} *' maxlength="10"  minlength="1"  required>
+
+        <button class="addon btn success">{%trans "Check"%}</button>
+      </div>
+    </form>
+    {%if checkNationalcode%}
+      <div class="mT10 fs14">
+
+      {%if checkNationalcode == 'invalid'%}
+        <div class="msg warn">کد ملی وارد شده صحیح نیست. لطفا کد ملی خود را به صورت صحیح وارد کنید</div>
+      {%endif%}
+
+      {%if checkNationalcode == 'signuped'%}
+        <div class="msg success">شما ثبت‌نام شده‌اید. لطفا منتظر اعلام نتایج قرعه‌کشی باشید.</div>
+      {%endif%}
+
+
+      {%if checkNationalcode == 'not-signuped'%}
+        <div class="msg info">شما هنوز ثبت‌نام نشده‌اید.
+        {%if not disableLottery%}
+        در صورتی که فرصت ثبت‌نام باقی است لطفا نست به ثبت‌نام از طریق فرم زیر اقدام کنید.
+        {%endif%}
+        </div>
+
+      {%endif%}
+
+      </div>
+
+    {%endif%}
+  </div>
 
  </div>
 
