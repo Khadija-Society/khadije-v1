@@ -6,17 +6,17 @@
 
 
 {%if perm('smsAppSetting') %}
-  <li><a href="{{url.kingdom}}/smsapp"><i class='sf-mail'></i> <span>{%trans "Manage SMS"%}</span></a></li>
+  <li><a href="{{url.kingdom}}/smsapp"><i class='sf-mail'></i> <span>سامانه پیامرس</span></a></li>
 {%endif%}
 
 
 {%if perm('ContentMokeb') %}
-  <li><a href="{{url.kingdom}}/mokeb"><i class='sf-pin'></i> <span>موکب کربلا</span></a></li>
+  <li><a href="{{url.kingdom}}/mokeb"><i class='sf-pin'></i> <span>سامانه رزرو موکب</span></a></li>
 {%endif%}
 
 
 {%if perm('contentAgent') %}
-        <li><a href="{{url.kingdom}}/agent" {%if url.content == "agent" %} class="activeContent"{%endif%}><i class='sf-paper-plane'></i> <span>{% trans "Agent servant"%}</span></a></li>
+        <li><a href="{{url.kingdom}}/agent" {%if url.content == "agent" %} class="activeContent"{%endif%}><i class='sf-out'></i> <span>سامانه مدیریت اعزام</span></a></li>
 {%endif%}
 
 
@@ -27,7 +27,7 @@
 
 
 {%if perm('cpFestivalView') %}
-        <li><a href="{{url.kingdom}}/m/festival" {%if url.content == "m" and url.module == "festival"%} class="activeContent"{%endif%}><i class='sf-magic'></i> <span>{% trans "Manage Festival"%}</span></a></li>
+        <li><a href="{{url.kingdom}}/m/festival" {%if url.content == "m" and url.module == "festival"%} class="activeContent"{%endif%}><i class='sf-magic'></i> <span>سامانه مدیریت جشنواره</span></a></li>
 {%endif%}
 
 
