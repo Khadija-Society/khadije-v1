@@ -6,7 +6,7 @@
   <div class="f">
 
    <div class="c s6">
-    <a class="dcard {%if requestGET.sort == 'date' %}active{%endif%}" href='{{sortLink.date.link}}'>
+    <a class="dcard {%if requestGET.sort == 'date' or not requestGET.sort %} active {%endif%}" href='{{sortLink.date.link}}'>
      <div class="statistic">
       <div class="label">مرتب سازی بر اساس زمان اعزام</div>
      </div>
@@ -15,7 +15,7 @@
 
 
    <div class="c s6">
-    <a class="dcard {%if requestGET.sort == 'avg' %}active{%endif%}" href='{{sortLink.avg.link}}'>
+    <a class="dcard {%if requestGET.sort == 'avg' %} active {%endif%}" href='{{sortLink.avg.link}}'>
      <div class="statistic">
       <div class="label">مرتب سازی بر اساس میانگین امتیاز</div>
      </div>
@@ -24,7 +24,7 @@
 
 
      <div class="c s6">
-    <a class="dcard {%if requestGET.sort == 'count' %}active{%endif%}" href='{{sortLink.count.link}}'>
+    <a class="dcard {%if requestGET.sort == 'count' %} active {%endif%}" href='{{sortLink.count.link}}'>
      <div class="statistic">
       <div class="label">مرتب سازی بر اساس تعداد اعزام</div>
      </div>
