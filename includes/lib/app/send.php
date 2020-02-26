@@ -941,8 +941,8 @@ class send
 
 		$default_meta =
 		[
-			'sort'  => null,
-			'order' => null,
+			'sort'  => 'agent_send.id',
+			'order' => 'DESC',
 		];
 
 		if(!is_array($_args))
@@ -954,7 +954,8 @@ class send
 
 		if($_args['sort'] && !in_array($_args['sort'], self::$sort_field))
 		{
-			$_args['sort'] = null;
+			$_args['sort'] = 'id';
+			$_args['order'] = 'DESC';
 		}
 
 		$result            = \lib\db\send::search($_string, $_args);

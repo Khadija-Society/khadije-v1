@@ -78,14 +78,21 @@ class servant
 				(SELECT AVG(agent_assessment.percent) FROM agent_send INNER JOIN agent_assessment ON agent_assessment.send_id = agent_send.id WHERE agent_send.missionary_id = agent_servant.user_id) AS `send_avg`,
 				(SELECT MIN(agent_send.startdate) FROM agent_send WHERE agent_send.missionary_id = agent_servant.user_id) AS `min_startdate`,
 
-				(
-					SELECT
-						GREATEST
-						(
-							(SELECT MAX(agent_send.startdate) FROM agent_send WHERE agent_send.missionary_id = agent_servant.user_id),
-							agent_servant.reject_date
-						)
-				) AS `max_startdate`
+
+					IF(agent_servant.reject_date IS NULL,
+					(SELECT MAX(agent_send.startdate) FROM agent_send WHERE agent_send.missionary_id = agent_servant.user_id)
+					,
+					(
+						SELECT
+							GREATEST
+							(
+								(SELECT MAX(agent_send.startdate) FROM agent_send WHERE agent_send.missionary_id = agent_servant.user_id),
+								agent_servant.reject_date
+							)
+					)
+					)
+
+				 AS `max_startdate`
 
 
 			";
