@@ -17,8 +17,10 @@ class view
 		\dash\data::badge_link(\dash\url::here(). '/donate/options');
 		\dash\data::badge_text(T_('Options'));
 
+		$exportLinkArgs = \dash\request::get();
+		$exportLinkArgs['export'] = 'true';
 
-		\dash\data::badge2_link(\dash\url::here(). '/donate?export=true');
+		\dash\data::badge2_link(\dash\url::here(). '/donate?'. http_build_query($exportLinkArgs));
 		\dash\data::badge2_text(T_("Export"));
 
 		\dash\data::bodyclass('unselectable');
@@ -177,6 +179,7 @@ class view
 
 		if($export)
 		{
+
 			$dataTable = \lib\app\donate::export($search_string, $args);
 			\dash\utility\export::csv(['name' => 'export_donate', 'data' => $dataTable]);
 		}
