@@ -20,7 +20,7 @@ self::$config['asanpardakht']['MerchantIP']       = '193.176.240.29';
 self::$config['asanpardakht']['MerchantName']     = 'KHYRIYE HAZRAT KHDIJE';
 
 
-self::$config['parsian']['status']                = true;
+self::$config['parsian']['status']                = false;
 self::$config['parsian']['LoginAccount']          = '7aXAxXkrWaPer2U53MF1';
 self::$config['parsian']['CallBackUrl']           = null;
 self::$config['parsian']['exchange']              = null;
