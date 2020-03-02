@@ -45,9 +45,9 @@ class model extends \content_support\ticket\contact_ticket\model
 
 		$countetam = \dash\request::post('countetam');
 		$mahal = \dash\request::post('mahal');
-		$shadi = \dash\request::post('shadi');
+		// $shadi = \dash\request::post('shadi');
 
-		\dash\temp::set('tempTicketTitle', 'گزارش فعالیت غدیر');
+		\dash\temp::set('tempTicketTitle', 'گزارش فعالیت رجب');
 
 		$content_raw = '';
 		// $content_raw .= T_('name') . ' '. $name. "\n";
@@ -55,7 +55,7 @@ class model extends \content_support\ticket\contact_ticket\model
 		// $content_raw .= T_('email') . ' '. $email. "\n";
 		$content_raw .= ' تعداد اطعام '. $countetam. "\n";
 		$content_raw .= ' مکان برگزاری مراسم '. $mahal. "\n";
-		$content_raw .= ' محله کاروان شادی غدیر '. $shadi. "\n";
+		// $content_raw .= ' محله کاروان شادی رجب '. $shadi. "\n";
 		// $content_raw .= ' عنوان فعالیت'. $jobtitle. "\n";
 		$content_raw .= T_('City') . ' '. $city. "\n";
 		$content_raw .= ' سایر فعالیت‌ها '. "\n";
