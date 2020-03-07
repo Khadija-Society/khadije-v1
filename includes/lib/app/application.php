@@ -145,6 +145,7 @@ class application
 		$link['type']  = 'banner';
 		// $link['type']  = 'browser';
 		$link['image'] = \dash\url::static(). '/images/app/app-lottery.jpg';
+		$link['image'] = \dash\url::static(). '/images/app/app-festival-tv.jpg';
 		$link['url']   = \dash\url::kingdom(). '/l';
 		return $link;
 	}
