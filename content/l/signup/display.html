@@ -30,7 +30,7 @@
       <div class="msg success txtB txtC">
         {{myLottery.signupmessage | raw}}
         <br>
-        <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
+        <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم در کار خیر سهیم باشم</a>
       </div>
 
     {%else%}
@@ -45,14 +45,14 @@
         شما هم می‌توانید در کمک به اعزام زائر اولی ها سهیم باشید
         <br>
 
-        <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم سهیم باشم</a>
+        <a class="btn  primary mT10"  href="{{url.kingdom}}/donate">من هم می خواهم در کار خیر سهیم باشم</a>
       </div>
     {%endif%}
 
     {%endif%}
 
     {%if myLottery.termandcondition%}
-      <div class="msg">{{myLottery.termandcondition | nl2br | raw}}</div>
+      <div class="msg warn2">{{myLottery.termandcondition | nl2br | raw}}</div>
     {%endif%}
 
 
