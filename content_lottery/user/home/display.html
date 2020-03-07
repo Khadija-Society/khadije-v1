@@ -54,6 +54,8 @@
 {%endblock%}
 
 
+
+
 {%block htmlTable%}
 <div class="tblBox">
 
@@ -65,14 +67,17 @@
         <th>{%trans "Firstname"%}</th>
         <th>{%trans "Lastname"%}</th>
         <th>{%trans "Nationalcode"%}</th>
-        <th>{%trans "Father"%}</th>
         <th>{%trans "Gender"%}</th>
-        <th>{%trans "Married"%}</th>
-        <th>{%trans "Birthday"%}</th>
-        <th>{%trans "Province"%}</th>
-        <th>{%trans "City"%}</th>
-        <th>{%trans "Address"%}</th>
-        <th>{%trans "Phone"%}</th>
+        {%if myLotteryRequired.father%}<th>{%trans "Father"%}</th>{%endif%}
+        {%if myLotteryRequired.marital%}<th>{%trans "Married"%}</th>{%endif%}
+        {%if myLotteryRequired.birthdate %}<th>{%trans "Birthday"%}</th>{%endif%}
+        {%if myLotteryRequired.city%}<th>{%trans "Province"%}</th>{%endif%}
+        {%if myLotteryRequired.city%}<th>{%trans "City"%}</th>{%endif%}
+        {%if myLotteryRequired.address%}<th>{%trans "Address"%}</th>{%endif%}
+        {%if myLotteryRequired.phone%}<th>{%trans "Phone"%}</th>{%endif%}
+        {%if myLotteryRequired.education%}<th>{%trans "Education"%}</th>{%endif%}
+        {%if myLotteryRequired.videofile%}<th>{%trans "Video file"%}</th>{%endif%}
+        {%if myLotteryRequired.imagefile%}<th>{%trans "Image file"%}</th>{%endif%}
 
         <th>{%trans "Date created"%}</th>
 
@@ -86,14 +91,41 @@
         <td>{{value.firstname}}</td>
         <td>{{value.lastname}}</td>
         <td>{{value.nationalcode | fitNumber(false)}}</td>
-        <td>{{value.father}}</td>
         <td>{%set mygender = value.gender | capitalize%}{%trans mygender%}</td>
-        <td>{%set mymarried = value.married | capitalize%}{%trans mymarried%}</td>
-        <td>{{value.birthday | dt(true)}}</td>
-        <td>{{value.province_name}}</td>
-        <td>{{value.city_name}}</td>
-        <td>{{value.homeaddress}}</td>
-        <td>{{value.phone | fitNumber(false)}}</td>
+
+{%if myLotteryRequired.father%}<td>{{value.father}}</td>{%endif%}
+{%if myLotteryRequired.marital%}<td>{%set mymarried = value.married | capitalize%}{%trans mymarried%}</td>{%endif%}
+{%if myLotteryRequired.birthdate %}<td>{{value.birthday | dt(true)}}</td>{%endif%}
+{%if myLotteryRequired.city%}<td>{{value.province_name}}</td>{%endif%}
+{%if myLotteryRequired.city%}<td>{{value.city_name}}</td>{%endif%}
+{%if myLotteryRequired.address%}<td>{{value.homeaddress}}</td>{%endif%}
+{%if myLotteryRequired.phone%}<td>{{value.phone | fitNumber(false)}}</td>{%endif%}
+
+{%if myLotteryRequired.education%}<td>{{value.homeaddress}}</td>{%endif%}
+{%if myLotteryRequired.videofile%}
+  <td>
+    {%set myField = ['videofile1', 'videofile2', 'videofile3', 'videofile4', 'videofile5']%}
+    {%for k,v in myField%}
+      {%if value[v]%}
+        <a href="{{value[v]}}" target="_blank" data-direct class="btn primary2 xs mA5">{%trans "Show"%}</a>
+      {%endif%}
+    {%endfor%}
+  </td>
+{%endif%}
+{%if myLotteryRequired.imagefile%}
+
+      <td>
+    {%set myField = ['imagefile1', 'imagefile2', 'imagefile3', 'imagefile4', 'imagefile5']%}
+    {%for k,v in myField%}
+      {%if value[v]%}
+        <a href="{{value[v]}}" target="_blank" data-direct class="btn primary2 xs mA5">{%trans "Show"%}</a>
+      {%endif%}
+    {%endfor%}
+
+  </td>
+
+{%endif%}
+
         <td>{{value.datecreated | dt(true) }}</td>
 
       </tr>

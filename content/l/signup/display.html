@@ -91,6 +91,10 @@
      {%endif%}
 
 
+    {%if myRequired.education%}
+      <div class="c6 s12 pRa5">{{block ('iEducation') }}</div>
+     {%endif%}
+
      {%if myRequired.phone%}
       <div class="c6 s12 pRa5">{{block ('iPhone') }}</div>
      {%endif%}
@@ -106,8 +110,37 @@
      </div>
 
 
+     {%if myRequired.videofile%}
+      <div class="input mT10">
+      <label>{%trans "Please upload you video file"%}</label>
+       <input type="file" accept="" name="videofile1" id="avatar1" data-max="500">
+       <label for="avatar1" title2="Simple Title">
+       </label>
+      </div>
+     {%endif%}
 
+     {%if myRequired.imagefile%}
+      <div class="input mT10">
+      <label>{%trans "Please upload you image file"%} <span class="mLa10">{{1 | fitNumber}}</span></label>
+       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile1" id="avatar1" data-max="500">
+       <label for="avatar1" title2="Simple Title">
+       </label>
+      </div>
 
+      <div class="input mT10">
+      <label>{%trans "Please upload you image file"%} <span class="mLa10">{{2 | fitNumber}}</span></label>
+       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile2" id="avatar1" data-max="500">
+       <label for="avatar1" title2="Simple Title">
+       </label>
+      </div>
+
+      <div class="input mT10">
+      <label>{%trans "Please upload you image file"%} <span class="mLa10">{{3 | fitNumber}}</span></label>
+       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile3" id="avatar1" data-max="500">
+       <label for="avatar1" title2="Simple Title">
+       </label>
+      </div>
+     {%endif%}
 
 
      <div class="f">

@@ -13,6 +13,13 @@ class controller
 			\dash\header::status(404, T_("Invalid id"));
 
 		}
+		\dash\data::myLotteryDetail($load);
+
+		if(isset($load['requiredfield']) && is_string($load['requiredfield']))
+		{
+			\dash\data::myLotteryRequired(json_decode($load['requiredfield'], true));
+		}
+
 		\dash\data::myLottery($load);
 		\dash\data::myLotteryId(\dash\coding::decode($lottery_id));
 

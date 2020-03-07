@@ -17,7 +17,6 @@ class view
 		\dash\data::badge_link(\dash\url::here());
 
 
-
 		$search_string            = \dash\request::get('q');
 		if($search_string)
 		{

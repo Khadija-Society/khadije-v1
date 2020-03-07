@@ -32,11 +32,37 @@ class model
 		// $post['country']         = \dash\request::post('country');
 		// $post['province']        = \dash\request::post('province');
 		$post['city']            = \dash\request::post('city');
+		$post['education']            = \dash\request::post('education');
 		$post['homeaddress']     = \dash\request::post('homeaddress');
 		$post['phone']           = \dash\request::post('phone');
 		$post['displayname']     = trim($post['firstname'] . ' '. $post['lastname']);
 		$post['married']         = \dash\request::post('Married') ;
 		// $post['zipcode']         = \dash\request::post('zipcode');
+
+		$imagefile1 = \dash\app\file::upload_quick('imagefile1');
+		if($imagefile1)
+		{
+			$post['imagefile1'] = $imagefile1;
+		}
+
+		$imagefile2 = \dash\app\file::upload_quick('imagefile2');
+		if($imagefile2)
+		{
+			$post['imagefile2'] = $imagefile2;
+		}
+
+		$imagefile3 = \dash\app\file::upload_quick('imagefile3');
+		if($imagefile3)
+		{
+			$post['imagefile3'] = $imagefile3;
+		}
+
+
+		$videofile1 = \dash\app\file::upload_quick('videofile1');
+		if($videofile1)
+		{
+			$post['videofile1'] = $videofile1;
+		}
 
 		\lib\app\lottery_user::add($post);
 

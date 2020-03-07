@@ -460,6 +460,18 @@ class lottery_user
 			return false;
 		}
 
+
+		$imagefile1 = \dash\app::request('imagefile1');
+		$imagefile2 = \dash\app::request('imagefile2');
+		$imagefile3 = \dash\app::request('imagefile3');
+		$imagefile4 = \dash\app::request('imagefile4');
+		$imagefile5 = \dash\app::request('imagefile5');
+		$videofile1 = \dash\app::request('videofile1');
+		$videofile2 = \dash\app::request('videofile2');
+		$videofile3 = \dash\app::request('videofile3');
+		$videofile4 = \dash\app::request('videofile4');
+		$videofile5 = \dash\app::request('videofile5');
+
 		$args                    = [];
 		$args['mobile']          = $mobile;
 		$args['gender']          = $gender;
@@ -504,6 +516,18 @@ class lottery_user
 		{
 			$args['iscompleteprofile'] = 0;
 		}
+
+
+		$args['imagefile1'] = $imagefile1;
+		$args['imagefile2'] = $imagefile2;
+		$args['imagefile3'] = $imagefile3;
+		$args['imagefile4'] = $imagefile4;
+		$args['imagefile5'] = $imagefile5;
+		$args['videofile1'] = $videofile1;
+		$args['videofile2'] = $videofile2;
+		$args['videofile3'] = $videofile3;
+		$args['videofile4'] = $videofile4;
+		$args['videofile5'] = $videofile5;
 
 		return $args;
 	}

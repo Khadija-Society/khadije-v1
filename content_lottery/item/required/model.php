@@ -14,14 +14,16 @@ class model
 			// 'lastname'     => \dash\request::post('lastname') ? true : false,
 			// 'nationalcode' => \dash\request::post('nationalcode') ? true : false,
 			// 'mobile'       => \dash\request::post('mobile') ? true : false,
-			'father'       => \dash\request::post('father') ? true : false,
+			'father'          => \dash\request::post('father') ? true : false,
 			// 'gender'       => \dash\request::post('gender') ? true : false,
-			'marital'      => \dash\request::post('marital') ? true : false,
-			'birthdate'    => \dash\request::post('birthdate') ? true : false,
-			'phone'        => \dash\request::post('phone') ? true : false,
-			'city'         => \dash\request::post('city') ? true : false,
-			'address'      => \dash\request::post('address') ? true : false,
-
+			'marital'         => \dash\request::post('marital') ? true : false,
+			'birthdate'       => \dash\request::post('birthdate') ? true : false,
+			'phone'           => \dash\request::post('phone') ? true : false,
+			'city'            => \dash\request::post('city') ? true : false,
+			'address'         => \dash\request::post('address') ? true : false,
+			'education'       => \dash\request::post('education') ? true : false,
+			'videofile'       => \dash\request::post('videofile') ? true : false,
+			'imagefile'       => \dash\request::post('imagefile') ? true : false,
 		];
 
 

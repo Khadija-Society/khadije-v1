@@ -74,10 +74,28 @@
     </div>
 
 
-  <div class="switch1 mT10">
+    <div class="switch1 mT10">
       <input type="checkbox" name="address" id="address" {% if requiredfield.address %} checked {%endif%} >
       <label for="address"></label>
       <label for="address">{%trans "Address"%}</label>
+    </div>
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="education" id="education" {% if requiredfield.education %} checked {%endif%} >
+      <label for="education"></label>
+      <label for="education">{%trans "Education"%}</label>
+    </div>
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="videofile" id="videofile" {% if requiredfield.videofile %} checked {%endif%} >
+      <label for="videofile"></label>
+      <label for="videofile">{%trans "Upload Video file"%}</label>
+    </div>
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="imagefile" id="imagefile" {% if requiredfield.imagefile %} checked {%endif%} >
+      <label for="imagefile"></label>
+      <label for="imagefile">{%trans "Upload image file"%}</label>
     </div>
 
 
