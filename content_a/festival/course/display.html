@@ -16,12 +16,10 @@
       {%if checkDuplicate%}
       <a href="{{url.this}}?id={{requestGET.id}}" class="btn success block">{%trans "You are register to this course before"%}</a>
       {%else%}
-      {% if course.price%}
+
 
       <form method="post">
 
-
-      {%endif%}
         <input type="hidden" name="pay" value="1">
         <button class="btn primary block">{%trans "Pay & Register"%}</button>
       </form>
