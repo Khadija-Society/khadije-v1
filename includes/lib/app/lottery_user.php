@@ -111,6 +111,9 @@ class lottery_user
 			'phone'        => false,
 			'city'         => false,
 			'address'      => false,
+			'education'    => false,
+			'imagefile'    => false,
+			'videofile'    => false,
 		];
 		if(isset($load_lottery['requiredfield']))
 		{
@@ -466,11 +469,30 @@ class lottery_user
 		$imagefile3 = \dash\app::request('imagefile3');
 		$imagefile4 = \dash\app::request('imagefile4');
 		$imagefile5 = \dash\app::request('imagefile5');
+
+		// if($isRequired['imagefile'])
+		// {
+		// 	if(!$imagefile1 && !$imagefile2 && !$imagefile3 && !$imagefile4 && !$imagefile5)
+		// 	{
+		// 		\dash\notif::error(T_("Please upload an image file"));
+		// 		return false;
+		// 	}
+		// }
+
 		$videofile1 = \dash\app::request('videofile1');
 		$videofile2 = \dash\app::request('videofile2');
 		$videofile3 = \dash\app::request('videofile3');
 		$videofile4 = \dash\app::request('videofile4');
 		$videofile5 = \dash\app::request('videofile5');
+
+		if($isRequired['videofile'] || $isRequired['imagefile'])
+		{
+			if(!$videofile1 && !$videofile2 && !$videofile3 && !$videofile4 && !$videofile5 && !$imagefile1 && !$imagefile2 && !$imagefile3 && !$imagefile4 && !$imagefile5)
+			{
+				\dash\notif::error("لطفا فایلی را بارگذاری کنید");
+				return false;
+			}
+		}
 
 		$args                    = [];
 		$args['mobile']          = $mobile;
