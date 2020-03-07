@@ -39,7 +39,7 @@ class model
 		$post['married']         = \dash\request::post('Married') ;
 		// $post['zipcode']         = \dash\request::post('zipcode');
 
-		$max_upload       = 20 * 1024 * 1024;
+		$max_upload       = 50 * 1024 * 1024;
 		$max_upload_image = 5 * 1024 * 1024;
 
 		$imagefile1 = \dash\app\file::upload_quick('imagefile1', ['max_upload' => $max_upload_image]);

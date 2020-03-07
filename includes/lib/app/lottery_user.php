@@ -483,11 +483,11 @@ class lottery_user
 		$videofile2 = \dash\app::request('videofile2');
 		$videofile3 = \dash\app::request('videofile3');
 		$videofile4 = \dash\app::request('videofile4');
-		$videofile5 = \dash\app::request('videofile5');
+		// $videofile5 = \dash\app::request('videofile5');
 
 		if($isRequired['videofile'] || $isRequired['imagefile'])
 		{
-			if(!$videofile1 && !$videofile2 && !$videofile3 && !$videofile4 && !$videofile5 && !$imagefile1 && !$imagefile2 && !$imagefile3 && !$imagefile4 && !$imagefile5)
+			if(!$videofile1 && !$videofile2 && !$videofile3 && !$videofile4 && !$imagefile1 && !$imagefile2 && !$imagefile3 && !$imagefile4 && !$imagefile5)
 			{
 				\dash\notif::error("لطفا فایلی را بارگذاری کنید");
 				return false;
@@ -549,7 +549,7 @@ class lottery_user
 		$args['videofile2'] = $videofile2;
 		$args['videofile3'] = $videofile3;
 		$args['videofile4'] = $videofile4;
-		$args['videofile5'] = $videofile5;
+		// $args['videofile5'] = $videofile5;
 
 		return $args;
 	}
