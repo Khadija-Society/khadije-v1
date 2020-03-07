@@ -39,29 +39,37 @@ class model
 		$post['married']         = \dash\request::post('Married') ;
 		// $post['zipcode']         = \dash\request::post('zipcode');
 
-		$imagefile1 = \dash\app\file::upload_quick('imagefile1');
+		$max_upload       = 20 * 1024 * 1024;
+		$max_upload_image = 5 * 1024 * 1024;
+
+		$imagefile1 = \dash\app\file::upload_quick('imagefile1', ['max_upload' => $max_upload_image]);
 		if($imagefile1)
 		{
 			$post['imagefile1'] = $imagefile1;
 		}
 
-		$imagefile2 = \dash\app\file::upload_quick('imagefile2');
+		$imagefile2 = \dash\app\file::upload_quick('imagefile2', ['max_upload' => $max_upload_image]);
 		if($imagefile2)
 		{
 			$post['imagefile2'] = $imagefile2;
 		}
 
-		$imagefile3 = \dash\app\file::upload_quick('imagefile3');
+		$imagefile3 = \dash\app\file::upload_quick('imagefile3', ['max_upload' => $max_upload_image]);
 		if($imagefile3)
 		{
 			$post['imagefile3'] = $imagefile3;
 		}
 
 
-		$videofile1 = \dash\app\file::upload_quick('videofile1');
+		$videofile1 = \dash\app\file::upload_quick('videofile1', ['max_upload' => $max_upload]);
 		if($videofile1)
 		{
 			$post['videofile1'] = $videofile1;
+		}
+
+		if(!\dash\engine\process::status())
+		{
+			return;
 		}
 
 		\lib\app\lottery_user::add($post);
