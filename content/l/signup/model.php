@@ -40,7 +40,7 @@ class model
 		// $post['zipcode']         = \dash\request::post('zipcode');
 
 		$max_upload       = 50 * 1024 * 1024;
-		$max_upload_image = 5 * 1024 * 1024;
+		$max_upload_image = 50 * 1024 * 1024;
 
 		$imagefile1 = \dash\app\file::upload_quick('imagefile1', ['max_upload' => $max_upload_image]);
 		if($imagefile1)

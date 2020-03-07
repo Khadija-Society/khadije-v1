@@ -113,7 +113,7 @@
      {%if myRequired.videofile%}
       <div class="input mT10">
       <label>{%trans "Please upload you video file"%}</label>
-       <input type="file" accept="" name="videofile1" id="avatar1" data-max="500">
+       <input type="file" accept="" name="videofile1" id="avatar1" data-max="50000">
        <label for="avatar1" title2="Simple Title">
        </label>
       </div>
@@ -122,21 +122,21 @@
      {%if myRequired.imagefile%}
       <div class="input mT10">
       <label>{%trans "Please upload you image file"%} <span class="mLa10">{{1 | fitNumber}}</span></label>
-       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile1" id="avatar1" data-max="500">
+       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile1" id="avatar1" data-max="50000">
        <label for="avatar1" title2="Simple Title">
        </label>
       </div>
 
       <div class="input mT10">
       <label>{%trans "Please upload you image file"%} <span class="mLa10">{{2 | fitNumber}}</span></label>
-       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile2" id="avatar1" data-max="500">
+       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile2" id="avatar1" data-max="50000">
        <label for="avatar1" title2="Simple Title">
        </label>
       </div>
 
       <div class="input mT10">
       <label>{%trans "Please upload you image file"%} <span class="mLa10">{{3 | fitNumber}}</span></label>
-       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile3" id="avatar1" data-max="500">
+       <input type="file" accept="image/gif, image/jpeg, image/png" name="imagefile3" id="avatar1" data-max="50000">
        <label for="avatar1" title2="Simple Title">
        </label>
       </div>
@@ -276,7 +276,7 @@
 {%block igender%}
 <div class="pRa5">
   <label for="gender">{%trans "Gender"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-  <select name="gender" class="ui dropdown2 select">
+  <select name="gender" class="ui2 dropdown2 select">
     <option value="" readonly>{%trans "Please select one itme"%}</option>
     <option value="male" {%if userdetail.gender == 'male' or ( not userdetail.gender and defaultDenderExpert == 'male') %}selected {%endif%}>{%trans "Male"%}</option>
     <option value="female" {%if userdetail.gender == 'female' or ( not userdetail.gender and defaultDenderExpert == 'female') %}selected{%endif%}>{%trans "Female"%}</option>
@@ -288,7 +288,7 @@
 {%block iMarital%}
 <div class="">
   <label for="married">{%trans "Marital"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-  <select name="Married" class="ui dropdown2 select">
+  <select name="Married" class="ui2 dropdown2 select">
     <option value="" readonly>{%trans "Please select one itme"%}</option>
     <option value="single" {%if userdetail.married == 'single' %}selected {%endif%}>{%trans "Single"%}</option>
     <option value="married" {%if userdetail.married == 'married' %}selected{%endif%}>{%trans "Married"%}</option>
@@ -315,7 +315,7 @@
 
 {%block iprovince%}
 <label for='province'>{%trans "Province"%}</label>
-<select name="province" class="ui dropdown2 select search" id="province">
+<select name="province" class="ui2 dropdown2 select search" id="province">
   <option value="" readonly>{%trans "Select province"%}</option>
   {%for key, value in proviceList%}
     <option value="{{key}}" {% if userdetail.province == key %} selected {%endif%}>{{value}}</option>
@@ -326,7 +326,7 @@
 
 {%block icity%}
 <label for='city'>{%trans "City"%}  <small class="fc-red">* {%trans "Require"%}</small></label>
-<select name="city" class="ui dropdown2 select search" id="city">
+<select name="city" class="ui2 dropdown2 select search" id="city">
   <option value="" readonly>{%trans "Select city"%}</option>
   {%for key, value in cityList%}
     <option value="{{key}}" {% if userdetail.city == key %} selected {%endif%}>{{value}}</option>
@@ -490,7 +490,7 @@
 {%block icountry%}
 <div class="mB10">
   <label for='country'>{%trans "Country"%}</label>
-  <div class="ui fluid search selection dropdown2">
+  <div class="ui2 fluid search selection dropdown2">
     <input type="hidden" name="country" value="{{userdetail.country}}">
     <i class="dropdown2 icon"></i>
     <div class="default text">{%trans "Choose your country"%}</div>
