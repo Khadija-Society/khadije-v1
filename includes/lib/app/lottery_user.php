@@ -697,6 +697,17 @@ class lottery_user
 				else
 				{
 					unset($args['lottery_id']);
+					unset($args['imagefile1']);
+					unset($args['imagefile2']);
+					unset($args['imagefile3']);
+					unset($args['imagefile4']);
+					unset($args['imagefile5']);
+					unset($args['videofile1']);
+					unset($args['videofile2']);
+					unset($args['videofile3']);
+					unset($args['videofile4']);
+					unset($args['videofile5']);
+
 					$user_id = \dash\db\users::signup($args);
 				}
 				\dash\log::set('lotetry', ['code' => $id, 'to' => $user_id]);
