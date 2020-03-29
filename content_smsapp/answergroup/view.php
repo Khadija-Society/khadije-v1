@@ -11,8 +11,11 @@ class view
 		\dash\data::page_title(T_("Edit answer sms group"));
 		\dash\data::page_desc(T_("You cat set some answer to group"));
 
-		\dash\data::badge_link(\dash\url::here(). '/settings');
-		\dash\data::badge_text(T_('Settings'));
+		if(!\dash\data::doNotTuch())
+		{
+			\dash\data::badge_link(\dash\url::here(). '/settings');
+			\dash\data::badge_text(T_('Settings'));
+		}
 
 		$args =
 		[

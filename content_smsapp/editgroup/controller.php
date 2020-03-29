@@ -17,6 +17,9 @@ class controller
 		}
 
 		\dash\data::dataRow($load);
+
+		\content_smsapp\controller::do_not_tuch();
+
 	}
 }
 ?>

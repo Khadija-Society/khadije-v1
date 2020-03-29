@@ -16,6 +16,20 @@ class controller
 			\dash\redirect::to(\dash\url::kingdom(). '/enter?referer='. \dash\url::pwd());
 		}
 
+		if(!\dash\permission::supervisor())
+		{
+			\dash\data::doNotTuch(true);
+		}
+
+	}
+
+
+	public static function do_not_tuch($_return = false)
+	{
+		if(!\dash\permission::supervisor())
+		{
+			\dash\redirect::to(\dash\url::here(). '/answergroup?id=p');
+		}
 	}
 
 
