@@ -125,7 +125,8 @@ class application
 			$homepage[]            = self::lottery_link();
 		}
 
-		$homepage[]            = self::link2_donate();
+		// $homepage[]            = self::link2_donate();
+		$homepage[]            = self::link2_donate_shaban();
 		$homepage[]            = self::linksServicesLine();
 		$homepage[]            = self::linksWebsiteLine();
 		$homepage[]            = self::salawat();
@@ -224,6 +225,22 @@ class application
 		return $link;
 	}
 
+
+	private static function link2_donate_shaban()
+	{
+		$link                     = [];
+		$link['type']             = 'link2';
+
+		$link['link'][0]['image'] = \dash\url::static(). '/images/app/donate-nime-shaban-wide.jpg';
+		$link['link'][0]['url']   = \dash\url::kingdom(). '/donate?nazr=shaban';
+		$link['link'][0]['text']  = 'قربانی نیمه شعبان';
+
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/donate-aghighe-wide.jpg';
+		$link['link'][1]['url']   = \dash\url::kingdom(). '/donate?nazr=aghighe';
+		$link['link'][1]['text']  = 'قربانی عقیقه';
+
+		return $link;
+	}
 
 
 	private static function linksServicesLine()
