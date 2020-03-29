@@ -282,6 +282,13 @@ class newsms
 			$insert['receivestatus'] = 'block';
 			return true;
 		}
+
+		if(!\dash\utility\filter::ir_mobile($fromnumber))
+		{
+			$insert['receivestatus'] = 'block';
+			return true;
+		}
+
 		return false;
 	}
 
