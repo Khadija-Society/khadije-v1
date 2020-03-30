@@ -277,6 +277,12 @@ class newsms
 	{
 		$fromnumber = $insert['fromnumber'];
 
+		if(!is_numeric($fromnumber))
+		{
+			$insert['receivestatus'] = 'block';
+			return true;
+		}
+
 		if(in_array(substr($fromnumber, 0, 3), ['981', '982', '983', '985']))
 		{
 			$insert['receivestatus'] = 'block';
