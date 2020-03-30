@@ -49,7 +49,7 @@ class view
 			$args['s_sms.recommend_id']  = ['IS NOT ', 'NULL'];
 			$args['s_sms.receivestatus'] = 'awaiting';
 			$args['s_sms.answertext']    = ['IS ', 'NULL'];
-			$args['s_group.analyze']     = 1;
+
 
 			// s_group.analyze = 1 AND
 
@@ -61,6 +61,10 @@ class view
 			{
 				$answer_list = \lib\app\sms::answer_list(\dash\request::get('recommend_id'));
 				\dash\data::answerList($answer_list);
+			}
+			else
+			{
+				$args['s_group.analyze']     = 1;
 			}
 
 		}
