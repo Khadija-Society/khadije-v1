@@ -283,6 +283,12 @@ class newsms
 			return true;
 		}
 
+		if(in_array(substr($fromnumber, 0, 4), ['9898']))
+		{
+			$insert['receivestatus'] = 'block';
+			return true;
+		}
+
 		if(!\dash\utility\filter::ir_mobile($fromnumber))
 		{
 			$insert['receivestatus'] = 'block';
