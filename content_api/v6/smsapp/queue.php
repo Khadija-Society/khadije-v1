@@ -73,8 +73,8 @@ class queue
 	private static function check_max_limit()
 	{
 		$max_limit = 480; // every day
-		$max_limit = 20; // every day
 		$max_limit = 300; // every day
+		$max_limit = 20; // every day
 		$gateway   = \dash\header::get('gateway');
 		$gateway   = \dash\utility\filter::mobile($gateway);
 
