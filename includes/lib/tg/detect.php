@@ -7,6 +7,7 @@ class detect
 {
 	public static function run($_cmd)
 	{
+		return;
 		if(bot::isInline())
 		{
 			// not yet
