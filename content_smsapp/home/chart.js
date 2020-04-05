@@ -87,6 +87,9 @@ function myChartProductPrice()
       }
     },
     series: [{
+    name: '{%trans "Send by panel"%}',
+    data: {{masterChart.sendpanel | raw}}
+  }, {
     name: '{%trans "Send"%}',
     data: {{masterChart.send | raw}}
   }, {

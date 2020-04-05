@@ -406,6 +406,29 @@ class sms
 		return $result;
 	}
 
+	public static function get_chart_send_panel($_startdate, $_enddate)
+	{
+		$query  =
+		"
+			SELECT
+				SUM(CEIL(s_sms.answertextcount / 70)) AS `count`,
+				DATE(s_sms.date) AS `date`
+			FROM
+				s_sms
+			WHERE
+				s_sms.sendstatus = 'sendbypanel' AND
+				s_sms.date IS NOT NULL AND
+				DATE(s_sms.date) <= DATE('$_startdate')  AND
+				DATE(s_sms.date) >= DATE('$_enddate')
+			GROUP BY
+				DATE(s_sms.date)
+			ORDER BY DATE(s_sms.date) ASC
+		";
+		$result = \dash\db::get($query, ['date', 'count']);
+
+		return $result;
+	}
+
 	public static function insert()
 	{
 		\dash\db\config::public_insert('s_sms', ...func_get_args());

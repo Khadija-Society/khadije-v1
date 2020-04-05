@@ -672,10 +672,11 @@ class sms
 		$now = date("Y-m-d");
 		$lastYear = date("Y-m-d", strtotime("-1 year"));
 
-		$get_chart_receive = \lib\db\sms::get_chart_receive($now, $lastYear);
-		$get_chart_send    = \lib\db\sms::get_chart_send($now, $lastYear);
+		$get_chart_receive    = \lib\db\sms::get_chart_receive($now, $lastYear);
+		$get_chart_send       = \lib\db\sms::get_chart_send($now, $lastYear);
+		$get_chart_send_panel = \lib\db\sms::get_chart_send_panel($now, $lastYear);
 
-		if(!is_array($get_chart_receive) || !is_array($get_chart_send))
+		if(!is_array($get_chart_receive) || !is_array($get_chart_send) || !is_array($get_chart_send_panel))
 		{
 			return false;
 		}
@@ -687,11 +688,17 @@ class sms
 			$max_array = $get_chart_receive;
 		}
 
+		if(count($get_chart_send_panel) > count($max_array))
+		{
+			$max_array = $get_chart_send_panel;
+		}
+
 		$date = array_keys($max_array);
 
 		$hi_chart               = [];
 		$hi_chart['categories'] = [];
 		$hi_chart['send']       = [];
+		$hi_chart['sendpanel']  = [];
 		$hi_chart['receive']    = [];
 
 		foreach ($date as $key => $value)
@@ -715,10 +722,20 @@ class sms
 			{
 				array_push($hi_chart['send'], 0);
 			}
+
+			if(isset($get_chart_send_panel[$value]))
+			{
+				array_push($hi_chart['sendpanel'], intval($get_chart_send_panel[$value]));
+			}
+			else
+			{
+				array_push($hi_chart['sendpanel'], 0);
+			}
 		}
 
 		$hi_chart['categories'] = json_encode($hi_chart['categories'], JSON_UNESCAPED_UNICODE);
 		$hi_chart['send']       = json_encode($hi_chart['send'], JSON_UNESCAPED_UNICODE);
+		$hi_chart['sendpanel']  = json_encode($hi_chart['sendpanel'], JSON_UNESCAPED_UNICODE);
 		$hi_chart['receive']    = json_encode($hi_chart['receive'], JSON_UNESCAPED_UNICODE);
 		return $hi_chart;
 	}
