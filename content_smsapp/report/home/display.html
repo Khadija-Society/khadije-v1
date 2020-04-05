@@ -3,10 +3,11 @@
 {%block pageContent%}
 
 <div class="f">
-  <div class="c3 s12">{{block('icountsmsday')}}</div>
-  <div class="c3 s12">{{block('igroupby')}}</div>
-  <div class="c3 s12">{{block('ianswerTime')}}</div>
-  <div class="c3 s12">{{block('ianswerTimeHour')}}</div>
+  <div class="c s12">{{block('icountsmsday')}}</div>
+  <div class="c s12">{{block('igroupby')}}</div>
+  <div class="c s12">{{block('ianswerTime')}}</div>
+  <div class="c s12">{{block('ianswerTimeHour')}}</div>
+  <div class="c s12">{{block('iSendChart')}}</div>
 </div>
 
 <div class="f mB10">
@@ -56,6 +57,18 @@
  <div class="statistic">
   <div class="label mB10">{%trans "Answer time per min"%}</div>
   <div class="value">{{answerTime.min | fitNumber}}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block iSendChart%}
+
+<a class="dcard x1" href='{{url.this}}/sendchart'>
+ <div class="statistic blue">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Send chart"%}</div>
  </div>
 </a>
 {%endblock%}

@@ -1,10 +1,8 @@
 function chartDrawer()
 {
   if($("#chartdiv").length == 1){myChartProductPrice();}
+
 }
-
-
-
 
 
 //-------------------------------------------------------------------------------------------------------
@@ -23,11 +21,11 @@ function myChartProductPrice()
     },
     title:
     {
-      text: '{%trans "Count Send and Receive sms per day in last month"%}'
+      text: '{%trans "Count Send and Receive sms per day"%}'
     },
      xAxis:
     [{
-        categories : {{masterChart.categories | raw}},
+        categories : {{myChart.master.categories | raw}},
         crosshair: true
     }],
     credits:
@@ -88,13 +86,13 @@ function myChartProductPrice()
     },
     series: [{
     name: '{%trans "Send by panel"%}',
-    data: {{masterChart.sendpanel | raw}}
-  }, {
+    data: {{myChart.master.sendpanel | raw}}
+  },{
     name: '{%trans "Send"%}',
-    data: {{masterChart.send | raw}}
+    data: {{myChart.master.send | raw}}
   }, {
     name: '{%trans "Receive"%}',
-    data: {{masterChart.receive | raw}}
+    data: {{myChart.master.receive | raw}}
   }],
 
 

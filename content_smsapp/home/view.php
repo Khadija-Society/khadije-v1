@@ -9,7 +9,7 @@ class view
 		\dash\data::page_desc(T_("System for check and management sms"));
 
 
-		$chart = \lib\app\sms::chart();
+		$chart = \lib\app\sms::chart('month');
 		\dash\data::masterChart($chart);
 
 		$args =

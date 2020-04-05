@@ -348,7 +348,7 @@ function myChartProductPrice()
         }
       },
       title: {
-        text: '{%trans "Price"%}',
+        text: '{%trans "Count"%}',
         useHTML: Highcharts.hasBidiBug,
         style: {
           color: Highcharts.getOptions().colors[0]
@@ -384,6 +384,9 @@ function myChartProductPrice()
       }
     },
     series: [{
+    name: '{%trans "Send by panel"%}',
+    data: {{myChart.master.sendpanel | raw}}
+  },{
     name: '{%trans "Send"%}',
     data: {{myChart.master.send | raw}}
   }, {

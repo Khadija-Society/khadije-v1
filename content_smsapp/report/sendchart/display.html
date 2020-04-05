@@ -1,0 +1,53 @@
+{%extends 'content_smsapp/layout.html'%}
+
+{%block pageContent%}
+
+
+
+<div class="f mB20">
+	<div class="c12">
+		<div id="chartdiv" class="chart"></div>
+	</div>
+</div>
+
+<div class="tblBox fs14">
+  <table class="tbl1 v1">
+    <thead>
+      <th>{%trans "Date"%}</th>
+      <th>{%trans "Receive"%}</th>
+      <th>{%trans "Send by mobile"%}</th>
+      <th>{%trans "Send by panel"%}</th>
+    </thead>
+    <tbody>
+      {% for key, value in myChart.raw%}
+        <tr>
+          <td>{{value.date}}</td>
+          <td>{{value.receive | fitNumber}}</td>
+          <td>{{value.send | fitNumber}}</td>
+          <td>{{value.sendpanel | fitNumber}}</td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+
+{%endblock%}
+
+
+{%block foot_js%}
+<script>
+{%include 'content_smsapp/report/sendchart/chart.js'%}
+</script>
+{%endblock%}
+
+
+{%block iSmsGroupAdd%}
+<a class="dcard x1" href='{{url.here}}/addgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-plus"></i></div>
+  <div class="label">{%trans "Add group"%}</div>
+ </div>
+</a>
+{%endblock%}
+

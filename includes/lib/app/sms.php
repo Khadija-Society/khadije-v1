@@ -667,10 +667,21 @@ class sms
 
 	];
 
-	public static function chart()
+	public static function chart($_type = null, $_raw = false)
 	{
 		$now = date("Y-m-d");
-		$lastYear = date("Y-m-d", strtotime("-1 year"));
+		if($_type === 'month')
+		{
+			$lastYear = date("Y-m-d", strtotime("-30 days"));
+		}
+		elseif ($_type === '2year')
+		{
+			$lastYear = date("Y-m-d", strtotime("-2 year"));
+		}
+		else
+		{
+			$lastYear = date("Y-m-d", strtotime("-1 year"));
+		}
 
 		$get_chart_receive    = \lib\db\sms::get_chart_receive($now, $lastYear);
 		$get_chart_send       = \lib\db\sms::get_chart_send($now, $lastYear);
@@ -733,11 +744,37 @@ class sms
 			}
 		}
 
+		if($_raw)
+		{
+			return $hi_chart;
+		}
+
 		$hi_chart['categories'] = json_encode($hi_chart['categories'], JSON_UNESCAPED_UNICODE);
 		$hi_chart['send']       = json_encode($hi_chart['send'], JSON_UNESCAPED_UNICODE);
 		$hi_chart['sendpanel']  = json_encode($hi_chart['sendpanel'], JSON_UNESCAPED_UNICODE);
 		$hi_chart['receive']    = json_encode($hi_chart['receive'], JSON_UNESCAPED_UNICODE);
 		return $hi_chart;
+	}
+
+
+	public static function chart_raw($_type = null)
+	{
+		$list = self::chart($_type, true);
+		$result = [];
+		foreach ($list['categories'] as $key => $value)
+		{
+			$result[] =
+			[
+				'date'      => $value,
+				'send'      => @$list['send'][$key],
+				'sendpanel' => @$list['sendpanel'][$key],
+				'receive'   => @$list['receive'][$key],
+			];
+		}
+
+		$result = array_reverse($result);
+
+		return $result;
 	}
 
 	/**
