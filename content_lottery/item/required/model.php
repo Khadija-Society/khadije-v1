@@ -7,7 +7,7 @@ class model
 	public static function post()
 	{
 
-		$post =
+		$args =
 		[
 
 			// 'firstname'    => \dash\request::post('firstname') ? true : false,
@@ -31,7 +31,7 @@ class model
 		];
 
 
-		$post['requiredfield'] = json_encode($post, JSON_UNESCAPED_UNICODE);
+		$post['requiredfield'] = json_encode($args, JSON_UNESCAPED_UNICODE);
 
 
 		\lib\app\syslottery::edit($post, \dash\request::get('id'));
