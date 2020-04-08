@@ -17,6 +17,7 @@ class model
 			'father'          => \dash\request::post('father') ? true : false,
 			// 'gender'       => \dash\request::post('gender') ? true : false,
 			'marital'         => \dash\request::post('marital') ? true : false,
+			'desc'            => \dash\request::post('desc') ? true : false,
 			'birthdate'       => \dash\request::post('birthdate') ? true : false,
 			'phone'           => \dash\request::post('phone') ? true : false,
 			'city'            => \dash\request::post('city') ? true : false,
@@ -24,6 +25,9 @@ class model
 			'education'       => \dash\request::post('education') ? true : false,
 			'videofile'       => \dash\request::post('videofile') ? true : false,
 			'imagefile'       => \dash\request::post('imagefile') ? true : false,
+
+			'inquiry'         => \dash\request::post('inquiry') ? true : false,
+			'showstats'       => \dash\request::post('showstats') ? true : false,
 		];
 
 

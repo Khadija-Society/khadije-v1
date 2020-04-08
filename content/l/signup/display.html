@@ -143,6 +143,13 @@
      {%endif%}
 
 
+
+     {%if myRequired.desc%}
+      <label>توضیحات</label>
+      <textarea class="txt" rows="10" placeholder="" name="desc"></textarea>
+     {%endif%}
+
+
      <div class="f">
       {%include display.hive%}
      </div>
@@ -164,14 +171,17 @@
 
 
 
+  {%if myRequired.showstats%}
   <div class="dcard x2">
    <div class="statistic sm teal">
     <div class="label mB10"> تعداد افراد ثبت‌نام شده تاکنون</div>
     <div class="value counter">{{countSignup |fitNumber}}</div>
    </div>
   </div>
+  {%endif%}
 
 
+  {%if myRequired.inquiry%}
   <div class="cbox fs09 pTB25-f">
     <p>
 
@@ -210,6 +220,8 @@
 
     {%endif%}
   </div>
+  {%endif%}
+
 
  </div>
 

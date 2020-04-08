@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "ecd30f71-51de-4028-a32f-c269d380d3e0",
+		"name": "khadije",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add new sms",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "$2y$07$J5lyhNSfVCEVxPZvEmrXhemZpzwekNKJRPHC1kwth3yPw6U6cUBPC",
+						"type": "text"
+					},
+					{
+						"key": "gateway",
+						"value": "09109610612",
+						"type": "text"
+					},
+					{
+						"key": "auth3",
+						"value": "ade8e71b30487e473da91d243d6220f4",
+						"type": "text"
+					},
+					{
+						"key": "x-app-request",
+						"value": "android",
+						"type": "text"
+					},
+					{
+						"key": "smsappkey",
+						"value": "e2c998bbb48931f40a0f7d1cba53434f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "from",
+							"value": "09995554466",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "قمss5464fghgfhdddddddddddddddddddddddD3dddddddddddd",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2019-05-20 17:49:19",
+							"type": "text"
+						},
+						{
+							"key": "smsid",
+							"value": "m",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://khadije.local/en/api/v6/smsapp/new",
+					"protocol": "http",
+					"host": [
+						"khadije",
+						"local"
+					],
+					"path": [
+						"en",
+						"api",
+						"v6",
+						"smsapp",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salawat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"type": "text",
+						"value": "$2y$07$J5lyhNSfVCEVxPZvEmrXhemZpzwekNKJRPHC1kwth3yPw6U6cUBPC",
+						"disabled": true
+					},
+					{
+						"key": "gateway",
+						"type": "text",
+						"value": "09109610612",
+						"disabled": true
+					},
+					{
+						"key": "auth3",
+						"type": "text",
+						"value": "ade8e71b30487e473da91d243d6220f4",
+						"disabled": true
+					},
+					{
+						"key": "x-app-request",
+						"type": "text",
+						"value": "android",
+						"disabled": true
+					},
+					{
+						"key": "appkey",
+						"type": "text",
+						"value": "e2c998bbb48931f40a0f7d1cba53434f"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "from",
+							"value": "09995554466",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "قمss5464fghgfhdddddddddddddddddddddddD3dddddddddddd",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2019-05-20 17:49:19",
+							"type": "text"
+						},
+						{
+							"key": "smsid",
+							"value": "m",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://khadije.local/en/api/v6/salawat",
+					"protocol": "http",
+					"host": [
+						"khadije",
+						"local"
+					],
+					"path": [
+						"en",
+						"api",
+						"v6",
+						"salawat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sync",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "smsappkey",
+						"type": "text",
+						"value": "e2c998bbb48931f40a0f7d1cba53434f"
+					},
+					{
+						"key": "gateway",
+						"value": "989109610612",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "from",
+							"value": "0912453056",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "قم",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2019-05-26 14:45:14",
+							"type": "text"
+						},
+						{
+							"key": "smsid",
+							"value": "m",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://khadije.local/en/api/v6/smsapp/sync",
+					"protocol": "http",
+					"host": [
+						"khadije",
+						"local"
+					],
+					"path": [
+						"en",
+						"api",
+						"v6",
+						"smsapp",
+						"sync"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "queue",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "smsappkey",
+						"type": "text",
+						"value": "e2c998bbb48931f40a0f7d1cba53434f"
+					},
+					{
+						"key": "gateway",
+						"value": "09109610612",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "smsid",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "from",
+							"value": "0912453056",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "من کربلا نرفتم شما رفتی",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2019-04-28 21:24:14",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://khadije.local/fa/api/v6/smsapp/queue",
+					"protocol": "http",
+					"host": [
+						"khadije",
+						"local"
+					],
+					"path": [
+						"fa",
+						"api",
+						"v6",
+						"smsapp",
+						"queue"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

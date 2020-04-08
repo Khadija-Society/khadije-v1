@@ -31,6 +31,7 @@ class model
 		// $post['pasportdate']     = \dash\request::post('passportexpire');
 		// $post['country']         = \dash\request::post('country');
 		// $post['province']        = \dash\request::post('province');
+		$post['desc']        = \dash\request::post('desc');
 		$post['city']            = \dash\request::post('city');
 		$post['education']            = \dash\request::post('education');
 		$post['homeaddress']     = \dash\request::post('homeaddress');

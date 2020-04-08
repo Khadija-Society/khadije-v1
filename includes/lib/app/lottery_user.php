@@ -105,6 +105,7 @@ class lottery_user
 			'mobile'       => true,
 			'gender'       => true,
 
+			'desc'         => false,
 			'father'       => false,
 			'marital'      => false,
 			'birthdate'    => false,
@@ -387,12 +388,6 @@ class lottery_user
 			return false;
 		}
 
-		$desc = \dash\app::request('desc');
-		if($desc && mb_strlen($desc) > 700)
-		{
-			\dash\notif::error(T_("Invalid arguments desc"), 'desc');
-			return false;
-		}
 
 		$job = \dash\app::request('job');
 		if($job && mb_strlen($job) > 50)
@@ -447,6 +442,30 @@ class lottery_user
 		}
 
 
+
+		$desc = \dash\app::request('desc');
+		if($desc && !is_string($desc))
+		{
+			\dash\notif::error(T_("Invalid desc"), 'desc');
+			return false;
+		}
+
+		if($desc && mb_strlen($desc) > 5000)
+		{
+			\dash\notif::error(T_("Description is too large"), 'desc');
+			return false;
+		}
+
+		if($isRequired['desc'])
+		{
+			if(!$desc)
+			{
+				\dash\notif::error(T_("City is required"), 'desc');
+				return false;
+			}
+		}
+
+
 		if(!$province && $city)
 		{
 			$province = \dash\utility\location\cites::get($city, 'province', 'province');
@@ -495,6 +514,7 @@ class lottery_user
 		}
 
 		$args                    = [];
+		$args['desc']            = $desc;
 		$args['mobile']          = $mobile;
 		$args['gender']          = $gender;
 		$args['email']           = $email;
@@ -697,6 +717,7 @@ class lottery_user
 				else
 				{
 					unset($args['lottery_id']);
+					unset($args['desc']);
 					unset($args['imagefile1']);
 					unset($args['imagefile2']);
 					unset($args['imagefile3']);

@@ -98,6 +98,24 @@
       <label for="imagefile">{%trans "Upload image file"%}</label>
     </div>
 
+    <div class="switch1 mT10">
+      <input type="checkbox" name="desc" id="desc" {% if requiredfield.desc %} checked {%endif%} >
+      <label for="desc"></label>
+      <label for="desc">{%trans "Get description"%}</label>
+    </div>
+
+    <hr>
+    <div class="switch1 mT10">
+      <input type="checkbox" name="showstats" id="showstats" {% if requiredfield.showstats %} checked {%endif%} >
+      <label for="showstats"></label>
+      <label for="showstats">{%trans "Show Stats"%}</label>
+    </div>
+
+    <div class="switch1 mT10">
+      <input type="checkbox" name="inquiry" id="inquiry" {% if requiredfield.inquiry %} checked {%endif%} >
+      <label for="inquiry"></label>
+      <label for="inquiry">{%trans "User can inquiry"%}</label>
+    </div>
 
 
      {{block('isave')}}

@@ -78,6 +78,7 @@
         {%if myLotteryRequired.education%}<th>{%trans "Education"%}</th>{%endif%}
         {%if myLotteryRequired.videofile%}<th>{%trans "Video file"%}</th>{%endif%}
         {%if myLotteryRequired.imagefile%}<th>{%trans "Image file"%}</th>{%endif%}
+        {%if myLotteryRequired.desc%}<th>{%trans "Description"%}</th>{%endif%}
 
         <th>{%trans "Date created"%}</th>
 
@@ -125,6 +126,7 @@
   </td>
 
 {%endif%}
+{%if myLotteryRequired.desc%}<td>{{value.desc}}</td>{%endif%}
 
         <td>{{value.datecreated | dt(true) }}</td>
 

@@ -17,15 +17,20 @@ class view
 			\dash\data::newSignup(true);
 		}
 
-		$countSignup = \lib\db\lottery_user::count_signup(\dash\coding::decode(\dash\data::lotteryId()));
 
-		\dash\data::countSignup($countSignup);
+		if(\dash\data::myRequired_showstats())
+		{
+			$countSignup = \lib\db\lottery_user::count_signup(\dash\coding::decode(\dash\data::lotteryId()));
+			\dash\data::countSignup($countSignup);
+		}
+
 
 		self::static_var();
 
-		self::check_nationalcode();
-
-
+		if(\dash\data::myRequired_inquiry())
+		{
+			self::check_nationalcode();
+		}
 	}
 
 
