@@ -259,6 +259,12 @@
     {%endfor%}
   </div>
 
+  {%if not requestGET%}
+  <div class="f">
+    <div class="cauto os btn danger" data-confirm data-data='{"archive" : "all"}'>آرشیو همه</div>
+  </div>
+  {%endif%}
+
   <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
   <button class="btn primary2">{%trans "Apply"%}</button>
 

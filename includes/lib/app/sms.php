@@ -902,6 +902,13 @@ class sms
 		return $temp;
 	}
 
+	public static function edit_multi($_args, $_ids)
+	{
+		$ids = implode(',', $_ids);
+		$update = \lib\db\sms::update_multi($_args, $ids);
+		return $update;
+
+	}
 
 	/**
 	 * edit a sms

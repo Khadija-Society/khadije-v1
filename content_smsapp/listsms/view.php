@@ -205,8 +205,14 @@ class view
 		{
 			$export = true;
 			$args['pagenation'] = false;
+			unset($args['limit']);
 		}
 
+		if(\dash\temp::get('no-limit'))
+		{
+			$args['pagenation'] = false;
+			unset($args['limit']);
+		}
 
 		$dataTable = \lib\app\sms::list($search_string, $args);
 

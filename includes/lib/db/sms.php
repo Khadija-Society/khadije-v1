@@ -447,6 +447,16 @@ class sms
 		return \dash\db\config::public_update('s_sms', ...func_get_args());
 	}
 
+	public static function update_multi($_args, $_ids)
+	{
+		$set = \dash\db\config::make_set($_args);
+
+		$query = "UPDATE s_sms SET $set WHERE s_sms.id IN ($_ids) ";
+		$result = \dash\db::query($query);
+
+		return $result;
+	}
+
 	public static function update_where()
 	{
 		return \dash\db\config::public_update_where('s_sms', ...func_get_args());

@@ -6,6 +6,41 @@ class model
 {
 	public static function post()
 	{
+		if(\dash\request::post('archive') === 'all' && !\dash\request::get())
+		{
+			\dash\temp::set('no-limit', true);
+			\content_smsapp\listsms\view::config();
+			$list = \dash\data::dataTable();
+			if($list && is_array($list))
+			{
+				$ids = array_column($list, 'id');
+				$ids = array_map(['\\dash\\coding', 'decode'], $ids);
+				$ids = array_filter($ids);
+				$ids = array_unique($ids);
+
+				if($ids)
+				{
+
+					$post                  = [];
+					$post['group_id']      = null;
+					$post['answertext']    = null;
+					$post['sendstatus']    = null;
+					$post['dateanswer']    = date("Y-m-d H:i:s");
+					$post['receivestatus'] = 'skip';
+
+					$result = \lib\app\sms::edit_multi($post, $ids);
+
+					\dash\notif::ok("همه پیام‌ها آرشیو شدند");
+					\dash\redirect::pwd();
+					return;
+				}
+			}
+
+			\dash\notif::info("هیچ پیامی برای بایگانی یافت نشد!");
+
+			return;
+		}
+
 		if(\dash\request::post('type') === 'setAnswer')
 		{
 			$answer_id    = \dash\request::post('answer_id');
