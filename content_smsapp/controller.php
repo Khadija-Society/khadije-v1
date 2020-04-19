@@ -6,7 +6,7 @@ class controller
 	public static function routing()
 	{
 
-		if(\dash\permission::supervisor() || \dash\user::detail('mobile') === '989127522690')
+		if(\dash\permission::supervisor() || \dash\user::detail('mobile') === '989127522690' || \dash\user::detail('mobile') === '989126788630')
 		{
 			\dash\permission::access('smsAppSetting');
 			// nothing
