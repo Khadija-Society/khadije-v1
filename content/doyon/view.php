@@ -5,7 +5,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\redirect::to(\dash\url::kingdom());
+		// \dash\redirect::to(\dash\url::kingdom());
 
 
 		\dash\data::page_title(T_("Doyon"));
