@@ -61,7 +61,7 @@
     "fetriye": {
       "berenjkhareji": {
         "title": "برنج خارجی",
-        "price": 24000
+        "price": 30000
       },
       "berenj": {
         "title": "برنج ایرانی",
@@ -74,39 +74,39 @@
     },
     "kafarat": {
       "roze_amd": {
-        "price": 150000,
+        "price": 180000,
         "unit": "روز",
         "title": "کفاره روزه عمد - اطعام شصت فقیر"
       },
       "roze_ozr": {
-        "price": 2500,
+        "price": 3000,
         "unit": "روز",
         "title": "کفاره روزه دارای عذر و غیر عمد - اطعام یک فقیر"
       },
       "nazr": {
-        "price": 25000,
+        "price": 30000,
         "unit": "مورد",
         "title": "کفاره شکستن نذر - اطعام ده فقیر"
       },
       "ahd": {
-        "price": 150000,
+        "price": 180000,
         "unit": "مورد",
         "title": "کفاره شکستن عهد - اطعام شصت فقیر"
       },
       "qasam": {
-        "price": 25000,
+        "price": 30000,
         "unit": "مورد",
         "title": "کفاره شکستن قسم - اطعام ده فقیر"
       }
     },
     "namazqaza": {
       "namazqaza": {
-        "price": 1800000,
+        "price": 2200000,
         "unit": "سال",
         "title": "نماز قضا"
       },
       "rozeqaza": {
-        "price": 1200000,
+        "price": 1300000,
         "unit": "ماه",
         "title": "روزه قضا"
       }
