@@ -219,7 +219,7 @@ class application
 		$link['link'][0]['url']   = \dash\url::kingdom(). '/donate';
 		$link['link'][0]['text']  = T_('Donate');
 
-		$link['link'][1]['image'] = \dash\url::static(). '/images/app/doyon-wide.jpg';
+		$link['link'][1]['image'] = \dash\url::static(). '/images/app/doyon-sharee-wide.jpg';
 		$link['link'][1]['url']   = \dash\url::kingdom(). '/doyon';
 		$link['link'][1]['text']  = T_('Donate Product');
 
