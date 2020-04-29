@@ -182,6 +182,8 @@ class view
 		\dash\data::dataTable($dataTable);
 
 		\dash\data::sortLink(\content_m\view::make_sort_link(\lib\app\doyon::$sort_field, \dash\url::this()));
+
+		unset($args['mobile']);
 		$type_count = \lib\app\doyon::type_count($args);
 		\dash\data::typeCount($type_count);
 
