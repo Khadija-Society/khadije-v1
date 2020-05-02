@@ -122,7 +122,7 @@ class application
 
 		// if(\lib\app\syslottery::any_active())
 		{
-			$homepage[]            = self::lottery_link();
+			$homepage[]            = self::competition_book();
 		}
 
 		// $homepage[]            = self::link2_donate_shaban();
@@ -152,6 +152,16 @@ class application
 		return $link;
 	}
 
+
+	private static function competition_book()
+	{
+		$link          = [];
+		$link['type']  = 'banner';
+		// $link['type']  = 'browser';
+		$link['image'] = \dash\url::static(). '/images/app/banner-ketabkhani99.jpg';
+		$link['url']   = \dash\url::kingdom(). '/race-ramezan-99';
+		return $link;
+	}
 
 	private static function karbala_signup_link()
 	{
