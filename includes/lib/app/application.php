@@ -158,6 +158,7 @@ class application
 		$link          = [];
 		$link['type']  = 'banner';
 		// $link['type']  = 'browser';
+		$link['target'] = '_blank';
 		$link['image'] = \dash\url::static(). '/images/app/banner-ketabkhani99.jpg';
 		$link['url']   = \dash\url::kingdom(). '/race-ramezan-99';
 		return $link;
