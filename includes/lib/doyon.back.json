@@ -34,6 +34,41 @@
       "slug": "mazalem",
       "visible": true,
       "class": ""
+    },
+    {
+      "title": "نماز و روزه",
+      "desc": "نماز و ورزه قضا",
+      "slug": "namazqaza",
+      "visible": true,
+      "class": ""
+    },
+    {
+      "title": "نماز قضا",
+      "desc": "",
+      "slug": "namazqaza",
+      "visible": false,
+      "class": ""
+    },
+    {
+      "title": "روزه قضا",
+      "desc": "",
+      "slug": "rozeqaza",
+      "visible": false,
+      "class": ""
+    },
+    {
+      "title": "رد مظالم",
+      "desc": "رد مظالم",
+      "slug": "mazalem",
+      "visible": true,
+      "class": ""
+    },
+    {
+      "title": "نماز و روزه",
+      "desc": "نماز و ورزه قضا",
+      "slug": "namazqaza",
+      "visible": true,
+      "class": ""
     }
   ],
   "setting": {
@@ -76,6 +111,18 @@
         "price": 30000,
         "unit": "مورد",
         "title": "کفاره شکستن قسم - اطعام ده فقیر"
+      }
+    },
+    "namazqaza": {
+      "namazqaza": {
+        "price": 2200000,
+        "unit": "سال",
+        "title": "نماز قضا"
+      },
+      "rozeqaza": {
+        "price": 1300000,
+        "unit": "ماه",
+        "title": "روزه قضا"
       }
     }
   }
