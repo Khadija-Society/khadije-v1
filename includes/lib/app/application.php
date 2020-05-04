@@ -189,8 +189,22 @@ class application
 	{
 		$link         = [];
 		$link['type'] = 'news';
-		$posts        = \dash\app\posts::get_post_list(['limit' => 3, 'language' => \dash\language::current()]);
-		$link['news'] = $posts;
+		$posts        = \dash\app\posts::get_post_list(['limit' => 5, 'language' => \dash\language::current()]);
+
+		$new_post = [];
+
+		foreach ($posts as $key => $value)
+		{
+			if(isset($value['meta']['redirect']) && $value['meta']['redirect'])
+			{
+				continue;
+			}
+
+			$new_post[] = $value;
+		}
+
+		$link['news'] = $new_post;
+
 		return $link;
 	}
 
