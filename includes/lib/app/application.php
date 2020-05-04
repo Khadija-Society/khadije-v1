@@ -160,7 +160,9 @@ class application
 		// $link['type']  = 'browser';
 		$link['target'] = 'browser';
 		$link['image'] = \dash\url::static(). '/images/app/banner-ketabkhani99.jpg';
-		$link['url']   = \dash\url::kingdom(). '/race-ramezan-99';
+		//$link['url']   = \dash\url::kingdom(). '/race-ramezan-99';
+		$link['url']   = 'https://sarshomar.com/fa/s/3L32G/ex';
+
 		return $link;
 	}
 
