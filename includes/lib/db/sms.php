@@ -81,6 +81,7 @@ class sms
 
 		$result = \dash\db::get($query);
 
+		\dash\notif::info(' تعداد پیام‌های خروجی گرفته شده '. \dash\utility\human::fitNumber($count));
 
 		return $result;
 	}
