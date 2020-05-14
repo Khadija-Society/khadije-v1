@@ -19,7 +19,7 @@ class sms
 
 
 
-	public static function export_mobile($_startdate, $_enddate)
+	public static function export_mobile($_startdate, $_enddate, $_q, $_only_mobile, $_mobile)
 	{
 		$start = null;
 		if($_startdate)
@@ -33,8 +33,55 @@ class sms
 			$end = "AND s_sms.datecreated <= '$_enddate' ";
 		}
 
-		$query = " SELECT DISTINCT s_sms.fromnumber AS `mobile` FROM s_sms WHERE s_sms.receivestatus != 'block' $start $end ";
-		$result = \dash\db::get($query, 'mobile');
+		$text = null;
+		$DISTINCT = 'DISTINCT';
+		if(!$_only_mobile)
+		{
+			$DISTINCT = null;
+			$text     = ', s_sms.text ';
+		}
+
+		$q = null;
+		if($_q)
+		{
+			$q = \dash\safe::forQueryString($_q);
+			$q = " AND (s_sms.text LIKE '%$q%')";
+		}
+
+		if($_mobile)
+		{
+			$q.= " AND (s_sms.fromnumber = '$_mobile')";
+		}
+
+		$where_query = " FROM s_sms WHERE s_sms.receivestatus != 'block' $start $end $q ";
+
+		$count_query = "SELECT COUNT(*) AS `count` $where_query ";
+
+		$count = intval(\dash\db::get($count_query, 'count', true));
+
+		// if(!$_only_mobile)
+		// {
+		// 	if($count > 10000)
+		// 	{
+		// 		\dash\notif::error("در این خروجی تعداد ". \dash\utility\human::fitNumber($count)." پیام یافت شد که بیشتر از حد مجاز برای خروجی است. لطفا تاریخ را محدود کنید تا حد اکثر تعداد پیام‌های خروجی به ۱۰،۰۰۰ برسد.");
+		// 		return false;
+		// 	}
+		// }
+		// else
+		// {
+		// }
+
+		if($count > 20000)
+		{
+			\dash\notif::error("در این خروجی تعداد ". \dash\utility\human::fitNumber($count)." پیام یافت شد که بیشتر از حد مجاز برای خروجی است. لطفا تاریخ را محدود کنید تا حد اکثر تعداد پیام‌های خروجی به ۲۰،۰۰۰ برسد.");
+			return false;
+		}
+
+		$query = " SELECT $DISTINCT s_sms.fromnumber AS `mobile` $text $where_query ";
+
+		$result = \dash\db::get($query);
+
+
 		return $result;
 	}
 

@@ -8,9 +8,13 @@
 <div class="f justify-center">
   <div class="c6 s12">
     <div class="cbox">
-      <form method="get" autocomplete="off" action="{{url.this}}" data-action>
+      <form method="post" autocomplete="off" action="{{url.this}}" data-timeout="0">
         <input type="hidden" name="export" value="1">
         <h3>خروج از شماره تلفن‌های پیامک‌ها در بازه زمانی خاص</h3>
+        <p>شما می‌توانید کلمه خاصی را در متن پیامک‌های دریافت شده جستجو کنید و از آنها خروجی بگیرید
+          <br>
+          همچنین اگر شماره تلفن همراهی وارد کنید تنها پیامک‌های ارسالی از آن شماره تلفن همراه را در خروجی خواهید داشت.
+        </p>
              <div class="f mT20">
 
             <div class="c6 s12 mB5">
@@ -35,6 +39,29 @@
             </div>
 
           </div>
+
+          <div class="f mB20">
+            <div class="c6 s12">
+              <div class="input">
+                <input type="text" name="q" placeholder='{%trans "Search"%}' value="{{requestGET.q}}">
+              </div>
+            </div>
+            <div class="c6 s12">
+              <div class="input mLa5">
+                <input type="tel" name="mobile" placeholder='{%trans "Mobile"%}' value="{{requestGET.mobile}}">
+              </div>
+            </div>
+          </div>
+
+          <div class="msg">
+            در صورتی که این گزینه فعال باشد فقط شماره تلفن‌های همراه در خروجی خواهد بود و در غیر این صورت شماره تلفن همراه با متن پیامک ارسال شده باهم در خروجی خواهند بود.
+            <div class="check1">
+              <input type="checkbox" id="onlymobile" name="onlymobile">
+              <label for="onlymobile">فقط شماره‌های تلفن همراه را می‌خواهم</label>
+            </div>
+          </div>
+
+
 
           <div class="txtRa">
             <button class="btn success">دریافت فایل خروجی</button>
