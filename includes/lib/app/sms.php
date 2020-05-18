@@ -388,6 +388,7 @@ class sms
 
 	public static function send_tg_notif($_sms = null)
 	{
+		return;
 
 		if($_sms === null)
 		{
