@@ -1,13 +1,6 @@
 {
   "list": [
     {
-      "title": "فطریه",
-      "desc": "برای ماه مبارک رمضان",
-      "slug": "fetriye",
-      "visible": true,
-      "class": ""
-    },
-    {
       "title": "کفاره روزه",
       "desc": "روزه عمد و غیر عمد",
       "slug": "kafarat",
@@ -37,20 +30,6 @@
     }
   ],
   "setting": {
-    "fetriye": {
-      "berenjkhareji": {
-        "title": "برنج خارجی",
-        "price": 30000
-      },
-      "berenj": {
-        "title": "برنج ایرانی",
-        "price": 60000
-      },
-      "gandom": {
-        "title": "گندم",
-        "price": 10000
-      }
-    },
     "kafarat": {
       "roze_amd": {
         "price": 180000,
