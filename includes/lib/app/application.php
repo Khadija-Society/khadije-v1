@@ -122,8 +122,10 @@ class application
 
 		// if(\lib\app\syslottery::any_active())
 		{
-			$homepage[]            = self::competition_book();
+			// $homepage[]            = self::competition_book();
 		}
+
+		$homepage[] = self::poyesh_nojavan_hoseyni();
 
 		// $homepage[]            = self::link2_donate_shaban();
 		$homepage[]            = self::link2_donate_ramazan();
@@ -149,6 +151,20 @@ class application
 		$link['image'] = \dash\url::static(). '/images/app/app-lottery.jpg';
 		$link['image'] = \dash\url::static(). '/images/app/app-festival-tv.jpg';
 		$link['url']   = \dash\url::kingdom(). '/l';
+		return $link;
+	}
+
+
+	private static function poyesh_nojavan_hoseyni()
+	{
+		$link          = [];
+		$link['type']  = 'banner';
+		// $link['type']  = 'browser';
+		// $link['target'] = 'browser';
+		$link['image'] = 'https://khadije.com/files/11/289-2663c14961196473523698ffb45c7f71.jpg';
+		//$link['url']   = \dash\url::kingdom(). '/race-ramezan-99';
+		$link['url']   = 'https://khadije.com/news/poyeshe-babolhosain';
+
 		return $link;
 	}
 
