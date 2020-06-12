@@ -75,7 +75,7 @@ class queue
 		$max_limit = 480; // every day
 		$max_limit = 300; // every day
 		$max_limit = 20; // every day
-		$max_limit = 200; // every day
+		$max_limit = 400; // every day
 		$gateway   = \dash\header::get('gateway');
 		$gateway   = \dash\utility\filter::mobile($gateway);
 

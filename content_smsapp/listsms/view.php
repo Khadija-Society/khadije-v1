@@ -241,6 +241,10 @@ class view
 
 		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
 		\dash\data::allGroupList($smsgroup);
+
+
+		\dash\data::page_title(\dash\data::page_title(). ' | '. T_("Last update"). \dash\datetime::fit(\dash\data::statusCount_lastconnected(), 'Y/m/d H:i:s') );
+
 	}
 
 	public static function check_max_limit($_gateway)

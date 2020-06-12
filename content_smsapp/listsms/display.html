@@ -113,103 +113,119 @@
 
 
 {%block istatusCount%}
-
 <div class="f">
-
   <div class="c m3 s8">
     <a class="dcard x07 {%if requestGET.status == 'all'%}active{%endif%}" href="{{url.that}}?status=all">
-      <div class="value">{{statusCount.all | fitNumber(false)}}</div>
+      <div class="value">{{statusCount.all | fitNumber}}</div>
       <div class="label">{%trans "All"%}</div>
     </a>
   </div>
 
 
-
-
-  <div class="c m3 s4">
-    <a class="dcard x07 {%if requestGET.recommend == 'yes'%}active{%endif%}" href="{{url.that}}?recommend=yes">
-      <div class="value">{{statusCount.shenasaee_shode | fitNumber(false)}}</div>
-      <div class="label">{%trans "Recommended"%} <small>{%trans "New"%}</small></div>
-    </a>
-  </div>
-
-  <div class="c m3 s4">
-    <a class="dcard x07 {%if not myUrlGet%}active{%endif%}" href="{{url.that}}">
-      <div class="value">{{statusCount.shenasaee_nashode | fitNumber(false)}}</div>
-      <div class="label">{%trans "New"%} <small>{%trans "Awaiting"%}</small></div>
-    </a>
-  </div>
-
   <div class="c m3 s4">
     <a class="dcard x07 {%if requestGET.receivestatus == 'block'%}active{%endif%}" href="{{url.that}}?receivestatus=block">
-      <div class="value">{{statusCount.receive.block | fitNumber(false)}}</div>
+      <div class="value">{{statusCount.receive.block | fitNumber}}</div>
       <div class="label">{%trans "Needless to answer"%}</div>
     </a>
   </div>
 
    <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.receivestatus == 'skip'%}active{%endif%}" href="{{url.that}}?receivestatus=skip">
-      <div class="value">{{statusCount.receive.skip | fitNumber(false)}}</div>
+      <div class="value">{{statusCount.receive.skip | fitNumber}}</div>
       <div class="label">{%trans "Archived message"%}</div>
     </a>
   </div>
 
-  <div class="c m4 s4">
-    <a class="dcard x07 {%if requestGET.receivestatus == 'answerready'%}active{%endif%}" href="{{url.that}}?receivestatus=answerready">
-      <div class="value">{{statusCount.receive.answerready | fitNumber(false)}}</div>
-      <div class="label">{%trans "Answered"%}</div>
-    </a>
-  </div>
 
-   <div class="c m4 s4">
+  <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.receivestatus == 'sendtopanel'%}active{%endif%}" href="{{url.that}}?receivestatus=sendtopanel">
-      <div class="value">{{statusCount.receive.sendtopanel | fitNumber(false)}}</div>
+      <div class="value">{{statusCount.receive.sendtopanel | fitNumber}}</div>
       <div class="label">{%trans "Send to panel"%}</div>
     </a>
   </div>
-</div>
-<div class="f">
 
-  <div class="c m4 s4">
-    <a class="dcard x07 {%if requestGET.sendstatus == 'waitingtoautosend'%}active{%endif%}" href="{{url.that}}?sendstatus=waitingtoautosend">
-      <div class="value">{{statusCount.send.waitingtoautosend | fitNumber(false)}}</div>
-      <div class="label">{%trans "Waiting to auto send"%}</div>
-    </a>
-  </div>
 
-  <div class="c m4 s4">
-    <a class="dcard x07 {%if requestGET.sendstatus == 'awaiting'%}active{%endif%}" href="{{url.that}}?sendstatus=awaiting">
-      <div class="value">{{statusCount.send.awaiting | fitNumber(false)}}</div>
-      <div class="label">{%trans "Awaiting to send to device"%}</div>
-    </a>
-  </div>
-
-  <div class="c m4 s4">
-    <a class="dcard x07 {%if requestGET.sendstatus == 'sendtodevice'%}active{%endif%}" href="{{url.that}}?sendstatus=sendtodevice">
-      <div class="value">{{statusCount.send.sendtodevice | fitNumber(false)}}</div>
-      <div class="label">{%trans "Waiting for sending by device"%}</div>
-    </a>
-  </div>
-
-    <div class="c m4 s4">
+   <div class="c m4 s4">
     <a class="dcard x07 {%if requestGET.sendstatus == 'sendbypanel'%}active{%endif%}" href="{{url.that}}?sendstatus=sendbypanel">
-      <div class="value">{{statusCount.send.sendbypanel | fitNumber(false)}}</div>
+      <div class="value">{{statusCount.send.sendbypanel | fitNumber}}</div>
       <div class="label">{%trans "Send by panel"%}</div>
     </a>
   </div>
 
 
-  <div class="c m5 s6">
-    <a class="dcard x07 {%if requestGET.sendstatus == 'send'%}active{%endif%} {% if statusCount.send.send != statusCount.receive.answerready%} bg-yellow {%endif%}" href="{{url.that}}?sendstatus=send">
-      <div class="value">{{statusCount.send.send | fitNumber(false)}}</div>
-      <div class="label">{%trans "Sended"%}</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="f">
+
+
+
+  <div class="c m3 s4">
+    <a class="dcard x07 {%if not myUrlGet%}active{%endif%}" href="{{url.that}}">
+      <div class="value">{{statusCount.shenasaee_nashode | fitNumber}}</div>
+      <div class="label">{%trans "New"%} <small>{%trans "Undetected"%}</small></div>
     </a>
   </div>
 
 
-    <div class="c m4 s4">
-    <div class="dcard x07" title='{{statusCount.lastconnected | date | dt}}'>
-      <div class="value">{{statusCount.lastconnected | date | dt('human', 'year')}}</div>
+  <div class="c m3 s4">
+    <a class="dcard x07 {%if requestGET.recommend == 'yes'%}active{%endif%}" href="{{url.that}}?recommend=yes">
+      <div class="value">{{statusCount.shenasaee_shode | fitNumber}}</div>
+      <div class="label">{%trans "New"%} <small>{%trans "Doubt"%}</small></div>
+    </a>
+  </div>
+
+
+  <div class="c m4 s4">
+    <a class="dcard x07 {%if requestGET.sendstatus == 'awaiting'%}active{%endif%}" href="{{url.that}}?sendstatus=awaiting">
+      <div class="value">{{statusCount.send.awaiting | fitNumber}}</div>
+      <div class="label">{%trans "Awaiting to send"%}</div>
+    </a>
+  </div>
+
+
+
+
+  <div class="c m4 s4">
+    <a class="dcard x07 {%if requestGET.sendstatus == 'sendtodevice'%}active{%endif%}" href="{{url.that}}?sendstatus=sendtodevice">
+      <div class="value">{{statusCount.send.sendtodevice | fitNumber}}</div>
+      <div class="label">{%trans "Waiting for sending by device"%}</div>
+    </a>
+  </div>
+
+
+
+  <div class="c m5 s6">
+    <a class="dcard x07 {%if requestGET.sendstatus == 'send'%}active{%endif%} {% if statusCount.send.send != statusCount.receive.answerready%} fc-red {%endif%}" href="{{url.that}}?sendstatus=send">
+      <div class="value">{{statusCount.send.send | fitNumber}}</div>
+      <div class="label">{%trans "Sended by mobile"%}</div>
+    </a>
+  </div>
+
+
+  <div class="c m4 s4">
+    <div class="dcard x07" >
       <div class="label">{%trans "Last connected"%}</div>
     </div>
   </div>
@@ -218,11 +234,14 @@
   <div class="c m3 s6">
     <div class="dcard x07 {% if sysStatus %} bg-graylight{%else%} bg-yellow {%endif%}" data-confirm data-data='{"status" : "change"}'>
       <div class="value">{% if sysStatus %} {%trans "On"%} {%else%} {%trans "Off"%} {%endif%}</div>
-      <div class="label">{% trans "System status"%}</div>
+      <div class="label" title='{{statusCount.lastconnected | date | dt}}'>{{statusCount.lastconnected | date | dt('human', 'year')}}</div>
+
     </div>
   </div>
 
+
 </div>
+
 
 
 {%endblock%}
