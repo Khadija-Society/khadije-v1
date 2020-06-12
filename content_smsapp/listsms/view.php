@@ -242,8 +242,10 @@ class view
 		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
 		\dash\data::allGroupList($smsgroup);
 
-
-		\dash\data::page_title(\dash\data::page_title(). ' | '. T_("Last update"). \dash\datetime::fit(\dash\data::statusCount_lastconnected(), 'Y/m/d H:i:s') );
+		if(\dash\data::statusCount_lastconnected())
+		{
+			\dash\data::page_title(\dash\data::page_title(). ' | '. T_("Last update")." ". \dash\datetime::fit(date("Y-m-d H:i:s" , \dash\data::statusCount_lastconnected()), 'Y/m/d H:i:s') );
+		}
 
 	}
 
