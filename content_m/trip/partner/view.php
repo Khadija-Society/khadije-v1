@@ -84,6 +84,7 @@ class view
 			$new_list[$key]['qom']                = $value['qom'];
 			$new_list[$key]['mashhad']            = $value['mashhad'];
 			$new_list[$key]['karbala']            = $value['karbala'];
+			$new_list[$key]['kind']            = $value['kind'];
 		}
 		return $new_list;
 	}

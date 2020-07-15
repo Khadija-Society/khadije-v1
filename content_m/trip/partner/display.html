@@ -27,6 +27,7 @@
 {{block ('ifather') }}
 {{block ('iNesbat') }}
 {{block ('incode') }}
+{{block ('ikind') }}
 {{block ('igender') }}
 {{block ('iMarried') }}
 {{block ('iNationalCodeThumb')}}
@@ -75,6 +76,7 @@
         <th>{%trans "Nationalcode"%}</th>
         <th>{%trans "Birthday"%}</th>
         <th>{%trans "Status"%} {%trans "Travel"%} </th>
+        <th>{%trans "Kind"%}</th>
         <th>{%trans "Thumb"%}</th>
         <th>{%trans "Action"%}</th>
 
@@ -120,6 +122,10 @@
                 {{value['karbala']| fitNumber}} {%trans "Travel to"%} {%trans "Karbala"%}
               </span>
             {%endif%}
+
+        </td>
+        <td>
+            <b>{%set myKind = value.kind | capitalize%}{%trans myKind%}</b>
         </td>
         <td>
           {%if value.file1%}
@@ -237,6 +243,38 @@
 </div>
 {%endblock%}
 
+
+
+{%block ikind%}
+<label>{%trans "Type"%}</label>
+<div class="f">
+  <div class="c6 s12">
+    <div class="radio3 mT10">
+     <input type="radio" name="kind" value="winner" id="winner" {%if partnerDetail.kind == 'winner' %}checked{%endif%}>
+     <label for="winner">{%trans "Winner"%}</label>
+    </div>
+  </div>
+  <div class="c6 s12">
+    <div class="radio3 mT10">
+     <input type="radio" name="kind" value="employee" id="employee" {%if partnerDetail.kind == 'employee' %}checked{%endif%}>
+     <label for="employee">{%trans "Employee"%}</label>
+    </div>
+  </div>
+  <div class="c6 s12">
+    <div class="radio3 mT10">
+     <input type="radio" name="kind" value="escort" id="escort" {%if partnerDetail.kind == 'escort' %}checked{%endif%}>
+     <label for="escort">{%trans "Escort"%}</label>
+    </div>
+  </div>
+  <div class="c6 s12">
+    <div class="radio3 mT10">
+     <input type="radio" name="kind" value="master" id="master" {%if partnerDetail.kind == 'master' %}checked{%endif%}>
+     <label for="master">{%trans "Master"%}</label>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
 
 {%block igender%}
 <div class="switch1 mT10 gender">

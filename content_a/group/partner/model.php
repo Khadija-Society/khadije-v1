@@ -64,6 +64,7 @@ class model
 			$post['married']      = \dash\request::post('Married');
 			$post['nesbat']       = \dash\request::post('nesbat');
 			$post['type']         = 'group';
+			$post['kind'] = 'master';
 
 			$post['travel_id']    = \dash\request::get('trip');
 

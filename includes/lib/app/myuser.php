@@ -43,6 +43,16 @@ class myuser
 			}
 		}
 
+
+
+		$kind = \dash\app::request('kind');
+
+		if($kind && !in_array($kind, ['winner','employee','escort','master']))
+		{
+			\dash\notif::error(T_("Invalid arguments kind"), 'kind');
+			return false;
+		}
+
 		$email = \dash\app::request('email');
 		if($email && mb_strlen($email) > 70)
 		{
@@ -436,6 +446,7 @@ class myuser
 		$args['file1']          = $file1;
 		$args['file2']          = $file2;
 		$args['hawzahcode']          = $hawzahcode;
+		$args['kind']          = $kind;
 
 		if($gender && $birthday && $firstname && $lastname && $father)
 		{
@@ -830,6 +841,7 @@ class myuser
 		if(!\dash\app::isset_request('file1')) 		unset($args['file1']);
 		if(!\dash\app::isset_request('file2')) 		unset($args['file2']);
 		if(!\dash\app::isset_request('hawzahcode')) 		unset($args['hawzahcode']);
+		if(!\dash\app::isset_request('kind')) 		unset($args['kind']);
 
 		if(!\dash\app::isset_request('shcode')) 		unset($args['shcode']);
 		if(!\dash\app::isset_request('child')) 		unset($args['child']);

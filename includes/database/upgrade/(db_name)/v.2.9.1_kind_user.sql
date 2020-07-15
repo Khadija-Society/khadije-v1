@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `kind` varchar(100)  NULL DEFAULT NULL;

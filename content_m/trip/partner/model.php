@@ -18,6 +18,7 @@ class model
 		$post['gender']       = \dash\request::post('gender') ? 'female' : 'male';
 		$post['married']      = \dash\request::post('Married') ? 'married' : 'single';
 		$post['nesbat']       = \dash\request::post('nesbat');
+		$post['kind']         = \dash\request::post('kind');
 		$post['type']         = \dash\request::post('type');
 		$file1 = \dash\app\file::upload_quick('file1');
 		if($file1)
@@ -232,8 +233,7 @@ class model
 			\dash\engine\process::continue();
 			\dash\app::variable($value);
 
-			$temp = \lib\app\myuser::check(['import_mode' => true]);
-
+			$temp = \lib\app\myuser::check(['import_mode' => false]);
 
 			if($temp === false || !\dash\engine\process::status())
 			{
