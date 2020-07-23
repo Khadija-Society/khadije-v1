@@ -26,6 +26,12 @@
 					{{block('isubtitle')}}
 					{{block('igroup')}}
 					{{block('idesc')}}
+          <div class="input preview">
+           <input type="file" accept="image/gif, image/jpeg, image/png" name="file" id="logo1" data-preview data-max="500">
+           <label for="logo1" title="Simple Title">
+              {%if dataRow.file%}<img src="{{dataRow.file}}">{%endif%}
+           </label>
+          </div>
 					{%if requestGET.course%}
 						{{block('istatus')}}
 					{%endif%}
@@ -104,6 +110,7 @@
 </div>
 
 {%endblock%}
+
 
 
 {% block imaxinputsize %}

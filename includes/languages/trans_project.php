@@ -389,7 +389,7 @@ class twigTransTerms
 
 	//------------------------------------------------content_smsapp/chat/display.html
 	echo T_("Date created");                                                          // Line 83
-	echo T_("Group");                                                                 // Line 128
+	echo T_("Group");                                                                 // Line 135
 	echo T_("Action");                                                                // Line 66
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
@@ -694,7 +694,7 @@ class twigTransTerms
 	echo T_("Contact us");                                                            // Line 261
 	echo T_("Telephones");                                                            // Line 268
 	echo T_("SMS panel");                                                             // Line 284
-	echo T_("Conditions");                                                            // Line 31
+	echo T_("Conditions");                                                            // Line 35
 
 	//----------------------------------------------content_festival/home/display.html
 	echo T_("Referee Committee");                                                     // Line 181
@@ -753,9 +753,11 @@ class twigTransTerms
 
 	//------------------------------------------content_a/festival/course/display.html
 	echo T_("Signup price");                                                          // Line 14
+	echo T_("Free");                                                                  // Line 14
 	echo T_("You are register to this course before");                                // Line 17
-	echo T_("Pay & Register");                                                        // Line 24
-	echo T_("Condition send");                                                        // Line 172
+	echo T_("Pay & Register");                                                        // Line 25
+	echo T_("Register");                                                              // Line 27
+	echo T_("Condition send");                                                        // Line 179
 
 	//--------------------------------------------content_a/festival/home/display.html
 	echo T_("Register for new course");                                               // Line 33
@@ -1212,30 +1214,30 @@ class twigTransTerms
 	echo T_("Add new course");                                                        // Line 13
 
 	//----------------------------------------------content_m/festival/course/add.html
-	echo T_("Title of festival course");                                              // Line 56
-	echo T_("Word");                                                                  // Line 65
-	echo T_("Sound");                                                                 // Line 84
-	echo T_("APK");                                                                   // Line 91
-	echo T_("ZIP");                                                                   // Line 97
-	echo T_("Maximum file size");                                                     // Line 113
-	echo T_("in MB");                                                                 // Line 113
-	echo T_("Subtitle of festival course");                                           // Line 192
+	echo T_("Title of festival course");                                              // Line 62
+	echo T_("Word");                                                                  // Line 71
+	echo T_("Sound");                                                                 // Line 90
+	echo T_("APK");                                                                   // Line 97
+	echo T_("ZIP");                                                                   // Line 103
+	echo T_("Maximum file size");                                                     // Line 120
+	echo T_("in MB");                                                                 // Line 120
+	echo T_("Subtitle of festival course");                                           // Line 199
 	echo T_("Enter a valid subtitle");                                                // Line 15
-	echo T_("Select one group");                                                      // Line 130
-	echo T_("Write description of festival course");                                  // Line 161
-	echo T_("Condition");                                                             // Line 166
-	echo T_("Write condition of festival course");                                    // Line 167
-	echo T_("Write conditionsend of festival course");                                // Line 173
-	echo T_("Pirce");                                                                 // Line 177
-	echo T_("Price of festival course");                                              // Line 179
-	echo T_("Enter a valid pirce");                                                   // Line 179
-	echo T_("Link");                                                                  // Line 187
-	echo T_("Link title");                                                            // Line 190
-	echo T_("Multiuse");                                                              // Line 201
+	echo T_("Select one group");                                                      // Line 137
+	echo T_("Write description of festival course");                                  // Line 168
+	echo T_("Condition");                                                             // Line 173
+	echo T_("Write condition of festival course");                                    // Line 174
+	echo T_("Write conditionsend of festival course");                                // Line 180
+	echo T_("Pirce");                                                                 // Line 184
+	echo T_("Price of festival course");                                              // Line 186
+	echo T_("Enter a valid pirce");                                                   // Line 186
+	echo T_("Link");                                                                  // Line 194
+	echo T_("Link title");                                                            // Line 197
+	echo T_("Multiuse");                                                              // Line 208
 	echo T_("General");                                                               // Line 290
-	echo T_("Rules");                                                                 // Line 236
-	echo T_("Send Rule");                                                             // Line 246
-	echo T_("File setting");                                                          // Line 256
+	echo T_("Rules");                                                                 // Line 243
+	echo T_("Send Rule");                                                             // Line 253
+	echo T_("File setting");                                                          // Line 263
 
 	//--------------------------------------------content_m/festival/user/display.html
 	echo T_("Course");                                                                // Line 97

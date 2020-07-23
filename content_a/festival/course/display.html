@@ -11,7 +11,10 @@
     <div class="cbox mA5">
       <div class="msg primary2 txtC"><b>{{course.title}}</b></div>
       <div class="msg">{{course.desc}}</div>
-      <div class="msg">{%trans "Signup price"%} {{course.price| fitNumber }} {%trans "Toman"%}</div>
+      {%if course.price%}
+        <div class="msg">{%trans "Signup price"%}{{course.price| fitNumber }} {%trans "Toman"%}</div>
+      {%endif%}
+
 
       {%if checkDuplicate%}
       <a href="{{url.this}}?id={{requestGET.id}}" class="btn success block">{%trans "You are register to this course before"%}</a>
@@ -21,7 +24,11 @@
       <form method="post">
 
         <input type="hidden" name="pay" value="1">
-        <button class="btn primary block">{%trans "Pay & Register"%}</button>
+        {%if course.price%}
+          <button class="btn primary block">{%trans "Pay & Register"%}</button>
+        {%else%}
+          <button class="btn primary block">{%trans "Register"%}</button>
+        {%endif%}
       </form>
       {%endif%}
     </div>

@@ -20,7 +20,7 @@
 {%endset%}
 
   <a class="vcard mA10 shadow {{cardColor}}" href='{{url.this}}/course?id={{requestGET.id}}&course={{value.id}}'>
-    <img src="{{url.static}}/siftal/images/useful/gift-love.png" alt="{{value.title}}">
+    <img src="{%if value.file%}{{value.file}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}" alt="{{value.title}}">
     <!-- <img src="{{value.logo}}" alt="{{value.title}}" class="pA10-f"> -->
     <div class="content">
       <div class="header">{{value.title}}</div>

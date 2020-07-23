@@ -41,6 +41,7 @@ trait edit
 		if(!\dash\app::isset_request('multiuse')) unset($args['multiuse']);
 		if(!\dash\app::isset_request('score')) unset($args['score']);
 		if(!\dash\app::isset_request('link')) unset($args['link']);
+		if(!\dash\app::isset_request('file')) unset($args['file']);
 
 		if(!empty($args))
 		{

@@ -52,6 +52,12 @@ class model
 				$post['group']         = \dash\request::post('group');
 				$post['desc']          = \dash\request::post('desc');
 
+				$file = \dash\app\file::upload_quick('file');
+				if($file)
+				{
+					$post['file'] = $file;
+				}
+
 				if(\dash\request::get('course'))
 				{
 					$post['status']        = \dash\request::post('status');

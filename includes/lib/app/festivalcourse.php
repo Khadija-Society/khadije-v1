@@ -124,6 +124,7 @@ class festivalcourse
 		$multiuse  = \dash\app::request('multiuse') ? 1 : null;
 		$score     = \dash\app::request('score');
 		$link      = \dash\app::request('link');
+		$file      = \dash\app::request('file');
 
 
 		$args                  = [];
@@ -140,6 +141,7 @@ class festivalcourse
 		$args['multiuse']      = $multiuse;
 		$args['score']         = $score;
 		$args['link']          = $link;
+		$args['file']          = $file;
 
 		return $args;
 	}
