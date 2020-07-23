@@ -163,7 +163,7 @@ class application
 		// $link['target'] = 'browser';
 		$link['image'] = 'https://khadije.com/files/11/289-2663c14961196473523698ffb45c7f71.jpg';
 		//$link['url']   = \dash\url::kingdom(). '/race-ramezan-99';
-		$link['url']   = 'https://khadije.com/news/poyeshe-babolhosain';
+		$link['url']   = 'https://khadije.com/donate?nazr=qorbani-aval-mah';
 
 		return $link;
 	}
