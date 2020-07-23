@@ -159,11 +159,9 @@ class application
 	{
 		$link          = [];
 		$link['type']  = 'banner';
-		// $link['type']  = 'browser';
 		// $link['target'] = 'browser';
-		$link['image'] = 'https://khadije.com/files/11/289-2663c14961196473523698ffb45c7f71.jpg';
-		//$link['url']   = \dash\url::kingdom(). '/race-ramezan-99';
-		$link['url']   = 'https://khadije.com/donate?nazr=qorbani-aval-mah';
+		$link['image'] = \dash\url::static(). '/images/app/banner-ghorbani.jpg';
+		$link['url']   = \dash\url::kingdom(). '/donate?nazr=qorbani-aval-mah';
 
 		return $link;
 	}
@@ -175,9 +173,8 @@ class application
 		$link['type']  = 'banner';
 		// $link['type']  = 'browser';
 		$link['target'] = 'browser';
-		// $link['image'] = \dash\url::static(). '/images/app/banner-ketabkhani99.jpg';
+		$link['image'] = \dash\url::static(). '/images/app/banner-ketabkhani99.jpg';
 		//$link['url']   = \dash\url::kingdom(). '/race-ramezan-99';
-		$link['image'] = \dash\url::static(). '/images/app/banner-ghorbani.jpg';
 		$link['url']   = 'https://sarshomar.com/fa/s/3L32G/ex';
 
 		return $link;
