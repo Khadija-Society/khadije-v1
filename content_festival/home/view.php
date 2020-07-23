@@ -10,10 +10,10 @@ class view
 		\dash\data::include_js(false);
 
 		\dash\data::display_festival("content_festival/home/layout.html");
-		if(\dash\request::ajax())
-		{
-			\dash\data::display_festival("content_festival/home/messages.html");
-		}
+		// if(\dash\request::ajax())
+		// {
+		// 	\dash\data::display_festival("content_festival/home/messages.html");
+		// }
 
 		if(\dash\data::allFestivalList())
 		{
