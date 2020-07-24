@@ -153,7 +153,7 @@
 
 {%if festival.axis%}
 <section class="txtDetail" id='topics'>
-  <div class="cn" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom">
+  <div class="cn">
     <h2><a href="{{url.that}}#topics">{%trans "Conferences Topics"%}</a></h2>
     {{festival.axis | raw}}
     {%if course%}
@@ -167,7 +167,7 @@
 
 {%if festival.place%}
 <section class="txtDetail" id='terms'>
-  <div class="cn" data-aos="fade-down" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom">
+  <div class="cn">
     <h2><a href="{{url.that}}#terms">{%trans "Terms and Conditions"%}</a></h2>
     {{festival.place | raw}}
   </div>
@@ -204,7 +204,7 @@
 
 {%if festival.award%}
 <section class="txtDetail" id='awards'>
-  <div class="cn" data-aos="zoom-out">
+  <div class="cn">
     <h2><a href="{{url.that}}#awards">{%trans "Awards"%}</a></h2>
     {{festival.award |raw}}
     {%if course%}
