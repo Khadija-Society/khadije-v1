@@ -36,7 +36,8 @@
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.this}}/user?id={{requestGET.id}}'>
+  <form method="get" action='{{url.this}}/user'>
+    <input type="hidden" name="id" value="{{requestGET.id}}">
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -47,8 +48,8 @@
 
 
 {%block htmlTable%}
- <div class="cbox fs12">
-   <table class="tbl">
+ <div class="tblBox">
+   <table class="tbl1 v1 fs12">
     <thead class="primary">
       <tr>
         <th>{%trans "Name"%}</th>

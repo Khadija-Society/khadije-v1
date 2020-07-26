@@ -400,7 +400,33 @@ class myuser
 			return false;
 		}
 
+		$festivals_universityname = \dash\app::request('festivals_universityname');
+		if($festivals_universityname && mb_strlen($festivals_universityname) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'festivals_universityname');
+			return false;
+		}
 
+		$festivals_universitytype = \dash\app::request('festivals_universitytype');
+		if($festivals_universitytype && !in_array($festivals_universitytype, ['student', 'teacher', 'employee', 'leave']))
+		{
+			\dash\notif::error(T_("Invalid arguments type"), 'festivals_universitytype');
+			return false;
+		}
+
+
+		$festivals_universitynumber = \dash\app::request('festivals_universitynumber');
+		if($festivals_universitynumber && mb_strlen($festivals_universitynumber) > 100)
+		{
+			\dash\notif::error(T_("Data is out of range"), 'festivals_universitynumber');
+			return false;
+		}
+
+		if($festivals_universitytype === 'student' && !$festivals_universitynumber)
+		{
+			\dash\notif::error(T_("Please enter the student university number"), 'festivals_universitynumber');
+			return false;
+		}
 
 
 		$args                    = [];
@@ -410,6 +436,10 @@ class myuser
 		$args['birthday']        = $birthday;
 		$args['firstname']       = $firstname;
 		$args['lastname']        = $lastname;
+
+		$args['festivals_universityname'] = $festivals_universityname;
+		$args['festivals_universitytype'] = $festivals_universitytype;
+		$args['festivals_universitynumber'] = $festivals_universitynumber;
 
 
 		$args['shcode']       = $shcode;
@@ -849,9 +879,9 @@ class myuser
 		if(!\dash\app::isset_request('birthcity')) 		unset($args['birthcity']);
 
 
-
-
-
+		if(!\dash\app::isset_request('festivals_universityname')) 		unset($args['festivals_universityname']);
+		if(!\dash\app::isset_request('festivals_universitytype')) 		unset($args['festivals_universitytype']);
+		if(!\dash\app::isset_request('festivals_universitynumber')) 		unset($args['festivals_universitynumber']);
 
 
 		\dash\db\users::update($args, $user_id);

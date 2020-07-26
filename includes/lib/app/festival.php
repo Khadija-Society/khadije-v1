@@ -308,10 +308,12 @@ class festival
 		$message    = \dash\app::request('message');
 		$messagesms = \dash\app::request('messagesms');
 		$social     = \dash\app::request('social');
+		$student     = \dash\app::request('student') ? 1 : null;
 
 
 		$args               = [];
 		$args['desc']       = $desc;
+		$args['student']       = $student;
 		$args['social']     = $social;
 		$args['intro']      = $intro;
 		$args['about']      = $about;

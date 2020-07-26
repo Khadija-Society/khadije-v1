@@ -8,6 +8,14 @@
 	<div class="c8">
 		<div class="cbox">
 			<div class="msg txtC success2">{%trans "User"%} <b>{{dataRowUser.displayname}}</b></div>
+			{%if dataRowFestivalDetails.student%}
+			<div class="msg">
+				<div>{%trans "University name"%} <span class="txtB">{{dataRowUser.festivals_universityname}}</span></div>
+				<div>{%trans "Job"%} <span class="txtB">{%set myfestivals_universitytype = dataRowUser.festivals_universitytype%}{%trans myfestivals_universitytype%}</span></div>
+				<div>{%trans "University student number"%} <span class="txtB">{{dataRowUser.festivals_universitynumber | fitNumber(false)}}</span></div>
+			</div>
+			{%endif%}
+
 			<div class="msg txtC primary">{%trans "Festival course"%} <b>{{dataRowCourse.title}}</b></div>
 			<div class="f">
 

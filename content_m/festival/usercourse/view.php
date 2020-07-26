@@ -43,6 +43,10 @@ class view
 			\dash\data::dataRowCourse(\lib\db\festivalcourses::get(['id' => $load['festivalcourse_id'], 'limit' => 1]));
 		}
 
+		\dash\data::badge_link(\dash\url::here(). '/festival/user?id='. \dash\request::get('id'));
+		\dash\data::badge_text(T_('Back'));
+
+
 
 	}
 }

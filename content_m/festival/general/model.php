@@ -11,6 +11,7 @@ class model
 		$post['subtitle'] = \dash\request::post('subtitle');
 		$post['slug']     = \dash\request::post('slug');
 		$post['desc']     = \dash\request::post('desc');
+		$post['student']  = \dash\request::post('student');
 
 		$result           = \lib\app\festival::edit($post, \dash\request::get('id'));
 

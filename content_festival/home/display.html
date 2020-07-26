@@ -267,9 +267,9 @@
           <div class="tel mB20">
             <h3 class="fs10">{%trans "Telephones"%}</h3>
 
-            {%if festival.phone.phone1%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone1}}">{{festival.phone.phone1 | fitNumber(false)}}</a>{%endif%}
-            {%if festival.phone.phone2%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone2}}">{{festival.phone.phone2 | fitNumber(false)}}</a>{%endif%}
-            {%if festival.phone.phone3%}<a class="btn outline sm mA5" href="tel:{{festival.phone.phone3}}">{{festival.phone.phone3 | fitNumber(false)}}</a>{%endif%}
+            {%if festival.phone.phone1%}<div><p>{{festival.phone.phone1}}</p></div>{%endif%}
+            {%if festival.phone.phone2%}<div><p>{{festival.phone.phone2}}</p></div>{%endif%}
+            {%if festival.phone.phone3%}<div><p>{{festival.phone.phone3}}</p></div>{%endif%}
 
           </div>
           {%endif%}

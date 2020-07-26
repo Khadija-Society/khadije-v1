@@ -61,6 +61,10 @@
    {%endif%}
 
    {{block('iNationalCodeThumb')}}
+
+   {{block('festivalStudentDetail')}}
+
+
    {{block ('iNext') }}
 
   </form>
@@ -68,6 +72,52 @@
 </div>
 
 {%endblock%}
+
+
+
+{%block festivalStudentDetail%}
+{%if url.module == 'festival' %}
+{%if festivalDetail.student%}
+<div class="f">
+  <div class="c4 s12">
+    <div class="pRa5">
+      <label for="festivals_universityname">{%trans "University name"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+      <div class="input">
+        <input type="text" name="festivals_universityname" id="festivals_universityname" placeholder='{%trans "University name"%} *' value="{{userdetail.festivals_universityname}}"  maxlength="50" required>
+      </div>
+    </div>
+  </div>
+
+    <div class="c4 s12">
+      <div class="pRa5">
+        <label for="universitytype">{%trans "Job"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+        <select name="festivals_universitytype" class="ui dropdown select" id="universitytype">
+          <option value="" readonly>{%trans "Please select one itme"%}</option>
+          <option value="student" {%if userdetail.festivals_universitytype == 'student' %}selected {%endif%}>{%trans "University student"%}</option>
+          <option value="teacher" {%if userdetail.festivals_universitytype == 'teacher' %}selected {%endif%}>{%trans "Teacher"%}</option>
+          <option value="employee" {%if userdetail.festivals_universitytype == 'employee' %}selected {%endif%}>{%trans "Employee"%}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="c4 s12">
+      <div class="pRa5">
+        <label for="">{%trans "University student number"%} <small class="fc-red">* {%trans "Require for student"%}</small></label>
+        <div class="input">
+          <input type="number" min="1" max="999999999999999999" name="festivals_universitynumber" id="festivals_universitynumber" placeholder='{%trans "University name"%} *' value="{{userdetail.festivals_universitynumber}}" >
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+{%endif%}
+{%endif%}
+{%endblock%}
+
 
 
 {%block iHawzahCode%}

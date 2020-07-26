@@ -174,7 +174,7 @@ class twigTransTerms
 	echo T_("Children");                                                              // Line 102
 	echo T_("Export From");                                                           // Line 111
 	echo T_("Birth city");                                                            // Line 119
-	echo T_("hawzahcode");                                                            // Line 76
+	echo T_("hawzahcode");                                                            // Line 126
 	echo T_("Required");                                                              // Line 14
 	echo T_("Remove file");                                                           // Line 187
 	echo T_("Enter a valid name from 2 to 40 character");                             // Line 364
@@ -193,7 +193,7 @@ class twigTransTerms
 	echo T_("Arabic Language");                                                       // Line 433
 	echo T_("Province");                                                              // Line 11
 	echo T_("Select province");                                                       // Line 501
-	echo T_("Select city");                                                           // Line 219
+	echo T_("Select city");                                                           // Line 269
 	echo T_("Zip code");                                                              // Line 473
 	echo T_("Passport id");                                                           // Line 483
 	echo T_("Foreigners must fill");                                                  // Line 100
@@ -694,7 +694,7 @@ class twigTransTerms
 	echo T_("Contact us");                                                            // Line 261
 	echo T_("Telephones");                                                            // Line 268
 	echo T_("SMS panel");                                                             // Line 284
-	echo T_("Conditions");                                                            // Line 35
+	echo T_("Conditions");                                                            // Line 38
 
 	//----------------------------------------------content_festival/home/display.html
 	echo T_("Referee Committee");                                                     // Line 181
@@ -747,16 +747,21 @@ class twigTransTerms
 	echo T_("Continue");                                                              // Line 62
 
 	//----------------------------------------------content_a/profile/profileForm.html
-	echo T_("Verify leter");                                                          // Line 82
+	echo T_("University name");                                                       // Line 13
+	echo T_("University student");                                                    // Line 96
+	echo T_("Teacher");                                                               // Line 97
+	echo T_("Employee");                                                              // Line 260
+	echo T_("University student number");                                             // Line 15
+	echo T_("Require for student");                                                   // Line 105
+	echo T_("Verify leter");                                                          // Line 132
 
 	//------------------------------------------content_a/festival/detail/display.html
 
 	//------------------------------------------content_a/festival/course/display.html
-	echo T_("Signup price");                                                          // Line 14
-	echo T_("Free");                                                                  // Line 14
-	echo T_("You are register to this course before");                                // Line 17
-	echo T_("Pay & Register");                                                        // Line 25
-	echo T_("Register");                                                              // Line 27
+	echo T_("Signup price");                                                          // Line 15
+	echo T_("You are register to this course before");                                // Line 20
+	echo T_("Pay & Register");                                                        // Line 28
+	echo T_("Register");                                                              // Line 30
 	echo T_("Condition send");                                                        // Line 179
 
 	//--------------------------------------------content_a/festival/home/display.html
@@ -1186,10 +1191,13 @@ class twigTransTerms
 	echo T_("Load in map");                                                           // Line 36
 
 	//--------------------------------------content_m/festival/usercourse/display.html
-	echo T_("Festival course");                                                       // Line 11
-	echo T_("Files");                                                                 // Line 17
-	echo T_("Checked");                                                               // Line 33
-	echo T_("Win");                                                                   // Line 35
+	echo T_("Festival course");                                                       // Line 19
+	echo T_("Files");                                                                 // Line 25
+	echo T_("Checked");                                                               // Line 41
+	echo T_("Win");                                                                   // Line 43
+
+	//-----------------------------------------content_m/festival/general/display.html
+	echo T_("For Student");                                                           // Line 20
 
 	//------------------------------------------content_m/festival/supporter/list.html
 	echo T_("Add new supporter");                                                     // Line 13
@@ -1241,9 +1249,9 @@ class twigTransTerms
 
 	//--------------------------------------------content_m/festival/user/display.html
 	echo T_("Course");                                                                // Line 97
-	echo T_("File");                                                                  // Line 58
-	echo T_("Show Detail");                                                           // Line 60
-	echo T_("Show detail");                                                           // Line 74
+	echo T_("File");                                                                  // Line 59
+	echo T_("Show Detail");                                                           // Line 61
+	echo T_("Show detail");                                                           // Line 75
 
 	//-----------------------------------------------content_m/festival/home/list.html
 	echo T_("Add new festival");                                                      // Line 11
@@ -1493,7 +1501,6 @@ class twigTransTerms
 	echo T_("You can upload partner list");                                           // Line 155
 	echo T_("No partner set");                                                        // Line 248
 	echo T_("Winner");                                                                // Line 254
-	echo T_("Employee");                                                              // Line 260
 	echo T_("Escort");                                                                // Line 266
 	echo T_("Master");                                                                // Line 272
 	echo T_("Edit partner");                                                          // Line 618

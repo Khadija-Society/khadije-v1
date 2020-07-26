@@ -26,6 +26,11 @@ class model
 		$post['married']         = \dash\request::post('Married') ;
 		$post['zipcode']         = \dash\request::post('zipcode');
 
+
+		$post['festivals_universityname'] = \dash\request::post('festivals_universityname');
+		$post['festivals_universitytype'] = \dash\request::post('festivals_universitytype');
+		$post['festivals_universitynumber'] = \dash\request::post('festivals_universitynumber');
+
 		\lib\app\myuser::edit($post);
 
 		if(\dash\engine\process::status())

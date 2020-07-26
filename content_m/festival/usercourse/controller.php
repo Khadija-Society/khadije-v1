@@ -1,5 +1,5 @@
 <?php
-namespace content_m\festival\social;
+namespace content_m\festival\usercourse;
 
 
 class controller

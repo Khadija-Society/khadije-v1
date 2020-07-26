@@ -75,7 +75,7 @@ class festivalusers
 		[
 			'public_show_field' => " users.mobile, users.displayname, festivalcourses.title, festivalusers.* ",
 			'master_join'       => " inner join users on users.id = festivalusers.user_id inner join festivalcourses on festivalcourses.id = festivalusers.festivalcourse_id ",
-			'search_field'      => "( festivalusers.title LIKE '%__string__%') ",
+			'search_field'      => "( users.displayname LIKE '%__string__%' OR  users.mobile LIKE '%__string__%') ",
 		];
 
 		$_option = array_merge($default_option, $_option);

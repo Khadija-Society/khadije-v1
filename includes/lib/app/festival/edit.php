@@ -60,6 +60,7 @@ trait edit
 		if(!\dash\app::isset_request('website')) unset($args['website']);
 		if(!\dash\app::isset_request('language')) unset($args['language']);
 		if(!\dash\app::isset_request('social')) unset($args['social']);
+		if(!\dash\app::isset_request('student')) unset($args['student']);
 
 
 		if(!empty($args))
