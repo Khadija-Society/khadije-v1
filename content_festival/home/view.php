@@ -107,6 +107,7 @@ class view
 			$detail = array_map(['\lib\app\festivaldetail', 'ready'], $detail);
 		}
 
+
 		$supporter      = [];
 		$mediasupporter = [];
 		$referee         = [];
@@ -114,26 +115,28 @@ class view
 
 		foreach ($detail as $key => $value)
 		{
-			if(isset($value['type']))
+			if(isset($value['status']) &&  $value['status'] === 'enable')
 			{
-				switch ($value['type'])
+				if(isset($value['type']))
 				{
-					case 'supporter':
-						array_push($supporter, $value);
-						break;
+					switch ($value['type'])
+					{
+						case 'supporter':
+							array_push($supporter, $value);
+							break;
 
-					case 'mediasupporter':
-						array_push($mediasupporter, $value);
-						break;
+						case 'mediasupporter':
+							array_push($mediasupporter, $value);
+							break;
 
-					case 'referee':
-						array_push($referee, $value);
-						break;
+						case 'referee':
+							array_push($referee, $value);
+							break;
 
-					case 'organizer':
-						array_push($organizer, $value);
-						break;
-
+						case 'organizer':
+							array_push($organizer, $value);
+							break;
+					}
 				}
 			}
 		}
