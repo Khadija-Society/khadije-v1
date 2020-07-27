@@ -292,9 +292,13 @@ footer{
 footer .summary{
   padding:0 0.5em;
 }
+footer .address{
+  line-height: 2em;
+}
 footer .summary h3{
   font-size: 1em;
   line-height: 2em;
+  text-align: justify;
 }
 footer .quickAccess a{
   display: block;
