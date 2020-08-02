@@ -24,7 +24,7 @@
 {%if course.allowfile.word%}
     <h3>{%trans "Word file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="word" id="word" data-preview1 data-max="500">
+     <input type="file" accept=".doc, .docx" name="word" id="word" data-preview1 data-max="500">
      {%if true%}<label for="word" title="Simple Title">
         {%if dataRow.file.word%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.word}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
@@ -35,7 +35,7 @@
   {%if course.allowfile.pdf%}
     <h3>{%trans "pdf file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="pdf" id="pdf" data-preview1 data-max="500">
+     <input type="file" accept=".pdf" name="pdf" id="pdf" data-preview1 data-max="500">
      {%if true%}<label for="pdf" title="Simple Title">
         {%if dataRow.file.pdf%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.pdf}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
@@ -46,7 +46,7 @@
   {%if course.allowfile.video%}
     <h3>{%trans "video file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="video" id="video" data-preview1 data-max="500">
+     <input type="file" accept="video/*" name="video" id="video" data-preview1 data-max="500">
      {%if true%}<label for="video" title="Simple Title">
         {%if dataRow.file.video%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.video}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
@@ -57,7 +57,7 @@
   {%if course.allowfile.sound%}
     <h3>{%trans "sound file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="sound" id="sound" data-preview1 data-max="500">
+     <input type="file" accept="audio/*" name="sound" id="sound" data-preview1 data-max="500">
      {%if true%}<label for="sound" title="Simple Title">
         {%if dataRow.file.sound%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.sound}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
@@ -68,7 +68,7 @@
   {%if course.allowfile.apk%}
     <h3>{%trans "apk file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="apk" id="apk" data-preview1 data-max="500">
+     <input type="file" accept=".apk" name="apk" id="apk" data-preview1 data-max="500">
      {%if true%}<label for="apk" title="Simple Title">
         {%if dataRow.file.apk%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.apk}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
@@ -79,7 +79,7 @@
   {%if course.allowfile.zip%}
     <h3>{%trans "zip file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="zip" id="zip" data-preview1 data-max="500">
+     <input type="file" accept=".zip" name="zip" id="zip" data-preview1 data-max="500">
      {%if true%}<label for="zip" title="Simple Title">
         {%if dataRow.file.zip%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.zip}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
@@ -90,7 +90,7 @@
   {%if course.allowfile.other%}
     <h3>{%trans "other file"%}</h3>
     <div class="input preview1">
-     <input type="file" accept="image/gif, image/jpeg, image/png" name="other" id="other" data-preview1 data-max="500">
+     <input type="file" accept="*" name="other" id="other" data-preview1 data-max="500">
      {%if true%}<label for="other" title="Simple Title">
         {%if dataRow.file.other%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.other}}">{%trans "Show file"%}</a>{%endif%}
      </label>{%endif%}
