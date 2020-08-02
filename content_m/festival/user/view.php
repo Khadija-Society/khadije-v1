@@ -24,7 +24,11 @@ class view
 		[
 			'order'          => \dash\request::get('order'),
 			'sort'           => \dash\request::get('sort'),
+
 		];
+
+
+		$args['1.2'] = [' = 1.2 AND ', " festivalusers.status != 'draft' "];
 
 
 		if(!$args['order'])
@@ -82,6 +86,7 @@ class view
 			unset($filterArray['user_id']);
 		}
 
+		unset($filterArray['1.2']);
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
 		\dash\data::dataFilter($dataFilter);
