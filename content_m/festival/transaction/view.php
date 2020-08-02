@@ -81,19 +81,22 @@ class view
 			$course_id = array_column($dataTable, 'niyat');
 			$course_id = array_filter($course_id);
 			$course_id = array_unique($course_id);
-			$course_id = implode(',', $course_id);
-			$course_list = \lib\db\festivalcourses::get(['id' => ["IN", "($course_id)"]]);
-			$id = array_column($course_list, 'id');
-			$course_list = array_combine($id, $course_list);
-			foreach ($dataTable as $key => $value)
+			if($course_id)
 			{
-				if(isset($value['niyat']))
+				$course_id = implode(',', $course_id);
+				$course_list = \lib\db\festivalcourses::get(['id' => ["IN", "($course_id)"]]);
+				$id = array_column($course_list, 'id');
+				$course_list = array_combine($id, $course_list);
+				foreach ($dataTable as $key => $value)
 				{
-					if(array_key_exists($value['niyat'], $course_list))
+					if(isset($value['niyat']))
 					{
-						if(isset($course_list[$value['niyat']]['title']))
+						if(array_key_exists($value['niyat'], $course_list))
 						{
-							$dataTable[$key]['course_title'] = $course_list[$value['niyat']]['title'];
+							if(isset($course_list[$value['niyat']]['title']))
+							{
+								$dataTable[$key]['course_title'] = $course_list[$value['niyat']]['title'];
+							}
 						}
 					}
 				}
