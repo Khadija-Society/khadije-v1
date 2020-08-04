@@ -371,7 +371,7 @@ class twigTransTerms
 	//----------------------------------content_smsapp/report/countsmsday/display.html
 	echo T_("Count send SMS");                                                        // Line 29
 	echo T_("Count send character");                                                  // Line 30
-	echo T_("SMS");                                                                   // Line 42
+	echo T_("SMS");                                                                   // Line 326
 
 	//--------------------------------------content_smsapp/report/groupby/display.html
 	echo T_("Receive status");                                                        // Line 146
@@ -478,10 +478,10 @@ class twigTransTerms
 	//------------------------------------------------------content/old/v2/footer.html
 	echo T_("Enter");                                                                 // Line 138
 	echo T_("Misson & Target");                                                       // Line 22
-	echo T_("Vision");                                                                // Line 310
+	echo T_("Vision");                                                                // Line 352
 	echo T_("Honors");                                                                // Line 173
 	echo T_("FAQ");                                                                   // Line 25
-	echo T_("Contact");                                                               // Line 319
+	echo T_("Contact");                                                               // Line 361
 	echo T_("Doners");                                                                // Line 210
 	echo T_("Register for group trip");                                               // Line 42
 	echo T_("Developed by Ermile");                                                   // Line 222
@@ -653,7 +653,7 @@ class twigTransTerms
 	echo T_("Instagram");                                                             // Line 161
 	echo T_("Aparat");                                                                // Line 197
 	echo T_("Eitaa");                                                                 // Line 188
-	echo T_("Soroush App");                                                           // Line 360
+	echo T_("Soroush App");                                                           // Line 402
 
 	//----------------------------------------------------------content/l/display.html
 	echo T_("No enable lotter founded");                                              // Line 21
@@ -681,23 +681,26 @@ class twigTransTerms
 	//----------------------------------------------content_festival/demo/display.html
 	echo T_("Topics");                                                                // Line 136
 	echo T_("Terms and conditions");                                                  // Line 144
-	echo T_("Awards");                                                                // Line 313
-	echo T_("Timeline");                                                              // Line 316
+	echo T_("Awards");                                                                // Line 355
+	echo T_("Timeline");                                                              // Line 358
 	echo T_("Read More");                                                             // Line 83
-	echo T_("Introduction");                                                          // Line 295
-	echo T_("Organizers");                                                            // Line 117
-	echo T_("Sponsors");                                                              // Line 125
-	echo T_("Media Sponsors");                                                        // Line 133
-	echo T_("Goals");                                                                 // Line 301
-	echo T_("Conferences Topics");                                                    // Line 157
-	echo T_("Terms and Conditions");                                                  // Line 171
-	echo T_("Contact us");                                                            // Line 261
-	echo T_("Telephones");                                                            // Line 268
-	echo T_("SMS panel");                                                             // Line 284
-	echo T_("Conditions");                                                            // Line 38
+	echo T_("Introduction");                                                          // Line 337
+	echo T_("Organizers");                                                            // Line 121
+	echo T_("Sponsors");                                                              // Line 129
+	echo T_("Media Sponsors");                                                        // Line 137
+	echo T_("Goals");                                                                 // Line 343
+	echo T_("Conferences Topics");                                                    // Line 171
+	echo T_("Terms and Conditions");                                                  // Line 213
+	echo T_("Contact us");                                                            // Line 303
+	echo T_("Telephones");                                                            // Line 310
+	echo T_("SMS panel");                                                             // Line 185
+	echo T_("Conditions");                                                            // Line 39
 
 	//----------------------------------------------content_festival/home/display.html
-	echo T_("Referee Committee");                                                     // Line 181
+	echo T_("Download poster");                                                       // Line 152
+	echo T_("Download baner");                                                        // Line 153
+	echo T_("Download brochure");                                                     // Line 154
+	echo T_("Referee Committee");                                                     // Line 223
 
 	//--------------------------------------------includes/html/sidebarServiceTop.html
 	echo T_("Manage");                                                                // Line 77
@@ -817,11 +820,10 @@ class twigTransTerms
 	//-----------------------------------------------------content_a/home/display.html
 	echo T_("Servand dashboard");                                                     // Line 27
 	echo T_("Detail, Assessment, ...");                                               // Line 28
-	echo T_("Festival");                                                              // Line 158
 	echo T_("Representation");                                                        // Line 85
 	echo T_("Health Service");                                                        // Line 94
 	echo T_("Consulting Service");                                                    // Line 11
-	echo T_("Donate product");                                                        // Line 136
+	echo T_("Donate product");                                                        // Line 135
 
 	//--------------------------------------------content_a/health/detail/display.html
 	echo T_("Your are using this health");                                            // Line 9
@@ -1384,6 +1386,7 @@ class twigTransTerms
 	echo T_("Signup karbala");                                                        // Line 37
 	echo T_("Sms management");                                                        // Line 92
 	echo T_("Add trip");                                                              // Line 149
+	echo T_("Festival");                                                              // Line 158
 	echo T_("Tankyou message");                                                       // Line 168
 	echo T_("Meeting");                                                               // Line 179
 	echo T_("Doyon");                                                                 // Line 353

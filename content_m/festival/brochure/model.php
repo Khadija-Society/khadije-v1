@@ -47,9 +47,12 @@ class model
 			$old = [];
 		}
 
-		$old['brochure']   = $file;
-		$post['gallery'] = json_encode($old, JSON_UNESCAPED_UNICODE);
-		$result          = \lib\app\festival::edit($post, \dash\request::get('id'));
+		if($file)
+		{
+			$old['brochure']   = $file;
+			$post['gallery'] = json_encode($old, JSON_UNESCAPED_UNICODE);
+			$result          = \lib\app\festival::edit($post, \dash\request::get('id'));
+		}
 
 		if(\dash\engine\process::status())
 		{

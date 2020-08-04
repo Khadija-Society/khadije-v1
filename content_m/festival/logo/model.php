@@ -35,9 +35,11 @@ class model
 		}
 
 
-
-		$post['logo'] = $file;
-		$result          = \lib\app\festival::edit($post, \dash\request::get('id'));
+		if($file)
+		{
+			$post['logo'] = $file;
+			$result       = \lib\app\festival::edit($post, \dash\request::get('id'));
+		}
 
 		if(\dash\engine\process::status())
 		{

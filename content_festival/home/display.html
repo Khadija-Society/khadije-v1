@@ -100,6 +100,10 @@
 </section>
 {%endif%}
 
+
+
+
+
 {%if festival.about or organizer or supporter or mediasupporter %}
 <section class="txtDetail" id='about'>
   <div class="cn">
@@ -142,6 +146,16 @@
 </section>
 {%endif%}
 
+{%if galleryArray.poster or galleryArray.brochure or galleryArray.baner %}
+<section class="txtDetail" id='downloadlogo'>
+  <div class="wrapper" data-aos="fade-up" data-aos-delay="100">
+    {%if galleryArray.poster%}<a href="{{galleryArray.poster}}" download target="_blank" class="btn xl primary mA10"> <i class="sf-download"></i> {%trans "Download poster"%}</a>{%endif%}
+    {%if galleryArray.baner%}<a href="{{galleryArray.baner}}" download target="_blank" class="btn xl primary mA10"> <i class="sf-download"></i> {%trans "Download baner"%}</a>{%endif%}
+    {%if galleryArray.brochure%}<a href="{{galleryArray.brochure}}" download target="_blank" class="btn xl primary mA10"> <i class="sf-download"></i> {%trans "Download brochure"%}</a>{%endif%}
+  </div>
+</section>
+{%endif%}
+
 {%if festival.target%}
 <section class="txtDetail" id='goals'>
   <div class="wrapper" data-aos="zoom-out-left" data-aos-delay="300">
@@ -157,7 +171,35 @@
     <h2><a href="{{url.that}}#topics">{%trans "Conferences Topics"%}</a></h2>
     {{festival.axis | raw}}
     {%if course%}
-        <a href="{{url.base}}/a/festival?id={{festival.id}}" data-direct class="btn lg hauto primary mT25" >{%trans "Signup"%}</a>
+        <a href="{{url.base}}/a/festival?id={{festival.id}}" data-direct class="btn lg hauto primary mTB25" >{%trans "Signup"%}</a>
+
+
+<div class='middle normal f justify-center'>
+
+
+  {%for key, value in course%}
+
+  {%set cardColor%}
+  {%if value.status == 'enable'%}green{%else%}black{%endif%}
+  {%endset%}
+
+    {%if value.status == 'enable'%}
+
+      <a class="vcard mA10 shadow {{cardColor}}" href='{{url.kingdom}}/a/festival/course?id={{value.festival_id}}&course={{value.id}}'>
+        <img src="{%if value.file%}{{value.file}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}" alt="{{value.title}}">
+        <!-- <img src="{{value.logo}}" alt="{{value.title}}" class="pA10-f"> -->
+        <div class="content">
+          <div class="header">{{value.title}}</div>
+          <div class="meta"></div>
+          <div class="footer">{{value.subtitle}}</div>
+        </div>
+      </a>
+    {%endif%}
+  {%endfor%}
+
+</div>
+
+
     {%endif%}
   </div>
 
