@@ -146,12 +146,13 @@
 </section>
 {%endif%}
 
-{%if galleryArray.poster or galleryArray.brochure or galleryArray.baner %}
+{%if galleryArray.poster or galleryArray.brochure or galleryArray.baner or galleryArray.logo %}
 <section class="txtDetail" id='downloadlogo'>
   <div class="wrapper" data-aos="fade-up" data-aos-delay="100">
     {%if galleryArray.poster%}<a href="{{galleryArray.poster}}" download target="_blank" class="btn xl primary mA10"> <i class="sf-download"></i> {%trans "Download poster"%}</a>{%endif%}
     {%if galleryArray.baner%}<a href="{{galleryArray.baner}}" download target="_blank" class="btn xl primary mA10"> <i class="sf-download"></i> {%trans "Download baner"%}</a>{%endif%}
     {%if galleryArray.brochure%}<a href="{{galleryArray.brochure}}" download target="_blank" class="btn xl primary mA10"> <i class="sf-download"></i> {%trans "Download brochure"%}</a>{%endif%}
+    {%if galleryArray.logo%}<a href="{{galleryArray.logo}}" download target="_blank" class="btn xl primary mA10"> <i class="sf-download"></i> {%trans "Download" %} {%trans "Logo"%}</a>{%endif%}
   </div>
 </section>
 {%endif%}

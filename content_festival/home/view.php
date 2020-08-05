@@ -40,11 +40,16 @@ class view
 
 
 		$festival = \dash\data::festival();
-
 		if(isset($festival['gallery']) && $festival['gallery'] && is_string($festival['gallery']))
 		{
 			$gallery = json_decode($festival['gallery'], true);
+
 			\dash\data::galleryArray($gallery);
+
+			if(isset($festival['logo']))
+			{
+				\dash\data::galleryArray_logo($festival['logo']);
+			}
 
 		}
 		$festival_id = \dash\data::festival_id();
