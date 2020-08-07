@@ -1,0 +1,74 @@
+{%extends 'content_protection/protectagent/layout.html'%}
+
+{%block pageContent%}
+
+<div class="f justify-center">
+  <form method="post" class="c5 m6 s12" autocomplete="off">
+    <div class="cbox">
+      {{block('iTitle')}}
+      {{block('iMobile')}}
+      {{block('iType')}}
+
+      {{block('iDesc')}}
+
+      <h4 data-kerkere='.showBankDetail' data-kerkere-icon>{%trans "Edit bank detail"%}</h4>
+      <div class="showBankDetail" data-kerkere-content='hide'>
+
+        <div class="example" >
+
+          <label>{%trans "bankshaba"%}</label>
+          <div class="input">
+            <input type="text" name="bankshaba" value="{{dataRow.bankshaba}}">
+          </div>
+          <label>{%trans "bankhesab"%}</label>
+          <div class="input">
+            <input type="text" name="bankhesab" value="{{dataRow.bankhesab}}">
+          </div>
+          <label>{%trans "bankcart"%}</label>
+          <div class="input">
+            <input type="text" name="bankcart" value="{{dataRow.bankcart}}">
+          </div>
+          <label>{%trans "bankname"%}</label>
+          <div class="input">
+            <input type="text" name="bankname" value="{{dataRow.bankname}}">
+          </div>
+          <label>{%trans "bankownername"%}</label>
+          <div class="input">
+            <input type="text" name="bankownername" value="{{dataRow.bankownername}}">
+          </div>
+        </div>
+      </div>
+
+      <h4 data-kerkere='.showaddressDetail' data-kerkere-icon>{%trans "Edit Address detail"%}</h4>
+      <div class="showaddressDetail" data-kerkere-content='hide'>
+
+        <div class="example">
+          <label>{%trans "Province"%}</label>
+          <div class="input">
+            <input type="text" name="province" value="{{dataRow.province}}">
+          </div>
+          <label>{%trans "City"%}</label>
+          <div class="input">
+            <input type="text" name="city" value="{{dataRow.city}}">
+          </div>
+          <label>{%trans "Address"%}</label>
+          <div class="input">
+            <input type="text" name="address" value="{{dataRow.address}}">
+          </div>
+        </div>
+      </div>
+
+
+
+      {{block('iStatus')}}
+      {{block('isave')}}
+    </div>
+  </form>
+
+
+</div>
+
+{%endblock%}
+
+
+

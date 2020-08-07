@@ -1,0 +1,87 @@
+{%extends 'content_protection/layout.html'%}
+
+
+
+{% block iTitle %}
+<label for="title">{%trans "Title"%} </label>
+<div class="input">
+  <input type="text" name="title" id="title" value="{{dataRow.title}}" required  maxlength='150' minlength="1" pattern=".{1,150}" >
+</div>
+{% endblock %}
+
+
+{% block iMobile %}
+<label for="mobile">{%trans "Mobile"%} </label>
+<div class="input">
+  <input type="tel" name="mobile" id="mobile" value="{{dataRow.mobile}}"  maxlength='150' minlength="1" pattern=".{1,150}"  required>
+</div>
+{% endblock %}
+
+
+
+
+{%block iDesc%}
+<label for="desc">{%trans "Description"%}</label>
+<textarea class="txt mB10" id='desc' name="desc" itemholder='{%trans "Description of item"%}' maxlength='500' rows="5">{{dataRow.desc}}</textarea>
+{%endblock%}
+
+
+{%block iType%}
+<div class="pRa5">
+  <label for="type">{%trans "Type"%}</label>
+  <select name="type" class="ui dropdown select">
+    <option value="" >{%trans "Please select one item"%}</option>
+    <option value="موسسه" {%if dataRow.type == 'موسسه'  %}selected {%endif%}>موسسه</option>
+    <option value="مسجد" {%if dataRow.type == 'مسجد'  %}selected {%endif%}>مسجد</option>
+    <option value="نهاد" {%if dataRow.type == 'نهاد'  %}selected {%endif%}>نهاد</option>
+    <option value="ارگان" {%if dataRow.type == 'ارگان'  %}selected {%endif%}>ارگان</option>
+  </select>
+</div>
+{%endblock%}
+
+
+
+
+
+
+{%block iadd%}
+<button class="btn primary block mT20">{%trans "Add"%}</button>
+{%endblock%}
+
+{%block isave%}
+<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+
+
+{%block iStatus%}
+<div class="mT15">
+ <label >{%trans "Status"%}</label>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-draft" name="status" value="draft" {%if dataRow.status == 'draft' or not dataRow.status %} checked{%endif%}>
+  <label for="r-draft">{%trans "Draft"%}</label>
+ </div>
+
+
+ <div class="radio1 black">
+  <input type="radio" id="r-pending" name="status" value="pending" {%if dataRow.status == 'pending'%} checked{%endif%} >
+  <label for="r-pending">{%trans "Pending"%}</label>
+ </div>
+
+  <div class="radio1 green">
+  <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
+  <label for="r-enable">{%trans "enable"%}</label>
+ </div>
+
+  <div class="radio1 green">
+  <input type="radio" id="r-block" name="status" value="block" {%if dataRow.status == 'block' or not dataRow.status %} checked{%endif%}>
+  <label for="r-block">{%trans "block"%}</label>
+ </div>
+
+  <div class="radio1 black mB25">
+  <input type="radio" id="r-deleted" name="status" value="deleted" {%if dataRow.status == 'deleted'%} checked{%endif%} >
+  <label for="r-deleted">{%trans "Deleted"%}</label>
+ </div>
+</div>
+{%endblock%}
