@@ -10,14 +10,9 @@ class view
 		\dash\data::page_desc(T_('Edit name or description of this occasion or change status of it.'));
 		\dash\data::page_pictogram('edit');
 
-				$url_get            = [];
-		$url_get['city']    = \dash\request::get('city');
-		$url_get['job']     = \dash\request::get('job');
-		$url_get['job_for'] = \dash\request::get('job_for');
+		\dash\data::badge_link(\dash\url::this());
 
-		\dash\data::badge_link(\dash\url::this(). '?'. http_build_query($url_get));
-
-		\dash\data::badge_text(T_('Back to list of Assessmentitems'));
+		\dash\data::badge_text(T_('Back to list of occasion'));
 
 		$id     = \dash\request::get('id');
 		$result = \lib\app\occasion::get($id);
@@ -28,6 +23,8 @@ class view
 		}
 
 		\dash\data::dataRow($result);
+
+		\dash\data::dataDetail(\lib\app\occasion::get_detail(\dash\request::get('id')));
 
 
 	}

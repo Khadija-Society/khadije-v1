@@ -4,9 +4,17 @@ namespace lib\db;
 class occasion
 {
 
-	public static function check_place_status($_ids)
+	public static function get_detail($_id)
 	{
-		$query  = "SELECT protection_occasion.* FROM protection_occasion WHERE protection_occasion.id IN ($_ids) AND protection_occasion.status = 'enable' ";
+		$query  = "SELECT protection_occasion_detail.* FROM protection_occasion_detail WHERE protection_occasion_detail.protection_occasion_id = $_id";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
+	public static function remove_detail($_id)
+	{
+		$query  = "DELETE FROM  protection_occasion_detail WHERE protection_occasion_detail.id = $_id";
 		$result = \dash\db::get($query);
 		return $result;
 	}
@@ -19,6 +27,13 @@ class occasion
 	public static function insert()
 	{
 		\dash\db\config::public_insert('protection_occasion', ...func_get_args());
+		return \dash\db::insert_id();
+	}
+
+
+	public static function insert_detail()
+	{
+		\dash\db\config::public_insert('protection_occasion_detail', ...func_get_args());
 		return \dash\db::insert_id();
 	}
 

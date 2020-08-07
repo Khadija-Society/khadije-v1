@@ -154,6 +154,89 @@ class occasion
 	}
 
 
+
+
+	/**
+	 * check args
+	 *
+	 * @return     array|boolean  ( description_of_the_return_value )
+	 */
+	private static function check_detail($_id = null)
+	{
+		$title = \dash\app::request('title');
+		$title = trim($title);
+		if(!$title)
+		{
+			\dash\notif::error(T_("Please fill the occasion title"), 'title');
+			return false;
+		}
+
+		if(mb_strlen($title) > 150)
+		{
+			\dash\notif::error(T_("Please fill the occasion title less than 150 character"), 'title');
+			return false;
+		}
+
+		$desc = \dash\app::request('desc');
+
+		$price = \dash\app::request('price');
+		if($price && !is_numeric($price))
+		{
+			\dash\notif::error(T_("Please set price as a number"));
+			return false;
+		}
+
+		if($price && floatval($price) > 999999999999)
+		{
+			\dash\notif::error(T_("Price out of range"));
+			return false;
+		}
+
+
+		$args          = [];
+
+		$args['title'] = $title;
+		$args['desc']  = $desc;
+		$args['price'] = $price;
+
+		return $args;
+	}
+
+
+	public static function get_detail($_id)
+	{
+		$result = self::get($_id);
+
+		if(!$result)
+		{
+			return false;
+		}
+
+		$id = \dash\coding::decode($_id);
+
+		$load = \lib\db\occasion::get_detail($id);
+		return $load;
+
+
+	}
+
+
+	public static function remove_detail($_id)
+	{
+
+		$id = $_id;
+
+		if($id && is_numeric($id))
+		{
+			$load = \lib\db\occasion::remove_detail($id);
+			\dash\notif::ok(T_("Data removed"));
+			return true;
+		}
+
+
+
+	}
+
 	/**
 	 * add new occasion
 	 *
@@ -186,6 +269,8 @@ class occasion
 		{
 			$args['status']  = 'draft';
 		}
+
+		$args['datecreated'] = date("Y-m-d H:i:s");
 
 		$occasion_id = \lib\db\occasion::insert($args);
 
@@ -264,6 +349,45 @@ class occasion
 		return $temp;
 	}
 
+
+
+	/**
+	 * edit a occasion
+	 *
+	 * @param      <type>   $_args  The arguments
+	 *
+	 * @return     boolean  ( description_of_the_return_value )
+	 */
+	public static function add_detail($_args, $_id)
+	{
+		\dash\app::variable($_args);
+
+		$result = self::get($_id);
+
+		if(!$result)
+		{
+			return false;
+		}
+
+		$id = \dash\coding::decode($_id);
+
+		$args = self::check_detail($id);
+
+		if($args === false || !\dash\engine\process::status())
+		{
+			return false;
+		}
+
+		$insert                           = $args;
+		$insert['protection_occasion_id'] = $id;
+		$insert['datecreated']            = date("Y-m-d H:i:s");
+
+		$insert_id = \lib\db\occasion::insert_detail($insert);
+
+		\dash\notif::ok(T_("Data saved"));
+		return true;
+
+	}
 
 	/**
 	 * edit a occasion
