@@ -1,0 +1,52 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+<div class="f">
+  <div class="c8">
+      <div class="f">
+        <div class="c6 s12">{{block('bOccasion')}}</div>
+        <div class="c6 s12">{{block('bAgent')}}</div>
+
+        <div class="c12 s12">{{block('bSend')}}</div>
+        <div class="c3 s12">{{block('bPlace')}}</div>
+        <div class="c3 s12">{{block('bSkills')}}</div>
+        <div class="c3 s12">{{block('bAssessmentitem')}}</div>
+        <div class="c3 s12">{{block('bReport')}}</div>
+      </div>
+  </div>
+  <div class="c4">
+    <div class="cbox fs11 mB10">
+    <h2>{%trans "Last protection agetn"%}</h2>
+    {%for key, value in lastAgent%}
+      <a class="msg f">
+        <div class="c">{{value.title}} <small>{{value.missionary_displayname}}</small></div>
+        <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
+      </a>
+    {%endfor%}
+  </div>
+  </div>
+
+</div>
+{%endblock%}
+
+
+{%block bOccasion%}
+<a class="dcard x2" href='{{url.here}}/occasion'>
+ <div class="statistic">
+  <div class="label"><i class="fs20 mRa5 sf-user"></i></div>
+  <div class="label mT10">{%trans "Occasion"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block bAgent%}
+<a class="dcard x2" href='{{url.here}}/report'>
+ <div class="statistic teal">
+  <div class="label"><i class="fs20 mRa5 sf-chart"></i></div>
+  <div class="label mT10">{%trans "Reports"%}</div>
+ </div>
+</a>
+{%endblock%}

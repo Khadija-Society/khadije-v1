@@ -50,7 +50,7 @@ CREATE TABLE `protection_occasion` (
 `startdate` datetime NULL,
 `expiredate` datetime NULL,
 `type` varchar(200) NULL DEFAULT NULL,
-`status` enum('drft', 'registring', 'done', 'distribution', 'deleted') NULL,
+`status` enum('draft', 'registring', 'done', 'distribution', 'deleted') NULL,
 `desc` text CHARACTER SET utf8mb4,
 `datecreated` datetime  NULL DEFAULT NULL,
 `datemodified` datetime  NULL DEFAULT NULL,

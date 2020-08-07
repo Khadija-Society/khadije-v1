@@ -1,0 +1,105 @@
+{%extends 'content_protection/layout.html'%}
+
+
+
+{% block ititle %}
+<label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="title" id="title" occasionholder='{%trans "Title of occasion"%} *' value="{{dataRow.title}}" autofocus required maxlength='150' minlength="1" pattern=".{1,150}" title='{%trans "Enter a valid title"%}'>
+</div>
+{% endblock %}
+
+
+{% block iSubtitle %}
+<label for="subtitle">{%trans "Subtitle"%}</label>
+<div class="input">
+  <input type="text" name="subtitle" id="subtitle"  value="{{dataRow.subtitle}}" maxlength='150' minlength="1" pattern=".{1,150}" >
+</div>
+{% endblock %}
+
+
+
+{% block iDate %}
+  <div class="cauto s12 mB5 pRa5">
+        <div class="input ltr">
+          <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{dataRow.startdate}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+        </div>
+      </div>
+
+
+      <div class="cauto s12 mB5 pRa5">
+        <div class="input ltr">
+          <input class="datepicker" type="text" name="expiredate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="expiredate"  value="{{dataRow.expiredate}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+        </div>
+      </div>
+{% endblock %}
+
+
+
+
+
+
+{%block iDesc%}
+<label for="desc">{%trans "Description"%}</label>
+<textarea class="txt mB10" id='desc' name="desc" itemholder='{%trans "Description of item"%}' maxlength='500' rows="5">{{dataRow.desc}}</textarea>
+{%endblock%}
+
+
+{%block iType%}
+<div class="pRa5">
+  <label for="type">{%trans "Type"%}</label>
+  <select name="type" class="ui dropdown select">
+    <option value="" >{%trans "Please select one item"%}</option>
+    <option value="سیل" {%if dataRow.type == 'سیل'  %}selected {%endif%}>سیل</option>
+    <option value="زلزله" {%if dataRow.type == 'زلزله'  %}selected {%endif%}>زلزله</option>
+    <option value="کرونا" {%if dataRow.type == 'کرونا'  %}selected {%endif%}>کرونا</option>
+  </select>
+</div>
+{%endblock%}
+
+
+
+
+
+
+{%block iadd%}
+<button class="btn primary block mT20">{%trans "Add"%}</button>
+{%endblock%}
+
+{%block isave%}
+<button class="btn primary block mT20">{%trans "Save"%}</button>
+{%endblock%}
+
+
+
+{%block iStatus%}
+<div class="mT15">
+ <label >{%trans "Status of occasion"%}</label>
+
+ <div class="radio1 green">
+  <input type="radio" id="r-draft" name="status" value="draft" {%if dataRow.status == 'draft' or not dataRow.status %} checked{%endif%}>
+  <label for="r-draft">{%trans "Draft"%}</label>
+ </div>
+
+
+ <div class="radio1 black">
+  <input type="radio" id="r-registring" name="status" value="registring" {%if dataRow.status == 'registring'%} checked{%endif%} >
+  <label for="r-registring">{%trans "registring"%}</label>
+ </div>
+
+  <div class="radio1 green">
+  <input type="radio" id="r-distribution" name="status" value="distribution" {%if dataRow.status == 'distribution' or not dataRow.status %} checked{%endif%}>
+  <label for="r-distribution">{%trans "distribution"%}</label>
+ </div>
+
+  <div class="radio1 green">
+  <input type="radio" id="r-done" name="status" value="done" {%if dataRow.status == 'done' or not dataRow.status %} checked{%endif%}>
+  <label for="r-done">{%trans "done"%}</label>
+ </div>
+
+  <div class="radio1 black mB25">
+  <input type="radio" id="r-deleted" name="status" value="deleted" {%if dataRow.status == 'deleted'%} checked{%endif%} >
+  <label for="r-deleted">{%trans "Deleted"%}</label>
+ </div>
+</div>
+{%endblock%}
