@@ -1,75 +1,34 @@
 <?php
-namespace content_a\festival\request;
+namespace content_a\protection\occasion;
 
 
 class model
 {
-	public static function upload_file($_name)
-	{
-		if(\dash\request::files($_name))
-		{
-			$uploaded_file = \dash\app\file::upload(['debug' => false, 'upload_name' => $_name]);
+	// public static function upload_file($_name)
+	// {
+	// 	if(\dash\request::files($_name))
+	// 	{
+	// 		$uploaded_file = \dash\app\file::upload(['debug' => false, 'upload_name' => $_name]);
 
-			if(isset($uploaded_file['url']))
-			{
-				\dash\notif::direct();
+	// 		if(isset($uploaded_file['url']))
+	// 		{
+	// 			\dash\notif::direct();
 
-				return $uploaded_file['url'];
-			}
-			// if in upload have error return
-			if(!\dash\engine\process::status())
-			{
-				return false;
-			}
-		}
-		return null;
-	}
+	// 			return $uploaded_file['url'];
+	// 		}
+	// 		// if in upload have error return
+	// 		if(!\dash\engine\process::status())
+	// 		{
+	// 			return false;
+	// 		}
+	// 	}
+	// 	return null;
+	// }
 
 	public static function post()
 	{
-		\content_a\festival\request\view::load_course();
 
-		$allowfile = \dash\data::course_allowfile();
-
-		$uploaded_file = [];
-
-		foreach ($allowfile as $key => $value)
-		{
-			if($key === 'filesize')
-			{
-				continue;
-			}
-
-			if($value === true)
-			{
-				$uploaded_file[$key] = self::upload_file($key);
-				if($uploaded_file[$key] === false)
-				{
-					return false;
-				}
-
-				// if($uploaded_file[$key] === null)
-				// {
-				// 	\dash\notif::error(T_("Please fill the file"), $key);
-				// 	return false;
-				// }
-			}
-		}
-
-		if(empty(array_filter($uploaded_file)))
-		{
-			\dash\notif::error(T_("Please fill the file"), $key);
-			return false;
-		}
-
-		$festival_id = \dash\request::get('id');
-		$festival_id = \dash\coding::decode($festival_id);
-		if(!$festival_id || !is_numeric($festival_id))
-		{
-			\dash\notif::error(T_("Invalid festival id"));
-			return false;
-		}
-
+		var_dump(\dash\request::post());exit();
 		$check_duplicate =
 		[
 			'festival_id'       => $festival_id,

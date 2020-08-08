@@ -7,11 +7,11 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title(T_("Festival course list"));
-		\dash\data::page_desc(T_('You can signup in some festival course'));
+		\dash\data::page_title("ثبت اطلاعات افراد تحت پوشش");
 
-		\dash\data::badge_link(\dash\url::this(). '?id='. \dash\request::get('id'));
-		\dash\data::badge_text(T_('Back to my course list'));
+
+		\dash\data::badge_link(\dash\url::this());
+		\dash\data::badge_text(T_('Back'));
 
 
 	}
