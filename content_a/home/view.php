@@ -14,6 +14,12 @@ class view
 		{
 			\dash\data::festivalEnable($load_festival);
 		}
+
+
+		if($load_protection_agent = \lib\db\protectionagent::get(['status' => 'enable', 'user_id' => \dash\user::id(), 'limit' => 1]))
+		{
+			\dash\data::enableProtection($load_protection_agent);
+		}
 	}
 }
 ?>

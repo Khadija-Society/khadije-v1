@@ -16,7 +16,7 @@ class protectagent
 			return false;
 		}
 
-		$get = \lib\db\protectagent::get(['id' => $id, 'limit' => 1]);
+		$get = \lib\db\protectionagent::get(['id' => $id, 'limit' => 1]);
 
 		if(!$get)
 		{
@@ -76,7 +76,7 @@ class protectagent
 			return false;
 		}
 
-		$check_duplicate = \lib\db\protectagent::get(['title' => $title, 'limit' => 1]);
+		$check_duplicate = \lib\db\protectionagent::get(['title' => $title, 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
 			if(intval($_id) === intval($check_duplicate['id']))
@@ -215,7 +215,7 @@ class protectagent
 
 		$args['datecreated'] = date("Y-m-d H:i:s");
 
-		$protectagent_id = \lib\db\protectagent::insert($args);
+		$protectagent_id = \lib\db\protectionagent::insert($args);
 
 		if(!$protectagent_id)
 		{
@@ -277,7 +277,7 @@ class protectagent
 			$_args['sort'] = null;
 		}
 
-		$result            = \lib\db\protectagent::search($_string, $_args);
+		$result            = \lib\db\protectionagent::search($_string, $_args);
 		$temp              = [];
 
 		foreach ($result as $key => $value)
@@ -339,7 +339,7 @@ class protectagent
 
 		if(!empty($args))
 		{
-			$update = \lib\db\protectagent::update($args, $id);
+			$update = \lib\db\protectionagent::update($args, $id);
 			\dash\log::set('editprotectAgent', ['code' => $id]);
 
 			$title = isset($args['title']) ? $args['title'] : T_("Data");

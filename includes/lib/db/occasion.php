@@ -3,6 +3,23 @@ namespace lib\db;
 
 class occasion
 {
+	public static function get_active_list($_date)
+	{
+		$query  =
+		"
+			SELECT
+				protection_occasion.*
+			FROM
+				protection_occasion
+			WHERE
+				protection_occasion.status IN ('registring', 'distribution') AND
+				DATE(protection_occasion.startdate) <= DATE('$_date') AND
+				DATE(protection_occasion.expiredate) >= DATE('$_date')
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
 
 	public static function get_detail($_id)
 	{

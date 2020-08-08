@@ -1,0 +1,113 @@
+{%extends display.admin%}
+
+{%block pageContent%}
+{%if showMSG%}
+<div class='middle normal f justify-center'>
+  <div class="cbox ">
+    <div class="msg">{{showMSG |raw}}</div>
+    <a class="btn success block" href="{{url.this}}?id={{requestGET.id}}">{%trans "Back"%}</a>
+  </div>
+</div>
+{%else%}
+{{block ('pageContentSend')}}
+{%endif%}
+{%endblock%}
+
+{%block pageContentSend%}
+
+<div class='middle normal f justify-center'>
+
+<div class="cbox  c5">
+  <div class="msg primary2 txtC"><b>{{course.title}}</b></div>
+<form method="post" enctype="multipart/form-data" data-timeout="0">
+
+{%if course.allowfile.word%}
+    <h3>{%trans "Word file"%}</h3>
+    <div class="input preview1">
+     <input type="file" accept=".doc, .docx" name="word" id="word" data-preview1 data-max="20000">
+     {%if true%}<label for="word" title="Simple Title">
+        {%if dataRow.file.word%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.word}}">{%trans "Show file"%}</a>{%endif%}
+     </label>{%endif%}
+    </div>
+  {%endif%}
+
+
+  {%if course.allowfile.pdf%}
+    <h3>{%trans "pdf file"%}</h3>
+    <div class="input preview1">
+     <input type="file" accept=".pdf" name="pdf" id="pdf" data-preview1 data-max="20000">
+     {%if true%}<label for="pdf" title="Simple Title">
+        {%if dataRow.file.pdf%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.pdf}}">{%trans "Show file"%}</a>{%endif%}
+     </label>{%endif%}
+    </div>
+  {%endif%}
+
+
+  {%if course.allowfile.video%}
+    <h3>{%trans "video file"%}</h3>
+    <div class="input preview1">
+     <input type="file" accept="video/*" name="video" id="video" data-preview1 data-max="20000">
+     {%if true%}<label for="video" title="Simple Title">
+        {%if dataRow.file.video%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.video}}">{%trans "Show file"%}</a>{%endif%}
+     </label>{%endif%}
+    </div>
+  {%endif%}
+
+
+  {%if course.allowfile.sound%}
+    <h3>{%trans "sound file"%}</h3>
+    <div class="input preview1">
+     <input type="file" accept="audio/*" name="sound" id="sound" data-preview1 data-max="20000">
+     {%if true%}<label for="sound" title="Simple Title">
+        {%if dataRow.file.sound%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.sound}}">{%trans "Show file"%}</a>{%endif%}
+     </label>{%endif%}
+    </div>
+  {%endif%}
+
+
+  {%if course.allowfile.apk%}
+    <h3>{%trans "apk file"%}</h3>
+    <div class="input preview1">
+     <input type="file" accept=".apk" name="apk" id="apk" data-preview1 data-max="20000">
+     {%if true%}<label for="apk" title="Simple Title">
+        {%if dataRow.file.apk%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.apk}}">{%trans "Show file"%}</a>{%endif%}
+     </label>{%endif%}
+    </div>
+  {%endif%}
+
+
+  {%if course.allowfile.zip%}
+    <h3>{%trans "zip file"%}</h3>
+    <div class="input preview1">
+     <input type="file" accept=".zip" name="zip" id="zip" data-preview1 data-max="20000">
+     {%if true%}<label for="zip" title="Simple Title">
+        {%if dataRow.file.zip%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.zip}}">{%trans "Show file"%}</a>{%endif%}
+     </label>{%endif%}
+    </div>
+  {%endif%}
+
+
+  {%if course.allowfile.other%}
+    <h3>{%trans "other file"%}</h3>
+    <div class="input preview1">
+     <input type="file" accept="*" name="other" id="other" data-preview1 data-max="20000">
+     {%if true%}<label for="other" title="Simple Title">
+        {%if dataRow.file.other%}<a class="badge primary floatL xl" target="_blank" data-direct href="{{dataRow.file.other}}">{%trans "Show file"%}</a>{%endif%}
+     </label>{%endif%}
+    </div>
+  {%endif%}
+
+  {%if course.allowfile.filesize%}
+  <h5 class="txtC">{%trans "Max input size"%} {{course.allowfile.filesize}} MB</h5>
+  {%endif%}
+  {%if course.link.link%}
+  <a href="{{course.link.link}}" target="_blnak" data-direct class="btn block primary">{%if course.link.linktitle%}{{course.link.linktitle}}{%else%}{%trans "Open link"%}{%endif%}</a>
+  {%endif%}
+
+  <button class="btn success block mT20">{%trans "Send Course detail"%}</button>
+</form>
+</div>
+
+</div>
+
+{%endblock%}

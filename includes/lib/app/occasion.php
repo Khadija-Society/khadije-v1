@@ -7,6 +7,20 @@ namespace lib\app;
 class occasion
 {
 
+	public static function get_active_list()
+	{
+		$date = date("Y-m-d");
+		$result = \lib\db\occasion::get_active_list($date);
+		if(!is_array($result))
+		{
+			$result = [];
+		}
+
+		$result = array_map(['self', 'ready'], $result);
+		return $result;
+	}
+
+
 	public static function get($_id)
 	{
 		$id = \dash\coding::decode($_id);

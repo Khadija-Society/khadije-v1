@@ -7,6 +7,10 @@
     <div class="c12 s12">{{block ("bIsAgetnServant")}}</div>
   {%endif%}
 
+{%if enableProtection%}
+  <div class="c4 s6">{{block ("bProtectionagent")}}</div>
+ {%endif%}
+
  {%if festivalEnable%}
   <div class="c4 s6">{{block ("bFestival")}}</div>
  {%endif%}
@@ -27,6 +31,16 @@
   <div class="label">{%trans "Servand dashboard"%}</div>
   <div class="label pT10">{%trans "Detail, Assessment, ..."%}</div>
 
+ </div>
+</a>
+{%endblock%}
+
+
+{%block bProtectionagent%}
+<a class="dcard fs14" href='{{url.here}}/protection'>
+ <div class="statistic teal">
+  <div class="value"><i class="sf-hand-hold"></i></div>
+  <div class="label pT10">{%trans "Manage protection user"%}</div>
  </div>
 </a>
 {%endblock%}

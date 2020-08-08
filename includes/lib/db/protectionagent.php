@@ -1,7 +1,7 @@
 <?php
 namespace lib\db;
 
-class protectagent
+class protectionagent
 {
 
 	public static function get_detail($_id)
