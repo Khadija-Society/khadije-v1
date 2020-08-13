@@ -41,6 +41,7 @@
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="barCode" data-default data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
+      <a href="{{url.that}}?id={{requestGET.id}}&all=1" class="btn success">{%trans "Show all"%}</a>
     </div>
   </form>
 </div>

@@ -28,7 +28,10 @@ class view
 		];
 
 
-		// $args['1.2'] = [' = 1.2 AND ', " festivalusers.status != 'draft' "];
+		if(!\dash\request::get('all'))
+		{
+			$args['1.2'] = [' = 1.2 AND ', " festivalusers.status != 'draft' "];
+		}
 
 
 		if(!$args['order'])
