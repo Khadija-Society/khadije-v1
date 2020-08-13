@@ -97,7 +97,7 @@ class twigTransTerms
 	echo T_("Start time");                                                            // Line 102
 	echo T_("End date");                                                              // Line 96
 	echo T_("End time");                                                              // Line 113
-	echo T_("enable");                                                                // Line 135
+	echo T_("enable");                                                                // Line 74
 	echo T_("disable");                                                               // Line 136
 	echo T_("deleted");                                                               // Line 137
 	echo T_("expire");                                                                // Line 138
@@ -242,7 +242,7 @@ class twigTransTerms
 
 	//---------------------------------------------content_smsapp/viewsms/display.html
 	echo T_("Reseive status");                                                        // Line 293
-	echo T_("block");                                                                 // Line 12
+	echo T_("block");                                                                 // Line 79
 	echo T_("awaiting");                                                              // Line 28
 	echo T_("analyze");                                                               // Line 14
 	echo T_("answerready");                                                           // Line 15
@@ -371,7 +371,7 @@ class twigTransTerms
 	//----------------------------------content_smsapp/report/countsmsday/display.html
 	echo T_("Count send SMS");                                                        // Line 29
 	echo T_("Count send character");                                                  // Line 30
-	echo T_("SMS");                                                                   // Line 326
+	echo T_("SMS");                                                                   // Line 327
 
 	//--------------------------------------content_smsapp/report/groupby/display.html
 	echo T_("Receive status");                                                        // Line 146
@@ -478,10 +478,10 @@ class twigTransTerms
 	//------------------------------------------------------content/old/v2/footer.html
 	echo T_("Enter");                                                                 // Line 138
 	echo T_("Misson & Target");                                                       // Line 22
-	echo T_("Vision");                                                                // Line 352
+	echo T_("Vision");                                                                // Line 353
 	echo T_("Honors");                                                                // Line 173
 	echo T_("FAQ");                                                                   // Line 25
-	echo T_("Contact");                                                               // Line 361
+	echo T_("Contact");                                                               // Line 362
 	echo T_("Doners");                                                                // Line 210
 	echo T_("Register for group trip");                                               // Line 42
 	echo T_("Developed by Ermile");                                                   // Line 222
@@ -515,7 +515,7 @@ class twigTransTerms
 	//---------------------------------------------------content/template/dafault.html
 	echo T_("For share via social networks");                                         // Line 40
 	echo T_("News Code");                                                             // Line 40
-	echo T_("Download");                                                              // Line 77
+	echo T_("Download");                                                              // Line 155
 	echo T_("PDF");                                                                   // Line 398
 	echo T_("Comment");                                                               // Line 56
 	echo T_("Your Message");                                                          // Line 97
@@ -653,7 +653,7 @@ class twigTransTerms
 	echo T_("Instagram");                                                             // Line 161
 	echo T_("Aparat");                                                                // Line 197
 	echo T_("Eitaa");                                                                 // Line 188
-	echo T_("Soroush App");                                                           // Line 402
+	echo T_("Soroush App");                                                           // Line 403
 
 	//----------------------------------------------------------content/l/display.html
 	echo T_("No enable lotter founded");                                              // Line 21
@@ -681,18 +681,18 @@ class twigTransTerms
 	//----------------------------------------------content_festival/demo/display.html
 	echo T_("Topics");                                                                // Line 136
 	echo T_("Terms and conditions");                                                  // Line 144
-	echo T_("Awards");                                                                // Line 355
-	echo T_("Timeline");                                                              // Line 358
+	echo T_("Awards");                                                                // Line 356
+	echo T_("Timeline");                                                              // Line 359
 	echo T_("Read More");                                                             // Line 83
-	echo T_("Introduction");                                                          // Line 337
+	echo T_("Introduction");                                                          // Line 338
 	echo T_("Organizers");                                                            // Line 121
 	echo T_("Sponsors");                                                              // Line 129
 	echo T_("Media Sponsors");                                                        // Line 137
-	echo T_("Goals");                                                                 // Line 343
-	echo T_("Conferences Topics");                                                    // Line 171
-	echo T_("Terms and Conditions");                                                  // Line 213
-	echo T_("Contact us");                                                            // Line 303
-	echo T_("Telephones");                                                            // Line 310
+	echo T_("Goals");                                                                 // Line 344
+	echo T_("Conferences Topics");                                                    // Line 172
+	echo T_("Terms and Conditions");                                                  // Line 214
+	echo T_("Contact us");                                                            // Line 304
+	echo T_("Telephones");                                                            // Line 311
 	echo T_("SMS panel");                                                             // Line 185
 	echo T_("Conditions");                                                            // Line 39
 
@@ -700,7 +700,8 @@ class twigTransTerms
 	echo T_("Download poster");                                                       // Line 152
 	echo T_("Download baner");                                                        // Line 153
 	echo T_("Download brochure");                                                     // Line 154
-	echo T_("Referee Committee");                                                     // Line 223
+	echo T_("Logo");                                                                  // Line 496
+	echo T_("Referee Committee");                                                     // Line 224
 
 	//--------------------------------------------includes/html/sidebarServiceTop.html
 	echo T_("Manage");                                                                // Line 77
@@ -723,6 +724,8 @@ class twigTransTerms
 	//-----------------------------------------------public_html/static/js/festival.js
 
 	//-------------------------------------------------public_html/static/js/script.js
+
+	//--------------------------------------content_a/protection/occasion/display.html
 
 	//-------------------------------------------content_a/service/detail/display.html
 	echo T_("Save all");                                                              // Line 78
@@ -818,12 +821,13 @@ class twigTransTerms
 	//-------------------------------------------content_a/servant/report/display.html
 
 	//-----------------------------------------------------content_a/home/display.html
-	echo T_("Servand dashboard");                                                     // Line 27
-	echo T_("Detail, Assessment, ...");                                               // Line 28
+	echo T_("Servand dashboard");                                                     // Line 31
+	echo T_("Detail, Assessment, ...");                                               // Line 32
+	echo T_("Manage protection user");                                                // Line 43
 	echo T_("Representation");                                                        // Line 85
 	echo T_("Health Service");                                                        // Line 94
 	echo T_("Consulting Service");                                                    // Line 11
-	echo T_("Donate product");                                                        // Line 135
+	echo T_("Donate product");                                                        // Line 149
 
 	//--------------------------------------------content_a/health/detail/display.html
 	echo T_("Your are using this health");                                            // Line 9
@@ -969,6 +973,45 @@ class twigTransTerms
 
 	//--------------------------------------------------content_mokeb/add/display.html
 	echo T_("datecreated");                                                           // Line 447
+
+	//-----------------------------------content_protection/occasion/home/display.html
+	echo T_("Search in occasion");                                                    // Line 43
+	echo T_("Try to start with add new occasion!");                                   // Line 106
+
+	//-----------------------------------------content_protection/occasion/layout.html
+	echo T_("Title of occasion");                                                     // Line 8
+	echo T_("Description of item");                                                   // Line 70
+	echo T_("Status of occasion");                                                    // Line 77
+	echo T_("registring");                                                            // Line 87
+	echo T_("distribution");                                                          // Line 92
+	echo T_("done");                                                                  // Line 97
+
+	//-----------------------------------content_protection/occasion/edit/display.html
+
+	//--------------------------------------------content_protection/home/display.html
+	echo T_("Last protection agetn");                                                 // Line 20
+	echo T_("Occasiona");                                                             // Line 38
+	echo T_("Protection agent");                                                      // Line 49
+
+	//--------------------------------------------------content_protection/layout.html
+	echo T_("Occasion list");                                                         // Line 8
+	echo T_("Protect agent");                                                         // Line 9
+
+	//-------------------------------content_protection/protectagent/home/display.html
+	echo T_("Search in protect agent");                                               // Line 43
+	echo T_("Try to start with add new protect agent!");                              // Line 106
+
+	//-------------------------------------content_protection/protectagent/layout.html
+	echo T_("Pending");                                                               // Line 69
+
+	//-------------------------------content_protection/protectagent/edit/display.html
+	echo T_("Edit bank detail");                                                      // Line 14
+	echo T_("bankshaba");                                                             // Line 19
+	echo T_("bankhesab");                                                             // Line 23
+	echo T_("bankcart");                                                              // Line 27
+	echo T_("bankname");                                                              // Line 31
+	echo T_("bankownername");                                                         // Line 35
+	echo T_("Edit Address detail");                                                   // Line 42
 
 	//-----------------------------------------------content_m/disalltrip/display.html
 	echo T_("Disable all trip from qom");                                             // Line 13
@@ -1140,7 +1183,7 @@ class twigTransTerms
 
 	//---------------------------------------------content_m/product/home/display.html
 	echo T_("Search in products");                                                    // Line 42
-	echo T_("Product donate");                                                        // Line 334
+	echo T_("Product donate");                                                        // Line 343
 	echo T_("Try to start with add new product!");                                    // Line 113
 
 	//---------------------------------------------------content_m/product/layout.html
@@ -1250,10 +1293,11 @@ class twigTransTerms
 	echo T_("File setting");                                                          // Line 263
 
 	//--------------------------------------------content_m/festival/user/display.html
+	echo T_("Show all");                                                              // Line 44
 	echo T_("Course");                                                                // Line 97
-	echo T_("File");                                                                  // Line 59
-	echo T_("Show Detail");                                                           // Line 61
-	echo T_("Show detail");                                                           // Line 75
+	echo T_("File");                                                                  // Line 60
+	echo T_("Show Detail");                                                           // Line 62
+	echo T_("Show detail");                                                           // Line 76
 
 	//-----------------------------------------------content_m/festival/home/list.html
 	echo T_("Add new festival");                                                      // Line 11
@@ -1270,7 +1314,6 @@ class twigTransTerms
 	echo T_("Organizer");                                                             // Line 146
 	echo T_("Sponsers");                                                              // Line 156
 	echo T_("No user signuped to this festival yet!");                                // Line 180
-	echo T_("Logo");                                                                  // Line 496
 
 	//------------------------------------------content_m/festival/organizer/list.html
 	echo T_("Add new organizer");                                                     // Line 13
@@ -1384,12 +1427,13 @@ class twigTransTerms
 	echo T_("Trip");                                                                  // Line 17
 	echo T_("Service");                                                               // Line 26
 	echo T_("Signup karbala");                                                        // Line 37
-	echo T_("Sms management");                                                        // Line 92
-	echo T_("Add trip");                                                              // Line 149
-	echo T_("Festival");                                                              // Line 158
-	echo T_("Tankyou message");                                                       // Line 168
-	echo T_("Meeting");                                                               // Line 179
-	echo T_("Doyon");                                                                 // Line 353
+	echo T_("Application setting");                                                   // Line 72
+	echo T_("Sms management");                                                        // Line 101
+	echo T_("Add trip");                                                              // Line 158
+	echo T_("Festival");                                                              // Line 167
+	echo T_("Tankyou message");                                                       // Line 177
+	echo T_("Meeting");                                                               // Line 188
+	echo T_("Doyon");                                                                 // Line 362
 
 	//----------------------------------------content_m/options/cityplace/display.html
 	echo T_("List of city place");                                                    // Line 22
@@ -1642,7 +1686,6 @@ class twigTransTerms
 
 	//------------------------------------------------content_lottery/item/layout.html
 	echo T_("Title of item");                                                         // Line 8
-	echo T_("Description of item");                                                   // Line 70
 	echo T_("Status of item");                                                        // Line 94
 
 	//----------------------------------------------content_lottery/item/pageStep.html

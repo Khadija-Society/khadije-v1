@@ -14,16 +14,21 @@ class androidhomepage
 		$setting =
 		[
 
-			'firstbaner'     => (array_key_exists('firstbaner', $_args) && $_args['firstbaner']) ? true : null,
-			'firstbaner_url' => array_key_exists('firstbaner_url', $_args) ? $_args['firstbaner_url'] : null,
-			'link_1_status'  => (array_key_exists('link_1_status', $_args) && $_args['link_1_status']) ? true : null,
-			'link_1_url'     => array_key_exists('link_1_url', $_args) ? $_args['link_1_url'] : null,
-			'link_2_status'  => (array_key_exists('link_2_status', $_args) && $_args['link_2_status']) ? true : null,
-			'link_2_url'     => array_key_exists('link_2_url', $_args) ? $_args['link_2_url'] : null,
-			'link_3_status'  => (array_key_exists('link_3_status', $_args) && $_args['link_3_status']) ? true : null,
-			'link_3_url'     => array_key_exists('link_3_url', $_args) ? $_args['link_3_url'] : null,
-			'link_4_status'  => (array_key_exists('link_4_status', $_args) && $_args['link_4_status']) ? true : null,
-			'link_4_url'     => array_key_exists('link_4_url', $_args) ? $_args['link_4_url'] : null,
+			'firstbaner'       => (array_key_exists('firstbaner', $_args) && $_args['firstbaner']) ? true : null,
+			'firstbanertarget' => (array_key_exists('firstbanertarget', $_args) && $_args['firstbanertarget']) ? true : null,
+			'firstbaner_url'   => array_key_exists('firstbaner_url', $_args) ? $_args['firstbaner_url'] : null,
+			'link_1_status'    => (array_key_exists('link_1_status', $_args) && $_args['link_1_status']) ? true : null,
+			'link_1_target'    => (array_key_exists('link_1_target', $_args) && $_args['link_1_target']) ? true : null,
+			'link_1_url'       => array_key_exists('link_1_url', $_args) ? $_args['link_1_url'] : null,
+			'link_2_status'    => (array_key_exists('link_2_status', $_args) && $_args['link_2_status']) ? true : null,
+			'link_2_target'    => (array_key_exists('link_2_target', $_args) && $_args['link_2_target']) ? true : null,
+			'link_2_url'       => array_key_exists('link_2_url', $_args) ? $_args['link_2_url'] : null,
+			'link_3_status'    => (array_key_exists('link_3_status', $_args) && $_args['link_3_status']) ? true : null,
+			'link_3_target'    => (array_key_exists('link_3_target', $_args) && $_args['link_3_target']) ? true : null,
+			'link_3_url'       => array_key_exists('link_3_url', $_args) ? $_args['link_3_url'] : null,
+			'link_4_status'    => (array_key_exists('link_4_status', $_args) && $_args['link_4_status']) ? true : null,
+			'link_4_target'    => (array_key_exists('link_4_target', $_args) && $_args['link_4_target']) ? true : null,
+			'link_4_url'       => array_key_exists('link_4_url', $_args) ? $_args['link_4_url'] : null,
 
 		];
 

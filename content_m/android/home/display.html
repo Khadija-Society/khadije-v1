@@ -38,6 +38,12 @@
             <input type="url" name="firstbaner_url" value="{{androidhomepage.firstbaner_url}}">
           </div>
 
+           <div class="check1">
+            <input type="checkbox" name="firstbanertarget" id="firstbanertarget" {%if androidhomepage.firstbanertarget%} checked {%endif%}>
+            <label for="firstbanertarget">باز کردن لینک در صفحه جدید</label>
+          </div>
+
+
           <div class="input preview2">
             <input type="file" accept="image/gif, image/jpeg, image/png" name="firstbaner_image" id="firstbaner_image1" data-preview2 data-max="500">
             <label for="firstbaner_image1" >
@@ -77,6 +83,11 @@
                 <div class="input">
                   <input type="url" name="link_{{i}}_url" value="{{androidhomepage['link_' ~ i~ '_url']}}">
                 </div>
+
+                  <div class="check1">
+                    <input type="checkbox" name="link_{{i}}_target" id="link_{{i}}_target" {%if androidhomepage['link_' ~ i~ '_target']%} checked {%endif%}>
+                    <label for="link_{{i}}_target">باز کردن لینک در صفحه جدید</label>
+                  </div>
 
                 <div class="input preview2">
                   <input type="file" accept="image/gif, image/jpeg, image/png" name="link_{{i}}_image" id="link_{{i}}_image" data-preview2 data-max="500">

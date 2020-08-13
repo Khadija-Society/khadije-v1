@@ -156,12 +156,25 @@ class application
 
 		if(isset($data['firstbaner']) && $data['firstbaner'] && isset($data['firstbaner_url']) && $data['firstbaner_url'] && isset($data['firstbaner_image']) && $data['firstbaner_image'])
 		{
-			$homepage[] =
-			[
-				'type'  => 'banner',
-				'image' => $data['firstbaner_image'],
-				'url'   => $data['firstbaner_url'],
-			];
+			if(isset($data['firstbanertarget']) && $data['firstbanertarget'])
+			{
+				$homepage[] =
+				[
+					'type'   => 'banner',
+					'target' => 'browser',
+					'image'  => $data['firstbaner_image'],
+					'url'    => $data['firstbaner_url'],
+				];
+			}
+			else
+			{
+				$homepage[] =
+				[
+					'type'   => 'banner',
+					'image'  => $data['firstbaner_image'],
+					'url'    => $data['firstbaner_url'],
+				];
+			}
 		}
 
 		$other_link = [];
@@ -171,12 +184,19 @@ class application
 
 			if(isset($data[$my_key. 'status']) && $data[$my_key. 'status'] && isset($data[$my_key. 'url']) && $data[$my_key. 'url'] && isset($data[$my_key.'image']) && $data[$my_key.'image'])
 			{
-				$other_link[] =
+				$temp =
 				[
 					'image' => $data[$my_key.'image'],
 					'url'   => $data[$my_key.'url'],
 					'title' => T_("Khadije"), // fake. sample :/
 				];
+
+				if(isset($data[$my_key. 'target']) && $data[$my_key. 'target'])
+				{
+					$temp['target'] = 'browser';
+				}
+
+				$other_link[] = $temp;
 			}
 		}
 
