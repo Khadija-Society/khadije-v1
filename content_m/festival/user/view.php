@@ -28,7 +28,7 @@ class view
 		];
 
 
-		$args['1.2'] = [' = 1.2 AND ', " festivalusers.status != 'draft' "];
+		// $args['1.2'] = [' = 1.2 AND ', " festivalusers.status != 'draft' "];
 
 
 		if(!$args['order'])
