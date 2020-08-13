@@ -1,0 +1,103 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{%block pageContent%}
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6">
+      <div class="cbox">
+        <div class="f">
+          <div class="cauto">
+            <p>
+          <span class="txtB fs12">بنر ابتدای صفحه اول اپلیکیشن</span>
+        </p>
+
+          </div>
+          <div class="c"></div>
+          <div class="cauto">
+
+          <button class="btn success">ذخیره همه</button>
+          </div>
+
+        </div>
+
+
+        <div class="switch1">
+          <input type="checkbox" name="firstbaner" id="firstbaner" {%if androidhomepage.firstbaner%} checked {%endif%}>
+          <label for="firstbaner"></label>
+          <label for="firstbaner">نمایش بنر</label>
+        </div>
+
+        <div data-response='firstbaner' {%if androidhomepage.firstbaner%}{%else%} data-response-hide {%endif%}>
+
+
+          <label>لینک بنر</label>
+          <div class="input">
+            <input type="url" name="firstbaner_url" value="{{androidhomepage.firstbaner_url}}">
+          </div>
+
+          <div class="input preview2">
+            <input type="file" accept="image/gif, image/jpeg, image/png" name="firstbaner_image" id="firstbaner_image1" data-preview2 data-max="500">
+            <label for="firstbaner_image1" >
+              {%if androidhomepage.firstbaner_image%}<img src="{{androidhomepage.firstbaner_image}}">{%endif%}
+            </label>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="f justify-center">
+    <div class="c6">
+      <h3>لینک‌های زیر بنر</h3>
+      <div class="f justify-center">
+        {%for i in 1..4%}
+        <div class="c6">
+          <div class="mLa5">
+
+            <div class="cbox">
+
+
+              <p>
+                <span class="txtB fs12">لینک شماره {{i | fitNumber}}</span>
+              </p>
+
+              <div class="switch1">
+                <input type="checkbox" name="link_{{i}}_status" id="link_{{i}}_status" {%if androidhomepage['link_' ~ i~ '_status']%} checked {%endif%}>
+                <label for="link_{{i}}_status"></label>
+                <label for="link_{{i}}_status">نمایش لینک شماره {{i | fitNumber}}</label>
+              </div>
+              <div data-response='link_{{i}}_status' {%if androidhomepage['link_' ~ i~ '_status']%}{%else%} data-response-hide {%endif%}>
+
+                <label>آدرس لینک شماره {{i | fitNumber}}</label>
+                <div class="input">
+                  <input type="url" name="link_{{i}}_url" value="{{androidhomepage['link_' ~ i~ '_url']}}">
+                </div>
+
+                <div class="input preview2">
+                  <input type="file" accept="image/gif, image/jpeg, image/png" name="link_{{i}}_image" id="link_{{i}}_image" data-preview2 data-max="500">
+                  <label for="link_{{i}}_image" >
+                    {%if androidhomepage['link_' ~ i~ '_image']%}<img src="{{androidhomepage['link_' ~ i~ '_image']}}">{%endif%}
+                  </label>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        {%endfor%}
+
+      </div>
+    </div>
+  </div>
+
+
+</form>
+
+{%endblock%}

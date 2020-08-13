@@ -125,10 +125,19 @@ class application
 			// $homepage[]            = self::competition_book();
 		}
 
-		$homepage[] = self::poyesh_nojavan_hoseyni();
+		$androidhomepage = \lib\app\androidhomepage::get();
+		if($androidhomepage)
+		{
+			self::make_android_homepage($homepage, $androidhomepage);
+		}
+		else
+		{
+			$homepage[] = self::poyesh_nojavan_hoseyni();
 
-		// $homepage[]            = self::link2_donate_shaban();
-		$homepage[]            = self::link2_donate_ramazan();
+			// $homepage[]            = self::link2_donate_shaban();
+			$homepage[]            = self::link2_donate_ramazan();
+
+		}
 		// $homepage[]            = self::link2_donate();
 		$homepage[]            = self::linksServicesLine();
 		$homepage[]            = self::linksWebsiteLine();
@@ -139,6 +148,74 @@ class application
 		// $homepage[]            = self::hr();
 
 		return $homepage;
+	}
+
+
+	private static function make_android_homepage(&$homepage, $data)
+	{
+
+		if(isset($data['firstbaner']) && $data['firstbaner'] && isset($data['firstbaner_url']) && $data['firstbaner_url'] && isset($data['firstbaner_image']) && $data['firstbaner_image'])
+		{
+			$homepage[] =
+			[
+				'type'  => 'banner',
+				'image' => $data['firstbaner_image'],
+				'url'   => $data['firstbaner_url'],
+			];
+		}
+
+		$other_link = [];
+		for ($i = 1; $i <= 4 ; $i++)
+		{
+			$my_key = 'link_'. $i. '_';
+
+			if(isset($data[$my_key. 'status']) && $data[$my_key. 'status'] && isset($data[$my_key. 'url']) && $data[$my_key. 'url'] && isset($data[$my_key.'image']) && $data[$my_key.'image'])
+			{
+				$other_link[] =
+				[
+					'image' => $data[$my_key.'image'],
+					'url'   => $data[$my_key.'url'],
+					'title' => T_("Khadije"), // fake. sample :/
+				];
+			}
+		}
+
+		if(count($other_link) === 4)
+		{
+			$homepage[] =
+			[
+				'type' => 'link2',
+				'link' =>
+				[
+					$other_link[0],
+					$other_link[1],
+				],
+			];
+
+			$homepage[] =
+			[
+				'type' => 'link2',
+				'link' =>
+				[
+					$other_link[2],
+					$other_link[3],
+				],
+			];
+		}
+		elseif(count($other_link) === 3 || count($other_link) === 2)
+		{
+			$homepage[] =
+			[
+				'type' => 'link2',
+				'link' =>
+				[
+					$other_link[0],
+					$other_link[1],
+				],
+			];
+
+		}
+
 	}
 
 

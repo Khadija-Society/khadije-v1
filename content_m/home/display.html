@@ -59,11 +59,20 @@
   {%if perm('cpSettingThankyouMessage')%}<div class="c2 s6">{{block("BTankyouMessage")}}</div>{%endif%}
   {%if perm('cpKarbalaUserCount')%}<div class="c2 s6">{{block("BnumberKarbalaAll")}}</div>{%endif%}
   {%if perm('contentCrm')%}<div class="c2 s6">{{block("bFind")}}</div>{%endif%}
+  {%if perm('cpHomePageNumber')%}<div class="c2 s6">{{block("bAndroidSetting")}}</div>{%endif%}
 </div>
 {%endif%}
 {%endblock%}
 
 
+{%block bAndroidSetting%}
+<a class="dcard x1" href='{{url.here}}/android'>
+ <div class="statistic">
+  <div class="value"><i class="sf-android"></i></div>
+  <div class="label">{%trans "Application setting"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block bFind%}
 <a class="dcard x1" href='{{url.here}}/find'>
