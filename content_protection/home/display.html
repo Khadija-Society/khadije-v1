@@ -19,8 +19,8 @@
     <div class="cbox fs11 mB10">
     <h2>{%trans "Last protection agetn"%}</h2>
     {%for key, value in lastAgent%}
-      <a class="msg f">
-        <div class="c">{{value.title}} <small>{{value.missionary_displayname}}</small></div>
+      <a class="msg f" href="{{url.this}}/protectagent/edit?id={{value.id}}">
+        <div class="c">{{value.title}}</div>
         <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
       </a>
     {%endfor%}
