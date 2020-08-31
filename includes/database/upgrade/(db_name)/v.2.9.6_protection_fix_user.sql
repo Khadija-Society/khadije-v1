@@ -1,0 +1,14 @@
+ALTER TABLE `protection_user_agent_occasion` CHANGE `protection_user_id` `protection_user_id` int(10) UNSIGNED NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `user_id` int(10) UNSIGNED NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `mobile` varchar(15)  NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `displayname` varchar(100) NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `nationalcode` varchar(50) NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `status` enum('pending', 'enable', 'block', 'deleted') NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `province` varchar(50) NULL DEFAULT NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `city` varchar(50) NULL DEFAULT NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `postalcode` varchar(50) NULL DEFAULT NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `address` text NULL DEFAULT NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `desc` text CHARACTER SET utf8mb4;
+ALTER TABLE `protection_user_agent_occasion` ADD `protectioncount` smallint(5) NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD `type` varchar(200) NULL DEFAULT NULL;
+ALTER TABLE `protection_user_agent_occasion` ADD CONSTRAINT `protection_user_agent_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;

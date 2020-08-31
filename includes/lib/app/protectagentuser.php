@@ -2,9 +2,9 @@
 namespace lib\app;
 
 /**
- * Class for protectagent.
+ * Class for protectagentuser.
  */
-class protectagent
+class protectagentuser
 {
 
 	public static function get($_id)
@@ -12,15 +12,15 @@ class protectagent
 		$id = \dash\coding::decode($_id);
 		if(!$id)
 		{
-			\dash\notif::error(T_("protectagent id not set"));
+			\dash\notif::error(T_("protectagentuser id not set"));
 			return false;
 		}
 
-		$get = \lib\db\protectionagent::get(['id' => $id, 'limit' => 1]);
+		$get = \lib\db\protectionagentuser::get(['id' => $id, 'limit' => 1]);
 
 		if(!$get)
 		{
-			\dash\notif::error(T_("Invalid protectagent id"));
+			\dash\notif::error(T_("Invalid protectagentuser id"));
 			return false;
 		}
 
@@ -30,37 +30,6 @@ class protectagent
 	}
 
 
-	private static $current_id = [];
-
-	public static function get_current_id($_key = 'id')
-	{
-		if(empty(self::$current_id))
-		{
-			if(!\dash\user::id())
-			{
-				return false;
-			}
-
-			$load_args =
-			[
-				'user_id' => \dash\user::id(),
-				'limit'   => 1,
-			];
-
-			$load = \lib\db\protectionagent::get($load_args);
-
-			self::$current_id = $load;
-		}
-
-
-		if(isset(self::$current_id[$_key]))
-		{
-			return self::$current_id[$_key];
-		}
-
-		return null;
-	}
-
 	/**
 	 * check args
 	 *
@@ -68,7 +37,38 @@ class protectagent
 	 */
 	private static function check($_id = null)
 	{
-		$args = [];
+
+		$args    = [];
+		$user_id = null;
+
+
+		$occation_id = \dash\app::request('occation_id');
+		if(!$occation_id || !\dash\coding::is($occation_id))
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$load_occasion = \lib\app\occasion::get($occation_id);
+		if(isset($load_occasion['status']))
+		{
+			if($load_occasion['status'] === 'registring')
+			{
+				// ok nothing
+			}
+			else
+			{
+				\dash\notif::error(T_("Can not add any user to this occasion. The occasion status is not registring"));
+				return false;
+			}
+		}
+		else
+		{
+			\dash\notif::error(T_("Invalid occasion id"));
+			return false;
+		}
+
+		$occation_id = \dash\coding::decode($occation_id);
 
 		$mobile = \dash\app::request('mobile');
 		$mobile = \dash\utility\filter::mobile($mobile);
@@ -82,32 +82,62 @@ class protectagent
 		$check_mobile = \dash\db\users::get_by_mobile($mobile);
 		if(isset($check_mobile['id']))
 		{
-			$args['user_id'] = $check_mobile['id'];
+			$user_id = $check_mobile['id'];
 		}
 		else
 		{
 			$load_user = \dash\db\users::signup(['mobile' => $mobile]);
 			if($load_user)
 			{
-				$args['user_id'] = $load_user;
+				$user_id = $load_user;
 			}
 		}
 
-		$title = \dash\app::request('title');
-		$title = trim($title);
-		if(!$title)
+		$nationalcode = \dash\app::request('nationalcode');
+		if(!$nationalcode)
 		{
-			\dash\notif::error(T_("Please fill the protectagent title"), 'title');
+			\dash\notif::error(T_("Please enter nationalcode"));
 			return false;
 		}
 
-		if(mb_strlen($title) > 150)
+		if(!\dash\utility\filter::nationalcode($nationalcode))
 		{
-			\dash\notif::error(T_("Please fill the protectagent title less than 150 character"), 'title');
+			\dash\notif::error(T_("Invalid nationalcode"));
 			return false;
 		}
 
-		$check_duplicate = \lib\db\protectionagent::get(['title' => $title, 'limit' => 1]);
+
+		$displayname = \dash\app::request('displayname');
+		$displayname = trim($displayname);
+		if(!$displayname)
+		{
+			\dash\notif::error(T_("Please fill the protectagentuser displayname"), 'displayname');
+			return false;
+		}
+
+		if(mb_strlen($displayname) > 100)
+		{
+			\dash\notif::error(T_("Please fill the displayname displayname less than 100 character"), 'displayname');
+			return false;
+		}
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			\dash\noif::error(T_("Invalid agent id"));
+			return false;
+		}
+
+		$check_duplicate =
+		[
+			'protection_occasion_id' => \dash\coding::decode($load_occasion['id']),
+			'protection_agent_id'    => $protection_agent_id,
+			'nationalcode'           => $nationalcode,
+			'limit'                  => 1,
+		];
+
+		$check_duplicate = \lib\db\protectionagentuser::get($check_duplicate);
+
 		if(isset($check_duplicate['id']))
 		{
 			if(intval($_id) === intval($check_duplicate['id']))
@@ -116,93 +146,48 @@ class protectagent
 			}
 			else
 			{
-				\dash\notif::error(T_("Duplicate protectagent title"), 'title');
+				\dash\notif::error(T_("This user already added to your list"), 'nationalcode');
 				return false;
 			}
 		}
 
+
 		$type = \dash\app::request('type');
 		if($type && mb_strlen($type) > 150)
 		{
-			\dash\notif::error(T_("Please fill the protectagent type less than 150 character"), 'type');
+			\dash\notif::error(T_("Please fill the protectagentuser type less than 150 character"), 'type');
 			return false;
 		}
 
 		$status = \dash\app::request('status');
-		if($status && !in_array($status, ['draft', 'pending', 'enable', 'block', 'deleted']))
+		if($status && !in_array($status, ['request', 'accept', 'reject']))
 		{
 			\dash\notif::error(T_("Invalid status"));
 			return false;
 		}
 
-		$desc = \dash\app::request('desc');
-		$address = \dash\app::request('address');
-
-		$bankaccountnumber = \dash\app::request('bankaccountnumber');
-		if($bankaccountnumber && mb_strlen($bankaccountnumber) > 150)
-		{
-			$bankaccountnumber = substr($bankaccountnumber, 0, 150);
-		}
-
-		$bankshaba = \dash\app::request('bankshaba');
-		if($bankshaba && mb_strlen($bankshaba) > 150)
-		{
-			$bankshaba = substr($bankshaba, 0, 150);
-		}
-
-		$bankhesab = \dash\app::request('bankhesab');
-		if($bankhesab && mb_strlen($bankhesab) > 150)
-		{
-			$bankhesab = substr($bankhesab, 0, 150);
-		}
-
-
-		$bankcart = \dash\app::request('bankcart');
-		if($bankcart && mb_strlen($bankcart) > 150)
-		{
-			$bankcart = substr($bankcart, 0, 150);
-		}
-
-
-		$bankname = \dash\app::request('bankname');
-		if($bankname && mb_strlen($bankname) > 150)
-		{
-			$bankname = substr($bankname, 0, 150);
-		}
-
-		$bankownername = \dash\app::request('bankownername');
-		if($bankownername && mb_strlen($bankownername) > 150)
-		{
-			$bankownername = substr($bankownername, 0, 150);
-		}
+		$desc     = \dash\app::request('desc');
+		$address  = \dash\app::request('address');
 
 		$province = \dash\app::request('province');
-		if($province && mb_strlen($province) > 150)
-		{
-			$province = substr($province, 0, 150);
-		}
+		$city     = \dash\app::request('city');
 
-		$city = \dash\app::request('city');
-		if($city && mb_strlen($city) > 150)
-		{
-			$city = substr($city, 0, 150);
-		}
+		$postalcode = \dash\app::request('postalcode');
 
-
-		$args['title']             = $title;
-		$args['type']              = $type;
-		$args['status']            = $status;
-		$args['desc']              = $desc;
-		$args['address']           = $address;
-		$args['bankaccountnumber'] = $bankaccountnumber;
-		$args['bankshaba']         = $bankshaba;
-		$args['bankhesab']         = $bankhesab;
-		$args['bankcart']          = $bankcart;
-		$args['bankname']          = $bankname;
-		$args['bankownername']     = $bankownername;
-		$args['province']          = $province;
-		$args['city']              = $city;
-
+		$args['protection_occasion_id'] = $occation_id;
+		$args['protection_agent_id']    = $protection_agent_id;
+		$args['mobile']                 = $mobile;
+		$args['user_id']                 = $user_id;
+		// $args['protection_user_id']     = $user_id;
+		$args['nationalcode']           = $nationalcode;
+		$args['displayname']            = $displayname;
+		$args['type']                   = $type;
+		$args['status']                 = $status;
+		$args['desc']                   = $desc;
+		$args['address']                = $address;
+		$args['province']               = $province;
+		$args['city']                   = $city;
+		$args['postalcode']             = $postalcode;
 
 		return $args;
 	}
@@ -212,7 +197,7 @@ class protectagent
 
 
 	/**
-	 * add new protectagent
+	 * add new protectagentuser
 	 *
 	 * @param      array          $_args  The arguments
 	 *
@@ -241,47 +226,45 @@ class protectagent
 
 		if(!$args['status'])
 		{
-			$args['status']  = 'draft';
+			$args['status']  = 'request';
 		}
 
 		$args['datecreated'] = date("Y-m-d H:i:s");
 
-		$protectagent_id = \lib\db\protectionagent::insert($args);
+		$protectagentuser_id = \lib\db\protectionagentuser::insert($args);
 
-		if(!$protectagent_id)
+		if(!$protectagentuser_id)
 		{
-			\dash\log::set('apiprotectAgent:no:way:to:insertprotectAgent');
-			\dash\notif::error(T_("No way to insert protectagent"), 'db', 'system');
+			\dash\log::set('apiprotectAgentUser:no:way:to:insertprotectAgentUser');
+			\dash\notif::error(T_("No way to insert protectagentuser"), 'db', 'system');
 			return false;
 		}
 
-		$return['id'] = \dash\coding::encode($protectagent_id);
+		$return['id'] = \dash\coding::encode($protectagentuser_id);
 
 		if(\dash\engine\process::status())
 		{
-			\dash\log::set('addNewprotectAgent', ['code' => $protectagent_id]);
-			\dash\notif::ok(T_("protectAgent successfuly added"));
+			\dash\log::set('addNewprotectAgentUser', ['code' => $protectagentuser_id]);
+			\dash\notif::ok(T_("protectAgentUser successfuly added"));
 		}
 
 		return $return;
 	}
 
 
+
 	public static $sort_field =
 	[
-		'title',
-		'type',
 		'id',
-
 	];
 
 
 	/**
-	 * Gets the protectagent.
+	 * Gets the protectagentuser.
 	 *
 	 * @param      <type>  $_args  The arguments
 	 *
-	 * @return     <type>  The protectagent.
+	 * @return     <type>  The protectagentuser.
 	 */
 	public static function list($_string = null, $_args = [])
 	{
@@ -308,7 +291,7 @@ class protectagent
 			$_args['sort'] = null;
 		}
 
-		$result            = \lib\db\protectionagent::search($_string, $_args);
+		$result            = \lib\db\protectionagentuser::search($_string, $_args);
 		$temp              = [];
 
 		foreach ($result as $key => $value)
@@ -326,7 +309,7 @@ class protectagent
 
 
 	/**
-	 * edit a protectagent
+	 * edit a protectagentuser
 	 *
 	 * @param      <type>   $_args  The arguments
 	 *
@@ -370,8 +353,8 @@ class protectagent
 
 		if(!empty($args))
 		{
-			$update = \lib\db\protectionagent::update($args, $id);
-			\dash\log::set('editprotectAgent', ['code' => $id]);
+			$update = \lib\db\protectionagentuser::update($args, $id);
+			\dash\log::set('editprotectAgentUser', ['code' => $id]);
 
 			$title = isset($args['title']) ? $args['title'] : T_("Data");
 			if(\dash\engine\process::status())
@@ -382,7 +365,7 @@ class protectagent
 	}
 
 	/**
-	 * ready data of protectagent to load in api
+	 * ready data of protectagentuser to load in api
 	 *
 	 * @param      <type>  $_data  The data
 	 */

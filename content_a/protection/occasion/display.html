@@ -1,19 +1,34 @@
 {%extends display.admin%}
 
 {%block pageContent%}
-<div class="cbox">
-  <p class="msg info2">لطفا اطلاعات افرادی‌ که می‌خواهید در این مناسبت به آنها بسته حمایتی اهدا کنید را وارد نمایید.</p>
-  <form method="post" autocomplete="off">
-    <input type="hidden" name="id" value="{{requestGET.id}}">
-    <div class="w300">
-      <label>{%trans "Nationalcode"%}</label>
-      <div class="input">
-        <input type="text" name="nationalcode" value="{{requestGET.nationalcode}}">
-        <button class="addon btn success2">{%trans "Check"%}</button>
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6 s12 m8">
+      <div class="cbox">
+        <p class="msg info2">لطفا اطلاعات افرادی‌ که می‌خواهید در این مناسبت به آنها بسته حمایتی اهدا کنید را وارد نمایید.</p>
+          <input type="hidden" name="occation_id" value="{{requestGET.id}}">
+
+            <label for="imobile">{%trans "Mobile"%}</label>
+            <div class="input">
+              <input type="tel" id="imobile" name="mobile" value="{{dataRow.mobile}}" maxlength="15">
+            </div>
+
+            <label for="idisplayname">{%trans "Name"%}</label>
+            <div class="input">
+              <input type="text" id="idisplayname" name="displayname" value="{{dataRow.displayname}}" maxlength="50">
+            </div>
+
+            <label for="inationalcode">{%trans "Nationalcode"%}</label>
+            <div class="input">
+              <input type="tel" id="inationalcode" name="nationalcode" value="{{dataRow.nationalcode}}" maxlength="10">
+            </div>
+        <footer class="txtRa">
+          <button class="btn primary">{%trans "Add"%}</button>
+        </footer>
       </div>
     </div>
-  </form>
-</div>
+  </div>
+</form>
 
 
 {%endblock%}
