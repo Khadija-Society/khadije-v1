@@ -7,12 +7,40 @@ namespace lib\app;
 class protectagentuser
 {
 
-	public static function get($_id)
+	public static function occasion_list($_occasion_id)
+	{
+		$load_occasion = \lib\app\occasion::get($_occasion_id);
+		if(!$load_occasion)
+		{
+			return false;
+		}
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			\dash\noif::error(T_("Invalid agent id"));
+			return false;
+		}
+
+		$list = \lib\db\protectionagentuser::get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $protection_agent_id]);
+		if(!is_array($list))
+		{
+			$list = [];
+		}
+
+		$list = array_map(['self', 'ready'], $list);
+
+		return $list;
+
+	}
+
+
+	public static function get_by_id($_id)
 	{
 		$id = \dash\coding::decode($_id);
 		if(!$id)
 		{
-			\dash\notif::error(T_("protectagentuser id not set"));
+			\dash\notif::error(T_("id not set"));
 			return false;
 		}
 
@@ -20,13 +48,115 @@ class protectagentuser
 
 		if(!$get)
 		{
-			\dash\notif::error(T_("Invalid protectagentuser id"));
+			\dash\notif::error(T_("Invalid id"));
 			return false;
 		}
 
 		$result = self::ready($get);
 
 		return $result;
+	}
+
+
+
+	public static function get($_args)
+	{
+		$occation_id         = isset($_args['occation_id']) ? \dash\coding::decode($_args['occation_id']) : null;
+		$protectagentuser_id = isset($_args['protectagentuser_id']) ? \dash\coding::decode($_args['protectagentuser_id']) : null;
+
+		if(!$occation_id)
+		{
+			\dash\notif::error(T_("Invalid occasion id"));
+			return false;
+		}
+
+
+		if(!$protectagentuser_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			\dash\noif::error(T_("Invalid agent id"));
+			return false;
+		}
+
+		$check =
+		[
+			'id'                     => $protectagentuser_id,
+			'protection_occasion_id' => $occation_id,
+			'protection_agent_id'    => $protection_agent_id,
+			'limit'                  => 1,
+		];
+
+		$result = \lib\db\protectionagentuser::get($check);
+
+		if(isset($result['id']))
+		{
+			return $result;
+		}
+		else
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
+	}
+
+
+	public static function remove($_args)
+	{
+		$occation_id         = isset($_args['occation_id']) ? \dash\coding::decode($_args['occation_id']) : null;
+		$protectagentuser_id = isset($_args['protectagentuser_id']) ? \dash\coding::decode($_args['protectagentuser_id']) : null;
+
+		if(!$occation_id)
+		{
+			\dash\notif::error(T_("Invalid occasion id"));
+			return false;
+		}
+
+
+		if(!$protectagentuser_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			\dash\noif::error(T_("Invalid agent id"));
+			return false;
+		}
+
+		$check =
+		[
+			'id'                     => $protectagentuser_id,
+			'protection_occasion_id' => $occation_id,
+			'protection_agent_id'    => $protection_agent_id,
+			'limit'                  => 1,
+		];
+
+		$result = \lib\db\protectionagentuser::get($check);
+
+		if(isset($result['id']))
+		{
+			$result = \lib\db\protectionagentuser::remove($result['id']);
+			\dash\notif::ok(T_("Removed"));
+			return true;
+
+		}
+		else
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
 	}
 
 
@@ -319,7 +449,7 @@ class protectagentuser
 	{
 		\dash\app::variable($_args);
 
-		$result = self::get($_id);
+		$result = self::get_by_id($_id);
 
 		if(!$result)
 		{
@@ -336,30 +466,13 @@ class protectagentuser
 		}
 
 
-		if(!\dash\app::isset_request('title')) unset($args['title']);
-		if(!\dash\app::isset_request('type')) unset($args['type']);
-		if(!\dash\app::isset_request('status')) unset($args['status']);
-		if(!\dash\app::isset_request('desc')) unset($args['desc']);
-		if(!\dash\app::isset_request('address')) unset($args['address']);
-		if(!\dash\app::isset_request('bankaccountnumber')) unset($args['bankaccountnumber']);
-		if(!\dash\app::isset_request('bankshaba')) unset($args['bankshaba']);
-		if(!\dash\app::isset_request('bankhesab')) unset($args['bankhesab']);
-		if(!\dash\app::isset_request('bankcart')) unset($args['bankcart']);
-		if(!\dash\app::isset_request('bankname')) unset($args['bankname']);
-		if(!\dash\app::isset_request('bankownername')) unset($args['bankownername']);
-		if(!\dash\app::isset_request('province')) unset($args['province']);
-		if(!\dash\app::isset_request('city')) unset($args['city']);
-
-
 		if(!empty($args))
 		{
 			$update = \lib\db\protectionagentuser::update($args, $id);
-			\dash\log::set('editprotectAgentUser', ['code' => $id]);
 
-			$title = isset($args['title']) ? $args['title'] : T_("Data");
 			if(\dash\engine\process::status())
 			{
-				\dash\notif::ok(T_(":title successfully updated", ['title' => $title]));
+				\dash\notif::ok(T_("Data successfully updated"));
 			}
 		}
 	}
@@ -378,35 +491,11 @@ class protectagentuser
 			switch ($key)
 			{
 				case 'id':
+				case 'protection_occasion_id':
+				case 'protection_user_id':
+				case 'protection_agent_id':
+				case 'user_id':
 					$result[$key] = \dash\coding::encode($value);
-					break;
-
-				case 'perm':
-					if(is_string($value))
-					{
-						$result['perm'] = json_decode($value, true);
-						if(is_array($result['perm']))
-						{
-							$result['perm'] = array_map(['\\dash\\coding', 'encode'], $result['perm']);
-						}
-					}
-					else
-					{
-						$result[$key] = $value;
-					}
-					break;
-
-
-				case 'file':
-					if(!\dash\url::content())
-					{
-						if(!$value)
-						{
-							$value = \dash\app::static_logo_url();
-						}
-					}
-					$result[$key] = $value;
-					$result[$key] = $value;
 					break;
 
 

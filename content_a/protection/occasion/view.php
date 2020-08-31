@@ -13,6 +13,11 @@ class view
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back'));
 
+		$occasion_id = \dash\request::get('id');
+
+
+		$list = \lib\app\protectagentuser::occasion_list($occasion_id);
+		\dash\data::userOccasionList($list);
 
 	}
 

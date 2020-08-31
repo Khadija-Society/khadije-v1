@@ -16,6 +16,18 @@ class controller
 		}
 
 		\dash\data::occasionDetail($load);
+
+		$person = \dash\request::get('person');
+		if($person)
+		{
+			$load_detail = \lib\app\protectagentuser::get(['occation_id' => $id, 'protectagentuser_id' => $person]);
+			if(!$load_detail)
+			{
+				\dash\header::status(404);
+			}
+			\dash\data::editMode(true);
+			\dash\data::dataRow($load_detail);
+		}
 	}
 }
 ?>

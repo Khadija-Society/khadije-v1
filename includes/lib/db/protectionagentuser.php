@@ -12,9 +12,9 @@ class protectionagentuser
 	}
 
 
-	public static function remove_detail($_id)
+	public static function remove($_id)
 	{
-		$query  = "DELETE FROM  protection_user_agent_occasion WHERE protection_user_agent_occasion.id = $_id";
+		$query  = "DELETE FROM  protection_user_agent_occasion WHERE protection_user_agent_occasion.id = $_id LIMIT 1";
 		$result = \dash\db::get($query);
 		return $result;
 	}
