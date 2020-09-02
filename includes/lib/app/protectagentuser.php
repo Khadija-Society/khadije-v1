@@ -47,6 +47,7 @@ class protectagentuser
 	public static function occasion_list($_occasion_id)
 	{
 		$load_occasion = \lib\app\occasion::get($_occasion_id);
+
 		if(!$load_occasion)
 		{
 			return false;
@@ -60,6 +61,7 @@ class protectagentuser
 		}
 
 		$list = \lib\db\protectionagentuser::get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $protection_agent_id]);
+
 		if(!is_array($list))
 		{
 			$list = [];

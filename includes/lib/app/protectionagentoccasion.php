@@ -73,6 +73,42 @@ class protectionagentoccasion
 
 	}
 
+
+	public static function get($_id)
+	{
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			return false;
+		}
+
+		$id = \dash\coding::decode($_id);
+
+		if(!$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$get_args =
+		[
+			'id'                  => $id,
+			'protection_agent_id' => $protection_agent_id,
+			'limit'               => 1,
+		];
+
+		$get = \lib\db\protectionagentoccasion::get($get_args);
+
+		if(!$get)
+		{
+			return false;
+		}
+
+		$result = self::ready($get);
+
+		return $result;
+	}
+
 	public static function old_registered_occasion()
 	{
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
