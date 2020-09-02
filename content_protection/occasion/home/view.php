@@ -34,6 +34,16 @@ class view
 			$args['order'] = 'desc';
 		}
 
+		if(\dash\request::get('status'))
+		{
+			$args['status'] = \dash\request::get('status');
+		}
+
+		if(\dash\request::get('type'))
+		{
+			$args['type'] = \dash\request::get('type');
+		}
+
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\occasion::$sort_field, \dash\url::this());
 		$dataTable = \lib\app\occasion::list(\dash\request::get('q'), $args);
 

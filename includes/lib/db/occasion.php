@@ -87,7 +87,7 @@ class occasion
 
 		$default_option =
 		[
-			'search_field'      =>" (protection_occasion.title LIKE '%__string__%') ",
+			'search_field'      =>" (protection_occasion.title LIKE '%__string__%' OR protection_occasion.type LIKE '%__string__%' OR protection_occasion.subtitle LIKE '%__string__%') ",
 		];
 
 		$_options = array_merge($default_option, $_options);

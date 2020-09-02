@@ -30,6 +30,10 @@
         <li><a href="{{url.kingdom}}/m/festival" {%if url.content == "m" and url.module == "festival"%} class="activeContent"{%endif%}><i class='sf-magic'></i> سامانه مدیریت جشنواره</a></li>
 {%endif%}
 
+{%if perm('protectionContent') %}
+        <li><a href="{{url.kingdom}}/protection" {%if url.content == "protection" %} class="activeContent"{%endif%}><i class='sf-hand-hold'></i> مدیریت افراد تحت پوشش</a></li>
+{%endif%}
+
 
 {%if login%}
         <li><a href="{{url.kingdom}}/a" {%if url.content == "a"%} class="activeContent"{%endif%}><i class='sf-gauge'></i> سامانه خدمات مردمی</a></li>

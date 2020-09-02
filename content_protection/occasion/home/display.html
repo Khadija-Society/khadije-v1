@@ -58,7 +58,7 @@
         <th data-sort="{{sortLink.subtitle.order}}"><a href='{{sortLink.subtitle.link}}'>{%trans "Subtitle"%}</a></th>
         <th data-sort="{{sortLink.type.order}}"><a href='{{sortLink.type.link}}'>{%trans "Type"%}</a></th>
         <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
-        <th class="collapsing">{%trans "Show registered user"%}</th>
+        <th class="collapsing">{%trans "Detail"%}</th>
       </tr>
     </thead>
 
@@ -69,10 +69,10 @@
         <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
 
         <td>{{value.subtitle}}</td>
-        <td>{{value.type}}</td>
+        <td><a href="{{url.this}}?type={{value.type}}">{{value.type}}</a></td>
 
         <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
-        <td class="collapsing"><a class="btn link" href="{{url.this}}/user?id={{value.id}}">{%trans "Show registered user"%}</a></td>
+        <td class="collapsing"><a class="btn pain outline" href="{{url.this}}/user?id={{value.id}}">{%trans "Detail"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
