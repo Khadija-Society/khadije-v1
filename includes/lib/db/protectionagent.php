@@ -76,7 +76,8 @@ class protectionagent
 		];
 
 		$_options = array_merge($default_option, $_options);
-		return \dash\db\config::public_search('protection_agent', $_string, $_options);
+		$result = \dash\db\config::public_search('protection_agent', $_string, $_options);
+		return $result;
 	}
 
 

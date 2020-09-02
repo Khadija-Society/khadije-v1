@@ -1,5 +1,5 @@
 <?php
-namespace content_a\protection\home;
+namespace content_a\protection\signup;
 
 
 class view
@@ -11,14 +11,6 @@ class view
 		\dash\data::badge_text(T_('Back to dashboard'));
 		$occasion = \lib\app\occasion::get_active_list();
 		\dash\data::occasionList($occasion);
-
-		$registeredOccasion = \lib\app\protectionagentoccasion::old_registered_occasion();
-		\dash\data::registeredOccasion($registeredOccasion);
-
-		if(!$registeredOccasion && $occasion)
-		{
-			\dash\redirect::to(\dash\url::this(). '/signup');
-		}
 
 	}
 }

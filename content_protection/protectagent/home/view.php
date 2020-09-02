@@ -22,6 +22,7 @@ class view
 			\dash\data::page_title(\dash\data::page_title(). ' | '. T_('Search for :search', ['search' => $search_string]));
 		}
 
+		$filterArgs = [];
 		$args =
 		[
 			'sort'       => \dash\request::get('sort'),
@@ -36,12 +37,14 @@ class view
 
 		if(\dash\request::get('status'))
 		{
-			$args['status'] = \dash\request::get('status');
+			$args['protection_agent.status'] = \dash\request::get('status');
+			$filterArgs['status'] = \dash\request::get('status');
 		}
 
 		if(\dash\request::get('type'))
 		{
-			$args['type'] = \dash\request::get('type');
+			$args['protection_agent.type'] = \dash\request::get('type');
+			$filterArgs['type'] = \dash\request::get('type');
 		}
 
 
@@ -51,13 +54,9 @@ class view
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);
 
-		$check_empty_datatable = $args;
-		unset($check_empty_datatable['sort']);
-		unset($check_empty_datatable['order']);
-		unset($check_empty_datatable['pagenation']);
 
 		// set dataFilter
-		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $check_empty_datatable);
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);
 		\dash\data::dataFilter($dataFilter);
 
 

@@ -5,35 +5,38 @@
 
 <div class="f justify-center fs12">
  <div class="c8 m8 s12">
-
 {%if occasionList%}
-  <p class="msg info2 fs14 txtB txtC">
-  لطفا اعلام کنید که می‌خواهید در کدام‌یک از مناسبت‌های زیر بسته معیشتی برای افراد تحت پوشش خود دریافت کنید
-  </p>
-{{block('OccationList')}}
-{%else%}
-<div class="msg info fs14 txtB txtC">در حال حاظر هیچ برنامه حمایتی از طرف موسسه اعلام نشده است
-  <br>
-  لطفا اخبار موسسه را پیگیری کنید تا در صورتی که طی مناسبتی توزیع بسته‌های معیشتی توسط موسسه آغاز شد از طیق همین صفحه مراحل را تکمیل کنید
-</div>
+  <a href="{{url.this}}/signup" class="msg success2 fs14 txtB txtC block">
+  جهت شرکت در مناسبت‌های جدید موسسه کلیک کنید
+  </a>
 {%endif%}
 
- </div>
-</div>
-
-
-{%endblock%}
-
-
-{%block OccationList%}
+{%if registeredOccasion%}
+  <p class="msg fs14">
+    شما در مناسبت‌های زیر شرکت کرده اید
+  </p>
 <div class="f">
-  {%for key, value in occasionList%}
+  {%for key, value in registeredOccasion%}
   <div class="c6 s12 pA10">
-      <a class="dcard grShadow grGreen2 x3 op100" href='{{url.this}}/occasion?id={{value.id}}'>
+      <a class="dcard grShadow grBlue2 x2 op100" href='{{url.this}}/detail?id={{value.id}}'>
         <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
         <div>{{value.subtitle}}</div>
       </a>
     </div>
   {%endfor%}
 </div>
+{%endif%}
+
+{%if not registeredOccasion and not occasionList%}
+<div class="msg info fs14 txtB txtC">در حال حاظر هیچ برنامه حمایتی از طرف موسسه اعلام نشده است
+  <br>
+  لطفا اخبار موسسه را پیگیری کنید تا در صورتی که طی مناسبتی توزیع بسته‌های معیشتی توسط موسسه آغاز شد از طیق همین صفحه مراحل را تکمیل کنید
+</div>
+{%endif%}
+
+
+ </div>
+</div>
+
+
 {%endblock%}

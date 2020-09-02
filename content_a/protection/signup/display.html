@@ -1,0 +1,79 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+{%if occasionDetail%}
+<div class="f justify-center fs12">
+  <div class="c8 m8 s12">
+    <div class="cbox">
+      <p>
+        <h2 class="mB20">{{occasionDetail.title}}</h2>
+        {%if occasionDetail.subtitle%}<b class="mB20 block">{{occasionDetail.subtitle}}</b>{%endif%}
+        {%if occasionDetail.startdate%}<span class="block mB10">{%trans "Start date"%}: <span class="ltr compact">{{occasionDetail.startdate | dt(null, 'date')}}</span></span>{%endif%}
+        {%if occasionDetail.expiredate%}{%trans "Expire date"%}: <span class="ltr compact">{{occasionDetail.expiredate | dt(null, 'date')}}</span>{%endif%}
+        {%if occasionDetail.desc%}<p class="mTB20">{{occasionDetail.desc | nl2br}}</p>{%endif%}
+
+        {%if dataDetail%}
+          <h5>اقلام این بسته</h5>
+          <ul>
+
+          {%for key, value in dataDetail%}
+          <li class="f">
+            <div class="c">{{value.title}}</div>
+            {%if value.price%}<div class="c">{%trans "Price"%} {{value.price | fitNumber}}</div>{%endif%}
+            <div class="c">{{value.desc}}</div>
+          </li>
+          {%endfor%}
+          </ul>
+
+
+        {%endif%}
+
+      </p>
+      <div class="f txtC">
+        <div class="c">
+          <div class="btn success block" data-ajaxify data-data='{"register": "register"}' data-method='post'>{%trans "Register"%}</div>
+        </div>
+        <div class="cauto mLa5">
+          <a class="btn secondary block outline" href="{{url.that}}">{%trans "Cancel"%}</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{%else%}
+
+<div class="f justify-center txtC fs12">
+  <div class="c8 m8 s12">
+
+    {%if occasionList%}
+    <p class="msg info2 fs14 txtB txtC">
+      لطفا اعلام کنید که می‌خواهید در کدام‌یک از مناسبت‌های زیر بسته معیشتی برای افراد تحت پوشش خود دریافت کنید
+    </p>
+    <div class="f justify-center">
+      {%for key, value in occasionList%}
+      <div class="c6 s12 pA10">
+        <a class="dcard grShadow grGreen2 x2 op100" href='{{url.that}}?id={{value.id}}'>
+          <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
+          <div>{{value.subtitle}}</div>
+          <div></div>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+
+    {%else%}
+    <div class="msg info fs14 txtB txtC">در حال حاظر هیچ برنامه حمایتی از طرف موسسه اعلام نشده است
+      <br>
+      لطفا اخبار موسسه را پیگیری کنید تا در صورتی که طی مناسبتی توزیع بسته‌های معیشتی توسط موسسه آغاز شد از طیق همین صفحه مراحل را تکمیل کنید
+    </div>
+    {%endif%}
+
+  </div>
+</div>
+
+{%endif%}
+
+{%endblock%}

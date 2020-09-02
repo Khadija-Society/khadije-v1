@@ -1,0 +1,1 @@
+ALTER TABLE `protection_agent_occasion` CHANGE `status` `status` ENUM('request','accept','reject','draft', 'cancel', 'review') CHARACTER SET utf8mb4 NULL DEFAULT NULL;
