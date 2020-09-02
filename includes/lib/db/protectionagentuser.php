@@ -70,7 +70,22 @@ class protectionagentuser
 
 		$default_option =
 		[
-			'search_field'      =>" (protection_user_agent_occasion.title LIKE '%__string__%') ",
+			'search_field'      =>
+			"
+				(
+					protection_user_agent_occasion.displayname LIKE '%__string__%' OR
+					protection_user_agent_occasion.mobile LIKE '%__string__%' OR
+					protection_user_agent_occasion.nationalcode LIKE '%__string__%' OR
+					protection_agent.title LIKE '%__string__%'
+				)
+			",
+			'public_show_field' =>
+			"
+				protection_user_agent_occasion.*,
+				protection_agent.title AS `agent_title`,
+				protection_agent.type AS `agent_type`
+			",
+			'master_join'       => " LEFT JOIN protection_agent ON protection_agent.id = protection_user_agent_occasion.protection_agent_id "
 		];
 
 		$_options = array_merge($default_option, $_options);

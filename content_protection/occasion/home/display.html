@@ -55,14 +55,10 @@
     <thead>
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
-
         <th data-sort="{{sortLink.subtitle.order}}"><a href='{{sortLink.subtitle.link}}'>{%trans "Subtitle"%}</a></th>
         <th data-sort="{{sortLink.type.order}}"><a href='{{sortLink.type.link}}'>{%trans "Type"%}</a></th>
-
-
-
-
         <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
+        <th class="collapsing">{%trans "Show registered user"%}</th>
       </tr>
     </thead>
 
@@ -70,12 +66,13 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative'{%endif%}>
 
-        <td><a href="{{url.this}}/edit?id={{value.id}}{{xCityAnd}}{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}"><i class="sf-edit"></i> {{value.title}}</a></td>
+        <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
 
         <td>{{value.subtitle}}</td>
         <td>{{value.type}}</td>
 
-        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{{xCityAnd}}{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}">{%trans myStatus%}</a></td>
+        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
+        <td class="collapsing"><a class="btn link" href="{{url.this}}/user?id={{value.id}}">{%trans "Show registered user"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
@@ -89,7 +86,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -97,12 +94,12 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}{{xCityStart}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add{{xCityStart}}">{%trans "Try to start with add new occasion!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new occasion!"%}</a></p>
 {%endblock%}
 

@@ -7,6 +7,43 @@ namespace lib\app;
 class protectagentuser
 {
 
+	public static function update_status($_occasion_id, $_id, $_status)
+	{
+		$occation_id = \dash\coding::decode($_occasion_id);
+		if(!$occation_id)
+		{
+			\dash\notif::error(T_("Invalid occasion id"));
+			return false;
+		}
+
+		$id = \dash\coding::decode($_id);
+		if(!$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$get =
+		[
+			'id'                     => $id,
+			'protection_occasion_id' => $occation_id,
+			'limit'                  => 1
+		];
+
+		$get = \lib\db\protectionagentuser::get($get);
+		if(isset($get['id']))
+		{
+			$update = \lib\db\protectionagentuser::update(['status' => $_status], $id);
+			\dash\notif::ok(T_("Status changed"));
+			return true;
+		}
+		else
+		{
+			\dash\notif::error(T_("Data not found"));
+			return false;
+		}
+	}
+
 	public static function occasion_list($_occasion_id)
 	{
 		$load_occasion = \lib\app\occasion::get($_occasion_id);
