@@ -38,9 +38,8 @@
 {%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
-    <input type="hidden" name="city" value="{{requestGET.city}}">
     <div class="input">
-      <input type="search" name="q" protect agentholder='{%trans "Search in protect agent"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
+      <input type="search" name="q"  id="q" value="{{requestGET.q}}" autofocus  autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
   </form>
@@ -50,39 +49,30 @@
 
 {%block htmlTable%}
 <div class="tblBox">
-
  <table class="tbl1 v1 cbox fs12">
     <thead>
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
-
         <th data-sort="{{sortLink.type.order}}"><a href='{{sortLink.type.link}}'>{%trans "Type"%}</a></th>
-
-
-
-
-
+        <th>{%trans "Mobile"%}</th>
         <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
+        <th class="collapsing">{%trans "Activity"%}</th>
       </tr>
     </thead>
-
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative'{%endif%}>
-
-        <td><a href="{{url.this}}/edit?id={{value.id}}{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}"><i class="sf-edit"></i> {{value.title}}</a></td>
-
-        <td>{{value.type}}</td>
-
-
-        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}{%if requestGET.job%}&job={{requestGET.job}}{%endif%}{%if requestGET.job_for%}&job_for={{requestGET.job_for}}{%endif%}">{%trans myStatus%}</a></td>
+        <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
+        <td><a href="{{url.this}}?type={{value.type}}">{{value.type}}</a></td>
+        <td>{{value.mobile | fitNumber('mobile')}}</td>
+        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
+        <td class="collapsing"><a class="btn pain outline" href="{{url.this}}/activity?agentid={{value.id}}">{%trans "Activity"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
   </table>
 </div>
-  {%include display.pagination%}
-
+{%include display.pagination%}
 {%endblock%}
 
 

@@ -107,7 +107,7 @@ class protectagent
 			return false;
 		}
 
-		$check_duplicate = \lib\db\protectionagent::get(['title' => $title, 'limit' => 1]);
+		$check_duplicate = \lib\db\protectionagent::get(['user_id' => $args['user_id'], 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
 			if(intval($_id) === intval($check_duplicate['id']))
@@ -116,7 +116,7 @@ class protectagent
 			}
 			else
 			{
-				\dash\notif::error(T_("Duplicate protectagent title"), 'title');
+				\dash\notif::error(T_("This user already add to your agent list"), 'mobile');
 				return false;
 			}
 		}
