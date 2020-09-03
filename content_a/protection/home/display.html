@@ -5,11 +5,21 @@
 
 <div class="f justify-center fs12">
  <div class="c8 m8 s12">
-{%if occasionList%}
-<div class="c12 s12 pA10">
-  <a class="dcard grShadow grGreen2 x2 op100" href='{{url.this}}/signup'>
-    <div class="mB25 fcWhite900 fs20" >جهت شرکت در مناسبت‌های جدید موسسه کلیک کنید</div>
-  </a>
+{%if occasionList and haveUnregisteredOccasion%}
+<p class="msg fs14">
+    مناسبت جدید
+  </p>
+<div class="f">
+  {%for key, value in occasionList%}
+  {%if value.id not in occasionID%}
+  <div class="c6 s12 pA10">
+      <a class="dcard grShadow grGreen2 x2 op100" href='{{url.this}}/signup?id={{value.id}}'>
+        <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
+        <div>{{value.subtitle}}</div>
+      </a>
+    </div>
+    {%endif%}
+  {%endfor%}
 </div>
 {%endif%}
 
