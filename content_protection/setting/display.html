@@ -1,0 +1,59 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6 s12 m8">
+      <div class="cbox">
+
+            <div class="msg">
+              لطفا عنوان محرومیت جهت استفاده در مناسبت را وارد کنید
+            </div>
+
+            <label for="title">{%trans "Title"%}</label>
+            <div class="input">
+              <input type="text" id="title" name="title" value="{{dataRow.title}}" maxlength="50">
+            </div>
+
+
+
+        <footer class="txtRa">
+          {%if editMode%}<a class="btn secondary outline" href="{{url.that}}?id={{requestGET.id}}">{%trans "Cancel"%}</a>{%endif%}
+          <button class="btn primary">{%if editMode%}{%trans "Edit"%}{%else%}{%trans "Add"%}{%endif%}</button>
+         </footer>
+
+      </div>
+    </div>
+  </div>
+  <div class="f justify-center">
+    <div class="c6 m8 s12">
+      {%if dataTable%}
+      <div class="tblBox">
+        <table class="tbl1 v4">
+          <tbody class="fs14">
+          {%for key, value in dataTable%}
+            <tr>
+              <td class="collapsing">{{(key + 1) | fitNumber}}</td>
+              <td>
+
+                  <a href="{{url.that}}?id={{value.id}}"> <i class="sf-edit"></i> {{value.title}}</a>
+
+
+              </td>
+
+              <td class="collapsing"><div data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'><i class="sf-trash fc-red"></i></div></td>
+            </tr>
+          {%endfor%}
+          </tbody>
+        </table>
+      </div>
+      {%endif%}
+    </div>
+  </div>
+</form>
+
+
+{%endblock%}
