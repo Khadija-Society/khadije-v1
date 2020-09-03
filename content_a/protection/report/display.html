@@ -1,0 +1,25 @@
+{%extends display.admin%}
+{%use 'content_a/protection/pageStep.html' %}
+
+{%block pageContent%}
+{{block ('pageStep')}}
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6 s12 m8">
+       <div class="cbox">
+        <div class="msg">
+          لطفا گزارش مکتوب خود را از روند و جزئیات توزیع بسته‌های حمایتی موسسه به افراد تحت پوشش اعلام شده خود وارد کنید.
+        </div>
+        <textarea name="report" placeholder="اینجا بنویسید ..." class="txt" rows="15">{{dataRow.report}}</textarea>
+        <footer class="txtRa">
+          <button class="btn primary mT10">ارسال گزارش</button>
+        </footer>
+    </div>
+
+    </div>
+  </div>
+</form>
+
+
+{%endblock%}

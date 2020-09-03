@@ -7,6 +7,16 @@ class model
 
 	public static function post()
 	{
+		if(\dash\data::dataRow_status() === 'draft')
+		{
+			// ok
+		}
+		else
+		{
+			\dash\notif::warn("وضعیت درخواست پیش‌نویس نیست و نمی‌توانید در افراد تحت پوشش تغییری ایجاد کنید");
+			return false;
+		}
+
 
 		if(\dash\request::post('remove') === 'remove')
 		{

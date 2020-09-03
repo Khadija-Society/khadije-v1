@@ -9,7 +9,7 @@
     <div class="c6 s12 m8">
       <div class="cbox">
 
-          {%if occasionDetail.status == 'registring'%}
+          {%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}
           <p class="msg">لطفا اطلاعات افرادی‌ که می‌خواهید در این مناسبت به آنها بسته حمایتی اهدا کنید را وارد نمایید.</p>
           <input type="hidden" name="occation_id" value="{{requestGET.id}}">
 
@@ -28,10 +28,10 @@
               <input type="tel" id="inationalcode" name="nationalcode" value="{{dataRow.nationalcode}}" maxlength="10">
             </div>
           {%else%}
-          <div class="msg warn">امکان ثبت یا ویرایش افراد در این مناسبت وجود ندارد</div>
+          <div class="msg warn">امکان ثبت یا ویرایش افراد وجود ندارد</div>
           {%endif%}
 
-          {%if occasionDetail.status == 'registring'%}
+          {%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}
         <footer class="txtRa">
           {%if editMode%}<a class="btn secondary outline" href="{{url.that}}?id={{requestGET.id}}">{%trans "Cancel"%}</a>{%endif%}
           <button class="btn primary">{%if editMode%}{%trans "Edit"%}{%else%}{%trans "Add"%}{%endif%}</button>
@@ -60,7 +60,7 @@
             <tr>
               <td class="collapsing">{{(key + 1) | fitNumber}}</td>
               <td>
-                {%if occasionDetail.status == 'registring'%}
+                {%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}
                   <a href="{{url.that}}?id={{requestGET.id}}&person={{value.id}}"> <i class="sf-edit"></i> {{value.displayname}}</a>
                 {%else%}
                 {{value.displayname}}
@@ -70,7 +70,7 @@
               <td>{{value.mobile | fitNumber('mobile')}}</td>
               <td>{{value.nationalcode | fitNumber(false)}}</td>
 
-              <td class="collapsing">{%if occasionDetail.status == 'registring'%}<div data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'><i class="sf-trash fc-red"></i></div>{%endif%}</td>
+              <td class="collapsing">{%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}<div data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'><i class="sf-trash fc-red"></i></div>{%endif%}</td>
             </tr>
           {%endfor%}
           </tbody>

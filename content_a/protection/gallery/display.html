@@ -1,0 +1,50 @@
+{%extends display.admin%}
+{%use 'content_a/protection/pageStep.html' %}
+
+{%block pageContent%}
+{{block ('pageStep')}}
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6 s12 m8">
+       <div class="cbox">
+        <div class="msg">
+          لطفا گزارش تصویری خود را از روند و جزئیات توزیع بسته‌های حمایتی موسسه به افراد تحت پوشش اعلام شده خود وارد کنید.
+          <br>
+          شما می‌توانید عکس‌ها و فیلم‌هایی از توزیع بسته‌ حمایتی به افراد تحت پوشش خود در اینجا بارگزاری کنید
+        </div>
+
+
+        <div class="dropzone">
+          <h4>{%trans "Add to gallery"%}</h4>
+          <label for='gallery' class="btn light">{%trans "Choose or Drop file here"%}</label>
+          <input id="gallery" type="file" name="image" multiple>
+          <div class="progress shadow" data-percent='30'>
+            <div class="bar"></div>
+            <div class="detail"></div>
+          </div>
+        </div>
+
+        {%if dataTable%}
+<div class="f">
+
+  {%for key, value in dataTable%}
+    <div class="vcard mA10 c2 s12">
+      <a href="{{value}}" target="_blank">
+
+      <img alt="file" src="{{value}}">
+      </a>
+      <div class="footer"><div class="btn xs outline block danger " data-confirm data-data='{"remove" : "remove", "key" : "{{key}}"}'>حذف فایل</div></div>
+    </div>
+  {%endfor%}
+</div>
+{%endif%}
+    </div>
+
+    </div>
+  </div>
+</form>
+
+
+{%endblock%}
+

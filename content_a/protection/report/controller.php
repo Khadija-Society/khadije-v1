@@ -1,5 +1,5 @@
 <?php
-namespace content_a\protection\users;
+namespace content_a\protection\report;
 
 
 class controller
@@ -15,24 +15,12 @@ class controller
 			\dash\header::status(404);
 		}
 
-
 		\dash\data::dataRow($load);
 
 		if(isset($load['protection_occasion_id']))
 		{
 			\dash\data::occasionID($load['protection_occasion_id']);
 			\dash\data::occasionDetail(\lib\app\occasion::get($load['protection_occasion_id']));
-			$person = \dash\request::get('person');
-			if($person)
-			{
-				$load_detail = \lib\app\protectagentuser::get(['occation_id' => $load['protection_occasion_id'], 'protectagentuser_id' => $person]);
-				if(!$load_detail)
-				{
-					\dash\header::status(404);
-				}
-				\dash\data::editMode(true);
-				\dash\data::dataRow($load_detail);
-			}
 		}
 
 	}

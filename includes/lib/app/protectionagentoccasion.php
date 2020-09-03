@@ -130,6 +130,149 @@ class protectionagentoccasion
 	}
 
 
+
+
+	public static function edit_gallery($_args, $_type)
+	{
+		$occation_id               = isset($_args['occation_id']) ? $_args['occation_id'] : null;
+		$protectionagetnoccasionid = isset($_args['protectionagetnoccasionid']) ? $_args['protectionagetnoccasionid'] : null;
+		$file_new                  = isset($_args['file_new']) ? $_args['file_new'] : null;
+		$file_remove_key           = isset($_args['file_remove_key']) ? $_args['file_remove_key'] : null;
+
+		if($_type === 'add')
+		{
+			if(!$file_new)
+			{
+				\dash\notif::error(T_("Please upload a file"));
+				return false;
+			}
+		}
+
+		$id = \dash\coding::decode($protectionagetnoccasionid);
+		$occation_id = \dash\coding::decode($occation_id);
+
+		if(!$occation_id || !$protectionagetnoccasionid  || !$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			return false;
+		}
+
+		$get_args =
+		[
+			'id'                     => $id,
+			'protection_occasion_id' => $occation_id,
+			'protection_agent_id'    => $protection_agent_id,
+			'limit'                  => 1,
+		];
+
+		$get = \lib\db\protectionagentoccasion::get($get_args);
+
+		if(!$get)
+		{
+			\dash\notif::error(T_("Invalid detail"));
+			return false;
+		}
+
+		$old_gallery = $get['gallery'];
+		$old_gallery = json_decode($old_gallery, true);
+		if(!is_array($old_gallery))
+		{
+			$old_gallery = [];
+		}
+
+		if($_type === 'add')
+		{
+			if(in_array($file_new, $old_gallery))
+			{
+				\dash\notif::error(T_("Duplicate file"));
+				return false;
+			}
+
+			$old_gallery[] = $file_new;
+		}
+		else
+		{
+			if(!array_key_exists($file_remove_key, $old_gallery))
+			{
+				\dash\notif::error(T_("Can not find this file in your gallery"));
+				return false;
+			}
+
+			unset($old_gallery[$file_remove_key]);
+		}
+
+		$old_gallery = json_encode($old_gallery, JSON_UNESCAPED_UNICODE);
+
+		$update = ['gallery' => $old_gallery];
+
+		\lib\db\protectionagentoccasion::update($update, $id);
+
+		\dash\notif::ok("Gallery updated");
+
+		return true;
+	}
+
+
+	public static function edit_report($_args)
+	{
+		$occation_id               = isset($_args['occation_id']) ? $_args['occation_id'] : null;
+		$protectionagetnoccasionid = isset($_args['protectionagetnoccasionid']) ? $_args['protectionagetnoccasionid'] : null;
+		$report                    = isset($_args['report']) ? $_args['report'] : null;
+
+		if(!$report)
+		{
+			\dash\notif::error(T_("Please fill the report text"));
+			return false;
+		}
+
+		$id = \dash\coding::decode($protectionagetnoccasionid);
+		$occation_id = \dash\coding::decode($occation_id);
+
+		if(!$occation_id || !$protectionagetnoccasionid  || !$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			return false;
+		}
+
+		$get_args =
+		[
+			'id'                     => $id,
+			'protection_occasion_id' => $occation_id,
+			'protection_agent_id'    => $protection_agent_id,
+			'limit'                  => 1,
+		];
+
+		$get = \lib\db\protectionagentoccasion::get($get_args);
+
+		if(!$get)
+		{
+			\dash\notif::error(T_("Invalid detail"));
+			return false;
+		}
+
+		$update = ['report' => $report];
+
+		\lib\db\protectionagentoccasion::update($update, $id);
+
+		\dash\notif::ok("Your report was saved");
+
+		return true;
+	}
+
 	public static function edit_status($_args)
 	{
 		$occation_id               = isset($_args['occation_id']) ? $_args['occation_id'] : null;
