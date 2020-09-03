@@ -130,6 +130,54 @@ class protectionagentoccasion
 	}
 
 
+	public static function edit_status($_args)
+	{
+		$occation_id               = isset($_args['occation_id']) ? $_args['occation_id'] : null;
+		$protectionagetnoccasionid = isset($_args['protectionagetnoccasionid']) ? $_args['protectionagetnoccasionid'] : null;
+		$status                    = isset($_args['status']) ? $_args['status'] : null;
+
+		$id = \dash\coding::decode($protectionagetnoccasionid);
+		$occation_id = \dash\coding::decode($occation_id);
+
+		if(!$occation_id || !$protectionagetnoccasionid || !$status || !$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			return false;
+		}
+
+		$get_args =
+		[
+			'id'                     => $id,
+			'protection_occasion_id' => $occation_id,
+			'protection_agent_id'    => $protection_agent_id,
+			'limit'                  => 1,
+		];
+
+		$get = \lib\db\protectionagentoccasion::get($get_args);
+
+		if(!$get)
+		{
+			\dash\notif::error(T_("Invalid detail"));
+			return false;
+		}
+
+		$update = ['status' => $status];
+
+		\lib\db\protectionagentoccasion::update($update, $id);
+
+		\dash\notif::ok("Your request was queued");
+
+		return true;
+	}
+
+
 	/**
 	 * ready data of protectagentuser to load in api
 	 *

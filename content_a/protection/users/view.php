@@ -1,5 +1,5 @@
 <?php
-namespace content_a\protection\detail;
+namespace content_a\protection\users;
 
 
 class view
@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title("جزئیات حمایت در این مناسبت");
+		\dash\data::page_title("ثبت اطلاعات افراد تحت پوشش");
 
 
 		\dash\data::badge_link(\dash\url::this());
@@ -16,12 +16,6 @@ class view
 		$occasion_id = \dash\data::occasionID();
 
 		$list = \lib\app\protectagentuser::occasion_list($occasion_id);
-		if(!is_array($list))
-		{
-			$list = [];
-		}
-		\dash\data::userListCount(count($list));
-
 		\dash\data::userOccasionList($list);
 
 	}

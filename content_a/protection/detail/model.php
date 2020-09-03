@@ -8,48 +8,32 @@ class model
 	public static function post()
 	{
 
-		if(\dash\request::post('remove') === 'remove')
+		if(\dash\request::post('changestatus') === 'changestatus')
 		{
+			$status = \dash\request::post('status');
+
 			$post =
 			[
-				'occation_id'  => \dash\data::occasionID(),
-				'protectagentuser_id'  => \dash\request::post('id'),
+				'occation_id'               => \dash\data::occasionID(),
+				'protectionagetnoccasionid' => \dash\request::get('id'),
 			];
 
-			$reault = \lib\app\protectagentuser::remove($post);
+			if($status === 'request')
+			{
+				$post['status'] = $status;
+			}
+			else
+			{
+				$post['status'] = 'draft';
+			}
+
+			$reault = \lib\app\protectionagentoccasion::edit_status($post);
 
 			if(\dash\engine\process::status())
 			{
 				\dash\redirect::pwd();
 			}
-
 			return;
-		}
-
-
-		$post =
-		[
-			'occation_id'  => \dash\data::occasionID(),
-			'mobile'       => \dash\request::post('mobile'),
-			'displayname'  => \dash\request::post('displayname'),
-			'nationalcode' => \dash\request::post('nationalcode'),
-		];
-
-		if(\dash\data::editMode())
-		{
-			$reault = \lib\app\protectagentuser::edit($post, \dash\request::get('person'));
-			if(\dash\engine\process::status())
-			{
-				\dash\redirect::to(\dash\url::that(). '?id='. \dash\request::get('id'));
-			}
-		}
-		else
-		{
-			$reault = \lib\app\protectagentuser::add($post);
-			if(\dash\engine\process::status())
-			{
-				\dash\redirect::pwd();
-			}
 		}
 	}
 }

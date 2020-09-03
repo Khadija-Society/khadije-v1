@@ -7,76 +7,55 @@
 <form method="post" autocomplete="off">
   <div class="f justify-center">
     <div class="c6 s12 m8">
-      <div class="cbox">
+       <div class="cbox">
 
-          {%if occasionDetail.status == 'registring'%}
-          <p class="msg">لطفا اطلاعات افرادی‌ که می‌خواهید در این مناسبت به آنها بسته حمایتی اهدا کنید را وارد نمایید.</p>
-          <input type="hidden" name="occation_id" value="{{requestGET.id}}">
+        <h2 class="mB20">{{occasionDetail.title}}</h2>
+        {%if occasionDetail.subtitle%}<b class="mB20 block">{{occasionDetail.subtitle}}</b>{%endif%}
+        {%if occasionDetail.startdate%}<span class="block mB10">{%trans "Start date"%}: <span class="ltr compact">{{occasionDetail.startdate | dt(null, 'date')}}</span></span>{%endif%}
+        {%if occasionDetail.expiredate%}{%trans "Expire date"%}: <span class="ltr compact">{{occasionDetail.expiredate | dt(null, 'date')}}</span>{%endif%}
+        {%if occasionDetail.desc%}<p class="mTB20">{{occasionDetail.desc | nl2br}}</p>{%endif%}
 
-            <label for="imobile">{%trans "Mobile"%}</label>
-            <div class="input">
-              <input type="tel" id="imobile" name="mobile" value="{{dataRow.mobile}}" maxlength="15">
-            </div>
+        {%if dataDetail%}
+          <h5>اقلام این بسته</h5>
+          <ul>
 
-            <label for="idisplayname">{%trans "Name"%}</label>
-            <div class="input">
-              <input type="text" id="idisplayname" name="displayname" value="{{dataRow.displayname}}" maxlength="50">
-            </div>
-
-            <label for="inationalcode">{%trans "Nationalcode"%}</label>
-            <div class="input">
-              <input type="tel" id="inationalcode" name="nationalcode" value="{{dataRow.nationalcode}}" maxlength="10">
-            </div>
-          {%else%}
-          <div class="msg warn">امکان ثبت یا ویرایش افراد در این مناسبت وجود ندارد</div>
-          {%endif%}
-
-          {%if occasionDetail.status == 'registring'%}
-        <footer class="txtRa">
-          {%if editMode%}<a class="btn secondary outline" href="{{url.that}}?id={{requestGET.id}}">{%trans "Cancel"%}</a>{%endif%}
-          <button class="btn primary">{%if editMode%}{%trans "Edit"%}{%else%}{%trans "Add"%}{%endif%}</button>
-         </footer>
-        {%endif%}
-      </div>
-    </div>
-  </div>
-  <div class="f justify-center">
-    <div class="c6 m8 s12">
-      {%if userOccasionList%}
-      <div class="tblBox">
-        <table class="tbl1 v4">
-          <thead class="">
-            <tr>
-
-              <th class="collapsing"></th>
-              <th>{%trans "Name"%}</th>
-              <th>{%trans "Mobile"%}</th>
-              <th>{%trans "Nationalcode"%}</th>
-              <th class="collapsing"></th>
-            </tr>
-          </thead>
-          <tbody class="fs14">
-          {%for key, value in userOccasionList%}
-            <tr>
-              <td class="collapsing">{{(key + 1) | fitNumber}}</td>
-              <td>
-                {%if occasionDetail.status == 'registring'%}
-                  <a href="{{url.that}}?id={{requestGET.id}}&person={{value.id}}"> <i class="sf-edit"></i> {{value.displayname}}</a>
-                {%else%}
-                {{value.displayname}}
-                {%endif%}
-              </td>
-
-              <td>{{value.mobile | fitNumber('mobile')}}</td>
-              <td>{{value.nationalcode | fitNumber(false)}}</td>
-
-              <td class="collapsing">{%if occasionDetail.status == 'registring'%}<div data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'><i class="sf-trash fc-red"></i></div>{%endif%}</td>
-            </tr>
+          {%for key, value in dataDetail%}
+          <li class="f">
+            <div class="c">{{value.title}}</div>
+            {%if value.price%}<div class="c">{%trans "Price"%} {{value.price | fitNumber}}</div>{%endif%}
+            <div class="c">{{value.desc}}</div>
+          </li>
           {%endfor%}
-          </tbody>
-        </table>
-      </div>
-      {%endif%}
+          </ul>
+        {%endif%}
+        {%if userListCount%}
+          <div class="msg">
+            تعداد افراد اعلام شده از طرف شما در این مناسبت  <b>{{userListCount |fitNumber}}</b> <small>نفر</small>
+          </div>
+        {%else%}
+          <div class="msg warn2">
+            <a href="{{url.this}}/users?id={{requestGET.id}}">جهت اعلام مشخصات افراد تحت پوشش کلیک کنید</a>
+          </div>
+        {%endif%}
+
+        <div class="msg">
+            <div class="mB10">وضعیت فعلی درخواست {%set myStatus = dataRow.status%}{%if myStatus == 'request'%}{%set myStatus = 'در صف بررسی'%}{%endif%}<b>{%trans myStatus%}</b></div>
+            {%if dataRow.status == 'draft'%}
+            <div class="mB10">اگر فرم افراد تحت پوشش خود را تکمیل کرده‌اید جهت ارسال درخواست حمایت از موسسه کلیک کنید</div>
+            <div class="btn success" data-confirm data-data='{"changestatus": "changestatus", "status": "request"}'>ارسال درخواست به موسسه</div>
+            {%endif%}
+
+            {%if dataRow.status == 'request'%}
+            <div class="mB10">درخواست شما در صف بررسی توسط موسسه قرار گرفته است.
+              <br>
+              اگر قصد افزودن یا ویرایش افراد تحت پوشش خود را دارید وضعیت درخواست را به پیش‌نویس تغییر دهید
+            </div>
+            <div class="btn link" data-confirm data-data='{"changestatus": "changestatus", "status": "draft"}'>تبدیل به پیش‌نویس</div>
+            {%endif%}
+        </div>
+
+    </div>
+
     </div>
   </div>
 </form>

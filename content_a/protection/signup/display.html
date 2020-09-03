@@ -6,7 +6,7 @@
 <div class="f justify-center fs12">
   <div class="c8 m8 s12">
     <div class="cbox">
-      <p>
+
         <h2 class="mB20">{{occasionDetail.title}}</h2>
         {%if occasionDetail.subtitle%}<b class="mB20 block">{{occasionDetail.subtitle}}</b>{%endif%}
         {%if occasionDetail.startdate%}<span class="block mB10">{%trans "Start date"%}: <span class="ltr compact">{{occasionDetail.startdate | dt(null, 'date')}}</span></span>{%endif%}
@@ -29,7 +29,6 @@
 
         {%endif%}
 
-      </p>
       <div class="f txtC">
         <div class="c">
           <div class="btn success block" data-ajaxify data-data='{"register": "register"}' data-method='post'>{%trans "Register"%}</div>
