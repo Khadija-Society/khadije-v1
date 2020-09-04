@@ -63,3 +63,25 @@
 
 
 
+{%block iType%}
+{%if typeList%}
+<div class="example">
+  <h6>اعلام کنید که می‌خواهید در این مناسبت کدام قشر را مورد حمایت قرار دهید <small><a class="link" href="{{url.here}}/setting">تنظیمات</a></small></h6>
+
+
+{%for key, value in typeList%}
+<div class="check1">
+  <input type="checkbox" id="checktype{{value.id}}" name="type_list[]" value="{{value.id}}" {%if value.id in currentTypeID%} checked {%endif%}>
+  <label for="checktype{{value.id}}">{{value.title}}</label>
+</div>
+{%endfor%}
+</div>
+{%else%}
+<div class="msg warn2">
+
+<a class="link" href="{{url.here}}/setting">لطفا ابتدا انواع محرومیت را تنظیم کنید</a>
+</div>
+{%endif%}
+
+
+{%endblock%}

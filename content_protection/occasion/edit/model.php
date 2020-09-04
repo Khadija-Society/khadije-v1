@@ -30,13 +30,13 @@ class model
 		{
 			$post =
 			[
-				'title'     => \dash\request::post('title'),
-				'subtitle'  => \dash\request::post('subtitle'),
-				'type'      => \dash\request::post('type'),
-				'startdate' => \dash\request::post('startdate'),
-				'expiredate'   => \dash\request::post('expiredate'),
-				'desc'      => \dash\request::post('desc'),
-				'status'    => \dash\request::post('status'),
+				'type_list'  => \dash\request::post('type_list'), // array
+				'title'      => \dash\request::post('title'),
+				'subtitle'   => \dash\request::post('subtitle'),
+				'startdate'  => \dash\request::post('startdate'),
+				'expiredate' => \dash\request::post('expiredate'),
+				'desc'       => \dash\request::post('desc'),
+				'status'     => \dash\request::post('status'),
 			];
 
 

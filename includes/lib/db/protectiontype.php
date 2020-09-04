@@ -12,6 +12,42 @@ class protectiontype
 	}
 
 
+	public static function get_occasion_type($_occasion_id)
+	{
+		$query  = "SELECT protection_type.title, protection_type.id FROM protection_type INNER JOIN protection_occasion_type ON protection_occasion_type.type_id = protection_type.id WHERE protection_type.status != 'deleted' AND protection_occasion_type.protection_occasion_id = $_occasion_id ";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+	public static function remove_all($_occasion_id)
+	{
+		$query  = "DELETE FROM protection_occasion_type WHERE protection_occasion_type.protection_occasion_id = $_occasion_id ";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
+
+	public static function change($_type_ids, $_occasion_id)
+	{
+
+		$multi_insert = [];
+		foreach ($_type_ids as $key => $value)
+		{
+			$multi_insert[] =
+			[
+				'protection_occasion_id' => $_occasion_id,
+				'type_id'                => $value,
+				'datecreated'            => date("Y-m-d H:i:s"),
+			];
+		}
+
+
+		$result = \dash\db\config::public_multi_insert('protection_occasion_type', $multi_insert);
+		return $result;
+
+	}
+
+
 
 	/**
 	 * insert new protection_typeprice

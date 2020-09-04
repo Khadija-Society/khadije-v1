@@ -234,6 +234,32 @@ class protectiontype
 	}
 
 
+	public static function occasion_type($_occasion_id)
+	{
+		$occasion_id = \dash\coding::decode($_occasion_id);
+
+		if(!$occasion_id)
+		{
+			return false;
+		}
+
+
+		$result            = \lib\db\protectiontype::get_occasion_type($occasion_id);
+
+		$temp              = [];
+
+		foreach ($result as $key => $value)
+		{
+			$check = self::ready($value);
+			if($check)
+			{
+				$temp[] = $check;
+			}
+		}
+
+		return $temp;
+	}
+
 	public static function get_all()
 	{
 

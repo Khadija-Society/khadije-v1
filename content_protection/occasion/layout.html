@@ -50,18 +50,6 @@
 {%endblock%}
 
 
-{%block iType%}
-<div class="pRa5">
-  <label for="type">{%trans "Type"%}</label>
-  <select name="type" class="ui dropdown select">
-    <option value="" >{%trans "Please select one item"%}</option>
-    <option value="سیل" {%if dataRow.type == 'سیل'  %}selected {%endif%}>سیل</option>
-    <option value="زلزله" {%if dataRow.type == 'زلزله'  %}selected {%endif%}>زلزله</option>
-    <option value="کرونا" {%if dataRow.type == 'کرونا'  %}selected {%endif%}>کرونا</option>
-  </select>
-</div>
-{%endblock%}
-
 
 
 

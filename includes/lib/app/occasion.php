@@ -123,6 +123,34 @@ class occasion
 		$expiredate = \dash\date::db($expiredate);
 
 
+		$type_list = \dash\app::request('type_list');
+		if(\dash\app::isset_request('type_list'))
+		{
+			\lib\db\protectiontype::remove_all($_id);
+		}
+
+		if($type_list)
+		{
+			$type_ids = [];
+			foreach ($type_list as $one_id)
+			{
+				$temp = \dash\coding::decode($one_id);
+				if(!$temp)
+				{
+					\dash\notif::error(T_("Invalid id"));
+					return false;
+				}
+
+				$type_ids[] = $temp;
+			}
+
+			if(!empty($type_ids) && $_id)
+			{
+				\lib\db\protectiontype::change($type_ids, $_id);
+			}
+
+		}
+
 
 
 		$type = \dash\app::request('type');

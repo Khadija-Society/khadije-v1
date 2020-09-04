@@ -26,6 +26,17 @@ class view
 
 		\dash\data::dataDetail(\lib\app\occasion::get_detail(\dash\request::get('id')));
 
+		$typeList = \lib\app\protectiontype::get_all();
+		\dash\data::typeList($typeList);
+
+		$occasionType = \lib\app\protectiontype::occasion_type(\dash\request::get('id'));
+		if(!is_array($occasionType))
+		{
+			$occasionType = [];
+		}
+		\dash\data::currentTypeID(array_column($occasionType, 'id'));
+		\dash\data::occasionType($occasionType);
+
 
 	}
 }
