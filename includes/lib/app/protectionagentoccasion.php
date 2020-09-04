@@ -321,6 +321,133 @@ class protectionagentoccasion
 	}
 
 
+	public static function check()
+	{
+		$bankshaba = \dash\app::request('bankshaba');
+		if($bankshaba && mb_strlen($bankshaba) > 150)
+		{
+			$bankshaba = substr($bankshaba, 0, 150);
+		}
+
+		$bankhesab = \dash\app::request('bankhesab');
+		if($bankhesab && mb_strlen($bankhesab) > 150)
+		{
+			$bankhesab = substr($bankhesab, 0, 150);
+		}
+
+
+		$bankcart = \dash\app::request('bankcart');
+		if($bankcart && mb_strlen($bankcart) > 150)
+		{
+			$bankcart = substr($bankcart, 0, 150);
+		}
+
+
+		$bankname = \dash\app::request('bankname');
+		if($bankname && mb_strlen($bankname) > 150)
+		{
+			$bankname = substr($bankname, 0, 150);
+		}
+
+		$bankownername = \dash\app::request('bankownername');
+		if($bankownername && mb_strlen($bankownername) > 150)
+		{
+			$bankownername = substr($bankownername, 0, 150);
+		}
+
+
+
+		$args = [];
+
+
+		$args['bankshaba']         = $bankshaba;
+		$args['bankhesab']         = $bankhesab;
+		$args['bankcart']          = $bankcart;
+		$args['bankname']          = $bankname;
+		$args['bankownername']     = $bankownername;
+
+
+
+
+		return $args;
+	}
+
+
+	public static function edit($_args)
+	{
+		$occation_id               = isset($_args['occation_id']) ? $_args['occation_id'] : null;
+		$protectionagetnoccasionid = isset($_args['protectionagetnoccasionid']) ? $_args['protectionagetnoccasionid'] : null;
+
+
+		\dash\app::variable($_args);
+
+
+
+		$id = \dash\coding::decode($protectionagetnoccasionid);
+		$occation_id = \dash\coding::decode($occation_id);
+
+		if(!$occation_id || !$protectionagetnoccasionid  || !$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			return false;
+		}
+
+		$get_args =
+		[
+			'id'                     => $id,
+			'protection_occasion_id' => $occation_id,
+			'protection_agent_id'    => $protection_agent_id,
+			'limit'                  => 1,
+		];
+
+		$get = \lib\db\protectionagentoccasion::get($get_args);
+
+		if(!$get)
+		{
+			\dash\notif::error(T_("Invalid detail"));
+			return false;
+		}
+
+		$args = self::check();
+
+		if(!$args || !\dash\engine\process::status())
+		{
+			return false;
+		}
+
+
+
+		if(!\dash\app::isset_request('bankshaba'))	unset($args['bankshaba']);
+		if(!\dash\app::isset_request('bankhesab'))	unset($args['bankhesab']);
+		if(!\dash\app::isset_request('bankcart'))	unset($args['bankcart']);
+		if(!\dash\app::isset_request('bankname'))	unset($args['bankname']);
+		if(!\dash\app::isset_request('bankownername'))	unset($args['bankownername']);
+
+		if(!empty($args))
+		{
+			\lib\db\protectionagentoccasion::update($args, $id);
+
+			\dash\notif::ok("Data saved");
+
+			return true;
+		}
+		else
+		{
+			\dash\notif::ok("No change in your data");
+
+			return true;
+		}
+
+	}
+
+
 	/**
 	 * ready data of protectagentuser to load in api
 	 *
