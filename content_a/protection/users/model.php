@@ -43,6 +43,10 @@ class model
 			'mobile'       => \dash\request::post('mobile'),
 			'displayname'  => \dash\request::post('displayname'),
 			'nationalcode' => \dash\request::post('nationalcode'),
+			'city'         => \dash\request::post('city'),
+			'type_id'      => \dash\request::post('type_id'),
+			'gender'       => \dash\request::post('gender'),
+			'married'      => \dash\request::post('married'),
 		];
 
 		if(\dash\data::editMode())

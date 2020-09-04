@@ -6,33 +6,95 @@
 
 <form method="post" autocomplete="off">
   <div class="f justify-center">
-    <div class="c6 s12 m8">
+    <div class="c8 s12 m12">
       <div class="cbox">
 
           {%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}
           <p class="msg">لطفا اطلاعات افرادی‌ که می‌خواهید در این مناسبت به آنها بسته حمایتی اهدا کنید را وارد نمایید.</p>
           <input type="hidden" name="occation_id" value="{{requestGET.id}}">
 
-            <label for="imobile">{%trans "Mobile"%}</label>
-            <div class="input">
-              <input type="tel" id="imobile" name="mobile" value="{{dataRow.mobile}}" maxlength="15">
-            </div>
-
-            <label for="idisplayname">{%trans "Name"%}</label>
-            <div class="input">
-              <input type="text" id="idisplayname" name="displayname" value="{{dataRow.displayname}}" maxlength="50">
-            </div>
-
             <label for="inationalcode">{%trans "Nationalcode"%}</label>
             <div class="input">
-              <input type="tel" id="inationalcode" name="nationalcode" value="{{dataRow.nationalcode}}" maxlength="10">
+              <input type="tel" id="inationalcode" name="nationalcode" value="{{personDataRow.nationalcode}}" maxlength="10">
             </div>
+
+            <div class="f">
+              <div class="c6 s12">
+                  <label for="idisplayname">نام و نام خانوادگی</label>
+                  <div class="input">
+                    <input type="text" id="idisplayname" name="displayname" value="{{personDataRow.displayname}}" maxlength="50">
+                  </div>
+              </div>
+              <div class="c6 s12">
+                <div class="mLa5">
+                <label for="imobile">{%trans "Mobile"%}</label>
+                <div class="input">
+                  <input type="tel" id="imobile" name="mobile" value="{{personDataRow.mobile}}" maxlength="15">
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {%if occasionType%}
+            <div class="f">
+
+              <h5>انتخاب نوع محرومیت</h5>
+            {%for key, value in occasionType%}
+
+            <div class="c12">
+
+              <div class="radio3">
+                <input type="radio" id="checktype{{value.id}}" name="type_id" value="{{value.id}}" {%if personDataRow.type_id == value.id%} checked {%endif%}>
+                <label for="checktype{{value.id}}">{{value.title}}</label>
+              </div>
+            </div>
+              {%endfor%}
+              </div>
+              {%endif%}
+
+
+            <label for='city'>{%trans "City"%}</label>
+            <select name="city" class="ui dropdown select search" id="city">
+              <option value="" readonly>{%trans "Select city"%}</option>
+              {%for key, value in cityList%}
+                <option value="{{key}}" {% if personDataRow.city == key %} selected {%endif%}>{{value}}</option>
+              {%endfor%}
+            </select>
+
+
+
+          <label for="gender">{%trans "Gender"%}</label>
+          <div class="f">
+           <div class="radio3 green">
+            <input type="radio" id="r-male" name="gender"  value="male" {%if personDataRow.gender == 'male' %}checked{%endif%}>
+            <label for="r-male">{%trans "Male"%}</label>
+           </div>
+
+           <div class="radio3 green">
+            <input type="radio" id="r-female" name="gender"  value="female" {%if personDataRow.gender == 'female' %}checked{%endif%}>
+            <label for="r-female">{%trans "Female"%}</label>
+           </div>
+          </div>
+
+          <label for="Married">{%trans "Marital"%}</label>
+          <div class="f">
+           <div class="radio3 yellow">
+            <input type="radio" id="r-single" name="married"  value="single" {%if personDataRow.married == 'single' %}checked{%endif%}>
+            <label for="r-single">{%trans "Single"%}</label>
+           </div>
+
+           <div class="radio3 yellow">
+            <input type="radio" id="r-married" name="married"  value="married" {%if personDataRow.married == 'married' %}checked{%endif%}>
+            <label for="r-married">{%trans "Married"%}</label>
+           </div>
+          </div>
+
           {%else%}
           <div class="msg warn">امکان ثبت یا ویرایش افراد وجود ندارد</div>
           {%endif%}
 
           {%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}
-        <footer class="txtRa">
+        <footer class="txtRa mT10">
           {%if editMode%}<a class="btn secondary outline" href="{{url.that}}?id={{requestGET.id}}">{%trans "Cancel"%}</a>{%endif%}
           <button class="btn primary">{%if editMode%}{%trans "Edit"%}{%else%}{%trans "Add"%}{%endif%}</button>
          </footer>
@@ -41,7 +103,7 @@
     </div>
   </div>
   <div class="f justify-center">
-    <div class="c6 m8 s12">
+    <div class="c8 m12 s12">
       {%if userOccasionList%}
       <div class="tblBox">
         <table class="tbl1 v4">
@@ -52,6 +114,9 @@
               <th>{%trans "Name"%}</th>
               <th>{%trans "Mobile"%}</th>
               <th>{%trans "Nationalcode"%}</th>
+              <th>{%trans "Gender"%}</th>
+              <th>{%trans "Mariied"%}</th>
+              <th>{%trans "City"%}</th>
               <th class="collapsing"></th>
             </tr>
           </thead>
@@ -69,6 +134,9 @@
 
               <td>{{value.mobile | fitNumber('mobile')}}</td>
               <td>{{value.nationalcode | fitNumber(false)}}</td>
+              <td>{%set my_gender = value.gender%}{%trans my_gender%}</td>
+              <td>{%set my_married = value.married%}{%trans my_married%}</td>
+              <td>{{value.location_string}}</td>
 
               <td class="collapsing">{%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}<div data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'><i class="sf-trash fc-red"></i></div>{%endif%}</td>
             </tr>

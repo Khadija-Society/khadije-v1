@@ -15,7 +15,6 @@ class controller
 			\dash\header::status(404);
 		}
 
-
 		\dash\data::dataRow($load);
 
 		if(isset($load['protection_occasion_id']))
@@ -31,7 +30,7 @@ class controller
 					\dash\header::status(404);
 				}
 				\dash\data::editMode(true);
-				\dash\data::dataRow($load_detail);
+				\dash\data::personDataRow($load_detail);
 			}
 		}
 

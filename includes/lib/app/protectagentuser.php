@@ -335,22 +335,76 @@ class protectagentuser
 			return false;
 		}
 
+
+
+
+		// if($city && !\dash\utility\location\cites::check($city))
+		// {
+		// 	\dash\notif::error(T_("Invalid city name"), 'city');
+		// 	return false;
+		// }
+
+
+		$city = \dash\app::request('city');
+		if($city && !\dash\utility\location\cites::check($city))
+		{
+			\dash\notif::error(T_("Invalid city"), 'city');
+			return false;
+		}
+
+
+		$province = null;
+		if($city)
+		{
+			$province = \dash\utility\location\cites::get($city, 'province', 'province');
+			if(!\dash\utility\location\provinces::check($province))
+			{
+				$province = null;
+			}
+		}
+
+		$married = \dash\app::request('married');
+		if($married && !in_array($married, ['single', 'married']))
+		{
+			\dash\notif::error(T_("Invalid arguments married"), 'married');
+			return false;
+		}
+
+		$gender = \dash\app::request('gender');
+		if($gender && !in_array($gender, ['male', 'female']))
+		{
+			\dash\notif::error(T_("Invalid arguments gender"), 'gender');
+			return false;
+		}
+
 		$desc     = \dash\app::request('desc');
 		$address  = \dash\app::request('address');
 
-		$province = \dash\app::request('province');
-		$city     = \dash\app::request('city');
-
 		$postalcode = \dash\app::request('postalcode');
+
+		$type_id = \dash\app::request('type_id');
+		if($type_id)
+		{
+			$type_id = \dash\coding::decode($type_id);
+			if(!$type_id)
+			{
+				\dash\notif::error(T_("Invalid id"));
+				return false;
+			}
+
+		}
 
 		$args['protection_occasion_id'] = $occation_id;
 		$args['protection_agent_id']    = $protection_agent_id;
 		$args['mobile']                 = $mobile;
-		$args['user_id']                 = $user_id;
-		// $args['protection_user_id']     = $user_id;
+		$args['user_id']                = $user_id;
+		// $args['protection_user_id']  = $user_id;
+		$args['type_id']  = $type_id;
 		$args['nationalcode']           = $nationalcode;
 		$args['displayname']            = $displayname;
 		$args['type']                   = $type;
+		$args['married']                = $married;
+		$args['gender']                 = $gender;
 		$args['status']                 = $status;
 		$args['desc']                   = $desc;
 		$args['address']                = $address;
@@ -524,6 +578,7 @@ class protectagentuser
 	public static function ready($_data)
 	{
 		$result = [];
+		$result['location_string'] = [];
 		foreach ($_data as $key => $value)
 		{
 
@@ -537,12 +592,25 @@ class protectagentuser
 					$result[$key] = \dash\coding::encode($value);
 					break;
 
+				case 'province':
+					$result[$key] = $value;
+					$result['province_name'] = \dash\utility\location\provinces::get_localname($value);
+					$result['location_string'][2] = $result['province_name'];
+					break;
+
+				case 'city':
+					$result[$key] = $value;
+					$result['city_name'] = \dash\utility\location\cites::get_localname($value);
+					$result['location_string'][3] = $result['city_name'];
+					break;
 
 				default:
 					$result[$key] = $value;
 					break;
 			}
 		}
+
+		$result['location_string'] = implode(' - ', $result['location_string']);
 
 		return $result;
 	}
