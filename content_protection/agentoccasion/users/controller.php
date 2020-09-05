@@ -9,7 +9,7 @@ class controller
 
 
 		$id = \dash\request::get('id');
-		$load = \lib\app\protectionagentoccasion::get($id);
+		$load = \lib\app\protectionagentoccasion::admin_get($id);
 		if(!$load)
 		{
 			\dash\header::status(404);
@@ -24,7 +24,7 @@ class controller
 			$person = \dash\request::get('person');
 			if($person)
 			{
-				$load_detail = \lib\app\protectagentuser::get(['occation_id' => $load['protection_occasion_id'], 'protectagentuser_id' => $person]);
+				$load_detail = \lib\app\protectagentuser::admin_get(['occation_id' => $load['protection_occasion_id'], 'protectagentuser_id' => $person]);
 				if(!$load_detail)
 				{
 					\dash\header::status(404);

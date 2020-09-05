@@ -15,7 +15,7 @@ class view
 
 		$occasion_id = \dash\data::occasionID();
 
-		$list = \lib\app\protectagentuser::occasion_list($occasion_id);
+		$list = \lib\app\protectagentuser::admin_occasion_list($occasion_id);
 		\dash\data::userOccasionList($list);
 
 

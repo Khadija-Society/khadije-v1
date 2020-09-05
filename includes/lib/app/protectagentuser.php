@@ -56,11 +56,33 @@ class protectagentuser
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
 		if(!$protection_agent_id)
 		{
-			\dash\noif::error(T_("Invalid agent id"));
+			\dash\notif::error(T_("Invalid agent id"));
 			return false;
 		}
 
 		$list = \lib\db\protectionagentuser::get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $protection_agent_id]);
+
+		if(!is_array($list))
+		{
+			$list = [];
+		}
+
+		$list = array_map(['self', 'ready'], $list);
+
+		return $list;
+
+	}
+
+	public static function admin_occasion_list($_occasion_id)
+	{
+		$load_occasion = \lib\app\occasion::get($_occasion_id);
+
+		if(!$load_occasion)
+		{
+			return false;
+		}
+
+		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id)]);
 
 		if(!is_array($list))
 		{
@@ -119,7 +141,7 @@ class protectagentuser
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
 		if(!$protection_agent_id)
 		{
-			\dash\noif::error(T_("Invalid agent id"));
+			\dash\notif::error(T_("Invalid agent id"));
 			return false;
 		}
 
@@ -128,6 +150,49 @@ class protectagentuser
 			'id'                     => $protectagentuser_id,
 			'protection_occasion_id' => $occation_id,
 			'protection_agent_id'    => $protection_agent_id,
+			'limit'                  => 1,
+		];
+
+		$result = \lib\db\protectionagentuser::get($check);
+
+		if(isset($result['id']))
+		{
+			return self::ready($result);
+		}
+		else
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
+	}
+
+
+
+
+	public static function admin_get($_args)
+	{
+		$occation_id         = isset($_args['occation_id']) ? \dash\coding::decode($_args['occation_id']) : null;
+		$protectagentuser_id = isset($_args['protectagentuser_id']) ? \dash\coding::decode($_args['protectagentuser_id']) : null;
+
+		if(!$occation_id)
+		{
+			\dash\notif::error(T_("Invalid occasion id"));
+			return false;
+		}
+
+
+		if(!$protectagentuser_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$check =
+		[
+			'id'                     => $protectagentuser_id,
+			'protection_occasion_id' => $occation_id,
 			'limit'                  => 1,
 		];
 
@@ -168,7 +233,7 @@ class protectagentuser
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
 		if(!$protection_agent_id)
 		{
-			\dash\noif::error(T_("Invalid agent id"));
+			\dash\notif::error(T_("Invalid agent id"));
 			return false;
 		}
 
@@ -293,7 +358,7 @@ class protectagentuser
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
 		if(!$protection_agent_id)
 		{
-			\dash\noif::error(T_("Invalid agent id"));
+			\dash\notif::error(T_("Invalid agent id"));
 			return false;
 		}
 

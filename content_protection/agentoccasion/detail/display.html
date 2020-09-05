@@ -9,49 +9,46 @@
     <div class="c6 s12 m8">
        <div class="cbox">
 
-        <h2 class="mB20">{{occasionDetail.title}}</h2>
-        {%if occasionDetail.subtitle%}<b class="mB20 block">{{occasionDetail.subtitle}}</b>{%endif%}
-        {%if occasionDetail.startdate%}<span class="block mB10">{%trans "Start date"%}: <span class="ltr compact">{{occasionDetail.startdate | dt(null, 'date')}}</span></span>{%endif%}
-        {%if occasionDetail.expiredate%}{%trans "Expire date"%}: <span class="ltr compact">{{occasionDetail.expiredate | dt(null, 'date')}}</span>{%endif%}
-        {%if occasionDetail.desc%}<p class="mTB20">{{occasionDetail.desc | nl2br}}</p>{%endif%}
 
-        {%if dataDetail%}
-          <h5>{%trans "Items in this package"%}</h5>
-          <ul>
 
-          {%for key, value in dataDetail%}
-          <li class="f">
-            <div class="c">{{value.title}}</div>
-            {%if value.price%}<div class="c">{%trans "Price"%} {{value.price | fitNumber}}</div>{%endif%}
-            <div class="c">{{value.desc}}</div>
-          </li>
-          {%endfor%}
-          </ul>
-        {%endif%}
-        {%if userListCount%}
           <div class="msg">
             {%trans "The number of people announced by you on this occasion"%}  <b>{{userListCount |fitNumber}}</b> <small>{%trans "Person"%}</small>
+            <a href="{{url.this}}/users?id={{requestGET.id}}">{%trans "View detail"%}</a>
           </div>
-        {%else%}
-          <div class="msg warn2">
-            <a href="{{url.this}}/users?id={{requestGET.id}}">{%trans "Click to announce the details of the people covered"%}</a>
-          </div>
-        {%endif%}
+
 
         <div class="msg">
             <div class="mB10">{%trans "Current request status"%} {%set myStatus = dataRow.status%}{%if myStatus == 'request'%}{%set myStatus = 'review'%}{%endif%}<b>{%trans myStatus%}</b></div>
-            {%if dataRow.status == 'draft'%}
-            <div class="mB10">{%trans "If you have completed the form of people covered by you, click to send a request for support of the institution"%}</div>
-            <div class="btn success" data-confirm data-data='{"changestatus": "changestatus", "status": "request"}'>{%trans "Send request"%}</div>
-            {%endif%}
 
-            {%if dataRow.status == 'request'%}
-            <div class="mB10">{%trans "Your request has been taken by the institution on the review page."%}
-              <br>
-              {%trans "If you want to add or edit the people you cover, change the status of the request to draft"%}
-            </div>
-            <div class="btn link" data-confirm data-data='{"changestatus": "changestatus", "status": "draft"}'>{%trans "Convert to draft request"%}</div>
-            {%endif%}
+              <div class="f">
+                {%if dataRow.status == 'request' %}
+                  <div class="cauto">
+                      <div class="btn info outline" data-confirm data-data='{"changestatus": "changestatus", "status": "draft"}'>{%trans "Set as draft"%}</div>
+                  </div>
+                {%endif%}
+
+                {%if dataRow.status != 'request' %}
+                  <div class="cauto">
+                      <div class="btn pain outline" data-confirm data-data='{"changestatus": "changestatus", "status": "request"}'>{%trans "Set in queue"%}</div>
+                  </div>
+                {%endif%}
+
+                <div class="cauto">
+                  <div class="mLa5">
+                    <div class="btn danger block {%if dataRow.status == 'reject' %}{%else%}outline{%endif%}" data-confirm data-data='{"changestatus": "changestatus", "status": "reject"}'>{%trans "Reject request"%}</div>
+                  </div>
+                </div>
+
+
+
+                <div class="c">
+                  <div class="mLa5">
+                    <div class="btn success block {%if dataRow.status == 'accept' %}{%else%}outline{%endif%}" data-confirm data-data='{"changestatus": "changestatus", "status": "accept"}'>{%trans "Accept request"%}</div>
+                  </div>
+                </div>
+              </div>
+
+
         </div>
 
     </div>

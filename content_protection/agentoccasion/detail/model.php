@@ -18,7 +18,7 @@ class model
 				'protectionagetnoccasionid' => \dash\request::get('id'),
 			];
 
-			if($status === 'request')
+			if(in_array($status, ['accept', 'reject', 'request']))
 			{
 				$post['status'] = $status;
 			}
@@ -27,7 +27,7 @@ class model
 				$post['status'] = 'draft';
 			}
 
-			$reault = \lib\app\protectionagentoccasion::edit_status($post);
+			$reault = \lib\app\protectionagentoccasion::admin_edit_status($post);
 
 			if(\dash\engine\process::status())
 			{

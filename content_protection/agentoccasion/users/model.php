@@ -7,14 +7,30 @@ class model
 
 	public static function post()
 	{
-		if(\dash\data::dataRow_status() === 'draft')
+		$occasion_id = \dash\request::get('id');
+		$useragentid = \dash\request::post('useragentid');
+
+		if(\dash\request::post('type') === 'reject')
 		{
-			// ok
+			\lib\app\protectagentuser::update_status($occasion_id, $useragentid, 'reject');
+
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::pwd();
+			}
+
+			return;
 		}
-		else
+
+		if(\dash\request::post('type') === 'accept')
 		{
-			\dash\notif::warn("وضعیت درخواست پیش‌نویس نیست و نمی‌توانید در افراد تحت پوشش تغییری ایجاد کنید");
-			return false;
+			\lib\app\protectagentuser::update_status($occasion_id, $useragentid, 'accept');
+
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::pwd();
+			}
+			return;
 		}
 
 
@@ -53,7 +69,7 @@ class model
 
 		if(\dash\data::editMode())
 		{
-			$reault = \lib\app\protectagentuser::edit($post, \dash\request::get('person'));
+			$reault = \lib\app\protectagentuser::admin_edit($post, \dash\request::get('person'));
 			if(\dash\engine\process::status())
 			{
 				\dash\redirect::to(\dash\url::that(). '?id='. \dash\request::get('id'));

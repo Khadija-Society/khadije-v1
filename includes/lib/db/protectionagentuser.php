@@ -11,6 +11,24 @@ class protectionagentuser
 		return $result;
 	}
 
+	public static function admin_get($_where)
+	{
+		$where = \dash\db\config::make_where($_where);
+
+		$query  =
+		"
+			SELECT
+				protection_user_agent_occasion.*,
+				protection_type.title AS `type_title`
+			FROM
+				protection_user_agent_occasion
+			LEFT JOIN protection_type ON protection_type.id = protection_user_agent_occasion.type_id
+			WHERE 1 AND $where
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 
 	public static function remove($_id)
 	{

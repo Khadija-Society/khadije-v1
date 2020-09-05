@@ -9,7 +9,7 @@ class controller
 
 
 		$id = \dash\request::get('id');
-		$load = \lib\app\protectionagentoccasion::get($id);
+		$load = \lib\app\protectionagentoccasion::admin_get($id);
 		if(!$load)
 		{
 			\dash\header::status(404);

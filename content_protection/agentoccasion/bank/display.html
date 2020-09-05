@@ -8,38 +8,6 @@
   <div class="f justify-center">
     <div class="c6 s12 m8">
       <div class="cbox">
-        {%if dataRow.status == 'draft'%}
-        <h5 class="mB10">{%trans "Please enter your bank account number information."%}
-          <br>
-          {%trans "This account number will be used to pay you for the support package of the institution"%}
-        </h5>
-
-
-        <label>{%trans "bankshaba"%}</label>
-        <div class="input">
-          <input type="text" name="bankshaba" value="{{dataRow.bankshaba}}">
-        </div>
-        <label>{%trans "bankhesab"%}</label>
-        <div class="input">
-          <input type="text" name="bankhesab" value="{{dataRow.bankhesab}}">
-        </div>
-        <label>{%trans "bankcart"%}</label>
-        <div class="input">
-          <input type="text" name="bankcart" value="{{dataRow.bankcart}}">
-        </div>
-        <label>{%trans "bankname"%}</label>
-        <div class="input">
-          <input type="text" name="bankname" value="{{dataRow.bankname}}">
-        </div>
-        <label>{%trans "bankownername"%}</label>
-        <div class="input">
-          <input type="text" name="bankownername" value="{{dataRow.bankownername}}">
-        </div>
-
-        <div class="txtRa">
-          <button class="btn primary">{%trans "Save"%}</button>
-        </div>
-        {%else%}
 
           <div class="msg">{%trans "bankshaba"%} <b>{{dataRow.bankshaba}}</b></div>
           <div class="msg">{%trans "bankhesab"%} <b>{{dataRow.bankhesab}}</b></div>
@@ -47,7 +15,6 @@
           <div class="msg">{%trans "bankname"%} <b>{{dataRow.bankname}}</b></div>
           <div class="msg">{%trans "bankownername"%} <b>{{dataRow.bankownername}}</b></div>
 
-        {%endif%}
       </div>
     </div>
   </div>
