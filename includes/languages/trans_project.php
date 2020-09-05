@@ -193,7 +193,7 @@ class twigTransTerms
 	echo T_("Arabic Language");                                                       // Line 433
 	echo T_("Province");                                                              // Line 11
 	echo T_("Select province");                                                       // Line 501
-	echo T_("Select city");                                                           // Line 269
+	echo T_("Select city");                                                           // Line 119
 	echo T_("Zip code");                                                              // Line 473
 	echo T_("Passport id");                                                           // Line 483
 	echo T_("Foreigners must fill");                                                  // Line 100
@@ -215,7 +215,7 @@ class twigTransTerms
 	echo T_("Please choose city");                                                    // Line 60
 
 	//-------------------------------------------------content_agent/home/display.html
-	echo T_("Reports");                                                               // Line 156
+	echo T_("Reports");                                                               // Line 38
 	echo T_("Agent Place");                                                           // Line 16
 	echo T_("Assessment Item");                                                       // Line 14
 	echo T_("Servant");                                                               // Line 80
@@ -726,6 +726,62 @@ class twigTransTerms
 	//-------------------------------------------------public_html/static/js/script.js
 
 	//--------------------------------------content_a/protection/occasion/display.html
+	echo T_("Please enter the information of the people to whom you want to donate a support package on this occasion.");// Line 63
+	echo T_("It is not possible to register or edit people on this occasion");        // Line 28
+	echo T_("Cancel");                                                                // Line 331
+
+	//---------------------------------------content_a/protection/gallery/display.html
+	echo T_("Please provide a visual report of the process and details of the distribution of the organization's support packages to the people covered by your announcement.");// Line 12
+	echo T_("You can upload photos and videos of the distribution of support packages to your covered people here");// Line 14
+
+	//----------------------------------------content_a/protection/detail/display.html
+	echo T_("Expire date");                                                           // Line 34
+	echo T_("Items in this package");                                                 // Line 19
+	echo T_("The number of people announced by you on this occasion");                // Line 15
+	echo T_("Person");                                                                // Line 76
+	echo T_("Click to announce the details of the people covered");                   // Line 37
+	echo T_("Current request status");                                                // Line 21
+	echo T_("If you have completed the form of people covered by you, click to send a request for support of the institution");// Line 44
+	echo T_("Send request");                                                          // Line 45
+	echo T_("Your request has been taken by the institution on the review page.");    // Line 49
+	echo T_("If you want to add or edit the people you cover, change the status of the request to draft");// Line 51
+	echo T_("Convert to draft request");                                              // Line 53
+
+	//------------------------------------------content_a/protection/bank/display.html
+	echo T_("Please enter your bank account number information.");                    // Line 12
+	echo T_("This account number will be used to pay you for the support package of the institution");// Line 14
+	echo T_("bankshaba");                                                             // Line 13
+	echo T_("bankhesab");                                                             // Line 17
+	echo T_("bankcart");                                                              // Line 21
+	echo T_("bankname");                                                              // Line 25
+	echo T_("bankownername");                                                         // Line 29
+
+	//------------------------------------------content_a/protection/home/display.html
+	echo T_("New occassion");                                                         // Line 10
+	echo T_("Registered occassion");                                                  // Line 29
+	echo T_("No support program has been announced by the institute at this time");   // Line 67
+	echo T_("Please follow the news of the institute to complete the steps through this page if the distribution of livelihood packages by the institute started on the occasion.");// Line 69
+
+	//----------------------------------------content_a/protection/report/display.html
+	echo T_("Please provide your written report on the process and details of the distribution of the institution's support packages to the persons covered by your announcement.");// Line 12
+	echo T_("Type here");                                                             // Line 19
+	echo T_("Send report");                                                           // Line 16
+
+	//----------------------------------------------content_a/protection/pageStep.html
+	echo T_("Bank account detail");                                                   // Line 20
+	echo T_("Introducing people");                                                    // Line 29
+	echo T_("Image report");                                                          // Line 47
+
+	//----------------------------------------content_a/protection/signup/display.html
+	echo T_("Register");                                                              // Line 30
+	echo T_("Please indicate on which of the following occasions you would like to receive a subsistence package for the people you cover?");// Line 52
+
+	//-----------------------------------------content_a/protection/users/display.html
+	echo T_("Name & family");                                                         // Line 84
+	echo T_("Protection count");                                                      // Line 91
+	echo T_("Choose type");                                                           // Line 102
+	echo T_("Can not add or edit any user to this occasion");                         // Line 104
+	echo T_("Married");                                                               // Line 23
 
 	//-------------------------------------------content_a/service/detail/display.html
 	echo T_("Save all");                                                              // Line 78
@@ -738,7 +794,6 @@ class twigTransTerms
 	//---------------------------------------------content_a/service/home/display.html
 	echo T_("Last modified");                                                         // Line 52
 	echo T_("Request date");                                                          // Line 38
-	echo T_("Cancel");                                                                // Line 331
 	echo T_("register for new service request");                                      // Line 37
 	echo T_("Start Date");                                                            // Line 86
 	echo T_("End Date");                                                              // Line 95
@@ -767,7 +822,6 @@ class twigTransTerms
 	echo T_("Signup price");                                                          // Line 15
 	echo T_("You are register to this course before");                                // Line 20
 	echo T_("Pay & Register");                                                        // Line 28
-	echo T_("Register");                                                              // Line 30
 	echo T_("Condition send");                                                        // Line 179
 
 	//--------------------------------------------content_a/festival/home/display.html
@@ -957,7 +1011,6 @@ class twigTransTerms
 	echo T_("Capacity");                                                              // Line 75
 	echo T_("Active time");                                                           // Line 294
 	echo T_("Clean time");                                                            // Line 62
-	echo T_("Person");                                                                // Line 76
 	echo T_("Hour");                                                                  // Line 301
 
 	//-------------------------------------------------content_mokeb/place/layout.html
@@ -974,44 +1027,88 @@ class twigTransTerms
 	//--------------------------------------------------content_mokeb/add/display.html
 	echo T_("datecreated");                                                           // Line 447
 
+	//-----------------------------------------content_protection/setting/display.html
+
+	//---------------------------------content_protection/occasion/detail/display.html
+	echo T_("Search in occasion");                                                    // Line 44
+	echo T_("Agent");                                                                 // Line 61
+	echo T_("Request Status");                                                        // Line 62
+	echo T_("Count user");                                                            // Line 63
+	echo T_("Show users");                                                            // Line 77
+
+	//-----------------------------------content_protection/occasion/user/display.html
+	echo T_("List of people introduced by");                                          // Line 9
+	echo T_("Agent type");                                                            // Line 69
+
 	//-----------------------------------content_protection/occasion/home/display.html
-	echo T_("Search in occasion");                                                    // Line 43
+	echo T_("Users");                                                                 // Line 50
+	echo T_("Agents");                                                                // Line 77
 	echo T_("Try to start with add new occasion!");                                   // Line 106
+
+	//----------------------------------content_protection/occasion/agent/display.html
 
 	//-----------------------------------------content_protection/occasion/layout.html
 	echo T_("Title of occasion");                                                     // Line 8
 	echo T_("Description of item");                                                   // Line 70
-	echo T_("Status of occasion");                                                    // Line 77
-	echo T_("registring");                                                            // Line 87
-	echo T_("distribution");                                                          // Line 92
-	echo T_("done");                                                                  // Line 97
+	echo T_("Status of occasion");                                                    // Line 70
+	echo T_("registring");                                                            // Line 80
+	echo T_("distribution");                                                          // Line 85
+	echo T_("done");                                                                  // Line 90
 
 	//-----------------------------------content_protection/occasion/edit/display.html
+	echo T_("If you want to distribute a support package on this occasion, enter the items in this package");// Line 23
+	echo T_("Items in the support basket for this occasion");                         // Line 46
+	echo T_("Announce which group you want to support on this occasion");             // Line 69
+	echo T_("Set type list first");                                                   // Line 82
 
 	//--------------------------------------------content_protection/home/display.html
-	echo T_("Last protection agetn");                                                 // Line 20
-	echo T_("Occasiona");                                                             // Line 38
-	echo T_("Protection agent");                                                      // Line 49
+	echo T_("Last protection agetn");                                                 // Line 15
+	echo T_("Occasiona");                                                             // Line 33
+	echo T_("Agent Signupded list");                                                  // Line 44
+	echo T_("Protection agent");                                                      // Line 57
 
 	//--------------------------------------------------content_protection/layout.html
 	echo T_("Occasion list");                                                         // Line 8
 	echo T_("Protect agent");                                                         // Line 9
+	echo T_("Agent registered");                                                      // Line 29
+	echo T_("Users registered");                                                      // Line 33
 
 	//-------------------------------content_protection/protectagent/home/display.html
-	echo T_("Search in protect agent");                                               // Line 43
-	echo T_("Try to start with add new protect agent!");                              // Line 106
+	echo T_("Activity");                                                              // Line 69
+	echo T_("Try to start with add new protect agent!");                              // Line 96
 
 	//-------------------------------------content_protection/protectagent/layout.html
 	echo T_("Pending");                                                               // Line 69
 
 	//-------------------------------content_protection/protectagent/edit/display.html
 	echo T_("Edit bank detail");                                                      // Line 14
-	echo T_("bankshaba");                                                             // Line 19
-	echo T_("bankhesab");                                                             // Line 23
-	echo T_("bankcart");                                                              // Line 27
-	echo T_("bankname");                                                              // Line 31
-	echo T_("bankownername");                                                         // Line 35
 	echo T_("Edit Address detail");                                                   // Line 42
+
+	//--------------------------content_protection/agentoccasion/occasion/display.html
+
+	//---------------------------content_protection/agentoccasion/gallery/display.html
+	echo T_("No image report was sended yet");                                        // Line 29
+
+	//----------------------------content_protection/agentoccasion/detail/display.html
+	echo T_("View detail");                                                           // Line 16
+	echo T_("Set as draft");                                                          // Line 26
+	echo T_("Set in queue");                                                          // Line 32
+	echo T_("Reject request");                                                        // Line 38
+	echo T_("Accept request");                                                        // Line 46
+
+	//------------------------------content_protection/agentoccasion/bank/display.html
+
+	//------------------------------content_protection/agentoccasion/home/display.html
+	echo T_("Occasion");                                                              // Line 60
+
+	//----------------------------content_protection/agentoccasion/report/display.html
+	echo T_("No report was sended yet");                                              // Line 14
+	echo T_("Edit report");                                                           // Line 16
+	echo T_("Save report");                                                           // Line 22
+
+	//----------------------------------content_protection/agentoccasion/pageStep.html
+
+	//-----------------------------content_protection/agentoccasion/users/display.html
 
 	//-----------------------------------------------content_m/disalltrip/display.html
 	echo T_("Disable all trip from qom");                                             // Line 13
@@ -1306,7 +1403,6 @@ class twigTransTerms
 	echo T_("Price Variation");                                                       // Line 42
 
 	//------------------------------------------content_m/festival/home/dashboard.html
-	echo T_("Users");                                                                 // Line 50
 	echo T_("Transactions");                                                          // Line 61
 	echo T_("Referee");                                                               // Line 74
 	echo T_("Show festival");                                                         // Line 93
