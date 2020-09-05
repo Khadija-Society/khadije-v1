@@ -300,7 +300,7 @@ class protectagentuser
 		$check_duplicate =
 		[
 			'protection_occasion_id' => \dash\coding::decode($load_occasion['id']),
-			'protection_agent_id'    => $protection_agent_id,
+			// 'protection_agent_id'    => $protection_agent_id,
 			'nationalcode'           => $nationalcode,
 			'limit'                  => 1,
 		];
@@ -315,7 +315,7 @@ class protectagentuser
 			}
 			else
 			{
-				\dash\notif::error(T_("This user already added to your list"), 'nationalcode');
+				\dash\notif::error(T_("This user already added to this occasion list"), 'nationalcode');
 				return false;
 			}
 		}
@@ -575,6 +575,20 @@ class protectagentuser
 			return false;
 		}
 
+		if(!\dash\app::isset_request('occation_id')) unset($args['occation_id']);
+		if(!\dash\app::isset_request('mobile')) unset($args['mobile']);
+		if(!\dash\app::isset_request('nationalcode')) unset($args['nationalcode']);
+		if(!\dash\app::isset_request('displayname')) unset($args['displayname']);
+		if(!\dash\app::isset_request('type')) unset($args['type']);
+		if(!\dash\app::isset_request('status')) unset($args['status']);
+		if(!\dash\app::isset_request('city')) unset($args['city']);
+		if(!\dash\app::isset_request('married')) unset($args['married']);
+		if(!\dash\app::isset_request('gender')) unset($args['gender']);
+		if(!\dash\app::isset_request('desc')) unset($args['desc']);
+		if(!\dash\app::isset_request('address')) unset($args['address']);
+		if(!\dash\app::isset_request('postalcode')) unset($args['postalcode']);
+		if(!\dash\app::isset_request('type_id')) unset($args['type_id']);
+		if(!\dash\app::isset_request('protectioncount')) unset($args['protectioncount']);
 
 		if(!empty($args))
 		{

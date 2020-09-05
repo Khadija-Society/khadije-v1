@@ -14,3 +14,23 @@
 
 
 {%endblock%}
+
+
+
+
+{%block occasionDetailHtml%}
+<div class="msg primary2 fs14">
+	<div class="f">
+		<div class="c">{{occasionDetail.title}}</div>
+		<div class="c">{{occasionDetail.subtitle}}</div>
+    {%if url.child != 'agent'%}
+    <div class="cauto"><a class="btn primary" href="{{url.this}}/agent?id={{occasionDetail.id}}">نمایدگان شرکت کرده</a></div>
+    {%endif%}
+
+    {%if url.child != 'user'%}
+    <div class="cauto"><a class="btn info" href="{{url.this}}/user?id={{occasionDetail.id}}">لیست افراد</a></div>
+    {%endif%}
+
+	</div>
+</div>
+{%endblock%}

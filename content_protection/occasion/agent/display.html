@@ -1,0 +1,109 @@
+{%extends 'content_protection/layout.html'%}
+
+
+
+{%block pageContent%}
+{{block('occasionDetailHtml')}}
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.that}}'>
+    <input type="hidden" name="id" value="{{requestGET.id}}">
+    <div class="input">
+      <input type="search" name="q" occasionholder='{%trans "Search in occasion"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+
+<div class="tblBox">
+
+ <table class="tbl1 v1 cbox fs12">
+    <thead>
+      <tr>
+        <th class="collapsing"></th>
+        <th>{%trans "Agent"%}</th>
+        <th>{%trans "Status"%}</th>
+        <th>تعداد افراد معرفی شده</th>
+        <th class="collapsing"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr {%if value.status=='request'%} class='warning' {%elseif value.status=='reject'%} class='negative' {%elseif value.status=='accept'%} class='positive'{%endif%}>
+
+        <td class="collapsing">{{value.id | fitNumber}}</td>
+        <td>{{value.agent_title}}</td>
+        <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
+        <td>{{value.count_user | fitNumber}}</td>
+        <td class="collapsing">
+
+          <a href="{{url.this}}/user?id={{value.protection_occasion_id}}&agent={{value.protection_agent_id}}" class="btn info outline mLR10">نمایش افراد</a>
+          <a class="btn pain outline" data-ajaxify data-method='post' data-data='{"type": "accept", "useragentid": "{{value.id}}"}'>نمایش جزئیات</a>
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+  {%include display.pagination%}
+
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg info2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%}</p>
+{%endblock%}
+

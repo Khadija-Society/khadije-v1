@@ -72,7 +72,10 @@
         <td><a href="{{url.this}}?type={{value.type}}">{{value.type}}</a></td>
 
         <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
-        <td class="collapsing"><a class="btn pain outline" href="{{url.this}}/user?id={{value.id}}">{%trans "Detail"%}</a></td>
+        <td class="collapsing">
+          <a class="btn pain outline" href="{{url.this}}/user?id={{value.id}}">{%trans "Users"%}</a>
+          <a class="btn info outline" href="{{url.this}}/agent?id={{value.id}}">{%trans "Agents"%}</a>
+        </td>
       </tr>
       {%endfor%}
     </tbody>

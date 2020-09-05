@@ -3,6 +3,12 @@
 
 
 {%block pageContent%}
+{{block('occasionDetailHtml')}}
+{%if agentDetail%}
+<div class="msg info2 fs14">
+  لیست افراد معرفی شده توسط <b>{{agentDetail.title}}</b>
+</div>
+{%endif%}
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -39,6 +45,9 @@
 <div class="cbox fs12">
   <form method="get" action='{{url.that}}'>
     <input type="hidden" name="id" value="{{requestGET.id}}">
+    {%if requestGET.agent%}
+      <input type="hidden" name="agent" value="{{requestGET.agent}}">
+    {%endif%}
     <div class="input">
       <input type="search" name="q" occasionholder='{%trans "Search in occasion"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -55,11 +64,18 @@
  <table class="tbl1 v1 cbox fs12">
     <thead>
       <tr>
+        {%if agentDetail%}
+        {%else%}
         <th class="collapsing">{%trans "Agent type"%}</th>
         <th>{%trans "Agent"%}</th>
+        {%endif%}
         <th>{%trans "Mobile"%}</th>
         <th>{%trans "Name"%}</th>
         <th>{%trans "Nationalcode"%}</th>
+        <th>{%trans "City"%}</th>
+        <th>افراد تحت تکفل</th>
+        <th>{%trans "Gender"%}</th>
+        <th>{%trans "Married"%}</th>
         <th>{%trans "Status"%}</th>
         <th></th>
       </tr>
@@ -68,12 +84,18 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='request'%} class='warning' {%elseif value.status=='reject'%} class='negative' {%elseif value.status=='accept'%} class='positive'{%endif%}>
-
+        {%if agentDetail%}
+        {%else%}
         <td class="collapsing">{{value.agent_type}}</td>
         <td>{{value.agent_title}}</td>
+        {%endif%}
         <td>{{value.mobile | fitNumber('mobile')}}</td>
         <td>{{value.displayname}}</td>
         <td>{{value.nationalcode | fitNumber(false)}}</td>
+        <td>{{value.location_string}}</td>
+        <td>{{value.protectioncount | fitNumber}}</td>
+        <td>{%set myStatus = value.gender%}{%trans myStatus%}</td>
+        <td>{%set myStatus = value.married%}{%trans myStatus%}</td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
         <td class="collapsing">
 
@@ -93,7 +115,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}{%if requestGET.agent%}&agent={{requestGET.agent}}{%endif%}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -101,12 +123,12 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}{%if requestGET.agent%}&agent={{requestGET.agent}}{%endif%}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%}</p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} هیچ کدام از نمایندگان در این مناسبت شخصی را معرفی نکرده‌اند</p>
 {%endblock%}
 

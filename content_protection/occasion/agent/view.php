@@ -1,5 +1,5 @@
 <?php
-namespace content_protection\occasion\user;
+namespace content_protection\occasion\agent;
 
 
 class view
@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title("افراد معرفی شده در این مناسبت");
+		\dash\data::page_title("نمایندگان شرکت کرده در این مناسبت");
 
 		\dash\data::page_pictogram('list');
 
@@ -26,26 +26,16 @@ class view
 			'sort'       => \dash\request::get('sort'),
 			'order'      => \dash\request::get('order'),
 			'protection_occasion_id'      => \dash\coding::decode(\dash\request::get('id')),
-
+			// 'pagenation' => false,
 		];
-
-		if(\dash\request::get('agent'))
-		{
-			$args['protection_agent_id'] = \dash\coding::decode(\dash\request::get('agent'));
-			if($args['protection_agent_id'])
-			{
-				$agentDetail = \lib\app\protectagent::get(\dash\request::get('agent'));
-				\dash\data::agentDetail($agentDetail);
-			}
-		}
 
 		if(!$args['order'])
 		{
 			$args['order'] = 'desc';
 		}
 
-		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\protectagentuser::$sort_field, \dash\url::this());
-		$dataTable = \lib\app\protectagentuser::list(\dash\request::get('q'), $args);
+		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\protectionagentoccasion::$sort_field, \dash\url::this());
+		$dataTable = \lib\app\protectionagentoccasion::list(\dash\request::get('q'), $args);
 
 
 		\dash\data::sortLink($sortLink);
@@ -54,7 +44,6 @@ class view
 		$check_empty_datatable = $args;
 		unset($check_empty_datatable['sort']);
 		unset($check_empty_datatable['protection_occasion_id']);
-		unset($check_empty_datatable['protection_agent_id']);
 
 		unset($check_empty_datatable['order']);
 		unset($check_empty_datatable['pagenation']);
