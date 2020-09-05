@@ -215,7 +215,7 @@ class twigTransTerms
 	echo T_("Please choose city");                                                    // Line 60
 
 	//-------------------------------------------------content_agent/home/display.html
-	echo T_("Reports");                                                               // Line 38
+	echo T_("Reports");                                                               // Line 46
 	echo T_("Agent Place");                                                           // Line 16
 	echo T_("Assessment Item");                                                       // Line 14
 	echo T_("Servant");                                                               // Line 80
@@ -726,7 +726,7 @@ class twigTransTerms
 	//-------------------------------------------------public_html/static/js/script.js
 
 	//--------------------------------------content_a/protection/occasion/display.html
-	echo T_("Please enter the information of the people to whom you want to donate a support package on this occasion.");// Line 63
+	echo T_("Please enter the information of the people to whom you want to donate a support package on this occasion.");// Line 10
 	echo T_("It is not possible to register or edit people on this occasion");        // Line 28
 	echo T_("Cancel");                                                                // Line 331
 
@@ -736,7 +736,7 @@ class twigTransTerms
 
 	//----------------------------------------content_a/protection/detail/display.html
 	echo T_("Expire date");                                                           // Line 34
-	echo T_("The number of people announced by you on this occasion");                // Line 15
+	echo T_("The number of people announced by you on this occasion");                // Line 20
 	echo T_("Person");                                                                // Line 76
 	echo T_("You are not announce any people to this occasion");                      // Line 24
 	echo T_("Click to announce the details of the people covered");                   // Line 25
@@ -750,11 +750,11 @@ class twigTransTerms
 	//------------------------------------------content_a/protection/bank/display.html
 	echo T_("Please enter your bank account number information.");                    // Line 13
 	echo T_("This account number will be used to pay you for the support package of the institution");// Line 15
-	echo T_("bankshaba");                                                             // Line 13
-	echo T_("bankhesab");                                                             // Line 17
-	echo T_("bankcart");                                                              // Line 21
-	echo T_("bankname");                                                              // Line 25
-	echo T_("bankownername");                                                         // Line 29
+	echo T_("bankshaba");                                                             // Line 14
+	echo T_("bankhesab");                                                             // Line 18
+	echo T_("bankcart");                                                              // Line 22
+	echo T_("bankname");                                                              // Line 26
+	echo T_("bankownername");                                                         // Line 30
 
 	//------------------------------------------content_a/protection/home/display.html
 	echo T_("Registered occassion");                                                  // Line 10
@@ -768,9 +768,9 @@ class twigTransTerms
 	echo T_("Send report");                                                           // Line 16
 
 	//----------------------------------------------content_a/protection/pageStep.html
-	echo T_("Bank account detail");                                                   // Line 20
-	echo T_("Introducing people");                                                    // Line 29
-	echo T_("Image report");                                                          // Line 47
+	echo T_("Bank account detail");                                                   // Line 28
+	echo T_("Introducing people");                                                    // Line 37
+	echo T_("Image report");                                                          // Line 55
 
 	//----------------------------------------content_a/protection/signup/display.html
 	echo T_("List of items in this occasion");                                        // Line 17
@@ -1040,11 +1040,12 @@ class twigTransTerms
 	echo T_("Agent type");                                                            // Line 69
 
 	//-----------------------------------content_protection/occasion/home/display.html
-	echo T_("Count agent register");                                                  // Line 59
-	echo T_("Count user register");                                                   // Line 60
+	echo T_("Count item");                                                            // Line 59
+	echo T_("Count agent register");                                                  // Line 60
+	echo T_("Count user register");                                                   // Line 61
 	echo T_("Users");                                                                 // Line 50
-	echo T_("Agents");                                                                // Line 80
-	echo T_("Try to start with add new occasion!");                                   // Line 109
+	echo T_("Agents");                                                                // Line 82
+	echo T_("Try to start with add new occasion!");                                   // Line 111
 
 	//----------------------------------content_protection/occasion/agent/display.html
 
@@ -1075,8 +1076,8 @@ class twigTransTerms
 	echo T_("Users registered");                                                      // Line 33
 
 	//-------------------------------content_protection/protectagent/home/display.html
-	echo T_("Activity");                                                              // Line 69
-	echo T_("Try to start with add new protect agent!");                              // Line 96
+	echo T_("Count occasion");                                                        // Line 60
+	echo T_("Try to start with add new protect agent!");                              // Line 102
 
 	//-------------------------------------content_protection/protectagent/layout.html
 	echo T_("Pending");                                                               // Line 69
@@ -1091,7 +1092,8 @@ class twigTransTerms
 	echo T_("No image report was sended yet");                                        // Line 29
 
 	//----------------------------content_protection/agentoccasion/detail/display.html
-	echo T_("View detail");                                                           // Line 16
+	echo T_("The number of people announced on this occasion");                       // Line 15
+	echo T_("View list");                                                             // Line 16
 	echo T_("Set as draft");                                                          // Line 26
 	echo T_("Set in queue");                                                          // Line 32
 	echo T_("Reject request");                                                        // Line 38
@@ -1108,8 +1110,10 @@ class twigTransTerms
 	echo T_("Save report");                                                           // Line 22
 
 	//----------------------------------content_protection/agentoccasion/pageStep.html
+	echo T_("Edit agent");                                                            // Line 10
 
 	//-----------------------------content_protection/agentoccasion/users/display.html
+	echo T_("You can and, edit or remove everyone of top list");                      // Line 63
 
 	//-----------------------------------------------content_m/disalltrip/display.html
 	echo T_("Disable all trip from qom");                                             // Line 13
