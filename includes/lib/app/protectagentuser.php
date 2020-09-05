@@ -135,7 +135,7 @@ class protectagentuser
 
 		if(isset($result['id']))
 		{
-			return $result;
+			return self::ready($result);
 		}
 		else
 		{
@@ -394,12 +394,29 @@ class protectagentuser
 
 		}
 
+		$protectioncount = \dash\app::request('protectioncount');
+		if($protectioncount && !is_numeric($protectioncount))
+		{
+			\dash\notif::error(T_("Please set protection count as a number"));
+			return false;
+		}
+
+		if($protectioncount)
+		{
+			if(floatval($protectioncount) > 100)
+			{
+				\dash\notif::error(T_("Please set protection count less than 100"));
+				return false;
+			}
+		}
+
 		$args['protection_occasion_id'] = $occation_id;
 		$args['protection_agent_id']    = $protection_agent_id;
 		$args['mobile']                 = $mobile;
 		$args['user_id']                = $user_id;
+		$args['protectioncount']        = $protectioncount;
 		// $args['protection_user_id']  = $user_id;
-		$args['type_id']  = $type_id;
+		$args['type_id']                = $type_id;
 		$args['nationalcode']           = $nationalcode;
 		$args['displayname']            = $displayname;
 		$args['type']                   = $type;
@@ -589,6 +606,7 @@ class protectagentuser
 				case 'protection_user_id':
 				case 'protection_agent_id':
 				case 'user_id':
+				case 'type_id':
 					$result[$key] = \dash\coding::encode($value);
 					break;
 

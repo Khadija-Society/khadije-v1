@@ -39,14 +39,16 @@ class model
 
 		$post =
 		[
-			'occation_id'  => \dash\data::occasionID(),
-			'mobile'       => \dash\request::post('mobile'),
-			'displayname'  => \dash\request::post('displayname'),
-			'nationalcode' => \dash\request::post('nationalcode'),
-			'city'         => \dash\request::post('city'),
-			'type_id'      => \dash\request::post('type_id'),
-			'gender'       => \dash\request::post('gender'),
-			'married'      => \dash\request::post('married'),
+			'occation_id'     => \dash\data::occasionID(),
+			'mobile'          => \dash\request::post('mobile'),
+			'displayname'     => \dash\request::post('displayname'),
+			'nationalcode'    => \dash\request::post('nationalcode'),
+			'city'            => \dash\request::post('city'),
+			'type_id'         => \dash\request::post('type_id'),
+			'gender'          => \dash\request::post('gender'),
+			'married'         => \dash\request::post('married'),
+			'protectioncount' => \dash\request::post('protectioncount'),
+
 		];
 
 		if(\dash\data::editMode())

@@ -28,7 +28,6 @@ class view
 		\dash\data::occasionType($occasionType);
 
 
-
 		$cityList    = \dash\utility\location\cites::$data;
 		$proviceList = \dash\utility\location\provinces::key_list('localname');
 
