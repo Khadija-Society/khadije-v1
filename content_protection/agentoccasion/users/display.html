@@ -1,11 +1,12 @@
 {%extends display.admin%}
-{%use 'content_a/protection/pageStep.html' %}
+{%use 'content_protection/agentoccasion/pageStep.html' %}
 
 {%block pageContent%}
 {{block ('pageStep')}}
 
 <form method="post" autocomplete="off">
-  <div class="mT10">
+
+  <div class="mB10">
 
       {%if userOccasionList%}
       <div class="tblBox">
@@ -14,6 +15,7 @@
             <tr>
 
               <th class="collapsing"></th>
+
               <th>{%trans "Name"%}</th>
               <th>{%trans "Mobile"%}</th>
               <th>{%trans "Nationalcode"%}</th>
@@ -22,6 +24,7 @@
               <th class="collapsing">{%trans "Protection count"%}</th>
               <th>{%trans "Type"%}</th>
               <th>{%trans "City"%}</th>
+              <th>{%trans "Status"%}</th>
               <th class="collapsing"></th>
             </tr>
           </thead>
@@ -29,7 +32,7 @@
           {%for key, value in userOccasionList%}
             <tr>
               <td class="collapsing">{{(key + 1) | fitNumber}}</td>
-              <td>{{value.displayname}}</td>
+              <td><a href="{{url.that}}?id={{requestGET.id}}&person={{value.id}}"> <i class="sf-edit"></i> {{value.displayname}}</a></td>
               <td>{{value.mobile | fitNumber('mobile')}}</td>
               <td>{{value.nationalcode | fitNumber(false)}}</td>
               <td>{%set my_gender = value.gender%}{%trans my_gender%}</td>
@@ -38,11 +41,12 @@
               <td>{{value.type_title}}</td>
               <td>{{value.location_string}}</td>
 
+              <td>{%set my_status = value.status%}{%trans my_status%}</td>
               <td class="collapsing">
 
-          <a class="btn danger xs outline mLR10" data-ajaxify data-method='post' data-data='{"type": "reject", "useragentid": "{{value.id}}"}'>{%trans "Reject"%}</a>
-          <a class="btn success outline" data-ajaxify data-method='post' data-data='{"type": "accept", "useragentid": "{{value.id}}"}'>{%trans "Accept"%}</a>
-        </td>
+                <a class="btn danger xs {%if value.status == 'reject'%}{%else%}outline{%endif%} mLR10" data-ajaxify data-method='post' data-data='{"type": "reject", "useragentid": "{{value.id}}"}'>{%trans "Reject"%}</a>
+                <a class="btn success {%if value.status == 'accept'%}{%else%}outline{%endif%}" data-ajaxify data-method='post' data-data='{"type": "accept", "useragentid": "{{value.id}}"}'>{%trans "Accept"%}</a>
+              </td>
             </tr>
           {%endfor%}
           </tbody>
@@ -51,7 +55,119 @@
       {%endif%}
 
   </div>
+  <div class="f justify-center">
+    <div class="c8 s12 m12">
+      <div class="cbox">
+
+
+          <p class="msg">{%trans "Please enter the information of the people to whom you want to donate a support package on this occasion."%}</p>
+          <input type="hidden" name="occation_id" value="{{requestGET.id}}">
+            <div class="f">
+              <div class="c6 s12">
+                <label for="inationalcode">{%trans "Nationalcode"%}</label>
+                <div class="input">
+                  <input type="tel" id="inationalcode" name="nationalcode" value="{{personDataRow.nationalcode}}" maxlength="10">
+                </div>
+              </div>
+              <div class="c6 s12">
+                <div class="mLa5">
+                  <label for="imobile">{%trans "Mobile"%}</label>
+                  <div class="input">
+                    <input type="tel" id="imobile" name="mobile" value="{{personDataRow.mobile}}" maxlength="15">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="f">
+              <div class="c6 s12">
+                  <label for="idisplayname">{%trans "Name & family"%}</label>
+                  <div class="input">
+                    <input type="text" id="idisplayname" name="displayname" value="{{personDataRow.displayname}}" maxlength="50">
+                  </div>
+              </div>
+              <div class="c6 s12">
+                <div class="mLa5">
+                  <label for="iprotectioncount">{%trans "Protection count"%}</label>
+                  <div class="input">
+                    <input type="number" id="iprotectioncount" name="protectioncount" value="{{personDataRow.protectioncount}}" max="100">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {%if occasionType%}
+            <div class="f">
+
+              <h5>{%trans "Choose type"%}</h5>
+            {%for key, value in occasionType%}
+
+            <div class="c12">
+
+              <div class="radio3">
+                <input type="radio" id="checktype{{value.id}}" name="type_id" value="{{value.id}}" {%if personDataRow.type_id == value.id%} checked {%endif%}>
+                <label for="checktype{{value.id}}">{{value.title}}</label>
+              </div>
+            </div>
+              {%endfor%}
+              </div>
+              {%endif%}
+
+
+            <label for='city'>{%trans "City"%}</label>
+            <select name="city" class="ui dropdown select search" id="city">
+              <option value="" readonly>{%trans "Select city"%}</option>
+              {%for key, value in cityList%}
+                <option value="{{key}}" {% if personDataRow.city == key %} selected {%endif%}>{{value}}</option>
+              {%endfor%}
+            </select>
+
+
+
+          <label for="gender">{%trans "Gender"%}</label>
+          <div class="f">
+           <div class="radio3 green">
+            <input type="radio" id="r-male" name="gender"  value="male" {%if personDataRow.gender == 'male' %}checked{%endif%}>
+            <label for="r-male">{%trans "Male"%}</label>
+           </div>
+
+           <div class="radio3 green">
+            <input type="radio" id="r-female" name="gender"  value="female" {%if personDataRow.gender == 'female' %}checked{%endif%}>
+            <label for="r-female">{%trans "Female"%}</label>
+           </div>
+          </div>
+
+          <label for="Married">{%trans "Marital"%}</label>
+          <div class="f">
+           <div class="radio3 yellow">
+            <input type="radio" id="r-single" name="married"  value="single" {%if personDataRow.married == 'single' %}checked{%endif%}>
+            <label for="r-single">{%trans "Single"%}</label>
+           </div>
+
+           <div class="radio3 yellow">
+            <input type="radio" id="r-married" name="married"  value="married" {%if personDataRow.married == 'married' %}checked{%endif%}>
+            <label for="r-married">{%trans "Married"%}</label>
+           </div>
+          </div>
+
+
+
+        <footer class="txtRa mT10">
+          <div class="f">
+          {%if editMode%}
+            <div class="cauto"><div class="btn danger outline mRa5" data-confirm data-data='{"remove": "remove", "id" : "{{personDataRow.id}}"}'>{%trans "Remove"%}</div></div>
+            <div class="cauto"><a class="btn secondary outline" href="{{url.that}}?id={{requestGET.id}}">{%trans "Cancel"%}</a></div>
+          {%endif%}
+            <div class="c"><button class="btn primary">{%if editMode%}{%trans "Edit"%}{%else%}{%trans "Add"%}{%endif%}</button></div>
+          </div>
+
+         </footer>
+
+      </div>
+    </div>
+  </div>
 </form>
 
 
 {%endblock%}
+

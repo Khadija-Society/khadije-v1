@@ -17,6 +17,7 @@ class model
 			'bankcart'                  => \dash\request::post('bankcart'),
 			'bankname'                  => \dash\request::post('bankname'),
 			'bankownername'             => \dash\request::post('bankownername'),
+			'is_admin'                  => true,
 		];
 
 

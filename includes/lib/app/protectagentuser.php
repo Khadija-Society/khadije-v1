@@ -264,6 +264,52 @@ class protectagentuser
 	}
 
 
+
+	public static function admin_remove($_args)
+	{
+		$occation_id         = isset($_args['occation_id']) ? \dash\coding::decode($_args['occation_id']) : null;
+		$protectagentuser_id = isset($_args['protectagentuser_id']) ? \dash\coding::decode($_args['protectagentuser_id']) : null;
+
+		if(!$occation_id)
+		{
+			\dash\notif::error(T_("Invalid occasion id"));
+			return false;
+		}
+
+
+		if(!$protectagentuser_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
+		$check =
+		[
+			'id'                     => $protectagentuser_id,
+			'protection_occasion_id' => $occation_id,
+			'limit'                  => 1,
+		];
+
+		$result = \lib\db\protectionagentuser::get($check);
+
+		if(isset($result['id']))
+		{
+			$result = \lib\db\protectionagentuser::remove($result['id']);
+			\dash\notif::ok(T_("Removed"));
+			return true;
+
+		}
+		else
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+
+	}
+
+
 	/**
 	 * check args
 	 *
@@ -271,6 +317,12 @@ class protectagentuser
 	 */
 	private static function check($_id = null)
 	{
+
+		$is_admin = false;
+		if(\dash\app::request('is_admin'))
+		{
+			$is_admin = true;
+		}
 
 		$args    = [];
 		$user_id = null;
@@ -355,11 +407,19 @@ class protectagentuser
 			return false;
 		}
 
-		$protection_agent_id = \lib\app\protectagent::get_current_id();
-		if(!$protection_agent_id)
+		if($is_admin)
 		{
-			\dash\notif::error(T_("Invalid agent id"));
-			return false;
+			$protection_agent_id = \dash\app::request('protection_agent_id');
+			$protection_agent_id = \dash\coding::decode($protection_agent_id);
+		}
+		else
+		{
+			$protection_agent_id = \lib\app\protectagent::get_current_id();
+			if(!$protection_agent_id)
+			{
+				\dash\notif::error(T_("Invalid agent id"));
+				return false;
+			}
 		}
 
 		$check_duplicate =
@@ -639,6 +699,7 @@ class protectagentuser
 		{
 			return false;
 		}
+
 
 		if(!\dash\app::isset_request('occation_id')) unset($args['occation_id']);
 		if(!\dash\app::isset_request('mobile')) unset($args['mobile']);

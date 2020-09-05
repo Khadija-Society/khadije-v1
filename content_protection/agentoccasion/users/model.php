@@ -7,7 +7,7 @@ class model
 
 	public static function post()
 	{
-		$occasion_id = \dash\request::get('id');
+		$occasion_id = \dash\data::occasionID();
 		$useragentid = \dash\request::post('useragentid');
 
 		if(\dash\request::post('type') === 'reject')
@@ -42,11 +42,11 @@ class model
 				'protectagentuser_id'  => \dash\request::post('id'),
 			];
 
-			$reault = \lib\app\protectagentuser::remove($post);
+			$reault = \lib\app\protectagentuser::admin_remove($post);
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::pwd();
+				\dash\redirect::to(\dash\url::that(). "?id=". \dash\request::get('id'));
 			}
 
 			return;
@@ -55,21 +55,23 @@ class model
 
 		$post =
 		[
-			'occation_id'     => \dash\data::occasionID(),
-			'mobile'          => \dash\request::post('mobile'),
-			'displayname'     => \dash\request::post('displayname'),
-			'nationalcode'    => \dash\request::post('nationalcode'),
-			'city'            => \dash\request::post('city'),
-			'type_id'         => \dash\request::post('type_id'),
-			'gender'          => \dash\request::post('gender'),
-			'married'         => \dash\request::post('married'),
-			'protectioncount' => \dash\request::post('protectioncount'),
-
+			'occation_id'         => \dash\data::occasionID(),
+			'mobile'              => \dash\request::post('mobile'),
+			'displayname'         => \dash\request::post('displayname'),
+			'nationalcode'        => \dash\request::post('nationalcode'),
+			'city'                => \dash\request::post('city'),
+			'type_id'             => \dash\request::post('type_id'),
+			'gender'              => \dash\request::post('gender'),
+			'married'             => \dash\request::post('married'),
+			'protectioncount'     => \dash\request::post('protectioncount'),
+			'protection_agent_id' => \dash\data::dataRow_protection_agent_id(),
+			'is_admin'            => true,
 		];
+
 
 		if(\dash\data::editMode())
 		{
-			$reault = \lib\app\protectagentuser::admin_edit($post, \dash\request::get('person'));
+			$reault = \lib\app\protectagentuser::edit($post, \dash\request::get('person'));
 			if(\dash\engine\process::status())
 			{
 				\dash\redirect::to(\dash\url::that(). '?id='. \dash\request::get('id'));

@@ -428,19 +428,18 @@ class protectionagentoccasion
 			$bankownername = substr($bankownername, 0, 150);
 		}
 
-
+		$report = \dash\app::request('report');
 
 		$args = [];
 
 
-		$args['bankshaba']         = $bankshaba;
-		$args['bankhesab']         = $bankhesab;
-		$args['bankcart']          = $bankcart;
-		$args['bankname']          = $bankname;
-		$args['bankownername']     = $bankownername;
-
-
-
+		$args['bankshaba']     = $bankshaba;
+		$args['bankhesab']     = $bankhesab;
+		$args['bankcart']      = $bankcart;
+		$args['bankname']      = $bankname;
+		$args['bankownername'] = $bankownername;
+		$args['bankownername'] = $bankownername;
+		$args['report']        = $report;
 
 		return $args;
 	}
@@ -450,11 +449,10 @@ class protectionagentoccasion
 	{
 		$occation_id               = isset($_args['occation_id']) ? $_args['occation_id'] : null;
 		$protectionagetnoccasionid = isset($_args['protectionagetnoccasionid']) ? $_args['protectionagetnoccasionid'] : null;
+		$is_admin                  = (isset($_args['is_admin']) && $_args['is_admin']) ? true : false;
 
 
 		\dash\app::variable($_args);
-
-
 
 		$id = \dash\coding::decode($protectionagetnoccasionid);
 		$occation_id = \dash\coding::decode($occation_id);
@@ -466,19 +464,33 @@ class protectionagentoccasion
 		}
 
 
-		$protection_agent_id = \lib\app\protectagent::get_current_id();
-		if(!$protection_agent_id)
+		if($is_admin)
 		{
-			return false;
+			$get_args =
+			[
+				'id'                     => $id,
+				'protection_occasion_id' => $occation_id,
+				'limit'                  => 1,
+			];
+		}
+		else
+		{
+
+			$protection_agent_id = \lib\app\protectagent::get_current_id();
+			if(!$protection_agent_id)
+			{
+				return false;
+			}
+
+			$get_args =
+			[
+				'id'                     => $id,
+				'protection_occasion_id' => $occation_id,
+				'protection_agent_id'    => $protection_agent_id,
+				'limit'                  => 1,
+			];
 		}
 
-		$get_args =
-		[
-			'id'                     => $id,
-			'protection_occasion_id' => $occation_id,
-			'protection_agent_id'    => $protection_agent_id,
-			'limit'                  => 1,
-		];
 
 		$get = \lib\db\protectionagentoccasion::get($get_args);
 
@@ -495,13 +507,12 @@ class protectionagentoccasion
 			return false;
 		}
 
-
-
 		if(!\dash\app::isset_request('bankshaba'))	unset($args['bankshaba']);
 		if(!\dash\app::isset_request('bankhesab'))	unset($args['bankhesab']);
 		if(!\dash\app::isset_request('bankcart'))	unset($args['bankcart']);
 		if(!\dash\app::isset_request('bankname'))	unset($args['bankname']);
 		if(!\dash\app::isset_request('bankownername'))	unset($args['bankownername']);
+		if(!\dash\app::isset_request('report'))	unset($args['report']);
 
 		if(!empty($args))
 		{
@@ -519,6 +530,8 @@ class protectionagentoccasion
 		}
 
 	}
+
+
 
 
 	/**

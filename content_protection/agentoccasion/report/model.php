@@ -12,9 +12,10 @@ class model
 			'occation_id'               => \dash\data::occasionID(),
 			'protectionagetnoccasionid' => \dash\request::get('id'),
 			'report'                    => \dash\request::post('report'),
+			'is_admin'                  => true,
 		];
 
-		$reault = \lib\app\protectionagentoccasion::edit_report($post);
+		$reault = \lib\app\protectionagentoccasion::edit($post);
 
 		if(\dash\engine\process::status())
 		{

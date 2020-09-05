@@ -1,5 +1,5 @@
 {%extends display.admin%}
-{%use 'content_a/protection/pageStep.html' %}
+{%use 'content_protection/agentoccasion/pageStep.html' %}
 
 {%block pageContent%}
 {{block ('pageStep')}}
@@ -8,9 +8,20 @@
   <div class="f justify-center">
     <div class="c6 s12 m8">
        <div class="cbox">
+		{%if dataRow.report%}
+        	<p>{{dataRow.report | nl2br}}</p>
+		{%else%}
+		<div class="msg warn2">{%trans "No report was sended yet"%}</div>
+		{%endif%}
+		<div class="btn link" data-kerkere='.editReport' data-kerkere-icon>{%trans "Edit report"%}</div>
+		<div class="editReport" data-kerkere-content='hide'>
 
-        <p>{{dataRow.report | nl2br}}</p>
+	        <textarea name="report" placeholder='{%trans "Type here"%} ...' class="txt" rows="15">{{dataRow.report}}</textarea>
 
+	        <footer class="txtRa">
+	          <button class="btn primary mT10">{%trans "Save report"%}</button>
+	        </footer>
+		</div>
     </div>
 
     </div>
@@ -19,3 +30,4 @@
 
 
 {%endblock%}
+

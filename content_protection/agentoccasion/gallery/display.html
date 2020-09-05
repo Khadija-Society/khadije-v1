@@ -1,5 +1,5 @@
 {%extends display.admin%}
-{%use 'content_a/protection/pageStep.html' %}
+{%use 'content_protection/agentoccasion/pageStep.html' %}
 
 {%block pageContent%}
 {{block ('pageStep')}}
@@ -24,7 +24,11 @@
     </div>
   {%endfor%}
 </div>
-{%endif%}
+
+    {%else%}
+    <div class="msg warn2">{%trans "No image report was sended yet"%}</div>
+    {%endif%}
+
     </div>
 
     </div>
