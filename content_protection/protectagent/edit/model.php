@@ -19,7 +19,7 @@ class model
 			'bankcart'          => \dash\request::post('bankcart'),
 			'bankname'          => \dash\request::post('bankname'),
 			'bankownername'     => \dash\request::post('bankownername'),
-			'province'          => \dash\request::post('province'),
+			// 'province'          => \dash\request::post('province'),
 			'city'              => \dash\request::post('city'),
 			'address'           => \dash\request::post('address'),
 

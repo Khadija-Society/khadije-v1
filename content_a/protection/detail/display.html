@@ -12,28 +12,16 @@
         <h2 class="mB20">{{occasionDetail.title}}</h2>
         {%if occasionDetail.subtitle%}<b class="mB20 block">{{occasionDetail.subtitle}}</b>{%endif%}
         {%if occasionDetail.startdate%}<span class="block mB10">{%trans "Start date"%}: <span class="ltr compact">{{occasionDetail.startdate | dt(null, 'date')}}</span></span>{%endif%}
-        {%if occasionDetail.expiredate%}{%trans "Expire date"%}: <span class="ltr compact">{{occasionDetail.expiredate | dt(null, 'date')}}</span>{%endif%}
-        {%if occasionDetail.desc%}<p class="mTB20">{{occasionDetail.desc | nl2br}}</p>{%endif%}
+        {%if occasionDetail.expiredate%}{%trans "Expire date"%}: <span class="ltr compact mB10">{{occasionDetail.expiredate | dt(null, 'date')}}</span>{%endif%}
 
-        {%if dataDetail%}
-          <h5>{%trans "Items in this package"%}</h5>
-          <ul>
 
-          {%for key, value in dataDetail%}
-          <li class="f">
-            <div class="c">{{value.title}}</div>
-            {%if value.price%}<div class="c">{%trans "Price"%} {{value.price | fitNumber}}</div>{%endif%}
-            <div class="c">{{value.desc}}</div>
-          </li>
-          {%endfor%}
-          </ul>
-        {%endif%}
         {%if userListCount%}
           <div class="msg">
             {%trans "The number of people announced by you on this occasion"%}  <b>{{userListCount |fitNumber}}</b> <small>{%trans "Person"%}</small>
           </div>
         {%else%}
           <div class="msg warn2">
+            <p>{%trans "You are not announce any people to this occasion"%}</p>
             <a href="{{url.this}}/users?id={{requestGET.id}}">{%trans "Click to announce the details of the people covered"%}</a>
           </div>
         {%endif%}

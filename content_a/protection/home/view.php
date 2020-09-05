@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Protection user detail"));
+		\dash\data::page_title(T_("List of occasion"));
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_('Back to dashboard'));
 
@@ -35,10 +35,6 @@ class view
 
 		\dash\data::registeredOccasion($registeredOccasion);
 
-		if(!$registeredOccasion && $occasion)
-		{
-			\dash\redirect::to(\dash\url::this(). '/signup');
-		}
 
 	}
 }

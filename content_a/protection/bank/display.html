@@ -9,31 +9,33 @@
     <div class="c6 s12 m8">
       <div class="cbox">
         {%if dataRow.status == 'draft'%}
-        <h5 class="mB10">{%trans "Please enter your bank account number information."%}
+        <p class="mB10">
+          <b>{%trans "Please enter your bank account number information."%}</b>
           <br>
-          {%trans "This account number will be used to pay you for the support package of the institution"%}
-        </h5>
+          <small>{%trans "This account number will be used to pay you for the support package of the institution"%}</small>
+
+        </p>
 
 
         <label>{%trans "bankshaba"%}</label>
         <div class="input">
-          <input type="text" name="bankshaba" value="{{dataRow.bankshaba}}">
+          <input type="text" name="bankshaba" value="{%if dataRow.bankshaba%}{{dataRow.bankshaba}}{%else%}{{enableProtection.bankshaba}}{%endif%}">
         </div>
         <label>{%trans "bankhesab"%}</label>
         <div class="input">
-          <input type="text" name="bankhesab" value="{{dataRow.bankhesab}}">
+          <input type="text" name="bankhesab" value="{%if dataRow.bankhesab%}{{dataRow.bankhesab}}{%else%}{{enableProtection.bankhesab}}{%endif%}">
         </div>
         <label>{%trans "bankcart"%}</label>
         <div class="input">
-          <input type="text" name="bankcart" value="{{dataRow.bankcart}}">
+          <input type="text" name="bankcart" value="{%if dataRow.bankcart%}{{dataRow.bankcart}}{%else%}{{enableProtection.bankcart}}{%endif%}">
         </div>
         <label>{%trans "bankname"%}</label>
         <div class="input">
-          <input type="text" name="bankname" value="{{dataRow.bankname}}">
+          <input type="text" name="bankname" value="{%if dataRow.bankname%}{{dataRow.bankname}}{%else%}{{enableProtection.bankname}}{%endif%}">
         </div>
         <label>{%trans "bankownername"%}</label>
         <div class="input">
-          <input type="text" name="bankownername" value="{{dataRow.bankownername}}">
+          <input type="text" name="bankownername" value="{%if dataRow.bankownername%}{{dataRow.bankownername}}{%else%}{{enableProtection.bankownername}}{%endif%}">
         </div>
 
         <div class="txtRa">
@@ -41,11 +43,11 @@
         </div>
         {%else%}
 
-          <div class="msg">{%trans "bankshaba"%} <b>{{dataRow.bankshaba}}</b></div>
-          <div class="msg">{%trans "bankhesab"%} <b>{{dataRow.bankhesab}}</b></div>
-          <div class="msg">{%trans "bankcart"%} <b>{{dataRow.bankcart}}</b></div>
-          <div class="msg">{%trans "bankname"%} <b>{{dataRow.bankname}}</b></div>
-          <div class="msg">{%trans "bankownername"%} <b>{{dataRow.bankownername}}</b></div>
+          <div class="msg">{%trans "bankshaba"%} <b>{%if dataRow.bankshaba%}{{dataRow.bankshaba}}{%else%}{{enableProtection.bankshaba}}{%endif%}</b></div>
+          <div class="msg">{%trans "bankhesab"%} <b>{%if dataRow.bankhesab%}{{dataRow.bankhesab}}{%else%}{{enableProtection.bankhesab}}{%endif%}</b></div>
+          <div class="msg">{%trans "bankcart"%} <b>{%if dataRow.bankcart%}{{dataRow.bankcart}}{%else%}{{enableProtection.bankcart}}{%endif%}</b></div>
+          <div class="msg">{%trans "bankname"%} <b>{%if dataRow.bankname%}{{dataRow.bankname}}{%else%}{{enableProtection.bankname}}{%endif%}</b></div>
+          <div class="msg">{%trans "bankownername"%} <b>{%if dataRow.bankownername%}{{dataRow.bankownername}}{%else%}{{enableProtection.bankownername}}{%endif%}</b></div>
 
         {%endif%}
       </div>

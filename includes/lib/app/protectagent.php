@@ -176,18 +176,23 @@ class protectagent
 			$bankownername = substr($bankownername, 0, 150);
 		}
 
-		$province = \dash\app::request('province');
-		if($province && mb_strlen($province) > 150)
-		{
-			$province = substr($province, 0, 150);
-		}
-
 		$city = \dash\app::request('city');
-		if($city && mb_strlen($city) > 150)
+		if($city && !\dash\utility\location\cites::check($city))
 		{
-			$city = substr($city, 0, 150);
+			\dash\notif::error(T_("Invalid city"), 'city');
+			return false;
 		}
 
+
+		$province = null;
+		if($city)
+		{
+			$province = \dash\utility\location\cites::get($city, 'province', 'province');
+			if(!\dash\utility\location\provinces::check($province))
+			{
+				$province = null;
+			}
+		}
 
 		$args['title']             = $title;
 		$args['type']              = $type;

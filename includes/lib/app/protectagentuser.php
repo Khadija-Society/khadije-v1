@@ -60,7 +60,7 @@ class protectagentuser
 			return false;
 		}
 
-		$list = \lib\db\protectionagentuser::get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $protection_agent_id]);
+		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $protection_agent_id]);
 
 		if(!is_array($list))
 		{

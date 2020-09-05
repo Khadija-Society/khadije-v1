@@ -43,14 +43,17 @@
       <div class="showaddressDetail" data-kerkere-content='hide'>
 
         <div class="example">
-          <label>{%trans "Province"%}</label>
-          <div class="input">
-            <input type="text" name="province" value="{{dataRow.province}}">
-          </div>
-          <label>{%trans "City"%}</label>
-          <div class="input">
-            <input type="text" name="city" value="{{dataRow.city}}">
-          </div>
+
+            <label for='city'>{%trans "City"%}</label>
+            <select name="city" class="ui dropdown select search" id="city">
+              <option value="" readonly>{%trans "Select city"%}</option>
+              {%for key, value in cityList%}
+                <option value="{{key}}" {% if dataRow.city == key %} selected {%endif%}>{{value}}</option>
+              {%endfor%}
+            </select>
+
+
+
           <label>{%trans "Address"%}</label>
           <div class="input">
             <input type="text" name="address" value="{{dataRow.address}}">

@@ -11,14 +11,14 @@
         {%if occasionDetail.subtitle%}<b class="mB20 block">{{occasionDetail.subtitle}}</b>{%endif%}
         {%if occasionDetail.startdate%}<span class="block mB10">{%trans "Start date"%}: <span class="ltr compact">{{occasionDetail.startdate | dt(null, 'date')}}</span></span>{%endif%}
         {%if occasionDetail.expiredate%}{%trans "Expire date"%}: <span class="ltr compact">{{occasionDetail.expiredate | dt(null, 'date')}}</span>{%endif%}
-        {%if occasionDetail.desc%}<p class="mTB20">{{occasionDetail.desc | nl2br}}</p>{%endif%}
+        {%if occasionDetail.desc%}<p class="mTB20 msg">{{occasionDetail.desc | nl2br}}</p>{%endif%}
 
         {%if dataDetail%}
-          <h5>اقلام این بسته</h5>
-          <ul>
-
+          <h5>{%trans "List of items in this occasion"%}</h5>
+          <ul class="mB20">
           {%for key, value in dataDetail%}
           <li class="f">
+            <div class="cauto">{{(key+1) | fitNumber}}. </div>
             <div class="c">{{value.title}}</div>
             {%if value.price%}<div class="c">{%trans "Price"%} {{value.price | fitNumber}}</div>{%endif%}
             <div class="c">{{value.desc}}</div>
@@ -34,7 +34,7 @@
           <div class="btn success block" data-ajaxify data-data='{"register": "register"}' data-method='post'>{%trans "Register"%}</div>
         </div>
         <div class="cauto mLa5">
-          <a class="btn secondary block outline" href="{{url.that}}">{%trans "Cancel"%}</a>
+          <a class="btn secondary block outline" href="{{url.this}}">{%trans "Cancel"%}</a>
         </div>
       </div>
 
