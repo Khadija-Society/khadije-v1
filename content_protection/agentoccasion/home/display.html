@@ -3,7 +3,7 @@
 
 
 {%block pageContent%}
-{{block('occasionDetailHtml')}}
+
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -57,6 +57,7 @@
     <thead>
       <tr>
         <th class="collapsing"></th>
+        <th>{%trans "Occasion"%}</th>
         <th>{%trans "Agent"%}</th>
         <th>{%trans "Request Status"%}</th>
         <th>{%trans "Count user"%}</th>
@@ -69,12 +70,12 @@
       <tr {%if value.status=='request'%} class='warning' {%elseif value.status=='reject'%} class='negative' {%elseif value.status=='accept'%} class='positive'{%endif%}>
 
         <td class="collapsing">{{value.id | fitNumber}}</td>
+        <td>{{value.occasion_title}}</td>
         <td>{{value.agent_title}}</td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
         <td>{{value.count_user | fitNumber}}</td>
-        <td class="collapsing">
+        <td class="collapsing txtL">
 
-          <a href="{{url.this}}/user?id={{value.protection_occasion_id}}&agent={{value.protection_agent_id}}" class="btn info outline mLR10">{%trans "Show users"%}</a>
           <a href="{{url.here}}/agentoccasion/detail?id={{value.id}}" class="btn pain outline mLR10">{%trans "Detail"%}</a>
 
         </td>

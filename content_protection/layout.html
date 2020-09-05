@@ -23,12 +23,15 @@
 	<div class="f">
 		<div class="c">{{occasionDetail.title}}</div>
 		<div class="c">{{occasionDetail.subtitle}}</div>
-    {%if url.child != 'agent'%}
-    <div class="cauto"><a class="btn primary" href="{{url.this}}/agent?id={{occasionDetail.id}}">{%trans "Agent registered"%}</a></div>
-    {%endif%}
+    {%if url.child == 'detail'%}
+    {%else%}
+      {%if url.child != 'agent'%}
+      <div class="cauto"><a class="btn primary" href="{{url.this}}/agent?id={{occasionDetail.id}}">{%trans "Agent registered"%}</a></div>
+      {%endif%}
 
-    {%if url.child != 'user'%}
-    <div class="cauto"><a class="btn info" href="{{url.this}}/user?id={{occasionDetail.id}}">{%trans "Users registered"%}</a></div>
+      {%if url.child != 'user'%}
+      <div class="cauto"><a class="btn info" href="{{url.this}}/user?id={{occasionDetail.id}}">{%trans "Users registered"%}</a></div>
+      {%endif%}
     {%endif%}
 
 	</div>

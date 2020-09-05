@@ -87,10 +87,15 @@ class protectionagentoccasion
 			"
 			 	protection_agent_occasion.*,
 			 	protection_agent.title AS `agent_title`,
+			 	protection_occasion.title AS `occasion_title`,
 			 	(SELECT COUNT(*) FROM protection_user_agent_occasion WHERE protection_agent_id = protection_agent.id AND protection_occasion_id = protection_agent_occasion.protection_occasion_id) AS `count_user`
 
 			 ",
-			'master_join' => "LEFT JOIN protection_agent ON protection_agent.id = protection_agent_occasion.protection_agent_id"
+			'master_join' =>
+			"
+				LEFT JOIN protection_agent ON protection_agent.id = protection_agent_occasion.protection_agent_id
+				LEFT JOIN protection_occasion ON protection_occasion.id = protection_agent_occasion.protection_occasion_id
+			"
 		];
 
 		$_options = array_merge($default_option, $_options);

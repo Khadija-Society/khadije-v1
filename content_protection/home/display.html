@@ -7,6 +7,7 @@
       <div class="f">
         <div class="c6 s12">{{block('bOccasion')}}</div>
         <div class="c6 s12">{{block('bAgent')}}</div>
+        <div class="c12 s12">{{block('bAgentOccasion')}}</div>
       </div>
   </div>
   <div class="c4">
@@ -30,6 +31,17 @@
  <div class="statistic">
   <div class="label"><i class="fs20 mRa5 sf-atom"></i></div>
   <div class="label mT10">{%trans "Occasiona"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block bAgentOccasion%}
+<a class="dcard x2" href='{{url.here}}/agentoccasion'>
+ <div class="statistic">
+  <div class="label"><i class="fs20 mRa5 sf-bolt"></i></div>
+  <div class="label mT10">{%trans "Agent Signupded list"%}</div>
  </div>
 </a>
 {%endblock%}

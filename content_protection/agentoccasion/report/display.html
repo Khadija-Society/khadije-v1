@@ -1,0 +1,25 @@
+{%extends display.admin%}
+{%use 'content_a/protection/pageStep.html' %}
+
+{%block pageContent%}
+{{block ('pageStep')}}
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6 s12 m8">
+       <div class="cbox">
+        <div class="msg">
+          {%trans "Please provide your written report on the process and details of the distribution of the institution's support packages to the persons covered by your announcement."%}
+        </div>
+        <textarea name="report" placeholder='{%trans "Type here"%} ...' class="txt" rows="15">{{dataRow.report}}</textarea>
+        <footer class="txtRa">
+          <button class="btn primary mT10">{%trans "Send report"%}</button>
+        </footer>
+    </div>
+
+    </div>
+  </div>
+</form>
+
+
+{%endblock%}
