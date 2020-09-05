@@ -14,7 +14,7 @@ class view
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_('Back'));
 
-
+		$filterArgs  = [];
 		$search_string            = \dash\request::get('q');
 		if($search_string)
 		{
@@ -25,9 +25,27 @@ class view
 		[
 			'sort'       => \dash\request::get('sort'),
 			'order'      => \dash\request::get('order'),
-			'protection_occasion_id'      => \dash\coding::decode(\dash\request::get('id')),
-			// 'pagenation' => false,
+
 		];
+
+		if(\dash\request::get('id'))
+		{
+			$args['protection_occasion_id'] = \dash\coding::decode(\dash\request::get('id'));
+			$filterArgs[T_("Occasion")] = '';
+		}
+
+
+		if(\dash\request::get('status'))
+		{
+			$args['protection_agent_occasion.status'] = \dash\request::get('status');
+			$filterArgs[T_("Status")] = \dash\request::get('status');
+		}
+
+		if(\dash\request::get('agent'))
+		{
+			$args['protection_agent_id'] = \dash\coding::decode(\dash\request::get('agent'));
+			$filterArgs[T_("Agent")] = '';
+		}
 
 		if(!$args['order'])
 		{
@@ -41,15 +59,9 @@ class view
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);
 
-		$check_empty_datatable = $args;
-		unset($check_empty_datatable['sort']);
-		unset($check_empty_datatable['protection_occasion_id']);
-
-		unset($check_empty_datatable['order']);
-		unset($check_empty_datatable['pagenation']);
 
 		// set dataFilter
-		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $check_empty_datatable);
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);
 		\dash\data::dataFilter($dataFilter);
 
 

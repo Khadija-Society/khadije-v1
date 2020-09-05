@@ -70,9 +70,9 @@
       <tr {%if value.status=='request'%} class='warning' {%elseif value.status=='reject'%} class='negative' {%elseif value.status=='accept'%} class='positive'{%endif%}>
 
         <td class="collapsing">{{value.id | fitNumber}}</td>
-        <td>{{value.occasion_title}}</td>
-        <td>{{value.agent_title}}</td>
-        <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
+        <td><a href="{{url.this}}?id={{value.protection_occasion_id}}">{{value.occasion_title}}</a></td>
+        <td><a href="{{url.this}}?agent={{value.protection_agent_id}}">{{value.agent_title}}</a></td>
+        <td><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status%}{%trans myStatus%}</a></td>
         <td>{{value.count_user | fitNumber}}</td>
         <td class="collapsing txtL">
 
@@ -92,7 +92,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -100,7 +100,7 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
