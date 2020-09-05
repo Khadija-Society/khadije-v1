@@ -11,6 +11,13 @@ class protectiontype
 		return $result;
 	}
 
+	public static function get_all_full()
+	{
+		$query  = "SELECT protection_type.* FROM protection_type ORDER BY FIELD(protection_type.status, 'enable', 'deleted') ";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 
 	public static function get_occasion_type($_occasion_id)
 	{

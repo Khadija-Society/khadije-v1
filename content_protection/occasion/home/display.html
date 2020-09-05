@@ -38,7 +38,6 @@
 {%block htmlSearchBox%}
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
-    <input type="hidden" name="city" value="{{requestGET.city}}">
     <div class="input">
       <input type="search" name="q" occasionholder='{%trans "Search in occasion"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
@@ -56,9 +55,11 @@
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
         <th data-sort="{{sortLink.subtitle.order}}"><a href='{{sortLink.subtitle.link}}'>{%trans "Subtitle"%}</a></th>
-        <th data-sort="{{sortLink.type.order}}"><a href='{{sortLink.type.link}}'>{%trans "Type"%}</a></th>
-        <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
-        <th class="collapsing">{%trans "Detail"%}</th>
+        <th class="" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
+        <th class="collapsing">{%trans "Count item"%}</th>
+        <th class="collapsing">{%trans "Count agent register"%}</th>
+        <th class="collapsing">{%trans "Count user register"%}</th>
+        <th class="collapsing txtL">{%trans "Detail"%}</th>
       </tr>
     </thead>
 
@@ -69,10 +70,14 @@
         <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
 
         <td>{{value.subtitle}}</td>
-        <td><a href="{{url.this}}?type={{value.type}}">{{value.type}}</a></td>
+        <td >{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
 
-        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
-        <td class="collapsing">
+        <td class="collapsing">{{value.count_item | fitNumber}}</td>
+        <td class="collapsing">{{value.count_agent | fitNumber}}</td>
+        <td class="collapsing">{{value.count_user | fitNumber}}</td>
+
+
+        <td class="collapsing txtL">
           <a class="btn pain outline" href="{{url.this}}/user?id={{value.id}}">{%trans "Users"%}</a>
           <a class="btn info outline" href="{{url.this}}/agent?id={{value.id}}">{%trans "Agents"%}</a>
         </td>

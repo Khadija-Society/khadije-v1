@@ -323,6 +323,14 @@ class TransStatic
 	echo T_("contentCrm");
 	echo T_("Manage customer");
 	echo T_("AddEditLottery");
- }
+
+
+	echo T_("registring");
+	echo T_("Registring");
+	echo T_("done");
+	echo T_("Done");
+	echo T_("distribution");
+	echo T_("Distribution");
+	echo T_("deleted");
+	echo T_("Deleted");
 }
-?>

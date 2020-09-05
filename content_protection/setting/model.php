@@ -24,6 +24,7 @@ class model
 		$post =
 		[
 			'title'       => \dash\request::post('title'),
+			'status'       => \dash\request::post('status'),
 		];
 
 		if(\dash\data::editMode())

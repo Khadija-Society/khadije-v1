@@ -87,6 +87,13 @@ class occasion
 
 		$default_option =
 		[
+			'public_show_field' =>
+			"
+				protection_occasion.*,
+				(SELECT COUNT(*) FROM protection_agent_occasion WHERE protection_agent_occasion.protection_occasion_id = protection_occasion.id) AS `count_agent`,
+				(SELECT COUNT(*) FROM protection_occasion_detail WHERE protection_occasion_detail.protection_occasion_id = protection_occasion.id) AS `count_item`,
+				(SELECT COUNT(*) FROM protection_user_agent_occasion WHERE protection_user_agent_occasion.protection_occasion_id = protection_occasion.id) AS `count_user`
+			",
 			'search_field'      =>" (protection_occasion.title LIKE '%__string__%' OR protection_occasion.type LIKE '%__string__%' OR protection_occasion.subtitle LIKE '%__string__%') ",
 		];
 

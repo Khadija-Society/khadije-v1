@@ -13,7 +13,7 @@ class view
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_('Back'));
 
-		$dataTable = \lib\app\protectiontype::get_all();
+		$dataTable = \lib\app\protectiontype::get_all_full();
 		\dash\data::dataTable($dataTable);
 	}
 

@@ -95,7 +95,7 @@ class protectiontype
 				}
 				else
 				{
-					\dash\notif::error(T_("This user already add to your agent list"), 'mobile');
+					\dash\notif::error(T_("Duplicate title"), 'mobile');
 					return false;
 				}
 			}
@@ -264,6 +264,24 @@ class protectiontype
 	{
 
 		$result            = \lib\db\protectiontype::get_all();
+		$temp              = [];
+
+		foreach ($result as $key => $value)
+		{
+			$check = self::ready($value);
+			if($check)
+			{
+				$temp[] = $check;
+			}
+		}
+
+		return $temp;
+	}
+
+	public static function get_all_full()
+	{
+
+		$result            = \lib\db\protectiontype::get_all_full();
 		$temp              = [];
 
 		foreach ($result as $key => $value)

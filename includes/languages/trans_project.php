@@ -1040,9 +1040,11 @@ class twigTransTerms
 	echo T_("Agent type");                                                            // Line 69
 
 	//-----------------------------------content_protection/occasion/home/display.html
+	echo T_("Count agent register");                                                  // Line 59
+	echo T_("Count user register");                                                   // Line 60
 	echo T_("Users");                                                                 // Line 50
-	echo T_("Agents");                                                                // Line 77
-	echo T_("Try to start with add new occasion!");                                   // Line 106
+	echo T_("Agents");                                                                // Line 80
+	echo T_("Try to start with add new occasion!");                                   // Line 109
 
 	//----------------------------------content_protection/occasion/agent/display.html
 
@@ -1061,10 +1063,10 @@ class twigTransTerms
 	echo T_("Set type list first");                                                   // Line 82
 
 	//--------------------------------------------content_protection/home/display.html
-	echo T_("Last protection agetn");                                                 // Line 15
-	echo T_("Occasiona");                                                             // Line 33
-	echo T_("Agent Signupded list");                                                  // Line 44
-	echo T_("Protection agent");                                                      // Line 57
+	echo T_("Last protection agetn");                                                 // Line 16
+	echo T_("Occasiona");                                                             // Line 34
+	echo T_("Agent Signupded list");                                                  // Line 45
+	echo T_("Protection agent");                                                      // Line 69
 
 	//--------------------------------------------------content_protection/layout.html
 	echo T_("Occasion list");                                                         // Line 8

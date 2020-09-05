@@ -18,10 +18,25 @@
               <input type="text" id="title" name="title" value="{{dataRow.title}}" maxlength="50">
             </div>
 
+            {%if editMode%}
+          <label for="status">{%trans "Status"%}</label>
+          <div class="f mB10">
+           <div class="radio3 green">
+            <input type="radio" id="r-enable" name="status"  value="enable" {%if dataRow.status == 'enable' %}checked{%endif%}>
+            <label for="r-enable">{%trans "Enable"%}</label>
+           </div>
+
+           <div class="radio3 green">
+            <input type="radio" id="r-deleted" name="status"  value="deleted" {%if dataRow.status == 'deleted' %}checked{%endif%}>
+            <label for="r-deleted">{%trans "Deleted"%}</label>
+           </div>
+          </div>
+          {%endif%}
+
 
 
         <footer class="txtRa">
-          {%if editMode%}<a class="btn secondary outline" href="{{url.that}}?id={{requestGET.id}}">{%trans "Cancel"%}</a>{%endif%}
+          {%if editMode%}<a class="btn secondary outline" href="{{url.that}}">{%trans "Cancel"%}</a>{%endif%}
           <button class="btn primary">{%if editMode%}{%trans "Edit"%}{%else%}{%trans "Add"%}{%endif%}</button>
          </footer>
 
@@ -35,16 +50,19 @@
         <table class="tbl1 v4">
           <tbody class="fs14">
           {%for key, value in dataTable%}
-            <tr>
+            <tr {%if value.status == 'deleted'%} class="negative" {%else%}{%endif%}>
               <td class="collapsing">{{(key + 1) | fitNumber}}</td>
               <td>
-
+                {%if value.status == 'deleted'%}
+                  <a href="{{url.that}}?id={{value.id}}" class="fc-mute"> <i class="sf-edit"></i> {{value.title}}</a>
+                {%else%}
                   <a href="{{url.that}}?id={{value.id}}"> <i class="sf-edit"></i> {{value.title}}</a>
+                {%endif%}
 
 
               </td>
+              <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
 
-              <td class="collapsing"><div data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'><i class="sf-trash fc-red"></i></div></td>
             </tr>
           {%endfor%}
           </tbody>
