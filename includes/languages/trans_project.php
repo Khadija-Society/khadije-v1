@@ -67,7 +67,7 @@ class twigTransTerms
 	//-----------------------------------------content_agent/send/billing/display.html
 	echo T_("Pay amount");                                                            // Line 19
 	echo T_("Toman");                                                                 // Line 174
-	echo T_("Pay date");                                                              // Line 28
+	echo T_("Pay date");                                                              // Line 14
 	echo T_("Bank");                                                                  // Line 54
 	echo T_("Hesab");                                                                 // Line 39
 	echo T_("Shaba");                                                                 // Line 117
@@ -215,7 +215,7 @@ class twigTransTerms
 	echo T_("Please choose city");                                                    // Line 60
 
 	//-------------------------------------------------content_agent/home/display.html
-	echo T_("Reports");                                                               // Line 46
+	echo T_("Reports");                                                               // Line 56
 	echo T_("Agent Place");                                                           // Line 16
 	echo T_("Assessment Item");                                                       // Line 14
 	echo T_("Servant");                                                               // Line 80
@@ -730,6 +730,10 @@ class twigTransTerms
 	echo T_("It is not possible to register or edit people on this occasion");        // Line 28
 	echo T_("Cancel");                                                                // Line 331
 
+	//-------------------------------------------content_a/protection/pay/display.html
+	echo T_("Total price payed");                                                     // Line 17
+	echo T_("Tracking number");                                                       // Line 23
+
 	//---------------------------------------content_a/protection/gallery/display.html
 	echo T_("Please provide a visual report of the process and details of the distribution of the organization's support packages to the people covered by your announcement.");// Line 12
 	echo T_("You can upload photos and videos of the distribution of support packages to your covered people here");// Line 14
@@ -769,8 +773,9 @@ class twigTransTerms
 
 	//----------------------------------------------content_a/protection/pageStep.html
 	echo T_("Bank account detail");                                                   // Line 28
-	echo T_("Introducing people");                                                    // Line 37
-	echo T_("Image report");                                                          // Line 55
+	echo T_("Introducing people");                                                    // Line 47
+	echo T_("Image report");                                                          // Line 65
+	echo T_("Pay detail");                                                            // Line 38
 
 	//----------------------------------------content_a/protection/signup/display.html
 	echo T_("List of items in this occasion");                                        // Line 17
@@ -1087,6 +1092,9 @@ class twigTransTerms
 	echo T_("Edit Address detail");                                                   // Line 42
 
 	//--------------------------content_protection/agentoccasion/occasion/display.html
+
+	//-------------------------------content_protection/agentoccasion/pay/display.html
+	echo T_("This text will be show to agent");                                       // Line 28
 
 	//---------------------------content_protection/agentoccasion/gallery/display.html
 	echo T_("No image report was sended yet");                                        // Line 29
