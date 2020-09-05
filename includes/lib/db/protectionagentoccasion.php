@@ -82,7 +82,7 @@ class protectionagentoccasion
 
 		$default_option =
 		[
-			'search_field'      =>" (protection_agent.title LIKE '%__string__%') ",
+			'search_field'      =>" (protection_agent.title LIKE '%__string__%' or  protection_occasion.title LIKE '%__string__%' ) ",
 			'public_show_field' =>
 			"
 			 	protection_agent_occasion.*,

@@ -71,7 +71,14 @@ class protectionagent
 		$default_option =
 		[
 			'search_field'      =>" (protection_agent.title LIKE '%__string__%' OR users.mobile LIKE '%__string__%' OR protection_agent.type LIKE '%__string__%') ",
-			'public_show_field' => " protection_agent.*, users.mobile ",
+			'public_show_field' =>
+			"
+			 protection_agent.*,
+			 users.mobile,
+			(SELECT COUNT(*) FROM protection_agent_occasion WHERE protection_agent_occasion.protection_agent_id = protection_agent.id) AS `count_occasion`,
+			(SELECT COUNT(*) FROM protection_user_agent_occasion WHERE protection_user_agent_occasion.protection_agent_id = protection_agent.id) AS `count_user`
+
+			 ",
 			'master_join' => "LEFT JOIN users ON users.id = protection_agent.user_id"
 		];
 

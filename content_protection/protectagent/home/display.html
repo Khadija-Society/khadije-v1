@@ -55,8 +55,11 @@
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
         <th data-sort="{{sortLink.type.order}}"><a href='{{sortLink.type.link}}'>{%trans "Type"%}</a></th>
         <th>{%trans "Mobile"%}</th>
-        <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
-        <th class="collapsing">{%trans "Activity"%}</th>
+        <th class="" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
+        <th class="">{%trans "City"%}</th>
+        <th class="">{%trans "Count occasion"%}</th>
+        <th class="">{%trans "Count user"%}</th>
+        <th class="collapsing">{%trans "Detail"%}</th>
       </tr>
     </thead>
     <tbody>
@@ -65,8 +68,11 @@
         <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a></td>
         <td><a href="{{url.this}}?type={{value.type}}">{{value.type}}</a></td>
         <td>{{value.mobile | fitNumber('mobile')}}</td>
-        <td class="collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
-        <td class="collapsing"><a class="btn pain outline" href="{{url.this}}/activity?agentid={{value.id}}">{%trans "Activity"%}</a></td>
+        <td class="">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
+        <td class="">{{value.location_string}}</td>
+        <td class="">{{value.count_occasion | fitNumber}}</td>
+        <td class="">{{value.count_user | fitNumber}}</td>
+        <td class="collapsing"><a href="{{url.here}}/agentoccasion?agent={{value.id}}" class="btn outline pain">{%trans "Detail"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>

@@ -369,7 +369,7 @@ class protectagent
 		if(!\dash\app::isset_request('bankcart')) unset($args['bankcart']);
 		if(!\dash\app::isset_request('bankname')) unset($args['bankname']);
 		if(!\dash\app::isset_request('bankownername')) unset($args['bankownername']);
-		if(!\dash\app::isset_request('province')) unset($args['province']);
+		if(!\dash\app::isset_request('city')) unset($args['province']);
 		if(!\dash\app::isset_request('city')) unset($args['city']);
 
 
@@ -394,6 +394,7 @@ class protectagent
 	public static function ready($_data)
 	{
 		$result = [];
+		$result['location_string'] = [];
 		foreach ($_data as $key => $value)
 		{
 
@@ -418,6 +419,18 @@ class protectagent
 					}
 					break;
 
+				case 'province':
+					$result[$key] = $value;
+					$result['province_name'] = \dash\utility\location\provinces::get_localname($value);
+					$result['location_string'][2] = $result['province_name'];
+					break;
+
+				case 'city':
+					$result[$key] = $value;
+					$result['city_name'] = \dash\utility\location\cites::get_localname($value);
+					$result['location_string'][3] = $result['city_name'];
+					break;
+
 
 				case 'file':
 					if(!\dash\url::content())
@@ -437,6 +450,9 @@ class protectagent
 					break;
 			}
 		}
+
+		$result['location_string'] = implode(' - ', $result['location_string']);
+
 
 		return $result;
 	}
