@@ -7,7 +7,8 @@
  <div class="c8 m8 s12">
 {%if occasionList and haveUnregisteredOccasion%}
 <p class="msg fs14">
-    مناسبت جدید
+    {%trans "New occassion"%}
+
   </p>
 <div class="f">
   {%for key, value in occasionList%}
@@ -25,7 +26,7 @@
 
 {%if registeredOccasion%}
   <p class="msg fs14">
-    شما در مناسبت‌های زیر شرکت کرده اید
+    {%trans "Registered occassion"%}
   </p>
 <div class="f">
   {%for key, value in registeredOccasion%}
@@ -40,9 +41,9 @@
 {%endif%}
 
 {%if not registeredOccasion and not occasionList%}
-<div class="msg info fs14 txtB txtC">در حال حاظر هیچ برنامه حمایتی از طرف موسسه اعلام نشده است
+<div class="msg info fs14 txtB txtC">{%trans "No support program has been announced by the institute at this time"%}
   <br>
-  لطفا اخبار موسسه را پیگیری کنید تا در صورتی که طی مناسبتی توزیع بسته‌های معیشتی توسط موسسه آغاز شد از طیق همین صفحه مراحل را تکمیل کنید
+  {%trans "Please follow the news of the institute to complete the steps through this page if the distribution of livelihood packages by the institute started on the occasion."%}
 </div>
 {%endif%}
 

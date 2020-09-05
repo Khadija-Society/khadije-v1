@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title("ثبت اطلاعات افراد تحت پوشش");
+		\dash\data::page_title(T_("Record the information of the people covered"));
 
 
 		\dash\data::badge_link(\dash\url::this());

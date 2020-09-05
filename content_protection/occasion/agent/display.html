@@ -58,8 +58,8 @@
       <tr>
         <th class="collapsing"></th>
         <th>{%trans "Agent"%}</th>
-        <th>{%trans "Status"%}</th>
-        <th>تعداد افراد معرفی شده</th>
+        <th>{%trans "Request Status"%}</th>
+        <th>{%trans "Count user"%}</th>
         <th class="collapsing"></th>
       </tr>
     </thead>
@@ -74,8 +74,9 @@
         <td>{{value.count_user | fitNumber}}</td>
         <td class="collapsing">
 
-          <a href="{{url.this}}/user?id={{value.protection_occasion_id}}&agent={{value.protection_agent_id}}" class="btn info outline mLR10">نمایش افراد</a>
-          <a class="btn pain outline" data-ajaxify data-method='post' data-data='{"type": "accept", "useragentid": "{{value.id}}"}'>نمایش جزئیات</a>
+          <a href="{{url.this}}/user?id={{value.protection_occasion_id}}&agent={{value.protection_agent_id}}" class="btn info outline mLR10">{%trans "Show users"%}</a>
+          <a href="{{url.this}}/user?id={{value.protection_occasion_id}}&agent={{value.protection_agent_id}}" class="btn pain outline mLR10">{%trans "Detail"%}</a>
+
         </td>
       </tr>
       {%endfor%}

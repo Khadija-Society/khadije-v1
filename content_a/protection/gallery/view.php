@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title("ارائه گزارش تصویزی");
+		\dash\data::page_title(T_("Report image"));
 
 
 		\dash\data::badge_link(\dash\url::this());

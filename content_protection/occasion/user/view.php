@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title("افراد معرفی شده در این مناسبت");
+		\dash\data::page_title(T_("List of people introduced in this occasion"));
 
 		\dash\data::page_pictogram('list');
 

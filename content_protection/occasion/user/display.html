@@ -6,7 +6,7 @@
 {{block('occasionDetailHtml')}}
 {%if agentDetail%}
 <div class="msg info2 fs14">
-  لیست افراد معرفی شده توسط <b>{{agentDetail.title}}</b>
+  {%trans "List of people introduced by"%} <b>{{agentDetail.title}}</b>
 </div>
 {%endif%}
 
@@ -73,7 +73,7 @@
         <th>{%trans "Name"%}</th>
         <th>{%trans "Nationalcode"%}</th>
         <th>{%trans "City"%}</th>
-        <th>افراد تحت تکفل</th>
+        <th>{%trans "Protection count"%}</th>
         <th>{%trans "Gender"%}</th>
         <th>{%trans "Married"%}</th>
         <th>{%trans "Status"%}</th>
@@ -129,6 +129,6 @@
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} هیچ کدام از نمایندگان در این مناسبت شخصی را معرفی نکرده‌اند</p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%}</p>
 {%endblock%}
 

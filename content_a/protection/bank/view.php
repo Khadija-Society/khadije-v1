@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title("اطلاعات بانکی");
+		\dash\data::page_title(T_("Bank account detail"));
 
 
 		\dash\data::badge_link(\dash\url::this());

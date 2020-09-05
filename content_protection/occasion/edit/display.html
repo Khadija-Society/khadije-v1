@@ -20,7 +20,7 @@
 
       <div class="cbox">
         <input type="hidden" name="detail" value="detail">
-        <h5>اگر میخواهید در این مناسبت بسته حمایتی توزیع کنید، آیتم‌های این بسته را وارد کنید</h5>
+        <h5>{%trans "If you want to distribute a support package on this occasion, enter the items in this package"%}</h5>
         <label for="title2">{%trans "Title"%}</label>
         <div class="input">
           <input type="text" name="dtitle">
@@ -43,7 +43,7 @@
 
       {%if dataDetail%}
       <div class="cbox">
-        <h5>اقلام موجود در سبد حمایتی این مناسبت</h5>
+        <h5>{%trans "Items in the support basket for this occasion"%}</h5>
         {%for key, value in dataDetail%}
         <div class="msg f">
           <div class="c">{{value.title}}</div>
@@ -66,7 +66,7 @@
 {%block iType%}
 {%if typeList%}
 <div class="example">
-  <h6>اعلام کنید که می‌خواهید در این مناسبت کدام قشر را مورد حمایت قرار دهید <small><a class="link" href="{{url.here}}/setting">تنظیمات</a></small></h6>
+  <h6>{%trans "Announce which group you want to support on this occasion"%} <small><a class="link" href="{{url.here}}/setting">{%trans "Setting"%}</a></small></h6>
 
 
 {%for key, value in typeList%}
@@ -79,7 +79,7 @@
 {%else%}
 <div class="msg warn2">
 
-<a class="link" href="{{url.here}}/setting">لطفا ابتدا انواع محرومیت را تنظیم کنید</a>
+<a class="link" href="{{url.here}}/setting">{%trans "Set type list first"%}</a>
 </div>
 {%endif%}
 

@@ -49,7 +49,7 @@
 
     {%if occasionList%}
     <p class="msg info2 fs14 txtB txtC">
-      لطفا اعلام کنید که می‌خواهید در کدام‌یک از مناسبت‌های زیر بسته معیشتی برای افراد تحت پوشش خود دریافت کنید
+      {%trans "Please indicate on which of the following occasions you would like to receive a subsistence package for the people you cover?"%}
     </p>
     <div class="f justify-center">
       {%for key, value in occasionList%}
@@ -64,9 +64,9 @@
     </div>
 
     {%else%}
-    <div class="msg info fs14 txtB txtC">در حال حاظر هیچ برنامه حمایتی از طرف موسسه اعلام نشده است
+    <div class="msg info fs14 txtB txtC">{%trans "No support program has been announced by the institute at this time"%}
       <br>
-      لطفا اخبار موسسه را پیگیری کنید تا در صورتی که طی مناسبتی توزیع بسته‌های معیشتی توسط موسسه آغاز شد از طیق همین صفحه مراحل را تکمیل کنید
+      {%trans "Please follow the news of the institute to complete the steps through this page if the distribution of livelihood packages by the institute started on the occasion."%}
     </div>
     {%endif%}
 

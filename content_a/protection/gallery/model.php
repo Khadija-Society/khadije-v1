@@ -35,7 +35,7 @@ class model
 		}
 		else
 		{
-			\dash\notif::warn('هیچ فایلی ارسال نشده است');
+			\dash\notif::warn(T_("No file was send"));
 			return false;
 		}
 	}
