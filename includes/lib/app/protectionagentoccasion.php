@@ -434,18 +434,68 @@ class protectionagentoccasion
 			$bankownername = substr($bankownername, 0, 150);
 		}
 
+
+		$paydate = \dash\app::request('paydate');
+		if($paydate && mb_strlen($paydate) > 100)
+		{
+			\dash\notif::error(T_("Invalid date"), 'paydate');
+			return false;
+		}
+
+		if($paydate)
+		{
+			$paydate = \dash\date::db($paydate);
+			if($paydate === false)
+			{
+				\dash\notif::error(T_("Invalid date"), 'paydate');
+				return false;
+			}
+
+			$paydate = \dash\date::force_gregorian($paydate);
+			$paydate = \dash\date::db($paydate);
+		}
+
+		$total_price = \dash\app::request('total_price');
+		if($total_price)
+		{
+			if(!is_numeric($total_price))
+			{
+				\dash\notif::error(T_("Total price must be a number"));
+				return false;
+			}
+
+			if(mb_strlen($total_price) > 15)
+			{
+				\dash\notif::error(T_("Price is out of range"));
+				return false;
+			}
+		}
+
+		$trackingnumber = \dash\app::request('trackingnumber');
+		if($trackingnumber && mb_strlen($trackingnumber) > 150)
+		{
+			\dash\notif::error(T_("Tracking number is out of range"));
+			return false;
+		}
+
+		$desc = \dash\app::request('desc');
+
 		$report = \dash\app::request('report');
 
 		$args = [];
 
 
-		$args['bankshaba']     = $bankshaba;
-		$args['bankhesab']     = $bankhesab;
-		$args['bankcart']      = $bankcart;
-		$args['bankname']      = $bankname;
-		$args['bankownername'] = $bankownername;
-		$args['bankownername'] = $bankownername;
-		$args['report']        = $report;
+		$args['bankshaba']      = $bankshaba;
+		$args['bankhesab']      = $bankhesab;
+		$args['bankcart']       = $bankcart;
+		$args['bankname']       = $bankname;
+		$args['bankownername']  = $bankownername;
+		$args['bankownername']  = $bankownername;
+		$args['report']         = $report;
+		$args['desc']           = $desc;
+		$args['paydate']        = $paydate;
+		$args['trackingnumber'] = $trackingnumber;
+		$args['total_price']    = $total_price;
 
 		return $args;
 	}
@@ -519,6 +569,14 @@ class protectionagentoccasion
 		if(!\dash\app::isset_request('bankname'))	unset($args['bankname']);
 		if(!\dash\app::isset_request('bankownername'))	unset($args['bankownername']);
 		if(!\dash\app::isset_request('report'))	unset($args['report']);
+		if(!\dash\app::isset_request('paydate'))	unset($args['paydate']);
+		if(!\dash\app::isset_request('total_price'))	unset($args['total_price']);
+		if(!\dash\app::isset_request('trackingnumber'))	unset($args['trackingnumber']);
+		if(!\dash\app::isset_request('desc'))	unset($args['desc']);
+
+
+
+
 
 		if(!empty($args))
 		{

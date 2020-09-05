@@ -1,0 +1,34 @@
+{%extends display.admin%}
+{%use 'content_a/protection/pageStep.html' %}
+
+{%block pageContent%}
+{{block ('pageStep')}}
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6 s12 m8">
+      <div class="cbox">
+
+      <p class="msg">{{dataRow.desc}}</p>
+       <label>{%trans "Pay date"%}</label>
+        <div class="input ltr">
+          <input readonly disabled="" class="datepicker" type="text" name="paydate" placeholder='{%trans "Pay date"%}' id="paydate"  value="{{dataRow.paydate}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+        </div>
+
+        <label for="itotalprice">{%trans "Total price payed"%}</label>
+        <div class="input">
+          <input readonly disabled="" type="number" name="total_price" id="itotalprice" value="{{dataRow.total_price}}">
+          <label for="itotalprice" class="addon">{%trans "Toman"%}</label>
+        </div>
+
+        <label>{%trans "Tracking number"%}</label>
+        <div class="input">
+          <input readonly disabled="" type="text" name="trackingnumber" value="{{dataRow.trackingnumber}}">
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</form>
+{%endblock%}

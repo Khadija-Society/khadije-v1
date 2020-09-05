@@ -1,0 +1,42 @@
+{%extends display.admin%}
+{%use 'content_protection/agentoccasion/pageStep.html' %}
+
+{%block pageContent%}
+{{block ('pageStep')}}
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6 s12 m8">
+      <div class="cbox">
+
+        <label>{%trans "Pay date"%}</label>
+        <div class="input ltr">
+          <input class="datepicker" type="text" name="paydate" placeholder='{%trans "Pay date"%}' id="paydate"  value="{{dataRow.paydate}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+        </div>
+
+        <label for="itotalprice">{%trans "Total price payed"%}</label>
+        <div class="input">
+          <input type="number" name="total_price" id="itotalprice" value="{{dataRow.total_price}}">
+          <label for="itotalprice" class="addon">{%trans "Toman"%}</label>
+        </div>
+
+        <label>{%trans "Tracking number"%}</label>
+        <div class="input">
+          <input type="text" name="trackingnumber" value="{{dataRow.trackingnumber}}">
+        </div>
+
+        <label for="idesc">{%trans "Description"%} <small>{%trans "This text will be show to agent"%}</small></label>
+        <textarea name="desc" placeholder='{%trans "Description"%}' class="txt" rows="3">{{dataRow.desc}}</textarea>
+
+
+        <div class="txtRa mT10">
+          <button class="btn primary">{%trans "Save"%}</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>
+{%endblock%}
+
+
