@@ -736,20 +736,20 @@ class twigTransTerms
 
 	//----------------------------------------content_a/protection/detail/display.html
 	echo T_("Expire date");                                                           // Line 34
-	echo T_("Items in this package");                                                 // Line 19
 	echo T_("The number of people announced by you on this occasion");                // Line 15
 	echo T_("Person");                                                                // Line 76
-	echo T_("Click to announce the details of the people covered");                   // Line 37
+	echo T_("You are not announce any people to this occasion");                      // Line 24
+	echo T_("Click to announce the details of the people covered");                   // Line 25
 	echo T_("Current request status");                                                // Line 21
-	echo T_("If you have completed the form of people covered by you, click to send a request for support of the institution");// Line 44
-	echo T_("Send request");                                                          // Line 45
-	echo T_("Your request has been taken by the institution on the review page.");    // Line 49
-	echo T_("If you want to add or edit the people you cover, change the status of the request to draft");// Line 51
-	echo T_("Convert to draft request");                                              // Line 53
+	echo T_("If you have completed the form of people covered by you, click to send a request for support of the institution");// Line 32
+	echo T_("Send request");                                                          // Line 33
+	echo T_("Your request has been taken by the institution on the review page.");    // Line 37
+	echo T_("If you want to add or edit the people you cover, change the status of the request to draft");// Line 39
+	echo T_("Convert to draft request");                                              // Line 41
 
 	//------------------------------------------content_a/protection/bank/display.html
-	echo T_("Please enter your bank account number information.");                    // Line 12
-	echo T_("This account number will be used to pay you for the support package of the institution");// Line 14
+	echo T_("Please enter your bank account number information.");                    // Line 13
+	echo T_("This account number will be used to pay you for the support package of the institution");// Line 15
 	echo T_("bankshaba");                                                             // Line 13
 	echo T_("bankhesab");                                                             // Line 17
 	echo T_("bankcart");                                                              // Line 21
@@ -757,8 +757,8 @@ class twigTransTerms
 	echo T_("bankownername");                                                         // Line 29
 
 	//------------------------------------------content_a/protection/home/display.html
-	echo T_("New occassion");                                                         // Line 10
-	echo T_("Registered occassion");                                                  // Line 29
+	echo T_("Registered occassion");                                                  // Line 10
+	echo T_("New occassion");                                                         // Line 24
 	echo T_("No support program has been announced by the institute at this time");   // Line 67
 	echo T_("Please follow the news of the institute to complete the steps through this page if the distribution of livelihood packages by the institute started on the occasion.");// Line 69
 
@@ -773,6 +773,7 @@ class twigTransTerms
 	echo T_("Image report");                                                          // Line 47
 
 	//----------------------------------------content_a/protection/signup/display.html
+	echo T_("List of items in this occasion");                                        // Line 17
 	echo T_("Register");                                                              // Line 30
 	echo T_("Please indicate on which of the following occasions you would like to receive a subsistence package for the people you cover?");// Line 52
 
@@ -780,8 +781,6 @@ class twigTransTerms
 	echo T_("Name & family");                                                         // Line 84
 	echo T_("Protection count");                                                      // Line 91
 	echo T_("Choose type");                                                           // Line 102
-	echo T_("Can not add or edit any user to this occasion");                         // Line 104
-	echo T_("Married");                                                               // Line 23
 
 	//-------------------------------------------content_a/service/detail/display.html
 	echo T_("Save all");                                                              // Line 78
