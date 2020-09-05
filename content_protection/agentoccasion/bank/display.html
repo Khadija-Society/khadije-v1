@@ -10,26 +10,28 @@
       <div class="cbox">
 
 
+
         <label>{%trans "bankshaba"%}</label>
         <div class="input">
-          <input type="text" name="bankshaba" value="{{dataRow.bankshaba}}">
+          <input type="text" name="bankshaba" value="{%if dataRow.bankshaba%}{{dataRow.bankshaba}}{%else%}{{dataRow.agent_detail.bankshaba}}{%endif%}">
         </div>
         <label>{%trans "bankhesab"%}</label>
         <div class="input">
-          <input type="text" name="bankhesab" value="{{dataRow.bankhesab}}">
+          <input type="text" name="bankhesab" value="{%if dataRow.bankhesab%}{{dataRow.bankhesab}}{%else%}{{dataRow.agent_detail.bankhesab}}{%endif%}">
         </div>
         <label>{%trans "bankcart"%}</label>
         <div class="input">
-          <input type="text" name="bankcart" value="{{dataRow.bankcart}}">
+          <input type="text" name="bankcart" value="{%if dataRow.bankcart%}{{dataRow.bankcart}}{%else%}{{dataRow.agent_detail.bankcart}}{%endif%}">
         </div>
         <label>{%trans "bankname"%}</label>
         <div class="input">
-          <input type="text" name="bankname" value="{{dataRow.bankname}}">
+          <input type="text" name="bankname" value="{%if dataRow.bankname%}{{dataRow.bankname}}{%else%}{{dataRow.agent_detail.bankname}}{%endif%}">
         </div>
         <label>{%trans "bankownername"%}</label>
         <div class="input">
-          <input type="text" name="bankownername" value="{{dataRow.bankownername}}">
+          <input type="text" name="bankownername" value="{%if dataRow.bankownername%}{{dataRow.bankownername}}{%else%}{{dataRow.agent_detail.bankownername}}{%endif%}">
         </div>
+
 
         <div class="txtRa">
           <button class="btn primary">{%trans "Save"%}</button>
@@ -40,3 +42,5 @@
   </div>
 </form>
 {%endblock%}
+
+

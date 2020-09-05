@@ -134,7 +134,13 @@ class protectionagentoccasion
 			return false;
 		}
 
+
 		$result = self::ready($get);
+		if(isset($result['protection_agent_id']) && $result['protection_agent_id'])
+		{
+			$get_agent = \lib\app\protectagent::get($result['protection_agent_id']);
+			$result['agent_detail'] = $get_agent;
+		}
 
 		return $result;
 	}

@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title(T_("Register user"));
+		\dash\data::page_title(T_("Registered user on this occasion"));
 
 
 		\dash\data::badge_link(\dash\url::this());
