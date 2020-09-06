@@ -32,6 +32,88 @@ class view
 
 		$summaryArgs['total_price'] = ['is', 'not null'];
 
+		$startdate = null;
+		$enddate   = null;
+
+		$get_date_url = [];
+		if(\dash\request::get('startdate'))
+		{
+			$startdate                 = \dash\request::get('startdate');
+			$get_date_url['startdate'] = $startdate;
+			$startdate                 = \dash\utility\convert::to_en_number($startdate);
+
+			if(\dash\utility\jdate::is_jalali($startdate))
+			{
+				$startdate = \dash\utility\jdate::to_gregorian($startdate);
+			}
+			\dash\data::startdateEn($startdate);
+
+
+		}
+
+		if(\dash\request::get('enddate'))
+		{
+			$enddate                 = \dash\request::get('enddate');
+			$get_date_url['enddate'] = $enddate;
+			$enddate                 = \dash\utility\convert::to_en_number($enddate);
+			if(\dash\utility\jdate::is_jalali($enddate))
+			{
+				$enddate = \dash\utility\jdate::to_gregorian($enddate);
+			}
+			\dash\data::enddateEn($enddate);
+
+		}
+
+
+		if($startdate && $enddate)
+		{
+			$args['1.1'] = [" = 1.1 ", " AND DATE(protection_agent_occasion.paydate) >= '$startdate' AND DATE(protection_agent_occasion.paydate) <= '$enddate'  "];
+			$summaryArgs['1.1'] = [" = 1.1 ", " AND DATE(protection_agent_occasion.paydate) >= '$startdate' AND DATE(protection_agent_occasion.paydate) <= '$enddate'  "];
+
+		}
+		elseif($startdate)
+		{
+			$args['DATE(protection_agent_occasion.paydate)'] = [">=", " '$startdate' "];
+			$summaryArgs['DATE(protection_agent_occasion.paydate)'] = [">=", " '$startdate' "];
+		}
+		elseif($enddate)
+		{
+			$args['DATE(protection_agent_occasion.paydate)'] = ["<=", " '$enddate' "];
+			$summaryArgs['DATE(protection_agent_occasion.paydate)'] = ["<=", " '$enddate' "];
+		}
+
+
+
+
+
+		if(\dash\request::get('occasiontarget'))
+		{
+			$args['protection_occasion_type.id'] = \dash\coding::decode(\dash\request::get('occasiontarget'));
+			$summaryArgs['protection_occasion_type.id'] = $args['protection_occasion_type.id'];
+			$filterArgs[T_("Occasion target")] = '';
+		}
+
+		if(\dash\request::get('city'))
+		{
+			$args['protection_agent_occasion.city'] = \dash\request::get('city');
+			$summaryArgs['protection_agent_occasion.city'] = $args['protection_agent_occasion.city'];
+			$filterArgs[T_("City")] = \dash\request::get('city');
+		}
+
+		if(\dash\request::get('agenttype'))
+		{
+			$args['protection_agent.type'] = \dash\request::get('agenttype');
+			$summaryArgs['protection_agent.type'] = $args['protection_agent.type'];
+			$filterArgs[T_("Type")] = \dash\request::get('agenttype');
+		}
+
+		if(\dash\request::get('occasiontype'))
+		{
+			$args['protection_occasion.type'] = \dash\request::get('occasiontype');
+			$summaryArgs['protection_occasion.type'] = $args['protection_occasion.type'];
+			$filterArgs[T_("Type")] = \dash\request::get('occasiontype');
+		}
+
 		if(\dash\request::get('id'))
 		{
 			$args['protection_occasion_id'] = \dash\coding::decode(\dash\request::get('id'));
@@ -72,6 +154,38 @@ class view
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);
 		\dash\data::dataFilter($dataFilter);
+
+		$agentType = \lib\app\protectiontype::get_all_full('agenttype');
+		\dash\data::agentType($agentType);
+
+		$occasionType = \lib\app\protectiontype::get_all_full('occasiontype');
+		\dash\data::occasionType($occasionType);
+
+		$occasionTarget = \lib\app\protectiontype::get_all_full('occasiontarget');
+		\dash\data::occasionTarget($occasionTarget);
+
+
+		$cityList    = \dash\utility\location\cites::$data;
+		$proviceList = \dash\utility\location\provinces::key_list('localname');
+
+		$new = [];
+		foreach ($cityList as $key => $value)
+		{
+			$temp = '';
+
+			if(isset($value['province']) && isset($proviceList[$value['province']]))
+			{
+				$temp .= $proviceList[$value['province']]. ' - ';
+			}
+			if(isset($value['localname']))
+			{
+				$temp .= $value['localname'];
+			}
+			$new[$key] = $temp;
+		}
+		asort($new);
+
+		\dash\data::cityList($new);
 
 
 	}

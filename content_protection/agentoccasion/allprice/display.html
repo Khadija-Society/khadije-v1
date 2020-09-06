@@ -6,52 +6,52 @@
 
 <div class="f">
 
-      <div class="c6 s6">
-        <a class="dcard">
-          <div class="statistic sm teal">
-            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Count"%}</div>
-            <div class="value ">{{summaryDetail.count | fitNumber}}</div>
-          </div>
-        </a>
+  <div class="c6 s6">
+    <a class="dcard">
+      <div class="statistic sm teal">
+        <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Count"%}</div>
+        <div class="value ">{{summaryDetail.count | fitNumber}}</div>
       </div>
+    </a>
+  </div>
 
 
-      <div class="c6 s6">
-        <a class="dcard">
-          <div class="statistic sm teal">
-            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total price"%}</div>
-            <div class="value ">{{summaryDetail.total_price | fitNumber}}</div>
-          </div>
-        </a>
+  <div class="c6 s6">
+    <a class="dcard">
+      <div class="statistic sm teal">
+        <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total price"%}</div>
+        <div class="value ">{{summaryDetail.total_price | fitNumber}}</div>
       </div>
+    </a>
+  </div>
 
 </div>
 
 
 {%if dataTable%}
- {%if dataFilter%}
+{%if dataFilter%}
 
-  {{block('htmlSearchBox')}}
-  {{block('htmlTable')}}
-  {{block('htmlFilter')}}
+{{block('htmlSearchBox')}}
+{{block('htmlTable')}}
+{{block('htmlFilter')}}
 
- {%else%}
-
-  {{block('htmlSearchBox')}}
-  {{block('htmlTable')}}
-
- {%endif%}
 {%else%}
- {%if dataFilter%}
 
-  {{block('htmlSearchBox')}}
-  {{block('htmlFilterNoResult')}}
+{{block('htmlSearchBox')}}
+{{block('htmlTable')}}
 
- {%else%}
+{%endif%}
+{%else%}
+{%if dataFilter%}
 
-  {{block('htmlStartAddNew')}}
+{{block('htmlSearchBox')}}
+{{block('htmlFilterNoResult')}}
 
- {%endif%}
+{%else%}
+
+{{block('htmlStartAddNew')}}
+
+{%endif%}
 {%endif%}
 
 {%endblock%}
@@ -61,11 +61,82 @@
 
 {%block htmlSearchBox%}
 <div class="cbox fs12">
-  <form method="get" action='{{url.that}}'>
-    <input type="hidden" name="id" value="{{requestGET.id}}">
-    <div class="input">
-      <input type="search" name="q" occasionholder='{%trans "Search in occasion"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
-      <button class="addon btn ">{%trans "Search" %}</button>
+  <form method="get"  autocomplete="off" action="{{url.that}}">
+
+    <div class="f">
+
+      <div class="c s12 mB5 pRa5">
+        <div class="input">
+          <label data-kerkere=".showAdvanceFilter" data-kerkere-icon class="addon">{%trans "Advance filter"%}</label>
+          <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus>
+        </div>
+      </div>
+
+      <div class="cauto s12 mB5">
+        <button class="btn block">{%trans "Search" %}</button>
+      </div>
+
+    </div>
+
+    <div class="showAdvanceFilter" {%if requestGET%} {%else%}  data-kerkere-content='hide'  {%endif%}>
+
+      <div class="f">
+        <div class="c6 s12 mB5 pRa5">
+          <label>{%trans "Start date"%}</label>
+          <div class="input ltr">
+            <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+          </div>
+        </div>
+
+
+        <div class="c6 s12 mB5 pRa5">
+          <label>{%trans "End date"%}</label>
+          <div class="input ltr">
+            <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+          </div>
+        </div>
+      </div>
+
+      <label for='city'>{%trans "City"%}</label>
+      <select name="city" class="ui dropdown select search" id="city">
+        <option value="" readonly>{%trans "Select city"%}</option>
+        {%for key, value in cityList%}
+        <option value="{{key}}" {% if key == requestGET.city %} selected {%endif%}>{{value}}</option>
+        {%endfor%}
+      </select>
+
+      <label for='agenttype'>{%trans "Agent type"%}</label>
+      <select name="agenttype" class="ui dropdown select search" id="agenttype">
+        <option value="" readonly>{%trans "Select one item"%}</option>
+        {%for key, value in agentType%}
+        <option value="{{value.title}}" {% if value.title == requestGET.agenttype %} selected {%endif%}>{{value.title}}</option>
+        {%endfor%}
+      </select>
+
+        <label for='occasiontarget'>{%trans "Occasion target"%}</label>
+      <select name="occasiontarget" class="ui dropdown select search" id="occasiontarget">
+        <option value="" readonly>{%trans "Select one item"%}</option>
+        {%for key, value in occasionTarget%}
+        <option value="{{value.id}}" {% if value.id == requestGET.occasiontarget %} selected {%endif%}>{{value.title}}</option>
+        {%endfor%}
+      </select>
+
+        <label for='occasiontype'>{%trans "Occasion type"%}</label>
+      <select name="occasiontype" class="ui dropdown select search" id="occasiontype">
+        <option value="" readonly>{%trans "Select one item"%}</option>
+        {%for key, value in occasionType%}
+        <option value="{{value.title}}" {% if value.title == requestGET.occasiontype %} selected {%endif%}>{{value.title}}</option>
+        {%endfor%}
+      </select>
+
+      <div class="txtRa">
+        {%if requestGET%}
+        <a class="btn" href="{{url.that}}">{%trans "Clear filter"%}</a>
+        {%endif%}
+        <button class="btn primary">{%trans "Apply"%}</button>
+      </div>
+
+
     </div>
   </form>
 </div>
@@ -76,13 +147,15 @@
 
 <div class="tblBox">
 
- <table class="tbl1 v1 cbox fs12">
+  <table class="tbl1 v1 cbox fs12">
     <thead>
       <tr>
         <th class="collapsing"></th>
         <th class="collapsing">{%trans "Occasion"%}</th>
         <th class="collapsing">{%trans "Agent"%}</th>
 
+
+        <th>{%trans "Pay date"%}</th>
         <th>{%trans "Price payed"%}</th>
 
         <th class="collapsing"></th>
@@ -97,6 +170,7 @@
         <td class="collapsing"><a href="{{url.that}}?id={{value.protection_occasion_id}}">{{value.occasion_title}}</a></td>
         <td class="collapsing"><a href="{{url.that}}?agent={{value.protection_agent_id}}">{{value.agent_title}}</a></td>
 
+        <td>{{value.paydate | dt(null, 'date')}}</td>
         <td>{{value.total_price | fitNumber}}</td>
         <td class="collapsing txtL">
 
@@ -108,7 +182,7 @@
     </tbody>
   </table>
 </div>
-  {%include display.pagination%}
+{%include display.pagination%}
 
 {%endblock%}
 
