@@ -29,6 +29,9 @@ class view
 		$typeList = \lib\app\protectiontype::get_all();
 		\dash\data::typeList($typeList);
 
+		$occasionTypeList = \lib\app\protectiontype::get_all('occasiontype');
+		\dash\data::occasionTypeList($occasionTypeList);
+
 		$occasionType = \lib\app\protectiontype::occasion_type(\dash\request::get('id'));
 		if(!is_array($occasionType))
 		{

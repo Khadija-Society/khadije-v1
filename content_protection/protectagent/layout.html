@@ -31,10 +31,9 @@
   <label for="type">{%trans "Type"%}</label>
   <select name="type" class="ui dropdown select">
     <option value="" >{%trans "Please select one item"%}</option>
-    <option value="موسسه" {%if dataRow.type == 'موسسه'  %}selected {%endif%}>موسسه</option>
-    <option value="مسجد" {%if dataRow.type == 'مسجد'  %}selected {%endif%}>مسجد</option>
-    <option value="نهاد" {%if dataRow.type == 'نهاد'  %}selected {%endif%}>نهاد</option>
-    <option value="ارگان" {%if dataRow.type == 'ارگان'  %}selected {%endif%}>ارگان</option>
+    {%for key, value in agentType%}
+    <option value="{{value.title}}" {%if dataRow.type == value.title  %} selected {%endif%}>{{value.title}}</option>
+    {%endfor%}
   </select>
 </div>
 {%endblock%}

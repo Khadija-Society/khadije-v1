@@ -64,6 +64,18 @@
 
 
 {%block iType%}
+{%if occasionTypeList%}
+<label for="occasiontypelist">{%trans "Occasiontype"%}</label>
+<div>
+  <select class="ui dropdown" name="type">
+    <option value="">{%trans "Please select one item"%}</option>
+    {%for key, value in occasionTypeList%}
+      <option value="{{value.title}}" {%if dataRow.type == value.title%} selected {%endif%}>{{value.title}}</option>
+    {%endfor%}
+  </select>
+</div>
+{%endif%}
+
 {%if typeList%}
 <div class="example">
   <h6>{%trans "Announce which group you want to support on this occasion"%} <small><a class="link" href="{{url.here}}/setting">{%trans "Setting"%}</a></small></h6>

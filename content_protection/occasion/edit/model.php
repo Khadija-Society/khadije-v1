@@ -32,6 +32,7 @@ class model
 			[
 				'type_list'  => \dash\request::post('type_list'), // array
 				'title'      => \dash\request::post('title'),
+				'type'      => \dash\request::post('type'),
 				'subtitle'   => \dash\request::post('subtitle'),
 				'startdate'  => \dash\request::post('startdate'),
 				'expiredate' => \dash\request::post('expiredate'),

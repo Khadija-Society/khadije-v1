@@ -14,6 +14,11 @@ class view
 
 		\dash\data::badge_text(T_('Back to list of protect agent'));
 
+
+		$agentType = \lib\app\protectiontype::get_all('agenttype');
+		\dash\data::agentType($agentType);
+
+
 		$id     = \dash\request::get('id');
 		$result = \lib\app\protectagent::get($id);
 
