@@ -1,0 +1,65 @@
+{%extends 'content_protection/layout.html'%}
+{%use 'content_protection/report/pageStep.html'%}
+
+
+
+{%block pageContent%}
+{{block('pageStep')}}
+<div class="f">
+  <div class="c6 s12">
+    <div id="chartdivcount" class="chart"></div>
+    <div class="tblBox">
+      <table class="tbl1 v5">
+        <thead>
+          <tr>
+            <th>{%trans "Type"%}</th>
+            <th>{%trans "Count"%}</th>
+          </tr>
+        </thead>
+        <tbody class="fs14">
+          {%for key, value in reportDetail.table_count%}
+          <tr>
+            <td>{{value.type}}</td>
+            <td>{{value.count | fitNumber}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="c6 s12">
+    <div class="mLa5">
+
+    <div id="chartdivprice" class="chart"></div>
+     <div class="tblBox">
+      <table class="tbl1 v5">
+        <thead>
+          <tr>
+            <th>{%trans "Type"%}</th>
+            <th>{%trans "Total price"%}</th>
+          </tr>
+        </thead>
+        <tbody class="fs14">
+          {%for key, value in reportDetail.table_price%}
+          <tr>
+            <td>{{value.type}}</td>
+            <td>{{value.total_price | fitNumber}} <small>{%trans "Toman"%}</small></td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+{%endblock%}
+
+
+
+{%block foot_js%}
+<script>
+{%include 'content_protection/report/home/chart.js'%}
+</script>
+{%endblock%}

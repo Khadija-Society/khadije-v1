@@ -1,0 +1,74 @@
+{%block pageStep%}
+
+
+<div class="f">
+	<div class="c s4">
+		<a class="dcard {%if not url.child %}active{%endif%}" href='{{url.this}}'>
+			<div class="statistic sm txtC">
+				<div class="lable mB10">{%trans "Report"%}</div>
+				<div class="lable fs14 txtB">{%trans "Occasion type"%}</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="c s4">
+		<a class="dcard {%if url.child == 'occasiontarget'%}active{%endif%}" href='{{url.this}}/occasiontarget'>
+			<div class="statistic sm txtC">
+				<div class="lable mB10">{%trans "Report"%}</div>
+				<div class="lable fs14 txtB">{%trans "Occasion target"%}</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="c s4">
+		<a class="dcard {%if url.child == 'agenttype'%}active{%endif%}" href='{{url.this}}/agenttype'>
+			<div class="statistic sm txtC">
+				<div class="lable mB10">{%trans "Report"%}</div>
+				<div class="lable fs14 txtB">{%trans "Agent type"%}</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="c s4">
+		<a class="dcard {%if url.child == 'province'%}active{%endif%}" href='{{url.this}}/province'>
+			<div class="statistic sm txtC">
+				<div class="lable mB10">{%trans "Report"%}</div>
+				<div class="lable fs14 txtB">{%trans "Group by Province"%}</div>
+			</div>
+		</a>
+	</div>
+
+
+	<div class="c s4">
+		<a class="dcard {%if url.child == 'register'%}active{%endif%}" href='{{url.this}}/register'>
+			<div class="statistic sm txtC">
+				<div class="lable mB10">{%trans "Report"%}</div>
+				<div class="lable fs14 txtB">{%trans "Registrer user"%}</div>
+			</div>
+		</a>
+	</div>
+
+
+	<div class="c s4">
+		<a class="dcard {%if url.child == 'month'%}active{%endif%}" href='{{url.this}}/month'>
+			<div class="statistic sm txtC">
+				<div class="lable mB10">{%trans "Report"%}</div>
+				<div class="lable fs14 txtB">{%trans "Group by month"%}</div>
+			</div>
+		</a>
+	</div>
+
+
+	<div class="c s4">
+		<a class="dcard {%if url.child == 'item'%}active{%endif%}" href='{{url.this}}/item'>
+			<div class="statistic sm txtC">
+				<div class="lable mB10">{%trans "Report"%}</div>
+				<div class="lable fs14 txtB">{%trans "Group by item"%}</div>
+			</div>
+		</a>
+	</div>
+
+
+</div>
+
+{%endblock%}
