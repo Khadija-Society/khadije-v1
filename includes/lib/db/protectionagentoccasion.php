@@ -149,6 +149,10 @@ class protectionagentoccasion
 			"
 			 	protection_agent_occasion.*,
 			 	protection_agent.title AS `agent_title`,
+			 	protection_agent.city AS `city`,
+			 	protection_agent.province AS `province`,
+			 	protection_agent.type AS `agent_type`,
+			 	protection_occasion.type AS `occasion_type`,
 			 	protection_occasion.title AS `occasion_title`,
 			 	(SELECT COUNT(*) FROM protection_user_agent_occasion WHERE protection_agent_id = protection_agent.id AND protection_occasion_id = protection_agent_occasion.protection_occasion_id) AS `count_user`
 

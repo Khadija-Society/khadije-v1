@@ -612,6 +612,7 @@ class protectionagentoccasion
 	public static function ready($_data)
 	{
 		$result = [];
+		$result['location_string'] = [];
 		foreach ($_data as $key => $value)
 		{
 
@@ -624,11 +625,24 @@ class protectionagentoccasion
 					break;
 
 
+				case 'province':
+					$result[$key] = $value;
+					$result['province_name'] = \dash\utility\location\provinces::get_localname($value);
+					$result['location_string'][2] = $result['province_name'];
+					break;
+
+				case 'city':
+					$result[$key] = $value;
+					$result['city_name'] = \dash\utility\location\cites::get_localname($value);
+					$result['location_string'][3] = $result['city_name'];
+					break;
+
 				default:
 					$result[$key] = $value;
 					break;
 			}
 		}
+		$result['location_string'] = implode(' - ', $result['location_string']);
 
 		return $result;
 	}

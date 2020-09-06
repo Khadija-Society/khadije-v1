@@ -112,7 +112,7 @@
         <option value="{{value.title}}" {% if value.title == requestGET.agenttype %} selected {%endif%}>{{value.title}}</option>
         {%endfor%}
       </select>
-
+          {%if false%}
         <label for='occasiontarget'>{%trans "Occasion target"%}</label>
       <select name="occasiontarget" class="ui dropdown select search" id="occasiontarget">
         <option value="" readonly>{%trans "Select one item"%}</option>
@@ -120,8 +120,9 @@
         <option value="{{value.id}}" {% if value.id == requestGET.occasiontarget %} selected {%endif%}>{{value.title}}</option>
         {%endfor%}
       </select>
-
+      {%endif%}
         <label for='occasiontype'>{%trans "Occasion type"%}</label>
+
       <select name="occasiontype" class="ui dropdown select search" id="occasiontype">
         <option value="" readonly>{%trans "Select one item"%}</option>
         {%for key, value in occasionType%}
@@ -153,6 +154,9 @@
         <th class="collapsing"></th>
         <th class="collapsing">{%trans "Occasion"%}</th>
         <th class="collapsing">{%trans "Agent"%}</th>
+        <th class="collapsing">{%trans "City"%}</th>
+        <th class="collapsing">{%trans "Agent type"%}</th>
+        <th class="collapsing">{%trans "Occasion type"%}</th>
 
 
         <th>{%trans "Pay date"%}</th>
@@ -169,6 +173,9 @@
         <td class="collapsing">{{value.id | fitNumber}}</td>
         <td class="collapsing"><a href="{{url.that}}?id={{value.protection_occasion_id}}">{{value.occasion_title}}</a></td>
         <td class="collapsing"><a href="{{url.that}}?agent={{value.protection_agent_id}}">{{value.agent_title}}</a></td>
+        <td class="collapsing"><a href="{{url.that}}?city={{value.city}}">{{value.location_string}}</a></td>
+        <td class="collapsing"><a href="{{url.that}}?agenttype={{value.agent_type}}">{{value.agent_type}}</a></td>
+        <td class="collapsing"><a href="{{url.that}}?occasiontype={{value.occasion_type}}">{{value.occasion_type}}</a></td>
 
         <td>{{value.paydate | dt(null, 'date')}}</td>
         <td>{{value.total_price | fitNumber}}</td>

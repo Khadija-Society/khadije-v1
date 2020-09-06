@@ -84,19 +84,17 @@ class view
 
 
 
-
-
-		if(\dash\request::get('occasiontarget'))
-		{
-			$args['protection_occasion_type.id'] = \dash\coding::decode(\dash\request::get('occasiontarget'));
-			$summaryArgs['protection_occasion_type.id'] = $args['protection_occasion_type.id'];
-			$filterArgs[T_("Occasion target")] = '';
-		}
+		// if(\dash\request::get('occasiontarget'))
+		// {
+		// 	$args['protection_occasion_type.id'] = \dash\coding::decode(\dash\request::get('occasiontarget'));
+		// 	$summaryArgs['protection_occasion_type.id'] = $args['protection_occasion_type.id'];
+		// 	$filterArgs[T_("Occasion target")] = '';
+		// }
 
 		if(\dash\request::get('city'))
 		{
-			$args['protection_agent_occasion.city'] = \dash\request::get('city');
-			$summaryArgs['protection_agent_occasion.city'] = $args['protection_agent_occasion.city'];
+			$args['protection_agent.city'] = \dash\request::get('city');
+			$summaryArgs['protection_agent.city'] = $args['protection_agent.city'];
 			$filterArgs[T_("City")] = \dash\request::get('city');
 		}
 
