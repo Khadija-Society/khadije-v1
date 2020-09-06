@@ -1,226 +1,65 @@
 {%extends 'content_protection/layout.html'%}
+{%use 'content_protection/report/pageStep.html'%}
 
 
 
 {%block pageContent%}
-
+{{block('pageStep')}}
 <div class="f">
-
-  <div class="c6 s6">
-    <a class="dcard">
-      <div class="statistic sm teal">
-        <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Count"%}</div>
-        <div class="value ">{{summaryDetail.count | fitNumber}}</div>
-      </div>
-    </a>
+  <div class="c6 s12">
+    <div id="chartdivcount" class="chart"></div>
+    <div class="tblBox">
+      <table class="tbl1 v5">
+        <thead>
+          <tr>
+            <th>{%trans "Type"%}</th>
+            <th>{%trans "Count"%}</th>
+          </tr>
+        </thead>
+        <tbody class="fs14">
+          {%for key, value in reportDetail.table_count%}
+          <tr>
+            <td>{{value.type}}</td>
+            <td>{{value.count | fitNumber}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
   </div>
+  <div class="c6 s12">
+    <div class="mLa5">
 
-
-  <div class="c6 s6">
-    <a class="dcard">
-      <div class="statistic sm teal">
-        <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total price"%}</div>
-        <div class="value ">{{summaryDetail.total_price | fitNumber}}</div>
-      </div>
-    </a>
-  </div>
-
-</div>
-
-
-{%if dataTable%}
-{%if dataFilter%}
-
-{{block('htmlSearchBox')}}
-{{block('htmlTable')}}
-{{block('htmlFilter')}}
-
-{%else%}
-
-{{block('htmlSearchBox')}}
-{{block('htmlTable')}}
-
-{%endif%}
-{%else%}
-{%if dataFilter%}
-
-{{block('htmlSearchBox')}}
-{{block('htmlFilterNoResult')}}
-
-{%else%}
-
-{{block('htmlStartAddNew')}}
-
-{%endif%}
-{%endif%}
-
-{%endblock%}
-
-
-
-
-{%block htmlSearchBox%}
-<div class="cbox fs12">
-  <form method="get"  autocomplete="off" action="{{url.that}}">
-
-    <div class="f">
-
-      <div class="c s12 mB5 pRa5">
-        <div class="input">
-          <label data-kerkere=".showAdvanceFilter" data-kerkere-icon class="addon">{%trans "Advance filter"%}</label>
-          <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus>
-        </div>
-      </div>
-
-      <div class="cauto s12 mB5">
-        <button class="btn block">{%trans "Search" %}</button>
-      </div>
-
+    <div id="chartdivprice" class="chart"></div>
+     <div class="tblBox">
+      <table class="tbl1 v5">
+        <thead>
+          <tr>
+            <th>{%trans "Type"%}</th>
+            <th>{%trans "Total price"%}</th>
+          </tr>
+        </thead>
+        <tbody class="fs14">
+          {%for key, value in reportDetail.table_price%}
+          <tr>
+            <td>{{value.type}}</td>
+            <td>{{value.total_price | fitNumber}} <small>{%trans "Toman"%}</small></td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
     </div>
 
-    <div class="showAdvanceFilter" {%if requestGET%} {%else%}  data-kerkere-content='hide'  {%endif%}>
-
-      <div class="f">
-        <div class="c6 s12 mB5 pRa5">
-          <label>{%trans "Start date"%}</label>
-          <div class="input ltr">
-            <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
-          </div>
-        </div>
-
-
-        <div class="c6 s12 mB5 pRa5">
-          <label>{%trans "End date"%}</label>
-          <div class="input ltr">
-            <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
-          </div>
-        </div>
-      </div>
-
-      <label for='province'>{%trans "Province"%}</label>
-      <select name="province" class="ui dropdown select search" id="province">
-        <option value="" readonly>{%trans "Select province"%}</option>
-        {%for key, value in provinceList%}
-        <option value="{{key}}" {% if key == requestGET.province %} selected {%endif%}>{{value}}</option>
-        {%endfor%}
-      </select>
-
-
-      <label for='city'>{%trans "City"%}</label>
-      <select name="city" class="ui dropdown select search" id="city">
-        <option value="" readonly>{%trans "Select city"%}</option>
-        {%for key, value in cityList%}
-        <option value="{{key}}" {% if key == requestGET.city %} selected {%endif%}>{{value}}</option>
-        {%endfor%}
-      </select>
-
-      <label for='agenttype'>{%trans "Agent type"%}</label>
-      <select name="agenttype" class="ui dropdown select search" id="agenttype">
-        <option value="" readonly>{%trans "Select one item"%}</option>
-        {%for key, value in agentType%}
-        <option value="{{value.title}}" {% if value.title == requestGET.agenttype %} selected {%endif%}>{{value.title}}</option>
-        {%endfor%}
-      </select>
-
-        <label for='occasiontarget'>{%trans "Occasion target"%}</label>
-      <select name="occasiontarget" class="ui dropdown select search" id="occasiontarget">
-        <option value="" readonly>{%trans "Select one item"%}</option>
-        {%for key, value in occasionTarget%}
-        <option value="{{value.id}}" {% if value.id == requestGET.occasiontarget %} selected {%endif%}>{{value.title}}</option>
-        {%endfor%}
-      </select>
-
-
-        <label for='occasiontype'>{%trans "Occasion type"%}</label>
-
-      <select name="occasiontype" class="ui dropdown select search" id="occasiontype">
-        <option value="" readonly>{%trans "Select one item"%}</option>
-        {%for key, value in occasionType%}
-        <option value="{{value.title}}" {% if value.title == requestGET.occasiontype %} selected {%endif%}>{{value.title}}</option>
-        {%endfor%}
-      </select>
-
-      <div class="txtRa">
-        {%if requestGET%}
-        <a class="btn" href="{{url.that}}">{%trans "Clear filter"%}</a>
-        {%endif%}
-        <button class="btn primary">{%trans "Apply"%}</button>
-      </div>
-
-
-    </div>
-  </form>
+  </div>
 </div>
-{%endblock%}
-
-
-{%block htmlTable%}
-
-<div class="tblBox">
-
-  <table class="tbl1 v1 cbox fs12">
-    <thead>
-      <tr>
-        <th class="collapsing"></th>
-        <th class="collapsing">{%trans "Occasion"%}</th>
-        <th class="collapsing">{%trans "Agent"%}</th>
-        <th class="collapsing">{%trans "City"%}</th>
-        <th class="collapsing">{%trans "Agent type"%}</th>
-        <th class="collapsing">{%trans "Occasion type"%}</th>
-
-
-        <th>{%trans "Pay date"%}</th>
-        <th>{%trans "Price payed"%}</th>
-
-        <th class="collapsing"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {%for key, value in dataTable%}
-      <tr {%if value.status=='request'%} class='warning' {%elseif value.status=='reject'%} class='negative' {%elseif value.status=='accept'%} class='positive'{%endif%}>
-
-        <td class="collapsing">{{value.id | fitNumber}}</td>
-        <td class="collapsing"><a href="{{url.that}}?id={{value.protection_occasion_id}}">{{value.occasion_title}}</a></td>
-        <td class="collapsing"><a href="{{url.that}}?agent={{value.protection_agent_id}}">{{value.agent_title}}</a></td>
-        <td class="collapsing"><a href="{{url.that}}?city={{value.city}}">{{value.location_string}}</a></td>
-        <td class="collapsing"><a href="{{url.that}}?agenttype={{value.agent_type}}">{{value.agent_type}}</a></td>
-        <td class="collapsing"><a href="{{url.that}}?occasiontype={{value.occasion_type}}">{{value.occasion_type}}</a></td>
-
-        <td>{{value.paydate | dt(null, 'date')}}</td>
-        <td>{{value.total_price | fitNumber}}</td>
-        <td class="collapsing txtL">
-
-          <a href="{{url.here}}/agentoccasion/detail?id={{value.id}}" class="btn pain outline mLR10">{%trans "Detail"%}</a>
-
-        </td>
-      </tr>
-      {%endfor%}
-    </tbody>
-  </table>
-</div>
-{%include display.pagination%}
 
 {%endblock%}
 
 
-{%block htmlFilter%}
-<p class="f fs14 msg info2">
-  <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
-</p>
+
+{%block foot_js%}
+<script>
+{%include 'content_protection/report/home/chart.js'%}
+</script>
 {%endblock%}
-
-
-{%block htmlFilterNoResult%}
-<p class="f fs14 msg warn2">
-  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
-</p>
-{%endblock%}
-
-
-{%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%}</p>
-{%endblock%}
-

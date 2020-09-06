@@ -1,5 +1,5 @@
 <?php
-namespace content_protection\agentoccasion\allprice;
+namespace content_protection\report\agenttype;
 
 
 class controller
