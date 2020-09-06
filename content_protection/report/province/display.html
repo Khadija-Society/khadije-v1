@@ -1,0 +1,51 @@
+{%extends 'content_protection/layout.html'%}
+{%use 'content_protection/report/pageStep.html'%}
+
+
+
+{%block pageContent%}
+{{block('pageStep')}}
+<div class="chart" id="chartdiv" style="height:650px;max-height:650px"></div>
+
+    <div class="tblBox">
+      <table class="tbl1 v5">
+        <thead>
+          <tr>
+            <th>{%trans "Province"%}</th>
+            <th>{%trans "Count"%}</th>
+          </tr>
+        </thead>
+        <tbody class="fs14">
+          {%for key, value in reportDetail.table_price%}
+          <tr>
+            <td>{{value.province_name}}</td>
+            <td>{{value.total_price | fitNumber}} <small>{%trans "Toman"%}</small></td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+
+
+
+{%endblock%}
+
+
+
+{%block foot_js%}
+
+
+<script type="text/javascript">
+  {% include 'content_protection/report/province/highmaps.js' %}
+</script>
+
+<script type="text/javascript">
+  {% include 'content_protection/report/province/ir-all.js' %}
+</script>
+
+<script type="text/javascript">
+  {% include 'content_protection/report/province/chart.js' %}
+</script>
+
+
+{%endblock%}

@@ -105,7 +105,7 @@ function chartdivprice()
       type: 'pie'
     },
     title: {
-      text: '{%trans "Count occasion type"%}'
+      text: '{%trans "Total price occasion type"%}'
     },
     tooltip: {
       useHTML: true,

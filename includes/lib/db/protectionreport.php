@@ -74,5 +74,27 @@ class protectionreport
 		$result = \dash\db::get($query, null, true);
 		return $result;
 	}
+
+
+	public static function agent_province_price()
+	{
+		$non = T_("Unknown");
+		$query  =
+		"
+			SELECT
+				SUM(IFNULL(protection_agent_occasion.total_price, 0)) AS `total_price`,
+				IFNULL(protection_agent.province, '$non') AS `province`
+			FROM
+				protection_agent_occasion
+			LEFT JOIN protection_agent ON protection_agent.id = protection_agent_occasion.protection_agent_id
+			GROUP BY protection_agent.province
+		";
+
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
+
 }
 ?>
