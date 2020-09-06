@@ -67,7 +67,7 @@ class twigTransTerms
 	//-----------------------------------------content_agent/send/billing/display.html
 	echo T_("Pay amount");                                                            // Line 19
 	echo T_("Toman");                                                                 // Line 174
-	echo T_("Pay date");                                                              // Line 14
+	echo T_("Pay date");                                                              // Line 19
 	echo T_("Bank");                                                                  // Line 54
 	echo T_("Hesab");                                                                 // Line 39
 	echo T_("Shaba");                                                                 // Line 117
@@ -97,7 +97,7 @@ class twigTransTerms
 	echo T_("Start time");                                                            // Line 102
 	echo T_("End date");                                                              // Line 96
 	echo T_("End time");                                                              // Line 113
-	echo T_("enable");                                                                // Line 74
+	echo T_("enable");                                                                // Line 73
 	echo T_("disable");                                                               // Line 136
 	echo T_("deleted");                                                               // Line 137
 	echo T_("expire");                                                                // Line 138
@@ -242,7 +242,7 @@ class twigTransTerms
 
 	//---------------------------------------------content_smsapp/viewsms/display.html
 	echo T_("Reseive status");                                                        // Line 293
-	echo T_("block");                                                                 // Line 79
+	echo T_("block");                                                                 // Line 78
 	echo T_("awaiting");                                                              // Line 28
 	echo T_("analyze");                                                               // Line 14
 	echo T_("answerready");                                                           // Line 15
@@ -731,12 +731,13 @@ class twigTransTerms
 	echo T_("Cancel");                                                                // Line 331
 
 	//-------------------------------------------content_a/protection/pay/display.html
-	echo T_("Total price payed");                                                     // Line 17
-	echo T_("Tracking number");                                                       // Line 23
+	echo T_("Total price payed");                                                     // Line 22
+	echo T_("Tracking number");                                                       // Line 28
 
 	//---------------------------------------content_a/protection/gallery/display.html
 	echo T_("Please provide a visual report of the process and details of the distribution of the organization's support packages to the people covered by your announcement.");// Line 12
 	echo T_("You can upload photos and videos of the distribution of support packages to your covered people here");// Line 14
+	echo T_("You can upload 20 files");                                               // Line 16
 
 	//----------------------------------------content_a/protection/detail/display.html
 	echo T_("Expire date");                                                           // Line 34
@@ -774,7 +775,7 @@ class twigTransTerms
 	//----------------------------------------------content_a/protection/pageStep.html
 	echo T_("Bank account detail");                                                   // Line 28
 	echo T_("Introducing people");                                                    // Line 47
-	echo T_("Image report");                                                          // Line 65
+	echo T_("Image report");                                                          // Line 62
 	echo T_("Pay detail");                                                            // Line 38
 
 	//----------------------------------------content_a/protection/signup/display.html
@@ -1032,17 +1033,21 @@ class twigTransTerms
 	echo T_("datecreated");                                                           // Line 447
 
 	//-----------------------------------------content_protection/setting/display.html
+	echo T_("Occasion target");                                                       // Line 52
+
+	//----------------------------------------content_protection/allusers/display.html
+	echo T_("List of people introduced by");                                          // Line 9
+	echo T_("Search in occasion");                                                    // Line 44
+	echo T_("Agent type");                                                            // Line 61
+	echo T_("Agent");                                                                 // Line 61
+	echo T_("Occasion");                                                              // Line 60
 
 	//---------------------------------content_protection/occasion/detail/display.html
-	echo T_("Search in occasion");                                                    // Line 44
-	echo T_("Agent");                                                                 // Line 61
 	echo T_("Request Status");                                                        // Line 62
 	echo T_("Count user");                                                            // Line 63
 	echo T_("Show users");                                                            // Line 77
 
 	//-----------------------------------content_protection/occasion/user/display.html
-	echo T_("List of people introduced by");                                          // Line 9
-	echo T_("Agent type");                                                            // Line 69
 
 	//-----------------------------------content_protection/occasion/home/display.html
 	echo T_("Count item");                                                            // Line 59
@@ -1065,27 +1070,35 @@ class twigTransTerms
 	//-----------------------------------content_protection/occasion/edit/display.html
 	echo T_("If you want to distribute a support package on this occasion, enter the items in this package");// Line 23
 	echo T_("Items in the support basket for this occasion");                         // Line 46
-	echo T_("Announce which group you want to support on this occasion");             // Line 69
-	echo T_("Set type list first");                                                   // Line 82
+	echo T_("Occasiontype");                                                          // Line 68
+	echo T_("Announce which group you want to support on this occasion");             // Line 81
+	echo T_("Set type list first");                                                   // Line 94
+
+	//---------------------------------------content_protection/agenttype/display.html
 
 	//--------------------------------------------content_protection/home/display.html
-	echo T_("Last protection agetn");                                                 // Line 16
-	echo T_("Occasiona");                                                             // Line 34
-	echo T_("Agent Signupded list");                                                  // Line 45
-	echo T_("Protection agent");                                                      // Line 69
+	echo T_("Last protection agetn");                                                 // Line 19
+	echo T_("Occasiona");                                                             // Line 37
+	echo T_("Agent Signupded");                                                       // Line 48
+	echo T_("All users");                                                             // Line 57
+	echo T_("All text report");                                                       // Line 69
+	echo T_("Protection agent");                                                      // Line 93
 
 	//--------------------------------------------------content_protection/layout.html
 	echo T_("Occasion list");                                                         // Line 8
 	echo T_("Protect agent");                                                         // Line 9
 	echo T_("Agent registered");                                                      // Line 29
 	echo T_("Users registered");                                                      // Line 33
+	echo T_("Occasion type");                                                         // Line 14
+
+	//------------------------------------content_protection/occasiontype/display.html
 
 	//-------------------------------content_protection/protectagent/home/display.html
 	echo T_("Count occasion");                                                        // Line 60
 	echo T_("Try to start with add new protect agent!");                              // Line 102
 
 	//-------------------------------------content_protection/protectagent/layout.html
-	echo T_("Pending");                                                               // Line 69
+	echo T_("Pending");                                                               // Line 68
 
 	//-------------------------------content_protection/protectagent/edit/display.html
 	echo T_("Edit bank detail");                                                      // Line 14
@@ -1094,7 +1107,9 @@ class twigTransTerms
 	//--------------------------content_protection/agentoccasion/occasion/display.html
 
 	//-------------------------------content_protection/agentoccasion/pay/display.html
-	echo T_("This text will be show to agent");                                       // Line 28
+	echo T_("Please verify the bank account number of this protection agent");        // Line 12
+	echo T_("Account number detail verified");                                        // Line 14
+	echo T_("This text will be show to agent");                                       // Line 33
 
 	//---------------------------content_protection/agentoccasion/gallery/display.html
 	echo T_("No image report was sended yet");                                        // Line 29
@@ -1108,9 +1123,10 @@ class twigTransTerms
 	echo T_("Accept request");                                                        // Line 46
 
 	//------------------------------content_protection/agentoccasion/bank/display.html
+	echo T_("Is trust detail?");                                                      // Line 38
+	echo T_("Verified");                                                              // Line 40
 
 	//------------------------------content_protection/agentoccasion/home/display.html
-	echo T_("Occasion");                                                              // Line 60
 
 	//----------------------------content_protection/agentoccasion/report/display.html
 	echo T_("No report was sended yet");                                              // Line 14
@@ -1119,6 +1135,9 @@ class twigTransTerms
 
 	//----------------------------------content_protection/agentoccasion/pageStep.html
 	echo T_("Edit agent");                                                            // Line 10
+
+	//-------------------------content_protection/agentoccasion/allreport/display.html
+	echo T_("Report");                                                                // Line 48
 
 	//-----------------------------content_protection/agentoccasion/users/display.html
 	echo T_("You can and, edit or remove everyone of top list");                      // Line 63
@@ -1160,7 +1179,6 @@ class twigTransTerms
 	echo T_("CMS");                                                                   // Line 19
 	echo T_("Hadith");                                                                // Line 35
 	echo T_("Admin Contact");                                                         // Line 38
-	echo T_("Report");                                                                // Line 48
 	echo T_("Home page number");                                                      // Line 57
 	echo T_("Send SMS");                                                              // Line 76
 	echo T_("SMS Template");                                                          // Line 112
