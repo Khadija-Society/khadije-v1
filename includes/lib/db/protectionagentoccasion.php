@@ -5,6 +5,14 @@ class protectionagentoccasion
 {
 	public static function summary($_string, $_where)
 	{
+		$join = null;
+		if(isset($_where['join_type']) && $_where['join_type'])
+		{
+			$join =  ' LEFT JOIN protection_occasion_type ON protection_occasion_type.protection_occasion_id = protection_agent_occasion.protection_occasion_id ';
+		}
+
+		unset($_where['join_type']);
+
 		$where = null;
 		if($_where)
 		{
@@ -29,7 +37,7 @@ class protectionagentoccasion
 				protection_agent_occasion
 			LEFT JOIN protection_agent ON protection_agent.id = protection_agent_occasion.protection_agent_id
 			LEFT JOIN protection_occasion ON protection_occasion.id = protection_agent_occasion.protection_occasion_id
-
+			$join
 			WHERE 1 $where
 
 		";
@@ -163,6 +171,13 @@ class protectionagentoccasion
 				LEFT JOIN protection_occasion ON protection_occasion.id = protection_agent_occasion.protection_occasion_id
 			"
 		];
+
+		if(isset($_options['join_type']) && $_options['join_type'])
+		{
+			$default_option['master_join'].=  ' LEFT JOIN protection_occasion_type ON protection_occasion_type.protection_occasion_id = protection_agent_occasion.protection_occasion_id ';
+		}
+
+		unset($_options['join_type']);
 
 		$_options = array_merge($default_option, $_options);
 		$result = \dash\db\config::public_search('protection_agent_occasion', $_string, $_options);

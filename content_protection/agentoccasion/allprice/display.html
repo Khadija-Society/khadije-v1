@@ -121,7 +121,7 @@
         <option value="{{value.title}}" {% if value.title == requestGET.agenttype %} selected {%endif%}>{{value.title}}</option>
         {%endfor%}
       </select>
-          {%if false%}
+
         <label for='occasiontarget'>{%trans "Occasion target"%}</label>
       <select name="occasiontarget" class="ui dropdown select search" id="occasiontarget">
         <option value="" readonly>{%trans "Select one item"%}</option>
@@ -129,7 +129,8 @@
         <option value="{{value.id}}" {% if value.id == requestGET.occasiontarget %} selected {%endif%}>{{value.title}}</option>
         {%endfor%}
       </select>
-      {%endif%}
+
+
         <label for='occasiontype'>{%trans "Occasion type"%}</label>
 
       <select name="occasiontype" class="ui dropdown select search" id="occasiontype">

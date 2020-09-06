@@ -84,12 +84,14 @@ class view
 
 
 
-		// if(\dash\request::get('occasiontarget'))
-		// {
-		// 	$args['protection_occasion_type.id'] = \dash\coding::decode(\dash\request::get('occasiontarget'));
-		// 	$summaryArgs['protection_occasion_type.id'] = $args['protection_occasion_type.id'];
-		// 	$filterArgs[T_("Occasion target")] = '';
-		// }
+		if(\dash\request::get('occasiontarget'))
+		{
+			$args['join_type'] = true;
+			$args['protection_occasion_type.type_id'] = \dash\coding::decode(\dash\request::get('occasiontarget'));
+			$summaryArgs['protection_occasion_type.type_id'] = $args['protection_occasion_type.type_id'];
+			$summaryArgs['join_type'] = true;
+			$filterArgs[T_("Occasion target")] = '';
+		}
 
 		if(\dash\request::get('city'))
 		{
