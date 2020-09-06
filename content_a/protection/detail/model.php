@@ -20,6 +20,19 @@ class model
 
 			if($status === 'request')
 			{
+				$occasion_id = \dash\data::occasionID();
+
+				$list = \lib\app\protectagentuser::occasion_list($occasion_id);
+				if(!is_array($list))
+				{
+					$list = [];
+				}
+				if(!count($list))
+				{
+					\dash\notif::error(T_("Please add your protection person first"));
+					return false;
+				}
+
 				$post['status'] = $status;
 			}
 			else

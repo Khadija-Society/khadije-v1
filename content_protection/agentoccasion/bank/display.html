@@ -34,7 +34,12 @@
 
 
         <div class="txtRa">
-          <button class="btn primary">{%trans "Save"%}</button>
+          {%if not dataRow.bankshaba and dataRow.agent_detail.bankshaba%}
+            <button class="btn primary">{%trans "Is trust detail?"%}</button>
+          {%else%}
+            <button class="btn success">{%trans "Verified"%}</button>
+          {%endif%}
+
         </div>
 
       </div>

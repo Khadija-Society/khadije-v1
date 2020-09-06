@@ -8,6 +8,11 @@
   <div class="f justify-center">
     <div class="c6 s12 m8">
       <div class="cbox">
+        {%if not dataRow.bankshaba and dataRow.agent_detail.bankshaba%}
+          <div class="msg danger2">{%trans "Please verify the bank account number of this protection agent"%}</div>
+        {%else%}
+          <div class="msg success2">{%trans "Account number detail verified"%}</div>
+        {%endif%}
 
         <label>{%trans "Pay date"%}</label>
         <div class="input ltr">
