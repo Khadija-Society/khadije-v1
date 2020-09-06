@@ -1,5 +1,5 @@
 <?php
-namespace content_protection\agentoccasion\home;
+namespace content_protection\agentoccasion\allreport;
 
 
 class view
@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title(T_("Agent registered"));
+		\dash\data::page_title(T_("All report of agent"));
 
 		\dash\data::page_pictogram('list');
 
@@ -23,8 +23,9 @@ class view
 
 		$args =
 		[
-			'sort'       => \dash\request::get('sort'),
-			'order'      => \dash\request::get('order'),
+			'sort'   => \dash\request::get('sort'),
+			'order'  => \dash\request::get('order'),
+			'report' => ['is', 'not null'],
 
 		];
 

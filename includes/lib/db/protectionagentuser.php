@@ -100,10 +100,15 @@ class protectionagentuser
 			'public_show_field' =>
 			"
 				protection_user_agent_occasion.*,
+				protection_occasion.title AS `occasion_title`,
 				protection_agent.title AS `agent_title`,
 				protection_agent.type AS `agent_type`
 			",
-			'master_join'       => " LEFT JOIN protection_agent ON protection_agent.id = protection_user_agent_occasion.protection_agent_id "
+			'master_join'       =>
+			"
+			 LEFT JOIN protection_agent ON protection_agent.id = protection_user_agent_occasion.protection_agent_id
+			 LEFT JOIN protection_occasion ON protection_occasion.id = protection_user_agent_occasion.protection_occasion_id
+			"
 		];
 
 		$_options = array_merge($default_option, $_options);
