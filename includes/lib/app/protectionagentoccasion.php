@@ -232,6 +232,12 @@ class protectionagentoccasion
 			}
 
 			$old_gallery[] = $file_new;
+
+			if(count($old_gallery) > 20)
+			{
+				\dash\notif::error(T_("Maximum capacity of gallery image is full"));
+				return false;
+			}
 		}
 		else
 		{
