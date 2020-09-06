@@ -1,5 +1,5 @@
 <?php
-namespace content_protection\setting;
+namespace content_protection\occasiontype;
 
 
 class model
@@ -25,7 +25,7 @@ class model
 		[
 			'title'  => \dash\request::post('title'),
 			'status' => \dash\request::post('status'),
-			'type'   => 'occasiontarget',
+			'type'   => 'occasiontype',
 		];
 
 		if(\dash\data::editMode())

@@ -111,9 +111,20 @@ class protectiontype
 		}
 
 
-		$args['title']             = $title;
+		$type = \dash\app::request('type');
+		if($type && !in_array($type, ['agenttype', 'occasiontype', 'occasiontarget']))
+		{
+			\dash\notif::error(T_("Invalid type"));
+			return false;
+		}
 
-		$args['status']            = $status;
+
+
+
+		$args['title']  = $title;
+
+		$args['status'] = $status;
+		$args['type']   = $type;
 
 
 
@@ -260,10 +271,10 @@ class protectiontype
 		return $temp;
 	}
 
-	public static function get_all()
+	public static function get_all($_type = 'occasiontarget')
 	{
 
-		$result            = \lib\db\protectiontype::get_all();
+		$result            = \lib\db\protectiontype::get_all($_type);
 		$temp              = [];
 
 		foreach ($result as $key => $value)
@@ -278,10 +289,10 @@ class protectiontype
 		return $temp;
 	}
 
-	public static function get_all_full()
+	public static function get_all_full($_type = 'occasiontarget')
 	{
 
-		$result            = \lib\db\protectiontype::get_all_full();
+		$result            = \lib\db\protectiontype::get_all_full($_type);
 		$temp              = [];
 
 		foreach ($result as $key => $value)
@@ -329,6 +340,8 @@ class protectiontype
 		if(!\dash\app::isset_request('title')) unset($args['title']);
 
 		if(!\dash\app::isset_request('status')) unset($args['status']);
+		if(!\dash\app::isset_request('type')) unset($args['type']);
+
 
 
 

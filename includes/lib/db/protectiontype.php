@@ -4,16 +4,16 @@ namespace lib\db;
 class protectiontype
 {
 
-	public static function get_all()
+	public static function get_all($_type)
 	{
-		$query  = "SELECT protection_type.* FROM protection_type WHERE protection_type.status != 'deleted'";
+		$query  = "SELECT protection_type.* FROM protection_type WHERE protection_type.type = '$_type' AND protection_type.status != 'deleted'";
 		$result = \dash\db::get($query);
 		return $result;
 	}
 
-	public static function get_all_full()
+	public static function get_all_full($_type)
 	{
-		$query  = "SELECT protection_type.* FROM protection_type ORDER BY FIELD(protection_type.status, 'enable', 'deleted') ";
+		$query  = "SELECT protection_type.* FROM protection_type WHERE protection_type.type = '$_type' ORDER BY FIELD(protection_type.status, 'enable', 'deleted') ";
 		$result = \dash\db::get($query);
 		return $result;
 	}
