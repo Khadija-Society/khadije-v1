@@ -3,6 +3,40 @@ namespace lib\db;
 
 class protectionagentoccasion
 {
+	public static function summary($_string, $_where)
+	{
+		$where = null;
+		if($_where)
+		{
+			$temp = \dash\db\config::make_where($_where);
+			if($temp)
+			{
+				$where .= " AND ". $temp;
+			}
+		}
+
+		if($_string)
+		{
+			$where .= " AND	(protection_agent.title LIKE '%$_string%' or  protection_occasion.title LIKE '%$_string%' ) ";
+		}
+
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				SUM(IFNULL(protection_agent_occasion.total_price, 0)) as `total_price`
+			FROM
+				protection_agent_occasion
+			LEFT JOIN protection_agent ON protection_agent.id = protection_agent_occasion.protection_agent_id
+			LEFT JOIN protection_occasion ON protection_occasion.id = protection_agent_occasion.protection_occasion_id
+
+			WHERE 1 $where
+
+		";
+
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
 
 	public static function report_count()
 	{

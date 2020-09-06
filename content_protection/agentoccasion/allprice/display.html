@@ -4,6 +4,29 @@
 
 {%block pageContent%}
 
+<div class="f">
+
+      <div class="c6 s6">
+        <a class="dcard">
+          <div class="statistic sm teal">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Count"%}</div>
+            <div class="value ">{{summaryDetail.count | fitNumber}}</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="c6 s6">
+        <a class="dcard">
+          <div class="statistic sm teal">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total price"%}</div>
+            <div class="value ">{{summaryDetail.total_price | fitNumber}}</div>
+          </div>
+        </a>
+      </div>
+
+</div>
+
 
 {%if dataTable%}
  {%if dataFilter%}

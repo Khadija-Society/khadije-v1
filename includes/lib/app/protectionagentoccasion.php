@@ -690,6 +690,20 @@ class protectionagentoccasion
 	}
 
 
+	/**
+	 * Gets the protectagentuser.
+	 *
+	 * @param      <type>  $_args  The arguments
+	 *
+	 * @return     <type>  The protectagentuser.
+	 */
+	public static function summary($_string = null, $_args = [])
+	{
+		$result            = \lib\db\protectionagentoccasion::summary($_string, $_args);
+		return $result;
+	}
+
+
 
 }
 ?>
