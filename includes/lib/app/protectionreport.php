@@ -97,5 +97,39 @@ class protectionreport
 		return $chart;
 	}
 
+	public static function user_province()
+	{
+		$chart = [];
+
+
+		$price = \lib\db\protectionreport::user_province();
+		$price_table = [];
+		foreach ($price as $key => $value)
+		{
+			$name = \dash\utility\location\provinces::get($value['province'], null, 'localname');
+			if(!$name)
+			{
+				$price_table[] = ['province_name' => $value['province'], 'count' => $value['count']];
+			}
+			else
+			{
+				$price_table[] = ['province_name' => $name, 'count' => $value['count']];
+			}
+		}
+		$chart['table_price'] = $price_table;
+
+		$chart_price = [];
+		foreach ($price as $key => $value)
+		{
+			$map_code = \dash\utility\location\provinces::get($value['province'], null, 'map_code');
+			$chart_price[] = [$map_code, intval($value['count'])];
+		}
+
+		$chart['chart_price'] = json_encode($chart_price, JSON_UNESCAPED_UNICODE);
+
+
+		return $chart;
+	}
+
 }
 ?>

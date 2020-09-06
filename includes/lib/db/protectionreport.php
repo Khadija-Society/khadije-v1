@@ -94,6 +94,23 @@ class protectionreport
 		return $result;
 	}
 
+		public static function user_province()
+	{
+		$non = T_("Unknown");
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				IFNULL(protection_user_agent_occasion.province, '$non') AS `province`
+			FROM
+				protection_user_agent_occasion
+			GROUP BY protection_user_agent_occasion.province
+		";
+
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
 
 
 }

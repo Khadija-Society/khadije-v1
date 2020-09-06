@@ -12,14 +12,14 @@
         <thead>
           <tr>
             <th>{%trans "Province"%}</th>
-            <th>{%trans "Total price"%}</th>
+            <th>{%trans "Count"%}</th>
           </tr>
         </thead>
         <tbody class="fs14">
           {%for key, value in reportDetail.table_price%}
           <tr>
             <td>{{value.province_name}}</td>
-            <td>{{value.total_price | fitNumber}} <small>{%trans "Toman"%}</small></td>
+            <td>{{value.count | fitNumber}}</td>
           </tr>
           {%endfor%}
         </tbody>
