@@ -3,27 +3,142 @@
 
 {%block pageContent%}
 <div class="f">
-  <div class="c8">
-      <div class="f">
-        <div class="c6 s12">{{block('bOccasion')}}</div>
-        <div class="c6 s12">{{block('bAgent')}}</div>
-        <div class="c4 s12">{{block('bAgentOccasion')}}</div>
-        <div class="c4 s12">{{block('bAgentUserlist')}}</div>
-        <div class="c4 s12">{{block('bAllReport')}}</div>
+  <div class="c8 s12 m12">
+    <div class="f">
 
-        <div class="c12 s12">{{block('bReport')}}</div>
+      <div class="c4 s6">
+        <a href="{{url.this}}/occasion" class="dcard">
+          <div class="statistic sm blue">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Occasion"%}</div>
+            <div class="value">{{dashboardDetail.occasion_count | fitNumber}}</div>
+          </div>
+        </a>
       </div>
+
+
+      <div class="c4 s6">
+        <a href="{{url.this}}/protectagent" class="dcard">
+          <div class="statistic sm green">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Agent"%}</div>
+            <div class="value">{{dashboardDetail.agent_count | fitNumber}}</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="c4 s6">
+        <a href="{{url.this}}/agentoccasion/allprice" class="dcard">
+          <div class="statistic sm teal">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total price payed"%}</div>
+            <div class="value counter">{{dashboardDetail.total_price | fitNumber}}</div>
+          </div>
+        </a>
+      </div>
+
+
+
+
+      <div class="c6 s6">
+        <a href="{{url.this}}/agentoccasion/allreport" class="dcard">
+          <div class="statistic sm">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Text report"%}</div>
+            <div class="value">{{dashboardDetail.report_count | fitNumber}}</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="c6 s6">
+        <a href="{{url.this}}/allusers" class="dcard">
+          <div class="statistic sm">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "User count"%}</div>
+            <div class="value counter">{{dashboardDetail.user_count | fitNumber}}</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="c12 s6">
+        <a href="{{url.this}}/agentoccasion" class="dcard">
+          <div class="statistic sm">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Agent occasion"%}</div>
+            <div class="value">{{dashboardDetail.user_occasion_count | fitNumber}}</div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="c6 s6">
+        <a href="{{url.this}}/setting" class="dcard">
+          <div class="statistic sm">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Setting"%}</div>
+            <div class="value"><i class="sf-cogs"></i></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="c6 s6">
+        <a href="{{url.this}}/report" class="dcard">
+          <div class="statistic sm">
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Reports"%}</div>
+            <div class="value"><i class="sf-chart"></i></div>
+          </div>
+        </a>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <div class="c4 s12 m12">
+
+
+    <div class="cbox fs11 mB10">
+      <h2>{%trans "Last user"%}</h2>
+      {%for key, value in dashboardDetail.last_user%}
+      <div class="msg f" >
+        <div class="c">{{value.displayname}}</div>
+        <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{%endblock%}
+
+
+{%block pageContent2%}
+<div class="f">
+  <div class="c8">
+    <div class="f">
+      <div class="c6 s12">{{block('bOccasion')}}</div>
+      <div class="c6 s12">{{block('bAgent')}}</div>
+      <div class="c4 s12">{{block('bAgentOccasion')}}</div>
+      <div class="c4 s12">{{block('bAgentUserlist')}}</div>
+      <div class="c4 s12">{{block('bAllReport')}}</div>
+
+      <div class="c12 s12">{{block('bReport')}}</div>
+    </div>
   </div>
   <div class="c4">
     <div class="cbox fs11 mB10">
-    <h2>{%trans "Last protection agetn"%}</h2>
-    {%for key, value in lastAgent%}
+      <h2>{%trans "Last protection agetn"%}</h2>
+      {%for key, value in lastAgent%}
       <a class="msg f" href="{{url.this}}/protectagent/edit?id={{value.id}}">
         <div class="c">{{value.title}}</div>
         <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
       </a>
-    {%endfor%}
-  </div>
+      {%endfor%}
+    </div>
   </div>
 
 </div>
@@ -32,10 +147,10 @@
 
 {%block bOccasion%}
 <a class="dcard x2" href='{{url.here}}/occasion'>
- <div class="statistic">
-  <div class="label"><i class="fs20 mRa5 sf-atom"></i></div>
-  <div class="label mT10">{%trans "Occasiona"%}</div>
- </div>
+  <div class="statistic">
+    <div class="label"><i class="fs20 mRa5 sf-atom"></i></div>
+    <div class="label mT10">{%trans "Occasiona"%}</div>
+  </div>
 </a>
 {%endblock%}
 
@@ -43,19 +158,19 @@
 
 {%block bAgentOccasion%}
 <a class="dcard x2" href='{{url.here}}/agentoccasion'>
- <div class="statistic">
-  <div class="label"><i class="fs20 mRa5 sf-bolt"></i></div>
-  <div class="label mT10">{%trans "Agent Signupded"%}</div>
- </div>
+  <div class="statistic">
+    <div class="label"><i class="fs20 mRa5 sf-bolt"></i></div>
+    <div class="label mT10">{%trans "Agent Signupded"%}</div>
+  </div>
 </a>
 {%endblock%}
 
 {%block bAgentUserlist%}
 <a class="dcard x2" href='{{url.here}}/allusers'>
- <div class="statistic">
-  <div class="label"><i class="fs20 mRa5 sf-users"></i></div>
-  <div class="label mT10">{%trans "All users"%}</div>
- </div>
+  <div class="statistic">
+    <div class="label"><i class="fs20 mRa5 sf-users"></i></div>
+    <div class="label mT10">{%trans "All users"%}</div>
+  </div>
 </a>
 {%endblock%}
 
@@ -64,10 +179,10 @@
 
 {%block bAllReport%}
 <a class="dcard x2" href='{{url.here}}/agentoccasion/allreport'>
- <div class="statistic">
-  <div class="label"><i class="fs20 mRa5 sf-file-o"></i></div>
-  <div class="label mT10">{%trans "All text report"%}</div>
- </div>
+  <div class="statistic">
+    <div class="label"><i class="fs20 mRa5 sf-file-o"></i></div>
+    <div class="label mT10">{%trans "All text report"%}</div>
+  </div>
 </a>
 {%endblock%}
 
@@ -75,10 +190,10 @@
 
 {%block bReport%}
 <a class="dcard x2" href='{{url.here}}/report'>
- <div class="statistic">
-  <div class="label"><i class="fs20 mRa5 sf-chart"></i></div>
-  <div class="label mT10">{%trans "Reports"%}</div>
- </div>
+  <div class="statistic">
+    <div class="label"><i class="fs20 mRa5 sf-chart"></i></div>
+    <div class="label mT10">{%trans "Reports"%}</div>
+  </div>
 </a>
 {%endblock%}
 
@@ -88,9 +203,9 @@
 
 {%block bAgent%}
 <a class="dcard x2" href='{{url.here}}/protectagent'>
- <div class="statistic teal">
-  <div class="label"><i class="fs20 mRa5 sf-user-5"></i></div>
-  <div class="label mT10">{%trans "Protection agent"%}</div>
- </div>
+  <div class="statistic teal">
+    <div class="label"><i class="fs20 mRa5 sf-user-5"></i></div>
+    <div class="label mT10">{%trans "Protection agent"%}</div>
+  </div>
 </a>
 {%endblock%}

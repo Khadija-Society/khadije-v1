@@ -16,6 +16,10 @@ class view
 		$dataTable = \lib\app\protectagent::list(null, $args);
 		\dash\data::lastAgent($dataTable);
 
+
+		$dashboardDetail = \lib\app\protectiontype::dashboard();
+		\dash\data::dashboardDetail($dashboardDetail);
+
 	}
 
 }

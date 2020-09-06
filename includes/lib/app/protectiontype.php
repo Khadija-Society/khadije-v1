@@ -7,6 +7,21 @@ namespace lib\app;
 class protectiontype
 {
 
+	public static function dashboard()
+	{
+		$result                        = [];
+		$result['occasion_count']      = \dash\db\config::public_get_count('protection_occasion');
+		$result['agent_count']         = \dash\db\config::public_get_count('protection_agent');;
+		$result['total_price']         = \lib\db\protectionagentoccasion::total_price();
+		$result['report_count']        = \lib\db\protectionagentoccasion::report_count();
+		$result['user_count']          = \dash\db\config::public_get_count('protection_user_agent_occasion');;
+		$result['user_occasion_count'] = \dash\db\config::public_get_count('protection_agent_occasion');;
+		$last_user = \lib\app\protectagentuser::list(null, ['limit' => 5, 'order' => 'desc', 'sort' => 'id']);
+		$result['last_user']           = $last_user;
+
+		return $result;
+	}
+
 	public static function get($_id)
 	{
 		$id = \dash\coding::decode($_id);

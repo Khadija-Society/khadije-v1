@@ -4,6 +4,34 @@ namespace lib\db;
 class protectionagentoccasion
 {
 
+	public static function report_count()
+	{
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`
+			FROM
+				protection_agent_occasion
+			WHERE protection_agent_occasion.report IS NOT NULL
+		";
+		$result = \dash\db::get($query, 'count', true);
+		return $result;
+	}
+
+	public static function total_price()
+	{
+		$query  =
+		"
+			SELECT
+				SUM(IFNULL(protection_agent_occasion.total_price, 0)) as `total_price`
+			FROM
+				protection_agent_occasion
+		";
+		$result = \dash\db::get($query, 'total_price', true);
+		return $result;
+	}
+
+
 	public static function old_registered_occasion($_agent_id)
 	{
 		$query  =
