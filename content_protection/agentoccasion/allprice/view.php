@@ -98,18 +98,25 @@ class view
 			$filterArgs[T_("City")] = \dash\request::get('city');
 		}
 
+		if(\dash\request::get('province'))
+		{
+			$args['protection_agent.province'] = \dash\request::get('province');
+			$summaryArgs['protection_agent.province'] = $args['protection_agent.province'];
+			$filterArgs[T_("City")] = \dash\request::get('province');
+		}
+
 		if(\dash\request::get('agenttype'))
 		{
 			$args['protection_agent.type'] = \dash\request::get('agenttype');
 			$summaryArgs['protection_agent.type'] = $args['protection_agent.type'];
-			$filterArgs[T_("Type")] = \dash\request::get('agenttype');
+			$filterArgs[T_("Agent type")] = \dash\request::get('agenttype');
 		}
 
 		if(\dash\request::get('occasiontype'))
 		{
 			$args['protection_occasion.type'] = \dash\request::get('occasiontype');
 			$summaryArgs['protection_occasion.type'] = $args['protection_occasion.type'];
-			$filterArgs[T_("Type")] = \dash\request::get('occasiontype');
+			$filterArgs[T_("Occasion type")] = \dash\request::get('occasiontype');
 		}
 
 		if(\dash\request::get('id'))
@@ -165,6 +172,7 @@ class view
 
 		$cityList    = \dash\utility\location\cites::$data;
 		$proviceList = \dash\utility\location\provinces::key_list('localname');
+		\dash\data::provinceList($proviceList);
 
 		$new = [];
 		foreach ($cityList as $key => $value)

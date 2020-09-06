@@ -97,6 +97,15 @@
         </div>
       </div>
 
+      <label for='province'>{%trans "Province"%}</label>
+      <select name="province" class="ui dropdown select search" id="province">
+        <option value="" readonly>{%trans "Select province"%}</option>
+        {%for key, value in provinceList%}
+        <option value="{{key}}" {% if key == requestGET.province %} selected {%endif%}>{{value}}</option>
+        {%endfor%}
+      </select>
+
+
       <label for='city'>{%trans "City"%}</label>
       <select name="city" class="ui dropdown select search" id="city">
         <option value="" readonly>{%trans "Select city"%}</option>
