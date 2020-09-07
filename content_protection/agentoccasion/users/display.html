@@ -60,7 +60,9 @@
       <div class="cbox">
 
 
-          <p class="msg">{%trans "You can and, edit or remove everyone of top list"%}</p>
+          <p class="msg">{%trans "You can and, edit or remove everyone of top list"%}
+            <a class="btn link" href="{{url.current}}?id={{requestGET.id}}&export=1">{%trans "Export CSV"%}</a>
+          </p>
           <input type="hidden" name="occation_id" value="{{requestGET.id}}">
             <div class="f">
               <div class="c6 s12">

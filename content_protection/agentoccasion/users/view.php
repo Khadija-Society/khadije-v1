@@ -16,6 +16,33 @@ class view
 		$occasion_id = \dash\data::occasionID();
 
 		$list = \lib\app\protectagentuser::admin_occasion_list($occasion_id);
+
+
+		if(\dash\request::get('export'))
+		{
+			$new_list  = [];
+			foreach ($list as $key => $value)
+			{
+				unset($value['location_string']);
+				unset($value['id']);
+				unset($value['protection_occasion_id']);
+				unset($value['protection_user_id']);
+				unset($value['protection_agent_id']);
+				unset($value['status']);
+				unset($value['desc']);
+				unset($value['datemodified']);
+				unset($value['user_id']);
+				unset($value['postalcode']);
+				unset($value['address']);
+				unset($value['type_id']);
+				unset($value['admindesc']);
+				unset($value['birthday']);
+
+				$new_list[] = $value;
+			}
+
+			\dash\utility\export::csv(['name' => 'export_protection_list_'. \dash\request::get('id'), 'data' => $new_list]);
+		}
 		\dash\data::userOccasionList($list);
 
 
