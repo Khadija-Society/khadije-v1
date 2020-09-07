@@ -3,7 +3,7 @@
 <div class="c txtB">{{occasionDetail.title}}</div>
 <div class="c">{{occasionDetail.subtitle}}</div>
 {%if occasionDetail.startdate%}<div class="c">{%trans "Start date"%}: <span class="ltr compact">{{occasionDetail.startdate | dt(null, 'date')}}</span></div>{%endif%}
-{%if occasionDetail.expiredate%}<div class="c">{%trans "Expire date"%}: <span class="ltr compact">{{occasionDetail.expiredate | dt(null, 'date')}}</span></div>{%endif%}
+{%if occasionDetail.expiredate%}<div class="c">{%trans "End date"%}: <span class="ltr compact">{{occasionDetail.expiredate | dt(null, 'date')}}</span></div>{%endif%}
 </div>
 <div class="f">
 	<div class="c s4">
