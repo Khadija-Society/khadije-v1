@@ -51,6 +51,19 @@ class model
 
 		];
 
+		$file1 = \dash\app\file::upload_quick('file1');
+		if($file1)
+		{
+			$post['file1'] = $file1;
+		}
+
+
+		$file2 = \dash\app\file::upload_quick('file2');
+		if($file2)
+		{
+			$post['file2'] = $file2;
+		}
+
 		if(\dash\data::editMode())
 		{
 			$reault = \lib\app\protectagentuser::edit($post, \dash\request::get('person'));

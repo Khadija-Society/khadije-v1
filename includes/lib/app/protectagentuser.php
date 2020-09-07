@@ -559,6 +559,9 @@ class protectagentuser
 			}
 		}
 
+		$file1 = \dash\app::request('file1');
+		$file2 = \dash\app::request('file2');
+
 		$args['protection_occasion_id'] = $occation_id;
 		$args['protection_agent_id']    = $protection_agent_id;
 		$args['mobile']                 = $mobile;
@@ -577,6 +580,8 @@ class protectagentuser
 		$args['province']               = $province;
 		$args['city']                   = $city;
 		$args['postalcode']             = $postalcode;
+		$args['file1']             = $file1;
+		$args['file2']             = $file2;
 
 		return $args;
 	}
@@ -739,6 +744,8 @@ class protectagentuser
 		if(!\dash\app::isset_request('postalcode')) unset($args['postalcode']);
 		if(!\dash\app::isset_request('type_id')) unset($args['type_id']);
 		if(!\dash\app::isset_request('protectioncount')) unset($args['protectioncount']);
+		if(!\dash\app::isset_request('file1')) unset($args['file1']);
+		if(!\dash\app::isset_request('file2')) unset($args['file2']);
 
 		if(!empty($args))
 		{
