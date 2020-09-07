@@ -17,7 +17,7 @@ class protectionreport
 			GROUP BY protection_occasion.type
 		";
 
-		$result = \dash\db::get($query, null, true);
+		$result = \dash\db::get($query);
 		return $result;
 	}
 
@@ -35,7 +35,7 @@ class protectionreport
 			GROUP BY protection_occasion.type
 		";
 
-		$result = \dash\db::get($query, null, true);
+		$result = \dash\db::get($query);
 		return $result;
 	}
 
@@ -53,7 +53,7 @@ class protectionreport
 			GROUP BY protection_agent.type
 		";
 
-		$result = \dash\db::get($query, null, true);
+		$result = \dash\db::get($query);
 		return $result;
 	}
 
@@ -71,7 +71,7 @@ class protectionreport
 			GROUP BY protection_agent.type
 		";
 
-		$result = \dash\db::get($query, null, true);
+		$result = \dash\db::get($query);
 		return $result;
 	}
 
@@ -90,7 +90,7 @@ class protectionreport
 			GROUP BY protection_agent.province
 		";
 
-		$result = \dash\db::get($query, null, true);
+		$result = \dash\db::get($query);
 		return $result;
 	}
 
@@ -107,7 +107,7 @@ class protectionreport
 			GROUP BY protection_user_agent_occasion.province
 		";
 
-		$result = \dash\db::get($query, null, true);
+		$result = \dash\db::get($query);
 		return $result;
 	}
 

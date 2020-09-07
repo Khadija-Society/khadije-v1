@@ -12,7 +12,7 @@ class occasion
 			FROM
 				protection_occasion
 			WHERE
-				protection_occasion.status IN ('registring', 'distribution') AND
+				protection_occasion.status IN ('registring') AND
 				DATE(protection_occasion.startdate) <= DATE('$_date') AND
 				DATE(protection_occasion.expiredate) >= DATE('$_date')
 		";

@@ -193,7 +193,7 @@ class twigTransTerms
 	echo T_("Arabic Language");                                                       // Line 433
 	echo T_("Province");                                                              // Line 11
 	echo T_("Select province");                                                       // Line 102
-	echo T_("Select city");                                                           // Line 119
+	echo T_("Select city");                                                           // Line 125
 	echo T_("Zip code");                                                              // Line 473
 	echo T_("Passport id");                                                           // Line 483
 	echo T_("Foreigners must fill");                                                  // Line 100
@@ -215,7 +215,7 @@ class twigTransTerms
 	echo T_("Please choose city");                                                    // Line 60
 
 	//-------------------------------------------------content_agent/home/display.html
-	echo T_("Reports");                                                               // Line 56
+	echo T_("Reports");                                                               // Line 57
 	echo T_("Agent Place");                                                           // Line 16
 	echo T_("Assessment Item");                                                       // Line 14
 	echo T_("Servant");                                                               // Line 80
@@ -774,7 +774,7 @@ class twigTransTerms
 
 	//----------------------------------------------content_a/protection/pageStep.html
 	echo T_("Bank account detail");                                                   // Line 28
-	echo T_("Introducing people");                                                    // Line 47
+	echo T_("Introducing people");                                                    // Line 48
 	echo T_("Image report");                                                          // Line 62
 	echo T_("Pay detail");                                                            // Line 38
 
@@ -784,9 +784,11 @@ class twigTransTerms
 	echo T_("Please indicate on which of the following occasions you would like to receive a subsistence package for the people you cover?");// Line 52
 
 	//-----------------------------------------content_a/protection/users/display.html
-	echo T_("Name & family");                                                         // Line 84
-	echo T_("Protection count");                                                      // Line 91
-	echo T_("Choose type");                                                           // Line 102
+	echo T_("Name & family");                                                         // Line 90
+	echo T_("Protection count");                                                      // Line 97
+	echo T_("Choose type");                                                           // Line 108
+	echo T_("Can not add any user to this occasion");                                 // Line 111
+	echo T_("No user announced by your in this occasion");                            // Line 165
 
 	//-------------------------------------------content_a/service/detail/display.html
 	echo T_("Save all");                                                              // Line 78
@@ -1148,8 +1150,8 @@ class twigTransTerms
 	echo T_("Price payed");                                                           // Line 173
 
 	//-------------------------------content_protection/agentoccasion/pay/display.html
-	echo T_("Please verify the bank account number of this protection agent");        // Line 12
-	echo T_("Account number detail verified");                                        // Line 14
+	echo T_("Please save the bank account number of this protection agent for this occasion");// Line 12
+	echo T_("Account number detail saved for this occasion");                         // Line 14
 	echo T_("This text will be show to agent");                                       // Line 33
 
 	//---------------------------content_protection/agentoccasion/gallery/display.html
@@ -1164,8 +1166,7 @@ class twigTransTerms
 	echo T_("Accept request");                                                        // Line 46
 
 	//------------------------------content_protection/agentoccasion/bank/display.html
-	echo T_("Is trust detail?");                                                      // Line 38
-	echo T_("Verified");                                                              // Line 40
+	echo T_("Save for this occasion");                                                // Line 38
 
 	//------------------------------content_protection/agentoccasion/home/display.html
 
@@ -1180,7 +1181,8 @@ class twigTransTerms
 	//-------------------------content_protection/agentoccasion/allreport/display.html
 
 	//-----------------------------content_protection/agentoccasion/users/display.html
-	echo T_("You can and, edit or remove everyone of top list");                      // Line 63
+	echo T_("No user announced in this occasion");                                    // Line 58
+	echo T_("You can and, edit or remove everyone of top list");                      // Line 69
 
 	//-----------------------------------------------content_m/disalltrip/display.html
 	echo T_("Disable all trip from qom");                                             // Line 13

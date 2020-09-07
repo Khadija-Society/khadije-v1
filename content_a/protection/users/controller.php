@@ -15,12 +15,17 @@ class controller
 			\dash\header::status(404);
 		}
 
+
 		\dash\data::dataRow($load);
 
 		if(isset($load['protection_occasion_id']))
 		{
 			\dash\data::occasionID($load['protection_occasion_id']);
 			\dash\data::occasionDetail(\lib\app\occasion::get($load['protection_occasion_id']));
+			if(\dash\data::occasionDetail_status() === 'deleted')
+			{
+				\dash\header::status(404);
+			}
 			$person = \dash\request::get('person');
 			if($person)
 			{

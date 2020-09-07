@@ -30,7 +30,7 @@
 		</a>
 	</div>
 
-
+	{%if dataRow.status == 'accept' or dataRow.total_price%}
 	<div class="c s4">
 		<a class="dcard {%if url.child == 'pay'%}active{%endif%}" href='{{url.this}}/pay?id={{requestGET.id}}'>
 			<div class="statistic sm">
@@ -39,6 +39,7 @@
 			</div>
 		</a>
 	</div>
+	{%endif%}
 
 	<div class="c s4">
 		<a class="dcard {%if url.child == 'users'%}active{%endif%}" href='{{url.this}}/users?id={{requestGET.id}}'>

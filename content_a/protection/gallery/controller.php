@@ -20,6 +20,10 @@ class controller
 		{
 			\dash\data::occasionID($load['protection_occasion_id']);
 			\dash\data::occasionDetail(\lib\app\occasion::get($load['protection_occasion_id']));
+				if(\dash\data::occasionDetail_status() === 'deleted')
+			{
+				\dash\header::status(404);
+			}
 		}
 
 	}

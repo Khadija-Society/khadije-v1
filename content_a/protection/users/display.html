@@ -107,7 +107,10 @@
           <button class="btn primary">{%if editMode%}{%trans "Edit"%}{%else%}{%trans "Add"%}{%endif%}</button>
          </footer>
       </div>
+      {%else%}
+      <div class="msg warn2 txtC txtB fs14">{%trans "Can not add any user to this occasion"%}</div>
         {%endif%}
+
     </div>
   </div>
   <div class="mT10">
@@ -155,6 +158,12 @@
           {%endfor%}
           </tbody>
         </table>
+      </div>
+      {%else%}
+      <div class="f justify-center">
+        <div class="c8">
+            <div class="msg info2 txtB txtC fs14">{%trans "No user announced by your in this occasion"%}</div>
+        </div>
       </div>
       {%endif%}
 

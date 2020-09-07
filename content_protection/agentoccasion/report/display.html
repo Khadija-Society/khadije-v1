@@ -9,7 +9,7 @@
     <div class="c6 s12 m8">
        <div class="cbox">
 		{%if dataRow.report%}
-        	<p>{{dataRow.report | nl2br}}</p>
+        	<p class="msg">{{dataRow.report | nl2br}}</p>
 		{%else%}
 		<div class="msg warn2">{%trans "No report was sended yet"%}</div>
 		{%endif%}

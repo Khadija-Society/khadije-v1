@@ -59,7 +59,10 @@ class protectionreport
 		$chart_price = [];
 		foreach ($price as $key => $value)
 		{
-			$chart_price[] = ['name' => $value['type'], 'y' => floatval($value['total_price'])];
+			if(isset($value['type']) && isset($value['total_price']))
+			{
+				$chart_price[] = ['name' => $value['type'], 'y' => floatval($value['total_price'])];
+			}
 		}
 
 		$chart['chart_price'] = json_encode($chart_price, JSON_UNESCAPED_UNICODE);
@@ -87,8 +90,11 @@ class protectionreport
 		$chart_price = [];
 		foreach ($price as $key => $value)
 		{
-			$map_code = \dash\utility\location\provinces::get($value['province'], null, 'map_code');
-			$chart_price[] = [$map_code, intval($value['total_price'])];
+			if(isset($value['province']) && isset($value['total_price']))
+			{
+				$map_code = \dash\utility\location\provinces::get($value['province'], null, 'map_code');
+				$chart_price[] = [$map_code, intval($value['total_price'])];
+			}
 		}
 
 		$chart['chart_price'] = json_encode($chart_price, JSON_UNESCAPED_UNICODE);
