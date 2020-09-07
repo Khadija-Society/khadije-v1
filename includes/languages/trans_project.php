@@ -193,7 +193,7 @@ class twigTransTerms
 	echo T_("Arabic Language");                                                       // Line 433
 	echo T_("Province");                                                              // Line 11
 	echo T_("Select province");                                                       // Line 102
-	echo T_("Select city");                                                           // Line 125
+	echo T_("Select city");                                                           // Line 119
 	echo T_("Zip code");                                                              // Line 473
 	echo T_("Passport id");                                                           // Line 483
 	echo T_("Foreigners must fill");                                                  // Line 100
@@ -281,7 +281,7 @@ class twigTransTerms
 	echo T_("answertext");                                                            // Line 204
 	echo T_("group_id");                                                              // Line 205
 	echo T_("recommend_id");                                                          // Line 206
-	echo T_("Filters of this group");                                                 // Line 36
+	echo T_("Filters of this group");                                                 // Line 235
 
 	//--------------------------------------content_smsapp/recommendgroup/display.html
 	echo T_("You can register some recommend text to this group to help you.");       // Line 7
@@ -393,8 +393,8 @@ class twigTransTerms
 	echo T_("Action");                                                                // Line 66
 
 	//-------------------------------------------content_smsapp/editgroup/display.html
-	echo T_("Answers");                                                               // Line 46
-	echo T_("Recomment text");                                                        // Line 56
+	echo T_("Answers");                                                               // Line 45
+	echo T_("Keywords");                                                              // Line 56
 
 	//---------------------------------------------content_smsapp/listsms/display.html
 	echo T_("Maximum allowed to send today has been completed");                      // Line 40
@@ -740,7 +740,6 @@ class twigTransTerms
 	echo T_("You can upload 20 files");                                               // Line 16
 
 	//----------------------------------------content_a/protection/detail/display.html
-	echo T_("Expire date");                                                           // Line 34
 	echo T_("The number of people announced by you on this occasion");                // Line 20
 	echo T_("Person");                                                                // Line 76
 	echo T_("You are not announce any people to this occasion");                      // Line 24
@@ -774,7 +773,7 @@ class twigTransTerms
 
 	//----------------------------------------------content_a/protection/pageStep.html
 	echo T_("Bank account detail");                                                   // Line 28
-	echo T_("Introducing people");                                                    // Line 50
+	echo T_("Introducing people");                                                    // Line 31
 	echo T_("Image report");                                                          // Line 62
 	echo T_("Pay detail");                                                            // Line 39
 
@@ -784,9 +783,9 @@ class twigTransTerms
 	echo T_("Please indicate on which of the following occasions you would like to receive a subsistence package for the people you cover?");// Line 52
 
 	//-----------------------------------------content_a/protection/users/display.html
-	echo T_("Name & family");                                                         // Line 90
-	echo T_("Protection count");                                                      // Line 97
-	echo T_("Choose type");                                                           // Line 108
+	echo T_("Name & family");                                                         // Line 84
+	echo T_("Protection count");                                                      // Line 91
+	echo T_("Choose type");                                                           // Line 102
 	echo T_("Can not add any user to this occasion");                                 // Line 111
 	echo T_("No user announced by your in this occasion");                            // Line 165
 
@@ -1046,7 +1045,7 @@ class twigTransTerms
 
 	//---------------------------------content_protection/occasion/detail/display.html
 	echo T_("Request Status");                                                        // Line 62
-	echo T_("Count user");                                                            // Line 63
+	echo T_("Count user");                                                            // Line 61
 	echo T_("Show users");                                                            // Line 77
 
 	//-----------------------------------content_protection/occasion/user/display.html
@@ -1060,6 +1059,7 @@ class twigTransTerms
 	echo T_("Try to start with add new occasion!");                                   // Line 113
 
 	//----------------------------------content_protection/occasion/agent/display.html
+	echo T_("Count Supported user");                                                  // Line 63
 
 	//-----------------------------------------content_protection/occasion/layout.html
 	echo T_("Title of occasion");                                                     // Line 8
@@ -1080,9 +1080,9 @@ class twigTransTerms
 
 	//--------------------------------------------content_protection/home/display.html
 	echo T_("Text report");                                                           // Line 49
-	echo T_("User count");                                                            // Line 62
+	echo T_("Supported user count");                                                  // Line 62
 	echo T_("Agent occasion");                                                        // Line 71
-	echo T_("Last user");                                                             // Line 109
+	echo T_("Last Supported user");                                                   // Line 109
 	echo T_("Last protection agetn");                                                 // Line 145
 	echo T_("Occasiona");                                                             // Line 163
 	echo T_("Agent Signupded");                                                       // Line 174
@@ -1175,12 +1175,13 @@ class twigTransTerms
 
 	//----------------------------------content_protection/agentoccasion/pageStep.html
 	echo T_("Edit agent");                                                            // Line 10
+	echo T_("Introducing Supported user");                                            // Line 50
 
 	//-------------------------content_protection/agentoccasion/allreport/display.html
 
 	//-----------------------------content_protection/agentoccasion/users/display.html
-	echo T_("No user announced in this occasion");                                    // Line 58
-	echo T_("You can and, edit or remove everyone of top list");                      // Line 69
+	echo T_("No user announced in this occasion");                                    // Line 52
+	echo T_("You can and, edit or remove everyone of top list");                      // Line 63
 
 	//-----------------------------------------------content_m/disalltrip/display.html
 	echo T_("Disable all trip from qom");                                             // Line 13

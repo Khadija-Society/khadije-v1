@@ -76,14 +76,13 @@
         <th>{%trans "Protection count"%}</th>
         <th>{%trans "Gender"%}</th>
         <th>{%trans "Married"%}</th>
-        <th>{%trans "Status"%}</th>
-        <th></th>
+
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in dataTable%}
-      <tr {%if value.status=='request'%} class='warning' {%elseif value.status=='reject'%} class='negative' {%elseif value.status=='accept'%} class='positive'{%endif%}>
+      <tr>
         {%if agentDetail%}
         {%else%}
         <td class="collapsing">{{value.agent_type}}</td>
@@ -96,13 +95,7 @@
         <td>{{value.protectioncount | fitNumber}}</td>
         <td>{%set myStatus = value.gender%}{%trans myStatus%}</td>
         <td>{%set myStatus = value.married%}{%trans myStatus%}</td>
-        <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
-        <td class="collapsing">
-          {%if perm('protectonUserAdmin') %}
-          <a class="btn danger xs outline mLR10" data-ajaxify data-method='post' data-data='{"type": "reject", "useragentid": "{{value.id}}"}'>{%trans "Reject"%}</a>
-          <a class="btn success outline" data-ajaxify data-method='post' data-data='{"type": "accept", "useragentid": "{{value.id}}"}'>{%trans "Accept"%}</a>
-          {%endif%}
-        </td>
+
       </tr>
       {%endfor%}
     </tbody>

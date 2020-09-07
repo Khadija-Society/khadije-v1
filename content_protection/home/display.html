@@ -59,7 +59,7 @@
       <div class="c6 s6">
         <a href="{{url.this}}/allusers" class="dcard">
           <div class="statistic sm">
-            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "User count"%}</div>
+            <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Supported user count"%}</div>
             <div class="value counter">{{dashboardDetail.user_count | fitNumber}}</div>
           </div>
         </a>
@@ -106,7 +106,7 @@
 
 
     <div class="cbox fs11 mB10">
-      <h2>{%trans "Last user"%}</h2>
+      <h2>{%trans "Last Supported user"%}</h2>
       {%for key, value in dashboardDetail.last_user%}
       <div class="msg f" >
         <div class="c">{{value.displayname}}</div>

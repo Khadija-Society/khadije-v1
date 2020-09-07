@@ -24,8 +24,7 @@
               <th class="collapsing">{%trans "Protection count"%}</th>
               <th>{%trans "Type"%}</th>
               <th>{%trans "City"%}</th>
-              <th>{%trans "Status"%}</th>
-              <th class="collapsing"></th>
+
             </tr>
           </thead>
           <tbody class="fs14">
@@ -41,12 +40,7 @@
               <td>{{value.type_title}}</td>
               <td>{{value.location_string}}</td>
 
-              <td>{%set my_status = value.status%}{%trans my_status%}</td>
-              <td class="collapsing">
 
-                <a class="btn danger xs {%if value.status == 'reject'%}{%else%}outline{%endif%} mLR10" data-ajaxify data-method='post' data-data='{"type": "reject", "useragentid": "{{value.id}}"}'>{%trans "Reject"%}</a>
-                <a class="btn success {%if value.status == 'accept'%}{%else%}outline{%endif%}" data-ajaxify data-method='post' data-data='{"type": "accept", "useragentid": "{{value.id}}"}'>{%trans "Accept"%}</a>
-              </td>
             </tr>
           {%endfor%}
           </tbody>
