@@ -28,7 +28,7 @@ class controller
 	{
 		if(!\dash\permission::supervisor())
 		{
-			\dash\redirect::to(\dash\url::here(). '/answergroup?id=p');
+			// \dash\redirect::to(\dash\url::here(). '/answergroup?id=p');
 		}
 	}
 
