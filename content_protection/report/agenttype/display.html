@@ -59,7 +59,12 @@
 
 
 {%block foot_js%}
+
+<script type="text/javascript">
+  {% include 'content_protection/report/province/highmaps.js' %}
+</script>
+
 <script>
-{%include 'content_protection/report/home/chart.js'%}
+{%include 'content_protection/report/agenttype/chart.js'%}
 </script>
 {%endblock%}

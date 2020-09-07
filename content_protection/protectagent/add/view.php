@@ -11,6 +11,10 @@ class view
 		\dash\data::page_pictogram('plus-circle');
 
 
+		$agentType = \lib\app\protectiontype::get_all('agenttype');
+		\dash\data::agentType($agentType);
+
+
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back'));
 	}

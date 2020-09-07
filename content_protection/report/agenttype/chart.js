@@ -105,7 +105,7 @@ function chartdivprice()
       type: 'pie'
     },
     title: {
-      text: '{%trans "Count agent type"%}'
+      text: '{%trans "Total price agent type"%}'
     },
     tooltip: {
       useHTML: true,

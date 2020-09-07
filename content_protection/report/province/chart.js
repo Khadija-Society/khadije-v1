@@ -40,43 +40,6 @@ if($('html').attr('lang') === 'fa')
   });
 }
 
-  // Prepare demo data
-// Data is joined to map using value of 'hc-key' property by default.
-// See API docs for 'joinBy' for more info on linking data and map.
-// var data = [
-//     // ['ir-5428', 10000000000],
-//     ['ir-hg', 0], // hormozgan
-//     ['ir-bs', 0], // booshehr
-//     ['ir-kb', 0], // kohgiloe and boyer ahmad
-//     ['ir-fa', 0], // fars
-//     ['ir-es', 0], // esfahan
-//     ['ir-sm', 0], // semnan
-//     ['ir-go', 0], // golestan
-//     ['ir-mn', 0], // mazandaran
-//     ['ir-th', 0], // tehran
-//     ['ir-mk', 0], // markazi
-//     ['ir-ya', 0], // yazd
-//     ['ir-cm', 0], // charmahal and bakhtiyary
-//     ['ir-kz', 0], // khozestan
-//     ['ir-lo', 0], // lorestan
-//     ['ir-il', 0], // ilam
-//     ['ir-ar', 0], // ardebil
-//     ['ir-qm', 0], // qom
-//     ['ir-hd', 0], // hamedan
-//     ['ir-za', 0], // zanjan
-//     ['ir-qz', 0], // qazvin
-//     ['ir-wa', 0], // west azarbayean
-//     ['ir-ea', 0], // est azarbayean
-//     ['ir-bk', 0], // kermanshah
-//     ['ir-gi', 0], // gilan
-//     ['ir-kd', 0], // kurdestan
-//     ['ir-kj', 0], // khurasan jonobi
-//     ['ir-kv', 0], // khurasan razavi
-//     ['ir-ks', 0], // khurasan shomali
-//     ['ir-sb', 0], // sistan and balochestan
-//     ['ir-ke', 0], // keramn
-//     ['ir-al', 0] // albors
-// ];
 var data = {{reportDetail.chart_price |raw}};
 
 // Create the chart

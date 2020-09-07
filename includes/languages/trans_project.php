@@ -192,7 +192,7 @@ class twigTransTerms
 	echo T_("No");                                                                    // Line 432
 	echo T_("Arabic Language");                                                       // Line 433
 	echo T_("Province");                                                              // Line 11
-	echo T_("Select province");                                                       // Line 501
+	echo T_("Select province");                                                       // Line 102
 	echo T_("Select city");                                                           // Line 119
 	echo T_("Zip code");                                                              // Line 473
 	echo T_("Passport id");                                                           // Line 483
@@ -1033,12 +1033,12 @@ class twigTransTerms
 	echo T_("datecreated");                                                           // Line 447
 
 	//-----------------------------------------content_protection/setting/display.html
-	echo T_("Occasion target");                                                       // Line 52
+	echo T_("Occasion target");                                                       // Line 125
 
 	//----------------------------------------content_protection/allusers/display.html
 	echo T_("List of people introduced by");                                          // Line 9
 	echo T_("Search in occasion");                                                    // Line 44
-	echo T_("Agent type");                                                            // Line 61
+	echo T_("Agent type");                                                            // Line 168
 	echo T_("Agent");                                                                 // Line 61
 	echo T_("Occasion");                                                              // Line 60
 
@@ -1077,19 +1077,55 @@ class twigTransTerms
 	//---------------------------------------content_protection/agenttype/display.html
 
 	//--------------------------------------------content_protection/home/display.html
-	echo T_("Last protection agetn");                                                 // Line 19
-	echo T_("Occasiona");                                                             // Line 37
-	echo T_("Agent Signupded");                                                       // Line 48
-	echo T_("All users");                                                             // Line 57
-	echo T_("All text report");                                                       // Line 69
-	echo T_("Protection agent");                                                      // Line 93
+	echo T_("Text report");                                                           // Line 44
+	echo T_("User count");                                                            // Line 54
+	echo T_("Agent occasion");                                                        // Line 64
+	echo T_("Last user");                                                             // Line 98
+	echo T_("Last protection agetn");                                                 // Line 134
+	echo T_("Occasiona");                                                             // Line 152
+	echo T_("Agent Signupded");                                                       // Line 163
+	echo T_("All users");                                                             // Line 172
+	echo T_("All text report");                                                       // Line 184
+	echo T_("Protection agent");                                                      // Line 208
 
 	//--------------------------------------------------content_protection/layout.html
 	echo T_("Occasion list");                                                         // Line 8
 	echo T_("Protect agent");                                                         // Line 9
 	echo T_("Agent registered");                                                      // Line 29
 	echo T_("Users registered");                                                      // Line 33
-	echo T_("Occasion type");                                                         // Line 14
+	echo T_("Occasion type");                                                         // Line 169
+
+	//-------------------------------------content_protection/report/province/chart.js
+	echo T_("Registered");                                                            // Line 147
+
+	//------------------------------------content_protection/report/province/ir-all.js
+
+	//----------------------------------content_protection/report/province/highmaps.js
+
+	//---------------------------------content_protection/report/province/display.html
+	echo T_("Total price");                                                           // Line 29
+
+	//------------------------------------content_protection/report/agenttype/chart.js
+	echo T_("Count agent type");                                                      // Line 30
+	echo T_("Total price agent type");                                                // Line 108
+
+	//--------------------------------content_protection/report/agenttype/display.html
+
+	//-----------------------------------------content_protection/report/home/chart.js
+	echo T_("Count occasion type");                                                   // Line 30
+	echo T_("Total price occasion type");                                             // Line 108
+
+	//-------------------------------------content_protection/report/home/display.html
+
+	//-----------------------------content_protection/report/userprovince/display.html
+
+	//-----------------------------------------content_protection/report/pageStep.html
+	echo T_("Report");                                                                // Line 48
+	echo T_("Group by Province");                                                     // Line 36
+	echo T_("Group by user Province");                                                // Line 46
+	echo T_("Registrer user");                                                        // Line 57
+	echo T_("Group by month");                                                        // Line 67
+	echo T_("Group by item");                                                         // Line 76
 
 	//------------------------------------content_protection/occasiontype/display.html
 
@@ -1105,6 +1141,11 @@ class twigTransTerms
 	echo T_("Edit Address detail");                                                   // Line 42
 
 	//--------------------------content_protection/agentoccasion/occasion/display.html
+
+	//--------------------------content_protection/agentoccasion/allprice/display.html
+	echo T_("Advance filter");                                                        // Line 82
+	echo T_("Select one item");                                                       // Line 137
+	echo T_("Price payed");                                                           // Line 173
 
 	//-------------------------------content_protection/agentoccasion/pay/display.html
 	echo T_("Please verify the bank account number of this protection agent");        // Line 12
@@ -1137,7 +1178,6 @@ class twigTransTerms
 	echo T_("Edit agent");                                                            // Line 10
 
 	//-------------------------content_protection/agentoccasion/allreport/display.html
-	echo T_("Report");                                                                // Line 48
 
 	//-----------------------------content_protection/agentoccasion/users/display.html
 	echo T_("You can and, edit or remove everyone of top list");                      // Line 63
@@ -1208,7 +1248,6 @@ class twigTransTerms
 	echo T_("Students");                                                              // Line 165
 
 	//---------------------------------------------content_m/mokebuser/report/chart.js
-	echo T_("Registered");                                                            // Line 147
 
 	//--------------------------------------------content_m/mokebuser/report/ir-all.js
 
@@ -1535,7 +1574,6 @@ class twigTransTerms
 	echo T_("Today Donation");                                                        // Line 20
 	echo T_("Donation Count");                                                        // Line 29
 	echo T_("Donation Average");                                                      // Line 37
-	echo T_("Advance filter");                                                        // Line 82
 	echo T_("Search in donations");                                                   // Line 83
 	echo T_("Max pay");                                                               // Line 114
 	echo T_("Max count pay user");                                                    // Line 118
@@ -1751,7 +1789,6 @@ class twigTransTerms
 	//---------------------------------------content_m/productdonate/home/display.html
 	echo T_("Product");                                                               // Line 149
 	echo T_("Product count");                                                         // Line 20
-	echo T_("Total price");                                                           // Line 29
 	echo T_("Transaction");                                                           // Line 177
 	echo T_("No result founded");                                                     // Line 210
 
