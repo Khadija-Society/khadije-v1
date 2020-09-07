@@ -1,0 +1,31 @@
+{%extends 'content_protection/occasion/layout.html'%}
+
+{%block pageContent%}
+{{block('occasionPageStep')}}
+<div class="f justify-center">
+
+  <form method="post" class="c8 m6 s12" autocomplete="off">
+    <div class="mLa5">
+
+      <div class="cbox">
+        <input type="hidden" name="detail" value="detail">
+        <h5>{%trans "Send Notif to all agent"%}</h5>
+
+        {%if not myDate%}
+        <div class="msg primary2">{%trans "You not send any sms to this agents"%}</div>
+        <div class="txtRa">
+          <button class="btn success">{%trans "Send"%}</button>
+        </div>
+        {%else%}
+        <div class="msg success">{%trans "You already send notification to this agent list at time"%} {{myDate | dt}}</div>
+        <div class="txtRa">
+          <button class="btn">{%trans "Send Again"%}</button>
+        </div>
+        {%endif%}
+      </div>
+
+    </div>
+  </form>
+</div>
+
+{%endblock%}

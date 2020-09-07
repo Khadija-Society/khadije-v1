@@ -43,6 +43,56 @@ class protectionagentoccasion
 		return $result;
 	}
 
+	public static function get_sms_mobile_list($_occasion_id)
+	{
+		$query  =
+		"
+			SELECT
+				protection_agent_occasion_allow.id AS `id`,
+				protection_agent.user_id AS `user_id`
+			FROM
+				protection_agent_occasion_allow
+			INNER JOIN protection_agent ON protection_agent.id = protection_agent_occasion_allow.protection_agent_id
+			WHERE
+				protection_agent_occasion_allow.protection_occasion_id = $_occasion_id
+		";
+		// var_dump($query);exit();
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+	public static function set_datenotif($_ids, $_date)
+	{
+		$query  =
+		"
+			UPDATE
+				protection_agent_occasion_allow
+			SET
+				protection_agent_occasion_allow.datenotif = '$_date'
+			WHERE
+				protection_agent_occasion_allow.id IN ($_ids)
+		";
+		$result = \dash\db::query($query);
+		return $result;
+
+	}
+
+
+	public static function get_sms_date($_occasion_id)
+	{
+		$query  =
+		"
+			SELECT
+				MAX(protection_agent_occasion_allow.datenotif) as `datenotif`
+			FROM
+				protection_agent_occasion_allow
+			WHERE
+				protection_agent_occasion_allow.protection_occasion_id = $_occasion_id
+		";
+		$result = \dash\db::get($query, 'datenotif', true);
+		return $result;
+	}
+
 
 	public static function delete_allow($_id)
 	{

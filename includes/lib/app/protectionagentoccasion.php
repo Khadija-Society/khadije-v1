@@ -6,6 +6,51 @@ namespace lib\app;
  */
 class protectionagentoccasion
 {
+
+	public static function get_sms_date($_occaseion)
+	{
+		$occasion_id = \dash\coding::decode($_occaseion);
+		if(!$occasion_id)
+		{
+			return null;
+		}
+
+		$date = \lib\db\protectionagentoccasion::get_sms_date($occasion_id);
+
+		return $date;
+	}
+
+	public static function agent_send_sms($_occaseion)
+	{
+		$occasion_id = \dash\coding::decode($_occaseion);
+		if(!$occasion_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return null;
+		}
+
+		$get_user_id = \lib\db\protectionagentoccasion::get_sms_mobile_list($occasion_id);
+
+		if(!$get_user_id)
+		{
+			\dash\notif::error(T_("No agent found in this occaseion"));
+			return false;
+		}
+
+		foreach ($get_user_id as $key => $value)
+		{
+			\dash\log::set('protectionAgentAlert', ['to' => $value['user_id']]);
+		}
+
+		\lib\db\protectionagentoccasion::set_datenotif(implode(',' , array_column($get_user_id, 'id')), date("Y-m-d H:i:s"));
+
+		\dash\notif::ok(T_("Sms Sended"));
+		return true;
+	}
+
+
+
+
 	public static function get_allow($_occaseion)
 	{
 		$occasion_id = \dash\coding::decode($_occaseion);
