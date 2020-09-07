@@ -14,16 +14,16 @@
           <input type="hidden" name="occation_id" value="{{requestGET.id}}">
             <div class="f">
               <div class="c6 s12">
-                <label for="inationalcode">{%trans "Nationalcode"%}</label>
+                <label for="inationalcode">{%trans "Nationalcode"%} <small class="fc-red">* {%trans "Require"%}</small></label>
                 <div class="input">
-                  <input type="tel" id="inationalcode" name="nationalcode" value="{{personDataRow.nationalcode}}" maxlength="10">
+                  <input type="tel" id="inationalcode" name="nationalcode" value="{{personDataRow.nationalcode}}" maxlength="10" required>
                 </div>
               </div>
               <div class="c6 s12">
                 <div class="mLa5">
-                  <label for="imobile">{%trans "Mobile"%}</label>
+                  <label for="imobile">{%trans "Mobile"%} <small class="fc-red">* {%trans "Require"%}</small></label>
                   <div class="input">
-                    <input type="tel" id="imobile" name="mobile" value="{{personDataRow.mobile}}" maxlength="15">
+                    <input type="tel" id="imobile" name="mobile" value="{{personDataRow.mobile}}" maxlength="15" required>
                   </div>
                 </div>
               </div>
@@ -31,9 +31,9 @@
 
             <div class="f">
               <div class="c6 s12">
-                  <label for="idisplayname">{%trans "Name & family"%}</label>
+                  <label for="idisplayname">{%trans "Name & family"%} <small class="fc-red">* {%trans "Require"%}</small></label>
                   <div class="input">
-                    <input type="text" id="idisplayname" name="displayname" value="{{personDataRow.displayname}}" maxlength="50">
+                    <input type="text" id="idisplayname" name="displayname" value="{{personDataRow.displayname}}" maxlength="50" required>
                   </div>
               </div>
               <div class="c6 s12">

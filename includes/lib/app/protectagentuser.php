@@ -425,6 +425,30 @@ class protectagentuser
 		$check_duplicate =
 		[
 			'protection_occasion_id' => \dash\coding::decode($load_occasion['id']),
+			'protection_agent_id'    => $protection_agent_id,
+			'nationalcode'           => $nationalcode,
+			'limit'                  => 1,
+		];
+
+		$check_duplicate = \lib\db\protectionagentuser::get($check_duplicate);
+
+		if(isset($check_duplicate['id']))
+		{
+			if(intval($_id) === intval($check_duplicate['id']))
+			{
+				// no problem to edit it
+			}
+			else
+			{
+				\dash\notif::error(T_("This user already added to your list"), 'nationalcode');
+				return false;
+			}
+		}
+
+
+		$check_duplicate =
+		[
+			'protection_occasion_id' => \dash\coding::decode($load_occasion['id']),
 			// 'protection_agent_id'    => $protection_agent_id,
 			'nationalcode'           => $nationalcode,
 			'limit'                  => 1,

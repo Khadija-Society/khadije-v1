@@ -20,8 +20,6 @@
           <li class="f">
             <div class="cauto">{{(key+1) | fitNumber}}. </div>
             <div class="c">{{value.title}}</div>
-            {%if value.price%}<div class="c">{%trans "Price"%} {{value.price | fitNumber}}</div>{%endif%}
-            <div class="c">{{value.desc}}</div>
           </li>
           {%endfor%}
           </ul>
