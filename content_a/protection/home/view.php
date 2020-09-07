@@ -11,6 +11,7 @@ class view
 		\dash\data::badge_text(T_('Back to dashboard'));
 
 		$occasion = \lib\app\occasion::get_active_list();
+
 		if(!is_array($occasion))
 		{
 			$occasion = [];
@@ -20,6 +21,7 @@ class view
 
 		$registeredOccasion = \lib\app\protectionagentoccasion::old_registered_occasion();
 
+
 		$occasionID = [];
 
 		if(is_array($registeredOccasion))
@@ -27,11 +29,6 @@ class view
 			$occasionID = array_column($registeredOccasion, 'protection_occasion_id');
 		}
 		\dash\data::occasionID($occasionID);
-
-		if(count($occasion) > count($occasionID))
-		{
-			\dash\data::haveUnregisteredOccasion(true);
-		}
 
 		\dash\data::registeredOccasion($registeredOccasion);
 

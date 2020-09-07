@@ -2,7 +2,7 @@
 
 
 {%block pageContent%}
-{%if occasionDetail%}
+
 <div class="f justify-center fs12">
   <div class="c8 m8 s12">
     <div class="cbox">
@@ -27,7 +27,7 @@
 
         {%endif%}
 
-      <div class="f txtC">
+      <div class="f txtC mT20">
         <div class="c">
           <div class="btn success block" data-ajaxify data-data='{"register": "register"}' data-method='post'>{%trans "Register"%}</div>
         </div>
@@ -40,37 +40,5 @@
   </div>
 </div>
 
-{%else%}
-
-<div class="f justify-center txtC fs12">
-  <div class="c8 m8 s12">
-
-    {%if occasionList%}
-    <p class="msg info2 fs14 txtB txtC">
-      {%trans "Please indicate on which of the following occasions you would like to receive a subsistence package for the people you cover?"%}
-    </p>
-    <div class="f justify-center">
-      {%for key, value in occasionList%}
-      <div class="c6 s12 pA10">
-        <a class="dcard grShadow grGreen2 x2 op100" href='{{url.that}}?id={{value.id}}'>
-          <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
-          <div>{{value.subtitle}}</div>
-          <div></div>
-        </a>
-      </div>
-      {%endfor%}
-    </div>
-
-    {%else%}
-    <div class="msg info fs14 txtB txtC">{%trans "No support program has been announced by the institute at this time"%}
-      <br>
-      {%trans "Please follow the news of the institute to complete the steps through this page if the distribution of livelihood packages by the institute started on the occasion."%}
-    </div>
-    {%endif%}
-
-  </div>
-</div>
-
-{%endif%}
 
 {%endblock%}

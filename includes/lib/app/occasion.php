@@ -10,11 +10,19 @@ class occasion
 	public static function get_active_list()
 	{
 		$date = date("Y-m-d");
-		$result = \lib\db\occasion::get_active_list($date);
+
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			return false;
+		}
+
+		$result = \lib\db\occasion::get_active_list($date, $protection_agent_id);
 		if(!is_array($result))
 		{
 			$result = [];
 		}
+
 
 		$result = array_map(['self', 'ready'], $result);
 		return $result;

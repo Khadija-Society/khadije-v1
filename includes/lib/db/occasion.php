@@ -3,7 +3,7 @@ namespace lib\db;
 
 class occasion
 {
-	public static function get_active_list($_date)
+	public static function get_active_list($_date, $_protection_agent_id)
 	{
 		$query  =
 		"
@@ -11,11 +11,14 @@ class occasion
 				protection_occasion.*
 			FROM
 				protection_occasion
+			INNER JOIN protection_agent_occasion_allow ON protection_agent_occasion_allow.protection_occasion_id = protection_occasion.id
 			WHERE
 				protection_occasion.status IN ('registring') AND
 				DATE(protection_occasion.startdate) <= DATE('$_date') AND
-				DATE(protection_occasion.expiredate) >= DATE('$_date')
+				DATE(protection_occasion.expiredate) >= DATE('$_date') AND
+				protection_agent_occasion_allow.protection_agent_id = $_protection_agent_id
 		";
+
 
 		$result = \dash\db::get($query);
 		return $result;

@@ -119,6 +119,16 @@ class protectionagentoccasion
 			return false;
 		}
 
+		$check_duplicate = \lib\db\protectionagentoccasion::get_allow($protection_agent_id, \dash\coding::decode($occasion_id));
+		if(!$check_duplicate)
+		{
+			\dash\notif::error(T_("You can not allow to signup in this occaseion"));
+			return true;
+		}
+
+
+
+
 
 		$insert =
 		[

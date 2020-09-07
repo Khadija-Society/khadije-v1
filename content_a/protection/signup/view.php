@@ -9,8 +9,7 @@ class view
 		\dash\data::page_title(T_("Protection user detail"));
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back to dashboard'));
-		$occasion = \lib\app\occasion::get_active_list();
-		\dash\data::occasionList($occasion);
+
 
 	}
 }

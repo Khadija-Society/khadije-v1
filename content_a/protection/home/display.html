@@ -20,10 +20,17 @@
   {%endfor%}
 </div>
 {%endif%}
-{%if occasionList and haveUnregisteredOccasion%}
+{%if occasionList %}
+{%set haveUnregisteredOccasion = false%}
+  {%for key, value in occasionList%}
+  {%if value.id not in occasionID%}
+    {%set haveUnregisteredOccasion = true%}
+    {%endif%}
+  {%endfor%}
+  {%if haveUnregisteredOccasion%}
 <h4>{%trans "New occassion"%}</h4>
 
-  </p>
+
 <div class="f">
   {%for key, value in occasionList%}
   {%if value.id not in occasionID%}
@@ -36,6 +43,7 @@
     {%endif%}
   {%endfor%}
 </div>
+{%endif%}
 {%endif%}
 
 {%if not registeredOccasion and not occasionList%}
