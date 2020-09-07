@@ -6,7 +6,7 @@ class controller
 {
 	public static function routing()
 	{
-		\dash\permission::access('protectonPriceAgentAdmin');
+		\dash\permission::access('protectonAgentAdmin');
 
 		$id = \dash\request::get('id');
 

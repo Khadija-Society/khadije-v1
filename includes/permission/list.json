@@ -545,5 +545,50 @@
     "title": "contentCrm",
     "cat": "Manage customer",
     "require": []
+  },
+  "contentProtection": {
+    "title": "contentProtection",
+    "cat": "Protection",
+    "require": []
+  },
+  "protectonSetting": {
+    "title": "protectonSetting",
+    "cat": "Protection",
+    "require": []
+  },
+  "protectonUserAdmin": {
+    "title": "protectonUserAdmin",
+    "cat": "Protection",
+    "require": []
+  },
+  "protectonOccasionView": {
+    "title": "protectonOccasionView",
+    "cat": "Protection",
+    "require": []
+  },
+  "protectonOccasionAdmin": {
+    "title": "protectonOccasionAdmin",
+    "cat": "Protection",
+    "require": []
+  },
+  "protectonAgentView": {
+    "title": "protectonAgentView",
+    "cat": "Protection",
+    "require": []
+  },
+  "protectonPriceAdmin": {
+    "title": "protectonPriceAdmin",
+    "cat": "Protection",
+    "require": []
+  },
+  "protectonReport": {
+    "title": "protectonReport",
+    "cat": "Protection",
+    "require": []
+  },
+  "protectonAgentAdmin": {
+    "title": "protectonAgentAdmin",
+    "cat": "Protection",
+    "require": []
   }
 }

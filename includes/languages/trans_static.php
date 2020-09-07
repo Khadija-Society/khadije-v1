@@ -333,4 +333,15 @@ class TransStatic
 	echo T_("Distribution");
 	echo T_("deleted");
 	echo T_("Deleted");
+
+	echo T_("contentProtection");
+	echo T_("protectonSetting");
+	echo T_("protectonUserAdmin");
+	echo T_("protectonOccasionView");
+	echo T_("protectonOccasionAdmin");
+	echo T_("protectonAgentView");
+	echo T_("protectonPriceAdmin");
+	echo T_("protectonReport");
+	echo T_("protectonAgentAdmin");
+	echo T_("Protection");
 }
