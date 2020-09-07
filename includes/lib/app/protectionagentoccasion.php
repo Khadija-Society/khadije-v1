@@ -6,6 +6,73 @@ namespace lib\app;
  */
 class protectionagentoccasion
 {
+	public static function get_allow($_occaseion)
+	{
+		$occasion_id = \dash\coding::decode($_occaseion);
+		if(!$occasion_id)
+		{
+			return [];
+		}
+
+		$list = \lib\db\protectionagentoccasion::get_allow_occaseion($occasion_id);
+		$list = array_map(['self', 'ready'], $list);
+		return $list;
+	}
+
+
+	public static function set_allow($_args)
+	{
+		$agent_id    = isset($_args['agent_id']) ? $_args['agent_id'] : null;
+		$occasion_id = isset($_args['occasion_id']) ? $_args['occasion_id'] : null;
+		$allow       = isset($_args['allow']) ? $_args['allow'] : null;
+
+		$agent_id = \dash\coding::decode($agent_id);
+		$occasion_id = \dash\coding::decode($occasion_id);
+
+		if(!in_array($allow, ['yes', 'not']))
+		{
+			$allow = null;
+		}
+
+		if(!$agent_id || !$occasion_id || !$allow)
+		{
+			\dash\notif::error(T_("Invalid detail"));
+			return false;
+		}
+
+		if($allow === 'yes')
+		{
+			$check_duplicate = \lib\db\protectionagentoccasion::get_allow($agent_id, $occasion_id);
+			if($check_duplicate)
+			{
+				\dash\notif::info(T_("Ok"));
+				return true;
+			}
+
+			$insert =
+			[
+				'protection_agent_id' => $agent_id,
+				'protection_occasion_id' => $occasion_id,
+				'datecreated' => date("Y-m-d H:i:s"),
+			];
+
+			\lib\db\protectionagentoccasion::inset_allow($insert);
+			return true;
+		}
+		else
+		{
+			$check_duplicate = \lib\db\protectionagentoccasion::get_allow($agent_id, $occasion_id);
+			if(!$check_duplicate)
+			{
+				\dash\notif::info(T_("Ok"));
+				return true;
+			}
+
+			\lib\db\protectionagentoccasion::delete_allow($check_duplicate['id']);
+			return true;
+		}
+
+	}
 
 	public static function add($_args)
 	{

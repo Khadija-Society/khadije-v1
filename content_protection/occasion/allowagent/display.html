@@ -6,22 +6,19 @@
 <div class="f">
   <div class="c s12">
     <a class="dcard x07 {%if not requestGET.allow %}active{%endif%}" href="{{url.that}}?id={{requestGET.id}}">
-      <div class="value">{{allowAgetnCount.all | fitNumber}}</div>
-      <div class="label">{%trans "All agent"%}</div>
+      <div class="value">{%trans "All agent"%}</div>
     </a>
   </div>
 
   <div class="c s12">
     <a class="dcard x07 {%if requestGET.allow == 'yes'%}active{%endif%}" href="{{url.that}}?id={{requestGET.id}}&allow=yes">
-      <div class="value">{{allowAgetnCount.yes | fitNumber}}</div>
-      <div class="label">{%trans "Allowed agent"%}</div>
+      <div class="value">{%trans "Allowed agent"%}</div>
     </a>
   </div>
 
 <div class="c s12">
     <a class="dcard x07 {%if requestGET.allow == 'no'%}active{%endif%}" href="{{url.that}}?id={{requestGET.id}}&allow=no">
-      <div class="value">{{allowAgetnCount.no | fitNumber}}</div>
-      <div class="label">{%trans "Not allowed agent"%}</div>
+      <div class="value">{%trans "Not allowed agent"%}</div>
     </a>
   </div>
 
@@ -89,7 +86,37 @@
     </thead>
     <tbody>
       {%for key, value in dataTable%}
-      <tr {%if value.status=='disable'%} class='negative'{%endif%}>
+      {%if requestGET.allow == 'yes'%}
+        {%if value.id in AllAgentIdInThisOccasion %}
+          {{block('trValue')}}
+        {%endif%}
+      {%elseif requestGET.allow == 'no'%}
+        {%if value.id in AllAgentIdInThisOccasion %}
+        {%else%}
+           {{block('trValue')}}
+        {%endif%}
+      {%else%}
+           {{block('trValue')}}
+      {%endif%}
+
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{%include display.pagination%}
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg info2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block trValue%}
+<tr {%if value.status=='disable'%} class='negative'{%endif%}>
         <td>{{value.title}}</td>
         <td><a href="{{url.that}}?id={{requestGET.id}}&type={{value.type}}">{{value.type}}</a></td>
         <td>{{value.mobile | fitNumber('mobile')}}</td>
@@ -106,19 +133,6 @@
 
         </td>
       </tr>
-      {%endfor%}
-    </tbody>
-  </table>
-</div>
-{%include display.pagination%}
-{%endblock%}
-
-
-{%block htmlFilter%}
-<p class="f fs14 msg info2">
-  <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.that}}?id={{requestGET.id}}">{%trans "Clear filters"%}</a>
-</p>
 {%endblock%}
 
 

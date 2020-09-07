@@ -91,6 +91,11 @@ class view
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);
 		\dash\data::dataFilter($dataFilter);
 
+		$get_allow = \lib\app\protectionagentoccasion::get_allow(\dash\request::get('id'));
+		$allAgetnId = array_column($get_allow, 'protection_agent_id');
+		\dash\data::AllAgentIdInThisOccasion($allAgetnId);
+
+
 	}
 }
 ?>

@@ -3,6 +3,65 @@ namespace lib\db;
 
 class protectionagentoccasion
 {
+	public static function inset_allow()
+	{
+		\dash\db\config::public_insert('protection_agent_occasion_allow', ...func_get_args());
+	}
+
+
+	public static function get_allow_occaseion($_occasion_id)
+	{
+		$query  =
+		"
+			SELECT
+				*
+			FROM
+				protection_agent_occasion_allow
+			WHERE
+				protection_agent_occasion_allow.protection_occasion_id = $_occasion_id
+		";
+		$result = \dash\db::get($query);
+		return $result;
+
+	}
+
+
+	public static function get_allow($_agent_id, $_occasion_id)
+	{
+		$query  =
+		"
+			SELECT
+				*
+			FROM
+				protection_agent_occasion_allow
+			WHERE
+				protection_agent_occasion_allow.protection_occasion_id = $_occasion_id AND
+				protection_agent_occasion_allow.protection_agent_id = $_agent_id
+			LIMIT 1
+		";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
+	public static function delete_allow($_id)
+	{
+		$query  =
+		"
+			DELETE
+
+			FROM
+				protection_agent_occasion_allow
+			WHERE
+				protection_agent_occasion_allow.id = $_id
+			LIMIT 1
+		";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
+
+
 	public static function summary($_string, $_where)
 	{
 		$join = null;
