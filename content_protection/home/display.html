@@ -7,7 +7,7 @@
     <div class="f">
 
       {%if perm('protectonOccasionView') %}
-      <div class="c4 s6">
+      <div class="c4 s12">
         <a href="{{url.this}}/occasion" class="dcard">
           <div class="statistic sm blue">
             <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Occasion"%}</div>
@@ -19,7 +19,7 @@
 
 
       {%if perm('protectonAgentView') %}
-      <div class="c4 s6">
+      <div class="c4 s12">
         <a href="{{url.this}}/protectagent" class="dcard">
           <div class="statistic sm green">
             <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Agent"%}</div>
@@ -30,7 +30,7 @@
       {%endif%}
 
       {%if perm('protectonPriceAdmin') %}
-      <div class="c4 s6">
+      <div class="c4 s12">
         <a href="{{url.this}}/agentoccasion/allprice" class="dcard">
           <div class="statistic sm teal">
             <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total price payed"%}</div>
@@ -43,7 +43,7 @@
 
 
       {%if perm('protectonReport')%}
-      <div class="c6 s6">
+      <div class="c6 s12">
         <a href="{{url.this}}/agentoccasion/allreport" class="dcard">
           <div class="statistic sm">
             <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Text report"%}</div>
@@ -56,7 +56,7 @@
 
       {%if perm('protectonUserAdmin') %}
 
-      <div class="c6 s6">
+      <div class="c6 s12">
         <a href="{{url.this}}/allusers" class="dcard">
           <div class="statistic sm">
             <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Supported user count"%}</div>
@@ -65,7 +65,7 @@
         </a>
       </div>
 
-      <div class="c12 s6">
+      <div class="c12 s12">
         <a href="{{url.this}}/agentoccasion" class="dcard">
           <div class="statistic sm">
             <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Agent occasion"%}</div>
@@ -76,7 +76,7 @@
 
       {%endif%}
       {%if perm('protectonSetting')%}
-      <div class="c6 s6">
+      <div class="c6 s12">
         <a href="{{url.this}}/setting" class="dcard">
           <div class="statistic sm">
             <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Setting"%}</div>
@@ -87,7 +87,7 @@
       {%endif%}
 
       {%if perm('protectonReport')%}
-      <div class="c6 s6">
+      <div class="c6 s12">
         <a href="{{url.this}}/report" class="dcard">
           <div class="statistic sm">
             <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Reports"%}</div>

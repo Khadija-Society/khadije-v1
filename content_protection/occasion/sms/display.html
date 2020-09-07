@@ -17,7 +17,7 @@
           <button class="btn success">{%trans "Send"%}</button>
         </div>
         {%else%}
-        <div class="msg success">{%trans "You already send notification to this agent list at time"%} {{myDate | dt}}</div>
+        <div class="msg success">{%trans "You already send notification to this agent list at time"%} <span class="compact ltr">{{myDate | dt}}</span></div>
         <div class="txtRa">
           <button class="btn">{%trans "Send Again"%}</button>
         </div>

@@ -479,7 +479,7 @@ class protectionagentoccasion
 
 		\lib\db\protectionagentoccasion::update($update, $id);
 
-		\dash\notif::ok("Your request was queued");
+		\dash\notif::ok(T_("Your request was saved"));
 
 		return true;
 	}
