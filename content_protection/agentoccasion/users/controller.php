@@ -7,7 +7,7 @@ class controller
 	public static function routing()
 	{
 
-
+		\dash\permission::access('protectonUserAdmin');
 		$id = \dash\request::get('id');
 		$load = \lib\app\protectionagentoccasion::admin_get($id);
 		if(!$load)

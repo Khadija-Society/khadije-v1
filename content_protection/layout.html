@@ -8,9 +8,10 @@
   <li><a href="{{url.here}}/occasion">{% trans "Occasion list" %}</a></li>
   <li><a href="{{url.here}}/protectagent">{% trans "Protect agent" %}</a></li>
 
+  {%if perm('protectonSetting')%}
   <li class="hr"></li>
   <li><a href="{{url.here}}/setting">{% trans "Setting" %}</a></li>
-
+  {%endif%}
 
 
 {%endblock%}
@@ -46,7 +47,7 @@
 
 <div class="f">
   <div class="c s4">
-    <a class="dcard {%if url.module == 'setting'%}active{%endif%}" href='{{url.here}}/setting?id={{requestGET.id}}'>
+    <a class="dcard {%if url.module == 'setting'%}active{%endif%}" href='{{url.here}}/setting'>
       <div class="statistic sm">
         <div class="value mB10"><i class="sf-list"></i></div>
         <div class="label">{%trans "Occasion target"%}</div>
@@ -55,7 +56,7 @@
   </div>
 
   <div class="c s4">
-    <a class="dcard {%if url.module == 'agenttype'%}active{%endif%}" href='{{url.here}}/agenttype?id={{requestGET.id}}'>
+    <a class="dcard {%if url.module == 'agenttype'%}active{%endif%}" href='{{url.here}}/agenttype'>
       <div class="statistic sm">
         <div class="value mB10"><i class="sf-user-5"></i></div>
         <div class="label">{%trans "Agent type"%}</div>
@@ -64,7 +65,7 @@
   </div>
 
     <div class="c s4">
-    <a class="dcard {%if url.module == 'occasiontype'%}active{%endif%}" href='{{url.here}}/occasiontype?id={{requestGET.id}}'>
+    <a class="dcard {%if url.module == 'occasiontype'%}active{%endif%}" href='{{url.here}}/occasiontype'>
       <div class="statistic sm">
         <div class="value mB10"><i class="sf-atom"></i></div>
         <div class="label">{%trans "Occasion type"%}</div>

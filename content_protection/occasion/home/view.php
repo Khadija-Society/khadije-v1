@@ -6,14 +6,17 @@ class view
 {
 	public static function config()
 	{
-
+		\dash\permission::access('protectonOccasionView');
 
 		\dash\data::page_title(T_("occasions list"));
 
 		\dash\data::page_pictogram('box');
 
-		\dash\data::badge_link(\dash\url::this(). '/add');
-		\dash\data::badge_text(T_('Add new occasion'));
+		if(\dash\permission::check('protectonOccasionAdmin'))
+		{
+			\dash\data::badge_link(\dash\url::this(). '/add');
+			\dash\data::badge_text(T_('Add new occasion'));
+		}
 
 
 		$search_string            = \dash\request::get('q');

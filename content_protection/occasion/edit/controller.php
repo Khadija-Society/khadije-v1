@@ -7,7 +7,7 @@ class controller
 	public static function routing()
 	{
 
-
+		\dash\permission::access('protectonOccasionAdmin');
 		$id = \dash\request::get('id');
 
 		if(!$id || !\dash\coding::decode($id))

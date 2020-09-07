@@ -98,9 +98,10 @@
         <td>{%set myStatus = value.married%}{%trans myStatus%}</td>
         <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
         <td class="collapsing">
-
+          {%if perm('protectonUserAdmin') %}
           <a class="btn danger xs outline mLR10" data-ajaxify data-method='post' data-data='{"type": "reject", "useragentid": "{{value.id}}"}'>{%trans "Reject"%}</a>
           <a class="btn success outline" data-ajaxify data-method='post' data-data='{"type": "accept", "useragentid": "{{value.id}}"}'>{%trans "Accept"%}</a>
+          {%endif%}
         </td>
       </tr>
       {%endfor%}

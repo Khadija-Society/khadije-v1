@@ -30,7 +30,7 @@
         <li><a href="{{url.kingdom}}/m/festival" {%if url.content == "m" and url.module == "festival"%} class="activeContent"{%endif%}><i class='sf-magic'></i> سامانه مدیریت جشنواره</a></li>
 {%endif%}
 
-{%if perm('protectionContent') %}
+{%if perm('contentProtection') %}
         <li><a href="{{url.kingdom}}/protection" {%if url.content == "protection" %} class="activeContent"{%endif%}><i class='sf-hand-hold'></i> مدیریت افراد تحت پوشش</a></li>
 {%endif%}
 

@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-
+		\dash\permission::access('protectonPriceAgentView');
 		\dash\data::page_title(T_("Protect agent list"));
 
 		\dash\data::page_pictogram('box');

@@ -31,6 +31,7 @@
 	</div>
 
 	{%if dataRow.status == 'accept' or dataRow.total_price%}
+	{%if perm('protectonPriceAdmin') %}
 	<div class="c s4">
 		<a class="dcard {%if url.child == 'pay'%}active{%endif%}" href='{{url.this}}/pay?id={{requestGET.id}}'>
 			<div class="statistic sm">
@@ -39,6 +40,7 @@
 			</div>
 		</a>
 	</div>
+	{%endif%}
 	{%endif%}
 
 	<div class="c s4">

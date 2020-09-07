@@ -6,6 +6,7 @@
   <div class="c8 s12 m12">
     <div class="f">
 
+      {%if perm('protectonOccasionView') %}
       <div class="c4 s6">
         <a href="{{url.this}}/occasion" class="dcard">
           <div class="statistic sm blue">
@@ -14,8 +15,10 @@
           </div>
         </a>
       </div>
+      {%endif%}
 
 
+      {%if perm('protectonPriceAgentView') %}
       <div class="c4 s6">
         <a href="{{url.this}}/protectagent" class="dcard">
           <div class="statistic sm green">
@@ -24,8 +27,9 @@
           </div>
         </a>
       </div>
+      {%endif%}
 
-
+      {%if perm('protectonPriceAdmin') %}
       <div class="c4 s6">
         <a href="{{url.this}}/agentoccasion/allprice" class="dcard">
           <div class="statistic sm teal">
@@ -34,10 +38,11 @@
           </div>
         </a>
       </div>
+      {%endif%}
 
 
 
-
+      {%if perm('protectonReport')%}
       <div class="c6 s6">
         <a href="{{url.this}}/agentoccasion/allreport" class="dcard">
           <div class="statistic sm">
@@ -47,6 +52,9 @@
         </a>
       </div>
 
+      {%endif%}
+
+      {%if perm('protectonUserAdmin') %}
 
       <div class="c6 s6">
         <a href="{{url.this}}/allusers" class="dcard">
@@ -57,7 +65,6 @@
         </a>
       </div>
 
-
       <div class="c12 s6">
         <a href="{{url.this}}/agentoccasion" class="dcard">
           <div class="statistic sm">
@@ -67,7 +74,8 @@
         </a>
       </div>
 
-
+      {%endif%}
+      {%if perm('protectonSetting')%}
       <div class="c6 s6">
         <a href="{{url.this}}/setting" class="dcard">
           <div class="statistic sm">
@@ -76,7 +84,9 @@
           </div>
         </a>
       </div>
+      {%endif%}
 
+      {%if perm('protectonReport')%}
       <div class="c6 s6">
         <a href="{{url.this}}/report" class="dcard">
           <div class="statistic sm">
@@ -85,6 +95,7 @@
           </div>
         </a>
       </div>
+      {%endif%}
 
 
     </div>
