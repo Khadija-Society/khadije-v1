@@ -1,9 +1,9 @@
 {%extends 'content_protection/occasion/layout.html'%}
 
 {%block pageContent%}
-
+{{block('occasionPageStep')}}
 <div class="f justify-center">
-  <form method="post" class="c5 m6 s12" autocomplete="off">
+  <form method="post" class="c8 m6 s12" autocomplete="off">
     <div class="cbox">
       {{block('ititle')}}
       {{block('iSubtitle')}}
@@ -15,48 +15,6 @@
     </div>
   </form>
 
-  <form method="post" class="c4 m6 s12" autocomplete="off">
-    <div class="mLa5">
-
-      <div class="cbox">
-        <input type="hidden" name="detail" value="detail">
-        <h5>{%trans "If you want to distribute a support package on this occasion, enter the items in this package"%}</h5>
-        <label for="title2">{%trans "Title"%}</label>
-        <div class="input">
-          <input type="text" name="dtitle">
-        </div>
-
-        <label for="">{%trans "Price"%}</label>
-        <div class="input">
-          <input type="number" name="price">
-        </div>
-
-        <label for="">{%trans "Description"%}</label>
-        <div class="input">
-          <input type="text" name="ddesc">
-        </div>
-
-        <div class="txtRa">
-          <button class="btn success">{%trans "Add"%}</button>
-        </div>
-      </div>
-
-      {%if dataDetail%}
-      <div class="cbox">
-        <h5>{%trans "Items in the support basket for this occasion"%}</h5>
-        {%for key, value in dataDetail%}
-        <div class="msg f">
-          <div class="c">{{value.title}}</div>
-          <div class="c">{{value.price | fitNumber}}</div>
-          <div class="c">{{value.desc}}</div>
-          <div class="cauto"><span data-confirm data-data='{"remove": "detail", "detail_id": "{{value.id}}"}'><i class="sf-trash fc-red"></i></span></div>
-        </div>
-        {%endfor%}
-      </div>
-
-      {%endif%}
-    </div>
-  </form>
 </div>
 
 {%endblock%}

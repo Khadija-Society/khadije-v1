@@ -314,6 +314,7 @@ class protectagent
 		}
 
 		$result            = \lib\db\protectionagent::search($_string, $_args);
+
 		$temp              = [];
 
 		foreach ($result as $key => $value)
@@ -452,7 +453,6 @@ class protectagent
 		}
 
 		$result['location_string'] = implode(' - ', $result['location_string']);
-
 
 		return $result;
 	}

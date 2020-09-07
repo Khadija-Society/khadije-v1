@@ -209,7 +209,7 @@ class occasion
 		$title = trim($title);
 		if(!$title)
 		{
-			\dash\notif::error(T_("Please fill the occasion title"), 'title');
+			\dash\notif::error(T_("Please fill title"), 'title');
 			return false;
 		}
 
