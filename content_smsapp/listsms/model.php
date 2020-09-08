@@ -8,13 +8,21 @@ class model
 	{
 		if(\dash\request::post('archive') === 'all' && !\dash\request::get())
 		{
-			\dash\temp::set('no-limit', true);
-			\content_smsapp\listsms\view::config();
-			$list = \dash\data::dataTable();
+
+			// \dash\temp::set('no-limit', true);
+			// \content_smsapp\listsms\view::config();
+			// $list = \dash\data::dataTable();
+			$list = \dash\request::post('archive_id');
+			if(!$list)
+			{
+				\dash\notif::error("لطفا ابتدا انتخاب کنید که کدام پیامک بایگانی شود");
+				return false;
+			}
+
 			if($list && is_array($list))
 			{
-				$ids = array_column($list, 'id');
-				$ids = array_map(['\\dash\\coding', 'decode'], $ids);
+				// $ids = array_column($list, 'id');
+				$ids = array_map(['\\dash\\coding', 'decode'], $list);
 				$ids = array_filter($ids);
 				$ids = array_unique($ids);
 

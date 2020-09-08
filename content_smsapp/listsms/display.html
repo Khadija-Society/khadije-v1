@@ -252,11 +252,6 @@
     {%endfor%}
   </div>
 
-  {%if not requestGET%}
-  <div class="f">
-    <div class="cauto os btn danger" data-confirm data-data='{"archive" : "all"}'>آرشیو همه</div>
-  </div>
-  {%endif%}
 
   <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
   <button class="btn primary2">{%trans "Apply"%}</button>
@@ -266,21 +261,35 @@
 
 
 {%block htmlSearchBox%}
-<div class="cbox fs12">
-  <form method="get" action='{{url.that}}' autocomplete="off">
-    <div class="input">
-      <label class="addon" data-kerkere='.advanceSearch' data-kerkere-icon>{%trans "Advance"%}</label>
-      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off'>
-      <button class="addon btn ">{%trans "Search" %}</button>
-      {%if perm_su()%}<a href="{{url.here}}/apilog" class="btn addon warn">{%trans "Log"%}</a>{%endif%}
+    <div class="cbox fs12">
+<div class="f">
+  <div class="c">
+      <form method="get" action='{{url.that}}' autocomplete="off">
+        <div class="input">
+          <label class="addon" data-kerkere='.advanceSearch' data-kerkere-icon>{%trans "Advance"%}</label>
+          <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off'>
+          <button class="addon btn ">{%trans "Search" %}</button>
+
+        </div>
+        {{block('iKerkere')}}
+      </form>
     </div>
-    {{block('iKerkere')}}
-  </form>
+
+  <div class="cauto">
+
+    {%if not requestGET%}
+    <button form="power" class="btn danger2 mLa5">ارسال به بایگانی</button>
+    {%endif%}
+  </div>
+  </div>
 </div>
 {%endblock%}
 
 
 {%block htmlTable%}
+<form method="post" id="power">
+  <input type="hidden" name="archive" value="all">
+
 
 <div class="tblBox">
 
@@ -356,7 +365,13 @@
         <td class="collapsing">
           <div><a href="{{url.that}}?recommend_id={{value.recommend_id}}">{{value.recommend_title}}</a></div>
           {%if value.receivestatus == 'awaiting' and not requestGET.recommend == 'yes'%}
-          <div class="btn xs danger" data-confirm data-data='{"skip": "skip", "id": "{{value.id}}"}'>{%trans "Archive"%}</div>
+            <div class="check1">
+              <input type="checkbox" name="archive_id[]" value="{{value.id}}" id="iacr{{value.id}}">
+              <label for="iacr{{value.id}}">{%trans "Archive"%}</label>
+            </div>
+            {% if false%}
+              <div class="btn xs danger" data-confirm data-data='{"skip": "skip", "id": "{{value.id}}"}'>{%trans "Archive"%}</div>
+            {%endif%}
           {%endif%}
         </td>
       </tr>
@@ -364,6 +379,7 @@
     </tbody>
   </table>
 </div>
+</form>
   {%include display.pagination%}
 
 {%endblock%}
