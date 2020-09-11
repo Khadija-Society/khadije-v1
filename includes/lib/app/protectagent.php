@@ -70,6 +70,21 @@ class protectagent
 	{
 		$args = [];
 
+
+		$title = \dash\app::request('title');
+		$title = trim($title);
+		if(!$title)
+		{
+			\dash\notif::error(T_("Please fill the protectagent title"), 'title');
+			return false;
+		}
+
+		if(mb_strlen($title) > 150)
+		{
+			\dash\notif::error(T_("Please fill the protectagent title less than 150 character"), 'title');
+			return false;
+		}
+
 		$mobile = \dash\app::request('mobile');
 		$mobile = \dash\utility\filter::mobile($mobile);
 
@@ -86,25 +101,11 @@ class protectagent
 		}
 		else
 		{
-			$load_user = \dash\db\users::signup(['mobile' => $mobile]);
+			$load_user = \dash\db\users::signup(['mobile' => $mobile, 'displayname' => substr($title, 0, 99)]);
 			if($load_user)
 			{
 				$args['user_id'] = $load_user;
 			}
-		}
-
-		$title = \dash\app::request('title');
-		$title = trim($title);
-		if(!$title)
-		{
-			\dash\notif::error(T_("Please fill the protectagent title"), 'title');
-			return false;
-		}
-
-		if(mb_strlen($title) > 150)
-		{
-			\dash\notif::error(T_("Please fill the protectagent title less than 150 character"), 'title');
-			return false;
 		}
 
 		$check_duplicate = \lib\db\protectionagent::get(['user_id' => $args['user_id'], 'limit' => 1]);
