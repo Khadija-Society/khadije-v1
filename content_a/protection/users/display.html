@@ -12,11 +12,35 @@
 
           <p class="msg">{%trans "Please enter the information of the people to whom you want to donate a support package on this occasion."%}</p>
           <input type="hidden" name="occation_id" value="{{requestGET.id}}">
+          <div class="mB10">
+            <label for='country'>{%trans "Country"%}</label>
+            <div class="ui fluid search selection dropdown">
+              <input type="hidden" name="country" value="{%if personDataRow.country%}{{personDataRow.country}}{%elseif lang.current == 'fa'%}IR{%endif%}">
+              <i class="dropdown icon"></i>
+              <div class="default text">{%trans "Choose your country"%}</div>
+              <div class="menu">
+          {%for key, value in countryList%}
+                <div class="item" data-value="{{key}}">
+                  <i class="{{value.iso2 | lower }} flag"></i>{%set myCountry = value.name%} {%trans myCountry%}<small class="description">{{value.name | capitalize}}</small>
+                </div>
+          {%endfor%}
+              </div>
+            </div>
+          </div>
+
             <div class="f">
               <div class="c4 s12">
-                <label for="inationalcode">{%trans "Nationalcode"%} <small class="fc-red">* {%trans "Require"%}</small></label>
-                <div class="input">
-                  <input type="tel" id="inationalcode" name="nationalcode" value="{{personDataRow.nationalcode}}" maxlength="10" required>
+                <div data-response='country' data-response-where='IR' data-response-effect='slide' {%if (personDataRow and personDataRow.country == 'IR') or not personDataRow %}{%else%}data-response-hide{%endif%}>
+                  <label for="inationalcode">{%trans "Nationalcode"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+                  <div class="input">
+                    <input type="tel" id="inationalcode" name="nationalcode" value="{{personDataRow.nationalcode}}" maxlength="10">
+                  </div>
+                </div>
+                <div data-response='country' data-response-where-not='IR' data-response-effect='slide' {%if personDataRow and personDataRow.country != 'IR' %}{%else%}data-response-hide{%endif%}>
+                  <label for="ipasportcode">{%trans "Pasport code"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+                  <div class="input">
+                    <input type="tel" id="ipasportcode" name="pasportcode" value="{{personDataRow.pasportcode}}" maxlength="10">
+                  </div>
                 </div>
               </div>
               <div class="c4 s12">
@@ -149,12 +173,13 @@
 
               <th>{%trans "Name"%}</th>
               <th>{%trans "Mobile"%}</th>
-              <th>{%trans "Nationalcode"%}</th>
-              <th>{%trans "Gender"%}</th>
-              <th>{%trans "Married"%}</th>
-              <th class="collapsing">{%trans "Protection count"%}</th>
+              <th class="collapsing2">{%trans "Nationalcode"%} / {%trans "Pasport code"%}</th>
+              <th class="collapsing2">{%trans "Gender"%}</th>
+              <th class="collapsing2">{%trans "Marital"%}</th>
+              <th class="collapsing2">{%trans "Protection count"%}</th>
+              <th>{%trans "Nationality"%}</th>
               <th>{%trans "City"%}</th>
-              <th>{%trans "Type"%}</th>
+              <th class="collapsing">{%trans "Type"%}</th>
               <th class="collapsing"></th>
               <th class="collapsing"></th>
             </tr>
@@ -172,12 +197,13 @@
               </td>
 
               <td>{{value.mobile | fitNumber('mobile')}}</td>
-              <td>{{value.nationalcode | fitNumber(false)}}</td>
-              <td>{%set my_gender = value.gender%}{%trans my_gender%}</td>
-              <td>{%set my_married = value.married%}{%trans my_married%}</td>
-              <td class="collapsing">{{value.protectioncount | fitNumber}}</td>
+              <td class="collapsing2">{{value.nationalcode | fitNumber(false)}} {{value.pasportcode | fitNumber(false)}}</td>
+              <td class="collapsing2">{%set my_gender = value.gender%}{%trans my_gender%}</td>
+              <td class="collapsing2">{%set my_married = value.married%}{%trans my_married%}</td>
+              <td class="collapsing2">{{value.protectioncount | fitNumber}}</td>
+              <td>{{value.country_name}}</td>
               <td>{{value.location_string}}</td>
-              <td>{{value.type_title}}</td>
+              <td class="collapsing">{{value.type_title}}</td>
 
                 <td class="collapsing">
 

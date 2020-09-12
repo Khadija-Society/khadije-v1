@@ -374,6 +374,10 @@ class protectagentuser
 	private static function check($_id = null)
 	{
 
+
+		$nationalcode = null;
+		$pasportcode = null;
+
 		$is_admin = false;
 		if(\dash\app::request('is_admin'))
 		{
@@ -435,19 +439,6 @@ class protectagentuser
 			}
 		}
 
-		$nationalcode = \dash\app::request('nationalcode');
-		if(!$nationalcode)
-		{
-			\dash\notif::error(T_("Please enter nationalcode"));
-			return false;
-		}
-
-		if(!\dash\utility\filter::nationalcode($nationalcode))
-		{
-			\dash\notif::error(T_("Invalid nationalcode"));
-			return false;
-		}
-
 
 		$displayname = \dash\app::request('displayname');
 		$displayname = trim($displayname);
@@ -462,6 +453,28 @@ class protectagentuser
 			\dash\notif::error(T_("Please fill the displayname displayname less than 100 character"), 'displayname');
 			return false;
 		}
+
+		$country = \dash\app::request('country');
+		if($country && !\dash\utility\location\countres::check($country))
+		{
+			\dash\notif::error(T_("Invalid country"), 'country');
+			return false;
+		}
+
+		if(!$country)
+		{
+			\dash\notif::error(T_("country is required"));
+			return false;
+		}
+
+
+		$pasportcode = \dash\app::request('pasportcode');
+		if(mb_strlen($pasportcode) > 100)
+		{
+			\dash\notif::error(T_("Please fill the pasportcode less than 100 character"), 'pasportcode');
+			return false;
+		}
+
 
 		if($is_admin)
 		{
@@ -482,9 +495,38 @@ class protectagentuser
 		[
 			'protection_occasion_id' => \dash\coding::decode($load_occasion['id']),
 			'protection_agent_id'    => $protection_agent_id,
-			'nationalcode'           => $nationalcode,
 			'limit'                  => 1,
 		];
+
+		if($country === 'IR')
+		{
+
+			$nationalcode = \dash\app::request('nationalcode');
+			if(!$nationalcode)
+			{
+				\dash\notif::error(T_("Please enter nationalcode"), 'nationalcode');
+				return false;
+			}
+
+			if(!\dash\utility\filter::nationalcode($nationalcode))
+			{
+				\dash\notif::error(T_("Invalid nationalcode"));
+				return false;
+			}
+
+			$check_duplicate['nationalcode'] = $nationalcode;
+			$pasportcode = null;
+		}
+		else
+		{
+			if(!$pasportcode)
+			{
+				\dash\notif::error(T_("Please enter pasportcode"), 'pasportcode');
+				return false;
+			}
+			$check_duplicate['pasportcode'] = $pasportcode;
+			$nationalcode = null;
+		}
 
 		$check_duplicate = \lib\db\protectionagentuser::get($check_duplicate);
 
@@ -501,14 +543,8 @@ class protectagentuser
 			}
 		}
 
-
-		$check_duplicate =
-		[
-			'protection_occasion_id' => \dash\coding::decode($load_occasion['id']),
-			// 'protection_agent_id'    => $protection_agent_id,
-			'nationalcode'           => $nationalcode,
-			'limit'                  => 1,
-		];
+		// remove this agent
+		unset($check_duplicate['protection_agent_id']);
 
 		$check_duplicate = \lib\db\protectionagentuser::get($check_duplicate);
 
@@ -634,8 +670,10 @@ class protectagentuser
 		$args['province']               = $province;
 		$args['city']                   = $city;
 		$args['postalcode']             = $postalcode;
-		$args['file1']             = $file1;
-		$args['file2']             = $file2;
+		$args['file1']                  = $file1;
+		$args['file2']                  = $file2;
+		$args['country']                = $country;
+		$args['pasportcode']            = $pasportcode;
 
 		return $args;
 	}
@@ -800,6 +838,8 @@ class protectagentuser
 		if(!\dash\app::isset_request('protectioncount')) unset($args['protectioncount']);
 		if(!\dash\app::isset_request('file1')) unset($args['file1']);
 		if(!\dash\app::isset_request('file2')) unset($args['file2']);
+		if(!\dash\app::isset_request('pasportcode')) unset($args['pasportcode']);
+		if(!\dash\app::isset_request('country')) unset($args['country']);
 
 		if(!empty($args))
 		{
@@ -834,6 +874,13 @@ class protectagentuser
 				case 'type_id':
 					$result[$key] = \dash\coding::encode($value);
 					break;
+
+				case 'country':
+					$result[$key] = $value;
+					$result['country_name'] = \dash\utility\location\countres::get_localname($value, true);
+					// $result['location_string'][1] = $result['country_name'];
+					break;
+
 
 				case 'province':
 					$result[$key] = $value;

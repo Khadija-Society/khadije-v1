@@ -28,6 +28,9 @@ class view
 		\dash\data::occasionType($occasionType);
 
 
+		$countryList = \dash\utility\location\countres::$data;
+		\dash\data::countryList($countryList);
+
 		$cityList    = \dash\utility\location\cites::$data;
 		$proviceList = \dash\utility\location\provinces::key_list('localname');
 

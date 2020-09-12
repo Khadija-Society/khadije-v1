@@ -48,7 +48,8 @@ class model
 			'gender'          => \dash\request::post('gender'),
 			'married'         => \dash\request::post('married'),
 			'protectioncount' => \dash\request::post('protectioncount'),
-
+			'country'         => \dash\request::post('country'),
+			'pasportcode'     => \dash\request::post('pasportcode'),
 		];
 
 		$file1 = \dash\app\file::upload_quick('file1');
