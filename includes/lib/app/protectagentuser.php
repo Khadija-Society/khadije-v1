@@ -542,18 +542,16 @@ class protectagentuser
 
 
 
-
-		// if($city && !\dash\utility\location\cites::check($city))
-		// {
-		// 	\dash\notif::error(T_("Invalid city name"), 'city');
-		// 	return false;
-		// }
-
-
 		$city = \dash\app::request('city');
 		if($city && !\dash\utility\location\cites::check($city))
 		{
 			\dash\notif::error(T_("Invalid city"), 'city');
+			return false;
+		}
+
+		if(!$city)
+		{
+			\dash\notif::error(T_("City is required"));
 			return false;
 		}
 
