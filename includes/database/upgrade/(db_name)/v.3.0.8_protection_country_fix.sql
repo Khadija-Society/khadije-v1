@@ -1,0 +1,1 @@
+UPDATE protection_user_agent_occasion SET protection_user_agent_occasion.country = 'IR' WHERE protection_user_agent_occasion.nationalcode IS NOT NULL AND protection_user_agent_occasion.country IS NULL;
