@@ -193,7 +193,7 @@ class twigTransTerms
 	echo T_("Arabic Language");                                                       // Line 433
 	echo T_("Province");                                                              // Line 11
 	echo T_("Select province");                                                       // Line 102
-	echo T_("Select city");                                                           // Line 123
+	echo T_("Select city");                                                           // Line 135
 	echo T_("Zip code");                                                              // Line 473
 	echo T_("Passport id");                                                           // Line 483
 	echo T_("Foreigners must fill");                                                  // Line 100
@@ -204,7 +204,7 @@ class twigTransTerms
 	echo T_("Email");                                                                 // Line 547
 	echo T_("Education");                                                             // Line 78
 	echo T_("Education course");                                                      // Line 597
-	echo T_("Choose your country");                                                   // Line 678
+	echo T_("Choose your country");                                                   // Line 81
 
 	//------------------------------------------content_agent/servant/add/display.html
 	echo T_("Add new user");                                                          // Line 26
@@ -781,13 +781,15 @@ class twigTransTerms
 	echo T_("Register");                                                              // Line 30
 
 	//-----------------------------------------content_a/protection/users/display.html
-	echo T_("Name & family");                                                         // Line 88
-	echo T_("Protection count");                                                      // Line 95
-	echo T_("Choose type");                                                           // Line 106
+	echo T_("Pasport code");                                                          // Line 101
+	echo T_("Name & family");                                                         // Line 116
+	echo T_("Protection count");                                                      // Line 125
+	echo T_("Choose type");                                                           // Line 187
 	echo T_("National card photo");                                                   // Line 181
-	echo T_("Verification document");                                                 // Line 122
-	echo T_("Can not add any user to this occasion");                                 // Line 137
-	echo T_("No user announced by your in this occasion");                            // Line 198
+	echo T_("Verification document");                                                 // Line 207
+	echo T_("Can not add any user to this occasion");                                 // Line 161
+	echo T_("Nationality");                                                           // Line 23
+	echo T_("No user announced by your in this occasion");                            // Line 224
 
 	//-------------------------------------------content_a/service/detail/display.html
 	echo T_("Save all");                                                              // Line 78
@@ -1198,9 +1200,9 @@ class twigTransTerms
 	//-------------------------content_protection/agentoccasion/allreport/display.html
 
 	//-----------------------------content_protection/agentoccasion/users/display.html
-	echo T_("No user announced in this occasion");                                    // Line 54
-	echo T_("You can and, edit or remove everyone of top list");                      // Line 65
-	echo T_("Export CSV");                                                            // Line 66
+	echo T_("No user announced in this occasion");                                    // Line 62
+	echo T_("You can and, edit or remove everyone of top list");                      // Line 72
+	echo T_("Export CSV");                                                            // Line 73
 
 	//-----------------------------------------------content_m/disalltrip/display.html
 	echo T_("Disable all trip from qom");                                             // Line 13
