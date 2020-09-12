@@ -66,8 +66,23 @@ class model
 			'protectioncount'     => \dash\request::post('protectioncount'),
 			'protection_agent_id' => \dash\data::dataRow_protection_agent_id(),
 			'is_admin'            => true,
+			'country'         => \dash\request::post('country'),
+			'pasportcode'     => \dash\request::post('pasportcode'),
 		];
 
+
+		$file1 = \dash\app\file::upload_quick('file1');
+		if($file1)
+		{
+			$post['file1'] = $file1;
+		}
+
+
+		$file2 = \dash\app\file::upload_quick('file2');
+		if($file2)
+		{
+			$post['file2'] = $file2;
+		}
 
 		if(\dash\data::editMode())
 		{

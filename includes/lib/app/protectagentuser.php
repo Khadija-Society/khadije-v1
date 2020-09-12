@@ -122,7 +122,7 @@ class protectagentuser
 	}
 
 
-	public static function admin_occasion_list($_occasion_id, $_agent_id)
+	public static function admin_occasion_list($_occasion_id, $_agent_id, $_args = [])
 	{
 		$load_occasion = \lib\app\occasion::get($_occasion_id);
 
@@ -138,7 +138,7 @@ class protectagentuser
 			return false;
 		}
 
-		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $agent_id]);
+		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $agent_id], $_args);
 
 		if(!is_array($list))
 		{

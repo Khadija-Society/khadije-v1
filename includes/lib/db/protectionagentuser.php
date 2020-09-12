@@ -11,12 +11,19 @@ class protectionagentuser
 		return $result;
 	}
 
-	public static function admin_get($_where)
+	public static function admin_get($_where, $_args = [])
 	{
 		$where = \dash\db\config::make_where($_where);
 
-		$pagination_query = "SELECT COUNT(*) AS `count`	FROM protection_user_agent_occasion 	LEFT JOIN protection_type ON protection_type.id = protection_user_agent_occasion.type_id WHERE 1 AND $where";
-		$limit = \dash\db\mysql\tools\pagination::pagination_query($pagination_query, 30);
+		if(is_array($_args) && array_key_exists('pagination', $_args) && $_args['pagination'] === false)
+		{
+			$limit = null;
+		}
+		else
+		{
+			$pagination_query = "SELECT COUNT(*) AS `count`	FROM protection_user_agent_occasion 	LEFT JOIN protection_type ON protection_type.id = protection_user_agent_occasion.type_id WHERE 1 AND $where";
+			$limit = \dash\db\mysql\tools\pagination::pagination_query($pagination_query, 30);
+		}
 
 
 		$query  =

@@ -15,8 +15,17 @@ class view
 
 		$occasion_id = \dash\data::occasionID();
 
-		$list = \lib\app\protectagentuser::admin_occasion_list($occasion_id, \dash\data::protectionAgentID());
+		$args = [];
+		if(\dash\request::get('export'))
+		{
+			$args['pagination'] = false;
+		}
 
+		$list = \lib\app\protectagentuser::admin_occasion_list($occasion_id, \dash\data::protectionAgentID(), $args);
+
+
+		$countryList = \dash\utility\location\countres::$data;
+		\dash\data::countryList($countryList);
 
 		if(\dash\request::get('export'))
 		{
