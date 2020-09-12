@@ -17,6 +17,11 @@ class controller
 
 		\dash\data::dataRow($load);
 
+		if(isset($load['protection_agent_id']))
+		{
+			\dash\data::protectionAgentID($load['protection_agent_id']);
+		}
+
 		if(isset($load['protection_occasion_id']))
 		{
 			\dash\data::occasionID($load['protection_occasion_id']);

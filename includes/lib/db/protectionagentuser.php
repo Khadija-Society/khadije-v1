@@ -15,6 +15,10 @@ class protectionagentuser
 	{
 		$where = \dash\db\config::make_where($_where);
 
+		$pagination_query = "SELECT COUNT(*) AS `count`	FROM protection_user_agent_occasion 	LEFT JOIN protection_type ON protection_type.id = protection_user_agent_occasion.type_id WHERE 1 AND $where";
+		$limit = \dash\db\mysql\tools\pagination::pagination_query($pagination_query, 30);
+
+
 		$query  =
 		"
 			SELECT
@@ -24,7 +28,9 @@ class protectionagentuser
 				protection_user_agent_occasion
 			LEFT JOIN protection_type ON protection_type.id = protection_user_agent_occasion.type_id
 			WHERE 1 AND $where
+			$limit
 		";
+
 		$result = \dash\db::get($query);
 		return $result;
 	}

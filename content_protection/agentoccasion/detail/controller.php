@@ -15,6 +15,12 @@ class controller
 			\dash\header::status(404);
 		}
 
+		if(isset($load['protection_agent_id']))
+		{
+			\dash\data::protectionAgentID($load['protection_agent_id']);
+		}
+
+
 		\dash\data::dataRow($load);
 
 		if(isset($load['protection_occasion_id']))

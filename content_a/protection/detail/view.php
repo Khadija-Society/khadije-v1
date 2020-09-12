@@ -15,14 +15,9 @@ class view
 
 		$occasion_id = \dash\data::occasionID();
 
-		$list = \lib\app\protectagentuser::occasion_list($occasion_id);
-		if(!is_array($list))
-		{
-			$list = [];
-		}
-		\dash\data::userListCount(count($list));
+		$count = \lib\app\protectagentuser::occasion_list_count($occasion_id);
 
-		\dash\data::userOccasionList($list);
+		\dash\data::userListCount($count);
 
 	}
 

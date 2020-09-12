@@ -73,7 +73,7 @@ class protectagentuser
 
 	}
 
-	public static function admin_occasion_list($_occasion_id)
+	public static function occasion_list_count($_occasion_id)
 	{
 		$load_occasion = \lib\app\occasion::get($_occasion_id);
 
@@ -82,7 +82,63 @@ class protectagentuser
 			return false;
 		}
 
-		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id)]);
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			\dash\notif::error(T_("Invalid agent id"));
+			return false;
+		}
+
+		$count = \dash\db\config::public_get_count('protection_user_agent_occasion', ['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $protection_agent_id]);
+
+		return $count;
+
+	}
+
+
+
+
+
+	public static function admin_occasion_list_count($_occasion_id, $_agent_id)
+	{
+		$load_occasion = \lib\app\occasion::get($_occasion_id);
+
+		if(!$load_occasion)
+		{
+			return false;
+		}
+
+		$agent_id = \dash\coding::decode($_agent_id);
+		if(!$agent_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$count = \dash\db\config::public_get_count('protection_user_agent_occasion', ['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $agent_id]);
+
+		return $count;
+
+	}
+
+
+	public static function admin_occasion_list($_occasion_id, $_agent_id)
+	{
+		$load_occasion = \lib\app\occasion::get($_occasion_id);
+
+		if(!$load_occasion)
+		{
+			return false;
+		}
+
+		$agent_id = \dash\coding::decode($_agent_id);
+		if(!$agent_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $agent_id]);
 
 		if(!is_array($list))
 		{
