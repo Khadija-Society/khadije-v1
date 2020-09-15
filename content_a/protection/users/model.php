@@ -37,6 +37,7 @@ class model
 		}
 
 
+
 		$post =
 		[
 			'occation_id'     => \dash\data::occasionID(),
@@ -75,6 +76,22 @@ class model
 		}
 		else
 		{
+			$occasion_id = \dash\data::occasionID();
+			$get_allow_detail_current = \lib\app\protectionagentoccasion::get_allow_detail_current($occasion_id);
+
+			if(isset($get_allow_detail_current['capacity']) && $get_allow_detail_current['capacity'])
+			{
+				$list = \lib\app\protectagentuser::occasion_list($occasion_id);
+				if(is_array($list))
+				{
+					if(count($list) >= floatval($get_allow_detail_current['capacity']))
+					{
+						\dash\notif::error(T_("Your capacity of inser user in this occasion is full"));
+						return false;
+					}
+				}
+			}
+
 			$reault = \lib\app\protectagentuser::add($post);
 			if(\dash\engine\process::status())
 			{

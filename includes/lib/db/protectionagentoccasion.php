@@ -26,6 +26,13 @@ class protectionagentoccasion
 	}
 
 
+	public static function set_capacity($_id, $_capacity)
+	{
+		$query  = "UPDATE protection_agent_occasion_allow SET capacity = $_capacity where id = $_id LIMIT 1";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
 	public static function get_allow($_agent_id, $_occasion_id)
 	{
 		$query  =

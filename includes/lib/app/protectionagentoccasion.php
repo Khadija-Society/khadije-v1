@@ -65,6 +65,21 @@ class protectionagentoccasion
 	}
 
 
+	public static function get_allow_detail_current($_occaseion)
+	{
+		$protection_agent_id = \lib\app\protectagent::get_current_id();
+		if(!$protection_agent_id)
+		{
+			return false;
+		}
+
+		$occasion_id = \dash\coding::decode($_occaseion);
+
+		$check_duplicate = \lib\db\protectionagentoccasion::get_allow($protection_agent_id, $occasion_id);
+		return $check_duplicate;
+	}
+
+
 	public static function set_allow($_args)
 	{
 		$agent_id    = isset($_args['agent_id']) ? $_args['agent_id'] : null;
@@ -116,6 +131,51 @@ class protectionagentoccasion
 			\lib\db\protectionagentoccasion::delete_allow($check_duplicate['id']);
 			return true;
 		}
+
+	}
+
+	public static function set_capacity($_args)
+	{
+		$agent_id    = isset($_args['agent_id']) ? $_args['agent_id'] : null;
+		$occasion_id = isset($_args['occasion_id']) ? $_args['occasion_id'] : null;
+		$capacity    = isset($_args['capacity']) ? $_args['capacity'] : null;
+
+		$agent_id    = \dash\coding::decode($agent_id);
+		$occasion_id = \dash\coding::decode($occasion_id);
+
+		if(!is_numeric($capacity))
+		{
+			\dash\notif::error(T_("capacity must be a number"));
+			return false;
+		}
+
+		if(floatval($capacity) > 1000000)
+		{
+			\dash\notif::error(T_("Capacity is out of range"));
+			return false;
+		}
+
+		if(!$agent_id || !$occasion_id)
+		{
+			\dash\notif::error(T_("Invalid detail"));
+			return false;
+		}
+
+		$check_duplicate = \lib\db\protectionagentoccasion::get_allow($agent_id, $occasion_id);
+		if(!$check_duplicate)
+		{
+			\dash\notif::error(T_("This user is not allowed to this occasion"));
+			return true;
+		}
+
+		if(isset($check_duplicate['id']))
+		{
+			\lib\db\protectionagentoccasion::set_capacity($check_duplicate['id'], $capacity);
+		}
+
+
+		\dash\notif::ok(T_("Capacity of this agent set"));
+		return true;
 
 	}
 

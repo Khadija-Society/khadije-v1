@@ -92,6 +92,13 @@ class view
 		\dash\data::dataFilter($dataFilter);
 
 		$get_allow = \lib\app\protectionagentoccasion::get_allow(\dash\request::get('id'));
+		if(!is_array($get_allow))
+		{
+			$get_allow = [];
+		}
+
+		$capacityList = array_combine(array_column($get_allow, 'protection_agent_id'), $get_allow);
+		\dash\data::capacityList($capacityList);
 		$allAgetnId = array_column($get_allow, 'protection_agent_id');
 		\dash\data::AllAgentIdInThisOccasion($allAgetnId);
 

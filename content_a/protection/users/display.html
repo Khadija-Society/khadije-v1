@@ -10,7 +10,12 @@
           {%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}
       <div class="cbox">
 
-          <p class="msg">{%trans "Please enter the information of the people to whom you want to donate a support package on this occasion."%}</p>
+          <p class="msg">{%trans "Please enter the information of the people to whom you want to donate a support package on this occasion."%}
+            {%if allowDetail.capacity %}
+          <span class="badge primary">{%trans "Your capacity for add user"%} <b>{{allowDetail.capacity | fitNumber}}</b> <small>{%trans "Person"%}</small></span>
+          {%endif%}
+          </p>
+
           <input type="hidden" name="occation_id" value="{{requestGET.id}}">
           <div class="mB10">
             <label for='country'>{%trans "Country"%}</label>

@@ -781,15 +781,16 @@ class twigTransTerms
 	echo T_("Register");                                                              // Line 30
 
 	//-----------------------------------------content_a/protection/users/display.html
+	echo T_("Your capacity for add user");                                            // Line 15
 	echo T_("Pasport code");                                                          // Line 101
 	echo T_("Name & family");                                                         // Line 116
 	echo T_("Protection count");                                                      // Line 125
 	echo T_("Choose type");                                                           // Line 187
 	echo T_("National card photo");                                                   // Line 181
 	echo T_("Verification document");                                                 // Line 207
-	echo T_("Can not add any user to this occasion");                                 // Line 161
+	echo T_("Can not add any user to this occasion");                                 // Line 166
 	echo T_("Nationality");                                                           // Line 23
-	echo T_("No user announced by your in this occasion");                            // Line 224
+	echo T_("No user announced by your in this occasion");                            // Line 229
 
 	//-------------------------------------------content_a/service/detail/display.html
 	echo T_("Save all");                                                              // Line 78
@@ -1015,7 +1016,7 @@ class twigTransTerms
 	echo T_("Mobile number of the device owner");                                     // Line 34
 
 	//-------------------------------------------content_mokeb/place/home/display.html
-	echo T_("Capacity");                                                              // Line 75
+	echo T_("Capacity");                                                              // Line 134
 	echo T_("Active time");                                                           // Line 294
 	echo T_("Clean time");                                                            // Line 62
 	echo T_("Hour");                                                                  // Line 301
@@ -1090,8 +1091,8 @@ class twigTransTerms
 	echo T_("All agent");                                                             // Line 9
 	echo T_("Allowed agent");                                                         // Line 15
 	echo T_("Not allowed agent");                                                     // Line 21
-	echo T_("Allowed");                                                               // Line 129
-	echo T_("Not allowed");                                                           // Line 131
+	echo T_("Allowed");                                                               // Line 145
+	echo T_("Not allowed");                                                           // Line 147
 	echo T_("No result founded");                                                     // Line 210
 
 	//-----------------------------------content_protection/occasion/edit/display.html

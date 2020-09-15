@@ -81,6 +81,8 @@
 
         <th class="">{%trans "City"%}</th>
 
+        <th class="">{%trans "Capacity"%}</th>
+
         <th class="collapsing"></th>
       </tr>
     </thead>
@@ -123,6 +125,20 @@
 
         <td><a href="{{url.that}}?id={{requestGET.id}}&city={{value.city}}">{{value.location_string}}</a></td>
 
+        <td>
+          {%if value.id in AllAgentIdInThisOccasion %}
+          <form method="post">
+              <input type="hidden" name="setcapacity" value="setcapacity">
+              <input type="hidden" name="id" value="{{value.id}}">
+            <div class="input">
+              <input type="number" name="capacity" value="{{capacityList[value.id]['capacity']}}" max="999999" placeholder='{%trans "Capacity"%}'>
+              <button class="btn primary addon">{%trans "Save"%}</button>
+            </div>
+          </form>
+          {%else%}
+          -
+          {%endif%}
+        </td>
 
         <td class="collapsing">
           {%if value.id in AllAgentIdInThisOccasion %}

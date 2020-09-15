@@ -27,6 +27,10 @@ class view
 		\dash\data::currentTypeID(array_column($occasionType, 'id'));
 		\dash\data::occasionType($occasionType);
 
+		$get_allow_detail_current = \lib\app\protectionagentoccasion::get_allow_detail_current($occasion_id);
+
+		\dash\data::allowDetail($get_allow_detail_current);
+
 
 		$countryList = \dash\utility\location\countres::$data;
 		\dash\data::countryList($countryList);
