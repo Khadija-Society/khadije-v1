@@ -22,6 +22,11 @@ class view
 			$export = '?export=1';
 		}
 
+		$allGet = \dash\request::get();
+		unset($allGet['page']);
+		\dash\data::archiveBTN($allGet);
+
+
 		\dash\data::badge2_link(\dash\url::here().'/export');
 		\dash\data::badge2_text(T_('Export CSV'));
 

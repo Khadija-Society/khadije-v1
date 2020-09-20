@@ -6,7 +6,12 @@ class model
 {
 	public static function post()
 	{
-		if(\dash\request::post('archive') === 'all' && !\dash\request::get())
+		$allGet = \dash\request::get();
+		unset($allGet['page']);
+		\dash\data::archiveBTN($allGet);
+
+
+		if(\dash\request::post('archive') === 'all' && !\dash\data::archiveBTN())
 		{
 
 			// \dash\temp::set('no-limit', true);
