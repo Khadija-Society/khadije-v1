@@ -109,7 +109,7 @@
       <h2>{%trans "Last Supported user"%}</h2>
       {%for key, value in dashboardDetail.last_user%}
       <div class="msg f" >
-        <div class="c">{{value.displayname}}</div>
+        <div class="c">{{value.agent_title}} <small>{{value.displayname}}</small></div>
         <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
       </div>
       {%endfor%}
