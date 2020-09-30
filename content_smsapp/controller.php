@@ -5,8 +5,14 @@ class controller
 {
 	public static function routing()
 	{
+		$allow_mobile =
+		[
+			'989127522690', // ?
+			'989126788630', // ?
+			'989129382128', // najafi
+		];
 
-		if(\dash\permission::supervisor() || \dash\user::detail('mobile') === '989127522690' || \dash\user::detail('mobile') === '989126788630')
+		if(\dash\permission::supervisor() || in_array(\dash\user::detail('mobile'), $allow_mobile))
 		{
 			\dash\permission::access('smsAppSetting');
 			// nothing
@@ -20,7 +26,6 @@ class controller
 		{
 			\dash\data::doNotTuch(true);
 		}
-
 	}
 
 
