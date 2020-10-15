@@ -75,6 +75,7 @@
  <table class="tbl1 v1 cbox fs12">
     <thead>
       <tr>
+        <th class="collapsing"></th>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
         <th data-sort="{{sortLink.type.order}}"><a href='{{sortLink.type.link}}'>{%trans "Type"%}</a></th>
         <th>{%trans "Mobile"%}</th>
@@ -119,6 +120,7 @@
 
 {%block trValue%}
 <tr {%if value.status=='disable'%} class='negative'{%endif%}>
+        <td class="collapsing"><a class="btn secondary outline sm" href="{{url.this}}/user?id={{requestGET.id}}&agent={{value.id}}">{%trans "List"%}</a></td>
         <td>{{value.title}}</td>
         <td><a href="{{url.that}}?id={{requestGET.id}}&type={{value.type}}">{{value.type}}</a></td>
         <td>{{value.mobile | fitNumber('mobile')}}</td>

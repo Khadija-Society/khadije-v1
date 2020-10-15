@@ -35,6 +35,7 @@ class protectionagentuser
 				protection_user_agent_occasion
 			LEFT JOIN protection_type ON protection_type.id = protection_user_agent_occasion.type_id
 			WHERE 1 AND $where
+			ORDER BY protection_user_agent_occasion.id DESC
 			$limit
 		";
 

@@ -81,10 +81,11 @@ class model
 
 			if(isset($get_allow_detail_current['capacity']) && $get_allow_detail_current['capacity'])
 			{
-				$list = \lib\app\protectagentuser::occasion_list($occasion_id);
-				if(is_array($list))
+				$count = \lib\app\protectagentuser::occasion_list_count($occasion_id);
+
+				if($count)
 				{
-					if(count($list) >= floatval($get_allow_detail_current['capacity']))
+					if(floatval($count) >= floatval($get_allow_detail_current['capacity']))
 					{
 						\dash\notif::error(T_("Your capacity of inser user in this occasion is full"));
 						return false;
