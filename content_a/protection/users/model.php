@@ -53,6 +53,20 @@ class model
 			'pasportcode'     => \dash\request::post('pasportcode'),
 		];
 
+		$occasion_id = \dash\data::occasionID();
+
+		$occasionType = \lib\app\protectiontype::occasion_type($occasion_id);
+		if(!is_array($occasionType))
+		{
+			$occasionType = [];
+		}
+
+		if($occasionType &&  !$post['type_id'])
+		{
+			\dash\notif::error(T_("Please choose type"), 'type');
+			return false;
+		}
+
 		$file1 = \dash\app\file::upload_quick('file1');
 		if($file1)
 		{

@@ -1016,7 +1016,7 @@ class twigTransTerms
 	echo T_("Mobile number of the device owner");                                     // Line 34
 
 	//-------------------------------------------content_mokeb/place/home/display.html
-	echo T_("Capacity");                                                              // Line 134
+	echo T_("Capacity");                                                              // Line 136
 	echo T_("Active time");                                                           // Line 294
 	echo T_("Clean time");                                                            // Line 62
 	echo T_("Hour");                                                                  // Line 301
@@ -1091,8 +1091,9 @@ class twigTransTerms
 	echo T_("All agent");                                                             // Line 9
 	echo T_("Allowed agent");                                                         // Line 15
 	echo T_("Not allowed agent");                                                     // Line 21
-	echo T_("Allowed");                                                               // Line 145
-	echo T_("Not allowed");                                                           // Line 147
+	echo T_("List");                                                                  // Line 7
+	echo T_("Allowed");                                                               // Line 147
+	echo T_("Not allowed");                                                           // Line 149
 	echo T_("No result founded");                                                     // Line 210
 
 	//-----------------------------------content_protection/occasion/edit/display.html
@@ -1824,7 +1825,6 @@ class twigTransTerms
 	//----------------------------------------content_m/userkarbala2/home/display.html
 
 	//-------------------------------------------------content_m/userkarbala2/nav.html
-	echo T_("List");                                                                  // Line 7
 	echo T_("Lottery");                                                               // Line 6
 
 	//------------------------------------------content_m/userkarbala2/report/chart.js
