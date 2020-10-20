@@ -21,13 +21,10 @@
     <p>{%trans "The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt."%} {%trans "Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods."%}</p>
 {%endif%}
     <div class="f justify-center payInfo">
-      <div class="cauto m12 s12 pRa10">
-{%include "content/home/bank-tejarat.html" %}
-      </div>
       <div class="c m6 pRa10">
         <form class="msg success2 quickpay f align-center" method="post">
           <div class="input">
-           <input type="number" name="quickpay" placeholder='{%trans "Pay Amount"%} {%trans "Toman"%}*' title='{%trans "You can change amount of your donation"%}' id='totalAmount' required step="1000" max="9000000000">
+           <input type="number" name="quickpay" placeholder='{%trans "Pay Amount"%}*' title='{%trans "You can change amount of your donation"%}' id='totalAmount' required step="1000" max="9000000000">
             <span class="addon">{%trans "Toman"%}</span>
           </div>
           <button class="btn success block">{%trans "Donate as anonymous"%}</button>
