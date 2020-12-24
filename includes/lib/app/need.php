@@ -119,7 +119,7 @@ class need
 
 		$desc = \dash\app::request('desc');
 		$desc = trim($desc);
-		if($desc && mb_strlen($desc) >= 200)
+		if($desc && mb_strlen($desc) >= 1000)
 		{
 			\dash\notif::error(T_("Please set a valid desc"), 'desc');
 			return false;
