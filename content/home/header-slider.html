@@ -8,13 +8,13 @@
     <div class="c9 m12 s12">
 
 
-{%set lastPostsRecord = posts({"limit" : 5, "special" : "slider"})%}
+{%set lastPostsSpecialRecord = posts({"limit" : 5, "special" : "slider"})%}
 {%set defaultImage  = url.site ~ "/static/images/homepage-v2/news-haram.jpg" %}
 <section>
 
-{%if lastPostsRecord%}
+{%if lastPostsSpecialRecord%}
   <div class="f roundedBox topNews">
-  {%for key, value in lastPostsRecord%}
+  {%for key, value in lastPostsSpecialRecord%}
 {%if key == 0 or key == 1%}
     <div class="c6 m6 s12 pRa10 mB10">
       <a class="ovelay" href="{{value.link}}">
@@ -80,26 +80,25 @@
 {%endif%}
     </div>
 
-{%if false%}
-    <div class="c3 sauto salavatBox">
-      <div class="salavat goldenB">
-        <img src="https://khadije.com/files/2/492-964dc31889034b86391888c36927d43a.jpg" alt='اطلاعیه'>
-        <div class="Allah sB1">
-          <a href="https://khadije.com/etelaeyekarbala">مشاهده اطلاعیه</a>
-        </div>
-      </div>
-    </div>
+
+    <section class="c3 m12 s12">
+{%set lastPostsPromotionRecord = posts({"limit" : 3, "special" : "promotion"})%}
+
+{%if lastPostsPromotionRecord%}
+  <div class="f roundedBox promotion">
+  {%for key, value in lastPostsPromotionRecord%}
+      <a class="ovelay mB10" href="{{value.link}}">
+        <figure>
+          <img src="{%if value.file.normal%}{{value.file.normal}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
+          <figcaption>
+            <h2>{{value.title}}</h2>
+          </figcaption>
+        </figure>
+      </a>
+  {%endfor%}
+  </div>
 {%endif%}
 
-    <div class="c3 m12 s12 salavatBox">
-      <div class="salavat goldenB">
-        <img src="{{url.static}}/images/homepage-v3/salavat.jpg" alt='{%trans "O Allah, let Your Peace come upon Muhammad and the family of Muhammad"%}'>
-        <div class="counter" data-salavat="{{salavatShomar}}">{{salavatShomar | fitNumber}}</div>
-        <div class="mB25 fs08">{%trans "You also partake in salawat"%}</div>
-        <div class="Allah sB1">
-          <a href="{{url.pwd}}" data-ajaxify data-data='{"salavat" : true}' data-method='post' data-notif='{%trans "Allahouma sali ala mohamed wa ali muhammad"%}' data-notif-pos="bottomCenter" data-notif-icon='sf-heart' data-notif-image='{{url.static}}/images/logo/khadije.png'>{%trans "Say salawat"%} <span class="s0 m0 c0 xauto">{%trans "and press here"%}</span></a>
-        </div>
-      </div>
-    </div>
+    </section>
 
   </div>

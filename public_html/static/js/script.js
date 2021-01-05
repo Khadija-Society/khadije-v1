@@ -174,6 +174,23 @@ function salavat()
 			$(this).parents('.salavat').find('.counter').attr('data-salavat', _counter).text(fitNumber(_counter));
 		}
 	});
+
+
+  var mySalavatLine = $('.salavatLine a');
+  mySalavatLine.off("ajaxify:success");
+  if(mySalavatLine.length < 1)
+  {
+    return;
+  }
+  mySalavatLine.on("ajaxify:success", function(_el, _counter)
+  {
+    if(_counter.result)
+    {
+      _counter = _counter.result;
+      $(this).parents('.salavatLine').find('.counter').attr('data-salavat', _counter).text(fitNumber(_counter));
+    }
+  });
+
 }
 
 function fixedHeader()
