@@ -4,8 +4,8 @@
 </a>
 {%endif%}
 
-  <div class="f mB25">
-    <div class="c9 m12 s12">
+  <div class="f">
+    <div class="c8 m12 s12">
 
 
 {%set lastPostsSpecialRecord = posts({"limit" : 5, "special" : "slider"})%}
@@ -81,13 +81,14 @@
     </div>
 
 
-    <section class="c3 m12 s12">
+    <section class="c4 m12 s12">
 {%set lastPostsPromotionRecord = posts({"limit" : 3, "special" : "promotion"})%}
 
 {%if lastPostsPromotionRecord%}
   <div class="f roundedBox promotion">
   {%for key, value in lastPostsPromotionRecord%}
-      <a class="ovelay mB10" href="{{value.link}}">
+    <div class="c6 m6 pRa10 mB10">
+      <a class="ovelay" href="{{value.link}}">
         <figure>
           <img src="{%if value.file.normal%}{{value.file.normal}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
           <figcaption>
@@ -95,6 +96,7 @@
           </figcaption>
         </figure>
       </a>
+    </div>
   {%endfor%}
   </div>
 {%endif%}
