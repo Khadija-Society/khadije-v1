@@ -9,6 +9,7 @@ class special
 	{
 		$list             = [];
 		$list['slider']   = T_("Slider");
+		$list['promotion']   = T_("Promotion");
 		return $list;
 	}
 
