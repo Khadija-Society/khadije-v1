@@ -390,6 +390,41 @@ body[data-sidebar] #sidebar{left:0;}
 	display: block;
 }
 
+.salavatLine{
+	text-align: center;
+	font-size: 1.4rem;
+	position: relative;
+	margin:0 auto 5rem;
+	user-select: none;
+	background-color: #fff;
+	border-top-left-radius:1rem;
+	border-top-right-radius:1rem;
+}
+.salavatLine img{
+	display: block;
+	padding: 0;
+	margin: 0 auto;
+	width: 100%;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+.salavatLine .counter{
+	color: #020558;
+	font-size: 2rem;
+	font-weight: bold;
+	padding:1rem 0 3rem;
+
+}
+.salavatLine .Allah{
+	position: absolute;
+	bottom: -22px;
+	right: 0;
+	left: 0;
+}
+.salavatLine .Allah a{
+	display: block;
+}
+
 
 .specialBanner{
 	display: block;
