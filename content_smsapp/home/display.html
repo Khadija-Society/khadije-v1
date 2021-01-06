@@ -17,7 +17,11 @@
     {{block('l10sms')}}
   </div>
 </div>
-{{block('iNumbers')}}
+{%if requestGET.show%}
+  {{block('iNumbers')}}
+{%else%}
+<div class="msg"><a class="btn link" href="{{url.this}}?show=1">{%trans "Show statistics"%}</a></div>
+{%endif%}
 
 {%endblock%}
 
