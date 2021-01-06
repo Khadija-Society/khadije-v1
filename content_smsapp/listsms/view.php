@@ -239,7 +239,7 @@ class view
 		if(!$status_count)
 		{
 			$status_count = \lib\app\sms::status_sms_count($countArgs);
-			\dash\session::set('sms_count_stat', $status_count, null, (60*1));
+			\dash\session::set('sms_count_stat', $status_count, null, (60*5));
 		}
 		\dash\data::statusCount($status_count);
 
