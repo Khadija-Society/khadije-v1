@@ -236,7 +236,7 @@ class view
 		\dash\data::dataFilter($dataFilter);
 
 		$status_count = \dash\session::get('sms_count_stat');
-		if(!$status_count)
+		// if(!$status_count)
 		{
 			$status_count = \lib\app\sms::status_sms_count($countArgs);
 			\dash\session::set('sms_count_stat', $status_count, null, (60*5));

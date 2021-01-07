@@ -1,0 +1,46 @@
+{%extends 'content_smsapp/layout.html'%}
+
+
+
+
+{%block pageContent%}
+
+<div class="f justify-center">
+  <div class="c6 s12">
+    <div class="cbox">
+      <form method="post" autocomplete="off" action="{{url.this}}" data-timeout="0">
+        <input type="hidden" name="run" value="1">
+        <h3>با پیامک‌های جدید شناسایی نشده چه کنیم؟</h3>
+        <p>شما می‌توانید پیامک‌های جدید شناسایی نشده را به یکباره بایگانی کنید
+          <br>
+          و یا قبل از بایگانی ابتدا پیامی را در پاسخ به آنها ارسال کنید و سپس آنها را بایگانی کنید
+        </p>
+
+
+
+
+            <div class="check1">
+              <input type="checkbox" id="iwanttoanswer" name="iwanttoanswer">
+              <label for="iwanttoanswer">می‌خواهم قبل از ارسال به بایگانی پاسخ را برای آن‌ها ارسال کنم</label>
+            </div>
+            <div data-response='iwanttoanswer' data-response-hide>
+              <div>
+                <label>پاسخ</label>
+                <textarea name="answer" class="txt" rows="5" placeholder="پاسخ را اینجا بنویسید ... "></textarea>
+              </div>
+            </div>
+
+
+
+          <div class="txtRa mT20">
+            <button class="btn danger">ارسال به بایگانی</button>
+          </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{%endblock%}
+
