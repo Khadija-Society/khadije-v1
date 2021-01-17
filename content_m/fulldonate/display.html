@@ -43,6 +43,7 @@
 
 
 {%block pageContent%}
+    {{block('GlanceDetail')}}
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -124,11 +125,6 @@
             </a>
 
 
-            <a class="c mLa5 msg txtC" href="{{url.here}}/fulldonate">
-              <i class="mRa5"></i><b>{%trans "Donate with Statistics"%}</b>
-            </a>
-
-
           {%if requestGET.filter%}
           <a class="cauto floatL mLa5 msg txtC" href="{{url.this}}">
             <i class="mRa5"></i><b>{%trans "Clear filter"%}</b>
@@ -136,7 +132,6 @@
           {%endif%}
 
         </div>
-
 
     </div>
   </form>
@@ -146,8 +141,8 @@
 
 {%block htmlTable%}
  <div>
-  <table class="tbl1 v1 cbox fs12">
-    <thead class="primary">
+  <table class="tbl1 v6 cbox fs12">
+    <thead class="">
       <tr>
         <th></th>
         <th class="s0">{%trans "Name"%}</th>

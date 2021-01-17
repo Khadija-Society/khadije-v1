@@ -1,5 +1,5 @@
 <?php
-namespace content_m\donate;
+namespace content_m\fulldonate;
 
 
 class view
@@ -14,8 +14,6 @@ class view
 		\dash\data::page_title(T_("Donation list"));
 		\dash\data::page_desc(T_("check last donates and monitor all donate transaction"));
 
-		\dash\data::badge_link(\dash\url::here(). '/donate/options');
-		\dash\data::badge_text(T_('Options'));
 
 		$exportLinkArgs = \dash\request::get();
 		$exportLinkArgs['export'] = 'true';
@@ -212,9 +210,9 @@ class view
 
 		if(\dash\permission::check('cpDonateTotalPay'))
 		{
-			// \dash\data::totalPaid(\dash\app\transaction::total_paid($payment_args));
-			// \dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d"), $payment_args));
-			// \dash\data::totalPaidCount(\dash\app\transaction::total_paid_count($payment_args));
+			\dash\data::totalPaid(\dash\app\transaction::total_paid($payment_args));
+			\dash\data::totalPaidDate(\dash\app\transaction::total_paid_date(date("Y-m-d"), $payment_args));
+			\dash\data::totalPaidCount(\dash\app\transaction::total_paid_count($payment_args));
 		}
 
 		$filterArray = $args;
