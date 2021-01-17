@@ -421,8 +421,8 @@ class sms
 			FROM
 				s_sms
 			WHERE
-				DATE(s_sms.datecreated) <= DATE('$_startdate')  AND
-				DATE(s_sms.datecreated) >= DATE('$_enddate')
+				s_sms.datecreated <= '$_startdate'  AND
+				s_sms.datecreated >= '$_enddate'
 			GROUP BY
 				DATE(s_sms.datecreated)
 			ORDER BY DATE(s_sms.datecreated) ASC
@@ -443,8 +443,8 @@ class sms
 			WHERE
 				s_sms.sendstatus = 'send' AND
 				s_sms.datesend IS NOT NULL AND
-				DATE(s_sms.datesend) <= DATE('$_startdate')  AND
-				DATE(s_sms.datesend) >= DATE('$_enddate')
+				s_sms.datesend <= '$_startdate'  AND
+				s_sms.datesend >= '$_enddate'
 			GROUP BY
 				DATE(s_sms.datesend)
 			ORDER BY DATE(s_sms.datesend) ASC
@@ -466,8 +466,8 @@ class sms
 			WHERE
 				s_sms.sendstatus = 'sendbypanel' AND
 				s_sms.date IS NOT NULL AND
-				DATE(s_sms.date) <= DATE('$_startdate')  AND
-				DATE(s_sms.date) >= DATE('$_enddate')
+				s_sms.date <= '$_startdate'  AND
+				s_sms.date >= '$_enddate'
 			GROUP BY
 				DATE(s_sms.date)
 			ORDER BY DATE(s_sms.date) ASC
@@ -668,7 +668,7 @@ class sms
 		$gateway = null;
 		if($_gateway)
 		{
-			$gateway = " AND s_sms.togateway = '$_gateway' ";
+			// $gateway = " AND s_sms.togateway = '$_gateway' ";
 		}
 
 		$where = null;

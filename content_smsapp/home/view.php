@@ -9,15 +9,15 @@ class view
 		\dash\data::page_desc(T_("System for check and management sms"));
 
 
-		$chart = \lib\app\sms::chart('month');
-		\dash\data::masterChart($chart);
+		// $chart = \lib\app\sms::chart('month');
+		// \dash\data::masterChart($chart);
 
 		$args =
 		[
-			'order' => 's_sms.id',
-			'sort'  => 'desc',
-
-			'limit' => 6
+			'order'      => 's_sms.id',
+			'sort'       => 'desc',
+			'pagenation' => false,
+			'limit'      => 6
 		];
 
 		$lastSms = \lib\app\sms::list(null, $args);

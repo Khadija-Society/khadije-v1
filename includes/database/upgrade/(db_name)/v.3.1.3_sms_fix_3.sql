@@ -1,0 +1,1 @@
+ALTER TABLE `s_sms` CHANGE `togateway` `togateway` BIGINT(20) NULL DEFAULT NULL;
