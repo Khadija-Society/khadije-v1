@@ -314,7 +314,7 @@ class newsms
 		{
 			$date = $get_last_sms['date'];
 
-			if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
+			if(abs(strtotime($_insert['date']) - strtotime($date)) < 1)
 			{
 				$id             = $get_last_sms['id'];
 				$text           = $get_last_sms['text'];
