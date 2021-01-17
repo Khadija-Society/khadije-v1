@@ -354,12 +354,12 @@ class twigTransTerms
 	echo T_("Receive");                                                               // Line 393
 
 	//------------------------------------------------content_smsapp/home/display.html
-	echo T_("Bulk");                                                                  // Line 130
+	echo T_("Bulk");                                                                  // Line 124
 	echo T_("Total");                                                                 // Line 152
-	echo T_("month");                                                                 // Line 195
-	echo T_("week");                                                                  // Line 204
-	echo T_("day");                                                                   // Line 213
-	echo T_("Without text");                                                          // Line 248
+	echo T_("month");                                                                 // Line 189
+	echo T_("week");                                                                  // Line 198
+	echo T_("day");                                                                   // Line 207
+	echo T_("Without text");                                                          // Line 242
 	echo T_("Private");                                                               // Line 325
 
 	//----------------------------------------content_smsapp/report/sendchart/chart.js
@@ -462,7 +462,7 @@ class twigTransTerms
 	echo T_("Intent");                                                                // Line 201
 	echo T_("Intention to donate this fee");                                          // Line 203
 	echo T_("Enter a valid niyat");                                                   // Line 190
-	echo T_("Pay Amount");                                                            // Line 30
+	echo T_("Pay Amount");                                                            // Line 27
 	echo T_("Enter a valid amount");                                                  // Line 240
 	echo T_("Total Pay Amount");                                                      // Line 253
 	echo T_("Show in public doners list?");                                           // Line 273
@@ -545,12 +545,14 @@ class twigTransTerms
 
 	//----------------------------------------------------content/servant/display.html
 
-	//----------------------------------------------------content/contact/display.html
+	//--------------------------------------------------content/contactus/display.html
 	echo T_("We do our best to improve khadije's service quality. So, knowing your valuable comments will help us in this way.");// Line 10
 	echo T_("khadije");                                                               // Line 23
 	echo T_("Alley 4, block 13");                                                     // Line 56
 	echo T_("Mosalla St");                                                            // Line 55
 	echo T_("Iran");                                                                  // Line 31
+
+	//----------------------------------------------------content/contact/display.html
 
 	//--------------------------------------------------content/home/bank-tejarat.html
 	echo T_("Tejarat bank");                                                          // Line 1
@@ -558,9 +560,14 @@ class twigTransTerms
 	echo T_("Iranian bank Shaba number");                                             // Line 11
 
 	//-------------------------------------------------content/home/header-badges.html
+	echo T_("You also partake in salawat");                                           // Line 65
+	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 63
+	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 67
+	echo T_("Say salawat");                                                           // Line 67
+	echo T_("and press here");                                                        // Line 67
 	echo T_("Servants registration");                                                 // Line 195
-	echo T_("Virtual pilgrimage");                                                    // Line 54
-	echo T_("Travel request");                                                        // Line 62
+	echo T_("Virtual pilgrimage");                                                    // Line 62
+	echo T_("Travel request");                                                        // Line 70
 	echo T_("Deputy pilgrimage");                                                     // Line 201
 	echo T_("Balloting names");                                                       // Line 203
 	echo T_("Consulting");                                                            // Line 103
@@ -570,11 +577,6 @@ class twigTransTerms
 	echo T_("Bank Melli Iran");                                                       // Line 1
 
 	//-------------------------------------------------content/home/header-slider.html
-	echo T_("O Allah, let Your Peace come upon Muhammad and the family of Muhammad"); // Line 63
-	echo T_("You also partake in salawat");                                           // Line 65
-	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 67
-	echo T_("Say salawat");                                                           // Line 67
-	echo T_("and press here");                                                        // Line 67
 
 	//--------------------------------------------------content/home/bank-resalat.html
 	echo T_("in Resalat bank of Iran");                                               // Line 1
@@ -588,9 +590,9 @@ class twigTransTerms
 	echo T_("Khadije");                                                               // Line 6
 	echo T_("The financial credibility of this project is provided by cash and non-cash donations from benefactors and lovers of Ahlul-Bayt.");// Line 21
 	echo T_("Therefore, donors and people who are willing participate in the pilgrimage plans of the Ahlul-Bayt, can pay their cash through the following methods.");// Line 21
-	echo T_("You can change amount of your donation");                                // Line 30
-	echo T_("Donate as anonymous");                                                   // Line 33
-	echo T_("Donate with register details");                                          // Line 38
+	echo T_("You can change amount of your donation");                                // Line 27
+	echo T_("Donate as anonymous");                                                   // Line 30
+	echo T_("Donate with register details");                                          // Line 35
 
 	//-------------------------------------------------------content/home/display.html
 	echo T_("Mr.Farahzad's statement");                                               // Line 25
@@ -1374,7 +1376,7 @@ class twigTransTerms
 
 	//---------------------------------------------content_m/product/home/display.html
 	echo T_("Search in products");                                                    // Line 42
-	echo T_("Product donate");                                                        // Line 343
+	echo T_("Product donate");                                                        // Line 163
 	echo T_("Try to start with add new product!");                                    // Line 113
 
 	//---------------------------------------------------content_m/product/layout.html
@@ -1599,9 +1601,10 @@ class twigTransTerms
 	echo T_("Donation Count");                                                        // Line 29
 	echo T_("Donation Average");                                                      // Line 37
 	echo T_("Search in donations");                                                   // Line 83
-	echo T_("Max pay");                                                               // Line 114
-	echo T_("Max count pay user");                                                    // Line 118
-	echo T_("Remember notif");                                                        // Line 123
+	echo T_("Max pay");                                                               // Line 115
+	echo T_("Max count pay user");                                                    // Line 119
+	echo T_("Remember notif");                                                        // Line 124
+	echo T_("Donate with Statistics");                                                // Line 128
 	echo T_("Niyat");                                                                 // Line 152
 	echo T_("Hazinekard");                                                            // Line 153
 	echo T_("Pay with android application");                                          // Line 164
@@ -1637,6 +1640,8 @@ class twigTransTerms
 	echo T_("Enter a valid count");                                                   // Line 195
 	echo T_("Active");                                                                // Line 101
 	echo T_("Deactive");                                                              // Line 101
+
+	//-----------------------------------------------content_m/fulldonate/display.html
 
 	//----------------------------------content_m/userkarbalaarbaeen/home/display.html
 
