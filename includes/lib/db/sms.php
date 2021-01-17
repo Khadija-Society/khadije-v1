@@ -643,20 +643,20 @@ class sms
 	public static function get_count_sms($_type, $_field, $_gateway, $_bulk = false)
 	{
 
-		$to = date("Y-m-d");
+		$to = date("Y-m-d"). ' 23:59:59';
 		$from = null;
 		switch ($_type)
 		{
 			case 'day':
-				$from = date("Y-m-d");
+				$from = date("Y-m-d"). ' 00:00:00';
 				break;
 
 			case 'week':
-				$from = date("Y-m-d", strtotime("-7 day"));
+				$from = date("Y-m-d", strtotime("-7 day")). ' 00:00:00';
 				break;
 
 			case 'month':
-				$from = date("Y-m-d", strtotime("-30 day"));
+				$from = date("Y-m-d", strtotime("-30 day")). ' 00:00:00';
 				break;
 
 			case 'total':
@@ -676,11 +676,11 @@ class sms
 		{
 			if($_field === 'send')
 			{
-				$where = "AND DATE(s_sms.datesend) >= DATE('$from') AND DATE(s_sms.datesend) <= DATE('$to') ";
+				$where = "AND s_sms.datesend >= '$from' AND s_sms.datesend <= '$to' ";
 			}
 			else
 			{
-				$where = "AND DATE(s_sms.datecreated) >= DATE('$from') AND DATE(s_sms.datecreated) <= DATE('$to') ";
+				$where = "AND s_sms.datecreated >= '$from' AND s_sms.datecreated <= '$to' ";
 			}
 		}
 
