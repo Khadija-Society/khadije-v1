@@ -297,11 +297,9 @@
     <thead class="s0">
       <tr class="fs08">
         <th>{%trans "Sms text"%}</th>
-        <th data-sort="{{sortLink.fromnumber.order}}"><a href="{{sortLink.fromnumber.link}}">{%trans "Numbers"%}</a></th>
+        <th></th>
         <th>{%trans "Answer"%}</th>
-        <th data-sort="{{sortLink.sendstatus.order}}"><a href="{{sortLink.sendstatus.link}}">{%trans "Status"%}</a></th>
-        <th data-sort="{{sortLink.group_id.order}}"><a href="{{sortLink.group_id.link}}">{%trans "Group"%}</a></th>
-        <th data-sort="{{sortLink.recommend_id.order}}"><a href="{{sortLink.recommend_id.link}}">{%trans "Recommended"%}</a></th>
+        <th></th>
       </tr>
     </thead>
 
@@ -328,7 +326,7 @@
         <td class="collapsing">
           <div>{{value.datecreated | dt('human', 'year')}}</div>
           <div class="ltr">{{value.datecreated | dt}}</div>
-          <hr>
+          <div>-----</div>
           <div>
             {%trans "fromnumber"%}
             <a href="{{url.that}}?fromnumber={{value.fromnumber}}">{{value.fromnumber | fitNumber(false)}}</a>
@@ -339,7 +337,7 @@
             {%endif%}
 
             {%if value.fromgateway%}
-            <hr>
+            <div>-----</div>
             <div>{%trans "fromgateway"%} <a href="{{url.that}}?fromgateway={{value.fromgateway}}">{{value.fromgateway | fitNumber(false)}}</a></div>
             {%endif%}
             {%if value.tonumber%}
@@ -352,16 +350,17 @@
 
           <div class="ltr fc-mute">{{value.dateanswer | dt}}</div>
         </td>
+
         <td class="collapsing">
-          <div><a href="{{url.that}}?receivestatus={{value.receivestatus}}">{{value.treceivestatus}}</a></div>
-          <div><a href="{{url.that}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></div>
+          {%if value.receivestatus %}<div> {%trans "Receive status"%} <a href="{{url.that}}?receivestatus={{value.receivestatus}}">{{value.treceivestatus}}</a></div>{%endif%}
+          {%if value.sendstatus%}<div> {%trans "Send status"%} <a href="{{url.that}}?sendstatus={{value.sendstatus}}">{%set mysendstatus = value.sendstatus%}{%trans mysendstatus%}</a></div>{%endif%}
           {%if not value.sendstatus and requestGET.recommend == 'yes'%}
-            <div class="btn xs warn2" data-confirm data-data='{"recommend": "invalid", "id": "{{value.id}}"}'>{%trans "Send to analyze"%}</div>
+            <div  class="btn xs warn2" data-confirm data-data='{"recommend": "invalid", "id": "{{value.id}}"}'>{%trans "Send to analyze"%}</div>
           {%endif%}
-        </td>
-        <td class="collapsing"><a href="{{url.that}}?group_id={{value.group_id}}">{{value.group_title}}</a></td>
-        <td class="collapsing">
-          <div><a href="{{url.that}}?recommend_id={{value.recommend_id}}">{{value.recommend_title}}</a></div>
+
+        {%if value.group_id%}<div> {%trans "Group"%} <a href="{{url.that}}?group_id={{value.group_id}}">{{value.group_title}}</a></div>{%endif%}
+        <div>
+          {%if value.recommend_id%}<div> {%trans "Recommend"%} <a href="{{url.that}}?recommend_id={{value.recommend_id}}">{{value.recommend_title}}</a></div>{%endif%}
           {%if value.receivestatus == 'awaiting' and not requestGET.recommend == 'yes'%}
             <div class="check1">
               <input type="checkbox" name="archive_id[]" value="{{value.id}}" id="iacr{{value.id}}">
@@ -371,6 +370,7 @@
               <div class="btn xs danger" data-confirm data-data='{"skip": "skip", "id": "{{value.id}}"}'>{%trans "Archive"%}</div>
             {%endif%}
           {%endif%}
+          <div></div>
         </td>
       </tr>
       {%endfor%}
