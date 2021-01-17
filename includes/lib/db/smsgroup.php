@@ -95,8 +95,12 @@ class smsgroup
 
 	public static function update_group_count($_id)
 	{
-		$query = "UPDATE s_group SET s_group.count = (SELECT COUNT(*) FROM s_sms WHERE s_sms.group_id = $_id) WHERE s_group.id = $_id LIMIT 1";
-		\dash\db::query($query);
+		$count = \dash\db::get("SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.group_id = $_id" , 'count', true);
+		if($count && is_numeric($count))
+		{
+			$query = "UPDATE s_group SET s_group.count = $count WHERE s_group.id = $_id LIMIT 1";
+			\dash\db::query($query);
+		}
 	}
 }
 ?>
