@@ -132,7 +132,7 @@ class sync
 			return false;
 		}
 
-		$get_input = json_decode($get_input, true);
+		$get_input = \dash\json::decode($get_input, true);
 		if(!is_array($get_input))
 		{
 			\dash\notif::error(T_("Invalid input syntax"));
