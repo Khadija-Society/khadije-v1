@@ -126,11 +126,22 @@ class sms
 		$month['receive_bulk'] = $month['receive']; // \lib\db\sms::get_count_sms('month', 'receive', $_gateway, true);
 
 		$total                 = [];
-		$total['send']         = \lib\db\sms::get_count_sms('total', 'send', $_gateway);
-		$total['send_bulk']    = $total['send']; // \lib\db\sms::get_count_sms('total', 'send', $_gateway, true);
+		if(\dash\url::content() === 'api')
+		{
+			$total['send']         = 73411;
+			$total['send_bulk']    = $total['send']; // \lib\db\sms::get_count_sms('total', 'send', $_gateway, true);
 
-		$total['receive']      = \lib\db\sms::get_count_sms('total', 'receive', $_gateway);
-		$total['receive_bulk'] = $total['receive']; // \lib\db\sms::get_count_sms('total', 'receive', $_gateway, true);
+			$total['receive']      = 596898;
+			$total['receive_bulk'] = $total['receive']; // \lib\db\sms::get_count_sms('total', 'receive', $_gateway, true);
+		}
+		else
+		{
+			$total['send']         = \lib\db\sms::get_count_sms('total', 'send', $_gateway);
+			$total['send_bulk']    = $total['send']; // \lib\db\sms::get_count_sms('total', 'send', $_gateway, true);
+
+			$total['receive']      = \lib\db\sms::get_count_sms('total', 'receive', $_gateway);
+			$total['receive_bulk'] = $total['receive']; // \lib\db\sms::get_count_sms('total', 'receive', $_gateway, true);
+		}
 
 
 		$result['day']      = $day;
