@@ -19,7 +19,7 @@
 
 {%block iNumbers%}
 <div class="f">
-
+<!--
   <div class="c1 s6">
     <a class="dcard xs">
      <div class="statistic sm teal">
@@ -28,8 +28,8 @@
      </div>
     </a>
   </div>
-
-  <div class="c s6">
+ -->
+  <div class="c s6 hide">
     <a class="dcard">
      <div class="statistic sm teal">
       <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
@@ -38,7 +38,7 @@
     </a>
   </div>
 
-   <div class="c s6">
+   <div class="c s6 hide">
     <a class="dcard">
      <div class="statistic sm teal">
       <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
@@ -47,7 +47,7 @@
     </a>
   </div>
 
-   <div class="c s6">
+   <div class="c s6 hide">
     <a class="dcard">
      <div class="statistic sm teal">
       <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
@@ -56,7 +56,7 @@
     </a>
   </div>
 
-   <div class="c s12">
+   <div class="c s12 hide">
     <a class="dcard">
      <div class="statistic sm teal">
       <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
@@ -117,16 +117,16 @@
 
 <div class="f">
 
-<div class="c1 s6">
+<!-- <div class="c1 s6">
     <a class="dcard xs">
      <div class="statistic sm blue">
       <div class="label mB10"></div>
       <div class="value ">{%trans "Receive"%} <small>{%trans "Bulk"%}</small></div>
      </div>
     </a>
-  </div>
+  </div> -->
 
-  <div class="c s6">
+  <div class="c s6 hide">
     <a class="dcard">
      <div class="statistic sm blue">
       <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
@@ -135,7 +135,7 @@
     </a>
   </div>
 
-  <div class="c s6">
+  <div class="c s6 hide">
     <a class="dcard">
      <div class="statistic sm blue">
       <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
@@ -144,7 +144,7 @@
     </a>
   </div>
 
-  <div class="c s6">
+  <div class="c s6 hide">
     <a class="dcard">
      <div class="statistic sm blue">
       <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
@@ -153,7 +153,7 @@
     </a>
   </div>
 
-  <div class="c s12">
+  <div class="c s12 hide">
     <a class="dcard">
      <div class="statistic sm blue">
       <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
@@ -239,7 +239,7 @@
   <h2>{%trans "Last sms"%}</h2>
   {%for key, value in lastSms%}
     <a class="msg f">
-      <div class="c" {%if value.text | length > 20%} title="{{value.text}}" {%endif%}>{%if value.group_type != 'family' %}{%if value.text%}{{value.text | slice(0, 20)}}{%if value.text | length > 20%}...{%endif%}{%else%}{%trans "Without text"%}{%endif%}{%else%}<small class="fc-mute">{%trans "Private"%}</small>{%endif%}</div>
+      <div class="c" {%if value.text | length > 70%} title="{{value.text}}" {%endif%}>{%if value.group_type != 'family' %}{%if value.text%}{{value.text | slice(0, 70)}}{%if value.text | length > 70%}...{%endif%}{%else%}{%trans "Without text"%}{%endif%}{%else%}<small class="fc-mute">{%trans "Private"%}</small>{%endif%}</div>
       <span class="cauto mLR10">{{value.fromnumber | fitNumber('mobile')}}</span>
       <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
     </a>

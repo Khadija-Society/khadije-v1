@@ -215,6 +215,9 @@ class sms
 
 	public static function get_count_gateway_send($_date, $_gateway)
 	{
+		$from = $_date . ' 00:00:00';
+		$to   = $_date . ' 23:59:59';
+
 		$query  =
 		"
 			SELECT
@@ -223,7 +226,8 @@ class sms
 				s_sms
 			WHERE
 				s_sms.sendstatus = 'send' AND
-				DATE(s_sms.datesend) = DATE('$_date')
+				s_sms.datesend >= '$from' AND
+				s_sms.datesend <= '$to'
 		";
 
 		$result = \dash\db::get($query, 'sum', true);

@@ -45,8 +45,8 @@ class view
 
 		if($child && \dash\utility\filter::mobile($child))
 		{
-			$args['s_sms.togateway']         = $child;
-			$countArgs['s_sms.togateway']    = $child;
+			//$args['s_sms.togateway']         = $child;
+			//$countArgs['s_sms.togateway']    = $child;
 		}
 
 		if(\dash\request::get('recommend') === 'yes')
@@ -156,16 +156,16 @@ class view
 		}
 
 
-		if(\dash\request::get('togateway'))
+		//if(\dash\request::get('togateway'))
 		{
-			$args['togateway']     = \dash\request::get('togateway');
-			$filterArray[T_('togateway')] = \dash\request::get('togateway');
+			//$args['togateway']     = \dash\request::get('togateway');
+			//$filterArray[T_('togateway')] = \dash\request::get('togateway');
 		}
 
-		if(\dash\request::get('togateway'))
+		//if(\dash\request::get('togateway'))
 		{
-			$args['togateway']     = \dash\request::get('togateway');
-			$filterArray[T_('togateway')] = \dash\request::get('togateway');
+			//$args['togateway']     = \dash\request::get('togateway');
+			//$filterArray[T_('togateway')] = \dash\request::get('togateway');
 		}
 
 		if(\dash\request::get('fromgateway'))
@@ -225,7 +225,6 @@ class view
 		{
 			\dash\utility\export::csv(['name' => 'export_sms', 'data' => $dataTable]);
 		}
-
 
 		\dash\data::dataTable($dataTable);
 
