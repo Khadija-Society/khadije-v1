@@ -12,7 +12,7 @@ class view
 		\dash\data::page_desc(\dash\data::site_desc(). ' | '. \dash\data::site_slogan());
 
 		// add page cover to all pages
-		\dash\data::page_cover(\dash\url::static(). '/images/homepage-v2/harameyn.jpg');
+		\dash\data::page_cover(\dash\url::static(). '/images/cover/khadije-cover-v2.png');
 
 		\dash\data::page_copyright(
 			T_('© :year :site. All right reserved.',
