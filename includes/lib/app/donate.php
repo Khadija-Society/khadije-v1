@@ -14,6 +14,27 @@ class donate
 			$result = [];
 		}
 
+		$new = [];
+		foreach ($result as $key => $value)
+		{
+			$temp               = [];
+
+			$temp['روش پرداخت'] = str_replace('پرداخت توسط ', '', $value['title']);
+			$temp['نام پروفایل']   = $value['displayname'];
+			$temp['نام اهداکننده']   = $value['fullname'];
+			$temp['تلفن همراه'] = $value['mobile'];
+			$temp['مبلغ']       = $value['plus'];
+			// $temp['minus']   = $value['minus']; // => null
+			// $temp['donate']  = $value['donate']; // => string 'cash' (length=4)
+			$temp['نیت']        = $value['niyat'];
+			$temp['هزینه کرد']  = $value['hazinekard']; // => string 'نذر قربانی عقیقه' (length=30)
+			$temp['گمنام']      = $value['doners'] ? 'بله' : 'خیر'; // => string '0' (length=1)
+			$temp['توضیحات']    = $value['desc']; // => string ' نام فرزند حسین - نام پدر محمدعلی' (length=58)
+			$temp['تاریخ']      = \dash\fit::date_time($value['datecreated']); // => string '2021-01-15 23:21:44' (length=19)
+			$new[] = $temp;
+		}
+		return $new;
+
 		return $result;
 	}
 

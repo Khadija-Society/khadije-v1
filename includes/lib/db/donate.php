@@ -39,6 +39,7 @@ class donate
 				transactions.title,
 				users.displayname,
 				users.mobile,
+				transactions.fullname,
 				transactions.plus,
 				transactions.minus,
 				transactions.donate,
