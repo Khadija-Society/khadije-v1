@@ -42,8 +42,10 @@ class donate
 				transactions.plus,
 				transactions.minus,
 				transactions.donate,
+				transactions.niyat,
 				transactions.hazinekard,
 				transactions.doners,
+				transactions.desc,
 				transactions.datecreated
 			'
 		];

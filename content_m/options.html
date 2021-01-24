@@ -71,7 +71,7 @@
                 <td><img height="50" width="50" src="{%if value.fileurl%}{{value.fileurl}}{%else%}{{url.static}}/siftal/images/default/image.png{%endif%}" alt="default image"></td>
                 <td>
                   {%if value.term%}<i class="sf-check fc-green" title='{%trans "This method have term and conditions"%}'></i>{%endif%}
-                  {{value.title}}
+                  <a href="{{url.this}}?hazinekard={{value.title}}">{{value.title}}</a>
 
                 </td>
                 {%if url.module == 'donate' or url.module == 'arbaeen' %}
