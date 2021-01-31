@@ -12,7 +12,7 @@
   {%for key, value in lastPostsDonateRecord%}
     <div class="c pRa10 mB10">
       <a href="{{value.link}}">
-        <img src="{%if value.file.normal%}{{value.file.normal}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
+        <img src="{%if value.file.main%}{{value.file.main}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
       </a>
     </div>
   {%endfor%}
