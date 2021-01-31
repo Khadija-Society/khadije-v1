@@ -1520,7 +1520,7 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 
 .donateLine img{
 	display: block;
-	max-width: 250px;
+	/*max-width: 250px;*/
 }
 
 .roundedBox .ovelay{overflow: hidden;display: block;}
