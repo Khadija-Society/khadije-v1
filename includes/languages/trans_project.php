@@ -241,13 +241,13 @@ class twigTransTerms
 	echo T_("Sms list");                                                              // Line 179
 
 	//---------------------------------------------content_smsapp/viewsms/display.html
-	echo T_("Reseive status");                                                        // Line 302
+	echo T_("Reseive status");                                                        // Line 78
 	echo T_("block");                                                                 // Line 78
 	echo T_("awaiting");                                                              // Line 28
 	echo T_("analyze");                                                               // Line 14
 	echo T_("answerready");                                                           // Line 15
 	echo T_("skip");                                                                  // Line 16
-	echo T_("Send status");                                                           // Line 304
+	echo T_("Send status");                                                           // Line 356
 	echo T_("sendtodevice");                                                          // Line 29
 	echo T_("send");                                                                  // Line 30
 	echo T_("deliver");                                                               // Line 31
@@ -255,7 +255,7 @@ class twigTransTerms
 	echo T_("All sms from this number");                                              // Line 46
 	echo T_("Sms");                                                                   // Line 12
 	echo T_("Show");                                                                  // Line 122
-	echo T_("togateway");                                                             // Line 337
+	echo T_("togateway");                                                             // Line 336
 	echo T_("date");                                                                  // Line 61
 	echo T_("Date receive");                                                          // Line 67
 	echo T_("Date answer");                                                           // Line 73
@@ -267,15 +267,15 @@ class twigTransTerms
 	echo T_("user data");                                                             // Line 104
 	echo T_("Sms text");                                                              // Line 299
 	echo T_("Character");                                                             // Line 43
-	echo T_("Recommend");                                                             // Line 82
+	echo T_("Recommend");                                                             // Line 363
 	echo T_("Answer text");                                                           // Line 75
 	echo T_("Send");                                                                  // Line 132
 	echo T_("Skip");                                                                  // Line 38
 	echo T_("Send by gateway");                                                       // Line 104
 	echo T_("From the sender");                                                       // Line 108
 	echo T_("From the sms panel");                                                    // Line 107
-	echo T_("fromgateway");                                                           // Line 342
-	echo T_("tonumber");                                                              // Line 345
+	echo T_("fromgateway");                                                           // Line 341
+	echo T_("tonumber");                                                              // Line 344
 	echo T_("sendstatus");                                                            // Line 202
 	echo T_("amount");                                                                // Line 203
 	echo T_("answertext");                                                            // Line 204
@@ -307,8 +307,8 @@ class twigTransTerms
 	echo T_("Analyze");                                                               // Line 86
 	echo T_("Is Money");                                                              // Line 59
 	echo T_("View");                                                                  // Line 77
-	echo T_("Numbers");                                                               // Line 300
-	echo T_("Answer");                                                                // Line 303
+	echo T_("Numbers");                                                               // Line 35
+	echo T_("Answer");                                                                // Line 301
 	echo T_("No record exist!");                                                      // Line 244
 
 	//--------------------------------------------content_smsapp/addgroup/display.html
@@ -360,7 +360,7 @@ class twigTransTerms
 	echo T_("week");                                                                  // Line 198
 	echo T_("day");                                                                   // Line 207
 	echo T_("Without text");                                                          // Line 242
-	echo T_("Private");                                                               // Line 325
+	echo T_("Private");                                                               // Line 321
 
 	//----------------------------------------content_smsapp/report/sendchart/chart.js
 	echo T_("Count Send and Receive sms per day");                                    // Line 323
@@ -374,13 +374,13 @@ class twigTransTerms
 	echo T_("SMS");                                                                   // Line 327
 
 	//--------------------------------------content_smsapp/report/groupby/display.html
-	echo T_("Receive status");                                                        // Line 146
+	echo T_("Receive status");                                                        // Line 355
 
 	//---------------------------------------------content_smsapp/report/home/chart.js
 	echo T_("Send status chart");                                                     // Line 32
 	echo T_("Receive status chart");                                                  // Line 104
 	echo T_("Sms count group by recommend title");                                    // Line 178
-	echo T_("Recommended");                                                           // Line 306
+	echo T_("Recommended");                                                           // Line 220
 	echo T_("Sms count group by group title");                                        // Line 250
 	echo T_("Group chart");                                                           // Line 292
 
@@ -417,9 +417,9 @@ class twigTransTerms
 	echo T_("Clear filter");                                                          // Line 120
 	echo T_("Apply");                                                                 // Line 122
 	echo T_("Advance");                                                               // Line 165
-	echo T_("fromnumber");                                                            // Line 332
-	echo T_("Send to analyze");                                                       // Line 361
-	echo T_("Archive");                                                               // Line 373
+	echo T_("fromnumber");                                                            // Line 331
+	echo T_("Send to analyze");                                                       // Line 358
+	echo T_("Archive");                                                               // Line 370
 
 	//-----------------------------------------content_smsapp/filtergroup/display.html
 	echo T_("You can add numbers to this filter so that if a text message from one of these numbers was received, enter this group directly.");// Line 7
@@ -478,12 +478,12 @@ class twigTransTerms
 	echo T_("Enter");                                                                 // Line 138
 	echo T_("Misson & Target");                                                       // Line 22
 	echo T_("Vision");                                                                // Line 353
-	echo T_("Honors");                                                                // Line 173
+	echo T_("Honors");                                                                // Line 174
 	echo T_("FAQ");                                                                   // Line 25
 	echo T_("Contact");                                                               // Line 362
-	echo T_("Doners");                                                                // Line 210
+	echo T_("Doners");                                                                // Line 212
 	echo T_("Register for group trip");                                               // Line 42
-	echo T_("Developed by Ermile");                                                   // Line 222
+	echo T_("Developed by Ermile");                                                   // Line 224
 
 	//-----------------------------------------------------content/old/v2/dafault.html
 	echo T_("View your current location and navigate to parent of it");               // Line 7
@@ -565,13 +565,13 @@ class twigTransTerms
 	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 67
 	echo T_("Say salawat");                                                           // Line 67
 	echo T_("and press here");                                                        // Line 67
-	echo T_("Servants registration");                                                 // Line 195
+	echo T_("Servants registration");                                                 // Line 197
 	echo T_("Virtual pilgrimage");                                                    // Line 62
 	echo T_("Travel request");                                                        // Line 70
-	echo T_("Deputy pilgrimage");                                                     // Line 201
-	echo T_("Balloting names");                                                       // Line 203
+	echo T_("Deputy pilgrimage");                                                     // Line 203
+	echo T_("Balloting names");                                                       // Line 205
 	echo T_("Consulting");                                                            // Line 103
-	echo T_("My love story book");                                                    // Line 184
+	echo T_("My love story book");                                                    // Line 186
 
 	//----------------------------------------------------content/home/bank-melli.html
 	echo T_("Bank Melli Iran");                                                       // Line 1
@@ -595,7 +595,7 @@ class twigTransTerms
 	echo T_("Donate with register details");                                          // Line 35
 
 	//-------------------------------------------------------content/home/display.html
-	echo T_("Mr.Farahzad's statement");                                               // Line 25
+	echo T_("Mokeb Reports");                                                         // Line 25
 	echo T_("Contact with manager");                                                  // Line 37
 
 	//--------------------------------------------------content/arbaeen98/display.html
@@ -624,30 +624,30 @@ class twigTransTerms
 	//--------------------------------------------------------content/main/layout.html
 	echo T_("Website header");                                                        // Line 39
 	echo T_("Homepage");                                                              // Line 5
-	echo T_("News");                                                                  // Line 174
+	echo T_("News");                                                                  // Line 175
 	echo T_("Khadije Wiki");                                                          // Line 66
 	echo T_("Self expressions");                                                      // Line 109
 	echo T_("Admin panel");                                                           // Line 77
 	echo T_("Panel");                                                                 // Line 79
 	echo T_("Login");                                                                 // Line 83
-	echo T_("Services");                                                              // Line 199
+	echo T_("Services");                                                              // Line 201
 	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 130
 	echo T_("User Panel");                                                            // Line 134
 	echo T_("Signup in Khadije charity");                                             // Line 139
 	echo T_("Enamad");                                                                // Line 147
 	echo T_("Samandehi");                                                             // Line 159
-	echo T_("Mission");                                                               // Line 171
-	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 179
-	echo T_("Biography");                                                             // Line 181
-	echo T_("Bibliography");                                                          // Line 182
-	echo T_("Specialized sites");                                                     // Line 183
+	echo T_("Mission");                                                               // Line 172
+	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 180
+	echo T_("Biography");                                                             // Line 183
+	echo T_("Bibliography");                                                          // Line 184
+	echo T_("Specialized sites");                                                     // Line 185
 	echo T_("Requests");                                                              // Line 27
 	echo T_("Individual registration");                                               // Line 10
 	echo T_("Group registration");                                                    // Line 9
 	echo T_("Delneveshteha");                                                         // Line 5
-	echo T_("Help");                                                                  // Line 207
-	echo T_("Other Languages");                                                       // Line 214
-	echo T_("Software Solution Designer");                                            // Line 222
+	echo T_("Help");                                                                  // Line 209
+	echo T_("Other Languages");                                                       // Line 216
+	echo T_("Software Solution Designer");                                            // Line 224
 	echo T_("Twitter");                                                               // Line 152
 	echo T_("Facebook");                                                              // Line 143
 	echo T_("Telegram");                                                              // Line 134
