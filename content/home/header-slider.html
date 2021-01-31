@@ -4,6 +4,24 @@
 </a>
 {%endif%}
 
+<section>
+{%set lastPostsDonateRecord = posts({"limit" : 5, "special" : "donate"})%}
+
+{%if lastPostsDonateRecord%}
+  <div class="f roundedBox promotion">
+  {%for key, value in lastPostsDonateRecord%}
+    <div class="cpRa10 mB10">
+      <a class="ovelay" href="{{value.link}}">
+        <figure>
+          <img src="{%if value.file.normal%}{{value.file.normal}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
+        </figure>
+      </a>
+    </div>
+  {%endfor%}
+  </div>
+{%endif%}
+</section>
+
   <div class="f">
     <div class="c12">
 
