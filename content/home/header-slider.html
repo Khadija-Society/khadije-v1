@@ -8,13 +8,11 @@
 
 {%if lastPostsDonateRecord%}
 <section>
-  <div class="f roundedBox promotion">
+  <div class="f donateLine">
   {%for key, value in lastPostsDonateRecord%}
-    <div class="cpRa10 mB10">
-      <a class="ovelay" href="{{value.link}}">
-        <figure>
-          <img src="{%if value.file.normal%}{{value.file.normal}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
-        </figure>
+    <div class="c pRa10 mB10">
+      <a href="{{value.link}}">
+        <img src="{%if value.file.normal%}{{value.file.normal}}{%else%}{{defaultImage}}{%endif%}" alt="{{value.title}}">
       </a>
     </div>
   {%endfor%}
