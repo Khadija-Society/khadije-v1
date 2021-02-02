@@ -1520,7 +1520,13 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 
 .donateLine img{
 	display: block;
+	transition: 0.3s;
+	filter: grayscale(0.3);
 	/*max-width: 250px;*/
+}
+.donateLine img:hover{
+	transform: scale(1.1);
+	filter: grayscale(0);
 }
 
 .roundedBox .ovelay{overflow: hidden;display: block;}
@@ -1561,7 +1567,7 @@ a.sp-video:after{content:'\25B6';position:absolute;width:45px;padding-left:5px;h
 
 
 
-/* apps*/
+/* apps
 [data-app] #sHeader .langlist{display: none}
 
 
