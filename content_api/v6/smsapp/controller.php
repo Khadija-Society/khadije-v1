@@ -50,13 +50,21 @@ class controller
 		{
 			$detail = \content_api\v6\smsapp\setting::get();
 		}
-		elseif($directory === 'v6/smsapp/sync')
-		{
-			$detail = \content_api\v6\smsapp\sync::fire();
-		}
+		// elseif($directory === 'v6/smsapp/sync')
+		// {
+		// 	$detail = \content_api\v6\smsapp\sync::fire();
+		// }
 		elseif($directory === 'v6/smsapp/sync2')
 		{
+			if(self::isBusy())
+			{
+				\dash\log::set('apiSMSAPPISBusy');
+				\dash\notif::error('apiSMSAPPISBusy');
+				return false;
+			}
+			self::isBusy(true);
 			$detail = \content_api\v6\smsapp\sync::fire2();
+			self::isBusy(false);
 		}
 		else
 		{
@@ -68,6 +76,31 @@ class controller
 
 	}
 
+
+	private static function isBusy($_mode = null)
+	{
+		$file = __DIR__ .'/isBusy.me.conf';
+
+		if(is_null($_mode))
+		{
+			return file_exists($file);
+		}
+
+		if($_mode === true)
+		{
+			@file_put_contents($file, date("Y-m-d H:i:s"));
+			return;
+		}
+
+		if($_mode === false)
+		{
+			if(file_exists($file))
+			{
+				unlink($file);
+			}
+
+		}
+	}
 
 
 	private static function check_smsappkey()
