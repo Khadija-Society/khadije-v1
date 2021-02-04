@@ -37,6 +37,7 @@ class newsms
 		}
 		else
 		{
+			\dash\log::set('apiSmsLostNotFound', ['xdata' => json_encode($_args)]);
 			return self::multi_add_new_sms($_args);
 		}
 	}

@@ -26,10 +26,10 @@ class controller
 		{
 			$detail = \content_api\v6\smsapp\dashboard::get();
 		}
-		elseif($directory === 'v6/smsapp/new')
-		{
-			$detail = \content_api\v6\smsapp\newsms::add_new_sms();
-		}
+		// elseif($directory === 'v6/smsapp/new')
+		// {
+		// 	$detail = \content_api\v6\smsapp\newsms::add_new_sms();
+		// }
 		elseif($directory === 'v6/smsapp/notsent')
 		{
 			$detail = \content_api\v6\smsapp\notsent::get();
