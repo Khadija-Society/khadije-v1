@@ -315,10 +315,14 @@ class newsms
 		{
 			$date = $get_last_sms['date'];
 
-			if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
+			\dash\log::set('apiSmsAppDuplicateNewMessageBeforeCheckText', ['xold' => $get_last_sms , 'xnew' => $_insert]);
+
+			if(abs(strtotime($_insert['date']) - strtotime($date)) < 2)
 			{
 				$id             = $get_last_sms['id'];
 				$text           = $get_last_sms['text'];
+
+				\dash\log::set('apiSmsAppDuplicateNewMessageBeforeCheckText', ['xoldtxt' => $text, 'xnewtext' => $_insert['text']]);
 
 				if($_insert['text'] === $text)
 				{
