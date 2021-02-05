@@ -315,24 +315,24 @@ class newsms
 		{
 			$date = $get_last_sms['date'];
 
+			$id             = $get_last_sms['id'];
+			$text           = $get_last_sms['text'];
+
+			if($_insert['text'] === $text)
+			{
+				// duplicate message
+				// my son is send some request in one time
+				// we check it to not save duplicate message :|
+				\dash\log::set('apiSmsAppDuplicateNewMessage');
+				self::$sms_id = intval($get_last_sms['id']);
+				self::$update_insert = 'non';
+				return;
+			}
 
 			if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
 			{
-				$id             = $get_last_sms['id'];
-				$text           = $get_last_sms['text'];
 
 				\dash\log::set('apiSmsAppDuplicateNewMessageBeforeLessThan5s', ['xold' => $get_last_sms , 'xnew' => $_insert]);
-
-				if($_insert['text'] === $text)
-				{
-					// duplicate message
-					// my son is send some request in one time
-					// we check it to not save duplicate message :|
-					\dash\log::set('apiSmsAppDuplicateNewMessage');
-					self::$sms_id = intval($get_last_sms['id']);
-					self::$update_insert = 'non';
-					return;
-				}
 
 				$new_text           = $text. $_insert['text'];
 
