@@ -15,7 +15,12 @@ body{
 	overflow: hidden;
 	padding-bottom: 50px;
 }
-
+body[data-page="home"] .wrapper{
+	background-color: transparent;
+}
+body[data-page="home"] #sHeaderNav .headerLine{
+	background-color: transparent;
+}
 /*add special border*/
 .sB1{
 	background-color: #eee;
