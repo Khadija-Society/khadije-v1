@@ -16,25 +16,44 @@
           و یا قبل از بایگانی ابتدا پیامی را در پاسخ به آنها ارسال کنید و سپس آنها را بایگانی کنید
         </p>
 
+        <div class="check1">
+          <input type="checkbox" id="iwanttoanswer" name="iwanttoanswer">
+          <label for="iwanttoanswer">می‌خواهم قبل از ارسال به بایگانی پاسخ را برای آن‌ها ارسال کنم</label>
+        </div>
+        <div data-response='iwanttoanswer' data-response-hide>
+          <div>
+            <label>پاسخ</label>
+            <textarea name="answer" class="txt" rows="5" placeholder="پاسخ را اینجا بنویسید ... "></textarea>
+          </div>
+        </div>
 
+        <div class="check1">
+          <input type="checkbox" id="answerdate" name="answerdate">
+          <label for="answerdate">آیا می‌خواهید این عملیات را در بازه زمانی خاص انجام دهید؟</label>
+        </div>
 
+        <div data-response='answerdate' data-response-hide>
+          <div class="f">
 
-            <div class="check1">
-              <input type="checkbox" id="iwanttoanswer" name="iwanttoanswer">
-              <label for="iwanttoanswer">می‌خواهم قبل از ارسال به بایگانی پاسخ را برای آن‌ها ارسال کنم</label>
-            </div>
-            <div data-response='iwanttoanswer' data-response-hide>
-              <div>
-                <label>پاسخ</label>
-                <textarea name="answer" class="txt" rows="5" placeholder="پاسخ را اینجا بنویسید ... "></textarea>
+            <div class="c s12 mB5 pRa5">
+              <div class="input ltr">
+                <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  maxlength='20' data-format="YYYYMMDD"data-view="month">
               </div>
             </div>
 
+            <div class="c s12 mB5 pRa5">
+              <div class="input ltr">
+                <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  maxlength='20' data-format="YYYYMMDD"data-view="month">
+              </div>
+            </div>
 
-
-          <div class="txtRa mT20">
-            <button class="btn danger">ارسال به بایگانی</button>
           </div>
+        </div>
+
+
+        <div class="txtRa mT20">
+          <button class="btn danger">ارسال به بایگانی</button>
+        </div>
 
       </form>
     </div>

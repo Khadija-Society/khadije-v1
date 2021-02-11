@@ -28,6 +28,41 @@ class model
 			'group_id'      => null,
 		];
 
+		if(\dash\request::post('answerdate'))
+		{
+			$startdate = \dash\request::post('startdate');
+			$enddate   = \dash\request::post('enddate');
+
+			$startdate = \dash\date::db($startdate);
+			$enddate   = \dash\date::db($enddate);
+
+			if($startdate)
+			{
+				if(\dash\utility\jdate::is_jalali($startdate))
+				{
+					$startdate = \dash\utility\jdate::to_gregorian($startdate);
+				}
+			}
+
+			if($enddate)
+			{
+				if(\dash\utility\jdate::is_jalali($enddate))
+				{
+					$enddate = \dash\utility\jdate::to_gregorian($enddate);
+				}
+			}
+
+			if(!$startdate || !$enddate)
+			{
+				\dash\notif::error("لطفا تاریخ شروع و پایان را وارد کنید", ['element' => ['startdate', 'enddate']]);
+				return false;
+			}
+
+			$new_list_args['1.1'] = [' = 1.1', " AND DATE(s_sms.date) >= DATE('$startdate') "];
+			$new_list_args['2.2'] = [' = 2.2', " AND DATE(s_sms.date) <= DATE('$enddate') "];
+		}
+
+
 		$new_list_count = \dash\db\config::public_get_count('s_sms', $new_list_args);
 
 		if(!$new_list_count)
@@ -60,11 +95,6 @@ class model
 		\dash\notif::ok("عملیات بر روی ". \dash\fit::number($new_list_count). ' پیامک کامل شد');
 		\dash\redirect::pwd();
 		return;
-
-
-
-
-
 
 	}
 }
