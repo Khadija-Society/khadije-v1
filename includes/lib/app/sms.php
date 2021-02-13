@@ -404,7 +404,7 @@ class sms
 
 		foreach ($list as $key => $value)
 		{
-			\dash\utility\sms::send($value['fromnumber'], $value['answertext']);
+			\dash\utility\sms::send($value['fromnumber'], $value['answertext'], ['localid' => 'payamres-'. $value['id']]);
 			\lib\db\sms::update(['sendstatus' => 'sendbypanel', 'tonumber' => $value['fromnumber']], $value['id']);
 		}
 	}
