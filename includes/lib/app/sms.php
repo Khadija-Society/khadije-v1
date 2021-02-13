@@ -390,6 +390,18 @@ class sms
 	{
 		$list = \lib\db\sms::get_sms_panel_not_send();
 
+
+		if(!is_array($list) || !$list)
+		{
+			return;
+		}
+
+		$all_id = array_column($list, 'id');
+		if($all_id)
+		{
+			\lib\db\sms::update_where(['sendstatus' => 'sendbypanel'], ['id' => ['IN', "(". implode($all_id, ','). ")"]]);
+		}
+
 		foreach ($list as $key => $value)
 		{
 			\dash\utility\sms::send($value['fromnumber'], $value['answertext']);
