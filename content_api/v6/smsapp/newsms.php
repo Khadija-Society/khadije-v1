@@ -333,6 +333,10 @@ class newsms
 			if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
 			{
 
+				self::$sms_id = intval($get_last_sms['id']);
+				self::$update_insert = 'non';
+				return;
+
 				\dash\log::set('apiSmsAppDuplicateNewMessageBeforeLessThan5s', ['xold' => $get_last_sms , 'xnew' => $_insert]);
 
 				$new_text           = $text. $_insert['text'];
