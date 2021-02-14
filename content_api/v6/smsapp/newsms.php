@@ -313,6 +313,7 @@ class newsms
 
 		if(isset($get_last_sms['date']))
 		{
+
 			$date = $get_last_sms['date'];
 
 			$id             = $get_last_sms['id'];
@@ -387,6 +388,9 @@ class newsms
 	{
 		if(self::$update_insert === 'update' && self::$sms_id)
 		{
+			unset($_insert['receivestatus']);
+			unset($_insert['sendstatus']);
+
 			\lib\db\sms::update($_insert, self::$sms_id);
 			return intval(self::$sms_id);
 		}
