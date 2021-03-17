@@ -361,7 +361,7 @@
         {%if value.group_id%}<div> {%trans "Group"%} <a href="{{url.that}}?group_id={{value.group_id}}">{{value.group_title}}</a></div>{%endif%}
         <div>
           {%if value.recommend_id%}<div> {%trans "Recommend"%} <a href="{{url.that}}?recommend_id={{value.recommend_id}}">{{value.recommend_title}}</a></div>{%endif%}
-          {%if value.receivestatus == 'awaiting' and not requestGET.recommend == 'yes'%}
+          {%if value.receivestatus == 'awaiting' %}
             <div class="check1">
               <input type="checkbox" name="archive_id[]" value="{{value.id}}" id="iacr{{value.id}}">
               <label for="iacr{{value.id}}">{%trans "Archive"%}</label>

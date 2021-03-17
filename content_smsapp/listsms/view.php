@@ -24,6 +24,7 @@ class view
 
 		$allGet = \dash\request::get();
 		unset($allGet['page']);
+		unset($allGet['recommend']);
 		\dash\data::archiveBTN($allGet);
 
 
