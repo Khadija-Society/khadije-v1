@@ -9,7 +9,8 @@ self::$config['zarinpal']['CallbackURL']          = null;
 self::$config['zarinpal']['exchange']             = 1;
 
 
-self::$config['asanpardakht']['status']           = true;
+// self::$config['asanpardakht']['status']           = true;
+self::$config['asanpardakht']['status']           = false;
 self::$config['asanpardakht']['MerchantID']       = '3482909';
 self::$config['asanpardakht']['MerchantConfigID'] = '2000';
 self::$config['asanpardakht']['Username']         = 'KHADIJE3482909';
