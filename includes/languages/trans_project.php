@@ -302,6 +302,8 @@ class twigTransTerms
 	echo T_("Manage sms");                                                            // Line 1
 	echo T_("SMS List");                                                              // Line 6
 
+	//-----------------------------------------------content_smsapp/force/display.html
+
 	//--------------------------------------------content_smsapp/settings/display.html
 	echo T_("Type");                                                                  // Line 22
 	echo T_("Analyze");                                                               // Line 86
@@ -387,16 +389,7 @@ class twigTransTerms
 	//-----------------------------------------content_smsapp/report/home/display.html
 	echo T_("Send chart");                                                            // Line 71
 
-	//------------------------------------------------content_smsapp/chat/display.html
-	echo T_("Date created");                                                          // Line 83
-	echo T_("Group");                                                                 // Line 135
-	echo T_("Action");                                                                // Line 66
-
-	//-------------------------------------------content_smsapp/editgroup/display.html
-	echo T_("Answers");                                                               // Line 45
-	echo T_("Keywords");                                                              // Line 56
-
-	//---------------------------------------------content_smsapp/listsms/display.html
+	//------------------------------------content_smsapp/conversation/display-old.html
 	echo T_("Maximum allowed to send today has been completed");                      // Line 40
 	echo T_("This time is a bad time, send sms in another time");                     // Line 43
 	echo T_("Recommend message group sorted");                                        // Line 58
@@ -419,7 +412,22 @@ class twigTransTerms
 	echo T_("Advance");                                                               // Line 165
 	echo T_("fromnumber");                                                            // Line 331
 	echo T_("Send to analyze");                                                       // Line 358
+	echo T_("Group");                                                                 // Line 135
 	echo T_("Archive");                                                               // Line 370
+
+	//----------------------------------------content_smsapp/conversation/display.html
+	echo T_("System status");                                                         // Line 22
+	echo T_("Last connection");                                                       // Line 26
+
+	//------------------------------------------------content_smsapp/chat/display.html
+	echo T_("Date created");                                                          // Line 83
+	echo T_("Action");                                                                // Line 66
+
+	//-------------------------------------------content_smsapp/editgroup/display.html
+	echo T_("Answers");                                                               // Line 45
+	echo T_("Keywords");                                                              // Line 56
+
+	//---------------------------------------------content_smsapp/listsms/display.html
 
 	//-----------------------------------------content_smsapp/filtergroup/display.html
 	echo T_("You can add numbers to this filter so that if a text message from one of these numbers was received, enter this group directly.");// Line 7
@@ -475,15 +483,15 @@ class twigTransTerms
 	echo T_("Spending method");                                                       // Line 311
 
 	//------------------------------------------------------content/old/v2/footer.html
-	echo T_("Enter");                                                                 // Line 138
+	echo T_("Enter");                                                                 // Line 137
 	echo T_("Misson & Target");                                                       // Line 22
 	echo T_("Vision");                                                                // Line 353
-	echo T_("Honors");                                                                // Line 174
+	echo T_("Honors");                                                                // Line 173
 	echo T_("FAQ");                                                                   // Line 25
 	echo T_("Contact");                                                               // Line 362
-	echo T_("Doners");                                                                // Line 212
+	echo T_("Doners");                                                                // Line 211
 	echo T_("Register for group trip");                                               // Line 42
-	echo T_("Developed by Ermile");                                                   // Line 224
+	echo T_("Developed by Ermile");                                                   // Line 223
 
 	//-----------------------------------------------------content/old/v2/dafault.html
 	echo T_("View your current location and navigate to parent of it");               // Line 7
@@ -565,13 +573,13 @@ class twigTransTerms
 	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 67
 	echo T_("Say salawat");                                                           // Line 67
 	echo T_("and press here");                                                        // Line 67
-	echo T_("Servants registration");                                                 // Line 197
+	echo T_("Servants registration");                                                 // Line 196
 	echo T_("Virtual pilgrimage");                                                    // Line 62
 	echo T_("Travel request");                                                        // Line 70
-	echo T_("Deputy pilgrimage");                                                     // Line 203
-	echo T_("Balloting names");                                                       // Line 205
+	echo T_("Deputy pilgrimage");                                                     // Line 202
+	echo T_("Balloting names");                                                       // Line 204
 	echo T_("Consulting");                                                            // Line 103
-	echo T_("My love story book");                                                    // Line 186
+	echo T_("My love story book");                                                    // Line 185
 
 	//----------------------------------------------------content/home/bank-melli.html
 	echo T_("Bank Melli Iran");                                                       // Line 1
@@ -624,30 +632,29 @@ class twigTransTerms
 	//--------------------------------------------------------content/main/layout.html
 	echo T_("Website header");                                                        // Line 39
 	echo T_("Homepage");                                                              // Line 5
-	echo T_("News");                                                                  // Line 175
-	echo T_("Khadije Wiki");                                                          // Line 66
-	echo T_("Self expressions");                                                      // Line 109
-	echo T_("Admin panel");                                                           // Line 77
-	echo T_("Panel");                                                                 // Line 79
-	echo T_("Login");                                                                 // Line 83
-	echo T_("Services");                                                              // Line 201
-	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 130
-	echo T_("User Panel");                                                            // Line 134
-	echo T_("Signup in Khadije charity");                                             // Line 139
-	echo T_("Enamad");                                                                // Line 147
-	echo T_("Samandehi");                                                             // Line 159
-	echo T_("Mission");                                                               // Line 172
-	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 180
-	echo T_("Biography");                                                             // Line 183
-	echo T_("Bibliography");                                                          // Line 184
-	echo T_("Specialized sites");                                                     // Line 185
+	echo T_("News");                                                                  // Line 174
+	echo T_("Self expressions");                                                      // Line 108
+	echo T_("Admin panel");                                                           // Line 76
+	echo T_("Panel");                                                                 // Line 78
+	echo T_("Login");                                                                 // Line 82
+	echo T_("Services");                                                              // Line 200
+	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 129
+	echo T_("User Panel");                                                            // Line 133
+	echo T_("Signup in Khadije charity");                                             // Line 138
+	echo T_("Enamad");                                                                // Line 146
+	echo T_("Samandehi");                                                             // Line 158
+	echo T_("Mission");                                                               // Line 171
+	echo T_("Encyclopedia of Hazrat Khadijah");                                       // Line 179
+	echo T_("Biography");                                                             // Line 182
+	echo T_("Bibliography");                                                          // Line 183
+	echo T_("Specialized sites");                                                     // Line 184
 	echo T_("Requests");                                                              // Line 27
 	echo T_("Individual registration");                                               // Line 10
 	echo T_("Group registration");                                                    // Line 9
 	echo T_("Delneveshteha");                                                         // Line 5
-	echo T_("Help");                                                                  // Line 209
-	echo T_("Other Languages");                                                       // Line 216
-	echo T_("Software Solution Designer");                                            // Line 224
+	echo T_("Help");                                                                  // Line 208
+	echo T_("Other Languages");                                                       // Line 215
+	echo T_("Software Solution Designer");                                            // Line 223
 	echo T_("Twitter");                                                               // Line 152
 	echo T_("Facebook");                                                              // Line 143
 	echo T_("Telegram");                                                              // Line 134

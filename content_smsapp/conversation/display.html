@@ -7,11 +7,12 @@
 <div class="f">
   <div class="c3 s12">
     {%for key, value in myLinks%}
+    {%set isActive = false%}{% if requestGET.level == key %}{%set isActive = true%}{%elseif  value.default and not requestGET.level%}{%set isActive = true%}{%endif%}
       <a class="cbox mB5" href="{{url.that}}?level={{key}}">
         <div class="f">
-            <div class="cauto mRa5">{%if requestGET.level == key%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
-            <div class="c {%if requestGET.level == key%}txtB{%else%}fc-mute{%endif%}">{{value.title}}</div>
-            <div class="cauto"><span class="badge rounded {%if requestGET.level == key%}primary2{%else%}light{%endif%}">{{value.count | fitNumber}}</span></div>
+            <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
+            <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{{value.title}}</div>
+            <div class="cauto"><span class="badge rounded {%if isActive%}primary2{%else%}light{%endif%}">{{value.count | fitNumber}}</span></div>
         </div>
       </a>
     {%endfor%}
@@ -110,33 +111,26 @@
 
 
 {%block htmlTable%}
-
-      {%for key, value in dataTable%}
-      <div class="cbox mA5-f">
-        <a href="{{url.this}}/view?mobile={{value.fromnumber}}">
-          <div class="f">
-            <div class="cauto">
-              <img class="avatar" src="https://khadije.com/static/siftal/images/default/avatar.png">
-            </div>
-            <div class="cauto fc-black txtB"> {{value.displayname}}</div>
-            <div class="c fc-black txtB"> {{value.fromnumber | fitNumber('mobile')}}</div>
-            <div class="cauto fc-black"><span class="badge rounded primary">{{value.count | fitNumber}}</span></div>
-          </div>
-          <div class="f">
-            <div class="c fc-black fc-mute"> {{value.lastmessage}}</div>
-          </div>
-        </a>
+{%if dataTable%}
+  {%for key, value in dataTable%}
+  <div class="cbox mA5-f">
+    <a href="{{url.this}}/view?mobile={{value.fromnumber}}">
+      <div class="f">
+        <div class="cauto">
+          <img class="avatar" src="https://khadije.com/static/siftal/images/default/avatar.png">
+        </div>
+        <div class="cauto fc-black txtB"> {{value.displayname}}</div>
+        <div class="c fc-black txtB"> {{value.fromnumber | fitNumber('mobile')}}</div>
+        <div class="cauto fc-black"><span class="badge rounded primary">{{value.count | fitNumber}}</span></div>
       </div>
-      {%endfor%}
-
-
-
-
-
-
-
-  {%include display.pagination_np%}
-
+      <div class="f">
+        <div class="c fc-black fc-mute"> {{value.lastmessage}}</div>
+      </div>
+    </a>
+  </div>
+  {%endfor%}
+{%endif%}
+{%include display.pagination_np%}
 {%endblock%}
 
 
