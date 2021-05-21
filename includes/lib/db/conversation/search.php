@@ -21,19 +21,7 @@ class search
 		}
 		else
 		{
-			// $pagination_query = "SELECT  COUNT(DISTINCT s_sms.mobile_id) AS `count` FROM s_sms $q[join] $q[where]  ";
-			// $num_rows = \dash\db::query($pagination_query);
-			// if(isset($num_rows->num_rows))
-			// {
-			// 	$num_rows = $num_rows->num_rows;
-			// }
-			// else
-			// {
-			// 	$num_rows = 0;
-			// }
-
-
-			$limit = \dash\db\mysql\tools\pagination::pagination_int(10000, $q['limit']);
+			$limit = \dash\db\mysql\tools\pagination::pagination_np($q['limit']);
 		}
 
 
@@ -41,8 +29,8 @@ class search
 		"
 			SELECT
 				DISTINCT s_sms.mobile_id,
-				s_sms.id,
-				s_sms.user_id,
+				-- s_sms.id,
+				-- s_sms.user_id,
 				NULL AS `fromnumber`,
 				0 AS `count`,
 				NULL AS `displayname`,
@@ -53,7 +41,29 @@ class search
 				s_sms
 			$q[join]
 			$q[where]
-			ORDER BY s_sms.id DESC
+			-- ORDER BY s_sms.id DESC
+			$limit
+		";
+
+
+		$query2 =
+		"
+			SELECT
+				s_sms.mobile_id,
+				MAX(s_sms.id) AS `id`,
+				MAX(s_sms.user_id),
+				NULL AS `fromnumber`,
+				0 AS `count`,
+				NULL AS `displayname`,
+				NULL AS `avatar`,
+				NULL AS `lastdate`,
+				NULL AS `lastmessage`
+			FROM
+				s_sms
+			$q[join]
+			$q[where]
+			GROUP BY s_sms.mobile_id
+			ORDER BY `id` DESC
 			$limit
 		";
 

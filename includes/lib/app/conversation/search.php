@@ -6,6 +6,8 @@ namespace lib\app\conversation;
  */
 class search
 {
+	private static $is_filtered = false;
+
 	public static function list($_query_string, $_args)
 	{
 		$and          = [];
@@ -32,20 +34,22 @@ class search
 
 			case 'needlessanswer':
 				$and[] = " s_sms.receivestatus  = 'block' ";
+				self::$is_filtered = true;
 				break;
 
 			case 'archived':
 				$and[] = " s_sms.receivestatus  = 'skip' ";
-
+				self::$is_filtered = true;
 				break;
 
 			case 'sendtosmspanel':
 				$and[] = " s_sms.receivestatus  = 'sendtopanel' ";
+				self::$is_filtered = true;
 				break;
 
 			case 'sendbysmspanel':
 				$and[] = " s_sms.sendstatus  = 'sendbypanel' ";
-
+				self::$is_filtered = true;
 				break;
 
 			case 'unknown':
@@ -54,19 +58,22 @@ class search
 				$and[] = " s_sms.recommend_id IS NOT NULL ";
 				$and[] = " s_sms.answertext  IS NULL ";
 				$and[] = " s_group.analyze = 1 ";
-
+				self::$is_filtered = true;
 				break;
 
 			case 'waitingtosend':
 				$and[] = " s_sms.sendstatus  = 'sendbypanel' ";
+				self::$is_filtered = true;
 				break;
 
 			case 'inmobiledevice':
 				$and[] = " s_sms.sendstatus  = 'sendtodevice' ";
+				self::$is_filtered = true;
 				break;
 
 			case 'sendedbymobile':
 				$and[] = " s_sms.sendstatus  = 'send' ";
+				self::$is_filtered = true;
 				break;
 
 			case 'new':
@@ -75,11 +82,14 @@ class search
 				$and[] = " s_sms.recommend_id  IS NULL ";
 				$and[] = " s_sms.group_id  IS NULL ";
 				$and[] = " s_sms.answertext  IS NULL ";
+				self::$is_filtered = true;
 				break;
 		}
 
 
 		$list = \lib\db\conversation\search::list($and, $or, $order_sort, $meta);
+
+		\dash\utility\pagination::np(($list ? true : false), self::$is_filtered);
 
 		return $list;
 	}
