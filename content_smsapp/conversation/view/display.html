@@ -1,0 +1,60 @@
+{%extends 'content_smsapp/layout.html'%}
+
+
+{%block pageContent%}
+
+      {%for key, value in dataTable%}
+      <div class="cbox mA5-f">
+
+          <div class="f">
+            <div class="cauto">
+              <img class="avatar" src="https://khadije.com/static/siftal/images/default/avatar.png">
+            </div>
+            <div class="cauto fc-black txtB"> {{value.displayname}}</div>
+            <div class="c fc-black txtB"> {{value.fromnumber | fitNumber('mobile')}}</div>
+            <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
+          </div>
+          <div class="f">
+            <div class="c fc-black fc-mute"> {{value.text}}</div>
+            <div class="c fc-black fc-mute"> {{value.answertext}}</div>
+            <div class="cauto fc-black"><span class="badge rounded primary">{{value.count | fitNumber}}</span></div>
+          </div>
+
+      </div>
+      {%endfor%}
+
+
+
+
+{%endblock%}
+
+{%block sssssssssssssssss%}
+  'id' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'14198'</font> <i>(length=5)</i>
+  'fromnumber' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'+989914'</font> <i>(length=7)</i>
+  'togateway' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'989127522690'</font> <i>(length=12)</i>
+  'fromgateway' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'text' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'شما&#10;3 تماس بی پاسخ از 09122539712 در 16:01 01/04/1398 دارید&#10;خریدبسته های دیتا با #2100'</font> <i>(length=125)</i>
+  'smscount' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'125'</font> <i>(length=3)</i>
+  'tonumber' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'user_id' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'date' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'2019-06-22 16:33:21'</font> <i>(length=19)</i>
+  'datecreated' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'2019-06-22 16:33:23'</font> <i>(length=19)</i>
+  'datemodified' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'2019-07-23 11:32:18'</font> <i>(length=19)</i>
+  'uniquecode' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'receivestatus' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'block'</font> <i>(length=5)</i>
+  'sendstatus' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'amount' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'answertext' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'answertextcount' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'group_id' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'16'</font> <i>(length=2)</i>
+  'recommend_id' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'datereceive' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'2019-06-22 16:33:23'</font> <i>(length=19)</i>
+  'dateanswer' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'datesend' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  'brand' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'HUAWEI'</font> <i>(length=6)</i>
+  'model' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'INE-LX1r'</font> <i>(length=8)</i>
+  'simcartserial' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'89981139000039522114'</font> <i>(length=20)</i>
+  'smsmessageid' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'android.telephony.SmsMessage@ac3b398'</font> <i>(length=36)</i>
+  'userdata' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'[B@59bf7f1'</font> <i>(length=10)</i>
+  'md5'
+{%endblock%}
