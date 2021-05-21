@@ -7,7 +7,6 @@
   <div class="c8 m12 s12">
     <div class="cbox">
       <div class="f">
-        <div class="cauto"> <img src="https://khadije.com/static/siftal/images/default/avatar.png" class="w100"> </div>
         <div class="c"><div class="txtB mLa50 fc-black">{{dataTable[0]['fromnumber'] | fitNumber('mobile')}}</div></div>
         <div class="c"><div class="txtB">{{dataTable[0]['displayname']}}</div></div>
       </div>
@@ -18,17 +17,15 @@
     </div>
 {%for key, value in dataTable%}
   {%if value.answertext%}
-  <div class=" fc-black mB5-f">
-    <div class="f cbox mB5-f ">
-      <div class="cauto"> <img src="http://khadije.local/static/images/logo.png" class="avatar mRa10"> </div>
+  <div class="cbox mB5-f info2">
+    <div class="f ">
       <div class="c"> <p>{{value.answertext | raw | nl2br}}</p></div>
       <div class="cauto ltr txtL">{{value.dateanswer | dt}}</div>
     </div>
   </div>
   {%endif%}
-  <div class="mB5-f ">
-    <div class="f cbox mB5-f ">
-      <div class="cauto"> <img src="https://khadije.com/static/siftal/images/default/avatar.png" class="avatar mRa10"> </div>
+  <div class="cbox mB5-f">
+    <div class="f">
       <div class="c"> <p class="fc-black txtB">{{value.text | raw | nl2br}}</p></div>
       <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
     </div>
