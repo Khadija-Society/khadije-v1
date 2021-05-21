@@ -364,7 +364,7 @@ class search
 
 
 
-		public static function list_view($_and = [], $_or = [], $_order_sort = null, $_meta = [])
+	public static function list_view($_and = [], $_or = [], $_order_sort = null, $_meta = [])
 	{
 		$q = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
 
@@ -395,7 +395,6 @@ class search
 			$q[join]
 			$q[where]
 			$q[order]
-
 			$limit
 		";
 

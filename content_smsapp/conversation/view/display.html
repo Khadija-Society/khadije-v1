@@ -3,26 +3,38 @@
 
 {%block pageContent%}
 
-      {%for key, value in dataTable%}
-      <div class="cbox mA5-f">
+  <div class="cbox">
+    <div class="txtB">{{dataTable[0]['displayname']}}</div>
+    <div class="txtB">{{dataTable[0]['fromnumber'] | fitNumber('mobile')}}</div>
+  </div>
+<div class="f justify-center">
+  <div class="c8 m12 s12">
+    <div class="cbox">
 
-          <div class="f">
-            <div class="cauto">
-              <img class="avatar" src="https://khadije.com/static/siftal/images/default/avatar.png">
-            </div>
-            <div class="cauto fc-black txtB"> {{value.displayname}}</div>
-            <div class="c fc-black txtB"> {{value.fromnumber | fitNumber('mobile')}}</div>
-            <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
-          </div>
-          <div class="f">
-            <div class="c fc-black fc-mute"> {{value.text}}</div>
-            <div class="c fc-black fc-mute"> {{value.answertext}}</div>
-            <div class="cauto fc-black"><span class="badge rounded primary">{{value.count | fitNumber}}</span></div>
-          </div>
 
-      </div>
-      {%endfor%}
+{%for key, value in dataTable%}
+  <div class="mB5-f ">
+    <div class="f msg light">
+      <div class="c fc-black"> {{value.text | raw | nl2br}}</div>
+      <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
+    </div>
+  </div>
 
+  {%if value.answertext%}
+  <div class=" fc-black mB5-f">
+    <div class="f msg primary2">
+      <div class="c fc-black"> {{value.answertext | raw | nl2br}}</div>
+      <div class="cauto fc-black ltr txtL">{{value.dateanswer | dt}}</div>
+    </div>
+  </div>
+  {%endif%}
+{%endfor%}
+
+    </div>
+  {%include display.pagination%}
+
+  </div>
+</div>
 
 
 

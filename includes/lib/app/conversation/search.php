@@ -103,7 +103,7 @@ class search
 		$meta       = [];
 		$order_sort = null;
 
-		$meta['limit'] = 10;
+		$meta['limit'] = 100;
 
 		$order_sort = ' ORDER BY s_sms.id DESC';
 

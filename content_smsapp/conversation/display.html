@@ -120,11 +120,10 @@
             </div>
             <div class="cauto fc-black txtB"> {{value.displayname}}</div>
             <div class="c fc-black txtB"> {{value.fromnumber | fitNumber('mobile')}}</div>
-            <div class="cauto fc-black ltr txtL">{{value.lastdate | dt}}</div>
+            <div class="cauto fc-black"><span class="badge rounded primary">{{value.count | fitNumber}}</span></div>
           </div>
           <div class="f">
             <div class="c fc-black fc-mute"> {{value.lastmessage}}</div>
-            <div class="cauto fc-black"><span class="badge rounded primary">{{value.count | fitNumber}}</span></div>
           </div>
         </a>
       </div>
