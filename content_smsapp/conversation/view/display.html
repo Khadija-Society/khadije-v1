@@ -13,13 +13,6 @@
 
 
 {%for key, value in dataTable%}
-  <div class="mB5-f ">
-    <div class="f msg light">
-      <div class="c fc-black"> {{value.text | raw | nl2br}}</div>
-      <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
-    </div>
-  </div>
-
   {%if value.answertext%}
   <div class=" fc-black mB5-f">
     <div class="f msg primary2">
@@ -28,6 +21,13 @@
     </div>
   </div>
   {%endif%}
+  <div class="mB5-f ">
+    <div class="f msg light">
+      <div class="c fc-black"> {{value.text | raw | nl2br}}</div>
+      <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
+    </div>
+  </div>
+
 {%endfor%}
 
     </div>
