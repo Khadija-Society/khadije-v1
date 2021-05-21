@@ -15,7 +15,7 @@ class search
 
 		$meta['limit'] = 10;
 
-		$order_sort = ' ORDER BY s_sms.id DESC';
+		$order_sort = ' ORDER BY MAX(s_sms.id) DESC';
 
 		$list = \lib\db\conversation\search::list($and, $or, $order_sort, $meta);
 

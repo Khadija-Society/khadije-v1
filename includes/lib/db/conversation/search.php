@@ -42,6 +42,7 @@ class search
 			SELECT
 				s_sms.fromnumber,
 				COUNT(*) AS `count`,
+				MAX(s_sms.id) AS `xid`,
 				NULL AS `displayname`,
 				NULL AS `lastdate`,
 				NULL AS `lastmessage`
@@ -51,6 +52,7 @@ class search
 			$q[where]
 			GROUP BY
 				s_sms.fromnumber
+			ORDER BY `xid`
 			$limit
 		";
 
