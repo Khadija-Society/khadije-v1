@@ -6,34 +6,16 @@
 {%block pageContent%}
 <div class="f">
   <div class="c3 s12">
-    {%for key, value in myLinks%}
-    {%set isActive = false%}{% if requestGET.level == key %}{%set isActive = true%}{%elseif  value.default and not requestGET.level%}{%set isActive = true%}{%endif%}
-      <a class="cbox mB5" href="{{url.that}}?level={{key}}">
-        <div class="f">
-            <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
-            <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{{value.title}}</div>
-            <div class="cauto"><span class="badge rounded {%if isActive%}primary2{%else%}light{%endif%}">{{value.count | fitNumber}}</span></div>
-        </div>
-      </a>
-    {%endfor%}
 
-    <div class="cbox">
-      <div class="f" data-confirm data-data='{"status" : "change"}'>
-        <div class="mB10 c6">{%trans "System status"%}</div>
-        <div class="c"></div>
-        <div class="cauto">{% if sysStatus %} {%trans "On"%} {%else%} {%trans "Off"%} {%endif%}</div>
+    {{block('iPoof')}}
 
-        <div class="c6" title='{{statusCount.lastconnected | date | dt}}'> {%trans "Last connection"%} </div>
-        <div class="c"></div>
-        <div class="txtB cauto"> {{statusCount.lastconnected | date | dt('human', 'year')}}</div>
-      </div>
-    </div>
+
 
   </div>
   <div class="c9 s12">
     <div class="mLa5">
 
-    {{block('htmlSearchBox')}}
+
     {{block('htmlTable')}}
     </div>
   </div>
@@ -50,58 +32,67 @@
 
 
 
-{%block iKerkere%}
+{%block iPoof%}
 
-<div class="advanceSearch" {%if requestGET.place or requestGET.startdate or requestGET.enddate %} {%else%}data-kerkere-content='hide' {%endif%}>
-  <h6 class="mT10">{%trans "Filter by start date and end date of sms"%}</h6>
-  <div class="f">
 
-     <div class="cauto s12 mB5 pRa5">
-      <div class="input ltr">
-        <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="day">
-      </div>
+{%for key, value in myLinks%}
+{%set isActive = false%}{% if requestGET.level == key %}{%set isActive = true%}{%elseif  value.default and not requestGET.level%}{%set isActive = true%}{%endif%}
+  <a class="cbox mB5" href="{{url.that}}?level={{key}}">
+    <div class="f">
+        <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
+        <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{{value.title}}</div>
+        <div class="cauto"><span class="badge rounded {%if isActive%}primary2{%else%}light{%endif%}">{{value.count | fitNumber}}</span></div>
     </div>
+  </a>
+{%endfor%}
 
-    <div class="cauto s12 mB5 pRa5">
-      <div class="input ltr">
-        <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="day">
-      </div>
-    </div>
+<div class="cbox">
+  <div class="f" data-confirm data-data='{"status" : "change"}'>
+    <div class="mB10 c6">{%trans "System status"%}</div>
+    <div class="c"></div>
+    <div class="cauto">{% if sysStatus %} {%trans "On"%} {%else%} {%trans "Off"%} {%endif%}</div>
 
+    <div class="c6" title='{{statusCount.lastconnected | date | dt}}'> {%trans "Last connection"%} </div>
+    <div class="c"></div>
+    <div class="txtB cauto"> {{statusCount.lastconnected | date | dt('human', 'year')}}</div>
   </div>
-
-  <h6 class="mT10">{%trans "Filter by group"%}</h6>
-  <div class="f ">
-    {%for key, value in allGroupList%}
-    <div class="c3 s6">
-      <div class="radio3 mB5">
-        <input type="radio" name="group_id" value="{{value.id}}" id="group_id{{value.id}}" {%if requestGET.group_id == value.id %} checked {%endif%}>
-        <label for="group_id{{value.id}}">{{value.title}}</label>
-      </div>
-    </div>
-    {%endfor%}
-  </div>
-
-
-  <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
-  <button class="btn primary2">{%trans "Apply"%}</button>
-
 </div>
-{%endblock%}
 
-
-{%block htmlSearchBox%}
-    <div class="cbox fs12">
+   <div class="cbox fs12">
 <div class="f">
   <div class="c">
       <form method="get" action='{{url.that}}' autocomplete="off">
         <div class="input">
-          <label class="addon" data-kerkere='.advanceSearch' data-kerkere-icon>{%trans "Advance"%}</label>
           <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off'>
           <button class="addon btn "><i class="sf-search"></i></button>
 
         </div>
-        {{block('iKerkere')}}
+
+      <h6 class="mT10">{%trans "Filter by start date and end date of sms"%}</h6>
+      <div class="f mB10">
+
+         <div class="c6 s12 ">
+          <div class="input ltr pRa5">
+            <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="day">
+          </div>
+        </div>
+
+        <div class="c6 s12 ">
+          <div class="input ltr">
+            <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="day">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="txtRa">
+        {%if requestGET%}
+          <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
+        {%endif%}
+        <button class="btn primary2">{%trans "Apply"%}</button>
+      </div>
+
       </form>
     </div>
 
@@ -110,10 +101,11 @@
 {%endblock%}
 
 
+
 {%block htmlTable%}
 {%if dataTable%}
   {%for key, value in dataTable%}
-  <div class="cbox mA5-f">
+  <div class="cbox mB5-f">
     <a href="{{url.this}}/view?mobile={{value.fromnumber}}">
       <div class="f">
         <div class="cauto">
@@ -140,21 +132,3 @@
   <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
-
-
-{%block htmlFilterNoResult%}
-<p class="f fs14 msg warn2">
-  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
-</p>
-{%endblock%}
-
-
-{%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
-{%endblock%}
-
-
-
-
-

@@ -16,7 +16,7 @@ class search
 		$meta['join'] = [];
 		$order_sort   = null;
 
-		$meta['limit'] = 10;
+		$meta['limit'] = 100;
 
 		$level = 'new';
 

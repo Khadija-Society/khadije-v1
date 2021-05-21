@@ -22,7 +22,6 @@ class view
 			'order' => \dash\request::get('order'),
 			'sort'  => \dash\request::get('sort'),
 			'level'  => \dash\request::get('level'),
-			'limit' => 10,
 		];
 
 		$q = \dash\request::get('q');
@@ -33,19 +32,13 @@ class view
 
 		$myLinks =
 		[
-			'all'            => ['--count' => rand(1, 999999), 'title' => T_("All")],
-			'needlessanswer' => ['--count' => rand(1, 999999), 'title' => T_("Needless to answer")],
-			'archived'       => ['--count' => rand(1, 999999), 'title' => T_("Archived message")],
-			'sendtosmspanel' => ['--count' => rand(1, 999999), 'title' => T_("Send to panel")],
-			'sendbysmspanel' => ['--count' => rand(1, 999999), 'title' => T_("Send by panel")],
-			'new'            => ['--count' => rand(1, 999999), 'title' => T_("New"). ' '. T_("Undetected"), 'default' => true],
-			'unknown'        => ['--count' => rand(1, 999999), 'title' => T_("New"). ' '. T_("Doubt")],
-			'waitingtosend'  => ['--count' => rand(1, 999999), 'title' => T_("Awaiting to send")],
-			'inmobiledevice' => ['--count' => rand(1, 999999), 'title' => T_("Waiting for sending by device")],
-			'sendedbymobile' => ['--count' => rand(1, 999999), 'title' => T_("Sended by mobile")],
+			'all'      => ['count' => rand(1, 999999), 'title' => T_("All")],
+			'awaiting' => ['count' => rand(1, 999999), 'title' => T_("Awaiting to answer")],
+			'answered' => ['count' => rand(1, 999999), 'title' => T_("Answered")],
 		];
 
 		\dash\data::myLinks($myLinks);
+
 		return;
 
 
