@@ -21,7 +21,7 @@ class search
 		}
 		else
 		{
-			$pagination_query = "SELECT  COUNT(*) AS `count` FROM s_sms GROUP BY  s_sms.fromnumber ";
+			$pagination_query = "SELECT  COUNT(DISTINCT s_sms.fromnumber) AS `count` FROM s_sms $q[join] $q[where]  ";
 			$num_rows = \dash\db::query($pagination_query);
 			if(isset($num_rows->num_rows))
 			{

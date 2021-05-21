@@ -1,11 +1,62 @@
 <?php
-namespace content_smsapp\listsms;
+namespace content_smsapp\conversation;
 
 
 class model
 {
 	public static function post()
 	{
+		$status = \dash\request::post('status');
+
+		if($status === 'change')
+		{
+			$myStatus = \lib\app\sms::status();
+			if($myStatus)
+			{
+				$myStatus = \lib\app\sms::status(false);
+			}
+			else
+			{
+				$myStatus = \lib\app\sms::status(true);
+			}
+
+			\dash\redirect::pwd();
+		}
+
+
+
+		return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		$allGet = \dash\request::get();
 		unset($allGet['page']);
 		unset($allGet['recommend']);

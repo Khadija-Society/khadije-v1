@@ -21,6 +21,7 @@ class view
 		[
 			'order' => \dash\request::get('order'),
 			'sort'  => \dash\request::get('sort'),
+			'level'  => \dash\request::get('level'),
 			'limit' => 10,
 		];
 
@@ -30,6 +31,22 @@ class view
 
 		\dash\data::dataTable($list);
 
+
+		$myLinks =
+		[
+			'all'            => ['count' => rand(1, 999999), 'title' => T_("All")],
+			'needlessanswer' => ['count' => rand(1, 999999), 'title' => T_("Needless answer")],
+			'archived'       => ['count' => rand(1, 999999), 'title' => T_("Archived")],
+			'sendtosmspanel' => ['count' => rand(1, 999999), 'title' => T_("Sended to sms panel")],
+			'sendbysmspanel' => ['count' => rand(1, 999999), 'title' => T_("Sended by sms panel")],
+			'new'            => ['count' => rand(1, 999999), 'title' => T_("New SMS")],
+			'unknown'        => ['count' => rand(1, 999999), 'title' => T_("Unknown")],
+			'waitingtosend'  => ['count' => rand(1, 999999), 'title' => T_("Waiting to send")],
+			'inmobiledevice' => ['count' => rand(1, 999999), 'title' => T_("In mobile device")],
+			'sendedbymobile' => ['count' => rand(1, 999999), 'title' => T_("Sended by mobile")],
+		];
+
+		\dash\data::myLinks($myLinks);
 		return;
 
 
