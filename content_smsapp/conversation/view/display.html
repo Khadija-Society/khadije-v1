@@ -16,7 +16,9 @@
         <div class="c"></div>
         <div class="cauto"><a class="btn mLa10 outline" href="{{url.kingdom}}/crm/member/general?id={{dataTable[0]['user_id'] | coding('encode')}}">{%trans "Edit profile"%}</a></div>
         <div class="cauto"><div class="btn mLa10 danger2 outline" data-confirm data-data='{"block": "mobile"}'>{%trans "Block Number"%}</div></div>
-        <div class="cauto"><div class="btn mLa10 info2 outline" data-ajaxify data-data='{"archive": "conversation"}' data-method='post'>{%trans "Archive"%}</div></div>
+        {%if needArchive%}
+          <div class="cauto"><div class="btn mLa10 info2 outline" data-ajaxify data-data='{"archive": "conversation"}' data-method='post'>{%trans "Archive"%}</div></div>
+        {%endif%}
         <div class="cauto"><div class="btn mLa10 primary2 outline" data-kerkere='.showAnswer' >{%trans "Answer"%}</div></div>
       </div>
     </div>

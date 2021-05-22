@@ -31,6 +31,16 @@ class view
 
 		\dash\data::dataTable($list);
 
+		$need_archive = array_column($list, 'conversation_answered');
+		$need_archive = array_unique($need_archive);
+		// $need_archive = array_filter($need_archive);
+		$need_archive = array_values($need_archive);
+
+		if(in_array(null, $need_archive))
+		{
+			\dash\data::needArchive(true);
+		}
+
 	}
 }
 ?>

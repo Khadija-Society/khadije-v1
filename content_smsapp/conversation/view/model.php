@@ -6,11 +6,17 @@ class model
 {
 	public static function post()
 	{
+		if(\dash\request::post('archive') === 'conversation')
+		{
+			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
 
-		array (size=1)
-  'answer' => string 'DSFSDFSDF' (length=9)
-    'archive' => string 'conversation' (length=12)
-      'block' => string 'mobile' (length=6)
+			\dash\redirect::pwd();
+		}
+
+		// array (size=1)
+  // 'answer' => string 'DSFSDFSDF' (length=9)
+  //   'archive' => string 'conversation' (length=12)
+  //     'block' => string 'mobile' (length=6)
 
 		var_dump($_POST);
 		exit();
