@@ -16,7 +16,7 @@ class search
 		$meta['join'] = [];
 		$order_sort   = null;
 
-		$meta['limit'] = 100;
+		$meta['limit'] = 10;
 
 		$level = 'new';
 
@@ -90,6 +90,8 @@ class search
 		$list = \lib\db\conversation\search::list($and, $or, $order_sort, $meta);
 
 		\dash\utility\pagination::np(($list ? true : false), self::$is_filtered);
+
+		$list = array_map(['\\dash\\app', 'fix_avatar'], $list);
 
 		return $list;
 	}

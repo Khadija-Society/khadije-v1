@@ -1,40 +1,25 @@
 {%extends 'content_smsapp/layout.html'%}
 
-
-
-
 {%block pageContent%}
 <div class="f">
   <div class="c3 s12">
-
     {{block('iPoof')}}
-
-
-
   </div>
   <div class="c9 s12">
     <div class="mLa5">
-
-
-    {{block('htmlTable')}}
+      {{block('htmlTable')}}
     </div>
   </div>
 </div>
-
 {%if dataTable and dataFilter%}
   {{block('htmlFilter')}}
 {%endif%}
-
-
 {%endblock%}
 
 
 
 
-
 {%block iPoof%}
-
-
 {%for key, value in myLinks%}
 {%set isActive = false%}{% if requestGET.level == key %}{%set isActive = true%}{%elseif  value.default and not requestGET.level%}{%set isActive = true%}{%endif%}
   <a class="cbox mB5" href="{{url.that}}?level={{key}}">
@@ -45,57 +30,45 @@
     </div>
   </a>
 {%endfor%}
-
 <div class="cbox">
   <div class="f" data-confirm data-data='{"status" : "change"}'>
     <div class="mB10 c6">{%trans "System status"%}</div>
     <div class="c"></div>
     <div class="cauto">{% if sysStatus %} {%trans "On"%} {%else%} {%trans "Off"%} {%endif%}</div>
-
     <div class="c6" title='{{statusCount.lastconnected | date | dt}}'> {%trans "Last connection"%} </div>
     <div class="c"></div>
     <div class="txtB cauto"> {{statusCount.lastconnected | date | dt('human', 'year')}}</div>
   </div>
 </div>
-
-   <div class="cbox fs12">
+<div class="cbox fs12">
 <div class="f">
   <div class="c">
       <form method="get" action='{{url.that}}' autocomplete="off">
         <div class="input">
           <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off'>
           <button class="addon btn "><i class="sf-search"></i></button>
-
         </div>
-
       <h6 class="mT10">{%trans "Filter by start date and end date of sms"%}</h6>
       <div class="f mB10">
-
          <div class="c6 s12 ">
           <div class="input ltr pRa5">
             <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="day">
           </div>
         </div>
-
         <div class="c6 s12 ">
           <div class="input ltr">
             <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="day">
           </div>
         </div>
-
       </div>
-
-
       <div class="txtRa">
         {%if requestGET%}
           <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
         {%endif%}
         <button class="btn primary2">{%trans "Apply"%}</button>
       </div>
-
       </form>
     </div>
-
   </div>
 </div>
 {%endblock%}
@@ -109,7 +82,7 @@
     <a href="{{url.this}}/view?mobile={{value.fromnumber}}">
       <div class="f">
         <div class="cauto">
-          <img class="avatar" src="https://khadije.com/static/siftal/images/default/avatar.png">
+          <img class="avatar" src="{{value.avatar}}" alt="{{value.displayname}}">
         </div>
         <div class="cauto fc-black txtB"> {{value.displayname}}</div>
         <div class="c fc-black txtB"> {{value.fromnumber | fitNumber('mobile')}}</div>
