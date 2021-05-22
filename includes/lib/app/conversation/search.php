@@ -20,7 +20,9 @@ class search
 
 		$level = 'new';
 
-		if(isset($_args['level']) && is_string($_args['level']) && in_array($_args['level'], ['all','needlessanswer','archived','sendtosmspanel','sendbysmspanel','new','unknown','waitingtosend','inmobiledevice','sendedbymobile',]))
+
+
+		if(isset($_args['level']) && is_string($_args['level']) && in_array($_args['level'], ['answered', 'awaiting', 'all','needlessanswer','archived','sendtosmspanel','sendbysmspanel','new','unknown','waitingtosend','inmobiledevice','sendedbymobile',]))
 		{
 			$level = $_args['level'];
 		}
@@ -29,6 +31,21 @@ class search
 		{
 			case 'all':
 				// no limit. show all
+				break;
+
+			case 'answered':
+				$and[] = " s_sms.receivestatus  = 'block' ";
+				self::$is_filtered = true;
+				break;
+
+			case 'unknown':
+			case 'awaiting':
+				$meta['join'][] = " LEFT JOIN s_group ON s_sms.recommend_id = s_group.id ";
+				$and[] = " s_sms.receivestatus  = 'awaiting' ";
+				$and[] = " s_sms.recommend_id IS NOT NULL ";
+				$and[] = " s_sms.answertext  IS NULL ";
+				$and[] = " s_group.analyze = 1 ";
+				self::$is_filtered = true;
 				break;
 
 			// case 'needlessanswer':
@@ -51,14 +68,6 @@ class search
 			// 	self::$is_filtered = true;
 			// 	break;
 
-			// case 'unknown':
-			// 	$meta['join'][] = " LEFT JOIN s_group ON s_sms.recommend_id = s_group.id ";
-			// 	$and[] = " s_sms.receivestatus  = 'awaiting' ";
-			// 	$and[] = " s_sms.recommend_id IS NOT NULL ";
-			// 	$and[] = " s_sms.answertext  IS NULL ";
-			// 	$and[] = " s_group.analyze = 1 ";
-			// 	self::$is_filtered = true;
-			// 	break;
 
 			// case 'waitingtosend':
 			// 	$and[] = " s_sms.sendstatus  = 'sendbypanel' ";

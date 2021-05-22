@@ -32,11 +32,15 @@ class view
 
 		\dash\data::dataTable($list);
 
+
+		$conversationStat = \lib\app\conversation\get::stat();
+
+
 		$myLinks =
 		[
-			'all'      => ['count' => rand(1, 999999), 'title' => T_("All")],
-			'awaiting' => ['count' => rand(1, 999999), 'title' => T_("Awaiting to answer")],
-			'answered' => ['count' => rand(1, 999999), 'title' => T_("Answered")],
+			'all'      => ['count' => a($conversationStat, 'all'), 'title' => T_("All")],
+			'awaiting' => ['count' => a($conversationStat, 'awaiting'), 'title' => T_("Awaiting to answer")],
+			'answered' => ['count' => a($conversationStat, 'answered'), 'title' => T_("Answered")],
 		];
 
 		\dash\data::myLinks($myLinks);

@@ -27,5 +27,19 @@ class get
 
 		return null;
 	}
+
+
+
+	public static function stat()
+	{
+
+		$result = [];
+
+		return $result;
+		$result['all']      = floatval(\lib\db\conversation\get::count_all());
+		$result['awaiting'] = floatval(\lib\db\conversation\get::count_awaiting());
+		$result['answered'] = floatval(\lib\db\conversation\get::count_answered());
+
+	}
 }
 ?>
