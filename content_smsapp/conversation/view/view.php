@@ -29,6 +29,12 @@ class view
 
 		$list = \lib\app\conversation\search::view($q, $args);
 
+
+		if(a($list, 0, 'answertext'))
+		{
+			\dash\data::lockAnswer(true);
+		}
+
 		\dash\data::dataTable($list);
 
 		$need_archive = array_column($list, 'conversation_answered');
@@ -40,6 +46,31 @@ class view
 		{
 			\dash\data::needArchive(true);
 		}
+
+		$smsgroup = \lib\db\smsgroup::get_answering_group();
+
+		\dash\data::groupList($smsgroup);
+
+		$answers = \lib\db\smsgroupfilter::get(['type' => 'answer']);
+		$dataAnswer = [];
+		if(is_array($answers))
+		{
+			foreach ($answers as $key => $value)
+			{
+				if(!isset($dataAnswer[$value['group_id']]))
+				{
+					$dataAnswer[$value['group_id']] = [];
+				}
+
+				$dataAnswer[$value['group_id']][] = $value;
+			}
+		}
+
+		\dash\data::dataAnswer($dataAnswer);
+
+
+		$currentUser = \lib\app\conversation\search::load_current_user($list);
+		\dash\data::currentUser($currentUser);
 
 	}
 }

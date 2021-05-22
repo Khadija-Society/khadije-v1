@@ -11,12 +11,32 @@ class model
 			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
 
 			\dash\redirect::pwd();
+
+			return;
 		}
 
-		// array (size=1)
-  // 'answer' => string 'DSFSDFSDF' (length=9)
-  //   'archive' => string 'conversation' (length=12)
-  //     'block' => string 'mobile' (length=6)
+
+		if(\dash\request::post('answer'))
+		{
+			$post                = [];
+			$post['group_id']    = \dash\request::post('group_id');
+			$post['answer']      = \dash\request::post('answer');
+			$post['fromgateway'] = \dash\request::post('fromgateway');
+
+			\lib\app\conversation\answer::set_answer($post, \dash\data::myMobile());
+			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
+
+
+			\dash\redirect::pwd();
+
+			return;
+		}
+
+		if(\dash\request::post('block') === 'mobile')
+		{
+			\dash\notif::wanr('Not ready yet!');
+			return false;
+		}
 
 		var_dump($_POST);
 		exit();

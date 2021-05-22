@@ -11,6 +11,17 @@ class smsgroup
 		return $result;
 	}
 
+
+	public static function get_answering_group()
+	{
+		$query  = "SELECT DISTINCT s_group.* FROM s_group LEFT JOIN s_groupfilter ON s_groupfilter.group_id = s_group.id  WHERE s_group.status != 'deleted' AND s_groupfilter.type = 'answer'  ";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
+
+
 	public static function insert()
 	{
 		\dash\db\config::public_insert('s_group', ...func_get_args());

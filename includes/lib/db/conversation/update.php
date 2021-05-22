@@ -45,6 +45,10 @@ class update
 	}
 
 
+	public static function record()
+	{
+		return \dash\db\config::public_update('s_sms', ...func_get_args());
+	}
 
 	public static function stat()
 	{

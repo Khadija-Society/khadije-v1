@@ -3,6 +3,12 @@ namespace lib\db\conversation;
 
 class search
 {
+	public static function load_current_user($_list)
+	{
+		$_list = array_combine(array_column($_list, 'mobile_id'), $_list);
+		self::fill_displayname($_list);
+		return $_list;
+	}
 
 	public static function list($_and = [], $_or = [], $_order_sort = null, $_meta = [])
 	{

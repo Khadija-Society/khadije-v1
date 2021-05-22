@@ -8,6 +8,27 @@ class search
 {
 	private static $is_filtered = false;
 
+
+	public static function load_current_user($_list)
+	{
+		$result = \lib\db\conversation\search::load_current_user($_list);
+
+		$result = array_values($result);
+
+		$new_result                = [];
+		$new_result['user_id']     = a($result, 0, 'user_id');
+		$new_result['user_code']   = \dash\coding::encode($new_result['user_id']);
+		$new_result['displayname'] = a($result, 0, 'displayname');
+		$new_result['mobile']      = a($result, 0, 'fromnumber');
+		$new_result['avatar']      = a($result, 0, 'avatar');
+		$new_result['gender']      = a($result, 0, 'gender');
+
+		$new_result = \dash\app::fix_avatar($new_result);
+
+		return $new_result;
+	}
+
+
 	public static function list($_query_string, $_args)
 	{
 		$and          = [];

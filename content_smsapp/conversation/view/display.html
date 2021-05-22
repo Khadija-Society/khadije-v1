@@ -7,32 +7,65 @@
   <div class="c8 m12 s12">
     <div class="cbox">
       <div class="f">
-        <div class="cauto"> <img src="https://khadije.com/static/siftal/images/default/avatar.png" class="w100"> </div>
-        <div class="c"><div class="txtB mLa50 fc-black">{{dataTable[0]['fromnumber'] | fitNumber('mobile')}}</div></div>
-        <div class="c"><div class="txtB">{{dataTable[0]['displayname']}}</div></div>
+        <div class="c2">
+          <img src="{{currentUser.avatar}}" class="w100">
+        </div>
+        <div class="c10">
+
+          <div class="f">
+            <div class="c"><div class="txtB">{{currentUser.displayname}}</div></div>
+            <div class="cauto"><div class="txtB mLa5 fc-black">{{currentUser.mobile | fitNumber('mobile')}}</div></div>
+            <div class="c12 mB20"></div>
+
+            <div class="c">&nbsp;</div>
+            <div class="cauto"><a class="btn mLa10 outline" href="{{url.kingdom}}/crm/member/general?id={{currentUser.user_code}}">{%trans "Edit profile"%}</a></div>
+            {%if needArchive%}
+              <div class="cauto"><div class="btn mLa10 info2 outline" data-ajaxify data-data='{"archive": "conversation"}' data-method='post'>{%trans "Archive"%}</div></div>
+            {%endif%}
+          </div>
+        </div>
       </div>
 
-      <div class="f">
-        <div class="c"></div>
-        <div class="cauto"><a class="btn mLa10 outline" href="{{url.kingdom}}/crm/member/general?id={{dataTable[0]['user_id'] | coding('encode')}}">{%trans "Edit profile"%}</a></div>
-        <div class="cauto"><div class="btn mLa10 danger2 outline" data-confirm data-data='{"block": "mobile"}'>{%trans "Block Number"%}</div></div>
-        {%if needArchive%}
-          <div class="cauto"><div class="btn mLa10 info2 outline" data-ajaxify data-data='{"archive": "conversation"}' data-method='post'>{%trans "Archive"%}</div></div>
-        {%endif%}
-        <div class="cauto"><div class="btn mLa10 primary2 outline" data-kerkere='.showAnswer' >{%trans "Answer"%}</div></div>
-      </div>
     </div>
 
-    <form method="post" autocomplete="off" class="showAnswer" data-kerkere-content='hide'>
+    {%if not lockAnswer%}
+    <form method="post" autocomplete="off" class="showAnswer">
       <div class="cbox">
-        <div class="input mB10">
-          <textarea class="txt" name="answer" rows="5" placeholder='{%trans "Write text here ..."%}'></textarea>
+
+
+       <div class="f mB10">
+        {%for key,value in groupList%}
+          <div class="c">
+            <div class="radio3 mB5 mRa5" >
+              <input {%if dataRow.answertext %} disabled {%endif%} type="radio" name="group_id" value="{{value.id}}" id="group_{{value.id}}" {%if dataRow.group_id == value.id or (not dataRow.group_id and not value.id)  %} checked {%endif%} onclick="clearAnswerTxt(this);">
+              <label for="group_{{value.id}}">{{value.title}}</label>
+            </div>
+          </div>
+        {%endfor%}
         </div>
+
+          {%for group_id, answers in dataAnswer%}
+        <div data-response='group_id' data-response-effect='slide' data-response-where='{{group_id}}' data-response-hide>
+          {%for key, value in answers %}
+          <div class="btn outline primary mA5" onclick="setAnswerText('{{value.text  | url_encode}}');">{{value.text}}</div>
+          {%endfor%}
+        </div>
+        {%endfor%}
+
+
+
+        <div class="input mB10">
+          <textarea class="txt" name="answer" id="ianswertxt" rows="5" placeholder='{%trans "Write text here ..."%}'></textarea>
+        </div>
+
+        {{block('fromGatewayForm')}}
+
         <footer class="txtRa">
           <button class="btn primary">{%trans "Send"%}</button>
         </footer>
       </div>
     </form>
+    {%endif%}
 {%for key, value in dataTable%}
   {%if value.answertext%}
   <div class="cbox mB5-f info2">
@@ -58,7 +91,35 @@
 
 
 
+<script type="text/javascript">
+  function setAnswerText($_text)
+  {
+    $('#ianswertxt').val(decodeURIComponent($_text));
+  }
+  function clearAnswerTxt()
+  {
+    $('#ianswertxt').val('');
+  }
+</script>
+
+
 {%endblock%}
+
+
+
+{%block fromGatewayForm%}
+  <label for="fromgateway">{%trans "Send by gateway"%}</label>
+  <select name="fromgateway" class="select ui dropdown search mB10" id="fromgateway">
+  <option value="0" readonly>{%trans "Please select one item"%} *</option>
+    <option value="sender">{{dataRow.togateway | fitNumber('mobile')}} <small>{%trans "From the sender"%}</small></option>
+    <option value="panel" selected>{{10006660066600 | fitNumber(false)}} <small>{%trans "From the sms panel"%}</small></option>
+  </select>
+
+{%endblock%}
+
+
+
+
 
 {%block sssssssssssssssss%}
   'id' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'14198'</font> <i>(length=5)</i>
