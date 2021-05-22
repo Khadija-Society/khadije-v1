@@ -62,8 +62,13 @@ class controller
 				\dash\notif::error('apiSMSAPPISBusy');
 				return false;
 			}
+
+			register_shutdown_function(['\\content_api\\v6\\smsapp\\controller', 'isBusy'], false);
+
 			self::isBusy(true);
+
 			$detail = \content_api\v6\smsapp\sync::fire2();
+
 			self::isBusy(false);
 		}
 		else
@@ -77,7 +82,7 @@ class controller
 	}
 
 
-	private static function isBusy($_mode = null)
+	public static function isBusy($_mode = null)
 	{
 		$file = __DIR__ .'/isBusy.me.conf';
 

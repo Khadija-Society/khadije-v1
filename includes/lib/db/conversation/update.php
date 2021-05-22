@@ -7,6 +7,27 @@ namespace lib\db\conversation;
 class update
 {
 
+
+	public static function multi_archive_conversation($_mobiles)
+	{
+		$_mobiles = implode("','", $_mobiles);
+		$query =
+		"
+			UPDATE
+				s_sms
+			SET
+				s_sms.conversation_answered = 1
+			WHERE
+				s_sms.fromnumber IN ('$_mobiles') AND
+				s_sms.conversation_answered IS NULL
+
+		";
+		\dash\db::query($query);
+
+		return true;
+
+	}
+
 	public static function archive_conversation($_mobile)
 	{
 		$date = date("Y-m-d H:i:s");

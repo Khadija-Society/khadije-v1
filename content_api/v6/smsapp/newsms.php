@@ -4,9 +4,27 @@ namespace content_api\v6\smsapp;
 
 class newsms
 {
-	private static $update_insert = 'insert';
-	private static $sms_id        = null;
+	private static $update_insert             = 'insert';
+	private static $sms_id                    = null;
+	private static $need_archive_conversation = [];
 
+
+	public static function set_archive_conversation()
+	{
+		if(empty(self::$need_archive_conversation))
+		{
+			return;
+		}
+
+		self::$need_archive_conversation = array_filter(self::$need_archive_conversation);
+		self::$need_archive_conversation = array_unique(self::$need_archive_conversation);
+
+		if(self::$need_archive_conversation)
+		{
+			\lib\db\conversation\update::multi_archive_conversation(self::$need_archive_conversation);
+		}
+
+	}
 
 	public static function lost($_args)
 	{
@@ -44,6 +62,7 @@ class newsms
 
 	public static function multi_add_new_sms($_args)
 	{
+
 		self::$update_insert = 'insert';
 		self::$sms_id        = null;
 
@@ -135,11 +154,15 @@ class newsms
 
 		self::ready_to_update_or_insert($insert);
 
-		if(!self::ad_number($insert))
+		if(self::ad_number($insert))
 		{
-
+			self::$need_archive_conversation[] = $from;
+		}
+		else
+		{
 			self::check_need_analyze($insert);
 		}
+
 
 
 		$id = self::add_update($insert);
@@ -158,120 +181,6 @@ class newsms
 		return false;
 	}
 
-
-	public static function add_new_sms()
-	{
-
-		// check from is not block or family
-		$from        = \dash\request::post('from');
-		if($from && mb_strlen($from) > 90)
-		{
-			\dash\notif::error(T_("Invalid from"));
-			\dash\log::set('apiSmsAppInvalidFrom');
-			return false;
-		}
-
-		$text        = \dash\request::post('text');
-
-		$date        = \dash\request::post('date');
-
-		if($date && !strtotime($date))
-		{
-			\dash\notif::error(T_("Invalid date"));
-			\dash\log::set('apiSmsAppInvalidDate');
-			return false;
-		}
-
-
-		$from_mobile = \dash\utility\filter::mobile($from);
-		$user_id     = null;
-
-		// if from is mobile signup it
-		if($from_mobile)
-		{
-			$from        = $from_mobile;
-			$get_user_id = \dash\db\users::get_by_mobile($from_mobile);
-
-			if(isset($get_user_id['id']))
-			{
-				$user_id = $get_user_id['id'];
-			}
-			else
-			{
-				$user_id = \dash\db\users::signup(['mobile' => $from_mobile]);
-			}
-		}
-
-		if(!$from)
-		{
-			\dash\notif::error(T_("From number is required"));
-			\dash\log::set('apiSmsAppFromIsNull');
-			return false;
-		}
-
-		$brand         = \dash\request::post('brand');
-		$model         = \dash\request::post('model');
-		$simcartserial = \dash\request::post('simcart-serial');
-		$smsmessageid  = \dash\request::post('smsMessage-id');
-		$userdata      = \dash\request::post('userdata');
-
-
-		$insert                  = [];
-		$insert['brand']         = substr($brand, 0, 99);
-		$insert['model']         = substr($model, 0, 99);
-		$insert['simcartserial'] = substr($simcartserial, 0, 99);
-		$insert['smsmessageid']  = substr($smsmessageid, 0, 99);
-		$insert['userdata']      = substr($userdata, 0, 99);
-		$insert['fromnumber']    = $from;
-		$insert['togateway']     = \dash\utility\filter::mobile(\dash\header::get('gateway'));
-		$insert['fromgateway']   = null;
-		$insert['tonumber']      = null;
-		$insert['user_id']       = $user_id;
-		$insert['datereceive']   = date("Y-m-d H:i:s");
-		$insert['date']          = date("Y-m-d H:i:s", strtotime($date));
-		$insert['text']          = $text;
-		$insert['smscount']      = mb_strlen($text);
-		$insert['uniquecode']    = null;
-		$insert['receivestatus'] = 'awaiting';
-		$insert['sendstatus']    = null;
-		$insert['amount']        = null;
-		$insert['answertext']    = null;
-		$insert['group_id']      = null;
-		$insert['recommend_id']  = null;
-
-		self::ready_to_update_or_insert($insert);
-
-		if(!self::ad_number($insert))
-		{
-
-			self::check_need_analyze($insert);
-		}
-
-
-		$id = self::add_update($insert);
-
-
-		if($insert['group_id'])
-		{
-			\lib\db\smsgroup::update_group_count($insert['group_id']);
-		}
-
-		if($id)
-		{
-			\dash\log::set('apiSmsAppNewSaved', ['code' => $id]);
-			\dash\notif::ok(T_("Message saved"));
-			return
-			[
-				'smsid'     => \dash\coding::encode($id),
-				'date'      => date("Y-m-d H:i:s"),
-				'jdate'     => \dash\datetime::fit(date("Y-m-d H:i:s")),
-				'dashboard' => \lib\app\sms::dashboard_quick(\dash\utility\filter::mobile(\dash\header::get('gateway')))
-			];
-		}
-
-		\dash\log::set('apiSmsAppCanNotSave');
-		return false;
-	}
 
 
 	private static function ad_number(&$insert)
@@ -410,78 +319,6 @@ class newsms
 	}
 
 
-	// private static function check_add_update($_insert)
-	// {
-	// 	$fromnumber   = $_insert['fromnumber'];
-	// 	$get_last_sms = \lib\db\sms::get_last_sms($fromnumber);
-
-	// 	if(isset($get_last_sms['date']))
-	// 	{
-	// 		$date = $get_last_sms['date'];
-	// 		if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
-	// 		{
-	// 			$id             = $get_last_sms['id'];
-	// 			$text           = $get_last_sms['text'];
-
-	// 			if($_insert['text'] === $text)
-	// 			{
-	// 				// duplicate message
-	// 				// my son is send some request in one time
-	// 				// we check it to not save duplicate message :|
-	// 				\dash\log::set('apiSmsAppDuplicateNewMessage');
-	// 				return intval($get_last_sms['id']);
-	// 			}
-
-	// 			$new_text           = $text. $_insert['text'];
-
-	// 			$update             = [];
-	// 			$update['text']     = $new_text;
-	// 			$update['smscount'] = mb_strlen($new_text);
-
-	// 			if(!$get_last_sms['group_id'] && $_insert['group_id'])
-	// 			{
-	// 				$update['group_id'] = $_insert['group_id'];
-	// 			}
-
-	// 			if($get_last_sms['receivestatus'] === 'block')
-	// 			{
-	// 				// nothing
-	// 			}
-	// 			else
-	// 			{
-	// 				$get_recommend = \lib\app\sms::analyze_text($new_text);
-
-	// 				if(!$get_recommend)
-	// 				{
-	// 					// reset
-	// 					$update['recommend_id']    = null;
-	// 					$update['group_id']        = null;
-	// 					$update['sendstatus']      = null;
-	// 					$update['answertext']      = null;
-	// 					$update['answertextcount'] = null;
-	// 					$update['receivestatus']   = 'awaiting';
-	// 					$update['fromgateway']     = null;
-	// 					$update['tonumber']        = null;
-	// 					$update['dateanswer']      = null;
-	// 				}
-	// 				else
-	// 				{
-	// 					if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
-	// 					{
-	// 						$update['recommend_id'] = $_insert['recommend_id'];
-	// 					}
-	// 				}
-	// 			}
-
-
-	// 			\lib\db\sms::update($update, $get_last_sms['id']);
-	// 			return intval($get_last_sms['id']);
-	// 		}
-	// 	}
-
-	// 	$id = \lib\db\sms::insert($_insert);
-	// 	return $id;
-	// }
 
 
 	private static function check_need_analyze(&$insert)
@@ -540,6 +377,8 @@ class newsms
 					$insert['tonumber']        = $insert['fromnumber'];
 					$insert['group_id']        = $insert['recommend_id'];
 					$insert['dateanswer']      = date("Y-m-d H:i:s");
+
+					self::$need_archive_conversation[] = $insert['fromnumber'];
 				}
 			}
 			else
@@ -556,6 +395,8 @@ class newsms
 					$insert['tonumber']        = $insert['fromnumber'];
 					$insert['group_id']        = $insert['recommend_id'];
 					$insert['dateanswer']      = date("Y-m-d H:i:s");
+
+					self::$need_archive_conversation[] = $insert['fromnumber'];
 				}
 			}
 		}

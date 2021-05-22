@@ -37,6 +37,8 @@ class sync
 			}
 		}
 
+		\content_api\v6\smsapp\newsms::set_archive_conversation();
+
 		if(isset($input['sentsms']) && is_array($input['sentsms']))
 		{
 			foreach ($input['sentsms'] as $key => $value)
@@ -105,6 +107,8 @@ class sync
 				$result['smsnewsaved'][] = $temp;
 			}
 		}
+
+		\content_api\v6\smsapp\newsms::set_archive_conversation();
 
 		if(isset($input['sentsms']) && is_array($input['sentsms']))
 		{
