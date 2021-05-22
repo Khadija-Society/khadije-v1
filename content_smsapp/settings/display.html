@@ -1,125 +1,28 @@
 {%extends 'content_smsapp/layout.html'%}
 
-
-
-
 {%block pageContent%}
-
-{%if dataTable%}
- {%if dataFilter%}
-
-  {{block('htmlSearchBox')}}
-  {{block('htmlTable')}}
-  {{block('htmlFilter')}}
-
- {%else%}
-
-  {{block('htmlSearchBox')}}
-  {{block('htmlTable')}}
-
- {%endif%}
-{%else%}
- {%if dataFilter%}
-
-  {{block('htmlSearchBox')}}
-  {{block('htmlFilterNoResult')}}
-
- {%else%}
-  {{block('htmlStartAddNew')}}
-
- {%endif%}
-{%endif%}
-
-{%endblock%}
-
-
-
-
-{%block htmlSearchBox%}
-<div class="cbox fs12">
-  <form method="get" action='{{url.this}}' autocomplete="off">
-    <div class="input">
-      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
-      <button class="addon btn ">{%trans "Search" %}</button>
-    </div>
-  </form>
+<div class="f justify-center">
+  <div class="c6 s12">
+    <table class="tbl1 v9">
+      <thead>
+        <tr>
+          <th>{%trans "Title"%}</th>
+          <th class="collapsing">{%trans "Sort"%}</th>
+          <th class="collapsing">{%trans "Edit"%}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for key, value in dataTable%}
+        <tr>
+          <td class=""><b class="fs12">{{value.title}}</b></td>
+          <td class="collapsing">{{value.sort | fitNumber}}</td>
+          <td class="collapsing">
+            <a class="txtB" href="{{url.here}}/editgroup?id={{value.id}}">{%trans "Edit"%}</a>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
 </div>
 {%endblock%}
-
-
-{%block htmlTable%}
-
-  <table class="tbl1 v9">
-    <thead>
-      <tr>
-        <th data-sort="{{sortLink.title.order}}"><a href="{{sortLink.title.link}}">{%trans "Title"%}</a></th>
-        <th class="collapsing" data-sort="{{sortLink.type.order}}"><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
-        <th class="collapsing" data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
-        <th class="collapsing s0" data-sort="{{sortLink.analyze.order}}"><a href="{{sortLink.analyze.link}}">{%trans "Analyze"%}</a></th>
-        <th class="collapsing s0" data-sort="{{sortLink.ismoney.order}}"><a href="{{sortLink.ismoney.link}}">{%trans "Is Money"%}</a></th>
-        <th class="collapsing">{%trans "View"%}</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {%for key, value in dataTable%}
-      <tr class="{%if value.status == 'deleted' or value.status == 'disabled'%} danger2 {%endif%}">
-        <td class=""><a href="{{url.here}}/editgroup?id={{value.id}}"><i class="sf-edit"></i> <b class="fs12">{{value.title}}</b></a></td>
-        <td class=""><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type | capitalize %}{%trans mytype%}</a></td>
-        <td class=""><a href="{{url.this}}?status={{value.status}}">{%set mystatus = value.status | capitalize %}{%trans mystatus%}</a></td>
-        <td class="s0">{%if value.analyze%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
-        <td class="s0">{%if value.ismoney%}<i class="sf-check fc-green"></i> {%else%}<i class="sf-times fc-red"></i> {%endif%}</td>
-        <td class="collapsing">
-          <a href="{{url.here}}/listsms?grouprecommend={{value.id | coding('decode')}}" class="badge info">{%trans "View"%} {%trans "Sms"%}</a>
-        </td>
-
-      </tr>
-      <tr>
-
-        <td colspan="6">
-
-            <a href="{{url.here}}/filtergroup?id={{value.id}}">{%trans "Numbers"%}</a>
-            {%for k,v in value.array_number%}
-            <span class="badge light">{{v | fitNumber(false)}}</span>
-            {%endfor%}
-            <br>
-            <a href="{{url.here}}/recommendgroup?id={{value.id}}">{%trans "Analyze"%}</a>
-            {%for k,v in value.array_analyze%}
-            <span class="badge light">{{v}}</span>
-            {%endfor%}
-            <br>
-            <a href="{{url.here}}/answergroup?id={{value.id}}">{%trans "Answer"%}</a>
-            {%for k,v in value.array_answer%}
-            <span class="badge light">{{v}}</span>
-            {%endfor%}
-
-        </td>
-      </tr>
-      {%endfor%}
-    </tbody>
-  </table>
-  {%include display.pagination%}
-
-{%endblock%}
-
-
-{%block htmlFilter%}
-<p class="f fs14 msg warn2">
-  <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
-</p>
-{%endblock%}
-
-
-{%block htmlFilterNoResult%}
-<p class="f fs14 msg warn2">
-  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
-</p>
-{%endblock%}
-
-
-{%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
-{%endblock%}
-

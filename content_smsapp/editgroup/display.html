@@ -1,65 +1,89 @@
 {%extends 'content_smsapp/addgroup/display.html'%}
 
 
+
 {%block pageContent%}
 
-{{block('pageSteps')}}
-{{parent()}}
+<div class="f justify-center">
 
-{%endblock%}
-
-
-
-
-
-
-{%block pageSteps%}
-
-  <div class="f">
-
-
-   <div class="c s6">
-    <a class="dcard {%if url.module == 'editgroup'%}active{%endif%}" href='{{url.here}}/editgroup?id={{requestGET.id}}' data-shortkey="49ctrlshift" >
-     <div class="statistic sm">
-      <div class="value"><i class="sf-edit"></i></div>
-      <div class="label">{%trans "Edit"%}</div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s6">
-    <a class="dcard {%if url.module == 'filtergroup'%}active{%endif%}" href='{{url.here}}/filtergroup?id={{requestGET.id}}' data-shortkey="50ctrlshift" >
-     <div class="statistic sm">
-      <div class="value"><i class="sf-list"></i></div>
-      <div class="label">{%trans "Numbers"%}</div>
-     </div>
-    </a>
-   </div>
-
-
-   <div class="c s6">
-    <a class="dcard {%if url.module == 'answergroup'%}active{%endif%}" href='{{url.here}}/answergroup?id={{requestGET.id}}' data-shortkey="51ctrlshift" >
-     <div class="statistic sm">
-      <div class="value"><i class="sf-quote-left"></i></div>
-      <div class="label">{%trans "Answers"%}</div>
-     </div>
-    </a>
-   </div>
-
-
-{%if not doNotTuch%}
-   <div class="c s6">
-    <a class="dcard {%if url.module == 'recommendgroup'%}active{%endif%}" href='{{url.here}}/recommendgroup?id={{requestGET.id}}' data-shortkey="52ctrlshift" >
-     <div class="statistic sm">
-      <div class="value"><i class="sf-radar-2"></i></div>
-      <div class="label">{%trans "Keywords"%}</div>
-     </div>
-    </a>
-   </div>
-{%endif%}
-
-
+  <div class="c6 s12">
+    <div class="cbox">
+      <form method="post" autocomplete="off">
+        {{block('ititle')}}
+          {{block('isort')}}
+          {{block('itag')}}
+          {{block('istatus')}}
+           <div class="txtL">
+             <button class="btn primary">{%trans "Update"%}</button>
+           </div>
+      </form>
+    </div>
 
   </div>
+</div>
 {%endblock%}
+
+
+
+
+{%block isort %}
+<label for="sort">{%trans "Sort"%} </label>
+<div class="input">
+  <input type="tel" name="sort" id="sort" value="{{dataRow.sort}}"  maxlength="10">
+</div>
+{% endblock %}
+
+
+
+{%block istatus%}
+
+<div class="mT3">
+ <label >{%trans "Status"%}</label>
+
+<div class="f">
+  <div class="c2 m2 s4">
+     <div class="radio1 green">
+      <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
+      <label for="r-enable">{%trans "Enable"%}</label>
+     </div>
+
+  </div>
+  <div class="c2 m2 s4">
+     <div class="radio1 yellow ">
+      <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'  %} checked{%endif%}>
+      <label for="r-disable">{%trans "Disable"%}</label>
+     </div>
+  </div>
+  <div class="c2 m2 s4">
+     <div class="radio1 red">
+      <input type="radio" id="r-deleted" name="status" value="deleted" {%if dataRow.status == 'deleted'  %} checked{%endif%}>
+      <label for="r-deleted">{%trans "Deleted"%}</label>
+     </div>
+  </div>
+</div>
+
+
+
+</div>
+{%endblock%}
+
+
+
+
+{%block itag %}
+<label for="sort">{%trans "Tags"%} </label>
+
+  <div class="tagDetector">
+   <div class="input mB10 hide">
+      <input type="text" class="input tagVals" name="tag" value="{{stringTagList}}" id="tagValues" placeholder='{%trans "Tag"%}'>
+    </div>
+
+    <div class="input" title='{%trans "Add tag manually to link tickets togethers"%}'>
+      <input type="text"  class="tagInput" placeholder='{%trans "Tag keywords..."%}'>
+      <button class="addon tagAdd">+</button>
+    </div>
+    <div class="tagBox"></div>
+  </div>
+
+
+{% endblock %}

@@ -20,6 +20,14 @@ class smsgroup
 	}
 
 
+	public static function show_list()
+	{
+		$query  = "SELECT s_group.* FROM s_group  WHERE s_group.status != 'deleted' AND s_group.type = 'other' ORDER BY s_group.sort ASC  ";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 
 
 	public static function insert()

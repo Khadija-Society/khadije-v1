@@ -47,6 +47,25 @@ class smsgroup
 	}
 
 
+	public static function show_list()
+	{
+		$result = \lib\db\smsgroup::show_list();
+
+		$temp              = [];
+
+		foreach ($result as $key => $value)
+		{
+			$check = self::ready($value);
+			if($check)
+			{
+				$temp[] = $check;
+			}
+		}
+
+		return $temp;
+	}
+
+
 	/**
 	 * add new smsgroup
 	 *
@@ -186,6 +205,7 @@ class smsgroup
 		if(!\dash\app::isset_request('analyze')) unset($args['analyze']);
 		if(!\dash\app::isset_request('ismoney')) unset($args['ismoney']);
 		if(!\dash\app::isset_request('answer')) unset($args['answer']);
+		if(!\dash\app::isset_request('sort')) unset($args['sort']);
 
 		if(!empty($args))
 		{
@@ -272,6 +292,14 @@ class smsgroup
 			return false;
 		}
 
+
+		$sort = \dash\app::request('sort');
+		if($sort && !is_numeric($sort))
+		{
+			\dash\notif::error(T_("Invalid sort data"), 'sort');
+			return false;
+		}
+
 		$analyze = \dash\app::request('analyze') ? 1 : null;
 		$ismoney = \dash\app::request('ismoney') ? 1 : null;
 		$answer  = \dash\app::request('answer');
@@ -283,6 +311,7 @@ class smsgroup
 		$args['analyze'] = $analyze;
 		$args['ismoney'] = $ismoney;
 		$args['answer']  = $answer;
+		$args['sort']    = $sort;
 
 		return $args;
 	}

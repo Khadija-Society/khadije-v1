@@ -5,26 +5,13 @@
 
 
 <div class="f justify-center">
-	<div class="c8 s12">
+
+	<div class="c4 s12">
 		<div class="cbox">
 			<form method="post" autocomplete="off">
 				{{block('ititle')}}
-				{{block('itype')}}
-				{{block('iAnalyze')}}
-				{{block('iismoney')}}
-				{{block('istatus')}}
-				{%if url.module == 'addgroup'%}
-					{{block('iadd')}}
-				{%else%}
-					{%if perm_su() and dataRow.status == 'deleted'%}
-						<div class="f">
-							<div class="c">{{block('isave')}}</div>
-							<div class="cauto"><div class="btn mT20 danger mLa5" data-confirm data-data='{"delete": "delete"}'>{%trans "Remove"%}</div></div>
-						</div>
-					{%else%}
-						{{block('isave')}}
-					{%endif%}
-				{%endif%}
+				{{block('iadd')}}
+
 			</form>
 		</div>
 	</div>
@@ -78,29 +65,6 @@
 
 
 
-
-{%block istatus%}
-
-<div class="mT3">
- <label >{%trans "Status"%}</label>
-
- <div class="radio1 green">
-  <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
-  <label for="r-enable">{%trans "Enable"%}</label>
- </div>
-
- <div class="radio1 yellow ">
-  <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'  %} checked{%endif%}>
-  <label for="r-disable">{%trans "Disable"%}</label>
- </div>
-
- <div class="radio1 red mB25">
-  <input type="radio" id="r-deleted" name="status" value="deleted" {%if dataRow.status == 'deleted'  %} checked{%endif%}>
-  <label for="r-deleted">{%trans "Deleted"%}</label>
- </div>
-
-</div>
-{%endblock%}
 
 
 {%block idesc%}

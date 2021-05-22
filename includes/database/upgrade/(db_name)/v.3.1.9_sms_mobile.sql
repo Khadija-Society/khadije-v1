@@ -26,3 +26,12 @@ ALTER TABLE s_sms ADD INDEX `s_sms_index_search_conversation_answered` (`convers
 
 UPDATE s_sms SET s_sms.conversation_answered = 1 WHERE  s_sms.answertext IS NOT NULL OR s_sms.receivestatus NOT IN ('awaiting', 'analyze');
 UPDATE s_sms SET s_sms.conversation_answered = 1 WHERE  s_sms.answertext IS NOT NULL OR s_sms.receivestatus NOT IN ('awaiting', 'analyze');
+
+
+ALTER TABLE s_group ADD `sort` int(10)  NULL DEFAULT NULL;
+ALTER TABLE s_group ADD INDEX `s_group_index_search_sort` (`sort`);
+
+
+
+ALTER TABLE s_groupfilter ADD `sort` int(10)  NULL DEFAULT NULL;
+ALTER TABLE s_groupfilter ADD INDEX `s_groupfilter_index_search_sort` (`sort`);

@@ -8,10 +8,10 @@ class model
 	{
 		$post            = [];
 		$post['title']   = \dash\request::post('title');
-		$post['type']    = \dash\request::post('type');
-		$post['analyze'] = \dash\request::post('analyze');
-		$post['ismoney'] = \dash\request::post('ismoney');
-		$post['status']  = \dash\request::post('status');
+		$post['type']    = 'other';
+		$post['analyze'] = null;
+		$post['ismoney'] = null;
+		$post['status']  = 'enable';
 
 		$result = \lib\app\smsgroup::add($post);
 
