@@ -19,3 +19,10 @@ ALTER TABLE s_sms ADD INDEX `s_sms_index_search_mobile_id` (`mobile_id`);
 
 UPDATE s_sms SET s_sms.mobile_id = (SELECT s_mobiles.id FROM s_mobiles WHERE s_mobiles.mobile = s_sms.fromnumber LIMIT 1);
 
+
+ALTER TABLE s_sms ADD `conversation_answered` BIT(1)  NULL DEFAULT NULL;
+ALTER TABLE s_sms ADD INDEX `s_sms_index_search_conversation_answered` (`conversation_answered`);
+
+
+UPDATE s_sms SET s_sms.conversation_answered = 1 WHERE  s_sms.answertext IS NOT NULL OR s_sms.receivestatus NOT IN ('awaiting', 'analyze');
+UPDATE s_sms SET s_sms.conversation_answered = 1 WHERE  s_sms.answertext IS NOT NULL OR s_sms.receivestatus NOT IN ('awaiting', 'analyze');

@@ -15,12 +15,12 @@ class get
 
 		$mobile = $_GET['mobile'];
 
-		if(strpos($mobile, ' ') !== false)
+		if(strpos($mobile, ' ') === 0)
 		{
 			$mobile = str_replace(' ', '+', $mobile);
 		}
 
-		if(preg_match("/^[\d\w\.\#\*\+]+$/", $mobile))
+		if(preg_match("/^[\d\w\.\#\*\+\s]+$/", $mobile))
 		{
 			return $mobile;
 		}

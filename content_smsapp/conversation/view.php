@@ -39,8 +39,7 @@ class view
 		$myLinks =
 		[
 			'all'      => ['count' => a($conversationStat, 'all'), 'title' => T_("All")],
-			'awaiting' => ['count' => a($conversationStat, 'awaiting'), 'title' => T_("Awaiting to answer")],
-			'answered' => ['count' => a($conversationStat, 'answered'), 'title' => T_("Answered")],
+			'awaiting' => ['count' => a($conversationStat, 'awaiting'), 'title' => T_("Awaiting to answer"), 'default' => true],
 		];
 
 		\dash\data::myLinks($myLinks);

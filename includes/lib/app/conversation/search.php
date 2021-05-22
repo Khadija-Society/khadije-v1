@@ -34,19 +34,24 @@ class search
 				break;
 
 			case 'answered':
-				$and[] = " s_sms.receivestatus  = 'block' ";
+				$and[] = " s_sms.conversation_answered  = 1 ";
 				self::$is_filtered = true;
 				break;
 
-			case 'unknown':
 			case 'awaiting':
-				$meta['join'][] = " LEFT JOIN s_group ON s_sms.recommend_id = s_group.id ";
-				$and[] = " s_sms.receivestatus  = 'awaiting' ";
-				$and[] = " s_sms.recommend_id IS NOT NULL ";
-				$and[] = " s_sms.answertext  IS NULL ";
-				$and[] = " s_group.analyze = 1 ";
+				$and[] = " s_sms.conversation_answered  IS NULL ";
 				self::$is_filtered = true;
 				break;
+
+
+			// case 'unknown':
+			// 	$meta['join'][] = " LEFT JOIN s_group ON s_sms.recommend_id = s_group.id ";
+			// 	$and[] = " s_sms.receivestatus  = 'awaiting' ";
+			// 	$and[] = " s_sms.recommend_id IS NOT NULL ";
+			// 	$and[] = " s_sms.answertext  IS NULL ";
+			// 	$and[] = " s_group.analyze = 1 ";
+			// 	self::$is_filtered = true;
+			// 	break;
 
 			// case 'needlessanswer':
 			// 	$and[] = " s_sms.receivestatus  = 'block' ";

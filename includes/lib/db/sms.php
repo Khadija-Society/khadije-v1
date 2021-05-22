@@ -481,9 +481,47 @@ class sms
 		return $result;
 	}
 
-	public static function insert()
+	public static function insert($_args)
 	{
-		\dash\db\config::public_insert('s_sms', ...func_get_args());
+		if(isset($_args['fromnumber']) && $_args['fromnumber'])
+		{
+			$check_query = "SELECT * FROM s_mobiles WHERE s_mobiles.mobile = '$_args[fromnumber]' LIMIT 1";
+			$check_mobile = \dash\db::get($check_query, null, true);
+
+			if(isset($check_mobile['id']))
+			{
+				$_args['mobile_id'] = $check_mobile['id'];
+			}
+			else
+			{
+				$date = date("Y-m-d H:i:s");
+
+				$add_new_mobile = "INSERT IGNORE INTO s_mobiles SET s_mobiles.mobile = '$_args[fromnumber]', s_mobiles.datecreated = '$date' ";
+
+				\dash\db::query($add_new_mobile);
+				$insert_id = \dash\db::insert_id();
+
+				if(!$insert_id)
+				{
+					$check_query = "SELECT * FROM s_mobiles WHERE s_mobiles.mobile = '$_args[fromnumber]' LIMIT 1";
+					$check_mobile = \dash\db::get($check_query, null, true);
+
+					if(isset($check_mobile['id']))
+					{
+						$_args['mobile_id'] = $check_mobile['id'];
+					}
+					else
+					{
+						\dash\log::set('canNotAddMobileINPayamres');
+					}
+				}
+				else
+				{
+					$_args['mobile_id'] = $insert_id;
+				}
+			}
+		}
+		\dash\db\config::public_insert('s_sms', $_args);
 		return \dash\db::insert_id();
 	}
 

@@ -1,11 +1,19 @@
 <?php
-namespace content_smsapp\listsms;
+namespace content_smsapp\conversation\view;
 
 
 class model
 {
 	public static function post()
 	{
+
+		array (size=1)
+  'answer' => string 'DSFSDFSDF' (length=9)
+    'archive' => string 'conversation' (length=12)
+      'block' => string 'mobile' (length=6)
+
+		var_dump($_POST);
+		exit();
 		$allGet = \dash\request::get();
 		unset($allGet['page']);
 		unset($allGet['recommend']);
