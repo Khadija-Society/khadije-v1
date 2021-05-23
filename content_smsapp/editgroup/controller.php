@@ -4,14 +4,24 @@ namespace content_smsapp\editgroup;
 
 class controller
 {
-	public static function block_group_id()
+	public static function block_group_id($_decode = false)
 	{
-		return 'm';
+		$code =  'm';
+		if($_decode)
+		{
+			$code = \dash\coding::decode($code);
+		}
+		return $code;
 	}
 
-	public static function secret_group_id()
+	public static function secret_group_id($_decode = false)
 	{
-		return '7';
+		$code =  '7';
+		if($_decode)
+		{
+			$code = \dash\coding::decode($code);
+		}
+		return $code;
 	}
 
 	public static function routing()

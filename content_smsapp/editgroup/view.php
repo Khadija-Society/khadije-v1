@@ -14,7 +14,7 @@ class view
 		\dash\data::badge_text(T_('Settings'));
 
 
-		if(\dash\data::blockMode())
+		if(\dash\data::blockMode() || \dash\data::secretMode())
 		{
 
 			$args =

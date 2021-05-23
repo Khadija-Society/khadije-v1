@@ -15,6 +15,15 @@ class model
 			return;
 		}
 
+		if(\dash\request::post('unblock') === 'mobile')
+		{
+			$result = \lib\app\smsgroupfilter::remove(\dash\request::post('uid'));
+
+			\dash\redirect::pwd();
+			return;
+
+		}
+
 
 		if(\dash\request::post('answer'))
 		{
@@ -48,7 +57,7 @@ class model
 		}
 
 
-		if(\dash\request::post('secred') === 'mobile')
+		if(\dash\request::post('secret') === 'mobile')
 		{
 			$post             = [];
 			$post['number']     = \dash\data::myMobile();
@@ -58,7 +67,7 @@ class model
 
 			$result = \lib\app\smsgroupfilter::add($post);
 			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
-			\dash\redirect::to(\dash\url::this());
+			\dash\redirect::pwd();
 
 			return false;
 		}
