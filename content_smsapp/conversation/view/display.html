@@ -81,11 +81,17 @@
       </div>
     </form>
     {%endif%}
+
+
+
 {%for key, value in dataTable%}
   {%if value.answertext%}
   <div class="cbox mB5-f info2">
     <div class="f ">
       <div class="c"> <p>{{value.answertext | raw | nl2br}}</p></div>
+      {%if value.group_id  and allGroup[value.group_id]['title']%}
+      <div class="cauto txtL"><a href="{{url.here}}/editgroup?id={{value.group_id | coding('encode')}}"><span class=" mRa5 badge rounded secondary">{{allGroup[value.group_id]['title']}}</span></a></div>
+      {%endif%}
       <div class="cauto ltr txtL">{{value.dateanswer | dt}}</div>
     </div>
   </div>
@@ -94,6 +100,7 @@
     <div class="f">
       <div class="c"> <p class="fc-black txtB">{{value.text | raw | nl2br}}</p></div>
       <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
+
     </div>
   </div>
 

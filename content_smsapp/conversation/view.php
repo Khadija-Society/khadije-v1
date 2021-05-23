@@ -36,11 +36,15 @@ class view
 
 		$myLinks =
 		[
-			'all'      => ['count' => a($conversationStat, 'all'), 'title' => T_("All")],
 			'awaiting' => ['count' => a($conversationStat, 'awaiting'), 'title' => T_("Awaiting to answer"), 'default' => true],
+			'all'      => ['count' => a($conversationStat, 'all'), 'title' => T_("All")],
 		];
 
 		\dash\data::myLinks($myLinks);
+
+		\dash\data::sysStatus(\lib\app\sms::status());
+
+		\dash\data::lastConnected(\lib\app\sms::lastconnected());
 
 	}
 }

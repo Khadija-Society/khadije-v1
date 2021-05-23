@@ -29,6 +29,28 @@ class view
 
 		$list = \lib\app\conversation\search::view($q, $args);
 
+		if(!is_array($list))
+		{
+			$list = [];
+		}
+
+		$all_group_id = array_column($list, 'group_id');
+		$all_group_id = array_filter($all_group_id);
+		$all_group_id = array_unique($all_group_id);
+		if($all_group_id)
+		{
+			$all_group_id = array_map('intval', $all_group_id);
+			$all_group_id = implode(',', $all_group_id);
+			$load_all_group = \lib\db\smsgroup::get(['id' => ['IN', "($all_group_id)"]]);
+			if(!is_array($load_all_group))
+			{
+				$load_all_group = [];
+			}
+
+			// $load_all_group = array_map(['\\lib\\app\\smsgroup', 'ready'], $load_all_group);
+			$load_all_group = array_combine(array_column($load_all_group, 'id'), $load_all_group);
+			\dash\data::allGroup($load_all_group);
+		}
 
 		if(a($list, 0, 'answertext'))
 		{

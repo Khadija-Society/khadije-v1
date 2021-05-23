@@ -14,10 +14,12 @@ class model
 			if($myStatus)
 			{
 				$myStatus = \lib\app\sms::status(false);
+				\dash\notif::warn(T_("Power off"));
 			}
 			else
 			{
 				$myStatus = \lib\app\sms::status(true);
+				\dash\notif::ok(T_("Power on"));
 			}
 
 			\dash\redirect::pwd();
