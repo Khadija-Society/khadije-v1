@@ -96,6 +96,14 @@ class smsgroupfilter
 		return $result;
 	}
 
+
+	public static function multi_remove_analyze($_analye, $_group_id)
+	{
+		$query  = "DELETE FROM s_groupfilter  WHERE s_groupfilter.type = 'analyze' AND s_groupfilter.group_id = $_group_id AND s_groupfilter.text IN ('$_analye') ";
+		\dash\db::query($query);
+		return;
+	}
+
 	public static function remove_all_default($_type, $_group_id, $_panel = null)
 	{
 		if($_panel)

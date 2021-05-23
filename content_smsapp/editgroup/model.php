@@ -25,29 +25,8 @@ class model
 
 		if(\dash\engine\process::status())
 		{
-			var_dump($_POST);exit();
-			if(\dash\request::post('type') === 'remove')
-			{
-				if(\lib\app\smsgroupfilter::remove(\dash\request::post('deleteid')))
-				{
-					\dash\notif::ok(T_("Filter removed"));
-					\dash\redirect::pwd();
-				}
-				return;
-			}
 
-			$post             = [];
-			$post['text']     = \dash\request::post('text');
-			$post['type']     = 'analyze';
-			$post['group_id'] = \dash\request::get('id');
-
-			$result = \lib\app\smsgroupfilter::add($post);
-
-			if(\dash\engine\process::status())
-			{
-				\dash\redirect::pwd();
-			}
-
+			$result = \lib\app\smsgroupfilter::sync_answer(\dash\request::post('tag'), \dash\request::get('id'));
 
 			\dash\redirect::pwd();
 		}

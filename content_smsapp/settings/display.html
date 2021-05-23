@@ -8,17 +8,16 @@
         <tr>
           <th>{%trans "Title"%}</th>
           <th class="collapsing">{%trans "Sort"%}</th>
-          <th class="collapsing">{%trans "Edit"%}</th>
+          <th class="collapsing">{%trans "Count tags"%}</th>
+
         </tr>
       </thead>
       <tbody>
         {%for key, value in dataTable%}
         <tr>
-          <td class=""><b class="fs12">{{value.title}}</b></td>
+          <td class=""> <a class="txtB" href="{{url.here}}/editgroup?id={{value.id}}"> <i class="sf-edit"></i> <b class="fs12">{{value.title}}</b></a></td>
           <td class="collapsing">{{value.sort | fitNumber}}</td>
-          <td class="collapsing">
-            <a class="txtB" href="{{url.here}}/editgroup?id={{value.id}}">{%trans "Edit"%}</a>
-          </td>
+          <td class="collapsing">{{value.count_tag | fitNumber}}</td>
         </tr>
         {%endfor%}
       </tbody>

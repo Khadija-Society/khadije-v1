@@ -10,7 +10,7 @@ class model
 		{
 			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
 
-			\dash\redirect::pwd();
+			\dash\redirect::to(\dash\url::this());
 
 			return;
 		}
@@ -27,7 +27,7 @@ class model
 			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
 
 
-			\dash\redirect::pwd();
+			\dash\redirect::to(\dash\url::this());
 
 			return;
 		}

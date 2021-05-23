@@ -22,7 +22,18 @@ class smsgroup
 
 	public static function show_list()
 	{
-		$query  = "SELECT s_group.* FROM s_group  WHERE s_group.status != 'deleted' AND s_group.type = 'other' ORDER BY s_group.sort ASC  ";
+		$query  =
+		"
+			SELECT
+				s_group.*,
+				(SELECT COUNT(*) FROM s_groupfilter WHERE s_groupfilter.group_id = s_group.id AND s_groupfilter.type = 'analyze') AS `count_tag`
+			FROM
+				s_group
+			WHERE
+				s_group.status != 'deleted' AND
+				s_group.type = 'other'
+			ORDER BY s_group.sort ASC
+		";
 		$result = \dash\db::get($query);
 		return $result;
 	}

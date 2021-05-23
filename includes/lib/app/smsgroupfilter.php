@@ -121,6 +121,76 @@ class smsgroupfilter
 	}
 
 
+
+	public static function sync_answer($_tag, $_id)
+	{
+		$group_id = \dash\coding::decode($_id);
+		if(!$group_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		if(!is_string($_tag))
+		{
+			\dash\notif::error(T_("Invalid tag"));
+			return false;
+		}
+
+		$current_list = \lib\db\smsgroupfilter::get(['group_id' => $group_id, 'type' => 'analyze',]);
+
+		if(!is_array($current_list))
+		{
+			$current_list = [];
+		}
+
+		$current_list_title = array_column($current_list, 'text');
+		$current_list_title = array_filter($current_list_title);
+		$current_list_title = array_unique($current_list_title);
+
+		$new_tag = explode(',', $_tag);
+
+		$new_tag = array_filter($new_tag);
+		$new_tag = array_unique($new_tag);
+
+
+		$must_remove = array_diff($current_list_title, $new_tag);
+		$must_insert = array_diff($new_tag, $current_list_title);
+
+		if(!empty($must_insert))
+		{
+			foreach ($must_insert as $key => $value)
+			{
+				$check_duplicate = \lib\db\smsgroupfilter::get(['text' => $value, 'type' => 'analyze', 'limit' => 1]);
+				if(isset($check_duplicate['id']))
+				{
+					\dash\notif::warn(T_("The tag :val exist in another group", ['val' => $value]));
+				}
+				else
+				{
+					$insert =
+					[
+						'group_id' => $group_id,
+						'type' => 'analyze',
+						'text' => $value,
+					];
+
+					\lib\db\smsgroupfilter::insert($insert);
+				}
+			}
+		}
+
+		if(!empty($must_remove))
+		{
+			$remove = implode("','", $must_remove);
+			\lib\db\smsgroupfilter::multi_remove_analyze($remove, $group_id);
+		}
+
+		// \dash\notif::ok(T_("Saved"));
+		return true;
+	}
+
+
 	/**
 	 * Gets the smsgroupfilter.
 	 *
