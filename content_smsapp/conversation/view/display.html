@@ -16,8 +16,17 @@
             <div class="c"><div class="txtB">{{currentUser.displayname}}</div></div>
             <div class="cauto"><div class="txtB mLa5 fc-black">{{currentUser.mobile | fitNumber('mobile')}}</div></div>
             <div class="c12 mB20"></div>
+            <div class="c12 mB20"></div>
 
             <div class="c">&nbsp;</div>
+              <div class="cauto">
+                <div class="showOtherBtn" data-kerkere-content='hide'>
+                  <span class="btn mLa10 danger2 outline" data-ajaxify data-data='{"block": "mobile"}' data-method='post'>{%trans "Block mobile"%}</span>
+                  <span class="btn mLa10 secondary outline" data-ajaxify data-data='{"block": "mobile"}' data-method='post'>{%trans "Secret mobile"%}</span>
+                </div>
+              </div>
+              <div class="cauto"><div class="btn mLa10 outline" data-kerkere='.showOtherBtn' >...</div></div>
+
             <div class="cauto"><a class="btn mLa10 outline" href="{{url.kingdom}}/crm/member/general?id={{currentUser.user_code}}">{%trans "Edit profile"%}</a></div>
             {%if needArchive%}
               <div class="cauto"><div class="btn mLa10 info2 outline" data-ajaxify data-data='{"archive": "conversation"}' data-method='post'>{%trans "Archive"%}</div></div>

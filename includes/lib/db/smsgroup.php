@@ -14,7 +14,7 @@ class smsgroup
 
 	public static function get_answering_group()
 	{
-		$query  = "SELECT DISTINCT s_group.* FROM s_group LEFT JOIN s_groupfilter ON s_groupfilter.group_id = s_group.id  WHERE s_group.status != 'deleted' AND s_groupfilter.type = 'answer'  ";
+		$query  = "SELECT DISTINCT s_group.* FROM s_group LEFT JOIN s_groupfilter ON s_groupfilter.group_id = s_group.id  WHERE s_group.status = 'enable' AND s_groupfilter.type = 'answer' AND s_group.type = 'other'   ";
 		$result = \dash\db::get($query);
 		return $result;
 	}
@@ -31,7 +31,7 @@ class smsgroup
 			FROM
 				s_group
 			WHERE
-				s_group.status != 'deleted' AND
+				s_group.status = 'enable' AND
 				s_group.type = 'other'
 			ORDER BY s_group.sort ASC
 		";
