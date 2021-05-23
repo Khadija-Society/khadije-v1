@@ -28,7 +28,6 @@ class view
 
 		$list = \lib\app\conversation\search::list($q, $args);
 
-		\dash\data::dataTable($list);
 
 
 		$conversationStat = \lib\app\conversation\get::stat();
@@ -45,6 +44,31 @@ class view
 		\dash\data::sysStatus(\lib\app\sms::status());
 
 		\dash\data::lastConnected(\lib\app\sms::lastconnected());
+
+		$args =
+		[
+			'pagenation' => false,
+			'type'       => 'number',
+			'group_id'   => \content_smsapp\editgroup\controller::secret_group_id(true),
+		];
+
+
+		$load_all_secret_number = \lib\app\smsgroupfilter::list(null, $args);
+
+		$load_all_secret_number = array_column($load_all_secret_number, 'number');
+
+		foreach ($list as $key => $value)
+		{
+			if(isset($value['fromnumber']) && in_array($value['fromnumber'], $load_all_secret_number))
+			{
+				$list[$key]['lastmessage'] = 'secret message';
+			}
+		}
+
+
+		\dash\data::dataTable($list);
+
+
 
 	}
 }

@@ -98,7 +98,7 @@
   {%endif%}
   <div class="cbox mB5-f">
     <div class="f">
-      <div class="c"> <p class="txtB">{%if isSecred%}<i class="fc-mute">{%trans "Secret message"%} </i> 🙈{%else%}<span class="fc-black">{{value.text | raw | nl2br}}{%endif%}</span></p></div>
+      <div class="c"> <p class="txtB">{%if isSecred%}<i class="fc-mute">{%trans "Private"%} </i> {%else%}<span class="fc-black">{{value.text | raw | nl2br}}{%endif%}</span></p></div>
       <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
 
     </div>
