@@ -332,6 +332,8 @@ class newsms
 			{
 				if(array_key_exists('analyze', $get_group) && !$get_group['analyze'])
 				{
+					self::$need_archive_conversation[] = $insert['fromnumber'];
+
 					$insert['receivestatus']  = 'block';
 					// if the message is block not check recommend
 					return;
