@@ -11,6 +11,10 @@
       <form method="post" autocomplete="off">
         {{block('ititle')}}
           {{block('isort')}}
+            <label for="tag">{%trans "Start date fro detect answer"%} </label>
+           <div class="input ltr">
+            <input class="datepicker" type="text" name="calcdate"  placeholder='{%trans "Start date"%}' id="calcdate"  value="{{dataRow.calcdate}}" maxlength='20' data-view="day">
+          </div>
           {{block('itag')}}
           {{block('istatus')}}
            <div class="txtL">
@@ -41,7 +45,11 @@
     <div class="cbox">
       {%for key, value in answerList%}
         <div class="msg {%if value.id == requestGET.aid%} primary2 {%endif%}">
-          <p>{{value.text |raw | nl2br}}</p>
+
+          <p>
+            <b class="badge primary rounded">{{(key + 1) |fitNumber(false)}}</b>
+          {{value.text |raw | nl2br}}
+        </p>
           <div class="f">
             <div class="cauto"><div class="fc-red" data-confirm data-data='{"removeanswer": "{{value.id}}"}'>{%trans "Remove"%}</div></div>
             <div class="c"></div>
@@ -112,11 +120,11 @@
 
 
 {%block itag %}
-<label for="sort">{%trans "Tags"%} </label>
+<label for="tag">{%trans "Tags"%} </label>
 
   <div class="tagDetector">
    <div class="input mB10 hide">
-      <input type="text" class="input tagVals" name="tag" value="{{stringTagList}}" id="tagValues" placeholder='{%trans "Tag"%}'>
+      <input type="text" class="input tagVals" id="tag" name="tag" value="{{stringTagList}}" id="tagValues" placeholder='{%trans "Tag"%}'>
     </div>
 
     <div class="input" title='{%trans "Add tag manually to link tickets togethers"%}'>

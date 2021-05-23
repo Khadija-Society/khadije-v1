@@ -32,6 +32,10 @@ ALTER TABLE s_group ADD `sort` int(10)  NULL DEFAULT NULL;
 ALTER TABLE s_group ADD INDEX `s_group_index_search_sort` (`sort`);
 
 
+ALTER TABLE s_group ADD `calcdate` datetime  NULL DEFAULT NULL;
+ALTER TABLE s_group ADD INDEX `s_group_index_search_calcdate` (`calcdate`);
+
+
 
 ALTER TABLE s_groupfilter ADD `sort` int(10)  NULL DEFAULT NULL;
 ALTER TABLE s_groupfilter ADD INDEX `s_groupfilter_index_search_sort` (`sort`);

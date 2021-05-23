@@ -206,6 +206,7 @@ class smsgroup
 		if(!\dash\app::isset_request('ismoney')) unset($args['ismoney']);
 		if(!\dash\app::isset_request('answer')) unset($args['answer']);
 		if(!\dash\app::isset_request('sort')) unset($args['sort']);
+		if(!\dash\app::isset_request('calcdate')) unset($args['calcdate']);
 
 		if(!empty($args))
 		{
@@ -304,14 +305,27 @@ class smsgroup
 		$ismoney = \dash\app::request('ismoney') ? 1 : null;
 		$answer  = \dash\app::request('answer');
 
-		$args            = [];
-		$args['title']   = $title;
-		$args['status']  = $status;
-		$args['type']    = $type;
-		$args['analyze'] = $analyze;
-		$args['ismoney'] = $ismoney;
-		$args['answer']  = $answer;
-		$args['sort']    = $sort;
+		$calcdate = \dash\app::request('calcdate');
+
+		if($calcdate)
+		{
+			$calcdate                 = \dash\utility\convert::to_en_number($calcdate);
+
+			if(\dash\utility\jdate::is_jalali($calcdate))
+			{
+				$calcdate = \dash\utility\jdate::to_gregorian($calcdate);
+			}
+		}
+
+		$args             = [];
+		$args['title']    = $title;
+		$args['status']   = $status;
+		$args['type']     = $type;
+		$args['analyze']  = $analyze;
+		$args['ismoney']  = $ismoney;
+		$args['answer']   = $answer;
+		$args['sort']     = $sort;
+		$args['calcdate'] = $calcdate;
 
 		return $args;
 	}

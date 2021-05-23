@@ -52,13 +52,13 @@ class model
 
 		}
 
-		$post            = [];
-		$post['title']   = \dash\request::post('title');
+		$post               = [];
+		$post['title']      = \dash\request::post('title');
 		// $post['type']    = \dash\request::post('type');
 		// $post['analyze'] = \dash\request::post('analyze');
-		// $post['ismoney'] = \dash\request::post('ismoney');
-		$post['status']  = \dash\request::post('status');
-		$post['sort']  = \dash\request::post('sort');
+		$post['calcdate']   = \dash\request::post('calcdate');
+		$post['status']     = \dash\request::post('status');
+		$post['sort']       = \dash\request::post('sort');
 
 		$result = \lib\app\smsgroup::edit($post, \dash\request::get('id'));
 
