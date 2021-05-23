@@ -14,11 +14,28 @@ class view
 		\dash\data::badge_text(T_('Settings'));
 
 
+		if(\dash\data::blockMode())
+		{
+
+			$args =
+			[
+				'pagenation' => false,
+				'type'       => 'number',
+				'group_id'   => \dash\coding::decode(\dash\data::myId()),
+			];
+
+
+			$numbers = \lib\app\smsgroupfilter::list(null, $args);
+
+			\dash\data::myNumbers($numbers);
+
+		}
+
 		$args =
 		[
 			'pagenation' => false,
 			'type'       => 'analyze',
-			'group_id'   => \dash\coding::decode(\dash\request::get('id')),
+			'group_id'   => \dash\coding::decode(\dash\data::myId()),
 		];
 
 
@@ -38,7 +55,7 @@ class view
 			'type'       => 'answer',
 			'order'      => 'asc',
 			'sort'       => 'sort',
-			'group_id'   => \dash\coding::decode(\dash\request::get('id')),
+			'group_id'   => \dash\coding::decode(\dash\data::myId()),
 		];
 
 		$answerList = \lib\app\smsgroupfilter::list(null, $args);

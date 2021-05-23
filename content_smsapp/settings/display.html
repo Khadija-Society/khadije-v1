@@ -3,6 +3,7 @@
 {%block pageContent%}
 <div class="f justify-center fs12">
   <div class="c8 m12 s12">
+    {%if dataTable%}
     <table class="tbl1 v5">
       <thead>
         <tr>
@@ -24,6 +25,28 @@
         {%endfor%}
       </tbody>
     </table>
+    {%endif%}
+
+    <div class="f">
+      <div class="c6 s12">
+        <div class="vcard shadow x07 ">
+          <a href="{{url.here}}/editgroup/block">
+            <div class="content title">
+              <div class="header">{%trans "Block Numbers"%}</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="c6 s12">
+        <div class="vcard shadow x07 mLa5">
+          <a href="{{url.here}}/editgroup/secret">
+            <div class="content title">
+              <div class="header">{%trans "Secret Numbers"%}</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {%endblock%}

@@ -6,9 +6,9 @@ class model
 {
 	public static function post()
 	{
-		if(\dash\permission::supervisor() && \dash\request::post('delete') === 'delete' && \dash\request::get('id'))
+		if(\dash\permission::supervisor() && \dash\request::post('delete') === 'delete' && \dash\data::myId())
 		{
-			\lib\app\smsgroup::remove(\dash\request::get('id'));
+			\lib\app\smsgroup::remove(\dash\data::myId());
 			\dash\redirect::to(\dash\url::here(). '/settings');
 			return;
 		}
@@ -19,10 +19,36 @@ class model
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::to(\dash\url::this(). '?id='. \dash\request::get("id"));
+				if(\dash\data::blockMode() || \dash\data::secretMode())
+				{
+					\dash\redirect::pwd();
+				}
+				else
+				{
+					\dash\redirect::to(\dash\url::this(). '?id='. \dash\data::myId());
+				}
 			}
 
 			return;
+		}
+
+
+		if(\dash\request::post('setblock'))
+		{
+			$post             = [];
+			$post['number']     = \dash\request::post('abn');
+			$post['type']     = 'number';
+			$post['group_id'] = \dash\data::myId();
+
+			$result = \lib\app\smsgroupfilter::add($post);
+
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::pwd();
+			}
+
+			return;
+
 		}
 
 
@@ -32,7 +58,7 @@ class model
 			$post['text']     = \dash\request::post('text');
 			$post['sort']     = \dash\request::post('asort');
 			$post['type']     = 'answer';
-			$post['group_id'] = \dash\request::get('id');
+			$post['group_id'] = \dash\data::myId();
 
 			if(\dash\request::get('aid'))
 			{
@@ -45,7 +71,7 @@ class model
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::to(\dash\url::this(). '?id='. \dash\request::get("id"));
+				\dash\redirect::to(\dash\url::this(). '?id='. \dash\data::myId());
 			}
 
 			return;
@@ -60,12 +86,12 @@ class model
 		$post['status']     = \dash\request::post('status');
 		$post['sort']       = \dash\request::post('sort');
 
-		$result = \lib\app\smsgroup::edit($post, \dash\request::get('id'));
+		$result = \lib\app\smsgroup::edit($post, \dash\data::myId());
 
 		if(\dash\engine\process::status())
 		{
 
-			$result = \lib\app\smsgroupfilter::sync_answer(\dash\request::post('tag'), \dash\request::get('id'));
+			$result = \lib\app\smsgroupfilter::sync_answer(\dash\request::post('tag'), \dash\data::myId());
 
 			\dash\redirect::pwd();
 		}

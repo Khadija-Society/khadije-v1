@@ -3,6 +3,62 @@
 
 
 {%block pageContent%}
+{%if blockMode%}
+{{block('BlockGroup')}}
+{%elseif secretMode%}
+{{block('BlockGroup')}}
+{%else%}
+{{block('NormalGroup')}}
+{%endif%}
+
+{%endblock%}
+
+
+
+{%block BlockGroup%}
+<div class="f justify-center">
+  <div class="c6 m8 s12">
+    <div class="cbox">
+      {%if blockMode%}
+        <div class="msg danger2">{%trans "Manage Block group"%}</div>
+      {%elseif secretMode%}
+        <div class="msg info2">{%trans "Manage Secred group"%}</div>
+      {%endif%}
+      <form method="post" autocomplete="off" class="mB10">
+        <input type="hidden" name="setblock" value="1">
+          <div class="input">
+            <input type="tel" name="abn" id="abn" placeholder='{%trans "Add number to this group"%}'  maxlength="50">
+            <button class="btn addon primary">{%trans "Add"%}</button>
+          </div>
+      </form>
+        {%for key, value in myNumbers%}
+        <div class="msg f pA5-f">
+          <div class="cauto"><b class="txtB">{{value.number | fitNumber(false)}}</b></div>
+          <div class="c"></div>
+          <div class="cauto"><div data-ajaxify data-method='post' data-data='{"removeanswer": "{{value.id}}"}'><i class="sf-times fc-red"></i></div></div>
+        </div>
+        {%endfor%}
+    </div>
+  </div>
+</div>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%block NormalGroup%}
 
 <div class="f justify-center">
 

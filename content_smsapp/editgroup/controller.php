@@ -4,11 +4,46 @@ namespace content_smsapp\editgroup;
 
 class controller
 {
+	public static function block_group_id()
+	{
+		return 'm';
+	}
+
+	public static function secret_group_id()
+	{
+		return '7';
+	}
+
 	public static function routing()
 	{
 		\dash\permission::access('smsAppSetting');
 
-		$id   = \dash\request::get('id');
+		$id = null;
+
+		if(\dash\url::child() === 'block' && !\dash\url::subchild())
+		{
+			\dash\data::blockMode(true);
+			\dash\open::get();
+			\dash\open::post();
+			$id = self::block_group_id();
+		}
+
+
+		if(\dash\url::child() === 'secret' && !\dash\url::subchild())
+		{
+			\dash\data::secretMode(true);
+			\dash\open::get();
+			\dash\open::post();
+			$id = self::secret_group_id();
+		}
+
+		if(!$id)
+		{
+			$id   = \dash\request::get('id');
+		}
+
+		\dash\data::myId($id);
+
 		$load = \lib\app\smsgroup::get($id);
 
 		if(!$load)
