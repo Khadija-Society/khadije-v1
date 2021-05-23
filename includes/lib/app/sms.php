@@ -39,10 +39,23 @@ class sms
 	public static function analyze_text($_text)
 	{
 		$all_group_text = \lib\db\smsgroupfilter::list_analyze_word();
+
 		if(!is_array($all_group_text))
 		{
 			return false;
 		}
+
+		foreach ($all_group_text as $key => $value)
+		{
+			if(isset($value['text']) && strpos($_text, $value['text']) !== false)
+			{
+				$load = \lib\db\smsgroup::get(['id' => $value['group_id'], 'limit' => 1]);
+				return $load;
+			}
+		}
+
+		return false;
+
 
 		$text_group = [];
 

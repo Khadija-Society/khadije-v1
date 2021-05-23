@@ -160,7 +160,14 @@ class newsms
 		}
 		else
 		{
-			self::check_need_analyze($insert);
+			if(self::detect_5_min_message($insert))
+			{
+				//
+			}
+			else
+			{
+				self::check_need_analyze($insert);
+			}
 		}
 
 
@@ -215,9 +222,9 @@ class newsms
 	}
 
 
-	private static function ready_to_update_or_insert(&$_insert)
+	private static function ready_to_update_or_insert(&$insert)
 	{
-		$fromnumber   = $_insert['fromnumber'];
+		$fromnumber   = $insert['fromnumber'];
 		$get_last_sms = \lib\db\sms::get_last_sms($fromnumber);
 
 		if(isset($get_last_sms['date']))
@@ -228,7 +235,7 @@ class newsms
 			$id             = $get_last_sms['id'];
 			$text           = $get_last_sms['text'];
 
-			if($_insert['text'] === $text)
+			if($insert['text'] === $text)
 			{
 				// duplicate message
 				// my son is send some request in one time
@@ -239,61 +246,38 @@ class newsms
 				return;
 			}
 
-			if(abs(strtotime($_insert['date']) - strtotime($date)) < 5)
+			if(abs(strtotime($insert['date']) - strtotime($date)) < 5)
 			{
 
 				self::$sms_id = intval($get_last_sms['id']);
 				self::$update_insert = 'non';
 				return;
-
-				\dash\log::set('apiSmsAppDuplicateNewMessageBeforeLessThan5s', ['xold' => $get_last_sms , 'xnew' => $_insert]);
-
-				$new_text           = $text. $_insert['text'];
-
-				// $update             = [];
-				$_insert['text']     = $new_text;
-				$_insert['smscount'] = mb_strlen($new_text);
-
-				if(!$get_last_sms['group_id'] && $_insert['group_id'])
-				{
-					$_insert['group_id'] = $_insert['group_id'];
-				}
-
-				if($get_last_sms['receivestatus'] === 'block')
-				{
-					// nothing
-				}
-				else
-				{
-					$get_recommend = \lib\app\sms::analyze_text($new_text);
-
-					if(!$get_recommend)
-					{
-						// reset
-						$_insert['recommend_id']    = null;
-						$_insert['group_id']        = null;
-						$_insert['sendstatus']      = null;
-						$_insert['answertext']      = null;
-						$_insert['answertextcount'] = null;
-						$_insert['receivestatus']   = 'awaiting';
-						$_insert['fromgateway']     = null;
-						$_insert['tonumber']        = null;
-						$_insert['dateanswer']      = null;
-					}
-					else
-					{
-						if(!$get_last_sms['recommend_id'] && $_insert['recommend_id'])
-						{
-							$_insert['recommend_id'] = $_insert['recommend_id'];
-						}
-					}
-				}
-
-				self::$update_insert = 'update';
-				self::$sms_id = $get_last_sms['id'];
-				return;
 			}
 		}
+
+
+	}
+
+
+	private static function detect_5_min_message(&$insert)
+	{
+		$my_5_min = date("Y-m-d H:i:s", (time() - (60*5)));
+		$get_last_sms_answered_in_5_min =  \lib\db\sms::get_count_answerd_in_time($insert['fromnumber'], $my_5_min);
+
+
+		if(floatval($get_last_sms_answered_in_5_min) >= 1 )
+		{
+
+			self::$need_archive_conversation[] = $insert['fromnumber'];
+
+			$insert['answertext']      = null;
+			$insert['answertextcount'] = 0;
+			$insert['receivestatus']   = 'skip';
+			$insert['group_id']        = null;
+			return true;
+		}
+
+		return false;
 	}
 
 
@@ -336,11 +320,10 @@ class newsms
 			$get = \lib\db\smsgroupfilter::get(['type' => 'number', '1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$number_no_plus') "], 'limit' => 1]);
 		}
 
-
 		// this number not found in any filter
+		// FINDED ONE GROP BY NUMBER
 		if(isset($get['group_id']))
 		{
-
 			$insert['group_id'] = $get['group_id'];
 
 			$get_group = \lib\db\smsgroup::get(['id' => $get['group_id'], 'limit' => 1]);
@@ -362,43 +345,62 @@ class newsms
 		if(isset($get_recommend['id']))
 		{
 			$insert['recommend_id'] = $get_recommend['id'];
+			$insert['fromgateway']  = $insert['togateway'];
+			$insert['tonumber']     = $insert['fromnumber'];
+			$insert['group_id']     = $insert['recommend_id'];
+			$insert['dateanswer']   = date("Y-m-d H:i:s");
 
-			if(\lib\app\sms::is_auto_panel_answer())
+			$calcdate = a($get_recommend, 'calcdate');
+
+			if($calcdate)
 			{
-				// ready to auto answer
-				$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['id'], 'isdefaultpanel' => 1, 'limit' => 1]);
-				if(isset($load_default_answer['text']))
-				{
-					$insert['sendstatus']      = 'awaiting';
-					$insert['answertext']      = $load_default_answer['text'];
-					$insert['answertextcount'] = mb_strlen($load_default_answer['text']);
-					$insert['receivestatus']   = 'sendtopanel';
-					$insert['fromgateway']     = $insert['togateway'];
-					$insert['tonumber']        = $insert['fromnumber'];
-					$insert['group_id']        = $insert['recommend_id'];
-					$insert['dateanswer']      = date("Y-m-d H:i:s");
+				$get_count_answered =  \lib\db\sms::get_count_answerd_in_time($insert['fromnumber'], $calcdate);
 
-					self::$need_archive_conversation[] = $insert['fromnumber'];
-				}
+				$need_answer_level = floatval($get_count_answered);
 			}
 			else
 			{
-				// ready to auto answer
-				$load_default_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['id'], 'isdefault' => 1, 'limit' => 1]);
-				if(isset($load_default_answer['text']))
-				{
-					$insert['sendstatus']      = 'waitingtoautosend';
-					$insert['answertext']      = $load_default_answer['text'];
-					$insert['answertextcount'] = mb_strlen($load_default_answer['text']);
-					$insert['receivestatus']   = 'answerready';
-					$insert['fromgateway']     = $insert['togateway'];
-					$insert['tonumber']        = $insert['fromnumber'];
-					$insert['group_id']        = $insert['recommend_id'];
-					$insert['dateanswer']      = date("Y-m-d H:i:s");
+				$need_answer_level = 0;
+			}
 
-					self::$need_archive_conversation[] = $insert['fromnumber'];
+			$answer = null;
+			// find answer
+			$find_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $get_recommend['id']], ['order' => ' ORDER BY s_groupfilter.sort ASC ']);
+
+			if(isset($find_answer[$need_answer_level]['text']))
+			{
+				$answer = $find_answer[$need_answer_level]['text'];
+			}
+			else
+			{
+				$end_answer = end($find_answer);
+				if(isset($end_answer['text']))
+				{
+					$answer = $end_answer['text'];
 				}
 			}
+
+
+			if($answer)
+			{
+				$insert['answertext']      = $answer;
+				$insert['answertextcount'] = mb_strlen($answer);
+
+				self::$need_archive_conversation[] = $insert['fromnumber'];
+
+				if(\lib\app\sms::is_auto_panel_answer())
+				{
+					$insert['sendstatus']    = 'awaiting';
+					$insert['receivestatus'] = 'sendtopanel';
+				}
+				else
+				{
+					$insert['sendstatus']    = 'waitingtoautosend';
+					$insert['receivestatus'] = 'answerready';
+				}
+			}
+
+
 		}
 	}
 

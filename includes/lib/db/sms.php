@@ -379,6 +379,21 @@ class sms
 
 
 
+	public static function get_count_answerd_in_time($_fromnumber, $_date)
+	{
+		$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' AND s_sms.datecreated > '$_date' AND s_sms.answertext IS NOT NULL ";
+		$result = \dash\db::get($query, 'count', true);
+		return $result;
+	}
+
+	public static function get_last_sms_answered_in_5_min($_fromnumber)
+	{
+		$date_5_min = date("Y-m-d H:i:s", (time() - (60*5)));
+		$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' AND s_sms.datecreated > '$date_5_min' AND s_sms.answertext IS NOT NULL ";
+		$result = \dash\db::get($query, 'count', true);
+		return $result;
+	}
+
 
 
 

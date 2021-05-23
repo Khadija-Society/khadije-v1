@@ -36,11 +36,10 @@ class smsgroupfilter
 				s_groupfilter
 			INNER JOIN s_group ON s_group.id = s_groupfilter.group_id
 			WHERE
-				s_group.analyze    = 1 AND
 				s_group.status     = 'enable' AND
 				s_group.type       = 'other' AND
 				s_groupfilter.type = 'analyze'
-			ORDER BY s_groupfilter.group_id
+			ORDER BY s_group.sort ASC, s_groupfilter.id ASC
 		";
 
 		$result = \dash\db::get($query);
