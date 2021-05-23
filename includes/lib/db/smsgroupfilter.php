@@ -4,6 +4,27 @@ namespace lib\db;
 
 class smsgroupfilter
 {
+
+	public static function check_duplicate_answer($_answer)
+	{
+		$query  =
+		"
+			SELECT
+				s_groupfilter.*
+			FROM
+				s_groupfilter
+			LEFT JOIN s_group ON s_groupfilter.group_id = s_group.id
+			WHERE
+				s_group.status != 'deleted' AND
+				s_groupfilter.type = 'analyze'  AND
+				s_groupfilter.text = '$_answer'
+			LIMIT 1
+		";
+		$result = \dash\db::get($query, null, true);
+
+		return $result;
+	}
+
 	public static function list_analyze_word()
 	{
 		$query  =

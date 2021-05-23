@@ -1,23 +1,25 @@
 {%extends 'content_smsapp/layout.html'%}
 
 {%block pageContent%}
-<div class="f justify-center">
+<div class="f justify-center fs12">
   <div class="c8 m12 s12">
-    <table class="tbl1 v9">
+    <table class="tbl1 v5">
       <thead>
         <tr>
           <th>{%trans "Title"%}</th>
           <th class="collapsing">{%trans "Sort"%}</th>
           <th class="collapsing">{%trans "Count tags"%}</th>
+          <th class="collapsing">{%trans "Count answer"%}</th>
 
         </tr>
       </thead>
       <tbody>
         {%for key, value in dataTable%}
         <tr>
-          <td class=""> <a class="txtB" href="{{url.here}}/editgroup?id={{value.id}}"> <i class="sf-edit"></i> <b class="fs12">{{value.title}}</b></a></td>
+          <td class=""> <a class="txtB" href="{{url.here}}/editgroup?id={{value.id}}"> <i class="sf-edit"></i> <b class="">{{value.title}}</b></a></td>
           <td class="collapsing">{{value.sort | fitNumber}}</td>
           <td class="collapsing">{{value.count_tag | fitNumber}}</td>
+          <td class="collapsing">{{value.count_answer | fitNumber}}</td>
         </tr>
         {%endfor%}
       </tbody>

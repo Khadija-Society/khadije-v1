@@ -161,7 +161,7 @@ class smsgroupfilter
 		{
 			foreach ($must_insert as $key => $value)
 			{
-				$check_duplicate = \lib\db\smsgroupfilter::get(['text' => $value, 'type' => 'analyze', 'limit' => 1]);
+				$check_duplicate = \lib\db\smsgroupfilter::check_duplicate_answer($value);
 				if(isset($check_duplicate['id']))
 				{
 					\dash\notif::warn(T_("The tag :val exist in another group", ['val' => $value]));

@@ -31,6 +31,7 @@ class view
 		}
 
 
+		$myLastSort = 1;
 		$args =
 		[
 			'pagenation' => false,
@@ -44,11 +45,29 @@ class view
 
 		\dash\data::answerList($answerList);
 
+		if(is_array($answerList))
+		{
+			$sort_list = array_column($answerList, 'sort');
+
+			if($sort_list)
+			{
+				$myLastSort = max($sort_list) + 1;
+			}
+
+		}
+
+
 		if(\dash\request::get('aid'))
 		{
 			$loadAnswer = \lib\app\smsgroupfilter::get(\dash\request::get('aid'));
 			\dash\data::answerDataRow($loadAnswer);
+
+			$myLastSort = a($loadAnswer, 'sort');
+
+
 		}
+
+		\dash\data::myLastSort($myLastSort);
 
 
 	}
