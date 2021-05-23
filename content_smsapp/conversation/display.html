@@ -44,6 +44,7 @@
 <div class="f">
   <div class="c">
       <form method="get" action='{{url.that}}' autocomplete="off">
+        {%if requestGET.level%}<input type="hidden" name="level" value="{{requestGET.level}}">{%endif%}
         <div class="input">
           <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off'>
           <button class="addon btn "><i class="sf-search"></i></button>
