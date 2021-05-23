@@ -13,6 +13,45 @@ class model
 			return;
 		}
 
+		if(\dash\request::post('removeanswer'))
+		{
+			$result = \lib\app\smsgroupfilter::remove(\dash\request::post('removeanswer'));
+
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::to(\dash\url::this(). '?id='. \dash\request::get("id"));
+			}
+
+			return;
+		}
+
+
+		if(\dash\request::post('setanswer'))
+		{
+			$post             = [];
+			$post['text']     = \dash\request::post('text');
+			$post['sort']     = \dash\request::post('asort');
+			$post['type']     = 'answer';
+			$post['group_id'] = \dash\request::get('id');
+
+			if(\dash\request::get('aid'))
+			{
+				$result = \lib\app\smsgroupfilter::edit($post, \dash\request::get('aid'));
+			}
+			else
+			{
+				$result = \lib\app\smsgroupfilter::add($post);
+			}
+
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::to(\dash\url::this(). '?id='. \dash\request::get("id"));
+			}
+
+			return;
+
+		}
+
 		$post            = [];
 		$post['title']   = \dash\request::post('title');
 		// $post['type']    = \dash\request::post('type');

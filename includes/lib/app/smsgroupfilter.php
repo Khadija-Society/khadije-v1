@@ -17,7 +17,7 @@ class smsgroupfilter
 	public static $sort_field =
 	[
 		'number',
-		'slug',
+		'sort',
 		'status',
 		'datecreated',
 	];
@@ -271,6 +271,7 @@ class smsgroupfilter
 		if(!\dash\app::isset_request('type')) unset($args['type']);
 		if(!\dash\app::isset_request('exactly')) unset($args['exactly']);
 		if(!\dash\app::isset_request('contain')) unset($args['contain']);
+		if(!\dash\app::isset_request('sort')) unset($args['sort']);
 
 
 		if(!empty($args))
@@ -352,6 +353,14 @@ class smsgroupfilter
 			}
 		}
 
+
+		$sort = \dash\app::request('sort');
+		if($sort && !is_numeric($sort))
+		{
+			\dash\notif::error(T_("Invalid sort data"), 'sort');
+			return false;
+		}
+
 		$type = \dash\app::request('type');
 		if($type && !in_array($type, ['number','answer','analyze','other']))
 		{
@@ -383,6 +392,7 @@ class smsgroupfilter
 		$args['type']     = $type;
 		$args['exactly']  = $exactly;
 		$args['contain']  = $contain;
+		$args['sort']  = $sort;
 
 		return $args;
 	}

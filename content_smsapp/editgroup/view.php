@@ -14,7 +14,6 @@ class view
 		\dash\data::badge_text(T_('Settings'));
 
 
-
 		$args =
 		[
 			'pagenation' => false,
@@ -30,6 +29,27 @@ class view
 			\dash\data::tagList($tagList);
 			\dash\data::stringTagList(implode(',', array_column($tagList, 'text')));
 		}
+
+
+		$args =
+		[
+			'pagenation' => false,
+			'type'       => 'answer',
+			'order'      => 'asc',
+			'sort'       => 'sort',
+			'group_id'   => \dash\coding::decode(\dash\request::get('id')),
+		];
+
+		$answerList = \lib\app\smsgroupfilter::list(null, $args);
+
+		\dash\data::answerList($answerList);
+
+		if(\dash\request::get('aid'))
+		{
+			$loadAnswer = \lib\app\smsgroupfilter::get(\dash\request::get('aid'));
+			\dash\data::answerDataRow($loadAnswer);
+		}
+
 
 	}
 }
