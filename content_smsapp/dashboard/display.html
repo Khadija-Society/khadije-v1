@@ -1,0 +1,293 @@
+{%extends 'content_smsapp/layout.html'%}
+
+{%block pageContent%}
+<div class="f">
+
+  <div class="c s12">{{block('iSmsList')}}</div>
+  <div class="c s6">{{block('iSmsReport')}}</div>
+  <div class="c s6">{{block('iSettings')}}</div>
+
+</div>
+
+{{block('iNumbers')}}
+{{block('l10sms')}}
+
+
+{%endblock%}
+
+
+
+{%block iNumbers%}
+<div class="f">
+<!--
+  <div class="c1 s6">
+    <a class="dcard xs">
+     <div class="statistic sm teal">
+      <div class="label mB10"></div>
+      <div class="value ">{%trans "Send"%} <small>{%trans "Bulk"%}</small></div>
+     </div>
+    </a>
+  </div>
+ -->
+  <div class="c s6 hide">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
+      <div class="value counter">{{dashboardDetail.total.send_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s6 hide">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
+      <div class="value">{{dashboardDetail.month.send_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s6 hide">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
+      <div class="value">{{dashboardDetail.week.send_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s12 hide">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
+      <div class="value">{{dashboardDetail.day.send_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+</div>
+<div class="f">
+
+  <div class="c1 s6">
+    <a class="dcard xs">
+     <div class="statistic sm teal">
+      <div class="label mB10"></div>
+      <div class="value ">{%trans "Send"%} <small>{%trans "Count"%}</small></div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
+      <div class="value counter">{{dashboardDetail.total.send | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
+      <div class="value">{{dashboardDetail.month.send | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
+      <div class="value">{{dashboardDetail.week.send | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+   <div class="c s12">
+    <a class="dcard">
+     <div class="statistic sm teal">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
+      <div class="value">{{dashboardDetail.day.send | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+</div>
+
+<div class="f">
+
+<!-- <div class="c1 s6">
+    <a class="dcard xs">
+     <div class="statistic sm blue">
+      <div class="label mB10"></div>
+      <div class="value ">{%trans "Receive"%} <small>{%trans "Bulk"%}</small></div>
+     </div>
+    </a>
+  </div> -->
+
+  <div class="c s6 hide">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
+      <div class="value counter">{{dashboardDetail.total.receive_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6 hide">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
+      <div class="value">{{dashboardDetail.month.receive_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6 hide">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
+      <div class="value">{{dashboardDetail.week.receive_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s12 hide">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
+      <div class="value">{{dashboardDetail.day.receive_bulk | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+</div>
+
+<div class="f">
+
+<div class="c1 s6">
+    <a class="dcard xs">
+     <div class="statistic sm blue">
+      <div class="label mB10"></div>
+      <div class="value ">{%trans "Receive"%} <small>{%trans "Count"%}</small></div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "Total"%}</div>
+      <div class="value counter">{{dashboardDetail.total.receive | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "month"%}</div>
+      <div class="value">{{dashboardDetail.month.receive | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s6">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "week"%}</div>
+      <div class="value">{{dashboardDetail.week.receive | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+
+  <div class="c s12">
+    <a class="dcard">
+     <div class="statistic sm blue">
+      <div class="label mB10"><i class="fs20 mRa5"></i>{%trans "day"%}</div>
+      <div class="value">{{dashboardDetail.day.receive | fitNumber}}</div>
+     </div>
+    </a>
+  </div>
+</div>
+
+{%endblock%}
+
+
+
+
+{%block foot_js22%}
+<script>
+{%include 'content_smsapp/home/chart.js'%}
+</script>
+{%endblock%}
+
+
+{%block iSmsGroupAdd%}
+<a class="dcard x1" href='{{url.here}}/addgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-plus"></i></div>
+  <div class="label">{%trans "Add group"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block l10sms%}
+<div class="cbox fs11 mB10">
+  <h2>{%trans "Last sms"%}</h2>
+  {%for key, value in lastSms%}
+    <a class="msg f">
+      <div class="c" {%if value.text | length > 70%} title="{{value.text}}" {%endif%}>{%if value.group_type != 'family' %}{%if value.text%}{{value.text | slice(0, 70)}}{%if value.text | length > 70%}...{%endif%}{%else%}{%trans "Without text"%}{%endif%}{%else%}<small class="fc-mute">{%trans "Private"%}</small>{%endif%}</div>
+      <span class="cauto mLR10">{{value.fromnumber | fitNumber('mobile')}}</span>
+      <div class="cauto">{{value.datecreated | dt('human', 'year') }}</div>
+    </a>
+  {%endfor%}
+</div>
+{%endblock%}
+
+
+
+{%block iSettings%}
+<a class="dcard x1" href='{{url.here}}/settings'>
+ <div class="statistic">
+  <div class="value"><i class="sf-cogs"></i></div>
+  <div class="label">{%trans "Setting"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block iSmsReport%}
+<a class="dcard x1" href='{{url.here}}/report'>
+ <div class="statistic">
+  <div class="value"><i class="sf-chart"></i></div>
+  <div class="label">{%trans "Reports"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block iSmsGroupList%}
+<a class="dcard x1" href='{{url.here}}/listgroup'>
+ <div class="statistic">
+  <div class="value"><i class="sf-th-list"></i></div>
+  <div class="label">{%trans "Sms group list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+
+{%block iSmsList%}
+<a class="dcard x1" href='{{url.here}}/choosemobile'>
+ <div class="statistic">
+  <div class="value"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Sms list"%}</div>
+ </div>
+</a>
+{%endblock%}

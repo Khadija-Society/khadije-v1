@@ -6,12 +6,10 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_pictogram('server');
+		\dash\data::page_pictogram('mail');
 
-		\dash\data::page_title(T_("Conversation"));
+		\dash\data::page_title("سامانه مدیریت هوشمند پیامک |‌ پیامرس");
 
-		\dash\data::badge_link(\dash\url::here());
-		\dash\data::badge_text(T_('Dashboard'));
 
 
 		$filterArray = [];

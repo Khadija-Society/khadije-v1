@@ -8,6 +8,9 @@ class controller
 	{
 		\dash\permission::access('smsAppSetting');
 
+		\dash\redirect::to(\dash\url::here(). '/conversation');
+
+
 		$child = \dash\url::child();
 
 		if($child && in_array($child, ['listsms']))
