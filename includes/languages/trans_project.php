@@ -268,7 +268,7 @@ class twigTransTerms
 	echo T_("Sms text");                                                              // Line 299
 	echo T_("Character");                                                             // Line 43
 	echo T_("Recommend");                                                             // Line 363
-	echo T_("Answer text");                                                           // Line 29
+	echo T_("Answer text");                                                           // Line 85
 	echo T_("Send");                                                                  // Line 132
 	echo T_("Skip");                                                                  // Line 38
 	echo T_("Send by gateway");                                                       // Line 104
@@ -300,13 +300,15 @@ class twigTransTerms
 
 	//-----------------------------------------------------content_smsapp/sidenav.html
 	echo T_("Manage sms");                                                            // Line 1
-	echo T_("SMS List");                                                              // Line 6
+	echo T_("Old SMS List");                                                          // Line 6
 
 	//-----------------------------------------------content_smsapp/force/display.html
 
 	//--------------------------------------------content_smsapp/settings/display.html
-	echo T_("Count tags");                                                            // Line 11
-	echo T_("Count answer");                                                          // Line 12
+	echo T_("Count tags");                                                            // Line 12
+	echo T_("Count answer");                                                          // Line 13
+	echo T_("Block Numbers");                                                         // Line 35
+	echo T_("Secret Numbers");                                                        // Line 44
 
 	//--------------------------------------------content_smsapp/addgroup/display.html
 	echo T_("Type");                                                                  // Line 22
@@ -383,11 +385,48 @@ class twigTransTerms
 	echo T_("Send chart");                                                            // Line 71
 
 	//-----------------------------------content_smsapp/conversation/view/display.html
-	echo T_("Edit profile");                                                          // Line 21
+	echo T_("Unblock mobile");                                                        // Line 25
+	echo T_("Block mobile");                                                          // Line 29
+	echo T_("Secret mobile");                                                         // Line 30
+	echo T_("Edit profile");                                                          // Line 36
 	echo T_("Archive");                                                               // Line 370
-	echo T_("Write text here ...");                                                   // Line 58
+	echo T_("Write text here ...");                                                   // Line 73
 
-	//------------------------------------content_smsapp/conversation/display-old.html
+	//----------------------------------------content_smsapp/conversation/display.html
+	echo T_("System status");                                                         // Line 35
+	echo T_("On");                                                                    // Line 210
+	echo T_("Off");                                                                   // Line 210
+	echo T_("Last connection");                                                       // Line 38
+	echo T_("Filter by start date and end date of sms");                              // Line 226
+	echo T_("Clear filter");                                                          // Line 120
+	echo T_("Apply");                                                                 // Line 122
+
+	//-----------------------------------------------content_smsapp/dashboard/chart.js
+	echo T_("Count Send and Receive sms per day in last month");                      // Line 26
+
+	//-------------------------------------------content_smsapp/dashboard/display.html
+
+	//------------------------------------------------content_smsapp/chat/display.html
+	echo T_("Date created");                                                          // Line 83
+	echo T_("Answer");                                                                // Line 301
+	echo T_("Group");                                                                 // Line 135
+	echo T_("Action");                                                                // Line 66
+	echo T_("View");                                                                  // Line 77
+	echo T_("No record exist!");                                                      // Line 244
+
+	//-------------------------------------------content_smsapp/editgroup/display.html
+	echo T_("Manage Block group");                                                    // Line 23
+	echo T_("Manage Secret group");                                                   // Line 25
+	echo T_("Add number to this group");                                              // Line 30
+	echo T_("Start date for detect answer");                                          // Line 70
+	echo T_("Update");                                                                // Line 37
+	echo T_("Editing ...");                                                           // Line 117
+	echo T_("Tags");                                                                  // Line 181
+	echo T_("Tag");                                                                   // Line 93
+	echo T_("Add tag manually to link tickets togethers");                            // Line 188
+	echo T_("Tag keywords...");                                                       // Line 189
+
+	//---------------------------------------------content_smsapp/listsms/display.html
 	echo T_("Maximum allowed to send today has been completed");                      // Line 40
 	echo T_("This time is a bad time, send sms in another time");                     // Line 43
 	echo T_("Recommend message group sorted");                                        // Line 58
@@ -401,43 +440,10 @@ class twigTransTerms
 	echo T_("Awaiting to send");                                                      // Line 184
 	echo T_("Waiting for sending by device");                                         // Line 194
 	echo T_("Sended by mobile");                                                      // Line 203
-	echo T_("On");                                                                    // Line 210
-	echo T_("Off");                                                                   // Line 210
-	echo T_("Filter by start date and end date of sms");                              // Line 226
 	echo T_("Filter by group");                                                       // Line 243
-	echo T_("Clear filter");                                                          // Line 120
-	echo T_("Apply");                                                                 // Line 122
 	echo T_("Advance");                                                               // Line 165
-	echo T_("Answer");                                                                // Line 301
 	echo T_("fromnumber");                                                            // Line 331
 	echo T_("Send to analyze");                                                       // Line 358
-	echo T_("Group");                                                                 // Line 135
-	echo T_("No record exist!");                                                      // Line 244
-
-	//----------------------------------------content_smsapp/conversation/display.html
-	echo T_("System status");                                                         // Line 35
-	echo T_("Last connection");                                                       // Line 38
-
-	//-----------------------------------------------content_smsapp/dashboard/chart.js
-	echo T_("Count Send and Receive sms per day in last month");                      // Line 26
-
-	//-------------------------------------------content_smsapp/dashboard/display.html
-
-	//------------------------------------------------content_smsapp/chat/display.html
-	echo T_("Date created");                                                          // Line 83
-	echo T_("Action");                                                                // Line 66
-	echo T_("View");                                                                  // Line 77
-
-	//-------------------------------------------content_smsapp/editgroup/display.html
-	echo T_("Start date for detect answer");                                          // Line 14
-	echo T_("Update");                                                                // Line 37
-	echo T_("Editing ...");                                                           // Line 61
-	echo T_("Tags");                                                                  // Line 125
-	echo T_("Tag");                                                                   // Line 93
-	echo T_("Add tag manually to link tickets togethers");                            // Line 132
-	echo T_("Tag keywords...");                                                       // Line 133
-
-	//---------------------------------------------content_smsapp/listsms/display.html
 
 	//-----------------------------------------content_smsapp/filtergroup/display.html
 	echo T_("You can add numbers to this filter so that if a text message from one of these numbers was received, enter this group directly.");// Line 7
