@@ -301,6 +301,7 @@ class twigTransTerms
 	//-----------------------------------------------------content_smsapp/sidenav.html
 	echo T_("Manage sms");                                                            // Line 1
 	echo T_("Old SMS List");                                                          // Line 6
+	echo T_("Old Dashboard");                                                         // Line 7
 
 	//-----------------------------------------------content_smsapp/force/display.html
 
@@ -359,7 +360,7 @@ class twigTransTerms
 	echo T_("Private");                                                               // Line 321
 
 	//----------------------------------------content_smsapp/report/sendchart/chart.js
-	echo T_("Count Send and Receive sms per day");                                    // Line 323
+	echo T_("Count Send and Receive sms per day");                                    // Line 459
 	echo T_("Send by panel");                                                         // Line 151
 
 	//------------------------------------content_smsapp/report/sendchart/display.html
@@ -374,12 +375,12 @@ class twigTransTerms
 	echo T_("Receive status");                                                        // Line 355
 
 	//---------------------------------------------content_smsapp/report/home/chart.js
-	echo T_("Send status chart");                                                     // Line 32
-	echo T_("Receive status chart");                                                  // Line 104
-	echo T_("Sms count group by recommend title");                                    // Line 178
-	echo T_("Recommended");                                                           // Line 220
-	echo T_("Sms count group by group title");                                        // Line 250
-	echo T_("Group chart");                                                           // Line 292
+	echo T_("Send status chart");                                                     // Line 69
+	echo T_("Receive status chart");                                                  // Line 165
+	echo T_("Sms count group by recommend title");                                    // Line 266
+	echo T_("Recommended");                                                           // Line 332
+	echo T_("Sms count group by group title");                                        // Line 362
+	echo T_("Group chart");                                                           // Line 427
 
 	//-----------------------------------------content_smsapp/report/home/display.html
 	echo T_("Send chart");                                                            // Line 71
