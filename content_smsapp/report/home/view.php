@@ -15,11 +15,13 @@ class view
 
 
 		$chart              = [];
-		$chart['master']    = \lib\app\sms::chart();
-		$chart['receive']   = \lib\app\sms\report::chart_receivestatus();
-		$chart['send']      = \lib\app\sms\report::chart_sendstatus();
-		$chart['recommend'] = \lib\app\sms\report::chart_recommend();
-		$chart['group']     = \lib\app\sms\report::chart_group();
+		// $chart['master']    = \lib\app\sms::chart();
+		// $chart['receive']   = \lib\app\sms\report::chart_receivestatus();
+
+
+		// $chart['send']      = \lib\app\sms\report::chart_sendstatus();
+		// $chart['recommend'] = \lib\app\sms\report::chart_recommend();
+		// $chart['group']     = \lib\app\sms\report::chart_group();
 
 
 		\dash\data::myChart($chart);

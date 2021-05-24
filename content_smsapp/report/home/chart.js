@@ -9,14 +9,48 @@ function chartDrawer()
 }
 
 
+function ajaxreport()
+{
+  // Chart
+var options = {
+  chart: {
+    type: 'spline',
+    events: {
+      load: getData
+    }
+  },
+  title: {
+    text: 'Live Bitcoin Price'
+  },
+  xAxis: {
+    type: 'datetime',
+  },
+  yAxis: {
+    title: {
+      text: 'Price (USD)'
+    }
+  },
+  legend: {
+    enabled: false
+  },
+  exporting: {
+    enabled: false
+  },
+  series: [{
+    name: 'Live Bitcoint Price [USD]',
+    data: []
+  }]
+};
+var chart = Highcharts.chart('container', options)
 
 
+}
 
 
 
 function sendstatuschart()
 {
-  Highcharts.chart('sendstatuschart',
+  SsmsappReportSendStatusChart = Highcharts.chart('sendstatuschart',
   {
     chart: {
       zoomType: 'x',
@@ -26,7 +60,10 @@ function sendstatuschart()
       plotBackgroundColor: null,
       plotBorderWidth: null,
       plotShadow: false,
-      type: 'pie'
+      type: 'pie',
+      events: {
+       load: getData_statusChart
+      }
     },
     title: {
       text: '{%trans "Send status chart"%}'
@@ -73,7 +110,8 @@ function sendstatuschart()
     {
       name: '{%trans "Send status"%}',
       allowPointSelect: true,
-      data: {{myChart.send | raw}},
+      // data: {{myChart.send | raw}},
+      data: [],
       tooltip: {
         valueSuffix: ' {%trans "Count"%}'
       },
@@ -86,9 +124,29 @@ function sendstatuschart()
 }
 
 
+
+// Data
+function getData_statusChart() {
+
+  fetch('{{url.this}}?getchart=sendstatus').then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    SsmsappReportSendStatusChart.addSeries({
+        name: '{%trans "Send status"%}',
+        allowPointSelect: true,
+        data: data,
+        tooltip: {
+        valueSuffix: ' {%trans "Count"%}'
+        },
+      showInLegend: true
+      })
+    });
+}
+
+
 function receivestatuschart()
 {
-  Highcharts.chart('receivestatuschart',
+  ReceiveStatusChartData = Highcharts.chart('receivestatuschart',
   {
     chart: {
       zoomType: 'x',
@@ -98,7 +156,10 @@ function receivestatuschart()
       plotBackgroundColor: null,
       plotBorderWidth: null,
       plotShadow: false,
-      type: 'pie'
+      type: 'pie',
+       events: {
+       load: getData_receiveStatus
+      }
     },
     title: {
       text: '{%trans "Receive status chart"%}'
@@ -145,7 +206,8 @@ function receivestatuschart()
     {
       name: '{%trans "Receive status"%}',
       allowPointSelect: true,
-      data: {{myChart.receive | raw}},
+      // data: {{myChart.receive | raw}},
+      data : [],
       tooltip: {
         valueSuffix: ' {%trans "Count"%}'
       },
@@ -159,10 +221,33 @@ function receivestatuschart()
 
 
 
+// Data
+function getData_receiveStatus() {
+
+  fetch('{{url.this}}?getchart=receivestatus').then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    ReceiveStatusChartData.addSeries(
+
+       {
+      name: '{%trans "Receive status"%}',
+      allowPointSelect: true,
+      // data: {{myChart.receive | raw}},
+        data: data,
+      tooltip: {
+        valueSuffix: ' {%trans "Count"%}'
+      },
+      showInLegend: true
+    })
+    });
+}
+
+
+
 
 function recommendchart()
 {
-  Highcharts.chart('recommendchart',
+  Chartrecommendchart = Highcharts.chart('recommendchart',
   {
     chart: {
       zoomType: 'x',
@@ -172,7 +257,10 @@ function recommendchart()
       plotBackgroundColor: null,
       plotBorderWidth: null,
       plotShadow: false,
-      type: 'pie'
+      type: 'pie',
+      events: {
+       load: getData_recommand
+      }
     },
     title: {
       text: '{%trans "Sms count group by recommend title"%}'
@@ -219,7 +307,7 @@ function recommendchart()
     {
       name: '{%trans "Recommended"%}',
       allowPointSelect: true,
-      data: {{myChart.recommend | raw}},
+      data: [],
       tooltip: {
         valueSuffix: ' {%trans "Count"%}'
       },
@@ -232,9 +320,30 @@ function recommendchart()
 }
 
 
+// Data
+function getData_recommand() {
+
+  fetch('{{url.this}}?getchart=recommend').then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    Chartrecommendchart.addSeries(
+
+      {
+      name: '{%trans "Recommended"%}',
+      allowPointSelect: true,
+      data: data,
+      tooltip: {
+        valueSuffix: ' {%trans "Count"%}'
+      },
+      showInLegend: true
+    })
+    });
+}
+
+
 function groupchart()
 {
-  Highcharts.chart('groupchart',
+  GroupChartData = Highcharts.chart('groupchart',
   {
     chart: {
       zoomType: 'x',
@@ -244,7 +353,10 @@ function groupchart()
       plotBackgroundColor: null,
       plotBorderWidth: null,
       plotShadow: false,
-      type: 'pie'
+      type: 'pie',
+       events: {
+       load: getData_group
+      }
     },
     title: {
       text: '{%trans "Sms count group by group title"%}'
@@ -291,7 +403,7 @@ function groupchart()
     {
       name: '{%trans "Group chart"%}',
       allowPointSelect: true,
-      data: {{myChart.group | raw}},
+      data: [],
       tooltip: {
         valueSuffix: ' {%trans "Count"%}'
       },
@@ -304,11 +416,32 @@ function groupchart()
 }
 
 
+// Data
+function getData_group() {
+
+  fetch('{{url.this}}?getchart=group').then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    GroupChartData.addSeries(
+{
+      name: '{%trans "Group chart"%}',
+      allowPointSelect: true,
+      data: data,
+      tooltip: {
+        valueSuffix: ' {%trans "Count"%}'
+      },
+      showInLegend: true
+    })
+    });
+}
+
+
+
 //-------------------------------------------------------------------------------------------------------
 function myChartProductPrice()
 {
 
-  Highcharts.chart('chartdiv',
+  MyChartCountYear =  Highcharts.chart('chartdiv',
   {
     chart:
     {
@@ -316,6 +449,9 @@ function myChartProductPrice()
       style:
       {
         fontFamily: 'IRANSans, Tahoma, sans-serif'
+      },
+       events: {
+       load: getData_count
       }
     },
     title:
@@ -324,7 +460,7 @@ function myChartProductPrice()
     },
      xAxis:
     [{
-        categories : {{myChart.master.categories | raw}},
+        categories : [],
         crosshair: true
     }],
     credits:
@@ -385,13 +521,13 @@ function myChartProductPrice()
     },
     series: [{
     name: '{%trans "Send by panel"%}',
-    data: {{myChart.master.sendpanel | raw}}
+    data: []
   },{
     name: '{%trans "Send"%}',
-    data: {{myChart.master.send | raw}}
+    data: []
   }, {
     name: '{%trans "Receive"%}',
-    data: {{myChart.master.receive | raw}}
+    data: []
   }],
 
 
@@ -400,3 +536,21 @@ function myChartProductPrice()
     _chart.renderer.image('{{service.logo}}', 10, 5, 30, 30).attr({class: 'chartServiceLogo'}).add();
   });
 }
+
+
+
+
+// Data
+function getData_count() {
+
+  fetch('{{url.this}}?getchart=count').then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    MyChartCountYear.addSeries({name: '{%trans "Send by panel"%}',data: data['sendpanel']});
+    MyChartCountYear.addSeries({name: '{%trans "Send"%}',data: data['send']});
+    MyChartCountYear.addSeries({name: '{%trans "Receive"%}',data: data['receive']});
+    MyChartCountYear.xAxis.push({categories : data.categories, crosshair: true});
+
+    });
+}
+
