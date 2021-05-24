@@ -26,7 +26,7 @@
     <div class="f">
         <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
         <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{{value.title}}</div>
-        <div class="cauto"><span class="badge rounded {%if isActive%}primary2{%else%}light{%endif%}">{{value.count | fitNumber}}</span></div>
+        <div class="cauto"><span class="badge rounded {%if isActive%}primary2{%else%}light{%endif%}" id="count_{{key}}">{{value.count | fitNumber}}</span></div>
     </div>
   </a>
 {%endfor%}
@@ -110,4 +110,17 @@
   <span class="c">{{dataFilter | raw }}</span>
   <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
 </p>
+{%endblock%}
+
+
+{%block foot_js%}
+<script type="text/javascript">
+  function chartDrawer()
+  {
+    fetch('{{url.this}}?calc=all').then(function(response) {return response.json()}).then(function(data){$("#count_all").text(fitNumber(data.all)); $("#count_awaiting").text(fitNumber(data.awaiting));});
+  }
+
+
+
+</script>
 {%endblock%}

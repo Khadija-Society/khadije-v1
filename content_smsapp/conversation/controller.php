@@ -8,6 +8,13 @@ class controller
 	{
 		\dash\permission::access('smsAppSetting');
 
+		if(\dash\request::get('calc') === 'all')
+		{
+			\dash\temp::set('calcRecord', true);
+			$result            = \content_smsapp\conversation\view::config();
+			\dash\code::jsonBoom($result);
+		}
+
 	}
 }
 ?>

@@ -175,7 +175,17 @@ class search
 			$and[] = " DATE(s_sms.datecreated) <=  DATE('$enddate') ";
 		}
 
+		if(isset($_args['get_count_all']) && $_args['get_count_all'])
+		{
+			$meta['get_count_all'] = true;
+		}
+
 		$list = \lib\db\conversation\search::list($and, $or, $order_sort, $meta);
+
+		if(isset($_args['get_count_all']) && $_args['get_count_all'])
+		{
+			return $list;
+		}
 
 		\dash\utility\pagination::np(($list ? true : false), self::$is_filtered);
 

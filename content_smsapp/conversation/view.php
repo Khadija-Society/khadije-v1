@@ -26,8 +26,17 @@ class view
 
 		$q = \dash\request::get('q');
 
+		if(\dash\temp::get('calcRecord'))
+		{
+			$args['get_count_all'] = true;
+		}
+
 		$list = \lib\app\conversation\search::list($q, $args);
 
+		if(\dash\temp::get('calcRecord'))
+		{
+			return $list;
+		}
 
 
 		$conversationStat = \lib\app\conversation\get::stat();

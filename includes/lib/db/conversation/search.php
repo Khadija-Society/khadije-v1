@@ -27,7 +27,49 @@ class search
 		}
 		else
 		{
+			$count_query  =
+			"
+				SELECT
+					COUNT(DISTINCT s_sms.mobile_id) AS `count`
+				FROM
+					s_sms
+				$q[join]
+				$q[where]
+			";
+
+			// $count = \dash\db::get($count_query, 'count', true);
 			$limit = \dash\db\mysql\tools\pagination::pagination_np($q['limit']);
+			// $limit = \dash\db\mysql\tools\pagination::pagination_query($count_query, $q['limit']);
+		}
+
+
+		if(isset($_meta['get_count_all']) && $_meta['get_count_all'])
+		{
+			$myCountResult = [];
+			$count_query  =
+			"
+				SELECT
+					COUNT(DISTINCT s_sms.mobile_id) AS `count`
+				FROM
+					s_sms
+				$q[join]
+				$q[where]
+			";
+
+			$myCountResult['awaiting'] = \dash\db::get($count_query, 'count', true);
+
+			$count_query  =
+			"
+				SELECT
+					COUNT(DISTINCT s_sms.mobile_id) AS `count`
+				FROM
+					s_sms
+				$q[join]
+			";
+
+			$myCountResult['all'] = \dash\db::get($count_query, 'count', true);
+
+			return $myCountResult;
 		}
 
 
@@ -53,6 +95,7 @@ class search
 		";
 
 		$result = \dash\db::get($query);
+
 
 
 
