@@ -56,7 +56,7 @@
 <a class="dcard x1">
  <div class="statistic">
   <div class="label mB10">{%trans "Answer time per min"%}</div>
-  <div class="value">{{answerTime.min | fitNumber}}</div>
+  <div class="value" id="myAnsertTimeMin">{{answerTime.min | fitNumber}}</div>
  </div>
 </a>
 {%endblock%}
@@ -79,7 +79,7 @@
 <a class="dcard x1">
  <div class="statistic">
   <div class="label mB10">{%trans "Answer time per hour"%}</div>
-  <div class="value">{{answerTime.hour | fitNumber(false)}}</div>
+  <div class="value" id="myAnsertTimeHour">{{answerTime.hour | fitNumber(false)}}</div>
  </div>
 </a>
 {%endblock%}

@@ -6,6 +6,9 @@ function chartDrawer()
 
   if($("#recommendchart").length == 1){recommendchart();}
   if($("#groupchart").length == 1){groupchart();}
+
+    fetch('{{url.this}}?mydata=ansertime').then(function(response) {return response.json()}).then(function(data){$("#myAnsertTimeHour").text(fitNumber(data.hour)); $("#myAnsertTimeMin").text(fitNumber(data.min));});
+
 }
 
 

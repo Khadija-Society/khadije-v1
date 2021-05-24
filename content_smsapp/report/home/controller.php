@@ -8,6 +8,15 @@ class controller
 
 		\dash\permission::access('smsAppSetting');
 
+
+
+		if(\dash\request::get('mydata') === 'ansertime')
+		{
+			$result = \lib\app\sms\report::answer_time();
+
+			\dash\code::jsonBoom($result);
+		}
+
 		if(\dash\request::get('getchart') === 'count')
 		{
 			$result = \lib\app\sms::chart();

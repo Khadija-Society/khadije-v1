@@ -119,8 +119,5 @@
   {
     fetch('{{url.this}}?calc=all').then(function(response) {return response.json()}).then(function(data){$("#count_all").text(fitNumber(data.all)); $("#count_awaiting").text(fitNumber(data.awaiting));});
   }
-
-
-
 </script>
 {%endblock%}

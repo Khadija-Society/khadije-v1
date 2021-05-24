@@ -10,21 +10,6 @@ class view
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_('Back to dashboard'));
 
-		$answer_time = \lib\app\sms\report::answer_time();
-		\dash\data::answerTime($answer_time);
-
-
-		$chart              = [];
-		// $chart['master']    = \lib\app\sms::chart();
-		// $chart['receive']   = \lib\app\sms\report::chart_receivestatus();
-
-
-		// $chart['send']      = \lib\app\sms\report::chart_sendstatus();
-		// $chart['recommend'] = \lib\app\sms\report::chart_recommend();
-		// $chart['group']     = \lib\app\sms\report::chart_group();
-
-
-		\dash\data::myChart($chart);
 
 	}
 }
