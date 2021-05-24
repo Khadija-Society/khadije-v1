@@ -48,7 +48,7 @@ class search
 				s_sms
 			$q[join]
 			$q[where]
-			-- ORDER BY s_sms.id DESC
+			ORDER BY 1 DESC
 			$limit
 		";
 

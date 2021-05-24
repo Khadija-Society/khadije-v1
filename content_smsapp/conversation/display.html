@@ -87,7 +87,12 @@
         </div>
         <div class="cauto fc-black txtB"> {{value.displayname}}</div>
         <div class="c fc-black txtB"> {{value.fromnumber | fitNumber('mobile')}}</div>
-        <div class="cauto fc-black"><span class="badge rounded primary">{{value.count | fitNumber}}</span></div>
+        <div class="cauto fc-black">
+
+          <span class="badge rounded primary">{{value.count | fitNumber}}</span>
+          <span class="ltr txtL"> {{value.lastdate | dt}}</span>
+
+        </div>
       </div>
       <div class="f">
         <div class="c fc-mute">{%if value.lastmessage == 'secret message' %}<i>{%trans "Private"%}</i>{%else%}{{value.lastmessage}}{%endif%} </div>
