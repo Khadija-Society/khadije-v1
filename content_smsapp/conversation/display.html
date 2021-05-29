@@ -117,7 +117,18 @@
 <script type="text/javascript">
   function chartDrawer()
   {
-    fetch('{{url.this}}?calc=all').then(function(response) {return response.json()}).then(function(data){$("#count_all").text(fitNumber(data.all)); $("#count_awaiting").text(fitNumber(data.awaiting));});
+    var myUrlCalc = '{{url.pwd | raw}}';
+
+
+    if(myUrlCalc.indexOf('?') === -1)
+    {
+      myUrlCalc = myUrlCalc + '?calc=all';
+    }
+    else
+    {
+      myUrlCalc = myUrlCalc + '&calc=all';
+    }
+    fetch(myUrlCalc).then(function(response) {return response.json()}).then(function(data){$("#count_all").text(fitNumber(data.all)); $("#count_awaiting").text(fitNumber(data.awaiting));});
   }
 </script>
 {%endblock%}
