@@ -45,7 +45,6 @@ class search
 
 		if(isset($_meta['get_count_all']) && $_meta['get_count_all'])
 		{
-			$myCountResult = [];
 			$count_query  =
 			"
 				SELECT
@@ -56,20 +55,9 @@ class search
 				$q[where]
 			";
 
-			$myCountResult['awaiting'] = \dash\db::get($count_query, 'count', true);
+			$result = \dash\db::get($count_query, 'count', true);
 
-			$count_query  =
-			"
-				SELECT
-					COUNT(DISTINCT s_sms.mobile_id) AS `count`
-				FROM
-					s_sms
-				$q[join]
-			";
-
-			$myCountResult['all'] = \dash\db::get($count_query, 'count', true);
-
-			return $myCountResult;
+			return $result;
 		}
 
 

@@ -29,6 +29,7 @@ class view
 		if(\dash\temp::get('calcRecord'))
 		{
 			$args['get_count_all'] = true;
+			$args['level']         = \dash\temp::get('calcRecordLevel');
 		}
 
 		$list = \lib\app\conversation\search::list($q, $args);

@@ -11,7 +11,14 @@ class controller
 		if(\dash\request::get('calc') === 'all')
 		{
 			\dash\temp::set('calcRecord', true);
-			$result            = \content_smsapp\conversation\view::config();
+
+			$result = [];
+			\dash\temp::set('calcRecordLevel', 'awaiting');
+			$result['awaiting']            = \content_smsapp\conversation\view::config();
+
+			\dash\temp::set('calcRecordLevel', 'all');
+			$result['all']            = \content_smsapp\conversation\view::config();
+
 			\dash\code::jsonBoom($result);
 		}
 
