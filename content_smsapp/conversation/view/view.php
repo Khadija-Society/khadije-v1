@@ -34,9 +34,11 @@ class view
 			$list = [];
 		}
 
-		$all_group_id = array_column($list, 'group_id');
-		$all_group_id = array_filter($all_group_id);
-		$all_group_id = array_unique($all_group_id);
+		$all_group_id     = array_column($list, 'group_id');
+		$all_recommend_id = array_column($list, 'recommend_id');
+		$all_group_id     = array_merge($all_group_id, $all_recommend_id);
+		$all_group_id     = array_filter($all_group_id);
+		$all_group_id     = array_unique($all_group_id);
 		if($all_group_id)
 		{
 			$all_group_id = array_map('intval', $all_group_id);

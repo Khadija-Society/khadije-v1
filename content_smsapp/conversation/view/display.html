@@ -89,9 +89,6 @@
   <div class="cbox mB5-f info2">
     <div class="f ">
       <div class="c"> <p>{{value.answertext | raw | nl2br}}</p></div>
-      {%if value.group_id  and allGroup[value.group_id]['title']%}
-      <div class="cauto txtL"><a href="{{url.here}}/editgroup?id={{value.group_id | coding('encode')}}"><span class=" mRa5 badge rounded secondary">{{allGroup[value.group_id]['title']}}</span></a></div>
-      {%endif%}
       <div class="cauto ltr txtL">{{value.dateanswer | dt}}</div>
     </div>
   </div>
@@ -99,6 +96,11 @@
   <div class="cbox mB5-f">
     <div class="f">
       <div class="c"> <p class="txtB">{%if isSecred%}<i class="fc-mute">{%trans "Private"%} </i> {%else%}<span class="fc-black">{{value.text | raw | nl2br}}{%endif%}</span></p></div>
+      {%if value.group_id  and allGroup[value.group_id]['title']%}
+      <div class="cauto txtL"><a href="{{url.here}}/editgroup?id={{value.group_id | coding('encode')}}"><span class=" mRa5 badge rounded secondary">{{allGroup[value.group_id]['title']}}</span></a></div>
+      {%elseif value.recommand_id  and allGroup[value.recommand_id]['title']%}
+      <div class="cauto txtL"><a href="{{url.here}}/editgroup?id={{value.recommand_id | coding('encode')}}"><span class=" mRa5 badge rounded secondary2">{{allGroup[value.recommand_id]['title']}}</span></a></div>
+      {%endif%}
       <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
 
     </div>
