@@ -33,7 +33,7 @@ class view
 		{
 			$list = [];
 		}
-
+		$load_all_group_keyword = [];
 		$all_group_id     = array_column($list, 'group_id');
 		$all_recommend_id = array_column($list, 'recommend_id');
 		$all_group_id     = array_merge($all_group_id, $all_recommend_id);
@@ -52,11 +52,42 @@ class view
 			// $load_all_group = array_map(['\\lib\\app\\smsgroup', 'ready'], $load_all_group);
 			$load_all_group = array_combine(array_column($load_all_group, 'id'), $load_all_group);
 			\dash\data::allGroup($load_all_group);
+
+			$load_all_group_keyword = \lib\db\smsgroupfilter::get(['group_id' => ['IN', "($all_group_id)"], 'type' => 'analyze']);
+		}
+
+		$all_group_keyword = [];
+		foreach ($load_all_group_keyword as $key => $value)
+		{
+			if(!isset($value['group_id']))
+			{
+				continue;
+			}
+
+			if(!isset($all_group_keyword[$value['group_id']]))
+			{
+				$all_group_keyword[$value['group_id']] = [];
+			}
+
+			$all_group_keyword[$value['group_id']][] = $value['text'];
 		}
 
 		if(a($list, 0, 'answertext'))
 		{
 			\dash\data::lockAnswer(true);
+		}
+
+
+		foreach ($list as $key => $value)
+		{
+			if(isset($value['group_id']) && isset($all_group_keyword[$value['group_id']]))
+			{
+				foreach ($all_group_keyword[$value['group_id']] as $word)
+				{
+					$red_word = '<span class="fc-red txtB"> '. $word. ' </span>';
+					$list[$key]['text'] = str_replace(' '. $word. ' ', $red_word, $list[$key]['text']);
+				}
+			}
 		}
 
 		\dash\data::dataTable($list);
