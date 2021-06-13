@@ -84,8 +84,8 @@ class view
 			{
 				foreach ($all_group_keyword[$value['group_id']] as $word)
 				{
-					$red_word = '<span class="fc-red txtB"> '. $word. ' </span>';
-					$list[$key]['text'] = str_replace(' '. $word. ' ', $red_word, $list[$key]['text']);
+					$red_word = '<span class="fc-red txtB">'. $word. '</span>';
+					$list[$key]['text'] = str_replace($word, $red_word, $list[$key]['text']);
 				}
 			}
 		}
