@@ -385,6 +385,14 @@ class newsms
 
 			if($answer)
 			{
+				if(strpos($answer, ':name:') !== false)
+				{
+					$user_displayname = \lib\db\conversation\search::get_one_user_displayname($insert['fromnumber']);
+
+					$answer = str_replace(':name:', $user_displayname, $answer);
+				}
+
+
 				$insert['answertext']      = $answer;
 				$insert['answertextcount'] = mb_strlen($answer);
 

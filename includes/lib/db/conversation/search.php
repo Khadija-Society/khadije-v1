@@ -237,6 +237,36 @@ class search
 	}
 
 
+	public static function get_one_user_displayname($_mobile)
+	{
+		$user_detail = \dash\db\users::get_by_mobile($_mobile);
+		if(isset($user_detail['id']))
+		{
+			if(isset($user_detail['displayname']) && $user_detail['displayname'])
+			{
+				return $user_detail['displayname'];
+			}
+
+			$user_id = $user_detail['id'];
+		}
+		else
+		{
+			return null;
+		}
+
+		$result   = [];
+		$result[] = ['user_id' => $user_id, 'mobile' => $_mobile, 'fromnumber' => $_mobile];
+
+		self::fill_displayname($result);
+
+		if(isset($result[0]['displayname']))
+		{
+			return $result[0]['displayname'];
+		}
+
+		return null;
+	}
+
 
 	private static function fill_displayname(&$result)
 	{
