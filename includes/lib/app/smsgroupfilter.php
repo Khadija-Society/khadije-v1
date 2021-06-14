@@ -186,6 +186,16 @@ class smsgroupfilter
 			\lib\db\smsgroupfilter::multi_remove_analyze($remove, $group_id);
 		}
 
+		$result = self::add_new_filter($group_id);
+		if($result && is_array($result))
+		{
+			$count = count($result);
+			$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
+			$result = implode(',', $result);
+			\lib\db\smsgroupfilter::update_old_record_filter($result, $group_id);
+			\dash\notif::info($msg);
+		}
+
 		// \dash\notif::ok(T_("Saved"));
 		return true;
 	}
