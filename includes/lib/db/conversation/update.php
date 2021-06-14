@@ -24,6 +24,26 @@ class update
 		";
 		\dash\db::query($query);
 
+		$date = date("Y-m-d H:i:s");
+		$query =
+		"
+			UPDATE
+				s_sms
+			SET
+				s_sms.group_id      = NULL,
+				s_sms.answertext    = NULL,
+				s_sms.sendstatus    = NULL,
+				s_sms.dateanswer    = '$date',
+				s_sms.receivestatus = 'skip'
+			WHERE
+				s_sms.fromnumber IN ('$_mobiles') AND
+				s_sms.receivestatus = 'awaiting' AND
+				s_sms.answertext IS NULL
+
+		";
+		\dash\db::query($query);
+
+
 		return true;
 
 	}
