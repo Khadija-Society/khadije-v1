@@ -57,6 +57,7 @@ class answer
 			return false;
 		}
 
+
 		if(isset($get_last_record_mobile['answertext']) && $get_last_record_mobile['answertext'])
 		{
 			\dash\notif::error(T_("Can not answer to this number"));
@@ -75,9 +76,9 @@ class answer
 			$update['dateanswer']      = date("Y-m-d H:i:s");
 			$update['receivestatus']   = 'answerready';
 
-			if($fromgateway === 'panel')
+			if($fromgateway === '10006660066600')
 			{
-				$post['receivestatus'] = 'sendtopanel';
+				$update['receivestatus'] = 'sendtopanel';
 			}
 
 			$update_record = \lib\db\conversation\update::record($update, $get_last_record_mobile['id']);

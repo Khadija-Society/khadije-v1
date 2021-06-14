@@ -134,8 +134,8 @@
   <label for="fromgateway">{%trans "Send by gateway"%}</label>
   <select name="fromgateway" class="select ui dropdown search mB10" id="fromgateway">
   <option value="0" readonly>{%trans "Please select one item"%} *</option>
-    <option value="sender">{{dataRow.togateway | fitNumber('mobile')}} <small>{%trans "From the sender"%}</small></option>
-    <option value="panel" selected>{{10006660066600 | fitNumber(false)}} <small>{%trans "From the sms panel"%}</small></option>
+    <option value="{{dataRow.togateway}}">{{dataRow.togateway | fitNumber('mobile')}} <small>{%trans "From the sender"%}</small></option>
+    <option value="10006660066600" selected>{{10006660066600 | fitNumber(false)}} <small>{%trans "From the sms panel"%}</small></option>
   </select>
 
 {%endblock%}
