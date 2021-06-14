@@ -60,12 +60,37 @@ class search
 			return $result;
 		}
 
+		// $view = "CREATE OR REPLACE VIEW view_s_sms AS SELECT * FROM s_sms ORDER BY s_sms.id DESC;";
+		// \dash\db::query($view);
+
+		// $query =
+		// "
+		// 	SELECT
+		// 		DISTINCT view_s_sms.mobile_id,
+		// 		-- s_sms.id,
+		// 		-- s_sms.user_id,
+		// 		NULL AS `fromnumber`,
+		// 		0 AS `count`,
+		// 		NULL AS `displayname`,
+		// 		NULL AS `gender`,
+		// 		NULL AS `avatar`,
+		// 		NULL AS `lastdate`,
+		// 		NULL AS `lastmessage`
+		// 	FROM
+		// 		view_s_sms
+		// 	$q[join]
+		// 	$q[where]
+		// 	-- ORDER BY 1 DESC
+		// 	$limit
+		// ";
+
 
 		$query =
 		"
 			SELECT
-				DISTINCT s_sms.mobile_id,
+				s_sms.mobile_id,
 				-- s_sms.id,
+				MAX(s_sms.id) AS `id`,
 				-- s_sms.user_id,
 				NULL AS `fromnumber`,
 				0 AS `count`,
@@ -78,12 +103,12 @@ class search
 				s_sms
 			$q[join]
 			$q[where]
-			ORDER BY 1 DESC
+			GROUP BY s_sms.mobile_id
+			ORDER BY `id` DESC
 			$limit
 		";
 
 		$result = \dash\db::get($query);
-
 
 
 
@@ -116,30 +141,40 @@ class search
 	}
 
 
-	private static $smsids = false;
-	public static function last_sms_ids($mobile_id)
+
+	private static function last_sms_ids($result)
 	{
-		if(!$mobile_id)
-		{
-			return 0;
-		}
-
-		if(self::$smsids === false)
-		{
-			$query = "SELECT MAX(s_sms.id) AS `id` FROM s_sms WHERE s_sms.mobile_id IN ($mobile_id) GROUP BY s_sms.mobile_id";
-			$result = \dash\db::get($query, 'id');
-			if(!is_array($result))
-			{
-				self::$smsid = 0;
-			}
-
-			$result = array_map('floatval', $result);
-
-			self::$smsids = implode(',', $result);
-		}
-
-		return self::$smsids;
+		$id = array_column($result, 'id');
+		$id = array_filter($id);
+		$id = array_values($id);
+		return implode(",", $id);
 	}
+
+
+	// private static $smsids = false;
+	// public static function last_sms_ids($result)
+	// {
+	// 	if(!$mobile_id)
+	// 	{
+	// 		return 0;
+	// 	}
+
+	// 	if(self::$smsids === false)
+	// 	{
+	// 		$query = "SELECT MAX(s_sms.id) AS `id` FROM s_sms WHERE s_sms.mobile_id IN ($mobile_id) GROUP BY s_sms.mobile_id";
+	// 		$result = \dash\db::get($query, 'id');
+	// 		if(!is_array($result))
+	// 		{
+	// 			self::$smsid = 0;
+	// 		}
+
+	// 		$result = array_map('floatval', $result);
+
+	// 		self::$smsids = implode(',', $result);
+	// 	}
+
+	// 	return self::$smsids;
+	// }
 
 
 	private static function fill_fromnumber(&$result)
@@ -183,7 +218,7 @@ class search
 			return;
 		}
 
-		$last_sms_ids = self::last_sms_ids($mobile_id);
+		$last_sms_ids = self::last_sms_ids($result);
 
 		$query = " SELECT s_sms.user_id, s_sms.mobile_id, s_sms.id	FROM s_sms	WHERE s_sms.id IN ($last_sms_ids) ";
 
@@ -486,7 +521,7 @@ class search
 	private static function fill_lastdate(&$result)
 	{
 		$mobile_id = self::mobile_id($result);
-		$smsid = self::last_sms_ids($mobile_id);
+		$smsid = self::last_sms_ids($result);
 
 		if(!$mobile_id)
 		{
@@ -533,7 +568,7 @@ class search
 	private static function fill_lastmessage(&$result)
 	{
 		$mobile_id = self::mobile_id($result);
-		$smsid = self::last_sms_ids($mobile_id);
+		$smsid = self::last_sms_ids($result);
 
 		if(!$mobile_id)
 		{
