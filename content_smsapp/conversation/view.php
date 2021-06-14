@@ -78,6 +78,9 @@ class view
 
 		\dash\data::dataTable($list);
 
+		$all_get = \dash\request::get();
+		unset($all_get['page']);
+		\dash\data::requestGETWithoutPage($all_get);
 
 
 	}

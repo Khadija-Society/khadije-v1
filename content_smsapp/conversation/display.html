@@ -46,7 +46,7 @@
       <form method="get" action='{{url.that}}' autocomplete="off">
         {%if requestGET.level%}<input type="hidden" name="level" value="{{requestGET.level}}">{%endif%}
         <div class="input">
-          <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off'>
+          <input type="tel" name="q" placeholder='{%trans "Sarch by mobile"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off' data-format='mobile-enter'>
           <button class="addon btn "><i class="sf-search"></i></button>
         </div>
       <h6 class="mT10">{%trans "Filter by start date and end date of sms"%}</h6>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="txtRa">
-        {%if requestGET%}
+        {%if requestGETWithoutPage%}
           <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
         {%endif%}
         <button class="btn primary2">{%trans "Apply"%}</button>
