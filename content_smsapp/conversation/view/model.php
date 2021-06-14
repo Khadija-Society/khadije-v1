@@ -35,8 +35,10 @@ class model
 			\lib\app\conversation\answer::set_answer($post, \dash\data::myMobile());
 			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
 
-
-			\dash\redirect::to(\dash\url::this());
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::to(\dash\url::this());
+			}
 
 			return;
 		}

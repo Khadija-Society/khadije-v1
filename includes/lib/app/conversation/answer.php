@@ -60,6 +60,42 @@ class answer
 
 		if(isset($get_last_record_mobile['answertext']) && $get_last_record_mobile['answertext'])
 		{
+			$insert_new_sms =
+			[
+				'fromnumber'            => null,
+				'togateway'             => null,
+				'fromgateway'           => null,
+				'text'                  => null,
+				'smscount'              => 0,
+				'tonumber'              => a($get_last_record_mobile, 'tonumber'),
+				'user_id'               => a($get_last_record_mobile, 'user_id'),
+				'date'                  => date("Y-m-d H:i:s"),
+				'datecreated'           => date("Y-m-d H:i:s"),
+				'datemodified'          => null,
+				'uniquecode'            => null,
+				'receivestatus'         => 'answerready',
+				'sendstatus'            => 'waitingtoautosend',
+				'amount'                => null,
+				'answertext'            => $answer,
+				'answertextcount'       => mb_strlen($answer),
+				'group_id'              => null,
+				'recommend_id'          => null,
+				'datereceive'           => null,
+				'dateanswer'            => date("Y-m-d H:i:s"),
+				'datesend'              => null,
+				'brand'                 => null,
+				'model'                 => null,
+				'simcartserial'         => null,
+				'smsmessageid'          => null,
+				'userdata'              => null,
+				'md5'                   => null,
+				'mobile_id'             => a($get_last_record_mobile, 'mobile_id'),
+				'conversation_answered' => 1,
+			];
+
+			// var_dump($insert_new_sms);exit;
+
+			// var_dump($get_last_record_mobile);exit;
 			\dash\notif::error(T_("Can not answer to this number"));
 			return false;
 		}
