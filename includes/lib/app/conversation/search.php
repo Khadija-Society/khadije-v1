@@ -122,6 +122,8 @@ class search
 				break;
 		}
 
+		$search_in_text = false;
+
 		if($_query_string && is_string($_query_string) && mb_strlen($_query_string) < 100)
 		{
 			if($isMobile = \dash\utility\filter::mobile($_query_string))
@@ -130,7 +132,10 @@ class search
 			}
 			else
 			{
-				$or[] = " s_sms.text LIKE '%$_query_string%' ";
+				// \dash\notif::warn(T_('Only mobile can be search'));
+				// $or[] = " s_sms.text LIKE '%$_query_string%' ";
+
+				// $search_in_text = true;
 			}
 
 
@@ -185,7 +190,7 @@ class search
 			$meta['get_count_all'] = true;
 		}
 
-		$list = \lib\db\conversation\search::list($and, $or, $order_sort, $meta);
+		$list = \lib\db\conversation\search::list($and, $or, $order_sort, $meta, $search_in_text);
 
 		if(isset($_args['get_count_all']) && $_args['get_count_all'])
 		{

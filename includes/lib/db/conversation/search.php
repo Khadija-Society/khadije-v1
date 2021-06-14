@@ -10,8 +10,21 @@ class search
 		return $_list;
 	}
 
-	public static function list($_and = [], $_or = [], $_order_sort = null, $_meta = [])
+	public static function list($_and = [], $_or = [], $_order_sort = null, $_meta = [], $_search_in_text = false)
 	{
+
+		$select_from = 's_sms';
+
+		if($_search_in_text)
+		{
+			$qq = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
+			// reset or
+			$_or = [];
+
+			$select_from = "(SELECT * FROM s_sms $qq[join] $qq[where]) AS `s_sms`";
+		}
+
+
 		$q = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
 
 		if($q['pagination'] === false)
@@ -100,7 +113,7 @@ class search
 				NULL AS `lastdate`,
 				NULL AS `lastmessage`
 			FROM
-				s_sms
+				$select_from
 			$q[join]
 			$q[where]
 			GROUP BY s_sms.mobile_id
