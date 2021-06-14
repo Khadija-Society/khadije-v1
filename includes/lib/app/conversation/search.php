@@ -128,9 +128,12 @@ class search
 			{
 				$or[] = " s_sms.fromnumber = '$isMobile' ";
 			}
+			else
+			{
+				$or[] = " s_sms.text LIKE '%$_query_string%' ";
+			}
 
-			$or[] = " s_sms.fromnumber LIKE '%$_query_string%' ";
-			$or[] = " s_sms.text LIKE '%$_query_string%' ";
+
 
 		}
 
