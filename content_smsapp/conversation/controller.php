@@ -19,6 +19,9 @@ class controller
 			\dash\temp::set('calcRecordLevel', 'all');
 			$result['all']            = \content_smsapp\conversation\view::config();
 
+
+			$result['answered']            = floatval($result['all']) - floatval($result['awaiting']);
+
 			\dash\code::jsonBoom($result);
 		}
 

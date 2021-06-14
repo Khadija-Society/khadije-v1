@@ -21,8 +21,9 @@
 
 {%block iPoof%}
 {%for key, value in myLinks%}
+
 {%set isActive = false%}{% if requestGET.level == key %}{%set isActive = true%}{%elseif  value.default and not requestGET.level%}{%set isActive = true%}{%endif%}
-  <a class="cbox mB5" href="{{url.that}}?level={{key}}">
+  <a class="cbox mB5" {%if not value.no_link%} href="{{url.that}}?level={{key}}" {%endif%}>
     <div class="f">
         <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
         <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{{value.title}}</div>
@@ -80,24 +81,26 @@
 {%if dataTable%}
   {%for key, value in dataTable%}
   <div class="cbox mB5-f">
-    <a href="{{url.this}}/view?mobile={{value.fromnumber}}">
-      <div class="f">
-        <div class="cauto">
-          <img class="avatar" src="{{value.avatar}}" alt="{{value.displayname}}">
-        </div>
-        <div class="cauto fc-black txtB"> {{value.displayname}}</div>
-        <div class="c fc-black txtB"> {{value.fromnumber | fitNumber('mobile')}}</div>
-        <div class="cauto fc-black">
+    <div class="f">
+      <div class="c">
+        <a href="{{url.this}}/view?mobile={{value.fromnumber}}">
 
+          <div class="cauto fc-black txtB"><img class="avatar" src="{{value.avatar}}" alt="{{value.displayname}}"> {{value.displayname}} {{value.fromnumber | fitNumber('mobile')}}</div>
+          <div class="c fc-black txtB"> </div>
+          <div class="c fc-mute">{%if value.lastmessage == 'secret message' %}<i>{%trans "Private"%}</i>{%else%}{{value.lastmessage}}{%endif%} </div>
+        </a>
+
+    </div>
+    <div class="cauto">
           <span class="badge rounded primary">{{value.count | fitNumber}}</span>
           <span class="ltr txtL"> {{value.lastdate | dt}}</span>
+          <div class="block mB10"></div>
+          <span class="cauto floatL txtL btn outline xs" data-ajaxify data-method='post' data-data='{"archive": "conversation", "mobile":"{{value.fromnumber}}"}'> <i class="sf-archive pRa5 fs12"></i> {%trans "Archive"%}</span>
 
-        </div>
-      </div>
-      <div class="f">
-        <div class="c fc-mute">{%if value.lastmessage == 'secret message' %}<i>{%trans "Private"%}</i>{%else%}{{value.lastmessage}}{%endif%} </div>
-      </div>
-    </a>
+    </div>
+
+    </div>
+
   </div>
   {%endfor%}
 {%endif%}
@@ -128,7 +131,7 @@
     {
       myUrlCalc = myUrlCalc + '&calc=all';
     }
-    fetch(myUrlCalc).then(function(response) {return response.json()}).then(function(data){$("#count_all").text(fitNumber(data.all)); $("#count_awaiting").text(fitNumber(data.awaiting));});
+    fetch(myUrlCalc).then(function(response) {return response.json()}).then(function(data){$("#count_all").text(fitNumber(data.all)); $("#count_answered").text(fitNumber(data.answered)); $("#count_awaiting").text(fitNumber(data.awaiting));});
   }
 </script>
 {%endblock%}

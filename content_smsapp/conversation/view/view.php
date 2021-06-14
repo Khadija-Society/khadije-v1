@@ -29,6 +29,9 @@ class view
 
 		$list = \lib\app\conversation\search::view($q, $args);
 
+
+		// var_dump($list);exit;
+
 		if(!is_array($list))
 		{
 			$list = [];

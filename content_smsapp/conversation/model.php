@@ -6,6 +6,14 @@ class model
 {
 	public static function post()
 	{
+		if(\dash\request::post('archive') === 'conversation')
+		{
+			\lib\app\conversation\edit::archive_conversation(\dash\request::post('mobile'));
+
+			\dash\redirect::pwd();
+
+			return;
+		}
 		$status = \dash\request::post('status');
 
 		if($status === 'change')
