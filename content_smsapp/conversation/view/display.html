@@ -92,6 +92,7 @@
     </div>
   </div>
   {%endif%}
+  {%if value.text%}
   <div class="cbox mB5-f">
     <div class="f">
       <div class="c"> <p class="txtB">{%if isSecred%}<i class="fc-mute">{%trans "Private"%} </i> {%else%}<span class="fc-black">{{value.text | raw | nl2br}}{%endif%}</span></p></div>
@@ -104,6 +105,7 @@
 
     </div>
   </div>
+  {%endif%}
 
 {%endfor%}
 

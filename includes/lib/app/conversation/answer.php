@@ -62,9 +62,9 @@ class answer
 		{
 			$insert_new_sms =
 			[
-				'fromnumber'            => null,
-				'togateway'             => null,
-				'fromgateway'           => null,
+				'fromnumber'            => a($get_last_record_mobile, 'fromnumber'),
+				'togateway'             => a($get_last_record_mobile, 'togateway'),
+				'fromgateway'           => a($get_last_record_mobile, 'fromgateway'),
 				'text'                  => null,
 				'smscount'              => 0,
 				'tonumber'              => a($get_last_record_mobile, 'tonumber'),
@@ -80,24 +80,35 @@ class answer
 				'answertextcount'       => mb_strlen($answer),
 				'group_id'              => null,
 				'recommend_id'          => null,
-				'datereceive'           => null,
+				'datereceive'           => a($get_last_record_mobile, 'datereceive'),
 				'dateanswer'            => date("Y-m-d H:i:s"),
 				'datesend'              => null,
-				'brand'                 => null,
-				'model'                 => null,
-				'simcartserial'         => null,
-				'smsmessageid'          => null,
-				'userdata'              => null,
-				'md5'                   => null,
+				'brand'                 => a($get_last_record_mobile, 'brand'),
+				'model'                 => a($get_last_record_mobile, 'model'),
+				'simcartserial'         => a($get_last_record_mobile, 'simcartserial'),
+				'smsmessageid'          => a($get_last_record_mobile, 'smsmessageid'),
+				'userdata'              => a($get_last_record_mobile, 'userdata'),
+				'md5'                   => a($get_last_record_mobile, 'md5'),
 				'mobile_id'             => a($get_last_record_mobile, 'mobile_id'),
 				'conversation_answered' => 1,
 			];
 
-			// var_dump($insert_new_sms);exit;
+			$insert_new_sms['group_id']        = $group_id;
+			$insert_new_sms['answertext']      = $answer;
+			$insert_new_sms['answertextcount'] = mb_strlen($answer);
+			$insert_new_sms['fromgateway']     = $fromgateway;
+			$insert_new_sms['sendstatus']      = 'awaiting';
+			$insert_new_sms['dateanswer']      = date("Y-m-d H:i:s");
+			$insert_new_sms['receivestatus']   = 'answerready';
 
-			// var_dump($get_last_record_mobile);exit;
-			\dash\notif::error(T_("Can not answer to this number"));
-			return false;
+			if($fromgateway === '10006660066600')
+			{
+				$insert_new_sms['receivestatus'] = 'sendtopanel';
+			}
+
+			\lib\db\sms::insert($insert_new_sms);
+
+
 		}
 		else
 		{
