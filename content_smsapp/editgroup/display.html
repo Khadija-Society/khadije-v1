@@ -84,6 +84,7 @@
         <input type="hidden" name="setanswer" value="1">
         <label for="itxt">{%trans "Answer text"%} <small class="fc-red">* {%trans "Require"%}</small></label>
         <textarea class="txt mB10" rows="5" name="text" required autofocus id="itxt">{{answerDataRow.text}}</textarea>
+        <div class="mT0-f mB10 fc-mute">اگر در متن پاسخ عبارت :name: وجود داشته باشد در هنگام پاسخ نام شخص جایگزین این عبارت خواهد شد.</div>
         <label for="asort">{%trans "Sort"%} </label>
         <div class="input">
           <input type="tel" name="asort" id="asort" value="{{myLastSort}}"  maxlength="10">
