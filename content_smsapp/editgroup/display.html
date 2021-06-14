@@ -62,7 +62,7 @@
 
 <div class="f justify-center">
 
-  <div class="c6 m8 s12">
+  <div class="c12 m8 s12 x8">
     <div class="cbox">
       <form method="post" autocomplete="off">
         {{block('ititle')}}
@@ -104,13 +104,15 @@
         <div class="msg {%if value.id == requestGET.aid%} primary2 {%endif%}">
 
           <p>
-            <b class="badge primary rounded">{{(key + 1) |fitNumber(false)}}</b>
+            <b class="badge info2 rounded">{{(key + 1) |fitNumber(false)}}</b>
           {{value.text |raw | nl2br}}
         </p>
           <div class="f">
             <div class="cauto"><div class="fc-red" data-confirm data-data='{"removeanswer": "{{value.id}}"}'>{%trans "Remove"%}</div></div>
             <div class="c"></div>
-            <div class="cauto"><b class="badge info2 rounded">{{value.sort |fitNumber(false)}}</b></div>
+            <div class="cauto"><b class="badge primary2 rounded">{%trans "Sort"%} {{value.sort |fitNumber(false)}}</b></div>
+            <div class="c"></div>
+            <div class="cauto"><b class="badge secondary2 rounded">{%trans "Count sms"%} {{((value.text | length ) / 70) | round(0, 'ceil') |fitNumber(false)}}</b></div>
             <div class="c"></div>
             <div class="cauto">
               {%if value.id == requestGET.aid%}
