@@ -174,15 +174,15 @@ class search
 
 		if($startdate && $enddate)
 		{
-			$and[] = " DATE(s_sms.datecreated) >= DATE('$startdate') AND DATE(s_sms.datecreated) <= DATE('$enddate')  ";
+			$and[] = " s_sms.datecreated >= '$startdate 00:00:00' AND s_sms.datecreated <= '$enddate 23:59:59'  ";
 		}
 		elseif($startdate)
 		{
-			$and[] = " DATE(s_sms.datecreated) >=  DATE('$startdate') ";
+			$and[] = " s_sms.datecreated >=  '$startdate 00:00:00' ";
 		}
 		elseif($enddate)
 		{
-			$and[] = " DATE(s_sms.datecreated) <=  DATE('$enddate') ";
+			$and[] = " s_sms.datecreated <=  '$enddate 23:59:59' ";
 		}
 
 		if(isset($_args['get_count_all']) && $_args['get_count_all'])
