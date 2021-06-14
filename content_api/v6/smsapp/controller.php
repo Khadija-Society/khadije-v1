@@ -140,7 +140,8 @@ class controller
 			'989357269759', // javad
 			'989127522690', // sobati
 			'989127510991', // khalili
-			'989195191378', // my son
+			'989123511113', // haram
+			// '989195191378', // my son
 		];
 
 		if(in_array($gateway, $check_allow_gateway))
