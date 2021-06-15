@@ -199,6 +199,9 @@ class sms
 		$result['shenasaee_shode']   = intval(\lib\db\sms::count_shenasaee_shode($_args));
 		$result['shenasaee_nashode'] = intval(\lib\db\sms::count_shenasaee_nashode($_args));
 
+		// $result['conversation_answered_ok']   = intval(\lib\db\sms::conversation_answered_ok($_args));
+		// $result['conversation_answered_nok'] = intval(\lib\db\sms::conversation_answered_nok($_args));
+
 		$count_recommend     = \lib\db\sms::count_recommend($_args);
 
 		if(is_array($count_recommend))

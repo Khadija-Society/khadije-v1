@@ -119,6 +119,8 @@ class sms
 		return $result;
 	}
 
+
+
 	public static function count_shenasaee_nashode($_where = null)
 	{
 		$q = null;
@@ -143,6 +145,55 @@ class sms
 		$result = \dash\db::get($query, 'count', true);
 		return $result;
 	}
+
+
+	public static function conversation_answered_ok($_where = null)
+	{
+		$q = null;
+		if($_where)
+		{
+			$q = ' AND '. \dash\db\config::make_where($_where);
+		}
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`
+			FROM
+				s_sms
+			WHERE
+				s_sms.conversation_answered = 1
+
+				$q
+				 -- shenasaee_nashode
+		";
+		$result = \dash\db::get($query, 'count', true);
+		return $result;
+
+	}
+
+	public static function conversation_answered_nok($_where = null)
+	{
+		$q = null;
+		if($_where)
+		{
+			$q = ' AND '. \dash\db\config::make_where($_where);
+		}
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`
+			FROM
+				s_sms
+			WHERE
+				s_sms.conversation_answered IS NULL
+
+				$q
+				 -- shenasaee_nashode
+		";
+		$result = \dash\db::get($query, 'count', true);
+		return $result;
+	}
+
 
 
 	public static function get_groupby_send($_gateway)
