@@ -39,7 +39,7 @@ class search
 
 		$meta['limit'] = 50;
 
-		$level = 'new';
+		$level = null;
 
 
 
