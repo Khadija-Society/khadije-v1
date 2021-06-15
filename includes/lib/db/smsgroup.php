@@ -31,7 +31,7 @@ class smsgroup
 			FROM
 				s_group
 			WHERE
-				s_group.status = 'enable' AND
+				s_group.status IN ('enable', 'disable') AND
 				s_group.type = 'other'
 			ORDER BY s_group.sort ASC
 		";

@@ -11,6 +11,7 @@
           <th class="collapsing">{%trans "Sort"%}</th>
           <th class="collapsing">{%trans "Count tags"%}</th>
           <th class="collapsing">{%trans "Count answer"%}</th>
+          <th class="collapsing">{%trans "Status"%}</th>
 
         </tr>
       </thead>
@@ -21,6 +22,7 @@
           <td class="collapsing">{{value.sort | fitNumber}}</td>
           <td class="collapsing">{{value.count_tag | fitNumber}}</td>
           <td class="collapsing">{{value.count_answer | fitNumber}}</td>
+          <td class="collapsing">{%set myStatus = value.status%}{%trans myStatus%}</td>
         </tr>
         {%endfor%}
       </tbody>
