@@ -59,10 +59,6 @@ class search
 				self::$is_filtered = true;
 				break;
 
-			case 'awaiting':
-				$and[] = " s_sms.conversation_answered  IS NULL ";
-				self::$is_filtered = true;
-				break;
 
 
 			// case 'unknown':
@@ -112,11 +108,16 @@ class search
 
 			case 'new':
 			// case 'awaiting':
-			default:
 				$and[] = " s_sms.receivestatus  = 'awaiting' ";
 				$and[] = " s_sms.recommend_id  IS NULL ";
 				$and[] = " s_sms.group_id  IS NULL ";
 				$and[] = " s_sms.answertext  IS NULL ";
+				$and[] = " s_sms.conversation_answered  IS NULL ";
+				self::$is_filtered = true;
+				break;
+
+			default:
+			case 'awaiting':
 				$and[] = " s_sms.conversation_answered  IS NULL ";
 				self::$is_filtered = true;
 				break;
