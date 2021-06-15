@@ -118,7 +118,7 @@ class search
 
 			default:
 			case 'awaiting':
-				$and[] = " s_sms.conversation_answered  IS NULL ";
+				$and[] = " s_sms.conversation_answered  IS NULL AND s_sms.answertext IS NULL ";
 				self::$is_filtered = true;
 				break;
 		}
