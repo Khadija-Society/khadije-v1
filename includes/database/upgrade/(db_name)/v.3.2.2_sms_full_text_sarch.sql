@@ -1,0 +1,1 @@
+ALTER TABLE `s_sms` ADD FULLTEXT `s_sms_full_text_search` (`text`);

@@ -134,7 +134,9 @@ class search
 			else
 			{
 				// \dash\notif::warn(T_('Only mobile can be search'));
-				$or[] = " s_sms.text LIKE '%$_query_string%' ";
+				// $or[] = " s_sms.text LIKE '%$_query_string%' ";
+				$or[] = " MATCH (s_sms.text) against ('%$_query_string%' IN boolean mode) ";
+				// $or[] = " MATCH (s_sms.text) against ('%$_query_string%'  WITH QUERY EXPANSION) ";
 
 				// $search_in_text = true;
 			}
