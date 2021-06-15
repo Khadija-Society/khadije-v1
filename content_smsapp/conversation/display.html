@@ -44,10 +44,10 @@
 <div class="cbox fs12">
 <div class="f">
   <div class="c">
-      <form method="get" action='{{url.that}}' autocomplete="off">
+      <form method="get" action='{{url.that}}' autocomplete="off" data-timeout="0">
         {%if requestGET.level%}<input type="hidden" name="level" value="{{requestGET.level}}">{%endif%}
         <div class="input">
-          <input type="tel" name="q" placeholder='{%trans "Sarch by mobile"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off' data-format='mobile-enter'>
+          <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off' >
           <button class="addon btn "><i class="sf-search"></i></button>
         </div>
       <h6 class="mT10">{%trans "Filter by start date and end date of sms"%}</h6>

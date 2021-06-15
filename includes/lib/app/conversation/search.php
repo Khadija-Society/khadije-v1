@@ -133,7 +133,7 @@ class search
 			else
 			{
 				// \dash\notif::warn(T_('Only mobile can be search'));
-				// $or[] = " s_sms.text LIKE '%$_query_string%' ";
+				$or[] = " s_sms.text LIKE '%$_query_string%' ";
 
 				// $search_in_text = true;
 			}
