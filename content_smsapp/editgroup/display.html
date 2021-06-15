@@ -73,8 +73,17 @@
           </div>
           {{block('itag')}}
           {{block('istatus')}}
-           <div class="txtL">
-             <button class="btn primary">{%trans "Update"%}</button>
+          <div class="mB20"></div>
+           <div class="f">
+            <div class="cauto">
+              {%if stringTagList%}
+                <div class="btn secondary2 outline" data-ajaxify data-data='{"analyze":"group"}' data-method='post'>آنالیز همه پیامک‌های پاسخ داده نشده با فیلتر این گروه</div>
+                {%endif%}
+            </div>
+            <div class="c"></div>
+            <div class="cauto">
+              <button class="btn primary">{%trans "Update"%}</button>
+            </div>
            </div>
       </form>
     </div>
@@ -194,6 +203,7 @@
     </div>
     <div class="tagBox"></div>
   </div>
+
 
 
 {% endblock %}

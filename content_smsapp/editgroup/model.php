@@ -6,6 +6,16 @@ class model
 {
 	public static function post()
 	{
+		if(\dash\request::post('analyze') === 'group')
+		{
+			\lib\app\smsgroupfilter::add_new_filter(\dash\coding::decode(\dash\data::myId()));
+			\dash\notif::ok('درخواست انجام شد');
+			\dash\redirect::pwd();
+
+			return;
+		}
+
+
 		if(\dash\permission::supervisor() && \dash\request::post('delete') === 'delete' && \dash\data::myId())
 		{
 			\lib\app\smsgroup::remove(\dash\data::myId());

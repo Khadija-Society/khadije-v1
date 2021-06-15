@@ -254,6 +254,7 @@ class sms
 			WHERE
 				s_sms.sendstatus IS NULL AND
 				s_sms.group_id IS NULL AND
+				s_sms.answertext IS NULL AND
 				(s_sms.text LIKE '%$words%')
 				AND
 				(s_sms.text NOT LIKE '%$notwords%')

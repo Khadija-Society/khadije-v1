@@ -98,10 +98,16 @@ class smsgroupfilter
 	}
 
 
-	private static function add_new_filter($_group_id)
+	public static function add_new_filter($_group_id)
 	{
 		$get_words = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'group_id' => $_group_id]);
+		if(!$get_words)
+		{
+			return false;
+		}
 		$get_not_words = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'group_id' => [" != ", " $_group_id " ]]);
+
+
 		if(is_array($get_words) && is_array($get_not_words))
 		{
 			$get_words     = array_column($get_words, 'text');
