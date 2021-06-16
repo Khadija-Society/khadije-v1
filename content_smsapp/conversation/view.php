@@ -25,6 +25,11 @@ class view
 			'group_id'   => \dash\request::get('group_id'),
 		];
 
+		if(array_key_exists('group_id', $_GET) && !\dash\request::get('group_id'))
+		{
+			$args['group_id'] = false;
+		}
+
 		$q = \dash\request::get('q');
 
 		if(\dash\temp::get('calcRecord'))

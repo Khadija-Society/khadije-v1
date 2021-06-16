@@ -75,11 +75,13 @@
 </div>
 
 {%for key, value in currentStatInGroup%}
+{%set myGroupID%}{{value.group_id | coding('encode')}}{%endset%}
+{%set isActive = false%}{% if requestGET.group_id == myGroupID %}{%set isActive = true%}{%endif%}
 
-  <a class="cbox mB5"  href="{{url.that}}?group_id={{value.group_id | coding('encode')}}" >
+  <a class="cbox mB5"  href="{{url.that}}?group_id={{myGroupID}}" >
     <div class="f">
         <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
-        <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{{value.title}}</div>
+        <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{%if value.title%}{{value.title}}{%else%}بدون گروه{%endif%}</div>
         <div class="cauto"><span class="badge rounded {%if isActive%}primary2{%else%}light{%endif%}" id="count_{{key}}">{{value.count | fitNumber}}</span></div>
     </div>
   </a>

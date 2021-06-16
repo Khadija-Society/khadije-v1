@@ -49,6 +49,10 @@ class search
 				$and['group_id'] = " s_sms.group_id = $group_id ";
 			}
 		}
+		elseif (a($_args, 'group_id') === false)
+		{
+			$and['group_id'] = " s_sms.group_id IS NULL ";
+		}
 
 
 		$level = null;
