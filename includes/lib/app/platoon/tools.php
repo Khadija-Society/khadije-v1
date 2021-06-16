@@ -21,13 +21,13 @@ class tools
 			'platoon' => '1',
 		];
 
-		$list[] =
-		[
-			'title'   => 'آستان مقدس',
-			'avatar'  => 'https://qhkarimeh.ir/enterprise/qhkarimeh/images/logo.png',
-			'mobile'  => '989123511113', // haram
-			'platoon' => '2',
-		];
+		// $list[] =
+		// [
+		// 	'title'   => 'آستان مقدس',
+		// 	'avatar'  => 'https://qhkarimeh.ir/enterprise/qhkarimeh/images/logo.png',
+		// 	'mobile'  => '989123511113', // haram
+		// 	'platoon' => '2',
+		// ];
 
 		return $list;
 	}

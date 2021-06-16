@@ -1,6 +1,8 @@
   {%if requestGET.platoon%}
+  {%if platoonList | length > 1%}
   <li><a href="{{url.here}}"><img class="avatar" src="{{platoonCurrentDetail.avatar}}"> <span class="txtB mLa5">{{platoonCurrentDetail.title}}</span> <i class='sf-exchange floatL'></i></a></li>
   <hr>
+  {%endif%}
 
   <li><a href="{{url.here}}{{platoonGet}}"><i class='sf-mail'></i> <span>{% trans "Manage sms" %}</span></a></li>
 

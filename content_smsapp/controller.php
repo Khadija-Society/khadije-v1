@@ -44,6 +44,8 @@ class controller
 		\dash\data::platoonGet('?platoon='. \dash\request::get('platoon'));
 		\dash\data::platoonGetAnd('&platoon='. \dash\request::get('platoon'));
 		\dash\data::platoonGetJson(',"platoon":"'. \dash\request::get('platoon').'"');
+
+		\dash\data::platoonList(\lib\app\platoon\tools::list());
 	}
 
 

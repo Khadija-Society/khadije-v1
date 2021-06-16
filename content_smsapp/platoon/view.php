@@ -17,6 +17,11 @@ class view
 		$platoonList = \lib\app\platoon\tools::list();
 		\dash\data::platoonList($platoonList);
 
+		if(is_array($platoonList) && count($platoonList) === 1 && isset($platoonList[0]['mobile']))
+		{
+			\dash\redirect::to(\dash\url::here(). '/conversation?platoon='. $platoonList[0]['mobile']);
+		}
+
 
 
 	}
