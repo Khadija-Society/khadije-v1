@@ -221,8 +221,14 @@ class search
 		$count_group_by = \lib\db\conversation\search::count_group_by_group_id($and, $or, $order_sort, $meta, $search_in_text);
 		\dash\temp::set('currentStatInGroup', $count_group_by);
 
-
-		\dash\utility\pagination::np(($list ? true : false), self::$is_filtered);
+		if(is_array($list) && count($list) < $meta['limit'])
+		{
+			// needless to limit
+		}
+		else
+		{
+			\dash\utility\pagination::np(($list ? true : false), self::$is_filtered);
+		}
 
 		$list = array_map(['\\dash\\app', 'fix_avatar'], $list);
 
