@@ -50,7 +50,7 @@ class update
 
 	}
 
-	public static function archive_conversation($_mobile)
+	public static function archive_conversation($_mobile, $_platoon)
 	{
 		$date = date("Y-m-d H:i:s");
 		$query =
@@ -65,6 +65,7 @@ class update
 				s_sms.receivestatus = 'skip'
 			WHERE
 				s_sms.fromnumber    = '$_mobile' AND
+				s_sms.platoon = '$_platoon' AND
 				s_sms.receivestatus = 'awaiting'
 
 		";
@@ -78,6 +79,7 @@ class update
 				s_sms.conversation_answered = 1
 			WHERE
 				s_sms.fromnumber = '$_mobile' AND
+				s_sms.platoon = '$_platoon' AND
 				s_sms.conversation_answered IS NULL
 
 		";
@@ -93,16 +95,6 @@ class update
 		return \dash\db\config::public_update('s_sms', ...func_get_args());
 	}
 
-	public static function stat()
-	{
 
-		$result = [];
-
-		return $result;
-		$result['all']      = floatval(\lib\db\conversation\get::count_all());
-		$result['awaiting'] = floatval(\lib\db\conversation\get::count_awaiting());
-		$result['answered'] = floatval(\lib\db\conversation\get::count_answered());
-
-	}
 }
 ?>

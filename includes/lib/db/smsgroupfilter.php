@@ -48,7 +48,7 @@ class smsgroupfilter
 		return $result;
 	}
 
-	public static function have_old_record_filter($_group_id)
+	public static function have_old_record_filter($_group_id, $_platoon)
 	{
 		$query  =
 		"
@@ -57,6 +57,7 @@ class smsgroupfilter
 			FROM
 				s_sms
 			WHERE
+				s_sms.platoon = '$_platoon' AND
 				s_sms.group_id IS NULL AND
 				s_sms.fromnumber IN (SELECT s_groupfilter.number FROM s_groupfilter WHERE s_groupfilter.group_id = $_group_id)
 		";
@@ -65,7 +66,7 @@ class smsgroupfilter
 		return $result;
 	}
 
-	public static function update_old_record_filter($_id, $_group_id)
+	public static function update_old_record_filter($_id, $_group_id, $_platoon)
 	{
 		$query  =
 		"
@@ -76,6 +77,7 @@ class smsgroupfilter
 				s_sms.receivestatus = 'block',
 				s_sms.recommend_id  = NULL
 			WHERE
+				s_sms.platoon = '$_platoon' AND
 				s_sms.id IN ($_id)
 		";
 
@@ -101,23 +103,6 @@ class smsgroupfilter
 	}
 
 
-	public static function not_in_another($_text, $_group_id)
-	{
-		$query  =
-		"
-			SELECT
-				*
-			FROM
-				s_groupfilter
-			WHERE
-				s_groupfilter.type = 'analyze' AND
-				s_groupfilter.group_id != $_group_id AND
-				s_groupfilter.text IN $_text
-			LIMIT 1
-		";
-		$result = \dash\db::get($query, null, true);
-		return $result;
-	}
 
 
 	public static function multi_remove_analyze($_analye, $_group_id, $_platoon)

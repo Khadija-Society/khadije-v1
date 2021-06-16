@@ -105,7 +105,7 @@ class view
 			\dash\data::needArchive(true);
 		}
 
-		$smsgroup = \lib\db\smsgroup::get_answering_group();
+		$smsgroup = \lib\db\smsgroup::get_answering_group(\lib\app\platoon\tools::get_index_locked());
 
 		\dash\data::groupList($smsgroup);
 

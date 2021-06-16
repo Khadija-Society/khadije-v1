@@ -56,7 +56,7 @@ class answer
 		}
 
 
-		$get_last_record_mobile = \lib\db\conversation\get::last_record_mobile($_mobile);
+		$get_last_record_mobile = \lib\db\conversation\get::last_record_mobile($_mobile, \lib\app\platoon\tools::get_index_locked());
 
 		if(!isset($get_last_record_mobile['id']))
 		{

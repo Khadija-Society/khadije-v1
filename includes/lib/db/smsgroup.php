@@ -4,17 +4,11 @@ namespace lib\db;
 
 class smsgroup
 {
-	public static function list_analyze_group()
-	{
-		$query  = "SELECT * FROM s_group WHERE s_group.analyze = 1 AND s_group.status = 'enable' AND s_group.type = 'other' ";
-		$result = \dash\db::get($query);
-		return $result;
-	}
 
 
-	public static function get_answering_group()
+	public static function get_answering_group($_platoon)
 	{
-		$query  = "SELECT DISTINCT s_group.* FROM s_group LEFT JOIN s_groupfilter ON s_groupfilter.group_id = s_group.id  WHERE s_group.status = 'enable' AND s_groupfilter.type = 'answer' AND s_group.type = 'other'   ";
+		$query  = "SELECT DISTINCT s_group.* FROM s_group LEFT JOIN s_groupfilter ON s_groupfilter.group_id = s_group.id  WHERE s_group.status = 'enable' AND s_sms.platoon = '$_platoon' AND s_groupfilter.type = 'answer' AND s_group.type = 'other'   ";
 		$result = \dash\db::get($query);
 		return $result;
 	}
@@ -125,14 +119,6 @@ class smsgroup
 	}
 
 
-	public static function update_group_count($_id)
-	{
-		$count = \dash\db::get("SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.group_id = $_id" , 'count', true);
-		if($count && is_numeric($count))
-		{
-			$query = "UPDATE s_group SET s_group.count = $count WHERE s_group.id = $_id LIMIT 1";
-			\dash\db::query($query);
-		}
-	}
+
 }
 ?>

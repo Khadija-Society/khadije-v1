@@ -68,13 +68,13 @@ class smsgroupfilter
 		{
 			if(isset($args['type']) && $args['type'] === 'number' && isset($args['group_id']))
 			{
-				$result = \lib\db\smsgroupfilter::have_old_record_filter($args['group_id']);
+				$result = \lib\db\smsgroupfilter::have_old_record_filter($args['group_id'], \lib\app\platoon\tools::get_index_locked());
 				if($result && is_array($result))
 				{
 					$count = count($result);
 					$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
 					$result = implode(',', $result);
-					\lib\db\smsgroupfilter::update_old_record_filter($result, $args['group_id']);
+					\lib\db\smsgroupfilter::update_old_record_filter($result, $args['group_id'], \lib\app\platoon\tools::get_index_locked());
 					\dash\notif::info($msg);
 				}
 			}

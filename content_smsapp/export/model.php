@@ -72,7 +72,7 @@ class model
 
 		if(\dash\request::post('export'))
 		{
-			$data = \lib\db\sms::export_mobile($startdate, $enddate, \dash\request::post('q'), \dash\request::post('onlymobile'), $mobile);
+			$data = \lib\db\sms::export_mobile($startdate, $enddate, \dash\request::post('q'), \dash\request::post('onlymobile'), $mobile, \lib\app\platoon\tools::get_index_locked());
 			if($data === false)
 			{
 				return false;

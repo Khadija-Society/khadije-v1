@@ -19,7 +19,7 @@ class sms
 
 
 
-	public static function export_mobile($_startdate, $_enddate, $_q, $_only_mobile, $_mobile)
+	public static function export_mobile($_startdate, $_enddate, $_q, $_only_mobile, $_mobile, $_platoon)
 	{
 		$start = null;
 		if($_startdate)
@@ -52,6 +52,8 @@ class sms
 		{
 			$q.= " AND (s_sms.fromnumber = '$_mobile')";
 		}
+
+		$q .= " AND s_sms.platoon = '$_platoon' ";
 
 		$where_query = " FROM s_sms WHERE s_sms.receivestatus != 'block' $start $end $q ";
 
@@ -86,12 +88,7 @@ class sms
 		return $result;
 	}
 
-	public static function removeAll($_gateway)
-	{
-		$query = "DELETE FROM s_sms WHERE s_sms.togateway = '$_gateway' ";
-		$result = \dash\db::query($query);
-		return $result;
-	}
+
 
 	public static function count_shenasaee_shode($_where = null)
 	{
@@ -370,68 +367,8 @@ class sms
 		return $result;
 	}
 
-	public static function get_last_message_text($_fromnumber)
-	{
-
-		$query =
-		"
-			SELECT
-				s_sms.text AS `text`,
-				s_sms.answertext AS `answertext`,
-				s_sms.fromnumber
-			FROM
-				s_sms
-			WHERE
-				s_sms.fromnumber IN ($_fromnumber)
-			ORDER BY s_sms.id DESC
 
 
-		";
-		j($query);
-
-		$result = \dash\db::get($query);
-		return $result;
-	}
-
-
-
-
-
-
-
-
-	public static function get_chat_list()
-	{
-		$p_query =
-		"
-			SELECT
-				COUNT(*) AS `count`
-			FROM
-				s_sms
-			GROUP BY
-				s_sms.fromnumber
-		";
-
-		$pagination = \dash\db::pagination_query($p_query);
-
-		$query =
-		"
-			SELECT
-				COUNT(*) AS `count`,
-				-- (select s_sms.text FROM s_sms where s_sms.id = MAX(s_sms.id)) AS `last_msg`,
-				s_sms.fromnumber
-			FROM
-				s_sms
-
-			GROUP BY s_sms.fromnumber
-			ORDER BY max(s_sms.id) DESC
-			$pagination
-		";
-
-		$result = \dash\db::get($query);
-
-		return $result;
-	}
 
 
 
@@ -442,15 +379,6 @@ class sms
 		$result = \dash\db::get($query, 'count', true);
 		return $result;
 	}
-
-	public static function get_last_sms_answered_in_5_min($_fromnumber)
-	{
-		$date_5_min = date("Y-m-d H:i:s", (time() - (60*5)));
-		$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' AND s_sms.datecreated > '$date_5_min' AND s_sms.answertext IS NOT NULL ";
-		$result = \dash\db::get($query, 'count', true);
-		return $result;
-	}
-
 
 
 

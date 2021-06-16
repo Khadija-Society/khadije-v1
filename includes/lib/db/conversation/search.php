@@ -38,48 +38,7 @@ class search
 
 	}
 
-	public static function count_group_by_group_id_old($_and = [], $_or = [], $_order_sort = null, $_meta = [])
-	{
-		$q      = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
-		$query  = "SELECT COUNT(*) AS `count`, s_sms.group_id FROM s_sms $q[join] $q[where] GROUP BY s_sms.group_id	";
-		$result = \dash\db::get($query);
 
-		if(!is_array($result))
-		{
-			$result = [];
-		}
-
-		$all_group_id = array_column($result, 'group_id');
-		$all_group_id = array_filter($all_group_id);
-		$all_group_id = array_unique($all_group_id);
-		$all_group_id = array_map('floatval', $all_group_id);
-
-		$group = [];
-		if($all_group_id)
-		{
-			$all_group_id = implode(',', $all_group_id);
-
-			$query  = "SELECT * FROM s_group WHERE s_group.id IN ($all_group_id)";
-			$group = \dash\db::get($query);
-			if(!is_array($group))
-			{
-				$group = [];
-			}
-
-			$group = array_combine(array_column($group, 'id'), $group);
-		}
-		foreach ($result as $key => $value)
-		{
-			if(isset($value['group_id']) && isset($group[$value['group_id']]['title']))
-			{
-				$result[$key]['title'] = $group[$value['group_id']]['title'];
-			}
-		}
-
-
-		return $result;
-
-	}
 
 	public static function list($_and = [], $_or = [], $_order_sort = null, $_meta = [], $_search_in_text = false)
 	{
