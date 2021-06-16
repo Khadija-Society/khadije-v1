@@ -35,7 +35,7 @@
         <div class="msg f pA5-f">
           <div class="cauto"><b class="txtB">{{value.number | fitNumber(false)}}</b></div>
           <div class="c"></div>
-          <div class="cauto"><div data-ajaxify data-method='post' data-data='{"removeanswer": "{{value.id}}"}'><i class="sf-times fc-red"></i></div></div>
+          <div class="cauto"><div data-ajaxify data-method='post' data-data='{"removeanswer": "{{value.id}}" {{platoonGetJson}}}'><i class="sf-times fc-red"></i></div></div>
         </div>
         {%endfor%}
     </div>

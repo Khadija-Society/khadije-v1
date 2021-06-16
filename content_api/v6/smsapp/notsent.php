@@ -38,6 +38,7 @@ class notsent
 		$get_args =
 		[
 			'sendstatus'   => 'sendtodevice',
+			's_sms.platoon'      => \lib\app\platoon\tools::get_index_locked(),
 			// 'togateway' => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			'fromgateway'  => \dash\utility\filter::mobile(\dash\header::get('gateway')),
 			'limit'        => 10

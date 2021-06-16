@@ -18,7 +18,7 @@
       <tbody>
         {%for key, value in dataTable%}
         <tr>
-          <td class=""> <a class="txtB" href="{{url.here}}/editgroup?id={{value.id}}"> <i class="sf-edit"></i> <b class="">{{value.title}}</b></a></td>
+          <td class=""> <a class="txtB" href="{{url.here}}/editgroup?id={{value.id}}{{platoonGetAnd}}"> <i class="sf-edit"></i> <b class="">{{value.title}}</b></a></td>
           <td class="collapsing">{{value.sort | fitNumber}}</td>
           <td class="collapsing">{{value.count_tag | fitNumber}}</td>
           <td class="collapsing">{{value.count_answer | fitNumber}}</td>
@@ -32,7 +32,7 @@
     <div class="f">
       <div class="c6 s12 pRa10">
         <div class="btn xl block ">
-          <a href="{{url.here}}/editgroup/block">
+          <a href="{{url.here}}/editgroup/block{{platoonGet}}">
             <div class="content title">
               <div class="header">{%trans "Block Numbers"%}</div>
             </div>
@@ -41,7 +41,7 @@
       </div>
       <div class="c6 s12">
         <div class="btn xl block">
-          <a href="{{url.here}}/editgroup/secret">
+          <a href="{{url.here}}/editgroup/secret{{platoonGet}}">
             <div class="content title">
               <div class="header">{%trans "Secret Numbers"%}</div>
             </div>
@@ -50,7 +50,7 @@
       </div>
       <div class="c12 s12 pA5">
         <div class="btn xl block ">
-          <a href="{{url.here}}/force">
+          <a href="{{url.here}}/force{{platoonGet}}">
             <div class="content title">
               <div class="header">آرشیو دسته جمعی پیامک های شناسایی نشده</div>
             </div>

@@ -10,8 +10,8 @@ class view
 
 		\dash\data::page_title(T_("Sms list"));
 		\dash\data::page_desc(T_("Sms list"));
-		\dash\data::badge_link(\dash\url::here());
-		\dash\data::badge_text(T_('Dashboard'));
+		\dash\data::badge_link(\dash\url::here(). '/settings'. \dash\data::platoonGet());
+		\dash\data::badge_text(T_('Settings'));
 
 
 	}

@@ -100,12 +100,12 @@ class smsgroupfilter
 
 	public static function add_new_filter($_group_id)
 	{
-		$get_words = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'group_id' => $_group_id]);
+		$get_words = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'platoon' => \lib\app\platoon\tools::get_index_locked(), 'group_id' => $_group_id]);
 		if(!$get_words)
 		{
 			return false;
 		}
-		$get_not_words = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'group_id' => [" != ", " $_group_id " ]]);
+		$get_not_words = \lib\db\smsgroupfilter::get(['type' => 'analyze', 'platoon' => \lib\app\platoon\tools::get_index_locked(), 'group_id' => [" != ", " $_group_id " ]]);
 
 
 		if(is_array($get_words) && is_array($get_not_words))
@@ -113,13 +113,13 @@ class smsgroupfilter
 			$get_words     = array_column($get_words, 'text');
 			$get_not_words = array_column($get_not_words, 'text');
 
-			$get_sms_id = \lib\db\sms::analyze_word($get_words, $get_not_words);
+			$get_sms_id = \lib\db\sms::analyze_word($get_words, $get_not_words, \lib\app\platoon\tools::get_index_locked());
 			if($get_sms_id)
 			{
 				$count = count($get_sms_id);
 				$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
 				$result = implode(',', $get_sms_id);
-				\lib\db\smsgroupfilter::update_old_record_filter_recommend($result, $_group_id);
+				\lib\db\smsgroupfilter::update_old_record_filter_recommend($result, $_group_id, \lib\app\platoon\tools::get_index_locked());
 				\dash\notif::info($msg);
 			}
 		}
@@ -143,7 +143,7 @@ class smsgroupfilter
 			return false;
 		}
 
-		$current_list = \lib\db\smsgroupfilter::get(['group_id' => $group_id, 'type' => 'analyze',]);
+		$current_list = \lib\db\smsgroupfilter::get(['group_id' => $group_id, 'platoon' => \lib\app\platoon\tools::get_index_locked(), 'type' => 'analyze',]);
 
 		if(!is_array($current_list))
 		{
@@ -167,7 +167,7 @@ class smsgroupfilter
 		{
 			foreach ($must_insert as $key => $value)
 			{
-				$check_duplicate = \lib\db\smsgroupfilter::check_duplicate_answer($value);
+				$check_duplicate = \lib\db\smsgroupfilter::check_duplicate_answer($value, \lib\app\platoon\tools::get_index_locked());
 				if(isset($check_duplicate['id']))
 				{
 					\dash\notif::warn(T_("The tag :val exist in another group", ['val' => $value]));
@@ -179,6 +179,7 @@ class smsgroupfilter
 						'group_id' => $group_id,
 						'type' => 'analyze',
 						'text' => $value,
+						'platoon' => \lib\app\platoon\tools::get_index_locked(),
 					];
 
 					\lib\db\smsgroupfilter::insert($insert);
@@ -401,6 +402,8 @@ class smsgroupfilter
 			return false;
 		}
 
+		$platoon    = \dash\app::request('platoon');
+
 		$args             = [];
 		$args['group_id'] = $group_id;
 		$args['number']   = $number;
@@ -409,6 +412,7 @@ class smsgroupfilter
 		$args['exactly']  = $exactly;
 		$args['contain']  = $contain;
 		$args['sort']  = $sort;
+		$args['platoon']  = $platoon;
 
 		return $args;
 	}

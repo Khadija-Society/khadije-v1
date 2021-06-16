@@ -10,7 +10,7 @@ class view
 
 		\dash\data::page_title('نمایش لیست گفتگو با '. \dash\fit::text(\dash\data::myMobile()));
 
-		\dash\data::badge_link(\dash\url::this());
+		\dash\data::badge_link(\dash\url::this(). \dash\data::platoonGet());
 		\dash\data::badge_text(T_('Back'));
 
 

@@ -22,12 +22,12 @@
               <div class="cauto">
                 <div class="showOtherBtn" data-kerkere-content='hide'>
                   {%if isBlock%}
-                    <span class="btn mLa10 danger" data-ajaxify data-data='{"unblock": "mobile", "uid": "{{isBlock.id}}"}' data-method='post'>{%trans "Unblock mobile"%}</span>
+                    <span class="btn mLa10 danger" data-ajaxify data-data='{"unblock": "mobile", {{platoonGetJson}}} "uid": "{{isBlock.id}}"}' data-method='post'>{%trans "Unblock mobile"%}</span>
                   {%elseif isSecred%}
                     {%set NoBtn = true%}
                   {%else%}
-                    <span class="btn mLa10 danger2 outline" data-ajaxify data-data='{"block": "mobile"}' data-method='post'>{%trans "Block mobile"%}</span>
-                    <span class="btn mLa10 secondary outline" data-confirm data-data='{"secret": "mobile"}' data-method='post'>{%trans "Secret mobile"%}</span>
+                    <span class="btn mLa10 danger2 outline" data-ajaxify data-data='{"block": "mobile" {{platoonGetJson}}}}' data-method='post'>{%trans "Block mobile"%}</span>
+                    <span class="btn mLa10 secondary outline" data-confirm data-data='{"secret": "mobile" {{platoonGetJson}}}}' data-method='post'>{%trans "Secret mobile"%}</span>
                   {%endif%}
                 </div>
               </div>
@@ -35,7 +35,7 @@
 
             <div class="cauto"><a class="btn mLa10 outline" href="{{url.kingdom}}/crm/member/general?id={{currentUser.user_code}}">{%trans "Edit profile"%}</a></div>
             {%if needArchive%}
-              <div class="cauto"><div class="btn mLa10 info2 outline" data-ajaxify data-data='{"archive": "conversation"}' data-method='post'>{%trans "Archive"%}</div></div>
+              <div class="cauto"><div class="btn mLa10 info2 outline" data-ajaxify data-data='{"archive": "conversation" {{platoonGetJson}}}}' data-method='post'>{%trans "Archive"%}</div></div>
             {%endif%}
           </div>
         </div>

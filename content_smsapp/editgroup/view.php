@@ -10,7 +10,7 @@ class view
 		\dash\data::page_title(T_("Edit sms group"));
 		\dash\data::page_desc(T_("You cat set some group for sms"));
 
-		\dash\data::badge_link(\dash\url::here(). '/settings');
+		\dash\data::badge_link(\dash\url::here(). '/settings' . \dash\data::platoonGet());
 		\dash\data::badge_text(T_('Settings'));
 
 
@@ -21,6 +21,7 @@ class view
 			[
 				'pagenation' => false,
 				'type'       => 'number',
+				'platoon' => \lib\app\platoon\tools::get_index_locked(),
 				'group_id'   => \dash\coding::decode(\dash\data::myId()),
 			];
 
@@ -35,6 +36,7 @@ class view
 		[
 			'pagenation' => false,
 			'type'       => 'analyze',
+			'platoon' => \lib\app\platoon\tools::get_index_locked(),
 			'group_id'   => \dash\coding::decode(\dash\data::myId()),
 		];
 
@@ -53,6 +55,7 @@ class view
 		[
 			'pagenation' => false,
 			'type'       => 'answer',
+			'platoon' => \lib\app\platoon\tools::get_index_locked(),
 			'order'      => 'asc',
 			'sort'       => 'sort',
 			'group_id'   => \dash\coding::decode(\dash\data::myId()),

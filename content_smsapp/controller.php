@@ -26,6 +26,24 @@ class controller
 		{
 			\dash\data::doNotTuch(true);
 		}
+
+
+		\lib\app\platoon\tools::lock(\dash\request::get('platoon'));
+
+		if(!\lib\app\platoon\tools::get_index_locked())
+		{
+			if(\dash\url::module() !== 'platoon')
+			{
+				\dash\redirect::to(\dash\url::here(). '/platoon');
+			}
+		}
+
+		$platoonCurrentDetail = \lib\app\platoon\tools::get_current_detail();
+		\dash\data::platoonCurrentDetail($platoonCurrentDetail);
+
+		\dash\data::platoonGet('?platoon='. \dash\request::get('platoon'));
+		\dash\data::platoonGetAnd('&platoon='. \dash\request::get('platoon'));
+		\dash\data::platoonGetJson(',"platoon":"'. \dash\request::get('platoon').'"');
 	}
 
 

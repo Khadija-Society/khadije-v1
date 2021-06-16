@@ -7,7 +7,7 @@ function chartDrawer()
   if($("#recommendchart").length == 1){recommendchart();}
   if($("#groupchart").length == 1){groupchart();}
 
-    fetch('{{url.this}}?mydata=ansertime').then(function(response) {return response.json()}).then(function(data){$("#myAnsertTimeHour").text(fitNumber(data.hour)); $("#myAnsertTimeMin").text(fitNumber(data.min));});
+    fetch('{{url.this}}?mydata=ansertime{{platoonGetAnd|raw}}').then(function(response) {return response.json()}).then(function(data){$("#myAnsertTimeHour").text(fitNumber(data.hour)); $("#myAnsertTimeMin").text(fitNumber(data.min));});
 
 }
 
@@ -131,7 +131,7 @@ function sendstatuschart()
 // Data
 function getData_statusChart() {
 
-  fetch('{{url.this}}?getchart=sendstatus').then(function(response) {
+  fetch('{{url.this}}?getchart=sendstatus{{platoonGetAnd|raw}}').then(function(response) {
     return response.json()
   }).then(function(data) {
     SsmsappReportSendStatusChart.addSeries({
@@ -227,7 +227,7 @@ function receivestatuschart()
 // Data
 function getData_receiveStatus() {
 
-  fetch('{{url.this}}?getchart=receivestatus').then(function(response) {
+  fetch('{{url.this}}?getchart=receivestatus{{platoonGetAnd|raw}}').then(function(response) {
     return response.json()
   }).then(function(data) {
     ReceiveStatusChartData.addSeries(
@@ -326,7 +326,7 @@ function recommendchart()
 // Data
 function getData_recommand() {
 
-  fetch('{{url.this}}?getchart=recommend').then(function(response) {
+  fetch('{{url.this}}?getchart=recommend{{platoonGetAnd|raw}}').then(function(response) {
     return response.json()
   }).then(function(data) {
     Chartrecommendchart.addSeries(
@@ -422,7 +422,7 @@ function groupchart()
 // Data
 function getData_group() {
 
-  fetch('{{url.this}}?getchart=group').then(function(response) {
+  fetch('{{url.this}}?getchart=group{{platoonGetAnd|raw}}').then(function(response) {
     return response.json()
   }).then(function(data) {
     GroupChartData.addSeries(
@@ -546,7 +546,7 @@ function myChartProductPrice()
 // Data
 function getData_count() {
 
-  fetch('{{url.this}}?getchart=count').then(function(response) {
+  fetch('{{url.this}}?getchart=count{{platoonGetAnd|raw}}').then(function(response) {
     return response.json()
   }).then(function(data) {
     MyChartCountYear.addSeries({name: '{%trans "Send by panel"%}',data: data['sendpanel']});

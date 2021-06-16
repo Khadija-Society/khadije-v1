@@ -10,7 +10,7 @@ class model
 		{
 			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
 
-			\dash\redirect::to(\dash\url::this());
+			\dash\redirect::to(\dash\url::this(). \dash\data::platoonGet());
 
 			return;
 		}
@@ -53,7 +53,7 @@ class model
 			$result = \lib\app\smsgroupfilter::add($post);
 			\lib\app\conversation\edit::archive_conversation(\dash\data::myMobile());
 
-			\dash\redirect::to(\dash\url::this());
+			\dash\redirect::to(\dash\url::this(). \dash\data::platoonGet());
 
 			return false;
 		}

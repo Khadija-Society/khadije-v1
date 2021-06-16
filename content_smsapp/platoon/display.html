@@ -1,0 +1,23 @@
+{%extends 'content_smsapp/layout.html'%}
+
+
+
+
+{%block pageContent%}
+<div class="f justify-center">
+{%for key, value in platoonList%}
+<a class="c6 s12 pA10" href="{{url.here}}/conversation?platoon={{value.mobile}}">
+    <div class="dcard grShadow grBlue2 x3 op100">
+        <img class="avatar mB20 fs20" src="{{value.avatar}}">
+      <div class="mB25 fcWhite900 fs20">{{value.title}}</div>
+      <div class="f">
+        <div class="c6 pA5 fs14 txtB">{{value.mobile | fitNumber('mobile')}}</div>
+      </div>
+    </div>
+</a>
+{%endfor%}
+</div>
+
+{%endblock%}
+
+

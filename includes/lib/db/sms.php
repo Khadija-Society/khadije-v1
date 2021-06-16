@@ -196,12 +196,12 @@ class sms
 
 
 
-	public static function get_groupby_send($_gateway)
+	public static function get_groupby_send($_gateway, $_platoon)
 	{
 		$q = null;
 		if($_gateway)
 		{
-			$q = "WHERE s_sms.togateway = '$_gateway' ";
+			$q = "AND s_sms.togateway = '$_gateway' ";
 		}
 		$query =
 		"
@@ -210,6 +210,8 @@ class sms
 				s_sms.sendstatus
 			FROM
 				s_sms
+			WHERE
+				s_sms.platoon = '$_platoon'
 			$q
 			GROUP BY s_sms.sendstatus
 		";
@@ -218,12 +220,12 @@ class sms
 	}
 
 
-	public static function get_groupby_receive($_gateway)
+	public static function get_groupby_receive($_gateway, $_platoon)
 	{
 		$q = null;
 		if($_gateway)
 		{
-			$q = "WHERE s_sms.togateway = '$_gateway' ";
+			$q = "AND s_sms.togateway = '$_gateway' ";
 		}
 		$query =
 		"
@@ -232,6 +234,7 @@ class sms
 				s_sms.receivestatus
 			FROM
 				s_sms
+			WHERE s_sms.platoon = '$_platoon'
 			$q
 			GROUP BY s_sms.receivestatus
 		";
@@ -241,7 +244,7 @@ class sms
 
 
 
-	public static function analyze_word($_words, $_not_words)
+	public static function analyze_word($_words, $_not_words, $_platoon)
 	{
 		$words = implode("%' OR s_sms.text LIKE '%", $_words);
 		$notwords = implode("%' OR s_sms.text NOT LIKE '%", $_not_words);
@@ -254,6 +257,7 @@ class sms
 			WHERE
 				s_sms.sendstatus IS NULL AND
 				s_sms.group_id IS NULL AND
+				s_sms.platoon = '$_platoon' AND
 				s_sms.answertext IS NULL AND
 				(s_sms.text LIKE '%$words%')
 				AND
@@ -265,7 +269,7 @@ class sms
 
 	}
 
-	public static function get_count_gateway_send($_date, $_gateway)
+	public static function get_count_gateway_send($_date, $_gateway, $_platoon)
 	{
 		$from = $_date . ' 00:00:00';
 		$to   = $_date . ' 23:59:59';
@@ -277,6 +281,7 @@ class sms
 			FROM
 				s_sms
 			WHERE
+				s_sms.platoon = '$_platoon' AND
 				s_sms.sendstatus = 'send' AND
 				s_sms.datesend >= '$from' AND
 				s_sms.datesend <= '$to'
@@ -431,9 +436,9 @@ class sms
 
 
 
-	public static function get_count_answerd_in_time($_fromnumber, $_date)
+	public static function get_count_answerd_in_time($_fromnumber, $_date, $_platoon)
 	{
-		$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' AND s_sms.datecreated > '$_date' AND s_sms.answertext IS NOT NULL ";
+		$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' AND s_sms.platoon = '$_platoon' AND s_sms.datecreated > '$_date' AND s_sms.answertext IS NOT NULL ";
 		$result = \dash\db::get($query, 'count', true);
 		return $result;
 	}
@@ -449,9 +454,9 @@ class sms
 
 
 
-	public static function get_last_sms($_fromnumber)
+	public static function get_last_sms($_fromnumber, $_platoon)
 	{
-		$query = "SELECT * FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' ORDER BY s_sms.id DESC LIMIT 1";
+		$query = "SELECT * FROM s_sms WHERE s_sms.fromnumber = '$_fromnumber' AND s_sms.platoon = '$_platoon' ORDER BY s_sms.id DESC LIMIT 1";
 		$result = \dash\db::get($query, null, true);
 		return $result;
 	}
@@ -482,7 +487,7 @@ class sms
 
 	}
 
-	public static function get_chart_receive($_startdate, $_enddate)
+	public static function get_chart_receive($_platoon, $_startdate, $_enddate)
 	{
 		$query  =
 		"
@@ -492,6 +497,7 @@ class sms
 			FROM
 				s_sms
 			WHERE
+				s_sms.platoon = '$_platoon' AND
 				s_sms.datecreated <= '$_startdate'  AND
 				s_sms.datecreated >= '$_enddate'
 			GROUP BY
@@ -502,7 +508,7 @@ class sms
 		return $result;
 	}
 
-	public static function get_chart_send($_startdate, $_enddate)
+	public static function get_chart_send($_platoon, $_startdate, $_enddate)
 	{
 		$query  =
 		"
@@ -512,6 +518,7 @@ class sms
 			FROM
 				s_sms
 			WHERE
+				s_sms.platoon = '$_platoon' AND
 				s_sms.sendstatus = 'send' AND
 				s_sms.datesend IS NOT NULL AND
 				s_sms.datesend <= '$_startdate'  AND
@@ -525,7 +532,7 @@ class sms
 		return $result;
 	}
 
-	public static function get_chart_send_panel($_startdate, $_enddate)
+	public static function get_chart_send_panel($_platoon, $_startdate, $_enddate)
 	{
 		$query  =
 		"
@@ -535,6 +542,7 @@ class sms
 			FROM
 				s_sms
 			WHERE
+				s_sms.platoon = '$_platoon' AND
 				s_sms.sendstatus = 'sendbypanel' AND
 				s_sms.date IS NOT NULL AND
 				s_sms.date <= '$_startdate'  AND
@@ -749,7 +757,7 @@ class sms
 	}
 
 
-	public static function get_count_sms($_type, $_field, $_gateway, $_bulk = false)
+	public static function get_count_sms($_platoon, $_type, $_field, $_gateway, $_bulk = false)
 	{
 
 		$to = date("Y-m-d"). ' 23:59:59';
@@ -797,22 +805,22 @@ class sms
 		{
 			if($_bulk)
 			{
-				$query = "SELECT SUM(IF( s_sms.answertextcount < 70, 1, CEIL(s_sms.answertextcount / 70))) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where $gateway";
+				$query = "SELECT SUM(IF( s_sms.answertextcount < 70, 1, CEIL(s_sms.answertextcount / 70))) AS `count` FROM s_sms WHERE s_sms.platoon = '$_platoon' AND s_sms.sendstatus = 'send' $where $gateway";
 			}
 			else
 			{
-				$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.sendstatus = 'send' $where $gateway";
+				$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.platoon = '$_platoon' AND s_sms.sendstatus = 'send' $where $gateway";
 			}
 		}
 		else
 		{
 			if($_bulk)
 			{
-				$query = "SELECT SUM(IF( s_sms.smscount < 70, 1, CEIL(s_sms.smscount / 70))) AS `count` FROM s_sms WHERE 1 $where $gateway";
+				$query = "SELECT SUM(IF( s_sms.smscount < 70, 1, CEIL(s_sms.smscount / 70))) AS `count` FROM s_sms WHERE s_sms.platoon = '$_platoon'  $where $gateway";
 			}
 			else
 			{
-				$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE 1 $where $gateway";
+				$query = "SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.platoon = '$_platoon'  $where $gateway";
 			}
 		}
 

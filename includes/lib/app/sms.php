@@ -8,7 +8,7 @@ class sms
 {
 	private static function panel_answer_file()
 	{
-		return __DIR__.'/autopanelanswer.me.json';
+		return __DIR__.'/autopanelanswer'. \lib\app\platoon\tools::get_index_locked(). '.me.json';
 	}
 
 
@@ -36,9 +36,9 @@ class sms
 	}
 
 
-	public static function analyze_text($_text)
+	public static function analyze_text($_text, $_platoon)
 	{
-		$all_group_text = \lib\db\smsgroupfilter::list_analyze_word();
+		$all_group_text = \lib\db\smsgroupfilter::list_analyze_word($_platoon);
 
 		if(!is_array($all_group_text))
 		{
@@ -110,32 +110,32 @@ class sms
 	}
 
 
-	public static function dashboard_detail($_gateway = null)
+	public static function dashboard_detail($_gateway = null, $_platoon)
 	{
 
 		$result                = [];
 		$result['status']      = \content_api\v6\smsapp\controller::status();
 
 		$day                   = [];
-		$day['send']           = \lib\db\sms::get_count_sms('day', 'send', $_gateway);
+		$day['send']           = \lib\db\sms::get_count_sms($_platoon, 'day', 'send', $_gateway);
 		$day['send_bulk']      = $day['send']; // \lib\db\sms::get_count_sms('day', 'send', $_gateway, true);
 
-		$day['receive']        = \lib\db\sms::get_count_sms('day', 'receive', $_gateway);
+		$day['receive']        = \lib\db\sms::get_count_sms($_platoon, 'day', 'receive', $_gateway);
 		$day['receive_bulk']   = $day['receive']; // \lib\db\sms::get_count_sms('day', 'receive', $_gateway, true);
 		$day['date']           = \dash\datetime::fit(null, true, 'date');
 
 		$week                  = [];
-		$week['send']          = \lib\db\sms::get_count_sms('week', 'send', $_gateway);
+		$week['send']          = \lib\db\sms::get_count_sms($_platoon, 'week', 'send', $_gateway);
 		$week['send_bulk']     = $week['send']; // \lib\db\sms::get_count_sms('week', 'send', $_gateway, true);
 
-		$week['receive']       = \lib\db\sms::get_count_sms('week', 'receive', $_gateway);
+		$week['receive']       = \lib\db\sms::get_count_sms($_platoon, 'week', 'receive', $_gateway);
 		$week['receive_bulk']  = $week['receive']; // \lib\db\sms::get_count_sms('week', 'receive', $_gateway, true);
 
 		$month                 = [];
-		$month['send']         = \lib\db\sms::get_count_sms('month', 'send', $_gateway);
+		$month['send']         = \lib\db\sms::get_count_sms($_platoon, 'month', 'send', $_gateway);
 		$month['send_bulk']    = $month['send']; // \lib\db\sms::get_count_sms('month', 'send', $_gateway, true);
 
-		$month['receive']      = \lib\db\sms::get_count_sms('month', 'receive', $_gateway);
+		$month['receive']      = \lib\db\sms::get_count_sms($_platoon, 'month', 'receive', $_gateway);
 		$month['receive_bulk'] = $month['receive']; // \lib\db\sms::get_count_sms('month', 'receive', $_gateway, true);
 
 		$total                 = [];
@@ -149,10 +149,10 @@ class sms
 		}
 		else
 		{
-			$total['send']         = \lib\db\sms::get_count_sms('total', 'send', $_gateway);
+			$total['send']         = \lib\db\sms::get_count_sms($_platoon, 'total', 'send', $_gateway);
 			$total['send_bulk']    = $total['send']; // \lib\db\sms::get_count_sms('total', 'send', $_gateway, true);
 
-			$total['receive']      = \lib\db\sms::get_count_sms('total', 'receive', $_gateway);
+			$total['receive']      = \lib\db\sms::get_count_sms($_platoon, 'total', 'receive', $_gateway);
 			$total['receive_bulk'] = $total['receive']; // \lib\db\sms::get_count_sms('total', 'receive', $_gateway, true);
 		}
 
@@ -271,7 +271,11 @@ class sms
 	public static function setting_file($_set = [])
 	{
 		$get  = [];
-		$addr = root.'includes/lib/app/smsapp.me.txt';
+
+		$platoon = \lib\app\platoon\tools::get_index_locked();
+
+		$addr = root.'includes/lib/app/smsapp_'.$platoon.'.me.txt';
+
 		$addr = \autoload::fix_os_path($addr);
 
 		if(is_file($addr))
@@ -723,9 +727,9 @@ class sms
 			$lastYear = date("Y-m-d", strtotime("-1 year"));
 		}
 
-		$get_chart_receive    = \lib\db\sms::get_chart_receive($now, $lastYear);
-		$get_chart_send       = \lib\db\sms::get_chart_send($now, $lastYear);
-		$get_chart_send_panel = \lib\db\sms::get_chart_send_panel($now, $lastYear);
+		$get_chart_receive    = \lib\db\sms::get_chart_receive(\lib\app\platoon\tools::get_index_locked(), $now, $lastYear);
+		$get_chart_send       = \lib\db\sms::get_chart_send(\lib\app\platoon\tools::get_index_locked(), $now, $lastYear);
+		$get_chart_send_panel = \lib\db\sms::get_chart_send_panel(\lib\app\platoon\tools::get_index_locked(), $now, $lastYear);
 
 		if(!is_array($get_chart_receive) || !is_array($get_chart_send) || !is_array($get_chart_send_panel))
 		{
@@ -868,29 +872,6 @@ class sms
 	}
 
 
-	public static function chat_list()
-	{
-		$list = \lib\db\sms::get_chat_list();
-		$list = self::chat_last_message($list);
-		return $list;
-	}
-
-
-	public static function chat_last_message($_data)
-	{
-		if(!is_array($_data))
-		{
-			return false;
-		}
-
-		$fromnumber = array_column($_data, 'fromnumber');
-		if($fromnumber)
-		{
-			$fromnumber   = implode(',', $fromnumber);
-			$get_last_sms = \lib\db\sms::get_last_message_text($fromnumber);
-			j($get_last_sms);
-		}
-	}
 
 
 

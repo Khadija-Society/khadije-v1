@@ -21,7 +21,7 @@ class newsms
 
 		if(self::$need_archive_conversation)
 		{
-			\lib\db\conversation\update::multi_archive_conversation(self::$need_archive_conversation);
+			\lib\db\conversation\update::multi_archive_conversation(self::$need_archive_conversation, \lib\app\platoon\tools::get_index_locked());
 		}
 
 	}
@@ -151,6 +151,7 @@ class newsms
 		$insert['answertext']    = null;
 		$insert['group_id']      = null;
 		$insert['recommend_id']  = null;
+		$insert['platoon']    = \lib\app\platoon\tools::get_index_locked();
 
 		self::ready_to_update_or_insert($insert);
 
@@ -175,10 +176,10 @@ class newsms
 		$id = self::add_update($insert);
 
 
-		if($insert['group_id'])
-		{
-			\lib\db\smsgroup::update_group_count($insert['group_id']);
-		}
+		// if($insert['group_id'])
+		// {
+		// 	\lib\db\smsgroup::update_group_count($insert['group_id']);
+		// }
 
 		if($id)
 		{
@@ -225,7 +226,8 @@ class newsms
 	private static function ready_to_update_or_insert(&$insert)
 	{
 		$fromnumber   = $insert['fromnumber'];
-		$get_last_sms = \lib\db\sms::get_last_sms($fromnumber);
+
+		$get_last_sms = \lib\db\sms::get_last_sms($fromnumber, \lib\app\platoon\tools::get_index_locked());
 
 		if(isset($get_last_sms['date']))
 		{
@@ -262,8 +264,7 @@ class newsms
 	private static function detect_5_min_message(&$insert)
 	{
 		$my_5_min = date("Y-m-d H:i:s", (time() - (60*5)));
-		$get_last_sms_answered_in_5_min =  \lib\db\sms::get_count_answerd_in_time($insert['fromnumber'], $my_5_min);
-
+		$get_last_sms_answered_in_5_min =  \lib\db\sms::get_count_answerd_in_time($insert['fromnumber'], $my_5_min, \lib\app\platoon\tools::get_index_locked());
 
 		if(floatval($get_last_sms_answered_in_5_min) >= 1 )
 		{
@@ -313,11 +314,11 @@ class newsms
 
 		if($mobileNumber)
 		{
-			$get = \lib\db\smsgroupfilter::get(['type' => 'number', '1.1' => ["= 1.1", "AND (`number` = '$number' OR `number` = '$number_no_plus' OR `number` = '$mobileNumber')"], 'limit' => 1]);
+			$get = \lib\db\smsgroupfilter::get(['type' => 'number', 'platoon' => \lib\app\platoon\tools::get_index_locked(), '1.1' => ["= 1.1", "AND (`number` = '$number' OR `number` = '$number_no_plus' OR `number` = '$mobileNumber')"], 'limit' => 1]);
 		}
 		else
 		{
-			$get = \lib\db\smsgroupfilter::get(['type' => 'number', '1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$number_no_plus') "], 'limit' => 1]);
+			$get = \lib\db\smsgroupfilter::get(['type' => 'number', 'platoon' => \lib\app\platoon\tools::get_index_locked(), '1.1' => [" = 1.1" , "AND ( `number` = '$number' OR `number` = '$number_no_plus') "], 'limit' => 1]);
 		}
 
 		// this number not found in any filter
@@ -342,7 +343,7 @@ class newsms
 		}
 
 		$text          = $insert['text'];
-		$get_recommend = \lib\app\sms::analyze_text($text);
+		$get_recommend = \lib\app\sms::analyze_text($text, \lib\app\platoon\tools::get_index_locked());
 
 		if(isset($get_recommend['id']))
 		{
@@ -356,7 +357,7 @@ class newsms
 
 			if($calcdate)
 			{
-				$get_count_answered =  \lib\db\sms::get_count_answerd_in_time($insert['fromnumber'], $calcdate);
+				$get_count_answered =  \lib\db\sms::get_count_answerd_in_time($insert['fromnumber'], $calcdate, \lib\app\platoon\tools::get_index_locked());
 
 				$need_answer_level = floatval($get_count_answered);
 			}

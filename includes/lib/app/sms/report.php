@@ -7,15 +7,15 @@ class report
 	public static function get_groupby($_gateway)
 	{
 		$result            = [];
-		$result['send']    = \lib\db\sms::get_groupby_send($_gateway);
-		$result['receive'] = \lib\db\sms::get_groupby_receive($_gateway);
+		$result['send']    = \lib\db\sms::get_groupby_send($_gateway, \lib\app\platoon\tools::get_index_locked());
+		$result['receive'] = \lib\db\sms::get_groupby_receive($_gateway, \lib\app\platoon\tools::get_index_locked());
 
 		return $result;
 	}
 
 	public static function count_sms_day($_gateway = null)
 	{
-		$result = \lib\db\sms\report::count_sms_day($_gateway);
+		$result = \lib\db\sms\report::count_sms_day($_gateway, \lib\app\platoon\tools::get_index_locked());
 		if(!is_array($result))
 		{
 			$result = [];
@@ -39,7 +39,7 @@ class report
 
 	public static function answer_time()
 	{
-		$result      = \lib\db\sms\report::answer_time();
+		$result      = \lib\db\sms\report::answer_time(null, \lib\app\platoon\tools::get_index_locked());
 		$result      = intval($result);
 		$new         = [];
 		$new['sec']  = round(intval($result), 2);
@@ -50,7 +50,7 @@ class report
 
 	public static function chart_sendstatus()
 	{
-		$result     = \lib\db\sms\report::chart_sendstatus();
+		$result     = \lib\db\sms\report::chart_sendstatus(null, \lib\app\platoon\tools::get_index_locked());
 		$hi_chart   = [];
 
 		if(!is_array($result))
@@ -88,7 +88,7 @@ class report
 
 	public static function chart_receivestatus()
 	{
-		$result     = \lib\db\sms\report::chart_receivestatus();
+		$result     = \lib\db\sms\report::chart_receivestatus(null, \lib\app\platoon\tools::get_index_locked());
 		$hi_chart   = [];
 
 		if(!is_array($result))
@@ -125,7 +125,7 @@ class report
 
 	public static function chart_recommend()
 	{
-		$result     = \lib\db\sms\report::chart_recommend();
+		$result     = \lib\db\sms\report::chart_recommend(null, \lib\app\platoon\tools::get_index_locked());
 		$hi_chart   = [];
 
 		if(!is_array($result))
@@ -162,7 +162,7 @@ class report
 
 	public static function chart_group()
 	{
-		$result     = \lib\db\sms\report::chart_group();
+		$result     = \lib\db\sms\report::chart_group(null, \lib\app\platoon\tools::get_index_locked());
 		$hi_chart   = [];
 
 		if(!is_array($result))

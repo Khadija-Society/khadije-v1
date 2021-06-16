@@ -7,7 +7,7 @@ class view
 	{
 		\dash\data::page_title(T_("Count sms send per day"));
 
-		\dash\data::badge_link(\dash\url::here());
+		\dash\data::badge_link(\dash\url::this() . \dash\data::platoonGet());
 		\dash\data::badge_text(T_('Back to dashboard'));
 
 		$gateway   = \dash\request::get('gateway');

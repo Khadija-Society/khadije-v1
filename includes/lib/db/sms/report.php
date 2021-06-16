@@ -3,12 +3,12 @@ namespace lib\db\sms;
 
 class report
 {
-	public static function chart_sendstatus($_gateway = null)
+	public static function chart_sendstatus($_gateway = null, $_platoon)
 	{
 		$gateway = null;
 		if($_gateway)
 		{
-			$gateway = " WHERE s_sms.togateway = '$_gateway' ";
+			$gateway = " AND s_sms.togateway = '$_gateway' ";
 		}
 
 		$query  =
@@ -18,6 +18,8 @@ class report
 				s_sms.sendstatus
 			FROM
 				s_sms
+			WHERE
+				s_sms.platoon = '$_platoon'
 				$gateway
 			GROUP BY
 				s_sms.sendstatus
@@ -27,12 +29,12 @@ class report
 		return $result;
 	}
 
-	public static function chart_receivestatus($_gateway = null)
+	public static function chart_receivestatus($_gateway = null, $_platoon)
 	{
 		$gateway = null;
 		if($_gateway)
 		{
-			$gateway = " WHERE s_sms.togateway = '$_gateway' ";
+			$gateway = " AND s_sms.togateway = '$_gateway' ";
 		}
 
 		$query  =
@@ -42,6 +44,8 @@ class report
 				s_sms.receivestatus
 			FROM
 				s_sms
+			WHERE
+				s_sms.platoon = '$_platoon'
 				$gateway
 			GROUP BY
 				s_sms.receivestatus
@@ -52,12 +56,12 @@ class report
 	}
 
 
-	public static function chart_recommend($_gateway = null)
+	public static function chart_recommend($_gateway = null, $_platoon)
 	{
 		$gateway = null;
 		if($_gateway)
 		{
-			$gateway = " WHERE s_sms.togateway = '$_gateway' ";
+			$gateway = " AND s_sms.togateway = '$_gateway' ";
 		}
 
 		$query  =
@@ -69,6 +73,8 @@ class report
 			FROM
 				s_sms
 			LEFT JOIN s_group ON s_sms.recommend_id = s_group.id
+			WHERE
+				s_sms.platoon = '$_platoon'
 				$gateway
 			GROUP BY
 				s_sms.recommend_id
@@ -78,12 +84,12 @@ class report
 		return $result;
 	}
 
-	public static function chart_group($_gateway = null)
+	public static function chart_group($_gateway = null, $_platoon)
 	{
 		$gateway = null;
 		if($_gateway)
 		{
-			$gateway = " WHERE s_sms.togateway = '$_gateway' ";
+			$gateway = " AND s_sms.togateway = '$_gateway' ";
 		}
 
 		$query  =
@@ -95,6 +101,8 @@ class report
 			FROM
 				s_sms
 			LEFT JOIN s_group ON s_sms.group_id = s_group.id
+			WHERE
+				s_sms.platoon = '$_platoon'
 				$gateway
 			GROUP BY
 				s_sms.group_id
@@ -107,7 +115,7 @@ class report
 
 
 
-	public static function count_sms_day($_gateway = null)
+	public static function count_sms_day($_gateway = null, $_platoon = null)
 	{
 		$gateway = null;
 		if($_gateway)
@@ -124,6 +132,7 @@ class report
 			FROM
 				s_sms
 			WHERE
+				s_sms.platoon = '$_platoon' AND
 				s_sms.sendstatus = 'send' $gateway
 			GROUP BY
 				DATE(s_sms.datesend)
@@ -137,7 +146,7 @@ class report
 	}
 
 
-	public static function answer_time($_gateway = null)
+	public static function answer_time($_gateway = null, $_platoon)
 	{
 		$gateway = null;
 		if($_gateway)
@@ -145,7 +154,7 @@ class report
 			$gateway = " AND s_sms.togateway = '$_gateway' ";
 		}
 
-		$query  = "SELECT AVG(TIMESTAMPDIFF(SECOND,s_sms.datecreated, s_sms.dateanswer)) AS `average` FROM s_sms WHERE  s_sms.dateanswer IS NOT NULL $gateway ";
+		$query  = "SELECT AVG(TIMESTAMPDIFF(SECOND,s_sms.datecreated, s_sms.dateanswer)) AS `average` FROM s_sms WHERE s_sms.platoon = '$_platoon' AND  s_sms.dateanswer IS NOT NULL $gateway ";
 		$result = \dash\db::get($query, 'average', true);
 		return $result;
 	}

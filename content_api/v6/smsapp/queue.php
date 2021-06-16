@@ -80,7 +80,7 @@ class queue
 		$gateway   = \dash\header::get('gateway');
 		$gateway   = \dash\utility\filter::mobile($gateway);
 
-		$get       = \lib\db\sms::get_count_gateway_send(date("Y-m-d"), $gateway);
+		$get       = \lib\db\sms::get_count_gateway_send(date("Y-m-d"), $gateway, \lib\app\platoon\tools::get_index_locked());
 		$get       = intval($get);
 
 		if($get >= $max_limit)
@@ -106,11 +106,12 @@ class queue
 		$get_args =
 		[
 			// 'recommend_id' => null,
-			'sendstatus'      => 'awaiting',
-			'receivestatus'   => [' != ', " 'sendtopanel'"],
-			// 'togateway'    => \dash\utility\filter::mobile(\dash\header::get('gateway')),
-			'fromgateway'     => \dash\utility\filter::mobile(\dash\header::get('gateway')),
-			'limit'           => 10,
+			'sendstatus'    => 'awaiting',
+			'receivestatus' => [' != ', " 'sendtopanel'"],
+			's_sms.platoon'       => \lib\app\platoon\tools::get_index_locked(),
+			// 'togateway'  => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			'fromgateway'   => \dash\utility\filter::mobile(\dash\header::get('gateway')),
+			'limit'         => 10,
 		];
 
 		$get = \lib\db\sms::get_raw($get_args);

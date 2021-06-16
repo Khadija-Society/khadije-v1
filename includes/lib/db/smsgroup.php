@@ -20,7 +20,7 @@ class smsgroup
 	}
 
 
-	public static function show_list()
+	public static function show_list($_platoon)
 	{
 		$query  =
 		"
@@ -32,6 +32,7 @@ class smsgroup
 				s_group
 			WHERE
 				s_group.status IN ('enable', 'disable') AND
+				s_group.platoon = '$_platoon' AND
 				s_group.type = 'other'
 			ORDER BY s_group.sort ASC
 		";

@@ -54,6 +54,8 @@ class search
 			$and['group_id'] = " s_sms.group_id IS NULL ";
 		}
 
+		$platoon = \lib\app\platoon\tools::get_index_locked();
+		$and[] = " s_sms.platoon = '$platoon' ";
 
 		$level = null;
 
@@ -256,6 +258,10 @@ class search
 		{
 			return false;
 		}
+
+		$platoon = \lib\app\platoon\tools::get_index_locked();
+		$and[] = " s_sms.platoon = '$platoon' ";
+
 
 		$list = \lib\db\conversation\search::list_view($and, $or, $order_sort, $meta);
 

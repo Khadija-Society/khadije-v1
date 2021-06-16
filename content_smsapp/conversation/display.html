@@ -23,7 +23,7 @@
 {%for key, value in myLinks%}
 
 {%set isActive = false%}{% if requestGET.level == key %}{%set isActive = true%}{%elseif  value.default and not requestGET.level%}{%set isActive = true%}{%endif%}
-  <a class="cbox mB5" {%if not value.no_link%} href="{{url.that}}?level={{key}}" {%endif%}>
+  <a class="cbox mB5" {%if not value.no_link%} href="{{url.that}}?level={{key}}{{platoonGetAnd}}" {%endif%}>
     <div class="f">
         <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
         <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{{value.title}}</div>
@@ -32,7 +32,7 @@
   </a>
 {%endfor%}
 <div class="cbox mTB10">
-  <div class="f" data-confirm data-data='{"status" : "change"}'>
+  <div class="f" data-confirm data-data='{"status" : "change" {{platoonGetJson}}}'>
     <div class="mB10 c6">{%trans "System status"%}</div>
     <div class="c"></div>
     <div class="cauto">{% if sysStatus %} <b class="fc-green">{%trans "On"%}</b> {%else%} <b class="fc-red">{%trans "Off"%}</b> {%endif%}</div>
@@ -46,6 +46,7 @@
   <div class="c">
       <form method="get" action='{{url.that}}' autocomplete="off" data-timeout="0">
         {%if requestGET.level%}<input type="hidden" name="level" value="{{requestGET.level}}">{%endif%}
+        {%if requestGET.platoon%}<input type="hidden" name="platoon" value="{{requestGET.platoon}}">{%endif%}
         <div class="input">
           <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" class="" data-default data-pass='submit' autocomplete='off' >
           <button class="addon btn "><i class="sf-search"></i></button>
@@ -65,7 +66,7 @@
       </div>
       <div class="txtRa">
         {%if requestGETWithoutPage%}
-          <a class="btn" href="{{url.this}}">{%trans "Clear filter"%}</a>
+          <a class="btn" href="{{url.this}}{{platoonGet}}">{%trans "Clear filter"%}</a>
         {%endif%}
         <button class="btn primary2">{%trans "Apply"%}</button>
       </div>
@@ -78,7 +79,7 @@
 {%set myGroupID%}{{value.group_id | coding('encode')}}{%endset%}
 {%set isActive = false%}{% if requestGET.group_id == myGroupID %}{%set isActive = true%}{%endif%}
 
-  <a class="cbox mB5"  href="{{url.that}}?group_id={{myGroupID}}" >
+  <a class="cbox mB5"  href="{{url.that}}?group_id={{myGroupID}}{{platoonGetAnd}}" >
     <div class="f">
         <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
         <div class="c {%if isActive%}txtB{%else%}fc-mute{%endif%}">{%if value.title%}{{value.title}}{%else%}بدون گروه{%endif%}</div>
@@ -96,7 +97,7 @@
   <div class="cbox mB5-f">
     <div class="f">
       <div class="c">
-        <a href="{{url.this}}/view?mobile={{value.fromnumber}}">
+        <a href="{{url.this}}/view?mobile={{value.fromnumber}}{{platoonGetAnd}}">
 
           <div class="cauto fc-black txtB"><img class="avatar" src="{{value.avatar}}" alt="{{value.displayname}}"> {{value.displayname}} {{value.fromnumber | fitNumber('mobile')}}</div>
           <div class="c fc-black txtB"> </div>
@@ -108,7 +109,7 @@
           <span class="badge rounded primary">{{value.count | fitNumber}}</span>
           <span class="ltr txtL"> {{value.lastdate | dt}}</span>
           <div class="block mB10"></div>
-          <span class="cauto floatL txtL btn outline xs" data-ajaxify data-method='post' data-data='{"archive": "conversation", "mobile":"{{value.fromnumber}}"}'> <i class="sf-archive pRa5 fs12"></i> {%trans "Archive"%}</span>
+          <span class="cauto floatL txtL btn outline xs" data-ajaxify data-method='post' data-data='{"archive": "conversation" {{platoonGetJson}}, "mobile":"{{value.fromnumber}}" }'> <i class="sf-archive pRa5 fs12"></i> {%trans "Archive"%}</span>
 
     </div>
 
@@ -124,7 +125,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg warn2">
   <span class="c">{{dataFilter | raw }}</span>
-  <a class="cauto" href="{{url.that}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.that}}{{platoonGet}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 

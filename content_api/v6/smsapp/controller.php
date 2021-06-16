@@ -30,18 +30,18 @@ class controller
 		// {
 		// 	$detail = \content_api\v6\smsapp\newsms::add_new_sms();
 		// }
-		elseif($directory === 'v6/smsapp/notsent')
-		{
-			$detail = \content_api\v6\smsapp\notsent::get();
-		}
-		elseif($directory === 'v6/smsapp/queue')
-		{
-			$detail = \content_api\v6\smsapp\queue::get();
-		}
-		elseif($directory === 'v6/smsapp/sent')
-		{
-			$detail = \content_api\v6\smsapp\sent::set();
-		}
+		// elseif($directory === 'v6/smsapp/notsent')
+		// {
+		// 	$detail = \content_api\v6\smsapp\notsent::get();
+		// }
+		// elseif($directory === 'v6/smsapp/queue')
+		// {
+		// 	$detail = \content_api\v6\smsapp\queue::get();
+		// }
+		// elseif($directory === 'v6/smsapp/sent')
+		// {
+		// 	$detail = \content_api\v6\smsapp\sent::set();
+		// }
 		elseif($directory === 'v6/smsapp/status')
 		{
 			$detail = \content_api\v6\smsapp\status::set();
@@ -146,6 +146,9 @@ class controller
 
 		if(in_array($gateway, $check_allow_gateway))
 		{
+			// lock on this platoon
+			\lib\app\platoon\tools::lock($gateway);
+
 			return true;
 		}
 		else

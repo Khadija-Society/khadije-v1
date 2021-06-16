@@ -19,7 +19,7 @@ class model
 		if(\dash\permission::supervisor() && \dash\request::post('delete') === 'delete' && \dash\data::myId())
 		{
 			\lib\app\smsgroup::remove(\dash\data::myId());
-			\dash\redirect::to(\dash\url::here(). '/settings');
+			\dash\redirect::to(\dash\url::here(). '/settings'. \dash\data::platoonGet());
 			return;
 		}
 
@@ -35,7 +35,7 @@ class model
 				}
 				else
 				{
-					\dash\redirect::to(\dash\url::this(). '?id='. \dash\data::myId());
+					\dash\redirect::to(\dash\url::this(). '?id='. \dash\data::myId(). \dash\data::platoonGetAnd());
 				}
 			}
 
@@ -48,6 +48,7 @@ class model
 			$post             = [];
 			$post['number']     = \dash\request::post('abn');
 			$post['type']     = 'number';
+			$post['platoon'] = \lib\app\platoon\tools::get_index_locked();
 			$post['group_id'] = \dash\data::myId();
 
 			$result = \lib\app\smsgroupfilter::add($post);
@@ -68,6 +69,7 @@ class model
 			$post['text']     = \dash\request::post('text');
 			$post['sort']     = \dash\request::post('asort');
 			$post['type']     = 'answer';
+			$post['platoon'] = \lib\app\platoon\tools::get_index_locked();
 			$post['group_id'] = \dash\data::myId();
 
 			if(\dash\request::get('aid'))
@@ -81,7 +83,7 @@ class model
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::to(\dash\url::this(). '?id='. \dash\data::myId());
+				\dash\redirect::to(\dash\url::this(). '?id='. \dash\data::myId() . \dash\data::platoonGetAnd());
 			}
 
 			return;
@@ -95,6 +97,7 @@ class model
 		$post['calcdate']   = \dash\request::post('calcdate');
 		$post['status']     = \dash\request::post('status');
 		$post['sort']       = \dash\request::post('sort');
+		$post['platoon'] = \lib\app\platoon\tools::get_index_locked();
 
 		$result = \lib\app\smsgroup::edit($post, \dash\data::myId());
 

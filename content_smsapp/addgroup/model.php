@@ -9,6 +9,7 @@ class model
 		$post            = [];
 		$post['title']   = \dash\request::post('title');
 		$post['type']    = 'other';
+		$post['platoon']    = \lib\app\platoon\tools::get_index_locked();
 		$post['analyze'] = null;
 		$post['ismoney'] = null;
 		$post['status']  = 'enable';
@@ -17,7 +18,7 @@ class model
 
 		if(\dash\engine\process::status() && isset($result['id']))
 		{
-			\dash\redirect::to(\dash\url::here(). '/editgroup?id='. $result['id']);
+			\dash\redirect::to(\dash\url::here(). '/editgroup?id='. $result['id']. \dash\data::platoonGetAnd());
 		}
 	}
 }

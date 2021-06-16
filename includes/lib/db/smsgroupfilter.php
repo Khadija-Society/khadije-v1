@@ -5,7 +5,7 @@ namespace lib\db;
 class smsgroupfilter
 {
 
-	public static function check_duplicate_answer($_answer)
+	public static function check_duplicate_answer($_answer, $_platoon)
 	{
 		$query  =
 		"
@@ -17,6 +17,7 @@ class smsgroupfilter
 			WHERE
 				s_group.status != 'deleted' AND
 				s_groupfilter.type = 'analyze'  AND
+				s_groupfilter.platoon = '$_platoon'  AND
 				s_groupfilter.text = '$_answer'
 			LIMIT 1
 		";
@@ -25,7 +26,7 @@ class smsgroupfilter
 		return $result;
 	}
 
-	public static function list_analyze_word()
+	public static function list_analyze_word($_platoon)
 	{
 		$query  =
 		"
@@ -38,6 +39,7 @@ class smsgroupfilter
 			WHERE
 				s_group.status     = 'enable' AND
 				s_group.type       = 'other' AND
+				s_group.platoon = '$_platoon' AND
 				s_groupfilter.type = 'analyze'
 			ORDER BY s_group.sort ASC, s_groupfilter.id ASC
 		";
@@ -81,7 +83,7 @@ class smsgroupfilter
 		return $result;
 	}
 
-	public static function update_old_record_filter_recommend($_id, $_group_id)
+	public static function update_old_record_filter_recommend($_id, $_group_id, $_platoon)
 	{
 		$query  =
 		"
@@ -90,6 +92,7 @@ class smsgroupfilter
 			SET
 				s_sms.recommend_id = $_group_id
 			WHERE
+				s_sms.platoon = '$_platoon' AND
 				s_sms.id IN ($_id)
 		";
 
@@ -117,9 +120,9 @@ class smsgroupfilter
 	}
 
 
-	public static function multi_remove_analyze($_analye, $_group_id)
+	public static function multi_remove_analyze($_analye, $_group_id, $_platoon)
 	{
-		$query  = "DELETE FROM s_groupfilter  WHERE s_groupfilter.type = 'analyze' AND s_groupfilter.group_id = $_group_id AND s_groupfilter.text IN ('$_analye') ";
+		$query  = "DELETE FROM s_groupfilter  WHERE s_groupfilter.type = 'analyze' AND s_groupfilter.group_id = $_group_id AND s_groupfilter.platoon = '$_platoon' AND s_groupfilter.text IN ('$_analye') ";
 		\dash\db::query($query);
 		return;
 	}

@@ -10,7 +10,7 @@ class view
 
 		\dash\data::page_title(T_("Sms list"));
 		\dash\data::page_desc(T_("Sms list"));
-		\dash\data::badge_link(\dash\url::here());
+		\dash\data::badge_link(\dash\url::here(). \dash\data::platoonGet());
 		\dash\data::badge_text(T_('Dashboard'));
 
 		if(\dash\request::get())
@@ -28,17 +28,21 @@ class view
 		\dash\data::archiveBTN($allGet);
 
 
-		\dash\data::badge2_link(\dash\url::here().'/export');
+		\dash\data::badge2_link(\dash\url::here().'/export' . \dash\data::platoonGet());
 		\dash\data::badge2_text(T_('Export CSV'));
 
 
 		$filterArray = [];
-		$countArgs   = [];
+		$countArgs   =
+		[
+			's_sms.platoon' => \lib\app\platoon\tools::get_index_locked(),
+		];
 
 		$args =
 		[
 			'order' => \dash\request::get('order'),
 			'sort'  => \dash\request::get('sort'),
+			's_sms.platoon' => \lib\app\platoon\tools::get_index_locked(),
 			'limit' => 25,
 		];
 
@@ -249,7 +253,7 @@ class view
 		\dash\data::maxLimit(self::check_max_limit($child));
 		// \dash\data::badTime(self::bad_time());
 
-		$smsgroup = \lib\db\smsgroup::get(['1.1' => ["=", "1.1"]]);
+		$smsgroup = \lib\db\smsgroup::get(['platoon' => \lib\app\platoon\tools::get_index_locked()]);
 		\dash\data::allGroupList($smsgroup);
 
 		if(\dash\data::statusCount_lastconnected())
@@ -267,7 +271,7 @@ class view
 
 			$gateway   = \dash\utility\filter::mobile($_gateway);
 
-			$get       = \lib\db\sms::get_count_gateway_send(date("Y-m-d"), $gateway);
+			$get       = \lib\db\sms::get_count_gateway_send(date("Y-m-d"), $gateway, \lib\app\platoon\tools::get_index_locked());
 			$get       = intval($get);
 
 			if($get >= $max_limit)

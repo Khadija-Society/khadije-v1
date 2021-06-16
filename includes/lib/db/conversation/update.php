@@ -8,7 +8,7 @@ class update
 {
 
 
-	public static function multi_archive_conversation($_mobiles)
+	public static function multi_archive_conversation($_mobiles, $_platoon)
 	{
 		$_mobiles = implode("','", $_mobiles);
 		$query =
@@ -19,7 +19,8 @@ class update
 				s_sms.conversation_answered = 1
 			WHERE
 				s_sms.fromnumber IN ('$_mobiles') AND
-				s_sms.conversation_answered IS NULL
+				s_sms.conversation_answered IS NULL AND
+				s_sms.platoon = '$_platoon'
 
 		";
 		\dash\db::query($query);
@@ -38,7 +39,8 @@ class update
 			WHERE
 				s_sms.fromnumber IN ('$_mobiles') AND
 				s_sms.receivestatus = 'awaiting' AND
-				s_sms.answertext IS NULL
+				s_sms.answertext IS NULL AND
+				s_sms.platoon = '$_platoon'
 
 		";
 		\dash\db::query($query);

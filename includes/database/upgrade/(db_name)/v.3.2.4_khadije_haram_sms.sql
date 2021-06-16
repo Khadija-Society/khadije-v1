@@ -1,0 +1,12 @@
+ALTER TABLE s_sms ADD `platoon` enum('1','2','3','4','5','6','7','8','9','10', '11', '12', '13', '14') NULL DEFAULT NULL;
+ALTER TABLE s_sms ADD INDEX `s_sms_index_search_platoon` (`platoon`);
+UPDATE s_sms SET s_sms.platoon = 1 WHERE s_sms.platoon IS NULL;
+ALTER TABLE s_mobiles ADD `platoon` enum('1','2','3','4','5','6','7','8','9','10', '11', '12', '13', '14') NULL DEFAULT NULL;
+ALTER TABLE s_mobiles ADD INDEX `s_mobiles_index_search_platoon` (`platoon`);
+UPDATE s_mobiles SET s_mobiles.platoon = 1 WHERE s_mobiles.platoon IS NULL;
+ALTER TABLE s_group ADD `platoon` enum('1','2','3','4','5','6','7','8','9','10', '11', '12', '13', '14') NULL DEFAULT NULL;
+ALTER TABLE s_group ADD INDEX `s_group_index_search_platoon` (`platoon`);
+UPDATE s_group SET s_group.platoon = 1 WHERE s_group.platoon IS NULL;
+ALTER TABLE s_groupfilter ADD `platoon` enum('1','2','3','4','5','6','7','8','9','10', '11', '12', '13', '14') NULL DEFAULT NULL;
+ALTER TABLE s_groupfilter ADD INDEX `s_group_index_search_platoon` (`platoon`);
+UPDATE s_groupfilter SET s_groupfilter.platoon = 1 WHERE s_group.platoon IS NULL;

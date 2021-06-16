@@ -65,7 +65,7 @@
 
 {%block iSendChart%}
 
-<a class="dcard x1" href='{{url.this}}/sendchart'>
+<a class="dcard x1" href='{{url.this}}/sendchart{{platoonGet}}'>
  <div class="statistic blue">
   <div class="value"><i class="sf-list"></i></div>
   <div class="label">{%trans "Send chart"%}</div>
@@ -88,7 +88,7 @@
 
 
 {%block igroupby%}
-<a class="dcard x1" href='{{url.this}}/groupby'>
+<a class="dcard x1" href='{{url.this}}/groupby{{platoonGet}}'>
  <div class="statistic">
   <div class="value"><i class="sf-list"></i></div>
   <div class="label">{%trans "Group by status"%}</div>
@@ -97,7 +97,7 @@
 {%endblock%}
 
 {%block icountsmsday%}
-<a class="dcard x1" href='{{url.this}}/countsmsday'>
+<a class="dcard x1" href='{{url.this}}/countsmsday{{platoonGet}}'>
  <div class="statistic">
   <div class="value"><i class="sf-cardiac-pulse"></i></div>
   <div class="label">{%trans "Cont send sms per day"%}</div>
@@ -114,7 +114,7 @@
 
 
 {%block iSmsGroupAdd%}
-<a class="dcard x1" href='{{url.here}}/addgroup'>
+<a class="dcard x1" href='{{url.here}}/addgroup{{platoonGet}}'>
  <div class="statistic">
   <div class="value"><i class="sf-plus"></i></div>
   <div class="label">{%trans "Add group"%}</div>

@@ -49,7 +49,7 @@ class smsgroup
 
 	public static function show_list()
 	{
-		$result = \lib\db\smsgroup::show_list();
+		$result = \lib\db\smsgroup::show_list(\lib\app\platoon\tools::get_index_locked());
 
 		$temp              = [];
 
@@ -317,6 +317,8 @@ class smsgroup
 			}
 		}
 
+		$platoon = \dash\app::request('platoon');
+
 		$args             = [];
 		$args['title']    = $title;
 		$args['status']   = $status;
@@ -326,6 +328,7 @@ class smsgroup
 		$args['answer']   = $answer;
 		$args['sort']     = $sort;
 		$args['calcdate'] = $calcdate;
+		$args['platoon'] = $platoon;
 
 		return $args;
 	}
