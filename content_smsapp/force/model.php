@@ -26,6 +26,7 @@ class model
 			'receivestatus' => 'awaiting',
 			'recommend_id'  => null,
 			'group_id'      => null,
+			'platoon'       => \lib\app\platoon\tools::get_index_locked(),
 		];
 
 		if(\dash\request::post('answerdate'))

@@ -15,11 +15,11 @@ class view
 
 		\dash\data::dataTable($dataTable);
 
-		$mobile = \lib\db\sms::group_by_togateway();
-		if(is_array($mobile) && count($mobile) > 1)
-		{
-			\dash\data::togateway($mobile);
-		}
+		// $mobile = \lib\db\sms::group_by_togateway();
+		// if(is_array($mobile) && count($mobile) > 1)
+		// {
+		// 	\dash\data::togateway($mobile);
+		// }
 
 
 	}

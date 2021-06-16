@@ -128,7 +128,7 @@
               {%if value.id == requestGET.aid%}
                 <i>{%trans "Editing ..."%}</i>
               {%else%}
-                <a class="" href="{{url.this}}?id={{requestGET.id}}&aid={{value.id}}">{%trans "Edit"%}</a>
+                <a class="" href="{{url.this}}?id={{requestGET.id}}&aid={{value.id}}{{platoonGetAnd}}">{%trans "Edit"%}</a>
               {%endif%}
               </div>
           </div>
