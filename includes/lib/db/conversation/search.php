@@ -10,8 +10,35 @@ class search
 		return $_list;
 	}
 
-
 	public static function count_group_by_group_id($_and = [], $_or = [], $_order_sort = null, $_meta = [])
+	{
+		$q      = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
+		$query  =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				s_sms.group_id,
+				s_group.title
+			FROM
+				s_sms
+			INNER JOIN s_group ON s_group.id = s_sms.group_id
+				$q[join]
+				$q[where]
+			GROUP BY s_sms.group_id
+			ORDER BY s_group.sort ASC
+		";
+		$result = \dash\db::get($query);
+
+		if(!is_array($result))
+		{
+			$result = [];
+		}
+
+		return $result;
+
+	}
+
+	public static function count_group_by_group_id_old($_and = [], $_or = [], $_order_sort = null, $_meta = [])
 	{
 		$q      = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
 		$query  = "SELECT COUNT(*) AS `count`, s_sms.group_id FROM s_sms $q[join] $q[where] GROUP BY s_sms.group_id	";
