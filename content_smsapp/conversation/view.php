@@ -22,6 +22,7 @@ class view
 			'level'     => \dash\request::get('level'),
 			'startdate' => \dash\request::get('startdate'),
 			'enddate'   => \dash\request::get('enddate'),
+			'group_id'   => \dash\request::get('group_id'),
 		];
 
 		$q = \dash\request::get('q');
@@ -39,15 +40,19 @@ class view
 			return $list;
 		}
 
+		$currentStatInGroup = \dash\temp::get('currentStatInGroup');
+		if(!is_array($currentStatInGroup))
+		{
+			$currentStatInGroup = [];
+		}
 
-		$conversationStat = \lib\app\conversation\get::stat();
-
+		\dash\data::currentStatInGroup($currentStatInGroup);
 
 		$myLinks =
 		[
-			'awaiting' => ['count' => a($conversationStat, 'awaiting'), 'title' => T_("Awaiting to answer"), 'default' => true],
-			'all'      => ['count' => a($conversationStat, 'all'), 'title' => T_("All")],
-			'answered' => ['count' => a($conversationStat, 'answered'), 'title' => T_("Answered"), 'no_link' => true],
+			'awaiting' => ['count' => 0, 'title' => T_("Awaiting to answer"), 'default' => true],
+			'all'      => ['count' => 0, 'title' => T_("All")],
+			'answered' => ['count' => 0, 'title' => T_("Answered"), 'no_link' => true],
 		];
 
 		\dash\data::myLinks($myLinks);

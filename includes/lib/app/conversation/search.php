@@ -39,6 +39,18 @@ class search
 
 		$meta['limit'] = 50;
 
+
+		if(isset($_args['group_id']) && is_string($_args['group_id']))
+		{
+			$group_id = $_args['group_id'];
+			$group_id = \dash\coding::decode($group_id);
+			if($group_id)
+			{
+				$and['group_id'] = " s_sms.group_id = $group_id ";
+			}
+		}
+
+
 		$level = null;
 
 
@@ -118,7 +130,8 @@ class search
 
 			default:
 			case 'awaiting':
-				$and[] = " s_sms.conversation_answered  IS NULL AND s_sms.answertext IS NULL ";
+				// $and[] = " s_sms.conversation_answered  IS NULL AND s_sms.answertext IS NULL ";
+				$and[] = " s_sms.conversation_answered IS NULL ";
 				self::$is_filtered = true;
 				break;
 		}
@@ -199,6 +212,11 @@ class search
 		{
 			return $list;
 		}
+
+		unset($and['group_id']);
+		$count_group_by = \lib\db\conversation\search::count_group_by_group_id($and, $or, $order_sort, $meta, $search_in_text);
+		\dash\temp::set('currentStatInGroup', $count_group_by);
+
 
 		\dash\utility\pagination::np(($list ? true : false), self::$is_filtered);
 
