@@ -86,22 +86,7 @@ class search
 		}
 
 
-		if(isset($_meta['get_count_all']) && $_meta['get_count_all'])
-		{
-			$count_query  =
-			"
-				SELECT
-					COUNT(DISTINCT s_sms.mobile_id) AS `count`
-				FROM
-					s_sms
-				$q[join]
-				$q[where]
-			";
 
-			$result = \dash\db::get($count_query, 'count', true);
-
-			return $result;
-		}
 
 		// $view = "CREATE OR REPLACE VIEW view_s_sms AS SELECT * FROM s_sms ORDER BY s_sms.id DESC;";
 		// \dash\db::query($view);
@@ -147,9 +132,27 @@ class search
 			$q[join]
 			$q[where]
 			GROUP BY s_sms.mobile_id
-			ORDER BY `id` DESC
-			$limit
+
 		";
+
+		if(isset($_meta['get_count_all']) && $_meta['get_count_all'])
+		{
+			$count_query  = $query;
+
+			$result = \dash\db::query($count_query);
+
+			if(isset($result->num_rows))
+			{
+				return floatval($result->num_rows);
+			}
+			else
+			{
+				return 0;
+			}
+
+		}
+
+		$query .= " ORDER BY `id` DESC $limit ";
 
 		$result = \dash\db::get($query);
 
