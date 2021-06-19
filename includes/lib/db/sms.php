@@ -491,15 +491,17 @@ class sms
 			$check_query = "SELECT * FROM s_mobiles WHERE s_mobiles.mobile = '$_args[fromnumber]' LIMIT 1";
 			$check_mobile = \dash\db::get($check_query, null, true);
 
+			$date = date("Y-m-d H:i:s");
+			$time = time();
+
 			if(isset($check_mobile['id']))
 			{
 				$_args['mobile_id'] = $check_mobile['id'];
+				\dash\db::query("UPDATE s_mobiles SET s_mobiles.lastsmstime = $time WHERE s_mobiles.id = $check_mobile[id] LIMIT 1 ");
 			}
 			else
 			{
-				$date = date("Y-m-d H:i:s");
-
-				$add_new_mobile = "INSERT IGNORE INTO s_mobiles SET s_mobiles.mobile = '$_args[fromnumber]', s_mobiles.datecreated = '$date' ";
+				$add_new_mobile = "INSERT IGNORE INTO s_mobiles SET s_mobiles.mobile = '$_args[fromnumber]', s_mobiles.datecreated = '$date', s_mobiles.lastsmstime = $time ";
 
 				\dash\db::query($add_new_mobile);
 				$insert_id = \dash\db::insert_id();
