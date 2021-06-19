@@ -137,18 +137,19 @@ class search
 
 		if(isset($_meta['get_count_all']) && $_meta['get_count_all'])
 		{
-			$count_query  = $query;
+			$count_query  =	"SELECT COUNT(DISTINCT s_sms.mobile_id) AS `count`	FROM $select_from $q[join] $q[where]";
 
-			$result = \dash\db::query($count_query);
+			return \dash\db::get($count_query, 'count');
+			// $result = \dash\db::query($count_query);
 
-			if(isset($result->num_rows))
-			{
-				return floatval($result->num_rows);
-			}
-			else
-			{
-				return 0;
-			}
+			// if(isset($result->num_rows))
+			// {
+			// 	return floatval($result->num_rows);
+			// }
+			// else
+			// {
+			// 	return 0;
+			// }
 
 		}
 
