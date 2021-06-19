@@ -183,39 +183,44 @@ class search
 
 
 
-	private static function last_sms_ids($result)
-	{
-		$id = array_column($result, 'id');
-		$id = array_filter($id);
-		$id = array_values($id);
-		return implode(",", $id);
-	}
-
-
-	// private static $smsids = false;
-	// public static function last_sms_ids($result)
+	// private static function last_sms_ids($result)
 	// {
-	// 	if(!$mobile_id)
-	// 	{
-	// 		return 0;
-	// 	}
-
-	// 	if(self::$smsids === false)
-	// 	{
-	// 		$query = "SELECT MAX(s_sms.id) AS `id` FROM s_sms WHERE s_sms.mobile_id IN ($mobile_id) GROUP BY s_sms.mobile_id";
-	// 		$result = \dash\db::get($query, 'id');
-	// 		if(!is_array($result))
-	// 		{
-	// 			self::$smsid = 0;
-	// 		}
-
-	// 		$result = array_map('floatval', $result);
-
-	// 		self::$smsids = implode(',', $result);
-	// 	}
-
-	// 	return self::$smsids;
+	// 	$id = array_column($result, 'id');
+	// 	$id = array_filter($id);
+	// 	$id = array_values($id);
+	// 	return implode(",", $id);
 	// }
+
+
+	private static $smsids = false;
+	public static function last_sms_ids($result)
+	{
+		$mobile_id = array_column($result, 'mobile_id');
+		$mobile_id = array_filter($mobile_id);
+		$mobile_id = array_values($mobile_id);
+		if(!$mobile_id)
+		{
+			return 0;
+		}
+
+		$mobile_id = implode(",", $mobile_id);
+
+		if(self::$smsids === false)
+		{
+			$query = "SELECT MAX(s_sms.id) AS `id` FROM s_sms WHERE s_sms.mobile_id IN ($mobile_id) GROUP BY s_sms.mobile_id";
+			$result = \dash\db::get($query, 'id');
+			if(!is_array($result))
+			{
+				self::$smsid = 0;
+			}
+
+			$result = array_map('floatval', $result);
+
+			self::$smsids = implode(',', $result);
+		}
+
+		return self::$smsids;
+	}
 
 
 	private static function fill_fromnumber(&$result)
