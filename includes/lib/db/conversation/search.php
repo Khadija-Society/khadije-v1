@@ -43,18 +43,6 @@ class search
 	public static function list($_and = [], $_or = [], $_order_sort = null, $_meta = [], $_search_in_text = false)
 	{
 
-		$select_from = 's_sms';
-
-		if($_search_in_text)
-		{
-			$qq = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
-			// reset or
-			$_or = [];
-
-			$select_from = "(SELECT * FROM s_sms $qq[join] $qq[where]) AS `s_sms`";
-		}
-
-
 		$q = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
 
 		if($q['pagination'] === false)
@@ -88,14 +76,38 @@ class search
 
 
 
-		// $view = "CREATE OR REPLACE VIEW view_s_sms AS SELECT * FROM s_sms ORDER BY s_sms.id DESC;";
+		// $view = "CREATE OR REPLACE VIEW s_sms AS SELECT * FROM s_sms ORDER BY s_sms.id DESC;";
 		// \dash\db::query($view);
+
+		$query =
+		"
+			SELECT
+				DISTINCT s_sms.mobile_id,
+				-- s_sms.id,
+				-- s_sms.user_id,
+				NULL AS `fromnumber`,
+				0 AS `count`,
+				NULL AS `displayname`,
+				NULL AS `gender`,
+				NULL AS `avatar`,
+				s_mobiles.lastsmstime,
+				NULL AS `lastmessage`
+			FROM
+				s_sms
+			INNER JOIN s_mobiles ON s_mobiles.id = s_sms.mobile_id
+			$q[join]
+			$q[where]
+			ORDER BY s_mobiles.lastsmstime DESC
+			$limit
+		";
+
 
 		// $query =
 		// "
 		// 	SELECT
-		// 		DISTINCT view_s_sms.mobile_id,
+		// 		s_sms.mobile_id,
 		// 		-- s_sms.id,
+		// 		MAX(s_sms.id) AS `id`,
 		// 		-- s_sms.user_id,
 		// 		NULL AS `fromnumber`,
 		// 		0 AS `count`,
@@ -105,39 +117,16 @@ class search
 		// 		NULL AS `lastdate`,
 		// 		NULL AS `lastmessage`
 		// 	FROM
-		// 		view_s_sms
+		// 		s_sms
 		// 	$q[join]
 		// 	$q[where]
-		// 	-- ORDER BY 1 DESC
-		// 	$limit
+		// 	GROUP BY s_sms.mobile_id
+
 		// ";
-
-
-		$query =
-		"
-			SELECT
-				s_sms.mobile_id,
-				-- s_sms.id,
-				MAX(s_sms.id) AS `id`,
-				-- s_sms.user_id,
-				NULL AS `fromnumber`,
-				0 AS `count`,
-				NULL AS `displayname`,
-				NULL AS `gender`,
-				NULL AS `avatar`,
-				NULL AS `lastdate`,
-				NULL AS `lastmessage`
-			FROM
-				$select_from
-			$q[join]
-			$q[where]
-			GROUP BY s_sms.mobile_id
-
-		";
 
 		if(isset($_meta['get_count_all']) && $_meta['get_count_all'])
 		{
-			$count_query  =	"SELECT COUNT(DISTINCT s_sms.mobile_id) AS `count`	FROM $select_from $q[join] $q[where]";
+			$count_query  =	"SELECT COUNT(DISTINCT s_sms.mobile_id) AS `count`	FROM s_sms $q[join] $q[where]";
 
 			return \dash\db::get($count_query, 'count');
 			// $result = \dash\db::query($count_query);
@@ -153,7 +142,7 @@ class search
 
 		}
 
-		$query .= " ORDER BY `id` DESC $limit ";
+		// $query .= " ORDER BY `id` DESC $limit ";
 
 		$result = \dash\db::get($query);
 
@@ -166,11 +155,16 @@ class search
 
 		$result = array_combine(array_column($result, 'mobile_id'), $result);
 
+		foreach ($result as $key => $value)
+		{
+			$result[$key]['lastdate'] = date("Y-m-d H:i:s", $value['lastsmstime']);
+		}
+
 		self::fill_fromnumber($result);
 		self::fill_user_id($result);
 		self::fill_count($result);
 		self::fill_displayname($result);
-		self::fill_lastdate($result);
+		// self::fill_lastdate($result);
 		self::fill_lastmessage($result);
 
 

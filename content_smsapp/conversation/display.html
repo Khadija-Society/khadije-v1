@@ -107,7 +107,7 @@
     </div>
     <div class="cauto">
           <span class="badge rounded primary">{{value.count | fitNumber}}</span>
-          <span class="ltr txtL"> {{value.lastdate | dt}}</span>
+          <span class=""> <span class="ltr txtL compact">{{value.lastdate | dt}}</span></span>
           <div class="block mB10"></div>
           <span class="cauto floatL txtL btn outline xs" data-ajaxify data-method='post' data-data='{"archive": "conversation" {{platoonGetJson}}, "mobile":"{{value.fromnumber}}" }'> <i class="sf-archive pRa5 fs12"></i> {%trans "Archive"%}</span>
 
