@@ -128,7 +128,7 @@ class search
 		{
 			$count_query  =	"SELECT COUNT(DISTINCT s_sms.mobile_id) AS `count`	FROM s_sms $q[join] $q[where]";
 
-			return \dash\db::get($count_query, 'count');
+			return \dash\db::get($count_query, 'count', true);
 			// $result = \dash\db::query($count_query);
 
 			// if(isset($result->num_rows))
