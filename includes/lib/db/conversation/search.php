@@ -21,7 +21,7 @@ class search
 				s_group.title
 			FROM
 				s_sms
-			INNER JOIN s_group ON s_group.id = s_sms.group_id
+			LEFT JOIN s_group ON s_group.id = s_sms.group_id
 				$q[join]
 				$q[where]
 			GROUP BY s_sms.group_id
