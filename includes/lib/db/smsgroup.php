@@ -8,7 +8,7 @@ class smsgroup
 
 	public static function get_answering_group($_platoon)
 	{
-		$query  = "SELECT DISTINCT s_group.* FROM s_group LEFT JOIN s_groupfilter ON s_groupfilter.group_id = s_group.id  WHERE s_group.status = 'enable' AND s_sms.platoon = '$_platoon' AND s_groupfilter.type = 'answer' AND s_group.type = 'other'   ";
+		$query  = "SELECT DISTINCT s_group.* FROM s_group LEFT JOIN s_groupfilter ON s_groupfilter.group_id = s_group.id  WHERE s_group.status = 'enable' AND s_group.platoon = '$_platoon' AND s_groupfilter.type = 'answer' AND s_group.type = 'other'   ";
 		$result = \dash\db::get($query);
 		return $result;
 	}

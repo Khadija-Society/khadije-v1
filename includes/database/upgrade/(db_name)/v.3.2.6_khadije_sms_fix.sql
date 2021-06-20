@@ -1,0 +1,1 @@
+UPDATE  `s_sms` SET s_sms.recommend_id = null WHERE s_sms.recommend_id = 30 and s_sms.receivestatus = 'awaiting' LIMIT 682;
