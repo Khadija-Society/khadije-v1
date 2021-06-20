@@ -37,7 +37,6 @@ class sync
 			}
 		}
 
-		\content_api\v6\smsapp\newsms::set_archive_conversation();
 
 		if(isset($input['sentsms']) && is_array($input['sentsms']))
 		{
@@ -74,6 +73,8 @@ class sync
 				$result['lostresult'][] = $temp;
 			}
 		}
+
+		\content_api\v6\smsapp\newsms::set_archive_conversation();
 
 		return $result;
 	}

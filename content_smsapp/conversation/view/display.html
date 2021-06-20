@@ -102,6 +102,7 @@
       <div class="cauto txtL"><a href="{{url.here}}/editgroup?id={{value.recommand_id | coding('encode')}}"><span class=" mRa5 badge rounded secondary2">{{allGroup[value.recommand_id]['title']}}</span></a></div>
       {%endif%}
       <div class="cauto fc-black ltr txtL">{{value.datereceive | dt}}</div>
+      {%if perm_su() %}<div class="cauto fc-black ltr txtL">{%if value.conversation_answered%}<i class="badge rounded success mLa5">&nbsp;</i>{%else%}<i class="badge rounded danger mLa5">&nbsp;</i>{%endif%}</div>{%endif%}
 
     </div>
   </div>
