@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2021-06-17 09:50+0430\n"
-"PO-Revision-Date: 2021-06-17 09:50+0430\n"
+"POT-Creation-Date: 2021-06-20 20:05+0430\n"
+"PO-Revision-Date: 2021-06-20 20:06+0430\n"
 "Last-Translator: Javad Adib <Mr.Javad.Adib@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -10124,7 +10124,7 @@ msgid "some fields must be change for update!"
 msgstr "برای بروزرسانی باید حداقل یک فیلد را تغییر دهید!"
 
 #: dash/addons/includes/languages/trans_static.php:59
-#: dash/addons/includes/languages/trans_static.php:176 dash/lib/engine/view.php:141
+#: dash/addons/includes/languages/trans_static.php:176
 msgid "Ermile"
 msgstr "ارمایل"
 
@@ -14845,11 +14845,11 @@ msgstr "ما نمی‌توانیم به سرویس دیتابیس متصل شو�
 msgid "We can't connect to correct database!"
 msgstr "ما نمی‌توانیم به دیتابیس صحیح متصل شویم!"
 
-#: dash/lib/db/mysql/tools/install.php:240
+#: dash/lib/db/mysql/tools/install.php:258
 msgid "executed"
 msgstr "اجرا شد"
 
-#: dash/lib/db/mysql/tools/install.php:245
+#: dash/lib/db/mysql/tools/install.php:263
 msgid "Old version"
 msgstr "نسخه قدیمی"
 
@@ -14956,17 +14956,21 @@ msgstr "سامان سلطانی"
 msgid "SITE"
 msgstr "سایت"
 
-#: dash/lib/engine/view.php:142
-msgid "As easy as ABC is our slogan!"
-msgstr "کاری نداره شعار ماست!"
+#: dash/lib/engine/view.php:141
+msgid "Jibres"
+msgstr "جیبرس"
 
 #: dash/lib/engine/view.php:142
-msgid "If you are not finded a solution for your problem, call us."
-msgstr "اگر راه‌کاری مناسب برای مشکل خود نیافته‌اید، با ما تماس بگیرید."
+msgid ""
+"Integrated Ecommerce Platform Software / Quickly Start Free! Online Store Website "
+"& Mobile Online Store & Social Marketing & POS Software / SEO Optimized"
+msgstr ""
+"پلتفرم نرم‌افزاری تجارت الکترونیکی یکپارچه / وب‌سایت فروشگاه آنلاین + اپلیکیشن "
+"موبایل فروشگاهی + فروش در شبکه‌های اجتماعی + نرم‌افزار صندوق فروشگاهی"
 
-#: dash/lib/engine/view.php:143 khadije/includes/languages/trans_project.php:668
-msgid "Software Solution Designer"
-msgstr "ارائه‌دهنده‌ی راه‌کارهای مدرن نرم‌افزاری"
+#: dash/lib/engine/view.php:143
+msgid "Sell and enjoy"
+msgstr "بفروش و لذت ببر"
 
 #: dash/lib/engine/view.php:225
 msgid "Latest news"
@@ -15830,8 +15834,8 @@ msgstr "خطا در درگاه پرداخت - هیچ پاسخی گرفته نش�
 #: dash/lib/utility/pay/api/asanpardakht/bank.php:93
 #: dash/lib/utility/pay/api/irkish/bank.php:57
 #: dash/lib/utility/pay/api/irkish/bank.php:110
-#: dash/lib/utility/pay/api/mellat/bank.php:56
-#: dash/lib/utility/pay/api/mellat/bank.php:108
+#: dash/lib/utility/pay/api/mellat/bank.php:65
+#: dash/lib/utility/pay/api/mellat/bank.php:126
 #: dash/lib/utility/pay/api/parsian/bank.php:55
 #: dash/lib/utility/pay/api/parsian/bank.php:100
 #: dash/lib/utility/pay/api/parsian/bank.php:143
@@ -15878,7 +15882,7 @@ msgstr "خطا در اتصل به سرویس بانک"
 
 #: dash/lib/utility/pay/api/irkish/bank.php:163
 #: dash/lib/utility/pay/api/irkish/bank.php:167
-#: dash/lib/utility/pay/api/mellat/bank.php:176
+#: dash/lib/utility/pay/api/mellat/bank.php:194
 #: dash/lib/utility/pay/api/parsian/bank.php:269
 #: dash/lib/utility/pay/api/parsian/bank.php:274
 #: dash/lib/utility/pay/api/sep/bank.php:171
@@ -15912,183 +15916,183 @@ msgstr "ارجاع دهنده درگاه پرداخت ملت تنظیم نشده
 msgid "Can not connect to mellat gateway. Install it!"
 msgstr "نمی‌توانیم به درگاه پرداخت ملت متصل شویم. آن را نصب کنید!"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:123
+#: dash/lib/utility/pay/api/mellat/bank.php:141
 msgid "Transaction Approved"
 msgstr "تراکنش تایید شده است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:124
+#: dash/lib/utility/pay/api/mellat/bank.php:142
 msgid "Invalid Card Number"
 msgstr "شماره کارت نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:125
+#: dash/lib/utility/pay/api/mellat/bank.php:143
 msgid "No Sufficient Funds"
 msgstr "بدون پول کافی"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:126
+#: dash/lib/utility/pay/api/mellat/bank.php:144
 msgid "Incorrect Pin"
 msgstr "پین نادرست"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:127
+#: dash/lib/utility/pay/api/mellat/bank.php:145
 msgid "Allowable Number Of Pin Tries Exceeded"
 msgstr "تعداد قابل قبولی از پین تلاش می کند بیش از"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:128
+#: dash/lib/utility/pay/api/mellat/bank.php:146
 msgid "Card Not Effective"
 msgstr "کارت موثر نیست"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:129
+#: dash/lib/utility/pay/api/mellat/bank.php:147
 msgid "Exceeds Withdrawal Frequency Limit"
 msgstr "بیش از حد فرکانس خروج"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:130
+#: dash/lib/utility/pay/api/mellat/bank.php:148
 msgid "Customer Cancellation"
 msgstr "لغو مشتری"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:131
+#: dash/lib/utility/pay/api/mellat/bank.php:149
 msgid "Expired Card"
 msgstr "کارت خاتمه یافته"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:132
+#: dash/lib/utility/pay/api/mellat/bank.php:150
 msgid "Exceeds Withdrawal Amount Limit"
 msgstr "حد مجاز بازپرداخت بیشتر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:133
+#: dash/lib/utility/pay/api/mellat/bank.php:151
 msgid "No Such Issuer"
 msgstr "چنین صادر کننده ای وجود ندارد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:134
+#: dash/lib/utility/pay/api/mellat/bank.php:152
 msgid "Card Switch Internal Error"
 msgstr "کارت سوئیچ داخلی خطا"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:135
+#: dash/lib/utility/pay/api/mellat/bank.php:153
 msgid "Issuer Or Switch Is Inoperative"
 msgstr "صادر کننده یا سوئیچ نامناسب است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:136
+#: dash/lib/utility/pay/api/mellat/bank.php:154
 msgid "Transaction Not Permitted To Card Holder"
 msgstr "تراکنش به دارنده کارت مجاز نمی باشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:137
+#: dash/lib/utility/pay/api/mellat/bank.php:155
 msgid "Invalid Merchant"
 msgstr "Merchant نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:138
+#: dash/lib/utility/pay/api/mellat/bank.php:156
 msgid "Security Violation"
 msgstr "نقض امنیتی"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:139
+#: dash/lib/utility/pay/api/mellat/bank.php:157
 msgid "Invalid User Or Password"
 msgstr "کاربر یا گذرواژه نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:140
+#: dash/lib/utility/pay/api/mellat/bank.php:158
 msgid "Invalid Amount"
 msgstr "مقدار نامعتبر"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:141
+#: dash/lib/utility/pay/api/mellat/bank.php:159
 msgid "Invalid Response"
 msgstr "پاسخ نامعتبر"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:142
+#: dash/lib/utility/pay/api/mellat/bank.php:160
 msgid "Format Error"
 msgstr "خطای قالب"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:143
+#: dash/lib/utility/pay/api/mellat/bank.php:161
 msgid "No Investment Account"
 msgstr "حساب سرمایه گذاری ندارد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:144
+#: dash/lib/utility/pay/api/mellat/bank.php:162
 msgid "System Internal Error"
 msgstr "خطای داخلی سیستم"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:145
+#: dash/lib/utility/pay/api/mellat/bank.php:163
 msgid "Invalid Business Date"
 msgstr "تاریخ کسب و کار نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:146
+#: dash/lib/utility/pay/api/mellat/bank.php:164
 msgid "Duplicate Order Id"
 msgstr "شناسه سفارش تکراری"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:147
+#: dash/lib/utility/pay/api/mellat/bank.php:165
 msgid "Sale Transaction Not Found"
 msgstr "معامله فروش یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:148
+#: dash/lib/utility/pay/api/mellat/bank.php:166
 msgid "Duplicate Verify"
 msgstr "تکثیر تأیید"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:149
+#: dash/lib/utility/pay/api/mellat/bank.php:167
 msgid "Verify Transaction Not Found"
 msgstr "تأیید معامله یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:150
+#: dash/lib/utility/pay/api/mellat/bank.php:168
 msgid "Transaction Has Been Settled"
 msgstr "معامله صورت گرفته است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:151
+#: dash/lib/utility/pay/api/mellat/bank.php:169
 msgid "Transaction Has Not Been Settled"
 msgstr "معامله انجام نشده است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:152
+#: dash/lib/utility/pay/api/mellat/bank.php:170
 msgid "Settle Transaction Not Found"
 msgstr "معامله معامله پیدا نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:153
+#: dash/lib/utility/pay/api/mellat/bank.php:171
 msgid "Transaction Has Been Reversed"
 msgstr "معامله معکوس شده است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:154
+#: dash/lib/utility/pay/api/mellat/bank.php:172
 msgid "Refund Transaction Not Found"
 msgstr "معامله بازپرداخت یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:155
+#: dash/lib/utility/pay/api/mellat/bank.php:173
 msgid "Bill Digit Incorrect"
 msgstr "بیل سیگنال اشتباه است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:156
+#: dash/lib/utility/pay/api/mellat/bank.php:174
 msgid "Payment Digit Incorrect"
 msgstr "سیگنال پرداخت اشتباه است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:157
+#: dash/lib/utility/pay/api/mellat/bank.php:175
 msgid "Bill Organization Not Valid"
 msgstr "سازمان بیل معتبر نیست"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:158
+#: dash/lib/utility/pay/api/mellat/bank.php:176
 msgid "Session Timeout"
 msgstr "مدت زمان جلسه"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:159
+#: dash/lib/utility/pay/api/mellat/bank.php:177
 msgid "Data Access Exception"
 msgstr "استثناء دسترسی به داده ها"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:160
+#: dash/lib/utility/pay/api/mellat/bank.php:178
 msgid "Payer Id Is Invalid"
 msgstr "شناسه پرداخت نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:161
+#: dash/lib/utility/pay/api/mellat/bank.php:179
 msgid "Customer Not Found"
 msgstr "مشتری یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:162
+#: dash/lib/utility/pay/api/mellat/bank.php:180
 msgid "Try Count Exceeded"
 msgstr "سعی کنید تعداد بیش از حد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:163
+#: dash/lib/utility/pay/api/mellat/bank.php:181
 msgid "Invalid IP"
 msgstr "IP نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:164
+#: dash/lib/utility/pay/api/mellat/bank.php:182
 msgid "Duplicate Transmission"
 msgstr "انتقال تکراری"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:165
+#: dash/lib/utility/pay/api/mellat/bank.php:183
 msgid "Original Transaction Not Found"
 msgstr "معامله اصلی یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:166
+#: dash/lib/utility/pay/api/mellat/bank.php:184
 msgid "Invalid Transaction"
 msgstr "معامله نامعتبر"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:167
+#: dash/lib/utility/pay/api/mellat/bank.php:185
 msgid "Error In Settle"
 msgstr "خطا در حل و فصل"
 
@@ -16126,8 +16130,8 @@ msgid "The payir payment api not set"
 msgstr "کلید اتصال به درگاه پرداخت یافت نشد"
 
 #: dash/lib/utility/pay/api/payir/back.php:36
-msgid "The payir payment transId not set"
-msgstr "خطا در درگاه پرداخت  - شناسه تراکنش یافت نشد"
+msgid "The payir payment token not set"
+msgstr "کد احراز هویت پی‌آی‌آر یافت نشد"
 
 #: dash/lib/utility/pay/api/sep/back.php:13 dash/lib/utility/pay/api/sep/go.php:13
 msgid "The sep payment on this service is locked"
@@ -17306,17 +17310,17 @@ msgid "Your message was saved"
 msgstr "پیام شما ذخیره شد"
 
 #: khadije/content_api/v6/mokeb/controller.php:135
-#: khadije/content_api/v6/smsapp/sync.php:136
+#: khadije/content_api/v6/smsapp/sync.php:137
 msgid "No input was send!"
 msgstr "هیچ مقداری وارد نشده است!"
 
 #: khadije/content_api/v6/mokeb/controller.php:142
-#: khadije/content_api/v6/smsapp/sync.php:144
+#: khadije/content_api/v6/smsapp/sync.php:145
 msgid "Invalid input syntax"
 msgstr "مقادیر وارد شده نامعتبر است"
 
 #: khadije/content_api/v6/mokeb/controller.php:148
-#: khadije/content_api/v6/smsapp/sync.php:150
+#: khadije/content_api/v6/smsapp/sync.php:151
 msgid "Empty input"
 msgstr "مقادیر ورودی خالی هستند"
 
@@ -20256,6 +20260,10 @@ msgstr "دل‌نوشته‌ها"
 #: khadije/includes/languages/trans_project.php:667
 msgid "Other Languages"
 msgstr "سایر زبان‌ها"
+
+#: khadije/includes/languages/trans_project.php:668
+msgid "Software Solution Designer"
+msgstr "ارائه‌دهنده‌ی راه‌کارهای مدرن نرم‌افزاری"
 
 #: khadije/includes/languages/trans_project.php:674
 msgid "Eitaa"
@@ -25576,6 +25584,15 @@ msgstr "ما به کد پیامک برای ادامه مراحل نیاز دار
 msgid "SMS number is invalid!"
 msgstr "شماره پیامک اشتباه است!"
 
+#~ msgid "As easy as ABC is our slogan!"
+#~ msgstr "کاری نداره شعار ماست!"
+
+#~ msgid "If you are not finded a solution for your problem, call us."
+#~ msgstr "اگر راه‌کاری مناسب برای مشکل خود نیافته‌اید، با ما تماس بگیرید."
+
+#~ msgid "The payir payment transId not set"
+#~ msgstr "خطا در درگاه پرداخت  - شناسه تراکنش یافت نشد"
+
 #~ msgid "Chat list"
 #~ msgstr "لیست گفتگو"
 
@@ -29185,9 +29202,6 @@ msgstr "شماره پیامک اشتباه است!"
 
 #~ msgid "Talambar"
 #~ msgstr "تلمبار"
-
-#~ msgid "Jibres"
-#~ msgstr "جیبرس"
 
 #~ msgid "Multiple"
 #~ msgstr "چندگانه"
