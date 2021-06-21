@@ -27,6 +27,7 @@ class view
 
 		if(array_key_exists('group_id', $_GET) && !\dash\request::get('group_id'))
 		{
+			\dash\data::withoutGroupSelected(true);
 			$args['group_id'] = false;
 		}
 
