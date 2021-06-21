@@ -114,13 +114,30 @@ class smsgroupfilter
 			$get_not_words = array_column($get_not_words, 'text');
 
 			$get_sms_id = \lib\db\sms::analyze_word($get_words, $get_not_words, \lib\app\platoon\tools::get_index_locked());
+
+
 			if($get_sms_id)
 			{
 				$count = count($get_sms_id);
 				$msg = T_("Auto update old message by new filter :val", ['val' => \dash\utility\human::fitNumber($count)]);
-				$result = implode(',', $get_sms_id);
-				\lib\db\smsgroupfilter::update_old_record_filter_recommend($result, $_group_id, \lib\app\platoon\tools::get_index_locked());
 				\dash\notif::info($msg);
+				$result = implode(',', $get_sms_id);
+
+				\lib\db\smsgroupfilter::update_old_record_filter_recommend($result, $_group_id, \lib\app\platoon\tools::get_index_locked());
+
+				$find_answer = \lib\db\smsgroupfilter::get(['type' => 'answer', 'group_id' => $_group_id, 'limit' => 1], ['order' => ' ORDER BY s_groupfilter.sort ASC ']);
+
+				if(isset($find_answer['text']) && $find_answer['text'])
+				{
+					\lib\db\smsgroupfilter::set_answer_old_record_filter_recommend($result, $find_answer['text'], \lib\app\platoon\tools::get_index_locked());
+				}
+				else
+				{
+					return;
+				}
+
+
+
 			}
 		}
 

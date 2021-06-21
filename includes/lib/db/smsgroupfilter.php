@@ -85,6 +85,32 @@ class smsgroupfilter
 		return $result;
 	}
 
+
+	public static function set_answer_old_record_filter_recommend($_id, $_answer, $_platoon)
+	{
+		$answertext_count = mb_strlen($_answer);
+
+		$query  =
+		"
+			UPDATE
+				s_sms
+			SET
+				s_sms.answertext = '$_answer',
+				s_sms.answertextcount = $answertext_count,
+				s_sms.sendstatus = 'waitingtoautosend',
+				s_sms.receivestatus = 'answerready',
+				s_sms.conversation_answered = 1
+			WHERE
+				s_sms.id IN ($_id) AND
+				s_sms.platoon = '$_platoon' AND
+				s_sms.conversation_answered IS NULL AND
+				s_sms.answertext IS NULL
+		";
+
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
 	public static function update_old_record_filter_recommend($_id, $_group_id, $_platoon)
 	{
 		$query  =
@@ -92,7 +118,7 @@ class smsgroupfilter
 			UPDATE
 				s_sms
 			SET
-				s_sms.recommend_id = $_group_id
+				s_sms.group_id = $_group_id
 			WHERE
 				s_sms.platoon = '$_platoon' AND
 				s_sms.id IN ($_id)
