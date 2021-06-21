@@ -355,16 +355,14 @@ class newsms
 
 			$calcdate = a($get_recommend, 'calcdate');
 
-			if($calcdate)
+			if(!$calcdate)
 			{
-				$get_count_answered =  \lib\db\sms::get_count_answerd_in_time($insert['fromnumber'], $calcdate, \lib\app\platoon\tools::get_index_locked());
+				$calcdate = date("Y-m-d H:i:s", strtotime("-1 month"));
+			}
 
-				$need_answer_level = floatval($get_count_answered);
-			}
-			else
-			{
-				$need_answer_level = 0;
-			}
+			$get_count_answered =  \lib\db\sms::get_count_answerd_in_time($insert['fromnumber'], $calcdate, \lib\app\platoon\tools::get_index_locked());
+
+			$need_answer_level = floatval($get_count_answered);
 
 			$answer = null;
 			// find answer
