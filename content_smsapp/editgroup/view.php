@@ -21,7 +21,7 @@ class view
 			[
 				'pagenation' => false,
 				'type'       => 'number',
-				'platoon' => \lib\app\platoon\tools::get_index_locked(),
+				// 'platoon' => \lib\app\platoon\tools::get_index_locked(),
 				'group_id'   => \dash\coding::decode(\dash\data::myId()),
 			];
 
@@ -36,7 +36,7 @@ class view
 		[
 			'pagenation' => false,
 			'type'       => 'analyze',
-			'platoon' => \lib\app\platoon\tools::get_index_locked(),
+			// 'platoon' => \lib\app\platoon\tools::get_index_locked(),
 			'group_id'   => \dash\coding::decode(\dash\data::myId()),
 		];
 
@@ -55,7 +55,7 @@ class view
 		[
 			'pagenation' => false,
 			'type'       => 'answer',
-			'platoon' => \lib\app\platoon\tools::get_index_locked(),
+			// 'platoon' => \lib\app\platoon\tools::get_index_locked(),
 			'order'      => 'asc',
 			'sort'       => 'sort',
 			'group_id'   => \dash\coding::decode(\dash\data::myId()),
