@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2021-06-20 20:05+0430\n"
-"PO-Revision-Date: 2021-06-20 20:06+0430\n"
+"POT-Creation-Date: 2021-06-21 19:25+0430\n"
+"PO-Revision-Date: 2021-06-21 19:25+0430\n"
 "Last-Translator: Javad Adib <Mr.Javad.Adib@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -985,7 +985,7 @@ msgstr "شناسه نشست ارسال نشده است یا نادرست است"
 #: khadije/includes/lib/app/doyon.php:650
 #: khadije/includes/lib/app/protectiontype.php:132
 #: khadije/includes/lib/app/service.php:130
-#: khadije/includes/lib/app/smsgroupfilter.php:384
+#: khadije/includes/lib/app/smsgroupfilter.php:401
 msgid "Invalid type"
 msgstr "نوع نامعتبر"
 
@@ -1147,9 +1147,9 @@ msgstr "داشبورد سیستم مدیریت محتوا"
 #: khadije/includes/lib/app/protectionagentoccasion.php:706
 #: khadije/includes/lib/app/sms.php:1078 khadije/includes/lib/app/sms.php:1090
 #: khadije/includes/lib/app/smsgroup.php:32 khadije/includes/lib/app/smsgroup.php:39
-#: khadije/includes/lib/app/smsgroupfilter.php:136
-#: khadije/includes/lib/app/smsgroupfilter.php:427
-#: khadije/includes/lib/app/smsgroupfilter.php:443
+#: khadije/includes/lib/app/smsgroupfilter.php:153
+#: khadije/includes/lib/app/smsgroupfilter.php:444
+#: khadije/includes/lib/app/smsgroupfilter.php:460
 msgid "Invalid id"
 msgstr "شناسه نامعتبر"
 
@@ -3284,7 +3284,7 @@ msgstr ""
 "پاسخ برای رفع مشکل خود برسید"
 
 #: dash/addons/content_support/tag/controller.php:19
-#: khadije/includes/lib/app/smsgroupfilter.php:142
+#: khadije/includes/lib/app/smsgroupfilter.php:159
 msgid "Invalid tag"
 msgstr "تگ نادرست"
 
@@ -5622,7 +5622,7 @@ msgid "Unreachable"
 msgstr "غیر قابل دسترسی"
 
 #: dash/addons/includes/languages/trans_dash.php:513
-#: khadije/content_smsapp/conversation/view.php:59
+#: khadije/content_smsapp/conversation/view.php:60
 #: khadije/includes/languages/trans_dash.php:513
 #: khadije/includes/languages/trans_project.php:50
 msgid "All"
@@ -9677,7 +9677,7 @@ msgstr "در انتظار پاسخ"
 
 #: dash/addons/includes/languages/trans_dash.php:1543
 #: dash/addons/includes/languages/trans_static.php:994
-#: khadije/content_smsapp/conversation/view.php:60
+#: khadije/content_smsapp/conversation/view.php:61
 #: khadije/includes/languages/trans_dash.php:1543
 msgid "Answered"
 msgstr "پاسخ داده شده"
@@ -14969,8 +14969,8 @@ msgstr ""
 "موبایل فروشگاهی + فروش در شبکه‌های اجتماعی + نرم‌افزار صندوق فروشگاهی"
 
 #: dash/lib/engine/view.php:143
-msgid "Sell and enjoy"
-msgstr "بفروش و لذت ببر"
+msgid "Ecommerce Platform"
+msgstr "پلتفرم تجارت الکترونیک"
 
 #: dash/lib/engine/view.php:225
 msgid "Latest news"
@@ -16768,7 +16768,7 @@ msgid "You not register to this course!"
 msgstr "شما در این رشته ثبت‌نام نکرده اید!"
 
 #: khadije/content_a/group/home/model.php:18
-#: khadije/includes/lib/app/smsgroupfilter.php:338
+#: khadije/includes/lib/app/smsgroupfilter.php:355
 msgid "Invalid group id"
 msgstr "کد کاروان اشتباه"
 
@@ -18841,7 +18841,7 @@ msgstr "لطفا پاسخ خود را انتخاب کنید"
 msgid "All message group saved"
 msgstr "پیام‌های این گروه ذخیره شد"
 
-#: khadije/content_smsapp/conversation/view.php:58
+#: khadije/content_smsapp/conversation/view.php:59
 msgid "Awaiting to answer"
 msgstr "در انتظار پاسخ"
 
@@ -25414,7 +25414,7 @@ msgid "Invalid type of smsgroup"
 msgstr "نوع در گروه پیامکی اشتباه است"
 
 #: khadije/includes/lib/app/smsgroup.php:300
-#: khadije/includes/lib/app/smsgroupfilter.php:377
+#: khadije/includes/lib/app/smsgroupfilter.php:394
 msgid "Invalid sort data"
 msgstr "اطلاعات مرتب سازی اشتباه است"
 
@@ -25424,7 +25424,7 @@ msgstr "هیچ راهی برای افزودن گروه پیامک نیست"
 
 #: khadije/includes/lib/app/smsgroupfilter.php:75
 #: khadije/includes/lib/app/smsgroupfilter.php:88
-#: khadije/includes/lib/app/smsgroupfilter.php:120
+#: khadije/includes/lib/app/smsgroupfilter.php:122
 msgid "Auto update old message by new filter :val"
 msgstr "تعداد :val پیامک به صورت خودکار با این فیلتر دسته بندی‌ شدند"
 
@@ -25432,39 +25432,39 @@ msgstr "تعداد :val پیامک به صورت خودکار با این فیل
 msgid "Sms filter successfuly added"
 msgstr "فیلتر گروه پیامکی با موفقیت ثبت شد"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:173
+#: khadije/includes/lib/app/smsgroupfilter.php:190
 msgid "The tag :val exist in another group"
 msgstr "تگ :val در گروه دیگری قرار دارد"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:297
+#: khadije/includes/lib/app/smsgroupfilter.php:314
 msgid "Sms filter successfully updated"
 msgstr "فیلتر گروه پیامکی با موفقیت به‌روزرسانی شد"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:308
+#: khadije/includes/lib/app/smsgroupfilter.php:325
 msgid "Sms group filter id not set"
 msgstr "شناسه گروه پیامک تنظیم نشده است"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:317
+#: khadije/includes/lib/app/smsgroupfilter.php:334
 msgid "Invalid smsgroupfilter id"
 msgstr "شناسه گروه پیامک اشتباه است"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:345
+#: khadije/includes/lib/app/smsgroupfilter.php:362
 msgid "Please fill number"
 msgstr "لطفا شماره را وارد کنید"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:351
+#: khadije/includes/lib/app/smsgroupfilter.php:368
 msgid "Please fill number less than 100 character"
 msgstr "لطفا عدد را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:367
+#: khadije/includes/lib/app/smsgroupfilter.php:384
 msgid "Duplicate smsgroupfilter number"
 msgstr "این شماره در این لیست فیلترها تکراری است"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:394
+#: khadije/includes/lib/app/smsgroupfilter.php:411
 msgid "Please fill the number"
 msgstr "لطفا شماره را وارد کنید"
 
-#: khadije/includes/lib/app/smsgroupfilter.php:401
+#: khadije/includes/lib/app/smsgroupfilter.php:418
 msgid "Please fill the answer"
 msgstr "لطفا پاسخ را وارد کنید"
 
@@ -25583,6 +25583,9 @@ msgstr "ما به کد پیامک برای ادامه مراحل نیاز دار
 #: khadije/includes/lib/tg/smsapp.php:356
 msgid "SMS number is invalid!"
 msgstr "شماره پیامک اشتباه است!"
+
+#~ msgid "Sell and enjoy"
+#~ msgstr "بفروش و لذت ببر"
 
 #~ msgid "As easy as ABC is our slogan!"
 #~ msgstr "کاری نداره شعار ماست!"

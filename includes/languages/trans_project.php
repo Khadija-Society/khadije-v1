@@ -285,8 +285,8 @@ class twigTransTerms
 
 	//-----------------------------------------------------content_smsapp/sidenav.html
 	echo T_("Manage sms");                                                            // Line 7
-	echo T_("Old SMS List");                                                          // Line 11
-	echo T_("Old Dashboard");                                                         // Line 12
+	echo T_("Old SMS List");                                                          // Line 12
+	echo T_("Old Dashboard");                                                         // Line 13
 
 	//-----------------------------------------------content_smsapp/force/display.html
 
