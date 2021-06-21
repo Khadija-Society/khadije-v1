@@ -77,7 +77,7 @@
 
 {%for key, value in currentStatInGroup%}
 {%set myGroupID%}{{value.group_id | coding('encode')}}{%endset%}
-{%set isActive = false%}{% if (requestGET.group_id and requestGET.group_id == myGroupID ) or withoutGroupSelected  %}{%set isActive = true%}{%endif%}
+{%set isActive = false%}{% if (requestGET.group_id and requestGET.group_id == myGroupID ) or (not value.group_id and withoutGroupSelected ) %}{%set isActive = true%}{%endif%}
 
   <a class="cbox mB5"  href="{{url.that}}?group_id={{myGroupID}}{{platoonGetAnd}}{%if requestGET.level%}&level={{requestGET.level}}{%endif%}" >
     <div class="f">
