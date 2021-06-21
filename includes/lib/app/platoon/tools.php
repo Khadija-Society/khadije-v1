@@ -15,8 +15,8 @@ class tools
 
 		$list[] =
 		[
-			'title'   => 'حاج آقا ثباتی',
-			'avatar'  => 'https://dl.talambar.ir/1/59-7573ab1a3ad56a0abac913d0f00701fa.jpg',
+			'title'   => 'موسسه حضرت خدیجه',
+			'avatar'  => 'https://khadije.com/static/images/logo.png',
 			'mobile'  => '989127522690', // sobati
 			'platoon' => '1',
 		];
