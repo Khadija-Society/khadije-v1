@@ -8,6 +8,9 @@ class cronjob
 		self::thankyoumessage();
 
 		self::smsapp();
+
+		self::remove_log();
+
 	}
 
 	private static function smsapp()
@@ -15,6 +18,20 @@ class cronjob
 		\lib\app\sms::send_auto_answered();
 		\lib\app\sms::send_notif();
 		\lib\app\sms::send_sms_panel();
+
+	}
+
+
+	private static function remove_log()
+	{
+		if(date("H:i") !== '17:00' && !\dash\permission::supervisor())
+		{
+			return;
+		}
+
+		$exec = "mysql -u'". db_user. "' -p'". db_pass. "' ". db_log_name. ' -e "TRUNCATE \`apilog\`" ';
+
+		shell_exec($exec);
 
 	}
 
