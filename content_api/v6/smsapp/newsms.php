@@ -78,9 +78,11 @@ class newsms
 			return false;
 		}
 
-		$text        = \dash\app::request('text');
+		$text = \dash\app::request('text');
 
-		$date        = \dash\app::request('date');
+		$date = \dash\app::request('date');
+
+		$date = \dash\utility\convert::to_en_number($date);
 
 		if($date && !strtotime($date))
 		{
