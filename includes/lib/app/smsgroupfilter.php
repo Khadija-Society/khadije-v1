@@ -207,7 +207,7 @@ class smsgroupfilter
 		if(!empty($must_remove))
 		{
 			$remove = implode("','", $must_remove);
-			\lib\db\smsgroupfilter::multi_remove_analyze($remove, $group_id);
+			\lib\db\smsgroupfilter::multi_remove_analyze($remove, $group_id, \lib\app\platoon\tools::get_index_locked());
 		}
 
 		// $result = self::add_new_filter($group_id);
