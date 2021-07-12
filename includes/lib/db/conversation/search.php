@@ -40,7 +40,7 @@ class search
 
 
 
-	public static function list($_and = [], $_or = [], $_order_sort = null, $_meta = [], $_search_in_text = false)
+	public static function list($_and = [], $_or = [], $_order_sort = null, $_meta = [], $_search_in_text = false, $_platoon = null)
 	{
 
 		$q = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
@@ -161,11 +161,11 @@ class search
 		}
 
 		self::fill_fromnumber($result);
-		self::fill_user_id($result);
-		self::fill_count($result);
-		self::fill_displayname($result);
+		self::fill_user_id($result, $_platoon);
+		self::fill_count($result, $_platoon);
+		self::fill_displayname($result, $_platoon);
 		// self::fill_lastdate($result);
-		self::fill_lastmessage($result);
+		self::fill_lastmessage($result, $_platoon);
 
 
 		return $result;
@@ -193,7 +193,7 @@ class search
 
 
 	private static $smsids = false;
-	public static function last_sms_ids($result)
+	public static function last_sms_ids($result, $_platoon)
 	{
 		$mobile_id = array_column($result, 'mobile_id');
 		$mobile_id = array_filter($mobile_id);
@@ -207,7 +207,7 @@ class search
 
 		if(self::$smsids === false)
 		{
-			$query = "SELECT MAX(s_sms.id) AS `id` FROM s_sms WHERE s_sms.mobile_id IN ($mobile_id) GROUP BY s_sms.mobile_id";
+			$query = "SELECT MAX(s_sms.id) AS `id` FROM s_sms WHERE s_sms.mobile_id IN ($mobile_id) AND s_sms.platoon = $_platoon GROUP BY s_sms.mobile_id";
 			$result = \dash\db::get($query, 'id');
 			if(!is_array($result))
 			{
@@ -255,7 +255,7 @@ class search
 	}
 
 
-	private static function fill_user_id(&$result)
+	private static function fill_user_id(&$result, $_platoon)
 	{
 		$mobile_id = self::mobile_id($result);
 
@@ -264,7 +264,7 @@ class search
 			return;
 		}
 
-		$last_sms_ids = self::last_sms_ids($result);
+		$last_sms_ids = self::last_sms_ids($result, $_platoon);
 
 		$query = " SELECT s_sms.user_id, s_sms.mobile_id, s_sms.id	FROM s_sms	WHERE s_sms.id IN ($last_sms_ids) ";
 
@@ -288,7 +288,7 @@ class search
 
 
 
-	private static function fill_count(&$result)
+	private static function fill_count(&$result, $_platoon)
 	{
 		$mobile_id = self::mobile_id($result);
 
@@ -297,7 +297,7 @@ class search
 			return;
 		}
 
-		$query = " SELECT s_sms.mobile_id,	COUNT(*) AS `count` 	FROM	s_sms	WHERE	s_sms.mobile_id IN ($mobile_id)	GROUP BY s_sms.mobile_id ";
+		$query = " SELECT s_sms.mobile_id,	COUNT(*) AS `count` 	FROM	s_sms	WHERE	s_sms.mobile_id IN ($mobile_id) AND s_sms.platoon = $_platoon	GROUP BY s_sms.mobile_id ";
 
 		$count = \dash\db::get($query);
 
@@ -564,10 +564,10 @@ class search
 
 	}
 
-	private static function fill_lastdate(&$result)
+	private static function fill_lastdate(&$result, $_platoon)
 	{
 		$mobile_id = self::mobile_id($result);
-		$smsid = self::last_sms_ids($result);
+		$smsid = self::last_sms_ids($result, $_platoon);
 
 		if(!$mobile_id)
 		{
@@ -611,10 +611,10 @@ class search
 
 	}
 
-	private static function fill_lastmessage(&$result)
+	private static function fill_lastmessage(&$result, $_platoon)
 	{
 		$mobile_id = self::mobile_id($result);
-		$smsid = self::last_sms_ids($result);
+		$smsid = self::last_sms_ids($result, $_platoon);
 
 		if(!$mobile_id)
 		{
@@ -634,6 +634,7 @@ class search
 				(
 					$smsid
 				)
+				-- AND s_sms.platoon = $_platoon
 		";
 
 		$lastmessage = \dash\db::get($query);

@@ -212,7 +212,7 @@ class search
 			$meta['get_count_all'] = true;
 		}
 
-		$list = \lib\db\conversation\search::list($and, $or, $order_sort, $meta, $search_in_text);
+		$list = \lib\db\conversation\search::list($and, $or, $order_sort, $meta, $search_in_text, $platoon);
 
 		if(isset($_args['get_count_all']) && $_args['get_count_all'])
 		{
