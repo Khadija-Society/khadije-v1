@@ -98,6 +98,7 @@ class answer
 				'md5'                   => a($get_last_record_mobile, 'md5'),
 				'mobile_id'             => a($get_last_record_mobile, 'mobile_id'),
 				'conversation_answered' => 1,
+				'platoon'               => \lib\app\platoon\tools::get_index_locked(),
 			];
 
 			$insert_new_sms['group_id']        = $group_id;
