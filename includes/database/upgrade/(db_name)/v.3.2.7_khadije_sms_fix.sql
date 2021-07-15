@@ -1,0 +1,1 @@
+UPDATE  `s_sms` SET s_sms.platoon = '1' WHERE s_sms.platoon is null;
