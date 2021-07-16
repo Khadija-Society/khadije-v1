@@ -162,19 +162,19 @@ class search
 
 		if($startdate && $enddate)
 		{
-			$and[] = " s_sms.date >= '$startdate 00:00:00' AND s_sms.date <= '$enddate 23:59:59'  ";
+			$and[] = " s_sms.datecreated >= '$startdate 00:00:00' AND s_sms.datecreated <= '$enddate 23:59:59'  ";
 			$meta['join']['join_by_sms'] = $myJoin;
 
 		}
 		elseif($startdate)
 		{
-			$and[] = " s_sms.date >=  '$startdate 00:00:00' ";
+			$and[] = " s_sms.datecreated >=  '$startdate 00:00:00' ";
 			$meta['join']['join_by_sms'] = $myJoin;
 
 		}
 		elseif($enddate)
 		{
-			$and[] = " s_sms.date <=  '$enddate 23:59:59' ";
+			$and[] = " s_sms.datecreated <=  '$enddate 23:59:59' ";
 			$meta['join']['join_by_sms'] = $myJoin;
 
 		}

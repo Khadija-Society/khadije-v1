@@ -505,17 +505,26 @@ class sms
 				$myCount = 1;
 			}
 
+			$myTime = time();
+
 			$myText = a($_args, 'text');
+			// admin try to add new sms
 			if(!$myText)
 			{
 				$myText = a($check_mobile, "platoon_{$platoon}_lasttext");
+				$myTime = a($check_mobile, "platoon_{$platoon}_lastsmstime");
+
+				if(!is_numeric($myTime))
+				{
+					$myTime = time();
+				}
 			}
 
 			$update_mobile =
 			[
 				"platoon_{$platoon}"                       => 1,
 				"platoon_{$platoon}_count"                 => $myCount,
-				"platoon_{$platoon}_lastsmstime"           => strtotime(a($_args, 'date')),
+				"platoon_{$platoon}_lastsmstime"           => $myTime,
 				"platoon_{$platoon}_lasttext"              => $myText,
 				"platoon_{$platoon}_conversation_answered" => null,
 			];
