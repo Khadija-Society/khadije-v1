@@ -54,9 +54,8 @@ UPDATE s_mobiles SET s_mobiles.platoon_1 = 1 WHERE s_mobiles.mobile IN (SELECT s
 UPDATE s_mobiles SET s_mobiles.platoon_2 = 1 WHERE s_mobiles.mobile IN (SELECT s_sms.fromnumber FROM s_sms WHERE s_sms.platoon = '2');
 
 
-UPDATE s_mobiles SET s_mobiles.platoon_1_lastsmstime = (SELECT UNIX_TIMESTAMP(MAX(s_sms.date)) FROM s_sms WHERE s_sms.platoon = '1' AND s_sms.fromnumber = s_mobiles.mobile GROUP BY s_sms.mobile_id) WHERE s_mobiles.platoon_1 = 1;
-UPDATE s_mobiles SET s_mobiles.platoon_2_lastsmstime = (SELECT UNIX_TIMESTAMP(MAX(s_sms.date)) FROM s_sms WHERE s_sms.platoon = '2' AND s_sms.fromnumber = s_mobiles.mobile GROUP BY s_sms.mobile_id) WHERE s_mobiles.platoon_2 = 1;
-
+UPDATE s_mobiles SET s_mobiles.platoon_1_lastsmstime = (SELECT UNIX_TIMESTAMP(s_sms.date) FROM s_sms WHERE s_sms.platoon = '1' AND s_sms.fromnumber = s_mobiles.mobile ORDER BY s_sms.id DESC LIMIT 1) WHERE s_mobiles.platoon_1 = 1;
+UPDATE s_mobiles SET s_mobiles.platoon_2_lastsmstime = (SELECT UNIX_TIMESTAMP(s_sms.date) FROM s_sms WHERE s_sms.platoon = '2' AND s_sms.fromnumber = s_mobiles.mobile ORDER BY s_sms.id DESC LIMIT 1) WHERE s_mobiles.platoon_2 = 1;
 
 UPDATE s_mobiles SET s_mobiles.platoon_1_conversation_answered = (SELECT s_sms.conversation_answered FROM s_sms WHERE s_sms.platoon = '1' AND s_sms.fromnumber = s_mobiles.mobile ORDER BY s_sms.id DESC LIMIT 1) WHERE s_mobiles.platoon_1 = 1;
 UPDATE s_mobiles SET s_mobiles.platoon_2_conversation_answered = (SELECT s_sms.conversation_answered FROM s_sms WHERE s_sms.platoon = '2' AND s_sms.fromnumber = s_mobiles.mobile ORDER BY s_sms.id DESC LIMIT 1) WHERE s_mobiles.platoon_2 = 1;
@@ -72,6 +71,6 @@ UPDATE s_mobiles SET s_mobiles.platoon_2_lasttext = (SELECT s_sms.text FROM s_sm
 
 ALTER TABLE s_mobiles ADD `user_id` INT(10) UNSIGNED NULL DEFAULT NULL;
 ALTER TABLE s_mobiles ADD INDEX `s_mobile_index_search_user_id` (`user_id`);
-UPDATE s_mobiles SET s_mobiles.user_id = (SELECT users.id FROM users WHERE users.mobile = s_mobiles.mobile LIMIT 1) WHERE s_mobiles.user_id IS NOT NULL;
+UPDATE s_mobiles SET s_mobiles.user_id = (SELECT s_sms.user_id FROM s_sms WHERE s_sms.mobile_id = s_mobiles.id LIMIT 1);
 
 

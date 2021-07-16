@@ -59,6 +59,7 @@ class search
 
 		$order_sort = " ORDER BY s_mobiles.platoon_{$platoon}_lastsmstime DESC ";
 
+		$myJoin = " INNER JOIN s_sms ON s_sms.mobile_id = s_mobiles.id AND s_sms.platoon = '$platoon' ";
 
 		if(isset($_args['group_id']) && is_string($_args['group_id']))
 		{
@@ -66,13 +67,13 @@ class search
 			$group_id = \dash\coding::decode($group_id);
 			if($group_id)
 			{
-				$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+				$meta['join']['join_by_sms'] = $myJoin;
 				$and['group_id'] = " s_sms.group_id = $group_id ";
 			}
 		}
 		elseif (a($_args, 'group_id') === false)
 		{
-			// $meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+			// $meta['join']['join_by_sms'] = $myJoin;
 			// $and['group_id'] = " s_sms.group_id IS NULL ";
 		}
 
@@ -169,7 +170,7 @@ class search
 			}
 			else
 			{
-				$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+				$meta['join']['join_by_sms'] = $myJoin;
 
 				// \dash\notif::warn(T_('Only mobile can be search'));
 				// $or[] = " s_sms.text LIKE '%$_query_string%' ";
@@ -215,20 +216,20 @@ class search
 
 		if($startdate && $enddate)
 		{
-			$and[] = " s_sms.datecreated >= '$startdate 00:00:00' AND s_sms.datecreated <= '$enddate 23:59:59'  ";
-			$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+			$and[] = " s_sms.date >= '$startdate 00:00:00' AND s_sms.date <= '$enddate 23:59:59'  ";
+			$meta['join']['join_by_sms'] = $myJoin;
 
 		}
 		elseif($startdate)
 		{
-			$and[] = " s_sms.datecreated >=  '$startdate 00:00:00' ";
-			$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+			$and[] = " s_sms.date >=  '$startdate 00:00:00' ";
+			$meta['join']['join_by_sms'] = $myJoin;
 
 		}
 		elseif($enddate)
 		{
-			$and[] = " s_sms.datecreated <=  '$enddate 23:59:59' ";
-			$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+			$and[] = " s_sms.date <=  '$enddate 23:59:59' ";
+			$meta['join']['join_by_sms'] = $myJoin;
 
 		}
 
