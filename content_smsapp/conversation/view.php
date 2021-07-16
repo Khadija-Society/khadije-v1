@@ -54,14 +54,19 @@ class view
 
 		\dash\data::currentStatInGroup($currentStatInGroup);
 
-		$myLinks =
-		[
-			'awaiting' => ['count' => 0, 'title' => T_("Awaiting to answer"), 'default' => true],
-			'all'      => ['count' => 0, 'title' => T_("All")],
-			'answered' => ['count' => 0, 'title' => T_("Answered"), 'no_link' => true],
-		];
+		\dash\data::smsmAppFullTextSarch(\dash\temp::get('smsmAppFullTextSarch'));
 
-		\dash\data::myLinks($myLinks);
+		if(!\dash\temp::get('smsmAppFullTextSarch'))
+		{
+			$myLinks =
+			[
+				'awaiting' => ['count' => 0, 'title' => T_("Awaiting to answer"), 'default' => true],
+				'all'      => ['count' => 0, 'title' => T_("All")],
+				'answered' => ['count' => 0, 'title' => T_("Answered"), 'no_link' => true],
+			];
+
+			\dash\data::myLinks($myLinks);
+		}
 
 		\dash\data::sysStatus(\lib\app\sms::status());
 

@@ -85,6 +85,32 @@ class search
 		}
 
 
+		$search_in_text = false;
+
+		if($_query_string && is_string($_query_string) && mb_strlen($_query_string) < 100)
+		{
+			if($isMobile = \dash\utility\filter::mobile($_query_string))
+			{
+				\dash\redirect::to(\dash\url::this(). '/view?'. \dash\request::fix_get(['mobile' => $isMobile]));
+
+				$or[] = " s_mobiles.mobile = '$isMobile' ";
+			}
+			else
+			{
+				$meta['join']['join_by_sms'] = $myJoin;
+
+				$or[] = " s_sms.text LIKE '%$_query_string%' ";
+
+				$search_in_text = true;
+
+				$level = 'all';
+
+				$order_sort = " ORDER BY s_sms.id DESC ";
+
+				\dash\temp::set('smsmAppFullTextSarch', true);
+			}
+		}
+
 		switch ($level)
 		{
 			case 'all':
@@ -96,92 +122,12 @@ class search
 				self::$is_filtered = true;
 				break;
 
-
-
-			// case 'unknown':
-			// 	$and[] = " s_sms.receivestatus  = 'awaiting' ";
-			// 	$and[] = " s_sms.recommend_id IS NOT NULL ";
-			// 	$and[] = " s_sms.answertext  IS NULL ";
-			// 	$and[] = " s_group.analyze = 1 ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
-			// case 'needlessanswer':
-			// 	$and[] = " s_sms.receivestatus  = 'block' ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
-			// case 'archived':
-			// 	$and[] = " s_sms.receivestatus  = 'skip' ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
-			// case 'sendtosmspanel':
-			// 	$and[] = " s_sms.receivestatus  = 'sendtopanel' ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
-			// case 'sendbysmspanel':
-			// 	$and[] = " s_sms.sendstatus  = 'sendbypanel' ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
-
-			// case 'waitingtosend':
-			// 	$and[] = " s_sms.sendstatus  = 'sendbypanel' ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
-			// case 'inmobiledevice':
-			// 	$and[] = " s_sms.sendstatus  = 'sendtodevice' ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
-			// case 'sendedbymobile':
-			// 	$and[] = " s_sms.sendstatus  = 'send' ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
-			// case 'new':
-			// // case 'awaiting':
-			// 	$and[] = " s_sms.receivestatus  = 'awaiting' ";
-			// 	$and[] = " s_sms.recommend_id  IS NULL ";
-			// 	$and[] = " s_sms.group_id  IS NULL ";
-			// 	$and[] = " s_sms.answertext  IS NULL ";
-			// 	$and[] = " s_sms.conversation_answered  IS NULL ";
-			// 	self::$is_filtered = true;
-			// 	break;
-
 			default:
 			case 'awaiting':
 				// $and[] = " s_sms.conversation_answered  IS NULL AND s_sms.answertext IS NULL ";
 				$and[] = " s_mobiles.platoon_{$platoon}_conversation_answered IS NULL ";
 				self::$is_filtered = true;
 				break;
-		}
-
-		$search_in_text = false;
-
-		if($_query_string && is_string($_query_string) && mb_strlen($_query_string) < 100)
-		{
-			if($isMobile = \dash\utility\filter::mobile($_query_string))
-			{
-				$or[] = " s_mobiles.mobile = '$isMobile' ";
-			}
-			else
-			{
-				$meta['join']['join_by_sms'] = $myJoin;
-
-				// \dash\notif::warn(T_('Only mobile can be search'));
-				// $or[] = " s_sms.text LIKE '%$_query_string%' ";
-				$or[] = " MATCH (s_sms.text) against ('%$_query_string%' IN boolean mode) ";
-				// $or[] = " MATCH (s_sms.text) against ('%$_query_string%'  WITH QUERY EXPANSION) ";
-
-				// $search_in_text = true;
-			}
-
-
-
 		}
 
 		$startdate = null;

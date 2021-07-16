@@ -147,7 +147,11 @@
     {
       myUrlCalc = myUrlCalc + '&calc=all';
     }
+
+
+{%if not smsmAppFullTextSarch%}
     fetch(myUrlCalc).then(function(response) {return response.json()}).then(function(data){$("#count_all").text(fitNumber(data.all)); $("#count_answered").text(fitNumber(data.answered)); $("#count_awaiting").text(fitNumber(data.awaiting));});
+{%endif%}
   }
 </script>
 {%endblock%}
