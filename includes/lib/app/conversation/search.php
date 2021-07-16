@@ -40,31 +40,49 @@ class search
 		$meta['limit'] = 50;
 
 
+
+		$platoon = \lib\app\platoon\tools::get_index_locked();
+		$and[] = " s_mobiles.platoon_{$platoon} = 1 ";
+
+		$meta['fields'] =
+		"
+			s_mobiles.id AS `mobile_id`,
+			s_mobiles.*,
+			s_mobiles.mobile  AS  `fromnumber`,
+			s_mobiles.platoon_{$platoon}_count AS `count`,
+			s_mobiles.platoon_{$platoon}_lastsmstime AS `lastsmstime`,
+			s_mobiles.platoon_{$platoon}_lasttext AS `lastmessage`,
+			NULL AS `displayname`,
+			NULL AS `gender`,
+			NULL AS `avatar`
+		";
+
+		$order_sort = " ORDER BY s_mobiles.platoon_{$platoon}_lastsmstime DESC ";
+
+
 		if(isset($_args['group_id']) && is_string($_args['group_id']))
 		{
 			$group_id = $_args['group_id'];
 			$group_id = \dash\coding::decode($group_id);
 			if($group_id)
 			{
+				$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
 				$and['group_id'] = " s_sms.group_id = $group_id ";
 			}
 		}
 		elseif (a($_args, 'group_id') === false)
 		{
-			$and['group_id'] = " s_sms.group_id IS NULL ";
+			// $meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+			// $and['group_id'] = " s_sms.group_id IS NULL ";
 		}
 
-		$platoon = \lib\app\platoon\tools::get_index_locked();
-		$and[] = " s_sms.platoon = '$platoon' ";
-
 		$level = null;
-
-
 
 		if(isset($_args['level']) && is_string($_args['level']) && in_array($_args['level'], ['answered', 'awaiting', 'all','needlessanswer','archived','sendtosmspanel','sendbysmspanel','new','unknown','waitingtosend','inmobiledevice','sendedbymobile',]))
 		{
 			$level = $_args['level'];
 		}
+
 
 		switch ($level)
 		{
@@ -73,14 +91,13 @@ class search
 				break;
 
 			case 'answered':
-				$and[] = " s_sms.conversation_answered  = 1 ";
+				$and[] = " s_mobiles.platoon_{$platoon}_conversation_answered  = 1 ";
 				self::$is_filtered = true;
 				break;
 
 
 
 			// case 'unknown':
-			// 	$meta['join'][] = " LEFT JOIN s_group ON s_sms.recommend_id = s_group.id ";
 			// 	$and[] = " s_sms.receivestatus  = 'awaiting' ";
 			// 	$and[] = " s_sms.recommend_id IS NOT NULL ";
 			// 	$and[] = " s_sms.answertext  IS NULL ";
@@ -124,20 +141,20 @@ class search
 			// 	self::$is_filtered = true;
 			// 	break;
 
-			case 'new':
-			// case 'awaiting':
-				$and[] = " s_sms.receivestatus  = 'awaiting' ";
-				$and[] = " s_sms.recommend_id  IS NULL ";
-				$and[] = " s_sms.group_id  IS NULL ";
-				$and[] = " s_sms.answertext  IS NULL ";
-				$and[] = " s_sms.conversation_answered  IS NULL ";
-				self::$is_filtered = true;
-				break;
+			// case 'new':
+			// // case 'awaiting':
+			// 	$and[] = " s_sms.receivestatus  = 'awaiting' ";
+			// 	$and[] = " s_sms.recommend_id  IS NULL ";
+			// 	$and[] = " s_sms.group_id  IS NULL ";
+			// 	$and[] = " s_sms.answertext  IS NULL ";
+			// 	$and[] = " s_sms.conversation_answered  IS NULL ";
+			// 	self::$is_filtered = true;
+			// 	break;
 
 			default:
 			case 'awaiting':
 				// $and[] = " s_sms.conversation_answered  IS NULL AND s_sms.answertext IS NULL ";
-				$and[] = " s_sms.conversation_answered IS NULL ";
+				$and[] = " s_mobiles.platoon_{$platoon}_conversation_answered IS NULL ";
 				self::$is_filtered = true;
 				break;
 		}
@@ -148,10 +165,12 @@ class search
 		{
 			if($isMobile = \dash\utility\filter::mobile($_query_string))
 			{
-				$or[] = " s_sms.fromnumber = '$isMobile' ";
+				$or[] = " s_mobiles.mobile = '$isMobile' ";
 			}
 			else
 			{
+				$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+
 				// \dash\notif::warn(T_('Only mobile can be search'));
 				// $or[] = " s_sms.text LIKE '%$_query_string%' ";
 				$or[] = " MATCH (s_sms.text) against ('%$_query_string%' IN boolean mode) ";
@@ -197,14 +216,20 @@ class search
 		if($startdate && $enddate)
 		{
 			$and[] = " s_sms.datecreated >= '$startdate 00:00:00' AND s_sms.datecreated <= '$enddate 23:59:59'  ";
+			$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+
 		}
 		elseif($startdate)
 		{
 			$and[] = " s_sms.datecreated >=  '$startdate 00:00:00' ";
+			$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+
 		}
 		elseif($enddate)
 		{
 			$and[] = " s_sms.datecreated <=  '$enddate 23:59:59' ";
+			$meta['join']['join_by_sms'] = " LEFT JOIN s_sms ON s_sms.mobile_id = s_mobiles.id ";
+
 		}
 
 		if(isset($_args['get_count_all']) && $_args['get_count_all'])
@@ -220,8 +245,15 @@ class search
 		}
 
 		unset($and['group_id']);
-		$count_group_by = \lib\db\conversation\search::count_group_by_group_id($and, $or, $order_sort, $meta, $search_in_text);
-		\dash\temp::set('currentStatInGroup', $count_group_by);
+		unset($meta['join']);
+
+		if($level !== 'all')
+		{
+			$and[] = " s_sms.conversation_answered IS NULL ";
+
+			$count_group_by = \lib\db\conversation\search::count_group_by_group_id($and, $or, $order_sort, $meta, $search_in_text);
+			\dash\temp::set('currentStatInGroup', $count_group_by);
+		}
 
 		if(is_array($list) && count($list) < $meta['limit'])
 		{

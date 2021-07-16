@@ -22,11 +22,12 @@ class search
 			FROM
 				s_sms
 			LEFT JOIN s_group ON s_group.id = s_sms.group_id
-				$q[join]
+			LEFT JOIN s_mobiles ON s_sms.mobile_id = s_mobiles.id
 				$q[where]
 			GROUP BY s_sms.group_id
 			ORDER BY s_group.sort ASC
 		";
+
 		$result = \dash\db::get($query);
 
 		if(!is_array($result))
@@ -58,100 +59,29 @@ class search
 		}
 		else
 		{
-			$count_query  =
-			"
-				SELECT
-					COUNT(DISTINCT s_sms.mobile_id) AS `count`
-				FROM
-					s_sms
-				$q[join]
-				$q[where]
-			";
+			$count_query  = " SELECT COUNT(*) AS `count` FROM s_mobiles $q[join] $q[where] ";
 
-			// $count = \dash\db::get($count_query, 'count', true);
 			$limit = \dash\db\mysql\tools\pagination::pagination_np($q['limit']);
-			// $limit = \dash\db\mysql\tools\pagination::pagination_query($count_query, $q['limit']);
+
 		}
 
-
-
-
-		// $view = "CREATE OR REPLACE VIEW s_sms AS SELECT * FROM s_sms ORDER BY s_sms.id DESC;";
-		// \dash\db::query($view);
-
-		$query =
-		"
-			SELECT
-				DISTINCT s_sms.mobile_id,
-				-- s_sms.id,
-				-- s_sms.user_id,
-				NULL AS `fromnumber`,
-				0 AS `count`,
-				NULL AS `displayname`,
-				NULL AS `gender`,
-				NULL AS `avatar`,
-				s_mobiles.lastsmstime,
-				NULL AS `lastmessage`
-			FROM
-				s_sms
-			INNER JOIN s_mobiles ON s_mobiles.id = s_sms.mobile_id
-			$q[join]
-			$q[where]
-			ORDER BY s_mobiles.lastsmstime DESC
-			$limit
-		";
-
-
-		// $query =
-		// "
-		// 	SELECT
-		// 		s_sms.mobile_id,
-		// 		-- s_sms.id,
-		// 		MAX(s_sms.id) AS `id`,
-		// 		-- s_sms.user_id,
-		// 		NULL AS `fromnumber`,
-		// 		0 AS `count`,
-		// 		NULL AS `displayname`,
-		// 		NULL AS `gender`,
-		// 		NULL AS `avatar`,
-		// 		NULL AS `lastdate`,
-		// 		NULL AS `lastmessage`
-		// 	FROM
-		// 		s_sms
-		// 	$q[join]
-		// 	$q[where]
-		// 	GROUP BY s_sms.mobile_id
-
-		// ";
+		$query = " SELECT $q[fields] FROM s_mobiles $q[join] $q[where] $q[order] $limit ";
 
 		if(isset($_meta['get_count_all']) && $_meta['get_count_all'])
 		{
-			$count_query  =	"SELECT COUNT(DISTINCT s_sms.mobile_id) AS `count`	FROM s_sms $q[join] $q[where]";
+			$count_query  =	"SELECT COUNT(*) AS `count`	FROM s_mobiles $q[join] $q[where]";
 
 			return \dash\db::get($count_query, 'count', true);
-			// $result = \dash\db::query($count_query);
-
-			// if(isset($result->num_rows))
-			// {
-			// 	return floatval($result->num_rows);
-			// }
-			// else
-			// {
-			// 	return 0;
-			// }
-
 		}
 
-		// $query .= " ORDER BY `id` DESC $limit ";
-
 		$result = \dash\db::get($query);
-
-
 
 		if(!is_array($result))
 		{
 			$result = [];
 		}
+
+
 
 		$result = array_combine(array_column($result, 'mobile_id'), $result);
 
@@ -160,113 +90,30 @@ class search
 			$result[$key]['lastdate'] = date("Y-m-d H:i:s", $value['lastsmstime']);
 		}
 
-		self::fill_fromnumber($result);
 		self::fill_user_id($result, $_platoon);
-		self::fill_count($result, $_platoon);
 		self::fill_displayname($result, $_platoon);
-		// self::fill_lastdate($result);
-		self::fill_lastmessage($result, $_platoon);
-
 
 		return $result;
 
 	}
 
 
-	private static function mobile_id($result)
-	{
-		$mobile_id = array_column($result, 'mobile_id');
-		$mobile_id = array_filter($mobile_id);
-		$mobile_id = array_values($mobile_id);
-		return implode(",", $mobile_id);
-	}
-
-
-
-	// private static function last_sms_ids($result)
-	// {
-	// 	$id = array_column($result, 'id');
-	// 	$id = array_filter($id);
-	// 	$id = array_values($id);
-	// 	return implode(",", $id);
-	// }
-
-
-	private static $smsids = false;
-	public static function last_sms_ids($result, $_platoon)
-	{
-		$mobile_id = array_column($result, 'mobile_id');
-		$mobile_id = array_filter($mobile_id);
-		$mobile_id = array_values($mobile_id);
-		if(!$mobile_id)
-		{
-			return 0;
-		}
-
-		$mobile_id = implode(",", $mobile_id);
-
-		if(self::$smsids === false)
-		{
-			$query = "SELECT MAX(s_sms.id) AS `id` FROM s_sms WHERE s_sms.mobile_id IN ($mobile_id) AND s_sms.platoon = $_platoon GROUP BY s_sms.mobile_id";
-			$result = \dash\db::get($query, 'id');
-			if(!is_array($result))
-			{
-				self::$smsid = 0;
-			}
-
-			$result = array_map('floatval', $result);
-
-			self::$smsids = implode(',', $result);
-		}
-
-		return self::$smsids;
-	}
-
-
-	private static function fill_fromnumber(&$result)
-	{
-		$mobile_id = self::mobile_id($result);
-
-		if(!$mobile_id)
-		{
-			return;
-		}
-
-		$query = " SELECT *	FROM s_mobiles	WHERE s_mobiles.id IN ($mobile_id) ";
-
-		$fromnumber = \dash\db::get($query);
-
-		if(!is_array($fromnumber) || !$fromnumber)
-		{
-			return;
-		}
-
-		foreach ($fromnumber as $key => $value)
-		{
-			if(isset($value['mobile']))
-			{
-				if(isset($result[$value['id']]))
-				{
-					$result[$value['id']]['fromnumber'] = $value['mobile'];
-				}
-			}
-		}
-
-	}
 
 
 	private static function fill_user_id(&$result, $_platoon)
 	{
-		$mobile_id = self::mobile_id($result);
+		$mobile = array_column($result, 'mobile');
 
-		if(!$mobile_id)
+		$mobile = array_filter($mobile);
+		$mobile = array_unique($mobile);
+		if(!$mobile)
 		{
 			return;
 		}
 
-		$last_sms_ids = self::last_sms_ids($result, $_platoon);
+		$mobile = implode("','", $mobile);
 
-		$query = " SELECT s_sms.user_id, s_sms.mobile_id, s_sms.id	FROM s_sms	WHERE s_sms.id IN ($last_sms_ids) ";
+		$query = " SELECT users.id, users.mobile FROM users	WHERE users.mobile IN ('$mobile') ";
 
 		$user_id = \dash\db::get($query);
 
@@ -277,10 +124,9 @@ class search
 
 		foreach ($user_id as $key => $value)
 		{
-			if(isset($result[$value['mobile_id']]))
+			if(isset($result[$value['mobile']]))
 			{
-				$result[$value['mobile_id']]['user_id'] = $value['user_id'];
-				$result[$value['mobile_id']]['id'] = $value['id'];
+				$result[$value['mobile']]['user_id'] = $value['id'];
 			}
 		}
 
@@ -288,34 +134,6 @@ class search
 
 
 
-	private static function fill_count(&$result, $_platoon)
-	{
-		$mobile_id = self::mobile_id($result);
-
-		if(!$mobile_id)
-		{
-			return;
-		}
-
-		$query = " SELECT s_sms.mobile_id,	COUNT(*) AS `count` 	FROM	s_sms	WHERE	s_sms.mobile_id IN ($mobile_id) AND s_sms.platoon = $_platoon	GROUP BY s_sms.mobile_id ";
-
-		$count = \dash\db::get($query);
-
-		if(!is_array($count) || !$count)
-		{
-			return;
-		}
-
-
-		foreach ($count as $key => $value)
-		{
-			if(isset($result[$value['mobile_id']]))
-			{
-				$result[$value['mobile_id']]['count'] = $value['count'];
-			}
-		}
-
-	}
 
 
 	public static function get_one_user_displayname($_mobile)
@@ -563,99 +381,6 @@ class search
 
 
 	}
-
-	private static function fill_lastdate(&$result, $_platoon)
-	{
-		$mobile_id = self::mobile_id($result);
-		$smsid = self::last_sms_ids($result, $_platoon);
-
-		if(!$mobile_id)
-		{
-			return;
-		}
-
-
-		$query =
-		"
-			SELECT
-				s_sms.mobile_id,
-				s_sms.datecreated AS `lastdate`
-			FROM
-				s_sms
-			WHERE
-				s_sms.id IN
-				(
-					$smsid
-				)
-		";
-
-		$lastdate = \dash\db::get($query);
-
-		if(!is_array($lastdate))
-		{
-			$lastdate = [];
-		}
-
-		foreach ($lastdate as $key => $value)
-		{
-			if(isset($value['lastdate']) && isset($value['mobile_id']))
-			{
-				if(isset($result[$value['mobile_id']]))
-				{
-					$result[$value['mobile_id']]['lastdate'] = $value['lastdate'];
-				}
-			}
-		}
-
-
-
-	}
-
-	private static function fill_lastmessage(&$result, $_platoon)
-	{
-		$mobile_id = self::mobile_id($result);
-		$smsid = self::last_sms_ids($result, $_platoon);
-
-		if(!$mobile_id)
-		{
-			return;
-		}
-
-
-		$query =
-		"
-			SELECT
-				s_sms.mobile_id,
-				s_sms.text AS `lastmessage`
-			FROM
-				s_sms
-			WHERE
-				s_sms.id IN
-				(
-					$smsid
-				)
-				-- AND s_sms.platoon = $_platoon
-		";
-
-		$lastmessage = \dash\db::get($query);
-
-		if(!is_array($lastmessage))
-		{
-			$lastmessage = [];
-		}
-
-		foreach ($lastmessage as $key => $value)
-		{
-			if(isset($value['lastmessage']) && isset($value['mobile_id']))
-			{
-				if(isset($result[$value['mobile_id']]))
-				{
-					$result[$value['mobile_id']]['lastmessage'] = $value['lastmessage'];
-				}
-			}
-		}
-	}
-
 
 
 	public static function list_view($_and = [], $_or = [], $_order_sort = null, $_meta = [])
