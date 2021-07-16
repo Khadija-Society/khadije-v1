@@ -144,52 +144,7 @@ class sms
 	}
 
 
-	public static function conversation_answered_ok($_where = null)
-	{
-		$q = null;
-		if($_where)
-		{
-			$q = ' AND '. \dash\db\config::make_where($_where);
-		}
-		$query =
-		"
-			SELECT
-				COUNT(*) AS `count`
-			FROM
-				s_sms
-			WHERE
-				s_sms.conversation_answered = 1
 
-				$q
-				 -- shenasaee_nashode
-		";
-		$result = \dash\db::get($query, 'count', true);
-		return $result;
-
-	}
-
-	public static function conversation_answered_nok($_where = null)
-	{
-		$q = null;
-		if($_where)
-		{
-			$q = ' AND '. \dash\db\config::make_where($_where);
-		}
-		$query =
-		"
-			SELECT
-				COUNT(*) AS `count`
-			FROM
-				s_sms
-			WHERE
-				s_sms.conversation_answered IS NULL
-
-				$q
-				 -- shenasaee_nashode
-		";
-		$result = \dash\db::get($query, 'count', true);
-		return $result;
-	}
 
 
 
@@ -486,6 +441,8 @@ class sms
 
 	public static function insert($_args)
 	{
+		$check_mobile = [];
+
 		if(isset($_args['fromnumber']) && $_args['fromnumber'])
 		{
 			$check_query = "SELECT * FROM s_mobiles WHERE s_mobiles.mobile = '$_args[fromnumber]' LIMIT 1";
@@ -526,8 +483,56 @@ class sms
 				}
 			}
 		}
+
 		\dash\db\config::public_insert('s_sms', $_args);
-		return \dash\db::insert_id();
+
+		$sms_id = \dash\db::insert_id();
+
+		$platoon = a($_args, 'platoon');
+
+		if(is_numeric($platoon))
+		{
+
+			// update last sms
+			// update last time
+			// update count
+			// sest conversation sanswered to null
+
+			$myCount = \dash\db::get("SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.mobile_id = $_args[mobile_id] AND s_sms.platoon = '$platoon' AND s_sms.text IS NOT NULL ", 'count', true);
+
+			if(!is_numeric($myCount))
+			{
+				$myCount = 1;
+			}
+
+			$myText = a($_args, 'text');
+			if(!$myText)
+			{
+				$myText = a($check_mobile, "platoon_{$platoon}_lasttext");
+			}
+
+			$update_mobile =
+			[
+				"platoon_{$platoon}"                       => 1,
+				"platoon_{$platoon}_count"                 => $myCount,
+				"platoon_{$platoon}_lastsmstime"           => strtotime(a($_args, 'date')),
+				"platoon_{$platoon}_lasttext"              => $myText,
+				"platoon_{$platoon}_conversation_answered" => null,
+			];
+
+			$set = \dash\db\config::make_set($update_mobile);
+
+			\dash\db::query("UPDATE s_mobiles SET $set WHERE s_mobiles.id = $_args[mobile_id] LIMIT 1");
+
+
+		}
+		else
+		{
+			// bug . insers sms whitout platoon
+		}
+
+
+		return $sms_id;
 	}
 
 

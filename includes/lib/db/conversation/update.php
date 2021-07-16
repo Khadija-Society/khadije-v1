@@ -45,6 +45,9 @@ class update
 		";
 		\dash\db::query($query);
 
+		\dash\db::query("UPDATE s_mobiles SET platoon_{$_platoon}_conversation_answered = 1 WHERE s_mobiles.mobile IN ('$_mobiles') ");
+
+
 
 		return true;
 
@@ -84,6 +87,8 @@ class update
 
 		";
 		\dash\db::query($query);
+
+		\dash\db::query("UPDATE s_mobiles SET platoon_{$_platoon}_conversation_answered = 1 WHERE s_mobiles.mobile = '$_mobile' LIMIT 1");
 
 		return true;
 
