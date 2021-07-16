@@ -69,7 +69,7 @@ class search
 
 		if(isset($_meta['get_count_all']) && $_meta['get_count_all'])
 		{
-			$count_query  =	"SELECT COUNT(*) AS `count`	FROM s_mobiles $q[join] $q[where]";
+			$count_query  =	"SELECT COUNT(DISTINCT s_mobiles.id) AS `count`	FROM s_mobiles $q[join] $q[where]";
 
 			return \dash\db::get($count_query, 'count', true);
 		}

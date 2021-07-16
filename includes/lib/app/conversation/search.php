@@ -246,7 +246,7 @@ class search
 		}
 
 		unset($and['group_id']);
-		unset($meta['join']);
+		// unset($meta['join']);
 
 		if($level !== 'all')
 		{
