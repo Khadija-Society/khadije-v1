@@ -21,7 +21,7 @@ class search
 				s_group.title
 			FROM
 				s_sms
-			LEFT JOIN s_group ON s_group.id = s_sms.group_id
+			LEFT JOIN s_group ON s_group.id = s_sms.group_id AND s_group.platoon = '$_platoon'
 			INNER JOIN s_mobiles ON s_sms.mobile_id = s_mobiles.id
 				$q[where]
 			GROUP BY s_sms.group_id
