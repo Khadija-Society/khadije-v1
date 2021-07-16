@@ -10,19 +10,19 @@ class search
 		return $_list;
 	}
 
-	public static function count_group_by_group_id($_and = [], $_or = [], $_order_sort = null, $_meta = [])
+	public static function count_group_by_group_id($_and = [], $_or = [], $_order_sort = null, $_meta = [], $_platoon)
 	{
 		$q      = \dash\db\config::ready_to_sql($_and, $_or, $_order_sort, $_meta);
 		$query  =
 		"
 			SELECT
-				COUNT(*) AS `count`,
+				COUNT(DISTINCT s_mobiles.id) AS `count`,
 				s_sms.group_id,
 				s_group.title
 			FROM
 				s_sms
 			LEFT JOIN s_group ON s_group.id = s_sms.group_id
-			LEFT JOIN s_mobiles ON s_sms.mobile_id = s_mobiles.id
+			INNER JOIN s_mobiles ON s_sms.mobile_id = s_mobiles.id
 				$q[where]
 			GROUP BY s_sms.group_id
 			ORDER BY s_group.sort ASC

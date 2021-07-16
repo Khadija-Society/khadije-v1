@@ -251,8 +251,9 @@ class search
 		if($level !== 'all')
 		{
 			$and[] = " s_sms.conversation_answered IS NULL ";
+			$and[] = " s_sms.platoon = '$platoon' ";
 
-			$count_group_by = \lib\db\conversation\search::count_group_by_group_id($and, $or, $order_sort, $meta, $search_in_text);
+			$count_group_by = \lib\db\conversation\search::count_group_by_group_id($and, $or, $order_sort, $meta, $platoon);
 			\dash\temp::set('currentStatInGroup', $count_group_by);
 		}
 
