@@ -424,8 +424,17 @@ class sms
 
 		foreach ($list as $key => $value)
 		{
-			\dash\utility\sms::send($value['fromnumber'], $value['answertext'], ['localid' => '1000'. $value['id']]);
-			\lib\db\sms::update(['sendstatus' => 'sendbypanel', 'tonumber' => $value['fromnumber']], $value['id']);
+			$result = \dash\utility\sms::send($value['fromnumber'], $value['answertext'], ['localid' => '1000'. $value['id']]);
+
+			// balance low
+			if(isset($result['return']['status']) && $result['return']['status'] == '418')
+			{
+				\lib\db\sms::update(['sendstatus' => 'awaiting', 'tonumber' => $value['fromnumber']], $value['id']);
+			}
+			else
+			{
+				\lib\db\sms::update(['sendstatus' => 'sendbypanel', 'tonumber' => $value['fromnumber']], $value['id']);
+			}
 		}
 	}
 
