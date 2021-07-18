@@ -23,7 +23,11 @@ class newsms
 		{
 			\lib\db\conversation\update::multi_archive_conversation(self::$need_archive_conversation, \lib\app\platoon\tools::get_index_locked());
 		}
+	}
 
+	public static function force_archive_conversation($_mobile)
+	{
+		\lib\db\conversation\update::archive_conversation($_mobile, \lib\app\platoon\tools::get_index_locked());
 	}
 
 	public static function lost($_args)
@@ -160,6 +164,8 @@ class newsms
 		if(self::ad_number($insert))
 		{
 			self::$need_archive_conversation[] = $from;
+			self::force_archive_conversation($from);
+
 		}
 		else
 		{
@@ -272,6 +278,7 @@ class newsms
 		{
 
 			self::$need_archive_conversation[] = $insert['fromnumber'];
+			self::force_archive_conversation($insert['fromnumber']);
 
 			$insert['answertext']      = null;
 			$insert['answertextcount'] = 0;
@@ -336,6 +343,7 @@ class newsms
 				if(array_key_exists('analyze', $get_group) && !$get_group['analyze'])
 				{
 					self::$need_archive_conversation[] = $insert['fromnumber'];
+					self::force_archive_conversation($insert['fromnumber']);
 
 					$insert['receivestatus']  = 'block';
 					// if the message is block not check recommend
@@ -398,6 +406,8 @@ class newsms
 				$insert['answertextcount'] = mb_strlen($answer);
 
 				self::$need_archive_conversation[] = $insert['fromnumber'];
+				self::force_archive_conversation($insert['fromnumber']);
+
 
 				if(\lib\app\sms::is_auto_panel_answer())
 				{
