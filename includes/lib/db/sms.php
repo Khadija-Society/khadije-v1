@@ -503,7 +503,12 @@ class sms
 			// update count
 			// sest conversation sanswered to null
 
-			$myCount = \dash\db::get("SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.mobile_id = $_args[mobile_id] AND s_sms.platoon = '$platoon' AND s_sms.textisnull IS NULL ", 'count', true);
+			$myCount = 1;
+
+			if(mb_strlen(a($_args, 'fromnumber')) === 12)
+			{
+				$myCount = \dash\db::get("SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.mobile_id = $_args[mobile_id] AND s_sms.platoon = '$platoon' AND s_sms.textisnull IS NULL ", 'count', true);
+			}
 
 			if(!is_numeric($myCount))
 			{
