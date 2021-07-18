@@ -484,6 +484,11 @@ class sms
 			}
 		}
 
+		if(!a($_args, 'text'))
+		{
+			$_args['textisnull'] = 1;
+		}
+
 		\dash\db\config::public_insert('s_sms', $_args);
 
 		$sms_id = \dash\db::insert_id();
@@ -498,7 +503,7 @@ class sms
 			// update count
 			// sest conversation sanswered to null
 
-			$myCount = \dash\db::get("SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.mobile_id = $_args[mobile_id] AND s_sms.platoon = '$platoon' AND s_sms.text IS NOT NULL ", 'count', true);
+			$myCount = \dash\db::get("SELECT COUNT(*) AS `count` FROM s_sms WHERE s_sms.mobile_id = $_args[mobile_id] AND s_sms.platoon = '$platoon' AND s_sms.textisnull IS NULL ", 'count', true);
 
 			if(!is_numeric($myCount))
 			{
