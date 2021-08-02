@@ -83,6 +83,7 @@ class view
 		\dash\data::sortLink(\content_m\view::make_sort_link(\lib\app\service::$sort_field, \dash\url::here(). '/service'));
 		$filterArray = $args;
 		unset($filterArray['services.type']);
+		unset($filterArray['limit']);
 
 		if(isset($filterArray['services.status']))
 		{
