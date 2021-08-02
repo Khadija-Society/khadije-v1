@@ -38,7 +38,7 @@
 
 
 {%block htmlSearchBox%}
-<div class="cbox fs12">
+<div class="cbox fs12 p0">
   <form method="get" action='{{url.here}}/representation'>
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search in representation"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
@@ -50,16 +50,16 @@
 
 
 {%block htmlTable%}
- <div class="cbox fs12">
-  <table class="tbl">
+ <div class="tblBox fs12">
+  <table class="tbl1 v1">
     <thead class="primary">
       <tr>
         <th data-sort="{{sortLink.firstname.order}}"><a href="{{sortLink.firstname.link}}">{%trans "firstname"%}</a></th>
-        <th class="s0" data-sort="{{sortLink.mobile.order}}"><a href="{{sortLink.mobile.link}}">{%trans "mobile"%}</a></th>
-        <th data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "status"%}</a></th>
-        <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}">{%trans "Place"%}</a></th>
+        <th class="s0 p0" data-sort="{{sortLink.mobile.order}}"><a href="{{sortLink.mobile.link}}">{%trans "mobile"%}</a></th>
+        <th class="p0" data-sort="{{sortLink.status.order}}"><a href="{{sortLink.status.link}}">{%trans "status"%}</a></th>
+        <th data-sort="{{sortLink.expert.order}}"><a href="{{sortLink.expert.link}}"><span class="p0">{%trans "Place"%}</span></a></th>
         <th class="s0">{%trans "Date"%}</th>
-        <th>{%trans "Action"%}</th>
+        <th class="collapsing p0">{%trans "Action"%}</th>
       </tr>
     </thead>
 
@@ -72,23 +72,26 @@
             {{value.firstname}} <b>{{value.lastname}}</b>
           </a>
         </td>
-        <td class="collapsing s0"><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
-        <td class=" collapsing"><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status | capitalize %}{%trans myStatus%}</a></td>
+        <td class="collapsing s0 p0"><a href="{{url.this}}?mobile={{value.mobile}}">{{value.mobile | fitNumber('mobile')}}</a></td>
+        <td class="collapsing p0"><a href="{{url.this}}?status={{value.status}}">{%set myStatus = value.status | capitalize %}{%trans myStatus%}</a></td>
         <td><a href="{{url.this}}?representation={{value.expert}}">{{value.expert}}</a></td>
         <td class="collapsing s0">{{value.datecreated |dt(true)}}</td>
-        <td class="collapsing"><a class="badge" href="{{url.this}}/view?id={{value.id}}">{%trans "Action"%}</a></td>
+        <td class="collapsing p0"><a class="badge" href="{{url.this}}/view?id={{value.id}}">{%trans "Action"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
   </table>
-  {%include display.pagination%}
 
+ </div>
+ <div class="p0">
+
+  {%include display.pagination%}
  </div>
 {%endblock%}
 
 
 {%block htmlFilter%}
-<p class="f fs14 msg warn2">
+<p class="f fs14 msg warn2 p0">
   <span class="c">{{dataFilter | raw}}</span>
   <a class="cauto" href="{{url.here}}/representation">{%trans "Clear filters"%}</a>
 </p>
@@ -96,7 +99,7 @@
 
 
 {%block htmlFilterNoResult%}
-<p class="f fs14 msg warn2">
+<p class="f fs14 msg warn2 p0">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
   <a class="cauto" href="{{url.here}}/representation">{%trans "Clear filters"%}</a>
 </p>
@@ -104,6 +107,6 @@
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "No record exist!"%}</p>
+<p class="fs14 msg success2 pTB20 p0">{%trans "No record exist!"%}</p>
 {%endblock%}
 

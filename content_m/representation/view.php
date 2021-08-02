@@ -27,6 +27,7 @@ class view
 		[
 			'order'          => \dash\request::get('order'),
 			'sort'           => \dash\request::get('sort'),
+			'limit' => 18,
 		];
 
 		if(!$args['order'])
