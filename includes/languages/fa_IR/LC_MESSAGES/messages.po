@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Persian\n"
-"POT-Creation-Date: 2021-06-21 19:25+0430\n"
-"PO-Revision-Date: 2021-06-21 19:25+0430\n"
+"POT-Creation-Date: 2021-08-03 12:34+0430\n"
+"PO-Revision-Date: 2021-08-03 12:48+0430\n"
 "Last-Translator: Javad Adib <Mr.Javad.Adib@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -1145,7 +1145,7 @@ msgstr "داشبورد سیستم مدیریت محتوا"
 #: khadije/includes/lib/app/protectionagentoccasion.php:511
 #: khadije/includes/lib/app/protectionagentoccasion.php:558
 #: khadije/includes/lib/app/protectionagentoccasion.php:706
-#: khadije/includes/lib/app/sms.php:1078 khadije/includes/lib/app/sms.php:1090
+#: khadije/includes/lib/app/sms.php:1087 khadije/includes/lib/app/sms.php:1099
 #: khadije/includes/lib/app/smsgroup.php:32 khadije/includes/lib/app/smsgroup.php:39
 #: khadije/includes/lib/app/smsgroupfilter.php:153
 #: khadije/includes/lib/app/smsgroupfilter.php:444
@@ -1167,8 +1167,8 @@ msgstr "شناسه نامعتبر"
 #: khadije/includes/lib/app/protectagentuser.php:575
 #: khadije/includes/lib/app/protectiontype.php:124
 #: khadije/includes/lib/app/send.php:67 khadije/includes/lib/app/servant.php:256
-#: khadije/includes/lib/app/skills.php:297 khadije/includes/lib/app/sms.php:1041
-#: khadije/includes/lib/app/sms.php:1048 khadije/includes/lib/app/travel.php:651
+#: khadije/includes/lib/app/skills.php:297 khadije/includes/lib/app/sms.php:1050
+#: khadije/includes/lib/app/sms.php:1057 khadije/includes/lib/app/travel.php:651
 msgid "Invalid status"
 msgstr "وضعیت نامعتبر است"
 
@@ -1596,7 +1596,7 @@ msgstr "برچسب ها را بررسی کنید و برخی از برچسب ه�
 #: khadije/content_m/festival/user/view.php:68
 #: khadije/content_m/fulldonate/view.php:168 khadije/content_m/health/view.php:53
 #: khadije/content_m/meeting/view.php:59 khadije/content_m/nationalcode/view.php:35
-#: khadije/content_m/representation/view.php:64
+#: khadije/content_m/representation/view.php:65
 #: khadije/content_m/service/view.php:72 khadije/content_m/trip/view.php:150
 #: khadije/includes/languages/trans_dash.php:500
 #: khadije/includes/languages/trans_project.php:9
@@ -1648,6 +1648,7 @@ msgstr "بازدیدکننده"
 #: dash/addons/content_crm/sms/home/view.php:16
 #: dash/addons/content_crm/sms/send/view.php:16
 #: dash/addons/content_crm/sms/verify/view.php:15
+#: dash/addons/content_su/sms/view.php:16
 #: dash/addons/includes/languages/trans_dash.php:136
 #: dash/addons/includes/languages/trans_static.php:94
 #: khadije/content_smsapp/export/view.php:14
@@ -2158,6 +2159,7 @@ msgstr "افزودن سطح دسترسی جدید"
 #: dash/addons/content_crm/sms/group/model.php:43
 #: dash/addons/content_crm/sms/send/model.php:27
 #: dash/addons/content_su/sendnotify/model.php:64
+#: dash/addons/content_su/sms/model.php:16
 msgid "No message was sended"
 msgstr "هیچ پیامی‌ارسال‌نشد"
 
@@ -2173,15 +2175,18 @@ msgstr "ارسال پیام کوتاه به گروهی از کاربران"
 msgid "Send every sms to every group users by mobile"
 msgstr "ارسال هر پیام کوتاهی به گروه‌های مختلف کاربران"
 
-#: dash/addons/content_crm/sms/send/model.php:40 dash/lib/app/parent/add.php:78
+#: dash/addons/content_crm/sms/send/model.php:40
+#: dash/addons/content_su/sms/model.php:29 dash/lib/app/parent/add.php:78
 msgid "Invalid mobile number"
 msgstr "شماره‌ی تلفن همراه نامعتبر است"
 
 #: dash/addons/content_crm/sms/send/view.php:10
+#: dash/addons/content_su/sms/view.php:10
 msgid "Send Sms to user"
 msgstr "ارسال پیامک به کاربر"
 
 #: dash/addons/content_crm/sms/send/view.php:11
+#: dash/addons/content_su/sms/view.php:11
 msgid "Send every sms to every user by mobile"
 msgstr "ارسال هر پیامکی به هرکاربری توسط موبایل"
 
@@ -2492,7 +2497,7 @@ msgstr "موبایل یافت نشد"
 #: khadije/includes/lib/app/resume.php:171 khadije/includes/lib/app/servant.php:24
 #: khadije/includes/lib/app/service.php:274 khadije/includes/lib/app/service.php:393
 #: khadije/includes/lib/app/skills.php:41 khadije/includes/lib/app/skills.php:75
-#: khadije/includes/lib/app/skills.php:114 khadije/includes/lib/app/sms.php:839
+#: khadije/includes/lib/app/skills.php:114 khadije/includes/lib/app/sms.php:848
 #: khadije/includes/lib/app/smsgroup.php:84
 #: khadije/includes/lib/app/smsgroupfilter.php:41
 #: khadije/includes/lib/app/travel.php:703
@@ -3341,7 +3346,7 @@ msgstr "شما در تلاشید کد اچ‌تی‌ام‌ال ارسال کن�
 #: dash/addons/includes/languages/trans_static.php:167
 #: khadije/content_m/consulting/view.php:117
 #: khadije/content_m/festival/user/view.php:88
-#: khadije/content_m/representation/view.php:102
+#: khadije/content_m/representation/view.php:104
 #: khadije/content_m/service/view.php:117
 #: khadije/includes/languages/trans_dash.php:23
 #: khadije/includes/languages/trans_project.php:134
@@ -5033,7 +5038,7 @@ msgstr "وضعیت یک پاسخ را می‌توان از کد وضعیت اچ�
 #: khadije/content_m/consulting/view.php:91
 #: khadije/content_m/delneveshte/home/view.php:67
 #: khadije/content_m/familytrip/view.php:152 khadije/content_m/health/view.php:78
-#: khadije/content_m/representation/view.php:90
+#: khadije/content_m/representation/view.php:92
 #: khadije/content_m/service/view.php:110 khadije/content_m/trip/view.php:196
 #: khadije/content_protection/agentoccasion/allprice/view.php:136
 #: khadije/content_protection/agentoccasion/allreport/view.php:42
@@ -5622,7 +5627,7 @@ msgid "Unreachable"
 msgstr "غیر قابل دسترسی"
 
 #: dash/addons/includes/languages/trans_dash.php:513
-#: khadije/content_smsapp/conversation/view.php:60
+#: khadije/content_smsapp/conversation/view.php:64
 #: khadije/includes/languages/trans_dash.php:513
 #: khadije/includes/languages/trans_project.php:50
 msgid "All"
@@ -7062,7 +7067,7 @@ msgstr "آدرس منبع"
 #: dash/addons/includes/languages/trans_dash.php:858 dash/lib/redirect_html.php:5
 #: dash/lib/utility/pay/api/asanpardakht/go.php:79
 #: dash/lib/utility/pay/api/irkish/go.php:74
-#: dash/lib/utility/pay/api/mellat/go.php:89 dash/lib/utility/pay/api/sep/go.php:68
+#: dash/lib/utility/pay/api/mellat/go.php:91 dash/lib/utility/pay/api/sep/go.php:68
 #: khadije/includes/languages/trans_dash.php:858
 msgid "Redirect"
 msgstr "تغییر مسیر"
@@ -9677,7 +9682,7 @@ msgstr "در انتظار پاسخ"
 
 #: dash/addons/includes/languages/trans_dash.php:1543
 #: dash/addons/includes/languages/trans_static.php:994
-#: khadije/content_smsapp/conversation/view.php:61
+#: khadije/content_smsapp/conversation/view.php:65
 #: khadije/includes/languages/trans_dash.php:1543
 msgid "Answered"
 msgstr "پاسخ داده شده"
@@ -14887,7 +14892,7 @@ msgstr "مبلغ باید به صورت عددی وارد شود"
 
 #: dash/lib/db/transactions/set.php:188 dash/lib/db/transactions/set.php:205
 #: dash/lib/utility/pay/start.php:212 khadije/includes/lib/app/send.php:579
-#: khadije/includes/lib/app/sms.php:1063
+#: khadije/includes/lib/app/sms.php:1072
 msgid "Amount is out of range"
 msgstr "مبلغ خارج از محدوده مجاز است"
 
@@ -15834,8 +15839,8 @@ msgstr "خطا در درگاه پرداخت - هیچ پاسخی گرفته نش�
 #: dash/lib/utility/pay/api/asanpardakht/bank.php:93
 #: dash/lib/utility/pay/api/irkish/bank.php:57
 #: dash/lib/utility/pay/api/irkish/bank.php:110
-#: dash/lib/utility/pay/api/mellat/bank.php:65
-#: dash/lib/utility/pay/api/mellat/bank.php:126
+#: dash/lib/utility/pay/api/mellat/bank.php:70
+#: dash/lib/utility/pay/api/mellat/bank.php:131
 #: dash/lib/utility/pay/api/parsian/bank.php:55
 #: dash/lib/utility/pay/api/parsian/bank.php:100
 #: dash/lib/utility/pay/api/parsian/bank.php:143
@@ -15882,7 +15887,7 @@ msgstr "خطا در اتصل به سرویس بانک"
 
 #: dash/lib/utility/pay/api/irkish/bank.php:163
 #: dash/lib/utility/pay/api/irkish/bank.php:167
-#: dash/lib/utility/pay/api/mellat/bank.php:194
+#: dash/lib/utility/pay/api/mellat/bank.php:199
 #: dash/lib/utility/pay/api/parsian/bank.php:269
 #: dash/lib/utility/pay/api/parsian/bank.php:274
 #: dash/lib/utility/pay/api/sep/bank.php:171
@@ -15916,187 +15921,187 @@ msgstr "ارجاع دهنده درگاه پرداخت ملت تنظیم نشده
 msgid "Can not connect to mellat gateway. Install it!"
 msgstr "نمی‌توانیم به درگاه پرداخت ملت متصل شویم. آن را نصب کنید!"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:141
+#: dash/lib/utility/pay/api/mellat/bank.php:146
 msgid "Transaction Approved"
 msgstr "تراکنش تایید شده است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:142
+#: dash/lib/utility/pay/api/mellat/bank.php:147
 msgid "Invalid Card Number"
 msgstr "شماره کارت نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:143
+#: dash/lib/utility/pay/api/mellat/bank.php:148
 msgid "No Sufficient Funds"
 msgstr "بدون پول کافی"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:144
+#: dash/lib/utility/pay/api/mellat/bank.php:149
 msgid "Incorrect Pin"
 msgstr "پین نادرست"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:145
+#: dash/lib/utility/pay/api/mellat/bank.php:150
 msgid "Allowable Number Of Pin Tries Exceeded"
 msgstr "تعداد قابل قبولی از پین تلاش می کند بیش از"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:146
+#: dash/lib/utility/pay/api/mellat/bank.php:151
 msgid "Card Not Effective"
 msgstr "کارت موثر نیست"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:147
+#: dash/lib/utility/pay/api/mellat/bank.php:152
 msgid "Exceeds Withdrawal Frequency Limit"
 msgstr "بیش از حد فرکانس خروج"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:148
+#: dash/lib/utility/pay/api/mellat/bank.php:153
 msgid "Customer Cancellation"
 msgstr "لغو مشتری"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:149
+#: dash/lib/utility/pay/api/mellat/bank.php:154
 msgid "Expired Card"
 msgstr "کارت خاتمه یافته"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:150
+#: dash/lib/utility/pay/api/mellat/bank.php:155
 msgid "Exceeds Withdrawal Amount Limit"
 msgstr "حد مجاز بازپرداخت بیشتر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:151
+#: dash/lib/utility/pay/api/mellat/bank.php:156
 msgid "No Such Issuer"
 msgstr "چنین صادر کننده ای وجود ندارد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:152
+#: dash/lib/utility/pay/api/mellat/bank.php:157
 msgid "Card Switch Internal Error"
 msgstr "کارت سوئیچ داخلی خطا"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:153
+#: dash/lib/utility/pay/api/mellat/bank.php:158
 msgid "Issuer Or Switch Is Inoperative"
 msgstr "صادر کننده یا سوئیچ نامناسب است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:154
+#: dash/lib/utility/pay/api/mellat/bank.php:159
 msgid "Transaction Not Permitted To Card Holder"
 msgstr "تراکنش به دارنده کارت مجاز نمی باشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:155
+#: dash/lib/utility/pay/api/mellat/bank.php:160
 msgid "Invalid Merchant"
 msgstr "Merchant نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:156
+#: dash/lib/utility/pay/api/mellat/bank.php:161
 msgid "Security Violation"
 msgstr "نقض امنیتی"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:157
+#: dash/lib/utility/pay/api/mellat/bank.php:162
 msgid "Invalid User Or Password"
 msgstr "کاربر یا گذرواژه نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:158
+#: dash/lib/utility/pay/api/mellat/bank.php:163
 msgid "Invalid Amount"
 msgstr "مقدار نامعتبر"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:159
+#: dash/lib/utility/pay/api/mellat/bank.php:164
 msgid "Invalid Response"
 msgstr "پاسخ نامعتبر"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:160
+#: dash/lib/utility/pay/api/mellat/bank.php:165
 msgid "Format Error"
 msgstr "خطای قالب"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:161
+#: dash/lib/utility/pay/api/mellat/bank.php:166
 msgid "No Investment Account"
 msgstr "حساب سرمایه گذاری ندارد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:162
+#: dash/lib/utility/pay/api/mellat/bank.php:167
 msgid "System Internal Error"
 msgstr "خطای داخلی سیستم"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:163
+#: dash/lib/utility/pay/api/mellat/bank.php:168
 msgid "Invalid Business Date"
 msgstr "تاریخ کسب و کار نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:164
+#: dash/lib/utility/pay/api/mellat/bank.php:169
 msgid "Duplicate Order Id"
 msgstr "شناسه سفارش تکراری"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:165
+#: dash/lib/utility/pay/api/mellat/bank.php:170
 msgid "Sale Transaction Not Found"
 msgstr "معامله فروش یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:166
+#: dash/lib/utility/pay/api/mellat/bank.php:171
 msgid "Duplicate Verify"
 msgstr "تکثیر تأیید"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:167
+#: dash/lib/utility/pay/api/mellat/bank.php:172
 msgid "Verify Transaction Not Found"
 msgstr "تأیید معامله یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:168
+#: dash/lib/utility/pay/api/mellat/bank.php:173
 msgid "Transaction Has Been Settled"
 msgstr "معامله صورت گرفته است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:169
+#: dash/lib/utility/pay/api/mellat/bank.php:174
 msgid "Transaction Has Not Been Settled"
 msgstr "معامله انجام نشده است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:170
+#: dash/lib/utility/pay/api/mellat/bank.php:175
 msgid "Settle Transaction Not Found"
 msgstr "معامله معامله پیدا نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:171
+#: dash/lib/utility/pay/api/mellat/bank.php:176
 msgid "Transaction Has Been Reversed"
 msgstr "معامله معکوس شده است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:172
+#: dash/lib/utility/pay/api/mellat/bank.php:177
 msgid "Refund Transaction Not Found"
 msgstr "معامله بازپرداخت یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:173
+#: dash/lib/utility/pay/api/mellat/bank.php:178
 msgid "Bill Digit Incorrect"
 msgstr "بیل سیگنال اشتباه است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:174
+#: dash/lib/utility/pay/api/mellat/bank.php:179
 msgid "Payment Digit Incorrect"
 msgstr "سیگنال پرداخت اشتباه است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:175
+#: dash/lib/utility/pay/api/mellat/bank.php:180
 msgid "Bill Organization Not Valid"
 msgstr "سازمان بیل معتبر نیست"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:176
+#: dash/lib/utility/pay/api/mellat/bank.php:181
 msgid "Session Timeout"
 msgstr "مدت زمان جلسه"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:177
+#: dash/lib/utility/pay/api/mellat/bank.php:182
 msgid "Data Access Exception"
 msgstr "استثناء دسترسی به داده ها"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:178
+#: dash/lib/utility/pay/api/mellat/bank.php:183
 msgid "Payer Id Is Invalid"
 msgstr "شناسه پرداخت نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:179
+#: dash/lib/utility/pay/api/mellat/bank.php:184
 msgid "Customer Not Found"
 msgstr "مشتری یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:180
+#: dash/lib/utility/pay/api/mellat/bank.php:185
 msgid "Try Count Exceeded"
 msgstr "سعی کنید تعداد بیش از حد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:181
+#: dash/lib/utility/pay/api/mellat/bank.php:186
 msgid "Invalid IP"
 msgstr "IP نامعتبر است"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:182
+#: dash/lib/utility/pay/api/mellat/bank.php:187
 msgid "Duplicate Transmission"
 msgstr "انتقال تکراری"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:183
+#: dash/lib/utility/pay/api/mellat/bank.php:188
 msgid "Original Transaction Not Found"
 msgstr "معامله اصلی یافت نشد"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:184
+#: dash/lib/utility/pay/api/mellat/bank.php:189
 msgid "Invalid Transaction"
 msgstr "معامله نامعتبر"
 
-#: dash/lib/utility/pay/api/mellat/bank.php:185
+#: dash/lib/utility/pay/api/mellat/bank.php:190
 msgid "Error In Settle"
 msgstr "خطا در حل و فصل"
 
-#: dash/lib/utility/pay/api/mellat/go.php:88
+#: dash/lib/utility/pay/api/mellat/go.php:90
 msgid "Redirect to mellat payment"
 msgstr "در حال انتقال به درگاه پرداخت ملت"
 
@@ -17334,11 +17339,11 @@ msgstr "اللهم صل علی محمد و آل محمد و عجل فرجهم"
 msgid "Invalid mobile for gateway"
 msgstr "این شماره تلفن همراه در درگاه‌های معتبر وجود ندارد"
 
-#: khadije/content_api/v6/smsapp/newsms.php:76
+#: khadije/content_api/v6/smsapp/newsms.php:80
 msgid "Invalid from"
 msgstr "اطلاعات از درگاه اشتباهی ارسال شده است"
 
-#: khadije/content_api/v6/smsapp/newsms.php:87
+#: khadije/content_api/v6/smsapp/newsms.php:93
 #: khadije/content_m/festival/schedule/model.php:103
 #: khadije/includes/lib/app/lottery.php:43
 #: khadije/includes/lib/app/lotterywin.php:43
@@ -17352,7 +17357,7 @@ msgstr "اطلاعات از درگاه اشتباهی ارسال شده است"
 msgid "Invalid date"
 msgstr "تاریخ نامعتبر است"
 
-#: khadije/content_api/v6/smsapp/newsms.php:114
+#: khadije/content_api/v6/smsapp/newsms.php:120
 msgid "From number is required"
 msgstr "شماره ارسال کننده الزامی است"
 
@@ -17365,7 +17370,7 @@ msgstr "سیستم خاموش است"
 msgid "No not sent message"
 msgstr "هیچ پیام ارسال نشده‌ای وجود ندارد"
 
-#: khadije/content_api/v6/smsapp/queue.php:38 khadije/includes/lib/app/sms.php:443
+#: khadije/content_api/v6/smsapp/queue.php:38 khadije/includes/lib/app/sms.php:452
 msgid "No new message"
 msgstr "هیچ پیام جدیدی وجود ندارد"
 
@@ -17374,7 +17379,7 @@ msgid "Maximum limit"
 msgstr "حداکثر محدوده مجاز"
 
 #: khadije/content_api/v6/smsapp/sent.php:15
-#: khadije/content_api/v6/smsapp/sent.php:47 khadije/includes/lib/app/sms.php:994
+#: khadije/content_api/v6/smsapp/sent.php:47 khadije/includes/lib/app/sms.php:1003
 msgid "Invalid sms id"
 msgstr "شناسه پیامک اشتباه است"
 
@@ -18432,7 +18437,10 @@ msgstr "گزارش پرداخت‌ها به تفکیک نام"
 #: khadije/content_m/representation/options/model.php:81
 #: khadije/content_m/representation/view/model.php:51
 msgid "Your representation request for :place is done."
-msgstr "زیارت از نیابت شما در :place به انجام رسید."
+msgstr ""
+"با سلام\n"
+"بنا به درخواست ثبت شده در وب‌سایت موسسه، به نیابت از شما در :place زیارت‌نامه قرائت "
+"شد."
 
 #: khadije/content_m/representation/options/model.php:86
 msgid ":count request status changed"
@@ -18470,7 +18478,7 @@ msgstr "لیست درخواست‌های زیارت نیابتی"
 msgid "check representation requests"
 msgstr "بررسی درخواست زیارت نیابتی"
 
-#: khadije/content_m/representation/view.php:97
+#: khadije/content_m/representation/view.php:99
 #: khadije/includes/languages/trans_project.php:910
 #: khadije/includes/languages/trans_static.php:84
 msgid "Representation"
@@ -18841,7 +18849,7 @@ msgstr "لطفا پاسخ خود را انتخاب کنید"
 msgid "All message group saved"
 msgstr "پیام‌های این گروه ذخیره شد"
 
-#: khadije/content_smsapp/conversation/view.php:59
+#: khadije/content_smsapp/conversation/view.php:63
 msgid "Awaiting to answer"
 msgstr "در انتظار پاسخ"
 
@@ -19390,8 +19398,8 @@ msgid "Answer text"
 msgstr "متن پاسخ"
 
 #: khadije/includes/languages/trans_project.php:273
-#: khadije/includes/lib/app/android.php:198 khadije/includes/lib/app/sms.php:521
-#: khadije/includes/lib/app/sms.php:546
+#: khadije/includes/lib/app/android.php:198 khadije/includes/lib/app/sms.php:530
+#: khadije/includes/lib/app/sms.php:555
 msgid "Skip"
 msgstr "پرش کردن"
 
@@ -19615,7 +19623,7 @@ msgid "Edit profile"
 msgstr "ویرایش حساب‌کاربری"
 
 #: khadije/includes/languages/trans_project.php:388
-#: khadije/includes/lib/app/sms.php:1142
+#: khadije/includes/lib/app/sms.php:1151
 msgid "Archive"
 msgstr "بایگانی"
 
@@ -22505,7 +22513,7 @@ msgstr "درخواست جدید و کامل ارسال شده"
 #: khadije/includes/languages/trans_project.php:1773
 #: khadije/includes/languages/trans_static.php:183
 #: khadije/includes/lib/app/log/caller/smsappNew.php:122
-#: khadije/includes/lib/app/sms.php:489
+#: khadije/includes/lib/app/sms.php:498
 msgid "Review"
 msgstr "بررسی"
 
@@ -23843,7 +23851,7 @@ msgstr "گروه اشتباه است"
 msgid "Answer is required"
 msgstr "پاسخ الزامی است"
 
-#: khadije/includes/lib/app/conversation/answer.php:143
+#: khadije/includes/lib/app/conversation/answer.php:144
 msgid "Answer sended"
 msgstr "پاسخ ارسال شد"
 
@@ -25341,31 +25349,31 @@ msgstr "لطفا عنوان را کمتر از  ۳۰۰ حرف وارد کنید"
 msgid "This title is already exist in your list"
 msgstr "این عنوان در لیست شما وجود دارد"
 
-#: khadije/includes/lib/app/sms.php:666
+#: khadije/includes/lib/app/sms.php:675
 msgid "This message was answered"
 msgstr "این پیام قبلا پاسخ داده شده است"
 
-#: khadije/includes/lib/app/sms.php:860
+#: khadije/includes/lib/app/sms.php:869
 msgid "No way to insert sms"
 msgstr "هیچ راهی برای ثبت اطلاعات نیست"
 
-#: khadije/includes/lib/app/sms.php:868
+#: khadije/includes/lib/app/sms.php:877
 msgid "Sms successfuly added"
 msgstr "پیامک با موفقیت ثبت شد"
 
-#: khadije/includes/lib/app/sms.php:974
+#: khadije/includes/lib/app/sms.php:983
 msgid "Sms successfully updated"
 msgstr "پیامک با موفقیت به‌روزرسانی شد"
 
-#: khadije/includes/lib/app/sms.php:985 khadije/includes/lib/app/smsgroup.php:225
+#: khadije/includes/lib/app/sms.php:994 khadije/includes/lib/app/smsgroup.php:225
 msgid "Sms group id not set"
 msgstr "شناسه گروه پیامک تنظیم نشده است"
 
-#: khadije/includes/lib/app/sms.php:1030
+#: khadije/includes/lib/app/sms.php:1039
 msgid "Invalid gateway"
 msgstr "درگاه اشتباه است"
 
-#: khadije/includes/lib/app/sms.php:1056
+#: khadije/includes/lib/app/sms.php:1065
 msgid "Please set amount as a number"
 msgstr "لطفا مبلغ چک را به صورت عددی وارد کنید"
 
