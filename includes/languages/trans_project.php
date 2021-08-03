@@ -857,7 +857,7 @@ class twigTransTerms
 	echo T_("Register for new course");                                               // Line 33
 
 	//-----------------------------------------content_a/festival/request/display.html
-	echo T_("Back");                                                                  // Line 8
+	echo T_("Back");                                                                  // Line 12
 	echo T_("Word file");                                                             // Line 25
 	echo T_("Show file");                                                             // Line 95
 	echo T_("pdf file");                                                              // Line 36
@@ -1612,7 +1612,8 @@ class twigTransTerms
 	echo T_("Representation is done");                                                // Line 43
 
 	//-------------------------------------------content_m/representation/display.html
-	echo T_("Search in representation");                                              // Line 44
+	echo T_("Search in representation");                                              // Line 61
+	echo T_("Print");                                                                 // Line 63
 
 	//---------------------------------------------------content_m/donate/display.html
 	echo T_("Total Donation");                                                        // Line 11

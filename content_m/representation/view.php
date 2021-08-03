@@ -30,6 +30,11 @@ class view
 			'limit' => 18,
 		];
 
+		if(\dash\request::get('print'))
+		{
+			$args['limit'] = 100;
+		}
+
 		if(!$args['order'])
 		{
 			$args['order'] = 'DESC';
@@ -108,6 +113,12 @@ class view
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArray);
 		\dash\data::dataFilter($dataFilter);
+
+		$get = \dash\request::get();
+		$get['print'] = 1;
+		\dash\data::printListLink(\dash\url::this(). '?'. http_build_query($get));
+		$get['print'] = null;
+		\dash\data::rawListLink(\dash\url::this(). '?'. http_build_query($get));
 	}
 }
 ?>

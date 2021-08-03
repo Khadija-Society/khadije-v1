@@ -7,29 +7,46 @@
 
 {%block pageContent%}
 
-{%if dataTable%}
- {%if dataFilter%}
+{%if requestGET.print%}
+<a class="btn primary p0" href="{{rawListLink}}">
+  {%trans "Back"%}
+</a>
+<div class="f fs14">
 
-  {{block('htmlSearchBox')}}
-  {{block('htmlTable')}}
-  {{block('htmlFilter')}}
+ {%for key, value in dataTable%}
+ <div class="c3">
+  <div class="pA10">
+    {{value.firstname}} <b>{{value.lastname}}</b>
+    </div>
+  </div>
+ {%endfor%}
+</div>
 
- {%else%}
-
-  {{block('htmlSearchBox')}}
-  {{block('htmlTable')}}
-
- {%endif%}
 {%else%}
- {%if dataFilter%}
+  {%if dataTable%}
+   {%if dataFilter%}
 
-  {{block('htmlSearchBox')}}
-  {{block('htmlFilterNoResult')}}
+    {{block('htmlSearchBox')}}
+    {{block('htmlTable')}}
+    {{block('htmlFilter')}}
 
- {%else%}
-  {{block('htmlStartAddNew')}}
+   {%else%}
 
- {%endif%}
+    {{block('htmlSearchBox')}}
+    {{block('htmlTable')}}
+
+   {%endif%}
+  {%else%}
+   {%if dataFilter%}
+
+    {{block('htmlSearchBox')}}
+    {{block('htmlFilterNoResult')}}
+
+   {%else%}
+    {{block('htmlStartAddNew')}}
+
+   {%endif%}
+  {%endif%}
 {%endif%}
 
 {%endblock%}
@@ -42,7 +59,8 @@
   <form method="get" action='{{url.here}}/representation'>
     <div class="input">
       <input type="search" name="q" placeholder='{%trans "Search in representation"%}' id="q" value="{{requestGET.q}}" autofocus class="" data-default data-pass='submit' autocomplete='off'>
-      <button class="addon btn ">{%trans "Search" %}</button>
+      <button class="addon btn"><i class="sf-search"></i></button>
+      <label class="addon btn primary"><a href="{{printListLink}}">{%trans "Print"%}</a></label>
     </div>
   </form>
 </div>

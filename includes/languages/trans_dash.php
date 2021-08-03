@@ -78,10 +78,10 @@ class twigTransTerms
 	echo T_("Total");                                                                 // Line 22
 
 	//-------------------------------------------addons/includes/html/display-mvc.html
-	echo T_("You are supervisor!");                                                   // Line 91
-	echo T_("Control Panel");                                                         // Line 96
-	echo T_("JavaScript is required to use our service.");                            // Line 110
-	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 111
+	echo T_("You are supervisor!");                                                   // Line 92
+	echo T_("Control Panel");                                                         // Line 97
+	echo T_("JavaScript is required to use our service.");                            // Line 111
+	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 112
 
 	//----------------------------------------------addons/includes/html/inc_spay.html
 	echo T_("Please choose bank");                                                    // Line 4
@@ -1305,6 +1305,8 @@ class twigTransTerms
 	//-----------------------------------------addons/content_su/dbtables/display.html
 	echo T_("Search in :dbtabless");                                                  // Line 57
 	echo T_("Try to start with add new :dbtables!");                                  // Line 112
+
+	//----------------------------------------------addons/content_su/sms/display.html
 
 	//---------------------------------------------addons/content_su/info/display.html
 	echo T_("Show server info");                                                      // Line 8
