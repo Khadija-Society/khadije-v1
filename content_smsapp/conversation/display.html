@@ -31,7 +31,7 @@
     </div>
   </a>
 {%endfor%}
-<div class="cbox mTB10">
+<div class="cbox mB5">
   <div class="f" data-confirm data-data='{"status" : "change" {{platoonGetJson}}}'>
     <div class="mB10 c6">{%trans "System status"%}</div>
     <div class="c"></div>
@@ -41,6 +41,15 @@
     <div class="txtB cauto"> {{lastConnected | date | dt('human', 'year')}}</div>
   </div>
 </div>
+
+<div class="cbox mB5">
+    <div class="f">
+        <div class="cauto mRa5">{%if isActive%}<i class="sf-arrow-left fc-blue"></i>{%endif%}</div>
+        <div class="c">{%trans "Your sms panel balance"%}</div>
+        <div class="cauto"><span class="badge rounded {%if isActive%}primary2{%else%}light{%endif%}" id="count_{{key}}"><b>{{((SMSbalance.remaincredit) / 10) | fitNumber}}</b> {%trans "Toman"%}</span></div>
+    </div>
+  </div>
+
 <div class="cbox fs12">
 <div class="f">
   <div class="c">
@@ -87,6 +96,8 @@
     </div>
   </a>
 {%endfor%}
+
+
 {%endblock%}
 
 

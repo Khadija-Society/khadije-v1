@@ -12,6 +12,30 @@ class view
 
 
 
+		$get_balance = \dash\session::get('sms_panel_detail');
+		if(!$get_balance)
+		{
+			$default =
+			[
+				'remaincredit' => null,
+				'expiredate'   => null,
+				'type'         => 'Unknow',
+			];
+			$get_balance = \dash\utility\sms::info();
+
+
+			if(isset($get_balance['entries']) && is_array($get_balance['entries']))
+			{
+				$get_balance = array_merge($default, $get_balance['entries']);
+			}
+
+			\dash\session::set('sms_panel_detail', $get_balance, null, (60 * 1));
+		}
+
+		\dash\data::SMSbalance($get_balance);
+
+
+
 		$filterArray = [];
 		$countArgs   = [];
 
