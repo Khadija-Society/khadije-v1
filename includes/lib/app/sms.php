@@ -410,7 +410,6 @@ class sms
 	{
 		$list = \lib\db\sms::get_sms_panel_not_send();
 
-
 		if(!is_array($list) || !$list)
 		{
 			return;
@@ -424,7 +423,24 @@ class sms
 
 		foreach ($list as $key => $value)
 		{
-			$result = \dash\utility\sms::send($value['fromnumber'], $value['answertext'], ['localid' => '1000'. $value['id']]);
+
+			$meta = ['localid' => '1000'. $value['id']];
+
+			$platoon = a($value, 'platoon');
+
+			$get_pltoon = \lib\app\platoon\tools::get_by_platoon($platoon);
+
+			if(a($get_pltoon, 'linenumber'))
+			{
+				$meta['line'] = a($get_pltoon, 'linenumber');
+			}
+
+			if(a($get_pltoon, 'kavenegar_api_key'))
+			{
+				\dash\option::set_sms('kavenegar', a($get_pltoon, 'kavenegar_api_key'), 'apikey');
+			}
+
+			$result = \dash\utility\sms::send($value['fromnumber'], $value['answertext'], $meta);
 
 			// balance low
 			if(isset($result['return']['status']) && $result['return']['status'] == '418')
