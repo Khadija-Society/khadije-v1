@@ -12,9 +12,18 @@ class view
 
 
 
-		$get_balance = \dash\session::get('sms_panel_detail');
+		$get_balance = \dash\session::get('sms_panel_detail'. \dash\request::get('platoon'));
 		if(!$get_balance)
 		{
+
+			$get_pltoon = \lib\app\platoon\tools::get(\dash\request::get('platoon'));
+
+
+			if(a($get_pltoon, 'kavenegar_api_key'))
+			{
+				\dash\option::set_sms('kavenegar', a($get_pltoon, 'kavenegar_api_key'), 'apikey');
+			}
+
 			$default =
 			[
 				'remaincredit' => null,
@@ -29,7 +38,7 @@ class view
 				$get_balance = array_merge($default, $get_balance['entries']);
 			}
 
-			\dash\session::set('sms_panel_detail', $get_balance, null, (60 * 1));
+			\dash\session::set('sms_panel_detail'. \dash\request::get('platoon'), $get_balance, null, (60 * 1));
 		}
 
 		\dash\data::SMSbalance($get_balance);
