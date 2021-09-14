@@ -173,7 +173,12 @@ class search
 		$user_id = array_column($result, 'user_id');
 		$user_id = array_filter($user_id);
 		$user_id = array_values($user_id);
-		$user_id = implode(",", $user_id);
+		$all_id = $user_id;
+		$user_id = implode(",", $all_id);
+
+		$all_mobile = array_column($result, 'fromnumber');
+		$all_mobile = array_filter($all_mobile);
+		$all_mobile = array_values($all_mobile);
 
 
 		if(!$user_id)
@@ -208,12 +213,15 @@ class search
 
 		$displayname = array_combine(array_column($displayname, 'id'), $displayname);
 
-		$all_id = array_column($result, 'user_id');
-
 		foreach ($result as $key => $value)
 		{
 			if(isset($value['user_id']))
 			{
+				if(isset($displayname[$value['user_id']]['mobile']) && $displayname[$value['user_id']]['mobile'])
+				{
+					unset($all_mobile[array_search($value['fromnumber'], $all_mobile)]);
+				}
+
 				if(isset($displayname[$value['user_id']]['displayname']) && $displayname[$value['user_id']]['displayname'])
 				{
 					unset($all_id[array_search($value['user_id'], $all_id)]);
@@ -234,6 +242,8 @@ class search
 		{
 			return;
 		}
+
+		$user_id = implode(',', $all_id);
 
 		// protection_user_agent_occasion.displayname -> user_id
 		$query =
@@ -286,8 +296,8 @@ class search
 		}
 
 
-		$fromnumber = array_column($result, 'fromnumber');
-		$fromnumber = array_filter($fromnumber);
+
+		$fromnumber = array_filter($all_mobile);
 		$fromnumber = array_values($fromnumber);
 		$fromnumber = implode("','", $fromnumber);
 
@@ -325,6 +335,8 @@ class search
 
 					unset($all_id[array_search($value['mobile_id'], $all_id)]);
 
+					unset($all_mobile[array_search($value['fromnumber'], $all_mobile)]);
+
 					$result[$key]['displayname'] = $displayname[$value['fromnumber']]['displayname'];
 				}
 
@@ -334,6 +346,8 @@ class search
 				}
 			}
 		}
+
+		$fromnumber = implode("','", $all_mobile);
 
 
 		$query =
