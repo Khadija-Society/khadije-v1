@@ -203,7 +203,7 @@ class search
 			\dash\temp::set('currentStatInGroup', $count_group_by);
 		}
 
-		if(is_array($list) && count($list) < $meta['limit'])
+		if(is_array($list) && count($list) < $meta['limit'] && !$_query_string)
 		{
 			// needless to limit
 		}
