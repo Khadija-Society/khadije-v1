@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Khadije - Arabic\n"
 "POT-Creation-Date: 2021-10-18 20:07+0330\n"
-"PO-Revision-Date: 2021-10-18 20:07+0330\n"
+"PO-Revision-Date: 2021-10-20 11:53+0330\n"
 "Last-Translator: Javad Adib <Mr.Javad.Adib@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -1098,8 +1098,7 @@ msgstr "لا!"
 msgid "Backup Complete"
 msgstr "اكتمال النسخ الاحتياطي"
 
-#: dash/addons/content_cms/cms/view.php:9
-#: dash/addons/content_cms/cms/view.php:10
+#: dash/addons/content_cms/cms/view.php:9 dash/addons/content_cms/cms/view.php:10
 #: dash/addons/includes/languages/trans_dash.php:987
 #: khadije/includes/languages/trans_dash.php:987
 msgid "CMS Dashboard"
@@ -1166,8 +1165,7 @@ msgstr "المعرف غير صالح"
 #: dash/addons/content_support/ticket/show/model.php:158
 #: dash/lib/app/address.php:189 dash/lib/app/comment.php:288
 #: dash/lib/app/ticket.php:506 dash/lib/app/user.php:546
-#: dash/lib/app/user_telegram.php:123
-#: khadije/content_api/v6/smsapp/status.php:25
+#: dash/lib/app/user_telegram.php:123 khadije/content_api/v6/smsapp/status.php:25
 #: khadije/content_m/admincontact/edit/model.php:12
 #: khadije/content_m/delneveshte/edit/model.php:12
 #: khadije/content_m/doyon/view/model.php:16
@@ -1205,8 +1203,8 @@ msgstr "يمكنك تحرير التعليقات إذا لزم الأمر."
 #: khadije/content_m/admincontact/edit/view.php:21
 #: khadije/content_m/delneveshte/edit/view.php:21
 msgid ""
-"This is often useful when you notice that a commenter has made a "
-"typographical error."
+"This is often useful when you notice that a commenter has made a typographical "
+"error."
 msgstr ""
 "يكون هذا مفيدًا في الغالب عندما تلاحظ أن أحد المعلقين قد ارتكب خطأً مطبعيًا."
 
@@ -1608,8 +1606,8 @@ msgstr "تحقّق من العلامات و قم بإضافة أو تعديل ب
 #: khadije/content_m/familytrip/view.php:107
 #: khadije/content_m/festival/transaction/view.php:72
 #: khadije/content_m/festival/user/view.php:68
-#: khadije/content_m/fulldonate/view.php:168
-#: khadije/content_m/health/view.php:53 khadije/content_m/meeting/view.php:59
+#: khadije/content_m/fulldonate/view.php:168 khadije/content_m/health/view.php:53
+#: khadije/content_m/meeting/view.php:59
 #: khadije/content_m/nationalcode/view.php:35
 #: khadije/content_m/representation/view.php:64
 #: khadije/content_m/service/view.php:72 khadije/content_m/trip/view.php:150
@@ -1908,8 +1906,7 @@ msgstr ""
 
 #: dash/addons/content_crm/member/main/view.php:42
 #: khadije/content/arbaeen98/view.php:69 khadije/content/karbala/l4/view.php:49
-#: khadije/content/karbala/view.php:31
-#: khadije/content/karbalaarbaeen/view.php:68
+#: khadije/content/karbala/view.php:31 khadije/content/karbalaarbaeen/view.php:68
 #: khadije/content/l/signup/view.php:72
 #: khadije/content_a/group/partner/view.php:16
 #: khadije/content_a/profile/view.php:23
@@ -1926,8 +1923,7 @@ msgstr "الأب"
 
 #: dash/addons/content_crm/member/main/view.php:43
 #: khadije/content/arbaeen98/view.php:70 khadije/content/karbala/l4/view.php:50
-#: khadije/content/karbala/view.php:32
-#: khadije/content/karbalaarbaeen/view.php:69
+#: khadije/content/karbala/view.php:32 khadije/content/karbalaarbaeen/view.php:69
 #: khadije/content/l/signup/view.php:73
 #: khadije/content_a/group/partner/view.php:17
 #: khadije/content_a/profile/view.php:24
@@ -1938,8 +1934,7 @@ msgstr "الأم"
 
 #: dash/addons/content_crm/member/main/view.php:44
 #: khadije/content/arbaeen98/view.php:71 khadije/content/karbala/l4/view.php:51
-#: khadije/content/karbala/view.php:33
-#: khadije/content/karbalaarbaeen/view.php:70
+#: khadije/content/karbala/view.php:33 khadije/content/karbalaarbaeen/view.php:70
 #: khadije/content/l/signup/view.php:74
 #: khadije/content_a/group/partner/view.php:18
 #: khadije/content_a/profile/view.php:25
@@ -1950,8 +1945,7 @@ msgstr "الأخت"
 
 #: dash/addons/content_crm/member/main/view.php:45
 #: khadije/content/arbaeen98/view.php:72 khadije/content/karbala/l4/view.php:52
-#: khadije/content/karbala/view.php:34
-#: khadije/content/karbalaarbaeen/view.php:71
+#: khadije/content/karbala/view.php:34 khadije/content/karbalaarbaeen/view.php:71
 #: khadije/content/l/signup/view.php:75
 #: khadije/content_a/group/partner/view.php:19
 #: khadije/content_a/profile/view.php:26
@@ -1962,8 +1956,7 @@ msgstr "الأخ"
 
 #: dash/addons/content_crm/member/main/view.php:46
 #: khadije/content/arbaeen98/view.php:73 khadije/content/karbala/l4/view.php:53
-#: khadije/content/karbala/view.php:35
-#: khadije/content/karbalaarbaeen/view.php:72
+#: khadije/content/karbala/view.php:35 khadije/content/karbalaarbaeen/view.php:72
 #: khadije/content/l/signup/view.php:76
 #: khadije/content_a/group/partner/view.php:20
 #: khadije/content_a/profile/view.php:27
@@ -1974,8 +1967,7 @@ msgstr "الجد"
 
 #: dash/addons/content_crm/member/main/view.php:47
 #: khadije/content/arbaeen98/view.php:74 khadije/content/karbala/l4/view.php:54
-#: khadije/content/karbala/view.php:36
-#: khadije/content/karbalaarbaeen/view.php:73
+#: khadije/content/karbala/view.php:36 khadije/content/karbalaarbaeen/view.php:73
 #: khadije/content/l/signup/view.php:77
 #: khadije/content_a/group/partner/view.php:21
 #: khadije/content_a/profile/view.php:28
@@ -1986,8 +1978,7 @@ msgstr "الجدة"
 
 #: dash/addons/content_crm/member/main/view.php:48
 #: khadije/content/arbaeen98/view.php:75 khadije/content/karbala/l4/view.php:55
-#: khadije/content/karbala/view.php:37
-#: khadije/content/karbalaarbaeen/view.php:74
+#: khadije/content/karbala/view.php:37 khadije/content/karbalaarbaeen/view.php:74
 #: khadije/content/l/signup/view.php:78
 #: khadije/content_a/group/partner/view.php:22
 #: khadije/content_a/profile/view.php:29
@@ -1998,8 +1989,7 @@ msgstr "العمة-الخالة"
 
 #: dash/addons/content_crm/member/main/view.php:49
 #: khadije/content/arbaeen98/view.php:76 khadije/content/karbala/l4/view.php:56
-#: khadije/content/karbala/view.php:38
-#: khadije/content/karbalaarbaeen/view.php:75
+#: khadije/content/karbala/view.php:38 khadije/content/karbalaarbaeen/view.php:75
 #: khadije/content/l/signup/view.php:79 khadije/content_a/profile/view.php:30
 #: khadije/content_mokeb/add/view.php:195
 msgid "Husband of the aunt"
@@ -2007,8 +1997,7 @@ msgstr "زوج العمة"
 
 #: dash/addons/content_crm/member/main/view.php:50
 #: khadije/content/arbaeen98/view.php:77 khadije/content/karbala/l4/view.php:57
-#: khadije/content/karbala/view.php:39
-#: khadije/content/karbalaarbaeen/view.php:76
+#: khadije/content/karbala/view.php:39 khadije/content/karbalaarbaeen/view.php:76
 #: khadije/content/l/signup/view.php:80
 #: khadije/content_a/group/partner/view.php:24
 #: khadije/content_a/profile/view.php:31
@@ -2019,8 +2008,7 @@ msgstr "العم-الخال"
 
 #: dash/addons/content_crm/member/main/view.php:51
 #: khadije/content/arbaeen98/view.php:78 khadije/content/karbala/l4/view.php:58
-#: khadije/content/karbala/view.php:40
-#: khadije/content/karbalaarbaeen/view.php:77
+#: khadije/content/karbala/view.php:40 khadije/content/karbalaarbaeen/view.php:77
 #: khadije/content/l/signup/view.php:81
 #: khadije/content_a/group/partner/view.php:25
 #: khadije/content_a/profile/view.php:32
@@ -2031,8 +2019,7 @@ msgstr "الإبن"
 
 #: dash/addons/content_crm/member/main/view.php:52
 #: khadije/content/arbaeen98/view.php:79 khadije/content/karbala/l4/view.php:59
-#: khadije/content/karbala/view.php:41
-#: khadije/content/karbalaarbaeen/view.php:78
+#: khadije/content/karbala/view.php:41 khadije/content/karbalaarbaeen/view.php:78
 #: khadije/content/l/signup/view.php:82
 #: khadije/content_a/group/partner/view.php:26
 #: khadije/content_a/profile/view.php:33
@@ -2043,8 +2030,7 @@ msgstr "البنت"
 
 #: dash/addons/content_crm/member/main/view.php:53
 #: khadije/content/arbaeen98/view.php:80 khadije/content/karbala/l4/view.php:60
-#: khadije/content/karbala/view.php:42
-#: khadije/content/karbalaarbaeen/view.php:79
+#: khadije/content/karbala/view.php:42 khadije/content/karbalaarbaeen/view.php:79
 #: khadije/content/l/signup/view.php:83
 #: khadije/content_a/group/partner/view.php:27
 #: khadije/content_a/profile/view.php:34
@@ -2055,8 +2041,7 @@ msgstr "الزوج"
 
 #: dash/addons/content_crm/member/main/view.php:54
 #: khadije/content/arbaeen98/view.php:81 khadije/content/karbala/l4/view.php:61
-#: khadije/content/karbala/view.php:43
-#: khadije/content/karbalaarbaeen/view.php:80
+#: khadije/content/karbala/view.php:43 khadije/content/karbalaarbaeen/view.php:80
 #: khadije/content/l/signup/view.php:84
 #: khadije/content_a/group/partner/view.php:28
 #: khadije/content_a/profile/view.php:35
@@ -2067,8 +2052,7 @@ msgstr "العراب"
 
 #: dash/addons/content_crm/member/main/view.php:55
 #: khadije/content/arbaeen98/view.php:82 khadije/content/karbala/l4/view.php:62
-#: khadije/content/karbala/view.php:44
-#: khadije/content/karbalaarbaeen/view.php:81
+#: khadije/content/karbala/view.php:44 khadije/content/karbalaarbaeen/view.php:81
 #: khadije/content/l/signup/view.php:85
 #: khadije/content_a/group/partner/view.php:29
 #: khadije/content_a/profile/view.php:36
@@ -2079,8 +2063,7 @@ msgstr "العرابة"
 
 #: dash/addons/content_crm/member/main/view.php:56
 #: khadije/content/arbaeen98/view.php:83 khadije/content/karbala/l4/view.php:63
-#: khadije/content/karbala/view.php:45
-#: khadije/content/karbalaarbaeen/view.php:82
+#: khadije/content/karbala/view.php:45 khadije/content/karbalaarbaeen/view.php:82
 #: khadije/content/l/signup/view.php:86
 #: khadije/content_a/group/partner/view.php:30
 #: khadije/content_a/profile/view.php:37
@@ -2095,8 +2078,7 @@ msgstr ""
 
 #: dash/addons/content_crm/member/main/view.php:58
 #: khadije/content/arbaeen98/view.php:85 khadije/content/karbala/l4/view.php:65
-#: khadije/content/karbala/view.php:47
-#: khadije/content/karbalaarbaeen/view.php:84
+#: khadije/content/karbala/view.php:47 khadije/content/karbalaarbaeen/view.php:84
 #: khadije/content/l/signup/view.php:88
 #: khadije/content_a/group/partner/view.php:32
 #: khadije/content_a/profile/view.php:39
@@ -2107,8 +2089,7 @@ msgstr "الصديق"
 
 #: dash/addons/content_crm/member/main/view.php:59
 #: khadije/content/arbaeen98/view.php:86 khadije/content/karbala/l4/view.php:66
-#: khadije/content/karbala/view.php:48
-#: khadije/content/karbalaarbaeen/view.php:85
+#: khadije/content/karbala/view.php:48 khadije/content/karbalaarbaeen/view.php:85
 #: khadije/content/l/signup/view.php:89
 #: khadije/content_a/group/partner/view.php:33
 #: khadije/content_a/profile/view.php:40
@@ -2119,8 +2100,7 @@ msgstr "الرئيس"
 
 #: dash/addons/content_crm/member/main/view.php:60
 #: khadije/content/arbaeen98/view.php:87 khadije/content/karbala/l4/view.php:67
-#: khadije/content/karbala/view.php:49
-#: khadije/content/karbalaarbaeen/view.php:86
+#: khadije/content/karbala/view.php:49 khadije/content/karbalaarbaeen/view.php:86
 #: khadije/content/l/signup/view.php:90
 #: khadije/content_a/group/partner/view.php:34
 #: khadije/content_a/profile/view.php:41
@@ -2131,8 +2111,7 @@ msgstr "المشرف"
 
 #: dash/addons/content_crm/member/main/view.php:61
 #: khadije/content/arbaeen98/view.php:88 khadije/content/karbala/l4/view.php:68
-#: khadije/content/karbala/view.php:50
-#: khadije/content/karbalaarbaeen/view.php:87
+#: khadije/content/karbala/view.php:50 khadije/content/karbalaarbaeen/view.php:87
 #: khadije/content/l/signup/view.php:91
 #: khadije/content_a/group/partner/view.php:35
 #: khadije/content_a/profile/view.php:42
@@ -2144,8 +2123,7 @@ msgstr "الولد"
 
 #: dash/addons/content_crm/member/main/view.php:62
 #: khadije/content/arbaeen98/view.php:89 khadije/content/karbala/l4/view.php:69
-#: khadije/content/karbala/view.php:51
-#: khadije/content/karbalaarbaeen/view.php:88
+#: khadije/content/karbala/view.php:51 khadije/content/karbalaarbaeen/view.php:88
 #: khadije/content/l/signup/view.php:92
 #: khadije/content_a/group/partner/view.php:36
 #: khadije/content_a/profile/view.php:43
@@ -2210,8 +2188,8 @@ msgstr ""
 msgid "Delete a permissions"
 msgstr "حذف إذن"
 
-#: dash/addons/content_crm/permission/delete/view.php:34
-#: dash/lib/app/file.php:34 khadije/content_m/festival/controller.php:12
+#: dash/addons/content_crm/permission/delete/view.php:34 dash/lib/app/file.php:34
+#: khadije/content_m/festival/controller.php:12
 msgid "Id not set"
 msgstr "لم يتم تعيين المعرّف"
 
@@ -2248,8 +2226,7 @@ msgstr "إرسال الرسائل القصیرة إلی مجموعة من الم
 
 #: dash/addons/content_crm/sms/group/view.php:11
 msgid "Send every sms to every group users by mobile"
-msgstr ""
-"إرسال کل الرسائل القصیرة إلی کل مجموعة المستخدمین عن طریق الهاتف المحمول"
+msgstr "إرسال کل الرسائل القصیرة إلی کل مجموعة المستخدمین عن طریق الهاتف المحمول"
 
 #: dash/addons/content_crm/sms/send/model.php:40
 #: dash/addons/content_su/sms/model.php:29 dash/lib/app/parent/add.php:78
@@ -2392,8 +2369,7 @@ msgstr "قائمة المعاملات"
 msgid ""
 "Check list of Transactions and search or filter in them to find your "
 "transactions."
-msgstr ""
-"تحقق من قائمة المعاملات و ابحث عنها أو التصفية فيها للعثور على معاملاتك."
+msgstr "تحقق من قائمة المعاملات و ابحث عنها أو التصفية فيها للعثور على معاملاتك."
 
 #: dash/addons/content_crm/transactions/view.php:11
 #: dash/addons/content_su/transactions/view.php:11
@@ -2667,8 +2643,8 @@ msgid ""
 "If forget your password, Please enter new password. after pass verification "
 "your new password is usable."
 msgstr ""
-"إذا نسيت كلمة المرور الخاصة بك ، يرجى إدخال كلمة مرور جديدة. بعد التحقق من "
-"صحة كلمة المرور الجديدة الخاصة بك قابلة للاستخدام."
+"إذا نسيت كلمة المرور الخاصة بك ، يرجى إدخال كلمة مرور جديدة. بعد التحقق من صحة "
+"كلمة المرور الجديدة الخاصة بك قابلة للاستخدام."
 
 #: dash/addons/content_enter/pass/view.php:22
 #: dash/addons/includes/languages/trans_dash.php:59
@@ -4387,8 +4363,8 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:177
 #: khadije/includes/languages/trans_dash.php:177
 msgid ""
-"If you want to set all notif of this user as read notif set this parameters "
-"as true"
+"If you want to set all notif of this user as read notif set this parameters as "
+"true"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:178
@@ -4696,8 +4672,8 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:257
 #: khadije/includes/languages/trans_dash.php:257
 msgid ""
-"Everything (methods, parameters, etc.) is fixed to a version number, and "
-"every call must contain one."
+"Everything (methods, parameters, etc.) is fixed to a version number, and every "
+"call must contain one."
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:258
@@ -4833,8 +4809,8 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:281
 #: khadije/includes/languages/trans_dash.php:281
 msgid ""
-"It sets the state of the target using the provided values, regardless of "
-"their current values."
+"It sets the state of the target using the provided values, regardless of their "
+"current values."
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:282
@@ -4873,15 +4849,15 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:287
 #: khadije/includes/languages/trans_dash.php:287
 msgid ""
-"Response headers contain some useful information about your API access and "
-"the results that are available for your request."
+"Response headers contain some useful information about your API access and the "
+"results that are available for your request."
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:288
 #: khadije/includes/languages/trans_dash.php:288
 msgid ""
-"For instance, the headers contain your current rate-limit value and the "
-"amount of time available until the limit resets."
+"For instance, the headers contain your current rate-limit value and the amount "
+"of time available until the limit resets."
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:289
@@ -5020,15 +4996,14 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:325
 #: khadije/includes/languages/trans_dash.php:325
 msgid ""
-"If you have a response, it will always be within the <code>result</code> "
-"field."
+"If you have a response, it will always be within the <code>result</code> field."
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:326
 #: khadije/includes/languages/trans_dash.php:326
 msgid ""
-"We also include a <code>ok</code> flag and an array of <code>msg</code> in "
-"the response."
+"We also include a <code>ok</code> flag and an array of <code>msg</code> in the "
+"response."
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:327
@@ -5067,8 +5042,7 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:333
 #: khadije/content_m/consulting/view.php:91
 #: khadije/content_m/delneveshte/home/view.php:67
-#: khadije/content_m/familytrip/view.php:152
-#: khadije/content_m/health/view.php:78
+#: khadije/content_m/familytrip/view.php:152 khadije/content_m/health/view.php:78
 #: khadije/content_m/representation/view.php:90
 #: khadije/content_m/service/view.php:110 khadije/content_m/trip/view.php:196
 #: khadije/content_protection/agentoccasion/allprice/view.php:136
@@ -5286,8 +5260,7 @@ msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:420
 #: khadije/includes/languages/trans_dash.php:420
-msgid ""
-"We found your Google Mail that is different from your current google mail"
+msgid "We found your Google Mail that is different from your current google mail"
 msgstr "لقد وجدنا Google Mail الخاص بك مختلفًا عن بريد Google الحالي الخاص بك"
 
 #: dash/addons/includes/languages/trans_dash.php:421
@@ -7096,8 +7069,8 @@ msgstr ""
 msgid "Sourse URL"
 msgstr ""
 
-#: dash/addons/includes/languages/trans_dash.php:858
-#: dash/lib/redirect_html.php:5 dash/lib/utility/pay/api/asanpardakht/go.php:79
+#: dash/addons/includes/languages/trans_dash.php:858 dash/lib/redirect_html.php:5
+#: dash/lib/utility/pay/api/asanpardakht/go.php:79
 #: dash/lib/utility/pay/api/irkish/go.php:74
 #: dash/lib/utility/pay/api/mellat/go.php:91
 #: dash/lib/utility/pay/api/sep/go.php:68
@@ -7958,8 +7931,7 @@ msgstr "إحالة أصدقائك من خلال وسائل التواصل الا
 #: dash/addons/includes/languages/trans_dash.php:1087
 #: khadije/includes/languages/trans_dash.php:1087
 msgid ""
-"Share the referral rewards program with friends on Facebook, Twitter, or "
-"Email."
+"Share the referral rewards program with friends on Facebook, Twitter, or Email."
 msgstr ""
 "شارك برنامج مكافآت الإحالة مع الأصدقاء في الفيسبوك، تويتر، أو البريد "
 "الإلكتروني."
@@ -8023,8 +7995,8 @@ msgid ""
 "We calculate your percentage until 6 month of your friend registration. "
 "Because of that it was your chance to convinced your friend to charge more!"
 msgstr ""
-"نقوم بحساب النسبة المئوية الخاصة بك حتى 6 أشهر من تسجيل صديقك. و بسبب ذلك "
-"كانت فرصتك في إقناع صديقك بتحصيل وم أكثر!"
+"نقوم بحساب النسبة المئوية الخاصة بك حتى 6 أشهر من تسجيل صديقك. و بسبب ذلك كانت "
+"فرصتك في إقناع صديقك بتحصيل وم أكثر!"
 
 #: dash/addons/includes/languages/trans_dash.php:1097
 #: khadije/includes/languages/trans_dash.php:1097
@@ -9335,8 +9307,7 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:1442
 #: khadije/includes/languages/trans_dash.php:1442
 msgid ""
-"HTTPS url to send updates to. Use an empty string to remove webhook "
-"integration"
+"HTTPS url to send updates to. Use an empty string to remove webhook integration"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:1443
@@ -9772,8 +9743,8 @@ msgstr ""
 #: dash/addons/includes/languages/trans_dash.php:1567
 #: khadije/includes/languages/trans_dash.php:1567
 msgid ""
-"If your problem is solved or do not need to track, please close this ticket "
-"by press below bottom."
+"If your problem is solved or do not need to track, please close this ticket by "
+"press below bottom."
 msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:1568
@@ -9955,8 +9926,7 @@ msgstr ""
 
 #: dash/addons/includes/languages/trans_dash.php:1613
 #: khadije/includes/languages/trans_dash.php:1613
-msgid ""
-"Please log in if you need to store this ticket and track it in the future"
+msgid "Please log in if you need to store this ticket and track it in the future"
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:8
@@ -10039,20 +10009,17 @@ msgid "year"
 msgstr "العام"
 
 #: dash/addons/includes/languages/trans_static.php:31
-#: dash/lib/utility/human.php:28
-#: khadije/includes/languages/trans_project.php:355
+#: dash/lib/utility/human.php:28 khadije/includes/languages/trans_project.php:355
 msgid "month"
 msgstr "الشهر"
 
 #: dash/addons/includes/languages/trans_static.php:32
-#: dash/lib/utility/human.php:29
-#: khadije/includes/languages/trans_project.php:356
+#: dash/lib/utility/human.php:29 khadije/includes/languages/trans_project.php:356
 msgid "week"
 msgstr "الأسبوع"
 
 #: dash/addons/includes/languages/trans_static.php:33
-#: dash/lib/utility/human.php:30
-#: khadije/includes/languages/trans_project.php:357
+#: dash/lib/utility/human.php:30 khadije/includes/languages/trans_project.php:357
 msgid "day"
 msgstr "اليوم"
 
@@ -11050,10 +11017,8 @@ msgid "You can edit this permission"
 msgstr "يمكنك تحرير هذا الإذن"
 
 #: dash/addons/includes/languages/trans_static.php:358
-msgid ""
-"Define or edit user permissions to allow or block access to special pages"
-msgstr ""
-"تحديد أذونات المستخدم أو تحريرها للسماح أو حظر الوصول إلى الصفحات الخاصة"
+msgid "Define or edit user permissions to allow or block access to special pages"
+msgstr "تحديد أذونات المستخدم أو تحريرها للسماح أو حظر الوصول إلى الصفحات الخاصة"
 
 #: dash/addons/includes/languages/trans_static.php:359
 msgid "You are editing permission"
@@ -13338,9 +13303,9 @@ msgstr ""
 #: dash/addons/includes/languages/trans_static.php:1017
 #: dash/addons/includes/languages/trans_static.php:1088
 msgid ""
-"If this was you, you can safely disregard this message. If you didn't do "
-"this, please change your password to help secure your account. Learn more "
-"about keeping your account secure."
+"If this was you, you can safely disregard this message. If you didn't do this, "
+"please change your password to help secure your account. Learn more about "
+"keeping your account secure."
 msgstr ""
 
 #: dash/addons/includes/languages/trans_static.php:1019
@@ -14443,8 +14408,7 @@ msgstr "معرف المشاركة غير صالحة"
 msgid "Post successfully updated"
 msgstr "تحديث المشاركة بنجاح"
 
-#: dash/lib/app/smsgroup.php:46
-#: khadije/includes/languages/trans_project.php:1137
+#: dash/lib/app/smsgroup.php:46 khadije/includes/languages/trans_project.php:1137
 msgid "All users"
 msgstr "جميع المستخدمين"
 
@@ -14961,8 +14925,7 @@ msgstr ""
 #: dash/lib/engine/view.php:142
 msgid ""
 "Integrated Ecommerce Platform Software / Quickly Start Free! Online Store "
-"Website & Mobile Online Store & Social Marketing & POS Software / SEO "
-"Optimized"
+"Website & Mobile Online Store & Social Marketing & POS Software / SEO Optimized"
 msgstr ""
 
 #: dash/lib/engine/view.php:143
@@ -15081,8 +15044,8 @@ msgstr ""
 msgid "Hey Bot!"
 msgstr ""
 
-#: dash/lib/social/telegram/answer.php:89
-#: dash/lib/social/telegram/answer.php:115 khadije/content/comment/model.php:31
+#: dash/lib/social/telegram/answer.php:89 dash/lib/social/telegram/answer.php:115
+#: khadije/content/comment/model.php:31
 #: khadije/content_delneveshte/home/model.php:76
 msgid "How are you?"
 msgstr "كيف حالك؟"
@@ -15644,11 +15607,9 @@ msgid "More detail"
 msgstr ""
 
 #: dash/lib/utility.php:36
-msgid ""
-"This password is very simple and guessable, please use stronger password!"
+msgid "This password is very simple and guessable, please use stronger password!"
 msgstr ""
-"هذه كلمة المرور بسيطة جداً و يمكن تخمينها، يرجى استخدام كلمة المرور أكثر "
-"تعقيداً!"
+"هذه كلمة المرور بسيطة جداً و يمكن تخمينها، يرجى استخدام كلمة المرور أكثر تعقيداً!"
 
 #: dash/lib/utility/cloudflare.php:236
 msgid "The api Cloudflare opration success"
@@ -16321,8 +16282,7 @@ msgid "Application"
 msgstr ""
 
 #: khadije/content/arbaeen98/view.php:84 khadije/content/karbala/l4/view.php:64
-#: khadije/content/karbala/view.php:46
-#: khadije/content/karbalaarbaeen/view.php:83
+#: khadije/content/karbala/view.php:46 khadije/content/karbalaarbaeen/view.php:83
 #: khadije/content/l/signup/view.php:87
 #: khadije/content_a/group/partner/view.php:31
 #: khadije/content_a/profile/view.php:38
@@ -16411,8 +16371,7 @@ msgid "Request to join"
 msgstr ""
 
 #: khadije/content/karbala/lottery/view.php:9
-#: khadije/content/karbala/lottery2/view.php:9
-#: khadije/content/karbala/view.php:9
+#: khadije/content/karbala/lottery2/view.php:9 khadije/content/karbala/view.php:9
 #: khadije/includes/languages/trans_project.php:1643
 #: khadije/includes/lib/app/log/caller/karbalaSignupCounter.php:16
 #: khadije/includes/lib/app/log/caller/karbalaUserSignup.php:15
@@ -16421,8 +16380,7 @@ msgstr ""
 
 #: khadije/content/karbala/lottery/view.php:183
 #: khadije/content/karbala/lottery2/view.php:183
-#: khadije/content/l/lottery/view.php:184
-#: khadije/content/l/lottery2/view.php:195
+#: khadije/content/l/lottery/view.php:184 khadije/content/l/lottery2/view.php:195
 #: khadije/content_lottery/user/show/view.php:28
 #: khadije/content_m/userkarbala2/show/view.php:29
 msgid "Invalid step"
@@ -16539,8 +16497,7 @@ msgid "fill your request detail"
 msgstr "أدخل تفاصيل طلبك"
 
 #: khadije/content_a/consulting/home/model.php:17
-#: khadije/content_a/controller.php:75
-#: khadije/content_a/health/home/model.php:17
+#: khadije/content_a/controller.php:75 khadije/content_a/health/home/model.php:17
 #: khadije/content_a/representation/home/model.php:17
 #: khadije/content_a/service/home/model.php:17
 msgid "Invalid service id"
@@ -18273,8 +18230,7 @@ msgstr ""
 msgid "Khadije Homepage Dashboard"
 msgstr "الخدیجه الصفحة الرئيسية لوحة القيادة"
 
-#: khadije/content_m/myrequest/view.php:9
-#: khadije/content_m/myrequest/view.php:10
+#: khadije/content_m/myrequest/view.php:9 khadije/content_m/myrequest/view.php:10
 msgid "Khadije Request Dashboard"
 msgstr "الخدیجه الطلب لوحة القيادة"
 
@@ -19446,8 +19402,7 @@ msgid "Recommend Text"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:294
-msgid ""
-"You can register a answer of responses to this group to help you respond."
+msgid "You can register a answer of responses to this group to help you respond."
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:295
@@ -19733,8 +19688,8 @@ msgstr ""
 
 #: khadije/includes/languages/trans_project.php:450
 msgid ""
-"You can add numbers to this filter so that if a text message from one of "
-"these numbers was received, enter this group directly."
+"You can add numbers to this filter so that if a text message from one of these "
+"numbers was received, enter this group directly."
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:451
@@ -19927,8 +19882,7 @@ msgid "Download book"
 msgstr "تحميل الكتاب"
 
 #: khadije/includes/languages/trans_project.php:530
-msgid ""
-"You are buy this book before and now you can download book via below link"
+msgid "You are buy this book before and now you can download book via below link"
 msgstr "أنت تشتري هذا الكتاب من قبل ، والآن يمكنك تنزيل الكتاب عبر الرابط أدناه"
 
 #: khadije/includes/languages/trans_project.php:531
@@ -20017,8 +19971,8 @@ msgstr "حاليا نحن بحاجة إلى مساعدة في الفئات أد�
 
 #: khadije/includes/languages/trans_project.php:574
 msgid ""
-"We do our best to improve khadije's service quality. So, knowing your "
-"valuable comments will help us in this way."
+"We do our best to improve khadije's service quality. So, knowing your valuable "
+"comments will help us in this way."
 msgstr ""
 "نحن نبذل قصارى جهدنا لتحسين جودة خدمة مركز الثقافي السيدة خديجة سلام الله "
 "عليها لذا، فإن معرفة تعليقاتك القيّمة ستساعدنا بهذه الطريقة."
@@ -20057,7 +20011,7 @@ msgstr "اللهم صل على محمد وعلى آل محمد"
 
 #: khadije/includes/languages/trans_project.php:591
 msgid "Say salawat"
-msgstr "صلّوا على محمد وآل محمد(ص)"
+msgstr "صلّوا على محمد وآل محمد"
 
 #: khadije/includes/languages/trans_project.php:592
 msgid "and press here"
@@ -20111,8 +20065,8 @@ msgid ""
 "The financial credibility of this project is provided by cash and non-cash "
 "donations from benefactors and lovers of Ahlul-Bayt."
 msgstr ""
-"يتم توفير المصداقية المالية لهذا المشروع من خلال التبرعات النقدية وغير "
-"النقدية من المحسنين ومحبي أهل البيت."
+"يتم توفير المصداقية المالية لهذا المشروع من خلال التبرعات النقدية وغير النقدية "
+"من المحسنين ومحبي أهل البيت."
 
 #: khadije/includes/languages/trans_project.php:617
 msgid ""
@@ -20246,7 +20200,7 @@ msgstr "تسجيل المجموعة"
 #: khadije/includes/languages/trans_project.php:671
 #: khadije/includes/lib/app/application.php:445
 msgid "Delneveshteha"
-msgstr "دلنوشته"
+msgstr "خواطر"
 
 #: khadije/includes/languages/trans_project.php:673
 msgid "Other Languages"
@@ -20855,9 +20809,9 @@ msgstr ""
 
 #: khadije/includes/languages/trans_project.php:987
 msgid ""
-"Each time this list will return you ten items, You should first send these "
-"ten items and inform the server of the send message so you can get ten more "
-"SMS permissions."
+"Each time this list will return you ten items, You should first send these ten "
+"items and inform the server of the send message so you can get ten more SMS "
+"permissions."
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:988
@@ -21650,8 +21604,7 @@ msgid "Add gallery report"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:1375
-msgid ""
-"To add image or video gallery report, drop file here or press this button"
+msgid "To add image or video gallery report, drop file here or press this button"
 msgstr ""
 
 #: khadije/includes/languages/trans_project.php:1381
@@ -23631,16 +23584,14 @@ msgstr ""
 
 #: khadije/includes/lib/app/agentplace.php:106
 #: khadije/includes/lib/app/assessmentitem.php:109
-#: khadije/includes/lib/app/place.php:120
-#: khadije/includes/lib/app/product.php:84
+#: khadije/includes/lib/app/place.php:120 khadije/includes/lib/app/product.php:84
 msgid "Please set sort as a number"
 msgstr ""
 
 #: khadije/includes/lib/app/agentplace.php:117
 #: khadije/includes/lib/app/assessmentitem.php:120
 #: khadije/includes/lib/app/assessmentitem.php:139
-#: khadije/includes/lib/app/place.php:131
-#: khadije/includes/lib/app/product.php:95
+#: khadije/includes/lib/app/place.php:131 khadije/includes/lib/app/product.php:95
 msgid "Sort is out of range"
 msgstr ""
 
@@ -23721,8 +23672,7 @@ msgstr ""
 #: khadije/includes/lib/app/android.php:216
 #: khadije/includes/lib/app/android.php:226
 #: khadije/includes/lib/app/android.php:236
-msgid ""
-"Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom"
+msgid "Executor of first pilgrimage to the Ahl al-Bayt | Karbala - Mashhad - Qom"
 msgstr ""
 
 #: khadije/includes/lib/app/android.php:215
@@ -23895,9 +23845,9 @@ msgstr ""
 msgid "total count must be a number"
 msgstr ""
 
-#: khadije/includes/lib/app/donate.php:432
-#: khadije/includes/lib/app/doyon.php:489 khadije/includes/lib/app/doyon.php:535
-#: khadije/includes/lib/app/doyon.php:591 khadije/includes/lib/app/doyon.php:671
+#: khadije/includes/lib/app/donate.php:432 khadije/includes/lib/app/doyon.php:489
+#: khadije/includes/lib/app/doyon.php:535 khadije/includes/lib/app/doyon.php:591
+#: khadije/includes/lib/app/doyon.php:671
 msgid "Count is out of range"
 msgstr ""
 
@@ -24729,8 +24679,7 @@ msgstr "يرجى تعيين نوع الحاجة صحيحاً"
 msgid "Please set a valid fileurl"
 msgstr "يرجى تعيين عنوان صالح لملف"
 
-#: khadije/includes/lib/app/need.php:124
-#: khadije/includes/lib/app/service.php:116
+#: khadije/includes/lib/app/need.php:124 khadije/includes/lib/app/service.php:116
 msgid "Please set a valid desc"
 msgstr "يرجى تعيين شرح الحاجة صحيحاً"
 
@@ -24738,8 +24687,7 @@ msgstr "يرجى تعيين شرح الحاجة صحيحاً"
 msgid "Please set a valid linkurl"
 msgstr ""
 
-#: khadije/includes/lib/app/need.php:139
-#: khadije/includes/lib/app/service.php:123
+#: khadije/includes/lib/app/need.php:139 khadije/includes/lib/app/service.php:123
 msgid "Please set a valid status"
 msgstr "يرجى تعيين حالة الحاجة صحيحة"
 
@@ -25593,10 +25541,8 @@ msgid "SMS number is invalid!"
 msgstr ""
 
 #~ msgid ""
-#~ "Account of your user to change profile details or change billing "
-#~ "information"
-#~ msgstr ""
-#~ "حساب المستخدم الخاص بك لتغيير تفاصيل الشخصي أو تغيير معلومات الفواتير"
+#~ "Account of your user to change profile details or change billing information"
+#~ msgstr "حساب المستخدم الخاص بك لتغيير تفاصيل الشخصي أو تغيير معلومات الفواتير"
 
 #~ msgid "Add new :val"
 #~ msgstr "قم بإضافة جديدة :val"
@@ -25674,8 +25620,8 @@ msgstr ""
 #~ "You can add new user and after add with minimal data, we allow you to add "
 #~ "extra detail of user."
 #~ msgstr ""
-#~ "يمكنك إضافة مستخدم جديد وبعد إضافته باستخدام الحد الأدنى من البيانات ، "
-#~ "نسمح لك بإضافة تفاصيل إضافية للمستخدم."
+#~ "يمكنك إضافة مستخدم جديد وبعد إضافته باستخدام الحد الأدنى من البيانات ، نسمح "
+#~ "لك بإضافة تفاصيل إضافية للمستخدم."
 
 #~ msgid "Edit profile of :val"
 #~ msgstr "تحرير الملف الشخصي من :val"
