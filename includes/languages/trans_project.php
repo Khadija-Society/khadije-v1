@@ -393,6 +393,7 @@ class twigTransTerms
 	echo T_("On");                                                                    // Line 211
 	echo T_("Off");                                                                   // Line 211
 	echo T_("Last connection");                                                       // Line 39
+	echo T_("Your sms panel balance");                                                // Line 48
 	echo T_("Filter by start date and end date of sms");                              // Line 227
 	echo T_("Clear filter");                                                          // Line 120
 	echo T_("Apply");                                                                 // Line 122
@@ -584,6 +585,7 @@ class twigTransTerms
 	echo T_("Allahouma sali ala mohamed wa ali muhammad");                            // Line 67
 	echo T_("Say salawat");                                                           // Line 67
 	echo T_("and press here");                                                        // Line 67
+	echo T_("Qom and Mashhad caravan registration");                                  // Line 40
 	echo T_("Servants registration");                                                 // Line 196
 	echo T_("Virtual pilgrimage");                                                    // Line 62
 	echo T_("Travel request");                                                        // Line 70
@@ -644,11 +646,12 @@ class twigTransTerms
 	echo T_("Website header");                                                        // Line 39
 	echo T_("Homepage");                                                              // Line 5
 	echo T_("News");                                                                  // Line 174
-	echo T_("Self expressions");                                                      // Line 108
+	echo T_("Delneveshteha");                                                         // Line 5
 	echo T_("Admin panel");                                                           // Line 76
 	echo T_("Panel");                                                                 // Line 78
 	echo T_("Login");                                                                 // Line 82
 	echo T_("Services");                                                              // Line 200
+	echo T_("Self expressions");                                                      // Line 108
 	echo T_("Khadijah cultural and artistic charity was established in 2015 with the purpose of developing the Ahlul-Bayt <small>peace be upon them</small> pilgrimage culture and with two priorities of Ahlul-Bayt pilgrimage and the revival of forgotten traditions such as sacrifice, giving food on Ghadir day and ... has continued its activities.");// Line 129
 	echo T_("User Panel");                                                            // Line 133
 	echo T_("Signup in Khadije charity");                                             // Line 138
@@ -662,7 +665,6 @@ class twigTransTerms
 	echo T_("Requests");                                                              // Line 27
 	echo T_("Individual registration");                                               // Line 10
 	echo T_("Group registration");                                                    // Line 9
-	echo T_("Delneveshteha");                                                         // Line 5
 	echo T_("Help");                                                                  // Line 208
 	echo T_("Other Languages");                                                       // Line 215
 	echo T_("Software Solution Designer");                                            // Line 223

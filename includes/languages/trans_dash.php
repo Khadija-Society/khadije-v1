@@ -866,17 +866,17 @@ class twigTransTerms
 	echo T_("Language");                                                              // Line 259
 	echo T_("You can publish in another language");                                   // Line 117
 	echo T_("Add to gallery");                                                        // Line 61
-	echo T_("Choose or Drop file here");                                              // Line 490
+	echo T_("Choose or Drop file here");                                              // Line 495
 	echo T_("Maximum file size");                                                     // Line 17
-	echo T_("Google");                                                                // Line 527
-	echo T_("Customize for SEO");                                                     // Line 532
-	echo T_("SEO Title");                                                             // Line 538
+	echo T_("Google");                                                                // Line 532
+	echo T_("Customize for SEO");                                                     // Line 537
+	echo T_("SEO Title");                                                             // Line 543
 	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
 	echo T_("Choose parent for this page to create related url as tree");             // Line 133
 	echo T_("Choose Parent");                                                         // Line 136
 	echo T_("Without Parent");                                                        // Line 137
-	echo T_("End part of your post url.");                                            // Line 563
-	echo T_("SEO Description");                                                       // Line 570
+	echo T_("End part of your post url.");                                            // Line 568
+	echo T_("SEO Description");                                                       // Line 575
 	echo T_("If leave it empty we are generate it automatically");                    // Line 19
 	echo T_("Excerpt used for social media and search engines");                      // Line 19
 	echo T_("Click to download");                                                     // Line 97
