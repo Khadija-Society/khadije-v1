@@ -84,6 +84,7 @@ class myuser
 
 			if($birthday === false)
 			{
+				\dash\notif::error(T_("Invalid birthday"), 'birthday');
 				return false;
 			}
 		}
@@ -627,7 +628,11 @@ class myuser
 		}
 
 
-
+		// check minimum unique mobile
+		if(!self::check_mobile_unique_percent($myTripId, $args))
+		{
+			return false;
+		}
 
 		$user_id = \dash\db\users::signup($args);
 
@@ -656,6 +661,7 @@ class myuser
 		$default_option =
 		[
 			'debug' => true,
+			'trip_id' =>  null,
 		];
 
 		if(!is_array($_option))
@@ -717,8 +723,50 @@ class myuser
 			}
 		}
 
+		if($_option['trip_id'])
+		{
+			if(!self::check_mobile_unique_percent($_option['trip_id'], $args))
+			{
+				return false;
+			}
+		}
+
+
 
 		\dash\db\users::update($args, $_id);
+
+		return true;
+	}
+
+
+	private static function check_mobile_unique_percent($_trip_id, $_args)
+	{
+		$get_all_mobile = \lib\db\travelusers::get_travel_child_mobile($_trip_id);
+
+		if(!$get_all_mobile || !is_array($get_all_mobile))
+		{
+			return true;
+		}
+
+		$count_all      = count($get_all_mobile);
+
+		if(!$count_all)
+		{
+			$count_all = 1;
+		}
+
+		$count_unique   = count(array_unique($get_all_mobile));
+
+		$percent = ($count_unique*100) / $count_all;
+
+		if($percent < 80)
+		{
+			if(in_array(a($_args, 'mobile2'), $get_all_mobile))
+			{
+				\dash\notif::error(T_("Do not use duplicate cell phone numbers for people!"));
+				return false;
+			}
+		}
 
 		return true;
 	}

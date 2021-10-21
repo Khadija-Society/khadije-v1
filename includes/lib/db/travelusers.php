@@ -14,6 +14,31 @@ class travelusers
 	}
 
 
+
+
+	public static function get_travel_child_mobile($_travel_id)
+	{
+		if(!$_travel_id || !is_numeric($_travel_id))
+		{
+			return [];
+		}
+
+		$query =
+		"
+			SELECT
+				users.mobile2
+			FROM users
+			INNER JOIN travelusers ON travelusers.user_id = users.id
+
+			WHERE
+			travelusers.travel_id = $_travel_id
+		";
+		$result = \dash\db::get($query, 'mobile2');
+		// j($result);
+		return $result;
+	}
+
+
 	public static function get_travel_child($_travel_id)
 	{
 		if(!$_travel_id || !is_numeric($_travel_id))

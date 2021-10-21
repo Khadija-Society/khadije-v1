@@ -105,7 +105,7 @@ class model
 				return false;
 			}
 
-			\lib\app\myuser::edit_child($post, $user_id);
+			\lib\app\myuser::edit_child($post, $user_id, ['trip_id' => \dash\request::get('id')]);
 
 			if(\dash\engine\process::status())
 			{
