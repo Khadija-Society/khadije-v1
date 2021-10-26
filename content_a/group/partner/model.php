@@ -66,6 +66,13 @@ class model
 			$post['type']         = 'group';
 			$post['kind'] = 'master';
 
+
+			if(!$post['mobile2'])
+			{
+				\dash\notif::error(T_("Mobile is required"), 'mobile');
+				return false;
+			}
+
 			$post['travel_id']    = \dash\request::get('trip');
 
 			$file1 = \dash\app\file::upload_quick('file1');
