@@ -69,7 +69,9 @@ class view
 			if(isset($userDetail['id']))
 			{
 				$payment_args['user_id'] = $userDetail['id'];
+				$args['user_id'] = $userDetail['id'];
 			}
+			unset($args['mobile']);
 		}
 
 		if(\dash\request::get('hazinekard'))
@@ -218,6 +220,7 @@ class view
 		$filterArray = $args;
 		unset($filterArray['donate']);
 		unset($filterArray['condition']);
+		unset($filterArray['user_id']);
 		unset($filterArray['1.5']);
 
 		$filterArray = array_merge($filterArgs, $filterArray);
