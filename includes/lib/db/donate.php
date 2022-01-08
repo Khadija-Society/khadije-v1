@@ -14,8 +14,16 @@ class donate
 			';
 		}
 
-		return '
-			 SUM(case when transactions.hazinekard LIKE "%مشارکت در قربانی%" or transactions.hazinekard LIKE "%فرزندان غدیر%" then ((transactions.plus * 5) / 100) else (transactions.plus) end) as `total`
+		return
+		'
+			SUM(
+				case
+					when transactions.hazinekard = "مشارکت در قربانی" then ((transactions.plus * 5) / 100)
+					when transactions.hazinekard = "فرزندان غدیر" then ((transactions.plus * 5) / 100)
+				else
+					((transactions.plus * 50) / 100)
+				end
+				) as `total`
 		';
 
 	}
