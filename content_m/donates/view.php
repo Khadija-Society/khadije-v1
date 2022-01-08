@@ -81,6 +81,8 @@ class view
 			$startdate = date("Y-m-d", strtotime('-1 year'));
 		}
 
+
+
 		if($startdate && $enddate)
 		{
 			$payment_args['1.1'] = [" = 1.1 ", " AND DATE(transactions.datecreated) >= '$startdate' AND DATE(transactions.datecreated) <= '$enddate'  "];

@@ -29,6 +29,21 @@ class donate
 			}
 		}
 
+
+		$chart = [];
+		foreach ($result as $key => $value)
+		{
+			if(is_array($value))
+			{
+				foreach ($value as $k => $v)
+				{
+					$chart[] = ['name' => $k, 'y' => floatval($v)];
+				}
+			}
+		}
+
+		$new_result['chart'] = json_encode($chart);
+
 		return $new_result;
 	}
 
