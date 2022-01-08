@@ -4,6 +4,38 @@ namespace lib\db;
 
 class donate
 {
+
+
+	public static function total_paid_group_by_date($_where)
+	{
+		$where = \dash\db\config::make_where($_where);
+		if(!$where)
+		{
+			$where = null;
+		}
+		else
+		{
+			$where = " AND ". $where;
+		}
+
+		$query =
+		"
+			SELECT
+				SUM(transactions.plus) AS `total`,
+				DATE(transactions.datecreated) as `mydate`
+			FROM
+				transactions
+			WHERE
+				transactions.verify = 1
+				$where
+			GROUP BY DATE(transactions.datecreated)
+		";
+		$result = \dash\db::get($query);
+
+		return $result;
+	}
+
+
 	public static function total_paid_group_by($_where)
 	{
 		$where = \dash\db\config::make_where($_where);

@@ -12,6 +12,8 @@ class donate
 
 		$result['total_payed'] = \lib\db\donate::total_paid($_args);
 		$result['groupby']    = \lib\db\donate::total_paid_group_by($_args);
+		$result['perday']    = \lib\db\donate::total_paid_group_by_date($_args);
+
 
 		$new_result = [];
 		foreach ($result as $key => $value)
@@ -31,18 +33,28 @@ class donate
 
 
 		$chart = [];
-		foreach ($result as $key => $value)
+		foreach ($result['groupby'] as $key => $value)
 		{
-			if(is_array($value))
-			{
-				foreach ($value as $k => $v)
-				{
-					$chart[] = ['name' => $k, 'y' => floatval($v)];
-				}
-			}
+			$chart[] = ['name' => $key, 'y' => floatval($value)];
 		}
 
+		$chartdate = [];
+		$categories = [];
+
+		foreach ($result['perday'] as $key => $value)
+		{
+			$categories[] = \dash\fit::date($value['mydate']);
+			$chartdate[] = round((floatval($value['total']) * self::$fake_percent) / 100); //floatval($value['total']);
+		}
+
+		unset($new_result['perday']);
+
+		$new_result['chartdatecategory'] = json_encode($categories);
+		$new_result['chartdate']         = json_encode($chartdate);
+
 		$new_result['chart'] = json_encode($chart);
+
+
 
 		return $new_result;
 	}
