@@ -78,7 +78,14 @@ class view
 
 		if(!$startdate && !$enddate)
 		{
-			$startdate = date("Y-m-d", strtotime('-1 year'));
+			if(\dash\permission::supervisor() && \dash\request::get('real'))
+			{
+
+			}
+			else
+			{
+				$startdate = date("Y-m-d", strtotime('-1 year'));
+			}
 		}
 
 

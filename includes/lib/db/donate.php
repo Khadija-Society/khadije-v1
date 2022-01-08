@@ -5,10 +5,20 @@ namespace lib\db;
 class donate
 {
 
-	public static $sumif =
-	'
-		 SUM(case when transactions.hazinekard LIKE "%مشارکت در قربانی%" or transactions.hazinekard LIKE "%فرزندان غدیر%" then ((transactions.plus * 5) / 100) else (transactions.plus) end) as `total`
-	';
+	private static function sumif()
+	{
+		if(\dash\permission::supervisor() && \dash\request::get('real'))
+		{
+			return '
+				 SUM(transactions.plus) as `total`
+			';
+		}
+
+		return '
+			 SUM(case when transactions.hazinekard LIKE "%مشارکت در قربانی%" or transactions.hazinekard LIKE "%فرزندان غدیر%" then ((transactions.plus * 5) / 100) else (transactions.plus) end) as `total`
+		';
+
+	}
 
 	public static function total_paid_group_by_date($_where)
 	{
@@ -22,7 +32,7 @@ class donate
 			$where = " AND ". $where;
 		}
 
-		$sumif = self::$sumif;
+		$sumif = self::sumif();
 
 		$query =
 		"
@@ -54,7 +64,7 @@ class donate
 			$where = " AND ". $where;
 		}
 
-		$sumif = self::$sumif;
+		$sumif = self::sumif();
 
 		$query =
 		"
@@ -85,7 +95,7 @@ class donate
 			$where = " AND ". $where;
 		}
 
-		$sumif = self::$sumif;
+		$sumif = self::sumif();
 
 		$query =
 		"
