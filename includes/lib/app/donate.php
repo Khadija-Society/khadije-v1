@@ -3,7 +3,7 @@ namespace lib\app;
 
 class donate
 {
-	private static $fake_percent = 20;
+	private static $fake_percent = 10;
 
 
 	public static function get_fake_report($_args)
