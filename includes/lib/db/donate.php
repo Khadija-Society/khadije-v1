@@ -45,7 +45,7 @@ class donate
 		$query =
 		"
 			SELECT
-				$sumif,
+				count(*) as `total`,
 				DATE(transactions.datecreated) as `mydate`
 			FROM
 				transactions

@@ -54,7 +54,7 @@ function myChanrtReportF()
     type: 'column'
   },
   title: {
-    text: 'نمودار پرداخت به تفکیک روز'
+    text: 'نمودار تعداد پرداخت به تفکیک روز'
   },
 
 
@@ -67,7 +67,7 @@ function myChanrtReportF()
   yAxis: {
     min: 0,
     title: {
-      text: 'تومان'
+      text: 'تعداد'
     }
   },
   tooltip: {
@@ -85,7 +85,7 @@ function myChanrtReportF()
     }
   },
   series: [{
-    name: 'تومان',
+    name: 'تعداد',
     data: $.parseJSON($('#chartdatedata').html())
 
   }]
