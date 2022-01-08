@@ -4,6 +4,59 @@ namespace lib\db;
 
 class donate
 {
+	public static function total_paid_group_by($_args)
+	{
+		$where = \dash\db\config::make_where($_where);
+		if(!$where)
+		{
+			$where = null;
+		}
+		else
+		{
+			$where = " AND ". $where;
+		}
+
+		$query =
+		"
+			SELECT
+				SUM(transactions.plus) AS `total`,
+				transactions.hazinekard
+			FROM
+				transactions
+			WHERE
+				transactions.verify = 1
+				$where
+			GROUP BY transactions.hazinekard
+		";
+		return \dash\db::get($query, ['hazinekard', 'total']);
+	}
+
+
+	public static function total_paid($_where = null)
+	{
+		$where = \dash\db\config::make_where($_where);
+		if(!$where)
+		{
+			$where = null;
+		}
+		else
+		{
+			$where = " AND ". $where;
+		}
+
+		$query =
+		"
+			SELECT
+				SUM(transactions.plus) AS `total`
+			FROM
+				transactions
+			WHERE
+				transactions.verify = 1
+				$where
+		";
+		return \dash\db::get($query, 'total', true);
+	}
+
 	public static function check_way_opt($_way, $_wayopt)
 	{
 		$query =

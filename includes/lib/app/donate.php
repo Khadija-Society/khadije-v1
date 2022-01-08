@@ -3,6 +3,36 @@ namespace lib\app;
 
 class donate
 {
+	private static $fake_percent = 20;
+
+
+	public static function get_fake_report($_args)
+	{
+		$result                = [];
+
+		$result['total_payed'] = \lib\db\donate::total_paid($_args);
+		$result['groupby']    = \lib\db\donate::total_paid_group_by($_args);
+
+		$new_result = [];
+		foreach ($result as $key => $value)
+		{
+			if(is_array($value))
+			{
+				foreach ($value as $k => $v)
+				{
+					$new_result[$key][$k] = round((floatval($v) * self::$fake_percent) / 100);
+				}
+			}
+			else
+			{
+				$new_result[$key] = round((floatval($value) * self::$fake_percent) / 100);
+			}
+		}
+
+		return $new_result;
+	}
+
+
 	public static $way_key = 'hazinekard_list';
 
 
