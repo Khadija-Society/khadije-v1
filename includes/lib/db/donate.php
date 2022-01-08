@@ -7,7 +7,7 @@ class donate
 
 	public static $sumif =
 	'
-		 SUM(case when transactions.hazinekard LIKE "%مشارکت در قربانی%" or transactions.hazinekard LIKE "%فرزندان غدیر%" then (transactions.plus / 10) else (transactions.plus) end) as `total`
+		 SUM(case when transactions.hazinekard LIKE "%مشارکت در قربانی%" or transactions.hazinekard LIKE "%فرزندان غدیر%" then ((transactions.plus * 5) / 100) else (transactions.plus) end) as `total`
 	';
 
 	public static function total_paid_group_by_date($_where)
