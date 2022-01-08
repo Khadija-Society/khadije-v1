@@ -5,6 +5,10 @@ namespace lib\db;
 class donate
 {
 
+	public static $sumif =
+	'
+		 SUM(case when transactions.hazinekard LIKE "%مشارکت در قربانی%" or transactions.hazinekard LIKE "%فرزندان غدیر%" then (transactions.plus / 10) else (transactions.plus) end) as `total`
+	';
 
 	public static function total_paid_group_by_date($_where)
 	{
@@ -18,10 +22,12 @@ class donate
 			$where = " AND ". $where;
 		}
 
+		$sumif = self::$sumif;
+
 		$query =
 		"
 			SELECT
-				SUM(transactions.plus) AS `total`,
+				$sumif,
 				DATE(transactions.datecreated) as `mydate`
 			FROM
 				transactions
@@ -48,10 +54,12 @@ class donate
 			$where = " AND ". $where;
 		}
 
+		$sumif = self::$sumif;
+
 		$query =
 		"
 			SELECT
-				SUM(transactions.plus) AS `total`,
+				$sumif,
 				transactions.hazinekard
 			FROM
 				transactions
@@ -77,10 +85,12 @@ class donate
 			$where = " AND ". $where;
 		}
 
+		$sumif = self::$sumif;
+
 		$query =
 		"
 			SELECT
-				SUM(transactions.plus) AS `total`
+				$sumif
 			FROM
 				transactions
 			WHERE

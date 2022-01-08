@@ -3,7 +3,7 @@ namespace lib\app;
 
 class donate
 {
-	private static $fake_percent = 10;
+	private static $fake_percent = 100;
 
 
 	public static function get_fake_report($_args)
@@ -22,12 +22,12 @@ class donate
 			{
 				foreach ($value as $k => $v)
 				{
-					$new_result[$key][$k] = round((floatval($v) * self::$fake_percent) / 100);
+					$new_result[$key][$k] = self::sheykh_value($v);
 				}
 			}
 			else
 			{
-				$new_result[$key] = round((floatval($value) * self::$fake_percent) / 100);
+				$new_result[$key] = self::sheykh_value($value);
 			}
 		}
 
@@ -44,7 +44,7 @@ class donate
 		foreach ($result['perday'] as $key => $value)
 		{
 			$categories[] = \dash\fit::date($value['mydate']);
-			$chartdate[] = round((floatval($value['total']) * self::$fake_percent) / 100); //floatval($value['total']);
+			$chartdate[] = self::sheykh_value($value['total']);
 		}
 
 		unset($new_result['perday']);
@@ -59,6 +59,11 @@ class donate
 		return $new_result;
 	}
 
+
+	private static function sheykh_value($_value)
+	{
+		return floatval($_value);
+	}
 
 	public static $way_key = 'hazinekard_list';
 
