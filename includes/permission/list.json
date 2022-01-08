@@ -1,594 +1,829 @@
 {
-  "cpTripEdit": {
-    "title": "cpTripEdit",
-    "cat": "Trip",
-    "require": []
-  },
-  "cpTripView": {
-    "title": "cpTripView",
-    "cat": "Trip",
-    "require": []
-  },
-  "cpTripOption": {
-    "title": "cpTripOption",
-    "cat": "Trip",
-    "require": []
-  },
-  "cpAddNewTrip": {
-    "title": "cpAddNewTrip",
-    "cat": "Trip",
-    "require": []
-  },
-  "donateManualPay": {
-    "title": "donateManualPay",
-    "cat": "Donate",
-    "require": []
-  },
-  "cpDonateView": {
-    "title": "cpDonateView",
-    "cat": "Donate",
-    "require": []
-  },
-  "cpDonateTotalPay": {
-    "title": "cpDonateTotalPay",
-    "cat": "Donate",
-    "require": []
-  },
-  "cpDonateOption": {
-    "title": "cpDonateOption",
-    "cat": "Donate",
-    "require": []
-  },
-  "cpNationalCodeEdit": {
-    "title": "cpNationalCodeEdit",
-    "cat": "National Code",
-    "require": []
-  },
-  "cpNationalCodeView": {
-    "title": "cpNationalCodeView",
-    "cat": "National Code",
-    "require": []
-  },
-  "cpNationalCodeImport": {
-    "title": "cpNationalCodeImport",
-    "cat": "National Code",
-    "require": []
-  },
-  "cpHomePageNumber": {
-    "title": "cpHomePageNumber",
-    "cat": "Setting",
-    "require": []
-  },
-  "cpOptionProduct": {
-    "title": "cpOptionProduct",
-    "cat": "Setting",
-    "require": []
-  },
-  "cpOptionCityPlace": {
-    "title": "cpOptionCityPlace",
-    "cat": "Setting",
-    "require": []
-  },
-  "cpServiceView": {
-    "title": "cpServiceView",
-    "cat": "Service",
-    "require": []
-  },
-  "cpServiceOption": {
-    "title": "cpServiceOption",
-    "cat": "Service",
-    "require": []
-  },
-  "cpTripQom": {
-    "title": "cpTripQom",
-    "cat": "Trip",
-    "require": []
-  },
-  "cpTripMashhad": {
-    "title": "cpTripMashhad",
-    "cat": "Trip",
-    "require": []
-  },
-  "cpTripKarbala": {
-    "title": "cpTripKarbala",
-    "cat": "Trip",
-    "require": []
-  },
-  "cpBookTransactionView": {
-    "title": "cpBookTransactionView",
-    "cat": "Donate",
-    "require": []
-  },
-  "cpChartTravel": {
-    "title": "cpChartTravel",
-    "cat": "Report",
-    "require": []
-  },
-  "cpReportDaily": {
-    "title": "cpReportDaily",
-    "cat": "Report",
-    "require": []
-  },
-  "cpReportMonth": {
-    "title": "cpReportMonth",
-    "cat": "Report",
-    "require": []
-  },
-  "cpReportView": {
-    "title": "cpReportView",
-    "cat": "Report",
-    "require": []
-  },
-  "cpDelneveshteEdit": {
-    "title": "cpDelneveshteEdit",
-    "cat": "Delneveshte",
-    "require": []
-  },
-  "cpDelneveshteView": {
-    "title": "cpDelneveshteView",
-    "cat": "Delneveshte",
-    "require": []
-  },
-  "cpAdminContactChangeStatus": {
-    "title": "cpAdminContactChangeStatus",
-    "cat": "Admin Contact",
-    "require": []
-  },
-  "cpAdminContactView": {
-    "title": "cpAdminContactView",
-    "cat": "Admin Contact",
-    "require": []
-  },
-  "cpRepresentationChangeStatus": {
-    "title": "cpRepresentationChangeStatus",
-    "cat": "Representation",
-    "require": []
-  },
-  "cpRepresentationView": {
-    "title": "cpRepresentationView",
-    "cat": "Representation",
-    "require": []
-  },
-  "cpRepresentationOption": {
-    "title": "cpRepresentationOption",
-    "cat": "Representation",
-    "require": []
-  },
-  "cpConsultingView": {
-    "title": "cpConsultingView",
-    "cat": "Consulting",
-    "require": []
-  },
-  "cpConsultingOption": {
-    "title": "cpConsultingOption",
-    "cat": "Consulting",
-    "require": []
-  },
-  "cpHealthView": {
-    "title": "cpHealthView",
-    "cat": "Health",
-    "require": []
-  },
-  "cpHealthOption": {
-    "title": "cpHealthOption",
-    "cat": "Health",
-    "require": []
-  },
-  "cpHadith": {
-    "title": "cpHadith",
-    "cat": "Hadith",
-    "require": []
-  },
-  "cpConsultingChangeStatus": {
-    "title": "cpConsultingChangeStatus",
-    "cat": "Consulting",
-    "require": []
-  },
-  "cpServiceChangeStatus": {
-    "title": "cpServiceChangeStatus",
-    "cat": "Service",
-    "require": []
-  },
-  "cpHealthChangeStatus": {
-    "title": "cpHealthChangeStatus",
-    "cat": "Health",
-    "require": []
-  },
-  "cpChartCountTransaction": {
-    "title": "cpChartCountTransaction",
-    "cat": "Report",
-    "require": []
-  },
-  "cpDisableAllTrip": {
-    "title": "cpDisableAllTrip",
-    "cat": "Danger",
-    "require": []
-  },
-  "cpFamilyTripView": {
-    "title": "cpFamilyTripView",
-    "cat": "Family Trip",
-    "require": []
-  },
-  "cpSettingThankyouMessage": {
-    "title": "cpSettingThankyouMessage",
-    "cat": "Message",
-    "require": []
-  },
-  "cpFamilyTripEdit": {
-    "title": "cpFamilyTripEdit",
-    "cat": "Family Trip",
-    "require": []
-  },
-  "cpFamilyTripOption": {
-    "title": "cpFamilyTripOption",
-    "cat": "Family Trip",
-    "require": []
-  },
-  "cpMeeting": {
-    "title": "cpMeeting",
-    "cat": "Meeting",
-    "require": []
-  },
-  "cpMeetingManage": {
-    "title": "cpMeetingManage",
-    "cat": "Meeting",
-    "require": []
-  },
-  "cpFestivalEdit": {
-    "title": "cpFestivalEdit",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalMediasupporterAdd": {
-    "title": "cpFestivalMediasupporterAdd",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalMediasupporterEdit": {
-    "title": "cpFestivalMediasupporterEdit",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalMediasupporterView": {
-    "title": "cpFestivalMediasupporterView",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalAdd": {
-    "title": "cpFestivalAdd",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalUsersSignupEdit": {
-    "title": "cpFestivalUsersSignupEdit",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpUsersKarbalaView": {
-    "title": "cpUsersKarbalaView",
-    "cat": "Users",
-    "require": []
-  },
-  "exportKarbalaUsers": {
-    "title": "exportKarbalaUsers",
-    "cat": "Users",
-    "require": []
-  },
-  "cpFestivalRefereeAdd": {
-    "title": "cpFestivalRefereeAdd",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalRefereeEdit": {
-    "title": "cpFestivalRefereeEdit",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalRefereeView": {
-    "title": "cpFestivalRefereeView",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalView": {
-    "title": "cpFestivalView",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalUsers": {
-    "title": "cpFestivalUsers",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalOrganizerAdd": {
-    "title": "cpFestivalOrganizerAdd",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalOrganizerEdit": {
-    "title": "cpFestivalOrganizerEdit",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalOrganizerView": {
-    "title": "cpFestivalOrganizerView",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalSupporterAdd": {
-    "title": "cpFestivalSupporterAdd",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalSupporterEdit": {
-    "title": "cpFestivalSupporterEdit",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalSupporterView": {
-    "title": "cpFestivalSupporterView",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalCourseAdd": {
-    "title": "cpFestivalCourseAdd",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalCourseEdit": {
-    "title": "cpFestivalCourseEdit",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFestivalCourseView": {
-    "title": "cpFestivalCourseView",
-    "cat": "Festival",
-    "require": []
-  },
-  "cpFesitvalTransaction": {
-    "title": "cpFesitvalTransaction",
-    "cat": "Festival",
-    "require": []
-  },
-  "smsApiDoc": {
-    "title": "smsApiDoc",
-    "cat": "SMS",
-    "require": []
-  },
-  "cpDoyonView": {
-    "title": "cpDoyonView",
-    "cat": "Doyon",
-    "require": []
-  },
-  "smsAppSetting": {
-    "title": "smsAppSetting",
-    "cat": "sms",
-    "require": []
-  },
-  "contentCp": {
-    "title": "contentCp",
-    "cat": "Control Panel",
-    "require": []
-  },
-  "aSettingSmsEdit": {
-    "title": "aSettingSmsEdit",
-    "cat": "sms",
-    "require": []
-  },
-  "cpUsersView": {
-    "title": "cpUsersView",
-    "cat": "CRM",
-    "require": []
-  },
-  "cpProductView": {
-    "title": "cpProductView",
-    "cat": "Donate product",
-    "require": []
-  },
-  "mProductAdd": {
-    "title": "mProductAdd",
-    "cat": "Donate product",
-    "require": []
-  },
-  "mProductView": {
-    "title": "mProductView",
-    "cat": "Donate product",
-    "require": []
-  },
-  "mProductEdit": {
-    "title": "mProductEdit",
-    "cat": "Donate product",
-    "require": []
-  },
-  "cpRepresentationSetAllDone": {
-    "title": "cpRepresentationSetAllDone",
-    "cat": "Danger",
-    "require": []
-  },
-  "mPlaceAdd": {
-    "title": "mPlaceAdd",
-    "cat": "Mokeb",
-    "require": []
-  },
-  "mPlaceView": {
-    "title": "mPlaceView",
-    "cat": "Mokeb",
-    "require": []
-  },
-  "mPlaceEdit": {
-    "title": "mPlaceEdit",
-    "cat": "Mokeb",
-    "require": []
-  },
-  "ContentMokeb": {
-    "title": "ContentMokeb",
-    "cat": "Mokeb",
-    "require": []
-  },
-  "ContentMokebAddPlace": {
-    "title": "ContentMokebAddPlace",
-    "cat": "Mokeb",
-    "require": [
-      "ContentMokeb"
-    ]
-  },
-  "ContentMokebEditPlace": {
-    "title": "ContentMokebEditPlace",
-    "cat": "Mokeb",
-    "require": [
-      "ContentMokeb"
-    ]
-  },
-  "ContentMokebForceExit": {
-    "title": "ContentMokebForceExit",
-    "cat": "Mokeb",
-    "require": [
-      "ContentMokeb"
-    ]
-  },
-  "ContentMokebUpdateDetail": {
-    "title": "ContentMokebUpdateDetail",
-    "cat": "Mokeb",
-    "require": [
-      "ContentMokeb"
-    ]
-  },
-  "ContentMokebAddUser": {
-    "title": "ContentMokebAddUser",
-    "cat": "Mokeb",
-    "require": [
-      "ContentMokeb"
-    ]
-  },
-  "ContentMokebOpen": {
-    "title": "ContentMokebOpen",
-    "cat": "Mokeb",
-    "require": [
-      "ContentMokeb"
-    ]
-  },
-  "mKarbalaSetting": {
-    "title": "mKarbalaSetting",
-    "cat": "Mokeb",
-    "require": []
-  },
-  "mhomevideo": {
-    "title": "mhomevideo",
-    "cat": "Mokeb",
-    "require": []
-  },
-  "cpKarbalaUserCount": {
-    "title": "cpKarbalaUserCount",
-    "cat": null,
-    "require": []
-  },
-  "cpKarbalaUserCountAdd": {
-    "title": "cpKarbalaUserCountAdd",
-    "cat": null,
-    "require": []
-  },
-  "koyeMohebbat": {
-    "title": "koyeMohebbat",
-    "cat": "Koye Mohebbat",
-    "require": [
-      "contentCp"
-    ]
-  },
-  "koyeMohebbatAddLottery": {
-    "title": "koyeMohebbatAddLottery",
-    "cat": "Koye Mohebbat",
-    "require": [
-      "contentCp"
-    ]
-  },
-  "contentAgent": {
-    "title": "contentAgent",
-    "cat": "Agent",
-    "require": []
-  },
-  "AgentQom": {
-    "title": "AgentQom",
-    "cat": "Agent",
-    "require": [
-      "contentAgent"
-    ]
-  },
-  "AgentMashhad": {
-    "title": "AgentMashhad",
-    "cat": "Agent",
-    "require": [
-      "contentAgent"
-    ]
-  },
-  "AgentKarbala": {
-    "title": "AgentKarbala",
-    "cat": "Agent",
-    "require": [
-      "contentAgent"
-    ]
-  },
-  "contentM": {
-    "title": "contentM",
-    "cat": "Mangagement dashboard",
-    "require": []
-  },
-  "contentLottery": {
-    "title": "contentLottery",
-    "cat": "Lottery",
-    "require": []
-  },
-  "AddEditLottery": {
-    "title": "AddEditLottery",
-    "cat": "Lottery",
-    "require": []
-  },
-  "contentCrm": {
-    "title": "contentCrm",
-    "cat": "Manage customer",
-    "require": []
-  },
-  "contentProtection": {
-    "title": "contentProtection",
-    "cat": "Protection",
-    "require": []
-  },
-  "protectonSetting": {
-    "title": "protectonSetting",
-    "cat": "Protection",
-    "require": []
-  },
-  "protectonUserAdmin": {
-    "title": "protectonUserAdmin",
-    "cat": "Protection",
-    "require": []
-  },
-  "protectonOccasionView": {
-    "title": "protectonOccasionView",
-    "cat": "Protection",
-    "require": []
-  },
-  "protectonOccasionAdmin": {
-    "title": "protectonOccasionAdmin",
-    "cat": "Protection",
-    "require": []
-  },
-  "protectonAgentView": {
-    "title": "protectonAgentView",
-    "cat": "Protection",
-    "require": []
-  },
-  "protectonPriceAdmin": {
-    "title": "protectonPriceAdmin",
-    "cat": "Protection",
-    "require": []
-  },
-  "protectonReport": {
-    "title": "protectonReport",
-    "cat": "Protection",
-    "require": []
-  },
-  "protectonAgentAdmin": {
-    "title": "protectonAgentAdmin",
-    "cat": "Protection",
-    "require": []
-  }
+    "cpTripEdit":
+    {
+        "title": "cpTripEdit",
+        "cat": "Trip",
+        "require":
+        []
+    },
+    "cpTripView":
+    {
+        "title": "cpTripView",
+        "cat": "Trip",
+        "require":
+        []
+    },
+    "cpTripOption":
+    {
+        "title": "cpTripOption",
+        "cat": "Trip",
+        "require":
+        []
+    },
+    "cpAddNewTrip":
+    {
+        "title": "cpAddNewTrip",
+        "cat": "Trip",
+        "require":
+        []
+    },
+    "donateManualPay":
+    {
+        "title": "donateManualPay",
+        "cat": "Donate",
+        "require":
+        []
+    },
+    "cpDonateView":
+    {
+        "title": "cpDonateView",
+        "cat": "Donate",
+        "require":
+        []
+    },
+    "cpDonateTotalPay":
+    {
+        "title": "cpDonateTotalPay",
+        "cat": "Donate",
+        "require":
+        []
+    },
+    "cpDonateOption":
+    {
+        "title": "cpDonateOption",
+        "cat": "Donate",
+        "require":
+        []
+    },
+    "cpNationalCodeEdit":
+    {
+        "title": "cpNationalCodeEdit",
+        "cat": "National Code",
+        "require":
+        []
+    },
+    "cpNationalCodeView":
+    {
+        "title": "cpNationalCodeView",
+        "cat": "National Code",
+        "require":
+        []
+    },
+    "cpNationalCodeImport":
+    {
+        "title": "cpNationalCodeImport",
+        "cat": "National Code",
+        "require":
+        []
+    },
+    "cpHomePageNumber":
+    {
+        "title": "cpHomePageNumber",
+        "cat": "Setting",
+        "require":
+        []
+    },
+    "cpOptionProduct":
+    {
+        "title": "cpOptionProduct",
+        "cat": "Setting",
+        "require":
+        []
+    },
+    "cpOptionCityPlace":
+    {
+        "title": "cpOptionCityPlace",
+        "cat": "Setting",
+        "require":
+        []
+    },
+    "cpServiceView":
+    {
+        "title": "cpServiceView",
+        "cat": "Service",
+        "require":
+        []
+    },
+    "cpServiceOption":
+    {
+        "title": "cpServiceOption",
+        "cat": "Service",
+        "require":
+        []
+    },
+    "cpTripQom":
+    {
+        "title": "cpTripQom",
+        "cat": "Trip",
+        "require":
+        []
+    },
+    "cpTripMashhad":
+    {
+        "title": "cpTripMashhad",
+        "cat": "Trip",
+        "require":
+        []
+    },
+    "cpTripKarbala":
+    {
+        "title": "cpTripKarbala",
+        "cat": "Trip",
+        "require":
+        []
+    },
+    "cpBookTransactionView":
+    {
+        "title": "cpBookTransactionView",
+        "cat": "Donate",
+        "require":
+        []
+    },
+    "cpChartTravel":
+    {
+        "title": "cpChartTravel",
+        "cat": "Report",
+        "require":
+        []
+    },
+    "cpReportDaily":
+    {
+        "title": "cpReportDaily",
+        "cat": "Report",
+        "require":
+        []
+    },
+    "cpReportMonth":
+    {
+        "title": "cpReportMonth",
+        "cat": "Report",
+        "require":
+        []
+    },
+    "cpReportView":
+    {
+        "title": "cpReportView",
+        "cat": "Report",
+        "require":
+        []
+    },
+    "cpDelneveshteEdit":
+    {
+        "title": "cpDelneveshteEdit",
+        "cat": "Delneveshte",
+        "require":
+        []
+    },
+    "cpDelneveshteView":
+    {
+        "title": "cpDelneveshteView",
+        "cat": "Delneveshte",
+        "require":
+        []
+    },
+    "cpAdminContactChangeStatus":
+    {
+        "title": "cpAdminContactChangeStatus",
+        "cat": "Admin Contact",
+        "require":
+        []
+    },
+    "cpAdminContactView":
+    {
+        "title": "cpAdminContactView",
+        "cat": "Admin Contact",
+        "require":
+        []
+    },
+    "cpRepresentationChangeStatus":
+    {
+        "title": "cpRepresentationChangeStatus",
+        "cat": "Representation",
+        "require":
+        []
+    },
+    "cpRepresentationView":
+    {
+        "title": "cpRepresentationView",
+        "cat": "Representation",
+        "require":
+        []
+    },
+    "cpRepresentationOption":
+    {
+        "title": "cpRepresentationOption",
+        "cat": "Representation",
+        "require":
+        []
+    },
+    "cpConsultingView":
+    {
+        "title": "cpConsultingView",
+        "cat": "Consulting",
+        "require":
+        []
+    },
+    "cpConsultingOption":
+    {
+        "title": "cpConsultingOption",
+        "cat": "Consulting",
+        "require":
+        []
+    },
+    "cpHealthView":
+    {
+        "title": "cpHealthView",
+        "cat": "Health",
+        "require":
+        []
+    },
+    "cpHealthOption":
+    {
+        "title": "cpHealthOption",
+        "cat": "Health",
+        "require":
+        []
+    },
+    "cpHadith":
+    {
+        "title": "cpHadith",
+        "cat": "Hadith",
+        "require":
+        []
+    },
+    "cpConsultingChangeStatus":
+    {
+        "title": "cpConsultingChangeStatus",
+        "cat": "Consulting",
+        "require":
+        []
+    },
+    "cpServiceChangeStatus":
+    {
+        "title": "cpServiceChangeStatus",
+        "cat": "Service",
+        "require":
+        []
+    },
+    "cpHealthChangeStatus":
+    {
+        "title": "cpHealthChangeStatus",
+        "cat": "Health",
+        "require":
+        []
+    },
+    "cpChartCountTransaction":
+    {
+        "title": "cpChartCountTransaction",
+        "cat": "Report",
+        "require":
+        []
+    },
+    "cpDisableAllTrip":
+    {
+        "title": "cpDisableAllTrip",
+        "cat": "Danger",
+        "require":
+        []
+    },
+    "cpFamilyTripView":
+    {
+        "title": "cpFamilyTripView",
+        "cat": "Family Trip",
+        "require":
+        []
+    },
+    "cpSettingThankyouMessage":
+    {
+        "title": "cpSettingThankyouMessage",
+        "cat": "Message",
+        "require":
+        []
+    },
+    "cpFamilyTripEdit":
+    {
+        "title": "cpFamilyTripEdit",
+        "cat": "Family Trip",
+        "require":
+        []
+    },
+    "cpFamilyTripOption":
+    {
+        "title": "cpFamilyTripOption",
+        "cat": "Family Trip",
+        "require":
+        []
+    },
+    "cpMeeting":
+    {
+        "title": "cpMeeting",
+        "cat": "Meeting",
+        "require":
+        []
+    },
+    "cpMeetingManage":
+    {
+        "title": "cpMeetingManage",
+        "cat": "Meeting",
+        "require":
+        []
+    },
+    "cpFestivalEdit":
+    {
+        "title": "cpFestivalEdit",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalMediasupporterAdd":
+    {
+        "title": "cpFestivalMediasupporterAdd",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalMediasupporterEdit":
+    {
+        "title": "cpFestivalMediasupporterEdit",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalMediasupporterView":
+    {
+        "title": "cpFestivalMediasupporterView",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalAdd":
+    {
+        "title": "cpFestivalAdd",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalUsersSignupEdit":
+    {
+        "title": "cpFestivalUsersSignupEdit",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpUsersKarbalaView":
+    {
+        "title": "cpUsersKarbalaView",
+        "cat": "Users",
+        "require":
+        []
+    },
+    "exportKarbalaUsers":
+    {
+        "title": "exportKarbalaUsers",
+        "cat": "Users",
+        "require":
+        []
+    },
+    "cpFestivalRefereeAdd":
+    {
+        "title": "cpFestivalRefereeAdd",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalRefereeEdit":
+    {
+        "title": "cpFestivalRefereeEdit",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalRefereeView":
+    {
+        "title": "cpFestivalRefereeView",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalView":
+    {
+        "title": "cpFestivalView",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalUsers":
+    {
+        "title": "cpFestivalUsers",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalOrganizerAdd":
+    {
+        "title": "cpFestivalOrganizerAdd",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalOrganizerEdit":
+    {
+        "title": "cpFestivalOrganizerEdit",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalOrganizerView":
+    {
+        "title": "cpFestivalOrganizerView",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalSupporterAdd":
+    {
+        "title": "cpFestivalSupporterAdd",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalSupporterEdit":
+    {
+        "title": "cpFestivalSupporterEdit",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalSupporterView":
+    {
+        "title": "cpFestivalSupporterView",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalCourseAdd":
+    {
+        "title": "cpFestivalCourseAdd",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalCourseEdit":
+    {
+        "title": "cpFestivalCourseEdit",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFestivalCourseView":
+    {
+        "title": "cpFestivalCourseView",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "cpFesitvalTransaction":
+    {
+        "title": "cpFesitvalTransaction",
+        "cat": "Festival",
+        "require":
+        []
+    },
+    "smsApiDoc":
+    {
+        "title": "smsApiDoc",
+        "cat": "SMS",
+        "require":
+        []
+    },
+    "cpDoyonView":
+    {
+        "title": "cpDoyonView",
+        "cat": "Doyon",
+        "require":
+        []
+    },
+    "smsAppSetting":
+    {
+        "title": "smsAppSetting",
+        "cat": "sms",
+        "require":
+        []
+    },
+    "contentCp":
+    {
+        "title": "contentCp",
+        "cat": "Control Panel",
+        "require":
+        []
+    },
+    "aSettingSmsEdit":
+    {
+        "title": "aSettingSmsEdit",
+        "cat": "sms",
+        "require":
+        []
+    },
+    "cpUsersView":
+    {
+        "title": "cpUsersView",
+        "cat": "CRM",
+        "require":
+        []
+    },
+    "cpProductView":
+    {
+        "title": "cpProductView",
+        "cat": "Donate product",
+        "require":
+        []
+    },
+    "mProductAdd":
+    {
+        "title": "mProductAdd",
+        "cat": "Donate product",
+        "require":
+        []
+    },
+    "mProductView":
+    {
+        "title": "mProductView",
+        "cat": "Donate product",
+        "require":
+        []
+    },
+    "mProductEdit":
+    {
+        "title": "mProductEdit",
+        "cat": "Donate product",
+        "require":
+        []
+    },
+    "cpRepresentationSetAllDone":
+    {
+        "title": "cpRepresentationSetAllDone",
+        "cat": "Danger",
+        "require":
+        []
+    },
+    "mPlaceAdd":
+    {
+        "title": "mPlaceAdd",
+        "cat": "Mokeb",
+        "require":
+        []
+    },
+    "mPlaceView":
+    {
+        "title": "mPlaceView",
+        "cat": "Mokeb",
+        "require":
+        []
+    },
+    "mPlaceEdit":
+    {
+        "title": "mPlaceEdit",
+        "cat": "Mokeb",
+        "require":
+        []
+    },
+    "ContentMokeb":
+    {
+        "title": "ContentMokeb",
+        "cat": "Mokeb",
+        "require":
+        []
+    },
+    "ContentMokebAddPlace":
+    {
+        "title": "ContentMokebAddPlace",
+        "cat": "Mokeb",
+        "require":
+        [
+            "ContentMokeb"
+        ]
+    },
+    "ContentMokebEditPlace":
+    {
+        "title": "ContentMokebEditPlace",
+        "cat": "Mokeb",
+        "require":
+        [
+            "ContentMokeb"
+        ]
+    },
+    "ContentMokebForceExit":
+    {
+        "title": "ContentMokebForceExit",
+        "cat": "Mokeb",
+        "require":
+        [
+            "ContentMokeb"
+        ]
+    },
+    "ContentMokebUpdateDetail":
+    {
+        "title": "ContentMokebUpdateDetail",
+        "cat": "Mokeb",
+        "require":
+        [
+            "ContentMokeb"
+        ]
+    },
+    "ContentMokebAddUser":
+    {
+        "title": "ContentMokebAddUser",
+        "cat": "Mokeb",
+        "require":
+        [
+            "ContentMokeb"
+        ]
+    },
+    "ContentMokebOpen":
+    {
+        "title": "ContentMokebOpen",
+        "cat": "Mokeb",
+        "require":
+        [
+            "ContentMokeb"
+        ]
+    },
+    "mKarbalaSetting":
+    {
+        "title": "mKarbalaSetting",
+        "cat": "Mokeb",
+        "require":
+        []
+    },
+    "mhomevideo":
+    {
+        "title": "mhomevideo",
+        "cat": "Mokeb",
+        "require":
+        []
+    },
+    "cpKarbalaUserCount":
+    {
+        "title": "cpKarbalaUserCount",
+        "cat": null,
+        "require":
+        []
+    },
+    "cpKarbalaUserCountAdd":
+    {
+        "title": "cpKarbalaUserCountAdd",
+        "cat": null,
+        "require":
+        []
+    },
+    "koyeMohebbat":
+    {
+        "title": "koyeMohebbat",
+        "cat": "Koye Mohebbat",
+        "require":
+        [
+            "contentCp"
+        ]
+    },
+    "koyeMohebbatAddLottery":
+    {
+        "title": "koyeMohebbatAddLottery",
+        "cat": "Koye Mohebbat",
+        "require":
+        [
+            "contentCp"
+        ]
+    },
+    "contentAgent":
+    {
+        "title": "contentAgent",
+        "cat": "Agent",
+        "require":
+        []
+    },
+    "AgentQom":
+    {
+        "title": "AgentQom",
+        "cat": "Agent",
+        "require":
+        [
+            "contentAgent"
+        ]
+    },
+    "AgentMashhad":
+    {
+        "title": "AgentMashhad",
+        "cat": "Agent",
+        "require":
+        [
+            "contentAgent"
+        ]
+    },
+    "AgentKarbala":
+    {
+        "title": "AgentKarbala",
+        "cat": "Agent",
+        "require":
+        [
+            "contentAgent"
+        ]
+    },
+    "contentM":
+    {
+        "title": "contentM",
+        "cat": "Mangagement dashboard",
+        "require":
+        []
+    },
+    "contentLottery":
+    {
+        "title": "contentLottery",
+        "cat": "Lottery",
+        "require":
+        []
+    },
+    "AddEditLottery":
+    {
+        "title": "AddEditLottery",
+        "cat": "Lottery",
+        "require":
+        []
+    },
+    "contentCrm":
+    {
+        "title": "contentCrm",
+        "cat": "Manage customer",
+        "require":
+        []
+    },
+    "contentProtection":
+    {
+        "title": "contentProtection",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "protectonSetting":
+    {
+        "title": "protectonSetting",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "protectonUserAdmin":
+    {
+        "title": "protectonUserAdmin",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "protectonOccasionView":
+    {
+        "title": "protectonOccasionView",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "protectonOccasionAdmin":
+    {
+        "title": "protectonOccasionAdmin",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "protectonAgentView":
+    {
+        "title": "protectonAgentView",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "protectonPriceAdmin":
+    {
+        "title": "protectonPriceAdmin",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "protectonReport":
+    {
+        "title": "protectonReport",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "protectonAgentAdmin":
+    {
+        "title": "protectonAgentAdmin",
+        "cat": "Protection",
+        "require":
+        []
+    },
+    "cpDonateViewFake":
+    {
+        "title": "protectonAgentAdmin",
+        "cat": "Protection",
+        "require":
+        []
+    }
 }

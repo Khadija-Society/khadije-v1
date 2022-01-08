@@ -5,6 +5,7 @@
 {% if perm('cpDonateView') or perm('cpProductView') or perm('cpProductView') or perm('cpProductView') %}<h3>{%trans "Donate"%}</h3>
 <div class="f">
 
+  {%if perm('cpDonateViewFake')%}<div class="c2 s6">{{block("Bfdonate")}}</div>{%endif%}
   {%if perm('cpDonateView')%}<div class="c2 s6">{{block("Bdonate")}}</div>{%endif%}
   {%if perm('cpProductView')%}<div class="c2 s6">{{block("BproductDonate")}}</div>{%endif%}
   {%if perm('cpProductView')%}<div class="c2 s6">{{block("BproductDonateArbaeen")}}</div>{%endif%}
@@ -311,6 +312,17 @@
  <div class="statistic">
   <div class="value"><i class="sf-bag"></i></div>
   <div class="label">{%trans "Donate product list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block Bfdonate%}
+<a class="dcard x1" href='{{url.here}}/donates'>
+ <div class="statistic">
+  <div class="value"><i class="sf-card"></i></div>
+  <div class="label">گزارش مبالغ دریافتی</div>
  </div>
 </a>
 {%endblock%}
