@@ -76,6 +76,10 @@ class view
 
 		}
 
+		if(!$startdate && !$enddate)
+		{
+			$startdate = date("Y-m-d", strtotime('-1 year'));
+		}
 
 		if($startdate && $enddate)
 		{

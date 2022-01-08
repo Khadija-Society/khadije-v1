@@ -4,7 +4,7 @@ namespace lib\db;
 
 class donate
 {
-	public static function total_paid_group_by($_args)
+	public static function total_paid_group_by($_where)
 	{
 		$where = \dash\db\config::make_where($_where);
 		if(!$where)
@@ -27,6 +27,7 @@ class donate
 				transactions.verify = 1
 				$where
 			GROUP BY transactions.hazinekard
+			ORDER BY `total` DESC
 		";
 		return \dash\db::get($query, ['hazinekard', 'total']);
 	}
