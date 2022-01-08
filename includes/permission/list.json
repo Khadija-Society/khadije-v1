@@ -821,8 +821,8 @@
     },
     "cpDonateViewFake":
     {
-        "title": "protectonAgentAdmin",
-        "cat": "Protection",
+        "title": "cpDonateViewFake",
+        "cat": "Donate",
         "require":
         []
     }
