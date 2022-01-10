@@ -1,0 +1,56 @@
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c6 s12 m8">
+      <div class="cbox">
+
+        <p>{%trans "On this page you can set access to another to fill the list by special capacity"%}</p>
+
+        <div class="f">
+          <div class="c">
+            <div class="input">
+              <input type="tel" name="cm" placeholder='{%trans "Mobile"%} *' required>
+            </div>
+          </div>
+          <div class="c">
+            <div class="mLa5">
+              <div class="input">
+                <input type="tel" name="displayname" placeholder='{%trans "Name"%}'>
+              </div>
+            </div>
+          </div>
+          <div class="c">
+            <div class="mLa5">
+              <div class="input">
+                <input type="tel" name="capacity" placeholder='{%trans "Count"%}'>
+              </div>
+            </div>
+          </div>
+          <div class="cauto">
+            <div class="mLa5">
+              <button class="btn success">{%trans "Add"%}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {%if childList%}
+        <div class="cbox">
+      <p>{%trans "Below mobile can add new item in list"%}</p>
+          {%for key, value in childList%}
+          <div class="msg f">
+            <div class="c">{{value.mobile | fitNumber('mobile')}}</div>
+            <div class="c">{{value.displayname}}</div>
+            <div class="c">{%if value.capacity%} {%trans "Count"%} {{value.capacity | fitNumber}} {%endif%}</div>
+            <div class="cauto"><div class="btn danger xs" data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'>{%trans "Remove"%}</div></div>
+          </div>
+          {%endfor%}
+        </div>
+      {%endif%}
+
+
+
+
+    </div>
+  </div>
+</form>
