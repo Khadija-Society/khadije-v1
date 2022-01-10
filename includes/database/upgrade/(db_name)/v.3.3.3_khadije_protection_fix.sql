@@ -14,3 +14,6 @@ CONSTRAINT `protection_agent_occasion_child_id` FOREIGN KEY (`protection_occasio
 CONSTRAINT `protection_agent_occasion_child_agent_id` FOREIGN KEY (`protection_agent_id`) REFERENCES `protection_agent` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+ALTER TABLE `protection_user_agent_occasion` ADD `creator` int UNSIGNED NULL DEFAULT NULL;
+ALTER TABLE CONSTRAINT `protection_user_agent_occasion_creator` FOREIGN KEY (`creator`) REFERENCES `protection_agent_occasion_child` (`id`) ON UPDATE CASCADE;
