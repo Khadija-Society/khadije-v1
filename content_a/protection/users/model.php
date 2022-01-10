@@ -51,6 +51,7 @@ class model
 			'protectioncount' => \dash\request::post('protectioncount'),
 			'country'         => \dash\request::post('country'),
 			'pasportcode'     => \dash\request::post('pasportcode'),
+			'accessAsChild'   => \dash\url::child() === 'child',
 		];
 
 		$occasion_id = \dash\data::occasionID();

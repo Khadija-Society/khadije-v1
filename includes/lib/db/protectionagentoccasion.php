@@ -189,6 +189,28 @@ class protectionagentoccasion
 		return $result;
 	}
 
+	public static function old_registered_occasion_as_child($_user_id)
+	{
+		$query  =
+		"
+			SELECT
+				protection_agent_occasion.*,
+				protection_agent_occasion.id as `checkid`,
+				1 as `accessAsChild`,
+				protection_occasion.title,
+				protection_occasion.subtitle
+			FROM
+				protection_agent_occasion
+			INNER JOIN protection_occasion ON protection_occasion.id = protection_agent_occasion.protection_occasion_id
+			INNER JOIN protection_agent_occasion_child ON protection_occasion.id = protection_agent_occasion_child.protection_occasion_id AND protection_agent_occasion_child.protection_agent_id = protection_agent_occasion.protection_agent_id
+			WHERE
+				protection_occasion.status IN ('registring','done','distribution') AND
+				protection_agent_occasion_child.status = 'enable' and
+				protection_agent_occasion_child.user_id = $_user_id
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
 
 	public static function old_registered_occasion($_agent_id)
 	{
@@ -196,6 +218,7 @@ class protectionagentoccasion
 		"
 			SELECT
 				protection_agent_occasion.*,
+				protection_agent_occasion.id as `checkid`,
 				protection_occasion.title,
 				protection_occasion.subtitle
 			FROM

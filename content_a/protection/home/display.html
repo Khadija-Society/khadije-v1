@@ -12,7 +12,11 @@
 <div class="f">
   {%for key, value in registeredOccasion%}
   <div class="c6 s12 pA10">
+    {%if value.accessAsChild%}
+      <a class="dcard grShadow grBlue2 x2 op100" href='{{url.this}}/child?id={{value.id}}'>
+    {%else%}
       <a class="dcard grShadow grBlue2 x2 op100" href='{{url.this}}/detail?id={{value.id}}'>
+    {%endif%}
         <div class="mB25 fcWhite900 fs20" >{{value.title}}</div>
         <div>{{value.subtitle}}</div>
       </a>

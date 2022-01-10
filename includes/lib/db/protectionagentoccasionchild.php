@@ -4,11 +4,106 @@ namespace lib\db;
 class protectionagentoccasionchild
 {
 
+	public static function get_agent_id_from_child($_occasion_id, $_user_id)
+	{
+		$query  =
+		"
+			SELECT
+				protection_agent.id
+			FROM
+				protection_agent_occasion_child
+
+			INNER JOIN
+				protection_agent_occasion ON
+					protection_agent_occasion.protection_occasion_id = protection_agent_occasion_child.protection_occasion_id AND
+					protection_agent_occasion.protection_agent_id = protection_agent_occasion_child.protection_agent_id
+			INNER JOIN
+				protection_agent ON
+					protection_agent.id = protection_agent_occasion_child.protection_agent_id
+			WHERE
+				protection_agent_occasion_child.user_id = $_user_id AND
+				protection_agent_occasion_child.status = 'enable' AND
+				protection_agent_occasion.protection_occasion_id = $_occasion_id
+			LIMIT 1
+		";
+
+
+		$result = \dash\db::get($query, 'id', true);
+
+		return $result;
+	}
+
+	public static function get_creator_id_from_child($_occasion_id, $_user_id)
+	{
+		$query  =
+		"
+			SELECT
+				protection_agent_occasion_child.id as `xid`
+			FROM
+				protection_agent_occasion_child
+
+			INNER JOIN
+				protection_agent_occasion ON
+					protection_agent_occasion.protection_occasion_id = protection_agent_occasion_child.protection_occasion_id AND
+					protection_agent_occasion.protection_agent_id = protection_agent_occasion_child.protection_agent_id
+			WHERE
+				protection_agent_occasion_child.user_id = $_user_id AND
+				protection_agent_occasion_child.status = 'enable' AND
+				protection_agent_occasion.protection_occasion_id = $_occasion_id
+			LIMIT 1
+		";
+
+
+		$result = \dash\db::get($query, 'xid', true);
+
+		return $result;
+	}
+
+	public static function get_detail_by_child($_id, $_user_id)
+	{
+		$query  =
+		"
+			SELECT
+				protection_agent_occasion.*
+			FROM
+				protection_agent_occasion_child
+			INNER JOIN protection_agent_occasion ON protection_agent_occasion.protection_occasion_id = protection_agent_occasion_child.protection_occasion_id AND protection_agent_occasion.protection_agent_id = protection_agent_occasion_child.protection_agent_id
+			WHERE
+				protection_agent_occasion_child.user_id = $_user_id AND
+				protection_agent_occasion_child.status = 'enable' AND
+				protection_agent_occasion.id = $_id
+			LIMIT 1
+		";
+
+		$result = \dash\db::get($query, null, true);
+
+		return $result;
+	}
 
 	public static function remove($_id)
 	{
 		$query  = "DELETE FROM  protection_agent_occasion_child WHERE protection_agent_occasion_child.id = $_id LIMIT 1";
 		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
+	public static function check_is_child($_user_id)
+	{
+		$query  =
+		"
+			SELECT
+				protection_agent.*
+			FROM
+				protection_agent_occasion_child
+			INNER JOIN protection_agent ON protection_agent.id = protection_agent_occasion_child.protection_agent_id
+			WHERE
+				protection_agent_occasion_child.user_id = $_user_id AND
+				protection_agent_occasion_child.status = 'enable' AND
+				protection_agent.status = 'enable'
+			LIMIT 1
+		";
+		$result = \dash\db::get($query, null, true);
 		return $result;
 	}
 

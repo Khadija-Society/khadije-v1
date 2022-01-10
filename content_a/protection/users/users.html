@@ -1,0 +1,230 @@
+
+<form method="post" autocomplete="off">
+  <div class="f justify-center">
+    <div class="c8 s12 m12">
+          {%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}
+      <div class="cbox">
+
+          <p class="msg">{%trans "Please enter the information of the people to whom you want to donate a support package on this occasion."%}
+            {%if allowDetail.capacity %}
+          <span class="badge primary">{%trans "Your capacity for add user"%} <b>{{allowDetail.capacity | fitNumber}}</b> <small>{%trans "Person"%}</small></span>
+          {%endif%}
+          </p>
+
+          <input type="hidden" name="occation_id" value="{{requestGET.id}}">
+          <div class="mB10">
+            <label for='country'>{%trans "Country"%}</label>
+            <div class="ui fluid search selection dropdown">
+              <input type="hidden" name="country" value="{%if personDataRow.country%}{{personDataRow.country}}{%elseif lang.current == 'fa'%}IR{%endif%}">
+              <i class="dropdown icon"></i>
+              <div class="default text">{%trans "Choose your country"%}</div>
+              <div class="menu">
+          {%for key, value in countryList%}
+                <div class="item" data-value="{{key}}">
+                  <i class="{{value.iso2 | lower }} flag"></i>{%set myCountry = value.name%} {%trans myCountry%}<small class="description">{{value.name | capitalize}}</small>
+                </div>
+          {%endfor%}
+              </div>
+            </div>
+          </div>
+
+            <div class="f">
+              <div class="c4 s12">
+                <div data-response='country' data-response-where='IR' data-response-effect='slide' {%if (personDataRow and personDataRow.country == 'IR') or not personDataRow %}{%else%}data-response-hide{%endif%}>
+                  <label for="inationalcode">{%trans "Nationalcode"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+                  <div class="input">
+                    <input type="tel" id="inationalcode" name="nationalcode" value="{{personDataRow.nationalcode}}" maxlength="10">
+                  </div>
+                </div>
+                <div data-response='country' data-response-where-not='IR' data-response-effect='slide' {%if personDataRow and personDataRow.country != 'IR' %}{%else%}data-response-hide{%endif%}>
+                  <label for="ipasportcode">{%trans "Pasport code"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+                  <div class="input">
+                    <input type="tel" id="ipasportcode" name="pasportcode" value="{{personDataRow.pasportcode}}" maxlength="10">
+                  </div>
+                </div>
+              </div>
+              <div class="c4 s12">
+                <div class="mLa5">
+                  <label for="imobile">{%trans "Mobile"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+                  <div class="input">
+                    <input type="tel" id="imobile" name="mobile" value="{{personDataRow.mobile}}" maxlength="15" required>
+                  </div>
+                </div>
+              </div>
+              <div class="mLa5">
+                    <label for="idisplayname">{%trans "Name & family"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+                  <div class="input">
+                    <input type="text" id="idisplayname" name="displayname" value="{{personDataRow.displayname}}" maxlength="50" required>
+                  </div>
+              </div>
+            </div>
+
+            <div class="f">
+              <div class="c6 s12">
+                  <label for="iprotectioncount">{%trans "Protection count"%}</label>
+                  <div class="input">
+                    <input type="number" id="iprotectioncount" name="protectioncount" value="{{personDataRow.protectioncount}}" max="100">
+                  </div>
+                </div>
+
+              <div class="c6 s12">
+                <div class="mLa5">
+              <label for='city'>{%trans "City"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+              <select name="city" class="ui dropdown select search" id="city">
+                <option value="" readonly>{%trans "Select city"%}</option>
+                {%for key, value in cityList%}
+                  <option value="{{key}}" {% if personDataRow.city == key or (not personDataRow and enableProtection.city == key) %} selected {%endif%}>{{value}}</option>
+                {%endfor%}
+              </select>
+              </div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="f">
+              <div class="c6 s12">
+
+                  <label for="gender">{%trans "Gender"%}</label>
+                  <div class="f mB10">
+                   <div class="c6 pRa5 radio3 green">
+                    <input type="radio" id="r-male" name="gender"  value="male" {%if personDataRow.gender == 'male' %}checked{%endif%}>
+                    <label for="r-male">{%trans "Male"%}</label>
+                   </div>
+
+                   <div class="c6 radio3 green">
+                    <input type="radio" id="r-female" name="gender"  value="female" {%if personDataRow.gender == 'female' %}checked{%endif%}>
+                    <label for="r-female">{%trans "Female"%}</label>
+                   </div>
+                  </div>
+
+              </div>
+              <div class="c6 s12">
+                <div class="mLa5">
+
+                <label for="Married">{%trans "Marital"%}</label>
+                <div class="f">
+                 <div class="c6 pRa5 radio3 yellow">
+                  <input type="radio" id="r-single" name="married"  value="single" {%if personDataRow.married == 'single' %}checked{%endif%}>
+                  <label for="r-single">{%trans "Single"%}</label>
+                 </div>
+
+                 <div class="c6 radio3 yellow">
+                  <input type="radio" id="r-married" name="married"  value="married" {%if personDataRow.married == 'married' %}checked{%endif%}>
+                  <label for="r-married">{%trans "Married"%}</label>
+                 </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {%if occasionType%}
+            <div class="f">
+
+              <h5>{%trans "Choose type"%} <small class="fc-red">* {%trans "Required"%}</small></h5>
+            {%for key, value in occasionType%}
+
+            <div class="c3 mB10 pRa5">
+
+              <div class="radio3">
+                <input type="radio" id="checktype{{value.id}}" name="type_id" value="{{value.id}}" {%if personDataRow.type_id == value.id or (not personDataRow and (occasionType | length) == 1 ) %} checked {%endif%}>
+                <label for="checktype{{value.id}}">{{value.title}}</label>
+              </div>
+            </div>
+              {%endfor%}
+              </div>
+              {%endif%}
+
+              <div class="f">
+                <div class="c6 s12 pRa5">
+                  <label>{%trans "National card photo"%}</label>
+                  <div class="input"><input type="file" name="file1"></div>
+                </div>
+                <div class="c6 s12">
+                  <label class="">{%trans "Verification document"%}</label>
+                  <div class="input"><input type="file" name="file2"></div>
+                </div>
+              </div>
+
+
+
+
+
+        <footer class="txtRa mT10">
+          {%if editMode%}<a class="btn secondary outline" href="{{url.that}}?id={{requestGET.id}}">{%trans "Cancel"%}</a>{%endif%}
+          <button class="btn primary">{%if editMode%}{%trans "Edit"%}{%else%}{%trans "Add"%}{%endif%}</button>
+         </footer>
+      </div>
+      {%else%}
+      <div class="msg warn2 txtC txtB fs14">{%trans "Can not add any user to this occasion"%}</div>
+        {%endif%}
+
+    </div>
+  </div>
+  <div class="mT10">
+
+      {%if userOccasionList%}
+      <div class="tblBox">
+        <table class="tbl1 v4">
+          <thead class="">
+            <tr>
+
+              <th>{%trans "Name"%}</th>
+              <th>{%trans "Mobile"%}</th>
+              <th class="collapsing2">{%trans "Nationalcode"%} / {%trans "Pasport code"%}</th>
+              <th class="collapsing2">{%trans "Gender"%}</th>
+              <th class="collapsing2">{%trans "Marital"%}</th>
+              <th class="collapsing2">{%trans "Protection count"%}</th>
+              <th>{%trans "Nationality"%}</th>
+              <th>{%trans "City"%}</th>
+              <th class="collapsing">{%trans "Type"%}</th>
+              <th class="collapsing"></th>
+              <th class="collapsing"></th>
+            </tr>
+          </thead>
+          <tbody class="fs14">
+          {%for key, value in userOccasionList%}
+            <tr>
+
+              <td>
+                {%if occasionDetail.status == 'registring' and dataRow.status == 'draft'%}
+                  <a href="{{url.that}}?id={{requestGET.id}}&person={{value.id}}"> <i class="sf-edit"></i> {{value.displayname}}</a>
+                {%else%}
+                {{value.displayname}}
+                {%endif%}
+              </td>
+
+              <td>{{value.mobile | fitNumber('mobile')}}</td>
+              <td class="collapsing2">{{value.nationalcode | fitNumber(false)}} {{value.pasportcode | fitNumber(false)}}</td>
+              <td class="collapsing2">{%set my_gender = value.gender%}{%trans my_gender%}</td>
+              <td class="collapsing2">{%set my_married = value.married%}{%trans my_married%}</td>
+              <td class="collapsing2">{{value.protectioncount | fitNumber}}</td>
+              <td>{{value.country_name}}</td>
+              <td>{{value.location_string}}</td>
+              <td class="collapsing">{{value.type_title}}</td>
+
+                <td class="collapsing">
+
+                  {%if value.file1%}<a target="_blank" href="{{value.file1}}"><i class="sf-attach"></i></a>{%endif%}
+                  {%if value.file2%}<a target="_blank" href="{{value.file2}}"><i class="sf-attach"></i></a>{%endif%}
+                </td>
+              <td class="collapsing">
+                {%if occasionDetail.status == 'registring' and dataRow.status == 'draft' and not requestGET.person%}<div data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'><i class="sf-trash fc-red"></i></div>{%endif%}</td>
+            </tr>
+          {%endfor%}
+          </tbody>
+        </table>
+        {%include display.pagination%}
+      </div>
+      {%else%}
+      <div class="f justify-center">
+        <div class="c8">
+            <div class="msg info2 txtB txtC fs14">{%trans "No user announced by your in this occasion"%}</div>
+        </div>
+      </div>
+      {%endif%}
+
+  </div>
+</form>

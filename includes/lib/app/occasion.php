@@ -12,19 +12,24 @@ class occasion
 		$date = date("Y-m-d");
 
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
-		if(!$protection_agent_id)
+
+		$result = [];
+		if($protection_agent_id)
 		{
-			return false;
+			$temp = \lib\db\occasion::get_active_list($date, $protection_agent_id);
+			if(!is_array($temp))
+			{
+				$temp = [];
+			}
+
+			if($temp)
+			{
+				$temp = array_map(['self', 'ready'], $temp);
+			}
+
+			$result = array_merge($result, $temp);
 		}
 
-		$result = \lib\db\occasion::get_active_list($date, $protection_agent_id);
-		if(!is_array($result))
-		{
-			$result = [];
-		}
-
-
-		$result = array_map(['self', 'ready'], $result);
 		return $result;
 	}
 

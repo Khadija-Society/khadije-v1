@@ -256,6 +256,30 @@ class protectionagentoccasion
 	}
 
 
+
+
+	public static function get_as_child($_id)
+	{
+		$id = \dash\coding::decode($_id);
+
+		if(!$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$get = \lib\db\protectionagentoccasionchild::get_detail_by_child($id, \dash\user::id());
+
+		if(!$get)
+		{
+			return false;
+		}
+
+		$result = self::ready($get);
+
+		return $result;
+	}
+
 	public static function get($_id)
 	{
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
@@ -329,22 +353,46 @@ class protectionagentoccasion
 
 	public static function old_registered_occasion()
 	{
+		$result = [];
+
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
-		if(!$protection_agent_id)
+		if($protection_agent_id)
 		{
-			return false;
+
+			$get = \lib\db\protectionagentoccasion::old_registered_occasion($protection_agent_id);
+
+			if(!$get)
+			{
+				$get = [];
+			}
+
+			$get = array_map(['self', 'ready'], $get);
+
+			$result = array_merge($result, $get);
 		}
 
-		$get = \lib\db\protectionagentoccasion::old_registered_occasion($protection_agent_id);
+		$get = \lib\db\protectionagentoccasion::old_registered_occasion_as_child(\dash\user::id());
 
 		if(!$get)
 		{
-			return false;
+			$get = [];
 		}
 
-		$result = array_map(['self', 'ready'], $get);
+		$get = array_map(['self', 'ready'], $get);
 
-		return $result;
+		$result = array_merge($result, $get);
+
+		$new_result = [];
+
+		foreach ($result as $key => $value)
+		{
+			if(!isset($new_result[$value['checkid']]))
+			{
+				$new_result[$value['checkid']] = $value;
+			}
+		}
+
+		return $new_result;
 	}
 
 

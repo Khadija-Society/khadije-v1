@@ -44,6 +44,33 @@ class protectagentuser
 		}
 	}
 
+
+
+	public static function occasion_list_by_child($_occasion_id, $_user_id)
+	{
+		$load_occasion = \lib\app\occasion::get($_occasion_id);
+
+		if(!$load_occasion)
+		{
+			return false;
+		}
+
+		$creator = \lib\db\protectionagentoccasionchild::get_creator_id_from_child(\dash\coding::decode($load_occasion['id']), \dash\user::id());
+
+
+		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'creator' => $creator]);
+
+		if(!is_array($list))
+		{
+			$list = [];
+		}
+
+		$list = array_map(['self', 'ready'], $list);
+
+		return $list;
+
+	}
+
 	public static function occasion_list($_occasion_id)
 	{
 		$load_occasion = \lib\app\occasion::get($_occasion_id);
@@ -481,6 +508,15 @@ class protectagentuser
 			$protection_agent_id = \dash\app::request('protection_agent_id');
 			$protection_agent_id = \dash\coding::decode($protection_agent_id);
 		}
+		elseif(\dash\app::request('accessAsChild'))
+		{
+			$protection_agent_id = \lib\db\protectionagentoccasionchild::get_agent_id_from_child(\dash\coding::decode($load_occasion['id']), \dash\user::id());
+			if(!$protection_agent_id)
+			{
+				\dash\notif::error(T_("Invalid agent id"));
+				return false;
+			}
+		}
 		else
 		{
 			$protection_agent_id = \lib\app\protectagent::get_current_id();
@@ -490,6 +526,9 @@ class protectagentuser
 				return false;
 			}
 		}
+
+
+
 
 		$check_duplicate =
 		[
@@ -651,6 +690,15 @@ class protectagentuser
 
 		$file1 = \dash\app::request('file1');
 		$file2 = \dash\app::request('file2');
+
+		if(\dash\app::request('accessAsChild'))
+		{
+			$creator = \lib\db\protectionagentoccasionchild::get_creator_id_from_child(\dash\coding::decode($load_occasion['id']), \dash\user::id());
+			if($creator)
+			{
+				$args['creator'] = $creator;
+			}
+		}
 
 		$args['protection_occasion_id'] = $occation_id;
 		$args['protection_agent_id']    = $protection_agent_id;

@@ -20,6 +20,15 @@ class view
 		{
 			\dash\data::enableProtection($load_protection_agent);
 		}
+		else
+		{
+			if($load_protection_agent = \lib\db\protectionagentoccasionchild::check_is_child(\dash\user::id()))
+			{
+				\dash\data::enableProtection($load_protection_agent);
+				\dash\data::accessAsChild(true);
+			}
+		}
+
 	}
 }
 ?>

@@ -16,6 +16,8 @@ class view
 		{
 			$occasion = [];
 		}
+
+
 		\dash\data::occasionList($occasion);
 
 
