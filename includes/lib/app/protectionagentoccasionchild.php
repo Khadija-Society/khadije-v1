@@ -81,22 +81,35 @@ class protectionagentoccasionchild
 		$check_duplicate = \lib\db\protectionagentoccasionchild::get($check);
 		if(isset($check_duplicate['id']))
 		{
-			\dash\notif::error(T_("This mobile already added"));
-			return false;
+			if(isset($check_duplicate['status']) && $check_duplicate['status'] === 'deleted')
+			{
+				// reenable record
+				\lib\db\protectionagentoccasionchild::update(['status' => 'enable', 'datemodified' => date("Y-m-d H:i:s")], $check_duplicate['id']);
+			}
+			else
+			{
+				\dash\notif::error(T_("This mobile already added"));
+				return false;
+			}
 		}
-
-		unset($check['limit']);
-
-		$check['datecreated'] = date("Y-m-d H:i:s");
-		$check['capacity']    = $capacity;
-		$check['displayname']    = $displayname;
-
-		$insert_id = \lib\db\protectionagentoccasionchild::insert($check);
-
-		if(!$insert_id)
+		else
 		{
-			\dash\notif::error(T_("Can not add yoru data"));
-			return false;
+
+			unset($check['limit']);
+
+			$check['datecreated'] = date("Y-m-d H:i:s");
+			$check['capacity']    = $capacity;
+			$check['displayname'] = $displayname;
+			$check['status']      = 'enable';
+
+			$insert_id = \lib\db\protectionagentoccasionchild::insert($check);
+
+			if(!$insert_id)
+			{
+				\dash\notif::error(T_("Can not add yoru data"));
+				return false;
+			}
+
 		}
 
 		\dash\notif::ok(T_("Access created"));
@@ -128,6 +141,7 @@ class protectionagentoccasionchild
 		[
 			'protection_occasion_id' => \dash\coding::decode($_occasion_id),
 			'protection_agent_id'    => \dash\coding::decode(a($load_protection_agent_occasion, 'protection_agent_id')),
+			'protection_agent_occasion_child.status'                 => 'enable',
 		];
 
 		$get = \lib\db\protectionagentoccasionchild::get($check, ['public_show_field' => 'protection_agent_occasion_child.*, users.mobile', 'master_join' => 'INNER JOIN users ON users.id = protection_agent_occasion_child.user_id']);
@@ -175,7 +189,17 @@ class protectionagentoccasionchild
 			return false;
 		}
 
-		\lib\db\protectionagentoccasionchild::remove($get['id']);
+		$check_added = \lib\db\protectionagentuser::get(['creator' => $get['id'], 'limit' => 1]);
+		if(isset($check_added['id']))
+		{
+			\lib\db\protectionagentoccasionchild::update(['status' => 'deleted', 'datemodified' => date("Y-m-d H:i:s")], $get['id']);
+		}
+		else
+		{
+			// check any added and set status on deleted
+			// or remove record
+			\lib\db\protectionagentoccasionchild::remove($get['id']);
+		}
 
 		\dash\notif::ok(T_("Access removed"));
 

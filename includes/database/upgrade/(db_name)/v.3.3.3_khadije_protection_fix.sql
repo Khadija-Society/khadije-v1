@@ -4,6 +4,7 @@ CREATE TABLE `protection_agent_occasion_child` (
 `protection_agent_id` int UNSIGNED NOT NULL,
 `user_id` int UNSIGNED NOT NULL,
 `capacity` int  NULL DEFAULT NULL,
+`status` enum('enable', 'disable', 'deleted') NULL DEFAULT NULL,
 `displayname` varchar(200)  NULL DEFAULT NULL,
 `desc` text  NULL DEFAULT NULL,
 `datemodified` datetime  NULL DEFAULT NULL,
@@ -16,4 +17,4 @@ CONSTRAINT `protection_agent_occasion_child_agent_id` FOREIGN KEY (`protection_a
 
 
 ALTER TABLE `protection_user_agent_occasion` ADD `creator` int UNSIGNED NULL DEFAULT NULL;
-ALTER TABLE CONSTRAINT `protection_user_agent_occasion_creator` FOREIGN KEY (`creator`) REFERENCES `protection_agent_occasion_child` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `protection_user_agent_occasion` ADD CONSTRAINT `protection_user_agent_occasion_creator` FOREIGN KEY (`creator`) REFERENCES `protection_agent_occasion_child` (`id`) ON UPDATE CASCADE;
