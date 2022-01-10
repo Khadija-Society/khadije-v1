@@ -4,6 +4,7 @@ CREATE TABLE `protection_agent_occasion_child` (
 `protection_agent_id` int UNSIGNED NOT NULL,
 `user_id` int UNSIGNED NOT NULL,
 `capacity` int  NULL DEFAULT NULL,
+`displayname` varchar(200)  NULL DEFAULT NULL,
 `desc` text  NULL DEFAULT NULL,
 `datemodified` datetime  NULL DEFAULT NULL,
 `datecreated` datetime  NULL DEFAULT NULL,

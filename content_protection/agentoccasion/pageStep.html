@@ -22,6 +22,15 @@
 	</div>
 
 	<div class="c s4">
+		<a class="dcard {%if url.child == 'access'%}active{%endif%}" href='{{url.this}}/access?id={{requestGET.id}}'>
+			<div class="statistic sm">
+				<div class="value mB10"><i class="sf-user-secret"></i></div>
+				<div class="label">{%trans "Access"%}</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="c s4">
 		<a class="dcard {%if url.child == 'bank'%}active{%endif%}" href='{{url.this}}/bank?id={{requestGET.id}}'>
 			<div class="statistic sm">
 				<div class="value mB10"><i class="sf-card"></i></div>
