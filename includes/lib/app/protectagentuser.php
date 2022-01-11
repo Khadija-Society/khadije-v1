@@ -316,9 +316,23 @@ class protectagentuser
 		$protection_agent_id = \lib\app\protectagent::get_current_id();
 		if(!$protection_agent_id)
 		{
-			\dash\notif::error(T_("Invalid agent id"));
-			return false;
+			if(a($_args, 'accessAsChild'))
+			{
+				$protection_agent_id = \lib\db\protectionagentoccasionchild::get_agent_id_from_child($occation_id, \dash\user::id());
+				if(!$protection_agent_id)
+				{
+					\dash\notif::error(T_("Invalid agent id"));
+					return false;
+				}
+
+			}
+			else
+			{
+				\dash\notif::error(T_("Invalid agent id"));
+				return false;
+			}
 		}
+
 
 		$check =
 		[

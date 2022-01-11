@@ -22,8 +22,9 @@ class model
 		{
 			$post =
 			[
-				'occation_id'  => \dash\data::occasionID(),
-				'protectagentuser_id'  => \dash\request::post('id'),
+				'occation_id'         => \dash\data::occasionID(),
+				'protectagentuser_id' => \dash\request::post('id'),
+				'accessAsChild'       => \dash\url::child() === 'child',
 			];
 
 			$reault = \lib\app\protectagentuser::remove($post);
