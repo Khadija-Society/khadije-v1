@@ -2,30 +2,13 @@
 namespace content_a\protection\access;
 
 
-class controller
+class controller extends \content_protection\agentoccasion\access\controller
 {
 	public static function routing()
 	{
 		\content_a\protection\main::check();
 
-		$id = \dash\request::get('id');
-		$load = \lib\app\protectionagentoccasion::get($id);
-		if(!$load)
-		{
-			\dash\header::status(404);
-		}
-
-		\dash\data::dataRow($load);
-
-		if(isset($load['protection_occasion_id']))
-		{
-			\dash\data::occasionID($load['protection_occasion_id']);
-			\dash\data::occasionDetail(\lib\app\occasion::get($load['protection_occasion_id']));
-				if(\dash\data::occasionDetail_status() === 'deleted')
-			{
-				\dash\header::status(404);
-			}
-		}
+		parent::routing();
 
 	}
 }
