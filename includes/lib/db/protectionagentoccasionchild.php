@@ -24,6 +24,28 @@ class protectionagentoccasionchild
 		return $result;
 	}
 
+	public static function get_detail_from_child($_occasion_id, $_user_id)
+	{
+		$query  =
+		"
+			SELECT
+				protection_agent_occasion_child.*
+			FROM
+				protection_agent_occasion_child
+			WHERE
+				protection_agent_occasion_child.user_id = $_user_id AND
+				protection_agent_occasion_child.status = 'enable' AND
+				protection_agent_occasion_child.protection_occasion_id = $_occasion_id
+			LIMIT 1
+		";
+
+
+		$result = \dash\db::get($query, null, true);
+
+		return $result;
+	}
+
+
 	public static function get_agent_id_from_child($_occasion_id, $_user_id)
 	{
 		$query  =

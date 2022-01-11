@@ -81,6 +81,12 @@ class protectionagentuser
 	}
 
 
+	public static function get_count()
+	{
+		return \dash\db\config::public_get_count('protection_user_agent_occasion', ...func_get_args());
+	}
+
+
 	/**
 	 * get protection_user_agent_occasionprice detail
 	 *

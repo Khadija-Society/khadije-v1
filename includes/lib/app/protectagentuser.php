@@ -535,6 +535,28 @@ class protectagentuser
 				\dash\notif::error(T_("Invalid agent id"));
 				return false;
 			}
+
+			if(!$_id)
+			{
+				// in add new chaild check capacity
+				$access_detail = \lib\db\protectionagentoccasionchild::get_detail_from_child(\dash\coding::decode($load_occasion['id']), \dash\user::id());
+				if(isset($access_detail['capacity']) && is_numeric($access_detail['capacity']))
+				{
+					$creator = \lib\db\protectionagentoccasionchild::get_creator_id_from_child(\dash\coding::decode($load_occasion['id']), \dash\user::id());
+					$total_added_by_me = \lib\db\protectionagentuser::get_count(['protection_occasion_id' => \dash\coding::decode($load_occasion['id']), 'creator' => $creator]);
+
+					$total_added_by_me = floatval($total_added_by_me);
+					if($total_added_by_me >= floatval($access_detail['capacity']))
+					{
+						\dash\notif::error(T_("Your capacity is full. You can not add any user to this list"));
+						return false;
+					}
+
+				}
+
+			}
+
+
 		}
 		else
 		{
