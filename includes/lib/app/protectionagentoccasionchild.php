@@ -143,7 +143,7 @@ class protectionagentoccasionchild
 
 			if(!$insert_id)
 			{
-				\dash\notif::error(T_("Can not add yoru data"));
+				\dash\notif::error(T_("Can not add your data"));
 				return false;
 			}
 

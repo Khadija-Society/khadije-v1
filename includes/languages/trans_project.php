@@ -72,7 +72,7 @@ class twigTransTerms
 	echo T_("Hesab");                                                                 // Line 39
 	echo T_("Shaba");                                                                 // Line 117
 	echo T_("Card");                                                                  // Line 54
-	echo T_("Other");                                                                 // Line 48
+	echo T_("Other");                                                                 // Line 49
 	echo T_("Gift");                                                                  // Line 81
 	echo T_("Enter bank name");                                                       // Line 15
 	echo T_("Pay type");                                                              // Line 109
@@ -215,7 +215,7 @@ class twigTransTerms
 	echo T_("Please choose city");                                                    // Line 60
 
 	//-------------------------------------------------content_agent/home/display.html
-	echo T_("Reports");                                                               // Line 59
+	echo T_("Reports");                                                               // Line 68
 	echo T_("Agent Place");                                                           // Line 16
 	echo T_("Assessment Item");                                                       // Line 14
 	echo T_("Servant");                                                               // Line 80
@@ -468,31 +468,31 @@ class twigTransTerms
 
 	//--------------------------------------------------content/old/v2/donateForm.html
 	echo T_("List of last success donations");                                        // Line 90
-	echo T_("Requested");                                                             // Line 131
-	echo T_("Your help");                                                             // Line 137
-	echo T_("Enter a valid number");                                                  // Line 137
+	echo T_("Requested");                                                             // Line 130
+	echo T_("Your help");                                                             // Line 136
+	echo T_("Enter a valid number");                                                  // Line 136
 	echo T_("Pay");                                                                   // Line 94
 	echo T_("First name");                                                            // Line 13
-	echo T_("Your name");                                                             // Line 164
-	echo T_("Enter a valid name");                                                    // Line 164
-	echo T_("Full name");                                                             // Line 170
+	echo T_("Your name");                                                             // Line 163
+	echo T_("Enter a valid name");                                                    // Line 163
+	echo T_("Full name");                                                             // Line 169
 	echo T_("Enter a valid last name");                                               // Line 159
 	echo T_("Enter a valid mobile");                                                  // Line 170
 	echo T_("Enter a valid email");                                                   // Line 118
-	echo T_("Intent");                                                                // Line 201
-	echo T_("Intention to donate this fee");                                          // Line 203
+	echo T_("Intent");                                                                // Line 200
+	echo T_("Intention to donate this fee");                                          // Line 202
 	echo T_("Enter a valid niyat");                                                   // Line 190
 	echo T_("Pay Amount");                                                            // Line 27
 	echo T_("Enter a valid amount");                                                  // Line 240
-	echo T_("Total Pay Amount");                                                      // Line 253
-	echo T_("Show in public doners list?");                                           // Line 273
-	echo T_("Check doners list");                                                     // Line 273
-	echo T_("Yes, show my name and price");                                           // Line 276
-	echo T_("No, Show as anonymous");                                                 // Line 281
-	echo T_("Manual");                                                                // Line 290
-	echo T_("Normal");                                                                // Line 290
-	echo T_("Admin direct pay");                                                      // Line 291
-	echo T_("Spending method");                                                       // Line 311
+	echo T_("Total Pay Amount");                                                      // Line 252
+	echo T_("Show in public doners list?");                                           // Line 272
+	echo T_("Check doners list");                                                     // Line 272
+	echo T_("Yes, show my name and price");                                           // Line 275
+	echo T_("No, Show as anonymous");                                                 // Line 280
+	echo T_("Manual");                                                                // Line 289
+	echo T_("Normal");                                                                // Line 289
+	echo T_("Admin direct pay");                                                      // Line 290
+	echo T_("Spending method");                                                       // Line 310
 
 	//------------------------------------------------------content/old/v2/footer.html
 	echo T_("Enter");                                                                 // Line 137
@@ -527,8 +527,8 @@ class twigTransTerms
 	echo T_("Buy book");                                                              // Line 26
 
 	//------------------------------------------------------content/doyon/display.html
-	echo T_("Your Name");                                                             // Line 172
-	echo T_("Your mobile number");                                                    // Line 183
+	echo T_("Your Name");                                                             // Line 171
+	echo T_("Your mobile number");                                                    // Line 182
 	echo T_("Please Choose one type of deyn");                                        // Line 34
 
 	//---------------------------------------------------content/template/dafault.html
@@ -540,17 +540,17 @@ class twigTransTerms
 	echo T_("Your Message");                                                          // Line 97
 
 	//--------------------------------------------------content/donate/donateForm.html
-	echo T_("List of last success donations of yours");                               // Line 82
-	echo T_("Your niyat is");                                                         // Line 84
+	echo T_("List of last success donations of yours");                               // Line 81
+	echo T_("Your niyat is");                                                         // Line 83
 	echo T_("Untitled");                                                              // Line 33
 	echo T_("Anonymous");                                                             // Line 162
-	echo T_("Thanks");                                                                // Line 107
-	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 172
-	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 183
-	echo T_("It is optional and depending on your intention can enter it");           // Line 203
-	echo T_("Rial");                                                                  // Line 364
-	echo T_("Amount of your donation");                                               // Line 212
-	echo T_("Custom Amount");                                                         // Line 345
+	echo T_("Thanks");                                                                // Line 106
+	echo T_("Enter first name and last name to show in doners list or leave it blank");// Line 171
+	echo T_("If you enter your mobile, we send verify of payment via SMS to this number");// Line 182
+	echo T_("It is optional and depending on your intention can enter it");           // Line 202
+	echo T_("Rial");                                                                  // Line 363
+	echo T_("Amount of your donation");                                               // Line 211
+	echo T_("Custom Amount");                                                         // Line 344
 
 	//---------------------------------------------content/donate/product/display.html
 	echo T_("Sum");                                                                   // Line 14
@@ -747,7 +747,7 @@ class twigTransTerms
 	//-------------------------------------------------public_html/static/js/script.js
 
 	//--------------------------------------content_a/protection/occasion/display.html
-	echo T_("Please enter the information of the people to whom you want to donate a support package on this occasion.");// Line 13
+	echo T_("Please enter the information of the people to whom you want to donate a support package on this occasion.");// Line 8
 	echo T_("It is not possible to register or edit people on this occasion");        // Line 28
 	echo T_("Cancel");                                                                // Line 331
 
@@ -783,9 +783,9 @@ class twigTransTerms
 
 	//------------------------------------------content_a/protection/home/display.html
 	echo T_("Registered occassion");                                                  // Line 10
-	echo T_("New occassion");                                                         // Line 31
-	echo T_("No support program has been announced by the institute at this time");   // Line 50
-	echo T_("Please follow the news of the institute to complete the steps through this page if the distribution of livelihood packages by the institute started on the occasion.");// Line 52
+	echo T_("New occassion");                                                         // Line 35
+	echo T_("No support program has been announced by the institute at this time");   // Line 54
+	echo T_("Please follow the news of the institute to complete the steps through this page if the distribution of livelihood packages by the institute started on the occasion.");// Line 56
 
 	//----------------------------------------content_a/protection/report/display.html
 	echo T_("Please provide your written report on the process and details of the distribution of the institution's support packages to the persons covered by your announcement.");// Line 12
@@ -793,26 +793,27 @@ class twigTransTerms
 	echo T_("Send report");                                                           // Line 16
 
 	//----------------------------------------------content_a/protection/pageStep.html
-	echo T_("Bank account detail");                                                   // Line 28
-	echo T_("Introducing people");                                                    // Line 31
+	echo T_("Access");                                                                // Line 28
+	echo T_("Bank account detail");                                                   // Line 37
+	echo T_("Introducing people");                                                    // Line 41
 	echo T_("Image report");                                                          // Line 62
-	echo T_("Pay detail");                                                            // Line 39
+	echo T_("Pay detail");                                                            // Line 48
 
 	//----------------------------------------content_a/protection/signup/display.html
 	echo T_("List of items in this occasion");                                        // Line 17
 	echo T_("Register");                                                              // Line 30
 
-	//-----------------------------------------content_a/protection/users/display.html
-	echo T_("Your capacity for add user");                                            // Line 15
+	//-------------------------------------------content_a/protection/users/users.html
+	echo T_("Your capacity for add user");                                            // Line 10
 	echo T_("Pasport code");                                                          // Line 101
 	echo T_("Name & family");                                                         // Line 116
 	echo T_("Protection count");                                                      // Line 125
 	echo T_("Choose type");                                                           // Line 187
 	echo T_("National card photo");                                                   // Line 181
 	echo T_("Verification document");                                                 // Line 207
-	echo T_("Can not add any user to this occasion");                                 // Line 166
+	echo T_("Can not add any user to this occasion");                                 // Line 161
 	echo T_("Nationality");                                                           // Line 23
-	echo T_("No user announced by your in this occasion");                            // Line 229
+	echo T_("No user announced by your in this occasion");                            // Line 224
 
 	//-------------------------------------------content_a/service/detail/display.html
 	echo T_("Save all");                                                              // Line 78
@@ -972,7 +973,7 @@ class twigTransTerms
 	echo T_("type");                                                                  // Line 6
 	echo T_("example");                                                               // Line 7
 	echo T_("Constraints");                                                           // Line 8
-	echo T_("Optional");                                                              // Line 53
+	echo T_("Optional");                                                              // Line 28
 	echo T_("Parameters");                                                            // Line 18
 	echo T_("cURL");                                                                  // Line 21
 	echo T_("Response");                                                              // Line 29
@@ -1207,6 +1208,11 @@ class twigTransTerms
 	echo T_("Reject request");                                                        // Line 38
 	echo T_("Accept request");                                                        // Line 46
 
+	//-------------------------------------content_protection/agentoccasion/child.html
+	echo T_("Displayname");                                                           // Line 23
+	echo T_("Count allow add child");                                                 // Line 28
+	echo T_("Singuped");                                                              // Line 59
+
 	//------------------------------content_protection/agentoccasion/bank/display.html
 	echo T_("Save for this occasion");                                                // Line 38
 
@@ -1219,7 +1225,7 @@ class twigTransTerms
 
 	//----------------------------------content_protection/agentoccasion/pageStep.html
 	echo T_("Edit agent");                                                            // Line 10
-	echo T_("Introducing Supported user");                                            // Line 50
+	echo T_("Introducing Supported user");                                            // Line 59
 
 	//-------------------------content_protection/agentoccasion/allreport/display.html
 
@@ -1244,6 +1250,9 @@ class twigTransTerms
 	echo T_("Search in book transaction");                                            // Line 78
 	echo T_("mobile");                                                                // Line 58
 	echo T_("search");                                                                // Line 59
+
+	//--------------------------------------------------content_m/donates/display.html
+	echo T_("Total Donation");                                                        // Line 11
 
 	//---------------------------------------content_m/familytrip/options/display.html
 	echo T_("Family trip options");                                                   // Line 23
@@ -1618,7 +1627,6 @@ class twigTransTerms
 	echo T_("Print");                                                                 // Line 63
 
 	//---------------------------------------------------content_m/donate/display.html
-	echo T_("Total Donation");                                                        // Line 11
 	echo T_("Today Donation");                                                        // Line 20
 	echo T_("Donation Count");                                                        // Line 29
 	echo T_("Donation Average");                                                      // Line 37
@@ -1638,16 +1646,16 @@ class twigTransTerms
 	echo T_("Search in consulting");                                                  // Line 44
 
 	//-----------------------------------------------------content_m/home/display.html
-	echo T_("Trip");                                                                  // Line 17
-	echo T_("Service");                                                               // Line 26
-	echo T_("Signup karbala");                                                        // Line 37
-	echo T_("Application setting");                                                   // Line 72
-	echo T_("Sms management");                                                        // Line 101
-	echo T_("Add trip");                                                              // Line 158
-	echo T_("Festival");                                                              // Line 167
-	echo T_("Tankyou message");                                                       // Line 177
-	echo T_("Meeting");                                                               // Line 188
-	echo T_("Doyon");                                                                 // Line 362
+	echo T_("Trip");                                                                  // Line 18
+	echo T_("Service");                                                               // Line 27
+	echo T_("Signup karbala");                                                        // Line 38
+	echo T_("Application setting");                                                   // Line 73
+	echo T_("Sms management");                                                        // Line 102
+	echo T_("Add trip");                                                              // Line 159
+	echo T_("Festival");                                                              // Line 168
+	echo T_("Tankyou message");                                                       // Line 178
+	echo T_("Meeting");                                                               // Line 189
+	echo T_("Doyon");                                                                 // Line 374
 
 	//----------------------------------------content_m/options/cityplace/display.html
 	echo T_("List of city place");                                                    // Line 22
