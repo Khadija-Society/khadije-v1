@@ -645,6 +645,25 @@ class protectagentuser
 			}
 		}
 
+		if($nationalcode && !$_id)
+		{
+			// check this nationalcode not added in last year
+			$max_date_created = \lib\db\protectionagentuser::get_max_date_created_nationalcode($nationalcode);
+			if($max_date_created)
+			{
+				if(time() - strtotime($max_date_created) > (60*60*24*365))
+				{
+					// ok
+				}
+				else
+				{
+					\dash\notif::error(T_("Each national code can only register once a year"), 'nationalcode');
+					return false;
+				}
+			}
+
+		}
+
 		// remove this agent
 		unset($check_duplicate['protection_agent_id']);
 

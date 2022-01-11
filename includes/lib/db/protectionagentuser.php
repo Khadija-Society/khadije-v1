@@ -4,6 +4,13 @@ namespace lib\db;
 class protectionagentuser
 {
 
+	public static function get_max_date_created_nationalcode($_nationalcode)
+	{
+		$query  = "SELECT MAX(protection_user_agent_occasion.datecreated) AS `date` FROM protection_user_agent_occasion WHERE protection_user_agent_occasion.nationalcode = '$_nationalcode' ";
+		$result = \dash\db::get($query, 'date', true);
+		return $result;
+	}
+
 	public static function get_detail($_id)
 	{
 		$query  = "SELECT protection_user_agent_occasion.* FROM protection_user_agent_occasion WHERE protection_user_agent_occasion.protection_user_agent_occasion_id = $_id";
