@@ -4,45 +4,59 @@
     <div class="c6 s12 m8">
       <div class="cbox">
 
-        <p>{%trans "On this page you can set access to another to fill the list by special capacity"%}</p>
+        <p class="pA10">
 
-        <div class="f">
-          <div class="c">
-            <div class="input">
-              <input type="tel" name="cm" placeholder='{%trans "Mobile"%} *' required>
-            </div>
-          </div>
-          <div class="c">
-            <div class="mLa5">
-              <div class="input">
-                <input type="tel" name="displayname" placeholder='{%trans "Name"%}'>
-              </div>
-            </div>
-          </div>
-          <div class="c">
-            <div class="mLa5">
-              <div class="input">
-                <input type="tel" name="capacity" placeholder='{%trans "Count"%}'>
-              </div>
-            </div>
-          </div>
-          <div class="cauto">
-            <div class="mLa5">
-              <button class="btn success">{%trans "Add"%}</button>
-            </div>
-          </div>
+        افرادی که در زیر معرفی می‌کنید می‌توانند به عنوان زیرمجموعه شما در تکمیل کردن لیست افراد تحت پوشش به شما کمک کنند
+
+        <ul style="list-style: inside;">
+          <li>اگر برای هر شخص سهمیه‌ی مشخص را تعریف کنید، تنها می‌تواند به همان میزان افراد تحت پوشش معرفی کند</li>
+          <li>در صورتی که سهمیه ای به شخص اختصاص نداده باشید می‌تواند تا سقف تعریف شده برای شما، افراد را معرفی کند</li>
+          <li>طبیعی است مجموع سهمیه اختصاص داده شده به افراد زیرمجموعه نمی‌تواند بیشتر از سقف تعریف شده در این مناسبت برای شما باشد</li>
+        </ul>
+
+      </p>
+        <label for="cm">{%trans "Mobile"%} <small class="fc-red"> * {%trans "Required"%}</small></label>
+        <div class="input">
+          <input type="tel" name="cm" value="{{childDataRow.mobile}}" placeholder='09123456789 *' required id="cm">
         </div>
+
+        <label for="displayname">{%trans "Displayname"%} <small class="fc-green">{%trans "Optional"%}</small></label>
+        <div class="input">
+          <input type="text" name="displayname" value="{{childDataRow.displayname}}" id="displayname">
+        </div>
+
+        <label for="capacity">{%trans "Count allow add child"%} <small class="fc-green">{%trans "Optional"%}</small></label>
+        <div class="input">
+          <input type="tel" name="capacity" value="{{childDataRow.capacity}}" id="capacity">
+        </div>
+        <div class="txtRa">
+          {%if editMode%}
+          <div class="f">
+            <div class="cauto"><div class="btn danger" data-confirm data-data='{"remove": "remove", "id" : "{{requestGET.cid}}"}'>{%trans "Remove"%}</div></div>
+            <div class="c"></div>
+            <div class="cauto"><a href="{{url.that}}?id={{requestGET.id}}" class="btn secondary outline mRa5">{%trans "Cancel"%}</a></div>
+            <div class="cauto"><button class="btn primary">{%trans "Edit"%}</button></div>
+          </div>
+
+
+
+          {%else%}
+            <button class="btn success">{%trans "Add"%}</button>
+          {%endif%}
+
+        </div>
+
       </div>
 
       {%if childList%}
         <div class="cbox">
-      <p>{%trans "Below mobile can add new item in list"%}</p>
+      <p>لیست افراد زیرمجموعه</p>
           {%for key, value in childList%}
           <div class="msg f">
             <div class="c">{{value.mobile | fitNumber('mobile')}}</div>
             <div class="c">{{value.displayname}}</div>
             <div class="c">{%if value.capacity%} {%trans "Count"%} {{value.capacity | fitNumber}} {%endif%}</div>
-            <div class="cauto"><div class="btn danger xs" data-confirm data-data='{"remove": "remove", "id" : "{{value.id}}"}'>{%trans "Remove"%}</div></div>
+            <div class="cauto">{%if requestGET.cid == value.id%}{%else%}<a href="{{url.that}}?id={{requestGET.id}}&cid={{value.id}}" class="btn primary">{%trans "Edit"%}</a>{%endif%}</div>
           </div>
           {%endfor%}
         </div>

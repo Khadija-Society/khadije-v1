@@ -119,6 +119,57 @@ class protectionagentoccasionchild
 	}
 
 
+	public static function edit($_args, $_id)
+	{
+
+		$capacity = isset($_args['capacity']) ? $_args['capacity'] : null;
+		if($capacity && !is_numeric($capacity))
+		{
+			\dash\notif::error(T_("capacity must be a number"));
+			return false;
+		}
+
+		$capacity = intval($capacity);
+		if($capacity > 100000)
+		{
+			\dash\notif::error(T_("capacity is out of range"));
+			return false;
+		}
+
+		$mobile = isset($_args['mobile']) ? $_args['mobile'] : null;
+		$mobile = \dash\utility\filter::mobile($mobile);
+		if(!$mobile)
+		{
+			\dash\notif::error(T_("Mobile is required"));
+			return false;
+		}
+
+		$user_id = \dash\db\users::signup(['mobile' => $mobile]);
+
+
+		$displayname = isset($_args['displayname']) ? $_args['displayname'] : null;
+		if(mb_strlen($displayname) > 100)
+		{
+			$displayname = substr($displayname, 0, 99);
+		}
+
+		$update =
+		[
+			'user_id'      => $user_id,
+			'displayname'  => $displayname,
+			'capacity'     => $capacity,
+			'datemodified' => date("Y-m-d H:i:s"),
+		];
+
+		\lib\db\protectionagentoccasionchild::update($update, $_id);
+
+		\dash\notif::ok(T_("Data saved"));
+		return true;
+
+
+	}
+
+
 	public static function get($_occasion_id, $_protection_agent_id)
 	{
 
@@ -142,6 +193,32 @@ class protectionagentoccasionchild
 			'protection_occasion_id' => \dash\coding::decode($_occasion_id),
 			'protection_agent_id'    => \dash\coding::decode(a($load_protection_agent_occasion, 'protection_agent_id')),
 			'protection_agent_occasion_child.status'                 => 'enable',
+		];
+
+		$get = \lib\db\protectionagentoccasionchild::get($check, ['public_show_field' => 'protection_agent_occasion_child.*, users.mobile', 'master_join' => 'INNER JOIN users ON users.id = protection_agent_occasion_child.user_id']);
+
+
+		return $get;
+
+
+
+
+	}
+
+
+
+	public static function get_by_id($_id)
+	{
+		if(!is_numeric($_id))
+		{
+			return false;
+		}
+
+
+		$check =
+		[
+			'protection_agent_occasion_child.id' => $_id,
+			'limit' => 1,
 		];
 
 		$get = \lib\db\protectionagentoccasionchild::get($check, ['public_show_field' => 'protection_agent_occasion_child.*, users.mobile', 'master_join' => 'INNER JOIN users ON users.id = protection_agent_occasion_child.user_id']);

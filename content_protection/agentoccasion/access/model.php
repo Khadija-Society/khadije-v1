@@ -27,12 +27,27 @@ class model
 				'capacity'                  => \dash\request::post('capacity'),
 			];
 
+			if(\dash\data::editMode())
+			{
+				$reault = \lib\app\protectionagentoccasionchild::edit($post, \dash\request::get('cid'));
+			}
+			else
+			{
+				$reault = \lib\app\protectionagentoccasionchild::add($post);
+			}
 
-			$reault = \lib\app\protectionagentoccasionchild::add($post);
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::pwd();
+				if(\dash\data::editMode())
+				{
+					\dash\redirect::to(\dash\url::that(). '?id='. \dash\request::get('id'));
+
+				}
+				else
+				{
+					\dash\redirect::pwd();
+				}
 			}
 			return;
 		}

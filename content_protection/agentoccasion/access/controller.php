@@ -23,6 +23,18 @@ class controller
 			\dash\data::occasionDetail(\lib\app\occasion::get($load['protection_occasion_id']));
 		}
 
+
+		if(\dash\request::get('cid'))
+		{
+			$childDataRow = \lib\app\protectionagentoccasionchild::get_by_id(\dash\request::get('cid'));
+			if(!$childDataRow)
+			{
+				\dash\header::status(404);
+			}
+			\dash\data::editMode(true);
+			\dash\data::childDataRow($childDataRow);
+		}
+
 	}
 }
 ?>
