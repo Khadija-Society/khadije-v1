@@ -13,7 +13,7 @@ class model
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::pwd();
+				\dash\redirect::to(\dash\url::that(). '?id='. \dash\request::get('id'));
 			}
 		}
 		else
