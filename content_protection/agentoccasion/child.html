@@ -1,7 +1,7 @@
 
 <form method="post" autocomplete="off">
   <div class="f justify-center">
-    <div class="c6 s12 m8">
+    <div class="c8 s12 m8">
       <div class="cbox">
 
         <p class="pA10">
@@ -56,6 +56,8 @@
             <div class="c">{{value.mobile | fitNumber('mobile')}}</div>
             <div class="c">{{value.displayname}}</div>
             <div class="c">{%if value.capacity%} {%trans "Count"%} {{value.capacity | fitNumber}} {%endif%}</div>
+            <div class="c">{%if value.total_signuped%} <span><a href="{{url.this}}/users?id={{requestGET.id}}&creator={{value.id}}">{%trans "Singuped"%} {{value.total_signuped | fitNumber}} </a></span> {%endif%}</div>
+
             <div class="cauto">{%if requestGET.cid == value.id%}{%else%}<a href="{{url.that}}?id={{requestGET.id}}&cid={{value.id}}" class="btn primary">{%trans "Edit"%}</a>{%endif%}</div>
           </div>
           {%endfor%}

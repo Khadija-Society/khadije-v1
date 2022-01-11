@@ -21,6 +21,11 @@ class view
 			$args['pagination'] = false;
 		}
 
+		if(\dash\request::get('creator') && is_numeric(\dash\request::get('creator')))
+		{
+			$args['creator'] = \dash\request::get('creator');
+		}
+
 		$list = \lib\app\protectagentuser::admin_occasion_list($occasion_id, \dash\data::protectionAgentID(), $args);
 
 

@@ -266,7 +266,13 @@ class protectionagentoccasionchild
 			'protection_agent_occasion_child.status'                 => 'enable',
 		];
 
-		$get = \lib\db\protectionagentoccasionchild::get($check, ['public_show_field' => 'protection_agent_occasion_child.*, users.mobile', 'master_join' => 'INNER JOIN users ON users.id = protection_agent_occasion_child.user_id']);
+		$detail =
+		[
+			'public_show_field' => 'protection_agent_occasion_child.*, users.mobile, (SELECT COUNT(*) FROM protection_user_agent_occasion WHERE protection_user_agent_occasion.creator = protection_agent_occasion_child.id) AS `total_signuped`',
+			'master_join'       => 'INNER JOIN users ON users.id = protection_agent_occasion_child.user_id'
+		];
+
+		$get = \lib\db\protectionagentoccasionchild::get($check, $detail);
 
 
 		return $get;

@@ -71,7 +71,7 @@ class protectagentuser
 
 	}
 
-	public static function occasion_list($_occasion_id)
+	public static function occasion_list($_occasion_id, $_args = [])
 	{
 		$load_occasion = \lib\app\occasion::get($_occasion_id);
 
@@ -87,7 +87,18 @@ class protectagentuser
 			return false;
 		}
 
-		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $protection_agent_id]);
+		$where =
+		[
+			'protection_occasion_id' => \dash\coding::decode($_occasion_id),
+			'protection_agent_id' => $protection_agent_id,
+		];
+
+		if(a($_args, 'creator'))
+		{
+			$where['creator'] = $_args['creator'];
+		}
+
+		$list = \lib\db\protectionagentuser::admin_get($where);
 
 		if(!is_array($list))
 		{
@@ -165,7 +176,18 @@ class protectagentuser
 			return false;
 		}
 
-		$list = \lib\db\protectionagentuser::admin_get(['protection_occasion_id' => \dash\coding::decode($_occasion_id), 'protection_agent_id' => $agent_id], $_args);
+		$where =
+		[
+			'protection_occasion_id' => \dash\coding::decode($_occasion_id),
+			'protection_agent_id'    => $agent_id,
+		];
+
+		if(a($_args, 'creator'))
+		{
+			$where['creator'] = $_args['creator'];
+		}
+
+		$list = \lib\db\protectionagentuser::admin_get($where, $_args);
 
 		if(!is_array($list))
 		{

@@ -15,7 +15,13 @@ class view
 
 		$occasion_id = \dash\data::occasionID();
 
-		$list = \lib\app\protectagentuser::occasion_list($occasion_id);
+		$args = [];
+		if(\dash\request::get('creator') && is_numeric(\dash\request::get('creator')))
+		{
+			$args['creator'] = \dash\request::get('creator');
+		}
+
+		$list = \lib\app\protectagentuser::occasion_list($occasion_id, $args);
 		\dash\data::userOccasionList($list);
 
 
