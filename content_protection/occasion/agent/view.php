@@ -37,7 +37,6 @@ class view
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\protectionagentoccasion::$sort_field, \dash\url::this());
 		$dataTable = \lib\app\protectionagentoccasion::list(\dash\request::get('q'), $args);
 
-
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);
 

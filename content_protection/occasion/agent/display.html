@@ -58,8 +58,10 @@
       <tr>
         <th class="collapsing"></th>
         <th>{%trans "Agent"%}</th>
-        <th>{%trans "Request Status"%}</th>
-        <th>{%trans "Count Supported user"%}</th>
+        <th class="">{%trans "Request Status"%}</th>
+        <th class="collapsing">{%trans "Count Supported user"%}</th>
+        <th class="collapsing">{%trans "Gallery"%}</th>
+        <th class="collapsing">{%trans "Report"%}</th>
         <th class="collapsing"></th>
       </tr>
     </thead>
@@ -70,8 +72,11 @@
 
         <td class="collapsing">{{value.id | fitNumber}}</td>
         <td>{{value.agent_title}}</td>
-        <td>{%set myStatus = value.status%}{%trans myStatus%}</td>
-        <td>{{value.count_user | fitNumber}}</td>
+        <td class="">{%set myStatus = value.status%}{%trans myStatus%}</td>
+        <td class="collapsing">{{value.count_user | fitNumber}}</td>
+        <td class="collapsing">{%if value.gallery%}<i class="sf-check fc-green"></i>{%else%}<i class="sf-times fc-red"></i>{%endif%}</td>
+        <td class="collapsing">{%if value.report%}<i class="sf-check fc-green"></i>{%else%}<i class="sf-times fc-red"></i>{%endif%}</td>
+
         <td class="collapsing">
 
           <a href="{{url.this}}/user?id={{value.protection_occasion_id}}&agent={{value.protection_agent_id}}" class="btn info outline mLR10">{%trans "Show users"%}</a>
