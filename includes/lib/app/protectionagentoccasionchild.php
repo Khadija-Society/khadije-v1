@@ -52,6 +52,34 @@ class protectionagentoccasionchild
 			return false;
 		}
 
+		if($capacity)
+		{
+			// check max limit
+			$sum_capacity = \lib\db\protectionagentoccasionchild::get_sum_capacity(\dash\coding::decode($occasion_id), \dash\coding::decode(a($load_protection_agent_occasion, 'protection_agent_id')));
+			$sum_capacity = floatval($sum_capacity);
+
+			$new_capacity = $sum_capacity + $capacity;
+
+			$total_capacity = \lib\db\protectionagentoccasion::get_allow(\dash\coding::decode(a($load_protection_agent_occasion, 'protection_agent_id')), \dash\coding::decode($occasion_id));
+
+			if(isset($total_capacity['capacity']))
+			{
+				$total_capacity = floatval($total_capacity['capacity']);
+			}
+			else
+			{
+				$total_capacity = 0;
+			}
+
+
+			if($total_capacity && $new_capacity > $total_capacity)
+			{
+				\dash\notif::error(T_("Capacity is larger than total allowed capacity in this occaseion"), 'capacity');
+				return false;
+			}
+
+		}
+
 		$mobile = isset($_args['mobile']) ? $_args['mobile'] : null;
 		$mobile = \dash\utility\filter::mobile($mobile);
 		if(!$mobile)
@@ -59,6 +87,7 @@ class protectionagentoccasionchild
 			\dash\notif::error(T_("Mobile is required"));
 			return false;
 		}
+
 
 		$user_id = \dash\db\users::signup(['mobile' => $mobile]);
 
@@ -78,13 +107,21 @@ class protectionagentoccasionchild
 			'limit'                  => 1,
 		];
 
+
 		$check_duplicate = \lib\db\protectionagentoccasionchild::get($check);
 		if(isset($check_duplicate['id']))
 		{
 			if(isset($check_duplicate['status']) && $check_duplicate['status'] === 'deleted')
 			{
-				// reenable record
-				\lib\db\protectionagentoccasionchild::update(['status' => 'enable', 'datemodified' => date("Y-m-d H:i:s")], $check_duplicate['id']);
+				$update =
+				[
+					'capacity'     => $capacity,
+					'displayname'  => $displayname,
+					'status'       => 'enable',
+					'datemodified' => date("Y-m-d H:i:s")
+				];
+
+				\lib\db\protectionagentoccasionchild::update($update, $check_duplicate['id']);
 			}
 			else
 			{
@@ -134,6 +171,40 @@ class protectionagentoccasionchild
 		{
 			\dash\notif::error(T_("capacity is out of range"));
 			return false;
+		}
+
+		if($capacity)
+		{
+			$load = \lib\db\protectionagentoccasionchild::get(['id' => $_id, 'limit' => 1]);
+			if(!a($load, 'protection_agent_id') || !a($load, 'protection_occasion_id'))
+			{
+				\dash\notif::error(T_("Invalid id"));
+				return false;
+			}
+			// check max limit
+			$sum_capacity = \lib\db\protectionagentoccasionchild::get_sum_capacity(a($load, 'protection_occasion_id'), a($load, 'protection_agent_id'));
+			$sum_capacity = floatval($sum_capacity);
+
+			$new_capacity = $sum_capacity + $capacity;
+
+			$total_capacity = \lib\db\protectionagentoccasion::get_allow(a($load, 'protection_agent_id'), a($load, 'protection_occasion_id'));
+
+			if(isset($total_capacity['capacity']))
+			{
+				$total_capacity = floatval($total_capacity['capacity']);
+			}
+			else
+			{
+				$total_capacity = 0;
+			}
+
+
+			if($total_capacity && $new_capacity > $total_capacity)
+			{
+				\dash\notif::error(T_("Capacity is larger than total allowed capacity in this occaseion"), 'capacity');
+				return false;
+			}
+
 		}
 
 		$mobile = isset($_args['mobile']) ? $_args['mobile'] : null;
