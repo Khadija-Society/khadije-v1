@@ -422,10 +422,29 @@ class protectionagentoccasion
 	}
 
 
-
-
-	public static function edit_gallery($_args, $_type)
+	public static function field_list()
 	{
+		return
+		[
+			'gallery'           => 'گزارش تصویری',
+			'film'              => 'فیلم',
+			'simanews'          => 'خبر سیما',
+			'clip'              => 'کلیپ تدوین شده',
+			'videodistribution' => 'گزارش از محل توزیع',
+		];
+	}
+
+
+
+
+	public static function edit_gallery($_args, $_type, $_field)
+	{
+		if(!$_field || !in_array($_field, ['gallery','film','simanews','clip','videodistribution']))
+		{
+			\dash\notif::error(T_("Invalid field"));
+			return false;
+		}
+
 		$occation_id               = isset($_args['occation_id']) ? $_args['occation_id'] : null;
 		$protectionagetnoccasionid = isset($_args['protectionagetnoccasionid']) ? $_args['protectionagetnoccasionid'] : null;
 		$file_new                  = isset($_args['file_new']) ? $_args['file_new'] : null;
@@ -472,7 +491,7 @@ class protectionagentoccasion
 			return false;
 		}
 
-		$old_gallery = $get['gallery'];
+		$old_gallery = $get[$_field];
 		$old_gallery = json_decode($old_gallery, true);
 		if(!is_array($old_gallery))
 		{
@@ -508,7 +527,7 @@ class protectionagentoccasion
 
 		$old_gallery = json_encode($old_gallery, JSON_UNESCAPED_UNICODE);
 
-		$update = ['gallery' => $old_gallery];
+		$update = [$_field => $old_gallery];
 
 		\lib\db\protectionagentoccasion::update($update, $id);
 

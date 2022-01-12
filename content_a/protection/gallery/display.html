@@ -3,50 +3,72 @@
 
 {%block pageContent%}
 {{block ('pageStep')}}
+<div class="f justify-center">
+  <div class="c6 s12 m8">
+    <div class="cbox">
+      <div class="msg">
+        {%trans "Please provide a visual report of the process and details of the distribution of the organization's support packages to the people covered by your announcement."%}
+        <br>
+        {%trans "You can upload photos and videos of the distribution of support packages to your covered people here"%}
+        <br>
+        گزارش‌های تصویری و چند رسانه‌ای شما می‌تواند در گروه‌های مختلف زیر قرار گیرد
+        <ul style="list-style: inside;">
+          <li>گزارش تصویری</li>
+          <li>فیلم</li>
+          <li>خبر سیما</li>
+          <li>کلیپ تدوین شده</li>
+          <li>گزارش تصویری از محل توزیع</li>
+        </ul>
+        لطفا فایل مربوط به هر گزارش را در محل مربوطه بارگزاری کنید
+        <br>
+        <idv class="fc-red">
+          بعد از انتخاب فایل حتما گزینه بارگزاری را بزنید
+        </idv>
 
-<form method="post" autocomplete="off">
-  <div class="f justify-center">
-    <div class="c6 s12 m8">
-       <div class="cbox">
-        <div class="msg">
-          {%trans "Please provide a visual report of the process and details of the distribution of the organization's support packages to the people covered by your announcement."%}
-          <br>
-          {%trans "You can upload photos and videos of the distribution of support packages to your covered people here"%}
-          <div class="fc-red">
-            {%trans "You can upload 20 files"%}
-          </div>
+      </div>
+    </div>
+
+    {%for key, value in mediaTitle%}
+
+    <div class="cbox">
+      <h3>{{value}}</h3>
+      <form method="post" autocomplete="off">
+        <input type="hidden" name="field" value="{{key}}">
+        <div class="input">
+          <input type="file" name="{{key}}">
+          <button class="addon btn secondary">بارگزاری</button>
         </div>
-
-
+        {%if false%}
         <div class="dropzone">
-          <h4>{%trans "Add to gallery"%}</h4>
-          <label for='gallery' class="btn light">{%trans "Choose or Drop file here"%}</label>
-          <input id="gallery" type="file" name="image" multiple>
+          <h4>{%trans "Add file to"%} {{value}}</h4>
+          <label for='{{key}}' class="btn light">{%trans "Choose or Drop file here"%}</label>
+          <input id="{{key}}" type="file" name="{{key}}" multiple>
           <div class="progress shadow" data-percent='30'>
             <div class="bar"></div>
             <div class="detail"></div>
           </div>
         </div>
+        {%endif%}
 
-        {%if dataTable%}
-<div class="f">
+        {%if dataTable[key]%}
+        <div class="f">
+          {%for k, v in dataTable[key]%}
+          <div class="vcard mA10 c2 s12">
+            <a href="{{v}}" target="_blank">
 
-  {%for key, value in dataTable%}
-    <div class="vcard mA10 c2 s12">
-      <a href="{{value}}" target="_blank">
-
-      <img alt="file" src="{{value}}">
-      </a>
-      <div class="footer"><div class="btn xs outline block danger " data-confirm data-data='{"remove" : "remove", "key" : "{{key}}"}'>{%trans "Remove file"%}</div></div>
+              <img alt="file" src="{{v}}">
+            </a>
+            <div class="footer txtRa"><div class=" " data-confirm data-data='{"remove" : "remove", "key" : "{{k}}", "field" : "{{key}}"}'><i class="sf-trash fc-red"></i></div></div>
+          </div>
+          {%endfor%}
+        </div>
+        {%endif%}
+      </form>
     </div>
-  {%endfor%}
-</div>
-{%endif%}
-    </div>
+    {%endfor%}
 
-    </div>
   </div>
-</form>
+</div>
 
 
 {%endblock%}
