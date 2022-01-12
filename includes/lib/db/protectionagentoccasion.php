@@ -68,6 +68,29 @@ class protectionagentoccasion
 		return $result;
 	}
 
+
+
+	public static function get_sms_mobile_list_full($_occasion_id)
+	{
+		$query  =
+		"
+			SELECT
+				protection_agent_occasion_allow.id AS `id`,
+				protection_agent.user_id AS `user_id`,
+				users.mobile,
+				users.displayname
+			FROM
+				protection_agent_occasion_allow
+			INNER JOIN protection_agent ON protection_agent.id = protection_agent_occasion_allow.protection_agent_id
+			INNER JOIN users ON users.id = protection_agent.user_id
+			WHERE
+				protection_agent_occasion_allow.protection_occasion_id = $_occasion_id
+		";
+		// var_dump($query);exit();
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	public static function set_datenotif($_ids, $_date)
 	{
 		$query  =

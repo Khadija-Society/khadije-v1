@@ -49,6 +49,32 @@ class protectionagentoccasion
 	}
 
 
+	public static function agent_send_sms_get_mobile($_occaseion)
+	{
+		$occasion_id = \dash\coding::decode($_occaseion);
+		if(!$occasion_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return null;
+		}
+
+		$get_user_id = \lib\db\protectionagentoccasion::get_sms_mobile_list_full($occasion_id);
+
+		$result = [];
+
+		foreach ($get_user_id as $key => $value)
+		{
+			$result[] =
+			[
+				'mobile' => $value['mobile'],
+				'displayname' => $value['displayname'],
+			];
+		}
+
+		return $result;
+	}
+
+
 
 
 	public static function get_allow($_occaseion)

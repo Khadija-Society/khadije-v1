@@ -17,6 +17,12 @@ class view
 		$myDate = \lib\app\protectionagentoccasion::get_sms_date(\dash\request::get('id'));
 		\dash\data::myDate($myDate);
 
+		if(\dash\request::get('exportmobileallow'))
+		{
+			$result = \lib\app\protectionagentoccasion::agent_send_sms_get_mobile(\dash\request::get('id'));
+			\dash\utility\export::csv(['name' => 'Export_occasion_'. \dash\request::get('id'), 'data' => $result]);
+		}
+
 
 	}
 }
