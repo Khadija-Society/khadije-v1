@@ -4,37 +4,27 @@
 {%block pageContent%}
 {{block ('pageStep')}}
 
-<form method="post" autocomplete="off">
-  <div class="f justify-center">
-    <div class="c6 s12 m8">
-       <div class="cbox">
+    {%for key, value in mediaTitle%}
 
+    <div class="cbox">
+      <h3>{{value}}</h3>
+      <form method="post" autocomplete="off">
+        {%if dataTable[key]%}
+        <div class="f">
+          {%for k, v in dataTable[key]%}
+          <div class="vcard mA10 c2 s12">
+            <a href="{{v}}" target="_blank">
 
-
-        {%if dataTable%}
-<div class="f">
-
-  {%for key, value in dataTable%}
-    <div class="vcard mA10 c2 s12">
-      <a href="{{value}}" target="_blank">
-
-      <img alt="file" src="{{value}}">
-      </a>
-      <div class="footer"><div class="btn xs outline block danger " data-confirm data-data='{"remove" : "remove", "key" : "{{key}}"}'>{%trans "Remove file"%}</div></div>
+              <img alt="file" src="{{v}}">
+            </a>
+            <div class="footer txtRa"><div class=" " data-confirm data-data='{"remove" : "remove", "key" : "{{k}}", "field" : "{{key}}"}'><i class="sf-trash fc-red"></i></div></div>
+          </div>
+          {%endfor%}
+        </div>
+        {%endif%}
+      </form>
     </div>
-  {%endfor%}
-</div>
-
-    {%else%}
-    <div class="msg warn2">{%trans "No image report was sended yet"%}</div>
-    {%endif%}
-
-    </div>
-
-    </div>
-  </div>
-</form>
-
+    {%endfor%}
 
 {%endblock%}
 

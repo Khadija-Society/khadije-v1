@@ -2,10 +2,11 @@
 namespace content_protection\agentoccasion\gallery;
 
 
-class view
+class view extends \content_a\protection\gallery\view
 {
 	public static function config()
 	{
+		parent::config();
 
 		\dash\data::page_title(T_("Report image"));
 
