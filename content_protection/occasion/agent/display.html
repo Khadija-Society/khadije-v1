@@ -60,7 +60,9 @@
         <th>{%trans "Agent"%}</th>
         <th class="">{%trans "Request Status"%}</th>
         <th class="collapsing">{%trans "Count Supported user"%}</th>
-        <th class="collapsing">{%trans "Gallery"%}</th>
+        {%for key, value in mediaTitle%}
+        <th class="collapsing">{{value.title}}</th>
+        {%endfor%}
         <th class="collapsing">{%trans "Report"%}</th>
         <th class="collapsing"></th>
       </tr>
@@ -74,8 +76,11 @@
         <td>{{value.agent_title}}</td>
         <td class="">{%set myStatus = value.status%}{%trans myStatus%}</td>
         <td class="collapsing">{{value.count_user | fitNumber}}</td>
-        <td class="collapsing">{%if value.gallery%}<i class="sf-check fc-green"></i>{%else%}<i class="sf-times fc-red"></i>{%endif%}</td>
-        <td class="collapsing">{%if value.report%}<i class="sf-check fc-green"></i>{%else%}<i class="sf-times fc-red"></i>{%endif%}</td>
+
+        {%for key, value in mediaTitle%}
+        <td class="collapsing">{%if value[key]%}<i class="sf-check-circle fc-green fs14"></i>{%else%}<i class="sf-times fc-mute"></i>{%endif%}</td>
+        {%endfor%}
+        <td class="collapsing">{%if value.report%}<i class="sf-check-circle fc-green fs14"></i>{%else%}<i class="sf-times fc-mute"></i>{%endif%}</td>
 
         <td class="collapsing">
 

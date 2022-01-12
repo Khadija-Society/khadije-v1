@@ -14,7 +14,7 @@ class view
 		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back'));
 
-
+		\dash\data::mediaTitle(\lib\app\protectionagentoccasion::field_list());
 		$search_string            = \dash\request::get('q');
 		if($search_string)
 		{

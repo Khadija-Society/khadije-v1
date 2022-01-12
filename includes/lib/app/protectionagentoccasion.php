@@ -426,11 +426,11 @@ class protectionagentoccasion
 	{
 		return
 		[
-			'gallery'           => 'گزارش تصویری',
-			'film'              => 'فیلم',
-			'simanews'          => 'خبر سیما',
-			'clip'              => 'کلیپ تدوین شده',
-			'videodistribution' => 'گزارش از محل توزیع',
+			'gallery'           => ['title' => 'گزارش تصویری', 			'score' => 1],
+			'film'              => ['title' => 'فیلم', 					'score' => 2],
+			'simanews'          => ['title' => 'خبر سیما', 				'score' => 3],
+			'clip'              => ['title' => 'کلیپ تدوین شده', 		'score' => 4],
+			'videodistribution' => ['title' => 'گزارش از محل توزیع', 	'score' => 2],
 		];
 	}
 

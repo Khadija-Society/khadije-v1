@@ -14,7 +14,7 @@
         گزارش‌های تصویری و چند رسانه‌ای شما می‌تواند در گروه‌های مختلف زیر قرار گیرد
         <ul style="list-style: inside;">
           {%for key, value in mediaTitle%}
-            <li>{{value}}</li>
+            <li>{{value.title}}</li>
           {%endfor%}
         </ul>
         لطفا فایل مربوط به هر گزارش را در محل مربوطه بارگزاری کنید
@@ -29,7 +29,7 @@
     {%for key, value in mediaTitle%}
 
     <div class="cbox">
-      <h3>{{value}}</h3>
+      <h3>{{value.title}}</h3>
       <form method="post" autocomplete="off">
         <input type="hidden" name="field" value="{{key}}">
         <div class="input">
@@ -38,7 +38,7 @@
         </div>
         {%if false%}
         <div class="dropzone">
-          <h4>{%trans "Add file to"%} {{value}}</h4>
+          <h4>{%trans "Add file to"%} {{value.title}}</h4>
           <label for='{{key}}' class="btn light">{%trans "Choose or Drop file here"%}</label>
           <input id="{{key}}" type="file" name="{{key}}" multiple>
           <div class="progress shadow" data-percent='30'>

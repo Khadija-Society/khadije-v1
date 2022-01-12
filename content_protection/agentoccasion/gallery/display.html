@@ -7,7 +7,7 @@
     {%for key, value in mediaTitle%}
 
     <div class="cbox">
-      <h3>{{value}}</h3>
+      <h3>{{value.title}}</h3>
       <form method="post" autocomplete="off">
         {%if dataTable[key]%}
         <div class="f">
