@@ -79,6 +79,7 @@
 
         <td class="collapsing txtL">
           {%if perm('protectonUserAdmin')  %}
+          <a class="btn secondary outline" href="{{url.this}}/score?id={{value.id}}">{%trans "Score"%}</a>
           <a class="btn pain outline" href="{{url.this}}/user?id={{value.id}}">{%trans "Users"%}</a>
           <a class="btn info outline" href="{{url.this}}/agent?id={{value.id}}">{%trans "Agents"%}</a>
           {%endif%}

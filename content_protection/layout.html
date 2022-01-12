@@ -24,7 +24,7 @@
 	<div class="f">
 		<div class="c">{{occasionDetail.title}}</div>
 		<div class="c">{{occasionDetail.subtitle}}</div>
-    {%if url.child == 'detail'%}
+    {%if url.child == 'detail' or url.child == 'score'%}
     {%else%}
       {%if url.child != 'agent'%}
       <div class="cauto"><a class="btn primary" href="{{url.this}}/agent?id={{occasionDetail.id}}">{%trans "Agent registered"%}</a></div>

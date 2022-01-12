@@ -64,6 +64,7 @@
         <th class="collapsing">{{value.title}}</th>
         {%endfor%}
         <th class="collapsing">{%trans "Report"%}</th>
+        <th class="collapsing">{%trans "Total Score"%}</th>
         <th class="collapsing"></th>
       </tr>
     </thead>
@@ -78,9 +79,10 @@
         <td class="collapsing">{{value.count_user | fitNumber}}</td>
 
         {%for k, v in mediaTitle%}
-        <td class="collapsing">{%if value[k]%}<i class="sf-check-circle fc-green fs14"></i>{%else%}<i class="sf-times fc-mute"></i>{%endif%}</td>
+        <td class="collapsing">{{value['score_' ~ k] | fitNumber}}</td>
         {%endfor%}
-        <td class="collapsing">{%if value.report%}<i class="sf-check-circle fc-green fs14"></i>{%else%}<i class="sf-times fc-mute"></i>{%endif%}</td>
+        <td class="collapsing">{{value.score_report |fitNumber}}</td>
+        <td class="collapsing">{{value.total_score |fitNumber}}</td>
 
         <td class="collapsing">
 
