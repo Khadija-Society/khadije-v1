@@ -45,8 +45,9 @@
 
 
 {%block iDesc%}
-<label for="desc">{%trans "Description"%}</label>
-<textarea class="txt mB10" id='desc' name="desc" itemholder='{%trans "Description of item"%}' maxlength='500' rows="5">{{dataRow.desc}}</textarea>
+<div class="msg info">تنظیم پیام برای همه نماینده‌ها در زمان فعالیت در این مناسبت</div>
+<textarea class="txt mB10" id='desc' name="desc" placeholder='متن پیام شما' maxlength='500' rows="5">{{dataRow.desc}}</textarea>
+
 {%endblock%}
 
 

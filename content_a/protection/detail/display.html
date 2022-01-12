@@ -14,6 +14,8 @@
         {%if occasionDetail.startdate%}<span class="block mB10">{%trans "Start date"%}: <span class="ltr compact">{{occasionDetail.startdate | dt(null, 'date')}}</span></span>{%endif%}
         {%if occasionDetail.expiredate%}{%trans "End date"%}: <span class="ltr compact mB10">{{occasionDetail.expiredate | dt(null, 'date')}}</span>{%endif%}
 
+        {%if occasionDetail.desc%}<div class="msg info">{{occasionDetail.desc}}</div>{%endif%}
+
 
         {%if userListCount%}
           <div class="msg">
