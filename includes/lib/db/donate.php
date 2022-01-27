@@ -18,10 +18,10 @@ class donate
 		'
 			SUM(
 				case
-					when transactions.hazinekard = "مشارکت در قربانی" then ((transactions.plus * 5) / 100)
-					when transactions.hazinekard = "فرزندان غدیر" then ((transactions.plus * 5) / 100)
+					when transactions.hazinekard = "مشارکت در قربانی" then ((transactions.plus * 100) / 100)
+					when transactions.hazinekard = "فرزندان غدیر" then ((transactions.plus * 100) / 100)
 				else
-					((transactions.plus * 50) / 100)
+					((transactions.plus * 100) / 100)
 				end
 				) as `total`
 		';
