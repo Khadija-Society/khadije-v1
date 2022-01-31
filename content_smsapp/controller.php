@@ -10,6 +10,7 @@ class controller
 			'989127522690', // ?
 			'989126788630', // ?
 			'989129382128', // najafi
+			'989922177795', // sobati
 		];
 
 		if(\dash\permission::supervisor() || in_array(\dash\user::detail('mobile'), $allow_mobile))
