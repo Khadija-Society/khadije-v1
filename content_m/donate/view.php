@@ -156,12 +156,19 @@ class view
 			$filterArgs['Remmeber notif'] = true;
 		}
 
-
 		$args['donate']            = 'cash';
-		$args['condition']         = 'ok';
-
 		$payment_args['donate']    = 'cash';
-		$payment_args['condition'] = 'ok';
+
+		if(\dash\permission::supervisor() && \dash\request::get('condition'))
+		{
+			$args['condition']         = \dash\request::get('condition');
+			$payment_args['condition'] = \dash\request::get('condition');
+		}
+		else
+		{
+			$args['condition']         = 'ok';
+			$payment_args['condition'] = 'ok';
+		}
 
 		$search_string     = \dash\request::get('q');
 
