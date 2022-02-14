@@ -163,6 +163,9 @@ class view
 		{
 			$args['condition']         = \dash\request::get('condition');
 			$payment_args['condition'] = \dash\request::get('condition');
+
+			$args['condition']         = ['!=' , " 'ok' "];
+			$payment_args['condition'] = ['!=' , " 'ok' "];
 		}
 		else
 		{
