@@ -20,11 +20,11 @@ class cronjob
 
 	private static function verify_zarinpal()
 	{
-		$time_now    = date("i");
-
-		if((is_string($time_now) && mb_strlen($time_now) === 2 && in_array(substr($time_now, 1, 1), ['0', '5']) ))
+		if(intval(date("Hi")) === 1905)
 		{
-			$get_list = \dash\db\transactions::get(['condition' => ['!= ', " 'ok' "], 'payment' => 'zarinpal', 'limit' => 1000]);
+
+			$get_list = \dash\db\transactions::get(['condition' => [' != ', " 'ok' "], 'payment' => 'zarinpal'], ['public_show_field' => 'id']);
+
 			if($get_list)
 			{
 				foreach ($get_list as $key => $value)
