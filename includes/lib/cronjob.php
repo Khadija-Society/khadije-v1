@@ -22,7 +22,7 @@ class cronjob
 	{
 		$time_now    = date("i");
 
-		if((is_string($time_now) && mb_strlen($time_now) === 2 && $time_now{1} == '0'))
+		if((is_string($time_now) && mb_strlen($time_now) === 2 && in_array(substr($time_now, 1, 1), ['0', '5']) ))
 		{
 			$get_list = \dash\db\transactions::get(['condition' => ['!= ', " 'ok' "], 'payment' => 'zarinpal', 'limit' => 1000]);
 			if($get_list)
