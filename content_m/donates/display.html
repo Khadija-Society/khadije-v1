@@ -12,12 +12,22 @@
     <div class="f">
       <div class="c s12 mB5 pRa5">
         <div class="input ltr">
-          <input class="datepicker" type="text" name="startdate" title='{%trans "Start date"%}' placeholder='{%trans "Start date"%}' id="startdate"  value="{{startdateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+          <input class="datepicker" type="text" name="startdate"  placeholder='{%trans "Start date"%}' id="startdate"  value="{{requestGET.startdate}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+        </div>
+      </div>
+      <div class="cauto s12 mB5 pRa5">
+        <div class="input ltr">
+          <input class="timepicker" type="text" name="starttime"  placeholder='ساعت شروع' id="starttime"  value="{{requestGET.starttime}}" maxlength='20' >
         </div>
       </div>
       <div class="c s12 mB5 pRa5">
         <div class="input ltr">
-          <input class="datepicker" type="text" name="enddate" title='{%trans "End date"%}' placeholder='{%trans "End date"%}' id="enddate"  value="{{enddateEn}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+          <input class="datepicker" type="text" name="enddate"  placeholder='{%trans "End date"%}' id="enddate"  value="{{requestGET.enddate}}" maxlength='20' data-format="YYYYMMDD"data-view="month">
+        </div>
+      </div>
+      <div class="cauto s12 mB5 pRa5">
+        <div class="input ltr">
+          <input class="timepicker" type="text" name="endtime"  placeholder='پایان شروع' id="endtime"  value="{{requestGET.endtime}}" maxlength='20' >
         </div>
       </div>
       <div class="cauto s12 mB5">
@@ -25,6 +35,13 @@
       </div>
     </div>
   </form>
+  {%if requestGET%}
+    <div class="msg">
+        {%if startdateEn%}<div class="">{%trans "Start date"%} <span class="ltr compact">{{startdateEn | dt}}</span></div>{%endif%}
+        {%if enddateEn%}<div class="">{%trans "Start date"%} <span class="ltr compact">{{enddateEn | dt}}</span></div>{%endif%}
+        {%if requestGET.payment%}<div class="">{%trans "Payment"%} <span class="ltr compact">{{requestGET.payment}}</span></div>{%endif%}
+    </div>
+  {%endif%}
 </div>
 
   {%if reportDetail.groupby%}

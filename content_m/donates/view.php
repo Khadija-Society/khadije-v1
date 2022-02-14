@@ -58,7 +58,19 @@ class view
 			{
 				$startdate = \dash\utility\jdate::to_gregorian($startdate);
 			}
+
+			if(\dash\request::get('starttime'))
+			{
+				$starttime = \dash\date::make_time(\dash\request::get('starttime'));
+				if(!$starttime)
+				{
+					$starttime = '00:00:00';
+				}
+
+				$startdate = $startdate . ' '. $starttime;
+			}
 			\dash\data::startdateEn($startdate);
+
 
 
 		}
@@ -72,6 +84,18 @@ class view
 			{
 				$enddate = \dash\utility\jdate::to_gregorian($enddate);
 			}
+
+			if(\dash\request::get('endtime'))
+			{
+				$endtime = \dash\date::make_time(\dash\request::get('endtime'));
+				if(!$endtime)
+				{
+					$endtime = '23:59:59';
+				}
+
+				$enddate = $enddate . ' '. $endtime;
+			}
+
 			\dash\data::enddateEn($enddate);
 
 		}
