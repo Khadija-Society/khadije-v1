@@ -20,12 +20,15 @@ class cronjob
 
 	private static function verify_zarinpal()
 	{
-		$get_list = \dash\db\transactions::get(['condition' => 'verify_error', 'payment' => 'zarinpal', 'limit' => 100]);
-		if($get_list)
+		if(intval(date("Hi")) === 1845)
 		{
-			foreach ($get_list as $key => $value)
+			$get_list = \dash\db\transactions::get(['condition' => 'verify_error', 'payment' => 'zarinpal', 'limit' => 1000]);
+			if($get_list)
 			{
-				\dash\app\transaction\edit::verify_again($value['id']);
+				foreach ($get_list as $key => $value)
+				{
+					\dash\app\transaction\edit::verify_again($value['id']);
+				}
 			}
 		}
 	}
