@@ -9,6 +9,9 @@
 
 <div class="cbox fs12">
   <form method="get"  autocomplete="off" action="{{url.this}}">
+    {%if request.payment%}
+      <input type="hidden" name="payment" value="{{request.payment}}">
+    {%endif%}
     <div class="f">
       <div class="c s12 mB5 pRa5">
         <div class="input ltr">
