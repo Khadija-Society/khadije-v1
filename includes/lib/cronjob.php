@@ -20,19 +20,19 @@ class cronjob
 
 	private static function verify_zarinpal()
 	{
-		if(intval(date("Hi")) === 1905)
-		{
+		// if(intval(date("Hi")) === 1905)
+		// {
 
-			$get_list = \dash\db\transactions::get(['condition' => [' != ', " 'ok' "], 'payment' => 'zarinpal'], ['public_show_field' => 'id']);
+		// 	$get_list = \dash\db\transactions::get(['condition' => [' != ', " 'ok' "], 'payment' => 'zarinpal'], ['public_show_field' => 'id']);
 
-			if($get_list)
-			{
-				foreach ($get_list as $key => $value)
-				{
-					\dash\app\transaction\edit::verify_again($value['id']);
-				}
-			}
-		}
+		// 	if($get_list)
+		// 	{
+		// 		foreach ($get_list as $key => $value)
+		// 		{
+		// 			\dash\app\transaction\edit::verify_again($value['id']);
+		// 		}
+		// 	}
+		// }
 	}
 
 	private static function smsapp()
