@@ -114,15 +114,15 @@ class view
 
 		if($startdate && $enddate)
 		{
-			$payment_args['1.1'] = [" = 1.1 ", " AND DATE(transactions.datecreated) >= '$startdate' AND DATE(transactions.datecreated) <= '$enddate'  "];
+			$payment_args['1.1'] = [" = 1.1 ", " AND transactions.datecreated >= '$startdate' AND transactions.datecreated <= '$enddate'  "];
 		}
 		elseif($startdate)
 		{
-			$payment_args['DATE(transactions.datecreated)'] = [">=", " '$startdate' "];
+			$payment_args['transactions.datecreated'] = [">=", " '$startdate' "];
 		}
 		elseif($enddate)
 		{
-			$payment_args['DATE(transactions.datecreated)'] = ["<=", " '$enddate' "];
+			$payment_args['transactions.datecreated'] = ["<=", " '$enddate' "];
 		}
 
 
