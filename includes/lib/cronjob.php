@@ -5,12 +5,29 @@ class cronjob
 {
 	public static function run()
 	{
+		self::verify_zarinpal();
+
 		self::thankyoumessage();
 
 		self::smsapp();
 
+
 		self::remove_log();
 
+	}
+
+
+
+	private static function verify_zarinpal()
+	{
+		$get_list = \dash\db\transactions::get(['condition' => 'verify_error', 'payment' => 'zarinpal', 'limit' => 100]);
+		if($get_list)
+		{
+			foreach ($get_list as $key => $value)
+			{
+				\dash\app\transaction\edit::verify_again($value['id']);
+			}
+		}
 	}
 
 	private static function smsapp()
