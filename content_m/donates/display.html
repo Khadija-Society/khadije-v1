@@ -49,45 +49,47 @@
 
   {%if reportDetail.groupby%}
   <h3>جمع کل کمک‌های نقدی به تفکیک هزینه‌کرد</h3>
-<div class="f">
-  <div class="c6 s12">
-    <div class="f">
-      {%for key, value in reportDetail.groupby %}
-      <div class="c6 s12">
-        <div class="dcard x1">
-         <div class="statistic blue">
-          <div class="value"><small>{{value | fitNumber}}</small></div>
-          <div class="label">{%if not key%}-{%else%}{{key}}{%endif%}</div>
-         </div>
-        </div>
-      </div>
-      {%endfor%}
-      <div class="c12">
-        <div class="dcard x1">
-         <div class="statistic blue">
-          <div class="value"><small>{{reportDetail.total_payed | fitNumber}}</small></div>
-          <div class="label">{%trans "Total Donation"%}</div>
-         </div>
-        </div>
+
+  <div class="f">
+    {%for key, value in reportDetail.groupby %}
+    <div class="c6 s12">
+      <div class="dcard x1">
+       <div class="statistic blue">
+        <div class="value"><small>{{value | fitNumber}}</small></div>
+        <div class="label">{%if not key%}-{%else%}{{key}}{%endif%}</div>
+       </div>
       </div>
     </div>
-
-
-  </div>
-
-  <div class="c6 s12">
-      <div id="chartdiv" class="chart"></div>
-      <div class="hidden">
-        <div id="hcartdata">{{reportDetail.chart | raw}}</div>
+    {%endfor%}
+    <div class="c12">
+      <div class="dcard x1">
+       <div class="statistic blue">
+        <div class="value"><small>{{reportDetail.total_payed | fitNumber}}</small></div>
+        <div class="label">{%trans "Total Donation"%}</div>
+       </div>
       </div>
+    </div>
   </div>
-</div>
+
 
   {%endif%}
 
 
-<div id="chartdate" class="chart"></div>
-<div class="hidden">
+<div class="f">
+  <div class="c6 s12">
+      <div id="chartdiv" class="chart"></div>
+      <div class="hide">
+        <div id="hcartdata">{{reportDetail.chart | raw}}</div>
+      </div>
+  </div>
+  <div class="c6 s12">
+    <div id="chartdate" class="chart"></div>
+  </div>
+</div>
+
+
+
+<div class="hide">
   <div id="chartdatecategory">{{reportDetail.chartdatecategory | raw}}</div>
   <div id="chartdatedata">{{reportDetail.chartdate | raw}}</div>
 </div>
