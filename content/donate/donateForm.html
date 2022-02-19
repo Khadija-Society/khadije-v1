@@ -315,7 +315,7 @@
 <div class="cauto">
 
   <div class="radioGateway{%if myWay.iactive%} blink{%endif%}" {%if myWay.desc%}title="{{myWay.desc}}"{%endif%} {%if myWay.allowpirce%}data-customprice{%endif%}>
-    <input type="radio" name="way" value="{{myWay.title}}" id="r-{{myWay.id}}">
+    <input type="radio" name="way" value="{{myWay.title}}" id="r-{{myWay.id}}" {%if loop.index0 == 0%}checked{%endif%}>
     <label for="r-{{myWay.id}}">
 {%if myWay.fileurl%}
       <img src="{{myWay.fileurl}}" alt="{{myWay.title}}">
