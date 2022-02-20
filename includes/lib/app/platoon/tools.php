@@ -28,7 +28,7 @@ class tools
 			'title'             => 'شماره جدید موسسه',
 			'avatar'            => 'https://khadije.com/static/images/logo.png',
 			'mobile'            => '989101571711', // khadije 2
-			'platoon'           => '3',
+			'platoon'           => '1',
 			'linenumber'        => null,
 			'kavenegar_api_key' => '52614F494433704634702B674477473754644D4D722B6A4C447371794F4E6371',
 		];
