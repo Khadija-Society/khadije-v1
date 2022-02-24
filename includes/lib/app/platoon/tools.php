@@ -33,6 +33,18 @@ class tools
 			'kavenegar_api_key' => '52614F494433704634702B674477473754644D4D722B6A4C447371794F4E6371',
 		];
 
+
+		$list[] =
+		[
+			'title'             => 'پنل پیامک',
+			'avatar'            => 'https://khadije.com/static/images/logo.png',
+			'mobile'            => '10006121', // sms panel
+			'platoon'           => '4',
+			'linenumber'        => null,
+			'kavenegar_api_key' => '52614F494433704634702B674477473754644D4D722B6A4C447371794F4E6371',
+		];
+
+
 		// $list[] =
 		// [
 		// 	'title'             => 'آستان مقدس',
