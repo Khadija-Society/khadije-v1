@@ -41,6 +41,7 @@ class tools
 			'mobile'            => '10006121', // sms panel
 			'platoon'           => '4',
 			'linenumber'        => null,
+			'force_send_by_sms_panel'        => true,
 			'kavenegar_api_key' => '52614F494433704634702B674477473754644D4D722B6A4C447371794F4E6371',
 		];
 
@@ -81,6 +82,23 @@ class tools
 			return self::$locked_on['platoon'];
 		}
 		return null;
+	}
+
+
+	public static function force_send_by_sms_panel()
+	{
+		$get_index_locked = self::get_index_locked();
+		if($get_index_locked)
+		{
+			$load_platoon = self::get($get_index_locked);
+
+			if(a($load_platoon, 'force_send_by_sms_panel'))
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 

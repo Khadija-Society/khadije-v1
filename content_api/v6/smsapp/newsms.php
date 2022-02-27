@@ -409,7 +409,7 @@ class newsms
 				self::force_archive_conversation($insert['fromnumber']);
 
 
-				if(\lib\app\sms::is_auto_panel_answer())
+				if(\lib\app\sms::is_auto_panel_answer() || \lib\app\platoon\tools::force_send_by_sms_panel())
 				{
 					$insert['sendstatus']    = 'awaiting';
 					$insert['receivestatus'] = 'sendtopanel';
