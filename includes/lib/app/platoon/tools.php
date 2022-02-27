@@ -90,7 +90,7 @@ class tools
 		$get_index_locked = self::get_index_locked();
 		if($get_index_locked)
 		{
-			$load_platoon = self::get($get_index_locked);
+			$load_platoon = self::get_by_platoon($get_index_locked);
 
 			if(a($load_platoon, 'force_send_by_sms_panel'))
 			{
