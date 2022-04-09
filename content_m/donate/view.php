@@ -66,8 +66,8 @@ class view
 
 		if(\dash\request::get('mobile'))
 		{
-			$args['mobile'] = \dash\request::get('mobile');
-			$userDetail = \dash\db\users::get_by_mobile($args['mobile']);
+			$mobile = \dash\request::get('mobile');
+			$userDetail = \dash\db\users::get_by_mobile($mobile);
 			if(isset($userDetail['id']))
 			{
 				$payment_args['user_id'] = $userDetail['id'];
