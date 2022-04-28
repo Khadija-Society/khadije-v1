@@ -651,7 +651,8 @@ class protectagentuser
 			$max_date_created = \lib\db\protectionagentuser::get_max_date_created_nationalcode($nationalcode);
 			if($max_date_created)
 			{
-				if(time() - strtotime($max_date_created) > (60*60*24*365))
+				// if(time() - strtotime($max_date_created) > (60*60*24*365))
+				if(strtotime($max_date_created) < strtotime('2022-03-21'))
 				{
 					// ok
 				}
