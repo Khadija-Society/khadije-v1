@@ -3,7 +3,13 @@
 self::$config['default_payment']                  = 'zarinpal';
 
 self::$config['zarinpal']['status']               = true;
-self::$config['zarinpal']['MerchantID']           = "6df6881c-f054-11e7-b904-000c295eb8fc";
+
+// 1. sobati - checkout to personal
+// self::$config['zarinpal']['MerchantID']           = "6df6881c-f054-11e7-b904-000c295eb8fc";
+
+// 2. hoseinpour - checkout to charity
+self::$config['zarinpal']['MerchantID']           = "4a254964-3dce-4d46-ab4b-4114137c9115";
+
 self::$config['zarinpal']['Description']          = "Donate";
 self::$config['zarinpal']['CallbackURL']          = null;
 self::$config['zarinpal']['exchange']             = 1;
