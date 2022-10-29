@@ -16,7 +16,12 @@ class view extends \content_a\protection\gallery\view
 
 		$gallery = \dash\data::dataRow_gallery();
 		$gallery = json_decode($gallery, true);
+		if(isset($gallery[0]) && count($gallery) === 1)
+		{
+			$gallery['gallery'] = $gallery;
+		}
 		\dash\data::dataTable($gallery);
+
 
 
 	}

@@ -4,6 +4,7 @@ desktop.ini
 *Thumbs.db
 *tg.json
 *.me.*
+.idea
 /public_html/files
 /content/cronjob/*.txt
 *engine/cronjob/crontab.txt
