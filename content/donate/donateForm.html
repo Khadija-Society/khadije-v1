@@ -312,6 +312,12 @@
 
 
 {%for key, myWay in wayList%}
+
+      {%if key == 0 %}
+      {%set myFirstWayId = "r-" ~ myWay.id %}
+      <input type="hidden" name="myFirstWayId" value="{{myFirstWayId}}" id="myFirstWayId">
+      {%endif%}
+
 <div class="cauto">
 
   <div class="radioGateway{%if myWay.iactive%} blink{%endif%}" {%if myWay.desc%}title="{{myWay.desc}}"{%endif%} {%if myWay.allowpirce%}data-customprice{%endif%}>
@@ -372,3 +378,20 @@
 {%endblock%}
 
 
+
+{%block foot_js%}
+<script>
+    $( document ).ready(
+    function()
+    {
+        function StxFixRadio()
+        {
+            var myId = $('#myFirstWayId').val();
+            $('.donateForm input[type=radio][id='+myId+']').trigger('change');
+        }
+        setTimeout(StxFixRadio, 100)
+
+    });
+
+</script>
+{%endblock%}
